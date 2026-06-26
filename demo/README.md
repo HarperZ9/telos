@@ -1,5 +1,9 @@
 # Demo: the reconcile -> Certificate loop
 
+For the polished visual walkthrough, open [`index.html`](index.html). The command-line
+proof remains [`run.mjs`](run.mjs), and the visual page is a static companion for the
+same certificate loop.
+
 Project Telos exists to give a stateless model durable, verified contact with state and range. This folder is the smallest runnable piece of that: a system that **perceives something, checks what it perceived against a truth it did not make up, and reports MATCH, DRIFT, or "I cannot verify this," never just "trusted."**
 
 It is the core mechanism behind the larger project, isolated down to one concrete example you can run in a few seconds.
