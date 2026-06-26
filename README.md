@@ -58,6 +58,20 @@ RUN B   a render too small to read (8x8) ->  UNVERIFIABLE   recheck = true
    it reports UNVERIFIABLE rather than lean on the reading that happens to be right.
 ```
 
+## Try it in the field
+
+The fastest test is to bring Telos a workflow where a model answer is not enough; a person needs to see what happened and re-check it later.
+
+- **Doctor / clinical admin:** source fragments, routing decisions, and uncertainty stay visible before a summary or recommendation becomes action.
+- **Artist / studio:** prompts, source assets, transforms, chosen branches, and export gates stay attached to the finished artifact.
+- **Media / newsroom:** public claims map back to witnessed sources, conflict notes, and an editorial decision ledger.
+- **Token economy / routing:** model calls are spent where they buy evidence, coverage, or verification, not where they merely produce confident prose.
+- **Reasoning:** the model can perceive and propose; final authority belongs outside the model, in a checkable record a person can inspect.
+
+Main site: <https://harperz9.github.io>. GitHub: <https://github.com/HarperZ9>. Flagship repos: [gather](https://github.com/HarperZ9/gather), [index](https://github.com/HarperZ9/index), [forum](https://github.com/HarperZ9/forum), [crucible](https://github.com/HarperZ9/crucible), and [the telos engine](https://github.com/HarperZ9/telos).
+
+I am looking for verification, testing against real workflows, early traction from people willing to inspect receipts, and possibly modest grassroots research funding or pointers.
+
 ## Why AlphaZero is the right comparison
 
 This shape is not new, and the clearest proof of that is AlphaZero. A single neural network sits at its center, a stateless prior that guesses good moves and guesses who is winning. On its own it plays well and no better. What makes it superhuman is the search bolted on beside it, an outside process you can re-run that tests the network's guess against the actual rules of the game before it commits to a move. The network proposes. The search verifies.
