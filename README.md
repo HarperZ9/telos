@@ -1,12 +1,44 @@
+<p align="center">
+  <img src="docs/brand/telos-hero.svg" alt="Project Telos, the flagship membrane for verified contact with state and range">
+</p>
+<!-- Project mark: docs/brand/telos-mark.svg -->
+
 # Project Telos
+
+> Give a stateless model durable, verified contact with state and range.
+
+[Project Telos](https://harperz9.github.io) | [gather](https://github.com/HarperZ9/gather) | [crucible](https://github.com/HarperZ9/crucible) | [index](https://github.com/HarperZ9/index) | [forum](https://github.com/HarperZ9/forum) | [telos](https://github.com/HarperZ9/telos)
+
+## Try it
+
+Zero dependencies, Node 18 or newer.
+
+```bash
+node demo/run.mjs
+```
+
+Open the visual certificate-loop surface at [`demo/index.html`](demo/index.html).
+
+## Why it matters
+
+The hard part of AI work is not producing an answer. It is keeping state, perception,
+action, and verification in the same room long enough for a human or another system to
+re-check what happened. Telos is the membrane for that: a way to let a model propose
+without letting confidence become the proof.
+
+## Work with it
+
+Bring a workflow where the record matters: research intake, editorial claims, agent
+routing, clinical-adjacent review, design pipelines, due diligence, or any loop where
+an honest UNVERIFIABLE is worth more than a polished guess. The useful next step is
+pressure from real operators, verifier feedback, and research support for the memory,
+perception, and action floor.
+
+## What it is
 
 A language model is brilliant and forgetful in the same breath. It can reason its way through a hard problem inside one window of text, then lose the thread the moment the answer depends on something it cannot see. What changed. What is true right now. What it itself did a minute ago. It does not know, and worse, it does not know that it does not know. The confidence stays high while the accuracy quietly falls away.
 
 Project Telos is the work of giving a model the footing it is missing: a durable memory it can read instead of guess at, real senses pointed at the world, a way to act with the brakes wired in, and underneath all of it, a way to check its own work before you are asked to trust it.
-
-One line holds the whole mission. **Give a stateless model durable, verified contact with state and range.**
-
----
 
 ## What goes wrong without it
 
