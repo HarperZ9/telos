@@ -7,12 +7,8 @@ All notable changes to Project Telos. Telos is currently a source demo and share
 - OSS Proof Showcase: adds a fixture-first candidate scout, PR-readiness packet
   contract, read-only Telos MCP scout tool, and an optional live GitHub smoke
   command for high-star public issue discovery.
-- Feedback integration: adds plain-language operator copy, standards vocabulary
-  for in-toto/SBOM/AIBOM/C2PA alignment, append-only follow-up events, and
-  `not_verified` packet fields for skipped checks and unobserved state.
-- OSS Proof Showcase: adds a fixture-first candidate scout, PR-readiness packet
-  contract, read-only Telos MCP scout tool, and an optional live GitHub smoke
-  command for high-star public issue discovery.
+- Forum prose humanization: catalog now includes `forum.prose.humanize`, bringing
+  the provider-neutral flagship surface to 24 available MCP tools on this branch.
 - Feedback integration: adds plain-language operator copy, standards vocabulary
   for in-toto/SBOM/AIBOM/C2PA alignment, append-only follow-up events, and
   `not_verified` packet fields for skipped checks and unobserved state.

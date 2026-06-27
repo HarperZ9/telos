@@ -236,6 +236,27 @@
       ]
     },
     {
+      "name": "forum.prose.humanize",
+      "flagship": "forum",
+      "description": "Clarify model or agent prose for operators without adding facts.",
+      "cli": [
+        "forum",
+        "humanize",
+        "{text}"
+      ],
+      "mcp": {
+        "status": "available",
+        "server": "forum",
+        "method": "tools/call",
+        "tool": "forum.prose.humanize"
+      },
+      "next_actions": [
+        "crucible.assess",
+        "gather.docs",
+        "index.context"
+      ]
+    },
+    {
       "name": "forum.status",
       "flagship": "forum",
       "description": "Emit Forum readiness and next actions as a Project Telos action envelope.",
