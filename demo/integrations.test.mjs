@@ -22,8 +22,12 @@ for (const name of [
   "gather.run",
   "index.map",
   "index.context",
+  "index.status",
+  "index.doctor",
   "forum.route",
   "forum.ledger.summary",
+  "forum.status",
+  "forum.doctor",
   "crucible.status",
   "crucible.doctor",
   "crucible.assess",
@@ -37,33 +41,24 @@ for (const name of [
   assert.ok(names.has(name), `missing ${name}`);
 }
 
-const statuses = new Set();
-const allowedStatuses = new Set(["available", "cli-bridge", "planned"]);
 for (const tool of catalog.tools) {
   assert.match(tool.name, /^(gather|index|forum|crucible|telos)\.[a-z.]+$/);
   assert.ok(Array.isArray(tool.cli) && tool.cli.length > 0, `${tool.name} has CLI fallback`);
   assert.equal(tool.mcp.method, "tools/call");
-  assert.ok(allowedStatuses.has(tool.mcp.status), `${tool.name} has known MCP availability`);
-  statuses.add(tool.mcp.status);
-}
-
-for (const status of ["available", "planned"]) {
-  assert.ok(statuses.has(status), `missing availability status ${status}`);
+  assert.equal(tool.mcp.status, "available", `${tool.name} is native MCP available`);
 }
 
 const byName = new Map(catalog.tools.map((tool) => [tool.name, tool]));
-for (const name of [
-  "gather.docs",
-  "gather.arxiv",
-  "crucible.assess",
-  "telos.status",
-  "telos.doctor",
-  "telos.room",
-  "telos.workflow",
-  "telos.catalog"
-]) {
-  assert.equal(byName.get(name).mcp.status, "available", `${name} is MCP available`);
-}
+assert.deepEqual(byName.get("crucible.recheck").cli, [
+  "crucible",
+  "recheck",
+  "{dir}",
+  "--index",
+  "{index}",
+  "--pack",
+  "{pack}",
+  "--json"
+]);
 
 assert.equal(science.schema, "project-telos.science-research-adapters/v1");
 assert.equal(science.freshness_policy.current_source_required, true);

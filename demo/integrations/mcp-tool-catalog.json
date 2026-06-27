@@ -99,7 +99,7 @@
         "--json"
       ],
       "mcp": {
-        "status": "planned",
+        "status": "available",
         "server": "gather",
         "method": "tools/call",
         "tool": "gather.run"
@@ -154,6 +154,45 @@
       ]
     },
     {
+      "name": "index.status",
+      "flagship": "index",
+      "description": "Emit Index readiness and next actions as a Project Telos action envelope.",
+      "cli": [
+        "index",
+        "status",
+        "--json"
+      ],
+      "mcp": {
+        "status": "available",
+        "server": "index",
+        "method": "tools/call",
+        "tool": "index.status"
+      },
+      "next_actions": [
+        "index.context",
+        "gather.docs"
+      ]
+    },
+    {
+      "name": "index.doctor",
+      "flagship": "index",
+      "description": "Check Index operator-spine readiness.",
+      "cli": [
+        "index",
+        "doctor",
+        "--json"
+      ],
+      "mcp": {
+        "status": "available",
+        "server": "index",
+        "method": "tools/call",
+        "tool": "index.doctor"
+      },
+      "next_actions": [
+        "forum.route"
+      ]
+    },
+    {
       "name": "forum.route",
       "flagship": "forum",
       "description": "Route a request to a capability lane and expose low-confidence escalation.",
@@ -194,6 +233,45 @@
       "next_actions": [
         "crucible.assess",
         "telos.workflow"
+      ]
+    },
+    {
+      "name": "forum.status",
+      "flagship": "forum",
+      "description": "Emit Forum readiness and next actions as a Project Telos action envelope.",
+      "cli": [
+        "forum",
+        "status",
+        "--json"
+      ],
+      "mcp": {
+        "status": "available",
+        "server": "forum",
+        "method": "tools/call",
+        "tool": "forum.status"
+      },
+      "next_actions": [
+        "forum.route",
+        "crucible.assess"
+      ]
+    },
+    {
+      "name": "forum.doctor",
+      "flagship": "forum",
+      "description": "Check Forum operator-spine readiness.",
+      "cli": [
+        "forum",
+        "doctor",
+        "--json"
+      ],
+      "mcp": {
+        "status": "available",
+        "server": "forum",
+        "method": "tools/call",
+        "tool": "forum.doctor"
+      },
+      "next_actions": [
+        "index.map"
       ]
     },
     {
@@ -264,11 +342,15 @@
       "cli": [
         "crucible",
         "recheck",
-        "{registry}",
+        "{dir}",
+        "--index",
+        "{index}",
+        "--pack",
+        "{pack}",
         "--json"
       ],
       "mcp": {
-        "status": "planned",
+        "status": "available",
         "server": "crucible",
         "method": "tools/call",
         "tool": "crucible.recheck"
