@@ -492,6 +492,46 @@
       ]
     },
     {
+      "name": "telos.context.envelope",
+      "flagship": "telos",
+      "description": "Return the large-workspace context envelope convention for readable, receipt-chained agent work.",
+      "cli": [
+        "node",
+        "demo/context-envelope.mjs"
+      ],
+      "mcp": {
+        "status": "available",
+        "server": "telos",
+        "method": "tools/call",
+        "tool": "telos.context.envelope"
+      },
+      "next_actions": [
+        "index.context",
+        "forum.ledger.summary",
+        "crucible.assess"
+      ]
+    },
+    {
+      "name": "telos.action.receipt",
+      "flagship": "telos",
+      "description": "Return the enterprise action receipt interface and append-only persistence convention.",
+      "cli": [
+        "node",
+        "demo/action-receipt.mjs"
+      ],
+      "mcp": {
+        "status": "available",
+        "server": "telos",
+        "method": "tools/call",
+        "tool": "telos.action.receipt"
+      },
+      "next_actions": [
+        "telos.admission.telemetry",
+        "telos.context.envelope",
+        "crucible.assess"
+      ]
+    },
+    {
       "name": "telos.workflow",
       "flagship": "telos",
       "description": "Run the local golden workflow and reconcile the five flagship receipts.",

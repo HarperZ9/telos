@@ -26,7 +26,9 @@ for (const name of [
   "telos.workflow",
   "telos.catalog",
   "telos.server.manifest",
-  "telos.admission.telemetry"
+  "telos.admission.telemetry",
+  "telos.context.envelope",
+  "telos.action.receipt"
 ]) {
   assert.ok(names.has(name), `missing ${name}`);
 }
@@ -76,6 +78,30 @@ assert.deepEqual(admissionTelemetry.result.structuredContent, expectedAdmissionT
 assert.equal(admissionTelemetry.result.structuredContent.schema, "project-telos.admission-telemetry/v1");
 assert.ok(admissionTelemetry.result.structuredContent.required_fields.includes("decision.outcome"));
 
+const expectedContextEnvelope = JSON.parse(
+  readFileSync(new URL("./integrations/context-envelope-conventions.json", import.meta.url), "utf8")
+);
+const contextEnvelope = handleRequest(request("tools/call", {
+  name: "telos.context.envelope",
+  arguments: {}
+}));
+assert.deepEqual(contextEnvelope.result.structuredContent, expectedContextEnvelope);
+assert.equal(contextEnvelope.result.structuredContent.schema, "project-telos.context-envelope/v1");
+assert.equal(contextEnvelope.result.structuredContent.contract.hidden_payloads_allowed, false);
+assert.ok(contextEnvelope.result.structuredContent.failure_codes.includes("readability_regression"));
+
+const expectedActionReceipt = JSON.parse(
+  readFileSync(new URL("./integrations/action-receipt-conventions.json", import.meta.url), "utf8")
+);
+const actionReceipt = handleRequest(request("tools/call", {
+  name: "telos.action.receipt",
+  arguments: {}
+}));
+assert.deepEqual(actionReceipt.result.structuredContent, expectedActionReceipt);
+assert.equal(actionReceipt.result.structuredContent.schema, "project-telos.action-receipt/v1");
+assert.equal(actionReceipt.result.structuredContent.contract.append_only_compensation_required, true);
+assert.ok(actionReceipt.result.structuredContent.required_fields.includes("component.config_hash"));
+
 const badTool = handleRequest(request("tools/call", { name: "telos.missing", arguments: {} }));
 assert.equal(badTool.error.code, -32000);
 assert.match(badTool.error.message, /unknown tool/);
@@ -92,3 +118,5 @@ assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.workflo
 assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.catalog"));
 assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.server.manifest"));
 assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.admission.telemetry"));
+assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.context.envelope"));
+assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.action.receipt"));

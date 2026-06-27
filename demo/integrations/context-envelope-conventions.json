@@ -1,0 +1,296 @@
+{
+  "schema": "project-telos.context-envelope/v1",
+  "verified_on": "2026-06-27",
+  "purpose": "Define the Project Telos large-workspace context contract: compact enough for agent use, exact enough for replay, and readable enough for unattended engineering review.",
+  "sources_checked": [
+    {
+      "name": "MCP 2025-06-18 base protocol",
+      "url": "https://modelcontextprotocol.io/specification/2025-06-18/basic"
+    },
+    {
+      "name": "MCP 2025-06-18 tools and structured content",
+      "url": "https://modelcontextprotocol.io/specification/2025-06-18/server/tools"
+    },
+    {
+      "name": "OpenAI Agents SDK MCP transports",
+      "url": "https://openai.github.io/openai-agents-python/mcp/"
+    },
+    {
+      "name": "Claude Code MCP reference",
+      "url": "https://code.claude.com/docs/en/mcp"
+    },
+    {
+      "name": "Claude context windows and compaction",
+      "url": "https://platform.claude.com/docs/en/build-with-claude/context-windows"
+    },
+    {
+      "name": "Anthropic effective context engineering",
+      "url": "https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents"
+    },
+    {
+      "name": "Anthropic long-running agent harnesses",
+      "url": "https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents"
+    },
+    {
+      "name": "LLMLingua prompt compression",
+      "url": "https://arxiv.org/abs/2310.05736"
+    },
+    {
+      "name": "LLMLingua-2 task-agnostic prompt compression",
+      "url": "https://arxiv.org/abs/2403.12968"
+    },
+    {
+      "name": "Prompt compression in the wild",
+      "url": "https://arxiv.org/abs/2604.02985"
+    }
+  ],
+  "contract": {
+    "authoritative_context": "hash-addressed source refs, expansion commands, freshness checks, and receipt-chain records",
+    "model_visible_context": "compact summaries, ranked symbols, invariants, and task-local slices",
+    "compression_mode": "semantic extractive compression with replayable source anchors",
+    "lossless_requirement": "claims are lossless through source refs and hashes, not through the compressed prose itself",
+    "hidden_payloads_allowed": false,
+    "steganography_allowed_for": [
+      "non-authoritative watermark",
+      "pack identifier embedded in rendered artifacts"
+    ],
+    "steganography_for_required_context_allowed": false,
+    "reason": "Required context must remain inspectable by humans, MCP hosts, audit tools, and future agents. Hidden payloads are not a reliable or reviewable source of truth."
+  },
+  "packet_kinds": [
+    "workspace_map",
+    "symbol_slice",
+    "decision_ledger",
+    "proof_slice",
+    "expanded_source_ref",
+    "diff_receipt",
+    "test_receipt",
+    "readability_gate",
+    "freshness_gate"
+  ],
+  "required_fields": [
+    "envelope_id",
+    "workspace.root_hash",
+    "workspace.git_head",
+    "context_budget.max_input_tokens",
+    "context_budget.target_packet_tokens",
+    "compression.strategy",
+    "compression.ratio_target",
+    "compression.lossless_by_ref",
+    "source_refs[].path",
+    "source_refs[].range",
+    "source_refs[].content_hash",
+    "source_refs[].expansion_command",
+    "summary.claims[].text",
+    "summary.claims[].source_ref_ids",
+    "receipt_chain[].tool",
+    "receipt_chain[].receipt_hash",
+    "quality_gates.readability",
+    "quality_gates.test_evidence",
+    "failure_code"
+  ],
+  "failure_codes": [
+    "stale_context",
+    "lossy_summary",
+    "missing_source_ref",
+    "unexpanded_required_ref",
+    "unjoinable_receipt",
+    "readability_regression",
+    "quality_gate_missing",
+    "budget_exceeded"
+  ],
+  "flagship_roles": {
+    "gather": [
+      "ingest source documents and external research",
+      "attach provenance receipts"
+    ],
+    "index": [
+      "map repos, symbols, dependencies, and docs",
+      "emit compact context packs with source anchors"
+    ],
+    "forum": [
+      "route work to the right agent lane",
+      "maintain progress ledgers and human-readable handoffs"
+    ],
+    "crucible": [
+      "verify claims, tests, and invariants",
+      "return MATCH, DRIFT, or UNVERIFIABLE"
+    ],
+    "telos": [
+      "join packets, receipts, admissions, and execution spans",
+      "enforce host-neutral MCP and CLI presentation"
+    ]
+  },
+  "quality_gates": {
+    "readability": [
+      "prefer small named helpers over dense inline logic",
+      "preserve the local style and public interfaces unless the receipt explains the change",
+      "name intermediate values after domain concepts instead of implementation trivia",
+      "comment only invariants, protocol boundaries, and non-obvious tradeoffs",
+      "avoid clever token-saving code if it makes the next agent slower or less reliable"
+    ],
+    "large_workspace": [
+      "start from an index workspace map before editing",
+      "expand exact source refs before changing code",
+      "write a progress receipt before ending an unattended run",
+      "record tests that prove the claimed behavior",
+      "mark unverifiable context explicitly instead of guessing"
+    ],
+    "unattended_agent": [
+      "choose one bounded work item at a time",
+      "leave git status, changed files, tests, and next action in the ledger",
+      "fail closed when source refs are stale or missing",
+      "separate admission decisions from verification verdicts"
+    ]
+  },
+  "workflow": [
+    {
+      "step": "map",
+      "tool": "index.map",
+      "output": "workspace_map"
+    },
+    {
+      "step": "pack",
+      "tool": "index.context",
+      "output": "symbol_slice"
+    },
+    {
+      "step": "ingest",
+      "tool": "gather.docs",
+      "output": "source receipts"
+    },
+    {
+      "step": "route",
+      "tool": "forum.route",
+      "output": "agent lane and ledger entry"
+    },
+    {
+      "step": "verify",
+      "tool": "crucible.assess",
+      "output": "MATCH, DRIFT, or UNVERIFIABLE"
+    },
+    {
+      "step": "join",
+      "tool": "telos.context.envelope",
+      "output": "context envelope and receipt chain"
+    }
+  ],
+  "conformance_fixture": {
+    "happy_path": {
+      "envelope_id": "ctxenv_demo_001",
+      "workspace": {
+        "root_hash": "sha256:5e3f5df0d7d6b4f0b9bde774c0f94b71a71c8ccf8b7c59e26a4dfad1b59f5101",
+        "git_head": "demo-head",
+        "dirty": false
+      },
+      "context_budget": {
+        "max_input_tokens": 200000,
+        "target_packet_tokens": 4000,
+        "reserved_response_tokens": 12000
+      },
+      "compression": {
+        "strategy": "extractive_summary_with_hash_refs",
+        "ratio_target": 50,
+        "lossless_by_ref": true,
+        "hidden_payloads_used": false
+      },
+      "source_refs": [
+        {
+          "id": "src_001",
+          "path": "src/router/context.ts",
+          "range": "44-91",
+          "content_hash": "sha256:830671b42a75b2f6d8120df44b05f8f340fb522d3524a827cddf2ccf1d4a9201",
+          "expansion_command": "index context --root . --focus src/router/context.ts --json"
+        },
+        {
+          "id": "src_002",
+          "path": "tests/context-envelope.test.ts",
+          "range": "1-80",
+          "content_hash": "sha256:adf30bb9a2bc994f3d54b5c1a203bdbcb913f079fd7224f111e9e363b777de55",
+          "expansion_command": "gather docs tests/context-envelope.test.ts --json"
+        }
+      ],
+      "summary": {
+        "claims": [
+          {
+            "text": "The router builds context packets from source refs and rejects stale hashes before agent admission.",
+            "source_ref_ids": [
+              "src_001"
+            ]
+          },
+          {
+            "text": "The test fixture asserts stale context and missing source refs as separate failures.",
+            "source_ref_ids": [
+              "src_002"
+            ]
+          }
+        ]
+      },
+      "receipt_chain": [
+        {
+          "tool": "index",
+          "action": "map",
+          "receipt_hash": "sha256:0011111111111111111111111111111111111111111111111111111111111111"
+        },
+        {
+          "tool": "gather",
+          "action": "docs",
+          "receipt_hash": "sha256:0022222222222222222222222222222222222222222222222222222222222222"
+        },
+        {
+          "tool": "crucible",
+          "action": "assess",
+          "receipt_hash": "sha256:0033333333333333333333333333333333333333333333333333333333333333"
+        }
+      ],
+      "quality_gates": {
+        "readability": "MATCH",
+        "test_evidence": "MATCH",
+        "freshness": "MATCH"
+      },
+      "failure_code": null
+    }
+  },
+  "negative_test_cases": [
+    {
+      "name": "source_hash_moved",
+      "failure_code": "stale_context",
+      "expected_verdict": "UNVERIFIABLE"
+    },
+    {
+      "name": "summary_claim_without_ref",
+      "failure_code": "lossy_summary",
+      "expected_verdict": "UNVERIFIABLE"
+    },
+    {
+      "name": "missing_source_ref",
+      "failure_code": "missing_source_ref",
+      "expected_verdict": "UNVERIFIABLE"
+    },
+    {
+      "name": "edit_depends_on_unexpanded_ref",
+      "failure_code": "unexpanded_required_ref",
+      "expected_verdict": "UNVERIFIABLE"
+    },
+    {
+      "name": "receipt_cannot_join_to_action",
+      "failure_code": "unjoinable_receipt",
+      "expected_verdict": "UNVERIFIABLE"
+    },
+    {
+      "name": "patch_makes_code_harder_to_read",
+      "failure_code": "readability_regression",
+      "expected_verdict": "DRIFT"
+    },
+    {
+      "name": "test_or_review_gate_absent",
+      "failure_code": "quality_gate_missing",
+      "expected_verdict": "UNVERIFIABLE"
+    },
+    {
+      "name": "packet_exceeds_budget",
+      "failure_code": "budget_exceeded",
+      "expected_verdict": "DRIFT"
+    }
+  ]
+}
