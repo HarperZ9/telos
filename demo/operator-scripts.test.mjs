@@ -20,7 +20,7 @@ assert.equal(status.tool, "telos");
 assert.equal(status.command, "status");
 assert.ok(status.native.commands.includes("catalog"));
 assert.ok(status.native.mcp_tools.includes("telos.catalog"));
-assert.match(status.native.current_status, /23-tool/);
+assert.match(status.native.current_status, /24-tool/);
 assert.equal(status.next_actions[0].tool, "index");
 
 const doctor = runJson("doctor.mjs");
