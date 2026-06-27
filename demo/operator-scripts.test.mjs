@@ -5,8 +5,8 @@ import { fileURLToPath } from "node:url";
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 
-function runJson(script) {
-  const result = spawnSync(process.execPath, [path.join(here, script)], {
+function runJson(script, ...args) {
+  const result = spawnSync(process.execPath, [path.join(here, script), ...args], {
     cwd: path.resolve(here, ".."),
     encoding: "utf8"
   });
@@ -24,6 +24,21 @@ const doctor = runJson("doctor.mjs");
 assert.equal(doctor.command, "doctor");
 assert.equal(doctor.native.checks.every((check) => check.status === "MATCH"), true);
 assert.equal(doctor.next_actions[0].action, "flagship-workflow");
+
+const room = runJson("room.mjs", "--json");
+assert.equal(room.command, "room");
+assert.equal(room.status, "MATCH");
+assert.equal(room.native.ready, 5);
+assert.equal(room.native.total, 5);
+assert.equal(room.native.tools.map((tool) => tool.tool).join(","), "gather,crucible,index,forum,telos");
+
+const roomHuman = spawnSync(process.execPath, [path.join(here, "room.mjs")], {
+  cwd: path.resolve(here, ".."),
+  encoding: "utf8"
+});
+assert.equal(roomHuman.status, 0, roomHuman.stderr || roomHuman.stdout);
+assert.match(roomHuman.stdout, /^Project Telos Room/);
+assert.match(roomHuman.stdout, /MATCH 5\/5 flagships ready/);
 
 const workflow = runJson("flagship-workflow.mjs");
 assert.equal(workflow.command, "flagship-workflow");

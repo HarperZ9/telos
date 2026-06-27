@@ -29,6 +29,7 @@ for (const name of [
   "crucible.assess",
   "crucible.recheck",
   "telos.status",
+  "telos.room",
   "telos.workflow"
 ]) {
   assert.ok(names.has(name), `missing ${name}`);
