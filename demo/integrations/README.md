@@ -36,7 +36,9 @@ Availability labels:
 
 ## Packaging Targets
 
-- Codex plugin: expose skills plus MCP servers for `index`, `forum`, and Telos.
+- Codex plugin: expose skills plus MCP servers for `gather`, `crucible`, `index`, `forum`, and Telos.
+- Gather MCP: `gather mcp` exposes `gather.status`, `gather.doctor`, `gather.docs`, and `gather.arxiv`.
+- Crucible MCP: `crucible mcp` exposes `crucible.status`, `crucible.doctor`, and `crucible.assess`.
 - Superpowers skills: add thin workflows that call the CLI/MCP catalog.
 - Anthropic Claude and Claude Code: mount stdio MCP servers from the same catalog.
 - OpenAI Agents and Apps: mount MCP servers and render Telos receipts in the app UI.
