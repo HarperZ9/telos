@@ -28,7 +28,7 @@ export function scoutLive({ query, limit = 5, now = new Date(), run = spawnSync 
     "--limit",
     String(limit),
     "--json",
-    "title,number,url,updatedAt,labels,commentsCount,repository"
+    "title,body,number,url,updatedAt,labels,commentsCount,repository"
   ], { encoding: "utf8" });
   if (result.status !== 0) {
     return {
