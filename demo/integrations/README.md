@@ -24,6 +24,8 @@ OpenAI Apps, OpenAI Agents, Anthropic Claude, Claude Code, Codex plugins, skills
 
 `mcp-tool-catalog.json` is the provider-neutral source of truth for tool names, CLI fallbacks, MCP names, availability status, and next actions.
 
+`../mcp-runtime-contract.test.mjs` checks the catalog against the sibling MCP runtimes so `available` means the tool is actually present in `tools/list`.
+
 `science-research-adapters.json` is the current-source adapter map for preprints, scholarly metadata, clinical trial registries, persistent identifiers, AlphaFold, Midjourney Medical monitoring, and research graphs.
 
 `fresh-research-policy.md` is the rule for living external claims: current evidence or `UNVERIFIABLE`.
