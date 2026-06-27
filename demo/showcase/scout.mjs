@@ -24,7 +24,7 @@ export function scoutLive({ query, limit = 5, now = new Date(), run = spawnSync 
   const result = run("gh", [
     "search",
     "issues",
-    searchQuery,
+    ...tokenizeSearchQuery(searchQuery),
     "--limit",
     String(limit),
     "--json",
@@ -49,6 +49,12 @@ export function scoutLive({ query, limit = 5, now = new Date(), run = spawnSync 
     source: { kind: "github", query: searchQuery },
     candidates
   };
+}
+
+export function tokenizeSearchQuery(query) {
+  return String(query || "")
+    .match(/"[^"]+"|\S+/g)
+    ?.map((part) => part.replace(/^"|"$/g, "")) || [];
 }
 
 export function candidateFromIssue(row, now = new Date()) {

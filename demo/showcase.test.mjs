@@ -33,7 +33,7 @@ import { spawnSync } from "node:child_process";
 import os from "node:os";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { scoutFixture, renderScoutTable } from "./showcase/scout.mjs";
+import { scoutFixture, scoutLive, renderScoutTable, tokenizeSearchQuery } from "./showcase/scout.mjs";
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const fixtureScout = scoutFixture({ now: new Date("2026-06-27T12:00:00Z") });
@@ -57,6 +57,64 @@ const cliScoutHuman = spawnSync(process.execPath, [path.join(here, "showcase.mjs
 });
 assert.equal(cliScoutHuman.status, 0, cliScoutHuman.stderr || cliScoutHuman.stdout);
 assert.match(cliScoutHuman.stdout, /^OSS Proof Showcase Candidates/);
+
+const liveQuery = "repo:pandas-dev/pandas is:issue is:open label:Bug pd.array masked array";
+assert.deepEqual(tokenizeSearchQuery(liveQuery), [
+  "repo:pandas-dev/pandas",
+  "is:issue",
+  "is:open",
+  "label:Bug",
+  "pd.array",
+  "masked",
+  "array"
+]);
+let observedGhCall = null;
+const unverifiableLive = scoutLive({
+  query: liveQuery,
+  now: new Date("2026-06-27T12:00:00Z"),
+  run(command, args, options) {
+    observedGhCall = { command, args, options };
+    return { status: 1, stdout: "", stderr: "offline" };
+  }
+});
+assert.equal(unverifiableLive.status, "UNVERIFIABLE");
+assert.equal(observedGhCall.command, "gh");
+assert.deepEqual(observedGhCall.args.slice(0, 9), [
+  "search",
+  "issues",
+  "repo:pandas-dev/pandas",
+  "is:issue",
+  "is:open",
+  "label:Bug",
+  "pd.array",
+  "masked",
+  "array"
+]);
+assert.equal(observedGhCall.options.encoding, "utf8");
+
+const matchedLive = scoutLive({
+  query: liveQuery,
+  now: new Date("2026-06-27T12:00:00Z"),
+  run() {
+    return {
+      status: 0,
+      stderr: "",
+      stdout: JSON.stringify([
+        {
+          title: "BUG: expected masked array reproduction",
+          number: 1,
+          url: "https://github.com/pandas-dev/pandas/issues/1",
+          updatedAt: "2026-06-27T11:59:00Z",
+          labels: [{ name: "Bug" }],
+          commentsCount: 0,
+          repository: { nameWithOwner: "pandas-dev/pandas" }
+        }
+      ])
+    };
+  }
+});
+assert.equal(matchedLive.status, "MATCH");
+assert.equal(matchedLive.candidates[0].repository.full_name, "pandas-dev/pandas");
 
 import { buildReadinessPacket, isPrReady } from "./showcase/record.mjs";
 
