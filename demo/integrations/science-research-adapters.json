@@ -1,0 +1,171 @@
+{
+  "schema": "project-telos.science-research-adapters/v1",
+  "verified_at": "2026-06-27",
+  "freshness_policy": {
+    "current_source_required": true,
+    "living_claims": "Verify against current primary or official sources before reporting tool, API, model, clinical, regulatory, or publication-archive claims.",
+    "stale_claim_status": "UNVERIFIABLE"
+  },
+  "adapters": [
+    {
+      "name": "preprint.arxiv",
+      "domain": ["physics", "mathematics", "computer-science", "quantitative-biology", "quantitative-finance", "statistics", "economics"],
+      "status": "available-cli",
+      "tool": "gather.arxiv",
+      "primary_source": "https://info.arxiv.org/help/api/index.html",
+      "notes": "Gather already has an arXiv command; expand toward OAI-PMH for bulk metadata if needed."
+    },
+    {
+      "name": "preprint.biorxiv",
+      "domain": ["biology", "life-sciences"],
+      "status": "planned",
+      "tool": "gather.biorxiv",
+      "primary_source": "https://api.biorxiv.org/",
+      "notes": "Use bioRxiv API details endpoints, cursor pagination, and source receipts."
+    },
+    {
+      "name": "preprint.medrxiv",
+      "domain": ["medicine", "clinical-research", "public-health"],
+      "status": "planned",
+      "tool": "gather.medrxiv",
+      "primary_source": "https://api.medrxiv.org/",
+      "notes": "Treat medical preprints as non-peer-reviewed evidence and route clinical claims through Crucible."
+    },
+    {
+      "name": "literature.pubmed",
+      "domain": ["medicine", "biology", "clinical-research"],
+      "status": "planned",
+      "tool": "gather.pubmed",
+      "primary_source": "https://www.ncbi.nlm.nih.gov/home/develop/api/",
+      "notes": "Use NCBI E-utilities for PubMed, PMC, Gene, Nuccore, Protein, and related Entrez databases."
+    },
+    {
+      "name": "literature.europepmc",
+      "domain": ["life-sciences", "open-access-fulltext", "biomedical-literature"],
+      "status": "planned",
+      "tool": "gather.europepmc",
+      "primary_source": "https://europepmc.org/RestfulWebService",
+      "notes": "Use Europe PMC Articles API for publications, full text links, and related metadata."
+    },
+    {
+      "name": "literature.openalex",
+      "domain": ["global-research-index", "institutions", "authors", "works", "funders"],
+      "status": "planned",
+      "tool": "gather.openalex",
+      "primary_source": "https://developers.openalex.org/",
+      "notes": "Use as a broad open catalog across scholarly works, authors, sources, institutions, and topics."
+    },
+    {
+      "name": "literature.crossref",
+      "domain": ["doi-metadata", "journals", "funders", "licenses", "metadata-provenance"],
+      "status": "planned",
+      "tool": "gather.crossref",
+      "primary_source": "https://www.crossref.org/documentation/retrieve-metadata/rest-api/",
+      "notes": "Use DOI metadata, funding, license, update, ORCID, and ROR fields as provenance evidence."
+    },
+    {
+      "name": "literature.semantic-scholar",
+      "domain": ["papers", "authors", "citations", "venues", "embeddings", "recommendations"],
+      "status": "planned",
+      "tool": "gather.semantic_scholar",
+      "primary_source": "https://www.semanticscholar.org/product/api",
+      "notes": "Use for citation graph, paper discovery, recommendations, and S2AG metadata."
+    },
+    {
+      "name": "trials.clinicaltrials",
+      "domain": ["clinical-trials", "interventions", "recruitment", "results"],
+      "status": "planned",
+      "tool": "gather.clinicaltrials",
+      "primary_source": "https://clinicaltrials.gov/data-api/api",
+      "notes": "Route trial evidence through status, phase, intervention, condition, outcome, and result receipts."
+    },
+    {
+      "name": "pid.datacite",
+      "domain": ["research-data", "datasets", "doi-metadata", "software", "research-objects"],
+      "status": "planned",
+      "tool": "gather.datacite",
+      "primary_source": "https://support.datacite.org/docs/api",
+      "notes": "Use DataCite DOI metadata for datasets, software, and other research outputs."
+    },
+    {
+      "name": "pid.orcid",
+      "domain": ["researchers", "works", "affiliations", "identity"],
+      "status": "planned",
+      "tool": "gather.orcid",
+      "primary_source": "https://info.orcid.org/documentation/integration-and-api-faq/",
+      "notes": "Use public/member API boundaries and never treat identity claims as self-validating."
+    },
+    {
+      "name": "pid.ror",
+      "domain": ["research-organizations", "affiliations", "institutions"],
+      "status": "planned",
+      "tool": "gather.ror",
+      "primary_source": "https://ror.org/",
+      "notes": "Use ROR identifiers to normalize institutions and affiliations across literature graphs."
+    },
+    {
+      "name": "graph.openaire",
+      "domain": ["open-science-graph", "publications", "datasets", "software", "projects", "funding"],
+      "status": "planned",
+      "tool": "gather.openaire",
+      "primary_source": "https://graph.openaire.eu/docs/apis/home/",
+      "notes": "Use OpenAIRE Graph APIs for cross-object scholarly graph context."
+    },
+    {
+      "name": "structure.alphafold-db",
+      "domain": ["protein-structure", "biology", "drug-discovery-context"],
+      "status": "planned",
+      "tool": "gather.alphafold_db",
+      "primary_source": "https://alphafold.ebi.ac.uk/api-docs",
+      "notes": "Use AlphaFold Protein Structure Database API for structure records and provenance receipts."
+    },
+    {
+      "name": "structure.alphafold3",
+      "domain": ["protein-complexes", "biomolecular-interactions", "structural-biology"],
+      "status": "planned-evaluate",
+      "tool": "crucible.alphafold_artifact",
+      "primary_source": "https://deepmind.google/science/alphafold/",
+      "notes": "Treat AlphaFold 3/server/code outputs as model artifacts requiring version, license, input, and confidence provenance."
+    },
+    {
+      "name": "medical.midjourney-medical",
+      "domain": ["medical-imaging", "wellness-imaging", "ultrasound", "emerging-tools"],
+      "status": "watch-only",
+      "tool": "gather.midjourney_medical_monitor",
+      "primary_source": "https://www.midjourney.com/medical",
+      "notes": "Monitor current claims and evidence; do not present diagnostic integration until clinical, regulatory, and API evidence is available."
+    },
+    {
+      "name": "preprint.chemrxiv",
+      "domain": ["chemistry", "materials", "biochemistry"],
+      "status": "planned-evaluate",
+      "tool": "gather.chemrxiv",
+      "primary_source": "https://chemrxiv.org/",
+      "notes": "ChemRxiv is a chemistry preprint source; verify current API terms before implementing a connector."
+    },
+    {
+      "name": "preprint.osf",
+      "domain": ["multidisciplinary-preprints", "psychology", "social-science", "open-science"],
+      "status": "planned-evaluate",
+      "tool": "gather.osf_preprints",
+      "primary_source": "https://help.osf.io/article/376-preprints-home-page",
+      "notes": "OSF Preprints aggregates community preprint servers; verify current API path before implementation."
+    },
+    {
+      "name": "preprint.ssrn",
+      "domain": ["social-science", "law", "economics", "medicine", "business"],
+      "status": "planned-evaluate",
+      "tool": "gather.ssrn",
+      "primary_source": "https://www.ssrn.com/",
+      "notes": "SSRN spans several disciplines; prefer Crossref/OpenAlex metadata where public API access is unclear."
+    },
+    {
+      "name": "preprint.research-square",
+      "domain": ["multidisciplinary-preprints", "author-services"],
+      "status": "planned-evaluate",
+      "tool": "gather.research_square",
+      "primary_source": "https://www.researchsquare.com/request-api",
+      "notes": "Research Square provides API access by request; connector should reflect access conditions."
+    }
+  ]
+}

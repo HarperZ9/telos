@@ -4,6 +4,9 @@ import { readFileSync } from "node:fs";
 const catalog = JSON.parse(
   readFileSync(new URL("./integrations/mcp-tool-catalog.json", import.meta.url), "utf8")
 );
+const science = JSON.parse(
+  readFileSync(new URL("./integrations/science-research-adapters.json", import.meta.url), "utf8")
+);
 
 assert.equal(catalog.schema, "project-telos.mcp-tool-catalog/v1");
 assert.equal(catalog.action_schema, "project-telos.flagship-action/v1");
@@ -36,4 +39,30 @@ for (const tool of catalog.tools) {
 
 for (const status of ["available", "cli-bridge", "planned"]) {
   assert.ok(statuses.has(status), `missing availability status ${status}`);
+}
+
+assert.equal(science.schema, "project-telos.science-research-adapters/v1");
+assert.equal(science.freshness_policy.current_source_required, true);
+
+const adapterNames = new Set(science.adapters.map((adapter) => adapter.name));
+for (const name of [
+  "preprint.arxiv",
+  "preprint.biorxiv",
+  "preprint.medrxiv",
+  "literature.pubmed",
+  "literature.europepmc",
+  "literature.openalex",
+  "literature.crossref",
+  "literature.semantic-scholar",
+  "trials.clinicaltrials",
+  "structure.alphafold-db",
+  "structure.alphafold3",
+  "medical.midjourney-medical"
+]) {
+  assert.ok(adapterNames.has(name), `missing science adapter ${name}`);
+}
+
+for (const adapter of science.adapters) {
+  assert.ok(adapter.primary_source.startsWith("https://"), `${adapter.name} has primary source`);
+  assert.ok(adapter.status.length > 0, `${adapter.name} has status`);
 }
