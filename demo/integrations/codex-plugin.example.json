@@ -1,0 +1,35 @@
+{
+  "name": "project-telos-flagships",
+  "version": "0.1.0",
+  "description": "Project Telos flagship tools exposed through skills, CLI, and MCP.",
+  "skills": [
+    "flagship-operator-spine",
+    "gather-intake",
+    "crucible-verification",
+    "index-context",
+    "forum-orchestration",
+    "telos-reconcile"
+  ],
+  "mcpServers": {
+    "index": {
+      "command": "index",
+      "args": ["mcp"]
+    },
+    "forum": {
+      "command": "forum",
+      "args": ["mcp"]
+    },
+    "telos": {
+      "command": "node",
+      "args": ["C:/dev/public/telos/demo/flagship-workflow.mjs"],
+      "mode": "cli-json-bridge"
+    }
+  },
+  "cliEntrypoints": [
+    "gather",
+    "crucible",
+    "index",
+    "forum",
+    "node C:/dev/public/telos/demo/run.mjs"
+  ]
+}

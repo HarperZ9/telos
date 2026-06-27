@@ -1,0 +1,41 @@
+# Project Telos Integration Pack
+
+This folder is the platform bridge. The flagship tools stay standalone; integrations mount the same CLI and MCP contracts.
+
+## Integration Rule
+
+Business logic lives in the tools:
+
+- `gather` handles intake.
+- `index` handles structure and context.
+- `forum` handles routing and ledger orchestration.
+- `crucible` handles falsifiable verification.
+- `telos` handles reconciliation and the shared room.
+
+OpenAI Apps, OpenAI Agents, Anthropic Claude, Claude Code, Codex plugins, skills, IDEs, CLIs, TUIs, and full applications should call the same MCP tool catalog or CLI JSON commands. They should not duplicate tool behavior.
+
+## Local-First Transports
+
+- CLI JSON: works everywhere a process can run.
+- MCP stdio: local agent surfaces, Codex, Claude Code, desktop tools.
+- MCP Streamable HTTP: hosted apps, OpenAI Apps SDK style deployments, remote workspaces.
+
+## Tool Catalog
+
+`mcp-tool-catalog.json` is the provider-neutral source of truth for tool names, CLI fallbacks, MCP names, availability status, and next actions.
+
+Availability labels:
+
+- `available`: a native MCP server or command exists now.
+- `cli-bridge`: a CLI JSON command exists now and should be wrapped by a thin MCP adapter.
+- `planned`: the tool has a stable CLI surface and needs MCP parity work.
+
+## Packaging Targets
+
+- Codex plugin: expose skills plus MCP servers for `index`, `forum`, and Telos.
+- Superpowers skills: add thin workflows that call the CLI/MCP catalog.
+- Anthropic Claude and Claude Code: mount stdio MCP servers from the same catalog.
+- OpenAI Agents and Apps: mount MCP servers and render Telos receipts in the app UI.
+- IDEs, CLIs, and TUIs: call CLI JSON locally and render the same action envelope in their native surfaces.
+- Full applications: call CLI JSON for local desktop and MCP Streamable HTTP for hosted or distributed setups.
+- Workbench/Harness candidate: keep it as a consumer of the five flagships until the five-tool golden workflow is exceptional.
