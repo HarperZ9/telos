@@ -24,6 +24,8 @@
 - The catalog must label each surface as `available`, `cli-bridge`, or `planned`; do not imply an MCP server exists before it does.
 - Provider-specific examples must be configuration-only unless a platform requires a thin adapter; no OpenAI-only or Anthropic-only core path.
 - Stdio MCP is the local-first transport; Streamable HTTP is the remote/app transport; SSE is legacy-only and not the default.
+- IDE, CLI, TUI, plugin, skill, and full-application surfaces must all consume the same flagship contracts.
+- A future Workbench/Harness may become the sixth flagship, but this increment must strengthen the current five first and leave the harness as a consumer of their contracts, not a competing core.
 
 ---
 
@@ -62,9 +64,10 @@
 - Create: `C:\dev\public\telos\demo\integrations\codex-plugin.example.json`
 - Create: `C:\dev\public\telos\demo\integrations\claude-mcp.example.json`
 - Create: `C:\dev\public\telos\demo\integrations\openai-agents.example.py`
+- Create: `C:\dev\public\telos\demo\integrations\workbench-harness-notes.md`
 - Create: `C:\dev\public\telos\demo\integrations\README.md`
 - Create: `C:\dev\public\telos\demo\integrations.test.mjs`
-  - Provider-neutral integration pack for MCP, OpenAI Agents/Apps, Anthropic Claude/Claude Code, Codex plugins/skills, and app embedding.
+  - Provider-neutral integration pack for MCP, OpenAI Agents/Apps, Anthropic Claude/Claude Code, Codex plugins/skills, IDEs, CLIs, TUIs, and app embedding.
 
 ## Shared Python Interface
 
@@ -1182,6 +1185,7 @@ git commit -m "feat: add flagship workflow harness"
 - Create: `C:\dev\public\telos\demo\integrations\codex-plugin.example.json`
 - Create: `C:\dev\public\telos\demo\integrations\claude-mcp.example.json`
 - Create: `C:\dev\public\telos\demo\integrations\openai-agents.example.py`
+- Create: `C:\dev\public\telos\demo\integrations\workbench-harness-notes.md`
 - Create: `C:\dev\public\telos\demo\integrations\README.md`
 - Create: `C:\dev\public\telos\demo\integrations.test.mjs`
 
@@ -1360,6 +1364,33 @@ SYSTEM_PROMPT = (
 
 - [ ] **Step 5: Create the integration README**
 
+Write `demo/integrations/workbench-harness-notes.md`:
+
+```markdown
+# Workbench / Harness Candidate
+
+The five current flagships should reach an exceptional operating level before a sixth flagship is promoted.
+
+Candidate sixth flagship: a Project Telos Workbench/Harness that can appear as an IDE extension, CLI, TUI, desktop app, web app, or embedded panel. It does not own gather, index, forum, crucible, or telos logic. It consumes their contracts:
+
+- CLI JSON for universal local execution.
+- MCP stdio for local agent and desktop integrations.
+- MCP Streamable HTTP for hosted applications and remote workspaces.
+- The action envelope for receipts, next actions, and replay.
+- The integration catalog for tool names, routing, and provider packaging.
+
+Promotion gate:
+
+- All five existing flagships expose `status`, `doctor`, and `demo` or exact equivalents.
+- The golden workflow proves index -> gather -> forum -> crucible -> telos locally.
+- The provider-neutral catalog covers CLI, MCP, OpenAI, Anthropic, Codex plugins, Claude MCP, skills, IDE, CLI, TUI, and app surfaces.
+- The harness can switch surfaces without changing tool semantics.
+
+Until that gate is met, Workbench/Harness remains a consumer pattern, not a new flagship implementation.
+```
+
+- [ ] **Step 6: Create the integration README**
+
 Write `demo/integrations/README.md`:
 
 ```markdown
@@ -1395,10 +1426,12 @@ OpenAI Apps, OpenAI Agents, Anthropic Claude, Claude Code, Codex plugins, skills
 - Superpowers skills: add thin workflows that call the CLI/MCP catalog.
 - Anthropic Claude and Claude Code: mount stdio MCP servers from the same catalog.
 - OpenAI Agents and Apps: mount MCP servers and render Telos receipts in the app UI.
+- IDEs, CLIs, and TUIs: call CLI JSON locally and render the same action envelope in their native surfaces.
 - Full applications: call CLI JSON for local desktop and MCP Streamable HTTP for hosted or distributed setups.
+- Workbench/Harness candidate: keep it as a consumer of the five flagships until the five-tool golden workflow is exceptional.
 ```
 
-- [ ] **Step 6: Add the integration catalog test**
+- [ ] **Step 7: Add the integration catalog test**
 
 Write `demo/integrations.test.mjs`:
 
@@ -1436,7 +1469,7 @@ for (const tool of catalog.tools) {
 }
 ```
 
-- [ ] **Step 7: Run the integration test**
+- [ ] **Step 8: Run the integration test**
 
 Run:
 
@@ -1447,11 +1480,11 @@ node demo\integrations.test.mjs
 
 Expected: exit code `0`.
 
-- [ ] **Step 8: Commit**
+- [ ] **Step 9: Commit**
 
 ```powershell
 cd C:\dev\public\telos
-git add demo\integrations\mcp-tool-catalog.json demo\integrations\codex-plugin.example.json demo\integrations\claude-mcp.example.json demo\integrations\openai-agents.example.py demo\integrations\README.md demo\integrations.test.mjs
+git add demo\integrations\mcp-tool-catalog.json demo\integrations\codex-plugin.example.json demo\integrations\claude-mcp.example.json demo\integrations\openai-agents.example.py demo\integrations\workbench-harness-notes.md demo\integrations\README.md demo\integrations.test.mjs
 git commit -m "docs: add platform integration pack"
 ```
 
