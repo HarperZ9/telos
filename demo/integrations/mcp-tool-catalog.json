@@ -4,17 +4,56 @@
   "transports": ["stdio", "streamable-http"],
   "tools": [
     {
+      "name": "gather.status",
+      "flagship": "gather",
+      "description": "Emit Gather readiness and next actions as a Project Telos action envelope.",
+      "cli": ["gather", "status", "--json"],
+      "mcp": {
+        "status": "available",
+        "server": "gather",
+        "method": "tools/call",
+        "tool": "gather.status"
+      },
+      "next_actions": ["index.map", "gather.docs"]
+    },
+    {
+      "name": "gather.doctor",
+      "flagship": "gather",
+      "description": "Check Gather operator-spine readiness.",
+      "cli": ["gather", "doctor", "--json"],
+      "mcp": {
+        "status": "available",
+        "server": "gather",
+        "method": "tools/call",
+        "tool": "gather.doctor"
+      },
+      "next_actions": ["crucible.assess"]
+    },
+    {
       "name": "gather.docs",
       "flagship": "gather",
       "description": "Read local text files or directories and emit provenance receipts.",
       "cli": ["gather", "docs", "{path}", "--json"],
       "mcp": {
-        "status": "planned",
+        "status": "available",
         "server": "gather",
         "method": "tools/call",
         "tool": "gather.docs"
       },
       "next_actions": ["index.map", "forum.route", "crucible.assess"]
+    },
+    {
+      "name": "gather.arxiv",
+      "flagship": "gather",
+      "description": "Fetch current arXiv metadata by id or query and emit provenance receipts.",
+      "cli": ["gather", "arxiv", "{query}", "--json"],
+      "mcp": {
+        "status": "available",
+        "server": "gather",
+        "method": "tools/call",
+        "tool": "gather.arxiv"
+      },
+      "next_actions": ["crucible.assess", "index.context"]
     },
     {
       "name": "gather.run",
@@ -82,12 +121,38 @@
       "next_actions": ["crucible.assess", "telos.workflow"]
     },
     {
+      "name": "crucible.status",
+      "flagship": "crucible",
+      "description": "Emit Crucible readiness and next actions as a Project Telos action envelope.",
+      "cli": ["crucible", "status", "--json"],
+      "mcp": {
+        "status": "available",
+        "server": "crucible",
+        "method": "tools/call",
+        "tool": "crucible.status"
+      },
+      "next_actions": ["telos.workflow"]
+    },
+    {
+      "name": "crucible.doctor",
+      "flagship": "crucible",
+      "description": "Check Crucible operator-spine readiness.",
+      "cli": ["crucible", "doctor", "--json"],
+      "mcp": {
+        "status": "available",
+        "server": "crucible",
+        "method": "tools/call",
+        "tool": "crucible.doctor"
+      },
+      "next_actions": ["gather.docs"]
+    },
+    {
       "name": "crucible.assess",
       "flagship": "crucible",
       "description": "Assess falsifiable claims against measurements and emit MATCH/DRIFT/UNVERIFIABLE verdicts.",
       "cli": ["crucible", "assess", "{thesis}", "--measurements", "{measurements}", "--json"],
       "mcp": {
-        "status": "planned",
+        "status": "available",
         "server": "crucible",
         "method": "tools/call",
         "tool": "crucible.assess"

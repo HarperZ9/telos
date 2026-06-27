@@ -6,6 +6,8 @@ and never reimplements gather, index, forum, crucible, or telos behavior here.
 """
 
 PROJECT_TELOS_MCP_SERVERS = {
+    "gather": {"command": "gather", "args": ["mcp"]},
+    "crucible": {"command": "crucible", "args": ["mcp"]},
     "index": {"command": "index", "args": ["mcp"]},
     "forum": {"command": "forum", "args": ["mcp"]},
     "telos": {

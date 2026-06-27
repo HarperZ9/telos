@@ -15,12 +15,17 @@ assert.ok(catalog.transports.includes("streamable-http"));
 
 const names = new Set(catalog.tools.map((tool) => tool.name));
 for (const name of [
+  "gather.status",
+  "gather.doctor",
   "gather.docs",
+  "gather.arxiv",
   "gather.run",
   "index.map",
   "index.context",
   "forum.route",
   "forum.ledger.summary",
+  "crucible.status",
+  "crucible.doctor",
   "crucible.assess",
   "crucible.recheck",
   "telos.status",
@@ -39,6 +44,11 @@ for (const tool of catalog.tools) {
 
 for (const status of ["available", "cli-bridge", "planned"]) {
   assert.ok(statuses.has(status), `missing availability status ${status}`);
+}
+
+const byName = new Map(catalog.tools.map((tool) => [tool.name, tool]));
+for (const name of ["gather.docs", "gather.arxiv", "crucible.assess"]) {
+  assert.equal(byName.get(name).mcp.status, "available", `${name} is MCP available`);
 }
 
 assert.equal(science.schema, "project-telos.science-research-adapters/v1");
