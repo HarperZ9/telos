@@ -4,6 +4,7 @@ All notable changes to Project Telos. Telos is currently a source demo and share
 
 ## Unreleased
 
+- Forum prose humanization: catalog now includes `forum.prose.humanize`, bringing the provider-neutral flagship surface to 23 available MCP tools.
 Presentation and operator-surface housekeeping for five-flagship parity.
 
 - README: adds the shared current-status block and consistent five-flagship navigation.
