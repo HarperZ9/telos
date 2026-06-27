@@ -24,6 +24,10 @@ OpenAI Apps, OpenAI Agents, Anthropic Claude, Claude Code, Codex plugins, skills
 
 `mcp-tool-catalog.json` is the provider-neutral source of truth for tool names, CLI fallbacks, MCP names, availability status, and next actions.
 
+`mcp-server-manifest.json` is the provider-neutral source of truth for launching the five flagship MCP servers from source checkouts or package installs. `../server-manifest.mjs --codex` emits Codex TOML; `../server-manifest.mjs --claude-json` emits Claude-style JSON.
+
+`admission-telemetry-conventions.json` records the Project Telos split between an admission decision and a verification verdict, plus the negative cases that must be observable without raw prompt, raw tool-argument, or raw evidence capture.
+
 `../mcp-runtime-contract.test.mjs` checks the catalog against the sibling MCP runtimes so `available` means the tool is actually present in `tools/list`.
 
 `science-research-adapters.json` is the current-source adapter map for preprints, scholarly metadata, clinical trial registries, persistent identifiers, AlphaFold, Midjourney Medical monitoring, and research graphs.
@@ -41,7 +45,7 @@ Availability labels:
 ## Packaging Targets
 
 - Codex plugin: expose skills plus MCP servers for `gather`, `crucible`, `index`, `forum`, and Telos.
-- Telos MCP: `node demo/telos-mcp.mjs` exposes `telos.status`, `telos.doctor`, `telos.room`, `telos.workflow`, and `telos.catalog`.
+- Telos MCP: `node demo/telos-mcp.mjs` exposes `telos.status`, `telos.doctor`, `telos.room`, `telos.workflow`, `telos.catalog`, `telos.server.manifest`, and `telos.admission.telemetry`.
 - Gather MCP: `gather mcp` exposes `gather.status`, `gather.doctor`, `gather.docs`, `gather.arxiv`, and `gather.run`.
 - Crucible MCP: `crucible mcp` exposes `crucible.status`, `crucible.doctor`, `crucible.assess`, and `crucible.recheck`.
 - Index MCP: `index mcp` exposes `index.map`, `index.context`, `index.status`, `index.doctor`, and the lower-level graph, focus, verify, router, and internals tools.

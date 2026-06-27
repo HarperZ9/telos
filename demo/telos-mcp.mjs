@@ -40,6 +40,16 @@ export const tools = [
     inputSchema: emptyInputSchema
   },
   {
+    name: "telos.server.manifest",
+    description: "Return the provider-neutral MCP server launch manifest for all five flagships.",
+    inputSchema: emptyInputSchema
+  },
+  {
+    name: "telos.admission.telemetry",
+    description: "Return the admission decision and verification verdict telemetry convention.",
+    inputSchema: emptyInputSchema
+  },
+  {
     name: "telos.showcase.scout",
     description: "Return the fixture-backed OSS Proof Showcase scout results as structured content.",
     inputSchema: emptyInputSchema
@@ -52,6 +62,8 @@ const toolScripts = new Map([
   ["telos.room", ["room.mjs", "--json"]],
   ["telos.workflow", ["flagship-workflow.mjs"]],
   ["telos.catalog", ["catalog.mjs"]],
+  ["telos.server.manifest", ["server-manifest.mjs"]],
+  ["telos.admission.telemetry", ["admission-telemetry.mjs"]],
   ["telos.showcase.scout", ["showcase.mjs", "scout", "--fixture", "--json"]]
 ]);
 function runTool(name) {
