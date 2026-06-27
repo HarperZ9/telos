@@ -36,3 +36,8 @@ Every packet includes a `not_verified` section for skipped tests, files not
 inspected, assumptions, and unobserved state. Later retry, refund, dispute,
 maintainer feedback, or re-run events append to `follow_up_events`; they do not
 rewrite the original evidence.
+## Live Smoke
+
+`node demo/showcase-live-smoke.mjs` queries GitHub for the current pandas
+candidate family. It is not part of the default unit test slice because it
+requires network access and GitHub CLI authentication.
