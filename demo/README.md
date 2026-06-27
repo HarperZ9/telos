@@ -32,6 +32,20 @@ The three possible outcomes.
 node demo/run.mjs
 ```
 
+Operator-spine scripts emit the same JSON action envelope used by the other
+flagships:
+
+```
+node demo/status.mjs
+node demo/doctor.mjs
+node demo/flagship-workflow.mjs
+```
+
+`flagship-workflow.mjs` dogfoods the five-tool chain by mapping Telos with
+Index, gathering the operator-spine spec with Gather, routing the work through
+Forum, checking smoke claims with Crucible, and reconciling the result through
+the Telos certificate loop.
+
 - **Node >= 18.** (Tested on Node 25.)
 - **Zero external dependencies.** No `npm install`. The organs the loop needs (`render-nd`, `render-sound`, `sense-core`, `viable-viz`) are vendored into this folder as plain ESM `.mjs` files. Nothing is fetched, nothing is built.
 
