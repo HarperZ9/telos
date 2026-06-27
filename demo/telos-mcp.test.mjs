@@ -1,5 +1,6 @@
 import assert from "node:assert/strict";
 import { spawnSync } from "node:child_process";
+import { readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { handleRequest, tools } from "./telos-mcp.mjs";
 
@@ -18,7 +19,7 @@ assert.equal(init.result.serverInfo.name, "project-telos-telos");
 
 const listed = handleRequest(request("tools/list"));
 const names = new Set(listed.result.tools.map((tool) => tool.name));
-for (const name of ["telos.status", "telos.doctor", "telos.room", "telos.workflow"]) {
+for (const name of ["telos.status", "telos.doctor", "telos.room", "telos.workflow", "telos.catalog"]) {
   assert.ok(names.has(name), `missing ${name}`);
 }
 
@@ -33,6 +34,18 @@ assert.equal(status.result.structuredContent.tool, "telos");
 assert.equal(status.result.structuredContent.command, "status");
 assert.match(status.result.content[0].text, /"command": "status"/);
 
+const expectedCatalog = JSON.parse(
+  readFileSync(new URL("./integrations/mcp-tool-catalog.json", import.meta.url), "utf8")
+);
+const catalog = handleRequest(request("tools/call", { name: "telos.catalog", arguments: {} }));
+assert.deepEqual(catalog.result.structuredContent, expectedCatalog);
+assert.deepEqual(JSON.parse(catalog.result.content[0].text), expectedCatalog);
+assert.equal(catalog.result.structuredContent.schema, "project-telos.mcp-tool-catalog/v1");
+assert.ok(
+  catalog.result.structuredContent.tools.some((tool) => tool.name === "telos.catalog"),
+  "catalog includes telos.catalog"
+);
+
 const badTool = handleRequest(request("tools/call", { name: "telos.missing", arguments: {} }));
 assert.equal(badTool.error.code, -32000);
 assert.match(badTool.error.message, /unknown tool/);
@@ -46,3 +59,4 @@ assert.equal(stdio.status, 0, stdio.stderr || stdio.stdout);
 const stdioResponse = JSON.parse(stdio.stdout.trim());
 assert.equal(stdioResponse.id, 7);
 assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.workflow"));
+assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.catalog"));
