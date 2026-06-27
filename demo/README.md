@@ -39,12 +39,16 @@ flagships:
 node demo/status.mjs
 node demo/doctor.mjs
 node demo/room.mjs
+node demo/catalog.mjs --summary
 node demo/flagship-workflow.mjs
 ```
 
 `room.mjs` is the quickest operator view: it summarizes readiness across
 Gather, Crucible, Index, Forum, and Telos, and `node demo/room.mjs --json`
 emits the same Project Telos action envelope for hosts and plugins.
+
+`catalog.mjs --summary` prints the same provider-neutral tool catalog as a short
+operator map, while plain `catalog.mjs` keeps the full JSON contract for hosts.
 
 `flagship-workflow.mjs` dogfoods the five-tool chain by mapping Telos with
 Index, gathering the operator-spine spec with Gather, routing the work through

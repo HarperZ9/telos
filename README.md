@@ -19,9 +19,11 @@ Zero dependencies, Node 18 or newer.
 
 ```bash
 node demo/run.mjs
+node demo/catalog.mjs --summary
 ```
 
 Open the visual certificate-loop surface at [`demo/index.html`](demo/index.html).
+Use `node demo/catalog.mjs --summary` for a compact operator map of the CLI and MCP surface.
 
 ## Why it matters
 
