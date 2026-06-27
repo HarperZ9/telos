@@ -25,6 +25,7 @@ assert.match(html, /<table class="matrix">/);
 assert.match(html, /<caption>The room view summarizes/);
 assert.match(html, /node demo\/room\.mjs --json/);
 assert.match(html, /node demo\/flagship-workflow\.mjs/);
+assert.match(html, /All five flagships expose native tools/);
 assert.match(html, /@media\(prefers-reduced-motion:reduce\)/);
 assert.match(html, /aria-label="Current room state is MATCH"/);
 
