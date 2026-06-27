@@ -28,3 +28,31 @@ assert.throws(
   () => assertNoSensitivePaths({ path: "C:\\Users\\Zain\\secret.txt" }),
   /sensitive local path/
 );
+
+import { spawnSync } from "node:child_process";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+import { scoutFixture, renderScoutTable } from "./showcase/scout.mjs";
+
+const here = path.dirname(fileURLToPath(import.meta.url));
+const fixtureScout = scoutFixture({ now: new Date("2026-06-27T12:00:00Z") });
+assert.equal(fixtureScout.schema, "project-telos.oss-scout/v1");
+assert.equal(fixtureScout.candidates.length, 1);
+assert.equal(fixtureScout.candidates[0].score.priority, 70);
+assert.match(renderScoutTable(fixtureScout), /pandas-dev\/pandas#66050/);
+
+const cliScout = spawnSync(process.execPath, [path.join(here, "showcase.mjs"), "scout", "--fixture", "--json"], {
+  cwd: path.resolve(here, ".."),
+  encoding: "utf8"
+});
+assert.equal(cliScout.status, 0, cliScout.stderr || cliScout.stdout);
+const cliScoutPayload = JSON.parse(cliScout.stdout);
+assert.equal(cliScoutPayload.schema, "project-telos.oss-scout/v1");
+assert.equal(cliScoutPayload.candidates[0].issue.number, 66050);
+
+const cliScoutHuman = spawnSync(process.execPath, [path.join(here, "showcase.mjs"), "scout", "--fixture"], {
+  cwd: path.resolve(here, ".."),
+  encoding: "utf8"
+});
+assert.equal(cliScoutHuman.status, 0, cliScoutHuman.stderr || cliScoutHuman.stdout);
+assert.match(cliScoutHuman.stdout, /^OSS Proof Showcase Candidates/);
