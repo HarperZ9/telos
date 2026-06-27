@@ -48,6 +48,16 @@ export const tools = [
     name: "telos.admission.telemetry",
     description: "Return the admission decision and verification verdict telemetry convention.",
     inputSchema: emptyInputSchema
+  },
+  {
+    name: "telos.context.envelope",
+    description: "Return the large-workspace context envelope convention for readable, receipt-chained agent work.",
+    inputSchema: emptyInputSchema
+  },
+  {
+    name: "telos.action.receipt",
+    description: "Return the enterprise action receipt interface and append-only persistence convention.",
+    inputSchema: emptyInputSchema
   }
 ];
 
@@ -58,7 +68,9 @@ const toolScripts = new Map([
   ["telos.workflow", ["flagship-workflow.mjs"]],
   ["telos.catalog", ["catalog.mjs"]],
   ["telos.server.manifest", ["server-manifest.mjs"]],
-  ["telos.admission.telemetry", ["admission-telemetry.mjs"]]
+  ["telos.admission.telemetry", ["admission-telemetry.mjs"]],
+  ["telos.context.envelope", ["context-envelope.mjs"]],
+  ["telos.action.receipt", ["action-receipt.mjs"]]
 ]);
 
 function runTool(name) {

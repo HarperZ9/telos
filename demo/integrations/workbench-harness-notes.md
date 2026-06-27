@@ -8,6 +8,8 @@ Candidate sixth flagship: a Project Telos Workbench/Harness that can appear as a
 - MCP stdio for local agent and desktop integrations.
 - MCP Streamable HTTP for hosted applications and remote workspaces.
 - The action envelope for receipts, next actions, and replay.
+- The action receipt convention for input digests, component/config identity, side-effect classes, typed stop reasons, verification verdicts, policy decisions, and append-only compensation.
+- The context envelope convention for source-ref compression, large-codebase routing, readability gates, and freshness checks.
 - The integration catalog for tool names, routing, and provider packaging.
 
 The larger product direction is a unified tool group for modern AI workflow problems: intake, context, routing, verification, provenance, replay, interoperability, and operator trust across local, national, and international work settings. The harness earns that scope by composing the five flagships, not by replacing them.
