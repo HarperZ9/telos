@@ -334,6 +334,24 @@
       ]
     },
     {
+      "name": "telos.catalog",
+      "flagship": "telos",
+      "description": "Return the provider-neutral Project Telos MCP tool catalog.",
+      "cli": [
+        "node",
+        "demo/catalog.mjs"
+      ],
+      "mcp": {
+        "status": "available",
+        "server": "telos",
+        "method": "tools/call",
+        "tool": "telos.catalog"
+      },
+      "next_actions": [
+        "telos.workflow"
+      ]
+    },
+    {
       "name": "telos.workflow",
       "flagship": "telos",
       "description": "Run the local golden workflow and reconcile the five flagship receipts.",

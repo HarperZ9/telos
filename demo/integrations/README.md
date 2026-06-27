@@ -41,7 +41,7 @@ Availability labels:
 ## Packaging Targets
 
 - Codex plugin: expose skills plus MCP servers for `gather`, `crucible`, `index`, `forum`, and Telos.
-- Telos MCP: `node demo/telos-mcp.mjs` exposes `telos.status`, `telos.doctor`, `telos.room`, and `telos.workflow`.
+- Telos MCP: `node demo/telos-mcp.mjs` exposes `telos.status`, `telos.doctor`, `telos.room`, `telos.workflow`, and `telos.catalog`.
 - Gather MCP: `gather mcp` exposes `gather.status`, `gather.doctor`, `gather.docs`, and `gather.arxiv`.
 - Crucible MCP: `crucible mcp` exposes `crucible.status`, `crucible.doctor`, and `crucible.assess`.
 - Superpowers skills: add thin workflows that call the CLI/MCP catalog.

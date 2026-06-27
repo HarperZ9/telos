@@ -33,6 +33,11 @@ export const tools = [
     name: "telos.workflow",
     description: "Run the local golden workflow and reconcile the five flagship receipts.",
     inputSchema: emptyInputSchema
+  },
+  {
+    name: "telos.catalog",
+    description: "Return the provider-neutral Project Telos MCP tool catalog.",
+    inputSchema: emptyInputSchema
   }
 ];
 
@@ -40,7 +45,8 @@ const toolScripts = new Map([
   ["telos.status", ["status.mjs"]],
   ["telos.doctor", ["doctor.mjs"]],
   ["telos.room", ["room.mjs", "--json"]],
-  ["telos.workflow", ["flagship-workflow.mjs"]]
+  ["telos.workflow", ["flagship-workflow.mjs"]],
+  ["telos.catalog", ["catalog.mjs"]]
 ]);
 
 function runTool(name) {

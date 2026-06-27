@@ -31,7 +31,8 @@ for (const name of [
   "telos.status",
   "telos.doctor",
   "telos.room",
-  "telos.workflow"
+  "telos.workflow",
+  "telos.catalog"
 ]) {
   assert.ok(names.has(name), `missing ${name}`);
 }
@@ -58,7 +59,8 @@ for (const name of [
   "telos.status",
   "telos.doctor",
   "telos.room",
-  "telos.workflow"
+  "telos.workflow",
+  "telos.catalog"
 ]) {
   assert.equal(byName.get(name).mcp.status, "available", `${name} is MCP available`);
 }
