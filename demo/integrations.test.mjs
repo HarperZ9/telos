@@ -29,6 +29,7 @@ for (const name of [
   "crucible.assess",
   "crucible.recheck",
   "telos.status",
+  "telos.doctor",
   "telos.room",
   "telos.workflow"
 ]) {
@@ -36,19 +37,29 @@ for (const name of [
 }
 
 const statuses = new Set();
+const allowedStatuses = new Set(["available", "cli-bridge", "planned"]);
 for (const tool of catalog.tools) {
   assert.match(tool.name, /^(gather|index|forum|crucible|telos)\.[a-z.]+$/);
   assert.ok(Array.isArray(tool.cli) && tool.cli.length > 0, `${tool.name} has CLI fallback`);
   assert.equal(tool.mcp.method, "tools/call");
+  assert.ok(allowedStatuses.has(tool.mcp.status), `${tool.name} has known MCP availability`);
   statuses.add(tool.mcp.status);
 }
 
-for (const status of ["available", "cli-bridge", "planned"]) {
+for (const status of ["available", "planned"]) {
   assert.ok(statuses.has(status), `missing availability status ${status}`);
 }
 
 const byName = new Map(catalog.tools.map((tool) => [tool.name, tool]));
-for (const name of ["gather.docs", "gather.arxiv", "crucible.assess"]) {
+for (const name of [
+  "gather.docs",
+  "gather.arxiv",
+  "crucible.assess",
+  "telos.status",
+  "telos.doctor",
+  "telos.room",
+  "telos.workflow"
+]) {
   assert.equal(byName.get(name).mcp.status, "available", `${name} is MCP available`);
 }
 

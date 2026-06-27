@@ -60,6 +60,19 @@ asyncio.run(main())
 };
 
 function listRuntimeTools(server) {
+  if (server === "telos") {
+    const code = `
+import { handleRequest } from "./demo/telos-mcp.mjs";
+const resp = handleRequest({"jsonrpc":"2.0","id":1,"method":"tools/list"});
+console.log(JSON.stringify(resp.result.tools.map((tool) => tool.name)));
+`.trim();
+    const result = spawnSync(process.execPath, ["--input-type=module", "-e", code], {
+      cwd: telosRoot,
+      encoding: "utf8"
+    });
+    assert.equal(result.status, 0, result.stderr || result.stdout);
+    return new Set(JSON.parse(result.stdout));
+  }
   const spec = serverSources[server];
   assert.ok(spec, `no runtime probe for ${server}`);
   const repoRoot = path.join(publicRoot, spec.repo);

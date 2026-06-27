@@ -10,11 +10,7 @@ PROJECT_TELOS_MCP_SERVERS = {
     "crucible": {"command": "crucible", "args": ["mcp"]},
     "index": {"command": "index", "args": ["mcp"]},
     "forum": {"command": "forum", "args": ["mcp"]},
-    "telos": {
-        "command": "node",
-        "args": ["C:/dev/public/telos/demo/flagship-workflow.mjs"],
-        "mode": "cli-json-bridge",
-    },
+    "telos": {"command": "node", "args": ["C:/dev/public/telos/demo/telos-mcp.mjs"]},
 }
 
 SYSTEM_PROMPT = (

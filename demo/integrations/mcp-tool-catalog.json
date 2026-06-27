@@ -1,215 +1,355 @@
 {
   "schema": "project-telos.mcp-tool-catalog/v1",
   "action_schema": "project-telos.flagship-action/v1",
-  "transports": ["stdio", "streamable-http"],
+  "transports": [
+    "stdio",
+    "streamable-http"
+  ],
   "tools": [
     {
       "name": "gather.status",
       "flagship": "gather",
       "description": "Emit Gather readiness and next actions as a Project Telos action envelope.",
-      "cli": ["gather", "status", "--json"],
+      "cli": [
+        "gather",
+        "status",
+        "--json"
+      ],
       "mcp": {
         "status": "available",
         "server": "gather",
         "method": "tools/call",
         "tool": "gather.status"
       },
-      "next_actions": ["index.map", "gather.docs"]
+      "next_actions": [
+        "index.map",
+        "gather.docs"
+      ]
     },
     {
       "name": "gather.doctor",
       "flagship": "gather",
       "description": "Check Gather operator-spine readiness.",
-      "cli": ["gather", "doctor", "--json"],
+      "cli": [
+        "gather",
+        "doctor",
+        "--json"
+      ],
       "mcp": {
         "status": "available",
         "server": "gather",
         "method": "tools/call",
         "tool": "gather.doctor"
       },
-      "next_actions": ["crucible.assess"]
+      "next_actions": [
+        "crucible.assess"
+      ]
     },
     {
       "name": "gather.docs",
       "flagship": "gather",
       "description": "Read local text files or directories and emit provenance receipts.",
-      "cli": ["gather", "docs", "{path}", "--json"],
+      "cli": [
+        "gather",
+        "docs",
+        "{path}",
+        "--json"
+      ],
       "mcp": {
         "status": "available",
         "server": "gather",
         "method": "tools/call",
         "tool": "gather.docs"
       },
-      "next_actions": ["index.map", "forum.route", "crucible.assess"]
+      "next_actions": [
+        "index.map",
+        "forum.route",
+        "crucible.assess"
+      ]
     },
     {
       "name": "gather.arxiv",
       "flagship": "gather",
       "description": "Fetch current arXiv metadata by id or query and emit provenance receipts.",
-      "cli": ["gather", "arxiv", "{query}", "--json"],
+      "cli": [
+        "gather",
+        "arxiv",
+        "{query}",
+        "--json"
+      ],
       "mcp": {
         "status": "available",
         "server": "gather",
         "method": "tools/call",
         "tool": "gather.arxiv"
       },
-      "next_actions": ["crucible.assess", "index.context"]
+      "next_actions": [
+        "crucible.assess",
+        "index.context"
+      ]
     },
     {
       "name": "gather.run",
       "flagship": "gather",
       "description": "Run a multi-source research intake config and emit a witnessed run record.",
-      "cli": ["gather", "run", "{config}", "--json"],
+      "cli": [
+        "gather",
+        "run",
+        "{config}",
+        "--json"
+      ],
       "mcp": {
         "status": "planned",
         "server": "gather",
         "method": "tools/call",
         "tool": "gather.run"
       },
-      "next_actions": ["crucible.assess", "forum.route"]
+      "next_actions": [
+        "crucible.assess",
+        "forum.route"
+      ]
     },
     {
       "name": "index.map",
       "flagship": "index",
       "description": "Map a workspace or repo and emit structural context.",
-      "cli": ["index", "map", "--root", "{root}", "--json"],
+      "cli": [
+        "index",
+        "map",
+        "--root",
+        "{root}",
+        "--json"
+      ],
       "mcp": {
         "status": "available",
         "server": "index",
         "method": "tools/call",
         "tool": "index.map"
       },
-      "next_actions": ["gather.docs", "forum.route"]
+      "next_actions": [
+        "gather.docs",
+        "forum.route"
+      ]
     },
     {
       "name": "index.context",
       "flagship": "index",
       "description": "Render a compact context pack from a workspace graph.",
-      "cli": ["index", "context", "--root", "{root}", "--json"],
+      "cli": [
+        "index",
+        "context",
+        "--root",
+        "{root}",
+        "--json"
+      ],
       "mcp": {
         "status": "available",
         "server": "index",
         "method": "tools/call",
         "tool": "index.context"
       },
-      "next_actions": ["forum.route", "telos.workflow"]
+      "next_actions": [
+        "forum.route",
+        "telos.workflow"
+      ]
     },
     {
       "name": "forum.route",
       "flagship": "forum",
       "description": "Route a request to a capability lane and expose low-confidence escalation.",
-      "cli": ["forum", "route", "{text}"],
+      "cli": [
+        "forum",
+        "route",
+        "{text}"
+      ],
       "mcp": {
         "status": "available",
         "server": "forum",
         "method": "tools/call",
         "tool": "forum.route"
       },
-      "next_actions": ["gather.docs", "crucible.assess"]
+      "next_actions": [
+        "gather.docs",
+        "crucible.assess"
+      ]
     },
     {
       "name": "forum.ledger.summary",
       "flagship": "forum",
       "description": "Summarize a witnessed causal ledger.",
-      "cli": ["forum", "ledger", "summary", "--ledger", "{dir}", "--json"],
+      "cli": [
+        "forum",
+        "ledger",
+        "summary",
+        "--ledger",
+        "{dir}",
+        "--json"
+      ],
       "mcp": {
         "status": "available",
         "server": "forum",
         "method": "tools/call",
         "tool": "forum.ledger.summary"
       },
-      "next_actions": ["crucible.assess", "telos.workflow"]
+      "next_actions": [
+        "crucible.assess",
+        "telos.workflow"
+      ]
     },
     {
       "name": "crucible.status",
       "flagship": "crucible",
       "description": "Emit Crucible readiness and next actions as a Project Telos action envelope.",
-      "cli": ["crucible", "status", "--json"],
+      "cli": [
+        "crucible",
+        "status",
+        "--json"
+      ],
       "mcp": {
         "status": "available",
         "server": "crucible",
         "method": "tools/call",
         "tool": "crucible.status"
       },
-      "next_actions": ["telos.workflow"]
+      "next_actions": [
+        "telos.workflow"
+      ]
     },
     {
       "name": "crucible.doctor",
       "flagship": "crucible",
       "description": "Check Crucible operator-spine readiness.",
-      "cli": ["crucible", "doctor", "--json"],
+      "cli": [
+        "crucible",
+        "doctor",
+        "--json"
+      ],
       "mcp": {
         "status": "available",
         "server": "crucible",
         "method": "tools/call",
         "tool": "crucible.doctor"
       },
-      "next_actions": ["gather.docs"]
+      "next_actions": [
+        "gather.docs"
+      ]
     },
     {
       "name": "crucible.assess",
       "flagship": "crucible",
       "description": "Assess falsifiable claims against measurements and emit MATCH/DRIFT/UNVERIFIABLE verdicts.",
-      "cli": ["crucible", "assess", "{thesis}", "--measurements", "{measurements}", "--json"],
+      "cli": [
+        "crucible",
+        "assess",
+        "{thesis}",
+        "--measurements",
+        "{measurements}",
+        "--json"
+      ],
       "mcp": {
         "status": "available",
         "server": "crucible",
         "method": "tools/call",
         "tool": "crucible.assess"
       },
-      "next_actions": ["crucible.recheck", "telos.workflow"]
+      "next_actions": [
+        "crucible.recheck",
+        "telos.workflow"
+      ]
     },
     {
       "name": "crucible.recheck",
       "flagship": "crucible",
       "description": "Recheck a persisted assessment or replay descriptor-bearing measurements.",
-      "cli": ["crucible", "recheck", "{registry}", "--json"],
+      "cli": [
+        "crucible",
+        "recheck",
+        "{registry}",
+        "--json"
+      ],
       "mcp": {
         "status": "planned",
         "server": "crucible",
         "method": "tools/call",
         "tool": "crucible.recheck"
       },
-      "next_actions": ["telos.workflow"]
+      "next_actions": [
+        "telos.workflow"
+      ]
     },
     {
       "name": "telos.status",
       "flagship": "telos",
       "description": "Emit Telos shared-room readiness as a Project Telos action envelope.",
-      "cli": ["node", "demo/status.mjs"],
+      "cli": [
+        "node",
+        "demo/status.mjs"
+      ],
       "mcp": {
-        "status": "cli-bridge",
+        "status": "available",
         "server": "telos",
         "method": "tools/call",
         "tool": "telos.status"
       },
-      "next_actions": ["index.map", "gather.docs"]
+      "next_actions": [
+        "index.map",
+        "gather.docs"
+      ]
+    },
+    {
+      "name": "telos.doctor",
+      "flagship": "telos",
+      "description": "Check Telos operator-spine readiness.",
+      "cli": [
+        "node",
+        "demo/doctor.mjs"
+      ],
+      "mcp": {
+        "status": "available",
+        "server": "telos",
+        "method": "tools/call",
+        "tool": "telos.doctor"
+      },
+      "next_actions": [
+        "telos.workflow"
+      ]
     },
     {
       "name": "telos.room",
       "flagship": "telos",
       "description": "Render the five-flagship operator room in human or JSON action-envelope form.",
-      "cli": ["node", "demo/room.mjs", "--json"],
+      "cli": [
+        "node",
+        "demo/room.mjs",
+        "--json"
+      ],
       "mcp": {
-        "status": "cli-bridge",
+        "status": "available",
         "server": "telos",
         "method": "tools/call",
         "tool": "telos.room"
       },
-      "next_actions": ["telos.workflow"]
+      "next_actions": [
+        "telos.workflow"
+      ]
     },
     {
       "name": "telos.workflow",
       "flagship": "telos",
       "description": "Run the local golden workflow and reconcile the five flagship receipts.",
-      "cli": ["node", "demo/flagship-workflow.mjs"],
+      "cli": [
+        "node",
+        "demo/flagship-workflow.mjs"
+      ],
       "mcp": {
-        "status": "cli-bridge",
+        "status": "available",
         "server": "telos",
         "method": "tools/call",
         "tool": "telos.workflow"
       },
-      "next_actions": ["crucible.recheck"]
+      "next_actions": [
+        "crucible.recheck"
+      ]
     }
   ]
 }
