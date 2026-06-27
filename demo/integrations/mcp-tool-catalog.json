@@ -186,6 +186,19 @@
       "next_actions": ["index.map", "gather.docs"]
     },
     {
+      "name": "telos.room",
+      "flagship": "telos",
+      "description": "Render the five-flagship operator room in human or JSON action-envelope form.",
+      "cli": ["node", "demo/room.mjs", "--json"],
+      "mcp": {
+        "status": "cli-bridge",
+        "server": "telos",
+        "method": "tools/call",
+        "tool": "telos.room"
+      },
+      "next_actions": ["telos.workflow"]
+    },
+    {
       "name": "telos.workflow",
       "flagship": "telos",
       "description": "Run the local golden workflow and reconcile the five flagship receipts.",

@@ -47,6 +47,7 @@ Availability labels:
 - IDEs, CLIs, and TUIs: call CLI JSON locally and render the same action envelope in their native surfaces.
 - Full applications: call CLI JSON for local desktop and MCP Streamable HTTP for hosted or distributed setups.
 - Workbench/Harness candidate: keep it as a consumer of the five flagships until the five-tool golden workflow is exceptional.
+- Operator room: `node demo/room.mjs` for humans, `node demo/room.mjs --json` for hosts.
 
 ## Science And Research Domains
 

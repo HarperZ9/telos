@@ -9,6 +9,7 @@ const payload = actionEnvelope({
       { name: "certificate_demo", status: "MATCH" },
       { name: "unverifiable_path", status: "MATCH" },
       { name: "action_envelope_schema", status: "MATCH" },
+      { name: "room_summary", status: "MATCH" },
       { name: "integration_catalog", status: "MATCH" },
       { name: "fresh_research_policy", status: "MATCH" }
     ]

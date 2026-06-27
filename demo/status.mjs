@@ -6,7 +6,7 @@ const payload = actionEnvelope({
   command: "status",
   native: {
     role: "shared-room-reconciliation",
-    commands: ["status", "doctor", "run", "flagship-workflow"],
+    commands: ["room", "status", "doctor", "run", "flagship-workflow"],
     statuses: ["MATCH", "DRIFT", "UNVERIFIABLE", "ERROR"]
   },
   nextActions: [
