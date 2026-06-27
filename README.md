@@ -44,9 +44,8 @@ perception, and action floor.
 
 - **Release:** source demo; command surface is `node demo/run.mjs`, `node demo/room.mjs`, `node demo/status.mjs`, `node demo/doctor.mjs`, `node demo/catalog.mjs`, and `node demo/flagship-workflow.mjs`.
 - **Operator surface:** `node demo/telos-mcp.mjs` exposes native MCP tools: `telos.status`, `telos.doctor`, `telos.room`, `telos.catalog`, and `telos.workflow`.
-- **Current floor:** the operator room reconciles 22 available tools across Gather, Crucible, Index, Forum, and Telos, with a provider-neutral catalog for CLI, MCP, plugin, IDE, TUI, and app hosts. See [CHANGELOG.md](CHANGELOG.md).
+- **Current floor:** the operator room reconciles 24 available tools across Gather, Crucible, Index, Forum, and Telos, with a provider-neutral catalog for CLI, MCP, plugin, IDE, TUI, and app hosts. See [CHANGELOG.md](CHANGELOG.md).
 - **Proof lane:** `node demo/showcase.mjs scout --fixture` starts the OSS Proof Showcase, a local-first path from public issue evidence to PR-readiness packets.
-
 
 ## What it is
 
