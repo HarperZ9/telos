@@ -56,3 +56,14 @@ const showcaseScout = runJson("showcase.mjs", "scout", "--fixture", "--json");
 assert.equal(showcaseScout.schema, "project-telos.oss-scout/v1");
 assert.equal(showcaseScout.candidates[0].repository.full_name, "pandas-dev/pandas");
 assert.equal(showcaseScout.candidates[0].score.priority, 70);
+
+const catalogSummary = spawnSync(process.execPath, [path.join(here, "catalog.mjs"), "--summary"], {
+  cwd: path.resolve(here, ".."),
+  encoding: "utf8"
+});
+assert.equal(catalogSummary.status, 0, catalogSummary.stderr || catalogSummary.stdout);
+assert.match(catalogSummary.stdout, /^Project Telos MCP Catalog/m);
+assert.match(catalogSummary.stdout, /tools\s+23 total, 23 available/);
+assert.match(catalogSummary.stdout, /telos\s+6 tools\s+telos.status, telos.doctor/);
+assert.match(catalogSummary.stdout, /next\s+node demo\/catalog.mjs/);
+assert.ok(catalogSummary.stdout.split(/\r?\n/).length <= 12, "summary stays compact");
