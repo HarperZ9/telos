@@ -455,6 +455,43 @@
       ]
     },
     {
+      "name": "telos.server.manifest",
+      "flagship": "telos",
+      "description": "Return the provider-neutral MCP server launch manifest for all five flagships.",
+      "cli": [
+        "node",
+        "demo/server-manifest.mjs"
+      ],
+      "mcp": {
+        "status": "available",
+        "server": "telos",
+        "method": "tools/call",
+        "tool": "telos.server.manifest"
+      },
+      "next_actions": [
+        "telos.catalog"
+      ]
+    },
+    {
+      "name": "telos.admission.telemetry",
+      "flagship": "telos",
+      "description": "Return the admission decision and verification verdict telemetry convention.",
+      "cli": [
+        "node",
+        "demo/admission-telemetry.mjs"
+      ],
+      "mcp": {
+        "status": "available",
+        "server": "telos",
+        "method": "tools/call",
+        "tool": "telos.admission.telemetry"
+      },
+      "next_actions": [
+        "crucible.recheck",
+        "forum.route"
+      ]
+    },
+    {
       "name": "telos.workflow",
       "flagship": "telos",
       "description": "Run the local golden workflow and reconcile the five flagship receipts.",

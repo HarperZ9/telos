@@ -8,8 +8,17 @@ const payload = actionEnvelope({
     role: "shared-room-reconciliation",
     commands: ["room", "status", "doctor", "catalog", "run", "flagship-workflow"],
     statuses: ["MATCH", "DRIFT", "UNVERIFIABLE", "ERROR"],
-    mcp_tools: ["telos.status", "telos.doctor", "telos.room", "telos.catalog", "telos.workflow"],
-    current_status: "source demo with 24-tool five-flagship catalog and native Telos MCP surface"
+    mcp_tools: [
+      "telos.status",
+      "telos.doctor",
+      "telos.room",
+      "telos.catalog",
+      "telos.workflow",
+      "telos.server.manifest",
+      "telos.admission.telemetry",
+      "telos.showcase.scout"
+    ],
+    current_status: "source demo with 26-tool five-flagship catalog and native Telos MCP surface"
   },
   nextActions: [
     {

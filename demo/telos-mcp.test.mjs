@@ -19,7 +19,16 @@ assert.equal(init.result.serverInfo.name, "project-telos-telos");
 
 const listed = handleRequest(request("tools/list"));
 const names = new Set(listed.result.tools.map((tool) => tool.name));
-for (const name of ["telos.status", "telos.doctor", "telos.room", "telos.workflow", "telos.catalog", "telos.showcase.scout"]) {
+for (const name of [
+  "telos.status",
+  "telos.doctor",
+  "telos.room",
+  "telos.workflow",
+  "telos.catalog",
+  "telos.server.manifest",
+  "telos.admission.telemetry",
+  "telos.showcase.scout"
+]) {
   assert.ok(names.has(name), `missing ${name}`);
 }
 
@@ -46,6 +55,28 @@ assert.ok(
   "catalog includes telos.catalog"
 );
 
+const expectedServerManifest = JSON.parse(
+  readFileSync(new URL("./integrations/mcp-server-manifest.json", import.meta.url), "utf8")
+);
+const serverManifest = handleRequest(request("tools/call", {
+  name: "telos.server.manifest",
+  arguments: {}
+}));
+assert.deepEqual(serverManifest.result.structuredContent, expectedServerManifest);
+assert.equal(serverManifest.result.structuredContent.schema, "project-telos.mcp-server-manifest/v1");
+assert.ok(serverManifest.result.structuredContent.servers.gather.expected_tools.includes("gather.docs"));
+
+const expectedAdmissionTelemetry = JSON.parse(
+  readFileSync(new URL("./integrations/admission-telemetry-conventions.json", import.meta.url), "utf8")
+);
+const admissionTelemetry = handleRequest(request("tools/call", {
+  name: "telos.admission.telemetry",
+  arguments: {}
+}));
+assert.deepEqual(admissionTelemetry.result.structuredContent, expectedAdmissionTelemetry);
+assert.equal(admissionTelemetry.result.structuredContent.schema, "project-telos.admission-telemetry/v1");
+assert.ok(admissionTelemetry.result.structuredContent.required_fields.includes("decision.outcome"));
+
 const showcase = handleRequest(request("tools/call", { name: "telos.showcase.scout", arguments: {} }));
 assert.equal(showcase.result.structuredContent.schema, "project-telos.oss-scout/v1");
 assert.equal(showcase.result.structuredContent.candidates[0].issue.number, 66050);
@@ -64,4 +95,6 @@ const stdioResponse = JSON.parse(stdio.stdout.trim());
 assert.equal(stdioResponse.id, 7);
 assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.workflow"));
 assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.catalog"));
+assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.server.manifest"));
+assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.admission.telemetry"));
 assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.showcase.scout"));

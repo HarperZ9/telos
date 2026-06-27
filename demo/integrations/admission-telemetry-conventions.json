@@ -1,0 +1,130 @@
+{
+  "schema": "project-telos.admission-telemetry/v1",
+  "purpose": "Keep action-boundary admission decisions observable without collapsing them into verification verdicts or leaking raw evidence.",
+  "decision_outcomes": [
+    "allow",
+    "block",
+    "escalate",
+    "require_review"
+  ],
+  "verification_verdicts": [
+    "match",
+    "drift",
+    "unverifiable"
+  ],
+  "criterion_sources": [
+    "policy",
+    "rule",
+    "eval",
+    "reviewer",
+    "budget",
+    "external_verifier"
+  ],
+  "required_fields": [
+    "decision.outcome",
+    "verification.verdict",
+    "criterion.source",
+    "criterion.id",
+    "evidence.reference",
+    "evidence.hash",
+    "evaluated_at",
+    "action.identity.action_id",
+    "action.identity.span_id",
+    "action.identity.tool_name"
+  ],
+  "privacy": {
+    "raw_prompt_allowed": false,
+    "raw_tool_args_allowed": false,
+    "raw_evidence_allowed": false,
+    "allowed_evidence_forms": [
+      "sha256",
+      "redacted_reference",
+      "receipt_id",
+      "verifier_artifact_uri"
+    ]
+  },
+  "negative_test_cases": [
+    {
+      "name": "changed_args",
+      "decision": "require_review",
+      "verification": "drift",
+      "reason": "The action identity matched, but the arguments did not match the verified envelope."
+    },
+    {
+      "name": "missing_evidence",
+      "decision": "require_review",
+      "verification": "unverifiable",
+      "reason": "The criterion may exist, but the evidence reference or hash is absent."
+    },
+    {
+      "name": "stale_criterion",
+      "decision": "escalate",
+      "verification": "unverifiable",
+      "reason": "The criterion was evaluated outside its freshness window."
+    },
+    {
+      "name": "missing_verifier_result",
+      "decision": "require_review",
+      "verification": "unverifiable",
+      "reason": "The verifier did not produce a recomputable result."
+    },
+    {
+      "name": "unjoinable_action_identity",
+      "decision": "block",
+      "verification": "unverifiable",
+      "reason": "The admission record cannot be joined to the later tool or agent execution span."
+    }
+  ],
+  "examples": [
+    {
+      "name": "matched_allow",
+      "decision": {
+        "outcome": "allow"
+      },
+      "verification": {
+        "verdict": "match"
+      },
+      "criterion": {
+        "source": "policy",
+        "id": "tool-args-envelope-v1"
+      },
+      "evidence": {
+        "reference": "receipt:tool-call-42",
+        "hash": "sha256:example-redacted"
+      },
+      "evaluated_at": "2026-06-27T00:00:00Z",
+      "action": {
+        "identity": {
+          "action_id": "act_42",
+          "span_id": "span_42",
+          "tool_name": "gather.docs"
+        }
+      }
+    },
+    {
+      "name": "unverifiable_requires_review",
+      "decision": {
+        "outcome": "require_review"
+      },
+      "verification": {
+        "verdict": "unverifiable"
+      },
+      "criterion": {
+        "source": "external_verifier",
+        "id": "missing-recheck-result"
+      },
+      "evidence": {
+        "reference": "redacted:missing",
+        "hash": ""
+      },
+      "evaluated_at": "2026-06-27T00:00:00Z",
+      "action": {
+        "identity": {
+          "action_id": "act_unknown",
+          "span_id": "",
+          "tool_name": "crucible.assess"
+        }
+      }
+    }
+  ]
+}
