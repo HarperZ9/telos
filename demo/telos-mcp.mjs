@@ -38,6 +38,11 @@ export const tools = [
     name: "telos.catalog",
     description: "Return the provider-neutral Project Telos MCP tool catalog.",
     inputSchema: emptyInputSchema
+  },
+  {
+    name: "telos.showcase.scout",
+    description: "Return the fixture-backed OSS Proof Showcase scout results as structured content.",
+    inputSchema: emptyInputSchema
   }
 ];
 
@@ -46,9 +51,9 @@ const toolScripts = new Map([
   ["telos.doctor", ["doctor.mjs"]],
   ["telos.room", ["room.mjs", "--json"]],
   ["telos.workflow", ["flagship-workflow.mjs"]],
-  ["telos.catalog", ["catalog.mjs"]]
+  ["telos.catalog", ["catalog.mjs"]],
+  ["telos.showcase.scout", ["showcase.mjs", "scout", "--fixture", "--json"]]
 ]);
-
 function runTool(name) {
   const args = toolScripts.get(name);
   if (!args) {

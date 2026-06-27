@@ -450,6 +450,29 @@
       "next_actions": [
         "crucible.recheck"
       ]
+    },
+    {
+      "name": "telos.showcase.scout",
+      "flagship": "telos",
+      "description": "Return fixture-backed OSS Proof Showcase candidate rankings.",
+      "cli": [
+        "node",
+        "demo/showcase.mjs",
+        "scout",
+        "--fixture",
+        "--json"
+      ],
+      "mcp": {
+        "status": "available",
+        "server": "telos",
+        "method": "tools/call",
+        "tool": "telos.showcase.scout"
+      },
+      "next_actions": [
+        "gather.docs",
+        "index.map",
+        "crucible.assess"
+      ]
     }
   ]
 }

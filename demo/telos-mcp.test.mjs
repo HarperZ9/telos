@@ -19,7 +19,7 @@ assert.equal(init.result.serverInfo.name, "project-telos-telos");
 
 const listed = handleRequest(request("tools/list"));
 const names = new Set(listed.result.tools.map((tool) => tool.name));
-for (const name of ["telos.status", "telos.doctor", "telos.room", "telos.workflow", "telos.catalog"]) {
+for (const name of ["telos.status", "telos.doctor", "telos.room", "telos.workflow", "telos.catalog", "telos.showcase.scout"]) {
   assert.ok(names.has(name), `missing ${name}`);
 }
 
@@ -46,6 +46,10 @@ assert.ok(
   "catalog includes telos.catalog"
 );
 
+const showcase = handleRequest(request("tools/call", { name: "telos.showcase.scout", arguments: {} }));
+assert.equal(showcase.result.structuredContent.schema, "project-telos.oss-scout/v1");
+assert.equal(showcase.result.structuredContent.candidates[0].issue.number, 66050);
+
 const badTool = handleRequest(request("tools/call", { name: "telos.missing", arguments: {} }));
 assert.equal(badTool.error.code, -32000);
 assert.match(badTool.error.message, /unknown tool/);
@@ -60,3 +64,4 @@ const stdioResponse = JSON.parse(stdio.stdout.trim());
 assert.equal(stdioResponse.id, 7);
 assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.workflow"));
 assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.catalog"));
+assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.showcase.scout"));
