@@ -6,8 +6,10 @@ const payload = actionEnvelope({
   command: "status",
   native: {
     role: "shared-room-reconciliation",
-    commands: ["room", "status", "doctor", "run", "flagship-workflow"],
-    statuses: ["MATCH", "DRIFT", "UNVERIFIABLE", "ERROR"]
+    commands: ["room", "status", "doctor", "catalog", "run", "flagship-workflow"],
+    statuses: ["MATCH", "DRIFT", "UNVERIFIABLE", "ERROR"],
+    mcp_tools: ["telos.status", "telos.doctor", "telos.room", "telos.catalog", "telos.workflow"],
+    current_status: "source demo with 22-tool five-flagship catalog and native Telos MCP surface"
   },
   nextActions: [
     {
