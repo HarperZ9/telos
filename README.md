@@ -7,7 +7,11 @@
 
 > Give a stateless model durable, verified contact with state and range.
 
-[Project Telos](https://harperz9.github.io) | [gather](https://github.com/HarperZ9/gather) | [crucible](https://github.com/HarperZ9/crucible) | [index](https://github.com/HarperZ9/index) | [forum](https://github.com/HarperZ9/forum) | [telos](https://github.com/HarperZ9/telos)
+[Project Telos](https://harperz9.github.io) | [Gather](https://github.com/HarperZ9/gather) | [Crucible](https://github.com/HarperZ9/crucible) | [Index](https://github.com/HarperZ9/index) | [Forum](https://github.com/HarperZ9/forum) | [Telos](https://github.com/HarperZ9/telos)
+
+![node: 18+](https://img.shields.io/badge/node-18%2B-blue.svg)
+![deps: none (demo)](https://img.shields.io/badge/demo%20deps-none-success.svg)
+![license: fair-source](https://img.shields.io/badge/license-fair--source-blue.svg)
 
 ## Try it
 
@@ -33,6 +37,12 @@ routing, clinical-adjacent review, design pipelines, due diligence, or any loop 
 an honest UNVERIFIABLE is worth more than a polished guess. The useful next step is
 pressure from real operators, verifier feedback, and research support for the memory,
 perception, and action floor.
+
+## Current status
+
+- **Release:** source demo; command surface is `node demo/run.mjs`, `node demo/room.mjs`, `node demo/status.mjs`, `node demo/doctor.mjs`, `node demo/catalog.mjs`, and `node demo/flagship-workflow.mjs`.
+- **Operator surface:** `node demo/telos-mcp.mjs` exposes native MCP tools: `telos.status`, `telos.doctor`, `telos.room`, `telos.catalog`, and `telos.workflow`.
+- **Current floor:** the operator room reconciles 22 available tools across Gather, Crucible, Index, Forum, and Telos, with a provider-neutral catalog for CLI, MCP, plugin, IDE, TUI, and app hosts. See [CHANGELOG.md](CHANGELOG.md).
 
 ## What it is
 
@@ -100,7 +110,7 @@ The fastest test is to bring Telos a workflow where a model answer is not enough
 - **Token economy / routing:** model calls are spent where they buy evidence, coverage, or verification, not where they merely produce confident prose.
 - **Reasoning:** the model can perceive and propose; final authority belongs outside the model, in a checkable record a person can inspect.
 
-Main site: <https://harperz9.github.io>. GitHub: <https://github.com/HarperZ9>. Flagship repos: [gather](https://github.com/HarperZ9/gather), [index](https://github.com/HarperZ9/index), [forum](https://github.com/HarperZ9/forum), [crucible](https://github.com/HarperZ9/crucible), and [the telos engine](https://github.com/HarperZ9/telos).
+Main site: <https://harperz9.github.io>. GitHub: <https://github.com/HarperZ9>. Flagship repos: [Gather](https://github.com/HarperZ9/gather), [Crucible](https://github.com/HarperZ9/crucible), [Index](https://github.com/HarperZ9/index), [Forum](https://github.com/HarperZ9/forum), and [the Telos engine](https://github.com/HarperZ9/telos).
 
 I am looking for verification, testing against real workflows, early traction from people willing to inspect receipts, and possibly modest grassroots research funding or pointers.
 

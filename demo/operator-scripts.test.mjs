@@ -18,6 +18,8 @@ const status = runJson("status.mjs");
 assert.equal(status.schema, "project-telos.flagship-action/v1");
 assert.equal(status.tool, "telos");
 assert.equal(status.command, "status");
+assert.ok(status.native.commands.includes("catalog"));
+assert.ok(status.native.mcp_tools.includes("telos.catalog"));
 assert.equal(status.next_actions[0].tool, "index");
 
 const doctor = runJson("doctor.mjs");
