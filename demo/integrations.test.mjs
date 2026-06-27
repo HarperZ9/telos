@@ -26,6 +26,7 @@ for (const name of [
   "index.doctor",
   "forum.route",
   "forum.ledger.summary",
+  "forum.prose.humanize",
   "forum.status",
   "forum.doctor",
   "crucible.status",
