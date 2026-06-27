@@ -20,9 +20,25 @@
     "budget",
     "external_verifier"
   ],
+  "failure_codes": [
+    "binding_failed",
+    "unjoinable_action",
+    "verification_unverifiable",
+    "stale_criterion",
+    "policy_denied"
+  ],
   "required_fields": [
     "decision.outcome",
     "verification.verdict",
+    "expected_failure_code",
+    "proposed.action_intent_id",
+    "proposed.args_hash",
+    "proposed.criterion_ref",
+    "admission.action_intent_id",
+    "admission.args_hash",
+    "admission.criterion_ref",
+    "execution.action_intent_id",
+    "execution.result_ref_or_hash",
     "criterion.source",
     "criterion.id",
     "evidence.reference",
@@ -43,36 +59,98 @@
       "verifier_artifact_uri"
     ]
   },
+  "conformance_fixture": {
+    "join_field": "action_intent_id",
+    "privacy_prohibited_fields": [
+      "raw_prompt",
+      "raw_tool_args",
+      "raw_evidence",
+      "verifier_internals",
+      "raw_result"
+    ],
+    "happy_path": {
+      "name": "joined_allow",
+      "expected_failure_code": null,
+      "resolved_criterion": {
+        "criterion_ref": "policy:tool-args-envelope-v1",
+        "source": "policy",
+        "evaluated": true
+      },
+      "records": {
+        "proposed_action": {
+          "action_intent_id": "intent_42",
+          "action_kind": "tool_call",
+          "tool_name": "gather.docs",
+          "args_hash": "sha256:args-42",
+          "criterion_ref": "policy:tool-args-envelope-v1"
+        },
+        "admission_record": {
+          "action_intent_id": "intent_42",
+          "decision_outcome": "allow",
+          "verification_verdict": "match",
+          "args_hash": "sha256:args-42",
+          "criterion_ref": "policy:tool-args-envelope-v1",
+          "evidence_ref": "receipt:tool-call-42",
+          "evaluated_at": "2026-06-27T00:00:00Z"
+        },
+        "execution_span": {
+          "action_intent_id": "intent_42",
+          "execution_result": "completed",
+          "result_hash": "sha256:result-42"
+        }
+      },
+      "expected": {
+        "joins_on_action_intent_id": true,
+        "admission_args_hash_matches_proposed": true,
+        "criterion_ref_resolves_to_evaluated_criterion": true,
+        "result_reference_present_without_raw_result": true
+      }
+    }
+  },
   "negative_test_cases": [
     {
-      "name": "changed_args",
+      "name": "changed_args_hash",
+      "expected_failure_code": "binding_failed",
       "decision": "require_review",
       "verification": "drift",
-      "reason": "The action identity matched, but the arguments did not match the verified envelope."
+      "reason": "The action identity joined, but admission.args_hash did not match proposed.args_hash.",
+      "mutated_field": "admission.args_hash"
     },
     {
-      "name": "missing_evidence",
-      "decision": "require_review",
+      "name": "missing_action_intent_id",
+      "expected_failure_code": "unjoinable_action",
+      "decision": "block",
       "verification": "unverifiable",
-      "reason": "The criterion may exist, but the evidence reference or hash is absent."
-    },
-    {
-      "name": "stale_criterion",
-      "decision": "escalate",
-      "verification": "unverifiable",
-      "reason": "The criterion was evaluated outside its freshness window."
+      "reason": "The admission or execution record lacks the join field, so the proposed action cannot be followed across records.",
+      "mutated_field": "action_intent_id"
     },
     {
       "name": "missing_verifier_result",
+      "expected_failure_code": "verification_unverifiable",
       "decision": "require_review",
       "verification": "unverifiable",
-      "reason": "The verifier did not produce a recomputable result."
+      "reason": "The verifier did not produce a recomputable result for the joined action.",
+      "mutated_field": "admission.verifier_result_ref"
     },
     {
-      "name": "unjoinable_action_identity",
-      "decision": "block",
+      "name": "stale_or_unresolved_criterion_ref",
+      "expected_failure_code": "stale_criterion",
+      "decision": "escalate",
       "verification": "unverifiable",
-      "reason": "The admission record cannot be joined to the later tool or agent execution span."
+      "reason": "criterion_ref is stale or does not resolve to the criterion actually evaluated.",
+      "mutated_field": "criterion_ref"
+    },
+    {
+      "name": "evaluated_policy_denial",
+      "expected_failure_code": "policy_denied",
+      "decision": "block",
+      "verification": "match",
+      "reason": "The policy criterion joined to the same proposed action and evaluated to denial.",
+      "mutated_field": "criterion.result",
+      "requires": {
+        "joined_action_intent_id": true,
+        "criterion_evaluated_against_proposed_action": true
+      }
     }
   ],
   "examples": [
