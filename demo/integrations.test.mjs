@@ -36,7 +36,8 @@ for (const name of [
   "telos.doctor",
   "telos.room",
   "telos.workflow",
-  "telos.catalog"
+  "telos.catalog",
+  "telos.showcase.scout"
 ]) {
   assert.ok(names.has(name), `missing ${name}`);
 }
