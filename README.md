@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="docs/brand/telos-hero.svg" alt="Project Telos, the flagship membrane for verified contact with state and range">
+  <img src="docs/brand/telos-hero.png" alt="Project Telos, the flagship membrane for verified contact with state and range">
 </p>
 <!-- Project mark: docs/brand/telos-mark.svg -->
 
