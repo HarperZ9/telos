@@ -51,3 +51,8 @@ assert.equal(workflow.native.forum_needs_escalation, false);
 assert.equal(workflow.native.crucible_match, 1);
 assert.equal(workflow.native.crucible_unverifiable, 1);
 assert.equal(workflow.native.telos_demo_recheck, true);
+
+const showcaseScout = runJson("showcase.mjs", "scout", "--fixture", "--json");
+assert.equal(showcaseScout.schema, "project-telos.oss-scout/v1");
+assert.equal(showcaseScout.candidates[0].repository.full_name, "pandas-dev/pandas");
+assert.equal(showcaseScout.candidates[0].score.priority, 70);
