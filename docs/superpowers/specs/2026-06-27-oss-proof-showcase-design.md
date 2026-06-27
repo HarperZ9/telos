@@ -24,6 +24,19 @@ These facts were checked from the local workspace and live GitHub data on 2026-0
 - Sample candidate `huggingface/transformers#46897` includes code pointers and a related prior fix pattern for Florence2 training-loss double shifting. Confidence: high.
 - Sample candidate `microsoft/playwright#41462` includes a reproduction for retained detached DOM nodes and a maintainer comment inviting investigation. Confidence: high.
 
+## Public Feedback Incorporated
+
+Feedback from recent public comments and correspondence is treated as product evidence, not as response copy. The strongest tooling implications are:
+
+- Use existing standards where they fit: in-toto-style attestations for what happened, SBOM/AIBOM-style inventories for compliance, and C2PA-style content authenticity for media pipelines.
+- Make receipts boring and inspectable: host or repo identity, command or task requested, policy basis, stdout/stderr or result state, redaction boundary, replay path, and audit timeline.
+- Split trust into pre-action policy and post-action receipt. For spending, infrastructure, and external service calls, record allowlist/category, budget, capability version, output schema, cost, settlement or execution id, request hash, response hash, signer class, retry/refund/dispute outcome, and provenance class such as `client_observed`, `seller_signed`, or `reconciled`.
+- Model later outcomes as append-only follow-up events rather than mutating the original receipt into a stronger claim.
+- Every workflow card or packet should include a replay bundle and a `not_verified` section: files not inspected, tests skipped, assumptions used, and state the tool could not observe.
+- Human-facing copy must be plain. If an outside practitioner cannot tell what the tool does, the UI has failed even if the schema is elegant.
+- Disagreement between models, tools, or checks is a useful routing signal. The system should preserve it as evidence for human decision rather than smoothing it into one confident answer.
+
+These points affect the OSS Proof Showcase directly through standards vocabulary, append-only packet events, `not_verified` evidence, and plain-language operator output.
 ## Design Principles
 
 - The lane proves the tools by doing useful work against real upstream code, not by showing synthetic demos only.
