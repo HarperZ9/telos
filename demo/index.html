@@ -3,38 +3,167 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>telos Project Telos demo</title>
+<title>Project Telos operator room</title>
 <style>
 @font-face{font-family:Kilon;src:url("https://harperz9.github.io/system/fonts/kilon.woff2") format("woff2");font-display:swap}
 @font-face{font-family:Conso;src:url("https://harperz9.github.io/system/fonts/conso-regular.woff2") format("woff2");font-display:swap}
-:root{--paper:#f4f3ef;--ink:#0b0c0e;--soft:#2f3238;--muted:#585c64;--iris:#4636e8;--line:rgba(11,12,14,.14)}
-*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:Conso,Arial,sans-serif;line-height:1.6}a{color:var(--ink)}a:focus-visible,button:focus-visible{outline:2px solid var(--iris);outline-offset:4px}.skip{position:absolute;left:1rem;top:1rem;transform:translateY(-140%);background:var(--paper);border:1px solid var(--line);padding:.6rem 1rem}.skip:focus{transform:none}main{min-height:100vh;padding:clamp(1.2rem,4vw,4rem)}.rail,.label{font-family:ui-monospace,Consolas,monospace;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);font-size:.72rem}h1{font-family:Kilon,Arial Black,sans-serif;font-size:9rem;line-height:.82;letter-spacing:0;margin:4rem 0 1rem}h2.label{margin:0;padding:1rem 0 0}.promise{font-size:1.8rem;max-width:34ch;color:var(--soft)}.market{max-width:62ch;color:var(--muted);margin-top:1.1rem}.specimen,.proof{margin-top:clamp(2rem,5vw,4rem);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.row{display:grid;grid-template-columns:minmax(8rem,14rem) 1fr;gap:1rem;padding:1rem 0;border-top:1px solid var(--line)}.row:first-child{border-top:0}.row span{font-family:ui-monospace,Consolas,monospace;text-transform:uppercase;letter-spacing:.16em;color:var(--iris);font-size:.76rem}.row p{margin:0;max-width:58ch}.proof{padding:1rem 0}pre{margin:.8rem 0 0;white-space:pre-wrap;overflow-wrap:anywhere;font-family:ui-monospace,Consolas,monospace;font-size:.92rem}.note{max-width:58ch;color:var(--muted)}.actions{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:2rem}.pill{border:1px solid var(--ink);border-radius:999px;padding:.72rem 1rem;text-decoration:none}.pill.primary{background:var(--ink);color:var(--paper)}@media(max-width:620px){.row{grid-template-columns:1fr}h1{font-size:4.5rem}.promise{font-size:1.25rem}}@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto;transition:none!important;animation:none!important}}
+:root{--paper:#f4f3ef;--ink:#0b0c0e;--soft:#2f3238;--muted:#4c515a;--faint:#d8d5cb;--wash:#ece9df;--iris:#4636e8;--ok:#1f6d4d;--warn:#8a5b00;--line:rgba(11,12,14,.16);--focus:#2116b8}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:Conso,Arial,sans-serif;line-height:1.55}
+a{color:inherit}
+a:focus-visible,button:focus-visible{outline:3px solid var(--focus);outline-offset:4px}
+.skip{position:absolute;left:1rem;top:1rem;z-index:2;transform:translateY(-160%);background:var(--paper);border:1px solid var(--ink);padding:.62rem .9rem}
+.skip:focus{transform:none}
+main{min-height:100vh}
+.shell{width:min(1180px,calc(100% - 2rem));margin:0 auto}
+.topbar{border-bottom:1px solid var(--line);background:color-mix(in srgb,var(--paper) 92%,white);position:sticky;top:0;z-index:1}
+.topbar .shell{display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:4rem}
+.brand{display:flex;align-items:center;gap:.7rem;text-decoration:none;font-weight:700}
+.mark{width:1.55rem;height:1.55rem;border:2px solid var(--ink);display:grid;place-items:center;font-size:.72rem;line-height:1}
+.nav{display:flex;flex-wrap:wrap;gap:.35rem}
+.nav a{padding:.45rem .65rem;text-decoration:none;border-radius:.35rem;color:var(--soft)}
+.nav a:hover{background:var(--wash);color:var(--ink)}
+.hero{padding:clamp(2rem,6vw,5rem) 0 2.2rem;border-bottom:1px solid var(--line)}
+.kicker,.label,.status-label{font-family:ui-monospace,Consolas,monospace;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);font-size:.75rem}
+h1{font-family:Kilon,Arial Black,sans-serif;font-size:clamp(3.6rem,10vw,6rem);line-height:.9;letter-spacing:0;margin:.7rem 0 1rem;text-wrap:balance}
+.lede{font-size:clamp(1.1rem,2.2vw,1.5rem);max-width:48ch;color:var(--soft);margin:0}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(18rem,.9fr);gap:clamp(1.5rem,4vw,3rem);align-items:end}
+.command-strip{border:1px solid var(--line);background:var(--wash);padding:1rem;display:grid;gap:.6rem}
+.command-strip code,.code{font-family:ui-monospace,Consolas,monospace;color:var(--ink)}
+.actions{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1.5rem}
+.button{display:inline-flex;align-items:center;justify-content:center;min-height:2.65rem;border:1px solid var(--ink);border-radius:.45rem;padding:.65rem .9rem;text-decoration:none;background:transparent}
+.button.primary{background:var(--ink);color:var(--paper)}
+.button:hover{transform:translateY(-1px)}
+.band{padding:clamp(2rem,5vw,4rem) 0;border-bottom:1px solid var(--line)}
+.room-head{display:flex;align-items:end;justify-content:space-between;gap:1rem;margin-bottom:1rem}
+.verdict{display:inline-flex;gap:.45rem;align-items:center;font-family:ui-monospace,Consolas,monospace;font-weight:700;color:var(--ok)}
+.dot{width:.65rem;height:.65rem;border-radius:50%;background:var(--ok);box-shadow:0 0 0 3px color-mix(in srgb,var(--ok) 18%,transparent)}
+.matrix{width:100%;border-collapse:collapse;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.matrix caption{text-align:left;color:var(--muted);padding:.55rem 0 1rem;max-width:70ch}
+.matrix th,.matrix td{text-align:left;vertical-align:top;padding:.9rem .75rem;border-top:1px solid var(--line)}
+.matrix th{font-family:ui-monospace,Consolas,monospace;font-size:.74rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);font-weight:600}
+.matrix tbody th{color:var(--ink);font-size:.9rem;letter-spacing:0;text-transform:none}
+.state{font-family:ui-monospace,Consolas,monospace;color:var(--ok);font-weight:700}
+.state.warn{color:var(--warn)}
+.next{font-family:ui-monospace,Consolas,monospace;color:var(--iris)}
+.cols{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+.panel{background:var(--paper);padding:1.1rem;min-height:10rem}
+.panel h3{margin:.2rem 0 .6rem;font-size:1rem}
+.panel p{margin:0;color:var(--soft)}
+.sequence{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+.step{background:var(--paper);padding:1rem}
+.step strong{display:block;margin:.2rem 0 .55rem}
+.step p{margin:0;color:var(--soft)}
+.proof-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(18rem,.7fr);gap:clamp(1.2rem,3vw,2rem)}
+.proof-sequence{margin-top:1rem}
+pre{margin:0;white-space:pre-wrap;overflow-wrap:anywhere;font-size:.92rem;background:var(--ink);color:var(--paper);padding:1rem;border-radius:.45rem}
+.note{color:var(--muted);max-width:68ch}
+.footer{padding:2rem 0;color:var(--muted);font-size:.9rem}
+@media(max-width:840px){.hero-grid,.proof-grid{grid-template-columns:1fr}.room-head{align-items:flex-start;flex-direction:column}.cols,.sequence{grid-template-columns:1fr}.matrix thead{display:none}.matrix,.matrix tbody,.matrix tr,.matrix th,.matrix td{display:block}.matrix tr{border-top:1px solid var(--line);padding:.55rem 0}.matrix td,.matrix tbody th{border-top:0;padding:.3rem 0}.matrix td::before{content:attr(data-label);display:block;font-family:ui-monospace,Consolas,monospace;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);font-size:.72rem}}
+@media(max-width:560px){.topbar .shell{align-items:flex-start;flex-direction:column;padding:.8rem 0}.nav a{padding:.35rem .45rem}.button{width:100%}h1{font-size:3.2rem}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.button:hover{transform:none}*{transition:none!important;animation:none!important}}
 </style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
+<header class="topbar" aria-label="Project Telos navigation">
+  <div class="shell">
+    <a class="brand" href="#main" aria-label="Project Telos home"><span class="mark" aria-hidden="true">T</span><span>Project Telos</span></a>
+    <nav class="nav" aria-label="Page sections">
+      <a href="#room">Room</a>
+      <a href="#protocols">Protocols</a>
+      <a href="#proof">Proof</a>
+      <a href="../README.md">README</a>
+    </nav>
+  </div>
+</header>
 <main id="main">
-  <p class="rail">Project Telos / verified contact with state and range</p>
-  <h1>telos</h1>
-  <p class="promise">Give a stateless model durable, verified contact with state and range.</p>
-  <p class="market">Serious AI work needs a floor beneath confidence. Project Telos gives the model shared state, witnessed perception, and a certificate loop a person can re-check.</p>
-  <section class="specimen" aria-labelledby="proof-sequence">
-    <h2 class="label" id="proof-sequence">Proof sequence</h2>
-    <div class="row"><span>perceive</span><p>rendered state is read through two channels</p></div>
-<div class="row"><span>check</span><p>criterion lives outside the perceiver</p></div>
-<div class="row"><span>certify</span><p>honest render rechecks true</p></div>
-<div class="row"><span>refuse</span><p>broken render returns UNVERIFIABLE</p></div>
+  <section class="hero">
+    <div class="shell hero-grid">
+      <div>
+        <p class="kicker">Verified AI workflow room</p>
+        <h1>telos</h1>
+        <p class="lede">A shared operating surface for Gather, Crucible, Index, Forum, and Telos: intake, structure, routing, verification, and reconciliation with receipts attached.</p>
+        <div class="actions" aria-label="Primary actions">
+          <a class="button primary" href="#room">Inspect the room</a>
+          <a class="button" href="#proof">Run the proof</a>
+        </div>
+      </div>
+      <div class="command-strip" aria-label="Quick command">
+        <span class="status-label">First operator command</span>
+        <code>node demo/room.mjs</code>
+        <span class="status-label">Host-friendly envelope</span>
+        <code>node demo/room.mjs --json</code>
+      </div>
+    </div>
   </section>
-  <section class="proof" aria-labelledby="run-proof">
-    <h2 class="label" id="run-proof">Run the proof</h2>
-    <pre><code>Node 18 or newer
-node demo/run.mjs</code></pre>
-    <p class="note">Inspect the artifact, try it against a real workflow, then bring the evidence into a pilot, sponsorship, or research conversation.</p>
+
+  <section class="band" id="room" aria-labelledby="room-title">
+    <div class="shell">
+      <div class="room-head">
+        <div>
+          <p class="kicker">Operator room</p>
+          <h2 id="room-title">Five flagships, one readable state.</h2>
+        </div>
+        <div class="verdict" aria-label="Current room state is MATCH"><span class="dot" aria-hidden="true"></span><span>MATCH / 5 of 5 ready</span></div>
+      </div>
+      <table class="matrix">
+        <caption>The room view summarizes each tool's role, readiness, and next action. It is mirrored by the JSON action envelope for hosts, plugins, and IDE panels.</caption>
+        <thead>
+          <tr><th scope="col">Tool</th><th scope="col">Role</th><th scope="col">State</th><th scope="col">Next action</th></tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">Gather</th><td data-label="Role">perception intake</td><td data-label="State"><span class="state">MATCH</span></td><td data-label="Next action"><span class="next">index.map</span></td></tr>
+          <tr><th scope="row">Crucible</th><td data-label="Role">verification pressure</td><td data-label="State"><span class="state">MATCH</span></td><td data-label="Next action"><span class="next">telos.reconcile</span></td></tr>
+          <tr><th scope="row">Index</th><td data-label="Role">structure context</td><td data-label="State"><span class="state">MATCH</span></td><td data-label="Next action"><span class="next">gather.docs</span></td></tr>
+          <tr><th scope="row">Forum</th><td data-label="Role">orchestration routing</td><td data-label="State"><span class="state">MATCH</span></td><td data-label="Next action"><span class="next">crucible.assess</span></td></tr>
+          <tr><th scope="row">Telos</th><td data-label="Role">shared-room reconciliation</td><td data-label="State"><span class="state">MATCH</span></td><td data-label="Next action"><span class="next">flagship-workflow</span></td></tr>
+        </tbody>
+      </table>
+    </div>
   </section>
-  <nav class="actions" aria-label="Demo actions">
-    <a class="pill primary" href="../README.md">Read the README</a>
-    <a class="pill" href="https://harperz9.github.io">Project Telos</a>
-  </nav>
+
+  <section class="band" id="protocols" aria-labelledby="protocols-title">
+    <div class="shell">
+      <p class="kicker">Protocol surfaces</p>
+      <h2 id="protocols-title">One contract, many hosts.</h2>
+      <div class="cols">
+        <section class="panel" aria-labelledby="cli-json"><h3 id="cli-json">CLI JSON</h3><p>Every flagship can expose parseable output for scripts, TUIs, IDE tasks, and shell-first workflows.</p></section>
+        <section class="panel" aria-labelledby="mcp-stdio"><h3 id="mcp-stdio">MCP stdio</h3><p>Gather, Crucible, Index, and Forum expose native tools over JSON-RPC for agent hosts and desktop clients.</p></section>
+        <section class="panel" aria-labelledby="app-bridge"><h3 id="app-bridge">App bridge</h3><p>Telos room and workflow envelopes are ready for Codex, Claude, OpenAI agents, plugins, and full applications.</p></section>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="proof" aria-labelledby="proof-title">
+    <div class="shell proof-grid">
+      <div>
+        <p class="kicker">Certificate loop</p>
+        <h2 id="proof-title">The verifier has to be able to refuse.</h2>
+        <p class="note">The proof renders a four-dimensional cube, perceives it two ways, checks the recovered invariant against a criterion the model did not author, then shows both a certified pass and an honest `UNVERIFIABLE`.</p>
+      </div>
+      <pre><code>Node 18 or newer
+node demo/run.mjs
+
+Room view
+node demo/room.mjs
+
+Golden workflow
+node demo/flagship-workflow.mjs</code></pre>
+    </div>
+    <div class="shell proof-sequence">
+      <div class="sequence" aria-label="Proof sequence">
+        <div class="step"><span class="label">01</span><strong>Perceive</strong><p>Read an artifact from witnessed bytes, not from memory.</p></div>
+        <div class="step"><span class="label">02</span><strong>Recover</strong><p>Extract the invariant that can actually be checked.</p></div>
+        <div class="step"><span class="label">03</span><strong>Check</strong><p>Compare against a criterion outside the model.</p></div>
+        <div class="step"><span class="label">04</span><strong>Refuse</strong><p>Return `UNVERIFIABLE` when the evidence cannot support a pass.</p></div>
+      </div>
+    </div>
+  </section>
 </main>
+<footer class="footer">
+  <div class="shell">Fair-source research tooling for AI workflows with provenance. No install required for the demo.</div>
+</footer>
 </body>
 </html>
