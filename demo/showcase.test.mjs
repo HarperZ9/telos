@@ -91,6 +91,8 @@ assert.deepEqual(observedGhCall.args.slice(0, 9), [
   "array"
 ]);
 assert.equal(observedGhCall.options.encoding, "utf8");
+const jsonFields = observedGhCall.args[observedGhCall.args.indexOf("--json") + 1].split(",");
+assert.ok(jsonFields.includes("body"));
 
 const matchedLive = scoutLive({
   query: liveQuery,
