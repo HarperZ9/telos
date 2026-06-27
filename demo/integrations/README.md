@@ -24,6 +24,10 @@ OpenAI Apps, OpenAI Agents, Anthropic Claude, Claude Code, Codex plugins, skills
 
 `mcp-tool-catalog.json` is the provider-neutral source of truth for tool names, CLI fallbacks, MCP names, availability status, and next actions.
 
+`science-research-adapters.json` is the current-source adapter map for preprints, scholarly metadata, clinical trial registries, persistent identifiers, AlphaFold, Midjourney Medical monitoring, and research graphs.
+
+`fresh-research-policy.md` is the rule for living external claims: current evidence or `UNVERIFIABLE`.
+
 Availability labels:
 
 - `available`: a native MCP server or command exists now.
@@ -39,3 +43,13 @@ Availability labels:
 - IDEs, CLIs, and TUIs: call CLI JSON locally and render the same action envelope in their native surfaces.
 - Full applications: call CLI JSON for local desktop and MCP Streamable HTTP for hosted or distributed setups.
 - Workbench/Harness candidate: keep it as a consumer of the five flagships until the five-tool golden workflow is exceptional.
+
+## Science And Research Domains
+
+The first domain adapter map covers:
+
+- Preprints and archives: arXiv, bioRxiv, medRxiv, ChemRxiv, OSF Preprints, SSRN, Research Square.
+- Biomedical and clinical literature: PubMed/NCBI E-utilities, Europe PMC.
+- Scholarly graphs and metadata: OpenAlex, Crossref, Semantic Scholar, DataCite, ORCID, ROR, OpenAIRE.
+- Scientific model artifacts: AlphaFold Database and AlphaFold 3/server outputs.
+- Emerging medical tools: Midjourney Medical as a watch-only evidence source until stronger clinical, regulatory, and API evidence exists.
