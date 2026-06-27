@@ -7,6 +7,9 @@ const catalog = JSON.parse(
 const science = JSON.parse(
   readFileSync(new URL("./integrations/science-research-adapters.json", import.meta.url), "utf8")
 );
+const admissionTelemetry = JSON.parse(
+  readFileSync(new URL("./integrations/admission-telemetry-conventions.json", import.meta.url), "utf8")
+);
 
 assert.equal(catalog.schema, "project-telos.mcp-tool-catalog/v1");
 assert.equal(catalog.action_schema, "project-telos.flagship-action/v1");
@@ -37,7 +40,9 @@ for (const name of [
   "telos.doctor",
   "telos.room",
   "telos.workflow",
-  "telos.catalog"
+  "telos.catalog",
+  "telos.server.manifest",
+  "telos.admission.telemetry"
 ]) {
   assert.ok(names.has(name), `missing ${name}`);
 }
@@ -63,6 +68,9 @@ assert.deepEqual(byName.get("crucible.recheck").cli, [
 
 assert.equal(science.schema, "project-telos.science-research-adapters/v1");
 assert.equal(science.freshness_policy.current_source_required, true);
+
+assert.equal(admissionTelemetry.schema, "project-telos.admission-telemetry/v1");
+assert.ok(admissionTelemetry.required_fields.includes("verification.verdict"));
 
 const adapterNames = new Set(science.adapters.map((adapter) => adapter.name));
 for (const name of [
