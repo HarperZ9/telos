@@ -1,0 +1,204 @@
+{
+  "schema": "project-telos.mcp-server-manifest/v1",
+  "verified_on": "2026-06-27",
+  "workspace_placeholder": "${PROJECT_TELOS_PUBLIC}",
+  "transports": [
+    "stdio"
+  ],
+  "profiles": [
+    "source_checkout",
+    "package"
+  ],
+  "hosts": {
+    "codex": {
+      "config_key": "mcp_servers",
+      "format": "toml",
+      "notes": "Use one [mcp_servers.<name>] table per flagship server."
+    },
+    "claude": {
+      "container_key": "mcpServers",
+      "format": "json",
+      "notes": "Use one stdio server entry per flagship server."
+    },
+    "openai_agents": {
+      "transport": "stdio",
+      "notes": "Mount these commands through the Agents SDK MCP stdio server wrapper."
+    },
+    "openai_apps": {
+      "transport": "mcp",
+      "notes": "Register the same tools through an MCP server and render Telos receipts in the app UI."
+    }
+  },
+  "sources": [
+    {
+      "name": "MCP 2025-06-18 specification",
+      "url": "https://modelcontextprotocol.io/specification/2025-06-18"
+    },
+    {
+      "name": "OpenAI Agents SDK MCP",
+      "url": "https://openai.github.io/openai-agents-python/mcp/"
+    },
+    {
+      "name": "OpenAI Apps SDK MCP server guide",
+      "url": "https://developers.openai.com/apps-sdk/build/mcp-server"
+    },
+    {
+      "name": "Anthropic Claude Code MCP",
+      "url": "https://docs.anthropic.com/en/docs/claude-code/mcp"
+    }
+  ],
+  "servers": {
+    "gather": {
+      "flagship": "gather",
+      "description": "Project Telos research intake and provenance server.",
+      "expected_tools": [
+        "gather.status",
+        "gather.doctor",
+        "gather.docs",
+        "gather.arxiv",
+        "gather.run"
+      ],
+      "profiles": {
+        "source_checkout": {
+          "command": "python",
+          "args": [
+            "-m",
+            "gather.cli",
+            "mcp"
+          ],
+          "cwd": "${PROJECT_TELOS_PUBLIC}/gather",
+          "env": {
+            "PYTHONPATH": "${PROJECT_TELOS_PUBLIC}/gather/src"
+          }
+        },
+        "package": {
+          "command": "gather",
+          "args": [
+            "mcp"
+          ]
+        }
+      }
+    },
+    "crucible": {
+      "flagship": "crucible",
+      "description": "Project Telos falsifiable verification and recheck server.",
+      "expected_tools": [
+        "crucible.status",
+        "crucible.doctor",
+        "crucible.assess",
+        "crucible.recheck"
+      ],
+      "profiles": {
+        "source_checkout": {
+          "command": "python",
+          "args": [
+            "-m",
+            "crucible.cli",
+            "mcp"
+          ],
+          "cwd": "${PROJECT_TELOS_PUBLIC}/crucible",
+          "env": {
+            "PYTHONPATH": "${PROJECT_TELOS_PUBLIC}/crucible/src"
+          }
+        },
+        "package": {
+          "command": "crucible",
+          "args": [
+            "mcp"
+          ]
+        }
+      }
+    },
+    "index": {
+      "flagship": "index",
+      "description": "Project Telos workspace structure and context server.",
+      "expected_tools": [
+        "index.map",
+        "index.context",
+        "index.status",
+        "index.doctor"
+      ],
+      "profiles": {
+        "source_checkout": {
+          "command": "python",
+          "args": [
+            "-m",
+            "index_graph",
+            "mcp"
+          ],
+          "cwd": "${PROJECT_TELOS_PUBLIC}/index",
+          "env": {
+            "PYTHONPATH": "${PROJECT_TELOS_PUBLIC}/index/src"
+          }
+        },
+        "package": {
+          "command": "index",
+          "args": [
+            "mcp"
+          ]
+        }
+      }
+    },
+    "forum": {
+      "flagship": "forum",
+      "description": "Project Telos orchestration, routing, ledger, and prose server.",
+      "expected_tools": [
+        "forum.route",
+        "forum.ledger.summary",
+        "forum.prose.humanize",
+        "forum.status",
+        "forum.doctor"
+      ],
+      "profiles": {
+        "source_checkout": {
+          "command": "python",
+          "args": [
+            "-m",
+            "forum.cli",
+            "mcp",
+            "--ledger",
+            "${PROJECT_TELOS_PUBLIC}/.telos/forum-ledger"
+          ],
+          "cwd": "${PROJECT_TELOS_PUBLIC}/forum",
+          "env": {
+            "PYTHONPATH": "${PROJECT_TELOS_PUBLIC}/forum/src"
+          }
+        },
+        "package": {
+          "command": "forum",
+          "args": [
+            "mcp"
+          ]
+        }
+      }
+    },
+    "telos": {
+      "flagship": "telos",
+      "description": "Project Telos shared room, workflow, catalog, and server manifest.",
+      "expected_tools": [
+        "telos.status",
+        "telos.doctor",
+        "telos.room",
+        "telos.catalog",
+        "telos.workflow",
+        "telos.server.manifest",
+        "telos.admission.telemetry"
+      ],
+      "profiles": {
+        "source_checkout": {
+          "command": "node",
+          "args": [
+            "${PROJECT_TELOS_PUBLIC}/telos/demo/telos-mcp.mjs"
+          ],
+          "cwd": "${PROJECT_TELOS_PUBLIC}/telos"
+        },
+        "package": {
+          "command": "node",
+          "args": [
+            "demo/telos-mcp.mjs"
+          ]
+        }
+      }
+    }
+  }
+}

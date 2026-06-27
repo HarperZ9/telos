@@ -40,6 +40,8 @@ node demo/status.mjs
 node demo/doctor.mjs
 node demo/room.mjs
 node demo/catalog.mjs --summary
+node demo/server-manifest.mjs --summary
+node demo/admission-telemetry.mjs
 node demo/flagship-workflow.mjs
 ```
 
@@ -49,6 +51,15 @@ emits the same Project Telos action envelope for hosts and plugins.
 
 `catalog.mjs --summary` prints the same provider-neutral tool catalog as a short
 operator map, while plain `catalog.mjs` keeps the full JSON contract for hosts.
+
+`server-manifest.mjs --summary` prints the five-server MCP launch map. Plain
+`server-manifest.mjs` returns the full manifest; `--codex` emits TOML and
+`--claude-json` emits a JSON block for stdio MCP hosts.
+
+`admission-telemetry.mjs` returns the admission decision and verification
+verdict convention: `allow/block/escalate/require_review` stays separate from
+`match/drift/unverifiable`, and evidence is represented by hashes or redacted
+references instead of raw prompts or tool arguments.
 
 `flagship-workflow.mjs` dogfoods the five-tool chain by mapping Telos with
 Index, gathering the operator-spine spec with Gather, routing the work through

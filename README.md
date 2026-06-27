@@ -20,10 +20,12 @@ Zero dependencies, Node 18 or newer.
 ```bash
 node demo/run.mjs
 node demo/catalog.mjs --summary
+node demo/server-manifest.mjs --summary
 ```
 
 Open the visual certificate-loop surface at [`demo/index.html`](demo/index.html).
 Use `node demo/catalog.mjs --summary` for a compact operator map of the CLI and MCP surface.
+Use `node demo/server-manifest.mjs --summary` for the five-server MCP launch map.
 
 ## Why it matters
 
@@ -42,9 +44,9 @@ perception, and action floor.
 
 ## Current status
 
-- **Release:** source demo; command surface is `node demo/run.mjs`, `node demo/room.mjs`, `node demo/status.mjs`, `node demo/doctor.mjs`, `node demo/catalog.mjs`, and `node demo/flagship-workflow.mjs`.
-- **Operator surface:** `node demo/telos-mcp.mjs` exposes native MCP tools: `telos.status`, `telos.doctor`, `telos.room`, `telos.catalog`, and `telos.workflow`.
-- **Current floor:** the operator room reconciles 23 available tools across Gather, Crucible, Index, Forum, and Telos, with a provider-neutral catalog for CLI, MCP, plugin, IDE, TUI, and app hosts. See [CHANGELOG.md](CHANGELOG.md).
+- **Release:** source demo; command surface is `node demo/run.mjs`, `node demo/room.mjs`, `node demo/status.mjs`, `node demo/doctor.mjs`, `node demo/catalog.mjs`, `node demo/server-manifest.mjs`, `node demo/admission-telemetry.mjs`, and `node demo/flagship-workflow.mjs`.
+- **Operator surface:** `node demo/telos-mcp.mjs` exposes native MCP tools: `telos.status`, `telos.doctor`, `telos.room`, `telos.catalog`, `telos.workflow`, `telos.server.manifest`, and `telos.admission.telemetry`.
+- **Current floor:** the operator room reconciles 25 available tools across Gather, Crucible, Index, Forum, and Telos, with a provider-neutral catalog and server manifest for CLI, MCP, plugin, IDE, TUI, and app hosts. See [CHANGELOG.md](CHANGELOG.md).
 
 ## What it is
 

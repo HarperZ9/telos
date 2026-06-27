@@ -38,6 +38,16 @@ export const tools = [
     name: "telos.catalog",
     description: "Return the provider-neutral Project Telos MCP tool catalog.",
     inputSchema: emptyInputSchema
+  },
+  {
+    name: "telos.server.manifest",
+    description: "Return the provider-neutral MCP server launch manifest for all five flagships.",
+    inputSchema: emptyInputSchema
+  },
+  {
+    name: "telos.admission.telemetry",
+    description: "Return the admission decision and verification verdict telemetry convention.",
+    inputSchema: emptyInputSchema
   }
 ];
 
@@ -46,7 +56,9 @@ const toolScripts = new Map([
   ["telos.doctor", ["doctor.mjs"]],
   ["telos.room", ["room.mjs", "--json"]],
   ["telos.workflow", ["flagship-workflow.mjs"]],
-  ["telos.catalog", ["catalog.mjs"]]
+  ["telos.catalog", ["catalog.mjs"]],
+  ["telos.server.manifest", ["server-manifest.mjs"]],
+  ["telos.admission.telemetry", ["admission-telemetry.mjs"]]
 ]);
 
 function runTool(name) {
