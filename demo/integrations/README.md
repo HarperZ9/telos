@@ -36,7 +36,9 @@ OpenAI Apps, OpenAI Agents, Anthropic Claude, Claude Code, Codex plugins, skills
 
 `scankii-synthetic-receipt.json` records a public/synthetic dogfood run against scankii's replayable-receipt branch. It preserves normalized replay fields and explicit drift cases from the raw scanner output; it is not a private corpus scan or a production security claim.
 
-`research-seed-conventions.json` records how terse operator notes become source-backed research seeds: the note is a lead, current lawful source receipts promote claims, and unresolved claims stay `UNVERIFIABLE`.
+`research-seed-conventions.json` records how terse operator notes become source-backed research seeds: the note is a lead, current lawful source receipts promote claims, and unresolved claims stay `UNVERIFIABLE`. `../rendering-research.mjs` applies the same contract to clustered-forward rendering, Gaussian splatting, WebGPU/WGSL, SuperSplat, and visual acceptance gates for Telos rendering surfaces.
+
+`../research/rendering-pipeline-seeds.json` records lawful Gaussian-splatting, clustered-forward-rendering, WebGPU/WGSL, and browser-rendering source receipts for Telos Studio rendering surfaces. Social and Reddit references remain non-evidentiary source leads.
 
 `../mcp-runtime-contract.test.mjs` checks the catalog against the sibling MCP runtimes so `available` means the tool is actually present in `tools/list`.
 
@@ -56,7 +58,7 @@ Availability labels:
 ## Packaging Targets
 
 - Codex plugin: expose skills plus MCP servers for `gather`, `crucible`, `index`, `forum`, and Telos.
-- Telos MCP: `node demo/telos-mcp.mjs` exposes `telos.status`, `telos.doctor`, `telos.room`, `telos.workflow`, `telos.catalog`, `telos.server.manifest`, `telos.admission.telemetry`, `telos.context.envelope`, `telos.action.receipt`, `telos.loop.ledger`, and `telos.research.seed`.
+- Telos MCP: `node demo/telos-mcp.mjs` exposes `telos.status`, `telos.doctor`, `telos.room`, `telos.workflow`, `telos.catalog`, `telos.server.manifest`, `telos.admission.telemetry`, `telos.context.envelope`, `telos.action.receipt`, `telos.loop.ledger`, `telos.research.seed`, and `telos.rendering.research`.
 - Gather MCP: `gather mcp` exposes `gather.status`, `gather.doctor`, `gather.docs`, `gather.arxiv`, and `gather.run`.
 - Crucible MCP: `crucible mcp` exposes `crucible.status`, `crucible.doctor`, `crucible.assess`, and `crucible.recheck`.
 - Index MCP: `index mcp` exposes `index.map`, `index.context`, `index.status`, `index.doctor`, and the lower-level graph, focus, verify, router, and internals tools.

@@ -30,7 +30,9 @@ for (const name of [
   "telos.context.envelope",
   "telos.action.receipt",
   "telos.loop.ledger",
-  "telos.research.seed"
+  "telos.research.seed",
+  "telos.rendering.research",
+  "telos.rendering.research"
 ]) {
   assert.ok(names.has(name), `missing ${name}`);
 }
@@ -127,6 +129,18 @@ assert.deepEqual(researchSeed.result.structuredContent, expectedResearchSeed);
 assert.equal(researchSeed.result.structuredContent.schema, "project-telos.research-seed/v1");
 assert.equal(researchSeed.result.structuredContent.seeds.length, 2);
 
+const expectedRenderingResearch = JSON.parse(
+  readFileSync(new URL("./research/rendering-pipeline-seeds.json", import.meta.url), "utf8")
+);
+const renderingResearch = handleRequest(request("tools/call", {
+  name: "telos.rendering.research",
+  arguments: {}
+}));
+assert.deepEqual(renderingResearch.result.structuredContent, expectedRenderingResearch);
+assert.equal(renderingResearch.result.structuredContent.schema, "project-telos.research-seed/v1");
+assert.equal(renderingResearch.result.structuredContent.tool, "telos.rendering.research");
+assert.equal(renderingResearch.result.structuredContent.seeds.length, 2);
+
 const badTool = handleRequest(request("tools/call", { name: "telos.missing", arguments: {} }));
 assert.equal(badTool.error.code, -32000);
 assert.match(badTool.error.message, /unknown tool/);
@@ -147,3 +161,5 @@ assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.context
 assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.action.receipt"));
 assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.loop.ledger"));
 assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.research.seed"));
+assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.rendering.research"));
+assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.rendering.research"));
