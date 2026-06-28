@@ -39,7 +39,8 @@ for (const technique of [
   "touchdesigner.node-graph-compatible",
   "physics.particle-field",
   "cgi.clustered-forward-lighting",
-  "renderer.capability-probe"
+  "renderer.capability-probe",
+  "sensor.measurement-layers"
 ]) {
   assert.ok(manifest.techniques.some((item) => item.id === technique), `missing technique ${technique}`);
 }
@@ -49,9 +50,15 @@ assert.equal(manifest.rendering_capabilities.contract, "project-telos.rendering-
 assert.ok(manifest.rendering_capabilities.profiles.includes("webgpu-splat-clustered"));
 assert.match(manifest.rendering_capabilities.boundary, /separate from verification/);
 
-assert.equal(manifest.sensor_measurement_layers.length, 4);
+assert.equal(manifest.measurement_layers.tool, "telos.measurement.layers");
+assert.equal(manifest.measurement_layers.contract, "project-telos.measurement-layers/v1");
+assert.ok(manifest.measurement_layers.layers.includes("visual.dither-spectrum-meter"));
+assert.match(manifest.measurement_layers.boundary, /Crucible still owns verdicts/);
+
+assert.equal(manifest.sensor_measurement_layers.length, 5);
 for (const sensor of [
   "visual.histogram-field",
+  "visual.dither-spectrum-meter",
   "spatial.splat-probe",
   "lighting.cluster-meter",
   "audio.spectral-meter"
@@ -94,5 +101,5 @@ const summary = spawnSync(process.execPath, [path.join(here, "creative-engine.mj
 assert.equal(summary.status, 0, summary.stderr || summary.stdout);
 assert.match(summary.stdout, /Telos Creative Engine/);
 assert.match(summary.stdout, /domains\s+9/);
-assert.match(summary.stdout, /techniques\s+9/);
+assert.match(summary.stdout, /techniques\s+10/);
 assert.match(summary.stdout, /revival\s+11/);

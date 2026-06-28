@@ -80,6 +80,11 @@ export const tools = [
     inputSchema: emptyInputSchema
   },
   {
+    name: "telos.measurement.layers",
+    description: "Return runnable Telos sensor and measurement layers for visual, splat, lighting, dither, and audio evidence.",
+    inputSchema: emptyInputSchema
+  },
+  {
     name: "telos.creative.engine",
     description: "Return the Telos Creative Engine manifest for generative art, sound, typography, media, CGI, math/physics, revived local organs, and receipt-backed creative work.",
     inputSchema: emptyInputSchema
@@ -100,6 +105,7 @@ const toolScripts = new Map([
   ["telos.research.seed", ["research-seed.mjs"]],
   ["telos.rendering.research", ["rendering-research.mjs"]],
   ["telos.rendering.capabilities", ["rendering-capabilities.mjs"]],
+  ["telos.measurement.layers", ["measurement-layers.mjs"]],
   ["telos.creative.engine", ["creative-engine.mjs"]]
 ]);
 

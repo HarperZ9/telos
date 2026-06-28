@@ -1,0 +1,111 @@
+{
+  "schema": "project-telos.measurement-layers/v1",
+  "tool": "telos.measurement.layers",
+  "generated_at": "2026-06-28T00:00:00.000Z",
+  "purpose": "Runnables sensors and meters for Telos creative, scientific, and rendering surfaces.",
+  "source_receipts": [
+    {
+      "title": "Forward+ rendering publication record",
+      "url": "https://diglib.eg.org/items/5a8806ed-5b06-447a-a6f3-4edfa2d814fb",
+      "source_kind": "open-publication-record",
+      "resolved_at": "2026-06-28T00:00:00Z",
+      "provenance_class": "lawful_source",
+      "receipt_hash": "sha256:680a425aa798284d4c7e1ee0a34ab9ae5acba7c4429c8282a84f248ece088882"
+    },
+    {
+      "title": "NVIDIA spatiotemporal blue noise discussion",
+      "url": "https://developer.nvidia.com/blog/rendering-in-real-time-with-spatiotemporal-blue-noise-textures-part-1/",
+      "source_kind": "official-vendor-technical-blog",
+      "resolved_at": "2026-06-28T00:00:00Z",
+      "provenance_class": "lawful_source",
+      "receipt_hash": "sha256:e9db89ce6e4a71aa9b7c092af61218ece2534db323bd5ef44e0c4823745bc8d2"
+    },
+    {
+      "title": "Void-and-cluster method for dither array generation",
+      "url": "https://doi.org/10.1117/12.59015",
+      "source_kind": "publication-record",
+      "resolved_at": "2026-06-28T00:00:00Z",
+      "provenance_class": "lawful_source",
+      "receipt_hash": "sha256:2977c8a06de0ee51f56ec8e7c4e0a07ba9df1fb0a3ca27622fd6700e3c8027ae"
+    },
+    {
+      "title": "Project Telos measurement layers",
+      "url": "demo/measurement-layers.mjs",
+      "source_kind": "local-source",
+      "resolved_at": "2026-06-28T00:00:00Z",
+      "provenance_class": "lawful_source",
+      "receipt_hash": "sha256:392e4e363398d03217cf6f62eb42395c0131e4c7e0edd0f897693c45d547a5a3"
+    }
+  ],
+  "layers": [
+    {
+      "layer_id": "visual.histogram-field",
+      "evidence_status": "MATCH",
+      "inputs": ["luminance pixels", "canvas pixels", "image artifacts"],
+      "outputs": ["bins", "mean_luminance", "contrast_ratio", "measurement_hash"],
+      "failure_codes": ["measurement_source_missing", "pixel_dimensions_mismatch"]
+    },
+    {
+      "layer_id": "visual.dither-spectrum-meter",
+      "evidence_status": "MATCH",
+      "inputs": ["luminance pixels", "matrix size", "dither algorithm candidate"],
+      "outputs": ["unique_levels", "pattern", "algorithm_candidates", "measurement_hash"],
+      "failure_codes": ["measurement_source_missing", "dither_pattern_unverifiable"]
+    },
+    {
+      "layer_id": "spatial.splat-probe",
+      "evidence_status": "MATCH",
+      "inputs": ["Gaussian splat centers", "radii", "opacity", "viewport"],
+      "outputs": ["splat_count", "bounds", "coverage_estimate", "opacity_mean"],
+      "failure_codes": ["measurement_source_missing", "asset_provenance_missing"]
+    },
+    {
+      "layer_id": "lighting.cluster-meter",
+      "evidence_status": "MATCH",
+      "inputs": ["cluster grid", "light positions", "light radius", "budget"],
+      "outputs": ["cluster_count", "max_lights_per_cluster", "over_budget_clusters", "histogram"],
+      "failure_codes": ["measurement_source_missing", "cluster_budget_exceeded"]
+    },
+    {
+      "layer_id": "audio.spectral-meter",
+      "evidence_status": "MATCH",
+      "inputs": ["waveform samples", "frequency bins"],
+      "outputs": ["dominant_bins", "spectral_centroid_bin", "measurement_hash"],
+      "failure_codes": ["measurement_source_missing", "audio_spectrum_unverifiable"]
+    }
+  ],
+  "privacy": {
+    "raw_payload_required": false,
+    "raw_assets_required_for_interop": false,
+    "exported_fields": [
+      "layer_id",
+      "measurement_hash",
+      "bounds",
+      "counts",
+      "dominant_bins",
+      "failure_code",
+      "verification_verdict"
+    ]
+  },
+  "failure_codes": [
+    "measurement_source_missing",
+    "pixel_dimensions_mismatch",
+    "dither_pattern_unverifiable",
+    "asset_provenance_missing",
+    "cluster_budget_exceeded",
+    "audio_spectrum_unverifiable",
+    "raw_payload_leak"
+  ],
+  "next_actions": [
+    {
+      "tool": "crucible.assess",
+      "action": "verify-measurement-gates",
+      "reason": "Turn sensor outputs into MATCH, DRIFT, or UNVERIFIABLE verdicts against explicit criteria."
+    },
+    {
+      "tool": "index.context",
+      "action": "map-engine-organs",
+      "reason": "Attach revived raster, sound, splat, and lighting organs to the same measurement surface."
+    }
+  ]
+}

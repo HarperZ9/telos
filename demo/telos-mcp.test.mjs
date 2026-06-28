@@ -33,6 +33,7 @@ for (const name of [
   "telos.research.seed",
   "telos.rendering.research",
   "telos.rendering.capabilities",
+  "telos.measurement.layers",
   "telos.creative.engine"
 ]) {
   assert.ok(names.has(name), `missing ${name}`);
@@ -153,6 +154,14 @@ assert.deepEqual(renderingCapabilities.result.structuredContent, expectedRenderi
 assert.equal(renderingCapabilities.result.structuredContent.schema, "project-telos.rendering-capabilities/v1");
 assert.equal(renderingCapabilities.result.structuredContent.renderer_profiles.length, 4);
 
+const measurementLayers = handleRequest(request("tools/call", {
+  name: "telos.measurement.layers",
+  arguments: {}
+}));
+assert.equal(measurementLayers.result.structuredContent.schema, "project-telos.measurement-layers/v1");
+assert.equal(measurementLayers.result.structuredContent.tool, "telos.measurement.layers");
+assert.equal(measurementLayers.result.structuredContent.measurements.length, 5);
+
 const expectedCreativeEngine = JSON.parse(
   readFileSync(new URL("./integrations/creative-engine-manifest.json", import.meta.url), "utf8")
 );
@@ -186,4 +195,5 @@ assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.loop.le
 assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.research.seed"));
 assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.rendering.research"));
 assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.rendering.capabilities"));
+assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.measurement.layers"));
 assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.creative.engine"));

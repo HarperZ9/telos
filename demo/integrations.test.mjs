@@ -49,6 +49,7 @@ for (const name of [
   "telos.research.seed",
   "telos.rendering.research",
   "telos.rendering.capabilities",
+  "telos.measurement.layers",
   "telos.creative.engine"
 ]) {
   assert.ok(names.has(name), `missing ${name}`);
