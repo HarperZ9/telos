@@ -131,6 +131,14 @@
       "domain": "verification",
       "interop": "CLI/MCP renderer profile and fallback contract",
       "claim": "Hosts can select WebGPU, WebGL2, canvas, or static artifact rendering with explicit fallback, privacy, and verification gates."
+    },
+    {
+      "id": "sensor.measurement-layers",
+      "status": "live",
+      "source": "demo/measurement-layers.mjs",
+      "domain": "verification",
+      "interop": "CLI/MCP sensor and measurement packet",
+      "claim": "Histogram, dither, splat, cluster, and audio meters expose measurable state for creative and scientific artifacts."
     }
   ],
   "rendering_capabilities": {
@@ -143,6 +151,18 @@
       "static-artifact-receipt"
     ],
     "boundary": "Renderer capability selection is separate from verification. A selected GPU path is an execution choice; claims still require receipts, benchmarks, and MATCH/DRIFT/UNVERIFIABLE checks."
+  },
+  "measurement_layers": {
+    "tool": "telos.measurement.layers",
+    "contract": "project-telos.measurement-layers/v1",
+    "layers": [
+      "visual.histogram-field",
+      "visual.dither-spectrum-meter",
+      "spatial.splat-probe",
+      "lighting.cluster-meter",
+      "audio.spectral-meter"
+    ],
+    "boundary": "Measurement layers expose evidence signals. Crucible still owns verdicts, and raw private assets are not required for interop."
   },
   "live_modules": [
     {
@@ -173,7 +193,7 @@
   "sensor_measurement_layers": [
     {
       "id": "visual.histogram-field",
-      "status": "planned",
+      "status": "live",
       "inputs": [
         "canvas pixels",
         "image artifacts",
@@ -187,8 +207,24 @@
       "why": "Dithering, poster, and glitch work need measurable tone structure instead of only aesthetic description."
     },
     {
+      "id": "visual.dither-spectrum-meter",
+      "status": "live",
+      "inputs": [
+        "luminance pixels",
+        "threshold matrix",
+        "dither algorithm candidate"
+      ],
+      "outputs": [
+        "unique levels",
+        "transition count",
+        "algorithm candidates",
+        "dither stability receipt"
+      ],
+      "why": "Dithering is a core creative primitive and needs measurable structure for ordered, void-and-cluster, and blue-noise inspired paths."
+    },
+    {
       "id": "spatial.splat-probe",
-      "status": "planned",
+      "status": "live",
       "inputs": [
         "Gaussian splat assets",
         "camera path",
@@ -204,7 +240,7 @@
     },
     {
       "id": "lighting.cluster-meter",
-      "status": "planned",
+      "status": "live",
       "inputs": [
         "cluster grid",
         "light bins",
@@ -219,7 +255,7 @@
     },
     {
       "id": "audio.spectral-meter",
-      "status": "planned",
+      "status": "live",
       "inputs": [
         "Web Audio graph",
         "generated waveform",

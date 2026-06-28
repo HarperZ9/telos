@@ -7,6 +7,7 @@ All notable changes to Project Telos. Telos is currently a source demo and share
 - Engine demo: adds a live Telos Studio effects console with retro CGI, glitch art, seeded generative fields, plotter paths, pixel sorting, poster composition, fractal recursion, Gaussian-splat stand-ins, clustered-light overlays, reduced-motion handling, and visible scene receipts.
 - Effects protocol: adds a host-neutral project-telos.scene-spec/v1 scene envelope, six replayable presets, hashed action identities, chained project-telos.scene-receipt/v1 render receipts, copy/export/replay controls, and CI coverage for protocol-compatible Telos Studio embedding.
 - Rendering capabilities: adds `project-telos.rendering-capabilities/v1`, `node demo/rendering-capabilities.mjs`, and `telos.rendering.capabilities` so hosts can select WebGPU Gaussian-splat/clustered prototypes, WebGL2 previews, Canvas 2D receipts, or static artifact fallbacks with privacy and verification gates.
+- Measurement layers: adds `project-telos.measurement-layers/v1`, `node demo/measurement-layers.mjs`, and `telos.measurement.layers` for runnable histogram, dither-spectrum, splat-probe, cluster-meter, and audio-spectral meters.
 - Creative engine manifest: adds `project-telos.creative-engine/v1`, `node demo/creative-engine.mjs`, and `telos.creative.engine` to present the whole creation engine across generative art, retro CGI, raster effects, sound, film/media, typography, math/physics, node graphs, verification, and revived local organs.
 - Sensor layers: records planned histogram, splat-probe, clustered-light, and audio spectral meters so creative work can become measurable without confusing renderer execution choices with verification verdicts.
 - Math educator research intake: adds `demo/research/youtube-math-educator-receipts.json` with compact metadata receipts for Inigo Quilez, math/physics educator, world-model, AI-progress, and GPU-kernel source leads, while keeping raw video and raw transcripts out of the repo.
@@ -32,8 +33,8 @@ All notable changes to Project Telos. Telos is currently a source demo and share
 Presentation and operator-surface housekeeping for five-flagship parity.
 
 - README: adds the shared current-status block and consistent five-flagship navigation.
-- Status payload: exposes the current operator commands, Telos MCP tool names, and 32-tool catalog summary under `native`.
+- Status payload: exposes the current operator commands, Telos MCP tool names, and 33-tool catalog summary under `native`.
 - Operator room: records `status`, `doctor`, `room`, `catalog`, and `flagship-workflow` as the current front door for local operators and host integrations.
-- MCP surface: records native availability for `telos.status`, `telos.doctor`, `telos.room`, `telos.catalog`, `telos.workflow`, `telos.server.manifest`, `telos.admission.telemetry`, `telos.context.envelope`, `telos.action.receipt`, `telos.loop.ledger`, `telos.research.seed`, `telos.rendering.research`, `telos.rendering.capabilities`, and `telos.creative.engine`.
-- Catalog: keeps `demo/integrations/mcp-tool-catalog.json` as the provider-neutral source of truth for 32 available tools across Gather, Crucible, Index, Forum, and Telos.
+- MCP surface: records native availability for `telos.status`, `telos.doctor`, `telos.room`, `telos.catalog`, `telos.workflow`, `telos.server.manifest`, `telos.admission.telemetry`, `telos.context.envelope`, `telos.action.receipt`, `telos.loop.ledger`, `telos.research.seed`, `telos.rendering.research`, `telos.rendering.capabilities`, `telos.measurement.layers`, and `telos.creative.engine`.
+- Catalog: keeps `demo/integrations/mcp-tool-catalog.json` as the provider-neutral source of truth for 33 available tools across Gather, Crucible, Index, Forum, and Telos.
 - Research receipts: records the YouTube intake ledger under `demo/research/youtube-bgoertzel-receipts.json` as receipt-only research material, with no raw transcript text in the repository.

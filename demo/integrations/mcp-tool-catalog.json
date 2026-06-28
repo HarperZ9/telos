@@ -612,6 +612,26 @@
                                        ]
                   },
                   {
+                      "name":  "telos.measurement.layers",
+                      "flagship":  "telos",
+                      "description":  "Return runnable Telos sensor and measurement layers for visual, splat, lighting, dither, and audio evidence.",
+                      "cli":  [
+                                  "node",
+                                  "demo/measurement-layers.mjs"
+                              ],
+                      "mcp":  {
+                                  "status":  "available",
+                                  "server":  "telos",
+                                  "method":  "tools/call",
+                                  "tool":  "telos.measurement.layers"
+                              },
+                      "next_actions":  [
+                                           "crucible.assess",
+                                           "index.context",
+                                           "telos.creative.engine"
+                                       ]
+                  },
+                  {
                       "name":  "telos.workflow",
                       "flagship":  "telos",
                       "description":  "Run the local golden workflow and reconcile the five flagship receipts.",

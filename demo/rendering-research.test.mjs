@@ -79,8 +79,10 @@ assert.equal(catalogTool.mcp.tool, "telos.rendering.research");
 
 assert.ok(tools.some((tool) => tool.name === "telos.rendering.research"));
 assert.ok(tools.some((tool) => tool.name === "telos.rendering.capabilities"));
+assert.ok(tools.some((tool) => tool.name === "telos.measurement.layers"));
 assert.ok(manifest.servers.telos.expected_tools.includes("telos.rendering.research"));
 assert.ok(manifest.servers.telos.expected_tools.includes("telos.rendering.capabilities"));
+assert.ok(manifest.servers.telos.expected_tools.includes("telos.measurement.layers"));
 
 const mcp = handleRequest({
   jsonrpc: "2.0",
@@ -99,20 +101,21 @@ assert.equal(status.status, 0, status.stderr || status.stdout);
 const statusPayload = JSON.parse(status.stdout);
 assert.ok(statusPayload.native.mcp_tools.includes("telos.rendering.research"));
 assert.ok(statusPayload.native.mcp_tools.includes("telos.rendering.capabilities"));
+assert.ok(statusPayload.native.mcp_tools.includes("telos.measurement.layers"));
 assert.ok(statusPayload.native.mcp_tools.includes("telos.creative.engine"));
-assert.match(statusPayload.native.current_status, /32-tool/);
+assert.match(statusPayload.native.current_status, /33-tool/);
 
 const catalogSummary = spawnSync(process.execPath, [path.join(here, "catalog.mjs"), "--summary"], {
   cwd: path.resolve(here, ".."),
   encoding: "utf8"
 });
 assert.equal(catalogSummary.status, 0, catalogSummary.stderr || catalogSummary.stdout);
-assert.match(catalogSummary.stdout, /tools\s+32 total, 32 available/);
-assert.match(catalogSummary.stdout, /telos\s+14 tools/);
+assert.match(catalogSummary.stdout, /tools\s+33 total, 33 available/);
+assert.match(catalogSummary.stdout, /telos\s+15 tools/);
 
 const manifestSummary = spawnSync(process.execPath, [path.join(here, "server-manifest.mjs"), "--summary"], {
   cwd: path.resolve(here, ".."),
   encoding: "utf8"
 });
 assert.equal(manifestSummary.status, 0, manifestSummary.stderr || manifestSummary.stdout);
-assert.match(manifestSummary.stdout, /tools\s+32 expected/);
+assert.match(manifestSummary.stdout, /tools\s+33 expected/);
