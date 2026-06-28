@@ -18,9 +18,10 @@ const payload = actionEnvelope({
       "telos.admission.telemetry",
       "telos.context.envelope",
       "telos.action.receipt",
-      "telos.loop.ledger"
+      "telos.loop.ledger",
+      "telos.research.seed"
     ],
-    current_status: "source demo with 28-tool five-flagship catalog, context envelopes, action receipts, loop ledger, and native Telos MCP surface"
+    current_status: "source demo with 29-tool five-flagship catalog, context envelopes, action receipts, loop ledger, research seeds, and native Telos MCP surface"
   },
   nextActions: [
     {

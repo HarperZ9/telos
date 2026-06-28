@@ -63,6 +63,11 @@ export const tools = [
     name: "telos.loop.ledger",
     description: "Return the durable loop-state ledger and bounded headless scheduled-run convention.",
     inputSchema: emptyInputSchema
+  },
+  {
+    name: "telos.research.seed",
+    description: "Return receipt-backed research seeds resolved from terse operator notes.",
+    inputSchema: emptyInputSchema
   }
 ];
 
@@ -76,7 +81,8 @@ const toolScripts = new Map([
   ["telos.admission.telemetry", ["admission-telemetry.mjs"]],
   ["telos.context.envelope", ["context-envelope.mjs"]],
   ["telos.action.receipt", ["action-receipt.mjs"]],
-  ["telos.loop.ledger", ["loop-ledger.mjs"]]
+  ["telos.loop.ledger", ["loop-ledger.mjs"]],
+  ["telos.research.seed", ["research-seed.mjs"]]
 ]);
 
 function runTool(name) {

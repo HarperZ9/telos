@@ -552,6 +552,26 @@
       ]
     },
     {
+      "name": "telos.research.seed",
+      "flagship": "telos",
+      "description": "Return receipt-backed research seeds resolved from terse operator notes.",
+      "cli": [
+        "node",
+        "demo/research-seed.mjs"
+      ],
+      "mcp": {
+        "status": "available",
+        "server": "telos",
+        "method": "tools/call",
+        "tool": "telos.research.seed"
+      },
+      "next_actions": [
+        "gather.run",
+        "index.context",
+        "crucible.assess"
+      ]
+    },
+    {
       "name": "telos.workflow",
       "flagship": "telos",
       "description": "Run the local golden workflow and reconcile the five flagship receipts.",
