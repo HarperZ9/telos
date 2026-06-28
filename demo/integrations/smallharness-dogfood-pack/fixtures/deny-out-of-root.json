@@ -1,0 +1,18 @@
+{
+  "schema": "smallharness.external-fixture/v0",
+  "id": "telos.resolver.deny_out_of_root",
+  "workspace": "../outside-smallharness-pack",
+  "intent": "Exercise the shared resolver by proving a fixture workspace cannot escape the pack root.",
+  "materialRefs": [],
+  "checks": [
+    {
+      "id": "resolver.workspace_root_bound",
+      "type": "path_resolves_under_pack_root",
+      "path": "$.workspace",
+      "expected": "blocked"
+    }
+  ],
+  "expectedOutcome": "block",
+  "expectedFailureCode": "path_escape_denied",
+  "expectedToolCallNames": []
+}

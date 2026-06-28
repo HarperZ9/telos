@@ -1,0 +1,30 @@
+{
+  "schema": "project-telos.smallharness-fixture-pack/v0",
+  "packId": "project-telos.receipt-boundary-dogfood",
+  "packVersion": "2026.06.28",
+  "purpose": "Dogfood fixture pack for path-safe external eval loading and minimal run receipts.",
+  "builtInFixtureCompatibility": "unchanged",
+  "workspaceRoot": "workspace",
+  "routingOnly": true,
+  "noExecutableHooks": true,
+  "fixtures": [
+    {
+      "id": "telos.receipt.pass_basic",
+      "path": "fixtures/pass-basic.json",
+      "expectedOutcome": "pass",
+      "receipt": "receipts/pass-basic.receipt.json"
+    },
+    {
+      "id": "telos.receipt.fail_structured",
+      "path": "fixtures/fail-structured.json",
+      "expectedOutcome": "fail",
+      "receipt": "receipts/fail-structured.receipt.json"
+    },
+    {
+      "id": "telos.resolver.deny_out_of_root",
+      "path": "fixtures/deny-out-of-root.json",
+      "expectedOutcome": "block",
+      "receipt": "receipts/deny-out-of-root.receipt.json"
+    }
+  ]
+}

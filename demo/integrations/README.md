@@ -32,6 +32,8 @@ OpenAI Apps, OpenAI Agents, Anthropic Claude, Claude Code, Codex plugins, skills
 
 `action-receipt-conventions.json` records the enterprise receipt interface and append-only persistence contract for auditable agent actions, including digest inputs, component/config identity, policy decisions, verification verdicts, and compensation events.
 
+`atp-adapter-validation.json` records a public/synthetic adapter-validation profile for ATP v1.2.0 transaction receipts: digest refs, component/config identity, side-effect class, policy decision, verification verdict, typed stop reason, and append-only compensation. It is a fixture profile, not a live ATP/Haystack conformance claim.
+
 `research-seed-conventions.json` records how terse operator notes become source-backed research seeds: the note is a lead, current lawful source receipts promote claims, and unresolved claims stay `UNVERIFIABLE`.
 
 `../mcp-runtime-contract.test.mjs` checks the catalog against the sibling MCP runtimes so `available` means the tool is actually present in `tools/list`.

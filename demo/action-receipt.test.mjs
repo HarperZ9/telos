@@ -40,6 +40,27 @@ assert.equal(event.verification.verdict, "MATCH");
 assert.equal(event.result.stop_reason, "completed");
 assert.equal(event.persistence.append_only, true);
 
+const failedToolCall = convention.conformance_fixture.failed_tool_call;
+assert.equal(convention.contract.failure_typed_persistence_required, true);
+assert.equal(failedToolCall.event_type, "execution_failed");
+assert.equal(failedToolCall.result.state, "failed");
+assert.equal(failedToolCall.result.stop_reason, "tool_error");
+assert.equal(failedToolCall.result.error_payload_ref.length > 0, true);
+assert.match(failedToolCall.result.error_payload_digest, /^sha256:[a-f0-9]{64}$/);
+
+for (const surface of ["stream_chunk", "persisted_message_part", "trace_span", "scorer_eval_input"]) {
+  assert.equal(
+    failedToolCall.failure_surfaces[surface].failure_typed,
+    true,
+    `${surface} must preserve failure typing`
+  );
+  assert.equal(
+    failedToolCall.failure_surfaces[surface].payload_preserved,
+    true,
+    `${surface} must preserve the failure payload reference`
+  );
+}
+
 const compensation = convention.conformance_fixture.append_only_compensation;
 assert.equal(compensation.compensates, event.action_id);
 assert.equal(compensation.result.state, "compensated");

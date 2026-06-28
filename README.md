@@ -140,14 +140,14 @@ Prof. Mihai Nica walks through this plainly in his AlphaZero Explained series, w
 
 ## The bricks
 
-The flagship is the mission. These open pieces are the bricks it is built from, and you can pick any of them up on its own. The counts come from running the test suites, not from memory.
+The flagship is the mission. These open pieces are the bricks it is built from, and you can pick any of them up on its own. Treat the repo tests and receipts as the current evidence instead of relying on frozen maturity counts in prose.
 
-- **[coherence-membrane](https://github.com/HarperZ9/coherence-membrane)** turns a render or a frame into MATCH, DRIFT, or UNVERIFIABLE. Zero dependencies. 900 tests.
-- **[accountable-surface](https://github.com/HarperZ9/accountable-surface)** is the full loop of perceive, gate, and act. 201 tests.
-- **[EMET](https://github.com/HarperZ9/emet)** is an outside witness built on a perceptual hash and a content hash, with the same answer reproduced in two independent languages. 41 tests.
-- **[reconcile](https://github.com/HarperZ9/reconcile)** is the bare primitive, with worked examples for novelty and structural fitness. 21 tests.
-- **[studio-engine](https://github.com/HarperZ9/studio-engine)** generates structures to perceive, behind a small REST API. 122 tests.
-- The **engine** the demo runs on, which renders and perceives and reconciles, is 162 tests and zero dependencies. It is kept local for now while the five above are public.
+- **[coherence-membrane](https://github.com/HarperZ9/coherence-membrane)** turns a render or a frame into MATCH, DRIFT, or UNVERIFIABLE. It is dependency-light and test-backed.
+- **[accountable-surface](https://github.com/HarperZ9/accountable-surface)** is the full loop of perceive, gate, and act, with tests covering the loop behavior.
+- **[EMET](https://github.com/HarperZ9/emet)** is an outside witness built on a perceptual hash and a content hash, with the same answer reproduced in two independent languages.
+- **[reconcile](https://github.com/HarperZ9/reconcile)** is the bare primitive, with worked examples for novelty and structural fitness.
+- **[studio-engine](https://github.com/HarperZ9/studio-engine)** generates structures to perceive, behind a small REST API.
+- The **engine** the demo runs on renders, perceives, and reconciles. It is kept local for now while the five above are public.
 
 These are open and tested on GitHub. They are not yet packaged for pip or npm.
 

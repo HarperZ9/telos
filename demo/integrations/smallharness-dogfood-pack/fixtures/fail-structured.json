@@ -1,0 +1,29 @@
+{
+  "schema": "smallharness.external-fixture/v0",
+  "id": "telos.receipt.fail_structured",
+  "workspace": "workspace/fail-structured",
+  "intent": "Show a structured failure when a receipt exists but the verification verdict drifts from the expected MATCH result.",
+  "materialRefs": [
+    "workspace/fail-structured/receipt-under-test.json"
+  ],
+  "checks": [
+    {
+      "id": "receipt.schema",
+      "type": "json_path_equals",
+      "path": "$.schema",
+      "expected": "project-telos.action-receipt/v1"
+    },
+    {
+      "id": "verification.match",
+      "type": "json_path_equals",
+      "path": "$.verification.verdict",
+      "expected": "MATCH"
+    }
+  ],
+  "expectedOutcome": "fail",
+  "expectedFailureCode": "verification_drift",
+  "expectedToolCallNames": [
+    "read_file",
+    "json_path_check"
+  ]
+}
