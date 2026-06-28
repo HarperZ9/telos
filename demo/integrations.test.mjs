@@ -46,7 +46,8 @@ for (const name of [
   "telos.context.envelope",
   "telos.action.receipt",
   "telos.loop.ledger",
-  "telos.research.seed"
+  "telos.research.seed",
+  "telos.rendering.research"
 ]) {
   assert.ok(names.has(name), `missing ${name}`);
 }

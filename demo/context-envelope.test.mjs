@@ -58,6 +58,35 @@ for (const receipt of happyPath.receipt_chain) {
   assert.match(receipt.receipt_hash, /^sha256:[a-f0-9]{64}$/);
 }
 
+const relevance = convention.conformance_fixture.context_relevance;
+assert.equal(relevance.selection.selected_count, 3);
+assert.equal(relevance.selection.delivered_count, 3);
+assert.equal(relevance.selection.suppressed_count, 1);
+assert.equal(
+  relevance.selection.selected_count,
+  relevance.relevance.decisive_count +
+    relevance.relevance.supporting_count +
+    relevance.relevance.unused_count +
+    relevance.relevance.unknown_count
+);
+
+for (const loaded of relevance.loaded_inputs) {
+  assert.match(loaded.source_hash, /^sha256:[a-f0-9]{64}$/);
+  assert.match(loaded.delivered_hash, /^sha256:[a-f0-9]{64}$/);
+  assert.equal("relevance_label" in loaded, false, "load event must not claim later relevance");
+  assert.equal("raw_context" in loaded, false, "load event must not expose raw context");
+}
+
+for (const suppressed of relevance.suppressed_inputs) {
+  assert.match(suppressed.source_hash, /^sha256:[a-f0-9]{64}$/);
+  assert.equal("raw_context" in suppressed, false, "suppressed event must not expose raw context");
+}
+
+for (const ref of relevance.relevance.input_refs) {
+  assert.equal("raw_context" in ref, false, "relevance event must not expose raw context");
+  assert.ok(["decisive", "supporting", "unused", "unknown"].includes(ref.relevance));
+}
+
 const negativeCodes = new Set(convention.negative_test_cases.map((item) => item.failure_code));
 assert.equal(negativeCodes.size, convention.negative_test_cases.length);
 for (const code of convention.failure_codes) {

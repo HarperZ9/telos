@@ -25,6 +25,7 @@ node demo/server-manifest.mjs --summary
 node demo/context-envelope.mjs
 node demo/action-receipt.mjs
 node demo/loop-ledger.mjs
+node demo/rendering-research.mjs
 ```
 
 Open the visual certificate-loop surface at [`demo/index.html`](demo/index.html).
@@ -48,9 +49,9 @@ perception, and action floor.
 
 ## Current status
 
-- **Release:** source demo; command surface is `node demo/run.mjs`, `node demo/room.mjs`, `node demo/status.mjs`, `node demo/doctor.mjs`, `node demo/catalog.mjs`, `node demo/server-manifest.mjs`, `node demo/admission-telemetry.mjs`, `node demo/context-envelope.mjs`, `node demo/action-receipt.mjs`, `node demo/loop-ledger.mjs`, and `node demo/flagship-workflow.mjs`.
-- **Operator surface:** `node demo/telos-mcp.mjs` exposes native MCP tools: `telos.status`, `telos.doctor`, `telos.room`, `telos.catalog`, `telos.workflow`, `telos.server.manifest`, `telos.admission.telemetry`, `telos.context.envelope`, `telos.action.receipt`, `telos.loop.ledger`, and `telos.research.seed`.
-- **Current floor:** the operator room reconciles 29 available tools across Gather, Crucible, Index, Forum, and Telos, with a provider-neutral catalog and server manifest for CLI, MCP, plugin, IDE, TUI, and app hosts. See [CHANGELOG.md](CHANGELOG.md).
+- **Release:** source demo; command surface is `node demo/run.mjs`, `node demo/room.mjs`, `node demo/status.mjs`, `node demo/doctor.mjs`, `node demo/catalog.mjs`, `node demo/server-manifest.mjs`, `node demo/admission-telemetry.mjs`, `node demo/context-envelope.mjs`, `node demo/action-receipt.mjs`, `node demo/loop-ledger.mjs`, `node demo/research-seed.mjs`, `node demo/rendering-research.mjs`, and `node demo/flagship-workflow.mjs`.
+- **Operator surface:** `node demo/telos-mcp.mjs` exposes native MCP tools: `telos.status`, `telos.doctor`, `telos.room`, `telos.catalog`, `telos.workflow`, `telos.server.manifest`, `telos.admission.telemetry`, `telos.context.envelope`, `telos.action.receipt`, `telos.loop.ledger`, `telos.research.seed`, and `telos.rendering.research`.
+- **Current floor:** the operator room reconciles 30 available tools across Gather, Crucible, Index, Forum, and Telos, with a provider-neutral catalog and server manifest for CLI, MCP, plugin, IDE, TUI, and app hosts. See [CHANGELOG.md](CHANGELOG.md).
 
 ## What it is
 
@@ -140,14 +141,14 @@ Prof. Mihai Nica walks through this plainly in his AlphaZero Explained series, w
 
 ## The bricks
 
-The flagship is the mission. These open pieces are the bricks it is built from, and you can pick any of them up on its own. The counts come from running the test suites, not from memory.
+The flagship is the mission. These open pieces are the bricks it is built from, and you can pick any of them up on its own. Treat the repo tests and receipts as the current evidence instead of relying on frozen maturity counts in prose.
 
-- **[coherence-membrane](https://github.com/HarperZ9/coherence-membrane)** turns a render or a frame into MATCH, DRIFT, or UNVERIFIABLE. Zero dependencies. 900 tests.
-- **[accountable-surface](https://github.com/HarperZ9/accountable-surface)** is the full loop of perceive, gate, and act. 201 tests.
-- **[EMET](https://github.com/HarperZ9/emet)** is an outside witness built on a perceptual hash and a content hash, with the same answer reproduced in two independent languages. 41 tests.
-- **[reconcile](https://github.com/HarperZ9/reconcile)** is the bare primitive, with worked examples for novelty and structural fitness. 21 tests.
-- **[studio-engine](https://github.com/HarperZ9/studio-engine)** generates structures to perceive, behind a small REST API. 122 tests.
-- The **engine** the demo runs on, which renders and perceives and reconciles, is 162 tests and zero dependencies. It is kept local for now while the five above are public.
+- **[coherence-membrane](https://github.com/HarperZ9/coherence-membrane)** turns a render or a frame into MATCH, DRIFT, or UNVERIFIABLE. It is dependency-light and test-backed.
+- **[accountable-surface](https://github.com/HarperZ9/accountable-surface)** is the full loop of perceive, gate, and act, with tests covering the loop behavior.
+- **[EMET](https://github.com/HarperZ9/emet)** is an outside witness built on a perceptual hash and a content hash, with the same answer reproduced in two independent languages.
+- **[reconcile](https://github.com/HarperZ9/reconcile)** is the bare primitive, with worked examples for novelty and structural fitness.
+- **[studio-engine](https://github.com/HarperZ9/studio-engine)** generates structures to perceive, behind a small REST API.
+- The **engine** the demo runs on renders, perceives, and reconciles. It is kept local for now while the five above are public.
 
 These are open and tested on GitHub. They are not yet packaged for pip or npm.
 

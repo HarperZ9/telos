@@ -97,7 +97,9 @@
     "unjoinable_receipt",
     "readability_regression",
     "quality_gate_missing",
-    "budget_exceeded"
+    "budget_exceeded",
+    "relevance_accounting_missing",
+    "raw_context_leak"
   ],
   "flagship_roles": {
     "gather": [
@@ -249,6 +251,95 @@
         "freshness": "MATCH"
       },
       "failure_code": null
+    },
+    "context_relevance": {
+      "selection": {
+        "candidate_count": 4,
+        "selected_count": 3,
+        "delivered_count": 3,
+        "suppressed_count": 1,
+        "token_buckets": {
+          "decisive_candidate": 240,
+          "supporting_candidate": 180,
+          "duplicate_candidate": 90,
+          "suppressed_private_candidate": 75
+        }
+      },
+      "loaded_inputs": [
+        {
+          "input_id": "ctx_in_001",
+          "source_hash": "sha256:1000000000000000000000000000000000000000000000000000000000000001",
+          "delivered_hash": "sha256:2000000000000000000000000000000000000000000000000000000000000001",
+          "rank": 1,
+          "role": "source_document",
+          "bucket": "decisive_candidate",
+          "delivery_status": "delivered"
+        },
+        {
+          "input_id": "ctx_in_002",
+          "source_hash": "sha256:1000000000000000000000000000000000000000000000000000000000000002",
+          "delivered_hash": "sha256:2000000000000000000000000000000000000000000000000000000000000002",
+          "rank": 2,
+          "role": "config_context",
+          "bucket": "supporting_candidate",
+          "delivery_status": "delivered"
+        },
+        {
+          "input_id": "ctx_in_003",
+          "source_hash": "sha256:1000000000000000000000000000000000000000000000000000000000000003",
+          "delivered_hash": "sha256:2000000000000000000000000000000000000000000000000000000000000003",
+          "rank": 3,
+          "role": "duplicate_context",
+          "bucket": "duplicate_candidate",
+          "delivery_status": "delivered"
+        }
+      ],
+      "suppressed_inputs": [
+        {
+          "input_id": "ctx_in_004",
+          "source_hash": "sha256:1000000000000000000000000000000000000000000000000000000000000004",
+          "rank": 4,
+          "role": "private_context",
+          "bucket": "suppressed_private_candidate",
+          "delivery_status": "suppressed",
+          "suppression_reason": "private_or_sensitive"
+        }
+      ],
+      "decision": {
+        "decision_id": "ctx_decision_001",
+        "action_ref": "action:failed-tool-call-fixture-selection",
+        "evaluated_at": "2026-06-28T12:14:03Z"
+      },
+      "relevance": {
+        "decisive_count": 1,
+        "supporting_count": 1,
+        "unused_count": 1,
+        "unknown_count": 0,
+        "input_refs": [
+          {
+            "input_id": "ctx_in_001",
+            "delivered_hash": "sha256:2000000000000000000000000000000000000000000000000000000000000001",
+            "relevance": "decisive"
+          },
+          {
+            "input_id": "ctx_in_002",
+            "delivered_hash": "sha256:2000000000000000000000000000000000000000000000000000000000000002",
+            "relevance": "supporting"
+          },
+          {
+            "input_id": "ctx_in_003",
+            "delivered_hash": "sha256:2000000000000000000000000000000000000000000000000000000000000003",
+            "relevance": "unused"
+          }
+        ]
+      },
+      "privacy_boundary": {
+        "raw_prompt_required": false,
+        "raw_memory_required": false,
+        "raw_ticket_required": false,
+        "raw_source_body_required": false,
+        "raw_tool_output_required": false
+      }
     }
   },
   "negative_test_cases": [
@@ -291,6 +382,16 @@
       "name": "packet_exceeds_budget",
       "failure_code": "budget_exceeded",
       "expected_verdict": "DRIFT"
+    },
+    {
+      "name": "selected_count_not_accounted_by_relevance_buckets",
+      "failure_code": "relevance_accounting_missing",
+      "expected_verdict": "UNVERIFIABLE"
+    },
+    {
+      "name": "relevance_event_contains_raw_context",
+      "failure_code": "raw_context_leak",
+      "expected_verdict": "UNVERIFIABLE"
     }
   ]
 }
