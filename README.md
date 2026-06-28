@@ -9,7 +9,7 @@
 
 [Project Telos](https://harperz9.github.io) | [Gather](https://github.com/HarperZ9/gather) | [Crucible](https://github.com/HarperZ9/crucible) | [Index](https://github.com/HarperZ9/index) | [Forum](https://github.com/HarperZ9/forum) | [Telos](https://github.com/HarperZ9/telos)
 
-![node: 18+](https://img.shields.io/badge/node-18%2B-blue.svg)
+![node: 24 CI, 18+ local](https://img.shields.io/badge/node-24%20CI%2C%2018%2B%20local-blue.svg)
 ![CI](https://github.com/HarperZ9/telos/actions/workflows/ci.yml/badge.svg)
 ![deps: none (demo)](https://img.shields.io/badge/demo%20deps-none-success.svg)
 ![license: fair-source](https://img.shields.io/badge/license-fair--source-blue.svg)
