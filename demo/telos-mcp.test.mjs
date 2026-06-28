@@ -31,7 +31,6 @@ for (const name of [
   "telos.action.receipt",
   "telos.loop.ledger",
   "telos.research.seed",
-  "telos.rendering.research",
   "telos.rendering.research"
 ]) {
   assert.ok(names.has(name), `missing ${name}`);
@@ -161,5 +160,4 @@ assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.context
 assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.action.receipt"));
 assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.loop.ledger"));
 assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.research.seed"));
-assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.rendering.research"));
 assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.rendering.research"));
