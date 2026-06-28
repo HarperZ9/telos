@@ -84,6 +84,41 @@ console.log(JSON.stringify(resp.result.tools.map((tool) => tool.name)));
   return new Set(JSON.parse(result.stdout));
 }
 
+function callGatherRunInline() {
+  const spec = serverSources.gather;
+  const repoRoot = path.join(publicRoot, spec.repo);
+  const target = path.join(telosRoot, "README.md");
+  const code = `
+import json, sys
+sys.path.insert(0, sys.argv[1])
+from gather.mcp import handle_request
+resp = handle_request({
+    "jsonrpc": "2.0",
+    "id": 7,
+    "method": "tools/call",
+    "params": {
+        "name": "gather.run",
+        "arguments": {
+            "config": {
+                "jobs": [{"source": "docs", "target": sys.argv[2]}],
+                "scope": ["Project Telos"],
+                "store": None
+            }
+        }
+    }
+})
+print(json.dumps(resp))
+`;
+  const result = spawnSync("python", ["-c", code, path.join(repoRoot, "src"), target], {
+    cwd: repoRoot,
+    encoding: "utf8"
+  });
+  assert.equal(result.status, 0, result.stderr || result.stdout);
+  const response = JSON.parse(result.stdout);
+  assert.equal(response.result.isError, false);
+  return JSON.parse(response.result.content[0].text);
+}
+
 const expectedByServer = new Map();
 for (const tool of catalog.tools) {
   if (tool.mcp.status !== "available") {
@@ -100,3 +135,13 @@ for (const [server, expectedNames] of expectedByServer) {
     assert.ok(runtimeNames.has(name), `${server} runtime exposes ${name}`);
   }
 }
+
+const gatherRun = callGatherRunInline();
+assert.equal(gatherRun.targets.length, 1);
+assert.equal(gatherRun.targets[0][0], "docs");
+assert.match(gatherRun.targets[0][1].replace(/\\/g, "/"), /\/telos\/README\.md$/);
+assert.equal(gatherRun.scope.join(","), "Project Telos");
+assert.equal(gatherRun.kept, 1);
+assert.equal(gatherRun.stored, null);
+assert.match(gatherRun.digest_seal, /^[a-f0-9]{64}$/);
+assert.match(gatherRun.seal, /^[a-f0-9]{64}$/);
