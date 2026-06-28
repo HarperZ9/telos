@@ -1,0 +1,28 @@
+{
+  "schema": "smallharness.external-fixture/v0",
+  "id": "telos.receipt.pass_basic",
+  "workspace": "workspace/pass-basic",
+  "intent": "Confirm that a minimal action receipt records a matching verification verdict and structured check outcomes without requiring raw transcript prose.",
+  "materialRefs": [
+    "workspace/pass-basic/receipt-under-test.json"
+  ],
+  "checks": [
+    {
+      "id": "receipt.schema",
+      "type": "json_path_equals",
+      "path": "$.schema",
+      "expected": "project-telos.action-receipt/v1"
+    },
+    {
+      "id": "verification.match",
+      "type": "json_path_equals",
+      "path": "$.verification.verdict",
+      "expected": "MATCH"
+    }
+  ],
+  "expectedOutcome": "pass",
+  "expectedToolCallNames": [
+    "read_file",
+    "json_path_check"
+  ]
+}

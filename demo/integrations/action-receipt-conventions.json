@@ -23,6 +23,7 @@
     "raw_parameters_required": false,
     "digest_references_required": true,
     "append_only_compensation_required": true,
+    "failure_typed_persistence_required": true,
     "verification_required": "Every completed, failed, denied, or compensated action carries MATCH, DRIFT, or UNVERIFIABLE."
   },
   "state_model": {
@@ -62,6 +63,7 @@
       "stale_context",
       "budget_exhausted",
       "tool_unavailable",
+      "tool_error",
       "user_interrupted",
       "error",
       "compensation_required",
@@ -164,6 +166,79 @@
       },
       "created_at": "2026-06-27T22:01:27Z"
     },
+    "failed_tool_call": {
+      "action_id": "act_20260628_001",
+      "action_intent_id": "intent_20260628_001",
+      "event_id": "evt_20260628_001",
+      "event_type": "execution_failed",
+      "idempotency_key": "idem_20260628_001",
+      "agent": {
+        "principal": "agent:telos.mcp.runtime"
+      },
+      "component": {
+        "name": "telos.action.receipt",
+        "version": "demo",
+        "config_hash": "sha256:1f0a0a4601f6205bfb770086e517c5df68dc0be4fdcfaa6880f3782c2c146067"
+      },
+      "input_materials": [
+        {
+          "ref": "mcp-call:calltoolresult-iserror-true",
+          "digest": "sha256:1eaf55f10f675ee585951f21ca956605b3f8a07dff7cb95f6dc7a03a5a301b87"
+        }
+      ],
+      "side_effect": {
+        "class": "external_call",
+        "reversible": false
+      },
+      "policy": {
+        "decision": "allow",
+        "ref": "policy:mcp-tool-call-observed-v1"
+      },
+      "verification": {
+        "verdict": "MATCH",
+        "ref": "crucible:failed-tool-call-persistence-001"
+      },
+      "result": {
+        "state": "failed",
+        "stop_reason": "tool_error",
+        "mcp_is_error": true,
+        "error_payload_ref": "artifact:failed-tool-call/error-text-redacted",
+        "error_payload_digest": "sha256:af1e2592e6f0f4b6c2fb028124e47e784a371a8c82f0047e768a76f2b18929af"
+      },
+      "failure_surfaces": {
+        "stream_chunk": {
+          "failure_typed": true,
+          "payload_preserved": true
+        },
+        "persisted_message_part": {
+          "failure_typed": true,
+          "payload_preserved": true
+        },
+        "trace_span": {
+          "failure_typed": true,
+          "payload_preserved": true
+        },
+        "scorer_eval_input": {
+          "failure_typed": true,
+          "payload_preserved": true
+        }
+      },
+      "retry": {
+        "attempt": 1,
+        "max_attempts": 1
+      },
+      "receipts": [
+        {
+          "kind": "test",
+          "hash": "sha256:22804725e6da72e8f3d8a0f47eca5c110a82d6cae9d6b80802ae41ef607dbf42"
+        }
+      ],
+      "persistence": {
+        "append_only": true,
+        "storage_ref": "ledger:telos/action-receipts/evt_20260628_001"
+      },
+      "created_at": "2026-06-28T12:14:01Z"
+    },
     "append_only_compensation": {
       "action_id": "act_20260627_002",
       "action_intent_id": "intent_20260627_002",
@@ -187,6 +262,8 @@
     "stop_reason_untyped",
     "verification_missing",
     "policy_decision_unjoined",
+    "failure_typed_persistence_missing",
+    "failure_payload_evidence_missing",
     "non_append_only_compensation",
     "persistence_receipt_missing"
   ],
@@ -218,6 +295,14 @@
     {
       "name": "human_approver_without_policy_ref",
       "failure_code": "policy_decision_unjoined"
+    },
+    {
+      "name": "mcp_is_error_persisted_as_success_shaped_result",
+      "failure_code": "failure_typed_persistence_missing"
+    },
+    {
+      "name": "failed_tool_call_without_error_payload_ref_or_digest",
+      "failure_code": "failure_payload_evidence_missing"
     },
     {
       "name": "rollback_mutates_original_completed_event",
