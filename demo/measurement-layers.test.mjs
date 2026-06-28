@@ -6,6 +6,7 @@ import { fileURLToPath } from "node:url";
 
 import {
   demoMeasurements,
+  makeMeasurementEvent,
   measureAudioSpectrum,
   measureClusterMeter,
   measureDitherField,
@@ -27,6 +28,12 @@ const manifest = JSON.parse(
 
 assert.equal(contract.schema, "project-telos.measurement-layers/v1");
 assert.equal(contract.tool, "telos.measurement.layers");
+assert.equal(contract.measurement_bus.schema, "project-telos.measurement-bus/v1");
+assert.ok(contract.measurement_bus.event_fields.includes("event_id"));
+assert.ok(contract.measurement_bus.event_fields.includes("coordinate_space"));
+assert.ok(contract.measurement_bus.sensor_lanes.render.includes("lighting.cluster-meter"));
+assert.ok(contract.measurement_bus.sensor_lanes.creative.includes("visual.dither-spectrum-meter"));
+assert.ok(contract.measurement_bus.sensor_lanes.scientific.includes("audio.spectral-meter"));
 
 const layerIds = new Set(contract.layers.map((layer) => layer.layer_id));
 for (const id of [
@@ -107,6 +114,24 @@ assert.equal(packet.schema, "project-telos.measurement-layers/v1");
 assert.equal(packet.tool, "telos.measurement.layers");
 assert.equal(packet.status, "MATCH");
 assert.equal(packet.measurements.length, 5);
+assert.equal(packet.measurement_bus.schema, "project-telos.measurement-bus/v1");
+assert.equal(packet.events.length, packet.measurements.length);
+assert.deepEqual(
+  packet.events.map((event) => event.subject_ref),
+  packet.measurements.map((measurement) => measurement.layer_id)
+);
+const histogramEvent = makeMeasurementEvent(histogram, { runId: "test.run", frameId: "frame:histogram" });
+assert.equal(histogramEvent.event_id, "test.run:visual.histogram-field");
+assert.equal(histogramEvent.frame_id, "frame:histogram");
+assert.equal(histogramEvent.coordinate_space, "image.pixel");
+assert.equal(histogramEvent.units.luminance, "0..255");
+assert.equal(histogramEvent.privacy.raw_payload_required, false);
+assert.equal(histogramEvent.provenance.measurement_hash, histogram.measurement_hash);
+assert.match(histogramEvent.event_hash, /^fnv1a:/);
+assert.throws(
+  () => makeMeasurementEvent({ layer_id: "unknown.layer", measurement_hash: "fnv1a:00000000" }),
+  /measurement_bus: unknown_layer unknown\.layer/
+);
 assert.equal(packet.privacy.raw_payload_required, false);
 assert.ok(packet.failure_codes.includes("measurement_source_missing"));
 
@@ -135,6 +160,8 @@ const mcp = handleRequest({
 });
 assert.equal(mcp.result.structuredContent.tool, "telos.measurement.layers");
 assert.equal(mcp.result.structuredContent.measurements.length, 5);
+assert.equal(mcp.result.structuredContent.events.length, 5);
+assert.equal(mcp.result.structuredContent.measurement_bus.schema, "project-telos.measurement-bus/v1");
 
 const catalogTool = catalog.tools.find((tool) => tool.name === "telos.measurement.layers");
 assert.ok(catalogTool, "catalog exposes telos.measurement.layers");

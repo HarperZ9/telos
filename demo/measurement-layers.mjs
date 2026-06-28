@@ -25,6 +25,79 @@ function hashStable(value) {
   return `fnv1a:${hash.toString(16).padStart(8, "0")}`;
 }
 
+const busDefaults = {
+  "visual.histogram-field": {
+    domain: "visual",
+    coordinate_space: "image.pixel",
+    units: { luminance: "0..255", count: "pixels" },
+    value_shape: "histogram"
+  },
+  "visual.dither-spectrum-meter": {
+    domain: "sampling",
+    coordinate_space: "image.pixel",
+    units: { level: "0..255", count: "pixels" },
+    value_shape: "operator-summary"
+  },
+  "spatial.splat-probe": {
+    domain: "splat",
+    coordinate_space: "scene.normalized",
+    units: { position: "scene-unit", opacity: "0..1", coverage: "viewport-ratio" },
+    value_shape: "field-summary"
+  },
+  "lighting.cluster-meter": {
+    domain: "lighting",
+    coordinate_space: "view.cluster-grid",
+    units: { count: "lights" },
+    value_shape: "cluster-histogram"
+  },
+  "audio.spectral-meter": {
+    domain: "audio",
+    coordinate_space: "frequency.bin",
+    units: { magnitude: "relative", bin: "fft-bin" },
+    value_shape: "spectrum-summary"
+  }
+};
+
+export function makeMeasurementEvent(measurement, {
+  runId = "demo.measurement-layers",
+  frameId = "frame:0",
+  actor = "telos.measurement.layers",
+  timestamp = contract.generated_at,
+  clockDomain = "demo.logical"
+} = {}) {
+  const layer = busDefaults[measurement.layer_id];
+  if (!layer) throw new Error(`measurement_bus: unknown_layer ${measurement.layer_id}`);
+  const event = {
+    event_id: `${runId}:${measurement.layer_id}`,
+    run_id: runId,
+    frame_id: frameId,
+    actor,
+    domain: layer.domain,
+    subject_ref: measurement.layer_id,
+    timestamp,
+    clock_domain: clockDomain,
+    coordinate_space: layer.coordinate_space,
+    units: layer.units,
+    value_shape: layer.value_shape,
+    value: measurement,
+    uncertainty: {
+      status: "estimated",
+      reason: "demo_fixture_without_external_calibration"
+    },
+    provenance: {
+      measurement_hash: measurement.measurement_hash,
+      source: "demo/measurement-layers.mjs",
+      generated_by: "deterministic-demo-fixture"
+    },
+    privacy: {
+      raw_payload_required: false,
+      exported_value_is_summary: true
+    },
+    severity: "info"
+  };
+  event.event_hash = hashStable(event);
+  return event;
+}
 function numericArray(values, label) {
   const array = Array.from(values ?? []);
   if (!array.length) throw new Error(`${label}: measurement_source_missing`);
@@ -209,8 +282,10 @@ export function demoMeasurements() {
     generated_at: contract.generated_at,
     status: "MATCH",
     purpose: contract.purpose,
+    measurement_bus: contract.measurement_bus,
     layers: contract.layers.map((layer) => layer.layer_id),
     measurements,
+    events: measurements.map((measurement) => makeMeasurementEvent(measurement)),
     source_receipts: contract.source_receipts,
     privacy: contract.privacy,
     failure_codes: contract.failure_codes,

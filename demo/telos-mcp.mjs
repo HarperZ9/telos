@@ -88,6 +88,11 @@ export const tools = [
     name: "telos.creative.engine",
     description: "Return the Telos Creative Engine manifest for generative art, sound, typography, media, CGI, math/physics, revived local organs, and receipt-backed creative work.",
     inputSchema: emptyInputSchema
+  },
+  {
+    name: "telos.creative.kernels",
+    description: "Return deterministic Telos creative kernels for dithering, pixel sorting, plotter paths, clustered light bins, and receipt-backed effects.",
+    inputSchema: emptyInputSchema
   }
 ];
 
@@ -106,7 +111,8 @@ const toolScripts = new Map([
   ["telos.rendering.research", ["rendering-research.mjs"]],
   ["telos.rendering.capabilities", ["rendering-capabilities.mjs"]],
   ["telos.measurement.layers", ["measurement-layers.mjs"]],
-  ["telos.creative.engine", ["creative-engine.mjs"]]
+  ["telos.creative.engine", ["creative-engine.mjs"]],
+  ["telos.creative.kernels", ["creative-kernels.mjs"]]
 ]);
 
 function runTool(name) {

@@ -19,11 +19,12 @@ const manifest = JSON.parse(
 
 assert.equal(packet.schema, "project-telos.research-seed/v1");
 assert.equal(packet.tool, "telos.rendering.research");
-assert.equal(packet.seeds.length, 2);
+assert.equal(packet.seeds.length, 3);
 
 const byId = new Map(packet.seeds.map((seed) => [seed.seed_id, seed]));
 assert.ok(byId.has("seed-gaussian-splatting-webgpu"));
 assert.ok(byId.has("seed-clustered-forward-rendering"));
+assert.ok(byId.has("seed-dithering-sampling-kernels"));
 
 for (const seed of packet.seeds) {
   assert.equal(seed.evidence_status, "MATCH");
@@ -63,6 +64,9 @@ assert.ok(
 assert.ok(
   byId.get("seed-clustered-forward-rendering").claims.some((claim) => /WebGPU\/WGSL/.test(claim.claim))
 );
+assert.ok(
+  byId.get("seed-dithering-sampling-kernels").claims.some((claim) => /Void-and-cluster|blue-noise/i.test(claim.claim))
+);
 
 const run = spawnSync(process.execPath, [path.join(here, "rendering-research.mjs")], {
   cwd: path.resolve(here, ".."),
@@ -91,7 +95,7 @@ const mcp = handleRequest({
   params: { name: "telos.rendering.research", arguments: {} }
 });
 assert.equal(mcp.result.structuredContent.tool, "telos.rendering.research");
-assert.equal(mcp.result.structuredContent.seeds.length, 2);
+assert.equal(mcp.result.structuredContent.seeds.length, 3);
 
 const status = spawnSync(process.execPath, [path.join(here, "status.mjs")], {
   cwd: path.resolve(here, ".."),
@@ -103,19 +107,20 @@ assert.ok(statusPayload.native.mcp_tools.includes("telos.rendering.research"));
 assert.ok(statusPayload.native.mcp_tools.includes("telos.rendering.capabilities"));
 assert.ok(statusPayload.native.mcp_tools.includes("telos.measurement.layers"));
 assert.ok(statusPayload.native.mcp_tools.includes("telos.creative.engine"));
-assert.match(statusPayload.native.current_status, /42-tool/);
+assert.ok(statusPayload.native.mcp_tools.includes("telos.creative.kernels"));
+assert.match(statusPayload.native.current_status, /44-tool/);
 
 const catalogSummary = spawnSync(process.execPath, [path.join(here, "catalog.mjs"), "--summary"], {
   cwd: path.resolve(here, ".."),
   encoding: "utf8"
 });
 assert.equal(catalogSummary.status, 0, catalogSummary.stderr || catalogSummary.stdout);
-assert.match(catalogSummary.stdout, /tools\s+42 total, 42 available/);
-assert.match(catalogSummary.stdout, /telos\s+15 tools/);
+assert.match(catalogSummary.stdout, /tools\s+44 total, 44 available/);
+assert.match(catalogSummary.stdout, /telos\s+16 tools/);
 
 const manifestSummary = spawnSync(process.execPath, [path.join(here, "server-manifest.mjs"), "--summary"], {
   cwd: path.resolve(here, ".."),
   encoding: "utf8"
 });
 assert.equal(manifestSummary.status, 0, manifestSummary.stderr || manifestSummary.stdout);
-assert.match(manifestSummary.stdout, /tools\s+42 expected/);
+assert.match(manifestSummary.stdout, /tools\s+44 expected/);
