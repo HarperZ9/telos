@@ -4,6 +4,10 @@ All notable changes to Project Telos. Telos is currently a source demo and share
 
 ## Unreleased
 
+- Brand renderer: adds `tools/render_flagship_heroes.py` with a standard-library `--check-existing` mode for CI and a local `--render` mode for the operator-owned Kilon/Conso font ZIPs, preserving exported PNGs without committing purchased fonts.
+- Research seeds: adds bundle-theoretic differential geometry and zenzic/repeated-squaring operation seeds with lawful source receipts, explicit boundaries around unresolved "flicker" terminology, and Crucible-ready negative-test directions.
+- Research intake: extends the YouTube receipt ledger with TheAIGRID's `SbafEATbfXQ` video as metadata/transcript receipts only, and adds an operator-source-leads quarantine packet for blocked Reddit and GPU-provider/render-farm discovery links.
+- Rendering research: records neural-rendering/mesh-shader candidates and GPU execution-substrate leads while keeping provider pages separate from rendering-algorithm claims.
 - CI: adds a Node 24 GitHub Actions workflow that checks out all five flagships as siblings and runs the Telos contract, MCP runtime, room, and golden workflow gates on push and pull request.
 - CI: updates the flagship gate to current official `actions/checkout@v7`, `actions/setup-node@v6`, and `actions/setup-python@v6` majors.
 - Forum prose humanization: catalog includes `forum.prose.humanize` as part of the shared flagship MCP surface.

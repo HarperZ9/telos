@@ -7,8 +7,9 @@ const ledger = JSON.parse(
 
 assert.equal(ledger.schema, "project-telos.research-intake/youtube-video-receipts-v1");
 assert.equal(ledger.tool, "gather.video");
-assert.equal(ledger.inputs.length, 7);
+assert.equal(ledger.inputs.length, 8);
 assert.equal(ledger.results.length, ledger.inputs.length);
+assert.ok(ledger.inputs.includes("https://www.youtube.com/watch?v=SbafEATbfXQ&t=53s"));
 
 for (const result of ledger.results) {
   assert.equal(result.returncode, 0, `${result.url} gathered successfully`);

@@ -37,11 +37,13 @@ for (const field of [
 assert.equal(packet.schema, "project-telos.research-seed/v1");
 assert.equal(packet.generated_at, "2026-06-28T00:00:00.000Z");
 assert.equal(packet.tool, "telos.research.seed");
-assert.equal(packet.seeds.length, 2);
+assert.equal(packet.seeds.length, 4);
 
 const byId = new Map(packet.seeds.map((seed) => [seed.seed_id, seed]));
 assert.ok(byId.has("seed-neil-turok"));
 assert.ok(byId.has("seed-planck-constant"));
+assert.ok(byId.has("seed-bundle-geometry"));
+assert.ok(byId.has("seed-zenzic-operations"));
 
 const turok = byId.get("seed-neil-turok");
 assert.equal(turok.operator_note, "Neil Turok");
@@ -59,6 +61,22 @@ assert.equal(planck.evidence_status, "MATCH");
 assert.ok(planck.claims.some((claim) => claim.value === "6.62607015e-34 J s"));
 assert.ok(planck.source_receipts.some((receipt) => receipt.url.includes("bipm.org")));
 assert.ok(planck.source_receipts.some((receipt) => receipt.url.includes("physics.nist.gov")));
+
+const bundle = byId.get("seed-bundle-geometry");
+assert.equal(bundle.operator_note, "bundle theory - differential geometry from bundle perspective");
+assert.ok(bundle.normalized_concepts.includes("principal-bundles"));
+assert.ok(bundle.normalized_concepts.includes("connections"));
+assert.equal(bundle.evidence_status, "MATCH");
+assert.ok(bundle.source_receipts.some((receipt) => receipt.url.includes("2110.06334")));
+assert.ok(bundle.source_receipts.some((receipt) => receipt.url.includes("2605.01983")));
+
+const zenzic = byId.get("seed-zenzic-operations");
+assert.equal(zenzic.operator_note, "zenzic operations");
+assert.ok(zenzic.normalized_concepts.includes("repeated-squaring"));
+assert.equal(zenzic.evidence_status, "MATCH");
+assert.ok(zenzic.claims.some((claim) => /x\^2, x\^4, x\^8/.test(claim.claim)));
+assert.ok(zenzic.source_leads.some((lead) => lead.evidence_status === "UNVERIFIABLE"));
+assert.ok(zenzic.source_receipts.some((receipt) => receipt.url.includes("wiktionary.org/wiki/zenzic")));
 
 for (const seed of packet.seeds) {
   assert.match(seed.seed_id, /^seed-[a-z0-9-]+$/);

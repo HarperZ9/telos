@@ -38,6 +38,25 @@ for (const seed of packet.seeds) {
   }
 }
 
+assert.equal(packet.modern_rendering_candidates.length, 2);
+const candidateIds = new Set(packet.modern_rendering_candidates.map((candidate) => candidate.candidate_id));
+assert.ok(candidateIds.has("candidate-neural-rendering-rtx-kit"));
+assert.ok(candidateIds.has("candidate-mesh-shader-pipelines"));
+for (const candidate of packet.modern_rendering_candidates) {
+  assert.equal(candidate.evidence_status, "MATCH");
+  assert.ok(candidate.source_receipts.length >= 2);
+  assert.match(candidate.adoption_boundary, /benchmark|fallback|portability|license/i);
+  for (const receipt of candidate.source_receipts) {
+    assert.equal(receipt.provenance_class, "lawful_source");
+    assert.match(receipt.receipt_hash, /^sha256:[a-f0-9]{64}$/);
+  }
+}
+
+assert.equal(packet.execution_substrate_leads.length, 3);
+assert.ok(packet.execution_substrate_leads.every((lead) => lead.evidence_status === "UNVERIFIABLE"));
+assert.ok(packet.execution_substrate_leads.every((lead) => lead.provenance_class === "operator_source_lead"));
+assert.ok(packet.execution_substrate_leads.every((lead) => /GPU|Render|render|provider|farm/i.test(lead.notes)));
+
 assert.ok(
   byId.get("seed-gaussian-splatting-webgpu").claims.some((claim) => /SuperSplat/.test(claim.claim))
 );
