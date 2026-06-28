@@ -1,0 +1,108 @@
+{
+  "schema": "project-telos.research-seed/v1",
+  "generated_at": "2026-06-28T00:00:00.000Z",
+  "tool": "telos.research.seed",
+  "purpose": "Receipt-backed research seeds from terse operator notes for the Telos science and analytical-engine lane.",
+  "seeds": [
+    {
+      "seed_id": "seed-neil-turok",
+      "operator_note": "Neil Turok",
+      "normalized_concepts": [
+        "cosmology",
+        "quantum-gravity",
+        "theoretical-physics",
+        "early-universe",
+        "foundational-science"
+      ],
+      "evidence_status": "MATCH",
+      "source_receipts": [
+        {
+          "title": "Neil Turok official University of Edinburgh profile",
+          "url": "https://www.ph.ed.ac.uk/people/neil-turok",
+          "source_kind": "official-profile",
+          "resolved_at": "2026-06-28T00:00:00Z",
+          "provenance_class": "lawful_source",
+          "receipt_hash": "sha256:4ed40002396caa28cc758e1bc146059bab969b43611514c1895a9a3a1820e03c"
+        },
+        {
+          "title": "Neil Turok Perimeter Institute profile",
+          "url": "https://perimeterinstitute.ca/people/neil-turok",
+          "source_kind": "official-profile",
+          "resolved_at": "2026-06-28T00:00:00Z",
+          "provenance_class": "lawful_source",
+          "receipt_hash": "sha256:153d89f2a92a6bd20b72dbd500bd548b038ee1401e64460c524b2748c79ab243"
+        }
+      ],
+      "claims": [
+        {
+          "claim": "Neil Turok is a current research seed for cosmology, theoretical physics, and quantum-gravity-adjacent inquiry.",
+          "status": "MATCH",
+          "source_receipt_ids": [
+            "sha256:4ed40002396caa28cc758e1bc146059bab969b43611514c1895a9a3a1820e03c",
+            "sha256:153d89f2a92a6bd20b72dbd500bd548b038ee1401e64460c524b2748c79ab243"
+          ]
+        }
+      ],
+      "claim_boundaries": [
+        "Do not infer endorsement, collaboration, or Telos usage from this seed.",
+        "Do not summarize specific Turok papers without resolving the paper metadata and lawful source receipts for that paper.",
+        "Treat speculative cosmology as research context, not as verified engineering law."
+      ],
+      "next_actions": [
+        "gather.openalex or gather.crossref: resolve current Turok works and citations.",
+        "gather.arxiv: find lawful preprint metadata for Turok-related cosmology papers.",
+        "crucible.assess: separate falsifiable cosmology claims from analogy or design inspiration."
+      ]
+    },
+    {
+      "seed_id": "seed-planck-constant",
+      "operator_note": "Planck's Constant",
+      "normalized_concepts": [
+        "metrology",
+        "quantum-scale",
+        "si-defining-constant",
+        "measurement",
+        "physics"
+      ],
+      "evidence_status": "MATCH",
+      "source_receipts": [
+        {
+          "title": "BIPM SI defining constants",
+          "url": "https://www.bipm.org/en/measurement-units/si-defining-constants",
+          "source_kind": "official-metrology-source",
+          "resolved_at": "2026-06-28T00:00:00Z",
+          "provenance_class": "lawful_source",
+          "receipt_hash": "sha256:3b5c9ed2745219907fe99af2ac4b302ac9659b8ac8f2f8e9585b283b14e1f741"
+        },
+        {
+          "title": "NIST CODATA value for the Planck constant",
+          "url": "https://physics.nist.gov/cgi-bin/cuu/Value?h",
+          "source_kind": "official-metrology-source",
+          "resolved_at": "2026-06-28T00:00:00Z",
+          "provenance_class": "lawful_source",
+          "receipt_hash": "sha256:2fd63a2f041589e0523bc34f4dec15622eb72cf8380b2e0fb2cb4b55a974f989"
+        }
+      ],
+      "claims": [
+        {
+          "claim": "The SI defines the Planck constant exactly.",
+          "value": "6.62607015e-34 J s",
+          "status": "MATCH",
+          "source_receipt_ids": [
+            "sha256:3b5c9ed2745219907fe99af2ac4b302ac9659b8ac8f2f8e9585b283b14e1f741"
+          ]
+        }
+      ],
+      "claim_boundaries": [
+        "The exact SI value is a metrology anchor, not a license to treat model outputs as physical measurements.",
+        "Derived uses such as h-bar, Planck units, or simulation constants need their own unit conversion receipts.",
+        "Scientific or engineering claims using this constant must carry units, dimensional analysis, and source ids."
+      ],
+      "next_actions": [
+        "index.context: attach this constant to measurement and unit-conversion context packs.",
+        "crucible.assess: check any simulator constant against SI units and dimensional analysis.",
+        "telos.action.receipt: preserve exact constants and unit conversions in later model or simulation actions."
+      ]
+    }
+  ]
+}

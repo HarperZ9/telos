@@ -12,12 +12,13 @@ All notable changes to Project Telos. Telos is currently a source demo and share
 - Context envelope convention: adds `project-telos.context-envelope/v1`, `node demo/context-envelope.mjs`, and `telos.context.envelope` for large-workspace context packing, readability gates, and receipt-chained unattended agent work.
 - Action receipt convention: adds `project-telos.action-receipt/v1`, `node demo/action-receipt.mjs`, and `telos.action.receipt` for input digests, component/config identity, side-effect class, typed stop reasons, policy decisions, verification verdicts, and append-only compensation events.
 - Loop ledger convention: adds `project-telos.loop-ledger/v1`, `node demo/loop-ledger.mjs`, and `telos.loop.ledger` for first-class durable loop state, fresh-context one-action iterations, explicit `UNVERIFIABLE`, and bounded headless scheduled fires that halt as `needs_attention` when user input is required.
+- Research seed convention: adds `project-telos.research-seed/v1`, `node demo/research-seed.mjs`, and `telos.research.seed` to turn terse operator notes like Neil Turok and Planck's Constant into lawful, source-backed research packets.
 - Research access boundary: expands the science adapter map with lawful OA resolvers for Unpaywall, CORE, DOAJ, and PubMed Central; marks Sci-Hub/shadow-library full text as invalid provenance; and allows user-provided shadow references only as non-evidentiary source leads for lawful cross-reference.
 Presentation and operator-surface housekeeping for five-flagship parity.
 
 - README: adds the shared current-status block and consistent five-flagship navigation.
-- Status payload: exposes the current operator commands, Telos MCP tool names, and 28-tool catalog summary under `native`.
+- Status payload: exposes the current operator commands, Telos MCP tool names, and 29-tool catalog summary under `native`.
 - Operator room: records `status`, `doctor`, `room`, `catalog`, and `flagship-workflow` as the current front door for local operators and host integrations.
-- MCP surface: records native availability for `telos.status`, `telos.doctor`, `telos.room`, `telos.catalog`, `telos.workflow`, `telos.server.manifest`, `telos.admission.telemetry`, `telos.context.envelope`, `telos.action.receipt`, and `telos.loop.ledger`.
-- Catalog: keeps `demo/integrations/mcp-tool-catalog.json` as the provider-neutral source of truth for 28 available tools across Gather, Crucible, Index, Forum, and Telos.
+- MCP surface: records native availability for `telos.status`, `telos.doctor`, `telos.room`, `telos.catalog`, `telos.workflow`, `telos.server.manifest`, `telos.admission.telemetry`, `telos.context.envelope`, `telos.action.receipt`, `telos.loop.ledger`, and `telos.research.seed`.
+- Catalog: keeps `demo/integrations/mcp-tool-catalog.json` as the provider-neutral source of truth for 29 available tools across Gather, Crucible, Index, Forum, and Telos.
 - Research receipts: records the YouTube intake ledger under `demo/research/youtube-bgoertzel-receipts.json` as receipt-only research material, with no raw transcript text in the repository.
