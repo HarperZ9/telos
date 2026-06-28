@@ -31,16 +31,18 @@ node demo/measurement-layers.mjs --summary
 node demo/creative-engine.mjs
 node demo/creative-kernels.mjs --summary
 node demo/revival-registry.mjs --summary
+node demo/display-calibration.mjs --summary
 ```
 
 Open the visual certificate-loop surface at [`demo/index.html`](demo/index.html).
 Use `node demo/catalog.mjs --summary` for a compact operator map of the CLI and MCP surface.
 Use `node demo/server-manifest.mjs --summary` for the five-server MCP launch map.
 Use `node demo/rendering-capabilities.mjs --summary` for the WebGPU/WebGL/canvas/static renderer selection and fallback contract.
-Use `node demo/measurement-layers.mjs --summary` for runnable histogram, dither, splat, cluster, and audio meters.
+Use `node demo/measurement-layers.mjs --summary` for ten runnable meters across histogram, dither, splat, cluster, audio, flicker, curvature, interaction, uncertainty, and frame budget signals.
 Use `node demo/creative-engine.mjs --summary` for the whole creation-engine contract: raster effects, sound, typography, math/physics, node graphs, revived organs, and receipts.
 Use `node demo/creative-kernels.mjs --summary` for deterministic ordered-dither, pixel-sort, harmonograph, and clustered-light kernels.
 Use `node demo/revival-registry.mjs --summary` for the first promotion registry of older, siloed, and frozen tools being pulled toward flagship status.
+Use `node demo/display-calibration.mjs --summary` for the read-only Calibrate Pro and Quanta Color display-calibration contract.
 
 ## Why it matters
 
@@ -71,11 +73,13 @@ The current research queue also includes receipt-only source leads from Inigo Qu
 
 The first rule is visibility before transplanting: a dormant tool gets a lane, a source receipt, a privacy boundary, CLI/MCP or adapter roadmap, tests, and a target host before shared code becomes a runtime dependency. Calibrate Pro and Quanta Color become the display-calibration and color-science lane for Telos measurement layers. QuantaLang becomes the effects-language candidate for creative kernels. WARDEN is carried forward only as defensive, authorized, good-faith find-and-fix lineage with synthetic labs and maintainer-friendly patch workflows.
 
+`node demo/display-calibration.mjs` is the first promoted Calibrate Pro lane. It defines a read-only `project-telos.display-calibration/v1` packet for display targets, color spaces, patch sets, ICC/LUT/report artifact refs, Quanta Color metrics, privacy boundaries, and Crucible measurement gates. It does not call DDC/CI, mutate monitor settings, apply LUTs, write ICC files, or require raw private device telemetry.
+
 ## Current status
 
-- **Release:** source demo; command surface is `node demo/run.mjs`, `node demo/room.mjs`, `node demo/status.mjs`, `node demo/doctor.mjs`, `node demo/catalog.mjs`, `node demo/server-manifest.mjs`, `node demo/admission-telemetry.mjs`, `node demo/context-envelope.mjs`, `node demo/action-receipt.mjs`, `node demo/loop-ledger.mjs`, `node demo/research-seed.mjs`, `node demo/rendering-research.mjs`, `node demo/rendering-capabilities.mjs`, `node demo/measurement-layers.mjs`, `node demo/creative-engine.mjs`, `node demo/creative-kernels.mjs`, `node demo/revival-registry.mjs`, and `node demo/flagship-workflow.mjs`.
-- **Operator surface:** `node demo/telos-mcp.mjs` exposes native MCP tools: `telos.status`, `telos.doctor`, `telos.room`, `telos.catalog`, `telos.workflow`, `telos.server.manifest`, `telos.admission.telemetry`, `telos.context.envelope`, `telos.action.receipt`, `telos.loop.ledger`, `telos.research.seed`, `telos.rendering.research`, `telos.rendering.capabilities`, `telos.measurement.layers`, `telos.creative.engine`, `telos.creative.kernels`, and `telos.revival.registry`.
-- **Current floor:** the operator room reconciles 45 available tools across Gather, Crucible, Index, Forum, and Telos, with a provider-neutral catalog and server manifest for CLI, MCP, plugin, IDE, TUI, and app hosts. See [CHANGELOG.md](CHANGELOG.md).
+- **Release:** source demo; command surface is `node demo/run.mjs`, `node demo/room.mjs`, `node demo/status.mjs`, `node demo/doctor.mjs`, `node demo/catalog.mjs`, `node demo/server-manifest.mjs`, `node demo/admission-telemetry.mjs`, `node demo/context-envelope.mjs`, `node demo/action-receipt.mjs`, `node demo/loop-ledger.mjs`, `node demo/research-seed.mjs`, `node demo/rendering-research.mjs`, `node demo/rendering-capabilities.mjs`, `node demo/measurement-layers.mjs`, `node demo/creative-engine.mjs`, `node demo/creative-kernels.mjs`, `node demo/revival-registry.mjs`, `node demo/display-calibration.mjs`, and `node demo/flagship-workflow.mjs`.
+- **Operator surface:** `node demo/telos-mcp.mjs` exposes native MCP tools: `telos.status`, `telos.doctor`, `telos.room`, `telos.catalog`, `telos.workflow`, `telos.server.manifest`, `telos.admission.telemetry`, `telos.context.envelope`, `telos.action.receipt`, `telos.loop.ledger`, `telos.research.seed`, `telos.rendering.research`, `telos.rendering.capabilities`, `telos.measurement.layers`, `telos.creative.engine`, `telos.creative.kernels`, `telos.revival.registry`, and `telos.display.calibration`.
+- **Current floor:** the operator room reconciles 46 available tools across Gather, Crucible, Index, Forum, and Telos, with a provider-neutral catalog and server manifest for CLI, MCP, plugin, IDE, TUI, and app hosts. See [CHANGELOG.md](CHANGELOG.md).
 - **Brand renderer:** `python tools/render_flagship_heroes.py --check-existing --public-root ..` verifies the five README hero PNGs and brand receipts without redistributing the operator-owned fonts.
 
 ## What it is

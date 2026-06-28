@@ -10,8 +10,13 @@ import {
   measureAudioSpectrum,
   measureClusterMeter,
   measureDitherField,
+  measureGeometryCurvature,
   measureHistogramField,
-  measureSplatProbe
+  measureInteractionTrace,
+  measurePerformanceBudget,
+  measureSplatProbe,
+  measureTemporalFlicker,
+  measureUncertaintyBudget
 } from "./measurement-layers.mjs";
 import { handleRequest, tools } from "./telos-mcp.mjs";
 
@@ -34,6 +39,11 @@ assert.ok(contract.measurement_bus.event_fields.includes("coordinate_space"));
 assert.ok(contract.measurement_bus.sensor_lanes.render.includes("lighting.cluster-meter"));
 assert.ok(contract.measurement_bus.sensor_lanes.creative.includes("visual.dither-spectrum-meter"));
 assert.ok(contract.measurement_bus.sensor_lanes.scientific.includes("audio.spectral-meter"));
+assert.ok(contract.measurement_bus.sensor_lanes.render.includes("temporal.flicker-meter"));
+assert.ok(contract.measurement_bus.sensor_lanes.creative.includes("interaction.trace-meter"));
+assert.ok(contract.measurement_bus.sensor_lanes.scientific.includes("geometry.curvature-meter"));
+assert.ok(contract.measurement_bus.sensor_lanes.engine.includes("uncertainty.budget-meter"));
+assert.ok(contract.measurement_bus.sensor_lanes.engine.includes("performance.frame-budget-meter"));
 
 const layerIds = new Set(contract.layers.map((layer) => layer.layer_id));
 for (const id of [
@@ -41,7 +51,12 @@ for (const id of [
   "visual.dither-spectrum-meter",
   "spatial.splat-probe",
   "lighting.cluster-meter",
-  "audio.spectral-meter"
+  "audio.spectral-meter",
+  "temporal.flicker-meter",
+  "geometry.curvature-meter",
+  "interaction.trace-meter",
+  "uncertainty.budget-meter",
+  "performance.frame-budget-meter"
 ]) {
   assert.ok(layerIds.has(id), `missing measurement layer ${id}`);
 }
@@ -109,11 +124,82 @@ assert.equal(audio.dominant_bins[0].bin, 3);
 assert.ok(audio.dominant_bins.some((bin) => bin.bin === 7));
 assert.match(audio.measurement_hash, /^fnv1a:/);
 
+const flicker = measureTemporalFlicker({
+  frames: [
+    [0, 10, 20, 30],
+    [2, 12, 38, 31],
+    [3, 20, 41, 45]
+  ],
+  width: 2,
+  height: 2,
+  threshold: 8
+});
+assert.equal(flicker.frame_count, 3);
+assert.equal(flicker.pixel_count, 4);
+assert.ok(flicker.mean_delta > 0);
+assert.equal(flicker.above_threshold_transitions, 3);
+assert.match(flicker.measurement_hash, /^fnv1a:/);
+
+const curvature = measureGeometryCurvature({
+  samples: [
+    { x: 0, y: 0, z: 0 },
+    { x: 1, y: 0, z: 0 },
+    { x: 1, y: 1, z: 0 },
+    { x: 2, y: 1, z: 0 }
+  ]
+});
+assert.equal(curvature.sample_count, 4);
+assert.ok(curvature.mean_turn_angle_degrees > 0);
+assert.ok(curvature.max_turn_angle_degrees >= curvature.mean_turn_angle_degrees);
+assert.match(curvature.measurement_hash, /^fnv1a:/);
+
+const interaction = measureInteractionTrace({
+  actions: [
+    { actor: "human", kind: "edit", timestamp_ms: 0 },
+    { actor: "model", kind: "proposal", timestamp_ms: 40 },
+    { actor: "tool", kind: "measure", timestamp_ms: 65 },
+    { actor: "human", kind: "accept", timestamp_ms: 120 }
+  ]
+});
+assert.equal(interaction.action_count, 4);
+assert.equal(interaction.actor_counts.human, 2);
+assert.equal(interaction.handoff_count, 3);
+assert.equal(interaction.max_gap_ms, 55);
+assert.match(interaction.measurement_hash, /^fnv1a:/);
+
+const uncertainty = measureUncertaintyBudget({
+  observations: [
+    { uncertainty: { status: "estimated" } },
+    { uncertainty: { status: "witnessed" } },
+    { uncertainty: { status: "estimated" } },
+    { uncertainty: { status: "unverifiable" } }
+  ]
+});
+assert.equal(uncertainty.observation_count, 4);
+assert.equal(uncertainty.status_counts.estimated, 2);
+assert.equal(uncertainty.status_counts.unverifiable, 1);
+assert.equal(uncertainty.highest_risk_status, "unverifiable");
+assert.match(uncertainty.measurement_hash, /^fnv1a:/);
+
+const performance = measurePerformanceBudget({
+  frames: [
+    { frame_ms: 12 },
+    { frame_ms: 16 },
+    { frame_ms: 21 },
+    { frame_ms: 8 }
+  ],
+  budget_ms: 16.7
+});
+assert.equal(performance.frame_count, 4);
+assert.equal(performance.over_budget_frames, 1);
+assert.ok(performance.p95_frame_ms >= performance.mean_frame_ms);
+assert.match(performance.measurement_hash, /^fnv1a:/);
+
 const packet = demoMeasurements();
 assert.equal(packet.schema, "project-telos.measurement-layers/v1");
 assert.equal(packet.tool, "telos.measurement.layers");
 assert.equal(packet.status, "MATCH");
-assert.equal(packet.measurements.length, 5);
+assert.equal(packet.measurements.length, 10);
 assert.equal(packet.measurement_bus.schema, "project-telos.measurement-bus/v1");
 assert.equal(packet.events.length, packet.measurements.length);
 assert.deepEqual(
@@ -148,8 +234,8 @@ const summary = spawnSync(process.execPath, [path.join(here, "measurement-layers
 });
 assert.equal(summary.status, 0, summary.stderr || summary.stdout);
 assert.match(summary.stdout, /Telos Measurement Layers/);
-assert.match(summary.stdout, /layers\s+5/);
-assert.match(summary.stdout, /measurements\s+5/);
+assert.match(summary.stdout, /layers\s+10/);
+assert.match(summary.stdout, /measurements\s+10/);
 
 assert.ok(tools.some((tool) => tool.name === "telos.measurement.layers"));
 const mcp = handleRequest({
@@ -159,8 +245,8 @@ const mcp = handleRequest({
   params: { name: "telos.measurement.layers", arguments: {} }
 });
 assert.equal(mcp.result.structuredContent.tool, "telos.measurement.layers");
-assert.equal(mcp.result.structuredContent.measurements.length, 5);
-assert.equal(mcp.result.structuredContent.events.length, 5);
+assert.equal(mcp.result.structuredContent.measurements.length, 10);
+assert.equal(mcp.result.structuredContent.events.length, 10);
 assert.equal(mcp.result.structuredContent.measurement_bus.schema, "project-telos.measurement-bus/v1");
 
 const catalogTool = catalog.tools.find((tool) => tool.name === "telos.measurement.layers");

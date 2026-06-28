@@ -36,7 +36,8 @@ for (const name of [
   "telos.measurement.layers",
   "telos.creative.engine",
   "telos.creative.kernels",
-  "telos.revival.registry"
+  "telos.revival.registry",
+  "telos.display.calibration"
 ]) {
   assert.ok(names.has(name), `missing ${name}`);
 }
@@ -162,7 +163,7 @@ const measurementLayers = handleRequest(request("tools/call", {
 }));
 assert.equal(measurementLayers.result.structuredContent.schema, "project-telos.measurement-layers/v1");
 assert.equal(measurementLayers.result.structuredContent.tool, "telos.measurement.layers");
-assert.equal(measurementLayers.result.structuredContent.measurements.length, 5);
+assert.equal(measurementLayers.result.structuredContent.measurements.length, 10);
 
 const expectedCreativeEngine = JSON.parse(
   readFileSync(new URL("./integrations/creative-engine-manifest.json", import.meta.url), "utf8")
@@ -194,6 +195,17 @@ assert.deepEqual(revivalRegistry.result.structuredContent, expectedRevivalRegist
 assert.equal(revivalRegistry.result.structuredContent.schema, "project-telos.revival-registry/v1");
 assert.ok(revivalRegistry.result.structuredContent.tools.some((tool) => tool.id === "calibrate-pro"));
 
+const expectedDisplayCalibration = JSON.parse(
+  readFileSync(new URL("./integrations/display-calibration.json", import.meta.url), "utf8")
+);
+const displayCalibration = handleRequest(request("tools/call", {
+  name: "telos.display.calibration",
+  arguments: {}
+}));
+assert.deepEqual(displayCalibration.result.structuredContent, expectedDisplayCalibration);
+assert.equal(displayCalibration.result.structuredContent.schema, "project-telos.display-calibration/v1");
+assert.equal(displayCalibration.result.structuredContent.contract.hardware_mutation_allowed, false);
+
 const badTool = handleRequest(request("tools/call", { name: "telos.missing", arguments: {} }));
 assert.equal(badTool.error.code, -32000);
 assert.match(badTool.error.message, /unknown tool/);
@@ -220,3 +232,4 @@ assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.measure
 assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.creative.engine"));
 assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.creative.kernels"));
 assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.revival.registry"));
+assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.display.calibration"));
