@@ -31,7 +31,15 @@
     { id: "diagnostic", name: "Diagnostic stress", layers: ["retro", "contour", "vector", "pixelsort", "glitch", "crt"], claim: "Bias, drift, sensitivity, and render-path stress surface." }
   ];
 
+  const RENDERER_PROFILES = [
+    { id: "webgpu-splat-clustered", fallback: "webgl2-cluster-preview", claim: "WebGPU profile for splat fields, clustered lighting, and measured overlays." },
+    { id: "webgl2-cluster-preview", fallback: "canvas2d-receipt-renderer", claim: "WebGL2 profile for clustered-light previews and geometry overlays." },
+    { id: "canvas2d-receipt-renderer", fallback: "static-artifact-receipt", claim: "Canvas profile for live raster effects, receipt export, and broad browser fallback." },
+    { id: "static-artifact-receipt", fallback: null, claim: "Static profile for CI, TUI, screen-reader, README, and JSON replay surfaces." }
+  ];
+
   const layerIds = new Set(EFFECT_LAYERS.map((layer) => layer.id));
+  const rendererProfileIds = new Set(RENDERER_PROFILES.map((profile) => profile.id));
 
   function stableStringify(value) {
     if (Array.isArray(value)) return `[${value.map(stableStringify).join(",")}]`;
@@ -73,6 +81,21 @@
     return EFFECT_PRESETS[0].layers;
   }
 
+  function normalizeRendererProfile(profile) {
+    const value = String(profile || "canvas2d-receipt-renderer");
+    return rendererProfileIds.has(value) ? value : "canvas2d-receipt-renderer";
+  }
+
+  function rendererFallbackChain(profile) {
+    const chain = [];
+    let current = normalizeRendererProfile(profile);
+    while (current && !chain.includes(current)) {
+      chain.push(current);
+      current = RENDERER_PROFILES.find((item) => item.id === current)?.fallback;
+    }
+    return chain;
+  }
+
   function createSceneSpec(options = {}) {
     const mode = String(options.mode || "all");
     const layers = normalizeLayerList(options.layers || layersForMode(mode));
@@ -80,6 +103,7 @@
     const intensity = clamp01(options.intensity, 0.82);
     const density = clamp01(options.density, 0.64);
     const frame = Math.max(0, Math.trunc(Number(options.frame) || 0));
+    const rendererProfile = normalizeRendererProfile(options.renderer_profile || options.rendererProfile);
     const args = { density, frame, intensity, layers, mode, seed };
     const args_hash = hashStable(args);
     const scene_id = `telos-scene-${hashStable({ layers, mode, seed }).slice(6, 18)}`;
@@ -110,6 +134,13 @@
         engine: "project-telos.effects-engine/v1",
         layer_catalog: "project-telos.effects-catalog/v1",
         generated_at: String(options.generated_at || "runtime")
+      },
+      renderer: {
+        capability_contract: "project-telos.rendering-capabilities/v1",
+        selected_profile: rendererProfile,
+        fallback_chain: rendererFallbackChain(rendererProfile),
+        raw_gpu_trace_required: false,
+        reduced_motion_supported: true
       },
       verification: {
         criterion_ref: "telos-effects-protocol/v1#renderable-scene",
@@ -182,6 +213,7 @@
   const api = {
     EFFECT_LAYERS,
     EFFECT_PRESETS,
+    RENDERER_PROFILES,
     createReceiptChain,
     createSceneReceipt,
     createSceneSpec,
@@ -189,6 +221,8 @@
     encodeSceneSpec,
     hashStable,
     normalizeLayerList,
+    normalizeRendererProfile,
+    rendererFallbackChain,
     stableStringify
   };
 

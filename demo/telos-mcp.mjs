@@ -75,6 +75,11 @@ export const tools = [
     inputSchema: emptyInputSchema
   },
   {
+    name: "telos.rendering.capabilities",
+    description: "Return the host-neutral renderer capability, fallback, privacy, and verification-gate contract for Telos Studio surfaces.",
+    inputSchema: emptyInputSchema
+  },
+  {
     name: "telos.creative.engine",
     description: "Return the Telos Creative Engine manifest for generative art, sound, typography, media, CGI, math/physics, revived local organs, and receipt-backed creative work.",
     inputSchema: emptyInputSchema
@@ -94,6 +99,7 @@ const toolScripts = new Map([
   ["telos.loop.ledger", ["loop-ledger.mjs"]],
   ["telos.research.seed", ["research-seed.mjs"]],
   ["telos.rendering.research", ["rendering-research.mjs"]],
+  ["telos.rendering.capabilities", ["rendering-capabilities.mjs"]],
   ["telos.creative.engine", ["creative-engine.mjs"]]
 ]);
 

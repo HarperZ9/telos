@@ -592,6 +592,26 @@
                                        ]
                   },
                   {
+                      "name":  "telos.rendering.capabilities",
+                      "flagship":  "telos",
+                      "description":  "Return the host-neutral renderer capability, fallback, privacy, and verification-gate contract for Telos Studio surfaces.",
+                      "cli":  [
+                                  "node",
+                                  "demo/rendering-capabilities.mjs"
+                              ],
+                      "mcp":  {
+                                  "status":  "available",
+                                  "server":  "telos",
+                                  "method":  "tools/call",
+                                  "tool":  "telos.rendering.capabilities"
+                              },
+                      "next_actions":  [
+                                           "index.context",
+                                           "gather.docs",
+                                           "crucible.assess"
+                                       ]
+                  },
+                  {
                       "name":  "telos.workflow",
                       "flagship":  "telos",
                       "description":  "Run the local golden workflow and reconcile the five flagship receipts.",

@@ -123,8 +123,27 @@
       "domain": "retro_cgi",
       "interop": "scene-spec layer clustered",
       "claim": "Screen clusters and light bins preview a future clustered-forward renderer."
+    },
+    {
+      "id": "renderer.capability-probe",
+      "status": "live",
+      "source": "demo/rendering-capabilities.mjs",
+      "domain": "verification",
+      "interop": "CLI/MCP renderer profile and fallback contract",
+      "claim": "Hosts can select WebGPU, WebGL2, canvas, or static artifact rendering with explicit fallback, privacy, and verification gates."
     }
   ],
+  "rendering_capabilities": {
+    "tool": "telos.rendering.capabilities",
+    "contract": "project-telos.rendering-capabilities/v1",
+    "profiles": [
+      "webgpu-splat-clustered",
+      "webgl2-cluster-preview",
+      "canvas2d-receipt-renderer",
+      "static-artifact-receipt"
+    ],
+    "boundary": "Renderer capability selection is separate from verification. A selected GPU path is an execution choice; claims still require receipts, benchmarks, and MATCH/DRIFT/UNVERIFIABLE checks."
+  },
   "live_modules": [
     {
       "path": "demo/effects-engine.js",
@@ -149,6 +168,69 @@
     {
       "path": "demo/viable-viz",
       "role": "Subject, regulator, reconcile, embed, certificate, and flagship loop organ."
+    }
+  ],
+  "sensor_measurement_layers": [
+    {
+      "id": "visual.histogram-field",
+      "status": "planned",
+      "inputs": [
+        "canvas pixels",
+        "image artifacts",
+        "video frames"
+      ],
+      "outputs": [
+        "luminance histogram",
+        "contrast map",
+        "dither stability receipt"
+      ],
+      "why": "Dithering, poster, and glitch work need measurable tone structure instead of only aesthetic description."
+    },
+    {
+      "id": "spatial.splat-probe",
+      "status": "planned",
+      "inputs": [
+        "Gaussian splat assets",
+        "camera path",
+        "measurement overlays"
+      ],
+      "outputs": [
+        "splat count",
+        "view coverage",
+        "occlusion notes",
+        "asset provenance refs"
+      ],
+      "why": "Splat scenes should be inspectable as captured data, not just pretty radiance-field images."
+    },
+    {
+      "id": "lighting.cluster-meter",
+      "status": "planned",
+      "inputs": [
+        "cluster grid",
+        "light bins",
+        "overlay layers"
+      ],
+      "outputs": [
+        "lights per cluster",
+        "overdraw estimate",
+        "overlay legibility verdict"
+      ],
+      "why": "Clustered or Forward+ rendering needs measurement gates for visibility, performance, and overlay readability."
+    },
+    {
+      "id": "audio.spectral-meter",
+      "status": "planned",
+      "inputs": [
+        "Web Audio graph",
+        "generated waveform",
+        "media artifact"
+      ],
+      "outputs": [
+        "frequency bins",
+        "transient markers",
+        "audio-reactive timing receipt"
+      ],
+      "why": "Sound-related creative work should expose spectral state for models, artists, and replay checks."
     }
   ],
   "revival_candidates": [
