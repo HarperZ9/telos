@@ -62,7 +62,8 @@ for (const name of [
   "telos.measurement.layers",
   "telos.creative.engine",
   "telos.creative.kernels",
-  "telos.revival.registry"
+  "telos.revival.registry",
+  "telos.display.calibration"
 ]) {
   assert.ok(names.has(name), `missing ${name}`);
 }
@@ -113,6 +114,11 @@ assert.deepEqual(byName.get("telos.creative.kernels").cli, [
 assert.deepEqual(byName.get("telos.revival.registry").cli, [
   "node",
   "demo/revival-registry.mjs"
+]);
+
+assert.deepEqual(byName.get("telos.display.calibration").cli, [
+  "node",
+  "demo/display-calibration.mjs"
 ]);
 
 assert.equal(science.schema, "project-telos.science-research-adapters/v1");

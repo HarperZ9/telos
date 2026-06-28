@@ -98,6 +98,11 @@ export const tools = [
     name: "telos.revival.registry",
     description: "Return the promotion registry for older, siloed, and frozen local tools being pulled into flagship status.",
     inputSchema: emptyInputSchema
+  },
+  {
+    name: "telos.display.calibration",
+    description: "Return the read-only display-calibration contract for Calibrate Pro, Quanta Color, artifact refs, and measurement gates.",
+    inputSchema: emptyInputSchema
   }
 ];
 
@@ -118,7 +123,8 @@ const toolScripts = new Map([
   ["telos.measurement.layers", ["measurement-layers.mjs"]],
   ["telos.creative.engine", ["creative-engine.mjs"]],
   ["telos.creative.kernels", ["creative-kernels.mjs"]],
-  ["telos.revival.registry", ["revival-registry.mjs"]]
+  ["telos.revival.registry", ["revival-registry.mjs"]],
+  ["telos.display.calibration", ["display-calibration.mjs"]]
 ]);
 
 function runTool(name) {

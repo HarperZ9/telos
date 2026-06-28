@@ -933,6 +933,26 @@
         "index.context.envelope",
         "crucible.review"
       ]
+    },
+    {
+      "name": "telos.display.calibration",
+      "flagship": "telos",
+      "description": "Return the read-only display-calibration contract for Calibrate Pro, Quanta Color, artifact refs, and measurement gates.",
+      "cli": [
+        "node",
+        "demo/display-calibration.mjs"
+      ],
+      "mcp": {
+        "status": "available",
+        "server": "telos",
+        "method": "tools/call",
+        "tool": "telos.display.calibration"
+      },
+      "next_actions": [
+        "telos.measurement.layers",
+        "crucible.measurement_gate",
+        "telos.revival.registry"
+      ]
     }
   ]
 }

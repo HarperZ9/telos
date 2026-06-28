@@ -4,11 +4,12 @@ All notable changes to Project Telos. Telos is currently a source demo and share
 
 ## Unreleased
 
+- Display calibration: adds `project-telos.display-calibration/v1`, `node demo/display-calibration.mjs`, and `telos.display.calibration` to promote Calibrate Pro and Quanta Color into a read-only display-calibration contract for display targets, patch sets, color metrics, ICC/LUT/report artifact refs, privacy boundaries, and Crucible measurement gates.
 - Revival registry: adds `project-telos.revival-registry/v1`, `node demo/revival-registry.mjs`, and `telos.revival.registry` to begin promoting Calibrate Pro, Quanta Color, QuantaLang/quantac, WARDEN security lineage, Agent Audit, Secret Redact IO, Repo Proof Index, Release Surface Scanner, and GPU Trace Validator from siloed or frozen tools into explicit flagship lanes with Gather-backed source receipts, risk boundaries, and next actions.
 - Engine demo: adds a live Telos Studio effects console with retro CGI, glitch art, seeded generative fields, plotter paths, pixel sorting, poster composition, fractal recursion, Gaussian-splat stand-ins, clustered-light overlays, reduced-motion handling, and visible scene receipts.
 - Effects protocol: adds a host-neutral project-telos.scene-spec/v1 scene envelope, six replayable presets, hashed action identities, chained project-telos.scene-receipt/v1 render receipts, copy/export/replay controls, and CI coverage for protocol-compatible Telos Studio embedding.
 - Rendering capabilities: adds `project-telos.rendering-capabilities/v1`, `node demo/rendering-capabilities.mjs`, and `telos.rendering.capabilities` so hosts can select WebGPU Gaussian-splat/clustered prototypes, WebGL2 previews, Canvas 2D receipts, or static artifact fallbacks with privacy and verification gates.
-- Measurement layers: adds `project-telos.measurement-layers/v1`, `node demo/measurement-layers.mjs`, and `telos.measurement.layers` for runnable histogram, dither-spectrum, splat-probe, cluster-meter, and audio-spectral meters.
+- Measurement layers: expands `project-telos.measurement-layers/v1`, `node demo/measurement-layers.mjs`, and `telos.measurement.layers` to ten runnable meters for histogram, dither-spectrum, splat-probe, cluster-meter, audio-spectral, temporal flicker, geometry curvature, interaction trace, uncertainty budget, and frame budget signals.
 - Crucible catalog parity: expands the shared MCP catalog and server manifest to the full current
   Crucible source-checkout surface, including run, measurement-gate, review, report, batch, registry,
   drift, refine, and verdicts tools.
@@ -39,8 +40,8 @@ All notable changes to Project Telos. Telos is currently a source demo and share
 Presentation and operator-surface housekeeping for five-flagship parity.
 
 - README: adds the shared current-status block and consistent five-flagship navigation.
-- Status payload: exposes the current operator commands, Telos MCP tool names, and 45-tool catalog summary under `native`.
+- Status payload: exposes the current operator commands, Telos MCP tool names, and 46-tool catalog summary under `native`.
 - Operator room: records `status`, `doctor`, `room`, `catalog`, and `flagship-workflow` as the current front door for local operators and host integrations.
-- MCP surface: records native availability for `telos.status`, `telos.doctor`, `telos.room`, `telos.catalog`, `telos.workflow`, `telos.server.manifest`, `telos.admission.telemetry`, `telos.context.envelope`, `telos.action.receipt`, `telos.loop.ledger`, `telos.research.seed`, `telos.rendering.research`, `telos.rendering.capabilities`, `telos.measurement.layers`, `telos.creative.engine`, `telos.creative.kernels`, and `telos.revival.registry`.
-- Catalog: keeps `demo/integrations/mcp-tool-catalog.json` as the provider-neutral source of truth for 45 available tools across Gather, Crucible, Index, Forum, and Telos.
+- MCP surface: records native availability for `telos.status`, `telos.doctor`, `telos.room`, `telos.catalog`, `telos.workflow`, `telos.server.manifest`, `telos.admission.telemetry`, `telos.context.envelope`, `telos.action.receipt`, `telos.loop.ledger`, `telos.research.seed`, `telos.rendering.research`, `telos.rendering.capabilities`, `telos.measurement.layers`, `telos.creative.engine`, `telos.creative.kernels`, `telos.revival.registry`, and `telos.display.calibration`.
+- Catalog: keeps `demo/integrations/mcp-tool-catalog.json` as the provider-neutral source of truth for 46 available tools across Gather, Crucible, Index, Forum, and Telos.
 - Research receipts: records the YouTube intake ledger under `demo/research/youtube-bgoertzel-receipts.json` as receipt-only research material, with no raw transcript text in the repository.
