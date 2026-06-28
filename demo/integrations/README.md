@@ -35,6 +35,7 @@ OpenAI Apps, OpenAI Agents, Anthropic Claude, Claude Code, Codex plugins, skills
 `../mcp-runtime-contract.test.mjs` checks the catalog against the sibling MCP runtimes so `available` means the tool is actually present in `tools/list`.
 
 `science-research-adapters.json` is the current-source adapter map for preprints, scholarly metadata, clinical trial registries, persistent identifiers, AlphaFold, Midjourney Medical monitoring, and research graphs.
+It includes a lawful full-text boundary: use Unpaywall, PubMed Central, Europe PMC, DOAJ, CORE, publisher OA links, repositories, and preprints; never use Sci-Hub or shadow-library material as provenance.
 
 `fresh-research-policy.md` is the rule for living external claims: current evidence or `UNVERIFIABLE`.
 

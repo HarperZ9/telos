@@ -58,6 +58,11 @@ export const tools = [
     name: "telos.action.receipt",
     description: "Return the enterprise action receipt interface and append-only persistence convention.",
     inputSchema: emptyInputSchema
+  },
+  {
+    name: "telos.loop.ledger",
+    description: "Return the durable loop-state ledger and bounded headless scheduled-run convention.",
+    inputSchema: emptyInputSchema
   }
 ];
 
@@ -70,7 +75,8 @@ const toolScripts = new Map([
   ["telos.server.manifest", ["server-manifest.mjs"]],
   ["telos.admission.telemetry", ["admission-telemetry.mjs"]],
   ["telos.context.envelope", ["context-envelope.mjs"]],
-  ["telos.action.receipt", ["action-receipt.mjs"]]
+  ["telos.action.receipt", ["action-receipt.mjs"]],
+  ["telos.loop.ledger", ["loop-ledger.mjs"]]
 ]);
 
 function runTool(name) {

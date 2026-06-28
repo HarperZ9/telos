@@ -28,7 +28,8 @@ for (const name of [
   "telos.server.manifest",
   "telos.admission.telemetry",
   "telos.context.envelope",
-  "telos.action.receipt"
+  "telos.action.receipt",
+  "telos.loop.ledger"
 ]) {
   assert.ok(names.has(name), `missing ${name}`);
 }
@@ -102,6 +103,18 @@ assert.equal(actionReceipt.result.structuredContent.schema, "project-telos.actio
 assert.equal(actionReceipt.result.structuredContent.contract.append_only_compensation_required, true);
 assert.ok(actionReceipt.result.structuredContent.required_fields.includes("component.config_hash"));
 
+const expectedLoopLedger = JSON.parse(
+  readFileSync(new URL("./integrations/loop-ledger-conventions.json", import.meta.url), "utf8")
+);
+const loopLedger = handleRequest(request("tools/call", {
+  name: "telos.loop.ledger",
+  arguments: {}
+}));
+assert.deepEqual(loopLedger.result.structuredContent, expectedLoopLedger);
+assert.equal(loopLedger.result.structuredContent.schema, "project-telos.loop-ledger/v1");
+assert.equal(loopLedger.result.structuredContent.contract.ledger_first_class, true);
+assert.equal(loopLedger.result.structuredContent.headless_scheduled_fire.ask_user_mid_fire_status, "needs_attention");
+
 const badTool = handleRequest(request("tools/call", { name: "telos.missing", arguments: {} }));
 assert.equal(badTool.error.code, -32000);
 assert.match(badTool.error.message, /unknown tool/);
@@ -120,3 +133,4 @@ assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.server.
 assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.admission.telemetry"));
 assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.context.envelope"));
 assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.action.receipt"));
+assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.loop.ledger"));

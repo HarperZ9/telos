@@ -1,6 +1,6 @@
 {
   "schema": "project-telos.science-research-adapters/v1",
-  "verified_at": "2026-06-27",
+  "verified_at": "2026-06-28",
   "freshness_policy": {
     "current_source_required": true,
     "living_claims": "Verify against current primary or official sources before reporting tool, API, model, clinical, regulatory, or publication-archive claims.",
@@ -9,7 +9,15 @@
   "adapters": [
     {
       "name": "preprint.arxiv",
-      "domain": ["physics", "mathematics", "computer-science", "quantitative-biology", "quantitative-finance", "statistics", "economics"],
+      "domain": [
+        "physics",
+        "mathematics",
+        "computer-science",
+        "quantitative-biology",
+        "quantitative-finance",
+        "statistics",
+        "economics"
+      ],
       "status": "available-cli",
       "tool": "gather.arxiv",
       "primary_source": "https://info.arxiv.org/help/api/index.html",
@@ -17,7 +25,10 @@
     },
     {
       "name": "preprint.biorxiv",
-      "domain": ["biology", "life-sciences"],
+      "domain": [
+        "biology",
+        "life-sciences"
+      ],
       "status": "planned",
       "tool": "gather.biorxiv",
       "primary_source": "https://api.biorxiv.org/",
@@ -25,7 +36,11 @@
     },
     {
       "name": "preprint.medrxiv",
-      "domain": ["medicine", "clinical-research", "public-health"],
+      "domain": [
+        "medicine",
+        "clinical-research",
+        "public-health"
+      ],
       "status": "planned",
       "tool": "gather.medrxiv",
       "primary_source": "https://api.medrxiv.org/",
@@ -33,7 +48,11 @@
     },
     {
       "name": "literature.pubmed",
-      "domain": ["medicine", "biology", "clinical-research"],
+      "domain": [
+        "medicine",
+        "biology",
+        "clinical-research"
+      ],
       "status": "planned",
       "tool": "gather.pubmed",
       "primary_source": "https://www.ncbi.nlm.nih.gov/home/develop/api/",
@@ -41,7 +60,11 @@
     },
     {
       "name": "literature.europepmc",
-      "domain": ["life-sciences", "open-access-fulltext", "biomedical-literature"],
+      "domain": [
+        "life-sciences",
+        "open-access-fulltext",
+        "biomedical-literature"
+      ],
       "status": "planned",
       "tool": "gather.europepmc",
       "primary_source": "https://europepmc.org/RestfulWebService",
@@ -49,7 +72,13 @@
     },
     {
       "name": "literature.openalex",
-      "domain": ["global-research-index", "institutions", "authors", "works", "funders"],
+      "domain": [
+        "global-research-index",
+        "institutions",
+        "authors",
+        "works",
+        "funders"
+      ],
       "status": "planned",
       "tool": "gather.openalex",
       "primary_source": "https://developers.openalex.org/",
@@ -57,7 +86,13 @@
     },
     {
       "name": "literature.crossref",
-      "domain": ["doi-metadata", "journals", "funders", "licenses", "metadata-provenance"],
+      "domain": [
+        "doi-metadata",
+        "journals",
+        "funders",
+        "licenses",
+        "metadata-provenance"
+      ],
       "status": "planned",
       "tool": "gather.crossref",
       "primary_source": "https://www.crossref.org/documentation/retrieve-metadata/rest-api/",
@@ -65,7 +100,14 @@
     },
     {
       "name": "literature.semantic-scholar",
-      "domain": ["papers", "authors", "citations", "venues", "embeddings", "recommendations"],
+      "domain": [
+        "papers",
+        "authors",
+        "citations",
+        "venues",
+        "embeddings",
+        "recommendations"
+      ],
       "status": "planned",
       "tool": "gather.semantic_scholar",
       "primary_source": "https://www.semanticscholar.org/product/api",
@@ -73,7 +115,12 @@
     },
     {
       "name": "trials.clinicaltrials",
-      "domain": ["clinical-trials", "interventions", "recruitment", "results"],
+      "domain": [
+        "clinical-trials",
+        "interventions",
+        "recruitment",
+        "results"
+      ],
       "status": "planned",
       "tool": "gather.clinicaltrials",
       "primary_source": "https://clinicaltrials.gov/data-api/api",
@@ -81,7 +128,13 @@
     },
     {
       "name": "pid.datacite",
-      "domain": ["research-data", "datasets", "doi-metadata", "software", "research-objects"],
+      "domain": [
+        "research-data",
+        "datasets",
+        "doi-metadata",
+        "software",
+        "research-objects"
+      ],
       "status": "planned",
       "tool": "gather.datacite",
       "primary_source": "https://support.datacite.org/docs/api",
@@ -89,7 +142,12 @@
     },
     {
       "name": "pid.orcid",
-      "domain": ["researchers", "works", "affiliations", "identity"],
+      "domain": [
+        "researchers",
+        "works",
+        "affiliations",
+        "identity"
+      ],
       "status": "planned",
       "tool": "gather.orcid",
       "primary_source": "https://info.orcid.org/documentation/integration-and-api-faq/",
@@ -97,7 +155,11 @@
     },
     {
       "name": "pid.ror",
-      "domain": ["research-organizations", "affiliations", "institutions"],
+      "domain": [
+        "research-organizations",
+        "affiliations",
+        "institutions"
+      ],
       "status": "planned",
       "tool": "gather.ror",
       "primary_source": "https://ror.org/",
@@ -105,7 +167,14 @@
     },
     {
       "name": "graph.openaire",
-      "domain": ["open-science-graph", "publications", "datasets", "software", "projects", "funding"],
+      "domain": [
+        "open-science-graph",
+        "publications",
+        "datasets",
+        "software",
+        "projects",
+        "funding"
+      ],
       "status": "planned",
       "tool": "gather.openaire",
       "primary_source": "https://graph.openaire.eu/docs/apis/home/",
@@ -113,7 +182,11 @@
     },
     {
       "name": "structure.alphafold-db",
-      "domain": ["protein-structure", "biology", "drug-discovery-context"],
+      "domain": [
+        "protein-structure",
+        "biology",
+        "drug-discovery-context"
+      ],
       "status": "planned",
       "tool": "gather.alphafold_db",
       "primary_source": "https://alphafold.ebi.ac.uk/api-docs",
@@ -121,7 +194,11 @@
     },
     {
       "name": "structure.alphafold3",
-      "domain": ["protein-complexes", "biomolecular-interactions", "structural-biology"],
+      "domain": [
+        "protein-complexes",
+        "biomolecular-interactions",
+        "structural-biology"
+      ],
       "status": "planned-evaluate",
       "tool": "crucible.alphafold_artifact",
       "primary_source": "https://deepmind.google/science/alphafold/",
@@ -129,7 +206,12 @@
     },
     {
       "name": "medical.midjourney-medical",
-      "domain": ["medical-imaging", "wellness-imaging", "ultrasound", "emerging-tools"],
+      "domain": [
+        "medical-imaging",
+        "wellness-imaging",
+        "ultrasound",
+        "emerging-tools"
+      ],
       "status": "watch-only",
       "tool": "gather.midjourney_medical_monitor",
       "primary_source": "https://www.midjourney.com/medical",
@@ -137,7 +219,11 @@
     },
     {
       "name": "preprint.chemrxiv",
-      "domain": ["chemistry", "materials", "biochemistry"],
+      "domain": [
+        "chemistry",
+        "materials",
+        "biochemistry"
+      ],
       "status": "planned-evaluate",
       "tool": "gather.chemrxiv",
       "primary_source": "https://chemrxiv.org/",
@@ -145,7 +231,12 @@
     },
     {
       "name": "preprint.osf",
-      "domain": ["multidisciplinary-preprints", "psychology", "social-science", "open-science"],
+      "domain": [
+        "multidisciplinary-preprints",
+        "psychology",
+        "social-science",
+        "open-science"
+      ],
       "status": "planned-evaluate",
       "tool": "gather.osf_preprints",
       "primary_source": "https://help.osf.io/article/376-preprints-home-page",
@@ -153,7 +244,13 @@
     },
     {
       "name": "preprint.ssrn",
-      "domain": ["social-science", "law", "economics", "medicine", "business"],
+      "domain": [
+        "social-science",
+        "law",
+        "economics",
+        "medicine",
+        "business"
+      ],
       "status": "planned-evaluate",
       "tool": "gather.ssrn",
       "primary_source": "https://www.ssrn.com/",
@@ -161,11 +258,76 @@
     },
     {
       "name": "preprint.research-square",
-      "domain": ["multidisciplinary-preprints", "author-services"],
+      "domain": [
+        "multidisciplinary-preprints",
+        "author-services"
+      ],
       "status": "planned-evaluate",
       "tool": "gather.research_square",
       "primary_source": "https://www.researchsquare.com/request-api",
       "notes": "Research Square provides API access by request; connector should reflect access conditions."
+    },
+    {
+      "name": "oa.unpaywall",
+      "domain": [
+        "open-access-resolution",
+        "doi",
+        "license",
+        "repository-links"
+      ],
+      "status": "planned",
+      "tool": "gather.unpaywall",
+      "primary_source": "https://unpaywall.org/products/api",
+      "notes": "Use DOI-based OA lookup to find lawful full-text locations, license fields, and repository or publisher links. Requires source receipts and email/API identity where required by terms."
+    },
+    {
+      "name": "oa.core",
+      "domain": [
+        "open-access-fulltext",
+        "repositories",
+        "metadata",
+        "pdf"
+      ],
+      "status": "planned",
+      "tool": "gather.core",
+      "primary_source": "https://core.ac.uk/documentation/api",
+      "notes": "Use CORE for metadata and lawful full-text content from open access journals and repositories; record provider, document id, DOI/title query, and content hash."
+    },
+    {
+      "name": "oa.doaj",
+      "domain": [
+        "open-access-journals",
+        "article-metadata",
+        "journal-quality",
+        "data-dumps"
+      ],
+      "status": "planned",
+      "tool": "gather.doaj",
+      "primary_source": "https://doaj.org/docs/faq/",
+      "notes": "Use DOAJ API, OAI-PMH, CSV, or data-dump metadata for open-access journal and article discovery; verify freshness tier before reporting currentness."
+    },
+    {
+      "name": "oa.pubmed-central",
+      "domain": [
+        "biomedical-fulltext",
+        "open-access-subset",
+        "pmc",
+        "nih"
+      ],
+      "status": "planned",
+      "tool": "gather.pmc",
+      "primary_source": "https://www.ncbi.nlm.nih.gov/pmc/tools/",
+      "notes": "Use PubMed Central and NCBI utilities for lawful biomedical full text and open-access subset discovery; separate article metadata from clinical claims."
     }
-  ]
+  ],
+  "legal_access_policy": {
+    "lawful_full_text_required": true,
+    "illicit_access_sources_allowed": false,
+    "blocked_sources": [
+      "sci-hub",
+      "shadow-library-fulltext"
+    ],
+    "blocked_reason": "Research provenance must be lawful, reproducible, citeable, and safe to ship into enterprise workflows.",
+    "fallback_when_full_text_unavailable": "Record metadata, abstract, license, access attempt, and mark full_text_status as UNVERIFIABLE."
+  }
 }

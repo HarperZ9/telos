@@ -25,3 +25,9 @@ Before a tool or operator-facing report states a current claim about an external
 - Medical, diagnostic, clinical, therapeutic, biomedical, and wet-lab claims require current evidence and should be phrased as evidence status, not advice.
 - Emerging systems such as Midjourney Medical are monitored as claims and evidence until clinical, regulatory, and API support is proven.
 - Model outputs such as AlphaFold predictions are artifacts with inputs, version, confidence, license, and provenance, not experimental truth by themselves.
+
+## Full-Text Access Boundary
+
+- Lawful open-access resolution is part of the research stack: Unpaywall, PubMed Central, Europe PMC, DOAJ, CORE, publisher OA links, institutional repositories, preprints, and official dataset/model repositories.
+- Sci-Hub, shadow libraries, leaked PDFs, and other illicit full-text sources are not valid provenance sources for Project Telos tooling.
+- If lawful full text is unavailable, record metadata, abstracts, citations, license/access attempts, and mark full-text evidence `UNVERIFIABLE` instead of bypassing access controls.

@@ -532,6 +532,26 @@
       ]
     },
     {
+      "name": "telos.loop.ledger",
+      "flagship": "telos",
+      "description": "Return the durable loop-state ledger and bounded headless scheduled-run convention.",
+      "cli": [
+        "node",
+        "demo/loop-ledger.mjs"
+      ],
+      "mcp": {
+        "status": "available",
+        "server": "telos",
+        "method": "tools/call",
+        "tool": "telos.loop.ledger"
+      },
+      "next_actions": [
+        "telos.action.receipt",
+        "forum.ledger.summary",
+        "index.context"
+      ]
+    },
+    {
       "name": "telos.workflow",
       "flagship": "telos",
       "description": "Run the local golden workflow and reconcile the five flagship receipts.",
