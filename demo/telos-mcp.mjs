@@ -93,6 +93,11 @@ export const tools = [
     name: "telos.creative.kernels",
     description: "Return deterministic Telos creative kernels for dithering, pixel sorting, plotter paths, clustered light bins, and receipt-backed effects.",
     inputSchema: emptyInputSchema
+  },
+  {
+    name: "telos.revival.registry",
+    description: "Return the promotion registry for older, siloed, and frozen local tools being pulled into flagship status.",
+    inputSchema: emptyInputSchema
   }
 ];
 
@@ -112,7 +117,8 @@ const toolScripts = new Map([
   ["telos.rendering.capabilities", ["rendering-capabilities.mjs"]],
   ["telos.measurement.layers", ["measurement-layers.mjs"]],
   ["telos.creative.engine", ["creative-engine.mjs"]],
-  ["telos.creative.kernels", ["creative-kernels.mjs"]]
+  ["telos.creative.kernels", ["creative-kernels.mjs"]],
+  ["telos.revival.registry", ["revival-registry.mjs"]]
 ]);
 
 function runTool(name) {

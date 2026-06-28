@@ -30,6 +30,7 @@ node demo/rendering-capabilities.mjs --summary
 node demo/measurement-layers.mjs --summary
 node demo/creative-engine.mjs
 node demo/creative-kernels.mjs --summary
+node demo/revival-registry.mjs --summary
 ```
 
 Open the visual certificate-loop surface at [`demo/index.html`](demo/index.html).
@@ -39,6 +40,7 @@ Use `node demo/rendering-capabilities.mjs --summary` for the WebGPU/WebGL/canvas
 Use `node demo/measurement-layers.mjs --summary` for runnable histogram, dither, splat, cluster, and audio meters.
 Use `node demo/creative-engine.mjs --summary` for the whole creation-engine contract: raster effects, sound, typography, math/physics, node graphs, revived organs, and receipts.
 Use `node demo/creative-kernels.mjs --summary` for deterministic ordered-dither, pixel-sort, harmonograph, and clustered-light kernels.
+Use `node demo/revival-registry.mjs --summary` for the first promotion registry of older, siloed, and frozen tools being pulled toward flagship status.
 
 ## Why it matters
 
@@ -63,11 +65,17 @@ Every creative action should remain receipt-backed: scene specs, hashes, replay 
 
 The current research queue also includes receipt-only source leads from Inigo Quilez and adjacent math, physics, AI-progress, GPU-kernel, and educator videos under [`demo/research/youtube-math-educator-receipts.json`](demo/research/youtube-math-educator-receipts.json). Those leads shape the engine toward formula-visible, perturbable demos for mathematicians, physicists, shader artists, and teachers; video metadata is not promoted to scientific or benchmark evidence until stronger sources and Crucible checks exist.
 
+## Legacy Tool Revival
+
+`node demo/revival-registry.mjs` is the first promotion registry for the older and frozen tools that should stop living as isolated experiments. It currently pulls Calibrate Pro, Quanta Color, QuantaLang/quantac, WARDEN security lineage, Agent Audit, Secret Redact IO, Repo Proof Index, Release Surface Scanner, and GPU Trace Validator into explicit Telos lanes with origin paths, Gather-backed README digests, risk boundaries, flagship hosts, and next actions.
+
+The first rule is visibility before transplanting: a dormant tool gets a lane, a source receipt, a privacy boundary, CLI/MCP or adapter roadmap, tests, and a target host before shared code becomes a runtime dependency. Calibrate Pro and Quanta Color become the display-calibration and color-science lane for Telos measurement layers. QuantaLang becomes the effects-language candidate for creative kernels. WARDEN is carried forward only as defensive, authorized, good-faith find-and-fix lineage with synthetic labs and maintainer-friendly patch workflows.
+
 ## Current status
 
-- **Release:** source demo; command surface is `node demo/run.mjs`, `node demo/room.mjs`, `node demo/status.mjs`, `node demo/doctor.mjs`, `node demo/catalog.mjs`, `node demo/server-manifest.mjs`, `node demo/admission-telemetry.mjs`, `node demo/context-envelope.mjs`, `node demo/action-receipt.mjs`, `node demo/loop-ledger.mjs`, `node demo/research-seed.mjs`, `node demo/rendering-research.mjs`, `node demo/rendering-capabilities.mjs`, `node demo/measurement-layers.mjs`, `node demo/creative-engine.mjs`, `node demo/creative-kernels.mjs`, and `node demo/flagship-workflow.mjs`.
-- **Operator surface:** `node demo/telos-mcp.mjs` exposes native MCP tools: `telos.status`, `telos.doctor`, `telos.room`, `telos.catalog`, `telos.workflow`, `telos.server.manifest`, `telos.admission.telemetry`, `telos.context.envelope`, `telos.action.receipt`, `telos.loop.ledger`, `telos.research.seed`, `telos.rendering.research`, `telos.rendering.capabilities`, `telos.measurement.layers`, `telos.creative.engine`, and `telos.creative.kernels`.
-- **Current floor:** the operator room reconciles 44 available tools across Gather, Crucible, Index, Forum, and Telos, with a provider-neutral catalog and server manifest for CLI, MCP, plugin, IDE, TUI, and app hosts. See [CHANGELOG.md](CHANGELOG.md).
+- **Release:** source demo; command surface is `node demo/run.mjs`, `node demo/room.mjs`, `node demo/status.mjs`, `node demo/doctor.mjs`, `node demo/catalog.mjs`, `node demo/server-manifest.mjs`, `node demo/admission-telemetry.mjs`, `node demo/context-envelope.mjs`, `node demo/action-receipt.mjs`, `node demo/loop-ledger.mjs`, `node demo/research-seed.mjs`, `node demo/rendering-research.mjs`, `node demo/rendering-capabilities.mjs`, `node demo/measurement-layers.mjs`, `node demo/creative-engine.mjs`, `node demo/creative-kernels.mjs`, `node demo/revival-registry.mjs`, and `node demo/flagship-workflow.mjs`.
+- **Operator surface:** `node demo/telos-mcp.mjs` exposes native MCP tools: `telos.status`, `telos.doctor`, `telos.room`, `telos.catalog`, `telos.workflow`, `telos.server.manifest`, `telos.admission.telemetry`, `telos.context.envelope`, `telos.action.receipt`, `telos.loop.ledger`, `telos.research.seed`, `telos.rendering.research`, `telos.rendering.capabilities`, `telos.measurement.layers`, `telos.creative.engine`, `telos.creative.kernels`, and `telos.revival.registry`.
+- **Current floor:** the operator room reconciles 45 available tools across Gather, Crucible, Index, Forum, and Telos, with a provider-neutral catalog and server manifest for CLI, MCP, plugin, IDE, TUI, and app hosts. See [CHANGELOG.md](CHANGELOG.md).
 - **Brand renderer:** `python tools/render_flagship_heroes.py --check-existing --public-root ..` verifies the five README hero PNGs and brand receipts without redistributing the operator-owned fonts.
 
 ## What it is

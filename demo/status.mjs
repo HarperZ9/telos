@@ -6,7 +6,7 @@ const payload = actionEnvelope({
   command: "status",
   native: {
     role: "shared-room-reconciliation",
-    commands: ["room", "status", "doctor", "catalog", "run", "flagship-workflow"],
+    commands: ["room", "status", "doctor", "catalog", "run", "flagship-workflow", "revival-registry"],
     statuses: ["MATCH", "DRIFT", "UNVERIFIABLE", "ERROR"],
     mcp_tools: [
       "telos.status",
@@ -24,9 +24,10 @@ const payload = actionEnvelope({
       "telos.rendering.capabilities",
       "telos.measurement.layers",
       "telos.creative.engine",
-      "telos.creative.kernels"
+      "telos.creative.kernels",
+      "telos.revival.registry"
     ],
-    current_status: "source demo with 44-tool five-flagship catalog, context envelopes, action receipts, loop ledger, research seeds, rendering research, rendering capabilities, measurement layers, creative engine, creative kernels, and native Telos MCP surface"
+    current_status: "source demo with 45-tool five-flagship catalog, context envelopes, action receipts, loop ledger, research seeds, rendering research, rendering capabilities, measurement layers, creative engine, creative kernels, revival registry, and native Telos MCP surface"
   },
   nextActions: [
     {

@@ -913,6 +913,26 @@
         "crucible.assess",
         "index.context"
       ]
+    },
+    {
+      "name": "telos.revival.registry",
+      "flagship": "telos",
+      "description": "Return the promotion registry for older, siloed, and frozen local tools being pulled into flagship status.",
+      "cli": [
+        "node",
+        "demo/revival-registry.mjs"
+      ],
+      "mcp": {
+        "status": "available",
+        "server": "telos",
+        "method": "tools/call",
+        "tool": "telos.revival.registry"
+      },
+      "next_actions": [
+        "gather.docs",
+        "index.context.envelope",
+        "crucible.review"
+      ]
     }
   ]
 }

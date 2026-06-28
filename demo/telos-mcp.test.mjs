@@ -35,7 +35,8 @@ for (const name of [
   "telos.rendering.capabilities",
   "telos.measurement.layers",
   "telos.creative.engine",
-  "telos.creative.kernels"
+  "telos.creative.kernels",
+  "telos.revival.registry"
 ]) {
   assert.ok(names.has(name), `missing ${name}`);
 }
@@ -182,6 +183,17 @@ assert.equal(creativeKernels.result.structuredContent.schema, "project-telos.cre
 assert.equal(creativeKernels.result.structuredContent.tool, "telos.creative.kernels");
 assert.equal(creativeKernels.result.structuredContent.kernels.length, 4);
 
+const expectedRevivalRegistry = JSON.parse(
+  readFileSync(new URL("./integrations/revival-registry.json", import.meta.url), "utf8")
+);
+const revivalRegistry = handleRequest(request("tools/call", {
+  name: "telos.revival.registry",
+  arguments: {}
+}));
+assert.deepEqual(revivalRegistry.result.structuredContent, expectedRevivalRegistry);
+assert.equal(revivalRegistry.result.structuredContent.schema, "project-telos.revival-registry/v1");
+assert.ok(revivalRegistry.result.structuredContent.tools.some((tool) => tool.id === "calibrate-pro"));
+
 const badTool = handleRequest(request("tools/call", { name: "telos.missing", arguments: {} }));
 assert.equal(badTool.error.code, -32000);
 assert.match(badTool.error.message, /unknown tool/);
@@ -207,3 +219,4 @@ assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.renderi
 assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.measurement.layers"));
 assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.creative.engine"));
 assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.creative.kernels"));
+assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.revival.registry"));
