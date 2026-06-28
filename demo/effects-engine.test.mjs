@@ -25,7 +25,9 @@ const layers = [
 ];
 
 assert.match(engine, /window\.TelosEffects = TelosEffects/);
+assert.match(engine, /window\.TelosEffectsProtocol/);
 assert.match(engine, /project-telos\.effects-engine\/v1/);
+assert.match(html, /<script src="effects-protocol\.js"><\/script>/);
 assert.match(html, /<script src="effects-engine\.js"><\/script>/);
 assert.equal(/<script>\s*\(\(\) =>/.test(html), false, "engine should not be inlined in HTML");
 
@@ -36,9 +38,13 @@ for (const [id, label] of layers) {
   assert.match(html, new RegExp(label), `HTML missing visible label ${label}`);
 }
 
-for (const id of ["effect-intensity", "effect-density", "effect-freeze", "effect-step", "effect-reroll"]) {
+for (const id of ["effect-intensity", "effect-density", "effect-freeze", "effect-step", "effect-reroll", "effect-copy-receipt", "effect-export-scene", "effect-replay-scene", "effect-protocol-output"]) {
   assert.match(html, new RegExp(`id="${id}"`), `missing control ${id}`);
   assert.match(engine, new RegExp(id), `engine does not bind ${id}`);
+}
+
+for (const preset of ["all", "scientific", "poster", "flagship", "terminal", "radiance", "diagnostic"]) {
+  assert.match(html, new RegExp(`data-preset="${preset}"`), `HTML missing preset ${preset}`);
 }
 
 for (const required of [
@@ -56,11 +62,14 @@ for (const required of [
   "drawAscii",
   "drawVectorField",
   "drawFeedback",
+  "drawHalftone",
+  "drawLayoutGrid",
   "applyGlitch",
   "applyChromaticSplit",
   "applyPixelSort",
   "requestAnimationFrame",
-  "matchMedia(\"(prefers-reduced-motion: reduce)\")"
+  "matchMedia(\"(prefers-reduced-motion: reduce)\")",
+  "const started = performance.now()"
 ]) {
   assert.match(engine, new RegExp(required.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")), `missing ${required}`);
 }
@@ -77,6 +86,19 @@ for (const receiptField of [
   "reduced_motion="
 ]) {
   assert.match(engine, new RegExp(receiptField.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")), `receipt missing ${receiptField}`);
+}
+
+for (const protocolField of [
+  "createSceneSpec",
+  "createSceneReceipt",
+  "createReceiptChain",
+  "encodeSceneSpec",
+  "decodeSceneSpec",
+  "action_intent_id",
+  "spec_hash",
+  "receipt_hash"
+]) {
+  assert.match(engine, new RegExp(protocolField), `engine missing protocol hook ${protocolField}`);
 }
 
 assert.equal(/import\s/.test(engine), false, "engine should stay dependency-free for file:// demo use");
