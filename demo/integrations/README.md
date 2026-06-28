@@ -34,6 +34,8 @@ OpenAI Apps, OpenAI Agents, Anthropic Claude, Claude Code, Codex plugins, skills
 
 `atp-adapter-validation.json` records a public/synthetic adapter-validation profile for ATP v1.2.0 transaction receipts: digest refs, component/config identity, side-effect class, policy decision, verification verdict, typed stop reason, and append-only compensation. It is a fixture profile, not a live ATP/Haystack conformance claim.
 
+`scankii-synthetic-receipt.json` records a public/synthetic dogfood run against scankii's replayable-receipt branch. It preserves normalized replay fields and explicit drift cases from the raw scanner output; it is not a private corpus scan or a production security claim.
+
 `research-seed-conventions.json` records how terse operator notes become source-backed research seeds: the note is a lead, current lawful source receipts promote claims, and unresolved claims stay `UNVERIFIABLE`.
 
 `../mcp-runtime-contract.test.mjs` checks the catalog against the sibling MCP runtimes so `available` means the tool is actually present in `tools/list`.
