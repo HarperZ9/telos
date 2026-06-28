@@ -19,9 +19,10 @@ const payload = actionEnvelope({
       "telos.context.envelope",
       "telos.action.receipt",
       "telos.loop.ledger",
-      "telos.research.seed"
+      "telos.research.seed",
+      "telos.rendering.research"
     ],
-    current_status: "source demo with 29-tool five-flagship catalog, context envelopes, action receipts, loop ledger, research seeds, and native Telos MCP surface"
+    current_status: "source demo with 30-tool five-flagship catalog, context envelopes, action receipts, loop ledger, research seeds, rendering research, and native Telos MCP surface"
   },
   nextActions: [
     {

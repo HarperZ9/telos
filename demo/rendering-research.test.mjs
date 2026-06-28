@@ -1,0 +1,95 @@
+import assert from "node:assert/strict";
+import { spawnSync } from "node:child_process";
+import { readFileSync } from "node:fs";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+
+import { handleRequest, tools } from "./telos-mcp.mjs";
+
+const here = path.dirname(fileURLToPath(import.meta.url));
+const packet = JSON.parse(
+  readFileSync(new URL("./research/rendering-pipeline-seeds.json", import.meta.url), "utf8")
+);
+const catalog = JSON.parse(
+  readFileSync(new URL("./integrations/mcp-tool-catalog.json", import.meta.url), "utf8")
+);
+const manifest = JSON.parse(
+  readFileSync(new URL("./integrations/mcp-server-manifest.json", import.meta.url), "utf8")
+);
+
+assert.equal(packet.schema, "project-telos.research-seed/v1");
+assert.equal(packet.tool, "telos.rendering.research");
+assert.equal(packet.seeds.length, 2);
+
+const byId = new Map(packet.seeds.map((seed) => [seed.seed_id, seed]));
+assert.ok(byId.has("seed-gaussian-splatting-webgpu"));
+assert.ok(byId.has("seed-clustered-forward-rendering"));
+
+for (const seed of packet.seeds) {
+  assert.equal(seed.evidence_status, "MATCH");
+  assert.ok(seed.source_receipts.length >= 3, `${seed.seed_id} has lawful source receipts`);
+  assert.ok(seed.source_leads.every((lead) => lead.evidence_status === "UNVERIFIABLE"));
+  assert.ok(seed.source_leads.every((lead) => lead.provenance_class === "operator_source_lead"));
+  assert.ok(seed.design_acceptance_gates.some((gate) => /pretty|visual|beauty/i.test(gate.gate)));
+  assert.ok(seed.design_acceptance_gates.some((gate) => /a11y|accessibility/i.test(`${gate.gate} ${gate.criterion}`)));
+  for (const receipt of seed.source_receipts) {
+    assert.equal(receipt.provenance_class, "lawful_source");
+    assert.match(receipt.receipt_hash, /^sha256:[a-f0-9]{64}$/);
+  }
+}
+
+assert.ok(
+  byId.get("seed-gaussian-splatting-webgpu").claims.some((claim) => /SuperSplat/.test(claim.claim))
+);
+assert.ok(
+  byId.get("seed-clustered-forward-rendering").claims.some((claim) => /WebGPU\/WGSL/.test(claim.claim))
+);
+
+const run = spawnSync(process.execPath, [path.join(here, "rendering-research.mjs")], {
+  cwd: path.resolve(here, ".."),
+  encoding: "utf8"
+});
+assert.equal(run.status, 0, run.stderr || run.stdout);
+assert.deepEqual(JSON.parse(run.stdout), packet);
+
+const catalogTool = catalog.tools.find((tool) => tool.name === "telos.rendering.research");
+assert.ok(catalogTool, "catalog exposes telos.rendering.research");
+assert.equal(catalogTool.flagship, "telos");
+assert.deepEqual(catalogTool.cli, ["node", "demo/rendering-research.mjs"]);
+assert.equal(catalogTool.mcp.tool, "telos.rendering.research");
+
+assert.ok(tools.some((tool) => tool.name === "telos.rendering.research"));
+assert.ok(manifest.servers.telos.expected_tools.includes("telos.rendering.research"));
+
+const mcp = handleRequest({
+  jsonrpc: "2.0",
+  id: 42,
+  method: "tools/call",
+  params: { name: "telos.rendering.research", arguments: {} }
+});
+assert.equal(mcp.result.structuredContent.tool, "telos.rendering.research");
+assert.equal(mcp.result.structuredContent.seeds.length, 2);
+
+const status = spawnSync(process.execPath, [path.join(here, "status.mjs")], {
+  cwd: path.resolve(here, ".."),
+  encoding: "utf8"
+});
+assert.equal(status.status, 0, status.stderr || status.stdout);
+const statusPayload = JSON.parse(status.stdout);
+assert.ok(statusPayload.native.mcp_tools.includes("telos.rendering.research"));
+assert.match(statusPayload.native.current_status, /30-tool/);
+
+const catalogSummary = spawnSync(process.execPath, [path.join(here, "catalog.mjs"), "--summary"], {
+  cwd: path.resolve(here, ".."),
+  encoding: "utf8"
+});
+assert.equal(catalogSummary.status, 0, catalogSummary.stderr || catalogSummary.stdout);
+assert.match(catalogSummary.stdout, /tools\s+30 total, 30 available/);
+assert.match(catalogSummary.stdout, /telos\s+12 tools/);
+
+const manifestSummary = spawnSync(process.execPath, [path.join(here, "server-manifest.mjs"), "--summary"], {
+  cwd: path.resolve(here, ".."),
+  encoding: "utf8"
+});
+assert.equal(manifestSummary.status, 0, manifestSummary.stderr || manifestSummary.stdout);
+assert.match(manifestSummary.stdout, /tools\s+30 expected/);
