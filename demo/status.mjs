@@ -25,7 +25,7 @@ const payload = actionEnvelope({
       "telos.measurement.layers",
       "telos.creative.engine"
     ],
-    current_status: "source demo with 33-tool five-flagship catalog, context envelopes, action receipts, loop ledger, research seeds, rendering research, rendering capabilities, measurement layers, creative engine, and native Telos MCP surface"
+    current_status: "source demo with 42-tool five-flagship catalog, context envelopes, action receipts, loop ledger, research seeds, rendering research, rendering capabilities, measurement layers, creative engine, and native Telos MCP surface"
   },
   nextActions: [
     {

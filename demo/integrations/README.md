@@ -66,7 +66,7 @@ Availability labels:
 - Codex plugin: expose skills plus MCP servers for `gather`, `crucible`, `index`, `forum`, and Telos.
 - Telos MCP: `node demo/telos-mcp.mjs` exposes `telos.status`, `telos.doctor`, `telos.room`, `telos.workflow`, `telos.catalog`, `telos.server.manifest`, `telos.admission.telemetry`, `telos.context.envelope`, `telos.action.receipt`, `telos.loop.ledger`, `telos.research.seed`, `telos.rendering.research`, `telos.rendering.capabilities`, `telos.measurement.layers`, and `telos.creative.engine`.
 - Gather MCP: `gather mcp` exposes `gather.status`, `gather.doctor`, `gather.docs`, `gather.arxiv`, and `gather.run`.
-- Crucible MCP: `crucible mcp` exposes `crucible.status`, `crucible.doctor`, `crucible.assess`, and `crucible.recheck`.
+- Crucible MCP: `crucible mcp` exposes `crucible.status`, `crucible.doctor`, `crucible.assess`, `crucible.measurement_gate`, `crucible.recheck`, `crucible.run`, `crucible.review`, `crucible.report`, `crucible.batch`, `crucible.registry`, `crucible.drift`, `crucible.refine`, and `crucible.verdicts`.
 - Index MCP: `index mcp` exposes `index.map`, `index.context`, `index.status`, `index.doctor`, and the lower-level graph, focus, verify, router, and internals tools.
 - Forum MCP: `forum mcp` exposes `forum.route`, `forum.status`, `forum.doctor`, `forum.ledger.summary`, and the ledger-backed submit, plan, verify, and ledger-get tools.
 - Superpowers skills: add thin workflows that call the CLI/MCP catalog.
