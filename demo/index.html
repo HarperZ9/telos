@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Project Telos operator room</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230b0c0e'/%3E%3Cpath d='M8 7h16v4h-6v14h-4V11H8z' fill='%23f4f3ef'/%3E%3C/svg%3E">
 <style>
 @font-face{font-family:Kilon;src:url("https://harperz9.github.io/system/fonts/kilon.woff2") format("woff2");font-display:swap}
 @font-face{font-family:Conso;src:url("https://harperz9.github.io/system/fonts/conso-regular.woff2") format("woff2");font-display:swap}
@@ -60,7 +61,20 @@ h1{font-family:Kilon,Arial Black,sans-serif;font-size:clamp(3.6rem,10vw,6rem);li
 pre{margin:0;white-space:pre-wrap;overflow-wrap:anywhere;font-size:.92rem;background:var(--ink);color:var(--paper);padding:1rem;border-radius:.45rem}
 .note{color:var(--muted);max-width:68ch}
 .footer{padding:2rem 0;color:var(--muted);font-size:.9rem}
-@media(max-width:840px){.hero-grid,.proof-grid{grid-template-columns:1fr}.room-head{align-items:flex-start;flex-direction:column}.cols,.sequence{grid-template-columns:1fr}.matrix thead{display:none}.matrix,.matrix tbody,.matrix tr,.matrix th,.matrix td{display:block}.matrix tr{border-top:1px solid var(--line);padding:.55rem 0}.matrix td,.matrix tbody th{border-top:0;padding:.3rem 0}.matrix td::before{content:attr(data-label);display:block;font-family:ui-monospace,Consolas,monospace;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);font-size:.72rem}}
+.studio-grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(17rem,.75fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+.effect-frame{background:#07080b;color:#f7f4ea;min-height:24rem;position:relative;overflow:hidden}
+.effect-frame canvas{display:block;width:100%;height:auto;aspect-ratio:16/9;background:#07080b}
+.effect-side{background:var(--paper);padding:1rem;display:grid;align-content:start;gap:1rem}
+.effect-toolbar{display:flex;flex-wrap:wrap;gap:.45rem}
+.effect-toolbar button{border:1px solid var(--line);background:var(--wash);color:var(--ink);border-radius:.35rem;padding:.48rem .62rem;font:inherit;font-size:.86rem;cursor:pointer}
+.effect-toolbar button[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.effect-toolbar button:hover{border-color:var(--ink)}
+.effect-list{list-style:none;margin:0;padding:0;display:grid;gap:.48rem}
+.effect-list li{border-top:1px solid var(--line);padding-top:.48rem;color:var(--soft)}
+.effect-list strong{display:block;color:var(--ink);font-size:.92rem}
+.effect-controls{display:grid;gap:.65rem;border-top:1px solid var(--line);padding-top:1rem}.effect-controls label{display:grid;gap:.25rem;color:var(--soft);font-size:.9rem}.effect-controls input{width:100%}.control-buttons{display:flex;flex-wrap:wrap;gap:.45rem}.control-buttons button{border:1px solid var(--line);background:var(--wash);color:var(--ink);border-radius:.35rem;padding:.48rem .62rem;font:inherit;font-size:.86rem;cursor:pointer}.control-buttons button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}.receipt-box{border-top:1px solid var(--line);padding-top:1rem}
+.receipt-box output{display:block;margin-top:.4rem;font-family:ui-monospace,Consolas,monospace;font-size:.84rem;color:var(--soft);overflow-wrap:anywhere}
+@media(max-width:840px){.hero-grid,.proof-grid{grid-template-columns:1fr}.room-head{align-items:flex-start;flex-direction:column}.cols,.sequence,.studio-grid{grid-template-columns:1fr}.matrix thead{display:none}.matrix,.matrix tbody,.matrix tr,.matrix th,.matrix td{display:block}.matrix tr{border-top:1px solid var(--line);padding:.55rem 0}.matrix td,.matrix tbody th{border-top:0;padding:.3rem 0}.matrix td::before{content:attr(data-label);display:block;font-family:ui-monospace,Consolas,monospace;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);font-size:.72rem}}
 @media(max-width:560px){.topbar .shell{align-items:flex-start;flex-direction:column;padding:.8rem 0}.nav a{padding:.35rem .45rem}.button{width:100%}h1{font-size:3.2rem}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.button:hover{transform:none}*{transition:none!important;animation:none!important}}
 </style>
@@ -73,6 +87,7 @@ pre{margin:0;white-space:pre-wrap;overflow-wrap:anywhere;font-size:.92rem;backgr
     <nav class="nav" aria-label="Page sections">
       <a href="#room">Room</a>
       <a href="#protocols">Protocols</a>
+      <a href="#studio">Studio</a>
       <a href="#proof">Proof</a>
       <a href="../README.md">README</a>
     </nav>
@@ -88,6 +103,7 @@ pre{margin:0;white-space:pre-wrap;overflow-wrap:anywhere;font-size:.92rem;backgr
         <div class="actions" aria-label="Primary actions">
           <a class="button primary" href="#room">Inspect the room</a>
           <a class="button" href="#proof">Run the proof</a>
+          <a class="button" href="#studio">Open effects</a>
         </div>
       </div>
       <div class="command-strip" aria-label="Quick command">
@@ -136,6 +152,77 @@ pre{margin:0;white-space:pre-wrap;overflow-wrap:anywhere;font-size:.92rem;backgr
     </div>
   </section>
 
+
+  <section class="band" id="studio" aria-labelledby="studio-title">
+    <div class="shell">
+      <p class="kicker">Telos Studio effects</p>
+      <h2 id="studio-title">A visual instrument for model and operator.</h2>
+      <p class="note">The demo now exposes the creative rendering vocabulary as live, inspectable layers. The canvas is decorative only when the receipt says so: mode, seed, active layers, fallback, and reduced-motion state are always available as text.</p>
+      <div class="studio-grid">
+        <div class="effect-frame" aria-label="Live Telos engine rendering surface">
+          <canvas id="effect-canvas" width="960" height="540" role="img" aria-label="Telos Studio effects rendering demo with retro CGI, glitch, generative, plotter, pixel sorting, poster, fractal, Gaussian splat, clustered lighting, CRT, chromatic, dither, contour, Voronoi, ASCII, vector field, and feedback trail layers">Your browser can still use the text controls and scene receipt if canvas rendering is unavailable.</canvas>
+        </div>
+        <aside class="effect-side" aria-labelledby="effect-controls-title">
+          <div>
+            <p class="kicker">Effect bank</p>
+            <h3 id="effect-controls-title">Composable visual layers</h3>
+          </div>
+          <div class="effect-toolbar" aria-label="Rendering effect modes">
+            <button type="button" data-effect="all" aria-pressed="true">All layers</button>
+            <button type="button" data-effect="retro">Retro CGI</button>
+            <button type="button" data-effect="glitch">Glitch</button>
+            <button type="button" data-effect="generative">Generative</button>
+            <button type="button" data-effect="plotter">Plotter</button>
+            <button type="button" data-effect="pixelsort">Pixel sort</button>
+            <button type="button" data-effect="poster">Poster</button>
+            <button type="button" data-effect="fractal">Fractal</button>
+            <button type="button" data-effect="splat">Gaussian splat</button>
+            <button type="button" data-effect="clustered">Clustered lights</button>
+            <button type="button" data-effect="crt">CRT scanlines</button>
+            <button type="button" data-effect="chromatic">Chromatic split</button>
+            <button type="button" data-effect="dither">Dither</button>
+            <button type="button" data-effect="contour">Contour map</button>
+            <button type="button" data-effect="voronoi">Voronoi cells</button>
+            <button type="button" data-effect="ascii">ASCII raster</button>
+            <button type="button" data-effect="vector">Vector field</button>
+            <button type="button" data-effect="feedback">Feedback trails</button>
+          </div>
+          <div class="effect-controls" aria-label="Effect parameters">
+            <label for="effect-intensity">Intensity <input id="effect-intensity" type="range" min="20" max="100" value="82"></label>
+            <label for="effect-density">Density <input id="effect-density" type="range" min="20" max="100" value="64"></label>
+            <div class="control-buttons" aria-label="Playback controls">
+              <button type="button" id="effect-freeze" aria-pressed="false">Freeze</button>
+              <button type="button" id="effect-step">Step</button>
+              <button type="button" id="effect-reroll">Reroll seed</button>
+            </div>
+          </div>
+          <ul class="effect-list" aria-label="Available creative capabilities">
+            <li><strong>Retro CGI</strong><span>Wireframes, horizon grids, shaded primitives, and measurement-friendly depth.</span></li>
+            <li><strong>Glitch</strong><span>Scanline offsets, channel splits, and deliberate corruption with readable state.</span></li>
+            <li><strong>Generative</strong><span>Seeded particle fields and graph traces for repeatable variation.</span></li>
+            <li><strong>Plotter</strong><span>Pen-plotter paths, hatch lines, and vector-like trace discipline.</span></li>
+            <li><strong>Pixel sort</strong><span>Luminance-ranked row fragments that expose algorithmic image transforms.</span></li>
+            <li><strong>Poster</strong><span>Typographic blocks and print-system composition for flagship presentation.</span></li>
+            <li><strong>Fractal</strong><span>Branching recursion and orbital geometry for sensitivity-map demos.</span></li>
+            <li><strong>Gaussian splat</strong><span>Transparent ellipses that stand in for web-native splat fields.</span></li>
+            <li><strong>Clustered lights</strong><span>Forward-style screen clusters showing light bins and overlay visibility.</span></li>
+            <li><strong>CRT scanlines</strong><span>Display-era texture for retro terminals and low-fi monitor studies.</span></li>
+            <li><strong>Chromatic split</strong><span>Channel offsets for signal stress, poster energy, and glitch transitions.</span></li>
+            <li><strong>Dither</strong><span>Ordered threshold texture for low-bit export and print constraints.</span></li>
+            <li><strong>Contour map</strong><span>Iso-line fields for scientific overlays and scalar measurements.</span></li>
+            <li><strong>Voronoi cells</strong><span>Nearest-seed partitions for segmentation and route-field sketches.</span></li>
+            <li><strong>ASCII raster</strong><span>Glyph-based raster previews for TUI and receipt-friendly surfaces.</span></li>
+            <li><strong>Vector field</strong><span>Directional flow arrows for sensitivity maps and simulation overlays.</span></li>
+            <li><strong>Feedback trails</strong><span>Frame-history echoes for loop memory and temporal debugging.</span></li>
+          </ul>
+          <div class="receipt-box">
+            <strong>Scene receipt</strong>
+            <output id="effect-receipt" aria-live="polite">Scene receipt: mode=All layers; seed=5505; status=MATCH; fallback=canvas+text</output>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
   <section class="band" id="proof" aria-labelledby="proof-title">
     <div class="shell proof-grid">
       <div>
@@ -165,5 +252,6 @@ node demo/flagship-workflow.mjs</code></pre>
 <footer class="footer">
   <div class="shell">Fair-source research tooling for AI workflows with provenance. No install required for the demo.</div>
 </footer>
+<script src="effects-engine.js"></script>
 </body>
 </html>

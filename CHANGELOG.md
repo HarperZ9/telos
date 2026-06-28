@@ -4,6 +4,8 @@ All notable changes to Project Telos. Telos is currently a source demo and share
 
 ## Unreleased
 
+- Engine demo: adds a live Telos Studio effects console with retro CGI, glitch art, seeded generative fields, plotter paths, pixel sorting, poster composition, fractal recursion, Gaussian-splat stand-ins, clustered-light overlays, reduced-motion handling, and visible scene receipts.
+
 - Context evidence: separates load receipts from relevance receipts, accepts load-only traces as `valid_load_receipt_not_usefulness_claim`, and gives missing relevance, over-selection, and unjoinable relevance distinct failure codes.
 - ATP adapter validation: adds Haystack-style component middleware semantics with pipeline-run receipt trees, RFC 8785 canonicalization expectations, and receiver-owned independence from signing/storage backends.
 - Brand renderer: adds `tools/render_flagship_heroes.py` with a standard-library `--check-existing` mode for CI and a local `--render` mode for the operator-owned Kilon/Conso font ZIPs, preserving exported PNGs without committing purchased fonts.
