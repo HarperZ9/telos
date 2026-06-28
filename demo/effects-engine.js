@@ -403,6 +403,7 @@
       intensity,
       layers,
       mode,
+      rendererProfile: "canvas2d-receipt-renderer",
       seed,
       source: "demo/index.html"
     });
@@ -448,7 +449,7 @@
     lastEnvelope = makeProtocolEnvelope(layers, renderMs);
     const spec = lastEnvelope?.spec;
     const sceneReceipt = lastEnvelope?.receipt;
-    receipt.value = `Scene receipt: mode=${labels[mode]}; seed=${seed}; layers=${layers.map((layer) => labels[layer]).join(" + ")}; intensity=${Math.round(intensity * 100)}; density=${Math.round(density * 100)}; frame=${frame}; action_intent_id=${spec?.action_intent_id ?? "local"}; spec_hash=${spec?.spec_hash ?? "local"}; receipt_hash=${sceneReceipt?.receipt_hash ?? "local"}; status=MATCH; fallback=canvas+text; reduced_motion=${reducedMotion.matches}`;
+    receipt.value = `Scene receipt: mode=${labels[mode]}; seed=${seed}; layers=${layers.map((layer) => labels[layer]).join(" + ")}; intensity=${Math.round(intensity * 100)}; density=${Math.round(density * 100)}; frame=${frame}; renderer=${spec?.renderer?.selected_profile ?? "canvas2d-receipt-renderer"}; fallback_chain=${(spec?.renderer?.fallback_chain ?? ["canvas2d-receipt-renderer", "static-artifact-receipt"]).join(">")}; action_intent_id=${spec?.action_intent_id ?? "local"}; spec_hash=${spec?.spec_hash ?? "local"}; receipt_hash=${sceneReceipt?.receipt_hash ?? "local"}; status=MATCH; fallback=canvas+text; reduced_motion=${reducedMotion.matches}`;
     if (protocolOutput && lastEnvelope) protocolOutput.value = JSON.stringify(lastEnvelope, null, 2);
   }
 

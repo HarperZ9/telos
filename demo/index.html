@@ -240,7 +240,10 @@ pre{margin:0;white-space:pre-wrap;overflow-wrap:anywhere;font-size:.92rem;backgr
           </ul>
           <div class="receipt-box">
             <strong>Scene receipt</strong>
-            <output id="effect-receipt" aria-live="polite">Scene receipt: mode=All layers; seed=5505; status=MATCH; fallback=canvas+text</output>
+            <output id="effect-receipt" aria-live="polite">Scene receipt: mode=All layers; seed=5505; renderer=canvas2d-receipt-renderer; fallback_chain=canvas2d-receipt-renderer&gt;static-artifact-receipt; status=MATCH; fallback=canvas+text</output>
+            <p class="protocol-label">Renderer path</p>
+            <p class="note">Capability contract: WebGPU splat and clustered prototype, then WebGL2 preview, Canvas 2D receipt renderer, and static artifact receipt fallback.</p>
+            <code>node demo/rendering-capabilities.mjs --summary</code>
             <label class="protocol-label" for="effect-protocol-output">Protocol envelope</label>
             <textarea id="effect-protocol-output" class="protocol-output" readonly spellcheck="false" rows="10">{"protocol":"project-telos.scene-spec/v1","status":"MATCH"}</textarea>
           </div>
@@ -256,9 +259,9 @@ pre{margin:0;white-space:pre-wrap;overflow-wrap:anywhere;font-size:.92rem;backgr
       <div class="cols" aria-label="Telos Creative Engine modules">
         <section class="panel" aria-labelledby="engine-raster"><h3 id="engine-raster">Raster and print</h3><p>Dither, pixel sorting, halftone, CRT, chromatic split, poster grids, glitch, and export-ready media passes.</p></section>
         <section class="panel" aria-labelledby="engine-sound"><h3 id="engine-sound">Sound and media</h3><p>Render-sound, DFT, Web Audio strands, sonification, and audio-reactive visual layers with artifact receipts.</p></section>
-        <section class="panel" aria-labelledby="engine-physics"><h3 id="engine-physics">Math and physics</h3><p>N-dimensional geometry, flow fields, harmonographs, particle fields, clustered light bins, and measurable overlays for mathematicians, physicists, and educators.</p></section>
+        <section class="panel" aria-labelledby="engine-physics"><h3 id="engine-physics">Math and physics</h3><p>N-dimensional geometry, flow fields, harmonographs, particle fields, clustered light bins, Gaussian splat fields, and measurable overlays for mathematicians, physicists, and educators.</p></section>
         <section class="panel" aria-labelledby="engine-type"><h3 id="engine-type">Typography lab</h3><p>Kilon display type and Conso utility text set the specimen system for future glyph generation and poster design.</p></section>
-        <section class="panel" aria-labelledby="engine-graph"><h3 id="engine-graph">Node graph</h3><p>TouchDesigner-compatible recipes can compose effects as reusable nodes instead of one-off canvas code.</p></section>
+        <section class="panel" aria-labelledby="engine-graph"><h3 id="engine-graph">Node graph</h3><p>TouchDesigner-compatible recipes can compose effects, sensors, measurement overlays, and media generators as reusable nodes instead of one-off canvas code.</p></section>
         <section class="panel" aria-labelledby="engine-receipts"><h3 id="engine-receipts">Receipts</h3><p><code>node demo/creative-engine.mjs</code> returns the full manifest for replay, audit, and MCP hosts.</p></section>
       </div>
     </div>

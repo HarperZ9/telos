@@ -38,10 +38,31 @@ for (const technique of [
   "font.generative-glyph-lab",
   "touchdesigner.node-graph-compatible",
   "physics.particle-field",
-  "cgi.clustered-forward-lighting"
+  "cgi.clustered-forward-lighting",
+  "renderer.capability-probe"
 ]) {
   assert.ok(manifest.techniques.some((item) => item.id === technique), `missing technique ${technique}`);
 }
+
+assert.equal(manifest.rendering_capabilities.tool, "telos.rendering.capabilities");
+assert.equal(manifest.rendering_capabilities.contract, "project-telos.rendering-capabilities/v1");
+assert.ok(manifest.rendering_capabilities.profiles.includes("webgpu-splat-clustered"));
+assert.match(manifest.rendering_capabilities.boundary, /separate from verification/);
+
+assert.equal(manifest.sensor_measurement_layers.length, 4);
+for (const sensor of [
+  "visual.histogram-field",
+  "spatial.splat-probe",
+  "lighting.cluster-meter",
+  "audio.spectral-meter"
+]) {
+  assert.ok(manifest.sensor_measurement_layers.some((item) => item.id === sensor), `missing sensor ${sensor}`);
+}
+assert.ok(
+  manifest.sensor_measurement_layers
+    .find((item) => item.id === "lighting.cluster-meter")
+    .outputs.includes("overlay legibility verdict")
+);
 
 for (const revived of [
   "demo/render-nd",
@@ -73,5 +94,5 @@ const summary = spawnSync(process.execPath, [path.join(here, "creative-engine.mj
 assert.equal(summary.status, 0, summary.stderr || summary.stdout);
 assert.match(summary.stdout, /Telos Creative Engine/);
 assert.match(summary.stdout, /domains\s+9/);
-assert.match(summary.stdout, /techniques\s+8/);
+assert.match(summary.stdout, /techniques\s+9/);
 assert.match(summary.stdout, /revival\s+11/);
