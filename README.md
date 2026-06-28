@@ -29,6 +29,7 @@ node demo/rendering-research.mjs
 node demo/rendering-capabilities.mjs --summary
 node demo/measurement-layers.mjs --summary
 node demo/creative-engine.mjs
+node demo/creative-kernels.mjs --summary
 ```
 
 Open the visual certificate-loop surface at [`demo/index.html`](demo/index.html).
@@ -37,6 +38,7 @@ Use `node demo/server-manifest.mjs --summary` for the five-server MCP launch map
 Use `node demo/rendering-capabilities.mjs --summary` for the WebGPU/WebGL/canvas/static renderer selection and fallback contract.
 Use `node demo/measurement-layers.mjs --summary` for runnable histogram, dither, splat, cluster, and audio meters.
 Use `node demo/creative-engine.mjs --summary` for the whole creation-engine contract: raster effects, sound, typography, math/physics, node graphs, revived organs, and receipts.
+Use `node demo/creative-kernels.mjs --summary` for deterministic ordered-dither, pixel-sort, harmonograph, and clustered-light kernels.
 
 ## Why it matters
 
@@ -55,17 +57,17 @@ perception, and action floor.
 
 ## Telos Creative Engine
 
-The Studio is now presented as a whole creation engine, not only a visual demo. `node demo/creative-engine.mjs` returns the host-neutral manifest for generative art, retro CGI, raster effects, sound, film/media, typography, math/physics, node graphs, renderer capability probes, runnable sensor/measurement layers, and verification. It also records the old engine organs to revive next: `demo/render-nd`, `demo/render-sound`, `demo/sense-core`, `demo/viable-viz`, the sibling `studio-engine` raster/sonify/flowfield/harmonograph/WebAudio organs, and `studio-libs/render-sound`.
+The Studio is now presented as a whole creation engine, not only a visual demo. `node demo/creative-engine.mjs` returns the host-neutral manifest for generative art, retro CGI, raster effects, sound, film/media, typography, math/physics, node graphs, renderer capability probes, runnable sensor/measurement layers, deterministic creative kernels, and verification. It also records the old engine organs to revive next: `demo/render-nd`, `demo/render-sound`, `demo/sense-core`, `demo/viable-viz`, the sibling `studio-engine` raster/sonify/flowfield/harmonograph/WebAudio organs, and `studio-libs/render-sound`.
 
-Every creative action should remain receipt-backed: scene specs, hashes, replay handles, and one of `MATCH`, `DRIFT`, or `UNVERIFIABLE`. `node demo/rendering-capabilities.mjs` keeps WebGPU Gaussian-splat/clustered prototypes, WebGL2 previews, Canvas 2D receipts, and static artifact fallbacks in one selectable contract. `node demo/measurement-layers.mjs` turns pixels, dither patterns, splat fields, light clusters, and waveforms into measurable packets before Crucible verdicts. The public demo uses Kilon for display typography and Conso for utility text while keeping purchased font files out of the repository.
+Every creative action should remain receipt-backed: scene specs, hashes, replay handles, and one of `MATCH`, `DRIFT`, or `UNVERIFIABLE`. `node demo/rendering-capabilities.mjs` keeps WebGPU Gaussian-splat/clustered prototypes, WebGL2 previews, Canvas 2D receipts, and static artifact fallbacks in one selectable contract. `node demo/measurement-layers.mjs` turns pixels, dither patterns, splat fields, light clusters, and waveforms into measurable packets before Crucible verdicts. `node demo/creative-kernels.mjs` gives hosts a shared deterministic core for ordered dithering, pixel sorting, plotter paths, and clustered-light bins. The public demo uses Kilon for display typography and Conso for utility text while keeping purchased font files out of the repository.
 
 The current research queue also includes receipt-only source leads from Inigo Quilez and adjacent math, physics, AI-progress, GPU-kernel, and educator videos under [`demo/research/youtube-math-educator-receipts.json`](demo/research/youtube-math-educator-receipts.json). Those leads shape the engine toward formula-visible, perturbable demos for mathematicians, physicists, shader artists, and teachers; video metadata is not promoted to scientific or benchmark evidence until stronger sources and Crucible checks exist.
 
 ## Current status
 
-- **Release:** source demo; command surface is `node demo/run.mjs`, `node demo/room.mjs`, `node demo/status.mjs`, `node demo/doctor.mjs`, `node demo/catalog.mjs`, `node demo/server-manifest.mjs`, `node demo/admission-telemetry.mjs`, `node demo/context-envelope.mjs`, `node demo/action-receipt.mjs`, `node demo/loop-ledger.mjs`, `node demo/research-seed.mjs`, `node demo/rendering-research.mjs`, `node demo/rendering-capabilities.mjs`, `node demo/measurement-layers.mjs`, `node demo/creative-engine.mjs`, and `node demo/flagship-workflow.mjs`.
-- **Operator surface:** `node demo/telos-mcp.mjs` exposes native MCP tools: `telos.status`, `telos.doctor`, `telos.room`, `telos.catalog`, `telos.workflow`, `telos.server.manifest`, `telos.admission.telemetry`, `telos.context.envelope`, `telos.action.receipt`, `telos.loop.ledger`, `telos.research.seed`, `telos.rendering.research`, `telos.rendering.capabilities`, `telos.measurement.layers`, and `telos.creative.engine`.
-- **Current floor:** the operator room reconciles 42 available tools across Gather, Crucible, Index, Forum, and Telos, with a provider-neutral catalog and server manifest for CLI, MCP, plugin, IDE, TUI, and app hosts. See [CHANGELOG.md](CHANGELOG.md).
+- **Release:** source demo; command surface is `node demo/run.mjs`, `node demo/room.mjs`, `node demo/status.mjs`, `node demo/doctor.mjs`, `node demo/catalog.mjs`, `node demo/server-manifest.mjs`, `node demo/admission-telemetry.mjs`, `node demo/context-envelope.mjs`, `node demo/action-receipt.mjs`, `node demo/loop-ledger.mjs`, `node demo/research-seed.mjs`, `node demo/rendering-research.mjs`, `node demo/rendering-capabilities.mjs`, `node demo/measurement-layers.mjs`, `node demo/creative-engine.mjs`, `node demo/creative-kernels.mjs`, and `node demo/flagship-workflow.mjs`.
+- **Operator surface:** `node demo/telos-mcp.mjs` exposes native MCP tools: `telos.status`, `telos.doctor`, `telos.room`, `telos.catalog`, `telos.workflow`, `telos.server.manifest`, `telos.admission.telemetry`, `telos.context.envelope`, `telos.action.receipt`, `telos.loop.ledger`, `telos.research.seed`, `telos.rendering.research`, `telos.rendering.capabilities`, `telos.measurement.layers`, `telos.creative.engine`, and `telos.creative.kernels`.
+- **Current floor:** the operator room reconciles 44 available tools across Gather, Crucible, Index, Forum, and Telos, with a provider-neutral catalog and server manifest for CLI, MCP, plugin, IDE, TUI, and app hosts. See [CHANGELOG.md](CHANGELOG.md).
 - **Brand renderer:** `python tools/render_flagship_heroes.py --check-existing --public-root ..` verifies the five README hero PNGs and brand receipts without redistributing the operator-owned fonts.
 
 ## What it is

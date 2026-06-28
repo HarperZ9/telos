@@ -2,7 +2,37 @@
   "schema": "project-telos.measurement-layers/v1",
   "tool": "telos.measurement.layers",
   "generated_at": "2026-06-28T00:00:00.000Z",
-  "purpose": "Runnables sensors and meters for Telos creative, scientific, and rendering surfaces.",
+  "purpose": "Runnable sensors and meters for Telos creative, scientific, and rendering surfaces.",
+  "measurement_bus": {
+    "schema": "project-telos.measurement-bus/v1",
+    "description": "Typed event envelope for sensors, meters, and creative-engine probes. The bus can carry estimated, witnessed, or calibrated values without requiring raw assets or pretending every creative output is fully verifiable.",
+    "event_fields": [
+      "event_id",
+      "run_id",
+      "frame_id",
+      "actor",
+      "domain",
+      "subject_ref",
+      "timestamp",
+      "clock_domain",
+      "coordinate_space",
+      "units",
+      "value_shape",
+      "value",
+      "uncertainty",
+      "provenance",
+      "privacy",
+      "severity",
+      "event_hash"
+    ],
+    "uncertainty_statuses": ["estimated", "witnessed", "calibrated", "unverifiable"],
+    "sensor_lanes": {
+      "render": ["spatial.splat-probe", "lighting.cluster-meter"],
+      "creative": ["visual.histogram-field", "visual.dither-spectrum-meter", "audio.spectral-meter"],
+      "scientific": ["visual.histogram-field", "spatial.splat-probe", "audio.spectral-meter"]
+    },
+    "privacy_boundary": "Events export summaries, hashes, units, and coordinate spaces; raw assets, prompts, keys, and private captures stay outside the public packet."
+  },
   "source_receipts": [
     {
       "title": "Forward+ rendering publication record",

@@ -25,6 +25,7 @@ for (const name of [
   "gather.run",
   "index.map",
   "index.context",
+  "index.context.envelope",
   "index.status",
   "index.doctor",
   "forum.route",
@@ -59,7 +60,8 @@ for (const name of [
   "telos.rendering.research",
   "telos.rendering.capabilities",
   "telos.measurement.layers",
-  "telos.creative.engine"
+  "telos.creative.engine",
+  "telos.creative.kernels"
 ]) {
   assert.ok(names.has(name), `missing ${name}`);
 }
@@ -90,6 +92,21 @@ assert.deepEqual(byName.get("crucible.measurement_gate").cli, [
   "--criteria",
   "{criteria}",
   "--json"
+]);
+
+assert.deepEqual(byName.get("index.context.envelope").cli, [
+  "index",
+  "context-envelope",
+  "--root",
+  "{root}",
+  "--budget",
+  "{budget}",
+  "--json"
+]);
+
+assert.deepEqual(byName.get("telos.creative.kernels").cli, [
+  "node",
+  "demo/creative-kernels.mjs"
 ]);
 
 assert.equal(science.schema, "project-telos.science-research-adapters/v1");

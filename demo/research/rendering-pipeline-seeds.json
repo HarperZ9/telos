@@ -257,6 +257,112 @@
         "index.context: isolate renderer seams so Telos can swap WebGPU, WebGL2, or static export backends.",
         "crucible.assess: create negative fixtures for missing fallback, hidden measurements, inaccessible controls, and unverifiable render provenance."
       ]
+    },
+    {
+      "seed_id": "seed-dithering-sampling-kernels",
+      "operator_note": "Dithering is a core Telos creative primitive. Treat ordered, void-and-cluster, blue-noise, and recompression-aware dithering as measurable kernels rather than only visual styling.",
+      "normalized_concepts": [
+        "dithering",
+        "blue-noise",
+        "void-and-cluster",
+        "ordered-bayer",
+        "halftoning",
+        "sampling",
+        "creative-kernels"
+      ],
+      "evidence_status": "MATCH",
+      "source_receipts": [
+        {
+          "title": "Void-and-cluster method for dither array generation",
+          "url": "https://doi.org/10.1117/12.59015",
+          "source_kind": "publication-record",
+          "resolved_at": "2026-06-28T00:00:00Z",
+          "provenance_class": "lawful_source",
+          "receipt_hash": "sha256:2977c8a06de0ee51f56ec8e7c4e0a07ba9df1fb0a3ca27622fd6700e3c8027ae"
+        },
+        {
+          "title": "Rendering in Real Time with Spatiotemporal Blue Noise Textures",
+          "url": "https://developer.nvidia.com/blog/rendering-in-real-time-with-spatiotemporal-blue-noise-textures-part-1/",
+          "source_kind": "official-vendor-technical-blog",
+          "resolved_at": "2026-06-28T00:00:00Z",
+          "provenance_class": "lawful_source",
+          "receipt_hash": "sha256:e9db89ce6e4a71aa9b7c092af61218ece2534db323bd5ef44e0c4823745bc8d2"
+        },
+        {
+          "title": "Distortion-Controlled Dithering with Reduced Recompression Rate",
+          "url": "https://arxiv.org/abs/2402.16447",
+          "source_kind": "open-preprint",
+          "resolved_at": "2026-06-28T00:00:00Z",
+          "provenance_class": "lawful_source",
+          "receipt_hash": "sha256:265e20d7b713af67c2869edc056362971a14dfd6a58aaf319bd89feecc6d37fe"
+        },
+        {
+          "title": "Designed Dithering Sign Activation for Binary Neural Networks",
+          "url": "https://arxiv.org/abs/2405.02220",
+          "source_kind": "open-preprint",
+          "resolved_at": "2026-06-28T00:00:00Z",
+          "provenance_class": "lawful_source",
+          "receipt_hash": "sha256:87281aaab7ed8d02895b81c73f52f8f4e46e49595be59db6573b6a7a64466a3f"
+        }
+      ],
+      "source_leads": [
+        {
+          "url": "https://www.reddit.com/r/posterdesign/",
+          "lead_source_kind": "operator-provided-design-community",
+          "provenance_class": "operator_source_lead",
+          "evidence_status": "UNVERIFIABLE",
+          "notes": "Use for critique prompts and visual taste pressure only; do not copy community artwork or cite as technical evidence."
+        },
+        {
+          "url": "https://www.reddit.com/r/design_critiques/",
+          "lead_source_kind": "operator-provided-design-community",
+          "provenance_class": "operator_source_lead",
+          "evidence_status": "UNVERIFIABLE",
+          "notes": "Use as an inspiration and critique lead while keeping artifact claims tied to local screenshots, receipts, and tests."
+        }
+      ],
+      "claims": [
+        {
+          "claim": "Void-and-cluster and blue-noise families are relevant dithering and sampling references for Telos low-bit, poster, texture, and measurable raster effects.",
+          "status": "MATCH",
+          "source_receipt_ids": [
+            "sha256:2977c8a06de0ee51f56ec8e7c4e0a07ba9df1fb0a3ca27622fd6700e3c8027ae",
+            "sha256:e9db89ce6e4a71aa9b7c092af61218ece2534db323bd5ef44e0c4823745bc8d2"
+          ]
+        },
+        {
+          "claim": "Modern dithering research includes recompression-aware and neural/binary-network-adjacent uses, so Telos should keep dithering as both an artistic and measurement-aware primitive.",
+          "status": "MATCH",
+          "source_receipt_ids": [
+            "sha256:265e20d7b713af67c2869edc056362971a14dfd6a58aaf319bd89feecc6d37fe",
+            "sha256:87281aaab7ed8d02895b81c73f52f8f4e46e49595be59db6573b6a7a64466a3f"
+          ]
+        }
+      ],
+      "claim_boundaries": [
+        "A pretty dither pattern is not automatically a truthful measurement. Telos must record the input refs, algorithm id, output hash, and meter result.",
+        "Poster-design and critique communities are taste and workflow leads, not technical provenance for dithering algorithms.",
+        "Blue-noise texture quality, temporal stability, and compression behavior require local benchmark fixtures before production claims."
+      ],
+      "design_acceptance_gates": [
+        {
+          "gate": "visual_print_readability",
+          "criterion": "Dither, halftone, and poster effects must preserve readable labels, controls, hashes, and measurement summaries."
+        },
+        {
+          "gate": "algorithm_identity",
+          "criterion": "Every export must record ordered, error-diffusion, void-and-cluster, blue-noise, or other kernel identity plus deterministic settings."
+        },
+        {
+          "gate": "a11y_alt_surface",
+          "criterion": "High-frequency dither and glitch layers need reduced-motion, low-flicker, and plain-summary alternatives."
+        }
+      ],
+      "next_actions": [
+        "telos.creative.kernels: add blue-noise and void-and-cluster matrix fixtures after the ordered Bayer kernel.",
+        "telos.measurement.layers: extend visual.dither-spectrum-meter with spatial-frequency summaries.",
+        "crucible.assess: add negative fixtures for hidden labels, flicker risk, missing algorithm id, and unverifiable output hashes."
+      ]
     }
   ],
   "modern_rendering_candidates": [

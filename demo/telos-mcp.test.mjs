@@ -34,7 +34,8 @@ for (const name of [
   "telos.rendering.research",
   "telos.rendering.capabilities",
   "telos.measurement.layers",
-  "telos.creative.engine"
+  "telos.creative.engine",
+  "telos.creative.kernels"
 ]) {
   assert.ok(names.has(name), `missing ${name}`);
 }
@@ -141,7 +142,7 @@ const renderingResearch = handleRequest(request("tools/call", {
 assert.deepEqual(renderingResearch.result.structuredContent, expectedRenderingResearch);
 assert.equal(renderingResearch.result.structuredContent.schema, "project-telos.research-seed/v1");
 assert.equal(renderingResearch.result.structuredContent.tool, "telos.rendering.research");
-assert.equal(renderingResearch.result.structuredContent.seeds.length, 2);
+assert.equal(renderingResearch.result.structuredContent.seeds.length, 3);
 
 const expectedRenderingCapabilities = JSON.parse(
   readFileSync(new URL("./integrations/rendering-capabilities.json", import.meta.url), "utf8")
@@ -173,6 +174,14 @@ assert.deepEqual(creativeEngine.result.structuredContent, expectedCreativeEngine
 assert.equal(creativeEngine.result.structuredContent.schema, "project-telos.creative-engine/v1");
 assert.equal(creativeEngine.result.structuredContent.domains.length, 9);
 
+const creativeKernels = handleRequest(request("tools/call", {
+  name: "telos.creative.kernels",
+  arguments: {}
+}));
+assert.equal(creativeKernels.result.structuredContent.schema, "project-telos.creative-kernels/v1");
+assert.equal(creativeKernels.result.structuredContent.tool, "telos.creative.kernels");
+assert.equal(creativeKernels.result.structuredContent.kernels.length, 4);
+
 const badTool = handleRequest(request("tools/call", { name: "telos.missing", arguments: {} }));
 assert.equal(badTool.error.code, -32000);
 assert.match(badTool.error.message, /unknown tool/);
@@ -197,3 +206,4 @@ assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.renderi
 assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.rendering.capabilities"));
 assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.measurement.layers"));
 assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.creative.engine"));
+assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.creative.kernels"));

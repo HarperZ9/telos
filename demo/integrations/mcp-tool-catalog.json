@@ -154,6 +154,31 @@
       ]
     },
     {
+      "name": "index.context.envelope",
+      "flagship": "index",
+      "description": "Return a budgeted, receipt-backed context envelope for large-codebase agent workflows.",
+      "cli": [
+        "index",
+        "context-envelope",
+        "--root",
+        "{root}",
+        "--budget",
+        "{budget}",
+        "--json"
+      ],
+      "mcp": {
+        "status": "available",
+        "server": "index",
+        "method": "tools/call",
+        "tool": "index.context.envelope"
+      },
+      "next_actions": [
+        "forum.route",
+        "crucible.assess",
+        "telos.context.envelope"
+      ]
+    },
+    {
       "name": "index.status",
       "flagship": "index",
       "description": "Emit Index readiness and next actions as a Project Telos action envelope.",
@@ -867,6 +892,26 @@
         "index.context",
         "gather.docs",
         "crucible.assess"
+      ]
+    },
+    {
+      "name": "telos.creative.kernels",
+      "flagship": "telos",
+      "description": "Return deterministic Telos creative kernels for dithering, pixel sorting, plotter paths, clustered light bins, and receipt-backed effects.",
+      "cli": [
+        "node",
+        "demo/creative-kernels.mjs"
+      ],
+      "mcp": {
+        "status": "available",
+        "server": "telos",
+        "method": "tools/call",
+        "tool": "telos.creative.kernels"
+      },
+      "next_actions": [
+        "telos.measurement.layers",
+        "crucible.assess",
+        "index.context"
       ]
     }
   ]

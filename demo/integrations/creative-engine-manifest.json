@@ -139,6 +139,14 @@
       "domain": "verification",
       "interop": "CLI/MCP sensor and measurement packet",
       "claim": "Histogram, dither, splat, cluster, and audio meters expose measurable state for creative and scientific artifacts."
+    },
+    {
+      "id": "kernel.deterministic-creative-core",
+      "status": "live",
+      "source": "demo/creative-kernels.mjs",
+      "domain": "generative_art",
+      "interop": "CLI/MCP kernel packet and reusable ES module",
+      "claim": "Ordered dithering, pixel sorting, harmonograph paths, and clustered light bins are available as deterministic kernels with receipt hashes."
     }
   ],
   "rendering_capabilities": {
@@ -172,6 +180,10 @@
     {
       "path": "demo/effects-protocol.js",
       "role": "Scene spec, preset, action identity, receipt hash, and replay protocol."
+    },
+    {
+      "path": "demo/creative-kernels.mjs",
+      "role": "Deterministic ordered-dither, pixel-sort, plotter, and clustered-light kernels for shared engine hosts."
     },
     {
       "path": "demo/render-nd",
@@ -267,6 +279,106 @@
         "audio-reactive timing receipt"
       ],
       "why": "Sound-related creative work should expose spectral state for models, artists, and replay checks."
+    }
+  ],
+  "effect_libraries": [
+    {
+      "id": "raster_print_core",
+      "status": "live",
+      "modules": [
+        "demo/effects-engine.js",
+        "demo/creative-kernels.mjs"
+      ],
+      "primitives": [
+        "ordered dithering",
+        "pixel sorting",
+        "halftone",
+        "poster grid",
+        "CRT and chromatic split"
+      ],
+      "next": [
+        "blue-noise texture kernel",
+        "void-and-cluster matrix generator",
+        "palette quantization meter"
+      ]
+    },
+    {
+      "id": "cgi_render_core",
+      "status": "live",
+      "modules": [
+        "demo/effects-engine.js",
+        "demo/rendering-capabilities.mjs",
+        "demo/creative-kernels.mjs"
+      ],
+      "primitives": [
+        "retro wireframes",
+        "clustered light bins",
+        "Gaussian-splat stand-ins",
+        "depth and contour overlays"
+      ],
+      "next": [
+        "WebGPU splat viewer fixture",
+        "WebGL2 clustered preview",
+        "static artifact fallback"
+      ]
+    },
+    {
+      "id": "math_physics_core",
+      "status": "live",
+      "modules": [
+        "demo/render-nd",
+        "demo/viable-viz",
+        "demo/creative-kernels.mjs"
+      ],
+      "primitives": [
+        "n-dimensional projection",
+        "harmonograph paths",
+        "flow and particle fields",
+        "reconcile certificates"
+      ],
+      "next": [
+        "bundle-coordinate overlays",
+        "zenzic operation visualizers",
+        "perturbation sensitivity maps"
+      ]
+    },
+    {
+      "id": "sound_media_core",
+      "status": "revival-ready",
+      "modules": [
+        "demo/render-sound",
+        "demo/measurement-layers.mjs"
+      ],
+      "primitives": [
+        "DFT spectra",
+        "additive Web Audio",
+        "sonification",
+        "audio-reactive timing receipts"
+      ],
+      "next": [
+        "audio-reactive point cloud nodes",
+        "media timeline receipts",
+        "spectral-to-visual modulation"
+      ]
+    },
+    {
+      "id": "typography_design_core",
+      "status": "planned",
+      "modules": [
+        "tools/render_flagship_heroes.py",
+        "docs/brand"
+      ],
+      "primitives": [
+        "flagship hero art",
+        "display specimens",
+        "poster systems",
+        "future glyph generation"
+      ],
+      "next": [
+        "font specimen receipts",
+        "glyph-field generator",
+        "README poster wall"
+      ]
     }
   ],
   "revival_candidates": [
@@ -374,6 +486,13 @@
   },
   "research_receipts": {
     "math_educator_video_leads": "demo/research/youtube-math-educator-receipts.json",
+    "rendering_pipeline": "demo/research/rendering-pipeline-seeds.json",
+    "creative_kernel_sources": [
+      "https://doi.org/10.1117/12.59015",
+      "https://diglib.eg.org/items/6342d4d6-5220-4376-a5c6-a153058f4a3c",
+      "https://arxiv.org/abs/2308.04079",
+      "https://arxiv.org/abs/2402.16447"
+    ],
     "mission": "Assist mathematicians, physicists, shader artists, and educators with formula-visible, replayable, receipt-backed creative and scientific demos.",
     "representative_leads": [
       "https://www.youtube.com/@InigoQuilez",

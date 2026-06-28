@@ -12,8 +12,10 @@ All notable changes to Project Telos. Telos is currently a source demo and share
   Crucible source-checkout surface, including run, measurement-gate, review, report, batch, registry,
   drift, refine, and verdicts tools.
 - Creative engine manifest: adds `project-telos.creative-engine/v1`, `node demo/creative-engine.mjs`, and `telos.creative.engine` to present the whole creation engine across generative art, retro CGI, raster effects, sound, film/media, typography, math/physics, node graphs, verification, and revived local organs.
+- Creative kernels: adds `project-telos.creative-kernels/v1`, `node demo/creative-kernels.mjs`, and `telos.creative.kernels` for deterministic ordered dithering, pixel sorting, harmonograph/plotter paths, clustered light bins, and receipt hashes.
 - Sensor layers: records planned histogram, splat-probe, clustered-light, and audio spectral meters so creative work can become measurable without confusing renderer execution choices with verification verdicts.
 - Math educator research intake: adds `demo/research/youtube-math-educator-receipts.json` with compact metadata receipts for Inigo Quilez, math/physics educator, world-model, AI-progress, and GPU-kernel source leads, while keeping raw video and raw transcripts out of the repo.
+- Index catalog parity: adds `index.context.envelope` to the shared MCP catalog and server manifest so large-workspace, budgeted context packets are available through the same provider-neutral surface.
 
 - Context evidence: separates load receipts from relevance receipts, accepts load-only traces as `valid_load_receipt_not_usefulness_claim`, and gives missing relevance, over-selection, and unjoinable relevance distinct failure codes.
 - ATP adapter validation: adds Haystack-style component middleware semantics with pipeline-run receipt trees, RFC 8785 canonicalization expectations, and receiver-owned independence from signing/storage backends.
@@ -36,8 +38,8 @@ All notable changes to Project Telos. Telos is currently a source demo and share
 Presentation and operator-surface housekeeping for five-flagship parity.
 
 - README: adds the shared current-status block and consistent five-flagship navigation.
-- Status payload: exposes the current operator commands, Telos MCP tool names, and 42-tool catalog summary under `native`.
+- Status payload: exposes the current operator commands, Telos MCP tool names, and 44-tool catalog summary under `native`.
 - Operator room: records `status`, `doctor`, `room`, `catalog`, and `flagship-workflow` as the current front door for local operators and host integrations.
-- MCP surface: records native availability for `telos.status`, `telos.doctor`, `telos.room`, `telos.catalog`, `telos.workflow`, `telos.server.manifest`, `telos.admission.telemetry`, `telos.context.envelope`, `telos.action.receipt`, `telos.loop.ledger`, `telos.research.seed`, `telos.rendering.research`, `telos.rendering.capabilities`, `telos.measurement.layers`, and `telos.creative.engine`.
-- Catalog: keeps `demo/integrations/mcp-tool-catalog.json` as the provider-neutral source of truth for 42 available tools across Gather, Crucible, Index, Forum, and Telos.
+- MCP surface: records native availability for `telos.status`, `telos.doctor`, `telos.room`, `telos.catalog`, `telos.workflow`, `telos.server.manifest`, `telos.admission.telemetry`, `telos.context.envelope`, `telos.action.receipt`, `telos.loop.ledger`, `telos.research.seed`, `telos.rendering.research`, `telos.rendering.capabilities`, `telos.measurement.layers`, `telos.creative.engine`, and `telos.creative.kernels`.
+- Catalog: keeps `demo/integrations/mcp-tool-catalog.json` as the provider-neutral source of truth for 44 available tools across Gather, Crucible, Index, Forum, and Telos.
 - Research receipts: records the YouTube intake ledger under `demo/research/youtube-bgoertzel-receipts.json` as receipt-only research material, with no raw transcript text in the repository.

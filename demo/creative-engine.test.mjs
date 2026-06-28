@@ -13,6 +13,8 @@ assert.equal(manifest.contract.protocol_agnostic, true);
 assert.equal(manifest.contract.receipts_required, true);
 assert.equal(manifest.contract.raw_assets_required_for_interop, false);
 assert.equal(manifest.research_receipts.math_educator_video_leads, "demo/research/youtube-math-educator-receipts.json");
+assert.equal(manifest.research_receipts.rendering_pipeline, "demo/research/rendering-pipeline-seeds.json");
+assert.ok(manifest.research_receipts.creative_kernel_sources.includes("https://arxiv.org/abs/2402.16447"));
 assert.match(manifest.research_receipts.mission, /mathematicians/);
 assert.ok(manifest.research_receipts.representative_leads.includes("https://www.youtube.com/@InigoQuilez"));
 
@@ -40,10 +42,30 @@ for (const technique of [
   "physics.particle-field",
   "cgi.clustered-forward-lighting",
   "renderer.capability-probe",
-  "sensor.measurement-layers"
+  "sensor.measurement-layers",
+  "kernel.deterministic-creative-core"
 ]) {
   assert.ok(manifest.techniques.some((item) => item.id === technique), `missing technique ${technique}`);
 }
+
+for (const library of [
+  "raster_print_core",
+  "cgi_render_core",
+  "math_physics_core",
+  "sound_media_core",
+  "typography_design_core"
+]) {
+  assert.ok(manifest.effect_libraries.some((item) => item.id === library), `missing effect library ${library}`);
+}
+assert.ok(
+  manifest.effect_libraries
+    .find((item) => item.id === "raster_print_core")
+    .next.includes("void-and-cluster matrix generator")
+);
+assert.ok(
+  manifest.live_modules.some((item) => item.path === "demo/creative-kernels.mjs"),
+  "missing creative kernels live module"
+);
 
 assert.equal(manifest.rendering_capabilities.tool, "telos.rendering.capabilities");
 assert.equal(manifest.rendering_capabilities.contract, "project-telos.rendering-capabilities/v1");
@@ -101,5 +123,5 @@ const summary = spawnSync(process.execPath, [path.join(here, "creative-engine.mj
 assert.equal(summary.status, 0, summary.stderr || summary.stdout);
 assert.match(summary.stdout, /Telos Creative Engine/);
 assert.match(summary.stdout, /domains\s+9/);
-assert.match(summary.stdout, /techniques\s+10/);
+assert.match(summary.stdout, /techniques\s+11/);
 assert.match(summary.stdout, /revival\s+11/);
