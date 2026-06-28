@@ -51,6 +51,9 @@
   "required_fields": [
     "atp_version",
     "action_id",
+    "pipeline_run_id",
+    "component_invocation_id",
+    "parent_receipt_id",
     "idempotency_key",
     "guarantee_level",
     "agent_id",
@@ -91,11 +94,40 @@
       "compensated"
     ]
   },
+  "canonicalization": {
+    "standard": "RFC 8785",
+    "digest_fields": [
+      "input_digest",
+      "material_digest",
+      "config_hash"
+    ],
+    "signature_payload_fields": [
+      "action_id",
+      "pipeline_run_id",
+      "component_invocation_id",
+      "input_digest",
+      "material_digest",
+      "policy.decision",
+      "verification.verdict"
+    ],
+    "metadata_interop_status": "expected_to_diverge"
+  },
+  "haystack_component_middleware": {
+    "hook": "component-level callback",
+    "receiver_owns_signing_or_storage_backend": false,
+    "component_invocation_emits_receipt": true,
+    "pipeline_run_root_links_component_receipts": true,
+    "verifier_walks_tree_without_calling_runtime": true,
+    "fixture_vectors": "Project Telos synthetic validation cases"
+  },
   "validation_cases": [
     {
       "id": "gather.intake.digest_refs",
       "atp_version": "1.2.0",
       "action_id": "act_gather_intake_001",
+      "pipeline_run_id": "pipe_telos_fixture_001",
+      "component_invocation_id": "invoke_gather_intake_001",
+      "parent_receipt_id": "receipt:pipe/telos-fixture-001",
       "idempotency_key": "gather-source-intake-demo-001",
       "guarantee_level": "atp-1",
       "agent_id": "agent:gather.intake",
@@ -123,6 +155,9 @@
       "id": "index.workspace_map.config_hash",
       "atp_version": "1.2.0",
       "action_id": "act_index_workspace_001",
+      "pipeline_run_id": "pipe_telos_fixture_001",
+      "component_invocation_id": "invoke_index_workspace_001",
+      "parent_receipt_id": "receipt:gather/intake/public-source-demo",
       "idempotency_key": "index-workspace-map-demo-001",
       "guarantee_level": "atp-1",
       "agent_id": "agent:index.map",
@@ -150,6 +185,9 @@
       "id": "forum.route.policy_action",
       "atp_version": "1.2.0",
       "action_id": "act_forum_route_001",
+      "pipeline_run_id": "pipe_telos_fixture_001",
+      "component_invocation_id": "invoke_forum_route_001",
+      "parent_receipt_id": "receipt:index/workspace-map-demo",
       "idempotency_key": "forum-route-action-demo-001",
       "guarantee_level": "atp-2",
       "agent_id": "agent:forum.route",
@@ -177,6 +215,9 @@
       "id": "crucible.verdict.unverifiable",
       "atp_version": "1.2.0",
       "action_id": "act_crucible_unverifiable_001",
+      "pipeline_run_id": "pipe_telos_fixture_001",
+      "component_invocation_id": "invoke_crucible_unverifiable_001",
+      "parent_receipt_id": "receipt:forum/route-action-demo",
       "idempotency_key": "crucible-unverifiable-demo-001",
       "guarantee_level": "atp-1",
       "agent_id": "agent:crucible.assess",
@@ -206,6 +247,9 @@
       "atp_version": "1.2.0",
       "action_id": "act_telos_compensation_001",
       "compensates": "act_forum_route_001",
+      "pipeline_run_id": "pipe_telos_fixture_001",
+      "component_invocation_id": "invoke_telos_compensation_001",
+      "parent_receipt_id": "receipt:crucible/missing-verifier-result-demo",
       "idempotency_key": "telos-compensation-demo-001",
       "guarantee_level": "atp-3",
       "agent_id": "agent:telos.room",

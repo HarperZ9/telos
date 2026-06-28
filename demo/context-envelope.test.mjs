@@ -59,6 +59,31 @@ for (const receipt of happyPath.receipt_chain) {
 }
 
 const relevance = convention.conformance_fixture.context_relevance;
+const contextReceiptContract = relevance.receipt_contract;
+assert.equal(
+  contextReceiptContract.load_receipt.decisionClaim,
+  "valid_load_receipt_not_usefulness_claim"
+);
+assert.equal(contextReceiptContract.load_receipt.claims_usefulness, false);
+assert.equal(contextReceiptContract.load_receipt.raw_payload_required, false);
+assert.equal(contextReceiptContract.relevance_receipt.optional, true);
+assert.equal(contextReceiptContract.relevance_receipt.only_valid_when_joined_to_loaded_inputs, true);
+assert.deepEqual(contextReceiptContract.relevance_receipt.required_join_fields, [
+  "input_id",
+  "delivered_hash"
+]);
+
+const loadOnly = relevance.load_only_variant;
+assert.equal(loadOnly.decisionClaim, "valid_load_receipt_not_usefulness_claim");
+assert.equal(loadOnly.relevance_event, null);
+assert.equal(loadOnly.claims_usefulness, false);
+assert.equal(loadOnly.expected_verdict, "MATCH");
+assert.equal(loadOnly.selected_count, relevance.selection.selected_count);
+assert.deepEqual(
+  loadOnly.loaded_input_ids,
+  relevance.loaded_inputs.map((input) => input.input_id)
+);
+
 assert.equal(relevance.selection.selected_count, 3);
 assert.equal(relevance.selection.delivered_count, 3);
 assert.equal(relevance.selection.suppressed_count, 1);
@@ -85,12 +110,18 @@ for (const suppressed of relevance.suppressed_inputs) {
 for (const ref of relevance.relevance.input_refs) {
   assert.equal("raw_context" in ref, false, "relevance event must not expose raw context");
   assert.ok(["decisive", "supporting", "unused", "unknown"].includes(ref.relevance));
+  const loaded = relevance.loaded_inputs.find((input) => input.input_id === ref.input_id);
+  assert.ok(loaded, `relevance references input that was not delivered: ${ref.input_id}`);
+  assert.equal(ref.delivered_hash, loaded.delivered_hash, `relevance hash drifted for ${ref.input_id}`);
 }
 
 const negativeCodes = new Set(convention.negative_test_cases.map((item) => item.failure_code));
 assert.equal(negativeCodes.size, convention.negative_test_cases.length);
 for (const code of convention.failure_codes) {
   assert.ok(negativeCodes.has(code), `failure code lacks negative case: ${code}`);
+}
+for (const code of ["missing_relevance", "over_selection", "unjoinable_relevance"]) {
+  assert.ok(negativeCodes.has(code), `context evidence taxonomy missing ${code}`);
 }
 for (const item of convention.negative_test_cases) {
   assert.notEqual(item.expected_verdict, "MATCH");
