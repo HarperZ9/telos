@@ -11,3 +11,17 @@ The README hero image in this folder was refreshed on 2026-06-28 as part of the 
 - Typography: rendered locally from the operator-owned Kilon and Conso font packages. The public repository carries only the exported artwork, not the purchased font files.
 - Accessibility floor: high-contrast foreground text, non-color-only status labels, and static PNG fallback for GitHub and low-capability hosts.
 - Provenance boundary: Reddit and community links are treated as non-evidentiary source leads; implementation claims resolve through lawful papers, standards, official repositories, and repeatable local checks.
+
+## Reproducibility
+
+From the Telos repository, verify the committed five-flagship artwork without private fonts:
+
+```bash
+python tools/render_flagship_heroes.py --check-existing --public-root ..
+```
+
+Regenerate locally with the operator-owned font ZIPs and Pillow:
+
+```bash
+python tools/render_flagship_heroes.py --render --public-root ..
+```

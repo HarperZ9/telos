@@ -103,6 +103,150 @@
         "crucible.assess: check any simulator constant against SI units and dimensional analysis.",
         "telos.action.receipt: preserve exact constants and unit conversions in later model or simulation actions."
       ]
+    },
+    {
+      "seed_id": "seed-bundle-geometry",
+      "operator_note": "bundle theory - differential geometry from bundle perspective",
+      "normalized_concepts": [
+        "fiber-bundles",
+        "principal-bundles",
+        "connections",
+        "curvature",
+        "gauge-theory",
+        "differential-geometry",
+        "discrete-geometry"
+      ],
+      "evidence_status": "MATCH",
+      "source_receipts": [
+        {
+          "title": "Principal Bundles and Gauge Theories",
+          "url": "https://arxiv.org/abs/2110.06334",
+          "source_kind": "open-preprint",
+          "resolved_at": "2026-06-28T00:00:00Z",
+          "provenance_class": "lawful_source",
+          "receipt_hash": "sha256:da9fd05f70ff0a42ed73a1af635f34117f2bfe0db013ddf94f911026f4f485a0"
+        },
+        {
+          "title": "Principal bundles and connections modelled by Lie group bundles",
+          "url": "https://arxiv.org/abs/2201.07088",
+          "source_kind": "open-preprint",
+          "resolved_at": "2026-06-28T00:00:00Z",
+          "provenance_class": "lawful_source",
+          "receipt_hash": "sha256:4bbc195af3b7d75513faa64b45fd2af8a9e518bb506e3cdb9173b8bf498f65cc"
+        },
+        {
+          "title": "A constructive approach to generalized principal connections",
+          "url": "https://arxiv.org/abs/2605.01983",
+          "source_kind": "open-preprint",
+          "resolved_at": "2026-06-28T00:00:00Z",
+          "provenance_class": "lawful_source",
+          "receipt_hash": "sha256:953cc31666847d61422bc2750154452bbdc01b1b9833a9fa6cd1782635548c99"
+        },
+        {
+          "title": "Discrete connections on principal bundles: the Discrete Atiyah Sequence",
+          "url": "https://arxiv.org/abs/2111.06843",
+          "source_kind": "open-preprint",
+          "resolved_at": "2026-06-28T00:00:00Z",
+          "provenance_class": "lawful_source",
+          "receipt_hash": "sha256:58e1f6004a6c4697ccfc7a073f202e2c0c6e58f8fcdfdc00f03c19ae1aad9890"
+        }
+      ],
+      "claims": [
+        {
+          "claim": "Bundle-theoretic differential geometry is a lawful research lane for modeling local-to-global structure, connections, and gauge-style transport in Telos simulations.",
+          "status": "MATCH",
+          "source_receipt_ids": [
+            "sha256:da9fd05f70ff0a42ed73a1af635f34117f2bfe0db013ddf94f911026f4f485a0",
+            "sha256:4bbc195af3b7d75513faa64b45fd2af8a9e518bb506e3cdb9173b8bf498f65cc",
+            "sha256:953cc31666847d61422bc2750154452bbdc01b1b9833a9fa6cd1782635548c99"
+          ]
+        },
+        {
+          "claim": "Discrete connection work is relevant when Telos needs replayable, stepwise geometry states rather than only smooth-manifold descriptions.",
+          "status": "MATCH",
+          "source_receipt_ids": [
+            "sha256:58e1f6004a6c4697ccfc7a073f202e2c0c6e58f8fcdfdc00f03c19ae1aad9890"
+          ]
+        }
+      ],
+      "claim_boundaries": [
+        "Do not treat bundle terminology as a rendering, verification, or model-state implementation by itself.",
+        "Every geometric object promoted into Telos must carry explicit coordinates, charts/trivializations, transition data, units where relevant, and replay receipts.",
+        "Gauge-theory analogies require separate source receipts before they are used as engineering claims."
+      ],
+      "next_actions": [
+        "gather.arxiv: keep resolving current bundle, connection, and discrete-geometry preprints before implementation work.",
+        "index.context: map Telos render-nd, viable-viz, and measurement-overlay modules against local-to-global geometry seams.",
+        "crucible.assess: build negative fixtures for broken transition data, unjoinable chart ids, stale connection state, and unverifiable curvature claims."
+      ]
+    },
+    {
+      "seed_id": "seed-zenzic-operations",
+      "operator_note": "zenzic operations",
+      "normalized_concepts": [
+        "zenzic",
+        "repeated-squaring",
+        "exponentiation-chains",
+        "symbolic-arithmetic",
+        "replayable-operations",
+        "analytical-engine"
+      ],
+      "evidence_status": "MATCH",
+      "source_receipts": [
+        {
+          "title": "zenzic - Wiktionary",
+          "url": "https://en.wiktionary.org/wiki/zenzic",
+          "source_kind": "open-reference-page",
+          "resolved_at": "2026-06-28T00:00:00Z",
+          "provenance_class": "lawful_source",
+          "receipt_hash": "sha256:13cb302c2b2331c01b87aa8d7802377c721780c136406876fa9affed98da5e30"
+        },
+        {
+          "title": "Zenzizenzizenzic - Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Zenzizenzizenzic",
+          "source_kind": "open-reference-page",
+          "resolved_at": "2026-06-28T00:00:00Z",
+          "provenance_class": "lawful_source",
+          "receipt_hash": "sha256:5e3118e24ce87fc71095272f7a67dee1d2f8f435be043c5f991bb4f7da786924"
+        }
+      ],
+      "source_leads": [
+        {
+          "term": "flicker in zenzic operations",
+          "lead_source_kind": "operator-provided-term",
+          "provenance_class": "operator_source_lead",
+          "evidence_status": "UNVERIFIABLE",
+          "notes": "Treat as a local design phrase until a mathematical, graphics, or signal-processing source is resolved."
+        }
+      ],
+      "claims": [
+        {
+          "claim": "Zenzic is a historical mathematical term for a square; stacked zenzic forms name repeated powers such as fourth and eighth power.",
+          "status": "MATCH",
+          "source_receipt_ids": [
+            "sha256:13cb302c2b2331c01b87aa8d7802377c721780c136406876fa9affed98da5e30",
+            "sha256:5e3118e24ce87fc71095272f7a67dee1d2f8f435be043c5f991bb4f7da786924"
+          ]
+        },
+        {
+          "claim": "For Telos, the useful engineering interpretation is a receipt-chained repeated-squaring operation: x, x^2, x^4, x^8, with each intermediate state hashable and replayable.",
+          "status": "MATCH",
+          "source_receipt_ids": [
+            "sha256:13cb302c2b2331c01b87aa8d7802377c721780c136406876fa9affed98da5e30",
+            "sha256:5e3118e24ce87fc71095272f7a67dee1d2f8f435be043c5f991bb4f7da786924"
+          ]
+        }
+      ],
+      "claim_boundaries": [
+        "The historical term is evidence-backed; any Telos-specific zenzic operator is an implementation design that must carry its own tests.",
+        "Do not promote 'flicker in zenzic operations' as a standard term until Gather resolves a lawful source.",
+        "Repeated squaring can compress arithmetic context, but it is not lossless context compression for arbitrary code or documents."
+      ],
+      "next_actions": [
+        "forum.route: route 'flicker' to math, graphics, signal-processing, or local-design vocabulary before implementation.",
+        "crucible.assess: test zenzic chains with changed intermediate value, missing hash, stale modulus, and unjoinable operation id failures.",
+        "telos.context.envelope: evaluate zenzic chains as compact operation receipts for large-context mathematical and rendering work."
+      ]
     }
   ]
 }

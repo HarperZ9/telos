@@ -1,6 +1,6 @@
 {
   "schema": "project-telos.research-intake/youtube-video-receipts-v1",
-  "generated_at": "2026-06-27T06:20:34.321659+00:00",
+  "generated_at": "2026-06-28T00:00:00.000000+00:00",
   "tool": "gather.video",
   "inputs": [
     "https://www.youtube.com/watch?v=YsFQQynunMY&t=15s",
@@ -9,7 +9,8 @@
     "https://www.youtube.com/watch?v=bLSLN96Gn-w&t=17s",
     "https://www.youtube.com/watch?v=jH05mse8VbQ",
     "https://www.youtube.com/watch?v=rl0jkP9kOMw&t=6s",
-    "https://www.youtube.com/watch?v=awsH0iq0O1A&t=17s"
+    "https://www.youtube.com/watch?v=awsH0iq0O1A&t=17s",
+    "https://www.youtube.com/watch?v=SbafEATbfXQ&t=53s"
   ],
   "results": [
     {
@@ -373,6 +374,58 @@
           }
         ],
         "seal": "543633c0d6104345fee5675f151bec6052c79f20f795a0685d7b0bfccfa48a63"
+      },
+      "dropped": 0
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=SbafEATbfXQ&t=53s",
+      "returncode": 0,
+      "catalog": [
+        {
+          "kind": "metadata",
+          "id": "SbafEATbfXQ",
+          "title": "AI Access Is About To Change Forever",
+          "source": "video",
+          "ref": "SbafEATbfXQ",
+          "method": "yt-dlp",
+          "sha256": "5ef1a43a2fe00a90e067c8618dad07e2117c58b3a2499f6705d26fc89c41bbc7",
+          "chars": 152
+        },
+        {
+          "kind": "transcript",
+          "id": "SbafEATbfXQ",
+          "title": "AI Access Is About To Change Forever",
+          "source": "video",
+          "ref": "SbafEATbfXQ",
+          "method": "auto-caption",
+          "sha256": "229f77db8edc2bf5bdee805a96f3d2cd8aa544b98b2c94a7b11785c6d3717b08",
+          "chars": 47157
+        }
+      ],
+      "digest": {
+        "receipts": [
+          {
+            "kind": "metadata",
+            "id": "SbafEATbfXQ",
+            "title": "AI Access Is About To Change Forever",
+            "source": "video",
+            "ref": "SbafEATbfXQ",
+            "method": "yt-dlp",
+            "sha256": "5ef1a43a2fe00a90e067c8618dad07e2117c58b3a2499f6705d26fc89c41bbc7",
+            "derived_from": []
+          },
+          {
+            "kind": "transcript",
+            "id": "SbafEATbfXQ",
+            "title": "AI Access Is About To Change Forever",
+            "source": "video",
+            "ref": "SbafEATbfXQ",
+            "method": "auto-caption",
+            "sha256": "229f77db8edc2bf5bdee805a96f3d2cd8aa544b98b2c94a7b11785c6d3717b08",
+            "derived_from": []
+          }
+        ],
+        "seal": "4ba238d4bf379b0eb30b1609e48f5ac8961962f00cdb5823be9c8cc3969de944"
       },
       "dropped": 0
     }

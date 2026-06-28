@@ -126,7 +126,7 @@ const researchSeed = handleRequest(request("tools/call", {
 }));
 assert.deepEqual(researchSeed.result.structuredContent, expectedResearchSeed);
 assert.equal(researchSeed.result.structuredContent.schema, "project-telos.research-seed/v1");
-assert.equal(researchSeed.result.structuredContent.seeds.length, 2);
+assert.equal(researchSeed.result.structuredContent.seeds.length, 4);
 
 const expectedRenderingResearch = JSON.parse(
   readFileSync(new URL("./research/rendering-pipeline-seeds.json", import.meta.url), "utf8")

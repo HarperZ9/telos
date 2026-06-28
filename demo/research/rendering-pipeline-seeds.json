@@ -259,6 +259,97 @@
       ]
     }
   ],
+  "modern_rendering_candidates": [
+    {
+      "candidate_id": "candidate-neural-rendering-rtx-kit",
+      "evidence_status": "MATCH",
+      "source_receipts": [
+        {
+          "title": "NVIDIA RTX Kit",
+          "url": "https://developer.nvidia.com/rtx-kit",
+          "source_kind": "official-vendor-documentation",
+          "resolved_at": "2026-06-28T00:00:00Z",
+          "provenance_class": "lawful_source",
+          "receipt_hash": "sha256:b05f3a169d6b0977d87f70f37d77fbe20ddebbec166d6cafda142f48406e8d85"
+        },
+        {
+          "title": "NVIDIA RTX Neural Shaders repository",
+          "url": "https://github.com/NVIDIA-RTX/RTXNS",
+          "source_kind": "official-repository",
+          "resolved_at": "2026-06-28T00:00:00Z",
+          "provenance_class": "lawful_source",
+          "receipt_hash": "sha256:806d18f3ebe736b945b00b77616ea317505e408356c4a7d1acaee431e7e1db30"
+        },
+        {
+          "title": "NVIDIA RTX Neural Texture Compression repository",
+          "url": "https://github.com/NVIDIA-RTX/RTXNTC",
+          "source_kind": "official-repository",
+          "resolved_at": "2026-06-28T00:00:00Z",
+          "provenance_class": "lawful_source",
+          "receipt_hash": "sha256:280907e2b722dead9b5c2f303060ecd4abfd9a2780a7fe2745f501eb7ce594cf"
+        }
+      ],
+      "normalized_concepts": [
+        "neural-rendering",
+        "neural-shaders",
+        "neural-texture-compression",
+        "native-renderer-candidate"
+      ],
+      "adoption_boundary": "Watch for native Telos renderer work and offline asset pipelines; do not assume browser portability or enterprise readiness without local benchmarks and license review."
+    },
+    {
+      "candidate_id": "candidate-mesh-shader-pipelines",
+      "evidence_status": "MATCH",
+      "source_receipts": [
+        {
+          "title": "DirectX Mesh Shader specification",
+          "url": "https://microsoft.github.io/DirectX-Specs/d3d/MeshShader.html",
+          "source_kind": "official-specification",
+          "resolved_at": "2026-06-28T00:00:00Z",
+          "provenance_class": "lawful_source",
+          "receipt_hash": "sha256:f19e0fb4d055f6c8b6c9f85d892c53072dcfd301af785cc411cef59fbdffbc33"
+        },
+        {
+          "title": "Khronos Vulkan EXT_mesh_shader proposal",
+          "url": "https://github.com/KhronosGroup/Vulkan-Docs/blob/main/proposals/VK_EXT_mesh_shader.adoc",
+          "source_kind": "official-standards-repository",
+          "resolved_at": "2026-06-28T00:00:00Z",
+          "provenance_class": "lawful_source",
+          "receipt_hash": "sha256:2dec2a92d2336e4597f101f9b6045adf20fc33baebd2136ae8fc3b004be2255b"
+        }
+      ],
+      "normalized_concepts": [
+        "mesh-shaders",
+        "task-shaders",
+        "native-renderer-candidate",
+        "geometry-amplification"
+      ],
+      "adoption_boundary": "Relevant for native/high-end renderer experiments; keep WebGPU/WebGL/static fallbacks for GitHub, browser, and low-capability hosts."
+    }
+  ],
+  "execution_substrate_leads": [
+    {
+      "url": "https://vast.ai/",
+      "lead_source_kind": "operator-provided-gpu-provider",
+      "provenance_class": "operator_source_lead",
+      "evidence_status": "UNVERIFIABLE",
+      "notes": "GPU rental substrate lead only; resolve current API, availability, terms, price, and benchmark data before use."
+    },
+    {
+      "url": "https://hostkey.com/solutions/rendering-gpu-dedicated-server/",
+      "lead_source_kind": "operator-provided-gpu-provider",
+      "provenance_class": "operator_source_lead",
+      "evidence_status": "UNVERIFIABLE",
+      "notes": "Dedicated rendering GPU server lead only; do not cite for clustered-forward, Gaussian-splatting, or neural-rendering claims."
+    },
+    {
+      "url": "https://irendering.net/",
+      "lead_source_kind": "operator-provided-render-farm",
+      "provenance_class": "operator_source_lead",
+      "evidence_status": "UNVERIFIABLE",
+      "notes": "Render-farm lead only; provider suitability requires fresh compatibility, security, and cost receipts."
+    }
+  ],
   "adoption_path": [
     {
       "phase": "research-contract",

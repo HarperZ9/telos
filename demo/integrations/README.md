@@ -38,7 +38,11 @@ OpenAI Apps, OpenAI Agents, Anthropic Claude, Claude Code, Codex plugins, skills
 
 `research-seed-conventions.json` records how terse operator notes become source-backed research seeds: the note is a lead, current lawful source receipts promote claims, and unresolved claims stay `UNVERIFIABLE`. `../rendering-research.mjs` applies the same contract to clustered-forward rendering, Gaussian splatting, WebGPU/WGSL, SuperSplat, and visual acceptance gates for Telos rendering surfaces.
 
-`../research/rendering-pipeline-seeds.json` records lawful Gaussian-splatting, clustered-forward-rendering, WebGPU/WGSL, and browser-rendering source receipts for Telos Studio rendering surfaces. Social and Reddit references remain non-evidentiary source leads.
+`../research/rendering-pipeline-seeds.json` records lawful Gaussian-splatting, clustered-forward-rendering, WebGPU/WGSL, browser-rendering, neural-rendering, mesh-shader, and rendering-provider source receipts or leads for Telos Studio rendering surfaces. Provider pages, social links, and Reddit references remain non-evidentiary source leads until repeatable benchmarks or primary technical sources promote them.
+
+`../research/operator-source-leads.json` records blocked, social, provider, and discovery links as quarantined leads. They can route future work, but they do not promote claims.
+
+`../../tools/render_flagship_heroes.py --check-existing --public-root <sibling-root>` verifies the five README hero PNGs and brand receipt READMEs without private fonts or Pillow. `--render` uses the operator-owned Kilon and Conso font ZIPs plus Pillow to regenerate the artwork locally.
 
 `../mcp-runtime-contract.test.mjs` checks the catalog against the sibling MCP runtimes so `available` means the tool is actually present in `tools/list`.
 
