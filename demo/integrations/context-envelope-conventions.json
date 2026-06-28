@@ -1,6 +1,6 @@
 {
   "schema": "project-telos.context-envelope/v1",
-  "verified_on": "2026-06-27",
+  "verified_on": "2026-06-28",
   "purpose": "Define the Project Telos large-workspace context contract: compact enough for agent use, exact enough for replay, and readable enough for unattended engineering review.",
   "sources_checked": [
     {
@@ -42,6 +42,14 @@
     {
       "name": "Prompt compression in the wild",
       "url": "https://arxiv.org/abs/2604.02985"
+    },
+    {
+      "name": "OpenTelemetry GenAI context evidence feedback",
+      "url": "https://github.com/open-telemetry/semantic-conventions-genai/issues/181#issuecomment-4826333934"
+    },
+    {
+      "name": "OpenTelemetry GenAI context boundary follow-up",
+      "url": "https://github.com/open-telemetry/semantic-conventions-genai/issues/181#issuecomment-4826643694"
     }
   ],
   "contract": {
@@ -99,6 +107,9 @@
     "quality_gate_missing",
     "budget_exceeded",
     "relevance_accounting_missing",
+    "missing_relevance",
+    "over_selection",
+    "unjoinable_relevance",
     "raw_context_leak"
   ],
   "flagship_roles": {
@@ -253,6 +264,53 @@
       "failure_code": null
     },
     "context_relevance": {
+      "receipt_contract": {
+        "load_receipt": {
+          "event_type": "context.load",
+          "decisionClaim": "valid_load_receipt_not_usefulness_claim",
+          "proves": [
+            "selected context crossed the session boundary",
+            "privacy-safe context input identities",
+            "delivered and suppressed counts"
+          ],
+          "does_not_prove": [
+            "usefulness",
+            "decisiveness",
+            "answer influence"
+          ],
+          "claims_usefulness": false,
+          "raw_payload_required": false
+        },
+        "relevance_receipt": {
+          "event_type": "context.relevance",
+          "optional": true,
+          "only_valid_when_joined_to_loaded_inputs": true,
+          "required_join_fields": [
+            "input_id",
+            "delivered_hash"
+          ],
+          "valid_relevance_labels": [
+            "decisive",
+            "supporting",
+            "unused",
+            "unknown"
+          ],
+          "raw_payload_required": false
+        }
+      },
+      "load_only_variant": {
+        "decisionClaim": "valid_load_receipt_not_usefulness_claim",
+        "selected_count": 3,
+        "delivered_count": 3,
+        "loaded_input_ids": [
+          "ctx_in_001",
+          "ctx_in_002",
+          "ctx_in_003"
+        ],
+        "relevance_event": null,
+        "claims_usefulness": false,
+        "expected_verdict": "MATCH"
+      },
       "selection": {
         "candidate_count": 4,
         "selected_count": 3,
@@ -386,6 +444,21 @@
     {
       "name": "selected_count_not_accounted_by_relevance_buckets",
       "failure_code": "relevance_accounting_missing",
+      "expected_verdict": "UNVERIFIABLE"
+    },
+    {
+      "name": "usefulness_claim_without_relevance_event",
+      "failure_code": "missing_relevance",
+      "expected_verdict": "UNVERIFIABLE"
+    },
+    {
+      "name": "relevance_labels_more_inputs_than_delivered",
+      "failure_code": "over_selection",
+      "expected_verdict": "DRIFT"
+    },
+    {
+      "name": "relevance_points_to_context_never_delivered",
+      "failure_code": "unjoinable_relevance",
       "expected_verdict": "UNVERIFIABLE"
     },
     {

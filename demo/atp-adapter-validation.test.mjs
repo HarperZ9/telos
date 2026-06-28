@@ -27,6 +27,9 @@ for (const source of [
 for (const requiredField of [
   "atp_version",
   "action_id",
+  "pipeline_run_id",
+  "component_invocation_id",
+  "parent_receipt_id",
   "idempotency_key",
   "guarantee_level",
   "agent_id",
@@ -46,6 +49,14 @@ assert.deepEqual(fixture.allowed_values.verification_verdicts, ["MATCH", "DRIFT"
 assert.deepEqual(fixture.allowed_values.side_effect_classes, ["read", "write", "external", "human"]);
 assert.ok(fixture.allowed_values.policy_decisions.includes("APPROVED"));
 assert.ok(fixture.allowed_values.stop_reasons.includes("policy_denied"));
+assert.equal(fixture.canonicalization.standard, "RFC 8785");
+assert.ok(fixture.canonicalization.digest_fields.includes("input_digest"));
+assert.ok(fixture.canonicalization.signature_payload_fields.includes("verification.verdict"));
+assert.equal(fixture.canonicalization.metadata_interop_status, "expected_to_diverge");
+assert.equal(fixture.haystack_component_middleware.receiver_owns_signing_or_storage_backend, false);
+assert.equal(fixture.haystack_component_middleware.component_invocation_emits_receipt, true);
+assert.equal(fixture.haystack_component_middleware.pipeline_run_root_links_component_receipts, true);
+assert.equal(fixture.haystack_component_middleware.verifier_walks_tree_without_calling_runtime, true);
 
 const cases = new Map(fixture.validation_cases.map((item) => [item.id, item]));
 for (const id of [
@@ -60,6 +71,9 @@ for (const id of [
 
 for (const item of cases.values()) {
   assert.equal(item.raw_payload_required, false, `${item.id} should not require raw payloads`);
+  assert.ok(item.pipeline_run_id.startsWith("pipe_"), `${item.id} has pipeline run identity`);
+  assert.ok(item.component_invocation_id.startsWith("invoke_"), `${item.id} has component invocation identity`);
+  assert.ok(item.parent_receipt_id.length > 0, `${item.id} has parent receipt identity`);
   assert.match(item.input_digest, /^sha256:[a-f0-9]{64}$/);
   assert.match(item.material_digest, /^sha256:[a-f0-9]{64}$/);
   assert.match(item.config_hash, /^sha256:[a-f0-9]{64}$/);
