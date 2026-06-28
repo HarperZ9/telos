@@ -68,6 +68,11 @@ export const tools = [
     name: "telos.research.seed",
     description: "Return receipt-backed research seeds resolved from terse operator notes.",
     inputSchema: emptyInputSchema
+  },
+  {
+    name: "telos.rendering.research",
+    description: "Return receipt-backed clustered-forward and Gaussian-splatting research seeds for Telos rendering surfaces.",
+    inputSchema: emptyInputSchema
   }
 ];
 
@@ -82,7 +87,8 @@ const toolScripts = new Map([
   ["telos.context.envelope", ["context-envelope.mjs"]],
   ["telos.action.receipt", ["action-receipt.mjs"]],
   ["telos.loop.ledger", ["loop-ledger.mjs"]],
-  ["telos.research.seed", ["research-seed.mjs"]]
+  ["telos.research.seed", ["research-seed.mjs"]],
+  ["telos.rendering.research", ["rendering-research.mjs"]]
 ]);
 
 function runTool(name) {

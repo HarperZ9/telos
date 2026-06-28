@@ -1,0 +1,292 @@
+{
+  "schema": "project-telos.research-seed/v1",
+  "generated_at": "2026-06-28T00:00:00.000Z",
+  "tool": "telos.rendering.research",
+  "purpose": "Receipt-backed rendering research seeds for Telos Studio, shared-scene UI, and model-visible measurement surfaces.",
+  "seeds": [
+    {
+      "seed_id": "seed-gaussian-splatting-webgpu",
+      "operator_note": "Use Gaussian Splatting for Telos and UI/rendering elements where a captured or reconstructed scene should stay inspectable by a human and a model.",
+      "normalized_concepts": [
+        "3d-gaussian-splatting",
+        "radiance-fields",
+        "webgpu",
+        "browser-rendering",
+        "captured-scene-primitives",
+        "measurable-visual-scenes",
+        "telos-studio"
+      ],
+      "evidence_status": "MATCH",
+      "source_receipts": [
+        {
+          "title": "3D Gaussian Splatting for Real-Time Radiance Field Rendering",
+          "url": "https://arxiv.org/abs/2308.04079",
+          "source_kind": "open-preprint",
+          "resolved_at": "2026-06-28T00:00:00Z",
+          "provenance_class": "lawful_source",
+          "receipt_hash": "sha256:d8df59e6496b27cc4b152da8a758f0bb19ab9833762289132928905350b7e9bb"
+        },
+        {
+          "title": "3D Gaussian Splatting official project page",
+          "url": "https://repo-sam.inria.fr/fungraph/3d-gaussian-splatting/",
+          "source_kind": "official-project",
+          "resolved_at": "2026-06-28T00:00:00Z",
+          "provenance_class": "lawful_source",
+          "receipt_hash": "sha256:8c9c1b17a41a3772750bdd255ce05bdf0a46a7c811a03f452d78d62b90b9b885"
+        },
+        {
+          "title": "PlayCanvas SuperSplat editor repository",
+          "url": "https://github.com/playcanvas/supersplat",
+          "source_kind": "official-repository",
+          "resolved_at": "2026-06-28T00:00:00Z",
+          "provenance_class": "lawful_source",
+          "receipt_hash": "sha256:23739caa7042369556a5c190a67bd51aa9a118975c92a2dffbda8c2c0a4c199c"
+        },
+        {
+          "title": "WebSplatter: Gaussian Splatting for the Web",
+          "url": "https://arxiv.org/abs/2602.03207",
+          "source_kind": "open-preprint",
+          "resolved_at": "2026-06-28T00:00:00Z",
+          "provenance_class": "lawful_source",
+          "receipt_hash": "sha256:cdfa13aeb07ec070585266a92f07f0414f7050c4b36cfed04d3a64ab45d097ad"
+        },
+        {
+          "title": "Geometry-Grounded Gaussian Splatting for Web-Based 3D Visualization",
+          "url": "https://arxiv.org/abs/2601.17835",
+          "source_kind": "open-preprint",
+          "resolved_at": "2026-06-28T00:00:00Z",
+          "provenance_class": "lawful_source",
+          "receipt_hash": "sha256:0f27238ad0ac6a67b4ff37d21d2133a1bf3d8f748eb54c08775015d40f0a56c0"
+        }
+      ],
+      "source_leads": [
+        {
+          "url": "https://www.reddit.com/r/creativecoding/comments/1uhs4z4/interactive_music_cover_in_3d_guassian_splatting/",
+          "lead_source_kind": "operator-provided-social-demo",
+          "provenance_class": "operator_source_lead",
+          "evidence_status": "UNVERIFIABLE",
+          "notes": "Use only as a creative and interaction lead until replicated or sourced through a lawful project page, paper, repository, or artifact."
+        },
+        {
+          "url": "https://www.reddit.com/r/GaussianSplatting/",
+          "lead_source_kind": "operator-provided-community-feed",
+          "provenance_class": "operator_source_lead",
+          "evidence_status": "UNVERIFIABLE",
+          "notes": "Treat as discovery surface, not performance or compatibility evidence."
+        },
+        {
+          "url": "https://www.reddit.com/r/GaussianSplatting/comments/1uhevow/a_1000yearold_church_you_can_walk_through_in_your/",
+          "lead_source_kind": "operator-provided-social-demo",
+          "provenance_class": "operator_source_lead",
+          "evidence_status": "UNVERIFIABLE",
+          "notes": "Use as a field-signal for navigable capture experiences; do not promote claims without lawful source receipts."
+        },
+        {
+          "url": "https://www.reddit.com/r/GaussianSplatting/comments/1ubnicz/360_drone_vs_standard_drone_for_gaussian_splatting/",
+          "lead_source_kind": "operator-provided-capture-discussion",
+          "provenance_class": "operator_source_lead",
+          "evidence_status": "UNVERIFIABLE",
+          "notes": "Capture-method advice needs separate tested datasets and lawful documentation before implementation decisions."
+        },
+        {
+          "url": "https://www.reddit.com/r/GaussianSplatting/comments/1uh4frz/i_made_an_audioreactive_pointcloud_system/",
+          "lead_source_kind": "operator-provided-social-demo",
+          "provenance_class": "operator_source_lead",
+          "evidence_status": "UNVERIFIABLE",
+          "notes": "Use as interaction inspiration for audio-reactive overlays only after separate accessibility and performance gates."
+        },
+        {
+          "url": "https://www.reddit.com/r/GaussianSplatting/comments/1tvptue/supersplat_moves_to_webgpu_for_huge_performance/",
+          "lead_source_kind": "operator-provided-product-discussion",
+          "provenance_class": "operator_source_lead",
+          "evidence_status": "UNVERIFIABLE",
+          "notes": "Resolve performance claims through SuperSplat, PlayCanvas, browser profiler traces, and repeatable local benchmarks."
+        }
+      ],
+      "claims": [
+        {
+          "claim": "3D Gaussian Splatting is a real-time radiance-field rendering technique centered on optimized 3D Gaussian primitives.",
+          "status": "MATCH",
+          "source_receipt_ids": [
+            "sha256:d8df59e6496b27cc4b152da8a758f0bb19ab9833762289132928905350b7e9bb",
+            "sha256:8c9c1b17a41a3772750bdd255ce05bdf0a46a7c811a03f452d78d62b90b9b885"
+          ]
+        },
+        {
+          "claim": "SuperSplat is an open-source PlayCanvas Gaussian splat editing/viewing surface that is relevant as a browser-native implementation reference.",
+          "status": "MATCH",
+          "source_receipt_ids": [
+            "sha256:23739caa7042369556a5c190a67bd51aa9a118975c92a2dffbda8c2c0a4c199c"
+          ]
+        },
+        {
+          "claim": "Web-native Gaussian splatting remains an active 2026 research lane, including work on browser performance and web visualization constraints.",
+          "status": "MATCH",
+          "source_receipt_ids": [
+            "sha256:cdfa13aeb07ec070585266a92f07f0414f7050c4b36cfed04d3a64ab45d097ad",
+            "sha256:0f27238ad0ac6a67b4ff37d21d2133a1bf3d8f748eb54c08775015d40f0a56c0"
+          ]
+        }
+      ],
+      "claim_boundaries": [
+        "A splat is a visual primitive, not a measurement certificate. Telos measurements, overlays, hashes, and action receipts remain separate records.",
+        "Do not infer production performance, accessibility, or compatibility from social media demos.",
+        "Captured-scene assets need license, consent, dataset, transform, and export receipts before entering enterprise workflows."
+      ],
+      "design_acceptance_gates": [
+        {
+          "gate": "pretty_but_operational",
+          "criterion": "The rendering surface must feel like a scientific instrument: calm, inspectable, beautiful, and useful under repeated work."
+        },
+        {
+          "gate": "a11y_fallback",
+          "criterion": "Every splat or point-cloud view needs keyboard navigation, reduced-motion behavior, textual state, and a non-WebGPU fallback."
+        },
+        {
+          "gate": "receipt_visible",
+          "criterion": "Scene source, transforms, measurements, model observations, and verifier verdicts must be visible or exportable without raw private payloads."
+        }
+      ],
+      "next_actions": [
+        "gather.arxiv: ingest 2308.04079, 2602.03207, and 2601.17835 metadata before implementation work.",
+        "index.context: map Telos render-nd, viable-viz, and studio surface seams before picking a WebGPU layer.",
+        "crucible.assess: benchmark FPS, memory, deterministic replay, accessibility fallback, and screenshot stability before calling the renderer production-ready."
+      ]
+    },
+    {
+      "seed_id": "seed-clustered-forward-rendering",
+      "operator_note": "Use clustered forward rendering for Telos/UI rendering elements where many lights, overlays, and measured scene annotations need disciplined visibility organization.",
+      "normalized_concepts": [
+        "clustered-forward-rendering",
+        "clustered-shading",
+        "many-lights",
+        "visibility-culling",
+        "webgpu",
+        "render-backend",
+        "measurement-overlays"
+      ],
+      "evidence_status": "MATCH",
+      "source_receipts": [
+        {
+          "title": "Clustered Deferred and Forward Shading",
+          "url": "https://diglib.eg.org/items/6342d4d6-5220-4376-a5c6-a153058f4a3c",
+          "source_kind": "open-publication-record",
+          "resolved_at": "2026-06-28T00:00:00Z",
+          "provenance_class": "lawful_source",
+          "receipt_hash": "sha256:88df9920005119dda0876d67b563c57a7b90b5d238c1ada8ca187f2a5494e1a4"
+        },
+        {
+          "title": "GPUWeb repository",
+          "url": "https://github.com/gpuweb/gpuweb",
+          "source_kind": "official-standards-repository",
+          "resolved_at": "2026-06-28T00:00:00Z",
+          "provenance_class": "lawful_source",
+          "receipt_hash": "sha256:509ab5dbe623f69a02b9bb385c72ff10bf3af6d20b3f9b26bf330641a9279824"
+        },
+        {
+          "title": "WGSL Candidate Recommendation Draft",
+          "url": "https://www.w3.org/TR/WGSL/",
+          "source_kind": "official-web-standard",
+          "resolved_at": "2026-06-28T00:00:00Z",
+          "provenance_class": "lawful_source",
+          "receipt_hash": "sha256:a905e5aaef3c239f6e82b7da0ffc8d4d2f84ceb4d00416d36ecfc2a25da42c6f"
+        }
+      ],
+      "source_leads": [
+        {
+          "url": "https://www.reddit.com/r/GraphicsProgramming/comments/1uhnvxc/what_is_forward_rendering_and_what_difference/",
+          "lead_source_kind": "operator-provided-community-discussion",
+          "provenance_class": "operator_source_lead",
+          "evidence_status": "UNVERIFIABLE",
+          "notes": "Use only as a question lead; rendering definitions must resolve through papers, specs, or implementation docs."
+        },
+        {
+          "url": "https://www.reddit.com/r/GraphicsProgramming/",
+          "lead_source_kind": "operator-provided-community-feed",
+          "provenance_class": "operator_source_lead",
+          "evidence_status": "UNVERIFIABLE",
+          "notes": "Useful for current practitioner signals, not as a citation for Telos claims."
+        }
+      ],
+      "claims": [
+        {
+          "claim": "Clustered deferred and forward shading partitions view space so lights can be assigned to spatial clusters instead of every fragment testing every light.",
+          "status": "MATCH",
+          "source_receipt_ids": [
+            "sha256:88df9920005119dda0876d67b563c57a7b90b5d238c1ada8ca187f2a5494e1a4"
+          ]
+        },
+        {
+          "claim": "WebGPU/WGSL are the standards-facing browser graphics layer that Telos should evaluate for a portable clustered rendering backend.",
+          "status": "MATCH",
+          "source_receipt_ids": [
+            "sha256:509ab5dbe623f69a02b9bb385c72ff10bf3af6d20b3f9b26bf330641a9279824",
+            "sha256:a905e5aaef3c239f6e82b7da0ffc8d4d2f84ceb4d00416d36ecfc2a25da42c6f"
+          ]
+        }
+      ],
+      "claim_boundaries": [
+        "Clustered forward rendering is a rendering architecture, not the Telos verification layer.",
+        "A WebGPU backend must keep WebGL2/canvas/static export fallbacks until host compatibility is verified.",
+        "Lighting, overlays, and visual polish must not obscure hashes, measurements, verdicts, or user controls."
+      ],
+      "design_acceptance_gates": [
+        {
+          "gate": "visual_hierarchy",
+          "criterion": "Lighting must reveal geometry and measurement overlays without turning the tool into a decorative hero scene."
+        },
+        {
+          "gate": "a11y_overlay_controls",
+          "criterion": "Measurement overlays, light controls, and rendering-mode switches must remain keyboard reachable and readable without relying on color alone."
+        },
+        {
+          "gate": "performance_budget",
+          "criterion": "The renderer must define frame-time, memory, load-time, and fallback budgets before production use."
+        },
+        {
+          "gate": "compatibility_matrix",
+          "criterion": "Support matrix must cover Chrome/Edge/Firefox/Safari status, WebGPU availability, WebGL fallback, and screenshot export."
+        },
+        {
+          "gate": "receipt_visibility",
+          "criterion": "Lighting, culling, overlays, and fallback decisions must keep source, transform, measurement, and verifier records visible or exportable."
+        }
+      ],
+      "next_actions": [
+        "gather.docs: record lawful renderer papers, GPUWeb/WGSL references, and implementation docs.",
+        "index.context: isolate renderer seams so Telos can swap WebGPU, WebGL2, or static export backends.",
+        "crucible.assess: create negative fixtures for missing fallback, hidden measurements, inaccessible controls, and unverifiable render provenance."
+      ]
+    }
+  ],
+  "adoption_path": [
+    {
+      "phase": "research-contract",
+      "status": "MATCH",
+      "outputs": [
+        "lawful source receipts",
+        "operator source leads",
+        "design acceptance gates"
+      ]
+    },
+    {
+      "phase": "prototype",
+      "status": "UNVERIFIABLE",
+      "outputs": [
+        "WebGPU/WebGL fallback spike",
+        "splat viewer fixture",
+        "clustered-lighting fixture",
+        "a11y and screenshot gates"
+      ]
+    },
+    {
+      "phase": "production-renderer",
+      "status": "UNVERIFIABLE",
+      "outputs": [
+        "deterministic replay receipts",
+        "asset provenance ledger",
+        "performance and compatibility matrix"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "schema": "smallharness.minimal-run-receipt/v0",
+  "fixtureId": "telos.receipt.pass_basic",
+  "packId": "project-telos.receipt-boundary-dogfood",
+  "packVersion": "2026.06.28",
+  "fixtureFileHash": "sha256:365a58dc070b4cbf6f512c813e3015a11013bc0e10787e426ca79d474b3adeeb",
+  "backendModelLabel": "small-harness-dogfood-local",
+  "decisionOutcome": "allow",
+  "checks": [
+    {
+      "id": "receipt.schema",
+      "type": "json_path_equals",
+      "outcome": "pass"
+    },
+    {
+      "id": "verification.match",
+      "type": "json_path_equals",
+      "outcome": "pass"
+    }
+  ],
+  "observedToolCallNames": [
+    "read_file",
+    "json_path_check"
+  ],
+  "transcriptPath": "artifacts/pass-basic/transcript.jsonl",
+  "evalJsonPath": "artifacts/pass-basic/eval.json",
+  "notCapturedYet": [
+    "workspaceHash",
+    "diffArtifactRefs",
+    "stdoutArtifactRefs",
+    "stderrArtifactRefs",
+    "artifactIndex"
+  ],
+  "captureBoundary": "Minimal first-slice receipt; no workspace hashing, diff indexing, stdout/stderr artifact capture, or rich artifact registry yet."
+}

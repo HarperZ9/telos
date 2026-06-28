@@ -572,6 +572,26 @@
       ]
     },
     {
+      "name": "telos.rendering.research",
+      "flagship": "telos",
+      "description": "Return receipt-backed clustered-forward and Gaussian-splatting research seeds for Telos rendering surfaces.",
+      "cli": [
+        "node",
+        "demo/rendering-research.mjs"
+      ],
+      "mcp": {
+        "status": "available",
+        "server": "telos",
+        "method": "tools/call",
+        "tool": "telos.rendering.research"
+      },
+      "next_actions": [
+        "gather.arxiv",
+        "index.context",
+        "crucible.assess"
+      ]
+    },
+    {
       "name": "telos.workflow",
       "flagship": "telos",
       "description": "Run the local golden workflow and reconcile the five flagship receipts.",
