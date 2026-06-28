@@ -30,4 +30,5 @@ Before a tool or operator-facing report states a current claim about an external
 
 - Lawful open-access resolution is part of the research stack: Unpaywall, PubMed Central, Europe PMC, DOAJ, CORE, publisher OA links, institutional repositories, preprints, and official dataset/model repositories.
 - Sci-Hub, shadow libraries, leaked PDFs, and other illicit full-text sources are not valid provenance sources for Project Telos tooling.
+- User-provided Sci-Hub, shadow-library, leaked-PDF, or paywalled-copy references may be recorded only as non-evidentiary source leads. Hash the lead reference, extract bibliographic identifiers, and cross-reference DOI, title, authors, PMID/PMCID, arXiv id, publisher metadata, repository metadata, and open-access resolvers to find the lawful source.
 - If lawful full text is unavailable, record metadata, abstracts, citations, license/access attempts, and mark full-text evidence `UNVERIFIABLE` instead of bypassing access controls.
