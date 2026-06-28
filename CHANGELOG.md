@@ -5,6 +5,7 @@ All notable changes to Project Telos. Telos is currently a source demo and share
 ## Unreleased
 
 - Brand renderer: adds `tools/render_flagship_heroes.py` with a standard-library `--check-existing` mode for CI and a local `--render` mode for the operator-owned Kilon/Conso font ZIPs, preserving exported PNGs without committing purchased fonts.
+- MCP runtime contract: now calls Gather's live source-checkout MCP surface with inline `gather.run` config, so host-neutral run configs are verified beyond `tools/list` parity.
 - Research seeds: adds bundle-theoretic differential geometry and zenzic/repeated-squaring operation seeds with lawful source receipts, explicit boundaries around unresolved "flicker" terminology, and Crucible-ready negative-test directions.
 - Research intake: extends the YouTube receipt ledger with TheAIGRID's `SbafEATbfXQ` video as metadata/transcript receipts only, and adds an operator-source-leads quarantine packet for blocked Reddit and GPU-provider/render-farm discovery links.
 - Rendering research: records neural-rendering/mesh-shader candidates and GPU execution-substrate leads while keeping provider pages separate from rendering-algorithm claims.
