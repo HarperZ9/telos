@@ -36,6 +36,15 @@ for (const name of [
   "crucible.doctor",
   "crucible.assess",
   "crucible.recheck",
+  "crucible.run",
+  "crucible.measurement_gate",
+  "crucible.review",
+  "crucible.report",
+  "crucible.batch",
+  "crucible.registry",
+  "crucible.drift",
+  "crucible.refine",
+  "crucible.verdicts",
   "telos.status",
   "telos.doctor",
   "telos.room",
@@ -56,7 +65,7 @@ for (const name of [
 }
 
 for (const tool of catalog.tools) {
-  assert.match(tool.name, /^(gather|index|forum|crucible|telos)\.[a-z.]+$/);
+  assert.match(tool.name, /^(gather|index|forum|crucible|telos)\.[a-z._]+$/);
   assert.ok(Array.isArray(tool.cli) && tool.cli.length > 0, `${tool.name} has CLI fallback`);
   assert.equal(tool.mcp.method, "tools/call");
   assert.equal(tool.mcp.status, "available", `${tool.name} is native MCP available`);
@@ -71,6 +80,15 @@ assert.deepEqual(byName.get("crucible.recheck").cli, [
   "{index}",
   "--pack",
   "{pack}",
+  "--json"
+]);
+
+assert.deepEqual(byName.get("crucible.measurement_gate").cli, [
+  "crucible",
+  "measurement-gate",
+  "{packet}",
+  "--criteria",
+  "{criteria}",
   "--json"
 ]);
 

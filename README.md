@@ -65,7 +65,7 @@ The current research queue also includes receipt-only source leads from Inigo Qu
 
 - **Release:** source demo; command surface is `node demo/run.mjs`, `node demo/room.mjs`, `node demo/status.mjs`, `node demo/doctor.mjs`, `node demo/catalog.mjs`, `node demo/server-manifest.mjs`, `node demo/admission-telemetry.mjs`, `node demo/context-envelope.mjs`, `node demo/action-receipt.mjs`, `node demo/loop-ledger.mjs`, `node demo/research-seed.mjs`, `node demo/rendering-research.mjs`, `node demo/rendering-capabilities.mjs`, `node demo/measurement-layers.mjs`, `node demo/creative-engine.mjs`, and `node demo/flagship-workflow.mjs`.
 - **Operator surface:** `node demo/telos-mcp.mjs` exposes native MCP tools: `telos.status`, `telos.doctor`, `telos.room`, `telos.catalog`, `telos.workflow`, `telos.server.manifest`, `telos.admission.telemetry`, `telos.context.envelope`, `telos.action.receipt`, `telos.loop.ledger`, `telos.research.seed`, `telos.rendering.research`, `telos.rendering.capabilities`, `telos.measurement.layers`, and `telos.creative.engine`.
-- **Current floor:** the operator room reconciles 33 available tools across Gather, Crucible, Index, Forum, and Telos, with a provider-neutral catalog and server manifest for CLI, MCP, plugin, IDE, TUI, and app hosts. See [CHANGELOG.md](CHANGELOG.md).
+- **Current floor:** the operator room reconciles 42 available tools across Gather, Crucible, Index, Forum, and Telos, with a provider-neutral catalog and server manifest for CLI, MCP, plugin, IDE, TUI, and app hosts. See [CHANGELOG.md](CHANGELOG.md).
 - **Brand renderer:** `python tools/render_flagship_heroes.py --check-existing --public-root ..` verifies the five README hero PNGs and brand receipts without redistributing the operator-owned fonts.
 
 ## What it is
