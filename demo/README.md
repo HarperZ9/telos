@@ -42,6 +42,9 @@ node demo/room.mjs
 node demo/catalog.mjs --summary
 node demo/server-manifest.mjs --summary
 node demo/admission-telemetry.mjs
+node demo/context-envelope.mjs
+node demo/action-receipt.mjs
+node demo/loop-ledger.mjs
 node demo/flagship-workflow.mjs
 ```
 
@@ -60,6 +63,11 @@ operator map, while plain `catalog.mjs` keeps the full JSON contract for hosts.
 verdict convention: `allow/block/escalate/require_review` stays separate from
 `match/drift/unverifiable`, and evidence is represented by hashes or redacted
 references instead of raw prompts or tool arguments.
+
+`context-envelope.mjs`, `action-receipt.mjs`, and `loop-ledger.mjs` are the
+Analytical Engine layer for agent work: pack large workspaces into readable
+source references, record action receipts, and persist loop state so a fresh
+context can pick one next action with evidence instead of inheriting confidence.
 
 `flagship-workflow.mjs` dogfoods the five-tool chain by mapping Telos with
 Index, gathering the operator-spine spec with Gather, routing the work through

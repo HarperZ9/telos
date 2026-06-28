@@ -23,6 +23,7 @@ node demo/catalog.mjs --summary
 node demo/server-manifest.mjs --summary
 node demo/context-envelope.mjs
 node demo/action-receipt.mjs
+node demo/loop-ledger.mjs
 ```
 
 Open the visual certificate-loop surface at [`demo/index.html`](demo/index.html).
@@ -46,15 +47,17 @@ perception, and action floor.
 
 ## Current status
 
-- **Release:** source demo; command surface is `node demo/run.mjs`, `node demo/room.mjs`, `node demo/status.mjs`, `node demo/doctor.mjs`, `node demo/catalog.mjs`, `node demo/server-manifest.mjs`, `node demo/admission-telemetry.mjs`, `node demo/context-envelope.mjs`, `node demo/action-receipt.mjs`, and `node demo/flagship-workflow.mjs`.
-- **Operator surface:** `node demo/telos-mcp.mjs` exposes native MCP tools: `telos.status`, `telos.doctor`, `telos.room`, `telos.catalog`, `telos.workflow`, `telos.server.manifest`, `telos.admission.telemetry`, `telos.context.envelope`, and `telos.action.receipt`.
-- **Current floor:** the operator room reconciles 27 available tools across Gather, Crucible, Index, Forum, and Telos, with a provider-neutral catalog and server manifest for CLI, MCP, plugin, IDE, TUI, and app hosts. See [CHANGELOG.md](CHANGELOG.md).
+- **Release:** source demo; command surface is `node demo/run.mjs`, `node demo/room.mjs`, `node demo/status.mjs`, `node demo/doctor.mjs`, `node demo/catalog.mjs`, `node demo/server-manifest.mjs`, `node demo/admission-telemetry.mjs`, `node demo/context-envelope.mjs`, `node demo/action-receipt.mjs`, `node demo/loop-ledger.mjs`, and `node demo/flagship-workflow.mjs`.
+- **Operator surface:** `node demo/telos-mcp.mjs` exposes native MCP tools: `telos.status`, `telos.doctor`, `telos.room`, `telos.catalog`, `telos.workflow`, `telos.server.manifest`, `telos.admission.telemetry`, `telos.context.envelope`, `telos.action.receipt`, and `telos.loop.ledger`.
+- **Current floor:** the operator room reconciles 28 available tools across Gather, Crucible, Index, Forum, and Telos, with a provider-neutral catalog and server manifest for CLI, MCP, plugin, IDE, TUI, and app hosts. See [CHANGELOG.md](CHANGELOG.md).
 
 ## What it is
 
 A language model is brilliant and forgetful in the same breath. It can reason its way through a hard problem inside one window of text, then lose the thread the moment the answer depends on something it cannot see. What changed. What is true right now. What it itself did a minute ago. It does not know, and worse, it does not know that it does not know. The confidence stays high while the accuracy quietly falls away.
 
 Project Telos is the work of giving a model the footing it is missing: a durable memory it can read instead of guess at, real senses pointed at the world, a way to act with the brakes wired in, and underneath all of it, a way to check its own work before you are asked to trust it.
+
+In practical terms, this is the Difference Engine / Analytical Engine idea pointed at agent work. The gears are not brass; they are ledger entries, context envelopes, admission decisions, action receipts, and replayable verification. A fresh context reads durable loop state, advances one action, writes evidence and a verdict, then stops or resumes from the ledger rather than from vibes.
 
 ## What goes wrong without it
 

@@ -42,7 +42,10 @@ for (const name of [
   "telos.workflow",
   "telos.catalog",
   "telos.server.manifest",
-  "telos.admission.telemetry"
+  "telos.admission.telemetry",
+  "telos.context.envelope",
+  "telos.action.receipt",
+  "telos.loop.ledger"
 ]) {
   assert.ok(names.has(name), `missing ${name}`);
 }
@@ -68,6 +71,9 @@ assert.deepEqual(byName.get("crucible.recheck").cli, [
 
 assert.equal(science.schema, "project-telos.science-research-adapters/v1");
 assert.equal(science.freshness_policy.current_source_required, true);
+assert.equal(science.legal_access_policy.lawful_full_text_required, true);
+assert.equal(science.legal_access_policy.illicit_access_sources_allowed, false);
+assert.ok(science.legal_access_policy.blocked_sources.includes("sci-hub"));
 
 assert.equal(admissionTelemetry.schema, "project-telos.admission-telemetry/v1");
 assert.ok(admissionTelemetry.required_fields.includes("verification.verdict"));
@@ -85,7 +91,11 @@ for (const name of [
   "trials.clinicaltrials",
   "structure.alphafold-db",
   "structure.alphafold3",
-  "medical.midjourney-medical"
+  "medical.midjourney-medical",
+  "oa.unpaywall",
+  "oa.core",
+  "oa.doaj",
+  "oa.pubmed-central"
 ]) {
   assert.ok(adapterNames.has(name), `missing science adapter ${name}`);
 }
