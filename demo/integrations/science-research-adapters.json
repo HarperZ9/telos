@@ -323,11 +323,22 @@
   "legal_access_policy": {
     "lawful_full_text_required": true,
     "illicit_access_sources_allowed": false,
+    "source_leads_allowed": true,
+    "source_lead_status": "non_evidentiary",
+    "source_lead_policy": "A user-provided Sci-Hub, shadow-library, leaked-PDF, or paywalled-copy reference may be retained only as a research lead. It must be tagged as non-evidentiary, excluded from provenance, and resolved through DOI, title, author, PMID/PMCID, arXiv id, publisher metadata, repository metadata, or other lawful source channels before any claim is promoted.",
+    "source_lead_fields": [
+      "lead_source_kind",
+      "lead_ref_hash",
+      "derived_identifiers",
+      "lawful_resolution_attempts",
+      "resolved_source_ref",
+      "evidence_status"
+    ],
     "blocked_sources": [
       "sci-hub",
       "shadow-library-fulltext"
     ],
     "blocked_reason": "Research provenance must be lawful, reproducible, citeable, and safe to ship into enterprise workflows.",
-    "fallback_when_full_text_unavailable": "Record metadata, abstract, license, access attempt, and mark full_text_status as UNVERIFIABLE."
+    "fallback_when_full_text_unavailable": "Record metadata, abstract, license, lawful access attempt, source lead hash if provided, and mark full_text_status as UNVERIFIABLE."
   }
 }

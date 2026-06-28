@@ -73,7 +73,11 @@ assert.equal(science.schema, "project-telos.science-research-adapters/v1");
 assert.equal(science.freshness_policy.current_source_required, true);
 assert.equal(science.legal_access_policy.lawful_full_text_required, true);
 assert.equal(science.legal_access_policy.illicit_access_sources_allowed, false);
+assert.equal(science.legal_access_policy.source_leads_allowed, true);
+assert.equal(science.legal_access_policy.source_lead_status, "non_evidentiary");
 assert.ok(science.legal_access_policy.blocked_sources.includes("sci-hub"));
+assert.ok(science.legal_access_policy.source_lead_fields.includes("lawful_resolution_attempts"));
+assert.match(science.legal_access_policy.source_lead_policy, /excluded from provenance/);
 
 assert.equal(admissionTelemetry.schema, "project-telos.admission-telemetry/v1");
 assert.ok(admissionTelemetry.required_fields.includes("verification.verdict"));
