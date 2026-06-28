@@ -38,6 +38,25 @@ assert.match(html, /<script src="effects-engine\.js"><\/script>/);
 assert.match(html, /id="effect-intensity"/);
 assert.match(html, /id="effect-density"/);
 assert.match(html, /id="effect-freeze"/);
+assert.match(html, /\.studio-grid\{[^}]*align-items:start/);
+assert.match(html, /\.effect-list\{[^}]*max-height:18rem/);
+assert.match(html, /id="effect-protocol-output"/);
+assert.match(html, /id="effect-copy-receipt"/);
+assert.match(html, /id="effect-export-scene"/);
+assert.match(html, /id="effect-replay-scene"/);
+assert.match(html, /data-preset="scientific"/);
+assert.match(html, /data-preset="radiance"/);
+assert.match(html, /data-preset="flagship"/);
+assert.match(html, /id="engine"/);
+assert.match(html, /Telos Creative Engine modules/);
+assert.match(html, /node demo\/creative-engine\.mjs/);
+assert.match(html, /audio-reactive visual layers/);
+assert.match(html, /mathematicians, physicists, and educators/);
+assert.match(html, /id="flagships"/);
+assert.match(html, /Flagship poster wall/);
+assert.match(html, /data-art="gather"/);
+assert.match(html, /data-art="crucible"/);
+assert.match(html, /<script src="effects-protocol\.js"><\/script>/);
 
 for (const effect of [
   "Retro CGI",

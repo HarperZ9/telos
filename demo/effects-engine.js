@@ -23,23 +23,36 @@
       { id: "voronoi", name: "Voronoi cells", family: "partition", claim: "Nearest-seed regions for segmentation and route-field sketches." },
       { id: "ascii", name: "ASCII raster", family: "terminal", claim: "Glyph-based rasterization for TUI and log-friendly previews." },
       { id: "vector", name: "Vector field", family: "flow", claim: "Directional arrows for flow, gradient, and sensitivity overlays." },
-      { id: "feedback", name: "Feedback trails", family: "temporal", claim: "Frame-to-frame echo paths for history and action-loop memory." }
+      { id: "feedback", name: "Feedback trails", family: "temporal", claim: "Frame-to-frame echo paths for history and action-loop memory." },
+      { id: "halftone", name: "Halftone press", family: "print", claim: "Dot-gain texture, screen tone, and poster-print tactility without hiding the receipt." },
+      { id: "layout", name: "Editorial grid", family: "presentation", claim: "Crop marks, modular columns, hierarchy rails, and critique-friendly spacing checks." }
     ]
   };
+  const protocol = window.TelosEffectsProtocol;
+  if (protocol?.EFFECT_LAYERS) TelosEffects.layers = protocol.EFFECT_LAYERS;
   window.TelosEffects = TelosEffects;
 
   const ctx = canvas.getContext("2d", { willReadFrequently: true });
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
   const buttons = [...document.querySelectorAll("[data-effect]")];
+  const presetButtons = [...document.querySelectorAll("[data-preset]")];
   const intensityInput = document.getElementById("effect-intensity");
   const densityInput = document.getElementById("effect-density");
   const freezeButton = document.getElementById("effect-freeze");
   const stepButton = document.getElementById("effect-step");
   const rerollButton = document.getElementById("effect-reroll");
+  const copyButton = document.getElementById("effect-copy-receipt");
+  const exportButton = document.getElementById("effect-export-scene");
+  const replayButton = document.getElementById("effect-replay-scene");
+  const protocolOutput = document.getElementById("effect-protocol-output");
   const labels = Object.fromEntries(TelosEffects.layers.map((layer) => [layer.id, layer.name]));
   labels.all = "All layers";
+  for (const preset of protocol?.EFFECT_PRESETS ?? []) labels[preset.id] = preset.name;
 
   let mode = "all";
+  let forcedLayers = null;
+  let previousReceipt = null;
+  let lastEnvelope = null;
   let lastFrame = 0;
   let frame = 0;
   let seed = TelosEffects.seed;
@@ -184,16 +197,62 @@
   }
 
   function drawPoster() {
-    ctx.fillStyle = "rgba(248,249,246,.90)";
-    ctx.font = "700 78px Arial Black, sans-serif";
+    ctx.save();
+    ctx.fillStyle = "rgba(248,249,246,.94)";
+    ctx.font = "900 90px Kilon, Arial Black, sans-serif";
     ctx.fillText("TELOS", 54, 118);
-    ctx.font = "700 28px ui-monospace, Consolas, monospace";
-    ctx.fillStyle = "rgba(255,194,92,.90)";
+    ctx.font = "700 25px Conso, ui-monospace, Consolas, monospace";
+    ctx.fillStyle = "rgba(255,194,92,.92)";
     ctx.fillText("MATCH / DRIFT / UNVERIFIABLE", 58, 158);
     ctx.fillStyle = "rgba(70,224,178,.82)";
     ctx.fillRect(58, 178, 250, 12);
     ctx.fillStyle = "rgba(255,96,160,.68)";
     ctx.fillRect(58, 198, 372, 12);
+    ctx.fillStyle = "rgba(82,103,255,.74)";
+    ctx.fillRect(58, 222, 176, 34);
+    ctx.fillStyle = "rgba(248,249,246,.88)";
+    ctx.font = "700 18px Conso, ui-monospace, Consolas, monospace";
+    ctx.fillText("FIVE FLAGSHIPS / ONE ROOM", 68, 245);
+    ctx.restore();
+  }
+
+  function drawHalftone() {
+    const step = Math.max(8, Math.round(20 - density * 10));
+    ctx.save();
+    ctx.globalCompositeOperation = "screen";
+    for (let y = step; y < canvas.height; y += step) {
+      for (let x = step; x < canvas.width; x += step) {
+        const wave = Math.sin((x + seed) * 0.013) + Math.cos((y - seed) * 0.017);
+        const radius = Math.max(0.8, (wave + 2) * 1.25 * intensity);
+        ctx.fillStyle = (x + y) % (step * 4) === 0 ? "rgba(255,194,92,.16)" : "rgba(248,249,246,.08)";
+        ctx.beginPath();
+        ctx.arc(x, y, radius, 0, Math.PI * 2);
+        ctx.fill();
+      }
+    }
+    ctx.restore();
+  }
+
+  function drawLayoutGrid() {
+    const margin = 48;
+    const cols = 6;
+    const rows = 4;
+    const colW = (canvas.width - margin * 2) / cols;
+    const rowH = (canvas.height - margin * 2) / rows;
+    ctx.save();
+    ctx.strokeStyle = "rgba(248,249,246,.16)";
+    ctx.lineWidth = 1;
+    ctx.strokeRect(margin, margin, canvas.width - margin * 2, canvas.height - margin * 2);
+    for (let i = 1; i < cols; i++) line(margin + i * colW, margin, margin + i * colW, canvas.height - margin, "rgba(70,224,178,.14)");
+    for (let i = 1; i < rows; i++) line(margin, margin + i * rowH, canvas.width - margin, margin + i * rowH, "rgba(255,194,92,.14)");
+    line(24, 24, 64, 24, "rgba(255,96,160,.46)", 2);
+    line(24, 24, 24, 64, "rgba(255,96,160,.46)", 2);
+    line(canvas.width - 64, canvas.height - 24, canvas.width - 24, canvas.height - 24, "rgba(255,96,160,.46)", 2);
+    line(canvas.width - 24, canvas.height - 64, canvas.width - 24, canvas.height - 24, "rgba(255,96,160,.46)", 2);
+    ctx.fillStyle = "rgba(248,249,246,.70)";
+    ctx.font = "700 14px Conso, ui-monospace, Consolas, monospace";
+    ctx.fillText("grid:6x4 / hierarchy:display-data-receipt", margin, canvas.height - 24);
+    ctx.restore();
   }
 
   function drawCrt() {
@@ -335,11 +394,35 @@
     ctx.putImageData(image, 0, 0);
   }
 
+  function makeProtocolEnvelope(layers, renderMs) {
+    if (!protocol?.createSceneSpec || !protocol?.createSceneReceipt || !protocol?.createReceiptChain) return null;
+    const spec = protocol.createSceneSpec({
+      density,
+      frame,
+      host: "browser-demo",
+      intensity,
+      layers,
+      mode,
+      seed,
+      source: "demo/index.html"
+    });
+    const runtime = { frame, reduced_motion: reducedMotion.matches, render_ms: renderMs, result_ref: "canvas://effect-canvas" };
+    const sceneReceipt = previousReceipt ? protocol.createReceiptChain(spec, previousReceipt, runtime) : protocol.createSceneReceipt(spec, runtime);
+    previousReceipt = sceneReceipt;
+    return {
+      encoded_scene: protocol.encodeSceneSpec ? protocol.encodeSceneSpec(spec) : "",
+      spec,
+      receipt: sceneReceipt
+    };
+  }
+
   function activeLayers() {
+    if (Array.isArray(forcedLayers) && forcedLayers.length) return forcedLayers;
     return mode === "all" ? TelosEffects.layers.map((layer) => layer.id) : [mode];
   }
 
   function render(time = 0) {
+    const started = performance.now();
     clear();
     const layers = activeLayers();
     if (layers.includes("clustered")) drawClustered();
@@ -352,14 +435,21 @@
     if (layers.includes("feedback")) drawFeedback(time);
     if (layers.includes("plotter")) drawPlotter(time);
     if (layers.includes("fractal")) drawFractal(820, 510, 72, -Math.PI / 2, 8);
+    if (layers.includes("layout")) drawLayoutGrid();
     if (layers.includes("poster")) drawPoster();
+    if (layers.includes("halftone")) drawHalftone();
     if (layers.includes("ascii")) drawAscii();
     if (layers.includes("dither")) drawDither();
     if (layers.includes("pixelsort")) applyPixelSort();
     if (layers.includes("chromatic")) applyChromaticSplit(time);
     if (layers.includes("glitch")) applyGlitch(time);
     if (layers.includes("crt")) drawCrt();
-    receipt.value = `Scene receipt: mode=${labels[mode]}; seed=${seed}; layers=${layers.map((layer) => labels[layer]).join(" + ")}; intensity=${Math.round(intensity * 100)}; density=${Math.round(density * 100)}; frame=${frame}; status=MATCH; fallback=canvas+text; reduced_motion=${reducedMotion.matches}`;
+    const renderMs = Math.max(0, Math.round(performance.now() - started));
+    lastEnvelope = makeProtocolEnvelope(layers, renderMs);
+    const spec = lastEnvelope?.spec;
+    const sceneReceipt = lastEnvelope?.receipt;
+    receipt.value = `Scene receipt: mode=${labels[mode]}; seed=${seed}; layers=${layers.map((layer) => labels[layer]).join(" + ")}; intensity=${Math.round(intensity * 100)}; density=${Math.round(density * 100)}; frame=${frame}; action_intent_id=${spec?.action_intent_id ?? "local"}; spec_hash=${spec?.spec_hash ?? "local"}; receipt_hash=${sceneReceipt?.receipt_hash ?? "local"}; status=MATCH; fallback=canvas+text; reduced_motion=${reducedMotion.matches}`;
+    if (protocolOutput && lastEnvelope) protocolOutput.value = JSON.stringify(lastEnvelope, null, 2);
   }
 
   function tick(time) {
@@ -371,13 +461,73 @@
     requestAnimationFrame(tick);
   }
 
+  function syncPressed() {
+    for (const item of buttons) item.setAttribute("aria-pressed", String(!forcedLayers && item.dataset.effect === mode));
+    for (const item of presetButtons) item.setAttribute("aria-pressed", String(Boolean(forcedLayers) && item.dataset.preset === mode));
+  }
+
   function setMode(nextMode) {
     mode = nextMode;
-    for (const item of buttons) item.setAttribute("aria-pressed", String(item.dataset.effect === nextMode));
+    forcedLayers = null;
+    previousReceipt = null;
+    syncPressed();
     render(performance.now());
   }
 
+  function setPreset(presetId) {
+    const preset = (protocol?.EFFECT_PRESETS ?? []).find((item) => item.id === presetId);
+    if (!preset) return;
+    mode = preset.id;
+    forcedLayers = protocol.normalizeLayerList ? protocol.normalizeLayerList(preset.layers) : preset.layers;
+    previousReceipt = null;
+    syncPressed();
+    render(performance.now());
+  }
+
+  function applySceneSpec(spec) {
+    if (!spec || !Array.isArray(spec.layers)) return;
+    seed = Number(spec.seed) || seed;
+    mode = spec.mode || "all";
+    forcedLayers = protocol?.normalizeLayerList ? protocol.normalizeLayerList(spec.layers) : spec.layers;
+    intensity = Math.max(0, Math.min(1, Number(spec.intensity) || intensity));
+    density = Math.max(0, Math.min(1, Number(spec.density) || density));
+    frame = Math.max(0, Math.trunc(Number(spec.frame) || 0));
+    if (intensityInput) intensityInput.value = String(Math.round(intensity * 100));
+    if (densityInput) densityInput.value = String(Math.round(density * 100));
+    previousReceipt = null;
+    syncPressed();
+    render(performance.now());
+  }
+
+  async function copyReceipt() {
+    const text = protocolOutput?.value || receipt.value;
+    if (navigator.clipboard?.writeText) await navigator.clipboard.writeText(text);
+    else protocolOutput?.select();
+  }
+
+  function exportScene() {
+    const text = protocolOutput?.value || JSON.stringify(lastEnvelope, null, 2);
+    if (!text || typeof Blob === "undefined") return;
+    const url = URL.createObjectURL(new Blob([text], { type: "application/json" }));
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = `telos-scene-${seed}.json`;
+    link.click();
+    URL.revokeObjectURL(url);
+  }
+
+  function replayScene() {
+    if (!protocolOutput?.value) return;
+    try {
+      const parsed = JSON.parse(protocolOutput.value);
+      applySceneSpec(parsed.spec || parsed);
+    } catch {
+      if (protocol?.decodeSceneSpec) applySceneSpec(protocol.decodeSceneSpec(protocolOutput.value.trim()));
+    }
+  }
+
   for (const button of buttons) button.addEventListener("click", () => setMode(button.dataset.effect));
+  for (const button of presetButtons) button.addEventListener("click", () => setPreset(button.dataset.preset));
   intensityInput?.addEventListener("input", () => { intensity = Number(intensityInput.value) / 100; render(performance.now()); });
   densityInput?.addEventListener("input", () => { density = Number(densityInput.value) / 100; render(performance.now()); });
   freezeButton?.addEventListener("click", () => {
@@ -387,7 +537,10 @@
     render(performance.now());
   });
   stepButton?.addEventListener("click", () => { frame += 1; render(frame * 120); });
-  rerollButton?.addEventListener("click", () => { seed += 97; frame = 0; render(performance.now()); });
+  rerollButton?.addEventListener("click", () => { seed += 97; frame = 0; previousReceipt = null; render(performance.now()); });
+  copyButton?.addEventListener("click", () => { void copyReceipt(); });
+  exportButton?.addEventListener("click", exportScene);
+  replayButton?.addEventListener("click", replayScene);
   reducedMotion.addEventListener("change", () => render(performance.now()));
 
   render(0);

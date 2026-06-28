@@ -1,0 +1,267 @@
+{
+  "schema": "project-telos.creative-engine/v1",
+  "tool": "telos.creative.engine",
+  "generated_at": "1970-01-01T00:00:00.000Z",
+  "contract": {
+    "protocol_agnostic": true,
+    "receipts_required": true,
+    "raw_assets_required_for_interop": false,
+    "io_surfaces": [
+      "cli-json",
+      "mcp-json-rpc",
+      "browser-canvas",
+      "web-audio",
+      "file-artifact",
+      "app-bridge"
+    ],
+    "verdicts": [
+      "MATCH",
+      "DRIFT",
+      "UNVERIFIABLE"
+    ],
+    "privacy_boundary": "Interop requires hashes, specs, receipts, and redacted artifact refs; raw prompts, raw private assets, and private evidence are not required."
+  },
+  "domains": [
+    {
+      "id": "generative_art",
+      "purpose": "Seeded visual systems for repeatable variation, critique, and replay."
+    },
+    {
+      "id": "retro_cgi",
+      "purpose": "Wireframes, shaded primitives, old-computer display language, and measurement overlays."
+    },
+    {
+      "id": "raster_fx",
+      "purpose": "Dither, pixel sorting, halftone, glitch, CRT, chromatic, contour, and export filters."
+    },
+    {
+      "id": "sound",
+      "purpose": "Web Audio and DFT-backed sound generation, sonification, and audio-reactive visuals."
+    },
+    {
+      "id": "film_media",
+      "purpose": "Shot/frame transforms, poster systems, film texture, and media export receipts."
+    },
+    {
+      "id": "typography",
+      "purpose": "Display typography, generative glyph studies, and font-lab style experiments."
+    },
+    {
+      "id": "math_physics",
+      "purpose": "Flow fields, harmonographs, n-dimensional geometry, particles, and measurable constants."
+    },
+    {
+      "id": "node_graph",
+      "purpose": "TouchDesigner-compatible recipes and modular effect graphs for app, TUI, and IDE hosts."
+    },
+    {
+      "id": "verification",
+      "purpose": "Scene specs, action identities, receipt chains, replay, and MATCH/DRIFT/UNVERIFIABLE checks."
+    }
+  ],
+  "techniques": [
+    {
+      "id": "dither.ordered-bayer",
+      "status": "live",
+      "source": "demo/effects-engine.js",
+      "domain": "raster_fx",
+      "interop": "scene-spec layer dither",
+      "claim": "Ordered threshold texture for low-bit previews and export stress tests."
+    },
+    {
+      "id": "pixel-sort.luminance-runs",
+      "status": "live",
+      "source": "demo/effects-engine.js",
+      "domain": "raster_fx",
+      "interop": "scene-spec layer pixelsort",
+      "claim": "Luminance-ranked row fragments that make raster transforms inspectable."
+    },
+    {
+      "id": "halftone.press-screen",
+      "status": "live",
+      "source": "demo/effects-engine.js",
+      "domain": "film_media",
+      "interop": "scene-spec layer halftone",
+      "claim": "Dot-gain and press-screen texture for poster and print previews."
+    },
+    {
+      "id": "audio.additive-web-audio",
+      "status": "revival-ready",
+      "source": "demo/render-sound/index.mjs",
+      "domain": "sound",
+      "interop": "web-audio node or artifact renderer",
+      "claim": "Additive wave and spectral tools can become sound layers with receipts."
+    },
+    {
+      "id": "font.generative-glyph-lab",
+      "status": "planned",
+      "source": "docs/brand/telos-hero.png",
+      "domain": "typography",
+      "interop": "font specimen artifact with receipt",
+      "claim": "Kilon and Conso presentation can seed future generated glyph and specimen tools without committing purchased font files."
+    },
+    {
+      "id": "touchdesigner.node-graph-compatible",
+      "status": "planned",
+      "source": "demo/effects-protocol.js",
+      "domain": "node_graph",
+      "interop": "scene-spec graph nodes and ports",
+      "claim": "Effects can be represented as modular recipe nodes for visual-programming hosts."
+    },
+    {
+      "id": "physics.particle-field",
+      "status": "live",
+      "source": "demo/effects-engine.js",
+      "domain": "math_physics",
+      "interop": "scene-spec layer generative",
+      "claim": "Seeded particle and flow-field sketches expose sensitivity and perturbation maps."
+    },
+    {
+      "id": "cgi.clustered-forward-lighting",
+      "status": "live",
+      "source": "demo/effects-engine.js",
+      "domain": "retro_cgi",
+      "interop": "scene-spec layer clustered",
+      "claim": "Screen clusters and light bins preview a future clustered-forward renderer."
+    }
+  ],
+  "live_modules": [
+    {
+      "path": "demo/effects-engine.js",
+      "role": "Dependency-free browser creative layer for file, web, and app surfaces."
+    },
+    {
+      "path": "demo/effects-protocol.js",
+      "role": "Scene spec, preset, action identity, receipt hash, and replay protocol."
+    },
+    {
+      "path": "demo/render-nd",
+      "role": "N-dimensional geometry, projection, raster, and WebGL organ."
+    },
+    {
+      "path": "demo/render-sound",
+      "role": "Sound synthesis and DFT organ for sonification and audio-reactive work."
+    },
+    {
+      "path": "demo/sense-core",
+      "role": "Perception, feature, pyramid, distribution, and fusion organ."
+    },
+    {
+      "path": "demo/viable-viz",
+      "role": "Subject, regulator, reconcile, embed, certificate, and flagship loop organ."
+    }
+  ],
+  "revival_candidates": [
+    {
+      "path": "demo/render-nd",
+      "kind": "local organ",
+      "status": "present",
+      "why": "Bring n-dimensional geometry, depth, projection, raster, and WebGL back into Studio scenes."
+    },
+    {
+      "path": "demo/render-sound",
+      "kind": "local organ",
+      "status": "present",
+      "why": "Restore sound generation and spectral analysis as first-class creative layers."
+    },
+    {
+      "path": "demo/sense-core",
+      "kind": "local organ",
+      "status": "present",
+      "why": "Use feature extraction and fusion to let models inspect creative artifacts instead of only describe them."
+    },
+    {
+      "path": "demo/viable-viz",
+      "kind": "local organ",
+      "status": "present",
+      "why": "Keep creative work tied to reconcile, certificate, and regulator primitives."
+    },
+    {
+      "path": "../studio-engine/studio_engine/organs/raster.py",
+      "kind": "sibling repo organ",
+      "status": "revive",
+      "why": "Recover raster effects, dithering, quantization, and image transform code."
+    },
+    {
+      "path": "../studio-engine/studio_engine/organs/sonify.py",
+      "kind": "sibling repo organ",
+      "status": "revive",
+      "why": "Connect visual constants to sound and audio proofs."
+    },
+    {
+      "path": "../studio-engine/studio_engine/organs/flowfield.py",
+      "kind": "sibling repo organ",
+      "status": "revive",
+      "why": "Use flow fields for generative motion, sensitivity maps, and scientific overlays."
+    },
+    {
+      "path": "../studio-engine/studio_engine/organs/harmonograph.py",
+      "kind": "sibling repo organ",
+      "status": "revive",
+      "why": "Restore plotter-friendly oscillator drawings and pendulum studies."
+    },
+    {
+      "path": "../studio-engine/studio_engine/strand/webaudio.py",
+      "kind": "sibling repo strand",
+      "status": "revive",
+      "why": "Emit browser-native audio graphs from engine recipes."
+    },
+    {
+      "path": "../studio-engine/showcase/media.js",
+      "kind": "sibling repo showcase",
+      "status": "revive",
+      "why": "Recover media presentation and capture utilities for the public demo."
+    },
+    {
+      "path": "../studio-libs/render-sound/index.mjs",
+      "kind": "sibling library",
+      "status": "revive",
+      "why": "Reuse tested sound rendering code in the Telos Studio without duplicating it."
+    }
+  ],
+  "roadmap": [
+    {
+      "phase": "revive",
+      "focus": "Restore dormant dithering, pixel sorting, media, sound, flow, harmonograph, and raster organs into runnable adapters."
+    },
+    {
+      "phase": "compose",
+      "focus": "Represent effects, media, audio, and verification as node-graph recipes usable from IDE, CLI, TUI, MCP, and app hosts."
+    },
+    {
+      "phase": "generate",
+      "focus": "Add typography, glyph, poster, film, audio-reactive, and scientific-art generators with export receipts."
+    },
+    {
+      "phase": "verify",
+      "focus": "Every creative action emits scene specs, hashes, receipt chains, replay handles, and MATCH/DRIFT/UNVERIFIABLE results."
+    }
+  ],
+  "presentation": {
+    "fonts": [
+      "Kilon",
+      "Conso"
+    ],
+    "github_surfaces": [
+      "README hero",
+      "repo description",
+      "demo poster wall",
+      "engine manifest"
+    ],
+    "source_leads": [
+      "https://www.reddit.com/r/posterdesign/",
+      "https://www.reddit.com/r/design_critiques/"
+    ],
+    "source_lead_boundary": "Design critique communities are treated as operator-provided inspiration leads; no community artwork is copied into the repository."
+  },
+  "research_receipts": {
+    "math_educator_video_leads": "demo/research/youtube-math-educator-receipts.json",
+    "mission": "Assist mathematicians, physicists, shader artists, and educators with formula-visible, replayable, receipt-backed creative and scientific demos.",
+    "representative_leads": [
+      "https://www.youtube.com/@InigoQuilez",
+      "https://www.youtube.com/watch?v=DAMiS2PGTEE",
+      "https://www.youtube.com/watch?v=rf1FKWaSpEY"
+    ],
+    "boundary": "Video metadata is a source lead. Scientific, benchmark, model-release, and implementation claims require stronger source receipts and Crucible assessments before promotion to MATCH."
+  }
+}

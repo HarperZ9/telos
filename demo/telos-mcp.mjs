@@ -73,6 +73,11 @@ export const tools = [
     name: "telos.rendering.research",
     description: "Return receipt-backed clustered-forward and Gaussian-splatting research seeds for Telos rendering surfaces.",
     inputSchema: emptyInputSchema
+  },
+  {
+    name: "telos.creative.engine",
+    description: "Return the Telos Creative Engine manifest for generative art, sound, typography, media, CGI, math/physics, revived local organs, and receipt-backed creative work.",
+    inputSchema: emptyInputSchema
   }
 ];
 
@@ -88,7 +93,8 @@ const toolScripts = new Map([
   ["telos.action.receipt", ["action-receipt.mjs"]],
   ["telos.loop.ledger", ["loop-ledger.mjs"]],
   ["telos.research.seed", ["research-seed.mjs"]],
-  ["telos.rendering.research", ["rendering-research.mjs"]]
+  ["telos.rendering.research", ["rendering-research.mjs"]],
+  ["telos.creative.engine", ["creative-engine.mjs"]]
 ]);
 
 function runTool(name) {

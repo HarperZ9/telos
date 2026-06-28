@@ -31,7 +31,8 @@ for (const name of [
   "telos.action.receipt",
   "telos.loop.ledger",
   "telos.research.seed",
-  "telos.rendering.research"
+  "telos.rendering.research",
+  "telos.creative.engine"
 ]) {
   assert.ok(names.has(name), `missing ${name}`);
 }
@@ -140,6 +141,17 @@ assert.equal(renderingResearch.result.structuredContent.schema, "project-telos.r
 assert.equal(renderingResearch.result.structuredContent.tool, "telos.rendering.research");
 assert.equal(renderingResearch.result.structuredContent.seeds.length, 2);
 
+const expectedCreativeEngine = JSON.parse(
+  readFileSync(new URL("./integrations/creative-engine-manifest.json", import.meta.url), "utf8")
+);
+const creativeEngine = handleRequest(request("tools/call", {
+  name: "telos.creative.engine",
+  arguments: {}
+}));
+assert.deepEqual(creativeEngine.result.structuredContent, expectedCreativeEngine);
+assert.equal(creativeEngine.result.structuredContent.schema, "project-telos.creative-engine/v1");
+assert.equal(creativeEngine.result.structuredContent.domains.length, 9);
+
 const badTool = handleRequest(request("tools/call", { name: "telos.missing", arguments: {} }));
 assert.equal(badTool.error.code, -32000);
 assert.match(badTool.error.message, /unknown tool/);
@@ -161,3 +173,4 @@ assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.action.
 assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.loop.ledger"));
 assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.research.seed"));
 assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.rendering.research"));
+assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.creative.engine"));
