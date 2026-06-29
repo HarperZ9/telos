@@ -2,7 +2,7 @@ import { actionEnvelope } from "./flagship-action.mjs";
 
 const payload = actionEnvelope({
   tool: "telos",
-  toolVersion: "demo",
+  toolVersion: "0.1.0",
   command: "status",
   native: {
     role: "shared-room-reconciliation",
@@ -33,7 +33,7 @@ const payload = actionEnvelope({
       "telos.revival.registry",
       "telos.display.calibration"
     ],
-    current_status: "source demo with 51-tool five-flagship catalog, context envelopes, context packs, action receipts, loop ledger, objective monitoring, model foundry, MCP freshness, research seeds, transcript-backed thermodynamic research, rendering research, rendering capabilities, measurement layers, creative engine, creative kernels, revival registry, display calibration, and native Telos MCP surface"
+    current_status: "0.1.0 source registry package with 51-tool five-flagship catalog, context envelopes, context packs, action receipts, loop ledger, objective monitoring, model foundry, MCP freshness, research seeds, transcript-backed thermodynamic research, rendering research, rendering capabilities, measurement layers, creative engine, creative kernels, revival registry, display calibration, and native Telos MCP surface"
   },
   nextActions: [
     {

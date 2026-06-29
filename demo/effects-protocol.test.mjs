@@ -1,8 +1,7 @@
 import assert from "node:assert/strict";
-import { createRequire } from "node:module";
 
-const require = createRequire(import.meta.url);
-const protocol = require("./effects-protocol.js");
+await import("./effects-protocol.js");
+const protocol = globalThis.TelosEffectsProtocol;
 
 const {
   EFFECT_LAYERS,

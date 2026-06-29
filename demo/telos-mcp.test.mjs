@@ -16,6 +16,8 @@ assert.equal(
 const init = handleRequest(request("initialize"));
 assert.equal(init.result.protocolVersion, "2025-06-18");
 assert.equal(init.result.serverInfo.name, "project-telos-telos");
+const packageJson = JSON.parse(readFileSync(new URL("../package.json", import.meta.url), "utf8"));
+assert.equal(init.result.serverInfo.version, packageJson.version);
 
 const listed = handleRequest(request("tools/list"));
 const names = new Set(listed.result.tools.map((tool) => tool.name));
@@ -50,6 +52,11 @@ for (const name of [
 for (const tool of tools) {
   assert.equal(tool.inputSchema.type, "object");
   assert.equal(tool.inputSchema.additionalProperties, false);
+  assert.match(tool.description, /^Use /, `${tool.name} description must start with usage guidance`);
+  assert.match(tool.description, /Read-only/, `${tool.name} description must disclose read-only behavior`);
+  assert.match(tool.description, /zero-auth/, `${tool.name} description must disclose auth requirements`);
+  assert.match(tool.description, /no external side effects/, `${tool.name} description must disclose side effects`);
+  assert.match(tool.description, /Returns? /, `${tool.name} description must state return shape`);
 }
 
 const status = handleRequest(request("tools/call", { name: "telos.status", arguments: {} }));
@@ -69,6 +76,14 @@ assert.ok(
   catalog.result.structuredContent.tools.some((tool) => tool.name === "telos.catalog"),
   "catalog includes telos.catalog"
 );
+const descriptionsByName = new Map(tools.map((tool) => [tool.name, tool.description]));
+for (const catalogTool of expectedCatalog.tools.filter((tool) => tool.flagship === "telos")) {
+  assert.equal(
+    catalogTool.description,
+    descriptionsByName.get(catalogTool.name),
+    `${catalogTool.name} catalog description must match MCP tools/list`
+  );
+}
 
 const expectedServerManifest = JSON.parse(
   readFileSync(new URL("./integrations/mcp-server-manifest.json", import.meta.url), "utf8")
