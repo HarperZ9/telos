@@ -29,15 +29,16 @@ function fileExists(root, id, relativePath) {
   return existsSync(fullPath) && statSync(fullPath).isFile();
 }
 
-function readmeSignals(text) {
+function escapeRegExp(value) {
+  return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
+function readmeSignals(text, navRoster) {
+  const navLinked = navRoster.every((slug) =>
+    new RegExp(`github\\.com/HarperZ9/${escapeRegExp(slug)}`, "i").test(text));
   return {
     hero_image: /docs\/brand\/[^)\s"']*hero\.png|<img\b/i.test(text),
-    project_telos_nav: /Project Telos/i.test(text)
-      && /github\.com\/HarperZ9\/gather/i.test(text)
-      && /github\.com\/HarperZ9\/crucible/i.test(text)
-      && /github\.com\/HarperZ9\/index/i.test(text)
-      && /github\.com\/HarperZ9\/forum/i.test(text)
-      && /github\.com\/HarperZ9\/telos/i.test(text),
+    project_telos_nav: /Project Telos/i.test(text) && navLinked,
     ci_badge: /actions\/workflows\/ci\.ya?ml\/badge\.svg/i.test(text),
     version_badge: /badge\/version-|version:/i.test(text),
     license_badge: /badge\/license-|license:/i.test(text),
@@ -61,7 +62,7 @@ function signalFailures(signals, mapping) {
     .map(([, code]) => code);
 }
 
-function analyzeFlagship(root, id) {
+function analyzeFlagship(root, id, navRoster) {
   const repoRoot = path.join(root, id);
   if (!existsSync(repoRoot) || !statSync(repoRoot).isDirectory()) {
     return {
@@ -98,7 +99,7 @@ function analyzeFlagship(root, id) {
         present: true,
         relative_path: readme.relative_path,
         hash: readme.hash,
-        signals: readmeSignals(readme.text)
+        signals: readmeSignals(readme.text, navRoster)
       }
     : { present: false };
   if (!readme) {
@@ -166,7 +167,8 @@ function aggregateVerdict(verdicts) {
 
 export function scanPresentationSurfaces(root = defaultRoot, options = {}) {
   const flagships = options.flagships ?? defaultFlagships;
-  const scanned = flagships.map((id) => analyzeFlagship(root, id));
+  const navRoster = options.navRoster ?? defaultFlagships;
+  const scanned = flagships.map((id) => analyzeFlagship(root, id, navRoster));
   const verdicts = scanned.map((flagship) => flagship.presentation.verdict);
   const failureCodes = unique(scanned.flatMap((flagship) => flagship.presentation.failure_codes));
   return {
@@ -234,7 +236,11 @@ function main() {
   const flagships = flagshipsArg
     ? flagshipsArg.split(",").map((item) => item.trim()).filter(Boolean)
     : undefined;
-  const packet = scanPresentationSurfaces(root, { flagships });
+  const navRosterArg = optionValue(args, "--nav-roster");
+  const navRoster = navRosterArg
+    ? navRosterArg.split(",").map((item) => item.trim()).filter(Boolean)
+    : undefined;
+  const packet = scanPresentationSurfaces(root, { flagships, navRoster });
   if (args.includes("--summary")) {
     process.stdout.write(summary(packet));
   } else {
