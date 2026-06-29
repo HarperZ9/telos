@@ -75,12 +75,16 @@ def repo_dirs(roots: list[Path]) -> list[Path]:
 
 def classify(text: str, repo: Path) -> RepoReport:
     first_screen = "\n".join(text.splitlines()[:35])
+    name = repo_name(repo)
+    warning_screen = first_screen
+    for variant in {name, name.replace("-", " "), name.replace("-", " ").title()}:
+        warning_screen = re.sub(re.escape(variant), "", warning_screen, flags=re.I)
     public = {name: bool(rx.search(text)) for name, rx in PUBLIC_CHECKS.items()}
     developer = {name: bool(rx.search(text)) for name, rx in DEVELOPER_CHECKS.items()}
     missing_public = [name for name, ok in public.items() if not ok]
     missing_developer = [name for name, ok in developer.items() if not ok]
     warnings: list[str] = []
-    if CRYPTIC_FIRST_SCREEN.search(first_screen):
+    if CRYPTIC_FIRST_SCREEN.search(warning_screen):
         warnings.append("cryptic_terms_in_first_screen")
     if not CRYPTO_PROVENANCE.search(text):
         warnings.append("no_receipt_or_provenance_language")
