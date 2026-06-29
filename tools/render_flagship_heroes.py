@@ -213,6 +213,26 @@ def render_all(args: argparse.Namespace, config: dict) -> list[dict]:
                 color = [accent, accent2, accent3][i % 3]
                 rounded(draw, (x, y, x + 382 * SCALE, y + 38 * SCALE), 9 * SCALE, rgba((18, 22, 29), 225), rgba(color, 135), SCALE)
                 draw.line((x + 24 * SCALE, y + 19 * SCALE, x + 330 * SCALE, y + 19 * SCALE), fill=rgba(color, 120), width=2 * SCALE)
+        elif motif == "gamut":
+            tri = [(1006 * SCALE, 206 * SCALE), (1392 * SCALE, 258 * SCALE), (1150 * SCALE, 452 * SCALE)]
+            draw.line([*tri, tri[0]], fill=rgba(accent, 150), width=2 * SCALE, joint="curve")
+            vertex_colors = [(240, 92, 98), (96, 212, 140), (96, 140, 246)]
+            for (px, py), vc in zip(tri, vertex_colors):
+                draw.ellipse((px - 15 * SCALE, py - 15 * SCALE, px + 15 * SCALE, py + 15 * SCALE), fill=rgba(vc, 235), outline=rgba(INK, 80), width=SCALE)
+            wx, wy = 1176 * SCALE, 304 * SCALE
+            draw.ellipse((wx - 10 * SCALE, wy - 10 * SCALE, wx + 10 * SCALE, wy + 10 * SCALE), fill=rgba((245, 246, 238), 235), outline=rgba(INK, 90), width=SCALE)
+            mrng = random.Random(cfg["seed"])
+            for _ in range(12):
+                mx, my = mrng.randrange(1060, 1320) * SCALE, mrng.randrange(236, 410) * SCALE
+                draw.ellipse((mx - 4 * SCALE, my - 4 * SCALE, mx + 4 * SCALE, my + 4 * SCALE), fill=rgba(accent2, 150))
+        elif motif == "effects":
+            for i in range(6):
+                x, y = (978 + (i % 2) * 62) * SCALE, (168 + i * 44) * SCALE
+                color = [accent, accent2, accent3][i % 3]
+                rounded(draw, (x, y, x + 156 * SCALE, y + 32 * SCALE), 8 * SCALE, rgba((20, 24, 31), 220), rgba(color, 150), SCALE)
+                draw.line((x + 156 * SCALE, y + 16 * SCALE, 1336 * SCALE, 330 * SCALE), fill=rgba(color, 95), width=SCALE)
+            rounded(draw, (1300 * SCALE, 300 * SCALE, 1474 * SCALE, 372 * SCALE), 14 * SCALE, rgba((18, 22, 29), 235), rgba(accent, 170), 2 * SCALE)
+            draw.text((1322 * SCALE, 322 * SCALE), "TYPED", font=font_bold, fill=rgba(INK, 235))
         else:
             for r in range(5):
                 box = (990 * SCALE - r * 42 * SCALE, 308 * SCALE - r * 32 * SCALE, 1340 * SCALE + r * 42 * SCALE, 330 * SCALE + r * 32 * SCALE)
@@ -232,9 +252,11 @@ def render_all(args: argparse.Namespace, config: dict) -> list[dict]:
             rounded(draw, (bx, y + 256 * SCALE, bx + width, y + 292 * SCALE), 18 * SCALE, rgba((22, 27, 35), 235), rgba(cfg["accent"], 130), SCALE)
             draw.text((bx + 14 * SCALE, y + 265 * SCALE), badge, font=font_small, fill=(*INK, 230))
             bx += width + 12 * SCALE
-        draw.text((x + 4 * SCALE, 536 * SCALE), "PROJECT TELOS FLAGSHIP  /  CLI + MCP + RECEIPTS", font=font_small, fill=(200, 205, 210, 180))
+        footer = cfg.get("footer", "PROJECT TELOS FLAGSHIP  /  CLI + MCP + RECEIPTS")
+        chip = cfg.get("chip", "VISIBLE STATE  /  FALLBACK  /  REPLAY")
+        draw.text((x + 4 * SCALE, 536 * SCALE), footer, font=font_small, fill=(200, 205, 210, 180))
         rounded(draw, (1030 * SCALE, 508 * SCALE, 1506 * SCALE, 568 * SCALE), 14 * SCALE, rgba((15, 18, 24), 220), rgba(cfg["accent"], 125), SCALE)
-        draw.text((1052 * SCALE, 526 * SCALE), "VISIBLE STATE  /  FALLBACK  /  REPLAY", font=font_small, fill=(*INK, 220))
+        draw.text((1052 * SCALE, 526 * SCALE), chip, font=font_small, fill=(*INK, 220))
 
     for name, cfg in config.items():
         base = Image.new("RGBA", (SIZE[0] * SCALE, SIZE[1] * SCALE), (0, 0, 0, 0))
