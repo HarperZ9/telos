@@ -198,7 +198,7 @@ The flagship is the mission. These open pieces are the bricks it is built from, 
 
 These are open and tested on GitHub. They are not yet packaged for pip or npm.
 
-For the full picture, read [how it works](docs/HOW-IT-WORKS.md), [the architecture](docs/ARCHITECTURE.md), and [who uses it](docs/WHO-USES-IT.md).
+For the full picture, read [the connection map](docs/PROJECT-CONNECTION-MAP.md), [how it works](docs/HOW-IT-WORKS.md), [the architecture](docs/ARCHITECTURE.md), and [who uses it](docs/WHO-USES-IT.md).
 
 ## What it does not claim
 

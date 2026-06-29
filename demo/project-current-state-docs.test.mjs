@@ -11,6 +11,7 @@ function readDoc(relativePath) {
 }
 
 const currentState = readDoc("docs/CURRENT-STATE.md");
+const connectionMap = readDoc("docs/PROJECT-CONNECTION-MAP.md");
 const revival = readDoc("docs/QUALITY-TOOL-REVIVAL.md");
 
 for (const term of [
@@ -42,6 +43,26 @@ for (const term of [
 }
 
 for (const term of [
+  "Project Telos Connection Map",
+  "Gather senses",
+  "Index remembers",
+  "Forum routes",
+  "Crucible verifies",
+  "action_intent_id",
+  "action_receipt",
+  "context_envelope",
+  "verdict_certificate",
+  "MCP gives the port",
+  "OpenTelemetry gives the spans",
+  "Telos gives the durable receipt",
+  "Hyphal Context Protocol",
+  "promotion record",
+  "UNVERIFIABLE"
+]) {
+  assert.match(connectionMap, new RegExp(term.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"), "i"));
+}
+
+for (const term of [
   "quality-tool boundary",
   "calibrate-pro",
   "quanta-color",
@@ -70,3 +91,4 @@ assert.match(currentState, /repo_count[^0-9]+52/i);
 assert.match(currentState, /root_sha256_prefix[^a-f0-9]+92ef331e0850ccf6/i);
 assert.match(currentState, /Telos repo[^.\n]+469ce55/i);
 assert.match(currentState, /51 available tools/i);
+assert.match(currentState, /PROJECT-CONNECTION-MAP\.md/i);
