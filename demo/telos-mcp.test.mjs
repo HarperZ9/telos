@@ -30,6 +30,7 @@ for (const name of [
   "telos.server.manifest",
   "telos.mcp.freshness",
   "telos.ci.doctor",
+  "telos.ci.triage",
   "telos.presentation.doctor",
   "telos.accessibility.doctor",
   "telos.performance.doctor",
@@ -125,6 +126,15 @@ assert.deepEqual(ciDoctor.result.structuredContent, expectedCiDoctor);
 assert.equal(ciDoctor.result.structuredContent.schema, "project-telos.ci-doctor/v1");
 assert.equal(ciDoctor.result.structuredContent.aggregate.flagship_count, 5);
 assert.equal(ciDoctor.result.structuredContent.aggregate.verdict, "MATCH");
+
+const ciTriage = handleRequest(request("tools/call", {
+  name: "telos.ci.triage",
+  arguments: {}
+}));
+assert.equal(ciTriage.result.structuredContent.schema, "project-telos.ci-triage/v1");
+assert.equal(ciTriage.result.structuredContent.tool, "telos.ci.triage");
+assert.equal(ciTriage.result.structuredContent.aggregate.blocking_failure_count, 2);
+assert.equal(ciTriage.result.structuredContent.privacy_boundary.raw_logs_included, false);
 
 const presentationDoctor = handleRequest(request("tools/call", {
   name: "telos.presentation.doctor",
@@ -381,6 +391,7 @@ assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.catalog
 assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.server.manifest"));
 assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.mcp.freshness"));
 assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.ci.doctor"));
+assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.ci.triage"));
 assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.presentation.doctor"));
 assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.accessibility.doctor"));
 assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.performance.doctor"));
