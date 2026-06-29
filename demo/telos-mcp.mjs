@@ -130,6 +130,11 @@ export const tools = [
     inputSchema: emptyInputSchema
   },
   {
+    name: "telos.workstation.substrate",
+    description: "Use when a host needs public-safe aggregate intake for local workstation repositories and private/local lane families. Read-only, zero-auth, no external side effects. Returns a JSON workstation substrate register.",
+    inputSchema: emptyInputSchema
+  },
+  {
     name: "telos.display.calibration",
     description: "Use when display, color, ICC/LUT, artifact refs, or measurement gates need a non-mutating calibration contract. Read-only, zero-auth, no external side effects. Returns a JSON display-calibration contract.",
     inputSchema: emptyInputSchema
@@ -160,6 +165,7 @@ const toolScripts = new Map([
   ["telos.creative.kernels", ["creative-kernels.mjs"]],
   ["telos.revival.registry", ["revival-registry.mjs"]],
   ["telos.second_level.queue", ["second-level-flagship-queue.mjs"]],
+  ["telos.workstation.substrate", ["workstation-substrate.mjs"]],
   ["telos.display.calibration", ["display-calibration.mjs"]]
 ]);
 

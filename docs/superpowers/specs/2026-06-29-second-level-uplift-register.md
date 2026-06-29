@@ -29,7 +29,7 @@ Update `demo/integrations/second-level-flagship-queue.json` and its tests. Keep 
 None identified.
 
 ## Verification Evidence
-- Index MCP map over `C:\dev` reported 123 repositories: 113 public-class, 10 local-class, 93 dirty, root SHA256 prefix `99e773d965f606c9`.
+- Index MCP map over the development root now reports 124 repositories: 114 public-class, 10 local-class, 93 dirty, root SHA256 prefix `99e773d965f606c9`.
 - `node demo\second-level-flagship-queue.mjs --summary` reports `public          15` and `private_tranche 5`.
 - Fail-fast local CI-equivalent Telos run completed all contract tests listed in `.github/workflows/ci.yml`, plus the new `mcp-freshness`, `project-current-state-docs`, and `second-level-flagship-queue` tests, then ran catalog, server manifest, room, and workflow smoke commands.
 - `git diff --check` passed. The changed-content credential scan only matched benign documentation terms such as `secret-redact-io`, `credentials`, and `credential collection`; no credential values or key material were present.

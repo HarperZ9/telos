@@ -1062,6 +1062,27 @@
       ]
     },
     {
+      "name": "telos.workstation.substrate",
+      "flagship": "telos",
+      "description": "Use when a host needs public-safe aggregate intake for local workstation repositories and private/local lane families. Read-only, zero-auth, no external side effects. Returns a JSON workstation substrate register.",
+      "cli": [
+        "node",
+        "demo/workstation-substrate.mjs"
+      ],
+      "mcp": {
+        "status": "available",
+        "server": "telos",
+        "method": "tools/call",
+        "tool": "telos.workstation.substrate"
+      },
+      "next_actions": [
+        "telos.second_level.queue",
+        "telos.revival.registry",
+        "gather.docs",
+        "crucible.review"
+      ]
+    },
+    {
       "name": "telos.display.calibration",
       "flagship": "telos",
       "description": "Use when display, color, ICC/LUT, artifact refs, or measurement gates need a non-mutating calibration contract. Read-only, zero-auth, no external side effects. Returns a JSON display-calibration contract.",
