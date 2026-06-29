@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="docs/brand/telos-hero.svg" alt="Project Telos, the flagship membrane for verified contact with state and range">
+  <img src="docs/brand/telos-hero.svg" alt="Project Telos, verified contact with state and range">
 </p>
 <!-- Project mark: docs/brand/telos-mark.svg -->
 
@@ -18,6 +18,8 @@
 Zero dependencies, Node 18 or newer.
 
 ```bash
+git clone https://github.com/HarperZ9/telos.git
+cd telos
 node demo/run.mjs
 node demo/catalog.mjs --summary
 node demo/server-manifest.mjs --summary
@@ -29,10 +31,10 @@ Use `node demo/server-manifest.mjs --summary` for the five-server MCP launch map
 
 ## Why it matters
 
-The hard part of AI work is not producing an answer. It is keeping state, perception,
-action, and verification in the same room long enough for a human or another system to
-re-check what happened. Telos is the membrane for that: a way to let a model propose
-without letting confidence become the proof.
+The hard part of AI work is not producing an answer. It is keeping state,
+perception, action, and verification in the same room long enough for a human or
+another system to re-check what happened. Telos is the shared work surface for
+that: a way to let a model propose without letting confidence become the proof.
 
 ## Work with it
 
