@@ -37,7 +37,9 @@ for (const term of [
   "telos.model.foundry",
   "telos.mcp.freshness",
   "telos.research.thermodynamic",
-  "Thermodynamic AI Chip"
+  "Thermodynamic AI Chip",
+  "second-level flagship queue",
+  "second-level-flagship-queue"
 ]) {
   assert.match(currentState, new RegExp(term.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"), "i"));
 }
@@ -93,7 +95,10 @@ for (const term of [
   "defensive",
   "creative",
   "machine learning",
-  "science"
+  "science",
+  "Second-Level Flagship Queue",
+  "reconcile",
+  "model-provenance-validator"
 ]) {
   assert.match(revival, new RegExp(term.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"), "i"));
 }
@@ -106,3 +111,4 @@ assert.match(currentState, /51 available tools/i);
 assert.match(currentState, /PROJECT-CONNECTION-MAP\.md/i);
 assert.match(currentState, /77 visible HarperZ9 repos/i);
 assert.match(currentState, /raw-native/i);
+assert.match(currentState, /10 public-safe candidates/i);

@@ -13,6 +13,9 @@ All notable changes to Project Telos. Telos is currently a source demo and share
 - Revival registry: promotes sanitized local-only lane records for raw-native, studio-libs, and
   the Forum archive, raising the registry to 13 tools while keeping raw private viability notes
   out of git.
+- Second-level queue: adds `project-telos.second-level-flagship-queue/v1`,
+  `node demo/second-level-flagship-queue.mjs`, and tests to track public-safe next-wave
+  flagship candidates while summarizing private/local-only work as lane families.
 - Action receipts: hardens `project-telos.action-receipt/v1` for external writes by separating durable receipts
   from trace spans, adding external action kinds, authority/execution/evidence/review/compensation refs,
   redacted before/after evidence, source-correction provenance, and negative cases for authority gaps,
