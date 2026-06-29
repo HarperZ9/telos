@@ -1,6 +1,6 @@
 # Project Telos Current State
 
-Generated: 2026-06-28
+Generated: 2026-06-29
 
 This document is a live state packet for Project Telos. It is deliberately evidence-first: current capability, repo shape, and ambition are separated so the project can grow without turning roadmap into a false capability claim.
 
@@ -18,6 +18,7 @@ This document is a live state packet for Project Telos. It is deliberately evide
 - Telos catalog now presents 51 available tools across the five flagships, including `telos.context.pack`, `telos.model.foundry`, `telos.mcp.freshness`, and `telos.research.thermodynamic`.
 - The canonical connection and distribution map now lives at `docs/PROJECT-CONNECTION-MAP.md`. It treats the five flagships as the current organs and the wider HarperZ9 public repo corpus as Telos growth tissue.
 - GitHub authenticated inventory checked 77 visible HarperZ9 repos: 47 public non-forks, 4 public forks, 25 private active repos, and 1 private archived repo. Private and local-only viability stays in ignored local packets until sanitized.
+- Local-only viability now has public-safe revival records for `raw-native`, `studio-libs`, and `forum-archive`: deterministic renderer verification, studio perception organ, and orchestration archive. Raw local viability notes remain ignored and are not public evidence.
 - Crucible current-state thesis `661f7d4089347607` assessed 5 claims: 5 `MATCH`, 0 `DRIFT`, 0 `UNVERIFIABLE`. Report: `docs/verification/2026-06-28-current-state-report.md`; run record: `docs/verification/2026-06-28-current-state-run.json`.
 
 ## Moving Target Rule
@@ -56,6 +57,9 @@ Telos Engine is larger than the website Studio demo.
 - `telos` contains the flagship action contracts, tool catalog, MCP manifest, action receipts, context envelopes, loop ledger, creative engine manifest, measurement layers, and revival registry.
 - `studio-engine` is part of the Telos Engine lineage. Its README describes a zero-dependency creative-verification engine that emits witnessed Worlds, render programs, audio programs, timelines, and receipts.
 - `reconcile` is also part of the Telos Engine lineage. Its README describes a node/browser creative-verification engine where generated artifacts are perceived, judged against independent criteria, refined, composed, choreographed, and witnessed.
+- `raw-native` is now a local-only revival candidate for deterministic renderer verification: CPU G-buffer rasterization, ray-traced AO oracle checks, SSAO comparison, bounded allocation, and witnessed certificates.
+- `studio-libs` is now a local-only revival candidate for the studio perception organ: nD rendering, layered sense-core readouts, and a Node-stdlib MCP surface for render, perceive, and measure operations.
+- `forum-archive` is now a local-only revival candidate for orchestration archive work: supervision-tree primitives, event/task scheduling, hashing, and compatibility diffing against current Forum.
 
 These repos should converge by contract, not by a rushed copy. The shared boundary is the World/media graph/receipt model: source, transform, criterion, rendered program, measurement, verdict, and replay reference.
 

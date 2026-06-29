@@ -92,6 +92,13 @@ action. Code import comes later, if the receipts and boundaries hold.
 | Sites, product shells, and distribution surfaces | `.github`, `HarperZ9`, `consulting-template-kit`, `wol-pi` | Community defaults, profile surface, reusable documentation/product templates, and small operational utilities. |
 | External forks and upstream proving grounds | `rewardspy`, `numpy`, `linguist`, `awesome-harness-engineering` | Upstream contribution, benchmark, and interoperability proving grounds. Fork status must remain explicit. |
 
+Sanitized local-only candidates already promoted in
+`demo/integrations/revival-registry.json`: `raw-native` for deterministic
+renderer verification, `studio-libs` for the studio perception organ, and
+`forum-archive` for orchestration archive recovery. Their public records use
+README hashes, capability summaries, risk boundaries, and next actions only.
+Raw local viability packets remain outside git.
+
 Private and local-only tools follow the same lane rule but stay in local
 viability packets until a public-safe summary exists. The public map may say the
 corpus exists and what class of lane it feeds; it must not publish private

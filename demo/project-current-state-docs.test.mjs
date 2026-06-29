@@ -48,6 +48,9 @@ for (const term of [
   "constellation",
   "public non-forks",
   "private active repos",
+  "raw-native",
+  "studio-libs",
+  "forum-archive",
   "seed bank",
   "Gather senses",
   "Index remembers",
@@ -80,6 +83,9 @@ for (const term of [
   "repo-proof-index",
   "release-surface-scanner",
   "gpu-trace-validator",
+  "raw-native",
+  "studio-libs",
+  "forum-archive",
   "studio-engine",
   "reconcile",
   "promotion-ready",
@@ -99,3 +105,4 @@ assert.match(currentState, /Telos repo[^.\n]+469ce55/i);
 assert.match(currentState, /51 available tools/i);
 assert.match(currentState, /PROJECT-CONNECTION-MAP\.md/i);
 assert.match(currentState, /77 visible HarperZ9 repos/i);
+assert.match(currentState, /raw-native/i);

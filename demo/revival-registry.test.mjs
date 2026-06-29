@@ -27,7 +27,10 @@ for (const id of [
   "secret-redact-io",
   "repo-proof-index",
   "release-surface-scanner",
-  "gpu-trace-validator"
+  "gpu-trace-validator",
+  "raw-native",
+  "studio-libs",
+  "forum-archive"
 ]) {
   assert.ok(byId.has(id), `missing revived tool ${id}`);
 }
@@ -72,6 +75,33 @@ assert.ok(curator.integration_targets.includes("crucible.assess"));
 assert.match(curator.risk_boundary, /not a security boundary/);
 assert.ok(curator.provenance.receipts.some((receipt) => receipt.sha256.startsWith("134f4b95")));
 
+const rawNative = byId.get("raw-native");
+assert.equal(rawNative.promotion_lane, "deterministic-renderer-verification");
+assert.equal(rawNative.status, "promotion-ready");
+assert.ok(rawNative.capabilities.includes("ray-traced ambient-occlusion oracle"));
+assert.ok(rawNative.flagship_hosts.includes("telos.rendering.capabilities"));
+assert.ok(rawNative.integration_targets.includes("crucible.measurement_gate"));
+assert.match(rawNative.risk_boundary, /no proprietary game runtime/);
+assert.ok(rawNative.provenance.receipts.some((receipt) => receipt.sha256.startsWith("27301966")));
+
+const studioLibs = byId.get("studio-libs");
+assert.equal(studioLibs.promotion_lane, "studio-perception-organ");
+assert.equal(studioLibs.status, "promotion-ready");
+assert.ok(studioLibs.capabilities.includes("render-nd geometry and projection"));
+assert.ok(studioLibs.capabilities.includes("Node-stdlib studio perception MCP server"));
+assert.ok(studioLibs.integration_targets.includes("telos.measurement.layers"));
+assert.match(studioLibs.risk_boundary, /does not decide when a host should invoke it/);
+assert.ok(studioLibs.provenance.receipts.some((receipt) => receipt.sha256.startsWith("5fece630")));
+
+const forumArchive = byId.get("forum-archive");
+assert.equal(forumArchive.promotion_lane, "orchestration-archive");
+assert.equal(forumArchive.status, "promotion-candidate");
+assert.ok(forumArchive.capabilities.includes("supervision-tree primitives"));
+assert.ok(forumArchive.integration_targets.includes("forum.route"));
+assert.ok(forumArchive.integration_targets.includes("telos.loop.ledger"));
+assert.match(forumArchive.risk_boundary, /diff concepts against current Forum/);
+assert.ok(forumArchive.provenance.receipts.some((receipt) => receipt.sha256.startsWith("51d46dd4")));
+
 for (const tool of registry.tools) {
   assert.ok(tool.origin_paths.length > 0, `${tool.id} has origin paths`);
   assert.ok(tool.flagship_hosts.length > 0, `${tool.id} has flagship hosts`);
@@ -95,6 +125,6 @@ const summary = spawnSync(process.execPath, [path.join(here, "revival-registry.m
 });
 assert.equal(summary.status, 0, summary.stderr || summary.stdout);
 assert.match(summary.stdout, /Telos Revival Registry/);
-assert.match(summary.stdout, /tools\s+10/);
+assert.match(summary.stdout, /tools\s+13/);
 assert.match(summary.stdout, /display-calibration/);
 assert.match(summary.stdout, /quarantine-and-adapt/);
