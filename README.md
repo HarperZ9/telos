@@ -25,6 +25,7 @@ node demo/catalog.mjs --summary
 node demo/server-manifest.mjs --summary
 node demo/ci-doctor.mjs --summary
 node demo/ci-triage.mjs --summary
+node demo/ci-triage.mjs --gh-run HarperZ9/seed#28353077838 --summary
 node demo/presentation-doctor.mjs --summary
 node demo/accessibility-doctor.mjs --summary
 node demo/performance-doctor.mjs --summary
@@ -53,7 +54,7 @@ Use `node demo/server-manifest.mjs --summary` for the five-server MCP launch map
 Use `npm start` or `node demo/telos-mcp.mjs` to run the Telos stdio MCP server for registry and host introspection.
 Use `node demo/mcp-freshness.mjs --observed observed.json` to turn host-loaded MCP state, including declared behavior probes, into a `MATCH`, `DRIFT`, or `UNVERIFIABLE` freshness verdict.
 Use `node demo/ci-doctor.mjs --summary` for the five-flagship GitHub Actions compatibility receipt: latest CI state, Node 24 migration markers, action-major baselines, and failure routes. Use `node demo/ci-doctor.mjs --scan-root .. --summary` to rescan local flagship workflow files without raw logs, GitHub writes, or workflow mutation.
-Use `node demo/ci-triage.mjs --summary` for CI failure routing receipts: fatal test/format/step failures are separated from Node runtime migration warnings before remediation is chosen.
+Use `node demo/ci-triage.mjs --summary` for offline CI failure routing receipts, or `node demo/ci-triage.mjs --gh-run owner/repo#run_id --summary` for live read-only GitHub Actions intake. Fatal test/format/step failures are separated from Node runtime migration warnings before remediation is chosen.
 Use `node demo/presentation-doctor.mjs --summary` for the five-flagship README, changelog, and brand-asset parity receipt. It scans sibling checkouts and emits `MATCH`, `DRIFT`, or `UNVERIFIABLE` without raw document bodies or absolute paths.
 Use `node demo/accessibility-doctor.mjs --summary` for static Studio accessibility receipts: language, viewport, skip link, focus-visible, reduced motion, labeled controls, live regions, and canvas fallbacks without raw HTML or browser automation.
 Use `node demo/performance-doctor.mjs --summary` for static Studio performance and efficiency receipts: byte budgets, script/style/font budgets, approved external hosts, media dimensions, motion/autoplay controls, and embedding-safe asset checks without raw HTML or browser automation.

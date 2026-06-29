@@ -1,4 +1,5 @@
 import { createHash } from "node:crypto";
+import { execFileSync } from "node:child_process";
 import { readFileSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -17,6 +18,8 @@ function unique(values) {
 function sanitizeLine(line) {
   const authHeader = "Author" + "ization";
   return line
+    .replace(/\u001b\[[0-9;]*m/g, "")
+    .replace(/^[^\t\r\n]+\t[^\t\r\n]+\t\d{4}-\d\d-\d\dT[^\s]+\s+/g, "")
     .replace(/[A-Z]:\\[^:\n\r]+/g, "<runner-path>")
     .replace(/\/home\/runner\/work\/[^\s:]+/g, "<runner-path>")
     .replace(/gh[op]_[A-Za-z0-9_]+/g, "<redacted-token>")
@@ -111,8 +114,7 @@ export function classifyLogText(logText, metadata = {}) {
   };
 }
 
-export function buildTriagePacket(options = {}) {
-  const cases = (options.cases ?? []).map((item) => classifyLogText(item.log_text ?? "", item));
+function assembleTriagePacket(cases, options = {}) {
   const failureCodes = unique(cases.flatMap((item) => item.failure_codes));
   const warningCodes = unique(cases.flatMap((item) => item.warning_codes));
   const blockingCount = cases.filter((item) => item.blocking_failure).length;
@@ -153,6 +155,51 @@ export function buildTriagePacket(options = {}) {
   };
 }
 
+export function buildTriagePacket(options = {}) {
+  const cases = (options.cases ?? []).map((item) => classifyLogText(item.log_text ?? "", item));
+  return assembleTriagePacket(cases, options);
+}
+
+export function parseGithubRunRef(value) {
+  const match = /^([A-Za-z0-9_.-]+\/[A-Za-z0-9_.-]+)[#:](\d+)$/.exec(value ?? "");
+  if (!match) {
+    throw new Error("Expected --gh-run value like owner/repo#123456789 or owner/repo:123456789.");
+  }
+  return { repo: match[1], runId: match[2] };
+}
+
+function runGh(args) {
+  return execFileSync("gh", args, {
+    encoding: "utf8",
+    maxBuffer: 16 * 1024 * 1024
+  });
+}
+
+export function caseFromGithubRun(ref, gh = runGh) {
+  const { repo, runId } = parseGithubRunRef(ref);
+  const metadata = JSON.parse(gh([
+    "run",
+    "view",
+    runId,
+    "--repo",
+    repo,
+    "--json",
+    "databaseId,workflowName,url,conclusion,status,headSha"
+  ]));
+  const logText = gh(["run", "view", runId, "--repo", repo, "--log"]);
+  return {
+    ...classifyLogText(logText, {
+      repo,
+      run_id: runId,
+      run_url: metadata.url,
+      workflow: metadata.workflowName
+    }),
+    github_status: metadata.status,
+    github_conclusion: metadata.conclusion,
+    head_sha: metadata.headSha
+  };
+}
+
 export function summary(value) {
   return [
     "Telos CI Triage",
@@ -176,9 +223,14 @@ function optionValue(args, name) {
 
 function main() {
   const args = process.argv.slice(2);
-  const inputPath = optionValue(args, "--input") ?? defaultInput;
-  const input = JSON.parse(readFileSync(inputPath, "utf8"));
-  const packet = buildTriagePacket({ ...input, generatedAt: input.generated_at });
+  const ghRun = optionValue(args, "--gh-run");
+  const packet = ghRun
+    ? assembleTriagePacket([caseFromGithubRun(ghRun)])
+    : buildTriagePacket((() => {
+      const inputPath = optionValue(args, "--input") ?? defaultInput;
+      const input = JSON.parse(readFileSync(inputPath, "utf8"));
+      return { ...input, generatedAt: input.generated_at };
+    })());
   process.stdout.write(args.includes("--summary") ? summary(packet) : `${JSON.stringify(packet, null, 2)}\n`);
 }
 

@@ -5,7 +5,7 @@ import { tmpdir } from "node:os";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
-import { buildTriagePacket, classifyLogText } from "./ci-triage.mjs";
+import { buildTriagePacket, classifyLogText, caseFromGithubRun, parseGithubRunRef } from "./ci-triage.mjs";
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 
@@ -30,6 +30,22 @@ const warningOnlyLog = `
 Node 20 is being deprecated. This workflow is running with Node 24 by default.
 ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/upload-artifact@v4.
 `;
+
+const prefixedAnsiLog = `
+lint\tUNKNOWN STEP\t2026-06-29T01:11:50.7537830Z \u001b[36;1mcargo fmt --check\u001b[0m
+lint\tUNKNOWN STEP\t2026-06-29T01:11:51.8486510Z Diff in /home/runner/work/quantalang/quantalang/compiler/src/codegen/backend/c.rs:241:
+lint\tUNKNOWN STEP\t2026-06-29T01:11:52.0000000Z ##[error]Process completed with exit code 1.
+`;
+
+assert.deepEqual(parseGithubRunRef("HarperZ9/seed#28346374847"), {
+  repo: "HarperZ9/seed",
+  runId: "28346374847"
+});
+assert.deepEqual(parseGithubRunRef("HarperZ9/quantalang:28342495903"), {
+  repo: "HarperZ9/quantalang",
+  runId: "28342495903"
+});
+assert.throws(() => parseGithubRunRef("not-a-run-ref"), /Expected --gh-run/);
 
 const seed = classifyLogText(seedLog, {
   repo: "HarperZ9/seed",
@@ -68,6 +84,39 @@ assert.deepEqual(warningOnly.warning_codes, [
   "javascript_action_node20_forced_node24"
 ]);
 assert.equal(warningOnly.remediation_kind, "workflow_runtime_migration");
+
+const readableExcerpt = classifyLogText(prefixedAnsiLog, {
+  repo: "HarperZ9/quantalang",
+  run_id: 28342495903,
+  workflow: "CI"
+}).evidence_excerpt;
+assert.match(readableExcerpt, /^cargo fmt --check/m);
+assert.match(readableExcerpt, /Diff in <runner-path>:241:/);
+assert.equal(readableExcerpt.includes("\u001b"), false);
+assert.equal(readableExcerpt.includes("UNKNOWN STEP"), false);
+assert.equal(readableExcerpt.includes("2026-06-29T"), false);
+
+const liveCase = caseFromGithubRun("HarperZ9/seed#28346374847", (args) => {
+  if (args.includes("--json")) {
+    return JSON.stringify({
+      databaseId: 28346374847,
+      workflowName: "WARDEN CI",
+      url: "https://github.com/HarperZ9/seed/actions/runs/28346374847",
+      conclusion: "failure",
+      status: "completed",
+      headSha: "4d1dc8a"
+    });
+  }
+  return seedLog;
+});
+assert.equal(liveCase.repo, "HarperZ9/seed");
+assert.equal(liveCase.run_id, "28346374847");
+assert.equal(liveCase.run_url, "https://github.com/HarperZ9/seed/actions/runs/28346374847");
+assert.equal(liveCase.workflow, "WARDEN CI");
+assert.deepEqual(liveCase.failure_codes, ["test_gate_failed"]);
+assert.equal(JSON.stringify(liveCase).includes(seedLog), false);
+assert.equal(liveCase.github_status, "completed");
+assert.equal(liveCase.github_conclusion, "failure");
 
 const packet = buildTriagePacket({
   cases: [

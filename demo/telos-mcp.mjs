@@ -56,7 +56,7 @@ export const tools = [
   },
   {
     name: "telos.ci.triage",
-    description: "Use when a host needs to separate fatal GitHub Actions gate failures from Node runtime migration warnings before routing remediation. Read-only, zero-auth, no external side effects. Returns JSON MATCH, DRIFT, or UNVERIFIABLE CI triage receipts.",
+    description: "Use when a host needs to separate fatal GitHub Actions gate failures from Node runtime migration warnings before routing remediation. Read-only, no external side effects, and no external writes. Supports zero-auth offline fixture packets and live gh run intake through the CLI using local gh auth when required. Returns JSON MATCH, DRIFT, or UNVERIFIABLE CI triage receipts.",
     inputSchema: emptyInputSchema
   },
   {
