@@ -51,7 +51,9 @@ These two repos should enter the registry as engine organs with creative, scienc
 
 `node demo/second-level-flagship-queue.mjs` holds candidates that are valuable but should not become active registry entries until they have an adapter, fixture, or Crucible-verifiable claim.
 
-Current Index evidence from 2026-06-29 maps `C:/dev` as 123 Git repositories: 113 public-class and 10 local-class. The public-safe queue now tracks 15 candidates; private/local-only details stay reduced to lane families until they have scrubbed fixtures and public-safe receipts.
+Current Index evidence from 2026-06-29 maps the development root as 124 Git repositories: 114 public-class and 10 local-class. The public-safe queue now tracks 15 candidates; private/local-only details stay reduced to lane families until they have scrubbed fixtures and public-safe receipts.
+
+The workstation substrate register is broader than the public-safe queue. It uses fresh aggregate Index evidence for the operator development and profile roots: 331 repositories total, 163 public-class, 168 local-class, and 333 dirty repositories. This register intentionally stores root labels and lane families only, not raw private paths, filenames, payloads, credential material, signing artifacts, or runbooks.
 
 Public-safe queue:
 

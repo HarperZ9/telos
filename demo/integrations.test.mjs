@@ -66,6 +66,8 @@ for (const name of [
   "telos.creative.engine",
   "telos.creative.kernels",
   "telos.revival.registry",
+  "telos.second_level.queue",
+  "telos.workstation.substrate",
   "telos.display.calibration"
 ]) {
   assert.ok(names.has(name), `missing ${name}`);
@@ -117,6 +119,11 @@ assert.deepEqual(byName.get("telos.creative.kernels").cli, [
 assert.deepEqual(byName.get("telos.revival.registry").cli, [
   "node",
   "demo/revival-registry.mjs"
+]);
+
+assert.deepEqual(byName.get("telos.workstation.substrate").cli, [
+  "node",
+  "demo/workstation-substrate.mjs"
 ]);
 
 assert.deepEqual(byName.get("telos.display.calibration").cli, [

@@ -39,7 +39,9 @@ for (const term of [
   "telos.research.thermodynamic",
   "Thermodynamic AI Chip",
   "second-level flagship queue",
-  "second-level-flagship-queue"
+  "second-level-flagship-queue",
+  "workstation substrate register",
+  "telos.workstation.substrate"
 ]) {
   assert.match(currentState, new RegExp(term.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"), "i"));
 }
@@ -97,6 +99,7 @@ for (const term of [
   "machine learning",
   "science",
   "Second-Level Flagship Queue",
+  "workstation substrate register",
   "reconcile",
   "model-provenance-validator"
 ]) {
@@ -107,8 +110,12 @@ assert.match(currentState, /2026-06-28T17:29:42-07:00/);
 assert.match(currentState, /repo_count[^0-9]+52/i);
 assert.match(currentState, /root_sha256_prefix[^a-f0-9]+92ef331e0850ccf6/i);
 assert.match(currentState, /Telos repo[^.\n]+469ce55/i);
-assert.match(currentState, /52 available tools/i);
+assert.match(currentState, /53 available tools/i);
 assert.match(currentState, /PROJECT-CONNECTION-MAP\.md/i);
 assert.match(currentState, /77 visible HarperZ9 repos/i);
 assert.match(currentState, /raw-native/i);
 assert.match(currentState, /15 public-safe candidates/i);
+assert.match(currentState, /331 repositories/i);
+assert.match(currentState, /163 public-class repos/i);
+assert.match(currentState, /168 local-class repos/i);
+assert.match(currentState, /8 public-safe lane families/i);
