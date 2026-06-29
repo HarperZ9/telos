@@ -86,7 +86,7 @@ for (const effect of [
   assert.match(html, new RegExp(effect));
 }
 
-for (const tool of ["Gather", "Crucible", "Index", "Forum", "Telos"]) {
+for (const tool of ["gather", "crucible", "index", "forum", "telos"]) {
   assert.match(html, new RegExp(`<th scope="row">${tool}</th>`));
 }
 
