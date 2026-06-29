@@ -7,6 +7,9 @@ All notable changes to Project Telos. Telos is currently a source demo and share
 - Project map: adds `docs/PROJECT-CONNECTION-MAP.md` as the canonical five-flagship connection,
   distribution, adapter, hyphal-context, and promotion map, backed by Gather-digested operator
   research packets and live MCP dogfood status.
+- Project map: expands the connection map from five-flagship-only to the HarperZ9 public
+  repo constellation as a Telos growth layer, with verified visible/public/private/fork counts
+  and a lane-record rule for public, private, and local-only revival candidates.
 - Action receipts: hardens `project-telos.action-receipt/v1` for external writes by separating durable receipts
   from trace spans, adding external action kinds, authority/execution/evidence/review/compensation refs,
   redacted before/after evidence, source-correction provenance, and negative cases for authority gaps,

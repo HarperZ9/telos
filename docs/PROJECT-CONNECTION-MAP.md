@@ -2,10 +2,12 @@
 
 Generated: 2026-06-29
 
-This document is the canonical connection map for the five Project Telos
-flagships. It turns the current research packets and live tool dogfood into a
-single operating map: Gather senses, Index remembers, Forum routes, Crucible
-verifies, and Telos binds the loop into durable work.
+This document is the canonical connection map for the HarperZ9 repository
+constellation as a Project Telos growth layer. The five flagships are the
+current organs. The rest of the public corpus is the seed bank: sensors,
+renderers, safety tools, proof surfaces, agent harnesses, creative kernels,
+sites, and research instruments that can be revived through receipts, context
+envelopes, ledgers, and Crucible gates.
 
 ## Input Receipts
 
@@ -15,6 +17,23 @@ Local research packets digested with Gather MCP:
 | --- | --- | --- | --- |
 | `C:\Users\Zain\.codex\attachments\96becef4-d943-468f-a079-ea06ea4ab6a0\pasted-text.txt` | `file-read` | `dc6780ba0e52f00a3e734d15082a539bb2c340a26b9c7048e967ca00c945fdc1` | `43aa038825eea817a3eb362cb8b54056a8a04ac13d00c91746e6749440ab7edd` |
 | `C:\Users\Zain\.codex\attachments\773e5613-c40e-44b7-b041-3ee739b0c53c\pasted-text.txt` | `file-read` | `4aa65ce9bdafb9a8a5f3632b13d5085f4d5d56374398200d0c75033901192990` | `dc240ab440dd74e53f121945b52638a1630717f0570cbec38afb9a3b00600414` |
+| `C:\Users\Zain\.codex\attachments\919198d0-8a63-4be7-b133-be98ec3fa74b\pasted-text.txt` | `file-read` | `3659d9e2fc1fd8a3ac46c0bb9534307e0aaba422f838fc4c416a09baae0b8581` | `5518523e1064ee8fa82e4c425632149a24e284a8bd9997a614ac03e110f4818d` |
+
+Repository inventory checked with `gh repo list HarperZ9 --limit 200` from the
+authenticated workstation session:
+
+| Scope | Count |
+| --- | ---: |
+| visible repos | 77 |
+| public non-forks | 47 |
+| public forks | 4 |
+| private active repos | 25 |
+| private archived repos | 1 |
+
+This corrects the earlier source-lead wording that treated all 77 visible repos
+as public. They are visible to this session; 51 are public and 26 are private.
+Private and local-only viability is assessed in local ignored packets first, and
+only sanitized lane summaries should cross into public documentation.
 
 Live dogfood snapshot from the installed MCP surfaces:
 
@@ -35,9 +54,9 @@ detect before a host trusts a stale server.
 
 ## Constellation
 
-Project Telos is the membrane and growth layer. The sibling tools are not side
-projects; they are organs with independent CLI/MCP value and a shared object
-spine.
+Project Telos is the membrane and growth layer. The five flagships are the
+current product spine. The other public repos are not side quests; they are the
+fossil record, seed bank, organ library, and candidate growth tissue.
 
 | Project | Role | Sends to Telos | Receives from Telos |
 | --- | --- | --- | --- |
@@ -55,6 +74,43 @@ Index remembers.
 Forum routes.
 Crucible verifies.
 Telos turns the loop into durable, replayable, creative, self-improving work.
+```
+
+## Public Repo Constellation
+
+Every public repo gets a Telos lane before any code is absorbed. The lane record
+needs a source receipt, risk boundary, host flagship, interop shape, and next
+action. Code import comes later, if the receipts and boundaries hold.
+
+| Lane | Public repos and forks | Telos use |
+| --- | --- | --- |
+| Core membrane and current organs | `HarperZ9.github.io`, `telos`, `gather`, `crucible`, `index`, `forum` | Public site, central engine, intake, verification, workspace substrate, and routing ledger. |
+| Registered or near-registered revival tools | `calibrate-pro`, `quanta-color`, `quantalang`, `agent-audit`, `context-curator-lite`, `secret-redact-io`, `repo-proof-index`, `release-surface-scanner`, `gpu-trace-validator` | Display calibration, color science, effects language, agent audit, context envelopes, guarded IO, proof indexing, release assurance, and GPU/render receipts. |
+| Quanta, creative science, and language stack | `quanta-finance`, `quanta-oracle`, `quanta-engine`, `quanta-universe`, `quanta-ui`, `quanta-ecosystem`, `quantalang-tmLanguage`, `quantalang-vscode`, `linguist`, `raw`, `studio-engine`, `signal-kernels`, `anomaly-kernels` | Deterministic kernels, language/editor tooling, visual runtime, scientific measurement, forecasting, and UI shell lanes. |
+| Safety, provenance, proof, and accountability | `public-surface-sweeper`, `model-provenance-validator`, `proof-surface`, `proof-surface-report`, `coherence-membrane`, `provenance-sensorium`, `accountable-surface`, `accountable-engine`, `senses-and-sensibility`, `witnessing-spine`, `emet`, `faithful-transpile` | Safe publication, model provenance, proof packets, perception membranes, source/view consistency, bilateral accountability, and transform faithfulness. |
+| Agent, harness, and workflow utilities | `agent-routing-kit`, `agent-hook-pack`, `workflow-harness-lite`, `awesome-harness-engineering`, `rewardspy`, `reconcile` | Forum routing fixtures, hooks, local harnesses, objective monitoring, reward/verifier instrumentation, and creative-verification reconciliation. |
+| Sites, product shells, and distribution surfaces | `.github`, `HarperZ9`, `consulting-template-kit`, `wol-pi` | Community defaults, profile surface, reusable documentation/product templates, and small operational utilities. |
+| External forks and upstream proving grounds | `rewardspy`, `numpy`, `linguist`, `awesome-harness-engineering` | Upstream contribution, benchmark, and interoperability proving grounds. Fork status must remain explicit. |
+
+Private and local-only tools follow the same lane rule but stay in local
+viability packets until a public-safe summary exists. The public map may say the
+corpus exists and what class of lane it feeds; it must not publish private
+payloads, credentials, customer data, operational runbooks, proprietary
+third-party source, or reverse-engineering payloads.
+
+### Lane Record Shape
+
+```json
+{
+  "repo": "HarperZ9/<name>",
+  "telos_lane": "display-calibration | safety | routing | creative-engine | model-foundry | site | seed-corpus",
+  "flagship_host": "telos | gather | index | forum | crucible",
+  "status": "active | promotion-ready | promotion-candidate | archive | quarantine-and-adapt | seed-only",
+  "source_receipt": "README/ref/digest",
+  "risk_boundary": "what it must not do",
+  "interop_shape": "cli-json | mcp | proof-artifact | context-envelope | action-receipt",
+  "next_action": "index | gather | test | wrap | document | retire"
+}
 ```
 
 ## Shared Object Spine
