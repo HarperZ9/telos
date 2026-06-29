@@ -226,6 +226,14 @@ try {
 
 - **Operator surface:** the \`quantac\` CLI builds .quanta to C, with a bundled LSP server for editors.
 - **Current status:** source checkout, C backend production-grade.
+`,
+    changelog: `
+# Changelog
+
+## Unreleased
+
+- Presentation pass: hero, brand assets, and Quanta ecosystem navigation.
+- Operator surface documented across the CLI and the bundled LSP server.
 `
   });
 

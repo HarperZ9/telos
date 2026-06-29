@@ -51,11 +51,13 @@ function readmeSignals(text, navRoster, navLabel, surfaceTerms) {
   };
 }
 
-function changelogSignals(text) {
+function changelogSignals(text, surfaceTerms) {
+  const surfaceNoted = surfaceTerms.some((term) =>
+    new RegExp(`\\b${escapeRegExp(term)}\\b`, "i").test(text));
   return {
     unreleased_section: /^##\s+Unreleased\b/im.test(text),
     presentation_housekeeping: /presentation|operator-surface|operator surface/i.test(text),
-    mcp_surface: /\bMCP\b/i.test(text)
+    mcp_surface: surfaceNoted
   };
 }
 
@@ -125,7 +127,7 @@ function analyzeFlagship(root, id, navRoster, navLabel, surfaceTerms) {
         present: true,
         relative_path: changelog.relative_path,
         hash: changelog.hash,
-        signals: changelogSignals(changelog.text)
+        signals: changelogSignals(changelog.text, surfaceTerms)
       }
     : { present: false };
   if (!changelog) {
