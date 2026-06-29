@@ -15,7 +15,7 @@ This document is a live state packet for Project Telos. It is deliberately evide
 - Forum route for the expanded mandate decided `project-telos` with no escalation; related lanes remain technical-writing, function-routing, data-ml, code-review, render-pipeline, shader-effects, and deep-research.
 - Gather receipts were refreshed for large-context agent memory and rendering research.
 - Telos workflow returned `MATCH` for the local five-flagship workflow and reports CLI, MCP, IDE, TUI, and application workbench next actions.
-- Telos catalog now presents 49 available tools across the five flagships, including `telos.context.pack` and `telos.research.thermodynamic`.
+- Telos catalog now presents 50 available tools across the five flagships, including `telos.context.pack`, `telos.model.foundry`, and `telos.research.thermodynamic`.
 - Crucible current-state thesis `661f7d4089347607` assessed 5 claims: 5 `MATCH`, 0 `DRIFT`, 0 `UNVERIFIABLE`. Report: `docs/verification/2026-06-28-current-state-report.md`; run record: `docs/verification/2026-06-28-current-state-run.json`.
 
 ## Moving Target Rule
@@ -40,8 +40,9 @@ The five flagship tools are the forward-facing control spine:
 - Index: workspace atlas and context envelope. It maps repos, dirty state, docs, and large-codebase context packets.
 - Forum: orchestration and human-facing reasoning. It routes work, summarizes ledgers, and can clarify agent prose without adding facts.
 - Crucible: verification pressure. It turns falsifiable claims plus measurements into `MATCH`, `DRIFT`, or `UNVERIFIABLE`, with recheckable receipts.
-- Telos: the shared room and engine surface. It reconciles flagship outputs into action receipts, context envelopes, validated context packs, loop ledgers, creative engine manifests, research packets, measurement layers, and provider-neutral MCP contracts.
+- Telos: the shared room and engine surface. It reconciles flagship outputs into action receipts, context envelopes, validated context packs, loop ledgers, model-foundry packets, creative engine manifests, research packets, measurement layers, and provider-neutral MCP contracts.
 - Telos Objective Monitor: a rewardspy-inspired objective health surface. It watches proxy scores, independent quality scores, objective components, and improvement windows so an agent workflow cannot look successful merely because the easiest metric rose.
+- Telos Model Foundry: a bounded model-building and self-improving daemon lane. It treats hosted frontier models, local/open-weight runtimes, post-training labs, tools, context envelopes, evals, and receipts as one system, while explicitly not claiming independent frontier-lab pretraining capacity.
 
 The five flagships must stay protocol agnostic. Each should remain usable as an individual CLI tool, an MCP server, an IDE or TUI tool, a plugin or superpower, and a full application component.
 
@@ -62,7 +63,7 @@ The engine is becoming a universal media and research workbench:
 
 - Creative: generative art, retro CGI, glitch, dithering, pixel sorting, plotter paths, typography, sound, film, image/video/audio timelines, and shader graphs.
 - Science and mathematics: geometry, physics, dimensions, bundle-style representations, physical constants, measurement overlays, formal checks, and reproducible demonstrations.
-- Machine learning: large-context context envelopes, local model runtime hooks, memory layers, retrieval receipts, uncertainty measurements, and model-observation records.
+- Machine learning: model-foundry orchestration, large-context context envelopes, local model runtime hooks, feasible post-training labs, memory layers, retrieval receipts, uncertainty measurements, eval gates, and model-observation records.
 - Security and reliability: defensive find-and-fix, release scanning, redacted IO, proof indexing, agent audit, and open-source patch demonstration packets.
 
 The ambition is intentionally large. The delivery posture remains bounded: live, prototype, planned, promotion-ready, promotion-candidate, and quarantine-and-adapt are different labels.
@@ -94,5 +95,7 @@ The next layer is not one monolithic rewrite. It is a shared action-to-action wo
 Gather collects lawful, source-labeled inputs. Index maps the relevant code and context. Forum routes the task and keeps the operator-facing language legible. Crucible pressures the claims. Telos binds the result into receipts, ledgers, engine artifacts, and integration contracts.
 
 The rewardspy concept now feeds back into that loop through `telos.objective.monitor`: a workflow can record proxy quality divergence, component dominance, ceiling saturation, steps since improvement, and quality variance collapse as typed signals. Forum can route those signals; Crucible can pressure them; Index can carry them by reference in context envelopes; Telos can join them to loop ledger entries.
+
+The model-foundry lane sits one layer above that. A self-improving daemon should gather fresh evidence, index context, route one bounded improvement, admit one action, execute one patch or experiment, run Crucible, inspect objective drift, and promote only `MATCH`. `DRIFT` blocks; `UNVERIFIABLE` requests more evidence or human review. This is the shape that can improve models and model workflows without becoming blind self-training.
 
 When the project adds a new renderer, model adapter, research source, OSS patch workflow, or creative organ, it should enter through that loop.

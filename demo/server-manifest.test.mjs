@@ -54,7 +54,7 @@ const summary = runManifest("--summary");
 assert.equal(summary.status, 0, summary.stderr || summary.stdout);
 assert.match(summary.stdout, /^Project Telos MCP Server Manifest/m);
 assert.match(summary.stdout, /servers\s+5/);
-assert.match(summary.stdout, /tools\s+49 expected/);
+assert.match(summary.stdout, /tools\s+50 expected/);
 assert.match(summary.stdout, /gather\s+5 tools/);
 
 const codex = runManifest("--codex");

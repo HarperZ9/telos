@@ -110,21 +110,22 @@ assert.ok(statusPayload.native.mcp_tools.includes("telos.creative.engine"));
 assert.ok(statusPayload.native.mcp_tools.includes("telos.creative.kernels"));
 assert.ok(statusPayload.native.mcp_tools.includes("telos.display.calibration"));
 assert.ok(statusPayload.native.mcp_tools.includes("telos.objective.monitor"));
+assert.ok(statusPayload.native.mcp_tools.includes("telos.model.foundry"));
 assert.ok(statusPayload.native.mcp_tools.includes("telos.context.pack"));
 assert.ok(statusPayload.native.mcp_tools.includes("telos.research.thermodynamic"));
-assert.match(statusPayload.native.current_status, /49-tool/);
+assert.match(statusPayload.native.current_status, /50-tool/);
 
 const catalogSummary = spawnSync(process.execPath, [path.join(here, "catalog.mjs"), "--summary"], {
   cwd: path.resolve(here, ".."),
   encoding: "utf8"
 });
 assert.equal(catalogSummary.status, 0, catalogSummary.stderr || catalogSummary.stdout);
-assert.match(catalogSummary.stdout, /tools\s+49 total, 49 available/);
-assert.match(catalogSummary.stdout, /telos\s+21 tools/);
+assert.match(catalogSummary.stdout, /tools\s+50 total, 50 available/);
+assert.match(catalogSummary.stdout, /telos\s+22 tools/);
 
 const manifestSummary = spawnSync(process.execPath, [path.join(here, "server-manifest.mjs"), "--summary"], {
   cwd: path.resolve(here, ".."),
   encoding: "utf8"
 });
 assert.equal(manifestSummary.status, 0, manifestSummary.stderr || manifestSummary.stdout);
-assert.match(manifestSummary.stdout, /tools\s+49 expected/);
+assert.match(manifestSummary.stdout, /tools\s+50 expected/);

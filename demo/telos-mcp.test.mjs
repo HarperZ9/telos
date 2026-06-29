@@ -32,6 +32,7 @@ for (const name of [
   "telos.action.receipt",
   "telos.loop.ledger",
   "telos.objective.monitor",
+  "telos.model.foundry",
   "telos.research.seed",
   "telos.research.thermodynamic",
   "telos.rendering.research",
@@ -143,6 +144,15 @@ assert.equal(objectiveMonitor.result.structuredContent.schema, "project-telos.ob
 assert.equal(objectiveMonitor.result.structuredContent.tool, "telos.objective.monitor");
 assert.ok(objectiveMonitor.result.structuredContent.failure_codes.includes("proxy_quality_divergence"));
 assert.ok(objectiveMonitor.result.structuredContent.signals.length >= 1);
+
+const modelFoundry = handleRequest(request("tools/call", {
+  name: "telos.model.foundry",
+  arguments: {}
+}));
+assert.equal(modelFoundry.result.structuredContent.schema, "project-telos.model-foundry/v1");
+assert.equal(modelFoundry.result.structuredContent.tool, "telos.model.foundry");
+assert.equal(modelFoundry.result.structuredContent.validation.verdict, "MATCH");
+assert.equal(modelFoundry.result.structuredContent.contract.blind_self_training_allowed, false);
 
 const expectedResearchSeed = JSON.parse(
   readFileSync(new URL("./research/fundamental-physics-seeds.json", import.meta.url), "utf8")
@@ -262,6 +272,7 @@ assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.context
 assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.action.receipt"));
 assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.loop.ledger"));
 assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.objective.monitor"));
+assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.model.foundry"));
 assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.research.seed"));
 assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.research.thermodynamic"));
 assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.rendering.research"));
