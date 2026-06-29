@@ -89,6 +89,12 @@ guess. The useful next pressure is verification, testing against real workflows,
 traction from people willing to inspect receipts, collaborator feedback, and modest
 grassroots research funding.
 
+## What to test first
+
+- Pick a workflow where a model answer is not enough: source intake, codebase handoff, agent action, creative export, or math/physics demo.
+- Run the closest demo or packet and ask whether the receipt preserves the state a reviewer would need tomorrow.
+- If the answer is no, the most useful feedback is the missing sensor, meter, receipt field, or replay handle. Telos should grow by making real workflows more inspectable, not by adding claims the record cannot support.
+
 ## Telos Creative Engine
 
 The Studio is now presented as a whole creation engine, not only a visual demo. `node demo/creative-engine.mjs` returns the host-neutral manifest for generative art, retro CGI, raster effects, sound, film/media, typography, math/physics, node graphs, renderer capability probes, runnable sensor/measurement layers, deterministic creative kernels, and verification. It also records the old engine organs to revive next: `demo/render-nd`, `demo/render-sound`, `demo/sense-core`, `demo/viable-viz`, the sibling `studio-engine` raster/sonify/flowfield/harmonograph/WebAudio organs, and `studio-libs/render-sound`.
