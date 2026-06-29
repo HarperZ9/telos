@@ -4,6 +4,9 @@ All notable changes to Project Telos. Telos is currently a source demo and share
 
 ## Unreleased
 
+- MCP freshness: adds an `index.context.envelope` behavior probe that requires focused envelopes to return
+  selection summaries and `index.context-envelope-freshness/v1` roots, catching stale Index MCP servers that
+  still expose the old envelope shape after status/tool-list parity appears healthy.
 - MCP freshness: adds `project-telos.mcp-freshness/v1`, `project-telos.mcp-freshness-observation/v1`, `node demo/mcp-freshness.mjs`, and `telos.mcp.freshness` so hosts can detect stale loaded servers by comparing `serverInfo.version`, `status.tool_version`, `tools/list` hashes, and declared behavior probes before trusting tool output, then emit `MATCH`, `DRIFT`, or `UNVERIFIABLE` with normalized failure codes from `--observed`.
 - Model foundry: adds `project-telos.model-foundry/v1`, `node demo/model-foundry.mjs`, and `telos.model.foundry` to define the bounded model-building and self-improving daemon lane: frontier APIs as components, local/open-weight runtimes, feasible post-training labs, typed MCP tools, lossless-by-reference memory, objective monitoring, and Crucible-gated promotion without claiming independent frontier-lab pretraining capacity.
 - Context pack surface: adds `project-telos.context-pack/v1`, `node demo/context-pack.mjs`, and `telos.context.pack` to emit a runnable, token-budgeted, lossless-by-reference context packet with source-ref joins, load/relevance receipt separation, raw-payload checks, and explicit failure codes.

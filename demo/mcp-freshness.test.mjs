@@ -51,6 +51,23 @@ assert.deepEqual(packet.servers.forum.behavior_probes[0].expected_subset, {
   needs_escalation: false
 });
 assert.equal(packet.servers.index.expected_tools.includes("index.context.envelope"), true);
+assert.equal(packet.servers.index.expected_current_status, (
+  "2.8.0 workspace atlas, certificates, freshness, benchmarking, "
+  + "selection-aware context envelopes, and MCP parity"
+));
+assert.equal(packet.servers.index.behavior_probes.length, 1);
+assert.deepEqual(packet.servers.index.behavior_probes[0].expected_subset, {
+  schema: "project-telos.context-envelope/v1",
+  tool: "index.context.envelope",
+  verification_verdict: "MATCH",
+  selection: {
+    mode: "focused",
+    retained_names: ["index"]
+  },
+  freshness: {
+    schema: "index.context-envelope-freshness/v1"
+  }
+});
 assert.equal(packet.servers.telos.status_tool, "telos.status");
 
 const observedForumMatch = {
@@ -94,6 +111,52 @@ const behaviorDrift = evaluateObservedServer("forum", behaviorDriftForum);
 assert.equal(behaviorDrift.verdict, "DRIFT");
 assert.deepEqual(behaviorDrift.failure_codes, ["behavior_probe_drift"]);
 assert.ok(behaviorDrift.diagnostics.some((item) => item.code === "behavior_probe_drift"));
+
+const observedIndexMatch = {
+  server: "index",
+  initialize: { result: { serverInfo: { name: "index-graph", version: "2.8.0" } } },
+  tools_list: {
+    result: {
+      tools: packet.servers.index.expected_tools.map((name) => ({ name }))
+    }
+  },
+  status_payload: {
+    tool_version: "2.8.0",
+    native: {
+      current_status: packet.servers.index.expected_current_status
+    }
+  },
+  behavior_probes: {
+    "index-context-envelope-selection-freshness": {
+      result: {
+        schema: "project-telos.context-envelope/v1",
+        tool: "index.context.envelope",
+        verification_verdict: "MATCH",
+        selection: {
+          mode: "focused",
+          retained_names: ["index"]
+        },
+        freshness: {
+          schema: "index.context-envelope-freshness/v1"
+        }
+      }
+    }
+  }
+};
+
+const indexMatch = evaluateObservedServer("index", observedIndexMatch);
+assert.equal(indexMatch.verdict, "MATCH");
+assert.deepEqual(indexMatch.failure_codes, []);
+assert.equal(
+  indexMatch.observed.behavior_probes["index-context-envelope-selection-freshness"].verdict,
+  "MATCH"
+);
+
+const staleIndexBehavior = structuredClone(observedIndexMatch);
+delete staleIndexBehavior.behavior_probes["index-context-envelope-selection-freshness"].result.selection;
+const staleIndex = evaluateObservedServer("index", staleIndexBehavior);
+assert.equal(staleIndex.verdict, "DRIFT");
+assert.deepEqual(staleIndex.failure_codes, ["behavior_probe_drift"]);
 
 const staleForum = structuredClone(observedForumMatch);
 staleForum.initialize.result.serverInfo.version = "1.11.0";

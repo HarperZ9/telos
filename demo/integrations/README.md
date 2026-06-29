@@ -26,7 +26,7 @@ OpenAI Apps, OpenAI Agents, Anthropic Claude, Claude Code, Codex plugins, skills
 
 `mcp-server-manifest.json` is the provider-neutral source of truth for launching the five flagship MCP servers from source checkouts or package installs. `../server-manifest.mjs --codex` emits Codex TOML; `../server-manifest.mjs --claude-json` emits Claude-style JSON.
 
-`../mcp-freshness.mjs` emits `project-telos.mcp-freshness/v1`, a host-side stale-server probe contract. Hosts compare observed `serverInfo.version`, status `tool_version`, `tools/list` hashes, and declared behavior probes against the manifest before trusting a loaded MCP server. `../mcp-freshness.mjs --observed observed.json` emits `project-telos.mcp-freshness-observation/v1` with `MATCH`, `DRIFT`, or `UNVERIFIABLE` plus normalized failure codes.
+`../mcp-freshness.mjs` emits `project-telos.mcp-freshness/v1`, a host-side stale-server probe contract. Hosts compare observed `serverInfo.version`, status `tool_version`, `tools/list` hashes, and declared behavior probes against the manifest before trusting a loaded MCP server. The behavior probes now cover broad Forum routing and Index context-envelope selection/freshness receipts, so a host can catch stale behavior even when version and tool-list parity look healthy. `../mcp-freshness.mjs --observed observed.json` emits `project-telos.mcp-freshness-observation/v1` with `MATCH`, `DRIFT`, or `UNVERIFIABLE` plus normalized failure codes.
 
 `admission-telemetry-conventions.json` records the Project Telos split between an admission decision and a verification verdict, plus the negative cases that must be observable without raw prompt, raw tool-argument, or raw evidence capture.
 
