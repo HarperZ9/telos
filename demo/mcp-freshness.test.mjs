@@ -1,9 +1,11 @@
 import assert from "node:assert/strict";
 import { spawnSync } from "node:child_process";
+import { writeFileSync } from "node:fs";
+import { tmpdir } from "node:os";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
-import { freshnessPacket } from "./mcp-freshness.mjs";
+import { evaluateObservedServer, freshnessPacket } from "./mcp-freshness.mjs";
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const packet = freshnessPacket();
@@ -43,6 +45,63 @@ for (const [name, server] of Object.entries(packet.servers)) {
 assert.equal(packet.servers.forum.expected_version, "1.12.0");
 assert.equal(packet.servers.index.expected_tools.includes("index.context.envelope"), true);
 assert.equal(packet.servers.telos.status_tool, "telos.status");
+
+const observedForumMatch = {
+  server: "forum",
+  initialize: { result: { serverInfo: { name: "forum", version: "1.12.0" } } },
+  tools_list: {
+    result: {
+      tools: packet.servers.forum.expected_tools.map((name) => ({ name }))
+    }
+  },
+  status_payload: {
+    tool_version: "1.12.0",
+    native: {
+      current_status: packet.servers.forum.expected_current_status
+    }
+  }
+};
+
+const match = evaluateObservedServer("forum", observedForumMatch);
+assert.equal(match.schema, "project-telos.mcp-freshness-observation/v1");
+assert.equal(match.server, "forum");
+assert.equal(match.verdict, "MATCH");
+assert.deepEqual(match.failure_codes, []);
+assert.equal(match.observed.tool_hash, packet.servers.forum.expected_tool_hash);
+
+const staleForum = structuredClone(observedForumMatch);
+staleForum.initialize.result.serverInfo.version = "1.11.0";
+staleForum.status_payload.tool_version = "1.11.0";
+staleForum.status_payload.native.current_status = "1.11.0 delivery ladder without model-foundry daemon routing";
+staleForum.tools_list.result.tools = staleForum.tools_list.result.tools
+  .filter((tool) => tool.name !== "forum.prose.humanize");
+
+const stale = evaluateObservedServer("forum", staleForum);
+assert.equal(stale.verdict, "DRIFT");
+assert.deepEqual(stale.failure_codes, [
+  "stale_mcp_server",
+  "tool_surface_drift",
+  "version_drift"
+]);
+assert.ok(stale.diagnostics.some((item) => item.code === "tool_surface_drift"));
+assert.ok(stale.diagnostics.some((item) => item.code === "version_drift"));
+
+const unavailable = evaluateObservedServer("forum", { server: "forum" });
+assert.equal(unavailable.verdict, "UNVERIFIABLE");
+assert.deepEqual(unavailable.failure_codes, ["freshness_probe_unavailable"]);
+
+const observedPath = path.join(tmpdir(), `telos-mcp-observed-${process.pid}.json`);
+writeFileSync(observedPath, JSON.stringify(observedForumMatch), "utf8");
+const observedCli = spawnSync(process.execPath, [
+  path.join(here, "mcp-freshness.mjs"),
+  "--observed",
+  observedPath
+], {
+  cwd: path.resolve(here, ".."),
+  encoding: "utf8"
+});
+assert.equal(observedCli.status, 0, observedCli.stderr || observedCli.stdout);
+assert.equal(JSON.parse(observedCli.stdout).verdict, "MATCH");
 
 const cli = spawnSync(process.execPath, [path.join(here, "mcp-freshness.mjs")], {
   cwd: path.resolve(here, ".."),
