@@ -801,6 +801,27 @@
       ]
     },
     {
+      "name": "telos.compatibility.doctor",
+      "flagship": "telos",
+      "description": "Use when a host needs CLI, MCP, protocol, manifest, and integration compatibility receipts. Read-only, zero-auth, no external side effects. Returns JSON MATCH, DRIFT, or UNVERIFIABLE compatibility receipts.",
+      "cli": [
+        "node",
+        "demo/compatibility-doctor.mjs"
+      ],
+      "mcp": {
+        "status": "available",
+        "server": "telos",
+        "method": "tools/call",
+        "tool": "telos.compatibility.doctor"
+      },
+      "next_actions": [
+        "telos.mcp.freshness",
+        "telos.server.manifest",
+        "crucible.assess",
+        "telos.workflow"
+      ]
+    },
+    {
       "name": "telos.admission.telemetry",
       "flagship": "telos",
       "description": "Use when designing trace fields that keep action admission separate from verification verdicts. Read-only, zero-auth, no external side effects. Returns a JSON telemetry convention.",

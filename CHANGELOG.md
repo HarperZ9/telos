@@ -4,6 +4,11 @@ All notable changes to Project Telos. Telos is currently a source demo and share
 
 ## Unreleased
 
+- Compatibility doctor: adds `project-telos.compatibility-doctor/v1`,
+  `node demo/compatibility-doctor.mjs`, and `telos.compatibility.doctor` to verify
+  catalog/manifest schema parity, host exports, source/package profiles,
+  expected-tool joins, CLI fallbacks, MCP availability, freshness probes, HTTPS
+  sources, and private-path hygiene.
 - Performance doctor: adds `project-telos.performance-doctor/v1`,
   `node demo/performance-doctor.mjs`, and `telos.performance.doctor` to verify
   static Studio byte budgets, asset budgets, approved external hosts, media

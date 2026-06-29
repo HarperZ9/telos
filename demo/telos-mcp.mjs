@@ -70,6 +70,11 @@ export const tools = [
     inputSchema: emptyInputSchema
   },
   {
+    name: "telos.compatibility.doctor",
+    description: "Use when a host needs CLI, MCP, protocol, manifest, and integration compatibility receipts. Read-only, zero-auth, no external side effects. Returns JSON MATCH, DRIFT, or UNVERIFIABLE compatibility receipts.",
+    inputSchema: emptyInputSchema
+  },
+  {
     name: "telos.admission.telemetry",
     description: "Use when designing trace fields that keep action admission separate from verification verdicts. Read-only, zero-auth, no external side effects. Returns a JSON telemetry convention.",
     inputSchema: emptyInputSchema
@@ -173,6 +178,7 @@ const toolScripts = new Map([
   ["telos.presentation.doctor", ["presentation-doctor.mjs"]],
   ["telos.accessibility.doctor", ["accessibility-doctor.mjs"]],
   ["telos.performance.doctor", ["performance-doctor.mjs"]],
+  ["telos.compatibility.doctor", ["compatibility-doctor.mjs"]],
   ["telos.admission.telemetry", ["admission-telemetry.mjs"]],
   ["telos.context.envelope", ["context-envelope.mjs"]],
   ["telos.context.pack", ["context-pack.mjs"]],

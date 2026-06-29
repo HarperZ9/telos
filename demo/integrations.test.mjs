@@ -57,6 +57,7 @@ for (const name of [
   "telos.presentation.doctor",
   "telos.accessibility.doctor",
   "telos.performance.doctor",
+  "telos.compatibility.doctor",
   "telos.admission.telemetry",
   "telos.context.envelope",
   "telos.context.pack",
@@ -158,6 +159,11 @@ assert.deepEqual(byName.get("telos.accessibility.doctor").cli, [
 assert.deepEqual(byName.get("telos.performance.doctor").cli, [
   "node",
   "demo/performance-doctor.mjs"
+]);
+
+assert.deepEqual(byName.get("telos.compatibility.doctor").cli, [
+  "node",
+  "demo/compatibility-doctor.mjs"
 ]);
 
 assert.deepEqual(byName.get("telos.context.pack").cli, [
