@@ -65,6 +65,11 @@ export const tools = [
     inputSchema: emptyInputSchema
   },
   {
+    name: "telos.performance.doctor",
+    description: "Use when a host needs static Studio performance, efficiency, asset-budget, and embedding receipts. Read-only, zero-auth, no external side effects. Returns JSON MATCH, DRIFT, or UNVERIFIABLE performance receipts.",
+    inputSchema: emptyInputSchema
+  },
+  {
     name: "telos.admission.telemetry",
     description: "Use when designing trace fields that keep action admission separate from verification verdicts. Read-only, zero-auth, no external side effects. Returns a JSON telemetry convention.",
     inputSchema: emptyInputSchema
@@ -167,6 +172,7 @@ const toolScripts = new Map([
   ["telos.ci.doctor", ["ci-doctor.mjs"]],
   ["telos.presentation.doctor", ["presentation-doctor.mjs"]],
   ["telos.accessibility.doctor", ["accessibility-doctor.mjs"]],
+  ["telos.performance.doctor", ["performance-doctor.mjs"]],
   ["telos.admission.telemetry", ["admission-telemetry.mjs"]],
   ["telos.context.envelope", ["context-envelope.mjs"]],
   ["telos.context.pack", ["context-pack.mjs"]],

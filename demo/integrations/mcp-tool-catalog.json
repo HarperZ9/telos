@@ -780,6 +780,27 @@
       ]
     },
     {
+      "name": "telos.performance.doctor",
+      "flagship": "telos",
+      "description": "Use when a host needs static Studio performance, efficiency, asset-budget, and embedding receipts. Read-only, zero-auth, no external side effects. Returns JSON MATCH, DRIFT, or UNVERIFIABLE performance receipts.",
+      "cli": [
+        "node",
+        "demo/performance-doctor.mjs"
+      ],
+      "mcp": {
+        "status": "available",
+        "server": "telos",
+        "method": "tools/call",
+        "tool": "telos.performance.doctor"
+      },
+      "next_actions": [
+        "telos.accessibility.doctor",
+        "telos.presentation.doctor",
+        "crucible.assess",
+        "telos.workflow"
+      ]
+    },
+    {
       "name": "telos.admission.telemetry",
       "flagship": "telos",
       "description": "Use when designing trace fields that keep action admission separate from verification verdicts. Read-only, zero-auth, no external side effects. Returns a JSON telemetry convention.",
