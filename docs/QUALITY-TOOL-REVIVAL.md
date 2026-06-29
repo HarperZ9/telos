@@ -47,6 +47,27 @@ The current Telos revival registry contains 13 older, adjacent, or local-only qu
 
 These two repos should enter the registry as engine organs with creative, science, machine learning, and verification boundaries. Their shared promotion standard should be: World packet schema, media graph package adapter, render/audio program receipt, criterion receipt, and replayable witness reference.
 
+## Second-Level Flagship Queue
+
+`node demo/second-level-flagship-queue.mjs` holds candidates that are valuable but should not become active registry entries until they have an adapter, fixture, or Crucible-verifiable claim.
+
+Public-safe queue:
+
+- Creative and engine: `reconcile`, `studio-engine`.
+- Proof and provenance: `provenance-sensorium`, `proof-surface`, `model-provenance-validator`.
+- Release and public-surface hygiene: `public-surface-sweeper`.
+- Agent workflow: `agent-routing-kit`, `agent-hook-pack`, `coherence-membrane`, `workflow-harness-lite`.
+
+Private/local-only queue:
+
+- IO membrane and redaction.
+- Release proof and assurance.
+- Sensor/event layer.
+- Agent audit and governance.
+- Graphics composition and assets.
+
+The private/local-only queue is intentionally reduced to lane families in public docs. The detailed local assessment stays ignored until a candidate can be represented by public-safe schemas, synthetic fixtures, and source receipts.
+
 ## Defensive And Security Boundary
 
 The defensive find-and-fix lane matters, but it must remain maintainer-friendly and evidence-first.

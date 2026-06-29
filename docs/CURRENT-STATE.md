@@ -19,6 +19,7 @@ This document is a live state packet for Project Telos. It is deliberately evide
 - The canonical connection and distribution map now lives at `docs/PROJECT-CONNECTION-MAP.md`. It treats the five flagships as the current organs and the wider HarperZ9 public repo corpus as Telos growth tissue.
 - GitHub authenticated inventory checked 77 visible HarperZ9 repos: 47 public non-forks, 4 public forks, 25 private active repos, and 1 private archived repo. Private and local-only viability stays in ignored local packets until sanitized.
 - Local-only viability now has public-safe revival records for `raw-native`, `studio-libs`, and `forum-archive`: deterministic renderer verification, studio perception organ, and orchestration archive. Raw local viability notes remain ignored and are not public evidence.
+- The second-level flagship queue now tracks 10 public-safe candidates and 5 private/local-only lane families through `node demo/second-level-flagship-queue.mjs`. Public candidates carry README hashes; private/local-only details stay in ignored local packets.
 - Crucible current-state thesis `661f7d4089347607` assessed 5 claims: 5 `MATCH`, 0 `DRIFT`, 0 `UNVERIFIABLE`. Report: `docs/verification/2026-06-28-current-state-report.md`; run record: `docs/verification/2026-06-28-current-state-run.json`.
 
 ## Moving Target Rule
@@ -60,6 +61,7 @@ Telos Engine is larger than the website Studio demo.
 - `raw-native` is now a local-only revival candidate for deterministic renderer verification: CPU G-buffer rasterization, ray-traced AO oracle checks, SSAO comparison, bounded allocation, and witnessed certificates.
 - `studio-libs` is now a local-only revival candidate for the studio perception organ: nD rendering, layered sense-core readouts, and a Node-stdlib MCP surface for render, perceive, and measure operations.
 - `forum-archive` is now a local-only revival candidate for orchestration archive work: supervision-tree primitives, event/task scheduling, hashing, and compatibility diffing against current Forum.
+- `second-level-flagship-queue` now holds the next wave before registry promotion: Reconcile, Studio Engine, Provenance Sensorium, Proof Surface, Model Provenance Validator, Public Surface Sweeper, Agent Routing Kit, Agent Hook Pack, Coherence Membrane, and Workflow Harness Lite.
 
 These repos should converge by contract, not by a rushed copy. The shared boundary is the World/media graph/receipt model: source, transform, criterion, rendered program, measurement, verdict, and replay reference.
 

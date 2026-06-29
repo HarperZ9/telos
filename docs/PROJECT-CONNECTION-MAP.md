@@ -99,6 +99,11 @@ renderer verification, `studio-libs` for the studio perception organ, and
 README hashes, capability summaries, risk boundaries, and next actions only.
 Raw local viability packets remain outside git.
 
+The next wave lives in `demo/integrations/second-level-flagship-queue.json`.
+That queue tracks public-safe candidates with README hashes and collapses
+private/local-only findings into lane families until adapter fixtures and
+Crucible-verifiable claims exist.
+
 Private and local-only tools follow the same lane rule but stay in local
 viability packets until a public-safe summary exists. The public map may say the
 corpus exists and what class of lane it feeds; it must not publish private

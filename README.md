@@ -34,6 +34,7 @@ node demo/measurement-layers.mjs --summary
 node demo/creative-engine.mjs
 node demo/creative-kernels.mjs --summary
 node demo/revival-registry.mjs --summary
+node demo/second-level-flagship-queue.mjs --summary
 node demo/display-calibration.mjs --summary
 ```
 
@@ -49,6 +50,7 @@ Use `node demo/measurement-layers.mjs --summary` for ten runnable meters across 
 Use `node demo/creative-engine.mjs --summary` for the whole creation-engine contract: raster effects, sound, typography, math/physics, node graphs, revived organs, and receipts.
 Use `node demo/creative-kernels.mjs --summary` for deterministic ordered-dither, pixel-sort, harmonograph, and clustered-light kernels.
 Use `node demo/revival-registry.mjs --summary` for the first promotion registry of older, siloed, and frozen tools being pulled toward flagship status.
+Use `node demo/second-level-flagship-queue.mjs --summary` for the public-safe queue of second-level flagship candidates discovered during whole-workstation substrate assessment.
 Use `node demo/display-calibration.mjs --summary` for the read-only Calibrate Pro and Quanta Color display-calibration contract.
 
 ## Why it matters
@@ -88,13 +90,15 @@ The self-improving daemon lives here as a bounded loop. It gathers fresh evidenc
 
 `node demo/revival-registry.mjs` is the first promotion registry for the older and frozen tools that should stop living as isolated experiments. It currently pulls Calibrate Pro, Quanta Color, QuantaLang/quantac, WARDEN security lineage, Agent Audit, Context Curator Lite, Secret Redact IO, Repo Proof Index, Release Surface Scanner, GPU Trace Validator, raw-native, studio-libs, and the Forum archive into explicit Telos lanes with origin paths, Gather-backed README digests, risk boundaries, flagship hosts, and next actions. The local-only entries are sanitized lane records only; raw private viability notes stay outside the repository.
 
+`node demo/second-level-flagship-queue.mjs` is the next wave. It records public-safe candidates such as Reconcile, Studio Engine, Provenance Sensorium, Proof Surface, Model Provenance Validator, Public Surface Sweeper, Agent Routing Kit, Agent Hook Pack, Coherence Membrane, and Workflow Harness Lite while reducing private/local-only work to lane families. Those candidates move into the active registry only after an adapter, fixture, or Crucible-verifiable claim exists.
+
 The first rule is visibility before transplanting: a dormant tool gets a lane, a source receipt, a privacy boundary, CLI/MCP or adapter roadmap, tests, and a target host before shared code becomes a runtime dependency. Calibrate Pro and Quanta Color become the display-calibration and color-science lane for Telos measurement layers. Context Curator Lite becomes the context-envelope source for token-efficient large-workspace handoffs. QuantaLang becomes the effects-language candidate for creative kernels. WARDEN is carried forward only as defensive, authorized, good-faith find-and-fix lineage with synthetic labs and maintainer-friendly patch workflows.
 
 `node demo/display-calibration.mjs` is the first promoted Calibrate Pro lane. It defines a read-only `project-telos.display-calibration/v1` packet for display targets, color spaces, patch sets, ICC/LUT/report artifact refs, Quanta Color metrics, privacy boundaries, and Crucible measurement gates. It does not call DDC/CI, mutate monitor settings, apply LUTs, write ICC files, or require raw private device telemetry.
 
 ## Current status
 
-- **Release:** source demo; command surface is `node demo/run.mjs`, `node demo/room.mjs`, `node demo/status.mjs`, `node demo/doctor.mjs`, `node demo/catalog.mjs`, `node demo/server-manifest.mjs`, `node demo/mcp-freshness.mjs`, `node demo/admission-telemetry.mjs`, `node demo/context-envelope.mjs`, `node demo/context-pack.mjs`, `node demo/action-receipt.mjs`, `node demo/loop-ledger.mjs`, `node demo/model-foundry.mjs`, `node demo/research-seed.mjs`, `node demo/thermodynamic-ai-chip-receipt.mjs`, `node demo/rendering-research.mjs`, `node demo/rendering-capabilities.mjs`, `node demo/measurement-layers.mjs`, `node demo/creative-engine.mjs`, `node demo/creative-kernels.mjs`, `node demo/revival-registry.mjs`, `node demo/display-calibration.mjs`, and `node demo/flagship-workflow.mjs`.
+- **Release:** source demo; command surface is `node demo/run.mjs`, `node demo/room.mjs`, `node demo/status.mjs`, `node demo/doctor.mjs`, `node demo/catalog.mjs`, `node demo/server-manifest.mjs`, `node demo/mcp-freshness.mjs`, `node demo/admission-telemetry.mjs`, `node demo/context-envelope.mjs`, `node demo/context-pack.mjs`, `node demo/action-receipt.mjs`, `node demo/loop-ledger.mjs`, `node demo/model-foundry.mjs`, `node demo/research-seed.mjs`, `node demo/thermodynamic-ai-chip-receipt.mjs`, `node demo/rendering-research.mjs`, `node demo/rendering-capabilities.mjs`, `node demo/measurement-layers.mjs`, `node demo/creative-engine.mjs`, `node demo/creative-kernels.mjs`, `node demo/revival-registry.mjs`, `node demo/second-level-flagship-queue.mjs`, `node demo/display-calibration.mjs`, and `node demo/flagship-workflow.mjs`.
 - **Operator surface:** `node demo/telos-mcp.mjs` exposes native MCP tools: `telos.status`, `telos.doctor`, `telos.room`, `telos.catalog`, `telos.workflow`, `telos.server.manifest`, `telos.mcp.freshness`, `telos.admission.telemetry`, `telos.context.envelope`, `telos.context.pack`, `telos.action.receipt`, `telos.loop.ledger`, `telos.objective.monitor`, `telos.model.foundry`, `telos.research.seed`, `telos.research.thermodynamic`, `telos.rendering.research`, `telos.rendering.capabilities`, `telos.measurement.layers`, `telos.creative.engine`, `telos.creative.kernels`, `telos.revival.registry`, and `telos.display.calibration`.
 - **Current floor:** the operator room reconciles 51 preferred tools plus 12 declared auxiliary compatibility tools across Gather, Crucible, Index, Forum, and Telos, with a provider-neutral catalog, executable server manifest, and MCP freshness verifier that checks version, tool-list, Forum routing, and Index context-envelope behavior for CLI, MCP, plugin, IDE, TUI, and app hosts. See [CHANGELOG.md](CHANGELOG.md).
 - **Brand renderer:** `python tools/render_flagship_heroes.py --check-existing --public-root ..` verifies the five README hero PNGs and brand receipts without redistributing the operator-owned fonts.
