@@ -46,7 +46,7 @@ Use `node demo/catalog.mjs --summary` for a compact operator map of the CLI and 
 Use `node demo/server-manifest.mjs --summary` for the five-server MCP launch map.
 Use `npm start` or `node demo/telos-mcp.mjs` to run the Telos stdio MCP server for registry and host introspection.
 Use `node demo/mcp-freshness.mjs --observed observed.json` to turn host-loaded MCP state, including declared behavior probes, into a `MATCH`, `DRIFT`, or `UNVERIFIABLE` freshness verdict.
-Use `node demo/ci-doctor.mjs --summary` for the five-flagship GitHub Actions compatibility receipt: latest CI state, Node 24 migration markers, action-major baselines, and failure routes.
+Use `node demo/ci-doctor.mjs --summary` for the five-flagship GitHub Actions compatibility receipt: latest CI state, Node 24 migration markers, action-major baselines, and failure routes. Use `node demo/ci-doctor.mjs --scan-root .. --summary` to rescan local flagship workflow files without raw logs, GitHub writes, or workflow mutation.
 Use `node demo/context-pack.mjs` for a runnable, budgeted, receipt-backed context packet with validation for large-codebase handoffs.
 Use `node demo/action-receipt.mjs` for the durable external-write receipt contract: proposed intent, authority, execution, redacted evidence, review, compensation, trace joins, and typed failure codes without requiring raw private payloads.
 Use `node demo/model-foundry.mjs --summary` for the bounded model-foundry and self-improving daemon contract: frontier orchestration where appropriate, local/open-weight runtimes where useful, post-training labs where feasible, and crucible-gated promotion.

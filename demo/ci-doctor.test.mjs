@@ -1,8 +1,10 @@
 import assert from "node:assert/strict";
-import { readFileSync } from "node:fs";
+import { mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { spawnSync } from "node:child_process";
+import { tmpdir } from "node:os";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { scanLocalWorkflows } from "./ci-doctor.mjs";
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const doctor = JSON.parse(
@@ -100,3 +102,95 @@ assert.match(summary.stdout, /workflows\s+9/);
 assert.match(summary.stdout, /latest CI\s+MATCH/);
 assert.match(summary.stdout, /node24\s+MATCH/);
 assert.match(summary.stdout, /verdict\s+MATCH/);
+
+const tempRoot = mkdtempSync(path.join(tmpdir(), "telos-ci-doctor-"));
+try {
+  function writeWorkflow(repo, name, text) {
+    const workflows = path.join(tempRoot, repo, ".github", "workflows");
+    mkdirSync(workflows, { recursive: true });
+    writeFileSync(path.join(workflows, name), text, "utf8");
+  }
+
+  writeWorkflow("gather", "ci.yml", `
+name: CI
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.11", "3.12"]
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v6
+        with:
+          python-version: \${{ matrix.python-version }}
+`);
+
+  writeWorkflow("gather", "release.yml", `
+name: Release
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/upload-artifact@v7
+      - uses: actions/download-artifact@v7
+`);
+
+  writeWorkflow("telos", "ci.yml", `
+name: CI
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v6
+        with:
+          node-version: "24"
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+`);
+
+  const observation = scanLocalWorkflows(tempRoot, {
+    flagships: ["gather", "telos"],
+    generatedAt: "2026-06-29T00:00:00.000Z"
+  });
+  assert.equal(observation.schema, "project-telos.ci-doctor-workflow-observation/v1");
+  assert.equal(observation.tool, "telos.ci.doctor");
+  assert.equal(observation.generated_at, "2026-06-29T00:00:00.000Z");
+  assert.equal(observation.aggregate.flagship_count, 2);
+  assert.equal(observation.aggregate.workflow_count, 3);
+  assert.equal(observation.aggregate.node24_compatibility, "MATCH");
+  assert.equal(observation.aggregate.verdict, "MATCH");
+  assert.equal(observation.privacy_boundary.absolute_paths_included, false);
+  assert.equal(observation.privacy_boundary.workflow_bodies_included, false);
+  assert.equal(observation.privacy_boundary.github_queries_performed, false);
+
+  const scannedByFlagship = new Map(observation.flagships.map((flagship) => [flagship.id, flagship]));
+  assert.deepEqual(scannedByFlagship.get("gather").workflow_files, [
+    ".github/workflows/ci.yml",
+    ".github/workflows/release.yml"
+  ]);
+  assert.deepEqual(scannedByFlagship.get("gather").compatibility.python_versions, ["3.11", "3.12"]);
+  assert.equal(scannedByFlagship.get("gather").compatibility.setup_node_major, null);
+  assert.deepEqual(scannedByFlagship.get("gather").compatibility.artifact_actions, [
+    "actions/upload-artifact@v7",
+    "actions/download-artifact@v7"
+  ]);
+  assert.equal(scannedByFlagship.get("telos").compatibility.setup_node_major, "v6");
+  assert.equal(scannedByFlagship.get("telos").compatibility.node_version, "24");
+  assert.deepEqual(scannedByFlagship.get("telos").compatibility.python_versions, ["3.11"]);
+
+  const scanText = JSON.stringify(observation);
+  assert.equal(scanText.includes(tempRoot), false, "scanner must not leak absolute temp root");
+  assert.equal(scanText.includes("node-version:"), false, "scanner must not include workflow bodies");
+} finally {
+  rmSync(tempRoot, { recursive: true, force: true });
+}
