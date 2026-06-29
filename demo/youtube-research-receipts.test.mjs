@@ -34,9 +34,10 @@ assert.equal(mathEducatorLedger.tool, "gather.video");
 assert.equal(mathEducatorLedger.freshness.raw_transcripts_stored, false);
 assert.equal(mathEducatorLedger.freshness.raw_video_stored, false);
 assert.ok(mathEducatorLedger.inputs.includes("https://www.youtube.com/@InigoQuilez"));
+assert.ok(mathEducatorLedger.inputs.includes("https://www.youtube.com/watch?v=5pieVHmlbyk&t=29s"));
 assert.ok(mathEducatorLedger.mission.normalized_concepts.includes("painting-with-maths"));
 assert.ok(mathEducatorLedger.mission.telos_implications.some((item) => /Educator surfaces/.test(item)));
-assert.equal(mathEducatorLedger.results.length, 7);
+assert.equal(mathEducatorLedger.results.length, 8);
 
 const sourceLeadIds = new Set(mathEducatorLedger.results.map((item) => item.id));
 for (const id of [
@@ -46,7 +47,8 @@ for (const id of [
   "21ZB0yhILZo",
   "eFgknPFK-g0",
   "XyUFPHRQtyw",
-  "rf1FKWaSpEY"
+  "rf1FKWaSpEY",
+  "5pieVHmlbyk"
 ]) {
   assert.ok(sourceLeadIds.has(id), `missing source lead ${id}`);
 }
