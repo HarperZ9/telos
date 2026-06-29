@@ -21,7 +21,7 @@ The promotion path is adapter-first. Tools should expose typed packets to Gather
 
 ## Revival Lanes
 
-The current Telos revival registry contains 10 older or adjacent quality tools:
+The current Telos revival registry contains 13 older, adjacent, or local-only quality tools:
 
 - `calibrate-pro`: display-calibration, promotion-ready. Hosts: `telos.measurement.layers`, `telos.creative.engine`, `crucible.measurement_gate`, `index.context.envelope`.
 - `quanta-color`: color-science-library, promotion-ready. Hosts: Calibrate Pro, Telos measurement layers, Telos creative engine, and Crucible measurement gates.
@@ -33,11 +33,14 @@ The current Telos revival registry contains 10 older or adjacent quality tools:
 - `repo-proof-index`: proof-indexing, promotion-ready. Hosts: Index context envelopes, Crucible reports, and Forum ledger summaries.
 - `release-surface-scanner`: release-assurance, promotion-ready. Hosts: Crucible review, Index map, and Telos workflow.
 - `gpu-trace-validator`: rendering-verification, promotion-candidate. Hosts: Telos rendering capabilities, Telos measurement layers, and Crucible measurement gates.
+- `raw-native`: deterministic-renderer-verification, promotion-ready. Hosts: Telos rendering capabilities, Telos measurement layers, Telos creative engine, and Crucible measurement gates.
+- `studio-libs`: studio-perception-organ, promotion-ready. Hosts: Telos creative engine, Telos rendering capabilities, Gather docs, and Crucible measurement gates.
+- `forum-archive`: orchestration-archive, promotion-candidate. Hosts: Forum route, Forum ledger summaries, Telos loop ledgers, and Index context envelopes.
 - `rewardspy` concept lane: proxy-objective observability, external OSS inspiration. Host: `telos.objective.monitor`. This lane watches for proxy score improvement while independent quality degrades, mirroring reward-hacking detection for agent workflows.
 
 ## Engine-Lineage Additions
 
-`studio-engine` and `reconcile` are part of the Telos Engine lineage even though they are not in the 10-tool revival registry yet.
+`studio-engine` and `reconcile` are part of the Telos Engine lineage even though they are not in the 13-tool revival registry yet.
 
 - `studio-engine`: creative-verification simulation engine. It contributes witnessed Worlds, strand expression algebra, GLSL render programs, audio programs, timelines, criteria, refinement, and a frontend handoff kit.
 - `reconcile`: node/browser creative-verification engine. It contributes the single reconcile loop, organ abstraction, expression substrate, GLSL grounding, refinement trajectory, composition, choreography, and witnessed World receipts.
