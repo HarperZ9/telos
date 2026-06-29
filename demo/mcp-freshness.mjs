@@ -21,6 +21,34 @@ function expectedToolHash(tools) {
   return sha256(JSON.stringify([...tools].sort()));
 }
 
+function observedToolNames(observed) {
+  const tools = observed?.tools_list?.result?.tools ?? observed?.tools?.result?.tools ?? observed?.tools ?? [];
+  if (!Array.isArray(tools)) {
+    return [];
+  }
+  return tools
+    .map((tool) => typeof tool === "string" ? tool : tool?.name)
+    .filter((name) => typeof name === "string" && name.length > 0);
+}
+
+function observedVersion(observed) {
+  return observed?.status_payload?.tool_version
+    ?? observed?.status?.tool_version
+    ?? observed?.initialize?.result?.serverInfo?.version
+    ?? observed?.serverInfo?.version
+    ?? null;
+}
+
+function observedServerInfoVersion(observed) {
+  return observed?.initialize?.result?.serverInfo?.version ?? observed?.serverInfo?.version ?? null;
+}
+
+function observedStatusText(observed) {
+  return observed?.status_payload?.native?.current_status
+    ?? observed?.status?.native?.current_status
+    ?? null;
+}
+
 function serverPacket(name, server) {
   return {
     flagship: server.flagship,
@@ -71,6 +99,99 @@ export function freshnessPacket() {
   };
 }
 
+export function evaluateObservedServer(name, observed) {
+  const packet = freshnessPacket();
+  const expected = packet.servers[name];
+  if (!expected) {
+    throw new Error(`unknown MCP server: ${name}`);
+  }
+
+  const diagnostics = [];
+  const toolNames = observedToolNames(observed);
+  const toolHash = toolNames.length > 0 ? expectedToolHash(toolNames) : null;
+  const statusVersion = observedVersion(observed);
+  const serverInfoVersion = observedServerInfoVersion(observed);
+  const statusText = observedStatusText(observed);
+
+  if (!serverInfoVersion || !statusVersion || !statusText || toolNames.length === 0) {
+    diagnostics.push({
+      code: "freshness_probe_unavailable",
+      message: "observed initialize, status, or tools/list payload is missing required freshness fields"
+    });
+  }
+
+  if (serverInfoVersion && serverInfoVersion !== expected.expected_version) {
+    diagnostics.push({
+      code: "stale_mcp_server",
+      expected: expected.expected_version,
+      observed: serverInfoVersion,
+      field: "initialize.result.serverInfo.version"
+    });
+  }
+
+  if (statusVersion && statusVersion !== expected.expected_version) {
+    diagnostics.push({
+      code: "version_drift",
+      expected: expected.expected_version,
+      observed: statusVersion,
+      field: "status.tool_version"
+    });
+  }
+
+  if (statusText && statusText !== expected.expected_current_status) {
+    diagnostics.push({
+      code: "version_drift",
+      expected: expected.expected_current_status,
+      observed: statusText,
+      field: "status.native.current_status"
+    });
+  }
+
+  if (toolHash && toolHash !== expected.expected_tool_hash) {
+    const expectedSet = new Set(expected.expected_tools);
+    const observedSet = new Set(toolNames);
+    diagnostics.push({
+      code: "tool_surface_drift",
+      expected: expected.expected_tool_hash,
+      observed: toolHash,
+      missing_tools: expected.expected_tools.filter((tool) => !observedSet.has(tool)),
+      unexpected_tools: toolNames.filter((tool) => !expectedSet.has(tool))
+    });
+  }
+
+  const failureCodes = FAILURE_CODES.filter((code) => diagnostics.some((item) => item.code === code));
+  const verdict = failureCodes.length === 0
+    ? "MATCH"
+    : failureCodes.includes("freshness_probe_unavailable") && failureCodes.length === 1
+      ? "UNVERIFIABLE"
+      : "DRIFT";
+
+  return {
+    schema: "project-telos.mcp-freshness-observation/v1",
+    tool: "telos.mcp.freshness",
+    server: name,
+    verdict,
+    failure_codes: failureCodes,
+    expected: {
+      version: expected.expected_version,
+      current_status: expected.expected_current_status,
+      tool_hash: expected.expected_tool_hash
+    },
+    observed: {
+      server_info_version: serverInfoVersion,
+      status_version: statusVersion,
+      current_status: statusText,
+      tools: toolNames,
+      tool_hash: toolHash
+    },
+    diagnostics,
+    next_actions: verdict === "MATCH" ? [] : [
+      expected.restart_hint,
+      "record the observation in forum.ledger.summary before retrying the host workflow"
+    ]
+  };
+}
+
 export function summary() {
   const packet = freshnessPacket();
   const lines = [
@@ -87,7 +208,19 @@ export function summary() {
 }
 
 function main() {
-  if (process.argv.includes("--summary")) {
+  const observedIndex = process.argv.indexOf("--observed");
+  if (observedIndex !== -1) {
+    const file = process.argv[observedIndex + 1];
+    if (!file) {
+      throw new Error("--observed requires a JSON file path");
+    }
+    const observed = JSON.parse(readFileSync(file, "utf8"));
+    const server = observed.server;
+    if (typeof server !== "string" || server.length === 0) {
+      throw new Error("observed payload must include a server field");
+    }
+    process.stdout.write(`${JSON.stringify(evaluateObservedServer(server, observed), null, 2)}\n`);
+  } else if (process.argv.includes("--summary")) {
     process.stdout.write(summary());
   } else {
     process.stdout.write(`${JSON.stringify(freshnessPacket(), null, 2)}\n`);
