@@ -104,7 +104,7 @@ Protocol sources already represented in the Telos MCP server manifest:
 
 The MCP freshness lane turns a live dogfood failure into a host contract: a loaded MCP server can be stale even when the source tree and tests are current. Hosts should compare the manifest's status tool, expected version, expected current-status string, `tools/list` hash, and declared behavior probes before trusting tool output; `node demo/mcp-freshness.mjs --observed observed.json` returns `project-telos.mcp-freshness-observation/v1` with `MATCH`, `DRIFT`, or `UNVERIFIABLE`. Drift becomes `stale_mcp_server`, `tool_surface_drift`, `version_drift`, or `behavior_probe_drift`; missing probe payloads become `freshness_probe_unavailable` instead of an invisible operator surprise.
 
-The CI doctor lane turns GitHub Actions runtime and action-major drift into a native receipt. `node demo/ci-doctor.mjs --summary` records five latest flagship CI runs, 9 workflow files, Node 24 migration markers, first-party action-major baselines, and failure routes through `telos.ci.doctor`; raw logs, tokens, secrets, private paths, workflow mutation, and GitHub writes are excluded.
+The CI doctor lane turns GitHub Actions runtime and action-major drift into a native receipt. `node demo/ci-doctor.mjs --summary` records five latest flagship CI runs, 9 workflow files, Node 24 migration markers, first-party action-major baselines, and failure routes through `telos.ci.doctor`; `node demo/ci-doctor.mjs --scan-root .. --summary` rescans local flagship workflow files into `project-telos.ci-doctor-workflow-observation/v1`. Raw logs, tokens, secrets, private paths, workflow bodies, workflow mutation, and GitHub writes are excluded.
 
 ## Operating Posture
 
