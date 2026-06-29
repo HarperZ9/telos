@@ -44,6 +44,16 @@ def read_text(path: Path) -> str:
     return path.read_text(encoding="utf8", errors="replace")
 
 
+def repo_name(path: Path) -> str:
+    config = path / ".git" / "config"
+    if config.exists():
+        text = read_text(config)
+        match = re.search(r"github\.com[:/]HarperZ9/([^/\s\"']+?)(?:\.git)?(?:\s|$|\"|')", text)
+        if match:
+            return match.group(1).removesuffix(".git")
+    return path.name
+
+
 def is_repo(path: Path) -> bool:
     return path.is_dir() and (path / ".git").exists()
 
@@ -78,7 +88,7 @@ def classify(text: str, repo: Path) -> RepoReport:
     developer_score = len(developer) - len(missing_developer)
     verdict = "MATCH" if public_score >= 4 and developer_score >= 5 and not warnings else "DRIFT"
     return RepoReport(
-        name=repo.name,
+        name=repo_name(repo),
         path=str(repo),
         public_score=public_score,
         developer_score=developer_score,
@@ -93,7 +103,7 @@ def inspect_repo(repo: Path) -> RepoReport:
     readme = repo / "README.md"
     if not readme.exists():
         return RepoReport(
-            name=repo.name,
+            name=repo_name(repo),
             path=str(repo),
             public_score=0,
             developer_score=0,
