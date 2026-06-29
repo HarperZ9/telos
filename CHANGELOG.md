@@ -4,6 +4,13 @@ All notable changes to Project Telos. Telos is currently a source demo and share
 
 ## Unreleased
 
+- Action receipts: hardens `project-telos.action-receipt/v1` for external writes by separating durable receipts
+  from trace spans, adding external action kinds, authority/execution/evidence/review/compensation refs,
+  redacted before/after evidence, source-correction provenance, and negative cases for authority gaps,
+  evidence gaps, duplicate idempotency keys, and collapsed proposed/completed action reports.
+- Model foundry research: adds the RL scaling receipt-spine target for Slime-class post-training systems,
+  focusing Telos on rollout, verifier, reward, compute, checkpoint, and promotion receipts rather than
+  unverified frontier-training claims.
 - MCP launch profiles: adds an executable source-checkout launch contract test and declares auxiliary
   Index/Forum compatibility tools separately from the 51 preferred catalog tools, so host integrations can
   distinguish the polished surface from lower-level or legacy aliases.
