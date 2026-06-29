@@ -44,6 +44,11 @@ for (const term of [
 
 for (const term of [
   "Project Telos Connection Map",
+  "HarperZ9 repository",
+  "constellation",
+  "public non-forks",
+  "private active repos",
+  "seed bank",
   "Gather senses",
   "Index remembers",
   "Forum routes",
@@ -57,6 +62,7 @@ for (const term of [
   "Telos gives the durable receipt",
   "Hyphal Context Protocol",
   "promotion record",
+  "Lane Record Shape",
   "UNVERIFIABLE"
 ]) {
   assert.match(connectionMap, new RegExp(term.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"), "i"));
@@ -92,3 +98,4 @@ assert.match(currentState, /root_sha256_prefix[^a-f0-9]+92ef331e0850ccf6/i);
 assert.match(currentState, /Telos repo[^.\n]+469ce55/i);
 assert.match(currentState, /51 available tools/i);
 assert.match(currentState, /PROJECT-CONNECTION-MAP\.md/i);
+assert.match(currentState, /77 visible HarperZ9 repos/i);
