@@ -11,20 +11,18 @@ Define the native launcher contract for the Python flagships. Package-native exe
 - [x] Existing package entry points and MCP source profiles remain compatible.
 
 ## Technical Approach
-Add tiny root-level source-checkout launcher packages for the `src/` layout repositories:
-- `gather/__init__.py` extends the package path to `./src/gather`; `gather/__main__.py` delegates to `gather.cli.main`.
-- `forum/__init__.py` extends the package path to `./src/forum`; `forum/__main__.py` delegates to `forum.cli.main`.
+Use narrow module trampolines for same-name `src/` layout repositories:
+- `gather.py` adds `./src` to `sys.path` and runs the real `gather.__main__`.
+- `forum.py` adds `./src` to `sys.path` and runs the real `forum.__main__`.
 - `index/__init__.py` inserts `./src` into `sys.path`; `index/__main__.py` delegates to `index_graph.cli.main`.
 
-These launchers are source-checkout conveniences only. The package scripts in `pyproject.toml` remain the installed interface, and the `src/<package>/__main__.py` modules remain the package module entry points. For `index`, Hatch wheel package selection is explicit so the source-only `index` alias cannot become part of the built distribution.
+These launchers are source-checkout conveniences only. The package scripts in `pyproject.toml` remain the installed interface, and the `src/<package>/__main__.py` modules remain the package module entry points. The same-name tools use module files rather than top-level packages, so pytest-cov can still resolve the real package from `src` when the project path is active. For `index`, Hatch wheel package selection is explicit so the source-only `index` alias cannot become part of the built distribution.
 
 ## Files to Modify
 - `C:\dev\public\gather\tests\test_cli.py` - add no-PYTHONPATH source-checkout test.
-- `C:\dev\public\gather\gather\__init__.py` - add source-checkout package path bridge.
-- `C:\dev\public\gather\gather\__main__.py` - add source-checkout module launcher.
+- `C:\dev\public\gather\gather.py` - add source-checkout CLI trampoline.
 - `C:\dev\public\forum\tests\test_cli.py` - add no-PYTHONPATH source-checkout test.
-- `C:\dev\public\forum\forum\__init__.py` - add source-checkout package path bridge.
-- `C:\dev\public\forum\forum\__main__.py` - add source-checkout module launcher.
+- `C:\dev\public\forum\forum.py` - add source-checkout CLI trampoline.
 - `C:\dev\public\index\tests\test_cli_subcommands.py` - add no-PYTHONPATH source-checkout test for `python -m index`.
 - `C:\dev\public\index\index\__init__.py` - add source-checkout import bridge.
 - `C:\dev\public\index\index\__main__.py` - add source-checkout module launcher.
