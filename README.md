@@ -42,6 +42,7 @@ Use `node demo/catalog.mjs --summary` for a compact operator map of the CLI and 
 Use `node demo/server-manifest.mjs --summary` for the five-server MCP launch map.
 Use `node demo/mcp-freshness.mjs --observed observed.json` to turn host-loaded MCP state, including declared behavior probes, into a `MATCH`, `DRIFT`, or `UNVERIFIABLE` freshness verdict.
 Use `node demo/context-pack.mjs` for a runnable, budgeted, receipt-backed context packet with validation for large-codebase handoffs.
+Use `node demo/action-receipt.mjs` for the durable external-write receipt contract: proposed intent, authority, execution, redacted evidence, review, compensation, trace joins, and typed failure codes without requiring raw private payloads.
 Use `node demo/model-foundry.mjs --summary` for the bounded model-foundry and self-improving daemon contract: frontier orchestration where appropriate, local/open-weight runtimes where useful, post-training labs where feasible, and Crucible-gated promotion.
 Use `node demo/rendering-capabilities.mjs --summary` for the WebGPU/WebGL/canvas/static renderer selection and fallback contract.
 Use `node demo/measurement-layers.mjs --summary` for ten runnable meters across histogram, dither, splat, cluster, audio, flicker, curvature, interaction, uncertainty, and frame budget signals.
@@ -78,6 +79,8 @@ The current research queue also includes receipt-only source leads from Inigo Qu
 ## Telos Model Foundry
 
 The true model direction is not pretending this repo can reproduce frontier-lab pretraining on a workstation. `node demo/model-foundry.mjs` defines Telos as the foundry around models: hosted frontier APIs for hard tool-heavy work when policy and privacy allow, local/open-weight models for private or cheap work, feasible post-training experiments, typed MCP tools, lossless-by-reference workspace memory, and eval gates before any promotion.
+
+The post-training lane now has an RL scaling receipt-spine target in [`docs/research/rl-scaling-receipt-spine.md`](docs/research/rl-scaling-receipt-spine.md). It uses current THUDM/slime repository metadata as a benchmark signal while keeping Telos focused on durable rollout, verifier, reward, compute, checkpoint, and promotion receipts rather than unverified training claims.
 
 The self-improving daemon lives here as a bounded loop. It gathers fresh evidence, indexes the workspace, routes one improvement, admits one action, executes one patch or experiment, runs Crucible, checks objective drift, and promotes only `MATCH`. `DRIFT` blocks; `UNVERIFIABLE` asks for evidence instead of training itself on a guess.
 
