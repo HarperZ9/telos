@@ -760,6 +760,26 @@
       ]
     },
     {
+      "name": "telos.accessibility.doctor",
+      "flagship": "telos",
+      "description": "Use when a host needs static HTML accessibility, reduced-motion, keyboard, and canvas-fallback receipts for Telos Studio surfaces. Read-only, zero-auth, no external side effects. Returns JSON MATCH, DRIFT, or UNVERIFIABLE accessibility receipts.",
+      "cli": [
+        "node",
+        "demo/accessibility-doctor.mjs"
+      ],
+      "mcp": {
+        "status": "available",
+        "server": "telos",
+        "method": "tools/call",
+        "tool": "telos.accessibility.doctor"
+      },
+      "next_actions": [
+        "telos.presentation.doctor",
+        "crucible.assess",
+        "telos.workflow"
+      ]
+    },
+    {
       "name": "telos.admission.telemetry",
       "flagship": "telos",
       "description": "Use when designing trace fields that keep action admission separate from verification verdicts. Read-only, zero-auth, no external side effects. Returns a JSON telemetry convention.",

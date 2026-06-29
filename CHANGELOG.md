@@ -4,6 +4,10 @@ All notable changes to Project Telos. Telos is currently a source demo and share
 
 ## Unreleased
 
+- Accessibility doctor: adds `project-telos.accessibility-doctor/v1`,
+  `node demo/accessibility-doctor.mjs`, and `telos.accessibility.doctor` to verify
+  static Studio accessibility signals such as reduced motion, keyboard focus,
+  labeled controls, live regions, and canvas fallbacks.
 - Presentation doctor: adds `project-telos.presentation-doctor/v1`,
   `node demo/presentation-doctor.mjs`, and `telos.presentation.doctor` to turn
   five-flagship README, changelog, and brand-asset parity into privacy-safe

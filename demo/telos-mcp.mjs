@@ -60,6 +60,11 @@ export const tools = [
     inputSchema: emptyInputSchema
   },
   {
+    name: "telos.accessibility.doctor",
+    description: "Use when a host needs static HTML accessibility, reduced-motion, keyboard, and canvas-fallback receipts for Telos Studio surfaces. Read-only, zero-auth, no external side effects. Returns JSON MATCH, DRIFT, or UNVERIFIABLE accessibility receipts.",
+    inputSchema: emptyInputSchema
+  },
+  {
     name: "telos.admission.telemetry",
     description: "Use when designing trace fields that keep action admission separate from verification verdicts. Read-only, zero-auth, no external side effects. Returns a JSON telemetry convention.",
     inputSchema: emptyInputSchema
@@ -161,6 +166,7 @@ const toolScripts = new Map([
   ["telos.mcp.freshness", ["mcp-freshness.mjs"]],
   ["telos.ci.doctor", ["ci-doctor.mjs"]],
   ["telos.presentation.doctor", ["presentation-doctor.mjs"]],
+  ["telos.accessibility.doctor", ["accessibility-doctor.mjs"]],
   ["telos.admission.telemetry", ["admission-telemetry.mjs"]],
   ["telos.context.envelope", ["context-envelope.mjs"]],
   ["telos.context.pack", ["context-pack.mjs"]],

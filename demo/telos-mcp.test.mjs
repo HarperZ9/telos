@@ -31,6 +31,7 @@ for (const name of [
   "telos.mcp.freshness",
   "telos.ci.doctor",
   "telos.presentation.doctor",
+  "telos.accessibility.doctor",
   "telos.admission.telemetry",
   "telos.context.envelope",
   "telos.context.pack",
@@ -130,6 +131,15 @@ assert.equal(presentationDoctor.result.structuredContent.schema, "project-telos.
 assert.equal(presentationDoctor.result.structuredContent.tool, "telos.presentation.doctor");
 assert.equal(presentationDoctor.result.structuredContent.aggregate.flagship_count, 5);
 assert.equal(presentationDoctor.result.structuredContent.privacy_boundary.raw_document_bodies_included, false);
+
+const accessibilityDoctor = handleRequest(request("tools/call", {
+  name: "telos.accessibility.doctor",
+  arguments: {}
+}));
+assert.equal(accessibilityDoctor.result.structuredContent.schema, "project-telos.accessibility-doctor/v1");
+assert.equal(accessibilityDoctor.result.structuredContent.tool, "telos.accessibility.doctor");
+assert.equal(accessibilityDoctor.result.structuredContent.aggregate.verdict, "MATCH");
+assert.equal(accessibilityDoctor.result.structuredContent.privacy_boundary.raw_html_included, false);
 
 const expectedAdmissionTelemetry = JSON.parse(
   readFileSync(new URL("./integrations/admission-telemetry-conventions.json", import.meta.url), "utf8")
@@ -342,6 +352,7 @@ assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.server.
 assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.mcp.freshness"));
 assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.ci.doctor"));
 assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.presentation.doctor"));
+assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.accessibility.doctor"));
 assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.admission.telemetry"));
 assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.context.envelope"));
 assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.context.pack"));

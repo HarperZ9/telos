@@ -11,13 +11,13 @@ This document is a live state packet for Project Telos. It is deliberately evide
 - Index public workspace `root_sha256_prefix: 92ef331e0850ccf6`.
 - Index whole development workspace map generated `2026-06-29T00:49:59-07:00`: 124 repositories, 114 public-class, 10 local-class, 93 dirty repositories, root SHA256 prefix `99e773d965f606c9`.
 - Index whole operator-profile workspace map generated `2026-06-29T00:50:16-07:00`: 207 repositories, 49 public-class, 158 local-class, 240 dirty repositories, root SHA256 prefix `b79886309f93e63a`.
-- Telos repo pre-checkpoint head `469ce55`, branch `main`; latest in-turn Index refresh saw the active uncommitted context-pack and thermodynamic-integration edits.
+- Telos repo pre-checkpoint head `48d94d4`, branch `main`; latest in-turn Index refresh saw the active uncommitted accessibility-doctor edits.
 - Studio Engine repo current branch `feat/two-way-loop`, head `ad27b08`, public origin `https://github.com/HarperZ9/studio-engine.git`.
 - Reconcile repo current head `375d1f5`, branch `main`, public origin `https://github.com/HarperZ9/reconcile.git`.
 - Forum route for the expanded mandate decided `project-telos` with no escalation; related lanes remain technical-writing, function-routing, data-ml, code-review, render-pipeline, shader-effects, and deep-research.
 - Gather receipts were refreshed for large-context agent memory and rendering research.
 - Telos workflow returned `MATCH` for the local five-flagship workflow and reports CLI, MCP, IDE, TUI, and application workbench next actions.
-- Telos catalog now presents 55 available tools across the five flagships, including `telos.context.pack`, `telos.model.foundry`, `telos.mcp.freshness`, `telos.ci.doctor`, `telos.presentation.doctor`, `telos.research.thermodynamic`, `telos.second_level.queue`, and `telos.workstation.substrate`.
+- Telos catalog now presents 56 available tools across the five flagships, including `telos.context.pack`, `telos.model.foundry`, `telos.mcp.freshness`, `telos.ci.doctor`, `telos.presentation.doctor`, `telos.accessibility.doctor`, `telos.research.thermodynamic`, `telos.second_level.queue`, and `telos.workstation.substrate`.
 - The canonical connection and distribution map now lives at `docs/PROJECT-CONNECTION-MAP.md`. It treats the five flagships as the current organs and the wider HarperZ9 public repo corpus as Telos growth tissue.
 - GitHub authenticated inventory checked 77 visible HarperZ9 repos: 47 public non-forks, 4 public forks, 25 private active repos, and 1 private archived repo. Private and local-only viability stays in ignored local packets until sanitized.
 - Local-only viability now has public-safe revival records for `raw-native`, `studio-libs`, and `forum-archive`: deterministic renderer verification, studio perception organ, and orchestration archive. Raw local viability notes remain ignored and are not public evidence.
@@ -107,6 +107,8 @@ The MCP freshness lane turns a live dogfood failure into a host contract: a load
 The CI doctor lane turns GitHub Actions runtime and action-major drift into a native receipt. `node demo/ci-doctor.mjs --summary` records five latest flagship CI runs, 9 workflow files, Node 24 migration markers, first-party action-major baselines, and failure routes through `telos.ci.doctor`; `node demo/ci-doctor.mjs --scan-root .. --summary` rescans local flagship workflow files into `project-telos.ci-doctor-workflow-observation/v1`. Raw logs, tokens, secrets, private paths, workflow bodies, workflow mutation, and GitHub writes are excluded.
 
 The presentation doctor lane turns five-flagship README, changelog, and brand-asset parity into a native receipt. `node demo/presentation-doctor.mjs --summary` scans sibling source checkouts for shared Project Telos navigation, hero art, CI/version/license badges, operator-surface/current-status text, changelog freshness, and brand assets, then emits `MATCH`, `DRIFT`, or `UNVERIFIABLE` as `telos.presentation.doctor`. Raw document bodies, absolute paths, private paths, GitHub queries, and filesystem writes are excluded.
+
+The accessibility doctor lane turns Studio HTML quality into a native receipt. `node demo/accessibility-doctor.mjs --summary` checks language, viewport, skip links, main/navigation landmarks, focus-visible styles, reduced-motion handling, responsive media, canvas names/fallbacks, button types, interactive state, labeled controls, and live regions, then emits `MATCH`, `DRIFT`, or `UNVERIFIABLE` as `telos.accessibility.doctor`. Raw HTML, absolute paths, browser automation, external fetches, and filesystem writes are excluded.
 
 ## Operating Posture
 
