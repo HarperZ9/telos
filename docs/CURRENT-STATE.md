@@ -88,7 +88,7 @@ Protocol sources already represented in the Telos MCP server manifest:
 - OpenAI Apps SDK MCP server guide: https://developers.openai.com/apps-sdk/build/mcp-server
 - Anthropic Claude Code MCP docs: https://docs.anthropic.com/en/docs/claude-code/mcp
 
-The MCP freshness lane turns a live dogfood failure into a host contract: a loaded MCP server can be stale even when the source tree and tests are current. Hosts should compare the manifest's status tool, expected version, expected current-status string, and `tools/list` hash before trusting tool output; `node demo/mcp-freshness.mjs --observed observed.json` returns `project-telos.mcp-freshness-observation/v1` with `MATCH`, `DRIFT`, or `UNVERIFIABLE`. Drift becomes `stale_mcp_server`, `tool_surface_drift`, or `version_drift`; missing probe payloads become `freshness_probe_unavailable` instead of an invisible operator surprise.
+The MCP freshness lane turns a live dogfood failure into a host contract: a loaded MCP server can be stale even when the source tree and tests are current. Hosts should compare the manifest's status tool, expected version, expected current-status string, `tools/list` hash, and declared behavior probes before trusting tool output; `node demo/mcp-freshness.mjs --observed observed.json` returns `project-telos.mcp-freshness-observation/v1` with `MATCH`, `DRIFT`, or `UNVERIFIABLE`. Drift becomes `stale_mcp_server`, `tool_surface_drift`, `version_drift`, or `behavior_probe_drift`; missing probe payloads become `freshness_probe_unavailable` instead of an invisible operator surprise.
 
 ## Operating Posture
 

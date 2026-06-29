@@ -40,7 +40,7 @@ node demo/display-calibration.mjs --summary
 Open the visual certificate-loop surface at [`demo/index.html`](demo/index.html).
 Use `node demo/catalog.mjs --summary` for a compact operator map of the CLI and MCP surface.
 Use `node demo/server-manifest.mjs --summary` for the five-server MCP launch map.
-Use `node demo/mcp-freshness.mjs --observed observed.json` to turn host-loaded MCP state into a `MATCH`, `DRIFT`, or `UNVERIFIABLE` freshness verdict.
+Use `node demo/mcp-freshness.mjs --observed observed.json` to turn host-loaded MCP state, including declared behavior probes, into a `MATCH`, `DRIFT`, or `UNVERIFIABLE` freshness verdict.
 Use `node demo/context-pack.mjs` for a runnable, budgeted, receipt-backed context packet with validation for large-codebase handoffs.
 Use `node demo/model-foundry.mjs --summary` for the bounded model-foundry and self-improving daemon contract: frontier orchestration where appropriate, local/open-weight runtimes where useful, post-training labs where feasible, and Crucible-gated promotion.
 Use `node demo/rendering-capabilities.mjs --summary` for the WebGPU/WebGL/canvas/static renderer selection and fallback contract.

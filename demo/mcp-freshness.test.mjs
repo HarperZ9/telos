@@ -17,6 +17,7 @@ assert.deepEqual(packet.failure_codes, [
   "stale_mcp_server",
   "tool_surface_drift",
   "version_drift",
+  "behavior_probe_drift",
   "launch_profile_unresolved",
   "freshness_probe_unavailable"
 ]);
@@ -39,10 +40,16 @@ for (const [name, server] of Object.entries(packet.servers)) {
   assert.ok(server.probe_contract.observed_server_info_required);
   assert.ok(server.probe_contract.observed_tools_list_required);
   assert.ok(server.probe_contract.observed_status_payload_required);
+  assert.ok(Array.isArray(server.behavior_probes));
   assert.ok(server.restart_hint.includes("restart"));
 }
 
 assert.equal(packet.servers.forum.expected_version, "1.12.0");
+assert.equal(packet.servers.forum.behavior_probes.length, 1);
+assert.deepEqual(packet.servers.forum.behavior_probes[0].expected_subset, {
+  decided: "project-telos",
+  needs_escalation: false
+});
 assert.equal(packet.servers.index.expected_tools.includes("index.context.envelope"), true);
 assert.equal(packet.servers.telos.status_tool, "telos.status");
 
@@ -59,6 +66,14 @@ const observedForumMatch = {
     native: {
       current_status: packet.servers.forum.expected_current_status
     }
+  },
+  behavior_probes: {
+    "forum-broad-telos-route": {
+      result: {
+        decided: "project-telos",
+        needs_escalation: false
+      }
+    }
   }
 };
 
@@ -68,6 +83,17 @@ assert.equal(match.server, "forum");
 assert.equal(match.verdict, "MATCH");
 assert.deepEqual(match.failure_codes, []);
 assert.equal(match.observed.tool_hash, packet.servers.forum.expected_tool_hash);
+assert.equal(match.observed.behavior_probes["forum-broad-telos-route"].verdict, "MATCH");
+
+const behaviorDriftForum = structuredClone(observedForumMatch);
+behaviorDriftForum.behavior_probes["forum-broad-telos-route"].result = {
+  decided: null,
+  needs_escalation: true
+};
+const behaviorDrift = evaluateObservedServer("forum", behaviorDriftForum);
+assert.equal(behaviorDrift.verdict, "DRIFT");
+assert.deepEqual(behaviorDrift.failure_codes, ["behavior_probe_drift"]);
+assert.ok(behaviorDrift.diagnostics.some((item) => item.code === "behavior_probe_drift"));
 
 const staleForum = structuredClone(observedForumMatch);
 staleForum.initialize.result.serverInfo.version = "1.11.0";
