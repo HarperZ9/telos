@@ -208,6 +208,69 @@ try {
   });
   assert.equal(rosterCli.status, 0, rosterCli.stderr || rosterCli.stdout);
   assert.equal(JSON.parse(rosterCli.stdout).aggregate.verdict, "MATCH");
+
+  // An umbrella tool (under the operator's umbrella but not Telos-bound) is graded
+  // against its own nav label and surface terms, so a standalone compiler need not
+  // claim Project Telos or expose an MCP server it does not have.
+  writeRepo(tempRoot, "quantac", {
+    readme: `
+<p align="center"><img src="docs/brand/quantac-hero.png" alt="QuantaLang, the Effects Language"></p>
+
+# quantac
+
+[Quanta ecosystem](https://github.com/HarperZ9/quanta-universe) | [quantalang](https://github.com/HarperZ9/quantalang) | [quanta-universe](https://github.com/HarperZ9/quanta-universe)
+
+[![CI](https://github.com/HarperZ9/quantac/actions/workflows/ci.yml/badge.svg)](https://github.com/HarperZ9/quantac/actions/workflows/ci.yml)
+![version: 1.0](https://img.shields.io/badge/version-1.0-informational.svg)
+![license: fair-source](https://img.shields.io/badge/license-fair--source-blue.svg)
+
+- **Operator surface:** the \`quantac\` CLI builds .quanta to C, with a bundled LSP server for editors.
+- **Current status:** source checkout, C backend production-grade.
+`,
+    changelog: `
+# Changelog
+
+## Unreleased
+
+- Presentation pass: hero, brand assets, and Quanta ecosystem navigation.
+- Operator surface documented across the CLI and the bundled LSP server.
+`
+  });
+
+  const umbrella = scanPresentationSurfaces(tempRoot, {
+    flagships: ["quantac"],
+    navLabel: "Quanta ecosystem",
+    navRoster: ["quantalang", "quanta-universe"],
+    surfaceTerms: ["CLI", "LSP"],
+    generatedAt: "2026-06-29T00:00:04.000Z"
+  });
+  const quantac = umbrella.flagships.find((flagship) => flagship.id === "quantac");
+  assert.equal(
+    quantac.files.readme.signals.project_telos_nav,
+    true,
+    "a custom nav label should anchor the family nav for an umbrella tool"
+  );
+  assert.equal(
+    quantac.files.readme.signals.cli_mcp_terms,
+    true,
+    "custom surface terms (CLI + LSP) should satisfy the surface signal without requiring MCP"
+  );
+  assert.equal(
+    quantac.presentation.verdict,
+    "MATCH",
+    "umbrella tool graded against its own label and terms should reach MATCH"
+  );
+
+  const umbrellaCli = spawnSync(process.execPath, [
+    path.join(here, "presentation-doctor.mjs"),
+    "--scan-root", tempRoot,
+    "--flagships", "quantac",
+    "--nav-label", "Quanta ecosystem",
+    "--nav-roster", "quantalang,quanta-universe",
+    "--surface-terms", "CLI,LSP"
+  ], { cwd: path.resolve(here, ".."), encoding: "utf8" });
+  assert.equal(umbrellaCli.status, 0, umbrellaCli.stderr || umbrellaCli.stdout);
+  assert.equal(JSON.parse(umbrellaCli.stdout).aggregate.verdict, "MATCH");
 } finally {
   rmSync(tempRoot, { recursive: true, force: true });
 }

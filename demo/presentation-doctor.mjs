@@ -33,26 +33,31 @@ function escapeRegExp(value) {
   return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }
 
-function readmeSignals(text, navRoster) {
+function readmeSignals(text, navRoster, navLabel, surfaceTerms) {
   const navLinked = navRoster.every((slug) =>
     new RegExp(`github\\.com/HarperZ9/${escapeRegExp(slug)}`, "i").test(text));
+  const labelPresent = new RegExp(escapeRegExp(navLabel), "i").test(text);
+  const surfacesPresent = surfaceTerms.every((term) =>
+    new RegExp(`\\b${escapeRegExp(term)}\\b`, "i").test(text));
   return {
     hero_image: /docs\/brand\/[^)\s"']*hero\.png|<img\b/i.test(text),
-    project_telos_nav: /Project Telos/i.test(text) && navLinked,
+    project_telos_nav: labelPresent && navLinked,
     ci_badge: /actions\/workflows\/ci\.ya?ml\/badge\.svg/i.test(text),
     version_badge: /badge\/version-|version:/i.test(text),
     license_badge: /badge\/license-|license:/i.test(text),
     operator_surface: /operator surface/i.test(text),
     current_status: /current floor|current status/i.test(text),
-    cli_mcp_terms: /\bCLI\b/i.test(text) && /\bMCP\b/i.test(text)
+    cli_mcp_terms: surfacesPresent
   };
 }
 
-function changelogSignals(text) {
+function changelogSignals(text, surfaceTerms) {
+  const surfaceNoted = surfaceTerms.some((term) =>
+    new RegExp(`\\b${escapeRegExp(term)}\\b`, "i").test(text));
   return {
     unreleased_section: /^##\s+Unreleased\b/im.test(text),
     presentation_housekeeping: /presentation|operator-surface|operator surface/i.test(text),
-    mcp_surface: /\bMCP\b/i.test(text)
+    mcp_surface: surfaceNoted
   };
 }
 
@@ -62,7 +67,7 @@ function signalFailures(signals, mapping) {
     .map(([, code]) => code);
 }
 
-function analyzeFlagship(root, id, navRoster) {
+function analyzeFlagship(root, id, navRoster, navLabel, surfaceTerms) {
   const repoRoot = path.join(root, id);
   if (!existsSync(repoRoot) || !statSync(repoRoot).isDirectory()) {
     return {
@@ -99,7 +104,7 @@ function analyzeFlagship(root, id, navRoster) {
         present: true,
         relative_path: readme.relative_path,
         hash: readme.hash,
-        signals: readmeSignals(readme.text, navRoster)
+        signals: readmeSignals(readme.text, navRoster, navLabel, surfaceTerms)
       }
     : { present: false };
   if (!readme) {
@@ -122,7 +127,7 @@ function analyzeFlagship(root, id, navRoster) {
         present: true,
         relative_path: changelog.relative_path,
         hash: changelog.hash,
-        signals: changelogSignals(changelog.text)
+        signals: changelogSignals(changelog.text, surfaceTerms)
       }
     : { present: false };
   if (!changelog) {
@@ -168,7 +173,9 @@ function aggregateVerdict(verdicts) {
 export function scanPresentationSurfaces(root = defaultRoot, options = {}) {
   const flagships = options.flagships ?? defaultFlagships;
   const navRoster = options.navRoster ?? defaultFlagships;
-  const scanned = flagships.map((id) => analyzeFlagship(root, id, navRoster));
+  const navLabel = options.navLabel ?? "Project Telos";
+  const surfaceTerms = options.surfaceTerms ?? ["CLI", "MCP"];
+  const scanned = flagships.map((id) => analyzeFlagship(root, id, navRoster, navLabel, surfaceTerms));
   const verdicts = scanned.map((flagship) => flagship.presentation.verdict);
   const failureCodes = unique(scanned.flatMap((flagship) => flagship.presentation.failure_codes));
   return {
@@ -240,7 +247,12 @@ function main() {
   const navRoster = navRosterArg
     ? navRosterArg.split(",").map((item) => item.trim()).filter(Boolean)
     : undefined;
-  const packet = scanPresentationSurfaces(root, { flagships, navRoster });
+  const navLabel = optionValue(args, "--nav-label") ?? undefined;
+  const surfaceTermsArg = optionValue(args, "--surface-terms");
+  const surfaceTerms = surfaceTermsArg
+    ? surfaceTermsArg.split(",").map((item) => item.trim()).filter(Boolean)
+    : undefined;
+  const packet = scanPresentationSurfaces(root, { flagships, navRoster, navLabel, surfaceTerms });
   if (args.includes("--summary")) {
     process.stdout.write(summary(packet));
   } else {

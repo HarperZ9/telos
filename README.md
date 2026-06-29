@@ -1,11 +1,11 @@
 <p align="center">
-  <img src="docs/brand/telos-hero.png" alt="Project Telos, the flagship membrane for verified contact with state and range">
+  <img src="docs/brand/telos-hero.png" alt="Project Telos, shared AI workspaces for creation, simulation, and verification">
 </p>
 <!-- Project mark: docs/brand/telos-mark.svg -->
 
 # Project Telos
 
-> Give models and people shared, checkable work surfaces.
+> Create, simulate, verify, and replay work with AI.
 
 [Project Telos](https://harperz9.github.io) | [gather](https://github.com/HarperZ9/gather) | [crucible](https://github.com/HarperZ9/crucible) | [index](https://github.com/HarperZ9/index) | [forum](https://github.com/HarperZ9/forum) | [telos](https://github.com/HarperZ9/telos)
 
