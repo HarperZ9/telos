@@ -17,6 +17,11 @@ function totalTools() {
     .reduce((sum, server) => sum + server.expected_tools.length, 0);
 }
 
+function totalAuxiliaryTools() {
+  return Object.values(manifest.servers)
+    .reduce((sum, server) => sum + (server.auxiliary_tools ?? []).length, 0);
+}
+
 function freshnessProbeCount() {
   return Object.values(manifest.servers)
     .filter((server) => server.freshness?.status_tool).length;
@@ -27,12 +32,15 @@ export function summary() {
     "Project Telos MCP Server Manifest",
     `servers  ${Object.keys(manifest.servers).length}`,
     `tools    ${totalTools()} expected`,
+    `auxiliary ${totalAuxiliaryTools()} compatible`,
     `freshness ${freshnessProbeCount()} probes`,
     `profile  source_checkout`,
     `host     Codex TOML, Claude JSON, OpenAI Agents stdio`
   ];
   for (const [name, server] of Object.entries(manifest.servers)) {
-    lines.push(`${name.padEnd(9)} ${server.expected_tools.length} tools`);
+    const auxiliary = (server.auxiliary_tools ?? []).length;
+    const suffix = auxiliary ? ` + ${auxiliary} auxiliary` : "";
+    lines.push(`${name.padEnd(9)} ${server.expected_tools.length} tools${suffix}`);
   }
   lines.push("next     node demo/server-manifest.mjs --codex");
   return `${lines.join("\n")}\n`;

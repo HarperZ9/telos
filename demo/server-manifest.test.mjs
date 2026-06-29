@@ -66,6 +66,7 @@ assert.equal(summary.status, 0, summary.stderr || summary.stdout);
 assert.match(summary.stdout, /^Project Telos MCP Server Manifest/m);
 assert.match(summary.stdout, /servers\s+5/);
 assert.match(summary.stdout, /tools\s+51 expected/);
+assert.match(summary.stdout, /auxiliary\s+12 compatible/);
 assert.match(summary.stdout, /freshness\s+5 probes/);
 assert.match(summary.stdout, /gather\s+5 tools/);
 
