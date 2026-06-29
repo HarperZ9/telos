@@ -44,6 +44,7 @@ for (const [server, expected] of expectedByServer) {
     "stale_mcp_server",
     "tool_surface_drift",
     "version_drift",
+    "behavior_probe_drift",
     "launch_profile_unresolved",
     "freshness_probe_unavailable"
   ]);

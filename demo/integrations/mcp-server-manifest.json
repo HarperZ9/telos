@@ -66,6 +66,7 @@
           "stale_mcp_server",
           "tool_surface_drift",
           "version_drift",
+          "behavior_probe_drift",
           "launch_profile_unresolved",
           "freshness_probe_unavailable"
         ]
@@ -117,6 +118,7 @@
           "stale_mcp_server",
           "tool_surface_drift",
           "version_drift",
+          "behavior_probe_drift",
           "launch_profile_unresolved",
           "freshness_probe_unavailable"
         ]
@@ -160,6 +162,7 @@
           "stale_mcp_server",
           "tool_surface_drift",
           "version_drift",
+          "behavior_probe_drift",
           "launch_profile_unresolved",
           "freshness_probe_unavailable"
         ]
@@ -203,8 +206,23 @@
           "stale_mcp_server",
           "tool_surface_drift",
           "version_drift",
+          "behavior_probe_drift",
           "launch_profile_unresolved",
           "freshness_probe_unavailable"
+        ],
+        "behavior_probes": [
+          {
+            "id": "forum-broad-telos-route",
+            "tool": "forum.route",
+            "arguments": {
+              "text": "Continue improving the five Project Telos flagship tools as protocol agnostic enterprise AI workflow tools, with MCP CLI compatibility, accessibility, performance, current rendering research, and second brain integration."
+            },
+            "expected_subset": {
+              "decided": "project-telos",
+              "needs_escalation": false
+            },
+            "rationale": "Catch stale host-loaded Forum servers that still escalate broad Project Telos operator work after the decisive-hit router fix."
+          }
         ]
       },
       "profiles": {
@@ -266,6 +284,7 @@
           "stale_mcp_server",
           "tool_surface_drift",
           "version_drift",
+          "behavior_probe_drift",
           "launch_profile_unresolved",
           "freshness_probe_unavailable"
         ]

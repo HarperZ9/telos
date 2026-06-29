@@ -9,6 +9,7 @@ export const FAILURE_CODES = [
   "stale_mcp_server",
   "tool_surface_drift",
   "version_drift",
+  "behavior_probe_drift",
   "launch_profile_unresolved",
   "freshness_probe_unavailable"
 ];
@@ -49,6 +50,39 @@ function observedStatusText(observed) {
     ?? null;
 }
 
+function observedBehaviorProbes(observed) {
+  const probes = observed?.behavior_probes ?? observed?.probes ?? {};
+  return probes && typeof probes === "object" ? probes : {};
+}
+
+function stableJson(value) {
+  if (Array.isArray(value)) {
+    return `[${value.map(stableJson).join(",")}]`;
+  }
+  if (value && typeof value === "object") {
+    return `{${Object.keys(value).sort().map((key) => `${JSON.stringify(key)}:${stableJson(value[key])}`).join(",")}}`;
+  }
+  return JSON.stringify(value);
+}
+
+function subsetMismatches(expected, actual, prefix = "") {
+  const mismatches = [];
+  for (const [key, expectedValue] of Object.entries(expected ?? {})) {
+    const path = prefix ? `${prefix}.${key}` : key;
+    const actualValue = actual?.[key];
+    if (
+      expectedValue
+      && typeof expectedValue === "object"
+      && !Array.isArray(expectedValue)
+    ) {
+      mismatches.push(...subsetMismatches(expectedValue, actualValue, path));
+    } else if (stableJson(actualValue) !== stableJson(expectedValue)) {
+      mismatches.push({ path, expected: expectedValue, observed: actualValue });
+    }
+  }
+  return mismatches;
+}
+
 function serverPacket(name, server) {
   return {
     flagship: server.flagship,
@@ -57,13 +91,16 @@ function serverPacket(name, server) {
     expected_current_status: server.freshness.expected_current_status,
     expected_tools: server.expected_tools,
     expected_tool_hash: expectedToolHash(server.expected_tools),
+    behavior_probes: server.freshness.behavior_probes ?? [],
     probe_contract: {
       observed_server_info_required: true,
       observed_tools_list_required: true,
       observed_status_payload_required: true,
       compare_server_info_version_to: "expected_version",
       compare_status_tool_version_to: "expected_version",
-      compare_tools_list_hash_to: "expected_tool_hash"
+      compare_tools_list_hash_to: "expected_tool_hash",
+      observed_behavior_probes_required: (server.freshness.behavior_probes ?? []).length > 0,
+      compare_behavior_probe_subset_to: "expected_subset"
     },
     failure_codes: server.freshness.failure_codes,
     restart_hint: `restart ${name} MCP server from telos.server.manifest source_checkout profile when observed values drift`
@@ -88,7 +125,8 @@ export function freshnessPacket() {
         "each server declares a status tool",
         "each server declares an expected version and current status string",
         "each server exposes a deterministic expected tool hash",
-        "hosts can distinguish stale server, tool-surface drift, version drift, and unresolved launch profiles"
+        "behavior probes can catch stale routing behavior beyond version and tool-surface checks",
+        "hosts can distinguish stale server, tool-surface drift, version drift, behavior drift, and unresolved launch profiles"
       ]
     },
     next_actions: [
@@ -112,6 +150,8 @@ export function evaluateObservedServer(name, observed) {
   const statusVersion = observedVersion(observed);
   const serverInfoVersion = observedServerInfoVersion(observed);
   const statusText = observedStatusText(observed);
+  const behaviorPayloads = observedBehaviorProbes(observed);
+  const behaviorResults = {};
 
   if (!serverInfoVersion || !statusVersion || !statusText || toolNames.length === 0) {
     diagnostics.push({
@@ -159,6 +199,42 @@ export function evaluateObservedServer(name, observed) {
     });
   }
 
+  for (const probe of expected.behavior_probes) {
+    const payload = behaviorPayloads[probe.id];
+    if (!payload) {
+      behaviorResults[probe.id] = {
+        tool: probe.tool,
+        verdict: "UNVERIFIABLE",
+        expected_subset: probe.expected_subset,
+        observed: null
+      };
+      diagnostics.push({
+        code: "freshness_probe_unavailable",
+        message: "observed behavior probe payload is missing",
+        probe_id: probe.id,
+        tool: probe.tool
+      });
+      continue;
+    }
+    const actual = payload.result ?? payload.structuredContent ?? payload;
+    const mismatches = subsetMismatches(probe.expected_subset, actual);
+    behaviorResults[probe.id] = {
+      tool: probe.tool,
+      verdict: mismatches.length === 0 ? "MATCH" : "DRIFT",
+      expected_subset: probe.expected_subset,
+      observed: actual,
+      mismatches
+    };
+    if (mismatches.length > 0) {
+      diagnostics.push({
+        code: "behavior_probe_drift",
+        probe_id: probe.id,
+        tool: probe.tool,
+        mismatches
+      });
+    }
+  }
+
   const failureCodes = FAILURE_CODES.filter((code) => diagnostics.some((item) => item.code === code));
   const verdict = failureCodes.length === 0
     ? "MATCH"
@@ -175,14 +251,16 @@ export function evaluateObservedServer(name, observed) {
     expected: {
       version: expected.expected_version,
       current_status: expected.expected_current_status,
-      tool_hash: expected.expected_tool_hash
+      tool_hash: expected.expected_tool_hash,
+      behavior_probes: expected.behavior_probes
     },
     observed: {
       server_info_version: serverInfoVersion,
       status_version: statusVersion,
       current_status: statusText,
       tools: toolNames,
-      tool_hash: toolHash
+      tool_hash: toolHash,
+      behavior_probes: behaviorResults
     },
     diagnostics,
     next_actions: verdict === "MATCH" ? [] : [
@@ -198,7 +276,7 @@ export function summary() {
     "Project Telos MCP Freshness",
     `servers  ${Object.keys(packet.servers).length}`,
     `failure ${packet.failure_codes[0]}`,
-    "compare  serverInfo.version, status.tool_version, tools/list hash"
+    "compare  serverInfo.version, status.tool_version, tools/list hash, behavior probes"
   ];
   for (const [name, server] of Object.entries(packet.servers)) {
     lines.push(`${name.padEnd(9)} ${server.expected_version.padEnd(8)} ${server.expected_tools.length} tools`);
