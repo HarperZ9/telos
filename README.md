@@ -252,3 +252,12 @@ In the author's own words, from a public comment.
 ## License
 
 Project Telos is fair-source. The code is open to read and to run, free for nearly any use except building a competing product, and it converts to a fully open license two years after each release. The smaller bricks above are permissively open already. The aim is plain: keep the work in the open and in the hands of the people using it, while keeping the flagship able to fund the research it came from. Copyright is held by the author.
+
+## For developers
+
+Keep the public README, package metadata, and examples aligned with current behavior. Before opening a PR or pushing a release, run the local Node verification path.
+
+```bash
+npm install
+npm test
+```
