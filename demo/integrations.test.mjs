@@ -54,9 +54,11 @@ for (const name of [
   "telos.server.manifest",
   "telos.admission.telemetry",
   "telos.context.envelope",
+  "telos.context.pack",
   "telos.action.receipt",
   "telos.loop.ledger",
   "telos.research.seed",
+  "telos.research.thermodynamic",
   "telos.rendering.research",
   "telos.rendering.capabilities",
   "telos.measurement.layers",
@@ -119,6 +121,16 @@ assert.deepEqual(byName.get("telos.revival.registry").cli, [
 assert.deepEqual(byName.get("telos.display.calibration").cli, [
   "node",
   "demo/display-calibration.mjs"
+]);
+
+assert.deepEqual(byName.get("telos.context.pack").cli, [
+  "node",
+  "demo/context-pack.mjs"
+]);
+
+assert.deepEqual(byName.get("telos.research.thermodynamic").cli, [
+  "node",
+  "demo/thermodynamic-ai-chip-receipt.mjs"
 ]);
 
 assert.equal(science.schema, "project-telos.science-research-adapters/v1");

@@ -28,10 +28,12 @@ for (const name of [
   "telos.server.manifest",
   "telos.admission.telemetry",
   "telos.context.envelope",
+  "telos.context.pack",
   "telos.action.receipt",
   "telos.loop.ledger",
   "telos.objective.monitor",
   "telos.research.seed",
+  "telos.research.thermodynamic",
   "telos.rendering.research",
   "telos.rendering.capabilities",
   "telos.measurement.layers",
@@ -100,6 +102,15 @@ assert.equal(contextEnvelope.result.structuredContent.schema, "project-telos.con
 assert.equal(contextEnvelope.result.structuredContent.contract.hidden_payloads_allowed, false);
 assert.ok(contextEnvelope.result.structuredContent.failure_codes.includes("readability_regression"));
 
+const contextPack = handleRequest(request("tools/call", {
+  name: "telos.context.pack",
+  arguments: {}
+}));
+assert.equal(contextPack.result.structuredContent.schema, "project-telos.context-pack/v1");
+assert.equal(contextPack.result.structuredContent.tool, "telos.context.pack");
+assert.equal(contextPack.result.structuredContent.validation.verdict, "MATCH");
+assert.match(contextPack.result.structuredContent.context_pack_hash, /^sha256:[a-f0-9]{64}$/);
+
 const expectedActionReceipt = JSON.parse(
   readFileSync(new URL("./integrations/action-receipt-conventions.json", import.meta.url), "utf8")
 );
@@ -143,6 +154,20 @@ const researchSeed = handleRequest(request("tools/call", {
 assert.deepEqual(researchSeed.result.structuredContent, expectedResearchSeed);
 assert.equal(researchSeed.result.structuredContent.schema, "project-telos.research-seed/v1");
 assert.equal(researchSeed.result.structuredContent.seeds.length, 4);
+
+const expectedThermodynamicResearch = JSON.parse(
+  readFileSync(new URL("./research/thermodynamic-ai-chip-receipt.json", import.meta.url), "utf8")
+);
+const thermodynamicResearch = handleRequest(request("tools/call", {
+  name: "telos.research.thermodynamic",
+  arguments: {}
+}));
+assert.deepEqual(thermodynamicResearch.result.structuredContent, expectedThermodynamicResearch);
+assert.equal(
+  thermodynamicResearch.result.structuredContent.schema,
+  "project-telos.research-intake/youtube-verified-transcript-v1"
+);
+assert.equal(thermodynamicResearch.result.structuredContent.gather_receipt.verified_items.transcript, "MATCH");
 
 const expectedRenderingResearch = JSON.parse(
   readFileSync(new URL("./research/rendering-pipeline-seeds.json", import.meta.url), "utf8")
@@ -233,10 +258,12 @@ assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.catalog
 assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.server.manifest"));
 assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.admission.telemetry"));
 assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.context.envelope"));
+assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.context.pack"));
 assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.action.receipt"));
 assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.loop.ledger"));
 assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.objective.monitor"));
 assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.research.seed"));
+assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.research.thermodynamic"));
 assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.rendering.research"));
 assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.rendering.capabilities"));
 assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.measurement.layers"));

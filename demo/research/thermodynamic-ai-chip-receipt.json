@@ -1,0 +1,250 @@
+{
+  "schema": "project-telos.research-intake/youtube-verified-transcript-v1",
+  "generated_at": "2026-06-28T00:00:00.000Z",
+  "tool": "gather.video",
+  "purpose": "Verified transcript-backed source packet for Telos hardware, formal-methods, stochastic-compute, and uncertainty-modeling research lanes.",
+  "source": {
+    "url": "https://www.youtube.com/watch?v=5pieVHmlbyk&t=29s",
+    "title": "The Thermodynamic AI Chip - Thomas Ahle",
+    "channel": "Machine Learning Street Talk",
+    "upload_date": "2026-06-28",
+    "metadata_source": "yt-dlp"
+  },
+  "gather_receipt": {
+    "harvest_method": "yt-dlp sidecars, then gather parse offline",
+    "stored_corpus": "corpus/",
+    "parse_receipt": "gather-parse-en-gb.json",
+    "corpus_verify_receipt": "gather-corpus-verify.json",
+    "verified_items": {
+      "metadata": "MATCH",
+      "transcript": "MATCH"
+    },
+    "transcript_item_hash": "40a31546b7a391bbb016ba4e3b86a06fc4027636ab85831a0be8b8ca44d6fc56",
+    "digest_seal": "77bd2c9c39aa0628238f074efe3cd2a3ef64c7d7a373cec23128845f215a59a6"
+  },
+  "public_source_receipts": [
+    {
+      "id": "source-thomas-ahle-site",
+      "title": "Thomas Ahle personal site",
+      "url": "https://thomasahle.com/",
+      "source_kind": "public-profile",
+      "resolved_at": "2026-06-28T17:40:00-07:00",
+      "provenance_class": "lawful_source",
+      "evidence_status": "MATCH",
+      "receipt_hash": "sha256:8f529813eb06c4defe77e8672a5a8cc67377a46b67805128a30afe4af44ce3a3"
+    },
+    {
+      "id": "source-normal-team",
+      "title": "Normal Computing About team page",
+      "url": "https://www.normalcomputing.com/about",
+      "source_kind": "public-company-page",
+      "resolved_at": "2026-06-28T17:40:00-07:00",
+      "provenance_class": "lawful_source",
+      "evidence_status": "MATCH",
+      "receipt_hash": "sha256:376c7c8f9edd7a5d92d7a6cc66c1c1581a755620fb2a8db9c1fc7c71e91053cc"
+    },
+    {
+      "id": "source-normal-verilog-simulator",
+      "title": "Building an Open-Source Verilog Simulator with AI",
+      "url": "https://normalcomputing.com/blog/building-an-open-source-verilog-simulator-with-ai-580k-lines-in-43-days",
+      "source_kind": "public-technical-blog",
+      "resolved_at": "2026-06-28T17:40:00-07:00",
+      "provenance_class": "lawful_source",
+      "evidence_status": "MATCH",
+      "receipt_hash": "sha256:9f898ddd362655d86174acd4c5bd2eaddf4cfa13e9b149f0882ba1084b057093"
+    },
+    {
+      "id": "source-thermodynamic-computing-nature",
+      "title": "Scaling thermodynamic computer",
+      "url": "https://www.nature.com/articles/s41586-023-06845-y",
+      "source_kind": "publication-record",
+      "resolved_at": "2026-06-28T17:40:00-07:00",
+      "provenance_class": "lawful_source",
+      "evidence_status": "MATCH",
+      "receipt_hash": "sha256:5190f2c7f995dbc204a9c06421dfacf34c30586de8bdd2f019899ebf8d470455"
+    },
+    {
+      "id": "source-normal-matrix-inversion",
+      "title": "A First Demonstration of Thermodynamic Matrix Inversion",
+      "url": "https://www.normalcomputing.com/blog/a-first-demonstration-of-thermodynamic-matrix-inversion-3",
+      "source_kind": "public-technical-blog",
+      "resolved_at": "2026-06-28T17:40:00-07:00",
+      "provenance_class": "lawful_source",
+      "evidence_status": "MATCH",
+      "receipt_hash": "sha256:e633d58ca15396179e0f6616856dbdfc6dfb5c11572b45b072b42ff341de2179"
+    },
+    {
+      "id": "source-normal-thermox",
+      "title": "thermox: The First Thermodynamic Computing Simulator",
+      "url": "https://www.normalcomputing.com/blog/thermox-the-first-thermodynamic-computing-simulator",
+      "source_kind": "public-technical-blog",
+      "resolved_at": "2026-06-28T17:40:00-07:00",
+      "provenance_class": "lawful_source",
+      "evidence_status": "MATCH",
+      "receipt_hash": "sha256:887ed9ecaf7841ed63dcfdf25e057616ebd441f818c7af85561c08df51ec508d"
+    },
+    {
+      "id": "source-normal-research",
+      "title": "Normal Computing Research index",
+      "url": "https://www.normalcomputing.com/research",
+      "source_kind": "public-research-index",
+      "resolved_at": "2026-06-28T17:40:00-07:00",
+      "provenance_class": "lawful_source",
+      "evidence_status": "MATCH",
+      "receipt_hash": "sha256:ef95f76f63572cd4db9967540b57f4f11163b7d7139ce56a62e98b158dbe3fec"
+    }
+  ],
+  "verified_transcript_themes": [
+    "hardware-design-verification-pipeline",
+    "hardware-mistakes-expensive-after-fabrication",
+    "tests-are-not-proof",
+    "programbench-structure-versus-behavior",
+    "autoformalization",
+    "lean-formal-specification",
+    "multiple-formal-representations",
+    "timed-petri-nets",
+    "tla-plus",
+    "thermodynamic-stochastic-computing",
+    "noise-as-computation",
+    "bayesian-uncertainty",
+    "uncertainty-quantification",
+    "hybrid-compute-search"
+  ],
+  "telos_fit": {
+    "summary": "Strong Telos fit as an instrumentation and verification lane, not as evidence that Telos can design chips by itself.",
+    "roles": {
+      "gather": [
+        "intake video, captions, related papers, repositories, and source pages while preserving method and content hashes"
+      ],
+      "index": [
+        "map local and public code, specs, papers, formal tools, and generated artifacts into a rerunnable workspace graph"
+      ],
+      "forum": [
+        "route subproblems across hardware verification, formal methods, probabilistic computing, program synthesis, and uncertainty modeling"
+      ],
+      "crucible": [
+        "score claims and outputs as MATCH, DRIFT, or UNVERIFIABLE against tests, proofs, simulations, or source receipts"
+      ],
+      "telos": [
+        "build shared human/model work surfaces for specs, simulations, stochastic traces, uncertainty meters, and replayable demos"
+      ]
+    }
+  },
+  "integration_boundary": {
+    "public_sources_only": true,
+    "partnership_claimed": false,
+    "private_ip_required": false,
+    "external_system_mutation_allowed": false,
+    "scope": "Build public, source-backed adapters, demos, fixtures, and verification surfaces that can interoperate with Normal Computing-adjacent public research, formal methods, stochastic simulation, and hardware-verification workflows without implying affiliation or access to private materials."
+  },
+  "integration_strategy": {
+    "target_lane": "normal-computing-public-thermodynamic-ai-lane",
+    "intent": "Help advance the work by making public specs, simulations, tests, formal artifacts, uncertainty traces, and stochastic-compute demos more inspectable, replayable, and verifiable.",
+    "modules": [
+      {
+        "id": "normal-public-source-graph",
+        "flagship_hosts": [
+          "gather.run",
+          "index.context.envelope",
+          "telos.context.pack"
+        ],
+        "description": "Maintain a lawful public-source graph for Thomas Ahle and Normal Computing materials, including papers, blog posts, repositories, simulators, and transcript receipts."
+      },
+      {
+        "id": "verilog-formal-receipt-bridge",
+        "flagship_hosts": [
+          "crucible.assess",
+          "telos.action.receipt",
+          "forum.route"
+        ],
+        "description": "Wrap AI-generated Verilog, CIRCT-style simulation outputs, formal checks, mutation tests, and mismatch reports as append-only action receipts."
+      },
+      {
+        "id": "thermodynamic-simulation-lab",
+        "flagship_hosts": [
+          "telos.creative.engine",
+          "telos.measurement.layers",
+          "crucible.measurement_gate"
+        ],
+        "description": "Prototype seeded stochastic traces, noise-as-computation visualizations, matrix-inversion demos, and thermodynamic simulator artifacts with replayable seeds and uncertainty fields."
+      },
+      {
+        "id": "uncertainty-meter-lane",
+        "flagship_hosts": [
+          "telos.measurement.layers",
+          "telos.objective.monitor",
+          "crucible.assess"
+        ],
+        "description": "Expose Bayesian uncertainty, variance collapse, stochastic drift, confidence mismatch, and posterior-like summaries as explicit meters instead of hidden model intuition."
+      },
+      {
+        "id": "spec-representation-workbench",
+        "flagship_hosts": [
+          "telos.context.pack",
+          "forum.route",
+          "crucible.assess"
+        ],
+        "description": "Let one behavior travel through tests, executable simulation, TLA+ sketch, timed Petri net sketch, Lean theorem stub, and human prose while recording formalization drift."
+      }
+    ],
+    "success_criteria": [
+      "Every promoted technical claim has a public source receipt or a local reproducible check.",
+      "Every demo has deterministic seeds, artifact hashes, and MATCH/DRIFT/UNVERIFIABLE verdicts.",
+      "Tests and proofs are separated: passing tests never becomes proof of correct recovered structure.",
+      "Human-facing visualizations expose uncertainty and stochastic state without hiding source refs or raw private materials."
+    ]
+  },
+  "build_implications": [
+    {
+      "id": "spec-representation-lab",
+      "description": "Represent one behavior as tests, TLA+, Petri net sketch, Lean theorem stub, and executable simulation."
+    },
+    {
+      "id": "test-is-not-proof-fixture",
+      "description": "Show a generated function that passes many tests but fails a hidden invariant."
+    },
+    {
+      "id": "formalization-drift-receipt",
+      "description": "Record human spec, formal spec, proof or test result, and mismatch verdict."
+    },
+    {
+      "id": "stochastic-compute-lab",
+      "description": "Visualize seeded noise, stochastic differential dynamics, and uncertainty propagation."
+    },
+    {
+      "id": "hybrid-search-demo",
+      "description": "Combine model proposals with fast deterministic search and check loops."
+    }
+  ],
+  "claim_state": {
+    "MATCH": [
+      "gather captured metadata and transcript receipts and verified both stored bodies",
+      "transcript contains the core terms and themes in this packet"
+    ],
+    "INFERRED": [
+      "Telos can help by wrapping external formal, simulation, and verification tools with receipts and routing, not by replacing those tools."
+    ],
+    "UNVERIFIABLE_FROM_THIS_PACKET": [
+      "whether the technical claims about Normal Computing, ProgramBench, or thermodynamic chips are correct outside the interview"
+    ]
+  },
+  "boundaries": {
+    "raw_transcript_text_stored": false,
+    "raw_video_stored": false,
+    "external_technical_correctness_promoted": false,
+    "next_evidence_required": [
+      "primary papers",
+      "repositories",
+      "company or project material",
+      "benchmarks",
+      "independent checks"
+    ]
+  },
+  "next_actions": [
+    "gather.run: resolve linked papers, repositories, company materials, and formal-method references.",
+    "index.context.envelope: map local formalization, simulation, and verification tools that can host the lab fixtures.",
+    "forum.route: split follow-up work across formal methods, hardware verification, stochastic compute, and uncertainty modeling lanes.",
+    "crucible.assess: add negative fixtures for tests-passing-with-wrong-structure, formalization drift, stochastic trace mismatch, and unverifiable hardware claims.",
+    "telos.context.pack: include this packet as a source ref for the next second-brain context handoff."
+  ]
+}
