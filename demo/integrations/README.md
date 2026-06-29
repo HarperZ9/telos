@@ -24,7 +24,7 @@ OpenAI Apps, OpenAI Agents, Anthropic Claude, Claude Code, Codex plugins, skills
 
 `mcp-tool-catalog.json` is the provider-neutral source of truth for tool names, CLI fallbacks, MCP names, availability status, and next actions.
 
-`mcp-server-manifest.json` is the provider-neutral source of truth for launching the five flagship MCP servers from source checkouts or package installs. `../server-manifest.mjs --codex` emits Codex TOML; `../server-manifest.mjs --claude-json` emits Claude-style JSON.
+`mcp-server-manifest.json` is the provider-neutral source of truth for launching the five flagship MCP servers from source checkouts or package installs. `expected_tools` is the preferred forward-facing catalog surface; `auxiliary_tools` records compatible lower-level or legacy aliases that a launched server may still expose. `../server-manifest.mjs --codex` emits Codex TOML; `../server-manifest.mjs --claude-json` emits Claude-style JSON.
 
 `../mcp-freshness.mjs` emits `project-telos.mcp-freshness/v1`, a host-side stale-server probe contract. Hosts compare observed `serverInfo.version`, status `tool_version`, `tools/list` hashes, and declared behavior probes against the manifest before trusting a loaded MCP server. The behavior probes now cover broad Forum routing and Index context-envelope selection/freshness receipts, so a host can catch stale behavior even when version and tool-list parity look healthy. `../mcp-freshness.mjs --observed observed.json` emits `project-telos.mcp-freshness-observation/v1` with `MATCH`, `DRIFT`, or `UNVERIFIABLE` plus normalized failure codes.
 
@@ -54,7 +54,7 @@ OpenAI Apps, OpenAI Agents, Anthropic Claude, Claude Code, Codex plugins, skills
 
 `../../tools/render_flagship_heroes.py --check-existing --public-root <sibling-root>` verifies the five README hero PNGs and brand receipt READMEs without private fonts or Pillow. `--render` uses the operator-owned Kilon and Conso font ZIPs plus Pillow to regenerate the artwork locally.
 
-`../mcp-runtime-contract.test.mjs` checks the catalog against the sibling MCP runtimes so `available` means the tool is actually present in `tools/list`.
+`../mcp-runtime-contract.test.mjs` checks the catalog against the sibling MCP runtimes so `available` means the tool is actually present in `tools/list`. `../mcp-server-launch.test.mjs` starts each `source_checkout` profile from the manifest and verifies that expected tools are present and any extra tools are declared as auxiliary compatibility surface.
 
 `science-research-adapters.json` is the current-source adapter map for preprints, scholarly metadata, clinical trial registries, persistent identifiers, AlphaFold, Midjourney Medical monitoring, and research graphs.
 It includes a lawful full-text boundary: use Unpaywall, PubMed Central, Europe PMC, DOAJ, CORE, publisher OA links, repositories, and preprints; never use Sci-Hub or shadow-library material as provenance. User-provided shadow references can be retained only as non-evidentiary source leads that drive DOI/title/author/PMID/PMCID/arXiv/publisher/repository cross-reference.

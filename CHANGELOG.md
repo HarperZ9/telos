@@ -4,6 +4,9 @@ All notable changes to Project Telos. Telos is currently a source demo and share
 
 ## Unreleased
 
+- MCP launch profiles: adds an executable source-checkout launch contract test and declares auxiliary
+  Index/Forum compatibility tools separately from the 51 preferred catalog tools, so host integrations can
+  distinguish the polished surface from lower-level or legacy aliases.
 - MCP freshness: adds an `index.context.envelope` behavior probe that requires focused envelopes to return
   selection summaries and `index.context-envelope-freshness/v1` roots, catching stale Index MCP servers that
   still expose the old envelope shape after status/tool-list parity appears healthy.
