@@ -4,6 +4,7 @@ All notable changes to Project Telos. Telos is currently a source demo and share
 
 ## Unreleased
 
+- MCP freshness: adds `project-telos.mcp-freshness/v1`, `node demo/mcp-freshness.mjs`, and `telos.mcp.freshness` so hosts can detect stale loaded servers by comparing `serverInfo.version`, `status.tool_version`, and `tools/list` hashes before trusting tool output.
 - Model foundry: adds `project-telos.model-foundry/v1`, `node demo/model-foundry.mjs`, and `telos.model.foundry` to define the bounded model-building and self-improving daemon lane: frontier APIs as components, local/open-weight runtimes, feasible post-training labs, typed MCP tools, lossless-by-reference memory, objective monitoring, and Crucible-gated promotion without claiming independent frontier-lab pretraining capacity.
 - Context pack surface: adds `project-telos.context-pack/v1`, `node demo/context-pack.mjs`, and `telos.context.pack` to emit a runnable, token-budgeted, lossless-by-reference context packet with source-ref joins, load/relevance receipt separation, raw-payload checks, and explicit failure codes.
 - Thermodynamic AI integration lane: adds `project-telos.research-intake/youtube-verified-transcript-v1`, `node demo/thermodynamic-ai-chip-receipt.mjs`, and `telos.research.thermodynamic` to promote the verified Thomas Ahle interview into a public-source Normal Computing-adjacent lane for spec representation, Verilog/formal receipts, stochastic simulation, uncertainty meters, and hybrid search/check loops without claiming partnership or external technical correctness from the interview alone.
@@ -43,8 +44,8 @@ All notable changes to Project Telos. Telos is currently a source demo and share
 Presentation and operator-surface housekeeping for five-flagship parity.
 
 - README: adds the shared current-status block and consistent five-flagship navigation.
-- Status payload: exposes the current operator commands, Telos MCP tool names, and 50-tool catalog summary under `native`.
+- Status payload: exposes the current operator commands, Telos MCP tool names, and 51-tool catalog summary under `native`.
 - Operator room: records `status`, `doctor`, `room`, `catalog`, and `flagship-workflow` as the current front door for local operators and host integrations.
-- MCP surface: records native availability for `telos.status`, `telos.doctor`, `telos.room`, `telos.catalog`, `telos.workflow`, `telos.server.manifest`, `telos.admission.telemetry`, `telos.context.envelope`, `telos.context.pack`, `telos.action.receipt`, `telos.loop.ledger`, `telos.objective.monitor`, `telos.model.foundry`, `telos.research.seed`, `telos.research.thermodynamic`, `telos.rendering.research`, `telos.rendering.capabilities`, `telos.measurement.layers`, `telos.creative.engine`, `telos.creative.kernels`, `telos.revival.registry`, and `telos.display.calibration`.
-- Catalog: keeps `demo/integrations/mcp-tool-catalog.json` as the provider-neutral source of truth for 50 available tools across Gather, Crucible, Index, Forum, and Telos.
+- MCP surface: records native availability for `telos.status`, `telos.doctor`, `telos.room`, `telos.catalog`, `telos.workflow`, `telos.server.manifest`, `telos.mcp.freshness`, `telos.admission.telemetry`, `telos.context.envelope`, `telos.context.pack`, `telos.action.receipt`, `telos.loop.ledger`, `telos.objective.monitor`, `telos.model.foundry`, `telos.research.seed`, `telos.research.thermodynamic`, `telos.rendering.research`, `telos.rendering.capabilities`, `telos.measurement.layers`, `telos.creative.engine`, `telos.creative.kernels`, `telos.revival.registry`, and `telos.display.calibration`.
+- Catalog: keeps `demo/integrations/mcp-tool-catalog.json` as the provider-neutral source of truth for 51 available tools across Gather, Crucible, Index, Forum, and Telos.
 - Research receipts: records the YouTube intake ledger under `demo/research/youtube-bgoertzel-receipts.json` as receipt-only research material, with no raw transcript text in the repository.

@@ -6,7 +6,7 @@ const payload = actionEnvelope({
   command: "status",
   native: {
     role: "shared-room-reconciliation",
-    commands: ["room", "status", "doctor", "catalog", "run", "flagship-workflow", "model-foundry", "revival-registry", "display-calibration"],
+    commands: ["room", "status", "doctor", "catalog", "run", "flagship-workflow", "model-foundry", "mcp-freshness", "revival-registry", "display-calibration"],
     statuses: ["MATCH", "DRIFT", "UNVERIFIABLE", "ERROR"],
     mcp_tools: [
       "telos.status",
@@ -15,6 +15,7 @@ const payload = actionEnvelope({
       "telos.catalog",
       "telos.workflow",
       "telos.server.manifest",
+      "telos.mcp.freshness",
       "telos.admission.telemetry",
       "telos.context.envelope",
       "telos.context.pack",
@@ -32,7 +33,7 @@ const payload = actionEnvelope({
       "telos.revival.registry",
       "telos.display.calibration"
     ],
-    current_status: "source demo with 50-tool five-flagship catalog, context envelopes, context packs, action receipts, loop ledger, objective monitoring, model foundry, research seeds, transcript-backed thermodynamic research, rendering research, rendering capabilities, measurement layers, creative engine, creative kernels, revival registry, display calibration, and native Telos MCP surface"
+    current_status: "source demo with 51-tool five-flagship catalog, context envelopes, context packs, action receipts, loop ledger, objective monitoring, model foundry, MCP freshness, research seeds, transcript-backed thermodynamic research, rendering research, rendering capabilities, measurement layers, creative engine, creative kernels, revival registry, display calibration, and native Telos MCP surface"
   },
   nextActions: [
     {

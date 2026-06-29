@@ -58,6 +58,18 @@
         "gather.arxiv",
         "gather.run"
       ],
+      "freshness": {
+        "status_tool": "gather.status",
+        "expected_version": "1.5.0",
+        "expected_current_status": "1.5.0 completion floor with Project Telos operator-spine MCP parity",
+        "failure_codes": [
+          "stale_mcp_server",
+          "tool_surface_drift",
+          "version_drift",
+          "launch_profile_unresolved",
+          "freshness_probe_unavailable"
+        ]
+      },
       "profiles": {
         "source_checkout": {
           "command": "python",
@@ -97,6 +109,18 @@
         "crucible.refine",
         "crucible.verdicts"
       ],
+      "freshness": {
+        "status_tool": "crucible.status",
+        "expected_version": "1.1.0",
+        "expected_current_status": "1.1.0 operator floor with run, review, recheck, and MCP parity",
+        "failure_codes": [
+          "stale_mcp_server",
+          "tool_surface_drift",
+          "version_drift",
+          "launch_profile_unresolved",
+          "freshness_probe_unavailable"
+        ]
+      },
       "profiles": {
         "source_checkout": {
           "command": "python",
@@ -128,6 +152,18 @@
         "index.status",
         "index.doctor"
       ],
+      "freshness": {
+        "status_tool": "index.status",
+        "expected_version": "2.8.0",
+        "expected_current_status": "2.8.0 workspace atlas, certificates, freshness, benchmarking, and MCP parity",
+        "failure_codes": [
+          "stale_mcp_server",
+          "tool_surface_drift",
+          "version_drift",
+          "launch_profile_unresolved",
+          "freshness_probe_unavailable"
+        ]
+      },
       "profiles": {
         "source_checkout": {
           "command": "python",
@@ -159,6 +195,18 @@
         "forum.status",
         "forum.doctor"
       ],
+      "freshness": {
+        "status_tool": "forum.status",
+        "expected_version": "1.12.0",
+        "expected_current_status": "1.12.0 per-task context with 28-lane Project Telos roster, model-foundry daemon routing, and MCP parity",
+        "failure_codes": [
+          "stale_mcp_server",
+          "tool_surface_drift",
+          "version_drift",
+          "launch_profile_unresolved",
+          "freshness_probe_unavailable"
+        ]
+      },
       "profiles": {
         "source_checkout": {
           "command": "python",
@@ -192,6 +240,7 @@
         "telos.catalog",
         "telos.workflow",
         "telos.server.manifest",
+        "telos.mcp.freshness",
         "telos.admission.telemetry",
         "telos.context.envelope",
         "telos.context.pack",
@@ -209,6 +258,18 @@
         "telos.revival.registry",
         "telos.display.calibration"
       ],
+      "freshness": {
+        "status_tool": "telos.status",
+        "expected_version": "demo",
+        "expected_current_status": "source demo with 51-tool five-flagship catalog, context envelopes, context packs, action receipts, loop ledger, objective monitoring, model foundry, MCP freshness, research seeds, transcript-backed thermodynamic research, rendering research, rendering capabilities, measurement layers, creative engine, creative kernels, revival registry, display calibration, and native Telos MCP surface",
+        "failure_codes": [
+          "stale_mcp_server",
+          "tool_surface_drift",
+          "version_drift",
+          "launch_profile_unresolved",
+          "freshness_probe_unavailable"
+        ]
+      },
       "profiles": {
         "source_checkout": {
           "command": "node",

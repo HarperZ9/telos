@@ -26,6 +26,7 @@ for (const name of [
   "telos.workflow",
   "telos.catalog",
   "telos.server.manifest",
+  "telos.mcp.freshness",
   "telos.admission.telemetry",
   "telos.context.envelope",
   "telos.context.pack",
@@ -79,6 +80,16 @@ const serverManifest = handleRequest(request("tools/call", {
 assert.deepEqual(serverManifest.result.structuredContent, expectedServerManifest);
 assert.equal(serverManifest.result.structuredContent.schema, "project-telos.mcp-server-manifest/v1");
 assert.ok(serverManifest.result.structuredContent.servers.gather.expected_tools.includes("gather.docs"));
+
+const mcpFreshness = handleRequest(request("tools/call", {
+  name: "telos.mcp.freshness",
+  arguments: {}
+}));
+assert.equal(mcpFreshness.result.structuredContent.schema, "project-telos.mcp-freshness/v1");
+assert.equal(mcpFreshness.result.structuredContent.tool, "telos.mcp.freshness");
+assert.equal(mcpFreshness.result.structuredContent.validation.verdict, "MATCH");
+assert.equal(mcpFreshness.result.structuredContent.servers.forum.expected_version, "1.12.0");
+assert.match(mcpFreshness.result.structuredContent.servers.forum.expected_tool_hash, /^sha256:[a-f0-9]{64}$/);
 
 const expectedAdmissionTelemetry = JSON.parse(
   readFileSync(new URL("./integrations/admission-telemetry-conventions.json", import.meta.url), "utf8")
@@ -266,6 +277,7 @@ assert.equal(stdioResponse.id, 7);
 assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.workflow"));
 assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.catalog"));
 assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.server.manifest"));
+assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.mcp.freshness"));
 assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.admission.telemetry"));
 assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.context.envelope"));
 assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.context.pack"));

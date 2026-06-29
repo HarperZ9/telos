@@ -26,6 +26,8 @@ OpenAI Apps, OpenAI Agents, Anthropic Claude, Claude Code, Codex plugins, skills
 
 `mcp-server-manifest.json` is the provider-neutral source of truth for launching the five flagship MCP servers from source checkouts or package installs. `../server-manifest.mjs --codex` emits Codex TOML; `../server-manifest.mjs --claude-json` emits Claude-style JSON.
 
+`../mcp-freshness.mjs` emits `project-telos.mcp-freshness/v1`, a host-side stale-server probe contract. Hosts compare observed `serverInfo.version`, status `tool_version`, and `tools/list` hashes against the manifest before trusting a loaded MCP server.
+
 `admission-telemetry-conventions.json` records the Project Telos split between an admission decision and a verification verdict, plus the negative cases that must be observable without raw prompt, raw tool-argument, or raw evidence capture.
 
 `context-envelope-conventions.json` records the large-workspace context contract for readable agent code, source-ref compression, freshness gates, and receipt-chained unattended work.
@@ -70,7 +72,7 @@ Availability labels:
 ## Packaging Targets
 
 - Codex plugin: expose skills plus MCP servers for `gather`, `crucible`, `index`, `forum`, and Telos.
-- Telos MCP: `node demo/telos-mcp.mjs` exposes `telos.status`, `telos.doctor`, `telos.room`, `telos.workflow`, `telos.catalog`, `telos.server.manifest`, `telos.admission.telemetry`, `telos.context.envelope`, `telos.context.pack`, `telos.action.receipt`, `telos.loop.ledger`, `telos.research.seed`, `telos.research.thermodynamic`, `telos.rendering.research`, `telos.rendering.capabilities`, `telos.measurement.layers`, `telos.creative.engine`, `telos.creative.kernels`, `telos.revival.registry`, and `telos.display.calibration`.
+- Telos MCP: `node demo/telos-mcp.mjs` exposes `telos.status`, `telos.doctor`, `telos.room`, `telos.workflow`, `telos.catalog`, `telos.server.manifest`, `telos.mcp.freshness`, `telos.admission.telemetry`, `telos.context.envelope`, `telos.context.pack`, `telos.action.receipt`, `telos.loop.ledger`, `telos.research.seed`, `telos.research.thermodynamic`, `telos.rendering.research`, `telos.rendering.capabilities`, `telos.measurement.layers`, `telos.creative.engine`, `telos.creative.kernels`, `telos.revival.registry`, and `telos.display.calibration`.
 - Gather MCP: `gather mcp` exposes `gather.status`, `gather.doctor`, `gather.docs`, `gather.arxiv`, and `gather.run`.
 - Crucible MCP: `crucible mcp` exposes `crucible.status`, `crucible.doctor`, `crucible.assess`, `crucible.measurement_gate`, `crucible.recheck`, `crucible.run`, `crucible.review`, `crucible.report`, `crucible.batch`, `crucible.registry`, `crucible.drift`, `crucible.refine`, and `crucible.verdicts`.
 - Index MCP: `index mcp` exposes `index.map`, `index.context`, `index.context.envelope`, `index.status`, `index.doctor`, and the lower-level graph, focus, verify, router, and internals tools.

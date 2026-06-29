@@ -698,6 +698,26 @@
       ]
     },
     {
+      "name": "telos.mcp.freshness",
+      "flagship": "telos",
+      "description": "Return MCP freshness probes for detecting stale host-loaded flagship servers.",
+      "cli": [
+        "node",
+        "demo/mcp-freshness.mjs"
+      ],
+      "mcp": {
+        "status": "available",
+        "server": "telos",
+        "method": "tools/call",
+        "tool": "telos.mcp.freshness"
+      },
+      "next_actions": [
+        "telos.server.manifest",
+        "forum.ledger.summary",
+        "crucible.assess"
+      ]
+    },
+    {
       "name": "telos.admission.telemetry",
       "flagship": "telos",
       "description": "Return the admission decision and verification verdict telemetry convention.",
