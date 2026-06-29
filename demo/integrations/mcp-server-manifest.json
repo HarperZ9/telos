@@ -76,13 +76,10 @@
           "command": "python",
           "args": [
             "-m",
-            "gather.cli",
+            "gather",
             "mcp"
           ],
-          "cwd": "${PROJECT_TELOS_PUBLIC}/gather",
-          "env": {
-            "PYTHONPATH": "${PROJECT_TELOS_PUBLIC}/gather/src"
-          }
+          "cwd": "${PROJECT_TELOS_PUBLIC}/gather"
         },
         "package": {
           "command": "gather",
@@ -273,15 +270,12 @@
           "command": "python",
           "args": [
             "-m",
-            "forum.cli",
+            "forum",
             "mcp",
             "--ledger",
             "${PROJECT_TELOS_PUBLIC}/.telos/forum-ledger"
           ],
-          "cwd": "${PROJECT_TELOS_PUBLIC}/forum",
-          "env": {
-            "PYTHONPATH": "${PROJECT_TELOS_PUBLIC}/forum/src"
-          }
+          "cwd": "${PROJECT_TELOS_PUBLIC}/forum"
         },
         "package": {
           "command": "forum",
