@@ -4,6 +4,10 @@ All notable changes to Project Telos. Telos is currently a source demo and share
 
 ## Unreleased
 
+- Presentation doctor: adds `project-telos.presentation-doctor/v1`,
+  `node demo/presentation-doctor.mjs`, and `telos.presentation.doctor` to turn
+  five-flagship README, changelog, and brand-asset parity into privacy-safe
+  `MATCH`, `DRIFT`, or `UNVERIFIABLE` receipts.
 - Project map: adds `docs/PROJECT-CONNECTION-MAP.md` as the canonical five-flagship connection,
   distribution, adapter, hyphal-context, and promotion map, backed by Gather-digested operator
   research packets and live MCP dogfood status.
