@@ -819,6 +819,29 @@
       ]
     },
     {
+      "name": "telos.model.foundry",
+      "flagship": "telos",
+      "description": "Return the bounded model-foundry and self-improving daemon contract for Telos model development.",
+      "cli": [
+        "node",
+        "demo/model-foundry.mjs"
+      ],
+      "mcp": {
+        "status": "available",
+        "server": "telos",
+        "method": "tools/call",
+        "tool": "telos.model.foundry"
+      },
+      "next_actions": [
+        "gather.run",
+        "index.context.envelope",
+        "forum.route",
+        "crucible.assess",
+        "telos.loop.ledger",
+        "telos.objective.monitor"
+      ]
+    },
+    {
       "name": "telos.research.seed",
       "flagship": "telos",
       "description": "Return receipt-backed research seeds resolved from terse operator notes.",

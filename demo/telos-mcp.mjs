@@ -75,6 +75,11 @@ export const tools = [
     inputSchema: emptyInputSchema
   },
   {
+    name: "telos.model.foundry",
+    description: "Return the bounded model-foundry and self-improving daemon contract for Telos model development.",
+    inputSchema: emptyInputSchema
+  },
+  {
     name: "telos.research.seed",
     description: "Return receipt-backed research seeds resolved from terse operator notes.",
     inputSchema: emptyInputSchema
@@ -134,6 +139,7 @@ const toolScripts = new Map([
   ["telos.action.receipt", ["action-receipt.mjs"]],
   ["telos.loop.ledger", ["loop-ledger.mjs"]],
   ["telos.objective.monitor", ["objective-monitor.mjs"]],
+  ["telos.model.foundry", ["model-foundry.mjs"]],
   ["telos.research.seed", ["research-seed.mjs"]],
   ["telos.research.thermodynamic", ["thermodynamic-ai-chip-receipt.mjs"]],
   ["telos.rendering.research", ["rendering-research.mjs"]],
