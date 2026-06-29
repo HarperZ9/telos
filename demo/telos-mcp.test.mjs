@@ -32,6 +32,7 @@ for (const name of [
   "telos.ci.doctor",
   "telos.presentation.doctor",
   "telos.accessibility.doctor",
+  "telos.performance.doctor",
   "telos.admission.telemetry",
   "telos.context.envelope",
   "telos.context.pack",
@@ -140,6 +141,15 @@ assert.equal(accessibilityDoctor.result.structuredContent.schema, "project-telos
 assert.equal(accessibilityDoctor.result.structuredContent.tool, "telos.accessibility.doctor");
 assert.equal(accessibilityDoctor.result.structuredContent.aggregate.verdict, "MATCH");
 assert.equal(accessibilityDoctor.result.structuredContent.privacy_boundary.raw_html_included, false);
+
+const performanceDoctor = handleRequest(request("tools/call", {
+  name: "telos.performance.doctor",
+  arguments: {}
+}));
+assert.equal(performanceDoctor.result.structuredContent.schema, "project-telos.performance-doctor/v1");
+assert.equal(performanceDoctor.result.structuredContent.tool, "telos.performance.doctor");
+assert.equal(performanceDoctor.result.structuredContent.aggregate.verdict, "MATCH");
+assert.equal(performanceDoctor.result.structuredContent.privacy_boundary.raw_html_included, false);
 
 const expectedAdmissionTelemetry = JSON.parse(
   readFileSync(new URL("./integrations/admission-telemetry-conventions.json", import.meta.url), "utf8")
@@ -353,6 +363,7 @@ assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.mcp.fre
 assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.ci.doctor"));
 assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.presentation.doctor"));
 assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.accessibility.doctor"));
+assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.performance.doctor"));
 assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.admission.telemetry"));
 assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.context.envelope"));
 assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.context.pack"));

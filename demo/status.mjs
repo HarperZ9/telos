@@ -6,7 +6,7 @@ const payload = actionEnvelope({
   command: "status",
   native: {
     role: "shared-room-reconciliation",
-    commands: ["room", "status", "doctor", "catalog", "run", "flagship-workflow", "model-foundry", "mcp-freshness", "ci-doctor", "presentation-doctor", "accessibility-doctor", "revival-registry", "second-level-flagship-queue", "workstation-substrate", "display-calibration"],
+    commands: ["room", "status", "doctor", "catalog", "run", "flagship-workflow", "model-foundry", "mcp-freshness", "ci-doctor", "presentation-doctor", "accessibility-doctor", "performance-doctor", "revival-registry", "second-level-flagship-queue", "workstation-substrate", "display-calibration"],
     statuses: ["MATCH", "DRIFT", "UNVERIFIABLE", "ERROR"],
     mcp_tools: [
       "telos.status",
@@ -19,6 +19,7 @@ const payload = actionEnvelope({
       "telos.ci.doctor",
       "telos.presentation.doctor",
       "telos.accessibility.doctor",
+      "telos.performance.doctor",
       "telos.admission.telemetry",
       "telos.context.envelope",
       "telos.context.pack",
@@ -38,7 +39,7 @@ const payload = actionEnvelope({
       "telos.workstation.substrate",
       "telos.display.calibration"
     ],
-    current_status: "0.1.0 source registry package with 56-tool five-flagship catalog, CI doctor, presentation doctor, accessibility doctor, context envelopes, context packs, action receipts, loop ledger, objective monitoring, model foundry, MCP freshness, research seeds, transcript-backed thermodynamic research, rendering research, rendering capabilities, measurement layers, creative engine, creative kernels, revival registry, second-level queue, workstation substrate, display calibration, and native Telos MCP surface"
+    current_status: "0.1.0 source registry package with 57-tool five-flagship catalog, CI doctor, presentation doctor, accessibility doctor, performance doctor, context envelopes, context packs, action receipts, loop ledger, objective monitoring, model foundry, MCP freshness, research seeds, transcript-backed thermodynamic research, rendering research, rendering capabilities, measurement layers, creative engine, creative kernels, revival registry, second-level queue, workstation substrate, display calibration, and native Telos MCP surface"
   },
   nextActions: [
     {

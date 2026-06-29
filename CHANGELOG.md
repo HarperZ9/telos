@@ -4,6 +4,10 @@ All notable changes to Project Telos. Telos is currently a source demo and share
 
 ## Unreleased
 
+- Performance doctor: adds `project-telos.performance-doctor/v1`,
+  `node demo/performance-doctor.mjs`, and `telos.performance.doctor` to verify
+  static Studio byte budgets, asset budgets, approved external hosts, media
+  dimensions, reduced motion, autoplay, and embedding-safe performance signals.
 - Accessibility doctor: adds `project-telos.accessibility-doctor/v1`,
   `node demo/accessibility-doctor.mjs`, and `telos.accessibility.doctor` to verify
   static Studio accessibility signals such as reduced motion, keyboard focus,
