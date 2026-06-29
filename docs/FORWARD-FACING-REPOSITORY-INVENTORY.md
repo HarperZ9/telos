@@ -11,7 +11,7 @@ This inventory tracks the public/developer presentation rollout for HarperZ9 rep
 - Active private repositories on GitHub: 25.
 - Owned public repositories with a local clone found under `C:/dev`: 46 of 47.
 - Missing local clone from the scanned tree: `.github`.
-- Exact local presentation audit: 46 owned-public repositories audited, 5 `MATCH`, 41 `DRIFT`.
+- Direct local presentation audit under `C:/dev/public`: 38 repositories audited, 21 `MATCH`, 17 `DRIFT`.
 
 ## Completed Public Flagship Set
 
@@ -22,6 +22,28 @@ These now pass the public/developer presentation audit and have merged presentat
 - `index`
 - `forum`
 - `telos`
+
+## Completed Product And AI Workflow Sets
+
+These now pass the same public/developer presentation audit locally and have
+Telos-rendered hero assets plus brand receipts.
+
+- `calibrate-pro`
+- `studio-engine`
+- `reconcile`
+- `agent-audit`
+- `proof-surface`
+- `secret-redact-io`
+- `accountable-engine`
+- `accountable-surface`
+- `agent-hook-pack`
+- `agent-routing-kit`
+- `model-provenance-validator`
+- `proof-surface-report`
+- `provenance-sensorium`
+- `repo-proof-index`
+- `release-surface-scanner`
+- `public-surface-sweeper`
 
 ## Standard
 
@@ -47,7 +69,7 @@ Batch 1: product front doors and high-visibility engines.
 - `quanta-color`
 - `raw`
 
-Batch 2: AI workflow, provenance, and release-safety utilities.
+Batch 2: AI workflow, provenance, and release-safety utilities. Completed locally.
 
 - `accountable-engine`
 - `accountable-surface`
@@ -62,6 +84,24 @@ Batch 2: AI workflow, provenance, and release-safety utilities.
 - `repo-proof-index`
 - `release-surface-scanner`
 - `public-surface-sweeper`
+
+Current remaining local drift queue:
+
+- `HarperZ9`
+- `HarperZ9.github.io`
+- `anomaly-kernels`
+- `coherence-membrane`
+- `consulting-template-kit`
+- `context-curator-lite`
+- `forum-archive`
+- `gpu-trace-validator`
+- `raw-native`
+- `rewardspy`
+- `signal-kernels`
+- `studio-libs`
+- `telos-oss-showcase`
+- `workflow-harness-lite`
+- `workspace-repo-map-shim`
 
 Batch 3: Quanta ecosystem.
 
