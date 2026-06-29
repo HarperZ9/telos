@@ -4,6 +4,10 @@ All notable changes to Project Telos. Telos is currently a source demo and share
 
 ## Unreleased
 
+- Operator doctor: adds `project-telos.operator-doctor/v1`,
+  `node demo/operator-doctor.mjs`, and `telos.operator.doctor` to verify
+  README quick start, status/catalog/MCP parity, CI doctor coverage,
+  current-state docs, host-surface language, and next-action guidance.
 - Compatibility doctor: adds `project-telos.compatibility-doctor/v1`,
   `node demo/compatibility-doctor.mjs`, and `telos.compatibility.doctor` to verify
   catalog/manifest schema parity, host exports, source/package profiles,

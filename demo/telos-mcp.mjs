@@ -75,6 +75,11 @@ export const tools = [
     inputSchema: emptyInputSchema
   },
   {
+    name: "telos.operator.doctor",
+    description: "Use when a host needs README, status, catalog, manifest, CI, and current-state discoverability receipts for the Telos operator surface. Read-only, zero-auth, no external side effects. Returns JSON MATCH, DRIFT, or UNVERIFIABLE operator receipts.",
+    inputSchema: emptyInputSchema
+  },
+  {
     name: "telos.admission.telemetry",
     description: "Use when designing trace fields that keep action admission separate from verification verdicts. Read-only, zero-auth, no external side effects. Returns a JSON telemetry convention.",
     inputSchema: emptyInputSchema
@@ -179,6 +184,7 @@ const toolScripts = new Map([
   ["telos.accessibility.doctor", ["accessibility-doctor.mjs"]],
   ["telos.performance.doctor", ["performance-doctor.mjs"]],
   ["telos.compatibility.doctor", ["compatibility-doctor.mjs"]],
+  ["telos.operator.doctor", ["operator-doctor.mjs"]],
   ["telos.admission.telemetry", ["admission-telemetry.mjs"]],
   ["telos.context.envelope", ["context-envelope.mjs"]],
   ["telos.context.pack", ["context-pack.mjs"]],
