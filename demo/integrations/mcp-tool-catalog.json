@@ -718,6 +718,27 @@
       ]
     },
     {
+      "name": "telos.ci.doctor",
+      "flagship": "telos",
+      "description": "Use when a host needs GitHub Actions runtime, action-major, and latest five-flagship CI compatibility receipts. Read-only, zero-auth, no external side effects. Returns a JSON CI doctor register.",
+      "cli": [
+        "node",
+        "demo/ci-doctor.mjs"
+      ],
+      "mcp": {
+        "status": "available",
+        "server": "telos",
+        "method": "tools/call",
+        "tool": "telos.ci.doctor"
+      },
+      "next_actions": [
+        "index.map",
+        "forum.route",
+        "crucible.assess",
+        "telos.workflow"
+      ]
+    },
+    {
       "name": "telos.admission.telemetry",
       "flagship": "telos",
       "description": "Use when designing trace fields that keep action admission separate from verification verdicts. Read-only, zero-auth, no external side effects. Returns a JSON telemetry convention.",

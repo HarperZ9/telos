@@ -29,6 +29,7 @@ for (const name of [
   "telos.catalog",
   "telos.server.manifest",
   "telos.mcp.freshness",
+  "telos.ci.doctor",
   "telos.admission.telemetry",
   "telos.context.envelope",
   "telos.context.pack",
@@ -107,6 +108,18 @@ assert.equal(mcpFreshness.result.structuredContent.tool, "telos.mcp.freshness");
 assert.equal(mcpFreshness.result.structuredContent.validation.verdict, "MATCH");
 assert.equal(mcpFreshness.result.structuredContent.servers.forum.expected_version, "1.12.0");
 assert.match(mcpFreshness.result.structuredContent.servers.forum.expected_tool_hash, /^sha256:[a-f0-9]{64}$/);
+
+const expectedCiDoctor = JSON.parse(
+  readFileSync(new URL("./integrations/ci-doctor.json", import.meta.url), "utf8")
+);
+const ciDoctor = handleRequest(request("tools/call", {
+  name: "telos.ci.doctor",
+  arguments: {}
+}));
+assert.deepEqual(ciDoctor.result.structuredContent, expectedCiDoctor);
+assert.equal(ciDoctor.result.structuredContent.schema, "project-telos.ci-doctor/v1");
+assert.equal(ciDoctor.result.structuredContent.aggregate.flagship_count, 5);
+assert.equal(ciDoctor.result.structuredContent.aggregate.verdict, "MATCH");
 
 const expectedAdmissionTelemetry = JSON.parse(
   readFileSync(new URL("./integrations/admission-telemetry-conventions.json", import.meta.url), "utf8")
@@ -317,6 +330,7 @@ assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.workflo
 assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.catalog"));
 assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.server.manifest"));
 assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.mcp.freshness"));
+assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.ci.doctor"));
 assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.admission.telemetry"));
 assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.context.envelope"));
 assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.context.pack"));
