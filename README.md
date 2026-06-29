@@ -41,6 +41,7 @@ node demo/display-calibration.mjs --summary
 Open the visual certificate-loop surface at [`demo/index.html`](demo/index.html).
 Use `node demo/catalog.mjs --summary` for a compact operator map of the CLI and MCP surface.
 Use `node demo/server-manifest.mjs --summary` for the five-server MCP launch map.
+Use `npm start` or `node demo/telos-mcp.mjs` to run the Telos stdio MCP server for registry and host introspection.
 Use `node demo/mcp-freshness.mjs --observed observed.json` to turn host-loaded MCP state, including declared behavior probes, into a `MATCH`, `DRIFT`, or `UNVERIFIABLE` freshness verdict.
 Use `node demo/context-pack.mjs` for a runnable, budgeted, receipt-backed context packet with validation for large-codebase handoffs.
 Use `node demo/action-receipt.mjs` for the durable external-write receipt contract: proposed intent, authority, execution, redacted evidence, review, compensation, trace joins, and typed failure codes without requiring raw private payloads.

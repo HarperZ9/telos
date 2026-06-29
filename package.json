@@ -1,0 +1,17 @@
+{
+  "name": "project-telos-mcp",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Project Telos MCP stdio server for local-first AI work receipts and verification tooling.",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node demo/telos-mcp.mjs",
+    "mcp": "node demo/telos-mcp.mjs",
+    "catalog": "node demo/catalog.mjs --summary",
+    "manifest": "node demo/server-manifest.mjs --summary",
+    "test:mcp": "node --test demo/telos-mcp.test.mjs demo/mcp-server-launch.test.mjs"
+  }
+}
