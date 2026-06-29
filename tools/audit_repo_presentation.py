@@ -17,7 +17,7 @@ PUBLIC_CHECKS = {
 
 DEVELOPER_CHECKS = {
     "install_or_setup": re.compile(r"\b(pip install|npm install|cargo install|cmake|make|uv sync|python -m|git clone)\b", re.I),
-    "runnable_command": re.compile(r"```(?:bash|sh|powershell|console)?\s+[\s\S]*?\b(python|node|npm|cargo|pytest|go test|cmake|make)\b", re.I),
+    "runnable_command": re.compile(r"```(?:bash|sh|powershell|console)?\s+[\s\S]*?\b(python|node|npm|cargo|pytest|go test|cmake|make|pwsh|powershell)\b", re.I),
     "verify_or_test": re.compile(r"\b(test|pytest|unittest|cargo test|go test|verify|doctor|ci)\b", re.I),
     "integration_surface": re.compile(r"\b(CLI|MCP|API|plugin|IDE|TUI|app|browser|library|SDK|command)\b", re.I),
     "status": re.compile(r"^##\s+(Current\s+status|Status|Release)\b", re.I | re.M),
