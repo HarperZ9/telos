@@ -44,6 +44,7 @@ for (const name of [
   "telos.creative.engine",
   "telos.creative.kernels",
   "telos.revival.registry",
+  "telos.second_level.queue",
   "telos.display.calibration"
 ]) {
   assert.ok(names.has(name), `missing ${name}`);
@@ -266,6 +267,17 @@ assert.deepEqual(revivalRegistry.result.structuredContent, expectedRevivalRegist
 assert.equal(revivalRegistry.result.structuredContent.schema, "project-telos.revival-registry/v1");
 assert.ok(revivalRegistry.result.structuredContent.tools.some((tool) => tool.id === "calibrate-pro"));
 
+const expectedSecondLevelQueue = JSON.parse(
+  readFileSync(new URL("./integrations/second-level-flagship-queue.json", import.meta.url), "utf8")
+);
+const secondLevelQueue = handleRequest(request("tools/call", {
+  name: "telos.second_level.queue",
+  arguments: {}
+}));
+assert.deepEqual(secondLevelQueue.result.structuredContent, expectedSecondLevelQueue);
+assert.equal(secondLevelQueue.result.structuredContent.schema, "project-telos.second-level-flagship-queue/v1");
+assert.equal(secondLevelQueue.result.structuredContent.public_candidates.length, 15);
+
 const expectedDisplayCalibration = JSON.parse(
   readFileSync(new URL("./integrations/display-calibration.json", import.meta.url), "utf8")
 );
@@ -308,4 +320,5 @@ assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.measure
 assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.creative.engine"));
 assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.creative.kernels"));
 assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.revival.registry"));
+assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.second_level.queue"));
 assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.display.calibration"));

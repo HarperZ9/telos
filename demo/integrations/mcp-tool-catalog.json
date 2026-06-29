@@ -1042,6 +1042,26 @@
       ]
     },
     {
+      "name": "telos.second_level.queue",
+      "flagship": "telos",
+      "description": "Use when assessing public-safe second-level flagship candidates before registry promotion. Read-only, zero-auth, no external side effects. Returns a JSON second-level flagship queue.",
+      "cli": [
+        "node",
+        "demo/second-level-flagship-queue.mjs"
+      ],
+      "mcp": {
+        "status": "available",
+        "server": "telos",
+        "method": "tools/call",
+        "tool": "telos.second_level.queue"
+      },
+      "next_actions": [
+        "telos.revival.registry",
+        "index.context.envelope",
+        "crucible.review"
+      ]
+    },
+    {
       "name": "telos.display.calibration",
       "flagship": "telos",
       "description": "Use when display, color, ICC/LUT, artifact refs, or measurement gates need a non-mutating calibration contract. Read-only, zero-auth, no external side effects. Returns a JSON display-calibration contract.",

@@ -51,12 +51,17 @@ These two repos should enter the registry as engine organs with creative, scienc
 
 `node demo/second-level-flagship-queue.mjs` holds candidates that are valuable but should not become active registry entries until they have an adapter, fixture, or Crucible-verifiable claim.
 
+Current Index evidence from 2026-06-29 maps `C:/dev` as 123 Git repositories: 113 public-class and 10 local-class. The public-safe queue now tracks 15 candidates; private/local-only details stay reduced to lane families until they have scrubbed fixtures and public-safe receipts.
+
 Public-safe queue:
 
 - Creative and engine: `reconcile`, `studio-engine`.
 - Proof and provenance: `provenance-sensorium`, `proof-surface`, `model-provenance-validator`.
 - Release and public-surface hygiene: `public-surface-sweeper`.
 - Agent workflow: `agent-routing-kit`, `agent-hook-pack`, `coherence-membrane`, `workflow-harness-lite`.
+- Accountability surfaces: `accountable-engine`, `accountable-surface`.
+- Telemetry and science kernels: `anomaly-kernels`, `signal-kernels`.
+- Objective integrity: `rewardspy` concept lane for proxy-objective observability.
 
 Private/local-only queue:
 

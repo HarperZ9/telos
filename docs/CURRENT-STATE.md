@@ -9,17 +9,18 @@ This document is a live state packet for Project Telos. It is deliberately evide
 - Index workspace map: `C:\dev\public`, generated `2026-06-28T17:29:42-07:00`.
 - Index public workspace `repo_count: 52`, public repos 48, local repos 4.
 - Index public workspace `root_sha256_prefix: 92ef331e0850ccf6`.
+- Index whole `C:\dev` workspace map generated `2026-06-29T00:36:46-07:00`: 123 repositories, 113 public-class, 10 local-class, 93 dirty repositories, root SHA256 prefix `99e773d965f606c9`.
 - Telos repo pre-checkpoint head `469ce55`, branch `main`; latest in-turn Index refresh saw the active uncommitted context-pack and thermodynamic-integration edits.
 - Studio Engine repo current branch `feat/two-way-loop`, head `ad27b08`, public origin `https://github.com/HarperZ9/studio-engine.git`.
 - Reconcile repo current head `375d1f5`, branch `main`, public origin `https://github.com/HarperZ9/reconcile.git`.
 - Forum route for the expanded mandate decided `project-telos` with no escalation; related lanes remain technical-writing, function-routing, data-ml, code-review, render-pipeline, shader-effects, and deep-research.
 - Gather receipts were refreshed for large-context agent memory and rendering research.
 - Telos workflow returned `MATCH` for the local five-flagship workflow and reports CLI, MCP, IDE, TUI, and application workbench next actions.
-- Telos catalog now presents 51 available tools across the five flagships, including `telos.context.pack`, `telos.model.foundry`, `telos.mcp.freshness`, and `telos.research.thermodynamic`.
+- Telos catalog now presents 52 available tools across the five flagships, including `telos.context.pack`, `telos.model.foundry`, `telos.mcp.freshness`, `telos.research.thermodynamic`, and `telos.second_level.queue`.
 - The canonical connection and distribution map now lives at `docs/PROJECT-CONNECTION-MAP.md`. It treats the five flagships as the current organs and the wider HarperZ9 public repo corpus as Telos growth tissue.
 - GitHub authenticated inventory checked 77 visible HarperZ9 repos: 47 public non-forks, 4 public forks, 25 private active repos, and 1 private archived repo. Private and local-only viability stays in ignored local packets until sanitized.
 - Local-only viability now has public-safe revival records for `raw-native`, `studio-libs`, and `forum-archive`: deterministic renderer verification, studio perception organ, and orchestration archive. Raw local viability notes remain ignored and are not public evidence.
-- The second-level flagship queue now tracks 10 public-safe candidates and 5 private/local-only lane families through `node demo/second-level-flagship-queue.mjs`. Public candidates carry README hashes; private/local-only details stay in ignored local packets.
+- The second-level flagship queue now tracks 15 public-safe candidates and 5 private/local-only lane families through `node demo/second-level-flagship-queue.mjs` and `telos.second_level.queue`. Public candidates carry README hashes; private/local-only details stay in ignored local packets.
 - Crucible current-state thesis `661f7d4089347607` assessed 5 claims: 5 `MATCH`, 0 `DRIFT`, 0 `UNVERIFIABLE`. Report: `docs/verification/2026-06-28-current-state-report.md`; run record: `docs/verification/2026-06-28-current-state-run.json`.
 
 ## Moving Target Rule
@@ -55,13 +56,13 @@ The five flagships must stay protocol agnostic. Each should remain usable as an 
 Telos Engine is larger than the website Studio demo.
 
 - `portfolio-site` contains the public Studio Showcase and the in-flight browser engine work: graph runtime, Canonical Media IR, format adapters, render planning, effects, transforms, and Studio presentation.
-- `telos` contains the flagship action contracts, tool catalog, MCP manifest, action receipts, context envelopes, loop ledger, creative engine manifest, measurement layers, and revival registry.
+- `telos` contains the flagship action contracts, tool catalog, MCP manifest, action receipts, context envelopes, loop ledger, creative engine manifest, measurement layers, revival registry, and second-level flagship queue.
 - `studio-engine` is part of the Telos Engine lineage. Its README describes a zero-dependency creative-verification engine that emits witnessed Worlds, render programs, audio programs, timelines, and receipts.
 - `reconcile` is also part of the Telos Engine lineage. Its README describes a node/browser creative-verification engine where generated artifacts are perceived, judged against independent criteria, refined, composed, choreographed, and witnessed.
 - `raw-native` is now a local-only revival candidate for deterministic renderer verification: CPU G-buffer rasterization, ray-traced AO oracle checks, SSAO comparison, bounded allocation, and witnessed certificates.
 - `studio-libs` is now a local-only revival candidate for the studio perception organ: nD rendering, layered sense-core readouts, and a Node-stdlib MCP surface for render, perceive, and measure operations.
 - `forum-archive` is now a local-only revival candidate for orchestration archive work: supervision-tree primitives, event/task scheduling, hashing, and compatibility diffing against current Forum.
-- `second-level-flagship-queue` now holds the next wave before registry promotion: Reconcile, Studio Engine, Provenance Sensorium, Proof Surface, Model Provenance Validator, Public Surface Sweeper, Agent Routing Kit, Agent Hook Pack, Coherence Membrane, and Workflow Harness Lite.
+- `second-level-flagship-queue` now holds the next wave before registry promotion: Reconcile, Studio Engine, Provenance Sensorium, Proof Surface, Model Provenance Validator, Public Surface Sweeper, Agent Routing Kit, Agent Hook Pack, Coherence Membrane, Workflow Harness Lite, Accountable Engine, Accountable Surface, Anomaly Kernels, Signal Kernels, and Rewardspy concept lane.
 
 These repos should converge by contract, not by a rushed copy. The shared boundary is the World/media graph/receipt model: source, transform, criterion, rendered program, measurement, verdict, and replay reference.
 
