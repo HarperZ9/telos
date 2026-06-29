@@ -72,6 +72,20 @@ function extractScalar(texts, key) {
 }
 
 function analyzeCompatibility(files) {
+  if (files.length === 0) {
+    return {
+      force_node24_flag: false,
+      checkout_major: null,
+      setup_python_major: null,
+      setup_node_major: null,
+      node_version: null,
+      python_versions: [],
+      artifact_actions: [],
+      verdict: "UNVERIFIABLE",
+      failure_codes: ["workflow_evidence_unjoinable"]
+    };
+  }
+
   const texts = files.map((file) => file.text);
   const uses = texts.flatMap(extractUses);
   const artifactActions = uses
@@ -85,9 +99,6 @@ function analyzeCompatibility(files) {
   const checkoutMajor = firstMajor(uses, "actions/checkout");
   const problems = [];
 
-  if (files.length === 0) {
-    problems.push("workflow_evidence_unjoinable");
-  }
   if (!forceNode24) {
     problems.push("node_runtime_drift");
   }
@@ -115,7 +126,7 @@ function analyzeCompatibility(files) {
     node_version: nodeVersions[0] ?? null,
     python_versions: pythonVersions,
     artifact_actions: unique(artifactActions),
-    verdict: problems.length === 0 ? "MATCH" : files.length === 0 ? "UNVERIFIABLE" : "DRIFT",
+    verdict: problems.length === 0 ? "MATCH" : "DRIFT",
     failure_codes: unique(problems)
   };
 }
@@ -132,6 +143,7 @@ export function scanLocalWorkflows(root, options = {}) {
   });
   const workflowCount = scanned.reduce((count, flagship) => count + flagship.workflow_files.length, 0);
   const verdicts = scanned.map((flagship) => flagship.compatibility.verdict);
+  const failureCodes = unique(scanned.flatMap((flagship) => flagship.compatibility.failure_codes));
   const node24 = verdicts.every((verdict) => verdict === "MATCH")
     ? "MATCH"
     : verdicts.some((verdict) => verdict === "DRIFT")
@@ -146,7 +158,8 @@ export function scanLocalWorkflows(root, options = {}) {
       flagship_count: scanned.length,
       workflow_count: workflowCount,
       node24_compatibility: node24,
-      verdict: node24
+      verdict: node24,
+      failure_codes: failureCodes
     },
     privacy_boundary: {
       absolute_paths_included: false,

@@ -191,6 +191,60 @@ jobs:
   const scanText = JSON.stringify(observation);
   assert.equal(scanText.includes(tempRoot), false, "scanner must not leak absolute temp root");
   assert.equal(scanText.includes("node-version:"), false, "scanner must not include workflow bodies");
+
+  writeWorkflow("node-drift", "ci.yml", `
+name: CI
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v5
+        with:
+          node-version: "20"
+`);
+
+  writeWorkflow("action-drift", "ci.yml", `
+name: CI
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+`);
+
+  const negative = scanLocalWorkflows(tempRoot, {
+    flagships: ["node-drift", "action-drift", "missing-workflows"],
+    generatedAt: "2026-06-29T00:00:01.000Z"
+  });
+  assert.equal(negative.aggregate.node24_compatibility, "DRIFT");
+  assert.equal(negative.aggregate.verdict, "DRIFT");
+  assert.deepEqual(negative.aggregate.failure_codes, [
+    "node_runtime_drift",
+    "action_major_drift",
+    "workflow_evidence_unjoinable"
+  ]);
+
+  const negativeByFlagship = new Map(negative.flagships.map((flagship) => [flagship.id, flagship]));
+  assert.equal(negativeByFlagship.get("node-drift").compatibility.verdict, "DRIFT");
+  assert.deepEqual(negativeByFlagship.get("node-drift").compatibility.failure_codes, [
+    "node_runtime_drift"
+  ]);
+  assert.equal(negativeByFlagship.get("action-drift").compatibility.verdict, "DRIFT");
+  assert.deepEqual(negativeByFlagship.get("action-drift").compatibility.failure_codes, [
+    "action_major_drift"
+  ]);
+  assert.equal(negativeByFlagship.get("missing-workflows").compatibility.verdict, "UNVERIFIABLE");
+  assert.deepEqual(negativeByFlagship.get("missing-workflows").compatibility.failure_codes, [
+    "workflow_evidence_unjoinable"
+  ]);
 } finally {
   rmSync(tempRoot, { recursive: true, force: true });
 }
