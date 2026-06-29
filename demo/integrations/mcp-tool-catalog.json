@@ -739,6 +739,27 @@
       ]
     },
     {
+      "name": "telos.presentation.doctor",
+      "flagship": "telos",
+      "description": "Use when a host needs five-flagship README, changelog, and brand-asset presentation parity receipts. Read-only, zero-auth, no external side effects. Returns JSON MATCH, DRIFT, or UNVERIFIABLE presentation receipts.",
+      "cli": [
+        "node",
+        "demo/presentation-doctor.mjs"
+      ],
+      "mcp": {
+        "status": "available",
+        "server": "telos",
+        "method": "tools/call",
+        "tool": "telos.presentation.doctor"
+      },
+      "next_actions": [
+        "gather.docs",
+        "index.map",
+        "forum.route",
+        "crucible.assess"
+      ]
+    },
+    {
       "name": "telos.admission.telemetry",
       "flagship": "telos",
       "description": "Use when designing trace fields that keep action admission separate from verification verdicts. Read-only, zero-auth, no external side effects. Returns a JSON telemetry convention.",

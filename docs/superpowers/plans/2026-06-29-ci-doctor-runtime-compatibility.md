@@ -72,7 +72,7 @@ Expected: PASS.
 
 **Interfaces:**
 - Consumes: `demo/ci-doctor.mjs`
-- Produces: `telos.ci.doctor` MCP tool and 54-tool/26-Telos-tool status.
+- Produces: `telos.ci.doctor` MCP tool and the then-current 54-tool/26-Telos-tool status.
 
 - [ ] **Step 1: Wire the tool**
 

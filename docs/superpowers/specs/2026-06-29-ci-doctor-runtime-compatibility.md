@@ -30,7 +30,7 @@ Add a native Telos CI doctor surface that turns GitHub Actions runner/runtime dr
 - [x] `node demo/ci-doctor.mjs --summary` prints a compact status with 5 flagships, 9 workflows, verdict `MATCH`, and next command.
 - [x] `node demo/ci-doctor.test.mjs` proves schema, counts, CI status, compatibility checks, privacy boundaries, and leak guards.
 - [x] `demo/telos-mcp.test.mjs` proves `telos.ci.doctor` returns the same JSON as the CLI payload.
-- [x] Existing catalog, manifest, status, docs, and freshness tests reflect the new 54-tool/26-Telos-tool surface.
+- [x] Existing catalog, manifest, status, docs, and freshness tests reflected the CI-doctor 54-tool/26-Telos-tool surface when this slice landed; later slices may raise the catalog count.
 
 ## Verification
 
@@ -40,5 +40,5 @@ Add a native Telos CI doctor surface that turns GitHub Actions runner/runtime dr
 - `node demo/ci-doctor.mjs --scan-root .. --summary` returns `project-telos.ci-doctor-workflow-observation/v1` with local workflow counts and Node 24 compatibility status without GitHub writes or raw workflow bodies.
 - Negative scanner fixtures assert distinct `node_runtime_drift`, `action_major_drift`, and `workflow_evidence_unjoinable` codes, including aggregate `failure_codes`.
 - Focused surface tests passed: `demo/telos-mcp.test.mjs`, `demo/integrations.test.mjs`, `demo/operator-scripts.test.mjs`, `demo/rendering-research.test.mjs`, `demo/server-manifest.test.mjs`, and `demo/project-current-state-docs.test.mjs`.
-- `node demo/catalog.mjs --summary` reports 54 total and 54 available tools, with 26 Telos tools.
-- `node demo/server-manifest.mjs --summary` reports 54 expected tools, with 26 Telos tools.
+- `node demo/catalog.mjs --summary` reported 54 total and 54 available tools, with 26 Telos tools, when this CI-doctor slice landed.
+- `node demo/server-manifest.mjs --summary` reported 54 expected tools, with 26 Telos tools, when this CI-doctor slice landed.

@@ -55,6 +55,11 @@ export const tools = [
     inputSchema: emptyInputSchema
   },
   {
+    name: "telos.presentation.doctor",
+    description: "Use when a host needs five-flagship README, changelog, and brand-asset presentation parity receipts. Read-only, zero-auth, no external side effects. Returns JSON MATCH, DRIFT, or UNVERIFIABLE presentation receipts.",
+    inputSchema: emptyInputSchema
+  },
+  {
     name: "telos.admission.telemetry",
     description: "Use when designing trace fields that keep action admission separate from verification verdicts. Read-only, zero-auth, no external side effects. Returns a JSON telemetry convention.",
     inputSchema: emptyInputSchema
@@ -155,6 +160,7 @@ const toolScripts = new Map([
   ["telos.server.manifest", ["server-manifest.mjs"]],
   ["telos.mcp.freshness", ["mcp-freshness.mjs"]],
   ["telos.ci.doctor", ["ci-doctor.mjs"]],
+  ["telos.presentation.doctor", ["presentation-doctor.mjs"]],
   ["telos.admission.telemetry", ["admission-telemetry.mjs"]],
   ["telos.context.envelope", ["context-envelope.mjs"]],
   ["telos.context.pack", ["context-pack.mjs"]],

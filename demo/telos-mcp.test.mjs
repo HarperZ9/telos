@@ -30,6 +30,7 @@ for (const name of [
   "telos.server.manifest",
   "telos.mcp.freshness",
   "telos.ci.doctor",
+  "telos.presentation.doctor",
   "telos.admission.telemetry",
   "telos.context.envelope",
   "telos.context.pack",
@@ -120,6 +121,15 @@ assert.deepEqual(ciDoctor.result.structuredContent, expectedCiDoctor);
 assert.equal(ciDoctor.result.structuredContent.schema, "project-telos.ci-doctor/v1");
 assert.equal(ciDoctor.result.structuredContent.aggregate.flagship_count, 5);
 assert.equal(ciDoctor.result.structuredContent.aggregate.verdict, "MATCH");
+
+const presentationDoctor = handleRequest(request("tools/call", {
+  name: "telos.presentation.doctor",
+  arguments: {}
+}));
+assert.equal(presentationDoctor.result.structuredContent.schema, "project-telos.presentation-doctor/v1");
+assert.equal(presentationDoctor.result.structuredContent.tool, "telos.presentation.doctor");
+assert.equal(presentationDoctor.result.structuredContent.aggregate.flagship_count, 5);
+assert.equal(presentationDoctor.result.structuredContent.privacy_boundary.raw_document_bodies_included, false);
 
 const expectedAdmissionTelemetry = JSON.parse(
   readFileSync(new URL("./integrations/admission-telemetry-conventions.json", import.meta.url), "utf8")
@@ -331,6 +341,7 @@ assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.catalog
 assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.server.manifest"));
 assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.mcp.freshness"));
 assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.ci.doctor"));
+assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.presentation.doctor"));
 assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.admission.telemetry"));
 assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.context.envelope"));
 assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.context.pack"));
