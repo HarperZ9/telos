@@ -13,6 +13,7 @@ Add a native Telos CI doctor surface that turns GitHub Actions runner/runtime dr
 - Five flagship workflow scan: 9 workflow files across Gather, Crucible, Index, Forum, and Telos.
 - Latest flagship CI runs inspected through `gh run list`: all five latest `CI` runs are completed with `success`.
 - Current action release tags queried through `gh api`: `actions/checkout@v7.0.0`, `actions/setup-node@v6.4.0`, `actions/setup-python@v6.3.0`, `actions/upload-artifact@v7.0.1`, `actions/download-artifact@v8.0.1`.
+- GitHub Actions Node 20 deprecation changelog confirms the native migration path: `FORCE_JAVASCRIPT_ACTIONS_TO_NODE24=true` for early Node 24 testing, Node 24 default beginning `2026-06-16`, and `ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true` only as a temporary Node 20 opt-out.
 
 ## Requirements
 
@@ -37,6 +38,7 @@ Add a native Telos CI doctor surface that turns GitHub Actions runner/runtime dr
 - The follow-up scanner red test failed on the missing `scanLocalWorkflows` export, then passed after implementing local workflow scanning.
 - A matrix-version regression test caught YAML matrix values being parsed as `[` and `${{`; the scanner now ignores expressions and extracts concrete quoted array values.
 - `node demo/ci-doctor.mjs --scan-root .. --summary` returns `project-telos.ci-doctor-workflow-observation/v1` with local workflow counts and Node 24 compatibility status without GitHub writes or raw workflow bodies.
+- Negative scanner fixtures assert distinct `node_runtime_drift`, `action_major_drift`, and `workflow_evidence_unjoinable` codes, including aggregate `failure_codes`.
 - Focused surface tests passed: `demo/telos-mcp.test.mjs`, `demo/integrations.test.mjs`, `demo/operator-scripts.test.mjs`, `demo/rendering-research.test.mjs`, `demo/server-manifest.test.mjs`, and `demo/project-current-state-docs.test.mjs`.
 - `node demo/catalog.mjs --summary` reports 54 total and 54 available tools, with 26 Telos tools.
 - `node demo/server-manifest.mjs --summary` reports 54 expected tools, with 26 Telos tools.
