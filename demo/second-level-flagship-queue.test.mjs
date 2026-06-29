@@ -28,7 +28,12 @@ for (const id of [
   "agent-routing-kit",
   "agent-hook-pack",
   "coherence-membrane",
-  "workflow-harness-lite"
+  "workflow-harness-lite",
+  "accountable-engine",
+  "accountable-surface",
+  "anomaly-kernels",
+  "signal-kernels",
+  "rewardspy"
 ]) {
   assert.ok(byId.has(id), `missing second-level candidate ${id}`);
 }
@@ -48,6 +53,26 @@ assert.match(byId.get("model-provenance-validator").risk_boundary, /private data
 assert.equal(byId.get("agent-routing-kit").lane, "deterministic-agent-routing");
 assert.ok(byId.get("agent-routing-kit").host_flagships.includes("forum.route"));
 assert.match(byId.get("agent-routing-kit").risk_boundary, /hidden policy authority/);
+
+assert.equal(byId.get("accountable-engine").lane, "accountability-substrate");
+assert.ok(byId.get("accountable-engine").host_flagships.includes("telos.action.receipt"));
+assert.match(byId.get("accountable-engine").risk_boundary, /hidden authority/);
+
+assert.equal(byId.get("accountable-surface").lane, "witnessed-action-surface");
+assert.ok(byId.get("accountable-surface").host_flagships.includes("telos.loop.ledger"));
+assert.match(byId.get("accountable-surface").first_action, /proposed\/admission\/execution\/review/);
+
+assert.equal(byId.get("anomaly-kernels").lane, "telemetry-anomaly-kernels");
+assert.ok(byId.get("anomaly-kernels").host_flagships.includes("telos.objective.monitor"));
+assert.match(byId.get("anomaly-kernels").risk_boundary, /Analytics library only/);
+
+assert.equal(byId.get("signal-kernels").lane, "scientific-signal-kernels");
+assert.ok(byId.get("signal-kernels").host_flagships.includes("telos.measurement.layers"));
+assert.match(byId.get("signal-kernels").first_action, /signal-measurement packets/);
+
+assert.equal(byId.get("rewardspy").lane, "proxy-objective-observability");
+assert.ok(byId.get("rewardspy").host_flagships.includes("telos.objective.monitor"));
+assert.match(byId.get("rewardspy").risk_boundary, /upstream license/);
 
 for (const candidate of queue.public_candidates) {
   assert.ok(candidate.origin.startsWith("C:/dev/public/"), `${candidate.id} stays in public source lane`);
@@ -79,6 +104,6 @@ const summary = spawnSync(process.execPath, [path.join(here, "second-level-flags
 });
 assert.equal(summary.status, 0, summary.stderr || summary.stdout);
 assert.match(summary.stdout, /Telos Second-Level Flagship Queue/);
-assert.match(summary.stdout, /public\s+10/);
+assert.match(summary.stdout, /public\s+15/);
 assert.match(summary.stdout, /private_tranche\s+5/);
 assert.match(summary.stdout, /creative-verification-engine/);
