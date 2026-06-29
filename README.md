@@ -5,18 +5,19 @@
 
 # Project Telos
 
-> Give a stateless model durable, verified contact with state and range.
+> Give models and people shared, checkable work surfaces.
 
-[Project Telos](https://harperz9.github.io) | [Gather](https://github.com/HarperZ9/gather) | [Crucible](https://github.com/HarperZ9/crucible) | [Index](https://github.com/HarperZ9/index) | [Forum](https://github.com/HarperZ9/forum) | [Telos](https://github.com/HarperZ9/telos)
+[Project Telos](https://harperz9.github.io) | [gather](https://github.com/HarperZ9/gather) | [crucible](https://github.com/HarperZ9/crucible) | [index](https://github.com/HarperZ9/index) | [forum](https://github.com/HarperZ9/forum) | [telos](https://github.com/HarperZ9/telos)
 
-![node: 24 CI, 18+ local](https://img.shields.io/badge/node-24%20CI%2C%2018%2B%20local-blue.svg)
+![node: 24 CI, 20+ registry](https://img.shields.io/badge/node-24%20CI%2C%2020%2B%20registry-blue.svg)
 ![CI](https://github.com/HarperZ9/telos/actions/workflows/ci.yml/badge.svg)
-![deps: none (demo)](https://img.shields.io/badge/demo%20deps-none-success.svg)
+![version: 0.1.0](https://img.shields.io/badge/version-0.1.0-informational.svg)
+![deps: none](https://img.shields.io/badge/deps-none-success.svg)
 ![license: fair-source](https://img.shields.io/badge/license-fair--source-blue.svg)
 
 ## Try it
 
-Zero dependencies, Node 18 or newer.
+Zero dependencies. Use Node 20 or newer for registry and Docker parity; CI currently runs on Node 24.
 
 ```bash
 node demo/run.mjs
@@ -45,7 +46,7 @@ Use `npm start` or `node demo/telos-mcp.mjs` to run the Telos stdio MCP server f
 Use `node demo/mcp-freshness.mjs --observed observed.json` to turn host-loaded MCP state, including declared behavior probes, into a `MATCH`, `DRIFT`, or `UNVERIFIABLE` freshness verdict.
 Use `node demo/context-pack.mjs` for a runnable, budgeted, receipt-backed context packet with validation for large-codebase handoffs.
 Use `node demo/action-receipt.mjs` for the durable external-write receipt contract: proposed intent, authority, execution, redacted evidence, review, compensation, trace joins, and typed failure codes without requiring raw private payloads.
-Use `node demo/model-foundry.mjs --summary` for the bounded model-foundry and self-improving daemon contract: frontier orchestration where appropriate, local/open-weight runtimes where useful, post-training labs where feasible, and Crucible-gated promotion.
+Use `node demo/model-foundry.mjs --summary` for the bounded model-foundry and self-improving daemon contract: frontier orchestration where appropriate, local/open-weight runtimes where useful, post-training labs where feasible, and crucible-gated promotion.
 Use `node demo/rendering-capabilities.mjs --summary` for the WebGPU/WebGL/canvas/static renderer selection and fallback contract.
 Use `node demo/measurement-layers.mjs --summary` for ten runnable meters across histogram, dither, splat, cluster, audio, flicker, curvature, interaction, uncertainty, and frame budget signals.
 Use `node demo/creative-engine.mjs --summary` for the whole creation-engine contract: raster effects, sound, typography, math/physics, node graphs, revived organs, and receipts.
@@ -56,26 +57,28 @@ Use `node demo/display-calibration.mjs --summary` for the read-only Calibrate Pr
 
 ## Why it matters
 
-The hard part of AI work is not producing an answer. It is keeping state, perception,
-action, and verification in the same room long enough for a human or another system to
-re-check what happened. Telos is the membrane for that: a way to let a model propose
-without letting confidence become the proof.
+The hard part of AI work is not producing an answer. It is keeping sources, workspace state,
+agent routes, action boundaries, measurements, and creative artifacts close enough that a
+human or another system can re-check what happened. Telos is the workbench for that: a
+local MCP surface that ties gather, index, forum, crucible, and telos into receipts,
+manifests, ledgers, model-foundry lanes, creative engines, and public research packets.
 
 ## Work with it
 
 Bring a workflow where the record matters: research intake, editorial claims, agent
-routing, clinical-adjacent review, design pipelines, due diligence, or any loop where
-an honest UNVERIFIABLE is worth more than a polished guess. The useful next step is
-pressure from real operators, verifier feedback, and research support for the memory,
-perception, and action floor.
+routing, clinical-adjacent review, design pipelines, graphics/math/science demos,
+due diligence, or any loop where an honest UNVERIFIABLE is worth more than a polished
+guess. The useful next pressure is verification, testing against real workflows, early
+traction from people willing to inspect receipts, collaborator feedback, and modest
+grassroots research funding.
 
 ## Telos Creative Engine
 
 The Studio is now presented as a whole creation engine, not only a visual demo. `node demo/creative-engine.mjs` returns the host-neutral manifest for generative art, retro CGI, raster effects, sound, film/media, typography, math/physics, node graphs, renderer capability probes, runnable sensor/measurement layers, deterministic creative kernels, and verification. It also records the old engine organs to revive next: `demo/render-nd`, `demo/render-sound`, `demo/sense-core`, `demo/viable-viz`, the sibling `studio-engine` raster/sonify/flowfield/harmonograph/WebAudio organs, and `studio-libs/render-sound`.
 
-Every creative action should remain receipt-backed: scene specs, hashes, replay handles, and one of `MATCH`, `DRIFT`, or `UNVERIFIABLE`. `node demo/rendering-capabilities.mjs` keeps WebGPU Gaussian-splat/clustered prototypes, WebGL2 previews, Canvas 2D receipts, and static artifact fallbacks in one selectable contract. `node demo/measurement-layers.mjs` turns pixels, dither patterns, splat fields, light clusters, and waveforms into measurable packets before Crucible verdicts. `node demo/creative-kernels.mjs` gives hosts a shared deterministic core for ordered dithering, pixel sorting, plotter paths, and clustered-light bins. The public demo uses Kilon for display typography and Conso for utility text while keeping purchased font files out of the repository.
+Every creative action should remain receipt-backed: scene specs, hashes, replay handles, and one of `MATCH`, `DRIFT`, or `UNVERIFIABLE`. `node demo/rendering-capabilities.mjs` keeps WebGPU Gaussian-splat/clustered prototypes, WebGL2 previews, Canvas 2D receipts, and static artifact fallbacks in one selectable contract. `node demo/measurement-layers.mjs` turns pixels, dither patterns, splat fields, light clusters, and waveforms into measurable packets before crucible verdicts. `node demo/creative-kernels.mjs` gives hosts a shared deterministic core for ordered dithering, pixel sorting, plotter paths, and clustered-light bins. The public demo uses Kilon for display typography and Conso for utility text while keeping purchased font files out of the repository.
 
-The current research queue also includes receipt-only source leads from Inigo Quilez and adjacent math, physics, AI-progress, GPU-kernel, and educator videos under [`demo/research/youtube-math-educator-receipts.json`](demo/research/youtube-math-educator-receipts.json). Those leads shape the engine toward formula-visible, perturbable demos for mathematicians, physicists, shader artists, and teachers; video metadata is not promoted to scientific or benchmark evidence until stronger sources and Crucible checks exist.
+The current research queue also includes receipt-only source leads from Inigo Quilez and adjacent math, physics, AI-progress, GPU-kernel, and educator videos under [`demo/research/youtube-math-educator-receipts.json`](demo/research/youtube-math-educator-receipts.json). Those leads shape the engine toward formula-visible, perturbable demos for mathematicians, physicists, shader artists, and teachers; video metadata is not promoted to scientific or benchmark evidence until stronger sources and crucible checks exist.
 
 `node demo/thermodynamic-ai-chip-receipt.mjs` promotes the verified Machine Learning Street Talk interview with Thomas Ahle into a transcript-backed Telos research packet. The packet turns the discussion into a public-source integration lane for Normal Computing-adjacent work: spec representation, Verilog/formal receipts, stochastic simulation, uncertainty meters, and hybrid search/check loops. It records transcript themes as `MATCH`, treats Telos integration as `INFERRED`, and keeps Normal Computing, ProgramBench, and thermodynamic-chip technical correctness `UNVERIFIABLE_FROM_THIS_PACKET` until primary sources and independent checks promote them.
 
@@ -85,23 +88,23 @@ The true model direction is not pretending this repo can reproduce frontier-lab 
 
 The post-training lane now has an RL scaling receipt-spine target in [`docs/research/rl-scaling-receipt-spine.md`](docs/research/rl-scaling-receipt-spine.md). It uses current THUDM/slime repository metadata as a benchmark signal while keeping Telos focused on durable rollout, verifier, reward, compute, checkpoint, and promotion receipts rather than unverified training claims.
 
-The self-improving daemon lives here as a bounded loop. It gathers fresh evidence, indexes the workspace, routes one improvement, admits one action, executes one patch or experiment, runs Crucible, checks objective drift, and promotes only `MATCH`. `DRIFT` blocks; `UNVERIFIABLE` asks for evidence instead of training itself on a guess.
+The self-improving daemon lives here as a bounded loop. It gathers fresh evidence, indexes the workspace, routes one improvement, admits one action, executes one patch or experiment, runs crucible, checks objective drift, and promotes only `MATCH`. `DRIFT` blocks; `UNVERIFIABLE` asks for evidence instead of training itself on a guess.
 
 ## Legacy Tool Revival
 
 `node demo/revival-registry.mjs` is the first promotion registry for the older and frozen tools that should stop living as isolated experiments. It currently pulls Calibrate Pro, Quanta Color, QuantaLang/quantac, WARDEN security lineage, Agent Audit, Context Curator Lite, Secret Redact IO, Repo Proof Index, Release Surface Scanner, GPU Trace Validator, raw-native, studio-libs, and the Forum archive into explicit Telos lanes with origin paths, Gather-backed README digests, risk boundaries, flagship hosts, and next actions. The local-only entries are sanitized lane records only; raw private viability notes stay outside the repository.
 
-`node demo/second-level-flagship-queue.mjs` is the next wave. It records public-safe candidates such as Reconcile, Studio Engine, Provenance Sensorium, Proof Surface, Model Provenance Validator, Public Surface Sweeper, Agent Routing Kit, Agent Hook Pack, Coherence Membrane, and Workflow Harness Lite while reducing private/local-only work to lane families. Those candidates move into the active registry only after an adapter, fixture, or Crucible-verifiable claim exists.
+`node demo/second-level-flagship-queue.mjs` is the next wave. It records public-safe candidates such as Reconcile, Studio Engine, Provenance Sensorium, Proof Surface, Model Provenance Validator, Public Surface Sweeper, Agent Routing Kit, Agent Hook Pack, Coherence Membrane, and Workflow Harness Lite while reducing private/local-only work to lane families. Those candidates move into the active registry only after an adapter, fixture, or crucible-verifiable claim exists.
 
 The first rule is visibility before transplanting: a dormant tool gets a lane, a source receipt, a privacy boundary, CLI/MCP or adapter roadmap, tests, and a target host before shared code becomes a runtime dependency. Calibrate Pro and Quanta Color become the display-calibration and color-science lane for Telos measurement layers. Context Curator Lite becomes the context-envelope source for token-efficient large-workspace handoffs. QuantaLang becomes the effects-language candidate for creative kernels. WARDEN is carried forward only as defensive, authorized, good-faith find-and-fix lineage with synthetic labs and maintainer-friendly patch workflows.
 
-`node demo/display-calibration.mjs` is the first promoted Calibrate Pro lane. It defines a read-only `project-telos.display-calibration/v1` packet for display targets, color spaces, patch sets, ICC/LUT/report artifact refs, Quanta Color metrics, privacy boundaries, and Crucible measurement gates. It does not call DDC/CI, mutate monitor settings, apply LUTs, write ICC files, or require raw private device telemetry.
+`node demo/display-calibration.mjs` is the first promoted Calibrate Pro lane. It defines a read-only `project-telos.display-calibration/v1` packet for display targets, color spaces, patch sets, ICC/LUT/report artifact refs, Quanta Color metrics, privacy boundaries, and crucible measurement gates. It does not call DDC/CI, mutate monitor settings, apply LUTs, write ICC files, or require raw private device telemetry.
 
 ## Current status
 
-- **Release:** source demo; command surface is `node demo/run.mjs`, `node demo/room.mjs`, `node demo/status.mjs`, `node demo/doctor.mjs`, `node demo/catalog.mjs`, `node demo/server-manifest.mjs`, `node demo/mcp-freshness.mjs`, `node demo/admission-telemetry.mjs`, `node demo/context-envelope.mjs`, `node demo/context-pack.mjs`, `node demo/action-receipt.mjs`, `node demo/loop-ledger.mjs`, `node demo/model-foundry.mjs`, `node demo/research-seed.mjs`, `node demo/thermodynamic-ai-chip-receipt.mjs`, `node demo/rendering-research.mjs`, `node demo/rendering-capabilities.mjs`, `node demo/measurement-layers.mjs`, `node demo/creative-engine.mjs`, `node demo/creative-kernels.mjs`, `node demo/revival-registry.mjs`, `node demo/second-level-flagship-queue.mjs`, `node demo/display-calibration.mjs`, and `node demo/flagship-workflow.mjs`.
+- **Release:** `0.1.0` source registry package; command surface is `node demo/run.mjs`, `node demo/room.mjs`, `node demo/status.mjs`, `node demo/doctor.mjs`, `node demo/catalog.mjs`, `node demo/server-manifest.mjs`, `node demo/mcp-freshness.mjs`, `node demo/admission-telemetry.mjs`, `node demo/context-envelope.mjs`, `node demo/context-pack.mjs`, `node demo/action-receipt.mjs`, `node demo/loop-ledger.mjs`, `node demo/model-foundry.mjs`, `node demo/research-seed.mjs`, `node demo/thermodynamic-ai-chip-receipt.mjs`, `node demo/rendering-research.mjs`, `node demo/rendering-capabilities.mjs`, `node demo/measurement-layers.mjs`, `node demo/creative-engine.mjs`, `node demo/creative-kernels.mjs`, `node demo/revival-registry.mjs`, `node demo/second-level-flagship-queue.mjs`, `node demo/display-calibration.mjs`, and `node demo/flagship-workflow.mjs`.
 - **Operator surface:** `node demo/telos-mcp.mjs` exposes native MCP tools: `telos.status`, `telos.doctor`, `telos.room`, `telos.catalog`, `telos.workflow`, `telos.server.manifest`, `telos.mcp.freshness`, `telos.admission.telemetry`, `telos.context.envelope`, `telos.context.pack`, `telos.action.receipt`, `telos.loop.ledger`, `telos.objective.monitor`, `telos.model.foundry`, `telos.research.seed`, `telos.research.thermodynamic`, `telos.rendering.research`, `telos.rendering.capabilities`, `telos.measurement.layers`, `telos.creative.engine`, `telos.creative.kernels`, `telos.revival.registry`, and `telos.display.calibration`.
-- **Current floor:** the operator room reconciles 51 preferred tools plus 12 declared auxiliary compatibility tools across Gather, Crucible, Index, Forum, and Telos, with a provider-neutral catalog, executable server manifest, and MCP freshness verifier that checks version, tool-list, Forum routing, and Index context-envelope behavior for CLI, MCP, plugin, IDE, TUI, and app hosts. See [CHANGELOG.md](CHANGELOG.md).
+- **Current floor:** the operator room reconciles 51 preferred tools plus 12 declared auxiliary compatibility tools across gather, crucible, index, forum, and telos, with a provider-neutral catalog, executable server manifest, and MCP freshness verifier that checks version, tool-list, forum routing, and index context-envelope behavior for CLI, MCP, plugin, IDE, TUI, and app hosts. See [CHANGELOG.md](CHANGELOG.md).
 - **Brand renderer:** `python tools/render_flagship_heroes.py --check-existing --public-root ..` verifies the five README hero PNGs and brand receipts without redistributing the operator-owned fonts.
 
 ## What it is
@@ -144,7 +147,7 @@ There is no fourth answer, and there is deliberately no TRUSTED. When the loop c
 
 ## Run it
 
-Zero dependencies, Node 18 or newer.
+Zero dependencies. Use Node 20 or newer for registry and Docker parity; CI currently runs on Node 24.
 
 ```
 node demo/run.mjs
@@ -172,7 +175,7 @@ The fastest test is to bring Telos a workflow where a model answer is not enough
 - **Token economy / routing:** model calls are spent where they buy evidence, coverage, or verification, not where they merely produce confident prose.
 - **Reasoning:** the model can perceive and propose; final authority belongs outside the model, in a checkable record a person can inspect.
 
-Main site: <https://harperz9.github.io>. GitHub: <https://github.com/HarperZ9>. Flagship repos: [Gather](https://github.com/HarperZ9/gather), [Crucible](https://github.com/HarperZ9/crucible), [Index](https://github.com/HarperZ9/index), [Forum](https://github.com/HarperZ9/forum), and [the Telos engine](https://github.com/HarperZ9/telos).
+Main site: <https://harperz9.github.io>. GitHub: <https://github.com/HarperZ9>. Flagship repos: [gather](https://github.com/HarperZ9/gather), [crucible](https://github.com/HarperZ9/crucible), [index](https://github.com/HarperZ9/index), [forum](https://github.com/HarperZ9/forum), and [the Telos engine](https://github.com/HarperZ9/telos).
 
 I am looking for verification, testing against real workflows, early traction from people willing to inspect receipts, and possibly modest grassroots research funding or pointers.
 

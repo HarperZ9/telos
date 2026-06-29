@@ -608,7 +608,7 @@
     {
       "name": "telos.status",
       "flagship": "telos",
-      "description": "Emit Telos shared-room readiness as a Project Telos action envelope.",
+      "description": "Use when a host needs current Telos workbench readiness and next actions. Read-only, zero-auth, no external side effects. Returns a JSON action envelope.",
       "cli": [
         "node",
         "demo/status.mjs"
@@ -627,7 +627,7 @@
     {
       "name": "telos.doctor",
       "flagship": "telos",
-      "description": "Check Telos operator-spine readiness.",
+      "description": "Use before demos, listings, or agent runs to check local Telos operator-spine health. Read-only, zero-auth, no external side effects. Returns JSON check results.",
       "cli": [
         "node",
         "demo/doctor.mjs"
@@ -645,7 +645,7 @@
     {
       "name": "telos.room",
       "flagship": "telos",
-      "description": "Render the five-flagship operator room in human or JSON action-envelope form.",
+      "description": "Use when an agent needs the current five-flagship room summary before routing work. Read-only, zero-auth, no external side effects. Returns a JSON action envelope.",
       "cli": [
         "node",
         "demo/room.mjs",
@@ -664,7 +664,7 @@
     {
       "name": "telos.catalog",
       "flagship": "telos",
-      "description": "Return the provider-neutral Project Telos MCP tool catalog.",
+      "description": "Use when a host needs the provider-neutral catalog of Project Telos MCP tools and next actions. Read-only, zero-auth, no external side effects. Returns a JSON catalog.",
       "cli": [
         "node",
         "demo/catalog.mjs"
@@ -682,7 +682,7 @@
     {
       "name": "telos.server.manifest",
       "flagship": "telos",
-      "description": "Return the provider-neutral MCP server launch manifest for all five flagships.",
+      "description": "Use when configuring MCP clients for gather, index, forum, crucible, and telos source checkouts. Read-only, zero-auth, no external side effects. Returns a JSON server manifest.",
       "cli": [
         "node",
         "demo/server-manifest.mjs"
@@ -700,7 +700,7 @@
     {
       "name": "telos.mcp.freshness",
       "flagship": "telos",
-      "description": "Return MCP freshness probes for detecting stale host-loaded flagship servers.",
+      "description": "Use when a host must compare loaded MCP servers against expected versions, tools, and probes. Read-only, zero-auth, no external side effects. Returns JSON MATCH, DRIFT, or UNVERIFIABLE freshness receipts.",
       "cli": [
         "node",
         "demo/mcp-freshness.mjs"
@@ -720,7 +720,7 @@
     {
       "name": "telos.admission.telemetry",
       "flagship": "telos",
-      "description": "Return the admission decision and verification verdict telemetry convention.",
+      "description": "Use when designing trace fields that keep action admission separate from verification verdicts. Read-only, zero-auth, no external side effects. Returns a JSON telemetry convention.",
       "cli": [
         "node",
         "demo/admission-telemetry.mjs"
@@ -739,7 +739,7 @@
     {
       "name": "telos.context.envelope",
       "flagship": "telos",
-      "description": "Return the large-workspace context envelope convention for readable, receipt-chained agent work.",
+      "description": "Use when large-workspace context needs readable source refs, budgets, and receipt chains. Read-only, zero-auth, no external side effects. Returns a JSON context-envelope convention.",
       "cli": [
         "node",
         "demo/context-envelope.mjs"
@@ -759,7 +759,7 @@
     {
       "name": "telos.context.pack",
       "flagship": "telos",
-      "description": "Return a runnable, budgeted, receipt-backed context packet with validation for large-codebase agent handoffs.",
+      "description": "Use when preparing a bounded handoff packet for large-codebase agent work. Read-only, zero-auth, no external side effects. Returns a validated JSON context pack with hashes and verdicts.",
       "cli": [
         "node",
         "demo/context-pack.mjs"
@@ -780,7 +780,7 @@
     {
       "name": "telos.action.receipt",
       "flagship": "telos",
-      "description": "Return the enterprise action receipt interface and append-only persistence convention.",
+      "description": "Use when modeling proposed action, admission, execution, review, and compensation records. Read-only, zero-auth, no external side effects. Returns a JSON action-receipt interface.",
       "cli": [
         "node",
         "demo/action-receipt.mjs"
@@ -800,7 +800,7 @@
     {
       "name": "telos.loop.ledger",
       "flagship": "telos",
-      "description": "Return the durable loop-state ledger and bounded headless scheduled-run convention.",
+      "description": "Use when an agent loop needs durable state across fresh contexts and bounded scheduled runs. Read-only, zero-auth, no external side effects. Returns a JSON loop-ledger convention.",
       "cli": [
         "node",
         "demo/loop-ledger.mjs"
@@ -820,7 +820,7 @@
     {
       "name": "telos.objective.monitor",
       "flagship": "telos",
-      "description": "Return rewardspy-style proxy-objective drift signals for agent, research, and build workflow health.",
+      "description": "Use when checking whether proxy metrics are drifting away from real agent or build objectives. Read-only, zero-auth, no external side effects. Returns JSON objective-monitor signals.",
       "cli": [
         "node",
         "demo/objective-monitor.mjs"
@@ -841,7 +841,7 @@
     {
       "name": "telos.model.foundry",
       "flagship": "telos",
-      "description": "Return the bounded model-foundry and self-improving daemon contract for Telos model development.",
+      "description": "Use when planning model-foundry work across hosted, local, open-weight, post-training, and verifier gates. Read-only, zero-auth, no external side effects. Returns a JSON model-foundry contract.",
       "cli": [
         "node",
         "demo/model-foundry.mjs"
@@ -864,7 +864,7 @@
     {
       "name": "telos.research.seed",
       "flagship": "telos",
-      "description": "Return receipt-backed research seeds resolved from terse operator notes.",
+      "description": "Use when terse research notes need source-backed seed packets before synthesis. Read-only, zero-auth, no external side effects. Returns JSON research seeds with provenance status.",
       "cli": [
         "node",
         "demo/research-seed.mjs"
@@ -884,7 +884,7 @@
     {
       "name": "telos.research.thermodynamic",
       "flagship": "telos",
-      "description": "Return the verified transcript-backed thermodynamic AI chip research packet.",
+      "description": "Use when exploring thermodynamic or stochastic AI-chip research through public transcript evidence. Read-only, zero-auth, no external side effects. Returns a JSON research receipt with verification labels.",
       "cli": [
         "node",
         "demo/thermodynamic-ai-chip-receipt.mjs"
@@ -906,7 +906,7 @@
     {
       "name": "telos.rendering.research",
       "flagship": "telos",
-      "description": "Return receipt-backed clustered-forward and Gaussian-splatting research seeds for Telos rendering surfaces.",
+      "description": "Use when collecting rendering leads for clustered-forward, Gaussian splatting, creative coding, and graphics demos. Read-only, zero-auth, no external side effects. Returns JSON research seeds.",
       "cli": [
         "node",
         "demo/rendering-research.mjs"
@@ -926,7 +926,7 @@
     {
       "name": "telos.rendering.capabilities",
       "flagship": "telos",
-      "description": "Return the host-neutral renderer capability, fallback, privacy, and verification-gate contract for Telos Studio surfaces.",
+      "description": "Use when a host must choose WebGPU, WebGL, canvas, or static rendering fallbacks for Studio surfaces. Read-only, zero-auth, no external side effects. Returns a JSON renderer capability contract.",
       "cli": [
         "node",
         "demo/rendering-capabilities.mjs"
@@ -946,7 +946,7 @@
     {
       "name": "telos.measurement.layers",
       "flagship": "telos",
-      "description": "Return runnable Telos sensor and measurement layers for visual, splat, lighting, dither, and audio evidence.",
+      "description": "Use when visual, splat, lighting, dither, audio, uncertainty, or frame-budget evidence needs meters. Read-only, zero-auth, no external side effects. Returns JSON measurement layers.",
       "cli": [
         "node",
         "demo/measurement-layers.mjs"
@@ -966,7 +966,7 @@
     {
       "name": "telos.workflow",
       "flagship": "telos",
-      "description": "Run the local golden workflow and reconcile the five flagship receipts.",
+      "description": "Use when validating the local five-flagship golden workflow from source checkouts. Read-only, zero-auth, no external side effects beyond local subprocess reads. Returns JSON receipts and verdict counts.",
       "cli": [
         "node",
         "demo/flagship-workflow.mjs"
@@ -984,7 +984,7 @@
     {
       "name": "telos.creative.engine",
       "flagship": "telos",
-      "description": "Return the Telos Creative Engine manifest for generative art, sound, typography, media, CGI, math/physics, revived local organs, and receipt-backed creative work.",
+      "description": "Use when presenting the Telos Creative Engine across generative art, sound, typography, media, CGI, math, and physics lanes. Read-only, zero-auth, no external side effects. Returns a JSON creative-engine manifest.",
       "cli": [
         "node",
         "demo/creative-engine.mjs"
@@ -1004,7 +1004,7 @@
     {
       "name": "telos.creative.kernels",
       "flagship": "telos",
-      "description": "Return deterministic Telos creative kernels for dithering, pixel sorting, plotter paths, clustered light bins, and receipt-backed effects.",
+      "description": "Use when deterministic creative primitives are needed for dithering, pixel sorting, plotter paths, or clustered-light bins. Read-only, zero-auth, no external side effects. Returns JSON creative kernels.",
       "cli": [
         "node",
         "demo/creative-kernels.mjs"
@@ -1024,7 +1024,7 @@
     {
       "name": "telos.revival.registry",
       "flagship": "telos",
-      "description": "Return the promotion registry for older, siloed, and frozen local tools being pulled into flagship status.",
+      "description": "Use when deciding which older, siloed, or frozen local tools should be promoted into flagship lanes. Read-only, zero-auth, no external side effects. Returns a JSON revival registry.",
       "cli": [
         "node",
         "demo/revival-registry.mjs"
@@ -1044,7 +1044,7 @@
     {
       "name": "telos.display.calibration",
       "flagship": "telos",
-      "description": "Return the read-only display-calibration contract for Calibrate Pro, Quanta Color, artifact refs, and measurement gates.",
+      "description": "Use when display, color, ICC/LUT, artifact refs, or measurement gates need a non-mutating calibration contract. Read-only, zero-auth, no external side effects. Returns a JSON display-calibration contract.",
       "cli": [
         "node",
         "demo/display-calibration.mjs"

@@ -16,117 +16,117 @@ const emptyInputSchema = {
 export const tools = [
   {
     name: "telos.status",
-    description: "Emit Telos shared-room readiness as a Project Telos action envelope.",
+    description: "Use when a host needs current Telos workbench readiness and next actions. Read-only, zero-auth, no external side effects. Returns a JSON action envelope.",
     inputSchema: emptyInputSchema
   },
   {
     name: "telos.doctor",
-    description: "Check Telos operator-spine readiness.",
+    description: "Use before demos, listings, or agent runs to check local Telos operator-spine health. Read-only, zero-auth, no external side effects. Returns JSON check results.",
     inputSchema: emptyInputSchema
   },
   {
     name: "telos.room",
-    description: "Summarize the five-flagship operator room as a Project Telos action envelope.",
+    description: "Use when an agent needs the current five-flagship room summary before routing work. Read-only, zero-auth, no external side effects. Returns a JSON action envelope.",
     inputSchema: emptyInputSchema
   },
   {
     name: "telos.workflow",
-    description: "Run the local golden workflow and reconcile the five flagship receipts.",
+    description: "Use when validating the local five-flagship golden workflow from source checkouts. Read-only, zero-auth, no external side effects beyond local subprocess reads. Returns JSON receipts and verdict counts.",
     inputSchema: emptyInputSchema
   },
   {
     name: "telos.catalog",
-    description: "Return the provider-neutral Project Telos MCP tool catalog.",
+    description: "Use when a host needs the provider-neutral catalog of Project Telos MCP tools and next actions. Read-only, zero-auth, no external side effects. Returns a JSON catalog.",
     inputSchema: emptyInputSchema
   },
   {
     name: "telos.server.manifest",
-    description: "Return the provider-neutral MCP server launch manifest for all five flagships.",
+    description: "Use when configuring MCP clients for gather, index, forum, crucible, and telos source checkouts. Read-only, zero-auth, no external side effects. Returns a JSON server manifest.",
     inputSchema: emptyInputSchema
   },
   {
     name: "telos.mcp.freshness",
-    description: "Return MCP freshness probes for detecting stale host-loaded flagship servers.",
+    description: "Use when a host must compare loaded MCP servers against expected versions, tools, and probes. Read-only, zero-auth, no external side effects. Returns JSON MATCH, DRIFT, or UNVERIFIABLE freshness receipts.",
     inputSchema: emptyInputSchema
   },
   {
     name: "telos.admission.telemetry",
-    description: "Return the admission decision and verification verdict telemetry convention.",
+    description: "Use when designing trace fields that keep action admission separate from verification verdicts. Read-only, zero-auth, no external side effects. Returns a JSON telemetry convention.",
     inputSchema: emptyInputSchema
   },
   {
     name: "telos.context.envelope",
-    description: "Return the large-workspace context envelope convention for readable, receipt-chained agent work.",
+    description: "Use when large-workspace context needs readable source refs, budgets, and receipt chains. Read-only, zero-auth, no external side effects. Returns a JSON context-envelope convention.",
     inputSchema: emptyInputSchema
   },
   {
     name: "telos.context.pack",
-    description: "Return a runnable, budgeted, receipt-backed context packet with validation for large-codebase agent handoffs.",
+    description: "Use when preparing a bounded handoff packet for large-codebase agent work. Read-only, zero-auth, no external side effects. Returns a validated JSON context pack with hashes and verdicts.",
     inputSchema: emptyInputSchema
   },
   {
     name: "telos.action.receipt",
-    description: "Return the enterprise action receipt interface and append-only persistence convention.",
+    description: "Use when modeling proposed action, admission, execution, review, and compensation records. Read-only, zero-auth, no external side effects. Returns a JSON action-receipt interface.",
     inputSchema: emptyInputSchema
   },
   {
     name: "telos.loop.ledger",
-    description: "Return the durable loop-state ledger and bounded headless scheduled-run convention.",
+    description: "Use when an agent loop needs durable state across fresh contexts and bounded scheduled runs. Read-only, zero-auth, no external side effects. Returns a JSON loop-ledger convention.",
     inputSchema: emptyInputSchema
   },
   {
     name: "telos.objective.monitor",
-    description: "Return rewardspy-style proxy-objective drift signals for agent and build workflow health.",
+    description: "Use when checking whether proxy metrics are drifting away from real agent or build objectives. Read-only, zero-auth, no external side effects. Returns JSON objective-monitor signals.",
     inputSchema: emptyInputSchema
   },
   {
     name: "telos.model.foundry",
-    description: "Return the bounded model-foundry and self-improving daemon contract for Telos model development.",
+    description: "Use when planning model-foundry work across hosted, local, open-weight, post-training, and verifier gates. Read-only, zero-auth, no external side effects. Returns a JSON model-foundry contract.",
     inputSchema: emptyInputSchema
   },
   {
     name: "telos.research.seed",
-    description: "Return receipt-backed research seeds resolved from terse operator notes.",
+    description: "Use when terse research notes need source-backed seed packets before synthesis. Read-only, zero-auth, no external side effects. Returns JSON research seeds with provenance status.",
     inputSchema: emptyInputSchema
   },
   {
     name: "telos.research.thermodynamic",
-    description: "Return the verified transcript-backed thermodynamic AI chip research packet.",
+    description: "Use when exploring thermodynamic or stochastic AI-chip research through public transcript evidence. Read-only, zero-auth, no external side effects. Returns a JSON research receipt with verification labels.",
     inputSchema: emptyInputSchema
   },
   {
     name: "telos.rendering.research",
-    description: "Return receipt-backed clustered-forward and Gaussian-splatting research seeds for Telos rendering surfaces.",
+    description: "Use when collecting rendering leads for clustered-forward, Gaussian splatting, creative coding, and graphics demos. Read-only, zero-auth, no external side effects. Returns JSON research seeds.",
     inputSchema: emptyInputSchema
   },
   {
     name: "telos.rendering.capabilities",
-    description: "Return the host-neutral renderer capability, fallback, privacy, and verification-gate contract for Telos Studio surfaces.",
+    description: "Use when a host must choose WebGPU, WebGL, canvas, or static rendering fallbacks for Studio surfaces. Read-only, zero-auth, no external side effects. Returns a JSON renderer capability contract.",
     inputSchema: emptyInputSchema
   },
   {
     name: "telos.measurement.layers",
-    description: "Return runnable Telos sensor and measurement layers for visual, splat, lighting, dither, and audio evidence.",
+    description: "Use when visual, splat, lighting, dither, audio, uncertainty, or frame-budget evidence needs meters. Read-only, zero-auth, no external side effects. Returns JSON measurement layers.",
     inputSchema: emptyInputSchema
   },
   {
     name: "telos.creative.engine",
-    description: "Return the Telos Creative Engine manifest for generative art, sound, typography, media, CGI, math/physics, revived local organs, and receipt-backed creative work.",
+    description: "Use when presenting the Telos Creative Engine across generative art, sound, typography, media, CGI, math, and physics lanes. Read-only, zero-auth, no external side effects. Returns a JSON creative-engine manifest.",
     inputSchema: emptyInputSchema
   },
   {
     name: "telos.creative.kernels",
-    description: "Return deterministic Telos creative kernels for dithering, pixel sorting, plotter paths, clustered light bins, and receipt-backed effects.",
+    description: "Use when deterministic creative primitives are needed for dithering, pixel sorting, plotter paths, or clustered-light bins. Read-only, zero-auth, no external side effects. Returns JSON creative kernels.",
     inputSchema: emptyInputSchema
   },
   {
     name: "telos.revival.registry",
-    description: "Return the promotion registry for older, siloed, and frozen local tools being pulled into flagship status.",
+    description: "Use when deciding which older, siloed, or frozen local tools should be promoted into flagship lanes. Read-only, zero-auth, no external side effects. Returns a JSON revival registry.",
     inputSchema: emptyInputSchema
   },
   {
     name: "telos.display.calibration",
-    description: "Return the read-only display-calibration contract for Calibrate Pro, Quanta Color, artifact refs, and measurement gates.",
+    description: "Use when display, color, ICC/LUT, artifact refs, or measurement gates need a non-mutating calibration contract. Read-only, zero-auth, no external side effects. Returns a JSON display-calibration contract.",
     inputSchema: emptyInputSchema
   }
 ];
@@ -196,7 +196,7 @@ export function handleRequest(request) {
       return result(id, {
         protocolVersion,
         capabilities: { tools: {} },
-        serverInfo: { name: "project-telos-telos", version: "demo" }
+        serverInfo: { name: "project-telos-telos", version: "0.1.0" }
       });
     }
     if (request.method === "ping") {
