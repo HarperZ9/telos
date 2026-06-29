@@ -7,7 +7,8 @@ All notable changes to Project Telos. Telos is currently a source demo and share
 - CI triage: adds `project-telos.ci-triage/v1`, `node demo/ci-triage.mjs`,
   and `telos.ci.triage` to classify blocking CI failures separately from
   Node runtime migration warnings with sanitized evidence excerpts and typed
-  remediation routes.
+  remediation routes. The CLI now supports live read-only GitHub Actions intake
+  with `--gh-run owner/repo#run_id` in addition to offline fixture packets.
 - Operator doctor: adds `project-telos.operator-doctor/v1`,
   `node demo/operator-doctor.mjs`, and `telos.operator.doctor` to verify
   README quick start, status/catalog/MCP parity, CI doctor coverage,
