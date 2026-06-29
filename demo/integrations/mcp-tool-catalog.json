@@ -777,6 +777,27 @@
       ]
     },
     {
+      "name": "telos.objective.monitor",
+      "flagship": "telos",
+      "description": "Return rewardspy-style proxy-objective drift signals for agent, research, and build workflow health.",
+      "cli": [
+        "node",
+        "demo/objective-monitor.mjs"
+      ],
+      "mcp": {
+        "status": "available",
+        "server": "telos",
+        "method": "tools/call",
+        "tool": "telos.objective.monitor"
+      },
+      "next_actions": [
+        "forum.route",
+        "crucible.assess",
+        "telos.loop.ledger",
+        "index.context.envelope"
+      ]
+    },
+    {
       "name": "telos.research.seed",
       "flagship": "telos",
       "description": "Return receipt-backed research seeds resolved from terse operator notes.",

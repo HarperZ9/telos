@@ -65,6 +65,11 @@ export const tools = [
     inputSchema: emptyInputSchema
   },
   {
+    name: "telos.objective.monitor",
+    description: "Return rewardspy-style proxy-objective drift signals for agent and build workflow health.",
+    inputSchema: emptyInputSchema
+  },
+  {
     name: "telos.research.seed",
     description: "Return receipt-backed research seeds resolved from terse operator notes.",
     inputSchema: emptyInputSchema
@@ -117,6 +122,7 @@ const toolScripts = new Map([
   ["telos.context.envelope", ["context-envelope.mjs"]],
   ["telos.action.receipt", ["action-receipt.mjs"]],
   ["telos.loop.ledger", ["loop-ledger.mjs"]],
+  ["telos.objective.monitor", ["objective-monitor.mjs"]],
   ["telos.research.seed", ["research-seed.mjs"]],
   ["telos.rendering.research", ["rendering-research.mjs"]],
   ["telos.rendering.capabilities", ["rendering-capabilities.mjs"]],
