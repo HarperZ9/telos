@@ -822,6 +822,27 @@
       ]
     },
     {
+      "name": "telos.operator.doctor",
+      "flagship": "telos",
+      "description": "Use when a host needs README, status, catalog, manifest, CI, and current-state discoverability receipts for the Telos operator surface. Read-only, zero-auth, no external side effects. Returns JSON MATCH, DRIFT, or UNVERIFIABLE operator receipts.",
+      "cli": [
+        "node",
+        "demo/operator-doctor.mjs"
+      ],
+      "mcp": {
+        "status": "available",
+        "server": "telos",
+        "method": "tools/call",
+        "tool": "telos.operator.doctor"
+      },
+      "next_actions": [
+        "telos.compatibility.doctor",
+        "telos.mcp.freshness",
+        "forum.route",
+        "crucible.assess"
+      ]
+    },
+    {
       "name": "telos.admission.telemetry",
       "flagship": "telos",
       "description": "Use when designing trace fields that keep action admission separate from verification verdicts. Read-only, zero-auth, no external side effects. Returns a JSON telemetry convention.",

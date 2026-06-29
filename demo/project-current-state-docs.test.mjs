@@ -41,6 +41,7 @@ for (const term of [
   "telos.accessibility.doctor",
   "telos.performance.doctor",
   "telos.compatibility.doctor",
+  "telos.operator.doctor",
   "telos.research.thermodynamic",
   "Thermodynamic AI Chip",
   "second-level flagship queue",
@@ -114,13 +115,14 @@ for (const term of [
 assert.match(currentState, /2026-06-28T17:29:42-07:00/);
 assert.match(currentState, /repo_count[^0-9]+52/i);
 assert.match(currentState, /root_sha256_prefix[^a-f0-9]+92ef331e0850ccf6/i);
-assert.match(currentState, /Telos repo[^.\n]+2bb2fc3/i);
-assert.match(currentState, /58 available tools/i);
+assert.match(currentState, /Telos repo[^.\n]+9542581/i);
+assert.match(currentState, /59 available tools/i);
 assert.match(currentState, /CI doctor/i);
 assert.match(currentState, /presentation doctor/i);
 assert.match(currentState, /accessibility doctor/i);
 assert.match(currentState, /performance doctor/i);
 assert.match(currentState, /compatibility doctor/i);
+assert.match(currentState, /operator doctor/i);
 assert.match(currentState, /five latest flagship CI runs/i);
 assert.match(currentState, /Node 24/i);
 assert.match(currentState, /PROJECT-CONNECTION-MAP\.md/i);
