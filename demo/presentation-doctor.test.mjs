@@ -146,6 +146,68 @@ try {
   assert.match(summary.stdout, /flagships\s+2/);
   assert.match(summary.stdout, /brand assets\s+8/);
   assert.match(summary.stdout, /verdict\s+MATCH/);
+
+  // A configurable nav roster lets a sixth flagship (or any uplift target) be graded
+  // against its own Project Telos family instead of the hardcoded original five.
+  writeRepo(tempRoot, "quantalang", {
+    readme: `
+<p align="center"><img src="docs/brand/quantalang-hero.png" alt="quantalang, a Project Telos flagship"></p>
+
+# quantalang
+
+[Project Telos](https://harperz9.github.io) | [telos](https://github.com/HarperZ9/telos) | [quantalang](https://github.com/HarperZ9/quantalang)
+
+[![CI](https://github.com/HarperZ9/quantalang/actions/workflows/ci.yml/badge.svg)](https://github.com/HarperZ9/quantalang/actions/workflows/ci.yml)
+![version: 1.0](https://img.shields.io/badge/version-1.0-informational.svg)
+![license: fair-source](https://img.shields.io/badge/license-fair--source-blue.svg)
+
+- **Operator surface:** \`quantalang status --json\` and \`quantalang mcp\` expose CLI and MCP surfaces.
+- **Current floor:** source checkout with Project Telos action receipts.
+`
+  });
+
+  const customRoster = scanPresentationSurfaces(tempRoot, {
+    flagships: ["quantalang"],
+    navRoster: ["telos", "quantalang"],
+    generatedAt: "2026-06-29T00:00:02.000Z"
+  });
+  const qCustom = customRoster.flagships.find((flagship) => flagship.id === "quantalang");
+  assert.equal(
+    qCustom.files.readme.signals.project_telos_nav,
+    true,
+    "custom navRoster should satisfy project_telos_nav when the README links the rostered repos"
+  );
+  assert.equal(
+    qCustom.presentation.verdict,
+    "MATCH",
+    "quantalang fixture graded against its own roster should reach MATCH"
+  );
+
+  const defaultRoster = scanPresentationSurfaces(tempRoot, {
+    flagships: ["quantalang"],
+    generatedAt: "2026-06-29T00:00:03.000Z"
+  });
+  const qDefault = defaultRoster.flagships.find((flagship) => flagship.id === "quantalang");
+  assert.equal(
+    qDefault.files.readme.signals.project_telos_nav,
+    false,
+    "default roster still requires the original five flagship links (behavior preserved)"
+  );
+
+  const rosterCli = spawnSync(process.execPath, [
+    path.join(here, "presentation-doctor.mjs"),
+    "--scan-root",
+    tempRoot,
+    "--flagships",
+    "quantalang",
+    "--nav-roster",
+    "telos,quantalang"
+  ], {
+    cwd: path.resolve(here, ".."),
+    encoding: "utf8"
+  });
+  assert.equal(rosterCli.status, 0, rosterCli.stderr || rosterCli.stdout);
+  assert.equal(JSON.parse(rosterCli.stdout).aggregate.verdict, "MATCH");
 } finally {
   rmSync(tempRoot, { recursive: true, force: true });
 }
