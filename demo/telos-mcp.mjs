@@ -55,6 +55,11 @@ export const tools = [
     inputSchema: emptyInputSchema
   },
   {
+    name: "telos.context.pack",
+    description: "Return a runnable, budgeted, receipt-backed context packet with validation for large-codebase agent handoffs.",
+    inputSchema: emptyInputSchema
+  },
+  {
     name: "telos.action.receipt",
     description: "Return the enterprise action receipt interface and append-only persistence convention.",
     inputSchema: emptyInputSchema
@@ -72,6 +77,11 @@ export const tools = [
   {
     name: "telos.research.seed",
     description: "Return receipt-backed research seeds resolved from terse operator notes.",
+    inputSchema: emptyInputSchema
+  },
+  {
+    name: "telos.research.thermodynamic",
+    description: "Return the verified transcript-backed thermodynamic AI chip research packet.",
     inputSchema: emptyInputSchema
   },
   {
@@ -120,10 +130,12 @@ const toolScripts = new Map([
   ["telos.server.manifest", ["server-manifest.mjs"]],
   ["telos.admission.telemetry", ["admission-telemetry.mjs"]],
   ["telos.context.envelope", ["context-envelope.mjs"]],
+  ["telos.context.pack", ["context-pack.mjs"]],
   ["telos.action.receipt", ["action-receipt.mjs"]],
   ["telos.loop.ledger", ["loop-ledger.mjs"]],
   ["telos.objective.monitor", ["objective-monitor.mjs"]],
   ["telos.research.seed", ["research-seed.mjs"]],
+  ["telos.research.thermodynamic", ["thermodynamic-ai-chip-receipt.mjs"]],
   ["telos.rendering.research", ["rendering-research.mjs"]],
   ["telos.rendering.capabilities", ["rendering-capabilities.mjs"]],
   ["telos.measurement.layers", ["measurement-layers.mjs"]],

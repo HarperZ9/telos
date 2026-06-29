@@ -737,6 +737,27 @@
       ]
     },
     {
+      "name": "telos.context.pack",
+      "flagship": "telos",
+      "description": "Return a runnable, budgeted, receipt-backed context packet with validation for large-codebase agent handoffs.",
+      "cli": [
+        "node",
+        "demo/context-pack.mjs"
+      ],
+      "mcp": {
+        "status": "available",
+        "server": "telos",
+        "method": "tools/call",
+        "tool": "telos.context.pack"
+      },
+      "next_actions": [
+        "index.context.envelope",
+        "forum.ledger.summary",
+        "crucible.assess",
+        "telos.loop.ledger"
+      ]
+    },
+    {
       "name": "telos.action.receipt",
       "flagship": "telos",
       "description": "Return the enterprise action receipt interface and append-only persistence convention.",
@@ -815,6 +836,28 @@
         "gather.run",
         "index.context",
         "crucible.assess"
+      ]
+    },
+    {
+      "name": "telos.research.thermodynamic",
+      "flagship": "telos",
+      "description": "Return the verified transcript-backed thermodynamic AI chip research packet.",
+      "cli": [
+        "node",
+        "demo/thermodynamic-ai-chip-receipt.mjs"
+      ],
+      "mcp": {
+        "status": "available",
+        "server": "telos",
+        "method": "tools/call",
+        "tool": "telos.research.thermodynamic"
+      },
+      "next_actions": [
+        "gather.run",
+        "index.context.envelope",
+        "forum.route",
+        "crucible.assess",
+        "telos.context.pack"
       ]
     },
     {

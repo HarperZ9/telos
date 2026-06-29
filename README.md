@@ -23,8 +23,10 @@ node demo/run.mjs
 node demo/catalog.mjs --summary
 node demo/server-manifest.mjs --summary
 node demo/context-envelope.mjs
+node demo/context-pack.mjs
 node demo/action-receipt.mjs
 node demo/loop-ledger.mjs
+node demo/thermodynamic-ai-chip-receipt.mjs
 node demo/rendering-research.mjs
 node demo/rendering-capabilities.mjs --summary
 node demo/measurement-layers.mjs --summary
@@ -37,6 +39,7 @@ node demo/display-calibration.mjs --summary
 Open the visual certificate-loop surface at [`demo/index.html`](demo/index.html).
 Use `node demo/catalog.mjs --summary` for a compact operator map of the CLI and MCP surface.
 Use `node demo/server-manifest.mjs --summary` for the five-server MCP launch map.
+Use `node demo/context-pack.mjs` for a runnable, budgeted, receipt-backed context packet with validation for large-codebase handoffs.
 Use `node demo/rendering-capabilities.mjs --summary` for the WebGPU/WebGL/canvas/static renderer selection and fallback contract.
 Use `node demo/measurement-layers.mjs --summary` for ten runnable meters across histogram, dither, splat, cluster, audio, flicker, curvature, interaction, uncertainty, and frame budget signals.
 Use `node demo/creative-engine.mjs --summary` for the whole creation-engine contract: raster effects, sound, typography, math/physics, node graphs, revived organs, and receipts.
@@ -67,6 +70,8 @@ Every creative action should remain receipt-backed: scene specs, hashes, replay 
 
 The current research queue also includes receipt-only source leads from Inigo Quilez and adjacent math, physics, AI-progress, GPU-kernel, and educator videos under [`demo/research/youtube-math-educator-receipts.json`](demo/research/youtube-math-educator-receipts.json). Those leads shape the engine toward formula-visible, perturbable demos for mathematicians, physicists, shader artists, and teachers; video metadata is not promoted to scientific or benchmark evidence until stronger sources and Crucible checks exist.
 
+`node demo/thermodynamic-ai-chip-receipt.mjs` promotes the verified Machine Learning Street Talk interview with Thomas Ahle into a transcript-backed Telos research packet. The packet turns the discussion into a public-source integration lane for Normal Computing-adjacent work: spec representation, Verilog/formal receipts, stochastic simulation, uncertainty meters, and hybrid search/check loops. It records transcript themes as `MATCH`, treats Telos integration as `INFERRED`, and keeps Normal Computing, ProgramBench, and thermodynamic-chip technical correctness `UNVERIFIABLE_FROM_THIS_PACKET` until primary sources and independent checks promote them.
+
 ## Legacy Tool Revival
 
 `node demo/revival-registry.mjs` is the first promotion registry for the older and frozen tools that should stop living as isolated experiments. It currently pulls Calibrate Pro, Quanta Color, QuantaLang/quantac, WARDEN security lineage, Agent Audit, Context Curator Lite, Secret Redact IO, Repo Proof Index, Release Surface Scanner, and GPU Trace Validator into explicit Telos lanes with origin paths, Gather-backed README digests, risk boundaries, flagship hosts, and next actions.
@@ -77,9 +82,9 @@ The first rule is visibility before transplanting: a dormant tool gets a lane, a
 
 ## Current status
 
-- **Release:** source demo; command surface is `node demo/run.mjs`, `node demo/room.mjs`, `node demo/status.mjs`, `node demo/doctor.mjs`, `node demo/catalog.mjs`, `node demo/server-manifest.mjs`, `node demo/admission-telemetry.mjs`, `node demo/context-envelope.mjs`, `node demo/action-receipt.mjs`, `node demo/loop-ledger.mjs`, `node demo/research-seed.mjs`, `node demo/rendering-research.mjs`, `node demo/rendering-capabilities.mjs`, `node demo/measurement-layers.mjs`, `node demo/creative-engine.mjs`, `node demo/creative-kernels.mjs`, `node demo/revival-registry.mjs`, `node demo/display-calibration.mjs`, and `node demo/flagship-workflow.mjs`.
-- **Operator surface:** `node demo/telos-mcp.mjs` exposes native MCP tools: `telos.status`, `telos.doctor`, `telos.room`, `telos.catalog`, `telos.workflow`, `telos.server.manifest`, `telos.admission.telemetry`, `telos.context.envelope`, `telos.action.receipt`, `telos.loop.ledger`, `telos.research.seed`, `telos.rendering.research`, `telos.rendering.capabilities`, `telos.measurement.layers`, `telos.creative.engine`, `telos.creative.kernels`, `telos.revival.registry`, and `telos.display.calibration`.
-- **Current floor:** the operator room reconciles 47 available tools across Gather, Crucible, Index, Forum, and Telos, with a provider-neutral catalog and server manifest for CLI, MCP, plugin, IDE, TUI, and app hosts. See [CHANGELOG.md](CHANGELOG.md).
+- **Release:** source demo; command surface is `node demo/run.mjs`, `node demo/room.mjs`, `node demo/status.mjs`, `node demo/doctor.mjs`, `node demo/catalog.mjs`, `node demo/server-manifest.mjs`, `node demo/admission-telemetry.mjs`, `node demo/context-envelope.mjs`, `node demo/context-pack.mjs`, `node demo/action-receipt.mjs`, `node demo/loop-ledger.mjs`, `node demo/research-seed.mjs`, `node demo/thermodynamic-ai-chip-receipt.mjs`, `node demo/rendering-research.mjs`, `node demo/rendering-capabilities.mjs`, `node demo/measurement-layers.mjs`, `node demo/creative-engine.mjs`, `node demo/creative-kernels.mjs`, `node demo/revival-registry.mjs`, `node demo/display-calibration.mjs`, and `node demo/flagship-workflow.mjs`.
+- **Operator surface:** `node demo/telos-mcp.mjs` exposes native MCP tools: `telos.status`, `telos.doctor`, `telos.room`, `telos.catalog`, `telos.workflow`, `telos.server.manifest`, `telos.admission.telemetry`, `telos.context.envelope`, `telos.context.pack`, `telos.action.receipt`, `telos.loop.ledger`, `telos.research.seed`, `telos.research.thermodynamic`, `telos.rendering.research`, `telos.rendering.capabilities`, `telos.measurement.layers`, `telos.creative.engine`, `telos.creative.kernels`, `telos.revival.registry`, and `telos.display.calibration`.
+- **Current floor:** the operator room reconciles 49 available tools across Gather, Crucible, Index, Forum, and Telos, with a provider-neutral catalog and server manifest for CLI, MCP, plugin, IDE, TUI, and app hosts. See [CHANGELOG.md](CHANGELOG.md).
 - **Brand renderer:** `python tools/render_flagship_heroes.py --check-existing --public-root ..` verifies the five README hero PNGs and brand receipts without redistributing the operator-owned fonts.
 
 ## What it is

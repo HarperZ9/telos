@@ -17,10 +17,12 @@ const payload = actionEnvelope({
       "telos.server.manifest",
       "telos.admission.telemetry",
       "telos.context.envelope",
+      "telos.context.pack",
       "telos.action.receipt",
       "telos.loop.ledger",
       "telos.objective.monitor",
       "telos.research.seed",
+      "telos.research.thermodynamic",
       "telos.rendering.research",
       "telos.rendering.capabilities",
       "telos.measurement.layers",
@@ -29,7 +31,7 @@ const payload = actionEnvelope({
       "telos.revival.registry",
       "telos.display.calibration"
     ],
-    current_status: "source demo with 47-tool five-flagship catalog, context envelopes, action receipts, loop ledger, objective monitoring, research seeds, rendering research, rendering capabilities, measurement layers, creative engine, creative kernels, revival registry, display calibration, and native Telos MCP surface"
+    current_status: "source demo with 49-tool five-flagship catalog, context envelopes, context packs, action receipts, loop ledger, objective monitoring, research seeds, transcript-backed thermodynamic research, rendering research, rendering capabilities, measurement layers, creative engine, creative kernels, revival registry, display calibration, and native Telos MCP surface"
   },
   nextActions: [
     {

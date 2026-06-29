@@ -6,15 +6,16 @@ This document is a live state packet for Project Telos. It is deliberately evide
 
 ## Refresh Receipts
 
-- Index workspace map: `C:\dev\public`, generated `2026-06-28T17:06:06-07:00`.
-- Index public workspace `repo_count: 51`, public repos 47, local repos 4.
+- Index workspace map: `C:\dev\public`, generated `2026-06-28T17:29:42-07:00`.
+- Index public workspace `repo_count: 52`, public repos 48, local repos 4.
 - Index public workspace `root_sha256_prefix: 92ef331e0850ccf6`.
-- Telos repo current head `e12425b`, branch `main`, clean at refresh time.
+- Telos repo pre-checkpoint head `469ce55`, branch `main`; latest in-turn Index refresh saw the active uncommitted context-pack and thermodynamic-integration edits.
 - Studio Engine repo current branch `feat/two-way-loop`, head `ad27b08`, public origin `https://github.com/HarperZ9/studio-engine.git`.
 - Reconcile repo current head `375d1f5`, branch `main`, public origin `https://github.com/HarperZ9/reconcile.git`.
 - Forum route for the expanded mandate decided `project-telos` with no escalation; related lanes remain technical-writing, function-routing, data-ml, code-review, render-pipeline, shader-effects, and deep-research.
 - Gather receipts were refreshed for large-context agent memory and rendering research.
 - Telos workflow returned `MATCH` for the local five-flagship workflow and reports CLI, MCP, IDE, TUI, and application workbench next actions.
+- Telos catalog now presents 49 available tools across the five flagships, including `telos.context.pack` and `telos.research.thermodynamic`.
 - Crucible current-state thesis `661f7d4089347607` assessed 5 claims: 5 `MATCH`, 0 `DRIFT`, 0 `UNVERIFIABLE`. Report: `docs/verification/2026-06-28-current-state-report.md`; run record: `docs/verification/2026-06-28-current-state-run.json`.
 
 ## Moving Target Rule
@@ -39,7 +40,7 @@ The five flagship tools are the forward-facing control spine:
 - Index: workspace atlas and context envelope. It maps repos, dirty state, docs, and large-codebase context packets.
 - Forum: orchestration and human-facing reasoning. It routes work, summarizes ledgers, and can clarify agent prose without adding facts.
 - Crucible: verification pressure. It turns falsifiable claims plus measurements into `MATCH`, `DRIFT`, or `UNVERIFIABLE`, with recheckable receipts.
-- Telos: the shared room and engine surface. It reconciles flagship outputs into action receipts, context envelopes, loop ledgers, creative engine manifests, measurement layers, and provider-neutral MCP contracts.
+- Telos: the shared room and engine surface. It reconciles flagship outputs into action receipts, context envelopes, validated context packs, loop ledgers, creative engine manifests, research packets, measurement layers, and provider-neutral MCP contracts.
 - Telos Objective Monitor: a rewardspy-inspired objective health surface. It watches proxy scores, independent quality scores, objective components, and improvement windows so an agent workflow cannot look successful merely because the easiest metric rose.
 
 The five flagships must stay protocol agnostic. Each should remain usable as an individual CLI tool, an MCP server, an IDE or TUI tool, a plugin or superpower, and a full application component.
@@ -72,6 +73,7 @@ Fresh Gather receipts used in this pass:
 
 - arXiv `2603.04428v1`, "Agent Memory Below the Prompt: Persistent Q4 KV Cache for Multi-Agent LLM Inference on Edge Devices", receipt seal `bc8b79bc308aea334c3005dd4f55047da18e8589a283b0bf9ceacac55de01093`.
 - arXiv rendering digest seal `302e5fe3fc931ba06d25f527adec799cd1f59665951dab99a2d22966162eeade`, including `2308.04079v1` 3D Gaussian Splatting and `2402.13827v2` clustering unnecessary 3D Gaussians.
+- Verified YouTube/Gather packet for "The Thermodynamic AI Chip - Thomas Ahle": metadata `MATCH`, transcript `MATCH`, transcript item hash `40a31546b7a391bbb016ba4e3b86a06fc4027636ab85831a0be8b8ca44d6fc56`, digest seal `77bd2c9c39aa0628238f074efe3cd2a3ef64c7d7a373cec23128845f215a59a6`. Telos records this as `telos.research.thermodynamic`, with public-source Normal Computing-adjacent integration modules and explicit no-partnership/no-private-IP boundaries.
 
 Local research inputs used in this pass:
 

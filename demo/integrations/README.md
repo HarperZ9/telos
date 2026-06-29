@@ -30,6 +30,8 @@ OpenAI Apps, OpenAI Agents, Anthropic Claude, Claude Code, Codex plugins, skills
 
 `context-envelope-conventions.json` records the large-workspace context contract for readable agent code, source-ref compression, freshness gates, and receipt-chained unattended work.
 
+`../context-pack.mjs` emits a runnable `project-telos.context-pack/v1` packet that validates budget, source refs, receipt joins, load-versus-relevance evidence, and raw-payload boundaries for token-efficient second-brain handoffs.
+
 `action-receipt-conventions.json` records the enterprise receipt interface and append-only persistence contract for auditable agent actions, including digest inputs, component/config identity, policy decisions, verification verdicts, and compensation events.
 
 `atp-adapter-validation.json` records a public/synthetic adapter-validation profile for ATP v1.2.0 transaction receipts: digest refs, component/config identity, side-effect class, policy decision, verification verdict, typed stop reason, and append-only compensation. It is a fixture profile, not a live ATP/Haystack conformance claim.
@@ -43,6 +45,8 @@ OpenAI Apps, OpenAI Agents, Anthropic Claude, Claude Code, Codex plugins, skills
 `../research/rendering-pipeline-seeds.json` records lawful Gaussian-splatting, clustered-forward-rendering, WebGPU/WGSL, browser-rendering, neural-rendering, mesh-shader, and rendering-provider source receipts or leads for Telos Studio rendering surfaces. Provider pages, social links, and Reddit references remain non-evidentiary source leads until repeatable benchmarks or primary technical sources promote them.
 
 `../research/youtube-math-educator-receipts.json` records compact metadata receipts for Inigo Quilez, math/physics educator, world-model, AI-progress, and GPU-kernel video source leads. It stores no raw video and no raw transcript text.
+
+`../research/thermodynamic-ai-chip-receipt.json` records the verified Thomas Ahle / Machine Learning Street Talk transcript packet and public-source Normal Computing-adjacent integration lane. It stores no raw transcript text, claims no partnership, and keeps external technical correctness behind future primary-source and Crucible checks.
 
 `../research/operator-source-leads.json` records blocked, social, provider, and discovery links as quarantined leads. They can route future work, but they do not promote claims.
 
@@ -66,7 +70,7 @@ Availability labels:
 ## Packaging Targets
 
 - Codex plugin: expose skills plus MCP servers for `gather`, `crucible`, `index`, `forum`, and Telos.
-- Telos MCP: `node demo/telos-mcp.mjs` exposes `telos.status`, `telos.doctor`, `telos.room`, `telos.workflow`, `telos.catalog`, `telos.server.manifest`, `telos.admission.telemetry`, `telos.context.envelope`, `telos.action.receipt`, `telos.loop.ledger`, `telos.research.seed`, `telos.rendering.research`, `telos.rendering.capabilities`, `telos.measurement.layers`, `telos.creative.engine`, `telos.creative.kernels`, `telos.revival.registry`, and `telos.display.calibration`.
+- Telos MCP: `node demo/telos-mcp.mjs` exposes `telos.status`, `telos.doctor`, `telos.room`, `telos.workflow`, `telos.catalog`, `telos.server.manifest`, `telos.admission.telemetry`, `telos.context.envelope`, `telos.context.pack`, `telos.action.receipt`, `telos.loop.ledger`, `telos.research.seed`, `telos.research.thermodynamic`, `telos.rendering.research`, `telos.rendering.capabilities`, `telos.measurement.layers`, `telos.creative.engine`, `telos.creative.kernels`, `telos.revival.registry`, and `telos.display.calibration`.
 - Gather MCP: `gather mcp` exposes `gather.status`, `gather.doctor`, `gather.docs`, `gather.arxiv`, and `gather.run`.
 - Crucible MCP: `crucible mcp` exposes `crucible.status`, `crucible.doctor`, `crucible.assess`, `crucible.measurement_gate`, `crucible.recheck`, `crucible.run`, `crucible.review`, `crucible.report`, `crucible.batch`, `crucible.registry`, `crucible.drift`, `crucible.refine`, and `crucible.verdicts`.
 - Index MCP: `index mcp` exposes `index.map`, `index.context`, `index.context.envelope`, `index.status`, `index.doctor`, and the lower-level graph, focus, verify, router, and internals tools.

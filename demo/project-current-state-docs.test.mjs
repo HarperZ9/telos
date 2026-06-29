@@ -31,7 +31,10 @@ for (const term of [
   "TUI",
   "application",
   "studio-engine",
-  "reconcile"
+  "reconcile",
+  "telos.context.pack",
+  "telos.research.thermodynamic",
+  "Thermodynamic AI Chip"
 ]) {
   assert.match(currentState, new RegExp(term.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"), "i"));
 }
@@ -60,7 +63,8 @@ for (const term of [
   assert.match(revival, new RegExp(term.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"), "i"));
 }
 
-assert.match(currentState, /2026-06-28T17:06:06-07:00/);
-assert.match(currentState, /repo_count[^0-9]+51/i);
+assert.match(currentState, /2026-06-28T17:29:42-07:00/);
+assert.match(currentState, /repo_count[^0-9]+52/i);
 assert.match(currentState, /root_sha256_prefix[^a-f0-9]+92ef331e0850ccf6/i);
-assert.match(currentState, /Telos repo[^.\n]+e12425b/i);
+assert.match(currentState, /Telos repo[^.\n]+469ce55/i);
+assert.match(currentState, /49 available tools/i);
