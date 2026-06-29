@@ -17,7 +17,7 @@ This document is a live state packet for Project Telos. It is deliberately evide
 - Forum route for the expanded mandate decided `project-telos` with no escalation; related lanes remain technical-writing, function-routing, data-ml, code-review, render-pipeline, shader-effects, and deep-research.
 - Gather receipts were refreshed for large-context agent memory and rendering research.
 - Telos workflow returned `MATCH` for the local five-flagship workflow and reports CLI, MCP, IDE, TUI, and application workbench next actions.
-- Telos catalog now presents 53 available tools across the five flagships, including `telos.context.pack`, `telos.model.foundry`, `telos.mcp.freshness`, `telos.research.thermodynamic`, `telos.second_level.queue`, and `telos.workstation.substrate`.
+- Telos catalog now presents 54 available tools across the five flagships, including `telos.context.pack`, `telos.model.foundry`, `telos.mcp.freshness`, `telos.ci.doctor`, `telos.research.thermodynamic`, `telos.second_level.queue`, and `telos.workstation.substrate`.
 - The canonical connection and distribution map now lives at `docs/PROJECT-CONNECTION-MAP.md`. It treats the five flagships as the current organs and the wider HarperZ9 public repo corpus as Telos growth tissue.
 - GitHub authenticated inventory checked 77 visible HarperZ9 repos: 47 public non-forks, 4 public forks, 25 private active repos, and 1 private archived repo. Private and local-only viability stays in ignored local packets until sanitized.
 - Local-only viability now has public-safe revival records for `raw-native`, `studio-libs`, and `forum-archive`: deterministic renderer verification, studio perception organ, and orchestration archive. Raw local viability notes remain ignored and are not public evidence.
@@ -58,7 +58,7 @@ The five flagships must stay protocol agnostic. Each should remain usable as an 
 Telos Engine is larger than the website Studio demo.
 
 - `portfolio-site` contains the public Studio Showcase and the in-flight browser engine work: graph runtime, Canonical Media IR, format adapters, render planning, effects, transforms, and Studio presentation.
-- `telos` contains the flagship action contracts, tool catalog, MCP manifest, action receipts, context envelopes, loop ledger, creative engine manifest, measurement layers, revival registry, second-level flagship queue, and workstation substrate register.
+- `telos` contains the flagship action contracts, tool catalog, MCP manifest, action receipts, context envelopes, loop ledger, CI doctor, creative engine manifest, measurement layers, revival registry, second-level flagship queue, and workstation substrate register.
 - `studio-engine` is part of the Telos Engine lineage. Its README describes a zero-dependency creative-verification engine that emits witnessed Worlds, render programs, audio programs, timelines, and receipts.
 - `reconcile` is also part of the Telos Engine lineage. Its README describes a node/browser creative-verification engine where generated artifacts are perceived, judged against independent criteria, refined, composed, choreographed, and witnessed.
 - `raw-native` is now a local-only revival candidate for deterministic renderer verification: CPU G-buffer rasterization, ray-traced AO oracle checks, SSAO comparison, bounded allocation, and witnessed certificates.
@@ -103,6 +103,8 @@ Protocol sources already represented in the Telos MCP server manifest:
 - Anthropic Claude Code MCP docs: https://docs.anthropic.com/en/docs/claude-code/mcp
 
 The MCP freshness lane turns a live dogfood failure into a host contract: a loaded MCP server can be stale even when the source tree and tests are current. Hosts should compare the manifest's status tool, expected version, expected current-status string, `tools/list` hash, and declared behavior probes before trusting tool output; `node demo/mcp-freshness.mjs --observed observed.json` returns `project-telos.mcp-freshness-observation/v1` with `MATCH`, `DRIFT`, or `UNVERIFIABLE`. Drift becomes `stale_mcp_server`, `tool_surface_drift`, `version_drift`, or `behavior_probe_drift`; missing probe payloads become `freshness_probe_unavailable` instead of an invisible operator surprise.
+
+The CI doctor lane turns GitHub Actions runtime and action-major drift into a native receipt. `node demo/ci-doctor.mjs --summary` records five latest flagship CI runs, 9 workflow files, Node 24 migration markers, first-party action-major baselines, and failure routes through `telos.ci.doctor`; raw logs, tokens, secrets, private paths, workflow mutation, and GitHub writes are excluded.
 
 ## Operating Posture
 
