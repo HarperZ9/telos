@@ -11,7 +11,7 @@ This inventory tracks the public/developer presentation rollout for HarperZ9 rep
 - Active private repositories on GitHub: 25.
 - Owned public repositories with a local clone found under `C:/dev`: 46 of 47.
 - Missing local clone from the scanned tree: `.github`.
-- Direct local presentation audit under `C:/dev/public`: 38 repositories audited, 26 `MATCH`, 12 `DRIFT`.
+- Direct local presentation audit under `C:/dev/public`: 38 repositories audited, 28 `MATCH`, 10 `DRIFT`.
 
 ## Completed Public Flagship Set
 
@@ -49,6 +49,8 @@ Telos-rendered hero assets plus brand receipts.
 - `gpu-trace-validator`
 - `coherence-membrane`
 - `context-curator-lite`
+- `consulting-template-kit`
+- `workflow-harness-lite`
 
 ## Standard
 
@@ -94,13 +96,11 @@ Current remaining local drift queue:
 
 - `HarperZ9`
 - `HarperZ9.github.io`
-- `consulting-template-kit`
 - `forum-archive`
 - `raw-native`
 - `rewardspy`
 - `studio-libs`
 - `telos-oss-showcase`
-- `workflow-harness-lite`
 - `workspace-repo-map-shim`
 
 Batch 3: Quanta ecosystem.
