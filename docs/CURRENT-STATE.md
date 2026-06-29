@@ -15,7 +15,7 @@ This document is a live state packet for Project Telos. It is deliberately evide
 - Forum route for the expanded mandate decided `project-telos` with no escalation; related lanes remain technical-writing, function-routing, data-ml, code-review, render-pipeline, shader-effects, and deep-research.
 - Gather receipts were refreshed for large-context agent memory and rendering research.
 - Telos workflow returned `MATCH` for the local five-flagship workflow and reports CLI, MCP, IDE, TUI, and application workbench next actions.
-- Telos catalog now presents 50 available tools across the five flagships, including `telos.context.pack`, `telos.model.foundry`, and `telos.research.thermodynamic`.
+- Telos catalog now presents 51 available tools across the five flagships, including `telos.context.pack`, `telos.model.foundry`, `telos.mcp.freshness`, and `telos.research.thermodynamic`.
 - Crucible current-state thesis `661f7d4089347607` assessed 5 claims: 5 `MATCH`, 0 `DRIFT`, 0 `UNVERIFIABLE`. Report: `docs/verification/2026-06-28-current-state-report.md`; run record: `docs/verification/2026-06-28-current-state-run.json`.
 
 ## Moving Target Rule
@@ -87,6 +87,8 @@ Protocol sources already represented in the Telos MCP server manifest:
 - OpenAI Agents SDK MCP docs: https://openai.github.io/openai-agents-python/mcp/
 - OpenAI Apps SDK MCP server guide: https://developers.openai.com/apps-sdk/build/mcp-server
 - Anthropic Claude Code MCP docs: https://docs.anthropic.com/en/docs/claude-code/mcp
+
+The MCP freshness lane turns a live dogfood failure into a host contract: a loaded MCP server can be stale even when the source tree and tests are current. Hosts should compare the manifest's status tool, expected version, expected current-status string, and `tools/list` hash before trusting tool output; drift becomes `stale_mcp_server`, `tool_surface_drift`, or `version_drift` instead of an invisible operator surprise.
 
 ## Operating Posture
 

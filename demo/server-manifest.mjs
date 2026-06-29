@@ -17,11 +17,17 @@ function totalTools() {
     .reduce((sum, server) => sum + server.expected_tools.length, 0);
 }
 
+function freshnessProbeCount() {
+  return Object.values(manifest.servers)
+    .filter((server) => server.freshness?.status_tool).length;
+}
+
 export function summary() {
   const lines = [
     "Project Telos MCP Server Manifest",
     `servers  ${Object.keys(manifest.servers).length}`,
     `tools    ${totalTools()} expected`,
+    `freshness ${freshnessProbeCount()} probes`,
     `profile  source_checkout`,
     `host     Codex TOML, Claude JSON, OpenAI Agents stdio`
   ];

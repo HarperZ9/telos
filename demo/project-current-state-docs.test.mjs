@@ -34,6 +34,7 @@ for (const term of [
   "reconcile",
   "telos.context.pack",
   "telos.model.foundry",
+  "telos.mcp.freshness",
   "telos.research.thermodynamic",
   "Thermodynamic AI Chip"
 ]) {
@@ -68,4 +69,4 @@ assert.match(currentState, /2026-06-28T17:29:42-07:00/);
 assert.match(currentState, /repo_count[^0-9]+52/i);
 assert.match(currentState, /root_sha256_prefix[^a-f0-9]+92ef331e0850ccf6/i);
 assert.match(currentState, /Telos repo[^.\n]+469ce55/i);
-assert.match(currentState, /50 available tools/i);
+assert.match(currentState, /51 available tools/i);

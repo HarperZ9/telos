@@ -45,6 +45,11 @@ export const tools = [
     inputSchema: emptyInputSchema
   },
   {
+    name: "telos.mcp.freshness",
+    description: "Return MCP freshness probes for detecting stale host-loaded flagship servers.",
+    inputSchema: emptyInputSchema
+  },
+  {
     name: "telos.admission.telemetry",
     description: "Return the admission decision and verification verdict telemetry convention.",
     inputSchema: emptyInputSchema
@@ -133,6 +138,7 @@ const toolScripts = new Map([
   ["telos.workflow", ["flagship-workflow.mjs"]],
   ["telos.catalog", ["catalog.mjs"]],
   ["telos.server.manifest", ["server-manifest.mjs"]],
+  ["telos.mcp.freshness", ["mcp-freshness.mjs"]],
   ["telos.admission.telemetry", ["admission-telemetry.mjs"]],
   ["telos.context.envelope", ["context-envelope.mjs"]],
   ["telos.context.pack", ["context-pack.mjs"]],

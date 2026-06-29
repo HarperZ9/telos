@@ -52,6 +52,7 @@ for (const name of [
   "telos.workflow",
   "telos.catalog",
   "telos.server.manifest",
+  "telos.mcp.freshness",
   "telos.admission.telemetry",
   "telos.context.envelope",
   "telos.context.pack",
@@ -121,6 +122,11 @@ assert.deepEqual(byName.get("telos.revival.registry").cli, [
 assert.deepEqual(byName.get("telos.display.calibration").cli, [
   "node",
   "demo/display-calibration.mjs"
+]);
+
+assert.deepEqual(byName.get("telos.mcp.freshness").cli, [
+  "node",
+  "demo/mcp-freshness.mjs"
 ]);
 
 assert.deepEqual(byName.get("telos.context.pack").cli, [
