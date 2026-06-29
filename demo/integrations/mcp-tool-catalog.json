@@ -739,6 +739,27 @@
       ]
     },
     {
+      "name": "telos.ci.triage",
+      "flagship": "telos",
+      "description": "Use when a host needs to separate fatal GitHub Actions gate failures from Node runtime migration warnings before routing remediation. Read-only, zero-auth, no external side effects. Returns JSON MATCH, DRIFT, or UNVERIFIABLE CI triage receipts.",
+      "cli": [
+        "node",
+        "demo/ci-triage.mjs"
+      ],
+      "mcp": {
+        "status": "available",
+        "server": "telos",
+        "method": "tools/call",
+        "tool": "telos.ci.triage"
+      },
+      "next_actions": [
+        "telos.ci.doctor",
+        "telos.compatibility.doctor",
+        "crucible.assess",
+        "forum.route"
+      ]
+    },
+    {
       "name": "telos.presentation.doctor",
       "flagship": "telos",
       "description": "Use when a host needs five-flagship README, changelog, and brand-asset presentation parity receipts. Read-only, zero-auth, no external side effects. Returns JSON MATCH, DRIFT, or UNVERIFIABLE presentation receipts.",

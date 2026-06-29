@@ -55,6 +55,11 @@ export const tools = [
     inputSchema: emptyInputSchema
   },
   {
+    name: "telos.ci.triage",
+    description: "Use when a host needs to separate fatal GitHub Actions gate failures from Node runtime migration warnings before routing remediation. Read-only, zero-auth, no external side effects. Returns JSON MATCH, DRIFT, or UNVERIFIABLE CI triage receipts.",
+    inputSchema: emptyInputSchema
+  },
+  {
     name: "telos.presentation.doctor",
     description: "Use when a host needs five-flagship README, changelog, and brand-asset presentation parity receipts. Read-only, zero-auth, no external side effects. Returns JSON MATCH, DRIFT, or UNVERIFIABLE presentation receipts.",
     inputSchema: emptyInputSchema
@@ -180,6 +185,7 @@ const toolScripts = new Map([
   ["telos.server.manifest", ["server-manifest.mjs"]],
   ["telos.mcp.freshness", ["mcp-freshness.mjs"]],
   ["telos.ci.doctor", ["ci-doctor.mjs"]],
+  ["telos.ci.triage", ["ci-triage.mjs"]],
   ["telos.presentation.doctor", ["presentation-doctor.mjs"]],
   ["telos.accessibility.doctor", ["accessibility-doctor.mjs"]],
   ["telos.performance.doctor", ["performance-doctor.mjs"]],
