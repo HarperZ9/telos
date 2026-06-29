@@ -30,6 +30,7 @@ for (const name of [
   "telos.context.envelope",
   "telos.action.receipt",
   "telos.loop.ledger",
+  "telos.objective.monitor",
   "telos.research.seed",
   "telos.rendering.research",
   "telos.rendering.capabilities",
@@ -122,6 +123,15 @@ assert.deepEqual(loopLedger.result.structuredContent, expectedLoopLedger);
 assert.equal(loopLedger.result.structuredContent.schema, "project-telos.loop-ledger/v1");
 assert.equal(loopLedger.result.structuredContent.contract.ledger_first_class, true);
 assert.equal(loopLedger.result.structuredContent.headless_scheduled_fire.ask_user_mid_fire_status, "needs_attention");
+
+const objectiveMonitor = handleRequest(request("tools/call", {
+  name: "telos.objective.monitor",
+  arguments: {}
+}));
+assert.equal(objectiveMonitor.result.structuredContent.schema, "project-telos.objective-monitor/v1");
+assert.equal(objectiveMonitor.result.structuredContent.tool, "telos.objective.monitor");
+assert.ok(objectiveMonitor.result.structuredContent.failure_codes.includes("proxy_quality_divergence"));
+assert.ok(objectiveMonitor.result.structuredContent.signals.length >= 1);
 
 const expectedResearchSeed = JSON.parse(
   readFileSync(new URL("./research/fundamental-physics-seeds.json", import.meta.url), "utf8")
@@ -225,6 +235,7 @@ assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.admissi
 assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.context.envelope"));
 assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.action.receipt"));
 assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.loop.ledger"));
+assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.objective.monitor"));
 assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.research.seed"));
 assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.rendering.research"));
 assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.rendering.capabilities"));
