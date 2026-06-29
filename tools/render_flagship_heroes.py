@@ -17,10 +17,9 @@ SIZE = (1600, 640)
 SCALE = 2
 BG = (13, 15, 20)
 INK = (248, 249, 246)
-MUTED = (174, 181, 188)
-GRID = (66, 72, 84)
-
+MUTED = (198, 205, 210)
 DEFAULT_CONFIG = Path(__file__).with_name("flagship_brand_config.json")
+BAYER_4 = ((0, 8, 2, 10), (12, 4, 14, 6), (3, 11, 1, 9), (15, 7, 13, 5))
 
 
 def sha256_file(path: Path) -> str:
@@ -42,19 +41,17 @@ def png_size(path: Path) -> tuple[int, int]:
 def font_receipt(path: Path, role: str) -> dict:
     receipt = {"role": role, "path": str(path), "exists": path.exists(), "committed": False}
     if path.exists():
-        receipt["sha256"] = sha256_file(path)
-        receipt["bytes"] = path.stat().st_size
+        receipt.update({"sha256": sha256_file(path), "bytes": path.stat().st_size})
     return receipt
 
 
 def env_path(name: str, fallback: Path) -> Path:
-    value = os.environ.get(name)
-    return Path(value) if value else fallback
+    return Path(os.environ[name]) if os.environ.get(name) else fallback
 
 
 def load_config(path: Path) -> dict:
     data = json.loads(path.read_text(encoding="utf8"))
-    for _name, cfg in data.items():
+    for cfg in data.values():
         for key in ("accent", "accent2", "accent3"):
             cfg[key] = tuple(cfg[key])
     return data
@@ -71,11 +68,7 @@ def inspect_outputs(public_root: Path, config: dict) -> list[dict]:
         image, readme = paths(public_root, name)
         width, height = png_size(image)
         text = readme.read_text(encoding="utf8")
-        missing = [
-            phrase
-            for phrase in ("Typography:", "Accessibility floor:", "Provenance boundary:")
-            if phrase not in text
-        ]
+        missing = [phrase for phrase in ("Typography:", "Accessibility floor:", "Provenance boundary:") if phrase not in text]
         if missing:
             raise ValueError(f"{readme} missing brand receipt fields: {', '.join(missing)}")
         outputs.append(
@@ -94,24 +87,22 @@ def inspect_outputs(public_root: Path, config: dict) -> list[dict]:
 
 def receipt(args: argparse.Namespace, mode: str, outputs: list[dict]) -> dict:
     return {
-        "schema": "project-telos.brand-render/v1",
+        "schema": "project-telos.brand-render/v2",
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "mode": mode,
         "source_contract": "telos.rendering.research",
         "public_root": str(args.public_root),
         "dimensions": {"width": SIZE[0], "height": SIZE[1]},
-        "font_inputs": [
-            font_receipt(args.kilon_zip, "display"),
-            font_receipt(args.conso_zip, "body-and-mono"),
-        ],
+        "font_inputs": [font_receipt(args.kilon_zip, "display"), font_receipt(args.conso_zip, "body-and-mono")],
         "outputs": outputs,
         "design_gates": [
+            "three-second headline and product-role read",
+            "solid text field with no high-frequency texture under copy",
+            "contained engine viewport for procedural rendering material",
             "static PNG fallback for GitHub and low-capability hosts",
-            "high-contrast foreground text",
             "non-color-only status labels",
-            "tool-specific motif with shared flagship presentation grammar",
         ],
-        "provenance_boundary": "The repositories carry exported artwork and receipts only; purchased font files remain local operator inputs.",
+        "provenance_boundary": "Repositories carry exported artwork and receipts only; purchased font files remain local operator inputs.",
     }
 
 
@@ -127,10 +118,13 @@ def render_all(args: argparse.Namespace, config: dict) -> list[dict]:
     except ImportError as exc:
         raise SystemExit("render mode requires Pillow: python -m pip install Pillow") from exc
 
-    font_kilon = font_from_zip(args.kilon_zip, "Fonts/Kilon.ttf", 134 * SCALE, ImageFont)
-    font_conso = font_from_zip(args.conso_zip, "Fonts/Conso-Regular.ttf", 29 * SCALE, ImageFont)
-    font_bold = font_from_zip(args.conso_zip, "Fonts/Conso-Bold.ttf", 30 * SCALE, ImageFont)
-    font_small = font_from_zip(args.conso_zip, "Fonts/Conso-SemiBold.ttf", 19 * SCALE, ImageFont)
+    fonts = {
+        "display": font_from_zip(args.kilon_zip, "Fonts/Kilon.ttf", 116 * SCALE, ImageFont),
+        "display_sm": font_from_zip(args.kilon_zip, "Fonts/Kilon.ttf", 44 * SCALE, ImageFont),
+        "mono": font_from_zip(args.conso_zip, "Fonts/Conso-Regular.ttf", 28 * SCALE, ImageFont),
+        "bold": font_from_zip(args.conso_zip, "Fonts/Conso-Bold.ttf", 27 * SCALE, ImageFont),
+        "small": font_from_zip(args.conso_zip, "Fonts/Conso-SemiBold.ttf", 18 * SCALE, ImageFont),
+    }
 
     def rgba(color, alpha):
         return (*color, alpha)
@@ -138,150 +132,164 @@ def render_all(args: argparse.Namespace, config: dict) -> list[dict]:
     def blend(a, b, t):
         return tuple(round(a[i] * (1 - t) + b[i] * t) for i in range(3))
 
-    def rounded(draw, box, radius, fill, outline=None, width=1):
-        draw.rounded_rectangle(box, radius=radius, fill=fill, outline=outline, width=width)
+    def text_y(draw, text, font, y, height):
+        box = draw.textbbox((0, 0), text, font=font)
+        return y + (height - (box[3] - box[1])) // 2 - box[1]
 
-    def draw_background(base, cfg):
-        draw = ImageDraw.Draw(base, "RGBA")
+    def background(size, cfg, alpha=255):
+        image = Image.new("RGBA", size, (*BG, alpha))
+        px = image.load()
         accent, accent2, accent3 = cfg["accent"], cfg["accent2"], cfg["accent3"]
-        draw.rectangle((0, 0, SIZE[0] * SCALE, SIZE[1] * SCALE), fill=(*BG, 255))
-        for y in range(0, SIZE[1] * SCALE, 8):
-            t = y / (SIZE[1] * SCALE)
-            color = blend(blend(accent, accent2, 0.35), BG, 0.78 + 0.12 * math.sin(t * math.pi))
-            draw.line((0, y, SIZE[0] * SCALE, y), fill=(*color, 16), width=8)
-        cell = 64 * SCALE
-        for row in range(-2, 12):
-            for col in range(-2, 15):
-                x = 810 * SCALE + col * cell + row * 10 * SCALE
-                y = 64 * SCALE + row * 44 * SCALE
-                if x < 620 * SCALE or x > SIZE[0] * SCALE + cell:
-                    continue
-                alpha = 30 if (row + col) % 3 else 58
-                draw.polygon(
-                    [(x, y), (x + cell * 0.78, y + cell * 0.12), (x + cell * 0.62, y + cell * 0.58), (x - cell * 0.16, y + cell * 0.46)],
-                    outline=rgba(GRID, alpha),
-                )
-        draw.line((0, 570 * SCALE, SIZE[0] * SCALE, 536 * SCALE), fill=rgba(accent, 90), width=2 * SCALE)
-        draw.line((0, 578 * SCALE, SIZE[0] * SCALE, 602 * SCALE), fill=rgba(accent2, 70), width=SCALE)
-        draw.line((0, 76 * SCALE, SIZE[0] * SCALE, 44 * SCALE), fill=rgba(accent3, 45), width=SCALE)
+        for y in range(size[1]):
+            v = y / max(1, size[1] - 1)
+            for x in range(size[0]):
+                u = x / max(1, size[0] - 1)
+                wave = math.sin(u * 7.0 + v * 4.4 + cfg["seed"] * 0.01) * 0.5 + 0.5
+                base = blend(BG, blend(accent, accent2, 0.35), 0.12 + wave * 0.08)
+                px[x, y] = (*blend(base, accent3, 0.04 * math.sin((u + v) * math.tau) ** 2), alpha)
+        return image
 
-    def draw_splats(base, cfg):
+    def finish(image, output):
+        image = image.resize(SIZE, Image.Resampling.LANCZOS)
+        image = image.filter(ImageFilter.UnsharpMask(radius=1.0, percent=105, threshold=4))
+        output.parent.mkdir(parents=True, exist_ok=True)
+        image.convert("RGB").save(output, optimize=True, quality=94)
+
+    def grid(draw, w, h, step, alpha):
+        for x in range(0, w, step):
+            draw.line((x, 0, x, h), fill=(255, 255, 255, alpha))
+        for y in range(0, h, step):
+            draw.line((0, y, w, y), fill=(255, 255, 255, alpha))
+
+    def traces(draw, w, h, cfg):
         rng = random.Random(cfg["seed"])
-        layer = Image.new("RGBA", base.size, (0, 0, 0, 0))
-        draw = ImageDraw.Draw(layer, "RGBA")
-        colors = [cfg["accent"], cfg["accent2"], cfg["accent3"], (245, 246, 238)]
-        cx, cy = 1115 * SCALE, 305 * SCALE
-        for i in range(280):
-            angle = rng.uniform(-1.0, 1.2) + i * 0.018
-            radius = rng.gauss(188, 74) * SCALE
-            x = cx + math.cos(angle) * radius * rng.uniform(0.48, 1.34)
-            y = cy + math.sin(angle * 1.35) * radius * rng.uniform(0.34, 0.92)
-            rx, ry = rng.uniform(2.5, 12.0) * SCALE, rng.uniform(1.2, 8.0) * SCALE
-            draw.ellipse((x - rx, y - ry, x + rx, y + ry), fill=rgba(colors[rng.randrange(len(colors))], rng.randrange(18, 82)))
-        base.alpha_composite(layer.filter(ImageFilter.GaussianBlur(0.6 * SCALE)))
+        for _ in range(46):
+            y = rng.randrange(40, h - 40)
+            x = rng.randrange(0, max(1, w - 260))
+            color = rng.choice([cfg["accent"], cfg["accent2"], cfg["accent3"], INK])
+            draw.rounded_rectangle((x, y, x + rng.randrange(42, 260), y + 2 * SCALE), 1 * SCALE, fill=rgba(color, rng.randrange(22, 62)))
 
-    def draw_motif(base, cfg):
-        draw = ImageDraw.Draw(base, "RGBA")
-        accent, accent2, accent3 = cfg["accent"], cfg["accent2"], cfg["accent3"]
-        motif = cfg["motif"]
-        if motif == "intake":
-            for i in range(7):
-                x, y = (958 + i * 58) * SCALE, (190 + (i % 2) * 44) * SCALE
-                rounded(draw, (x, y, x + 132 * SCALE, y + 34 * SCALE), 8 * SCALE, rgba((21, 25, 32), 210), rgba(accent, 120), SCALE)
-                draw.line((x + 16 * SCALE, y + 17 * SCALE, 1340 * SCALE, 390 * SCALE), fill=rgba(accent2 if i % 2 else accent, 100), width=2 * SCALE)
-            rounded(draw, (1268 * SCALE, 348 * SCALE, 1468 * SCALE, 432 * SCALE), 16 * SCALE, rgba((20, 24, 31), 230), rgba(accent2, 160), 2 * SCALE)
-            draw.text((1288 * SCALE, 374 * SCALE), "RECEIPT", font=font_bold, fill=rgba(INK, 235))
-        elif motif == "verdict":
-            for i, label in enumerate(["MATCH", "DRIFT", "UNVERIFIABLE"]):
-                y = (214 + i * 74) * SCALE
-                color = [accent2, accent, accent3][i]
-                rounded(draw, (1060 * SCALE, y, 1435 * SCALE, y + 46 * SCALE), 10 * SCALE, rgba((18, 22, 29), 232), rgba(color, 175), 2 * SCALE)
-                draw.text((1092 * SCALE, y + 12 * SCALE), label, font=font_bold, fill=rgba(INK, 230))
-        elif motif == "graph":
-            rng = random.Random(cfg["seed"])
-            nodes = [(960 * SCALE + rng.randrange(0, 510) * SCALE, 142 * SCALE + rng.randrange(0, 330) * SCALE) for _ in range(18)]
-            for i, a in enumerate(nodes):
-                for j, b in enumerate(nodes):
-                    if i < j and (i * 7 + j * 3) % 11 < 3:
-                        draw.line((*a, *b), fill=rgba(accent if i % 2 else accent2, 70), width=SCALE)
-            for i, (x, y) in enumerate(nodes):
-                color = [accent, accent2, accent3][i % 3]
-                draw.ellipse((x - 9 * SCALE, y - 9 * SCALE, x + 9 * SCALE, y + 9 * SCALE), fill=rgba(color, 220), outline=rgba(INK, 80), width=SCALE)
-        elif motif == "ledger":
-            for i in range(6):
-                x, y = (1010 + (i % 2) * 54) * SCALE, (156 + i * 58) * SCALE
-                color = [accent, accent2, accent3][i % 3]
-                rounded(draw, (x, y, x + 382 * SCALE, y + 38 * SCALE), 9 * SCALE, rgba((18, 22, 29), 225), rgba(color, 135), SCALE)
-                draw.line((x + 24 * SCALE, y + 19 * SCALE, x + 330 * SCALE, y + 19 * SCALE), fill=rgba(color, 120), width=2 * SCALE)
+    def dither(draw, w, h, alpha):
+        for y in range(0, h, 3 * SCALE):
+            draw.line((0, y, w, y), fill=(0, 0, 0, alpha))
+        for y in range(0, h, 4 * SCALE):
+            for x in range(0, w, 4 * SCALE):
+                if BAYER_4[(y // (4 * SCALE)) % 4][(x // (4 * SCALE)) % 4] < 4:
+                    draw.point((x, y), fill=(255, 255, 255, alpha))
+
+    def motif(draw, w, h, cfg):
+        cx, cy = int(w * 0.52), int(h * 0.50)
+        colors = [cfg["accent"], cfg["accent2"], cfg["accent3"]]
+        if cfg["motif"] == "verdict":
+            labels = ["MATCH", "DRIFT", "UNVERIFIABLE"]
+            for i, label in enumerate(labels):
+                y = int(h * 0.24) + i * int(0.17 * h)
+                draw.rounded_rectangle((int(w * 0.42), y, int(w * 0.92), y + 54 * SCALE), 10 * SCALE, fill=(9, 12, 16, 218), outline=rgba(colors[i % 3], 190), width=2 * SCALE)
+                draw.text((int(w * 0.47), text_y(draw, label, fonts["bold"], y, 54 * SCALE)), label, font=fonts["bold"], fill=INK)
+            draw.arc((cx - 190 * SCALE, cy - 150 * SCALE, cx + 190 * SCALE, cy + 150 * SCALE), 200, 510, fill=rgba(cfg["accent"], 190), width=5 * SCALE)
+            return
+        rng = random.Random(cfg["seed"])
+        nodes = [(rng.randrange(int(w * 0.22), int(w * 0.86)), rng.randrange(int(h * 0.22), int(h * 0.80))) for _ in range(10)]
+        for i, a in enumerate(nodes):
+            for j, b in enumerate(nodes[i + 1 :], i + 1):
+                if (i * 5 + j * 3 + cfg["seed"]) % 7 < 3:
+                    draw.line((*a, *b), fill=rgba(colors[i % 3], 82), width=2 * SCALE)
+        for i, (x, y) in enumerate(nodes):
+            color = colors[i % 3]
+            r = (8 + i % 3 * 2) * SCALE
+            draw.ellipse((x - r, y - r, x + r, y + r), fill=rgba(color, 225), outline=rgba(INK, 100), width=SCALE)
+        if cfg["motif"] == "intake":
+            label = "PACKET"
+        elif cfg["motif"] == "ledger":
+            label = "HANDOFF"
+        elif cfg["motif"] == "graph":
+            label = "MAP"
+        elif cfg["motif"] == "gamut":
+            label = "COLOR"
+        elif cfg["motif"] == "verdict":
+            label = "RESULT"
         else:
-            for r in range(5):
-                box = (990 * SCALE - r * 42 * SCALE, 308 * SCALE - r * 32 * SCALE, 1340 * SCALE + r * 42 * SCALE, 330 * SCALE + r * 32 * SCALE)
-                draw.arc(box, 168, 372, fill=rgba([accent, accent2, accent3][r % 3], 150 - r * 18), width=max(1, (5 - r) * SCALE))
-            rounded(draw, (1128 * SCALE, 250 * SCALE, 1332 * SCALE, 382 * SCALE), 20 * SCALE, rgba((18, 22, 29), 225), rgba(accent, 170), 2 * SCALE)
+            label = "WORKBENCH"
+        draw.rounded_rectangle((int(w * 0.57), int(h * 0.72), int(w * 0.91), int(h * 0.85)), 12 * SCALE, fill=(9, 12, 16, 222), outline=rgba(cfg["accent"], 155), width=2 * SCALE)
+        draw.text((int(w * 0.61), text_y(draw, label, fonts["bold"], int(h * 0.72), int(h * 0.13))), label, font=fonts["bold"], fill=INK)
 
-    def draw_text(base, cfg):
-        draw = ImageDraw.Draw(base, "RGBA")
-        x, y = 104 * SCALE, 126 * SCALE
-        draw.text((x, y), cfg["title"], font=font_kilon, fill=(*INK, 255))
-        draw.text((x + 4 * SCALE, y + 120 * SCALE), cfg["subtitle"].upper(), font=font_bold, fill=(*cfg["accent"], 245))
-        draw.text((x + 4 * SCALE, y + 172 * SCALE), cfg["tagline"], font=font_conso, fill=(*MUTED, 245))
-        draw.line((x + 4 * SCALE, y + 226 * SCALE, x + 426 * SCALE, y + 226 * SCALE), fill=(*cfg["accent2"], 160), width=2 * SCALE)
-        bx = x + 4 * SCALE
+    def viewport(cfg, w=576 * SCALE, h=420 * SCALE):
+        image = background((w, h), cfg)
+        draw = ImageDraw.Draw(image, "RGBA")
+        grid(draw, w, h, 40 * SCALE, 14)
+        traces(draw, w, h, cfg)
+        motif(draw, w, h, cfg)
+        dither(draw, w, h, 4)
+        draw.rounded_rectangle((36 * SCALE, 32 * SCALE, 244 * SCALE, 80 * SCALE), 9 * SCALE, fill=(9, 12, 16, 210), outline=rgba(cfg["accent"], 125), width=SCALE)
+        header = {
+            "intake": "SOURCES",
+            "verdict": "CHECK",
+            "graph": "MAP",
+            "ledger": "ROUTE",
+            "gamut": "COLOR",
+            "membrane": "WORKSPACE",
+        }.get(cfg["motif"], cfg["motif"].upper())
+        draw.text((54 * SCALE, text_y(draw, header, fonts["small"], 32 * SCALE, 48 * SCALE)), header, font=fonts["small"], fill=INK)
+        return image.filter(ImageFilter.UnsharpMask(radius=0.8, percent=110, threshold=3))
+
+    def paste_rounded(base, layer, xy, radius):
+        mask = Image.new("L", layer.size, 0)
+        ImageDraw.Draw(mask).rounded_rectangle((0, 0, layer.size[0] - 1, layer.size[1] - 1), radius=radius, fill=255)
+        clipped = layer.copy()
+        clipped.putalpha(mask)
+        base.alpha_composite(clipped, dest=xy)
+
+    def draw_text_panel(draw, cfg):
+        x, y = 84 * SCALE, 78 * SCALE
+        draw.rounded_rectangle((x, y, 902 * SCALE, 562 * SCALE), 12 * SCALE, fill=(6, 9, 13, 246), outline=(248, 249, 246, 58), width=SCALE)
+        draw.text((112 * SCALE, 108 * SCALE), cfg["title"], font=fonts["display"], fill=INK)
+        draw.rounded_rectangle((116 * SCALE, 244 * SCALE, 852 * SCALE, 252 * SCALE), 2 * SCALE, fill=cfg["accent"])
+        draw.rounded_rectangle((388 * SCALE, 244 * SCALE, 852 * SCALE, 252 * SCALE), 2 * SCALE, fill=cfg["accent2"])
+        draw.rounded_rectangle((612 * SCALE, 244 * SCALE, 852 * SCALE, 252 * SCALE), 2 * SCALE, fill=cfg["accent3"])
+        draw.text((116 * SCALE, 298 * SCALE), cfg["subtitle"].upper(), font=fonts["bold"], fill=cfg["accent"])
+        draw.text((116 * SCALE, 354 * SCALE), cfg["tagline"], font=fonts["mono"], fill=MUTED)
+        bx = 116 * SCALE
         for badge in cfg["badges"]:
-            width = max(92 * SCALE, draw.textlength(badge, font=font_small) + 28 * SCALE)
-            rounded(draw, (bx, y + 256 * SCALE, bx + width, y + 292 * SCALE), 18 * SCALE, rgba((22, 27, 35), 235), rgba(cfg["accent"], 130), SCALE)
-            draw.text((bx + 14 * SCALE, y + 265 * SCALE), badge, font=font_small, fill=(*INK, 230))
-            bx += width + 12 * SCALE
-        draw.text((x + 4 * SCALE, 536 * SCALE), "PROJECT TELOS FLAGSHIP  /  CLI + MCP + RECEIPTS", font=font_small, fill=(200, 205, 210, 180))
-        rounded(draw, (1030 * SCALE, 508 * SCALE, 1506 * SCALE, 568 * SCALE), 14 * SCALE, rgba((15, 18, 24), 220), rgba(cfg["accent"], 125), SCALE)
-        draw.text((1052 * SCALE, 526 * SCALE), "VISIBLE STATE  /  FALLBACK  /  REPLAY", font=font_small, fill=(*INK, 220))
+            width = max(86 * SCALE, int(draw.textlength(badge, font=fonts["small"])) + 30 * SCALE)
+            box = (bx, 462 * SCALE, bx + width, 502 * SCALE)
+            draw.rounded_rectangle(box, 8 * SCALE, fill=(22, 27, 35, 236), outline=rgba(cfg["accent"], 155), width=SCALE)
+            draw.text((bx + 15 * SCALE, text_y(draw, badge, fonts["small"], 462 * SCALE, 40 * SCALE)), badge, font=fonts["small"], fill=INK)
+            bx += width + 14 * SCALE
+        draw.text((116 * SCALE, 526 * SCALE), cfg.get("footer", "PROJECT TELOS FLAGSHIP / CLI + MCP + RECEIPTS"), font=fonts["small"], fill=(210, 216, 220, 190))
 
     for name, cfg in config.items():
-        base = Image.new("RGBA", (SIZE[0] * SCALE, SIZE[1] * SCALE), (0, 0, 0, 0))
-        draw_background(base, cfg)
-        draw_splats(base, cfg)
-        draw_motif(base, cfg)
-        draw_text(base, cfg)
-        out, _readme = paths(args.public_root, name)
-        out.parent.mkdir(parents=True, exist_ok=True)
-        base.resize(SIZE, Image.Resampling.LANCZOS).convert("RGB").save(out, optimize=True)
+        base = background((SIZE[0] * SCALE, SIZE[1] * SCALE), cfg)
+        draw = ImageDraw.Draw(base, "RGBA")
+        grid(draw, base.size[0], base.size[1], 56 * SCALE, 3)
+        vp = viewport(cfg)
+        paste_rounded(base, vp, (972 * SCALE, 94 * SCALE), 18 * SCALE)
+        draw.rounded_rectangle((972 * SCALE, 94 * SCALE, 1548 * SCALE, 514 * SCALE), 18 * SCALE, outline=(248, 249, 246, 70), width=SCALE)
+        draw_text_panel(draw, cfg)
+        finish(base, paths(args.public_root, name)[0])
     return inspect_outputs(args.public_root, config)
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Render or verify the five Project Telos flagship README hero images.")
+    parser = argparse.ArgumentParser(description="Render or verify Project Telos flagship README hero images.")
     parser.add_argument("--public-root", type=Path, default=Path("C:/dev/public"))
     parser.add_argument("--config", type=Path, default=DEFAULT_CONFIG)
-    parser.add_argument(
-        "--kilon-zip",
-        type=Path,
-        default=env_path("TELOS_KILON_FONT_ZIP", Path.home() / "Downloads" / "Kilon-Bold-Display-Font.zip"),
-    )
-    parser.add_argument(
-        "--conso-zip",
-        type=Path,
-        default=env_path("TELOS_CONSO_FONT_ZIP", Path.home() / "Downloads" / "Conso-Font-Family.zip"),
-    )
+    parser.add_argument("--kilon-zip", type=Path, default=env_path("TELOS_KILON_FONT_ZIP", Path.home() / "Downloads" / "Kilon-Bold-Display-Font.zip"))
+    parser.add_argument("--conso-zip", type=Path, default=env_path("TELOS_CONSO_FONT_ZIP", Path.home() / "Downloads" / "Conso-Font-Family.zip"))
     parser.add_argument("--render", action="store_true", help="render PNGs using local font ZIPs and Pillow")
     parser.add_argument("--check-existing", action="store_true", help="verify existing PNGs and brand receipts without Pillow")
-    parser.add_argument("--json", action="store_true", help="emit the receipt JSON to stdout")
-    parser.add_argument("--receipt", type=Path, help="optional path to write the receipt JSON")
+    parser.add_argument("--json", action="store_true", help="emit receipt JSON to stdout")
+    parser.add_argument("--receipt", type=Path, help="optional path to write receipt JSON")
     args = parser.parse_args()
-
     if not args.render and not args.check_existing:
         args.check_existing = True
     config = load_config(args.config)
     outputs = render_all(args, config) if args.render else inspect_outputs(args.public_root, config)
     mode = "render" if args.render else "check-existing"
-    doc = receipt(args, mode, outputs)
-    payload = json.dumps(doc, indent=2)
+    payload = json.dumps(receipt(args, mode, outputs), indent=2)
     if args.receipt:
         args.receipt.parent.mkdir(parents=True, exist_ok=True)
         args.receipt.write_text(payload + "\n", encoding="utf8")
-    if args.json:
-        print(payload)
-    else:
-        print(f"{mode}: {len(outputs)} hero images verified")
+    print(payload if args.json else f"{mode}: {len(outputs)} hero images verified")
     return 0
 
 
