@@ -50,6 +50,7 @@ perception, and action floor.
 - **Operator surface:** `node demo/telos-mcp.mjs` exposes native MCP tools: `telos.status`, `telos.doctor`, `telos.room`, `telos.catalog`, `telos.workflow`, `telos.server.manifest`, `telos.admission.telemetry`, and `telos.showcase.scout`.
 - **Current floor:** the operator room reconciles 26 available tools across Gather, Crucible, Index, Forum, and Telos, with a provider-neutral catalog and server manifest for CLI, MCP, plugin, IDE, TUI, and app hosts. See [CHANGELOG.md](CHANGELOG.md).
 - **Proof lane:** `node demo/showcase.mjs scout --fixture` starts the OSS Proof Showcase, a local-first path from public issue evidence to PR-readiness packets.
+- **Learning Forge intake:** `demo/research/youtube-learning-forge-receipts.json` records the latest video/channel research seed as receipt-only material for later Index, Forum, Crucible, and Telos lab conversion.
 
 ## What it is
 
