@@ -102,7 +102,7 @@ const badCatalog = {
 
 const badManifest = {
   schema: "wrong",
-  workspace_placeholder: "C:\\Users\\Zain\\secret",
+  workspace_placeholder: "C:\\Users\\Example\\secret",
   transports: [],
   profiles: ["package"],
   hosts: {
