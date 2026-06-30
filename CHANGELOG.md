@@ -4,6 +4,11 @@ All notable changes to Project Telos. Telos is currently a source demo and share
 
 ## Unreleased
 
+- Learning Forge: adds `project-telos.learning-forge/youtube-research-seed/v1`,
+  `node demo/learning-forge.mjs`, and `telos.learning.forge` to turn operator-provided
+  video/channel/paper/benchmark leads into receipt-backed learning labs with explicit
+  YouTube `UNVERIFIABLE_UNTIL_GATHER_TRANSCRIPT` boundaries, current lawful source
+  receipts, failure cases, and Gather/Index/Forum/Crucible/Telos next actions.
 - CI triage: adds `project-telos.ci-triage/v1`, `node demo/ci-triage.mjs`,
   and `telos.ci.triage` to classify blocking CI failures separately from
   Node runtime migration warnings with sanitized evidence excerpts and typed

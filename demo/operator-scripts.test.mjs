@@ -38,6 +38,7 @@ assert.ok(status.native.mcp_tools.includes("telos.loop.ledger"));
 assert.ok(status.native.mcp_tools.includes("telos.objective.monitor"));
 assert.ok(status.native.mcp_tools.includes("telos.model.foundry"));
 assert.ok(status.native.mcp_tools.includes("telos.research.seed"));
+assert.ok(status.native.mcp_tools.includes("telos.learning.forge"));
 assert.ok(status.native.mcp_tools.includes("telos.research.thermodynamic"));
 assert.ok(status.native.mcp_tools.includes("telos.rendering.research"));
 assert.ok(status.native.mcp_tools.includes("telos.rendering.capabilities"));
@@ -48,7 +49,7 @@ assert.ok(status.native.mcp_tools.includes("telos.revival.registry"));
 assert.ok(status.native.mcp_tools.includes("telos.second_level.queue"));
 assert.ok(status.native.mcp_tools.includes("telos.workstation.substrate"));
 assert.ok(status.native.mcp_tools.includes("telos.display.calibration"));
-assert.match(status.native.current_status, /61-tool/);
+assert.match(status.native.current_status, /62-tool/);
 assert.equal(status.next_actions[0].tool, "index");
 
 const doctor = runJson("doctor.mjs");
@@ -87,7 +88,7 @@ const catalogSummary = spawnSync(process.execPath, [path.join(here, "catalog.mjs
 });
 assert.equal(catalogSummary.status, 0, catalogSummary.stderr || catalogSummary.stdout);
 assert.match(catalogSummary.stdout, /^Project Telos MCP Catalog/m);
-assert.match(catalogSummary.stdout, /tools\s+61 total, 61 available/);
-assert.match(catalogSummary.stdout, /telos\s+33 tools\s+telos.status, telos.doctor/);
+assert.match(catalogSummary.stdout, /tools\s+62 total, 62 available/);
+assert.match(catalogSummary.stdout, /telos\s+34 tools\s+telos.status, telos.doctor/);
 assert.match(catalogSummary.stdout, /next\s+node demo\/catalog.mjs/);
 assert.ok(catalogSummary.stdout.split(/\r?\n/).length <= 12, "summary stays compact");

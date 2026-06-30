@@ -6,7 +6,7 @@ const payload = actionEnvelope({
   command: "status",
   native: {
     role: "shared-room-reconciliation",
-    commands: ["room", "status", "doctor", "catalog", "server-manifest", "run", "flagship-workflow", "model-foundry", "mcp-freshness", "ci-doctor", "ci-triage", "presentation-doctor", "accessibility-doctor", "performance-doctor", "compatibility-doctor", "operator-doctor", "revival-registry", "second-level-flagship-queue", "workstation-substrate", "display-calibration"],
+    commands: ["room", "status", "doctor", "catalog", "server-manifest", "run", "flagship-workflow", "model-foundry", "learning-forge", "mcp-freshness", "ci-doctor", "ci-triage", "presentation-doctor", "accessibility-doctor", "performance-doctor", "compatibility-doctor", "operator-doctor", "revival-registry", "second-level-flagship-queue", "workstation-substrate", "display-calibration"],
     statuses: ["MATCH", "DRIFT", "UNVERIFIABLE", "ERROR"],
     mcp_tools: [
       "telos.status",
@@ -30,6 +30,7 @@ const payload = actionEnvelope({
       "telos.loop.ledger",
       "telos.objective.monitor",
       "telos.model.foundry",
+      "telos.learning.forge",
       "telos.research.seed",
       "telos.research.thermodynamic",
       "telos.rendering.research",
@@ -43,7 +44,7 @@ const payload = actionEnvelope({
       "telos.display.calibration",
       "telos.native.control"
     ],
-    current_status: "0.1.0 source registry package with 61-tool five-flagship catalog, CI doctor, CI triage, presentation doctor, accessibility doctor, performance doctor, compatibility doctor, operator doctor, context envelopes, context packs, action receipts, loop ledger, objective monitoring, model foundry, MCP freshness, research seeds, transcript-backed thermodynamic research, rendering research, rendering capabilities, measurement layers, creative engine, creative kernels, revival registry, second-level queue, workstation substrate, display calibration, native background control of browser and apps, and native Telos MCP surface"
+    current_status: "0.1.0 source registry package with 62-tool five-flagship catalog, CI doctor, CI triage, presentation doctor, accessibility doctor, performance doctor, compatibility doctor, operator doctor, context envelopes, context packs, action receipts, loop ledger, objective monitoring, model foundry, Learning Forge, MCP freshness, research seeds, transcript-backed thermodynamic research, rendering research, rendering capabilities, measurement layers, creative engine, creative kernels, revival registry, second-level queue, workstation substrate, display calibration, native background control of browser and apps, and native Telos MCP surface"
   },
   nextActions: [
     {

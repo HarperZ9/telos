@@ -111,6 +111,7 @@ assert.ok(statusPayload.native.mcp_tools.includes("telos.creative.kernels"));
 assert.ok(statusPayload.native.mcp_tools.includes("telos.display.calibration"));
 assert.ok(statusPayload.native.mcp_tools.includes("telos.objective.monitor"));
 assert.ok(statusPayload.native.mcp_tools.includes("telos.model.foundry"));
+assert.ok(statusPayload.native.mcp_tools.includes("telos.learning.forge"));
 assert.ok(statusPayload.native.mcp_tools.includes("telos.mcp.freshness"));
 assert.ok(statusPayload.native.mcp_tools.includes("telos.context.pack"));
 assert.ok(statusPayload.native.mcp_tools.includes("telos.research.thermodynamic"));
@@ -119,20 +120,20 @@ assert.ok(statusPayload.native.mcp_tools.includes("telos.performance.doctor"));
 assert.ok(statusPayload.native.mcp_tools.includes("telos.compatibility.doctor"));
 assert.ok(statusPayload.native.mcp_tools.includes("telos.operator.doctor"));
 assert.ok(statusPayload.native.mcp_tools.includes("telos.ci.triage"));
-assert.match(statusPayload.native.current_status, /61-tool/);
+assert.match(statusPayload.native.current_status, /62-tool/);
 
 const catalogSummary = spawnSync(process.execPath, [path.join(here, "catalog.mjs"), "--summary"], {
   cwd: path.resolve(here, ".."),
   encoding: "utf8"
 });
 assert.equal(catalogSummary.status, 0, catalogSummary.stderr || catalogSummary.stdout);
-assert.match(catalogSummary.stdout, /tools\s+61 total, 61 available/);
-assert.match(catalogSummary.stdout, /telos\s+33 tools/);
+assert.match(catalogSummary.stdout, /tools\s+62 total, 62 available/);
+assert.match(catalogSummary.stdout, /telos\s+34 tools/);
 
 const manifestSummary = spawnSync(process.execPath, [path.join(here, "server-manifest.mjs"), "--summary"], {
   cwd: path.resolve(here, ".."),
   encoding: "utf8"
 });
 assert.equal(manifestSummary.status, 0, manifestSummary.stderr || manifestSummary.stdout);
-assert.match(manifestSummary.stdout, /tools\s+61 expected/);
+assert.match(manifestSummary.stdout, /tools\s+62 expected/);
 assert.match(manifestSummary.stdout, /freshness\s+5 probes/);

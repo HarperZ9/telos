@@ -120,6 +120,11 @@ export const tools = [
     inputSchema: emptyInputSchema
   },
   {
+    name: "telos.learning.forge",
+    description: "Use when video, channel, paper, and benchmark leads need to become receipt-backed learning labs before synthesis. Read-only, zero-auth, no external side effects. Returns a JSON Learning Forge packet.",
+    inputSchema: emptyInputSchema
+  },
+  {
     name: "telos.research.seed",
     description: "Use when terse research notes need source-backed seed packets before synthesis. Read-only, zero-auth, no external side effects. Returns JSON research seeds with provenance status.",
     inputSchema: emptyInputSchema
@@ -203,6 +208,7 @@ const toolScripts = new Map([
   ["telos.loop.ledger", ["loop-ledger.mjs"]],
   ["telos.objective.monitor", ["objective-monitor.mjs"]],
   ["telos.model.foundry", ["model-foundry.mjs"]],
+  ["telos.learning.forge", ["learning-forge.mjs"]],
   ["telos.research.seed", ["research-seed.mjs"]],
   ["telos.research.thermodynamic", ["thermodynamic-ai-chip-receipt.mjs"]],
   ["telos.rendering.research", ["rendering-research.mjs"]],

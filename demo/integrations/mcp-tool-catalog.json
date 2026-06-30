@@ -1008,6 +1008,28 @@
       ]
     },
     {
+      "name": "telos.learning.forge",
+      "flagship": "telos",
+      "description": "Use when video, channel, paper, and benchmark leads need to become receipt-backed learning labs before synthesis. Read-only, zero-auth, no external side effects. Returns a JSON Learning Forge packet.",
+      "cli": [
+        "node",
+        "demo/learning-forge.mjs"
+      ],
+      "mcp": {
+        "status": "available",
+        "server": "telos",
+        "method": "tools/call",
+        "tool": "telos.learning.forge"
+      },
+      "next_actions": [
+        "gather.run",
+        "index.context",
+        "forum.route",
+        "crucible.assess",
+        "telos.context.pack"
+      ]
+    },
+    {
       "name": "telos.research.seed",
       "flagship": "telos",
       "description": "Use when terse research notes need source-backed seed packets before synthesis. Read-only, zero-auth, no external side effects. Returns JSON research seeds with provenance status.",

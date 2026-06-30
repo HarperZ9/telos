@@ -43,6 +43,7 @@ for (const name of [
   "telos.loop.ledger",
   "telos.objective.monitor",
   "telos.model.foundry",
+  "telos.learning.forge",
   "telos.research.seed",
   "telos.research.thermodynamic",
   "telos.rendering.research",
@@ -255,6 +256,18 @@ assert.equal(modelFoundry.result.structuredContent.tool, "telos.model.foundry");
 assert.equal(modelFoundry.result.structuredContent.validation.verdict, "MATCH");
 assert.equal(modelFoundry.result.structuredContent.contract.blind_self_training_allowed, false);
 
+const expectedLearningForge = JSON.parse(
+  readFileSync(new URL("./research/learning-forge-seed.json", import.meta.url), "utf8")
+);
+const learningForge = handleRequest(request("tools/call", {
+  name: "telos.learning.forge",
+  arguments: {}
+}));
+assert.deepEqual(learningForge.result.structuredContent, expectedLearningForge);
+assert.equal(learningForge.result.structuredContent.schema, "project-telos.learning-forge/youtube-research-seed/v1");
+assert.equal(learningForge.result.structuredContent.tool, "telos.learning.forge");
+assert.equal(learningForge.result.structuredContent.youtube_seed_corpus.receipt_state, "UNVERIFIABLE_UNTIL_GATHER_TRANSCRIPT");
+
 const expectedResearchSeed = JSON.parse(
   readFileSync(new URL("./research/fundamental-physics-seeds.json", import.meta.url), "utf8")
 );
@@ -404,6 +417,7 @@ assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.action.
 assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.loop.ledger"));
 assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.objective.monitor"));
 assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.model.foundry"));
+assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.learning.forge"));
 assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.research.seed"));
 assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.research.thermodynamic"));
 assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.rendering.research"));
