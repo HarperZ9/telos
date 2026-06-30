@@ -31,6 +31,17 @@ assert.ok(packet.youtube_seed_corpus.inputs.includes("https://www.youtube.com/@M
 assert.ok(packet.youtube_seed_corpus.inputs.includes("https://www.youtube.com/watch?v=5pieVHmlbyk&t=668s"));
 assert.ok(packet.youtube_seed_corpus.inputs.includes("https://www.youtube.com/@lobais/videos"));
 assert.equal(packet.youtube_seed_corpus.receipt_state, "UNVERIFIABLE_UNTIL_GATHER_TRANSCRIPT");
+assert.deepEqual(packet.youtube_seed_corpus.gather_receipt_ledger, {
+  ref: "demo/research/youtube-learning-forge-receipts.json",
+  schema: "project-telos.learning-forge/youtube-research-seed/v1",
+  captured_at: "2026-06-30T07:27:57.550385+00:00",
+  video_count: 8,
+  channel_count: 2,
+  corpus_digest_seal: "acfdc2e9ef532620579f221fccd59f8ba3e3505c1d28084aa7e893280bef88d5",
+  receipt_state: "GATHER_RECEIPTS_CAPTURED",
+  research_claim_state: "UNVERIFIABLE_UNTIL_CROSS_CHECK",
+  privacy_boundary: "Receipt ledger stores metadata hashes, transcript hashes, channel-list hashes, titles, refs, and counts only; raw transcript bodies stay in the ignored local corpus."
+});
 
 for (const source of packet.current_source_receipts) {
   assert.match(source.receipt_hash, /^sha256:[a-f0-9]{64}$/);
