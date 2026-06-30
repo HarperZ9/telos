@@ -188,6 +188,11 @@ export const tools = [
     name: "telos.native.control",
     description: "Use when a host needs the Telos native background-control capability catalog for browser (Chrome DevTools Protocol) and native-app (Windows UI Automation) actuation. Read-only, zero-auth, no external side effects. Returns a JSON capability and verb catalog.",
     inputSchema: emptyInputSchema
+  },
+  {
+    name: "telos.showcase.scout",
+    description: "Use when a host needs fixture-backed OSS Proof Showcase candidate rankings before public patch work. Read-only, zero-auth, no external side effects. Returns JSON scout results.",
+    inputSchema: emptyInputSchema
   }
 ];
 
@@ -226,9 +231,9 @@ const toolScripts = new Map([
   ["telos.second_level.queue", ["second-level-flagship-queue.mjs"]],
   ["telos.workstation.substrate", ["workstation-substrate.mjs"]],
   ["telos.display.calibration", ["display-calibration.mjs"]],
-  ["telos.native.control", ["native-control.mjs"]]
+  ["telos.native.control", ["native-control.mjs"]],
+  ["telos.showcase.scout", ["showcase.mjs", "scout", "--fixture", "--json"]]
 ]);
-
 function runTool(name) {
   const args = toolScripts.get(name);
   if (!args) {

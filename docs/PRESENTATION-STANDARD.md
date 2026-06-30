@@ -51,4 +51,3 @@ Presentation should be public-readable first and internally expressive second.
 - Research paper/spec: clear abstract, claim boundaries, citations/provenance, reproduction path.
 - Utility: no decorative hero required, but it still needs a plain description, quickstart, and verification command.
 - Fork: do not apply Telos branding by default. Use the fork for upstream-quality patches unless the fork has a Harper-specific purpose.
-

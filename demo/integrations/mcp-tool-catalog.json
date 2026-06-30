@@ -1310,6 +1310,29 @@
         "telos.action.receipt",
         "telos.workstation.substrate"
       ]
+    },
+    {
+      "name": "telos.showcase.scout",
+      "flagship": "telos",
+      "description": "Use when a host needs fixture-backed OSS Proof Showcase candidate rankings before public patch work. Read-only, zero-auth, no external side effects. Returns JSON scout results.",
+      "cli": [
+        "node",
+        "demo/showcase.mjs",
+        "scout",
+        "--fixture",
+        "--json"
+      ],
+      "mcp": {
+        "status": "available",
+        "server": "telos",
+        "method": "tools/call",
+        "tool": "telos.showcase.scout"
+      },
+      "next_actions": [
+        "gather.docs",
+        "index.map",
+        "crucible.assess"
+      ]
     }
   ]
 }
