@@ -1,6 +1,6 @@
 # Project Telos Current State
 
-Generated: 2026-06-29
+Generated: 2026-06-30
 
 This document is a live state packet for Project Telos. It is deliberately evidence-first: current capability, repo shape, and ambition are separated so the project can grow without turning roadmap into a false capability claim.
 
@@ -17,7 +17,9 @@ This document is a live state packet for Project Telos. It is deliberately evide
 - Forum route for the expanded mandate decided `project-telos` with no escalation; related lanes remain technical-writing, function-routing, data-ml, code-review, render-pipeline, shader-effects, and deep-research.
 - Gather receipts were refreshed for large-context agent memory and rendering research.
 - Telos workflow returned `MATCH` for the local five-flagship workflow and reports CLI, MCP, IDE, TUI, and application workbench next actions.
-- Telos catalog now presents 60 available tools across the five flagships, including `telos.context.pack`, `telos.model.foundry`, `telos.mcp.freshness`, `telos.ci.doctor`, `telos.ci.triage`, `telos.presentation.doctor`, `telos.accessibility.doctor`, `telos.performance.doctor`, `telos.compatibility.doctor`, `telos.operator.doctor`, `telos.research.thermodynamic`, `telos.second_level.queue`, and `telos.workstation.substrate`.
+- Telos catalog now presents 63 available tools across the five flagships, including `telos.context.pack`, `telos.model.foundry`, `telos.learning.forge`, `telos.learning.labs`, `telos.mcp.freshness`, `telos.ci.doctor`, `telos.ci.triage`, `telos.presentation.doctor`, `telos.accessibility.doctor`, `telos.performance.doctor`, `telos.compatibility.doctor`, `telos.operator.doctor`, `telos.research.thermodynamic`, `telos.second_level.queue`, `telos.workstation.substrate`, and `telos.native.control`.
+- The active flagship-state goal ledger is `docs/FLAGSHIP-STATE-GOAL.md`. The latest dogfood pass records Telos compatibility `MATCH`, Gather status `MATCH`, Index maps for `C:\dev\public` (52 repos, 2 dirty), `C:\dev\opsec` (5 repos, 0 dirty), and `C:\dev\state` (4 repos, 0 dirty), Forum routing to `project-telos`, Aleph private-line MCP config `MATCH`, and Gather source launcher commit `ab959c7` with green CI run `28459724472`.
+- Native background control (`telos.native.control` / `node demo/native-control.mjs`) drives the browser via the Chrome DevTools Protocol and native apps via Windows UI Automation, delivering synthetic events into each target so the operator's physical cursor and keyboard stay free. The MCP tool is the read-only capability catalog; actuation runs locally through the CLI.
 - The canonical connection and distribution map now lives at `docs/PROJECT-CONNECTION-MAP.md`. It treats the five flagships as the current organs and the wider HarperZ9 public repo corpus as Telos growth tissue.
 - GitHub authenticated inventory checked 77 visible HarperZ9 repos: 47 public non-forks, 4 public forks, 25 private active repos, and 1 private archived repo. Private and local-only viability stays in ignored local packets until sanitized.
 - Local-only viability now has public-safe revival records for `raw-native`, `studio-libs`, and `forum-archive`: deterministic renderer verification, studio perception organ, and orchestration archive. Raw local viability notes remain ignored and are not public evidence.
@@ -47,9 +49,10 @@ The five flagship tools are the forward-facing control spine:
 - Index: workspace atlas and context envelope. It maps repos, dirty state, docs, and large-codebase context packets.
 - Forum: orchestration and human-facing reasoning. It routes work, summarizes ledgers, and can clarify agent prose without adding facts.
 - Crucible: verification pressure. It turns falsifiable claims plus measurements into `MATCH`, `DRIFT`, or `UNVERIFIABLE`, with recheckable receipts.
-- Telos: the shared room and engine surface. It reconciles flagship outputs into action receipts, context envelopes, validated context packs, loop ledgers, model-foundry packets, creative engine manifests, research packets, measurement layers, and provider-neutral MCP contracts.
+- Telos: the shared room and engine surface. It reconciles flagship outputs into action receipts, context envelopes, validated context packs, loop ledgers, model-foundry packets, Learning Forge packets, creative engine manifests, research packets, measurement layers, and provider-neutral MCP contracts.
 - Telos Objective Monitor: a rewardspy-inspired objective health surface. It watches proxy scores, independent quality scores, objective components, and improvement windows so an agent workflow cannot look successful merely because the easiest metric rose.
 - Telos Model Foundry: a bounded model-building and self-improving daemon lane. It treats hosted frontier models, local/open-weight runtimes, post-training labs, tools, context envelopes, evals, and receipts as one system, while explicitly not claiming independent frontier-lab pretraining capacity.
+- Telos Learning Forge: a receipt-backed education and research-lab lane. It treats videos and channels as source leads until Gather captures metadata and transcripts, then turns current papers, official sources, benchmarks, toy labs, failure cases, Crucible gates, and executable lab contracts into reusable learning objects.
 
 The five flagships must stay protocol agnostic. Each should remain usable as an individual CLI tool, an MCP server, an IDE or TUI tool, a plugin or superpower, and a full application component.
 
@@ -86,6 +89,8 @@ Fresh Gather receipts used in this pass:
 - arXiv `2603.04428v1`, "Agent Memory Below the Prompt: Persistent Q4 KV Cache for Multi-Agent LLM Inference on Edge Devices", receipt seal `bc8b79bc308aea334c3005dd4f55047da18e8589a283b0bf9ceacac55de01093`.
 - arXiv rendering digest seal `302e5fe3fc931ba06d25f527adec799cd1f59665951dab99a2d22966162eeade`, including `2308.04079v1` 3D Gaussian Splatting and `2402.13827v2` clustering unnecessary 3D Gaussians.
 - Verified YouTube/Gather packet for "The Thermodynamic AI Chip - Thomas Ahle": metadata `MATCH`, transcript `MATCH`, transcript item hash `40a31546b7a391bbb016ba4e3b86a06fc4027636ab85831a0be8b8ca44d6fc56`, digest seal `77bd2c9c39aa0628238f074efe3cd2a3ef64c7d7a373cec23128845f215a59a6`. Telos records this as `telos.research.thermodynamic`, with public-source Normal Computing-adjacent integration modules and explicit no-partnership/no-private-IP boundaries.
+- Learning Forge packet for the supplied AI research video/channel seed corpus: `project-telos.learning-forge/youtube-research-seed/v1` records the links as `UNVERIFIABLE_UNTIL_GATHER_TRANSCRIPT`, joins current lawful source receipts for NeurIPS education/reproducibility/evaluation, planning-agent references, reasoning and software-agent benchmark papers, MCP, and observability, and routes next actions through Gather, Index, Forum, Crucible, and Telos.
+- Learning Forge Labs packet: `project-telos.learning-forge/labs/v1` binds the gathered operator research packet to seven executable lab contracts: tiny autoregressive prediction, accuracy-per-token verification, MCP action receipts, coding-agent contamination checks, explanation faithfulness, spec representation, and stochastic-compute measurement. The Gather docs receipt for the attachment is SHA256 `a022fa3b8ea3d277b97bc058444a7757c90e92b81f06bd90f233d8f2ed66ac48`, digest seal `bc983de187794519b6ab83c9d4c851e458791d9911eecf8b1445551e038f2856`.
 
 Local research inputs used in this pass:
 
@@ -94,6 +99,7 @@ Local research inputs used in this pass:
 - `C:/Users/Zain/.codex/attachments/96becef4-d943-468f-a079-ea06ea4ab6a0/pasted-text.txt`, Gather SHA256 `dc6780ba0e52f00a3e734d15082a539bb2c340a26b9c7048e967ca00c945fdc1`, digest seal `43aa038825eea817a3eb362cb8b54056a8a04ac13d00c91746e6749440ab7edd`.
 - `C:/Users/Zain/.codex/attachments/773e5613-c40e-44b7-b041-3ee739b0c53c/pasted-text.txt`, Gather SHA256 `4aa65ce9bdafb9a8a5f3632b13d5085f4d5d56374398200d0c75033901192990`, digest seal `dc240ab440dd74e53f121945b52638a1630717f0570cbec38afb9a3b00600414`.
 - `C:/Users/Zain/.codex/attachments/919198d0-8a63-4be7-b133-be98ec3fa74b/pasted-text.txt`, Gather SHA256 `3659d9e2fc1fd8a3ac46c0bb9534307e0aaba422f838fc4c416a09baae0b8581`, digest seal `5518523e1064ee8fa82e4c425632149a24e284a8bd9997a614ac03e110f4818d`.
+- `C:/Users/Zain/.codex/attachments/80840147-31f9-47cd-845e-321223462342/pasted-text.txt`, Gather SHA256 `a022fa3b8ea3d277b97bc058444a7757c90e92b81f06bd90f233d8f2ed66ac48`, digest seal `bc983de187794519b6ab83c9d4c851e458791d9911eecf8b1445551e038f2856`.
 
 Protocol sources already represented in the Telos MCP server manifest:
 
@@ -102,7 +108,7 @@ Protocol sources already represented in the Telos MCP server manifest:
 - OpenAI Apps SDK MCP server guide: https://developers.openai.com/apps-sdk/build/mcp-server
 - Anthropic Claude Code MCP docs: https://docs.anthropic.com/en/docs/claude-code/mcp
 
-The MCP freshness lane turns a live dogfood failure into a host contract: a loaded MCP server can be stale even when the source tree and tests are current. Hosts should compare the manifest's status tool, expected version, expected current-status string, `tools/list` hash, and declared behavior probes before trusting tool output; `node demo/mcp-freshness.mjs --observed observed.json` returns `project-telos.mcp-freshness-observation/v1` with `MATCH`, `DRIFT`, or `UNVERIFIABLE`. Drift becomes `stale_mcp_server`, `tool_surface_drift`, `version_drift`, or `behavior_probe_drift`; missing probe payloads become `freshness_probe_unavailable` instead of an invisible operator surprise.
+The MCP freshness lane turns a live dogfood failure into a host contract: a loaded MCP server can be stale even when the source tree and tests are current. Hosts should compare the manifest's status tool, expected version, expected current-status string, `tools/list` hash, and declared behavior probes before trusting tool output; `node demo/mcp-freshness.mjs --observed observed.json` returns `project-telos.mcp-freshness-observation/v1` with `MATCH`, `DRIFT`, or `UNVERIFIABLE`. The current behavior probes include broad Telos routing, private-line Telos routing, focused Index context envelopes, and portable private-line Index maps. Drift becomes `stale_mcp_server`, `tool_surface_drift`, `version_drift`, or `behavior_probe_drift`; missing probe payloads become `freshness_probe_unavailable` instead of an invisible operator surprise.
 
 The CI doctor lane turns GitHub Actions runtime and action-major drift into a native receipt. `node demo/ci-doctor.mjs --summary` records five latest flagship CI runs, 9 workflow files, Node 24 migration markers, first-party action-major baselines, and failure routes through `telos.ci.doctor`; `node demo/ci-doctor.mjs --scan-root .. --summary` rescans local flagship workflow files into `project-telos.ci-doctor-workflow-observation/v1`. Raw logs, tokens, secrets, private paths, workflow bodies, workflow mutation, and GitHub writes are excluded.
 

@@ -15,9 +15,9 @@ Local research packets digested with Gather MCP:
 
 | Packet | Method | SHA256 | Digest seal |
 | --- | --- | --- | --- |
-| `C:\Users\Zain\.codex\attachments\96becef4-d943-468f-a079-ea06ea4ab6a0\pasted-text.txt` | `file-read` | `dc6780ba0e52f00a3e734d15082a539bb2c340a26b9c7048e967ca00c945fdc1` | `43aa038825eea817a3eb362cb8b54056a8a04ac13d00c91746e6749440ab7edd` |
-| `C:\Users\Zain\.codex\attachments\773e5613-c40e-44b7-b041-3ee739b0c53c\pasted-text.txt` | `file-read` | `4aa65ce9bdafb9a8a5f3632b13d5085f4d5d56374398200d0c75033901192990` | `dc240ab440dd74e53f121945b52638a1630717f0570cbec38afb9a3b00600414` |
-| `C:\Users\Zain\.codex\attachments\919198d0-8a63-4be7-b133-be98ec3fa74b\pasted-text.txt` | `file-read` | `3659d9e2fc1fd8a3ac46c0bb9534307e0aaba422f838fc4c416a09baae0b8581` | `5518523e1064ee8fa82e4c425632149a24e284a8bd9997a614ac03e110f4818d` |
+| `local-attachment:96becef4-d943-468f-a079-ea06ea4ab6a0/pasted-text.txt` | `file-read` | `dc6780ba0e52f00a3e734d15082a539bb2c340a26b9c7048e967ca00c945fdc1` | `43aa038825eea817a3eb362cb8b54056a8a04ac13d00c91746e6749440ab7edd` |
+| `local-attachment:773e5613-c40e-44b7-b041-3ee739b0c53c/pasted-text.txt` | `file-read` | `4aa65ce9bdafb9a8a5f3632b13d5085f4d5d56374398200d0c75033901192990` | `dc240ab440dd74e53f121945b52638a1630717f0570cbec38afb9a3b00600414` |
+| `local-attachment:919198d0-8a63-4be7-b133-be98ec3fa74b/pasted-text.txt` | `file-read` | `3659d9e2fc1fd8a3ac46c0bb9534307e0aaba422f838fc4c416a09baae0b8581` | `5518523e1064ee8fa82e4c425632149a24e284a8bd9997a614ac03e110f4818d` |
 
 Repository inventory checked with `gh repo list HarperZ9 --limit 200` from the
 authenticated workstation session:

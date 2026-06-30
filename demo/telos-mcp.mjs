@@ -120,6 +120,16 @@ export const tools = [
     inputSchema: emptyInputSchema
   },
   {
+    name: "telos.learning.forge",
+    description: "Use when video, channel, paper, and benchmark leads need to become receipt-backed learning labs before synthesis. Read-only, zero-auth, no external side effects. Returns a JSON Learning Forge packet.",
+    inputSchema: emptyInputSchema
+  },
+  {
+    name: "telos.learning.labs",
+    description: "Use when Learning Forge source leads need executable lab contracts with measurements, failure cases, and five-flagship ownership. Read-only, zero-auth, no external side effects. Returns a JSON Learning Forge labs packet.",
+    inputSchema: emptyInputSchema
+  },
+  {
     name: "telos.research.seed",
     description: "Use when terse research notes need source-backed seed packets before synthesis. Read-only, zero-auth, no external side effects. Returns JSON research seeds with provenance status.",
     inputSchema: emptyInputSchema
@@ -173,6 +183,11 @@ export const tools = [
     name: "telos.display.calibration",
     description: "Use when display, color, ICC/LUT, artifact refs, or measurement gates need a non-mutating calibration contract. Read-only, zero-auth, no external side effects. Returns a JSON display-calibration contract.",
     inputSchema: emptyInputSchema
+  },
+  {
+    name: "telos.native.control",
+    description: "Use when a host needs the Telos native background-control capability catalog for browser (Chrome DevTools Protocol) and native-app (Windows UI Automation) actuation. Read-only, zero-auth, no external side effects. Returns a JSON capability and verb catalog.",
+    inputSchema: emptyInputSchema
   }
 ];
 
@@ -198,6 +213,8 @@ const toolScripts = new Map([
   ["telos.loop.ledger", ["loop-ledger.mjs"]],
   ["telos.objective.monitor", ["objective-monitor.mjs"]],
   ["telos.model.foundry", ["model-foundry.mjs"]],
+  ["telos.learning.forge", ["learning-forge.mjs"]],
+  ["telos.learning.labs", ["learning-forge-labs.mjs"]],
   ["telos.research.seed", ["research-seed.mjs"]],
   ["telos.research.thermodynamic", ["thermodynamic-ai-chip-receipt.mjs"]],
   ["telos.rendering.research", ["rendering-research.mjs"]],
@@ -208,7 +225,8 @@ const toolScripts = new Map([
   ["telos.revival.registry", ["revival-registry.mjs"]],
   ["telos.second_level.queue", ["second-level-flagship-queue.mjs"]],
   ["telos.workstation.substrate", ["workstation-substrate.mjs"]],
-  ["telos.display.calibration", ["display-calibration.mjs"]]
+  ["telos.display.calibration", ["display-calibration.mjs"]],
+  ["telos.native.control", ["native-control.mjs"]]
 ]);
 
 function runTool(name) {
