@@ -1247,6 +1247,25 @@
         "crucible.measurement_gate",
         "telos.revival.registry"
       ]
+    },
+    {
+      "name": "telos.native.control",
+      "flagship": "telos",
+      "description": "Use when a host needs the Telos native background-control capability catalog for browser (Chrome DevTools Protocol) and native-app (Windows UI Automation) actuation. Read-only, zero-auth, no external side effects. Returns a JSON capability and verb catalog.",
+      "cli": [
+        "node",
+        "demo/native-control.mjs"
+      ],
+      "mcp": {
+        "status": "available",
+        "server": "telos",
+        "method": "tools/call",
+        "tool": "telos.native.control"
+      },
+      "next_actions": [
+        "telos.action.receipt",
+        "telos.workstation.substrate"
+      ]
     }
   ]
 }

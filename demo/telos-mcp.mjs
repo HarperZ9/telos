@@ -173,6 +173,11 @@ export const tools = [
     name: "telos.display.calibration",
     description: "Use when display, color, ICC/LUT, artifact refs, or measurement gates need a non-mutating calibration contract. Read-only, zero-auth, no external side effects. Returns a JSON display-calibration contract.",
     inputSchema: emptyInputSchema
+  },
+  {
+    name: "telos.native.control",
+    description: "Use when a host needs the Telos native background-control capability catalog for browser (Chrome DevTools Protocol) and native-app (Windows UI Automation) actuation. Read-only, zero-auth, no external side effects. Returns a JSON capability and verb catalog.",
+    inputSchema: emptyInputSchema
   }
 ];
 
@@ -208,7 +213,8 @@ const toolScripts = new Map([
   ["telos.revival.registry", ["revival-registry.mjs"]],
   ["telos.second_level.queue", ["second-level-flagship-queue.mjs"]],
   ["telos.workstation.substrate", ["workstation-substrate.mjs"]],
-  ["telos.display.calibration", ["display-calibration.mjs"]]
+  ["telos.display.calibration", ["display-calibration.mjs"]],
+  ["telos.native.control", ["native-control.mjs"]]
 ]);
 
 function runTool(name) {

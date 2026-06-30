@@ -40,9 +40,10 @@ const payload = actionEnvelope({
       "telos.revival.registry",
       "telos.second_level.queue",
       "telos.workstation.substrate",
-      "telos.display.calibration"
+      "telos.display.calibration",
+      "telos.native.control"
     ],
-    current_status: "0.1.0 source registry package with 60-tool five-flagship catalog, CI doctor, CI triage, presentation doctor, accessibility doctor, performance doctor, compatibility doctor, operator doctor, context envelopes, context packs, action receipts, loop ledger, objective monitoring, model foundry, MCP freshness, research seeds, transcript-backed thermodynamic research, rendering research, rendering capabilities, measurement layers, creative engine, creative kernels, revival registry, second-level queue, workstation substrate, display calibration, and native Telos MCP surface"
+    current_status: "0.1.0 source registry package with 61-tool five-flagship catalog, CI doctor, CI triage, presentation doctor, accessibility doctor, performance doctor, compatibility doctor, operator doctor, context envelopes, context packs, action receipts, loop ledger, objective monitoring, model foundry, MCP freshness, research seeds, transcript-backed thermodynamic research, rendering research, rendering capabilities, measurement layers, creative engine, creative kernels, revival registry, second-level queue, workstation substrate, display calibration, native background control of browser and apps, and native Telos MCP surface"
   },
   nextActions: [
     {
