@@ -102,7 +102,7 @@ const badCatalog = {
 
 const badManifest = {
   schema: "wrong",
-  workspace_placeholder: "C:\\Users\\Zain\\secret",
+  workspace_placeholder: "C:\\Users\\Example\\secret",
   transports: [],
   profiles: ["package"],
   hosts: {
@@ -217,7 +217,7 @@ try {
   const real = scanCompatibilitySurface({ generatedAt: "2026-06-29T00:00:03.000Z" });
   assert.equal(real.aggregate.verdict, "MATCH");
   assert.equal(real.metrics.server_count, 5);
-  assert.equal(real.metrics.tool_count, 60);
+  assert.equal(real.metrics.tool_count, 63);
 } finally {
   rmSync(tempRoot, { recursive: true, force: true });
 }

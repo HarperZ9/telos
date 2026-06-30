@@ -4,6 +4,23 @@ All notable changes to Project Telos. Telos is currently a source demo and share
 
 ## Unreleased
 
+- MCP freshness: adds Forum private-line routing and Index portable private-line
+  map behavior probes, so host-loaded MCP servers must prove current routing and
+  nested-workspace map behavior before Telos trusts their output.
+- Learning Forge labs: adds `project-telos.learning-forge/labs/v1`,
+  `node demo/learning-forge-labs.mjs`, and `telos.learning.labs` to turn the
+  gathered operator research packet into seven executable lab contracts with
+  source receipts, runnable commands, failure cases, measurement gates,
+  expected artifacts, and Gather/Index/Forum/Crucible/Telos ownership.
+- Learning Forge intake: adds `demo/research/youtube-learning-forge-receipts.json`
+  for the newest video/channel seed corpus, keeping gathered video metadata,
+  transcript hashes, channel-list hashes, and `UNVERIFIABLE_UNTIL_CROSS_CHECK`
+  research-claim status separate from raw transcript bodies.
+- Learning Forge: adds `project-telos.learning-forge/youtube-research-seed/v1`,
+  `node demo/learning-forge.mjs`, and `telos.learning.forge` to turn operator-provided
+  video/channel/paper/benchmark leads into receipt-backed learning labs with explicit
+  YouTube `UNVERIFIABLE_UNTIL_GATHER_TRANSCRIPT` boundaries, current lawful source
+  receipts, failure cases, and Gather/Index/Forum/Crucible/Telos next actions.
 - CI triage: adds `project-telos.ci-triage/v1`, `node demo/ci-triage.mjs`,
   and `telos.ci.triage` to classify blocking CI failures separately from
   Node runtime migration warnings with sanitized evidence excerpts and typed

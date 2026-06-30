@@ -45,8 +45,16 @@ for (const [name, server] of Object.entries(packet.servers)) {
 }
 
 assert.equal(packet.servers.forum.expected_version, "1.12.0");
-assert.equal(packet.servers.forum.behavior_probes.length, 1);
-assert.deepEqual(packet.servers.forum.behavior_probes[0].expected_subset, {
+assert.equal(packet.servers.forum.behavior_probes.length, 2);
+const forumBroadProbe = packet.servers.forum.behavior_probes
+  .find((probe) => probe.id === "forum-broad-telos-route");
+const forumPrivateLineProbe = packet.servers.forum.behavior_probes
+  .find((probe) => probe.id === "forum-private-line-telos-route");
+assert.deepEqual(forumBroadProbe.expected_subset, {
+  decided: "project-telos",
+  needs_escalation: false
+});
+assert.deepEqual(forumPrivateLineProbe.expected_subset, {
   decided: "project-telos",
   needs_escalation: false
 });
@@ -55,8 +63,12 @@ assert.equal(packet.servers.index.expected_current_status, (
   "2.8.0 workspace atlas, certificates, freshness, benchmarking, "
   + "selection-aware context envelopes, and MCP parity"
 ));
-assert.equal(packet.servers.index.behavior_probes.length, 1);
-assert.deepEqual(packet.servers.index.behavior_probes[0].expected_subset, {
+assert.equal(packet.servers.index.behavior_probes.length, 2);
+const indexEnvelopeProbe = packet.servers.index.behavior_probes
+  .find((probe) => probe.id === "index-context-envelope-selection-freshness");
+const indexMapProbe = packet.servers.index.behavior_probes
+  .find((probe) => probe.id === "index-map-portable-private-line");
+assert.deepEqual(indexEnvelopeProbe.expected_subset, {
   schema: "project-telos.context-envelope/v1",
   tool: "index.context.envelope",
   verification_verdict: "MATCH",
@@ -67,6 +79,9 @@ assert.deepEqual(packet.servers.index.behavior_probes[0].expected_subset, {
   freshness: {
     schema: "index.context-envelope-freshness/v1"
   }
+});
+assert.deepEqual(indexMapProbe.expected_subset, {
+  absolute_paths_included: false
 });
 assert.equal(packet.servers.telos.status_tool, "telos.status");
 
@@ -90,6 +105,12 @@ const observedForumMatch = {
         decided: "project-telos",
         needs_escalation: false
       }
+    },
+    "forum-private-line-telos-route": {
+      result: {
+        decided: "project-telos",
+        needs_escalation: false
+      }
     }
   }
 };
@@ -101,9 +122,10 @@ assert.equal(match.verdict, "MATCH");
 assert.deepEqual(match.failure_codes, []);
 assert.equal(match.observed.tool_hash, packet.servers.forum.expected_tool_hash);
 assert.equal(match.observed.behavior_probes["forum-broad-telos-route"].verdict, "MATCH");
+assert.equal(match.observed.behavior_probes["forum-private-line-telos-route"].verdict, "MATCH");
 
 const behaviorDriftForum = structuredClone(observedForumMatch);
-behaviorDriftForum.behavior_probes["forum-broad-telos-route"].result = {
+behaviorDriftForum.behavior_probes["forum-private-line-telos-route"].result = {
   decided: null,
   needs_escalation: true
 };
@@ -140,6 +162,11 @@ const observedIndexMatch = {
           schema: "index.context-envelope-freshness/v1"
         }
       }
+    },
+    "index-map-portable-private-line": {
+      result: {
+        absolute_paths_included: false
+      }
     }
   }
 };
@@ -151,6 +178,7 @@ assert.equal(
   indexMatch.observed.behavior_probes["index-context-envelope-selection-freshness"].verdict,
   "MATCH"
 );
+assert.equal(indexMatch.observed.behavior_probes["index-map-portable-private-line"].verdict, "MATCH");
 
 const staleIndexBehavior = structuredClone(observedIndexMatch);
 delete staleIndexBehavior.behavior_probes["index-context-envelope-selection-freshness"].result.selection;

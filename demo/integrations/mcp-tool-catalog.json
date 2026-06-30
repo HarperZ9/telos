@@ -1008,6 +1008,50 @@
       ]
     },
     {
+      "name": "telos.learning.forge",
+      "flagship": "telos",
+      "description": "Use when video, channel, paper, and benchmark leads need to become receipt-backed learning labs before synthesis. Read-only, zero-auth, no external side effects. Returns a JSON Learning Forge packet.",
+      "cli": [
+        "node",
+        "demo/learning-forge.mjs"
+      ],
+      "mcp": {
+        "status": "available",
+        "server": "telos",
+        "method": "tools/call",
+        "tool": "telos.learning.forge"
+      },
+      "next_actions": [
+        "gather.run",
+        "index.context",
+        "forum.route",
+        "crucible.assess",
+        "telos.context.pack"
+      ]
+    },
+    {
+      "name": "telos.learning.labs",
+      "flagship": "telos",
+      "description": "Use when Learning Forge source leads need executable lab contracts with measurements, failure cases, and five-flagship ownership. Read-only, zero-auth, no external side effects. Returns a JSON Learning Forge labs packet.",
+      "cli": [
+        "node",
+        "demo/learning-forge-labs.mjs"
+      ],
+      "mcp": {
+        "status": "available",
+        "server": "telos",
+        "method": "tools/call",
+        "tool": "telos.learning.labs"
+      },
+      "next_actions": [
+        "gather.run",
+        "index.context",
+        "forum.route",
+        "crucible.assess",
+        "telos.learning.forge"
+      ]
+    },
+    {
       "name": "telos.research.seed",
       "flagship": "telos",
       "description": "Use when terse research notes need source-backed seed packets before synthesis. Read-only, zero-auth, no external side effects. Returns JSON research seeds with provenance status.",
@@ -1246,6 +1290,25 @@
         "telos.measurement.layers",
         "crucible.measurement_gate",
         "telos.revival.registry"
+      ]
+    },
+    {
+      "name": "telos.native.control",
+      "flagship": "telos",
+      "description": "Use when a host needs the Telos native background-control capability catalog for browser (Chrome DevTools Protocol) and native-app (Windows UI Automation) actuation. Read-only, zero-auth, no external side effects. Returns a JSON capability and verb catalog.",
+      "cli": [
+        "node",
+        "demo/native-control.mjs"
+      ],
+      "mcp": {
+        "status": "available",
+        "server": "telos",
+        "method": "tools/call",
+        "tool": "telos.native.control"
+      },
+      "next_actions": [
+        "telos.action.receipt",
+        "telos.workstation.substrate"
       ]
     }
   ]
