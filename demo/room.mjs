@@ -98,7 +98,7 @@ function collectRoom() {
 function roomEnvelope(room) {
   return actionEnvelope({
     tool: "telos",
-    toolVersion: "demo",
+    toolVersion: "0.1.0",
     command: "room",
     status: room.ready === room.total && room.checksPassed === room.checksTotal ? "MATCH" : "DRIFT",
     native: {

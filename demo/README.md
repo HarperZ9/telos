@@ -42,6 +42,9 @@ node demo/room.mjs
 node demo/catalog.mjs --summary
 node demo/server-manifest.mjs --summary
 node demo/admission-telemetry.mjs
+node demo/context-envelope.mjs
+node demo/action-receipt.mjs
+node demo/loop-ledger.mjs
 node demo/flagship-workflow.mjs
 ```
 
@@ -61,6 +64,11 @@ verdict convention: `allow/block/escalate/require_review` stays separate from
 `match/drift/unverifiable`, and evidence is represented by hashes or redacted
 references instead of raw prompts or tool arguments.
 
+`context-envelope.mjs`, `action-receipt.mjs`, and `loop-ledger.mjs` are the
+Analytical Engine layer for agent work: pack large workspaces into readable
+source references, record action receipts, and persist loop state so a fresh
+context can pick one next action with evidence instead of inheriting confidence.
+
 `flagship-workflow.mjs` dogfoods the five-tool chain by mapping Telos with
 Index, gathering the operator-spine spec with Gather, routing the work through
 Forum, checking smoke claims with Crucible, and reconciling the result through
@@ -69,6 +77,12 @@ the Telos certificate loop.
 `showcase.mjs` starts the OSS Proof Showcase lane. It can rank a fixture-backed
 candidate offline and, when the GitHub CLI is available, scout live public
 issues without making public changes.
+
+`research/youtube-learning-forge-receipts.json` records the current Learning
+Forge seed intake: eight video metadata/transcript receipts and two channel-list
+receipts captured through Gather and yt-dlp. It intentionally stores hashes,
+counts, titles, and refs only; raw transcripts stay in the local `.telos/`
+corpus and are ignored by git.
 - **Node >= 18.** (Tested on Node 25.)
 - **Zero external dependencies.** No `npm install`. The organs the loop needs (`render-nd`, `render-sound`, `sense-core`, `viable-viz`) are vendored into this folder as plain ESM `.mjs` files. Nothing is fetched, nothing is built.
 

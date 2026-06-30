@@ -1,0 +1,369 @@
+{
+  "schema": "project-telos.ci-doctor/v1",
+  "tool": "telos.ci.doctor",
+  "generated_at": "2026-06-29T01:03:03-07:00",
+  "purpose": "Provide a native Project Telos CI compatibility receipt for GitHub Actions runtime, action major, and latest five-flagship CI status.",
+  "source_evidence": {
+    "index": {
+      "tool": "index.map",
+      "root_id": "project-telos-public-root",
+      "generated_at": "2026-06-29T01:02:24-07:00",
+      "repo_count": 52,
+      "class_counts": {
+        "public": 48,
+        "local": 4
+      },
+      "dirty_count": 0,
+      "root_sha256_prefix": "92ef331e0850ccf6",
+      "verdict": "MATCH"
+    },
+    "forum": {
+      "tool": "forum.route",
+      "decided": "project-telos",
+      "confidence": 0.6,
+      "needs_escalation": false,
+      "secondary_candidates": [
+        "ci-cd",
+        "deep-research",
+        "native-cpp"
+      ],
+      "verdict": "MATCH"
+    },
+    "github_actions": {
+      "query_method": "gh run list and gh api release tags",
+      "changelog_ref": "https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/",
+      "verdict": "MATCH"
+    }
+  },
+  "aggregate": {
+    "flagship_count": 5,
+    "workflow_count": 9,
+    "latest_ci_success": 5,
+    "latest_ci_failures": 0,
+    "node24_compatibility": "MATCH",
+    "verdict": "MATCH"
+  },
+  "privacy_boundary": {
+    "raw_logs_included": false,
+    "tokens_or_secrets_included": false,
+    "absolute_private_paths_included": false,
+    "workflow_mutation_performed": false,
+    "github_writes_performed": false,
+    "public_repo_names_included": true,
+    "public_workflow_filenames_included": true
+  },
+  "action_baselines": [
+    {
+      "uses": "actions/checkout",
+      "latest_tag": "v7.0.0",
+      "observed_tags": [
+        "v7"
+      ],
+      "status": "current_major"
+    },
+    {
+      "uses": "actions/setup-node",
+      "latest_tag": "v6.4.0",
+      "observed_tags": [
+        "v6"
+      ],
+      "status": "current_major"
+    },
+    {
+      "uses": "actions/setup-python",
+      "latest_tag": "v6.3.0",
+      "observed_tags": [
+        "v6"
+      ],
+      "status": "current_major"
+    },
+    {
+      "uses": "actions/upload-artifact",
+      "latest_tag": "v7.0.1",
+      "observed_tags": [
+        "v7"
+      ],
+      "status": "current_major"
+    },
+    {
+      "uses": "actions/download-artifact",
+      "latest_tag": "v8.0.1",
+      "observed_tags": [
+        "v7"
+      ],
+      "status": "compatible_floor_with_update_available"
+    }
+  ],
+  "flagships": [
+    {
+      "id": "gather",
+      "repo": "HarperZ9/gather",
+      "workflow_files": [
+        ".github/workflows/ci.yml",
+        ".github/workflows/release.yml"
+      ],
+      "latest_ci": {
+        "workflow": "CI",
+        "run_id": 28356079319,
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "cf0578189eabfc71f3e821a73b840a75a3c92113",
+        "created_at": "2026-06-29T07:34:36Z",
+        "url": "https://github.com/HarperZ9/gather/actions/runs/28356079319"
+      },
+      "recent_window": {
+        "runs_checked": 3,
+        "failures_followed_by_success": 1
+      },
+      "recent_failures_followed_by_success": 1,
+      "compatibility": {
+        "force_node24_flag": true,
+        "checkout_major": "v7",
+        "setup_python_major": "v6",
+        "setup_node_major": null,
+        "node_version": null,
+        "python_versions": [
+          "3.11",
+          "3.12"
+        ],
+        "artifact_actions": [
+          "actions/upload-artifact@v7",
+          "actions/download-artifact@v7"
+        ],
+        "verdict": "MATCH"
+      }
+    },
+    {
+      "id": "crucible",
+      "repo": "HarperZ9/crucible",
+      "workflow_files": [
+        ".github/workflows/ci.yml",
+        ".github/workflows/release.yml"
+      ],
+      "latest_ci": {
+        "workflow": "CI",
+        "run_id": 28355127460,
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "22d0c6110a48eee759f80849e3506a7c046f4c90",
+        "created_at": "2026-06-29T07:14:46Z",
+        "url": "https://github.com/HarperZ9/crucible/actions/runs/28355127460"
+      },
+      "recent_window": {
+        "runs_checked": 3,
+        "failures_followed_by_success": 0
+      },
+      "recent_failures_followed_by_success": 0,
+      "compatibility": {
+        "force_node24_flag": true,
+        "checkout_major": "v7",
+        "setup_python_major": "v6",
+        "setup_node_major": null,
+        "node_version": null,
+        "python_versions": [
+          "3.11",
+          "3.12"
+        ],
+        "artifact_actions": [],
+        "verdict": "MATCH"
+      }
+    },
+    {
+      "id": "index",
+      "repo": "HarperZ9/index",
+      "workflow_files": [
+        ".github/workflows/ci.yml",
+        ".github/workflows/release-artifacts.yml"
+      ],
+      "latest_ci": {
+        "workflow": "CI",
+        "run_id": 28355924193,
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "7a00f776d5f8bc9a7445f748a8587827cd6186ae",
+        "created_at": "2026-06-29T07:31:24Z",
+        "url": "https://github.com/HarperZ9/index/actions/runs/28355924193"
+      },
+      "recent_window": {
+        "runs_checked": 3,
+        "failures_followed_by_success": 0
+      },
+      "recent_failures_followed_by_success": 0,
+      "compatibility": {
+        "force_node24_flag": true,
+        "checkout_major": "v7",
+        "setup_python_major": "v6",
+        "setup_node_major": null,
+        "node_version": null,
+        "python_versions": [
+          "3.12",
+          "3.11"
+        ],
+        "artifact_actions": [
+          "actions/upload-artifact@v7",
+          "actions/download-artifact@v7"
+        ],
+        "verdict": "MATCH"
+      }
+    },
+    {
+      "id": "forum",
+      "repo": "HarperZ9/forum",
+      "workflow_files": [
+        ".github/workflows/ci.yml",
+        ".github/workflows/release.yml"
+      ],
+      "latest_ci": {
+        "workflow": "CI",
+        "run_id": 28356079274,
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "4d6d5b3f9f0f679862014bb1f45be9de32e25ab0",
+        "created_at": "2026-06-29T07:34:36Z",
+        "url": "https://github.com/HarperZ9/forum/actions/runs/28356079274"
+      },
+      "recent_window": {
+        "runs_checked": 3,
+        "failures_followed_by_success": 1
+      },
+      "recent_failures_followed_by_success": 1,
+      "compatibility": {
+        "force_node24_flag": true,
+        "checkout_major": "v7",
+        "setup_python_major": "v6",
+        "setup_node_major": null,
+        "node_version": null,
+        "python_versions": [
+          "3.11",
+          "3.12"
+        ],
+        "artifact_actions": [
+          "actions/upload-artifact@v7",
+          "actions/download-artifact@v7"
+        ],
+        "verdict": "MATCH"
+      }
+    },
+    {
+      "id": "telos",
+      "repo": "HarperZ9/telos",
+      "workflow_files": [
+        ".github/workflows/ci.yml"
+      ],
+      "latest_ci": {
+        "workflow": "CI",
+        "run_id": 28357346847,
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "a4fc30ff1ec76fe9972739fe0ffa0347768c5934",
+        "created_at": "2026-06-29T08:00:19Z",
+        "url": "https://github.com/HarperZ9/telos/actions/runs/28357346847"
+      },
+      "recent_window": {
+        "runs_checked": 3,
+        "failures_followed_by_success": 0
+      },
+      "recent_failures_followed_by_success": 0,
+      "compatibility": {
+        "force_node24_flag": true,
+        "checkout_major": "v7",
+        "setup_python_major": "v6",
+        "setup_node_major": "v6",
+        "node_version": "24",
+        "python_versions": [
+          "3.11"
+        ],
+        "artifact_actions": [],
+        "verdict": "MATCH"
+      }
+    }
+  ],
+  "compatibility_checks": [
+    {
+      "id": "latest-ci-green",
+      "criterion": "Each latest flagship CI run is completed with success.",
+      "evidence_ref": "flagships[].latest_ci",
+      "verdict": "MATCH"
+    },
+    {
+      "id": "node24-force-flag",
+      "criterion": "Every workflow file includes FORCE_JAVASCRIPT_ACTIONS_TO_NODE24 for runner/runtime migration visibility.",
+      "evidence_ref": "flagships[].compatibility.force_node24_flag",
+      "verdict": "MATCH"
+    },
+    {
+      "id": "node-setup-major",
+      "criterion": "Node setup exists only where needed and uses actions/setup-node v6 with node-version 24.",
+      "evidence_ref": "telos.compatibility.setup_node_major",
+      "verdict": "MATCH"
+    },
+    {
+      "id": "python-setup-major",
+      "criterion": "Python workflows use actions/setup-python v6.",
+      "evidence_ref": "flagships[].compatibility.setup_python_major",
+      "verdict": "MATCH"
+    },
+    {
+      "id": "artifact-action-majors",
+      "criterion": "Artifact actions are on Node-24-compatible major floors; download-artifact has a newer major available for a follow-up modernization pass.",
+      "evidence_ref": "action_baselines",
+      "verdict": "MATCH"
+    },
+    {
+      "id": "workflow-privacy",
+      "criterion": "The register stores workflow filenames and public run metadata only, without raw failure payloads or secrets.",
+      "evidence_ref": "privacy_boundary",
+      "verdict": "MATCH"
+    }
+  ],
+  "failure_classes": [
+    {
+      "code": "node_runtime_drift",
+      "meaning": "A workflow uses a JavaScript action major below the Node 24 compatibility floor or omits the force flag during migration.",
+      "route_to": [
+        "index.map",
+        "telos.ci.doctor",
+        "crucible.assess"
+      ]
+    },
+    {
+      "code": "ci_regression",
+      "meaning": "The latest CI run for a flagship is failing after a pushed change.",
+      "route_to": [
+        "forum.route",
+        "crucible.assess",
+        "telos.workflow"
+      ]
+    },
+    {
+      "code": "action_major_drift",
+      "meaning": "A first-party action has a newer major than the local workflow floor.",
+      "route_to": [
+        "index.context",
+        "crucible.review"
+      ]
+    },
+    {
+      "code": "release_action_unverified",
+      "meaning": "A third-party release action cannot be judged from first-party GitHub action release baselines alone.",
+      "route_to": [
+        "gather.docs",
+        "crucible.review"
+      ]
+    },
+    {
+      "code": "workflow_evidence_unjoinable",
+      "meaning": "Workflow scan evidence cannot be joined to a repository, CI run, or action baseline.",
+      "route_to": [
+        "index.map",
+        "forum.ledger.summary",
+        "telos.context.pack"
+      ]
+    }
+  ],
+  "next_actions": [
+    "Pair the local workflow scanner with gh run metadata for a fully refreshed CI doctor packet.",
+    "Add Crucible criteria fixtures for node_runtime_drift, ci_regression, action_major_drift, and workflow_evidence_unjoinable.",
+    "Promote release-surface-scanner into a second-level flagship lane for cross-repo workflow modernization."
+  ]
+}

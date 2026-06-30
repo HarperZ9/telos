@@ -1,6 +1,6 @@
 {
   "schema": "project-telos.mcp-server-manifest/v1",
-  "verified_on": "2026-06-27",
+  "verified_on": "2026-06-28",
   "workspace_placeholder": "${PROJECT_TELOS_PUBLIC}",
   "transports": [
     "stdio"
@@ -58,18 +58,28 @@
         "gather.arxiv",
         "gather.run"
       ],
+      "freshness": {
+        "status_tool": "gather.status",
+        "expected_version": "1.5.0",
+        "expected_current_status": "1.5.0 completion floor with Project Telos operator-spine MCP parity",
+        "failure_codes": [
+          "stale_mcp_server",
+          "tool_surface_drift",
+          "version_drift",
+          "behavior_probe_drift",
+          "launch_profile_unresolved",
+          "freshness_probe_unavailable"
+        ]
+      },
       "profiles": {
         "source_checkout": {
           "command": "python",
           "args": [
             "-m",
-            "gather.cli",
+            "gather",
             "mcp"
           ],
-          "cwd": "${PROJECT_TELOS_PUBLIC}/gather",
-          "env": {
-            "PYTHONPATH": "${PROJECT_TELOS_PUBLIC}/gather/src"
-          }
+          "cwd": "${PROJECT_TELOS_PUBLIC}/gather"
         },
         "package": {
           "command": "gather",
@@ -86,8 +96,30 @@
         "crucible.status",
         "crucible.doctor",
         "crucible.assess",
-        "crucible.recheck"
+        "crucible.recheck",
+        "crucible.run",
+        "crucible.measurement_gate",
+        "crucible.review",
+        "crucible.report",
+        "crucible.batch",
+        "crucible.registry",
+        "crucible.drift",
+        "crucible.refine",
+        "crucible.verdicts"
       ],
+      "freshness": {
+        "status_tool": "crucible.status",
+        "expected_version": "1.1.0",
+        "expected_current_status": "1.1.0 operator floor with run, review, recheck, and MCP parity",
+        "failure_codes": [
+          "stale_mcp_server",
+          "tool_surface_drift",
+          "version_drift",
+          "behavior_probe_drift",
+          "launch_profile_unresolved",
+          "freshness_probe_unavailable"
+        ]
+      },
       "profiles": {
         "source_checkout": {
           "command": "python",
@@ -115,9 +147,68 @@
       "expected_tools": [
         "index.map",
         "index.context",
+        "index.context.envelope",
         "index.status",
         "index.doctor"
       ],
+      "auxiliary_tools": [
+        "index_graph",
+        "index_focus",
+        "index_verify",
+        "index_router",
+        "index_internals"
+      ],
+      "freshness": {
+        "status_tool": "index.status",
+        "expected_version": "2.8.0",
+        "expected_current_status": "2.8.0 workspace atlas, certificates, freshness, benchmarking, selection-aware context envelopes, and MCP parity",
+        "failure_codes": [
+          "stale_mcp_server",
+          "tool_surface_drift",
+          "version_drift",
+          "behavior_probe_drift",
+          "launch_profile_unresolved",
+          "freshness_probe_unavailable"
+        ],
+        "behavior_probes": [
+          {
+            "id": "index-context-envelope-selection-freshness",
+            "tool": "index.context.envelope",
+            "arguments": {
+              "root": "${PROJECT_TELOS_PUBLIC}",
+              "budget": 700,
+              "focus": "index",
+              "hops": 0
+            },
+            "expected_subset": {
+              "schema": "project-telos.context-envelope/v1",
+              "tool": "index.context.envelope",
+              "verification_verdict": "MATCH",
+              "selection": {
+                "mode": "focused",
+                "retained_names": [
+                  "index"
+                ]
+              },
+              "freshness": {
+                "schema": "index.context-envelope-freshness/v1"
+              }
+            },
+            "rationale": "Catch stale host-loaded Index servers that expose context envelopes without selection summaries and freshness roots."
+          },
+          {
+            "id": "index-map-portable-private-line",
+            "tool": "index.map",
+            "arguments": {
+              "root": "${PROJECT_TELOS_PRIVATE_LINE}"
+            },
+            "expected_subset": {
+              "absolute_paths_included": false
+            },
+            "rationale": "Catch stale or wedged host-loaded Index servers on nested private-line workspaces while preserving portable output."
+          }
+        ]
+      },
       "profiles": {
         "source_checkout": {
           "command": "python",
@@ -149,20 +240,65 @@
         "forum.status",
         "forum.doctor"
       ],
+      "auxiliary_tools": [
+        "submit",
+        "route",
+        "plan",
+        "status",
+        "verify",
+        "ledger_get",
+        "forum.submit"
+      ],
+      "freshness": {
+        "status_tool": "forum.status",
+        "expected_version": "1.12.0",
+        "expected_current_status": "1.12.0 per-task context with 28-lane Project Telos roster, model-foundry daemon routing, and MCP parity",
+        "failure_codes": [
+          "stale_mcp_server",
+          "tool_surface_drift",
+          "version_drift",
+          "behavior_probe_drift",
+          "launch_profile_unresolved",
+          "freshness_probe_unavailable"
+        ],
+        "behavior_probes": [
+          {
+            "id": "forum-broad-telos-route",
+            "tool": "forum.route",
+            "arguments": {
+              "text": "Continue improving the five Project Telos flagship tools as protocol agnostic enterprise AI workflow tools, with MCP CLI compatibility, accessibility, performance, current rendering research, and second brain integration."
+            },
+            "expected_subset": {
+              "decided": "project-telos",
+              "needs_escalation": false
+            },
+            "rationale": "Catch stale host-loaded Forum servers that still escalate broad Project Telos operator work after the decisive-hit router fix."
+          },
+          {
+            "id": "forum-private-line-telos-route",
+            "tool": "forum.route",
+            "arguments": {
+              "text": "Continue advancing Seed, Kun, Sofer, ORCA, and behavior-transform.io toward private-line flagship state while preserving safe publication boundaries, native doctor receipts, CI health, MCP CLI compatibility, and enterprise presentation."
+            },
+            "expected_subset": {
+              "decided": "project-telos",
+              "needs_escalation": false
+            },
+            "rationale": "Catch stale host-loaded Forum servers that do not recognize private-line flagship tool names as Project Telos work."
+          }
+        ]
+      },
       "profiles": {
         "source_checkout": {
           "command": "python",
           "args": [
             "-m",
-            "forum.cli",
+            "forum",
             "mcp",
             "--ledger",
             "${PROJECT_TELOS_PUBLIC}/.telos/forum-ledger"
           ],
-          "cwd": "${PROJECT_TELOS_PUBLIC}/forum",
-          "env": {
-            "PYTHONPATH": "${PROJECT_TELOS_PUBLIC}/forum/src"
-          }
+          "cwd": "${PROJECT_TELOS_PUBLIC}/forum"
         },
         "package": {
           "command": "forum",
@@ -174,7 +310,7 @@
     },
     "telos": {
       "flagship": "telos",
-      "description": "Project Telos shared room, workflow, catalog, and server manifest.",
+      "description": "Project Telos shared room, creative engine, workflow, catalog, and server manifest.",
       "expected_tools": [
         "telos.status",
         "telos.doctor",
@@ -182,9 +318,50 @@
         "telos.catalog",
         "telos.workflow",
         "telos.server.manifest",
+        "telos.mcp.freshness",
+        "telos.ci.doctor",
+        "telos.ci.triage",
+        "telos.presentation.doctor",
+        "telos.accessibility.doctor",
+        "telos.performance.doctor",
+        "telos.compatibility.doctor",
+        "telos.operator.doctor",
         "telos.admission.telemetry",
+        "telos.context.envelope",
+        "telos.context.pack",
+        "telos.action.receipt",
+        "telos.loop.ledger",
+        "telos.objective.monitor",
+        "telos.model.foundry",
+        "telos.learning.forge",
+        "telos.learning.labs",
+        "telos.research.seed",
+        "telos.research.thermodynamic",
+        "telos.rendering.research",
+        "telos.rendering.capabilities",
+        "telos.measurement.layers",
+        "telos.creative.engine",
+        "telos.creative.kernels",
+        "telos.revival.registry",
+        "telos.second_level.queue",
+        "telos.workstation.substrate",
+        "telos.display.calibration",
+        "telos.native.control",
         "telos.showcase.scout"
       ],
+      "freshness": {
+        "status_tool": "telos.status",
+        "expected_version": "0.1.0",
+        "expected_current_status": "0.1.0 source registry package with 64-tool five-flagship catalog, CI doctor, CI triage, presentation doctor, accessibility doctor, performance doctor, compatibility doctor, operator doctor, context envelopes, context packs, action receipts, loop ledger, objective monitoring, model foundry, Learning Forge, executable Learning Forge labs, OSS Proof Showcase scout, MCP freshness, research seeds, transcript-backed thermodynamic research, rendering research, rendering capabilities, measurement layers, creative engine, creative kernels, revival registry, second-level queue, workstation substrate, display calibration, native background control of browser and apps, and native Telos MCP surface",
+        "failure_codes": [
+          "stale_mcp_server",
+          "tool_surface_drift",
+          "version_drift",
+          "behavior_probe_drift",
+          "launch_profile_unresolved",
+          "freshness_probe_unavailable"
+        ]
+      },
       "profiles": {
         "source_checkout": {
           "command": "node",

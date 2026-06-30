@@ -1,0 +1,256 @@
+{
+  "schema": "project-telos.rendering-capabilities/v1",
+  "tool": "telos.rendering.capabilities",
+  "generated_at": "2026-06-28T00:00:00.000Z",
+  "purpose": "Host-neutral renderer selection for Telos Studio, shared-scene apps, scientific demos, and receipt-backed creative workflows.",
+  "selection_order": [
+    "webgpu-splat-clustered",
+    "webgl2-cluster-preview",
+    "canvas2d-receipt-renderer",
+    "static-artifact-receipt"
+  ],
+  "host_signals": [
+    "navigator.gpu",
+    "webgl2_context",
+    "canvas2d_context",
+    "prefers_reduced_motion",
+    "memory_budget_mb",
+    "frame_budget_ms",
+    "screenshot_export_required",
+    "offline_or_ci_host"
+  ],
+  "renderer_profiles": [
+    {
+      "profile_id": "webgpu-splat-clustered",
+      "label": "WebGPU splat and clustered lighting prototype",
+      "evidence_status": "MATCH",
+      "readiness": "prototype-gated",
+      "required_host_signals": [
+        "navigator.gpu",
+        "wgsl_shader_module",
+        "gpu_buffer_budget"
+      ],
+      "supports": [
+        "3d-gaussian-splatting",
+        "clustered-forward-lighting",
+        "webgpu-compute",
+        "measurement-overlays",
+        "screenshot-export"
+      ],
+      "fallback_profile": "webgl2-cluster-preview",
+      "unavailable_failure_code": "renderer_webgpu_unavailable",
+      "source_receipts": [
+        {
+          "title": "WebGPU Working Draft",
+          "url": "https://www.w3.org/TR/webgpu/",
+          "source_kind": "official-web-standard",
+          "resolved_at": "2026-06-28T00:00:00Z",
+          "provenance_class": "lawful_source",
+          "receipt_hash": "sha256:05521466a89ef41e7ad5bf04d41803d1c589b43cd7314973f5e1f57f06336385"
+        },
+        {
+          "title": "WGSL Candidate Recommendation Draft",
+          "url": "https://www.w3.org/TR/WGSL/",
+          "source_kind": "official-web-standard",
+          "resolved_at": "2026-06-28T00:00:00Z",
+          "provenance_class": "lawful_source",
+          "receipt_hash": "sha256:a97d006086649bd55eb50b1c633cba9804c93368b6a488bbb957964f10e6c823"
+        },
+        {
+          "title": "3D Gaussian Splatting for Real-Time Radiance Field Rendering",
+          "url": "https://arxiv.org/abs/2308.04079",
+          "source_kind": "open-preprint",
+          "resolved_at": "2026-06-28T00:00:00Z",
+          "provenance_class": "lawful_source",
+          "receipt_hash": "sha256:f116c26b1f2a854f0c0ba50fb81bf04e980e3deb2bd925f6e0d33fd40f36777d"
+        },
+        {
+          "title": "WebSplatter: Gaussian Splatting for the Web",
+          "url": "https://arxiv.org/abs/2602.03207",
+          "source_kind": "open-preprint",
+          "resolved_at": "2026-06-28T00:00:00Z",
+          "provenance_class": "lawful_source",
+          "receipt_hash": "sha256:dfa449f95b42d13c6d839d06995396412d65028ab68217e3379626aef716609a"
+        },
+        {
+          "title": "Clustered Deferred and Forward Shading",
+          "url": "https://diglib.eg.org/items/6342d4d6-5220-4376-a5c6-a153058f4a3c",
+          "source_kind": "open-publication-record",
+          "resolved_at": "2026-06-28T00:00:00Z",
+          "provenance_class": "lawful_source",
+          "receipt_hash": "sha256:66085ed9d9dd36ceffbbe32047b8cfc67199ae6974aafe2eed2c0aa338447209"
+        }
+      ],
+      "acceptance_gates": [
+        {
+          "gate": "benchmark_required",
+          "criterion": "Promotion beyond prototype requires repeatable frame-time, memory, load-time, and screenshot-stability receipts on at least one WebGPU browser host."
+        },
+        {
+          "gate": "a11y_fallback_required",
+          "criterion": "Keyboard controls, reduced-motion behavior, textual state, and a non-WebGPU fallback must ship with the WebGPU path."
+        },
+        {
+          "gate": "asset_provenance_required",
+          "criterion": "Splat assets require source, license, transform, hash, and export receipts before entering enterprise workflows."
+        }
+      ]
+    },
+    {
+      "profile_id": "webgl2-cluster-preview",
+      "label": "WebGL2 clustered preview renderer",
+      "evidence_status": "MATCH",
+      "readiness": "demo-ready",
+      "required_host_signals": [
+        "webgl2_context"
+      ],
+      "supports": [
+        "clustered-light-preview",
+        "retro-cgi",
+        "measurement-overlays",
+        "screenshot-export"
+      ],
+      "fallback_profile": "canvas2d-receipt-renderer",
+      "unavailable_failure_code": "renderer_webgl2_unavailable",
+      "source_receipts": [
+        {
+          "title": "Clustered Deferred and Forward Shading",
+          "url": "https://diglib.eg.org/items/6342d4d6-5220-4376-a5c6-a153058f4a3c",
+          "source_kind": "open-publication-record",
+          "resolved_at": "2026-06-28T00:00:00Z",
+          "provenance_class": "lawful_source",
+          "receipt_hash": "sha256:66085ed9d9dd36ceffbbe32047b8cfc67199ae6974aafe2eed2c0aa338447209"
+        }
+      ],
+      "acceptance_gates": [
+        {
+          "gate": "overlay_legibility",
+          "criterion": "Lighting and depth cues must not obscure hashes, measurements, verdicts, or controls."
+        },
+        {
+          "gate": "deterministic_export",
+          "criterion": "The same scene spec and seed must recreate the same receipt and screenshot envelope in CI."
+        }
+      ]
+    },
+    {
+      "profile_id": "canvas2d-receipt-renderer",
+      "label": "Canvas 2D receipt renderer",
+      "evidence_status": "MATCH",
+      "readiness": "live",
+      "required_host_signals": [
+        "canvas2d_context"
+      ],
+      "supports": [
+        "raster-effects",
+        "poster-layout",
+        "dither",
+        "pixel-sorting",
+        "ascii-preview",
+        "receipt-export"
+      ],
+      "fallback_profile": "static-artifact-receipt",
+      "unavailable_failure_code": "renderer_canvas2d_unavailable",
+      "source_receipts": [
+        {
+          "title": "Project Telos effects engine",
+          "url": "demo/effects-engine.js",
+          "source_kind": "local-source",
+          "resolved_at": "2026-06-28T00:00:00Z",
+          "provenance_class": "lawful_source",
+          "receipt_hash": "sha256:c89fc024dccf98dddbe2493a71fd1cdb623e5fbbf5af256d146ac0ae93274baf"
+        }
+      ],
+      "acceptance_gates": [
+        {
+          "gate": "text_equivalent",
+          "criterion": "Every canvas state must expose mode, seed, active layers, fallback, and receipt text."
+        },
+        {
+          "gate": "reduced_motion",
+          "criterion": "Animation must pause or step deterministically when reduced motion is requested."
+        }
+      ]
+    },
+    {
+      "profile_id": "static-artifact-receipt",
+      "label": "Static artifact and JSON receipt",
+      "evidence_status": "MATCH",
+      "readiness": "live",
+      "required_host_signals": [
+        "file_artifact"
+      ],
+      "supports": [
+        "ci",
+        "tui",
+        "screen-reader-summary",
+        "readme-artifact",
+        "json-replay"
+      ],
+      "fallback_profile": null,
+      "unavailable_failure_code": "renderer_static_unavailable",
+      "source_receipts": [
+        {
+          "title": "Project Telos creative engine manifest",
+          "url": "demo/integrations/creative-engine-manifest.json",
+          "source_kind": "local-source",
+          "resolved_at": "2026-06-28T00:00:00Z",
+          "provenance_class": "lawful_source",
+          "receipt_hash": "sha256:7b9d3950533ce935a405bd5264d7d4dc8cab18755ab50868aa651c8310324583"
+        }
+      ],
+      "acceptance_gates": [
+        {
+          "gate": "receipt_first",
+          "criterion": "The static path must preserve scene spec, source refs, hashes, verdicts, and fallback reason."
+        },
+        {
+          "gate": "no_raw_private_payload",
+          "criterion": "Static export must not require raw prompts, raw private assets, or verifier internals."
+        }
+      ]
+    }
+  ],
+  "failure_codes": [
+    "renderer_webgpu_unavailable",
+    "renderer_webgl2_unavailable",
+    "renderer_canvas2d_unavailable",
+    "renderer_static_unavailable",
+    "benchmark_missing",
+    "asset_provenance_missing",
+    "missing_a11y_fallback",
+    "missing_receipt",
+    "unsupported_host"
+  ],
+  "privacy_boundary": {
+    "raw_assets_required_for_interop": false,
+    "raw_prompts_required_for_interop": false,
+    "raw_gpu_traces_required_for_interop": false,
+    "required_export_fields": [
+      "selected_profile",
+      "fallback_chain",
+      "failure_code",
+      "scene_spec_hash",
+      "result_hash",
+      "evidence_refs",
+      "verification_verdict"
+    ]
+  },
+  "next_actions": [
+    {
+      "tool": "index.context",
+      "action": "map-renderer-seams",
+      "reason": "Find the narrowest WebGPU/WebGL/canvas backend interface before implementation."
+    },
+    {
+      "tool": "gather.docs",
+      "action": "attach-current-renderer-docs",
+      "reason": "Refresh WebGPU, WGSL, SuperSplat, and clustered-rendering source receipts before benchmark work."
+    },
+    {
+      "tool": "crucible.assess",
+      "action": "verify-renderer-gates",
+      "reason": "Fail closed on missing fallback, missing receipt, hidden measurement overlays, and unsupported host paths."
+    }
+  ]
+}

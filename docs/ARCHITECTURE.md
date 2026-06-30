@@ -170,6 +170,14 @@ Telos is one body, but the organs are built and proven as separate, real tools. 
 - **Verification, viable-viz and the reconcile.** The live reconcile loop that recovers an invariant, checks it against the external criterion, and emits the Certificate. This is the mechanism above, running. *The demo ships from here.*
 - **Generation, studio-engine.** A generation engine exposed over a local REST API. It proposes, and the reconcile checks. Generation without a verifier just agrees with itself, so generation is always paired with the reconcile.
 
+### Studio specimens, overlays, and model visibility
+
+The Studio uses fractals, flow fields, OBJ imports, sound, and geometry as practical subject matter. They are not magic AI interfaces. They are controllable specimens: visual or simulated worlds a person and model can inspect together while Telos records measurements, constants, projections, and verifier outcomes.
+
+The target surface is half editor/renderer and half measurement overlay. A regular local or hosted LLM can attach through the same protocol seams, but the truthful data it receives are the projections and measurements, not hidden access to its private state.
+
+For model-state questions, Telos should expose observable proxies instead of overclaiming: prompt and context spans, retrieved cells, token and tool timelines, verifier verdicts, salience maps over the projected scene, changed constants, budget pressure, and bias or drift probes. Closed models do not reveal their internal activation zones. Open-weight or instrumented models may provide deeper traces, but those traces are evidence fields with provenance and uncertainty, not a claim that the system can see a static mind state.
+
 The shared tools underneath.
 
 - **render-nd** projects a structure (for example an n-dimensional polytope) into bytes you can perceive.

@@ -1,0 +1,197 @@
+{
+  "schema": "project-telos.research-intake/youtube-source-leads-v1",
+  "generated_at": "2026-06-28T21:20:00.000Z",
+  "tool": "gather.video",
+  "purpose": "Receipt-only source leads for Telos as a mathematical, physical, rendering, and educator-facing creation engine.",
+  "freshness": {
+    "metadata_observed_at": "2026-06-28T14:20:00-07:00",
+    "method": "yt-dlp --skip-download --print compact metadata",
+    "raw_transcripts_stored": false,
+    "raw_video_stored": false
+  },
+  "mission": {
+    "operator_note": "Build AI and LLM workflows, including live-state models, that can assist mathematicians like Inigo Quilez, exceptional physicists and mathematicians, and educators who need advanced tools and demos.",
+    "normalized_concepts": [
+      "painting-with-maths",
+      "procedural-shaders",
+      "mathematical-visualization",
+      "world-models",
+      "abstraction-and-reasoning",
+      "gpu-kernels",
+      "symmetry-anomaly-gauging",
+      "educator-tools",
+      "receipt-backed-demos"
+    ],
+    "telos_implications": [
+      "Creative tools must expose formulas, transforms, parameters, visual output, and verification receipts in the same workspace.",
+      "Math and physics demos need replayable scene specs, measurement overlays, exportable artifacts, and readable failure states.",
+      "Live-state models should receive structured observations and tool results, not hidden context or unverifiable screenshots.",
+      "Educator surfaces should support explain, perturb, replay, compare, and export loops without losing provenance."
+    ]
+  },
+  "channel_leads": [
+    {
+      "url": "https://www.youtube.com/@InigoQuilez",
+      "channel": "Inigo Quilez",
+      "channel_id": "UCdmAhiG8HQDlz8uyekw4ENw",
+      "observed_subscriber_count": 104000,
+      "metadata_sha256": "a7e4e2711770375dc67467f7af7e94d20695fc7f29d2d1977f39580eadc26a72",
+      "provenance_class": "lawful_source_lead",
+      "evidence_status": "MATCH",
+      "notes": "Channel metadata observed through yt-dlp on 2026-06-28; use as a source lead and resolve individual claims through primary videos, articles, repositories, papers, or reproducible demos."
+    }
+  ],
+  "inputs": [
+    "https://www.youtube.com/watch?v=DAMiS2PGTEE",
+    "https://www.youtube.com/watch?v=tv17bmE2FNY&t=3s",
+    "https://www.youtube.com/watch?v=TUzgnbhdo2Y&t=1338s",
+    "https://www.youtube.com/watch?v=21ZB0yhILZo&t=3s",
+    "https://www.youtube.com/watch?v=eFgknPFK-g0&t=14s",
+    "https://www.youtube.com/watch?v=XyUFPHRQtyw&t=33s",
+    "https://www.youtube.com/watch?v=rf1FKWaSpEY&t=35s",
+    "https://www.youtube.com/watch?v=5pieVHmlbyk&t=29s",
+    "https://www.youtube.com/@InigoQuilez"
+  ],
+  "results": [
+    {
+      "id": "DAMiS2PGTEE",
+      "title": "Coding a procedural brick tower",
+      "uploader": "Inigo Quilez",
+      "upload_date": "20260619",
+      "duration": "44:50",
+      "url": "https://www.youtube.com/watch?v=DAMiS2PGTEE",
+      "metadata_sha256": "0c57996b72b80974d495d9b3d9383401b8aac74a2b8f846ea60c8b1aa0d1510a",
+      "lead_topics": [
+        "procedural geometry",
+        "shader construction",
+        "mathematical art",
+        "live coding"
+      ],
+      "telos_adoption": "Use as a model for formula-visible procedural construction where each stage can emit parameters, image receipts, and replay handles."
+    },
+    {
+      "id": "tv17bmE2FNY",
+      "title": "Will JEPA Fail & World Models are just Tools?",
+      "uploader": "Discover AI",
+      "upload_date": "20260628",
+      "duration": "37:53",
+      "url": "https://www.youtube.com/watch?v=tv17bmE2FNY",
+      "metadata_sha256": "f2ca484ce65766f1f08e2d216d129d10c05f518bb8727268f98ddffa3c0f4420",
+      "lead_topics": [
+        "world models",
+        "live-state models",
+        "tool-mediated cognition"
+      ],
+      "telos_adoption": "Treat world-model claims as source leads for structured state, observation, and action receipts rather than as validated model-performance claims."
+    },
+    {
+      "id": "TUzgnbhdo2Y",
+      "title": "Fran\u00e7ois Chollet: Keras, Deep Learning, and the Progress of AI",
+      "uploader": "MindVoice Production",
+      "upload_date": "20260627",
+      "duration": "2:00:06",
+      "url": "https://www.youtube.com/watch?v=TUzgnbhdo2Y",
+      "metadata_sha256": "9bd38880e15b2dad7296adc07ee1635e9616900918c894947d9274b345edf287",
+      "lead_topics": [
+        "abstraction",
+        "generalization",
+        "AI progress",
+        "developer tooling"
+      ],
+      "telos_adoption": "Use as a lead for evaluating whether Telos demos test abstraction and generalization through perturbable tasks rather than static prompt recall."
+    },
+    {
+      "id": "21ZB0yhILZo",
+      "title": "DeepSeek V4 DeepSpec Is Here & A New GLM Model Matches Mythos!",
+      "uploader": "Universe of AI",
+      "upload_date": "20260628",
+      "duration": "8:32",
+      "url": "https://www.youtube.com/watch?v=21ZB0yhILZo",
+      "metadata_sha256": "4acabcf814f8da5a8033ad60b2df753f8f5e3ebcea59dbb69b479a37ffa12dad",
+      "lead_topics": [
+        "model releases",
+        "spec generation",
+        "benchmark claims"
+      ],
+      "telos_adoption": "Keep model-release claims behind Crucible gates: current metadata is a source lead, not evidence of benchmark parity."
+    },
+    {
+      "id": "eFgknPFK-g0",
+      "title": "DeepSeek Just Made Every LLM Faster, For Free",
+      "uploader": "Prompt Engineering",
+      "upload_date": "20260628",
+      "duration": "11:02",
+      "url": "https://www.youtube.com/watch?v=eFgknPFK-g0",
+      "metadata_sha256": "a36a5e7e1633042af02059f1ead75ce780b3f45a6a88e67d6221c277a5d78cb2",
+      "lead_topics": [
+        "LLM efficiency",
+        "inference performance",
+        "token economy"
+      ],
+      "telos_adoption": "Use as an efficiency lead only after fresh primary-source and local benchmark receipts; Telos should separate performance claims from demo inspiration."
+    },
+    {
+      "id": "XyUFPHRQtyw",
+      "title": "cuda-oxide: Pure Rust GEMM on NVIDIA Blackwell. Are we SoL yet?",
+      "uploader": "regionaltantrums",
+      "upload_date": "20260628",
+      "duration": "1:14:17",
+      "url": "https://www.youtube.com/watch?v=XyUFPHRQtyw",
+      "metadata_sha256": "81d29774a886373d69c9c72ed1c65d12e2e00778580376cf03b6d61fa237b5d4",
+      "lead_topics": [
+        "GPU kernels",
+        "Rust",
+        "GEMM",
+        "Blackwell",
+        "compute substrate"
+      ],
+      "telos_adoption": "Use as a GPU-compute substrate lead for future local kernels, renderer benchmarks, and model/tool acceleration receipts."
+    },
+    {
+      "id": "rf1FKWaSpEY",
+      "title": "Nathan Seiberg: Symmetry, Anomaly, Gauging, Proliferation, and Condensation",
+      "uploader": "Simons Foundation",
+      "upload_date": "20260309",
+      "duration": "58:48",
+      "url": "https://www.youtube.com/watch?v=rf1FKWaSpEY",
+      "metadata_sha256": "defa2c769043960cb5be7ecdc71118b426d2e1069a41bc2acde9d3c0f4b9c0d8",
+      "lead_topics": [
+        "symmetry",
+        "anomaly",
+        "gauging",
+        "condensed matter",
+        "field theory"
+      ],
+      "telos_adoption": "Use as a high-end physics education lead: the engine should support diagrams, state transitions, invariants, and source-backed explanatory receipts."
+    },
+    {
+      "id": "5pieVHmlbyk",
+      "title": "The Thermodynamic AI Chip \u00b7 Thomas Ahle",
+      "uploader": "Machine Learning Street Talk",
+      "upload_date": "20260628",
+      "duration": "1:02:59",
+      "url": "https://www.youtube.com/watch?v=5pieVHmlbyk",
+      "metadata_sha256": "6510bd253925321c90f5ac0cd4e5e50f4d10cc43d032de299ad1d35a1f84a144",
+      "lead_topics": [
+        "thermodynamic computing",
+        "AI hardware",
+        "energy efficiency",
+        "physical computation",
+        "chip architecture"
+      ],
+      "telos_adoption": "Use as a hardware-and-physics lead for Telos performance models, local hardware scaling policy, and energy-aware renderer/model orchestration after primary-source and transcript receipts are gathered."
+    }
+  ],
+  "claim_boundaries": [
+    "This ledger proves current metadata capture for source leads; it does not validate transcript accuracy, implementation correctness, benchmark claims, model-release claims, or scientific correctness.",
+    "Video titles and uploader metadata are not a substitute for primary papers, repositories, specifications, lecture notes, or reproduced demos.",
+    "Use these leads to shape Telos requirements and research queues; promote claims to MATCH only after Gather, Index, and Crucible can attach stronger evidence."
+  ],
+  "next_actions": [
+    "gather.docs: resolve Inigo Quilez website, Shadertoy references, and relevant shader/math articles as lawful source receipts.",
+    "gather.arxiv: resolve physics, world-model, abstraction, and GPU-kernel papers behind the supplied videos.",
+    "gather.video: resolve the thermodynamic AI chip transcript and linked primary sources before promoting any hardware or energy-efficiency claims.",
+    "index.context: map render-nd, render-sound, sense-core, viable-viz, studio-engine organs, and studio-libs for educator-demo integration.",
+    "crucible.assess: add negative fixtures for unverifiable benchmark claims, missing formula provenance, hidden model state, and non-replayable demos."
+  ]
+}

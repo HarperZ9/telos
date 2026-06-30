@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Project Telos operator room</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230b0c0e'/%3E%3Cpath d='M8 7h16v4h-6v14h-4V11H8z' fill='%23f4f3ef'/%3E%3C/svg%3E">
 <style>
 @font-face{font-family:Kilon;src:url("https://harperz9.github.io/system/fonts/kilon.woff2") format("woff2");font-display:swap}
 @font-face{font-family:Conso;src:url("https://harperz9.github.io/system/fonts/conso-regular.woff2") format("woff2");font-display:swap}
@@ -60,7 +61,20 @@ h1{font-family:Kilon,Arial Black,sans-serif;font-size:clamp(3.6rem,10vw,6rem);li
 pre{margin:0;white-space:pre-wrap;overflow-wrap:anywhere;font-size:.92rem;background:var(--ink);color:var(--paper);padding:1rem;border-radius:.45rem}
 .note{color:var(--muted);max-width:68ch}
 .footer{padding:2rem 0;color:var(--muted);font-size:.9rem}
-@media(max-width:840px){.hero-grid,.proof-grid{grid-template-columns:1fr}.room-head{align-items:flex-start;flex-direction:column}.cols,.sequence{grid-template-columns:1fr}.matrix thead{display:none}.matrix,.matrix tbody,.matrix tr,.matrix th,.matrix td{display:block}.matrix tr{border-top:1px solid var(--line);padding:.55rem 0}.matrix td,.matrix tbody th{border-top:0;padding:.3rem 0}.matrix td::before{content:attr(data-label);display:block;font-family:ui-monospace,Consolas,monospace;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);font-size:.72rem}}
+.studio-grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(17rem,.75fr);gap:1px;background:var(--line);border:1px solid var(--line);align-items:start}
+.effect-frame{background:#07080b;color:#f7f4ea;min-height:24rem;position:relative;overflow:hidden}
+.effect-frame canvas{display:block;width:100%;height:auto;aspect-ratio:16/9;background:#07080b}
+.effect-side{background:var(--paper);padding:1rem;display:grid;align-content:start;gap:1rem}
+.effect-toolbar{display:flex;flex-wrap:wrap;gap:.45rem}
+.effect-toolbar button{border:1px solid var(--line);background:var(--wash);color:var(--ink);border-radius:.35rem;padding:.48rem .62rem;font:inherit;font-size:.86rem;cursor:pointer}
+.effect-toolbar button[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.effect-toolbar button:hover{border-color:var(--ink)}
+.effect-list{list-style:none;margin:0;padding:0 .25rem 0 0;display:grid;gap:.48rem;max-height:18rem;overflow:auto}
+.effect-list li{border-top:1px solid var(--line);padding-top:.48rem;color:var(--soft)}
+.effect-list strong{display:block;color:var(--ink);font-size:.92rem}
+.effect-controls{display:grid;gap:.65rem;border-top:1px solid var(--line);padding-top:1rem}.effect-controls label{display:grid;gap:.25rem;color:var(--soft);font-size:.9rem}.effect-controls input{width:100%}.control-buttons{display:flex;flex-wrap:wrap;gap:.45rem}.control-buttons button{border:1px solid var(--line);background:var(--wash);color:var(--ink);border-radius:.35rem;padding:.48rem .62rem;font:inherit;font-size:.86rem;cursor:pointer}.control-buttons button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}.receipt-box{border-top:1px solid var(--line);padding-top:1rem}
+.receipt-box output{display:block;margin-top:.4rem;font-family:ui-monospace,Consolas,monospace;font-size:.84rem;color:var(--soft);overflow-wrap:anywhere}.poster-wall{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);margin-top:1.2rem}.poster-art{min-height:22rem;padding:1rem;background:var(--paper);display:grid;align-content:space-between;position:relative;overflow:hidden}.poster-art::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 25% 20%,rgba(255,194,92,.22) 0 2px,transparent 3px),linear-gradient(135deg,transparent 0 54%,rgba(11,12,14,.08) 54% 55%,transparent 55%);background-size:18px 18px,100% 100%;opacity:.9}.poster-art>*{position:relative}.poster-art .mono{font-family:Conso,ui-monospace,Consolas,monospace;text-transform:uppercase;font-size:.68rem;color:var(--muted)}.poster-art h3{font-family:Kilon,Arial Black,sans-serif;font-size:clamp(2.2rem,4vw,3.1rem);line-height:.86;letter-spacing:0;margin:0}.poster-art p{margin:0;color:var(--soft);font-size:.92rem}.poster-art .bars{display:grid;gap:.35rem;margin-top:1rem}.poster-art .bars span{height:.55rem;background:var(--ink);display:block}.poster-art[data-art="gather"]{background:#f4f3ef}.poster-art[data-art="crucible"]{background:#f8e7d9}.poster-art[data-art="index"]{background:#e4edf8}.poster-art[data-art="forum"]{background:#e8f1df}.poster-art[data-art="telos"]{background:#efe7fb}.poster-art[data-art="gather"] .bars span:nth-child(2){width:72%;background:#1f6d4d}.poster-art[data-art="crucible"] .bars span:nth-child(2){width:84%;background:#a33b2b}.poster-art[data-art="index"] .bars span:nth-child(2){width:64%;background:#3157a8}.poster-art[data-art="forum"] .bars span:nth-child(2){width:78%;background:#46742c}.poster-art[data-art="telos"] .bars span:nth-child(2){width:90%;background:#4636e8}@media(max-width:1080px){.poster-wall{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:620px){.poster-wall{grid-template-columns:1fr}}.protocol-output{width:100%;min-height:11rem;margin-top:.55rem;border:1px solid var(--line);background:var(--wash);color:var(--ink);font-family:ui-monospace,Consolas,monospace;font-size:.78rem;line-height:1.45;padding:.65rem;resize:vertical}.preset-toolbar{border-top:1px solid var(--line);padding-top:1rem}.protocol-label{display:block;margin-top:1rem;color:var(--muted);font-size:.86rem}
+@media(max-width:840px){.hero-grid,.proof-grid{grid-template-columns:1fr}.room-head{align-items:flex-start;flex-direction:column}.cols,.sequence,.studio-grid{grid-template-columns:1fr}.matrix thead{display:none}.matrix,.matrix tbody,.matrix tr,.matrix th,.matrix td{display:block}.matrix tr{border-top:1px solid var(--line);padding:.55rem 0}.matrix td,.matrix tbody th{border-top:0;padding:.3rem 0}.matrix td::before{content:attr(data-label);display:block;font-family:ui-monospace,Consolas,monospace;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);font-size:.72rem}}
 @media(max-width:560px){.topbar .shell{align-items:flex-start;flex-direction:column;padding:.8rem 0}.nav a{padding:.35rem .45rem}.button{width:100%}h1{font-size:3.2rem}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.button:hover{transform:none}*{transition:none!important;animation:none!important}}
 </style>
@@ -73,6 +87,9 @@ pre{margin:0;white-space:pre-wrap;overflow-wrap:anywhere;font-size:.92rem;backgr
     <nav class="nav" aria-label="Page sections">
       <a href="#room">Room</a>
       <a href="#protocols">Protocols</a>
+      <a href="#studio">Studio</a>
+      <a href="#engine">Engine</a>
+      <a href="#flagships">Flagships</a>
       <a href="#proof">Proof</a>
       <a href="../README.md">README</a>
     </nav>
@@ -84,10 +101,11 @@ pre{margin:0;white-space:pre-wrap;overflow-wrap:anywhere;font-size:.92rem;backgr
       <div>
         <p class="kicker">Verified AI workflow room</p>
         <h1>telos</h1>
-        <p class="lede">A shared operating surface for Gather, Crucible, Index, Forum, and Telos: intake, structure, routing, verification, and reconciliation with receipts attached.</p>
+        <p class="lede">A shared operating surface for gather, crucible, index, forum, and telos: intake, structure, routing, verification, and reconciliation with receipts attached.</p>
         <div class="actions" aria-label="Primary actions">
           <a class="button primary" href="#room">Inspect the room</a>
           <a class="button" href="#proof">Run the proof</a>
+          <a class="button" href="#studio">Open effects</a>
         </div>
       </div>
       <div class="command-strip" aria-label="Quick command">
@@ -114,11 +132,11 @@ pre{margin:0;white-space:pre-wrap;overflow-wrap:anywhere;font-size:.92rem;backgr
           <tr><th scope="col">Tool</th><th scope="col">Role</th><th scope="col">State</th><th scope="col">Next action</th></tr>
         </thead>
         <tbody>
-          <tr><th scope="row">Gather</th><td data-label="Role">perception intake</td><td data-label="State"><span class="state">MATCH</span></td><td data-label="Next action"><span class="next">index.map</span></td></tr>
-          <tr><th scope="row">Crucible</th><td data-label="Role">verification pressure</td><td data-label="State"><span class="state">MATCH</span></td><td data-label="Next action"><span class="next">telos.reconcile</span></td></tr>
-          <tr><th scope="row">Index</th><td data-label="Role">structure context</td><td data-label="State"><span class="state">MATCH</span></td><td data-label="Next action"><span class="next">gather.docs</span></td></tr>
-          <tr><th scope="row">Forum</th><td data-label="Role">orchestration routing</td><td data-label="State"><span class="state">MATCH</span></td><td data-label="Next action"><span class="next">crucible.assess</span></td></tr>
-          <tr><th scope="row">Telos</th><td data-label="Role">shared-room reconciliation</td><td data-label="State"><span class="state">MATCH</span></td><td data-label="Next action"><span class="next">flagship-workflow</span></td></tr>
+          <tr><th scope="row">gather</th><td data-label="Role">perception intake</td><td data-label="State"><span class="state">MATCH</span></td><td data-label="Next action"><span class="next">index.map</span></td></tr>
+          <tr><th scope="row">crucible</th><td data-label="Role">verification pressure</td><td data-label="State"><span class="state">MATCH</span></td><td data-label="Next action"><span class="next">telos.reconcile</span></td></tr>
+          <tr><th scope="row">index</th><td data-label="Role">structure context</td><td data-label="State"><span class="state">MATCH</span></td><td data-label="Next action"><span class="next">gather.docs</span></td></tr>
+          <tr><th scope="row">forum</th><td data-label="Role">orchestration routing</td><td data-label="State"><span class="state">MATCH</span></td><td data-label="Next action"><span class="next">crucible.assess</span></td></tr>
+          <tr><th scope="row">telos</th><td data-label="Role">shared-room reconciliation</td><td data-label="State"><span class="state">MATCH</span></td><td data-label="Next action"><span class="next">flagship-workflow</span></td></tr>
         </tbody>
       </table>
     </div>
@@ -136,6 +154,132 @@ pre{margin:0;white-space:pre-wrap;overflow-wrap:anywhere;font-size:.92rem;backgr
     </div>
   </section>
 
+
+  <section class="band" id="studio" aria-labelledby="studio-title">
+    <div class="shell">
+      <p class="kicker">Telos Studio effects</p>
+      <h2 id="studio-title">A visual instrument for model and operator.</h2>
+      <p class="note">The demo now exposes the creative rendering vocabulary as live, inspectable layers. The canvas is decorative only when the receipt says so: mode, seed, active layers, fallback, and reduced-motion state are always available as text.</p>
+      <div class="studio-grid">
+        <div class="effect-frame" aria-label="Live Telos engine rendering surface">
+          <canvas id="effect-canvas" width="960" height="540" role="img" aria-label="Telos Studio effects rendering demo with retro CGI, glitch, generative, plotter, pixel sorting, poster, fractal, Gaussian splat, clustered lighting, CRT, chromatic, dither, contour, Voronoi, ASCII, vector field, and feedback trail layers">Your browser can still use the text controls and scene receipt if canvas rendering is unavailable.</canvas>
+        </div>
+        <aside class="effect-side" aria-labelledby="effect-controls-title">
+          <div>
+            <p class="kicker">Effect bank</p>
+            <h3 id="effect-controls-title">Composable visual layers</h3>
+          </div>
+          <div>
+            <p class="kicker">Presets</p>
+            <div class="effect-toolbar preset-toolbar" aria-label="Scene presets">
+              <button type="button" data-preset="all" aria-pressed="true">All</button>
+              <button type="button" data-preset="scientific">Scientific</button>
+              <button type="button" data-preset="poster">Poster</button>
+              <button type="button" data-preset="flagship">Flagship</button>
+              <button type="button" data-preset="terminal">Terminal</button>
+              <button type="button" data-preset="radiance">Radiance</button>
+              <button type="button" data-preset="diagnostic">Diagnostic</button>
+            </div>
+          </div>
+          <div class="effect-toolbar" aria-label="Rendering effect modes">
+            <button type="button" data-effect="all" aria-pressed="true">All layers</button>
+            <button type="button" data-effect="retro">Retro CGI</button>
+            <button type="button" data-effect="glitch">Glitch</button>
+            <button type="button" data-effect="generative">Generative</button>
+            <button type="button" data-effect="plotter">Plotter</button>
+            <button type="button" data-effect="pixelsort">Pixel sort</button>
+            <button type="button" data-effect="poster">Poster</button>
+            <button type="button" data-effect="fractal">Fractal</button>
+            <button type="button" data-effect="splat">Gaussian splat</button>
+            <button type="button" data-effect="clustered">Clustered lights</button>
+            <button type="button" data-effect="crt">CRT scanlines</button>
+            <button type="button" data-effect="chromatic">Chromatic split</button>
+            <button type="button" data-effect="dither">Dither</button>
+            <button type="button" data-effect="contour">Contour map</button>
+            <button type="button" data-effect="voronoi">Voronoi cells</button>
+            <button type="button" data-effect="ascii">ASCII raster</button>
+            <button type="button" data-effect="vector">Vector field</button>
+            <button type="button" data-effect="feedback">Feedback trails</button>
+            <button type="button" data-effect="halftone">Halftone press</button>
+            <button type="button" data-effect="layout">Editorial grid</button>
+          </div>
+          <div class="effect-controls" aria-label="Effect parameters">
+            <label for="effect-intensity">Intensity <input id="effect-intensity" type="range" min="20" max="100" value="82"></label>
+            <label for="effect-density">Density <input id="effect-density" type="range" min="20" max="100" value="64"></label>
+            <div class="control-buttons" aria-label="Playback controls">
+              <button type="button" id="effect-freeze" aria-pressed="false">Freeze</button>
+              <button type="button" id="effect-step">Step</button>
+              <button type="button" id="effect-reroll">Reroll seed</button>
+            </div>
+            <div class="control-buttons" aria-label="Protocol controls">
+              <button type="button" id="effect-copy-receipt">Copy receipt</button>
+              <button type="button" id="effect-export-scene">Export JSON</button>
+              <button type="button" id="effect-replay-scene">Replay envelope</button>
+            </div>
+          </div>
+          <ul class="effect-list" aria-label="Available creative capabilities">
+            <li><strong>Retro CGI</strong><span>Wireframes, horizon grids, shaded primitives, and measurement-friendly depth.</span></li>
+            <li><strong>Glitch</strong><span>Scanline offsets, channel splits, and deliberate corruption with readable state.</span></li>
+            <li><strong>Generative</strong><span>Seeded particle fields and graph traces for repeatable variation.</span></li>
+            <li><strong>Plotter</strong><span>Pen-plotter paths, hatch lines, and vector-like trace discipline.</span></li>
+            <li><strong>Pixel sort</strong><span>Luminance-ranked row fragments that expose algorithmic image transforms.</span></li>
+            <li><strong>Poster</strong><span>Typographic blocks and print-system composition for flagship presentation.</span></li>
+            <li><strong>Fractal</strong><span>Branching recursion and orbital geometry for sensitivity-map demos.</span></li>
+            <li><strong>Gaussian splat</strong><span>Transparent ellipses that stand in for web-native splat fields.</span></li>
+            <li><strong>Clustered lights</strong><span>Forward-style screen clusters showing light bins and overlay visibility.</span></li>
+            <li><strong>CRT scanlines</strong><span>Display-era texture for retro terminals and low-fi monitor studies.</span></li>
+            <li><strong>Chromatic split</strong><span>Channel offsets for signal stress, poster energy, and glitch transitions.</span></li>
+            <li><strong>Dither</strong><span>Ordered threshold texture for low-bit export and print constraints.</span></li>
+            <li><strong>Contour map</strong><span>Iso-line fields for scientific overlays and scalar measurements.</span></li>
+            <li><strong>Voronoi cells</strong><span>Nearest-seed partitions for segmentation and route-field sketches.</span></li>
+            <li><strong>ASCII raster</strong><span>Glyph-based raster previews for TUI and receipt-friendly surfaces.</span></li>
+            <li><strong>Vector field</strong><span>Directional flow arrows for sensitivity maps and simulation overlays.</span></li>
+            <li><strong>Feedback trails</strong><span>Frame-history echoes for loop memory and temporal debugging.</span></li>
+            <li><strong>Halftone press</strong><span>Dot-gain texture, screen tone, and poster-print tactility without hiding the receipt.</span></li>
+            <li><strong>Editorial grid</strong><span>Crop marks, modular columns, hierarchy rails, and critique-friendly spacing checks.</span></li>
+          </ul>
+          <div class="receipt-box">
+            <strong>Scene receipt</strong>
+            <output id="effect-receipt" aria-live="polite">Scene receipt: mode=All layers; seed=5505; renderer=canvas2d-receipt-renderer; fallback_chain=canvas2d-receipt-renderer&gt;static-artifact-receipt; status=MATCH; fallback=canvas+text</output>
+            <p class="protocol-label">Renderer path</p>
+            <p class="note">Capability contract: WebGPU splat and clustered prototype, then WebGL2 preview, Canvas 2D receipt renderer, and static artifact receipt fallback.</p>
+            <code>node demo/rendering-capabilities.mjs --summary</code>
+            <label class="protocol-label" for="effect-protocol-output">Protocol envelope</label>
+            <textarea id="effect-protocol-output" class="protocol-output" readonly spellcheck="false" rows="10">{"protocol":"project-telos.scene-spec/v1","status":"MATCH"}</textarea>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+  <section class="band" id="engine" aria-labelledby="engine-title">
+    <div class="shell">
+      <p class="kicker">Creative engine</p>
+      <h2 id="engine-title">The whole engine, not only the surface.</h2>
+      <p class="note">Telos now treats visual effects, sound, typography, math, node graphs, and verification as one creation system. The live Studio is the front panel; the engine map below is the contract for reviving old organs and plugging them into CLI, MCP, IDE, TUI, and application hosts.</p>
+      <div class="cols" aria-label="Telos Creative Engine modules">
+        <section class="panel" aria-labelledby="engine-raster"><h3 id="engine-raster">Raster and print</h3><p>Dither, pixel sorting, halftone, CRT, chromatic split, poster grids, glitch, and export-ready media passes.</p></section>
+        <section class="panel" aria-labelledby="engine-sound"><h3 id="engine-sound">Sound and media</h3><p>Render-sound, DFT, Web Audio strands, sonification, and audio-reactive visual layers with artifact receipts.</p></section>
+        <section class="panel" aria-labelledby="engine-physics"><h3 id="engine-physics">Math and physics</h3><p>N-dimensional geometry, flow fields, harmonographs, particle fields, clustered light bins, Gaussian splat fields, and measurable overlays for mathematicians, physicists, and educators.</p></section>
+        <section class="panel" aria-labelledby="engine-type"><h3 id="engine-type">Typography lab</h3><p>Kilon display type and Conso utility text set the specimen system for future glyph generation and poster design.</p></section>
+        <section class="panel" aria-labelledby="engine-graph"><h3 id="engine-graph">Node graph</h3><p>TouchDesigner-compatible recipes can compose effects, sensors, measurement overlays, and media generators as reusable nodes instead of one-off canvas code.</p></section>
+        <section class="panel" aria-labelledby="engine-receipts"><h3 id="engine-receipts">Receipts</h3><p><code>node demo/creative-engine.mjs</code> returns the full manifest for replay, audit, and MCP hosts.</p></section>
+      </div>
+    </div>
+  </section>
+  <section class="band" id="flagships" aria-labelledby="flagships-title">
+    <div class="shell">
+      <p class="kicker">Flagship poster wall</p>
+      <h2 id="flagships-title">Five tools, one sharper presentation system.</h2>
+      <p class="note">The poster wall uses the same Kilon display face and Conso utility typography as the demo, with stronger hierarchy, restrained metadata, and series-level variation so the tools read as one family without becoming one-note.</p>
+      <div class="poster-wall" aria-label="Five flagship poster artwork concepts">
+        <article class="poster-art" data-art="gather" aria-labelledby="poster-gather"><div><span class="mono">intake / sources</span><h3 id="poster-gather">gather</h3></div><p>Perception, capture, and lawful source receipts before the model speaks.</p><div class="bars" aria-hidden="true"><span></span><span></span><span></span></div></article>
+        <article class="poster-art" data-art="crucible" aria-labelledby="poster-crucible"><div><span class="mono">pressure / verdicts</span><h3 id="poster-crucible">crucible</h3></div><p>Negative tests, refusal paths, and evidence that can survive scrutiny.</p><div class="bars" aria-hidden="true"><span></span><span></span><span></span></div></article>
+        <article class="poster-art" data-art="index" aria-labelledby="poster-index"><div><span class="mono">map / structure</span><h3 id="poster-index">index</h3></div><p>Workspace shape, dependency context, and reusable code intelligence.</p><div class="bars" aria-hidden="true"><span></span><span></span><span></span></div></article>
+        <article class="poster-art" data-art="forum" aria-labelledby="poster-forum"><div><span class="mono">route / voice</span><h3 id="poster-forum">forum</h3></div><p>Agent routing, humanization, critique, and conversation-state discipline.</p><div class="bars" aria-hidden="true"><span></span><span></span><span></span></div></article>
+        <article class="poster-art" data-art="telos" aria-labelledby="poster-telos"><div><span class="mono">room / reconcile</span><h3 id="poster-telos">telos</h3></div><p>Receipts, shared state, replayable scenes, and final operator confidence.</p><div class="bars" aria-hidden="true"><span></span><span></span><span></span></div></article>
+      </div>
+    </div>
+  </section>
   <section class="band" id="proof" aria-labelledby="proof-title">
     <div class="shell proof-grid">
       <div>
@@ -143,7 +287,7 @@ pre{margin:0;white-space:pre-wrap;overflow-wrap:anywhere;font-size:.92rem;backgr
         <h2 id="proof-title">The verifier has to be able to refuse.</h2>
         <p class="note">The proof renders a four-dimensional cube, perceives it two ways, checks the recovered invariant against a criterion the model did not author, then shows both a certified pass and an honest `UNVERIFIABLE`.</p>
       </div>
-      <pre><code>Node 18 or newer
+      <pre><code>Node 20 or newer
 node demo/run.mjs
 
 Room view
@@ -165,5 +309,7 @@ node demo/flagship-workflow.mjs</code></pre>
 <footer class="footer">
   <div class="shell">Fair-source research tooling for AI workflows with provenance. No install required for the demo.</div>
 </footer>
+<script src="effects-protocol.js"></script>
+<script src="effects-engine.js"></script>
 </body>
 </html>

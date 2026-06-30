@@ -1,0 +1,261 @@
+{
+  "schema": "project-telos.agent-boundary-fixtures/v1",
+  "stage": "public_synthetic_fixture_pack",
+  "verified_on": "2026-06-28",
+  "purpose": "Provide small public fixtures for agent-boundary GitHub discussions where another design comment would be duplicative without runnable evidence.",
+  "verdicts": [
+    "MATCH",
+    "DRIFT",
+    "UNVERIFIABLE"
+  ],
+  "privacy": {
+    "raw_prompts_required": false,
+    "raw_tool_args_required": false,
+    "raw_reasoning_required": false,
+    "uses_hashes_or_redacted_refs": true
+  },
+  "cases": [
+    {
+      "id": "signed_approval_resume",
+      "title": "Signed approval envelope survives resume",
+      "target": {
+        "repo": "vercel/ai",
+        "issue": 16334,
+        "url": "https://github.com/vercel/ai/issues/16334"
+      },
+      "public_links_ok": true,
+      "requires_live_service": false,
+      "default_verdict": "MATCH",
+      "fixture_hash": "sha256:0a5e10294d4bc1ef25f2ef2897a3f8a27b146e3b48bd90bc63c99563d7119f21",
+      "records": {
+        "approval_request": {
+          "approval_id": "approval_vercel_16334_001",
+          "tool_call_id": "tool_call_signed_resume_001",
+          "tool_name": "filesystem.write",
+          "canonical_args_hash": "sha256:3b322a13a95078302bf15c03ddc8ef119023bc41366843c43ab1d4435f1eaa61",
+          "signature_ref": "sigref:approval_vercel_16334_001",
+          "is_automatic": false,
+          "envelope_immutable": true
+        },
+        "approval_response": {
+          "approval_id": "approval_vercel_16334_001",
+          "tool_call_id": "tool_call_signed_resume_001",
+          "decision": "allow",
+          "preserves_signature": true,
+          "preserves_is_automatic": true,
+          "response_hash": "sha256:626d7ef67e8b85d82bc574b75ff8106358db710cbe3c95c7873986d7a79713cd"
+        },
+        "resume_boundary": {
+          "thread_id": "thread_signed_resume_001",
+          "required_envelope_fields": [
+            "approval_id",
+            "tool_call_id",
+            "canonical_args_hash",
+            "signature_ref",
+            "decision"
+          ],
+          "rejects_missing_signature": true,
+          "rejects_mutated_args_hash": true,
+          "rejects_tool_call_id_mismatch": true
+        }
+      },
+      "expected_verdicts": [
+        {
+          "code": "match",
+          "verdict": "MATCH",
+          "reason": "approval response preserves the signed request envelope and canonical args hash"
+        },
+        {
+          "code": "signature_missing",
+          "verdict": "UNVERIFIABLE",
+          "reason": "resume cannot prove the approval belongs to the server-issued request"
+        },
+        {
+          "code": "args_hash_changed",
+          "verdict": "DRIFT",
+          "reason": "approved args and resumed args no longer bind to the same action"
+        }
+      ]
+    },
+    {
+      "id": "cancellation_partial_stream",
+      "title": "Cancellation preserves terminal partial-state receipt",
+      "target": {
+        "repo": "langchain-ai/langgraph",
+        "issue": 5672,
+        "url": "https://github.com/langchain-ai/langgraph/issues/5672"
+      },
+      "public_links_ok": true,
+      "requires_live_service": false,
+      "default_verdict": "UNVERIFIABLE",
+      "fixture_hash": "sha256:dbcc2c3e42da2cdd589f2295567cb3ad8042f12fd8767c9409f3b9f02185a731",
+      "records": {
+        "stream_state": {
+          "run_id": "run_langgraph_5672_001",
+          "last_checkpoint_id": "checkpoint:lg-5672-0007",
+          "last_checkpoint_hash": "sha256:4eb372f14d4f6d5a93cebd63f0168dbb7c2f2dd7b9639f3f3194fdbeaf215ea7",
+          "last_stream_sequence_seen": 42,
+          "last_stream_sequence_flushed": 39,
+          "streamed_state_ref": "artifact:langgraph-5672/stream-redacted.ndjson",
+          "streamed_state_hash": "sha256:2544b70f08d2df86fe9663d8625d03860fe58457fc2096defed2a1c7122f924d"
+        },
+        "terminal_receipt": {
+          "cancel_requested_at": "2026-06-28T16:00:00Z",
+          "terminal_status": "partial",
+          "terminal_state_known": true,
+          "last_stream_sequence_seen": 42,
+          "writes_enqueued": 4,
+          "writes_flushed": 3,
+          "resume_policy": "reconcile",
+          "stop_reason": "user_cancelled_before_checkpoint_commit"
+        }
+      },
+      "expected_verdicts": [
+        {
+          "code": "match",
+          "verdict": "MATCH",
+          "reason": "all streamed sequence ids up to the terminal receipt are preserved or checkpointed"
+        },
+        {
+          "code": "streamed_state_not_checkpointed",
+          "verdict": "UNVERIFIABLE",
+          "reason": "the user saw streamed state that is not represented in the durable checkpoint"
+        },
+        {
+          "code": "resume_from_stale_checkpoint",
+          "verdict": "DRIFT",
+          "reason": "resume starts before the last observed stream sequence without reconciliation"
+        }
+      ]
+    },
+    {
+      "id": "mcp_lifecycle_fake_recorder",
+      "title": "MCP lifecycle events can map to OTel without hard dependency",
+      "target": {
+        "repo": "modelcontextprotocol/python-sdk",
+        "issue": 421,
+        "url": "https://github.com/modelcontextprotocol/python-sdk/issues/421"
+      },
+      "public_links_ok": true,
+      "requires_live_service": false,
+      "default_verdict": "MATCH",
+      "fixture_hash": "sha256:166f9e8d66771b57e1ef2e6a465db1c9eca06b8737c90ccc10bdbfd0564dd638",
+      "contract": {
+        "otel_hard_dependency_required": false,
+        "fake_recorder_testable": true,
+        "span_lifetime_token_required": true,
+        "traceparent_preserved_when_present": true
+      },
+      "records": {
+        "lifecycle_events": [
+          {
+            "kind": "send_request",
+            "session_id": "session_mcp_421_001",
+            "request_id": "req_mcp_421_001",
+            "method": "tools/call",
+            "traceparent_ref": "traceparent:redacted-001"
+          },
+          {
+            "kind": "handle_request",
+            "session_id": "session_mcp_421_001",
+            "request_id": "req_mcp_421_001",
+            "method": "tools/call",
+            "span_token": "span:mcp-handle-001"
+          },
+          {
+            "kind": "tool_call",
+            "session_id": "session_mcp_421_001",
+            "request_id": "req_mcp_421_001",
+            "tool_name": "demo.fail_with_is_error",
+            "tool_call_id": "tool_call_mcp_421_001"
+          },
+          {
+            "kind": "tool_result",
+            "session_id": "session_mcp_421_001",
+            "request_id": "req_mcp_421_001",
+            "tool_call_id": "tool_call_mcp_421_001",
+            "mcp_is_error": true,
+            "result_state": "failed",
+            "payload_ref": "artifact:mcp-421/error-content-redacted",
+            "payload_hash": "sha256:20e9d5f5d4d1874c07e2d61f3cb7433b42e3f6e26edc0fa548735b3638c14c03"
+          },
+          {
+            "kind": "span_end",
+            "session_id": "session_mcp_421_001",
+            "request_id": "req_mcp_421_001",
+            "span_token": "span:mcp-handle-001",
+            "status": "error"
+          }
+        ]
+      },
+      "expected_verdicts": [
+        {
+          "code": "match",
+          "verdict": "MATCH",
+          "reason": "fake recorder can join request, tool call, failed result, and span end without real OTel exporter"
+        },
+        {
+          "code": "span_lifetime_unjoined",
+          "verdict": "UNVERIFIABLE",
+          "reason": "start/end/error cannot be joined across async boundaries"
+        },
+        {
+          "code": "is_error_recorded_as_success",
+          "verdict": "DRIFT",
+          "reason": "MCP failure payload exists but trace or persisted state marks the call as success"
+        }
+      ]
+    },
+    {
+      "id": "loop_guard_idempotency",
+      "title": "Repeated identical tool calls trip a bounded idempotency guard",
+      "target": {
+        "repo": "continuedev/continue",
+        "issue": 12702,
+        "url": "https://github.com/continuedev/continue/issues/12702"
+      },
+      "public_links_ok": true,
+      "requires_live_service": false,
+      "default_verdict": "DRIFT",
+      "fixture_hash": "sha256:4fdab5623ea5a6d623e02a1cce95a0a2ee23863f69e7731d789624b4324c05fa",
+      "records": {
+        "tool_call_fingerprint": {
+          "tool_name": "read_file",
+          "canonical_args_hash": "sha256:32aa1f28173322c74fce332d1ae3fb970eb91d9cc7471a6955b1fc3c0f46c4dd",
+          "workspace_ref": "workspace:continue-loop-guard-synthetic",
+          "side_effect_class": "read"
+        },
+        "guard_state": {
+          "identical_tool_call_count": 3,
+          "max_identical_tool_calls": 2,
+          "budget_remaining_after_block": 17,
+          "terminal_status": "blocked",
+          "stop_reason": "idempotency_guard"
+        },
+        "receipt": {
+          "loop_id": "loop_continue_12702_001",
+          "last_allowed_call_id": "call_continue_12702_002",
+          "blocked_call_id": "call_continue_12702_003",
+          "verifier_ref": "telos:loop-guard/idempotency-v1"
+        }
+      },
+      "expected_verdicts": [
+        {
+          "code": "match",
+          "verdict": "MATCH",
+          "reason": "tool call changes materially before guard threshold"
+        },
+        {
+          "code": "repeat_tool_call_blocked",
+          "verdict": "DRIFT",
+          "reason": "same tool and canonical args exceed the identical-call threshold"
+        },
+        {
+          "code": "guard_missing",
+          "verdict": "UNVERIFIABLE",
+          "reason": "runner cannot prove whether repeated calls were bounded"
+        }
+      ]
+    }
+  ]
+}

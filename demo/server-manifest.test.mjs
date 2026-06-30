@@ -37,6 +37,17 @@ for (const [server, expected] of expectedByServer) {
     expected.slice().sort(),
     `${server} server manifest mirrors catalog tools`
   );
+  assert.equal(manifest.servers[server].freshness.status_tool, `${server}.status`);
+  assert.ok(manifest.servers[server].freshness.expected_version);
+  assert.ok(manifest.servers[server].freshness.expected_current_status);
+  assert.deepEqual(manifest.servers[server].freshness.failure_codes, [
+    "stale_mcp_server",
+    "tool_surface_drift",
+    "version_drift",
+    "behavior_probe_drift",
+    "launch_profile_unresolved",
+    "freshness_probe_unavailable"
+  ]);
 }
 
 function runManifest(...args) {
@@ -54,7 +65,9 @@ const summary = runManifest("--summary");
 assert.equal(summary.status, 0, summary.stderr || summary.stdout);
 assert.match(summary.stdout, /^Project Telos MCP Server Manifest/m);
 assert.match(summary.stdout, /servers\s+5/);
-assert.match(summary.stdout, /tools\s+26 expected/);
+assert.match(summary.stdout, /tools\s+64 expected/);
+assert.match(summary.stdout, /auxiliary\s+12 compatible/);
+assert.match(summary.stdout, /freshness\s+5 probes/);
 assert.match(summary.stdout, /gather\s+5 tools/);
 
 const codex = runManifest("--codex");

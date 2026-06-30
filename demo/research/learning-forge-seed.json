@@ -1,0 +1,338 @@
+{
+  "schema": "project-telos.learning-forge/youtube-research-seed/v1",
+  "generated_at": "2026-06-30T00:00:00.000Z",
+  "tool": "telos.learning.forge",
+  "purpose": "Turn operator-provided AI research videos, channels, papers, and official pages into verified learning objects: source leads, concept cards, toy labs, failure cases, measurements, and Crucible verdicts.",
+  "validation": {
+    "verdict": "MATCH",
+    "validated_by": [
+      "gather.status",
+      "index.map",
+      "forum.doctor",
+      "crucible.status",
+      "telos.catalog"
+    ],
+    "notes": [
+      "YouTube links are stored as source leads until Gather captures metadata, captions, transcript hashes, channel identity, upload date, and digest seals.",
+      "Current source receipts are lawful public source references for the research frame, not full-paper or raw-transcript imports.",
+      "Learning objects may promote a claim only after a source receipt and a Crucible gate both join to the same claim card."
+    ]
+  },
+  "source_boundary": {
+    "raw_transcripts_stored": false,
+    "raw_video_stored": false,
+    "youtube_claims_promoted": false,
+    "shadow_full_text_allowed_as_provenance": false,
+    "operator_notes_are_source_leads": true,
+    "fresh_resolution_required": true,
+    "claim_promotion_rule": "A YouTube segment starts UNVERIFIABLE. It can become MATCH only after Gather records metadata/transcript receipts and Crucible joins the segment to lawful current sources or runnable measurements."
+  },
+  "youtube_seed_corpus": {
+    "receipt_state": "UNVERIFIABLE_UNTIL_GATHER_TRANSCRIPT",
+    "curation_rule": "Treat the supplied videos and channels as leads for AI education, reasoning, agents, reproducibility, interpretability, coding agents, AI systems, alternative compute, and AI-for-science. Do not invent titles, transcripts, upload dates, or claims.",
+    "inputs": [
+      "https://www.youtube.com/watch?v=5pieVHmlbyk&t=668s",
+      "https://www.youtube.com/watch?v=1WH9_edB538",
+      "https://www.youtube.com/watch?v=3AhJNyj_X98&t=238s",
+      "https://www.youtube.com/watch?v=0gvHqRv8gTg",
+      "https://www.youtube.com/watch?v=Ihv542rCUns",
+      "https://www.youtube.com/watch?v=w-GugZv044I",
+      "https://www.youtube.com/watch?v=Mw60FH5iflI&t=107s",
+      "https://www.youtube.com/watch?v=VlP-12yc2f8&t=668s",
+      "https://www.youtube.com/@lobais/videos",
+      "https://www.youtube.com/@MachineLearningStreetTalk"
+    ],
+    "required_gather_fields": [
+      "source_type",
+      "provided_url",
+      "video_id_or_channel_handle",
+      "timestamp_hint",
+      "channel",
+      "upload_date",
+      "metadata_sha256",
+      "transcript_sha256",
+      "description_sha256",
+      "digest_seal",
+      "availability",
+      "claim_state"
+    ],
+    "gather_receipt_ledger": {
+      "ref": "demo/research/youtube-learning-forge-receipts.json",
+      "schema": "project-telos.learning-forge/youtube-research-seed/v1",
+      "captured_at": "2026-06-30T07:27:57.550385+00:00",
+      "video_count": 8,
+      "channel_count": 2,
+      "corpus_digest_seal": "acfdc2e9ef532620579f221fccd59f8ba3e3505c1d28084aa7e893280bef88d5",
+      "receipt_state": "GATHER_RECEIPTS_CAPTURED",
+      "research_claim_state": "UNVERIFIABLE_UNTIL_CROSS_CHECK",
+      "privacy_boundary": "Receipt ledger stores metadata hashes, transcript hashes, channel-list hashes, titles, refs, and counts only; raw transcript bodies stay in the ignored local corpus."
+    },
+    "segment_model": [
+      "intro_claim_setup",
+      "core_concept",
+      "technical_mechanism",
+      "failure_modes",
+      "research_directions"
+    ]
+  },
+  "current_source_receipts": [
+    {
+      "id": "source-neurips-2026-education-track",
+      "title": "NeurIPS 2026 Call for Educational Resources",
+      "url": "https://neurips.cc/Conferences/2026/CallforEducationalResources",
+      "source_kind": "official-conference-call",
+      "resolved_at": "2026-06-30T00:00:00Z",
+      "provenance_class": "lawful_source",
+      "receipt_hash": "sha256:40b3deff2a7f483b4a9387e527ab85922341b3542755eca0131d6e957495398f"
+    },
+    {
+      "id": "source-neurips-2026-reproducibility-track",
+      "title": "NeurIPS 2026 Call for Reproducibility Papers",
+      "url": "https://neurips.cc/Conferences/2026/CallForReproducibility",
+      "source_kind": "official-conference-call",
+      "resolved_at": "2026-06-30T00:00:00Z",
+      "provenance_class": "lawful_source",
+      "receipt_hash": "sha256:9e567b2826828f4eb69e14fe09530ef32e12ed31d33b0394f1c7d56ca643c743"
+    },
+    {
+      "id": "source-neurips-2026-evaluations-datasets-track",
+      "title": "NeurIPS 2026 Evaluations & Datasets Track Call for Papers",
+      "url": "https://neurips.cc/Conferences/2026/CallForEvaluationsDatasets",
+      "source_kind": "official-conference-call",
+      "resolved_at": "2026-06-30T00:00:00Z",
+      "provenance_class": "lawful_source",
+      "receipt_hash": "sha256:177ed968844e58602b1b426c51ed3eadb5efca2dd513cc529ca45659e7811ee3"
+    },
+    {
+      "id": "source-ibm-planning-era-language-models",
+      "title": "Planning in the Era of Language Models for NeurIPS 2025",
+      "url": "https://research.ibm.com/publications/planning-in-the-era-of-language-models",
+      "source_kind": "official-research-publication-page",
+      "resolved_at": "2026-06-30T00:00:00Z",
+      "provenance_class": "lawful_source",
+      "receipt_hash": "sha256:a7031628995dc702d3bdc4f9575d6f62984963fd54469fc11e4758951ad2e77c"
+    },
+    {
+      "id": "source-deepseek-r1-arxiv",
+      "title": "DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning",
+      "url": "https://arxiv.org/abs/2501.12948",
+      "source_kind": "open-preprint",
+      "resolved_at": "2026-06-30T00:00:00Z",
+      "provenance_class": "lawful_source",
+      "receipt_hash": "sha256:2ea080196440647dc94320dc3b68eca373e4d1e07a25260890b756b71d9f3765"
+    },
+    {
+      "id": "source-swe-skills-bench-arxiv",
+      "title": "SWE-Skills-Bench: Do Agent Skills Actually Help in Real-World Software Engineering?",
+      "url": "https://arxiv.org/abs/2603.15401",
+      "source_kind": "open-preprint",
+      "resolved_at": "2026-06-30T00:00:00Z",
+      "provenance_class": "lawful_source",
+      "receipt_hash": "sha256:0c9cacc24c93cf0cf648f9e7067aa74f6f4266263e399ddffeea964e388ac801"
+    },
+    {
+      "id": "source-swe-bench-pro-arxiv",
+      "title": "SWE-Bench Pro: Can AI Agents Solve Long-Horizon Software Engineering Tasks?",
+      "url": "https://arxiv.org/abs/2509.16941",
+      "source_kind": "open-preprint",
+      "resolved_at": "2026-06-30T00:00:00Z",
+      "provenance_class": "lawful_source",
+      "receipt_hash": "sha256:7c2774e96d6f3df9534a0727a20f4f86e4b887ae2e9d86d5fc6d97ea13c25011"
+    },
+    {
+      "id": "source-mcp-2025-06-18-spec",
+      "title": "Model Context Protocol specification 2025-06-18",
+      "url": "https://modelcontextprotocol.io/specification/2025-06-18",
+      "source_kind": "official-protocol-specification",
+      "resolved_at": "2026-06-30T00:00:00Z",
+      "provenance_class": "lawful_source",
+      "receipt_hash": "sha256:7844c9ee267b08c069d5f11734277cede29e283314f5d9b5eec76fcf43180bc6"
+    },
+    {
+      "id": "source-opentelemetry-genai-semconv",
+      "title": "OpenTelemetry Generative AI semantic conventions",
+      "url": "https://opentelemetry.io/docs/specs/semconv/gen-ai/gen-ai-agent-spans/",
+      "source_kind": "official-observability-specification",
+      "resolved_at": "2026-06-30T00:00:00Z",
+      "provenance_class": "lawful_source",
+      "receipt_hash": "sha256:2686765617fd3f26be78a793e8e2923a347bdf325178b7fc672993249ae5c928"
+    }
+  ],
+  "learning_modules": [
+    {
+      "id": "programming-as-evidence",
+      "level": "intro",
+      "source_receipt_ids": [
+        "source-neurips-2026-education-track",
+        "source-neurips-2026-reproducibility-track"
+      ],
+      "teaching_object": "A small file-processing tool that extracts claim cards, runs tests, and emits receipts.",
+      "failure_case": "A polished explanation without a source hash or test output remains UNVERIFIABLE.",
+      "crucible_gate": "Assert every lesson output includes source_ref, artifact_hash, failure_case_ref, and verdict."
+    },
+    {
+      "id": "reasoning-test-time-compute",
+      "level": "builder",
+      "source_receipt_ids": [
+        "source-deepseek-r1-arxiv"
+      ],
+      "teaching_object": "Compare greedy answer, multiple samples, verifier selection, token cost, and replayed scoring.",
+      "failure_case": "More samples raise cost without improving a hard held-out task.",
+      "crucible_gate": "Measure accuracy, token count, latency, verifier agreement, and failed attempts per task."
+    },
+    {
+      "id": "agents-tools-mcp-receipts",
+      "level": "builder",
+      "source_receipt_ids": [
+        "source-ibm-planning-era-language-models",
+        "source-mcp-2025-06-18-spec",
+        "source-opentelemetry-genai-semconv"
+      ],
+      "teaching_object": "A tool-using agent that separates plan state, action admission, execution, trace span, and receipt.",
+      "failure_case": "A completed tool call cannot be joined to the admitted action intent.",
+      "crucible_gate": "Negative fixtures for changed args_hash, missing action_intent_id, stale criterion_ref, and missing verifier result."
+    },
+    {
+      "id": "coding-agents-repo-work",
+      "level": "research",
+      "source_receipt_ids": [
+        "source-swe-skills-bench-arxiv",
+        "source-swe-bench-pro-arxiv"
+      ],
+      "teaching_object": "A repo patch lab with issue evidence, Index map, focused tests, code readability check, and review receipt.",
+      "failure_case": "The agent edits boilerplate but misses the hidden invariant or overfits a public test.",
+      "crucible_gate": "Require diff hash, changed-module map, targeted tests, failure typing, and reviewer-readable code evidence."
+    },
+    {
+      "id": "evaluation-reproducibility",
+      "level": "builder",
+      "source_receipt_ids": [
+        "source-neurips-2026-reproducibility-track",
+        "source-neurips-2026-evaluations-datasets-track"
+      ],
+      "teaching_object": "A replication sprint that records benchmark card, data split, contamination checks, and negative results.",
+      "failure_case": "A headline benchmark result cannot be reproduced from the provided setup.",
+      "crucible_gate": "Promote MATCH only when artifact, command, environment, source refs, and result digest re-run cleanly."
+    },
+    {
+      "id": "interpretability-faithfulness",
+      "level": "research",
+      "source_receipt_ids": [
+        "source-neurips-2026-evaluations-datasets-track"
+      ],
+      "teaching_object": "A small model explanation audit comparing perturbation, attribution, and counterexample behavior.",
+      "failure_case": "The explanation looks plausible but fails under a controlled perturbation.",
+      "crucible_gate": "Record input hash, explanation method, perturbation, observed output shift, and remaining unverifiable claims."
+    },
+    {
+      "id": "efficient-alternative-compute",
+      "level": "research",
+      "source_receipt_ids": [
+        "source-deepseek-r1-arxiv"
+      ],
+      "teaching_object": "An accuracy-per-token and latency-per-verdict lab for reasoning strategies and stochastic search loops.",
+      "failure_case": "A method improves raw accuracy but violates cost, latency, or energy budgets.",
+      "crucible_gate": "Attach compute budget, seed, retry count, verifier cost, and promotion threshold to each result."
+    },
+    {
+      "id": "ai-for-science-measurement",
+      "level": "research",
+      "source_receipt_ids": [
+        "source-neurips-2026-evaluations-datasets-track",
+        "source-neurips-2026-reproducibility-track"
+      ],
+      "teaching_object": "A scientific claim card that starts from measurement, uncertainty, and source provenance before model output.",
+      "failure_case": "A model analogizes from biology or physics without measured variables, units, or independent checks.",
+      "crucible_gate": "Require units, source ids, measurement method, uncertainty statement, and claim boundary before synthesis."
+    }
+  ],
+  "claim_cards": [
+    {
+      "id": "claim-youtube-leads-captured",
+      "claim": "The operator-provided YouTube videos and channels are captured as source leads.",
+      "verdict": "MATCH",
+      "evidence_refs": [
+        "youtube_seed_corpus.inputs"
+      ],
+      "limits": [
+        "No title, transcript, upload date, or video-specific claim is promoted in this packet."
+      ]
+    },
+    {
+      "id": "claim-current-learning-forge-sources",
+      "claim": "The Learning Forge frame is backed by current lawful source receipts for education, reproducibility, evaluation, planning, reasoning, coding-agent benchmarks, MCP, and observability.",
+      "verdict": "MATCH",
+      "evidence_refs": [
+        "current_source_receipts"
+      ],
+      "limits": [
+        "Source receipts identify current public references; they do not import full text or prove every technical claim inside each source."
+      ]
+    },
+    {
+      "id": "claim-video-specific-technical-content",
+      "claim": "The supplied videos contain the exact topics inferred in the operator packet.",
+      "verdict": "UNVERIFIABLE",
+      "evidence_refs": [
+        "youtube_seed_corpus.receipt_state"
+      ],
+      "limits": [
+        "Requires Gather metadata and transcript receipts before promotion."
+      ]
+    }
+  ],
+  "flagship_roles": {
+    "gather": [
+      "Capture video metadata, captions, transcript hashes, descriptions, official pages, arXiv metadata, and digest seals.",
+      "Keep unavailable captions, failed metadata, and blocked sources as explicit receipts instead of silent gaps."
+    ],
+    "index": [
+      "Map concepts into a context graph spanning programming, models, reasoning, agents, benchmarks, interpretability, systems, and science.",
+      "Produce budgeted context envelopes for each lab without raw transcript inflation."
+    ],
+    "forum": [
+      "Route each module to education, research, systems, agent, science, or verification lanes.",
+      "Humanize lab prose without adding facts or promoting unsupported video claims."
+    ],
+    "crucible": [
+      "Split concept summaries from falsifiable claims and assign MATCH, DRIFT, or UNVERIFIABLE.",
+      "Build negative corpora for benchmark overfit, missing source hash, stale evidence, unjoinable action, and unverifiable transcript cases."
+    ],
+    "telos": [
+      "Expose the learning forge through CLI and MCP as a reusable host-neutral packet.",
+      "Join later labs, receipts, context packs, and loop-ledger entries into one operator-visible research state."
+    ]
+  },
+  "next_actions": [
+    {
+      "owner": "gather",
+      "action": "capture_youtube_metadata",
+      "input": ".telos/gather/youtube-research-seed/videos.jsonl",
+      "expected_receipt": "metadata MATCH or explicit fetch_failed"
+    },
+    {
+      "owner": "index",
+      "action": "build_concept_graph",
+      "input": "learning_modules",
+      "expected_receipt": "context graph with retained source refs and topic edges"
+    },
+    {
+      "owner": "forum",
+      "action": "route_first_five_labs",
+      "input": "learning_modules[0:5]",
+      "expected_receipt": "one lane and escalation state per lab"
+    },
+    {
+      "owner": "crucible",
+      "action": "build_negative_corpus",
+      "input": "claim_cards",
+      "expected_receipt": "negative fixtures for source, transcript, benchmark, and action-join failures"
+    },
+    {
+      "owner": "telos",
+      "action": "publish_learning_forge_v0",
+      "input": "this packet plus first runnable toy lab",
+      "expected_receipt": "host-neutral CLI/MCP packet and README operator path"
+    }
+  ]
+}

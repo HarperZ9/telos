@@ -1,0 +1,28 @@
+{
+  "schema": "smallharness.minimal-run-receipt/v0",
+  "fixtureId": "telos.resolver.deny_out_of_root",
+  "packId": "project-telos.receipt-boundary-dogfood",
+  "packVersion": "2026.06.28",
+  "fixtureFileHash": "sha256:70e160171fe56ab62ebb6d27b02f52fdf438b64c63d22a10ee76b6543ab9e81f",
+  "backendModelLabel": "small-harness-dogfood-local",
+  "decisionOutcome": "block",
+  "checks": [
+    {
+      "id": "resolver.workspace_root_bound",
+      "type": "path_resolves_under_pack_root",
+      "outcome": "blocked",
+      "failureCode": "path_escape_denied"
+    }
+  ],
+  "observedToolCallNames": [],
+  "transcriptPath": "artifacts/deny-out-of-root/transcript.jsonl",
+  "evalJsonPath": "artifacts/deny-out-of-root/eval.json",
+  "notCapturedYet": [
+    "workspaceHash",
+    "diffArtifactRefs",
+    "stdoutArtifactRefs",
+    "stderrArtifactRefs",
+    "artifactIndex"
+  ],
+  "captureBoundary": "Minimal first-slice receipt; no workspace hashing, diff indexing, stdout/stderr artifact capture, or rich artifact registry yet."
+}

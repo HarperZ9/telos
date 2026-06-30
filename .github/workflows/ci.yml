@@ -1,0 +1,103 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: test
+    runs-on: ubuntu-latest
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+    steps:
+      - name: Check out Telos
+        uses: actions/checkout@v7
+        with:
+          path: telos
+
+      - name: Check out Gather
+        uses: actions/checkout@v7
+        with:
+          repository: HarperZ9/gather
+          path: gather
+
+      - name: Check out Crucible
+        uses: actions/checkout@v7
+        with:
+          repository: HarperZ9/crucible
+          path: crucible
+
+      - name: Check out Index
+        uses: actions/checkout@v7
+        with:
+          repository: HarperZ9/index
+          path: index
+
+      - name: Check out Forum
+        uses: actions/checkout@v7
+        with:
+          repository: HarperZ9/forum
+          path: forum
+
+      - name: Set up Node
+        uses: actions/setup-node@v6
+        with:
+          node-version: "24"
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+
+      - name: Run Telos contract tests
+        working-directory: telos
+        run: |
+          node demo/action-receipt.test.mjs
+          node demo/admission-telemetry.test.mjs
+          node demo/atp-adapter-validation.test.mjs
+          node demo/brand-renderer.test.mjs
+          node demo/ci-doctor.test.mjs
+          node demo/ci-triage.test.mjs
+          node demo/context-envelope.test.mjs
+          node demo/creative-engine.test.mjs
+          node demo/effects-protocol.test.mjs
+          node demo/effects-engine.test.mjs
+          node demo/flagship-action.test.mjs
+          node demo/index-html.test.mjs
+          node demo/integrations.test.mjs
+          node demo/loop-ledger.test.mjs
+          node demo/measurement-layers.test.mjs
+          node demo/mcp-freshness.test.mjs
+          node demo/mcp-runtime-contract.test.mjs
+          node demo/native-control.test.mjs
+          node demo/operator-source-leads.test.mjs
+          node demo/operator-scripts.test.mjs
+          node demo/accessibility-doctor.test.mjs
+          node demo/performance-doctor.test.mjs
+          node demo/compatibility-doctor.test.mjs
+          node demo/operator-doctor.test.mjs
+          node demo/presentation-doctor.test.mjs
+          node demo/project-current-state-docs.test.mjs
+          node demo/rendering-capabilities.test.mjs
+          node demo/rendering-research.test.mjs
+          node demo/research-seed.test.mjs
+          node demo/second-level-flagship-queue.test.mjs
+          node demo/server-manifest.test.mjs
+          node demo/showcase.test.mjs
+          node demo/telos-mcp.test.mjs
+          node demo/workstation-substrate.test.mjs
+          node demo/youtube-research-receipts.test.mjs
+
+      - name: Run Telos room and workflow smoke
+        working-directory: telos
+        run: |
+          node demo/catalog.mjs --summary
+          node demo/server-manifest.mjs --summary
+          node demo/room.mjs --json
+          node demo/flagship-workflow.mjs

@@ -1,0 +1,52 @@
+{
+  "schema": "project-telos.operator-source-leads/v1",
+  "generated_at": "2026-06-28T00:00:00.000Z",
+  "purpose": "Record operator-provided discovery links that should feed Gather, Index, Forum, Crucible, and Telos without promoting blocked pages, social threads, or provider marketing into evidence.",
+  "leads": [
+    {
+      "lead_id": "lead-reddit-gamechanging-websites",
+      "url": "https://www.reddit.com/user/bens-list/comments/1u6stuy/whats_a_gamechanging_website_youve_been_using_for/?p=1&impressionid=5519215528465409603",
+      "source_kind": "operator-provided-social-thread",
+      "provenance_class": "operator_source_lead",
+      "evidence_status": "UNVERIFIABLE",
+      "gather_receipt": {
+        "method": "gather.web http-get",
+        "title": "Reddit - Please wait for verification",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "chars": 0,
+        "digest_seal": "f5a9d2a86d5d46e2794762b6f1ef74ba505be27acf3d20aaf030e74fea4c9410",
+        "verified": true
+      },
+      "promotion_rule": "Use only as a product-discovery lead until a browser/session/API capture or independent source resolves concrete tools and claims."
+    },
+    {
+      "lead_id": "lead-vast-ai-gpu-provider",
+      "url": "https://vast.ai/",
+      "source_kind": "gpu-provider-page",
+      "provenance_class": "operator_source_lead",
+      "evidence_status": "UNVERIFIABLE",
+      "promotion_rule": "Treat as a GPU-provider execution-substrate research lead; do not cite for rendering algorithm claims."
+    },
+    {
+      "lead_id": "lead-hostkey-rendering-gpu-server",
+      "url": "https://hostkey.com/solutions/rendering-gpu-dedicated-server/",
+      "source_kind": "gpu-provider-page",
+      "provenance_class": "operator_source_lead",
+      "evidence_status": "UNVERIFIABLE",
+      "promotion_rule": "Treat as infrastructure and compatibility lead; resolve pricing, GPU models, and terms through current provider docs before use."
+    },
+    {
+      "lead_id": "lead-irender-gpu-cloud-rendering",
+      "url": "https://irendering.net/",
+      "source_kind": "gpu-provider-page",
+      "provenance_class": "operator_source_lead",
+      "evidence_status": "UNVERIFIABLE",
+      "promotion_rule": "Treat as render-farm discovery lead; keep provider availability separate from Telos rendering-technique evidence."
+    }
+  ],
+  "next_actions": [
+    "gather.browser: revisit blocked or JavaScript-heavy social/provider pages when a browser capture is available.",
+    "index.context: keep provider execution surfaces separate from algorithmic rendering research sources.",
+    "crucible.assess: require repeatable benchmarks before any provider or GPU claim becomes MATCH."
+  ]
+}

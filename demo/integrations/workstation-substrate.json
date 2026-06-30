@@ -1,0 +1,122 @@
+{
+  "schema": "project-telos.workstation-substrate/v1",
+  "tool": "telos.workstation.substrate",
+  "generated_at": "2026-06-29T00:50:16-07:00",
+  "purpose": "Public-safe substrate intake for the operator workstation. It records aggregate workspace evidence and promotion lane families without publishing private paths, local payloads, credentials, signing material, or runbooks.",
+  "privacy_boundary": {
+    "absolute_private_paths_included": false,
+    "raw_private_payloads_included": false,
+    "private_filenames_included": false,
+    "credentials_or_signing_material_included": false,
+    "source_body_required_for_interop": false,
+    "rule": "Interop may use root labels, aggregate counts, capability lane families, risk boundaries, first actions, and verification status. Raw profile paths, temp names, private filenames, client data, credential material, signing artifacts, and local runbooks stay outside public git."
+  },
+  "index_evidence": [
+    {
+      "root_id": "operator-dev-root",
+      "source": "index.map",
+      "generated_at": "2026-06-29T00:49:59-07:00",
+      "repo_count": 124,
+      "class_counts": {
+        "public": 114,
+        "local": 10
+      },
+      "dirty_count": 93,
+      "root_sha256_prefix": "99e773d965f606c9",
+      "path_policy": "root label only; no raw absolute path exported"
+    },
+    {
+      "root_id": "operator-profile-root",
+      "source": "index.map",
+      "generated_at": "2026-06-29T00:50:16-07:00",
+      "repo_count": 207,
+      "class_counts": {
+        "public": 49,
+        "local": 158
+      },
+      "dirty_count": 240,
+      "root_sha256_prefix": "b79886309f93e63a",
+      "path_policy": "root label only; no raw absolute path exported"
+    }
+  ],
+  "aggregate": {
+    "mapped_roots": 2,
+    "repo_count": 331,
+    "public_class_repos": 163,
+    "local_class_repos": 168,
+    "dirty_repos": 333,
+    "status": "needs_triage",
+    "verdict": "MATCH"
+  },
+  "lane_families": [
+    {
+      "id": "public-flagship-and-second-level-repos",
+      "host_flagships": ["index.context.envelope", "telos.second_level.queue", "gather.docs", "crucible.review"],
+      "value": "Public and public-fork code that can become flagship features, second-level candidates, or external proof-of-work patches.",
+      "risk_boundary": "Only promote code with public-safe README receipts, tests, and license/attribution checks.",
+      "first_action": "Refresh README receipts and create adapter fixtures before moving candidates into the active revival registry."
+    },
+    {
+      "id": "local-only-tooling-and-prototypes",
+      "host_flagships": ["telos.revival.registry", "index.context.envelope", "forum.route", "crucible.assess"],
+      "value": "Local-only prototypes, frozen tools, and unpublished utilities that may contain reusable algorithms, schemas, or UX patterns.",
+      "risk_boundary": "Do not publish raw paths, local names, private implementation bodies, or source payloads until a sanitized public-safe packet exists.",
+      "first_action": "Create ignored viability packets locally, then promote only lane summaries, hashes, fixtures, and adapter contracts."
+    },
+    {
+      "id": "agent-plugin-and-runtime-caches",
+      "host_flagships": ["forum.route", "telos.loop.ledger", "index.map"],
+      "value": "Installed agent skills, plugins, MCP caches, marketplace imports, and runtime examples that can improve native tool access.",
+      "risk_boundary": "Treat vendor caches and temporary plugin installs as reference material, not source-of-truth product code.",
+      "first_action": "Extract only stable manifest patterns, host integration lessons, and protocol compatibility checks."
+    },
+    {
+      "id": "scratch-temp-and-build-fixtures",
+      "host_flagships": ["index.map", "crucible.review", "telos.workflow"],
+      "value": "Temporary clones, smoke fixtures, build outputs, and experiment directories that may reveal test cases or CI regressions.",
+      "risk_boundary": "Do not promote temp payloads directly; convert useful behavior into synthetic tests or delete stale debris outside public commits.",
+      "first_action": "Classify as keep-fixture, convert-to-test, archive-local, or cleanup-candidate."
+    },
+    {
+      "id": "ops-security-and-release-assurance",
+      "host_flagships": ["crucible.review", "telos.action.receipt", "forum.ledger.summary", "index.context.envelope"],
+      "value": "Defensive, release, audit, and safety lineage that can harden open-source patch workflows and flagship release gates.",
+      "risk_boundary": "Defensive and maintainer-friendly only; no live offensive automation, credential workflows, stealth behavior, or raw private runbooks in shared registries.",
+      "first_action": "Adapt safe analyzers and synthetic fixtures into Crucible review gates and Telos action receipts."
+    },
+    {
+      "id": "creative-media-rendering-assets",
+      "host_flagships": ["telos.creative.engine", "telos.rendering.capabilities", "telos.measurement.layers", "crucible.measurement_gate"],
+      "value": "Rendering, media, fonts, shaders, images, sound, modeling, and creative-code material that can advance the Telos engine.",
+      "risk_boundary": "No purchased fonts, third-party assets, proprietary media, or private creative payloads are committed; use refs, receipts, generated fixtures, or licensed public assets.",
+      "first_action": "Create asset provenance checks and synthetic render/audio fixtures before engine integration."
+    },
+    {
+      "id": "research-docs-and-attachments",
+      "host_flagships": ["gather.docs", "index.context.envelope", "crucible.assess", "telos.research.seed"],
+      "value": "Research reports, attachments, notes, source leads, and papers that can seed scientific, creative, and model-foundry work.",
+      "risk_boundary": "Public synthesis requires source receipts and rights-aware refs; raw private notes stay local unless explicitly sanitized.",
+      "first_action": "Use Gather to create redacted source receipts, then route claims through Crucible before public presentation."
+    },
+    {
+      "id": "contracts-signing-and-sensitive-corpus",
+      "host_flagships": ["gather.docs", "crucible.review", "telos.action.receipt"],
+      "value": "Sensitive signed, legal, financial, or authorization-adjacent corpora may inform local decisions through attestations and hashes.",
+      "risk_boundary": "No raw corpus, certificate, signing artifact, private legal text, or identity material enters public Telos artifacts.",
+      "first_action": "Represent only local attestation status, redacted evidence refs, and hash-only receipts when needed."
+    }
+  ],
+  "promotion_flow": [
+    "Index maps the workspace and emits aggregate shape.",
+    "Gather creates source receipts for public-safe docs or redacted local packets.",
+    "Forum routes each lane to a responsible host flagship.",
+    "Crucible validates adapter claims as MATCH, DRIFT, or UNVERIFIABLE.",
+    "Telos promotes only sanitized, tested contracts into revival registry, second-level queue, MCP tools, or engine modules."
+  ],
+  "next_actions": [
+    "Keep public-safe candidate details in second-level and revival registries.",
+    "Keep private/local viability details in ignored local packets until sanitized.",
+    "Add per-lane adapter fixtures before copying code between repositories.",
+    "Use release-surface scanning and Crucible review before publishing any promoted candidate."
+  ]
+}

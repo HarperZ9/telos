@@ -1,0 +1,667 @@
+{
+  "schema": "project-telos.learning-forge/youtube-research-seed/v1",
+  "generated_at": "2026-06-30T07:27:57.550385+00:00",
+  "source_request": {
+    "attachment_ref": "codex-attachment:80840147-31f9-47cd-845e-321223462342/pasted-text.txt",
+    "sha256": "a022fa3b8ea3d277b97bc058444a7757c90e92b81f06bd90f233d8f2ed66ac48",
+    "chars": 22342
+  },
+  "toolchain": {
+    "gather": "PYTHONIOENCODING=utf-8 python -m gather video --json --store",
+    "channel_capture": "yt-dlp --flat-playlist --playlist-end 8 --dump-single-json",
+    "privacy_boundary": "raw transcripts and channel descriptions are not stored in this ledger; receipt hashes, counts, titles, and refs are stored"
+  },
+  "inputs": {
+    "videos": [
+      "https://www.youtube.com/watch?v=5pieVHmlbyk&t=668s",
+      "https://www.youtube.com/watch?v=1WH9_edB538",
+      "https://www.youtube.com/watch?v=3AhJNyj_X98&t=238s",
+      "https://www.youtube.com/watch?v=0gvHqRv8gTg",
+      "https://www.youtube.com/watch?v=Ihv542rCUns",
+      "https://www.youtube.com/watch?v=w-GugZv044I",
+      "https://www.youtube.com/watch?v=Mw60FH5iflI&t=107s",
+      "https://www.youtube.com/watch?v=VlP-12yc2f8&t=668s"
+    ],
+    "channels": [
+      "https://www.youtube.com/@lobais/videos",
+      "https://www.youtube.com/@MachineLearningStreetTalk/videos"
+    ]
+  },
+  "claim_state": {
+    "video_metadata": "MATCH when returncode is 0 and metadata receipt exists",
+    "video_transcript": "MATCH when returncode is 0 and transcript receipt exists",
+    "channel_lists": "MATCH when flat playlist capture succeeds; limited to first 8 listed videos",
+    "research_claims": "UNVERIFIABLE until transcript claims are cross-checked against papers, repos, official docs, or reproduced demos"
+  },
+  "workflow": [
+    {
+      "owner": "gather",
+      "action": "capture metadata/transcript/channel receipts"
+    },
+    {
+      "owner": "index",
+      "action": "map source concepts into a reusable learning-forge graph"
+    },
+    {
+      "owner": "forum",
+      "action": "route segments to education, systems, reasoning, hardware, biology, and reproducibility specialists"
+    },
+    {
+      "owner": "crucible",
+      "action": "separate MATCH, DRIFT, and UNVERIFIABLE claims with negative test cases"
+    },
+    {
+      "owner": "telos",
+      "action": "turn verified concepts into labs, demos, replay receipts, and model/tool work surfaces"
+    }
+  ],
+  "video_results": [
+    {
+      "url": "https://www.youtube.com/watch?v=5pieVHmlbyk&t=668s",
+      "returncode": 0,
+      "catalog": [
+        {
+          "kind": "metadata",
+          "id": "5pieVHmlbyk",
+          "title": "The Thermodynamic AI Chip · Thomas Ahle",
+          "source": "video",
+          "ref": "5pieVHmlbyk",
+          "method": "yt-dlp",
+          "sha256": "9ddd5840431f72f8475b9b7f5864c182dbd469b4c7e222fe9efbfd58043bbc19",
+          "derived_from": [],
+          "chars": 171
+        },
+        {
+          "kind": "transcript",
+          "id": "5pieVHmlbyk",
+          "title": "The Thermodynamic AI Chip · Thomas Ahle",
+          "source": "video",
+          "ref": "5pieVHmlbyk",
+          "method": "yt-dlp",
+          "sha256": "40a31546b7a391bbb016ba4e3b86a06fc4027636ab85831a0be8b8ca44d6fc56",
+          "derived_from": [],
+          "chars": 63799
+        }
+      ],
+      "digest": {
+        "receipts": [
+          {
+            "kind": "metadata",
+            "id": "5pieVHmlbyk",
+            "title": "The Thermodynamic AI Chip · Thomas Ahle",
+            "source": "video",
+            "ref": "5pieVHmlbyk",
+            "method": "yt-dlp",
+            "sha256": "9ddd5840431f72f8475b9b7f5864c182dbd469b4c7e222fe9efbfd58043bbc19",
+            "derived_from": []
+          },
+          {
+            "kind": "transcript",
+            "id": "5pieVHmlbyk",
+            "title": "The Thermodynamic AI Chip · Thomas Ahle",
+            "source": "video",
+            "ref": "5pieVHmlbyk",
+            "method": "yt-dlp",
+            "sha256": "40a31546b7a391bbb016ba4e3b86a06fc4027636ab85831a0be8b8ca44d6fc56",
+            "derived_from": []
+          }
+        ],
+        "seal": "eb3b09bb46b7b5b5e6ef7292e176c36ef40fdd6257257787366c805fb6021c4f"
+      },
+      "verified": true,
+      "dropped": 0,
+      "stored": {
+        "added": 2,
+        "deduped": 0,
+        "total": 2
+      }
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=1WH9_edB538",
+      "returncode": 0,
+      "catalog": [
+        {
+          "kind": "metadata",
+          "id": "1WH9_edB538",
+          "title": "the physics of keeping secrets w/ cryptography",
+          "source": "video",
+          "ref": "1WH9_edB538",
+          "method": "yt-dlp",
+          "sha256": "09250c3a0f238b8bc7558ec7061600b6f7e8c3fcdbbba375366167cd1253f9f1",
+          "derived_from": [],
+          "chars": 151
+        },
+        {
+          "kind": "transcript",
+          "id": "1WH9_edB538",
+          "title": "the physics of keeping secrets w/ cryptography",
+          "source": "video",
+          "ref": "1WH9_edB538",
+          "method": "auto-caption",
+          "sha256": "a03e49be5f58a2e2d679ec968463b8df3ed3615a3be03e66f28ee9ac782a54a1",
+          "derived_from": [],
+          "chars": 25530
+        }
+      ],
+      "digest": {
+        "receipts": [
+          {
+            "kind": "metadata",
+            "id": "1WH9_edB538",
+            "title": "the physics of keeping secrets w/ cryptography",
+            "source": "video",
+            "ref": "1WH9_edB538",
+            "method": "yt-dlp",
+            "sha256": "09250c3a0f238b8bc7558ec7061600b6f7e8c3fcdbbba375366167cd1253f9f1",
+            "derived_from": []
+          },
+          {
+            "kind": "transcript",
+            "id": "1WH9_edB538",
+            "title": "the physics of keeping secrets w/ cryptography",
+            "source": "video",
+            "ref": "1WH9_edB538",
+            "method": "auto-caption",
+            "sha256": "a03e49be5f58a2e2d679ec968463b8df3ed3615a3be03e66f28ee9ac782a54a1",
+            "derived_from": []
+          }
+        ],
+        "seal": "7a31e543c42d403e52121ff61c9eeb94e70a8dce5f2b913c4abce27227ca68f5"
+      },
+      "verified": true,
+      "dropped": 0,
+      "stored": {
+        "added": 2,
+        "deduped": 0,
+        "total": 2
+      }
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=3AhJNyj_X98&t=238s",
+      "returncode": 0,
+      "catalog": [
+        {
+          "kind": "metadata",
+          "id": "3AhJNyj_X98",
+          "title": "Morphosyntactic Alignment",
+          "source": "video",
+          "ref": "3AhJNyj_X98",
+          "method": "yt-dlp",
+          "sha256": "db7b97aa0661d1c0ee7af4b1843f52978d3f1f7e25cf53c3ccbb5e461743a7c0",
+          "derived_from": [],
+          "chars": 148
+        },
+        {
+          "kind": "transcript",
+          "id": "3AhJNyj_X98",
+          "title": "Morphosyntactic Alignment",
+          "source": "video",
+          "ref": "3AhJNyj_X98",
+          "method": "auto-caption",
+          "sha256": "9c2d9277785d977a9fe973cf37af0274a2936a71361a3ca41cc91c1f1d621140",
+          "derived_from": [],
+          "chars": 94338
+        }
+      ],
+      "digest": {
+        "receipts": [
+          {
+            "kind": "metadata",
+            "id": "3AhJNyj_X98",
+            "title": "Morphosyntactic Alignment",
+            "source": "video",
+            "ref": "3AhJNyj_X98",
+            "method": "yt-dlp",
+            "sha256": "db7b97aa0661d1c0ee7af4b1843f52978d3f1f7e25cf53c3ccbb5e461743a7c0",
+            "derived_from": []
+          },
+          {
+            "kind": "transcript",
+            "id": "3AhJNyj_X98",
+            "title": "Morphosyntactic Alignment",
+            "source": "video",
+            "ref": "3AhJNyj_X98",
+            "method": "auto-caption",
+            "sha256": "9c2d9277785d977a9fe973cf37af0274a2936a71361a3ca41cc91c1f1d621140",
+            "derived_from": []
+          }
+        ],
+        "seal": "e5c89eabc517ef39c5763598ba2b8a3af8f1843a0fa2baddeadb57566a65251c"
+      },
+      "verified": true,
+      "dropped": 0,
+      "stored": {
+        "added": 2,
+        "deduped": 0,
+        "total": 2
+      }
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=0gvHqRv8gTg",
+      "returncode": 0,
+      "catalog": [
+        {
+          "kind": "metadata",
+          "id": "0gvHqRv8gTg",
+          "title": "Reading the Brain Without Opening the Skull | Tom Oxley, Synchron",
+          "source": "video",
+          "ref": "0gvHqRv8gTg",
+          "method": "yt-dlp",
+          "sha256": "94c13f638f2da8fc831cc754e92a80a3ddffcbb80392c842f2a29a93cf8952dd",
+          "derived_from": [],
+          "chars": 160
+        },
+        {
+          "kind": "transcript",
+          "id": "0gvHqRv8gTg",
+          "title": "Reading the Brain Without Opening the Skull | Tom Oxley, Synchron",
+          "source": "video",
+          "ref": "0gvHqRv8gTg",
+          "method": "auto-caption",
+          "sha256": "3d6787de157b7255f4b5f2bc74daa1605114df21352dcf0e8302560619cf0c4a",
+          "derived_from": [],
+          "chars": 94469
+        }
+      ],
+      "digest": {
+        "receipts": [
+          {
+            "kind": "metadata",
+            "id": "0gvHqRv8gTg",
+            "title": "Reading the Brain Without Opening the Skull | Tom Oxley, Synchron",
+            "source": "video",
+            "ref": "0gvHqRv8gTg",
+            "method": "yt-dlp",
+            "sha256": "94c13f638f2da8fc831cc754e92a80a3ddffcbb80392c842f2a29a93cf8952dd",
+            "derived_from": []
+          },
+          {
+            "kind": "transcript",
+            "id": "0gvHqRv8gTg",
+            "title": "Reading the Brain Without Opening the Skull | Tom Oxley, Synchron",
+            "source": "video",
+            "ref": "0gvHqRv8gTg",
+            "method": "auto-caption",
+            "sha256": "3d6787de157b7255f4b5f2bc74daa1605114df21352dcf0e8302560619cf0c4a",
+            "derived_from": []
+          }
+        ],
+        "seal": "e09ff8bedaae197d85db2ddf511d66ae3ba1b0121322a77c8f5766d2e3d97c9a"
+      },
+      "verified": true,
+      "dropped": 0,
+      "stored": {
+        "added": 2,
+        "deduped": 0,
+        "total": 2
+      }
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=Ihv542rCUns",
+      "returncode": 0,
+      "catalog": [
+        {
+          "kind": "metadata",
+          "id": "Ihv542rCUns",
+          "title": "The Unsettling Illusion of Time",
+          "source": "video",
+          "ref": "Ihv542rCUns",
+          "method": "yt-dlp",
+          "sha256": "ae8f7445ec3d3ada45d97753b7ee3916bd72a3fb25693075b639c1a857292e1d",
+          "derived_from": [],
+          "chars": 158
+        },
+        {
+          "kind": "transcript",
+          "id": "Ihv542rCUns",
+          "title": "The Unsettling Illusion of Time",
+          "source": "video",
+          "ref": "Ihv542rCUns",
+          "method": "yt-dlp",
+          "sha256": "c31d1445d893235296d582584e9ff4b44123239053cf9862fd0e65dc3558e26c",
+          "derived_from": [],
+          "chars": 92565
+        }
+      ],
+      "digest": {
+        "receipts": [
+          {
+            "kind": "metadata",
+            "id": "Ihv542rCUns",
+            "title": "The Unsettling Illusion of Time",
+            "source": "video",
+            "ref": "Ihv542rCUns",
+            "method": "yt-dlp",
+            "sha256": "ae8f7445ec3d3ada45d97753b7ee3916bd72a3fb25693075b639c1a857292e1d",
+            "derived_from": []
+          },
+          {
+            "kind": "transcript",
+            "id": "Ihv542rCUns",
+            "title": "The Unsettling Illusion of Time",
+            "source": "video",
+            "ref": "Ihv542rCUns",
+            "method": "yt-dlp",
+            "sha256": "c31d1445d893235296d582584e9ff4b44123239053cf9862fd0e65dc3558e26c",
+            "derived_from": []
+          }
+        ],
+        "seal": "5dba1356fc5695b965c45fea77f2a24893c1542f3e3ca638a6fc94dc2614d055"
+      },
+      "verified": true,
+      "dropped": 0,
+      "stored": {
+        "added": 2,
+        "deduped": 0,
+        "total": 2
+      }
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=w-GugZv044I",
+      "returncode": 0,
+      "catalog": [
+        {
+          "kind": "metadata",
+          "id": "w-GugZv044I",
+          "title": "Quantum Entanglement: The Link That Should Not Exist | The Sleepy Scientist",
+          "source": "video",
+          "ref": "w-GugZv044I",
+          "method": "yt-dlp",
+          "sha256": "2066eef2d6c1b41f555f4d308e62d23b931596a01786986c6b97855a598cede4",
+          "derived_from": [],
+          "chars": 165
+        },
+        {
+          "kind": "transcript",
+          "id": "w-GugZv044I",
+          "title": "Quantum Entanglement: The Link That Should Not Exist | The Sleepy Scientist",
+          "source": "video",
+          "ref": "w-GugZv044I",
+          "method": "auto-caption",
+          "sha256": "87890fb9aaf77d7c30d95fd3e5c602da3f9c02a172006dbeef24aba8f58de4ca",
+          "derived_from": [],
+          "chars": 140855
+        }
+      ],
+      "digest": {
+        "receipts": [
+          {
+            "kind": "metadata",
+            "id": "w-GugZv044I",
+            "title": "Quantum Entanglement: The Link That Should Not Exist | The Sleepy Scientist",
+            "source": "video",
+            "ref": "w-GugZv044I",
+            "method": "yt-dlp",
+            "sha256": "2066eef2d6c1b41f555f4d308e62d23b931596a01786986c6b97855a598cede4",
+            "derived_from": []
+          },
+          {
+            "kind": "transcript",
+            "id": "w-GugZv044I",
+            "title": "Quantum Entanglement: The Link That Should Not Exist | The Sleepy Scientist",
+            "source": "video",
+            "ref": "w-GugZv044I",
+            "method": "auto-caption",
+            "sha256": "87890fb9aaf77d7c30d95fd3e5c602da3f9c02a172006dbeef24aba8f58de4ca",
+            "derived_from": []
+          }
+        ],
+        "seal": "3e3ffac2458f981339ea46d681214713d939cb41d7a50252b98d1ef9fffb2ec2"
+      },
+      "verified": true,
+      "dropped": 0,
+      "stored": {
+        "added": 2,
+        "deduped": 0,
+        "total": 2
+      }
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=Mw60FH5iflI&t=107s",
+      "returncode": 0,
+      "catalog": [
+        {
+          "kind": "metadata",
+          "id": "Mw60FH5iflI",
+          "title": "Training Sand to Think: Artificial General Intelligence & Future of Physics",
+          "source": "video",
+          "ref": "Mw60FH5iflI",
+          "method": "yt-dlp",
+          "sha256": "3ea648cc1f643a75d6cc30fbf85c609139613350d720d2a8e438ec0bb7040d0e",
+          "derived_from": [],
+          "chars": 188
+        },
+        {
+          "kind": "transcript",
+          "id": "Mw60FH5iflI",
+          "title": "Training Sand to Think: Artificial General Intelligence & Future of Physics",
+          "source": "video",
+          "ref": "Mw60FH5iflI",
+          "method": "auto-caption",
+          "sha256": "ad9f336069071ff18b6101f416773ddf697cee1cb51b03bf9cf217774230d97d",
+          "derived_from": [],
+          "chars": 54932
+        }
+      ],
+      "digest": {
+        "receipts": [
+          {
+            "kind": "metadata",
+            "id": "Mw60FH5iflI",
+            "title": "Training Sand to Think: Artificial General Intelligence & Future of Physics",
+            "source": "video",
+            "ref": "Mw60FH5iflI",
+            "method": "yt-dlp",
+            "sha256": "3ea648cc1f643a75d6cc30fbf85c609139613350d720d2a8e438ec0bb7040d0e",
+            "derived_from": []
+          },
+          {
+            "kind": "transcript",
+            "id": "Mw60FH5iflI",
+            "title": "Training Sand to Think: Artificial General Intelligence & Future of Physics",
+            "source": "video",
+            "ref": "Mw60FH5iflI",
+            "method": "auto-caption",
+            "sha256": "ad9f336069071ff18b6101f416773ddf697cee1cb51b03bf9cf217774230d97d",
+            "derived_from": []
+          }
+        ],
+        "seal": "7a4ae49cbdd2a3416ef7968c4532ac1363757a8330f87901cdc5396aafcc884b"
+      },
+      "verified": true,
+      "dropped": 0,
+      "stored": {
+        "added": 2,
+        "deduped": 0,
+        "total": 2
+      }
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=VlP-12yc2f8&t=668s",
+      "returncode": 0,
+      "catalog": [
+        {
+          "kind": "metadata",
+          "id": "VlP-12yc2f8",
+          "title": "Neil Turok’s stunningly simple, testable new theory of the universe",
+          "source": "video",
+          "ref": "VlP-12yc2f8",
+          "method": "yt-dlp",
+          "sha256": "d37808caff96035fbd57d4c90a5a3fa8be22b8a66741790a6088c7a4a81d5f49",
+          "derived_from": [],
+          "chars": 187
+        },
+        {
+          "kind": "transcript",
+          "id": "VlP-12yc2f8",
+          "title": "Neil Turok’s stunningly simple, testable new theory of the universe",
+          "source": "video",
+          "ref": "VlP-12yc2f8",
+          "method": "auto-caption",
+          "sha256": "ef0e34bbbe32e9d8b5f8e0b1b9429c6fc15cd6d183331318a6d70bc6bac2b202",
+          "derived_from": [],
+          "chars": 65190
+        }
+      ],
+      "digest": {
+        "receipts": [
+          {
+            "kind": "metadata",
+            "id": "VlP-12yc2f8",
+            "title": "Neil Turok’s stunningly simple, testable new theory of the universe",
+            "source": "video",
+            "ref": "VlP-12yc2f8",
+            "method": "yt-dlp",
+            "sha256": "d37808caff96035fbd57d4c90a5a3fa8be22b8a66741790a6088c7a4a81d5f49",
+            "derived_from": []
+          },
+          {
+            "kind": "transcript",
+            "id": "VlP-12yc2f8",
+            "title": "Neil Turok’s stunningly simple, testable new theory of the universe",
+            "source": "video",
+            "ref": "VlP-12yc2f8",
+            "method": "auto-caption",
+            "sha256": "ef0e34bbbe32e9d8b5f8e0b1b9429c6fc15cd6d183331318a6d70bc6bac2b202",
+            "derived_from": []
+          }
+        ],
+        "seal": "60acddaf2ad51bb263a78242ba5aef5324e33a2702e143fe1f97d42f02f3197c"
+      },
+      "verified": true,
+      "dropped": 0,
+      "stored": {
+        "added": 2,
+        "deduped": 0,
+        "total": 2
+      }
+    }
+  ],
+  "channel_results": [
+    {
+      "url": "https://www.youtube.com/@lobais/videos",
+      "returncode": 0,
+      "source_type": "youtube_channel",
+      "method": "yt-dlp-flat-playlist",
+      "video_list_state": "match",
+      "metadata_sha256": "9fd7deb97f1fa70004acd06b49f8be01a78fad2a2a3cfc2a9261d7de26e4b624",
+      "metadata_chars": 1200,
+      "channel": "Thomas Dybdahl Ahle",
+      "channel_id": "UClvbliYLO4qovedkSZq7JEg",
+      "uploader_id": "@lobais",
+      "webpage_url": "https://www.youtube.com/@lobais/videos",
+      "channel_follower_count": 16,
+      "captured_entries": 5,
+      "entries": [
+        {
+          "id": "Ct63ikA2q-c",
+          "title": "Fast Variance Operator for Uncertainty Rating",
+          "url": "https://www.youtube.com/watch?v=Ct63ikA2q-c",
+          "duration": 1318.0,
+          "ie_key": "Youtube"
+        },
+        {
+          "id": "Bp3afo2YYCQ",
+          "title": "Subsets and Supermajorities: Optimal Hashing-based Set Similarity Search",
+          "url": "https://www.youtube.com/watch?v=Bp3afo2YYCQ",
+          "duration": 1427.0,
+          "ie_key": "Youtube"
+        },
+        {
+          "id": "o0jqXjUF_d4",
+          "title": "On the Problem of p₁⁻¹ in Locality‑Sensitive Hashing",
+          "url": "https://www.youtube.com/watch?v=o0jqXjUF_d4",
+          "duration": 1475.0,
+          "ie_key": "Youtube"
+        },
+        {
+          "id": "ethzysiR4j4",
+          "title": "Det danske Matematik OL hold i Aftenshowet",
+          "url": "https://www.youtube.com/watch?v=ethzysiR4j4",
+          "duration": 335.0,
+          "ie_key": "Youtube"
+        },
+        {
+          "id": "3U2xc9x9nYM",
+          "title": "PyDock",
+          "url": "https://www.youtube.com/watch?v=3U2xc9x9nYM",
+          "duration": 62.0,
+          "ie_key": "Youtube"
+        }
+      ]
+    },
+    {
+      "url": "https://www.youtube.com/@MachineLearningStreetTalk/videos",
+      "returncode": 0,
+      "source_type": "youtube_channel",
+      "method": "yt-dlp-flat-playlist",
+      "video_list_state": "match",
+      "metadata_sha256": "aa31ad9c065356b73350ec327c2b572182f463336cba4cb4375dfc6cd1c05cf6",
+      "metadata_chars": 1979,
+      "channel": "Machine Learning Street Talk",
+      "channel_id": "UCMLtBahI5DMrt0NPvDSoIRQ",
+      "uploader_id": "@MachineLearningStreetTalk",
+      "webpage_url": "https://www.youtube.com/@MachineLearningStreetTalk/videos",
+      "channel_follower_count": 217000,
+      "captured_entries": 8,
+      "entries": [
+        {
+          "id": "5pieVHmlbyk",
+          "title": "The Thermodynamic AI Chip · Thomas Ahle",
+          "url": "https://www.youtube.com/watch?v=5pieVHmlbyk",
+          "duration": 3780.0,
+          "ie_key": "Youtube"
+        },
+        {
+          "id": "e3gBwLWAerw",
+          "title": "He won a Nobel here for AlphaFold. Then he left. - John Jumper",
+          "url": "https://www.youtube.com/watch?v=e3gBwLWAerw",
+          "duration": 3186.0,
+          "ie_key": "Youtube"
+        },
+        {
+          "id": "TpyS50ifmX4",
+          "title": "The Ex-Pentagon Chief Sounding the Alarm on AI Weapons — Brad Carson",
+          "url": "https://www.youtube.com/watch?v=TpyS50ifmX4",
+          "duration": 4852.0,
+          "ie_key": "Youtube"
+        },
+        {
+          "id": "AREWYbVtX64",
+          "title": "Intelligence is collective, not artificial — Prof. Michael I. Jordan (UC Berkeley / Inria)",
+          "url": "https://www.youtube.com/watch?v=AREWYbVtX64",
+          "duration": 4630.0,
+          "ie_key": "Youtube"
+        },
+        {
+          "id": "zSAGzfspuDE",
+          "title": "The AI Progress Chart Everyone Is Misreading — Beth Barnes & David Rein",
+          "url": "https://www.youtube.com/watch?v=zSAGzfspuDE",
+          "duration": 6807.0,
+          "ie_key": "Youtube"
+        },
+        {
+          "id": "EInEmGaMRLc",
+          "title": "When AI Discovers the Next Transformer — Robert Lange",
+          "url": "https://www.youtube.com/watch?v=EInEmGaMRLc",
+          "duration": 4687.0,
+          "ie_key": "Youtube"
+        },
+        {
+          "id": "dHBEQ-Ryo24",
+          "title": "The Dangerous Illusion of AI Coding? - Jeremy Howard",
+          "url": "https://www.youtube.com/watch?v=dHBEQ-Ryo24",
+          "duration": 5200.0,
+          "ie_key": "Youtube"
+        },
+        {
+          "id": "M2iX6HQOoLg",
+          "title": "What If Intelligence Didn't Evolve? It \"Was There\" From the Start! - Blaise Agüera y Arcas",
+          "url": "https://www.youtube.com/watch?v=M2iX6HQOoLg",
+          "duration": 3349.0,
+          "ie_key": "Youtube"
+        }
+      ]
+    }
+  ]
+}
