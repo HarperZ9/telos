@@ -74,12 +74,15 @@ Index, gathering the operator-spine spec with Gather, routing the work through
 Forum, checking smoke claims with Crucible, and reconciling the result through
 the Telos certificate loop.
 
+`showcase.mjs` starts the OSS Proof Showcase lane. It can rank a fixture-backed
+candidate offline and, when the GitHub CLI is available, scout live public
+issues without making public changes.
+
 `research/youtube-learning-forge-receipts.json` records the current Learning
 Forge seed intake: eight video metadata/transcript receipts and two channel-list
 receipts captured through Gather and yt-dlp. It intentionally stores hashes,
 counts, titles, and refs only; raw transcripts stay in the local `.telos/`
 corpus and are ignored by git.
-
 - **Node >= 18.** (Tested on Node 25.)
 - **Zero external dependencies.** No `npm install`. The organs the loop needs (`render-nd`, `render-sound`, `sense-core`, `viable-viz`) are vendored into this folder as plain ESM `.mjs` files. Nothing is fetched, nothing is built.
 

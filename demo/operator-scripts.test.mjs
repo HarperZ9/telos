@@ -50,7 +50,9 @@ assert.ok(status.native.mcp_tools.includes("telos.revival.registry"));
 assert.ok(status.native.mcp_tools.includes("telos.second_level.queue"));
 assert.ok(status.native.mcp_tools.includes("telos.workstation.substrate"));
 assert.ok(status.native.mcp_tools.includes("telos.display.calibration"));
-assert.match(status.native.current_status, /63-tool/);
+assert.ok(status.native.mcp_tools.includes("telos.native.control"));
+assert.ok(status.native.mcp_tools.includes("telos.showcase.scout"));
+assert.match(status.native.current_status, /64-tool/);
 assert.equal(status.next_actions[0].tool, "index");
 
 const doctor = runJson("doctor.mjs");
@@ -83,13 +85,18 @@ assert.equal(workflow.native.crucible_match, 1);
 assert.equal(workflow.native.crucible_unverifiable, 1);
 assert.equal(workflow.native.telos_demo_recheck, true);
 
+const showcaseScout = runJson("showcase.mjs", "scout", "--fixture", "--json");
+assert.equal(showcaseScout.schema, "project-telos.oss-scout/v1");
+assert.equal(showcaseScout.candidates[0].repository.full_name, "pandas-dev/pandas");
+assert.equal(showcaseScout.candidates[0].score.priority, 70);
+
 const catalogSummary = spawnSync(process.execPath, [path.join(here, "catalog.mjs"), "--summary"], {
   cwd: path.resolve(here, ".."),
   encoding: "utf8"
 });
 assert.equal(catalogSummary.status, 0, catalogSummary.stderr || catalogSummary.stdout);
 assert.match(catalogSummary.stdout, /^Project Telos MCP Catalog/m);
-assert.match(catalogSummary.stdout, /tools\s+63 total, 63 available/);
-assert.match(catalogSummary.stdout, /telos\s+35 tools\s+telos.status, telos.doctor/);
+assert.match(catalogSummary.stdout, /tools\s+64 total, 64 available/);
+assert.match(catalogSummary.stdout, /telos\s+36 tools\s+telos.status, telos.doctor/);
 assert.match(catalogSummary.stdout, /next\s+node demo\/catalog.mjs/);
 assert.ok(catalogSummary.stdout.split(/\r?\n/).length <= 12, "summary stays compact");

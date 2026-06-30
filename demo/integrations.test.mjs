@@ -65,6 +65,10 @@ for (const name of [
   "telos.context.pack",
   "telos.action.receipt",
   "telos.loop.ledger",
+  "telos.objective.monitor",
+  "telos.model.foundry",
+  "telos.learning.forge",
+  "telos.learning.labs",
   "telos.research.seed",
   "telos.research.thermodynamic",
   "telos.rendering.research",
@@ -75,7 +79,9 @@ for (const name of [
   "telos.revival.registry",
   "telos.second_level.queue",
   "telos.workstation.substrate",
-  "telos.display.calibration"
+  "telos.display.calibration",
+  "telos.native.control",
+  "telos.showcase.scout"
 ]) {
   assert.ok(names.has(name), `missing ${name}`);
 }
@@ -141,6 +147,14 @@ assert.deepEqual(byName.get("telos.display.calibration").cli, [
 assert.deepEqual(byName.get("telos.mcp.freshness").cli, [
   "node",
   "demo/mcp-freshness.mjs"
+]);
+
+assert.deepEqual(byName.get("telos.showcase.scout").cli, [
+  "node",
+  "demo/showcase.mjs",
+  "scout",
+  "--fixture",
+  "--json"
 ]);
 
 assert.deepEqual(byName.get("telos.ci.doctor").cli, [

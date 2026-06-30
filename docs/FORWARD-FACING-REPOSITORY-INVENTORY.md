@@ -134,4 +134,3 @@ Batch 5: smaller public utilities and templates.
 ## Fork Policy
 
 Public forks are forward-facing, but they should not receive Harper/Telos product branding by default. Treat them as upstream-contribution surfaces: clean patches, bug fixes, issue reproductions, and narrow README notes only when the fork has a Harper-specific purpose.
-

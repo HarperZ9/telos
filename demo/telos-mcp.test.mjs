@@ -55,7 +55,9 @@ for (const name of [
   "telos.revival.registry",
   "telos.second_level.queue",
   "telos.workstation.substrate",
-  "telos.display.calibration"
+  "telos.display.calibration",
+  "telos.native.control",
+  "telos.showcase.scout"
 ]) {
   assert.ok(names.has(name), `missing ${name}`);
 }
@@ -400,6 +402,10 @@ assert.deepEqual(displayCalibration.result.structuredContent, expectedDisplayCal
 assert.equal(displayCalibration.result.structuredContent.schema, "project-telos.display-calibration/v1");
 assert.equal(displayCalibration.result.structuredContent.contract.hardware_mutation_allowed, false);
 
+const showcase = handleRequest(request("tools/call", { name: "telos.showcase.scout", arguments: {} }));
+assert.equal(showcase.result.structuredContent.schema, "project-telos.oss-scout/v1");
+assert.equal(showcase.result.structuredContent.candidates[0].issue.number, 66050);
+
 const badTool = handleRequest(request("tools/call", { name: "telos.missing", arguments: {} }));
 assert.equal(badTool.error.code, -32000);
 assert.match(badTool.error.message, /unknown tool/);
@@ -442,3 +448,5 @@ assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.revival
 assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.second_level.queue"));
 assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.workstation.substrate"));
 assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.display.calibration"));
+assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.native.control"));
+assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.showcase.scout"));

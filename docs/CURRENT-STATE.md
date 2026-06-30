@@ -17,7 +17,7 @@ This document is a live state packet for Project Telos. It is deliberately evide
 - Forum route for the expanded mandate decided `project-telos` with no escalation; related lanes remain technical-writing, function-routing, data-ml, code-review, render-pipeline, shader-effects, and deep-research.
 - Gather receipts were refreshed for large-context agent memory and rendering research.
 - Telos workflow returned `MATCH` for the local five-flagship workflow and reports CLI, MCP, IDE, TUI, and application workbench next actions.
-- Telos catalog now presents 63 available tools across the five flagships, including `telos.context.pack`, `telos.model.foundry`, `telos.learning.forge`, `telos.learning.labs`, `telos.mcp.freshness`, `telos.ci.doctor`, `telos.ci.triage`, `telos.presentation.doctor`, `telos.accessibility.doctor`, `telos.performance.doctor`, `telos.compatibility.doctor`, `telos.operator.doctor`, `telos.research.thermodynamic`, `telos.second_level.queue`, `telos.workstation.substrate`, and `telos.native.control`.
+- Telos catalog now presents 64 available tools across the five flagships, including `telos.context.pack`, `telos.model.foundry`, `telos.learning.forge`, `telos.learning.labs`, `telos.mcp.freshness`, `telos.ci.doctor`, `telos.ci.triage`, `telos.presentation.doctor`, `telos.accessibility.doctor`, `telos.performance.doctor`, `telos.compatibility.doctor`, `telos.operator.doctor`, `telos.research.thermodynamic`, `telos.second_level.queue`, `telos.workstation.substrate`, `telos.native.control`, and `telos.showcase.scout`.
 - The active flagship-state goal ledger is `docs/FLAGSHIP-STATE-GOAL.md`. The latest dogfood pass records Telos compatibility `MATCH`, Gather status `MATCH`, Index maps for `C:\dev\public` (52 repos, 2 dirty), `C:\dev\opsec` (5 repos, 0 dirty), and `C:\dev\state` (4 repos, 0 dirty), Forum routing to `project-telos`, Aleph private-line MCP config `MATCH`, and Gather source launcher commit `ab959c7` with green CI run `28459724472`.
 - Native background control (`telos.native.control` / `node demo/native-control.mjs`) drives the browser via the Chrome DevTools Protocol and native apps via Windows UI Automation, delivering synthetic events into each target so the operator's physical cursor and keyboard stay free. The MCP tool is the read-only capability catalog; actuation runs locally through the CLI.
 - The canonical connection and distribution map now lives at `docs/PROJECT-CONNECTION-MAP.md`. It treats the five flagships as the current organs and the wider HarperZ9 public repo corpus as Telos growth tissue.
@@ -94,12 +94,12 @@ Fresh Gather receipts used in this pass:
 
 Local research inputs used in this pass:
 
-- `C:/Users/Zain/Downloads/deep-research-report1.md`, SHA256 `BA705626D31A8F157896A28381F68B97C13928582B0BD4B1E3E09639D92EC0F3`.
-- `C:/Users/Zain/.codex/attachments/148000af-2094-47bc-9ca7-f11836176987/pasted-text.txt`, SHA256 `9ABF17D60018810D44CD015E733446E9FBEE301CC70CC89E4652EAE01CF9731E`.
-- `C:/Users/Zain/.codex/attachments/96becef4-d943-468f-a079-ea06ea4ab6a0/pasted-text.txt`, Gather SHA256 `dc6780ba0e52f00a3e734d15082a539bb2c340a26b9c7048e967ca00c945fdc1`, digest seal `43aa038825eea817a3eb362cb8b54056a8a04ac13d00c91746e6749440ab7edd`.
-- `C:/Users/Zain/.codex/attachments/773e5613-c40e-44b7-b041-3ee739b0c53c/pasted-text.txt`, Gather SHA256 `4aa65ce9bdafb9a8a5f3632b13d5085f4d5d56374398200d0c75033901192990`, digest seal `dc240ab440dd74e53f121945b52638a1630717f0570cbec38afb9a3b00600414`.
-- `C:/Users/Zain/.codex/attachments/919198d0-8a63-4be7-b133-be98ec3fa74b/pasted-text.txt`, Gather SHA256 `3659d9e2fc1fd8a3ac46c0bb9534307e0aaba422f838fc4c416a09baae0b8581`, digest seal `5518523e1064ee8fa82e4c425632149a24e284a8bd9997a614ac03e110f4818d`.
-- `C:/Users/Zain/.codex/attachments/80840147-31f9-47cd-845e-321223462342/pasted-text.txt`, Gather SHA256 `a022fa3b8ea3d277b97bc058444a7757c90e92b81f06bd90f233d8f2ed66ac48`, digest seal `bc983de187794519b6ab83c9d4c851e458791d9911eecf8b1445551e038f2856`.
+- `local-download:deep-research-report1.md`, SHA256 `BA705626D31A8F157896A28381F68B97C13928582B0BD4B1E3E09639D92EC0F3`.
+- `local-attachment:148000af-2094-47bc-9ca7-f11836176987/pasted-text.txt`, SHA256 `9ABF17D60018810D44CD015E733446E9FBEE301CC70CC89E4652EAE01CF9731E`.
+- `local-attachment:96becef4-d943-468f-a079-ea06ea4ab6a0/pasted-text.txt`, Gather SHA256 `dc6780ba0e52f00a3e734d15082a539bb2c340a26b9c7048e967ca00c945fdc1`, digest seal `43aa038825eea817a3eb362cb8b54056a8a04ac13d00c91746e6749440ab7edd`.
+- `local-attachment:773e5613-c40e-44b7-b041-3ee739b0c53c/pasted-text.txt`, Gather SHA256 `4aa65ce9bdafb9a8a5f3632b13d5085f4d5d56374398200d0c75033901192990`, digest seal `dc240ab440dd74e53f121945b52638a1630717f0570cbec38afb9a3b00600414`.
+- `local-attachment:919198d0-8a63-4be7-b133-be98ec3fa74b/pasted-text.txt`, Gather SHA256 `3659d9e2fc1fd8a3ac46c0bb9534307e0aaba422f838fc4c416a09baae0b8581`, digest seal `5518523e1064ee8fa82e4c425632149a24e284a8bd9997a614ac03e110f4818d`.
+- `local-attachment:80840147-31f9-47cd-845e-321223462342/pasted-text.txt`, Gather SHA256 `a022fa3b8ea3d277b97bc058444a7757c90e92b81f06bd90f233d8f2ed66ac48`, digest seal `bc983de187794519b6ab83c9d4c851e458791d9911eecf8b1445551e038f2856`.
 
 Protocol sources already represented in the Telos MCP server manifest:
 

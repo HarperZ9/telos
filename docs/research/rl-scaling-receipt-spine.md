@@ -31,4 +31,3 @@ Telos should not clone a post-training framework as a first move. The stronger t
 ## Why This Can Surpass Slime Shape-Wise
 
 Slime's public center of gravity is high-performance post-training execution. Telos can compete around operational trust: receipts, replayability, model/workflow provenance, human review, cross-tool routing, and negative conformance tests. The bar is not "we trained a bigger model"; the bar is that an enterprise or lab can leave a long-running agentic RL/post-training workflow alone and later know exactly what was proposed, admitted, executed, verified, compensated, or left unverifiable.
-
