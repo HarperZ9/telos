@@ -4,6 +4,9 @@ All notable changes to Project Telos. Telos is currently a source demo and share
 
 ## Unreleased
 
+- MCP freshness: adds Forum private-line routing and Index portable private-line
+  map behavior probes, so host-loaded MCP servers must prove current routing and
+  nested-workspace map behavior before Telos trusts their output.
 - Learning Forge labs: adds `project-telos.learning-forge/labs/v1`,
   `node demo/learning-forge-labs.mjs`, and `telos.learning.labs` to turn the
   gathered operator research packet into seven executable lab contracts with

@@ -195,6 +195,17 @@
               }
             },
             "rationale": "Catch stale host-loaded Index servers that expose context envelopes without selection summaries and freshness roots."
+          },
+          {
+            "id": "index-map-portable-private-line",
+            "tool": "index.map",
+            "arguments": {
+              "root": "${PROJECT_TELOS_PRIVATE_LINE}"
+            },
+            "expected_subset": {
+              "absolute_paths_included": false
+            },
+            "rationale": "Catch stale or wedged host-loaded Index servers on nested private-line workspaces while preserving portable output."
           }
         ]
       },
@@ -262,6 +273,18 @@
               "needs_escalation": false
             },
             "rationale": "Catch stale host-loaded Forum servers that still escalate broad Project Telos operator work after the decisive-hit router fix."
+          },
+          {
+            "id": "forum-private-line-telos-route",
+            "tool": "forum.route",
+            "arguments": {
+              "text": "Continue advancing Seed, Kun, Sofer, ORCA, and behavior-transform.io toward private-line flagship state while preserving safe publication boundaries, native doctor receipts, CI health, MCP CLI compatibility, and enterprise presentation."
+            },
+            "expected_subset": {
+              "decided": "project-telos",
+              "needs_escalation": false
+            },
+            "rationale": "Catch stale host-loaded Forum servers that do not recognize private-line flagship tool names as Project Telos work."
           }
         ]
       },
