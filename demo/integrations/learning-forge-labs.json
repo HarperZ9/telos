@@ -1,0 +1,387 @@
+{
+  "schema": "project-telos.learning-forge/labs/v1",
+  "generated_at": "2026-06-30T00:00:00.000Z",
+  "tool": "telos.learning.labs",
+  "purpose": "Convert the YouTube, channel, paper, benchmark, and operator-note research seed into executable lab contracts with source receipts, failure cases, measurements, and five-flagship ownership.",
+  "validation": {
+    "verdict": "MATCH",
+    "validated_by": [
+      "gather.docs",
+      "forum.doctor",
+      "crucible.status",
+      "telos.learning.forge"
+    ],
+    "notes": [
+      "The attached operator research packet is represented by digest only; raw attachment text is not embedded.",
+      "Each lab is a runnable contract, not a claim that external video content has been verified.",
+      "A lab remains UNVERIFIABLE_UNTIL_RUN until its command, source receipts, and Crucible gate are executed together."
+    ]
+  },
+  "source_receipts": {
+    "operator_packet": {
+      "method": "gather.docs file-read",
+      "ref": "codex-attachment:80840147-31f9-47cd-845e-321223462342/pasted-text.txt",
+      "sha256": "a022fa3b8ea3d277b97bc058444a7757c90e92b81f06bd90f233d8f2ed66ac48",
+      "digest_seal": "bc983de187794519b6ab83c9d4c851e458791d9911eecf8b1445551e038f2856",
+      "claim_state": "MATCH"
+    },
+    "learning_forge_seed": {
+      "ref": "demo/research/learning-forge-seed.json",
+      "schema": "project-telos.learning-forge/youtube-research-seed/v1",
+      "claim_state": "MATCH"
+    }
+  },
+  "source_boundary": {
+    "raw_transcripts_stored": false,
+    "raw_video_stored": false,
+    "raw_attachment_stored": false,
+    "video_specific_claims_promoted": false,
+    "fresh_resolution_required": true,
+    "promotion_rule": "A lab can promote a concept claim only when source receipts, runnable artifacts, and a Crucible verdict join to the same lab id."
+  },
+  "labs": [
+    {
+      "id": "tiny-autoregressive-predictor",
+      "level": "intro",
+      "question": "How does next-token prediction become a measurable model instead of a metaphor?",
+      "source_refs": [
+        "source-neurips-2026-education-track",
+        "operator_packet:a022fa3b8"
+      ],
+      "runnable_surface": {
+        "kind": "node-lab-contract",
+        "command": [
+          "node",
+          "demo/learning-forge-labs.mjs",
+          "--lab",
+          "tiny-autoregressive-predictor"
+        ]
+      },
+      "measurement_gate": {
+        "metrics": [
+          "heldout_next_token_accuracy",
+          "training_corpus_hash",
+          "seed",
+          "token_count",
+          "failure_case_detected"
+        ],
+        "promotion_threshold": "MATCH only if the held-out set, command, seed, and output hash replay."
+      },
+      "failure_cases": [
+        "Training-set memorization looks correct but fails on a held-out sequence.",
+        "A lesson explanation omits the corpus hash, making the model behavior unreplayable."
+      ],
+      "expected_artifacts": [
+        "dataset.json",
+        "run.receipt.json",
+        "heldout-report.json"
+      ],
+      "flagship_flow": [
+        { "owner": "gather", "action": "capture dataset/source receipt" },
+        { "owner": "index", "action": "map lab files and generated artifacts" },
+        { "owner": "forum", "action": "route to education/modeling lane" },
+        { "owner": "crucible", "action": "verify replay and held-out failure case" },
+        { "owner": "telos", "action": "publish lab packet and teaching surface" }
+      ],
+      "verdict": "UNVERIFIABLE_UNTIL_RUN"
+    },
+    {
+      "id": "accuracy-per-token-verifier",
+      "level": "builder",
+      "question": "When does test-time compute improve reasoning enough to justify cost?",
+      "source_refs": [
+        "source-deepseek-r1-arxiv",
+        "operator_packet:a022fa3b8"
+      ],
+      "runnable_surface": {
+        "kind": "node-lab-contract",
+        "command": [
+          "node",
+          "demo/learning-forge-labs.mjs",
+          "--lab",
+          "accuracy-per-token-verifier"
+        ]
+      },
+      "measurement_gate": {
+        "metrics": [
+          "accuracy",
+          "tokens",
+          "latency_ms",
+          "verifier_agreement",
+          "cost_per_correct"
+        ],
+        "promotion_threshold": "MATCH only if the verifier improves held-out accuracy under a declared token and latency budget."
+      },
+      "failure_cases": [
+        "More samples increase cost without improving a hard held-out task.",
+        "Verifier selection agrees with fluent wrong answers."
+      ],
+      "expected_artifacts": [
+        "attempts.jsonl",
+        "verifier.receipt.json",
+        "cost-accuracy-report.json"
+      ],
+      "flagship_flow": [
+        { "owner": "gather", "action": "capture reasoning-source receipt" },
+        { "owner": "index", "action": "map task, attempts, and verifier files" },
+        { "owner": "forum", "action": "route to reasoning/evaluation lane" },
+        { "owner": "crucible", "action": "score accuracy-per-token replay" },
+        { "owner": "telos", "action": "surface budgeted reasoning receipt" }
+      ],
+      "verdict": "UNVERIFIABLE_UNTIL_RUN"
+    },
+    {
+      "id": "mcp-action-receipt-agent",
+      "level": "builder",
+      "question": "Can a tool-using agent prove the executed action is the admitted action?",
+      "source_refs": [
+        "source-mcp-2025-06-18-spec",
+        "source-opentelemetry-genai-semconv",
+        "operator_packet:a022fa3b8"
+      ],
+      "runnable_surface": {
+        "kind": "node-lab-contract",
+        "command": [
+          "node",
+          "demo/learning-forge-labs.mjs",
+          "--lab",
+          "mcp-action-receipt-agent"
+        ]
+      },
+      "measurement_gate": {
+        "metrics": [
+          "action_intent_join",
+          "args_hash_match",
+          "criterion_ref_resolved",
+          "execution_result_ref_present",
+          "failure_code_specificity"
+        ],
+        "promotion_threshold": "MATCH only if positive and negative fixtures produce distinct action-receipt failure codes."
+      },
+      "failure_cases": [
+        "Changed args_hash is reported as binding_failed.",
+        "Missing action_intent_id is reported as unjoinable_action.",
+        "Missing verifier result is reported as verification_unverifiable."
+      ],
+      "expected_artifacts": [
+        "action-intent.json",
+        "admission-record.json",
+        "execution-span.json",
+        "negative-fixtures.json"
+      ],
+      "flagship_flow": [
+        { "owner": "gather", "action": "capture protocol and issue receipts" },
+        { "owner": "index", "action": "map fixture joins and schema refs" },
+        { "owner": "forum", "action": "route to agent-planning/observability lane" },
+        { "owner": "crucible", "action": "verify positive and negative receipt joins" },
+        { "owner": "telos", "action": "publish action-to-action workflow demo" }
+      ],
+      "verdict": "UNVERIFIABLE_UNTIL_RUN"
+    },
+    {
+      "id": "coding-agent-contamination",
+      "level": "research",
+      "question": "Can a coding agent patch the hidden invariant instead of overfitting visible tests?",
+      "source_refs": [
+        "source-swe-skills-bench-arxiv",
+        "source-swe-bench-pro-arxiv",
+        "operator_packet:a022fa3b8"
+      ],
+      "runnable_surface": {
+        "kind": "node-lab-contract",
+        "command": [
+          "node",
+          "demo/learning-forge-labs.mjs",
+          "--lab",
+          "coding-agent-contamination"
+        ]
+      },
+      "measurement_gate": {
+        "metrics": [
+          "changed_module_count",
+          "visible_tests_passed",
+          "hidden_invariant_passed",
+          "diff_readability_score",
+          "token_overhead"
+        ],
+        "promotion_threshold": "MATCH only if the diff passes visible tests and a held-out invariant with readable localized code."
+      },
+      "failure_cases": [
+        "The patch updates boilerplate but misses the invariant.",
+        "A skill increases token overhead without improving pass rate."
+      ],
+      "expected_artifacts": [
+        "issue.receipt.json",
+        "index-context.json",
+        "patch.diff",
+        "test-output.txt",
+        "review.receipt.json"
+      ],
+      "flagship_flow": [
+        { "owner": "gather", "action": "capture issue/source evidence" },
+        { "owner": "index", "action": "map repository and changed modules" },
+        { "owner": "forum", "action": "route reviewer, implementer, and verifier roles" },
+        { "owner": "crucible", "action": "score tests, hidden invariant, and readability" },
+        { "owner": "telos", "action": "chain patch receipts into demo ledger" }
+      ],
+      "verdict": "UNVERIFIABLE_UNTIL_RUN"
+    },
+    {
+      "id": "explanation-is-not-proof",
+      "level": "research",
+      "question": "When does an explanation method become misleading evidence?",
+      "source_refs": [
+        "source-neurips-2026-evaluations-datasets-track",
+        "operator_packet:a022fa3b8"
+      ],
+      "runnable_surface": {
+        "kind": "node-lab-contract",
+        "command": [
+          "node",
+          "demo/learning-forge-labs.mjs",
+          "--lab",
+          "explanation-is-not-proof"
+        ]
+      },
+      "measurement_gate": {
+        "metrics": [
+          "input_hash",
+          "explanation_method",
+          "perturbation_delta",
+          "output_shift",
+          "remaining_unverifiable_claims"
+        ],
+        "promotion_threshold": "MATCH only when the explanation survives controlled perturbation and states its limits."
+      },
+      "failure_cases": [
+        "The attribution plot looks plausible but fails after a minimal perturbation.",
+        "A chain-of-thought-like explanation is treated as proof without behavioral evidence."
+      ],
+      "expected_artifacts": [
+        "model-card.json",
+        "attribution-report.json",
+        "perturbation-report.json"
+      ],
+      "flagship_flow": [
+        { "owner": "gather", "action": "capture evaluation-source receipt" },
+        { "owner": "index", "action": "map model, input, and perturbation files" },
+        { "owner": "forum", "action": "route to interpretability/evaluation lane" },
+        { "owner": "crucible", "action": "compare explanation and perturbation evidence" },
+        { "owner": "telos", "action": "publish faithfulness teaching surface" }
+      ],
+      "verdict": "UNVERIFIABLE_UNTIL_RUN"
+    },
+    {
+      "id": "spec-representation-lab",
+      "level": "research",
+      "question": "Can one behavior be represented as tests, simulation, temporal logic, and theorem stubs without losing the boundary?",
+      "source_refs": [
+        "source-neurips-2026-reproducibility-track",
+        "source-ibm-planning-era-language-models",
+        "operator_packet:a022fa3b8"
+      ],
+      "runnable_surface": {
+        "kind": "node-lab-contract",
+        "command": [
+          "node",
+          "demo/learning-forge-labs.mjs",
+          "--lab",
+          "spec-representation-lab"
+        ]
+      },
+      "measurement_gate": {
+        "metrics": [
+          "test_pass_rate",
+          "simulation_trace_hash",
+          "temporal_property_status",
+          "proof_stub_status",
+          "representation_drift"
+        ],
+        "promotion_threshold": "MATCH only if each representation joins to the same behavior id and drift is explicitly typed."
+      },
+      "failure_cases": [
+        "A generated implementation passes tests while violating the temporal invariant.",
+        "Two formal representations encode different behavior under the same name."
+      ],
+      "expected_artifacts": [
+        "behavior.spec.json",
+        "tests.receipt.json",
+        "simulation.trace.json",
+        "formalization-drift.receipt.json"
+      ],
+      "flagship_flow": [
+        { "owner": "gather", "action": "capture formal-methods and planning receipts" },
+        { "owner": "index", "action": "map equivalent behavior artifacts" },
+        { "owner": "forum", "action": "route representation reviewers" },
+        { "owner": "crucible", "action": "verify drift across representations" },
+        { "owner": "telos", "action": "surface spec-representation workbench" }
+      ],
+      "verdict": "UNVERIFIABLE_UNTIL_RUN"
+    },
+    {
+      "id": "stochastic-compute-lab",
+      "level": "research",
+      "question": "How should stochastic or thermodynamic compute claims be measured before promotion?",
+      "source_refs": [
+        "source-deepseek-r1-arxiv",
+        "operator_packet:a022fa3b8"
+      ],
+      "runnable_surface": {
+        "kind": "node-lab-contract",
+        "command": [
+          "node",
+          "demo/learning-forge-labs.mjs",
+          "--lab",
+          "stochastic-compute-lab"
+        ]
+      },
+      "measurement_gate": {
+        "metrics": [
+          "seed",
+          "sample_count",
+          "uncertainty_interval",
+          "error_rate",
+          "energy_or_latency_budget"
+        ],
+        "promotion_threshold": "MATCH only when seeded stochastic traces, uncertainty, and budget metrics replay under the same criteria."
+      },
+      "failure_cases": [
+        "A stochastic run improves once but cannot replay within the uncertainty interval.",
+        "An energy or latency claim is made without hardware, seed, or measurement context."
+      ],
+      "expected_artifacts": [
+        "stochastic-traces.jsonl",
+        "uncertainty-report.json",
+        "budget.receipt.json"
+      ],
+      "flagship_flow": [
+        { "owner": "gather", "action": "capture compute-source receipts" },
+        { "owner": "index", "action": "map trace and measurement artifacts" },
+        { "owner": "forum", "action": "route to systems/probabilistic-compute lane" },
+        { "owner": "crucible", "action": "verify replay and uncertainty criteria" },
+        { "owner": "telos", "action": "publish stochastic measurement workbench" }
+      ],
+      "verdict": "UNVERIFIABLE_UNTIL_RUN"
+    }
+  ],
+  "next_actions": [
+    {
+      "owner": "telos",
+      "action": "implement_first_lab",
+      "target": "tiny-autoregressive-predictor",
+      "receipt_required": "run.receipt.json"
+    },
+    {
+      "owner": "gather",
+      "action": "capture_youtube_metadata",
+      "target": "youtube_seed_corpus.inputs",
+      "receipt_required": "metadata/transcript digest"
+    },
+    {
+      "owner": "crucible",
+      "action": "write_lab_gate_fixtures",
+      "target": "all labs",
+      "receipt_required": "positive and negative fixture verdicts"
+    }
+  ]
+}

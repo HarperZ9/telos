@@ -1030,6 +1030,28 @@
       ]
     },
     {
+      "name": "telos.learning.labs",
+      "flagship": "telos",
+      "description": "Use when Learning Forge source leads need executable lab contracts with measurements, failure cases, and five-flagship ownership. Read-only, zero-auth, no external side effects. Returns a JSON Learning Forge labs packet.",
+      "cli": [
+        "node",
+        "demo/learning-forge-labs.mjs"
+      ],
+      "mcp": {
+        "status": "available",
+        "server": "telos",
+        "method": "tools/call",
+        "tool": "telos.learning.labs"
+      },
+      "next_actions": [
+        "gather.run",
+        "index.context",
+        "forum.route",
+        "crucible.assess",
+        "telos.learning.forge"
+      ]
+    },
+    {
       "name": "telos.research.seed",
       "flagship": "telos",
       "description": "Use when terse research notes need source-backed seed packets before synthesis. Read-only, zero-auth, no external side effects. Returns JSON research seeds with provenance status.",

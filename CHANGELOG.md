@@ -4,6 +4,11 @@ All notable changes to Project Telos. Telos is currently a source demo and share
 
 ## Unreleased
 
+- Learning Forge labs: adds `project-telos.learning-forge/labs/v1`,
+  `node demo/learning-forge-labs.mjs`, and `telos.learning.labs` to turn the
+  gathered operator research packet into seven executable lab contracts with
+  source receipts, runnable commands, failure cases, measurement gates,
+  expected artifacts, and Gather/Index/Forum/Crucible/Telos ownership.
 - Learning Forge: adds `project-telos.learning-forge/youtube-research-seed/v1`,
   `node demo/learning-forge.mjs`, and `telos.learning.forge` to turn operator-provided
   video/channel/paper/benchmark leads into receipt-backed learning labs with explicit

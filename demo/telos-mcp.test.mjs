@@ -44,6 +44,7 @@ for (const name of [
   "telos.objective.monitor",
   "telos.model.foundry",
   "telos.learning.forge",
+  "telos.learning.labs",
   "telos.research.seed",
   "telos.research.thermodynamic",
   "telos.rendering.research",
@@ -267,6 +268,18 @@ assert.deepEqual(learningForge.result.structuredContent, expectedLearningForge);
 assert.equal(learningForge.result.structuredContent.schema, "project-telos.learning-forge/youtube-research-seed/v1");
 assert.equal(learningForge.result.structuredContent.tool, "telos.learning.forge");
 assert.equal(learningForge.result.structuredContent.youtube_seed_corpus.receipt_state, "UNVERIFIABLE_UNTIL_GATHER_TRANSCRIPT");
+
+const expectedLearningLabs = JSON.parse(
+  readFileSync(new URL("./integrations/learning-forge-labs.json", import.meta.url), "utf8")
+);
+const learningLabs = handleRequest(request("tools/call", {
+  name: "telos.learning.labs",
+  arguments: {}
+}));
+assert.deepEqual(learningLabs.result.structuredContent, expectedLearningLabs);
+assert.equal(learningLabs.result.structuredContent.schema, "project-telos.learning-forge/labs/v1");
+assert.equal(learningLabs.result.structuredContent.tool, "telos.learning.labs");
+assert.equal(learningLabs.result.structuredContent.labs.length, 7);
 
 const expectedResearchSeed = JSON.parse(
   readFileSync(new URL("./research/fundamental-physics-seeds.json", import.meta.url), "utf8")
