@@ -13,7 +13,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 
-SIZE = (1600, 640)
+SIZE = (2400, 1260)
 SCALE = 2
 BG = (13, 15, 20)
 INK = (248, 249, 246)
