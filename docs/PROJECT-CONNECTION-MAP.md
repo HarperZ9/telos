@@ -133,6 +133,7 @@ than bespoke handoffs.
 | Object | Primary owner | Consumers | Purpose |
 | --- | --- | --- | --- |
 | `provenance_receipt` | Gather | Index, Crucible, Telos | Records source, method, reference, timestamp, hash, and derivation. |
+| `browser_evidence_packet` | Telos | Gather, Index, Forum, Crucible, Learn, Emet, BuildLang | Records browser automation or research-capture refs, digests, side-effect class, and local verification without carrying raw browser payloads across the model boundary. |
 | `gather_digest` | Gather | Index, Crucible, Telos | Seals an intake run. |
 | `workspace_atlas` | Index | Forum, Telos, site | Maps repos, docs, dependencies, and evidence. |
 | `context_envelope` | Index | Forum, Telos, model foundry | Carries low-token context with source-ref expansion handles. |
@@ -163,6 +164,26 @@ This is the default evidence loop. Gather says how the source arrived. Index say
 where it fits. Forum says what should happen next. Crucible says what survived
 measurement. Telos records what was proposed, admitted, executed, verified, and
 remembered.
+
+### Browser Evidence and Work Automation
+
+```text
+browser action or research capture
+  -> Telos browser evidence packet
+  -> Gather item and source method
+  -> Index context envelope refs
+  -> Forum route and council decision
+  -> Crucible verifier
+  -> Learn ledger evidenceRef or Emet anchor
+```
+
+This flow makes automated browsing and work actuation easier to operate without
+making raw browser state the default context payload. The local-first path keeps
+URLs, DOM/text digests, screenshot refs, side-effect class, and verification
+status available by reference. Index and Forum preserve model-council overhead as
+a deliberate escalation: use the council when complexity, uncertainty, or
+operator intent merits richer reasoning; otherwise keep the packet local,
+re-derivable, and cheap.
 
 ### Agent Execution
 
