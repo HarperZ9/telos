@@ -190,6 +190,11 @@ export const tools = [
     inputSchema: emptyInputSchema
   },
   {
+    name: "telos.browser.evidence",
+    description: "Use when a host needs a redacted browser evidence packet for automated browsing, research capture, work actuation, or council review. Read-only, zero-auth, no external side effects. Returns a JSON browser-evidence packet.",
+    inputSchema: emptyInputSchema
+  },
+  {
     name: "telos.showcase.scout",
     description: "Use when a host needs fixture-backed OSS Proof Showcase candidate rankings before public patch work. Read-only, zero-auth, no external side effects. Returns JSON scout results.",
     inputSchema: emptyInputSchema
@@ -232,6 +237,7 @@ const toolScripts = new Map([
   ["telos.workstation.substrate", ["workstation-substrate.mjs"]],
   ["telos.display.calibration", ["display-calibration.mjs"]],
   ["telos.native.control", ["native-control.mjs"]],
+  ["telos.browser.evidence", ["browser-evidence.mjs"]],
   ["telos.showcase.scout", ["showcase.mjs", "scout", "--fixture", "--json"]]
 ]);
 function runTool(name) {
