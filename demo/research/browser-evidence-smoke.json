@@ -18,5 +18,18 @@
     ],
     "policy": "preserve refs and hashes locally; route richer browser context to council/review only when uncertainty, complexity, or operator intent justifies model overhead"
   },
+  "overhead_metrics": {
+    "default_model_payload": "refs-only",
+    "council_payload": "on-demand dereference of selected evidence refs",
+    "tracked": [
+      "tokens_spent",
+      "council_calls",
+      "artifact_dereferences",
+      "route_confidence",
+      "match_rate",
+      "drift_rate",
+      "unverifiable_rate"
+    ]
+  },
   "verdict": "MATCH"
 }
