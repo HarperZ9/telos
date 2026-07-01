@@ -1,0 +1,58 @@
+{
+  "schema": "project-telos.browser-evidence/v1",
+  "tool": "telos.browser.evidence",
+  "mode": "research-capture",
+  "session_ref": "browser-session:fixture",
+  "target_ref": "url:sha256:100680ad546ce6a577f42f52df33b4cfdca756859e664b8d7de329b150d09ce9",
+  "action_receipt_ref": "receipt:fixture-browser-evidence",
+  "action": {
+    "kind": "browser.navigate",
+    "selector": null,
+    "args_hash": "args:sha256:abca4de9dd94d3ac2db9c470f8d4557f421b969fab4990c3c719629f7e7a8b69"
+  },
+  "before": {
+    "url": "https://example.com",
+    "url_digest": "url:sha256:100680ad546ce6a577f42f52df33b4cfdca756859e664b8d7de329b150d09ce9",
+    "title": "Example Domain",
+    "dom_snapshot_ref": "artifact:fixture/before-dom.html",
+    "text_digest": "text:sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "screenshot_ref": "artifact:fixture/before.png"
+  },
+  "after": {
+    "url": "https://example.com",
+    "url_digest": "url:sha256:100680ad546ce6a577f42f52df33b4cfdca756859e664b8d7de329b150d09ce9",
+    "title": "Example Domain",
+    "dom_snapshot_ref": "artifact:fixture/after-dom.html",
+    "text_digest": "text:sha256:f94d9486b327090cccbeb97d67953a1f234b83d67350b7b5f60196b0a30f24db",
+    "screenshot_ref": "artifact:fixture/after.png"
+  },
+  "network_summary": {
+    "kind": "network",
+    "verdict": "UNVERIFIABLE",
+    "failure_code": "network_capture_unavailable",
+    "reason": "collector-not-attached"
+  },
+  "console_summary": {
+    "kind": "console",
+    "verdict": "UNVERIFIABLE",
+    "failure_code": "console_capture_unavailable",
+    "reason": "collector-not-attached"
+  },
+  "artifact_hashes": [
+    {
+      "ref": "artifact:fixture/after-dom.html",
+      "hash": "sha256:3f3a3b3d4a6a7b8c9d00112233445566778899aabbccddeeff00112233445566"
+    }
+  ],
+  "redaction_status": "redacted",
+  "side_effect": {
+    "class": "read",
+    "external_write": false,
+    "reversible": true
+  },
+  "verification": {
+    "verdict": "MATCH",
+    "ref": "crucible:fixture-browser-evidence-shape"
+  },
+  "created_at": "2026-07-01T00:00:00.000Z"
+}
