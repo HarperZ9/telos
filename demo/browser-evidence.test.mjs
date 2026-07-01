@@ -1,6 +1,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import { spawnSync } from "node:child_process";
+import { readFileSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -91,4 +92,19 @@ test("browser-evidence CLI emits the fixture contract", () => {
   assert.equal(packet.tool, "telos.browser.evidence");
   assert.equal(packet.mode, "research-capture");
   assert.equal(validateBrowserEvidencePacket(packet).ok, true);
+});
+
+test("browser evidence smoke receipt names pipeline consumers", () => {
+  const smoke = JSON.parse(readFileSync(path.join(here, "research", "browser-evidence-smoke.json"), "utf8"));
+
+  assert.equal(smoke.schema, "project-telos.browser-evidence-smoke/v1");
+  assert.equal(smoke.source_packet, "demo/integrations/browser-evidence.json");
+  assert.equal(smoke.verdict, "MATCH");
+  assert.ok(smoke.pipeline_consumers.includes("gather.browser-evidence"));
+  assert.ok(smoke.pipeline_consumers.includes("index.browser_evidence_refs"));
+  assert.ok(smoke.pipeline_consumers.includes("forum.project-telos-route"));
+  assert.ok(smoke.pipeline_consumers.includes("crucible.verify_browser_evidence"));
+  assert.ok(smoke.pipeline_consumers.includes("learn.evidenceRef"));
+  assert.ok(smoke.pipeline_consumers.includes("emet.anchor-recipe"));
+  assert.ok(smoke.pipeline_consumers.includes("buildlang.editor-fixture"));
 });

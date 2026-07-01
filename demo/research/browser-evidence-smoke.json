@@ -1,0 +1,22 @@
+{
+  "schema": "project-telos.browser-evidence-smoke/v1",
+  "source_packet": "demo/integrations/browser-evidence.json",
+  "pipeline_consumers": [
+    "gather.browser-evidence",
+    "index.browser_evidence_refs",
+    "forum.project-telos-route",
+    "crucible.verify_browser_evidence",
+    "learn.evidenceRef",
+    "emet.anchor-recipe",
+    "buildlang.editor-fixture"
+  ],
+  "council_route": {
+    "local_first": true,
+    "route_surfaces": [
+      "index.context-envelope",
+      "forum.project-telos-route"
+    ],
+    "policy": "preserve refs and hashes locally; route richer browser context to council/review only when uncertainty, complexity, or operator intent justifies model overhead"
+  },
+  "verdict": "MATCH"
+}
