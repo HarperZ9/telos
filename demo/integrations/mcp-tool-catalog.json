@@ -1312,6 +1312,28 @@
       ]
     },
     {
+      "name": "telos.browser.evidence",
+      "flagship": "telos",
+      "description": "Use when a host needs a redacted browser evidence packet for automated browsing, research capture, work actuation, or council review. Read-only, zero-auth, no external side effects. Returns a JSON browser-evidence packet.",
+      "cli": [
+        "node",
+        "demo/browser-evidence.mjs"
+      ],
+      "mcp": {
+        "status": "available",
+        "server": "telos",
+        "method": "tools/call",
+        "tool": "telos.browser.evidence"
+      },
+      "next_actions": [
+        "gather.run",
+        "index.context.envelope",
+        "forum.route",
+        "crucible.assess",
+        "telos.native.control"
+      ]
+    },
+    {
       "name": "telos.showcase.scout",
       "flagship": "telos",
       "description": "Use when a host needs fixture-backed OSS Proof Showcase candidate rankings before public patch work. Read-only, zero-auth, no external side effects. Returns JSON scout results.",

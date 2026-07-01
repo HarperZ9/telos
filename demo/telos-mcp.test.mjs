@@ -57,6 +57,7 @@ for (const name of [
   "telos.workstation.substrate",
   "telos.display.calibration",
   "telos.native.control",
+  "telos.browser.evidence",
   "telos.showcase.scout"
 ]) {
   assert.ok(names.has(name), `missing ${name}`);
@@ -89,6 +90,10 @@ assert.ok(
   catalog.result.structuredContent.tools.some((tool) => tool.name === "telos.catalog"),
   "catalog includes telos.catalog"
 );
+assert.ok(
+  catalog.result.structuredContent.tools.some((tool) => tool.name === "telos.browser.evidence"),
+  "catalog includes telos.browser.evidence"
+);
 const descriptionsByName = new Map(tools.map((tool) => [tool.name, tool.description]));
 for (const catalogTool of expectedCatalog.tools.filter((tool) => tool.flagship === "telos")) {
   assert.equal(
@@ -108,6 +113,7 @@ const serverManifest = handleRequest(request("tools/call", {
 assert.deepEqual(serverManifest.result.structuredContent, expectedServerManifest);
 assert.equal(serverManifest.result.structuredContent.schema, "project-telos.mcp-server-manifest/v1");
 assert.ok(serverManifest.result.structuredContent.servers.gather.expected_tools.includes("gather.docs"));
+assert.ok(serverManifest.result.structuredContent.servers.telos.expected_tools.includes("telos.browser.evidence"));
 
 const mcpFreshness = handleRequest(request("tools/call", {
   name: "telos.mcp.freshness",
@@ -402,6 +408,14 @@ assert.deepEqual(displayCalibration.result.structuredContent, expectedDisplayCal
 assert.equal(displayCalibration.result.structuredContent.schema, "project-telos.display-calibration/v1");
 assert.equal(displayCalibration.result.structuredContent.contract.hardware_mutation_allowed, false);
 
+const browserEvidence = handleRequest(request("tools/call", {
+  name: "telos.browser.evidence",
+  arguments: {}
+}));
+assert.equal(browserEvidence.result.structuredContent.schema, "project-telos.browser-evidence/v1");
+assert.equal(browserEvidence.result.structuredContent.tool, "telos.browser.evidence");
+assert.equal(browserEvidence.result.structuredContent.mode, "research-capture");
+
 const showcase = handleRequest(request("tools/call", { name: "telos.showcase.scout", arguments: {} }));
 assert.equal(showcase.result.structuredContent.schema, "project-telos.oss-scout/v1");
 assert.equal(showcase.result.structuredContent.candidates[0].issue.number, 66050);
@@ -449,4 +463,5 @@ assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.second_
 assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.workstation.substrate"));
 assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.display.calibration"));
 assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.native.control"));
+assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.browser.evidence"));
 assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.showcase.scout"));

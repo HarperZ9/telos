@@ -4,6 +4,11 @@ All notable changes to Project Telos. Telos is currently a source demo and share
 
 ## Unreleased
 
+- Browser evidence kernel: adds `project-telos.browser-evidence/v1`,
+  `node demo/browser-evidence.mjs`, and `telos.browser.evidence` as the
+  local-first browser automation evidence contract for Gather/Index/Forum/
+  Crucible/Learn/Emet/BuildLang pipeline consumers.
+
 - OSS Proof Showcase: adds a fixture-first candidate scout, PR-readiness packet
   contract, read-only Telos MCP scout tool, and an optional live GitHub smoke
   command for high-star public issue discovery.
@@ -118,8 +123,8 @@ All notable changes to Project Telos. Telos is currently a source demo and share
 Presentation and operator-surface housekeeping for five-flagship parity.
 
 - README: adds the shared current-status block and consistent five-flagship navigation.
-- Status payload: exposes the current operator commands, Telos MCP tool names, and 64-tool catalog summary under `native`.
+- Status payload: exposes the current operator commands, Telos MCP tool names, and 65-tool catalog summary under `native`.
 - Operator room: records `status`, `doctor`, `room`, `catalog`, and `flagship-workflow` as the current front door for local operators and host integrations.
 - MCP surface: records native availability for `telos.status`, `telos.doctor`, `telos.room`, `telos.catalog`, `telos.workflow`, `telos.server.manifest`, `telos.mcp.freshness`, `telos.ci.doctor`, `telos.ci.triage`, `telos.presentation.doctor`, `telos.accessibility.doctor`, `telos.performance.doctor`, `telos.compatibility.doctor`, `telos.operator.doctor`, `telos.admission.telemetry`, `telos.context.envelope`, `telos.context.pack`, `telos.action.receipt`, `telos.loop.ledger`, `telos.objective.monitor`, `telos.model.foundry`, `telos.learning.forge`, `telos.learning.labs`, `telos.research.seed`, `telos.research.thermodynamic`, `telos.rendering.research`, `telos.rendering.capabilities`, `telos.measurement.layers`, `telos.creative.engine`, `telos.creative.kernels`, `telos.revival.registry`, `telos.second_level.queue`, `telos.workstation.substrate`, `telos.display.calibration`, `telos.native.control`, and `telos.showcase.scout`.
-- Catalog: keeps `demo/integrations/mcp-tool-catalog.json` as the provider-neutral source of truth for 64 available tools across Gather, Crucible, Index, Forum, and Telos.
+- Catalog: keeps `demo/integrations/mcp-tool-catalog.json` as the provider-neutral source of truth for 65 available tools across Gather, Crucible, Index, Forum, and Telos.
 - Research receipts: records the YouTube intake ledger under `demo/research/youtube-bgoertzel-receipts.json` as receipt-only research material, with no raw transcript text in the repository.
