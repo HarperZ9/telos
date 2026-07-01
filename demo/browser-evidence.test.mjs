@@ -107,4 +107,10 @@ test("browser evidence smoke receipt names pipeline consumers", () => {
   assert.ok(smoke.pipeline_consumers.includes("learn.evidenceRef"));
   assert.ok(smoke.pipeline_consumers.includes("emet.anchor-recipe"));
   assert.ok(smoke.pipeline_consumers.includes("buildlang.editor-fixture"));
+  assert.equal(smoke.council_route.local_first, true);
+  assert.ok(smoke.council_route.route_surfaces.includes("index.context-envelope"));
+  assert.ok(smoke.council_route.route_surfaces.includes("forum.project-telos-route"));
+  assert.equal(smoke.overhead_metrics.default_model_payload, "refs-only");
+  assert.ok(smoke.overhead_metrics.tracked.includes("council_calls"));
+  assert.ok(smoke.overhead_metrics.tracked.includes("tokens_spent"));
 });

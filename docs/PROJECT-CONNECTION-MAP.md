@@ -183,7 +183,9 @@ URLs, DOM/text digests, screenshot refs, side-effect class, and verification
 status available by reference. Index and Forum preserve model-council overhead as
 a deliberate escalation: use the council when complexity, uncertainty, or
 operator intent merits richer reasoning; otherwise keep the packet local,
-re-derivable, and cheap.
+re-derivable, and cheap. The smoke benchmark tracks tokens spent, council calls,
+artifact dereferences, route confidence, and `MATCH` / `DRIFT` / `UNVERIFIABLE`
+rates so local-model and model-council efficiency can be improved from evidence.
 
 ### Agent Execution
 
