@@ -72,6 +72,31 @@ async function runBrowser(verb, params, flags) {
         writeFileSync(path, Buffer.from(data, "base64"));
         return { path, bytes: Buffer.from(data, "base64").length };
       }
+      case "snapshot-dom":
+        return { html: await browser.evalJs(session, browser.domSnapshotExpression()) };
+      case "snapshot-text":
+        return { text: await browser.evalJs(session, browser.textSnapshotExpression(params[0] ? Number(params[0]) : 20000)) };
+      case "snapshot-visual": {
+        const data = await browser.screenshot(session);
+        const path = params[0] || "telos-screenshot.png";
+        writeFileSync(path, Buffer.from(data, "base64"));
+        return { path, bytes: Buffer.from(data, "base64").length };
+      }
+      case "evidence": {
+        const before = await browser.pageState(session);
+        const { makeBrowserEvidencePacket, makeUnavailableSummary, digestRef } = await import("./native-control/evidence.mjs");
+        return makeBrowserEvidencePacket({
+          mode: flags.mode || "research-capture",
+          action: { kind: "browser.evidence", argsHash: digestRef("args", JSON.stringify(params)) },
+          sessionRef: `browser-session:cdp-${port}`,
+          actionReceiptRef: null,
+          before,
+          after: before,
+          networkSummary: makeUnavailableSummary("network", "collector-not-attached"),
+          consoleSummary: makeUnavailableSummary("console", "collector-not-attached"),
+          verification: { verdict: "MATCH", ref: "telos:native-control-evidence" },
+        });
+      }
       default:
         throw new Error(`unknown browser verb: ${verb}`);
     }
@@ -107,10 +132,25 @@ async function main() {
   const { domain, verb, params, flags } = parseArgs(process.argv.slice(2));
   if (!domain || !verb) {
     process.stdout.write(
-      `${JSON.stringify(
+          `${JSON.stringify(
         makeReceipt("help", null, {
           usage: "node demo/native-control.mjs <browser|app> <verb> [args]",
-          browser: ["tabs", "navigate", "eval", "click", "fill", "focus", "type", "gettext", "waitfor", "screenshot"],
+          browser: [
+            "tabs",
+            "navigate",
+            "eval",
+            "click",
+            "fill",
+            "focus",
+            "type",
+            "gettext",
+            "waitfor",
+            "screenshot",
+            "snapshot-dom",
+            "snapshot-text",
+            "snapshot-visual",
+            "evidence",
+          ],
           app: ["windows", "tree", "invoke", "setvalue", "focus"],
         }),
         null,

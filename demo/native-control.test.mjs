@@ -15,6 +15,8 @@ import {
   setValueExpression,
   focusExpression,
   existsExpression,
+  domSnapshotExpression,
+  textSnapshotExpression,
   ensureChromeArgs,
   resolveChromePath,
   resolveUserDataDir,
@@ -100,6 +102,12 @@ test("getTextExpression and existsExpression query the given selector", () => {
   assert.equal(existsExpression(".foo"), '!!document.querySelector(".foo")');
 });
 
+test("snapshot expressions collect bounded page state without secrets by design", () => {
+  assert.match(domSnapshotExpression(), /document\.documentElement\.outerHTML/);
+  assert.match(textSnapshotExpression(123), /slice\(0,123\)/);
+  assert.match(textSnapshotExpression(), /innerText/);
+});
+
 // ---- launcher args + env resolution ----
 
 test("ensureChromeArgs carries the debug port + a dedicated profile (never the default)", () => {
@@ -172,6 +180,16 @@ test("CLI prints a help receipt when no verb is given", () => {
   const receipt = JSON.parse(cli.stdout);
   assert.equal(receipt.schema, SCHEMA);
   assert.ok(receipt.result.browser.includes("navigate"));
+});
+
+test("CLI help advertises browser evidence verbs", () => {
+  const cli = spawnSync(process.execPath, [path.join(here, "native-control.mjs")], { encoding: "utf8" });
+  assert.equal(cli.status, 0, cli.stderr);
+  const receipt = JSON.parse(cli.stdout);
+  assert.ok(receipt.result.browser.includes("snapshot-dom"));
+  assert.ok(receipt.result.browser.includes("snapshot-text"));
+  assert.ok(receipt.result.browser.includes("snapshot-visual"));
+  assert.ok(receipt.result.browser.includes("evidence"));
 });
 
 // ---- gated integration: real Chrome via CDP (skips when no debug endpoint) ----

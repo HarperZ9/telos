@@ -45,6 +45,14 @@ export function existsExpression(selector) {
   return `!!document.querySelector(${JSON.stringify(selector)})`;
 }
 
+export function domSnapshotExpression() {
+  return '(()=>document.documentElement ? document.documentElement.outerHTML : "")()';
+}
+
+export function textSnapshotExpression(limit = 20000) {
+  return `(()=>((document.body&&document.body.innerText)||"").slice(0,${Number(limit)}))()`;
+}
+
 // Build the argv that launches Chrome with the remote-debugging port on a
 // DEDICATED Telos automation profile. Chrome 136+ deliberately ignores
 // --remote-debugging-port on the default profile (anti-malware), so a separate
@@ -141,6 +149,16 @@ export async function navigate(session, url) {
 
 export async function evalJs(session, expression) {
   return evaluate(session, expression, { awaitPromise: true });
+}
+
+export async function pageState(session) {
+  const [url, title, text, html] = await Promise.all([
+    evaluate(session, "location.href"),
+    evaluate(session, "document.title"),
+    evaluate(session, textSnapshotExpression()),
+    evaluate(session, domSnapshotExpression()),
+  ]);
+  return { url: url || "", title: title || "", text: text || "", html: html || "" };
 }
 
 export async function getText(session, selector) {
