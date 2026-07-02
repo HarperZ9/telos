@@ -1,0 +1,504 @@
+{
+  "schema": "project-telos.research-intake/youtube-field-scope-receipts-v1",
+  "generated_at": "2026-07-02T12:14:57.3356044-07:00",
+  "tool": "gather.video+yt-dlp.channel",
+  "purpose": "Receipt-only intake for the operator-requested TI Morse / Relentless source pass, scoped as field integration leads for Project Telos, BuildLang/buildc, model foundry, Learning Forge, measurement layers, and action receipts.",
+  "source_request": {
+    "sha256": "7bf3540e5707764ce4e466da6f20a33c6a32bf794f0102faf523c23dcd9103a0",
+    "input_count": 6,
+    "requested_inputs": [
+      "https://www.youtube.com/watch?v=RZiM3Xfp-eY&t=414s",
+      "https://www.youtube.com/watch?v=7lPWtFXsuzk",
+      "https://www.youtube.com/watch?v=Vg6FBKTlfOw",
+      "https://www.youtube.com/watch?v=DyIQkqBXhS0",
+      "https://www.youtube.com/watch?v=bgWq678Oed4",
+      "https://www.youtube.com/@ti_morse"
+    ]
+  },
+  "privacy_boundary": {
+    "raw_transcripts_stored_in_repo": false,
+    "raw_video_stored_in_repo": false,
+    "channel_description_stored_in_repo": false,
+    "tracked_receipts_only": [
+      "metadata hashes",
+      "transcript hashes",
+      "character counts",
+      "digest seals",
+      "field-lane hypotheses",
+      "integration requirements"
+    ]
+  },
+  "claim_state": {
+    "video_metadata": "MATCH when returncode is 0 and metadata receipt exists",
+    "video_transcripts": "MATCH when returncode is 0 and transcript receipt exists",
+    "channel_list": "MATCH for the bounded first 12 flat-playlist entries captured by yt-dlp",
+    "transcript_theme_counts": "MATCH for local receipt objects in .telos/gather/ti-morse-field-intake",
+    "domain_correctness": "UNVERIFIABLE_UNTIL_PRIMARY_SOURCE_OR_REPLAY",
+    "market_strategy": "INFERRED_FROM_TRANSCRIPTS_AND_CHANNEL_QUEUE"
+  },
+  "receipt_set": {
+    "corpus": ".telos/gather/ti-morse-field-intake",
+    "receipt_set_seal": "f7e6ebfa379e060d1a53bf3a3af1adb666aa6b9a3216897549810d7ea6139725",
+    "video_count": 5,
+    "channel_count": 1
+  },
+  "video_results": [
+    {
+      "url": "https://www.youtube.com/watch?v=RZiM3Xfp-eY&t=414s",
+      "returncode": 0,
+      "field_lane": "energy-industrialization-and-nuclear-manufacturing",
+      "integration_status": "INFERRED",
+      "catalog": [
+        {
+          "kind": "metadata",
+          "id": "RZiM3Xfp-eY",
+          "title": "Manufacturing 1,000s of Nuclear Reactors | Isaiah Taylor, Valar Atomics",
+          "source": "video",
+          "ref": "RZiM3Xfp-eY",
+          "method": "yt-dlp",
+          "sha256": "24e1a498dc86b70342945e46717341f30dd1ff9413b22d7effab247915d5d7ff",
+          "chars": 153
+        },
+        {
+          "kind": "transcript",
+          "id": "RZiM3Xfp-eY",
+          "title": "Manufacturing 1,000s of Nuclear Reactors | Isaiah Taylor, Valar Atomics",
+          "source": "video",
+          "ref": "RZiM3Xfp-eY",
+          "method": "auto-caption",
+          "sha256": "78359dffbfe891c10d57a5e30cb1840f53ea758dc190590702e84d3d8c241a53",
+          "chars": 98447
+        }
+      ],
+      "digest": {
+        "seal": "0d450312c3a806e18075105d59c9d4b42d5785337c69d56aae9e7aabf8fc3221"
+      },
+      "theme_counts": {
+        "nuclear": 106,
+        "reactor": 122,
+        "manufacturing": 9,
+        "regulation": 2,
+        "supply chain": 3,
+        "factory": 9,
+        "scale": 27,
+        "energy": 22,
+        "test": 20
+      },
+      "telos_integration_requirements": [
+        "BuildLang/buildc should model reactor/factory scale-up as typed simulation packets with units, tolerances, safety boundaries, and source receipts.",
+        "Gather should resolve primary public sources for Valar Atomics, nuclear licensing, reactor testing, supply-chain claims, and energy-market constraints before any technical claim is promoted.",
+        "Crucible should add negative fixtures for unsupported safety, throughput, regulatory, and energy-cost claims.",
+        "Telos action receipts should separate test-site observation, model assumptions, regulatory state, and publication claims."
+      ]
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=7lPWtFXsuzk",
+      "returncode": 0,
+      "field_lane": "causal-inference-and-claim-identification",
+      "integration_status": "INFERRED",
+      "catalog": [
+        {
+          "kind": "metadata",
+          "id": "7lPWtFXsuzk",
+          "title": "Causal Inference with DAGs",
+          "source": "video",
+          "ref": "7lPWtFXsuzk",
+          "method": "yt-dlp",
+          "sha256": "adcd400c3f73d5fcdf70434ac0537768d7f703fc60019ce03da64ecdc65da8d1",
+          "chars": 167
+        },
+        {
+          "kind": "transcript",
+          "id": "7lPWtFXsuzk",
+          "title": "Causal Inference with DAGs",
+          "source": "video",
+          "ref": "7lPWtFXsuzk",
+          "method": "auto-caption",
+          "sha256": "62b5cd57d9a4de5cb9acf5196f97251e56611d2305bff3a5b2be3c298c483b7c",
+          "chars": 38059
+        }
+      ],
+      "digest": {
+        "seal": "dfa0d7f400b2077b480a18d3733820bea26b6d850273ace9dc34444fe92b0b5b"
+      },
+      "theme_counts": {
+        "cause": 38,
+        "causal": 38,
+        "dag": 30,
+        "confounding": 2,
+        "intervention": 1,
+        "model": 1
+      },
+      "telos_integration_requirements": [
+        "Learning Forge should expose DAG-to-claim-card labs where adjustment sets, colliders, confounders, interventions, and falsification notes are visible.",
+        "BuildLang/buildc can own a causal graph DSL for deterministic checks: acyclicity, do-calculus preconditions, adjustment-set declarations, and generated negative fixtures.",
+        "Crucible should require every causal recommendation to carry graph assumptions, measured variables, exclusion criteria, and a failure case."
+      ]
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=Vg6FBKTlfOw",
+      "returncode": 0,
+      "field_lane": "arc-agi-benchmarks-and-agentic-abstraction",
+      "integration_status": "INFERRED",
+      "catalog": [
+        {
+          "kind": "metadata",
+          "id": "Vg6FBKTlfOw",
+          "title": "ARC-AGI-3 Explained by the Team That's Winning It",
+          "source": "video",
+          "ref": "Vg6FBKTlfOw",
+          "method": "yt-dlp",
+          "sha256": "b8d10c002e596637066d26b5615244cea02fd6831115a040c586774d643983ac",
+          "chars": 171
+        },
+        {
+          "kind": "transcript",
+          "id": "Vg6FBKTlfOw",
+          "title": "ARC-AGI-3 Explained by the Team That's Winning It",
+          "source": "video",
+          "ref": "Vg6FBKTlfOw",
+          "method": "yt-dlp",
+          "sha256": "61cd850cec061a5dc659137affe74a1f81d05bbe8c98b1dd5ba102a2d3767f9e",
+          "chars": 88602
+        }
+      ],
+      "digest": {
+        "seal": "f0248ab61d7d720dbaef229f656aca66de8e389244149478df4855538db35b67"
+      },
+      "theme_counts": {
+        "agent": 41,
+        "arc": 91,
+        "agi": 59,
+        "abstraction": 22,
+        "benchmark": 10,
+        "compute": 18,
+        "test": 19
+      },
+      "telos_integration_requirements": [
+        "Model foundry needs action-efficiency receipts, not only final answer scores: action budget, observation budget, retry count, tool calls, and verifier outcomes.",
+        "Learning Forge should convert ARC-like tasks into perturbable labs where strategy traces can be compared against hidden-test generalization.",
+        "Index should package benchmark context without leaking hidden target examples or overfitting cues.",
+        "Crucible should treat benchmark leaderboard claims as UNVERIFIABLE until joined to official task definitions, evaluation rules, and reproduced local fixtures."
+      ]
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=DyIQkqBXhS0",
+      "returncode": 0,
+      "field_lane": "microscopy-materials-biology-and-experimental-measurement",
+      "integration_status": "INFERRED",
+      "catalog": [
+        {
+          "kind": "metadata",
+          "id": "DyIQkqBXhS0",
+          "title": "Atomic Force Microscope high-speed video, selective stainless steel etching, bacteria, and more",
+          "source": "video",
+          "ref": "DyIQkqBXhS0",
+          "method": "yt-dlp",
+          "sha256": "7fea9c041a67e98b165232cd6b79c881e9de889b13f73218dd54cb40e6d106e5",
+          "chars": 158
+        },
+        {
+          "kind": "transcript",
+          "id": "DyIQkqBXhS0",
+          "title": "Atomic Force Microscope high-speed video, selective stainless steel etching, bacteria, and more",
+          "source": "video",
+          "ref": "DyIQkqBXhS0",
+          "method": "auto-caption",
+          "sha256": "7d9ca27036547972ee33e28cd687c23bc00059fd72229fafd986a78f63a4e78f",
+          "chars": 24182
+        }
+      ],
+      "digest": {
+        "seal": "f0525bb83c52dd614c95cff067e5b44db2069ebd75577b6a396ca8b2e522c1f5"
+      },
+      "theme_counts": {
+        "microscope": 5,
+        "atomic force": 1,
+        "bacteria": 30,
+        "etching": 8,
+        "experiment": 1,
+        "measure": 1,
+        "test": 1
+      },
+      "telos_integration_requirements": [
+        "Measurement layers should support image/video evidence packets: instrument identity, sample prep, calibration, timestamp, frame extraction, and artifact hash.",
+        "BuildLang/buildc should target materials/biology micro-experiments through typed units, acquisition metadata, and reproducible image-analysis kernels.",
+        "Gather should ingest lawful instrument notes, microscopy images, and lab logs as source receipts while keeping raw payloads out of model context.",
+        "Crucible should require negative fixtures for compression artifacts, uncalibrated scale bars, sample-prep ambiguity, and overinterpreted microscopy images."
+      ]
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=bgWq678Oed4",
+      "returncode": 0,
+      "field_lane": "ai-scale-economics-compute-and-infrastructure",
+      "integration_status": "INFERRED",
+      "catalog": [
+        {
+          "kind": "metadata",
+          "id": "bgWq678Oed4",
+          "title": "Why AI Companies Need Scale [Wading Through AI - Episode 7]",
+          "source": "video",
+          "ref": "bgWq678Oed4",
+          "method": "yt-dlp",
+          "sha256": "ed62a93c0e177b200fd79e06c46b39fa05f0c39328232ac07eabda8cb3a62914",
+          "chars": 155
+        },
+        {
+          "kind": "transcript",
+          "id": "bgWq678Oed4",
+          "title": "Why AI Companies Need Scale [Wading Through AI - Episode 7]",
+          "source": "video",
+          "ref": "bgWq678Oed4",
+          "method": "auto-caption",
+          "sha256": "4a170ced81d2b2f345bf262d6acf6567b153f206546f60d21e7b3d48619f39c4",
+          "chars": 65247
+        }
+      ],
+      "digest": {
+        "seal": "83369aa976222c5f229d00584cdb1d29213b38ee7c2512dde0556a9bcaceab95"
+      },
+      "theme_counts": {
+        "scale": 18,
+        "gpu": 3,
+        "data center": 6,
+        "compute": 15,
+        "cause": 53,
+        "agi": 6
+      },
+      "telos_integration_requirements": [
+        "Objective monitor should track compute, latency, cost, energy, evidence recall, and verification quality as separate metrics.",
+        "Model foundry should record scaling experiments as receipts: model/config id, dataset boundary, eval fixture, budget, run hash, and residual risk.",
+        "Build-universe should expose infrastructure constraints as first-class planning objects instead of hidden deployment assumptions.",
+        "Crucible should block scale-economics claims that lack current cost, utilization, power, and reproducibility evidence."
+      ]
+    }
+  ],
+  "channel_results": [
+    {
+      "url": "https://www.youtube.com/@ti_morse/videos",
+      "requested_url": "https://www.youtube.com/@ti_morse",
+      "returncode": 0,
+      "source_type": "youtube_channel",
+      "method": "yt-dlp-flat-playlist",
+      "video_list_state": "match",
+      "metadata_sha256": "6033afb18b7df9fbf5ca039cc673006e0cd6e0bbff29bcda4b7dd8f2b1f07a11",
+      "metadata_chars": 15113,
+      "channel": "Relentless",
+      "channel_id": "UCxYhf1bmbsXLU1ClPNS2P6g",
+      "uploader_id": "@ti_morse",
+      "webpage_url": "https://www.youtube.com/@ti_morse/videos",
+      "channel_follower_count_observed": 23800,
+      "captured_entries": 12,
+      "entries": [
+        {
+          "id": "RZiM3Xfp-eY",
+          "title": "Manufacturing 1,000s of Nuclear Reactors | Isaiah Taylor, Valar Atomics",
+          "url": "https://www.youtube.com/watch?v=RZiM3Xfp-eY",
+          "duration": 5503
+        },
+        {
+          "id": "SlHd3-0eXOA",
+          "title": "Pablo Escobar was a logistics guy - Ryan Petersen",
+          "url": "https://www.youtube.com/watch?v=SlHd3-0eXOA",
+          "duration": 3172
+        },
+        {
+          "id": "nxs66bgo0Fc",
+          "title": "How we're going to power the AI data center buildout | Energy Sec. Chris Wright & Scott Nolan",
+          "url": "https://www.youtube.com/watch?v=nxs66bgo0Fc",
+          "duration": 3799
+        },
+        {
+          "id": "8sbOL5wGADo",
+          "title": "The Manufacturing Startup That's Outcompeting China | Jim Belosic, SendCutSend | Round II",
+          "url": "https://www.youtube.com/watch?v=8sbOL5wGADo",
+          "duration": 3712
+        },
+        {
+          "id": "OQ0OOzOwsJY",
+          "title": "How to Start a Cult | Lulu Cheng Meservey",
+          "url": "https://www.youtube.com/watch?v=OQ0OOzOwsJY",
+          "duration": 3926
+        },
+        {
+          "id": "W5v0S0SzTZo",
+          "title": "Why Elon Outcompetes Everyone | Eric Jorgenson",
+          "url": "https://www.youtube.com/watch?v=W5v0S0SzTZo",
+          "duration": 5356
+        },
+        {
+          "id": "bzYQWBBX7wU",
+          "title": "How Brian Armstrong Built Coinbase",
+          "url": "https://www.youtube.com/watch?v=bzYQWBBX7wU",
+          "duration": 6870
+        },
+        {
+          "id": "Yfrm31sSrDI",
+          "title": "Peter Beck - We're scaling Electron faster than SpaceX scaled Falcon 9",
+          "url": "https://www.youtube.com/watch?v=Yfrm31sSrDI",
+          "duration": 3919
+        },
+        {
+          "id": "3CEinhANrdg",
+          "title": "Manufacturing 1 million drones a year | Soren Monroe-Anderson, Neros",
+          "url": "https://www.youtube.com/watch?v=3CEinhANrdg",
+          "duration": 6092
+        },
+        {
+          "id": "Xolqw4B35rQ",
+          "title": "The American Uranium Enrichment Startup | Scott Nolan, General Matter",
+          "url": "https://www.youtube.com/watch?v=Xolqw4B35rQ",
+          "duration": 5643
+        },
+        {
+          "id": "TRcvUUMaBcA",
+          "title": "The US vs. China Manufacturing Debate",
+          "url": "https://www.youtube.com/watch?v=TRcvUUMaBcA",
+          "duration": 4617
+        },
+        {
+          "id": "a7B2rgAOUkc",
+          "title": "Space Datacenters | Baiju Bhatt, Aetherflux",
+          "url": "https://www.youtube.com/watch?v=a7B2rgAOUkc",
+          "duration": 5146
+        }
+      ],
+      "queue_implications": [
+        "The channel queue is concentrated around industrial scale-up, energy, aerospace, logistics, manufacturing, hardware, and institutional execution.",
+        "Treat these as market and field-scope leads. They are not evidence for technical correctness until each episode is captured and cross-checked."
+      ]
+    }
+  ],
+  "megatool_map": [
+    {
+      "product_lane": "Industrial Science Proof Packets",
+      "fields": [
+        "nuclear energy",
+        "manufacturing",
+        "materials",
+        "microscopy",
+        "biology"
+      ],
+      "internal_tools": [
+        "Gather",
+        "Index",
+        "Crucible",
+        "Telos action receipts",
+        "BuildLang/buildc",
+        "measurement layers",
+        "browser evidence"
+      ],
+      "first_demo": "source-to-simulation packet with units, assumptions, instrument/plant/factory state, replayed calculation, and claim boundary"
+    },
+    {
+      "product_lane": "Causal Research Workbench",
+      "fields": [
+        "statistics",
+        "medicine",
+        "policy",
+        "biology",
+        "economics",
+        "AI evaluation"
+      ],
+      "internal_tools": [
+        "Learning Forge",
+        "BuildLang/buildc",
+        "Crucible",
+        "Index context envelopes",
+        "Forum routing"
+      ],
+      "first_demo": "DAG-to-proof packet that records variables, graph assumptions, adjustment set, alternative graph, negative control, and reproducible computation"
+    },
+    {
+      "product_lane": "Agentic Benchmark Foundry",
+      "fields": [
+        "ARC-style tasks",
+        "AGI evaluation",
+        "coding agents",
+        "AI scale economics"
+      ],
+      "internal_tools": [
+        "model foundry",
+        "loop ledger",
+        "action receipts",
+        "Learning Forge labs",
+        "Crucible"
+      ],
+      "first_demo": "action-efficiency proof packet separating task observations, actions, budget, verifier checks, contamination controls, and final score"
+    },
+    {
+      "product_lane": "Compute and Infrastructure Ledger",
+      "fields": [
+        "GPU planning",
+        "data centers",
+        "energy",
+        "build-universe",
+        "model training and inference"
+      ],
+      "internal_tools": [
+        "build-universe",
+        "model foundry",
+        "objective monitor",
+        "Telos loop ledger",
+        "BuildLang/buildc"
+      ],
+      "first_demo": "cost-latency-energy-verdict ledger for one model/eval run with reproducible budget accounting"
+    }
+  ],
+  "next_actions": [
+    {
+      "owner": "gather",
+      "action": "capture_primary_sources",
+      "targets": [
+        "Valar Atomics public materials",
+        "ARC-AGI official rules and tasks",
+        "causal inference references behind the DAG lecture",
+        "atomic-force microscopy and sample-prep sources",
+        "AI scale economics primary evidence"
+      ]
+    },
+    {
+      "owner": "index",
+      "action": "build_field_context_envelopes",
+      "targets": [
+        "energy-industrialization",
+        "causal-inference",
+        "agentic-benchmarks",
+        "microscopy-materials",
+        "compute-infrastructure"
+      ]
+    },
+    {
+      "owner": "forum",
+      "action": "route_parallel_research_lanes",
+      "targets": [
+        "energy systems",
+        "causal/statistical methods",
+        "benchmark design",
+        "instrumentation and materials",
+        "AI infrastructure economics"
+      ]
+    },
+    {
+      "owner": "crucible",
+      "action": "define_promotion_gates",
+      "targets": [
+        "source-only",
+        "transcript-backed",
+        "primary-source-backed",
+        "replayed",
+        "publication-ready"
+      ]
+    },
+    {
+      "owner": "telos",
+      "action": "package_into_megatools",
+      "targets": [
+        "Industrial Science Proof Packets",
+        "Causal Research Workbench",
+        "Agentic Benchmark Foundry",
+        "Compute and Infrastructure Ledger"
+      ]
+    }
+  ]
+}

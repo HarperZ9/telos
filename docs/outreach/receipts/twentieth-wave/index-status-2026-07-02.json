@@ -1,0 +1,81 @@
+﻿{
+  "command": "status",
+  "diagnostics": [],
+  "inputs": [],
+  "native": {
+    "commands": [
+      "map",
+      "graph",
+      "context",
+      "context-envelope",
+      "select",
+      "atlas",
+      "wiki",
+      "serve",
+      "verify",
+      "invalidate"
+    ],
+    "current_status": "2.8.0 workspace atlas, certificates, freshness, benchmarking, selection-aware context envelopes, and MCP parity",
+    "mcp_tools": [
+      "index.map",
+      "index.context",
+      "index.context.envelope",
+      "index.select",
+      "index.invalidate",
+      "index.wiki",
+      "index.status",
+      "index.doctor",
+      "index_graph",
+      "index_focus",
+      "index_verify",
+      "index_router",
+      "index_internals"
+    ],
+    "operator_commands": [
+      "status",
+      "doctor",
+      "demo",
+      "mcp"
+    ],
+    "role": "structure-context",
+    "telos_contracts": {
+      "host_surfaces": [
+        "CLI JSON",
+        "MCP stdio",
+        "plugins",
+        "IDEs",
+        "TUIs",
+        "apps"
+      ],
+      "privacy_boundary": "hosts receive receipts, hashes, redacted refs, and verdicts; raw private payloads stay in local adapters",
+      "schemas": [
+        "project-telos.flagship-action/v1",
+        "project-telos.context-envelope/v1",
+        "project-telos.action-receipt/v1"
+      ],
+      "second_brain_role": "map codebases, assets, docs, and dormant engine parts into compact reusable context with selection summaries, freshness roots, and source-ref expansion handles",
+      "workflow_domains": [
+        "enterprise",
+        "research",
+        "creative",
+        "scientific",
+        "education"
+      ]
+    }
+  },
+  "next_actions": [
+    {
+      "action": "docs",
+      "inputs": [],
+      "priority": "normal",
+      "reason": "gather docs backing structural decisions",
+      "tool": "gather"
+    }
+  ],
+  "outputs": [],
+  "receipts": [],
+  "schema": "project-telos.flagship-action/v1",
+  "status": "MATCH",
+  "tool": "index",
+  "tool_version": "2.8.0"
+}

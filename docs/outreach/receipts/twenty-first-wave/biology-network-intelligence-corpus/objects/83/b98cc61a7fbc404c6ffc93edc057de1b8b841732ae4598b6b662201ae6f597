@@ -1,0 +1,458 @@
+Skip to main content
+An official website of the United States government
+Here's how you know
+Here's how you know
+Official websites use .gov
+A
+.gov website belongs to an official
+government organization in the United States.
+Secure .gov websites use HTTPS
+A lock (
+) or https:// means you've safely
+connected to the .gov website. Share sensitive
+information only on official, secure websites.
+Search
+Log in
+Dashboard
+Publications
+Account settings
+Log out
+Search…
+Search NCBI
+Primary site navigation
+Search
+Logged in as:
+Dashboard
+Publications
+Account settings
+Log in
+Search PMC Full-Text Archive
+Search in PMC
+Journal List
+User Guide
+PERMALINK
+Copy
+As a library, NLM provides access to scientific literature. Inclusion in an NLM database does not imply endorsement of, or agreement with,
+the contents by NLM or the National Institutes of Health.
+Learn more:
+PMC Disclaimer
+|
+PMC Copyright Notice
+iScience
+. 2025 Sep 2;28(10):113484. doi: 10.1016/j.isci.2025.113484
+Search in PMC
+Search in PubMed
+View in NLM Catalog
+Add to search
+Detection of electrical signals in fungal mycelia in response to external stimuli
+Matteo Buffi
+Matteo Buffi
+1Laboratory of Microbiology, University of Neuchâtel, 2000 Neuchâtel, Switzerland
+Find articles by Matteo Buffi
+1, Silvia Giangaspero
+Silvia Giangaspero
+2iSIS Institute, HEIA-FR, HES-SO University of Applied Sciences and Arts Western Switzerland, 1700 Fribourg, Switzerland
+Find articles by Silvia Giangaspero
+2, Valerio Foiada
+Valerio Foiada
+3Prototypos Sarl, 1700 Fribourg, Switzerland
+Find articles by Valerio Foiada
+3, Loïc Puthod
+Loïc Puthod
+3Prototypos Sarl, 1700 Fribourg, Switzerland
+Find articles by Loïc Puthod
+3, Guillaume Cailleau
+Guillaume Cailleau
+1Laboratory of Microbiology, University of Neuchâtel, 2000 Neuchâtel, Switzerland
+Find articles by Guillaume Cailleau
+1, Aaron J Robinson
+Aaron J Robinson
+4Bioscience Division, Los Alamos National Laboratory, Los Alamos, NM 87545, USA
+Find articles by Aaron J Robinson
+4, Julia M Kelliher
+Julia M Kelliher
+4Bioscience Division, Los Alamos National Laboratory, Los Alamos, NM 87545, USA
+Find articles by Julia M Kelliher
+4, Patrick SG Chain
+Patrick SG Chain
+4Bioscience Division, Los Alamos National Laboratory, Los Alamos, NM 87545, USA
+Find articles by Patrick SG Chain
+4, Daniel Oberson
+Daniel Oberson
+2iSIS Institute, HEIA-FR, HES-SO University of Applied Sciences and Arts Western Switzerland, 1700 Fribourg, Switzerland
+Find articles by Daniel Oberson
+2, Markus Künzler
+Markus Künzler
+5Institute of Microbiology, Department of Biology, ETH Zürich, 8093 Zurich, Switzerland
+Find articles by Markus Künzler
+5, Saskia Bindschedler
+Saskia Bindschedler
+1Laboratory of Microbiology, University of Neuchâtel, 2000 Neuchâtel, Switzerland
+Find articles by Saskia Bindschedler
+1, Lorenzo Pirrami
+Lorenzo Pirrami
+2iSIS Institute, HEIA-FR, HES-SO University of Applied Sciences and Arts Western Switzerland, 1700 Fribourg, Switzerland
+Find articles by Lorenzo Pirrami
+2,∗, Pilar Junier
+Pilar Junier
+1Laboratory of Microbiology, University of Neuchâtel, 2000 Neuchâtel, Switzerland
+Find articles by Pilar Junier
+1,6,∗∗
+Author information
+Article notes
+Copyright and License information
+1Laboratory of Microbiology, University of Neuchâtel, 2000 Neuchâtel, Switzerland
+2iSIS Institute, HEIA-FR, HES-SO University of Applied Sciences and Arts Western Switzerland, 1700 Fribourg, Switzerland
+3Prototypos Sarl, 1700 Fribourg, Switzerland
+4Bioscience Division, Los Alamos National Laboratory, Los Alamos, NM 87545, USA
+5Institute of Microbiology, Department of Biology, ETH Zürich, 8093 Zurich, Switzerland
+∗
+Corresponding author lorenzo.pirrami@hefr.ch
+∗∗
+Corresponding author pilar.junier@unine.ch
+6
+Lead contact
+Received 2025 Jun 6; Revised 2025 Jul 14; Accepted 2025 Aug 29; Collection date 2025 Oct 17.
+© 2025 The Author(s)
+This is an open access article under the CC BY license (http://creativecommons.org/licenses/by/4.0/).
+PMC Copyright notice
+PMCID: PMC12483595 PMID: 41035690
+Summary
+Electrical signaling is a crucial mechanism for intercellular communication across diverse biological systems. Despite evidence of electrical activity in fungal mycelia, a standardized, reproducible method for detecting these signals is lacking. In this study, we developed a novel approach using printed circuit boards with embedded differential electrodes to record extracellular voltage fluctuations in mycelium. By incorporating a Faraday cage and short-time Fourier transform analysis, we minimized noise and extracted relevant frequency patterns. Our findings revealed electrical activity correlated with fungal growth that varied with biocide treatments. The results support the biological origin of these signals, suggesting a role in environmental adaptation. This study provides a robust framework for further exploration of fungal electrophysiology, with implications for understanding signaling mechanisms in mycelial networks.
+Subject areas: Mycology, Biophysics
+Graphical abstract
+Open in a new tab
+Highlights
+•
+Development of a tool to study extracellular voltage fluctuations in fungi
+•
+Features minimizing experimental artifacts reducing abiotic and environmental noise
+•
+Application of advanced signal analysis for extraction of frequency patterns
+•
+Robust foundation for further exploration of electrical signaling in fungi
+Mycology; Biophysics
+Introduction
+Electrical signaling as a mechanism of inter- and intracellular communication is used by a wide diversity of organisms including animals, plants, and microorganisms.1,2,3 Since Luigi Galvani’s discovery of so-called “animal electricity,”4 propagating action potentials have been identified as the principal communication mechanism in the central nervous system of animals.5 Charles Darwin also observed action-potential-like signals in one of his favorite plants, Dionaea muscipula,6 and it is now widely accepted that many physiological functions in plants rely on action potentials with the same characteristics of those of animals.7,8,9,10 However, given the fundamental differences between animals and plants, additional types of electrical signaling processes have been recognized only in the case of the latter. In plants, variation and systemic potentials are long-distance intercellular electrical signals generated by transient membrane depolarization that coordinate functional responses under stress conditions.8,9,10,11 Electrical signaling has also been recognized as a means of communication in bacterial biofilms, where it facilitates nutrient sharing and aids in the recruitment of distant cells.3 The diversity of examples of electrical signaling across the entire tree of life suggests the universality of this mechanism of communication. Electrical signaling is the result of a fundamental function of cell membranes: the selective transport of charged molecules that creates a disequilibrium of charge across the membrane, i.e., a membrane potential.12 This electrochemical gradient is essential for energy production13 but it also enables communication between adjacent cells, as it can be propagated along the cell membrane via voltage-gated ion channels.14
+The mycelium of filamentous fungi is a highly plastic network of interconnected cells or hyphae that allows fungi to adapt dynamically to uneven or ephemeral resources in complex environments such as soil or other habitats.15,16 The architecture of this network depends on multiple factors, but ultimately on the polar growth of hyphal tips, hyphal branching, and hyphal fusion (anastomosis).17 While the vegetative hyphae of basal fungal clades (i.e., Mucoromycota) are not compartmentalized, hyphae of higher fungi (Dikarya) contain regular septa with pores that regulate exchange and transport among compartments and play a role in differentiation and reproduction.18,19 Septation also prevents loss of cytoplasm after hyphal damage20,21 or in response to attack22,23 but restricts the propagation of chemical signals via cytoplasmic bulk flow. In contrast, the continuity of the cellular membrane, even across plugged septal pores, offers a mechanism by which electrical signaling could allow for communication between distant hyphal compartments. Moreover, the membrane is surrounded by the cell wall that is comprised of components that can act as electrical insulators analogously to myelin in neurons.24,25,26
+Filamentous fungi are known to produce electrical currents in their hyphal tips.27,28 Pioneering work using internal electrodes has shown action-potential-like spikes in rhizomorphs or loose mycelium of Armillaria bulbosa and Pleurotus ostreatus exposed to a wood block (complex source of carbon) or in response to mechanical pressure.29 These currents or membrane potential changes were low in voltage (nV to μV).28,29,30 More recently, several studies using needle electrodes inserted into fruiting bodies31,32,33,34,35,36 recorded action-potential-like spikes in various fungi and suggested a type of species-specific frequency code in the signal.32 Even though these studies offer an initial insight into the production and potential role of electrical signaling in filamentous fungi, a reproducible method to detect these signals and confirm their biological origin is still lacking.37 Furthermore, since not all fungi produce macrostructures such as fruiting bodies or rhizomorphs, it is necessary to confirm the existence of membrane potential fluctuations at the level of vegetative mycelium or single hyphae and to extend the observations beyond Basidiomycetes, which have been the subject of most studies conducted thus far.
+Results
+Development of an experimental setup for recording of electrical signals in filamentous fungi
+We designed the fungal potential card (FPC) for the extracellular recording of electrical signals produced by filamentous fungi. The FPCs are printed circuit boards with pairs of embedded differential electrodes to measure extracellular changes in voltage of a growing mycelium (Figures 1 and S1). Droplets containing medium with or without fungal spores were deposited on the electrodes in a manner consistent with previously described methods.38 The spores were inoculated onto one of the electrodes in each pair, and, upon germination and hyphal growth, the mycelium was expected to create a connection with the second electrode in the pair. Moreover, as the system is open, stimuli can be added to validate the biological origin of the signal (Figure 1A). The FPC was placed inside an incubation chamber designed to maintain humidity and prevent evaporation of the inoculation droplets during the experiments (Figure 1B). The system was placed inside a Faraday cage to decrease external noise and artifacts. This experimental setup successfully maintained optimal conditions for growth, while also permitting the collection of nearly noise-free recordings.
+Figure 1.
+Open in a new tab
+Schemes showing the development of the fungal potential card (FPC), an optimized system for the recording of electrical signals in filamentous fungi
+(A) The system is based on printed circuit boards (PCBs) with pairs of embedded differential electrodes to measure voltage changes. In this system, the fungus is inoculated as a spore suspension (left image) on one of the electrodes. The fungus is allowed to grow and colonize the second electrode as shown in the bubble in the middle of the figure. After this, the effect of different stimuli can be assessed (right image).
+(B) For recording, the system is placed in a custom-made incubator. The components of the incubation system included (1) data logger; (2) shielded cable; (3) Faraday cage; (4) crocodile head cable connected to the PCB; (5) filter for gas exchange; and (6) moistened vermiculite at the bottom to maintain optimal growth conditions.
+Validation of the experimental setup
+To validate the method, we selected Fusarium oxysporum, an ascomycete that is ubiquitous in soils,39,40,41 has a fast growth rate, and can easily be propagated through spores, making it ideal for the inoculation approach employed in this study. As a first step, we tested the biocompatibility of the electrodes as well as the impact of the electrode size and distance between electrode pairs on hyphal growth. For this, F. oxysporum was grown on FPCs with different electrode sizes (1, 2, 3, and 4 mm) placed 1 cm apart (center to center). We selected gold-covered electrodes because gold is considered an inert non-toxic material.42,43 The smallest electrode size (1 mm) resulted in inconsistent colonization and was difficult to inoculate accurately. For larger electrode sizes (3 and 4 mm), the fungus did not consistently colonize the second electrode. In contrast, with 2 mm electrodes, the fungus was able to consistently colonize and connect the two electrodes on the FPCs, and therefore, this electrode size was selected for all of the following experiments (Figure S2).
+Development of a method for data interpretation
+Interpretation of the recorded data can be challenging, and this was considered when analyzing the data collected on the selected 2-mm electrode FPCs. The use of a Faraday cage makes it impossible to assess the density of hyphae connected to each electrode, which is a feature required for characterization of raw voltage measurements as action-potential-like signals. Therefore, the changes in voltage were broken down to their frequency components using a short-time Fourier transform (STFT). This type of analysis results in a spectrogram that displays frequencies over time (Figure 2A). In contrast to raw recordings, which only show how the signal behaves in the time domain, STFT enables the analysis of both time and frequency simultaneously. This is particularly useful for identifying patterns in the data that may evolve or shift over time and would be hard to detect using the raw voltage data alone. For instance, the colonization of the second electrode by the growing hyphae was expected to result in a change in the STFT data pattern. To test this, we grew the fungus for seven days and recorded the voltage changes between the two electrodes. Controls without inoculation were also included in these experiments. Based on previous experiments with this isolate of F. oxysporum, we estimated that the mycelium would take 3–4 days to connect the pair of electrodes.38 The use of a Faraday cage prevented the direct monitoring of the colonization, but a change in the STFT pattern was consistently observed four days post-inoculation, which is consistent with the previously observed colonization time.38 The signal profiles from inoculated electrode pairs were visually distinct; in the non-inoculated controls, a background signal with a frequency below 1 Hz was recorded (yellow color in the STFT frequency). The signals from electrode pairs connected by the fungal mycelium also contained this low-frequency component prior to day four, but after this period, additional frequencies above 1.5 Hz were detected (Figure 2B). To further characterize the data, we calculated the power spectral density (PSD), which quantifies the strength or intensity of a signal at different frequencies but results in a single cumulative value. This allowed us to compare how the bulk frequency signal changed comparing the inoculated electrodes versus the control electrodes without the fungus. The results showed a 1,604% PSD increase in the inoculated electrodes compared to the non-inoculated electrodes, which was significant (Figure 2C; Table 1). This suggests that our setup records electrical signals generated by the colonizing mycelium. However, further evidence was needed to confirm the biological origin of the observed signals.
+Figure 2.
+Open in a new tab
+Transformation of raw signals into frequencies for data analysis
+(A) The signal is recorded as voltage change between the inoculated electrodes and a reference electrode. The signal is further transformed into frequencies using a short-time Fourier transform (STFT). This procedure results in a spectrogram that represents the signals’ component frequencies over time and allows for comparison against controls.
+(B) In the example shown here, the top panel represents the raw voltage measurements. After STFT, the pattern in the spectrogram on the left (corresponding to the inoculated electrode) is clearly distinct from the background in the uninoculated controls (right image). The change starts at 3 days after inoculation, but it is more pronounced after 4 days.
+(C) To quantitatively assess the difference in the STFT pattern between conditions, a power analysis was performed by integrating the power spectral density (PSD) comparing inoculated (with fungus) and non-inoculated (without fungus) electrode pairs. This difference was significant (p value < 0.001).
+Table 1.
+Summary of the results of the power spectral density (PSD) analysis across the tested experimental conditions
+Fungi vs. no fungi before induction
+Replicates
+Fungi mean
+No fungi mean
+p value
+% change
+Fungi/No fungi
+24 f/8 nf
+3.44429E-07
+2.0204E-08
+0.000∗
+1,604.752
+Drug/control before induction
+Replicates
+Drug mean
+Control mean
+p value
+% change
+Cycloheximide/MQwater
+3
+5.98197E-07
+3.13556E-07
+0.317
+90.779
+Voriconazole/MQwater
+3
+2.72814E-07
+3.41486E-07
+0.786
+−20.110
+Calcimycin/DMSO
+3
+4.50667E-07
+2.51333E-07
+0.179
+79.310
+Sodium Azide/MQwater
+3
+3.5809E-07
+1.69289E-07
+0.286
+111.526
+Induction
+Cycloheximide/MQwater
+3
+1.81389E-06
+7.03443E-06
+0.327
+−74.214
+Voriconazole/MQwater
+3
+3.53236E-06
+2.71344E-07
+0.391
+1,201.803
+Calcimycin/DMSO
+3
+1.58093E-06
+9.97417E-07
+0.580
+58.503
+Sodium Azide/MQwater
+3
+3.41499E-06
+2.34075E-07
+0.116
+1,358.933
+Open in a new tab
+PSD values were extracted from three days before and after the induction. Each row represents an individual condition, with PSD values computed on a logarithmic scale (Log10) over a three-day period following induction or control treatment. The analysis was performed exclusively for conditions with sufficient replicates, while controls without fungi were excluded due to the availability of only a single replicate per sample. Additionally, the table reports the percentage change (increase or decrease) in PSD values between the induction and control conditions for each treatment. All data processing and table generation were conducted using RStudio (2024.09.1 Build 394; Document S2). For the fungi/no fungi comparison, f = fungi and nf = no fungi (replicate number). MQwater = Milli-Q water. ∗ = significant p value (<0.001).
+Evaluation of the biological origin of electrical signals
+To assess the biological origin of the detected electrical signals, we tested the effect of different chemicals that are known to negatively affect hyphal physiology (Figure 3). For this, we ran experiments with eight electrode pairs at a time. As controls, non-inoculated electrode pairs were also subjected to the applied chemical and chemical carrier (e.g., solvent or Milli-Q water). First, we tested the biocide cycloheximide, confirming that the fungus was sensitive to it by culturing both spores and mycelium in the presence of this antibiotic. Cycloheximide (20 mg/mL) fully inhibited spore germination (Figure 3A) and partially inhibited mycelial growth (Figure S3). The addition of cycloheximide reduced the frequency content under 1.5 Hz to a minimum and eliminated the signals above 1.5 Hz (Figure 3B). In contrast, the addition of the carrier (Milli-Q water) did not alter the frequency content. The frequency content under 1.5 Hz remained unchanged, and the signals above 1.5 Hz (specially the one at 2 Hz) were still observable (Figures 3B and S3). The PSD showed a reduction of 74.21% in the treated pairs compared to the untreated controls but this difference was not significant (Table 1). Next, we tested voriconazole, a second antibiotic. In contrast to cycloheximide, voriconazole (12.5 μg/mL) was shown not to be toxic on a plate assay (Figures 3C and S4). The STFT pattern after addition of voriconazole showed a minor dent in the measurements compared to the carrier (i.e., Milli-Q water; Figures 3D and S4). The PSD increased by 1,201%, but this result was not significant (Table 1). In addition, increased hyphal branching was observed following treatment with voriconazole (Figure S5).
+Figure 3.
+Open in a new tab
+Frequency change analysis of electrical recordings in Fusarium oxysporum in response to cycloheximide and voriconazole
+(A and C) To evaluate the effect of the two biocides, susceptibility tests were performed on spores (for tests on mycelium please see Figures S3 and S4). The site of application of the biocides is shown by the red arrows (cycloheximide in A and voriconazole in C). Black arrows show the addition of Milli-Q water, which is the carrier solvent of the two biocides and acted as a control.
+(B and D) Examples of voltage plots and their respective interpretation in frequency patterns obtained by STFT analysis (see Figure 2B) for cycloheximide (B) and voriconazole (D). In both cases, the stimuli are shown on the top panel, and the carrier (Milli-Q water) is shown on the bottom panel. The time of application of the stimuli is shown by the red line. The effect of the biocides is shown on the window indicated by the red (biocide) and black (Milli-Q water) squares. The images on the right show a magnification of the frequency pattern after addition of the biocides and Milli-Q water to highlight the effect of the stimuli on the electrical signal produced by the mycelium.
+We also tested the antibiotic Calcimycin. In this case, the solvent dimethyl sulfoxide (DMSO) was used as carrier. Since DMSO has been reported to be toxic under some conditions,44 we assessed the toxicity of both Calcimycin and DMSO in a plate assay. Calcimycin inhibited spore germination and hyphal growth, whereas DMSO had no obvious impacts on germination or growth (Figure S6). The addition of Calcimycin (1.3 mg/mL) in DMSO also reduced the detected frequencies to a minimum, but DMSO alone produced an identical result (Figure S6). As the effect observed on the signal was not due to DMSO toxicity, it is more likely that DMSO interfered with the gold-plated electrodes.45 Three days after the addition of Calcimycin or DMSO, a signal was detectable again in some replicates (Figure S6), suggesting a recovery process. Finally, sodium azide had a substantial impact on spore germination but had a lower impact on established mycelium (Figure S7A). The application of sodium azide (6.5 mg/mL) reduced the signal for about 18 h, before returning to a signal equivalent to the control treatments with Milli-Q water (Figures S7B and S7C). The addition of Milli-Q water in the control resulted in a decrease of the frequency signal in one of the three replicates for a short duration (about 5–6 h) (Figures S7C and S7D), but as all other Milli-Q water controls did not result in a reduced signal, this is likely an artifact. In the case of Calcimycin and sodium azide, the comparison of the PSD showed an increase of the signal after the induction, but the differences were not significant (Table 1).
+Discussion
+The recording of voltage changes in fruiting bodies using needle electrodes31,32,33,34,35,36 triggered the development of techniques to accurately measure voltage in growing mycelium. However, hitherto attempts suffered from flaws in the experimental design, leading to the recording of artifacts and the lack of confidence on the biological origin of the measured signals. These shortcomings have been highlighted by other authors.37 To overcome these problems, we established a setup based on the design and construction of the FPC, a printed circuit board in which the differential electrodes were embedded and allowed for the omission of agar-containing media, which can be prone to the development of abiotic electrochemical gradients that can be mistakenly interpreted as true electrical signals.37
+The use of a Faraday cage was also an essential addition for the improvement of the setup. This feature has been missing in previous studies,31,32 and this has been a common criticism and indicated as an experimental flaw of previous studies.37 The addition of the Faraday cage reduced the effect of external noise and artifacts for accurate measurements of voltage changes in the order of microvolts. In previous studies lacking a Faraday cage and employing the same recording instrument, the presence of people walking near the incubator or even the automatic closing of window shades affected voltage measurements.46 This issue was eliminated in the current setup.
+In addition to an improved experimental setup, we also used a signal analysis methodology that allows us to observe changes in the frequency of electrical signals over time. Previous studies have relied on the characterization of action-potential-like signals directly from the changes in voltage to infer electrical signaling in fungi.32,33 However, the use of a Faraday cage makes it impossible to assess the density of hyphae connected to each electrode, which is a feature required for characterization of action-potential-like signals.27,35 Moreover, action potentials are transmembrane potentials that arise between the intracellular and extracellular space and are generally measured with microelectrodes placed inside living cells. Instead, extracellular electrodes record field potentials (i.e., local voltage changes) when placed close to or in contact with excitable cells. This type of indirect measure of cellular activity reflects the synchronous electric behavior of multiple cells.37,47 To obtain a signal that corresponded to this synchronous behavior, the changes in voltage were broken down into their frequency components using an STFT. This analysis is akin to the analysis of electroencephalographic signals in studies of human physiology,48 but in this case, it was applied to the changes in voltage produced upon colonization of the second electrode in the FPC. The STFT, an adaptation of the fast Fourier transform (FFT) algorithm,49 is useful in this case because it allows for the extracting of the non-stationary frequency content from noisy signals,50 which better correspond to those expected by the non-coordinated expansion of a mycelial network.
+A set of signature frequencies above 1.5 Hz were recorded in the time frame in which colonization of the second electrode was to be expected according to previous studies with the same fungus.38 The observed range of frequencies (1.5–8 Hz) is consistent with previous studies using internal electrodes, in which frequencies ranging from 0.5 to 5 Hz were recorded.29 For comparison, the animal central neuronal system acts at much higher frequencies (up to 200–300 Hz).51 However, frequencies in other organs such as the heart (1 Hz for the normal heartbeat) or the intestine (slow waves 0.05–0.2 Hz) are lower.52 Similarly, electrical communication in plants depend on signals at lower frequencies.2,53 For instance, the fast cell movement required for the closing of marginal tentacles in the carnivorous plant Drosera capensis54 is triggered by two action potentials in less than 30 s (4 Hz).55 In contrast, other types of signals are thought to use frequencies below 0.2 Hz.56 The range of frequencies observed for the mycelium of F. oxysporum appears to be compatible with the speed of signal integration required in a digestive system (i.e., intestinal movement), a heartbeat, or to the one existing for fast cell movement in plants. This offers potential for comparative studies across organisms. However, it is still unclear if the signal conveys information or if it is the result of periodic ion redistribution in growing hyphae. Nevertheless, if this mechanism allows intracellular communication, it could contribute to the fast adaptation and the dynamic response of the mycelium to external stimuli, in combination with other processes such as bulk transport of chemical signals.57
+The comparison of the effect of different biocides with different mechanisms of action on mycelial growth or spore germination suggests that the recorded signals have a biological origin. The effect of cycloheximide, which was confirmed to be toxic in culture assays, suggests that the signal is generated by the active growth of the fungus. Cycloheximide is a biocide of bacterial origin that affects protein synthesis, and it is widely used as a fungicide.58 Cycloheximide was toxic, and its addition reduced the frequency content under 1.5 Hz and eliminated the signals above 1.5 Hz. The rapid decrease of electrical signals confirms that those are not merely noise, but rather a physiological indicator reflecting the cellular activity of the mycelium. Voriconazole is also a commonly used fungicide that stops ergosterol production, resulting in an initial stop of growth followed by the destruction of the membrane.59 However, voriconazole was not toxic for F. oxysporum on a plate assay. In contrast to cycloheximide, voriconazole resulted only on a minor dent in the signal that could be the result of temporary cytosol leaking in the affected hyphae. However, mechanisms ensuring survival, such as the plugging of septal pores,20,21 could be responsible for the fast recovery and are consistent with the observed hyphal branching.
+In the future, the use of the FPC could be complemented by monitoring ion fluctuations at a single hyphal level using fluorescent voltage-dependent dyes or tagged ions in combination with fluorescence microscopy. Likewise, the use of knockout mutants or the silencing of genes coding for putative voltage or ion-gated membrane channels is compatible with the method presented here. All the above will increase our knowledge and understanding of the mechanisms involved in the fluctuations of membrane potentials in fungi and help to determine if these fluctuations contribute to cell-to-cell communication conveying information in fungal networks.
+Limitations of the study
+Future experiments should focus on the dissection of the molecular mechanisms generating the detected signals by identifying the ions and ion-gated membrane channels involved in this mechanism of electrical signaling. Unfortunately, the first experiments performed in this direction using Calcimycin were inconclusive due to the interaction of DMSO with the electrodes. Calcimycin is an ionophore for divalent cations across biological membranes and leads to Ca2+-dependent cell death in Gram-positive bacteria.60 Influx and efflux of Ca2+ via Ca2+-dependent membrane channels have been involved in thigmotropism and galvanotropism in fungi, relaying topologic information during hyphal growth.61,62,63 In addition, a study in Aspergillus nidulans showed a highly localized Ca2+ movement that caused a wave of voltage measurements with variable frequency in response to stress.64 Accordingly, we expected that the treatment with Calcimycin would further support the role of Ca2+ in fungal electrophysiology. However, Calcimycin was highly toxic, and its effect could not be differentiated from its solvent (DMSO). Future experiments need to consider other solvents to evaluate the role of Ca2+ using this antibiotic. Electrical signaling in other microbial systems such as bacterial biofilms has been associated with K+ transport, in both Gram-positive and Gram-negative bacteria.3,65,66 K+-gated channels have been detected and characterized in fungi67 and could be also tested in the future using the FPCs. Additional experiments could consider testing multiple stimuli such as combining ionophores with sodium azide, which is known to stop the production of ATP68 and applied alone had a limited effect on the signal.
+Resource availability
+Lead contact
+Further information and requests for resources and reagents should be directed to and will be fulfilled by the lead contact, Pilar Junier (pilar.junier@unine.ch).
+Materials availability
+The FPC were produced by prototypos SARL (prototypos.ch).
+Data and code availability
+All data are available in the main text or the supplemental information. The original unprocessed data are available in Mendeley Data under the https://doi.org/10.17632/srkxbkh6sp.1. The code for analysis is provided in the Method S1.
+Acknowledgments
+We would like to thank Diego Gonzalez for his comments on early versions of this manuscript, Lukas Wick for insightful discussion during the development of the idea, and Ilona Palmieri for technical help.
+This research was supported by a Science Focus Area Grant from the US Department of Energy (DOE), Biological and Environmental Research (BER), Biological System Science Division (BSSD) under the grant number LANLF59T to P.S.C., and the Swiss National Science Foundation Grant 310030_212435 to M.K.
+Author contributions
+Conceptualization, M.B., S.B., and P.J.; methodology, M.B., S.G., A.J.R., J.M.K., M.K., D.O., S.B., L.P., and P.J.; investigation, M.B., S.G., V.F., and L.P.; visualization, M.B., S.G., G.C., L.P., and P.J.; funding acquisition, A.J.R., P.S.G.C., M.K., S.B., and P.J.; project administration, A.J.R., P.S.G.C., and P.J.; supervision, S.B., L.P., and P.J.; writing—original draft, M.B., S.G., M.K., and P.J.; writing—review & editing, M.B., S.G., A.J.R., J.M.K., M.K., S.B., and P.J.
+Declaration of interests
+The authors declare no conflict of interest.
+STAR★Methods
+Key resources table
+REAGENT or RESOURCE
+SOURCE
+IDENTIFIER
+Biological samples
+Fusarium oxysporum
+Laboratory of Microbiology
+NEU 195
+Chemicals, peptides, and recombinant proteins
+Cycloheximide (20 mg/ml),
+Thermo Fisher Scientific
+357420050
+Voriconazole (12,5 μg/ml)
+Sandoz®
+65064
+Calcimycin (1.3 mg/ml)
+Merck
+CAS 52665-69-7
+Sodium azide (6.5 mg/ml)
+Merck
+45/Kit-No 78374
+Deposited data
+Raw Data recordings
+This work
+https://doi.org/10.17632/srkxbkh6sp.1
+Software and algorithms
+Code for STFT analysis
+This work
+Document S2
+Other
+PCB card for recordings
+Prototypos.ch
+This Work
+ADC-24 data logger
+https://www.picotech.com
+-
+Shielded armoured cable D-Sub
+(Phoenix Contact, mouser.ch
+651-2302146
+Open in a new tab
+Experimental model and study participant details
+The experimental model corresponded to Fusarium oxysporum Neu 195, a fungal strain obtained from the fungal and bacterial collection of the laboratory of microbiology, University of Neuchâtel, Switzerland.
+Method details
+Inocula preparation
+For the regular maintenance, the organism was plated on Malt Extract Agar (12g/l malt extract [“Support Is Our Success”; SIOS® homebrew, Switzerland, Ref: XE201], 15g/l Technical Agar [Biolife, Japan, Ref: 4110254], 1 l deionized water). F. oxysporum was grown for 2 weeks on Potato Dextrose Agar (39 g/l PDA stock powder [CARLROTH®, Germany, Ref: AE92.2]) to induce spore production, spores were then collected washed and re-suspended in 50ml MQ water and stored at 4°C for use. Prior to the experiment, 100 μl of the spore suspension were added to 900 μl of liquid Potato Dextrose Broth (4g/l Potato infusion [MERCK Sigma-Aldrich, Germany, Ref: 52424], 20g/l D[+] Glucose monohydrate [CARLROTH®, Germany, Ref: 6887.1], 1 l deionized water) and well mixed. Then 20 μl of the suspension were deposited on the electrodes (1, 3, 5, 9, 11, 13) at a final concentration of around 350 spores for each drop.
+Measurement set-up
+A high-resolution data logger ADC-24 (Pico Technology, UK) was used to measure voltage potential changes in fungal mycelium. Instead of the sub dermal needles used in previous studies we designed the fungal potential card (FPC), a printed circuit board card with 8 couples of embedded ENIG Electro-less Nickel / Immersion Gold electrodes (Figure S1). The FPC was designed and produced by prototypos SARL (prototypos.ch). The card was connected to the ADC-24 via a shielded armoured cable D-Sub (Phoenix Contact, 651-2302146, mouser.ch) for noise-free recordings. The card was placed inside a tailored-made incubator to keep the system at above 80% humidity. For this, a plastic storage container (l: 21.5, w: 12.5, h: 9.5 cm) was used. A dent (height 2.5 cm) was open on one of the short sides of the box to insert one end of the shielded cable. The remaining space was closed with aquarium silicon to avoid water evaporation and contamination. A 1 cm hole was created on the lid and plugged with a hydrophobic filter to permit gas exchange without reduction of humidity. Inside the incubator, a cylindrical piece of plastic was glued to the bottom to act as a holder of the FPC card (1.5 cm height). Vermiculite was deposited on the bottom of the box (covering one 1 cm) and moistened with sterile MilliQ water to keep high humidity. In addition to the plastic holder, to avoid the card from touching the vermiculate, two rubber caps were fixed between the card and the plastic box to block the FPC in place. A second dent was created in between the lid and the box to pass the grounding cable and attach it from the armoured cable to the Faraday cage. The Faraday cage was made from an aluminium box (ALUTEC aluminium box classic 30, l: 40, w: 30, h: 25 cm). We removed the rubber band separating the lid from the box. A hole of 1.5 cm between the lid and the box was cut to pass the cable inside the box. The conductivity of the Faraday cage was tested from the lid (box closed) to the end of the cable attached to the ADC-24 with the aid of a multimeter.
+Testing of electrode sizes
+Different sizes of electrode were tested (1, 2, 3, 4 mm diameter). A single FPC with the four sizes were produced and tested. Each line was of a different size for a total of 2 couples of electrodes per size. In each case, one of the couples was used as an empty control, on which only the medium (PDB) was added. The second electrode pair was inoculated with a spore suspension on PDB.
+Quantification
+Signal recording
+Once the optimal electrode size to be used in the FPC cards was defined (2 mm; Figure S2), several experiments were designed to evaluate the biological origin of the recorded signals. For this, five different chemicals were used, including four antimicrobial agents: cycloheximide (20 mg/ml), voriconazole (12.5 μg/ml), calcimycin (1.3 mg/ml), and sodium azide (6.5 mg/ml). To add the stimuli, the fungus was inoculated on the first electrode and left to colonize the target electrode for seven days. At this point the ADC-24 was paused to avoid noise recording, because to add the stimuli the faraday cage and the incubator needed to be open. With the aid of a micropipette 2 μl of the stimuli (2.5 μl for Voriconazole to attend the good final concentration of 12.5 ug/ml) were added to one of the empty controls (drops without spores) and to the target drop of 3 inoculated electrode pairs. As an additional control, the solvent in which the compounds were dissolved was added to the second empty control and to the target drop of the remaining three inoculated electrode pairs. The solvent was respectively MilliQ water for cycloheximide, voriconazole, and sodium azide; DMSO for calcimycin. After addition of the stimuli, the ADC-24 recording was restarted immediately and the recording continued for another three days to measure the reaction of the fungus. At the end of the experiment pictures of all the boards were taken with a stereoscope (NIKON SMZ18) to confirm the colonisation of the second electrode.
+Induction testing on fungal drop setup
+As the system is currently a black box with no possibilities to observe directly fungal development, we performed the induction experiment in cell culture treated Petri dishes.38 For this the same media and spore suspension were used as described above. As F. oxysporum grows faster in this system compared to PCB cards, the stimuli were added after five days and not seven as in the electrical measurement. Microscopical pictures were taken in between the drops and inside the target drops using an inverted microscope (EVOS FL, EVOS M5000, Invitrogen) before the addition of the stimuli and two days after addition to observe the outcome.
+Short-time Fourier transform
+Measurements from the ADC-24 Precision Data Logger (Pico Technology, UK) were acquired using the PicoLog 6 Software (Pico Technology, UK), exported in HDF5 format and analysed in MATLAB R2024a. The signal was sampled with a conversion time per channel of 60 ms and thus a sampling frequency of approximately 17 Hz. The potential on the electrodes was analysed both over time and in a time-frequency representation to analyse the frequency spectrum of the signals as they changed over time. After reading the HDF5 files, Not-a-Number (NaN) values were removed from all channels, caused by the loss of some acquisition samples and by the ADC-24 Precision Data Logger pausing during the stimuli addition phase. For time-frequency domain representation, the short-time Fourier transform (STFT) of each signal was calculated. Calculating a STFT means running small time windows along the signal and calculating the fast Fourier transform (FFT) in each time segment. This gives the frequency content of the signal in the time enclosed in the window. The squared amplitude of the STFT is represented in a time-frequency diagram, i.e., the spectrogram. The STFT was calculated using a Blackman – Harris window with a length of 1024 samples and a window overlap percentage of 80% to improve temporal resolution.
+Statistical analysis
+To conduct a quantitative comparative analysis and associate each spectrum of the different channels with a unique value, the average power was calculated by integrating the power spectral density (PSD). The signals were extracted before and after induction, segmented into intervals of 3 days each. To avoid aliasing phenomena, a low-pass filter was applied that limited the spectrum to 4 Hz; since the spectral content is mainly concentrated below 4 Hz, the signals were subsampled to 8 Hz. The PSD was calculated in each time window (after induction), allowing the average power to be determined. The average power values obtained from the three “Fungi + Induction” channels were subsequently averaged with each other. Similarly, the same operation was performed for the “Fungi + Control” channels. To compare the extracted PSD values, all pairwise comparisons were performed using Welch's t-test, which does not assume equal variances between groups, after confirming the normality of the data using the Shapiro–Wilk test (Table 1). We did not include comparisons with the controls without fungi, as only a single replicate was available for each card in this condition. Additionally, we calculated the percentage increase or decrease in PSD values from the Induction condition to the Control for each experimental condition. Furthermore, to quantify the presence/colonization of the fungus, we pooled similar conditions before the induction and compared those with the controls for all electrodes. This was done as described before and a t-test was used to compare the two groups.
+Published: September 2, 2025
+Footnotes
+Supplemental information can be found online at https://doi.org/10.1016/j.isci.2025.113484.
+Contributor Information
+Lorenzo Pirrami, Email: lorenzo.pirrami@hefr.ch.
+Pilar Junier, Email: pilar.junier@unine.ch.
+Supplemental information
+Document S1. Figures S1–S7 and Method S1
+mmc1.pdf (10.8MB, pdf)
+References
+1.Hille B. Ionic channels in excitable membranes. Current problems and biophysical approaches. Biophys. J. 1978;22:283–294. doi: 10.1016/S0006-3495(78)85489-7. [DOI] [PMC free article] [PubMed] [Google Scholar]
+2.Fromm J., Lautner S. Electrical signals and their physiological significance in plants. Plant Cell Environ. 2007;30:249–257. doi: 10.1111/j.1365-3040.2006.01614.x. [DOI] [PubMed] [Google Scholar]
+3.Prindle A., Liu J., Asally M., Ly S., Garcia-Ojalvo J., Süel G.M. Ion channels enable electrical communication in bacterial communities. Nature. 2015;527:59–63. doi: 10.1038/nature15709. [DOI] [PMC free article] [PubMed] [Google Scholar]
+4.Piccolino M. Animal electricity and the birth of electrophysiology: the legacy of Luigi Galvani. Brain Res. Bull. 1998;46:381–407. doi: 10.1016/s0361-9230(98)00026-4. [DOI] [PubMed] [Google Scholar]
+5.Curtis H.J., Cole K.S. Membrane resting and action potentials from the squid giant axon. J. Cell. Comp. Physiol. 1942;19:135–144. doi: 10.1002/jcp.1030190202. [DOI] [Google Scholar]
+6.Burdon-Sanderson J.S. I. Note on the electrical phenomena which accompany irritation of the leaf of Dionæa muscipula. Proc. Roy. Soc. Lond. 1873;21:495–496. doi: 10.1098/rspl.1872.0092. [DOI] [Google Scholar]
+7.Król E., Dziubinska H., Trebacz K. In: Initiation, Phases and Propagation. 26. DuBois M.L., editor. 2010. What do plants need action potentials for. Action Potential: Biophysical and Cellular Context; p. 1. [Google Scholar]
+8.Zimmermann M.R., Maischak H., Mithöfer A., Boland W., Felle H.H. System potentials, a novel electrical long-distance apoplastic signal in plants, induced by wounding. Plant Physiol. 2009;149:1593–1600. doi: 10.1104/pp.108.133884. [DOI] [PMC free article] [PubMed] [Google Scholar]
+9.Davies E. Plant electrophysiology: theory and methods. Springer; 2006. Electrical signals in plants: facts and hypotheses; pp. 407–422. [Google Scholar]
+10.Hedrich R., Salvador-Recatalà V., Dreyer I. Electrical Wiring and Long-Distance Plant Communication. Trends Plant Sci. 2016;21:376–387. doi: 10.1016/j.tplants.2016.01.016. [DOI] [PubMed] [Google Scholar]
+11.Vodeneev V., Akinchits E., Sukhov V. Variation potential in higher plants: Mechanisms of generation and propagation. Plant Signal. Behav. 2015;10 doi: 10.1080/15592324.2015.1057365. [DOI] [PMC free article] [PubMed] [Google Scholar]
+12.Höber R. Über den Einfluss der Salze auf den Ruhestrom des Froschmuskels. Archiv für die gesamte Physiologie des Menschen und der Tiere. 1905;106:599–635. [Google Scholar]
+13.Mitchell P. Coupling of phosphorylation to electron and hydrogen transfer by a chemi-osmotic type of mechanism. Nature. 1961;191:144–148. doi: 10.1038/191144a0. [DOI] [PubMed] [Google Scholar]
+14.Katz B. How cells communicate. Sci. Am. 1961;205:209–220. doi: 10.1038/scientificamerican0961-209. [DOI] [PubMed] [Google Scholar]
+15.Fricker M.D., Heaton L.L., Jones N.S., Boddy L. The Fungal Kingdom. 2017. The mycelium as a network; pp. 335–367. [Google Scholar]
+16.Hutchings M.J., John E.A. The effects of environmental heterogeneity on root growth and root/shoot partitioning. Ann. Bot. 2004;94:1–8. doi: 10.1093/aob/mch111. [DOI] [PMC free article] [PubMed] [Google Scholar]
+17.Fischer M.S., Glass N.L. Communicate and Fuse: How Filamentous Fungi Establish and Maintain an Interconnected Mycelial Network. Front. Microbiol. 2019;10:619. doi: 10.3389/fmicb.2019.00619. [DOI] [PMC free article] [PubMed] [Google Scholar]
+18.Fischer R. Nuclear movement in filamentous fungi. FEMS Microbiol. Rev. 1999;23:39–68. doi: 10.1111/j.1574-6976.1999.tb00391.x. [DOI] [PubMed] [Google Scholar]
+19.Abadeh A., Lew R.R. Mass flow and velocity profiles in Neurospora hyphae: partial plug flow dominates intra-hyphal transport. Microbiology (Read.) 2013;159:2386–2394. doi: 10.1099/mic.0.071191-0. [DOI] [PubMed] [Google Scholar]
+20.Markham P. Occlusions of septal pores in filamentous fungi. Mycol. Res. 1994;98:1089–1106. doi: 10.1016/S0953-7562(09)80195-0. [DOI] [Google Scholar]
+21.Steinberg G., Harmer N.J., Schuster M., Kilaru S. Woronin body-based sealing of septal pores. Fungal Genet. Biol. 2017;109:53–55. doi: 10.1016/j.fgb.2017.10.006. [DOI] [PMC free article] [PubMed] [Google Scholar]
+22.Gimeno A., Stanley C.E., Ngamenie Z., Hsung M.H., Walder F., Schmieder S.S., Bindschedler S., Junier P., Keller B., Vogelgsang S. A versatile microfluidic platform measures hyphal interactions between Fusarium graminearum and Clonostachys rosea in real-time. Commun. Biol. 2021;4:262. doi: 10.1038/s42003-021-01767-1. [DOI] [PMC free article] [PubMed] [Google Scholar]
+23.Schmieder S.S., Stanley C.E., Rzepiela A., van Swaay D., Sabotič J., Nørrelykke S.F., deMello A.J., Aebi M., Künzler M. Bidirectional Propagation of Signals and Nutrients in Fungal Networks via Specialized Hyphae. Curr. Biol. 2019;29:217–228.e4. doi: 10.1016/j.cub.2018.11.058. [DOI] [PubMed] [Google Scholar]
+24.Wosten H.A., de Vocht M.L. Hydrophobins, the fungal coat unravelled. Biochim. Biophys. Acta. 2000;1469:79–86. doi: 10.1016/s0304-4157(00)00002-2. [DOI] [PubMed] [Google Scholar]
+25.Kulkarni S., Nene S., Joshi K. Production of Hydrophobins from fungi. Process Biochemistry. 2017;61:1–11. doi: 10.1016/j.procbio.2017.06.012. [DOI] [Google Scholar]
+26.Linder M.B., Szilvay G.R., Nakari-Setälä T., Penttilä M.E. Hydrophobins: the protein-amphiphiles of filamentous fungi. FEMS Microbiol. Rev. 2005;29:877–896. doi: 10.1016/j.femsre.2005.01.004. [DOI] [PubMed] [Google Scholar]
+27.Gow N.A.R. Relationship Between Growth and the Electric Current of Fungal Hyphae. Biol. Bull. 1989;176:31–35. doi: 10.2307/1541645. [DOI] [PubMed] [Google Scholar]
+28.Gow N.A.R., Morris B.M. The electric fungus. Bot. J. Scotl. 1995;47:263–277. [Google Scholar]
+29.Olsson S., Hansson B.S. Action potential-like activity found in fungal mycelia is sensitive to stimulation. Naturwissenschaften. 1995;82:30–31. doi: 10.1007/BF01167867. [DOI] [Google Scholar]
+30.Gow N.A. Transhyphal electrical currents in fungi. J. Gen. Microbiol. 1984;130:3313–3318. doi: 10.1099/00221287-130-12-3313. [DOI] [PubMed] [Google Scholar]
+31.Adamatzky A. Springer Nature; 2023. Fungal Machines: Sensing and Computing with Fungi. [Google Scholar]
+32.Adamatzky A. Language of fungi derived from their electrical spiking activity. R. Soc. Open Sci. 2022;9 doi: 10.1098/rsos.211926. [DOI] [PMC free article] [PubMed] [Google Scholar]
+33.Adamatzky A. On spiking behaviour of oyster fungi Pleurotus djamor. Sci. Rep. 2018;8:7873. doi: 10.1038/s41598-018-26007-1. [DOI] [PMC free article] [PubMed] [Google Scholar]
+34.Adamatzky A. Towards fungal computer. Interface Focus. 2018;8 doi: 10.1098/rsfs.2018.0029. [DOI] [PMC free article] [PubMed] [Google Scholar]
+35.Adamatzky A., Gandia A. On Electrical Spiking of Ganoderma resinaceum. Biophys. Rev. Lett. 2021;16:133–141. doi: 10.1142/s1793048021500089. [DOI] [Google Scholar]
+36.Mayne R., Roberts N., Phillips N., Weerasekera R., Adamatzky A. Propagation of electrical signals by fungi. Biosystems. 2023;229 doi: 10.1016/j.biosystems.2023.104933. [DOI] [PubMed] [Google Scholar]
+37.Blatt M.R., Pullum G.K., Draguhn A., Bowman B., Robinson D.G., Taiz L. Does electrical activity in fungi function as a language? Fungal Ecology. 2024;68 doi: 10.1016/j.funeco.2023.101326. [DOI] [Google Scholar]
+38.Buffi M., Cailleau G., Kuhn T., Li Richter X.Y., Stanley C.E., Wick L.Y., Chain P.S., Bindschedler S., Junier P. Fungal drops: a novel approach for macro- and microscopic analyses of fungal mycelial growth. Microlife. 2023;4 doi: 10.1093/femsml/uqad042. [DOI] [PMC free article] [PubMed] [Google Scholar]
+39.Fravel D., Olivain C., Alabouvette C. Fusarium oxysporum and its biocontrol. New Phytol. 2003;157:493–502. doi: 10.1046/j.1469-8137.2003.00700.x. [DOI] [PubMed] [Google Scholar]
+40.Gordon T.R. Fusarium oxysporum and the Fusarium Wilt Syndrome. Annu. Rev. Phytopathol. 2017;55:23–39. doi: 10.1146/annurev-phyto-080615-095919. [DOI] [PubMed] [Google Scholar]
+41.Joshi R. A review of Fusarium oxysporum on its plant interaction and industrial use. J. Med. Plants Stud. 2018;6:112–115. [Google Scholar]
+42.Zamani M., Klapperich C.M., Furst A.L. Recent advances in gold electrode fabrication for low-resource setting biosensing. Lab Chip. 2023;23:1410–1419. doi: 10.1039/d2lc00552b. [DOI] [PMC free article] [PubMed] [Google Scholar]
+43.Islam M.S., Banik S., Collinson M.M. Recent Advances in Bimetallic Nanoporous Gold Electrodes for Electrochemical Sensing. Nanomaterials. 2023;13 doi: 10.3390/nano13182515. [DOI] [PMC free article] [PubMed] [Google Scholar]
+44.Basch H., Gadebusch H.H. In vitro antimicrobial activity of dimethylsulfoxide. Appl. Microbiol. 1968;16:1953–1954. doi: 10.1128/am.16.12.1953-1954.1968. [DOI] [PMC free article] [PubMed] [Google Scholar]
+45.Al-Mualem Z., Lorenz-Ochoa K., Pan L., Ren H., Baiz C. 2023. Water DMSO Cosolvent Mixtures Modulate Hydrogen Bonding at a Gold Electrode Interface. [DOI] [Google Scholar]
+46.Buffi M., Kelliher J.M., Robinson A.J., Gonzalez D., Cailleau G., Macalindong J.A., Frau E., Schintke S., Chain P.S.G., Stanley C.E., et al. Electrical signaling in fungi: past and present challenges. FEMS Microbiol. Rev. 2025;49 doi: 10.1093/femsre/fuaf009. [DOI] [PMC free article] [PubMed] [Google Scholar]
+47.Buzsaki G., Anastassiou C.A., Koch C. The origin of extracellular fields and currents--EEG, ECoG, LFP and spikes. Nat. Rev. Neurosci. 2012;13:407–420. doi: 10.1038/nrn3241. [DOI] [PMC free article] [PubMed] [Google Scholar]
+48.Akinci T.C., Seker S., Türkpençe D., Korkmaz U., Kalin F. In: Advances in Neural Signal Processing. Vinjamuri R., editor. 2020. Detection of Epileptic Seizure Using STFT and Statistical Analysis. [DOI] [Google Scholar]
+49.Heideman M., Johnson D., Burrus C. Gauss and the history of the fast Fourier transform. IEEE ASSP Mag. 1984;1:14–21. [Google Scholar]
+50.Goyal D., Pabla B.S. Condition based maintenance of machine tools—A review. CIRP J. Manuf. Sci. Technol. 2015;10:24–35. [Google Scholar]
+51.Hausser M., Raman I.M., Otis T., Smith S.L., Nelson A., du Lac S., Loewenstein Y., Mahon S., Pennartz C., Cohen I., Yarom Y. The beat goes on: spontaneous firing in mammalian neuronal microcircuits. J. Neurosci. 2004;24:9215–9219. doi: 10.1523/JNEUROSCI.3375-04.2004. [DOI] [PMC free article] [PubMed] [Google Scholar]
+52.Guyton A., Hall J. Elsevier Saunders; 2006. Textbook of Medical Physiology; p. 323. [Google Scholar]
+53.Mudrilov M., Ladeynova M., Grinberg M., Balalaeva I., Vodeneev V. Electrical Signaling of Plants under Abiotic Stressors: Transmission of Stimulus-Specific Information. Int. J. Mol. Sci. 2021;22 doi: 10.3390/ijms221910715. [DOI] [PMC free article] [PubMed] [Google Scholar]
+54.Krausko M., Perutka Z., Šebela M., Šamajová O., Šamaj J., Novák O., Pavlovič A. The role of electrical and jasmonate signalling in the recognition of captured prey in the carnivorous sundew plant Drosera capensis. New Phytol. 2017;213:1818–1835. doi: 10.1111/nph.14352. [DOI] [PubMed] [Google Scholar]
+55.Bohm J., Scherzer S., Krol E., Kreuzer I., von Meyer K., Lorey C., Mueller T.D., Shabala L., Monte I., Solano R., et al. The Venus Flytrap Dionaea muscipula Counts Prey-Induced Action Potentials to Induce Sodium Uptake. Curr. Biol. 2016;26:286–295. doi: 10.1016/j.cub.2015.11.057. [DOI] [PMC free article] [PubMed] [Google Scholar]
+56.Li J.H., Fan L.F., Zhao D.J., Zhou Q., Yao J.P., Wang Z.Y., Huang L. Plant electrical signals: A multidisciplinary challenge. J. Plant Physiol. 2021;261 doi: 10.1016/j.jplph.2021.153418. [DOI] [PubMed] [Google Scholar]
+57.Lew R.R. How does a hypha grow? The biophysics of pressurized growth in fungi. Nat. Rev. Microbiol. 2011;9:509–518. doi: 10.1038/nrmicro2591. [DOI] [PubMed] [Google Scholar]
+58.Baliga B.S., Pronczuk A.W., Munro H.N. Mechanism of cycloheximide inhibition of protein synthesis in a cell-free system prepared from rat liver. J. Biol. Chem. 1969;244:4480–4489. [PubMed] [Google Scholar]
+59.Desai C. Medknow; 2016. Meyler's Side Effects of Drugs: The International Encyclopedia of Adverse Drug Reactions and Interactions. [Google Scholar]
+60.Pal S., Manjunath B., Ghorai S., Sasmal S. Benzoxazole alkaloids: occurrence, chemistry, and biology. Alkaloids - Chem. Biol. 2018;79:71–137. doi: 10.1016/bs.alkal.2017.12.002. [DOI] [PubMed] [Google Scholar]
+61.Brand A., Gow N.A.R. Mechanisms of hypha orientation of fungi. Curr. Opin. Microbiol. 2009;12:350–357. doi: 10.1016/j.mib.2009.05.007. [DOI] [PMC free article] [PubMed] [Google Scholar]
+62.Brand A., Shanks S., Duncan V.M.S., Yang M., Mackenzie K., Gow N.A.R. Hyphal orientation of Candida albicans is regulated by a calcium-dependent mechanism. Curr. Biol. 2007;17:347–352. doi: 10.1016/j.cub.2006.12.043. [DOI] [PMC free article] [PubMed] [Google Scholar]
+63.Kumamoto C.A. Molecular mechanisms of mechanosensing and their roles in fungal contact sensing. Nat. Rev. Microbiol. 2008;6:667–673. doi: 10.1038/nrmicro1960. [DOI] [PMC free article] [PubMed] [Google Scholar]
+64.Itani A., Masuo S., Yamamoto R., Serizawa T., Fukasawa Y., Takaya N., Toyota M., Betsuyaku S., Takeshita N. Local calcium signal transmission in mycelial network exhibits decentralized stress responses. PNAS Nexus. 2023;2 doi: 10.1093/pnasnexus/pgad012. [DOI] [PMC free article] [PubMed] [Google Scholar]
+65.Meysman F.J.R. Cable Bacteria Take a New Breath Using Long-Distance Electricity. Trends Microbiol. 2018;26:411–422. doi: 10.1016/j.tim.2017.10.011. [DOI] [PubMed] [Google Scholar]
+66.Humphries J., Xiong L., Liu J., Prindle A., Yuan F., Arjes H.A., Tsimring L., Süel G.M. Species-Independent Attraction to Biofilms through Electrical Signaling. Cell. 2017;168:200–209.e12. doi: 10.1016/j.cell.2016.12.014. [DOI] [PMC free article] [PubMed] [Google Scholar]
+67.Houdinet G., Guerrero-Galán C., Rose B.D., Garcia K., Zimmermann S.D. Secrets of the fungus-specific potassium channel TOK family. Trends Microbiol. 2023;31:511–520. doi: 10.1016/j.tim.2022.11.007. [DOI] [PubMed] [Google Scholar]
+68.Hall A.H. Haddad and Winchester's Clinical Management of Poisoning and Drug Overdose. Elsevier; 2007. Cyanide and related compounds—Sodium azide; pp. 1309–1316. [Google Scholar]
+Associated Data
+This section collects any data citations, data availability statements, or supplementary materials included in this article.
+Supplementary Materials
+Document S1. Figures S1–S7 and Method S1
+mmc1.pdf (10.8MB, pdf)
+Data Availability Statement
+All data are available in the main text or the supplemental information. The original unprocessed data are available in Mendeley Data under the https://doi.org/10.17632/srkxbkh6sp.1. The code for analysis is provided in the Method S1.
+Articles from iScience are provided here courtesy of Elsevier
+ACTIONS
+View on publisher site
+PDF (4.7 MB)
+Cite
+Collections
+Permalink
+PERMALINK
+Copy
+RESOURCES
+Similar articles
+Cited by other articles
+Links to NCBI Databases
+Cite
+Copy
+Download .nbib
+.nbib
+Format:
+AMA
+APA
+MLA
+NLM
+Add to Collections
+Create a new collection
+Add to an existing collection
+Name your collection
+*
+Choose a collection
+Unable to load your collection due to an error
+Please try again
+Add
+Cancel
+Follow NCBI
+NCBI on X (formerly known as Twitter)
+NCBI on Facebook
+NCBI on LinkedIn
+NCBI on GitHub
+NCBI RSS feed
+Connect with NLM
+NLM on X (formerly known as Twitter)
+NLM on Facebook
+NLM on YouTube
+National Library of Medicine
+8600 Rockville Pike
+Bethesda, MD 20894
+Web Policies
+FOIA
+HHS Vulnerability Disclosure
+Help
+Accessibility
+Careers
+NLM
+NIH
+HHS
+USA.gov
+Back to Top

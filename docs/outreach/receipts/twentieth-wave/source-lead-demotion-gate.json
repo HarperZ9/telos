@@ -1,0 +1,70 @@
+{
+  "schema": "project-telos.source-demotion-gate/v1",
+  "created_at": "2026-07-02",
+  "status": "SOURCE_LEAD_ONLY",
+  "purpose": "Prevent arXiv intake from being promoted into proof or paper-truth claims before reading, formal comparison, or experiment.",
+  "stores": [
+    {
+      "path": "docs/outreach/receipts/twentieth-wave/arxiv-vector-sbp-formal-pde",
+      "catalog_sha256": "f1a2dbf7dc454c59ff8f9c5ab6cd1ed77b3bcfda209b3f9c80099431cf1c792d",
+      "rows": 10,
+      "verify_status": "MATCH"
+    },
+    {
+      "path": "docs/outreach/receipts/twentieth-wave/arxiv-lean-pde-vector-formalization",
+      "catalog_sha256": "f903ab00f1ad17817e1198f363362576105b166f06c59d85524e02eaa8e0d9d2",
+      "rows": 10,
+      "verify_status": "MATCH"
+    },
+    {
+      "path": "docs/outreach/receipts/twentieth-wave/arxiv-vector-sbp-numerical-analysis",
+      "catalog_sha256": "b7d81bc25ae199af640481a73b327687640844ee0ae94fa16cd754dc1d63ef26",
+      "rows": 10,
+      "verify_status": "MATCH"
+    }
+  ],
+  "counts": {
+    "retained_rows": 30,
+    "unique_arxiv_ids": 25,
+    "duplicate_rows": 5,
+    "dropped_rows": 0,
+    "direct_vector_sbp_or_structure_preserving_leads": 4,
+    "formal_pde_or_applied_math_leads": 4,
+    "formal_replay_infrastructure_leads": 10,
+    "adjacent_or_query_noise": 7
+  },
+  "highlighted_leads": [
+    {
+      "id": "1908.08732v2",
+      "title": "Discrete Vector Calculus and Helmholtz Hodge Decomposition for Classical Finite Difference Summation by Parts Operators",
+      "reason": "direct vector-calculus and SBP numerical-analysis lead"
+    },
+    {
+      "id": "2411.07562v2",
+      "title": "Thermodynamic consistency and structure-preservation in summation by parts methods for the moist compressible Euler equations",
+      "reason": "structure-preserving SBP lead in fluid-like PDE context"
+    },
+    {
+      "id": "2604.05984v1",
+      "title": "Formalization of De Giorgi--Nash--Moser Theory in Lean",
+      "reason": "formal PDE-analysis lead"
+    },
+    {
+      "id": "2605.17255v1",
+      "title": "CAM-Bench: A Benchmark for Computational and Applied Mathematics in Lean",
+      "reason": "applied mathematics formalization benchmark lead"
+    },
+    {
+      "id": "2404.12534v3",
+      "title": "Lean Copilot: Large Language Models as Copilots for Theorem Proving in Lean",
+      "reason": "formal replay infrastructure lead"
+    }
+  ],
+  "demotion_rules": [
+    "A catalog row proves only that local Gather recorded a source lead with a hash and ref.",
+    "A catalog row does not prove the paper's claims.",
+    "A catalog row does not prove relevance to the Telos packet until read and compared.",
+    "The Lean replay theorem remains the only formal MATCH in this twentieth-wave package.",
+    "Any source claim reused in public copy must cite the source row and carry SOURCE_LEAD_ONLY, INFERRED, or UNVERIFIABLE until separately checked."
+  ]
+}

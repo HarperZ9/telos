@@ -1,0 +1,36 @@
+{
+  "measurements": [
+    {
+      "claim": "The hyphal context benchmark CLI emits HYPHAL_CONTEXT_FIXTURE_MATCH with equal required evidence-class recovery, equal guardrail recovery, and fewer estimated prompt tokens than the full-context route.",
+      "deviation": 0.0,
+      "tolerance": 0.1,
+      "method": "hyphal-context-benchmark-cli",
+      "evidence": [
+        "demo/hyphal-context-benchmark.mjs",
+        "demo/hyphal-context-benchmark.test.mjs",
+        "docs/outreach/receipts/twenty-second-wave/hyphal-context-benchmark-2026-07-02.json"
+      ]
+    },
+    {
+      "claim": "The publication copy states the benchmark as one deterministic fixture and does not claim universal route superiority or measured model answer quality.",
+      "deviation": 0.0,
+      "tolerance": 0.1,
+      "method": "benchmark-boundary-scan",
+      "evidence": [
+        "docs/research/whitepapers/HYPHAL-CONTEXT-BENCHMARK-FOR-RECEIPT-ROUTING-2026-07-02.md",
+        "docs/research/official/HYPHAL-CONTEXT-BENCHMARK-FOR-RECEIPT-ROUTING-2026-07-02.md",
+        "docs/outreach/TWENTY-SECOND-WAVE-HYPHAL-CONTEXT-BENCHMARK-2026-07-02.md"
+      ]
+    },
+    {
+      "claim": "The benchmark receipt carries refs, hashes, coverage, and retrieval reasons without embedding raw source bodies or raw context.",
+      "deviation": 0.0,
+      "tolerance": 0.1,
+      "method": "raw-payload-boundary-scan",
+      "evidence": [
+        "docs/outreach/receipts/twenty-second-wave/hyphal-context-benchmark-2026-07-02.json",
+        "demo/hyphal-context-benchmark.test.mjs"
+      ]
+    }
+  ]
+}
