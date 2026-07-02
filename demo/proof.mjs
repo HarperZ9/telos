@@ -14,6 +14,11 @@ import {
   verifyVisualPacket,
   toProofSurfaceVisualPacket
 } from "./proof-visual.mjs";
+import {
+  assembleBuildPacket,
+  verifyBuildPacket,
+  toProofSurfaceBuildPacket
+} from "./proof-build.mjs";
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 
@@ -25,6 +30,7 @@ export { assemblePacket, verifyPacket, toProofSurfacePacket, stableStringify };
 const AGENT_ACTION_SCHEMA = "project-telos.proof-packet/v1";
 const RESEARCH_SCHEMA = "project-telos.research-proof-packet/v1";
 const VISUAL_SCHEMA = "project-telos.visual-proof-packet/v1";
+const BUILD_SCHEMA = "project-telos.build-proof-packet/v1";
 
 function loadConventions() {
   return JSON.parse(readFileSync(path.join(here, "integrations", "proof-packet-conventions.json"), "utf8"));
@@ -39,6 +45,12 @@ function loadResearchConventions() {
 function loadVisualConventions() {
   return JSON.parse(
     readFileSync(path.join(here, "integrations", "visual-proof-packet-conventions.json"), "utf8")
+  );
+}
+
+function loadBuildConventions() {
+  return JSON.parse(
+    readFileSync(path.join(here, "integrations", "build-proof-packet-conventions.json"), "utf8")
   );
 }
 
@@ -206,6 +218,33 @@ function runVisual(args) {
   return exitCodeFor(verifier.verdict);
 }
 
+// Build lane: assemble -> verify (no Emet witness stage; the build verifier
+// recomputes the source digest, the claimed invariant value, and the
+// conservation drift from the run's embedded samples with stdlib math).
+function runBuild(args) {
+  const json = args.includes("--json");
+  const outIndex = args.indexOf("--out");
+  const outDir = outIndex >= 0 ? args[outIndex + 1] : null;
+  const resolved = resolveFixtureArgs(args, "build", () => loadBuildConventions().conformance_fixture.happy_path);
+  if (resolved.usage) {
+    process.stderr.write(resolved.usage);
+    return 2;
+  }
+  const assembled = assembleBuildPacket(resolved.fixture);
+  const verifier = verifyBuildPacket(assembled, { embeddedVerdict: assembled.verifier?.verdict });
+  const packet = { ...assembled, verifier };
+  let paths = null;
+  if (outDir) {
+    paths = writeOut(outDir, packet);
+  }
+  if (json) {
+    process.stdout.write(`${JSON.stringify(packet, null, 2)}\n`);
+  } else {
+    process.stdout.write(`${summarizeLane(packet, verifier, paths)}\n`);
+  }
+  return exitCodeFor(verifier.verdict);
+}
+
 function readPacketArg(arg) {
   if (arg === "-") {
     return JSON.parse(readFileSync(0, "utf8"));
@@ -290,6 +329,9 @@ function runVerify(args) {
   if (input.schema === VISUAL_SCHEMA) {
     return verifyLane(input, json, verifyVisualPacket, "project-telos.visual-proof-packet-verification/v1");
   }
+  if (input.schema === BUILD_SCHEMA) {
+    return verifyLane(input, json, verifyBuildPacket, "project-telos.build-proof-packet-verification/v1");
+  }
   if (input.schema === AGENT_ACTION_SCHEMA || input.schema === undefined) {
     return verifyAgentAction(input, json);
   }
@@ -310,6 +352,8 @@ function runExport(args) {
     exported = toProofSurfaceResearchPacket(input);
   } else if (input.schema === VISUAL_SCHEMA) {
     exported = toProofSurfaceVisualPacket(input);
+  } else if (input.schema === BUILD_SCHEMA) {
+    exported = toProofSurfaceBuildPacket(input);
   } else if (input.schema === AGENT_ACTION_SCHEMA || input.schema === undefined) {
     exported = toProofSurfacePacket(input);
   } else {
@@ -329,13 +373,15 @@ function main() {
     code = runResearch(args);
   } else if (subcommand === "visual") {
     code = runVisual(args);
+  } else if (subcommand === "build") {
+    code = runBuild(args);
   } else if (subcommand === "verify") {
     code = runVerify(args);
   } else if (subcommand === "export") {
     code = runExport(args);
   } else {
     process.stderr.write(
-      "usage: proof <agent-action|research|visual --demo|--fixture <path> | verify <packet.json|-> | export <packet.json|->> [--out <dir>] [--json]\n"
+      "usage: proof <agent-action|research|visual|build --demo|--fixture <path> | verify <packet.json|-> | export <packet.json|->> [--out <dir>] [--json]\n"
     );
     code = 2;
   }

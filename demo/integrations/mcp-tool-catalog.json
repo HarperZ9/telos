@@ -1424,6 +1424,29 @@
         "index.map",
         "crucible.assess"
       ]
+    },
+    {
+      "name": "telos.proof.build",
+      "flagship": "telos",
+      "description": "Use when a host needs the fixture-backed build scientific-runtime proof packet whose conserved-quantity invariant and conservation drift are recomputed from the run's own embedded samples with stdlib math, checked within bounded tolerances, and controlled by a required negative fixture that must break the invariant. Read-only, zero-auth, no external side effects beyond local subprocess reads. Returns a JSON build proof packet.",
+      "cli": [
+        "node",
+        "demo/proof.mjs",
+        "build",
+        "--demo",
+        "--json"
+      ],
+      "mcp": {
+        "status": "available",
+        "server": "telos",
+        "method": "tools/call",
+        "tool": "telos.proof.build"
+      },
+      "next_actions": [
+        "gather.docs",
+        "index.map",
+        "crucible.assess"
+      ]
     }
   ]
 }
