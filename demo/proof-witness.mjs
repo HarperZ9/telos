@@ -14,19 +14,21 @@ export const WITNESS_UNAVAILABLE = Object.freeze({
   reason: "no emet implementation reachable"
 });
 
-// Lookup order: env override, sibling checkout, then the known pubscan impl.
-// Only a path that exists and is a file is a reachable implementation.
+// Lookup order: env override, then a sibling checkout at ../emet. Only a path
+// that exists and is a file is a reachable implementation. No machine-specific
+// absolute path is baked in: on a machine with no env override and no sibling
+// emet, resolution honestly returns null and the witness records unavailable.
+// A developer who keeps emet elsewhere points TELOS_EMET_CLI at it.
 // TELOS_EMET_DISABLE_FALLBACKS restricts resolution to TELOS_EMET_CLI only, so
-// a test can force the honest unavailable path deterministically in any
-// environment (including a developer machine that has the pubscan impl).
+// a test can force the honest unavailable path deterministically even when a
+// sibling emet is present.
 export function resolveEmet() {
   const fallbacksDisabled = process.env.TELOS_EMET_DISABLE_FALLBACKS === "1";
   const candidates = fallbacksDisabled
     ? [process.env.TELOS_EMET_CLI]
     : [
         process.env.TELOS_EMET_CLI,
-        path.join(telosRoot, "..", "emet", "impl", "js", "emet.js"),
-        "c:/dev/public/pubscan/emet/impl/js/emet.js"
+        path.join(telosRoot, "..", "emet", "impl", "js", "emet.js")
       ];
   for (const candidate of candidates) {
     if (!candidate) continue;

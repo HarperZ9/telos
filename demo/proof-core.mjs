@@ -35,9 +35,12 @@ const REQUIRED_PATHS = [
   "source_refs",
   "context_refs",
   "route.lane",
+  "route.decided_by",
+  "route.confidence",
   "route.route_ref",
   "admission.action_id",
   "admission.decision",
+  "admission.policy_ref",
   "admission.authority_ref",
   "admission.admitted_ordinal",
   "action.action_id",
@@ -46,6 +49,7 @@ const REQUIRED_PATHS = [
   "action.action_kind",
   "action.args_hash",
   "action.executed_ordinal",
+  "action.idempotency_key",
   "side_effect.class",
   "side_effect.reversible",
   "compensation.required",
@@ -132,6 +136,42 @@ export function verifyPacket(packet, options = {}) {
   });
   checks.push({ name: "check.source_refs", passed: sourceRefsOk });
 
+  // Context-ref element fields (envelope_id, envelope_hash) are required by the
+  // conventions and are surfaced into the export as trace_refs. A missing one is
+  // an UNVERIFIABLE evidence gap, not tamper, matching the source-ref treatment.
+  const contextRefs = Array.isArray(packet.context_refs) ? packet.context_refs : [];
+  let contextRefsOk = true;
+  contextRefs.forEach((ref, index) => {
+    for (const field of ["envelope_id", "envelope_hash"]) {
+      if (!ref || ref[field] === undefined || ref[field] === null) {
+        contextRefsOk = false;
+        structurallyComplete = false;
+        addFailure(failures, "missing_required_field", "UNVERIFIABLE", {
+          path: `context_refs[${index}].${field}`
+        });
+      }
+    }
+  });
+  checks.push({ name: "check.context_refs", passed: contextRefsOk });
+
+  // Output element fields (name, digest, ref) are required. A missing name or
+  // digest defeats the digest recomputation; a missing ref breaks the join. Each
+  // is an UNVERIFIABLE evidence gap named by its JSON path.
+  const outputRefs = Array.isArray(packet.outputs) ? packet.outputs : [];
+  let outputFieldsOk = true;
+  outputRefs.forEach((output, index) => {
+    for (const field of ["name", "digest", "ref"]) {
+      if (!output || output[field] === undefined || output[field] === null) {
+        outputFieldsOk = false;
+        structurallyComplete = false;
+        addFailure(failures, "missing_required_field", "UNVERIFIABLE", {
+          path: `outputs[${index}].${field}`
+        });
+      }
+    }
+  });
+  checks.push({ name: "check.output_fields", passed: outputFieldsOk });
+
   // check.state_model -> DRIFT with observed value and allowed set.
   const stateDeltas = [];
   const sec = packet.side_effect?.class;
@@ -163,21 +203,27 @@ export function verifyPacket(packet, options = {}) {
   checks.push({ name: "check.packet_hash", passed: hashOk, skipped: !structurallyComplete });
 
   // check.artifact_digests -> DRIFT recomputing each output digest over its
-  // embedded artifact bytes.
+  // embedded artifact bytes. An output that claims a digest but carries no
+  // embedded body cannot be recomputed: the digest is a load-bearing claim, so
+  // a missing body is an UNVERIFIABLE evidence gap (naming artifacts.<name>),
+  // never a silent pass. Trusting the claimed digest on faith would let a
+  // tampered or phantom output reach MATCH with zero failures.
   const digestDeltas = [];
+  const digestGaps = [];
   const outputs = Array.isArray(packet.outputs) ? packet.outputs : [];
   const artifacts = packet.artifacts ?? {};
   outputs.forEach((output, index) => {
-    const body = artifacts[output?.name];
+    const name = output?.name;
+    const body = artifacts[name];
     if (body === undefined) {
-      // no embedded body: cannot recompute, treated as evidence gap below
+      digestGaps.push({ index, name });
       return;
     }
     const recomputed = digestBytes(body);
     if (output.digest !== recomputed) {
       digestDeltas.push({
         path: `outputs[${index}].digest`,
-        name: output.name,
+        name,
         expected: output.digest,
         recomputed
       });
@@ -186,7 +232,18 @@ export function verifyPacket(packet, options = {}) {
   for (const delta of digestDeltas) {
     addFailure(failures, "artifact_digest_mismatch", "DRIFT", delta);
   }
-  checks.push({ name: "check.artifact_digests", passed: digestDeltas.length === 0 });
+  for (const gap of digestGaps) {
+    structurallyComplete = false;
+    addFailure(failures, "missing_required_field", "UNVERIFIABLE", {
+      path: gap.name === undefined ? `artifacts` : `artifacts.${gap.name}`,
+      output_index: gap.index,
+      reason: "output digest cannot be recomputed without its embedded artifact body"
+    });
+  }
+  checks.push({
+    name: "check.artifact_digests",
+    passed: digestDeltas.length === 0 && digestGaps.length === 0
+  });
 
   // check.admission_join -> DRIFT when an action has no matching admission
   // record. Only meaningful when both blocks are present; a missing admission
