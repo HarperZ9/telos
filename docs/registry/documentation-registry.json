@@ -1,0 +1,1183 @@
+{
+  "schema": "project-telos.documentation-registry/v1",
+  "generated_at": "2026-07-02",
+  "status": "first machine-readable consolidation pass",
+  "purpose": "Classify Project Telos, Build ecosystem, research, proof-demo, publication, and source-intake artifacts without turning source leads into unsupported public claims.",
+  "evidence": [
+    {
+      "id": "flagship-gather-status-2026-07-02",
+      "tool": "gather",
+      "version": "1.5.0",
+      "status": "MATCH",
+      "confidence": "high"
+    },
+    {
+      "id": "flagship-index-status-2026-07-02",
+      "tool": "index",
+      "version": "2.8.0",
+      "status": "MATCH",
+      "confidence": "high"
+    },
+    {
+      "id": "flagship-forum-status-2026-07-02",
+      "tool": "forum",
+      "version": "1.12.0",
+      "status": "MATCH",
+      "confidence": "high"
+    },
+    {
+      "id": "flagship-crucible-status-2026-07-02",
+      "tool": "crucible",
+      "version": "1.1.0",
+      "status": "MATCH",
+      "confidence": "high"
+    },
+    {
+      "id": "telos-mcp-manifest-2026-07-02",
+      "tool": "telos",
+      "version": "0.1.0",
+      "status": "MATCH",
+      "confidence": "high",
+      "notes": "Manifest exposes source-checkout profiles for gather, index, forum, crucible, and telos."
+    },
+    {
+      "id": "index-map-public-workspace-2026-07-02",
+      "tool": "index",
+      "status": "MATCH",
+      "confidence": "high",
+      "metrics": {
+        "root": "C:/dev/public",
+        "repo_count": 68,
+        "public_class_repos": 62,
+        "local_class_repos": 6,
+        "dirty_repos": 7,
+        "root_sha256_prefix": "92ef331e0850ccf6"
+      }
+    },
+    {
+      "id": "telos-worktree-status-2026-07-02",
+      "tool": "git",
+      "status": "DIRTY",
+      "confidence": "high",
+      "metrics": {
+        "branch": "main",
+        "behind_origin_main": 17
+      },
+      "notes": "Working tree contains edited current-state docs plus untracked QEC and outreach artifacts. Treat those as working-tree evidence until committed."
+    },
+    {
+      "id": "ti-morse-federation-seal-2026-07-02",
+      "tool": "gather.federation",
+      "status": "MATCH",
+      "confidence": "high",
+      "metrics": {
+        "source_count": 6,
+        "seal": "63a2b0cc6865791ea04bb7abdb7895db5ac4bc267c96785566e842833b9b1428"
+      },
+      "notes": "Closed-shape federation registry validated five requested videos and one Ti Morse channel catalog as source leads."
+    },
+    {
+      "id": "public-workspace-doc-catalog-2026-07-02",
+      "tool": "rg",
+      "status": "MATCH",
+      "confidence": "high",
+      "metrics": {
+        "root": "C:/dev/public",
+        "top_level_git_repos_scanned": 54,
+        "markdown_rst_docs": 909,
+        "research_like_docs_by_path": 29,
+        "status_like_docs_by_path": 34,
+        "internal_or_scratch_like_docs_by_path": 7,
+        "large_doc_surfaces": 3
+      },
+      "notes": "Path/count scan only. It classifies public documentation surfaces and does not prove content correctness or publication readiness."
+    },
+    {
+      "id": "build-ecosystem-subregistry-2026-07-02",
+      "tool": "filesystem-read",
+      "status": "MATCH",
+      "confidence": "high",
+      "metrics": {
+        "top_level_build_repos": 10,
+        "top_level_build_doc_count": 115,
+        "buildlang_lineage_doc_count": 131,
+        "subregistry_rows": 11
+      },
+      "notes": "Build subregistry separates BuildLang/buildc receipt claims, Build Universe alpha module reality, Build app proof lanes, and editor-support-only packages."
+    },
+    {
+      "id": "proof-witnessing-subregistry-2026-07-02",
+      "tool": "filesystem-read",
+      "status": "MATCH",
+      "confidence": "high",
+      "metrics": {
+        "repos": 5,
+        "doc_count": 112,
+        "subregistry_rows": 5
+      },
+      "notes": "Proof/witnessing subregistry separates witness, validator, index, report, and publication-theory layers."
+    },
+    {
+      "id": "senses-and-sensibility-subregistry-2026-07-02",
+      "tool": "index/gather/filesystem-read",
+      "status": "MATCH_WITH_GATHER_PAYLOAD_DROPPED",
+      "confidence": "high",
+      "metrics": {
+        "markdown_rst_docs": 172,
+        "txt_source_files": 1,
+        "dissertation_docs": 125,
+        "submission_docs": 4,
+        "git_behind_origin_main": 1,
+        "latest_index_dirty_repos": 10,
+        "gather_docs_dropped": 173,
+        "gather_seal": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      "notes": "Senses subregistry separates research/philosophy substrate, dissertation apparatus, paper-track kits, citation gates, and referenced-missing curation artifacts."
+    },
+    {
+      "id": "telos-repo-subregistry-2026-07-02",
+      "tool": "index/gather/forum/telos/filesystem-read",
+      "status": "MATCH_WITH_DIRTY_WORKTREE",
+      "confidence": "high",
+      "metrics": {
+        "repo_markdown_rst_docs": 94,
+        "docs_markdown_json_rst_files": 150,
+        "demo_mjs_json_md_files": 198,
+        "dirty_count": 3,
+        "untracked_count": 35,
+        "behind_origin_main": 17,
+        "operator_doctor_passed": 14,
+        "operator_doctor_total": 14,
+        "gather_dropped": 38,
+        "docs_registry_json": 6,
+        "docs_registry_markdown": 5,
+        "gather_seal": "24b94d64f78e323245338463f79b6b87d97738bf1db489234826ff438a3d6270"
+      },
+      "notes": "Telos repo subregistry separates front-door, control-plane, research, proof-demo, outreach, receipt, integration, and quarantine surfaces without treating working-tree artifacts as shipped."
+    }
+  ],
+  "labels": {
+    "public-index": "Stable navigation, product positioning, current state, and repo-level facts.",
+    "public-official": "Short public-safe claim summary with receipts, non-claims, and promotion gates.",
+    "public-whitepaper": "Longer methods or strategy paper that still requires publication review.",
+    "proof-demo": "Runnable fixture, test, receipt, or site page that demonstrates a bounded claim.",
+    "paper-candidate": "Artifact family that can become a formal paper after citation, method, artifact, and risk review.",
+    "internal-source": "Raw transcripts, private scans, runbooks, sensitive paths, private payloads, or high-risk operational detail.",
+    "quarantine-and-adapt": "Valuable but stale, overclaimed, unsafe, duplicated, or not yet verified.",
+    "deprecated-lineage": "Historical name or repo preserved for lineage only."
+  },
+  "publication_targets": [
+    "internal memo",
+    "whitepaper",
+    "arXiv",
+    "ORCiD record",
+    "site page",
+    "proof demo",
+    "quarantine"
+  ],
+  "documentation_rows": [
+    {
+      "id": "telos-repo-subregistry",
+      "path": "docs/registry/TELOS-REPO-SUBREGISTRY-2026-07-02.md",
+      "machine_path": "docs/registry/telos-repo-subregistry-2026-07-02.json",
+      "labels": [
+        "public-index",
+        "registry-source",
+        "proof-demo",
+        "quarantine-and-adapt"
+      ],
+      "audience": "operators, release reviewers, paper editors, proof-demo builders, and outreach reviewers",
+      "current_action": "Use as the source of truth for Telos repo surface boundaries, working-tree gates, and publication routing.",
+      "publication_target": "internal memo",
+      "claim_boundary": "Repo surface classification only; not release certification, site-live proof, scientific proof, market proof, or commit/push proof.",
+      "confidence": "high"
+    },
+    {
+      "id": "build-ecosystem-subregistry",
+      "path": "docs/registry/BUILD-ECOSYSTEM-SUBREGISTRY-2026-07-02.md",
+      "machine_path": "docs/registry/build-ecosystem-subregistry-2026-07-02.json",
+      "labels": [
+        "public-index",
+        "registry-source",
+        "paper-source"
+      ],
+      "audience": "operators, Build ecosystem maintainers, and paper/demo planners",
+      "current_action": "Use as the Build ecosystem source of truth for maturity, receipt, Telos integration, and publication boundaries.",
+      "publication_target": "internal memo",
+      "claim_boundary": "Documentation-backed classification only; not a benchmark, release certification, or market claim.",
+      "confidence": "high"
+    },
+    {
+      "id": "proof-witnessing-subregistry",
+      "path": "docs/registry/PROOF-WITNESSING-SUBREGISTRY-2026-07-02.md",
+      "machine_path": "docs/registry/proof-witnessing-subregistry-2026-07-02.json",
+      "labels": [
+        "public-index",
+        "registry-source",
+        "paper-source",
+        "proof-demo"
+      ],
+      "audience": "operators, proof-demo builders, and publication reviewers",
+      "current_action": "Use as the proof/witnessing source of truth for layer boundaries, Telos bridges, and publication controls.",
+      "publication_target": "internal memo",
+      "claim_boundary": "Documentation-backed classification only; not a release approval, compliance finding, safety decision, or proof that every repo has current passing CI.",
+      "confidence": "high"
+    },
+    {
+      "id": "senses-and-sensibility-subregistry",
+      "path": "docs/registry/SENSES-AND-SENSIBILITY-SUBREGISTRY-2026-07-02.md",
+      "machine_path": "docs/registry/senses-and-sensibility-subregistry-2026-07-02.json",
+      "labels": [
+        "public-index",
+        "registry-source",
+        "paper-source",
+        "quarantine-and-adapt"
+      ],
+      "audience": "operators, paper editors, publication reviewers, and theory-to-tool integrators",
+      "current_action": "Use as the source of truth for Senses corpus boundaries, paper gates, human-ownership gates, and missing-artifact caveats.",
+      "publication_target": "internal memo",
+      "claim_boundary": "Research/philosophy corpus classification only; not philosophical proof, journal readiness, authorship attestation, citation verification, or Telos product capability.",
+      "confidence": "high"
+    },
+    {
+      "id": "public-workspace-doc-catalog",
+      "path": "docs/registry/PUBLIC-WORKSPACE-DOC-CATALOG-2026-07-02.md",
+      "machine_path": "docs/registry/public-workspace-doc-catalog-2026-07-02.json",
+      "labels": [
+        "public-index",
+        "registry-source"
+      ],
+      "audience": "operators and documentation maintainers",
+      "current_action": "Use as the cross-repo doc-surface map before deeper per-repo subregistries.",
+      "publication_target": "internal memo",
+      "claim_boundary": "Path/count scan only; labels are triage hints and do not prove document freshness or safety.",
+      "confidence": "high"
+    },
+    {
+      "id": "readme",
+      "path": "README.md",
+      "labels": [
+        "public-index"
+      ],
+      "audience": "external users and contributors",
+      "current_action": "Keep as the front door; link control-plane docs without turning it into a strategy dump.",
+      "publication_target": "site page",
+      "claim_boundary": "Only stable project-level claims and current public demos.",
+      "confidence": "high"
+    },
+    {
+      "id": "changelog",
+      "path": "CHANGELOG.md",
+      "labels": [
+        "public-index"
+      ],
+      "audience": "contributors and release readers",
+      "current_action": "Keep factual; record docs, proof-demo, and receipt additions.",
+      "publication_target": "site page",
+      "claim_boundary": "Ledger of changed artifacts, not market or scientific proof.",
+      "confidence": "high"
+    },
+    {
+      "id": "current-state",
+      "path": "docs/CURRENT-STATE.md",
+      "labels": [
+        "public-index"
+      ],
+      "audience": "operators and external reviewers",
+      "current_action": "Refresh after every serious Index, Forum, Gather, Crucible, and Telos pass.",
+      "publication_target": "site page",
+      "claim_boundary": "Live state packet; distinguish committed, working-tree, planned, and inferred.",
+      "confidence": "high"
+    },
+    {
+      "id": "large-scale-roadmap",
+      "path": "docs/PROJECT-TELOS-LARGE-SCALE-ROADMAP-2026-07-02.md",
+      "labels": [
+        "public-index",
+        "paper-candidate"
+      ],
+      "audience": "operators, collaborators, and market/research reviewers",
+      "current_action": "Use as the north-star map for megatool integration and domain lab sequencing.",
+      "publication_target": "whitepaper",
+      "claim_boundary": "Strategic hypotheses and first proof lanes, not proof of domain outcomes.",
+      "confidence": "high"
+    },
+    {
+      "id": "documentation-consolidation-registry",
+      "path": "docs/DOCUMENTATION-CONSOLIDATION-REGISTRY-2026-07-02.md",
+      "labels": [
+        "public-index"
+      ],
+      "audience": "operators and documentation maintainers",
+      "current_action": "Maintain as the human-readable companion to this JSON registry.",
+      "publication_target": "internal memo",
+      "claim_boundary": "Classification rules, not scientific or market claims.",
+      "confidence": "high"
+    },
+    {
+      "id": "frontier-rd-operating-posture",
+      "path": "docs/FRONTIER-RD-OPERATING-POSTURE-2026-07-02.md",
+      "labels": [
+        "public-index"
+      ],
+      "audience": "operators and publication reviewers",
+      "current_action": "Use as the risk and scope rulebook for frontier-domain work.",
+      "publication_target": "internal memo",
+      "claim_boundary": "Allows broad research scope while fencing high-risk technical payloads.",
+      "confidence": "high"
+    },
+    {
+      "id": "project-connection-map",
+      "path": "docs/PROJECT-CONNECTION-MAP.md",
+      "labels": [
+        "public-index"
+      ],
+      "audience": "operators and collaborators",
+      "current_action": "Refresh Build naming, megatool joins, and the larger industrial-science lanes.",
+      "publication_target": "site page",
+      "claim_boundary": "Topology map; not a maturity claim for each repo.",
+      "confidence": "moderate"
+    },
+    {
+      "id": "forward-facing-inventory",
+      "path": "docs/FORWARD-FACING-REPOSITORY-INVENTORY.md",
+      "labels": [
+        "public-index",
+        "quarantine-and-adapt"
+      ],
+      "audience": "external reviewers",
+      "current_action": "Refresh from the 2026-07-02 Index counts before treating as current.",
+      "publication_target": "site page",
+      "claim_boundary": "Inventory must not overclaim private/local-only work.",
+      "confidence": "moderate"
+    },
+    {
+      "id": "who-uses-it",
+      "path": "docs/WHO-USES-IT.md",
+      "labels": [
+        "public-index",
+        "quarantine-and-adapt"
+      ],
+      "audience": "buyers and collaborators",
+      "current_action": "Update after the market-research scorecard rather than guessing personas.",
+      "publication_target": "site page",
+      "claim_boundary": "Buyer fit must remain hypothesis-labeled until backed by market evidence.",
+      "confidence": "moderate"
+    }
+  ],
+  "research_packet_rows": [
+    {
+      "id": "buildlang-scientific-runtime-receipts",
+      "lane": "accountable scientific compute",
+      "labels": [
+        "paper-candidate",
+        "proof-demo"
+      ],
+      "paths": [
+        "C:/dev/public/pubscan/quantalang/README.md",
+        "C:/dev/public/pubscan/quantalang/docs/SCIENTIFIC-RECEIPT.md"
+      ],
+      "status_summary": "BuildLang/buildc documentation describes C-backend execution, typed effects, receipt export, invariant families, negative fixtures, and Crucible export.",
+      "claim_state": "SOURCE_BACKED_DOC_EVIDENCE",
+      "publication_target": "arXiv methods paper",
+      "next_actions": [
+        "Create a Telos-side Build receipt import fixture.",
+        "Export one BuildLang scientific runtime receipt into a Crucible registry.",
+        "Add a methods paper draft with non-claims around language maturity."
+      ],
+      "risk_boundary": "Do not claim Julia replacement or production-grade reliability without benchmark and adoption evidence.",
+      "confidence": "high"
+    },
+    {
+      "id": "causal-research-workbench",
+      "lane": "causal inference and proof-carrying claims",
+      "labels": [
+        "public-official",
+        "public-whitepaper",
+        "paper-candidate",
+        "proof-demo"
+      ],
+      "paths": [
+        "docs/research/official/CAUSAL-RESEARCH-WORKBENCH-FOR-PROOF-CARRYING-CLAIMS-2026-07-02.md",
+        "docs/research/whitepapers/CAUSAL-RESEARCH-WORKBENCH-FOR-PROOF-CARRYING-CLAIMS-2026-07-02.md",
+        "demo/causal-workbench-proof-packet.mjs"
+      ],
+      "status_summary": "Toy-DAG fixture emits CAUSAL_DAG_FIXTURE_MATCH and keeps real discovery, biomedical, and BuildLang-native claims out of scope.",
+      "claim_state": "MATCH_FOR_FIXTURE_ONLY",
+      "publication_target": "arXiv methods paper",
+      "next_actions": [
+        "Add synthetic SCM with known treatment effect.",
+        "Add estimator receipts and negative-control fixtures.",
+        "Port the typed DAG spec to BuildLang/buildc."
+      ],
+      "risk_boundary": "No clinical, biomedical, or general causal-discovery claims.",
+      "confidence": "high"
+    },
+    {
+      "id": "embodied-sim2real-proof-packets",
+      "lane": "robotics and cybernetics",
+      "labels": [
+        "public-official",
+        "public-whitepaper",
+        "paper-candidate",
+        "proof-demo"
+      ],
+      "paths": [
+        "docs/research/official/EMBODIED-SIM2REAL-PROOF-PACKETS-FOR-ROBOTICS-2026-07-02.md",
+        "docs/research/whitepapers/EMBODIED-SIM2REAL-PROOF-PACKETS-FOR-ROBOTICS-2026-07-02.md",
+        "demo/embodied-sim2real-proof-packet.mjs"
+      ],
+      "status_summary": "Differential-drive fixture emits EMBODIED_SIM2REAL_FIXTURE_MATCH with unit, latency, trace, safety-envelope, and negative-control checks.",
+      "claim_state": "MATCH_FOR_FIXTURE_ONLY",
+      "publication_target": "proof demo then whitepaper",
+      "next_actions": [
+        "Add BuildLang typed-unit replay.",
+        "Add manipulation fixture with pose, contact state, and action budget.",
+        "Add a safety-stop non-claim gate."
+      ],
+      "risk_boundary": "No real-world robot safety, surgical, medical, or autonomy guarantee claims.",
+      "confidence": "high"
+    },
+    {
+      "id": "biology-network-intelligence",
+      "lane": "biology-inspired routing and learning systems",
+      "labels": [
+        "public-official",
+        "public-whitepaper",
+        "paper-candidate"
+      ],
+      "paths": [
+        "docs/research/official/BIOLOGY-NETWORK-INTELLIGENCE-FOR-HYPHAL-CONTEXT-PROTOCOLS-2026-07-02.md",
+        "docs/research/whitepapers/BIOLOGY-NETWORK-INTELLIGENCE-FOR-HYPHAL-CONTEXT-PROTOCOLS-2026-07-02.md"
+      ],
+      "status_summary": "Source packet is receipt-backed; biological cognition and universal-routing claims remain unverifiable.",
+      "claim_state": "SOURCE_RECEIPTS_MATCH_WITH_DOMAIN_CLAIMS_UNVERIFIABLE",
+      "publication_target": "whitepaper",
+      "next_actions": [
+        "Frame as a hyphal context protocol, not biology truth.",
+        "Add answer-quality measurement across corpora.",
+        "Add false-claim and lost-evidence rate measurements."
+      ],
+      "risk_boundary": "No claims about biological cognition or universal network intelligence.",
+      "confidence": "high"
+    },
+    {
+      "id": "hyphal-context-benchmark",
+      "lane": "context routing and learning systems",
+      "labels": [
+        "public-official",
+        "public-whitepaper",
+        "paper-candidate",
+        "proof-demo"
+      ],
+      "paths": [
+        "docs/research/official/HYPHAL-CONTEXT-BENCHMARK-FOR-RECEIPT-ROUTING-2026-07-02.md",
+        "docs/research/whitepapers/HYPHAL-CONTEXT-BENCHMARK-FOR-RECEIPT-ROUTING-2026-07-02.md"
+      ],
+      "status_summary": "One deterministic fixture reports about 98.92 percent token savings with zero recorded answer deltas for the fixture, but model answer quality is not broadly measured.",
+      "claim_state": "MATCH_FOR_ONE_FIXTURE_ONLY",
+      "publication_target": "proof demo then methods note",
+      "next_actions": [
+        "Run over multiple corpora.",
+        "Measure answer quality, false positives, missing evidence, and evaluator agreement.",
+        "Add BuildLang receipt shape for context selection."
+      ],
+      "risk_boundary": "No universal context-superiority claim.",
+      "confidence": "high"
+    },
+    {
+      "id": "formal-pde-replay",
+      "lane": "formal and numerical physics",
+      "labels": [
+        "public-official",
+        "public-whitepaper",
+        "paper-candidate",
+        "proof-demo"
+      ],
+      "paths": [
+        "docs/research/official/FORMAL-REPLAY-PREFLIGHT-FOR-PDE-PACKETS-2026-07-02.md",
+        "docs/research/whitepapers/FORMAL-REPLAY-PREFLIGHT-FOR-PDE-PACKETS-2026-07-02.md"
+      ],
+      "status_summary": "Finite Lean/operator preflight is bounded; parent PDE or Navier-Stokes claims remain unverifiable.",
+      "claim_state": "MATCH_FOR_FINITE_PREFLIGHT_ONLY",
+      "publication_target": "whitepaper",
+      "next_actions": [
+        "Add smooth-periodic theorem boundary.",
+        "Add BuildLang relation-invariant numerical receipt.",
+        "Add formal/numerical boundary table."
+      ],
+      "risk_boundary": "No grand-problem or continuum theorem claims.",
+      "confidence": "high"
+    },
+    {
+      "id": "quantum-error-correction-proof-packets",
+      "lane": "quantum computing and QEC",
+      "labels": [
+        "public-official",
+        "public-whitepaper",
+        "paper-candidate",
+        "proof-demo"
+      ],
+      "paths": [
+        "docs/research/official/QUANTUM-ERROR-CORRECTION-PROOF-PACKETS-2026-07-02.md",
+        "docs/research/whitepapers/QUANTUM-ERROR-CORRECTION-PROOF-PACKETS-2026-07-02.md",
+        "demo/quantum-error-correction-proof-packet.mjs"
+      ],
+      "status_summary": "Working-tree 3-qubit bit-flip stabilizer fixture emits QEC_STABILIZER_FIXTURE_MATCH; larger QEC, hardware, fault-tolerance, and BuildLang-native claims are not replayed.",
+      "claim_state": "MATCH_FOR_WORKING_TREE_FIXTURE_ONLY",
+      "publication_target": "proof demo then whitepaper",
+      "next_actions": [
+        "Commit or explicitly mark as working-tree-only before external publication.",
+        "Add BuildLang typed Pauli/stabilizer runtime.",
+        "Add surface-code syndrome fixture and Clifford equivalence checker."
+      ],
+      "risk_boundary": "No hardware QEC, quantum advantage, fault tolerance, cryptographic, or resource-estimation claims.",
+      "confidence": "high"
+    },
+    {
+      "id": "ti-morse-field-scope-integration",
+      "lane": "frontier industrial R&D source intake",
+      "labels": [
+        "public-official",
+        "public-whitepaper",
+        "paper-candidate"
+      ],
+      "paths": [
+        "demo/research/youtube-ti-morse-field-receipts.json",
+        "docs/research/official/TI-MORSE-FIELD-SCOPE-INTEGRATION-2026-07-02.md",
+        "docs/research/whitepapers/TI-MORSE-FIELD-SCOPE-INTEGRATION-2026-07-02.md"
+      ],
+      "status_summary": "Five requested videos and a Ti Morse channel catalog were captured as metadata/transcript/source-lead receipts; inferred lanes include nuclear manufacturing, causal DAGs, ARC-style AGI evaluation, microscopy/materials/biology, AI scale economics, manufacturing, energy, drones, uranium, space infrastructure, biotech, and supersonics.",
+      "claim_state": "SOURCE_RECEIPTS_MATCH_WITH_DOMAIN_CLAIMS_UNVERIFIABLE_UNTIL_PRIMARY_SOURCE_OR_REPLAY",
+      "publication_target": "methods note",
+      "next_actions": [
+        "Promote one lane at a time using primary sources.",
+        "Create industrial-science packet schema with units, regulation state, safety boundary, and uncertainty.",
+        "Create BuildLang replay for one low-risk calculation before any stronger field claim."
+      ],
+      "risk_boundary": "No nuclear safety, throughput, licensing, weapons, enrichment, industrial performance, medical, or AGI superiority claims from videos alone.",
+      "confidence": "high"
+    }
+  ],
+  "build_ecosystem_rows": [
+    {
+      "id": "build-ecosystem-subregistry",
+      "repo_or_doc": "docs/registry/build-ecosystem-subregistry-2026-07-02.json",
+      "labels": [
+        "public-index",
+        "paper-source",
+        "registry-source"
+      ],
+      "market_role": "authoritative Build ecosystem planning registry for this consolidation pass",
+      "integration_need": "Use this subregistry before making BuildLang/buildc, Build Universe, color/calibration, quant/forecasting, or editor-support claims.",
+      "confidence": "high"
+    },
+    {
+      "id": "buildlang-buildc",
+      "repo_or_doc": "C:/dev/public/pubscan/quantalang",
+      "labels": [
+        "public-index",
+        "paper-source"
+      ],
+      "market_role": "accountable scientific language and runtime layer",
+      "known_current_names": [
+        "BuildLang",
+        "buildc",
+        "Build ecosystem"
+      ],
+      "lineage_names": [
+        "QuantaLang"
+      ],
+      "integration_need": "Telos should consume BuildLang/buildc receipt exports as first-class measurement packets.",
+      "confidence": "high"
+    },
+    {
+      "id": "build-universe",
+      "repo_or_doc": "C:/dev/public/build-universe/README.md",
+      "labels": [
+        "public-index"
+      ],
+      "market_role": "Build family map and self-hosting direction",
+      "integration_need": "Use for naming, language/runtime reality, and BuildOS boundary.",
+      "confidence": "high"
+    },
+    {
+      "id": "build-color-and-calibration",
+      "repo_or_doc": "C:/dev/public/build-color/README.md",
+      "labels": [
+        "proof-demo",
+        "market-source"
+      ],
+      "market_role": "color, rendering, profile, and calibration proof kit",
+      "integration_need": "Join display calibration state, ACES/OCIO-style transforms, delta-E checks, profile hashes, and Build receipts.",
+      "confidence": "moderate"
+    },
+    {
+      "id": "calibrate-pro",
+      "repo_or_doc": "C:/dev/public/calibrate-pro/README.md",
+      "labels": [
+        "proof-demo",
+        "market-source"
+      ],
+      "market_role": "display calibration and measured output layer",
+      "integration_need": "Pair with Telos display calibration and color proof packets.",
+      "confidence": "moderate"
+    },
+    {
+      "id": "build-engine",
+      "repo_or_doc": "C:/dev/public/build-engine/README.md",
+      "labels": [
+        "proof-demo",
+        "market-source"
+      ],
+      "market_role": "finance and quantitative receipt lane",
+      "integration_need": "Keep backtest and strategy claims receipt-bound with no investment advice.",
+      "confidence": "moderate"
+    }
+  ],
+  "proof_witnessing_rows": [
+    {
+      "id": "proof-witnessing-subregistry",
+      "repo_or_doc": "docs/registry/proof-witnessing-subregistry-2026-07-02.json",
+      "labels": [
+        "public-index",
+        "registry-source",
+        "paper-source",
+        "proof-demo"
+      ],
+      "market_role": "authoritative proof/witnessing planning registry for this consolidation pass",
+      "integration_need": "Use this subregistry before making EMET, Proof Surface, Repo Proof Index, Proof Surface Report, or Witnessing Spine claims.",
+      "confidence": "high"
+    },
+    {
+      "id": "emet",
+      "repo_or_doc": "C:/dev/public/emet",
+      "labels": [
+        "public-index",
+        "paper-source"
+      ],
+      "market_role": "external witness and byte/source-view integrity layer",
+      "integration_need": "Map EMET witness receipts into Telos source/view consistency, report integrity, and release-readiness packets without trust or approval language.",
+      "confidence": "high"
+    },
+    {
+      "id": "proof-surface",
+      "repo_or_doc": "C:/dev/public/proof-surface",
+      "labels": [
+        "public-index",
+        "proof-demo",
+        "paper-source"
+      ],
+      "market_role": "portable proof-packet contract and domain wedge validator layer",
+      "integration_need": "Bridge Telos agent-action, research-claim, ai4science, visual-measurement, and conservation packets into Proof Surface validators.",
+      "confidence": "high"
+    },
+    {
+      "id": "repo-proof-index",
+      "repo_or_doc": "C:/dev/public/repo-proof-index",
+      "labels": [
+        "public-index",
+        "proof-demo"
+      ],
+      "market_role": "reviewer-ready proof artifact index",
+      "integration_need": "Run over selected Telos proof artifacts to expose proof packets, witness receipts, backend descriptors, and evidence gaps before publication.",
+      "confidence": "high"
+    },
+    {
+      "id": "proof-surface-report",
+      "repo_or_doc": "C:/dev/public/proof-surface-report",
+      "labels": [
+        "public-index",
+        "proof-demo"
+      ],
+      "market_role": "reviewer-facing Markdown report renderer",
+      "integration_need": "Render selected Telos proof packets and witness receipts into public-safe handoff reports after the packet is registry-labeled and verified.",
+      "confidence": "high"
+    },
+    {
+      "id": "witnessing-spine",
+      "repo_or_doc": "C:/dev/public/witnessing-spine",
+      "labels": [
+        "paper-source",
+        "public-whitepaper"
+      ],
+      "market_role": "publication and theory corpus for external witnessing",
+      "integration_need": "Use as theory and market-context reference while keeping it separate from shipped Telos product capability claims.",
+      "confidence": "high"
+    }
+  ],
+  "senses_and_sensibility_rows": [
+    {
+      "id": "senses-and-sensibility-subregistry",
+      "repo_or_doc": "docs/registry/senses-and-sensibility-subregistry-2026-07-02.json",
+      "labels": [
+        "public-index",
+        "registry-source",
+        "paper-source",
+        "quarantine-and-adapt"
+      ],
+      "market_role": "authoritative research/philosophy corpus planning registry for this consolidation pass",
+      "integration_need": "Use this subregistry before making Senses, Conferred Existence, dissertation, paper-track, or human-gate claims.",
+      "confidence": "high"
+    },
+    {
+      "id": "front-door-and-map",
+      "repo_or_doc": "C:/dev/public/senses-and-sensibility/README.md",
+      "labels": [
+        "public-index",
+        "paper-source"
+      ],
+      "market_role": "research corpus front door and theory-positioning layer",
+      "integration_need": "Link as theory context only; keep pre-proof, live-scholarship, and human-gate boundaries visible.",
+      "confidence": "high"
+    },
+    {
+      "id": "integrated-thesis",
+      "repo_or_doc": "C:/dev/public/senses-and-sensibility/THESIS.md",
+      "labels": [
+        "paper-source",
+        "quarantine-and-adapt"
+      ],
+      "market_role": "integrated accountability and conferral thesis substrate",
+      "integration_need": "Use summarized concepts for Telos rationale, not direct product claims or final dissertation claims.",
+      "confidence": "high"
+    },
+    {
+      "id": "dissertation-apparatus",
+      "repo_or_doc": "C:/dev/public/senses-and-sensibility/dissertation",
+      "labels": [
+        "paper-source",
+        "internal-source"
+      ],
+      "market_role": "viva, contribution, and adversarial review apparatus",
+      "integration_need": "Import human-ownership, provenance-ledger, and non-claim gates into the Telos publication queue.",
+      "confidence": "high"
+    },
+    {
+      "id": "paper-track",
+      "repo_or_doc": "C:/dev/public/senses-and-sensibility/papers",
+      "labels": [
+        "paper-candidate",
+        "quarantine-and-adapt"
+      ],
+      "market_role": "journal paper candidate set",
+      "integration_need": "Keep as paper candidates blocked on human re-derivation, live venue checks, citation verification, anonymization, and AI-use disclosure.",
+      "confidence": "high"
+    },
+    {
+      "id": "bibliography-and-citation-policy",
+      "repo_or_doc": "C:/dev/public/senses-and-sensibility/references/BIBLIOGRAPHY.md",
+      "labels": [
+        "paper-source",
+        "registry-source"
+      ],
+      "market_role": "citation integrity policy and reference ledger",
+      "integration_need": "Adopt the no-unverified-locator rule in Telos papers, whitepapers, and proof packets.",
+      "confidence": "high"
+    },
+    {
+      "id": "source-substrate",
+      "repo_or_doc": "C:/dev/public/senses-and-sensibility/CONFERRED-EXISTENCE.txt",
+      "labels": [
+        "internal-source",
+        "paper-source"
+      ],
+      "market_role": "preserved source substrate and discussion lineage",
+      "integration_need": "Reference by path, digest, and summarized boundary only; do not copy long source bodies into Telos front-door docs.",
+      "confidence": "high"
+    },
+    {
+      "id": "engineering-security-bridge",
+      "repo_or_doc": "C:/dev/public/senses-and-sensibility/dissertation/MEMBRANE-PAPER-v3.md",
+      "labels": [
+        "paper-source",
+        "public-whitepaper"
+      ],
+      "market_role": "philosophy-to-security bridge for accountability systems",
+      "integration_need": "Use as conceptual rationale for Telos receipts, gates, and authn/authz separation; require separate tests for implementation claims.",
+      "confidence": "high"
+    },
+    {
+      "id": "referenced-missing-curation-artifacts",
+      "repo_or_doc": "C:/dev/public/senses-and-sensibility",
+      "labels": [
+        "quarantine-and-adapt"
+      ],
+      "market_role": "missing or stale curation references",
+      "integration_need": "Restore, regenerate, or patch references to CURATION.md, CONSOLIDATION.md, CROSS-MODEL-AUDIT.md, HUMAN-GATE-RUNBOOK.md, submission/SHIPPING-MANIFEST.md, and SPRINT.md before publication cleanup.",
+      "confidence": "high"
+    }
+  ],
+  "telos_repo_rows": [
+    {
+      "id": "front-door",
+      "labels": [
+        "public-index"
+      ],
+      "role": "public repository front door and release ledger",
+      "market_role": "external discoverability and stable demo navigation",
+      "integration_need": "Keep README and changelog concise; link subregistries instead of embedding strategy, raw source payloads, or working-tree claims.",
+      "confidence": "high"
+    },
+    {
+      "id": "control-plane-docs",
+      "labels": [
+        "public-index",
+        "registry-source"
+      ],
+      "role": "current-state, architecture, roadmap, posture, connection, and inventory docs",
+      "market_role": "operator and reviewer control plane",
+      "integration_need": "Refresh after Index, Forum, Gather, Crucible, and Telos passes; separate committed, working-tree, planned, inferred, and unverifiable claims.",
+      "confidence": "high"
+    },
+    {
+      "id": "registry-control-plane",
+      "labels": [
+        "public-index",
+        "registry-source"
+      ],
+      "role": "machine and human registries for cross-repo classification",
+      "market_role": "publication and release routing substrate",
+      "integration_need": "Use registries for routing only; do not treat registry presence as proof of correctness, publication readiness, or release status.",
+      "confidence": "high"
+    },
+    {
+      "id": "research-official-and-whitepapers",
+      "labels": [
+        "public-official",
+        "public-whitepaper",
+        "paper-candidate"
+      ],
+      "role": "official packets and longer paper drafts for frontier research lanes",
+      "market_role": "methods-paper and proof-demo candidate surface",
+      "integration_need": "Require source, scope, falsification, reproduction, risk, and freshness gates before public promotion.",
+      "confidence": "high"
+    },
+    {
+      "id": "proof-demo-fixtures",
+      "labels": [
+        "proof-demo",
+        "working-tree-evidence"
+      ],
+      "role": "runnable local fixtures, tests, and source receipts",
+      "market_role": "bounded proof-packet demonstrations",
+      "integration_need": "Pair each fixture with targeted tests and non-claims; mark QEC and other uncommitted artifacts working-tree-only until published.",
+      "confidence": "high"
+    },
+    {
+      "id": "outreach-copy",
+      "labels": [
+        "outreach",
+        "quarantine-and-adapt"
+      ],
+      "role": "social, comment, and wave outreach drafts",
+      "market_role": "distribution copy after official proof exists",
+      "integration_need": "Require official packet, proof-demo command, and receipt id before outreach makes a claim.",
+      "confidence": "high"
+    },
+    {
+      "id": "outreach-and-proof-receipts",
+      "labels": [
+        "proof-demo",
+        "receipt-source",
+        "internal-source"
+      ],
+      "role": "run receipts, measurements, theses, reports, Learn packets, and Crucible objects",
+      "market_role": "proof trail and reviewer handoff substrate",
+      "integration_need": "Cite hashes, reports, and typed refs in public docs; keep raw object stores out of front-door copy.",
+      "confidence": "high"
+    },
+    {
+      "id": "demo-and-integration-surface",
+      "labels": [
+        "public-index",
+        "proof-demo",
+        "implementation-source"
+      ],
+      "role": "CLI demos, MCP catalog, manifests, research adapters, and tests",
+      "market_role": "operator-surface and proof-demo implementation layer",
+      "integration_need": "Treat tested demos as evidence only for bounded contracts; keep catalog and manifest parity validated.",
+      "confidence": "high"
+    },
+    {
+      "id": "frontier-posture-and-risk",
+      "labels": [
+        "public-index",
+        "risk-boundary"
+      ],
+      "role": "frontier R&D scope and high-risk publication boundary",
+      "market_role": "public-safe expansion rulebook",
+      "integration_need": "Shape cybernetics, biochem, nuclear, AI/ML, quant, defense-adjacent, medical, and robotics material as research, measurement, safety, simulation, assurance, education, or accountable tooling.",
+      "confidence": "high"
+    },
+    {
+      "id": "superpowers-specs-and-verification",
+      "labels": [
+        "internal-source",
+        "paper-source"
+      ],
+      "role": "implementation plans, specs, and verification reports",
+      "market_role": "implementation lineage and verification source",
+      "integration_need": "Rerun relevant commands before turning a spec or historical report into a current capability claim.",
+      "confidence": "high"
+    },
+    {
+      "id": "funding-brand-and-support",
+      "labels": [
+        "public-index",
+        "internal-source"
+      ],
+      "role": "funding, brand, and support documentation",
+      "market_role": "operator context and presentation support",
+      "integration_need": "Keep budget and brand docs separate from scientific proof, traction, funding, or market-validation claims.",
+      "confidence": "high"
+    },
+    {
+      "id": "caches-and-local-payloads",
+      "labels": [
+        "internal-source",
+        "quarantine-and-adapt"
+      ],
+      "role": "caches, local Gather payloads, temporary data, and ignored source-like material",
+      "market_role": "internal-only source substrate",
+      "integration_need": "Reference only digest seals, redacted refs, and claim boundaries in public artifacts.",
+      "confidence": "high"
+    }
+  ],
+  "megatool_nodes": [
+    {
+      "id": "research-workbench",
+      "internal_tools": [
+        "Gather",
+        "Index",
+        "Forum",
+        "Crucible",
+        "Telos",
+        "Learning Forge"
+      ],
+      "external_analogs": [
+        "Elicit",
+        "Semantic Scholar",
+        "FutureHouse",
+        "Sakana AI Scientist",
+        "Microsoft Discovery"
+      ],
+      "inputs": [
+        "papers",
+        "videos",
+        "official docs",
+        "benchmarks",
+        "source ledgers"
+      ],
+      "outputs": [
+        "ResearchClaim cards",
+        "proof packets",
+        "learning labs",
+        "publication queues"
+      ],
+      "receipts": [
+        "source receipt",
+        "context envelope",
+        "Crucible verdict",
+        "Learn prooflesson"
+      ],
+      "verification_layer": "Crucible MATCH/DRIFT/UNVERIFIABLE plus non-claim gates",
+      "market_facing_product": "proof-carrying research workbench"
+    },
+    {
+      "id": "build-scientific-runtime",
+      "internal_tools": [
+        "BuildLang",
+        "buildc",
+        "Build Universe",
+        "Crucible",
+        "Telos measurement layers"
+      ],
+      "external_analogs": [
+        "Julia",
+        "Mojo",
+        "OpenXLA",
+        "Triton",
+        "MLIR"
+      ],
+      "inputs": [
+        "typed kernels",
+        "units",
+        "effects",
+        "invariants",
+        "source digests"
+      ],
+      "outputs": [
+        "runtime receipts",
+        "measurement packets",
+        "negative fixtures",
+        "Crucible exports"
+      ],
+      "receipts": [
+        "buildc run receipt",
+        "scientific runtime receipt",
+        "Crucible assessment"
+      ],
+      "verification_layer": "typed invariants plus replayable receipts",
+      "market_facing_product": "accountable scientific compute language"
+    },
+    {
+      "id": "industrial-science-proof-packets",
+      "internal_tools": [
+        "Gather",
+        "BuildLang",
+        "Telos action receipts",
+        "measurement layers",
+        "Crucible"
+      ],
+      "external_analogs": [
+        "Jupyter",
+        "Nextflow",
+        "Snakemake",
+        "Benchling",
+        "MLflow"
+      ],
+      "inputs": [
+        "public primary sources",
+        "units",
+        "instrument metadata",
+        "factory/process assumptions",
+        "regulatory state"
+      ],
+      "outputs": [
+        "source-to-simulation packets",
+        "bounded calculations",
+        "risk-bound non-claims"
+      ],
+      "receipts": [
+        "source receipts",
+        "Build receipts",
+        "measurement receipts",
+        "Crucible verdicts"
+      ],
+      "verification_layer": "bounded replay and explicit safety-to-publish review",
+      "market_facing_product": "industrial R&D proof packet system"
+    },
+    {
+      "id": "agent-action-proof-packets",
+      "internal_tools": [
+        "Telos action receipts",
+        "browser evidence",
+        "Index",
+        "Forum",
+        "Crucible",
+        "loop ledger"
+      ],
+      "external_analogs": [
+        "LangSmith",
+        "Langfuse",
+        "Arize Phoenix",
+        "Braintrust",
+        "OpenTelemetry"
+      ],
+      "inputs": [
+        "operator intent",
+        "workspace state",
+        "tool action",
+        "browser evidence",
+        "side-effect class"
+      ],
+      "outputs": [
+        "agent action proof packets",
+        "admission records",
+        "reviewable external-write receipts"
+      ],
+      "receipts": [
+        "action receipt",
+        "context pack",
+        "browser evidence packet",
+        "Crucible report"
+      ],
+      "verification_layer": "source-context-action-verdict binding",
+      "market_facing_product": "accountable agent execution layer"
+    },
+    {
+      "id": "color-rendering-measurement-kit",
+      "internal_tools": [
+        "build-color",
+        "calibrate-pro",
+        "Telos display calibration",
+        "studio-engine",
+        "reconcile",
+        "Crucible"
+      ],
+      "external_analogs": [
+        "ACES",
+        "OCIO",
+        "Calman",
+        "ColourSpace",
+        "DaVinci Resolve color tools"
+      ],
+      "inputs": [
+        "display state",
+        "profile transforms",
+        "render settings",
+        "measurement samples"
+      ],
+      "outputs": [
+        "color measurement proof kits",
+        "profile receipts",
+        "render verdicts"
+      ],
+      "receipts": [
+        "profile hash",
+        "delta-E measurement",
+        "render artifact hash",
+        "Crucible verdict"
+      ],
+      "verification_layer": "measured output and transform replay",
+      "market_facing_product": "accountable color and rendering verification"
+    }
+  ],
+  "internal_fences": [
+    {
+      "id": "raw-transcripts",
+      "paths": [
+        ".telos/gather/**",
+        "C:/Users/Zain/AppData/Local/Temp/telos-youtube-digest-2026-07-02/**"
+      ],
+      "reason": "Raw transcript bodies and source payloads should not be copied into public docs.",
+      "public_reference_shape": "hashes, source URLs, source-lead status, and paraphrased claim boundaries only"
+    },
+    {
+      "id": "credentials-and-session-state",
+      "paths": [
+        ".env",
+        ".env.*",
+        "browser session state",
+        "cookies",
+        "tokens"
+      ],
+      "reason": "Never publish credentials or private session state.",
+      "public_reference_shape": "no public reference"
+    },
+    {
+      "id": "high-risk-operational-detail",
+      "paths": [
+        "nuclear operational payloads",
+        "biochem wet-lab payloads",
+        "cyber operational payloads",
+        "defense operational payloads"
+      ],
+      "reason": "Public artifacts should emphasize measurement, safety, simulation, assurance, and non-claims, not operational instructions.",
+      "public_reference_shape": "sanitized methodology, bounded simulation, uncertainty, safety-to-publish rationale"
+    }
+  ],
+  "next_actions": [
+    "Keep the Telos repo, Build ecosystem, proof/witnessing, and Senses subregistries current as Build receipts, proof-surface bridge fixtures, paper gates, and proof-kit schemas land.",
+    "Add a commit-boundary publication gate before README, site, or outreach copy claims a working-tree artifact is shipped.",
+    "Build a receipt-index bridge over docs/outreach/receipts and demo/research receipts.",
+    "Add an outreach-to-official claim gate that requires each outreach wave to cite an official packet, proof-demo command, and receipt id.",
+    "Add cache/raw-payload quarantine checks for docs/research/dogfood caches and local Gather payload references.",
+    "Refresh docs/PROJECT-CONNECTION-MAP.md and docs/FORWARD-FACING-REPOSITORY-INVENTORY.md from the 2026-07-02 Index map.",
+    "Create a BuildLang-to-Crucible receipt import fixture inside Telos.",
+    "Promote the causal workbench with a synthetic SCM and BuildLang typed DAG receipt.",
+    "Promote one industrial-science lane using primary public sources, units, uncertainty, and a non-claim gate.",
+    "Keep Ti Morse and other video material as source leads until primary sources or replayed experiments exist."
+  ]
+}

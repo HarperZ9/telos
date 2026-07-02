@@ -1,0 +1,65 @@
+{
+  "measurements": [
+    {
+      "claim": "The twenty-seventh wave comment packet records current public source leads across Reddit, YouTube, Hacker News, and dev.to before drafting.",
+      "method": "source-lead-and-target-url-review",
+      "evidence": [
+        "Reddit source leads include r/LocalLLaMA, r/quant, r/Physics, and r/MachineLearning target URLs.",
+        "YouTube source leads include eight video URLs covering continuous agent evaluation, agentic quant research, agent anatomy, MCP agent evaluation, MCP futures, engineering simulation, AI quant labs, and MCP/RAG/agent comparison.",
+        "Blog/social source leads include Hacker News and dev.to target URLs covering state machines, reliable agents, AI-agent architecture, observability, MCP OAuth, and output validation.",
+        "The packet includes a Source Lead Summary and each draft entry includes a Target URL."
+      ],
+      "deviation": 0.0,
+      "tolerance": 0.5
+    },
+    {
+      "claim": "The packet provides exact text for 22 prepared public comments: 8 Reddit comments, 8 YouTube comments, and 6 blog/social comments.",
+      "method": "heading-and-exact-text-count-review",
+      "evidence": [
+        "Local scan found eight Reddit headings: R77, R79, R81, R83, R85, R87, R89, and R91.",
+        "Local scan found eight YouTube headings: Y76, Y78, Y80, Y82, Y84, Y86, Y88, and Y90.",
+        "Local scan found six blog/social headings: B47, B49, B51, B53, B55, and B57.",
+        "Local scan found 22 Exact text blocks and no missing exact-text blocks."
+      ],
+      "deviation": 0.0,
+      "tolerance": 0.5
+    },
+    {
+      "claim": "The packet preserves the public side-effect boundary by marking all comments as prepared but not posted and requiring exact action-time confirmation before posting.",
+      "method": "posting-boundary-review",
+      "evidence": [
+        "The packet status line says prepared, not posted.",
+        "Posting Boundary says no comments in this packet have been posted.",
+        "Posting Boundary says public posting requires exact action-time confirmation of destination URL, visible authenticated account, and exact text.",
+        "Exact Confirmation Prompt requires confirming destination URL, account identity, community/platform rules, and exact text before each comment.",
+        "The packet says to skip if a destination blocks AI-generated text, forbids promotion, hides the composer, locks the thread, or materially changes context."
+      ],
+      "deviation": 0.0,
+      "tolerance": 0.5
+    },
+    {
+      "claim": "The exact comment texts avoid direct Project Telos repository links, avoid all URLs, and avoid buy/sell/capital/funding trigger language.",
+      "method": "exact-text-link-and-trigger-scan",
+      "evidence": [
+        "Local scan found zero direct Project Telos repository URLs inside exact comment blocks.",
+        "Local scan found zero URLs of any kind inside exact comment blocks.",
+        "Local scan found zero buy/sell/capital/funding trigger matches inside exact comment blocks.",
+        "Posting Boundary says not to add a Project Telos repository link unless the thread explicitly asks for tools, repos, implementation links, or self-promotion is clearly allowed."
+      ],
+      "deviation": 0.0,
+      "tolerance": 0.5
+    },
+    {
+      "claim": "The packet frames outreach as technical participation in relevant discussions about agents, MCP, evaluation, reproducibility, simulation, observability, and validation rather than generic promotion.",
+      "method": "topic-fit-review",
+      "evidence": [
+        "Reddit comments address local-agent evals, quant reproducibility, physics code review, research reproducibility, agentic peer review, detector calibration, DevOps action receipts, and local model failure measurement.",
+        "YouTube comments address continuous evals, agentic quant replay, agent anatomy receipts, MCP tool-surface snapshots, MCP tool selection, simulation evidence, AI quant lab replay, and RAG/MCP/agent receipt joins.",
+        "Blog/social comments address state transitions, observability primitives, agent architecture receipts, MCP-heavy observability, OAuth action receipts, and output-validation route evidence.",
+        "Exact comment text does not include generic calls to visit or fund Project Telos."
+      ],
+      "deviation": 0.0,
+      "tolerance": 0.5
+    }
+  ]
+}

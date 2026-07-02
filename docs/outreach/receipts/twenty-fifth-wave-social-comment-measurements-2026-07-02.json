@@ -1,0 +1,61 @@
+{
+  "measurements": [
+    {
+      "claim": "The twenty-fifth wave social comment packet records the refreshed Project Telos tool snapshot for Index, Forum, Gather, Crucible, and Telos before drafting.",
+      "method": "mcp-status-and-packet-review",
+      "evidence": [
+        "MCP status checks returned MATCH for Index 2.8.0, Forum 1.12.0, Gather 1.5.0, and Crucible 1.1.0",
+        "Telos server manifest returned the current five-flagship MCP launch map and 65-tool surface",
+        "TWENTY-FIFTH-WAVE-SOCIAL-COMMENT-EXPANSION-2026-07-02.md includes a Current Tool Snapshot section with those statuses"
+      ],
+      "deviation": 0.0,
+      "tolerance": 0.5
+    },
+    {
+      "claim": "The packet provides exact text for 27 prepared public comments across Reddit, YouTube, and blog/social discussion surfaces.",
+      "method": "target-and-comment-count-review",
+      "evidence": [
+        "Exact Comment Queue contains eleven Reddit items: R55, R57, R59, R61, R63, R65, R67, R69, R71, R73, and R75",
+        "Exact Comment Queue contains nine YouTube items: Y58, Y60, Y62, Y64, Y66, Y68, Y70, Y72, and Y74",
+        "Exact Comment Queue contains seven blog/social items: B33, B35, B37, B39, B41, B43, and B45",
+        "Each item includes a destination URL and an Exact text block"
+      ],
+      "deviation": 0.0,
+      "tolerance": 0.5
+    },
+    {
+      "claim": "The packet preserves the public side-effect boundary by marking all comments as prepared but not posted and requiring exact action-time confirmation before posting.",
+      "method": "posting-boundary-review",
+      "evidence": [
+        "The packet status line says prepared, not posted",
+        "Posting Boundary says no comments in this packet have been posted",
+        "Posting Boundary says public posting requires exact action-time confirmation of destination URL and exact text from the visible authenticated account",
+        "Exact Confirmation Prompt requires confirmation before posting and skip reasons when platform state changes"
+      ],
+      "deviation": 0.0,
+      "tolerance": 0.5
+    },
+    {
+      "claim": "The packet excludes exact AI-drafted comments for r/cybersecurity because the visible subreddit rules forbid AI or machine-generated content.",
+      "method": "platform-rule-review",
+      "evidence": [
+        "The r/cybersecurity page shows rule 3: AI/machine-generated content, whether linked or posted directly, is explicitly forbidden",
+        "Posting Boundary says this wave intentionally excludes exact AI-drafted comments for r/cybersecurity",
+        "The r/cybersecurity Exclusion Note lists three relevant r/cybersecurity targets and directs human-authored response only"
+      ],
+      "deviation": 0.0,
+      "tolerance": 0.5
+    },
+    {
+      "claim": "The exact comment texts avoid direct Project Telos repository links and frame outreach as technical participation rather than link promotion.",
+      "method": "link-and-relevance-review",
+      "evidence": [
+        "Posting Boundary says not to include direct repository links unless the thread explicitly asks for tools, repos, links, or self-promotion",
+        "Exact comment blocks do not include https://github.com/HarperZ9/telos",
+        "Comments are tailored to local thread topics including MCP vs CLI, agent evals, tool governance, data-science reproducibility, and workflow receipts"
+      ],
+      "deviation": 0.0,
+      "tolerance": 0.5
+    }
+  ]
+}
