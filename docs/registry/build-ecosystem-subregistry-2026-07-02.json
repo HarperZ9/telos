@@ -1,0 +1,473 @@
+{
+  "schema": "project-telos.build-ecosystem-subregistry/v1",
+  "generated_at": "2026-07-02",
+  "status": "first Build ecosystem consolidation pass",
+  "purpose": "Classify BuildLang/buildc and adjacent Build ecosystem repositories by maturity, receipt capability, market lane, Telos integration point, and publication boundary.",
+  "claim_boundary": "This registry is based on current local documentation reads. It is not a benchmark result, release certification, market claim, or proof that every repo has current passing CI.",
+  "evidence": [
+    {
+      "id": "buildlang-readme-status-scientific-receipt",
+      "paths": [
+        "C:/dev/public/pubscan/quantalang/README.md",
+        "C:/dev/public/pubscan/quantalang/STATUS.md",
+        "C:/dev/public/pubscan/quantalang/docs/SCIENTIFIC-RECEIPT.md"
+      ],
+      "summary": "BuildLang docs identify buildc, the C backend as the primary verified execution path, experimental non-C backends, a shipped scientific-runtime receipt family, and explicit non-claims about physical laws or PDE correctness.",
+      "confidence": "high"
+    },
+    {
+      "id": "build-universe-readme-status",
+      "paths": [
+        "C:/dev/public/build-universe/README.md",
+        "C:/dev/public/build-universe/STATUS.md"
+      ],
+      "summary": "Build Universe docs identify an alpha, mixed-language ecosystem with canonical module maturity ledgers, self-hosting and whole-ecosystem compilation as goals, and tiered module reality.",
+      "confidence": "high"
+    },
+    {
+      "id": "build-app-readmes",
+      "paths": [
+        "C:/dev/public/build-color/README.md",
+        "C:/dev/public/calibrate-pro/README.md",
+        "C:/dev/public/build-finance/README.md",
+        "C:/dev/public/build-oracle/README.md",
+        "C:/dev/public/build-engine/README.md",
+        "C:/dev/public/build-ui/README.md",
+        "C:/dev/public/build-ecosystem/README.md"
+      ],
+      "summary": "Build app docs cover color science, display calibration, finance/backtesting, forecasting, adaptive paper-trading loops, shared PyQt UI, and the meta-package.",
+      "confidence": "high"
+    },
+    {
+      "id": "build-editor-readmes",
+      "paths": [
+        "C:/dev/public/buildlang-vscode/README.md",
+        "C:/dev/public/buildlang-tmLanguage/README.md"
+      ],
+      "summary": "Editor docs identify syntax highlighting and grammar packages as editor support only, not compiler/runtime surfaces.",
+      "confidence": "high"
+    }
+  ],
+  "totals": {
+    "top_level_build_repos": 10,
+    "top_level_build_doc_count": 115,
+    "buildlang_lineage_doc_count": 131,
+    "primary_rows": 11
+  },
+  "rows": [
+    {
+      "id": "buildlang-buildc",
+      "name": "BuildLang / buildc",
+      "repo_or_doc": "C:/dev/public/pubscan/quantalang",
+      "current_names": [
+        "BuildLang",
+        "buildc",
+        ".bld"
+      ],
+      "lineage_names": [
+        "QuantaLang",
+        "quantac"
+      ],
+      "maturity_label": "active compiler with shipped receipt lane and experimental surfaces",
+      "market_lanes": [
+        "scientific compute",
+        "compiler tooling",
+        "math and physics kernels",
+        "rendering and shaders",
+        "security/accountability receipts"
+      ],
+      "receipt_capability": "buildlang-scientific-runtime-receipt/v0 and buildlang-receipt-verification/v1 are documented surfaces.",
+      "verified_now": [
+        "C backend is documented as the primary verified execution path.",
+        "Scientific runtime receipts are documented as shipped, with seven invariant families and paired negative fixtures.",
+        "Receipt verification is documented as re-running the program and re-checking source digest plus invariant verdict."
+      ],
+      "not_claimed": [
+        "No claim that all non-C backends produce runnable artifacts.",
+        "No claim that linear types are fully sound.",
+        "No claim that self-hosting is achieved.",
+        "No claim that a scientific receipt proves a physical law, PDE correctness, or model validity."
+      ],
+      "telos_integration": "Primary compute substrate for Telos proof packets. Telos should import BuildLang receipt exports into Crucible assessments and research packets.",
+      "publication_boundary": "Methods-paper-ready only for accountable compute receipts; language replacement claims need separate benchmarks and adoption evidence.",
+      "next_actions": [
+        "Create a Telos fixture that imports a buildlang-scientific-runtime-receipt/v0 row.",
+        "Add a Crucible assessment pack for one BuildLang positive and one negative scientific receipt.",
+        "Add a BuildLang typed DAG/QEC/color-kernel follow-on only after the import fixture is stable."
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "build-universe",
+      "name": "Build Universe",
+      "repo_or_doc": "C:/dev/public/build-universe",
+      "current_names": [
+        "Build Universe",
+        "BuildLang modules",
+        "BuildOS"
+      ],
+      "lineage_names": [
+        "quanta-universe"
+      ],
+      "maturity_label": "alpha mixed-maturity ecosystem ledger",
+      "market_lanes": [
+        "compiler ecosystem",
+        "domain module catalog",
+        "graphics",
+        "finance",
+        "color",
+        "forecasting",
+        "OS research"
+      ],
+      "receipt_capability": "Module maturity and organism checks are documented, but Telos receipt import is not yet implemented.",
+      "verified_now": [
+        "STATUS.md is documented as the canonical module maturity ledger.",
+        "The README says self-hosting and whole-ecosystem cross-module compilation are goals, not achievements.",
+        "STATUS.md separates load-bearing modules, real kernels inside scaffolding, and sketch/showcase modules."
+      ],
+      "not_claimed": [
+        "No claim that the ecosystem compiles as a whole.",
+        "No claim that BuildOS is production-ready.",
+        "No claim that all module code emits compilable native C."
+      ],
+      "telos_integration": "Use as the Build-family reality ledger and domain-module map, not as a single proof of shipped runtime capability.",
+      "publication_boundary": "Public docs can cite it as the Build family map only with alpha and module-maturity caveats.",
+      "next_actions": [
+        "Import Build Universe module tiers into a Telos machine registry.",
+        "Mark Tier 3 modules as design intent unless a current receipt proves otherwise.",
+        "Tie Spectrum/Chromatic/Delta/Oracle lanes to proof demos only after BuildLang receipt replay exists."
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "build-color",
+      "name": "Build Color",
+      "repo_or_doc": "C:/dev/public/build-color",
+      "current_names": [
+        "Build Color"
+      ],
+      "lineage_names": [],
+      "maturity_label": "public Python color-science workbench",
+      "market_lanes": [
+        "color science",
+        "rendering",
+        "HDR",
+        "ICC profiles",
+        "visual measurement"
+      ],
+      "receipt_capability": "No Telos receipt import yet; strong candidate for color/render measurement proof packets.",
+      "verified_now": [
+        "README lists perceptual spaces, HDR tone mapping, color appearance models, Delta E metrics, chromatic adaptation, spectral utilities, and ICC profile generation.",
+        "ARCHITECTURE.md describes a numpy-only core with optional SciPy/Pillow/PyQt6 extras and deterministic offline operation."
+      ],
+      "not_claimed": [
+        "No claim that generated profiles are device-measured without external measurement evidence.",
+        "No claim of universal color correctness."
+      ],
+      "telos_integration": "Pair with Calibrate Pro, Telos display calibration, and Crucible for a color/rendering measurement proof kit.",
+      "publication_boundary": "Proof-demo ready after profile hashes, transforms, reference inputs, and measured outputs are bound into receipts.",
+      "next_actions": [
+        "Add a color transform receipt fixture with input/output hashes and Delta E calculation.",
+        "Compare against ACES/OCIO/Calman/ColourSpace in the market matrix.",
+        "Keep core color math separate from device calibration claims."
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "calibrate-pro",
+      "name": "Calibrate Pro",
+      "repo_or_doc": "C:/dev/public/calibrate-pro",
+      "current_names": [
+        "Calibrate Pro"
+      ],
+      "lineage_names": [],
+      "maturity_label": "public display-calibration tool with measurement caveats",
+      "market_lanes": [
+        "display calibration",
+        "color verification",
+        "creative pipeline measurement",
+        "device-state receipts"
+      ],
+      "receipt_capability": "README says it reaches host agents through the telos.display.calibration MCP contract; public Telos proof kit still needs a rechecked measurement packet.",
+      "verified_now": [
+        "README documents CLI and GUI surfaces, panel database, DDC/CI, ICC/3D-LUT output, and CIEDE2000 verification.",
+        "README distinguishes sensorless estimates from measured i1Display3 accuracy."
+      ],
+      "not_claimed": [
+        "No measured guarantee in sensorless mode.",
+        "No universal display accuracy claim.",
+        "Version text needs review because badge and current-status wording differ."
+      ],
+      "telos_integration": "Use as the device/display side of the color/rendering measurement proof kit.",
+      "publication_boundary": "Public claims need a device, profile, instrument, verification report, and drift boundary.",
+      "next_actions": [
+        "Create a display-calibration proof-packet schema with device state, profile hash, instrument path, Delta E summary, and drift status.",
+        "Resolve README version drift before using version text in front-door docs.",
+        "Keep sensorless mode labeled as model estimate."
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "build-finance",
+      "name": "Build Finance",
+      "repo_or_doc": "C:/dev/public/build-finance",
+      "current_names": [
+        "Build Finance"
+      ],
+      "lineage_names": [],
+      "maturity_label": "public money-adjacent quant/backtesting toolkit",
+      "market_lanes": [
+        "quant",
+        "finance",
+        "backtesting",
+        "risk metrics",
+        "paper trading"
+      ],
+      "receipt_capability": "No Telos receipt import yet; candidate for backtest and strategy proof packets.",
+      "verified_now": [
+        "README documents strategies, indicators, risk metrics, backtesting, portfolio optimization, paper trading, and optional live broker execution.",
+        "SECURITY.md states paper trading is default, live execution is explicit opt-in, API keys are user-supplied, and the library custodies no funds."
+      ],
+      "not_claimed": [
+        "No investment advice.",
+        "No expected return claim.",
+        "No live trading safety claim."
+      ],
+      "telos_integration": "Use as a finance proof-packet lane with data source, split rules, cost/slippage model, baseline, and non-advice gates.",
+      "publication_boundary": "Public demos must be paper/backtest-only unless a separate high-risk review approves live-mode language.",
+      "next_actions": [
+        "Create a backtest receipt schema with data source, splits, costs, slippage, trial count, and drawdown.",
+        "Add Crucible negative controls for lookahead and missing-cost conditions.",
+        "Keep all public examples paper-mode and non-advisory."
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "build-oracle",
+      "name": "Build Oracle",
+      "repo_or_doc": "C:/dev/public/build-oracle",
+      "current_names": [
+        "Build Oracle"
+      ],
+      "lineage_names": [],
+      "maturity_label": "public time-series forecasting workbench",
+      "market_lanes": [
+        "time-series forecasting",
+        "anomaly detection",
+        "AI/ML research",
+        "model evaluation"
+      ],
+      "receipt_capability": "No Telos receipt import yet; candidate for forecast-evaluation proof packets.",
+      "verified_now": [
+        "README documents ARIMA, Prophet-style decomposition, neural forecasting, changepoint detection, feature engineering, CLI, and Python API."
+      ],
+      "not_claimed": [
+        "No production forecasting accuracy claim.",
+        "No guarantee of model superiority."
+      ],
+      "telos_integration": "Pair with Model Foundry and Objective Monitor for forecast-eval receipts.",
+      "publication_boundary": "Public claims need dataset boundaries, baselines, horizon, error metrics, and leakage checks.",
+      "next_actions": [
+        "Create forecast receipt schema with train/test boundary, horizon, metric, baseline, and leakage guard.",
+        "Connect Build Oracle outputs to Build Engine paper-mode loops.",
+        "Add Crucible drift checks for changed datasets or metric definitions."
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "build-engine",
+      "name": "Build Engine",
+      "repo_or_doc": "C:/dev/public/build-engine",
+      "current_names": [
+        "Build Engine"
+      ],
+      "lineage_names": [],
+      "maturity_label": "public paper-first adaptive prediction and trading loop",
+      "market_lanes": [
+        "adaptive prediction",
+        "paper trading",
+        "feedback loops",
+        "model monitoring",
+        "quant research"
+      ],
+      "receipt_capability": "No Telos receipt import yet; candidate for objective-monitor and loop-ledger proof packets.",
+      "verified_now": [
+        "README says paper trading is default, live broker execution is explicit opt-in and gated, and the engine custodies no funds.",
+        "README describes a loop from market data to models, predictions, paper trades, results, and weights."
+      ],
+      "not_claimed": [
+        "No financial advice.",
+        "No live execution readiness claim for public demos.",
+        "No guarantee that adaptive weights improve out-of-sample performance."
+      ],
+      "telos_integration": "Use as the quant instantiation of Telos Objective Monitor and loop ledger.",
+      "publication_boundary": "Public proof demos should stay in synthetic or paper mode with explicit trial-count and leakage boundaries.",
+      "next_actions": [
+        "Create a paper-mode loop receipt with model config, prediction, simulated execution, outcome, weight change, and residual risk.",
+        "Add Objective Monitor signals for proxy/quality divergence.",
+        "Block live broker examples from public proof demos."
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "build-ui",
+      "name": "Build UI",
+      "repo_or_doc": "C:/dev/public/build-ui",
+      "current_names": [
+        "Build UI"
+      ],
+      "lineage_names": [],
+      "maturity_label": "shared PyQt UI/theme support package",
+      "market_lanes": [
+        "application UI",
+        "design consistency",
+        "Build app shell"
+      ],
+      "receipt_capability": "No proof receipt role yet; support layer for consistent operator surfaces.",
+      "verified_now": [
+        "README documents shared PyQt6 theme constants, stylesheet generation, and reusable widgets."
+      ],
+      "not_claimed": [
+        "No scientific or market proof claim.",
+        "No runtime verification claim."
+      ],
+      "telos_integration": "Use for Build-family UI consistency; keep separate from proof claims.",
+      "publication_boundary": "Product-support doc only.",
+      "next_actions": [
+        "Map common Build UI components to Telos app-shell needs if native UI packaging resumes.",
+        "Keep proof-kit claims in Build Color, Calibrate Pro, and Telos receipts instead."
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "build-ecosystem-meta",
+      "name": "Build Ecosystem",
+      "repo_or_doc": "C:/dev/public/build-ecosystem",
+      "current_names": [
+        "Build Ecosystem"
+      ],
+      "lineage_names": [],
+      "maturity_label": "meta-package and distribution wrapper",
+      "market_lanes": [
+        "distribution",
+        "developer onboarding",
+        "Build app bundle"
+      ],
+      "receipt_capability": "No direct proof receipt role.",
+      "verified_now": [
+        "README identifies the meta-package as installing Build Color, Build Finance, Build Oracle, Build Engine, and Calibrate Pro."
+      ],
+      "not_claimed": [
+        "No claim that the meta-package proves domain correctness.",
+        "No claim that BuildLang compiler ships inside this Python meta-package."
+      ],
+      "telos_integration": "Use for packaging and onboarding, not as the proof substrate.",
+      "publication_boundary": "Distribution doc only.",
+      "next_actions": [
+        "Ensure meta-package docs link to maturity boundaries for each included package.",
+        "Do not use meta-package existence as evidence that every included tool is production-ready."
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "buildlang-vscode",
+      "name": "BuildLang VS Code Extension",
+      "repo_or_doc": "C:/dev/public/buildlang-vscode",
+      "current_names": [
+        "BuildLang for Visual Studio Code"
+      ],
+      "lineage_names": [],
+      "maturity_label": "editor support only",
+      "market_lanes": [
+        "developer experience",
+        "syntax highlighting",
+        "BuildLang onboarding"
+      ],
+      "receipt_capability": "No compiler or runtime receipt role.",
+      "verified_now": [
+        "README states the extension provides syntax highlighting and language configuration and does not bundle or run the compiler."
+      ],
+      "not_claimed": [
+        "No BuildLang compilation capability.",
+        "No browser automation execution despite example vocabulary."
+      ],
+      "telos_integration": "Developer-experience support for BuildLang proof-packet work.",
+      "publication_boundary": "Editor-support doc only.",
+      "next_actions": [
+        "Keep examples aligned with current BuildLang syntax.",
+        "Do not treat editor fixture examples as executable proof demos."
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "buildlang-tmlanguage",
+      "name": "BuildLang TextMate Grammar",
+      "repo_or_doc": "C:/dev/public/buildlang-tmLanguage",
+      "current_names": [
+        "BuildLang TextMate Grammar"
+      ],
+      "lineage_names": [],
+      "maturity_label": "grammar support only",
+      "market_lanes": [
+        "developer experience",
+        "syntax highlighting",
+        "language ecosystem"
+      ],
+      "receipt_capability": "No compiler or runtime receipt role.",
+      "verified_now": [
+        "README states this is a grammar package, not a compiler or runnable program."
+      ],
+      "not_claimed": [
+        "No BuildLang compilation capability.",
+        "No runtime, backend, or proof-packet capability."
+      ],
+      "telos_integration": "Small support surface for readable BuildLang examples and demos.",
+      "publication_boundary": "Editor-support doc only.",
+      "next_actions": [
+        "Keep grammar docs synchronized with BuildLang keyword and syntax changes.",
+        "Do not cite grammar coverage as compiler maturity evidence."
+      ],
+      "confidence": "high"
+    }
+  ],
+  "integration_priorities": [
+    {
+      "rank": 1,
+      "name": "BuildLang receipt import into Telos and Crucible",
+      "reason": "This is the strongest cross-domain bridge: it makes mathematical, physical, rendering, quant, and security kernels accountable through one receipt shape.",
+      "first_artifact": "Telos fixture consuming buildlang-scientific-runtime-receipt/v0 and emitting a Crucible measurement row."
+    },
+    {
+      "rank": 2,
+      "name": "Color/rendering measurement proof kit",
+      "reason": "Build Color plus Calibrate Pro can turn visual output into measured proof packets rather than subjective screenshots.",
+      "first_artifact": "Profile/transform/device-state packet with Delta E and artifact hashes."
+    },
+    {
+      "rank": 3,
+      "name": "Quant and forecast proof packets",
+      "reason": "Build Finance, Build Oracle, and Build Engine give a concrete high-stakes lane where receipts must block lookahead, live-risk overclaiming, and proxy-metric drift.",
+      "first_artifact": "Paper-mode forecast-to-backtest loop receipt with baseline, split, costs, and non-advice gate."
+    },
+    {
+      "rank": 4,
+      "name": "Build Universe module ledger import",
+      "reason": "The module ecosystem is too broad for README-level truth; Telos should ingest the tier ledger and prevent Tier 3 sketches from becoming product claims.",
+      "first_artifact": "Machine row per Build Universe module with tier, score, reality, scaffolding, and Telos lane."
+    }
+  ],
+  "publication_controls": [
+    "Use BuildLang/buildc for accountable compute claims only when a receipt, replay, and verifier outcome are present.",
+    "Use Build Universe as a domain map and maturity ledger, not as proof that every module is shipped.",
+    "Use Build Color and Calibrate Pro for color/rendering proof demos only after measured output, profile hashes, and device state are captured.",
+    "Use Build Finance, Build Oracle, and Build Engine for quant/forecasting papers only with data lineage, baselines, split rules, costs, and explicit non-advice gates.",
+    "Use Build UI, VS Code, and TextMate docs as support surfaces, not as evidence of compiler/runtime maturity."
+  ],
+  "next_actions": [
+    "Create the Telos BuildLang receipt import fixture.",
+    "Create a Build Universe module-tier subregistry from STATUS.md.",
+    "Create a color/rendering measurement proof-kit schema joining Build Color and Calibrate Pro.",
+    "Create a finance/forecast paper-mode receipt schema joining Build Finance, Build Oracle, Build Engine, Objective Monitor, and loop ledger.",
+    "Resolve Calibrate Pro version wording drift before citing exact release version in public front-door docs."
+  ]
+}

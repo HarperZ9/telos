@@ -1,0 +1,282 @@
+{
+  "schema": "project-telos.proof-witnessing-subregistry/v1",
+  "generated_at": "2026-07-02",
+  "status": "first proof and witnessing consolidation pass",
+  "purpose": "Classify the proof, witness, proof-index, report, and witnessing-thesis repositories that form Project Telos' verification substrate.",
+  "claim_boundary": "This registry is based on current local documentation reads. It is not a release approval, compliance finding, safety decision, or proof that every repo has current passing CI.",
+  "evidence": [
+    {
+      "id": "emet-readme-spec",
+      "paths": [
+        "C:/dev/public/emet/README.md",
+        "C:/dev/public/emet/SPEC.md"
+      ],
+      "summary": "EMET is documented as an external witness with a closed MATCH/DRIFT/UNVERIFIABLE lattice and explicit non-authority boundary.",
+      "confidence": "high"
+    },
+    {
+      "id": "proof-surface-readme-wedges",
+      "paths": [
+        "C:/dev/public/proof-surface/README.md",
+        "C:/dev/public/proof-surface/src/proof_surface/agent_action/README.md",
+        "C:/dev/public/proof-surface/src/proof_surface/research_claim/README.md",
+        "C:/dev/public/proof-surface/src/proof_surface/visual_measurement/README.md",
+        "C:/dev/public/proof-surface/src/proof_surface/ai4science/README.md"
+      ],
+      "summary": "Proof Surface is documented as a stdlib-only contract/validator layer with eleven proof-packet wedges and honesty gates.",
+      "confidence": "high"
+    },
+    {
+      "id": "repo-proof-index-readme-interop",
+      "paths": [
+        "C:/dev/public/repo-proof-index/README.md",
+        "C:/dev/public/repo-proof-index/docs/PROOF-SURFACE-INTEROP.md"
+      ],
+      "summary": "Repo Proof Index is documented as a reviewer-ready index over proof artifacts, not a decision engine.",
+      "confidence": "high"
+    },
+    {
+      "id": "proof-surface-report-readme",
+      "paths": [
+        "C:/dev/public/proof-surface-report/README.md"
+      ],
+      "summary": "Proof Surface Report is documented as a Markdown handoff renderer that rejects authority-shaped language.",
+      "confidence": "high"
+    },
+    {
+      "id": "witnessing-spine-readme",
+      "paths": [
+        "C:/dev/public/witnessing-spine/README.md"
+      ],
+      "summary": "Witnessing Spine is documented as a citable publication corpus with DOI, ORCID, sector steelmans, and witnessing thesis.",
+      "confidence": "high"
+    }
+  ],
+  "totals": {
+    "repos": 5,
+    "doc_count": 112,
+    "rows": 5
+  },
+  "rows": [
+    {
+      "id": "emet",
+      "name": "EMET",
+      "repo_or_doc": "C:/dev/public/emet",
+      "role": "external witness and byte/source-view integrity layer",
+      "maturity_label": "stable v1.0 witness spec with multi-language conformance docs",
+      "core_contracts": [
+        "MATCH / DRIFT / UNVERIFIABLE closed verdict lattice",
+        "raw-byte SHA-256 artifact identity",
+        "source/view coherence",
+        "authority-marker refusal",
+        "audit-chain recheck"
+      ],
+      "telos_integration": "Use as the external witness point for source/view consistency, model-facing views, proof reports, and release-readiness packets.",
+      "publication_boundary": "Can support provenance and integrity claims, but must not be described as trust, approval, safety, authorization, or compliance.",
+      "proof_layer": "witness",
+      "next_actions": [
+        "Map EMET witness receipts into Telos proof packets and Repo Proof Index rows.",
+        "Keep closed verdict vocabulary synchronized in Telos docs.",
+        "Do not copy rationale corpus into product docs without publication labels."
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "proof-surface",
+      "name": "Proof Surface",
+      "repo_or_doc": "C:/dev/public/proof-surface",
+      "role": "contract validators and domain proof-packet wedges",
+      "maturity_label": "stdlib-only validator library with eleven domain wedges",
+      "core_contracts": [
+        "evidence packet",
+        "work-record receipt",
+        "authorization receipt",
+        "witness receipt",
+        "pre-execution gate",
+        "evaluation contract",
+        "claim ledger",
+        "delegation chain",
+        "organ receipt bundle",
+        "domain proof-packet wedges"
+      ],
+      "domain_wedges": [
+        "agent-action",
+        "visual-measurement",
+        "research-claim",
+        "model-eval",
+        "optimization-workflow",
+        "rollout-receipt",
+        "eval-attempt",
+        "ai4science",
+        "conservation",
+        "control-certificate",
+        "competition-attempt"
+      ],
+      "telos_integration": "Use as the portable proof-packet contract layer below Telos demos, research packets, agent-action receipts, Build runtime receipts, and color/quant proof kits.",
+      "publication_boundary": "Proof Surface validates records and rejects overclaiming; it does not grant authority, execute actions, or store private payloads.",
+      "proof_layer": "validator-contracts",
+      "next_actions": [
+        "Map Telos public proof demos to the relevant Proof Surface wedge.",
+        "Use agent-action, research-claim, ai4science, visual-measurement, and conservation wedges as first integration candidates.",
+        "Add a Telos proof-surface bridge fixture once the BuildLang receipt import exists."
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "repo-proof-index",
+      "name": "Repo Proof Index",
+      "repo_or_doc": "C:/dev/public/repo-proof-index",
+      "role": "reviewer-ready proof artifact index",
+      "maturity_label": "Python package and CLI for proof artifact indexing",
+      "core_contracts": [
+        "proof-surface packet index rows",
+        "witness receipt rows",
+        "backend descriptor rows",
+        "release summary mode",
+        "tolerant JSON parsing with evidence-gap summaries"
+      ],
+      "telos_integration": "Use to produce cross-repo proof inventories so Telos can find proof packets, receipts, and evidence gaps before release or publication.",
+      "publication_boundary": "Indexes evidence; does not decide whether evidence is enough.",
+      "proof_layer": "index",
+      "next_actions": [
+        "Run Repo Proof Index over Telos proof artifacts once the working-tree proof docs are staged or normalized.",
+        "Add a registry row for each proof packet family discovered by the index.",
+        "Keep evidence-gap counts separate from release decisions."
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "proof-surface-report",
+      "name": "Proof Surface Report",
+      "repo_or_doc": "C:/dev/public/proof-surface-report",
+      "role": "reviewer-facing Markdown report renderer for proof packets and receipts",
+      "maturity_label": "small Python adapter with CLI and synthetic examples",
+      "core_contracts": [
+        "proof-surface packet rendering",
+        "EMET witness receipt rendering",
+        "authority-shaped language rejection",
+        "unknown-field and ungoverned-verdict rejection"
+      ],
+      "telos_integration": "Use to generate human-readable handoffs for proof demos, papers, and release-review bundles.",
+      "publication_boundary": "Report is evidence handoff only, not certification, trust verdict, release approval, safety decision, or compliance finding.",
+      "proof_layer": "reporter",
+      "next_actions": [
+        "Create a Telos proof-demo report fixture that renders one research packet and one witness receipt.",
+        "Use report output for public demos only after the underlying packet is registry-labeled and verified.",
+        "Keep authority-language rejection aligned with Proof Surface and EMET."
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "witnessing-spine",
+      "name": "The Witnessing Spine",
+      "repo_or_doc": "C:/dev/public/witnessing-spine",
+      "role": "publication corpus for the witnessing thesis and sector steelmans",
+      "maturity_label": "published/citable research corpus with DOI and ORCID metadata in README",
+      "core_contracts": [
+        "five adversarial steelmans",
+        "cross-sector witnessing thesis",
+        "primary-source maturity labels",
+        "AI-assisted disclosure",
+        "citation metadata"
+      ],
+      "telos_integration": "Use as the publication and theory reference for why proof packets need external witnessing, not as a product validator.",
+      "publication_boundary": "Citable thesis corpus; claims remain bounded by the corpus' own source discipline and abductive/proof distinction.",
+      "proof_layer": "publication-thesis",
+      "next_actions": [
+        "Add Witnessing Spine to the publication queue as a theory/market-context reference.",
+        "Cross-link only the synthesis and citation metadata from Telos front-door docs.",
+        "Keep sector steelman claims separate from Telos product capability claims."
+      ],
+      "confidence": "high"
+    }
+  ],
+  "proof_layer_stack": [
+    {
+      "layer": "witness",
+      "tool": "EMET",
+      "job": "Re-derive raw bytes and source/view consistency into closed verdicts."
+    },
+    {
+      "layer": "contract",
+      "tool": "Proof Surface",
+      "job": "Validate evidence packets, receipts, gates, ledgers, and domain proof-packet wedges."
+    },
+    {
+      "layer": "index",
+      "tool": "Repo Proof Index",
+      "job": "Make proof artifacts discoverable and summarize evidence gaps."
+    },
+    {
+      "layer": "report",
+      "tool": "Proof Surface Report",
+      "job": "Render proof packets and witness receipts into reviewer-facing Markdown without authority-shaped language."
+    },
+    {
+      "layer": "theory",
+      "tool": "Witnessing Spine",
+      "job": "Provide the publication-level argument for external witnessing across sectors."
+    }
+  ],
+  "publication_controls": [
+    "Use EMET to support integrity and source/view consistency, not trust or approval.",
+    "Use Proof Surface to validate packet shape and honesty gates, not to grant authority or execute actions.",
+    "Use Repo Proof Index to locate and summarize proof artifacts, not to decide sufficiency.",
+    "Use Proof Surface Report for human-readable handoff only after the underlying packet is verified.",
+    "Use Witnessing Spine as theory/publication context, not as evidence that a Telos tool capability shipped."
+  ],
+  "telos_integration_priorities": [
+    {
+      "rank": 1,
+      "name": "Agent action proof packet bridge",
+      "tools": [
+        "Telos action receipt",
+        "Proof Surface agent-action wedge",
+        "Crucible",
+        "Repo Proof Index"
+      ],
+      "first_artifact": "One sandboxed action receipt converted into a Proof Surface agent-action packet and indexed."
+    },
+    {
+      "rank": 2,
+      "name": "Research claim packet bridge",
+      "tools": [
+        "Telos research packet",
+        "Proof Surface research-claim wedge",
+        "Crucible",
+        "Proof Surface Report"
+      ],
+      "first_artifact": "One causal or QEC packet rendered as proof-surface packet plus reviewer report."
+    },
+    {
+      "rank": 3,
+      "name": "Visual measurement packet bridge",
+      "tools": [
+        "Build Color",
+        "Calibrate Pro",
+        "Proof Surface visual-measurement wedge",
+        "Crucible"
+      ],
+      "first_artifact": "One read-only color measurement packet with artifact digest, metrics, and display caveats."
+    },
+    {
+      "rank": 4,
+      "name": "AI4Science packet bridge",
+      "tools": [
+        "Gather",
+        "BuildLang/buildc",
+        "Proof Surface ai4science wedge",
+        "Crucible",
+        "Learning Forge"
+      ],
+      "first_artifact": "One claim-to-experiment packet with measurement, reproduction status, reviewer objections, and negative-result handling."
+    }
+  ],
+  "next_actions": [
+    "Create a Telos proof-surface bridge fixture for one existing research packet.",
+    "Run Repo Proof Index over Telos proof artifacts after deciding which working-tree proof files are in scope.",
+    "Add Witnessing Spine to the publication queue as theory context, not as product evidence.",
+    "Create a report-rendering fixture with Proof Surface Report for one public proof demo.",
+    "Keep proof/witnessing layers separate in public copy: witness, validator, index, report, theory."
+  ]
+}
