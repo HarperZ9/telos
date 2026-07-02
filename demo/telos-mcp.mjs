@@ -28,12 +28,12 @@ export const tools = [
   },
   {
     name: "telos.room",
-    description: "Use when an agent needs the current five-flagship room summary before routing work. Read-only, zero-auth, no external side effects. Returns a JSON action envelope.",
+    description: "Use when an agent needs the current five-flagship room summary before routing work. Read-only and zero-auth. Requires the sibling gather, crucible, index, and forum source checkouts next to this repo plus a local python interpreter; without them it returns an UNVERIFIABLE envelope naming the missing dependency rather than a live summary. Returns a JSON action envelope.",
     inputSchema: emptyInputSchema
   },
   {
     name: "telos.workflow",
-    description: "Use when validating the local five-flagship golden workflow from source checkouts. Read-only, zero-auth, no external side effects beyond local subprocess reads. Returns JSON receipts and verdict counts.",
+    description: "Use when validating the local five-flagship golden workflow from source checkouts. Read-only and zero-auth, no external side effects beyond local subprocess reads. Requires the sibling gather, crucible, index, and forum source checkouts next to this repo plus a local python interpreter; without them it returns an UNVERIFIABLE envelope naming the missing dependency rather than running the workflow. Returns JSON receipts and verdict counts.",
     inputSchema: emptyInputSchema
   },
   {

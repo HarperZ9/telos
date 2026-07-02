@@ -67,13 +67,33 @@ for (const name of [
   assert.ok(names.has(name), `missing ${name}`);
 }
 
+// These two tools drive sibling gather/crucible/index/forum source checkouts
+// over a local python interpreter. Their descriptions must disclose that hard
+// dependency and the UNVERIFIABLE degradation instead of claiming an
+// unqualified "no external side effects", so they are held to a stricter,
+// dependency-aware contract rather than the blanket side-effect assertion.
+const dependencyBearingTools = new Set(["telos.room", "telos.workflow"]);
+
 for (const tool of tools) {
   assert.equal(tool.inputSchema.type, "object");
   assert.equal(tool.inputSchema.additionalProperties, false);
   assert.match(tool.description, /^Use /, `${tool.name} description must start with usage guidance`);
   assert.match(tool.description, /Read-only/, `${tool.name} description must disclose read-only behavior`);
   assert.match(tool.description, /zero-auth/, `${tool.name} description must disclose auth requirements`);
-  assert.match(tool.description, /no external side effects/, `${tool.name} description must disclose side effects`);
+  if (dependencyBearingTools.has(tool.name)) {
+    assert.match(
+      tool.description,
+      /source checkouts?.*python|python.*source checkouts?/i,
+      `${tool.name} description must disclose the sibling-checkout and python dependency`
+    );
+    assert.match(
+      tool.description,
+      /UNVERIFIABLE/,
+      `${tool.name} description must disclose the UNVERIFIABLE degradation when the dependency is absent`
+    );
+  } else {
+    assert.match(tool.description, /no external side effects/, `${tool.name} description must disclose side effects`);
+  }
   assert.match(tool.description, /Returns? /, `${tool.name} description must state return shape`);
 }
 

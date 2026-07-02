@@ -11,7 +11,7 @@ MCP freshness, and the certificate-loop demo. Since then, `main` added a
 doctor suite, a CI triage lane, browser evidence packets, a Learning Forge
 research lane, the OSS Proof Showcase scout, a render seam for the learn
 flagship, and the packaging needed to install the workbench as commands.
-The MCP surface grew from 64 to 65 tools.
+The MCP surface grew from 64 to 69 tools (telos from 37 to 41).
 
 ## Doctor suite
 
@@ -30,7 +30,8 @@ The MCP surface grew from 64 to 65 tools.
 
 - `project-telos.browser-evidence/v1` packet contract,
   `demo/browser-evidence.mjs` native verbs, and the `telos.browser.evidence`
-  MCP tool (tool count 64 to 65).
+  MCP tool (tool count 64 to 65). The proof lanes below then carried the
+  surface to 69 tools.
 
 ## Research and delivery lanes
 
@@ -40,6 +41,15 @@ The MCP surface grew from 64 to 65 tools.
 - Second-level flagship queue exposure and workstation substrate intake.
 - `telos render <specPath>` CLI subcommand (`demo/telos-cli.mjs`) for the
   learn flagship interop seam.
+
+## Proof lanes
+
+- Four fixture-backed proof packets over `demo/proof.mjs`, each with its own
+  verifier and exporter: agent-action (`telos.proof`), research-claim
+  (`telos.proof.research`), visual-truth (`telos.proof.visual`), and build
+  scientific-runtime (`telos.proof.build`).
+- These four read-only MCP tools moved the five-flagship catalog from 65 to
+  69 tools and grew the telos surface from 37 to 41 tools.
 
 ## Presentation and brand
 
