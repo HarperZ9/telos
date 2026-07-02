@@ -1,0 +1,192 @@
+{
+  "ok": true,
+  "thesis": {
+    "id": "7460fe9c785c7889",
+    "title": "Twenty-second-wave hyphal context benchmark packet",
+    "registered_at": 1783019061.2049894,
+    "disposition": "publishable",
+    "seal": "7460fe9c785c788964a197cbfc7f839ca77eca5aac0267a2c2a967dd37589c1c",
+    "claims": [
+      {
+        "id": "cbfd7c37fcc4adcb",
+        "sha256": "cbfd7c37fcc4adcb41c2223c84d6e959f3de0b451b987a7b4b907791250540bf"
+      },
+      {
+        "id": "c99f839dc9d3fb93",
+        "sha256": "c99f839dc9d3fb93b9d33bd7fb68b980b9b9f1a0eddca2194226357a58890d38"
+      },
+      {
+        "id": "b45181bfb5ccaa27",
+        "sha256": "b45181bfb5ccaa2783cce024aeea89d992ed6541198d33f0253c9a10b18786ec"
+      }
+    ]
+  },
+  "refutations": [
+    {
+      "claim_id": "cbfd7c37fcc4adcb",
+      "claim_sha256": "cbfd7c37fcc4adcb41c2223c84d6e959f3de0b451b987a7b4b907791250540bf",
+      "challenge": "test the stated falsification: The benchmark receipt reports a non-matching result, missing required evidence classes, weaker guardrail recovery, or no token reduction.",
+      "measurable": "The benchmark receipt reports a non-matching result, missing required evidence classes, weaker guardrail recovery, or no token reduction.",
+      "source": "null"
+    },
+    {
+      "claim_id": "c99f839dc9d3fb93",
+      "claim_sha256": "c99f839dc9d3fb93b9d33bd7fb68b980b9b9f1a0eddca2194226357a58890d38",
+      "challenge": "test the stated falsification: Publication copy presents the fixture as proof that hyphal routing wins generally or as a measured model answer-quality result.",
+      "measurable": "Publication copy presents the fixture as proof that hyphal routing wins generally or as a measured model answer-quality result.",
+      "source": "null"
+    },
+    {
+      "claim_id": "b45181bfb5ccaa27",
+      "claim_sha256": "b45181bfb5ccaa2783cce024aeea89d992ed6541198d33f0253c9a10b18786ec",
+      "challenge": "test the stated falsification: The benchmark receipt includes raw source-body or raw-context payload fields.",
+      "measurable": "The benchmark receipt includes raw source-body or raw-context payload fields.",
+      "source": "null"
+    }
+  ],
+  "assessment": {
+    "started_at": 1783019061.2129874,
+    "thesis_id": "7460fe9c785c7889",
+    "thesis_seal": "7460fe9c785c788964a197cbfc7f839ca77eca5aac0267a2c2a967dd37589c1c",
+    "claims": 3,
+    "match": 3,
+    "drift": 0,
+    "unverifiable": 0,
+    "verdict_seal": "04a19f022f6e56aaed3e5a1ddabb4f6e30b80ac22224d9480e74f32b0d3bd312",
+    "measurement_seal": "390d521056f2d7095eba64609660ded7e1bee3465180e34cb11df661d926454d",
+    "disposition": "publishable",
+    "stored": null,
+    "verdicts": [
+      {
+        "claim_id": "cbfd7c37fcc4adcb",
+        "claim_sha256": "cbfd7c37fcc4adcb41c2223c84d6e959f3de0b451b987a7b4b907791250540bf",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.1,
+        "margin": 1.0,
+        "method": "hyphal-context-benchmark-cli",
+        "grounds": "deviation 0 within tolerance 0.1",
+        "disposition": "publishable"
+      },
+      {
+        "claim_id": "c99f839dc9d3fb93",
+        "claim_sha256": "c99f839dc9d3fb93b9d33bd7fb68b980b9b9f1a0eddca2194226357a58890d38",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.1,
+        "margin": 1.0,
+        "method": "benchmark-boundary-scan",
+        "grounds": "deviation 0 within tolerance 0.1",
+        "disposition": "publishable"
+      },
+      {
+        "claim_id": "b45181bfb5ccaa27",
+        "claim_sha256": "b45181bfb5ccaa2783cce024aeea89d992ed6541198d33f0253c9a10b18786ec",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.1,
+        "margin": 1.0,
+        "method": "raw-payload-boundary-scan",
+        "grounds": "deviation 0 within tolerance 0.1",
+        "disposition": "publishable"
+      }
+    ],
+    "measurements": [
+      {
+        "claim_id": "cbfd7c37fcc4adcb",
+        "claim_sha256": "cbfd7c37fcc4adcb41c2223c84d6e959f3de0b451b987a7b4b907791250540bf",
+        "deviation": 0.0,
+        "tolerance": 0.1,
+        "method": "hyphal-context-benchmark-cli",
+        "measured_at": 1783019061.2129874,
+        "evidence": [
+          "demo/hyphal-context-benchmark.mjs",
+          "demo/hyphal-context-benchmark.test.mjs",
+          "docs/outreach/receipts/twenty-second-wave/hyphal-context-benchmark-2026-07-02.json"
+        ]
+      },
+      {
+        "claim_id": "c99f839dc9d3fb93",
+        "claim_sha256": "c99f839dc9d3fb93b9d33bd7fb68b980b9b9f1a0eddca2194226357a58890d38",
+        "deviation": 0.0,
+        "tolerance": 0.1,
+        "method": "benchmark-boundary-scan",
+        "measured_at": 1783019061.2129874,
+        "evidence": [
+          "docs/research/whitepapers/HYPHAL-CONTEXT-BENCHMARK-FOR-RECEIPT-ROUTING-2026-07-02.md",
+          "docs/research/official/HYPHAL-CONTEXT-BENCHMARK-FOR-RECEIPT-ROUTING-2026-07-02.md",
+          "docs/outreach/TWENTY-SECOND-WAVE-HYPHAL-CONTEXT-BENCHMARK-2026-07-02.md"
+        ]
+      },
+      {
+        "claim_id": "b45181bfb5ccaa27",
+        "claim_sha256": "b45181bfb5ccaa2783cce024aeea89d992ed6541198d33f0253c9a10b18786ec",
+        "deviation": 0.0,
+        "tolerance": 0.1,
+        "method": "raw-payload-boundary-scan",
+        "measured_at": 1783019061.2129874,
+        "evidence": [
+          "docs/outreach/receipts/twenty-second-wave/hyphal-context-benchmark-2026-07-02.json",
+          "demo/hyphal-context-benchmark.test.mjs"
+        ]
+      }
+    ],
+    "seal": "ccfb0ee4c6033b28d7d13fe4d9d73da41263606eead2c0fbb9ef6191a4ee282b"
+  },
+  "verdicts": [
+    {
+      "claim_id": "cbfd7c37fcc4adcb",
+      "claim_sha256": "cbfd7c37fcc4adcb41c2223c84d6e959f3de0b451b987a7b4b907791250540bf",
+      "status": "MATCH",
+      "disposition": "publishable",
+      "deviation": 0.0,
+      "tolerance": 0.1,
+      "margin": 1.0,
+      "method": "hyphal-context-benchmark-cli",
+      "grounds": "deviation 0 within tolerance 0.1"
+    },
+    {
+      "claim_id": "c99f839dc9d3fb93",
+      "claim_sha256": "c99f839dc9d3fb93b9d33bd7fb68b980b9b9f1a0eddca2194226357a58890d38",
+      "status": "MATCH",
+      "disposition": "publishable",
+      "deviation": 0.0,
+      "tolerance": 0.1,
+      "margin": 1.0,
+      "method": "benchmark-boundary-scan",
+      "grounds": "deviation 0 within tolerance 0.1"
+    },
+    {
+      "claim_id": "b45181bfb5ccaa27",
+      "claim_sha256": "b45181bfb5ccaa2783cce024aeea89d992ed6541198d33f0253c9a10b18786ec",
+      "status": "MATCH",
+      "disposition": "publishable",
+      "deviation": 0.0,
+      "tolerance": 0.1,
+      "margin": 1.0,
+      "method": "raw-payload-boundary-scan",
+      "grounds": "deviation 0 within tolerance 0.1"
+    }
+  ],
+  "measurement_warnings": [],
+  "checks": {
+    "seals_ok": true,
+    "thesis_ok": true,
+    "verdicts_rederive": true
+  },
+  "report": "docs\\outreach\\receipts\\twenty-second-wave-hyphal-context-report-2026-07-02.md",
+  "record": "docs\\outreach\\receipts\\twenty-second-wave-hyphal-context-run-2026-07-02.json",
+  "bundle": null,
+  "spec": null,
+  "review": null,
+  "verifier": {
+    "mode": "cleanroom",
+    "inputs": [],
+    "excluded": [
+      "worker context",
+      "reasoning trace",
+      "intermediate steps"
+    ],
+    "checkability": "If success cannot be evaluated from the original spec and the artifact, the spec is not checkable yet."
+  }
+}
