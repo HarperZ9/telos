@@ -1,0 +1,24 @@
+{
+  "version": "proof-packet/twentieth-wave-vector-finite-operator/v1",
+  "packet_id": "twentieth-wave-vector-finite-operator",
+  "claim": "A two-component finite integer vector/operator summation-by-parts identity type-checks in Lean, but it does not prove smooth periodic integration by parts or Navier-Stokes.",
+  "scope": "Project Telos twentieth-wave prooflesson for finite vector/operator replay boundaries",
+  "sources": [
+    {
+      "ref": "docs/research/proof-packets/navier-stokes-periodic-skew-symmetry-v0/formal/lean/VectorFiniteOperatorPreflight.lean",
+      "sha256": "a4d2682ea6bb4d9a38957a37b95cd9cdc63ba9ae9dedb2a559e8a47c8d12989a"
+    },
+    {
+      "ref": "docs/outreach/receipts/twentieth-wave/source-lead-demotion-gate.json",
+      "sha256": null
+    },
+    {
+      "ref": "docs/outreach/receipts/twentieth-wave/lean-vector-finite-operator-sbp-replay-2026-07-02.json",
+      "sha256": null
+    }
+  ],
+  "verdicts": {
+    "overall": "MATCH"
+  },
+  "decision_summary": "Lean compilation establishes the finite theorem within the stated scope. The packet explicitly excludes smooth PDE and Navier-Stokes claims."
+}
