@@ -11,9 +11,28 @@
 
 ![node: 24 CI, 20+ registry](https://img.shields.io/badge/node-24%20CI%2C%2020%2B%20registry-blue.svg)
 ![CI](https://github.com/HarperZ9/telos/actions/workflows/ci.yml/badge.svg)
-![version: 0.1.0](https://img.shields.io/badge/version-0.1.0-informational.svg)
+![version: 0.2.0](https://img.shields.io/badge/version-0.2.0-informational.svg)
 ![deps: none](https://img.shields.io/badge/deps-none-success.svg)
 ![license: fair-source](https://img.shields.io/badge/license-fair--source-blue.svg)
+
+## Run it
+
+Zero dependencies. Node 20 or newer.
+
+```bash
+# Once published to npm (tagging and publishing are operator-gated):
+npx --package project-telos-mcp telos-mcp        # stdio MCP server
+npx --package project-telos-mcp telos catalog --summary
+
+# From a checkout, no install:
+node demo/telos-mcp.mjs                          # stdio MCP server
+node demo/telos.mjs catalog --summary            # CLI router over the demo commands
+
+# Docker:
+docker build -t project-telos . && docker run -i project-telos
+
+# Visual certificate-loop surface: open demo/index.html in a browser.
+```
 
 ## Try it
 
@@ -140,9 +159,9 @@ The first rule is visibility before transplanting: a dormant tool gets a lane, a
 
 ## Current status
 
-- **Release:** `0.1.0` source registry package; command surface is `node demo/run.mjs`, `node demo/room.mjs`, `node demo/status.mjs`, `node demo/doctor.mjs`, `node demo/catalog.mjs`, `node demo/server-manifest.mjs`, `node demo/mcp-freshness.mjs`, `node demo/ci-doctor.mjs`, `node demo/ci-triage.mjs`, `node demo/presentation-doctor.mjs`, `node demo/accessibility-doctor.mjs`, `node demo/performance-doctor.mjs`, `node demo/compatibility-doctor.mjs`, `node demo/operator-doctor.mjs`, `node demo/admission-telemetry.mjs`, `node demo/context-envelope.mjs`, `node demo/context-pack.mjs`, `node demo/action-receipt.mjs`, `node demo/loop-ledger.mjs`, `node demo/model-foundry.mjs`, `node demo/learning-forge.mjs`, `node demo/learning-forge-labs.mjs`, `node demo/showcase.mjs`, `node demo/research-seed.mjs`, `node demo/thermodynamic-ai-chip-receipt.mjs`, `node demo/rendering-research.mjs`, `node demo/rendering-capabilities.mjs`, `node demo/measurement-layers.mjs`, `node demo/creative-engine.mjs`, `node demo/creative-kernels.mjs`, `node demo/revival-registry.mjs`, `node demo/second-level-flagship-queue.mjs`, `node demo/workstation-substrate.mjs`, `node demo/display-calibration.mjs`, `node demo/browser-evidence.mjs`, and `node demo/flagship-workflow.mjs`.
+- **Release:** `0.2.0` source registry package; command surface is `node demo/run.mjs`, `node demo/room.mjs`, `node demo/status.mjs`, `node demo/doctor.mjs`, `node demo/catalog.mjs`, `node demo/server-manifest.mjs`, `node demo/mcp-freshness.mjs`, `node demo/ci-doctor.mjs`, `node demo/ci-triage.mjs`, `node demo/presentation-doctor.mjs`, `node demo/accessibility-doctor.mjs`, `node demo/performance-doctor.mjs`, `node demo/compatibility-doctor.mjs`, `node demo/operator-doctor.mjs`, `node demo/admission-telemetry.mjs`, `node demo/context-envelope.mjs`, `node demo/context-pack.mjs`, `node demo/action-receipt.mjs`, `node demo/loop-ledger.mjs`, `node demo/model-foundry.mjs`, `node demo/learning-forge.mjs`, `node demo/learning-forge-labs.mjs`, `node demo/showcase.mjs`, `node demo/research-seed.mjs`, `node demo/thermodynamic-ai-chip-receipt.mjs`, `node demo/rendering-research.mjs`, `node demo/rendering-capabilities.mjs`, `node demo/measurement-layers.mjs`, `node demo/creative-engine.mjs`, `node demo/creative-kernels.mjs`, `node demo/revival-registry.mjs`, `node demo/second-level-flagship-queue.mjs`, `node demo/workstation-substrate.mjs`, `node demo/display-calibration.mjs`, `node demo/browser-evidence.mjs`, and `node demo/flagship-workflow.mjs`.
 - **Operator surface:** `node demo/telos-mcp.mjs` exposes native MCP tools: `telos.status`, `telos.doctor`, `telos.room`, `telos.catalog`, `telos.workflow`, `telos.server.manifest`, `telos.mcp.freshness`, `telos.ci.doctor`, `telos.ci.triage`, `telos.presentation.doctor`, `telos.accessibility.doctor`, `telos.performance.doctor`, `telos.compatibility.doctor`, `telos.operator.doctor`, `telos.admission.telemetry`, `telos.context.envelope`, `telos.context.pack`, `telos.action.receipt`, `telos.loop.ledger`, `telos.objective.monitor`, `telos.model.foundry`, `telos.learning.forge`, `telos.learning.labs`, `telos.research.seed`, `telos.research.thermodynamic`, `telos.rendering.research`, `telos.rendering.capabilities`, `telos.measurement.layers`, `telos.creative.engine`, `telos.creative.kernels`, `telos.revival.registry`, `telos.second_level.queue`, `telos.workstation.substrate`, `telos.display.calibration`, `telos.native.control`, `telos.browser.evidence`, and `telos.showcase.scout`.
-- **Current floor:** the operator room reconciles 65 preferred tools plus 12 declared auxiliary compatibility tools across gather, crucible, index, forum, and telos, with a provider-neutral catalog, executable server manifest, MCP freshness verifier, CI doctor for GitHub Actions runtime/action drift, CI triage for separating fatal gates from runtime warnings, presentation doctor for README/changelog/brand parity, accessibility doctor for Studio host quality, performance doctor for static byte/asset/embed budgets, compatibility doctor for protocol and host parity, operator doctor for discoverability parity, browser evidence packets for automation review, and OSS Proof Showcase scout across CLI, MCP, plugin, IDE, TUI, and app hosts. See [CHANGELOG.md](CHANGELOG.md).
+- **Current floor:** the operator room reconciles 65 preferred tools plus 13 declared auxiliary compatibility tools across gather, crucible, index, forum, and telos, with a provider-neutral catalog, executable server manifest, MCP freshness verifier, CI doctor for GitHub Actions runtime/action drift, CI triage for separating fatal gates from runtime warnings, presentation doctor for README/changelog/brand parity, accessibility doctor for Studio host quality, performance doctor for static byte/asset/embed budgets, compatibility doctor for protocol and host parity, operator doctor for discoverability parity, browser evidence packets for automation review, and OSS Proof Showcase scout across CLI, MCP, plugin, IDE, TUI, and app hosts. See [CHANGELOG.md](CHANGELOG.md).
 - **Proof lane:** `node demo/showcase.mjs scout --fixture --json` starts the OSS Proof Showcase, a local-first path from public issue evidence to PR-readiness packets.
 - **Brand renderer:** `python tools/render_flagship_heroes.py --check-existing --public-root ..` verifies the five README hero PNGs and brand receipts without redistributing the operator-owned fonts.
 
