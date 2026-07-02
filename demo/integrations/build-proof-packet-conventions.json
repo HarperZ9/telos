@@ -1,0 +1,386 @@
+{
+  "schema": "project-telos.build-proof-packet/v1",
+  "verified_on": "2026-07-02",
+  "purpose": "Define a build scientific-runtime proof packet: the durable, independently re-checkable justification for one bounded accountable-compute claim. A source program (a buildc-compiled scientific routine, identified by a SHA-256 source digest) undergoes a transformation (a numerical run over a backend), and a claimed invariant (a conserved quantity or constraint such as total energy) is recomputed from the run's embedded samples and checked to hold within a bounded tolerance. A required negative fixture is a control run that violates the invariant and must be detected. This realizes the BuildLang scientific-runtime demo without requiring the buildlang toolchain: the buildc receipt is a fixture carrying the source digest, an effect and policy summary, a backend label, the run samples, and the claimed invariant. A failed or unverifiable run still produces a valid packet: a negative result is evidence, not a discarded run.",
+  "sources_checked": [
+    {
+      "name": "project-telos.research-proof-packet/v1",
+      "path": "demo/integrations/research-proof-packet-conventions.json",
+      "role": "supplies the sibling lane style this contract mirrors: canonical hash scope, derived-not-asserted verdict, required negative fixture, recompute-from-embedded-materials verifier, and the frozen conformance-fixture and negative-test-case blocks"
+    },
+    {
+      "name": "project-telos.visual-proof-packet/v1",
+      "path": "demo/integrations/visual-proof-packet-conventions.json",
+      "role": "supplies the recompute-with-tolerance-ceiling pattern: a load-bearing measurement is recomputed from embedded samples, an oversized author-declared tolerance is rejected, and an empty sample set is UNVERIFIABLE rather than a silent pass"
+    },
+    {
+      "name": "project-telos.buildlang-receipt-verification/v1",
+      "path": "fixture:buildc-receipt",
+      "role": "supplies the receipt convention a source is identified by: a SHA-256 source digest over the embedded source program text, an effect and policy summary, and a backend label. The receipt is carried as a fixture so the lane needs no buildlang toolchain at runtime"
+    },
+    {
+      "name": "crucible verdict",
+      "path": "external:crucible/thesis-measurements",
+      "role": "supplies the check-to-measurement mapping a verdict is derived from, joined by check name; a conserved run is a MATCH, a control run that keeps the invariant is a DRIFT of the check itself"
+    },
+    {
+      "name": "project-telos.context-envelope/v1",
+      "path": "demo/integrations/context-envelope-conventions.json",
+      "role": "supplies the optional context-ref shape joined by envelope id and content hash"
+    },
+    {
+      "name": "conservation-proof-packet/v0",
+      "path": "c:/dev/public/proof-surface/src/proof_surface/conservation/packet.py",
+      "commit": "875703262f561c49ef7f05ebc88b6c44059e2a96",
+      "role": "the external export target the exporter conforms to; validated read-only against its ROOT_FIELDS and shared gates, never imported or spawned at runtime"
+    }
+  ],
+  "contract": {
+    "source_program_embedded_for_digest_recompute": true,
+    "source_digest_is_sha256_over_embedded_program": true,
+    "invariant_recomputed_from_embedded_run_samples": true,
+    "invariant_tolerance_bounded_to_metric_range": true,
+    "negative_fixture_required": true,
+    "negative_fixture_must_break_the_invariant": true,
+    "empty_run_samples_is_unverifiable": true,
+    "backend_label_honest_no_maturity_overclaim": true,
+    "verdict_derived_not_asserted": true,
+    "canonical_hash_excludes_wall_clock": true,
+    "verification_required": "Every packet verdict is MATCH, DRIFT, or UNVERIFIABLE. A run with no samples recomputes nothing and is UNVERIFIABLE, never MATCH. A negative fixture that does not break the invariant has no discriminating power and lowers the verdict, never a silent pass."
+  },
+  "roadmap_flow": {
+    "steps": [
+      "source code: a scientific routine is written and compiled by buildc; the receipt carries the source program text and its SHA-256 digest",
+      "buildc receipt: an effect and policy summary and an honest backend label are recorded alongside the source digest",
+      "numerical run: the routine runs over the backend and emits an ordered series of run samples (here time, position, velocity of a harmonic oscillator)",
+      "invariant measurement: a claimed conserved quantity (the mean total energy) and a conservation-quality metric (the maximum relative energy drift) are recomputed from the embedded samples with stdlib math",
+      "verifier: the source digest, the claimed invariant value, and the drift are recomputed and checked within bounded tolerances; a required negative control run must break the invariant; the overall verdict is folded from the checks"
+    ]
+  },
+  "invariant_recompute_relation": {
+    "claim": "An invariant is a load-bearing claim, not an assertion. The claimed invariant value and the conservation drift are recomputed from the run's embedded samples using stdlib math only. A sample series that carries no samples cannot be recomputed: that is an UNVERIFIABLE evidence gap, never a silent pass.",
+    "physical_model": "A one-dimensional harmonic oscillator of mass m and stiffness k. Each sample carries [t, position x, velocity v]. The total mechanical energy of a sample is E = 0.5 m v*v + 0.5 k x*x. For an undamped oscillator E is a conserved quantity, so its value is constant along the run.",
+    "recompute_methods": {
+      "mean_total_energy": "Recompute E at every embedded sample from m, k, and the sample's position and velocity, then take the arithmetic mean over the run. The claimed invariant value must equal this recomputed mean within its tolerance.",
+      "max_relative_energy_drift": "Recompute E at every embedded sample, take the recomputed mean, then take the maximum over samples of abs(E_i - mean) / mean. This is the conservation-quality metric: a conserved run keeps it near zero, a damped or lossy control drives it far above tolerance."
+    },
+    "tolerance_rule": "deviation is the absolute difference between the claimed value and the recomputed value. A deviation at or below tolerance is a per-invariant MATCH; a deviation above tolerance is a per-invariant DRIFT carrying the recomputed value; a claim with no recomputable basis is a per-invariant UNVERIFIABLE.",
+    "tolerance_ceiling_rule": "Tolerance is bounded to a small fraction of each metric's physical range so an oversized author-declared tolerance can never nullify the recompute's discriminating power. max_relative_energy_drift is a relative fraction on [0, 1] and its tolerance may not exceed 0.1; mean_total_energy is bounded to a small fraction of the energy scale and its tolerance may not exceed one hundredth of the recomputed mean energy. A tolerance above its ceiling is a DRIFT (tolerance_exceeds_bound), never a silent pass.",
+    "empty_samples_rule": "A run with no samples recomputes nothing, so it never reaches MATCH. An empty sample series is an UNVERIFIABLE evidence gap (no_run_samples): nothing was checked, so no claim is established.",
+    "negative_fixture_rule": "The negative fixture is a control run that must break the invariant. Its max_relative_energy_drift is recomputed the same way and must exceed the claimed conservation tolerance. A control whose recomputed drift stays within tolerance does not break the invariant, so the check has no discriminating power: that is a DRIFT (negative_control_conserved), never a silent pass."
+  },
+  "state_model": {
+    "verification_verdicts": [
+      "MATCH",
+      "DRIFT",
+      "UNVERIFIABLE"
+    ],
+    "invariant_methods": [
+      "mean_total_energy",
+      "max_relative_energy_drift"
+    ],
+    "backend_maturity": {
+      "note": "an honest label for the backend the run executed over. verified means a checked reference backend; experimental means an unproven backend whose results are not load-bearing. A backend outside this set is a state_model_violation.",
+      "values": [
+        "verified",
+        "experimental"
+      ]
+    },
+    "effect_classes": {
+      "note": "the buildc receipt effect summary. A pure numerical run declares none or read; a run that writes or calls out declares the wider class, which is disclosed, not hidden.",
+      "values": [
+        "none",
+        "read",
+        "write",
+        "external_call",
+        "mixed"
+      ]
+    }
+  },
+  "required_fields": [
+    "schema",
+    "packet_id",
+    "claim",
+    "scope",
+    "receipt.source_id",
+    "receipt.source_program",
+    "receipt.source_digest",
+    "receipt.effect_class",
+    "receipt.policy_summary",
+    "receipt.backend_label",
+    "receipt.backend_maturity",
+    "run.constants.mass",
+    "run.constants.stiffness",
+    "run.samples",
+    "invariant.name",
+    "invariant.method",
+    "invariant.value",
+    "invariant.unit",
+    "invariant.tolerance",
+    "drift.method",
+    "drift.value",
+    "drift.tolerance",
+    "negative_fixture.id",
+    "negative_fixture.description",
+    "negative_fixture.samples",
+    "negative_fixture.drift_method",
+    "negative_fixture.conservation_tolerance",
+    "boundary_run.id",
+    "boundary_run.description",
+    "boundary_run.samples",
+    "packet_hash"
+  ],
+  "adapter_interfaces": {
+    "assembler": {
+      "accepts": "a conformance fixture (happy_path or an operator-supplied fixture)",
+      "returns": "a canonical build proof packet whose source digest is recomputed from the embedded source program, plus packet_hash over the hash scope"
+    },
+    "verifier": {
+      "accepts": "a build proof packet",
+      "returns": "named check results, a typed failure list, and a derived verdict MATCH, DRIFT, or UNVERIFIABLE"
+    },
+    "exporter": {
+      "accepts": "a build proof packet",
+      "returns": "a proof-surface conservation-proof-packet/v0 shaped object whose decision_summary is derived from the overall verdict"
+    }
+  },
+  "join_interfaces": {
+    "buildc_receipt": {
+      "join_field": "receipt.source_digest",
+      "note": "the receipt carries the source program text and its SHA-256 digest; the verifier recomputes the digest from the program and reports DRIFT on mismatch. The buildlang toolchain is never invoked: the receipt is a fixture"
+    },
+    "crucible_verdict": {
+      "join_field": "invariant.method",
+      "note": "the invariant recompute is a crucible measurement: the claimed value maps to a deviation from the recomputed value, and the conservation drift maps to a second measurement, both fail-closed"
+    },
+    "context_envelope": {
+      "join_field": "context_refs[].envelope_hash",
+      "note": "optional; when present, each context ref joins a context envelope by id and content hash"
+    }
+  },
+  "export_contract": {
+    "target_schema": "conservation-proof-packet/v0",
+    "proof_surface_root_fields": [
+      "version",
+      "packet_id",
+      "claim",
+      "scope",
+      "sources",
+      "transformation",
+      "invariant",
+      "witnesses",
+      "negative_fixture",
+      "boundary_fixture",
+      "failure_labels",
+      "verdicts",
+      "uncertainty",
+      "decision_summary"
+    ],
+    "digest_form": "bare-64-hex",
+    "mapping": {
+      "note": "how the build packet maps onto the conservation shape",
+      "sources": "the buildc receipt source ref and its bare-hex source digest",
+      "transformation": "the numerical run, described with an honest backend label and the scientific-compute domain",
+      "invariant": "the claimed conserved quantity name and its declared definition",
+      "witnesses": "one numeric witness per recompute method (the claimed-value deviation and the conservation drift), each carrying the recomputed drift and its tolerance",
+      "negative_fixture": "the control run, carrying the recomputed drift, the conservation tolerance, and breaks_invariant true when the recomputed drift exceeds tolerance",
+      "boundary_fixture": "the boundary run, showing the conservation goal holding while the specific claimed value fails, so a sufficient-not-necessary boundary is witnessed"
+    },
+    "decision_summary_source": "derived from the packet overall verdict, not from any invariant or drift field",
+    "decision_summary_map": {
+      "note": "proof-surface overall verdict to decision_summary, from _decision.derive_decision_summary",
+      "MATCH": {
+        "decision": "approve",
+        "confidence": "high"
+      },
+      "DRIFT": {
+        "decision": "block",
+        "confidence": "high"
+      },
+      "UNVERIFIABLE": {
+        "decision": "escalate",
+        "confidence": "low"
+      }
+    },
+    "failure_label_map": {
+      "note": "telos build failure codes to proof-surface FAILURE_CODES (closed set in _failure.py at proof-surface HEAD)",
+      "missing_required_field": "evidence_gap",
+      "no_run_samples": "evidence_gap",
+      "invariant_not_recomputable": "evidence_gap",
+      "source_digest_mismatch": "binding_failed",
+      "invariant_value_mismatch": "binding_failed",
+      "drift_exceeds_tolerance": "binding_failed",
+      "packet_hash_mismatch": "binding_failed",
+      "state_model_violation": "binding_failed",
+      "tolerance_exceeds_bound": "binding_failed",
+      "negative_control_conserved": "verification_unverifiable",
+      "embedded_verdict_not_derived": "verification_unverifiable"
+    }
+  },
+  "conformance_fixture": {
+    "happy_path": {
+      "packet_id": "buildprf_20260702_001",
+      "claim": "The buildc-compiled harmonic-oscillator routine conserves total mechanical energy over the run: the recomputed mean energy equals the claimed invariant value and the maximum relative energy drift stays within tolerance, and a damped control run breaks the invariant and is detected.",
+      "scope": "one bounded numerical run of a one-dimensional harmonic oscillator over the C verified backend, checked from the run's embedded position and velocity samples, not a general claim about the buildc toolchain or any other routine",
+      "receipt": {
+        "source_id": "src_harmonic_oscillator",
+        "source_program": "fn step(state: OscState, dt: f64) -> OscState { let a = -(state.k / state.m) * state.x; OscState { x: state.x + state.v * dt, v: state.v + a * dt, m: state.m, k: state.k } }\nfn energy(state: OscState) -> f64 { 0.5 * state.m * state.v * state.v + 0.5 * state.k * state.x * state.x }",
+        "source_digest": "recompute",
+        "effect_class": "none",
+        "policy_summary": "pure numerical routine: no file writes, no external calls, no clock reads inside the hot loop; deterministic given the initial state and step count",
+        "backend_label": "C verified backend",
+        "backend_maturity": "verified"
+      },
+      "run": {
+        "constants": {
+          "mass": 1.0,
+          "stiffness": 4.0
+        },
+        "sample_layout": ["t", "position", "velocity"],
+        "samples": [[0,1,0],[0.05,0.995004,-0.199667],[0.1,0.980067,-0.397339],[0.15,0.955336,-0.59104],[0.2,0.921061,-0.778837],[0.25,0.877583,-0.958851],[0.3,0.825336,-1.129285],[0.35,0.764842,-1.288435],[0.4,0.696707,-1.434712],[0.45,0.62161,-1.566654],[0.5,0.540302,-1.682942],[0.55,0.453596,-1.782415],[0.6,0.362358,-1.864078],[0.65,0.267499,-1.927116],[0.7,0.169967,-1.970899],[0.75,0.070737,-1.99499],[0.8,-0.0292,-1.999147],[0.85,-0.128844,-1.98333],[0.9,-0.227202,-1.947695],[0.95,-0.32329,-1.8926],[1,-0.416147,-1.818595],[1.05,-0.504846,-1.726419],[1.1,-0.588501,-1.616993],[1.15,-0.666276,-1.49141],[1.2,-0.737394,-1.350926],[1.25,-0.801144,-1.196944],[1.3,-0.856889,-1.031003],[1.35,-0.904072,-0.85476],[1.4,-0.942222,-0.669976],[1.45,-0.970958,-0.478499],[1.5,-0.989992,-0.28224],[1.55,-0.999135,-0.083161],[1.6,-0.998295,0.116748]]
+      },
+      "invariant": {
+        "name": "total_mechanical_energy",
+        "declared": "E = 0.5 m v*v + 0.5 k x*x, constant for an undamped oscillator",
+        "method": "mean_total_energy",
+        "value": 1.999999950936182,
+        "unit": "joule",
+        "tolerance": 0.0001
+      },
+      "drift": {
+        "method": "max_relative_energy_drift",
+        "value": 0.0000010321721164521973,
+        "tolerance": 0.001
+      },
+      "negative_fixture": {
+        "id": "neg_damped_control",
+        "description": "A control the claim must survive: the same oscillator with a linear damping term, so energy decays and is not conserved. The conservation check must reject this control. If the check accepted it, the check would not discriminate and the conservation claim would not be established.",
+        "drift_method": "max_relative_energy_drift",
+        "conservation_tolerance": 0.001,
+        "samples": [[0,1,-0.35],[0.05,0.977893,-0.532467],[0.1,0.946945,-0.703429],[0.15,0.907764,-0.861605],[0.2,0.861016,-1.00588],[0.25,0.807423,-1.135317],[0.3,0.747745,-1.249154],[0.35,0.682777,-1.34681],[0.4,0.61334,-1.427883],[0.45,0.540269,-1.492148],[0.5,0.464407,-1.539551],[0.55,0.386593,-1.570208],[0.6,0.307661,-1.584392],[0.65,0.228422,-1.582531],[0.7,0.149665,-1.565196],[0.75,0.072148,-1.533089],[0.8,-0.003411,-1.487033],[0.85,-0.076338,-1.42796],[0.9,-0.146007,-1.356897],[0.95,-0.211846,-1.274956],[1,-0.273341,-1.183315],[1.05,-0.330037,-1.083207],[1.1,-0.381542,-0.975906],[1.15,-0.427529,-0.862713],[1.2,-0.467737,-0.744943],[1.25,-0.501969,-0.623909],[1.3,-0.530095,-0.500912],[1.35,-0.552049,-0.377227],[1.4,-0.567827,-0.254092],[1.45,-0.577487,-0.132697],[1.5,-0.581145,-0.014175],[1.55,-0.57897,0.10041],[1.6,-0.571186,0.210068]]
+      },
+      "boundary_run": {
+        "id": "bnd_half_amplitude",
+        "description": "A boundary run: the same routine at a smaller amplitude. Energy conservation, the goal, still holds, while the specific claimed mean-energy value of the happy-path run does not. This shows the conservation goal is sufficient but not necessary for the exact claimed value: conservation holds at many energy levels.",
+        "samples": [[0,0.6,0],[0.05,0.597002,-0.1198],[0.1,0.58804,-0.238403],[0.15,0.573202,-0.354624],[0.2,0.552637,-0.467302],[0.25,0.52655,-0.575311],[0.3,0.495201,-0.677571],[0.35,0.458905,-0.773061],[0.4,0.418024,-0.860827],[0.45,0.372966,-0.939992],[0.5,0.324181,-1.009765],[0.55,0.272158,-1.069449],[0.6,0.217415,-1.118447],[0.65,0.160499,-1.15627],[0.7,0.10198,-1.18254],[0.75,0.042442,-1.196994],[0.8,-0.01752,-1.199488],[0.85,-0.077307,-1.189998],[0.9,-0.136321,-1.168617],[0.95,-0.193974,-1.13556],[1,-0.249688,-1.091157],[1.05,-0.302908,-1.035851],[1.1,-0.353101,-0.970196],[1.15,-0.399766,-0.894846],[1.2,-0.442436,-0.810556],[1.25,-0.480686,-0.718167],[1.3,-0.514133,-0.618602],[1.35,-0.542443,-0.512856],[1.4,-0.565333,-0.401986],[1.45,-0.582575,-0.287099],[1.5,-0.593995,-0.169344],[1.55,-0.599481,-0.049897],[1.6,-0.598977,0.070049]]
+      },
+      "context_refs": [
+        {
+          "envelope_id": "ctxenv_build_demo_001",
+          "envelope_hash": "sha256:07d12cf406aaf820d2804512f4088b29617d7c13bca247f846c56895ce9fba5b"
+        }
+      ],
+      "uncertainty": [
+        "the invariant is checked only over the finite bounded run, not proven for all time or all initial conditions",
+        "the backend label is a fixture-declared claim about the buildc receipt, not a live re-execution of the toolchain",
+        "run samples are embedded and re-derivable, but the upstream buildc build is not re-run during verification"
+      ],
+      "wall_clock": {
+        "assembled_at": "2026-07-02T00:00:00.000Z"
+      }
+    },
+    "tampered_source_program": {
+      "from": "happy_path",
+      "mutate": "change receipt.source_program after the source_digest was pinned",
+      "expected_verdict": "DRIFT",
+      "expected_failure_code": "source_digest_mismatch"
+    },
+    "tampered_invariant_value": {
+      "from": "happy_path",
+      "mutate": "replace invariant.value with a wrong number outside tolerance while the embedded samples stay unchanged",
+      "expected_verdict": "DRIFT",
+      "expected_failure_code": "invariant_value_mismatch"
+    },
+    "missing_negative_fixture": {
+      "from": "happy_path",
+      "mutate": "delete the negative_fixture block",
+      "expected_verdict": "UNVERIFIABLE",
+      "expected_failure_code": "missing_required_field"
+    },
+    "no_run_samples": {
+      "from": "happy_path",
+      "mutate": "replace run.samples with an empty array so nothing is recomputed",
+      "expected_verdict": "UNVERIFIABLE",
+      "expected_failure_code": "no_run_samples"
+    },
+    "negative_control_conserved": {
+      "from": "happy_path",
+      "mutate": "replace negative_fixture.samples with the conserved run samples so the control no longer breaks the invariant",
+      "expected_verdict": "DRIFT",
+      "expected_failure_code": "negative_control_conserved"
+    },
+    "tolerance_exceeds_bound": {
+      "from": "happy_path",
+      "mutate": "set invariant.tolerance above its per-method ceiling while the value stays honest",
+      "expected_verdict": "DRIFT",
+      "expected_failure_code": "tolerance_exceeds_bound"
+    },
+    "backend_maturity_outside_taxonomy": {
+      "from": "happy_path",
+      "mutate": "set receipt.backend_maturity to a value outside the closed set",
+      "expected_verdict": "DRIFT",
+      "expected_failure_code": "state_model_violation"
+    },
+    "embedded_canned_match": {
+      "from": "happy_path",
+      "mutate": "tamper the source program but embed a verifier verdict of MATCH",
+      "expected_verdict": "DRIFT",
+      "expected_failure_code": "embedded_verdict_not_derived"
+    }
+  },
+  "failure_codes": [
+    "missing_required_field",
+    "state_model_violation",
+    "packet_hash_mismatch",
+    "source_digest_mismatch",
+    "invariant_value_mismatch",
+    "drift_exceeds_tolerance",
+    "invariant_not_recomputable",
+    "no_run_samples",
+    "tolerance_exceeds_bound",
+    "negative_control_conserved",
+    "embedded_verdict_not_derived"
+  ],
+  "negative_test_cases": [
+    {
+      "name": "packet_missing_negative_fixture_block",
+      "failure_code": "missing_required_field"
+    },
+    {
+      "name": "source_program_does_not_match_source_digest",
+      "failure_code": "source_digest_mismatch"
+    },
+    {
+      "name": "claimed_invariant_value_does_not_match_recomputed_mean",
+      "failure_code": "invariant_value_mismatch"
+    },
+    {
+      "name": "conservation_drift_exceeds_tolerance",
+      "failure_code": "drift_exceeds_tolerance"
+    },
+    {
+      "name": "run_carries_no_samples",
+      "failure_code": "no_run_samples"
+    },
+    {
+      "name": "negative_control_does_not_break_the_invariant",
+      "failure_code": "negative_control_conserved"
+    },
+    {
+      "name": "invariant_tolerance_exceeds_metric_range_ceiling",
+      "failure_code": "tolerance_exceeds_bound"
+    },
+    {
+      "name": "backend_maturity_outside_taxonomy",
+      "failure_code": "state_model_violation"
+    },
+    {
+      "name": "recorded_packet_hash_does_not_match_materials",
+      "failure_code": "packet_hash_mismatch"
+    },
+    {
+      "name": "embedded_match_over_tampered_source_program",
+      "failure_code": "embedded_verdict_not_derived"
+    }
+  ]
+}
