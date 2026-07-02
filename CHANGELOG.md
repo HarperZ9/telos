@@ -4,6 +4,13 @@ All notable changes to Project Telos. Telos is currently a source demo and share
 
 ## Unreleased
 
+- Causal Research Workbench preflight: adds
+  `demo/causal-workbench-proof-packet.mjs`, a deterministic toy-DAG proof
+  packet, source-ledger receipts, official, working-paper, outreach, Crucible,
+  and Learn prooflesson artifacts. The pass verifies `CAUSAL_DAG_FIXTURE_MATCH`
+  for the local fixture while keeping causal discovery, LLM causal reasoning,
+  biomedical, and BuildLang/buildc-native claims out of scope.
+
 - TI Morse / Relentless field intake: adds
   `demo/research/youtube-ti-morse-field-receipts.json`, a bounded source-ledger
   for five metadata/transcript receipts and one channel-list receipt, plus

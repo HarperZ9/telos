@@ -1,0 +1,197 @@
+{
+  "schema": "project-telos.causal-workbench/proof-packet-fixture/v1",
+  "generated_at": "2026-07-02T00:00:00.000Z",
+  "result": "CAUSAL_DAG_FIXTURE_MATCH",
+  "graph": {
+    "nodes": [
+      "exercise",
+      "health_outcome",
+      "age",
+      "baseline_health",
+      "biomarker",
+      "encouragement"
+    ],
+    "treatment": "exercise",
+    "outcome": "health_outcome",
+    "edges": [
+      [
+        "age",
+        "exercise"
+      ],
+      [
+        "age",
+        "health_outcome"
+      ],
+      [
+        "baseline_health",
+        "exercise"
+      ],
+      [
+        "baseline_health",
+        "health_outcome"
+      ],
+      [
+        "encouragement",
+        "exercise"
+      ],
+      [
+        "exercise",
+        "health_outcome"
+      ],
+      [
+        "exercise",
+        "biomarker"
+      ],
+      [
+        "health_outcome",
+        "biomarker"
+      ]
+    ],
+    "observed": [
+      "age",
+      "baseline_health",
+      "biomarker",
+      "encouragement"
+    ]
+  },
+  "checks": {
+    "dag_acyclic": true,
+    "topological_order": [
+      "age",
+      "baseline_health",
+      "encouragement",
+      "exercise",
+      "health_outcome",
+      "biomarker"
+    ],
+    "treatment_descendants": [
+      "health_outcome",
+      "biomarker"
+    ],
+    "backdoor_paths": [
+      [
+        "exercise",
+        "age",
+        "health_outcome"
+      ],
+      [
+        "exercise",
+        "baseline_health",
+        "health_outcome"
+      ]
+    ],
+    "minimal_adjustment_sets": [
+      [
+        "age",
+        "baseline_health"
+      ]
+    ],
+    "negative_controls": [
+      {
+        "adjustment": [],
+        "valid": false,
+        "descendant_violations": [],
+        "active_backdoor_paths": [
+          [
+            "exercise",
+            "age",
+            "health_outcome"
+          ],
+          [
+            "exercise",
+            "baseline_health",
+            "health_outcome"
+          ]
+        ]
+      },
+      {
+        "adjustment": [
+          "age"
+        ],
+        "valid": false,
+        "descendant_violations": [],
+        "active_backdoor_paths": [
+          [
+            "exercise",
+            "baseline_health",
+            "health_outcome"
+          ]
+        ]
+      },
+      {
+        "adjustment": [
+          "baseline_health"
+        ],
+        "valid": false,
+        "descendant_violations": [],
+        "active_backdoor_paths": [
+          [
+            "exercise",
+            "age",
+            "health_outcome"
+          ]
+        ]
+      },
+      {
+        "adjustment": [
+          "encouragement"
+        ],
+        "valid": false,
+        "descendant_violations": [],
+        "active_backdoor_paths": [
+          [
+            "exercise",
+            "age",
+            "health_outcome"
+          ],
+          [
+            "exercise",
+            "baseline_health",
+            "health_outcome"
+          ]
+        ]
+      },
+      {
+        "adjustment": [
+          "biomarker"
+        ],
+        "valid": false,
+        "descendant_violations": [
+          "biomarker"
+        ],
+        "active_backdoor_paths": [
+          [
+            "exercise",
+            "age",
+            "health_outcome"
+          ],
+          [
+            "exercise",
+            "baseline_health",
+            "health_outcome"
+          ]
+        ]
+      }
+    ]
+  },
+  "claim_card": {
+    "claim": "In the toy DAG, estimating the effect of exercise on health_outcome requires adjusting for age and baseline_health; encouragement alone, age alone, baseline_health alone, or biomarker adjustment does not satisfy the fixture gate.",
+    "verdict": "MATCH",
+    "scope": "One deterministic DAG fixture only; not a general causal discovery result and not a real medical claim.",
+    "falsification": "The graph is cyclic, the minimal adjustment set is not exactly [age, baseline_health], or any negative control is accepted as valid."
+  },
+  "toolchain_implications": [
+    "Gather owns source receipts for causal papers, lectures, datasets, and benchmark cards.",
+    "Index should package variables, graph assumptions, and candidate evidence without hiding the graph.",
+    "Forum should route causal claims to statistician, domain, and verification lanes.",
+    "BuildLang/buildc should become the typed graph and adjustment-check runtime.",
+    "Crucible should reject any causal claim without graph assumptions, adjustment rationale, negative controls, and a replayable check.",
+    "Learn should convert the fixture into exercises about adjustment, colliders, descendants, and overclaim boundaries."
+  ],
+  "non_claims": [
+    "This fixture does not prove causal discovery capability.",
+    "This fixture does not validate LLM causal reasoning.",
+    "This fixture does not make a medical recommendation.",
+    "This fixture is not yet a BuildLang/buildc-native receipt."
+  ]
+}
