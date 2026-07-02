@@ -18,6 +18,21 @@ import {
 const ARTIFACT_KINDS = new Set(["image", "render", "lut", "icc", "video"]);
 const RECOMPUTE_METHODS = new Set(["relative_luminance_srgb", "delta_e_cie76"]);
 
+// Per-method tolerance ceilings, bounded to a small fraction of each metric's
+// physical range. Without a ceiling, tolerance is an author-controlled dial with
+// no upper bound: a whole-range tolerance would nullify the recompute's
+// discriminating power and let a value far from the recomputed truth reach MATCH.
+// relative_luminance_srgb is defined on [0, 1], so a tolerance above 0.1
+// (a tenth of the range) can no longer discriminate a real luminance match.
+// delta_e_cie76 spans roughly [0, 100] over the sRGB gamut, and a CIE76 delta of
+// 10 is already a large, plainly visible color difference, so a tolerance above
+// 10 can no longer discriminate a real color match. A tolerance above its ceiling
+// is a state_model_violation (DRIFT), not a silent pass.
+const TOLERANCE_CEILINGS = {
+  relative_luminance_srgb: 0.1,
+  delta_e_cie76: 10
+};
+
 // Required JSON paths. A missing one is reported by its own path and lowers the
 // verdict to UNVERIFIABLE.
 const REQUIRED_PATHS = [
@@ -296,6 +311,20 @@ export function verifyVisualPacket(packet, options = {}) {
   const perMetric = [];
   let measurementsOk = true;
   const measurements = Array.isArray(packet.measurements) ? packet.measurements : [];
+
+  // A packet with no measurements recomputes nothing, so it must never reach
+  // MATCH: an empty measurement set is an UNVERIFIABLE evidence gap (nothing was
+  // checked), mirroring the research lane's empty-check floor. Without this a
+  // degenerate packet with measurements: [] would fold to MATCH with zero
+  // recomputes run, which is exactly the phantom pass this lane forbids.
+  if (measurements.length === 0) {
+    measurementsOk = false;
+    addFailure(failures, "no_measurements", "UNVERIFIABLE", {
+      path: "measurements",
+      reason: "the packet carries no measurements, so nothing was recomputed and no claim is established"
+    });
+  }
+
   measurements.forEach((measurement, index) => {
     const metric = measurement?.metric ?? `measurements[${index}]`;
     const path = `measurements[${index}]`;
@@ -345,6 +374,25 @@ export function verifyVisualPacket(packet, options = {}) {
         path: `${path}.tolerance`,
         observed: tolerance,
         required: "a positive number"
+      });
+      perMetric.push({ metric, status: "DRIFT" });
+      return;
+    }
+
+    // Bound the tolerance to the metric's physical range. An oversized tolerance
+    // nullifies the recompute's discriminating power, so a whole-range tolerance
+    // could launder a false value into MATCH. A tolerance above its per-method
+    // ceiling is a state_model_violation (DRIFT), never a silent pass.
+    const ceiling = TOLERANCE_CEILINGS[measurement.method];
+    if (ceiling !== undefined && tolerance > ceiling) {
+      measurementsOk = false;
+      addFailure(failures, "tolerance_exceeds_bound", "DRIFT", {
+        path: `${path}.tolerance`,
+        observed: tolerance,
+        ceiling,
+        method: measurement.method,
+        reason:
+          "the declared tolerance exceeds the metric's bounded physical range, so it can no longer discriminate a real match"
       });
       perMetric.push({ metric, status: "DRIFT" });
       return;
@@ -455,11 +503,13 @@ function deriveDecisionSummary(overall, missingEvidence) {
 const FAILURE_LABEL_MAP = {
   missing_required_field: "evidence_gap",
   measurement_not_recomputable: "evidence_gap",
+  no_measurements: "evidence_gap",
   read_only_not_true: "binding_failed",
   physical_calibration_overclaim: "binding_failed",
   measurement_value_mismatch: "binding_failed",
   packet_hash_mismatch: "binding_failed",
   state_model_violation: "binding_failed",
+  tolerance_exceeds_bound: "binding_failed",
   embedded_verdict_not_derived: "verification_unverifiable"
 };
 

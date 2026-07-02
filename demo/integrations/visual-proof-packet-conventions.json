@@ -25,7 +25,9 @@
     "verdict_derived_not_asserted": true,
     "canonical_hash_excludes_wall_clock": true,
     "measurement_without_recomputable_basis_is_unverifiable": true,
-    "verification_required": "Every packet verdict is MATCH, DRIFT, or UNVERIFIABLE. PROMOTED and any physical-calibration claim are never assertable from a single read-only packet."
+    "empty_measurement_set_is_unverifiable": true,
+    "tolerance_bounded_to_metric_range": true,
+    "verification_required": "Every packet verdict is MATCH, DRIFT, or UNVERIFIABLE. A packet with no measurements recomputes nothing and is UNVERIFIABLE, never MATCH. PROMOTED and any physical-calibration claim are never assertable from a single read-only packet."
   },
   "measurement_recompute_relation": {
     "claim": "A measurement is a load-bearing claim, not an assertion. Every measurement value is recomputed from the artifact's embedded sRGB sample values using stdlib math only. A measurement whose method points at samples the artifact does not carry cannot be recomputed: that is an UNVERIFIABLE evidence gap named by its JSON path, never a silent pass.",
@@ -33,7 +35,9 @@
       "relative_luminance_srgb": "Linearize each embedded sRGB channel with the IEC 61966-2-1 transfer, then take the Rec. 709 weighted sum 0.2126 R + 0.7152 G + 0.0722 B. The sample is named by artifact.samples[<id>].",
       "delta_e_cie76": "Convert two embedded sRGB samples to CIE Lab under the D65 white point, then take the Euclidean distance between the two Lab points. The two samples are named by measurement.sample_refs."
     },
-    "tolerance_rule": "deviation is the absolute difference between the claimed value and the recomputed value. A deviation at or below tolerance is a per-metric MATCH; a deviation above tolerance is a per-metric DRIFT carrying the recomputed value; a measurement with no recomputable basis is a per-metric UNVERIFIABLE."
+    "tolerance_rule": "deviation is the absolute difference between the claimed value and the recomputed value. A deviation at or below tolerance is a per-metric MATCH; a deviation above tolerance is a per-metric DRIFT carrying the recomputed value; a measurement with no recomputable basis is a per-metric UNVERIFIABLE.",
+    "tolerance_ceiling_rule": "Tolerance is bounded to a small fraction of each metric's physical range so an oversized tolerance can never nullify the recompute's discriminating power. relative_luminance_srgb is defined on [0, 1] and its tolerance may not exceed 0.1; delta_e_cie76 spans roughly [0, 100] and its tolerance may not exceed 10. A tolerance above its per-method ceiling is a DRIFT (tolerance_exceeds_bound), never a silent pass.",
+    "empty_measurement_rule": "A packet with no measurements recomputes nothing, so it never reaches MATCH. An empty measurement set is an UNVERIFIABLE evidence gap (no_measurements): nothing was checked, so no claim is established."
   },
   "state_model": {
     "verification_verdicts": [
@@ -130,11 +134,13 @@
       "note": "telos visual failure codes to proof-surface FAILURE_CODES (closed set in _failure.py at proof-surface HEAD)",
       "missing_required_field": "evidence_gap",
       "measurement_not_recomputable": "evidence_gap",
+      "no_measurements": "evidence_gap",
       "read_only_not_true": "binding_failed",
       "physical_calibration_overclaim": "binding_failed",
       "measurement_value_mismatch": "binding_failed",
       "packet_hash_mismatch": "binding_failed",
-      "state_model_violation": "binding_failed"
+      "state_model_violation": "binding_failed",
+      "tolerance_exceeds_bound": "binding_failed"
     }
   },
   "conformance_fixture": {
@@ -226,6 +232,18 @@
       "mutate": "delete artifact.samples",
       "expected_verdict": "UNVERIFIABLE",
       "expected_failure_code": "missing_required_field"
+    },
+    "no_measurements": {
+      "from": "happy_path",
+      "mutate": "replace measurements with an empty array so nothing is recomputed",
+      "expected_verdict": "UNVERIFIABLE",
+      "expected_failure_code": "no_measurements"
+    },
+    "tolerance_exceeds_bound": {
+      "from": "happy_path",
+      "mutate": "set measurements[0] tolerance above its per-method ceiling while the value stays honest",
+      "expected_verdict": "DRIFT",
+      "expected_failure_code": "tolerance_exceeds_bound"
     }
   },
   "failure_codes": [
@@ -234,6 +252,8 @@
     "packet_hash_mismatch",
     "measurement_value_mismatch",
     "measurement_not_recomputable",
+    "no_measurements",
+    "tolerance_exceeds_bound",
     "read_only_not_true",
     "physical_calibration_overclaim"
   ],
@@ -265,6 +285,14 @@
     {
       "name": "read_only_packet_claims_a_physical_calibration",
       "failure_code": "physical_calibration_overclaim"
+    },
+    {
+      "name": "packet_carries_no_measurements",
+      "failure_code": "no_measurements"
+    },
+    {
+      "name": "measurement_tolerance_exceeds_metric_range_ceiling",
+      "failure_code": "tolerance_exceeds_bound"
     }
   ]
 }
