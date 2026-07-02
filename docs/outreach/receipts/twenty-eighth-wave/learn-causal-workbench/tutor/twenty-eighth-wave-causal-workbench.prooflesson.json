@@ -1,0 +1,174 @@
+{
+  "kind": "proof-lesson",
+  "packet_id": "twenty-eighth-wave-causal-workbench",
+  "verdict": "MATCH",
+  "lesson": {
+    "kind": "proof-lesson",
+    "packet_id": "twenty-eighth-wave-causal-workbench",
+    "packet_version": "proof-packet/twenty-eighth-wave-causal-workbench/v1",
+    "claim": "The causal research workbench preflight is a replayable toy-DAG proof packet: it declares graph assumptions, emits CAUSAL_DAG_FIXTURE_MATCH, identifies age plus baseline_health as the exact minimal adjustment set, rejects configured negative controls, and keeps broader causal-discovery, LLM reasoning, biomedical, and BuildLang/buildc-native claims out of scope.",
+    "scope": "Project Telos twenty-eighth-wave prooflesson for proof-carrying causal claims",
+    "verdict": "MATCH",
+    "sources": [
+      {
+        "ref": "demo/research/causal-workbench-source-receipts.json",
+        "sha256": "07504aef7b37c2e77e17b0cd119d0060e369f83566535199fbd495cb9c593843"
+      },
+      {
+        "ref": "demo/causal-workbench-proof-packet.mjs",
+        "sha256": "d9798fb54af632011b5a4efed646e700e1512b9d898f2925189acdc3a831cbd1"
+      },
+      {
+        "ref": "demo/causal-workbench-proof-packet.test.mjs",
+        "sha256": "be5fcefea566a3d520e9220e4bbdbbf3d396dbf8266f70492ec9f7befbaabbad"
+      },
+      {
+        "ref": "docs/outreach/receipts/twenty-eighth-wave/causal-workbench-proof-packet-2026-07-02.json",
+        "sha256": "69ed50fba9fd0205e1d8f63c19c387a2be0bb308015937658678abf7d9bb7e5c"
+      },
+      {
+        "ref": "docs/outreach/receipts/twenty-eighth-wave-causal-workbench-run-2026-07-02.json",
+        "sha256": "1880e9f0c2c4f2589d4cde2f2c95e008631fd4eea0e0a921b39f19b961eef26e"
+      },
+      {
+        "ref": "docs/outreach/receipts/twenty-eighth-wave-causal-workbench-report-2026-07-02.md",
+        "sha256": "cc1d3ec1cd45d68e3600da5cc98b5c72ecc9f562f404273fa389afc021bff577"
+      }
+    ],
+    "scaffold": [
+      {
+        "step": 1,
+        "prompt": "Restate, in your own words, exactly what this claim asserts and nothing more: \"The causal research workbench preflight is a replayable toy-DAG proof packet: it declares graph assumptions, emits CAUSAL_DAG_FIXTURE_MATCH, identifies age plus baseline_health as the exact minimal adjustment set, rejects configured negative controls, and keeps broader causal-discovery, LLM reasoning, biomedical, and BuildLang/buildc-native claims out of scope.\" (scope: Project Telos twenty-eighth-wave prooflesson for proof-carrying causal claims)."
+      },
+      {
+        "step": 2,
+        "prompt": "Judging by their refs alone (demo/research/causal-workbench-source-receipts.json, demo/causal-workbench-proof-packet.mjs, demo/causal-workbench-proof-packet.test.mjs, docs/outreach/receipts/twenty-eighth-wave/causal-workbench-proof-packet-2026-07-02.json, docs/outreach/receipts/twenty-eighth-wave-causal-workbench-run-2026-07-02.json, docs/outreach/receipts/twenty-eighth-wave-causal-workbench-report-2026-07-02.md), predict what each recorded source could contribute as evidence for or against the claim."
+      },
+      {
+        "step": 3,
+        "prompt": "The packet's overall verdict is MATCH. Before reading anything else, derive what a MATCH verdict must mean about the relationship between the claim and the recorded checks."
+      },
+      {
+        "step": 4,
+        "prompt": "List the checks you would run to reach your own verdict on this claim, then compare your list against what the packet's verdict implies was actually checked."
+      }
+    ],
+    "retrievalQuestions": [
+      {
+        "question": "What evidence would falsify this claim: \"The causal research workbench preflight is a replayable toy-DAG proof packet: it declares graph assumptions, emits CAUSAL_DAG_FIXTURE_MATCH, identifies age plus baseline_health as the exact minimal adjustment set, rejects configured negative controls, and keeps broader causal-discovery, LLM reasoning, biomedical, and BuildLang/buildc-native claims out of scope.\"?",
+        "derivedFrom": "claim"
+      },
+      {
+        "question": "Which recorded source would you re-check first, and what does its content hash let you prove about it?",
+        "derivedFrom": "sources"
+      },
+      {
+        "question": "What does an overall verdict of MATCH entitle you to claim, and what does it not?",
+        "derivedFrom": "verdicts.overall"
+      },
+      {
+        "question": "The packet's scope is \"Project Telos twenty-eighth-wave prooflesson for proof-carrying causal claims\". Give one claim that would exceed that scope.",
+        "derivedFrom": "scope"
+      }
+    ],
+    "verifierBinding": {
+      "packet_id": "twenty-eighth-wave-causal-workbench",
+      "verdict": "MATCH",
+      "sourceHashes": [
+        "07504aef7b37c2e77e17b0cd119d0060e369f83566535199fbd495cb9c593843",
+        "d9798fb54af632011b5a4efed646e700e1512b9d898f2925189acdc3a831cbd1",
+        "be5fcefea566a3d520e9220e4bbdbbf3d396dbf8266f70492ec9f7befbaabbad",
+        "69ed50fba9fd0205e1d8f63c19c387a2be0bb308015937658678abf7d9bb7e5c",
+        "1880e9f0c2c4f2589d4cde2f2c95e008631fd4eea0e0a921b39f19b961eef26e",
+        "cc1d3ec1cd45d68e3600da5cc98b5c72ecc9f562f404273fa389afc021bff577"
+      ]
+    },
+    "boundary": "Lesson scaffold only -- prompts for the operator to derive the reasoning; never an answer dump, never a graded-assessment answer."
+  },
+  "misconception": null,
+  "sourceCount": 6,
+  "entries": [
+    {
+      "seq": 0,
+      "prevHash": "0000000000000000000000000000000000000000000000000000000000000000",
+      "hash": "45146f20af6d88df6e8e262451d7eacc66099007992f161dfe3734dd520d7d20",
+      "entry": {
+        "kind": "packet-binding",
+        "packet_id": "twenty-eighth-wave-causal-workbench",
+        "verdict": "MATCH",
+        "claim": "The causal research workbench preflight is a replayable toy-DAG proof packet: it declares graph assumptions, emits CAUSAL_DAG_FIXTURE_MATCH, identifies age plus baseline_health as the exact minimal adjustment set, rejects configured negative controls, and keeps broader causal-discovery, LLM reasoning, biomedical, and BuildLang/buildc-native claims out of scope."
+      }
+    },
+    {
+      "seq": 1,
+      "prevHash": "45146f20af6d88df6e8e262451d7eacc66099007992f161dfe3734dd520d7d20",
+      "hash": "f73dcd284bf8d93de9baf49377a44bc3c08f5516566856665aa90c368b68f77f",
+      "entry": {
+        "kind": "source",
+        "ref": "demo/research/causal-workbench-source-receipts.json",
+        "sha256": "07504aef7b37c2e77e17b0cd119d0060e369f83566535199fbd495cb9c593843"
+      }
+    },
+    {
+      "seq": 2,
+      "prevHash": "f73dcd284bf8d93de9baf49377a44bc3c08f5516566856665aa90c368b68f77f",
+      "hash": "52b2ee22bdbbd30fc4603edc37beb6948df923bcbe5ce680191a57213d5422f1",
+      "entry": {
+        "kind": "source",
+        "ref": "demo/causal-workbench-proof-packet.mjs",
+        "sha256": "d9798fb54af632011b5a4efed646e700e1512b9d898f2925189acdc3a831cbd1"
+      }
+    },
+    {
+      "seq": 3,
+      "prevHash": "52b2ee22bdbbd30fc4603edc37beb6948df923bcbe5ce680191a57213d5422f1",
+      "hash": "cbb7f08fa7adf073611328a241a4b5eb3cf43c77f71a52b34c997a0a97dc7922",
+      "entry": {
+        "kind": "source",
+        "ref": "demo/causal-workbench-proof-packet.test.mjs",
+        "sha256": "be5fcefea566a3d520e9220e4bbdbbf3d396dbf8266f70492ec9f7befbaabbad"
+      }
+    },
+    {
+      "seq": 4,
+      "prevHash": "cbb7f08fa7adf073611328a241a4b5eb3cf43c77f71a52b34c997a0a97dc7922",
+      "hash": "9e4de0cb8dcbf2c7fa575956de78f036cd452963df6405da56be66ac453c3b20",
+      "entry": {
+        "kind": "source",
+        "ref": "docs/outreach/receipts/twenty-eighth-wave/causal-workbench-proof-packet-2026-07-02.json",
+        "sha256": "69ed50fba9fd0205e1d8f63c19c387a2be0bb308015937658678abf7d9bb7e5c"
+      }
+    },
+    {
+      "seq": 5,
+      "prevHash": "9e4de0cb8dcbf2c7fa575956de78f036cd452963df6405da56be66ac453c3b20",
+      "hash": "a126128744acf3dbb3ea50dcb61ee9cfd8a1c2a735c9818159253daafa55917f",
+      "entry": {
+        "kind": "source",
+        "ref": "docs/outreach/receipts/twenty-eighth-wave-causal-workbench-run-2026-07-02.json",
+        "sha256": "1880e9f0c2c4f2589d4cde2f2c95e008631fd4eea0e0a921b39f19b961eef26e"
+      }
+    },
+    {
+      "seq": 6,
+      "prevHash": "a126128744acf3dbb3ea50dcb61ee9cfd8a1c2a735c9818159253daafa55917f",
+      "hash": "2c6d0bb141eef50b7faf0bb49668b9e3a19b7e52a4a3d6c833c17402ea9a7235",
+      "entry": {
+        "kind": "source",
+        "ref": "docs/outreach/receipts/twenty-eighth-wave-causal-workbench-report-2026-07-02.md",
+        "sha256": "cc1d3ec1cd45d68e3600da5cc98b5c72ecc9f562f404273fa389afc021bff577"
+      }
+    },
+    {
+      "seq": 7,
+      "prevHash": "2c6d0bb141eef50b7faf0bb49668b9e3a19b7e52a4a3d6c833c17402ea9a7235",
+      "hash": "ba4c095891b7a69fe6477ef7f999425558fffe56c25baa7c2c1983f29c4a63c7",
+      "entry": {
+        "kind": "lesson-digest",
+        "digest": "sha256:bac3a6cc97371ca6be9c8a00feed982d6f2271a432e66cfca0b7395535a332c8",
+        "misconception_class": null
+      }
+    }
+  ],
+  "boundary": "Lesson receipt only -- binds the lesson to its packet's verdict and source hashes; never a graded-assessment answer."
+}

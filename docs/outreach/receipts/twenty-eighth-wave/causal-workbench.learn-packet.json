@@ -1,0 +1,36 @@
+{
+  "version": "proof-packet/twenty-eighth-wave-causal-workbench/v1",
+  "packet_id": "twenty-eighth-wave-causal-workbench",
+  "claim": "The causal research workbench preflight is a replayable toy-DAG proof packet: it declares graph assumptions, emits CAUSAL_DAG_FIXTURE_MATCH, identifies age plus baseline_health as the exact minimal adjustment set, rejects configured negative controls, and keeps broader causal-discovery, LLM reasoning, biomedical, and BuildLang/buildc-native claims out of scope.",
+  "scope": "Project Telos twenty-eighth-wave prooflesson for proof-carrying causal claims",
+  "sources": [
+    {
+      "ref": "demo/research/causal-workbench-source-receipts.json",
+      "sha256": "07504aef7b37c2e77e17b0cd119d0060e369f83566535199fbd495cb9c593843"
+    },
+    {
+      "ref": "demo/causal-workbench-proof-packet.mjs",
+      "sha256": "d9798fb54af632011b5a4efed646e700e1512b9d898f2925189acdc3a831cbd1"
+    },
+    {
+      "ref": "demo/causal-workbench-proof-packet.test.mjs",
+      "sha256": "be5fcefea566a3d520e9220e4bbdbbf3d396dbf8266f70492ec9f7befbaabbad"
+    },
+    {
+      "ref": "docs/outreach/receipts/twenty-eighth-wave/causal-workbench-proof-packet-2026-07-02.json",
+      "sha256": "69ed50fba9fd0205e1d8f63c19c387a2be0bb308015937658678abf7d9bb7e5c"
+    },
+    {
+      "ref": "docs/outreach/receipts/twenty-eighth-wave-causal-workbench-run-2026-07-02.json",
+      "sha256": "1880e9f0c2c4f2589d4cde2f2c95e008631fd4eea0e0a921b39f19b961eef26e"
+    },
+    {
+      "ref": "docs/outreach/receipts/twenty-eighth-wave-causal-workbench-report-2026-07-02.md",
+      "sha256": "cc1d3ec1cd45d68e3600da5cc98b5c72ecc9f562f404273fa389afc021bff577"
+    }
+  ],
+  "verdicts": {
+    "overall": "MATCH"
+  },
+  "decision_summary": "The packet verifies the local causal DAG preflight shape and claim boundary. It does not verify causal discovery, LLM causal reasoning, biomedical recommendations, or BuildLang/buildc-native runtime execution."
+}

@@ -1355,6 +1355,98 @@
         "index.map",
         "crucible.assess"
       ]
+    },
+    {
+      "name": "telos.proof",
+      "flagship": "telos",
+      "description": "Use when a host needs the fixture-backed agent-action proof packet joining source refs, context refs, route, admission, side effects, output digests, verifier checks, and the Emet witness stage. Read-only, zero-auth, no external side effects beyond local subprocess reads. Returns a JSON agent-action proof packet.",
+      "cli": [
+        "node",
+        "demo/proof.mjs",
+        "agent-action",
+        "--demo",
+        "--json"
+      ],
+      "mcp": {
+        "status": "available",
+        "server": "telos",
+        "method": "tools/call",
+        "tool": "telos.proof"
+      },
+      "next_actions": [
+        "gather.docs",
+        "index.map",
+        "crucible.assess"
+      ]
+    },
+    {
+      "name": "telos.proof.research",
+      "flagship": "telos",
+      "description": "Use when a host needs the fixture-backed research-claim proof packet joining source provenance, a bounded claim, a required negative control fixture, attempt records, recomputed source digests, and a promotion rung the verifier derives rather than trusts. Read-only, zero-auth, no external side effects beyond local subprocess reads. Returns a JSON research-claim proof packet.",
+      "cli": [
+        "node",
+        "demo/proof.mjs",
+        "research",
+        "--demo",
+        "--json"
+      ],
+      "mcp": {
+        "status": "available",
+        "server": "telos",
+        "method": "tools/call",
+        "tool": "telos.proof.research"
+      },
+      "next_actions": [
+        "gather.docs",
+        "index.map",
+        "crucible.assess"
+      ]
+    },
+    {
+      "name": "telos.proof.visual",
+      "flagship": "telos",
+      "description": "Use when a host needs the fixture-backed visual-truth proof packet whose color and luminance measurements are recomputed from the artifact's own embedded sRGB samples, with a read-only boundary and no physical-calibration overclaim. Read-only, zero-auth, no external side effects beyond local subprocess reads. Returns a JSON visual-truth proof packet.",
+      "cli": [
+        "node",
+        "demo/proof.mjs",
+        "visual",
+        "--demo",
+        "--json"
+      ],
+      "mcp": {
+        "status": "available",
+        "server": "telos",
+        "method": "tools/call",
+        "tool": "telos.proof.visual"
+      },
+      "next_actions": [
+        "gather.docs",
+        "index.map",
+        "crucible.assess"
+      ]
+    },
+    {
+      "name": "telos.proof.build",
+      "flagship": "telos",
+      "description": "Use when a host needs the fixture-backed build scientific-runtime proof packet whose conserved-quantity invariant and conservation drift are recomputed from the run's own embedded samples with stdlib math, checked within bounded tolerances, and controlled by a required negative fixture that must break the invariant. Read-only, zero-auth, no external side effects beyond local subprocess reads. Returns a JSON build proof packet.",
+      "cli": [
+        "node",
+        "demo/proof.mjs",
+        "build",
+        "--demo",
+        "--json"
+      ],
+      "mcp": {
+        "status": "available",
+        "server": "telos",
+        "method": "tools/call",
+        "tool": "telos.proof.build"
+      },
+      "next_actions": [
+        "gather.docs",
+        "index.map",
+        "crucible.assess"
+      ]
     }
   ]
 }
