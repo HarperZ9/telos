@@ -46,9 +46,11 @@ const payload = actionEnvelope({
       "telos.native.control",
       "telos.browser.evidence",
       "telos.showcase.scout",
-      "telos.proof"
+      "telos.proof",
+      "telos.proof.research",
+      "telos.proof.visual"
     ],
-    current_status: "0.1.0 source registry package with 66-tool five-flagship catalog, CI doctor, CI triage, presentation doctor, accessibility doctor, performance doctor, compatibility doctor, operator doctor, context envelopes, context packs, action receipts, loop ledger, objective monitoring, model foundry, Learning Forge, executable Learning Forge labs, OSS Proof Showcase scout, agent-action proof packets, MCP freshness, research seeds, transcript-backed thermodynamic research, rendering research, rendering capabilities, measurement layers, creative engine, creative kernels, revival registry, second-level queue, workstation substrate, display calibration, native background control of browser and apps, browser evidence packets, and native Telos MCP surface"
+    current_status: "0.1.0 source registry package with 68-tool five-flagship catalog, CI doctor, CI triage, presentation doctor, accessibility doctor, performance doctor, compatibility doctor, operator doctor, context envelopes, context packs, action receipts, loop ledger, objective monitoring, model foundry, Learning Forge, executable Learning Forge labs, OSS Proof Showcase scout, agent-action proof packets, research-claim proof packets, visual-truth proof packets, MCP freshness, research seeds, transcript-backed thermodynamic research, rendering research, rendering capabilities, measurement layers, creative engine, creative kernels, revival registry, second-level queue, workstation substrate, display calibration, native background control of browser and apps, browser evidence packets, and native Telos MCP surface"
   },
   nextActions: [
     {
