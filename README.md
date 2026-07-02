@@ -11,7 +11,7 @@
 
 ![node: 24 CI, 20+ registry](https://img.shields.io/badge/node-24%20CI%2C%2020%2B%20registry-blue.svg)
 ![CI](https://github.com/HarperZ9/telos/actions/workflows/ci.yml/badge.svg)
-![version: 0.1.0](https://img.shields.io/badge/version-0.2.0-informational.svg)
+![version: 0.2.0](https://img.shields.io/badge/version-0.2.0-informational.svg)
 ![deps: none](https://img.shields.io/badge/deps-none-success.svg)
 ![license: fair-source](https://img.shields.io/badge/license-fair--source-blue.svg)
 

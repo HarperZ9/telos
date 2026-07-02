@@ -4,6 +4,7 @@ import { tmpdir } from "node:os";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { actionEnvelope } from "./flagship-action.mjs";
+import { flagshipPreflight, describeMissing } from "./flagship-preflight.mjs";
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const telosRoot = path.resolve(here, "..");
@@ -46,6 +47,41 @@ const specPath = path.join(
   "specs",
   "2026-06-27-flagship-operator-spine-design.md"
 );
+
+const preflight = flagshipPreflight({ publicRoot });
+if (!preflight.ok) {
+  const payload = actionEnvelope({
+    tool: "telos",
+    toolVersion: "0.2.0",
+    command: "flagship-workflow",
+    status: "UNVERIFIABLE",
+    native: {
+      reason: "flagship_workflow_unjoinable",
+      missing: preflight.missing
+    },
+    diagnostics: [
+      {
+        code: "flagship_workflow_unjoinable",
+        detail:
+          "the golden workflow drives the index, gather, forum, and crucible " +
+          "source checkouts over a local python interpreter; " +
+          `missing dependency: ${describeMissing(preflight.missing)}`
+      }
+    ],
+    nextActions: [
+      {
+        tool: "telos",
+        action: "room",
+        reason: "the room summary reports the same missing dependency without side effects",
+        inputs: [],
+        priority: "normal"
+      }
+    ]
+  });
+  console.log(JSON.stringify(payload, null, 2));
+  process.exit(0);
+}
+
 const tmp = mkdtempSync(path.join(tmpdir(), "telos-flagship-workflow-"));
 const thesis = path.join(tmp, "thesis.json");
 const measurements = path.join(tmp, "measurements.json");
