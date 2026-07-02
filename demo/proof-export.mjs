@@ -95,11 +95,53 @@ function buildUncertainty(packet) {
   return notes;
 }
 
+// Map each Telos verifier failure code into the nearest proof-surface
+// FAILURE_CODES member (closed set, verified against proof-surface HEAD f8380da
+// _failure.py). Unmapped codes fall back to verification_unverifiable rather
+// than being dropped, so no failure leaves the export unlabeled.
+const FAILURE_LABEL_MAP = {
+  missing_required_field: "evidence_gap",
+  evidence_ref_unresolvable: "evidence_gap",
+  admission_missing_for_action: "unjoinable_action",
+  admission_order_violation: "unjoinable_action",
+  compensation_path_missing_for_external_write: "binding_failed",
+  state_model_violation: "binding_failed",
+  packet_hash_mismatch: "binding_failed",
+  artifact_digest_mismatch: "binding_failed",
+  embedded_verdict_not_derived: "verification_unverifiable",
+  witness_unavailable: "verification_unverifiable"
+};
+
+function mapFailureLabels(failures) {
+  const labels = [];
+  const seen = new Set();
+  for (const failure of failures ?? []) {
+    const mapped = FAILURE_LABEL_MAP[failure?.code] ?? "verification_unverifiable";
+    if (!seen.has(mapped)) {
+      seen.add(mapped);
+      labels.push(mapped);
+    }
+  }
+  return labels;
+}
+
+// Re-derive the verdict and failures from the packet's own materials rather than
+// trusting an embedded verifier block. An embedded verdict is passed as the
+// embeddedVerdict option so a stale MATCH over tampered materials is caught and
+// lowered, never copied into the export. verdict_derived_not_asserted holds on
+// the export surface, not only on the verify CLI.
+function deriveVerification(packet) {
+  const embedded = packet.verifier?.verdict;
+  return verifyPacket(packet, { embeddedVerdict: embedded });
+}
+
 // Export a Telos proof packet to the proof-surface agent-action-proof-packet/v0
 // shape. The corrected mapping: context is a plain object, decision_summary is
 // derived from the overall verdict. proof-surface is never imported at runtime.
 export function toProofSurfacePacket(packet) {
-  const verdict = packet.verifier?.verdict ?? verifyPacket(packet).verdict;
+  const verification = deriveVerification(packet);
+  const verdict = verification.verdict;
+  const failureLabels = mapFailureLabels(verification.failures);
   const actionId = packet.action?.action_id;
 
   const sources = (packet.source_refs ?? []).map((ref) => ({
@@ -174,7 +216,7 @@ export function toProofSurfacePacket(packet) {
     side_effects: sideEffects,
     outputs,
     evidence_refs,
-    failure_labels: [],
+    failure_labels: failureLabels,
     verdicts,
     uncertainty: buildUncertainty(packet),
     decision_summary: deriveDecisionSummary(verdict, [])
