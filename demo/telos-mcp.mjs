@@ -198,6 +198,11 @@ export const tools = [
     name: "telos.showcase.scout",
     description: "Use when a host needs fixture-backed OSS Proof Showcase candidate rankings before public patch work. Read-only, zero-auth, no external side effects. Returns JSON scout results.",
     inputSchema: emptyInputSchema
+  },
+  {
+    name: "telos.proof",
+    description: "Use when a host needs the fixture-backed agent-action proof packet joining source refs, context refs, route, admission, side effects, output digests, verifier checks, and the Emet witness stage. Read-only, zero-auth, no external side effects beyond local subprocess reads. Returns a JSON agent-action proof packet.",
+    inputSchema: emptyInputSchema
   }
 ];
 
@@ -238,7 +243,8 @@ const toolScripts = new Map([
   ["telos.display.calibration", ["display-calibration.mjs"]],
   ["telos.native.control", ["native-control.mjs"]],
   ["telos.browser.evidence", ["browser-evidence.mjs"]],
-  ["telos.showcase.scout", ["showcase.mjs", "scout", "--fixture", "--json"]]
+  ["telos.showcase.scout", ["showcase.mjs", "scout", "--fixture", "--json"]],
+  ["telos.proof", ["proof.mjs", "agent-action", "--demo", "--json"]]
 ]);
 function runTool(name) {
   const args = toolScripts.get(name);
