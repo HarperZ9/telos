@@ -1,8 +1,22 @@
 # Changelog
 
-All notable changes to Project Telos. Telos is currently a source demo and shared operator room rather than a packaged Python or npm release.
+All notable changes to Project Telos. Telos is a zero-dependency source demo and shared operator room; 0.2.0 adds npm packaging prep (bin entries, files allowlist, release lane) while publishing stays operator-gated.
 
 ## Unreleased
+
+- Ship prep for 0.2.0: package version 0.2.0 across package.json, the MCP
+  serverInfo, the telos.status envelope, and the server-manifest freshness
+  expectations. Adds `bin` entries (`telos-mcp` for the stdio MCP server,
+  `telos` as a router over the demo command surface), a `files` allowlist for
+  `npm pack`, a Release workflow (`.github/workflows/release.yml`) that builds
+  the npm tarball and a runnable demo zip on manual dispatch or a published
+  release, RELEASING.md, draft release notes, and a Run it block in the README.
+  Tagging and publishing stay operator-gated.
+- Manifest: declares `index.select` as Index auxiliary compatibility surface
+  (12 to 13 auxiliary tools) so the source-checkout launch gate matches the
+  current Index tool surface.
+- Brand gate: hero dimension check now matches the shipped flagship card canon
+  (2400x1260, the 1200x630 OG card at 2x).
 
 - Browser evidence kernel: adds `project-telos.browser-evidence/v1`,
   `node demo/browser-evidence.mjs`, and `telos.browser.evidence` as the
