@@ -1,0 +1,5084 @@
+﻿{
+  "browser_evidence_refs": [],
+  "budget": {
+    "approx_tokens": 1200,
+    "bytes_per_token": 4,
+    "token_budget": 1200
+  },
+  "context_policy": {
+    "mode": "lossless_by_reference",
+    "omission_policy": "explicit_failure_codes",
+    "raw_payload_policy": "source_refs_only"
+  },
+  "failure_codes": [],
+  "focus": {
+    "hops": null,
+    "repo": "telos"
+  },
+  "freshness": {
+    "recheck": {
+      "command": "index check --freshness; index freshness --cert CERT --root ROOT",
+      "tool": "index.freshness"
+    },
+    "repo_count": 1,
+    "retained_repo_sha256": {
+      "telos": "ed824d8b2f4d3af86933986a558e01fc451806f2a119bfcb9322e8bf7af1334a"
+    },
+    "schema": "index.context-envelope-freshness/v1",
+    "source_schema": "index.freshness/1",
+    "workspace_root_sha256": "8439ddad64aec26631e84c6a7f69d23cf3d10d2ad9e1d8980c2546cb3b3957c0"
+  },
+  "omitted": [],
+  "preserved": {
+    "boundary": {
+      "dropped_edges": [],
+      "dropped_nodes": []
+    },
+    "focus": [
+      "telos"
+    ],
+    "hops": null,
+    "kept_nodes": 1
+  },
+  "privacy": {
+    "raw_source_included": false,
+    "source_refs_only": true
+  },
+  "receipts": [
+    {
+      "kind": "graph-pack",
+      "schema": "index.context/graph-pack",
+      "sha256": "14515e573c240295bdc55756746b4e1c9b644968699e9c870cff5e5af4c5ea11"
+    }
+  ],
+  "recheck": {
+    "command": "index context-envelope --json",
+    "freshness_root_sha256": "8439ddad64aec26631e84c6a7f69d23cf3d10d2ad9e1d8980c2546cb3b3957c0",
+    "graph_pack_sha256": "14515e573c240295bdc55756746b4e1c9b644968699e9c870cff5e5af4c5ea11"
+  },
+  "retained": [
+    {
+      "description": "<p align=\"center\"> <img src=\"docs/brand/telos-hero.png\" alt=\"Project Telos, shared AI workspaces for creation, simulation, and verification\"> </p> <!-- Project mark: docs/brand/telos-mark.svg -->",
+      "ecosystems": [
+        "javascript"
+      ],
+      "name": "telos",
+      "roles": [
+        "leaf"
+      ],
+      "salience": {
+        "in_degree": 0,
+        "out_degree": 0
+      },
+      "source_refs": [
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/accessibility-doctor.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 1,
+          "path": "demo/accessibility-doctor.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "d09717f74557b3cb1888f8c36d0829998e7e591fdd4c7c3e339694821d16152c"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/accessibility-doctor.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 2,
+          "path": "demo/accessibility-doctor.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "d09717f74557b3cb1888f8c36d0829998e7e591fdd4c7c3e339694821d16152c"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/accessibility-doctor.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 3,
+          "path": "demo/accessibility-doctor.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "d09717f74557b3cb1888f8c36d0829998e7e591fdd4c7c3e339694821d16152c"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/accessibility-doctor.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 4,
+          "path": "demo/accessibility-doctor.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "d09717f74557b3cb1888f8c36d0829998e7e591fdd4c7c3e339694821d16152c"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/accessibility-doctor.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 1,
+          "path": "demo/accessibility-doctor.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "ddc74db5a21f8ff28942c30434a305d21ccb27a628691534d93923da43badad2"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/accessibility-doctor.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 2,
+          "path": "demo/accessibility-doctor.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "ddc74db5a21f8ff28942c30434a305d21ccb27a628691534d93923da43badad2"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/accessibility-doctor.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 3,
+          "path": "demo/accessibility-doctor.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "ddc74db5a21f8ff28942c30434a305d21ccb27a628691534d93923da43badad2"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/accessibility-doctor.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 4,
+          "path": "demo/accessibility-doctor.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "ddc74db5a21f8ff28942c30434a305d21ccb27a628691534d93923da43badad2"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/accessibility-doctor.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 5,
+          "path": "demo/accessibility-doctor.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "ddc74db5a21f8ff28942c30434a305d21ccb27a628691534d93923da43badad2"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/accessibility-doctor.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 6,
+          "path": "demo/accessibility-doctor.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "ddc74db5a21f8ff28942c30434a305d21ccb27a628691534d93923da43badad2"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/action-receipt.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 1,
+          "path": "demo/action-receipt.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "f140be2ca0717310ea88140a3477fa7e7765f60077155bc6ab654806f3d54bcc"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/action-receipt.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 1,
+          "path": "demo/action-receipt.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "18a692e41b40e0beaafc43fe46a1cce103631e63c31bff8e37bca164457f2db5"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/action-receipt.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 2,
+          "path": "demo/action-receipt.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "18a692e41b40e0beaafc43fe46a1cce103631e63c31bff8e37bca164457f2db5"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/admission-telemetry.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 1,
+          "path": "demo/admission-telemetry.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "7d0f1a740804c19ebd72447616f3d5b2ace6c5c9f71531d63508364952c40c46"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/admission-telemetry.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 1,
+          "path": "demo/admission-telemetry.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "08ccabdfaf60b0dab7279f6f7e09e335045db1c83b007d75b3bde23af0eb695c"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/admission-telemetry.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 2,
+          "path": "demo/admission-telemetry.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "08ccabdfaf60b0dab7279f6f7e09e335045db1c83b007d75b3bde23af0eb695c"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/agent-boundary-fixtures.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 1,
+          "path": "demo/agent-boundary-fixtures.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "7386adb777312542298c1f2e6dbe05c935295220204a2d9fd985ce31f606a0f6"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/agent-boundary-fixtures.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 2,
+          "path": "demo/agent-boundary-fixtures.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "7386adb777312542298c1f2e6dbe05c935295220204a2d9fd985ce31f606a0f6"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/atp-adapter-validation.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 1,
+          "path": "demo/atp-adapter-validation.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "3bd37ca1f21309bac68523188d3b2f2d9ae442fefaa10ea4b05a5faf0950ac33"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/atp-adapter-validation.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 2,
+          "path": "demo/atp-adapter-validation.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "3bd37ca1f21309bac68523188d3b2f2d9ae442fefaa10ea4b05a5faf0950ac33"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/brand-renderer.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 1,
+          "path": "demo/brand-renderer.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "1344df1d9e627b1c804e2e72af0507d681d8903a54dfd4e06c4050e31fd1623c"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/brand-renderer.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 2,
+          "path": "demo/brand-renderer.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "1344df1d9e627b1c804e2e72af0507d681d8903a54dfd4e06c4050e31fd1623c"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/brand-renderer.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 3,
+          "path": "demo/brand-renderer.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "1344df1d9e627b1c804e2e72af0507d681d8903a54dfd4e06c4050e31fd1623c"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/brand-renderer.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 4,
+          "path": "demo/brand-renderer.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "1344df1d9e627b1c804e2e72af0507d681d8903a54dfd4e06c4050e31fd1623c"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/browser-evidence.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 1,
+          "path": "demo/browser-evidence.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "721602e28a15efad62fd844adb9f85bcccd1647c6de0848ef49a6133f7eca7d9"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/browser-evidence.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 2,
+          "path": "demo/browser-evidence.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "721602e28a15efad62fd844adb9f85bcccd1647c6de0848ef49a6133f7eca7d9"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/browser-evidence.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 3,
+          "path": "demo/browser-evidence.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "721602e28a15efad62fd844adb9f85bcccd1647c6de0848ef49a6133f7eca7d9"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/browser-evidence.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 1,
+          "path": "demo/browser-evidence.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "c1b53235d490f1374b89047c50d4e77ceee801d888d70532ca2814c5e6c3d7ea"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/browser-evidence.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 2,
+          "path": "demo/browser-evidence.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "c1b53235d490f1374b89047c50d4e77ceee801d888d70532ca2814c5e6c3d7ea"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/browser-evidence.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 3,
+          "path": "demo/browser-evidence.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "c1b53235d490f1374b89047c50d4e77ceee801d888d70532ca2814c5e6c3d7ea"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/browser-evidence.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 4,
+          "path": "demo/browser-evidence.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "c1b53235d490f1374b89047c50d4e77ceee801d888d70532ca2814c5e6c3d7ea"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/browser-evidence.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 5,
+          "path": "demo/browser-evidence.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "c1b53235d490f1374b89047c50d4e77ceee801d888d70532ca2814c5e6c3d7ea"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/browser-evidence.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 6,
+          "path": "demo/browser-evidence.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "c1b53235d490f1374b89047c50d4e77ceee801d888d70532ca2814c5e6c3d7ea"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/catalog.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 1,
+          "path": "demo/catalog.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "bc24bec8827ffb0473a51e52084627bd1823073b8406aa1d1c6fcc723cbcdd4b"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/ci-doctor.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 1,
+          "path": "demo/ci-doctor.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "440cb3a96042b1d5a0c447b9d166353e82a970f07876f664c5c8e296a2d8f40c"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/ci-doctor.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 2,
+          "path": "demo/ci-doctor.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "440cb3a96042b1d5a0c447b9d166353e82a970f07876f664c5c8e296a2d8f40c"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/ci-doctor.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 3,
+          "path": "demo/ci-doctor.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "440cb3a96042b1d5a0c447b9d166353e82a970f07876f664c5c8e296a2d8f40c"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/ci-doctor.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 1,
+          "path": "demo/ci-doctor.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "03ae1fce9787f2e0d6986b4f5097882a0e2fb4421d1f1cc8add02ac1058bd9f5"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/ci-doctor.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 2,
+          "path": "demo/ci-doctor.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "03ae1fce9787f2e0d6986b4f5097882a0e2fb4421d1f1cc8add02ac1058bd9f5"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/ci-doctor.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 3,
+          "path": "demo/ci-doctor.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "03ae1fce9787f2e0d6986b4f5097882a0e2fb4421d1f1cc8add02ac1058bd9f5"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/ci-doctor.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 4,
+          "path": "demo/ci-doctor.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "03ae1fce9787f2e0d6986b4f5097882a0e2fb4421d1f1cc8add02ac1058bd9f5"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/ci-doctor.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 5,
+          "path": "demo/ci-doctor.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "03ae1fce9787f2e0d6986b4f5097882a0e2fb4421d1f1cc8add02ac1058bd9f5"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/ci-doctor.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 6,
+          "path": "demo/ci-doctor.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "03ae1fce9787f2e0d6986b4f5097882a0e2fb4421d1f1cc8add02ac1058bd9f5"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/ci-triage.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 1,
+          "path": "demo/ci-triage.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "1478b70a494dd54686c21a9a6faf2603771aaea36774755110ca32469862d683"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/ci-triage.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 2,
+          "path": "demo/ci-triage.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "1478b70a494dd54686c21a9a6faf2603771aaea36774755110ca32469862d683"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/ci-triage.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 3,
+          "path": "demo/ci-triage.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "1478b70a494dd54686c21a9a6faf2603771aaea36774755110ca32469862d683"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/ci-triage.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 4,
+          "path": "demo/ci-triage.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "1478b70a494dd54686c21a9a6faf2603771aaea36774755110ca32469862d683"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/ci-triage.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 5,
+          "path": "demo/ci-triage.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "1478b70a494dd54686c21a9a6faf2603771aaea36774755110ca32469862d683"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/ci-triage.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 1,
+          "path": "demo/ci-triage.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "3cd1f8ca8e304f5131de4fe9acea273b86fa39ff0a2a6d83dbce0e047a7b954f"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/ci-triage.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 2,
+          "path": "demo/ci-triage.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "3cd1f8ca8e304f5131de4fe9acea273b86fa39ff0a2a6d83dbce0e047a7b954f"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/ci-triage.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 3,
+          "path": "demo/ci-triage.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "3cd1f8ca8e304f5131de4fe9acea273b86fa39ff0a2a6d83dbce0e047a7b954f"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/ci-triage.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 4,
+          "path": "demo/ci-triage.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "3cd1f8ca8e304f5131de4fe9acea273b86fa39ff0a2a6d83dbce0e047a7b954f"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/ci-triage.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 5,
+          "path": "demo/ci-triage.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "3cd1f8ca8e304f5131de4fe9acea273b86fa39ff0a2a6d83dbce0e047a7b954f"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/ci-triage.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 6,
+          "path": "demo/ci-triage.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "3cd1f8ca8e304f5131de4fe9acea273b86fa39ff0a2a6d83dbce0e047a7b954f"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/compatibility-doctor.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 1,
+          "path": "demo/compatibility-doctor.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "3b5ff6ed511e1880e1aa2253904bbc04c6af02f15f884a4d1c5fa0d179ad1a36"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/compatibility-doctor.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 2,
+          "path": "demo/compatibility-doctor.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "3b5ff6ed511e1880e1aa2253904bbc04c6af02f15f884a4d1c5fa0d179ad1a36"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/compatibility-doctor.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 3,
+          "path": "demo/compatibility-doctor.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "3b5ff6ed511e1880e1aa2253904bbc04c6af02f15f884a4d1c5fa0d179ad1a36"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/compatibility-doctor.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 4,
+          "path": "demo/compatibility-doctor.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "3b5ff6ed511e1880e1aa2253904bbc04c6af02f15f884a4d1c5fa0d179ad1a36"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/compatibility-doctor.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 1,
+          "path": "demo/compatibility-doctor.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "0f3796518353548908643fdd8eb51b56f7a64dfe3614e30e4a179b070f82477c"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/compatibility-doctor.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 2,
+          "path": "demo/compatibility-doctor.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "0f3796518353548908643fdd8eb51b56f7a64dfe3614e30e4a179b070f82477c"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/compatibility-doctor.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 3,
+          "path": "demo/compatibility-doctor.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "0f3796518353548908643fdd8eb51b56f7a64dfe3614e30e4a179b070f82477c"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/compatibility-doctor.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 4,
+          "path": "demo/compatibility-doctor.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "0f3796518353548908643fdd8eb51b56f7a64dfe3614e30e4a179b070f82477c"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/compatibility-doctor.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 5,
+          "path": "demo/compatibility-doctor.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "0f3796518353548908643fdd8eb51b56f7a64dfe3614e30e4a179b070f82477c"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/compatibility-doctor.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 6,
+          "path": "demo/compatibility-doctor.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "0f3796518353548908643fdd8eb51b56f7a64dfe3614e30e4a179b070f82477c"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/context-envelope.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 1,
+          "path": "demo/context-envelope.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "1cb8b869e6c38d42c44cecec1485bfc04e2940f1774eabdddbc45ff6edd22924"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/context-envelope.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 1,
+          "path": "demo/context-envelope.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "f4de894bed42cb040819b8704a25a89638ad1c03a4c62841365b422c69cfea4c"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/context-envelope.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 2,
+          "path": "demo/context-envelope.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "f4de894bed42cb040819b8704a25a89638ad1c03a4c62841365b422c69cfea4c"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/context-pack.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 1,
+          "path": "demo/context-pack.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "78e178fadd55991a357d8cdbc16801ce2b700ff3bee841be487430ecc1d0790a"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/context-pack.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 2,
+          "path": "demo/context-pack.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "78e178fadd55991a357d8cdbc16801ce2b700ff3bee841be487430ecc1d0790a"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/context-pack.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 1,
+          "path": "demo/context-pack.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "cd62ca3f93c35603c0fc70e788a1452f1c71f72ab46a3f4380e7b716e0efa49c"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/context-pack.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 2,
+          "path": "demo/context-pack.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "cd62ca3f93c35603c0fc70e788a1452f1c71f72ab46a3f4380e7b716e0efa49c"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/context-pack.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 3,
+          "path": "demo/context-pack.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "cd62ca3f93c35603c0fc70e788a1452f1c71f72ab46a3f4380e7b716e0efa49c"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/context-pack.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 4,
+          "path": "demo/context-pack.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "cd62ca3f93c35603c0fc70e788a1452f1c71f72ab46a3f4380e7b716e0efa49c"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/creative-engine.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 1,
+          "path": "demo/creative-engine.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "a5d0e92d5e2514f3271c51bc4c415a70234c847778bf5f8bf87305abc4e57206"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/creative-engine.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 2,
+          "path": "demo/creative-engine.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "a5d0e92d5e2514f3271c51bc4c415a70234c847778bf5f8bf87305abc4e57206"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/creative-engine.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 1,
+          "path": "demo/creative-engine.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "8b69927c612fb42448033502c03366a8866566cb2ffa60714dba05dc08297126"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/creative-engine.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 2,
+          "path": "demo/creative-engine.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "8b69927c612fb42448033502c03366a8866566cb2ffa60714dba05dc08297126"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/creative-engine.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 3,
+          "path": "demo/creative-engine.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "8b69927c612fb42448033502c03366a8866566cb2ffa60714dba05dc08297126"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/creative-engine.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 4,
+          "path": "demo/creative-engine.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "8b69927c612fb42448033502c03366a8866566cb2ffa60714dba05dc08297126"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/creative-engine.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 5,
+          "path": "demo/creative-engine.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "8b69927c612fb42448033502c03366a8866566cb2ffa60714dba05dc08297126"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/creative-kernels.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 1,
+          "path": "demo/creative-kernels.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "3cdec558ee5490422c79272cf871ffb6063f93a8cbc776331be2714ac2e4644a"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/creative-kernels.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 1,
+          "path": "demo/creative-kernels.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "cfa8c4a8b674ca942c30af4ae2479120c1db406bea27351987de91c8bfe24da3"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/creative-kernels.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 2,
+          "path": "demo/creative-kernels.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "cfa8c4a8b674ca942c30af4ae2479120c1db406bea27351987de91c8bfe24da3"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/creative-kernels.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 3,
+          "path": "demo/creative-kernels.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "cfa8c4a8b674ca942c30af4ae2479120c1db406bea27351987de91c8bfe24da3"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/creative-kernels.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 4,
+          "path": "demo/creative-kernels.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "cfa8c4a8b674ca942c30af4ae2479120c1db406bea27351987de91c8bfe24da3"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/display-calibration.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 1,
+          "path": "demo/display-calibration.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "5ddad60d074a7a398491fbc371249c5af664e9ca80880b8f776e7bbb10454483"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/display-calibration.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 2,
+          "path": "demo/display-calibration.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "5ddad60d074a7a398491fbc371249c5af664e9ca80880b8f776e7bbb10454483"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/display-calibration.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 1,
+          "path": "demo/display-calibration.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "f09bd37374d01295b87c57cdb60fd54ea70ccd9b79c986f6189d669801cd3ae5"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/display-calibration.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 2,
+          "path": "demo/display-calibration.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "f09bd37374d01295b87c57cdb60fd54ea70ccd9b79c986f6189d669801cd3ae5"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/display-calibration.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 3,
+          "path": "demo/display-calibration.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "f09bd37374d01295b87c57cdb60fd54ea70ccd9b79c986f6189d669801cd3ae5"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/display-calibration.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 4,
+          "path": "demo/display-calibration.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "f09bd37374d01295b87c57cdb60fd54ea70ccd9b79c986f6189d669801cd3ae5"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/display-calibration.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 5,
+          "path": "demo/display-calibration.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "f09bd37374d01295b87c57cdb60fd54ea70ccd9b79c986f6189d669801cd3ae5"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/effects-engine.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 1,
+          "path": "demo/effects-engine.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "e0f243bac25393eb0b39d95994592738bf7c9f0ccb9abccd2221c1fcd2742a26"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/effects-engine.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 2,
+          "path": "demo/effects-engine.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "e0f243bac25393eb0b39d95994592738bf7c9f0ccb9abccd2221c1fcd2742a26"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/effects-protocol.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 1,
+          "path": "demo/effects-protocol.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "ec12c8bcf23774c04e8fb7293a030ad07439d28dc12c9dcaab51c0262161404a"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/flagship-action.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 1,
+          "path": "demo/flagship-action.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "17dbc5fd5908fd1e4ecfaf4bf6b527bb090d5b5cd8d7b50a1d198a28367c0c6e"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/flagship-action.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 2,
+          "path": "demo/flagship-action.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "17dbc5fd5908fd1e4ecfaf4bf6b527bb090d5b5cd8d7b50a1d198a28367c0c6e"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/flagship-workflow.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 1,
+          "path": "demo/flagship-workflow.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "58e446680e4193f624552c40afd329da69684042484fd75d01e82e8fa4c0896c"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/flagship-workflow.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 2,
+          "path": "demo/flagship-workflow.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "58e446680e4193f624552c40afd329da69684042484fd75d01e82e8fa4c0896c"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/flagship-workflow.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 3,
+          "path": "demo/flagship-workflow.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "58e446680e4193f624552c40afd329da69684042484fd75d01e82e8fa4c0896c"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/flagship-workflow.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 4,
+          "path": "demo/flagship-workflow.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "58e446680e4193f624552c40afd329da69684042484fd75d01e82e8fa4c0896c"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/flagship-workflow.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 5,
+          "path": "demo/flagship-workflow.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "58e446680e4193f624552c40afd329da69684042484fd75d01e82e8fa4c0896c"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/index-html.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 1,
+          "path": "demo/index-html.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "d0d9176e9d35b413af7cb3c785a21981cda28f9b9d13058640e1c21fa2bad443"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/index-html.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 2,
+          "path": "demo/index-html.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "d0d9176e9d35b413af7cb3c785a21981cda28f9b9d13058640e1c21fa2bad443"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/integrations.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 1,
+          "path": "demo/integrations.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "9fe4f2a17ee193c3fa61e6a257ebb9d457aac2082cfa6b6d9ec182c289a1bcb9"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/integrations.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 2,
+          "path": "demo/integrations.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "9fe4f2a17ee193c3fa61e6a257ebb9d457aac2082cfa6b6d9ec182c289a1bcb9"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/learning-forge-labs.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 1,
+          "path": "demo/learning-forge-labs.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "c64d1739502241507f138ffe085964c1f5ccae8f289bd1a5ee25f820762d34fa"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/learning-forge-labs.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 1,
+          "path": "demo/learning-forge-labs.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "0eaa654b74a22a509c8a8d7fb0d2c7edc4f5890d83a98c5b23f032380f6b1e8b"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/learning-forge-labs.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 2,
+          "path": "demo/learning-forge-labs.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "0eaa654b74a22a509c8a8d7fb0d2c7edc4f5890d83a98c5b23f032380f6b1e8b"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/learning-forge-labs.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 3,
+          "path": "demo/learning-forge-labs.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "0eaa654b74a22a509c8a8d7fb0d2c7edc4f5890d83a98c5b23f032380f6b1e8b"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/learning-forge-labs.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 4,
+          "path": "demo/learning-forge-labs.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "0eaa654b74a22a509c8a8d7fb0d2c7edc4f5890d83a98c5b23f032380f6b1e8b"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/learning-forge-labs.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 5,
+          "path": "demo/learning-forge-labs.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "0eaa654b74a22a509c8a8d7fb0d2c7edc4f5890d83a98c5b23f032380f6b1e8b"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/learning-forge.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 1,
+          "path": "demo/learning-forge.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "1553d068408195ca9bbe49febac5053a8998f76957fe6330950d3612ad375c8e"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/learning-forge.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 1,
+          "path": "demo/learning-forge.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "a548ab712519a76238a9faf845b542008ad4cb5d3a94438a9594921b86f126c2"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/learning-forge.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 2,
+          "path": "demo/learning-forge.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "a548ab712519a76238a9faf845b542008ad4cb5d3a94438a9594921b86f126c2"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/learning-forge.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 3,
+          "path": "demo/learning-forge.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "a548ab712519a76238a9faf845b542008ad4cb5d3a94438a9594921b86f126c2"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/learning-forge.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 4,
+          "path": "demo/learning-forge.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "a548ab712519a76238a9faf845b542008ad4cb5d3a94438a9594921b86f126c2"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/learning-forge.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 5,
+          "path": "demo/learning-forge.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "a548ab712519a76238a9faf845b542008ad4cb5d3a94438a9594921b86f126c2"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/loop-ledger.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 1,
+          "path": "demo/loop-ledger.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "716794b4aabc44ddb31230a47996889cd291b79738742b20e70b23ef4056bf30"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/loop-ledger.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 1,
+          "path": "demo/loop-ledger.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "342501683267e38fa13322e38a973f1e815d78422b0612464dd561f9067ac3d2"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/loop-ledger.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 2,
+          "path": "demo/loop-ledger.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "342501683267e38fa13322e38a973f1e815d78422b0612464dd561f9067ac3d2"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/mcp-freshness.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 1,
+          "path": "demo/mcp-freshness.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "83529d520f51baf5c1519144862cd8d697d1b30e9e6e4fe6b8ac7cc89c058496"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/mcp-freshness.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 2,
+          "path": "demo/mcp-freshness.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "83529d520f51baf5c1519144862cd8d697d1b30e9e6e4fe6b8ac7cc89c058496"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/mcp-freshness.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 1,
+          "path": "demo/mcp-freshness.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "3f54b758d797445b5330b2413184231bea6afcba64b4fa737f620cacc3cb239d"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/mcp-freshness.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 2,
+          "path": "demo/mcp-freshness.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "3f54b758d797445b5330b2413184231bea6afcba64b4fa737f620cacc3cb239d"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/mcp-freshness.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 3,
+          "path": "demo/mcp-freshness.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "3f54b758d797445b5330b2413184231bea6afcba64b4fa737f620cacc3cb239d"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/mcp-freshness.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 4,
+          "path": "demo/mcp-freshness.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "3f54b758d797445b5330b2413184231bea6afcba64b4fa737f620cacc3cb239d"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/mcp-freshness.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 5,
+          "path": "demo/mcp-freshness.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "3f54b758d797445b5330b2413184231bea6afcba64b4fa737f620cacc3cb239d"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/mcp-freshness.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 6,
+          "path": "demo/mcp-freshness.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "3f54b758d797445b5330b2413184231bea6afcba64b4fa737f620cacc3cb239d"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/mcp-runtime-contract.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 1,
+          "path": "demo/mcp-runtime-contract.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "c7b132b11895787b18dbe957dc46d621581d3a2a066332d763ded215738890e8"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/mcp-runtime-contract.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 2,
+          "path": "demo/mcp-runtime-contract.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "c7b132b11895787b18dbe957dc46d621581d3a2a066332d763ded215738890e8"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/mcp-runtime-contract.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 3,
+          "path": "demo/mcp-runtime-contract.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "c7b132b11895787b18dbe957dc46d621581d3a2a066332d763ded215738890e8"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/mcp-runtime-contract.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 4,
+          "path": "demo/mcp-runtime-contract.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "c7b132b11895787b18dbe957dc46d621581d3a2a066332d763ded215738890e8"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/mcp-runtime-contract.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 5,
+          "path": "demo/mcp-runtime-contract.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "c7b132b11895787b18dbe957dc46d621581d3a2a066332d763ded215738890e8"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/mcp-server-launch.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 1,
+          "path": "demo/mcp-server-launch.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "5032bee882e7e32b055fbc579f487be2b6f656589e654a50c599069db37ffd6b"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/mcp-server-launch.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 2,
+          "path": "demo/mcp-server-launch.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "5032bee882e7e32b055fbc579f487be2b6f656589e654a50c599069db37ffd6b"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/mcp-server-launch.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 3,
+          "path": "demo/mcp-server-launch.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "5032bee882e7e32b055fbc579f487be2b6f656589e654a50c599069db37ffd6b"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/mcp-server-launch.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 4,
+          "path": "demo/mcp-server-launch.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "5032bee882e7e32b055fbc579f487be2b6f656589e654a50c599069db37ffd6b"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/mcp-server-launch.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 5,
+          "path": "demo/mcp-server-launch.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "5032bee882e7e32b055fbc579f487be2b6f656589e654a50c599069db37ffd6b"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/measurement-layers.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 1,
+          "path": "demo/measurement-layers.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "a432401cfbaadb77084be69f87e014fbe04b4bf20f7b4f2f120fa9f4d50260cd"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/measurement-layers.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 2,
+          "path": "demo/measurement-layers.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "a432401cfbaadb77084be69f87e014fbe04b4bf20f7b4f2f120fa9f4d50260cd"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/measurement-layers.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 1,
+          "path": "demo/measurement-layers.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "82f71c2e6d17252f844241739b56bb00ff61a73401f8347e55cdbc493150933b"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/measurement-layers.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 2,
+          "path": "demo/measurement-layers.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "82f71c2e6d17252f844241739b56bb00ff61a73401f8347e55cdbc493150933b"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/measurement-layers.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 3,
+          "path": "demo/measurement-layers.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "82f71c2e6d17252f844241739b56bb00ff61a73401f8347e55cdbc493150933b"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/measurement-layers.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 4,
+          "path": "demo/measurement-layers.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "82f71c2e6d17252f844241739b56bb00ff61a73401f8347e55cdbc493150933b"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/measurement-layers.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 5,
+          "path": "demo/measurement-layers.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "82f71c2e6d17252f844241739b56bb00ff61a73401f8347e55cdbc493150933b"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/model-foundry.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 1,
+          "path": "demo/model-foundry.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "13924534722b115ac51b718f353af21e33f6f8790542b6451a4435f412e277df"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/model-foundry.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 1,
+          "path": "demo/model-foundry.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "7b2a2fce7cd5363dfbe3a26389130ea2597de777df1b3e249665b469ac835622"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/model-foundry.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 2,
+          "path": "demo/model-foundry.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "7b2a2fce7cd5363dfbe3a26389130ea2597de777df1b3e249665b469ac835622"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/model-foundry.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 3,
+          "path": "demo/model-foundry.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "7b2a2fce7cd5363dfbe3a26389130ea2597de777df1b3e249665b469ac835622"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/model-foundry.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 4,
+          "path": "demo/model-foundry.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "7b2a2fce7cd5363dfbe3a26389130ea2597de777df1b3e249665b469ac835622"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/native-control.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 8,
+          "path": "demo/native-control.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "5f3d4a030a1379b1696821616ae9bc09ce3d36801674c0523e9b7f51427fa76f"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/native-control.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 9,
+          "path": "demo/native-control.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "5f3d4a030a1379b1696821616ae9bc09ce3d36801674c0523e9b7f51427fa76f"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/native-control.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 1,
+          "path": "demo/native-control.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "242f1163fcd89e8715cc24006c32cd45a560c4ada95ee04f0ac806c3d46d4ae9"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/native-control.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 2,
+          "path": "demo/native-control.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "242f1163fcd89e8715cc24006c32cd45a560c4ada95ee04f0ac806c3d46d4ae9"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/native-control.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 3,
+          "path": "demo/native-control.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "242f1163fcd89e8715cc24006c32cd45a560c4ada95ee04f0ac806c3d46d4ae9"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/native-control.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 4,
+          "path": "demo/native-control.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "242f1163fcd89e8715cc24006c32cd45a560c4ada95ee04f0ac806c3d46d4ae9"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/native-control.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 5,
+          "path": "demo/native-control.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "242f1163fcd89e8715cc24006c32cd45a560c4ada95ee04f0ac806c3d46d4ae9"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/native-control/app.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 7,
+          "path": "demo/native-control/app.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "3d7c7ff1f384fc3a437bda9709eae192abecc61d9c47faff936ba7a7a069993d"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/native-control/app.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 8,
+          "path": "demo/native-control/app.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "3d7c7ff1f384fc3a437bda9709eae192abecc61d9c47faff936ba7a7a069993d"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/native-control/app.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 9,
+          "path": "demo/native-control/app.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "3d7c7ff1f384fc3a437bda9709eae192abecc61d9c47faff936ba7a7a069993d"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/native-control/browser.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 8,
+          "path": "demo/native-control/browser.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "a2d8f5b902b2c76c28b69c58429903ea1f538ae31ac93c8dfd81fde26e66e633"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/native-control/browser.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 9,
+          "path": "demo/native-control/browser.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "a2d8f5b902b2c76c28b69c58429903ea1f538ae31ac93c8dfd81fde26e66e633"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/native-control/evidence.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 1,
+          "path": "demo/native-control/evidence.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "1de78fab95d012c0bb444ef0132c22ab749167de91ba804e64505296c1eea356"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/objective-monitor.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 1,
+          "path": "demo/objective-monitor.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "ab7f6e134632ca57dc3f530ce228538648aa97c9bf5f2fe67b7aacc4225fd5ca"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/objective-monitor.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 1,
+          "path": "demo/objective-monitor.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "c974ae865b70cdd547a5b41709c158222881968ef96c272f53585d1a234b428d"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/objective-monitor.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 2,
+          "path": "demo/objective-monitor.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "c974ae865b70cdd547a5b41709c158222881968ef96c272f53585d1a234b428d"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/objective-monitor.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 3,
+          "path": "demo/objective-monitor.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "c974ae865b70cdd547a5b41709c158222881968ef96c272f53585d1a234b428d"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/objective-monitor.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 4,
+          "path": "demo/objective-monitor.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "c974ae865b70cdd547a5b41709c158222881968ef96c272f53585d1a234b428d"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/operator-doctor.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 1,
+          "path": "demo/operator-doctor.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "eccf97105448835627db7716e48aa28dbaf05888d0b76e242d3d628f331a06ce"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/operator-doctor.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 2,
+          "path": "demo/operator-doctor.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "eccf97105448835627db7716e48aa28dbaf05888d0b76e242d3d628f331a06ce"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/operator-doctor.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 3,
+          "path": "demo/operator-doctor.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "eccf97105448835627db7716e48aa28dbaf05888d0b76e242d3d628f331a06ce"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/operator-doctor.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 4,
+          "path": "demo/operator-doctor.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "eccf97105448835627db7716e48aa28dbaf05888d0b76e242d3d628f331a06ce"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/operator-doctor.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 5,
+          "path": "demo/operator-doctor.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "eccf97105448835627db7716e48aa28dbaf05888d0b76e242d3d628f331a06ce"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/operator-doctor.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 1,
+          "path": "demo/operator-doctor.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "9dd4af24c7886475f8221c2182007cda4f1424f88cff324d3cd280f85ecaf0c7"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/operator-doctor.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 2,
+          "path": "demo/operator-doctor.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "9dd4af24c7886475f8221c2182007cda4f1424f88cff324d3cd280f85ecaf0c7"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/operator-doctor.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 3,
+          "path": "demo/operator-doctor.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "9dd4af24c7886475f8221c2182007cda4f1424f88cff324d3cd280f85ecaf0c7"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/operator-doctor.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 4,
+          "path": "demo/operator-doctor.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "9dd4af24c7886475f8221c2182007cda4f1424f88cff324d3cd280f85ecaf0c7"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/operator-doctor.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 5,
+          "path": "demo/operator-doctor.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "9dd4af24c7886475f8221c2182007cda4f1424f88cff324d3cd280f85ecaf0c7"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/operator-doctor.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 6,
+          "path": "demo/operator-doctor.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "9dd4af24c7886475f8221c2182007cda4f1424f88cff324d3cd280f85ecaf0c7"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/operator-scripts.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 1,
+          "path": "demo/operator-scripts.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "4a235036600f8d390f2d675a8859b0d0ba15c565a720ecab6e4703c05b07b028"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/operator-scripts.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 2,
+          "path": "demo/operator-scripts.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "4a235036600f8d390f2d675a8859b0d0ba15c565a720ecab6e4703c05b07b028"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/operator-scripts.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 3,
+          "path": "demo/operator-scripts.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "4a235036600f8d390f2d675a8859b0d0ba15c565a720ecab6e4703c05b07b028"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/operator-scripts.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 4,
+          "path": "demo/operator-scripts.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "4a235036600f8d390f2d675a8859b0d0ba15c565a720ecab6e4703c05b07b028"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/operator-source-leads.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 1,
+          "path": "demo/operator-source-leads.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "24d2184fdff8128ce22ae49a8b119f90d8cf2a19d6bc3e3bf0c20e6c6c16a68e"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/operator-source-leads.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 2,
+          "path": "demo/operator-source-leads.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "24d2184fdff8128ce22ae49a8b119f90d8cf2a19d6bc3e3bf0c20e6c6c16a68e"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/performance-doctor.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 1,
+          "path": "demo/performance-doctor.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "fe198120a0030f11ffd16fbede0ba64643b59d78d686c36236e379ef2e708beb"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/performance-doctor.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 2,
+          "path": "demo/performance-doctor.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "fe198120a0030f11ffd16fbede0ba64643b59d78d686c36236e379ef2e708beb"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/performance-doctor.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 3,
+          "path": "demo/performance-doctor.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "fe198120a0030f11ffd16fbede0ba64643b59d78d686c36236e379ef2e708beb"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/performance-doctor.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 4,
+          "path": "demo/performance-doctor.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "fe198120a0030f11ffd16fbede0ba64643b59d78d686c36236e379ef2e708beb"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/performance-doctor.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 1,
+          "path": "demo/performance-doctor.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "5f03a2acd9ce6a21b1991ba48f9b51f8cadc335ed61e95ef2f57626ee4f998ba"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/performance-doctor.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 2,
+          "path": "demo/performance-doctor.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "5f03a2acd9ce6a21b1991ba48f9b51f8cadc335ed61e95ef2f57626ee4f998ba"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/performance-doctor.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 3,
+          "path": "demo/performance-doctor.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "5f03a2acd9ce6a21b1991ba48f9b51f8cadc335ed61e95ef2f57626ee4f998ba"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/performance-doctor.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 4,
+          "path": "demo/performance-doctor.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "5f03a2acd9ce6a21b1991ba48f9b51f8cadc335ed61e95ef2f57626ee4f998ba"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/performance-doctor.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 5,
+          "path": "demo/performance-doctor.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "5f03a2acd9ce6a21b1991ba48f9b51f8cadc335ed61e95ef2f57626ee4f998ba"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/performance-doctor.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 6,
+          "path": "demo/performance-doctor.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "5f03a2acd9ce6a21b1991ba48f9b51f8cadc335ed61e95ef2f57626ee4f998ba"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/presentation-doctor.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 1,
+          "path": "demo/presentation-doctor.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "1568c46860396efe7a8f588254876a6297a4ddb89255a2a35d88b649f115efd2"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/presentation-doctor.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 2,
+          "path": "demo/presentation-doctor.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "1568c46860396efe7a8f588254876a6297a4ddb89255a2a35d88b649f115efd2"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/presentation-doctor.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 3,
+          "path": "demo/presentation-doctor.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "1568c46860396efe7a8f588254876a6297a4ddb89255a2a35d88b649f115efd2"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/presentation-doctor.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 4,
+          "path": "demo/presentation-doctor.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "1568c46860396efe7a8f588254876a6297a4ddb89255a2a35d88b649f115efd2"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/presentation-doctor.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 1,
+          "path": "demo/presentation-doctor.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "a715339f20bf878f20171f562224ba1ed90116cb7b7b11c90557325227aef701"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/presentation-doctor.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 2,
+          "path": "demo/presentation-doctor.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "a715339f20bf878f20171f562224ba1ed90116cb7b7b11c90557325227aef701"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/presentation-doctor.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 3,
+          "path": "demo/presentation-doctor.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "a715339f20bf878f20171f562224ba1ed90116cb7b7b11c90557325227aef701"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/presentation-doctor.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 4,
+          "path": "demo/presentation-doctor.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "a715339f20bf878f20171f562224ba1ed90116cb7b7b11c90557325227aef701"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/presentation-doctor.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 5,
+          "path": "demo/presentation-doctor.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "a715339f20bf878f20171f562224ba1ed90116cb7b7b11c90557325227aef701"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/presentation-doctor.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 6,
+          "path": "demo/presentation-doctor.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "a715339f20bf878f20171f562224ba1ed90116cb7b7b11c90557325227aef701"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/project-current-state-docs.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 1,
+          "path": "demo/project-current-state-docs.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "bc8040ec2bf7a8da1708804973b3e42c063aa8e9284def7f3b0049396b1935e5"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/project-current-state-docs.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 2,
+          "path": "demo/project-current-state-docs.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "bc8040ec2bf7a8da1708804973b3e42c063aa8e9284def7f3b0049396b1935e5"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/project-current-state-docs.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 3,
+          "path": "demo/project-current-state-docs.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "bc8040ec2bf7a8da1708804973b3e42c063aa8e9284def7f3b0049396b1935e5"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/project-current-state-docs.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 4,
+          "path": "demo/project-current-state-docs.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "bc8040ec2bf7a8da1708804973b3e42c063aa8e9284def7f3b0049396b1935e5"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/rendering-capabilities.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 1,
+          "path": "demo/rendering-capabilities.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "c21eddb2bce98ba080bb6696203288f4469a1bd314313202834c07c4e8f1edb9"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/rendering-capabilities.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 1,
+          "path": "demo/rendering-capabilities.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "ceb276744d15e1be3df3cc4c1d6e621c022ee04a49851787ec62bd28c96f9bc5"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/rendering-capabilities.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 2,
+          "path": "demo/rendering-capabilities.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "ceb276744d15e1be3df3cc4c1d6e621c022ee04a49851787ec62bd28c96f9bc5"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/rendering-capabilities.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 3,
+          "path": "demo/rendering-capabilities.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "ceb276744d15e1be3df3cc4c1d6e621c022ee04a49851787ec62bd28c96f9bc5"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/rendering-capabilities.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 4,
+          "path": "demo/rendering-capabilities.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "ceb276744d15e1be3df3cc4c1d6e621c022ee04a49851787ec62bd28c96f9bc5"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/rendering-capabilities.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 5,
+          "path": "demo/rendering-capabilities.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "ceb276744d15e1be3df3cc4c1d6e621c022ee04a49851787ec62bd28c96f9bc5"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/rendering-research.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 1,
+          "path": "demo/rendering-research.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "f285a7c5cbfcd5244cb040d29f9e70cfbfd28aeedae1c6b866eb5a9319937bb0"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/rendering-research.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 1,
+          "path": "demo/rendering-research.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "2118a65c13239a8e40dc7530362385a2e5b17e9330bc6cf6037d408a54ab90b6"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/rendering-research.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 2,
+          "path": "demo/rendering-research.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "2118a65c13239a8e40dc7530362385a2e5b17e9330bc6cf6037d408a54ab90b6"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/rendering-research.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 3,
+          "path": "demo/rendering-research.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "2118a65c13239a8e40dc7530362385a2e5b17e9330bc6cf6037d408a54ab90b6"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/rendering-research.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 4,
+          "path": "demo/rendering-research.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "2118a65c13239a8e40dc7530362385a2e5b17e9330bc6cf6037d408a54ab90b6"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/rendering-research.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 5,
+          "path": "demo/rendering-research.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "2118a65c13239a8e40dc7530362385a2e5b17e9330bc6cf6037d408a54ab90b6"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/research-seed.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 1,
+          "path": "demo/research-seed.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "4d1f581245290b030caa81868f542704febe68030bd3ae592289f6a4df0da9ee"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/research-seed.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 1,
+          "path": "demo/research-seed.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "434c85312d58f775e1d92a5357d27bfd14bab303c39bd48b3d04c5c67e0e0e83"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/research-seed.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 2,
+          "path": "demo/research-seed.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "434c85312d58f775e1d92a5357d27bfd14bab303c39bd48b3d04c5c67e0e0e83"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/research-seed.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 3,
+          "path": "demo/research-seed.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "434c85312d58f775e1d92a5357d27bfd14bab303c39bd48b3d04c5c67e0e0e83"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/research-seed.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 4,
+          "path": "demo/research-seed.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "434c85312d58f775e1d92a5357d27bfd14bab303c39bd48b3d04c5c67e0e0e83"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/research-seed.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 5,
+          "path": "demo/research-seed.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "434c85312d58f775e1d92a5357d27bfd14bab303c39bd48b3d04c5c67e0e0e83"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/revival-registry.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 1,
+          "path": "demo/revival-registry.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "b401fc13e943db52bbbccbdf2baee7da519ab7934cdfd7c73cb7728e91851c56"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/revival-registry.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 2,
+          "path": "demo/revival-registry.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "b401fc13e943db52bbbccbdf2baee7da519ab7934cdfd7c73cb7728e91851c56"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/revival-registry.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 1,
+          "path": "demo/revival-registry.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "9f47230c9b00b2bdc09e9a47d2087e1a843c6192aafef3e358e26ad29aeb19d8"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/revival-registry.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 2,
+          "path": "demo/revival-registry.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "9f47230c9b00b2bdc09e9a47d2087e1a843c6192aafef3e358e26ad29aeb19d8"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/revival-registry.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 3,
+          "path": "demo/revival-registry.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "9f47230c9b00b2bdc09e9a47d2087e1a843c6192aafef3e358e26ad29aeb19d8"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/revival-registry.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 4,
+          "path": "demo/revival-registry.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "9f47230c9b00b2bdc09e9a47d2087e1a843c6192aafef3e358e26ad29aeb19d8"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/revival-registry.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 5,
+          "path": "demo/revival-registry.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "9f47230c9b00b2bdc09e9a47d2087e1a843c6192aafef3e358e26ad29aeb19d8"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/room.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 1,
+          "path": "demo/room.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "ce3dfc6ef498a067e442c8fe49ec8dd2859c52fd4adf8093de8d66120fb9e3ab"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/room.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 2,
+          "path": "demo/room.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "ce3dfc6ef498a067e442c8fe49ec8dd2859c52fd4adf8093de8d66120fb9e3ab"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/room.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 3,
+          "path": "demo/room.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "ce3dfc6ef498a067e442c8fe49ec8dd2859c52fd4adf8093de8d66120fb9e3ab"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/room.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 4,
+          "path": "demo/room.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "ce3dfc6ef498a067e442c8fe49ec8dd2859c52fd4adf8093de8d66120fb9e3ab"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/scankii-replayable-receipt.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 1,
+          "path": "demo/scankii-replayable-receipt.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "b55103562b44e784a3344d6cf7368f2250fd6d7689f658acd81af2663239ab1c"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/scankii-replayable-receipt.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 2,
+          "path": "demo/scankii-replayable-receipt.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "b55103562b44e784a3344d6cf7368f2250fd6d7689f658acd81af2663239ab1c"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/second-level-flagship-queue.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 1,
+          "path": "demo/second-level-flagship-queue.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "00b1b5fc17227012e91f18e20a5f4fa3c65a8d7542eb806244c48f232d5cf9f0"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/second-level-flagship-queue.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 2,
+          "path": "demo/second-level-flagship-queue.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "00b1b5fc17227012e91f18e20a5f4fa3c65a8d7542eb806244c48f232d5cf9f0"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/second-level-flagship-queue.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 1,
+          "path": "demo/second-level-flagship-queue.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "fb3779486f7f8e84f022c4acb0bbf895d0f7324d787bca5f035ee8747856799f"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/second-level-flagship-queue.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 2,
+          "path": "demo/second-level-flagship-queue.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "fb3779486f7f8e84f022c4acb0bbf895d0f7324d787bca5f035ee8747856799f"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/second-level-flagship-queue.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 3,
+          "path": "demo/second-level-flagship-queue.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "fb3779486f7f8e84f022c4acb0bbf895d0f7324d787bca5f035ee8747856799f"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/second-level-flagship-queue.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 4,
+          "path": "demo/second-level-flagship-queue.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "fb3779486f7f8e84f022c4acb0bbf895d0f7324d787bca5f035ee8747856799f"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/second-level-flagship-queue.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 5,
+          "path": "demo/second-level-flagship-queue.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "fb3779486f7f8e84f022c4acb0bbf895d0f7324d787bca5f035ee8747856799f"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/server-manifest.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 1,
+          "path": "demo/server-manifest.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "4f82dfebd501017190657171f0a23f87f69f9fa47984fcb356bd3c142ee85715"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/server-manifest.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 1,
+          "path": "demo/server-manifest.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "06dc3c796ad561face40aaa272dd3eabb84ccb6687ee0390e3f4803469ba3eff"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/server-manifest.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 2,
+          "path": "demo/server-manifest.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "06dc3c796ad561face40aaa272dd3eabb84ccb6687ee0390e3f4803469ba3eff"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/server-manifest.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 3,
+          "path": "demo/server-manifest.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "06dc3c796ad561face40aaa272dd3eabb84ccb6687ee0390e3f4803469ba3eff"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/server-manifest.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 4,
+          "path": "demo/server-manifest.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "06dc3c796ad561face40aaa272dd3eabb84ccb6687ee0390e3f4803469ba3eff"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/server-manifest.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 5,
+          "path": "demo/server-manifest.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "06dc3c796ad561face40aaa272dd3eabb84ccb6687ee0390e3f4803469ba3eff"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/showcase.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 1,
+          "path": "demo/showcase.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "851c2d2ae08082b4c159e80c5fc0819d2b04b2dd9912aa23f3570c1dec1c42d6"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/showcase.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 2,
+          "path": "demo/showcase.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "851c2d2ae08082b4c159e80c5fc0819d2b04b2dd9912aa23f3570c1dec1c42d6"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/showcase.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 3,
+          "path": "demo/showcase.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "851c2d2ae08082b4c159e80c5fc0819d2b04b2dd9912aa23f3570c1dec1c42d6"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/showcase.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 1,
+          "path": "demo/showcase.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "c5a486ec31ad45bceeba17f464f354ef263afd5cdb505880a8c4767468cbe161"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/showcase.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 2,
+          "path": "demo/showcase.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "c5a486ec31ad45bceeba17f464f354ef263afd5cdb505880a8c4767468cbe161"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/showcase.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 32,
+          "path": "demo/showcase.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "c5a486ec31ad45bceeba17f464f354ef263afd5cdb505880a8c4767468cbe161"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/showcase.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 33,
+          "path": "demo/showcase.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "c5a486ec31ad45bceeba17f464f354ef263afd5cdb505880a8c4767468cbe161"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/showcase.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 34,
+          "path": "demo/showcase.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "c5a486ec31ad45bceeba17f464f354ef263afd5cdb505880a8c4767468cbe161"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/showcase.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 35,
+          "path": "demo/showcase.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "c5a486ec31ad45bceeba17f464f354ef263afd5cdb505880a8c4767468cbe161"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/showcase/scout.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 1,
+          "path": "demo/showcase/scout.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "d641850342a1ae46e4b4a3a5882c931a1471140f6a9f304367e9f0882f7b8104"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/showcase/scout.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 2,
+          "path": "demo/showcase/scout.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "d641850342a1ae46e4b4a3a5882c931a1471140f6a9f304367e9f0882f7b8104"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/smallharness-fixture-pack.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 1,
+          "path": "demo/smallharness-fixture-pack.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "931ad2b4c132205da41e40eff666c93456cdfc45507f03299edd5ea81a92f209"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/smallharness-fixture-pack.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 2,
+          "path": "demo/smallharness-fixture-pack.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "931ad2b4c132205da41e40eff666c93456cdfc45507f03299edd5ea81a92f209"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/smallharness-fixture-pack.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 3,
+          "path": "demo/smallharness-fixture-pack.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "931ad2b4c132205da41e40eff666c93456cdfc45507f03299edd5ea81a92f209"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/smallharness-fixture-pack.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 4,
+          "path": "demo/smallharness-fixture-pack.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "931ad2b4c132205da41e40eff666c93456cdfc45507f03299edd5ea81a92f209"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/smallharness-fixture-pack.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 5,
+          "path": "demo/smallharness-fixture-pack.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "931ad2b4c132205da41e40eff666c93456cdfc45507f03299edd5ea81a92f209"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/telos-cli.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 5,
+          "path": "demo/telos-cli.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "43c8ca6437c5c14085218402f478ef7d68f64bbc25100d9dbde84a8817b217ff"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/telos-cli.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 6,
+          "path": "demo/telos-cli.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "43c8ca6437c5c14085218402f478ef7d68f64bbc25100d9dbde84a8817b217ff"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/telos-cli.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 7,
+          "path": "demo/telos-cli.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "43c8ca6437c5c14085218402f478ef7d68f64bbc25100d9dbde84a8817b217ff"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/telos-cli.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 8,
+          "path": "demo/telos-cli.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "43c8ca6437c5c14085218402f478ef7d68f64bbc25100d9dbde84a8817b217ff"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/telos-cli.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 1,
+          "path": "demo/telos-cli.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "0f506de8998c24a4b72dd04e573f77095a772a0e295b0b12f105a4ec84185483"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/telos-cli.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 2,
+          "path": "demo/telos-cli.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "0f506de8998c24a4b72dd04e573f77095a772a0e295b0b12f105a4ec84185483"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/telos-cli.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 3,
+          "path": "demo/telos-cli.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "0f506de8998c24a4b72dd04e573f77095a772a0e295b0b12f105a4ec84185483"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/telos-cli.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 4,
+          "path": "demo/telos-cli.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "0f506de8998c24a4b72dd04e573f77095a772a0e295b0b12f105a4ec84185483"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/telos-cli.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 5,
+          "path": "demo/telos-cli.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "0f506de8998c24a4b72dd04e573f77095a772a0e295b0b12f105a4ec84185483"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/telos-cli.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 6,
+          "path": "demo/telos-cli.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "0f506de8998c24a4b72dd04e573f77095a772a0e295b0b12f105a4ec84185483"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/telos-cli.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 7,
+          "path": "demo/telos-cli.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "0f506de8998c24a4b72dd04e573f77095a772a0e295b0b12f105a4ec84185483"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/telos-cli.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 8,
+          "path": "demo/telos-cli.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "0f506de8998c24a4b72dd04e573f77095a772a0e295b0b12f105a4ec84185483"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/telos-mcp.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 1,
+          "path": "demo/telos-mcp.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "9bfeff327f5411f8b31c1863f3f768db71f9b96c3cf1e113a0f46ac529baf3e8"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/telos-mcp.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 2,
+          "path": "demo/telos-mcp.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "9bfeff327f5411f8b31c1863f3f768db71f9b96c3cf1e113a0f46ac529baf3e8"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/telos-mcp.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 3,
+          "path": "demo/telos-mcp.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "9bfeff327f5411f8b31c1863f3f768db71f9b96c3cf1e113a0f46ac529baf3e8"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/telos-mcp.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 4,
+          "path": "demo/telos-mcp.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "9bfeff327f5411f8b31c1863f3f768db71f9b96c3cf1e113a0f46ac529baf3e8"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/telos-mcp.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 1,
+          "path": "demo/telos-mcp.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "207be84acebdf841e851881285b0a809a155804c7fae2c0d938f45616ecbd24c"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/telos-mcp.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 2,
+          "path": "demo/telos-mcp.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "207be84acebdf841e851881285b0a809a155804c7fae2c0d938f45616ecbd24c"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/telos-mcp.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 3,
+          "path": "demo/telos-mcp.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "207be84acebdf841e851881285b0a809a155804c7fae2c0d938f45616ecbd24c"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/telos-mcp.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 4,
+          "path": "demo/telos-mcp.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "207be84acebdf841e851881285b0a809a155804c7fae2c0d938f45616ecbd24c"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/thermodynamic-ai-chip-receipt.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 1,
+          "path": "demo/thermodynamic-ai-chip-receipt.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "741912114c567be9daca9c663dc87ff57f206cd00c0fede072232d503e3fd453"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/thermodynamic-ai-chip-receipt.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 1,
+          "path": "demo/thermodynamic-ai-chip-receipt.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "ccac0b498b43ada9ac1fd97f5df4343c83d37f7cfb07c157db62c0ece1f2e33f"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/thermodynamic-ai-chip-receipt.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 2,
+          "path": "demo/thermodynamic-ai-chip-receipt.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "ccac0b498b43ada9ac1fd97f5df4343c83d37f7cfb07c157db62c0ece1f2e33f"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/thermodynamic-ai-chip-receipt.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 3,
+          "path": "demo/thermodynamic-ai-chip-receipt.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "ccac0b498b43ada9ac1fd97f5df4343c83d37f7cfb07c157db62c0ece1f2e33f"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/thermodynamic-ai-chip-receipt.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 4,
+          "path": "demo/thermodynamic-ai-chip-receipt.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "ccac0b498b43ada9ac1fd97f5df4343c83d37f7cfb07c157db62c0ece1f2e33f"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/thermodynamic-ai-chip-receipt.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 5,
+          "path": "demo/thermodynamic-ai-chip-receipt.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "ccac0b498b43ada9ac1fd97f5df4343c83d37f7cfb07c157db62c0ece1f2e33f"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/viable-viz/subject.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 8,
+          "path": "demo/viable-viz/subject.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "ac86fc668c964ece0c6192f71b4f097b5556f1f6485642d9c4d163e38a139892"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/workstation-substrate.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 1,
+          "path": "demo/workstation-substrate.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "a74d62f16ae0c774bb73079691dab4519ff2ec916b33bb56e008c2f49d7e20a8"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/workstation-substrate.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 2,
+          "path": "demo/workstation-substrate.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "a74d62f16ae0c774bb73079691dab4519ff2ec916b33bb56e008c2f49d7e20a8"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/workstation-substrate.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 1,
+          "path": "demo/workstation-substrate.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "bf3e09d387076ec112a31879c6784c9f45dd76d8daed0b44b68e8a4c3928e09e"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/workstation-substrate.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 2,
+          "path": "demo/workstation-substrate.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "bf3e09d387076ec112a31879c6784c9f45dd76d8daed0b44b68e8a4c3928e09e"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/workstation-substrate.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 3,
+          "path": "demo/workstation-substrate.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "bf3e09d387076ec112a31879c6784c9f45dd76d8daed0b44b68e8a4c3928e09e"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/workstation-substrate.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 4,
+          "path": "demo/workstation-substrate.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "bf3e09d387076ec112a31879c6784c9f45dd76d8daed0b44b68e8a4c3928e09e"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/workstation-substrate.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 5,
+          "path": "demo/workstation-substrate.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "bf3e09d387076ec112a31879c6784c9f45dd76d8daed0b44b68e8a4c3928e09e"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/youtube-research-receipts.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 1,
+          "path": "demo/youtube-research-receipts.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "60c5bcc1a0b9c30ecc6b9f39b6aba3b5972b6e3bcbd52669c2a953368d948619"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "demo/youtube-research-receipts.test.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 2,
+          "path": "demo/youtube-research-receipts.test.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "60c5bcc1a0b9c30ecc6b9f39b6aba3b5972b6e3bcbd52669c2a953368d948619"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "docs/research/proof-packets/navier-stokes-periodic-energy-identity-v0/kernel.reference.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 2,
+          "path": "docs/research/proof-packets/navier-stokes-periodic-energy-identity-v0/kernel.reference.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "3dcb5abd0e5f2d749bd80cd92fc241917bfbc0f071ba6fad5e77cf4c53d411f5"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "docs/research/proof-packets/navier-stokes-periodic-energy-identity-v0/kernel.reference.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 3,
+          "path": "docs/research/proof-packets/navier-stokes-periodic-energy-identity-v0/kernel.reference.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "3dcb5abd0e5f2d749bd80cd92fc241917bfbc0f071ba6fad5e77cf4c53d411f5"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "docs/research/proof-packets/navier-stokes-periodic-skew-symmetry-v0/kernel.reference.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 1,
+          "path": "docs/research/proof-packets/navier-stokes-periodic-skew-symmetry-v0/kernel.reference.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "911006d6d5e733518b9b56b59b46f60b0b8743dd3c3fd18237bdb58cd81066b3"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "docs/research/proof-packets/navier-stokes-periodic-skew-symmetry-v0/kernel.reference.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 2,
+          "path": "docs/research/proof-packets/navier-stokes-periodic-skew-symmetry-v0/kernel.reference.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "911006d6d5e733518b9b56b59b46f60b0b8743dd3c3fd18237bdb58cd81066b3"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "docs/research/proof-packets/navier-stokes-periodic-skew-symmetry-v0/kernel.reference.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 3,
+          "path": "docs/research/proof-packets/navier-stokes-periodic-skew-symmetry-v0/kernel.reference.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "911006d6d5e733518b9b56b59b46f60b0b8743dd3c3fd18237bdb58cd81066b3"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "docs/research/proof-packets/navier-stokes-periodic-skew-symmetry-v0/kernel.reference.mjs",
+              "scope": "index.context.envelope"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "import",
+          "line": 4,
+          "path": "docs/research/proof-packets/navier-stokes-periodic-skew-symmetry-v0/kernel.reference.mjs",
+          "repo": "telos",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "sha256": "911006d6d5e733518b9b56b59b46f60b0b8743dd3c3fd18237bdb58cd81066b3"
+        }
+      ]
+    }
+  ],
+  "root": "C:\\dev\\public\\telos",
+  "schema": "project-telos.context-envelope/v1",
+  "selection": {
+    "candidate_repos": 1,
+    "mode": "focused",
+    "omitted_failure_codes": [],
+    "omitted_repos": 0,
+    "retained_names": [
+      "telos"
+    ],
+    "retained_repos": 1,
+    "selected_repos": 1
+  },
+  "tool": "index.context.envelope",
+  "verification_verdict": "MATCH"
+}
