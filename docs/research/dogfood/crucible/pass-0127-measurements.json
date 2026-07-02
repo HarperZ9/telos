@@ -1,0 +1,110 @@
+{
+  "measurements": [
+    {
+      "claim": "Pass 0127 created a CrossFieldScientificRuntimeRouterReceipt/v1 artifact with status CROSS_FIELD_SCIENTIFIC_RUNTIME_ROUTER_MATCH, sha256 fab1a0b01f60fa31e17256844427f6306e1fd39124b17535e252abd28a02d63a, and seal 5257c922609d09aab485356b09e3947d2876f977510c2291dbfe3d90b510612d.",
+      "deviation": 0.0,
+      "evidence": [
+        "schema=CrossFieldScientificRuntimeRouterReceipt/v1",
+        "status=CROSS_FIELD_SCIENTIFIC_RUNTIME_ROUTER_MATCH",
+        "sha256=fab1a0b01f60fa31e17256844427f6306e1fd39124b17535e252abd28a02d63a",
+        "seal=5257c922609d09aab485356b09e3947d2876f977510c2291dbfe3d90b510612d"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0127 binds pass receipts {'demotion_gate_pass': '0126', 'demotion_gate_seal': '67b045645bb0ff265f585a2c92768684ba47e2956920030eb756191bbd737926', 'runtime_layer_pass': '0122', 'runtime_layer_seal': '135c16c1f6d840cbb26ae6ba9257b3863844035c90975e9248aa13ffc1899312', 'youtube_router_pass': '0125', 'youtube_router_seal': '6def88f8a777647f886e2b4a0c2a44eda348b50c81efa8dfe2b9170f14617233'}.",
+      "deviation": 0.0,
+      "evidence": [
+        "source_bindings={'demotion_gate_pass': '0126', 'demotion_gate_seal': '67b045645bb0ff265f585a2c92768684ba47e2956920030eb756191bbd737926', 'runtime_layer_pass': '0122', 'runtime_layer_seal': '135c16c1f6d840cbb26ae6ba9257b3863844035c90975e9248aa13ffc1899312', 'youtube_router_pass': '0125', 'youtube_router_seal': '6def88f8a777647f886e2b4a0c2a44eda348b50c81efa8dfe2b9170f14617233'}"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0127 routes source lead HbKzqvey5PA through demotion gate status ACCEPTED.",
+      "deviation": 0.0,
+      "evidence": [
+        "source_lead={'claim_status': 'SOURCE_LEAD_ONLY', 'dominant_signal': 'quantum_physics', 'raw_transcript_included': False, 'theme': 'quantum_foundation_claim_boundary', 'video_id': 'HbKzqvey5PA'}",
+        "demotion_gate={'fixture_id': 'source_lead_only_ok', 'gate_status': 'ACCEPTED', 'requested_status': 'SOURCE_LEAD_ONLY'}"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0127 exact oracle records probabilities ['9/25', '16/25', '0'] with probability_sum 1.",
+      "deviation": 0.0,
+      "evidence": [
+        "exact_oracle={'amplitudes': ['3', '4', '0'], 'norm': '25', 'probabilities': ['9/25', '16/25', '0'], 'probability_sum': '1', 'squared_amplitudes': ['9', '16', '0'], 'status': 'MATCH'}"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0127 runtime branch python_float64_born_normalization_fixture has status MATCH and drift 0.0.",
+      "deviation": 0.0,
+      "evidence": [
+        "runtime_branch={'branch_id': 'python_float64_born_normalization_fixture', 'input_sha256': '29163c3ed606e568f5386c0ac65f4ac1a11ba89b9be1b8ad53500abd737bd448', 'output_sha256': 'f64abd6b78fd5d854d76bdfbded791ccb0799c03839396d17e6eca57368f0fb6', 'probabilities': [0.36, 0.64, 0.0], 'probability_sum': 1.0, 'probability_sum_abs_drift': 0.0, 'runtime': 'python', 'runtime_mode': 'float64', 'status': 'MATCH', 'tolerance': 1e-15}"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0127 rejects missing normalization, interpretation promotion, and market-fit promotion fixtures.",
+      "deviation": 0.0,
+      "evidence": [
+        "negative_fixtures=[{'attempt': 'treat squared amplitudes as probabilities without norm division', 'failures': ['probability_sum_not_one', 'missing_normalization_receipt'], 'fixture_id': 'unnormalized_squares_rejected', 'probability_sum': '25', 'status': 'REJECTED'}, {'attempt': 'promote a quantum interpretation claim from the video source lead', 'failures': ['source_lead_only', 'requires_independent_physics_evidence'], 'fixture_id': 'interpretation_claim_rejected', 'requested_status': 'VERIFIED_FACT', 'status': 'REJECTED'}, {'attempt': 'claim market fit for the router from this single fixture', 'failures': ['single_fixture_not_market_evidence', 'requires_buyer_evidence'], 'fixture_id': 'market_claim_rejected', 'requested_status': 'MARKET_FIT_VERIFIED', 'status': 'REJECTED'}]"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0127 keeps interpretation_claim_status SOURCE_LEAD_ONLY and market_claim_status UNVERIFIED.",
+      "deviation": 0.0,
+      "evidence": [
+        "interpretation=SOURCE_LEAD_ONLY",
+        "market=UNVERIFIED"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0127 flagship receipts for Forum, Index, Telos status, and Telos catalog all have MATCH status.",
+      "deviation": 0.0,
+      "evidence": [
+        "flagship_receipts={'forum': {'decided': None, 'exit_code': 0, 'status': 'MATCH', 'stderr_sha256': 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855', 'stdout_sha256': '4fe3841632e2f93c96084b52acb57b2c0fa681cb74375a1b20d42389ca51dde2'}, 'index': {'exit_code': 0, 'status': 'MATCH', 'stderr_sha256': 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855', 'stdout_sha256': '688fcf9c1a7640156fa78334cb2f6cfe8114a3212af2ca2cc6ba33c914a34cd8', 'verification_verdict': 'MATCH'}, 'telos': {'exit_code': 0, 'status': 'MATCH', 'stderr_sha256': 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855', 'stdout_sha256': 'be17cb15259234cb4e8e95c2b36e76c90d841431729beb140294e34c5f9ebfa7', 'tool_version': '0.1.0'}, 'telos_catalog': {'exit_code': 0, 'status': 'MATCH', 'stderr_sha256': 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855', 'stdout_sha256': 'ef95a6f1ff803c483c3c4dd553fe19c37ab144113a21bc005cf4148cf31a8564'}}"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0127 validator receipt status is MATCH and test receipt status is MATCH.",
+      "deviation": 0.0,
+      "evidence": [
+        "validator={'command': 'C:\\\\Users\\\\Zain\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python312\\\\python.exe C:\\\\dev\\\\public\\\\telos\\\\docs\\\\research\\\\dogfood\\\\tools\\\\validate_pass_0127_cross_field_runtime_router.py', 'exit_code': 0, 'stdout_sha256': '94b36428192544f1b555134ae0e99052693946fbc55dd1b1ca5f0af774b48b7e', 'stderr_sha256': 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855', 'status': 'MATCH'}",
+        "test={'command': 'C:\\\\Users\\\\Zain\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python312\\\\python.exe C:\\\\dev\\\\public\\\\telos\\\\docs\\\\research\\\\dogfood\\\\tools\\\\test_cross_field_scientific_runtime_router.py', 'exit_code': 0, 'stdout_sha256': 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855', 'stderr_sha256': 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855', 'status': 'MATCH'}"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0127 records unsupported_claim_count 0 and current_promoted_natural_laws length 0.",
+      "deviation": 0.0,
+      "evidence": [
+        "unsupported_claim_count=0",
+        "natural_law_count=0"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0127 file hashes are {'artifact': 'fab1a0b01f60fa31e17256844427f6306e1fd39124b17535e252abd28a02d63a', 'composer': 'f73971b6a55d69672157b5d4a0b35668f1f27851e6ad3b571909fc19ad6feda9', 'packet': '4d3696fe685fb39b4cb8799fad799741f55cf295437d5fdeec8ac27cafd7a28c', 'brief': 'b42a6f036c9828a4bfc57b8c6f9e17ebb6b482ef866f48329a331582441163c9', 'steelman': 'c9e2b0392bd86e9044d1879da4cc74a52264327adbcf83feee5cb1462596e7c0', 'test': '576623d44b0f76f02c050352c91a19beb053ad168d3972d6276539d02feb679a', 'validator': 'ff420722a3c5b82623b177f7db08a5fe2a511b9e2c7bb7639e53600a5b5b0ef7', 'validator_result': '2e65e706ee71260e458f64208bab3bf42e2268f2e063be6e1635a3c8b1e7c59a', 'tool_receipts': 'fa7b55a697f64b4e9e486a26872db55ac4a20acd04c0352a880d3aaa38636413'}.",
+      "deviation": 0.0,
+      "evidence": [
+        "file_hashes={'artifact': 'fab1a0b01f60fa31e17256844427f6306e1fd39124b17535e252abd28a02d63a', 'composer': 'f73971b6a55d69672157b5d4a0b35668f1f27851e6ad3b571909fc19ad6feda9', 'packet': '4d3696fe685fb39b4cb8799fad799741f55cf295437d5fdeec8ac27cafd7a28c', 'brief': 'b42a6f036c9828a4bfc57b8c6f9e17ebb6b482ef866f48329a331582441163c9', 'steelman': 'c9e2b0392bd86e9044d1879da4cc74a52264327adbcf83feee5cb1462596e7c0', 'test': '576623d44b0f76f02c050352c91a19beb053ad168d3972d6276539d02feb679a', 'validator': 'ff420722a3c5b82623b177f7db08a5fe2a511b9e2c7bb7639e53600a5b5b0ef7', 'validator_result': '2e65e706ee71260e458f64208bab3bf42e2268f2e063be6e1635a3c8b1e7c59a', 'tool_receipts': 'fa7b55a697f64b4e9e486a26872db55ac4a20acd04c0352a880d3aaa38636413'}"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    }
+  ]
+}

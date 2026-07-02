@@ -1,0 +1,178 @@
+{
+  "generated_on": "2026-07-01",
+  "non_promotion_statement": "Tool receipts prove packet readback, Lake dependency cache binding validator MATCH, Telos/Index/Gather/Forum/Crucible availability, and no remaining temp Lean/Lake/Elan processes. They do not prove Lean replay, dependency compilation, semantic proof correctness by elaboration, axiom-free proof, every public pipeline-math claim, buyer adoption, or any natural law.",
+  "pass": "0043",
+  "receipts": [
+    {
+      "command": "map --root docs/research/dogfood --json",
+      "dirty_count": 0,
+      "repo_count": 0,
+      "role": "dogfood-substrate-map",
+      "root_sha256_prefix": "f2f0af39219698a9",
+      "schema_version": 1,
+      "status": "MATCH",
+      "tool": "index",
+      "tool_version": "2.8.0",
+      "top_level_count": 52
+    },
+    {
+      "command": "index_context_envelope",
+      "graph_pack_sha256": "185c0236c1370daa81b49d11c7cab1f29c2a279be3d83302150f0d63396ad6dd",
+      "privacy_source_refs_only": true,
+      "schema": "project-telos.context-envelope/v1",
+      "status": "MATCH",
+      "tool": "mcp__index.index_context_envelope",
+      "verification_verdict": "MATCH"
+    },
+    {
+      "artifact": "packets/053-lake-dependency-cache-binding.md",
+      "chars": 1201,
+      "command": "docs",
+      "seal": "f7855433a2e8e74998b405d20c434a72b5f3fc37e2173e1fd0d15e7d35e371de",
+      "sha256": "96228fb6991631c4f84466bef2111e67143efe86434170f8931ca0cea6413473",
+      "status": "MATCH",
+      "tool": "gather",
+      "verified": true
+    },
+    {
+      "command": "probe_lake_dependency_cache_binding.py",
+      "package_count": 9,
+      "schema": "LakeDependencyCacheBindingSet/v1",
+      "seal": "8e88cd761c7ae0996c6d20bfeb78fb5cf9bf6083a3de1f09601a62463a5d665b",
+      "status": "LAKE_DEPENDENCY_CACHE_BINDING_MATCH",
+      "tool": "python"
+    },
+    {
+      "command": "validate_pass_0043_lake_dependency_cache_binding.py",
+      "drift": 0,
+      "match": 1,
+      "package_count": 9,
+      "schema": "Pass0043LakeDependencyCacheBindingValidatorRun/v1",
+      "status": "MATCH",
+      "tool": "python"
+    },
+    {
+      "all_package_heads_match_manifest": true,
+      "all_package_urls_match_manifest": true,
+      "clean_package_count": 9,
+      "command": "local Lake dependency cache probe",
+      "compiled_replay_status": "NOT_RUN",
+      "head_match_count": 9,
+      "package_count": 9,
+      "present_package_count": 9,
+      "status": "MATCH",
+      "tool": "shell"
+    },
+    {
+      "command": "process check",
+      "remaining_temp_processes": 0,
+      "status": "MATCH",
+      "tool": "shell"
+    },
+    {
+      "command": "telos_catalog",
+      "selected_tools_available": [
+        "gather.docs",
+        "index.map",
+        "index.context.envelope",
+        "forum.route",
+        "crucible.run",
+        "telos.action.receipt",
+        "telos.context.envelope",
+        "telos.loop.ledger"
+      ],
+      "status": "MATCH",
+      "tool": "mcp__telos.telos_catalog",
+      "tool_count": 65
+    },
+    {
+      "command": "telos_context_envelope",
+      "lossless_requirement": "claims are lossless through source refs and hashes, not through compressed prose",
+      "schema": "project-telos.context-envelope/v1",
+      "status": "MATCH",
+      "tool": "mcp__telos.telos_context_envelope"
+    },
+    {
+      "command": "telos_loop_ledger",
+      "fresh_context_reads_ledger_first": true,
+      "one_action_per_iteration": true,
+      "schema": "project-telos.loop-ledger/v1",
+      "status": "MATCH",
+      "tool": "mcp__telos.telos_loop_ledger",
+      "unverifiable_required": true
+    },
+    {
+      "aggregate_verdict": "MATCH",
+      "check_count": 14,
+      "command": "telos_operator_doctor",
+      "passed_count": 14,
+      "status": "MATCH",
+      "telos_tool_count": 37,
+      "tool": "mcp__telos.telos_operator_doctor",
+      "tool_count": 65
+    },
+    {
+      "candidates": [
+        {
+          "agent": "project-telos",
+          "score": 0.045454545454545456
+        },
+        {
+          "agent": "backend",
+          "score": 0.0
+        },
+        {
+          "agent": "ci-cd",
+          "score": 0.0
+        }
+      ],
+      "command": "route",
+      "confidence": 0.045454545454545456,
+      "decided": null,
+      "needs_escalation": true,
+      "status": "MATCH",
+      "tool": "forum"
+    },
+    {
+      "chain": true,
+      "command": "ledger verify",
+      "deep": true,
+      "status": "MATCH",
+      "tool": "forum"
+    },
+    {
+      "command": "forum_status",
+      "schema": "project-telos.flagship-action/v1",
+      "status": "MATCH",
+      "tool": "mcp__forum.forum_status",
+      "tool_version": "1.12.0"
+    },
+    {
+      "command": "submit",
+      "error": "submit needs a model executor. Forum is model-agnostic: pass --cmd \"<model cli>\" (any command, local models need no account), --chat-url <openai-compatible url> (e.g. a local Ollama server), or --api (Anthropic).",
+      "request": "Dogfood pass 0043 adversarial review for Lake dependency cache binding",
+      "status": "UNVERIFIABLE",
+      "tool": "forum"
+    },
+    {
+      "assessment_seal": "a55bb92be117989e0e04d8e1b2202ea4f42a90f4f58a44d1e432e5b2ef175ef2",
+      "claims": 8,
+      "command": "run",
+      "drift": 0,
+      "match": 8,
+      "measurement_seal": "4d52f30dba34800628c4b46bc27daecd42915860df3df6ede11dc002d83f8c50",
+      "run_sha256": "73008c809ca4981a9b778418a3adf593c26da01c72e812962e4af2778e82c6c5",
+      "seals_ok": true,
+      "status": "MATCH",
+      "thesis_id": "dfb13dcdd32a219f",
+      "thesis_ok": true,
+      "thesis_seal": "dfb13dcdd32a219fa471c2aa10fd145a13651af1e5ed6fcea30a8c3e890a1114",
+      "tool": "crucible",
+      "unverifiable": 0,
+      "verdict_seal": "7a7f292147b0c97c67a8fab64d05d6335f320e2bcf115c43987f00749c87fed6",
+      "verdicts_rederive": true
+    }
+  ],
+  "schema": "DogfoodToolReceiptSet/v1",
+  "status": "MATCH_WITH_FORUM_SUBMIT_GAP_AND_NON_SEMANTIC_BOUNDARY"
+}

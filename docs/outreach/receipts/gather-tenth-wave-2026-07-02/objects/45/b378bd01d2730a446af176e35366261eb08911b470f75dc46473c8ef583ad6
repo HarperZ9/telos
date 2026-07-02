@@ -1,0 +1,160 @@
+# Proof-Carrying Research Loops
+
+Date: 2026-07-02
+
+Status: working paper draft
+
+Evidence state: `HYPOTHESIS` for the general research-program claim, `PROBE_MATCH` for the local pandas reproduction, `CRUCIBLE_MATCH` only after a matching Crucible run is attached, and `UNVERIFIABLE` for any claim about new scientific discovery, current upstream pandas main, patch correctness, or publication acceptance.
+
+## Abstract
+
+This paper defines a proof-carrying research loop for AI-assisted work. The loop is not "model produces answer." It is:
+
+1. Gather source candidates with provenance receipts.
+2. Index the local workspace and context boundaries.
+3. Route intent and review vocabulary through Forum.
+4. Run a bounded experiment or proof probe.
+5. Convert the result into a packet with explicit missing evidence.
+6. Ask Crucible to compare claims against measurements.
+7. Use Learn to turn the packet into durable skill acquisition.
+8. Publish only claims whose promotion state is named.
+
+The claim is modest but useful: the current Telos substrate can turn research ambition into re-checkable source, experiment, and verdict packets. It does not prove that Telos has solved frontier science. It proves that the tooling can prevent unsupported research claims from becoming load-bearing.
+
+## Terminology
+
+| Term | Meaning |
+| --- | --- |
+| `SOURCE_LEAD` | A URL, paper, repo, issue, dataset, video, or source body worth examining. It is not a fact by itself. |
+| `HYPOTHESIS` | A plausible claim with a named falsifier or missing experiment. |
+| `IDENTITY` | A mathematical or system identity with a proof sketch, derivation, or executable model. |
+| `PROBE_MATCH` | A bounded local computation matched the expected behavior. |
+| `CRUCIBLE_MATCH` | Crucible assessed a claim as matching a measurement packet. |
+| `UNVERIFIABLE` | Evidence is insufficient, inaccessible, or out of scope. |
+| `LAW_CANDIDATE` | A repeatable invariant with clear scope and falsification. |
+| `PROMOTED_LAW` | Reserved. Requires independent proof, reproduction, and review. None are promoted here. |
+
+These terms are stricter than casual "verified" language. A paper can contain `SOURCE_LEAD` and `PROBE_MATCH` sections without promoting them to theorem, law, or product proof.
+
+## Current Source Intake
+
+The first publication-intake slice in this pass used `gather arxiv` across three lanes:
+
+| Lane | Store | Digest seal | Papers retained |
+| --- | --- | ---: | ---: |
+| Agentic scientific discovery | `docs/outreach/receipts/eighth-wave/arxiv-agentic-science` | `a68dc656cc121c6d3b69612fa00f8381e5c3838bc01aea3ba34d47fead624850` | 5 |
+| Formal proof and theorem proving | `docs/outreach/receipts/eighth-wave/arxiv-formal-proof` | `006484ea49c75d4498a2d2b693e19397250b5701fb82ae47b3ebbbb003992033` | 5 |
+| AI4Science, robotics, and lab automation | `docs/outreach/receipts/eighth-wave/arxiv-ai4science` | `27716b84828931d03ead3d18902ea2afbbf608f0dad67b25572ed6470dff1e43` | 4 |
+
+These papers are `SOURCE_LEAD` material. The receipts verify capture and hashing of source metadata, not the truth of the papers' claims.
+
+## System Theorem 1: Readiness Gate Necessity
+
+Status: `IDENTITY` over the current implementation, with local test coverage.
+
+Claim: In the current OSS Proof Showcase readiness packet implementation, `pr_ready` can be `true` only if all four evidence conditions are present:
+
+- a reproduction command whose status is `failed-before-patch`
+- at least one passing test record
+- Crucible verdict `MATCH`
+- a patch summary
+
+Proof sketch: [demo/showcase/record.mjs](../../../demo/showcase/record.mjs) computes blockers by adding one blocker for each missing condition. `prReady` is `blockers.length === 0`. Therefore a packet cannot be PR-ready while any listed condition is missing. [demo/showcase.test.mjs](../../../demo/showcase.test.mjs) includes a `status: not-run` regression that remains blocked as `missing failing reproduction evidence`.
+
+Boundary: this theorem is about current Telos code behavior. It is not a theorem about pandas, GitHub, maintainers, or patch correctness.
+
+## Probe 1: Local Failing Reproduction
+
+Status: `PROBE_MATCH`.
+
+Candidate: `pandas-dev/pandas#63458`
+
+Receipt: `docs/outreach/receipts/eighth-wave/pandas-63458-repro/local-reproduction-receipt.json`
+
+Observed environment:
+
+- Python `3.12.10`
+- pandas `3.0.3`
+- pyarrow `24.0.0`
+
+Expression:
+
+```python
+arr = pd.array(["a"], dtype="string[pyarrow]")
+(arr == arr).sum()
+```
+
+Observed result:
+
+```text
+AttributeError: 'ArrowExtensionArray' object has no attribute 'sum'
+```
+
+The resulting readiness packet remains blocked:
+
+- `pr_ready: false`
+- `operator_next_action: revise`
+- blockers: missing passing test evidence, Crucible verdict is not `MATCH`, missing patch summary
+
+Boundary: this is a failing local reproduction in a clean virtualenv. It does not inspect pandas source, run pandas tests, prove current-main behavior, author a patch, or verify maintainer intent.
+
+## Research Workflow
+
+The loop this paper proposes is:
+
+```mermaid
+flowchart LR
+  A["SOURCE_LEAD: paper, issue, dataset, repo"] --> B["Gather: source receipt"]
+  B --> C["Index: context envelope"]
+  C --> D["Forum: route and vocabulary"]
+  D --> E["Probe: local experiment or proof attempt"]
+  E --> F["Packet: evidence plus missing evidence"]
+  F --> G["Crucible: claim vs measurement"]
+  G --> H["Learn: lesson, misconception, next skill"]
+  H --> I["Publish: website copy plus official paper copy"]
+```
+
+The key rule is monotone evidence promotion: a later stage may strengthen or refute a claim, but a missing later stage must remain visible as `UNVERIFIABLE`.
+
+## Publication Format
+
+Each official paper should carry:
+
+- title, date, author, version, and status
+- promotion ladder terms used in the paper
+- claims table with evidence files and status
+- methods section that names exact tools and commands
+- negative controls or missing-evidence boundaries
+- recheck commands
+- website-copy summary for `research.html`
+- official-copy target: arXiv, Zenodo, OSF, SSRN, or discipline-specific archive when appropriate
+
+## Revision Rule For Existing Papers
+
+Existing official papers should be revised when new data changes any of these:
+
+- claim status
+- measurement value
+- source corpus
+- tool version
+- missing-evidence boundary
+- recheck command
+- publication target
+
+The revision must preserve old claims as historical claims or explicitly supersede them. Do not silently replace a weaker earlier result with a stronger later one.
+
+Current revision queue: `OFFICIAL-PAPER-REVISION-QUEUE-2026-07-02.md`.
+
+Learn binding for this draft: `../../outreach/receipts/eighth-wave/proof-carrying-research-loops.learn-packet.json` was converted into `../../outreach/receipts/eighth-wave/learn-prooflesson/tutor/proof-carrying-research-loops.prooflesson.json`; `learn tutor reverify proof-carrying-research-loops` returned `VERIFIED`, while preserving the packet's `UNVERIFIABLE` verdict. This is evidence that Learn can teach the packet boundary; it is not evidence that the paper's strongest claims are true.
+
+## Next Work
+
+1. Convert the strongest dogfood packets into paper candidates:
+   - proof-carrying research loops
+   - mixed-source protein proof packets
+   - stochastic kernel receipts
+   - theorem-prover adapter receipts
+   - BuildLang scientific runtime receipts
+2. Use Learn to generate a reading and skill plan for each paper lane.
+3. Add website-copy pages for each paper before official submission.
+4. Use Crucible before public release; any unmeasured claim stays `UNVERIFIABLE`.

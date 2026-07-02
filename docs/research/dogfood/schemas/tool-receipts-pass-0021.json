@@ -1,0 +1,70 @@
+{
+  "pass": "0021",
+  "schema": "DogfoodToolReceiptSet/v1",
+  "status": "MATCH_WITH_FORUM_SUBMIT_GAP",
+  "generated_on": "2026-07-01",
+  "receipts": [
+    {
+      "tool": "index",
+      "command": "status",
+      "status": "MATCH",
+      "tool_version": "2.8.0",
+      "role": "structure-context"
+    },
+    {
+      "tool": "gather",
+      "command": "status",
+      "status": "MATCH",
+      "tool_version": "1.5.0",
+      "role": "perception-intake"
+    },
+    {
+      "tool": "gather",
+      "command": "docs",
+      "status": "MATCH",
+      "verified": true,
+      "artifact": "packets/031-quantum-environment-plan-otel-bridge.md",
+      "sha256": "d03d5ccd48ad2f14126765e2bbb2d9f6e99bcfca1ac070738533700f422ae84e",
+      "seal": "9588afb496589b992f0aecaf7ef8d05eb82174323ad5384e0a07b8c4ef65d032"
+    },
+    {
+      "tool": "telos.operator.doctor",
+      "command": "operator_doctor",
+      "status": "MATCH",
+      "check_count": 14,
+      "passed_count": 14,
+      "tool_count": 65,
+      "telos_tool_count": 37,
+      "generated_at": "2026-07-01T11:30:50.959Z"
+    },
+    {
+      "tool": "forum",
+      "command": "status",
+      "status": "MATCH",
+      "entries": 13,
+      "checkpoint": "ac7bdf3c8f04f930c70ba728698517dc324fe39248ce5d1d226a57993a7b7aee"
+    },
+    {
+      "tool": "forum",
+      "command": "verify",
+      "status": "MATCH",
+      "chain": true,
+      "deep": true
+    },
+    {
+      "tool": "forum",
+      "command": "submit",
+      "status": "UNVERIFIABLE",
+      "request": "Dogfood pass 0021 adversarial review for quantum environment plan and OpenTelemetry action bridge",
+      "error": "the configured executor did not return valid JSON; point the daemon at a real model executor (could not parse JSON from output: Extra data: line 2 column 1 (char 98))"
+    },
+    {
+      "tool": "crucible",
+      "command": "status",
+      "status": "MATCH",
+      "tool_version": "1.1.0",
+      "role": "verification-pressure"
+    }
+  ],
+  "non_promotion_statement": "Tool receipts prove operator-surface availability and packet intake only. They do not prove package installation, quantum framework import, recording OTel export, cloud provider execution, or scientific discovery."
+}

@@ -1,0 +1,23 @@
+﻿=== Verifying Problem 4(b) formalization ===
+  Target: R_not_quasi_coherent
+  Log mode: disabled
+
+--- Check 1: Frozen SHA pins ---
+PASS: Prob4b/Defs.lean pin matches
+PASS: Prob4b/Theorems.lean pin matches
+
+--- Check 2: Banned keywords ---
+PASS: no banned keywords (sorry allowed only in Theorems.lean)
+
+--- Check 3: lake build ---
+Build completed successfully (8574 jobs).
+PASS: build clean (only expected Theorems.lean sorry warnings)
+
+--- Check 4: #print axioms (Prob4b.Solution.*) ---
+PASS: R_not_quasi_coherent — [propext, Classical.choice, Quot.sound]
+
+--- Check 5: Statement gates (Discharge / Solution) ---
+PASS: Prob4b.Discharge compiles (statement↔proof gate holds)
+PASS: Prob4b.Solution compiles (statement↔proof gate holds)
+
+=== RESULT: PASS (0 issue(s), 43s) ===

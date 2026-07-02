@@ -1,0 +1,84 @@
+{
+  "pass": "0118",
+  "schema": "FormalTargetSourceManifest/v1",
+  "source_count": 4,
+  "sources": [
+    {
+      "ascii": true,
+      "bytes": 918,
+      "execution_status": "NOT_EXECUTED",
+      "expected_proposition_count": 3,
+      "language": "lean4",
+      "parser_command": "lean FiniteCategory.lean",
+      "path": "formal-targets/pass-0118/FiniteCategory.lean",
+      "proposition_ids_present": [
+        "idB_comp_f_eq_f",
+        "f_comp_idA_eq_f",
+        "h_comp_g_comp_f_assoc"
+      ],
+      "sha256": "ffef63a7ebbe7ae35bb552dbd9d5723d71e61a666f0722dda5824176790401b2",
+      "status": "SOURCE_EMITTED_NOT_EXECUTED",
+      "toolchain_executable": "lean",
+      "toolchain_status": "MISSING"
+    },
+    {
+      "ascii": true,
+      "bytes": 997,
+      "execution_status": "NOT_EXECUTED",
+      "expected_proposition_count": 3,
+      "language": "rocq",
+      "parser_command": "coqc FiniteCategory.v",
+      "path": "formal-targets/pass-0118/FiniteCategory.v",
+      "proposition_ids_present": [
+        "idB_comp_f_eq_f",
+        "f_comp_idA_eq_f",
+        "h_comp_g_comp_f_assoc"
+      ],
+      "sha256": "cda4c34d252e4f82cf4f77ad3e72eda082402b6e8d168b0f2770808cb5b6af4c",
+      "status": "SOURCE_EMITTED_NOT_EXECUTED",
+      "toolchain_executable": "coqc",
+      "toolchain_status": "MISSING"
+    },
+    {
+      "ascii": true,
+      "bytes": 847,
+      "execution_status": "NOT_EXECUTED",
+      "expected_proposition_count": 3,
+      "language": "isabelle",
+      "parser_command": "isabelle process -T Pass0118_Finite_Category",
+      "path": "formal-targets/pass-0118/Pass0118_Finite_Category.thy",
+      "proposition_ids_present": [
+        "idB_comp_f_eq_f",
+        "f_comp_idA_eq_f",
+        "h_comp_g_comp_f_assoc"
+      ],
+      "sha256": "e54e3f4d1108ba37a510f38ddb72e2a20fed83301507aa91b2d9aebf901f84b9",
+      "status": "SOURCE_EMITTED_NOT_EXECUTED",
+      "toolchain_executable": "isabelle",
+      "toolchain_status": "MISSING"
+    },
+    {
+      "ascii": true,
+      "bytes": 932,
+      "execution_status": "NOT_EXECUTED",
+      "expected_proposition_count": 3,
+      "language": "agda",
+      "parser_command": "agda Pass0118FiniteCategory.agda",
+      "path": "formal-targets/pass-0118/Pass0118FiniteCategory.agda",
+      "proposition_ids_present": [
+        "idB_comp_f_eq_f",
+        "f_comp_idA_eq_f",
+        "h_comp_g_comp_f_assoc"
+      ],
+      "sha256": "060eedf4f76f4b9f88cda436997c95939070a1983575737d1ae09a8dc1ade896",
+      "status": "SOURCE_EMITTED_NOT_EXECUTED",
+      "toolchain_executable": "agda",
+      "toolchain_status": "MISSING"
+    }
+  ],
+  "target_ids": [
+    "idB_comp_f_eq_f",
+    "f_comp_idA_eq_f",
+    "h_comp_g_comp_f_assoc"
+  ]
+}

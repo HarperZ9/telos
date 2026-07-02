@@ -1,0 +1,98 @@
+{
+  "measurements": [
+    {
+      "claim": "Pass 0042 created a FullLeanSourceArchiveSet/v1 artifact with status FULL_LEAN_SOURCE_ARCHIVE_MATCH, role_record_count 22, unique_archive_file_count 21, sha256 83eefbfeab7e258aae80c8bb405bd93cc9dd7117804a3e84d3c74e1534142343, and seal 0c5b4d29bf7ea2e72398278fd57c0cf23e5e297ce2d5d99cec84aab60e528d7c.",
+      "deviation": 0.0,
+      "evidence": [
+        "schema=FullLeanSourceArchiveSet/v1",
+        "status=FULL_LEAN_SOURCE_ARCHIVE_MATCH",
+        "role_record_count=22",
+        "unique_archive_file_count=21",
+        "sha256=83eefbfeab7e258aae80c8bb405bd93cc9dd7117804a3e84d3c74e1534142343",
+        "seal=0c5b4d29bf7ea2e72398278fd57c0cf23e5e297ce2d5d99cec84aab60e528d7c"
+      ],
+      "method": "full-source-archive-schema-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0042 records fixture fixtures/full-lean-source-archive-pass-0042.json with sha256 2a397cee6f014ee2a6c1113637d880de264324c6591d7898533d8047e8b1e83c and seal db500e73b024ef1b1af29c4b32efeafb19faf4de3ad3e85234c75c93e1ceb9e8.",
+      "deviation": 0.0,
+      "evidence": [
+        "fixture sha256=2a397cee6f014ee2a6c1113637d880de264324c6591d7898533d8047e8b1e83c",
+        "fixture seal=db500e73b024ef1b1af29c4b32efeafb19faf4de3ad3e85234c75c93e1ceb9e8"
+      ],
+      "method": "fixture-binding-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0042 binds to pass 0041 Lean toolchain/import binding with sha256 ae72dadc5da817622374a9b5654f7389242f3e4f7b218e4c89387d364ef2b0e7, seal e932959ff41df5260e5af88942184e45c2e9620b878db02b4ccbb609387c78b6, and source status LEAN_TOOLCHAIN_IMPORT_BINDING_MATCH.",
+      "deviation": 0.0,
+      "evidence": [
+        "lean_toolchain_import_binding_sha256=ae72dadc5da817622374a9b5654f7389242f3e4f7b218e4c89387d364ef2b0e7",
+        "lean_toolchain_import_binding_seal=e932959ff41df5260e5af88942184e45c2e9620b878db02b4ccbb609387c78b6",
+        "lean_toolchain_import_binding_status=LEAN_TOOLCHAIN_IMPORT_BINDING_MATCH"
+      ],
+      "method": "source-binding-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0042 records 16 Lean module records, 6 build file records, 22 role records, 21 unique archived files, and exactly one module/build overlap.",
+      "deviation": 0.0,
+      "evidence": [
+        "lean_module_count=16",
+        "build_file_count=6",
+        "role_record_count=22",
+        "unique_archive_file_count=21",
+        "module_build_overlap_count=1"
+      ],
+      "method": "archive-count-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0042 records all archived file SHA-256 values matching pass 0041 and archives all six pass 0041 files needed for compiled replay planning.",
+      "deviation": 0.0,
+      "evidence": [
+        "all_archived_sha_match_pass0041=true",
+        "needed_for_compiled_replay_count=6",
+        "needed_for_compiled_replay_archived_count=6",
+        "external_call_required_for_replay=false"
+      ],
+      "method": "source-archive-integrity-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0042 validator result reports MATCH with role_record_count 22 and unique_archive_file_count 21 using local archive files.",
+      "deviation": 0.0,
+      "evidence": [
+        "schemas/pass-0042-full-lean-source-archive-validator-result.json status=MATCH",
+        "role_record_count=22",
+        "unique_archive_file_count=21",
+        "local_archive_files=true"
+      ],
+      "method": "validator-result-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0042 records packet 052 with sha256 85c149c0167b4d94efd3e86f8d338f2906f2fefe633ceaed41ff613b76665cfa and local steelman with sha256 dbd810db88510ad61c57854d63e2db73d07d9b346b97c0a1cac9153f5353ed1e.",
+      "deviation": 0.0,
+      "evidence": [
+        "packets/052-full-lean-source-archive.md sha256=85c149c0167b4d94efd3e86f8d338f2906f2fefe633ceaed41ff613b76665cfa",
+        "adversarial/pass-0042-full-lean-source-archive-steelman.md sha256=dbd810db88510ad61c57854d63e2db73d07d9b346b97c0a1cac9153f5353ed1e"
+      ],
+      "method": "packet-presence-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0042 preserves non-promotion boundaries: it archives source/build inputs only, does not run Lean, does not claim semantic proof review, and current_promoted_natural_laws remains none.",
+      "deviation": 0.0,
+      "evidence": [
+        "non_promotion_statement present",
+        "current_promoted_natural_laws=[]",
+        "compiled_replay_status=NOT_RUN",
+        "steelman states source archive is not a successful Lean build"
+      ],
+      "method": "non-promotion-boundary-review",
+      "tolerance": 0.5
+    }
+  ]
+}

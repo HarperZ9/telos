@@ -1,0 +1,46 @@
+{
+  "claims": [
+    {
+      "falsification": "schemas/theorem-specific-proof-packets-pass-0035.json is missing, has a different schema, status, source binding, theorem count, packet count, transcript count, or seal",
+      "text": "Pass 0035 created a TheoremSpecificProofPacketSet/v1 artifact with status THEOREM_SPECIFIC_REPLAY_MATCH, source_replay_sha256 3501084c65eb1a42494e778d498dc39a47ff59e47574f404be61ec6a9ac1e168, theorem_count 10, packet_count 10, transcript_count 10, and seal 468bb326fc60e59eaaef5b4823e87256e72139bee690d90260eec399bfbf42f9."
+    },
+    {
+      "falsification": "the theorem-specific fixture is missing, has a different SHA-256 or seal, or is not linked from the schema",
+      "text": "Pass 0035 records fixture fixtures/theorem-specific-proof-packets-pass-0035.json with sha256 09d37c91547b8baaccb1ce0659a249f4b4674e534ebd3a0e63c32f384bd4bbd0 and seal 22a310a37704faed2c2fa3308ebe4e8b9819a80ff4b965673cff84936350281a."
+    },
+    {
+      "falsification": "the ten theorem-specific markdown packets are missing or fewer than ten",
+      "text": "Pass 0035 generated ten theorem-specific markdown packets under packets/theorems, one for each Problem 4(b) theorem target."
+    },
+    {
+      "falsification": "the ten transcript fixtures are missing, fewer than ten, or any transcript hash differs from the schema",
+      "text": "Pass 0035 persisted ten theorem transcript fixtures under fixtures/pass-0035-theorem-logs and each transcript SHA-256 matches the schema row."
+    },
+    {
+      "falsification": "any theorem-specific run has nonzero exit code, missing PASS result, failed Lake build, missing axiom PASS, or failed statement gate",
+      "text": "Pass 0035 records all ten theorem-specific verifier runs with exit_code 0, result_pass true, lake_build_status PASS, axiom_status PASS, statement_discharge_status PASS, and statement_solution_status PASS."
+    },
+    {
+      "falsification": "the theorem names differ from the expected Problem 4(b) target set or are incomplete",
+      "text": "Pass 0035 records the expected ten theorem targets: B_triple_zero, M_triple_defect, M_annihilator, M_pairwise_intersection, triple_defect_survives, R_finite_conductor, R_not_quasi_coherent, prob4b_counterexample, problem4b_false, and quasiCoherent_imp_finiteConductor."
+    },
+    {
+      "falsification": "any theorem row omits the axiom boundary or reports a different axiom set",
+      "text": "Pass 0035 records the axiom set [propext, Classical.choice, Quot.sound] for every theorem-specific packet."
+    },
+    {
+      "falsification": "any theorem row omits frozen statement, solution declaration, discharge gate, or proof declaration refs",
+      "text": "Pass 0035 records source refs for every theorem row: frozen_statement, solution_decl, discharge_gate, and proof_decl."
+    },
+    {
+      "falsification": "the pass 0035 validator result is missing, reports DRIFT, or has different theorem, packet, or transcript counts",
+      "text": "Pass 0035 validator result reports MATCH with theorem_count 10, packet_count 10, and transcript_count 10."
+    },
+    {
+      "falsification": "pass 0035 artifacts claim an axiom-free result, validate every public pipeline-math claim, promote a partial theorem set as complete, or promote a natural law",
+      "text": "Pass 0035 preserves non-promotion boundaries: it verifies ten theorem-specific replay targets inside the local Lean artifact, rejects axiom-free and public-claim overpromotion, and current_promoted_natural_laws remains none."
+    }
+  ],
+  "disposition": "fenced",
+  "title": "Dogfood Pass 0035 Theorem-Specific Proof Packets"
+}

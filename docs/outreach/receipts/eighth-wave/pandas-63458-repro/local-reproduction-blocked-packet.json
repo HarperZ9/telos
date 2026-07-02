@@ -1,0 +1,61 @@
+{
+  "schema": "project-telos.oss-pr-readiness/v1",
+  "captured_at": "2026-07-02T00:00:00.000Z",
+  "candidate": {
+    "repository": "pandas-dev/pandas",
+    "issue": 63458,
+    "issue_url": "https://github.com/pandas-dev/pandas/issues/63458",
+    "candidate_schema": "project-telos.oss-candidate/v1"
+  },
+  "evidence": {
+    "live_issue_detail": true,
+    "local_reproduction": true,
+    "scope": "Local failing reproduction for pandas-dev/pandas#63458. This is not a patch, passing test, source inspection, current-main verification, maintainer-ready PR packet, or claim that the issue is fixed.",
+    "issue_detail_summary": "docs/outreach/receipts/seventh-wave/oss-showcase-live-issue-63458-summary.json",
+    "local_reproduction_receipt": "docs/outreach/receipts/eighth-wave/pandas-63458-repro/local-reproduction-receipt.json",
+    "reproduction": {
+      "command": "python reproduce_pandas_63458.py",
+      "status": "failed-before-patch",
+      "source": "issue-authored reproduction lead captured from GitHub issue body",
+      "exception_type": "AttributeError",
+      "exception_message": "'ArrowExtensionArray' object has no attribute 'sum'"
+    },
+    "tests": [],
+    "crucible": {
+      "verdict": "UNVERIFIABLE",
+      "detail": "A local failing reproduction exists, but no patch, passing test evidence, or verifier-gated after state exists."
+    },
+    "not_verified": {
+      "files_not_inspected": [
+        "pandas source tree"
+      ],
+      "tests_skipped": [
+        "targeted pandas regression test",
+        "full pandas test suite"
+      ],
+      "assumptions": [
+        "pandas 3.0.3 plus pyarrow 24.0.0 is a valid local reproduction target for this issue shape"
+      ],
+      "unobserved_state": [
+        "current pandas main branch behavior",
+        "patch feasibility",
+        "maintainer intent"
+      ]
+    },
+    "risk_notes": [
+      "failing reproduction only",
+      "no patch evidence",
+      "no passing test evidence",
+      "crucible verdict is not MATCH"
+    ]
+  },
+  "verdict": "UNVERIFIABLE",
+  "blockers": [
+    "missing passing test evidence",
+    "crucible verdict is not MATCH",
+    "missing patch summary"
+  ],
+  "pr_ready": false,
+  "operator_next_action": "revise",
+  "public_pr_draft": null
+}

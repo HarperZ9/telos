@@ -1,0 +1,128 @@
+{
+  "schema": "project-telos.source-lead-demotion-gate/v1",
+  "generated_at": "2026-07-02",
+  "wave": "fourteenth",
+  "purpose": "Demote formal-PDE and Lean/prover arXiv metadata into source leads only after adding a bounded Lean replay rung.",
+  "stores": [
+    {
+      "path": "docs/outreach/receipts/fourteenth-wave/arxiv-lean-formal-pde",
+      "retained_rows": 8,
+      "digest_seal": "594b82b15ea0b6fd6d32ff86aa6253429f7c0141fad9ef1cceef3ffdc5cd9ce7",
+      "verify_status": "MATCH"
+    },
+    {
+      "path": "docs/outreach/receipts/fourteenth-wave/arxiv-formal-pde-proof-assistant",
+      "retained_rows": 5,
+      "digest_seal": "cafa73fa623854051f2900b826b94954c31cf605ea7379eede19d4090017168b",
+      "verify_status": "MATCH"
+    },
+    {
+      "path": "docs/outreach/receipts/fourteenth-wave/arxiv-lean-agent-provers",
+      "retained_rows": 7,
+      "digest_seal": "dc77ff68f274734a98f909557919a5adce761026404674c5d4542cff8f426ff3",
+      "verify_status": "MATCH"
+    }
+  ],
+  "coverage": {
+    "retained_rows": 20,
+    "unique_arxiv_ids": 16,
+    "duplicate_rows": 4,
+    "dropped_by_gather_scope": 4,
+    "all_store_verifications_match": true
+  },
+  "classification_counts": {
+    "formal_replay_infrastructure": 8,
+    "pde_domain_lead": 6,
+    "adjacent_or_query_noise": 1,
+    "high_risk_grand_claim": 1
+  },
+  "classifications": [
+    {
+      "id": "2604.16507v1",
+      "class": "formal_replay_infrastructure",
+      "reason": "Lean 4 formal proof paper; relevant to proof-engineering method, not PDE truth."
+    },
+    {
+      "id": "2404.12534v3",
+      "class": "formal_replay_infrastructure",
+      "reason": "Lean Copilot; relevant to agent-assisted Lean proof search and tool integration."
+    },
+    {
+      "id": "2604.05238v1",
+      "class": "formal_replay_infrastructure",
+      "reason": "Lean 4 formalization paper; relevant as a formalization-process lead."
+    },
+    {
+      "id": "2606.01356v2",
+      "class": "formal_replay_infrastructure",
+      "reason": "Lean 4 finance library; relevant as cross-domain proof-packet tooling analog."
+    },
+    {
+      "id": "2606.28990v1",
+      "class": "formal_replay_infrastructure",
+      "reason": "Lean 4 finance theorem formalization; relevant as proof-publication analog."
+    },
+    {
+      "id": "2604.01483v1",
+      "class": "formal_replay_infrastructure",
+      "reason": "Lean 4 guardrails for agentic systems; relevant to Telos proof/action packets."
+    },
+    {
+      "id": "2506.11085v1",
+      "class": "formal_replay_infrastructure",
+      "reason": "Lean declaration search tooling; relevant to next formalization workflow."
+    },
+    {
+      "id": "2604.09808v2",
+      "class": "formal_replay_infrastructure",
+      "reason": "Lean 4 formal proof paper; relevant as formal-publication precedent."
+    },
+    {
+      "id": "1105.0582v2",
+      "class": "pde_domain_lead",
+      "reason": "Navier-Stokes-adjacent PDE paper; source-body review required before use."
+    },
+    {
+      "id": "1505.03021v2",
+      "class": "pde_domain_lead",
+      "reason": "2-D stochastic Navier-Stokes lead; source-body review required before use."
+    },
+    {
+      "id": "1506.01230v2",
+      "class": "pde_domain_lead",
+      "reason": "Stochastic PDE stability lead; source-body review required before use."
+    },
+    {
+      "id": "1005.4095v2",
+      "class": "pde_domain_lead",
+      "reason": "Stochastic PDE regularity lead; source-body review required before use."
+    },
+    {
+      "id": "1912.05497v2",
+      "class": "pde_domain_lead",
+      "reason": "Elliptic PDE boundary value lead; source-body review required before use."
+    },
+    {
+      "id": "1210.6727v3",
+      "class": "pde_domain_lead",
+      "reason": "Elliptic PDE regularity lead; source-body review required before use."
+    },
+    {
+      "id": "2312.14449v2",
+      "class": "adjacent_or_query_noise",
+      "reason": "Formal solutions of ODEs; may inform vocabulary, but not a direct formal-PDE proof-assistant lead."
+    },
+    {
+      "id": "1806.10081v10",
+      "class": "high_risk_grand_claim",
+      "reason": "Grand-claim title for Navier-Stokes; keep quarantined until official status and source-body review are independently reconciled."
+    }
+  ],
+  "verdict": "SOURCE_LEAD_ONLY",
+  "boundaries": [
+    "This gate classifies arXiv metadata only.",
+    "It does not establish paper truth, source-body review, latest literature coverage, or exhaustive literature coverage.",
+    "It does not promote any PDE result, theorem-prover result, or grand-problem claim.",
+    "The high-risk grand-claim row must not be cited as evidence for a solved Millennium problem."
+  ]
+}

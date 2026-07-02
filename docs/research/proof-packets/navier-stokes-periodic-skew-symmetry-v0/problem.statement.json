@@ -1,0 +1,45 @@
+{
+  "schema": "project-telos.frontier-subclaim/v1",
+  "packet_id": "navier-stokes-periodic-skew-symmetry-v0",
+  "parent_problem": {
+    "id": "navier-stokes-existence-smoothness",
+    "title": "Navier-Stokes existence and smoothness",
+    "official_sources": [
+      "https://www.claymath.org/millennium/navier-stokes-equation/",
+      "https://www.claymath.org/millennium-problems/"
+    ],
+    "grand_claim_status": "UNVERIFIABLE"
+  },
+  "subclaim": {
+    "id": "periodic-incompressible-advection-skew-symmetry",
+    "status": "PROBE_MATCH_CANDIDATE",
+    "claim": "For a smooth divergence-free velocity field on a periodic two-dimensional domain, the incompressible Navier-Stokes advection term has zero kinetic-energy contribution: integral u dot ((u dot grad)u) dx = 0.",
+    "bounded_witness": "A deterministic finite Fourier-mode streamfunction defines one smooth periodic divergence-free field. The reference kernel evaluates analytic derivatives on a uniform periodic grid and checks that nonlinear energy transfer is zero within tolerance.",
+    "assumptions": [
+      "smooth velocity field",
+      "two-dimensional periodic domain [0, 2pi]^2",
+      "velocity represented as u = (partial_y psi, -partial_x psi)",
+      "analytic derivatives of the finite streamfunction modes",
+      "positive grid resolution",
+      "bounded witness only"
+    ]
+  },
+  "negative_boundaries": [
+    "This packet does not prove Navier-Stokes existence and smoothness.",
+    "This packet does not prove global regularity.",
+    "This packet does not prove turbulence closure or physical-fluid prediction.",
+    "This packet does not prove numerical convergence for arbitrary discretizations.",
+    "This packet does not make a new law-of-physics claim."
+  ],
+  "promotion_rule": {
+    "allowed": [
+      "CRUCIBLE_MATCH for the bounded skew-symmetry witness",
+      "IDENTITY for the written smooth-periodic derivation after independent mathematical review or theorem-prover replay"
+    ],
+    "forbidden": [
+      "PROMOTED_LAW",
+      "SOLVED_FRONTIER_PROBLEM",
+      "NAVIER_STOKES_PROOF"
+    ]
+  }
+}

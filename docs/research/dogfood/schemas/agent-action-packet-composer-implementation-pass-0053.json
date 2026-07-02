@@ -1,0 +1,76 @@
+{
+  "bundle_outputs": [
+    {
+      "bytes": 2827,
+      "exists": true,
+      "path": "demo-bundles/agent-action-proof-packet-pass-0053/packet.json",
+      "sha256": "301f89634daf9956d16039ea7aaecb8845e2db8873fbaaa2300397af69568a92"
+    },
+    {
+      "bytes": 933,
+      "exists": true,
+      "path": "demo-bundles/agent-action-proof-packet-pass-0053/packet.md",
+      "sha256": "cf1a9367b810156aee01d2587b7d4fca587bf584b5ca0d9c3b4e0ca4bc8d5fa6"
+    },
+    {
+      "bytes": 763,
+      "exists": true,
+      "path": "demo-bundles/agent-action-proof-packet-pass-0053/receipts.json",
+      "sha256": "56bdb54e21a7d9cf8d4df69c091a1d98a17010e59041ad071022c68f6ad94828"
+    },
+    {
+      "bytes": 3651,
+      "exists": true,
+      "path": "demo-bundles/agent-action-proof-packet-pass-0053/negative-fixture-report.json",
+      "sha256": "1dc17281eb111135743ad1c9f473e66a0f9d64b98540eebc5623c118ec2c4ea5"
+    },
+    {
+      "bytes": 1560,
+      "exists": true,
+      "path": "demo-bundles/agent-action-proof-packet-pass-0053/index.html",
+      "sha256": "1e093b0edde6ed037145a22421d3cf01de631d5988a51cf79b489a6674c42974"
+    },
+    {
+      "bytes": 408,
+      "exists": true,
+      "path": "demo-bundles/agent-action-proof-packet-pass-0053/replay-commands.md",
+      "sha256": "2e209858a3e7768c187a287176c263a17c248bcd3a93e647bfd47e4135495d2b"
+    }
+  ],
+  "compose_receipt": {
+    "command": "C:\\Users\\Zain\\AppData\\Local\\Programs\\Python\\Python312\\python.exe C:\\dev\\public\\telos\\docs\\research\\dogfood\\tools\\compose_agent_action_proof_packet_demo.py --fixture C:\\dev\\public\\telos\\docs\\research\\dogfood\\fixtures\\agent-action-proof-packet-negative-fixtures-pass-0051.json --out C:\\dev\\public\\telos\\docs\\research\\dogfood\\demo-bundles\\agent-action-proof-packet-pass-0053",
+    "exit_code": 0,
+    "status": "MATCH",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "d1046a1550e94533a9afa38cd4267993d034a88f5c61eb29f625c41b746a1383"
+  },
+  "current_promoted_natural_laws": [],
+  "generated_on": "2026-07-01",
+  "implementation_status": "IMPLEMENTED_LOCAL_DEMO_BUNDLE",
+  "non_promotion_statement": "Pass 0053 proves a local synthetic packet composer bundle only. It does not prove real trace import, live browser execution, product-market fit, buyer adoption, scientific truth, or any natural law.",
+  "pass": "0053",
+  "previous_pass_binding": {
+    "path": "schemas/agent-action-packet-composer-build-contract-pass-0052.json",
+    "seal": "a3de5bf486f1972fb9fd7e577fb9918397d13f302c963d0386393cd9ddf86abc",
+    "sha256": "acce1dd3ec0b6e7b85323e05823324525715e7e6d5fdf149a64871244fd55c12",
+    "source_status": "AGENT_ACTION_PACKET_COMPOSER_BUILD_CONTRACT_MATCH"
+  },
+  "schema": "AgentActionPacketComposerImplementationSet/v1",
+  "seal": "6966ecbb4558cb9098da0bc2e8658e6dd284dc865b7313d91cbb37f811989044",
+  "status": "AGENT_ACTION_PACKET_COMPOSER_IMPLEMENTATION_MATCH",
+  "test_receipt": {
+    "command": "C:\\Users\\Zain\\AppData\\Local\\Programs\\Python\\Python312\\python.exe C:\\dev\\public\\telos\\docs\\research\\dogfood\\tools\\test_agent_action_packet_composer_demo.py",
+    "exit_code": 0,
+    "status": "MATCH",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "3a0f638d37f9fbcc22764ecea79321eaa5e2aa3d2a06c13155190bfc331a6c69"
+  },
+  "uniqueness_claim_status": "HYPOTHESIS_ONLY",
+  "verifier_measurements": {
+    "negative_fixture_count": 8,
+    "negative_match_count": 8,
+    "negative_pass_observed_count": 0,
+    "output_count": 6,
+    "output_match_count": 6
+  }
+}

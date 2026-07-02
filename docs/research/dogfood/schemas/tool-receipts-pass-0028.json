@@ -1,0 +1,139 @@
+{
+  "generated_on": "2026-07-01",
+  "non_promotion_statement": "Tool receipts prove operator-surface availability, packet intake, Forum ledger verification, and Telos interface discoverability only. They do not prove live browser collection, production browser capture, production DLP, external vault integration, theorem proof, scientific discovery, buyer adoption, or any natural law.",
+  "pass": "0028",
+  "receipts": [
+    {
+      "command": "status",
+      "role": "structure-context",
+      "status": "MATCH",
+      "tool": "index",
+      "tool_version": "2.8.0"
+    },
+    {
+      "checks": [
+        "workspace_map",
+        "context_pack",
+        "structural_verification",
+        "mcp_map_probe"
+      ],
+      "command": "doctor",
+      "mcp_map_probe_repo_count": 1,
+      "status": "MATCH",
+      "tool": "index"
+    },
+    {
+      "command": "status",
+      "role": "perception-intake",
+      "status": "MATCH",
+      "tool": "gather",
+      "tool_version": "1.5.0"
+    },
+    {
+      "artifact": "packets/038-source-evidence-binding.md",
+      "chars": 5389,
+      "command": "docs",
+      "seal": "e9cf92d20156ace6be6657b714050fb9281beec1df308f9f77b8e418f304a258",
+      "sha256": "33f2c1ae730dc4a432a2fbed476216e3099632a5d97ba1c4eb1a9ad6ec0223ce",
+      "status": "MATCH",
+      "tool": "gather",
+      "verified": true
+    },
+    {
+      "check_count": 14,
+      "command": "operator_doctor",
+      "generated_at": "2026-07-01T12:31:19.245Z",
+      "passed_count": 14,
+      "status": "MATCH",
+      "telos_tool_count": 37,
+      "tool": "telos.operator.doctor",
+      "tool_count": 65
+    },
+    {
+      "command": "catalog",
+      "noted_tools": [
+        "telos.browser.evidence",
+        "telos.action.receipt",
+        "telos.loop.ledger",
+        "gather.docs",
+        "index.context.envelope",
+        "forum.ledger.summary",
+        "crucible.assess"
+      ],
+      "schema": "project-telos.mcp-tool-catalog/v1",
+      "status": "MATCH",
+      "tool": "telos.catalog"
+    },
+    {
+      "command": "browser_evidence",
+      "console_summary_verdict": "UNVERIFIABLE",
+      "network_summary_verdict": "UNVERIFIABLE",
+      "redaction_status": "redacted",
+      "schema": "project-telos.browser-evidence/v1",
+      "status": "MATCH",
+      "target_ref": "url:sha256:100680ad546ce6a577f42f52df33b4cfdca756859e664b8d7de329b150d09ce9",
+      "tool": "telos.browser.evidence",
+      "verification_verdict": "MATCH"
+    },
+    {
+      "append_only_compensation_required": true,
+      "command": "action_receipt",
+      "digest_references_required": true,
+      "persistence_contract": "Receipts are append-only events. Corrections and compensation are new events joined by action_id or compensates, never destructive mutation of the original event.",
+      "raw_parameters_required": false,
+      "receipt_is_trace_span": false,
+      "schema": "project-telos.action-receipt/v1",
+      "status": "MATCH",
+      "tool": "telos.action.receipt",
+      "verified_on": "2026-06-27"
+    },
+    {
+      "command": "loop_ledger",
+      "fresh_context_reads_ledger_first": true,
+      "ledger_durable": true,
+      "schema": "project-telos.loop-ledger/v1",
+      "status": "MATCH",
+      "tool": "telos.loop.ledger",
+      "verified_on": "2026-06-28"
+    },
+    {
+      "command": "status",
+      "role": "orchestration-routing",
+      "status": "MATCH",
+      "tool": "forum",
+      "tool_version": "1.12.0"
+    },
+    {
+      "checkpoint": "0000000000000000000000000000000000000000000000000000000000000000",
+      "command": "ledger summary",
+      "entries": 0,
+      "model_calls_total": 0,
+      "status": "MATCH",
+      "tool": "forum",
+      "verified": true
+    },
+    {
+      "chain": true,
+      "command": "ledger verify",
+      "deep": true,
+      "status": "MATCH",
+      "tool": "forum"
+    },
+    {
+      "command": "submit",
+      "error": "submit needs a model executor. Forum is model-agnostic: pass --cmd \"<model cli>\" (any command, local models need no account), --chat-url <openai-compatible url> (e.g. a local Ollama server), or --api (Anthropic).",
+      "request": "Dogfood pass 0028 adversarial review for source/browser evidence binding",
+      "status": "UNVERIFIABLE",
+      "tool": "forum"
+    },
+    {
+      "command": "status",
+      "role": "verification-pressure",
+      "status": "MATCH",
+      "tool": "crucible",
+      "tool_version": "1.1.0"
+    }
+  ],
+  "schema": "DogfoodToolReceiptSet/v1",
+  "status": "MATCH_WITH_FORUM_SUBMIT_GAP"
+}

@@ -1,0 +1,71 @@
+{
+  "schema": "BuyerObjectionMatrix/v1",
+  "pass": "0005",
+  "generated_on": "2026-07-01",
+  "objections": [
+    {
+      "objection": "Integration tax",
+      "buyer_question": "Why should we wire another system into a stack that already has traces, evals, CI, model tracking, and data lineage?",
+      "required_demo_evidence": "Show import from at least two existing systems and prove the packet adds a decision field the source systems do not jointly answer.",
+      "product_response": "Adapter-first ingestion with minimal required fields and explicit missing-evidence labels.",
+      "status": "inferred",
+      "confidence": "high"
+    },
+    {
+      "objection": "Compliance theater",
+      "buyer_question": "Is this a real verifier or just a larger PDF?",
+      "required_demo_evidence": "Include a failing or unverifiable case where the packet blocks promotion and explains which evidence is absent.",
+      "product_response": "Every packet has falsifiers, verification status, and hard `UNVERIFIABLE` propagation.",
+      "status": "inferred",
+      "confidence": "high"
+    },
+    {
+      "objection": "Incumbent overlap",
+      "buyer_question": "How is this not LangSmith, Langfuse, MLflow, W&B, DVC, or OpenTelemetry with a different UI?",
+      "required_demo_evidence": "Show the same event in an incumbent view and in a Telos packet; demonstrate cross-layer binding across trace, source, authority, workspace, verification, and runtime/build evidence.",
+      "product_response": "Position Telos as the proof-binding layer, not as a replacement for every evidence producer.",
+      "status": "verified",
+      "confidence": "high"
+    },
+    {
+      "objection": "Long-horizon reliability",
+      "buyer_question": "Can the packet survive multi-hour or multi-day agent work without hidden state drift?",
+      "required_demo_evidence": "Run a long task with checkpoints, source hashes, action receipts, handoff records, and independent verification gates.",
+      "product_response": "Add checkpointed packet state, replay summaries, task-duration metadata, and drift labels.",
+      "status": "inferred",
+      "confidence": "high"
+    },
+    {
+      "objection": "Data privacy and retention",
+      "buyer_question": "Will the packet leak prompts, source data, proprietary datasets, secrets, or regulated information?",
+      "required_demo_evidence": "Demonstrate redaction, hashing, local-only evidence references, and separate public/private packet views.",
+      "product_response": "Packet schema supports evidence references, digest receipts, redaction labels, and minimal public summaries.",
+      "status": "inferred",
+      "confidence": "high"
+    },
+    {
+      "objection": "Verifier trust",
+      "buyer_question": "Why should we trust the packet's verdicts?",
+      "required_demo_evidence": "Show cleanroom verifier input limits, reproducible measurements, Crucible seals, and a recheck path.",
+      "product_response": "Separate worker context from verifier context and store replayable thesis/measurement pairs.",
+      "status": "verified",
+      "confidence": "high"
+    },
+    {
+      "objection": "Cross-domain overreach",
+      "buyer_question": "Why should one system serve software, research, BuildLang, color, biology, finance, and societal domains?",
+      "required_demo_evidence": "Show that only the packet spine is shared while domain validators remain specialized.",
+      "product_response": "Ship a family of megatools with shared receipts and domain-specific validators.",
+      "status": "inferred",
+      "confidence": "high"
+    },
+    {
+      "objection": "Actionability",
+      "buyer_question": "What decision does the packet help me make today?",
+      "required_demo_evidence": "Each demo ends with a buyer-facing decision: approve, block, rerun, escalate, publish, deploy, or archive.",
+      "product_response": "Packet summary must include decision, reason, confidence, missing evidence, and next action.",
+      "status": "inferred",
+      "confidence": "high"
+    }
+  ]
+}

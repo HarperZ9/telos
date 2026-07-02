@@ -1,0 +1,779 @@
+{
+  "schema": "project-telos.eleventh-wave-hard-problem-source-router/v1",
+  "generated_at": "2026-07-02T10:35:34.439Z",
+  "status": "PROBE_MATCH",
+  "purpose": "Demote broad hard-problem source intake into domain leads, adjacent leads, query noise, zero-row negatives, and missing catalogs before any synthesis.",
+  "counts": {
+    "rows": 71,
+    "unique_ids": 67,
+    "duplicates": 3,
+    "by_lane": {
+      "formal_proof": 7,
+      "quantum": 8,
+      "fusion_plasma": 6,
+      "climate": 7,
+      "materials": 8,
+      "biology": 6,
+      "medicine": 5,
+      "robotics": 8,
+      "cyber": 3,
+      "finance": 3,
+      "number_theory_formalization": 4,
+      "pde": 5,
+      "theoretical_cs": 1
+    },
+    "by_classification": {
+      "domain_lead": 66,
+      "query_noise": 1,
+      "adjacent_lead": 3,
+      "zero_retained_rows": 1
+    }
+  },
+  "duplicates": [
+    {
+      "id": "2604.16507v1",
+      "lanes": [
+        "formal_proof",
+        "number_theory_formalization"
+      ],
+      "count": 2
+    },
+    {
+      "id": "2404.12534v3",
+      "lanes": [
+        "formal_proof",
+        "number_theory_formalization"
+      ],
+      "count": 2
+    },
+    {
+      "id": "2604.05238v1",
+      "lanes": [
+        "formal_proof",
+        "number_theory_formalization"
+      ],
+      "count": 2
+    }
+  ],
+  "high_signal_sample": [
+    {
+      "lane": "formal_proof",
+      "id": "2604.16347v1",
+      "title": "Lean Atlas: An Integrated Proof Environment for Scalable Human-AI Collaborative Formalization",
+      "ref": "http://arxiv.org/abs/2604.16347v1"
+    },
+    {
+      "lane": "formal_proof",
+      "id": "2604.16507v1",
+      "title": "Deep Vision: A Formal Proof of Wolstenholmes Theorem in Lean 4",
+      "ref": "http://arxiv.org/abs/2604.16507v1"
+    },
+    {
+      "lane": "formal_proof",
+      "id": "2404.12534v3",
+      "title": "Lean Copilot: Large Language Models as Copilots for Theorem Proving in Lean",
+      "ref": "http://arxiv.org/abs/2404.12534v3"
+    },
+    {
+      "lane": "formal_proof",
+      "id": "2604.05238v1",
+      "title": "A Prime-Generated Formalization of Nagata's Factoriality Theorem in Lean 4",
+      "ref": "http://arxiv.org/abs/2604.05238v1"
+    },
+    {
+      "lane": "formal_proof",
+      "id": "2606.01356v2",
+      "title": "A Formally Verified Library of Mathematical Finance in Lean 4",
+      "ref": "http://arxiv.org/abs/2606.01356v2"
+    },
+    {
+      "lane": "formal_proof",
+      "id": "2606.13306v1",
+      "title": "EconCSLib: AI-Assisted Lean Formalization for Economics & Computation research",
+      "ref": "http://arxiv.org/abs/2606.13306v1"
+    },
+    {
+      "lane": "formal_proof",
+      "id": "2409.05977v3",
+      "title": "Mathematical Formalized Problem Solving and Theorem Proving in Different Fields in Lean 4",
+      "ref": "http://arxiv.org/abs/2409.05977v3"
+    },
+    {
+      "lane": "quantum",
+      "id": "1311.2485v2",
+      "title": "Continuous-time quantum error correction",
+      "ref": "http://arxiv.org/abs/1311.2485v2"
+    },
+    {
+      "lane": "quantum",
+      "id": "2512.02760v1",
+      "title": "Fault-tolerant quantum computation with constant overhead for general noise",
+      "ref": "http://arxiv.org/abs/2512.02760v1"
+    },
+    {
+      "lane": "quantum",
+      "id": "2512.10504v2",
+      "title": "Tianyan: Cloud services with quantum advantage",
+      "ref": "http://arxiv.org/abs/2512.10504v2"
+    },
+    {
+      "lane": "quantum",
+      "id": "1508.03695v1",
+      "title": "An introduction to Fault-tolerant Quantum Computing",
+      "ref": "http://arxiv.org/abs/1508.03695v1"
+    },
+    {
+      "lane": "quantum",
+      "id": "2602.12459v1",
+      "title": "Temporal Framework for Causality-Preserving Scheduling of Measurements in Quantum Networks",
+      "ref": "http://arxiv.org/abs/2602.12459v1"
+    },
+    {
+      "lane": "quantum",
+      "id": "1610.04013v1",
+      "title": "Entanglement-Assisted Quantum Error-Correcting Codes",
+      "ref": "http://arxiv.org/abs/1610.04013v1"
+    },
+    {
+      "lane": "quantum",
+      "id": "1312.0165v1",
+      "title": "Fault tolerance for holonomic quantum computation",
+      "ref": "http://arxiv.org/abs/1312.0165v1"
+    },
+    {
+      "lane": "quantum",
+      "id": "2401.04271v4",
+      "title": "Fault-tolerant quantum computation using large spin cat-codes",
+      "ref": "http://arxiv.org/abs/2401.04271v4"
+    },
+    {
+      "lane": "fusion_plasma",
+      "id": "1109.1997v1",
+      "title": "Correlation length scalings in fusion edge plasma turbulence computations",
+      "ref": "http://arxiv.org/abs/1109.1997v1"
+    },
+    {
+      "lane": "fusion_plasma",
+      "id": "physics/0512271v3",
+      "title": "How much laser power can propagate through fusion plasma?",
+      "ref": "http://arxiv.org/abs/physics/0512271v3"
+    },
+    {
+      "lane": "fusion_plasma",
+      "id": "1410.5986v1",
+      "title": "Ion cyclotron emission from fusion-born ions in large tokamak plasmas: a brief review from JET and TFTR to ITER",
+      "ref": "http://arxiv.org/abs/1410.5986v1"
+    },
+    {
+      "lane": "fusion_plasma",
+      "id": "2506.20096v1",
+      "title": "First experimental demonstration of plasma shape control in a tokamak through Model Predictive Control",
+      "ref": "http://arxiv.org/abs/2506.20096v1"
+    },
+    {
+      "lane": "fusion_plasma",
+      "id": "2606.09487v1",
+      "title": "Experimental validation of a fast control-oriented, physics-informed surrogate model for plasma equilibrium reconstruction in the TCV tokamak",
+      "ref": "http://arxiv.org/abs/2606.09487v1"
+    },
+    {
+      "lane": "climate",
+      "id": "2312.03014v1",
+      "title": "Foundation Models for Weather and Climate Data Understanding: A Comprehensive Survey",
+      "ref": "http://arxiv.org/abs/2312.03014v1"
+    },
+    {
+      "lane": "climate",
+      "id": "2008.10679v2",
+      "title": "Machine learning for weather and climate are worlds apart",
+      "ref": "http://arxiv.org/abs/2008.10679v2"
+    },
+    {
+      "lane": "climate",
+      "id": "1804.11168v1",
+      "title": "Climate, weather, space weather: model development in an operational context",
+      "ref": "http://arxiv.org/abs/1804.11168v1"
+    },
+    {
+      "lane": "climate",
+      "id": "2008.01035v1",
+      "title": "Invasive species, extreme fire risk, and toxin release under a changing climate",
+      "ref": "http://arxiv.org/abs/2008.01035v1"
+    }
+  ],
+  "rows": [
+    {
+      "lane": "formal_proof",
+      "id": "2604.16347v1",
+      "title": "Lean Atlas: An Integrated Proof Environment for Scalable Human-AI Collaborative Formalization",
+      "ref": "http://arxiv.org/abs/2604.16347v1",
+      "sha256": "01ce5cbaab3649711ea528393c4dfffe728ce3b19bdb37d986bfac925b1a06b2",
+      "classification": "domain_lead"
+    },
+    {
+      "lane": "formal_proof",
+      "id": "2604.16507v1",
+      "title": "Deep Vision: A Formal Proof of Wolstenholmes Theorem in Lean 4",
+      "ref": "http://arxiv.org/abs/2604.16507v1",
+      "sha256": "a6deaa5d75d84416838fe43f75fcf4ffcb16910f273ecd3b24d6889cb3593728",
+      "classification": "domain_lead"
+    },
+    {
+      "lane": "formal_proof",
+      "id": "2404.12534v3",
+      "title": "Lean Copilot: Large Language Models as Copilots for Theorem Proving in Lean",
+      "ref": "http://arxiv.org/abs/2404.12534v3",
+      "sha256": "b0fddbae6824aaa37ad544ed735e92cb023539f59b60f937d405429b010e9deb",
+      "classification": "domain_lead"
+    },
+    {
+      "lane": "formal_proof",
+      "id": "2604.05238v1",
+      "title": "A Prime-Generated Formalization of Nagata's Factoriality Theorem in Lean 4",
+      "ref": "http://arxiv.org/abs/2604.05238v1",
+      "sha256": "3f8db0518ffa2e18c22ebaee37603659876104ee87a8053047f4e52c5c3db6ae",
+      "classification": "domain_lead"
+    },
+    {
+      "lane": "formal_proof",
+      "id": "2606.01356v2",
+      "title": "A Formally Verified Library of Mathematical Finance in Lean 4",
+      "ref": "http://arxiv.org/abs/2606.01356v2",
+      "sha256": "c26f621b097011d68ea14899e8b1c08361eaa99067eb0e73465eefddd1e7b923",
+      "classification": "domain_lead"
+    },
+    {
+      "lane": "formal_proof",
+      "id": "2606.13306v1",
+      "title": "EconCSLib: AI-Assisted Lean Formalization for Economics & Computation research",
+      "ref": "http://arxiv.org/abs/2606.13306v1",
+      "sha256": "55476468e7285e0c3b3e6a385e9372752f6af7247715b2727e2e532fe6dce58d",
+      "classification": "domain_lead"
+    },
+    {
+      "lane": "formal_proof",
+      "id": "2409.05977v3",
+      "title": "Mathematical Formalized Problem Solving and Theorem Proving in Different Fields in Lean 4",
+      "ref": "http://arxiv.org/abs/2409.05977v3",
+      "sha256": "29915dd31888c430f210ec1c902a67a67001f2009980fe0b38839b5c4c245571",
+      "classification": "domain_lead"
+    },
+    {
+      "lane": "quantum",
+      "id": "1311.2485v2",
+      "title": "Continuous-time quantum error correction",
+      "ref": "http://arxiv.org/abs/1311.2485v2",
+      "sha256": "5ecb64970101865565efa5577198c0deb23a1d5f6c2855345ab7d5f307d86b67",
+      "classification": "domain_lead"
+    },
+    {
+      "lane": "quantum",
+      "id": "2512.02760v1",
+      "title": "Fault-tolerant quantum computation with constant overhead for general noise",
+      "ref": "http://arxiv.org/abs/2512.02760v1",
+      "sha256": "9833cc7f32fec522c89da64b6ed5f861402b5ad1077a19e520fadaf75c25fc22",
+      "classification": "domain_lead"
+    },
+    {
+      "lane": "quantum",
+      "id": "2512.10504v2",
+      "title": "Tianyan: Cloud services with quantum advantage",
+      "ref": "http://arxiv.org/abs/2512.10504v2",
+      "sha256": "f4c841a40bda4ff4cad2d96368f7a626ece59b7192eb5128a50e81de32089b52",
+      "classification": "domain_lead"
+    },
+    {
+      "lane": "quantum",
+      "id": "1508.03695v1",
+      "title": "An introduction to Fault-tolerant Quantum Computing",
+      "ref": "http://arxiv.org/abs/1508.03695v1",
+      "sha256": "2aeb100518a48f62ae1a79e33c128e878e50bc3e9c4c67fc6d5c5d73ae2c0f6c",
+      "classification": "domain_lead"
+    },
+    {
+      "lane": "quantum",
+      "id": "2602.12459v1",
+      "title": "Temporal Framework for Causality-Preserving Scheduling of Measurements in Quantum Networks",
+      "ref": "http://arxiv.org/abs/2602.12459v1",
+      "sha256": "1987a152094cc4dbaf3125dfa0d77881ac7d1d4912342a97e39d0d468fabcdbf",
+      "classification": "domain_lead"
+    },
+    {
+      "lane": "quantum",
+      "id": "1610.04013v1",
+      "title": "Entanglement-Assisted Quantum Error-Correcting Codes",
+      "ref": "http://arxiv.org/abs/1610.04013v1",
+      "sha256": "c24a8e3c60f9b56591f0d378c4676d4fcbf467b2c6b8ff9bc93b2bcd08d0e84e",
+      "classification": "domain_lead"
+    },
+    {
+      "lane": "quantum",
+      "id": "1312.0165v1",
+      "title": "Fault tolerance for holonomic quantum computation",
+      "ref": "http://arxiv.org/abs/1312.0165v1",
+      "sha256": "38a2f26a7b882bb4441ecda78df9c24e50063305a89f72a9c868493319988cf0",
+      "classification": "domain_lead"
+    },
+    {
+      "lane": "quantum",
+      "id": "2401.04271v4",
+      "title": "Fault-tolerant quantum computation using large spin cat-codes",
+      "ref": "http://arxiv.org/abs/2401.04271v4",
+      "sha256": "5ca2bf9307655e4cf7acac9e17ad3ba5eab1c065b10d12caa4f5c8bb7035f1dc",
+      "classification": "domain_lead"
+    },
+    {
+      "lane": "fusion_plasma",
+      "id": "1109.1997v1",
+      "title": "Correlation length scalings in fusion edge plasma turbulence computations",
+      "ref": "http://arxiv.org/abs/1109.1997v1",
+      "sha256": "80ede164ba5a5cf26c72245b6094ef439fd90f8b5b87f34672f016ebe05f6cf5",
+      "classification": "domain_lead"
+    },
+    {
+      "lane": "fusion_plasma",
+      "id": "physics/0512271v3",
+      "title": "How much laser power can propagate through fusion plasma?",
+      "ref": "http://arxiv.org/abs/physics/0512271v3",
+      "sha256": "870bf99ff7d0310bf6ac96df1afb944f59fa90938ceb4c3e3fcee1f54db9292d",
+      "classification": "domain_lead"
+    },
+    {
+      "lane": "fusion_plasma",
+      "id": "1410.5986v1",
+      "title": "Ion cyclotron emission from fusion-born ions in large tokamak plasmas: a brief review from JET and TFTR to ITER",
+      "ref": "http://arxiv.org/abs/1410.5986v1",
+      "sha256": "6a4be5f0586a94ffe8c21540e8ca55392325263c069de3f786c92ecfba0d524f",
+      "classification": "domain_lead"
+    },
+    {
+      "lane": "fusion_plasma",
+      "id": "2506.20096v1",
+      "title": "First experimental demonstration of plasma shape control in a tokamak through Model Predictive Control",
+      "ref": "http://arxiv.org/abs/2506.20096v1",
+      "sha256": "14f2cdfd2b6394d01901e2c2782ee60d8ed7df0a78a081faeaa71ad9271c0177",
+      "classification": "domain_lead"
+    },
+    {
+      "lane": "fusion_plasma",
+      "id": "2606.09487v1",
+      "title": "Experimental validation of a fast control-oriented, physics-informed surrogate model for plasma equilibrium reconstruction in the TCV tokamak",
+      "ref": "http://arxiv.org/abs/2606.09487v1",
+      "sha256": "514ae9a4d2c11481edeb08eb6e0074ec3c83c4ebef35ab577d56d164698a1402",
+      "classification": "domain_lead"
+    },
+    {
+      "lane": "fusion_plasma",
+      "id": "2509.08759v3",
+      "title": "Fourier Learning Machines: Nonharmonic Fourier-Based Neural Networks for Scientific Machine Learning",
+      "ref": "http://arxiv.org/abs/2509.08759v3",
+      "sha256": "c8b454211ed977b95ba80b9451db6253cda97420dd75dff67b0e2e37b87dbb0e",
+      "classification": "query_noise"
+    },
+    {
+      "lane": "climate",
+      "id": "2312.03014v1",
+      "title": "Foundation Models for Weather and Climate Data Understanding: A Comprehensive Survey",
+      "ref": "http://arxiv.org/abs/2312.03014v1",
+      "sha256": "eab3dfc2116885b699fff1b7ca8a44f0a99e7b858624df7cc03e70e1bd7ac247",
+      "classification": "domain_lead"
+    },
+    {
+      "lane": "climate",
+      "id": "2008.10679v2",
+      "title": "Machine learning for weather and climate are worlds apart",
+      "ref": "http://arxiv.org/abs/2008.10679v2",
+      "sha256": "20f0c61c9a8e83562bbdf5ec3be53a0b1ea3349906cba6a56f8967fe88c152f5",
+      "classification": "domain_lead"
+    },
+    {
+      "lane": "climate",
+      "id": "1804.11168v1",
+      "title": "Climate, weather, space weather: model development in an operational context",
+      "ref": "http://arxiv.org/abs/1804.11168v1",
+      "sha256": "ad480e08a4f168755dc2ddbb2e3fa75209cf8a50c3c9233c6b7bc334f889883d",
+      "classification": "domain_lead"
+    },
+    {
+      "lane": "climate",
+      "id": "2008.01035v1",
+      "title": "Invasive species, extreme fire risk, and toxin release under a changing climate",
+      "ref": "http://arxiv.org/abs/2008.01035v1",
+      "sha256": "68c7526e40485a58b8511372627b29659b075bf531b2549c30755c5643774695",
+      "classification": "domain_lead"
+    },
+    {
+      "lane": "climate",
+      "id": "1503.07557v1",
+      "title": "Precipitation extremes under climate change",
+      "ref": "http://arxiv.org/abs/1503.07557v1",
+      "sha256": "e6dbd4e59f8b45819689851860ad8c948f9e775b325ff1f69a5f1a9f314b9cc5",
+      "classification": "domain_lead"
+    },
+    {
+      "lane": "climate",
+      "id": "2603.26449v1",
+      "title": "ClimateCheck 2026: Scientific Fact-Checking and Disinformation Narrative Classification of Climate-related Claims",
+      "ref": "http://arxiv.org/abs/2603.26449v1",
+      "sha256": "a4b7eda7542acb8f5defa2b6f27d42fced6fc9fc077533c48e6bde3a26171694",
+      "classification": "domain_lead"
+    },
+    {
+      "lane": "climate",
+      "id": "1806.09861v1",
+      "title": "The importance of ensemble techniques for operational space weather forecasting",
+      "ref": "http://arxiv.org/abs/1806.09861v1",
+      "sha256": "78641d5ba6bab5b028a051ef2f43af4be10156b0162f8e76612c1d65713c7707",
+      "classification": "domain_lead"
+    },
+    {
+      "lane": "materials",
+      "id": "2507.16110v1",
+      "title": "Expert-Guided LLM Reasoning for Battery Discovery: From AI-Driven Hypothesis to Synthesis and Characterization",
+      "ref": "http://arxiv.org/abs/2507.16110v1",
+      "sha256": "742bff6cb7b613bc1a33a0dd9fbd3197fb63de3bcb0022ec9af723f7bdb42b6b",
+      "classification": "domain_lead"
+    },
+    {
+      "lane": "materials",
+      "id": "2603.15712v1",
+      "title": "LLM-Driven Discovery of High-Entropy Catalysts via Retrieval-Augmented Generation",
+      "ref": "http://arxiv.org/abs/2603.15712v1",
+      "sha256": "112e214dcd6698497e69bc65da5b64c49836669480952fcb2c62b68509b8f73e",
+      "classification": "domain_lead"
+    },
+    {
+      "lane": "materials",
+      "id": "2604.11487v1",
+      "title": "NTIRE 2026 Challenge on Robust AI-Generated Image Detection in the Wild",
+      "ref": "http://arxiv.org/abs/2604.11487v1",
+      "sha256": "00d364dc84941f76874d6dfc646a2035432d9b0a729d0799c2e94bc0e13bca0c",
+      "classification": "adjacent_lead"
+    },
+    {
+      "lane": "materials",
+      "id": "2508.03278v1",
+      "title": "Artificial Intelligence and Generative Models for Materials Discovery -- A Review",
+      "ref": "http://arxiv.org/abs/2508.03278v1",
+      "sha256": "6f1fb15803d5f987056dc65b0d6642348e39094e9c77e11f380b2da354832484",
+      "classification": "domain_lead"
+    },
+    {
+      "lane": "materials",
+      "id": "2211.04977v2",
+      "title": "Design of battery materials via defects and doping",
+      "ref": "http://arxiv.org/abs/2211.04977v2",
+      "sha256": "bffe97f4d963cfef9724af9c3406c51022b26ecb6e4518f71a64b0ad0921f69a",
+      "classification": "domain_lead"
+    },
+    {
+      "lane": "materials",
+      "id": "2512.13930v1",
+      "title": "Hierarchical Multi-agent Large Language Model Reasoning for Autonomous Functional Materials Discovery",
+      "ref": "http://arxiv.org/abs/2512.13930v1",
+      "sha256": "128400b92f1761074fc9fce963af0df43adf5dbc60ad19a3b2893e1b8100d818",
+      "classification": "domain_lead"
+    },
+    {
+      "lane": "materials",
+      "id": "2601.16513v1",
+      "title": "Competing Visions of Ethical AI: A Case Study of OpenAI",
+      "ref": "http://arxiv.org/abs/2601.16513v1",
+      "sha256": "3e3c14b3b38149bf67f83753b5015a399afd4161a36e7a43ccc3aff9b66eeca8",
+      "classification": "adjacent_lead"
+    },
+    {
+      "lane": "materials",
+      "id": "2312.11487v1",
+      "title": "Symbolic Learning for Material Discovery",
+      "ref": "http://arxiv.org/abs/2312.11487v1",
+      "sha256": "ba71ed2c664697ff56e49dbff499e18aa9fc416c768155e06c7abe9a05ad4a24",
+      "classification": "domain_lead"
+    },
+    {
+      "lane": "biology",
+      "id": "2411.06029v1",
+      "title": "Validation of an LLM-based Multi-Agent Framework for Protein Engineering in Dry Lab and Wet Lab",
+      "ref": "http://arxiv.org/abs/2411.06029v1",
+      "sha256": "cd6addb6a444ae1626a62b6555847967a6f8a916960a875b130e3af28687a01b",
+      "classification": "domain_lead"
+    },
+    {
+      "lane": "biology",
+      "id": "2412.00160v1",
+      "title": "How reproducible are data-driven subtypes of Alzheimer's disease atrophy?",
+      "ref": "http://arxiv.org/abs/2412.00160v1",
+      "sha256": "e3c4e218d73bc4bb60e35ab558a9c875831db7ba9016bb0c5cfd408a8c691140",
+      "classification": "domain_lead"
+    },
+    {
+      "lane": "biology",
+      "id": "1607.06358v2",
+      "title": "Bayesian uncertainty analysis for complex systems biology models: emulation, global parameter searches and evaluation of gene functions",
+      "ref": "http://arxiv.org/abs/1607.06358v2",
+      "sha256": "4f41fd9f822ffd392aeb0f848e2ec4a7a0761f05d19596eb86adfa8367013663",
+      "classification": "domain_lead"
+    },
+    {
+      "lane": "biology",
+      "id": "1301.2528v1",
+      "title": "Virtual-organism toy-model as a tool to develop bioinformatics approaches of Systems Biology for medical-target discovery",
+      "ref": "http://arxiv.org/abs/1301.2528v1",
+      "sha256": "6c00f67484cf72c317dda9c0f13ccbe8ba7cf67cdcf36765f7649636926a6994",
+      "classification": "domain_lead"
+    },
+    {
+      "lane": "biology",
+      "id": "2503.03485v2",
+      "title": "TEDDY: A Family Of Foundation Models For Understanding Single Cell Biology",
+      "ref": "http://arxiv.org/abs/2503.03485v2",
+      "sha256": "2231a3fcbbcadfa763803aa98b572a70d2eb888777ae936423ea37387d9dd3c9",
+      "classification": "domain_lead"
+    },
+    {
+      "lane": "biology",
+      "id": "2504.06806v1",
+      "title": "Mass Balance Approximation of Unfolding Improves Potential-Like Methods for Protein Stability Predictions",
+      "ref": "http://arxiv.org/abs/2504.06806v1",
+      "sha256": "ea8996f16a62920243880f222352ad9e6fa5b52061f462390a64b630f79294dc",
+      "classification": "domain_lead"
+    },
+    {
+      "lane": "medicine",
+      "id": "2202.13965v1",
+      "title": "Precision-medicine-toolbox: An open-source python package for facilitation of quantitative medical imaging and radiomics analysis",
+      "ref": "http://arxiv.org/abs/2202.13965v1",
+      "sha256": "1671345e118a109d00060f72dd3b53a31522b85ce2098a25964a77899eaad164",
+      "classification": "domain_lead"
+    },
+    {
+      "lane": "medicine",
+      "id": "2412.03427v1",
+      "title": "Assessing Foundation Models' Transferability to Physiological Signals in Precision Medicine",
+      "ref": "http://arxiv.org/abs/2412.03427v1",
+      "sha256": "729a1633cc45ed7891e680caa46017de17460841e515bd2c99c7828f6f7709cc",
+      "classification": "domain_lead"
+    },
+    {
+      "lane": "medicine",
+      "id": "2411.03919v1",
+      "title": "A Causal Framework for Precision Rehabilitation",
+      "ref": "http://arxiv.org/abs/2411.03919v1",
+      "sha256": "b153f3be32682037ab545af9eb06e1e427eded3171fc1d4d4211ab1ff3c31bde",
+      "classification": "domain_lead"
+    },
+    {
+      "lane": "medicine",
+      "id": "2603.04722v2",
+      "title": "Model Medicine: A Clinical Framework for Understanding, Diagnosing, and Treating AI Models",
+      "ref": "http://arxiv.org/abs/2603.04722v2",
+      "sha256": "4128e891cd6bc6f30b298c729e25541a08e45d09c7ac155b3af6f89340839e50",
+      "classification": "domain_lead"
+    },
+    {
+      "lane": "medicine",
+      "id": "2108.04782v1",
+      "title": "Bandit Algorithms for Precision Medicine",
+      "ref": "http://arxiv.org/abs/2108.04782v1",
+      "sha256": "d768bad74bbe9c30ff277a6ede9009c21192caa2d54bfba1461cb3cf4edc8354",
+      "classification": "domain_lead"
+    },
+    {
+      "lane": "robotics",
+      "id": "2008.03983v1",
+      "title": "The Importance and the Limitations of Sim2Real for Robotic Manipulation in Precision Agriculture",
+      "ref": "http://arxiv.org/abs/2008.03983v1",
+      "sha256": "22201d870c3c3007b6d2008087cb97f8f35bd6ffb3779a9045ae5bddf0794a96",
+      "classification": "domain_lead"
+    },
+    {
+      "lane": "robotics",
+      "id": "2606.12956v1",
+      "title": "SERF: Spatiotemporal Environment and Robot Feature Map for Long-Horizon Mobile Manipulation",
+      "ref": "http://arxiv.org/abs/2606.12956v1",
+      "sha256": "c51b01a8505783a1166abebc920b674f8542e4ea433a79bb72a822a8dac0879e",
+      "classification": "domain_lead"
+    },
+    {
+      "lane": "robotics",
+      "id": "2012.03806v1",
+      "title": "Perspectives on Sim2Real Transfer for Robotics: A Summary of the R:SS 2020 Workshop",
+      "ref": "http://arxiv.org/abs/2012.03806v1",
+      "sha256": "8929fab260c45d3e1f6a02b9649bfd221aac521a070b69fe165573e54d4d8517",
+      "classification": "domain_lead"
+    },
+    {
+      "lane": "robotics",
+      "id": "2603.29240v1",
+      "title": "Long-Reach Robotic Cleaning for Lunar Solar Arrays",
+      "ref": "http://arxiv.org/abs/2603.29240v1",
+      "sha256": "170f2e1ef95653c1ef47f8723bf9ba9aaf213cb62ad8e399ffc7fcebd99b3c46",
+      "classification": "domain_lead"
+    },
+    {
+      "lane": "robotics",
+      "id": "2603.29226v1",
+      "title": "Long-Reach Robotic Manipulation for Assembly and Outfitting of Lunar Structures",
+      "ref": "http://arxiv.org/abs/2603.29226v1",
+      "sha256": "c4d7e5d94090dd469cccec68b79b8ce6230db89b4fb2d9ddb969572fb1ebd131",
+      "classification": "domain_lead"
+    },
+    {
+      "lane": "robotics",
+      "id": "2602.21811v1",
+      "title": "DexRepNet++: Learning Dexterous Robotic Manipulation with Geometric and Spatial Hand-Object Representations",
+      "ref": "http://arxiv.org/abs/2602.21811v1",
+      "sha256": "352719828772b7dbe1c4df3360ea4aed20087d35f8cb8b8625f1acb49a3d00a1",
+      "classification": "domain_lead"
+    },
+    {
+      "lane": "robotics",
+      "id": "2505.20503v2",
+      "title": "Embodied AI with Foundation Models for Mobile Service Robots: A Systematic Review",
+      "ref": "http://arxiv.org/abs/2505.20503v2",
+      "sha256": "816600d53cbb2ff5290ee34298f462e779f8e81574b954e228a54bad1b1c87f9",
+      "classification": "domain_lead"
+    },
+    {
+      "lane": "robotics",
+      "id": "2112.01942v3",
+      "title": "A Survey of Robot Manipulation in Contact",
+      "ref": "http://arxiv.org/abs/2112.01942v3",
+      "sha256": "5e9d1b6f6fd26338358a9cca0ec5d96a8624ec50964e0e327edeed598ad972cb",
+      "classification": "domain_lead"
+    },
+    {
+      "lane": "cyber",
+      "id": "2603.08566v2",
+      "title": "OSS-CRS: Liberating AIxCC Cyber Reasoning Systems for Real-World Open-Source Security",
+      "ref": "http://arxiv.org/abs/2603.08566v2",
+      "sha256": "7a078fd74a6fa99ef59e4bf2d94045ac27456eaca7cd12863abc610cecbf9457",
+      "classification": "domain_lead"
+    },
+    {
+      "lane": "cyber",
+      "id": "2602.07666v4",
+      "title": "SoK: DARPA's AI Cyber Challenge (AIxCC): Competition Design, Architectures, and Lessons Learned",
+      "ref": "http://arxiv.org/abs/2602.07666v4",
+      "sha256": "9b10f1d62eff39366dd066f6114e18d6108194c2bbbbd999ebe59d6a256b4a02",
+      "classification": "domain_lead"
+    },
+    {
+      "lane": "cyber",
+      "id": "2007.03651v2",
+      "title": "Towards Systematically Deriving Defence Mechanisms from Functional Requirements of Cyber-Physical Systems",
+      "ref": "http://arxiv.org/abs/2007.03651v2",
+      "sha256": "68b8fe2b60a713e9655fd6cf680652ab6cd498db6f9a000f7682fb2f8737c5e7",
+      "classification": "domain_lead"
+    },
+    {
+      "lane": "finance",
+      "id": "1403.1574v2",
+      "title": "Consentaneous agent-based and stochastic model of the financial markets",
+      "ref": "http://arxiv.org/abs/1403.1574v2",
+      "sha256": "0a2830b2f4774308a31bdbf6752eb6b8c3d26c78442981f562e6b103b8db74b1",
+      "classification": "domain_lead"
+    },
+    {
+      "lane": "finance",
+      "id": "1803.09898v4",
+      "title": "On Fairness of Systemic Risk Measures",
+      "ref": "http://arxiv.org/abs/1803.09898v4",
+      "sha256": "afc95c139f42dbb6138fa67d0aa982d5f2f7fa1d63a19c41e05760a71a6621b7",
+      "classification": "domain_lead"
+    },
+    {
+      "lane": "finance",
+      "id": "2604.03350v1",
+      "title": "From Model-Based Screening to Data-Driven Surrogates: A Multi-Stage Workflow for Exploring Stochastic Agent-Based Models",
+      "ref": "http://arxiv.org/abs/2604.03350v1",
+      "sha256": "c8edc361d09b1f64bd032a286534ceedd79334f2641d40da7e0a48d350b56551",
+      "classification": "domain_lead"
+    },
+    {
+      "lane": "number_theory_formalization",
+      "id": "2604.05238v1",
+      "title": "A Prime-Generated Formalization of Nagata's Factoriality Theorem in Lean 4",
+      "ref": "http://arxiv.org/abs/2604.05238v1",
+      "sha256": "3f8db0518ffa2e18c22ebaee37603659876104ee87a8053047f4e52c5c3db6ae",
+      "classification": "domain_lead"
+    },
+    {
+      "lane": "number_theory_formalization",
+      "id": "2604.09808v2",
+      "title": "A formal proof of the Ramanujan--Nagell theorem in Lean 4",
+      "ref": "http://arxiv.org/abs/2604.09808v2",
+      "sha256": "1405d6b6e2646cdb40f48bf42a47eb0cff63f7e1d88e71ed3ee5bfc9c7cb771c",
+      "classification": "domain_lead"
+    },
+    {
+      "lane": "number_theory_formalization",
+      "id": "2604.16507v1",
+      "title": "Deep Vision: A Formal Proof of Wolstenholmes Theorem in Lean 4",
+      "ref": "http://arxiv.org/abs/2604.16507v1",
+      "sha256": "a6deaa5d75d84416838fe43f75fcf4ffcb16910f273ecd3b24d6889cb3593728",
+      "classification": "domain_lead"
+    },
+    {
+      "lane": "number_theory_formalization",
+      "id": "2404.12534v3",
+      "title": "Lean Copilot: Large Language Models as Copilots for Theorem Proving in Lean",
+      "ref": "http://arxiv.org/abs/2404.12534v3",
+      "sha256": "b0fddbae6824aaa37ad544ed735e92cb023539f59b60f937d405429b010e9deb",
+      "classification": "domain_lead"
+    },
+    {
+      "lane": "pde",
+      "id": "1105.0582v2",
+      "title": "Drifting Solutions with Elliptic Symmetry for the Compressible Navier-Stokes Equations with Density-dependent Viscosity",
+      "ref": "http://arxiv.org/abs/1105.0582v2",
+      "sha256": "42a666896e0a30dad78dc742f37aa82f9a64c0c1102a5bce9ae4930c8d327d56",
+      "classification": "domain_lead"
+    },
+    {
+      "lane": "pde",
+      "id": "1806.10081v10",
+      "title": "Existence and Smoothness of Navier-Stokes Equations",
+      "ref": "http://arxiv.org/abs/1806.10081v10",
+      "sha256": "031c2c334863a560585aa207b833552867c1d5b05385c19fad4437f9a09d28be",
+      "classification": "domain_lead"
+    },
+    {
+      "lane": "pde",
+      "id": "2208.00415v2",
+      "title": "Partial boundary regularity for the Navier-Stokes equations in irregular domains",
+      "ref": "http://arxiv.org/abs/2208.00415v2",
+      "sha256": "b4a3cf8f788b42722689771a4adae2881d3320a4962433481cf620f94b826af8",
+      "classification": "domain_lead"
+    },
+    {
+      "lane": "pde",
+      "id": "2604.17070v2",
+      "title": "NTIRE 2026 Rip Current Detection and Segmentation (RipDetSeg) Challenge Report",
+      "ref": "http://arxiv.org/abs/2604.17070v2",
+      "sha256": "e9face84dd2d3594ed5779c29c1d41a40f0fe1650a51ed9022f2438401968684",
+      "classification": "adjacent_lead"
+    },
+    {
+      "lane": "pde",
+      "id": "1505.02628v2",
+      "title": "Criticality of the Axially Symmetric Navier-Stokes Equations",
+      "ref": "http://arxiv.org/abs/1505.02628v2",
+      "sha256": "6144c9f33b1776855338426a812eb7384c2562087f0325a42edb4b73fa27008b",
+      "classification": "domain_lead"
+    },
+    {
+      "lane": "theoretical_cs",
+      "classification": "zero_retained_rows",
+      "id": null,
+      "title": null,
+      "boundary": "The query returned no retained source rows and must not be promoted as absence of work."
+    }
+  ],
+  "boundaries": [
+    "Classification is metadata/title triage only; it is not a source-body review.",
+    "No retained arXiv row proves a hard problem is solved.",
+    "Zero retained rows are negative search receipts, not evidence that a field lacks work.",
+    "Clinical, wet-lab, robot-hardware, quantum-hardware, and climate-validation claims remain UNVERIFIABLE until joined to domain-grade measurements."
+  ]
+}

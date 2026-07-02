@@ -1,0 +1,163 @@
+{
+  "schema": "DogfoodToolReceiptSet/v1",
+  "pass": "0056",
+  "generated_on": "2026-07-01",
+  "status": "MATCH_WITH_FORUM_SUBMIT_GAP_AND_HYPOTHESIS_ONLY_UNIQUENESS",
+  "non_promotion_statement": "Tool receipts prove local buyer demo manifest generation, bundle validator MATCH, static review output, Telos/Index/Gather/Forum/Crucible availability, and hypothesis-only uniqueness boundaries. They do not prove live production telemetry, customer adoption, scientific truth, or any natural law.",
+  "receipts": [
+    {
+      "tool": "index",
+      "command": "map --root docs/research/dogfood --json",
+      "status": "MATCH",
+      "schema_version": 1,
+      "tool_version": "2.8.0",
+      "root_sha256_prefix": "f2f0af39219698a9",
+      "repo_count": 0,
+      "dirty_count": 0,
+      "top_level_count": 66
+    },
+    {
+      "tool": "mcp__index.index_doctor",
+      "command": "index_doctor",
+      "status": "MATCH",
+      "tool_version": "2.8.0",
+      "check_count": 4,
+      "match_count": 4
+    },
+    {
+      "tool": "gather",
+      "command": "docs",
+      "artifact": "packets/066-buyer-demo-manifest.md",
+      "status": "MATCH",
+      "sha256": "b46db01901f6dc3f15410811dac40e992eca8bad8e0ae8635f333b0e4cbcb382",
+      "chars": 486,
+      "seal": "ecc883f97708f548ffdb622f8da3fa14cfe6c13741314713eff34d363e769505",
+      "verified": true
+    },
+    {
+      "tool": "mcp__gather.gather_status",
+      "command": "gather_status",
+      "status": "MATCH",
+      "tool_version": "1.5.0",
+      "role": "perception-intake",
+      "command_count": 6,
+      "mcp_tool_count": 5
+    },
+    {
+      "tool": "python",
+      "command": "test_buyer_demo_manifest.py",
+      "status": "MATCH",
+      "exit_code": 0,
+      "stdout_sha256": "b0d628bbe52dc59ebd58e70fb40bcabf2f37a61e5f37d066c8e9d59c2c4b62fd",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "line_count": 77
+    },
+    {
+      "tool": "python",
+      "command": "probe_buyer_demo_manifest.py",
+      "status": "BUYER_DEMO_MANIFEST_SET_MATCH",
+      "implementation_status": "IMPLEMENTED_LOCAL_BUYER_DEMO_MANIFEST",
+      "seal": "9cd9b52cde63edf035e90cb69d2828f02dbebf8127924b476d03250a20fad2c9",
+      "review_pane_count": 4,
+      "failure_verdict_count": 5,
+      "output_match_count": 6,
+      "production_ready": false,
+      "line_count": 200
+    },
+    {
+      "tool": "python",
+      "command": "compose_buyer_demo_manifest.py",
+      "status": "MATCH",
+      "sha256": "2e990435cfc4f2022dea15f2d6ad8d57590f97af5f0ac9f4cff69f0c94a06340",
+      "line_count": 213,
+      "manifest_status": "BUYER_DEMO_MANIFEST_MATCH",
+      "review_pane_count": 4
+    },
+    {
+      "tool": "python",
+      "command": "validate_pass_0056_buyer_demo_manifest.py",
+      "status": "MATCH",
+      "schema": "Pass0056BuyerDemoManifestValidatorRun/v1",
+      "match": 1,
+      "drift": 0,
+      "review_pane_count": 4,
+      "output_match_count": 6,
+      "line_count": 106
+    },
+    {
+      "tool": "mcp__telos.telos_operator_doctor",
+      "command": "telos_operator_doctor",
+      "status": "MATCH",
+      "aggregate_verdict": "MATCH",
+      "check_count": 14,
+      "passed_count": 14,
+      "tool_count": 65,
+      "telos_tool_count": 37,
+      "source": "MCP result captured in Codex session on 2026-07-01T16:14:13.983Z"
+    },
+    {
+      "tool": "forum",
+      "command": "route",
+      "status": "MATCH",
+      "confidence": 0.15454545454545454,
+      "decided": null,
+      "needs_escalation": true,
+      "candidates": [
+        {
+          "agent": "code-review",
+          "score": 0.2
+        },
+        {
+          "agent": "project-telos",
+          "score": 0.045454545454545456
+        },
+        {
+          "agent": "backend",
+          "score": 0.0
+        }
+      ]
+    },
+    {
+      "tool": "forum",
+      "command": "ledger verify",
+      "status": "MATCH",
+      "chain": true,
+      "deep": true
+    },
+    {
+      "tool": "forum",
+      "command": "submit",
+      "status": "UNVERIFIABLE",
+      "request": "Dogfood pass 0056 adversarial review for buyer demo manifest",
+      "exit_code": 2,
+      "error": "submit needs a model executor. Forum is model-agnostic: pass --cmd \"<model cli>\" (any command, local models need no account), --chat-url <openai-compatible url> (e.g. a local Ollama server), or --api (Anthropic)."
+    },
+    {
+      "tool": "mcp__crucible.crucible_status",
+      "command": "crucible_status",
+      "status": "MATCH",
+      "tool_version": "1.1.0",
+      "role": "verification-pressure",
+      "capability_count": 4,
+      "mcp_tool_count": 13
+    },
+    {
+      "tool": "crucible",
+      "command": "run",
+      "status": "MATCH",
+      "claims": 8,
+      "match": 8,
+      "drift": 0,
+      "unverifiable": 0,
+      "thesis_id": "eff1906cf0dc79a8",
+      "thesis_seal": "eff1906cf0dc79a888c503221683bf50de21eb31a35e37dcb2e86f93d33d66a9",
+      "verdict_seal": "7f4e92fad14bbff70d0ed2b062d2c4c3219438a387d0483a2bf11be24e755e21",
+      "measurement_seal": "34a070210167b4a4410422c12eee02e572e3b8b6dd7bd141cf9c3421c270ab66",
+      "assessment_seal": "c0857e4ebd0481be36b69c1fd31894a6452efa1867f4532f1e900613de862bdb",
+      "run_sha256": "1443845c5cee3f0b9926b30af1dde9145afb37e32a4333af85c0187c32bef936",
+      "seals_ok": true,
+      "thesis_ok": true,
+      "verdicts_rederive": true
+    }
+  ]
+}

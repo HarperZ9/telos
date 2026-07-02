@@ -1,0 +1,173 @@
+﻿
+API | Reports
+bioRxiv API Summary
+Reports Page
+A set of reports is available here.
+Content detail
+The format of the endpoint is https://api.biorxiv.org/details/[server]/[interval]/[cursor]/[format] or https://api.biorxiv.org/details/[server]/[DOI]/na/[format]
+where 'interval' can be 1) two YYYY-MM-DD dates separted by '/' and 'cursor' is the start point which defaults to 0 if not supplied, or 2) a numeric value for the N most recent posts, or 3) a numeric with the letter 'd' for the most recent N days of posts.
+Where metadata for multiple papers is returned, results are paginated with 30 papers served in a call. The 'cursor' value can be used to iterate through the result.
+For instance, https://api.biorxiv.org/details/biorxiv/2018-08-21/2018-08-28/45 will output
+30 results (if that many remain) within the date range of 2018-08-21 to 2018-08-28 beginning from result 45 for biorxiv. https://api.biorxiv.org/details/medrxiv/2020-03-21/2020-03-24/45 will output
+30 results (if that many remain) within the date range of 2020-03-21 to 2020-03-24 beginning from result 45 for medrxiv.
+These date range endpoints will also accept a querystring paramater for subject category. The subject category can either be URL-encoded or can have underscore substituted for spaces in the category name. For instance,
+https://api.biorxiv.org/details/biorxiv/2025-03-21/2025-03-28?category=cell_biology will output metadata for Cell Biology for the specified interval and
+https://api.biorxiv.org/details/medrxiv/2025-03-21/2025-03-28?category=cardiovascular%20medicine will do the same for Cardiovascular Medicine.
+https://api.biorxiv.org/details/[server]/[DOI]/na/[format] returns detail for a single manuscript.
+For instance, https://api.biorxiv.org/details/medrxiv/10.1101/2020.09.09.20191205 will output
+metadata for the medrxiv paper with DOI 10.1101/339747.
+The 'messages' array in the output provides information about what is being displayed, including
+cursor value, count of all items and count of new papers for the requested interval.
+Available formats are JSON (json), XML (OAI-PMH XML) and HTML.
+The following metadata elements are returned:
+doi
+title
+authors
+author_corresponding
+author_corresponding_institution
+date
+version
+type
+license
+category
+jats xml path
+abstract
+funding
+name
+id
+id-type
+award
+published
+server
+Preprint published article detail for specified server (bioRxiv or medRxiv)
+The format of the endpoint is https://api.biorxiv.org/pubs/[server]/[interval]/[cursor] or https://api.biorxiv.org/pubs/[server]/[DOI]/na/[format]. The help documentation
+is here:
+https://api.biorxiv.org/pubs/help.
+where 'server' can be either 'bioRxiv' or 'medRxiv' and 'interval' can be 1) two YYYY-MM-DD dates separted by '/' and 'cursor' is the start point which defaults to 0 if not supplied, or 2) a numeric value for the N most recent published articles, or 3) a numeric with the letter 'd' for the most recent N days of articles.
+Results are paginated with 100 articles served in a call. The 'cursor' value can be used to iterate through the result.
+For instance, https://api.biorxiv.org/pubs/medrxiv/2020-03-01/2020-03-30/5 will output
+metadata for the published version of the 100 medRxiv papers (if that many remain) published within the date range of 2020-03-01 to 2020-03-30 beginning from article 5.
+https://api.biorxiv.org/pubs/biorxiv/2020-03-01/2020-03-30/5 will do the same for bioRxiv papers for that period.
+https://api.biorxiv.org/pubs/[server]/[DOI]/na/[format] returns detail for a single manuscript.
+For instance,
+https://api.biorxiv.org/pubs/medrxiv/10.1101/2021.04.29.21256344 will output
+publication metadata for the biorxiv paper with DOI 10.1101/2021.04.29.21256344. Conversely,
+https://api.biorxiv.org/pubs/medrxiv/10.1371/journal.pone.0256482 will output
+publication metadata for the biorxiv paper with published DOI 10.1371/journal.pone.0256482.
+The 'messages' array in the output provides information about what is being displayed, including
+cursor value and count of items for the requested interval.
+The following metadata elements are returned:
+biorxiv_doi
+published_doi
+published_journal
+preprint_platform
+preprint_title
+preprint_authors
+preprint_category
+preprint_date
+published_date
+preprint_abstract
+preprint_author_corresponding
+preprint_author_corresponding_institution
+Published article detail (bioRxiv only)
+The format of the endpoint is https://api.biorxiv.org/pub/[interval]/[cursor][format]
+where 'interval' can be 1) two YYYY-MM-DD dates separted by '/' and 'cursor' is the start point which defaults to 0 if not supplied, or 2) a numeric value for the N most recent published articles, or 3) a numeric with the letter 'd' for the most recent N days of articles.
+Results are paginated with 100 articles served in a call. The 'cursor' value can be used to iterate through the result.
+For instance, https://api.biorxiv.org/pub/2017-08-21/2017-08-28/30 will output
+100 articles (if that many remain) within the date range of 2018-08-21 to 2018-08-28 beginning from article 30.
+The 'messages' array in the output provides information about what is being displayed, including
+cursor value and count of items for the requested interval.
+The default output format is JSON and CSV download is also available, eg https://api.biorxiv.org/pub/2017-08-21/2017-08-28/30/csv.
+The following metadata elements are returned:
+biorxiv_doi
+published_doi
+preprint_title
+preprint_category
+preprint_date
+published_date
+Publisher article detail
+This endpoint returns information about bioRxiv papers that have been published by a specific publisher.
+The format of the endpoint is https://api.biorxiv.org/publisher/[publisher prefix]/[interval]/[cursor]
+The publisher parameter is the publisher prefix, which is a string of the publisher prefix, eg '10.15252' (prior to any slash).
+'interval' can be 1) two YYYY-MM-DD dates separted by '/' and 'cursor' is the start point which defaults to 0 if not supplied, or 2) a numeric value for the N most recent published articles, or 3) a numeric with the letter 'd' for the most recent N days of articles.
+Results are paginated with 100 articles served in a call. The 'cursor' value can be used to iterate through the result.
+For instance, https://api.biorxiv.org/publisher/10.15252/2018-01-01/2019-01-01/0 will output
+100 articles (if that many remain) within the date range of 2018-08-21 to 2018-08-28 beginning from article 1 for biorxiv papers published with any DOI that begins with the publisher prefix '10.15252'.
+The 'messages' array in the output provides information about what is being displayed, including
+cursor value and count of items for the requested interval.
+The following metadata elements are returned:
+biorxiv_doi
+published_doi
+preprint_title
+preprint_category
+preprint_date
+published_date
+bioRxiv content metadata filtered by funder ROR ID
+The format of the endpoint is https://api.biorxiv.org/funder/[server]/[interval]/[funder ROR ID]/[cursor]/[format]
+where 'funder ROR ID' must be provided. The API accepts the 9 character unique string that concludes the ROR ID as described here:
+https://ror.readme.io/docs/identifier. For instance, for the the full identifier, https://ror.org/02mhbdp94, the string that this API endpoint accepts is '02mhbdp94',
+which is the portion of the identifier following the final forward slash. A specific funder identifier can be found using the ROR search page, https://ror.org/search, or other resources on the ROR site.
+'Interval' can be: 1) two YYYY-MM-DD dates separted by '/' with the first no earlier than 2025-04-10 (the inception date for funder metadata in the submission system); and 'cursor' is the start point
+which defaults to 0 if not supplied, or 2) a numeric value for the N most recent posts, or 3) a numeric with the letter 'd' for the most recent N days of posts.
+Where metadata for multiple papers is returned, results are paginated with 100 papers served in a call. The 'cursor' value can be used to iterate through the result.
+For instance, https://api.biorxiv.org/funder/biorxiv/2025-04-10/2025-07-10/00k4n6c32/45 will output
+100 results (if that many remain) within the date range of 2025-04-10 to 2025-07-10 beginning from result 45 for bioRxiv papers with funding declaration of European Commission.
+These date range endpoints will also accept a querystring paramater for subject category. The subject category can either be URL-encoded or can have underscore substituted for spaces in the category name. For instance,
+https://api.biorxiv.org/details/biorxiv/2025-04-10/2025-07-10/00k4n6c32/?category=cell_biology will output metadata for bioRxiv Cell Biology papers with funding declaration of European Commission
+for the specified interval.
+The help documentation
+is here:
+https://api.biorxiv.org/funder/help.
+The 'messages' array in the output provides information about what is being displayed, including
+cursor value, count of all items and count of new papers for the requested interval.
+Available formats are JSON (json), and XML (OAI-PMH XML).
+The following metadata elements are returned:
+doi
+title
+authors
+author_corresponding
+author_corresponding_institution
+date
+version
+type
+license
+category
+jats xml path
+abstract
+funder
+name
+id
+id-type
+award
+published
+server
+Content Summary Statistics
+The format of the endpoint is https://api.biorxiv.org/sum/[interval]/[format]
+where 'interval' can equal 'm' (monthly) or 'y' (yearly).
+For instance, https://api.biorxiv.org/sum/m will output
+monthly new and revised paper interval and cumulative counts.
+The default format is JSON. A value of 'csv' will force the output to download as
+a CSV file, eg https://api.biorxiv.org/sum/m/csv
+The following metadata elements are returned:
+month
+new_papers
+new_papers_cumulative
+revised_papers
+preprint_date
+revised_papers_cumulative
+Usage Summary Statistics
+The format of the endpoint is https://api.biorxiv.org/usage/[interval]/[server]/[format]
+where 'interval' can equal 'm' (monthly) or 'y' (yearly).
+For instance, https://api.biorxiv.org/usage/m/biorxiv will output
+monthly usage counts for bioRxiv abstract views, full text views and PDF downloads. https://api.biorxiv.org/usage/m/medrxiv will output
+monthly usage counts for medRxiv abstract views, full text views and PDF downloads.
+The default format is JSON. A value of 'csv' will force the output to download as
+a CSV file, eg https://api.biorxiv.org/usage/m/biorxiv/csv
+The following metadata elements are returned:
+month
+abstract_views
+full_text_views
+pdf_downloads
+abstract_cumulative
+full_text_cumulative
+pdf_cumulative

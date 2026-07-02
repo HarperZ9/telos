@@ -1,0 +1,119 @@
+{
+  "measurements": [
+    {
+      "claim": "Pass 0117 created a TheoremProverAdapterReceipt/v1 artifact with status THEOREM_PROVER_ADAPTER_MATCH, sha256 edce139ee88d7b173f57df9845e137042418112dd04fc01aab91dc310b380df2, and seal 0acf2e699a4a24b1cc0a9426f3525d56d44edd3a7f418e269d1ab8a2cff1fa3e.",
+      "deviation": 0.0,
+      "evidence": [
+        "schema=TheoremProverAdapterReceipt/v1",
+        "status=THEOREM_PROVER_ADAPTER_MATCH",
+        "sha256=edce139ee88d7b173f57df9845e137042418112dd04fc01aab91dc310b380df2",
+        "seal=0acf2e699a4a24b1cc0a9426f3525d56d44edd3a7f418e269d1ab8a2cff1fa3e"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0117 binds formal physics bridge pass 0116 and category case category_set_identity_associativity.",
+      "deviation": 0.0,
+      "evidence": [
+        "source_bindings={'category_case_id': 'category_set_identity_associativity', 'formal_physics_bridge_pass': '0116'}"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0117 records Lean, Lake, Rocq/Coq, Isabelle, and Agda executables as MISSING in this environment.",
+      "deviation": 0.0,
+      "evidence": [
+        "availability={'agda': {'executable': 'agda', 'path': None, 'status': 'MISSING'}, 'coqc': {'executable': 'coqc', 'path': None, 'status': 'MISSING'}, 'isabelle': {'executable': 'isabelle', 'path': None, 'status': 'MISSING'}, 'lake': {'executable': 'lake', 'path': None, 'status': 'MISSING'}, 'lean': {'executable': 'lean', 'path': None, 'status': 'MISSING'}}"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0117 records 3 theorem targets and all have claim_status FINITE_MODEL_VERIFIED.",
+      "deviation": 0.0,
+      "evidence": [
+        "theorem_targets=[{'claim_status': 'FINITE_MODEL_VERIFIED', 'expected': {'a0': 'b0', 'a1': 'b1'}, 'lean_style_target': 'theorem idB_comp_f_eq_f : finite_model_check := by native_decide', 'observed': {'a0': 'b0', 'a1': 'b1'}, 'proof_object_status': 'NOT_EXECUTED_PROVER_UNAVAILABLE', 'proposition': 'idB_comp_f_eq_f', 'target_id': 'left_identity'}, {'claim_status': 'FINITE_MODEL_VERIFIED', 'expected': {'a0': 'b0', 'a1': 'b1'}, 'lean_style_target': 'theorem f_comp_idA_eq_f : finite_model_check := by native_decide', 'observed': {'a0': 'b0', 'a1': 'b1'}, 'proof_object_status': 'NOT_EXECUTED_PROVER_UNAVAILABLE', 'proposition': 'f_comp_idA_eq_f', 'target_id': 'right_identity'}, {'claim_status': 'FINITE_MODEL_VERIFIED', 'expected': {'a0': 'd1', 'a1': 'd0'}, 'lean_style_target': 'theorem h_comp_g_comp_f_assoc : finite_model_check := by native_decide', 'observed': {'a0': 'd1', 'a1': 'd0'}, 'proof_object_status': 'NOT_EXECUTED_PROVER_UNAVAILABLE', 'proposition': 'h_comp_g_comp_f_assoc', 'target_id': 'associativity'}]"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0117 python finite-model replay branch has MATCH status.",
+      "deviation": 0.0,
+      "evidence": [
+        "python_branch={'branch_id': 'python_finite_model_replay', 'status': 'MATCH', 'target_count': 3, 'verifier': 'python_finite_function_equality'}"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0117 Lean, Rocq, Isabelle, and Agda prover target branches are UNAVAILABLE_FENCED.",
+      "deviation": 0.0,
+      "evidence": [
+        "lean={'branch_id': 'lean4_target', 'executable': 'lean', 'status': 'UNAVAILABLE_FENCED', 'target_count': 3}",
+        "rocq={'branch_id': 'rocq_target', 'executable': 'coqc', 'status': 'UNAVAILABLE_FENCED', 'target_count': 3}",
+        "isabelle={'branch_id': 'isabelle_target', 'executable': 'isabelle', 'status': 'UNAVAILABLE_FENCED', 'target_count': 3}",
+        "agda={'branch_id': 'agda_target', 'executable': 'agda', 'status': 'UNAVAILABLE_FENCED', 'target_count': 3}"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0117 countermodel status is MATCH with classification BAD_IDENTITY_DRIFT.",
+      "deviation": 0.0,
+      "evidence": [
+        "countermodel={'bad_identity': {'b0': 'b1', 'b1': 'b0'}, 'classification': 'BAD_IDENTITY_DRIFT', 'expected': {'a0': 'b0', 'a1': 'b1'}, 'observed': {'a0': 'b1', 'a1': 'b0'}, 'status': 'MATCH'}"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0117 records source anchor_count 7.",
+      "deviation": 0.0,
+      "evidence": [
+        "source_surface={'anchor_count': 7, 'anchors': [{'kind': 'official_docs', 'tool': 'Lean', 'url': 'https://lean-lang.org/doc/reference/latest/'}, {'kind': 'official_docs', 'tool': 'Lean TPIL', 'url': 'https://lean-lang.org/theorem_proving_in_lean4/'}, {'kind': 'official_docs', 'tool': 'Lean mathlib', 'url': 'https://leanprover-community.github.io/mathlib4_docs/'}, {'kind': 'official_docs', 'tool': 'Lean Lake', 'url': 'https://leanprover-community.github.io/install/project.html'}, {'kind': 'official_docs', 'tool': 'Rocq', 'url': 'https://rocq-prover.org/'}, {'kind': 'official_docs', 'tool': 'Isabelle', 'url': 'https://isabelle.in.tum.de/'}, {'kind': 'official_docs', 'tool': 'Agda', 'url': 'https://agda.readthedocs.io/en/latest/getting-started/what-is-agda.html'}], 'gap_status': 'hypothesis'}"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0117 flagship receipts for Forum, Index, and Telos all have MATCH status.",
+      "deviation": 0.0,
+      "evidence": [
+        "forum=MATCH",
+        "index=MATCH",
+        "telos=MATCH"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0117 records unsupported_claim_count 0 and current_promoted_natural_laws length 0.",
+      "deviation": 0.0,
+      "evidence": [
+        "unsupported_claim_count=0",
+        "natural_law_count=0"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0117 composer sha256 is 4262cb3ca01936f0ff9d6fcd67ca13161de3dbab28442a2321c78c2b8def922d, packet sha256 is e2bcec920e2cfdf07a996f5a9a47002e96ad1121106417c28c4d854a3890b779, brief sha256 is 2a6243be5a04f9a708ac34e978abc89fe5bb637432b998c2c309f7d7ab3e1de2, steelman sha256 is 92f27e1d3ccd0809c86b886b47f9872814424fb714f095906b78888df9a37ac8, test sha256 is a66cff793a4ef9de7a0a2f605806cf91174766c58a273bbed6017888d34ae919, and tool_receipts sha256 is 6e71792a2774ee2c1f0bcb4981c2cf8586aefb9d221a45ff06a190fd3081ea2e with test_receipt status MATCH.",
+      "deviation": 0.0,
+      "evidence": [
+        "composer_sha256=4262cb3ca01936f0ff9d6fcd67ca13161de3dbab28442a2321c78c2b8def922d",
+        "packet_sha256=e2bcec920e2cfdf07a996f5a9a47002e96ad1121106417c28c4d854a3890b779",
+        "brief_sha256=2a6243be5a04f9a708ac34e978abc89fe5bb637432b998c2c309f7d7ab3e1de2",
+        "steelman_sha256=92f27e1d3ccd0809c86b886b47f9872814424fb714f095906b78888df9a37ac8",
+        "test_sha256=a66cff793a4ef9de7a0a2f605806cf91174766c58a273bbed6017888d34ae919",
+        "tool_receipts_sha256=6e71792a2774ee2c1f0bcb4981c2cf8586aefb9d221a45ff06a190fd3081ea2e",
+        "test_status=MATCH",
+        "compose_status=MATCH"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    }
+  ]
+}

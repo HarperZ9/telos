@@ -1,0 +1,502 @@
+{
+  "action_receipt_fields": [
+    "receipt_id",
+    "schema",
+    "source_refs",
+    "workspace_state",
+    "authority_scope",
+    "action_admission",
+    "tool_call",
+    "side_effect_class",
+    "materials_digest",
+    "trace_refs",
+    "eval_refs",
+    "model_refs",
+    "runtime_refs",
+    "verification_verdict",
+    "stop_reason",
+    "compensation_pointer",
+    "privacy_boundary",
+    "receipt_status"
+  ],
+  "adapter_rows": [
+    {
+      "adapter_priority": 5,
+      "buyer": "AI platform teams and regulated agent workflow owners",
+      "category": "LLM app and agent observability",
+      "gap_status": "inferred",
+      "native_refs_to_preserve": [
+        "trace_ref",
+        "run_url",
+        "evaluation_ref"
+      ],
+      "official_capabilities": [
+        "traces",
+        "production metrics",
+        "integrations"
+      ],
+      "proof_layer_gap_status": "inferred",
+      "source_id": "langsmith",
+      "telos_adapter_inputs": [
+        "trace_ref",
+        "run_url",
+        "evaluation_ref",
+        "source_refs",
+        "workspace_state",
+        "tool_call",
+        "policy_decision"
+      ],
+      "telos_adapter_outputs": [
+        "action_receipt",
+        "verification_packet",
+        "loop_ledger_entry",
+        "compensation_pointer"
+      ],
+      "tool": "LangSmith",
+      "wedge_hypothesis": "Hypothesis: preserve the incumbent trace/eval object and bind it to authority, workspace state, side-effect class, admission, verification, and replay receipts."
+    },
+    {
+      "adapter_priority": 5,
+      "buyer": "AI platform teams and regulated agent workflow owners",
+      "category": "open-source AI engineering and LLM observability",
+      "gap_status": "inferred",
+      "native_refs_to_preserve": [
+        "trace_id",
+        "prompt_version",
+        "score_ref"
+      ],
+      "official_capabilities": [
+        "traces",
+        "prompt management",
+        "evaluations",
+        "datasets"
+      ],
+      "proof_layer_gap_status": "inferred",
+      "source_id": "langfuse",
+      "telos_adapter_inputs": [
+        "trace_id",
+        "prompt_version",
+        "score_ref",
+        "source_refs",
+        "workspace_state",
+        "tool_call",
+        "policy_decision"
+      ],
+      "telos_adapter_outputs": [
+        "action_receipt",
+        "verification_packet",
+        "loop_ledger_entry",
+        "compensation_pointer"
+      ],
+      "tool": "Langfuse",
+      "wedge_hypothesis": "Hypothesis: preserve the incumbent trace/eval object and bind it to authority, workspace state, side-effect class, admission, verification, and replay receipts."
+    },
+    {
+      "adapter_priority": 5,
+      "buyer": "AI platform teams and regulated agent workflow owners",
+      "category": "AI observability and evaluation",
+      "gap_status": "inferred",
+      "native_refs_to_preserve": [
+        "span_id",
+        "trace_id",
+        "annotation_ref"
+      ],
+      "official_capabilities": [
+        "OpenTelemetry ingest",
+        "tracing",
+        "annotations",
+        "sessions"
+      ],
+      "proof_layer_gap_status": "inferred",
+      "source_id": "phoenix",
+      "telos_adapter_inputs": [
+        "span_id",
+        "trace_id",
+        "annotation_ref",
+        "source_refs",
+        "workspace_state",
+        "tool_call",
+        "policy_decision"
+      ],
+      "telos_adapter_outputs": [
+        "action_receipt",
+        "verification_packet",
+        "loop_ledger_entry",
+        "compensation_pointer"
+      ],
+      "tool": "Arize Phoenix",
+      "wedge_hypothesis": "Hypothesis: preserve the incumbent trace/eval object and bind it to authority, workspace state, side-effect class, admission, verification, and replay receipts."
+    },
+    {
+      "adapter_priority": 5,
+      "buyer": "AI platform teams and regulated agent workflow owners",
+      "category": "AI observability and evals",
+      "gap_status": "inferred",
+      "native_refs_to_preserve": [
+        "experiment_id",
+        "trace_ref",
+        "eval_ref"
+      ],
+      "official_capabilities": [
+        "traces",
+        "experiments",
+        "evals",
+        "regression detection"
+      ],
+      "proof_layer_gap_status": "inferred",
+      "source_id": "braintrust",
+      "telos_adapter_inputs": [
+        "experiment_id",
+        "trace_ref",
+        "eval_ref",
+        "source_refs",
+        "workspace_state",
+        "tool_call",
+        "policy_decision"
+      ],
+      "telos_adapter_outputs": [
+        "action_receipt",
+        "verification_packet",
+        "loop_ledger_entry",
+        "compensation_pointer"
+      ],
+      "tool": "Braintrust",
+      "wedge_hypothesis": "Hypothesis: preserve the incumbent trace/eval object and bind it to authority, workspace state, side-effect class, admission, verification, and replay receipts."
+    },
+    {
+      "adapter_priority": 5,
+      "buyer": "AI platform teams and regulated agent workflow owners",
+      "category": "vendor-neutral telemetry substrate",
+      "gap_status": "inferred",
+      "native_refs_to_preserve": [
+        "trace_id",
+        "span_id",
+        "metric_ref",
+        "log_ref"
+      ],
+      "official_capabilities": [
+        "traces",
+        "metrics",
+        "logs",
+        "collector"
+      ],
+      "proof_layer_gap_status": "inferred",
+      "source_id": "opentelemetry",
+      "telos_adapter_inputs": [
+        "trace_id",
+        "span_id",
+        "metric_ref",
+        "log_ref",
+        "source_refs",
+        "workspace_state",
+        "tool_call",
+        "policy_decision"
+      ],
+      "telos_adapter_outputs": [
+        "action_receipt",
+        "verification_packet",
+        "loop_ledger_entry",
+        "compensation_pointer"
+      ],
+      "tool": "OpenTelemetry",
+      "wedge_hypothesis": "Hypothesis: preserve the incumbent trace/eval object and bind it to authority, workspace state, side-effect class, admission, verification, and replay receipts."
+    },
+    {
+      "adapter_priority": 4,
+      "buyer": "AI platform teams and regulated agent workflow owners",
+      "category": "model lifecycle and lineage",
+      "gap_status": "inferred",
+      "native_refs_to_preserve": [
+        "run_id",
+        "model_version",
+        "artifact_uri"
+      ],
+      "official_capabilities": [
+        "model registry",
+        "lineage",
+        "versioning",
+        "metadata"
+      ],
+      "proof_layer_gap_status": "inferred",
+      "source_id": "mlflow",
+      "telos_adapter_inputs": [
+        "run_id",
+        "model_version",
+        "artifact_uri",
+        "source_refs",
+        "workspace_state",
+        "tool_call",
+        "policy_decision"
+      ],
+      "telos_adapter_outputs": [
+        "action_receipt",
+        "verification_packet",
+        "loop_ledger_entry",
+        "compensation_pointer"
+      ],
+      "tool": "MLflow",
+      "wedge_hypothesis": "Hypothesis: preserve the incumbent trace/eval object and bind it to authority, workspace state, side-effect class, admission, verification, and replay receipts."
+    },
+    {
+      "adapter_priority": 4,
+      "buyer": "AI platform teams and regulated agent workflow owners",
+      "category": "agent and LLM app evaluation",
+      "gap_status": "inferred",
+      "native_refs_to_preserve": [
+        "call_ref",
+        "evaluation_ref",
+        "dataset_ref"
+      ],
+      "official_capabilities": [
+        "tracing",
+        "evaluations",
+        "experiments"
+      ],
+      "proof_layer_gap_status": "inferred",
+      "source_id": "weave",
+      "telos_adapter_inputs": [
+        "call_ref",
+        "evaluation_ref",
+        "dataset_ref",
+        "source_refs",
+        "workspace_state",
+        "tool_call",
+        "policy_decision"
+      ],
+      "telos_adapter_outputs": [
+        "action_receipt",
+        "verification_packet",
+        "loop_ledger_entry",
+        "compensation_pointer"
+      ],
+      "tool": "W&B Weave",
+      "wedge_hypothesis": "Hypothesis: preserve the incumbent trace/eval object and bind it to authority, workspace state, side-effect class, admission, verification, and replay receipts."
+    },
+    {
+      "adapter_priority": 3,
+      "buyer": "AI platform teams and regulated agent workflow owners",
+      "category": "data pipeline reproducibility",
+      "gap_status": "inferred",
+      "native_refs_to_preserve": [
+        "dvc_stage",
+        "data_hash",
+        "pipeline_ref"
+      ],
+      "official_capabilities": [
+        "versioned pipelines",
+        "Git-backed workflow",
+        "reproducible DAGs"
+      ],
+      "proof_layer_gap_status": "inferred",
+      "source_id": "dvc",
+      "telos_adapter_inputs": [
+        "dvc_stage",
+        "data_hash",
+        "pipeline_ref",
+        "source_refs",
+        "workspace_state",
+        "tool_call",
+        "policy_decision"
+      ],
+      "telos_adapter_outputs": [
+        "action_receipt",
+        "verification_packet",
+        "loop_ledger_entry",
+        "compensation_pointer"
+      ],
+      "tool": "DVC",
+      "wedge_hypothesis": "Hypothesis: preserve the incumbent trace/eval object and bind it to authority, workspace state, side-effect class, admission, verification, and replay receipts."
+    },
+    {
+      "adapter_priority": 4,
+      "buyer": "AI platform teams and regulated agent workflow owners",
+      "category": "LLM evals and red teaming",
+      "gap_status": "inferred",
+      "native_refs_to_preserve": [
+        "eval_report",
+        "red_team_case",
+        "ci_result"
+      ],
+      "official_capabilities": [
+        "evals",
+        "red teaming",
+        "CI checks"
+      ],
+      "proof_layer_gap_status": "inferred",
+      "source_id": "promptfoo",
+      "telos_adapter_inputs": [
+        "eval_report",
+        "red_team_case",
+        "ci_result",
+        "source_refs",
+        "workspace_state",
+        "tool_call",
+        "policy_decision"
+      ],
+      "telos_adapter_outputs": [
+        "action_receipt",
+        "verification_packet",
+        "loop_ledger_entry",
+        "compensation_pointer"
+      ],
+      "tool": "promptfoo",
+      "wedge_hypothesis": "Hypothesis: preserve the incumbent trace/eval object and bind it to authority, workspace state, side-effect class, admission, verification, and replay receipts."
+    },
+    {
+      "adapter_priority": 4,
+      "buyer": "AI platform teams and regulated agent workflow owners",
+      "category": "LLM gateway and observability",
+      "gap_status": "inferred",
+      "native_refs_to_preserve": [
+        "request_id",
+        "provider_route",
+        "cost_ref"
+      ],
+      "official_capabilities": [
+        "provider routing",
+        "fallbacks",
+        "request logging",
+        "observability"
+      ],
+      "proof_layer_gap_status": "inferred",
+      "source_id": "helicone",
+      "telos_adapter_inputs": [
+        "request_id",
+        "provider_route",
+        "cost_ref",
+        "source_refs",
+        "workspace_state",
+        "tool_call",
+        "policy_decision"
+      ],
+      "telos_adapter_outputs": [
+        "action_receipt",
+        "verification_packet",
+        "loop_ledger_entry",
+        "compensation_pointer"
+      ],
+      "tool": "Helicone",
+      "wedge_hypothesis": "Hypothesis: preserve the incumbent trace/eval object and bind it to authority, workspace state, side-effect class, admission, verification, and replay receipts."
+    }
+  ],
+  "current_promoted_natural_laws": [],
+  "demo_slices": [
+    {
+      "demo_id": "otel_trace_to_action_receipt",
+      "promotion_state": "DEMO_NOT_PRODUCT_MARKET_FIT",
+      "success_metric": "convert one OpenTelemetry trace into a Telos action receipt with source refs, side-effect class, and Crucible verdict"
+    },
+    {
+      "demo_id": "langfuse_langsmith_eval_bridge",
+      "promotion_state": "DEMO_NOT_PRODUCT_MARKET_FIT",
+      "success_metric": "preserve one Langfuse or LangSmith trace and add admission, workspace, stop reason, and replay fields"
+    },
+    {
+      "demo_id": "promptfoo_redteam_to_verdict_packet",
+      "promotion_state": "DEMO_NOT_PRODUCT_MARKET_FIT",
+      "success_metric": "bind one promptfoo red-team report to a Telos verification packet and compensation pointer"
+    }
+  ],
+  "generated_on": "2026-07-01",
+  "market_wedge": "agent_observability_to_action_receipt",
+  "non_promotion_statement": "Pass 0064 is an adapter requirements matrix. It does not claim replacement of observability platforms, product-market fit, or unique absence of competitor features.",
+  "non_replacement_claim": true,
+  "pass": "0064",
+  "schema": "AgentObservabilityActionReceiptAdapterMatrix/v1",
+  "seal": "1e13a1a9b829a3cecc9d99b03545657c4b7d08b826c8b80922e9648bb3473bf4",
+  "source_anchors": [
+    {
+      "confidence": "high",
+      "label": "LangSmith",
+      "retrieved_on": "2026-07-01",
+      "source_id": "langsmith",
+      "summary": "Observability for LLM applications from individual traces to production metrics.",
+      "url": "https://docs.langchain.com/langsmith/observability",
+      "verification_status": "source_anchor"
+    },
+    {
+      "confidence": "high",
+      "label": "Langfuse",
+      "retrieved_on": "2026-07-01",
+      "source_id": "langfuse",
+      "summary": "Open-source AI engineering platform for tracing, prompt management, evaluations, and analytics.",
+      "url": "https://langfuse.com/docs",
+      "verification_status": "source_anchor"
+    },
+    {
+      "confidence": "high",
+      "label": "Arize Phoenix",
+      "retrieved_on": "2026-07-01",
+      "source_id": "phoenix",
+      "summary": "AI observability with tracing for model calls, retrieval, tool use, and custom logic.",
+      "url": "https://arize.com/docs/phoenix",
+      "verification_status": "source_anchor"
+    },
+    {
+      "confidence": "high",
+      "label": "Braintrust",
+      "retrieved_on": "2026-07-01",
+      "source_id": "braintrust",
+      "summary": "AI observability platform for measuring, evaluating, and improving AI in production.",
+      "url": "https://www.braintrust.dev/docs",
+      "verification_status": "source_anchor"
+    },
+    {
+      "confidence": "high",
+      "label": "OpenTelemetry",
+      "retrieved_on": "2026-07-01",
+      "source_id": "opentelemetry",
+      "summary": "Vendor-neutral framework for traces, metrics, and logs.",
+      "url": "https://opentelemetry.io/docs/",
+      "verification_status": "source_anchor"
+    },
+    {
+      "confidence": "high",
+      "label": "MLflow",
+      "retrieved_on": "2026-07-01",
+      "source_id": "mlflow",
+      "summary": "Model registry with lineage, versioning, aliases, metadata, and annotation support.",
+      "url": "https://mlflow.org/docs/latest/ml/model-registry/",
+      "verification_status": "source_anchor"
+    },
+    {
+      "confidence": "high",
+      "label": "W&B Weave",
+      "retrieved_on": "2026-07-01",
+      "source_id": "weave",
+      "summary": "Observability and evaluation platform for tracking, evaluating, and improving agents and LLM apps.",
+      "url": "https://docs.wandb.ai/weave",
+      "verification_status": "source_anchor"
+    },
+    {
+      "confidence": "high",
+      "label": "DVC",
+      "retrieved_on": "2026-07-01",
+      "source_id": "dvc",
+      "summary": "Versioned data pipelines for organizing and reproducing data science and ML workflows.",
+      "url": "https://doc.dvc.org/start/data-pipelines/data-pipelines",
+      "verification_status": "source_anchor"
+    },
+    {
+      "confidence": "high",
+      "label": "promptfoo",
+      "retrieved_on": "2026-07-01",
+      "source_id": "promptfoo",
+      "summary": "Open-source CLI and library for evaluating and red-teaming LLM apps.",
+      "url": "https://www.promptfoo.dev/docs/intro/",
+      "verification_status": "source_anchor"
+    },
+    {
+      "confidence": "high",
+      "label": "Helicone",
+      "retrieved_on": "2026-07-01",
+      "source_id": "helicone",
+      "summary": "AI gateway with unified provider API, routing, fallbacks, and observability.",
+      "url": "https://docs.helicone.ai/gateway/overview",
+      "verification_status": "source_anchor"
+    }
+  ],
+  "status": "AGENT_OBSERVABILITY_ACTION_RECEIPT_ADAPTER_MATRIX_MATCH",
+  "unsupported_uniqueness_claim_count": 0,
+  "validation_errors": []
+}

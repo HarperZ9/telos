@@ -1,0 +1,450 @@
+{
+  "baseline": {
+    "decided_count": 1,
+    "escalation_count": 7,
+    "non_escalated_count": 1,
+    "route_probe_count": 8,
+    "source_pass": "0082",
+    "source_path": "schemas/cross-tool-growth-vector-experiment-matrix-pass-0082.json",
+    "source_seal": "2ca0310b3bc12272fc1b88a3f0f4c82a66545994e28d89aa268545a7fc848ad2",
+    "source_sha256": "8dd76f3c2262f6ea46c49200a1d6fb2c5d87e38dcd9b0f5f76e9f2b441e46a87"
+  },
+  "current_promoted_natural_laws": [],
+  "generated_on": "2026-07-01",
+  "negative_fixtures": [
+    {
+      "expected_status": "REJECT",
+      "fixture_id": "claims_forum_source_patched",
+      "reject_reason": "prompt_bridge_only"
+    },
+    {
+      "expected_status": "REJECT",
+      "fixture_id": "claims_all_routes_fixed",
+      "reject_reason": "persistent_escalations_remain"
+    },
+    {
+      "expected_status": "REJECT",
+      "fixture_id": "claims_market_demand",
+      "reject_reason": "no_buyer_evidence"
+    },
+    {
+      "expected_status": "REJECT",
+      "fixture_id": "claims_world_scale_solution",
+      "reject_reason": "strategy_requires_decomposition"
+    },
+    {
+      "expected_status": "REJECT",
+      "fixture_id": "missing_baseline_comparison",
+      "reject_reason": "baseline_0082_required"
+    },
+    {
+      "expected_status": "REJECT",
+      "fixture_id": "missing_live_routes",
+      "reject_reason": "fresh_forum_routes_required"
+    }
+  ],
+  "non_promotion_statement": "Pass 0083 tests a prompt-level Forum proof-lane bridge. It does not patch Forum source, prove all routes fixed, prove buyer demand, or promote a natural law.",
+  "pass": "0083",
+  "promotion_state": "PROMPT_BRIDGE_NOT_FORUM_PATCH",
+  "remaining_gaps": [],
+  "repair_caveats": [
+    {
+      "caveat": "The repair is prompt-level vocabulary, not a Forum source or catalog patch.",
+      "caveat_id": "prompt_bridge_not_source_patch",
+      "next_action": "Convert bridge terms into native route fixtures or catalog lane metadata."
+    },
+    {
+      "caveat": "A strong Project Telos prefix can over-route domain work to project-telos.",
+      "caveat_id": "project_telos_overrouting_risk",
+      "next_action": "Add handoff fields so project-telos owns proof packets while compiler, render, data, SDK, and CI lanes own domain implementation."
+    }
+  ],
+  "repair_rule": {
+    "primary_owner": "project-telos",
+    "required_prefix": "Project Telos dogfood pass route repair",
+    "required_terms": [
+      "proof-packet",
+      "Gather",
+      "Index",
+      "Forum",
+      "Crucible",
+      "Telos",
+      "action receipts",
+      "loop ledger",
+      "negative fixtures"
+    ]
+  },
+  "repair_summary": {
+    "escalation_count": 0,
+    "improvement_over_baseline": 7,
+    "non_escalated_count": 8,
+    "persistent_escalation_lanes": [],
+    "repair_status": "MATCH",
+    "repair_threshold": 5,
+    "route_match_count": 8,
+    "route_probe_count": 8
+  },
+  "repaired_routes": [
+    {
+      "bridge_prompt_sha256": "c3897dd9703106fd1f59eb206a37c1b0c0cda00881e0222a8206651130437f04",
+      "confidence": 0.5,
+      "decided": "project-telos",
+      "exit_code": 0,
+      "lane": "proof_os_core",
+      "needs_escalation": false,
+      "status": "MATCH",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "1ac341601e917a0448b94084ae37c6f63470fc9963ac439ac39a3b244cfda39a",
+      "top_agent": "project-telos",
+      "top_candidates": [
+        {
+          "agent": "project-telos",
+          "score": 0.3181818181818182
+        },
+        {
+          "agent": "model-foundry",
+          "score": 0.125
+        },
+        {
+          "agent": "backend",
+          "score": 0.0
+        },
+        {
+          "agent": "ci-cd",
+          "score": 0.0
+        },
+        {
+          "agent": "cloud-infra",
+          "score": 0.0
+        }
+      ]
+    },
+    {
+      "bridge_prompt_sha256": "3513048eaa4353bc5beb756f54274475589929cec747af59834d0f78998e6cd4",
+      "confidence": 0.5,
+      "decided": "project-telos",
+      "exit_code": 0,
+      "lane": "buildlang_runtime_packets",
+      "needs_escalation": false,
+      "status": "MATCH",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "0714ea01e36071b7849a6ee8069a005bb4610870dedaea10f75fd33114acba78",
+      "top_agent": "project-telos",
+      "top_candidates": [
+        {
+          "agent": "project-telos",
+          "score": 0.3181818181818182
+        },
+        {
+          "agent": "compiler-systems",
+          "score": 0.2
+        },
+        {
+          "agent": "backend",
+          "score": 0.0
+        },
+        {
+          "agent": "ci-cd",
+          "score": 0.0
+        },
+        {
+          "agent": "cloud-infra",
+          "score": 0.0
+        }
+      ]
+    },
+    {
+      "bridge_prompt_sha256": "f39186d4c47356daad8fceafbbd8e32b3a1a08591548766f2cbdfe5af89a56e2",
+      "confidence": 0.5,
+      "decided": "project-telos",
+      "exit_code": 0,
+      "lane": "visual_truth_packets",
+      "needs_escalation": false,
+      "status": "MATCH",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "20418e9eed3f1d8df67be12659ff8fd70e3f9bf0eb6199fd2d82bb61679a32e0",
+      "top_agent": "project-telos",
+      "top_candidates": [
+        {
+          "agent": "project-telos",
+          "score": 0.3181818181818182
+        },
+        {
+          "agent": "render-pipeline",
+          "score": 0.2
+        },
+        {
+          "agent": "backend",
+          "score": 0.0
+        },
+        {
+          "agent": "ci-cd",
+          "score": 0.0
+        },
+        {
+          "agent": "cloud-infra",
+          "score": 0.0
+        }
+      ]
+    },
+    {
+      "bridge_prompt_sha256": "28f6bf07919249ba47abbfc1b73141204f49c15d07e6c8bed11e266365501278",
+      "confidence": 0.5,
+      "decided": "project-telos",
+      "exit_code": 0,
+      "lane": "agent_action_packets",
+      "needs_escalation": false,
+      "status": "MATCH",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "55d35ddcc70b2976741fbb2a84efae5d2c11bd6659a3f70525c25f0074658e0c",
+      "top_agent": "project-telos",
+      "top_candidates": [
+        {
+          "agent": "project-telos",
+          "score": 0.3181818181818182
+        },
+        {
+          "agent": "backend",
+          "score": 0.0
+        },
+        {
+          "agent": "ci-cd",
+          "score": 0.0
+        },
+        {
+          "agent": "cloud-infra",
+          "score": 0.0
+        },
+        {
+          "agent": "code-review",
+          "score": 0.0
+        }
+      ]
+    },
+    {
+      "bridge_prompt_sha256": "0b5bc6640800256677eaf888e38b496431e3c7e3e25d420772dd9164ab536625",
+      "confidence": 0.5,
+      "decided": "project-telos",
+      "exit_code": 0,
+      "lane": "ai4science_packets",
+      "needs_escalation": false,
+      "status": "MATCH",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "e08287c8c759d21b056daaaa270f83706d7d1d6e0fe2c5a5b34b3ca5eef27417",
+      "top_agent": "project-telos",
+      "top_candidates": [
+        {
+          "agent": "project-telos",
+          "score": 0.3181818181818182
+        },
+        {
+          "agent": "code-review",
+          "score": 0.2
+        },
+        {
+          "agent": "data-ml",
+          "score": 0.2
+        },
+        {
+          "agent": "deep-research",
+          "score": 0.2
+        },
+        {
+          "agent": "backend",
+          "score": 0.0
+        }
+      ]
+    },
+    {
+      "bridge_prompt_sha256": "6b5ac7dbcc3032a76c250e6c18cc5688a1d97d1468fca49b939588d881ebf29b",
+      "confidence": 0.5,
+      "decided": "project-telos",
+      "exit_code": 0,
+      "lane": "package_ecosystem_forge",
+      "needs_escalation": false,
+      "status": "MATCH",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "45e9ff201a48c3ae6a915ed9cf78a0b737d1fa93d1f9554ef77799750a77e356",
+      "top_agent": "project-telos",
+      "top_candidates": [
+        {
+          "agent": "project-telos",
+          "score": 0.36363636363636365
+        },
+        {
+          "agent": "ci-cd",
+          "score": 0.2
+        },
+        {
+          "agent": "sdk-platform",
+          "score": 0.2
+        },
+        {
+          "agent": "backend",
+          "score": 0.0
+        },
+        {
+          "agent": "cloud-infra",
+          "score": 0.0
+        }
+      ]
+    },
+    {
+      "bridge_prompt_sha256": "e7899bfcc501ff8333fc2dcb3eaf8af0701aac6a8b03b2f4581a6e8dd7cf88fd",
+      "confidence": 0.5,
+      "decided": "project-telos",
+      "exit_code": 0,
+      "lane": "route_taxonomy_repair",
+      "needs_escalation": false,
+      "status": "MATCH",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "55d35ddcc70b2976741fbb2a84efae5d2c11bd6659a3f70525c25f0074658e0c",
+      "top_agent": "project-telos",
+      "top_candidates": [
+        {
+          "agent": "project-telos",
+          "score": 0.3181818181818182
+        },
+        {
+          "agent": "backend",
+          "score": 0.0
+        },
+        {
+          "agent": "ci-cd",
+          "score": 0.0
+        },
+        {
+          "agent": "cloud-infra",
+          "score": 0.0
+        },
+        {
+          "agent": "code-review",
+          "score": 0.0
+        }
+      ]
+    },
+    {
+      "bridge_prompt_sha256": "b60f4debb5036bd6f1b347dbeecc25c3acc94a0d3295d6569de15d206c3a3cf1",
+      "confidence": 0.5,
+      "decided": "project-telos",
+      "exit_code": 0,
+      "lane": "world_scale_megatool",
+      "needs_escalation": false,
+      "status": "MATCH",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "5d7702968c2f0274f9134e6b0e0affa6a8e4e31467dbaf94527905128a537219",
+      "top_agent": "project-telos",
+      "top_candidates": [
+        {
+          "agent": "project-telos",
+          "score": 0.3181818181818182
+        },
+        {
+          "agent": "compiler-systems",
+          "score": 0.2
+        },
+        {
+          "agent": "deep-research",
+          "score": 0.2
+        },
+        {
+          "agent": "backend",
+          "score": 0.0
+        },
+        {
+          "agent": "ci-cd",
+          "score": 0.0
+        }
+      ]
+    }
+  ],
+  "schema": "ForumProofLaneVocabularyRepair/v1",
+  "seal": "90844f5d1c13087f14843fe38474ca5018fbe18dbbde0bed530ce4ecc188dfb5",
+  "status": "FORUM_PROOF_LANE_VOCABULARY_REPAIR_MATCH",
+  "taxonomy_patch_candidates": [
+    {
+      "lane_id": "project-telos-proof-os",
+      "owner": "project-telos",
+      "terms": [
+        "proof OS",
+        "proof packet",
+        "receipt",
+        "Crucible verdict",
+        "loop ledger"
+      ]
+    },
+    {
+      "handoff": "compiler-systems",
+      "lane_id": "buildlang-runtime-proof",
+      "owner": "project-telos",
+      "terms": [
+        "BuildLang",
+        "buildc",
+        "compiler receipt",
+        "runtime receipt",
+        "numeric kernel"
+      ]
+    },
+    {
+      "handoff": "render-pipeline",
+      "lane_id": "visual-truth-proof",
+      "owner": "project-telos",
+      "terms": [
+        "visual truth",
+        "measured output",
+        "color transform",
+        "render proof",
+        "calibration boundary"
+      ]
+    },
+    {
+      "handoff": "deep-research",
+      "lane_id": "agent-action-proof",
+      "owner": "project-telos",
+      "terms": [
+        "action receipt",
+        "admission",
+        "authority",
+        "trace import",
+        "redacted evidence"
+      ]
+    },
+    {
+      "handoff": "data-ml",
+      "lane_id": "ai4science-proof",
+      "owner": "project-telos",
+      "terms": [
+        "AI4Science",
+        "research proof packet",
+        "experiment receipt",
+        "formal check",
+        "review verdict"
+      ]
+    },
+    {
+      "handoff": "ci-cd",
+      "lane_id": "package-adapter-forge",
+      "owner": "sdk-platform",
+      "terms": [
+        "build-universe",
+        "adapter package",
+        "compatibility receipt",
+        "plugin manifest",
+        "release gate"
+      ]
+    },
+    {
+      "handoff": "project-telos",
+      "lane_id": "world-scale-strategy",
+      "owner": "deep-research",
+      "terms": [
+        "world-scale",
+        "societal proof packet",
+        "market map",
+        "decompose into lanes"
+      ]
+    }
+  ],
+  "unsupported_claim_count": 0,
+  "validation_errors": []
+}

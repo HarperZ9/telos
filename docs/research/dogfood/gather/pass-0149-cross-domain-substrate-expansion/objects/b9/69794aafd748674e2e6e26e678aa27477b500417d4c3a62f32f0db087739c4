@@ -1,0 +1,364 @@
+Skip to content
+Turn-key research data management repository
+Overview
+Initializing search
+GitHub
+Home
+What is InvenioRDM?
+Use
+Install
+Operate an Instance
+Join the Community
+Maintain and Develop
+Releases
+Reference
+Turn-key research data management repository
+GitHub
+Home
+What is InvenioRDM?
+What is InvenioRDM?
+Overview
+Beautiful UX
+Highly scalable
+Customizable
+Interoperable
+Powerful
+Secure
+Use
+Use
+Overview
+Records
+Records
+Upload
+Published record
+Export formats
+Communities
+Notifications
+Administration
+Install
+Install
+Overview
+Install the CLI
+System requirements
+Initialize
+Build, setup & run
+Explore
+Stop
+Troubleshooting & help
+Operate an Instance
+Operate an Instance
+Overview
+Deployment and other operations
+Deployment and other operations
+Infrastructure
+Deploy
+Logs
+Back up search indices
+Redirect legacy routes
+Migrate from another repository
+Customization philosophy
+Customize look-and-feel
+Customize look-and-feel
+Overview
+Change logo
+Change templates
+Change theme
+Change font
+Change menus
+Override React components
+Themed community
+Customize metadata model
+Customize metadata model
+Enable metadata-only records
+Optional metadata fields
+Optional metadata fields
+Include optional metadata fields
+Custom fields
+Custom fields
+Add field(s) to records
+Create new type of field
+Add field(s) to communities
+UI widgets
+Custom PIDs schemes
+Customize vocabularies
+Customize vocabularies
+Overview
+Resource types
+Affiliations
+Names
+Funding
+Subjects
+Manage users and roles
+Configure everything
+Configure everything
+Overview
+Audit logs
+Authentication
+Curation checks
+Collections
+Compliance info when publishing
+DOI registration
+DNB URN registration
+Emails
+Emails
+Submission
+Capture
+FAIR Signposting
+File uploads & storage
+File uploads & storage
+Files and versioning
+Files uploaders
+Local storage
+S3 compatible storage
+Upload limits
+Jobs/Automated tasks
+Landing page
+Language(s) and locale(s)
+Notifications
+Notifications
+Overview
+Modify notifications
+Require a community to publish
+Restrict access to pages
+Restrict community creation
+Search
+Search
+Change facets/sorting
+Create search terms mappings
+Customize search index templates
+Sitemaps
+Static pages
+Add custom code
+Add custom code
+Custom Python and JS code
+Debugging
+Join the Community
+Join the Community
+Overview
+Onboard
+Code of conduct
+Copyright policy
+Contribute code
+Contribute code
+Development process
+Source code
+Package Development
+Pre-release Instance Development
+Fix a vulnerability
+Coding style
+Best practices
+Best practices
+Accessibility (a11y)
+Commits, PRs & reviews
+CSS/JavaScript
+React
+User interface
+Contribute translations
+Contribute translations
+Getting involved as a Translator
+Internationalization (i18n) and localization (l10n)
+Contribute documentation
+Community PR board
+Roadmap
+Maintain and Develop
+Maintain and Develop
+Overview
+New maintainers
+Modules on GitHub
+High-level architecture
+High-level architecture
+Introduction
+Software
+Runtime
+Records
+Communities
+Requests
+Curation
+Event handling
+Notifications
+Recommended reading
+Lower-level internals
+Lower-level internals
+Administration panel
+Administration views
+Audit logs
+Building resources
+Building services
+Building serializers
+Create a database migration
+Database transaction management
+Grouping atomic operations
+Job system
+Notifications
+Optimistic concurrency control
+Sanitize input data
+Search
+System Fields
+Theming
+Usage statistics
+Operational tasks
+Operational tasks
+Release management
+Branch management
+Demo site & docs
+Docker images
+Releases
+Releases
+Overview
+Maintenance policy
+Upgrade policy
+Security policy
+Version v13
+Version v13
+Release Notes v13.1
+Release Notes v13.0
+Upgrade from v12 to v13
+Version v12
+Version v12
+Release Notes v12.0
+Upgrade from v11 to v12
+Legacy Versions
+Legacy Versions
+Version v11
+Version v11
+Release Notes v11.0
+Upgrade from v10 to v11
+Version v9
+Version v9
+Release Notes v9.1
+Release Notes v9.0
+Migrate Docker images
+Migrate v9 to OpenSearch
+Upgrade from v8 to v9
+Version v10
+Version v10
+Release Notes v10.1
+Release Notes v10.0
+Upgrade from v9 to v10
+Migrate Docker images
+Version v8
+Version v8
+Release Notes v8.0
+Upgrade from v7 to v8
+Version v7
+Version v7
+Release Notes v7.0
+Upgrade from v6 to v7
+Version v6
+Version v6
+Release Notes v6.0.5
+Upgrade from v6.0.x to v6.0.5
+Release Notes v6.0.0
+Upgrade from v4 to v6
+Version v5
+Version v5
+Release Notes v5.0
+Version v4
+Version v4
+Release Notes v4.0
+Upgrade from v3 to v4
+Version v3
+Version v3
+Release Notes v3.0
+Upgrade from v2 to v3
+Version v2
+Version v2
+Release Notes v2.0
+Upgrade from v1 to v2
+Version v1
+Version v1
+Release Notes v1.0
+Reference
+Reference
+Overview
+CLI
+CLI
+Invenio-cli commands
+Invenio commands
+Metadata
+OAI-PMH
+REST API
+REST API
+Overview
+Overview
+Table of contents
+Authentication
+Scopes
+General information
+Example
+Timestamps
+Pretty print JSON
+OpenAPI specification
+Quickstart
+Awards
+Communities
+Drafts and Records
+File transfer
+Funders
+Groups
+Members
+Names
+OAI-PMH Sets
+Requests
+Reviews
+Statistics
+Suggest
+Users
+Vocabularies
+Virtual environments
+Table of contents
+Authentication
+Scopes
+General information
+Example
+Timestamps
+Pretty print JSON
+OpenAPI specification
+REST API reference¶
+Summary
+The following document is a reference guide for all the REST APIs that InvenioRDM exposes.
+Intended audience
+This guide is intended for advanced users, and developers of InvenioRDM that have some experience with using REST APIs and are aware of the expected functionality a repository would be exposing.
+Authentication¶
+The only authentication method supported at the moment for REST API calls is by using Bearer tokens that you can generate at the "Applications" section of your user account's settings of your InvenioRDM instance. There are two ways to pass the tokens in your requests.
+Authorization HTTP header (recommended)
+curl -k -H "Authorization: Bearer API-TOKEN" https://127.0.0.1:5000/api/records
+access_token HTTP query string parameter
+curl -k https://127.0.0.1:5000/api/records?access_token=API-TOKEN
+Insecure connection
+The -k or --insecure option here is simply because a certificate is typically not setup locally. In production,
+your curl calls shouldn't need this option because you will be using a valid certificate.
+Scopes¶
+Work in progress
+The available scopes for generated token are subject to change when the access control mechanisms to records are finalized.
+When you create your API token you can also specify scopes that control what kind of resources and actions you can access using your token.
+Scope
+Description
+user:email
+Allows access to the user's email address
+Bear in mind, user:email is the only scope that exists by default. If you require further customization, consider customizing your authentication and delegating rights via scopes.
+General information¶
+Example¶
+We provide an example of how to upload a record with files to an InvenioRDM
+instance in the following repository.
+Timestamps¶
+Timestamps are in UTC and formatted according to ISO 8601.
+Pretty print JSON¶
+If you are exploring the API via a browser, you can have the JSON formatted by
+adding prettyprint=1 in the query string.
+Example request
+GET /api/records?prettyprint=1 HTTP/1.1
+OpenAPI specification¶
+The complete OpenAPI schema for InvenioRDM's REST API is available at:
+👉 https://inveniosoftware.github.io/invenio-openapi/
+You can use this for:
+Exploring all endpoints
+Generating client libraries
+Validating request/response formats
+Previous
+OAI-PMH
+Next
+Quickstart
+Copyright © 2019-2025 CERN, Northwestern University and contributors.
+Made with
+Material for MkDocs

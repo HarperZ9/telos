@@ -1,0 +1,169 @@
+# Project Telos Tooling Shape Assessment
+
+Date: 2026-07-02
+
+Purpose: capture the current updated tool surface after the recent tool refresh, separate installed command evidence from local repo evidence, and identify what is ready to package for demos and outreach.
+
+## Executive Shape
+
+Project Telos is now best described as a proof-native AI workbench and model-building operating layer. The center is not one app. The center is a set of re-checkable membranes:
+
+- Gather turns source intake into receipts.
+- Index turns workspace structure into bounded context envelopes.
+- Forum turns intent into routed lanes and reusable context capsules.
+- Crucible turns claims and measurements into `MATCH`, `DRIFT`, or `UNVERIFIABLE`.
+- Telos joins the flagships into an MCP/catalog/workflow surface with action receipts, context packs, doctor lanes, model-foundry planning, learning labs, browser evidence, and demo packaging.
+- Learn turns study and proof packets into receipt-backed learning loops.
+- BuildLang/buildc turns language/runtime behavior into effect, policy, compiler, corpus, and backend receipts.
+- Emet is the external source/view witness for byte-level and view-level consistency.
+
+The current practical wedge is stronger than the earlier research-only framing: Telos can now show live host compatibility, tool-surface freshness, source federation, context selection, ledger capsule handoff, and operator-doctor verification as one product loop.
+
+## Current Command Evidence
+
+| Surface | Current evidence | Assessment |
+| --- | --- | --- |
+| Gather | `gather --version` returned `1.5.0`; `gather status` and `gather doctor` returned `MATCH`. Help exposes `status`, `doctor`, `demo`, `parse`, `video`, `web`, `feed`, `docs`, `arxiv`, `pdf`, `api`, `browser`, `ocr`, `transcribe`, `run`, `corpus`, `federation`, and `mcp`. | Installed and demo-ready. The newer `gather.federation` MCP tool is now declared in Telos. |
+| Index | `index --version` returned `2.8.0`; `index status` and `index doctor` returned `MATCH`. Help exposes `context-envelope`, `select`, `wiki`, `verify`, `freshness`, `invalidate`, `bench`, and MCP. | Installed and demo-ready. `index.select`, `index.wiki`, and `index.invalidate` are now declared in Telos. |
+| Forum | `forum --version` returned `1.12.0`; `forum status` and `forum doctor` returned `MATCH`. Help exposes `route`, `submit`, `ledger`, `bench`, and MCP; `forum ledger` exposes `capsule`. | Installed and demo-ready. `forum.ledger.capsule` is now declared in Telos. |
+| Crucible | `crucible --version` returned `1.1.0`; `crucible status` and `crucible doctor` returned `MATCH`. Help exposes `run`, `measurement-gate`, `refine`, `recheck`, `review`, `batch`, `drift`, and MCP. | Installed and demo-ready. Best used as the public proof gate for claims before posting. |
+| Telos | `npm.cmd run catalog` reports `70 total, 70 available`; `npm.cmd run manifest` reports `70 expected`; compatibility and operator doctors report `MATCH`. | Demo-ready after this pass. The catalog drift from 65 to 70 is fixed in metadata, current state, and tests. |
+| Learn | Local repo `C:\dev\public\learn`; `package.json` reports version `1.5.0`; `node src/cli.mjs status` and `node src/cli.mjs doctor` run from checkout; doctor reports `MATCH`; targeted tutor/prooflesson/reverify slice passed 65/65 tests in the fourth-wave verification pass; temp research-proof study loop wrote a `verified: true` study receipt. `learn` is not on PATH in this shell. | Source-checkout demo-ready. Still needs PATH/package wiring for one-command outreach demos. |
+| BuildLang/buildc | Local repo `C:\dev\public\pubscan\quantalang`; `compiler\Cargo.toml` reports `buildlang` `1.0.6`; isolated-target `buildc doctor` completes; C backend is ready through MSVC Build Tools; `buildc check examples\quickstart\hello.bld --receipt -` emits a passed receipt; `buildc corpus verify` reports 8 C executions passed. `buildc` is not on PATH in this shell. | Source-checkout demo-ready with isolated Cargo target. Strategic pillar for compiler/runtime proof demos. |
+| Build Universe | Local repo `C:\dev\public\build-universe`; README calls it v1.0.0 and alpha, with BuildLang, BuildOS, Spectrum, Chromatic, Photon, Calibrate, and other domain modules. It explicitly says the ecosystem does not compile as a whole. | Strong roadmap substrate, not a whole-system demo yet. Package as alpha domain corpus plus BuildLang proof targets. |
+| Build Color | Local repo `C:\dev\public\build-color`; README describes color-space conversion, HDR tone mapping, color appearance models, Delta E metrics, spectral utilities, ICC profile generation, and GUI/API surfaces. | Good near-term visual proof demo partner for Telos measurement packets and BuildLang later. |
+| Emet | Local repo `C:\dev\public\pubscan\emet`; `python membrane.py selftest` emits self hash `b75ae75283ae774d4d8fc68452de34636fc5e47fd544d1d2d1c9783f1f282f1a`; `python conformance\run.py membrane.py` passes 35/35 vectors. `emet` is on PATH but currently fails because `warden_shell.cli.emet` is not importable. | Source-checkout demo-ready. Installed command wrapper is broken and should be fixed before public PATH demo. |
+
+## Update Found And Fixed
+
+The newer live MCP servers exposed five tools not fully represented in Telos metadata:
+
+- `gather.federation`
+- `index.select`
+- `index.wiki`
+- `index.invalidate`
+- `forum.ledger.capsule`
+
+This pass updated:
+
+- `demo/integrations/mcp-server-manifest.json`
+- `demo/integrations/mcp-tool-catalog.json`
+- `demo/status.mjs`
+- `docs/CURRENT-STATE.md`
+- tests that asserted the old 65-tool count
+
+Result: the current Telos surface is 70 tools across five flagships: Gather 6, Index 8, Forum 6, Crucible 13, Telos 37.
+
+## Handoff Receipts
+
+This packaging pass has its own receipt trail:
+
+- Gather stored five outreach documents in `docs/outreach/receipts/gather-outreach-2026-07-02`; digest seal `c69579626ee742af497a4a82c5ff8467952f20e024af908c79ae7660ceb41e1d`.
+- Index `context-envelope --focus telos --hops 0` returned `MATCH` with focused retention on `telos`.
+- Forum routed the package request to `project-telos`, confidence `0.5`, no escalation.
+- Crucible run `docs/outreach/receipts/tooling-handoff-run-2026-07-02.json` assessed five fenced handoff claims: 5 `MATCH`, 0 `DRIFT`, 0 `UNVERIFIABLE`; assessment seal `e5fceb834a4a694e084bda1c09d045e9230b12549864a41bf58a50494b952214`.
+- Second-wave demo package added source-checkout experiments for Learn, BuildLang/buildc, and Emet in `docs/outreach/SECOND-WAVE-DEMO-PACKAGES-2026-07-02.md`.
+- Second-wave content queue added posts 13-19 in `docs/outreach/SECOND-WAVE-CONTENT-QUEUE-2026-07-02.md`.
+- Second-wave Gather store `docs/outreach/receipts/gather-second-wave-2026-07-02` captured eight current outreach docs; current digest seal `fbc940723bd382ba62469847ecea4edb9790f7413beac421ba825b752e27546f`. The store also retains prior object versions from earlier passes, and `gather corpus verify` reports them as `MATCH`.
+- Second-wave Index `context-envelope --focus telos --hops 0` returned `MATCH`; freshness root `e9300a86c381ac2061af96134f43e0ccce116e5e2a7af5a8df4ed0f46e18f905`.
+- Second-wave Forum routing note: the short phrase "Package second-wave Project Telos demos for Learn, BuildLang, Emet, and megatool composition" escalated; the fuller prompt naming "five Project Telos flagship tools" and MCP/source-checkout receipts routed to `project-telos`, confidence `0.5`, no escalation.
+- Second-wave Crucible run `docs/outreach/receipts/second-wave-tooling-run-2026-07-02.json` assessed five fenced source-checkout claims: 5 `MATCH`, 0 `DRIFT`, 0 `UNVERIFIABLE`; assessment seal `0d62b195545bb82b7a9d760106c375f3c7935e782fa60b8995f5534634defb25`.
+- Crucible `run` does not overwrite an existing report path; reruns should use a fresh `--out` and `--report` path or remove the old generated files deliberately.
+- Third-wave closed-loop package added `docs/outreach/THIRD-WAVE-CLOSED-LOOP-DEMO-2026-07-02.md` and `docs/outreach/THIRD-WAVE-CONTENT-QUEUE-2026-07-02.md`.
+- Third-wave BuildLang `ci-review` receipt lives at `docs/outreach/receipts/third-wave/buildlang-hello-ci-review-receipt.json`; `buildc receipt verify --expect-profile ci-review` returned `status: passed`.
+- Third-wave Learn prooflesson receipt lives at `docs/outreach/receipts/third-wave/tutor/buildlang-hello.prooflesson.json`; `learn tutor reverify buildlang-hello` returned `VERIFIED` with witness digest `sha256:c17026d7bba12cf07ef0c8cbf06aab7c549b5f914a0de24c7e76fae488838007`.
+- Third-wave Build Color measurement record lives at `docs/outreach/receipts/third-wave/build-color-cli-measurement.json`; source-checkout CLI version is `1.0.2`, and `python -m pytest tests -q` passed 458 tests.
+- Third-wave Gather store `docs/outreach/receipts/gather-third-wave-2026-07-02` captured 11 current outreach docs; current digest seal `24a865d5e3ab6cadac4a91e1c66ca5512fbca683c534b0bdc2fca98c50098eb3`. The store also retains earlier object versions, and `gather corpus verify` reports them as `MATCH`.
+- Third-wave Forum routed the closed-loop packaging prompt to `project-telos`, confidence `0.5`, no escalation.
+- Third-wave Index `context-envelope --focus telos --hops 0` returned `MATCH`; freshness root `e9300a86c381ac2061af96134f43e0ccce116e5e2a7af5a8df4ed0f46e18f905`.
+- Third-wave Crucible run `docs/outreach/receipts/third-wave-tooling-run-2026-07-02.json` assessed five fenced closed-loop claims: 5 `MATCH`, 0 `DRIFT`, 0 `UNVERIFIABLE`; assessment seal `50b0134e07987d1b1e05497a4e089d6c39d81ada09cc08f6c883b2cfae6385a0`.
+- Fourth-wave package added `docs/outreach/FOURTH-WAVE-MEASUREMENT-GATE-DEMO-2026-07-02.md` and `docs/outreach/FOURTH-WAVE-CONTENT-QUEUE-2026-07-02.md`.
+- Fourth-wave Crucible measurement gate positive result `docs/outreach/receipts/fourth-wave-measurement-gate-result.json` returned `MATCH`, `allow`, and 5 matched rows over the currently supported layer subset.
+- Fourth-wave Crucible measurement gate negative result `docs/outreach/receipts/fourth-wave-measurement-gate-negative-result.json` returned `UNVERIFIABLE`, `block`, and `pixel_dimensions_mismatch` under a deliberately wrong histogram criterion.
+- Fourth-wave Learn negative prooflesson result `docs/outreach/receipts/fourth-wave-negative-prooflesson-result.json` records exit code `1` and no receipt for a forged `VERIFIED_SUPREME` verdict enum.
+- Fourth-wave Gather store `docs/outreach/receipts/gather-fourth-wave-2026-07-02` captured 13 outreach docs after the Learn 65/65 count refresh, dropped 1 candidate, and produced current digest seal `e19ab87f1f663f0e8f876dffdeb19cb8e234adf4c2151feec796eaad3fad7630`.
+- Fourth-wave Forum routing note: the short "Continue improving..." phrasing escalated, while the fuller prompt naming "five Project Telos flagship tools" plus measurement-gate, prooflesson, MCP, source-checkout, and outreach receipts routed to `project-telos`, confidence `0.5`, no escalation.
+- Fourth-wave Index `context-envelope --focus telos --hops 0` returned `MATCH`; freshness root `e9300a86c381ac2061af96134f43e0ccce116e5e2a7af5a8df4ed0f46e18f905`; graph pack `8ee383e19ae9a6141bee70de733fb6aa09201ff9d284ce6778ce58b06e6b68b2`.
+- Fourth-wave Crucible run `docs/outreach/receipts/fourth-wave-tooling-run-2026-07-02.json` assessed five fenced fail-closed claims: 5 `MATCH`, 0 `DRIFT`, 0 `UNVERIFIABLE`; assessment seal `849dbf47f4b4786ff5798605ecf27faf196ceb41352c313aec103eda9f28733a`.
+- Fifth-wave package added `docs/outreach/FIFTH-WAVE-OSS-PROOF-SHOWCASE-2026-07-02.md` and `docs/outreach/FIFTH-WAVE-CONTENT-QUEUE-2026-07-02.md`.
+- Fifth-wave OSS fixture scout wrote `docs/outreach/receipts/fifth-wave/oss-showcase-scout/scout.json` with schema `project-telos.oss-scout/v1`, candidate `pandas-dev/pandas#66050`, and priority `70`.
+- Fifth-wave ready fixture packet `docs/outreach/receipts/fifth-wave/oss-showcase-fixture-ready-packet.json` returned `pr_ready: true`, `operator_next_action: open-pr`, and verdict `MATCH`; this is fixture-only and not an actual upstream patch claim.
+- Fifth-wave blocked fixture packet `docs/outreach/receipts/fifth-wave/oss-showcase-fixture-blocked-packet.json` returned `pr_ready: false`, `operator_next_action: revise`, verdict `UNVERIFIABLE`, and blockers for missing passing test evidence, non-`MATCH` Crucible verdict, and missing patch summary.
+- Fifth-wave Crucible run `docs/outreach/receipts/fifth-wave-tooling-run-2026-07-02.json` assessed five fenced OSS Proof Showcase claims: 5 `MATCH`, 0 `DRIFT`, 0 `UNVERIFIABLE`; assessment seal `93296db47b7424ac802d78ed13d0b54b26373f6864405c11dc23a7d5a61b0c1b`.
+- Fifth-wave Gather store `docs/outreach/receipts/gather-fifth-wave-2026-07-02` captured 7 outreach docs after the handoff refresh, dropped 10 candidates outside the fifth-wave scope, and produced digest seal `0116688fde5d897d81ee97307bcdf309f6152300722139741d101019b1c0d709`; `gather corpus verify` reports stored docs as `MATCH`.
+- Fifth-wave Forum routed the OSS Proof Showcase packaging prompt to `project-telos`, confidence `0.5`, no escalation.
+- Fifth-wave Index `context-envelope --focus telos --hops 0` returned `MATCH`; workspace freshness root `e9300a86c381ac2061af96134f43e0ccce116e5e2a7af5a8df4ed0f46e18f905`; retained Telos repo digest `b2738dfad7615f06b07ee5fd2e7583b0fd7530b1264f2cc4f6f2695343f07d50`; graph pack `8ee383e19ae9a6141bee70de733fb6aa09201ff9d284ce6778ce58b06e6b68b2`.
+- Sixth-wave package added `docs/outreach/SIXTH-WAVE-LIVE-OSS-SCOUT-2026-07-02.md` and `docs/outreach/SIXTH-WAVE-CONTENT-QUEUE-2026-07-02.md`.
+- Sixth-wave live GitHub scout wrote `docs/outreach/receipts/sixth-wave/oss-showcase-live-scout/scout.json` with schema `project-telos.oss-scout/v1`, status `MATCH`, and 3 candidates from the read-only query `repo:pandas-dev/pandas is:issue is:open label:Bug pd.array masked array`.
+- Sixth-wave top live candidate `docs/outreach/receipts/sixth-wave/oss-showcase-live-top-candidate.json` is `pandas-dev/pandas#63458`, priority `60`, updated `2026-06-27T23:25:33Z`.
+- Sixth-wave live readiness packet `docs/outreach/receipts/sixth-wave/oss-showcase-live-blocked-packet.json` returned `pr_ready: false`, `operator_next_action: revise`, verdict `UNVERIFIABLE`, and blockers for missing reproduction command, missing passing test evidence, non-`MATCH` verifier verdict, and missing patch summary.
+- Sixth-wave Crucible run `docs/outreach/receipts/sixth-wave-tooling-run-2026-07-02.json` assessed five fenced live-scout claims: 5 `MATCH`, 0 `DRIFT`, 0 `UNVERIFIABLE`; assessment seal `46c6d8202712274d9322dc1561b9161750d462ca02b283cf983e539b15689037`.
+- Sixth-wave Gather store `docs/outreach/receipts/gather-sixth-wave-2026-07-02` captured 7 outreach docs after the handoff refresh, dropped 13 candidates outside the sixth-wave scope, and produced digest seal `0889fa67c399775e8baa26bd33cc4b18e071854ee32ff73b818e03aaac7d2e71`; `gather corpus verify` reports stored docs as `MATCH`.
+- Sixth-wave Forum routed the live OSS scout packaging prompt to `project-telos`, confidence `0.5`, no escalation.
+- Sixth-wave Index `context-envelope --focus telos --hops 0` returned `MATCH`; workspace freshness root `e9300a86c381ac2061af96134f43e0ccce116e5e2a7af5a8df4ed0f46e18f905`; retained Telos repo digest `b2738dfad7615f06b07ee5fd2e7583b0fd7530b1264f2cc4f6f2695343f07d50`; graph pack `8ee383e19ae9a6141bee70de733fb6aa09201ff9d284ce6778ce58b06e6b68b2`.
+- Seventh-wave package added `docs/outreach/SEVENTH-WAVE-ISSUE-DETAIL-REPRODUCTION-LEAD-2026-07-02.md` and `docs/outreach/SEVENTH-WAVE-CONTENT-QUEUE-2026-07-02.md`.
+- Seventh-wave issue-detail capture wrote `docs/outreach/receipts/seventh-wave/oss-showcase-live-issue-63458-gh.json` from `gh issue view 63458 --repo pandas-dev/pandas`; `docs/outreach/receipts/seventh-wave/oss-showcase-live-issue-63458-capture.json` records status `MATCH`.
+- Seventh-wave issue summary `docs/outreach/receipts/seventh-wave/oss-showcase-live-issue-63458-summary.json` records issue `63458`, state `OPEN`, labels `Bug`, `API - Consistency`, and `Arrow`, comments count `11`, updated `2026-06-27T23:25:33Z`, body length `2963`, 4 code fences, and `has_reproduction_lead: true`.
+- Seventh-wave readiness gate improvement in `demo/showcase/record.mjs` now blocks a reproduction command unless `reproduction.status` is `failed-before-patch`; `demo/showcase.test.mjs` covers the `status: not-run` case.
+- Seventh-wave reproduction-lead packet `docs/outreach/receipts/seventh-wave/oss-showcase-live-reproduction-lead-blocked-packet.json` returned `pr_ready: false`, `operator_next_action: revise`, verdict `UNVERIFIABLE`, and blockers for missing failing reproduction evidence, missing passing test evidence, non-`MATCH` verifier verdict, and missing patch summary.
+- Seventh-wave Crucible run `docs/outreach/receipts/seventh-wave-tooling-run-2026-07-02.json` assessed five fenced issue-detail and reproduction-lead claims: 5 `MATCH`, 0 `DRIFT`, 0 `UNVERIFIABLE`; assessment seal `7d5f7969806745e416a43f6d9abb23d4ed8c269260ad82025d16358454e77c57`.
+- Seventh-wave Gather store `docs/outreach/receipts/gather-seventh-wave-2026-07-02` captured 10 outreach docs after the handoff refresh, dropped 13 candidates outside the seventh-wave scope, and produced digest seal `66f7643bd50e7ae2939645f63409c7a3da5997cda45ee867953a7c20c5f2d2f8`.
+- Seventh-wave Forum routed the issue-detail and reproduction-lead packaging prompt to `project-telos`, confidence `0.5`, no escalation.
+- Seventh-wave Index note: `index context-envelope --root . --focus docs/outreach --budget 5000 --json` rejected `docs/outreach` as an unresolved focus selector, while `index context-envelope --root . --focus telos --budget 5000 --json` returned `MATCH`, retained `telos`, used source refs only, and preserved graph pack `8ee383e19ae9a6141bee70de733fb6aa09201ff9d284ce6778ce58b06e6b68b2`.
+- Eighth-wave package added `docs/outreach/EIGHTH-WAVE-LOCAL-REPRODUCTION-AND-PUBLISHING-PIPELINE-2026-07-02.md`, `docs/outreach/EIGHTH-WAVE-CONTENT-QUEUE-2026-07-02.md`, `docs/research/whitepapers/PROOF-CARRYING-RESEARCH-LOOPS-2026-07-02.md`, and `docs/research/whitepapers/OFFICIAL-PAPER-REVISION-QUEUE-2026-07-02.md`.
+- Eighth-wave local reproduction receipt `docs/outreach/receipts/eighth-wave/pandas-63458-repro/local-reproduction-receipt.json` records a clean virtualenv probe for `pandas-dev/pandas#63458` with Python `3.12.10`, pandas `3.0.3`, pyarrow `24.0.0`, and status `failed-before-patch` with `AttributeError: 'ArrowExtensionArray' object has no attribute 'sum'`.
+- Eighth-wave readiness packet `docs/outreach/receipts/eighth-wave/pandas-63458-repro/local-reproduction-blocked-packet.json` returned `pr_ready: false`, `operator_next_action: revise`, verdict `UNVERIFIABLE`, and blockers for missing passing test evidence, non-`MATCH` verifier verdict, and missing patch summary.
+- Eighth-wave academic source intake used `gather arxiv` across three stores: agentic scientific discovery seal `a68dc656cc121c6d3b69612fa00f8381e5c3838bc01aea3ba34d47fead624850` with 5 papers, formal proof seal `006484ea49c75d4498a2d2b693e19397250b5701fb82ae47b3ebbbb003992033` with 5 papers, and AI4Science/robotics/lab automation seal `27716b84828931d03ead3d18902ea2afbbf608f0dad67b25572ed6470dff1e43` with 4 papers.
+- Eighth-wave Learn prooflesson package added `docs/outreach/receipts/eighth-wave/proof-carrying-research-loops.learn-packet.json` and `docs/outreach/receipts/eighth-wave/learn-prooflesson/tutor/proof-carrying-research-loops.prooflesson.json`; `learn tutor reverify proof-carrying-research-loops` returned `VERIFIED` while preserving the lesson verdict `UNVERIFIABLE`.
+- Eighth-wave Crucible run `docs/outreach/receipts/eighth-wave-tooling-run-2026-07-02.json` assessed five fenced local-reproduction and publishing-pipeline claims: 5 `MATCH`, 0 `DRIFT`, 0 `UNVERIFIABLE`; assessment seal `8bf2fad58b5327ba1f6d321ca22d000891ee816784fefd9fd2810cf06316908a`.
+- Eighth-wave website update exists in `C:\dev\public\portfolio-site`: `research.html` now includes the stricter status ladder, and `research-proof-carrying-research-loops.html` adds the website-copy draft for the new working paper. The local site link crawl checked 402 internal links across 72 pages with 0 broken.
+- Ninth-wave package added `docs/outreach/NINTH-WAVE-BIO-MED-ROBOTICS-SOURCE-FEDERATION-2026-07-02.md`, `docs/outreach/NINTH-WAVE-CONTENT-QUEUE-2026-07-02.md`, and `docs/research/FRONTIER-HARD-PROBLEM-REGISTRY-2026-07-02.md`.
+- Ninth-wave arXiv source intake captured 30 retained rows across four Gather stores: biomedical foundation models seal `d3fe14ba9368def788557a3268fde724a605cf87a5df060af87f79c42362fbe6` with 8 rows, robotics/lab automation seal `e5ae3b8acd8cae740d9b678e148794dd94841742a5096cd480d37355adbc4516` with 7 rows, protein/systems biology seal `c1ab2439eef86c3db3e55600bf744bbd1f084fd0c9020eb6dd474dd20a2bd91c` with 8 rows, and AI-scientist automation seal `eadd0ca7b25db20edf82d2827d03e090c9416279ad032656b8033f3870b0d829` with 7 rows.
+- Ninth-wave source-lead demotion gate `docs/outreach/receipts/ninth-wave/source-lead-demotion-gate.json` classifies all 30 retained rows into 15 `domain_lead`, 9 `adjacent_lead`, and 6 `query_noise` rows; coverage check matched every retained catalog row exactly once.
+- Ninth-wave Crucible v2 run `docs/outreach/receipts/ninth-wave-tooling-run-v2-2026-07-02.json` assessed six fenced source-federation and hard-problem-registry claims: 6 `MATCH`, 0 `DRIFT`, 0 `UNVERIFIABLE`; assessment seal `28f654ff9ab35789896f4f72de5b5e7cb1e48824772e74a66111db2e101cb5f2`.
+- Ninth-wave Learn prooflesson package added `docs/outreach/receipts/ninth-wave/ninth-wave-source-federation.learn-packet.json` and `docs/outreach/receipts/ninth-wave/learn-prooflesson/tutor/ninth-wave-source-federation.prooflesson.json`; `learn tutor reverify ninth-wave-source-federation` returned `VERIFIED`, witness digest `sha256:bc3b19ee5f996b7c483774b6c6f224bfa2f1b05adc95279ec8570e91204f12eb`, and lesson verdict `MATCH` for the bounded local package claim only.
+- Ninth-wave Forum/Index routing receipt `docs/outreach/receipts/ninth-wave-forum-index-route-2026-07-02.json` records Forum routing to `project-telos` with confidence `0.5` and no escalation, an Index broad-focus rejection (`reason_code: unresolved-focus`), and a concrete `telos` context envelope `MATCH` persisted at `docs/outreach/receipts/ninth-wave-index-context-envelope-2026-07-02.json`.
+
+## Readiness Matrix
+
+| Product lane | Ready now | Needs packaging | Do not overclaim |
+| --- | --- | --- | --- |
+| MCP host compatibility | Catalog, manifest, source-checkout launch, compatibility doctor, operator doctor | One-page setup/export instructions and short demo video | Do not imply all third-party hosts have loaded the latest server until freshness probes run in that host. |
+| Research proof packets | 150-ledger corpus, pass 0151 source federation, Gather stores, Crucible receipts | Curated three-demo path and less dense public copy | Do not claim the system solved frontier science problems. It packages verifiable claim loops. |
+| AI infra / agent receipts | Context envelopes, action receipts, loop ledger, browser evidence, admission telemetry | One concrete agent task with before/after receipts | Do not claim replacement for LangSmith or observability suites; position as proof/action receipt layer. |
+| Learn | Source-checkout 1.5.0 status/doctor, temp study receipt, 65-test tutor/prooflesson/reverify slice, BuildLang prooflesson receipt reverified | PATH setup and a public prooflesson script with stable temp dirs | Do not claim autonomous credential completion; Learn explicitly halts graded work. |
+| BuildLang/buildc | Source-checkout 1.0.6 doctor, `hello.bld` check receipt, `ci-review` policy receipt verify, 8-program corpus verify | PATH setup, broader policy negative fixture, Build Color/Crucible adapter | Do not claim whole Build Universe compiles, self-hosting, or full linear soundness. |
+| Build Color | Version 1.0.2 source-checkout CLI, info/convert/difference commands, 458 tests passing, Telos measurement/display bridge | Turn CLI measurement into a Crucible measurement-gate packet | Do not claim hardware calibration or monitor mutation unless real devices and receipts are added. |
+| Measurement gate | Five-layer supported Telos subset returns `MATCH`/`allow`; bad criterion returns `UNVERIFIABLE`/`block` | Expand Crucible gate support to the remaining five Telos measurement bus layers | Do not claim Crucible gates all ten Telos layers today. |
+| OSS Proof Showcase | Fixture scout, live GitHub scout, issue-detail capture for `pandas-dev/pandas#63458`, local failing reproduction packet, ready fixture packet, blocked fixture packet, blocked live readiness packet, blocked reproduction-lead packet, blocked local-reproduction packet, and stricter showcase unit test | Add patch packet, passing test evidence, and Crucible `MATCH` after-state before any upstream claim | Do not claim a real pandas fix, maintainer interest, source inspection, passing tests, patch feasibility, current-main validity, or PR readiness from scout, issue-detail, or failing-reproduction evidence alone. |
+| Research publishing lane | Proof-carrying research loops working paper, official-paper revision queue, arXiv source-lead receipts, ninth-wave bio/medicine/robotics source federation, hard-problem registry, source-lead demotion gate, website-copy page, local failing reproduction probe, Learn prooflesson receipts, and Crucible-matched publishing boundary claims | Convert strongest dogfood packets into official paper candidates with Learn-backed reading plans and archive-ready copies | Do not claim arXiv metadata intake proves paper truth, that website copy is official submission/acceptance, that a Learn prooflesson proves the paper's strongest claims, or that source federation is clinical/robotics/protein validation. No promoted natural laws or solved grand challenges. Ninth-wave Learn `MATCH` is bounded to local package existence and boundary preservation only. |
+| Emet | Source-checkout selftest and 35/35 conformance vectors | Fix PATH wrapper before claiming installed command readiness | Do not claim trust, approval, or safety verdicts. Emet has no `TRUSTED` verdict. |
+
+## Best Near-Term Product Story
+
+The strongest outreach story is:
+
+> Telos gives AI agents a proof surface: sources in, context selected, action proposed, execution witnessed, claims measured, outputs packaged, and every stage re-checkable.
+
+The practical demo ladder should be:
+
+1. Show the 70-tool MCP catalog and host manifest as the live tool surface.
+2. Show a source-federation proof packet from Gather to Crucible.
+3. Show a Telos action/context packet that a parallel Codex session can post from.
+4. Add Learn and BuildLang as installed one-command demos once PATH/package wiring is proven.
+
+## Risks
+
+- `emet` PATH wrapper is broken in this environment.
+- `learn`, `buildc`, and `buildlang` are repo-available but not installed on PATH.
+- Build Universe is alpha and not whole-ecosystem compiling.
+- Historical docs still mention 65 tools because they are records of prior passes; current-state docs now state 70.
+- Node is `v25.2.1` in this shell. The package requires Node `>=20`, so tests pass, but public docs should avoid claiming a narrower runtime until CI proves it.
+
+## Immediate Next Actions
+
+1. Package three public demos: MCP freshness, source federation proof packet, and agent/action receipt proof loop.
+2. Fix or bypass `emet` PATH wrapper for checkout-based witness demos.
+3. Add Crucible measurement-gate support for temporal flicker, geometry curvature, interaction trace, uncertainty budget, and frame budget rows.
+4. Turn the Build Color CLI measurement record into a native `project-telos.measurement-layers/v1` color-specific packet.
+5. Keep the parallel posting session on a strict no-overclaim cadence: every post must cite one file, command, or receipt.

@@ -1,0 +1,87 @@
+{
+  "measurements": [
+    {
+      "claim": "Pass 0069 created a TelosMultiReceiptJoiner/v1 artifact with status TELOS_MULTIRECEIPT_JOINER_MATCH, sha256 35212426f08143e020eca5146908458d870de862490ba2b3d1558e94068d08a6, and seal 366d4dc9809aeb8e9db70f73c5d89e5bec7df9491939793e3e5f84eae96c87a0.",
+      "deviation": 0.0,
+      "evidence": [
+        "schema=TelosMultiReceiptJoiner/v1",
+        "status=TELOS_MULTIRECEIPT_JOINER_MATCH",
+        "sha256=35212426f08143e020eca5146908458d870de862490ba2b3d1558e94068d08a6",
+        "seal=366d4dc9809aeb8e9db70f73c5d89e5bec7df9491939793e3e5f84eae96c87a0"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0069 contains 6 component receipts covering required classes ['source_intake', 'workspace_context', 'routing', 'verification', 'continuity', 'action'].",
+      "deviation": 0.0,
+      "evidence": [
+        "component_count=6",
+        "required_classes=['source_intake', 'workspace_context', 'routing', 'verification', 'continuity', 'action']"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0069 product packet has component_count 6 and unsupported_claim_count 0.",
+      "deviation": 0.0,
+      "evidence": [
+        "component_count=6",
+        "unsupported_claim_count=0"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0069 contains 5 negative fixtures and 7 ablation results.",
+      "deviation": 0.0,
+      "evidence": [
+        "negative_fixture_count=5",
+        "ablation_count=7"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0069 raw_private_payload_required is False and model_reasoning_required_for_replay is False.",
+      "deviation": 0.0,
+      "evidence": [
+        "raw_private_payload_required=False",
+        "model_reasoning_required_for_replay=False"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0069 previous_pass_binding seal is 10e642fab785fa49d42fc6c1acc2ecca3d9bc3dad78a9b61abdf81e6678a2bf6.",
+      "deviation": 0.0,
+      "evidence": [
+        "previous_pass_binding=10e642fab785fa49d42fc6c1acc2ecca3d9bc3dad78a9b61abdf81e6678a2bf6"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0069 composer sha256 is acf5a294d2b3268fee47542740376b397d45a6ad839498090bad17a30a2c1abb and compose_receipt status is MATCH.",
+      "deviation": 0.0,
+      "evidence": [
+        "composer_sha256=acf5a294d2b3268fee47542740376b397d45a6ad839498090bad17a30a2c1abb",
+        "compose_status=MATCH"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0069 packet sha256 is f574a654b9b032c2ef9f8332d6bd000d4eeb8ae7b2f81f6b5279b4ef22c1341d, steelman sha256 is 99efb5f1ef21658adb8be29e64f127bf29291130d0a6e6596edd5f3af791e72e, and test sha256 is baac1d8c9f591fdb75cf1de1e04aa9c1726bc14a28c005bd71523f1df5d75e4a with test_receipt status MATCH.",
+      "deviation": 0.0,
+      "evidence": [
+        "packet_sha256=f574a654b9b032c2ef9f8332d6bd000d4eeb8ae7b2f81f6b5279b4ef22c1341d",
+        "steelman_sha256=99efb5f1ef21658adb8be29e64f127bf29291130d0a6e6596edd5f3af791e72e",
+        "test_sha256=baac1d8c9f591fdb75cf1de1e04aa9c1726bc14a28c005bd71523f1df5d75e4a",
+        "test_status=MATCH"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    }
+  ]
+}

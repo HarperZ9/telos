@@ -1,0 +1,46 @@
+{
+  "title": "Dogfood Pass 0016 Cloud Quantum Result Canonicalization",
+  "disposition": "fenced",
+  "claims": [
+    {
+      "text": "Pass 0016 created a CloudQuantumCanonicalizationSet/v1 artifact with status CANONICALIZATION_MATCH, three calibration reference profiles, three backend-kind mappings, five negative fixtures, and seal 11b2ee3baa95764f32395bb4a22e975a0f63b751c127f7f6b2351c79efb75915.",
+      "falsification": "schemas/cloud-quantum-canonicalization-pass-0016.json is missing, is not CloudQuantumCanonicalizationSet/v1, reports non-MATCH status, has fewer than three calibration profiles, fewer than three backend mappings, fewer than five negative fixtures, or lacks the expected seal"
+    },
+    {
+      "text": "Pass 0016 demonstrates a raw payload ordering fixture where semantically equal JSON payloads have different raw payload hashes but equal normalized result hashes.",
+      "falsification": "the raw-order-normalized-equality fixture is missing, parsed_payloads_equal is false, raw_payload_a_hash equals raw_payload_b_hash, or normalized_result_hash_a differs from normalized_result_hash_b"
+    },
+    {
+      "text": "Pass 0016 defines CloudQuantumResultCanonicalization/v1 with required raw payload hash, normalized result hash, canonicalization policy hash, and explicit lossiness labels.",
+      "falsification": "the canonicalization policy is missing, has a different schema, omits raw_payload_hash, normalized_result_hash, canonicalization_policy_hash, or lacks lossiness labels"
+    },
+    {
+      "text": "Pass 0016 defines calibration reference profiles for Amazon Braket, IBM Quantum Runtime, and Azure Quantum.",
+      "falsification": "any of calibration-ref-braket-device-properties, calibration-ref-ibm-backend-properties, or calibration-ref-azure-target-properties is missing"
+    },
+    {
+      "text": "Pass 0016 defines backend-kind mapping rules that reject hardware claims when simulator indicators match or QPU indicators are absent or unavailable.",
+      "falsification": "backend-kind mappings are missing for any provider or do not include a rule rejecting simulator or unverified hardware claims"
+    },
+    {
+      "text": "Pass 0016 defines CloudQuantumResourceEstimateReceiptProfile/v1 with physical_qubits, runtime, estimate payload hash, normalized estimate hash, and both execution_claim_allowed and hardware_claim_allowed set to false.",
+      "falsification": "the resource estimator profile is missing, has a different schema, omits any required estimator field, or allows execution or hardware claims"
+    },
+    {
+      "text": "Pass 0016 negative fixtures reject raw-only normalized claims, normalized-only forensic claims, nondeterministic payload order without policy hash, simulator-as-QPU claims, and resource-estimator-as-execution claims.",
+      "falsification": "any of the five expected negative fixture ids is missing or has expected_validator_status other than REJECT"
+    },
+    {
+      "text": "Pass 0016 validator reports MATCH with one matched check and zero drift.",
+      "falsification": "schemas/pass-0016-cloud-quantum-canonicalization-validator-result.json is missing, reports non-MATCH status, does not report match=1, or reports drift above zero"
+    },
+    {
+      "text": "Pass 0016 records tool receipts showing Index, Gather, Telos, Forum, and Crucible status MATCH while preserving Forum submit as UNVERIFIABLE due to executor JSON parsing.",
+      "falsification": "schemas/tool-receipts-pass-0016.json is missing, lacks any required tool status, or treats Forum submit as successful rather than UNVERIFIABLE"
+    },
+    {
+      "text": "Pass 0016 promotes zero new quantum hardware results, quantum advantage claims, theorem proofs, natural laws, or scientific discoveries.",
+      "falsification": "any pass 0016 artifact labels a new quantum hardware result, quantum advantage claim, theorem proof, natural law, biological result, material result, medical result, finance result, or safety result as promoted"
+    }
+  ]
+}

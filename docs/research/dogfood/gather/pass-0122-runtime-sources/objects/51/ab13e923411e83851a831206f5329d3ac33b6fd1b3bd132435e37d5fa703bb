@@ -1,0 +1,156 @@
+Skip to main content
+Back to top
+Ctrl+K
+User Guide
+API reference
+Building from source
+Development
+Release notes
+Learn
+NEPs
+Choose version
+GitHub
+User Guide
+API reference
+Building from source
+Development
+Release notes
+Learn
+NEPs
+Choose version
+GitHub
+Collapse Sidebar
+Expand Sidebar
+Section Navigation
+NumPy’s module structure
+Array objects
+Universal functions (ufunc)
+Routines and objects by topic
+Constants
+Array creation routines
+Array manipulation routines
+Bit-wise operations
+String functionality
+Datetime support functions
+Data type routines
+Mathematical functions with automatic domain
+Floating point error handling
+Exceptions and Warnings
+Discrete Fourier Transform
+Functional programming
+Input and output
+Indexing routines
+Linear algebra
+numpy.dot
+numpy.linalg.multi_dot
+numpy.vdot
+numpy.vecdot
+numpy.linalg.vecdot
+numpy.inner
+numpy.outer
+numpy.linalg.outer
+numpy.matmul
+numpy.linalg.matmul
+numpy.matvec
+numpy.vecmat
+numpy.tensordot
+numpy.linalg.tensordot
+numpy.einsum
+numpy.einsum_path
+numpy.linalg.matrix_power
+numpy.kron
+numpy.linalg.cross
+numpy.linalg.cholesky
+numpy.linalg.qr
+numpy.linalg.svd
+numpy.linalg.svdvals
+numpy.linalg.eig
+numpy.linalg.eigh
+numpy.linalg.eigvals
+numpy.linalg.eigvalsh
+numpy.linalg.norm
+numpy.linalg.matrix_norm
+numpy.linalg.vector_norm
+numpy.linalg.cond
+numpy.linalg.det
+numpy.linalg.matrix_rank
+numpy.linalg.slogdet
+numpy.trace
+numpy.linalg.trace
+numpy.linalg.solve
+numpy.linalg.tensorsolve
+numpy.linalg.lstsq
+numpy.linalg.inv
+numpy.linalg.pinv
+numpy.linalg.tensorinv
+numpy.diagonal
+numpy.linalg.diagonal
+numpy.linalg.matrix_transpose
+numpy.linalg.LinAlgError
+Logic functions
+Masked array operations
+Mathematical functions
+Miscellaneous routines
+Polynomials
+Random sampling
+Set routines
+Sorting, searching, and counting
+Statistics
+Test support
+Window functions
+Typing (numpy.typing)
+NumPy C-API
+Array API standard compatibility
+CPU/SIMD optimizations
+Thread Safety
+Global Configuration Options
+NumPy security
+Testing guidelines
+Status of numpy.distutils and migration advice
+NumPy and SWIG
+NumPy reference
+NumPy’s module structure
+Linear algebra
+numpy.linalg.det
+numpy.linalg.det#
+linalg.det(a)[source]#
+Compute the determinant of an array.
+Parameters:
+a(…, M, M) array_like
+Input array to compute determinants for.
+Returns:
+det(…) array_like
+Determinant of a.
+See also
+slogdet
+Another way to represent the determinant, more suitable for large matrices where underflow/overflow may occur.
+scipy.linalg.det
+Similar function in SciPy.
+Notes
+Broadcasting rules apply, see the numpy.linalg documentation for
+details.
+The determinant is computed via LU factorization using the LAPACK
+routine z/dgetrf.
+Examples
+Try it in your browser!
+The determinant of a 2-D array [[a, b], [c, d]] is ad - bc:
+>>> import numpy as np
+>>> a = np.array([[1, 2], [3, 4]])
+>>> np.linalg.det(a)
+-2.0 # may vary
+Computing determinants for a stack of matrices:
+>>> a = np.array([ [[1, 2], [3, 4]], [[1, 2], [2, 1]], [[1, 3], [3, 1]] ])
+>>> a.shape
+(3, 2, 2)
+>>> np.linalg.det(a)
+array([-2., -3., -8.])
+Go BackOpen In Tab
+previous
+numpy.linalg.cond
+next
+numpy.linalg.matrix_rank
+On this page
+linalg.det
+© Copyright 2008-2026, NumPy Developers.
+Created using Sphinx 7.2.6.
+Built with the PyData Sphinx Theme 0.17.1.

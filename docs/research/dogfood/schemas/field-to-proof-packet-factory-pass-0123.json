@@ -1,0 +1,556 @@
+{
+  "canonical_slots": [
+    "source_receipts",
+    "workspace_context",
+    "route_decision",
+    "claim_graph",
+    "oracle_or_protocol",
+    "runtime_or_formal_branch",
+    "verifier_verdict",
+    "negative_result_lane",
+    "buyer_brief",
+    "non_promotion_boundary"
+  ],
+  "coverage_experiment": {
+    "compliant_factory_count": 6,
+    "factory_count": 6,
+    "negative_fixture": {
+      "missing_slots": [
+        "verifier_verdict",
+        "negative_result_lane"
+      ],
+      "status": "REJECTED"
+    },
+    "required_slot_count": 10,
+    "schema": "FieldFactoryCoverageExperiment/v1",
+    "status": "MATCH"
+  },
+  "current_promoted_natural_laws": [],
+  "field_factories": [
+    {
+      "buyer": "AI platform, safety, compliance, and infra teams",
+      "claim_status": "HYPOTHESIS",
+      "demo_recommendation": "observability trace imported into action receipt with source refs, workspace state, authority scope, stop reason, and verdict",
+      "external_analogs": [
+        "LangSmith",
+        "Langfuse",
+        "Arize Phoenix",
+        "OpenTelemetry",
+        "Braintrust"
+      ],
+      "falsifier": "packet preserves traces but cannot bind authority, admission, side-effect class, and verifier result",
+      "field": "agent_infrastructure_and_regulated_ops",
+      "gap_status": "inferred",
+      "internal_nodes": [
+        "Forum",
+        "Index",
+        "Telos action receipts",
+        "loop ledger",
+        "Crucible"
+      ],
+      "market_product": "AgentActionProofPacketFactory",
+      "required_slots": [
+        "source_receipts",
+        "workspace_context",
+        "route_decision",
+        "claim_graph",
+        "oracle_or_protocol",
+        "runtime_or_formal_branch",
+        "verifier_verdict",
+        "negative_result_lane",
+        "buyer_brief",
+        "non_promotion_boundary"
+      ],
+      "scores": {
+        "adoption_friction": 3,
+        "budget": 5,
+        "demo_readiness": 5,
+        "integration_leverage": 4,
+        "proof_advantage": 5,
+        "total": 21,
+        "urgency": 5
+      },
+      "youtube_source_leads": [
+        "nYwid6Q5HXk"
+      ]
+    },
+    {
+      "buyer": "math labs, theory groups, AI proof teams",
+      "claim_status": "HYPOTHESIS",
+      "demo_recommendation": "pipeline-math++ packet with theorem target, source refs, verifier loop, counterexample lane, and formal replay boundary",
+      "external_analogs": [
+        "pipeline-math",
+        "LeanDojo",
+        "Lean",
+        "Semantic Scholar"
+      ],
+      "falsifier": "packet cannot identify theorem statement, assumptions, failed branches, verifier verdict, and non-promotion boundary",
+      "field": "formal_math_and_theoretical_cs",
+      "gap_status": "inferred",
+      "internal_nodes": [
+        "Gather",
+        "Index",
+        "Forum",
+        "Crucible",
+        "Telos",
+        "proof-target adapters"
+      ],
+      "market_product": "ResearchProofPacketFactory",
+      "required_slots": [
+        "source_receipts",
+        "workspace_context",
+        "route_decision",
+        "claim_graph",
+        "oracle_or_protocol",
+        "runtime_or_formal_branch",
+        "verifier_verdict",
+        "negative_result_lane",
+        "buyer_brief",
+        "non_promotion_boundary"
+      ],
+      "scores": {
+        "adoption_friction": 3,
+        "budget": 3,
+        "demo_readiness": 5,
+        "integration_leverage": 5,
+        "proof_advantage": 5,
+        "total": 20,
+        "urgency": 5
+      },
+      "youtube_source_leads": [
+        "4MQbd5wTlI8",
+        "EdVG5qNm2rY"
+      ]
+    },
+    {
+      "buyer": "AI4Science labs, biotech platform teams, translational research groups",
+      "claim_status": "HYPOTHESIS",
+      "demo_recommendation": "source claim to protocol skeleton with workflow runtime, measurement placeholder, negative result path, and reviewer objection ledger",
+      "external_analogs": [
+        "FutureHouse",
+        "Sakana AI Scientist",
+        "Microsoft Discovery",
+        "BioNeMo",
+        "Benchling"
+      ],
+      "falsifier": "packet asserts discovery before source, protocol, measurement, reproduction, and review gates are attached",
+      "field": "ai4science_biology_and_chemistry",
+      "gap_status": "inferred",
+      "internal_nodes": [
+        "Gather",
+        "Index",
+        "Forum",
+        "Crucible",
+        "Telos",
+        "workflow adapters",
+        "lab evidence adapters"
+      ],
+      "market_product": "ClaimToExperimentPacketFactory",
+      "required_slots": [
+        "source_receipts",
+        "workspace_context",
+        "route_decision",
+        "claim_graph",
+        "oracle_or_protocol",
+        "runtime_or_formal_branch",
+        "verifier_verdict",
+        "negative_result_lane",
+        "buyer_brief",
+        "non_promotion_boundary"
+      ],
+      "scores": {
+        "adoption_friction": 4,
+        "budget": 5,
+        "demo_readiness": 3,
+        "integration_leverage": 5,
+        "proof_advantage": 5,
+        "total": 19,
+        "urgency": 5
+      },
+      "youtube_source_leads": [
+        "YQWXxnkK4dw",
+        "HbKzqvey5PA"
+      ]
+    },
+    {
+      "buyer": "scientific computing, rendering, color, quant, finance, security, and HPC teams",
+      "claim_status": "HYPOTHESIS",
+      "demo_recommendation": "BuildLang/color/rendering measurement kit with oracle, compiler hash, runtime branch, measured output, and drift verdict",
+      "external_analogs": [
+        "Julia",
+        "JAX",
+        "MLIR",
+        "OpenXLA",
+        "Triton",
+        "Calman",
+        "ColourSpace"
+      ],
+      "falsifier": "packet cannot compare measured output against oracle or cannot bind compiler/runtime state",
+      "field": "scientific_runtime_compiler_and_color",
+      "gap_status": "inferred",
+      "internal_nodes": [
+        "BuildLang/buildc",
+        "build-universe",
+        "Crucible",
+        "Telos",
+        "color calibration",
+        "runtime receipts"
+      ],
+      "market_product": "ScientificRuntimeReceiptFactory",
+      "required_slots": [
+        "source_receipts",
+        "workspace_context",
+        "route_decision",
+        "claim_graph",
+        "oracle_or_protocol",
+        "runtime_or_formal_branch",
+        "verifier_verdict",
+        "negative_result_lane",
+        "buyer_brief",
+        "non_promotion_boundary"
+      ],
+      "scores": {
+        "adoption_friction": 4,
+        "budget": 4,
+        "demo_readiness": 4,
+        "integration_leverage": 5,
+        "proof_advantage": 5,
+        "total": 19,
+        "urgency": 5
+      },
+      "youtube_source_leads": [
+        "HbKzqvey5PA",
+        "cvL_uWtMTAo"
+      ]
+    },
+    {
+      "buyer": "bioinformatics, data engineering, platform research, wet-lab ops",
+      "claim_status": "HYPOTHESIS",
+      "demo_recommendation": "workflow run packet with inputs, environment, DAG/task refs, outputs, lineage, negative result, and reviewer verdict",
+      "external_analogs": [
+        "Nextflow",
+        "Snakemake",
+        "Jupyter",
+        "Benchling",
+        "OpenLineage"
+      ],
+      "falsifier": "packet cannot replay or explain the workflow environment, data lineage, output hash, and failed-run path",
+      "field": "workflow_reproducibility_and_lab_handoff",
+      "gap_status": "inferred",
+      "internal_nodes": [
+        "Gather",
+        "Index",
+        "Crucible",
+        "Telos",
+        "workflow adapters"
+      ],
+      "market_product": "WorkflowProofPacketFactory",
+      "required_slots": [
+        "source_receipts",
+        "workspace_context",
+        "route_decision",
+        "claim_graph",
+        "oracle_or_protocol",
+        "runtime_or_formal_branch",
+        "verifier_verdict",
+        "negative_result_lane",
+        "buyer_brief",
+        "non_promotion_boundary"
+      ],
+      "scores": {
+        "adoption_friction": 3,
+        "budget": 4,
+        "demo_readiness": 4,
+        "integration_leverage": 5,
+        "proof_advantage": 5,
+        "total": 19,
+        "urgency": 4
+      },
+      "youtube_source_leads": [
+        "YQWXxnkK4dw"
+      ]
+    },
+    {
+      "buyer": "research orgs, libraries, policy groups, frontier labs",
+      "claim_status": "HYPOTHESIS",
+      "demo_recommendation": "literature claim graph with every claim carrying source hash, confidence, contradiction status, and review lane",
+      "external_analogs": [
+        "Elicit",
+        "Consensus",
+        "Semantic Scholar",
+        "OpenAlex"
+      ],
+      "falsifier": "packet cannot distinguish source retrieval, claim extraction, contradiction, and verification status",
+      "field": "literature_and_open_knowledge_graphs",
+      "gap_status": "inferred",
+      "internal_nodes": [
+        "Gather",
+        "Index",
+        "Forum",
+        "Crucible",
+        "Telos"
+      ],
+      "market_product": "SourceToClaimGraphFactory",
+      "required_slots": [
+        "source_receipts",
+        "workspace_context",
+        "route_decision",
+        "claim_graph",
+        "oracle_or_protocol",
+        "runtime_or_formal_branch",
+        "verifier_verdict",
+        "negative_result_lane",
+        "buyer_brief",
+        "non_promotion_boundary"
+      ],
+      "scores": {
+        "adoption_friction": 2,
+        "budget": 3,
+        "demo_readiness": 4,
+        "integration_leverage": 5,
+        "proof_advantage": 4,
+        "total": 18,
+        "urgency": 4
+      },
+      "youtube_source_leads": []
+    }
+  ],
+  "flagship_receipts": {
+    "forum": {
+      "confidence": 0.0,
+      "decided": null,
+      "exit_code": 0,
+      "status": "MATCH",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "dcd59224832939736e898a63667b5aaa29a083e1d552311430c17477a438c8ea"
+    },
+    "index": {
+      "exit_code": 0,
+      "status": "MATCH",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "08d9ea82cc93d89ffcb53336db765c25ac592d3d7a6a74a68234390e64af243d",
+      "verification_verdict": "MATCH"
+    },
+    "telos": {
+      "exit_code": 0,
+      "status": "MATCH",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "be17cb15259234cb4e8e95c2b36e76c90d841431729beb140294e34c5f9ebfa7",
+      "tool_version": "0.1.0"
+    },
+    "telos_catalog": {
+      "exit_code": 0,
+      "status": "MATCH",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "ef95a6f1ff803c483c3c4dd553fe19c37ab144113a21bc005cf4148cf31a8564"
+    }
+  },
+  "generated_on": "2026-07-01",
+  "market_gap_status": "inferred",
+  "non_promotion_statement": "Pass 0123 packages field-to-proof factories and a coverage experiment. It does not prove market dominance, solve scientific fields, validate external video claims, or promote a natural law.",
+  "pass": "0123",
+  "primary_30_day_market_push": "field_to_proof_packet_factory_alpha",
+  "public_demo_sequence": [
+    "observability trace imported into action receipt with source refs, workspace state, authority scope, stop reason, and verdict",
+    "pipeline-math++ packet with theorem target, source refs, verifier loop, counterexample lane, and formal replay boundary",
+    "source claim to protocol skeleton with workflow runtime, measurement placeholder, negative result path, and reviewer objection ledger"
+  ],
+  "schema": "FieldToProofPacketFactorySpec/v1",
+  "seal": "acefddf43af3b88b1fe370d297c2a349a0abc9f8db713bb9332786ffbbf41d84",
+  "source_bindings": {
+    "agent_observability_pass": "0064",
+    "ai4science_pass": "0104",
+    "runtime_layer_pass": "0122",
+    "runtime_layer_seal": "135c16c1f6d840cbb26ae6ba9257b3863844035c90975e9248aa13ffc1899312",
+    "source_store": "gather/pass-0123-field-factory-sources",
+    "wedge_scorecard_pass": "0049",
+    "youtube_growth_pass": "0121",
+    "youtube_growth_seal": "701f68e23d84059f60dae4b0dbfb59dff4b1903f1012ca7193887b0da49b292b"
+  },
+  "source_matrix": [
+    {
+      "chars": 5477,
+      "gap_status": "inferred",
+      "gather_status": "GATHER_VERIFIED",
+      "label": "Arize Phoenix",
+      "role": "agent_observability",
+      "sha256": "a2d5cd711e4731b64dc90ed8138b0a811206c57895480f940b09e20a0c508770",
+      "title": "What is Arize Phoenix? - Phoenix",
+      "url": "https://arize.com/docs/phoenix"
+    },
+    {
+      "chars": 2317,
+      "gap_status": "inferred",
+      "gather_status": "GATHER_VERIFIED",
+      "label": "LangSmith",
+      "role": "agent_observability",
+      "sha256": "ecd9a383d5c1ee6a6fcb3525aa000c6700eb57b172604cb7cc8a6dbd795793b6",
+      "title": "LangSmith Observability - Docs by LangChain",
+      "url": "https://docs.langchain.com/langsmith/observability"
+    },
+    {
+      "chars": 4578,
+      "gap_status": "inferred",
+      "gather_status": "GATHER_VERIFIED",
+      "label": "Langfuse",
+      "role": "agent_observability",
+      "sha256": "6b3fdfe0c764bb315db0c622aa902502b75a5db6c38ae3a9b38cdc3bef702869",
+      "title": "LLM Observability & Application Tracing (Open Source) - Langfuse",
+      "url": "https://langfuse.com/docs/observability/overview"
+    },
+    {
+      "chars": 1597,
+      "gap_status": "inferred",
+      "gather_status": "GATHER_VERIFIED",
+      "label": "FutureHouse",
+      "role": "ai4science_agent",
+      "sha256": "2be8bb66ce248446ec6af62a56eb67494fe8e6269c7b6a500e950899fad03e2a",
+      "title": "FutureHouse",
+      "url": "https://www.futurehouse.org/"
+    },
+    {
+      "chars": 15311,
+      "gap_status": "inferred",
+      "gather_status": "GATHER_VERIFIED",
+      "label": "Sakana AI Scientist",
+      "role": "ai4science_agent",
+      "sha256": "f32c97db3e2954921e1d7696a7e607c092133f6b79cd0045edbcaa6a6a33dc5a",
+      "title": "The AI Scientist: Towards Fully Automated Open-Ended Scientific Discovery",
+      "url": "https://sakana.ai/ai-scientist/"
+    },
+    {
+      "chars": 9201,
+      "gap_status": "inferred",
+      "gather_status": "GATHER_VERIFIED",
+      "label": "NVIDIA BioNeMo",
+      "role": "biology_runtime",
+      "sha256": "4ac5a81c1de827c4c04f2b80d4af0774acc64dc5ea619cc43083d3300389e0fe",
+      "title": "Overview - BioNeMo",
+      "url": "https://docs.nvidia.com/bionemo-framework/latest/main/about/overview/"
+    },
+    {
+      "chars": 8241,
+      "gap_status": "inferred",
+      "gather_status": "GATHER_VERIFIED",
+      "label": "Microsoft Discovery",
+      "role": "enterprise_rd",
+      "sha256": "ef82778ca8ee7af20d57253a20eb5eb835105facb5b520677a2881cf5b13210d",
+      "title": "Microsoft Discovery | Microsoft Azure",
+      "url": "https://azure.microsoft.com/en-us/solutions/discovery"
+    },
+    {
+      "chars": 3096,
+      "gap_status": "inferred",
+      "gather_status": "GATHER_VERIFIED",
+      "label": "LeanDojo",
+      "role": "formal_proof",
+      "sha256": "48163dd24cba3d2af60de0c8b1ed4b97a08dea480f83ac05703008151554186b",
+      "title": "AI-Driven Formal Theorem Proving in the Lean Ecosystem",
+      "url": "https://leandojo.org/"
+    },
+    {
+      "chars": 5373,
+      "gap_status": "inferred",
+      "gather_status": "GATHER_VERIFIED",
+      "label": "pipeline-math",
+      "role": "formal_research_loop",
+      "sha256": "9940a3bdb6bd0f202e48f15e145765ee82e8c105892646c614dce0930f780428",
+      "title": "GitHub - Pengbinghui/pipeline-math  GitHub",
+      "url": "https://github.com/Pengbinghui/pipeline-math"
+    },
+    {
+      "chars": 4197,
+      "gap_status": "inferred",
+      "gather_status": "GATHER_VERIFIED",
+      "label": "Benchling",
+      "role": "lab_workflow",
+      "sha256": "3e1a916c40f59caa28a8a66e23172410169e5e8945ef8083e8dacf4c945707c5",
+      "title": "Cloud-based platform for biotech R&D | Benchling",
+      "url": "https://www.benchling.com/"
+    },
+    {
+      "chars": 3994,
+      "gap_status": "inferred",
+      "gather_status": "GATHER_VERIFIED",
+      "label": "OpenAlex docs",
+      "role": "literature_graph",
+      "sha256": "7f749637b4c478f4bcfe6f26b4ea02ea9061d600877de6e1ea56eb294302f9fb",
+      "title": "Overview - OpenAlex Developers",
+      "url": "https://docs.openalex.org/"
+    },
+    {
+      "chars": 0,
+      "gap_status": "inferred",
+      "gather_status": "GATHER_VERIFIED_EMPTY_TEXT",
+      "label": "OpenAlex home",
+      "role": "literature_graph",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "title": "OpenAlex",
+      "url": "https://openalex.org/"
+    },
+    {
+      "chars": 5382,
+      "gap_status": "inferred",
+      "gather_status": "GATHER_VERIFIED",
+      "label": "Semantic Scholar API",
+      "role": "literature_graph",
+      "sha256": "4057a97eae2f9ccc411a23bd74bed8c4ef75be8d9d13f3d52aeb5496e9ca59bd",
+      "title": "Semantic Scholar Academic Graph API | Semantic Scholar",
+      "url": "https://www.semanticscholar.org/product/api"
+    },
+    {
+      "chars": 47,
+      "gap_status": "inferred",
+      "gather_status": "GATHER_VERIFIED_SHORT_TEXT",
+      "label": "Consensus",
+      "role": "literature_intake",
+      "sha256": "df693da27eaa634dc506efc6a3044ee78220a8344ab6d4a1aee5fff7a85aade8",
+      "title": "Consensus: AI for Research",
+      "url": "https://consensus.app/"
+    },
+    {
+      "chars": 15401,
+      "gap_status": "inferred",
+      "gather_status": "GATHER_VERIFIED",
+      "label": "Elicit",
+      "role": "literature_intake",
+      "sha256": "018ad2dafc2fd79c02c8c274b9d4021f4385fd08fe0be24978a2c4f6d44a992f",
+      "title": "Elicit: AI for scientific research",
+      "url": "https://elicit.com/"
+    },
+    {
+      "chars": 3580,
+      "gap_status": "inferred",
+      "gather_status": "GATHER_VERIFIED",
+      "label": "Jupyter",
+      "role": "notebook_runtime",
+      "sha256": "fd2317e613e64941fb469f27a72e32b2d50043ea48e29fb220ceda8cd4a19703",
+      "title": "Project Jupyter | Home",
+      "url": "https://jupyter.org/"
+    },
+    {
+      "chars": 4846,
+      "gap_status": "inferred",
+      "gather_status": "GATHER_VERIFIED",
+      "label": "Nextflow",
+      "role": "workflow_runtime",
+      "sha256": "ffd8d356242ce4ffa6ae754e77565b6a937ef9e366a45c94ac0480abce12ce84",
+      "title": "A DSL for parallel and scalable computational pipelines | Nextflow",
+      "url": "https://www.nextflow.io/"
+    },
+    {
+      "chars": 5164,
+      "gap_status": "inferred",
+      "gather_status": "GATHER_VERIFIED",
+      "label": "Snakemake",
+      "role": "workflow_runtime",
+      "sha256": "b8a57f8f81185f1b5ea9aa10173fe59db8573ed458d4a5f1633f59b7a1297446",
+      "title": "Snakemake | Snakemake 9.23.1 documentation",
+      "url": "https://snakemake.readthedocs.io/"
+    }
+  ],
+  "status": "FIELD_TO_PROOF_PACKET_FACTORY_MATCH",
+  "uniqueness_claim_status": "HYPOTHESIS_ONLY",
+  "unsupported_claim_count": 0,
+  "validation_errors": []
+}

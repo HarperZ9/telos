@@ -1,0 +1,93 @@
+# Second-Wave Visibility Content Queue
+
+Date: 2026-07-02
+
+Use this queue after the first MCP freshness post. These posts are built from source-checkout experiments run locally on 2026-07-02.
+
+## Post 13: Learn As Evidence, Not Bypass
+
+Short post:
+
+> Learn is built around a boundary: help the learner practice, retrieve, explain, and reverify, but do not complete the proof for them. Current local checkout: 1.5.0, doctor `MATCH`, 53/53 tutor/prooflesson/reverify tests passing, and a research-proof study receipt that re-verifies from evidence.
+
+Evidence:
+
+- `C:\dev\public\learn\package.json`
+- `node C:\dev\public\learn\src\cli.mjs status`
+- `node C:\dev\public\learn\src\cli.mjs doctor`
+- `node --test tests\tutor.test.mjs tests\learn-study-cli.test.mjs tests\tutor-reverify.test.mjs tests\tutor-prooflesson.test.mjs`
+
+## Post 14: BuildLang Receipts
+
+Short post:
+
+> BuildLang/buildc is the compiler lane of Telos: source digests, typed effects, backend posture, policy receipts, and corpus verification. Current local checkout: `buildc` 1.0.6, C backend ready, `hello.bld` emits a passed receipt, and the semantic corpus reports 8 C executions passed.
+
+Evidence:
+
+- `C:\dev\public\pubscan\quantalang\compiler\Cargo.toml`
+- `buildc doctor` from an isolated Cargo target
+- `buildc check examples\quickstart\hello.bld --receipt -`
+- `buildc corpus verify`
+
+## Post 15: Emet Witness
+
+Short post:
+
+> Emet is intentionally narrow. It does not say trusted. It re-derives bytes and reports `MATCH`, `DRIFT`, or `UNVERIFIABLE`. Current local checkout: self hash `b75ae75283ae774d4d8fc68452de34636fc5e47fd544d1d2d1c9783f1f282f1a`, conformance 35/35.
+
+Evidence:
+
+- `python membrane.py selftest`
+- `python conformance\run.py membrane.py`
+
+Boundary:
+
+- Do not use the PATH wrapper in this shell until `ModuleNotFoundError: No module named 'warden_shell'` is fixed.
+
+## Post 16: One Packet, Many Uses
+
+Short post:
+
+> The Telos strategy is not one monolith. It is a proof packet moving across tools: Gather admits sources, Index bounds context, Forum routes, Crucible judges claims, Telos records actions, Learn turns packets into study pressure, BuildLang emits executable receipts, and Emet checks source/view consistency.
+
+Evidence:
+
+- `docs/outreach/SECOND-WAVE-DEMO-PACKAGES-2026-07-02.md`
+- `docs/outreach/receipts/second-wave-tooling-report-2026-07-02.md`
+
+## Post 17: Compiler Plus Learning Loop
+
+Short post:
+
+> A BuildLang receipt can become a Learn lesson: not an answer dump, but retrieval prompts, misconception labels, and re-verification. That is the pattern Telos should repeat across math, physics, biology, robotics, security, finance, and visual systems.
+
+Evidence:
+
+- Learn prooflesson tests: `tests\tutor-prooflesson.test.mjs`
+- BuildLang receipt: `buildlang-check-receipt/v1`
+
+## Post 18: Honest Backend Posture
+
+Short post:
+
+> BuildLang's current doctor output is more useful because it is honest: C backend ready; HLSL/GLSL supported; SPIR-V/LLVM/WASM/Rust/native backends experimental; stdlib not found in this shell; optional tools missing unless installed. A proof stack should say what is ready and what is not.
+
+Evidence:
+
+- `buildc doctor`
+
+## Post 19: What To Build Next
+
+Short post:
+
+> The next demo to package is a broader closed loop: source paper -> Gather receipt -> Crucible proof packet -> Learn prooflesson -> BuildLang executable check -> Emet witness -> Telos action receipt. The first closed-loop compiler/lesson/measurement package now exists as the third-wave demo.
+
+Evidence:
+
+- `docs/outreach/SECOND-WAVE-DEMO-PACKAGES-2026-07-02.md`
+- `docs/outreach/THIRD-WAVE-CLOSED-LOOP-DEMO-2026-07-02.md`
+
+## Operating Rule
+
+Re-run the command in the posting session before publishing any version, digest, count, or pass/fail number.

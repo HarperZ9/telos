@@ -1,0 +1,226 @@
+{
+  "schema": "BuildScientificRuntimeReceiptSet/v1",
+  "pass": "0010",
+  "generated_on": "2026-07-01",
+  "receipts": [
+    {
+      "receipt_id": "buildlang-scirun-heat-energy-stable-pass-0010",
+      "schema": "BuildScientificRuntimeReceipt/v1",
+      "role": "primary_positive",
+      "claim_id": "claim-bounded-stable-cfl-witness",
+      "domain": "physics-pde-scientific-compute",
+      "source_state": {
+        "workspace": "C:\\dev\\public\\telos",
+        "head": "1046c81",
+        "source_files": [
+          "docs/research/dogfood/tools/probe_heat_equation_energy.py",
+          "docs/research/dogfood/schemas/heat-equation-energy-probe-pass-0009.json",
+          "docs/research/dogfood/packets/019-heat-equation-energy-proof.md"
+        ],
+        "source_refs": [
+          "schemas/heat-equation-energy-probe-pass-0009.json",
+          "schemas/heat-equation-proof-packet-pass-0009.json"
+        ],
+        "source_hash": "b3021c14b0e5dc8adeddadf0d22e2780dbf259c349caf5cbc2ba255b591fd7d5"
+      },
+      "build_state": {
+        "compiler": "buildc",
+        "compiler_status": "ADAPTER_FIXTURE_NOT_BUILDC_EXECUTED",
+        "target": "cpu-generic-deterministic",
+        "flags": [
+          "--deterministic",
+          "--emit-receipt",
+          "--invariant=energy-monotone"
+        ],
+        "dependencies": [
+          {
+            "name": "python-probe-fixture",
+            "version": "local-pass-0009"
+          }
+        ],
+        "build_hash": "adapter-fixture-pass-0010-stable"
+      },
+      "runtime_state": {
+        "runtime": "python fixture standing in for planned BuildLang/buildc runtime receipt",
+        "os": "Windows",
+        "hardware": "local CPU",
+        "seed": "deterministic-no-random-seed",
+        "environment_hash": "adapter-fixture-environment-pass-0010"
+      },
+      "problem_state": {
+        "equation": "u_t = alpha u_xx",
+        "domain": "[0,1]",
+        "boundary_conditions": "zero Dirichlet",
+        "discretization": {
+          "scheme": "explicit finite difference",
+          "grid_points": 129,
+          "alpha": 1.0,
+          "dx": 0.0078125,
+          "dt": 0.0000274658203125,
+          "cfl": 0.45,
+          "steps": 400
+        }
+      },
+      "measurement_state": {
+        "metric": "discrete_l2_energy_monotonicity",
+        "observed": {
+          "initial_energy": 0.53125,
+          "final_energy": 0.4069449317114255,
+          "max_single_step_increase": 0.0,
+          "increase_count": 0
+        },
+        "threshold": {
+          "max_single_step_increase": 0.0,
+          "increase_count": 0
+        },
+        "units": "dimensionless discrete energy"
+      },
+      "invariant_checks": [
+        {
+          "invariant": "energy_non_increasing",
+          "expected": "max_single_step_increase <= 0 and increase_count == 0",
+          "observed": "max_single_step_increase=0.0 and increase_count=0",
+          "tolerance": 0.0,
+          "status": "PASS"
+        }
+      ],
+      "negative_fixture": false,
+      "verification_verdicts": [
+        {
+          "verifier": "HeatEquationEnergyProbe",
+          "status": "PROBE_MATCH",
+          "evidence_ref": "schemas/heat-equation-energy-probe-pass-0009.json"
+        },
+        {
+          "verifier": "Pass0010ScientificRuntimeReceiptValidator",
+          "status": "MATCH",
+          "evidence_ref": "schemas/pass-0010-scientific-runtime-validator-result.json"
+        },
+        {
+          "verifier": "Crucible",
+          "status": "MATCH",
+          "evidence_ref": "crucible/pass-0010-report.md"
+        }
+      ],
+      "failure_labels": [
+        "NOT_A_NEW_PHYSICAL_LAW",
+        "BUILDC_NOT_EXECUTED_IN_THIS_PASS",
+        "FINITE_PROBE_NOT_UNIVERSAL"
+      ],
+      "promotion_state": "SCHEMA_FIXTURE",
+      "receipt_status": "PASS"
+    },
+    {
+      "receipt_id": "buildlang-scirun-heat-energy-unstable-negative-pass-0010",
+      "schema": "BuildScientificRuntimeReceipt/v1",
+      "role": "negative_fixture",
+      "claim_id": "claim-negative-unstable-cfl-fixture",
+      "domain": "physics-pde-scientific-compute",
+      "source_state": {
+        "workspace": "C:\\dev\\public\\telos",
+        "head": "1046c81",
+        "source_files": [
+          "docs/research/dogfood/tools/probe_heat_equation_energy.py",
+          "docs/research/dogfood/schemas/heat-equation-energy-probe-pass-0009.json"
+        ],
+        "source_refs": [
+          "schemas/heat-equation-energy-probe-pass-0009.json"
+        ],
+        "source_hash": "b3021c14b0e5dc8adeddadf0d22e2780dbf259c349caf5cbc2ba255b591fd7d5"
+      },
+      "build_state": {
+        "compiler": "buildc",
+        "compiler_status": "ADAPTER_FIXTURE_NOT_BUILDC_EXECUTED",
+        "target": "cpu-generic-deterministic",
+        "flags": [
+          "--deterministic",
+          "--emit-receipt",
+          "--invariant=energy-monotone",
+          "--negative-fixture"
+        ],
+        "dependencies": [
+          {
+            "name": "python-probe-fixture",
+            "version": "local-pass-0009"
+          }
+        ],
+        "build_hash": "adapter-fixture-pass-0010-unstable"
+      },
+      "runtime_state": {
+        "runtime": "python fixture standing in for planned BuildLang/buildc runtime receipt",
+        "os": "Windows",
+        "hardware": "local CPU",
+        "seed": "deterministic-no-random-seed",
+        "environment_hash": "adapter-fixture-environment-pass-0010"
+      },
+      "problem_state": {
+        "equation": "u_t = alpha u_xx",
+        "domain": "[0,1]",
+        "boundary_conditions": "zero Dirichlet",
+        "discretization": {
+          "scheme": "explicit finite difference",
+          "grid_points": 129,
+          "alpha": 1.0,
+          "dx": 0.0078125,
+          "dt": 0.0000335693359375,
+          "cfl": 0.55,
+          "steps": 400
+        }
+      },
+      "measurement_state": {
+        "metric": "discrete_l2_energy_monotonicity_negative_fixture",
+        "observed": {
+          "initial_energy": 0.53125,
+          "final_energy": 1.5979193736301155e+28,
+          "max_single_step_increase": 4.857579569627854e+27,
+          "increase_count": 199,
+          "first_increase_step": 201
+        },
+        "threshold": {
+          "max_single_step_increase": 0.0,
+          "increase_count": 0
+        },
+        "units": "dimensionless discrete energy"
+      },
+      "invariant_checks": [
+        {
+          "invariant": "energy_non_increasing",
+          "expected": "negative fixture should violate the monotonicity threshold",
+          "observed": "increase_count=199 and first_increase_step=201",
+          "tolerance": 0.0,
+          "status": "FAIL_EXPECTED"
+        }
+      ],
+      "negative_fixture": true,
+      "verification_verdicts": [
+        {
+          "verifier": "HeatEquationEnergyProbe",
+          "status": "PROBE_MATCH",
+          "evidence_ref": "schemas/heat-equation-energy-probe-pass-0009.json"
+        },
+        {
+          "verifier": "Pass0010ScientificRuntimeReceiptValidator",
+          "status": "MATCH",
+          "evidence_ref": "schemas/pass-0010-scientific-runtime-validator-result.json"
+        },
+        {
+          "verifier": "Crucible",
+          "status": "MATCH",
+          "evidence_ref": "crucible/pass-0010-report.md"
+        }
+      ],
+      "failure_labels": [
+        "EXPECTED_NEGATIVE_FIXTURE",
+        "NOT_A_NEW_PHYSICAL_LAW",
+        "BUILDC_NOT_EXECUTED_IN_THIS_PASS",
+        "FINITE_PROBE_NOT_UNIVERSAL"
+      ],
+      "promotion_state": "SCHEMA_FIXTURE",
+      "receipt_status": "FAIL_EXPECTED"
+    }
+  ],
+  "decision": {
+    "status": "SCHEMA_READY_FOR_BUILDC_ADAPTER",
+    "next_action": "make buildc emit this receipt shape from an actual compiled kernel, then compare the emitted receipt to the adapter fixture"
+  }
+}

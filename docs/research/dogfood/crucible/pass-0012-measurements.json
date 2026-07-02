@@ -1,0 +1,115 @@
+{
+  "measurements": [
+    {
+      "claim": "Pass 0012 created a NoCloningProbe/v1 artifact reporting PROBE_MATCH: CNOT clones |0> and |1> basis fixtures with fidelity 1.0 and fails the |+> superposition clone fixture with fidelity 0.5.",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "method": "probe-review",
+      "evidence": [
+        "schemas/no-cloning-probe-pass-0012.json schema=NoCloningProbe/v1",
+        "status=PROBE_MATCH",
+        "basis check |0>|0> fidelity=1.0 status=PASS",
+        "basis check |1>|0> fidelity=1.0 status=PASS",
+        "superposition_negative_fixture status=FAILS_SUPERPOSITION",
+        "superposition fidelity_to_desired_clone=0.5",
+        "probe seal=c8c9baf1cebd832cc4f49caca611fc3c578ab8511c2b01b51ba9d6bc1a2b270a"
+      ]
+    },
+    {
+      "claim": "Pass 0012 records the inner-product no-cloning impossibility for |0> and |+>, including overlap 0.707106781186547, overlap_squared 0.5, and positive defect 0.207106781186548.",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "method": "inner-product-review",
+      "evidence": [
+        "inner_product_impossibility states include |0> and |+>",
+        "overlap=0.707106781186547",
+        "overlap_squared=0.5",
+        "defect=0.207106781186548",
+        "status=IMPOSSIBLE_FOR_NONORTHOGONAL_DISTINCT_STATES"
+      ]
+    },
+    {
+      "claim": "Pass 0012 created a 13-row quantum market map covering quantum-sdk, cloud-platform, hardware-platform, quantum-ai, quantum-compiler, neutral-atom, and annealing categories.",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "method": "market-map-review",
+      "evidence": [
+        "schemas/quantum-computing-market-map-pass-0012.json rows=13",
+        "category quantum-sdk present",
+        "category cloud-platform present",
+        "category hardware-platform present",
+        "category quantum-ai present",
+        "category quantum-compiler present",
+        "category neutral-atom present",
+        "category annealing present"
+      ]
+    },
+    {
+      "claim": "Every pass 0012 market-map row includes an HTTPS source URL, proof receipt gap, Telos wedge hypothesis, gap status, and confidence label.",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "method": "market-row-field-review",
+      "evidence": [
+        "validator required_fields includes source_url",
+        "validator required_fields includes proof_receipt_gap",
+        "validator required_fields includes telos_wedge_hypothesis",
+        "validator required_fields includes gap_status",
+        "validator required_fields includes confidence",
+        "validator rejects non-HTTPS source URLs",
+        "validator restricts gap_status to verified, inferred, or unverified"
+      ]
+    },
+    {
+      "claim": "Pass 0012 created a ProofPacket/v1 no-cloning packet with at least four claims and no PROMOTED_LAW state.",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "method": "proof-packet-review",
+      "evidence": [
+        "schemas/no-cloning-proof-packet-pass-0012.json schema=ProofPacket/v1",
+        "packet_id=proof-packet-pass-0012-no-cloning",
+        "claim_count=4",
+        "failure_labels include NOT_A_NEW_THEOREM",
+        "failure_labels include NO_QUANTUM_HARDWARE_RUN",
+        "validator rejects PROMOTED_LAW in pass 0012 packet"
+      ]
+    },
+    {
+      "claim": "The pass 0012 validators report MATCH: the quantum validator reports three matches and zero drift, and the proof-packet validator reports one match and zero drift.",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "method": "validator-run-review",
+      "evidence": [
+        "schemas/pass-0012-quantum-validator-result.json status=MATCH",
+        "schemas/pass-0012-quantum-validator-result.json match=3",
+        "schemas/pass-0012-quantum-validator-result.json drift=0",
+        "schemas/proof-packet-validator-pass-0012.json status=MATCH",
+        "schemas/proof-packet-validator-pass-0012.json match=1",
+        "schemas/proof-packet-validator-pass-0012.json drift=0"
+      ]
+    },
+    {
+      "claim": "Pass 0012 attempted Forum steelman twice but preserved the executor JSON error as UNVERIFIABLE rather than treating it as a successful Forum adversarial result.",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "method": "forum-receipt-review",
+      "evidence": [
+        "adversarial/pass-0012-forum-steelman.md status=UNVERIFIABLE",
+        "adversarial/pass-0012-forum-steelman.md records configured executor did not return valid JSON",
+        "schemas/no-cloning-proof-packet-pass-0012.json ForumSteelman status=UNVERIFIABLE",
+        "local steelman is labeled local rather than Forum-verified"
+      ]
+    },
+    {
+      "claim": "Pass 0012 promotes zero new theorems, quantum hardware results, quantum advantage claims, cryptographic breaks, natural laws, or scientific discoveries.",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "method": "artifact-review",
+      "evidence": [
+        "packets/022-quantum-no-cloning-proof-packet.md Non-Promotion Statement promotes no new theorem or hardware result",
+        "schemas/no-cloning-proof-packet-pass-0012.json failure label NOT_A_NEW_THEOREM",
+        "schemas/no-cloning-proof-packet-pass-0012.json failure label NO_QUANTUM_HARDWARE_RUN",
+        "no pass 0012 claim uses PROMOTED_LAW"
+      ]
+    }
+  ]
+}

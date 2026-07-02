@@ -1,0 +1,42 @@
+{
+  "title": "Dogfood Pass 0018 Quantum Strict Canonicalization Adapters",
+  "disposition": "fenced",
+  "claims": [
+    {
+      "text": "Pass 0018 created a QuantumStrictCanonicalizationAdapterSet/v1 artifact with status STRICT_ADAPTER_MATCH, five adapter profiles, nine negative fixtures, eight source anchors, and seal 0727efc532db5c9c759bec5319d0ab547942129880d20823764cba12edd007fd.",
+      "falsification": "schemas/quantum-strict-canonicalization-adapters-pass-0018.json is missing, is not QuantumStrictCanonicalizationAdapterSet/v1, reports non-MATCH status, has fewer than five adapters, fewer than nine negative fixtures, fewer than eight source anchors, or lacks the expected seal"
+    },
+    {
+      "text": "Pass 0018 defines StrictQuantumCanonicalizationPolicy/v1 requiring duplicate JSON key detection, binary payload media type and content hash, object-storage content hash, floating-point precision policy, and policy hash a54c16072736fa63bece139a42caf3265931553087cbca8738058ad7dbd57e62.",
+      "falsification": "the strict policy is missing, has a different schema, omits any required policy, or lacks the expected policy hash"
+    },
+    {
+      "text": "Pass 0018 defines layout adapters for Qiskit, Amazon Braket, Cirq, PennyLane, and QIR.",
+      "falsification": "any of layout-adapter-qiskit, layout-adapter-amazon-braket, layout-adapter-cirq, layout-adapter-pennylane, or layout-adapter-qir is missing"
+    },
+    {
+      "text": "Each pass 0018 adapter is a QuantumRegisterLayoutAdapter/v1 with HTTPS source anchor, required receipt fields, adapter status, and adapter hash.",
+      "falsification": "any adapter has the wrong schema, lacks HTTPS source, lacks required receipt fields, lacks adapter status, or lacks adapter hash"
+    },
+    {
+      "text": "Pass 0018 defines QuantumPostProcessingOperation/v1 baseline with input hash, output hash, parameter hash, operation hash, and deterministic=true.",
+      "falsification": "the post-processing operation is missing, has a different schema, omits any required hash, or is not deterministic"
+    },
+    {
+      "text": "Pass 0018 negative fixtures reject duplicate JSON keys, binary-as-JSON parsing, object-storage URI without content hash, float result without precision policy, mismatched framework adapter, Cirq histogram without fold_func, PennyLane counts without wire order, QIR result without record map, and post-processing without hashes.",
+      "falsification": "any of the nine expected negative fixture ids is missing or has expected_validator_status other than REJECT"
+    },
+    {
+      "text": "Pass 0018 validator reports MATCH with one matched check and zero drift.",
+      "falsification": "schemas/pass-0018-strict-canonicalization-adapter-validator-result.json is missing, reports non-MATCH status, does not report match=1, or reports drift above zero"
+    },
+    {
+      "text": "Pass 0018 records tool receipts showing Index, Gather, Telos, Forum, and Crucible status MATCH while preserving Forum submit as UNVERIFIABLE due to executor JSON parsing.",
+      "falsification": "schemas/tool-receipts-pass-0018.json is missing, lacks any required tool status, or treats Forum submit as successful rather than UNVERIFIABLE"
+    },
+    {
+      "text": "Pass 0018 promotes zero quantum jobs, quantum hardware results, quantum advantage claims, theorem proofs, natural laws, or scientific discoveries.",
+      "falsification": "any pass 0018 artifact labels a new quantum job, hardware result, quantum advantage claim, theorem proof, natural law, or scientific discovery as promoted"
+    }
+  ]
+}

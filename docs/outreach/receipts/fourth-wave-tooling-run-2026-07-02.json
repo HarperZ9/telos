@@ -1,0 +1,288 @@
+{
+  "ok": true,
+  "thesis": {
+    "id": "a3c71640c0552a19",
+    "title": "Project Telos Fourth-Wave Measurement Gate And Negative Fixture Claims",
+    "registered_at": 1782983988.7427258,
+    "disposition": "fenced",
+    "seal": "a3c71640c0552a19ee49c256e1dd4398b0b25bf1f57ebfe320210e66f394ac56",
+    "claims": [
+      {
+        "id": "f9a167ad434aa4dd",
+        "sha256": "f9a167ad434aa4dd39c24395fc9e1c3ab3d2af60e2ee8fe2a87254cf28eef994"
+      },
+      {
+        "id": "e1c55748d7f4f27e",
+        "sha256": "e1c55748d7f4f27e35191054cb5ca9bb677527ef792d60390dcaf014dcaf1a36"
+      },
+      {
+        "id": "cd78c6977cca4010",
+        "sha256": "cd78c6977cca40106f1cf3f6be100a0cf3c4a388ed11930843ef6d08725dd262"
+      },
+      {
+        "id": "f3eff0d9ce10174f",
+        "sha256": "f3eff0d9ce10174f51869209458bd03a188dd2fe5aaaed7f05e9726efbc3bb38"
+      },
+      {
+        "id": "12b890e3da1844f4",
+        "sha256": "12b890e3da1844f4b1d84a26b9296b52dbc5ff2e75e95622ec56d23e769e9c09"
+      }
+    ]
+  },
+  "refutations": [
+    {
+      "claim_id": "f9a167ad434aa4dd",
+      "claim_sha256": "f9a167ad434aa4dd39c24395fc9e1c3ab3d2af60e2ee8fe2a87254cf28eef994",
+      "challenge": "test the stated falsification: The positive packet is missing, cannot be parsed as UTF-8 JSON, or crucible measurement-gate does not return MATCH/allow with five matched rows.",
+      "measurable": "The positive packet is missing, cannot be parsed as UTF-8 JSON, or crucible measurement-gate does not return MATCH/allow with five matched rows.",
+      "source": "null"
+    },
+    {
+      "claim_id": "e1c55748d7f4f27e",
+      "claim_sha256": "e1c55748d7f4f27e35191054cb5ca9bb677527ef792d60390dcaf014dcaf1a36",
+      "challenge": "test the stated falsification: The negative criteria file is missing, the negative gate returns MATCH/allow, or the histogram row does not report pixel_dimensions_mismatch.",
+      "measurable": "The negative criteria file is missing, the negative gate returns MATCH/allow, or the histogram row does not report pixel_dimensions_mismatch.",
+      "source": "null"
+    },
+    {
+      "claim_id": "cd78c6977cca4010",
+      "claim_sha256": "cd78c6977cca40106f1cf3f6be100a0cf3c4a388ed11930843ef6d08725dd262",
+      "challenge": "test the stated falsification: Learn accepts the forged packet, exits 0, or writes a prooflesson receipt.",
+      "measurable": "Learn accepts the forged packet, exits 0, or writes a prooflesson receipt.",
+      "source": "null"
+    },
+    {
+      "claim_id": "f3eff0d9ce10174f",
+      "claim_sha256": "f3eff0d9ce10174f51869209458bd03a188dd2fe5aaaed7f05e9726efbc3bb38",
+      "challenge": "test the stated falsification: The docs claim all ten Telos measurement layers are currently accepted by crucible measurement-gate.",
+      "measurable": "The docs claim all ten Telos measurement layers are currently accepted by crucible measurement-gate.",
+      "source": "null"
+    },
+    {
+      "claim_id": "12b890e3da1844f4",
+      "claim_sha256": "12b890e3da1844f4b1d84a26b9296b52dbc5ff2e75e95622ec56d23e769e9c09",
+      "challenge": "test the stated falsification: The content queue omits either the positive measurement-gate result or the negative fixture result.",
+      "measurable": "The content queue omits either the positive measurement-gate result or the negative fixture result.",
+      "source": "null"
+    }
+  ],
+  "assessment": {
+    "started_at": 1782983988.7518497,
+    "thesis_id": "a3c71640c0552a19",
+    "thesis_seal": "a3c71640c0552a19ee49c256e1dd4398b0b25bf1f57ebfe320210e66f394ac56",
+    "claims": 5,
+    "match": 5,
+    "drift": 0,
+    "unverifiable": 0,
+    "verdict_seal": "90ee9cee37e60a92d93e2a685533e54468bc6ad4a464bb4d5bfc932f725f4a04",
+    "measurement_seal": "a6e8d293f3c0fd3e8fd948084d1429a80e503f728bf0b5eeccd11a156a443ab2",
+    "disposition": "fenced",
+    "stored": null,
+    "verdicts": [
+      {
+        "claim_id": "f9a167ad434aa4dd",
+        "claim_sha256": "f9a167ad434aa4dd39c24395fc9e1c3ab3d2af60e2ee8fe2a87254cf28eef994",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "measurement-gate-command-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "e1c55748d7f4f27e",
+        "claim_sha256": "e1c55748d7f4f27e35191054cb5ca9bb677527ef792d60390dcaf014dcaf1a36",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "negative-measurement-gate-command-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "cd78c6977cca4010",
+        "claim_sha256": "cd78c6977cca40106f1cf3f6be100a0cf3c4a388ed11930843ef6d08725dd262",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "negative-prooflesson-command-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "f3eff0d9ce10174f",
+        "claim_sha256": "f3eff0d9ce10174f51869209458bd03a188dd2fe5aaaed7f05e9726efbc3bb38",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "document-boundary-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "12b890e3da1844f4",
+        "claim_sha256": "12b890e3da1844f4b1d84a26b9296b52dbc5ff2e75e95622ec56d23e769e9c09",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "document-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      }
+    ],
+    "measurements": [
+      {
+        "claim_id": "f9a167ad434aa4dd",
+        "claim_sha256": "f9a167ad434aa4dd39c24395fc9e1c3ab3d2af60e2ee8fe2a87254cf28eef994",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "measurement-gate-command-review",
+        "measured_at": 1782983988.7518497,
+        "evidence": [
+          "docs/outreach/receipts/fourth-wave-measurement-gate-packet.json exists and has schema project-telos.measurement-layers/v1",
+          "packet layers are visual.histogram-field, visual.dither-spectrum-meter, spatial.splat-probe, lighting.cluster-meter, and audio.spectral-meter",
+          "crucible measurement-gate with positive criteria returned verification_verdict MATCH",
+          "positive result decision_outcome allow and summary MATCH 5 / DRIFT 0 / UNVERIFIABLE 0"
+        ]
+      },
+      {
+        "claim_id": "e1c55748d7f4f27e",
+        "claim_sha256": "e1c55748d7f4f27e35191054cb5ca9bb677527ef792d60390dcaf014dcaf1a36",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "negative-measurement-gate-command-review",
+        "measured_at": 1782983988.7518497,
+        "evidence": [
+          "docs/outreach/receipts/fourth-wave-measurement-gate-negative-criteria.json requires visual.histogram-field expected_total_pixels 32",
+          "negative result returned verification_verdict UNVERIFIABLE",
+          "negative result decision_outcome block",
+          "negative result failure_codes includes pixel_dimensions_mismatch"
+        ]
+      },
+      {
+        "claim_id": "cd78c6977cca4010",
+        "claim_sha256": "cd78c6977cca40106f1cf3f6be100a0cf3c4a388ed11930843ef6d08725dd262",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "negative-prooflesson-command-review",
+        "measured_at": 1782983988.7518497,
+        "evidence": [
+          "docs/outreach/receipts/fourth-wave-forged-proof-packet.json uses verdicts.overall VERIFIED_SUPREME",
+          "learn tutor prooflesson forged exited 1",
+          "observed output says illegal verdict enum VERIFIED_SUPREME",
+          "receipt_exists false in docs/outreach/receipts/fourth-wave-negative-prooflesson-result.json"
+        ]
+      },
+      {
+        "claim_id": "f3eff0d9ce10174f",
+        "claim_sha256": "f3eff0d9ce10174f51869209458bd03a188dd2fe5aaaed7f05e9726efbc3bb38",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "document-boundary-review",
+        "measured_at": 1782983988.7518497,
+        "evidence": [
+          "docs/outreach/FOURTH-WAVE-MEASUREMENT-GATE-DEMO-2026-07-02.md states current Crucible gate verifies five layer types",
+          "same doc states Telos broader measurement bus reports ten layers and not all ten are accepted by crucible measurement-gate",
+          "docs/outreach/FOURTH-WAVE-CONTENT-QUEUE-2026-07-02.md repeats the five-vs-ten boundary"
+        ]
+      },
+      {
+        "claim_id": "12b890e3da1844f4",
+        "claim_sha256": "12b890e3da1844f4b1d84a26b9296b52dbc5ff2e75e95622ec56d23e769e9c09",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "document-review",
+        "measured_at": 1782983988.7518497,
+        "evidence": [
+          "Post 26 cites positive and negative measurement-gate result files",
+          "Post 28 cites the forged proof packet and negative prooflesson result",
+          "Operating rule says to pair the positive result with the negative fixture"
+        ]
+      }
+    ],
+    "seal": "849dbf47f4b4786ff5798605ecf27faf196ceb41352c313aec103eda9f28733a"
+  },
+  "verdicts": [
+    {
+      "claim_id": "f9a167ad434aa4dd",
+      "claim_sha256": "f9a167ad434aa4dd39c24395fc9e1c3ab3d2af60e2ee8fe2a87254cf28eef994",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "measurement-gate-command-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "e1c55748d7f4f27e",
+      "claim_sha256": "e1c55748d7f4f27e35191054cb5ca9bb677527ef792d60390dcaf014dcaf1a36",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "negative-measurement-gate-command-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "cd78c6977cca4010",
+      "claim_sha256": "cd78c6977cca40106f1cf3f6be100a0cf3c4a388ed11930843ef6d08725dd262",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "negative-prooflesson-command-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "f3eff0d9ce10174f",
+      "claim_sha256": "f3eff0d9ce10174f51869209458bd03a188dd2fe5aaaed7f05e9726efbc3bb38",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "document-boundary-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "12b890e3da1844f4",
+      "claim_sha256": "12b890e3da1844f4b1d84a26b9296b52dbc5ff2e75e95622ec56d23e769e9c09",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "document-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    }
+  ],
+  "measurement_warnings": [],
+  "checks": {
+    "seals_ok": true,
+    "thesis_ok": true,
+    "verdicts_rederive": true
+  },
+  "report": "docs\\outreach\\receipts\\fourth-wave-tooling-report-2026-07-02.md",
+  "record": "docs\\outreach\\receipts\\fourth-wave-tooling-run-2026-07-02.json",
+  "bundle": null,
+  "spec": null,
+  "review": null,
+  "verifier": {
+    "mode": "cleanroom",
+    "inputs": [],
+    "excluded": [
+      "worker context",
+      "reasoning trace",
+      "intermediate steps"
+    ],
+    "checkability": "If success cannot be evaluated from the original spec and the artifact, the spec is not checkable yet."
+  }
+}

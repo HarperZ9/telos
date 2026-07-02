@@ -1,0 +1,112 @@
+{
+  "schema": "DogfoodToolReceipts/v1",
+  "pass": "0079",
+  "generated_on": "2026-07-01",
+  "status": "MATCH_BUILDLANG_PATH_CONTEXT_ENVELOPE_JOIN",
+  "domain_envelope": {
+    "schema": "BuildLangPathContextEnvelopeJoin/v1",
+    "artifact": "docs/research/dogfood/schemas/buildlang-path-context-envelope-join-pass-0079.json",
+    "artifact_sha256": "bfe610b1e6fb00842c293ad8c1eeb7b7d2769fa80b7b2927108ef1c64503fd3c",
+    "seal": "aeec65f0c0329099cd9cdc90c4fe6f3cb7ad1c02137769a6af1298923db1c314",
+    "domain_id": "buildlang_buildc",
+    "joined_envelope": "telos.domain-focus.buildlang_buildc.0079",
+    "workspace_context_component_id": "index.path-selector.receipt.0078",
+    "workspace_context_digest": "56e47de47e3875151e310a9cc9763cc7b08976b282e0e830d03e5a967985f276",
+    "workspace_context_source_refs": 128,
+    "root_context_fallback": false,
+    "path_scoped_context": true,
+    "adapter_fixture": true,
+    "native_index_path_selector": false,
+    "missing_selector_rejections": [
+      "build-universe"
+    ],
+    "negative_fixtures": 7,
+    "unsupported_claim_count": 0
+  },
+  "gather": {
+    "status": "MATCH",
+    "docs_packet": {
+      "path": "docs/research/dogfood/packets/089-buildlang-path-context-envelope-join.md",
+      "sha256": "f0c49b4f72340f8ea01b2ede4541daa374cfc075d8c5a01eb436eb132585fb47",
+      "seal": "2f478b3371ff5dac7e6b429aa13110eac51132416d5d742ce8fa8ee6a41c9265",
+      "verified": true,
+      "dropped": 0
+    }
+  },
+  "crucible": {
+    "run_status": "MATCH",
+    "thesis_id": "e904fa0383334194",
+    "thesis_seal": "e904fa0383334194954c409f496f13347bbbe2db08604b76b3ca7a07fff8c326",
+    "assessment_seal": "18d0049520949d6eba2281c3034321e3a2c1603677356910076ec67bb7d94b45",
+    "assessment_record_seal": "a8040ea297f997628282efa2736771a0316d946ee982c5ecfeee2c4f2283d600",
+    "measurement_seal": "1efcab5436a9a5ffd44c92e29feb546cc4af74c52361cb13f73164c813026b60",
+    "claims": 8,
+    "match": 8,
+    "drift": 0,
+    "unverifiable": 0,
+    "registry_stats": {
+      "theses": 67,
+      "claims": 553,
+      "unique_claims": 546,
+      "assessments": 68,
+      "latest_assessments": 67,
+      "invalid_latest_assessments": 0,
+      "match": 553,
+      "drift": 0,
+      "unverifiable": 0
+    }
+  },
+  "telos": {
+    "integration_result": "BuildLang domain envelope now has a path-scoped workspace-context component sourced from the pass 0078 adapter fixture.",
+    "non_promotion_boundary": "Does not prove native Index path selection, Build Universe coverage, market adoption, scientific discovery, or a natural law."
+  },
+  "shell": {
+    "commands": [
+      {
+        "command": "python docs\\research\\dogfood\\tools\\test_buildlang_path_context_envelope_join.py",
+        "status": "MATCH"
+      },
+      {
+        "command": "python -m py_compile docs\\research\\dogfood\\tools\\compose_buildlang_path_context_envelope_join.py docs\\research\\dogfood\\tools\\probe_buildlang_path_context_envelope_join.py docs\\research\\dogfood\\tools\\test_buildlang_path_context_envelope_join.py docs\\research\\dogfood\\tools\\validate_pass_0079_buildlang_path_context_envelope_join.py",
+        "status": "MATCH"
+      },
+      {
+        "command": "python docs\\research\\dogfood\\tools\\probe_buildlang_path_context_envelope_join.py",
+        "status": "MATCH"
+      },
+      {
+        "command": "python docs\\research\\dogfood\\tools\\validate_pass_0079_buildlang_path_context_envelope_join.py",
+        "status": "MATCH"
+      },
+      {
+        "command": "crucible run docs\\research\\dogfood\\crucible\\pass-0079-thesis.json --measurements docs\\research\\dogfood\\crucible\\pass-0079-measurements.json --registry docs\\research\\dogfood\\crucible\\registry --report docs\\research\\dogfood\\crucible\\pass-0079-report.md --out docs\\research\\dogfood\\crucible\\pass-0079-run.json --json",
+        "status": "MATCH"
+      },
+      {
+        "command": "gather docs docs\\research\\dogfood\\packets\\089-buildlang-path-context-envelope-join.md --json",
+        "status": "MATCH"
+      },
+      {
+        "command": "crucible registry stats docs\\research\\dogfood\\crucible\\registry --json",
+        "status": "MATCH"
+      }
+    ],
+    "line_counts": {
+      "compose_buildlang_path_context_envelope_join.py": 138,
+      "probe_buildlang_path_context_envelope_join.py": 104,
+      "test_buildlang_path_context_envelope_join.py": 32,
+      "validate_pass_0079_buildlang_path_context_envelope_join.py": 63
+    },
+    "sha256": {
+      "compose_buildlang_path_context_envelope_join.py": "6746895d030639825fb8250450007b40cd48dd35dde54189590f690a1fffb678",
+      "probe_buildlang_path_context_envelope_join.py": "0ed0f9655cd110658f2c05c44e0aadc84a194192b92680bb3a494f9c69147175",
+      "test_buildlang_path_context_envelope_join.py": "bc83dcfdfcc671323e844e75afd5f06bed277a485a907e653e9eb70d3d264829",
+      "validate_pass_0079_buildlang_path_context_envelope_join.py": "31f456a6110f9661c2eca7a53eccb82b75d7a39547b4f1582ae06c7b59200ca0",
+      "buildlang-path-context-envelope-join-pass-0079.json": "bfe610b1e6fb00842c293ad8c1eeb7b7d2769fa80b7b2927108ef1c64503fd3c",
+      "pass-0079-buildlang-path-context-envelope-join-validator-result.json": "7dc8ca5ab84c38637e875627128ac539b695aefd367f51b7ef3bb40168a220f4",
+      "089-buildlang-path-context-envelope-join.md": "f0c49b4f72340f8ea01b2ede4541daa374cfc075d8c5a01eb436eb132585fb47",
+      "pass-0079-buildlang-path-context-envelope-join-steelman.md": "05af00a113c2f15b9e6834fbc7c69599cd65c9d77be4ca0fbe6d3fd0272ebf87",
+      "pass-0079-run.json": "e48c168479d2c19980bd953532ea2af61fd7922d32e20ae1e46470d2d9cd790d"
+    }
+  }
+}

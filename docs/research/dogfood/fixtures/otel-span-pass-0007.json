@@ -1,0 +1,34 @@
+{
+  "name": "formal-identity.odd-sum.probe",
+  "context": {
+    "trace_id": "00000000000000000000000000000707",
+    "span_id": "0000000000000707"
+  },
+  "parent_id": "0000000000000006",
+  "start_time": "2026-07-01T10:07:00Z",
+  "end_time": "2026-07-01T10:07:01Z",
+  "attributes": {
+    "domain": "formal-math",
+    "identity": "sum_{k=1..n}(2k-1)=n^2",
+    "range.max_n": 100000,
+    "probe.status": "PROBE_MATCH"
+  },
+  "events": [
+    {
+      "name": "induction-proof.recorded",
+      "timestamp": "2026-07-01T10:07:00Z"
+    },
+    {
+      "name": "bounded-computation.completed",
+      "timestamp": "2026-07-01T10:07:01Z"
+    }
+  ],
+  "links": [
+    {
+      "trace_id": "00000000000000000000000000000606",
+      "span_id": "0000000000000606",
+      "relationship": "builds-on-pass-0006-proof-packet"
+    }
+  ],
+  "status": "Ok"
+}

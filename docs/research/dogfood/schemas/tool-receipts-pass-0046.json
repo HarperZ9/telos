@@ -1,0 +1,90 @@
+{
+  "generated_on": "2026-07-01",
+  "non_promotion_statement": "Tool receipts prove packet readback, controlled Elan install-plan validator MATCH, installer non-execution, and Crucible assessment. They do not prove Elan installation, Lean replay, lake build success, dependency compilation, every public pipeline-math claim, buyer adoption, or any natural law.",
+  "pass": "0046",
+  "receipts": [
+    {
+      "command": "map --root docs/research/dogfood --json",
+      "dirty_count": 0,
+      "repo_count": 0,
+      "role": "dogfood-substrate-map",
+      "root_sha256_prefix": "f2f0af39219698a9",
+      "schema_version": 1,
+      "status": "MATCH",
+      "tool": "index",
+      "tool_version": "2.8.0",
+      "top_level_count": 55
+    },
+    {
+      "artifact": "packets/056-elan-controlled-install-plan.md",
+      "chars": 986,
+      "command": "docs",
+      "seal": "bb1c89c4661c5fd620959028243a2df78a308fa5aa3cf457f9a70f37f487acd1",
+      "sha256": "586e8aff087e602e4c73ade57a20b2842bc197868440c5a6d7103d9e5779ab48",
+      "status": "MATCH",
+      "tool": "gather",
+      "verified": true
+    },
+    {
+      "command": "probe_elan_controlled_install_plan.py",
+      "installer_script_executed": false,
+      "line_count": 213,
+      "schema": "ElanControlledInstallPlanSet/v1",
+      "seal": "0e79d9f03e7029462e50fcd7785d4ff3406cdb8fcd125f9202c51f32ee1e5d57",
+      "status": "ELAN_CONTROLLED_INSTALL_PLAN_MATCH",
+      "tool": "python"
+    },
+    {
+      "command": "validate_pass_0046_elan_controlled_install_plan.py",
+      "drift": 0,
+      "line_count": 91,
+      "match": 1,
+      "schema": "Pass0046ElanControlledInstallPlanValidatorRun/v1",
+      "status": "MATCH",
+      "tool": "python"
+    },
+    {
+      "command": "route",
+      "confidence": 0.045454545454545456,
+      "decided": null,
+      "needs_escalation": true,
+      "status": "MATCH",
+      "top_candidates": ["project-telos", "backend", "ci-cd"],
+      "tool": "forum"
+    },
+    {
+      "chain": true,
+      "command": "ledger verify",
+      "deep": true,
+      "status": "MATCH",
+      "tool": "forum"
+    },
+    {
+      "command": "submit",
+      "error": "submit needs a model executor. Forum is model-agnostic: pass --cmd \"<model cli>\" (any command, local models need no account), --chat-url <openai-compatible url> (e.g. a local Ollama server), or --api (Anthropic).",
+      "request": "Dogfood pass 0046 adversarial review for Elan controlled install plan",
+      "status": "UNVERIFIABLE",
+      "tool": "forum"
+    },
+    {
+      "assessment_seal": "46b0fddd9d9faf7930582d54bea1bcd06715865ffb9a0c59fbccf38faa8f1b4e",
+      "claims": 8,
+      "command": "run",
+      "drift": 0,
+      "match": 8,
+      "measurement_seal": "0d723ba9a6aa56f73da8e71b114555609028344fb49be7dd32cd0da0d1f5b288",
+      "run_sha256": "3ea221be8b2b8d6c84ddbbcdc8db0f79200145b2ac8a029954b8db3aba6559ac",
+      "seals_ok": true,
+      "status": "MATCH",
+      "thesis_id": "8f4e98bce0a0543b",
+      "thesis_ok": true,
+      "thesis_seal": "8f4e98bce0a0543bd5e48212cb6147ff2919d80b24aa6bf03832d1b3562c9f83",
+      "tool": "crucible",
+      "unverifiable": 0,
+      "verdict_seal": "332b334d34495bdbcfc609adc417ffe6d132dcf08cfeee967a8819cb12979cc6",
+      "verdicts_rederive": true
+    }
+  ],
+  "schema": "DogfoodToolReceiptSet/v1",
+  "status": "MATCH_WITH_FORUM_SUBMIT_GAP_AND_INSTALLER_NOT_EXECUTED"
+}

@@ -1,0 +1,93 @@
+{
+  "schema": "DogfoodToolReceipts/v1",
+  "pass": "0070",
+  "generated_on": "2026-07-01",
+  "status": "MATCH_LIVE_ACTION_RECEIPT_REPLACEMENT",
+  "index": {
+    "tool_version": "2.8.0",
+    "status": "MATCH",
+    "role": "structure-context"
+  },
+  "gather": {
+    "status": "MATCH",
+    "docs_packet": {
+      "path": "docs/research/dogfood/packets/080-live-action-receipt-replacement.md",
+      "sha256": "9ff374405a88f7502c576d6b79a506b015d7a66f9199fe6ae787ceb9f18bc255",
+      "seal": "7e3e3cb727d4a2c3dc904ed0dcc4841f67b2ed529eea12c8b2966b1a3c97116e",
+      "verified": true,
+      "dropped": 0
+    }
+  },
+  "forum": {
+    "status": "MATCH",
+    "verify": {
+      "chain": true,
+      "deep": true
+    }
+  },
+  "crucible": {
+    "run_status": "MATCH",
+    "thesis_id": "c6cebe02bc50e5d9",
+    "thesis_seal": "c6cebe02bc50e5d9446d0acd6a34fa0eff324729b22c7dabcdbc4bd964d973f0",
+    "assessment_seal": "4752f14489d0c16aa0536ba87067303e9b84f5bc57b783e997cf1d29729b0146",
+    "claims": 8,
+    "match": 8,
+    "drift": 0,
+    "unverifiable": 0,
+    "registry_stats": {
+      "theses": 58,
+      "claims": 481,
+      "unique_claims": 474,
+      "assessments": 59,
+      "latest_assessments": 58,
+      "invalid_latest_assessments": 0,
+      "match": 481,
+      "drift": 0,
+      "unverifiable": 0
+    }
+  },
+  "telos": {
+    "action_receipt_surface": "MATCH",
+    "compatibility_doctor": "MATCH",
+    "operator_doctor": "MATCH",
+    "mcp_freshness": "MATCH",
+    "live_surface_command": "node demo/action-receipt.mjs",
+    "live_surface_schema": "project-telos.action-receipt/v1"
+  },
+  "shell": {
+    "commands": [
+      {
+        "command": "python docs\\research\\dogfood\\tools\\test_live_action_receipt_replacement.py",
+        "status": "MATCH"
+      },
+      {
+        "command": "python docs\\research\\dogfood\\tools\\probe_live_action_receipt_replacement.py",
+        "status": "MATCH"
+      },
+      {
+        "command": "python docs\\research\\dogfood\\tools\\validate_pass_0070_live_action_receipt_replacement.py",
+        "status": "MATCH"
+      },
+      {
+        "command": "crucible run docs\\research\\dogfood\\crucible\\pass-0070-thesis.json --measurements docs\\research\\dogfood\\crucible\\pass-0070-measurements.json --registry docs\\research\\dogfood\\crucible\\registry --report docs\\research\\dogfood\\crucible\\pass-0070-report.md --out docs\\research\\dogfood\\crucible\\pass-0070-run.json --json",
+        "status": "MATCH"
+      }
+    ],
+    "line_counts": {
+      "compose_live_action_receipt_replacement.py": 174,
+      "probe_live_action_receipt_replacement.py": 108,
+      "test_live_action_receipt_replacement.py": 35,
+      "validate_pass_0070_live_action_receipt_replacement.py": 75
+    },
+    "sha256": {
+      "compose_live_action_receipt_replacement.py": "e5dd81810b5cab55d6e56c91dc75a88ebc08788f78ccad2344044386505f0e82",
+      "probe_live_action_receipt_replacement.py": "91c0edbbf91b36b98ec9ac22975316ded5bb681249fae1461fbea0547025587b",
+      "test_live_action_receipt_replacement.py": "328e7a0cd2b409207d291cd7ecce0017b86109456d8b981f22b0cc96163480db",
+      "validate_pass_0070_live_action_receipt_replacement.py": "74f6c659ddddc01abf4eaf95ec7ceab66e601792612631141b0e4a9193d37bde",
+      "live-action-receipt-replacement-pass-0070.json": "3a16014f465fc42b0527dd7cfe9c870cd150fba92e0e6eacb7bb9d1ba4fa4276",
+      "080-live-action-receipt-replacement.md": "9ff374405a88f7502c576d6b79a506b015d7a66f9199fe6ae787ceb9f18bc255",
+      "pass-0070-live-action-receipt-replacement-steelman.md": "2b7fdcfc35b58a93de1f0c849fdeaca1699ce24bb721ba66244ca0422b214282",
+      "pass-0070-run.json": "eb26264f5e2d96cfe417a2bd12129ef1c511d7e55f2256d9e75b32519be767e1"
+    }
+  }
+}

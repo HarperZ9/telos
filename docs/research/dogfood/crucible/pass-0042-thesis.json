@@ -1,0 +1,38 @@
+{
+  "claims": [
+    {
+      "falsification": "schemas/full-lean-source-archive-pass-0042.json is missing, has a different schema, status, role_record_count, unique_archive_file_count, SHA-256, or seal",
+      "text": "Pass 0042 created a FullLeanSourceArchiveSet/v1 artifact with status FULL_LEAN_SOURCE_ARCHIVE_MATCH, role_record_count 22, unique_archive_file_count 21, sha256 83eefbfeab7e258aae80c8bb405bd93cc9dd7117804a3e84d3c74e1534142343, and seal 0c5b4d29bf7ea2e72398278fd57c0cf23e5e297ce2d5d99cec84aab60e528d7c."
+    },
+    {
+      "falsification": "the full Lean source archive fixture is missing, has a different SHA-256 or seal, or is not linked from the schema",
+      "text": "Pass 0042 records fixture fixtures/full-lean-source-archive-pass-0042.json with sha256 2a397cee6f014ee2a6c1113637d880de264324c6591d7898533d8047e8b1e83c and seal db500e73b024ef1b1af29c4b32efeafb19faf4de3ad3e85234c75c93e1ceb9e8."
+    },
+    {
+      "falsification": "the pass 0041 binding is missing, has a different SHA-256 or seal, or does not report the expected source status",
+      "text": "Pass 0042 binds to pass 0041 Lean toolchain/import binding with sha256 ae72dadc5da817622374a9b5654f7389242f3e4f7b218e4c89387d364ef2b0e7, seal e932959ff41df5260e5af88942184e45c2e9620b878db02b4ccbb609387c78b6, and source status LEAN_TOOLCHAIN_IMPORT_BINDING_MATCH."
+    },
+    {
+      "falsification": "the archive has a different Lean module count, build file count, role record count, unique file count, or module/build overlap count",
+      "text": "Pass 0042 records 16 Lean module records, 6 build file records, 22 role records, 21 unique archived files, and exactly one module/build overlap."
+    },
+    {
+      "falsification": "any archived file is missing, has a SHA-256 differing from pass 0041, or fails to close the six-file compiled replay delta",
+      "text": "Pass 0042 records all archived file SHA-256 values matching pass 0041 and archives all six pass 0041 files needed for compiled replay planning."
+    },
+    {
+      "falsification": "the pass 0042 validator result is missing, reports DRIFT, or has different role_record_count or unique_archive_file_count",
+      "text": "Pass 0042 validator result reports MATCH with role_record_count 22 and unique_archive_file_count 21 using local archive files."
+    },
+    {
+      "falsification": "packet 052 or the pass 0042 steelman is missing or has a different SHA-256",
+      "text": "Pass 0042 records packet 052 with sha256 85c149c0167b4d94efd3e86f8d338f2906f2fefe633ceaed41ff613b76665cfa and local steelman with sha256 dbd810db88510ad61c57854d63e2db73d07d9b346b97c0a1cac9153f5353ed1e."
+    },
+    {
+      "falsification": "pass 0042 artifacts claim Lean replay, semantic proof review, axiom-free proof, validation of every public pipeline-math claim, or a promoted natural law",
+      "text": "Pass 0042 preserves non-promotion boundaries: it archives source/build inputs only, does not run Lean, does not claim semantic proof review, and current_promoted_natural_laws remains none."
+    }
+  ],
+  "disposition": "fenced",
+  "title": "Dogfood Pass 0042 Full Lean Source Archive"
+}

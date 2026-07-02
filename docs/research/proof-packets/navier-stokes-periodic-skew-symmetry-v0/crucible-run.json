@@ -1,0 +1,194 @@
+{
+  "ok": true,
+  "thesis": {
+    "id": "b5033c0d93275f57",
+    "title": "Navier-Stokes Periodic Skew-Symmetry Bounded Subclaim",
+    "registered_at": 1782989798.3496382,
+    "disposition": "fenced",
+    "seal": "b5033c0d93275f574370f04db3003526c60316f263e0b18935f1553ca306ab21",
+    "claims": [
+      {
+        "id": "1747aab20607cacb",
+        "sha256": "1747aab20607cacbfab398e9e4c03c7f3a0b5208e800759049a3dc034a5e4057"
+      },
+      {
+        "id": "06768bdbe748c1a1",
+        "sha256": "06768bdbe748c1a1a2910066b4e4bbeb1476d2b005f0c67c7d9a6c480485436d"
+      },
+      {
+        "id": "72bced251269e342",
+        "sha256": "72bced251269e342995ec0f07a003ff7707eecd7e61acceac73b957956e0433f"
+      }
+    ]
+  },
+  "refutations": [
+    {
+      "claim_id": "1747aab20607cacb",
+      "claim_sha256": "1747aab20607cacbfab398e9e4c03c7f3a0b5208e800759049a3dc034a5e4057",
+      "challenge": "test the stated falsification: The run receipt is missing, bounded_skew_symmetry_probe is not MATCH, nonlinear_energy_transfer_abs exceeds tolerance, or max_divergence_abs exceeds tolerance.",
+      "measurable": "The run receipt is missing, bounded_skew_symmetry_probe is not MATCH, nonlinear_energy_transfer_abs exceeds tolerance, or max_divergence_abs exceeds tolerance.",
+      "source": "null"
+    },
+    {
+      "claim_id": "06768bdbe748c1a1",
+      "claim_sha256": "06768bdbe748c1a1a2910066b4e4bbeb1476d2b005f0c67c7d9a6c480485436d",
+      "challenge": "test the stated falsification: The packet or run receipt claims the parent Navier-Stokes existence and smoothness problem is solved or verified.",
+      "measurable": "The packet or run receipt claims the parent Navier-Stokes existence and smoothness problem is solved or verified.",
+      "source": "null"
+    },
+    {
+      "claim_id": "72bced251269e342",
+      "claim_sha256": "72bced251269e342995ec0f07a003ff7707eecd7e61acceac73b957956e0433f",
+      "challenge": "test the stated falsification: The packet omits negative boundaries or states that the finite-mode witness proves global regularity, validates physical fluids, or discovers a new law.",
+      "measurable": "The packet omits negative boundaries or states that the finite-mode witness proves global regularity, validates physical fluids, or discovers a new law.",
+      "source": "null"
+    }
+  ],
+  "assessment": {
+    "started_at": 1782989798.3572738,
+    "thesis_id": "b5033c0d93275f57",
+    "thesis_seal": "b5033c0d93275f574370f04db3003526c60316f263e0b18935f1553ca306ab21",
+    "claims": 3,
+    "match": 3,
+    "drift": 0,
+    "unverifiable": 0,
+    "verdict_seal": "6884bf6a70f0d3e21be965a11e62f6f0750e08bd0e6aa1ae10333ecaa77cc739",
+    "measurement_seal": "b0ab63738b4dd42ea2835c9a29a7c55719b94b650dd0dec80fe5597c8d7889fc",
+    "disposition": "fenced",
+    "stored": null,
+    "verdicts": [
+      {
+        "claim_id": "1747aab20607cacb",
+        "claim_sha256": "1747aab20607cacbfab398e9e4c03c7f3a0b5208e800759049a3dc034a5e4057",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "reference-kernel-skew-symmetry-receipt-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "06768bdbe748c1a1",
+        "claim_sha256": "06768bdbe748c1a1a2910066b4e4bbeb1476d2b005f0c67c7d9a6c480485436d",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "grand-claim-boundary-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "72bced251269e342",
+        "claim_sha256": "72bced251269e342995ec0f07a003ff7707eecd7e61acceac73b957956e0433f",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "negative-boundary-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      }
+    ],
+    "measurements": [
+      {
+        "claim_id": "1747aab20607cacb",
+        "claim_sha256": "1747aab20607cacbfab398e9e4c03c7f3a0b5208e800759049a3dc034a5e4057",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "reference-kernel-skew-symmetry-receipt-review",
+        "measured_at": 1782989798.3572738,
+        "evidence": [
+          "run.receipt.json exists",
+          "bounded_skew_symmetry_probe is MATCH",
+          "nonlinear_energy_transfer_abs 7.792811534956812e-14 <= 1e-10",
+          "max_divergence_abs 0 <= 1e-12"
+        ]
+      },
+      {
+        "claim_id": "06768bdbe748c1a1",
+        "claim_sha256": "06768bdbe748c1a1a2910066b4e4bbeb1476d2b005f0c67c7d9a6c480485436d",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "grand-claim-boundary-review",
+        "measured_at": 1782989798.3572738,
+        "evidence": [
+          "run receipt parent_millennium_problem is UNVERIFIABLE",
+          "problem.statement.json grand_claim_status is UNVERIFIABLE",
+          "subclaim.skew_symmetry.md What This Does Not Prove section blocks Navier-Stokes parent promotion"
+        ]
+      },
+      {
+        "claim_id": "72bced251269e342",
+        "claim_sha256": "72bced251269e342995ec0f07a003ff7707eecd7e61acceac73b957956e0433f",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "negative-boundary-review",
+        "measured_at": 1782989798.3572738,
+        "evidence": [
+          "problem.statement.json negative_boundaries block parent, global regularity, physical-fluid, and law claims",
+          "subclaim.skew_symmetry.md What This Does Not Prove section lists parent/global/physical/law boundaries",
+          "run.receipt.json boundaries block arbitrary numerical discretization and physical-fluid validity"
+        ]
+      }
+    ],
+    "seal": "4b51ecd5703231b5e80f566d2d41a5780b09447e38b1a348cc4f310e26fb31c8"
+  },
+  "verdicts": [
+    {
+      "claim_id": "1747aab20607cacb",
+      "claim_sha256": "1747aab20607cacbfab398e9e4c03c7f3a0b5208e800759049a3dc034a5e4057",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "reference-kernel-skew-symmetry-receipt-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "06768bdbe748c1a1",
+      "claim_sha256": "06768bdbe748c1a1a2910066b4e4bbeb1476d2b005f0c67c7d9a6c480485436d",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "grand-claim-boundary-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "72bced251269e342",
+      "claim_sha256": "72bced251269e342995ec0f07a003ff7707eecd7e61acceac73b957956e0433f",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "negative-boundary-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    }
+  ],
+  "measurement_warnings": [],
+  "checks": {
+    "seals_ok": true,
+    "thesis_ok": true,
+    "verdicts_rederive": true
+  },
+  "report": "docs\\research\\proof-packets\\navier-stokes-periodic-skew-symmetry-v0\\crucible-report.md",
+  "record": "docs\\research\\proof-packets\\navier-stokes-periodic-skew-symmetry-v0\\crucible-run.json",
+  "bundle": null,
+  "spec": null,
+  "review": null,
+  "verifier": {
+    "mode": "cleanroom",
+    "inputs": [],
+    "excluded": [
+      "worker context",
+      "reasoning trace",
+      "intermediate steps"
+    ],
+    "checkability": "If success cannot be evaluated from the original spec and the artifact, the spec is not checkable yet."
+  }
+}

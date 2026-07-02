@@ -1,0 +1,77 @@
+{
+  "comparison": {
+    "all_branches_feasible": true,
+    "branch_count": 4,
+    "exact_hit_branches": [
+      "seeded_simulated_annealing",
+      "seeded_random_search"
+    ],
+    "max_value_gap": 16
+  },
+  "compose": {
+    "command": "C:\\Users\\Zain\\AppData\\Local\\Programs\\Python\\Python312\\python.exe C:\\dev\\public\\telos\\docs\\research\\dogfood\\tools\\compose_optimization_branch_comparison_receipt.py --out C:\\dev\\public\\telos\\docs\\research\\dogfood\\schemas\\optimization-branch-comparison-receipt-pass-0088.json",
+    "exit_code": 0,
+    "status": "MATCH",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "6f6d5bd34b6bf3cc900405102717feae2b9fb717779c00b6e2fcda231f7fabb9"
+  },
+  "forum": {
+    "confidence": 0.07500000000000001,
+    "decided": null,
+    "exit_code": 0,
+    "needs_escalation": true,
+    "status": "MATCH",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "591eeaaf22c12542f54e72996b922b7c052322fb57f8c631b20126bd089c80ed",
+    "top_candidates": [
+      {
+        "agent": "web-intel",
+        "score": 0.2
+      },
+      {
+        "agent": "model-foundry",
+        "score": 0.125
+      },
+      {
+        "agent": "project-telos",
+        "score": 0.045454545454545456
+      },
+      {
+        "agent": "backend",
+        "score": 0.0
+      },
+      {
+        "agent": "ci-cd",
+        "score": 0.0
+      }
+    ]
+  },
+  "index": {
+    "exit_code": 0,
+    "graph_pack_sha256": "8ee383e19ae9a6141bee70de733fb6aa09201ff9d284ce6778ce58b06e6b68b2",
+    "schema": "project-telos.context-envelope/v1",
+    "source_refs_only": true,
+    "status": "MATCH",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "e5c6f06bbb9417f68224ec2659654173ef2dbd7abc4f130c86aca25525e6fd28",
+    "verification_verdict": "MATCH"
+  },
+  "pass": "0088",
+  "schema": "DogfoodToolReceipts/v1",
+  "seal": "67fb5e869703e103c357a849dea64c2241ee736f69fd2faac00cbd5d54a1004e",
+  "telos": {
+    "exit_code": 0,
+    "status": "MATCH",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "be17cb15259234cb4e8e95c2b36e76c90d841431729beb140294e34c5f9ebfa7",
+    "tool": "telos",
+    "tool_version": "0.1.0"
+  },
+  "test": {
+    "command": "C:\\Users\\Zain\\AppData\\Local\\Programs\\Python\\Python312\\python.exe C:\\dev\\public\\telos\\docs\\research\\dogfood\\tools\\test_optimization_branch_comparison_receipt.py",
+    "exit_code": 0,
+    "status": "MATCH",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

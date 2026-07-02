@@ -1,0 +1,184 @@
+Documentation Index
+Fetch the complete documentation index at: /llms.txt
+Use this file to discover all available pages before exploring further.
+Skip to main content
+OpenAlex Developers home page
+Search...
+⌘K
+Overview
+API Overview
+Authentication & Pricing
+Error Handling
+Utilities
+GET
+Autocomplete search
+GET
+Check rate limit status
+GET
+List changefile dates
+GET
+Get changefile for a date
+Entities
+Works
+Authors
+Sources
+Institutions
+Topics
+Domains
+Fields
+Subfields
+SDGs
+Countries
+Continents
+Languages
+Keywords
+Publishers
+Funders
+Awards
+Concepts (deprecated)
+Work Types
+Source Types
+Institution Types
+Licenses
+OpenAlex Developers home page
+Search...
+⌘K
+Search...
+Navigation
+Overview
+Error Handling
+Guides
+API Reference
+Data Downloads
+Guides
+API Reference
+Data Downloads
+Overview
+Error Handling
+Copy page
+API error codes and retry strategies
+Copy page
+The OpenAlex API uses standard HTTP status codes to indicate success or failure.
+​
+HTTP Status Codes
+Code
+Meaning
+What to Do
+200
+Success
+Request completed successfully
+301
+Moved Permanently
+Entity was merged; follow the redirect
+400
+Bad Request
+Check your filter syntax or parameters
+403
+Forbidden
+Rate limit exceeded; slow down
+404
+Not Found
+Entity doesn’t exist
+429
+Too Many Requests
+Daily limit exceeded
+500
+Server Error
+Temporary issue; retry with backoff
+​
+Error Response Format
+Error responses include a message explaining what went wrong:
+{
+"error": "Invalid filter",
+"message": "Unknown filter field: author_name. Did you mean: authorships.author.id?"
+}
+​
+Common Errors
+​
+Invalid Filter Syntax
+400 Bad Request
+"Invalid filter: publication_year:abc"
+Fix: Ensure values match expected types. publication_year expects an integer.
+​
+Unknown Filter Field
+400 Bad Request
+"Unknown filter field: author_name"
+Fix: Use the correct filter field. For authors, use authorships.author.id with an ID, not a name. See Resolve IDs.
+​
+Rate Limit Exceeded
+429 Too Many Requests
+"Rate limit exceeded"
+Fix:
+Check rate limit headers to see your remaining allowance
+Add delays between requests
+Use per_page=100 to reduce total requests
+Consider a paid plan for higher limits
+​
+Entity Not Found
+404 Not Found
+"Work W9999999999 not found"
+Fix: Verify the ID exists. The entity may have been merged—check if you’re being redirected.
+​
+Retry Logic
+Implement exponential backoff for transient errors:
+import time
+import requests
+def fetch_with_retry(url, max_retries=5):
+for attempt in range(max_retries):
+try:
+response = requests.get(url, timeout=30)
+if response.status_code == 200:
+return response.json()
+if response.status_code == 429:
+# Rate limited - wait longer
+wait_time = 2 ** attempt
+time.sleep(wait_time)
+continue
+if response.status_code >= 500:
+# Server error - retry
+wait_time = 2 ** attempt
+time.sleep(wait_time)
+continue
+# Client error - don't retry
+response.raise_for_status()
+except requests.exceptions.Timeout:
+if attempt < max_retries - 1:
+time.sleep(2 ** attempt)
+else:
+raise
+raise Exception(f"Failed after {max_retries} retries")
+​
+Rate Limit Headers
+Every response includes headers showing your current status:
+X-RateLimit-Limit: 10000
+X-RateLimit-Remaining: 8766
+X-RateLimit-Credits-Used: 1
+X-RateLimit-Reset: 43200
+Use these to:
+Monitor your usage
+Pause before hitting limits
+Calculate when limits reset (seconds until midnight UTC)
+​
+Best Practices
+Always set timeouts — Use 30-second timeouts to avoid hanging requests
+Implement backoff — Don’t retry immediately; wait 1s, 2s, 4s, etc.
+Check headers — Monitor X-RateLimit-Remaining to avoid hitting limits
+Log errors — Record failures for debugging
+Use bulk endpoints — Batch requests to reduce total API calls
+Previous
+Autocomplete searchFast typeahead search returning up to 10 results. Use for search-as-you-type interfaces.
+Next
+⌘I
+xgithub
+Powered byThis documentation is built and hosted on Mintlify, a developer documentation platform
+On this page
+HTTP Status Codes
+Error Response Format
+Common Errors
+Invalid Filter Syntax
+Unknown Filter Field
+Rate Limit Exceeded
+Entity Not Found
+Retry Logic
+Rate Limit Headers
+Best Practices

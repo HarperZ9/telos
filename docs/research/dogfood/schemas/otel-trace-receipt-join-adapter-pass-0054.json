@@ -1,0 +1,51 @@
+{
+  "adapter_receipt": {
+    "command": "C:\\Users\\Zain\\AppData\\Local\\Programs\\Python\\Python312\\python.exe C:\\dev\\public\\telos\\docs\\research\\dogfood\\tools\\import_otel_trace_receipts.py --receipt C:\\dev\\public\\telos\\docs\\research\\dogfood\\schemas\\telos-action-receipt-fixture-pass-0024.json --spans C:\\dev\\public\\telos\\docs\\research\\dogfood\\fixtures\\otel-trace-receipt-join-spans-pass-0054.json --out C:\\dev\\public\\telos\\docs\\research\\dogfood\\schemas\\otel-trace-receipt-join-pass-0054.json",
+    "exit_code": 0,
+    "status": "MATCH",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "a1d0a88c2178f6c608afac7a92d2d07d396f9dfacf4a765b1cdce80713c33bae"
+  },
+  "current_promoted_natural_laws": [],
+  "generated_on": "2026-07-01",
+  "implementation_status": "IMPLEMENTED_LOCAL_TRACE_JOIN_ADAPTER",
+  "join_output": {
+    "path": "schemas/otel-trace-receipt-join-pass-0054.json",
+    "schema": "OTelTraceReceiptJoinSet/v1",
+    "sha256": "cbaaf059b6da49cab92fac4bb15ea0b525cc5948ad90c40fc7741371791887ed",
+    "status": "OTEL_TRACE_RECEIPT_JOIN_MATCH"
+  },
+  "non_promotion_statement": "Pass 0054 proves only local OTel-style trace import joins to an existing action receipt fixture. It does not prove live runtime observability, buyer adoption, scientific truth, or any natural law.",
+  "pass": "0054",
+  "schema": "OTelTraceReceiptJoinAdapterSet/v1",
+  "seal": "e85049e5d195d6eeda1aeadfea360b06884dfd5a5d93bdaadc1d78ff3d99b763",
+  "span_fixture": {
+    "path": "fixtures/otel-trace-receipt-join-spans-pass-0054.json",
+    "sha256": "1481a8962a1e0e0094922ef0846cfaf07de655ff3259fb077daf91b5e18fa2fe",
+    "span_count": 1
+  },
+  "status": "OTEL_TRACE_RECEIPT_JOIN_ADAPTER_MATCH",
+  "test_receipt": {
+    "command": "C:\\Users\\Zain\\AppData\\Local\\Programs\\Python\\Python312\\python.exe C:\\dev\\public\\telos\\docs\\research\\dogfood\\tools\\test_otel_trace_receipt_join_adapter.py",
+    "exit_code": 0,
+    "status": "MATCH",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "b2b1b4b03344f9abe713d9256152029d9da86b598c99aadd03f8fea37d6a2eac"
+  },
+  "uniqueness_claim_status": "HYPOTHESIS_ONLY",
+  "upstream_receipt_binding": {
+    "path": "schemas/telos-action-receipt-fixture-pass-0024.json",
+    "seal": "58ed4ced91f18cbab776729f49f728d47013542cfc2448865bbdb8dccd1228e3",
+    "sha256": "9c6402f98774170311d78ea3f6983cae71a665dd38ab2ee7e88d413398990ff4",
+    "source_status": "ACTION_RECEIPT_FIXTURE_MATCH"
+  },
+  "verifier_measurements": {
+    "joined_event_count": 4,
+    "negative_fixture_count": 4,
+    "negative_match_count": 4,
+    "negative_pass_observed_count": 0,
+    "receipt_identity_retained": true,
+    "trace_replaces_receipt_count": 0,
+    "trace_span_count": 1
+  }
+}

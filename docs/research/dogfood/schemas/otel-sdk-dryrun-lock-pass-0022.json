@@ -1,0 +1,143 @@
+{
+  "already_satisfied": [
+    {
+      "find_spec_available": true,
+      "module": "opentelemetry",
+      "name": "opentelemetry-api",
+      "schema": "AlreadySatisfiedDistributionReceipt/v1",
+      "version": "1.41.0"
+    }
+  ],
+  "dry_run": {
+    "command": [
+      "C:\\Users\\Zain\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "pip",
+      "install",
+      "--disable-pip-version-check",
+      "--dry-run",
+      "--report",
+      "-",
+      "opentelemetry-sdk==1.41.0"
+    ],
+    "invalid_distribution_warning_count": 3,
+    "invalid_distribution_warning_labels": [
+      "~",
+      "~arden-shell",
+      "~~rden-shell"
+    ],
+    "no_install_boundary": true,
+    "report_sha256": "b472706e86eb81537066b709b4d2bd8df831bc1cafb196cb3e3e169f5b4bead2",
+    "returncode": 0,
+    "schema": "PipDryRunReportReceipt/v1",
+    "stderr_sha256": "ba50862e59ef1e8099f7b4b7f91a66f6f749e6f2268d3746a99fa5d161d2567c",
+    "stdout_sha256": "136af9e6ceeb1cf94918038c3d2b3a20cb66ec21a8e278620f68834f69f08700",
+    "target_requirement": "opentelemetry-sdk==1.41.0"
+  },
+  "environment": {
+    "implementation_name": "cpython",
+    "implementation_version": "3.12.10",
+    "os_name": "nt",
+    "platform_machine": "AMD64",
+    "platform_python_implementation": "CPython",
+    "platform_release": "11",
+    "platform_system": "Windows",
+    "platform_version": "10.0.26220",
+    "python_full_version": "3.12.10",
+    "python_version": "3.12",
+    "sys_platform": "win32"
+  },
+  "generated_on": "2026-07-01",
+  "negative_fixture_count": 5,
+  "negative_fixtures": [
+    {
+      "expected_validator_status": "REJECT",
+      "failure_mode": "Treats pip --dry-run report as an installed SDK.",
+      "fixture_id": "negative-dryrun-treated-as-install"
+    },
+    {
+      "expected_validator_status": "REJECT",
+      "failure_mode": "Promotes a resolved wheel without SHA-256 hash.",
+      "fixture_id": "negative-wheel-without-hash"
+    },
+    {
+      "expected_validator_status": "REJECT",
+      "failure_mode": "Plans opentelemetry-sdk version that does not match installed opentelemetry-api version.",
+      "fixture_id": "negative-unmatched-api-sdk-version"
+    },
+    {
+      "expected_validator_status": "REJECT",
+      "failure_mode": "Ignores pip invalid-distribution warnings in environment evidence.",
+      "fixture_id": "negative-ignore-invalid-distribution-warnings"
+    },
+    {
+      "expected_validator_status": "REJECT",
+      "failure_mode": "Claims recording span evidence without opentelemetry.sdk import availability.",
+      "fixture_id": "negative-recording-span-without-sdk-import"
+    }
+  ],
+  "non_promotion_statement": "Pass 0022 performs pip dry-run resolution only. It does not install opentelemetry-sdk, import opentelemetry.sdk, create recording spans, modify the environment, or promote trace evidence.",
+  "pass": "0022",
+  "post_dryrun_import_audit": {
+    "distribution": "opentelemetry-sdk",
+    "expected_status": "NOT_INSTALLED_AFTER_DRY_RUN",
+    "find_spec_available": false,
+    "install_performed": false,
+    "module": "opentelemetry.sdk",
+    "schema": "PostDryRunImportAudit/v1",
+    "version": null
+  },
+  "resolved_install": [
+    {
+      "name": "opentelemetry-sdk",
+      "requested": true,
+      "requires_dist": [
+        "opentelemetry-api==1.41.0",
+        "opentelemetry-semantic-conventions==0.62b0",
+        "typing-extensions>=4.5.0",
+        "jsonschema>=4.0; extra == 'file-configuration'",
+        "pyyaml>=6.0; extra == 'file-configuration'"
+      ],
+      "requires_python": ">=3.9",
+      "schema": "ResolvedWheelReceipt/v1",
+      "sha256": "a596f5687964a3e0d7f8edfdcf5b79cbca9c93c7025ebf5fb00f398a9443b0bd",
+      "url": "https://files.pythonhosted.org/packages/2c/13/a7825118208cb32e6a4edcd0a99f925cbef81e77b3b0aedfd9125583c543/opentelemetry_sdk-1.41.0-py3-none-any.whl",
+      "version": "1.41.0"
+    },
+    {
+      "name": "opentelemetry-semantic-conventions",
+      "requested": false,
+      "requires_dist": [
+        "opentelemetry-api==1.41.0",
+        "typing-extensions>=4.5.0"
+      ],
+      "requires_python": ">=3.9",
+      "schema": "ResolvedWheelReceipt/v1",
+      "sha256": "0ddac1ce59eaf1a827d9987ab60d9315fb27aea23304144242d1fcad9e16b489",
+      "url": "https://files.pythonhosted.org/packages/58/6c/5e86fa1759a525ef91c2d8b79d668574760ff3f900d114297765eb8786cb/opentelemetry_semantic_conventions-0.62b0-py3-none-any.whl",
+      "version": "0.62b0"
+    }
+  ],
+  "resolved_install_count": 2,
+  "schema": "OTelSdkDryRunLockReceiptSet/v1",
+  "seal": "678d201ea634eeea2786f0c4effb22d4e38528a80d7cb05c9abe18b446ba3f3c",
+  "source_anchors": [
+    {
+      "source": "pip install --dry-run report output",
+      "url": "https://pip.pypa.io/en/stable/cli/pip_install/"
+    },
+    {
+      "source": "OpenTelemetry Python docs",
+      "url": "https://opentelemetry.io/docs/languages/python/"
+    },
+    {
+      "source": "opentelemetry-sdk wheel",
+      "url": "https://files.pythonhosted.org/packages/2c/13/a7825118208cb32e6a4edcd0a99f925cbef81e77b3b0aedfd9125583c543/opentelemetry_sdk-1.41.0-py3-none-any.whl"
+    },
+    {
+      "source": "opentelemetry-semantic-conventions wheel",
+      "url": "https://files.pythonhosted.org/packages/58/6c/5e86fa1759a525ef91c2d8b79d668574760ff3f900d114297765eb8786cb/opentelemetry_semantic_conventions-0.62b0-py3-none-any.whl"
+    }
+  ],
+  "status": "OTEL_SDK_DRYRUN_LOCK_MATCH"
+}

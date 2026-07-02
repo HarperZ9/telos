@@ -1,0 +1,344 @@
+{
+  "current_promoted_natural_laws": [],
+  "fixtures": [
+    {
+      "exact_oracle": "sum_{k=1..n}(2k-1)=n^2 by telescoping difference of squares",
+      "field": "formal_math",
+      "fixture_id": "formal_odd_sum_identity",
+      "law_candidate_status": "IDENTITY",
+      "runtime_branch": {
+        "cases": 64,
+        "max_abs_error": 0,
+        "runtime": "python",
+        "status": "MATCH"
+      },
+      "samples": [
+        {
+          "n": 1,
+          "n_squared": 1,
+          "odd_sum": 1,
+          "status": "MATCH"
+        },
+        {
+          "n": 5,
+          "n_squared": 25,
+          "odd_sum": 25,
+          "status": "MATCH"
+        },
+        {
+          "n": 64,
+          "n_squared": 4096,
+          "odd_sum": 4096,
+          "status": "MATCH"
+        }
+      ],
+      "source_refs": [
+        "https://lean-lang.org/doc/reference/latest/",
+        "https://github.com/Pengbinghui/pipeline-math"
+      ],
+      "verifier_status": "PROBE_MATCH"
+    },
+    {
+      "exact_oracle": {
+        "amplitudes": [
+          "3",
+          "4",
+          "0"
+        ],
+        "norm": "25",
+        "probabilities": [
+          "9/25",
+          "16/25",
+          "0"
+        ],
+        "probability_sum": "1",
+        "squared_amplitudes": [
+          "9",
+          "16",
+          "0"
+        ],
+        "status": "MATCH"
+      },
+      "field": "physics_runtime",
+      "fixture_id": "quantum_born_normalization",
+      "law_candidate_status": "BOUNDED_RUNTIME_IDENTITY",
+      "runtime_branch": {
+        "branch_id": "python_float64_born_normalization_fixture",
+        "input_sha256": "29163c3ed606e568f5386c0ac65f4ac1a11ba89b9be1b8ad53500abd737bd448",
+        "output_sha256": "f64abd6b78fd5d854d76bdfbded791ccb0799c03839396d17e6eca57368f0fb6",
+        "probabilities": [
+          0.36,
+          0.64,
+          0.0
+        ],
+        "probability_sum": 1.0,
+        "probability_sum_abs_drift": 0.0,
+        "runtime": "python",
+        "runtime_mode": "float64",
+        "status": "MATCH",
+        "tolerance": 1e-15
+      },
+      "samples": [
+        {
+          "probabilities": [
+            "9/25",
+            "16/25",
+            "0"
+          ],
+          "probability_sum": "1"
+        }
+      ],
+      "source_refs": [
+        "HbKzqvey5PA",
+        "pass-0127"
+      ],
+      "verifier_status": "PROBE_MATCH"
+    },
+    {
+      "exact_oracle": {
+        "candidate_count": 16,
+        "capacity": 8,
+        "optimum": {
+          "chosen": [
+            "B",
+            "D"
+          ],
+          "feasible": true,
+          "value": 25,
+          "weight": 8
+        },
+        "status": "MATCH"
+      },
+      "field": "optimization",
+      "fixture_id": "bounded_knapsack_exact_oracle",
+      "law_candidate_status": "BOUNDED_OPTIMUM",
+      "runtime_branch": {
+        "enumerated_candidates": 16,
+        "optimum_value": 25,
+        "runtime": "python",
+        "status": "MATCH"
+      },
+      "samples": [
+        {
+          "chosen": [],
+          "feasible": true,
+          "value": 0,
+          "weight": 0
+        },
+        {
+          "chosen": [
+            "D"
+          ],
+          "feasible": true,
+          "value": 15,
+          "weight": 5
+        },
+        {
+          "chosen": [
+            "C"
+          ],
+          "feasible": true,
+          "value": 12,
+          "weight": 4
+        },
+        {
+          "chosen": [
+            "B",
+            "D"
+          ],
+          "feasible": true,
+          "value": 25,
+          "weight": 8
+        }
+      ],
+      "source_refs": [
+        "https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.linprog.html"
+      ],
+      "verifier_status": "PROBE_MATCH"
+    },
+    {
+      "counterexample": {
+        "n": 40,
+        "prime": false,
+        "value": 1681
+      },
+      "exact_oracle": {
+        "checked_values": 41,
+        "revised_all_prime": true,
+        "status": "MATCH"
+      },
+      "field": "counterexample_search",
+      "fixture_id": "euler_prime_counterexample_revision",
+      "law_candidate_status": "COUNTEREXAMPLE_REVISED_BOUND",
+      "rejected_claim": "n^2+n+41 is prime for every non-negative integer n",
+      "revised_claim": "n^2+n+41 is prime for 0 <= n < 40",
+      "runtime_branch": {
+        "runtime": "python",
+        "status": "MATCH",
+        "trial_division_checked": 41
+      },
+      "samples": [
+        {
+          "n": 0,
+          "prime": true,
+          "value": 41
+        },
+        {
+          "n": 39,
+          "prime": true,
+          "value": 1601
+        },
+        {
+          "n": 40,
+          "prime": false,
+          "value": 1681
+        }
+      ],
+      "source_refs": [
+        "https://github.com/Pengbinghui/pipeline-math"
+      ],
+      "verifier_status": "PROBE_MATCH"
+    }
+  ],
+  "flagship_receipts": {
+    "forum": {
+      "decided": null,
+      "exit_code": 0,
+      "status": "MATCH",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "4fe3841632e2f93c96084b52acb57b2c0fa681cb74375a1b20d42389ca51dde2"
+    },
+    "index": {
+      "exit_code": 0,
+      "status": "MATCH",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "9247e8fca402ea02973ba1f16630a0d86b2d911f5791c83760301edf1558e545",
+      "verification_verdict": "MATCH"
+    },
+    "telos": {
+      "exit_code": 0,
+      "status": "MATCH",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "be17cb15259234cb4e8e95c2b36e76c90d841431729beb140294e34c5f9ebfa7",
+      "tool_version": "0.1.0"
+    },
+    "telos_catalog": {
+      "exit_code": 0,
+      "status": "MATCH",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "ef95a6f1ff803c483c3c4dd553fe19c37ab144113a21bc005cf4148cf31a8564"
+    }
+  },
+  "generated_on": "2026-07-01",
+  "market_gap_hypotheses": [
+    {
+      "gap": "proof packets that carry source, exact oracle, runtime branch, verifier verdict, and counterexample revision",
+      "market": "AI research labs",
+      "status": "inferred"
+    },
+    {
+      "gap": "portable receipts for small proofs before scaling to compiled kernels and larger simulations",
+      "market": "scientific compute teams",
+      "status": "inferred"
+    }
+  ],
+  "negative_fixtures": [
+    {
+      "attempt": "promote the four probes to a natural law",
+      "failures": [
+        "bounded_fixtures_only",
+        "requires_independent_review"
+      ],
+      "fixture_id": "suite_to_natural_law_rejected",
+      "status": "REJECTED"
+    },
+    {
+      "attempt": "infer market demand from source anchors alone",
+      "failures": [
+        "no_buyer_interviews",
+        "no_budget_signal"
+      ],
+      "fixture_id": "single_source_market_fit_rejected",
+      "status": "REJECTED"
+    },
+    {
+      "attempt": "keep the Euler polynomial claim unbounded",
+      "failures": [
+        "counterexample_n_40",
+        "claim_must_be_revised"
+      ],
+      "fixture_id": "counterexample_omission_rejected",
+      "status": "REJECTED"
+    },
+    {
+      "attempt": "include raw video transcript body in the suite",
+      "failures": [
+        "source_lead_boundary",
+        "raw_transcript_not_required"
+      ],
+      "fixture_id": "raw_video_transcript_export_rejected",
+      "status": "REJECTED"
+    }
+  ],
+  "non_promotion_statement": "Pass 0128 proves only four bounded fixtures and the shared proof-suite shape. It does not prove a new natural law, market demand, BuildLang/buildc execution, or arbitrary theorem-solving ability.",
+  "pass": "0128",
+  "schema": "CrossFieldProofSuiteReceipt/v1",
+  "seal": "a156060486b999d141977cc5df8eda8c1c08b42872b589671987b98c5b724cc0",
+  "shared_receipt_slots": [
+    "source_refs",
+    "demotion_gate",
+    "exact_oracle",
+    "runtime_branch",
+    "verifier_status",
+    "non_promotion_boundary"
+  ],
+  "source_bindings": {
+    "demotion_gate_pass": "0126",
+    "demotion_gate_seal": "67b045645bb0ff265f585a2c92768684ba47e2956920030eb756191bbd737926",
+    "runtime_layer_pass": "0122",
+    "runtime_layer_seal": "135c16c1f6d840cbb26ae6ba9257b3863844035c90975e9248aa13ffc1899312",
+    "runtime_router_pass": "0127",
+    "runtime_router_seal": "5257c922609d09aab485356b09e3947d2876f977510c2291dbfe3d90b510612d"
+  },
+  "source_receipts": [
+    {
+      "chars": 16884,
+      "kind": "webpage",
+      "method": "http-get",
+      "ref": "https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.linprog.html",
+      "sha256": "f71a0cc3dfcfe6f0c5fca1e80573d0709a07e0b48d75d4166331fffb279cd6a9",
+      "status": "GATHER_VERIFIED",
+      "title": "linprog  SciPy v1.18.0 Manual"
+    },
+    {
+      "chars": 5373,
+      "kind": "webpage",
+      "method": "http-get",
+      "ref": "https://github.com/Pengbinghui/pipeline-math",
+      "sha256": "9940a3bdb6bd0f202e48f15e145765ee82e8c105892646c614dce0930f780428",
+      "status": "GATHER_VERIFIED",
+      "title": "GitHub - Pengbinghui/pipeline-math  GitHub"
+    },
+    {
+      "chars": 3438,
+      "kind": "webpage",
+      "method": "http-get",
+      "ref": "https://lean-lang.org/doc/reference/latest/",
+      "sha256": "04ad404726c7253834037e19025a60ae02d5565d89e77b724867d0c529361080",
+      "status": "GATHER_VERIFIED",
+      "title": "The Lean Language Reference"
+    },
+    {
+      "chars": 3223,
+      "kind": "webpage",
+      "method": "http-get",
+      "ref": "https://numpy.org/doc/stable/reference/generated/numpy.linalg.det.html",
+      "sha256": "51ab13e923411e83851a831206f5329d3ac33b6fd1b3bd132435e37d5fa703bb",
+      "status": "GATHER_VERIFIED",
+      "title": "numpy.linalg.det  NumPy v2.5 Manual"
+    }
+  ],
+  "status": "CROSS_FIELD_PROOF_SUITE_MATCH",
+  "unsupported_claim_count": 0,
+  "validation_errors": []
+}

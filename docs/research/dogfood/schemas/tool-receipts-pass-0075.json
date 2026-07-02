@@ -1,0 +1,145 @@
+{
+  "schema": "DogfoodToolReceipts/v1",
+  "pass": "0075",
+  "generated_on": "2026-07-01",
+  "status": "MATCH_BUILDLANG_DOMAIN_ENVELOPE_JOIN",
+  "index": {
+    "status": "MATCH",
+    "tool_version": "2.8.0",
+    "current_status": "2.8.0 workspace atlas, certificates, freshness, benchmarking, selection-aware context envelopes, and MCP parity",
+    "role": "structure-context",
+    "path_scoped_buildlang_context": false,
+    "root_context_fallback": true
+  },
+  "forum": {
+    "status": "MATCH",
+    "tool_version": "1.12.0",
+    "current_status": "1.12.0 per-task context with 28-lane Project Telos roster, model-foundry daemon routing, and MCP parity",
+    "role": "orchestration-routing",
+    "domain_route": "project-telos",
+    "route_needs_escalation": false
+  },
+  "buildlang": {
+    "source_receipt_pass": "0074",
+    "source_component_id": "buildlang.source-ref.receipt.0074",
+    "source_ref_count": 13,
+    "corpus_verify_status": "MATCH",
+    "program_count": 8,
+    "production_backend_claim": "C backend only",
+    "source_digest": "be025df926cbb5fa2948552e9b43941fd0d6f863cad19ea2e4d18d32330a3a03"
+  },
+  "domain_envelope": {
+    "schema": "BuildLangDomainEnvelopeJoin/v1",
+    "artifact": "docs/research/dogfood/schemas/buildlang-domain-envelope-join-pass-0075.json",
+    "artifact_sha256": "4fa408c98ecef32ad1a9005ea0301ebde038bb1f76aa40a4c8f7fa4b32004319",
+    "seal": "e2f71b8d661ad00d6f86b3942809cc48054fe9bedeab546123f86057ad6c3bd5",
+    "joined_envelope_id": "telos.domain-focus.buildlang_buildc.0075",
+    "domain_id": "buildlang_buildc",
+    "domain_source_ref_replaced": true,
+    "root_context_fallback_preserved": true,
+    "path_scoped_context": false,
+    "unsupported_claim_count": 0,
+    "negative_fixtures": 8
+  },
+  "gather": {
+    "status": "MATCH",
+    "tool_version": "1.5.0",
+    "docs_packet": {
+      "path": "docs/research/dogfood/packets/085-buildlang-domain-envelope-join.md",
+      "sha256": "8d54e8a9a4a8cf1e1e0700c397fa2696cf8ee2e8020f3017fa06d8a26be01242",
+      "seal": "76b9bd6461134e1a95a1d1ae3687800a07adcc6e1d5acb72901e5d131cfc637a",
+      "verified": true,
+      "dropped": 0
+    }
+  },
+  "crucible": {
+    "status": "MATCH",
+    "tool_version": "1.1.0",
+    "run_status": "MATCH",
+    "thesis_id": "883b5f0ba465ee9b",
+    "thesis_seal": "883b5f0ba465ee9be19a4737c3c917da144cecbf37128215b1273ad1a01391bd",
+    "assessment_seal": "3c8cad9a8aac477d12cd459c3c711c8e26b7d69ccfdb4a100aab37e518324b66",
+    "measurement_seal": "3e3f2d3a1f526160c797600bc5cebee934cbf61c517983f98a3c2d9e66526d58",
+    "claims": 8,
+    "match": 8,
+    "drift": 0,
+    "unverifiable": 0,
+    "registry_stats": {
+      "theses": 63,
+      "claims": 521,
+      "unique_claims": 514,
+      "assessments": 64,
+      "latest_assessments": 63,
+      "invalid_latest_assessments": 0,
+      "match": 521,
+      "drift": 0,
+      "unverifiable": 0
+    }
+  },
+  "telos": {
+    "domain_envelope_result": "BuildLang source-ref receipt now replaces the generic source-intake component for the buildlang_buildc domain envelope.",
+    "next_integration_gap": "Path-scoped Index source-ref expansion for BuildLang/buildc/build-universe remains unimplemented.",
+    "non_promotion_boundary": "Does not prove path-scoped context, all backends production-ready, self-hosting, Julia replacement, market adoption, scientific discovery, or a natural law."
+  },
+  "shell": {
+    "commands": [
+      {
+        "command": "python docs\\research\\dogfood\\tools\\test_buildlang_domain_envelope_join.py",
+        "status": "MATCH"
+      },
+      {
+        "command": "python docs\\research\\dogfood\\tools\\probe_buildlang_domain_envelope_join.py",
+        "status": "MATCH"
+      },
+      {
+        "command": "python docs\\research\\dogfood\\tools\\validate_pass_0075_buildlang_domain_envelope_join.py",
+        "status": "MATCH"
+      },
+      {
+        "command": "crucible run docs\\research\\dogfood\\crucible\\pass-0075-thesis.json --measurements docs\\research\\dogfood\\crucible\\pass-0075-measurements.json --registry docs\\research\\dogfood\\crucible\\registry --report docs\\research\\dogfood\\crucible\\pass-0075-report.md --out docs\\research\\dogfood\\crucible\\pass-0075-run.json --json",
+        "status": "MATCH"
+      },
+      {
+        "command": "gather docs docs\\research\\dogfood\\packets\\085-buildlang-domain-envelope-join.md --json",
+        "status": "MATCH"
+      },
+      {
+        "command": "crucible registry stats docs\\research\\dogfood\\crucible\\registry --json",
+        "status": "MATCH"
+      },
+      {
+        "command": "index status --json",
+        "status": "MATCH"
+      },
+      {
+        "command": "forum status --json",
+        "status": "MATCH"
+      },
+      {
+        "command": "gather status --json",
+        "status": "MATCH"
+      },
+      {
+        "command": "crucible status --json",
+        "status": "MATCH"
+      }
+    ],
+    "line_counts": {
+      "compose_buildlang_domain_envelope_join.py": 139,
+      "probe_buildlang_domain_envelope_join.py": 111,
+      "test_buildlang_domain_envelope_join.py": 35,
+      "validate_pass_0075_buildlang_domain_envelope_join.py": 66
+    },
+    "sha256": {
+      "compose_buildlang_domain_envelope_join.py": "662bb9a4f290ebd72c46281ff56f8e6a4f4b9e03c801f484437b4f8a9e6d6d8d",
+      "probe_buildlang_domain_envelope_join.py": "cd426fce925f72265634d11a97fcbf86c1ca2ac87a8d18b008ed611b94240afd",
+      "test_buildlang_domain_envelope_join.py": "1d05d2e77456eb2681deb168fa244ae778c97e5667192e6d4971b7044150baa0",
+      "validate_pass_0075_buildlang_domain_envelope_join.py": "efb722c8e1c6b045775ad45172353dc92aa01785d98c1050aed5d6100efda9ee",
+      "buildlang-domain-envelope-join-pass-0075.json": "4fa408c98ecef32ad1a9005ea0301ebde038bb1f76aa40a4c8f7fa4b32004319",
+      "pass-0075-buildlang-domain-envelope-join-validator-result.json": "1411ce36be874f3a6d3683d173034d04ce2b010f9e934998debfd22748324889",
+      "085-buildlang-domain-envelope-join.md": "8d54e8a9a4a8cf1e1e0700c397fa2696cf8ee2e8020f3017fa06d8a26be01242",
+      "pass-0075-buildlang-domain-envelope-join-steelman.md": "3a53aa3a3992213ac9db6e9b529a372e8cbaafc9d44faa90589d45395e149021",
+      "pass-0075-run.json": "e1eb18989e4b8a2248477669ea11e29d7f9713ba65fb360cde532070f7949937"
+    }
+  }
+}

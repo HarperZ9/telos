@@ -1,0 +1,101 @@
+{
+  "common_candidate_paths": [
+    {
+      "exists": false,
+      "path": "C:\\Users\\Zain\\.elan\\bin\\lake.exe"
+    },
+    {
+      "exists": false,
+      "path": "C:\\Users\\Zain\\.elan\\bin\\lean.exe"
+    },
+    {
+      "exists": false,
+      "path": "C:\\Users\\Zain\\.elan\\bin\\elan.exe"
+    },
+    {
+      "exists": false,
+      "path": "C:\\Program Files\\Elan\\bin\\lake.exe"
+    },
+    {
+      "exists": false,
+      "path": "C:\\Program Files\\Elan\\bin\\lean.exe"
+    },
+    {
+      "exists": false,
+      "path": "C:\\Program Files\\Elan\\bin\\elan.exe"
+    }
+  ],
+  "dependency_cache_binding_sha256": "393f71b91fb69d800aff7f81751517eb62af2ee0d098670ae97d4f16a869de22",
+  "generated_on": "2026-07-01",
+  "lake_env_lean_version": {
+    "args": [
+      "lake",
+      "env",
+      "lean",
+      "--version"
+    ],
+    "status": "NOT_RUN_EXECUTABLE_MISSING"
+  },
+  "pass": "0044",
+  "path_entry_count": 44,
+  "path_probes": {
+    "elan": {
+      "where": {
+        "exit_code": 1,
+        "status": "NOT_FOUND",
+        "stdout": "",
+        "tool": "elan"
+      },
+      "which": null
+    },
+    "lake": {
+      "where": {
+        "exit_code": 1,
+        "status": "NOT_FOUND",
+        "stdout": "",
+        "tool": "lake"
+      },
+      "which": null
+    },
+    "lean": {
+      "where": {
+        "exit_code": 1,
+        "status": "NOT_FOUND",
+        "stdout": "",
+        "tool": "lean"
+      },
+      "which": null
+    }
+  },
+  "schema": "LeanLakeExecutablePreflightFixture/v1",
+  "seal": "7eb73ddc3f379c7c51a31fe570be2430171a8ad3242ad0e7bc582998f7959746",
+  "version_attempts": [
+    {
+      "args": [
+        "lake",
+        "--version"
+      ],
+      "executable_path": null,
+      "status": "NOT_RUN_EXECUTABLE_MISSING",
+      "tool": "lake"
+    },
+    {
+      "args": [
+        "lean",
+        "--version"
+      ],
+      "executable_path": null,
+      "status": "NOT_RUN_EXECUTABLE_MISSING",
+      "tool": "lean"
+    },
+    {
+      "args": [
+        "elan",
+        "--version"
+      ],
+      "executable_path": null,
+      "status": "NOT_RUN_EXECUTABLE_MISSING",
+      "tool": "elan"
+    }
+  ]
+}

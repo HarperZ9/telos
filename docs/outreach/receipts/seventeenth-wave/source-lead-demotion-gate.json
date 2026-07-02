@@ -1,0 +1,50 @@
+{
+  "schema": "project-telos.source-lead-demotion-gate/v1",
+  "generated_at": "2026-07-02",
+  "wave": "seventeenth",
+  "purpose": "Demote typed finite-grid, cyclic-boundary, Lean, formal-verification, and scientific-computing arXiv metadata into source leads only after adding a typed finite-grid Lean replay rung.",
+  "stores": [
+    {
+      "path": "docs/outreach/receipts/seventeenth-wave/arxiv-typed-finite-grid-lean",
+      "retained_rows": 7,
+      "digest_seal": "679f79fdae67e278cda7a00b4e0a90f58991ae75476ae7b209ca4272b0974e66",
+      "verify_status": "MATCH"
+    },
+    {
+      "path": "docs/outreach/receipts/seventeenth-wave/arxiv-cyclic-boundary-grid-formal",
+      "retained_rows": 1,
+      "digest_seal": "2cea033037dc16273c9c02979772860c25392c7c8c3bf7873cc3df2739ea0d22",
+      "verify_status": "MATCH"
+    }
+  ],
+  "coverage": {
+    "retained_rows": 8,
+    "unique_arxiv_ids": 8,
+    "duplicate_rows": 0,
+    "dropped_by_gather_scope": 8,
+    "all_store_verifications_match": true
+  },
+  "classification_counts": {
+    "formal_replay_infrastructure": 6,
+    "formal_pde_or_analysis_lead": 1,
+    "adjacent_scientific_computing_lead": 1,
+    "high_risk_grand_claim": 0
+  },
+  "classifications": [
+    {"id": "2604.16507v1", "class": "formal_replay_infrastructure", "reason": "Lean 4 formal proof process lead."},
+    {"id": "2606.01356v2", "class": "formal_replay_infrastructure", "reason": "Lean 4 formal library / proof-publication analog."},
+    {"id": "2604.05984v1", "class": "formal_pde_or_analysis_lead", "reason": "Lean formalization of De Giorgi-Nash-Moser theory; source-body review required before citation use."},
+    {"id": "2006.04806v3", "class": "formal_replay_infrastructure", "reason": "Formal verification defenses; adjacent proof-systems lead."},
+    {"id": "2406.09757v2", "class": "formal_replay_infrastructure", "reason": "LLM-driven formalization and verification-aware language lead."},
+    {"id": "2510.24798v1", "class": "formal_replay_infrastructure", "reason": "Compositional formal verification in Dafny; adjacent proof-method lead."},
+    {"id": "2606.28990v1", "class": "formal_replay_infrastructure", "reason": "Lean 4 theorem formalization analog."},
+    {"id": "1607.05537v1", "class": "adjacent_scientific_computing_lead", "reason": "Scientific computing hardware lead; not direct proof-method or PDE formalization evidence."}
+  ],
+  "verdict": "SOURCE_LEAD_ONLY",
+  "boundaries": [
+    "This gate classifies arXiv metadata only.",
+    "It does not establish paper truth, source-body review, latest literature coverage, or exhaustive literature coverage.",
+    "It does not promote any PDE result, theorem-prover result beyond the local Lean file, or grand-problem claim.",
+    "No row is used as proof of the typed finite-grid theorem; the Lean replay receipt is the proof artifact for that bounded theorem."
+  ]
+}

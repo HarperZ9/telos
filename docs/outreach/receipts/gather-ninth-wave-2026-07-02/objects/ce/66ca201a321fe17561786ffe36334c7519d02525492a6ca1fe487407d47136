@@ -1,0 +1,212 @@
+# Project Telos Funding Application Queue
+
+Date: 2026-07-02
+
+Purpose: prepare funding and grant outreach for Project Telos without submitting forms or transmitting applications before final operator confirmation.
+
+## Current Tool Evidence To Reuse
+
+- Telos catalog reports 70 available tools across Gather, Index, Forum, Crucible, and Telos.
+- Gather status reports `1.5.0` and `MATCH`.
+- Index status reports `2.8.0` and `MATCH`.
+- Forum doctor reports `1.12.0` and `MATCH`.
+- Current public positioning: proof-native AI workbench; local-first source intake, workspace context, routing, action receipts, and `MATCH` / `DRIFT` / `UNVERIFIABLE` verification.
+- Current repo license: `FSL-1.1-ALv2` / fair-source. This may block strict FOSS grant programs unless the application targets permissively licensed subcomponents or the license posture changes.
+
+## Opportunity Matrix
+
+| Opportunity | URL | Current status | Fit | Next action |
+| --- | --- | --- | --- | --- |
+| OpenAI Cybersecurity Grant / Trusted Access for Cyber | https://openai.com/form/cybersecurity-grant-program/ and https://openai.com/index/trusted-access-for-cyber/ | Official application remains live; OpenAI says the program evolved toward Trusted Access for Cyber and $10M in API credits for cyber defense. | Strong if strictly defensive: verified OSS fixes, duplicate filtering, CI triage, maintainer-friendly proof packets, and security remediation workflows. | Use existing draft `outputs/project-telos-openai-cybersecurity-grant-draft-2026-07-02.md`; final form needs applicant/contact/budget fields. |
+| OpenAI / Trail of Bits Patch the Planet | https://openai.com/index/patch-the-planet/ and https://trailofbits.com/patch-the-planet/ | Active maintainer participation path; selected maintainers receive support, including ChatGPT Pro and conditional Codex security access. | Strong partnership/outreach path if framed as maintainer-side receipt tooling for validation, patch evidence, and duplicate filtering. | Prepare maintainer-facing note. Do not claim official partnership. |
+| NLnet | https://nlnet.nl/propose/ | Next deadline shown as August 1, 2026 12:00 CEST; temporary intake limited to NGI TALER and NGI Fediversity. | Weak immediate fit unless we frame a Fediversity/hosting-stack adapter. Stronger fit when regular open calls reopen after summer. | Hold immediate submission. Prepare future open-call proposal and only submit if scope matches. |
+| NLnet CodeSupply | https://nlnet.nl/codesupply/ and https://nlnet.nl/codesupply/guideforapplicants/ | First call says coming soon; guide says the program runs 2026-06-01 through 2029-05-30 and has EUR 400,000 for auxiliary projects. | Strong for supply-chain metadata, package-origin receipts, SBOM/AIBOM-style provenance, and source-federation adapters. | Keep CodeSupply draft parked until the call opens. |
+| Alpha-Omega | https://alpha-omega.dev/ and https://openssf.org/community/alpha-omega/ | OpenSSF/LF security initiative focused on sustainable security improvements for critical open source projects and ecosystems. | Moderate to strong if attached to a critical OSS project/ecosystem rather than only Telos itself. | Use existing draft `outputs/project-telos-alpha-omega-grant-draft-2026-07-02.md`; pick recipient/project/amount before submit. |
+| FLOSS/fund | https://floss.fund/ and https://dir.floss.fund/submit | Ongoing public directory/application via hosted `funding.json`; up to $100,000/year per FAQ. | Good mechanism, but license and usage maturity are risks. Telos fair-source is not clearly FLOSS. | Prepare `funding.json` draft; do not submit until public contact, license, and hosted URL are resolved. |
+| Mozilla Builders | https://builders.mozilla.org/programs/ | Program page describes open-source AI accelerator with up to $100,000 non-dilutive funding and 12-week curriculum; visible page still carries 2024 dates. | Strong thematic fit for local AI, developer tooling, agent reliability, and open-source AI infrastructure. | Watch for next cohort; prepare concise accelerator application narrative now. |
+| Mozilla MOSS Foundational Technology | https://www.mozilla.org/en-US/moss/foundational-technology/ | Awards from $10,000 to $250,000; requires a Mozillian champion and clear project goal. | Possible fit only if a Mozillian champion cares about MCP/agent receipts, browser evidence, local AI, or developer tooling. | Identify champion before application. Do not cold-submit without champion. |
+| GitHub Accelerator | https://github.com/open-source/accelerator | Current page is 2024 AI accelerator archive/sign-up; no current 2026 application form found in this pass. | Strong strategic fit if reopened: open AI, security, sustainability, visibility, and community. | Sign up for updates / monitor; prepare application copy and metrics. |
+| GitHub Fund | https://github.com/open-source/fund | Investment/contact path, not a grant. | Possible only if Project Telos is positioned as an open-source developer-tool company. | Lower priority unless operator wants venture path. |
+| a16z Open Source AI Grants | https://a16z.com/announcing-our-latest-open-source-ai-grants/ | Program page is older but relevant: grants for open-source AI stack builders. | Potential fit if applications remain accepted through private/contact path. | Prepare short inquiry, not a full application, unless current intake is verified. |
+
+## Priority Order
+
+1. OpenAI Cybersecurity Grant / Trusted Access for Cyber: highest-readiness active application path, strictly defensive framing.
+2. Patch the Planet: strong maintainer/outreach path around AI-assisted security findings becoming real patches and tests.
+3. Alpha-Omega: strong if tied to critical OSS maintainer support and measurable security-quality outcomes.
+4. NLnet CodeSupply: strong supply-chain/provenance fit, but wait until the call opens.
+5. Mozilla Builders: strong thematic fit if a current cohort opens.
+6. FLOSS/fund: useful public funding directory path after license/contact/manifest issues are resolved.
+7. GitHub Accelerator: high-visibility target; monitor for next opening.
+8. NLnet general open calls: hold until regular open calls reopen or a specific Fediversity/Taler subproject exists.
+9. MOSS: viable only with a Mozillian champion.
+10. a16z Open Source AI Grants: inquiry only until current intake is verified.
+
+## Core Funding Narrative
+
+Project Telos is a local-first, proof-native AI workbench for consequential agent work. It connects five standalone flagship tools:
+
+- Gather: source intake and provenance receipts.
+- Index: workspace maps and context envelopes.
+- Forum: routing, ledgers, and operator-readable handoffs.
+- Crucible: falsifiable claim checks with `MATCH`, `DRIFT`, and `UNVERIFIABLE` verdicts.
+- Telos: shared MCP/catalog/action-receipt surface for host integration, browser evidence, model-foundry lanes, Learning Forge labs, and OSS proof packets.
+
+The immediate funding goal is not generic runway. It is a bounded 8- to 12-week public hardening push:
+
+- Stabilize the 70-tool MCP catalog and host freshness checks.
+- Package browser evidence and action receipts for real developer workflows.
+- Turn OSS issue intake into reproducible patch packets with tests and verifier results.
+- Publish short demos and docs that make source provenance, selected context, actions, and blocked claims visible.
+- Bring early users from AI agents, scientific computing, quant/dev tooling, and open-source maintainer workflows into feedback loops.
+
+## Draft: Mozilla Builders / Open-Source AI Accelerator
+
+Short application summary:
+
+> Project Telos is a local-first AI workbench that makes agent work inspectable. Instead of treating an agent answer as the product, Telos records the source intake, workspace context, route, proposed action, execution evidence, and verification state. The current source checkout exposes a 70-tool MCP/catalog surface across Gather, Index, Forum, Crucible, and Telos, with `MATCH`/`DRIFT`/`UNVERIFIABLE` receipts for host freshness, CI triage, browser evidence, action receipts, and OSS proof packets.
+
+Problem:
+
+> AI coding and research agents are moving faster than the evidence around them. Developers can get code, summaries, and browser actions quickly, but often cannot reconstruct what sources were read, which files were selected, which commands ran, or which claims remained unverified. That is especially harmful for scientific workflows, open-source maintenance, quant/dev tooling, and regulated-adjacent review.
+
+12-week plan:
+
+1. Weeks 1-2: package the MCP freshness and action-receipt demos into a one-command local install path.
+2. Weeks 3-4: ship browser-evidence packets for long browser workflows with redacted state digests and side-effect classes.
+3. Weeks 5-6: convert one live OSS bug into a complete reproduction -> patch -> tests -> verifier packet.
+4. Weeks 7-8: publish short docs/videos for local AI agents, MCP hosts, and maintainer review workflows.
+5. Weeks 9-10: onboard 10-20 technical users and collect missing receipt fields.
+6. Weeks 11-12: harden docs, public examples, and contribution lanes based on feedback.
+
+Funding ask:
+
+> $75,000-$100,000 non-dilutive support for focused engineering, documentation, public demo packaging, and user feedback loops.
+
+## Draft: OpenAI Cybersecurity Grant / Trusted Access
+
+Status: current output draft exists at `outputs/project-telos-openai-cybersecurity-grant-draft-2026-07-02.md`.
+
+Short framing:
+
+> Project Telos would use defensive AI access to reduce maintainer burden from machine-speed vulnerability reports and low-quality AI patches. The project would package each finding/fix as a re-checkable proof packet: source intake, duplicate scan, reproduction, patch, tests, CI triage, verifier verdict, and explicit remaining uncertainty.
+
+Best evidence to attach:
+
+- Existing public bugfix PRs with green checks or maintainer approval.
+- OSS Proof Showcase receipts showing live issue intake blocked until reproduction/test/verifier evidence exists.
+- CI triage and action-receipt docs showing defensive, maintainer-friendly workflow.
+
+Do not include offensive exploitation, exploit development, credential acquisition, or vulnerability hype. Keep all examples in good-faith defensive find-and-fix lanes.
+
+## Draft: Patch the Planet Maintainer Note
+
+Target:
+
+> Maintainership path through OpenAI / Trail of Bits Patch the Planet or direct maintainer outreach.
+
+Body:
+
+> Project Telos can help with the maintenance side of AI-assisted security work: duplicate filtering, reproduction evidence, patch/test receipts, and explicit `UNVERIFIABLE` states before a finding reaches maintainers. The useful contribution is not another stream of generated reports; it is a package that shows what was read, what was reproduced, what changed, which checks ran, and what remains uncertain.
+
+## Draft: Alpha-Omega
+
+Status: current output draft exists at `outputs/project-telos-alpha-omega-grant-draft-2026-07-02.md`.
+
+Short framing:
+
+> Use Project Telos as a maintainer-support workflow for critical OSS security quality: triage AI-generated findings, reject duplicates, reproduce real issues, package patches/tests, and publish monthly public reports with evidence fields maintainers can audit.
+
+Missing fields before form submission:
+
+- Specific target project/ecosystem.
+- Amount and duration.
+- Applicant identity/contact.
+- License answer.
+- Public reporting cadence.
+
+## Draft: NLnet CodeSupply
+
+Status: parked until call opens.
+
+Short framing:
+
+> Project Telos would implement receipt-backed package and source-federation adapters for software supply-chain metadata. The work would focus on package-origin evidence, repository/source joins, metadata drift, and machine-readable verification packets that can route through CLI and MCP hosts.
+
+Possible deliverables:
+
+1. Package-origin receipt schema.
+2. Source registry federation adapter.
+3. SBOM/AIBOM-adjacent provenance demo.
+4. MCP host integration for supply-chain source checks.
+5. Crucible verification packet for metadata drift.
+
+## Draft: FLOSS/fund Directory / funding.json
+
+Status: draft only. See `docs/outreach/DRAFT-FUNDING-JSON-2026-07-02.json`.
+
+Blockers before submit:
+
+- Replace placeholder public contact email.
+- Decide whether Telos umbrella fair-source license is acceptable. If not, apply with a permissively licensed component or publish a clearly FOSS subset first.
+- Host the manifest at a stable URL, ideally in-repo as `funding.json`.
+- Add `.well-known/funding-manifest-urls` only if the manifest references URLs on another hostname.
+
+Suggested ask:
+
+> $100,000 one-time support for Project Telos public hardening: MCP host freshness, action receipts, browser evidence, OSS proof packets, and maintainer-facing documentation.
+
+## Draft: NLnet Future Open Call
+
+Current status: hold for regular call unless a Fediversity/Taler-shaped subproject is created.
+
+Proposal name:
+
+> Project Telos: Re-checkable AI Agent Workflows for Open Internet Tooling
+
+Abstract:
+
+> Project Telos is a local-first workbench that gives AI-assisted software and research workflows a re-checkable evidence trail. It connects source intake, workspace context selection, task routing, action receipts, and falsifiable verification into CLI and MCP tools that can run locally. The project outcome is a hardened open workflow where developers and maintainers can see what an agent read, what it changed, which checks ran, and which claims remained `UNVERIFIABLE`.
+
+Requested support:
+
+> EUR 50,000-75,000 for a bounded public hardening effort: source-federation receipts, MCP freshness probes, action-receipt schemas, browser evidence packets, OSS maintainer proof packets, documentation, and interoperability testing.
+
+Technical challenges:
+
+> The hard problem is preserving enough evidence for review without leaking raw private data or forcing every host into one platform. The work must keep receipts portable across CLI, MCP, IDE, TUI, and app surfaces; distinguish `MATCH`, `DRIFT`, and `UNVERIFIABLE`; and make missing evidence actionable instead of hiding it behind a fluent model answer.
+
+Ecosystem engagement:
+
+> Publish examples for MCP host authors, local AI agent users, scientific/research tooling developers, and open-source maintainers. Continue upstream PRs that show the workflow on real public bugs and directory listings. Gather feedback from Reddit, YouTube, GitHub, and developer communities where people already discuss agent reliability, reproducibility, and long browser workflows.
+
+## Draft: MOSS Champion Pitch
+
+Subject:
+
+> Seeking Mozillian champion for local-first AI workflow receipt tooling
+
+Body:
+
+> I am building Project Telos, a local-first AI workbench for recording what agent workflows read, selected, changed, and verified. The current source checkout exposes a 70-tool MCP/catalog surface across source intake, workspace mapping, routing, verification, action receipts, browser evidence, and OSS proof packets. The project is relevant to open-source AI because it makes local agent work more inspectable and less dependent on opaque hosted workflow state.
+>
+> I am looking for a Mozillian champion before considering a MOSS Foundational Technology application. The bounded project goal would be to harden browser-evidence packets, MCP freshness checks, and maintainer-facing action receipts so local AI tools can preserve provenance without sending raw private payloads to a central service.
+
+## Draft: a16z Open Source AI Grants Inquiry
+
+Subject:
+
+> Open-source AI tooling grant inquiry: proof-native agent workbench
+
+Body:
+
+> I am building Project Telos, a local-first workbench for AI agent provenance and verification. It packages source intake, workspace context, routing, action receipts, browser evidence, and verifier verdicts into a 70-tool MCP/catalog surface across Gather, Index, Forum, Crucible, and Telos. The near-term goal is to harden developer-facing demos and real OSS bugfix packets so agent workflows become inspectable, replayable, and maintainer-friendly.
+>
+> If the open-source AI grant program is still accepting projects or referrals, I would like to share a concise proposal and current receipts.
+
+## Do Not Submit Yet
+
+- Do not submit any grant form, application, public directory listing, or funding manifest without final operator confirmation.
+- Do not send personal contact details until the exact destination and data are confirmed.
+- Do not claim Telos is fully FLOSS while the umbrella repo is `FSL-1.1-ALv2`.
+- Do not claim user adoption or production deployments unless current evidence exists.

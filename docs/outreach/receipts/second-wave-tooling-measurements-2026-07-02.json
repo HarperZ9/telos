@@ -1,0 +1,64 @@
+{
+  "measurements": [
+    {
+      "claim": "The current MCP-exposed flagship status surfaces report all five Project Telos flagships as ready with a 70-tool Telos room surface.",
+      "method": "mcp-status-review",
+      "evidence": [
+        "telos_room: ready 5 / total 5, checks_passed 20 / checks_total 20, tools 70",
+        "gather_status: tool_version 1.5.0, status MATCH",
+        "index_status: tool_version 2.8.0, status MATCH",
+        "forum_status: tool_version 1.12.0, status MATCH",
+        "crucible_status: tool_version 1.1.0, status MATCH"
+      ],
+      "deviation": 0.0,
+      "tolerance": 0.5
+    },
+    {
+      "claim": "The Learn source checkout supports a receipt-backed research-training loop: status reports version 1.5.0, doctor reports MATCH, the targeted tutor/prooflesson/reverify test slice passes, and a temp study receipt verifies from evidence.",
+      "method": "source-checkout-command-review",
+      "evidence": [
+        "C:\\dev\\public\\learn\\package.json: version 1.5.0",
+        "node src/cli.mjs doctor: learn doctor MATCH with 9 MATCH checks",
+        "temp CLI demo: tutor study-receipt research-proof reported verified true",
+        "node --test tests\\tutor.test.mjs tests\\learn-study-cli.test.mjs tests\\tutor-reverify.test.mjs tests\\tutor-prooflesson.test.mjs: 53 pass, 0 fail"
+      ],
+      "deviation": 0.0,
+      "tolerance": 0.5
+    },
+    {
+      "claim": "The BuildLang/buildc source checkout supports a receipt-backed compiler demo from an isolated Cargo target: doctor completes for buildc 1.0.6, the C backend is ready, hello.bld check emits a passed receipt, and corpus verify reports 8 C executions passed.",
+      "method": "source-checkout-command-review",
+      "evidence": [
+        "C:\\dev\\public\\pubscan\\quantalang\\compiler\\Cargo.toml: package buildlang version 1.0.6",
+        "isolated-target buildc doctor: buildc 1.0.6 (windows), C backend ready via MSVC Build Tools",
+        "buildc check examples\\quickstart\\hello.bld --receipt -: schema buildlang-check-receipt/v1, status passed, source digest 0e542c60fbd874a38a2a3a87eaf61be04532a0df23e3ea25512d03301883dfae",
+        "buildc corpus verify: manifest 8 programs, c execution 8 passed"
+      ],
+      "deviation": 0.0,
+      "tolerance": 0.5
+    },
+    {
+      "claim": "The Emet source checkout supports a narrow external-witness demo: selftest emits the current self hash and conformance passes 35 of 35 vectors, while the PATH wrapper remains out of scope because it still depends on a missing warden_shell module.",
+      "method": "source-checkout-command-review",
+      "evidence": [
+        "python membrane.py selftest: emet_self_sha256 b75ae75283ae774d4d8fc68452de34636fc5e47fd544d1d2d1c9783f1f282f1a",
+        "python conformance\\run.py membrane.py: CONFORMANCE 35/35 vectors pass",
+        "docs/outreach/SECOND-WAVE-DEMO-PACKAGES-2026-07-02.md records the PATH wrapper boundary"
+      ],
+      "deviation": 0.0,
+      "tolerance": 0.5
+    },
+    {
+      "claim": "The second-wave outreach documents preserve the source-checkout boundary and add demo packages for Learn, BuildLang/buildc, Emet, and megatool composition.",
+      "method": "document-review",
+      "evidence": [
+        "docs/outreach/SECOND-WAVE-DEMO-PACKAGES-2026-07-02.md exists and labels current claims as source-checkout claims",
+        "docs/outreach/SECOND-WAVE-CONTENT-QUEUE-2026-07-02.md exists and repeats the re-run-before-posting rule",
+        "docs/outreach/PARALLEL-CODEX-HANDOFF-2026-07-02.md references the second-wave package",
+        "docs/TOOLING-SHAPE-ASSESSMENT-2026-07-02.md distinguishes source-checkout evidence from PATH availability"
+      ],
+      "deviation": 0.0,
+      "tolerance": 0.5
+    }
+  ]
+}

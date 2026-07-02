@@ -1,0 +1,62 @@
+{
+  "measurements": [
+    {
+      "claim": "The eighteenth-wave packet shifts current outreach focus away from GitHub and toward funding, Reddit, YouTube, forums, and broader developer communities unless an active maintainer/CI response requires GitHub attention.",
+      "method": "packet-boundary-review",
+      "evidence": [
+        "EIGHTEENTH-WAVE-NON-GITHUB-OUTREACH-ACTION-PACKET-2026-07-02.md states GitHub work is paused unless an active reply, review, CI failure, or maintainer request requires response",
+        "the packet purpose lists funding, Reddit, YouTube, forums, developer communities, grant programs, and feedback loops"
+      ],
+      "deviation": 0.0,
+      "tolerance": 0.5
+    },
+    {
+      "claim": "The packet records current Telos tool evidence including Gather 1.5.0 MATCH, Index 2.8.0 MATCH, Forum 1.12.0 MATCH, Crucible 1.1.0 MATCH, Telos room 5 of 5 ready, and 70 available protocol tools.",
+      "method": "mcp-status-readback",
+      "evidence": [
+        "gather_status returned MATCH version 1.5.0",
+        "index_status returned MATCH version 2.8.0",
+        "forum_status returned MATCH version 1.12.0",
+        "crucible_status returned MATCH version 1.1.0",
+        "telos_room returned MATCH with ready 5 total 5 and tools 70",
+        "telos_operator_doctor returned MATCH with 14 of 14 checks passed"
+      ],
+      "deviation": 0.0,
+      "tolerance": 0.5
+    },
+    {
+      "claim": "The packet treats Reddit and YouTube comments as ready-to-confirm external side effects, not as already submitted posts.",
+      "method": "side-effect-boundary-review",
+      "evidence": [
+        "the packet says public posts, comments, forms, and funding submissions remain external side effects",
+        "the packet includes a confirmation prompt requiring exact destination and exact text",
+        "the packet says do not submit public social comments without exact final confirmation"
+      ],
+      "deviation": 0.0,
+      "tolerance": 0.5
+    },
+    {
+      "claim": "The funding section updates active paths with current public-source constraints: OpenAI Cybersecurity Grant/Trusted Access is high-readiness defensive funding; Patch the Planet is a maintainer-support positioning path; NLnet is temporarily narrowed to Taler/Fediversity while CodeSupply is prepare-only; FLOSS/fund requires a public funding manifest and has license/maturity blockers; MOSS is parked as inactive.",
+      "method": "funding-source-boundary-review",
+      "evidence": [
+        "OpenAI grant section lists defensive-only positioning and missing applicant/resource fields",
+        "Patch the Planet section says do not claim partnership",
+        "NLnet/CodeSupply section says general proposals are temporarily narrowed and CodeSupply is prepare-only",
+        "FLOSS/fund section says submission makes the manifest public and lists contact/license/maturity blockers",
+        "Mozilla section says MOSS applications are closed and on indefinite hiatus"
+      ],
+      "deviation": 0.0,
+      "tolerance": 0.5
+    },
+    {
+      "claim": "The first social submission set includes eight exact comments across Reddit and YouTube, with no more than one link-bearing comment in the first batch.",
+      "method": "first-batch-count-and-link-review",
+      "evidence": [
+        "the first social submission set includes Reddit R1, R2, R4, R5, R7 and YouTube Y1, Y4, Y5",
+        "only Y4 includes the GitHub repository link in the first batch"
+      ],
+      "deviation": 0.0,
+      "tolerance": 0.5
+    }
+  ]
+}

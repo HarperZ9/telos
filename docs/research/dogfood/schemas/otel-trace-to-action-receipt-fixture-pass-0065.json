@@ -1,0 +1,147 @@
+{
+  "action_receipt": {
+    "action_admission": {
+      "decision": "admit",
+      "reason": "local read-only fixture with no external side effects"
+    },
+    "authority_scope": {
+      "scope": "local_dogfood_fixture",
+      "write_scope": "docs/research/dogfood"
+    },
+    "compensation_pointer": {
+      "reason": "read-only synthetic fixture",
+      "required": false
+    },
+    "eval_refs": [
+      {
+        "kind": "validator",
+        "ref": "schemas/pass-0064-agent-observability-action-receipt-adapter-matrix-validator-result.json"
+      }
+    ],
+    "materials_digest": "f5e1735931c0fdea2171172248bd619ab1e0508ddd0c28f7e76fac79e378580d",
+    "model_refs": [],
+    "privacy_boundary": "fixture contains no private payload, tokens, PII, or external side effects",
+    "receipt_digest": "cd35a9a864bcc9980321d7a937d494cf2f242dca0052d2ca0eed7a09a703a4a3",
+    "receipt_id": "telos-action-receipt-pass-0065-otel-fixture",
+    "receipt_status": "MATCH",
+    "runtime_refs": [
+      {
+        "kind": "python",
+        "ref": "local interpreter"
+      }
+    ],
+    "schema": "project-telos.action-receipt/v1",
+    "side_effect_class": "local_read_only_fixture",
+    "source_refs": [
+      {
+        "kind": "packet",
+        "ref": "packets/074-agent-observability-action-receipt-adapter-matrix.md"
+      }
+    ],
+    "stop_reason": "completed_with_match_verdict",
+    "tool_call": {
+      "mode": "synthetic_fixture",
+      "name": "otel_trace_to_action_receipt"
+    },
+    "trace_refs": {
+      "native_schema": "OpenTelemetryTraceFixture/v1",
+      "span_ids": [
+        "0f1a",
+        "0f1b",
+        "0f1c",
+        "0f1d"
+      ],
+      "trace_id": "4f7e65b0c6c34c2aa1d6f64e08b03a65"
+    },
+    "verification_verdict": "MATCH",
+    "workspace_state": {
+      "dirty_allowed": true,
+      "path": "docs/research/dogfood",
+      "repo": "telos"
+    }
+  },
+  "current_promoted_natural_laws": [],
+  "generated_on": "2026-07-01",
+  "negative_fixture": {
+    "expected_failures": [
+      "missing_authority_scope",
+      "missing_action_admission",
+      "missing_verification_verdict",
+      "missing_side_effect_class"
+    ],
+    "fixture": {
+      "receipt_id": "negative-missing-authority-scope",
+      "receipt_status": "UNVERIFIABLE",
+      "schema": "project-telos.action-receipt/v1",
+      "trace_refs": {
+        "trace_id": "negative"
+      }
+    },
+    "status": "FAIL_EXPECTED"
+  },
+  "non_promotion_statement": "Pass 0065 is a local synthetic adapter fixture. It does not claim live OpenTelemetry ingestion, production integration, product-market fit, or scientific discovery.",
+  "pass": "0065",
+  "schema": "OtelTraceToTelosActionReceiptFixture/v1",
+  "seal": "cb3c38e0568793121fb80660d9e584c574b54d69375a82d6337f033193ce199a",
+  "source_binding": {
+    "previous_pass": "0064",
+    "previous_schema": "AgentObservabilityActionReceiptAdapterMatrix/v1",
+    "purpose": "turn the adapter matrix into an executable receipt fixture"
+  },
+  "status": "OTEL_TRACE_TO_ACTION_RECEIPT_FIXTURE_MATCH",
+  "trace_fixture": {
+    "schema": "OpenTelemetryTraceFixture/v1",
+    "source": "synthetic_fixture",
+    "spans": [
+      {
+        "attributes": {
+          "intent": "verify source-backed adapter matrix"
+        },
+        "duration_ms": 12,
+        "kind": "root",
+        "name": "agent.run",
+        "parent_span_id": null,
+        "span_id": "0f1a",
+        "status": "OK"
+      },
+      {
+        "attributes": {
+          "source_ref": "packets/074-agent-observability-action-receipt-adapter-matrix.md"
+        },
+        "duration_ms": 12,
+        "kind": "tool",
+        "name": "gather.docs",
+        "parent_span_id": "0f1a",
+        "span_id": "0f1b",
+        "status": "OK"
+      },
+      {
+        "attributes": {
+          "validator": "validate_pass_0064_agent_observability_action_receipt_adapter_matrix.py"
+        },
+        "duration_ms": 12,
+        "kind": "tool",
+        "name": "validator.run",
+        "parent_span_id": "0f1a",
+        "span_id": "0f1c",
+        "status": "OK"
+      },
+      {
+        "attributes": {
+          "claims": 8,
+          "verdict": "MATCH"
+        },
+        "duration_ms": 12,
+        "kind": "verifier",
+        "name": "crucible.run",
+        "parent_span_id": "0f1a",
+        "span_id": "0f1d",
+        "status": "OK"
+      }
+    ],
+    "status": "MATCH",
+    "trace_id": "4f7e65b0c6c34c2aa1d6f64e08b03a65"
+  },
+  "unsupported_claim_count": 0,
+  "validation_errors": []
+}

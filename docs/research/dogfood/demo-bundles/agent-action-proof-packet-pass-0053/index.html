@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<title>Agent Action Proof Packet Demo</title>
+<style>
+body { font-family: system-ui, sans-serif; margin: 2rem; color: #111; }
+table { border-collapse: collapse; width: 100%; }
+td, th { border: 1px solid #bbb; padding: .45rem; text-align: left; }
+code { background: #f2f2f2; padding: .1rem .25rem; }
+</style>
+<h1>Agent Action Proof Packet Demo</h1>
+<p>Verification: <code>MATCH</code></p>
+<p>Bundle hash: <code>45a14431097249925c4fd17b7290c0ee78c4d1b41d7dd64cacb4b4b5eaeeff5e</code></p>
+<table>
+<thead><tr><th>Fixture</th><th>Failure code</th><th>Verdict</th><th>Status</th></tr></thead>
+<tbody>
+<tr><td>missing_source_refs</td><td>source_refs_missing</td><td>UNVERIFIABLE</td><td>MATCH</td></tr>
+<tr><td>missing_workspace_context</td><td>workspace_context_ref_missing</td><td>UNVERIFIABLE</td><td>MATCH</td></tr>
+<tr><td>missing_admission_record</td><td>admission_record_missing</td><td>UNVERIFIABLE</td><td>MATCH</td></tr>
+<tr><td>broken_action_receipt_linkage</td><td>action_receipt_linkage_broken</td><td>DRIFT</td><td>MATCH</td></tr>
+<tr><td>missing_browser_evidence</td><td>browser_evidence_missing</td><td>UNVERIFIABLE</td><td>MATCH</td></tr>
+<tr><td>broken_ledger_continuity</td><td>ledger_continuity_broken</td><td>DRIFT</td><td>MATCH</td></tr>
+<tr><td>missing_crucible_verdict</td><td>crucible_verdict_missing</td><td>UNVERIFIABLE</td><td>MATCH</td></tr>
+<tr><td>raw_private_payload_leak</td><td>private_payload_boundary_violation</td><td>DRIFT</td><td>MATCH</td></tr>
+</tbody>
+</table>
+</html>

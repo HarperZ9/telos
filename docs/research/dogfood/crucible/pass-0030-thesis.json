@@ -1,0 +1,46 @@
+{
+  "claims": [
+    {
+      "falsification": "schemas/theorem-replay-preflight-pass-0030.json is missing, has a different schema, status, seal, repo commit, project/file/theorem counts, or replay status",
+      "text": "Pass 0030 created a TheoremReplayPreflightPacket/v1 artifact with status THEOREM_REPLAY_PREFLIGHT_MATCH_WITH_TOOLCHAIN_GAP, repo commit 69d7df765a8f377a5e0628c6d36c088bce7642c9, formalization_project_count=4, lean_file_count=66, selected_theorem_count=10, lean_replay_status=UNVERIFIABLE_TOOL_UNAVAILABLE, and seal fb2428b6a7d960e44fe44768e1864d6fc524e99b9461b7fc64d08012f6760180."
+    },
+    {
+      "falsification": "the preflight fixture is missing, has a different SHA-256, seal, repo URL, commit, project count, Lean file count, selected project, or theorem count",
+      "text": "Pass 0030 records fixture fixtures/pipeline-math-problem4b-preflight-pass-0030.json with sha256 8164e622fcafc9a8220674530e7d64ff664dfdb298c564eadd9d5fd2fdb26624, seal 87114d508a057eab4a4011b3670ae7a2844689fdd9bda1d2fca573ffb1dfccba, source repo https://github.com/Pengbinghui/pipeline-math.git, selected project lean/problem-4b-formalization, four formalization projects, 66 Lean files, and ten named solution theorems."
+    },
+    {
+      "falsification": "the source packet binding is missing or has a different pass 0029 path, schema, SHA-256, or seal",
+      "text": "Pass 0030 binds back to schemas/research-claim-packet-pass-0029.json with sha256 f29a296e74ef39eda2b70234f45abca062f86361c9572a1ea6105e747991a642, seal 272b3afd43cd60688f06fabd11d66934796f448ba1f07a02d62a3798443a62f4, and schema ResearchClaimPacket/v1."
+    },
+    {
+      "falsification": "the frozen pin receipt is missing, fails to show pinned Git blob hash matches, fails to show Windows working-tree mismatch, or omits the line-ending drift requirement",
+      "text": "Pass 0030 frozen pin receipt shows Prob4b/Defs.lean and Prob4b/Theorems.lean pins match Git blob bytes, do not match Windows CRLF working-tree bytes, and require Git blob hashing, LF checkout, or normalization before frozen SHA validation."
+    },
+    {
+      "falsification": "the toolchain receipt is missing, reports bash/lake/lean as available, allows replay promotion, or does not mark Lean replay UNVERIFIABLE_TOOL_UNAVAILABLE",
+      "text": "Pass 0030 toolchain receipt reports git and python MATCH, bash/lake/lean UNAVAILABLE, verify_script_attempt_status=UNVERIFIABLE_TOOL_UNAVAILABLE, lean_replay_status=UNVERIFIABLE_TOOL_UNAVAILABLE, and replay_promotion_allowed=false."
+    },
+    {
+      "falsification": "the action receipt proposal is missing, has a different schema or event type, performs an external write or toolchain install, allows replay promotion, or lacks verification verdict MATCH",
+      "text": "Pass 0030 defines ActionReceiptTheoremReplayPreflight/v1 with event_type=theorem_replay_preflight_created, external_write_performed=false, toolchain_install_performed=false, replay_promotion_allowed=false, and verification verdict MATCH."
+    },
+    {
+      "falsification": "negative fixtures are missing, fewer than ten, have different IDs, or any negative fixture is not marked expected_validator_status REJECT",
+      "text": "Pass 0030 defines ten negative fixtures covering Lean replay promotion without Lean, Lake build promotion without Lake, verify-script promotion without bash, ignored CRLF frozen-pin mismatch, missing git commit, missing theorem names, missing toolchain pin, missing pass 0029 link, axiom-check promotion, and natural-law promotion; every negative fixture expects validator status REJECT."
+    },
+    {
+      "falsification": "the validator result is missing, reports DRIFT, different counts, missing commands other than bash/lake/lean, or wrong pin/line-ending/replay status",
+      "text": "Pass 0030 validator result reports MATCH with formalization_project_count=4, lean_file_count=66, selected_theorem_count=10, pin_matches_git_blob_bytes=true, pin_matches_windows_worktree_bytes=false, line_ending_drift_detected=true, missing_commands=[bash,lake,lean], lean_replay_status=UNVERIFIABLE_TOOL_UNAVAILABLE, and negative_fixture_count=10."
+    },
+    {
+      "falsification": "packet 040 is missing, Gather does not verify it, or the packet SHA-256, digest seal, or character count differs",
+      "text": "Pass 0030 packet 040 was gathered and verified with SHA-256 4793f878aa287f05da6ad76045195cb6734f8924844929912ef3575b2cfbc0ad, digest seal cfe10ca7d018270e84c5d0e7041cb7a5fada4bf437a625a7ee279c3d35bf9155, and 5609 characters."
+    },
+    {
+      "falsification": "schemas/tool-receipts-pass-0030.json is missing, lacks required tool receipts, treats Forum submit as successful, hides the toolchain gap, or promotes theorem replay",
+      "text": "Pass 0030 tool receipts record Index, Gather, git clone/eol probes, shell toolchain probe, Telos MCP status/action receipt/loop ledger, Forum status/ledger verification, and Crucible status while preserving Forum submit as UNVERIFIABLE and bash/lake/lean as missing toolchain commands."
+    }
+  ],
+  "disposition": "fenced",
+  "title": "Dogfood Pass 0030 Theorem Replay Preflight"
+}

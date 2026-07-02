@@ -1,0 +1,63 @@
+{
+  "measurements": [
+    {
+      "claim": "The eighth-wave local reproduction receipt records pandas-dev/pandas#63458 with Python 3.12.10, pandas 3.0.3, pyarrow 24.0.0, and reproduction status failed-before-patch.",
+      "method": "local-reproduction-receipt-review",
+      "evidence": [
+        "docs/outreach/receipts/eighth-wave/pandas-63458-repro/local-reproduction-receipt.json has schema project-telos.local-reproduction-receipt/v1",
+        "candidate is pandas-dev/pandas#63458",
+        "environment python is 3.12.10",
+        "environment pandas is 3.0.3",
+        "environment pyarrow is 24.0.0",
+        "reproduction status is failed-before-patch"
+      ],
+      "deviation": 0.0,
+      "tolerance": 0.5
+    },
+    {
+      "claim": "The eighth-wave blocked readiness packet remains not PR-ready and lists blockers for missing passing test evidence, non-MATCH verifier verdict, and missing patch summary.",
+      "method": "blocked-readiness-packet-review",
+      "evidence": [
+        "docs/outreach/receipts/eighth-wave/pandas-63458-repro/local-reproduction-blocked-packet.json has schema project-telos.oss-pr-readiness/v1",
+        "packet pr_ready is false",
+        "packet operator_next_action is revise",
+        "packet blockers include missing passing test evidence, crucible verdict is not MATCH, and missing patch summary"
+      ],
+      "deviation": 0.0,
+      "tolerance": 0.5
+    },
+    {
+      "claim": "The eighth-wave arXiv intake captured 14 retained paper source leads across three Gather stores.",
+      "method": "gather-arxiv-store-review",
+      "evidence": [
+        "docs/outreach/receipts/eighth-wave/arxiv-agentic-science/catalog.jsonl has 5 rows",
+        "docs/outreach/receipts/eighth-wave/arxiv-formal-proof/catalog.jsonl has 5 rows",
+        "docs/outreach/receipts/eighth-wave/arxiv-ai4science/catalog.jsonl has 4 rows",
+        "total retained rows is 14"
+      ],
+      "deviation": 0.0,
+      "tolerance": 0.5
+    },
+    {
+      "claim": "The proof-carrying research loops working paper defines the stricter promotion ladder and keeps paper/source claims fenced.",
+      "method": "whitepaper-boundary-review",
+      "evidence": [
+        "docs/research/whitepapers/PROOF-CARRYING-RESEARCH-LOOPS-2026-07-02.md defines SOURCE_LEAD, HYPOTHESIS, IDENTITY, PROBE_MATCH, CRUCIBLE_MATCH, UNVERIFIABLE, LAW_CANDIDATE, and PROMOTED_LAW",
+        "same paper says arXiv papers are SOURCE_LEAD material and Gather verifies metadata capture, not paper truth",
+        "same paper says no promoted natural laws are promoted here"
+      ],
+      "deviation": 0.0,
+      "tolerance": 0.5
+    },
+    {
+      "claim": "The eighth-wave outreach package distinguishes local failing reproduction, readiness, source leads, website copy, and official paper submission boundaries.",
+      "method": "outreach-boundary-review",
+      "evidence": [
+        "docs/outreach/EIGHTH-WAVE-LOCAL-REPRODUCTION-AND-PUBLISHING-PIPELINE-2026-07-02.md says not to claim a pandas fix, source inspection, tests passed, current-main verification, arXiv truth, official submission, or new natural law",
+        "docs/outreach/EIGHTH-WAVE-CONTENT-QUEUE-2026-07-02.md says every research post needs a status label"
+      ],
+      "deviation": 0.0,
+      "tolerance": 0.5
+    }
+  ]
+}

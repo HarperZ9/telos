@@ -1,0 +1,104 @@
+{
+  "schema": "DogfoodToolReceipts/v1",
+  "pass": "0067",
+  "generated_on": "2026-07-01",
+  "status": "MATCH_FORUM_ROUTING_REPAIR_EXPERIMENT",
+  "index": {
+    "tool_version": "2.8.0",
+    "status": "MATCH",
+    "role": "structure-context"
+  },
+  "gather": {
+    "status": "MATCH",
+    "tool_version": "1.5.0",
+    "docs_packet": {
+      "path": "docs/research/dogfood/packets/077-forum-routing-repair-experiment.md",
+      "sha256": "4f06cee2244a84356a1cfe308a51d066c04f4000976a66cc864a25b3d93272e6",
+      "seal": "bb20a89f24d3d6892901c99ddaa4cebd261fce103577778df510d2b0f01d7db7",
+      "verified": true,
+      "dropped": 0
+    }
+  },
+  "forum": {
+    "status": {
+      "entries": 17,
+      "checkpoint": "6c3f18bbb2062abc67161322883da81b5b3f16fa4108d57b5fd11950071d0f49"
+    },
+    "verify": {
+      "chain": true,
+      "deep": true
+    },
+    "route_probe_summary": {
+      "probe_count": 3,
+      "baseline_decided": null,
+      "baseline_needs_escalation": true,
+      "repaired_decided": "project-telos",
+      "repaired_no_escalation_count": 2,
+      "project_telos_score_lift": 0.227272727273
+    }
+  },
+  "crucible": {
+    "run_status": "MATCH",
+    "tool_version": "1.1.0",
+    "thesis_id": "170c379af77b0ede",
+    "thesis_seal": "170c379af77b0edee7879d832ce276cf08e50d2ebe1fb0de36e7daec6e285478",
+    "assessment_seal": "b7a8c032f621c7a83175abddd0904fc7381bf871f098c10646d14629c342baac",
+    "claims": 8,
+    "match": 8,
+    "drift": 0,
+    "unverifiable": 0,
+    "registry_stats": {
+      "theses": 55,
+      "claims": 457,
+      "unique_claims": 450,
+      "assessments": 56,
+      "latest_assessments": 55,
+      "invalid_latest_assessments": 0,
+      "match": 457,
+      "drift": 0,
+      "unverifiable": 0
+    }
+  },
+  "telos": {
+    "compatibility_doctor": "MATCH",
+    "operator_doctor": "MATCH",
+    "mcp_freshness": "MATCH",
+    "tool_version": "0.1.0"
+  },
+  "shell": {
+    "commands": [
+      {
+        "command": "python docs\\research\\dogfood\\tools\\test_forum_routing_repair_experiment.py",
+        "status": "MATCH"
+      },
+      {
+        "command": "python docs\\research\\dogfood\\tools\\probe_forum_routing_repair_experiment.py",
+        "status": "MATCH"
+      },
+      {
+        "command": "python docs\\research\\dogfood\\tools\\validate_pass_0067_forum_routing_repair_experiment.py",
+        "status": "MATCH"
+      },
+      {
+        "command": "crucible run docs\\research\\dogfood\\crucible\\pass-0067-thesis.json --measurements docs\\research\\dogfood\\crucible\\pass-0067-measurements.json --registry docs\\research\\dogfood\\crucible\\registry --report docs\\research\\dogfood\\crucible\\pass-0067-report.md --out docs\\research\\dogfood\\crucible\\pass-0067-run.json --json",
+        "status": "MATCH"
+      }
+    ],
+    "line_counts": {
+      "compose_forum_routing_repair_experiment.py": 118,
+      "probe_forum_routing_repair_experiment.py": 98,
+      "test_forum_routing_repair_experiment.py": 39,
+      "validate_pass_0067_forum_routing_repair_experiment.py": 70
+    },
+    "sha256": {
+      "compose_forum_routing_repair_experiment.py": "d16ae2c86fc6070bb5079f04f2b9196a5eefb90e199869b360fe1e8608a66598",
+      "probe_forum_routing_repair_experiment.py": "c318044eb99ca1e549438a25201239f672b6c1a11019d64eacf393ba6f6c33a6",
+      "test_forum_routing_repair_experiment.py": "4a64f6d36f2358935dbea1caeb8db6a9434d9c004cd62157bacb0038ab6158aa",
+      "validate_pass_0067_forum_routing_repair_experiment.py": "4a42f72aaa983255ffd2827f29015c4884e9ab3296dfa5c0ea80748a3956a1ba",
+      "forum-routing-repair-experiment-pass-0067.json": "dd2c1ed7bf2ea600612e64b0d256e589f2e6a78228a9f53cae2e837fbe9b67a0",
+      "077-forum-routing-repair-experiment.md": "4f06cee2244a84356a1cfe308a51d066c04f4000976a66cc864a25b3d93272e6",
+      "pass-0067-forum-routing-repair-experiment-steelman.md": "3cd23c99d144f2b226b75d352b54eb73dbf6ca3fafc15ee372da2b6dceb2765d",
+      "pass-0067-run.json": "3c40e71d50bb53532089fb595a97287a09516a78648692c2edcc55ad2272e17d"
+    }
+  }
+}

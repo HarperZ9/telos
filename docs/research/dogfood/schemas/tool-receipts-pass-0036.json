@@ -1,0 +1,155 @@
+{
+  "generated_on": "2026-07-01",
+  "non_promotion_statement": "Tool receipts prove packet readback, source-ref validator MATCH, frozen source checkout commit/status/EOL checks, Telos/Index/Gather/Forum/Crucible availability, and no remaining temp replay processes. They do not prove Lean replay, semantic proof correctness, axiom-free proof, every public pipeline-math claim, buyer adoption, or any natural law.",
+  "pass": "0036",
+  "receipts": [
+    {
+      "command": "map --root docs/research/dogfood --json",
+      "dirty_count": 0,
+      "repo_count": 0,
+      "role": "dogfood-substrate-map",
+      "root_sha256_prefix": "f2f0af39219698a9",
+      "schema_version": 1,
+      "status": "MATCH",
+      "tool": "index",
+      "tool_version": "2.8.0",
+      "top_level_count": 44
+    },
+    {
+      "artifact": "packets/046-theorem-source-ref-integrity.md",
+      "chars": 6658,
+      "command": "docs",
+      "seal": "5038a89679cccd2f310bf9eb1493458d175fa587b8d4e2ac87226c89e9c0167a",
+      "sha256": "50aa1770aaeb66b2dd3e54f8239207ae4bb4f4f29e5827622fe1384aeb4f339c",
+      "status": "MATCH",
+      "tool": "gather",
+      "verified": true
+    },
+    {
+      "command": "probe_theorem_source_refs.py",
+      "commit": "69d7df765a8f377a5e0628c6d36c088bce7642c9",
+      "schema": "TheoremSourceRefIntegritySet/v1",
+      "seal": "68382866e7e78895eb3d7fd0d613fcc8b17afc30398b7823cb198702262da2fb",
+      "source_ref_count": 40,
+      "status": "SOURCE_REF_INTEGRITY_MATCH",
+      "tool": "python",
+      "unique_file_count": 10
+    },
+    {
+      "command": "validate_pass_0036_theorem_source_refs.py",
+      "drift": 0,
+      "match": 1,
+      "schema": "Pass0036TheoremSourceRefValidatorRun/v1",
+      "source_ref_count": 40,
+      "status": "MATCH",
+      "tool": "python",
+      "unique_file_count": 10
+    },
+    {
+      "command": "source checkout audit",
+      "commit_match": true,
+      "git_status_clean": true,
+      "inherited_core_autocrlf": "file:C:/Users/Zain/.gitconfig\ttrue",
+      "local_core_autocrlf": null,
+      "status": "MATCH",
+      "tool": "git",
+      "worktree_eol_lf": true
+    },
+    {
+      "command": "process check",
+      "remaining_temp_processes": 0,
+      "status": "MATCH",
+      "tool": "shell"
+    },
+    {
+      "command": "telos_catalog",
+      "selected_tools_available": [
+        "gather.docs",
+        "index.map",
+        "forum.route",
+        "crucible.run",
+        "telos.action.receipt",
+        "telos.loop.ledger"
+      ],
+      "status": "MATCH",
+      "tool": "mcp__telos.telos_catalog"
+    },
+    {
+      "append_only_compensation_required": true,
+      "command": "telos_action_receipt",
+      "digest_references_required": true,
+      "raw_parameters_required": false,
+      "receipt_is_trace_span": false,
+      "schema": "project-telos.action-receipt/v1",
+      "status": "MATCH",
+      "tool": "mcp__telos.telos_action_receipt"
+    },
+    {
+      "command": "telos_loop_ledger",
+      "fresh_context_reads_ledger_first": true,
+      "one_action_per_iteration": true,
+      "schema": "project-telos.loop-ledger/v1",
+      "status": "MATCH",
+      "tool": "mcp__telos.telos_loop_ledger",
+      "unverifiable_required": true
+    },
+    {
+      "checkpoint": "10fabdd888316e6a2fa6744156842c0658bd8e46fa928a08bf3803955219cb9a",
+      "command": "status",
+      "entries": 14,
+      "status": "MATCH",
+      "tool": "mcp__forum.status"
+    },
+    {
+      "candidates": [
+        {
+          "agent": "model-foundry",
+          "score": 0.25
+        },
+        {
+          "agent": "project-telos",
+          "score": 0.09090909090909091
+        }
+      ],
+      "command": "route",
+      "confidence": 0.1590909090909091,
+      "decided": null,
+      "needs_escalation": true,
+      "status": "MATCH",
+      "tool": "forum"
+    },
+    {
+      "chain": true,
+      "command": "ledger verify",
+      "deep": true,
+      "status": "MATCH",
+      "tool": "forum"
+    },
+    {
+      "command": "submit",
+      "error": "submit needs a model executor. Forum is model-agnostic: pass --cmd \"<model cli>\" (any command, local models need no account), --chat-url <openai-compatible url> (e.g. a local Ollama server), or --api (Anthropic).",
+      "request": "Dogfood pass 0036 adversarial review for theorem source-ref integrity",
+      "status": "UNVERIFIABLE",
+      "tool": "forum"
+    },
+    {
+      "assessment_seal": "fabd053f026990a950db512f2f03278abff787f2e03f47f7daeccf423068570d",
+      "claims": 8,
+      "command": "run",
+      "drift": 0,
+      "match": 8,
+      "measurement_seal": "716a371e82f0fa89e541fd0a02726ea2e69c7ee5292a7deee655b64009033bdd",
+      "seals_ok": true,
+      "status": "MATCH",
+      "thesis_id": "7dbf304cafffbe06",
+      "thesis_ok": true,
+      "thesis_seal": "7dbf304cafffbe06190074cab390daf6f489fb285867b68bb05130507567d72d",
+      "tool": "crucible",
+      "unverifiable": 0,
+      "verdict_seal": "164150c45e6c30f5aea4be90529fc34f69348ccba0fe7345cd63351fa214bc8b",
+      "verdicts_rederive": true
+    }
+  ],
+  "schema": "DogfoodToolReceiptSet/v1",
+  "status": "MATCH_WITH_FORUM_SUBMIT_GAP_AND_NON_SEMANTIC_BOUNDARY"
+}

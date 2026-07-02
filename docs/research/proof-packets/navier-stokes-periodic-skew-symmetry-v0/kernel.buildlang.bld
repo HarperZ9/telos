@@ -1,0 +1,133 @@
+// BuildLang parity witness for the periodic skew-symmetry packet.
+//
+// This mirrors kernel.reference.mjs for one bounded finite-mode witness:
+//
+//   integral u dot ((u dot grad)u) dx dy = 0
+//
+// on a two-dimensional periodic domain. It prints two numeric values:
+// nonlinear_energy_transfer and max_divergence_abs.
+//
+// Boundary: this is a compiled finite-mode witness, not a theorem-prover
+// replay, not a proof of Navier-Stokes existence/smoothness, and not a native
+// buildc scientific-runtime receipt. buildc v0 scientific receipts currently
+// support output-series invariants such as energy-monotone/conservation, while
+// this packet needs a relation/tolerance invariant.
+
+mod core;
+
+fn term_cos(kx: f64, ky: f64, amp: f64, phase: f64, x: f64, y: f64) -> f64 {
+    amp * cos(kx * x + ky * y + phase)
+}
+
+fn term_sin(kx: f64, ky: f64, amp: f64, phase: f64, x: f64, y: f64) -> f64 {
+    amp * sin(kx * x + ky * y + phase)
+}
+
+fn mode_u1(kx: f64, ky: f64, amp: f64, phase: f64, x: f64, y: f64) -> f64 {
+    ky * term_cos(kx, ky, amp, phase, x, y)
+}
+
+fn mode_u2(kx: f64, ky: f64, amp: f64, phase: f64, x: f64, y: f64) -> f64 {
+    -1.0 * kx * term_cos(kx, ky, amp, phase, x, y)
+}
+
+fn mode_du1dx(kx: f64, ky: f64, amp: f64, phase: f64, x: f64, y: f64) -> f64 {
+    -1.0 * ky * kx * term_sin(kx, ky, amp, phase, x, y)
+}
+
+fn mode_du1dy(kx: f64, ky: f64, amp: f64, phase: f64, x: f64, y: f64) -> f64 {
+    -1.0 * ky * ky * term_sin(kx, ky, amp, phase, x, y)
+}
+
+fn mode_du2dx(kx: f64, ky: f64, amp: f64, phase: f64, x: f64, y: f64) -> f64 {
+    kx * kx * term_sin(kx, ky, amp, phase, x, y)
+}
+
+fn mode_du2dy(kx: f64, ky: f64, amp: f64, phase: f64, x: f64, y: f64) -> f64 {
+    kx * ky * term_sin(kx, ky, amp, phase, x, y)
+}
+
+fn u1(x: f64, y: f64) -> f64 {
+    mode_u1(1.0, 1.0, 0.9, 0.1, x, y)
+        + mode_u1(2.0, 1.0, -0.35, 0.7, x, y)
+        + mode_u1(1.0, 3.0, 0.22, -0.4, x, y)
+        + mode_u1(3.0, 2.0, 0.15, 1.2, x, y)
+        + mode_u1(4.0, 1.0, -0.08, -0.8, x, y)
+}
+
+fn u2(x: f64, y: f64) -> f64 {
+    mode_u2(1.0, 1.0, 0.9, 0.1, x, y)
+        + mode_u2(2.0, 1.0, -0.35, 0.7, x, y)
+        + mode_u2(1.0, 3.0, 0.22, -0.4, x, y)
+        + mode_u2(3.0, 2.0, 0.15, 1.2, x, y)
+        + mode_u2(4.0, 1.0, -0.08, -0.8, x, y)
+}
+
+fn du1dx(x: f64, y: f64) -> f64 {
+    mode_du1dx(1.0, 1.0, 0.9, 0.1, x, y)
+        + mode_du1dx(2.0, 1.0, -0.35, 0.7, x, y)
+        + mode_du1dx(1.0, 3.0, 0.22, -0.4, x, y)
+        + mode_du1dx(3.0, 2.0, 0.15, 1.2, x, y)
+        + mode_du1dx(4.0, 1.0, -0.08, -0.8, x, y)
+}
+
+fn du1dy(x: f64, y: f64) -> f64 {
+    mode_du1dy(1.0, 1.0, 0.9, 0.1, x, y)
+        + mode_du1dy(2.0, 1.0, -0.35, 0.7, x, y)
+        + mode_du1dy(1.0, 3.0, 0.22, -0.4, x, y)
+        + mode_du1dy(3.0, 2.0, 0.15, 1.2, x, y)
+        + mode_du1dy(4.0, 1.0, -0.08, -0.8, x, y)
+}
+
+fn du2dx(x: f64, y: f64) -> f64 {
+    mode_du2dx(1.0, 1.0, 0.9, 0.1, x, y)
+        + mode_du2dx(2.0, 1.0, -0.35, 0.7, x, y)
+        + mode_du2dx(1.0, 3.0, 0.22, -0.4, x, y)
+        + mode_du2dx(3.0, 2.0, 0.15, 1.2, x, y)
+        + mode_du2dx(4.0, 1.0, -0.08, -0.8, x, y)
+}
+
+fn du2dy(x: f64, y: f64) -> f64 {
+    mode_du2dy(1.0, 1.0, 0.9, 0.1, x, y)
+        + mode_du2dy(2.0, 1.0, -0.35, 0.7, x, y)
+        + mode_du2dy(1.0, 3.0, 0.22, -0.4, x, y)
+        + mode_du2dy(3.0, 2.0, 0.15, 1.2, x, y)
+        + mode_du2dy(4.0, 1.0, -0.08, -0.8, x, y)
+}
+
+fn abs_f64(v: f64) -> f64 {
+    if v < 0.0 {
+        -1.0 * v
+    } else {
+        v
+    }
+}
+
+fn main() ~ Console {
+    let n: i32 = 64;
+    let two_pi: f64 = 2.0 * pi();
+    let dxdy: f64 = (two_pi / (n as f64)) * (two_pi / (n as f64));
+    let mut transfer: f64 = 0.0;
+    let mut max_div: f64 = 0.0;
+    let mut i: i32 = 0;
+    while i < n {
+        let x: f64 = two_pi * (i as f64) / (n as f64);
+        let mut j: i32 = 0;
+        while j < n {
+            let y: f64 = two_pi * (j as f64) / (n as f64);
+            let vx: f64 = u1(x, y);
+            let vy: f64 = u2(x, y);
+            let adv_x: f64 = vx * du1dx(x, y) + vy * du1dy(x, y);
+            let adv_y: f64 = vx * du2dx(x, y) + vy * du2dy(x, y);
+            transfer = transfer + (vx * adv_x + vy * adv_y) * dxdy;
+            let div_abs: f64 = abs_f64(du1dx(x, y) + du2dy(x, y));
+            if div_abs > max_div {
+                max_div = div_abs;
+            }
+            j = j + 1;
+        }
+        i = i + 1;
+    }
+    println!("{}", transfer);
+    println!("{}", max_div);
+}

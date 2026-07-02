@@ -1,0 +1,93 @@
+{
+  "measurements": [
+    {
+      "claim": "Pass 0048 created a CompetitorProofGapMatrixSet/v1 artifact with status COMPETITOR_PROOF_GAP_MATRIX_MATCH, market_row_count 45, source_count 45, source_match_count 45, sha256 b7cc365722810063beceba129df1dcc3663c08a79e1b2fadc58be7e6ddb5fa46, and seal 9e64ca4adde189e2d8da66152c8b0fefaa7664b49fc12ec5dd743342b9910274.",
+      "deviation": 0.0,
+      "evidence": [
+        "schema=CompetitorProofGapMatrixSet/v1",
+        "status=COMPETITOR_PROOF_GAP_MATRIX_MATCH",
+        "market_row_count=45",
+        "source_count=45",
+        "source_match_count=45",
+        "sha256=b7cc365722810063beceba129df1dcc3663c08a79e1b2fadc58be7e6ddb5fa46",
+        "seal=9e64ca4adde189e2d8da66152c8b0fefaa7664b49fc12ec5dd743342b9910274"
+      ],
+      "method": "competitor-proof-gap-schema-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0048 records exactly 15 rows for each track: research_ai4science=15, ai_infra_agent_ops=15, and visual_compiler_compute=15.",
+      "deviation": 0.0,
+      "evidence": [
+        "track_counts={\"ai_infra_agent_ops\": 15, \"research_ai4science\": 15, \"visual_compiler_compute\": 15}"
+      ],
+      "method": "track-count-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0048 records 45 source receipts as MATCH across 45 official source anchors.",
+      "deviation": 0.0,
+      "evidence": [
+        "source_match_count=45",
+        "source_ids=pipeline_math,futurehouse,sakana_ai_scientist,microsoft_discovery,nvidia_bionemo,elicit,consensus,semantic_scholar_api...total=45"
+      ],
+      "method": "source-receipt-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0048 records gap status counts {\"inferred\": 43, \"verified\": 2} and uniqueness_claim_status HYPOTHESIS_ONLY.",
+      "deviation": 0.0,
+      "evidence": [
+        "gap_status_counts={\"inferred\": 43, \"verified\": 2}",
+        "uniqueness_claim_status=HYPOTHESIS_ONLY"
+      ],
+      "method": "gap-boundary-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0048 binds to pass 0047 AI4Science proof-market source anchors with sha256 5aaa93c606fc606099f3c9236f03bac8ea2b25967b10eec17bcbb4b0e64c8da5, seal aeee3afe3d60ce448325851bf5121dbc2229bcb6f74cfcf7515e8f7a5d117002, and source status AI4SCIENCE_PROOF_MARKET_SOURCES_MATCH.",
+      "deviation": 0.0,
+      "evidence": [
+        "previous_sha256=5aaa93c606fc606099f3c9236f03bac8ea2b25967b10eec17bcbb4b0e64c8da5",
+        "previous_seal=aeee3afe3d60ce448325851bf5121dbc2229bcb6f74cfcf7515e8f7a5d117002",
+        "previous_status=AI4SCIENCE_PROOF_MARKET_SOURCES_MATCH"
+      ],
+      "method": "previous-pass-binding-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0048 records fixture fixtures/competitor-proof-gap-matrix-pass-0048.json with sha256 f2bf310c40d0b52651de137d2d4fe7354025ae379415594a6d2ceb7b176a086a and seal e73a204b20832ea9afa9ef587b3dc3d477fcb0d26e1bd8e6f03a08c911fdaaae.",
+      "deviation": 0.0,
+      "evidence": [
+        "fixture_sha256=f2bf310c40d0b52651de137d2d4fe7354025ae379415594a6d2ceb7b176a086a",
+        "fixture_seal=e73a204b20832ea9afa9ef587b3dc3d477fcb0d26e1bd8e6f03a08c911fdaaae"
+      ],
+      "method": "fixture-binding-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0048 validator result reports MATCH with market_row_count 45 and source_match_count 45.",
+      "deviation": 0.0,
+      "evidence": [
+        "validator_status=MATCH",
+        "market_row_count=45",
+        "source_match_count=45"
+      ],
+      "method": "validator-result-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0048 records 3 wedge scores, 8 megatool nodes, packet 058 sha256 7495cc2b341c98afbdaff9b4999a352b4546f1a2dd12b8d09c48cfe9ec835b42, steelman sha256 b97bf96520cddb6526edd82eb702322c05f2c01c92fb3800566d759c95d6a903, and current_promoted_natural_laws remains none.",
+      "deviation": 0.0,
+      "evidence": [
+        "wedge_scores=3",
+        "megatool_nodes=8",
+        "packet_sha256=7495cc2b341c98afbdaff9b4999a352b4546f1a2dd12b8d09c48cfe9ec835b42",
+        "steelman_sha256=b97bf96520cddb6526edd82eb702322c05f2c01c92fb3800566d759c95d6a903",
+        "current_promoted_natural_laws=[]"
+      ],
+      "method": "non-promotion-and-packaging-review",
+      "tolerance": 0.5
+    }
+  ]
+}

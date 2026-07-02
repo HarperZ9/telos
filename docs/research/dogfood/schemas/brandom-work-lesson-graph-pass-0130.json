@@ -1,0 +1,352 @@
+{
+  "boundary": "Pass 0130 catalogs five gathered Brandom texts/course pages and builds a bounded lesson graph. It does not export PDF bodies, prove learning efficacy, complete Brandom's bibliography, or promote philosophical claims as natural laws.",
+  "current_promoted_natural_laws": [],
+  "flagship_receipts": {
+    "forum": {
+      "decided": null,
+      "exit_code": 0,
+      "status": "MATCH",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "d86ba14811cdcddd6906d97abea46f0f31222b0714d0466848bdc013c410cf74"
+    },
+    "index": {
+      "exit_code": 0,
+      "status": "MATCH",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "91812d2fbe8efd088cdab2735ca8d070bf6bcbe572b233caad625f4be0b7d0f4",
+      "verification_verdict": "MATCH"
+    },
+    "telos": {
+      "exit_code": 0,
+      "status": "MATCH",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "be17cb15259234cb4e8e95c2b36e76c90d841431729beb140294e34c5f9ebfa7",
+      "tool_version": "0.1.0"
+    },
+    "telos_catalog": {
+      "exit_code": 0,
+      "status": "MATCH",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "ef95a6f1ff803c483c3c4dd553fe19c37ab144113a21bc005cf4148cf31a8564"
+    }
+  },
+  "generated_on": "2026-07-01",
+  "learner_action_fixture": {
+    "fixture_id": "lesson_action_receipt_loop",
+    "status": "MATCH",
+    "steps": [
+      {
+        "accepted": true,
+        "input": "Vocabularies of Reason receipt",
+        "step": "cite_source"
+      },
+      {
+        "accepted": true,
+        "input": "a vocabulary can make a practice explicit",
+        "step": "state_claim"
+      },
+      {
+        "accepted": true,
+        "input": "explicit vocabulary -> checkable learning move",
+        "step": "add_inference"
+      },
+      {
+        "accepted": true,
+        "input": "build a lesson node with source, claim, exercise, verifier",
+        "step": "submit_answer"
+      }
+    ],
+    "verifier": "requires source, claim, exercise, and verifier fields before accepting learner answer"
+  },
+  "lesson_graph": {
+    "edges": [
+      {
+        "from": "source_intake",
+        "to": "vocabulary"
+      },
+      {
+        "from": "vocabulary",
+        "to": "inferential_link"
+      },
+      {
+        "from": "inferential_link",
+        "to": "scorekeeping"
+      },
+      {
+        "from": "scorekeeping",
+        "to": "challenge_repair"
+      },
+      {
+        "from": "challenge_repair",
+        "to": "ai_application"
+      }
+    ],
+    "graph_invariant": "all edges resolve, every node has source_refs and an exercise",
+    "nodes": [
+      {
+        "exercise": "Identify which claims have receipts and which are missing.",
+        "id": "source_intake",
+        "kind": "source",
+        "label": "Gather course and text receipts",
+        "source_refs": [
+          "https://sites.pitt.edu/~rbrandom/Courses/2023%20Sellars/SM%202023%20Main%20n.html",
+          "https://sites.pitt.edu/~rbrandom/Courses/2024%20Philosophy%20of%20Language/Language%20and%20Reasons%202024%20Main.html",
+          "https://sites.pitt.edu/~rbrandom/Texts/Artificial_Intelligence_and_Analytic_Pra.pdf",
+          "https://sites.pitt.edu/~rbrandom/Texts/Inferentialism_Normative_Pragmatism_and.pdf",
+          "https://sites.pitt.edu/~rbrandom/Texts/Vocabularies%20of%20Reason%2025-5-23%20b.pdf"
+        ]
+      },
+      {
+        "exercise": "Mark terms that function as explicit vocabulary for a practice.",
+        "id": "vocabulary",
+        "kind": "concept",
+        "label": "Vocabulary of reasons",
+        "source_refs": [
+          "https://sites.pitt.edu/~rbrandom/Courses/2024%20Philosophy%20of%20Language/Language%20and%20Reasons%202024%20Main.html",
+          "https://sites.pitt.edu/~rbrandom/Texts/Vocabularies%20of%20Reason%2025-5-23%20b.pdf"
+        ]
+      },
+      {
+        "exercise": "Convert one reading claim into antecedent, rule, and consequence.",
+        "id": "inferential_link",
+        "kind": "concept",
+        "label": "Reasons as inferential links",
+        "source_refs": [
+          "https://sites.pitt.edu/~rbrandom/Courses/2024%20Philosophy%20of%20Language/Language%20and%20Reasons%202024%20Main.html",
+          "https://sites.pitt.edu/~rbrandom/Texts/Inferentialism_Normative_Pragmatism_and.pdf"
+        ]
+      },
+      {
+        "exercise": "Given p and p -> q, record the commitment and entitlement ledger.",
+        "id": "scorekeeping",
+        "kind": "practice",
+        "label": "Commitments and entitlements",
+        "source_refs": [
+          "https://sites.pitt.edu/~rbrandom/Texts/Inferentialism_Normative_Pragmatism_and.pdf"
+        ]
+      },
+      {
+        "exercise": "Reject an unsupported inference and add the missing source or rule.",
+        "id": "challenge_repair",
+        "kind": "practice",
+        "label": "Challenge and repair",
+        "source_refs": [
+          "https://sites.pitt.edu/~rbrandom/Texts/Inferentialism_Normative_Pragmatism_and.pdf"
+        ]
+      },
+      {
+        "exercise": "Design a model action receipt that distinguishes assertion, inference, and repair.",
+        "id": "ai_application",
+        "kind": "tool",
+        "label": "AI as reason-governed assistant",
+        "source_refs": [
+          "https://sites.pitt.edu/~rbrandom/Texts/Artificial_Intelligence_and_Analytic_Pra.pdf"
+        ]
+      }
+    ],
+    "status": "MATCH"
+  },
+  "negative_fixtures": [
+    {
+      "failures": [
+        "filename_is_catalog_hint",
+        "requires_body_or_source_claim"
+      ],
+      "fixture_id": "filename_as_claim_rejected",
+      "status": "REJECTED"
+    },
+    {
+      "failures": [
+        "copyright_boundary",
+        "receipt_digest_only"
+      ],
+      "fixture_id": "pdf_body_export_rejected",
+      "status": "REJECTED"
+    },
+    {
+      "failures": [
+        "course_page_is_partial",
+        "requires_session_level_intake"
+      ],
+      "fixture_id": "course_page_as_complete_syllabus_rejected",
+      "status": "REJECTED"
+    },
+    {
+      "failures": [
+        "no_user_study",
+        "no_outcome_measure"
+      ],
+      "fixture_id": "lesson_graph_as_learning_efficacy_rejected",
+      "status": "REJECTED"
+    },
+    {
+      "failures": [
+        "humanities_corpus",
+        "not_natural_law"
+      ],
+      "fixture_id": "philosophy_to_scientific_law_rejected",
+      "status": "REJECTED"
+    }
+  ],
+  "pass": "0130",
+  "product_implications": [
+    {
+      "status": "HYPOTHESIS",
+      "tool": "Lesson Graph Builder",
+      "wedge": "source-backed course-to-exercise transformation"
+    },
+    {
+      "status": "HYPOTHESIS",
+      "tool": "Reason Ledger Tutor",
+      "wedge": "commitment, entitlement, challenge, and repair as checkable learner actions"
+    },
+    {
+      "status": "HYPOTHESIS",
+      "tool": "AI Philosophy Lab",
+      "wedge": "AI assistance constrained by reason-action receipts"
+    }
+  ],
+  "schema": "BrandomWorkLessonGraphReceipt/v1",
+  "seal": "ff9b4fb1da095a4cee0ee2eda60f48347b00d2e901c1ef8365b7e8ca31e1fea4",
+  "source_bindings": {
+    "brandom_digest_pass": "0129",
+    "brandom_digest_seal": "3c1fbb62dfdf5b3696e847b2020488b5a73093e7b4991228071ae3d218e7e31a",
+    "source_store": "gather/pass-0130-brandom-work-lesson-graph"
+  },
+  "source_receipts": [
+    {
+      "chars": 11344,
+      "kind": "webpage",
+      "method": "http-get",
+      "raw_body_exported": false,
+      "ref": "https://sites.pitt.edu/~rbrandom/Courses/2023%20Sellars/SM%202023%20Main%20n.html",
+      "sha256": "ebc0d410cb6a8a6ac16fadc5767b8a62ed8d7b1c225a886e2761850d7498fd6d",
+      "source": "web",
+      "status": "GATHER_VERIFIED",
+      "title": "Sellars as Metaphysician Seminar 2023"
+    },
+    {
+      "chars": 6860,
+      "kind": "webpage",
+      "method": "http-get",
+      "raw_body_exported": false,
+      "ref": "https://sites.pitt.edu/~rbrandom/Courses/2024%20Philosophy%20of%20Language/Language%20and%20Reasons%202024%20Main.html",
+      "sha256": "c938aaf054342470003135a9550f40e58e240435827052788542a932b4d5eb52",
+      "source": "web",
+      "status": "GATHER_VERIFIED",
+      "title": "Topics in the Philosophy of Language Seminar 2024"
+    },
+    {
+      "chars": 85263,
+      "kind": "webpage",
+      "method": "http-get",
+      "raw_body_exported": false,
+      "ref": "https://sites.pitt.edu/~rbrandom/Texts/Artificial_Intelligence_and_Analytic_Pra.pdf",
+      "sha256": "997db0e31b2ef1995db788ea14352978d0ec44b29781053fb4d4cc638457155d",
+      "source": "web",
+      "status": "GATHER_VERIFIED",
+      "title": "https://sites.pitt.edu/~rbrandom/Texts/Artificial_Intelligence_and_Analytic_Pra.pdf"
+    },
+    {
+      "chars": 790800,
+      "kind": "webpage",
+      "method": "http-get",
+      "raw_body_exported": false,
+      "ref": "https://sites.pitt.edu/~rbrandom/Texts/Inferentialism_Normative_Pragmatism_and.pdf",
+      "sha256": "263c5077f53fe41a5bdfdac70507bd56fc286f635d1cdbb8d4caa6e871deca7a",
+      "source": "web",
+      "status": "GATHER_VERIFIED",
+      "title": "https://sites.pitt.edu/~rbrandom/Texts/Inferentialism_Normative_Pragmatism_and.pdf"
+    },
+    {
+      "chars": 547503,
+      "kind": "webpage",
+      "method": "http-get",
+      "raw_body_exported": false,
+      "ref": "https://sites.pitt.edu/~rbrandom/Texts/Vocabularies%20of%20Reason%2025-5-23%20b.pdf",
+      "sha256": "049f1b64f012089d082fec5101fb207323a17f76603d92945ea6809ed392fdca",
+      "source": "web",
+      "status": "GATHER_VERIFIED",
+      "title": "https://sites.pitt.edu/~rbrandom/Texts/Vocabularies%20of%20Reason%2025-5-23%20b.pdf"
+    }
+  ],
+  "status": "BRANDOM_WORK_LESSON_GRAPH_MATCH",
+  "unsupported_claim_count": 0,
+  "validation_errors": [],
+  "work_catalog": [
+    {
+      "chars": 11344,
+      "dominant_terms": [
+        "Sellars",
+        "expressivism",
+        "semantics",
+        "logic",
+        "modality"
+      ],
+      "ref": "https://sites.pitt.edu/~rbrandom/Courses/2023%20Sellars/SM%202023%20Main%20n.html",
+      "sha256": "ebc0d410cb6a8a6ac16fadc5767b8a62ed8d7b1c225a886e2761850d7498fd6d",
+      "source_kind": "course_page",
+      "status": "CATALOGED_FROM_GATHER_RECEIPT",
+      "term_hit_count": 95,
+      "title": "SM 2023 Main n",
+      "work_id": "b3718f7438b0"
+    },
+    {
+      "chars": 6860,
+      "dominant_terms": [
+        "reason",
+        "logic",
+        "language",
+        "expressivism",
+        "semantics"
+      ],
+      "ref": "https://sites.pitt.edu/~rbrandom/Courses/2024%20Philosophy%20of%20Language/Language%20and%20Reasons%202024%20Main.html",
+      "sha256": "c938aaf054342470003135a9550f40e58e240435827052788542a932b4d5eb52",
+      "source_kind": "course_page",
+      "status": "CATALOGED_FROM_GATHER_RECEIPT",
+      "term_hit_count": 78,
+      "title": "Language and Reasons 2024 Main",
+      "work_id": "4bf178fe6da5"
+    },
+    {
+      "chars": 85263,
+      "dominant_terms": [
+        "artificial intelligence"
+      ],
+      "ref": "https://sites.pitt.edu/~rbrandom/Texts/Artificial_Intelligence_and_Analytic_Pra.pdf",
+      "sha256": "997db0e31b2ef1995db788ea14352978d0ec44b29781053fb4d4cc638457155d",
+      "source_kind": "downloadable_text",
+      "status": "CATALOGED_FROM_GATHER_RECEIPT",
+      "term_hit_count": 1,
+      "title": "Artificial Intelligence and Analytic Pra",
+      "work_id": "bfe78648dad4"
+    },
+    {
+      "chars": 790800,
+      "dominant_terms": [
+        "inferentialism",
+        "pragmatism"
+      ],
+      "ref": "https://sites.pitt.edu/~rbrandom/Texts/Inferentialism_Normative_Pragmatism_and.pdf",
+      "sha256": "263c5077f53fe41a5bdfdac70507bd56fc286f635d1cdbb8d4caa6e871deca7a",
+      "source_kind": "downloadable_text",
+      "status": "CATALOGED_FROM_GATHER_RECEIPT",
+      "term_hit_count": 2,
+      "title": "Inferentialism Normative Pragmatism and",
+      "work_id": "06ab18e53ceb"
+    },
+    {
+      "chars": 547503,
+      "dominant_terms": [
+        "reason"
+      ],
+      "ref": "https://sites.pitt.edu/~rbrandom/Texts/Vocabularies%20of%20Reason%2025-5-23%20b.pdf",
+      "sha256": "049f1b64f012089d082fec5101fb207323a17f76603d92945ea6809ed392fdca",
+      "source_kind": "downloadable_text",
+      "status": "CATALOGED_FROM_GATHER_RECEIPT",
+      "term_hit_count": 2,
+      "title": "Vocabularies of Reason 25-5-23 b",
+      "work_id": "16b847394ce2"
+    }
+  ]
+}

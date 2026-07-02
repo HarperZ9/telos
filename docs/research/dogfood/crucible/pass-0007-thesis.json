@@ -1,0 +1,30 @@
+{
+  "title": "Dogfood Pass 0007 Formal Identity Proof Packet and Reusable Validator",
+  "disposition": "fenced",
+  "claims": [
+    {
+      "text": "Pass 0007 created a formal identity proof packet for sum_{k=1..n}(2k - 1) = n^2, with status IDENTITY and no PROMOTED_LAW claim.",
+      "falsification": "formal-identity-proof-packet-pass-0007.json is missing, lacks the identity claim, or contains a PROMOTED_LAW claim"
+    },
+    {
+      "text": "The pass 0007 bounded computation probe checked n=0 through n=100000 with zero failures and recorded seal e9293c7bb2fd8d0b4bbcf9ff547f4f50f90c3b0d008fe261a3c7bd338a779d5f.",
+      "falsification": "formal-identity-probe-pass-0007.json reports failures, checks a smaller range, or records a different probe seal"
+    },
+    {
+      "text": "The proof-packet validator positive run reports MATCH for the formal identity packet with one match and zero drift.",
+      "falsification": "proof-packet-validator-positive-pass-0007.json reports non-MATCH status, match not equal to 1, or drift not equal to 0"
+    },
+    {
+      "text": "The proof-packet validator negative run reports DRIFT and exit code 1 when authority_receipts is missing.",
+      "falsification": "proof-packet-validator-negative-pass-0007.json reports non-DRIFT status, omits missing authority_receipts, or records an exit code other than 1"
+    },
+    {
+      "text": "The OpenTelemetry fixture normalizer produced a TelosActionEvent/v1 with normalization_status MATCH and explicit non-inferable proof-layer fields.",
+      "falsification": "otel-normalized-action-pass-0007.json is missing, reports non-MATCH normalization, or lacks non-inferable authority/workspace/verification/decision fields"
+    },
+    {
+      "text": "Pass 0007 promotes zero natural-law discoveries; all outputs remain identity, probe, validator, OpenTelemetry normalization, or adapter-preparation artifacts.",
+      "falsification": "any pass 0007 artifact labels a natural law, theorem breakthrough, medical result, finance result, safety result, or physical discovery as promoted"
+    }
+  ]
+}

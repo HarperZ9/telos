@@ -1,0 +1,528 @@
+{
+  "ok": true,
+  "thesis": {
+    "id": "2e32acbb43d28156",
+    "title": "Dogfood Pass 0035 Theorem-Specific Proof Packets",
+    "registered_at": 1782915353.7898207,
+    "disposition": "fenced",
+    "seal": "2e32acbb43d2815606e8bd3d6b3b8c1d9b09e6fd9b9e298471c38accbd8306e2",
+    "claims": [
+      {
+        "id": "ae882af1c1d8958f",
+        "sha256": "ae882af1c1d8958f1c7b16257fc6978c8f8021a9108d4fc7b816bca905074cd9"
+      },
+      {
+        "id": "115a904b98506282",
+        "sha256": "115a904b98506282aa9b2a68e7cd909f44d148c4bc6e596ef953dfc2cb5973f1"
+      },
+      {
+        "id": "30f903e758ed0f16",
+        "sha256": "30f903e758ed0f16f6ca2bbfcd587551e18eda9a35692f0dfe0c377d0aebd715"
+      },
+      {
+        "id": "a8ac017b69f97bb9",
+        "sha256": "a8ac017b69f97bb9d3a7d320c91ab5a1929b6acc12b870b10d9f990f4dd4a329"
+      },
+      {
+        "id": "97778925f4988355",
+        "sha256": "97778925f49883556c425ebcc7fbdf39875a5b3a0ba542ea7712ce7f350f2932"
+      },
+      {
+        "id": "fcc4662e477b7b60",
+        "sha256": "fcc4662e477b7b609cf5b40ac3a68d41f95a119bb66ed5b1e32a00ff8437989f"
+      },
+      {
+        "id": "80b49d60ee8a35ec",
+        "sha256": "80b49d60ee8a35ec68461ab293e38369d274004323d14dd01b5e26974fe6b6b4"
+      },
+      {
+        "id": "b46884f1745a296f",
+        "sha256": "b46884f1745a296f904ccaa669b329d3b3d483e3b55d382ceaf53ab6a705d5ff"
+      },
+      {
+        "id": "53c72284e322bef7",
+        "sha256": "53c72284e322bef716953cecfe724fb8bf82ddf6a91b306e0f4845c4cd88dd5d"
+      },
+      {
+        "id": "740e96dea356cb46",
+        "sha256": "740e96dea356cb46fac50619c5d915721515dbbe6a7605305657c88072bf7687"
+      }
+    ]
+  },
+  "refutations": [
+    {
+      "claim_id": "ae882af1c1d8958f",
+      "claim_sha256": "ae882af1c1d8958f1c7b16257fc6978c8f8021a9108d4fc7b816bca905074cd9",
+      "challenge": "test the stated falsification: schemas/theorem-specific-proof-packets-pass-0035.json is missing, has a different schema, status, source binding, theorem count, packet count, transcript count, or seal",
+      "measurable": "schemas/theorem-specific-proof-packets-pass-0035.json is missing, has a different schema, status, source binding, theorem count, packet count, transcript count, or seal",
+      "source": "null"
+    },
+    {
+      "claim_id": "115a904b98506282",
+      "claim_sha256": "115a904b98506282aa9b2a68e7cd909f44d148c4bc6e596ef953dfc2cb5973f1",
+      "challenge": "test the stated falsification: the theorem-specific fixture is missing, has a different SHA-256 or seal, or is not linked from the schema",
+      "measurable": "the theorem-specific fixture is missing, has a different SHA-256 or seal, or is not linked from the schema",
+      "source": "null"
+    },
+    {
+      "claim_id": "30f903e758ed0f16",
+      "claim_sha256": "30f903e758ed0f16f6ca2bbfcd587551e18eda9a35692f0dfe0c377d0aebd715",
+      "challenge": "test the stated falsification: the ten theorem-specific markdown packets are missing or fewer than ten",
+      "measurable": "the ten theorem-specific markdown packets are missing or fewer than ten",
+      "source": "null"
+    },
+    {
+      "claim_id": "a8ac017b69f97bb9",
+      "claim_sha256": "a8ac017b69f97bb9d3a7d320c91ab5a1929b6acc12b870b10d9f990f4dd4a329",
+      "challenge": "test the stated falsification: the ten transcript fixtures are missing, fewer than ten, or any transcript hash differs from the schema",
+      "measurable": "the ten transcript fixtures are missing, fewer than ten, or any transcript hash differs from the schema",
+      "source": "null"
+    },
+    {
+      "claim_id": "97778925f4988355",
+      "claim_sha256": "97778925f49883556c425ebcc7fbdf39875a5b3a0ba542ea7712ce7f350f2932",
+      "challenge": "test the stated falsification: any theorem-specific run has nonzero exit code, missing PASS result, failed Lake build, missing axiom PASS, or failed statement gate",
+      "measurable": "any theorem-specific run has nonzero exit code, missing PASS result, failed Lake build, missing axiom PASS, or failed statement gate",
+      "source": "null"
+    },
+    {
+      "claim_id": "fcc4662e477b7b60",
+      "claim_sha256": "fcc4662e477b7b609cf5b40ac3a68d41f95a119bb66ed5b1e32a00ff8437989f",
+      "challenge": "test the stated falsification: the theorem names differ from the expected Problem 4(b) target set or are incomplete",
+      "measurable": "the theorem names differ from the expected Problem 4(b) target set or are incomplete",
+      "source": "null"
+    },
+    {
+      "claim_id": "80b49d60ee8a35ec",
+      "claim_sha256": "80b49d60ee8a35ec68461ab293e38369d274004323d14dd01b5e26974fe6b6b4",
+      "challenge": "test the stated falsification: any theorem row omits the axiom boundary or reports a different axiom set",
+      "measurable": "any theorem row omits the axiom boundary or reports a different axiom set",
+      "source": "null"
+    },
+    {
+      "claim_id": "b46884f1745a296f",
+      "claim_sha256": "b46884f1745a296f904ccaa669b329d3b3d483e3b55d382ceaf53ab6a705d5ff",
+      "challenge": "test the stated falsification: any theorem row omits frozen statement, solution declaration, discharge gate, or proof declaration refs",
+      "measurable": "any theorem row omits frozen statement, solution declaration, discharge gate, or proof declaration refs",
+      "source": "null"
+    },
+    {
+      "claim_id": "53c72284e322bef7",
+      "claim_sha256": "53c72284e322bef716953cecfe724fb8bf82ddf6a91b306e0f4845c4cd88dd5d",
+      "challenge": "test the stated falsification: the pass 0035 validator result is missing, reports DRIFT, or has different theorem, packet, or transcript counts",
+      "measurable": "the pass 0035 validator result is missing, reports DRIFT, or has different theorem, packet, or transcript counts",
+      "source": "null"
+    },
+    {
+      "claim_id": "740e96dea356cb46",
+      "claim_sha256": "740e96dea356cb46fac50619c5d915721515dbbe6a7605305657c88072bf7687",
+      "challenge": "test the stated falsification: pass 0035 artifacts claim an axiom-free result, validate every public pipeline-math claim, promote a partial theorem set as complete, or promote a natural law",
+      "measurable": "pass 0035 artifacts claim an axiom-free result, validate every public pipeline-math claim, promote a partial theorem set as complete, or promote a natural law",
+      "source": "null"
+    }
+  ],
+  "assessment": {
+    "started_at": 1782915353.7898207,
+    "thesis_id": "2e32acbb43d28156",
+    "thesis_seal": "2e32acbb43d2815606e8bd3d6b3b8c1d9b09e6fd9b9e298471c38accbd8306e2",
+    "claims": 10,
+    "match": 10,
+    "drift": 0,
+    "unverifiable": 0,
+    "verdict_seal": "21fe196397a58155ac438cf3869c67d3e00698b85b18c6210f22970540db9020",
+    "measurement_seal": "3c93f453fe3386904518ee461f08e033a4879d924194429a7ba61b400b13aabf",
+    "disposition": "fenced",
+    "stored": null,
+    "verdicts": [
+      {
+        "claim_id": "ae882af1c1d8958f",
+        "claim_sha256": "ae882af1c1d8958f1c7b16257fc6978c8f8021a9108d4fc7b816bca905074cd9",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "theorem-packet-set-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "115a904b98506282",
+        "claim_sha256": "115a904b98506282aa9b2a68e7cd909f44d148c4bc6e596ef953dfc2cb5973f1",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "fixture-binding-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "30f903e758ed0f16",
+        "claim_sha256": "30f903e758ed0f16f6ca2bbfcd587551e18eda9a35692f0dfe0c377d0aebd715",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "packet-presence-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "a8ac017b69f97bb9",
+        "claim_sha256": "a8ac017b69f97bb9d3a7d320c91ab5a1929b6acc12b870b10d9f990f4dd4a329",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "transcript-fixture-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "97778925f4988355",
+        "claim_sha256": "97778925f49883556c425ebcc7fbdf39875a5b3a0ba542ea7712ce7f350f2932",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "theorem-run-status-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "fcc4662e477b7b60",
+        "claim_sha256": "fcc4662e477b7b609cf5b40ac3a68d41f95a119bb66ed5b1e32a00ff8437989f",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "theorem-target-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "80b49d60ee8a35ec",
+        "claim_sha256": "80b49d60ee8a35ec68461ab293e38369d274004323d14dd01b5e26974fe6b6b4",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "axiom-boundary-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "b46884f1745a296f",
+        "claim_sha256": "b46884f1745a296f904ccaa669b329d3b3d483e3b55d382ceaf53ab6a705d5ff",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "source-ref-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "53c72284e322bef7",
+        "claim_sha256": "53c72284e322bef716953cecfe724fb8bf82ddf6a91b306e0f4845c4cd88dd5d",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "validator-result-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "740e96dea356cb46",
+        "claim_sha256": "740e96dea356cb46fac50619c5d915721515dbbe6a7605305657c88072bf7687",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "non-promotion-boundary-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      }
+    ],
+    "measurements": [
+      {
+        "claim_id": "ae882af1c1d8958f",
+        "claim_sha256": "ae882af1c1d8958f1c7b16257fc6978c8f8021a9108d4fc7b816bca905074cd9",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "theorem-packet-set-review",
+        "measured_at": 1782915353.7898207,
+        "evidence": [
+          "schema=TheoremSpecificProofPacketSet/v1",
+          "status=THEOREM_SPECIFIC_REPLAY_MATCH",
+          "source_replay_sha256=3501084c65eb1a42494e778d498dc39a47ff59e47574f404be61ec6a9ac1e168",
+          "theorem_count=10",
+          "packet_count=10",
+          "transcript_count=10",
+          "seal=468bb326fc60e59eaaef5b4823e87256e72139bee690d90260eec399bfbf42f9"
+        ]
+      },
+      {
+        "claim_id": "115a904b98506282",
+        "claim_sha256": "115a904b98506282aa9b2a68e7cd909f44d148c4bc6e596ef953dfc2cb5973f1",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "fixture-binding-review",
+        "measured_at": 1782915353.7898207,
+        "evidence": [
+          "fixture sha256=09d37c91547b8baaccb1ce0659a249f4b4674e534ebd3a0e63c32f384bd4bbd0",
+          "fixture seal=22a310a37704faed2c2fa3308ebe4e8b9819a80ff4b965673cff84936350281a"
+        ]
+      },
+      {
+        "claim_id": "30f903e758ed0f16",
+        "claim_sha256": "30f903e758ed0f16f6ca2bbfcd587551e18eda9a35692f0dfe0c377d0aebd715",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "packet-presence-review",
+        "measured_at": 1782915353.7898207,
+        "evidence": [
+          "packets/theorems/045-B_triple_zero.md",
+          "packets/theorems/045-M_triple_defect.md",
+          "packets/theorems/045-M_annihilator.md",
+          "packets/theorems/045-M_pairwise_intersection.md",
+          "packets/theorems/045-triple_defect_survives.md",
+          "packets/theorems/045-R_finite_conductor.md",
+          "packets/theorems/045-R_not_quasi_coherent.md",
+          "packets/theorems/045-prob4b_counterexample.md",
+          "packets/theorems/045-problem4b_false.md",
+          "packets/theorems/045-quasiCoherent_imp_finiteConductor.md"
+        ]
+      },
+      {
+        "claim_id": "a8ac017b69f97bb9",
+        "claim_sha256": "a8ac017b69f97bb9d3a7d320c91ab5a1929b6acc12b870b10d9f990f4dd4a329",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "transcript-fixture-review",
+        "measured_at": 1782915353.7898207,
+        "evidence": [
+          "transcript_count=10",
+          "validator rehashes transcript fixtures",
+          "schema transcript_count=10"
+        ]
+      },
+      {
+        "claim_id": "97778925f4988355",
+        "claim_sha256": "97778925f49883556c425ebcc7fbdf39875a5b3a0ba542ea7712ce7f350f2932",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "theorem-run-status-review",
+        "measured_at": 1782915353.7898207,
+        "evidence": [
+          "all_exit_zero=true",
+          "all_result_pass=true",
+          "all rows lake_build_status=PASS",
+          "all rows axiom_status=PASS",
+          "all rows statement_discharge_status=PASS",
+          "all rows statement_solution_status=PASS"
+        ]
+      },
+      {
+        "claim_id": "fcc4662e477b7b60",
+        "claim_sha256": "fcc4662e477b7b609cf5b40ac3a68d41f95a119bb66ed5b1e32a00ff8437989f",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "theorem-target-review",
+        "measured_at": 1782915353.7898207,
+        "evidence": [
+          "theorem ordering matches validator EXPECTED_THEOREMS",
+          "theorem_count=10"
+        ]
+      },
+      {
+        "claim_id": "80b49d60ee8a35ec",
+        "claim_sha256": "80b49d60ee8a35ec68461ab293e38369d274004323d14dd01b5e26974fe6b6b4",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "axiom-boundary-review",
+        "measured_at": 1782915353.7898207,
+        "evidence": [
+          "all rows axiom_set=[propext, Classical.choice, Quot.sound]",
+          "validator checks axiom set for every theorem"
+        ]
+      },
+      {
+        "claim_id": "b46884f1745a296f",
+        "claim_sha256": "b46884f1745a296f904ccaa669b329d3b3d483e3b55d382ceaf53ab6a705d5ff",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "source-ref-review",
+        "measured_at": 1782915353.7898207,
+        "evidence": [
+          "all rows include source_refs.frozen_statement",
+          "all rows include source_refs.solution_decl",
+          "all rows include source_refs.discharge_gate",
+          "all rows include source_refs.proof_decl"
+        ]
+      },
+      {
+        "claim_id": "53c72284e322bef7",
+        "claim_sha256": "53c72284e322bef716953cecfe724fb8bf82ddf6a91b306e0f4845c4cd88dd5d",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "validator-result-review",
+        "measured_at": 1782915353.7898207,
+        "evidence": [
+          "schemas/pass-0035-theorem-packets-validator-result.json status=MATCH",
+          "theorem_count=10",
+          "packet_count=10",
+          "transcript_count=10"
+        ]
+      },
+      {
+        "claim_id": "740e96dea356cb46",
+        "claim_sha256": "740e96dea356cb46fac50619c5d915721515dbbe6a7605305657c88072bf7687",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "non-promotion-boundary-review",
+        "measured_at": 1782915353.7898207,
+        "evidence": [
+          "current_promoted_natural_laws=[]",
+          "negative-axiom-free-claim expected_validator_status=REJECT",
+          "negative-public-claim-overpromoted expected_validator_status=REJECT",
+          "negative-natural-law-promoted expected_validator_status=REJECT"
+        ]
+      }
+    ],
+    "seal": "f95af193457cb7edcaf8a0528cb161743f4e9192b86dd891b353fc2d96b942c6"
+  },
+  "verdicts": [
+    {
+      "claim_id": "ae882af1c1d8958f",
+      "claim_sha256": "ae882af1c1d8958f1c7b16257fc6978c8f8021a9108d4fc7b816bca905074cd9",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "theorem-packet-set-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "115a904b98506282",
+      "claim_sha256": "115a904b98506282aa9b2a68e7cd909f44d148c4bc6e596ef953dfc2cb5973f1",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "fixture-binding-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "30f903e758ed0f16",
+      "claim_sha256": "30f903e758ed0f16f6ca2bbfcd587551e18eda9a35692f0dfe0c377d0aebd715",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "packet-presence-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "a8ac017b69f97bb9",
+      "claim_sha256": "a8ac017b69f97bb9d3a7d320c91ab5a1929b6acc12b870b10d9f990f4dd4a329",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "transcript-fixture-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "97778925f4988355",
+      "claim_sha256": "97778925f49883556c425ebcc7fbdf39875a5b3a0ba542ea7712ce7f350f2932",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "theorem-run-status-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "fcc4662e477b7b60",
+      "claim_sha256": "fcc4662e477b7b609cf5b40ac3a68d41f95a119bb66ed5b1e32a00ff8437989f",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "theorem-target-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "80b49d60ee8a35ec",
+      "claim_sha256": "80b49d60ee8a35ec68461ab293e38369d274004323d14dd01b5e26974fe6b6b4",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "axiom-boundary-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "b46884f1745a296f",
+      "claim_sha256": "b46884f1745a296f904ccaa669b329d3b3d483e3b55d382ceaf53ab6a705d5ff",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "source-ref-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "53c72284e322bef7",
+      "claim_sha256": "53c72284e322bef716953cecfe724fb8bf82ddf6a91b306e0f4845c4cd88dd5d",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "validator-result-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "740e96dea356cb46",
+      "claim_sha256": "740e96dea356cb46fac50619c5d915721515dbbe6a7605305657c88072bf7687",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "non-promotion-boundary-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    }
+  ],
+  "checks": {
+    "seals_ok": true,
+    "thesis_ok": true,
+    "verdicts_rederive": true
+  },
+  "report": "docs\\research\\dogfood\\crucible\\pass-0035-report.md",
+  "record": "docs\\research\\dogfood\\crucible\\pass-0035-run.json",
+  "bundle": null,
+  "spec": null,
+  "review": null,
+  "verifier": {
+    "mode": "cleanroom",
+    "inputs": [],
+    "excluded": [
+      "worker context",
+      "reasoning trace",
+      "intermediate steps"
+    ],
+    "checkability": "If success cannot be evaluated from the original spec and the artifact, the spec is not checkable yet."
+  }
+}

@@ -1,0 +1,922 @@
+{
+  "archive_substrate_catalog": [
+    {
+      "coverage": "works, authors, sources, institutions, topics",
+      "kind": "metadata_graph",
+      "name": "OpenAlex",
+      "scope": "global scholarly graph",
+      "status": "SOURCE_SUBSTRATE"
+    },
+    {
+      "coverage": "works, funders, licenses, references, ORCID/ROR",
+      "kind": "metadata_graph",
+      "name": "Crossref",
+      "scope": "publisher DOI metadata",
+      "status": "SOURCE_SUBSTRATE"
+    },
+    {
+      "coverage": "papers, authors, citations, recommendations, datasets",
+      "kind": "metadata_graph",
+      "name": "Semantic Scholar",
+      "scope": "AI-linked scholarly graph",
+      "status": "SOURCE_SUBSTRATE"
+    },
+    {
+      "coverage": "repository metadata and open full-text access points",
+      "kind": "full_text_aggregator",
+      "name": "CORE",
+      "scope": "open-access aggregation",
+      "status": "SOURCE_SUBSTRATE"
+    },
+    {
+      "coverage": "math, physics, computer science, quantitative biology, statistics",
+      "kind": "preprint_archive",
+      "name": "arXiv",
+      "scope": "preprint archive",
+      "status": "SOURCE_SUBSTRATE"
+    },
+    {
+      "coverage": "preprints, publication links, interval feeds",
+      "kind": "preprint_archive",
+      "name": "bioRxiv/medRxiv",
+      "scope": "life-science and medical preprints",
+      "status": "SOURCE_SUBSTRATE"
+    },
+    {
+      "coverage": "PubMed, PMC, Gene, Nuccore, Protein",
+      "kind": "biomedical_archive",
+      "name": "NCBI/PubMed/PMC",
+      "scope": "biomedical literature and databases",
+      "status": "SOURCE_SUBSTRATE"
+    },
+    {
+      "coverage": "search, metrics, export functions",
+      "kind": "domain_archive",
+      "name": "NASA ADS",
+      "scope": "astronomy and physics literature",
+      "status": "SOURCE_SUBSTRATE"
+    },
+    {
+      "coverage": "datasets, files, metadata, permissions",
+      "kind": "data_repository",
+      "name": "Dataverse",
+      "scope": "research data repository network",
+      "status": "SOURCE_SUBSTRATE"
+    },
+    {
+      "coverage": "records, files, deposits, OAI-PMH",
+      "kind": "data_repository",
+      "name": "Zenodo",
+      "scope": "general research outputs",
+      "status": "SOURCE_SUBSTRATE"
+    },
+    {
+      "coverage": "projects, study designs, data, manuscripts, materials",
+      "kind": "data_repository",
+      "name": "OSF",
+      "scope": "open science workflow repository",
+      "status": "SOURCE_SUBSTRATE"
+    },
+    {
+      "coverage": "computed material properties and API client",
+      "kind": "domain_database",
+      "name": "Materials Project",
+      "scope": "materials discovery database",
+      "status": "SOURCE_SUBSTRATE"
+    }
+  ],
+  "boundary": "Pass 0135 maps current source terminology across biology, medicine, robotics, AI, controls, and scientific compute. It does not claim that shared vocabulary proves shared mechanism, clinical efficacy, robot safety, or natural law.",
+  "current_promoted_natural_laws": [],
+  "domain_expansion_queue": [
+    {
+      "domain": "biology",
+      "first_tooling_target": "claim-to-experiment packets",
+      "search_terms": "morphogenesis, evolution, omics, synthetic biology",
+      "status": "EXPANSION_QUEUE"
+    },
+    {
+      "domain": "medicine",
+      "first_tooling_target": "safety and endpoint receipts",
+      "search_terms": "clinical evidence, devices, drug discovery, trials",
+      "status": "EXPANSION_QUEUE"
+    },
+    {
+      "domain": "robotics",
+      "first_tooling_target": "embodied action replay",
+      "search_terms": "physical AI, surgical robotics, soft robotics",
+      "status": "EXPANSION_QUEUE"
+    },
+    {
+      "domain": "mathematics",
+      "first_tooling_target": "prover-verifier packets",
+      "search_terms": "open problems, proof assistants, theorem graphs",
+      "status": "EXPANSION_QUEUE"
+    },
+    {
+      "domain": "physics",
+      "first_tooling_target": "law-boundary and simulator receipts",
+      "search_terms": "foundations, quantum, statistical mechanics, cosmology",
+      "status": "EXPANSION_QUEUE"
+    },
+    {
+      "domain": "materials",
+      "first_tooling_target": "materials property proof packets",
+      "search_terms": "crystals, molecules, batteries, catalysts",
+      "status": "EXPANSION_QUEUE"
+    },
+    {
+      "domain": "chemistry",
+      "first_tooling_target": "stoichiometry and synthesis receipts",
+      "search_terms": "reaction networks, synthesis, molecular design",
+      "status": "EXPANSION_QUEUE"
+    },
+    {
+      "domain": "climate_energy",
+      "first_tooling_target": "simulation provenance packets",
+      "search_terms": "earth systems, grid, fusion, storage",
+      "status": "EXPANSION_QUEUE"
+    },
+    {
+      "domain": "security",
+      "first_tooling_target": "exploit/fix proof packets",
+      "search_terms": "formal methods, systems, cryptography",
+      "status": "EXPANSION_QUEUE"
+    },
+    {
+      "domain": "finance",
+      "first_tooling_target": "model-risk and optimization receipts",
+      "search_terms": "risk, markets, optimization, fraud",
+      "status": "EXPANSION_QUEUE"
+    },
+    {
+      "domain": "education",
+      "first_tooling_target": "source-backed lesson receipts",
+      "search_terms": "learning science, tutoring, curriculum graphs",
+      "status": "EXPANSION_QUEUE"
+    },
+    {
+      "domain": "governance_law",
+      "first_tooling_target": "claim provenance and decision receipts",
+      "search_terms": "policy, regulation, institutional design",
+      "status": "EXPANSION_QUEUE"
+    },
+    {
+      "domain": "neuroscience",
+      "first_tooling_target": "closed-loop experiment receipts",
+      "search_terms": "BCI, cognition, neural dynamics",
+      "status": "EXPANSION_QUEUE"
+    },
+    {
+      "domain": "economics",
+      "first_tooling_target": "causal evidence packets",
+      "search_terms": "mechanism design, labor, macro systems",
+      "status": "EXPANSION_QUEUE"
+    }
+  ],
+  "domain_lanes": [
+    {
+      "biology_terms": [
+        "bioelectricity",
+        "morphogenesis",
+        "collective intelligence"
+      ],
+      "gap_status": "inferred",
+      "lane_id": "morphogenesis_bioelectricity_collective_intelligence",
+      "medicine_terms": [
+        "regenerative medicine",
+        "morphoceutics",
+        "cancer suppression"
+      ],
+      "promotion_gate": "Requires primary source receipts, task fixture, negative control, and independent verifier before proof or law promotion.",
+      "robotics_terms": [
+        "swarm intelligence",
+        "morphogenetic robotics"
+      ],
+      "status": "HYPOTHESIS_SOURCE_MAP",
+      "tool_product_hypothesis": "Morphogenesis claim-to-experiment packet"
+    },
+    {
+      "biology_terms": [
+        "single-cell foundation model",
+        "spatial omics",
+        "virtual cell"
+      ],
+      "gap_status": "inferred",
+      "lane_id": "virtual_cell_single_cell_spatial_omics",
+      "medicine_terms": [
+        "patient stratification",
+        "preclinical virtual cell"
+      ],
+      "promotion_gate": "Requires primary source receipts, task fixture, negative control, and independent verifier before proof or law promotion.",
+      "robotics_terms": [
+        "world model",
+        "state representation"
+      ],
+      "status": "HYPOTHESIS_SOURCE_MAP",
+      "tool_product_hypothesis": "Virtual-cell evidence packet"
+    },
+    {
+      "biology_terms": [
+        "bioelectronic medicine",
+        "neuromodulation",
+        "autonomic control"
+      ],
+      "gap_status": "inferred",
+      "lane_id": "bioelectronic_closed_loop_therapy",
+      "medicine_terms": [
+        "closed-loop therapy",
+        "adaptive stimulation"
+      ],
+      "promotion_gate": "Requires primary source receipts, task fixture, negative control, and independent verifier before proof or law promotion.",
+      "robotics_terms": [
+        "feedback control",
+        "sensor-actuator loop"
+      ],
+      "status": "HYPOTHESIS_SOURCE_MAP",
+      "tool_product_hypothesis": "Therapy action receipt"
+    },
+    {
+      "biology_terms": [
+        "microphysiological system",
+        "organoid",
+        "organ-on-chip"
+      ],
+      "gap_status": "inferred",
+      "lane_id": "organ_chip_organoid_human_on_chip",
+      "medicine_terms": [
+        "drug testing",
+        "toxicity",
+        "aging model"
+      ],
+      "promotion_gate": "Requires primary source receipts, task fixture, negative control, and independent verifier before proof or law promotion.",
+      "robotics_terms": [
+        "sim-to-real testbed",
+        "embodied benchmark"
+      ],
+      "status": "HYPOTHESIS_SOURCE_MAP",
+      "tool_product_hypothesis": "Experiment reproducibility packet"
+    },
+    {
+      "biology_terms": [
+        "VLA",
+        "robot foundation model",
+        "diffusion policy"
+      ],
+      "gap_status": "inferred",
+      "lane_id": "physical_ai_robot_foundation_models",
+      "medicine_terms": [
+        "assistive robotics",
+        "rehabilitation robotics"
+      ],
+      "promotion_gate": "Requires primary source receipts, task fixture, negative control, and independent verifier before proof or law promotion.",
+      "robotics_terms": [
+        "generalist policy",
+        "embodied AI"
+      ],
+      "status": "HYPOTHESIS_SOURCE_MAP",
+      "tool_product_hypothesis": "Robot policy proof packet"
+    },
+    {
+      "biology_terms": [
+        "continuum robot",
+        "soft robot",
+        "endoluminal intervention"
+      ],
+      "gap_status": "inferred",
+      "lane_id": "surgical_ai_medical_robotics_continuum",
+      "medicine_terms": [
+        "minimally invasive surgery",
+        "surgical autonomy"
+      ],
+      "promotion_gate": "Requires primary source receipts, task fixture, negative control, and independent verifier before proof or law promotion.",
+      "robotics_terms": [
+        "compliant body control",
+        "teleoperation"
+      ],
+      "status": "HYPOTHESIS_SOURCE_MAP",
+      "tool_product_hypothesis": "Operating-room evidence packet"
+    },
+    {
+      "biology_terms": [
+        "stochastic dynamics",
+        "thermodynamic compute"
+      ],
+      "gap_status": "inferred",
+      "lane_id": "thermodynamic_probabilistic_biophysical_compute",
+      "medicine_terms": [
+        "Bayesian medicine",
+        "scientific simulation"
+      ],
+      "promotion_gate": "Requires primary source receipts, task fixture, negative control, and independent verifier before proof or law promotion.",
+      "robotics_terms": [
+        "probabilistic controller",
+        "sampling hardware"
+      ],
+      "status": "HYPOTHESIS_SOURCE_MAP",
+      "tool_product_hypothesis": "Stochastic compute receipt"
+    },
+    {
+      "biology_terms": [
+        "same mechanism, different vocabulary"
+      ],
+      "gap_status": "inferred",
+      "lane_id": "translation_and_nomenclature",
+      "medicine_terms": [
+        "clinical endpoint",
+        "regulatory evidence"
+      ],
+      "promotion_gate": "Requires primary source receipts, task fixture, negative control, and independent verifier before proof or law promotion.",
+      "robotics_terms": [
+        "task success",
+        "safety case"
+      ],
+      "status": "HYPOTHESIS_SOURCE_MAP",
+      "tool_product_hypothesis": "Cross-domain nomenclature resolver"
+    }
+  ],
+  "flagship_receipts": {
+    "forum": {
+      "decided": null,
+      "exit_code": 0,
+      "status": "MATCH",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "66b420e90ee8289c24372f9a4ebe08cb4af0a0b1d4e6ee76309b7805a102c06b",
+      "top_candidate": "deep-research"
+    },
+    "index": {
+      "exit_code": 0,
+      "status": "MATCH",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "5231d1e6a617cf20638824a8e0c49147cd838717d45aa067426cac110deb549f",
+      "verification_verdict": "MATCH"
+    },
+    "telos": {
+      "exit_code": 0,
+      "status": "MATCH",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "be17cb15259234cb4e8e95c2b36e76c90d841431729beb140294e34c5f9ebfa7",
+      "tool_version": "0.1.0"
+    },
+    "telos_catalog": {
+      "exit_code": 0,
+      "status": "MATCH",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "ef95a6f1ff803c483c3c4dd553fe19c37ab144113a21bc005cf4148cf31a8564"
+    }
+  },
+  "gather_summary": {
+    "client_challenge_count": 4,
+    "distinct_body_count": 28,
+    "empty_capture_count": 2,
+    "source_count": 32,
+    "usable_source_count": 26
+  },
+  "generated_on": "2026-07-02",
+  "market_hypotheses": [
+    {
+      "buyer": "research labs and venture studios",
+      "product": "Cross-Domain Nomenclature Resolver",
+      "status": "HYPOTHESIS",
+      "wedge": "map equivalent concepts across biology, medicine, robotics, AI, and controls with source receipts"
+    },
+    {
+      "buyer": "AI4Science and translational medicine teams",
+      "product": "Bio-Med-Robotics Claim Packet",
+      "status": "HYPOTHESIS",
+      "wedge": "bind paper, assay, model, intervention, negative control, and verifier before promotion"
+    },
+    {
+      "buyer": "bioelectronic medicine and medical device teams",
+      "product": "Closed-Loop Therapy Action Receipt",
+      "status": "HYPOTHESIS",
+      "wedge": "separate sensor evidence, controller policy, stimulation action, safety gate, and clinical endpoint"
+    },
+    {
+      "buyer": "robotics and organ-chip platform teams",
+      "product": "Embodied Experiment Replay Kit",
+      "status": "HYPOTHESIS",
+      "wedge": "treat organ chips, robot testbeds, and surgical data factories as replayable embodied evidence surfaces"
+    },
+    {
+      "buyer": "scientific compute groups",
+      "product": "BuildLang Multiscale Dynamics Kernel",
+      "status": "HYPOTHESIS",
+      "wedge": "compile and receipt bounded dynamical systems shared by morphogenesis, therapy control, robotics, and stochastic compute"
+    }
+  ],
+  "negative_fixtures": [
+    {
+      "failures": [
+        "nomenclature_overlap_only",
+        "requires_mechanistic_bridge"
+      ],
+      "fixture_id": "same_word_same_mechanism_rejected",
+      "status": "REJECTED"
+    },
+    {
+      "failures": [
+        "review_article",
+        "no_protocol_replay"
+      ],
+      "fixture_id": "review_as_validated_intervention_rejected",
+      "status": "REJECTED"
+    },
+    {
+      "failures": [
+        "benchmark_only",
+        "requires_clinical_endpoint"
+      ],
+      "fixture_id": "foundation_model_as_clinical_validity_rejected",
+      "status": "REJECTED"
+    },
+    {
+      "failures": [
+        "blocked_capture",
+        "not_article_body"
+      ],
+      "fixture_id": "nature_client_challenge_as_article_rejected",
+      "status": "REJECTED"
+    },
+    {
+      "failures": [
+        "demo_signal_only",
+        "requires_hazard_analysis"
+      ],
+      "fixture_id": "robot_demo_as_safety_case_rejected",
+      "status": "REJECTED"
+    },
+    {
+      "failures": [
+        "industry_claim",
+        "requires_independent_measurement"
+      ],
+      "fixture_id": "market_signal_as_efficacy_rejected",
+      "status": "REJECTED"
+    },
+    {
+      "failures": [
+        "taxonomy_only",
+        "requires_proof_and_reproduction"
+      ],
+      "fixture_id": "nomenclature_map_as_natural_law_rejected",
+      "status": "REJECTED"
+    }
+  ],
+  "pass": "0135",
+  "schema": "BioMedRoboticsNomenclatureMapReceipt/v1",
+  "seal": "8e1112d188c3d758859f1ee10016355e190c079c462b6cd8fa50145b535c847e",
+  "source_quality_warnings": [
+    {
+      "ref": "https://developer.osf.io/",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "title": "OSF APIv2 Documentation",
+      "warning": "empty_capture"
+    },
+    {
+      "ref": "https://ui.adsabs.harvard.edu/help/api/",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "title": "https://ui.adsabs.harvard.edu/help/api/",
+      "warning": "empty_capture"
+    },
+    {
+      "ref": "https://www.nature.com/articles/s12276-025-01547-5",
+      "sha256": "21e4d17ef30b902b10e8bf980b565a7435d1e7936d193098e76b2ec443ce8965",
+      "title": "Client Challenge",
+      "warning": "client_challenge"
+    },
+    {
+      "ref": "https://www.nature.com/articles/s41467-024-48058-x",
+      "sha256": "21e4d17ef30b902b10e8bf980b565a7435d1e7936d193098e76b2ec443ce8965",
+      "title": "Client Challenge",
+      "warning": "client_challenge"
+    },
+    {
+      "ref": "https://www.nature.com/articles/s41467-026-71188-3",
+      "sha256": "21e4d17ef30b902b10e8bf980b565a7435d1e7936d193098e76b2ec443ce8965",
+      "title": "Client Challenge",
+      "warning": "client_challenge"
+    },
+    {
+      "ref": "https://www.nature.com/articles/s42003-024-06037-4",
+      "sha256": "21e4d17ef30b902b10e8bf980b565a7435d1e7936d193098e76b2ec443ce8965",
+      "title": "Client Challenge",
+      "warning": "client_challenge"
+    }
+  ],
+  "source_receipts": [
+    {
+      "chars": 10528,
+      "kind": "webpage",
+      "method": "http-get",
+      "raw_body_exported": false,
+      "ref": "https://api.biorxiv.org/",
+      "sha256": "ff140b7c972bec5391886046b8bc71af3275aa9f2c3b4552e93fbefde4d2cdc8",
+      "source_quality": "WEB_SOURCE",
+      "status": "GATHER_VERIFIED",
+      "title": "bioRxiv API"
+    },
+    {
+      "chars": 51,
+      "kind": "webpage",
+      "method": "http-get",
+      "raw_body_exported": false,
+      "ref": "https://api.semanticscholar.org/api-docs/",
+      "sha256": "d9d455e35e4ddf651817d2d3e3d3d38b4b84ce692ba0188c0756222b449c31c2",
+      "source_quality": "WEB_SOURCE",
+      "status": "GATHER_VERIFIED",
+      "title": "Semantic Scholar - Academic Graph API"
+    },
+    {
+      "chars": 15453,
+      "kind": "webpage",
+      "method": "http-get",
+      "raw_body_exported": false,
+      "ref": "https://blogs.nvidia.com/blog/national-robotics-week-2026/",
+      "sha256": "2aad97f2a455f35c9c094182dc5322c09a39ad63df4844f4d32f6d877aa5d172",
+      "source_quality": "INDUSTRY_RESEARCH_SIGNAL",
+      "status": "GATHER_VERIFIED",
+      "title": "National Robotics Week  Latest Physical AI Research, Breakthroughs and Resources | NVIDIA Blog"
+    },
+    {
+      "chars": 4484,
+      "kind": "webpage",
+      "method": "http-get",
+      "raw_body_exported": false,
+      "ref": "https://core.ac.uk/documentation/api",
+      "sha256": "41714e56498485aa110b46af924e4bbf0979ff60e8219f1c0c4a99017c3fd91a",
+      "source_quality": "WEB_SOURCE",
+      "status": "GATHER_VERIFIED",
+      "title": "CORE API documentation"
+    },
+    {
+      "chars": 0,
+      "kind": "webpage",
+      "method": "http-get",
+      "raw_body_exported": false,
+      "ref": "https://developer.osf.io/",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_quality": "EMPTY_CAPTURE",
+      "status": "GATHER_VERIFIED",
+      "title": "OSF APIv2 Documentation"
+    },
+    {
+      "chars": 4836,
+      "kind": "webpage",
+      "method": "http-get",
+      "raw_body_exported": false,
+      "ref": "https://developers.openalex.org/api-reference/introduction",
+      "sha256": "c81d1fc3249b42ae8a1205431f94e75a6198c44da6564e1704ac0c15570b173d",
+      "source_quality": "WEB_SOURCE",
+      "status": "GATHER_VERIFIED",
+      "title": "API Overview - OpenAlex Developers"
+    },
+    {
+      "chars": 61088,
+      "kind": "webpage",
+      "method": "http-get",
+      "raw_body_exported": false,
+      "ref": "https://developers.zenodo.org/",
+      "sha256": "8e656f9977c8070bf8047295923f16a1914d0bafb6b0492bebc029f2a4448d99",
+      "source_quality": "WEB_SOURCE",
+      "status": "GATHER_VERIFIED",
+      "title": "Developers | Zenodo"
+    },
+    {
+      "chars": 1342,
+      "kind": "webpage",
+      "method": "http-get",
+      "raw_body_exported": false,
+      "ref": "https://docs.materialsproject.org/downloading-data/using-the-api",
+      "sha256": "6a156725d8f56aff48465e73eacf7e72fd324678b55d4fa4d4f7bf1eb9664ac9",
+      "source_quality": "WEB_SOURCE",
+      "status": "GATHER_VERIFIED",
+      "title": "Using the API | Materials Project Documentation"
+    },
+    {
+      "chars": 112329,
+      "kind": "webpage",
+      "method": "http-get",
+      "raw_body_exported": false,
+      "ref": "https://drmichaellevin.org/publications/",
+      "sha256": "f8bdd4a60d8d2335fee57effb38eedcf3a1472c73bf7e507d4d81ee381f646a7",
+      "source_quality": "LAB_OR_UNIVERSITY_SOURCE",
+      "status": "GATHER_VERIFIED",
+      "title": "Peer-Reviewed Papers"
+    },
+    {
+      "chars": 94142,
+      "kind": "webpage",
+      "method": "http-get",
+      "raw_body_exported": false,
+      "ref": "https://drmichaellevin.org/resources/",
+      "sha256": "e3260c35a5c87d39854591bc2d075eecb61c30cca1e1cc9cb6398237cb509224",
+      "source_quality": "LAB_OR_UNIVERSITY_SOURCE",
+      "status": "GATHER_VERIFIED",
+      "title": "Frequently Asked Questions - Latest Version"
+    },
+    {
+      "chars": 42414,
+      "kind": "webpage",
+      "method": "http-get",
+      "raw_body_exported": false,
+      "ref": "https://github.com/OmicsML/awesome-foundation-model-single-cell-papers",
+      "sha256": "4ccc4607db99ee37332ecc9eb47801f63a35475402f09a9a70fd258e3088c630",
+      "source_quality": "CURATED_REPO_OR_CODE_SIGNAL",
+      "status": "GATHER_VERIFIED",
+      "title": "GitHub - OmicsML/awesome-foundation-model-single-cell-papers  GitHub"
+    },
+    {
+      "chars": 70454,
+      "kind": "webpage",
+      "method": "http-get",
+      "raw_body_exported": false,
+      "ref": "https://github.com/keon/awesome-physical-ai",
+      "sha256": "02e3dc93a0b28c63beeffc2c1f89d32722c7a31687a1ea6bac5cc51a9ffc4a4c",
+      "source_quality": "CURATED_REPO_OR_CODE_SIGNAL",
+      "status": "GATHER_VERIFIED",
+      "title": "GitHub - keon/awesome-physical-ai: A curated list of academic papers and resources on Physical AI  focusing on Vision-Language-Action (VLA) models, world models, embodied ai, and robotic foundation models.  GitHub"
+    },
+    {
+      "chars": 6259,
+      "kind": "webpage",
+      "method": "http-get",
+      "raw_body_exported": false,
+      "ref": "https://guides.dataverse.org/en/latest/api/index.html",
+      "sha256": "c200c9d40160ba7740497f9e50b5a7cfca7f41400c1c61efd2e101106a3fa083",
+      "source_quality": "WEB_SOURCE",
+      "status": "GATHER_VERIFIED",
+      "title": "API Guide  Dataverse.org"
+    },
+    {
+      "chars": 14679,
+      "kind": "webpage",
+      "method": "http-get",
+      "raw_body_exported": false,
+      "ref": "https://info.arxiv.org/help/api/basics.html",
+      "sha256": "be059b8b6489aa12bbfb4e55cbd19aa60d321495e30b724e41bea45e566d4e56",
+      "source_quality": "WEB_SOURCE",
+      "status": "GATHER_VERIFIED",
+      "title": "arXiv API Basics - arXiv info | arXiv e-print repository"
+    },
+    {
+      "chars": 16794,
+      "kind": "webpage",
+      "method": "http-get",
+      "raw_body_exported": false,
+      "ref": "https://nature.berkeley.edu/news/2026/03/organ-chip-technology-replicates-decades-human-aging-just-four-days",
+      "sha256": "6c61d395a4a650062997c6dc1892316ebda3fad7e2dc92d9cfb2f62132371afb",
+      "source_quality": "LAB_OR_UNIVERSITY_SOURCE",
+      "status": "GATHER_VERIFIED",
+      "title": "Organ-on-a-chip technology replicates decades of human aging in just four days | Rausser College of Natural Resources"
+    },
+    {
+      "chars": 114007,
+      "kind": "webpage",
+      "method": "http-get",
+      "raw_body_exported": false,
+      "ref": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11748337/",
+      "sha256": "672a6aba89617830b817d84376e0acc5049c83be751e65b407d7903a447343a7",
+      "source_quality": "OPEN_BIOMEDICAL_RECORD",
+      "status": "GATHER_VERIFIED",
+      "title": "Next generation bioelectronic medicine: making the case for non-invasive closed-loop autonomic neuromodulation - PMC"
+    },
+    {
+      "chars": 147388,
+      "kind": "webpage",
+      "method": "http-get",
+      "raw_body_exported": false,
+      "ref": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12789685/",
+      "sha256": "8b7f8b4287a96225e2aff6a689f567dd066496cd28f0f0da7b796355714b420e",
+      "source_quality": "OPEN_BIOMEDICAL_RECORD",
+      "status": "GATHER_VERIFIED",
+      "title": "AI-driven virtual cell models in preclinical research: technical pathways, validation mechanisms, and clinical translation potential - PMC"
+    },
+    {
+      "chars": 114690,
+      "kind": "webpage",
+      "method": "http-get",
+      "raw_body_exported": false,
+      "ref": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12836364/",
+      "sha256": "8f2c00d34a57be839afa9144762b904ecd3e14fb5f2deea24941a640192d0705",
+      "source_quality": "OPEN_BIOMEDICAL_RECORD",
+      "status": "GATHER_VERIFIED",
+      "title": "Will your next surgeon be a robot? Autonomy and AI in robotic surgery - PMC"
+    },
+    {
+      "chars": 70095,
+      "kind": "webpage",
+      "method": "http-get",
+      "raw_body_exported": false,
+      "ref": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9000345/",
+      "sha256": "d3903cc275472192085edda60af5e16e8c409726b17cffbfc8569c1b090507b9",
+      "source_quality": "OPEN_BIOMEDICAL_RECORD",
+      "status": "GATHER_VERIFIED",
+      "title": "Journey of organ on a chip technology and its role in future healthcare scenario - PMC"
+    },
+    {
+      "chars": 13966,
+      "kind": "webpage",
+      "method": "http-get",
+      "raw_body_exported": false,
+      "ref": "https://pubmed.ncbi.nlm.nih.gov/41478277/",
+      "sha256": "05626b0ed6982a4333e5f63c2b703c52b5a78121e06a9a805273bf8777505bc8",
+      "source_quality": "OPEN_BIOMEDICAL_RECORD",
+      "status": "GATHER_VERIFIED",
+      "title": "Spatial omics at the forefront: emerging technologies, analytical innovations, and clinical applications - PubMed"
+    },
+    {
+      "chars": 8361,
+      "kind": "webpage",
+      "method": "http-get",
+      "raw_body_exported": false,
+      "ref": "https://pubmed.ncbi.nlm.nih.gov/41780176/",
+      "sha256": "49c5aa68f10021e6e01bd85a59305c13dd9058cf8d87097e7350bb34e4da5137",
+      "source_quality": "OPEN_BIOMEDICAL_RECORD",
+      "status": "GATHER_VERIFIED",
+      "title": "Enhancing the functionality of soft continuum robots for minimally invasive and endoluminal interventions: a review - PubMed"
+    },
+    {
+      "chars": 0,
+      "kind": "webpage",
+      "method": "http-get",
+      "raw_body_exported": false,
+      "ref": "https://ui.adsabs.harvard.edu/help/api/",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_quality": "EMPTY_CAPTURE",
+      "status": "GATHER_VERIFIED",
+      "title": "https://ui.adsabs.harvard.edu/help/api/"
+    },
+    {
+      "chars": 12903,
+      "kind": "webpage",
+      "method": "http-get",
+      "raw_body_exported": false,
+      "ref": "https://www.crossref.org/documentation/retrieve-metadata/rest-api/",
+      "sha256": "8db089a19af134f5aa1ff5082d3d6602d4aa4705e83cb81f97cc6f85f9d17227",
+      "source_quality": "WEB_SOURCE",
+      "status": "GATHER_VERIFIED",
+      "title": "REST API - Crossref"
+    },
+    {
+      "chars": 26581,
+      "kind": "webpage",
+      "method": "http-get",
+      "raw_body_exported": false,
+      "ref": "https://www.facs.org/for-medical-professionals/news-publications/news-and-articles/bulletin/2026/february-2026-volume-111-issue-2/robotics-integration-is-transforming-global-surgical-care/",
+      "sha256": "24b82776533f5081856e569cf7d027131b604c01642b2648d04e5f7685b95b9c",
+      "source_quality": "WEB_SOURCE",
+      "status": "GATHER_VERIFIED",
+      "title": "Robotics Integration Is Transforming Global Surgical Care | ACS"
+    },
+    {
+      "chars": 135635,
+      "kind": "webpage",
+      "method": "http-get",
+      "raw_body_exported": false,
+      "ref": "https://www.frontiersin.org/journals/science/articles/10.3389/fsci.2026.1783803/full",
+      "sha256": "005e8de01bb23eaf7b83167ef734e97f2b6a8fc336d6a76edd796cc01914f227",
+      "source_quality": "WEB_SOURCE",
+      "status": "GATHER_VERIFIED",
+      "title": "Frontiers | Evolving surgical teams in the age of artificial intelligence and robotics"
+    },
+    {
+      "chars": 209,
+      "kind": "webpage",
+      "method": "http-get",
+      "raw_body_exported": false,
+      "ref": "https://www.nature.com/articles/s12276-025-01547-5",
+      "sha256": "21e4d17ef30b902b10e8bf980b565a7435d1e7936d193098e76b2ec443ce8965",
+      "source_quality": "CLIENT_CHALLENGE",
+      "status": "GATHER_VERIFIED",
+      "title": "Client Challenge"
+    },
+    {
+      "chars": 209,
+      "kind": "webpage",
+      "method": "http-get",
+      "raw_body_exported": false,
+      "ref": "https://www.nature.com/articles/s41467-024-48058-x",
+      "sha256": "21e4d17ef30b902b10e8bf980b565a7435d1e7936d193098e76b2ec443ce8965",
+      "source_quality": "CLIENT_CHALLENGE",
+      "status": "GATHER_VERIFIED",
+      "title": "Client Challenge"
+    },
+    {
+      "chars": 209,
+      "kind": "webpage",
+      "method": "http-get",
+      "raw_body_exported": false,
+      "ref": "https://www.nature.com/articles/s41467-026-71188-3",
+      "sha256": "21e4d17ef30b902b10e8bf980b565a7435d1e7936d193098e76b2ec443ce8965",
+      "source_quality": "CLIENT_CHALLENGE",
+      "status": "GATHER_VERIFIED",
+      "title": "Client Challenge"
+    },
+    {
+      "chars": 209,
+      "kind": "webpage",
+      "method": "http-get",
+      "raw_body_exported": false,
+      "ref": "https://www.nature.com/articles/s42003-024-06037-4",
+      "sha256": "21e4d17ef30b902b10e8bf980b565a7435d1e7936d193098e76b2ec443ce8965",
+      "source_quality": "CLIENT_CHALLENGE",
+      "status": "GATHER_VERIFIED",
+      "title": "Client Challenge"
+    },
+    {
+      "chars": 3088,
+      "kind": "webpage",
+      "method": "http-get",
+      "raw_body_exported": false,
+      "ref": "https://www.ncbi.nlm.nih.gov/home/develop/api/",
+      "sha256": "0c02105b91fe574f82829c97f1ffc1cde3021e2ca38d5148811e27d3cc0a94bc",
+      "source_quality": "WEB_SOURCE",
+      "status": "GATHER_VERIFIED",
+      "title": "APIs - Develop - NCBI"
+    },
+    {
+      "chars": 5395,
+      "kind": "webpage",
+      "method": "http-get",
+      "raw_body_exported": false,
+      "ref": "https://www.normalcomputing.com/blog/normal-computing-announces-tape-out-of-worlds-first-thermodynamic-computing-chip",
+      "sha256": "e942e63e8a0ab89585c74e3a67b193c89b394959e7420cafa82e90f9ee97ff21",
+      "source_quality": "INDUSTRY_RESEARCH_SIGNAL",
+      "status": "GATHER_VERIFIED",
+      "title": "Normal Computing Announces Tape-Out of Worlds First Thermodynamic Computing Chip - Normal Computing"
+    },
+    {
+      "chars": 15386,
+      "kind": "webpage",
+      "method": "http-get",
+      "raw_body_exported": false,
+      "ref": "https://www.pi.website/blog/pi0",
+      "sha256": "74e7dec6e18b2ed6687cf0487e7eb4a7e449a972ae53ebe5a51fd03444fceb0a",
+      "source_quality": "INDUSTRY_RESEARCH_SIGNAL",
+      "status": "GATHER_VERIFIED",
+      "title": "Our First Generalist Policy"
+    }
+  ],
+  "source_store": "docs\\research\\dogfood\\gather\\pass-0135-bio-med-robotics-nomenclature",
+  "status": "BIO_MED_ROBOTICS_NOMENCLATURE_MAP_MATCH",
+  "terminology_bridges": [
+    {
+      "biology_name": "homeostasis / bioelectric control",
+      "concept": "feedback_control",
+      "medicine_name": "closed-loop therapy",
+      "robotics_name": "policy feedback / controller",
+      "status": "NOMENCLATURE_BRIDGE"
+    },
+    {
+      "biology_name": "virtual cell / tissue state model",
+      "concept": "world_model",
+      "medicine_name": "digital twin / patient model",
+      "robotics_name": "robot scene or dynamics model",
+      "status": "NOMENCLATURE_BRIDGE"
+    },
+    {
+      "biology_name": "perturbation / morphogenetic signal",
+      "concept": "intervention",
+      "medicine_name": "therapy / stimulation / drug",
+      "robotics_name": "action / motor command",
+      "status": "NOMENCLATURE_BRIDGE"
+    },
+    {
+      "biology_name": "fitness landscape / viability",
+      "concept": "fitness_or_loss",
+      "medicine_name": "clinical endpoint / safety outcome",
+      "robotics_name": "reward / cost function",
+      "status": "NOMENCLATURE_BRIDGE"
+    },
+    {
+      "biology_name": "cell collective / body plan",
+      "concept": "embodiment",
+      "medicine_name": "anatomy / implant interface",
+      "robotics_name": "morphology / robot body",
+      "status": "NOMENCLATURE_BRIDGE"
+    },
+    {
+      "biology_name": "atlas / organoid / perturb-seq",
+      "concept": "benchmark",
+      "medicine_name": "trial endpoint / assay",
+      "robotics_name": "task suite / sim-to-real evaluation",
+      "status": "NOMENCLATURE_BRIDGE"
+    },
+    {
+      "biology_name": "heterogeneity / stochastic cell state",
+      "concept": "uncertainty",
+      "medicine_name": "risk / confidence interval",
+      "robotics_name": "domain randomization / policy entropy",
+      "status": "NOMENCLATURE_BRIDGE"
+    },
+    {
+      "biology_name": "source plus experiment plus assay",
+      "concept": "proof_packet",
+      "medicine_name": "source plus protocol plus safety gate",
+      "robotics_name": "source plus run plus replay verifier",
+      "status": "NOMENCLATURE_BRIDGE"
+    }
+  ],
+  "unsupported_claim_count": 0,
+  "validation_errors": []
+}

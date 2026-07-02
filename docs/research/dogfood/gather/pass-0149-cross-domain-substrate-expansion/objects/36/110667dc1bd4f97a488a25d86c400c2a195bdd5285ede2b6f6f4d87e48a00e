@@ -1,0 +1,146 @@
+Skip to main content
+An official website of the United States government
+Here's how you know
+Here's how you know
+The .gov means it’s official.
+Federal government websites often end in .gov or .mil. Before sharing sensitive information, make sure you’re on a federal government site.
+The site is secure.
+The https:// ensures that you are connecting to the official website and that any information you provide is encrypted and transmitted securely.
+MENU
+Home
+Products
+Search/Filter
+Services
+Access
+Archive
+Data Certification
+Maps
+Monitoring
+Online Store
+Regional
+State of the Services
+World Data System
+Resources
+Alerts
+Change Notices
+Education
+Metadata
+Quick Links
+News
+BAMS
+Publications
+Contact
+About
+Locations
+Our Impact
+Enter Search Term(s):
+Search
+Please Note: NCEI will release a redesigned and enhanced Data Access User Interface on Tuesday, July 7, 2026. Data Access Search will be unavailable July 6, 5:00 PM - July 7, 10:00 AM. We apologize for any inconvenience.
+Home
+NCEI Data Service API User Documentation
+NCEI Data Service API User Documentation
+Overview
+The National Centers for Environmental Information (NCEI) Access Data Service provides a RESTful application programming interface (API) to access and subset data based on a the set of parameters to the v1 URL. Depending on the dataset the API can format the data as comma-separated values (CSV), space-separated values (SSV), JavaScript Object Notation (JSON), Portable Document Format (PDF) and Network Common Data Form (NetCDF). The NCEI Access Data Service is only available via HTTP Strict Transport Security (HSTS) following Federal government policy.
+Request Endpoint
+The NCEI Access Data Service queries use HTTP 1.1 GET request and the endpoint is located off the base URL at .../access/services/data/v1.
+Request Endpoint Parameters
+The NCEI Access Data Service endpoint allows several parameters to select and retrieve data from available datasets. The request parameters are passed using a GET request. Some of these request parameters change based on the dataset parameter that is passed.
+Datasets — dataset
+The dataset parameter selects the dataset to query for data. Please note that all the datasets are NOT available through the NCEI Access Data Service API, however new datasets are added quarterly.
+...?dataset=daily-summaries
+Station Identifiers — stations
+The stations parameter adds a comma separated list of station identifiers for selection and subsetting.
+...&stations=USC00457180,USC00390043
+Start Date — startDate
+This is the date to select from the dataset for a given start date. This parameter is an ISO 8601 date (YYYY-MM-DD) -or- ISO 8601 combined date and time format (YYYY-MM-DDTHH:mm:ss). If using an ISO 8601 combined date and time format the T that separates the time is NOT optional. The ISO 8601 combined date and time also supports optional time zone representations. Use Z or z for UTC and +HH:mm or -HH:mm for the offset from UTC. The plus symbol (+) must be URL encoded at “%2B” or it will not validate. The start and end dates are not required. The startDate must come before the endDate parameter. Some datasets are averages over time and may ignore parts of a date.
+ISO 8601 date format example:
+1776-07-04
+1941-12-07
+ISO 8601 combined date and time examples:
+2001-11-02T12:45:00Z
+2001-11-02T12:45:00z
+2001-11-02T08:45:00+04:00
+...&startDate=1941-12-07T09:31:20z
+For UTC hour and minute offsets (HH:mm), the plus symbol (+) must be URL encoded as “%2B” or it will not validate:
+...&startDate=2009-01-27T08:45:00%2B04:00
+End Date — endDate
+This is the date to select datasets whose period of record (PoR) starts on or after the given endDate. This parameter is an ISO 8601 date (YYYY-MM-DD) -or- ISO 8601 combined date and time format (YYYY-MM-DDTHH:mm:ss). If using an ISO 8601 combined date and time format, the T that separates the time is NOT optional. The ISO 8601 combined date and time also supports optional time zone representations. Use Z or z for UTC and +HH:mm or -HH:mm for the offset from UTC. The plus symbol (+) must be URL encoded as “%2B” or it will not validate. If the start date is required for the dataset then you must include the startDate parameter.
+...&endDate=1945-07-12
+Data Types, Observations/Variables — dataTypes
+Data Types allows the selection of one or many dataTypes. Datasets have different names for the data types (e.g., variables, observations). The dataTypes parameter is used with a comma-separated list. This parameter is case-sensitive and will respond with an HTTPS Status Code: 400 Bad Request and JSON with more information.
+...&dataTypes=MLY-PRCP-NORMAL,MLY-TMIN-NORMAL
+Bounding Box (N,W,S,E) — bbox
+The bounding box (bbox) is used to select data from a geographic location contained within the coordinates, given as four comma separated numbers. North and South range from -90 to 90 and East and West range from -180 to 180. If these are not set the geographic extent defaults to the entire globe (90,-180,-90,180).
+...&bbox=49.795,-2.073,49.183,-0.992
+Data Format — format
+The format parameter allows the user to select how the data should be formatted. Note that some data formats ignore certain data types. For example, PDF data may only display data types for a report, and not for the requested dataTypes.
+These are the available formats:
+csv — Comma-Separated Values (CSV)
+ssv — Space-Separated Values (SSV)
+json — JavaScript Object Notation (JSON)
+pdf — Portable Document Format (PDF)
+netcdf — Network Common Data Form (NetCDF)
+...&format=json
+Result Options — options
+The API supports an options parameter that turns features on and off. Options are separated by commas and the respective values are separated by a colon (:); boolean values are represented by true or false,or zero (0) and one (1). Options can either pass as a comma-separated list:
+…&options=includeAttributes:true,includeStationName:1
+or individually as URL parameters:
+...&includeAttributes=0&includeStationName=true
+Display Data Attributes — includeAttributes
+Includes the attribute for a selected datatype. These are typically comma separated (e.g., “T,,0,0700”), and added to the results if the includeAttributes parameter is set to true. This value can be the word true or a numeric representation of the boolean value, 1. The default value is false or 0 and will not display datatype(s) attributes.
+...&includeAttributes=true
+Include Station Name — includeStationName
+Includes the station’s name, if available, for the selected dataset and data type. This value can be the word true or a numeric representation of the boolean value, 1. The default value is false or 0 and will not display datatype(s) attributes.
+…&includeStationName=true
+Display Station Location — includeStationLocation
+Includes the station’s location, if available, for the selected dataset and data type. This value can be the word true or a numeric representation of the boolean value, 1. The default value is false or 0 and will not display datatype(s) attributes.
+…&includeStationLocation=1
+Converting Units — units
+The units parameter converts the output data for datasets and datatypes that support conversion to either “metric” or “standard” units.
+…&units=metric
+Example Requests
+CSV (default):
+https://www.ncei.noaa.gov/access/services/data/v1?dataset=global-marine…
+PDF
+https://www.ncei.noaa.gov/access/services/data/v1?dataset=global-summar…
+JSON
+https://www.ncei.noaa.gov/access/services/data/v1?dataset=global-summar…
+Request Responses
+The NCEI Access Search Service returns appropriate HTTP/1.1 status codes and response headers depending on the request and service status. These responses follow RFC 2616 (Fielding, et al).
+400 - Bad Request
+The request is malformed and needs to be modified in order to execute. The response headers contain the correct HTTP/1.1 400 Bad Request and provide a JSON response.
+{
+errorMessage: "Bad Request",
+errorCode: 400,
+errors: [
+{
+field: "units",
+message: "Invalid units. Valid units are standard or metric.",
+value: "0xFE00BA1A00000000"
+}
+]
+}
+500 - Internal Server Error
+The 500 response code is returned when there is an issue with the service.
+{
+errorMessage: "An unexpected error occurred while servicing your request.",
+errorCode: 500
+}
+Return to top
+Follow Us
+@NOAANCEI
+@NOAAData
+@NOAANCEI
+News Feed
+Contact Us
+Email by topic
+Phone: (828) 271-4800
+Sitemap
+Privacy Policy
+Freedom of Information Act
+Information Quality
+Accessibility
+Disclaimer
+Department of Commerce
+NOAA
+NESDIS

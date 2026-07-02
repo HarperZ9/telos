@@ -1,0 +1,30 @@
+{
+  "title": "Dogfood Pass 0008 AI4Science Market Proof-Packet Wedges",
+  "disposition": "fenced",
+  "claims": [
+    {
+      "text": "Pass 0008 created a source-backed AI4Science frontier map with at least 16 rows, and every row includes a source URL, buyer, positioning, capabilities, proof-layer gap, gap status, Telos wedge hypothesis, uniqueness-claim status, and confidence.",
+      "falsification": "ai4science-frontier-map-pass-0008.json has fewer than 16 rows or any row lacks a required market-map field"
+    },
+    {
+      "text": "The pass 0008 market map covers automated-discovery, formal-math, literature-search, lab-platform, and workflow-notebook categories.",
+      "falsification": "ai4science-frontier-map-pass-0008.json omits any of the five required categories"
+    },
+    {
+      "text": "Pass 0008 labels uniqueness and gap claims as hypotheses or inferred/verified status rather than treating no-competitor claims as fact.",
+      "falsification": "any pass 0008 market-map row sets uniqueness_claim_status to fact or uses an unlabeled no-competitor claim"
+    },
+    {
+      "text": "Pass 0008 ranks research-proof-packet-adapter-pack as the primary 30-day market push.",
+      "falsification": "proof-packet-market-wedges-pass-0008.json does not name research-proof-packet-adapter-pack as the primary 30-day push or lacks exactly one rank=1 wedge"
+    },
+    {
+      "text": "The pass 0008 validator reports MATCH with two checks and zero drift.",
+      "falsification": "pass-0008-market-validator-result.json is missing, reports non-MATCH status, reports fewer than two matches, or reports drift above zero"
+    },
+    {
+      "text": "Pass 0008 promotes zero natural-law discoveries; all outputs remain market research, integration strategy, or validation artifacts.",
+      "falsification": "any pass 0008 artifact labels a natural law, theorem breakthrough, biological result, material result, medical result, finance result, or safety result as promoted"
+    }
+  ]
+}

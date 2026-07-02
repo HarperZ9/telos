@@ -1,0 +1,604 @@
+Have you ever felt how an elegant
+reasoning models are? Like you get LLMs
+generating a bunch of tokens to think
+then outputting a result and it's so
+effective that basically every existing
+model nowadays is doing this to get a
+huge performance boost. Yet, it is such
+an unsatisfying solution. But I guess
+sometimes beggars can't be choosers as
+test time compute is an inevitable
+consequence of intelligent models
+because when you let models reason in
+more than one pass, you provide a space
+for them to refine and iteratively
+improve. And chain of thought provides a
+space for transformers to externalize
+their thinking in the tokens to
+assimilate iterations. And so far, it
+works extremely well. However, it
+definitely makes you wonder why can't
+reasoning in chain of thought be done in
+a way that's not yapping tokens at
+inference. Why can't researchers just
+develop a method that can think innately
+or, you know, in a more compact form?
+Well, in today's video, let us take a
+look at this rather new concept called
+loop transformers where instead of doing
+test time compute through generating
+tokens, you do it through looping
+transformer layers. This is one of the
+methods that people are suspecting in
+Claude 3 this is using behind the scenes
+as it seems to have some extraordinary
+reasoning capabilities that previous
+models struggled with. More
+specifically, the benchmark graph walk
+BFS. And if you think about it,
+shouldn't a recurrence design
+architecturally be better than doing it
+at token level as a token level has to
+also decompress and compress information
+into tokens to do the thinking. So,
+before I dive into it, while we are on
+the topic of elegance, fine-tuning AI
+models on bare metal GPUs is probably
+the last thing you would think of when
+you have to deal with container runtimes
+and systems like Kubernetes. However,
+today's sponsor Crusoe has turned this
+painful process into something much more
+elegant. They have built something
+called serverless fine-tuning to help
+you customize open models like Quen,
+Deep See, Gemma, and GPT-OSS faster and
+more easily with token-based pricing. In
+just a few lines of code, you can launch
+a fine-tuning job on an Nvidia optimized
+tarware. So, no GPU wrangling needed.
+You just upload your dataset and the job
+scales automatically. What I dig about
+Crusoe is that they aren't a black box.
+They are opinionated by default with
+smart presets to get you started, but
+open by design so you can tailor
+settings to your unique use case. But
+most importantly, you own your own
+weights. When the job is done, you get
+your raw weights back in portable
+formats like dot safe tensors. So stop
+wasting time and resources trying to
+debug your own infrastructure and start
+actually shipping your models because
+you can now take a custom model from
+experiment to production in a single
+afternoon. Check them out now using the
+link down description to get the early
+access to Crusoe's serverless
+fine-tuning today. And thank you Crusoe
+for sponsoring this video. Anyways, to
+even evaluate a tip of the reasoning
+iceberg, we need to somehow first
+measure reasoning capabilities to be
+able to prove the effectiveness of any
+model improvements, right? So at its
+most basic form, reasoning can show up
+as multi-hop reasoning. For instance,
+who is the 44th US president's wife? For
+a slightly simpler model, it cannot
+directly map it to Michelle Obama
+because it has to first identify the
+44th US president is Barack Obama and
+remember name, which is Michelle Obama.
+And that is basically two hops, where
+each hop is retrieving or computing a
+new piece of information that depends on
+the previous one. But why is this
+reasoning? Well, simple single-step
+question answering can usually be
+achieved through pattern matching and
+memorization, so it's much easier to
+answer for LLMs. However, multi-hop
+usually requires state tracking and
+intermediate computation because the
+question's answer would need to be
+inferred from multiple sources of
+knowledge, which is harder to memorize.
+This makes it a pretty simple and
+indicator for the ability to do logical
+deductions, symbolic reasoning, and
+relational reasoning for researchers to
+use, especially as an early baseline.
+But for a non-reasoning model or a
+vanilla transformer, it has to do all
+these in one forward pass, and if that
+passes and obtained the answer, it'll
+just miss the shot. And as the number of
+hops increases, you're basically asking
+the model to simulate a deeper and
+deeper computation, but without giving
+it any mechanism to actually iterate or
+infer an answer. So this is one of the
+reasons why chain-of-thought works. As
+now, the model is no longer required to
+solve the whole problem at once. It can
+write an intermediate thought, read it
+back, update its internal state, write
+the next thought, read it back again,
+and keep doing this until it reaches the
+answer. So, the chain-of-thought process
+within the reasoning model is basically
+creating iteration through generating
+extra tokens. But, this is the bit where
+it starts to feel a bit inelegant
+because every time the model writes a
+reasoning token, that token has to be
+decoded into text, appended to the
+context, then re-embedded back into
+hidden states onto the next pass, which
+means the model has to repeatedly do
+this decompress and compress cycle
+through language itself just for it to
+refine its latent states. On top of
+that, those tokens are sampled from the
+model's output distribution. So, the
+model is not directly modifying the
+reasoning distribution internally. It is
+emitting a sampled textual trace, then
+conditioning on that sampled trace
+afterwards, which means the reasoning
+process is mediated through discrete
+token generation rather than being
+performed directly in a computation
+itself. So, if you were to design
+recurrence architecturally, it should
+logically be cleaner, right? Because you
+would then be able to let the model
+update its hidden state directly, and
+that should be more efficient in both
+time and energy because the model is
+reusing internal computation and acting
+on the representation directly rather
+than constantly externalizing it into
+tokens, which brings us to the
+relatively new architecture idea that
+suddenly got a lot of attention in April
+2026 called a loop transformer. The core
+idea is very simple. Instead of using a
+long stack of unique transformer layers
+once, which is the typical setup, you
+only take a few layers and put them
+together as a smaller block and run it
+repeatedly. The output hidden state from
+one recurrence becomes the input to the
+same block. So, the model can refine its
+representation over multiple internal
+steps rather than forcing everything
+into a single transformation. In the
+paper loop, think, and generalize
+published in April 2026, they used this
+exact setup. And by iterating it, they
+found that it gets better at multi-hop
+reasoning, not just on the amount of
+hops it was trained on, but beyond the
+depth when you give it more recurrent
+iterations at inference time. You can
+see how these multi-hop reasoning
+capabilities emerge in their three-stage
+rocking process during training, too.
+Looking at the training graph, at first,
+you can see the model is mostly just
+memorizing as the accuracy on the
+training set increases and maxes out.
+Then, it enters a second stage where it
+starts to generalize in distribution as
+the distribution test set maxes out.
+This usually indicates that the model is
+able to handle question compositions
+that follow the same training structure,
+even if the exact problem is new. After
+that, the third stage emerges, and this
+is a stage of systematic generalization
+where the model can combine pieces of
+knowledge in ways that were never
+actually used compositionally during
+training, meaning they can generalize
+out of distribution. So, in the end, it
+learned a reusable procedure for
+composing and inferring answers, and
+this is what vanilla transformer
+struggles with as it can combine facts
+in unfamiliar ways and would struggle
+with extrapolation. And when you
+increase the number of loops at
+inference more than the amount of loops
+it uses during training, it is able to
+achieve even more hops than it was
+trained to do. So, the number of
+recurrences becomes a compute dial in
+this setup, and you can literally let
+the model think longer and expect better
+results. But of course, once you
+introduce recurrence directly into the
+architecture, you also inherit a new
+problem that is instability. Because
+now, you are no longer applying a
+sequence of different layers once, you
+are applying the same transformation
+the hidden state. And it also creates a
+problem where you have to decide how
+many times to repeat the block while
+making sure the information will not go
+stupid. Because once you start looping,
+you are no longer just designing a
+network, you are designing a thinking
+process. And every recurrence is another
+application of the same update rule, so
+small biases get amplified, errors
+accumulate, and the model can very
+easily drift away from a stable
+trajectory. And the model might just
+refuse to converge and explode. So, this
+is where the next paper, PARसी, comes
+in. Instead of treating the loop as just
+repeated layers, they explicitly model
+it as a dynamical system over the
+residual stream and analyze why naive
+loop transformers become unstable. But,
+why is it tied to the residual stream?
+Well, because the model's hidden state
+is carried forward and updated at every
+recurrence rather than recomputed from
+scratch. With each loop, it uses the
+previous hidden state, mixes it with the
+injection input, applies the transformer
+operations, and produces the next hidden
+state. So, the residual stream is
+basically the model's evolving latent
+state, the main channel where
+information accumulates across
+recurrences. If the dynamics are
+unstable, then the hidden state norm can
+grow across recurrences, which leads to
+loss spikes and divergence. And all they
+had to do is to constrain and normalize
+the recurrence so that each update
+doesn't collapse under an uncontrolled
+accumulation, which solves one of the
+key issues that a loop transformer has.
+But, even if you can't stabilize the
+loop, how do you know the model is truly
+reasoning? Because better multi-hop
+performance alone isn't really enough.
+And we're just kind of interpreting that
+it would work. So, this other paper,
+also published in April 2026, called
+mechanistic analysis of loop reasoning
+models, comes perfectly into the
+picture. Their method is to track the
+latent states across recurrences and
+observe how they evolve. But, because
+these hidden states are extremely
+high-dimensional, you cannot just
+visualize them directly. So, they use
+tools like PCA or principal component
+analysis, which is basically a way of
+compressing a high-dimensional
+activation space into a few main
+directions that explain most of the
+variations. In simpler terms, it lets
+you take the models internal states and
+project them onto a 2D or 3D map so you
+can actually see whether the
+representations are drifting randomly,
+collapsing, or following a stable
+trajectory. And what they find is that
+these loop models tend to move towards
+stable trajectories in latent space. In
+some cases, it looks like a fixed point
+where the representation gradually
+stabilizes. In other cases, it looks
+like a cyclic trajectory where the
+hidden state revisits a consistent
+sequence of state across the repeated
+block. The internal processes did not
+change their representation
+unpredictably or quickly collapse to
+something trivial. But, they still push
+this analysis further by looking at
+attention behavior across recurrences.
+And what they observe is that as the
+hidden states approach these fixed
+points or cycles, the attention head
+behavior also stabilizes. So, it is not
+just the raw activation settling down,
+the actual computation being performed
+by the blocks becomes more consistent,
+too. What's also fascinating is that the
+recurrent blocks can learn stages of
+inference that mirror the stages seen in
+feedforward transformers. Except, now
+those stages are repeated and organized
+through recurrence. So, early
+recurrences, middle recurrences, and
+later recurrences can play different
+roles even though the weights are
+shared. With early recurrences tend to
+construct a rough representation of the
+problem with the model gathering and
+organizing the relevant information for
+it, so its updates are larger and more
+exploratory. But, as it moves into the
+middle iterations, the model would start
+to combine pieces of information and
+propagate relationships. Here is also
+where the updates become more structured
+instead of forming them. Then, in later
+iterations, the updates shrink with the
+model mainly stabilizing the
+representation and converging toward a
+final answer. So, even though the block
+is shared, the loop is not just
+repeating the same computation over and
+over again. And it is the input to the
+block that differs every time that
+forces the same function to act
+differently at each step, which
+naturally creates a progression from
+coarse understanding to refined
+solution, and that is beautiful. But,
+there could be more to be optimized
+because even if looping gives you
+internal reasoning, you are still
+applying the same number of recurrences
+to every token. So, whether a token is
+trivial or extremely complex, it still
+has to go through the same number of
+loops. And that introduces a new kind of
+inefficiency because now you are
+allocating compute uniformly even when
+it is not needed. So, this exact
+limitation is where this paper, Mixture
+of Recursions, published all the way
+back in July 2025, tries to solve.
+Instead of forcing every token through
+the same number of loops, it introduces
+a router that decides how many
+recurrences each token actually needs.
+And in the paper, there are two main
+ways this is implemented into MOR. In
+one version, the router assigns each
+token to a recursion depth bucket. So,
+before looping even starts, it predicts
+how many steps that token should go
+through. This is pretty efficient
+because the computation path is fixed
+from the start, but it relies heavily on
+that initial prediction being correct.
+Like, if the model misjudges the
+difficulty early on, it cannot adjust
+later. In the other version, the
+decision is made step-by-step, where at
+each iteration, the model can choose to
+continue or exit. This is much more
+flexible and can adapt as the
+representation evolves, which usually
+leads to better allocation of compute.
+However, it is slightly more complex and
+can be harder to train and stabilize
+since decisions are made repeatedly
+during the process rather than once at
+the beginning. But, the step-by-step
+version, which they call expert choice
+routing, ends up working noticeably
+better than the upfront assignment
+version, which they call token choice
+routing. And under the same three
+recursion setup, expert choice routing
+reaches an average few-shot accuracy of
+42.6% while token choice routing drops
+to 40%. So, even though token choice
+sounds cleaner on paper because each
+token commits to its full compute path
+from the beginning, in practice, it
+actually is not that useful. Which just
+shows deciding how much thinking a token
+needs before the iterative process even
+starts is just too hard. But yeah, these
+are where the extra efficiency gains can
+come from. However, once you make
+recursion adaptive, another bottleneck
+immediately shows up, which is the KV
+cache. In a standard transformer, every
+layer stores key and value tensors for
+every token, and this quickly dominates
+memory and bandwidth, especially during
+long context decoding. Recursive models
+make this even worse in a naive setup
+because even though parameters are
+shared, you still maintain separate KV
+caches for each recursion depth. So, you
+are not actually saving much on memory
+traffic. But, MOR addresses this by
+changing how KV caching works to match
+the adaptive recursion. Their first
+strategy is recursion-wise caching,
+where KV pairs are only stored for
+tokens that are still active at a given
+recursion step. Since tokens can exit
+early, deeper recursions operate on
+fewer tokens, which means both memory
+usage and attention computation shrink
+as depth increases. This makes the model
+more efficient not just in terms of
+parameters, but also in actual runtime
+behavior because it avoids wasting
+memory bandwidth on tokens that no
+longer need further processing. The
+second strategy is recursive KV sharing.
+So, instead of storing KV pairs at every
+recursion, the model caches them once at
+the first recursion and reuses them for
+all subsequent steps. This dramatically
+reduces memory footprint since you are
+no longer duplicating KV states across
+depths. However, this comes with a
+trade-off because later recursions are
+now attending to slightly stale
+representations, which can hurt
+performance compared to recursion-wise
+caching. So, recursion-wise caching is
+more accurate because it keeps
+representations fresh at every step, but
+it uses way more memory. On the other
+hand, recursive sharing is more memory
+efficient, but slightly degrades
+quality. Is that a problem then? Well,
+the paper shows that these trade-offs
+are manageable and both approaches still
+outperform standard recursive and
+vanilla transformers when combined with
+adaptive routing. And you know what time
+it is? It's time to address the elephant
+in the room. So, after all these
+wonderful cool new techniques were
+published with very good solutions to
+address their shortcomings being
+proposed, how exactly competitive is the
+Loop Transformer compared to the current
+LM landscape then? Well, a major
+argument against a Loop Transformer is
+still actually its expressiveness. A
+deeper or wider model with unique layers
+has strictly more expressive capacity
+than a shared block being reused. So,
+from a pure optimization perspective,
+looping is a constrained version of the
+same problem. So, if you're not memory
+constrained, then simply adding more
+parameters in a standard transformer
+easily wins. And you would easily avoid
+the complicated KV cash problem compared
+to the standard chain of thought method
+for reasoning. So, empirically, it is
+not surprising that unconstrained
+transformers tend to achieve lower loss
+when you scale parameters freely. On top
+of that, scaling laws have historically
+favored increasing parameter count
+rather than reusing computation. The
+second issue is about the depth itself.
+Even though loop transformers can
+simulate deeper computation by
+increasing recurrences, this is not
+identical to having genuinely deeper
+architectures. A stack of unique layers
+can learn different transformations at
+each depth, while a looped model has to
+reuse the same function repeatedly and
+hope that the evolving hidden state is
+enough to induce different behaviors.
+The mechanistic analysis paper suggests
+that this can emerge in practice, but it
+is still a weaker inductive bias than
+explicitly giving the model distinct
+layers. So one could argue that if depth
+is the bottleneck, then scaling depth
+directly might still be more effective
+than simulating it through recurrence,
+assuming compute and memory allow it.
+And then there is the question of
+whether loop transformers are
+fundamentally better at reasoning, but
+for that, we just don't have enough
+evidence yet. The results from multi-hop
+benchmarks and depth extrapolation are
+interesting, but they are still under
+relatively controlled settings. So it is
+not yet clear whether these gains fully
+translate to large-scale real-world
+tasks, where standard transformers
+already benefit from massive
+pre-training and emergent behaviors. On
+top of that, a chain of thought has a
+very unfair advantage, that is it's
+explicit. The model reasons by writing
+out in tokens, which means it can be
+supervised on those traces, distilled
+from them, filtered by them, reinforced
+on them, and trained to imitate them
+directly. So even if the reasoning is
+inefficient at inference, at least the
+training signal is very clear, because
+the model is being shown exactly what
+intermediate steps are supposed to look
+like, and we can even supervise it. But
+hidden state recursion does not get that
+luxury. In a loop transformer, the
+intermediate computation is implicit
+inside hidden states. There is no
+natural textual trace telling the model
+what step 1 2 3 should be. The model has
+to discover that structure on its own
+purely through the end objective. So,
+the recurrence may be architecturally
+cleaner, but it is also harder to
+supervise as we cannot help to guide it.
+The only potential benefit I see looping
+is appealing is that it lets you trade
+compute for effective depth without
+increasing parameter count. This could
+be useful for scenarios like synthetic
+data generation, distillation, or edge
+deployment like on mobile devices where
+you cannot afford a massive model, but
+still want iterative refinement and
+basically in a regime where chain of
+thought is not as efficient or as smart,
+then loop transformers can potentially
+outperform their parameter class because
+they can reuse computation efficiently.
+But, at a large-scale inference where
+latency and throughput matter more than
+parameter count, repeatedly applying the
+same block can actually hurt performance
+compared to a well-optimized feedforward
+stack. So, maybe for tiny models in the
+future, loop transformers might be
+applied there. But, what do you think?
+Do you like how they explored this
+direction of research? Let me know down
+in comments. And if you want to learn
+more about how LLMs work much more in
+depth without being overwhelmed with
+math, you should definitely check out my
+latest project intuitive.ai.academy
+where it contains an intuitive
+explanation of all modern LLMs from the
+ground up including a lot of technical
+topics like distillation which I just
+mentioned in this video. We cover
+everything from the basics like the
+transformer architecture all the way to
+more advanced topics like LoRA, mixture
+of experts, and RLHF. And we also just
+added a new advanced chapter on
+optimizers which will bring you all the
+way from the classics to the current
+frontier techniques. So, whether you're
+a student, software dev, founder, or
+just someone trying to pivot into AI,
+intuitive.ai.academy
+gives you one clean place to build real
+technical intuition. And you use the
+code lockedin for 35% off on a yearly
+membership. And thank you guys for
+watching. A big shout out to Spam Mage,
+Chris Ladue, Deegan, Robert Zaviasa,
+Marcelo Ferraria, Proof Any New, DX
+Research Group, Alex, Midwest Maker, and
+many others that support me through
+Patreon or YouTube. Follow me on Twitter
+if you haven't and I'll see you in the
+next one.

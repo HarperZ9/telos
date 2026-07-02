@@ -1,0 +1,98 @@
+{
+  "measurements": [
+    {
+      "claim": "Pass 0011 created an eight-row color calibration and rendering market map covering color-standard, color-management, calibration-software, grading-tool, open-source-calibration, and profile-standard categories.",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "method": "market-map-review",
+      "evidence": [
+        "schemas/color-calibration-market-map-pass-0011.json rows=8",
+        "category color-standard present",
+        "category color-management present",
+        "category calibration-software present",
+        "category grading-tool present",
+        "category open-source-calibration present",
+        "category profile-standard present"
+      ]
+    },
+    {
+      "claim": "Every pass 0011 market-map row includes an HTTPS source URL, proof receipt gap, Build Color wedge hypothesis, gap status, and confidence label.",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "method": "market-row-field-review",
+      "evidence": [
+        "validator required_fields includes source_url",
+        "validator required_fields includes proof_receipt_gap",
+        "validator required_fields includes build_color_wedge_hypothesis",
+        "validator required_fields includes gap_status",
+        "validator required_fields includes confidence",
+        "validator rejects non-HTTPS source URLs",
+        "validator restricts gap_status to verified, inferred, or unverified"
+      ]
+    },
+    {
+      "claim": "Pass 0011 created a BuildColorCalibrationProofKit/v1 artifact with four Build Color software metrics, and each observed value is at or below its declared threshold.",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "method": "measurement-threshold-review",
+      "evidence": [
+        "schemas/build-color-calibration-proof-kit-pass-0011.json schema=BuildColorCalibrationProofKit/v1",
+        "metric srgb_xyz_max_abs_error observed=0.0000017030280945010406 threshold=0.00001 status=PASS",
+        "metric srgb_oklab_max_abs_error observed=0.00000000000001072185665305766 threshold=0.0000000001 status=PASS",
+        "metric pq_max_abs_nits_error observed=0.00000000008458300726488233 threshold=0.000001 status=PASS",
+        "metric cie2000_pair_1_abs_error observed=0.00004031984342622863 threshold=0.005 status=PASS"
+      ]
+    },
+    {
+      "claim": "The pass 0011 proof kit preserves a read-only calibration boundary: no hardware measurement, no display mutation, no ICC profile install, no LUT write, and no physical calibration claim.",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "method": "boundary-review",
+      "evidence": [
+        "hardware_measurement_used=false",
+        "display_state_mutated=false",
+        "icc_profile_installed=false",
+        "lut_written=false",
+        "physical_calibration_claim=false",
+        "boundary_status=PASS"
+      ]
+    },
+    {
+      "claim": "The pass 0011 proof kit rejects the fake claim that this pass calibrated a physical display.",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "method": "negative-fixture-review",
+      "evidence": [
+        "negative_fixture.claim=This pass calibrated a physical display.",
+        "negative_fixture.status=REJECTED_BY_BOUNDARY",
+        "negative_fixture.reason=No meter, probe, display mutation, ICC install, or LUT write occurred."
+      ]
+    },
+    {
+      "claim": "The pass 0011 validator reports MATCH with two checks and zero drift.",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "method": "validator-run-review",
+      "evidence": [
+        "schemas/pass-0011-color-calibration-validator-result.json status=MATCH",
+        "match=2",
+        "drift=0",
+        "checks include ColorCalibrationMarketMap",
+        "checks include BuildColorCalibrationProofKit"
+      ]
+    },
+    {
+      "claim": "Pass 0011 promotes zero color science laws, physical calibration claims, display accuracy results, or other scientific discoveries.",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "method": "artifact-review",
+      "evidence": [
+        "packets/021-color-calibration-proof-kit.md Non-Promotion Statement promotes no discovery",
+        "schemas/build-color-calibration-proof-kit-pass-0011.json promotion_state=PROOF_KIT_FIXTURE",
+        "failure_labels include NOT_A_PHYSICAL_CALIBRATION",
+        "failure_labels include NOT_A_NEW_COLOR_SCIENCE_LAW",
+        "negative fixture rejects the physical display calibration claim"
+      ]
+    }
+  ]
+}

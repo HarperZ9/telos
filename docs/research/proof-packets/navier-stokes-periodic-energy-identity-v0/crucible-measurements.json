@@ -1,0 +1,40 @@
+{
+  "measurements": [
+    {
+      "claim": "The Navier-Stokes periodic energy identity packet has a reference kernel receipt whose bounded Taylor-Green identity probe reports MATCH within declared tolerances.",
+      "method": "reference-kernel-run-receipt-review",
+      "evidence": [
+        "docs/research/proof-packets/navier-stokes-periodic-energy-identity-v0/run.receipt.json exists",
+        "bounded_identity_probe is MATCH",
+        "energy_abs_error 1.8385293287792592e-13 <= 1e-10",
+        "dissipation_abs_error 7.460698725481052e-14 <= 1e-10",
+        "residual_numeric_abs 7.460698725481052e-14 <= 1e-10",
+        "max_divergence_abs 0 <= 1e-12"
+      ],
+      "deviation": 0,
+      "tolerance": 0.5
+    },
+    {
+      "claim": "The Navier-Stokes periodic energy identity packet explicitly keeps the parent Navier-Stokes Millennium problem UNVERIFIABLE.",
+      "method": "grand-claim-boundary-review",
+      "evidence": [
+        "run receipt parent_millennium_problem is UNVERIFIABLE",
+        "problem.statement.json grand_claim_status is UNVERIFIABLE",
+        "subclaim.energy_identity.md says it does not prove existence and smoothness for arbitrary Navier-Stokes solutions"
+      ],
+      "deviation": 0,
+      "tolerance": 0.5
+    },
+    {
+      "claim": "The packet includes negative boundaries that block promoting a finite grid or smooth-field identity check into a global regularity theorem.",
+      "method": "negative-boundary-review",
+      "evidence": [
+        "problem.statement.json negative_boundaries include no grand-proof promotion",
+        "subclaim.energy_identity.md What This Does Not Prove section blocks global regularity and physical-simulator claims",
+        "run receipt boundaries block arbitrary simulation and physical-fluid validation claims"
+      ],
+      "deviation": 0,
+      "tolerance": 0.5
+    }
+  ]
+}

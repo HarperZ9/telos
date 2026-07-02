@@ -1,0 +1,60 @@
+{
+  "candidate_institution": {
+    "name": "Massachusetts Institute of Technology",
+    "reason": "MIT has public organization identity, repository, OAI-PMH, and scholarly metadata surfaces suitable for a bounded live adapter run.",
+    "expected_ror": "https://ror.org/042nb2s44",
+    "expected_openalex": "https://openalex.org/I63966007"
+  },
+  "live_source_urls": [
+    "https://api.ror.org/organizations?query=Massachusetts%20Institute%20of%20Technology",
+    "https://api.openalex.org/institutions?search=Massachusetts%20Institute%20of%20Technology&per-page=2",
+    "https://dspace.mit.edu/oai/request?verb=Identify",
+    "https://dspace.mit.edu/oai/request?verb=ListRecords&metadataPrefix=oai_dc&from=2026-01-01",
+    "https://api.crossref.org/works?query.affiliation=Massachusetts%20Institute%20of%20Technology&rows=2&select=DOI,title,author,container-title,published-print,published-online,license,URL",
+    "https://api.datacite.org/dois?query=Massachusetts%20Institute%20of%20Technology&page[size]=2"
+  ],
+  "protocol_doc_urls": [
+    "https://ror.readme.io/docs/rest-api",
+    "https://developers.openalex.org/api-reference/introduction",
+    "https://www.crossref.org/documentation/retrieve-metadata/rest-api/",
+    "https://support.datacite.org/docs/api",
+    "https://www.openarchives.org/OAI/openarchivesprotocol.html"
+  ],
+  "source_warnings": [
+    {
+      "source": "gather api",
+      "status": "TOOL_GAP_RECORDED",
+      "reason": "The gather api subcommand required GATHER_API_TOKEN for public API URLs; pass 0144 used gather web for public JSON endpoints."
+    },
+    {
+      "source": "Semantic Scholar paper search",
+      "status": "HTTP_429_SOURCE_LEAD_ONLY",
+      "reason": "The public request returned HTTP 429, so no Semantic Scholar metadata was promoted in this pass."
+    },
+    {
+      "source": "DataCite query",
+      "status": "QUERY_RESULT_NOT_AFFILIATION_PROOF",
+      "reason": "The query returned DOI records, but this pass does not promote them as MIT-affiliated datasets without explicit affiliation or ROR join evidence."
+    }
+  ],
+  "negative_fixtures": [
+    "ror_identity_as_complete_institution_graph",
+    "openalex_ror_join_as_publication_validity",
+    "dspace_identify_as_full_harvest",
+    "oai_listrecords_as_full_text_or_license",
+    "crossref_affiliation_as_claim_truth",
+    "datacite_keyword_query_as_dataset_relation",
+    "protocol_docs_as_endpoint_behavior",
+    "semantic_scholar_429_as_absence",
+    "date_filtered_oai_as_complete_2026_corpus",
+    "single_institution_graph_as_world_coverage"
+  ],
+  "schema": "OneInstitutionClaimGraphPlan/v1",
+  "updated_tool_floor": {
+    "crucible": "1.1.0",
+    "forum": "1.12.0",
+    "gather": "1.5.0",
+    "index": "2.8.0",
+    "telos": "0.1.0"
+  }
+}

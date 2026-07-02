@@ -1,0 +1,548 @@
+{
+  "ok": true,
+  "thesis": {
+    "id": "d18deb6fe05de89d",
+    "title": "Dogfood Pass 0026 Redaction Boundary",
+    "registered_at": 1782908449.0636632,
+    "disposition": "fenced",
+    "seal": "d18deb6fe05de89db557ab515d22b39714c4632c3509dde05ca5d893e3e6a848",
+    "claims": [
+      {
+        "id": "fbbc7ea14e3a6e19",
+        "sha256": "fbbc7ea14e3a6e196af81ae61f12b289b9e1d73fd1f7b5632aac7c8e28112b33"
+      },
+      {
+        "id": "df52983edb7ace14",
+        "sha256": "df52983edb7ace14c8f38b5e7131c9e096a0fe7ac19740af4507e22a102806b9"
+      },
+      {
+        "id": "63c2777762997318",
+        "sha256": "63c2777762997318b8ceb3d3c8a409501de57055fdc9a666edf52b34f736cefb"
+      },
+      {
+        "id": "695d77d663b9222f",
+        "sha256": "695d77d663b9222feb4293f73df0b2ff5d81d377257cb9ec91c1b923d9315503"
+      },
+      {
+        "id": "2f5f27c305c08518",
+        "sha256": "2f5f27c305c08518dc7a6ece388d263743b73bab8df2857d32a1adbb688e2444"
+      },
+      {
+        "id": "05be8725529bb75e",
+        "sha256": "05be8725529bb75eb2f66a00f7f74038ce395731a0d29ebc7fca1734ae3f65d0"
+      },
+      {
+        "id": "705bcdf8971b7cf8",
+        "sha256": "705bcdf8971b7cf8d2dc263ea04ddeb44e264e11ac41bc1f91b1f2f2111e3f9e"
+      },
+      {
+        "id": "5d5c8ac01e0c0fc7",
+        "sha256": "5d5c8ac01e0c0fc708d7fd17a324c791160a684073b79345b02a31957fe33656"
+      },
+      {
+        "id": "1fb087bc6f66a881",
+        "sha256": "1fb087bc6f66a881080571471a3d3f1fea76021bcd7f7a21c8c4badc9ed4cc4d"
+      },
+      {
+        "id": "be826fd59078acad",
+        "sha256": "be826fd59078acad5c9a0a7bd0b848ed1f0e015271cf2df9688f56c07965d991"
+      }
+    ]
+  },
+  "refutations": [
+    {
+      "claim_id": "fbbc7ea14e3a6e19",
+      "claim_sha256": "fbbc7ea14e3a6e196af81ae61f12b289b9e1d73fd1f7b5632aac7c8e28112b33",
+      "challenge": "test the stated falsification: schemas/redaction-boundary-pass-0026.json is missing, has a different schema or status, reports a different redacted ref count or negative fixture count, or has a different seal",
+      "measurable": "schemas/redaction-boundary-pass-0026.json is missing, has a different schema or status, reports a different redacted ref count or negative fixture count, or has a different seal",
+      "source": "null"
+    },
+    {
+      "claim_id": "df52983edb7ace14",
+      "claim_sha256": "df52983edb7ace14c8f38b5e7131c9e096a0fe7ac19740af4507e22a102806b9",
+      "challenge": "test the stated falsification: the source receipt is missing, binds to the wrong path, has a different source SHA-256, seal, or ledger head hash, or does not reference pass 0025 persistence replay",
+      "measurable": "the source receipt is missing, binds to the wrong path, has a different source SHA-256, seal, or ledger head hash, or does not reference pass 0025 persistence replay",
+      "source": "null"
+    },
+    {
+      "claim_id": "63c2777762997318",
+      "claim_sha256": "63c2777762997318b8ceb3d3c8a409501de57055fdc9a666edf52b34f736cefb",
+      "challenge": "test the stated falsification: the raw payload reference stores a model-facing value, reports the wrong storage boundary, lacks a digest, or marks raw payload values as allowed in receipts or model-facing artifacts",
+      "measurable": "the raw payload reference stores a model-facing value, reports the wrong storage boundary, lacks a digest, or marks raw payload values as allowed in receipts or model-facing artifacts",
+      "source": "null"
+    },
+    {
+      "claim_id": "695d77d663b9222f",
+      "claim_sha256": "695d77d663b9222feb4293f73df0b2ff5d81d377257cb9ec91c1b923d9315503",
+      "challenge": "test the stated falsification: either redacted ref is missing, contains the raw payload value, lacks a digest ref, or reports a different SHA-256",
+      "measurable": "either redacted ref is missing, contains the raw payload value, lacks a digest ref, or reports a different SHA-256",
+      "source": "null"
+    },
+    {
+      "claim_id": "2f5f27c305c08518",
+      "claim_sha256": "2f5f27c305c08518dc7a6ece388d263743b73bab8df2857d32a1adbb688e2444",
+      "challenge": "test the stated falsification: the action receipt redaction object is missing, uses the wrong schema, lacks before/after artifact refs, lacks the digest ref, requires the raw payload for the model, or reports a non-MATCH verification verdict",
+      "measurable": "the action receipt redaction object is missing, uses the wrong schema, lacks before/after artifact refs, lacks the digest ref, requires the raw payload for the model, or reports a non-MATCH verification verdict",
+      "source": "null"
+    },
+    {
+      "claim_id": "05be8725529bb75e",
+      "claim_sha256": "05be8725529bb75eb2f66a00f7f74038ce395731a0d29ebc7fca1734ae3f65d0",
+      "challenge": "test the stated falsification: the leak scan plan is missing, includes fewer than the required eight targets, omits any required model-facing artifact, or does not require raw payload absence",
+      "measurable": "the leak scan plan is missing, includes fewer than the required eight targets, omits any required model-facing artifact, or does not require raw payload absence",
+      "source": "null"
+    },
+    {
+      "claim_id": "705bcdf8971b7cf8",
+      "claim_sha256": "705bcdf8971b7cf8d2dc263ea04ddeb44e264e11ac41bc1f91b1f2f2111e3f9e",
+      "challenge": "test the stated falsification: any scan target contains the synthetic raw payload value, the validator reports a leak, or the validator cannot read all eight targets",
+      "measurable": "any scan target contains the synthetic raw payload value, the validator reports a leak, or the validator cannot read all eight targets",
+      "source": "null"
+    },
+    {
+      "claim_id": "5d5c8ac01e0c0fc7",
+      "claim_sha256": "5d5c8ac01e0c0fc708d7fd17a324c791160a684073b79345b02a31957fe33656",
+      "challenge": "test the stated falsification: negative fixtures are missing, fewer than eight, or any is not marked with expected_validator_status REJECT",
+      "measurable": "negative fixtures are missing, fewer than eight, or any is not marked with expected_validator_status REJECT",
+      "source": "null"
+    },
+    {
+      "claim_id": "1fb087bc6f66a881",
+      "claim_sha256": "1fb087bc6f66a881080571471a3d3f1fea76021bcd7f7a21c8c4badc9ed4cc4d",
+      "challenge": "test the stated falsification: packet 036 is missing, Gather does not verify it, the packet SHA-256 or seal differs, or packet/adversarial files promote production secrecy, scientific discovery, theorem proof, or a natural law",
+      "measurable": "packet 036 is missing, Gather does not verify it, the packet SHA-256 or seal differs, or packet/adversarial files promote production secrecy, scientific discovery, theorem proof, or a natural law",
+      "source": "null"
+    },
+    {
+      "claim_id": "be826fd59078acad",
+      "claim_sha256": "be826fd59078acad5c9a0a7bd0b848ed1f0e015271cf2df9688f56c07965d991",
+      "challenge": "test the stated falsification: schemas/tool-receipts-pass-0026.json is missing, lacks required tool status receipts, treats Forum submit as successful, or omits Telos action receipt and loop ledger receipts",
+      "measurable": "schemas/tool-receipts-pass-0026.json is missing, lacks required tool status receipts, treats Forum submit as successful, or omits Telos action receipt and loop ledger receipts",
+      "source": "null"
+    }
+  ],
+  "assessment": {
+    "started_at": 1782908449.0636632,
+    "thesis_id": "d18deb6fe05de89d",
+    "thesis_seal": "d18deb6fe05de89db557ab515d22b39714c4632c3509dde05ca5d893e3e6a848",
+    "claims": 10,
+    "match": 10,
+    "drift": 0,
+    "unverifiable": 0,
+    "verdict_seal": "7260547a3c273952344cdbc49800037b8a00ddad1a6317e23b5205500fec699b",
+    "measurement_seal": "ae5993895bd40c93b3b3a3b7a122b622da574326fb3c0d3eb09cf2a2b4045b11",
+    "disposition": "fenced",
+    "stored": null,
+    "verdicts": [
+      {
+        "claim_id": "fbbc7ea14e3a6e19",
+        "claim_sha256": "fbbc7ea14e3a6e196af81ae61f12b289b9e1d73fd1f7b5632aac7c8e28112b33",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "redaction-boundary-artifact-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "df52983edb7ace14",
+        "claim_sha256": "df52983edb7ace14c8f38b5e7131c9e096a0fe7ac19740af4507e22a102806b9",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "source-receipt-binding-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "63c2777762997318",
+        "claim_sha256": "63c2777762997318b8ceb3d3c8a409501de57055fdc9a666edf52b34f736cefb",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "temp-private-reference-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "695d77d663b9222f",
+        "claim_sha256": "695d77d663b9222feb4293f73df0b2ff5d81d377257cb9ec91c1b923d9315503",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "redacted-ref-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "2f5f27c305c08518",
+        "claim_sha256": "2f5f27c305c08518dc7a6ece388d263743b73bab8df2857d32a1adbb688e2444",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "action-receipt-redaction-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "05be8725529bb75e",
+        "claim_sha256": "05be8725529bb75eb2f66a00f7f74038ce395731a0d29ebc7fca1734ae3f65d0",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "leak-scan-plan-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "705bcdf8971b7cf8",
+        "claim_sha256": "705bcdf8971b7cf8d2dc263ea04ddeb44e264e11ac41bc1f91b1f2f2111e3f9e",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "validator-run-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "5d5c8ac01e0c0fc7",
+        "claim_sha256": "5d5c8ac01e0c0fc708d7fd17a324c791160a684073b79345b02a31957fe33656",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "negative-fixture-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "1fb087bc6f66a881",
+        "claim_sha256": "1fb087bc6f66a881080571471a3d3f1fea76021bcd7f7a21c8c4badc9ed4cc4d",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "gather-packet-and-boundary-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "be826fd59078acad",
+        "claim_sha256": "be826fd59078acad5c9a0a7bd0b848ed1f0e015271cf2df9688f56c07965d991",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "tool-receipt-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      }
+    ],
+    "measurements": [
+      {
+        "claim_id": "fbbc7ea14e3a6e19",
+        "claim_sha256": "fbbc7ea14e3a6e196af81ae61f12b289b9e1d73fd1f7b5632aac7c8e28112b33",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "redaction-boundary-artifact-review",
+        "measured_at": 1782908449.0636632,
+        "evidence": [
+          "schemas/redaction-boundary-pass-0026.json schema=RedactionBoundaryFixtureSet/v1",
+          "status=REDACTION_BOUNDARY_MATCH",
+          "redacted_ref_count=2",
+          "negative_fixture_count=8",
+          "seal=adcdfc1abcdb59427573760f4779182da9f9fde18553c633af5b08fc57f1816c"
+        ]
+      },
+      {
+        "claim_id": "df52983edb7ace14",
+        "claim_sha256": "df52983edb7ace14c8f38b5e7131c9e096a0fe7ac19740af4507e22a102806b9",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "source-receipt-binding-review",
+        "measured_at": 1782908449.0636632,
+        "evidence": [
+          "source_receipt path=schemas/action-receipt-persistence-replay-pass-0025.json",
+          "source_receipt sha256=03832d00e62c33828cbb5c6d351a10e47e5f61ac185f318044829910bdd0f293",
+          "source_receipt seal=7203957ec04350756af9cdb2d244760ebbc2c00bbc3fcc048acd7c9ff2a1a177",
+          "source_receipt ledger_head_hash=6d194872068da0e9c74d95478cca7e4f2c5a447da9a82a73be3ce9b5aa44f371"
+        ]
+      },
+      {
+        "claim_id": "63c2777762997318",
+        "claim_sha256": "63c2777762997318b8ceb3d3c8a409501de57055fdc9a666edf52b34f736cefb",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "temp-private-reference-review",
+        "measured_at": 1782908449.0636632,
+        "evidence": [
+          "raw_payload storage_boundary=TEMP_PRIVATE_NOT_COMMITTED",
+          "raw_payload sha256=8c53911bf4e3763486de4c3dd43a0e1a8a587f3b172e08c322202d1b3fd66ca4",
+          "raw_payload length=85",
+          "raw_payload value_in_receipts=false",
+          "raw_payload value_in_model_facing_artifacts=false"
+        ]
+      },
+      {
+        "claim_id": "695d77d663b9222f",
+        "claim_sha256": "695d77d663b9222feb4293f73df0b2ff5d81d377257cb9ec91c1b923d9315503",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "redacted-ref-review",
+        "measured_at": 1782908449.0636632,
+        "evidence": [
+          "redacted_ref kind=before path=fixtures/redacted-before-pass-0026.json contains_raw_payload=false contains_digest_ref=true sha256=32ba5ef8fcc63fb0e7bb2f3d9a84d272693971dcc524f27021fe4ad29d6dc231",
+          "redacted_ref kind=after path=fixtures/redacted-after-pass-0026.json contains_raw_payload=false contains_digest_ref=true sha256=e697e1ecd32c15eec3032b001596cae71021b08808db9d597bbb4a08c6bf8c9f"
+        ]
+      },
+      {
+        "claim_id": "2f5f27c305c08518",
+        "claim_sha256": "2f5f27c305c08518dc7a6ece388d263743b73bab8df2857d32a1adbb688e2444",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "action-receipt-redaction-review",
+        "measured_at": 1782908449.0636632,
+        "evidence": [
+          "action_receipt_redaction schema=ActionReceiptRedactionRef/v1",
+          "redacted_before_ref=artifact:fixtures/redacted-before-pass-0026.json",
+          "redacted_after_ref=artifact:fixtures/redacted-after-pass-0026.json",
+          "raw_payload_digest=sha256:8c53911bf4e3763486de4c3dd43a0e1a8a587f3b172e08c322202d1b3fd66ca4",
+          "raw_payload_required_for_model=false",
+          "verification verdict=MATCH"
+        ]
+      },
+      {
+        "claim_id": "05be8725529bb75e",
+        "claim_sha256": "05be8725529bb75eb2f66a00f7f74038ce395731a0d29ebc7fca1734ae3f65d0",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "leak-scan-plan-review",
+        "measured_at": 1782908449.0636632,
+        "evidence": [
+          "leak_scan raw_payload_absent_required=true",
+          "leak_scan scan_target_count=8",
+          "target=schemas/redaction-boundary-pass-0026.json",
+          "target=fixtures/redacted-before-pass-0026.json",
+          "target=fixtures/redacted-after-pass-0026.json",
+          "target=packets/036-redaction-boundary.md",
+          "target=adversarial/pass-0026-redaction-boundary-steelman.md",
+          "target=schemas/tool-receipts-pass-0026.json",
+          "target=crucible/pass-0026-thesis.json",
+          "target=crucible/pass-0026-measurements.json"
+        ]
+      },
+      {
+        "claim_id": "705bcdf8971b7cf8",
+        "claim_sha256": "705bcdf8971b7cf8d2dc263ea04ddeb44e264e11ac41bc1f91b1f2f2111e3f9e",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "validator-run-review",
+        "measured_at": 1782908449.0636632,
+        "evidence": [
+          "schemas/pass-0026-redaction-boundary-validator-result.json status=MATCH",
+          "match=1",
+          "drift=0",
+          "scan_target_count=8",
+          "raw_payload_leak_count=0"
+        ]
+      },
+      {
+        "claim_id": "5d5c8ac01e0c0fc7",
+        "claim_sha256": "5d5c8ac01e0c0fc708d7fd17a324c791160a684073b79345b02a31957fe33656",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "negative-fixture-review",
+        "measured_at": 1782908449.0636632,
+        "evidence": [
+          "negative_fixture_count=8",
+          "negative-raw-payload-in-packet expected_validator_status=REJECT",
+          "negative-raw-payload-in-receipt expected_validator_status=REJECT",
+          "negative-redacted-ref-missing-digest expected_validator_status=REJECT",
+          "negative-digest-mismatch expected_validator_status=REJECT",
+          "negative-before-ref-missing expected_validator_status=REJECT",
+          "negative-after-ref-missing expected_validator_status=REJECT",
+          "negative-raw-path-committed expected_validator_status=REJECT",
+          "negative-leak-scan-target-missing expected_validator_status=REJECT"
+        ]
+      },
+      {
+        "claim_id": "1fb087bc6f66a881",
+        "claim_sha256": "1fb087bc6f66a881080571471a3d3f1fea76021bcd7f7a21c8c4badc9ed4cc4d",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "gather-packet-and-boundary-review",
+        "measured_at": 1782908449.0636632,
+        "evidence": [
+          "gather docs verified=true",
+          "artifact=packets/036-redaction-boundary.md",
+          "sha256=39af9c048ffb9f65128e820bd76d8ed4f836e35a6bfe73d283ab4ffe962af0c8",
+          "seal=e389dcba07e1383397e99bb58dd423884e441f274274e9e8a5d994ea5faafad3",
+          "packet 036 states Current promoted natural laws: none",
+          "adversarial/pass-0026-redaction-boundary-steelman.md states current promoted natural laws: none"
+        ]
+      },
+      {
+        "claim_id": "be826fd59078acad",
+        "claim_sha256": "be826fd59078acad5c9a0a7bd0b848ed1f0e015271cf2df9688f56c07965d991",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "tool-receipt-review",
+        "measured_at": 1782908449.0636632,
+        "evidence": [
+          "schemas/tool-receipts-pass-0026.json status=MATCH_WITH_FORUM_SUBMIT_GAP",
+          "index status MATCH",
+          "index doctor MATCH",
+          "gather status MATCH",
+          "gather docs verified=true",
+          "telos operator_doctor status MATCH",
+          "telos action_receipt status MATCH",
+          "telos loop_ledger status MATCH",
+          "forum status MATCH",
+          "forum ledger verify chain=true deep=true",
+          "forum submit status=UNVERIFIABLE",
+          "crucible status MATCH"
+        ]
+      }
+    ],
+    "seal": "102711eda237255d21962eed118000101dab319b991714a7b20113c8fdf64c2a"
+  },
+  "verdicts": [
+    {
+      "claim_id": "fbbc7ea14e3a6e19",
+      "claim_sha256": "fbbc7ea14e3a6e196af81ae61f12b289b9e1d73fd1f7b5632aac7c8e28112b33",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "redaction-boundary-artifact-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "df52983edb7ace14",
+      "claim_sha256": "df52983edb7ace14c8f38b5e7131c9e096a0fe7ac19740af4507e22a102806b9",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "source-receipt-binding-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "63c2777762997318",
+      "claim_sha256": "63c2777762997318b8ceb3d3c8a409501de57055fdc9a666edf52b34f736cefb",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "temp-private-reference-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "695d77d663b9222f",
+      "claim_sha256": "695d77d663b9222feb4293f73df0b2ff5d81d377257cb9ec91c1b923d9315503",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "redacted-ref-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "2f5f27c305c08518",
+      "claim_sha256": "2f5f27c305c08518dc7a6ece388d263743b73bab8df2857d32a1adbb688e2444",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "action-receipt-redaction-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "05be8725529bb75e",
+      "claim_sha256": "05be8725529bb75eb2f66a00f7f74038ce395731a0d29ebc7fca1734ae3f65d0",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "leak-scan-plan-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "705bcdf8971b7cf8",
+      "claim_sha256": "705bcdf8971b7cf8d2dc263ea04ddeb44e264e11ac41bc1f91b1f2f2111e3f9e",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "validator-run-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "5d5c8ac01e0c0fc7",
+      "claim_sha256": "5d5c8ac01e0c0fc708d7fd17a324c791160a684073b79345b02a31957fe33656",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "negative-fixture-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "1fb087bc6f66a881",
+      "claim_sha256": "1fb087bc6f66a881080571471a3d3f1fea76021bcd7f7a21c8c4badc9ed4cc4d",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "gather-packet-and-boundary-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "be826fd59078acad",
+      "claim_sha256": "be826fd59078acad5c9a0a7bd0b848ed1f0e015271cf2df9688f56c07965d991",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "tool-receipt-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    }
+  ],
+  "checks": {
+    "seals_ok": true,
+    "thesis_ok": true,
+    "verdicts_rederive": true
+  },
+  "report": "C:\\dev\\public\\telos\\docs\\research\\dogfood\\crucible\\pass-0026-report.md",
+  "record": "C:\\dev\\public\\telos\\docs\\research\\dogfood\\crucible\\pass-0026-run.json",
+  "bundle": null,
+  "spec": null,
+  "review": null,
+  "verifier": {
+    "mode": "cleanroom",
+    "inputs": [],
+    "excluded": [
+      "worker context",
+      "reasoning trace",
+      "intermediate steps"
+    ],
+    "checkability": "If success cannot be evaluated from the original spec and the artifact, the spec is not checkable yet."
+  }
+}

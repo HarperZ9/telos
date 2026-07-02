@@ -1,0 +1,567 @@
+{
+  "ok": true,
+  "thesis": {
+    "id": "62ba7596a15a73ab",
+    "title": "Dogfood Pass 0030 Theorem Replay Preflight",
+    "registered_at": 1782910110.8062654,
+    "disposition": "fenced",
+    "seal": "62ba7596a15a73ab6bc7402f7f43a58cd7f5920e1ef5f22d239873d0838a2687",
+    "claims": [
+      {
+        "id": "748df1fc9848315c",
+        "sha256": "748df1fc9848315c582c3ba8629c1ab1f3f4dc093780b9a517e9ec15f312efa8"
+      },
+      {
+        "id": "d744fd6500f52eb8",
+        "sha256": "d744fd6500f52eb827d1c472dab2419dbdf987184405df00498df8e4976cef61"
+      },
+      {
+        "id": "7bbac96e459e7a08",
+        "sha256": "7bbac96e459e7a08e74b5a1955a36ac20fd76402ae4994e54b2460fdbcbeebff"
+      },
+      {
+        "id": "dcfcb801270c4a5b",
+        "sha256": "dcfcb801270c4a5b2e39db050b8e955cfeb1a869e22db84f3bcf402975a6a079"
+      },
+      {
+        "id": "9b7acf59fd218119",
+        "sha256": "9b7acf59fd218119e26c60653cc14e305fb35c1788fb3f8855bc9223a4ea3477"
+      },
+      {
+        "id": "ec41d8ba99434dbc",
+        "sha256": "ec41d8ba99434dbc8733866974b283c15ef22b4ad3998478eaf262a541fb09fc"
+      },
+      {
+        "id": "d3ae6425555929a3",
+        "sha256": "d3ae6425555929a32ff6904652561883f44d8c93600d46537232884548467ee3"
+      },
+      {
+        "id": "1d5b0145b9b317aa",
+        "sha256": "1d5b0145b9b317aa942347d9c83c96e0e863e55c12bc95dd1260741eeaa241ea"
+      },
+      {
+        "id": "7e59bd2280be6e3e",
+        "sha256": "7e59bd2280be6e3e13b08a344549ff2697957ea0bbef9600008349f6f58f6cdb"
+      },
+      {
+        "id": "708ca18279f372a4",
+        "sha256": "708ca18279f372a4e90650017353b011340f220b7ba61ff959cdd568afc33218"
+      }
+    ]
+  },
+  "refutations": [
+    {
+      "claim_id": "748df1fc9848315c",
+      "claim_sha256": "748df1fc9848315c582c3ba8629c1ab1f3f4dc093780b9a517e9ec15f312efa8",
+      "challenge": "test the stated falsification: schemas/theorem-replay-preflight-pass-0030.json is missing, has a different schema, status, seal, repo commit, project/file/theorem counts, or replay status",
+      "measurable": "schemas/theorem-replay-preflight-pass-0030.json is missing, has a different schema, status, seal, repo commit, project/file/theorem counts, or replay status",
+      "source": "null"
+    },
+    {
+      "claim_id": "d744fd6500f52eb8",
+      "claim_sha256": "d744fd6500f52eb827d1c472dab2419dbdf987184405df00498df8e4976cef61",
+      "challenge": "test the stated falsification: the preflight fixture is missing, has a different SHA-256, seal, repo URL, commit, project count, Lean file count, selected project, or theorem count",
+      "measurable": "the preflight fixture is missing, has a different SHA-256, seal, repo URL, commit, project count, Lean file count, selected project, or theorem count",
+      "source": "null"
+    },
+    {
+      "claim_id": "7bbac96e459e7a08",
+      "claim_sha256": "7bbac96e459e7a08e74b5a1955a36ac20fd76402ae4994e54b2460fdbcbeebff",
+      "challenge": "test the stated falsification: the source packet binding is missing or has a different pass 0029 path, schema, SHA-256, or seal",
+      "measurable": "the source packet binding is missing or has a different pass 0029 path, schema, SHA-256, or seal",
+      "source": "null"
+    },
+    {
+      "claim_id": "dcfcb801270c4a5b",
+      "claim_sha256": "dcfcb801270c4a5b2e39db050b8e955cfeb1a869e22db84f3bcf402975a6a079",
+      "challenge": "test the stated falsification: the frozen pin receipt is missing, fails to show pinned Git blob hash matches, fails to show Windows working-tree mismatch, or omits the line-ending drift requirement",
+      "measurable": "the frozen pin receipt is missing, fails to show pinned Git blob hash matches, fails to show Windows working-tree mismatch, or omits the line-ending drift requirement",
+      "source": "null"
+    },
+    {
+      "claim_id": "9b7acf59fd218119",
+      "claim_sha256": "9b7acf59fd218119e26c60653cc14e305fb35c1788fb3f8855bc9223a4ea3477",
+      "challenge": "test the stated falsification: the toolchain receipt is missing, reports bash/lake/lean as available, allows replay promotion, or does not mark Lean replay UNVERIFIABLE_TOOL_UNAVAILABLE",
+      "measurable": "the toolchain receipt is missing, reports bash/lake/lean as available, allows replay promotion, or does not mark Lean replay UNVERIFIABLE_TOOL_UNAVAILABLE",
+      "source": "null"
+    },
+    {
+      "claim_id": "ec41d8ba99434dbc",
+      "claim_sha256": "ec41d8ba99434dbc8733866974b283c15ef22b4ad3998478eaf262a541fb09fc",
+      "challenge": "test the stated falsification: the action receipt proposal is missing, has a different schema or event type, performs an external write or toolchain install, allows replay promotion, or lacks verification verdict MATCH",
+      "measurable": "the action receipt proposal is missing, has a different schema or event type, performs an external write or toolchain install, allows replay promotion, or lacks verification verdict MATCH",
+      "source": "null"
+    },
+    {
+      "claim_id": "d3ae6425555929a3",
+      "claim_sha256": "d3ae6425555929a32ff6904652561883f44d8c93600d46537232884548467ee3",
+      "challenge": "test the stated falsification: negative fixtures are missing, fewer than ten, have different IDs, or any negative fixture is not marked expected_validator_status REJECT",
+      "measurable": "negative fixtures are missing, fewer than ten, have different IDs, or any negative fixture is not marked expected_validator_status REJECT",
+      "source": "null"
+    },
+    {
+      "claim_id": "1d5b0145b9b317aa",
+      "claim_sha256": "1d5b0145b9b317aa942347d9c83c96e0e863e55c12bc95dd1260741eeaa241ea",
+      "challenge": "test the stated falsification: the validator result is missing, reports DRIFT, different counts, missing commands other than bash/lake/lean, or wrong pin/line-ending/replay status",
+      "measurable": "the validator result is missing, reports DRIFT, different counts, missing commands other than bash/lake/lean, or wrong pin/line-ending/replay status",
+      "source": "null"
+    },
+    {
+      "claim_id": "7e59bd2280be6e3e",
+      "claim_sha256": "7e59bd2280be6e3e13b08a344549ff2697957ea0bbef9600008349f6f58f6cdb",
+      "challenge": "test the stated falsification: packet 040 is missing, Gather does not verify it, or the packet SHA-256, digest seal, or character count differs",
+      "measurable": "packet 040 is missing, Gather does not verify it, or the packet SHA-256, digest seal, or character count differs",
+      "source": "null"
+    },
+    {
+      "claim_id": "708ca18279f372a4",
+      "claim_sha256": "708ca18279f372a4e90650017353b011340f220b7ba61ff959cdd568afc33218",
+      "challenge": "test the stated falsification: schemas/tool-receipts-pass-0030.json is missing, lacks required tool receipts, treats Forum submit as successful, hides the toolchain gap, or promotes theorem replay",
+      "measurable": "schemas/tool-receipts-pass-0030.json is missing, lacks required tool receipts, treats Forum submit as successful, hides the toolchain gap, or promotes theorem replay",
+      "source": "null"
+    }
+  ],
+  "assessment": {
+    "started_at": 1782910110.815393,
+    "thesis_id": "62ba7596a15a73ab",
+    "thesis_seal": "62ba7596a15a73ab6bc7402f7f43a58cd7f5920e1ef5f22d239873d0838a2687",
+    "claims": 10,
+    "match": 10,
+    "drift": 0,
+    "unverifiable": 0,
+    "verdict_seal": "9291b103d1045f1284df097856dae311780ad2bed72c1810eaafe8b58ada1b74",
+    "measurement_seal": "4a6c59321bc05bc45f9f36f9f0baa4a2bb10c07be82ed1c7167ceb1dc38c07c4",
+    "disposition": "fenced",
+    "stored": null,
+    "verdicts": [
+      {
+        "claim_id": "748df1fc9848315c",
+        "claim_sha256": "748df1fc9848315c582c3ba8629c1ab1f3f4dc093780b9a517e9ec15f312efa8",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "theorem-replay-preflight-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "d744fd6500f52eb8",
+        "claim_sha256": "d744fd6500f52eb827d1c472dab2419dbdf987184405df00498df8e4976cef61",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "preflight-fixture-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "7bbac96e459e7a08",
+        "claim_sha256": "7bbac96e459e7a08e74b5a1955a36ac20fd76402ae4994e54b2460fdbcbeebff",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "source-packet-binding-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "dcfcb801270c4a5b",
+        "claim_sha256": "dcfcb801270c4a5b2e39db050b8e955cfeb1a869e22db84f3bcf402975a6a079",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "frozen-pin-line-ending-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "9b7acf59fd218119",
+        "claim_sha256": "9b7acf59fd218119e26c60653cc14e305fb35c1788fb3f8855bc9223a4ea3477",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "toolchain-gap-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "ec41d8ba99434dbc",
+        "claim_sha256": "ec41d8ba99434dbc8733866974b283c15ef22b4ad3998478eaf262a541fb09fc",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "action-receipt-preflight-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "d3ae6425555929a3",
+        "claim_sha256": "d3ae6425555929a32ff6904652561883f44d8c93600d46537232884548467ee3",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "negative-fixture-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "1d5b0145b9b317aa",
+        "claim_sha256": "1d5b0145b9b317aa942347d9c83c96e0e863e55c12bc95dd1260741eeaa241ea",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "validator-result-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "7e59bd2280be6e3e",
+        "claim_sha256": "7e59bd2280be6e3e13b08a344549ff2697957ea0bbef9600008349f6f58f6cdb",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "gather-packet-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "708ca18279f372a4",
+        "claim_sha256": "708ca18279f372a4e90650017353b011340f220b7ba61ff959cdd568afc33218",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "tool-receipt-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      }
+    ],
+    "measurements": [
+      {
+        "claim_id": "748df1fc9848315c",
+        "claim_sha256": "748df1fc9848315c582c3ba8629c1ab1f3f4dc093780b9a517e9ec15f312efa8",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "theorem-replay-preflight-review",
+        "measured_at": 1782910110.815393,
+        "evidence": [
+          "schemas/theorem-replay-preflight-pass-0030.json schema=TheoremReplayPreflightPacket/v1",
+          "status=THEOREM_REPLAY_PREFLIGHT_MATCH_WITH_TOOLCHAIN_GAP",
+          "repo_commit=69d7df765a8f377a5e0628c6d36c088bce7642c9",
+          "formalization_project_count=4",
+          "lean_file_count=66",
+          "selected_theorem_count=10",
+          "lean_replay_status=UNVERIFIABLE_TOOL_UNAVAILABLE",
+          "seal=fb2428b6a7d960e44fe44768e1864d6fc524e99b9461b7fc64d08012f6760180"
+        ]
+      },
+      {
+        "claim_id": "d744fd6500f52eb8",
+        "claim_sha256": "d744fd6500f52eb827d1c472dab2419dbdf987184405df00498df8e4976cef61",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "preflight-fixture-review",
+        "measured_at": 1782910110.815393,
+        "evidence": [
+          "fixture path=fixtures/pipeline-math-problem4b-preflight-pass-0030.json",
+          "sha256=8164e622fcafc9a8220674530e7d64ff664dfdb298c564eadd9d5fd2fdb26624",
+          "seal=87114d508a057eab4a4011b3670ae7a2844689fdd9bda1d2fca573ffb1dfccba",
+          "source repo=https://github.com/Pengbinghui/pipeline-math.git",
+          "selected project=lean/problem-4b-formalization",
+          "formalization_project_count=4",
+          "lean_file_count=66",
+          "theorem_count=10"
+        ]
+      },
+      {
+        "claim_id": "7bbac96e459e7a08",
+        "claim_sha256": "7bbac96e459e7a08e74b5a1955a36ac20fd76402ae4994e54b2460fdbcbeebff",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "source-packet-binding-review",
+        "measured_at": 1782910110.815393,
+        "evidence": [
+          "source_packet_binding path=schemas/research-claim-packet-pass-0029.json",
+          "sha256=f29a296e74ef39eda2b70234f45abca062f86361c9572a1ea6105e747991a642",
+          "seal=272b3afd43cd60688f06fabd11d66934796f448ba1f07a02d62a3798443a62f4",
+          "schema=ResearchClaimPacket/v1"
+        ]
+      },
+      {
+        "claim_id": "dcfcb801270c4a5b",
+        "claim_sha256": "dcfcb801270c4a5b2e39db050b8e955cfeb1a869e22db84f3bcf402975a6a079",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "frozen-pin-line-ending-review",
+        "measured_at": 1782910110.815393,
+        "evidence": [
+          "pin_matches_git_blob_bytes=true",
+          "pin_matches_windows_worktree_bytes=false",
+          "git_index=lf",
+          "working_tree=crlf",
+          "eol_drift=true",
+          "Prob4b/Defs.lean pinned hash equals git blob hash",
+          "Prob4b/Theorems.lean pinned hash equals git blob hash",
+          "working_tree hashes differ from git blob hashes"
+        ]
+      },
+      {
+        "claim_id": "9b7acf59fd218119",
+        "claim_sha256": "9b7acf59fd218119e26c60653cc14e305fb35c1788fb3f8855bc9223a4ea3477",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "toolchain-gap-review",
+        "measured_at": 1782910110.815393,
+        "evidence": [
+          "git=MATCH",
+          "python=MATCH",
+          "bash=UNAVAILABLE",
+          "lake=UNAVAILABLE",
+          "lean=UNAVAILABLE",
+          "verify_script_attempt_status=UNVERIFIABLE_TOOL_UNAVAILABLE",
+          "lean_replay_status=UNVERIFIABLE_TOOL_UNAVAILABLE",
+          "replay_promotion_allowed=false"
+        ]
+      },
+      {
+        "claim_id": "ec41d8ba99434dbc",
+        "claim_sha256": "ec41d8ba99434dbc8733866974b283c15ef22b4ad3998478eaf262a541fb09fc",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "action-receipt-preflight-review",
+        "measured_at": 1782910110.815393,
+        "evidence": [
+          "action_receipt_proposal schema=ActionReceiptTheoremReplayPreflight/v1",
+          "event_type=theorem_replay_preflight_created",
+          "external_write_performed=false",
+          "toolchain_install_performed=false",
+          "replay_promotion_allowed=false",
+          "verification verdict=MATCH"
+        ]
+      },
+      {
+        "claim_id": "d3ae6425555929a3",
+        "claim_sha256": "d3ae6425555929a32ff6904652561883f44d8c93600d46537232884548467ee3",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "negative-fixture-review",
+        "measured_at": 1782910110.815393,
+        "evidence": [
+          "negative_fixture_count=10",
+          "negative-lean-replay-promoted-without-lean expected_validator_status=REJECT",
+          "negative-lake-build-promoted-without-lake expected_validator_status=REJECT",
+          "negative-verify-script-promoted-without-bash expected_validator_status=REJECT",
+          "negative-frozen-pin-worktree-mismatch-ignored expected_validator_status=REJECT",
+          "negative-git-commit-missing expected_validator_status=REJECT",
+          "negative-theorem-names-missing expected_validator_status=REJECT",
+          "negative-toolchain-pin-missing expected_validator_status=REJECT",
+          "negative-source-packet-link-missing expected_validator_status=REJECT",
+          "negative-axiom-check-promoted expected_validator_status=REJECT",
+          "negative-natural-law-promoted expected_validator_status=REJECT"
+        ]
+      },
+      {
+        "claim_id": "1d5b0145b9b317aa",
+        "claim_sha256": "1d5b0145b9b317aa942347d9c83c96e0e863e55c12bc95dd1260741eeaa241ea",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "validator-result-review",
+        "measured_at": 1782910110.815393,
+        "evidence": [
+          "schemas/pass-0030-theorem-replay-preflight-validator-result.json status=MATCH",
+          "formalization_project_count=4",
+          "lean_file_count=66",
+          "selected_theorem_count=10",
+          "pin_matches_git_blob_bytes=true",
+          "pin_matches_windows_worktree_bytes=false",
+          "line_ending_drift_detected=true",
+          "missing_commands=bash,lake,lean",
+          "lean_replay_status=UNVERIFIABLE_TOOL_UNAVAILABLE",
+          "negative_fixture_count=10"
+        ]
+      },
+      {
+        "claim_id": "7e59bd2280be6e3e",
+        "claim_sha256": "7e59bd2280be6e3e13b08a344549ff2697957ea0bbef9600008349f6f58f6cdb",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "gather-packet-review",
+        "measured_at": 1782910110.815393,
+        "evidence": [
+          "gather docs verified=true",
+          "artifact=packets/040-theorem-replay-preflight.md",
+          "sha256=4793f878aa287f05da6ad76045195cb6734f8924844929912ef3575b2cfbc0ad",
+          "seal=cfe10ca7d018270e84c5d0e7041cb7a5fada4bf437a625a7ee279c3d35bf9155",
+          "chars=5609"
+        ]
+      },
+      {
+        "claim_id": "708ca18279f372a4",
+        "claim_sha256": "708ca18279f372a4e90650017353b011340f220b7ba61ff959cdd568afc33218",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "tool-receipt-review",
+        "measured_at": 1782910110.815393,
+        "evidence": [
+          "schemas/tool-receipts-pass-0030.json status=MATCH_WITH_FORUM_SUBMIT_GAP_AND_TOOLCHAIN_GAP",
+          "index status MATCH",
+          "gather status MATCH",
+          "gather docs verified=true",
+          "git clone status MATCH",
+          "git eol probe status MATCH",
+          "toolchain probe status=UNVERIFIABLE_TOOL_UNAVAILABLE",
+          "missing_commands=bash,lake,lean",
+          "mcp__telos.telos_status MATCH",
+          "mcp__telos.telos_action_receipt MATCH",
+          "mcp__telos.telos_loop_ledger MATCH",
+          "forum status MATCH",
+          "forum ledger verify chain=true deep=true",
+          "forum submit status=UNVERIFIABLE",
+          "crucible status MATCH"
+        ]
+      }
+    ],
+    "seal": "cd0374a5bf80f09e12d5570899ad2801637f21f795b40b5c5ceddca6342023a9"
+  },
+  "verdicts": [
+    {
+      "claim_id": "748df1fc9848315c",
+      "claim_sha256": "748df1fc9848315c582c3ba8629c1ab1f3f4dc093780b9a517e9ec15f312efa8",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "theorem-replay-preflight-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "d744fd6500f52eb8",
+      "claim_sha256": "d744fd6500f52eb827d1c472dab2419dbdf987184405df00498df8e4976cef61",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "preflight-fixture-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "7bbac96e459e7a08",
+      "claim_sha256": "7bbac96e459e7a08e74b5a1955a36ac20fd76402ae4994e54b2460fdbcbeebff",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "source-packet-binding-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "dcfcb801270c4a5b",
+      "claim_sha256": "dcfcb801270c4a5b2e39db050b8e955cfeb1a869e22db84f3bcf402975a6a079",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "frozen-pin-line-ending-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "9b7acf59fd218119",
+      "claim_sha256": "9b7acf59fd218119e26c60653cc14e305fb35c1788fb3f8855bc9223a4ea3477",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "toolchain-gap-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "ec41d8ba99434dbc",
+      "claim_sha256": "ec41d8ba99434dbc8733866974b283c15ef22b4ad3998478eaf262a541fb09fc",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "action-receipt-preflight-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "d3ae6425555929a3",
+      "claim_sha256": "d3ae6425555929a32ff6904652561883f44d8c93600d46537232884548467ee3",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "negative-fixture-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "1d5b0145b9b317aa",
+      "claim_sha256": "1d5b0145b9b317aa942347d9c83c96e0e863e55c12bc95dd1260741eeaa241ea",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "validator-result-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "7e59bd2280be6e3e",
+      "claim_sha256": "7e59bd2280be6e3e13b08a344549ff2697957ea0bbef9600008349f6f58f6cdb",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "gather-packet-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "708ca18279f372a4",
+      "claim_sha256": "708ca18279f372a4e90650017353b011340f220b7ba61ff959cdd568afc33218",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "tool-receipt-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    }
+  ],
+  "checks": {
+    "seals_ok": true,
+    "thesis_ok": true,
+    "verdicts_rederive": true
+  },
+  "report": "docs/research/dogfood/crucible/pass-0030-report.md",
+  "record": "docs/research/dogfood/crucible/pass-0030-run.json",
+  "bundle": null,
+  "spec": null,
+  "review": null,
+  "verifier": {
+    "mode": "cleanroom",
+    "inputs": [],
+    "excluded": [
+      "worker context",
+      "reasoning trace",
+      "intermediate steps"
+    ],
+    "checkability": "If success cannot be evaluated from the original spec and the artifact, the spec is not checkable yet."
+  }
+}

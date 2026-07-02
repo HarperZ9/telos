@@ -1,0 +1,38 @@
+{
+  "claims": [
+    {
+      "falsification": "schemas/theorem-source-ref-integrity-pass-0036.json is missing, has a different schema, status, source_ref_count, unique_file_count, SHA-256, or seal",
+      "text": "Pass 0036 created a TheoremSourceRefIntegritySet/v1 artifact with status SOURCE_REF_INTEGRITY_MATCH, source_ref_count 40, unique_file_count 10, sha256 74d89981ae7598f7a7381f6fdbb1196cf9be97ca854688a49c4e3c4bce9f6f6f, and seal 68382866e7e78895eb3d7fd0d613fcc8b17afc30398b7823cb198702262da2fb."
+    },
+    {
+      "falsification": "the source-ref integrity fixture is missing, has a different SHA-256 or seal, or is not linked from the schema",
+      "text": "Pass 0036 records fixture fixtures/theorem-source-ref-integrity-pass-0036.json with sha256 f89011da69ee6d28e2a67827e9f3d45cea37a2d0b3a85289cc1d34170e1e8830 and seal 06a1fd9729ab2d03d12623c84d4867626a118524b2a438c47f3ca3391e4dbdd3."
+    },
+    {
+      "falsification": "the repo receipt is missing, has a commit other than 69d7df765a8f377a5e0628c6d36c088bce7642c9, reports dirty status, or omits LF worktree evidence",
+      "text": "Pass 0036 records the pipeline-math source checkout at commit 69d7df765a8f377a5e0628c6d36c088bce7642c9 with git_status_clean true and worktree_eol_lf true."
+    },
+    {
+      "falsification": "any of the 40 source_ref_checks has line_status other than MATCH or symbol_present other than true",
+      "text": "Pass 0036 records all 40 theorem source refs with line_status MATCH and symbol_present true."
+    },
+    {
+      "falsification": "any source-ref row omits Git path, Git blob id, Git blob SHA-256, worktree SHA-256, line SHA-256, line span, or context SHA-256",
+      "text": "Pass 0036 binds every source-ref row to Git path, Git blob id, Git blob SHA-256, worktree SHA-256, line SHA-256, line span, and context SHA-256."
+    },
+    {
+      "falsification": "the pass 0036 validator result is missing, reports DRIFT, or has different source_ref_count or unique_file_count",
+      "text": "Pass 0036 validator result reports MATCH with source_ref_count 40 and unique_file_count 10."
+    },
+    {
+      "falsification": "packet 046 or the pass 0036 steelman is missing or has a different SHA-256",
+      "text": "Pass 0036 records packet 046 with sha256 50aa1770aaeb66b2dd3e54f8239207ae4bb4f4f29e5827622fe1384aeb4f339c and local steelman with sha256 4911f4b39fae658a17b1922acfd3fe4f354f3d54769835886252a58556e48a44."
+    },
+    {
+      "falsification": "pass 0036 artifacts claim Lean replay, axiom-free proof, validation of every public pipeline-math claim, semantic proof review, or a promoted natural law",
+      "text": "Pass 0036 preserves non-promotion boundaries: it verifies source-reference integrity only, does not re-run Lean, does not claim semantic proof review, and current_promoted_natural_laws remains none."
+    }
+  ],
+  "disposition": "fenced",
+  "title": "Dogfood Pass 0036 Theorem Source-Ref Integrity"
+}

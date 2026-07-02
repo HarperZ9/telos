@@ -1,0 +1,42 @@
+{
+  "title": "Dogfood Pass 0015 Cloud Quantum Task Receipt Profiles",
+  "disposition": "fenced",
+  "claims": [
+    {
+      "text": "Pass 0015 created a CloudQuantumTaskReceiptProfileSet/v1 artifact with status PROFILE_SET_MATCH, four profiles, four negative fixtures, three shape-only sample receipts, and seal da29ddb01c060ea4af511cec8c901895e9f1c3c62622d367aefb15e7f82fcf62.",
+      "falsification": "schemas/cloud-quantum-task-receipt-profiles-pass-0015.json is missing, is not CloudQuantumTaskReceiptProfileSet/v1, reports non-MATCH status, has fewer than four profiles, fewer than four negative fixtures, fewer than three sample receipts, or lacks the expected seal"
+    },
+    {
+      "text": "Pass 0015 defines provider profiles for Amazon Braket, IBM Quantum Runtime, Azure Quantum, and Provider Simulator.",
+      "falsification": "schemas/cloud-quantum-task-receipt-profiles-pass-0015.json lacks any of cloud-quantum-profile-braket-task, cloud-quantum-profile-ibm-runtime-job, cloud-quantum-profile-azure-job, or cloud-quantum-profile-provider-simulator"
+    },
+    {
+      "text": "The Braket profile requires device ARN, task id, shots, status, result payload hash, and calibration or device-properties reference for hardware-claim eligibility.",
+      "falsification": "the Braket profile is missing or its hardware_claim_allowed_requirements omit any required Braket field"
+    },
+    {
+      "text": "The IBM Runtime profile requires backend name, job id, primitive name, result payload hash, job/session mode, and calibration or backend-properties reference for hardware-claim eligibility.",
+      "falsification": "the IBM profile is missing or its hardware_claim_allowed_requirements omit any required IBM field"
+    },
+    {
+      "text": "The Azure Quantum profile requires workspace, provider, target, job id, job input hash, result payload hash, calibration or target-properties reference, and explicitly separates resource-estimator output from execution output.",
+      "falsification": "the Azure profile is missing, omits any required Azure field, or lacks the resource-estimator separation rule"
+    },
+    {
+      "text": "The Provider Simulator profile uses branch CLOUD_SIMULATOR and allows no hardware-claim requirements.",
+      "falsification": "the Provider Simulator profile is missing, uses a branch other than CLOUD_SIMULATOR, or includes hardware-claim allowed requirements"
+    },
+    {
+      "text": "Pass 0015 validator reports MATCH with one matched check and zero drift.",
+      "falsification": "schemas/pass-0015-cloud-quantum-profile-validator-result.json is missing, reports non-MATCH status, does not report match=1, or reports drift above zero"
+    },
+    {
+      "text": "Pass 0015 records tool receipts showing Index, Gather, Telos, Forum, and Crucible status MATCH while preserving Forum submit as UNVERIFIABLE due to executor JSON parsing.",
+      "falsification": "schemas/tool-receipts-pass-0015.json is missing, lacks any required tool status, or treats Forum submit as successful rather than UNVERIFIABLE"
+    },
+    {
+      "text": "Pass 0015 promotes zero new quantum hardware results, quantum advantage claims, theorem proofs, natural laws, or scientific discoveries.",
+      "falsification": "any pass 0015 artifact labels a new quantum hardware result, quantum advantage claim, theorem proof, natural law, biological result, material result, medical result, finance result, or safety result as promoted"
+    }
+  ]
+}

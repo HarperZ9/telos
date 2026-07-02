@@ -1,0 +1,201 @@
+{
+  "schema": "project-telos.source-lead-demotion-gate/v1",
+  "captured_at": "2026-07-02T00:00:00Z",
+  "purpose": "Classify every retained ninth-wave arXiv source row as domain_lead, adjacent_lead, or query_noise before any paper or outreach promotion.",
+  "classes": {
+    "domain_lead": "Directly relevant to the lane's target domain and suitable for source-body review.",
+    "adjacent_lead": "Useful for tooling, governance, infrastructure, or neighboring domains, but not direct enough for domain claims.",
+    "query_noise": "Retained by keyword overlap but unsuitable for the named lane without separate justification."
+  },
+  "summary": {
+    "rows": 30,
+    "domain_lead": 15,
+    "adjacent_lead": 9,
+    "query_noise": 6,
+    "status": "PROBE_MATCH",
+    "boundary": "Manual metadata triage only. This does not prove any paper claim or replace source-body review."
+  },
+  "rows": [
+    {
+      "store": "arxiv-biomed-foundation",
+      "id": "2512.03307v1",
+      "class": "adjacent_lead",
+      "reason": "Tabular foundation models are relevant to clinical tabular data, but the title is not biomedical-specific."
+    },
+    {
+      "store": "arxiv-biomed-foundation",
+      "id": "2504.21336v3",
+      "class": "domain_lead",
+      "reason": "Biomedical image interpretation is directly in scope."
+    },
+    {
+      "store": "arxiv-biomed-foundation",
+      "id": "2403.00868v3",
+      "class": "domain_lead",
+      "reason": "Clinical foundation model and healthcare workflows are directly in scope."
+    },
+    {
+      "store": "arxiv-biomed-foundation",
+      "id": "1607.06358v2",
+      "class": "domain_lead",
+      "reason": "Systems-biology uncertainty analysis is directly relevant to biomedical modeling."
+    },
+    {
+      "store": "arxiv-biomed-foundation",
+      "id": "2602.02370v2",
+      "class": "domain_lead",
+      "reason": "Biomedical imaging uncertainty is directly in scope."
+    },
+    {
+      "store": "arxiv-biomed-foundation",
+      "id": "2607.01063v1",
+      "class": "query_noise",
+      "reason": "Software testing competition row, not biomedical despite query overlap."
+    },
+    {
+      "store": "arxiv-biomed-foundation",
+      "id": "2605.10877v1",
+      "class": "domain_lead",
+      "reason": "Clinical QA over EHRs is directly in scope."
+    },
+    {
+      "store": "arxiv-biomed-foundation",
+      "id": "2203.13906v1",
+      "class": "domain_lead",
+      "reason": "Biomedical and translational knowledge graph schema is directly in scope."
+    },
+    {
+      "store": "arxiv-robotics-lab",
+      "id": "2505.20503v2",
+      "class": "domain_lead",
+      "reason": "Embodied AI and service robotics are directly in scope."
+    },
+    {
+      "store": "arxiv-robotics-lab",
+      "id": "2309.06611v3",
+      "class": "adjacent_lead",
+      "reason": "Robotic application deployment infrastructure is useful but not a robotics capability claim."
+    },
+    {
+      "store": "arxiv-robotics-lab",
+      "id": "2511.23143v1",
+      "class": "domain_lead",
+      "reason": "LLM/logic-program generated MDPs for robotics are directly in scope."
+    },
+    {
+      "store": "arxiv-robotics-lab",
+      "id": "2407.06886v8",
+      "class": "domain_lead",
+      "reason": "Embodied AI survey is directly in scope."
+    },
+    {
+      "store": "arxiv-robotics-lab",
+      "id": "2512.03307v1",
+      "class": "adjacent_lead",
+      "reason": "Tabular foundation models may support robotics logs but are not robotics-specific."
+    },
+    {
+      "store": "arxiv-robotics-lab",
+      "id": "2605.10653v1",
+      "class": "domain_lead",
+      "reason": "Embodied AI, robotics, safety, and deployment are directly in scope."
+    },
+    {
+      "store": "arxiv-robotics-lab",
+      "id": "2104.08521v1",
+      "class": "domain_lead",
+      "reason": "Robot actions and embodied word embeddings are directly robotics-adjacent enough for source-body review."
+    },
+    {
+      "store": "arxiv-protein-design",
+      "id": "1607.06358v2",
+      "class": "adjacent_lead",
+      "reason": "Systems-biology uncertainty modeling is adjacent to protein design but not protein-design-specific."
+    },
+    {
+      "store": "arxiv-protein-design",
+      "id": "2607.01063v1",
+      "class": "query_noise",
+      "reason": "Software testing competition row, not protein design."
+    },
+    {
+      "store": "arxiv-protein-design",
+      "id": "1301.2528v1",
+      "class": "domain_lead",
+      "reason": "Virtual organism and medical-target discovery are systems-biology/protein-adjacent enough for review."
+    },
+    {
+      "store": "arxiv-protein-design",
+      "id": "2604.17070v2",
+      "class": "query_noise",
+      "reason": "Rip-current detection challenge is not protein design."
+    },
+    {
+      "store": "arxiv-protein-design",
+      "id": "2606.03948v1",
+      "class": "query_noise",
+      "reason": "Speech translation row, not protein design."
+    },
+    {
+      "store": "arxiv-protein-design",
+      "id": "2504.06806v1",
+      "class": "domain_lead",
+      "reason": "Protein stability prediction is directly in scope."
+    },
+    {
+      "store": "arxiv-protein-design",
+      "id": "2603.22728v1",
+      "class": "query_noise",
+      "reason": "Audio encoder challenge, not protein design."
+    },
+    {
+      "store": "arxiv-protein-design",
+      "id": "2207.07410v1",
+      "class": "domain_lead",
+      "reason": "AlphaFold and protein knots are directly protein-structure relevant."
+    },
+    {
+      "store": "arxiv-ai-scientist-biomed",
+      "id": "2606.29981v1",
+      "class": "adjacent_lead",
+      "reason": "AI scientist framing is relevant, but cybersecurity domain is not biomedical."
+    },
+    {
+      "store": "arxiv-ai-scientist-biomed",
+      "id": "2604.11487v1",
+      "class": "adjacent_lead",
+      "reason": "Robust AI-generated image detection is useful for provenance/safety, not biomedical automation itself."
+    },
+    {
+      "store": "arxiv-ai-scientist-biomed",
+      "id": "2601.16513v1",
+      "class": "adjacent_lead",
+      "reason": "Ethical AI governance is relevant to publication and risk boundaries, not biomedical proof claims."
+    },
+    {
+      "store": "arxiv-ai-scientist-biomed",
+      "id": "1607.06358v2",
+      "class": "adjacent_lead",
+      "reason": "Systems-biology uncertainty is useful context but not an AI-scientist automation paper."
+    },
+    {
+      "store": "arxiv-ai-scientist-biomed",
+      "id": "2602.21012v1",
+      "class": "adjacent_lead",
+      "reason": "AI safety report is useful risk context, not biomedical discovery evidence."
+    },
+    {
+      "store": "arxiv-ai-scientist-biomed",
+      "id": "2511.04583v4",
+      "class": "domain_lead",
+      "reason": "Autonomous scientific exploration is directly in scope."
+    },
+    {
+      "store": "arxiv-ai-scientist-biomed",
+      "id": "2604.17070v2",
+      "class": "query_noise",
+      "reason": "Rip-current detection challenge is not biomedical AI-scientist work."
+    }
+  ],
+  "promotion_rule": "Only domain_lead rows can enter official paper source-body review by default. Adjacent leads require a stated reason. Query-noise rows cannot support domain claims."
+}

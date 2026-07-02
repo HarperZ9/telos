@@ -1,0 +1,1722 @@
+Developers
+About
+Blog
+Help
+Developers
+NAV
+Python
+cURL
+NodeJS
+Privacy policy
+Cookie policy
+Terms of Use
+Contact
+REST API
+Introduction
+The Zenodo REST API currently supports:
+Deposit — upload and publishing of research outputs (identical to
+functionality available in the user interface).
+Records — search published records.
+Files — download/upload of files.
+Check out the Quickstart guide for an example on how to
+programmatically upload and publish your research outputs.
+The following REST APIs are currently in testing before we launch them in
+beta with full documentation:
+Communities - search communities.
+Funders — search for funders.
+Grants — search for grants.
+Licenses — search for licenses.
+You can have a sneak peek at the APIs in test from our root endpoint: https://zenodo.org/api/
+Quickstart - Upload
+This short guide will give a quick overview of how to upload and publish on
+Zenodo, and will be using either:
+Python together with the Requests package.
+Javascript together with the axios package.
+# Install 'requests' module for python
+pip install requests
+# Install 'axios' module for nodejs
+npm install axios
+First, make sure you have the
+Requests module
+installed for python or axios for nodeJS:
+python
+# Python 3.6.5
+# [GCC 4.8.1] on linux2
+# Type "help", "copyright", "credits" or "license" for more information.
+node
+// Welcome to Node.js v14.19.0.
+// Type ".help" for more information.
+Next, fire up a command prompt:
+import requests
+const axios = require('axios');
+Import the module to handle requests:
+import requests
+r = requests.get("https://zenodo.org/api/deposit/depositions")
+r.status_code
+# 401
+r.json()
+const axios = require('axios');
+axios.get("https://zenodo.org/api/deposit/depositions").then(response => {
+console.log(response);
+}).catch(error => {
+console.log(error.response.data);
+});
+{
+"message": "The server could not verify that you are authorized to access
+the URL requested. You either supplied the wrong credentials (e.g. a bad
+password), or your browser doesn't understand how to supply the credentials
+required.",
+"status": 401
+}
+We will try to access the API without an authentication token:
+All API access requires an access token, so
+create one.
+ACCESS_TOKEN = 'ChangeMe'
+headers = {'Authorization': f'Bearer {ACCESS_TOKEN}'}
+r = requests.get('https://zenodo.org/api/deposit/depositions',
+headers=headers)
+r.status_code
+# 200
+r.json()
+# []
+const ACCESS_TOKEN = 'ChangeMe'
+const requestConfig = {
+headers: {
+'Authorization': `Bearer ${ACCESS_TOKEN}`
+}
+}
+axios.get("https://zenodo.org/api/deposit/depositions", requestConfig).then(response => {
+console.log(response.status);
+// > 200
+console.log(response.data);
+// > []
+}).catch(error => {
+console.log(error.response.data);
+});
+Let’s try again (replace ACCESS_TOKEN with your newly created personal
+access token):
+Note, if you already uploaded something, the output will be different.
+headers = {
+"Content-Type": "application/json",
+"Authorization": f"Bearer {ACCESS_TOKEN}"
+}
+r = requests.post('https://sandbox.zenodo.org/api/deposit/depositions',
+json={},
+headers=headers)
+r.status_code
+# 201
+r.json()
+const requestConfig = {
+headers: {
+"Content-Type": "application/json",
+"Authorization": `Bearer ${ACCESS_TOKEN}`
+}
+}
+axios.post("https://zenodo.org/api/deposit/depositions", {}, requestConfig).then(response => {
+console.log(response.status);
+// 201
+console.log(response.data);
+}).catch(error => {
+console.log(error.response.data);
+});
+{
+"conceptrecid": "542200",
+"created": "2020-05-19T11:58:41.606998+00:00",
+"files": [],
+"id": 542201,
+"links": {
+"bucket": "https://zenodo.org/api/files/568377dd-daf8-4235-85e1-a56011ad454b",
+"discard": "https://zenodo.org/api/deposit/depositions/542201/actions/discard",
+"edit": "https://zenodo.org/api/deposit/depositions/542201/actions/edit",
+"files": "https://zenodo.org/api/deposit/depositions/542201/files",
+"html": "https://zenodo.org/deposit/542201",
+"latest_draft": "https://zenodo.org/api/deposit/depositions/542201",
+"latest_draft_html": "https://zenodo.org/deposit/542201",
+"publish": "https://zenodo.org/api/deposit/depositions/542201/actions/publish",
+"self": "https://zenodo.org/api/deposit/depositions/542201"
+},
+"metadata": {
+"prereserve_doi": {
+"doi": "10.5072/zenodo.542201",
+"recid": 542201
+}
+},
+"modified": "2020-05-19T11:58:41.607012+00:00",
+"owner": 12345,
+"record_id": 542201,
+"state": "unsubmitted",
+"submitted": false,
+"title": ""
+}
+Next, let’s create a new empty upload:
+Now, let’s upload a new file. We have recently released a new API, which is significantly more perfomant and supports much larger file sizes. While the older API supports 100MB per file, the new one has a limit of 50GB total in the record (and any given file), and up to 100 files in the record.
+bucket_url = r.json()["links"]["bucket"]
+curl -H "Authorization: Bearer $ACCESS_TOKEN" \
+https://zenodo.org/api/deposit/depositions/222761
+{ ...
+"links": {
+"bucket": "https://zenodo.org/api/files/568377dd-daf8-4235-85e1-a56011ad454b",
+...,
+},
+... }
+To use the new files API we will do a PUT request to the bucket link. The bucket is a folder-like object storing the files of our record. Our bucket URL will look like this: https://zenodo.org/api/files/568377dd-daf8-4235-85e1-a56011ad454b and can be found under the links key in our records metadata.
+'''
+This will stream the file located in '/path/to/your/file.dat' and store it in our bucket.
+The uploaded file will be named according to the last argument in the upload URL,
+'file.dat' in our case.
+'''
+$ curl --upload-file /path/to/your/file.dat \
+-H "Authorization: Bearer $ACCESS_TOKEN" \
+https://zenodo.org/api/files/568377dd-daf8-4235-85e1-a56011ad454b/file.dat
+{ ... }
+''' New API '''
+filename = "my-file.zip"
+path = "/path/to/%s" % filename
+headers = {'Authorization': f'Bearer {ACCESS_TOKEN}'}
+'''
+The target URL is a combination of the bucket link with the desired filename
+seperated by a slash.
+'''
+with open(path, "rb") as fp:
+r = requests.put(
+"%s/%s" % (bucket_url, filename),
+data=fp,
+headers=headers,
+)
+r.json()
+const fs = require('fs');
+const axios = require('axios');
+const filePath = '<FILE_PATH>'; // Replace with file path
+const bucketURL = '<BUCKET_URL>'; // Replace with bucket url
+const fileName = '<FILE_NAME>'; // Replace with file name
+const token = 'TOKEN'; // Replace with token value
+// Create a form
+const form = new FormData();
+// Read file as a stream
+const stream = fs.createReadStream(filePath);
+form.append('file', stream);
+// Create request
+let url = `${bucketURL}/${fileName}`;
+let headers = {
+'Content-type': 'application/zip',
+'Authorization': `Bearer ${token}`
+}
+const requestConfig = {
+data: {
+name: fileName,
+...form
+},
+headers: headers
+}
+axios.put(url, requestConfig).then(response => {
+console.log(response.data);
+}).catch(error => {
+console.log(error.response.data);
+});
+{
+"key": "my-file.zip",
+"mimetype": "application/zip",
+"checksum": "md5:2942bfabb3d05332b66eb128e0842cff",
+"version_id": "38a724d3-40f1-4b27-b236-ed2e43200f85",
+"size": 13264,
+"created": "2020-02-26T14:20:53.805734+00:00",
+"updated": "2020-02-26T14:20:53.811817+00:00",
+"links": {
+"self": "https://zenodo.org/api/files/44cc40bc-50fd-4107-b347-00838c79f4c1/dummy_example.pdf",
+"version": "https://zenodo.org/api/files/44cc40bc-50fd-4107-b347-00838c79f4c1/dummy_example.pdf?versionId=38a724d3-40f1-4b27-b236-ed2e43200f85",
+"uploads": "https://zenodo.org/api/files/44cc40bc-50fd-4107-b347-00838c79f4c1/dummy_example.pdf?uploads"
+},
+"is_head": true,
+"delete_marker": false
+}
+'''
+Old API
+Get the deposition id from the previous response
+'''
+deposition_id = r.json()['id']
+data = {'name': 'myfirstfile.csv'}
+files = {'file': open('/path/to/myfirstfile.csv', 'rb')}
+headers = {'Authorization': f'Bearer {ACCESS_TOKEN}'}
+r = requests.post('https://zenodo.org/api/deposit/depositions/%s/files' % deposition_id,
+headers=headers, data=data,
+files=files)
+r.status_code
+# 201
+r.json()
+// Old API documentation not available for javascript / NodeJS
+{
+"checksum": "2b70e04bb31f2656ce967dc07103297f",
+"name": "myfirstfile.csv",
+"id": "eb78d50b-ecd4-407a-9520-dfc7a9d1ab2c",
+"filesize": "27"
+}
+Here are the instructions for the old files API:
+data = {
+'metadata': {
+'title': 'My first upload',
+'upload_type': 'poster',
+'description': 'This is my first upload',
+'creators': [{'name': 'Doe, John',
+'affiliation': 'Zenodo'}]
+}
+}
+headers = {
+'Content-Type': 'application/json',
+'Authorization': f'Bearer {ACCESS_TOKEN}'
+}
+r = requests.put('https://zenodo.org/api/deposit/depositions/%s' % deposition_id,
+data=json.dumps(data),
+headers=headers)
+r.status_code
+# 200
+// Old API documentation not available for javascript / NodeJS
+Last thing missing, is just to add some metadata:
+headers = {'Authorization': f'Bearer {ACCESS_TOKEN}'}
+r = requests.post('https://zenodo.org/api/deposit/depositions/%s/actions/publish' % deposition_id,
+headers=headers)
+r.status_code
+# 202
+// Old API documentation not available for javascript / NodeJS
+And we’re ready to publish:
+Don’t execute this last step - it will put your test upload straight online.
+Testing
+We provide a sandbox environment where you can test your API integration
+during development. The sandbox environment is available at
+https://sandbox.zenodo.org.
+Please note the following:
+The sandbox environment can be cleaned at anytime.
+The sandbox environment requires a separate registration and separate access token from the ones used on https://zenodo.org.
+The sandbox environment will issue test DOIs using the 10.5072 prefix
+instead of Zenodo’s normal prefix (10.5281).
+Versioning
+The REST API is versioned. We strive not to make backward incompatible changes
+to the API, but if we do, we release a new version. Changes to the
+API are documented on this page, and advance notification is given on our
+Twitter account.
+Authentication
+All API requests must be authenticated and over HTTPS. Any request over plain
+HTTP will fail. We support authentication with via OAuth 2.0.
+Creating a personal access token
+Register for a Zenodo account if you don’t
+already have one.
+Go to your Applications,
+to create a new token.
+Select the OAuth scopes you need (for the quick start tutorial you need
+deposit:write and deposit:actions).
+Do not share your personal access token with anyone else, and only use it over
+HTTPS.
+Using access tokens
+An access token must be included in all requests. The recommended and more secure method is using HTTP headers:
+GET /api/deposit/depositions
+Authorization: Bearer <ACCESS_TOKEN>
+Recommended: as HTTP request header (Authorization):
+GET /api/deposit/depositions?access_token=<ACCESS_TOKEN>
+or as URL parameter (named access_token), though this is less secure:
+Scopes
+Scopes assigns permissions to your access token to limit access to data and
+actions in Zenodo. The following scopes exist:
+Name
+Description
+deposit:write
+Grants write access to depositions, but does not allow publishing the upload.
+deposit:actions
+Grants access to publish, edit and discard edits for depositions.
+Requests
+The base URL of the API is https://zenodo.org/api/.
+All POST and PUT request bodies must be JSON encoded, and must have content
+type of application/json unless specified otherwise in the specific resource
+(e.g. in the case of file uploads). The API will return a 415 error (see HTTP
+status codes and error responses) if the wrong
+content type is provided.
+Responses
+{
+"field1": "value",
+"...": "..."
+}
+All response bodies are JSON encoded (UTF-8 encoded). A single resource is
+represented as a JSON object:
+[
+{
+"field1": "value",
+"...": "..."
+}
+"..."
+]
+A collection of resources is represented as a JSON array of objects:
+YYYY-MM-DDTHH:MM:SS+00:00
+Timestamps are in UTC and formatted according to ISO
+8601:
+HTTP status codes
+We use the following HTTP status codes to indicate success or failure of a
+request.
+Code
+Name
+Description
+200
+OK
+Request succeeded. Response included. Usually sent for GET/PUT/PATCH requests.
+201
+Created
+Request succeeded. Response included. Usually sent for POST requests.
+202
+Accepted
+Request succeeded. Response included. Usually sent for POST requests, where background processing is needed to fulfill the request.
+204
+No Content
+Request succeeded. No response included. Usually sent for DELETE requests.
+400
+Bad Request
+Request failed. Error response included.
+401
+Unauthorized
+Request failed, due to an invalid access token. Error response included.
+403
+Forbidden
+Request failed, due to missing authorization (e.g. deleting an already submitted upload or missing scopes for your access token). Error response included.
+404
+Not Found
+Request failed, due to the resource not being found. Error response included.
+405
+Method Not Allowed
+Request failed, due to unsupported HTTP method. Error response included.
+409
+Conflict
+Request failed, due to the current state of the resource (e.g. edit a deopsition which is not fully integrated). Error response included.
+415
+Unsupported Media Type
+Request failed, due to missing or invalid request header Content-Type. Error response included.
+429
+Too Many Requests
+Request failed, due to rate limiting. Error response included.
+500
+Internal Server Error
+Request failed, due to an internal server error. Error response NOT included. Don’t worry, Zenodo admins have been notified and will be dealing with the problem ASAP.
+Errors
+Error responses for 400 series errors (e.g. 400, 401, 403, …) are returned as
+a JSON object with two attributes message and status (HTTP status code), and
+possibly an attribute errors with a list of more detailed errors.
+{
+"message": "Deposition not found",
+"status": 404
+}
+For more complex errors, we include the attribute errors, a JSON array of
+objects, each with the attributes message (with a human-readable explanation
+of the error), and possibly field (with the “path” to field that contains
+the error).
+Example of an error message with detailed errors:
+{
+"message": "Validation error",
+"status": 400,
+"errors": [
+{"field": "metadata.access_right", "message": "Not a valid choice"},
+{"field": "metadata.creators.0.name", "message": "Name is required."},
+{"field": "non_existent", "message": "Unknown field name."}
+]
+}
+Entities
+Depositions
+Representation
+The Deposition resource is used for uploading and editing records on Zenodo.
+Deposit
+Field
+Description
+created
+timestamp
+Creation time of deposition (in ISO8601 format).
+doi
+string
+Digital Object Identifier (DOI). When you publish your deposition, we register a DOI in DataCite for your upload, unless you manually provided us with one. This field is only present for published depositions.
+doi_url
+url
+Persistent link to your published deposition. This field is only present for published depositions.
+files
+array
+A list of deposition files resources.
+id
+integer
+Deposition identifier
+metadata
+object
+A deposition metadata resource
+modified
+timestamp
+Last modification time of deposition (in ISO8601 format).
+owner
+integer
+User identifier of the owner of the deposition.
+record_id
+integer
+Record identifier. This field is only present for published depositions.
+record_url
+url
+URL to public version of record for this deposition. This field is only present for published depositions.
+state
+string
+One of the values:
+* inprogress: Deposition metadata can be updated. If deposition is also unsubmitted (see submitted) files can be updated as well.
+* done: Deposition has been published.
+* error: Deposition is in an error state - contact our support.
+submitted
+bool
+True if the deposition has been published, False otherwise.
+title
+string
+Title of deposition (automatically set from metadata). Defaults to empty string.
+Deposit metadata
+Attribute
+Required
+Description
+upload_type
+string
+Yes
+Controlled vocabulary:
+* publication: Publication
+* poster: Poster
+* presentation: Presentation
+* dataset: Dataset
+* image: Image
+* video: Video/Audio
+* software: Software
+* lesson: Lesson
+* physicalobject: Physical object
+* other: Other
+publication_type
+string
+Yes, if upload_type is "publication".
+Controlled vocabulary:
+* annotationcollection: Annotation collection
+* book: Book
+* section: Book section
+* conferencepaper: Conference paper
+* datamanagementplan: Data management plan
+* article: Journal article
+* patent: Patent
+* preprint: Preprint
+* deliverable: Project deliverable
+* milestone: Project milestone
+* proposal: Proposal
+* report: Report
+* softwaredocumentation: Software documentation
+* taxonomictreatment: Taxonomic treatment
+* technicalnote: Technical note
+* thesis: Thesis
+* workingpaper: Working paper
+* other: Other
+image_type
+string
+Yes, if upload_type is "image".
+Controlled vocabulary:
+* figure: Figure
+* plot: Plot
+* drawing: Drawing
+* diagram: Diagram
+* photo: Photo
+* other: Other
+publication_date
+string
+Yes
+Date of publication in ISO8601 format (YYYY-MM-DD). Defaults to current date.
+title
+string
+Yes
+Title of deposition.
+creators
+array of objects
+Yes
+The creators/authors of the deposition. Each array element is an object with the attributes:
+* name: Name of creator in the format Family name, Given names
+* affiliation: Affiliation of creator (optional).
+* orcid: ORCID identifier of creator (optional).
+* gnd: GND identifier of creator (optional).
+Example: [{'name':'Doe, John', 'affiliation': 'Zenodo'}, {'name':'Smith, Jane', 'affiliation': 'Zenodo', 'orcid': '0000-0002-1694-233X'}, {'name': 'Kowalski, Jack', 'affiliation': 'Zenodo', 'gnd': '170118215'}]
+description
+string (allows HTML)
+Yes
+Abstract or description for deposition.
+access_right
+string
+Yes
+Controlled vocabulary:
+* open: Open Access
+* embargoed: Embargoed Access
+* restricted: Restricted Access
+* closed: Closed Access
+Defaults to open.
+license
+string
+Yes, if access_right is "open" or "embargoed".
+Controlled vocabulary:
+The selected license applies to all files in this deposition, but not to the metadata which is licensed under Creative Commons Zero. You can find the available license IDs via our /api/licenses endpoint. Defaults to cc-zero for datasets and cc-by for everything else.
+embargo_date
+date
+Yes, if access_right is "embargoed".
+When the deposited files will be made automatically made publicly available by the system. Defaults to current date.
+access_conditions
+string (allows HTML)
+Yes, if access_right is "restricted".
+Specify the conditions under which you grant users access to the files in your upload. User requesting access will be asked to justify how they fulfil the conditions. Based on the justification, you decide who to grant/deny access. You are not allowed to charge users for granting access to data hosted on Zenodo.
+doi
+string
+No
+Digital Object Identifier. Did a publisher already assign a DOI to your deposited files? If not, leave the field empty and we will register a new DOI for you when you publish. A DOI allow others to easily and unambiguously cite your deposition.
+prereserve_doi
+object/bool
+No
+Set to true, to reserve a Digital Object Identifier (DOI). The DOI is automatically generated by our system and cannot be changed. Also, The DOI is not registered with DataCite until you publish your deposition, and thus cannot be used before then. Reserving a DOI is useful, if you need to include it in the files you upload, or if you need to provide a dataset DOI to your publisher but not yet publish your dataset. The response from the REST API will include the reserved DOI.
+keywords
+array of strings
+No
+Free form keywords for this deposition.
+Example: ["Keyword 1", "Keyword 2"]
+notes
+string (allows HTML)
+No
+Additional notes.
+related_identifiers
+array of objects
+No
+Persistent identifiers of related publications and datasets. Supported identifiers include: DOI, Handle, ARK, PURL, ISSN, ISBN, PubMed ID, PubMed Central ID, ADS Bibliographic Code, arXiv, Life Science Identifiers (LSID), EAN-13, ISTC, URNs and URLs. Each array element is an object with the attributes:
+* identifier: The persistent identifier
+* relation: Relationship. Controlled vocabulary (isCitedBy, cites, isSupplementTo, isSupplementedBy, isContinuedBy, continues, isDescribedBy, describes, hasMetadata, isMetadataFor, isNewVersionOf, isPreviousVersionOf, isPartOf, hasPart, isReferencedBy, references, isDocumentedBy, documents, isCompiledBy, compiles, isVariantFormOf, isOriginalFormof, isIdenticalTo, isAlternateIdentifier, isReviewedBy, reviews, isDerivedFrom, isSourceOf, requires, isRequiredBy, isObsoletedBy, obsoletes).
+* resource_type: Type of the related resource (based on the upload_type, publication_type, and image_type fields).
+Example: [{'relation': 'isSupplementTo', 'identifier':'10.1234/foo'}, {'relation': 'cites', 'identifier':'https://doi.org/10.1234/bar', 'resource_type': 'image-diagram'}]. Note the identifier type (e.g. DOI) is automatically detected, and used to validate and normalize the identifier into a standard form.
+contributors
+array of objects
+No
+The contributors of the deposition (e.g. editors, data curators, etc.). Each array element is an object with the attributes:
+* name: Name of creator in the format Family name, Given names
+* type: Contributor type. Controlled vocabulary (ContactPerson, DataCollector, DataCurator, DataManager,Distributor, Editor, HostingInstitution, Producer, ProjectLeader, ProjectManager, ProjectMember, RegistrationAgency, RegistrationAuthority, RelatedPerson, Researcher, ResearchGroup, RightsHolder,Supervisor, Sponsor, WorkPackageLeader, Other)
+* affiliation: Affiliation of creator (optional).
+* orcid: ORCID identifier of creator (optional).
+* gnd: GND identifier of creator (optional).
+Example: [{'name':'Doe, John', 'affiliation': 'Zenodo', 'type': 'Editor' }, ...]
+references
+array of strings
+No
+List of references.
+Example: ["Doe J (2014). Title. Publisher. DOI", "Smith J (2014). Title. Publisher. DOI"]
+communities
+array of objects
+No
+List of communities you wish the deposition to appear. The owner of the community will be notified, and can either accept or reject your request. Each array element is an object with the attributes:
+* identifier: Community identifier
+Example: [{'identifier':'ecfunded'}]
+grants
+array of objects
+No
+List of OpenAIRE-supported grants, which have funded the research for this deposition. Each array element is an object with the attributes:
+* id: grant ID.
+Example: [{'id':'283595'}] (European Commission grants only)
+or funder DOI-prefixed: [{'id': '10.13039/501100000780::283595'}] (All grants, recommended)
+Accepted funder DOI prefixes:
+Academy of Finland: 10.13039/501100002341
+Agence Nationale de la Recherche: 10.13039/501100001665
+Aligning Science Across Parkinson’s: 10.13039/100018231
+Australian Research Council: 10.13039/501100000923
+Austrian Science Fund: 10.13039/501100002428
+Canadian Institutes of Health Research: 10.13039/501100000024
+European Commission: 10.13039/501100000780
+European Environment Agency: 10.13039/501100000806
+Fundação para a Ciência e a Tecnologia: 10.13039/501100001871
+Hrvatska Zaklada za Znanost: 10.13039/501100004488
+Institut National Du Cancer: 10.13039/501100006364
+Ministarstvo Prosvete, Nauke i Tehnološkog Razvoja: 10.13039/501100004564
+Ministarstvo Znanosti, Obrazovanja i Sporta: 10.13039/501100006588
+National Health and Medical Research Council: 10.13039/501100000925
+National Institutes of Health: 10.13039/100000002
+National Science Foundation: 10.13039/100000001
+Natural Sciences and Engineering Research Council of Canada: 10.13039/501100000038
+Nederlandse Organisatie voor Wetenschappelijk Onderzoek: 10.13039/501100003246
+Research Councils: 10.13039/501100000690
+Schweizerischer Nationalfonds zur Förderung der wissenschaftlichen Forschung: 10.13039/501100001711
+Science Foundation Ireland: 10.13039/501100001602
+Social Science Research Council: 10.13039/100001345
+Templeton World Charity Foundation: 10.13039/501100011730
+Türkiye Bilimsel ve Teknolojik Araştırma Kurumu: 10.13039/501100004410
+UK Research and Innovation: 10.13039/100014013
+Wellcome Trust: 10.13039/100004440
+journal_title
+string
+No
+Journal title, if deposition is a published article.
+journal_volume
+string
+No
+Journal volume, if deposition is a published article.
+journal_issue
+string
+No
+Journal issue, if deposition is a published article.
+journal_pages
+string
+No
+Journal pages, if deposition is a published article.
+conference_title
+string
+No
+Title of conference (e.g. 20th International Conference on Computing in High Energy and Nuclear Physics).
+conference_acronym
+string
+No
+Acronym of conference (e.g. CHEP'13).
+conference_dates
+string
+No
+Dates of conference (e.g. 14-18 October 2013). Conference title or acronym must also be specified if this field is specified.
+conference_place
+string
+No
+Place of conference in the format city, country (e.g. Amsterdam, The Netherlands). Conference title or acronym must also be specified if this field is specified.
+conference_url
+string
+No
+URL of conference (e.g. http://www.chep2013.org/).
+conference_session
+string
+No
+Number of session within the conference (e.g. VI).
+conference_session_part
+string
+No
+Number of part within a session (e.g. 1).
+imprint_publisher
+string
+No
+Publisher of a book/report/chapter
+imprint_isbn
+string
+No
+ISBN of a book/report
+imprint_place
+string
+No
+Place of publication of a book/report/chapter in the format city, country.
+partof_title
+string
+No
+Title of book for chapters
+partof_pages
+string
+No
+Pages numbers of book
+thesis_supervisors
+array of objects
+No
+Supervisors of the thesis. Same format as for creators.
+thesis_university
+string
+No
+Awarding university of thesis.
+subjects
+array of objects
+No
+Specify subjects from a taxonomy or controlled vocabulary. Each term must be uniquely identified (e.g. a URL). For free form text, use the keywords field. Each array element is an object with the attributes:
+* term: Term from taxonomy or controlled vocabulary.
+* identifier: Unique identifier for term.
+* scheme: Persistent identifier scheme for id (automatically detected).
+Example: [{"term": "Astronomy", "identifier": "http://id.loc.gov/authorities/subjects/sh85009003", "scheme": "url"}]
+version
+string
+No
+Version of the resource. Any string will be accepted, however the suggested format is a semantically versioned tag (see more details on semantic versioning at semver.org)
+Example: 2.1.5
+language
+string
+No
+Specify the main language of the record as ISO 639-2 or 639-3 code, see Library of Congress ISO 639 codes list.
+Example: eng
+locations
+array of objects
+No
+List of locations
+* lat (double): latitude
+* lon (double): longitude
+* place (string): place’s name (required)
+* description (string): place’s description (optional)
+Example: [{"lat": 34.02577, "lon": -118.7804, "place": "Los Angeles"}, {"place": "Mt.Fuji, Japan", "description": "Sample found 100ft from the foot of the mountain."}]
+dates
+array of objects
+No
+List of date intervals
+* start (ISO date string): start date (*)
+* end (ISO date string): end date (*)
+* type (Collected, Valid, Withdrawn): The interval’s type (required)
+* description (string): The interval’s description (optional)
+(*) Note that you have to specify at least a start or end date. For an exact date, use the same value for both start and end.
+Example: [{"start": "2018-03-21", "end": "2018-03-25", "type": "Collected", "description": "Specimen A5 collection period."}]
+method
+string (allows HTML)
+No
+The methodology employed for the study or research.
+For string fields that allow HTML (e.g. description, notes), for security reasons, only the following tags are accepted:
+a,
+abbr,
+acronym,
+b,
+blockquote,
+br,
+code,
+caption,
+div,
+em,
+i,
+li,
+ol,
+p,
+pre,
+span,
+strike,
+strong,
+sub,
+table,
+caption,
+tbody,
+thead,
+th,
+td,
+tr,
+u,
+ul.
+List
+List all depositions for the currently authenticated user.
+import requests
+response = requests.get('/api/deposit/depositions',
+params={'q': 'my title'},
+headers={'Authorization': f'Bearer {ACCESS_TOKEN}'})
+print(response.json())
+curl -i -H "Authorization: Bearer ACCESS_TOKEN" /api/deposit/depositions/
+HTTP Request
+GET /api/deposit/depositions
+Query arguments
+Parameter
+Required
+Description
+q
+string
+optional
+Search query (using Elasticsearch query string syntax - note that some characters have special meaning here, including /, which is also present in full DOIs).
+status
+string
+optional
+Filter result based on deposit status (either draft or published)
+sort
+string
+optional
+Sort order (bestmatch or mostrecent). Prefix with minus to change form ascending to descending (e.g. -mostrecent).
+page
+integer
+optional
+Page number for pagination.
+size
+integer
+optional
+Number of results to return per page. Maximum 100.
+all_versions
+integer/string
+optional
+Show (true or 1) or hide (false or 0) all versions of deposits.
+Success Response
+Code: 200 OK
+Body: an array of deposition resources.
+Error Response
+See HTTP status codes (400 and 500 series errors) and
+error responses.
+Create
+Create a new deposition resource.
+curl -i -H "Content-Type: application/json" -H "Authorization: Bearer ACCESS_TOKEN" -X POST
+--data '{}' /api/deposit/depositions/
+# or
+curl -i -H "Content-Type: application/json" -H "Authorization: Bearer ACCESS_TOKEN" -X POST
+--data '{"metadata": {"title": "My first upload", "upload_type": "poster", "description": "This is my first upload", "creators": [{"name": "Doe, John", "affiliation": "Zenodo"}]}}' /api/deposit/depositions/
+import json
+import requests
+url = "/api/deposit/depositions/"
+headers = {"Content-Type": "application/json", "Authorization": f"Bearer {ACCESS_TOKEN}"}
+r = requests.post(url, data="{}", headers=headers)
+HTTP Request
+POST /api/deposit/depositions
+Request headers
+Content-Type: application/json
+Data
+An empty JSON object {} or a deposition metadata
+resource. Example: {"metadata": {"upload_type": "presentation" } }
+Scopes
+deposit:write
+Success Response
+Code: 201 Created
+Body: a deposition resource.
+Error Response
+See HTTP status codes (400 and 500 series errors) and
+error responses.
+Retrieve
+Retrieve a single deposition resource.
+curl -i -H "Authorization: Bearer ACCESS_TOKEN" /api/deposit/depositions/1234
+import requests
+r = requests.get("/api/deposit/depositions/1234", headers={'Authorization': f'Bearer {ACCESS_TOKEN}'})
+HTTP Request
+GET /api/deposit/depositions/:id
+Success response
+Code: 200 OK
+Body: a deposition resource.
+Error response
+See HTTP status codes (400 and 500 series errors) and
+error responses. |
+Update
+Update an existing deposition resource.
+curl -i -H "Content-Type: application/json" -H "Authorization: Bearer ACCESS_TOKEN" -X PUT
+--data '{"metadata": {"title": "My first upload", "upload_type": "poster", "description": "This is my first upload", "creators": [{"name": "Doe, John", "affiliation": "Zenodo"}]}}' https://zenodo.org/api/deposit/depositions/1234
+import json
+import requests
+data = {
+"metadata": {
+"title": "My first upload",
+"upload_type": "poster",
+"description": "This is my first upload",
+"creators": [
+{"name": "Doe, John", "affiliation": "Zenodo"}
+]
+}
+}
+url = "https://zenodo.org/api/deposit/depositions/1234"
+headers = {"Content-Type": "application/json", "Authorization": f"Bearer {ACCESS_TOKEN}"}
+r = requests.put(url, data=json.dumps(data), headers=headers)
+HTTP Request
+PUT /api/deposit/depositions/:id
+Request headers
+Content-Type: application/json
+Scopes
+deposit:write
+{
+"metadata": {
+"upload_type": "presentation",
+"...": "..."
+}
+}
+Data parameters
+A deposition metadata resource.
+Success response
+Code: 200 OK
+Body: a deposition resource.
+Error response
+See HTTP status codes (400 and 500 series errors) and
+error responses.
+Delete
+Delete an existing deposition resource. Note, only unpublished depositions may
+be deleted.
+curl -i -H "Authorization: Bearer ACCESS_TOKEN" https://zenodo.org/api/deposit/depositions/1234 -X DELETE
+import requests
+r = requests.delete('https://zenodo.org/api/deposit/depositions/1234',
+headers={'Authorization': f'Bearer {ACCESS_TOKEN}'})
+HTTP Request
+DELETE /api/deposit/depositions/:id
+Scopes
+deposit:write
+Success Response
+Code: 201 Created
+Body: Empty.
+Error Response
+404 Not found: Deposition does not exist.
+403 Forbidden: Deleting an already published deposition.
+See also HTTP status codes (400 and 500 series errors) and
+error responses.
+Deposition files
+Heads up! We will be launching a new file API which is significant more
+performant than the current API and which supports much larger file sizes.
+The current API supports 100MB per file, the new supports 50GB per file.
+Representation
+The Deposition file resource is used for uploading and editing files of a
+deposition on Zenodo.
+Deposition File
+Attribute
+Description
+id
+string
+Deposition file identifier
+filename
+string
+Name of file
+filesize
+integer
+Size of file in bytes
+checksum
+string
+MD5 checksum of file, computed by our system. This allows you to check the integrity of the uploaded file.
+List
+List all deposition files for a given deposition.
+curl -i -H "Authorization: Bearer ACCESS_TOKEN" https://zenodo.org/api/deposit/depositions/1234/files
+import requests
+r = requests.get('https://zenodo.org/api/deposit/depositions/1234/files',
+headers={'Authorization': f'Bearer {ACCESS_TOKEN}'})
+HTTP Request
+GET /api/deposit/depositions/:id/files
+Success response
+Code: 200 OK
+Body: an array of deposition file resources.
+Error response
+See HTTP status codes (400 and 500 series errors) and
+error responses.
+Create
+Upload a new file.
+curl -i -H "Authorization: Bearer ACCESS_TOKEN" https://zenodo.org/api/deposit/depositions/1234/files
+-F name=myfirstfile.csv
+-F file=@path/to/local_file.csv
+import json
+import requests
+url = 'https://zenodo.org/api/deposit/depositions/1234/files'
+headers = {'Authorization': f'Bearer {ACCESS_TOKEN}'}
+data = {'name': 'myfirstfile.csv'}
+files = {'file': open('path/to/local_file.csv', 'rb')}
+r = requests.post(url, data=data, files=files, headers=headers)
+HTTP Request
+POST /api/deposit/depositions/:id/files
+Request headers
+Content-Type: multipart/form-data
+Scopes
+deposit:write
+Success response
+Code: 201 Created
+Body: a deposition file resource.
+Error response
+See HTTP status codes (400 and 500 series errors) and
+error responses.
+Sort
+Sort the files for a deposition. By default, the first file is shown in the file
+preview.
+curl -i -H "Authorization: Bearer ACCESS_TOKEN" https://zenodo.org/api/deposit/depositions/1234/files -X PUT
+-H "Content-Type: application/json"
+--data '[{"id":"21fedcba-9876-5432-1fed-cba987654321"}, {"id":"12345678-9abc-def1-2345-6789abcdef12"}]'
+import json
+import requests
+url = 'https://zenodo.org/api/deposit/depositions/1234/files'
+headers = {"Content-Type": "application/json", "Authorization": f"Bearer {ACCESS_TOKEN}"}
+data = [{'id': '21fedcba-9876-5432-1fed-cba987654321'},
+{'id': '12345678-9abc-def1-2345-6789abcdef12'}]
+r = requests.put(url, data=json.dumps(data), headers=headers)
+HTTP Request
+PUT /api/deposit/depositions/:id/files
+Request headers
+Content-Type: application/json
+Scopes
+deposit:write
+Data
+A JSON array of partial deposition file resources with only
+the id attribute. Example:
+[
+{"id": "<file_id_1>"},
+{"id": "<file_id_2>"},
+"..."
+]
+Success response
+Code: 200 OK
+Body: an array of deposition file resources.
+Error response
+See HTTP status codes (400 and 500 series errors) and
+error responses.
+Retrieve
+Retrieve a single deposition file.
+curl -i -H "Authorization: Bearer ACCESS_TOKEN" https://zenodo.org/api/deposit/depositions/1234/files/12345678-9abc-def1-2345-6789abcdef12
+import requests
+r = requests.get('https://zenodo.org/api/deposit/depositions/1234/files/12345678-9abc-def1-2345-6789abcdef12',
+headers={'Authorization': f'Bearer {ACCESS_TOKEN}'})
+HTTP Request
+GET /api/deposit/depositions/:id/files/:file_id
+Success Response
+Code: 200 OK
+Body: a deposition file resource.
+Error response
+See HTTP status codes (400 and 500 series errors) and
+error responses.
+Update
+Update a deposition file resource. Currently the only use is renaming an already
+uploaded file. If you one to replace the actual file, please delete the file and
+upload a new file.
+curl -i -H "Authorization: Bearer ACCESS_TOKEN" https://zenodo.org/api/deposit/depositions/1234/files/21fedcba-9876-5432-1fed-cba987654321 -X PUT
+-H "Content-Type: application/json"
+--data '{"filename": "someothername.csv"}'
+import json
+import requests
+url = 'https://zenodo.org/api/deposit/depositions/1234/files/21fedcba-9876-5432-1fed-cba987654321'
+headers = {"Content-Type": "application/json", "Authorization": f"Bearer {ACCESS_TOKEN}"}
+data = {"name": "someothername.csv"}
+r = requests.put(url, data=json.dumps(data), headers=headers)
+HTTP Request
+PUT /api/deposit/depositions/:id/files/:file_id
+Request headers
+Content-Type: application/json
+Scopes
+deposit:write
+Data
+A partial deposition file resources with only the
+filename attributes. Example:
+{
+"name": "<new_file_name>"
+}
+Success response
+Code: 200 OK
+Body: a deposition file resource.
+Error response
+See HTTP status codes (400 and 500 series errors) and
+error responses.
+Delete
+Delete an existing deposition file resource. Note, only deposition files for
+unpublished depositions may be deleted.
+curl -i -H "Authorization: Bearer ACCESS_TOKEN" -X DELETE https://zenodo.org/api/deposit/depositions/1234/files/21fedcba-9876-5432-1fed-cba987654321
+import requests
+r = requests.delete('https://zenodo.org/api/deposit/depositions/1234/files/21fedcba-9876-5432-1fed-cba987654321',
+headers={'Authorization': f'Bearer {ACCESS_TOKEN}'})
+HTTP Request
+DELETE /api/deposit/depositions/:id/files/:file_id
+Scopes
+deposit:write
+Success response
+Code: 204 No Content
+Body: Empty.
+Error response
+404 Not found: Deposition file does not exist.
+403 Forbidden: Deleting an already published deposition.
+See also HTTP status codes (400 and 500 series errors) and
+error responses.
+Deposition actions
+Publish
+Publish a deposition. Note, once a deposition is published, you can no longer
+delete it.
+curl -i -X POST -H "Authorization: Bearer ACCESS_TOKEN" \
+https://zenodo.org/api/deposit/depositions/1234/actions/publish
+import requests
+headers = {'Authorization': f'Bearer {ACCESS_TOKEN}'}
+r = requests.post('https://zenodo.org/api/deposit/depositions/1234/actions/publish',
+headers=headers)
+HTTP Request
+POST /api/deposit/depositions/:id/actions/publish
+Scopes
+deposit:actions
+Success response
+Code: 202 Accepted
+Body: a deposition resource.
+Error response
+See HTTP status codes (400 and 500 series errors) and
+error responses.
+Edit
+Unlock already submitted deposition for editing.
+curl -i -H "Authorization: Bearer ACCESS_TOKEN" -X POST https://zenodo.org/api/deposit/depositions/1234/actions/edit
+import requests
+r = requests.post('https://zenodo.org/api/deposit/depositions/1234/actions/edit',
+headers={'Authorization': f'Bearer {ACCESS_TOKEN}'})
+HTTP Request
+POST /api/deposit/depositions/:id/actions/edit
+Scopes
+deposit:actions
+Success response
+Code: 201 Created
+Body: a deposition resource.
+Error response
+400 Bad Request: Deposition state does not allow for editing (e.g.
+depositions in state inprogress).
+409 Conflict: Deposition is in the process of being integrated, please wait
+5 minutes before trying again.
+See HTTP status codes (400 and 500 series errors) and
+error responses.
+Discard
+Discard changes in the current editing session.
+curl -i -X POST -H "Authorization: Bearer ACCESS_TOKEN" \
+https://zenodo.org/api/deposit/depositions/1234/actions/discard
+import requests
+headers = {'Authorization': f'Bearer {ACCESS_TOKEN}'}
+r = requests.post('https://zenodo.org/api/deposit/depositions/1234/actions/discard',
+headers=headers)
+HTTP Request
+POST /api/deposit/depositions/:id/actions/discard
+Scopes
+deposit:actions
+Success response
+Code: 201 Created
+Body: a deposition resource.
+Error response
+400 Bad Request: Deposition is not being edited.
+See HTTP status codes (400 and 500 series errors) and
+error responses.
+New version
+Create a new version of a deposition.
+This action will create a new deposit, which will be a snapshot of the current resouce, inheriting the metadata as well as snapshot of files.
+The new version deposit will have a state similar to a new, unpublished deposit, most importantly its files will be modifiable as for a new deposit.
+Only one unpublished new version deposit can be available at any moment, i.e.: calling new version action multiple times will have no effect, as long as the resulting new version deposit from the first call is not published or deleted.
+NOTES:
+- The response body of this action is NOT the new version deposit, but the original resource.
+The new version deposition can be accessed through the "latest_draft" under "links" in the response body.
+- The id used to create this new version has to be the id of the latest version. It is not possible to use the global id that references all the versions.
+curl -i -X POST -H "Authorization: Bearer ACCESS_TOKEN" \
+https://zenodo.org/api/deposit/depositions/1234/actions/newversion
+import requests
+headers = {'Authorization': f'Bearer {ACCESS_TOKEN}'}
+r = requests.post('https://zenodo.org/api/deposit/depositions/1234/actions/newversion',
+headers=headers)
+HTTP Request
+POST /api/deposit/depositions/:id/actions/newversion
+Scopes
+deposit:actions
+Success response
+Code: 201 Created
+Body: a deposition resource.
+Error response
+See HTTP status codes (400 and 500 series errors) and
+error responses.
+Records
+Representation
+The Records resource is used to search through published records.
+List
+List all open access records.
+import requests
+response = requests.get('https://zenodo.org/api/records',
+params={'q': 'my title'},
+headers={'Authorization': f'Bearer {ACCESS_TOKEN}'})
+print(response.json())
+curl -i -H "Authorization: Bearer ACCESS_TOKEN" /api/records/
+HTTP Request
+GET /api/records/
+Query arguments
+Parameter
+Required
+Description
+q
+string
+optional
+Search query (using Elasticsearch query string syntax - note that some characters have special meaning here, including /, which is also present in full DOIs).
+status
+string
+optional
+Filter result based on the deposit status (either draft or published)
+sort
+string
+optional
+Sort order (bestmatch or mostrecent). Prefix with minus to change form ascending to descending (e.g. -mostrecent).
+page
+integer
+optional
+Page number for pagination.
+size
+integer
+optional
+Number of results to return per page. Maximum 25 for anonymous requests, 100 for authenticated requests.
+all_versions
+integer/string
+optional
+Show (true or 1) or hide (false or 0) all versions of records.
+communities
+string
+optional
+Return records that are part of the specified communities. (Use of community identifier)
+type
+string
+optional
+Return records of the specified type. (Publication, Poster, Presentation…)
+subtype
+string
+optional
+Return records of the specified subtype. (Journal article, Preprint, Proposal…)
+bounds
+string
+optional
+Return records filtered by a geolocation bounding box. (Format bounds=143.37158,-38.99357,146.90918,-37.35269)
+custom
+string
+optional
+Return records containing the specified custom keywords. (Format custom=[field_name]:field_value)
+Header
+The response format of the search can be requested by specifying it in the header.
+Accept
+Description
+application/json
+JSON
+application/vnd.zenodo.v1+json
+Zenodo
+application/marcxml+xml
+Marc XML
+application/x-bibtex
+Bibtex
+application/x-datacite+xml
+Datacite XML
+application/x-dc+xml
+Dublin Core
+Success Response
+Code: 200 OK
+Body: an array of record resources.
+Error Response
+See HTTP status codes (400 and 500 series errors) and
+error responses.
+Search guide
+Advanced search queries can as well be performed on Zenodo website through the search box. This is documented in the search guide
+For bulk data access: If you need to download or process large numbers of records, we recommend using OAI-PMH harvesting or metadata dumps instead of the search API. These methods are specifically designed for bulk access and will be more efficient for your use case.
+Retrieve
+Retrieve a single record.
+curl -i https://zenodo.org/api/records/1234
+import requests
+r = requests.get("https://zenodo.org/api/records/1234)
+HTTP Request
+GET https://zenodo.org/api/records/:id
+Again, the output format of the search can be specified in the header
+Success response
+Code: 200 OK
+Body: a record.
+Error response
+See HTTP status codes (400 and 500 series errors) and
+error responses. |
+Licenses
+Representation
+The License resource is used for serving the license metadata that can be
+applied to uploaded content on Zenodo.
+License
+Field
+Description
+created
+timestamp
+Creation time of the license (in ISO8601 format).
+updated
+timestamp
+Last modification time of deposition (in ISO8601 format).
+metadata
+object
+The license metadata resource
+License metadata
+Attribute
+Description
+id
+string
+Identifier for the license.
+Example: cc-by-nc-4.0
+title
+string
+The name of the license
+Example: GNU Lesser General Public License v3.0
+url
+string
+URL of the license
+Example: http://www.opensource.org/licenses/MIT
+List
+Search through licenses.
+import requests
+response = requests.get('/api/licenses/')
+print(response.json())
+curl /api/licenses/
+HTTP Request
+GET /api/licenses/
+Query arguments
+Parameter
+Required
+Description
+q
+string
+optional
+Search query (using Elasticsearch query string syntax - note that some characters have special meaning here, including /, which is also present in full DOIs).
+page
+integer
+optional
+Page number for pagination.
+size
+integer
+optional
+Number of results to return per page.
+Success Response
+Code: 200 OK
+Body: an array of license resources.
+Error response
+See HTTP status codes (400 and 500 series errors) and
+error responses. |
+Retrieve
+Retrieve a single license resource.
+import requests
+r = requests.get("/api/licenses/cc-by-nc-4.0")
+curl /api/licenses/cc-by-nc-4.0
+HTTP Request
+GET /api/licenses/:id
+Success response
+Code: 200 OK
+Body: a license resource.
+Error response
+See HTTP status codes (400 and 500 series errors) and
+error responses. |
+Changes
+2017-10-04
+Added new optional field version to deposition metadata.
+Added new optional field language to deposition metadata.
+2017-06-15
+Added support for DOI versioning as part of deposit actions.
+2016-09-12
+Added support for search, pagination, sorting and filtering.
+Improved speed significantly.
+2015-10-06
+Added new optional field contributors to deposition metadata.
+Added new optional field subjects to deposition metadata.
+Added new optional subfield gnd to creators in deposition metadata.
+2014-12-20
+Added new relationship isAlternateIdentifier in subfield relation to
+related_identifiers in deposition metadata.
+2014-12-10
+Added new relationships hasPart, isPartOf & isIdenticalTo in subfield
+relation to related_identifiers in deposition metadata.
+2014-11-20
+Added new optional subfield orcid to creators in deposition metadata.
+2014-10-21
+Added new optional fields conference_session and conference_session_part
+to deposition metadata.
+2014-09-09
+Added new optional field references to deposition metadata.
+2014-06-13
+Authentication changed from API keys to OAuth 2.0. API key authentication is
+deprecated and will be phased out in October, 2014. Please use personal
+access tokens instead of API keys.
+2013-12-18
+REST API version 1.0 final release:
+Deposition actions moved from deposit/depositions/:id/action to
+deposit/depositions/:id/actions
+Added edit and discard deposition action resources.
+Deposition resource representation:
+state: Controlled vocabulary changed.
+submitted: Data type changed from Timestamp to Bool.
+2013-11-13
+REST API initial release candidate.
+OAI-PMH
+Zenodo allows you to harvest our entire repository via the Open Archives
+Initiative Protocol for Metadata Harvesting (OAI-
+PMH). OAI-PMH is a widely used protocol for
+harvesting metadata and most popular repository software provide support for
+this protocol.
+All metadata is licensed under Creative Commons
+Zero, while the data files may be either open
+access and subject to a license described in the metadata or closed access and
+not available for download.
+Base URL
+Our OAI-PMH base endpoint is at https://zenodo.org/oai2d.
+Installing prerequisites for our example
+For this example, we are going to be using Sickle since it simplifies our workflow and supports XML parsing.
+# Install the Sickle package using pip
+pip install Sickle
+'''Import Sickle and initialize the client by passing the base URL'''
+from sickle import Sickle
+sickle = Sickle('https://zenodo.org/oai2d')
+Get information about the OAI-PMH API
+To get some general information about the OAI-PMH capabilities we can use the Identify verb.
+'''Get information on the OAI-PMH API by using "Identify"'''
+info = sickle.Identify()
+info.granularity
+# 'YYYY-MM-DDThh:mm:ssZ'
+info.earliestDatestamp
+# '2014-02-03T14:41:33Z'
+Resumption tokens
+The OAI-PMH API returns 50 records per page. Resumption tokens are only valid for 2 minutes. In case a token expired, you will receive a 422 Unprocessable Entity HTTP error.
+This means that you must execute the next HTTP request using the
+resumption token within those two minutes. We recommend that you offload any post processing of the harvested record to a background queue.
+Rate limit
+The OAI-PMH API is rated limited like the REST API - i.e. you will receive
+a 429 Too Many Requests HTTP error if you exceed the limit.
+For more information please take a look at the rate limiting documentation.
+Metadata formats
+To list the available records metadata formats we can use ListMetadataFormats.
+'''Metadata for each record is available in several formats'''
+metadataFormats = sickle.ListMetadataFormats()
+list(metadataFormats)
+# [<MetadataFormat marcxml>, <MetadataFormat oai_datacite4>, ...]
+Available metadata formats
+oai_datacite
+OAI DataCite (latest schema version) — This metadata format has been
+specifically established for the dissemination of DataCite records using
+OAI-PMH. In addition to the original DataCite metadata, this format contains
+several other elements describing the version of the metadata, whether it is of
+reference quality, and the registering datacentre. For more information about
+this format and its schema please see the
+DataCite OAI schema website.
+This metadata format will always deliver metadata according to the latest
+available DataCite schema version.
+See example
+To get the raw XML output of the example above, view the page’s source using
+the web browser’s “view source” option.
+We recommend you harvest using the “oai_datacite” metadata format. The
+format contains the most complete metadata and is our primary supported
+export format.
+datacite
+DataCite (latest version) — This metadata format contains only the original
+DataCite metadata without additions or alterations according to the latest
+DataCite schema. Please note that this format is not OAI-PMH version 2.0
+compliant.
+See example
+oai_dc
+Dublin Core — only minimal metadata is included in this format. The format is exported according to the OpenAIRE Guidelines.
+See example
+dcat
+DCAT — export format based on the DCAT Application Profile for data portals in Europe (DCAT-AP).
+The format is produced from the DataCite export format using the DataCite-to-DCAT-AP XSLT.
+This is the only OAI-PMH metadata format that currently exposes direct links to each record’s files content, via the dcat:Distribution elements.
+See example
+marc21
+MARC21 — export format primarily supported for legacy reasons. Please consider
+using one of the other export formats as we may discontinue support for MARC21.
+See example
+Sets
+We support both harvesting of the entire repository as well as selective
+harvesting of communities.
+Entire repository
+To harvest the entire repository, entirely skip the set parameter (you still need to pass the required metadataPrefix parameter).
+See example
+''' Harvest the entire repository '''
+records = sickle.ListRecords(metadataPrefix='oai_dc')
+record = records.next()
+# <Record oai:zenodo.org:3442216>
+Selective harvesting
+user-<identifier>
+Community sets — allows selective harvesting of specific communities. Replace
+<identifier> with the community identifier. Alternatively each community
+provides a direct harvesting API link on their front-page, which includes the
+correct community identifier.
+See example
+''' Fetch a couple of records from the OAI Set of the "cfa" community '''
+records = sickle.ListRecords(metadataPrefix='oai_dc', set='user-cfa')
+record = records.next()
+''' To inspect on what sets a record is in '''
+record.header.setSpecs
+# ['openaire_data', 'user-cfa']
+Harvesting with a different metadata format
+There is also the possibility of using different metadata formats. For that, we only need to replace the metadataPrefix argument.
+See example
+''' Community harvest using "oai_datacite" metadata format '''
+records = sickle.ListRecords(metadataPrefix='oai_datacite', set='user-cfa')
+record = records.next()
+''' Retrieving metadata from the record '''
+record.metadata
+# {
+# "title": ["Computing and Using Metrics in ADS"],
+# "creatorName": ["Henneken, Edwin"],
+# "identifier": ["10.5281/zenodo.10897"],
+# ...
+# }
+Harvesting with multiple filters
+Using multiple filters to harvest records enables a higher level of granularity, allowing us to retrieve specific groups of records.
+See example
+''' Selecting harvesting using "from" '''
+records = sickle.ListRecords(**{
+'metadataPrefix': 'oai_dc',
+'set': 'user-cfa',
+'from': '2019-01-01',
+})
+records.next()
+# <Record oai:zenodo.org:7661>
+records.next()
+# <Record oai:zenodo.org:6738>
+Other questions on harvesting
+If you need selective harvesting and your use case is not supported by above
+sets, you can contact us and we can try
+create a specific set for you.
+Update schedule
+Most updates are available immediately, some few updates are only reflected in the OAI sets once an hour.
+Metadata Dumps
+For users who need to download large subsets of Zenodo records, making individual API calls for each record can be inefficient.
+To address this, we provide bulk metadata dumps that contain exports of Zenodo record metadata in DataCite XML and JSON formats, as well as a CSV list of deleted records.
+These dumps are generated monthly at the beginning of each month and are available via the /api/exporter endpoint.
+We maintain the latest 3 snapshots of each dump variant, including creation timestamp, version ID, file size, checksum, and download links.
+List available dumps
+List all available metadata dumps with their version history.
+import requests
+resp = requests.get('https://zenodo.org/api/exporter')
+curl https://zenodo.org/api/exporter
+{
+"records-xml.tar.gz": [
+{
+"version_id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+"created": "2025-09-13T06:25:32.054451+00:00",
+"is_head": true,
+"size": 3970234567,
+"checksum": "md5:1c1fd4ab805d52729cdee94d199f7729",
+"links": {
+"self": "https://zenodo.org/api/exporter/records-xml.tar.gz/a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+"self_head": "https://zenodo.org/api/exporter/records-xml.tar.gz"
+}
+}
+],
+"records-deleted.csv.gz": [
+{
+"version_id": "e2d16608-5d00-41ae-905e-11aa44643228",
+"created": "2025-09-01T23:24:03.867786+00:00",
+"is_head": true,
+"size": 26820485,
+"checksum": "md5:4605fbea12cab96f3a79d91a9f69f286",
+"links": {
+"self": "https://zenodo.org/api/exporter/records-deleted.csv.gz/e2d16608-5d00-41ae-905e-11aa44643228",
+"self_head": "https://zenodo.org/api/exporter/records-deleted.csv.gz"
+}
+}
+]
+}
+HTTP Request
+GET /api/exporter
+Success Response
+Code: 200 OK
+Body: JSON object where each key represents a dump variant, and the value is an array of the 3 most recent versions.
+Response format
+Each dump variant includes an array of versions with:
+Field
+Description
+version_id
+Unique identifier for this version
+created
+ISO 8601 timestamp of when the dump was created
+is_head
+Boolean indicating if this is the latest version
+size
+File size in bytes
+checksum
+File checksum for verification
+links.self
+URL to download this specific version
+links.self_head
+URL to download the latest version (only present for is_head: true)
+Download a dump
+Download the latest version of a specific metadata dump.
+import requests
+# Download latest version
+resp = requests.get('https://zenodo.org/api/exporter/records-xml.tar.gz')
+# Download specific version
+resp = requests.get('https://zenodo.org/api/exporter/records-xml.tar.gz/a1b2c3d4-e5f6-7890-abcd-ef1234567890')
+# Download latest version
+curl -O https://zenodo.org/api/exporter/records-xml.tar.gz
+# Download specific version
+curl -O https://zenodo.org/api/exporter/records-xml.tar.gz/a1b2c3d4-e5f6-7890-abcd-ef1234567890
+HTTP Request
+GET /api/exporter/:key
+GET /api/exporter/:key/:version_id
+URL Parameters
+Parameter
+Required
+Description
+key
+required
+The dump variant key (e.g., records-xml.tar.gz)
+version_id
+optional
+Specific version UUID. If omitted, returns the latest version.
+Success Response
+Code: 200 OK
+Body: Binary file content (typically .tar.gz archive)
+Archive structure
+Metadata dumps (.tar.gz archives) contain one file per record:
+Filename format: <record_id>.<extension> (e.g., 8435696.xml)
+Each file contains the complete metadata for that record in the specified format
+Deleted records dump (records-deleted.csv.gz) is a gzip-compressed CSV file with the following columns:
+Column
+Description
+record_id
+Zenodo record ID
+doi
+Record DOI
+parent_id
+Parent record ID (concept record)
+parent_doi
+Parent record DOI
+removal_note
+Reason for removal
+removal_reason
+Category (e.g., “spam”)
+removal_date
+Date the record was removed
+citation_text
+Citation text (if available)
+Streaming processing example
+import requests
+import tarfile
+import itertools
+import xml.etree.ElementTree as ET
+url = "https://zenodo.org/api/exporter/records-xml.tar.gz"
+resp = requests.get(url, stream=True)
+resp.raw.decode_content = True
+namespaces = {
+'datacite': 'http://datacite.org/schema/kernel-4',
+'oai_datacite': 'http://schema.datacite.org/oai/oai-1.1/'
+}
+with tarfile.open(fileobj=resp.raw, mode="r|gz") as tar:
+for member in itertools.islice(tar, 10):
+if member.isfile():
+content = tar.extractfile(member).read()
+root = ET.fromstring(content)
+# Extract DOI and title from DataCite XML
+resource = root.find('.//datacite:resource', namespaces)
+doi = resource.find('datacite:identifier', namespaces).text
+title = resource.find('datacite:titles/datacite:title', namespaces).text
+print(f"{member.name}: {doi} - {title}")
+# Outputs:
+# 12345.xml: 10.5281/zenodo.12345 - Dataset for XYZ
+# ...
+# List files without extracting
+curl -s https://zenodo.org/api/exporter/records-xml.tar.gz | tar -tzf - | head -10
+# Outputs:
+# 12345.xml
+# 12346.xml
+# ...
+For large dumps, use streaming to avoid loading the entire file into memory.
+This example shows how to download and process a metadata dump by streaming the tar.gz archive and extracting individual record files on-the-fly.
+GitHub
+Add metadata to your GitHub repository release
+{
+"creators": [
+{
+"orcid": "0000-0002-1825-0097",
+"affiliation": "Feline reasearch institute",
+"name": "Field, Gar"
+},
+{
+"orcid": "0000-0002-1825-0097",
+"affiliation": "Feline reasearch institute",
+"name": "Cat, Felix"
+}
+],
+"license": "Apache-2.0",
+"title": "Red-Dot: ML-powered laser vector detection",
+"related_identifiers": [
+{
+"scheme": "doi",
+"identifier": "10.1234/software.paper.5678",
+"relation": "isDocumentedBy",
+"resource_type": "publication-article"
+}
+],
+"keywords": ["Cats", "Laser", "Behavior"],
+"communities": [
+{"identifier": "software-cats"}
+],
+"grants": [{"id":"777541"}]
+}
+We automatically extract metadata about your release from GitHub APIs. For example, the authors are determined from the repository’s contributor statistics. To overwrite some of the default metadata that would come from a regular GitHub release you can include a .zenodo.json file at the root of your GitHub repository.
+The contents of the .zenodo.json file are based on our deposit metadata documentation and can be structurally validated using our legacy deposit JSON Schema.
+In the example shown, we add metadata regarding:
+software authorship and ORCiDs, via the creators field
+Apache-2.0 licensing, via the license field
+a custom title, via the title field
+a related identifier to the software paper, via the related_identifiers field
+keywords, via the keywords field
+Zenodo communities, via the communities field
+funding information, via the grants field
+How to verify your “.zenodo.json” file?
+After creating your .zenodo.json file you should validate it to make sure that it contains valid JSON. You can use a tool like the JSON Formatter & Validator, or load it via your favorite programming language.
+Rate Limiting
+For our content and services to be available to everyone we have to make sure that our resources are being distributed fairly.
+To achieve this, we have rate-limiting measures in place which limit the number of requests users can perform in a time window. Depending on the complexity and load of each request, different endpoints have different limits configured.
+Pages
+Limitations
+Global limit for guest users
+60 requests per minute, 2000 requests per hour
+Global limit for authenticated users
+100 requests per minute, 5000 requests per hour
+Search REST API endpoints
+30 requests per minute
+OAI-PMH API harvesting
+30 requests per minute
+Thumbnails for image records
+20 requests per minute
+When you are making requests to any of our endpoints, you can inspect the following HTTP response headers for more information of your current rate-limit status:
+HTTP header
+Description
+X-RateLimit-Limit
+Current rate-limit policy, i.e. maximum number of requests per minute
+X-RateLimit-Remaining
+Number of requests remaining in the current rate limit
+X-RateLimit-Reset
+Reset time of the current rate limit
+Python
+cURL
+NodeJS

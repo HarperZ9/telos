@@ -1,0 +1,182 @@
+{
+  "generated_on": "2026-07-01",
+  "ledger": {
+    "canonical_json_lines": true,
+    "ledger_head_hash": "6d194872068da0e9c74d95478cca7e4f2c5a447da9a82a73be3ce9b5aa44f371",
+    "line_count": 5,
+    "path": "fixtures/telos-action-receipt-ledger-pass-0025.jsonl",
+    "schema": "AppendOnlyJsonlActionReceiptLedger/v1",
+    "sha256": "66a536120c2d95e2d5b1a879fbe34f8b908327dfc356bcfcf530dadc2f44dfab",
+    "strict_loader": {
+      "allow_nan_on_serialization": false,
+      "duplicate_keys_rejected": true,
+      "object_pairs_hook_required": true,
+      "parse_constant_rejects_nonfinite": true
+    },
+    "write_mode": "append-only-jsonl"
+  },
+  "line_count": 5,
+  "lookup_probe_count": 4,
+  "lookup_probes": [
+    {
+      "key": "act_dogfood_0024_001",
+      "match_count": 5,
+      "probe": "lookup-by-action-id",
+      "status": "MATCH"
+    },
+    {
+      "key": "intent_dogfood_0024_001",
+      "match_count": 5,
+      "probe": "lookup-by-action-intent-id",
+      "status": "MATCH"
+    },
+    {
+      "key": "evt_dogfood_0025_005_compensation_completed",
+      "match_count": 1,
+      "probe": "lookup-by-event-id",
+      "status": "MATCH"
+    },
+    {
+      "key": "idem_dogfood_0025_compensation_001",
+      "match_count": 1,
+      "probe": "lookup-by-idempotency-key",
+      "status": "MATCH"
+    }
+  ],
+  "mutation_probe": {
+    "mutated_original_event_allowed": false,
+    "schema": "AppendOnlyMutationProbe/v1",
+    "source_event_hashes_after_replay": [
+      "2e48696173973a47b9dc6d7a15371b50a6d6121a942846ee609c3afae3fb2a8b",
+      "dfd5cbd9dfbec59ee45dff7b9622779b5ad5c094e709d457f4075e9af8be2fe6",
+      "59121d18332e9171505259687e4f52d9a6eef576ad6b913093d34d208203e5e3",
+      "e499b57cd42f808bd9859221914719737c8ea0111d918314df24d02803f938bf"
+    ],
+    "source_event_hashes_before": [
+      "2e48696173973a47b9dc6d7a15371b50a6d6121a942846ee609c3afae3fb2a8b",
+      "dfd5cbd9dfbec59ee45dff7b9622779b5ad5c094e709d457f4075e9af8be2fe6",
+      "59121d18332e9171505259687e4f52d9a6eef576ad6b913093d34d208203e5e3",
+      "e499b57cd42f808bd9859221914719737c8ea0111d918314df24d02803f938bf"
+    ],
+    "status": "ORIGINAL_EVENTS_UNCHANGED"
+  },
+  "negative_fixture_count": 11,
+  "negative_fixtures": [
+    {
+      "expected_validator_status": "REJECT",
+      "failure_mode": "A replay changes the body or hash of an earlier event.",
+      "fixture_id": "negative-mutate-earlier-event"
+    },
+    {
+      "expected_validator_status": "REJECT",
+      "failure_mode": "A ledger line is removed and sequence continuity is broken.",
+      "fixture_id": "negative-delete-event"
+    },
+    {
+      "expected_validator_status": "REJECT",
+      "failure_mode": "Events are replayed in a different order from their previous hash chain.",
+      "fixture_id": "negative-reorder-events"
+    },
+    {
+      "expected_validator_status": "REJECT",
+      "failure_mode": "Two ledger entries carry the same event_id.",
+      "fixture_id": "negative-duplicate-event-id"
+    },
+    {
+      "expected_validator_status": "REJECT",
+      "failure_mode": "Execution and receipt idempotency keys diverge.",
+      "fixture_id": "negative-idempotency-mismatch"
+    },
+    {
+      "expected_validator_status": "REJECT",
+      "failure_mode": "An appended event does not cite the previous action-chain head.",
+      "fixture_id": "negative-append-without-previous-head"
+    },
+    {
+      "expected_validator_status": "REJECT",
+      "failure_mode": "A compensation updates the original event instead of appending a new event.",
+      "fixture_id": "negative-compensation-mutates-original"
+    },
+    {
+      "expected_validator_status": "REJECT",
+      "failure_mode": "A ledger line is not canonical JSON.",
+      "fixture_id": "negative-non-canonical-json-line"
+    },
+    {
+      "expected_validator_status": "REJECT",
+      "failure_mode": "A ledger line contains a duplicate JSON key.",
+      "fixture_id": "negative-duplicate-json-key"
+    },
+    {
+      "expected_validator_status": "REJECT",
+      "failure_mode": "A ledger line contains NaN or Infinity.",
+      "fixture_id": "negative-nonfinite-json"
+    },
+    {
+      "expected_validator_status": "REJECT",
+      "failure_mode": "Replay cannot bind ledger entries back to the pass 0024 source fixture digest.",
+      "fixture_id": "negative-replay-without-source-fixture"
+    }
+  ],
+  "non_promotion_statement": "Pass 0025 proves only local append-only JSONL persistence and replay for pass 0024 action receipt events plus one appended compensation fixture. It does not prove production database durability, distributed consensus, cryptographic signing, external anchoring, live Telos runtime integration, external write safety, scientific discovery, theorem proof, or any natural law.",
+  "pass": "0025",
+  "replay": {
+    "appended_event_count": 1,
+    "compensation_chain_hash": "9e8311cf3b5cec4c3424cab1c5d7883b475fba35c70224dfb921fdacb2797a5f",
+    "compensation_event_id": "evt_dogfood_0025_005_compensation_completed",
+    "compensation_previous_chain_hash": "0617602eed957e0bc6c2e4a21548528f6defc542c4468433bde85df76cb51b3a",
+    "event_id_index_hash": "47664ad56ddceb13b4356ad4152d119f4e52ef1a67baeb1a7c93e0d6945356ca",
+    "fresh_context_inputs": [
+      "fixtures/telos-action-receipt-ledger-pass-0025.jsonl",
+      "schemas/telos-action-receipt-fixture-pass-0024.json sha256"
+    ],
+    "last_event_chain_hash": "9e8311cf3b5cec4c3424cab1c5d7883b475fba35c70224dfb921fdacb2797a5f",
+    "ledger_head_hash": "6d194872068da0e9c74d95478cca7e4f2c5a447da9a82a73be3ce9b5aa44f371",
+    "lookup_counts": {
+      "by_action_id": {
+        "act_dogfood_0024_001": 5
+      },
+      "by_action_intent_id": {
+        "intent_dogfood_0024_001": 5
+      },
+      "by_event_id": 5,
+      "by_idempotency_key": {
+        "idem_dogfood_0024_001": 4,
+        "idem_dogfood_0025_compensation_001": 1
+      }
+    },
+    "original_event_hashes_match_source": true,
+    "replayed_event_count": 5,
+    "schema": "ActionReceiptLedgerReplay/v1",
+    "source_chain_head_preserved_at_entry_4": true
+  },
+  "schema": "ActionReceiptPersistenceReplaySet/v1",
+  "seal": "7203957ec04350756af9cdb2d244760ebbc2c00bbc3fcc048acd7c9ff2a1a177",
+  "source_anchors": [
+    {
+      "source": "Telos action receipt interface",
+      "url": "mcp:telos.action.receipt"
+    },
+    {
+      "source": "Telos loop ledger contract",
+      "url": "mcp:telos.loop.ledger"
+    },
+    {
+      "source": "RFC 8785 JSON Canonicalization Scheme",
+      "url": "https://www.rfc-editor.org/info/rfc8785/"
+    },
+    {
+      "source": "Python json module",
+      "url": "https://docs.python.org/3/library/json.html"
+    }
+  ],
+  "source_fixture": {
+    "path": "schemas/telos-action-receipt-fixture-pass-0024.json",
+    "schema": "TelosActionReceiptFixtureSet/v1",
+    "seal": "58ed4ced91f18cbab776729f49f728d47013542cfc2448865bbdb8dccd1228e3",
+    "sha256": "9c6402f98774170311d78ea3f6983cae71a665dd38ab2ee7e88d413398990ff4",
+    "source_chain_head_hash": "0617602eed957e0bc6c2e4a21548528f6defc542c4468433bde85df76cb51b3a",
+    "source_event_count": 4
+  },
+  "status": "ACTION_RECEIPT_PERSISTENCE_REPLAY_MATCH"
+}

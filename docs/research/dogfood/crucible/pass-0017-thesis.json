@@ -1,0 +1,50 @@
+{
+  "title": "Dogfood Pass 0017 Cloud Quantum Metadata Parser Hardening",
+  "disposition": "fenced",
+  "claims": [
+    {
+      "text": "Pass 0017 created a CloudQuantumProviderMetadataParserSet/v1 artifact with status PARSER_PROFILE_MATCH, three parser profiles, eight negative fixtures, seven source anchors, and seal e098df09eb2556049e1b9e676b0ace8f0000d1f0bda7565628e2195711e84b21.",
+      "falsification": "schemas/cloud-quantum-metadata-parsers-pass-0017.json is missing, is not CloudQuantumProviderMetadataParserSet/v1, reports non-MATCH status, has fewer than three parser profiles, fewer than eight negative fixtures, fewer than seven source anchors, or lacks the expected seal"
+    },
+    {
+      "text": "Pass 0017 defines provider metadata parser profiles for Amazon Braket GetDevice, IBM BackendProperties, and Azure Quantum target list/show.",
+      "falsification": "any of parser-braket-get-device, parser-ibm-backend-properties, or parser-azure-target-list is missing"
+    },
+    {
+      "text": "The Braket parser profile requires device ARN, device type, status, capabilities, payload hash, and rejects simulator or unavailable device-capability hardware claims.",
+      "falsification": "the Braket parser profile is missing or omits any required raw field or rejection rule"
+    },
+    {
+      "text": "The IBM parser profile requires backend name, backend version, last update date, qubits, gates, payload hash, and rejects missing calibration or paired simulator-status evidence for hardware claims.",
+      "falsification": "the IBM parser profile is missing or omits any required raw field or rejection rule"
+    },
+    {
+      "text": "The Azure parser profile requires workspace, provider id, target id, target profile, payload hash, and rejects simulator or unverified target-kind hardware claims.",
+      "falsification": "the Azure parser profile is missing or omits any required raw field or rejection rule"
+    },
+    {
+      "text": "Pass 0017 defines QuantumRegisterLayoutReceipt/v1 with a Qiskit-style two-qubit measurement map, explicit leftmost/rightmost string positions, and layout hash 04cd4fff62e90a8888e74243fab8bf249d74c795650649c1a545e375fdde49fe.",
+      "falsification": "the register layout receipt is missing, has a different schema, omits leftmost/rightmost string positions, omits the measurement map, or lacks the expected layout hash"
+    },
+    {
+      "text": "Pass 0017 defines QuantumPostProcessingReceipt/v1 baseline with raw and normalized result hashes required and mitigation, filtering, and truncation set to false.",
+      "falsification": "the post-processing receipt is missing, has a different schema, does not require both raw and normalized hashes, or marks mitigation/filtering/truncation true"
+    },
+    {
+      "text": "Pass 0017 negative fixtures reject missing metadata payload hash, unknown target kind as hardware, omitted register layout, absent endian convention, duplicate JSON keys, binary-as-JSON parsing, missing float precision policy, and post-processing without receipt.",
+      "falsification": "any of the eight expected negative fixture ids is missing or has expected_validator_status other than REJECT"
+    },
+    {
+      "text": "Pass 0017 validator reports MATCH with one matched check and zero drift.",
+      "falsification": "schemas/pass-0017-metadata-parser-validator-result.json is missing, reports non-MATCH status, does not report match=1, or reports drift above zero"
+    },
+    {
+      "text": "Pass 0017 records tool receipts showing Index, Gather, Telos, Forum, and Crucible status MATCH while preserving Forum submit as UNVERIFIABLE due to executor JSON parsing.",
+      "falsification": "schemas/tool-receipts-pass-0017.json is missing, lacks any required tool status, or treats Forum submit as successful rather than UNVERIFIABLE"
+    },
+    {
+      "text": "Pass 0017 promotes zero live provider metadata retrievals, quantum hardware results, quantum advantage claims, theorem proofs, natural laws, or scientific discoveries.",
+      "falsification": "any pass 0017 artifact labels live provider metadata retrieval, a new quantum hardware result, quantum advantage claim, theorem proof, natural law, or scientific discovery as promoted"
+    }
+  ]
+}

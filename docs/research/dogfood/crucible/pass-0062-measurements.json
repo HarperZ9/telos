@@ -1,0 +1,91 @@
+{
+  "measurements": [
+    {
+      "claim": "Pass 0062 created a HeatEquationEnergyIdentity/v1 artifact with status HEAT_EQUATION_ENERGY_IDENTITY_MATCH, promotion_state IDENTITY_NOT_PROMOTED_LAW, law_candidate_status BOUNDED_MATHEMATICAL_IDENTITY, sha256 20618eed9da57a2e1e752f0b3e355c57ecd29813b1ba994f4a6d6d6fafc4a0ef, and seal 9a94678d4e820cb5f6d806bf9d7f56287971e708912cdeef9284f16b3c1a80bf.",
+      "deviation": 0.0,
+      "evidence": [
+        "schema=HeatEquationEnergyIdentity/v1",
+        "status=HEAT_EQUATION_ENERGY_IDENTITY_MATCH",
+        "promotion_state=IDENTITY_NOT_PROMOTED_LAW",
+        "law_candidate_status=BOUNDED_MATHEMATICAL_IDENTITY",
+        "sha256=20618eed9da57a2e1e752f0b3e355c57ecd29813b1ba994f4a6d6d6fafc4a0ef",
+        "seal=9a94678d4e820cb5f6d806bf9d7f56287971e708912cdeef9284f16b3c1a80bf"
+      ],
+      "method": "artifact-schema-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0062 implements compose_heat_equation_energy_identity.py with sha256 998a3f4070ab056039f547301502930a1f86673655f749c28c7309bc29287779 and compose_receipt status MATCH.",
+      "deviation": 0.0,
+      "evidence": [
+        "composer_sha256=998a3f4070ab056039f547301502930a1f86673655f749c28c7309bc29287779",
+        "compose_status=MATCH"
+      ],
+      "method": "composer-file-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0062 records a heat equation energy identity test with sha256 8d559860b5eaae064559658d186a7d547cb4c768050253caf80cf33ab88c52a2 and test_receipt status MATCH.",
+      "deviation": 0.0,
+      "evidence": [
+        "test_sha256=8d559860b5eaae064559658d186a7d547cb4c768050253caf80cf33ab88c52a2",
+        "test_status=MATCH"
+      ],
+      "method": "composer-test-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0062 analytic identity is d/dt ||u||_L2^2 = -2*kappa*||u_x||_L2^2 under boundary condition periodic on [0, 2*pi].",
+      "deviation": 0.0,
+      "evidence": [
+        "identity=d/dt ||u||_L2^2 = -2*kappa*||u_x||_L2^2",
+        "boundary_condition=periodic",
+        "domain=[0, 2*pi]"
+      ],
+      "method": "analytic-identity-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0062 numeric probe has mode_count 3, max_symbolic_residual 0.0, max_finite_difference_residual 2.7235955712967552e-09, and energy_monotone_nonincreasing True.",
+      "deviation": 0.0,
+      "evidence": [
+        "mode_count=3",
+        "max_symbolic_residual=0.0",
+        "max_finite_difference_residual=2.7235955712967552e-09",
+        "energy_monotone_nonincreasing=True"
+      ],
+      "method": "numeric-probe-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0062 source_anchor_count is 3 and source anchors are retained as source leads.",
+      "deviation": 0.0,
+      "evidence": [
+        "source_anchor_count=3",
+        "verification_status=source_lead"
+      ],
+      "method": "source-anchor-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0062 unsupported_claim_count is 0 and current_promoted_natural_laws remains none.",
+      "deviation": 0.0,
+      "evidence": [
+        "unsupported_claim_count=0",
+        "current_promoted_natural_laws=[]"
+      ],
+      "method": "non-promotion-boundary-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0062 records packet 072 sha256 a466dc0f609a9d7f53ad586298fb4473f47e2a09b6043a14b8cb21e2d1effd0e and steelman sha256 b0f9992724af1308ed58213961e3397ae53c2161f5bdf4f9fc4779c50cf1c6d3.",
+      "deviation": 0.0,
+      "evidence": [
+        "packet_sha256=a466dc0f609a9d7f53ad586298fb4473f47e2a09b6043a14b8cb21e2d1effd0e",
+        "steelman_sha256=b0f9992724af1308ed58213961e3397ae53c2161f5bdf4f9fc4779c50cf1c6d3"
+      ],
+      "method": "packet-steelman-review",
+      "tolerance": 0.5
+    }
+  ]
+}

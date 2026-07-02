@@ -1,0 +1,226 @@
+{
+  "generated_on": "2026-07-01",
+  "non_promotion_statement": "Tool receipts prove local buyer-discovery scorecard generation, validator MATCH, Gather packet intake, observed Forum routing behavior, and Crucible MATCH. They do not prove market size, buyer budget, customer adoption, scientific truth, uniqueness, or any natural law.",
+  "pass": "0059",
+  "receipts": [
+    {
+      "command": "telos_server_manifest",
+      "server_count": 5,
+      "source_count": 4,
+      "status": "MATCH",
+      "tool": "mcp__telos.telos_server_manifest",
+      "verified_on": "2026-06-28"
+    },
+    {
+      "command": "telos_catalog",
+      "status": "MATCH",
+      "tool": "mcp__telos.telos_catalog",
+      "tool_count": 65,
+      "transport_count": 2
+    },
+    {
+      "check_count": 14,
+      "command": "telos_operator_doctor",
+      "passed_count": 14,
+      "status": "MATCH",
+      "tool": "mcp__telos.telos_operator_doctor",
+      "tool_count": 65
+    },
+    {
+      "check_count": 4,
+      "command": "index_doctor",
+      "match_count": 4,
+      "status": "MATCH",
+      "tool": "mcp__index.index_doctor",
+      "tool_version": "2.8.0"
+    },
+    {
+      "command": "index_status",
+      "command_count": 6,
+      "mcp_tool_count": 10,
+      "role": "structure-context",
+      "status": "MATCH",
+      "tool": "mcp__index.index_status",
+      "tool_version": "2.8.0"
+    },
+    {
+      "command": "index map --root C:\\dev\\public\\telos --json",
+      "dirty_count": 0,
+      "repo_count": 1,
+      "root_sha256_prefix": "45e8256faa8bdc98",
+      "status": "MATCH",
+      "tool": "index",
+      "tool_version": "2.8.0",
+      "top_level_count": 23,
+      "untracked_count": 7
+    },
+    {
+      "artifact": "packets/069-buyer-discovery-evidence-scorecards.md",
+      "chars": 801,
+      "command": "docs",
+      "seal": "588fe9b94e5755a039b1a5a772e06ae79f355c5e7b1e604a393d61e1fb459bf9",
+      "sha256": "513b702a7cb32a6cac3e6fcbef99de8a0ffc0362df008dd5170bb196f8a91f29",
+      "status": "MATCH",
+      "tool": "mcp__gather.gather_docs",
+      "verified": true
+    },
+    {
+      "command": "gather_status",
+      "command_count": 6,
+      "mcp_tool_count": 5,
+      "role": "perception-intake",
+      "status": "MATCH",
+      "tool": "mcp__gather.gather_status",
+      "tool_version": "1.5.0"
+    },
+    {
+      "command": "test_buyer_discovery_evidence_scorecards.py",
+      "exit_code": 0,
+      "line_count": 56,
+      "sha256": "eb311592317a29dc24054c6e4452b6a1c682e2bf0b5ce27c8a832ecb37a02acd",
+      "status": "MATCH",
+      "tool": "python"
+    },
+    {
+      "command": "compose_buyer_discovery_evidence_scorecards.py",
+      "line_count": 201,
+      "market_data_target_count": 15,
+      "scorecard_count": 3,
+      "seal": "c347b6e91c759b5338289c02e0db1ab60a07f900d6caf0d2e1585c0fca171853",
+      "sha256": "bf1523c64ec85e1aa91059497cd45e0583aff3a50fcdb0147fb67fef0b637238",
+      "source_anchor_count": 10,
+      "status": "BUYER_DISCOVERY_EVIDENCE_SCORECARDS_MATCH",
+      "tool": "python"
+    },
+    {
+      "command": "probe_buyer_discovery_evidence_scorecards.py",
+      "line_count": 121,
+      "seal": "c347b6e91c759b5338289c02e0db1ab60a07f900d6caf0d2e1585c0fca171853",
+      "sha256": "841d7ba91c1060fdcc1a2b54817cc058591630ddfb928375e76841454f86979f",
+      "status": "MATCH",
+      "tool": "python"
+    },
+    {
+      "command": "validate_pass_0059_buyer_discovery_evidence_scorecards.py",
+      "drift": 0,
+      "line_count": 84,
+      "match": 1,
+      "prompt_count": 9,
+      "schema": "Pass0059BuyerDiscoveryEvidenceScorecardsValidatorRun/v1",
+      "scorecard_count": 3,
+      "sha256": "4165ac5e93672b99dac2e8970867163f1a1e899d2865ba2141d2810c83cc002d",
+      "source_anchor_count": 10,
+      "status": "MATCH",
+      "target_count": 15,
+      "tool": "python"
+    },
+    {
+      "command": "forum_doctor",
+      "match_count": 4,
+      "status": "MATCH",
+      "tool": "mcp__forum.forum_doctor",
+      "tool_version": "1.12.0"
+    },
+    {
+      "candidates": [
+        {
+          "agent": "deep-research",
+          "score": 0.4
+        },
+        {
+          "agent": "project-telos",
+          "score": 0.045454545454545456
+        }
+      ],
+      "command": "route generic buyer-discovery prompt",
+      "confidence": 0.35454545454545455,
+      "decided": null,
+      "needs_escalation": true,
+      "status": "ROUTE_ESCALATION_OBSERVED",
+      "tool": "mcp__forum.route"
+    },
+    {
+      "candidates": [
+        {
+          "agent": "project-telos",
+          "score": 0.4090909090909091
+        },
+        {
+          "agent": "ci-cd",
+          "score": 0.2
+        },
+        {
+          "agent": "deep-research",
+          "score": 0.2
+        }
+      ],
+      "command": "route flagship dogfood prompt",
+      "confidence": 0.5,
+      "decided": "project-telos",
+      "needs_escalation": false,
+      "status": "MATCH",
+      "tool": "mcp__forum.route"
+    },
+    {
+      "command": "forum_status",
+      "entries": 16,
+      "checkpoint": "ee58e906755992ed467b813b71749b2579d766c5314cee10813642b01aac6b4c",
+      "status": "MATCH",
+      "tool": "mcp__forum.status"
+    },
+    {
+      "command": "forum_submit",
+      "error": "the configured executor did not return valid JSON; point the daemon at a real model executor",
+      "status": "UNVERIFIABLE",
+      "tool": "mcp__forum.submit"
+    },
+    {
+      "capability_count": 4,
+      "command": "crucible_status",
+      "mcp_tool_count": 13,
+      "role": "verification-pressure",
+      "status": "MATCH",
+      "tool": "mcp__crucible.crucible_status",
+      "tool_version": "1.1.0"
+    },
+    {
+      "assessments": 48,
+      "claims": 392,
+      "command": "crucible_registry stats",
+      "drift": 0,
+      "invalid_latest_assessments": 0,
+      "match": 392,
+      "status": "MATCH",
+      "theses": 47,
+      "tool": "mcp__crucible.crucible_registry",
+      "unverifiable": 0
+    },
+    {
+      "command": "crucible_registry verify",
+      "ok": true,
+      "status": "MATCH",
+      "tool": "mcp__crucible.crucible_registry",
+      "verified_thesis_id": "9df876a77f12bff1"
+    },
+    {
+      "assessment_seal": "edca9e4a022b64ae5dda14be042434cd94b846a37e864e2b63d6cd5122975a45",
+      "claims": 8,
+      "command": "crucible run --registry",
+      "drift": 0,
+      "match": 8,
+      "measurement_seal": "21d61834140f12b878ead5e6db10646ba993ac2def2f0ed2dc24c673a4d558f4",
+      "run_sha256": "14501c79fde29dedd647b4927be8dac82c7afdc6841ab8b5f5e8d5a582539047",
+      "seals_ok": true,
+      "status": "MATCH",
+      "thesis_id": "9df876a77f12bff1",
+      "thesis_ok": true,
+      "thesis_seal": "9df876a77f12bff13f7cb596d26606af6881b10ec4d0dfd3ddaee3200a10760e",
+      "tool": "crucible",
+      "unverifiable": 0,
+      "verdict_seal": "e9773a876735b8b24c6aa13a2ece089aa7d11c09abe6a7a8e032783081e46beb",
+      "verdicts_rederive": true
+    }
+  ],
+  "schema": "DogfoodToolReceiptSet/v1",
+  "status": "MATCH_WITH_FORUM_SUBMIT_GAP_AND_ROUTE_VOCABULARY_FINDING"
+}

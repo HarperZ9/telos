@@ -1,0 +1,272 @@
+{
+  "availability": {
+    "build": {
+      "path": null,
+      "status": "MISSING"
+    },
+    "buildc": {
+      "path": null,
+      "status": "MISSING"
+    },
+    "jax": {
+      "status": "MISSING"
+    },
+    "julia": {
+      "path": null,
+      "status": "MISSING"
+    },
+    "numpy": {
+      "status": "AVAILABLE"
+    },
+    "python": {
+      "path": "C:\\Users\\Zain\\AppData\\Local\\Programs\\Python\\Python312\\python.EXE",
+      "status": "AVAILABLE"
+    },
+    "scipy": {
+      "status": "AVAILABLE"
+    }
+  },
+  "current_promoted_natural_laws": [],
+  "exact_oracle": {
+    "law_candidate": {
+      "name": "scoped_symplectic_euler_modified_quadratic_invariant",
+      "scope": "exact rational harmonic oscillator kick-drift update; not empirical physics and not a general theorem for arbitrary systems",
+      "status": "LAW_CANDIDATE"
+    },
+    "negative_fixture_count": 1,
+    "positive_case_count": 3
+  },
+  "flagship_receipts": {
+    "forum": {
+      "confidence": 0.125,
+      "decided": null,
+      "exit_code": 0,
+      "needs_escalation": true,
+      "status": "MATCH",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "a70d5f95cb9dd305f9ec5dd544439bf31a9ebeb4813bfd5394a01fa229da18b8",
+      "top_candidates": [
+        {
+          "agent": "model-foundry",
+          "score": 0.125
+        },
+        {
+          "agent": "backend",
+          "score": 0.0
+        },
+        {
+          "agent": "ci-cd",
+          "score": 0.0
+        },
+        {
+          "agent": "cloud-infra",
+          "score": 0.0
+        },
+        {
+          "agent": "code-review",
+          "score": 0.0
+        }
+      ]
+    },
+    "index": {
+      "exit_code": 0,
+      "schema": "project-telos.context-envelope/v1",
+      "status": "MATCH",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "38ddc6fe54641baff4a8563e502c0d5cf9e07750350bc41eadf8db75a223fc47",
+      "verification_verdict": "MATCH"
+    },
+    "telos": {
+      "exit_code": 0,
+      "status": "MATCH",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "be17cb15259234cb4e8e95c2b36e76c90d841431729beb140294e34c5f9ebfa7",
+      "tool": "telos",
+      "tool_version": "0.1.0"
+    },
+    "telos_catalog": {
+      "exit_code": 0,
+      "status": "MATCH",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "ef95a6f1ff803c483c3c4dd553fe19c37ab144113a21bc005cf4148cf31a8564",
+      "summary_detected": true
+    }
+  },
+  "generated_on": "2026-07-01",
+  "measurements": [
+    {
+      "id": "numpy_float64_h_1/3",
+      "status": "MATCH"
+    },
+    {
+      "id": "numpy_float64_h_1/2",
+      "status": "MATCH"
+    },
+    {
+      "id": "numpy_float64_h_2/3",
+      "status": "MATCH"
+    },
+    {
+      "id": "numpy_explicit_euler_negative",
+      "status": "MATCH"
+    },
+    {
+      "id": "scipy_linalg_det_h_1/3",
+      "status": "MATCH"
+    },
+    {
+      "id": "scipy_linalg_det_h_1/2",
+      "status": "MATCH"
+    },
+    {
+      "id": "scipy_linalg_det_h_2/3",
+      "status": "MATCH"
+    },
+    {
+      "id": "jax_runtime_branch",
+      "status": "UNAVAILABLE_FENCED"
+    },
+    {
+      "id": "buildlang_runtime_branch",
+      "status": "UNAVAILABLE_FENCED"
+    },
+    {
+      "id": "julia_sciml_branch",
+      "status": "UNAVAILABLE_FENCED"
+    }
+  ],
+  "non_promotion_statement": "Pass 0120 measures runtime replay drift against pass 0119's exact oracle. It does not prove BuildLang, JAX, GPU, or Julia execution when those branches are unavailable.",
+  "pass": "0120",
+  "runtime_branches": [
+    {
+      "branch_id": "numpy_float64_h_1/3",
+      "determinant_abs_drift": 0.0,
+      "determinant_float64": 1.0,
+      "h": "1/3",
+      "modified_final_float64": 0.9999999999999987,
+      "modified_initial_float64": 1.0,
+      "modified_max_abs_drift": 1.3322676295501878e-15,
+      "runtime": "numpy",
+      "standard_final_float64": 0.5579495314020098,
+      "standard_initial_float64": 0.5,
+      "status": "MATCH",
+      "steps": 24,
+      "tolerance": 1e-12
+    },
+    {
+      "branch_id": "numpy_float64_h_1/2",
+      "determinant_abs_drift": 0.0,
+      "determinant_float64": 1.0,
+      "h": "1/2",
+      "modified_final_float64": 1.0,
+      "modified_initial_float64": 1.0,
+      "modified_max_abs_drift": 0.0,
+      "runtime": "numpy",
+      "standard_final_float64": 0.6111035186572087,
+      "standard_initial_float64": 0.5,
+      "status": "MATCH",
+      "steps": 24,
+      "tolerance": 1e-12
+    },
+    {
+      "branch_id": "numpy_float64_h_2/3",
+      "determinant_abs_drift": 0.0,
+      "determinant_float64": 1.0,
+      "h": "2/3",
+      "modified_final_float64": 0.9999999999999994,
+      "modified_initial_float64": 1.0,
+      "modified_max_abs_drift": 5.551115123125783e-16,
+      "runtime": "numpy",
+      "standard_final_float64": 0.3750476390018574,
+      "standard_initial_float64": 0.5,
+      "status": "MATCH",
+      "steps": 24,
+      "tolerance": 1e-12
+    },
+    {
+      "branch_id": "numpy_explicit_euler_negative",
+      "determinant_float64": 1.1111111111111112,
+      "energy_final_float64": 6.26830006094342,
+      "energy_growth": true,
+      "energy_initial_float64": 0.5,
+      "runtime": "numpy",
+      "status": "MATCH"
+    },
+    {
+      "branch_id": "scipy_linalg_det_h_1/3",
+      "determinant_abs_drift": 0.0,
+      "determinant_float64": 1.0,
+      "h": "1/3",
+      "runtime": "scipy.linalg.det",
+      "status": "MATCH",
+      "tolerance": 1e-12
+    },
+    {
+      "branch_id": "scipy_linalg_det_h_1/2",
+      "determinant_abs_drift": 0.0,
+      "determinant_float64": 1.0,
+      "h": "1/2",
+      "runtime": "scipy.linalg.det",
+      "status": "MATCH",
+      "tolerance": 1e-12
+    },
+    {
+      "branch_id": "scipy_linalg_det_h_2/3",
+      "determinant_abs_drift": 0.0,
+      "determinant_float64": 1.0,
+      "h": "2/3",
+      "runtime": "scipy.linalg.det",
+      "status": "MATCH",
+      "tolerance": 1e-12
+    },
+    {
+      "branch_id": "jax_runtime_branch",
+      "runtime": "jax",
+      "status": "UNAVAILABLE_FENCED"
+    },
+    {
+      "branch_id": "buildlang_runtime_branch",
+      "runtime": "buildc",
+      "status": "UNAVAILABLE_FENCED"
+    },
+    {
+      "branch_id": "julia_sciml_branch",
+      "runtime": "julia",
+      "status": "UNAVAILABLE_FENCED"
+    }
+  ],
+  "schema": "HamiltonianRuntimeBranchReceipt/v1",
+  "seal": "9100835b059bd5d8d5d21f3e899bfd78c36d68f27d76bdc09b0cfb561d9fe0e5",
+  "source_bindings": {
+    "hamiltonian_symplectic_pass": "0119",
+    "hamiltonian_symplectic_seal": "8fb6fe8a7b9155318c4e4512c9ef3c916e816365186d3566ea6bbf5c317ca05c"
+  },
+  "source_surface": {
+    "anchor_count": 4,
+    "anchors": [
+      {
+        "gap_status": "inferred",
+        "tool": "NumPy linalg",
+        "url": "https://numpy.org/doc/stable/reference/generated/numpy.linalg.det.html"
+      },
+      {
+        "gap_status": "inferred",
+        "tool": "SciPy linalg.det",
+        "url": "https://docs.scipy.org/doc/scipy/reference/generated/scipy.linalg.det.html"
+      },
+      {
+        "gap_status": "inferred",
+        "tool": "JAX Quickstart",
+        "url": "https://docs.jax.dev/en/latest/quickstart.html"
+      },
+      {
+        "gap_status": "inferred",
+        "tool": "Python decimal",
+        "url": "https://docs.python.org/3/library/decimal.html"
+      }
+    ]
+  },
+  "status": "HAMILTONIAN_RUNTIME_BRANCH_MATCH",
+  "unsupported_claim_count": 0,
+  "validation_errors": []
+}

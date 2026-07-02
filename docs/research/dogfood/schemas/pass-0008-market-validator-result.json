@@ -1,0 +1,37 @@
+{
+  "schema": "Pass0008MarketValidatorRun/v1",
+  "pass": "0008",
+  "status": "MATCH",
+  "checks": [
+    {
+      "artifact": "Pass0008MarketRows",
+      "path": "schemas\\ai4science-frontier-map-pass-0008.json",
+      "count": 16,
+      "categories": [
+        "automated-discovery",
+        "formal-math",
+        "lab-platform",
+        "literature-search",
+        "workflow-notebook"
+      ],
+      "required_categories": [
+        "automated-discovery",
+        "formal-math",
+        "lab-platform",
+        "literature-search",
+        "workflow-notebook"
+      ],
+      "errors": [],
+      "status": "MATCH"
+    },
+    {
+      "artifact": "Pass0008Wedges",
+      "path": "schemas\\proof-packet-market-wedges-pass-0008.json",
+      "count": 5,
+      "errors": [],
+      "status": "MATCH"
+    }
+  ],
+  "match": 2,
+  "drift": 0
+}

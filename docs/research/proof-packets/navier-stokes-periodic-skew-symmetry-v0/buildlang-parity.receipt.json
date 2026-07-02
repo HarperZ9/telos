@@ -1,0 +1,47 @@
+{
+  "schema": "project-telos.buildlang-parity-run-receipt/v1",
+  "packet_id": "navier-stokes-periodic-skew-symmetry-v0",
+  "generated_at": "2026-07-02",
+  "command": "cargo run --quiet --manifest-path C:\\dev\\public\\pubscan\\quantalang\\compiler\\Cargo.toml --bin buildc -- run docs\\research\\proof-packets\\navier-stokes-periodic-skew-symmetry-v0\\kernel.buildlang.bld",
+  "source": {
+    "path": "docs/research/proof-packets/navier-stokes-periodic-skew-symmetry-v0/kernel.buildlang.bld",
+    "sha256": "ac9c110b34d6a7d3e766ffc84549431f91eca374664a31c1f9d549df87a1224e"
+  },
+  "reference_kernel": {
+    "path": "docs/research/proof-packets/navier-stokes-periodic-skew-symmetry-v0/kernel.reference.mjs",
+    "sha256": "911006d6d5e733518b9b56b59b46f60b0b8743dd3c3fd18237bdb58cd81066b3"
+  },
+  "toolchain": {
+    "buildc": "1.0.6",
+    "language": "1.0.0",
+    "backend": "C backend",
+    "warning_boundary": "The command emitted Rust dead_code warning: ScientificVerifyReport.tolerance is never read."
+  },
+  "stdout_lines": [
+    "1.41311e-14",
+    "0"
+  ],
+  "measurements": {
+    "grid": 64,
+    "nonlinear_energy_transfer": 1.41311e-14,
+    "nonlinear_energy_transfer_abs": 1.41311e-14,
+    "max_divergence_abs": 0
+  },
+  "tolerances": {
+    "nonlinear_energy_transfer_abs": 1e-10,
+    "max_divergence_abs": 1e-12
+  },
+  "verdicts": {
+    "buildlang_parity_probe": "MATCH",
+    "parent_millennium_problem": "UNVERIFIABLE",
+    "native_scientific_runtime_receipt": "NOT_EMITTED"
+  },
+  "native_scientific_runtime_gap": "buildc scientific-runtime receipt v0 supports output-series invariants such as energy-monotone and conservation. This packet needs a relation/tolerance invariant over named measurements, so the BuildLang witness is bound by this external parity receipt instead.",
+  "boundaries": [
+    "This is a compiled finite-mode BuildLang witness for one smooth periodic two-dimensional field.",
+    "This is not theorem-prover replay.",
+    "This is not a proof of Navier-Stokes existence and smoothness.",
+    "This is not a native buildc scientific-runtime receipt.",
+    "This does not establish warning-clean buildc output."
+  ]
+}

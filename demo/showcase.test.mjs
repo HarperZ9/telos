@@ -159,6 +159,21 @@ const blockedPacket = buildReadinessPacket({
 assert.equal(isPrReady(blockedPacket), false);
 assert.equal(blockedPacket.operator_next_action, "revise");
 assert.ok(blockedPacket.blockers.includes("missing passing test evidence"));
+
+const notRunReproductionPacket = buildReadinessPacket({
+  candidate: pandasCandidate,
+  evidence: {
+    ...matchingEvidence,
+    reproduction: {
+      command: "python -m pytest pandas/tests/arrays/test_string_arrow.py -q",
+      status: "not-run"
+    }
+  },
+  now: new Date("2026-06-27T12:30:00Z")
+});
+assert.equal(isPrReady(notRunReproductionPacket), false);
+assert.equal(notRunReproductionPacket.operator_next_action, "revise");
+assert.ok(notRunReproductionPacket.blockers.includes("missing failing reproduction evidence"));
 const recordDir = mkdtempSync(path.join(os.tmpdir(), "telos-showcase-record-"));
 const evidencePath = path.join(recordDir, "evidence.json");
 writeFileSync(evidencePath, `${JSON.stringify(matchingEvidence, null, 2)}\n`);

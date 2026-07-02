@@ -1,0 +1,57 @@
+{
+  "schema": "ProofPacket/v1",
+  "packet_id": "proof-packet-pass-0007-negative-missing-authority",
+  "pass": "0007",
+  "generated_on": "2026-07-01",
+  "domain": "negative-validator-test",
+  "claim_set": [
+    {
+      "claim_id": "claim-negative-packet-must-drift",
+      "claim": "This packet intentionally omits authority receipts and must be rejected by the ProofPacket validator.",
+      "promotion_state": "UNVERIFIABLE",
+      "confidence": "high",
+      "limits": "Negative validator fixture only."
+    }
+  ],
+  "source_receipts": [
+    {
+      "source_id": "negative-test",
+      "kind": "local-fixture",
+      "used_for": "validator drift test",
+      "confidence": "high"
+    }
+  ],
+  "action_receipts": [
+    {
+      "action_id": "action-create-negative-fixture",
+      "actor": "Codex",
+      "action": "created malformed ProofPacket fixture",
+      "result": "EXPECTED_DRIFT"
+    }
+  ],
+  "workspace_state": {
+    "telos": {
+      "repo": "C:\\dev\\public\\telos",
+      "head": "cbbf82c"
+    }
+  },
+  "verification_verdicts": [
+    {
+      "verifier": "ProofPacketValidator",
+      "status": "EXPECTED_DRIFT",
+      "evidence_ref": "schemas/proof-packet-validator-negative-pass-0007.json"
+    }
+  ],
+  "failure_labels": [
+    {
+      "label": "MISSING_AUTHORITY_RECEIPTS",
+      "reason": "The required authority_receipts field is intentionally absent."
+    }
+  ],
+  "decision_summary": {
+    "decision": "block",
+    "reason": "Required proof-packet authority evidence is missing.",
+    "confidence": "high",
+    "next_action": "reject packet until authority_receipts is supplied"
+  }
+}

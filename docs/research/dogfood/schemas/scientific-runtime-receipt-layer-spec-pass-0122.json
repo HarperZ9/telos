@@ -1,0 +1,406 @@
+{
+  "current_promoted_natural_laws": [],
+  "flagship_receipts": {
+    "forum": {
+      "confidence": 0.07500000000000001,
+      "decided": null,
+      "exit_code": 0,
+      "status": "MATCH",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "8f4e1103bf8308cdf42141cf205a808c45d3492dbfddcd678293cb006905752a"
+    },
+    "index": {
+      "exit_code": 0,
+      "status": "MATCH",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "9a9303cf254855c135b567b79a275da78629041da77222f84a3446a04c33d20e",
+      "verification_verdict": "MATCH"
+    },
+    "telos": {
+      "exit_code": 0,
+      "status": "MATCH",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "be17cb15259234cb4e8e95c2b36e76c90d841431729beb140294e34c5f9ebfa7",
+      "tool_version": "0.1.0"
+    },
+    "telos_catalog": {
+      "exit_code": 0,
+      "status": "MATCH",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "ef95a6f1ff803c483c3c4dd553fe19c37ab144113a21bc005cf4148cf31a8564"
+    }
+  },
+  "generated_on": "2026-07-01",
+  "long_horizon_experiment": {
+    "exact_cases": [
+      {
+        "determinant_exact": "1",
+        "exact_invariant_for_all_steps_by_induction": true,
+        "float_horizons": [
+          {
+            "modified_max_abs_drift": 2.55351295663786e-15,
+            "standard_energy_final": 0.557949531402009,
+            "status": "MATCH",
+            "steps": 24,
+            "tolerance": 2e-12
+          },
+          {
+            "modified_max_abs_drift": 1.4876988529977098e-14,
+            "standard_energy_final": 0.569266613199029,
+            "status": "MATCH",
+            "steps": 240,
+            "tolerance": 2e-12
+          },
+          {
+            "modified_max_abs_drift": 1.474376176702208e-13,
+            "standard_energy_final": 0.5773300629458181,
+            "status": "MATCH",
+            "steps": 2400,
+            "tolerance": 2e-12
+          },
+          {
+            "modified_max_abs_drift": 1.4854784069484595e-12,
+            "standard_energy_final": 0.48517201072706545,
+            "status": "MATCH",
+            "steps": 24000,
+            "tolerance": 2e-12
+          }
+        ],
+        "h": "1/3",
+        "symplectic_residual_zero": true
+      },
+      {
+        "determinant_exact": "1",
+        "exact_invariant_for_all_steps_by_induction": true,
+        "float_horizons": [
+          {
+            "modified_max_abs_drift": 0.0,
+            "standard_energy_final": 0.6111035186572087,
+            "status": "MATCH",
+            "steps": 24,
+            "tolerance": 2e-12
+          },
+          {
+            "modified_max_abs_drift": 9.992007221626409e-16,
+            "standard_energy_final": 0.6396627100109535,
+            "status": "MATCH",
+            "steps": 240,
+            "tolerance": 2e-12
+          },
+          {
+            "modified_max_abs_drift": 4.9960036108132044e-15,
+            "standard_energy_final": 0.4501593954831975,
+            "status": "MATCH",
+            "steps": 2400,
+            "tolerance": 2e-12
+          },
+          {
+            "modified_max_abs_drift": 2.275957200481571e-14,
+            "standard_energy_final": 0.6625051200779695,
+            "status": "MATCH",
+            "steps": 24000,
+            "tolerance": 2e-12
+          }
+        ],
+        "h": "1/2",
+        "symplectic_residual_zero": true
+      },
+      {
+        "determinant_exact": "1",
+        "exact_invariant_for_all_steps_by_induction": true,
+        "float_horizons": [
+          {
+            "modified_max_abs_drift": 3.3306690738754696e-16,
+            "standard_energy_final": 0.37504763900185756,
+            "status": "MATCH",
+            "steps": 24,
+            "tolerance": 2e-12
+          },
+          {
+            "modified_max_abs_drift": 2.3314683517128287e-15,
+            "standard_energy_final": 0.5891035426831787,
+            "status": "MATCH",
+            "steps": 240,
+            "tolerance": 2e-12
+          },
+          {
+            "modified_max_abs_drift": 4.9404924595819466e-14,
+            "standard_energy_final": 0.37994597180609924,
+            "status": "MATCH",
+            "steps": 2400,
+            "tolerance": 2e-12
+          },
+          {
+            "modified_max_abs_drift": 5.486722187697524e-13,
+            "standard_energy_final": 0.43379509919721876,
+            "status": "MATCH",
+            "steps": 24000,
+            "tolerance": 2e-12
+          }
+        ],
+        "h": "2/3",
+        "symplectic_residual_zero": true
+      }
+    ],
+    "law_candidate_status": "LAW_CANDIDATE",
+    "negative_fixture": {
+      "area_growth_log10_at_24000_steps": 1098.1797734562035,
+      "area_growth_log10_at_240_steps": 10.981797734562035,
+      "determinant_exact": "10/9",
+      "fixture_id": "explicit_euler_area_energy_growth",
+      "status": "MATCH"
+    },
+    "promoted_law_status": "NOT_PROMOTED",
+    "schema": "HamiltonianLongHorizonReceipt/v1",
+    "source_pass": "0119",
+    "source_seal": "8fb6fe8a7b9155318c4e4512c9ef3c916e816365186d3566ea6bbf5c317ca05c"
+  },
+  "market_gap_status": "inferred",
+  "non_promotion_statement": "Pass 0122 strengthens a scoped Hamiltonian law candidate and defines a receipt layer. It does not prove BuildLang/buildc execution, solve arbitrary physics, verify all external tool claims, or promote a natural law.",
+  "pass": "0122",
+  "primary_30_day_push": "scientific_runtime_receipt_layer",
+  "product_hypothesis": "A scientific runtime receipt layer can become the cross-field bridge from source and proof to executable branch, compiler/runtime evidence, telemetry, lineage, and Crucible verdict.",
+  "receipt_contract": [
+    {
+      "field": "source_receipts",
+      "purpose": "Gather/OpenLineage refs for papers, docs, datasets, and source leads.",
+      "required_status": "required"
+    },
+    {
+      "field": "oracle",
+      "purpose": "Exact proof, reference implementation, formal theorem, or declared unavailable oracle.",
+      "required_status": "required"
+    },
+    {
+      "field": "runtime_branch",
+      "purpose": "Runtime name, version, target, seed, hardware, input hash, output hash, and drift metric.",
+      "required_status": "required"
+    },
+    {
+      "field": "compiler_branch",
+      "purpose": "Compiler, IR, flags, target triple/device, build hash, and executable hash when compiled.",
+      "required_status": "required"
+    },
+    {
+      "field": "telemetry_branch",
+      "purpose": "OpenTelemetry-style traces/spans/log refs for action provenance.",
+      "required_status": "required"
+    },
+    {
+      "field": "lineage_branch",
+      "purpose": "Dataset/job/run lineage refs where data pipelines are involved.",
+      "required_status": "required"
+    },
+    {
+      "field": "verifier_verdict",
+      "purpose": "Crucible MATCH/DRIFT/UNVERIFIABLE verdict and falsifier.",
+      "required_status": "required"
+    },
+    {
+      "field": "non_promotion_boundary",
+      "purpose": "Statement of what the packet does not prove.",
+      "required_status": "required"
+    }
+  ],
+  "schema": "ScientificRuntimeReceiptLayerSpec/v1",
+  "seal": "135c16c1f6d840cbb26ae6ba9257b3863844035c90975e9248aa13ffc1899312",
+  "source_bindings": {
+    "growth_vector_pass": "0121",
+    "growth_vector_seal": "701f68e23d84059f60dae4b0dbfb59dff4b1903f1012ca7193887b0da49b292b",
+    "runtime_branch_pass": "0120",
+    "runtime_branch_seal": "9100835b059bd5d8d5d21f3e899bfd78c36d68f27d76bdc09b0cfb561d9fe0e5",
+    "source_store": "gather/pass-0122-runtime-sources"
+  },
+  "source_matrix": [
+    {
+      "category": "compiler_ir",
+      "gap_status": "inferred",
+      "local_gather_chars": 4198,
+      "local_gather_sha256": "9e2bd78c4fcf458ed6da56e3227cf3d35e35d1822e63e12bf27f8ac97fea54bb",
+      "local_gather_status": "GATHER_VERIFIED",
+      "official_anchor_url": "https://openxla.org/xla",
+      "official_positioning_summary": "ML compiler for high-performance execution across hardware.",
+      "proof_layer_gap_hypothesis": "The anchor documents a local runtime, compiler, prover, telemetry, lineage, or tracking capability; pass 0122 hypothesizes a missing cross-layer receipt that binds source, oracle, runtime branch, compiler state, telemetry, lineage, and verifier verdict.",
+      "tool": "OpenXLA XLA"
+    },
+    {
+      "category": "compiler_ir",
+      "gap_status": "inferred",
+      "local_gather_chars": 5192,
+      "local_gather_sha256": "098a09818b6d25007bf61aee4fedb2c60cbed244f6b254ec8878c31ec52a4ddb",
+      "local_gather_status": "GATHER_VERIFIED",
+      "official_anchor_url": "https://openxla.org/stablehlo",
+      "official_positioning_summary": "Portability layer for ML high-level operations.",
+      "proof_layer_gap_hypothesis": "The anchor documents a local runtime, compiler, prover, telemetry, lineage, or tracking capability; pass 0122 hypothesizes a missing cross-layer receipt that binds source, oracle, runtime branch, compiler state, telemetry, lineage, and verifier verdict.",
+      "tool": "StableHLO"
+    },
+    {
+      "category": "compiler_ir",
+      "gap_status": "inferred",
+      "local_gather_chars": 7092,
+      "local_gather_sha256": "f2de72ddc764178f5015e25c02c01fb1190962f36dd8f6f0d5395105a8e21815",
+      "local_gather_status": "GATHER_VERIFIED",
+      "official_anchor_url": "https://mlir.llvm.org/",
+      "official_positioning_summary": "Reusable and extensible compiler infrastructure for heterogeneous systems.",
+      "proof_layer_gap_hypothesis": "The anchor documents a local runtime, compiler, prover, telemetry, lineage, or tracking capability; pass 0122 hypothesizes a missing cross-layer receipt that binds source, oracle, runtime branch, compiler state, telemetry, lineage, and verifier verdict.",
+      "tool": "MLIR"
+    },
+    {
+      "category": "array_runtime",
+      "gap_status": "inferred",
+      "local_gather_chars": 64,
+      "local_gather_sha256": "ed2029a5a97f2d5f4d3db595ffb4df627402cbdfbaff9942684ae6b623de209e",
+      "local_gather_status": "GATHER_VERIFIED_SHORT_TEXT",
+      "official_anchor_url": "https://docs.jax.dev/en/latest/quickstart.html",
+      "official_positioning_summary": "Array computation with transformations including JIT and autodiff.",
+      "proof_layer_gap_hypothesis": "The anchor documents a local runtime, compiler, prover, telemetry, lineage, or tracking capability; pass 0122 hypothesizes a missing cross-layer receipt that binds source, oracle, runtime branch, compiler state, telemetry, lineage, and verifier verdict.",
+      "tool": "JAX"
+    },
+    {
+      "category": "scientific_runtime",
+      "gap_status": "inferred",
+      "local_gather_chars": 18655,
+      "local_gather_sha256": "74f1b26aee4da55a30545d1ac8a143abecd4ee2f99d0b120e1d63990a4f2737a",
+      "local_gather_status": "GATHER_VERIFIED",
+      "official_anchor_url": "https://docs.sciml.ai/DiffEqDocs/latest/api/ordinarydiffeq/dynamicalodeexplicit/SymplecticRK/",
+      "official_positioning_summary": "Symplectic integrator documentation for Hamiltonian systems.",
+      "proof_layer_gap_hypothesis": "The anchor documents a local runtime, compiler, prover, telemetry, lineage, or tracking capability; pass 0122 hypothesizes a missing cross-layer receipt that binds source, oracle, runtime branch, compiler state, telemetry, lineage, and verifier verdict.",
+      "tool": "SciML SymplecticRK"
+    },
+    {
+      "category": "array_runtime",
+      "gap_status": "inferred",
+      "local_gather_chars": 3223,
+      "local_gather_sha256": "51ab13e923411e83851a831206f5329d3ac33b6fd1b3bd132435e37d5fa703bb",
+      "local_gather_status": "GATHER_VERIFIED",
+      "official_anchor_url": "https://numpy.org/doc/stable/reference/generated/numpy.linalg.det.html",
+      "official_positioning_summary": "Determinant routine used as a local branch reference.",
+      "proof_layer_gap_hypothesis": "The anchor documents a local runtime, compiler, prover, telemetry, lineage, or tracking capability; pass 0122 hypothesizes a missing cross-layer receipt that binds source, oracle, runtime branch, compiler state, telemetry, lineage, and verifier verdict.",
+      "tool": "NumPy det"
+    },
+    {
+      "category": "array_runtime",
+      "gap_status": "inferred",
+      "local_gather_chars": 3079,
+      "local_gather_sha256": "16a2037a71ce9781eb76229f95dcd5a519a6f8ef010276302e57a29819f33930",
+      "local_gather_status": "GATHER_VERIFIED",
+      "official_anchor_url": "https://docs.scipy.org/doc/scipy/reference/generated/scipy.linalg.det.html",
+      "official_positioning_summary": "SciPy determinant routine used as a local branch reference.",
+      "proof_layer_gap_hypothesis": "The anchor documents a local runtime, compiler, prover, telemetry, lineage, or tracking capability; pass 0122 hypothesizes a missing cross-layer receipt that binds source, oracle, runtime branch, compiler state, telemetry, lineage, and verifier verdict.",
+      "tool": "SciPy det"
+    },
+    {
+      "category": "gpu_kernel",
+      "gap_status": "inferred",
+      "local_gather_chars": 5731,
+      "local_gather_sha256": "6af8cf525c7059d64a77737f3fcc691acb0937c6a2f750a4be91abbaf3a21820",
+      "local_gather_status": "GATHER_VERIFIED",
+      "official_anchor_url": "https://triton-lang.org/main/programming-guide/chapter-1/introduction.html",
+      "official_positioning_summary": "Language/compiler for custom parallel kernels.",
+      "proof_layer_gap_hypothesis": "The anchor documents a local runtime, compiler, prover, telemetry, lineage, or tracking capability; pass 0122 hypothesizes a missing cross-layer receipt that binds source, oracle, runtime branch, compiler state, telemetry, lineage, and verifier verdict.",
+      "tool": "Triton"
+    },
+    {
+      "category": "ai_runtime",
+      "gap_status": "inferred",
+      "local_gather_chars": 15636,
+      "local_gather_sha256": "156ab77a3358bd25a43b4567f36e1246eac2b765cd71c5df538c49bd033d676e",
+      "local_gather_status": "GATHER_VERIFIED",
+      "official_anchor_url": "https://www.modular.com/open-source/max",
+      "official_positioning_summary": "High-performance AI inference framework.",
+      "proof_layer_gap_hypothesis": "The anchor documents a local runtime, compiler, prover, telemetry, lineage, or tracking capability; pass 0122 hypothesizes a missing cross-layer receipt that binds source, oracle, runtime branch, compiler state, telemetry, lineage, and verifier verdict.",
+      "tool": "Modular MAX"
+    },
+    {
+      "category": "formal_prover",
+      "gap_status": "inferred",
+      "local_gather_chars": 3438,
+      "local_gather_sha256": "04ad404726c7253834037e19025a60ae02d5565d89e77b724867d0c529361080",
+      "local_gather_status": "GATHER_VERIFIED",
+      "official_anchor_url": "https://lean-lang.org/doc/reference/latest/",
+      "official_positioning_summary": "Interactive theorem prover and programming language reference.",
+      "proof_layer_gap_hypothesis": "The anchor documents a local runtime, compiler, prover, telemetry, lineage, or tracking capability; pass 0122 hypothesizes a missing cross-layer receipt that binds source, oracle, runtime branch, compiler state, telemetry, lineage, and verifier verdict.",
+      "tool": "Lean"
+    },
+    {
+      "category": "formal_prover",
+      "gap_status": "inferred",
+      "local_gather_chars": 0,
+      "local_gather_sha256": null,
+      "local_gather_status": "OFFICIAL_ANCHOR_UNVERIFIED_LOCALLY",
+      "official_anchor_url": "https://rocq-prover.org/docs",
+      "official_positioning_summary": "Interactive theorem prover documentation anchor.",
+      "proof_layer_gap_hypothesis": "The anchor documents a local runtime, compiler, prover, telemetry, lineage, or tracking capability; pass 0122 hypothesizes a missing cross-layer receipt that binds source, oracle, runtime branch, compiler state, telemetry, lineage, and verifier verdict.",
+      "tool": "Rocq"
+    },
+    {
+      "category": "formal_prover",
+      "gap_status": "inferred",
+      "local_gather_chars": 0,
+      "local_gather_sha256": null,
+      "local_gather_status": "OFFICIAL_ANCHOR_UNVERIFIED_LOCALLY",
+      "official_anchor_url": "https://isabelle.in.tum.de/",
+      "official_positioning_summary": "Generic proof assistant anchor.",
+      "proof_layer_gap_hypothesis": "The anchor documents a local runtime, compiler, prover, telemetry, lineage, or tracking capability; pass 0122 hypothesizes a missing cross-layer receipt that binds source, oracle, runtime branch, compiler state, telemetry, lineage, and verifier verdict.",
+      "tool": "Isabelle"
+    },
+    {
+      "category": "formal_prover",
+      "gap_status": "inferred",
+      "local_gather_chars": 1522,
+      "local_gather_sha256": "8b49a0b241ca53a517013742e665c5149f06cd43b78ed22432c90f65654d1e0f",
+      "local_gather_status": "GATHER_VERIFIED",
+      "official_anchor_url": "https://agda.readthedocs.io/",
+      "official_positioning_summary": "Dependently typed language and proof assistant documentation.",
+      "proof_layer_gap_hypothesis": "The anchor documents a local runtime, compiler, prover, telemetry, lineage, or tracking capability; pass 0122 hypothesizes a missing cross-layer receipt that binds source, oracle, runtime branch, compiler state, telemetry, lineage, and verifier verdict.",
+      "tool": "Agda"
+    },
+    {
+      "category": "observability",
+      "gap_status": "inferred",
+      "local_gather_chars": 16218,
+      "local_gather_sha256": "d31de90962c237e5511842d328ef6b6cfe7ea4437272474149ce86d5025247ea",
+      "local_gather_status": "GATHER_VERIFIED",
+      "official_anchor_url": "https://opentelemetry.io/docs/concepts/observability-primer/",
+      "official_positioning_summary": "Telemetry source for traces, metrics, and logs.",
+      "proof_layer_gap_hypothesis": "The anchor documents a local runtime, compiler, prover, telemetry, lineage, or tracking capability; pass 0122 hypothesizes a missing cross-layer receipt that binds source, oracle, runtime branch, compiler state, telemetry, lineage, and verifier verdict.",
+      "tool": "OpenTelemetry"
+    },
+    {
+      "category": "experiment_tracking",
+      "gap_status": "inferred",
+      "local_gather_chars": 18302,
+      "local_gather_sha256": "1d7dd2c1186b74f6ceb95feb483eb12f2afc8f7dce7b6fa3e859718397ba67df",
+      "local_gather_status": "GATHER_VERIFIED",
+      "official_anchor_url": "https://mlflow.org/docs/latest/ml/tracking/",
+      "official_positioning_summary": "Experiment tracking for parameters, code versions, metrics, and outputs.",
+      "proof_layer_gap_hypothesis": "The anchor documents a local runtime, compiler, prover, telemetry, lineage, or tracking capability; pass 0122 hypothesizes a missing cross-layer receipt that binds source, oracle, runtime branch, compiler state, telemetry, lineage, and verifier verdict.",
+      "tool": "MLflow Tracking"
+    },
+    {
+      "category": "experiment_tracking",
+      "gap_status": "inferred",
+      "local_gather_chars": 3541,
+      "local_gather_sha256": "d9fdf9706817a9221a5bba8be3c0b607700443f1c8f9e6970277da7f47829eb8",
+      "local_gather_status": "GATHER_VERIFIED",
+      "official_anchor_url": "https://docs.wandb.ai/models/track",
+      "official_positioning_summary": "Experiment tracking for metrics, hyperparameters, system metrics, and artifacts.",
+      "proof_layer_gap_hypothesis": "The anchor documents a local runtime, compiler, prover, telemetry, lineage, or tracking capability; pass 0122 hypothesizes a missing cross-layer receipt that binds source, oracle, runtime branch, compiler state, telemetry, lineage, and verifier verdict.",
+      "tool": "Weights and Biases"
+    },
+    {
+      "category": "lineage",
+      "gap_status": "inferred",
+      "local_gather_chars": 2920,
+      "local_gather_sha256": "135b9151ffe15d4d6183adfb5d18333bd9d074c3146d1294b3c4f4378ea73f40",
+      "local_gather_status": "GATHER_VERIFIED",
+      "official_anchor_url": "https://openlineage.io/docs/",
+      "official_positioning_summary": "Open framework for lineage collection and analysis.",
+      "proof_layer_gap_hypothesis": "The anchor documents a local runtime, compiler, prover, telemetry, lineage, or tracking capability; pass 0122 hypothesizes a missing cross-layer receipt that binds source, oracle, runtime branch, compiler state, telemetry, lineage, and verifier verdict.",
+      "tool": "OpenLineage"
+    }
+  ],
+  "status": "SCIENTIFIC_RUNTIME_RECEIPT_LAYER_MATCH",
+  "unsupported_claim_count": 0,
+  "validation_errors": []
+}

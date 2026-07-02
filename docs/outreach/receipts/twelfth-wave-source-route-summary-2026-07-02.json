@@ -1,0 +1,107 @@
+{
+  "schema": "project-telos.twelfth-wave-source-route-summary/v1",
+  "created_at": "2026-07-02",
+  "purpose": "Compact receipt for twelfth-wave PDE proof-packet ladder routing, source intake, and tool substrate checks.",
+  "forum_route": {
+    "prompt": "Project Telos twelfth-wave PDE proof-packet ladder: package Navier-Stokes periodic skew-symmetry bounded proof receipt, BuildLang/buildc scientific-runtime heat-equation receipt, Gather arXiv source leads, Learn prooflesson, Crucible verification, and outreach handoff without claiming Navier-Stokes is solved.",
+    "decided": "project-telos",
+    "confidence": 0.5,
+    "needs_escalation": false
+  },
+  "index_context_envelope": {
+    "root": "C:\\dev\\public\\telos",
+    "focus": "telos",
+    "hops": 2,
+    "budget": 14000,
+    "verification_verdict": "MATCH",
+    "graph_pack_sha256": "14515e573c240295bdc55756746b4e1c9b644968699e9c870cff5e5af4c5ea11",
+    "freshness_root_sha256": "8439ddad64aec26631e84c6a7f69d23cf3d10d2ad9e1d8980c2546cb3b3957c0",
+    "retained_repo_sha256": {
+      "telos": "ed824d8b2f4d3af86933986a558e01fc451806f2a119bfcb9322e8bf7af1334a"
+    }
+  },
+  "arxiv_source_leads": [
+    {
+      "query": "Navier-Stokes formal verification energy estimates proof assistant",
+      "retained": 6,
+      "dropped": 0,
+      "seal": "b328d373e8102b6e2637cc1ba3ac8930fbc5a65b1fc709cbb07792afe3e7eada",
+      "ids": [
+        "1105.0582v2",
+        "1803.06056v2",
+        "1806.10081v10",
+        "1808.05029v1",
+        "1210.1981v4",
+        "2505.13816v3"
+      ],
+      "status": "SOURCE_LEAD_ONLY",
+      "boundary": "Metadata search results are not source-body review and do not validate any paper's claims."
+    },
+    {
+      "query": "incompressible Navier-Stokes energy identity periodic domain Fourier Galerkin",
+      "retained": 6,
+      "dropped": 0,
+      "seal": "bf73ac9e3aa9418ed768577a0e7518f7bb28edf5bfd09ecdaf22dd087f6c9c54",
+      "ids": [
+        "1105.0582v2",
+        "1807.00197v1",
+        "1509.06592v3",
+        "2506.23697v1",
+        "1502.01206v3",
+        "1806.10081v10"
+      ],
+      "status": "SOURCE_LEAD_ONLY",
+      "boundary": "Metadata search results are not source-body review and do not validate any paper's claims."
+    }
+  ],
+  "tool_doctor_snapshot": {
+    "telos_operator_doctor": {
+      "verdict": "MATCH",
+      "tool_count": 70,
+      "telos_tool_count": 37,
+      "doctor_lane_count": 6
+    },
+    "telos_mcp_freshness": {
+      "verdict": "MATCH",
+      "expected_versions": {
+        "gather": "1.5.0",
+        "index": "2.8.0",
+        "forum": "1.12.0",
+        "crucible": "1.1.0",
+        "telos": "0.1.0"
+      }
+    },
+    "gather_doctor": {
+      "tool_version": "1.5.0",
+      "status": "MATCH"
+    },
+    "index_doctor": {
+      "tool_version": "2.8.0",
+      "status": "MATCH"
+    },
+    "forum_doctor": {
+      "tool_version": "1.12.0",
+      "status": "MATCH"
+    },
+    "crucible_doctor": {
+      "tool_version": "1.1.0",
+      "status": "MATCH"
+    },
+    "learn": {
+      "version": "1.5.0",
+      "doctor_status": "MATCH"
+    },
+    "buildc": {
+      "version": "1.0.6",
+      "doctor_ready_for_practical_c_backend_examples": true,
+      "warning_observed": "cargo run emitted a Rust dead_code warning for ScientificVerifyReport.tolerance; do not claim warning-clean."
+    }
+  },
+  "classification": "ROUTE_MATCH_SOURCE_LEAD_DEMOTED",
+  "do_not_claim": [
+    "Do not claim arXiv metadata proves any paper's claim.",
+    "Do not claim Project Telos solved Navier-Stokes.",
+    "Do not claim buildc scientific receipts prove PDE correctness or a new physical law.",
+    "Do not claim buildc is warning-clean in this pass."
+  ]
+}

@@ -1,0 +1,267 @@
+{
+  "current_promoted_natural_laws": [],
+  "flagship_receipts": {
+    "forum": {
+      "confidence": 0.045454545454545456,
+      "decided": null,
+      "exit_code": 0,
+      "needs_escalation": true,
+      "status": "MATCH",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "ed94aa833c87bcdb8e11efb2d17b0a6f49e805bd8f008027ab7c368b7d707b56",
+      "top_candidates": [
+        {
+          "agent": "project-telos",
+          "score": 0.045454545454545456
+        },
+        {
+          "agent": "backend",
+          "score": 0.0
+        },
+        {
+          "agent": "ci-cd",
+          "score": 0.0
+        },
+        {
+          "agent": "cloud-infra",
+          "score": 0.0
+        },
+        {
+          "agent": "code-review",
+          "score": 0.0
+        }
+      ]
+    },
+    "index": {
+      "exit_code": 0,
+      "graph_pack_sha256": "8ee383e19ae9a6141bee70de733fb6aa09201ff9d284ce6778ce58b06e6b68b2",
+      "schema": "project-telos.context-envelope/v1",
+      "source_refs_only": true,
+      "status": "MATCH",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "643ac585122c29a22aec5ff2b74172118bb3a150c335f690a54ea45c2fc67ebd",
+      "verification_verdict": "MATCH"
+    },
+    "telos": {
+      "exit_code": 0,
+      "status": "MATCH",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "be17cb15259234cb4e8e95c2b36e76c90d841431729beb140294e34c5f9ebfa7",
+      "tool": "telos",
+      "tool_version": "0.1.0"
+    }
+  },
+  "generated_on": "2026-07-01",
+  "global_availability": {
+    "dimod_available": false,
+    "dimod_origin": null
+  },
+  "install_command": {
+    "command": "C:\\Users\\Zain\\AppData\\Local\\Temp\\telos-inequality-bqm-pass0101\\Scripts\\python.exe -m pip install --disable-pip-version-check --quiet dimod",
+    "cwd": "C:\\dev\\public\\telos",
+    "exit_code": 0,
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "law_candidate": {
+    "claim": "A squared equality-to-capacity penalty is not a valid general encoding of <= capacity knapsack; slack or another inequality encoding is required.",
+    "counterexample": "values=[10,9], weights=[3,2], capacity=4",
+    "name": "knapsack_inequality_bqm_requires_slack_or_inequality_encoding",
+    "status": "LAW_CANDIDATE"
+  },
+  "measurements": [
+    {
+      "claim": "global dimod import is absent",
+      "id": "global_absent",
+      "status": "MATCH"
+    },
+    {
+      "claim": "dimod installed in temp venv",
+      "id": "install_succeeded",
+      "status": "MATCH"
+    },
+    {
+      "claim": "true feasible optimum is value 10",
+      "id": "true_optimum",
+      "status": "MATCH"
+    },
+    {
+      "claim": "equality penalty selects infeasible set",
+      "id": "equality_counterexample",
+      "status": "MATCH"
+    },
+    {
+      "claim": "slack BQM recovers feasible optimum",
+      "id": "slack_fix",
+      "status": "MATCH"
+    },
+    {
+      "claim": "temporary venv cleaned",
+      "id": "temp_cleaned",
+      "status": "MATCH"
+    },
+    {
+      "claim": "Forum, Index, and Telos receipts match",
+      "id": "flagships",
+      "status": "MATCH"
+    },
+    {
+      "claim": "law remains candidate only",
+      "id": "promotion_boundary",
+      "status": "MATCH"
+    }
+  ],
+  "negative_fixtures": [
+    {
+      "expected_status": "REJECT",
+      "fixture_id": "equality_penalty_claimed_general",
+      "reject_reason": "counterexample selects infeasible overweight set"
+    },
+    {
+      "expected_status": "REJECT",
+      "fixture_id": "law_promoted",
+      "reject_reason": "single counterexample plus fix is law-candidate only"
+    },
+    {
+      "expected_status": "REJECT",
+      "fixture_id": "qpu_claim",
+      "reject_reason": "dimod ExactSolver is local CPU execution"
+    }
+  ],
+  "non_promotion_statement": "Pass 0101 proves a bounded counterexample and slack-variable fix for one BQM encoding. It promotes a law candidate, not a natural law.",
+  "pass": "0101",
+  "results": {
+    "dimod_version": "0.12.22",
+    "equality_penalty": {
+      "energy": 81.0,
+      "feasible": false,
+      "items": [
+        0,
+        1
+      ],
+      "sample": {
+        "x0": 1,
+        "x1": 1
+      },
+      "value": 19,
+      "weight": 5
+    },
+    "problem": {
+      "capacity": 4,
+      "penalty": 100,
+      "values": [
+        10,
+        9
+      ],
+      "weights": [
+        3,
+        2
+      ]
+    },
+    "slack_penalty": {
+      "energy": -10.0,
+      "feasible": true,
+      "items": [
+        0
+      ],
+      "sample": {
+        "s0": 1,
+        "s1": 0,
+        "s2": 0,
+        "x0": 1,
+        "x1": 0
+      },
+      "value": 10,
+      "weight": 3
+    },
+    "true_optimum": {
+      "items": [
+        0
+      ],
+      "mask": 1,
+      "value": 10,
+      "weight": 3
+    }
+  },
+  "run_command": {
+    "command": "C:\\Users\\Zain\\AppData\\Local\\Temp\\telos-inequality-bqm-pass0101\\Scripts\\python.exe -c \nimport json\nimport dimod\nvalues=[10,9]\nweights=[3,2]\ncapacity=4\npenalty=100\n\ndef result_from_sample(sample):\n    items=[i for i in range(len(values)) if sample.get(f'x{i}', 0) == 1]\n    value=sum(values[i] for i in items)\n    weight=sum(weights[i] for i in items)\n    return {'items': items, 'value': value, 'weight': weight, 'feasible': weight <= capacity}\n\ndef equality_bqm():\n    linear={}\n    quadratic={}\n    for i,(value,weight) in enumerate(zip(values, weights)):\n        linear[f'x{i}'] = -value + penalty*(weight*weight - 2*capacity*weight)\n    for i in range(len(values)):\n        for j in range(i+1, len(values)):\n            quadratic[(f'x{i}', f'x{j}')] = 2*penalty*weights[i]*weights[j]\n    return dimod.BinaryQuadraticModel(linear, quadratic, penalty*capacity*capacity, dimod.BINARY)\n\ndef slack_bqm():\n    terms={'x0': weights[0], 'x1': weights[1], 's0': 1, 's1': 2, 's2': 4}\n    linear={name: penalty*(coeff*coeff - 2*capacity*coeff) for name, coeff in terms.items()}\n    linear['x0'] -= values[0]\n    linear['x1'] -= values[1]\n    names=list(terms)\n    quadratic={}\n    for idx,a in enumerate(names):\n        for b in names[idx+1:]:\n            quadratic[(a,b)] = 2*penalty*terms[a]*terms[b]\n    return dimod.BinaryQuadraticModel(linear, quadratic, penalty*capacity*capacity, dimod.BINARY)\n\ndef solve(bqm):\n    sampleset=dimod.ExactSolver().sample(bqm)\n    sample=sampleset.first.sample\n    result=result_from_sample(sample)\n    result.update({'energy': float(sampleset.first.energy), 'sample': {k: int(v) for k, v in sample.items()}})\n    return result\n\ndef true_optimum():\n    best=None\n    for mask in range(1 << len(values)):\n        items=[i for i in range(len(values)) if (mask >> i) & 1]\n        value=sum(values[i] for i in items)\n        weight=sum(weights[i] for i in items)\n        feasible=weight <= capacity\n        if feasible and (best is None or value > best['value']):\n            best={'items': items, 'value': value, 'weight': weight, 'mask': mask}\n    return best\n\nprint(json.dumps({'dimod_version': dimod.__version__, 'problem': {'values': values, 'weights': weights, 'capacity': capacity, 'penalty': penalty}, 'true_optimum': true_optimum(), 'equality_penalty': solve(equality_bqm()), 'slack_penalty': solve(slack_bqm())}, sort_keys=True))\n",
+    "cwd": "C:\\dev\\public\\telos",
+    "exit_code": 0,
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_json": {
+      "dimod_version": "0.12.22",
+      "equality_penalty": {
+        "energy": 81.0,
+        "feasible": false,
+        "items": [
+          0,
+          1
+        ],
+        "sample": {
+          "x0": 1,
+          "x1": 1
+        },
+        "value": 19,
+        "weight": 5
+      },
+      "problem": {
+        "capacity": 4,
+        "penalty": 100,
+        "values": [
+          10,
+          9
+        ],
+        "weights": [
+          3,
+          2
+        ]
+      },
+      "slack_penalty": {
+        "energy": -10.0,
+        "feasible": true,
+        "items": [
+          0
+        ],
+        "sample": {
+          "s0": 1,
+          "s1": 0,
+          "s2": 0,
+          "x0": 1,
+          "x1": 0
+        },
+        "value": 10,
+        "weight": 3
+      },
+      "true_optimum": {
+        "items": [
+          0
+        ],
+        "mask": 1,
+        "value": 10,
+        "weight": 3
+      }
+    },
+    "stdout_sha256": "389eb5a465a0711dae1299168680d4c93346c15a4da26b3f2b1966a6575c1cb6"
+  },
+  "schema": "InequalitySafeBQMReceipt/v1",
+  "seal": "cd3fc1e66878fb9529f8e0c61890830819fcc3456dce0a96a24dcbfdf7eb4b1a",
+  "source_bindings": {
+    "ocean_pass": "0100",
+    "prior_bqm_status": "OCEAN_DIMOD_BQM_BRANCH_RECEIPT_MATCH"
+  },
+  "status": "INEQUALITY_SAFE_BQM_RECEIPT_MATCH",
+  "temp_venv": {
+    "cleaned": true,
+    "created_exit_code": 0,
+    "path": "C:\\Users\\Zain\\AppData\\Local\\Temp\\telos-inequality-bqm-pass0101"
+  },
+  "unsupported_claim_count": 0,
+  "validation_errors": [],
+  "venv_create_command": {
+    "command": "C:\\Users\\Zain\\AppData\\Local\\Programs\\Python\\Python312\\python.exe -m venv C:\\Users\\Zain\\AppData\\Local\\Temp\\telos-inequality-bqm-pass0101",
+    "cwd": "C:\\dev\\public\\telos",
+    "exit_code": 0,
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

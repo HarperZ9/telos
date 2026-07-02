@@ -1,0 +1,1183 @@
+{
+  "baseline_binding": {
+    "candidate_digest": "f21e346dce0ee22bd9d7dffabf6acbf6d1befb18279e0d54fe42b8f89c1fcdde",
+    "source_pass": "0086",
+    "source_schema": "QuantumOptimizationWorkflowReceipt/v1",
+    "source_seal": "412f8114dd197bb55adba90bee5c492b2c138b18125b8ebce1f7006d5aee37f0"
+  },
+  "comparison_to_exact": {
+    "exact_best_bits": [
+      0,
+      0,
+      1,
+      1,
+      1,
+      1
+    ],
+    "exact_best_energy": -36,
+    "optimum_hit_count": 30,
+    "run_count": 32,
+    "simulator_best_bits": [
+      0,
+      0,
+      1,
+      1,
+      1,
+      1
+    ],
+    "simulator_best_energy": -36,
+    "status": "MATCH"
+  },
+  "current_promoted_natural_laws": [],
+  "flagship_receipts": {
+    "forum": {
+      "confidence": 0.07954545454545454,
+      "decided": null,
+      "exit_code": 0,
+      "needs_escalation": true,
+      "status": "MATCH",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "84a0a6d5b0736b84f3aab69dd89aebd59d188bad2ae162a11cb8b6e7da24f92c",
+      "top_candidates": [
+        {
+          "agent": "model-foundry",
+          "score": 0.125
+        },
+        {
+          "agent": "project-telos",
+          "score": 0.045454545454545456
+        },
+        {
+          "agent": "backend",
+          "score": 0.0
+        },
+        {
+          "agent": "ci-cd",
+          "score": 0.0
+        },
+        {
+          "agent": "cloud-infra",
+          "score": 0.0
+        }
+      ]
+    },
+    "index": {
+      "exit_code": 0,
+      "graph_pack_sha256": "8ee383e19ae9a6141bee70de733fb6aa09201ff9d284ce6778ce58b06e6b68b2",
+      "schema": "project-telos.context-envelope/v1",
+      "source_refs_only": true,
+      "status": "MATCH",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "b503c3792b8e3e49e56ccf92904f640b05b9a5dda2ad4cfddec686d750844ac0",
+      "verification_verdict": "MATCH"
+    },
+    "telos": {
+      "exit_code": 0,
+      "status": "MATCH",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "be17cb15259234cb4e8e95c2b36e76c90d841431729beb140294e34c5f9ebfa7",
+      "tool": "telos",
+      "tool_version": "0.1.0"
+    }
+  },
+  "generated_on": "2026-07-01",
+  "negative_fixtures": [
+    {
+      "expected_status": "REJECT",
+      "fixture_id": "missing_seed_record",
+      "reject_reason": "stochastic_adapter_requires_seed_records"
+    },
+    {
+      "expected_status": "REJECT",
+      "fixture_id": "missing_exact_baseline",
+      "reject_reason": "simulator_branch_requires_exact_baseline_comparison"
+    },
+    {
+      "expected_status": "REJECT",
+      "fixture_id": "single_run_promotion",
+      "reject_reason": "stochastic_branch_requires_distribution_summary"
+    },
+    {
+      "expected_status": "REJECT",
+      "fixture_id": "quantum_hardware_claim",
+      "reject_reason": "simulated_branch_is_not_hardware_execution"
+    },
+    {
+      "expected_status": "REJECT",
+      "fixture_id": "quantum_advantage_claim",
+      "reject_reason": "simulated_branch_does_not_establish_quantum_advantage"
+    },
+    {
+      "expected_status": "REJECT",
+      "fixture_id": "unsealed_run_list",
+      "reject_reason": "run_list_digest_required_for_replay"
+    }
+  ],
+  "non_promotion_statement": "Pass 0087 verifies a seeded simulated-annealing branch against an exact toy baseline; it does not claim hardware execution, quantum advantage, new physics, or a natural law.",
+  "pass": "0087",
+  "promotion_boundary": {
+    "new_natural_law_claim": false,
+    "new_physics_claim": false,
+    "quantum_advantage_claim": false,
+    "quantum_hardware_claim": false,
+    "simulator_only": true
+  },
+  "schema": "QuantumSimulatorBranchAdapterReceipt/v1",
+  "seal": "7f4bac667b7c05d872caf6aee69540b7dab96fb8cd60550f557b0b8ec94bff78",
+  "simulator_branch": {
+    "adapter_id": "simulated_annealing_branch_seeded_v1",
+    "best_feasible_count": 32,
+    "best_run": {
+      "accepted_moves": 78,
+      "best_bits": [
+        0,
+        0,
+        1,
+        1,
+        1,
+        1
+      ],
+      "best_capacity_violation": 0,
+      "best_energy": -36,
+      "best_resource": 10,
+      "best_value": 36,
+      "final_bits": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        1
+      ],
+      "final_capacity_violation": 0,
+      "final_energy": -34,
+      "final_resource": 10,
+      "final_value": 34,
+      "proposal_count": 576,
+      "seed": 8700
+    },
+    "beta_schedule": [
+      0.05,
+      0.1,
+      0.2,
+      0.4,
+      0.8,
+      1.6,
+      3.2,
+      6.4
+    ],
+    "constraint_violation_rate": 0.0,
+    "exact_baseline_bits": [
+      0,
+      0,
+      1,
+      1,
+      1,
+      1
+    ],
+    "exact_baseline_energy": -36,
+    "external_analogs": [
+      "D-Wave Ocean simulated annealing sampler",
+      "neal SimulatedAnnealingSampler",
+      "dimod BQM sampler API"
+    ],
+    "objective_values": [
+      34,
+      34,
+      36,
+      36,
+      36,
+      36,
+      36,
+      36,
+      36,
+      36,
+      36,
+      36,
+      36,
+      36,
+      36,
+      36,
+      36,
+      36,
+      36,
+      36,
+      36,
+      36,
+      36,
+      36,
+      36,
+      36,
+      36,
+      36,
+      36,
+      36,
+      36,
+      36
+    ],
+    "optimum_hit_count": 30,
+    "replay_gate": "MATCH",
+    "run_count": 32,
+    "runs": [
+      {
+        "accepted_moves": 78,
+        "best_bits": [
+          0,
+          0,
+          1,
+          1,
+          1,
+          1
+        ],
+        "best_capacity_violation": 0,
+        "best_energy": -36,
+        "best_resource": 10,
+        "best_value": 36,
+        "final_bits": [
+          1,
+          0,
+          0,
+          0,
+          1,
+          1
+        ],
+        "final_capacity_violation": 0,
+        "final_energy": -34,
+        "final_resource": 10,
+        "final_value": 34,
+        "proposal_count": 576,
+        "seed": 8700
+      },
+      {
+        "accepted_moves": 87,
+        "best_bits": [
+          0,
+          0,
+          1,
+          1,
+          1,
+          1
+        ],
+        "best_capacity_violation": 0,
+        "best_energy": -36,
+        "best_resource": 10,
+        "best_value": 36,
+        "final_bits": [
+          0,
+          0,
+          1,
+          1,
+          1,
+          1
+        ],
+        "final_capacity_violation": 0,
+        "final_energy": -36,
+        "final_resource": 10,
+        "final_value": 36,
+        "proposal_count": 576,
+        "seed": 8701
+      },
+      {
+        "accepted_moves": 98,
+        "best_bits": [
+          0,
+          0,
+          1,
+          1,
+          1,
+          1
+        ],
+        "best_capacity_violation": 0,
+        "best_energy": -36,
+        "best_resource": 10,
+        "best_value": 36,
+        "final_bits": [
+          1,
+          0,
+          0,
+          0,
+          1,
+          1
+        ],
+        "final_capacity_violation": 0,
+        "final_energy": -34,
+        "final_resource": 10,
+        "final_value": 34,
+        "proposal_count": 576,
+        "seed": 8702
+      },
+      {
+        "accepted_moves": 97,
+        "best_bits": [
+          0,
+          0,
+          1,
+          1,
+          1,
+          1
+        ],
+        "best_capacity_violation": 0,
+        "best_energy": -36,
+        "best_resource": 10,
+        "best_value": 36,
+        "final_bits": [
+          1,
+          0,
+          0,
+          0,
+          1,
+          1
+        ],
+        "final_capacity_violation": 0,
+        "final_energy": -34,
+        "final_resource": 10,
+        "final_value": 34,
+        "proposal_count": 576,
+        "seed": 8703
+      },
+      {
+        "accepted_moves": 85,
+        "best_bits": [
+          0,
+          0,
+          1,
+          1,
+          1,
+          1
+        ],
+        "best_capacity_violation": 0,
+        "best_energy": -36,
+        "best_resource": 10,
+        "best_value": 36,
+        "final_bits": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          1
+        ],
+        "final_capacity_violation": 0,
+        "final_energy": -32,
+        "final_resource": 10,
+        "final_value": 32,
+        "proposal_count": 576,
+        "seed": 8704
+      },
+      {
+        "accepted_moves": 83,
+        "best_bits": [
+          0,
+          0,
+          1,
+          1,
+          1,
+          1
+        ],
+        "best_capacity_violation": 0,
+        "best_energy": -36,
+        "best_resource": 10,
+        "best_value": 36,
+        "final_bits": [
+          0,
+          0,
+          1,
+          1,
+          1,
+          1
+        ],
+        "final_capacity_violation": 0,
+        "final_energy": -36,
+        "final_resource": 10,
+        "final_value": 36,
+        "proposal_count": 576,
+        "seed": 8705
+      },
+      {
+        "accepted_moves": 95,
+        "best_bits": [
+          0,
+          0,
+          1,
+          1,
+          1,
+          1
+        ],
+        "best_capacity_violation": 0,
+        "best_energy": -36,
+        "best_resource": 10,
+        "best_value": 36,
+        "final_bits": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          1
+        ],
+        "final_capacity_violation": 0,
+        "final_energy": -32,
+        "final_resource": 10,
+        "final_value": 32,
+        "proposal_count": 576,
+        "seed": 8706
+      },
+      {
+        "accepted_moves": 93,
+        "best_bits": [
+          0,
+          0,
+          1,
+          1,
+          1,
+          1
+        ],
+        "best_capacity_violation": 0,
+        "best_energy": -36,
+        "best_resource": 10,
+        "best_value": 36,
+        "final_bits": [
+          0,
+          0,
+          1,
+          1,
+          1,
+          1
+        ],
+        "final_capacity_violation": 0,
+        "final_energy": -36,
+        "final_resource": 10,
+        "final_value": 36,
+        "proposal_count": 576,
+        "seed": 8707
+      },
+      {
+        "accepted_moves": 116,
+        "best_bits": [
+          0,
+          0,
+          1,
+          1,
+          1,
+          1
+        ],
+        "best_capacity_violation": 0,
+        "best_energy": -36,
+        "best_resource": 10,
+        "best_value": 36,
+        "final_bits": [
+          0,
+          0,
+          1,
+          1,
+          1,
+          1
+        ],
+        "final_capacity_violation": 0,
+        "final_energy": -36,
+        "final_resource": 10,
+        "final_value": 36,
+        "proposal_count": 576,
+        "seed": 8708
+      },
+      {
+        "accepted_moves": 103,
+        "best_bits": [
+          0,
+          0,
+          1,
+          1,
+          1,
+          1
+        ],
+        "best_capacity_violation": 0,
+        "best_energy": -36,
+        "best_resource": 10,
+        "best_value": 36,
+        "final_bits": [
+          0,
+          1,
+          0,
+          1,
+          0,
+          1
+        ],
+        "final_capacity_violation": 0,
+        "final_energy": -29,
+        "final_resource": 9,
+        "final_value": 29,
+        "proposal_count": 576,
+        "seed": 8709
+      },
+      {
+        "accepted_moves": 95,
+        "best_bits": [
+          0,
+          0,
+          1,
+          1,
+          1,
+          1
+        ],
+        "best_capacity_violation": 0,
+        "best_energy": -36,
+        "best_resource": 10,
+        "best_value": 36,
+        "final_bits": [
+          0,
+          0,
+          1,
+          1,
+          1,
+          1
+        ],
+        "final_capacity_violation": 0,
+        "final_energy": -36,
+        "final_resource": 10,
+        "final_value": 36,
+        "proposal_count": 576,
+        "seed": 8710
+      },
+      {
+        "accepted_moves": 104,
+        "best_bits": [
+          1,
+          0,
+          0,
+          0,
+          1,
+          1
+        ],
+        "best_capacity_violation": 0,
+        "best_energy": -34,
+        "best_resource": 10,
+        "best_value": 34,
+        "final_bits": [
+          0,
+          1,
+          0,
+          1,
+          1,
+          0
+        ],
+        "final_capacity_violation": 0,
+        "final_energy": -30,
+        "final_resource": 10,
+        "final_value": 30,
+        "proposal_count": 576,
+        "seed": 8711
+      },
+      {
+        "accepted_moves": 88,
+        "best_bits": [
+          0,
+          0,
+          1,
+          1,
+          1,
+          1
+        ],
+        "best_capacity_violation": 0,
+        "best_energy": -36,
+        "best_resource": 10,
+        "best_value": 36,
+        "final_bits": [
+          0,
+          0,
+          1,
+          1,
+          1,
+          1
+        ],
+        "final_capacity_violation": 0,
+        "final_energy": -36,
+        "final_resource": 10,
+        "final_value": 36,
+        "proposal_count": 576,
+        "seed": 8712
+      },
+      {
+        "accepted_moves": 91,
+        "best_bits": [
+          0,
+          0,
+          1,
+          1,
+          1,
+          1
+        ],
+        "best_capacity_violation": 0,
+        "best_energy": -36,
+        "best_resource": 10,
+        "best_value": 36,
+        "final_bits": [
+          0,
+          0,
+          1,
+          1,
+          1,
+          1
+        ],
+        "final_capacity_violation": 0,
+        "final_energy": -36,
+        "final_resource": 10,
+        "final_value": 36,
+        "proposal_count": 576,
+        "seed": 8713
+      },
+      {
+        "accepted_moves": 101,
+        "best_bits": [
+          0,
+          0,
+          1,
+          1,
+          1,
+          1
+        ],
+        "best_capacity_violation": 0,
+        "best_energy": -36,
+        "best_resource": 10,
+        "best_value": 36,
+        "final_bits": [
+          0,
+          0,
+          1,
+          1,
+          1,
+          1
+        ],
+        "final_capacity_violation": 0,
+        "final_energy": -36,
+        "final_resource": 10,
+        "final_value": 36,
+        "proposal_count": 576,
+        "seed": 8714
+      },
+      {
+        "accepted_moves": 86,
+        "best_bits": [
+          0,
+          0,
+          1,
+          1,
+          1,
+          1
+        ],
+        "best_capacity_violation": 0,
+        "best_energy": -36,
+        "best_resource": 10,
+        "best_value": 36,
+        "final_bits": [
+          0,
+          0,
+          1,
+          1,
+          1,
+          1
+        ],
+        "final_capacity_violation": 0,
+        "final_energy": -36,
+        "final_resource": 10,
+        "final_value": 36,
+        "proposal_count": 576,
+        "seed": 8715
+      },
+      {
+        "accepted_moves": 93,
+        "best_bits": [
+          0,
+          0,
+          1,
+          1,
+          1,
+          1
+        ],
+        "best_capacity_violation": 0,
+        "best_energy": -36,
+        "best_resource": 10,
+        "best_value": 36,
+        "final_bits": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          1
+        ],
+        "final_capacity_violation": 0,
+        "final_energy": -32,
+        "final_resource": 10,
+        "final_value": 32,
+        "proposal_count": 576,
+        "seed": 8716
+      },
+      {
+        "accepted_moves": 88,
+        "best_bits": [
+          0,
+          0,
+          1,
+          1,
+          1,
+          1
+        ],
+        "best_capacity_violation": 0,
+        "best_energy": -36,
+        "best_resource": 10,
+        "best_value": 36,
+        "final_bits": [
+          0,
+          0,
+          1,
+          1,
+          1,
+          1
+        ],
+        "final_capacity_violation": 0,
+        "final_energy": -36,
+        "final_resource": 10,
+        "final_value": 36,
+        "proposal_count": 576,
+        "seed": 8717
+      },
+      {
+        "accepted_moves": 104,
+        "best_bits": [
+          0,
+          0,
+          1,
+          1,
+          1,
+          1
+        ],
+        "best_capacity_violation": 0,
+        "best_energy": -36,
+        "best_resource": 10,
+        "best_value": 36,
+        "final_bits": [
+          0,
+          1,
+          0,
+          1,
+          1,
+          0
+        ],
+        "final_capacity_violation": 0,
+        "final_energy": -30,
+        "final_resource": 10,
+        "final_value": 30,
+        "proposal_count": 576,
+        "seed": 8718
+      },
+      {
+        "accepted_moves": 88,
+        "best_bits": [
+          1,
+          0,
+          0,
+          0,
+          1,
+          1
+        ],
+        "best_capacity_violation": 0,
+        "best_energy": -34,
+        "best_resource": 10,
+        "best_value": 34,
+        "final_bits": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          1
+        ],
+        "final_capacity_violation": 0,
+        "final_energy": -32,
+        "final_resource": 10,
+        "final_value": 32,
+        "proposal_count": 576,
+        "seed": 8719
+      },
+      {
+        "accepted_moves": 94,
+        "best_bits": [
+          0,
+          0,
+          1,
+          1,
+          1,
+          1
+        ],
+        "best_capacity_violation": 0,
+        "best_energy": -36,
+        "best_resource": 10,
+        "best_value": 36,
+        "final_bits": [
+          0,
+          0,
+          1,
+          1,
+          1,
+          1
+        ],
+        "final_capacity_violation": 0,
+        "final_energy": -36,
+        "final_resource": 10,
+        "final_value": 36,
+        "proposal_count": 576,
+        "seed": 8720
+      },
+      {
+        "accepted_moves": 93,
+        "best_bits": [
+          0,
+          0,
+          1,
+          1,
+          1,
+          1
+        ],
+        "best_capacity_violation": 0,
+        "best_energy": -36,
+        "best_resource": 10,
+        "best_value": 36,
+        "final_bits": [
+          0,
+          0,
+          1,
+          1,
+          1,
+          1
+        ],
+        "final_capacity_violation": 0,
+        "final_energy": -36,
+        "final_resource": 10,
+        "final_value": 36,
+        "proposal_count": 576,
+        "seed": 8721
+      },
+      {
+        "accepted_moves": 95,
+        "best_bits": [
+          0,
+          0,
+          1,
+          1,
+          1,
+          1
+        ],
+        "best_capacity_violation": 0,
+        "best_energy": -36,
+        "best_resource": 10,
+        "best_value": 36,
+        "final_bits": [
+          0,
+          1,
+          0,
+          1,
+          1,
+          0
+        ],
+        "final_capacity_violation": 0,
+        "final_energy": -30,
+        "final_resource": 10,
+        "final_value": 30,
+        "proposal_count": 576,
+        "seed": 8722
+      },
+      {
+        "accepted_moves": 119,
+        "best_bits": [
+          0,
+          0,
+          1,
+          1,
+          1,
+          1
+        ],
+        "best_capacity_violation": 0,
+        "best_energy": -36,
+        "best_resource": 10,
+        "best_value": 36,
+        "final_bits": [
+          0,
+          1,
+          0,
+          1,
+          1,
+          0
+        ],
+        "final_capacity_violation": 0,
+        "final_energy": -30,
+        "final_resource": 10,
+        "final_value": 30,
+        "proposal_count": 576,
+        "seed": 8723
+      },
+      {
+        "accepted_moves": 75,
+        "best_bits": [
+          0,
+          0,
+          1,
+          1,
+          1,
+          1
+        ],
+        "best_capacity_violation": 0,
+        "best_energy": -36,
+        "best_resource": 10,
+        "best_value": 36,
+        "final_bits": [
+          1,
+          0,
+          0,
+          0,
+          1,
+          1
+        ],
+        "final_capacity_violation": 0,
+        "final_energy": -34,
+        "final_resource": 10,
+        "final_value": 34,
+        "proposal_count": 576,
+        "seed": 8724
+      },
+      {
+        "accepted_moves": 116,
+        "best_bits": [
+          0,
+          0,
+          1,
+          1,
+          1,
+          1
+        ],
+        "best_capacity_violation": 0,
+        "best_energy": -36,
+        "best_resource": 10,
+        "best_value": 36,
+        "final_bits": [
+          0,
+          1,
+          0,
+          0,
+          1,
+          1
+        ],
+        "final_capacity_violation": 0,
+        "final_energy": -28,
+        "final_resource": 8,
+        "final_value": 28,
+        "proposal_count": 576,
+        "seed": 8725
+      },
+      {
+        "accepted_moves": 90,
+        "best_bits": [
+          0,
+          0,
+          1,
+          1,
+          1,
+          1
+        ],
+        "best_capacity_violation": 0,
+        "best_energy": -36,
+        "best_resource": 10,
+        "best_value": 36,
+        "final_bits": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          1
+        ],
+        "final_capacity_violation": 0,
+        "final_energy": -32,
+        "final_resource": 10,
+        "final_value": 32,
+        "proposal_count": 576,
+        "seed": 8726
+      },
+      {
+        "accepted_moves": 86,
+        "best_bits": [
+          0,
+          0,
+          1,
+          1,
+          1,
+          1
+        ],
+        "best_capacity_violation": 0,
+        "best_energy": -36,
+        "best_resource": 10,
+        "best_value": 36,
+        "final_bits": [
+          0,
+          1,
+          0,
+          1,
+          0,
+          1
+        ],
+        "final_capacity_violation": 0,
+        "final_energy": -29,
+        "final_resource": 9,
+        "final_value": 29,
+        "proposal_count": 576,
+        "seed": 8727
+      },
+      {
+        "accepted_moves": 89,
+        "best_bits": [
+          0,
+          0,
+          1,
+          1,
+          1,
+          1
+        ],
+        "best_capacity_violation": 0,
+        "best_energy": -36,
+        "best_resource": 10,
+        "best_value": 36,
+        "final_bits": [
+          1,
+          0,
+          0,
+          0,
+          1,
+          1
+        ],
+        "final_capacity_violation": 0,
+        "final_energy": -34,
+        "final_resource": 10,
+        "final_value": 34,
+        "proposal_count": 576,
+        "seed": 8728
+      },
+      {
+        "accepted_moves": 93,
+        "best_bits": [
+          0,
+          0,
+          1,
+          1,
+          1,
+          1
+        ],
+        "best_capacity_violation": 0,
+        "best_energy": -36,
+        "best_resource": 10,
+        "best_value": 36,
+        "final_bits": [
+          0,
+          1,
+          0,
+          1,
+          0,
+          1
+        ],
+        "final_capacity_violation": 0,
+        "final_energy": -29,
+        "final_resource": 9,
+        "final_value": 29,
+        "proposal_count": 576,
+        "seed": 8729
+      },
+      {
+        "accepted_moves": 98,
+        "best_bits": [
+          0,
+          0,
+          1,
+          1,
+          1,
+          1
+        ],
+        "best_capacity_violation": 0,
+        "best_energy": -36,
+        "best_resource": 10,
+        "best_value": 36,
+        "final_bits": [
+          0,
+          0,
+          1,
+          1,
+          1,
+          1
+        ],
+        "final_capacity_violation": 0,
+        "final_energy": -36,
+        "final_resource": 10,
+        "final_value": 36,
+        "proposal_count": 576,
+        "seed": 8730
+      },
+      {
+        "accepted_moves": 108,
+        "best_bits": [
+          0,
+          0,
+          1,
+          1,
+          1,
+          1
+        ],
+        "best_capacity_violation": 0,
+        "best_energy": -36,
+        "best_resource": 10,
+        "best_value": 36,
+        "final_bits": [
+          0,
+          0,
+          1,
+          1,
+          1,
+          1
+        ],
+        "final_capacity_violation": 0,
+        "final_energy": -36,
+        "final_resource": 10,
+        "final_value": 36,
+        "proposal_count": 576,
+        "seed": 8731
+      }
+    ],
+    "runs_sha256": "4df12bbe1c5b3ee42d05f5ccce708bd5880f4d1d4c1c5a90f3f9528656d912b7",
+    "seed_range": [
+      8700,
+      8731
+    ],
+    "source_anchors": [
+      {
+        "claim": "D-Wave documents simulated annealing as useful for heuristic optimization or approximate Boltzmann sampling.",
+        "source_id": "dwave-samplers-simulated-annealing",
+        "url": "https://docs.dwavequantum.com/en/latest/ocean/api_ref_samplers/index.html",
+        "verification_status": "SOURCE_LEAD"
+      },
+      {
+        "claim": "D-Wave dimod documentation describes binary quadratic model support and QUBO conversion surfaces.",
+        "source_id": "dwave-dimod-bqm-models",
+        "url": "https://docs.dwavequantum.com/en/latest/ocean/api_ref_dimod/models.html",
+        "verification_status": "SOURCE_LEAD"
+      }
+    ],
+    "sweeps_per_beta": 12,
+    "variable_order": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F"
+    ]
+  },
+  "status": "QUANTUM_SIMULATOR_BRANCH_ADAPTER_MATCH",
+  "unsupported_claim_count": 0,
+  "validation_errors": []
+}

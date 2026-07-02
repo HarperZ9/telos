@@ -1,0 +1,149 @@
+{
+  "schema": "DogfoodToolReceipts/v1",
+  "pass": "0082",
+  "generated_on": "2026-07-01",
+  "status": "MATCH_CROSS_TOOL_GROWTH_VECTOR_EXPERIMENT_MATRIX",
+  "growth_matrix": {
+    "schema": "CrossToolGrowthVectorExperimentMatrix/v1",
+    "artifact": "docs/research/dogfood/schemas/cross-tool-growth-vector-experiment-matrix-pass-0082.json",
+    "artifact_sha256": "8dd76f3c2262f6ea46c49200a1d6fb2c5d87e38dcd9b0f5f76e9f2b441e46a87",
+    "seal": "2ca0310b3bc12272fc1b88a3f0f4c82a66545994e28d89aa268545a7fc848ad2",
+    "route_probe_count": 8,
+    "route_match_count": 8,
+    "route_escalation_count": 7,
+    "route_decided_count": 1,
+    "product_lane_count": 8,
+    "tool_improvement_count": 12,
+    "top_ranked_lanes": [
+      {
+        "lane_id": "buildlang_runtime_packets",
+        "score": 4.25,
+        "needs_escalation": true,
+        "top_agent": "compiler-systems"
+      },
+      {
+        "lane_id": "proof_os_core",
+        "score": 4.25,
+        "needs_escalation": false,
+        "top_agent": "project-telos"
+      },
+      {
+        "lane_id": "agent_action_packets",
+        "score": 4.0,
+        "needs_escalation": true,
+        "top_agent": "deep-research"
+      },
+      {
+        "lane_id": "visual_truth_packets",
+        "score": 4.0,
+        "needs_escalation": true,
+        "top_agent": "render-pipeline"
+      }
+    ],
+    "primary_finding": "Proof-packet prompts repeatedly route as cross-domain work. Treat this as a route-taxonomy and product-lane packaging gap, not as buyer-demand proof.",
+    "primary_30_day_push": "buildlang_runtime_packets tied with proof_os_core; ship the BuildLang packet as the first proof OS demo surface while repairing Forum proof-lane ownership.",
+    "negative_fixtures": 8,
+    "unsupported_claim_count": 0,
+    "current_promoted_natural_laws": 0
+  },
+  "gather": {
+    "packet": {
+      "status": "MATCH",
+      "path": "docs/research/dogfood/packets/092-cross-tool-growth-vector-experiment-matrix.md",
+      "sha256": "f5d97ad404864fb820d664e95a261e53ad841c7993f3453bb32d2e1880045caa",
+      "seal": "f047c64467bae9cbf50fb11af47c47078e8b9f0cb69267da106452715bfadb46",
+      "verified": true,
+      "dropped": 0
+    },
+    "buyer_brief": {
+      "status": "MATCH",
+      "path": "docs/research/dogfood/briefs/092-megatool-growth-vector-brief.md",
+      "sha256": "14d6a5759b825ecc6d2cabeda54476835017ff60df27a34e037826a666889436",
+      "seal": "98f61b4823377a2b439b11c8acd494308c5e67f40076a6017d84bb639ea5a8bb",
+      "verified": true,
+      "dropped": 0
+    }
+  },
+  "crucible": {
+    "run_status": "MATCH",
+    "thesis_id": "b4df4de4c1b01c8c",
+    "thesis_seal": "b4df4de4c1b01c8c1aa8988cc252d01d5dd89908b7ba9b5b1c8870aa914a19d8",
+    "assessment_seal": "331a0d037ce5d5753fc5849860a474c4ad18ad2e23780952ff8eb5af4add8b9f",
+    "assessment_record_seal": "140b00ce1e01663dc60dcd9d5ccfcd11f1fd2e8e050a219332fb6ee7435a79a2",
+    "measurement_seal": "8319ddf334ffc87489b01414b7951e6437379ceb7030bdc5090f4cc58d3c38bd",
+    "claims": 7,
+    "match": 7,
+    "drift": 0,
+    "unverifiable": 0,
+    "registry_stats": {
+      "theses": 70,
+      "claims": 576,
+      "unique_claims": 569,
+      "assessments": 71,
+      "latest_assessments": 70,
+      "invalid_latest_assessments": 0,
+      "match": 576,
+      "drift": 0,
+      "unverifiable": 0
+    }
+  },
+  "telos": {
+    "integration_result": "Joined pass 0066 growth matrix, pass 0077 path-selector scorecard, pass 0080 BuildLang demo, pass 0081 visual-truth packet, and eight live Forum route probes into one ranked cross-tool growth-vector experiment.",
+    "market_motion": "proof_os_plus_domain_packet_lanes",
+    "non_promotion_boundary": "Does not prove buyer demand, market adoption, competitor absence, Julia replacement, physical calibration, scientific discovery, or a natural law."
+  },
+  "shell": {
+    "commands": [
+      {
+        "command": "python docs\\research\\dogfood\\tools\\test_cross_tool_growth_vector_experiment_matrix.py",
+        "status": "MATCH"
+      },
+      {
+        "command": "python -m py_compile docs\\research\\dogfood\\tools\\compose_cross_tool_growth_vector_experiment_matrix.py docs\\research\\dogfood\\tools\\probe_cross_tool_growth_vector_experiment_matrix.py docs\\research\\dogfood\\tools\\test_cross_tool_growth_vector_experiment_matrix.py docs\\research\\dogfood\\tools\\validate_pass_0082_cross_tool_growth_vector_experiment_matrix.py",
+        "status": "MATCH"
+      },
+      {
+        "command": "python docs\\research\\dogfood\\tools\\probe_cross_tool_growth_vector_experiment_matrix.py",
+        "status": "MATCH"
+      },
+      {
+        "command": "python docs\\research\\dogfood\\tools\\validate_pass_0082_cross_tool_growth_vector_experiment_matrix.py",
+        "status": "MATCH"
+      },
+      {
+        "command": "crucible run docs\\research\\dogfood\\crucible\\pass-0082-thesis.json --measurements docs\\research\\dogfood\\crucible\\pass-0082-measurements.json --registry docs\\research\\dogfood\\crucible\\registry --report docs\\research\\dogfood\\crucible\\pass-0082-report.md --out docs\\research\\dogfood\\crucible\\pass-0082-run.json --json",
+        "status": "MATCH"
+      },
+      {
+        "command": "gather docs docs\\research\\dogfood\\packets\\092-cross-tool-growth-vector-experiment-matrix.md --json",
+        "status": "MATCH"
+      },
+      {
+        "command": "gather docs docs\\research\\dogfood\\briefs\\092-megatool-growth-vector-brief.md --json",
+        "status": "MATCH"
+      },
+      {
+        "command": "crucible registry stats docs\\research\\dogfood\\crucible\\registry --json",
+        "status": "MATCH"
+      }
+    ],
+    "line_counts": {
+      "compose_cross_tool_growth_vector_experiment_matrix.py": 292,
+      "probe_cross_tool_growth_vector_experiment_matrix.py": 190,
+      "test_cross_tool_growth_vector_experiment_matrix.py": 54,
+      "validate_pass_0082_cross_tool_growth_vector_experiment_matrix.py": 96
+    },
+    "sha256": {
+      "compose_cross_tool_growth_vector_experiment_matrix.py": "cc5ee7b842ec30ec9e03b2d4241ef8a092201dfbe8ec4ad882d896df17505b8c",
+      "probe_cross_tool_growth_vector_experiment_matrix.py": "be6784f7ca82e5c7ba45f59c4b23a1216e2142431fb1ea50a761ee07b0302110",
+      "test_cross_tool_growth_vector_experiment_matrix.py": "d7e948c4234201559bbab1fe416e1301d39c0166b7c4e9d253bec5a2fb965b70",
+      "validate_pass_0082_cross_tool_growth_vector_experiment_matrix.py": "9fed2983689583becb277b7e6bd582c4fd0c4d7f5b1705d071189821035572c0",
+      "cross-tool-growth-vector-experiment-matrix-pass-0082.json": "8dd76f3c2262f6ea46c49200a1d6fb2c5d87e38dcd9b0f5f76e9f2b441e46a87",
+      "pass-0082-cross-tool-growth-vector-experiment-matrix-validator-result.json": "25a29cdc52099b10f709a0dce30814b56e088334c7e9504fc30c61983e761af0",
+      "092-cross-tool-growth-vector-experiment-matrix.md": "f5d97ad404864fb820d664e95a261e53ad841c7993f3453bb32d2e1880045caa",
+      "092-megatool-growth-vector-brief.md": "14d6a5759b825ecc6d2cabeda54476835017ff60df27a34e037826a666889436",
+      "pass-0082-cross-tool-growth-vector-experiment-matrix-steelman.md": "f7e3ea5d03024d3221045e16191793a55c9f481c78ef287497a9395928d5d0fb",
+      "pass-0082-run.json": "107e33171c3331034224136adcfa420cc90112ad8272b11ff089c2f32cee1f91"
+    }
+  }
+}

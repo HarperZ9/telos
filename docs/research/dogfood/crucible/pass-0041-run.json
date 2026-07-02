@@ -1,0 +1,427 @@
+{
+  "ok": true,
+  "thesis": {
+    "id": "e8953b637df93b2f",
+    "title": "Dogfood Pass 0041 Lean Toolchain Import Binding",
+    "registered_at": 1782917490.529058,
+    "disposition": "fenced",
+    "seal": "e8953b637df93b2fc960e3cd089ea95b57eb4e2e9ed766646a098f79e585bbb1",
+    "claims": [
+      {
+        "id": "922b9e945271acb4",
+        "sha256": "922b9e945271acb46006f2d76a73d91f446515c621d73d0da3724c80dfe56396"
+      },
+      {
+        "id": "4ca537ed0672c4f9",
+        "sha256": "4ca537ed0672c4f908704ddf6be2a8de87456a724078c8b7c5057dc1c94eae88"
+      },
+      {
+        "id": "5b88054688fc8622",
+        "sha256": "5b88054688fc862287235246db97db2864fdce00936e73cd3d42cff0d334cc7b"
+      },
+      {
+        "id": "4daeaa6da38a3de4",
+        "sha256": "4daeaa6da38a3de4eb4c454443b9293111ac1e8b6b815646d10ad0756ea4c1d0"
+      },
+      {
+        "id": "4d0d1af71ab9587c",
+        "sha256": "4d0d1af71ab9587c0b0757a62310597456f9290afc4cedcf729fb6b20534687a"
+      },
+      {
+        "id": "759667bb2f2ea982",
+        "sha256": "759667bb2f2ea982c4cf553f84d66a48ae24c716839b132e8dc4b6312731e5e2"
+      },
+      {
+        "id": "14ea6ec6453e19a0",
+        "sha256": "14ea6ec6453e19a010c0534710ab37834ea1d5c1f71952916db735442766729e"
+      },
+      {
+        "id": "2c8c7ff64985f658",
+        "sha256": "2c8c7ff64985f658c8baaa033597dc6a78fadb0c7987aa6b2bd247ef5e945eb1"
+      }
+    ]
+  },
+  "refutations": [
+    {
+      "claim_id": "922b9e945271acb4",
+      "claim_sha256": "922b9e945271acb46006f2d76a73d91f446515c621d73d0da3724c80dfe56396",
+      "challenge": "test the stated falsification: schemas/lean-toolchain-import-binding-pass-0041.json is missing, has a different schema, status, build_file_count, lean_module_count, SHA-256, or seal",
+      "measurable": "schemas/lean-toolchain-import-binding-pass-0041.json is missing, has a different schema, status, build_file_count, lean_module_count, SHA-256, or seal",
+      "source": "null"
+    },
+    {
+      "claim_id": "4ca537ed0672c4f9",
+      "claim_sha256": "4ca537ed0672c4f908704ddf6be2a8de87456a724078c8b7c5057dc1c94eae88",
+      "challenge": "test the stated falsification: the Lean toolchain/import fixture is missing, has a different SHA-256 or seal, or is not linked from the schema",
+      "measurable": "the Lean toolchain/import fixture is missing, has a different SHA-256 or seal, or is not linked from the schema",
+      "source": "null"
+    },
+    {
+      "claim_id": "5b88054688fc8622",
+      "claim_sha256": "5b88054688fc862287235246db97db2864fdce00936e73cd3d42cff0d334cc7b",
+      "challenge": "test the stated falsification: the pass 0040 binding is missing, has a different SHA-256 or seal, or does not report the expected source status",
+      "measurable": "the pass 0040 binding is missing, has a different SHA-256 or seal, or does not report the expected source status",
+      "source": "null"
+    },
+    {
+      "claim_id": "4daeaa6da38a3de4",
+      "claim_sha256": "4daeaa6da38a3de4eb4c454443b9293111ac1e8b6b815646d10ad0756ea4c1d0",
+      "challenge": "test the stated falsification: the toolchain summary is missing, has a different Lean toolchain, mathlib input revision, mathlib revision, or Lake manifest package count",
+      "measurable": "the toolchain summary is missing, has a different Lean toolchain, mathlib input revision, mathlib revision, or Lake manifest package count",
+      "source": "null"
+    },
+    {
+      "claim_id": "4d0d1af71ab9587c",
+      "claim_sha256": "4d0d1af71ab9587c0b0757a62310597456f9290afc4cedcf729fb6b20534687a",
+      "challenge": "test the stated falsification: the import graph has a different local module count, local import edge count, external import edge count, or lacks the Mathlib external import",
+      "measurable": "the import graph has a different local module count, local import edge count, external import edge count, or lacks the Mathlib external import",
+      "source": "null"
+    },
+    {
+      "claim_id": "759667bb2f2ea982",
+      "claim_sha256": "759667bb2f2ea982c4cf553f84d66a48ae24c716839b132e8dc4b6312731e5e2",
+      "challenge": "test the stated falsification: the compiled replay delta is missing, has a count other than six, or fails to mark compiled replay as NOT_RUN",
+      "measurable": "the compiled replay delta is missing, has a count other than six, or fails to mark compiled replay as NOT_RUN",
+      "source": "null"
+    },
+    {
+      "claim_id": "14ea6ec6453e19a0",
+      "claim_sha256": "14ea6ec6453e19a010c0534710ab37834ea1d5c1f71952916db735442766729e",
+      "challenge": "test the stated falsification: packet 051, the pass 0041 steelman, or the pass 0041 validator result is missing or has a different SHA-256",
+      "measurable": "packet 051, the pass 0041 steelman, or the pass 0041 validator result is missing or has a different SHA-256",
+      "source": "null"
+    },
+    {
+      "claim_id": "2c8c7ff64985f658",
+      "claim_sha256": "2c8c7ff64985f658c8baaa033597dc6a78fadb0c7987aa6b2bd247ef5e945eb1",
+      "challenge": "test the stated falsification: pass 0041 artifacts claim Lean replay, semantic proof review, axiom-free proof, validation of every public pipeline-math claim, or a promoted natural law",
+      "measurable": "pass 0041 artifacts claim Lean replay, semantic proof review, axiom-free proof, validation of every public pipeline-math claim, or a promoted natural law",
+      "source": "null"
+    }
+  ],
+  "assessment": {
+    "started_at": 1782917490.536058,
+    "thesis_id": "e8953b637df93b2f",
+    "thesis_seal": "e8953b637df93b2fc960e3cd089ea95b57eb4e2e9ed766646a098f79e585bbb1",
+    "claims": 8,
+    "match": 8,
+    "drift": 0,
+    "unverifiable": 0,
+    "verdict_seal": "7d3eba3f57c2f3d7891713b12bbf76da58ab3097bacf7e24141aa17e37fd1a14",
+    "measurement_seal": "f81f9d575a28221678153313e8a6efa4db46cf57e789d8b18c611ba1672cc4f7",
+    "disposition": "fenced",
+    "stored": null,
+    "verdicts": [
+      {
+        "claim_id": "922b9e945271acb4",
+        "claim_sha256": "922b9e945271acb46006f2d76a73d91f446515c621d73d0da3724c80dfe56396",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "lean-toolchain-schema-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "4ca537ed0672c4f9",
+        "claim_sha256": "4ca537ed0672c4f908704ddf6be2a8de87456a724078c8b7c5057dc1c94eae88",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "fixture-binding-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "5b88054688fc8622",
+        "claim_sha256": "5b88054688fc862287235246db97db2864fdce00936e73cd3d42cff0d334cc7b",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "source-binding-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "4daeaa6da38a3de4",
+        "claim_sha256": "4daeaa6da38a3de4eb4c454443b9293111ac1e8b6b815646d10ad0756ea4c1d0",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "toolchain-summary-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "4d0d1af71ab9587c",
+        "claim_sha256": "4d0d1af71ab9587c0b0757a62310597456f9290afc4cedcf729fb6b20534687a",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "import-graph-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "759667bb2f2ea982",
+        "claim_sha256": "759667bb2f2ea982c4cf553f84d66a48ae24c716839b132e8dc4b6312731e5e2",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "compiled-replay-delta-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "14ea6ec6453e19a0",
+        "claim_sha256": "14ea6ec6453e19a010c0534710ab37834ea1d5c1f71952916db735442766729e",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "packet-presence-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "2c8c7ff64985f658",
+        "claim_sha256": "2c8c7ff64985f658c8baaa033597dc6a78fadb0c7987aa6b2bd247ef5e945eb1",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "non-promotion-boundary-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      }
+    ],
+    "measurements": [
+      {
+        "claim_id": "922b9e945271acb4",
+        "claim_sha256": "922b9e945271acb46006f2d76a73d91f446515c621d73d0da3724c80dfe56396",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "lean-toolchain-schema-review",
+        "measured_at": 1782917490.536058,
+        "evidence": [
+          "schema=LeanToolchainImportBindingSet/v1",
+          "status=LEAN_TOOLCHAIN_IMPORT_BINDING_MATCH",
+          "build_file_count=6",
+          "lean_module_count=16",
+          "sha256=ae72dadc5da817622374a9b5654f7389242f3e4f7b218e4c89387d364ef2b0e7",
+          "seal=e932959ff41df5260e5af88942184e45c2e9620b878db02b4ccbb609387c78b6"
+        ]
+      },
+      {
+        "claim_id": "4ca537ed0672c4f9",
+        "claim_sha256": "4ca537ed0672c4f908704ddf6be2a8de87456a724078c8b7c5057dc1c94eae88",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "fixture-binding-review",
+        "measured_at": 1782917490.536058,
+        "evidence": [
+          "fixture sha256=5d4ff58b42595c47d1d8fccfec4fb6b913186cedc1e2894410a6784b584c5ea9",
+          "fixture seal=98ed8df0f610d30b445ee365c4198b8b3e62fbd43d6514ad3920106ea10b8eb6"
+        ]
+      },
+      {
+        "claim_id": "5b88054688fc8622",
+        "claim_sha256": "5b88054688fc862287235246db97db2864fdce00936e73cd3d42cff0d334cc7b",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "source-binding-review",
+        "measured_at": 1782917490.536058,
+        "evidence": [
+          "archive_statement_replay_sha256=e45620662cc30976f8b1f814e5b0ceb3815c16f6e86e091364220fa286bfe654",
+          "archive_statement_replay_seal=c38574335633bb119b7c14b8f7a69db44751f04f44bb3fd74c71df4e2a74818d",
+          "archive_statement_replay_status=ARCHIVED_BLOB_STATEMENT_REPLAY_MATCH"
+        ]
+      },
+      {
+        "claim_id": "4daeaa6da38a3de4",
+        "claim_sha256": "4daeaa6da38a3de4eb4c454443b9293111ac1e8b6b815646d10ad0756ea4c1d0",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "toolchain-summary-review",
+        "measured_at": 1782917490.536058,
+        "evidence": [
+          "toolchain=leanprover/lean4:v4.31.0",
+          "mathlib_input_rev=v4.31.0",
+          "mathlib_rev=fabf563a7c95a166b8d7b6efca11c8b4dc9d911f",
+          "lake_manifest_package_count=9"
+        ]
+      },
+      {
+        "claim_id": "4d0d1af71ab9587c",
+        "claim_sha256": "4d0d1af71ab9587c0b0757a62310597456f9290afc4cedcf729fb6b20534687a",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "import-graph-review",
+        "measured_at": 1782917490.536058,
+        "evidence": [
+          "lean_module_count=16",
+          "local_import_edge_count=41",
+          "external_import_edge_count=1",
+          "external_import=Mathlib"
+        ]
+      },
+      {
+        "claim_id": "759667bb2f2ea982",
+        "claim_sha256": "759667bb2f2ea982c4cf553f84d66a48ae24c716839b132e8dc4b6312731e5e2",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "compiled-replay-delta-review",
+        "measured_at": 1782917490.536058,
+        "evidence": [
+          "archived_source_file_count=10",
+          "needed_for_compiled_replay_count=6",
+          "compiled_replay_status=NOT_RUN"
+        ]
+      },
+      {
+        "claim_id": "14ea6ec6453e19a0",
+        "claim_sha256": "14ea6ec6453e19a010c0534710ab37834ea1d5c1f71952916db735442766729e",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "packet-presence-review",
+        "measured_at": 1782917490.536058,
+        "evidence": [
+          "packets/051-lean-toolchain-import-binding.md sha256=7a139d1eab8c4383765473b2fc23df50165b51e103b9f1a8cdafd813cf19ef79",
+          "adversarial/pass-0041-lean-toolchain-import-binding-steelman.md sha256=93d6b2638a709f4833f4ae1d8efb28e875d6fe8a1b1aec5c0d04b50e4af0c425",
+          "schemas/pass-0041-lean-toolchain-import-binding-validator-result.json sha256=9ac1b3f6708a74850c98e96a18695e08fa2a4138045350ab35b2752834bac2b5"
+        ]
+      },
+      {
+        "claim_id": "2c8c7ff64985f658",
+        "claim_sha256": "2c8c7ff64985f658c8baaa033597dc6a78fadb0c7987aa6b2bd247ef5e945eb1",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "non-promotion-boundary-review",
+        "measured_at": 1782917490.536058,
+        "evidence": [
+          "non_promotion_statement present",
+          "current_promoted_natural_laws=[]",
+          "compiled_replay_status=NOT_RUN",
+          "steelman states toolchain discovery is not compilation"
+        ]
+      }
+    ],
+    "seal": "0bfb7a2bd820fde1a43cba2553e2a2ed50eb83bd0fb2a790c36becb812831ebb"
+  },
+  "verdicts": [
+    {
+      "claim_id": "922b9e945271acb4",
+      "claim_sha256": "922b9e945271acb46006f2d76a73d91f446515c621d73d0da3724c80dfe56396",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "lean-toolchain-schema-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "4ca537ed0672c4f9",
+      "claim_sha256": "4ca537ed0672c4f908704ddf6be2a8de87456a724078c8b7c5057dc1c94eae88",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "fixture-binding-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "5b88054688fc8622",
+      "claim_sha256": "5b88054688fc862287235246db97db2864fdce00936e73cd3d42cff0d334cc7b",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "source-binding-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "4daeaa6da38a3de4",
+      "claim_sha256": "4daeaa6da38a3de4eb4c454443b9293111ac1e8b6b815646d10ad0756ea4c1d0",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "toolchain-summary-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "4d0d1af71ab9587c",
+      "claim_sha256": "4d0d1af71ab9587c0b0757a62310597456f9290afc4cedcf729fb6b20534687a",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "import-graph-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "759667bb2f2ea982",
+      "claim_sha256": "759667bb2f2ea982c4cf553f84d66a48ae24c716839b132e8dc4b6312731e5e2",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "compiled-replay-delta-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "14ea6ec6453e19a0",
+      "claim_sha256": "14ea6ec6453e19a010c0534710ab37834ea1d5c1f71952916db735442766729e",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "packet-presence-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "2c8c7ff64985f658",
+      "claim_sha256": "2c8c7ff64985f658c8baaa033597dc6a78fadb0c7987aa6b2bd247ef5e945eb1",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "non-promotion-boundary-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    }
+  ],
+  "checks": {
+    "seals_ok": true,
+    "thesis_ok": true,
+    "verdicts_rederive": true
+  },
+  "report": "docs\\research\\dogfood\\crucible\\pass-0041-report.md",
+  "record": "docs\\research\\dogfood\\crucible\\pass-0041-run.json",
+  "bundle": null,
+  "spec": null,
+  "review": null,
+  "verifier": {
+    "mode": "cleanroom",
+    "inputs": [],
+    "excluded": [
+      "worker context",
+      "reasoning trace",
+      "intermediate steps"
+    ],
+    "checkability": "If success cannot be evaluated from the original spec and the artifact, the spec is not checkable yet."
+  }
+}

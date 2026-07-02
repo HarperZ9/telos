@@ -1,0 +1,445 @@
+{
+  "ok": true,
+  "thesis": {
+    "id": "c21d40b308c02a39",
+    "title": "Dogfood Pass 0014 Quantum Receipt Promotion Hardening",
+    "registered_at": 1782902768.6340775,
+    "disposition": "fenced",
+    "seal": "c21d40b308c02a3943bb16e09826858dc5ebf9245cfe10d3e6609d9f08d8cccf",
+    "claims": [
+      {
+        "id": "4d3eb7aede682466",
+        "sha256": "4d3eb7aede682466db2442cb22dabee1a367f4d68b4cdebcd03809c825e5ae59"
+      },
+      {
+        "id": "572ade7faa716882",
+        "sha256": "572ade7faa716882cb628940d92099dd3e339e9b1bdd66cf77ed00397b57f100"
+      },
+      {
+        "id": "1534a44897f77ecb",
+        "sha256": "1534a44897f77ecb345107315d433b166b7c3b2731ff2b6606147e69b4e99ed4"
+      },
+      {
+        "id": "318510bbe2274a7c",
+        "sha256": "318510bbe2274a7c20d87702499dd922c8e1e9e6609ba4e6e4ffb0e4a78a060e"
+      },
+      {
+        "id": "fcbe19ac9c7ec862",
+        "sha256": "fcbe19ac9c7ec862a102aefb875fcbfb9cdf12e13d960b14ace20f74b08123c2"
+      },
+      {
+        "id": "ef1bcc93c45c5290",
+        "sha256": "ef1bcc93c45c529071ffe1d763a973ebf87c9c6a64cd23212d71fbac72bbfe2b"
+      },
+      {
+        "id": "7c6b8d0e2f2bc226",
+        "sha256": "7c6b8d0e2f2bc226c76ca0ff672b2526180d77696f3e05e74d74c5a34c738260"
+      },
+      {
+        "id": "a4072d8bbb92e266",
+        "sha256": "a4072d8bbb92e2661d490ac23c3d56aebfa0b5a2a08e60e17846ca067e4e7bd5"
+      }
+    ]
+  },
+  "refutations": [
+    {
+      "claim_id": "4d3eb7aede682466",
+      "claim_sha256": "4d3eb7aede682466db2442cb22dabee1a367f4d68b4cdebcd03809c825e5ae59",
+      "challenge": "test the stated falsification: schemas/quantum-receipt-hardening-fixtures-pass-0014.json is missing, is not QuantumReceiptHardeningFixture/v1, reports non-MATCH status, or lacks the expected seal",
+      "measurable": "schemas/quantum-receipt-hardening-fixtures-pass-0014.json is missing, is not QuantumReceiptHardeningFixture/v1, reports non-MATCH status, or lacks the expected seal",
+      "source": "null"
+    },
+    {
+      "claim_id": "572ade7faa716882",
+      "claim_sha256": "572ade7faa716882cb628940d92099dd3e339e9b1bdd66cf77ed00397b57f100",
+      "challenge": "test the stated falsification: the negative promotion fixture is missing, does not attempt EXACT_SIMULATOR to CLOUD_HARDWARE promotion, does not expect REJECT, or omits any required rejection reason",
+      "measurable": "the negative promotion fixture is missing, does not attempt EXACT_SIMULATOR to CLOUD_HARDWARE promotion, does not expect REJECT, or omits any required rejection reason",
+      "source": "null"
+    },
+    {
+      "claim_id": "1534a44897f77ecb",
+      "claim_sha256": "1534a44897f77ecb345107315d433b166b7c3b2731ff2b6606147e69b4e99ed4",
+      "challenge": "test the stated falsification: the hardware mock receipt is missing, uses a branch other than HARDWARE_MOCK, allows hardware claims, lacks task-shaped metadata, or does not report MOCK_MATCH_NOT_HARDWARE",
+      "measurable": "the hardware mock receipt is missing, uses a branch other than HARDWARE_MOCK, allows hardware claims, lacks task-shaped metadata, or does not report MOCK_MATCH_NOT_HARDWARE",
+      "source": "null"
+    },
+    {
+      "claim_id": "318510bbe2274a7c",
+      "claim_sha256": "318510bbe2274a7c20d87702499dd922c8e1e9e6609ba4e6e4ffb0e4a78a060e",
+      "challenge": "test the stated falsification: adapter fixtures are missing, omit either Qiskit/OpenQASM 3 or Cirq JSON shape, normalize to a different circuit shape, or lack HTTPS source anchors",
+      "measurable": "adapter fixtures are missing, omit either Qiskit/OpenQASM 3 or Cirq JSON shape, normalize to a different circuit shape, or lack HTTPS source anchors",
+      "source": "null"
+    },
+    {
+      "claim_id": "fcbe19ac9c7ec862",
+      "claim_sha256": "fcbe19ac9c7ec862a102aefb875fcbfb9cdf12e13d960b14ace20f74b08123c2",
+      "challenge": "test the stated falsification: the resource estimate receipt is missing, is not QuantumResourceEstimateReceipt/v1, reports an execution status, or allows an execution claim",
+      "measurable": "the resource estimate receipt is missing, is not QuantumResourceEstimateReceipt/v1, reports an execution status, or allows an execution claim",
+      "source": "null"
+    },
+    {
+      "claim_id": "ef1bcc93c45c5290",
+      "claim_sha256": "ef1bcc93c45c529071ffe1d763a973ebf87c9c6a64cd23212d71fbac72bbfe2b",
+      "challenge": "test the stated falsification: metric bindings are missing, phase-sensitive clone claim accepts histogram-only evidence, or cloud hardware result claim omits any required sufficient metric",
+      "measurable": "metric bindings are missing, phase-sensitive clone claim accepts histogram-only evidence, or cloud hardware result claim omits any required sufficient metric",
+      "source": "null"
+    },
+    {
+      "claim_id": "7c6b8d0e2f2bc226",
+      "claim_sha256": "7c6b8d0e2f2bc226c76ca0ff672b2526180d77696f3e05e74d74c5a34c738260",
+      "challenge": "test the stated falsification: schemas/tool-receipts-pass-0014.json is missing, lacks any required tool status, or treats Forum submit as successful rather than UNVERIFIABLE",
+      "measurable": "schemas/tool-receipts-pass-0014.json is missing, lacks any required tool status, or treats Forum submit as successful rather than UNVERIFIABLE",
+      "source": "null"
+    },
+    {
+      "claim_id": "a4072d8bbb92e266",
+      "claim_sha256": "a4072d8bbb92e2661d490ac23c3d56aebfa0b5a2a08e60e17846ca067e4e7bd5",
+      "challenge": "test the stated falsification: any pass 0014 artifact labels a new quantum hardware result, quantum advantage claim, theorem proof, natural law, biological result, material result, medical result, finance result, or safety result as promoted",
+      "measurable": "any pass 0014 artifact labels a new quantum hardware result, quantum advantage claim, theorem proof, natural law, biological result, material result, medical result, finance result, or safety result as promoted",
+      "source": "null"
+    }
+  ],
+  "assessment": {
+    "started_at": 1782902768.6413622,
+    "thesis_id": "c21d40b308c02a39",
+    "thesis_seal": "c21d40b308c02a3943bb16e09826858dc5ebf9245cfe10d3e6609d9f08d8cccf",
+    "claims": 8,
+    "match": 8,
+    "drift": 0,
+    "unverifiable": 0,
+    "verdict_seal": "954a018b4c4a40ac7d4047dd939562679bcfb2768441bb6d4c7eaa6dca721636",
+    "measurement_seal": "924d32a353caa48e5599fa32fb96b6eb2382627de88a54d8ffc422abf0060478",
+    "disposition": "fenced",
+    "stored": null,
+    "verdicts": [
+      {
+        "claim_id": "4d3eb7aede682466",
+        "claim_sha256": "4d3eb7aede682466db2442cb22dabee1a367f4d68b4cdebcd03809c825e5ae59",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "fixture-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "572ade7faa716882",
+        "claim_sha256": "572ade7faa716882cb628940d92099dd3e339e9b1bdd66cf77ed00397b57f100",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "negative-promotion-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "1534a44897f77ecb",
+        "claim_sha256": "1534a44897f77ecb345107315d433b166b7c3b2731ff2b6606147e69b4e99ed4",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "hardware-mock-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "318510bbe2274a7c",
+        "claim_sha256": "318510bbe2274a7c20d87702499dd922c8e1e9e6609ba4e6e4ffb0e4a78a060e",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "adapter-fixture-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "fcbe19ac9c7ec862",
+        "claim_sha256": "fcbe19ac9c7ec862a102aefb875fcbfb9cdf12e13d960b14ace20f74b08123c2",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "resource-estimate-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "ef1bcc93c45c5290",
+        "claim_sha256": "ef1bcc93c45c529071ffe1d763a973ebf87c9c6a64cd23212d71fbac72bbfe2b",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "metric-binding-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "7c6b8d0e2f2bc226",
+        "claim_sha256": "7c6b8d0e2f2bc226c76ca0ff672b2526180d77696f3e05e74d74c5a34c738260",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "tool-receipt-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "a4072d8bbb92e266",
+        "claim_sha256": "a4072d8bbb92e2661d490ac23c3d56aebfa0b5a2a08e60e17846ca067e4e7bd5",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "non-promotion-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      }
+    ],
+    "measurements": [
+      {
+        "claim_id": "4d3eb7aede682466",
+        "claim_sha256": "4d3eb7aede682466db2442cb22dabee1a367f4d68b4cdebcd03809c825e5ae59",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "fixture-review",
+        "measured_at": 1782902768.6411765,
+        "evidence": [
+          "schemas/quantum-receipt-hardening-fixtures-pass-0014.json schema=QuantumReceiptHardeningFixture/v1",
+          "status=HARDENING_FIXTURE_MATCH",
+          "pass=0014",
+          "seal=5f68b4cb41349c3b0b8fd83a0ba35c6a9aef09283e61b55cb11a407172ecb8c4"
+        ]
+      },
+      {
+        "claim_id": "572ade7faa716882",
+        "claim_sha256": "572ade7faa716882cb628940d92099dd3e339e9b1bdd66cf77ed00397b57f100",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "negative-promotion-review",
+        "measured_at": 1782902768.6411846,
+        "evidence": [
+          "fixture_id=negative-exact-simulator-to-cloud-hardware",
+          "source_branch=EXACT_SIMULATOR",
+          "attempted_target_branch=CLOUD_HARDWARE",
+          "expected_validator_status=REJECT",
+          "rejection_reasons include branch_mismatch",
+          "rejection_reasons include hardware_claim_allowed_false",
+          "rejection_reasons include missing_cloud_task_metadata",
+          "rejection_reasons include missing_calibration_reference",
+          "rejection_reasons include missing_result_payload_hash"
+        ]
+      },
+      {
+        "claim_id": "1534a44897f77ecb",
+        "claim_sha256": "1534a44897f77ecb345107315d433b166b7c3b2731ff2b6606147e69b4e99ed4",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "hardware-mock-review",
+        "measured_at": 1782902768.6411867,
+        "evidence": [
+          "receipt_id=quantum-exp-pass-0014-hardware-mock",
+          "branch=HARDWARE_MOCK",
+          "hardware_claim_allowed=false",
+          "backend includes provider, device_arn, task_id, shots, queue_timestamp, calibration_ref, result_payload_hash",
+          "verdict=MOCK_MATCH_NOT_HARDWARE",
+          "result.status=MOCK_TASK_SHAPE_ONLY"
+        ]
+      },
+      {
+        "claim_id": "318510bbe2274a7c",
+        "claim_sha256": "318510bbe2274a7c20d87702499dd922c8e1e9e6609ba4e6e4ffb0e4a78a060e",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "adapter-fixture-review",
+        "measured_at": 1782902768.6411886,
+        "evidence": [
+          "adapter qiskit-openqasm3-export-fixture present",
+          "adapter cirq-json-shape-fixture present",
+          "both adapters report adapter_status=ADAPTER_FIXTURE_MATCH",
+          "both normalized circuits report qubits=2, gate_count=2, two_qubit_gate_count=1, depth=2",
+          "adapter source anchors are HTTPS",
+          "qiskit program contains OPENQASM 3.0"
+        ]
+      },
+      {
+        "claim_id": "fcbe19ac9c7ec862",
+        "claim_sha256": "fcbe19ac9c7ec862a102aefb875fcbfb9cdf12e13d960b14ace20f74b08123c2",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "resource-estimate-review",
+        "measured_at": 1782902768.6411908,
+        "evidence": [
+          "resource_estimate_receipt schema=QuantumResourceEstimateReceipt/v1",
+          "status=ESTIMATE_ONLY_NOT_EXECUTION",
+          "execution_claim_allowed=false",
+          "source_anchor=https://learn.microsoft.com/en-us/azure/quantum/intro-to-resource-estimation",
+          "assumptions include resource-estimate receipt is a planning artifact only"
+        ]
+      },
+      {
+        "claim_id": "ef1bcc93c45c5290",
+        "claim_sha256": "ef1bcc93c45c529071ffe1d763a973ebf87c9c6a64cd23212d71fbac72bbfe2b",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "metric-binding-review",
+        "measured_at": 1782902768.6411927,
+        "evidence": [
+          "metric_claim_bindings include phase_sensitive_clone_claim",
+          "phase_sensitive_clone_claim sufficient_metrics include statevector_or_density_matrix and fidelity_to_desired_clone",
+          "phase_sensitive_clone_claim insufficient_metrics include measurement_histogram_only",
+          "cloud_hardware_result_claim sufficient_metrics include provider_device_identity, cloud_task_id, shots, calibration_reference, result_payload_hash",
+          "cloud_hardware_result_claim insufficient_metrics include simulator_histogram and hardware_mock_task_shape"
+        ]
+      },
+      {
+        "claim_id": "7c6b8d0e2f2bc226",
+        "claim_sha256": "7c6b8d0e2f2bc226c76ca0ff672b2526180d77696f3e05e74d74c5a34c738260",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "tool-receipt-review",
+        "measured_at": 1782902768.6411946,
+        "evidence": [
+          "schemas/tool-receipts-pass-0014.json status=MATCH_WITH_FORUM_SUBMIT_GAP",
+          "tool receipts include index status MATCH",
+          "tool receipts include gather status MATCH",
+          "tool receipts include telos catalog/operator_doctor status MATCH",
+          "tool receipts include forum status MATCH and submit_status=UNVERIFIABLE",
+          "tool receipts include crucible status MATCH",
+          "Forum submit error recorded: configured executor did not return valid JSON"
+        ]
+      },
+      {
+        "claim_id": "a4072d8bbb92e266",
+        "claim_sha256": "a4072d8bbb92e2661d490ac23c3d56aebfa0b5a2a08e60e17846ca067e4e7bd5",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "non-promotion-review",
+        "measured_at": 1782902768.6411963,
+        "evidence": [
+          "packets/024-quantum-receipt-hardening.md states it does not claim a quantum hardware result",
+          "hardware_mock_receipt hardware_claim_allowed=false",
+          "resource_estimate_receipt execution_claim_allowed=false",
+          "negative promotion expected_validator_status=REJECT",
+          "Current promoted natural laws: none"
+        ]
+      }
+    ],
+    "seal": "e5e7d91eb68145e57197d99b3d14a06e48b243261bc9ff4be5b3fd8050a66881"
+  },
+  "verdicts": [
+    {
+      "claim_id": "4d3eb7aede682466",
+      "claim_sha256": "4d3eb7aede682466db2442cb22dabee1a367f4d68b4cdebcd03809c825e5ae59",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "fixture-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "572ade7faa716882",
+      "claim_sha256": "572ade7faa716882cb628940d92099dd3e339e9b1bdd66cf77ed00397b57f100",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "negative-promotion-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "1534a44897f77ecb",
+      "claim_sha256": "1534a44897f77ecb345107315d433b166b7c3b2731ff2b6606147e69b4e99ed4",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "hardware-mock-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "318510bbe2274a7c",
+      "claim_sha256": "318510bbe2274a7c20d87702499dd922c8e1e9e6609ba4e6e4ffb0e4a78a060e",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "adapter-fixture-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "fcbe19ac9c7ec862",
+      "claim_sha256": "fcbe19ac9c7ec862a102aefb875fcbfb9cdf12e13d960b14ace20f74b08123c2",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "resource-estimate-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "ef1bcc93c45c5290",
+      "claim_sha256": "ef1bcc93c45c529071ffe1d763a973ebf87c9c6a64cd23212d71fbac72bbfe2b",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "metric-binding-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "7c6b8d0e2f2bc226",
+      "claim_sha256": "7c6b8d0e2f2bc226c76ca0ff672b2526180d77696f3e05e74d74c5a34c738260",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "tool-receipt-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "a4072d8bbb92e266",
+      "claim_sha256": "a4072d8bbb92e2661d490ac23c3d56aebfa0b5a2a08e60e17846ca067e4e7bd5",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "non-promotion-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    }
+  ],
+  "checks": {
+    "seals_ok": true,
+    "thesis_ok": true,
+    "verdicts_rederive": true
+  },
+  "report": "C:\\dev\\public\\telos\\docs\\research\\dogfood\\crucible\\pass-0014-report.md",
+  "record": "C:\\dev\\public\\telos\\docs\\research\\dogfood\\crucible\\pass-0014-run.json",
+  "bundle": null,
+  "spec": null,
+  "review": null,
+  "verifier": {
+    "mode": "cleanroom",
+    "inputs": [],
+    "excluded": [
+      "worker context",
+      "reasoning trace",
+      "intermediate steps"
+    ],
+    "checkability": "If success cannot be evaluated from the original spec and the artifact, the spec is not checkable yet."
+  }
+}

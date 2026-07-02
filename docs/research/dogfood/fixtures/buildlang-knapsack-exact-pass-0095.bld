@@ -1,0 +1,47 @@
+fn selected(mask: i32, divisor: i32) -> bool {
+    ((mask / divisor) % 2) == 1
+}
+
+fn main() ~ Console {
+    let values = [31, 21, 27, 40, 17, 33, 18, 13, 32, 27, 19, 5];
+    let weights = [5, 4, 7, 6, 3, 7, 7, 6, 5, 11, 7, 2];
+    let capacity: i32 = 29;
+
+    let mut best_value: i32 = 0;
+    let mut best_weight: i32 = 0;
+    let mut best_mask: i32 = 0;
+    let mut feasible_count: i32 = 0;
+    let mut mask: i32 = 0;
+
+    while mask < 4096 {
+        let mut value: i32 = 0;
+        let mut weight: i32 = 0;
+        let mut i: i32 = 0;
+        let mut divisor: i32 = 1;
+
+        while i < 12 {
+            if selected(mask, divisor) {
+                value = value + values[i];
+                weight = weight + weights[i];
+            }
+            divisor = divisor * 2;
+            i = i + 1;
+        }
+
+        if weight <= capacity {
+            feasible_count = feasible_count + 1;
+            if value > best_value {
+                best_value = value;
+                best_weight = weight;
+                best_mask = mask;
+            }
+        }
+
+        mask = mask + 1;
+    }
+
+    println("best value {}", best_value);
+    println("best weight {}", best_weight);
+    println("best mask {}", best_mask);
+    println("feasible count {}", feasible_count);
+}

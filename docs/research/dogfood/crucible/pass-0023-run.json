@@ -1,0 +1,554 @@
+{
+  "ok": true,
+  "thesis": {
+    "id": "700246261ac3cbd6",
+    "title": "Dogfood Pass 0023 Isolated OpenTelemetry Recording Span Fixture",
+    "registered_at": 1782906538.9732485,
+    "disposition": "fenced",
+    "seal": "700246261ac3cbd6ae47827262177aa646e148dc6b636a1906715536ef17eaa4",
+    "claims": [
+      {
+        "id": "5af3f163ebd3975b",
+        "sha256": "5af3f163ebd3975bf2e25a7fc46c03ada3d830e444e9fd63c6327b8f846213b4"
+      },
+      {
+        "id": "2752b15ce535c649",
+        "sha256": "2752b15ce535c64912497ca1ef0cca3e818a2b50eb4edd2eea72b89dbce06792"
+      },
+      {
+        "id": "655c8939102fb743",
+        "sha256": "655c8939102fb7437aa26091d971a2272f5280ede0a17ba30bbafd200d5581c1"
+      },
+      {
+        "id": "93f953bc82e75f35",
+        "sha256": "93f953bc82e75f35c62e65720ad8ee55a92a366f9d1118c5b0be611acf7af57b"
+      },
+      {
+        "id": "869e77554b443ede",
+        "sha256": "869e77554b443ede7a6af35fc5bf82269c991db32d056d82a8c554546da9cb0b"
+      },
+      {
+        "id": "112c89ae2d7be6de",
+        "sha256": "112c89ae2d7be6de2af33f2fede0e47d24e0e62df279f11d77dec2166402f450"
+      },
+      {
+        "id": "3d4872ebb5aaac74",
+        "sha256": "3d4872ebb5aaac7492b0d253b4b42a3b8760922abb7be01282ca91e22575bd5d"
+      },
+      {
+        "id": "3cd44c9cf06e9c0c",
+        "sha256": "3cd44c9cf06e9c0c786111ac041c6482c72ea6b8754e5057efd8a599fae0d870"
+      },
+      {
+        "id": "b0c004bd5178cbfd",
+        "sha256": "b0c004bd5178cbfd23260e7dc894ef6bcd5c8ce3b4be772cdf123c451a7dba16"
+      },
+      {
+        "id": "c216e2b240d5e1e2",
+        "sha256": "c216e2b240d5e1e2496d8d16f0d56ba76e25f0b0b95f4675989de41ea9748f78"
+      }
+    ]
+  },
+  "refutations": [
+    {
+      "claim_id": "5af3f163ebd3975b",
+      "claim_sha256": "5af3f163ebd3975bf2e25a7fc46c03ada3d830e444e9fd63c6327b8f846213b4",
+      "challenge": "test the stated falsification: schemas/otel-recording-span-venv-pass-0023.json is missing, has a different schema or status, reports different counts, reports base SDK availability after the pass, reports no finished span, or lacks the expected seal",
+      "measurable": "schemas/otel-recording-span-venv-pass-0023.json is missing, has a different schema or status, reports different counts, reports base SDK availability after the pass, reports no finished span, or lacks the expected seal",
+      "source": "null"
+    },
+    {
+      "claim_id": "2752b15ce535c649",
+      "claim_sha256": "2752b15ce535c64912497ca1ef0cca3e818a2b50eb4edd2eea72b89dbce06792",
+      "challenge": "test the stated falsification: the install receipt is missing, returncode is nonzero, command lacks --force-reinstall or --report, required pinned OTel packages are absent, or any resolved critical package lacks a SHA-256 hash",
+      "measurable": "the install receipt is missing, returncode is nonzero, command lacks --force-reinstall or --report, required pinned OTel packages are absent, or any resolved critical package lacks a SHA-256 hash",
+      "source": "null"
+    },
+    {
+      "claim_id": "655c8939102fb743",
+      "claim_sha256": "655c8939102fb7437aa26091d971a2272f5280ede0a17ba30bbafd200d5581c1",
+      "challenge": "test the stated falsification: base_environment_before or base_environment_after reports opentelemetry_sdk_available=true, missing API version, or a different Python version",
+      "measurable": "base_environment_before or base_environment_after reports opentelemetry_sdk_available=true, missing API version, or a different Python version",
+      "source": "null"
+    },
+    {
+      "claim_id": "93f953bc82e75f35",
+      "claim_sha256": "93f953bc82e75f35c62e65720ad8ee55a92a366f9d1118c5b0be611acf7af57b",
+      "challenge": "test the stated falsification: the recording span fixture is missing, did not import the SDK, used a different exporter or span processor, has a nonzero return code, reports a non-recording span, reports a finished span count other than one, or has zero/malformed trace or span ids",
+      "measurable": "the recording span fixture is missing, did not import the SDK, used a different exporter or span processor, has a nonzero return code, reports a non-recording span, reports a finished span count other than one, or has zero/malformed trace or span ids",
+      "source": "null"
+    },
+    {
+      "claim_id": "869e77554b443ede",
+      "claim_sha256": "869e77554b443ede7a6af35fc5bf82269c991db32d056d82a8c554546da9cb0b",
+      "challenge": "test the stated falsification: the fixture lacks telos.pass, telos.action, telos.receipt.kind, telos.no_cloud_export, service.name, telos.export.boundary, exporter_sink_hash, or fixture_hash",
+      "measurable": "the fixture lacks telos.pass, telos.action, telos.receipt.kind, telos.no_cloud_export, service.name, telos.export.boundary, exporter_sink_hash, or fixture_hash",
+      "source": "null"
+    },
+    {
+      "claim_id": "112c89ae2d7be6de",
+      "claim_sha256": "112c89ae2d7be6de2af33f2fede0e47d24e0e62df279f11d77dec2166402f450",
+      "challenge": "test the stated falsification: action_receipt_bridge is missing, is not labeled BRIDGE_FIXTURE_READY_NOT_TELOS_RUNTIME, lacks telos.action.receipt, or lacks nonzero trace id/span id/finished span/receipt hash/base non-mutation verification layers",
+      "measurable": "action_receipt_bridge is missing, is not labeled BRIDGE_FIXTURE_READY_NOT_TELOS_RUNTIME, lacks telos.action.receipt, or lacks nonzero trace id/span id/finished span/receipt hash/base non-mutation verification layers",
+      "source": "null"
+    },
+    {
+      "claim_id": "3d4872ebb5aaac74",
+      "claim_sha256": "3d4872ebb5aaac7492b0d253b4b42a3b8760922abb7be01282ca91e22575bd5d",
+      "challenge": "test the stated falsification: schemas/pass-0023-otel-recording-span-venv-validator-result.json is missing, reports non-MATCH status, does not report match=1, or reports drift above zero",
+      "measurable": "schemas/pass-0023-otel-recording-span-venv-validator-result.json is missing, reports non-MATCH status, does not report match=1, or reports drift above zero",
+      "source": "null"
+    },
+    {
+      "claim_id": "3cd44c9cf06e9c0c",
+      "claim_sha256": "3cd44c9cf06e9c0c786111ac041c6482c72ea6b8754e5057efd8a599fae0d870",
+      "challenge": "test the stated falsification: packets/033-otel-recording-span-venv.md is missing, Gather does not verify it, the packet SHA-256 differs, or the packet omits the natural-law non-promotion statement",
+      "measurable": "packets/033-otel-recording-span-venv.md is missing, Gather does not verify it, the packet SHA-256 differs, or the packet omits the natural-law non-promotion statement",
+      "source": "null"
+    },
+    {
+      "claim_id": "b0c004bd5178cbfd",
+      "claim_sha256": "b0c004bd5178cbfd23260e7dc894ef6bcd5c8ce3b4be772cdf123c451a7dba16",
+      "challenge": "test the stated falsification: schemas/tool-receipts-pass-0023.json is missing, lacks required tool status receipts, treats Forum submit as successful, or omits the Telos action receipt/loop ledger/native-control receipts",
+      "measurable": "schemas/tool-receipts-pass-0023.json is missing, lacks required tool status receipts, treats Forum submit as successful, or omits the Telos action receipt/loop ledger/native-control receipts",
+      "source": "null"
+    },
+    {
+      "claim_id": "c216e2b240d5e1e2",
+      "claim_sha256": "c216e2b240d5e1e2496d8d16f0d56ba76e25f0b0b95f4675989de41ea9748f78",
+      "challenge": "test the stated falsification: any pass 0023 artifact labels Telos runtime integration, cloud trace export, live agent safety, market adoption, theorem proof, scientific discovery, or a natural law as promoted",
+      "measurable": "any pass 0023 artifact labels Telos runtime integration, cloud trace export, live agent safety, market adoption, theorem proof, scientific discovery, or a natural law as promoted",
+      "source": "null"
+    }
+  ],
+  "assessment": {
+    "started_at": 1782906538.9732485,
+    "thesis_id": "700246261ac3cbd6",
+    "thesis_seal": "700246261ac3cbd6ae47827262177aa646e148dc6b636a1906715536ef17eaa4",
+    "claims": 10,
+    "match": 10,
+    "drift": 0,
+    "unverifiable": 0,
+    "verdict_seal": "d45054703bbbe2a9ceea0da02358579804789cd0b81906a660d48e948ec9838f",
+    "measurement_seal": "21ece9e3167b4be8d1d17df857ee2afae3ad502bbde8e9fc452e896174c75db2",
+    "disposition": "fenced",
+    "stored": null,
+    "verdicts": [
+      {
+        "claim_id": "5af3f163ebd3975b",
+        "claim_sha256": "5af3f163ebd3975bf2e25a7fc46c03ada3d830e444e9fd63c6327b8f846213b4",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "otel-recording-span-artifact-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "2752b15ce535c649",
+        "claim_sha256": "2752b15ce535c64912497ca1ef0cca3e818a2b50eb4edd2eea72b89dbce06792",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "pip-install-report-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "655c8939102fb743",
+        "claim_sha256": "655c8939102fb7437aa26091d971a2272f5280ede0a17ba30bbafd200d5581c1",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "base-interpreter-boundary-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "93f953bc82e75f35",
+        "claim_sha256": "93f953bc82e75f35c62e65720ad8ee55a92a366f9d1118c5b0be611acf7af57b",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "recording-span-fixture-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "869e77554b443ede",
+        "claim_sha256": "869e77554b443ede7a6af35fc5bf82269c991db32d056d82a8c554546da9cb0b",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "span-attribute-binding-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "112c89ae2d7be6de",
+        "claim_sha256": "112c89ae2d7be6de2af33f2fede0e47d24e0e62df279f11d77dec2166402f450",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "action-receipt-bridge-boundary-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "3d4872ebb5aaac74",
+        "claim_sha256": "3d4872ebb5aaac7492b0d253b4b42a3b8760922abb7be01282ca91e22575bd5d",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "validator-run-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "3cd44c9cf06e9c0c",
+        "claim_sha256": "3cd44c9cf06e9c0c786111ac041c6482c72ea6b8754e5057efd8a599fae0d870",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "gather-packet-receipt-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "b0c004bd5178cbfd",
+        "claim_sha256": "b0c004bd5178cbfd23260e7dc894ef6bcd5c8ce3b4be772cdf123c451a7dba16",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "tool-receipt-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "c216e2b240d5e1e2",
+        "claim_sha256": "c216e2b240d5e1e2496d8d16f0d56ba76e25f0b0b95f4675989de41ea9748f78",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "non-promotion-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      }
+    ],
+    "measurements": [
+      {
+        "claim_id": "5af3f163ebd3975b",
+        "claim_sha256": "5af3f163ebd3975bf2e25a7fc46c03ada3d830e444e9fd63c6327b8f846213b4",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "otel-recording-span-artifact-review",
+        "measured_at": 1782906538.9732485,
+        "evidence": [
+          "schemas/otel-recording-span-venv-pass-0023.json schema=OTelRecordingSpanVenvReceiptSet/v1",
+          "status=OTEL_RECORDING_SPAN_VENV_MATCH",
+          "resolved_install_count=6",
+          "negative_fixture_count=6",
+          "base_environment_after opentelemetry_sdk_available=false",
+          "recording_span_fixture finished_span_count=1",
+          "seal=7d87821c3e35dbfe5493087092d7f5a1c3c0aea62a54e729e5ff7938b1d95796"
+        ]
+      },
+      {
+        "claim_id": "2752b15ce535c649",
+        "claim_sha256": "2752b15ce535c64912497ca1ef0cca3e818a2b50eb4edd2eea72b89dbce06792",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "pip-install-report-review",
+        "measured_at": 1782906538.9732485,
+        "evidence": [
+          "install returncode=0",
+          "install command includes --force-reinstall",
+          "install command includes --report",
+          "opentelemetry-api 1.41.0 sha256=0e77c806e6a89c9e4f8d372034622f3e1418a11bdbe1c80a50b3d3397ad0fa4f",
+          "opentelemetry-sdk 1.41.0 sha256=a596f5687964a3e0d7f8edfdcf5b79cbca9c93c7025ebf5fb00f398a9443b0bd",
+          "opentelemetry-semantic-conventions 0.62b0 sha256=0ddac1ce59eaf1a827d9987ab60d9315fb27aea23304144242d1fcad9e16b489",
+          "typing_extensions 4.15.0 sha256=f0fa19c6845758ab08074a0cfa8b7aecb71c999ca73d62883bc25cc018c4e548"
+        ]
+      },
+      {
+        "claim_id": "655c8939102fb743",
+        "claim_sha256": "655c8939102fb7437aa26091d971a2272f5280ede0a17ba30bbafd200d5581c1",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "base-interpreter-boundary-review",
+        "measured_at": 1782906538.9732485,
+        "evidence": [
+          "base_environment_before python_version=3.12.10",
+          "base_environment_before opentelemetry_api_version=1.41.0",
+          "base_environment_before opentelemetry_sdk_available=false",
+          "base_environment_after python_version=3.12.10",
+          "base_environment_after opentelemetry_api_version=1.41.0",
+          "base_environment_after opentelemetry_sdk_available=false"
+        ]
+      },
+      {
+        "claim_id": "93f953bc82e75f35",
+        "claim_sha256": "93f953bc82e75f35c62e65720ad8ee55a92a366f9d1118c5b0be611acf7af57b",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "recording-span-fixture-review",
+        "measured_at": 1782906538.9732485,
+        "evidence": [
+          "recording_span_fixture schema=OpenTelemetryRecordingSpanFixture/v1",
+          "status=RECORDING_SPAN_EXPORTED_IN_MEMORY",
+          "returncode=0",
+          "sdk_imported=true",
+          "exporter_class=InMemorySpanExporter",
+          "span_processor_class=SimpleSpanProcessor",
+          "span_was_recording_inside_context=true",
+          "finished_span_count=1",
+          "trace_id_hex=aaa76491660d7a56086f69d1be94debe",
+          "span_id_hex=1424d4ca9a6c5b58"
+        ]
+      },
+      {
+        "claim_id": "869e77554b443ede",
+        "claim_sha256": "869e77554b443ede7a6af35fc5bf82269c991db32d056d82a8c554546da9cb0b",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "span-attribute-binding-review",
+        "measured_at": 1782906538.9732485,
+        "evidence": [
+          "attributes telos.pass=0023",
+          "attributes telos.action=recording-span-fixture",
+          "attributes telos.receipt.kind=OpenTelemetryRecordingSpanFixture/v1",
+          "attributes telos.no_cloud_export=true",
+          "resource service.name=telos-dogfood-pass-0023",
+          "resource telos.export.boundary=in-memory-only",
+          "exporter_sink_hash=f2e9f33d12e261457731f6eedbe62c3c6d04d574c2c8274870da4eee0c2c2fc0",
+          "fixture_hash=b1f3b6cd1c5b81d1784b29f5f9e11dd9ab1c2849f7510de94926dca07d5e2a25"
+        ]
+      },
+      {
+        "claim_id": "112c89ae2d7be6de",
+        "claim_sha256": "112c89ae2d7be6de2af33f2fede0e47d24e0e62df279f11d77dec2166402f450",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "action-receipt-bridge-boundary-review",
+        "measured_at": 1782906538.9732485,
+        "evidence": [
+          "action_receipt_bridge schema=TelosActionReceiptBridgeSketch/v1",
+          "status=BRIDGE_FIXTURE_READY_NOT_TELOS_RUNTIME",
+          "internal_tool=telos.action.receipt",
+          "verification_layer includes nonzero trace id",
+          "verification_layer includes nonzero span id",
+          "verification_layer includes finished span count",
+          "verification_layer includes receipt hash binding",
+          "verification_layer includes base interpreter non-mutation audit"
+        ]
+      },
+      {
+        "claim_id": "3d4872ebb5aaac74",
+        "claim_sha256": "3d4872ebb5aaac7492b0d253b4b42a3b8760922abb7be01282ca91e22575bd5d",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "validator-run-review",
+        "measured_at": 1782906538.9732485,
+        "evidence": [
+          "schemas/pass-0023-otel-recording-span-venv-validator-result.json status=MATCH",
+          "match=1",
+          "drift=0",
+          "checks include OTelRecordingSpanVenvReceiptSet status MATCH"
+        ]
+      },
+      {
+        "claim_id": "3cd44c9cf06e9c0c",
+        "claim_sha256": "3cd44c9cf06e9c0c786111ac041c6482c72ea6b8754e5057efd8a599fae0d870",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "gather-packet-receipt-review",
+        "measured_at": 1782906538.9732485,
+        "evidence": [
+          "gather docs verified=true",
+          "artifact=packets/033-otel-recording-span-venv.md",
+          "sha256=945054a1aed15ecffcfd46427b97dd268056a05d08997906a99faab29eed5b05",
+          "seal=68f9ce4e29ff0147006858732dfb26683ebbe24c2b5b62f5782a1e75334e7a91",
+          "packet states Current promoted natural laws: none"
+        ]
+      },
+      {
+        "claim_id": "b0c004bd5178cbfd",
+        "claim_sha256": "b0c004bd5178cbfd23260e7dc894ef6bcd5c8ce3b4be772cdf123c451a7dba16",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "tool-receipt-review",
+        "measured_at": 1782906538.9732485,
+        "evidence": [
+          "schemas/tool-receipts-pass-0023.json status=MATCH_WITH_FORUM_SUBMIT_GAP",
+          "index status MATCH",
+          "gather status MATCH",
+          "gather docs verified=true",
+          "telos operator_doctor status MATCH",
+          "telos action_receipt status MATCH",
+          "telos loop_ledger status MATCH",
+          "forum status MATCH",
+          "forum ledger verify chain=true deep=true",
+          "forum submit status=UNVERIFIABLE",
+          "crucible status MATCH"
+        ]
+      },
+      {
+        "claim_id": "c216e2b240d5e1e2",
+        "claim_sha256": "c216e2b240d5e1e2496d8d16f0d56ba76e25f0b0b95f4675989de41ea9748f78",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "non-promotion-review",
+        "measured_at": 1782906538.9732485,
+        "evidence": [
+          "schemas/otel-recording-span-venv-pass-0023.json non_promotion_statement says no Telos runtime integration, cloud trace export, live agent safety, scientific discovery, theorem proof, or natural law",
+          "packets/033-otel-recording-span-venv.md states Current promoted natural laws: none",
+          "adversarial/pass-0023-otel-recording-span-steelman.md says the bridge is not a runtime Telos action receipt",
+          "schemas/tool-receipts-pass-0023.json non_promotion_statement limits tool receipts to availability and packet intake"
+        ]
+      }
+    ],
+    "seal": "e5c55e68631fc65f0a1e51a7b073af7020eab4d33d29efb3be67c109b3eafd97"
+  },
+  "verdicts": [
+    {
+      "claim_id": "5af3f163ebd3975b",
+      "claim_sha256": "5af3f163ebd3975bf2e25a7fc46c03ada3d830e444e9fd63c6327b8f846213b4",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "otel-recording-span-artifact-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "2752b15ce535c649",
+      "claim_sha256": "2752b15ce535c64912497ca1ef0cca3e818a2b50eb4edd2eea72b89dbce06792",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "pip-install-report-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "655c8939102fb743",
+      "claim_sha256": "655c8939102fb7437aa26091d971a2272f5280ede0a17ba30bbafd200d5581c1",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "base-interpreter-boundary-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "93f953bc82e75f35",
+      "claim_sha256": "93f953bc82e75f35c62e65720ad8ee55a92a366f9d1118c5b0be611acf7af57b",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "recording-span-fixture-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "869e77554b443ede",
+      "claim_sha256": "869e77554b443ede7a6af35fc5bf82269c991db32d056d82a8c554546da9cb0b",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "span-attribute-binding-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "112c89ae2d7be6de",
+      "claim_sha256": "112c89ae2d7be6de2af33f2fede0e47d24e0e62df279f11d77dec2166402f450",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "action-receipt-bridge-boundary-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "3d4872ebb5aaac74",
+      "claim_sha256": "3d4872ebb5aaac7492b0d253b4b42a3b8760922abb7be01282ca91e22575bd5d",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "validator-run-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "3cd44c9cf06e9c0c",
+      "claim_sha256": "3cd44c9cf06e9c0c786111ac041c6482c72ea6b8754e5057efd8a599fae0d870",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "gather-packet-receipt-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "b0c004bd5178cbfd",
+      "claim_sha256": "b0c004bd5178cbfd23260e7dc894ef6bcd5c8ce3b4be772cdf123c451a7dba16",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "tool-receipt-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "c216e2b240d5e1e2",
+      "claim_sha256": "c216e2b240d5e1e2496d8d16f0d56ba76e25f0b0b95f4675989de41ea9748f78",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "non-promotion-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    }
+  ],
+  "checks": {
+    "seals_ok": true,
+    "thesis_ok": true,
+    "verdicts_rederive": true
+  },
+  "report": "C:\\dev\\public\\telos\\docs\\research\\dogfood\\crucible\\pass-0023-report.md",
+  "record": "C:\\dev\\public\\telos\\docs\\research\\dogfood\\crucible\\pass-0023-run.json",
+  "bundle": null,
+  "spec": null,
+  "review": null,
+  "verifier": {
+    "mode": "cleanroom",
+    "inputs": [],
+    "excluded": [
+      "worker context",
+      "reasoning trace",
+      "intermediate steps"
+    ],
+    "checkability": "If success cannot be evaluated from the original spec and the artifact, the spec is not checkable yet."
+  }
+}

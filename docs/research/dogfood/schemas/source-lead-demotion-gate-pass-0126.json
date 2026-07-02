@@ -1,0 +1,270 @@
+{
+  "accepted_count": 3,
+  "current_promoted_natural_laws": [],
+  "flagship_receipts": {
+    "forum": {
+      "decided": null,
+      "exit_code": 0,
+      "status": "MATCH",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "4fe3841632e2f93c96084b52acb57b2c0fa681cb74375a1b20d42389ca51dde2"
+    },
+    "index": {
+      "exit_code": 0,
+      "status": "MATCH",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "dcfc4c384621d25cb304a3b5168e43d9f13709ad8cf9ba74525f08f4d60ab28b",
+      "verification_verdict": "MATCH"
+    },
+    "telos": {
+      "exit_code": 0,
+      "status": "MATCH",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "be17cb15259234cb4e8e95c2b36e76c90d841431729beb140294e34c5f9ebfa7",
+      "tool_version": "0.1.0"
+    },
+    "telos_catalog": {
+      "exit_code": 0,
+      "status": "MATCH",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "ef95a6f1ff803c483c3c4dd553fe19c37ab144113a21bc005cf4148cf31a8564"
+    }
+  },
+  "gate_fixtures": [
+    {
+      "evidence": [
+        {
+          "kind": "video_metadata",
+          "ref": "HbKzqvey5PA",
+          "source": "video"
+        }
+      ],
+      "expected_status": "ACCEPTED",
+      "failures": [],
+      "fixture_id": "source_lead_only_ok",
+      "gate_status": "ACCEPTED",
+      "independent_evidence": false,
+      "matches_expected": true,
+      "raw_transcript_included": false,
+      "requested_status": "SOURCE_LEAD_ONLY",
+      "video_ids": [
+        "HbKzqvey5PA"
+      ]
+    },
+    {
+      "evidence": [
+        {
+          "kind": "video_transcript_hash",
+          "ref": "pass-0125",
+          "source": "video"
+        }
+      ],
+      "expected_status": "ACCEPTED",
+      "failures": [],
+      "fixture_id": "hypothesis_routing_ok",
+      "gate_status": "ACCEPTED",
+      "independent_evidence": false,
+      "matches_expected": true,
+      "raw_transcript_included": false,
+      "requested_status": "HYPOTHESIS",
+      "video_ids": [
+        "4MQbd5wTlI8",
+        "EdVG5qNm2rY"
+      ]
+    },
+    {
+      "evidence": [
+        {
+          "kind": "crucible_match",
+          "ref": "pass-0124-run",
+          "source": "local_artifact"
+        }
+      ],
+      "expected_status": "ACCEPTED",
+      "failures": [],
+      "fixture_id": "independent_probe_ok",
+      "gate_status": "ACCEPTED",
+      "independent_evidence": true,
+      "matches_expected": true,
+      "raw_transcript_included": false,
+      "requested_status": "PROBE_MATCH",
+      "video_ids": [
+        "nYwid6Q5HXk"
+      ]
+    },
+    {
+      "evidence": [
+        {
+          "kind": "video_transcript_hash",
+          "ref": "EdVG5qNm2rY",
+          "source": "video"
+        }
+      ],
+      "expected_failures": [
+        "video_only_promotion",
+        "missing_independent_evidence"
+      ],
+      "expected_status": "REJECTED",
+      "failures": [
+        "missing_independent_evidence",
+        "video_only_promotion"
+      ],
+      "fixture_id": "video_only_fact_rejected",
+      "gate_status": "REJECTED",
+      "independent_evidence": false,
+      "matches_expected": true,
+      "raw_transcript_included": false,
+      "requested_status": "VERIFIED_FACT",
+      "video_ids": [
+        "EdVG5qNm2rY"
+      ]
+    },
+    {
+      "evidence": [
+        {
+          "kind": "video_metadata",
+          "ref": "HbKzqvey5PA",
+          "source": "video"
+        }
+      ],
+      "expected_failures": [
+        "law_promotion_forbidden",
+        "video_only_promotion",
+        "missing_independent_evidence"
+      ],
+      "expected_status": "REJECTED",
+      "failures": [
+        "law_promotion_forbidden",
+        "missing_independent_evidence",
+        "video_only_promotion"
+      ],
+      "fixture_id": "video_law_rejected",
+      "gate_status": "REJECTED",
+      "independent_evidence": false,
+      "matches_expected": true,
+      "raw_transcript_included": false,
+      "requested_status": "PROMOTED_LAW",
+      "video_ids": [
+        "HbKzqvey5PA"
+      ]
+    },
+    {
+      "evidence": [
+        {
+          "kind": "raw_transcript",
+          "ref": "inline",
+          "source": "video"
+        }
+      ],
+      "expected_failures": [
+        "raw_transcript_included"
+      ],
+      "expected_status": "REJECTED",
+      "failures": [
+        "raw_transcript_included"
+      ],
+      "fixture_id": "raw_transcript_rejected",
+      "gate_status": "REJECTED",
+      "independent_evidence": false,
+      "matches_expected": true,
+      "raw_transcript_included": true,
+      "requested_status": "HYPOTHESIS",
+      "video_ids": [
+        "4MQbd5wTlI8"
+      ]
+    },
+    {
+      "evidence": [
+        {
+          "kind": "keyword_signal_count",
+          "ref": "pass-0125",
+          "source": "derived_video_signal"
+        }
+      ],
+      "expected_failures": [
+        "keyword_count_not_proof",
+        "missing_independent_evidence"
+      ],
+      "expected_status": "REJECTED",
+      "failures": [
+        "keyword_count_not_proof",
+        "missing_independent_evidence",
+        "video_only_promotion"
+      ],
+      "fixture_id": "keyword_count_as_proof_rejected",
+      "gate_status": "REJECTED",
+      "independent_evidence": false,
+      "matches_expected": true,
+      "raw_transcript_included": false,
+      "requested_status": "CRUCIBLE_MATCH",
+      "video_ids": [
+        "nYwid6Q5HXk"
+      ]
+    }
+  ],
+  "generated_on": "2026-07-01",
+  "non_promotion_statement": "Pass 0126 is a demotion and rejection gate. It does not validate video claims, expose raw transcripts, declare market fit, or promote a natural law.",
+  "pass": "0126",
+  "policy": {
+    "fact_statuses_requiring_independent_evidence": [
+      "CRUCIBLE_MATCH",
+      "LAW_CANDIDATE",
+      "PROBE_MATCH",
+      "VERIFIED_FACT"
+    ],
+    "independent_evidence_kinds": [
+      "code_receipt",
+      "crucible_match",
+      "experiment_receipt",
+      "formal_artifact",
+      "paper",
+      "runtime_receipt"
+    ],
+    "keyword_count_policy": "routing_signal_only_not_proof",
+    "promoted_law_policy": "always_reject_in_this_gate",
+    "raw_transcript_policy": "reject_packet_exports",
+    "source_lead_safe_statuses": [
+      "HYPOTHESIS",
+      "SOURCE_LEAD_ONLY"
+    ]
+  },
+  "primary_guardrail": "reject unsupported video-to-fact or video-to-law promotion before runtime router execution",
+  "rejected_count": 4,
+  "schema": "SourceLeadDemotionGateReceipt/v1",
+  "seal": "67b045645bb0ff265f585a2c92768684ba47e2956920030eb756191bbd737926",
+  "source_bindings": {
+    "agent_action_adapter_pass": "0124",
+    "agent_action_adapter_seal": "5be6a945b22e1c730f4fc93528321fce56bede4d750329a72c90894a9b1b5e7d",
+    "youtube_router_pass": "0125",
+    "youtube_router_seal": "6def88f8a777647f886e2b4a0c2a44eda348b50c81efa8dfe2b9170f14617233"
+  },
+  "source_lead_summary": [
+    {
+      "claim_status": "SOURCE_LEAD_ONLY",
+      "dominant_signal": "quantum_physics",
+      "raw_transcript_included": false,
+      "video_id": "HbKzqvey5PA"
+    },
+    {
+      "claim_status": "SOURCE_LEAD_ONLY",
+      "dominant_signal": "formal_math",
+      "raw_transcript_included": false,
+      "video_id": "4MQbd5wTlI8"
+    },
+    {
+      "claim_status": "SOURCE_LEAD_ONLY",
+      "dominant_signal": "counterexample",
+      "raw_transcript_included": false,
+      "video_id": "EdVG5qNm2rY"
+    },
+    {
+      "claim_status": "SOURCE_LEAD_ONLY",
+      "dominant_signal": "agent_loop",
+      "raw_transcript_included": false,
+      "video_id": "nYwid6Q5HXk"
+    }
+  ],
+  "status": "SOURCE_LEAD_DEMOTION_GATE_MATCH",
+  "unsupported_claim_count": 0,
+  "validation_errors": []
+}

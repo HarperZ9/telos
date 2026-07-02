@@ -1,0 +1,102 @@
+{
+  "measurements": [
+    {
+      "claim": "Pass 0139 created a SAIRStage2LeanCertificatePreflightReceipt/v1 artifact with status SAIR_STAGE2_LEAN_CERTIFICATE_PREFLIGHT_MATCH_WITH_TOOLCHAIN_GAP, sha256 bf059da0472d1d750ed90c97b247037b6afca747bcb9a2ac96b0d460c91d6297, and seal cfbd948929bab2dc33efc1ba25c8068649623330fa0f2ea35131e5640db002eb.",
+      "deviation": 0.0,
+      "evidence": [
+        "schema=SAIRStage2LeanCertificatePreflightReceipt/v1",
+        "status=SAIR_STAGE2_LEAN_CERTIFICATE_PREFLIGHT_MATCH_WITH_TOOLCHAIN_GAP",
+        "sha256=bf059da0472d1d750ed90c97b247037b6afca747bcb9a2ac96b0d460c91d6297",
+        "seal=cfbd948929bab2dc33efc1ba25c8068649623330fa0f2ea35131e5640db002eb"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0139 binds the public Stage 2 repo HEAD 6805e2323018fbd8a85f41ca09fc33d74d5a02a5 and ls-remote HEAD 6805e2323018fbd8a85f41ca09fc33d74d5a02a5.",
+      "deviation": 0.0,
+      "evidence": [
+        "repository={'checkout_kind': 'temp_external_readonly_checkout', 'counts': {'challenger_answers': 85, 'lean_files': 5, 'problem_files': 8, 'python_files': 41, 'tracked_files': 187}, 'head_commit': '6805e2323018fbd8a85f41ca09fc33d74d5a02a5', 'ls_remote_head': '6805e2323018fbd8a85f41ca09fc33d74d5a02a5', 'manifest_counts': {'challenger_manifest': 79, 'harness_manifest': 66, 'marathon_manifest': 24}, 'observed_files': ['README.md', 'rules/evaluation.md', 'docs/solo_mode.md', 'docs/marathon_mode.md', 'lean-toolchain', 'lakefile.lean', 'lake-manifest.json', 'judge/verify.py', 'judge/JudgeMagma/Magma.lean', 'judge/JudgeDecide/DecideBang.lean', 'judge/JudgeFinOp/MemoFinOp.lean', 'judge/JudgeSupport/Inspect.lean', 'scripts/run_harness.py', 'scripts/run_marathon_harness.py', 'pipeline/config.json', 'tests/harness_manifest.json', 'tests/challenger_manifest.json', 'tests/marathon_manifest.json'], 'source_hashes': {'README.md': '7ed3001dbc2812b2e2970c30291b018ec85b2faa12f613e66eb3b7fe3b5e0f19', 'docs/marathon_mode.md': 'c93910ded7e398d14a86f92e72d7eef4ce4bc15454f80701b50433e70555fb86', 'docs/solo_mode.md': 'fe5bcad6d39986f4bea33c7b48ec7d5d128b82b56e9090d7052e72c9fe26a926', 'judge/JudgeDecide/DecideBang.lean': '92348de0771442daeadf41cd25adefb15ab0fb2ef4b332ee1eac1e16bd1765a1', 'judge/JudgeFinOp/MemoFinOp.lean': 'd4b97826b1cfb3d4044ebb395c2675472f6262ff7e8cf597dc764325550d5bff', 'judge/JudgeMagma/Magma.lean': 'd240213fe7d9ea733f7f09205d619377c70d4ff7f3b8f0fb34f326f1e14aa76f', 'judge/JudgeSupport/Inspect.lean': '8eac8eb6d39e5e4dad6e6cc237258349def78319658e223bddad0f434b014f61', 'judge/verify.py': '214e32b70b0855fc2f22b9438ee85953b90e9a292c030511292a01203066558f', 'lake-manifest.json': '3f293fe2a94218d6db18f47bfe801dc120a3ab4861ad77e63c3e6935399a5147', 'lakefile.lean': '102975f16f6164e7d5095be7e55ccd4a0a1d6613cbb65228264a846d2c6cadf4', 'lean-toolchain': '4ffb62ce8c8f7ebaff1c1e98c5d36fd60956fb6c9a55d66d8c75ceaae9e96507', 'pipeline/config.json': 'ee53e9e3f875095eb94cbde1cc9607acb77d47911d63d6102ca620f38dc0932d', 'rules/evaluation.md': 'f6889a6cb0c9c003a98c4ae69016d5983b58d1576fb623b5402c2806f00c8f78', 'scripts/run_harness.py': '44dae31aca4504f099eea8feff156be02e54207045f3caa8272fbe0b24e8ce8c', 'scripts/run_marathon_harness.py': 'aa8d8e889399292fb1a7db70803cd4979815ea0bb66c9f974e5da590915965ab', 'tests/challenger_manifest.json': '5849df747cd70ce94b4f2a9723985160ef2a770938abee500bcb025542fa4112', 'tests/harness_manifest.json': 'daf361a5c5dfa9cc8b4d2b6c7e02fb09843e1daa6f5cf47c5e4db76502aadc2d', 'tests/marathon_manifest.json': '4b8003479ac7a4548c26bcb16e4aaed12e7bad2fca3ea3193487a76bf88ec521'}, 'url': 'https://github.com/SAIRcompetition/equational-theories-lean-stage2.git'}"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0139 records 18 observed files and 18 source hashes.",
+      "deviation": 0.0,
+      "evidence": [
+        "observed_files=['README.md', 'rules/evaluation.md', 'docs/solo_mode.md', 'docs/marathon_mode.md', 'lean-toolchain', 'lakefile.lean', 'lake-manifest.json', 'judge/verify.py', 'judge/JudgeMagma/Magma.lean', 'judge/JudgeDecide/DecideBang.lean', 'judge/JudgeFinOp/MemoFinOp.lean', 'judge/JudgeSupport/Inspect.lean', 'scripts/run_harness.py', 'scripts/run_marathon_harness.py', 'pipeline/config.json', 'tests/harness_manifest.json', 'tests/challenger_manifest.json', 'tests/marathon_manifest.json']",
+        "source_hashes={'README.md': '7ed3001dbc2812b2e2970c30291b018ec85b2faa12f613e66eb3b7fe3b5e0f19', 'docs/marathon_mode.md': 'c93910ded7e398d14a86f92e72d7eef4ce4bc15454f80701b50433e70555fb86', 'docs/solo_mode.md': 'fe5bcad6d39986f4bea33c7b48ec7d5d128b82b56e9090d7052e72c9fe26a926', 'judge/JudgeDecide/DecideBang.lean': '92348de0771442daeadf41cd25adefb15ab0fb2ef4b332ee1eac1e16bd1765a1', 'judge/JudgeFinOp/MemoFinOp.lean': 'd4b97826b1cfb3d4044ebb395c2675472f6262ff7e8cf597dc764325550d5bff', 'judge/JudgeMagma/Magma.lean': 'd240213fe7d9ea733f7f09205d619377c70d4ff7f3b8f0fb34f326f1e14aa76f', 'judge/JudgeSupport/Inspect.lean': '8eac8eb6d39e5e4dad6e6cc237258349def78319658e223bddad0f434b014f61', 'judge/verify.py': '214e32b70b0855fc2f22b9438ee85953b90e9a292c030511292a01203066558f', 'lake-manifest.json': '3f293fe2a94218d6db18f47bfe801dc120a3ab4861ad77e63c3e6935399a5147', 'lakefile.lean': '102975f16f6164e7d5095be7e55ccd4a0a1d6613cbb65228264a846d2c6cadf4', 'lean-toolchain': '4ffb62ce8c8f7ebaff1c1e98c5d36fd60956fb6c9a55d66d8c75ceaae9e96507', 'pipeline/config.json': 'ee53e9e3f875095eb94cbde1cc9607acb77d47911d63d6102ca620f38dc0932d', 'rules/evaluation.md': 'f6889a6cb0c9c003a98c4ae69016d5983b58d1576fb623b5402c2806f00c8f78', 'scripts/run_harness.py': '44dae31aca4504f099eea8feff156be02e54207045f3caa8272fbe0b24e8ce8c', 'scripts/run_marathon_harness.py': 'aa8d8e889399292fb1a7db70803cd4979815ea0bb66c9f974e5da590915965ab', 'tests/challenger_manifest.json': '5849df747cd70ce94b4f2a9723985160ef2a770938abee500bcb025542fa4112', 'tests/harness_manifest.json': 'daf361a5c5dfa9cc8b4d2b6c7e02fb09843e1daa6f5cf47c5e4db76502aadc2d', 'tests/marathon_manifest.json': '4b8003479ac7a4548c26bcb16e4aaed12e7bad2fca3ea3193487a76bf88ec521'}"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0139 records Lean toolchain leanprover/lean4:v4.30.0-rc2 and repository counts {'challenger_answers': 85, 'lean_files': 5, 'problem_files': 8, 'python_files': 41, 'tracked_files': 187}.",
+      "deviation": 0.0,
+      "evidence": [
+        "toolchain={'lean_toolchain': 'leanprover/lean4:v4.30.0-rc2'}",
+        "counts={'challenger_answers': 85, 'lean_files': 5, 'problem_files': 8, 'python_files': 41, 'tracked_files': 187}"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0139 records manifest counts {'challenger_manifest': 79, 'harness_manifest': 66, 'marathon_manifest': 24}.",
+      "deviation": 0.0,
+      "evidence": [
+        "manifest_counts={'challenger_manifest': 79, 'harness_manifest': 66, 'marathon_manifest': 24}"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0139 Python compileall status is MATCH and Lean replay status is UNVERIFIABLE_TOOL_UNAVAILABLE.",
+      "deviation": 0.0,
+      "evidence": [
+        "local_command_receipts={'elan': {'combined_excerpt': '[WinError 2] The system cannot find the file specified', 'command': 'elan --version', 'exit_code': 127, 'status': 'UNVERIFIABLE_TOOL_UNAVAILABLE', 'stderr_sha256': '4bc7fbd7b416d804b23c797e930108d86c77ad2fa6e7577f495e589b9837bc9e', 'stdout_sha256': 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'}, 'lake': {'combined_excerpt': '[WinError 2] The system cannot find the file specified', 'command': 'lake --version', 'exit_code': 127, 'status': 'UNVERIFIABLE_TOOL_UNAVAILABLE', 'stderr_sha256': '4bc7fbd7b416d804b23c797e930108d86c77ad2fa6e7577f495e589b9837bc9e', 'stdout_sha256': 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'}, 'lean': {'combined_excerpt': '[WinError 2] The system cannot find the file specified', 'command': 'lean --version', 'exit_code': 127, 'status': 'UNVERIFIABLE_TOOL_UNAVAILABLE', 'stderr_sha256': '4bc7fbd7b416d804b23c797e930108d86c77ad2fa6e7577f495e589b9837bc9e', 'stdout_sha256': 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'}, 'python_compileall': {'combined_excerpt': '', 'command': 'python -m compileall -q judge pipeline scripts examples', 'exit_code': 0, 'status': 'MATCH', 'stderr_sha256': 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855', 'stdout_sha256': 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'}, 'run_harness': {'combined_excerpt': 'missing lean binary: lean', 'command': 'python scripts/run_harness.py', 'exit_code': 2, 'status': 'UNVERIFIABLE_TOOL_UNAVAILABLE', 'stderr_sha256': '32065f77e4fb020b0d449870b4d18a49a5858b25ebee6f6b4f0a67d42bd3f762', 'stdout_sha256': 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'}}",
+        "proof_replay={'lean_replay_status': 'UNVERIFIABLE_TOOL_UNAVAILABLE', 'reason': 'lean, lake, and elan are unavailable on PATH'}"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0139 records 0 external model calls.",
+      "deviation": 0.0,
+      "evidence": [
+        "execution_boundary={'api_keys_captured': False, 'external_model_calls': 0, 'official_submission': False}"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0139 rejects 6 negative fixtures.",
+      "deviation": 0.0,
+      "evidence": [
+        "negative_fixtures=[{'failures': ['head_commit_mismatch'], 'fixture_id': 'head_commit_mismatch', 'observed_status': 'REJECTED', 'status': 'MATCH'}, {'failures': ['missing_observed_source_hashes'], 'fixture_id': 'missing_source_hashes', 'observed_status': 'REJECTED', 'status': 'MATCH'}, {'failures': ['missing_lean_toolchain'], 'fixture_id': 'missing_toolchain_pin', 'observed_status': 'REJECTED', 'status': 'MATCH'}, {'failures': ['lean_replay_promoted'], 'fixture_id': 'lean_replay_promoted_without_lean', 'observed_status': 'REJECTED', 'status': 'MATCH'}, {'failures': ['unexpected_harness_status'], 'fixture_id': 'harness_claim_promoted', 'observed_status': 'REJECTED', 'status': 'MATCH'}, {'failures': ['promoted_result_present'], 'fixture_id': 'leaderboard_claim_promoted', 'observed_status': 'REJECTED', 'status': 'MATCH'}]"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0139 promotes no accepted certificate, official evaluation, theorem result, market-fit result, or natural law.",
+      "deviation": 0.0,
+      "evidence": [
+        "current_promoted_results=[]",
+        "promotion_boundary=This pass verifies the public Stage 2 repository preflight surface only. It does not replay Lean proofs, accept certificates, claim official evaluation, or promote a theorem or natural law."
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0139 validator status is MATCH and test status is MATCH.",
+      "deviation": 0.0,
+      "evidence": [
+        "validator={'command': 'C:\\\\Users\\\\Zain\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python312\\\\python.exe C:\\\\dev\\\\public\\\\telos\\\\docs\\\\research\\\\dogfood\\\\tools\\\\validate_pass_0139_sair_stage2_lean_certificate_preflight.py', 'exit_code': 0, 'stdout_sha256': '3a6e64f17fc3c34ea16c8181642aa1e2e70bc92ae9f48ec6f5c31b11078d3001', 'stderr_sha256': 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855', 'status': 'MATCH'}",
+        "test={'command': 'C:\\\\Users\\\\Zain\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python312\\\\python.exe C:\\\\dev\\\\public\\\\telos\\\\docs\\\\research\\\\dogfood\\\\tools\\\\test_sair_stage2_lean_certificate_preflight.py', 'exit_code': 0, 'stdout_sha256': 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855', 'stderr_sha256': 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855', 'status': 'MATCH'}"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    }
+  ]
+}

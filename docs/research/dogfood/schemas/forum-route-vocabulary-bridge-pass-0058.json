@@ -1,0 +1,334 @@
+{
+  "buyer_discovery_script": {
+    "prompt_count": 9,
+    "prompts": [
+      {
+        "buyer_id": "research_lab",
+        "evidence_refs": [
+          "microsoft-discovery",
+          "nist-ai-rmf",
+          "pass-0056-demo-manifest"
+        ],
+        "guardrails": [
+          "no_universal_uniqueness_claim",
+          "no_scientific_truth_promotion",
+          "source_boundaries_preserved"
+        ],
+        "interview_prompt": "When evaluating a Project Telos proof-packet workflow, how would your team answer this objection: We already have agentic discovery platforms; why is this different?",
+        "objection_id": "research-lab-001",
+        "target_lane_split": [
+          "project-telos",
+          "deep-research",
+          "technical-writing"
+        ]
+      },
+      {
+        "buyer_id": "research_lab",
+        "evidence_refs": [
+          "pass-0056-demo-manifest",
+          "pass-0056-failure-verdicts"
+        ],
+        "guardrails": [
+          "no_universal_uniqueness_claim",
+          "no_scientific_truth_promotion",
+          "source_boundaries_preserved"
+        ],
+        "interview_prompt": "When evaluating a Project Telos proof-packet workflow, how would your team answer this objection: Does this prove scientific truth or open-problem resolution?",
+        "objection_id": "research-lab-002",
+        "target_lane_split": [
+          "project-telos",
+          "deep-research",
+          "technical-writing"
+        ]
+      },
+      {
+        "buyer_id": "research_lab",
+        "evidence_refs": [
+          "nist-ai-rmf",
+          "pass-0056-review-panes"
+        ],
+        "guardrails": [
+          "no_universal_uniqueness_claim",
+          "no_scientific_truth_promotion",
+          "source_boundaries_preserved"
+        ],
+        "interview_prompt": "When evaluating a Project Telos proof-packet workflow, how would your team answer this objection: Can a reviewer inspect provenance without receiving raw private payloads?",
+        "objection_id": "research-lab-003",
+        "target_lane_split": [
+          "project-telos",
+          "deep-research",
+          "technical-writing"
+        ]
+      },
+      {
+        "buyer_id": "ai_infra",
+        "evidence_refs": [
+          "opentelemetry-traces",
+          "langsmith-observability",
+          "langfuse-observability",
+          "pass-0056-demo-manifest"
+        ],
+        "guardrails": [
+          "no_universal_uniqueness_claim",
+          "no_scientific_truth_promotion",
+          "source_boundaries_preserved"
+        ],
+        "interview_prompt": "When evaluating a Project Telos proof-packet workflow, how would your team answer this objection: We already have tracing and LLM observability.",
+        "objection_id": "ai-infra-001",
+        "target_lane_split": [
+          "project-telos",
+          "deep-research",
+          "technical-writing"
+        ]
+      },
+      {
+        "buyer_id": "ai_infra",
+        "evidence_refs": [
+          "pass-0056-failure-verdicts"
+        ],
+        "guardrails": [
+          "no_universal_uniqueness_claim",
+          "no_scientific_truth_promotion",
+          "source_boundaries_preserved"
+        ],
+        "interview_prompt": "When evaluating a Project Telos proof-packet workflow, how would your team answer this objection: Can the system catch receipt substitution or missing provenance?",
+        "objection_id": "ai-infra-002",
+        "target_lane_split": [
+          "project-telos",
+          "deep-research",
+          "technical-writing"
+        ]
+      },
+      {
+        "buyer_id": "ai_infra",
+        "evidence_refs": [
+          "pass-0056-replay-commands"
+        ],
+        "guardrails": [
+          "no_universal_uniqueness_claim",
+          "no_scientific_truth_promotion",
+          "source_boundaries_preserved"
+        ],
+        "interview_prompt": "When evaluating a Project Telos proof-packet workflow, how would your team answer this objection: Can this be replayed by an engineering team?",
+        "objection_id": "ai-infra-003",
+        "target_lane_split": [
+          "project-telos",
+          "deep-research",
+          "technical-writing"
+        ]
+      },
+      {
+        "buyer_id": "regulated_agent",
+        "evidence_refs": [
+          "nist-ai-rmf",
+          "pass-0056-demo-manifest"
+        ],
+        "guardrails": [
+          "no_universal_uniqueness_claim",
+          "no_scientific_truth_promotion",
+          "source_boundaries_preserved"
+        ],
+        "interview_prompt": "When evaluating a Project Telos proof-packet workflow, how would your team answer this objection: Does this map to AI risk-management needs?",
+        "objection_id": "regulated-agent-001",
+        "target_lane_split": [
+          "project-telos",
+          "deep-research",
+          "technical-writing"
+        ]
+      },
+      {
+        "buyer_id": "regulated_agent",
+        "evidence_refs": [
+          "pass-0056-demo-manifest"
+        ],
+        "guardrails": [
+          "no_universal_uniqueness_claim",
+          "no_scientific_truth_promotion",
+          "source_boundaries_preserved"
+        ],
+        "interview_prompt": "When evaluating a Project Telos proof-packet workflow, how would your team answer this objection: Can we show a review artifact without claiming production readiness?",
+        "objection_id": "regulated-agent-002",
+        "target_lane_split": [
+          "project-telos",
+          "deep-research",
+          "technical-writing"
+        ]
+      },
+      {
+        "buyer_id": "regulated_agent",
+        "evidence_refs": [
+          "microsoft-discovery",
+          "pass-0056-review-panes"
+        ],
+        "guardrails": [
+          "no_universal_uniqueness_claim",
+          "no_scientific_truth_promotion",
+          "source_boundaries_preserved"
+        ],
+        "interview_prompt": "When evaluating a Project Telos proof-packet workflow, how would your team answer this objection: Can human oversight and trust boundaries be represented?",
+        "objection_id": "regulated-agent-003",
+        "target_lane_split": [
+          "project-telos",
+          "deep-research",
+          "technical-writing"
+        ]
+      }
+    ],
+    "source_objection_count": 9
+  },
+  "current_promoted_natural_laws": [],
+  "generated_on": "2026-07-01",
+  "integration_gaps": [
+    {
+      "gap": "Generic market-research language can escalate unless proof-packet and Project Telos terms are explicit.",
+      "gap_id": "forum-route-market-proof-packet-vocabulary",
+      "next_action": "Patch or configure Forum route vocabulary with split-lane proof-packet fixtures.",
+      "verification_status": "verified"
+    },
+    {
+      "gap": "Forum submit is not reliable until the configured model executor returns valid JSON.",
+      "gap_id": "forum-submit-executor-json",
+      "next_action": "Add an executor health receipt before treating Forum submit as a steelman source.",
+      "verification_status": "verified"
+    },
+    {
+      "gap": "Forum route reports one lane or escalation, while proof-packet market work needs a split-lane envelope.",
+      "gap_id": "multi-lane-routing-envelope",
+      "next_action": "Define a ForumRouteBridge/v1 envelope with primary, secondary, and handoff lanes.",
+      "verification_status": "inferred"
+    }
+  ],
+  "lane_taxonomy": [
+    {
+      "bridge_terms": [
+        "Project Telos",
+        "proof-packet",
+        "receipt",
+        "Crucible",
+        "Index",
+        "Gather",
+        "Forum",
+        "Telos"
+      ],
+      "lane_id": "project-telos",
+      "purpose": "Own the proof-packet substrate, receipts, schemas, Crucible verdicts, and replay boundaries."
+    },
+    {
+      "bridge_terms": [
+        "market research",
+        "whitepaper",
+        "competitor",
+        "AI4Science",
+        "buyer urgency",
+        "budget"
+      ],
+      "lane_id": "deep-research",
+      "purpose": "Own current market, whitepaper, competitor, buyer urgency, and field evidence gathering."
+    },
+    {
+      "bridge_terms": [
+        "buyer brief",
+        "discovery script",
+        "interview prompt",
+        "packet",
+        "operator note"
+      ],
+      "lane_id": "technical-writing",
+      "purpose": "Own buyer briefs, discovery scripts, adoption narratives, and clean handoff packets."
+    }
+  ],
+  "market_claim_boundary": "HYPOTHESIS_ONLY",
+  "non_promotion_statement": "Pass 0058 creates routing fixtures and discovery prompts. It does not prove market demand, production routing changes, customer adoption, scientific truth, or any natural law.",
+  "observed_forum_gap": {
+    "decided": null,
+    "needs_escalation": true,
+    "observed_status": "ROUTE_ESCALATION_OBSERVED",
+    "status": "ROUTE_ESCALATION_OBSERVED",
+    "top_candidate": "deep-research",
+    "top_candidate_score": 0.4
+  },
+  "pass": "0058",
+  "rewrite_fixtures": [
+    {
+      "bridge_prompt": "Project Telos proof-packet route bridge: split this work across project-telos for receipts/verdicts/replay, deep-research for current market and whitepaper evidence, and technical-writing for buyer-facing handoff. Subject: Research AI4Science market competitors and buyer objections.",
+      "expected_primary_lane": "project-telos",
+      "fixture_id": "route-bridge-01",
+      "original_prompt": "Research AI4Science market competitors and buyer objections.",
+      "target_lane_split": [
+        "project-telos",
+        "deep-research",
+        "technical-writing"
+      ],
+      "verification_status": "inferred"
+    },
+    {
+      "bridge_prompt": "Project Telos proof-packet route bridge: split this work across project-telos for receipts/verdicts/replay, deep-research for current market and whitepaper evidence, and technical-writing for buyer-facing handoff. Subject: Create buyer discovery prompts from proof-packet evidence.",
+      "expected_primary_lane": "project-telos",
+      "fixture_id": "route-bridge-02",
+      "original_prompt": "Create buyer discovery prompts from proof-packet evidence.",
+      "target_lane_split": [
+        "project-telos",
+        "deep-research",
+        "technical-writing"
+      ],
+      "verification_status": "inferred"
+    },
+    {
+      "bridge_prompt": "Project Telos proof-packet route bridge: split this work across project-telos for receipts/verdicts/replay, deep-research for current market and whitepaper evidence, and technical-writing for buyer-facing handoff. Subject: Summarize agent observability proof boundaries for AI infrastructure teams.",
+      "expected_primary_lane": "project-telos",
+      "fixture_id": "route-bridge-03",
+      "original_prompt": "Summarize agent observability proof boundaries for AI infrastructure teams.",
+      "target_lane_split": [
+        "project-telos",
+        "deep-research",
+        "technical-writing"
+      ],
+      "verification_status": "inferred"
+    },
+    {
+      "bridge_prompt": "Project Telos proof-packet route bridge: split this work across project-telos for receipts/verdicts/replay, deep-research for current market and whitepaper evidence, and technical-writing for buyer-facing handoff. Subject: Map regulated-agent risk objections to replayable receipts.",
+      "expected_primary_lane": "project-telos",
+      "fixture_id": "route-bridge-04",
+      "original_prompt": "Map regulated-agent risk objections to replayable receipts.",
+      "target_lane_split": [
+        "project-telos",
+        "deep-research",
+        "technical-writing"
+      ],
+      "verification_status": "inferred"
+    },
+    {
+      "bridge_prompt": "Project Telos proof-packet route bridge: split this work across project-telos for receipts/verdicts/replay, deep-research for current market and whitepaper evidence, and technical-writing for buyer-facing handoff. Subject: Plan a public demo around market research, Crucible verdicts, and proof packets.",
+      "expected_primary_lane": "project-telos",
+      "fixture_id": "route-bridge-05",
+      "original_prompt": "Plan a public demo around market research, Crucible verdicts, and proof packets.",
+      "target_lane_split": [
+        "project-telos",
+        "deep-research",
+        "technical-writing"
+      ],
+      "verification_status": "inferred"
+    }
+  ],
+  "route_readiness": {
+    "ready_for_forum_patch": false,
+    "ready_for_operator_use": true,
+    "reason": "Bridge prompts are deterministic artifacts; Forum itself is not patched in this pass."
+  },
+  "schema": "ForumRouteVocabularyBridge/v1",
+  "seal": "bab65c42e455f0364989ec958f4dce5a14cee7a88ca08c5797e4907175d0a9ee",
+  "status": "FORUM_ROUTE_VOCABULARY_BRIDGE_MATCH",
+  "unsupported_claim_count": 0,
+  "upstream_brief": {
+    "path": "C:\\dev\\public\\telos\\docs\\research\\dogfood\\schemas\\buyer-objection-brief-pass-0057.json",
+    "seal": "cab7a3e7d82a59f81e5b5286d20384ce8c33b717627a75901a240bd819f5be02",
+    "sha256": "0de272f5c6e9a49d097c2a42d2bf5f184bd32eb92a91e75a827c075ae16326dc",
+    "status": "BUYER_OBJECTION_BRIEF_MATCH"
+  },
+  "upstream_receipts": {
+    "path": "C:\\dev\\public\\telos\\docs\\research\\dogfood\\schemas\\tool-receipts-pass-0057.json",
+    "sha256": "722f08b4e18607e6ec0b73a2b8ace159f66d88d34b5e311fe8c756509b6c3fca",
+    "status": "MATCH_WITH_FORUM_SUBMIT_GAP_AND_HYPOTHESIS_ONLY_UNIQUENESS"
+  },
+  "validation_errors": []
+}

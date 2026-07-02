@@ -1,0 +1,148 @@
+{
+  "schema": "ProofPacketMarketWedges/v1",
+  "pass": "0008",
+  "generated_on": "2026-07-01",
+  "primary_thirty_day_push": "research-proof-packet-adapter-pack",
+  "wedges": [
+    {
+      "rank": 1,
+      "wedge": "Research proof packet adapter pack",
+      "buyer": "research labs, AI4Science teams, and technical founders trying to prove difficult claims",
+      "problem": "Automated discovery tools, literature tools, theorem provers, notebooks, and workflow engines each expose fragments of evidence, but buyers need portable packets that bind sources, agent actions, formal checks, experiment receipts, and decision verdicts.",
+      "existing_tool_fragments": [
+        "Elicit and Consensus for literature evidence",
+        "Semantic Scholar and OpenAlex for scholarly graphs",
+        "LeanDojo, AlphaProof, Harmonic, and pipeline-math for formal math",
+        "Nextflow, Snakemake, and Jupyter for reproducible computation"
+      ],
+      "telos_integration": [
+        "Gather source receipts",
+        "Index workspace context",
+        "Forum routing and review trail",
+        "Crucible claim verdicts",
+        "Telos action receipts",
+        "BuildLang/buildc runtime and compiler receipts where applicable"
+      ],
+      "thirty_day_push": "Ship one demo packet that ingests literature rows, a formal proof/check, a computation workflow receipt, a negative branch, and a Crucible report.",
+      "hypothesis_status": "hypothesis",
+      "score": {
+        "urgency": 5,
+        "budget": 4,
+        "differentiation": 5,
+        "demo_readiness": 4,
+        "strategic_upside": 5
+      }
+    },
+    {
+      "rank": 2,
+      "wedge": "Formal math verifier loop packet",
+      "buyer": "AI-for-math labs, theorem-proving teams, and researchers studying open problems",
+      "problem": "New math systems can produce proofs or proof attempts, but proof provenance, failed branches, human polish, formalization status, and review objections are not standardized across tools.",
+      "existing_tool_fragments": [
+        "pipeline-math prover-verifier workflow",
+        "LeanDojo ecosystem",
+        "AlphaProof Lean proof search",
+        "Harmonic Aristotle API"
+      ],
+      "telos_integration": [
+        "ProofPacket/v1",
+        "formal kernel receipt",
+        "negative fixture handling",
+        "Crucible verdict",
+        "author-review action receipts"
+      ],
+      "thirty_day_push": "Implement a pipeline-math++ packet template with Lean-compatible status fields, unresolved-proof labels, and independent verifier verdicts.",
+      "hypothesis_status": "source-backed",
+      "score": {
+        "urgency": 5,
+        "budget": 3,
+        "differentiation": 5,
+        "demo_readiness": 4,
+        "strategic_upside": 5
+      }
+    },
+    {
+      "rank": 3,
+      "wedge": "Workflow-to-proof receipts",
+      "buyer": "bioinformatics, HPC, scientific-computing, and regulated research teams",
+      "problem": "Workflow engines can reproduce executions but usually do not know which scientific claim a run proves, falsifies, or leaves unresolved.",
+      "existing_tool_fragments": [
+        "Nextflow containers and checkpoints",
+        "Snakemake reports and provenance",
+        "Jupyter notebooks and outputs"
+      ],
+      "telos_integration": [
+        "process-level execution receipts",
+        "source and workspace hashes",
+        "claim-to-run binding",
+        "failure labels",
+        "Crucible measurement gates"
+      ],
+      "thirty_day_push": "Create a Nextflow or Snakemake dry-run adapter that emits a TelosActionEvent/v1 for each step and binds it to one claim.",
+      "hypothesis_status": "hypothesis",
+      "score": {
+        "urgency": 4,
+        "budget": 4,
+        "differentiation": 4,
+        "demo_readiness": 4,
+        "strategic_upside": 4
+      }
+    },
+    {
+      "rank": 4,
+      "wedge": "Lab-to-proof handoff",
+      "buyer": "biopharma, synthetic biology, clinical research, and lab automation teams",
+      "problem": "Lab platforms structure experiments and results, while AI biology platforms generate models and candidates; handoff to external review still needs compact, source-backed, reproducible proof packets.",
+      "existing_tool_fragments": [
+        "Benchling lab data and execution loop",
+        "NVIDIA BioNeMo biology model platform",
+        "FutureHouse research agents",
+        "Microsoft Discovery R&D agent platform"
+      ],
+      "telos_integration": [
+        "lab event receipts",
+        "model provenance receipts",
+        "source evidence rows",
+        "wet-lab result references",
+        "review and decision verdicts"
+      ],
+      "thirty_day_push": "Prototype a synthetic lab handoff packet using public sample data and explicit non-claim labels; no biological efficacy claim promoted.",
+      "hypothesis_status": "hypothesis",
+      "score": {
+        "urgency": 5,
+        "budget": 5,
+        "differentiation": 4,
+        "demo_readiness": 2,
+        "strategic_upside": 5
+      }
+    },
+    {
+      "rank": 5,
+      "wedge": "BuildLang scientific runtime proof kit",
+      "buyer": "scientific computing, rendering, quant, security, and high-assurance compute teams",
+      "problem": "Compute languages and runtimes optimize local correctness or speed, but claim reviewers need compiler/runtime receipts tied to source, measurement, and verifier status.",
+      "existing_tool_fragments": [
+        "Julia-style scientific programming expectations",
+        "Nextflow and Snakemake orchestration",
+        "Jupyter notebooks",
+        "BuildLang/buildc and build-universe local ambitions"
+      ],
+      "telos_integration": [
+        "BuildLang/buildc compiler receipts",
+        "runtime measurement receipts",
+        "Crucible measurement gates",
+        "Index workspace context",
+        "proof packet export"
+      ],
+      "thirty_day_push": "Extend the Build Color measurement receipt into a reusable BuildLang/buildc scientific receipt schema with source, binary, environment, and numeric thresholds.",
+      "hypothesis_status": "hypothesis",
+      "score": {
+        "urgency": 4,
+        "budget": 4,
+        "differentiation": 5,
+        "demo_readiness": 3,
+        "strategic_upside": 5
+      }
+    }
+  ]
+}

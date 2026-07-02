@@ -1,0 +1,175 @@
+{
+  "generated_on": "2026-07-01",
+  "non_promotion_statement": "Tool receipts prove packet readback, Lean/Lake executable preflight validator MATCH, Telos/Index/Gather/Forum/Crucible availability, and no remaining temp Lean/Lake/Elan processes. They do not prove Lean replay, lake build success, dependency compilation, semantic proof correctness by elaboration, every public pipeline-math claim, buyer adoption, or any natural law.",
+  "pass": "0044",
+  "receipts": [
+    {
+      "command": "map --root docs/research/dogfood --json",
+      "dirty_count": 0,
+      "repo_count": 0,
+      "role": "dogfood-substrate-map",
+      "root_sha256_prefix": "f2f0af39219698a9",
+      "schema_version": 1,
+      "status": "MATCH",
+      "tool": "index",
+      "tool_version": "2.8.0",
+      "top_level_count": 53
+    },
+    {
+      "command": "index_context_envelope",
+      "graph_pack_sha256": "185c0236c1370daa81b49d11c7cab1f29c2a279be3d83302150f0d63396ad6dd",
+      "privacy_source_refs_only": true,
+      "schema": "project-telos.context-envelope/v1",
+      "status": "MATCH",
+      "tool": "mcp__index.index_context_envelope",
+      "verification_verdict": "MATCH"
+    },
+    {
+      "artifact": "packets/054-lean-lake-executable-preflight.md",
+      "chars": 1395,
+      "command": "docs",
+      "seal": "2d9640f6cea256b90b4117652b12415ad9c86a58b67193fe1a9cb5720d9fd37f",
+      "sha256": "91e38389327c8daee3c939e605a43213f8001707d3ade0a9ca2bfaa3107db570",
+      "status": "MATCH",
+      "tool": "gather",
+      "verified": true
+    },
+    {
+      "command": "probe_lean_lake_executable_preflight.py",
+      "compiled_replay_admissible": false,
+      "line_count": 300,
+      "schema": "LeanLakeExecutablePreflightSet/v1",
+      "seal": "7139ea2e8ed154dcb5069fd5d5433fec85103b88d9bf309450dfd1193a6de607",
+      "status": "LEAN_LAKE_EXECUTABLE_PREFLIGHT_BLOCKED",
+      "tool": "python"
+    },
+    {
+      "command": "validate_pass_0044_lean_lake_executable_preflight.py",
+      "compiled_replay_admissible": false,
+      "drift": 0,
+      "line_count": 136,
+      "match": 1,
+      "schema": "Pass0044LeanLakeExecutablePreflightValidatorRun/v1",
+      "status": "MATCH",
+      "tool": "python"
+    },
+    {
+      "common_elan_candidates_present": 0,
+      "command": "Lean/Lake executable preflight",
+      "compiled_replay_admissible": false,
+      "compiled_replay_status": "NOT_RUN",
+      "elan_on_path": false,
+      "expected_toolchain": "leanprover/lean4:v4.31.0",
+      "lake_on_path": false,
+      "lakefile_name": "Prob4b",
+      "lean_on_path": false,
+      "manifest_name": "Prob27b",
+      "project_name_match": false,
+      "status": "MATCH",
+      "tool": "shell"
+    },
+    {
+      "command": "process check",
+      "remaining_temp_processes": 0,
+      "status": "MATCH",
+      "tool": "shell"
+    },
+    {
+      "command": "telos_catalog",
+      "selected_tools_available": [
+        "gather.docs",
+        "index.map",
+        "index.context.envelope",
+        "forum.route",
+        "crucible.run",
+        "telos.context.envelope",
+        "telos.loop.ledger"
+      ],
+      "status": "MATCH",
+      "tool": "mcp__telos.telos_catalog",
+      "tool_count": 65
+    },
+    {
+      "command": "telos_context_envelope",
+      "lossless_requirement": "claims are lossless through source refs and hashes, not through compressed prose",
+      "schema": "project-telos.context-envelope/v1",
+      "status": "MATCH",
+      "tool": "mcp__telos.telos_context_envelope"
+    },
+    {
+      "command": "telos_loop_ledger",
+      "fresh_context_reads_ledger_first": true,
+      "one_action_per_iteration": true,
+      "schema": "project-telos.loop-ledger/v1",
+      "status": "MATCH",
+      "tool": "mcp__telos.telos_loop_ledger",
+      "unverifiable_required": true
+    },
+    {
+      "aggregate_verdict": "MATCH",
+      "check_count": 14,
+      "command": "telos_operator_doctor",
+      "passed_count": 14,
+      "status": "MATCH",
+      "telos_tool_count": 37,
+      "tool": "mcp__telos.telos_operator_doctor",
+      "tool_count": 65
+    },
+    {
+      "candidates": [
+        {
+          "agent": "project-telos",
+          "score": 0.045454545454545456
+        },
+        {
+          "agent": "backend",
+          "score": 0.0
+        },
+        {
+          "agent": "ci-cd",
+          "score": 0.0
+        }
+      ],
+      "command": "route",
+      "confidence": 0.045454545454545456,
+      "decided": null,
+      "needs_escalation": true,
+      "status": "MATCH",
+      "tool": "forum"
+    },
+    {
+      "chain": true,
+      "command": "ledger verify",
+      "deep": true,
+      "status": "MATCH",
+      "tool": "forum"
+    },
+    {
+      "command": "submit",
+      "error": "submit needs a model executor. Forum is model-agnostic: pass --cmd \"<model cli>\" (any command, local models need no account), --chat-url <openai-compatible url> (e.g. a local Ollama server), or --api (Anthropic).",
+      "request": "Dogfood pass 0044 adversarial review for Lean Lake executable preflight",
+      "status": "UNVERIFIABLE",
+      "tool": "forum"
+    },
+    {
+      "assessment_seal": "07766394f2a3f056e117bffe51ce4ede154715f348903c1cf273399846b827be",
+      "claims": 8,
+      "command": "run",
+      "drift": 0,
+      "match": 8,
+      "measurement_seal": "d38d9082cefa02691c03d2a3f4ceccbd14cb250cd040722f27e862ed3123c55c",
+      "run_sha256": "62f1d2b479f5e38b987be0c2488b32458c84267f3d1f6cdabc01baba47b87f04",
+      "seals_ok": true,
+      "status": "MATCH",
+      "thesis_id": "2a61d018b04208e7",
+      "thesis_ok": true,
+      "thesis_seal": "2a61d018b04208e7380b792f260a0a90c875c042bd3028a7fb0fc6e45493eb8e",
+      "tool": "crucible",
+      "unverifiable": 0,
+      "verdict_seal": "973a0ca42746a6916accbb055210438a2812f06c506431035e7ea95df0bcfa2c",
+      "verdicts_rederive": true
+    }
+  ],
+  "schema": "DogfoodToolReceiptSet/v1",
+  "status": "MATCH_WITH_FORUM_SUBMIT_GAP_AND_EXECUTABLE_PREFLIGHT_BLOCKED"
+}

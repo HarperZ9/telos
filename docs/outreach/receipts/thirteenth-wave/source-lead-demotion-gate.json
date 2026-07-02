@@ -1,0 +1,96 @@
+{
+  "schema": "project-telos.source-lead-demotion-gate/v1",
+  "generated_at": "2026-07-02",
+  "purpose": "Classify thirteenth-wave arXiv metadata intake for the PDE formal replay lane without promoting metadata to source-body review or paper truth.",
+  "input_stores": [
+    {
+      "path": "docs/outreach/receipts/thirteenth-wave/arxiv-navier-stokes-formal-verification/",
+      "retained_rows": 8,
+      "seal": "1e8e6105cdd2e77403c9360ebb7065a48f4f21e0e281790a1c42001c6adab16b"
+    },
+    {
+      "path": "docs/outreach/receipts/thirteenth-wave/arxiv-energy-estimate-proof-assistant/",
+      "retained_rows": 8,
+      "seal": "67875c378e484133141680732ab0f137da0d7ed3f3d10d7efc9386cbdb95e023"
+    },
+    {
+      "path": "docs/outreach/receipts/thirteenth-wave/arxiv-periodic-integration-formal/",
+      "retained_rows": 8,
+      "seal": "daa35a9ed5a79bcc588ffbc1b45bcc5c480e8b23a97e2dd5ef25a0be5519b385"
+    },
+    {
+      "path": "docs/outreach/receipts/thirteenth-wave/arxiv-verified-numerics-navier-stokes/",
+      "retained_rows": 8,
+      "seal": "a7311915780ea1c932ae614db208825ad7b20198a8a985d2f049176ba8f19411"
+    }
+  ],
+  "counts": {
+    "retained_rows": 32,
+    "unique_ids": 27,
+    "direct_pde_lead": 6,
+    "formalization_infrastructure": 11,
+    "adjacent_pde_or_numerics": 7,
+    "unverified_grand_claim_or_high_risk": 3
+  },
+  "classification": [
+    {
+      "class": "direct_pde_lead",
+      "ids": [
+        "1505.03021v2",
+        "1706.10173v1",
+        "1803.06056v2",
+        "1807.00197v1",
+        "1808.05029v1",
+        "1901.07464v4"
+      ],
+      "use": "Review as PDE source-body leads for energy estimates, regularity conditions, stability, boundary estimates, or related analytic context."
+    },
+    {
+      "class": "formalization_infrastructure",
+      "ids": [
+        "2012.09388v1",
+        "2205.07979v6",
+        "2501.05463v1",
+        "2502.13137v2",
+        "2604.09808v2",
+        "2604.16347v1",
+        "2604.16507v1",
+        "2606.01356v2",
+        "2606.12594v1",
+        "2606.28990v1",
+        "cs/9301110v1"
+      ],
+      "use": "Review for proof-assistant workflow, prover-as-judge patterns, Lean/HOL4 tooling, and human-AI formalization lessons. Do not cite as PDE proof evidence."
+    },
+    {
+      "class": "adjacent_pde_or_numerics",
+      "ids": [
+        "0901.0172v1",
+        "1105.0582v2",
+        "1111.1293v1",
+        "1312.7008v2",
+        "1509.06592v3",
+        "1701.08973v1",
+        "2008.08267v3"
+      ],
+      "use": "Keep as adjacent queue only; source-body review required before any use."
+    },
+    {
+      "class": "unverified_grand_claim_or_high_risk",
+      "ids": [
+        "1502.01206v3",
+        "1806.10081v10",
+        "2506.23697v1"
+      ],
+      "use": "Do not promote. Treat as cautionary examples or high-risk source leads until independent expert review and official-status reconciliation exist."
+    }
+  ],
+  "verdict": "SOURCE_LEAD_ONLY",
+  "boundaries": [
+    "This gate classifies arXiv metadata only.",
+    "It does not prove any paper claim.",
+    "It is not latest or exhaustive literature coverage.",
+    "It does not replace source-body review.",
+    "It does not change Clay's Navier-Stokes problem status."
+  ]
+}

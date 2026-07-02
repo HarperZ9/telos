@@ -1,0 +1,62 @@
+{
+  "version": "research-claim-proof-packet/v0",
+  "packet_id": "navier-stokes-periodic-skew-symmetry-v0",
+  "claim": "The Navier-Stokes periodic skew-symmetry proof packet has a source-bound statement, derivation, deterministic finite-mode reference kernel, run receipt, and Crucible assessment that match the bounded nonlinear-energy-transfer claim while preserving the parent Millennium problem as UNVERIFIABLE.",
+  "scope": "One deterministic smooth two-dimensional periodic finite-mode divergence-free velocity field under declared assumptions. This does not prove Navier-Stokes existence, uniqueness, smoothness, global regularity, turbulence behavior, physical simulation validity, numerical convergence for arbitrary discretizations, or a new law of physics.",
+  "verdicts": {
+    "overall": "MATCH",
+    "checks": [
+      {
+        "name": "problem statement exists",
+        "status": "MATCH",
+        "evidence": "problem.statement.json binds the Clay parent problem boundary to the bounded skew-symmetry subclaim."
+      },
+      {
+        "name": "derivation exists",
+        "status": "MATCH",
+        "evidence": "subclaim.skew_symmetry.md derives the smooth-periodic integration-by-parts identity and lists non-proof boundaries."
+      },
+      {
+        "name": "reference kernel runs",
+        "status": "MATCH",
+        "evidence": "run.receipt.json reports bounded_skew_symmetry_probe MATCH and parent_millennium_problem UNVERIFIABLE."
+      },
+      {
+        "name": "Crucible assessment matches",
+        "status": "MATCH",
+        "evidence": "crucible-run.json reports 3 MATCH, 0 DRIFT, 0 UNVERIFIABLE for scoped identity/boundary claims."
+      }
+    ]
+  },
+  "sources": [
+    {
+      "ref": "docs/research/proof-packets/navier-stokes-periodic-skew-symmetry-v0/problem.statement.json",
+      "sha256": "0ff92f7d51df4538a865dfd23a2125eeec80162feab78dbac66cd45228e17e62"
+    },
+    {
+      "ref": "docs/research/proof-packets/navier-stokes-periodic-skew-symmetry-v0/subclaim.skew_symmetry.md",
+      "sha256": "ce01022d4adaa5b61ecd2831591d5cb94ed281cfd0bd955b90d9d9c0a03b79dc"
+    },
+    {
+      "ref": "docs/research/proof-packets/navier-stokes-periodic-skew-symmetry-v0/kernel.reference.mjs",
+      "sha256": "911006d6d5e733518b9b56b59b46f60b0b8743dd3c3fd18237bdb58cd81066b3"
+    },
+    {
+      "ref": "docs/research/proof-packets/navier-stokes-periodic-skew-symmetry-v0/run.receipt.json",
+      "sha256": "3ada18d5085e62459b8ae37e3396297cb89281f07ac0ff320bd6606e35a9d047"
+    },
+    {
+      "ref": "docs/research/proof-packets/navier-stokes-periodic-skew-symmetry-v0/crucible-thesis.json",
+      "sha256": "391c628742c71b8e0593b7f7a08a592755f93890728f76634da4503fc813207f"
+    },
+    {
+      "ref": "docs/research/proof-packets/navier-stokes-periodic-skew-symmetry-v0/crucible-measurements.json",
+      "sha256": "603b694819a161526f72388103d0f55a11287639a44b4aafd581307b35aedcf9"
+    },
+    {
+      "ref": "docs/research/proof-packets/navier-stokes-periodic-skew-symmetry-v0/crucible-run.json",
+      "sha256": "314ecab335de0143582ea83cc6e9a817f13b2ee2e17f2c408604a913892cc2c2"
+    }
+  ],
+  "boundary": "This packet teaches a bounded PDE skew-symmetry probe. It does not teach or assert a Navier-Stokes Millennium proof."
+}

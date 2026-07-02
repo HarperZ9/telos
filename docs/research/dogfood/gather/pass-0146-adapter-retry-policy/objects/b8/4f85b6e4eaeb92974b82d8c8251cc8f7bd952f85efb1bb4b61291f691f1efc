@@ -1,0 +1,217 @@
+Documentation Index
+Fetch the complete documentation index at: /llms.txt
+Use this file to discover all available pages before exploring further.
+Skip to main content
+OpenAlex Developers home page
+Search...
+⌘K
+Getting Started
+Overview
+Quickstart
+Authentication & Pricing
+Key Concepts
+Working with the API
+Get Singleton
+Filter
+Search
+Semantic Search
+Sort
+Page through Results
+Group
+Select Fields
+Autocomplete
+Tag Aboutness
+Recipes
+Quick Recipes
+Open Access Trends by Year
+Find Collaboration Opportunities
+Analyze a Funder's Research Portfolio
+Which Journals Does Your Institution Cite?
+Map the SDG Research Landscape
+Audit an Author Profile's Works
+Curation
+Author Curation
+Collections
+Collections
+For AI Agents
+LLM Quick Reference
+Deprecations
+OpenAlex Developers home page
+Search...
+⌘K
+Search...
+Navigation
+For AI Agents
+Deprecations
+Guides
+API Reference
+Data Downloads
+Guides
+API Reference
+Data Downloads
+For AI Agents
+Deprecations
+Copy page
+Deprecated features and migration guides
+Copy page
+This page is a centralized reference for all deprecated features in the OpenAlex API. Use it to migrate old code and avoid using features that will be removed.
+​
+Already Removed
+These features have been removed from the API. Using them will cause errors.
+​
+host_venue and alternate_host_venues
+Removed: These Work object properties no longer exist.
+Replacement: Use primary_location and locations instead.
+Migration:
+- work.host_venue.display_name
++ work.primary_location.source.display_name
+- work.alternate_host_venues
++ work.locations
+Filter changes:
+- filter=host_venue.id:S123
++ filter=primary_location.source.id:S123
+- filter=host_venue.publisher:P123
++ filter=primary_location.source.host_organization:P123
+​
+grants
+Removed: The grants property on Works has been removed.
+Replacement: Use funders and awards for more comprehensive funding data.
+Migration:
+- work.grants[0].funder
++ work.funders[0].display_name
+- work.grants[0].award_id
++ work.awards[0].funder_award_id
+The new awards entity provides detailed award information including DOIs when available.
+​
+has_ngrams filter
+Removed: This filter no longer works.
+Replacement: Use has_fulltext instead.
+- filter=has_ngrams:true
++ filter=has_fulltext:true
+​
+Deprecated (Still Working)
+These features still work but are not recommended. They will be removed in the future.
+​
+Concepts Entity
+Concepts are deprecated in favor of Topics. We will continue to provide Concepts on Works, but we are not actively maintaining, updating, or providing support for them.
+Replacement: Use Topics instead.
+Why Topics are better:
+Feature
+Concepts
+Topics
+Count
+~65,000
+~4,500
+Hierarchy
+6 levels
+4 levels (domain → field → subfield → topic)
+Source
+Microsoft Academic Graph
+OpenAlex native (with CWTS)
+Status
+Deprecated
+Active
+Migration:
+Concepts
+Topics
+work.concepts
+work.topics
+work.concepts[0].id
+work.primary_topic.id
+/concepts endpoint
+/topics endpoint
+filter=concepts.id:C123
+filter=topics.id:T123
+- /works?filter=concepts.id:C86803240
++ /works?filter=topics.id:T10234
+​
+x_concepts on Entities
+Deprecated: The x_concepts property on Authors, Sources, and Institutions will be removed.
+Replacement: Use Topics-based filtering and aggregation instead.
+- author.x_concepts
++ # Use: /works?filter=authorships.author.id:A123&group_by=topics.id
+​
+last_known_institution (singular)
+Deprecated: The singular last_known_institution on Authors is deprecated.
+Replacement: Use last_known_institutions (plural) instead.
+- author.last_known_institution
++ author.last_known_institutions[0]
+The plural form supports authors with multiple current affiliations.
+​
+/text Endpoint (Aboutness)
+The /text endpoint is deprecated and not recommended for new projects.
+What it did: Classified arbitrary text into Topics and Keywords.
+Cost: $0.01 per request.
+Status: Still functional but will not receive updates or support.
+If you need topic classification, consider:
+Using the Topics already assigned to works in OpenAlex
+Building your own classifier using OpenAlex Topics as training data
+​
+Filter Aliases (Deprecated)
+These filter aliases still work but use the canonical form instead:
+Deprecated
+Use Instead
+concept.id
+topics.id
+concepts.id
+topics.id
+x_concepts.id
+topics.id
+​
+Historical: Polite Pool
+Before February 2026, OpenAlex used a “polite pool” system where you could get higher rate limits by including mailto=you@example.com in your requests.
+This system has been replaced by API keys.
+The mailto parameter is ignored
+All users need an API key (free)
+See the announcement for details
+​
+Timeline
+Feature
+Status
+Action Required
+host_venue
+Removed
+Migrate to primary_location
+grants
+Removed
+Migrate to funders / awards
+has_ngrams
+Removed
+Migrate to has_fulltext
+Concepts
+Deprecated
+Migrate to Topics
+x_concepts
+Deprecated
+Will be removed soon
+/text endpoint
+Deprecated
+Not recommended
+Polite pool
+Replaced
+Use API keys
+​
+Staying Updated
+For announcements about deprecations and breaking changes:
+Join the OpenAlex User Group
+Follow @OpenAlex_org on Twitter
+Check the OpenAlex User Group for announcements
+Previous
+LLM Quick ReferenceOpenAlex API reference optimized for AI agents
+⌘I
+xgithub
+Powered byThis documentation is built and hosted on Mintlify, a developer documentation platform
+On this page
+Already Removed
+host_venue and alternate_host_venues
+grants
+has_ngrams filter
+Deprecated (Still Working)
+Concepts Entity
+x_concepts on Entities
+last_known_institution (singular)
+/text Endpoint (Aboutness)
+Filter Aliases (Deprecated)
+Historical: Polite Pool
+Timeline
+Staying Updated

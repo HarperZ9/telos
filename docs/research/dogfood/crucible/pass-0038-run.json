@@ -1,0 +1,430 @@
+{
+  "ok": true,
+  "thesis": {
+    "id": "d6d119b3e807945b",
+    "title": "Dogfood Pass 0038 Git Blob Statement Replay",
+    "registered_at": 1782916495.4681656,
+    "disposition": "fenced",
+    "seal": "d6d119b3e807945b2405f0b48da345fa221ef4477232b26431e26ad48fd3deba",
+    "claims": [
+      {
+        "id": "d17539250471895d",
+        "sha256": "d17539250471895d4b1cbb899c6573ac4b31108afe74a064881aaec34a9757fa"
+      },
+      {
+        "id": "0997c6125c0ab45a",
+        "sha256": "0997c6125c0ab45a563c8b669afb324ff03df7cc41104f4c90960fff2f3d5ef4"
+      },
+      {
+        "id": "a96efa0c61bec09e",
+        "sha256": "a96efa0c61bec09ee3518e775bd99cae97a9f056cf1089c937fd81ccdd0c8fd5"
+      },
+      {
+        "id": "2791108e2346ba85",
+        "sha256": "2791108e2346ba851873e4e621ef2eb964da55830a3475a9590a0da477b3bb12"
+      },
+      {
+        "id": "9daf24d5e0f997af",
+        "sha256": "9daf24d5e0f997afd6dd442c520ca8052fb8f532c7b60b159f286cb6db1d933e"
+      },
+      {
+        "id": "4b17a3c3d3c77eba",
+        "sha256": "4b17a3c3d3c77ebae9446c2d977de720aaccddfedb20bcd9ca048aff6ba81b1f"
+      },
+      {
+        "id": "12f003a4c7f76176",
+        "sha256": "12f003a4c7f7617628f514da363db46cf54088d211feec57675a2f054808d454"
+      },
+      {
+        "id": "0acc54f9526a39e6",
+        "sha256": "0acc54f9526a39e66481732fdfce7aa52b76810d77d394816b610c379af1a626"
+      }
+    ]
+  },
+  "refutations": [
+    {
+      "claim_id": "d17539250471895d",
+      "claim_sha256": "d17539250471895d4b1cbb899c6573ac4b31108afe74a064881aaec34a9757fa",
+      "challenge": "test the stated falsification: schemas/theorem-blob-statement-replay-pass-0038.json is missing, has a different schema, status, theorem_count, blob_check_count, unique_blob_file_count, SHA-256, or seal",
+      "measurable": "schemas/theorem-blob-statement-replay-pass-0038.json is missing, has a different schema, status, theorem_count, blob_check_count, unique_blob_file_count, SHA-256, or seal",
+      "source": "null"
+    },
+    {
+      "claim_id": "0997c6125c0ab45a",
+      "claim_sha256": "0997c6125c0ab45a563c8b669afb324ff03df7cc41104f4c90960fff2f3d5ef4",
+      "challenge": "test the stated falsification: the blob statement replay fixture is missing, has a different SHA-256 or seal, or is not linked from the schema",
+      "measurable": "the blob statement replay fixture is missing, has a different SHA-256 or seal, or is not linked from the schema",
+      "source": "null"
+    },
+    {
+      "claim_id": "a96efa0c61bec09e",
+      "claim_sha256": "a96efa0c61bec09ee3518e775bd99cae97a9f056cf1089c937fd81ccdd0c8fd5",
+      "challenge": "test the stated falsification: the pass 0037 or pass 0036 binding is missing, has a different SHA-256 or seal, or does not report the expected source status",
+      "measurable": "the pass 0037 or pass 0036 binding is missing, has a different SHA-256 or seal, or does not report the expected source status",
+      "source": "null"
+    },
+    {
+      "claim_id": "2791108e2346ba85",
+      "claim_sha256": "2791108e2346ba851873e4e621ef2eb964da55830a3475a9590a0da477b3bb12",
+      "challenge": "test the stated falsification: any of the ten blob statement checks has blob_frozen_solution_status, blob_frozen_proof_status, blob_discharge_status, or blob_signature_status other than MATCH",
+      "measurable": "any of the ten blob statement checks has blob_frozen_solution_status, blob_frozen_proof_status, blob_discharge_status, or blob_signature_status other than MATCH",
+      "source": "null"
+    },
+    {
+      "claim_id": "9daf24d5e0f997af",
+      "claim_sha256": "9daf24d5e0f997afd6dd442c520ca8052fb8f532c7b60b159f286cb6db1d933e",
+      "challenge": "test the stated falsification: any unique blob file has Git blob SHA-256 or blob id differing from the pass 0036 source-ref packet",
+      "measurable": "any unique blob file has Git blob SHA-256 or blob id differing from the pass 0036 source-ref packet",
+      "source": "null"
+    },
+    {
+      "claim_id": "4b17a3c3d3c77eba",
+      "claim_sha256": "4b17a3c3d3c77ebae9446c2d977de720aaccddfedb20bcd9ca048aff6ba81b1f",
+      "challenge": "test the stated falsification: the pass 0038 validator result is missing, reports DRIFT, or has different theorem_count, blob_check_count, or unique_blob_file_count",
+      "measurable": "the pass 0038 validator result is missing, reports DRIFT, or has different theorem_count, blob_check_count, or unique_blob_file_count",
+      "source": "null"
+    },
+    {
+      "claim_id": "12f003a4c7f76176",
+      "claim_sha256": "12f003a4c7f7617628f514da363db46cf54088d211feec57675a2f054808d454",
+      "challenge": "test the stated falsification: packet 048 or the pass 0038 steelman is missing or has a different SHA-256",
+      "measurable": "packet 048 or the pass 0038 steelman is missing or has a different SHA-256",
+      "source": "null"
+    },
+    {
+      "claim_id": "0acc54f9526a39e6",
+      "claim_sha256": "0acc54f9526a39e66481732fdfce7aa52b76810d77d394816b610c379af1a626",
+      "challenge": "test the stated falsification: pass 0038 artifacts claim Lean replay, semantic proof review, axiom-free proof, validation of every public pipeline-math claim, or a promoted natural law",
+      "measurable": "pass 0038 artifacts claim Lean replay, semantic proof review, axiom-free proof, validation of every public pipeline-math claim, or a promoted natural law",
+      "source": "null"
+    }
+  ],
+  "assessment": {
+    "started_at": 1782916495.476653,
+    "thesis_id": "d6d119b3e807945b",
+    "thesis_seal": "d6d119b3e807945b2405f0b48da345fa221ef4477232b26431e26ad48fd3deba",
+    "claims": 8,
+    "match": 8,
+    "drift": 0,
+    "unverifiable": 0,
+    "verdict_seal": "bfdea09f048ab4440b3d36f776606e3dc8a8f571aa320499b49683fb8679b9e1",
+    "measurement_seal": "df986da4a9c828a654355f5b0fc14a9a6e8bf149142472e370798276e37f1c90",
+    "disposition": "fenced",
+    "stored": null,
+    "verdicts": [
+      {
+        "claim_id": "d17539250471895d",
+        "claim_sha256": "d17539250471895d4b1cbb899c6573ac4b31108afe74a064881aaec34a9757fa",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "blob-statement-schema-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "0997c6125c0ab45a",
+        "claim_sha256": "0997c6125c0ab45a563c8b669afb324ff03df7cc41104f4c90960fff2f3d5ef4",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "fixture-binding-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "a96efa0c61bec09e",
+        "claim_sha256": "a96efa0c61bec09ee3518e775bd99cae97a9f056cf1089c937fd81ccdd0c8fd5",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "source-binding-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "2791108e2346ba85",
+        "claim_sha256": "2791108e2346ba851873e4e621ef2eb964da55830a3475a9590a0da477b3bb12",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "blob-statement-row-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "9daf24d5e0f997af",
+        "claim_sha256": "9daf24d5e0f997afd6dd442c520ca8052fb8f532c7b60b159f286cb6db1d933e",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "blob-file-binding-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "4b17a3c3d3c77eba",
+        "claim_sha256": "4b17a3c3d3c77ebae9446c2d977de720aaccddfedb20bcd9ca048aff6ba81b1f",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "validator-result-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "12f003a4c7f76176",
+        "claim_sha256": "12f003a4c7f7617628f514da363db46cf54088d211feec57675a2f054808d454",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "packet-presence-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "0acc54f9526a39e6",
+        "claim_sha256": "0acc54f9526a39e66481732fdfce7aa52b76810d77d394816b610c379af1a626",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "non-promotion-boundary-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      }
+    ],
+    "measurements": [
+      {
+        "claim_id": "d17539250471895d",
+        "claim_sha256": "d17539250471895d4b1cbb899c6573ac4b31108afe74a064881aaec34a9757fa",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "blob-statement-schema-review",
+        "measured_at": 1782916495.4763787,
+        "evidence": [
+          "schema=TheoremBlobStatementReplaySet/v1",
+          "status=BLOB_STATEMENT_REPLAY_MATCH",
+          "theorem_count=10",
+          "blob_check_count=10",
+          "unique_blob_file_count=10",
+          "sha256=9ee5d5c8330911c04cc5de9a8a5856d18a46373a8a641e6f3fe3c2cffa4c2915",
+          "seal=53541e1bdcb049e8823dff70b6f20b873a5dabea3ce63a854bdcdd53133e43bd"
+        ]
+      },
+      {
+        "claim_id": "0997c6125c0ab45a",
+        "claim_sha256": "0997c6125c0ab45a563c8b669afb324ff03df7cc41104f4c90960fff2f3d5ef4",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "fixture-binding-review",
+        "measured_at": 1782916495.4763868,
+        "evidence": [
+          "fixture sha256=9d6bef985d4440d10110b7398bee1fbb74059b9ac6f55512910e36932edbaf26",
+          "fixture seal=ca0214a4d5693a02d5fac1d441058ea3c773f30307abcfec3514004f71c12848"
+        ]
+      },
+      {
+        "claim_id": "a96efa0c61bec09e",
+        "claim_sha256": "a96efa0c61bec09ee3518e775bd99cae97a9f056cf1089c937fd81ccdd0c8fd5",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "source-binding-review",
+        "measured_at": 1782916495.4763901,
+        "evidence": [
+          "statement_equivalence_sha256=a0928a953f609aa5ea96aecc79e355a0d5aaab949761d4efa4b1b704210986bf",
+          "statement_equivalence_seal=78ede605591460b7a2aa8fee7e2ebca0f56688575e5c9ce7ab919f2948a0934f",
+          "statement_equivalence_status=STATEMENT_EQUIVALENCE_MATCH",
+          "source_ref_integrity_sha256=74d89981ae7598f7a7381f6fdbb1196cf9be97ca854688a49c4e3c4bce9f6f6f",
+          "source_ref_integrity_seal=68382866e7e78895eb3d7fd0d613fcc8b17afc30398b7823cb198702262da2fb",
+          "source_ref_integrity_status=SOURCE_REF_INTEGRITY_MATCH"
+        ]
+      },
+      {
+        "claim_id": "2791108e2346ba85",
+        "claim_sha256": "2791108e2346ba851873e4e621ef2eb964da55830a3475a9590a0da477b3bb12",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "blob-statement-row-review",
+        "measured_at": 1782916495.4763927,
+        "evidence": [
+          "blob_check_count=10",
+          "all_blob_frozen_solution_match=true",
+          "all_blob_frozen_proof_match=true",
+          "all_blob_discharge_gates_match=true",
+          "all_blob_statement_checks_match=true"
+        ]
+      },
+      {
+        "claim_id": "9daf24d5e0f997af",
+        "claim_sha256": "9daf24d5e0f997afd6dd442c520ca8052fb8f532c7b60b159f286cb6db1d933e",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "blob-file-binding-review",
+        "measured_at": 1782916495.4763954,
+        "evidence": [
+          "unique_blob_file_count=10",
+          "all_blob_file_sha_match_pass0036=true",
+          "worktree_text_used_for_signatures=false"
+        ]
+      },
+      {
+        "claim_id": "4b17a3c3d3c77eba",
+        "claim_sha256": "4b17a3c3d3c77ebae9446c2d977de720aaccddfedb20bcd9ca048aff6ba81b1f",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "validator-result-review",
+        "measured_at": 1782916495.4763982,
+        "evidence": [
+          "schemas/pass-0038-theorem-blob-statement-replay-validator-result.json status=MATCH",
+          "theorem_count=10",
+          "blob_check_count=10",
+          "unique_blob_file_count=10"
+        ]
+      },
+      {
+        "claim_id": "12f003a4c7f76176",
+        "claim_sha256": "12f003a4c7f7617628f514da363db46cf54088d211feec57675a2f054808d454",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "packet-presence-review",
+        "measured_at": 1782916495.4764006,
+        "evidence": [
+          "packets/048-theorem-blob-statement-replay.md sha256=751c40c4ad423e60ee375452cccbf3624ef6fd7e3c5ddf8ffd12356babef50ad",
+          "adversarial/pass-0038-blob-statement-replay-steelman.md sha256=09b2d1e186fbfcbfdfcfe64473a915b66eaf409f36786940a87ae06b7fc2b52c"
+        ]
+      },
+      {
+        "claim_id": "0acc54f9526a39e6",
+        "claim_sha256": "0acc54f9526a39e66481732fdfce7aa52b76810d77d394816b610c379af1a626",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "non-promotion-boundary-review",
+        "measured_at": 1782916495.4764032,
+        "evidence": [
+          "non_promotion_statement present",
+          "current_promoted_natural_laws=[]",
+          "steelman states blob replay is not semantic proof verification"
+        ]
+      }
+    ],
+    "seal": "be23d83f3ae1a2c366630fc95291baf7ecc4e6434c63cb99ea1d03d44938ae97"
+  },
+  "verdicts": [
+    {
+      "claim_id": "d17539250471895d",
+      "claim_sha256": "d17539250471895d4b1cbb899c6573ac4b31108afe74a064881aaec34a9757fa",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "blob-statement-schema-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "0997c6125c0ab45a",
+      "claim_sha256": "0997c6125c0ab45a563c8b669afb324ff03df7cc41104f4c90960fff2f3d5ef4",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "fixture-binding-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "a96efa0c61bec09e",
+      "claim_sha256": "a96efa0c61bec09ee3518e775bd99cae97a9f056cf1089c937fd81ccdd0c8fd5",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "source-binding-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "2791108e2346ba85",
+      "claim_sha256": "2791108e2346ba851873e4e621ef2eb964da55830a3475a9590a0da477b3bb12",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "blob-statement-row-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "9daf24d5e0f997af",
+      "claim_sha256": "9daf24d5e0f997afd6dd442c520ca8052fb8f532c7b60b159f286cb6db1d933e",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "blob-file-binding-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "4b17a3c3d3c77eba",
+      "claim_sha256": "4b17a3c3d3c77ebae9446c2d977de720aaccddfedb20bcd9ca048aff6ba81b1f",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "validator-result-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "12f003a4c7f76176",
+      "claim_sha256": "12f003a4c7f7617628f514da363db46cf54088d211feec57675a2f054808d454",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "packet-presence-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "0acc54f9526a39e6",
+      "claim_sha256": "0acc54f9526a39e66481732fdfce7aa52b76810d77d394816b610c379af1a626",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "non-promotion-boundary-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    }
+  ],
+  "checks": {
+    "seals_ok": true,
+    "thesis_ok": true,
+    "verdicts_rederive": true
+  },
+  "report": "C:\\dev\\public\\telos\\docs\\research\\dogfood\\crucible\\pass-0038-report.md",
+  "record": "C:\\dev\\public\\telos\\docs\\research\\dogfood\\crucible\\pass-0038-run.json",
+  "bundle": null,
+  "spec": null,
+  "review": null,
+  "verifier": {
+    "mode": "cleanroom",
+    "inputs": [],
+    "excluded": [
+      "worker context",
+      "reasoning trace",
+      "intermediate steps"
+    ],
+    "checkability": "If success cannot be evaluated from the original spec and the artifact, the spec is not checkable yet."
+  }
+}

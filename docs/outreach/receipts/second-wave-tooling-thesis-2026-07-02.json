@@ -1,0 +1,26 @@
+{
+  "title": "Project Telos Second-Wave Source-Checkout Tooling Claims",
+  "disposition": "fenced",
+  "claims": [
+    {
+      "text": "The current MCP-exposed flagship status surfaces report all five Project Telos flagships as ready with a 70-tool Telos room surface.",
+      "falsification": "A current flagship MCP status or Telos room check reports a non-MATCH status, fewer than five ready flagships, or a tool count other than 70."
+    },
+    {
+      "text": "The Learn source checkout supports a receipt-backed research-training loop: status reports version 1.5.0, doctor reports MATCH, the targeted tutor/prooflesson/reverify test slice passes, and a temp study receipt verifies from evidence.",
+      "falsification": "Learn status or doctor fails, the targeted test slice fails, or the temp study receipt does not report verified true."
+    },
+    {
+      "text": "The BuildLang/buildc source checkout supports a receipt-backed compiler demo from an isolated Cargo target: doctor completes for buildc 1.0.6, the C backend is ready, hello.bld check emits a passed receipt, and corpus verify reports 8 C executions passed.",
+      "falsification": "The isolated-target doctor fails, the C backend is not ready, hello.bld does not emit a passed receipt, or corpus verify does not report 8 C executions passed."
+    },
+    {
+      "text": "The Emet source checkout supports a narrow external-witness demo: selftest emits the current self hash and conformance passes 35 of 35 vectors, while the PATH wrapper remains out of scope because it still depends on a missing warden_shell module.",
+      "falsification": "Emet selftest fails, the conformance suite reports fewer than 35 passing vectors, or the handoff claims the broken PATH wrapper is fixed."
+    },
+    {
+      "text": "The second-wave outreach documents preserve the source-checkout boundary and add demo packages for Learn, BuildLang/buildc, Emet, and megatool composition.",
+      "falsification": "The second-wave docs are missing, omit the PATH/source-checkout boundary, or promote unverified PATH installs."
+    }
+  ]
+}

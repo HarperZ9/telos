@@ -1,0 +1,1515 @@
+I guess maybe I have a question for you.
+I mean, there's something that I'm
+curious about which seems to be a sort
+of like historical or or sort of
+practical or circumstantial um split
+between the like type theory community
+and the kind of set theory logic
+community.
+>> Hello. I'm very happy today to have
+Emily Rio with us. She is a professor
+for mathematic at the John's Hopkins
+University and uh I've met her several
+times and always enjoy talking to her or
+listening to her talks. Um she's an
+expert in I would say higher category
+theory, right? Is that is fair to say or
+how would you describe yourself Emily?
+>> Sure. Yeah, that sounds great. Yeah.
+>> Okay. So I I just I just looked up
+apparently it was Stanwood who who said
+category is abstract nonsense. So are
+you are you doing higher abstract
+nonsense or
+>> Sure. Increasingly abstract nonsense
+perhaps. Um you know I love that quote
+of Stenrod and I think he he meant it
+positively. So you know sometimes people
+>> you know abstract nonsense is kind of
+like queer and that uh different people
+mean different things in using that but
+it's been embraced by the category
+theory community for a certain style of
+proof that those of us who are working
+in category theory really like. It's
+it's what drew me to the field. So yeah,
+>> but you didn't get stuck there with
+category theory. You you went for the
+full monty for higher stuff, right? Um
+>> I well I think uh you know so initially
+um you know I first became interested in
+category theory in a year I spent in at
+Cambridge. Uh, I took a course by Peter
+Johnstone, you know, a eight-week
+>> maybe 10 week I forget how long the
+terms are there course in category
+theory that covered quite a lot of
+material in a short amount of time. I
+sort of took the year to kind of fully
+absorb the course. And then starting
+that summer, I attended my first
+international category theory conference
+which really gave me a sense of the
+research frontiers of the field. And I
+found myself drawn to talks that
+involved abstract homotopy theory in
+some way. So some categorical
+abstractions you know such as due to
+quillin that allows you to kind of mimic
+constructions from homotopy theory and
+more general
+>> categories and now that is understood as
+being some sort of presentation of a
+higher dimensional structure on the
+category. Um so I guess that's how I got
+into higher category theory. Maybe can
+you say a few words to about homotropic
+theory and what it is and why it
+matters.
+>> Sure. Uh right. So you know there's this
+fundamental mathematical question uh
+maybe philosophical question of when is
+one thing the same as another thing and
+there's different ways that you can
+answer it. Um there's uh sort of the
+answer um embedded in first order logic.
+This is Livinets's incisernability of
+identicals or identity of incisernables.
+So, you know, two things are the same if
+and only if they have exactly the same
+properties. Um, but that's not really
+how uh mathematicians use this notion of
+being the same. You know, mathematicians
+tend to be very metaphorical. Um, so to
+a so to a category theorists, if you
+have two objects that belong to the same
+category and they somehow have the same
+shape, um, the technical term is
+isomorphic. The etmology is roughly that
+sort of same shape. um meaning um from
+the point of view of all the other
+objects in the category they look the
+same then they're the same even though
+they're not literally equal um they
+might be isomeorphic. Um so there are
+examples you know in the group theory
+you'll learn about different
+presentations of groups that end up
+having exactly the same structure and
+even though the presentations are
+different the groups are isomeorphic and
+a group theorist would consider them the
+same. Um you know in linear algebra any
+you know finite dimensional any
+10-dimensional vector space is
+considered the same as any other
+10-dimensional vector space depending on
+choice of basis you know you might need
+explicit isomeorphisms to identify them.
+Uh so you know that's sort of one
+perspective of um what sameness means
+but uh that's often not even flexible
+enough. So um
+>> can I just because it it rings the bell
+what you just said. Um so this you you
+think the liets principle suggests um uh
+a more intentional equality so to say.
+Uh but as as you know I'm coming from
+type theory.
+>> Sure. uh and um I'm I'm I'm actually I'm
+a big fan of this lienet principle
+because um how do you actually how do
+you actually uh describe the difference
+of two things which you which you call
+isomorphic uh you you have to observe
+the internal structure and in my in my
+world you're not even permitted to do
+this right so so this principle of
+equality of incisernables is actually
+valid in in in tax theory in in in in
+hot, right?
+>> Yes. So, right, you um you interrupted
+my sort of attempt to give a more
+classical account of what homotopy
+theory is. And I I didn't mean uh
+>> maybe maybe we'll return to that and
+then we can come back to new
+perspectives on linenets's in
+discernability of identicals in
+homotopic type theory for instance. But
+um but anyway, all I was going to say is
+um you know there are uh mathematical
+objects that um you know mathematicians
+working in the area would consider to be
+the same even though they are not
+isomorphic. Um you know sort of the
+>> example everybody uh likes to mention is
+you know to a a topologist of a certain
+bent um you know a coffee cup and a a
+donut are the same. Um, I don't think
+that's a great example because those
+spaces are actually homeomorphic, which
+is to say isomeorphic in the category of
+spaces. But an example I like better is
+a, you know, pair of pants and a thong.
+Um, you know, these spaces are are
+homotopia equivalent. And if you're
+interested in, you know, sort of
+counting how many holes there are in the
+space or how many higher dimensional
+holes there are in this the space, the
+answers would be the same, even though
+the thong sort of is one-dimensional in
+some sense and the pair of pants is
+two-dimensional in and sort of some
+sense. And so what homotopy theory is
+about is it's a a a language that allows
+you to treat objects that are not
+isomorphic but are equivalent or perhaps
+weakly equivalent as nevertheless being
+the same. Uh
+but anyway, what what Torson was
+referring to um just now is um you know
+I'm you probably have a better sense of
+this history than I do frankly but you
+know maybe I'll describe it as some sort
+of new perspectives on the
+iniccernability of identicals. So the
+way I was or what I was imagining when I
+mentioned it earlier is it's uh you know
+this is the way equality is aimatized in
+in first order logic
+>> and so I was uh thinking of the notion
+of equality that
+>> uh is kind of familiar in in set theory
+where um you know two sets are equal
+sort of if and only if they have exactly
+the same elements and you know if the
+elements have slightly different names
+but are sort of in one to one
+correspondence that's not that's not
+what equal means.
+in set theory. Um,
+>> yes,
+>> but but as as you well know, this is
+very far from how equal gets used in a
+mathematics paper. If you if you read a
+mathematician's paper, they'll often
+write equals when they really mean
+isomorphic or maybe even something
+weaker than that. And um there are other
+approaches to foundations um you know
+using MartinLof identity types um but
+maybe without equality reflection so
+intentionally rather than extentially
+that are compatible with in
+disccernability of identicals and uh
+more flexible allow sort of a more um
+metaphorical uh meaning of equality.
+Yeah.
+>> Yeah. Okay. So, so you you you obviously
+you you come from a sort of classical
+mathematical background and uh you you
+you only learned about this sort of
+exotic stuff like type theory uh later.
+So, so
+>> and I might qualify that even more
+strongly. So the you know I mean the
+mathematics curriculum in the United
+States which is where I'm from is a bit
+different I'd say than elsewhere in the
+world. I mean you know part of that is
+an artifact of our uh liberal arts
+system. So
+>> as an undergraduate I was a mathematics
+concentrator meaning I took more
+mathematics courses than courses in any
+other topic. But of the you know 32-ish
+courses I took as an undergrad that
+meant 12 of them were math courses. and
+I spent the rest of the time taking, you
+know, music theory and queer theory and
+American intellectual history and and,
+you know, modern British novel and
+various other things. Um,
+>> so in in this sort of condensed
+undergraduate mathematics curriculum,
+there often isn't much time for logic
+and in in particular, I didn't study
+logic and foundations as an
+undergraduate. I did not study it as a
+as a graduate student when I earned my
+PhD. I'm almost certainly could not have
+told you the axioms of set theory. or
+melo Frank set theory
+>> not many people can
+>> you know as a postocck I I taught the
+undergraduate logic course which was
+offered in the department I just I just
+didn't end up taking it and I I learned
+a lot then about sort of classical
+>> approaches to foundations and then sort
+of around the same time I was getting
+exposure to an interest in homotopy type
+theory and that's how I got into other
+perspectives you know
+>> so maybe I I know some part of the
+audience will hate me for that That's
+for me that was quite quick already and
+we mixed already quite a lot of
+disciplines and I'm I'm not a category
+theorist at all. So I come from set
+theory. Is it uh okay if I ask would it
+be fine for you to give like a very
+rough idea of category theory for that
+part of the audience that's not there
+and maybe if there is something like
+your own perspective in particular
+because you have a lovely introductory
+book category theory in context right um
+which I guess many people take as like a
+good first step into this realm
+>> great um yes I'd love to describe
+category theory. So, um I think a big uh
+innovation that sort of separated 20th
+century mathematics from 19th century
+mathematics was the idea that if you're
+interested in a particular sort of
+mathematical object um like a group um
+you might productively study it by
+considering also the homamorphisms
+between groups. Uh so this is an insight
+that I associate with Emmy Nurther um
+among others and um the so even if
+you're just interested in in studying
+properties of individual groups somehow
+treating them as a collective and
+looking at the way the sort of
+relationships between one group and
+another which are um depicted using
+arrows with a domain being one group and
+a a co-domain being another group. um
+and these are sort of structure
+preserving functions called homorphisms
+that that was sort of an important
+insight and led to new breakthroughs in
+group theory and simultaneously a
+similar um perspective was being applied
+in other disciplines. So you know
+topologists were interested in
+distinguishing one space for the other
+maybe by means of some sort of numerical
+invariant or polomial invariant and
+around the same time it was discovered
+that if you're invariant uh somehow
+respected continuous functions between
+spaces then it meant it was a lot easier
+to compute and had more powerful
+information. So a way to describe what
+these uh discoveries are doing
+simultaneously is they're um moving from
+studying individual objects of a
+particular type. So groups or
+topological spaces to studying the
+category of groups or the category of
+topological spaces. So a category has
+both objects but also arrows sometimes
+called morphisms sometimes called
+homamorphisms between them that satisfy
+a few certain axioms and unlock the
+possibility of a completely new style of
+definition. So you can characterize
+constructions on the objects in terms of
+their effect on the morphisms. For
+instance, in fact you can identify
+everything you ever want to know about
+an object in a category in terms of the
+morphisms to other objects um as a
+consequence of something called the
+innate lema. And so the this sort of the
+insights that um launched category
+theory. And then another thing that it
+can do is it can help unify different
+mathematical disciplines. So there are
+some facts that are true of groups and
+true of spaces and true of vector spaces
+and true of other things for exactly the
+same reason. Um and it's because uh you
+can abstract them to the level of a
+generic category and generic objects and
+uh in a generic relationship and prove
+the theorem at that level of generality.
+Uh so these are the proofs by abstract
+nonsense that we were alluding to
+earlier and its effect is that it'll
+isolate the aspects of any particular
+mathematical discipline that are sort of
+formal or that are true for very general
+reasons um you know it uh or it can be
+understood via analogy to a completely
+other discipline from the aspects that
+are particular to that discipline. So
+anyway,
+>> just a little note uh as you as you I
+guess you know this is category theory
+also became increasingly popular in in
+in in computer science via via
+functional programming where people
+usually use Haskell they see like monets
+and factors and whatever so that's a a
+different uh point of access but it
+shows already as you said that it's
+quite sort of universal right
+>> yeah that's right I mean uh you know
+category theory among other things is a
+language um that allows you to very
+efficiently express some rather
+complicated constructions and it makes
+it easier to define and study you know
+new kinds of mathematical objects that
+weren't uh considered or weren't so easy
+to think about before. So that you know
+sort of the fundamental objects that one
+studies these days in algebraic geometry
+are um defined using categorical
+language. uh same in modern homotope
+theory. um you know in computer science
+there are some uh you know categories
+that are you don't you don't sort of
+stumble across in nature but you can um
+build um I'm thinking maybe specifically
+the Kley construction associated to a
+monad uh that you know handle
+computational effects uh in a very
+elegant
+>> way um so
+>> so it's actually a way to structure
+programs in uh in you use computer of
+category theory is often just a way to
+yeah to to to modular modist
+programs right and is it quite bit maybe
+different or is there a similarity with
+mathematics you would say is category
+theory useful to structure I think it is
+isn't it or
+>> I I guess I would say so and I I mean
+I'm thinking you know uh you know growth
+indeed's work in algebraic geometry in
+the mid 20th century you know he ended
+up creating a whole bunch of category
+theory in uh pursuit of you introducing
+new sort of structures, new new
+techniques in algebraic geometry. So
+absolutely
+>> may I follow up with a very another
+knife question and I mean now you you
+sketched beautifully this idea of the
+bird's eye perspective of um and and now
+what makes like is it possible to talk
+about all kind of structures or is there
+even like in category theory at some
+point you need like more complex
+categories and if I'm not mistaken this
+is also part of this higher category
+theory or infinite uh categories is
+there a way to understand that as an
+outsider or is that only accessible
+after some category theory?
+>> Yeah. So I mean there there are
+certainly limitations to category
+theory. So so one of them is they you
+know they deal with the general aspects
+of any particular mathematical
+subdiscipline not the particular ones.
+So um you know and there's an area
+called representation theory which is
+considering sort of groups in terms of
+their actions on a vector space and some
+you know maybe about half of
+representation theory is very formal. Um
+there's uh you know if you have a
+subgroup you can construct something
+called an induced representation and
+this is an instance of a very general
+category theoretic construction and so
+the properties of induced
+representations can be proven formally
+um sort of much more abstractly. But
+then there are other aspects of
+representation theory that are more
+particular to the subject. So you know
+the particular irreducible
+representations of a particular family
+of groups um I you know can't always be
+understood using category theory. So
+that's that's one sort of limitation. Um
+you know category theory is really a
+collection of proof techniques and those
+techniques apply to some kinds of
+problems and not to other kinds of
+problems. Um but another sort of
+limitation which is uh leading us
+towards higher category theory is some
+kinds of mathematical objects really
+live in a more complicated mathematical
+setting. And um so the first examples
+are either something like a topological
+space or a a chain complex. Um so for
+topological spaces kind of the default
+notion of homorphism between them is a
+is a continuous function. And so this is
+a function between the underlying sets
+of points that uh somehow respects the
+topology. Um but uh
+that's kind of not the end of the story.
+So you might imagine two different
+topological spaces uh you know let's say
+um you know one of them is the circle
+and the other one is the Taurus. So this
+the sort of surface of a donut and we
+could have uh two different continuous
+functions from the circle into the
+surface of the donut. So imagine like
+tracing out a loop on the the surface of
+the Taurus. Uh so um depending on which
+specific loops I you're imagining
+tracing on the surface of the Taurus, um
+they may or may not be homotopic. Uh and
+homotopic means you could kind of defi
+continuously deform one loop onto the
+other loop without sort of slicing
+through the the donut or you know
+leaving the surface or some or something
+like this. And um what this homotopy
+should be understood is it's it's also a
+a kind of morphism but it's a higher
+dimensional morphism that exists between
+the two continuous functions that we
+were imagining. And it's it's um giving
+an extra dimension of information um to
+this situation. And then there's a
+notion of homotopy between homotopy
+which would be a higher dimensional
+morphism between these higher
+dimensional morphisms. So we've gone
+from objects in dimension one to
+morphism sorry objects in dimension zero
+to morphisms in dimension one to
+homotopes in dimension two to higher
+homotopes in dimension three and four
+and five and six and that goes on add
+infin item uh and um if you ignore this
+higher structure or quotient out by this
+higher structure you're losing some
+information and so there are certain
+questions about spaces that really uh
+cannot be answered very well or u at the
+level of the ordinary category of spaces
+and continuous uous functions but um are
+better approached in the higher category
+the infinity category of spaces
+continuous functions and all the higher
+homotopes
+it's interesting that I mean that you
+naturally use a example from homotropy
+theory but uh you're not mentioning
+something like the category of
+categories and and and so on which from
+a computer science point of view would
+be the s of
+natural
+way to look but Yeah. So that's that's
+also another route into higher category
+theory. So you know categories have a
+notion of morphism between them which is
+called functer. Um but even in the 1940s
+the original paper on category theory it
+was not about categories nor was it
+about functors. It was about the higher
+dimensional morphisms between functors
+which are called natural
+transformations. And um yeah so category
+theory is itself a higher dimensional
+subject. Mhm.
+Actually um in in sort of traditional
+category theory um people usually say
+that the category of categories is just
+a category and uh in in in in the world
+I live this is sort of slightly wrong.
+Um what's your uh feeling about this? I
+mean
+>> uh I guess I don't know what you're
+referring to. Um I uh so I think of the
+category of categories most naturally as
+a two category. Um
+>> exactly that's what I Yeah.
+>> Yeah. Adding in the hieromorphisms. Um I
+guess you could say the the one category
+of categories is what's called cartisian
+closed. So it has uh objects inside it
+which are funer categories and inside
+those functor categories you have these
+higher dimensional morphisms. So that's
+a trick sometimes in which a higher
+category can be um accessed via just a
+lower categorical structure. Um
+>> so a one a an ordinary one-dimensional
+category that is cartisian closed is
+enriched over itself and so in these
+internal h objects you can access some
+sort of enhanced structure. I I I just
+meant because um in a sense um equality
+of of objects uh is more complicated or
+in in the hot language is not a
+proposition
+>> and in this sense uh uh the category of
+categories isn't just an ordinary
+category but as you say it's a two
+category
+>> but that comes from this
+>> I see
+>> time theoretic perspectives
+>> yeah I mean another uh you know so a
+thing that I've a practice that I've
+engaged in more over the past uh decade
+is uh computer formalization and yeah
+you know whether we're you know so um so
+uh giving definitions about categories
+and constructions about categories
+proving theorems about categories not
+just on pen and paper but uh
+interactively with a computer proof
+assistant and um
+>> uh so the computer proof assistants are
+uh often implement a formal system
+called dependent type theory not uh um
+um you know which is a different
+approach to foundations and um and I'm
+completely setting aside uh homo sort of
+categories and homotopy type theory
+let's say
+>> dependent type theory in the sense
+that's implemented in the computer proof
+assistant lean where
+>> identity types are propositions and you
+have
+>> uh proof of relevance of propositions
+and so on but um but there's an
+interesting design decision in
+explaining what a category is
+>> in dependent type theory. Um
+>> uh so a category has sort of two types
+two two sorts of objects. There's the
+objects of a category and then there's
+the arrows in a category. And so you
+could define a category to have a type
+of objects and a type of arrows and then
+there are source and target functions
+between the objects and the arrows and
+identity functions and a composition
+function and some axioms and so on. Or
+you could define a category to have a
+type of objects and then a dependent
+type of arrows. So given you know rather
+than having a type that consists of all
+of the arrows in the category having uh
+for any pair of objects a type of arrows
+from the first object to the second
+object. Um and uh you know somehow that
+one decision
+you know has huge stakes for the way
+everything else is is formalized
+thereafter. um in a way that I find
+quite interesting. Um uh so so I mean
+for instance like a lot of uh statements
+that one would write on paper um you
+know particularly when we're considering
+sort of equality between functors or um
+you know don't even type check uh
+>> uh if you take the the second
+perspective where you're defining the
+morphisms to be a dependent type. So to
+to prove that one functor is equal to
+some other functor um you would prove
+firstly that for all objects in the
+domain category these functors act the
+same way on the objects and then on
+paper I would say and the same thing for
+the morphism. So for all morphisms in
+the domain category, the functors act
+the same way on the morphisms. But um
+but that statement now will involve an
+equality between an arrow in one hom
+type and an equality between an arrow
+and a different hom type. And you have
+to kind of transport along the proofs of
+equality between the objects to get
+those two arrows to belong to the same
+type. Um
+anyway, I think I think this is sort of
+an interesting feature when it comes to
+formalizing even one category theory in
+the proof assistant lean which adopts
+this second definition.
+>> There rais an question we had on our
+very first episode of about logic with
+Kevin Bazat. We had a discussion between
+Kevin and to whether you can or can or
+should use lean without opening up the
+foundation so to speak and I mean
+clearly for some mathematician it's
+works fine without opening anything and
+for others maybe not and could you say
+how is it for you can you do your your
+most advanced work e so to speak just on
+input packages and start doing or do you
+always need to open the packages
+>> right so Um I uh I have been formalizing
+some proofs in lean but also in other
+proof assistants. And the reason I'm
+also working in other proof assistance
+is because I'm formalizing proofs that
+just cannot uh work in lean right now.
+And um you know particularly uh when it
+comes to sort of higher dimensional
+categories um you know you can give a
+definition of an infinity category in
+lean um using something called the quasi
+category model. So that that definition
+exists um but it's essentially like um
+taking this notion of an infinite
+dimensional category and kind of
+compiling it out to the the foundations
+of mathematics. So you know
+traditionally we think of u mathematical
+objects as built you know with a bunch
+of sets and you know functions and
+structures and axioms and so on and so
+forth. Um and the problem is that an
+infinite dimensional category isn't
+really built out of sets. You could sort
+of give it a presentation or give it
+coordinates and pretend that it's built
+out of sets. You can build one out of
+sets and but it's it's sort of not the
+most natural um approach to the
+definition. sort of morally a uh
+infinite dimensional category should be
+built out of um something called
+homotopy types orma or infinity
+groupoids. Um sort of these are
+topological spaces but really considered
+only up to homotopy equivalence or weak
+homotopi equivalents. And um in other
+approaches to foundations uh you know
+homotopi type theory is described as a
+sort of synthetic theory of homotopi
+types. um when you say you have a type
+it's it automatically has this kind of
+higher dimensional structure and you
+know rather than build it in laboriously
+it's just there and I you can give a
+much more efficient definition of what
+an infinity category is if homotopy type
+theory is the background language and
+you know starting from a simpler
+definition will also simplify
+formalizations so um so I'm part of uh
+two collaborative formalization projects
+attempting to formalize some infinity
+category theory in two different proof
+assistants, one of which is lean and the
+other of which is something called RK or
+RZK.
+>> And we've gotten a lot further in RK and
+even though the proof assistant is much
+more primitive just because the
+foundation system is a lot more
+amendable to the type of math we're
+trying to do.
+>> Can you maybe
+expand this a little bit? Um, so I think
+the this quasi uh category approach is
+sort of what you could call analytic.
+there's a concrete definition of what an
+infinity category is but at the same
+time
+>> it's it's always it's almost unusable
+and and I think you you mentioned that
+that there was actually in one of your
+talks uh that it was actually a bug in
+the definition which nobody noticed
+because nobody did anything with it
+right and
+>> yeah so the notion of quasi category is
+definitely usable on paper and uh you
+know for students that it's kind of nice
+because it's relatively concrete. If
+you're a student who uh you know is very
+comfortable with ordinary
+one-dimensional category theory and has
+maybe already met simplicial sets by
+taking an algebraic topology course,
+then you can explain what a quasi
+category is. But um and and it's kind of
+like uh giving a a I I do use the term
+analytics, but it's like explaining
+infinity categories, but we're choosing
+coordinates everywhere. And the
+coordinates sort of don't matter, and
+you want to make sure that your
+construction are independent of the the
+choice of coordinates, but nevertheless,
+they're baked into the definition.
+>> So you you can um from that notion
+>> uh you know state and prove a bunch of
+theorems. it often involves a lot of
+technical um what what we would call
+combinotaurics though it's it's sort of
+a combinatorics of infinite sets so a
+combinatorialist might disagree um but
+in a proof assistant it turns out this
+is just very very very difficult so so
+what Thorson is alluding to is the fact
+that a closely related definition of a
+con complex which is the analytic
+perspective on infinity groupoids um
+that was wrong for maybe several years
+uh and it's because and it was wrong in
+a way that if anybody had tried to prove
+any theorems with it, they would have
+caught the mistake. But um but there
+were essentially no theorems that had
+been proven about quasi categories or
+con complexes in lean until very
+recently. Um the the main success is a
+master's thesis of Jack McCoen who um
+successfully proved that if X and Y are
+quasi categories or really Y is the only
+one that needs to be a quasi category
+then the sort of internal hal Y to the X
+is again a quasi category. This is a is
+a sort of very very fundamental result.
+You can't do anything in quasi category
+theory without that result. Um but there
+are a lot of details in that proof and
+it took I think a year and a half to
+formalize. It is still being PRD into
+math lib. Um it really is dis makes you
+feel desparing of formalizing anything
+more complicated than that given how
+hard it was to do this very fundamental
+thing. So
+>> I mean here's a question. Is this um
+synthetic approach is this just I mean
+more convenient because you you you get
+rid of the spoiler plate or is it the
+different conceptual approach to do
+mathematics?
+>> Uh right. So one way to think about it
+is it's you're putting an convenient
+kind of abstraction boundary around the
+notion of a quasi of infinity category.
+um you know which is a well-known uh
+kind of method in engineering I take I
+take it um uh yes um in the literature
+um when researchers use infinity
+categories they often don't use quasi
+categories um they sort of prefer to
+work model independently so sort of
+implicitly in reference to some axioms
+that maybe haven't quite been written
+down anywhere of things that ought to be
+true about infinity categories and have
+been proven proven in the quasi category
+model somewhere we hope. Uh and we're
+just going to argue from those
+principles rather than explain exactly
+the effect of these constructions on
+quasi categories. That's that's sort of
+what's happening already in the pen and
+paper literature. Um but I should say
+that the the
+what's happening in the synthetic
+approach is kind of more radical than
+that in the same way that uh you know
+homotopic type theory I would say is a
+more radical perspective on homotopic
+theory than just saying we're going to
+introduce some axioms. Um you know in in
+homotopic type theory you're also sort
+of changing uh the the kind of meaning
+of the logical operations. um you know
+when you say there exists some x and c
+so that for all y and c x equals y in
+the homotopi type theory um what that
+means is something a bit different uh so
+firstly this exists is interpreted
+constructively so it it provides you an
+explicit choice of a point x and c um
+the for all y and c is interpreted in a
+continuous fashion so it um and the
+equals x equals y is interpreted as the
+the choice of a path so we're
+I'm given an explicit point which I'll
+call the center of contraction. So that
+for all other points Y, I'm continuously
+choosing a path from X to Y. And what
+that means is this sort of sentence that
+in first order logic would assert that
+the set C has a unique element in
+homotopi type theory interprets that the
+type C is a contractable space. So sort
+of something more powerful and and
+that's um extremely convenient from the
+perspective of higher category theory
+when contractability is the only meaning
+of a uniqueness that uh ever makes any
+sense. So sort of similarly the these
+kind of uh reinterpretations of the
+logical operations mean that in the
+synthetic approach to infinity
+categories any function from infinity
+category A to infinity category B that I
+specify by perhaps explaining what it
+does on the objects um is automatically
+a functor of infinity categories and and
+that's something that's very difficult
+on pen and paper like actually defining
+an explicit functor between explicit
+infinity categories stories is something
+you basically never do because there'd
+be an infinite amount of higher
+dimensional coherence checks. It's kind
+of completely infeasible. You always use
+some trick appealing to some kind of
+universal property or some sort of magic
+reason why this functor exists. But in
+in ordinary one category, you often do
+just define functors. You say for every
+object in the category A, here's the
+corresponding object in the category B.
+And for every morphism in the category
+A, here's the corresponding morphism in
+the in the category B. And you can do
+something a lot more like that in this
+synthetic approach to infinity
+categories because we've sort of uh kind
+of reinterpreted the entire formal
+system not just uh given axioms for
+infinity categories. So you you
+emphasized convenience again but what
+you described before is that like maybe
+the natural way mathematicians of reason
+is I mean as you say not really uh
+in detail analytics or analytics is just
+used as a reference but maybe they they
+they use some sort of synthetic some
+some halfbaked synthetic reasoning and
+and maybe this sort of more developed
+synthetic mathematics is sort of filling
+this gap.
+>> Yeah, I think the the dream for the
+future and and your account of the
+development of this is is very very
+accurate. I think uh a lot of new
+mathematics is sort of halfbaked for a
+long time and you kind of backfill the
+rigor uh
+>> um you know so I mean as I understand it
+like caner's work on infinity sort of uh
+predated a rigorous axmatization of set
+theory for instance and you know a lot
+of the work on calculus kind of uh
+>> predated a rigorous understanding of of
+of what calculus is and you know that's
+s sort of as it should be but um but I
+think the the sort of modern hope is
+that as you kind of backfill these uh
+synthetic systems, um they become sort
+of formal to the point that you could
+teach the rules to a computer and then
+build a computer proof assistant that
+would then allow you to sort of kind of
+rapidly confirm
+uh I mean try to prove false and you
+know sort of check the consistency of
+these axioms maybe in a empirical way
+rather than a a sort of meta
+>> theoretical way. um you know and and
+also just get used to the new synthetic
+framework. So in my uh personal
+experience of learning homotopi type
+theory I you know first heard a bunch of
+lectures and then you know read pieces
+of the hot book and then tried to do
+some exercises in in pen and paper and I
+wasn't entirely sure that I had
+everything right. Um
+uh and in uh then I taught a course in
+homotopi type theory and um as a
+challenge to myself um wrote all the
+problem sets for this course using AGDA
+and so I spent you know like a lot of
+time every week sort of writing and
+solving these AGDA problem sets that I
+was developing and I I very quickly
+caught the kind of little tiny errors
+that I was making. So um you know I was
+working
+>> you use cubicle octa or was it just
+vanilla
+>> vanilla eggda
+>> okay
+>> yeah vanilla eggda um but you know with
+the with the feedback of the proof
+assistant you know ever since then I
+feel very confident now doing pen and
+paper homotopi type theory I know um
+because I have this sort of experience
+where a bunch of slightly wrong ideas
+were were corrected by the proof
+assistant um
+>> so I I find also it's a good for me it's
+a good way to teach uh certain things uh
+because the the is the the students can
+as you say intuitively learn uh what is
+the correct way of reasoning without
+having to see any sort of formal rules.
+I mean so the tension is you can give
+the sort of informal uh explanation but
+they often yeah informal and uh unound
+or you can say okay we here we have a
+formal system but who understands the
+formal system
+>> but then this computer's proof system is
+of a nice middle ground that you can
+acquire the intuition what is a great
+proof by by using it and then maybe you
+don't actually need it anymore because
+you have acquired this intuition
+>> right and of Like it's also nice to get
+immediate feedback. I mean that you know
+a big problem in mathematics pedagogy is
+students do the homework and then by the
+time they get it back a week later
+nobody's thinking about the problem
+anymore. It's it's much nicer to be
+corrected immediately.
+>> So
+>> and that's embarrassing because it's
+just the computer not not the tutor.
+Right. So yeah. Uh actually related to
+this uh are you using AI? Have you tried
+to do uh proofs using uh one of the uh
+AI uh implementations like
+>> uh yes so so currently there are auto
+formalization agents that are targeting
+lean. Um there not anything specific
+targeting other proof assistants that
+I'm aware of. Um but I have been
+experimenting a little bit with AIS
+targeting lean in a couple different
+capacities. So um you know I've been
+testing their capabilities with ordinary
+one category theory just um you know
+initially I was uh kind of very
+skeptical that these systems would be
+able to do much of anything um uh just
+because you know one category theory
+it's more about constructing definitions
+than proving theorems and lean treats
+those two activities somewhat somewhat
+differently and indeed that that does
+seem to be a limitation for some of the
+autoformalization agents. Um more
+recently I've been uh you know testing
+whether um these kind of elementary on
+pen and paper arguments involving
+simplicial sets and and quasi categories
+uh whether some of the sort of invisible
+mathematics could be automated away with
+AI. Um I've not had a lot of success
+there yet I would have to say um
+>> just because I think there are kind of a
+lot of a lot of technical details but um
+but um I should say I I I much prefer to
+interact with uh an auto formalization
+agent uh than a large language model in
+discussing mathematics because um you
+know the large language models will uh
+feed you a lot of um you know
+>> um and in particular um just in the last
+few weeks I've And um you know I'm
+currently in the process of revising my
+category theory book and I was uh you
+know trying to de develop a few new
+counter examples. So um you know if you
+drop hypothesis X from theorem Y um
+conclusion Z is false that sort of
+thing. And you know when I uh you know
+so first thing I should do is do a
+literature search. Do these counter
+examples exist in the literature? And um
+uh you know if if something is in the
+literature, a large language model is
+pretty good at surfacing it. But if it's
+if it's not in the literature, it'll
+sort of blame the literature for the
+fact that it's not able to come up with
+the counter example. And so
+>> or doesn't make it up,
+>> right? So that's it would say, you know,
+but this this is a well-known mistake in
+exercise 6.2. V of reals category theory
+and context. So then I go to the
+bookshelf and indeed there's no exercise
+6.2. And so I I did not make a mistake.
+Um but uh anyway um at some point I sort
+of gave that up and you know came up
+with my own counter example. Uh and then
+I asked uh uh Harmonics which is one of
+these AI startups agent Aristotle to
+verify it for me in lean as a kind of
+extra check that my counter example was
+correct. Um I did not ask a large
+language model for this because if they
+tell me it's correct I I feel like that
+gives me no assurance really. But um but
+indeed uh
+>> you know this is something in one
+category theory and Aristotle was able
+to confirm that it is a valid counter
+example. So yeah,
+>> I mean I think this is a nice of
+combination of AI and uh formal proofs
+because if you don't trust AI the as
+long as the II can produce a formal
+proof then uh
+it's trustworthy, right?
+>> Well the so there's some caveats there
+that you know experienced users are well
+aware of but I'd like to state for the
+record. So, so you know, caveat number
+one, uh, so, so you know, what the AI is
+is producing is the source text for a or
+the user input text for a computer proof
+assistant and you're rely relying on the
+proof assistant to type check it. And
+um, what a proof assistant is doing is
+it will verify that uh, stated proof in
+fact proves the stated statement. Um, it
+does not verify that the stated
+statement is the one that was intended.
+And in particular, if you know part of
+what your auto formalization agent is
+doing is providing new definitions, it's
+um quite possible um that the statement
+is wrong. And and this could be in a
+relatively uh innocuous way. So, you
+know, for for example, for my teaching,
+I was preparing a demo for my students
+of a a formal proof in lean that the
+square root of two is irrational. And so
+I open up my lean file and I write
+theorem square root of two is
+irrational. And then I'm in the middle
+of writing the proof and all of a sudden
+I or um notice some things that are
+suspicious. Um and it turns out that uh
+lean has um various different versions
+of the square root function. Um one is
+in the name space you know it's sort of
+rationals square root and what it is is
+it's kind of like some sort of rational
+approximation to the the square root of
+function and that's the one that I had
+used in the statement. So um so the
+theorem as I had stated at square roo of
+two is irrational was false because for
+th this version of the irrational
+function it was in fact true. Um so you
+know so that was a mistake that I made
+not an AI but um
+>> but you know when when complex
+definitions are involved you really
+really really really have to check that
+they mean exactly what you think they
+do. Um um the other thing is we've seen
+a few we meaning the lean community has
+seen a few examples where um an AI kind
+of tries to cheat somehow. So
+>> you know a thing that it could do for
+instance is add an extra axiom you know
+axiom 0 equals 1 to the top of the file
+>> um presented in a kind of obscure way
+and then and you know then it can prove
+whatever you want and it'll pass the
+type checker because certainly assuming
+Z equals one whatever you're trying to
+prove is true. um uh or uh you know sort
+of other kind of behaviors like that.
+>> It could it could exploit a recently
+discovered inconsistency in the poof
+system, right? I mean,
+>> right. Exactly. Right. There's always
+the possibility of bugs in the kernel.
+So, so um anyway, what what I would
+certainly go on the record of saying is
+that a autoformalized proof is more
+reliable than a natural language proof.
+Um I guess maybe depending on the
+subject area there's uh you know there's
+some areas where the you know the
+mathematics library just is nowhere near
+the statement and so there's no chance
+that the statement is correct in which
+case the autoformmalization is sort of a
+fantasy from the start but um but within
+a domain that is covered by a human
+engineered mathematics library I would
+say an autoformalized proof is more
+reliable than a natural language proof
+and um but you know but there's still a
+role for human referees.
+>> Actually, I wonder a bit because we we
+talked about lots of convenience that
+synthetic mathematics more convenient,
+but if you have just throw enough AI on
+it, then maybe this problem sort of
+disappears because the AI is just happy
+to to prove everything with quasi
+categories which humans would not be
+able to to manage, right? Or
+>> I I strongly disagree with that. I mean
+there's definitely a role for AI in
+formalization which is to make it
+easier. You know I you know right now
+some I mean sometimes people talk about
+the de Brun index which is technically
+like the the amount of lines of formal
+code that correspond to lines of natural
+language proof. Um I think a more
+relevant factor is how much time it
+takes to write a formal proof versus a
+natural language proof. And everybody
+working in the space would prefer it to
+take less time. And if an AI can help
+with that that would be great. But um
+proof quality still matters. I mean uh
+you know there's no permanent place in
+the in the world for ugly mathematics.
+And and similarly um you know what we're
+the process of formalizing is not just
+about checking that a theorem is true
+but building a library that is usable as
+the basis for further formalization
+efforts and code quality there matters
+enormously and so um I don't want a
+sloppy unreadable
+in incredibly long proof of some fact of
+quasi categories. I think it's worth um
+the effort of figuring out a way to do
+this in a way that's actually um
+understandable to humans and can be used
+as the basis for getting to the
+frontiers of mathematics the research
+frontiers of mathematics. I I
+wholeheartedly agree with this but there
+was a discussion in computer science
+right so we have so we try to uh I mean
+suggest of high level programming
+languages which supports abstraction and
+so on which is similar to what you what
+you describe in mathematics we like to
+write programs nice programs yeah but
+actually now with AI you you can
+generate these programs and then the
+question is do you actually need this
+these high level languages because the
+AI can also could use a similar code
+which is maybe not as readable but in
+the end what matters is it runs. I mean
+uh but maybe that's different in
+mathematics.
+>> I guess I'd be surprised if computer
+scientists are willing to abandon
+everything but Python because of the
+existence of AI. Um and I think
+mathematicians similarly you know won't
+accept a future where the only formal
+langu system is lean. So
+>> sure I mean I agree but I mean there is
+this this tension I mean this
+possibility that all this sort of high
+level stuff actually uh doesn't really
+matter so much anymore because AI
+bridges the gap. I mean it's not a
+future I would I would like but
+it's a possibility. Just the the tiny
+remark that we had similar discussions
+when computer usage in general entered
+mathematics, right? The forc color
+theorem
+>> was celebrated but also hated because
+some mathematicians said, you know, we
+just have this huge case distinction but
+this lovely beautiful problem is dead
+now and the highass mathematician won't
+touch it and maybe they would have found
+out new techniques or deeper
+understanding or whatever. Mhm.
+>> But then later even though it was proven
+still the best graph theorist tried to
+repro it, shorten the amount of cases
+needed
+>> and things like that.
+>> No, I had a a bit more personal question
+which um uh it's a question of you as a
+woman. I mean uh obviously well I I
+think in mathematics it's still uh
+gender imbalance and uh maybe can you
+comment on this and do you think it's
+something you should overcome or is this
+an issue and if if so how? Yeah, I I
+guess I will say I still think it is
+harder in some ways for a woman who is
+entered mathematics to kind of find
+interested in mathematics to find her
+way into the community than it is for
+some other folks. Um you know I know a
+lot of young women who uh you know feel
+that extra pressure um whenever they
+want to ask a question in class for
+instance that um you know the sort of
+quality of the question or the the fact
+that the question reveals that they
+haven't already understood something
+will then reflect negatively on you know
+their entire gender. Um, I think that's
+still a very very real experience and
+you can imagine sort of two parallel
+students, one of which feels like they
+can ask questions with abandon and one
+of which can never ask questions at all
+and you know who's going to be in a
+better position a few years
+>> down the road. um
+>> uh not so much within the math research
+community but at lower levels. I also
+hear a lot of stories of students who
+are sort of explicitly discouraged from
+you know going into um mathematics you
+know by a teacher in a high school or
+you know somebody trying to push them
+you know to take easier courses or to
+say you know this isn't really for you.
+I mean it's shocking that that still
+happens but that does still happen. Um,
+you know, I think at the kind of more
+advanced levels, what that means in a
+sense that the the sort of women who
+make it are uh kind of tougher in some
+sense, have have maybe spent more time
+thinking about like, do I really want to
+be a mathematician? Is this is this the
+career that I'm looking for? And and
+then, you know, tend to have the
+persistence and um to kind of carry it
+through because they've already sort of
+had, you know, thought critically about
+whether there's maybe some other use of
+their time. Um, so yeah, I I think we
+should still be mindful, you know, not
+just along the gender axis, but along
+other axes about how kind of different
+uh experiences might affect our students
+and who's encouraged to continue. Um, I
+certainly uh have a lot more fun at
+conferences where there are more women.
+Um, just sort of socially, I think it it
+makes a difference. I I I feel less
+pressure when I'm asking a question in a
+in a conference if there's a lot of
+other women in the conference asking
+questions, too. and um you know but
+we're we're tren t t t t t t t t t t t t
+t t t t t t t t trending in the right
+direction and I think as long as people
+are still kind of mindful that not
+everybody gets to the classroom and with
+the same experiences um I think things
+will continue to improve. So
+>> lovely educational comment or comment on
+education or what however to phrase it.
+Um, may I ask you is there anything else
+you would love to speak about that we
+missed where we're too narrow on inner
+math or
+>> I guess maybe I have a question for you.
+Um, so
+>> I mean there's something that I'm
+curious about which seems to be uh
+kind of a I don't know how to describe
+this but a a sort of like historical or
+or sort of practical or um uh
+circumstantial um split between the like
+type theory community and the kind of
+set theory logic community. Um, I don't
+know if this is part of your experience,
+if you have any explanation for it. Um,
+I'm very curious about how this came
+about. Um, or if I'm accurate in
+describing it that way. And I and I I
+guess I mean maybe within mathematics as
+opposed to within uh computer science.
+Um,
+>> I think I mean that's a great question.
+I I have my own account, but I'm not
+sure whether it's historically accurate.
+>> Um, so shall I start to or
+>> Yeah. Yeah. Glue it.
+>> Yeah. So I I guess I come from the
+setary side of things and I I mean um I
+would say two things. Um whenever some
+mindset or some tradition is kind of
+dominant, they might not look at the
+others or the next tradition with with
+the full um respect that they should. I
+mean I think that's generally true. It's
+not really only on set, but it's like
+okay there's this weird category stuff
+but I don't really care. I I can do
+everything in principle and I mean
+rightly so. I guess in some sense you
+can always reinterpret and
+>> emulate things when of course on your
+high level you see where this emulation
+>> misses a tiny spot or isn't fully
+accurate but in some sense you do that
+>> and then there was not as much
+communication at which would have been
+good and then we have contingent factors
+like one mailing list whichever was just
+set to dominant and
+>> category comments get discouraged
+>> and Then people start their their own
+forums, own communities
+>> and then we have a lot of more division
+than necessary so to speak. And the
+other the other thing is maybe that
+category theory had more interest in
+these higher physics
+things than set theory because
+historically back then we just needed
+the foundation to prove a point but we
+never really used the foundation. Right?
+>> Uhhuh. didn't touch that but that's only
+my historically inaccurate account to
+what do you think
+>> can I have a add more I think you asked
+about community but I would like to add
+a personal perspective actually I give
+gave a talk uh few years ago at Lambla
+days in Kraov and uh I I started it with
+a programming language CV and I I I
+tracked down what programming languages
+I have been using and I started with a
+language called Basic and then I earned
+some money doing assembly programming
+and and then I was not satisfied with
+the sort of with these languages and and
+looked for better ones and I ended up
+with of
+>> like functional languages like I did
+list programming and then I typed
+functional languages and so on and and
+this is I guess that's my interest. So I
+I always I'm sort of looking for the
+perfect way to express yourself. Yeah.
+and and and and this experience u is
+that in in mathematics it seemed to me
+um that the people are quite stuck with
+u with a foundational system which has
+been developed in like almost 100 years
+ago now.
+>> Mhm. and don't question whether this is
+really good way to express yourself and
+uh and and for me this is is is quite
+important to to choose a good language
+uh to to express yourself and um I mean
+this this really for me the the analogy
+is when I was doing uh assembly
+programming and I learned C and I tried
+to tell people you shouldn't use C and
+not assembly programming but we can do
+everything which you need to do we can
+do in assembly why would we a high level
+language like C which was more high
+level than assembly. Yeah. And and this
+uh in a way reminds me on the same just
+or not the same but analogous
+justification. Yeah. We can do
+everything in first logic and set
+theory. So why would we learn anything
+else
+>> and I I think that that language and in
+leverage of language is is quite
+essential to make progress. So
+>> yeah, I I guess my personal perspective
+is you know with AI there's going to be
+an increasing emphasis within
+mathematics on computer formalization
+and with computer formalization there's
+going to be an increasing importance and
+emphasis in mathematics on uh
+foundations and expertise in foundations
+but explicitly including type theory
+because that seems to sort of
+predominate amongst the formal systems
+used by computer proof assistants. So I
+would love to see more
+>> expertise on foundations within
+mathematics departments in general and
+in sort of uh type theory in particular.
+Um you know not because I see a future
+where we have you know one foundation
+for all of mathematics maybe with type
+theory replacing set theory but instead
+kind of multiple approaches to
+foundations that uh you know
+mathematicians can experiment with. um
+maybe with the aid of a computer proof
+assistant, you know, maybe um by
+developing domain specific languages to
+sort shorten and simplify formal proofs
+in their particular domain. And you
+know, we're going to you know, if you're
+implicitly using a foundation system to
+prove a theorem on paper, then you know,
+maybe it's okay that you don't
+understand it that, you know, to a
+certain level of depth. But, um I think
+we're going to need more sort of real
+expertise. And so I'd uh I'd love ideas
+for how to um you know kind of bring
+bring type theory back into the fold and
+also you know reinforce uh sort of other
+approaches to foundations at the same
+time. But yeah
+>> yeah I think pluralism is a theme that
+comes up often in our podcast which
+might be tiny empirical evidence
+>> that you you are right in in that
+direction. Um, great. Uh, so I'm really
+happy about this talk. I learned a lot.
+Sorry if I slowed down the discussion.
+>> It was that was a useful intervention.
+So, thanks for that. So,
+>> okay.
+>> Yeah. So, um, if there is no urgent
+thing to say, um, I would say
+>> thanks very much. Yeah.
+>> Thank you for being here and, um, have a
+great week.
+>> Okay. Thank you, Sandy. Bye. Bye.

@@ -1,0 +1,222 @@
+{
+  "buyer_brief": {
+    "audience": "VFX, color pipeline, scientific visualization, AI review, and display-validation teams",
+    "demo_claim": "This demo proves a read-only visual proof-packet surface, not physical display calibration.",
+    "offer": "Visual truth proof packets for bounded color math, transform assumptions, market evidence, and calibration-boundary clarity.",
+    "primary_risk": "Hardware claims require sensor-backed receipts and display mutation/restore records."
+  },
+  "calibration_boundary": {
+    "boundary_status": "PASS",
+    "display_state_mutated": false,
+    "hardware_measurement_used": false,
+    "icc_profile_installed": false,
+    "lut_written": false,
+    "notes": "This proof kit validates bounded software-side color math and receipt structure only.",
+    "physical_calibration_claim": false
+  },
+  "current_promoted_natural_laws": [],
+  "demo_id": "visual-truth-proof-packet-0081",
+  "forum_route": {
+    "command": "forum route --json 'Package a visual truth and color calibration proof packet for Project Telos: bind Build Color software metrics, color calibration market gaps, negative hardware-calibration boundaries, and buyer-facing proof evidence without claiming physical display calibration.'",
+    "confidence": 0.0,
+    "decided": null,
+    "exit_code": 0,
+    "needs_escalation": true,
+    "status": "MATCH",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "a2126daf19cecdf82ed0a1261db2dcce2aa8ff224eced2de8612c8abea64aad4",
+    "top_candidates": [
+      {
+        "agent": "ci-cd",
+        "score": 0.2
+      },
+      {
+        "agent": "deep-research",
+        "score": 0.2
+      },
+      {
+        "agent": "sdk-platform",
+        "score": 0.2
+      },
+      {
+        "agent": "project-telos",
+        "score": 0.045454545454545456
+      },
+      {
+        "agent": "backend",
+        "score": 0.0
+      }
+    ]
+  },
+  "generated_on": "2026-07-01",
+  "market_map": {
+    "gap_statuses": [
+      "inferred"
+    ],
+    "pass": "0011",
+    "row_count": 8,
+    "schema": "ColorCalibrationMarketMap/v1"
+  },
+  "negative_fixtures": [
+    {
+      "expected_status": "REJECT",
+      "fixture_id": "claims_physical_display_calibration",
+      "reject_reason": "no_meter_probe_or_display_mutation"
+    },
+    {
+      "expected_status": "REJECT",
+      "fixture_id": "claims_icc_profile_installed",
+      "reject_reason": "icc_profile_installed_false"
+    },
+    {
+      "expected_status": "REJECT",
+      "fixture_id": "claims_lut_written",
+      "reject_reason": "lut_written_false"
+    },
+    {
+      "expected_status": "REJECT",
+      "fixture_id": "claims_new_color_science_law",
+      "reject_reason": "bounded_software_probe_only"
+    },
+    {
+      "expected_status": "REJECT",
+      "fixture_id": "missing_targeted_regression",
+      "reject_reason": "fresh_88_test_slice_required"
+    },
+    {
+      "expected_status": "REJECT",
+      "fixture_id": "market_uniqueness_as_fact",
+      "reject_reason": "market_gap_is_inferred"
+    },
+    {
+      "expected_status": "REJECT",
+      "fixture_id": "raw_source_payload_required",
+      "reject_reason": "source_refs_only_boundary"
+    },
+    {
+      "expected_status": "REJECT",
+      "fixture_id": "unsupported_claim_promoted",
+      "reject_reason": "unsupported_claim_count_nonzero"
+    }
+  ],
+  "non_promotion_statement": "Pass 0081 refreshes a visual-truth proof-packet surface. It does not calibrate a physical display, install ICC profiles, write LUTs, prove market uniqueness, or promote a natural law.",
+  "pass": "0081",
+  "proof_kit_source": {
+    "failure_labels": [
+      "NOT_A_PHYSICAL_CALIBRATION",
+      "NO_HARDWARE_SENSOR_MEASUREMENT",
+      "NO_DISPLAY_STATE_MUTATION",
+      "NOT_A_NEW_COLOR_SCIENCE_LAW",
+      "BOUNDED_SOFTWARE_PROBE_ONLY"
+    ],
+    "metric_count": 4,
+    "metric_statuses": [
+      "PASS",
+      "PASS",
+      "PASS",
+      "PASS"
+    ],
+    "pass": "0011",
+    "schema": "BuildColorCalibrationProofKit/v1",
+    "status": "PROOF_KIT_MATCH"
+  },
+  "proof_packet_layers": [
+    "source_refs",
+    "software_color_metrics",
+    "targeted_regression",
+    "market_gap_map",
+    "forum_route_receipt",
+    "negative_calibration_boundaries",
+    "crucible_verdicts"
+  ],
+  "schema": "VisualTruthProofPacketRefresh/v1",
+  "seal": "c04b0162bd0bbd6702aef58495d3a0603c9b47d07f6f1b5c0a9322a8c59cf6a3",
+  "source_ref_count": 8,
+  "source_refs": [
+    {
+      "exists": true,
+      "kind": "file",
+      "path": "README.md",
+      "raw_payload_included": false,
+      "repo": "build-color",
+      "schema": "project-telos.source-ref/v1",
+      "sha256": "9331e8a6eaff1d39bd650a3dd73368f3a612d39992ed40b3ca6bf414771eaee3"
+    },
+    {
+      "exists": true,
+      "kind": "file",
+      "path": "pyproject.toml",
+      "raw_payload_included": false,
+      "repo": "build-color",
+      "schema": "project-telos.source-ref/v1",
+      "sha256": "576205d96e4f8b6296013d50f08a73f8b4bf30e44378ef371a5ccdd632483369"
+    },
+    {
+      "exists": true,
+      "kind": "file",
+      "path": "build_color/spaces.py",
+      "raw_payload_included": false,
+      "repo": "build-color",
+      "schema": "project-telos.source-ref/v1",
+      "sha256": "b64d36707d38be72e903eebcdb400bcc926a9c16cdf384dea13d81aa1ab2c244"
+    },
+    {
+      "exists": true,
+      "kind": "file",
+      "path": "build_color/tonemap.py",
+      "raw_payload_included": false,
+      "repo": "build-color",
+      "schema": "project-telos.source-ref/v1",
+      "sha256": "0e38edcf17258738cf55c54daf98d872b8ec8e89f6e85e1d8aa7385fb4cb72eb"
+    },
+    {
+      "exists": true,
+      "kind": "file",
+      "path": "build_color/difference.py",
+      "raw_payload_included": false,
+      "repo": "build-color",
+      "schema": "project-telos.source-ref/v1",
+      "sha256": "b428bcfde59a3946e3e3ce8882c56ffb658093ed814c2da8dbee21bacb24bc8a"
+    },
+    {
+      "exists": true,
+      "kind": "file",
+      "path": "tests/test_spaces.py",
+      "raw_payload_included": false,
+      "repo": "build-color",
+      "schema": "project-telos.source-ref/v1",
+      "sha256": "184dd842a2288ec47103a70034a2d8e2df3cf2e44674876cacf0702ae9aaed6d"
+    },
+    {
+      "exists": true,
+      "kind": "file",
+      "path": "tests/test_tonemap.py",
+      "raw_payload_included": false,
+      "repo": "build-color",
+      "schema": "project-telos.source-ref/v1",
+      "sha256": "ab6587eea697b050764c475e2d6587ecd11aee81895b0ae3954cfd758a671cce"
+    },
+    {
+      "exists": true,
+      "kind": "file",
+      "path": "tests/test_difference.py",
+      "raw_payload_included": false,
+      "repo": "build-color",
+      "schema": "project-telos.source-ref/v1",
+      "sha256": "80ef162d79f659198a2d6f357302c8302f16bded9b7c6376e9211477fea74f07"
+    }
+  ],
+  "status": "VISUAL_TRUTH_PROOF_PACKET_REFRESH_MATCH",
+  "targeted_regression": {
+    "command": "python -m pytest tests/test_spaces.py tests/test_tonemap.py::TestPQRoundtrip tests/test_difference.py::TestCIEDE2000KnownPairs",
+    "cwd": "C:\\dev\\public\\build-color",
+    "exit_code": 0,
+    "passed": 88,
+    "seconds": 0.25,
+    "status": "MATCH",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "7c37f95f07b464f6bcc3203bf1b94bd2ac5be0602c6041612d1a3417120d88aa"
+  },
+  "unsupported_claim_count": 0,
+  "validation_errors": []
+}

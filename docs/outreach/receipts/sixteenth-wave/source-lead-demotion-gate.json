@@ -1,0 +1,54 @@
+{
+  "schema": "project-telos.source-lead-demotion-gate/v1",
+  "generated_at": "2026-07-02",
+  "wave": "sixteenth",
+  "purpose": "Demote finite summation-by-parts, Lean formalization, and formal-verification arXiv metadata into source leads only after adding a finite paired-stencil Lean replay rung.",
+  "stores": [
+    {
+      "path": "docs/outreach/receipts/sixteenth-wave/arxiv-summation-by-parts-formal",
+      "retained_rows": 5,
+      "digest_seal": "a668509b61e3c40bde913765bb0f506467ace6f864b7ff705c1ccb90a84e0c75",
+      "verify_status": "MATCH"
+    },
+    {
+      "path": "docs/outreach/receipts/sixteenth-wave/arxiv-discrete-integration-by-parts-lean",
+      "retained_rows": 8,
+      "digest_seal": "28ab33f153ba909edcb089f9da6fb952de9801a3758f9120682ff9735133b1e8",
+      "verify_status": "MATCH"
+    }
+  ],
+  "coverage": {
+    "retained_rows": 13,
+    "unique_arxiv_ids": 13,
+    "duplicate_rows": 0,
+    "dropped_by_gather_scope": 3,
+    "all_store_verifications_match": true
+  },
+  "classification_counts": {
+    "formal_replay_infrastructure": 12,
+    "formal_pde_or_analysis_lead": 1,
+    "high_risk_grand_claim": 0
+  },
+  "classifications": [
+    {"id": "2406.09757v2", "class": "formal_replay_infrastructure", "reason": "LLM-driven formalization and verification-aware language lead."},
+    {"id": "2510.24798v1", "class": "formal_replay_infrastructure", "reason": "Compositional formal verification in Dafny; adjacent proof-method lead."},
+    {"id": "2006.04806v3", "class": "formal_replay_infrastructure", "reason": "Formal verification defenses; adjacent proof-systems lead."},
+    {"id": "2012.09388v1", "class": "formal_replay_infrastructure", "reason": "Proof-assistant formalization lead."},
+    {"id": "2605.04377v1", "class": "formal_replay_infrastructure", "reason": "Refinement types and formal verification lead."},
+    {"id": "2404.12534v3", "class": "formal_replay_infrastructure", "reason": "Lean Copilot; agent-assisted theorem proving lead."},
+    {"id": "2604.16507v1", "class": "formal_replay_infrastructure", "reason": "Lean 4 formal proof process lead."},
+    {"id": "2604.05238v1", "class": "formal_replay_infrastructure", "reason": "Lean 4 formalization process lead."},
+    {"id": "2604.05984v1", "class": "formal_pde_or_analysis_lead", "reason": "Lean formalization of De Giorgi-Nash-Moser theory; source-body review required before citation use."},
+    {"id": "2506.11085v1", "class": "formal_replay_infrastructure", "reason": "Lean 4 declaration search infrastructure lead."},
+    {"id": "2604.01483v1", "class": "formal_replay_infrastructure", "reason": "Lean 4 theorem proving for deterministic guardrails; applied proof-system lead."},
+    {"id": "2202.01629v3", "class": "formal_replay_infrastructure", "reason": "Lean mathematical library infrastructure lead."},
+    {"id": "2606.28990v1", "class": "formal_replay_infrastructure", "reason": "Lean 4 theorem formalization analog."}
+  ],
+  "verdict": "SOURCE_LEAD_ONLY",
+  "boundaries": [
+    "This gate classifies arXiv metadata only.",
+    "It does not establish paper truth, source-body review, latest literature coverage, or exhaustive literature coverage.",
+    "It does not promote any PDE result, theorem-prover result beyond the local Lean file, or grand-problem claim.",
+    "No row is used as proof of the cyclic summation-by-parts theorem; the Lean replay receipt is the proof artifact for that bounded theorem."
+  ]
+}

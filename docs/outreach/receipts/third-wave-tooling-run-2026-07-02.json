@@ -1,0 +1,290 @@
+{
+  "ok": true,
+  "thesis": {
+    "id": "1ac74d0b340bc84d",
+    "title": "Project Telos Third-Wave Closed-Loop Demo Claims",
+    "registered_at": 1782983727.1446252,
+    "disposition": "fenced",
+    "seal": "1ac74d0b340bc84d59dd6ad19236c05e153df423d97fd5e5b4bd2b41c815fcf4",
+    "claims": [
+      {
+        "id": "a32a059c52f3370e",
+        "sha256": "a32a059c52f3370e6645644928f3b095a207883de532258304a188e3a1dc9053"
+      },
+      {
+        "id": "cc72066e154f0654",
+        "sha256": "cc72066e154f0654a489c7c62fefe731deb87f8bd15040560fbfb4644daffa43"
+      },
+      {
+        "id": "10b84c31e891d376",
+        "sha256": "10b84c31e891d376abe9686a8bc40d32e0b623e870aee7e40807cf93520a3049"
+      },
+      {
+        "id": "4483b46bbb9b86c6",
+        "sha256": "4483b46bbb9b86c69caff7a7d2d2cd9a169f1344dc8dfa9c2411e49624a06921"
+      },
+      {
+        "id": "6d94bbcdeaa5acff",
+        "sha256": "6d94bbcdeaa5acff94f1323693e0e2d25dd4e305f0fc2c57a61c1b52c3b8cd6c"
+      }
+    ]
+  },
+  "refutations": [
+    {
+      "claim_id": "a32a059c52f3370e",
+      "claim_sha256": "a32a059c52f3370e6645644928f3b095a207883de532258304a188e3a1dc9053",
+      "challenge": "test the stated falsification: The receipt is missing, does not name ci-review, has status other than passed, or buildc receipt verify does not return status passed.",
+      "measurable": "The receipt is missing, does not name ci-review, has status other than passed, or buildc receipt verify does not return status passed.",
+      "source": "null"
+    },
+    {
+      "claim_id": "cc72066e154f0654",
+      "claim_sha256": "cc72066e154f0654a489c7c62fefe731deb87f8bd15040560fbfb4644daffa43",
+      "challenge": "test the stated falsification: The proof packet is missing, carries source bodies, has a non-MATCH verdict, Learn prooflesson fails, or Learn reverify fails.",
+      "measurable": "The proof packet is missing, carries source bodies, has a non-MATCH verdict, Learn prooflesson fails, or Learn reverify fails.",
+      "source": "null"
+    },
+    {
+      "claim_id": "10b84c31e891d376",
+      "claim_sha256": "10b84c31e891d376abe9686a8bc40d32e0b623e870aee7e40807cf93520a3049",
+      "challenge": "test the stated falsification: Build Color version differs, any listed CLI command fails, the test count is not 458 passed, or the package claims physical display calibration.",
+      "measurable": "Build Color version differs, any listed CLI command fails, the test count is not 458 passed, or the package claims physical display calibration.",
+      "source": "null"
+    },
+    {
+      "claim_id": "4483b46bbb9b86c6",
+      "claim_sha256": "4483b46bbb9b86c69caff7a7d2d2cd9a169f1344dc8dfa9c2411e49624a06921",
+      "challenge": "test the stated falsification: Measurement layers do not report 10 measurements, display calibration allows hardware mutation, or the focused Node tests fail.",
+      "measurable": "Measurement layers do not report 10 measurements, display calibration allows hardware mutation, or the focused Node tests fail.",
+      "source": "null"
+    },
+    {
+      "claim_id": "6d94bbcdeaa5acff",
+      "claim_sha256": "6d94bbcdeaa5acff94f1323693e0e2d25dd4e305f0fc2c57a61c1b52c3b8cd6c",
+      "challenge": "test the stated falsification: The third-wave docs make any of those overclaims or omit the command-backed evidence path.",
+      "measurable": "The third-wave docs make any of those overclaims or omit the command-backed evidence path.",
+      "source": "null"
+    }
+  ],
+  "assessment": {
+    "started_at": 1782983727.1527364,
+    "thesis_id": "1ac74d0b340bc84d",
+    "thesis_seal": "1ac74d0b340bc84d59dd6ad19236c05e153df423d97fd5e5b4bd2b41c815fcf4",
+    "claims": 5,
+    "match": 5,
+    "drift": 0,
+    "unverifiable": 0,
+    "verdict_seal": "b201d316f78509b57c35160d50827ca6f34f24f3ef822c0b2488cfe443cfb321",
+    "measurement_seal": "df6fb118ab2e21b117007494d248944f03f851ae70d38fec5f28988020e6e758",
+    "disposition": "fenced",
+    "stored": null,
+    "verdicts": [
+      {
+        "claim_id": "a32a059c52f3370e",
+        "claim_sha256": "a32a059c52f3370e6645644928f3b095a207883de532258304a188e3a1dc9053",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "source-checkout-command-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "cc72066e154f0654",
+        "claim_sha256": "cc72066e154f0654a489c7c62fefe731deb87f8bd15040560fbfb4644daffa43",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "proof-packet-and-learning-receipt-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "10b84c31e891d376",
+        "claim_sha256": "10b84c31e891d376abe9686a8bc40d32e0b623e870aee7e40807cf93520a3049",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "source-checkout-command-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "4483b46bbb9b86c6",
+        "claim_sha256": "4483b46bbb9b86c69caff7a7d2d2cd9a169f1344dc8dfa9c2411e49624a06921",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "contract-and-test-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "6d94bbcdeaa5acff",
+        "claim_sha256": "6d94bbcdeaa5acff94f1323693e0e2d25dd4e305f0fc2c57a61c1b52c3b8cd6c",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "document-boundary-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      }
+    ],
+    "measurements": [
+      {
+        "claim_id": "a32a059c52f3370e",
+        "claim_sha256": "a32a059c52f3370e6645644928f3b095a207883de532258304a188e3a1dc9053",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "source-checkout-command-review",
+        "measured_at": 1782983727.1527364,
+        "evidence": [
+          "docs/outreach/receipts/third-wave/buildlang-hello-ci-review-receipt.json exists",
+          "receipt schema buildlang-check-receipt/v1, compiler buildc, compiler_version 1.0.6, status passed",
+          "receipt policy source builtin:ci-review, profile ci-review, profile digest 265584dc495e50171aaa14ab84e0522a34de5b645a703b360c8209068b36f43b, policy status passed, violations []",
+          "buildc receipt verify --expect-profile ci-review returned schema buildlang-receipt-verification/v1 and status passed"
+        ]
+      },
+      {
+        "claim_id": "cc72066e154f0654",
+        "claim_sha256": "cc72066e154f0654a489c7c62fefe731deb87f8bd15040560fbfb4644daffa43",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "proof-packet-and-learning-receipt-review",
+        "measured_at": 1782983727.1527364,
+        "evidence": [
+          "docs/outreach/receipts/third-wave/buildlang-hello-proof-packet.json exists with version project-telos.proof-packet/v1 and verdicts.overall MATCH",
+          "packet sources include only ref and sha256 fields",
+          "learn tutor prooflesson buildlang-hello reported verdict MATCH, 4 scaffold steps, and 4 questions",
+          "learn tutor reverify buildlang-hello reported VERIFIED with witness digest sha256:c17026d7bba12cf07ef0c8cbf06aab7c549b5f914a0de24c7e76fae488838007"
+        ]
+      },
+      {
+        "claim_id": "10b84c31e891d376",
+        "claim_sha256": "10b84c31e891d376abe9686a8bc40d32e0b623e870aee7e40807cf93520a3049",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "source-checkout-command-review",
+        "measured_at": 1782983727.1527364,
+        "evidence": [
+          "python -m build_color.cli --version: Build Color v1.0.2",
+          "python -m build_color.cli info ff6030 returned sRGB, XYZ, Oklab, Oklch, luminance, and contrast values",
+          "python -m build_color.cli convert ff6030 --to oklab returned oklab (0.6904, 0.1627, 0.1214)",
+          "python -m build_color.cli difference ff6030 ff7040 --metric all returned CIEDE2000 3.1581 and other Delta E metrics",
+          "python -m pytest tests -q: 458 passed"
+        ]
+      },
+      {
+        "claim_id": "4483b46bbb9b86c6",
+        "claim_sha256": "4483b46bbb9b86c69caff7a7d2d2cd9a169f1344dc8dfa9c2411e49624a06921",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "contract-and-test-review",
+        "measured_at": 1782983727.1527364,
+        "evidence": [
+          "node demo\\measurement-layers.mjs --summary: layers 10, measurements 10, status MATCH",
+          "node demo\\display-calibration.mjs --summary: hardware read-only, targets 3, patches 4, artifacts 5",
+          "node --test demo\\measurement-layers.test.mjs demo\\display-calibration.test.mjs: 2 pass, 0 fail"
+        ]
+      },
+      {
+        "claim_id": "6d94bbcdeaa5acff",
+        "claim_sha256": "6d94bbcdeaa5acff94f1323693e0e2d25dd4e305f0fc2c57a61c1b52c3b8cd6c",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "document-boundary-review",
+        "measured_at": 1782983727.1527364,
+        "evidence": [
+          "docs/outreach/THIRD-WAVE-CLOSED-LOOP-DEMO-2026-07-02.md includes Do Not Post boundaries",
+          "docs/outreach/THIRD-WAVE-CONTENT-QUEUE-2026-07-02.md requires command-backed posting",
+          "docs/outreach/PARALLEL-CODEX-HANDOFF-2026-07-02.md lists current boundaries",
+          "docs/TOOLING-SHAPE-ASSESSMENT-2026-07-02.md separates source-checkout evidence from PATH-installed evidence"
+        ]
+      }
+    ],
+    "seal": "50b0134e07987d1b1e05497a4e089d6c39d81ada09cc08f6c883b2cfae6385a0"
+  },
+  "verdicts": [
+    {
+      "claim_id": "a32a059c52f3370e",
+      "claim_sha256": "a32a059c52f3370e6645644928f3b095a207883de532258304a188e3a1dc9053",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "source-checkout-command-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "cc72066e154f0654",
+      "claim_sha256": "cc72066e154f0654a489c7c62fefe731deb87f8bd15040560fbfb4644daffa43",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "proof-packet-and-learning-receipt-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "10b84c31e891d376",
+      "claim_sha256": "10b84c31e891d376abe9686a8bc40d32e0b623e870aee7e40807cf93520a3049",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "source-checkout-command-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "4483b46bbb9b86c6",
+      "claim_sha256": "4483b46bbb9b86c69caff7a7d2d2cd9a169f1344dc8dfa9c2411e49624a06921",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "contract-and-test-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "6d94bbcdeaa5acff",
+      "claim_sha256": "6d94bbcdeaa5acff94f1323693e0e2d25dd4e305f0fc2c57a61c1b52c3b8cd6c",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "document-boundary-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    }
+  ],
+  "measurement_warnings": [],
+  "checks": {
+    "seals_ok": true,
+    "thesis_ok": true,
+    "verdicts_rederive": true
+  },
+  "report": "docs\\outreach\\receipts\\third-wave-tooling-report-2026-07-02.md",
+  "record": "docs\\outreach\\receipts\\third-wave-tooling-run-2026-07-02.json",
+  "bundle": null,
+  "spec": null,
+  "review": null,
+  "verifier": {
+    "mode": "cleanroom",
+    "inputs": [],
+    "excluded": [
+      "worker context",
+      "reasoning trace",
+      "intermediate steps"
+    ],
+    "checkability": "If success cannot be evaluated from the original spec and the artifact, the spec is not checkable yet."
+  }
+}

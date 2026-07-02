@@ -1,0 +1,35 @@
+{
+  "schema": "OpenTelemetrySpanExportFixture/v1",
+  "spans": [
+    {
+      "attributes": {
+        "telos.action_id": "act_dogfood_0024_001",
+        "telos.action_intent_id": "intent_dogfood_0024_001",
+        "telos.exporter_sink_hash": "f2e9f33d12e261457731f6eedbe62c3c6d04d574c2c8274870da4eee0c2c2fc0",
+        "telos.idempotency_key": "idem_dogfood_0024_001"
+      },
+      "context": {
+        "span_id": "1424d4ca9a6c5b58",
+        "trace_id": "aaa76491660d7a56086f69d1be94debe"
+      },
+      "end_time": "2026-07-01T12:03:00Z",
+      "events": [
+        {
+          "name": "action_proposed"
+        },
+        {
+          "name": "execution_completed"
+        },
+        {
+          "name": "verification_recorded"
+        }
+      ],
+      "links": [],
+      "name": "telos.action.receipt.fixture",
+      "parent_id": null,
+      "schema": "OpenTelemetrySpanLike/v1",
+      "start_time": "2026-07-01T12:00:00Z",
+      "status": "OK"
+    }
+  ]
+}

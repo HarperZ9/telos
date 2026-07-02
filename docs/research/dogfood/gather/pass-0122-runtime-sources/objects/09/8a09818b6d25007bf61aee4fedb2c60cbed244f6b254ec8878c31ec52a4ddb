@@ -1,0 +1,209 @@
+Skip to main content
+XLA
+Installation/Usage
+Documentation
+Source Code
+StableHLO
+Documentation
+Source Code
+Shardy
+Documentation
+Source Code
+PJRT
+Documentation
+Source Code
+XProf
+Documentation
+Source Code
+Tokamax
+Documentation
+Source Code
+Community
+AI Systems DevLabs Summer 2026
+Events & Recordings
+Community Meetings
+OpenXLA Discuss
+Discord
+Industry Partners
+Contact
+/
+English
+Deutsch
+Español – América Latina
+Français
+Indonesia
+Italiano
+Polski
+Português – Brasil
+Tiếng Việt
+Türkçe
+Русский
+עברית
+العربيّة
+فارسی
+हिंदी
+বাংলা
+ภาษาไทย
+中文 – 简体
+中文 – 繁體
+日本語
+한국어
+Sign in
+StableHLO
+XLA
+More
+StableHLO
+More
+Shardy
+More
+PJRT
+More
+XProf
+More
+Tokamax
+More
+Community
+More
+Industry Partners
+Contact
+StableHLO developer guide
+Getting started
+Overview and build instructions
+Specification
+Compatibility guarantees
+Dynamism support
+Reference interpreter
+Roadmap
+Awesome OpenXLA
+Tutorials
+JAX Export to StableHLO
+PyTorch Export to StableHLO
+StableHLO Embed in SavedModel
+Contributing
+Governance
+Specification checklist
+Interpreter checklist
+Implementation status
+Developer details
+Bytecode format
+Type inference
+The CHLO dialect
+The VHLO dialect
+C++ Builder APIs
+StableHLO Builders
+CHLO Builders
+Func Builders
+IDE setup tips
+StableHLO Passes
+StableHLO Optimization Passes
+StableHLO Interpreter Passes
+StableHLO Linalg Passes
+StableHLO TOSA Passes
+Installation/Usage
+Documentation
+Source Code
+Documentation
+Source Code
+Documentation
+Source Code
+Documentation
+Source Code
+Documentation
+Source Code
+Documentation
+Source Code
+AI Systems DevLabs Summer 2026
+Events & Recordings
+Community Meetings
+OpenXLA Discuss
+Discord
+OpenXLA
+StableHLO
+Send feedback
+StableHLO
+Stay organized with collections
+Save and categorize content based on your preferences.
+StableHLO is an operation set for high-level operations (HLO) in machine
+learning (ML) models. Essentially, it's a portability layer between different
+ML frameworks and ML compilers: ML frameworks that produce StableHLO programs
+are compatible with ML compilers that consume StableHLO programs.
+Our goal is to simplify and accelerate ML development by creating more
+interoperability between various ML frameworks (such as TensorFlow, JAX and
+PyTorch) and ML compilers (such as XLA and IREE).
+Features & Getting Started
+The current release of StableHLO includes many notable features and milestones:
+Fully specified: the StableHLO Specification
+is defined for all ~100 ops with verifiers and type inference, as well as
+dynamism and quantization capabilities.
+Compatibility guarantees of 5yrs backward compatibility
+and 2yrs forward, allowing for long-term server / edge deployment and annual
+update cycles.
+Reference interpreter with static and dynamic op support,
+including C++ and Python APIs.
+Extensibility via composite ops and custom-calls to
+enable quick experimentation or for modelling vendor-specific operations.
+C++/Python APIs for core features and nightly dev-wheel files for
+easier onboarding.
+Colab tutorials to demonstrate Python APIs for extracting StableHLO
+from various frameworks, as well as other utility functions.
+Testdata suite of 3k test files including dynamic and
+quantized programs and gold results for vendor integration testing,
+forward / backward compatibility tests, and >90% code coverage.
+Program transformations for hardware independent program simplification,
+refining dynamically shaped programs using concrete input arguments,
+and conversions to upstream MLIR dialects like linalg or tosa.
+Community-driven with many ecosystem contributions for transformations,
+as well as RFCs for opset changes: New FP8 types,
+collective_broadcast, batched gather / scatter ops, hybrid quantization,
+interpreter APIs, CHLO decompositions, StableHLO simplification
+transformations, and more!
+Model developers looking to use StableHLO or XLA to compile your ML project,
+refer to the corresponding documentation for your ML framework:
+JAX
+PyTorch
+TensorFlow
+Compiler developers looking to integrate StableHLO, check out our getting
+started documentation on this site, including tutorials and developer details.
+See the community section of this page regarding any onboarding support,
+questions, or issues encountered!
+Build instructions
+See StableHLO on GitHub for build
+instructions.
+Community
+Building an amazing portability layer between ML frameworks and ML compilers
+requires collaboration across the whole ML industry, so we're happy to have
+your help on the StableHLO project.
+We're using GitHub issues / pull requests to organize development and
+openxla-discuss
+to have longer discussions. We also have a #stablehlo
+channel on the OpenXLA Discord server.
+Send feedback
+Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License, and code samples are licensed under the Apache 2.0 License. For details, see the Google Developers Site Policies. Java is a registered trademark of Oracle and/or its affiliates.
+Last updated 2024-12-03 UTC.
+Stay connected
+Twitter
+YouTube
+Terms
+Privacy
+Manage cookies
+English
+Deutsch
+Español – América Latina
+Français
+Indonesia
+Italiano
+Polski
+Português – Brasil
+Tiếng Việt
+Türkçe
+Русский
+עברית
+العربيّة
+فارسی
+हिंदी
+বাংলা
+ภาษาไทย
+中文 – 简体
+中文 – 繁體
+日本語
+한국어

@@ -1,0 +1,95 @@
+{
+  "schema": "DogfoodToolReceipts/v1",
+  "pass": "0068",
+  "generated_on": "2026-07-01",
+  "status": "MATCH_MULTITOOL_GROWTH_VECTOR_STEELMAN",
+  "index": {
+    "tool_version": "2.8.0",
+    "status": "MATCH",
+    "role": "structure-context"
+  },
+  "gather": {
+    "status": "MATCH",
+    "tool_version": "1.5.0",
+    "docs_packet": {
+      "path": "docs/research/dogfood/packets/078-multitool-growth-vector-steelman.md",
+      "sha256": "7c30bdfae495d5ba354b4dc79fff8bc97c649c8e8eb1e4de9b0a494473064ea1",
+      "seal": "e672f023f0e2fa2389e4902233931aa1abe72384ce5a256cb97297f7b411c965",
+      "verified": true,
+      "dropped": 0
+    }
+  },
+  "forum": {
+    "status": {
+      "entries": 17,
+      "checkpoint": "6c3f18bbb2062abc67161322883da81b5b3f16fa4108d57b5fd11950071d0f49"
+    },
+    "verify": {
+      "chain": true,
+      "deep": true
+    }
+  },
+  "crucible": {
+    "run_status": "MATCH",
+    "thesis_id": "b034bbf81f402467",
+    "thesis_seal": "b034bbf81f4024679eb9c94d287dd5883e7f2ed03a3d67ba9add50476a71cb98",
+    "assessment_seal": "b5fd6bf0026003a0efce1ed15833fc4cac8d3eb0ae769ed8e225483e8bbca662",
+    "claims": 8,
+    "match": 8,
+    "drift": 0,
+    "unverifiable": 0,
+    "registry_stats": {
+      "theses": 56,
+      "claims": 465,
+      "unique_claims": 458,
+      "assessments": 57,
+      "latest_assessments": 56,
+      "invalid_latest_assessments": 0,
+      "match": 465,
+      "drift": 0,
+      "unverifiable": 0
+    }
+  },
+  "telos": {
+    "compatibility_doctor": "MATCH",
+    "operator_doctor": "MATCH",
+    "mcp_freshness": "MATCH",
+    "tool_version": "0.1.0"
+  },
+  "shell": {
+    "commands": [
+      {
+        "command": "python docs\\research\\dogfood\\tools\\test_multitool_growth_vector_steelman.py",
+        "status": "MATCH"
+      },
+      {
+        "command": "python docs\\research\\dogfood\\tools\\probe_multitool_growth_vector_steelman.py",
+        "status": "MATCH"
+      },
+      {
+        "command": "python docs\\research\\dogfood\\tools\\validate_pass_0068_multitool_growth_vector_steelman.py",
+        "status": "MATCH"
+      },
+      {
+        "command": "crucible run docs\\research\\dogfood\\crucible\\pass-0068-thesis.json --measurements docs\\research\\dogfood\\crucible\\pass-0068-measurements.json --registry docs\\research\\dogfood\\crucible\\registry --report docs\\research\\dogfood\\crucible\\pass-0068-report.md --out docs\\research\\dogfood\\crucible\\pass-0068-run.json --json",
+        "status": "MATCH"
+      }
+    ],
+    "line_counts": {
+      "compose_multitool_growth_vector_steelman.py": 226,
+      "probe_multitool_growth_vector_steelman.py": 138,
+      "test_multitool_growth_vector_steelman.py": 39,
+      "validate_pass_0068_multitool_growth_vector_steelman.py": 83
+    },
+    "sha256": {
+      "compose_multitool_growth_vector_steelman.py": "abffd9633b630f72f083b20dbd0bc2ffe1688181100d2eefc725facecd26c1fb",
+      "probe_multitool_growth_vector_steelman.py": "78f30d6918a74251ef14576160cfd71f8973e84f61ae3b7af241c2c4803c8bb0",
+      "test_multitool_growth_vector_steelman.py": "678abbaa0b05db3140e7d50d19b58092538aa161a1853b979e53dbce56115010",
+      "validate_pass_0068_multitool_growth_vector_steelman.py": "be3f4a08974ef5b3b86dfbff6b0fa77eab3c32deb770122350cc1d2dcc62a0e1",
+      "multitool-growth-vector-steelman-pass-0068.json": "65744dd05f7296c8c85f27bff63fbb1436fd02fc4f2d5f50e3faa11b46b45cf8",
+      "078-multitool-growth-vector-steelman.md": "7c30bdfae495d5ba354b4dc79fff8bc97c649c8e8eb1e4de9b0a494473064ea1",
+      "pass-0068-multitool-growth-vector-steelman.md": "fcd4091de345edf3384d5b737a333e9ed27d563508101f2918e6d79bed5aaf61",
+      "pass-0068-run.json": "92468b07cfc15964d99ac806707522c71a074768b09de6ef5d2c5a39b112efa5"
+    }
+  }
+}

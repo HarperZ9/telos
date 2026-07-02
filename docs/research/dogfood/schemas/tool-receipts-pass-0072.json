@@ -1,0 +1,113 @@
+{
+  "schema": "DogfoodToolReceipts/v1",
+  "pass": "0072",
+  "generated_on": "2026-07-01",
+  "status": "MATCH_DOMAIN_FOCUS_ADAPTER_EXPERIMENT",
+  "index": {
+    "tool_version": "2.8.0",
+    "status": "MATCH",
+    "valid_focuses": [
+      "telos"
+    ],
+    "rejected_focus_count": 7,
+    "rejected_focuses": [
+      "docs/research/dogfood",
+      "buildc",
+      "buildlang",
+      "color",
+      "forum",
+      "gather",
+      "crucible"
+    ],
+    "growth_vector": "Add path/domain focus resolution over repo-root context envelopes."
+  },
+  "forum": {
+    "tool_version": "1.12.0",
+    "status": "MATCH",
+    "doctor_status": "MATCH",
+    "raw_escalations": 6,
+    "adapted_project_telos": 6,
+    "adapted_escalations": 0,
+    "average_project_telos_score_lift": 0.393939393939394,
+    "growth_vector": "Teach domain-focus vocabulary directly so BuildLang, color, AI4Science, agent ops, market recon, and quantum prompts do not require manual bridge wording."
+  },
+  "gather": {
+    "tool_version": "1.5.0",
+    "status": "MATCH",
+    "docs_packet": {
+      "path": "docs/research/dogfood/packets/082-domain-focus-adapter-experiment.md",
+      "sha256": "5cf28727160169d5147ad23b278dded219dbda640070caaba97e05d99785b518",
+      "seal": "cd254ea7a31e1b79d4d2d7613e433cfc425027892dcfd8c1d57297644f046f2a",
+      "verified": true,
+      "dropped": 0
+    },
+    "growth_vector": "Emit domain packet catalogs keyed by field, buyer, source family, and proof-demo stage."
+  },
+  "crucible": {
+    "tool_version": "1.1.0",
+    "status": "MATCH",
+    "run_status": "MATCH",
+    "thesis_id": "eb9fe6ecfc658f38",
+    "thesis_seal": "eb9fe6ecfc658f38e0ab1d61c6dac9935e789872ce58c8eb751be52ef676fc96",
+    "assessment_seal": "c1551300a0baab4dec1d13a26610dccd48856ed5b4a9be47b8e676917477e447",
+    "claims": 8,
+    "match": 8,
+    "drift": 0,
+    "unverifiable": 0,
+    "registry_stats": {
+      "theses": 60,
+      "claims": 497,
+      "unique_claims": 490,
+      "assessments": 61,
+      "latest_assessments": 60,
+      "invalid_latest_assessments": 0,
+      "match": 497,
+      "drift": 0,
+      "unverifiable": 0
+    },
+    "growth_vector": "Standardize route/focus negative fixtures as reusable promotion gates."
+  },
+  "telos": {
+    "mcp_context_schema": "project-telos.context-envelope/v1",
+    "mcp_manifest_schema": "project-telos.mcp-server-manifest/v1",
+    "status": "MATCH",
+    "growth_vector": "Define TelosDomainFocusEnvelope/v1 as the product join layer across source, context, route, verification, continuity, and action receipts."
+  },
+  "shell": {
+    "commands": [
+      {
+        "command": "python docs\\research\\dogfood\\tools\\test_domain_focus_adapter_experiment.py",
+        "status": "MATCH"
+      },
+      {
+        "command": "python docs\\research\\dogfood\\tools\\probe_domain_focus_adapter_experiment.py",
+        "status": "MATCH"
+      },
+      {
+        "command": "python docs\\research\\dogfood\\tools\\validate_pass_0072_domain_focus_adapter_experiment.py",
+        "status": "MATCH"
+      },
+      {
+        "command": "crucible run docs\\research\\dogfood\\crucible\\pass-0072-thesis.json --measurements docs\\research\\dogfood\\crucible\\pass-0072-measurements.json --registry docs\\research\\dogfood\\crucible\\registry --report docs\\research\\dogfood\\crucible\\pass-0072-report.md --out docs\\research\\dogfood\\crucible\\pass-0072-run.json --json",
+        "status": "MATCH"
+      }
+    ],
+    "line_counts": {
+      "compose_domain_focus_adapter_experiment.py": 237,
+      "probe_domain_focus_adapter_experiment.py": 110,
+      "test_domain_focus_adapter_experiment.py": 31,
+      "validate_pass_0072_domain_focus_adapter_experiment.py": 70
+    },
+    "sha256": {
+      "compose_domain_focus_adapter_experiment.py": "3732e7978f8c0f2c98108a0b5540734da9851690b921bc41111c93853e38b39b",
+      "probe_domain_focus_adapter_experiment.py": "73030d0118a2f91baa84cbfa1618e186c46fee8f7dc89aabf1451576e22ff835",
+      "test_domain_focus_adapter_experiment.py": "0ff5e206da0277f1aa7ff15d8999596757c2790bd48de1620d968b9e2f390153",
+      "validate_pass_0072_domain_focus_adapter_experiment.py": "bb2c8e0ec68c7b1ad4122884d02f3d73df7cd6355f6a075b04453679b04979ca",
+      "domain-focus-adapter-experiment-pass-0072.json": "5d77c5824d381de93ae49c2e64fdb4c03a372b0efe0e5841e3794956266a7d93",
+      "pass-0072-domain-focus-adapter-experiment-validator-result.json": "9471ba1aa747ed58487c4fffdd233115c8ce41b14116de22e6c2a8cde95a3d97",
+      "082-domain-focus-adapter-experiment.md": "5cf28727160169d5147ad23b278dded219dbda640070caaba97e05d99785b518",
+      "pass-0072-domain-focus-adapter-experiment-steelman.md": "79fe38c77bb291f2b665552ab65a2a6dc26aaf368c52d75cf6312f09080b8fef",
+      "pass-0072-run.json": "5e7bdf940d71906441ccc85cb0de55033f25cc8104dec219a2cd260312a44cb6"
+    }
+  }
+}

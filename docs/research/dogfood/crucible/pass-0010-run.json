@@ -1,0 +1,349 @@
+{
+  "ok": true,
+  "thesis": {
+    "id": "0ac7c2a7f7fe3d3f",
+    "title": "Dogfood Pass 0010 BuildLang Scientific Runtime Receipt Schema",
+    "registered_at": 1782901379.976505,
+    "disposition": "fenced",
+    "seal": "0ac7c2a7f7fe3d3f24b1f709396ed4f1c18b8a1c5dec0b8e5683a552360d7d4a",
+    "claims": [
+      {
+        "id": "6f539e58fdc7752c",
+        "sha256": "6f539e58fdc7752cfdcc7e95fe73610e1be06e045874d14420a242072dc77e85"
+      },
+      {
+        "id": "f7df342b2fbfecb9",
+        "sha256": "f7df342b2fbfecb948752bd9519155c6dd949193b908fe88bd425fd55bee3579"
+      },
+      {
+        "id": "74f79cfe60d79a14",
+        "sha256": "74f79cfe60d79a1445c3ae84ce3bebb3906075db654eabd722cb1751e0cb3341"
+      },
+      {
+        "id": "dbdf084806228fe4",
+        "sha256": "dbdf084806228fe4d5299ebf7927d8424b21d8868a192602540329d1246cce04"
+      },
+      {
+        "id": "16c15ef52af16d81",
+        "sha256": "16c15ef52af16d812b1b475354740b81c0aef00212898a9441cbddaf91cbba49"
+      },
+      {
+        "id": "94eb7048e0f16481",
+        "sha256": "94eb7048e0f16481dd507e806c9005d163858f5200a05385e76017b26aad741c"
+      }
+    ]
+  },
+  "refutations": [
+    {
+      "claim_id": "6f539e58fdc7752c",
+      "claim_sha256": "6f539e58fdc7752cfdcc7e95fe73610e1be06e045874d14420a242072dc77e85",
+      "challenge": "test the stated falsification: schemas/buildlang-scientific-runtime-receipt-schema-pass-0010.json is missing, has the wrong schema id, lacks any required receipt field, or omits any required verification layer",
+      "measurable": "schemas/buildlang-scientific-runtime-receipt-schema-pass-0010.json is missing, has the wrong schema id, lacks any required receipt field, or omits any required verification layer",
+      "source": "null"
+    },
+    {
+      "claim_id": "f7df342b2fbfecb9",
+      "claim_sha256": "f7df342b2fbfecb948752bd9519155c6dd949193b908fe88bd425fd55bee3579",
+      "challenge": "test the stated falsification: schemas/buildlang-scientific-runtime-receipts-pass-0010.json is missing, has fewer than two receipts, lacks primary_positive or negative_fixture roles, lacks PASS or FAIL_EXPECTED status, or labels a negative fixture as a normal pass",
+      "measurable": "schemas/buildlang-scientific-runtime-receipts-pass-0010.json is missing, has fewer than two receipts, lacks primary_positive or negative_fixture roles, lacks PASS or FAIL_EXPECTED status, or labels a negative fixture as a normal pass",
+      "source": "null"
+    },
+    {
+      "claim_id": "74f79cfe60d79a14",
+      "claim_sha256": "74f79cfe60d79a1445c3ae84ce3bebb3906075db654eabd722cb1751e0cb3341",
+      "challenge": "test the stated falsification: any pass 0010 receipt lacks a required substate, lacks failure labels, lacks verifier state, or implies that buildc executed the kernel in this pass",
+      "measurable": "any pass 0010 receipt lacks a required substate, lacks failure labels, lacks verifier state, or implies that buildc executed the kernel in this pass",
+      "source": "null"
+    },
+    {
+      "claim_id": "dbdf084806228fe4",
+      "claim_sha256": "dbdf084806228fe4d5299ebf7927d8424b21d8868a192602540329d1246cce04",
+      "challenge": "test the stated falsification: schemas/pass-0010-scientific-runtime-validator-result.json is missing, reports non-MATCH status, reports fewer than two matches, or reports drift above zero",
+      "measurable": "schemas/pass-0010-scientific-runtime-validator-result.json is missing, reports non-MATCH status, reports fewer than two matches, or reports drift above zero",
+      "source": "null"
+    },
+    {
+      "claim_id": "16c15ef52af16d81",
+      "claim_sha256": "16c15ef52af16d812b1b475354740b81c0aef00212898a9441cbddaf91cbba49",
+      "challenge": "test the stated falsification: packets/020-buildlang-scientific-runtime-receipts.md does not describe the buildc adapter target or the schema artifact omits the receipt layers needed for that target",
+      "measurable": "packets/020-buildlang-scientific-runtime-receipts.md does not describe the buildc adapter target or the schema artifact omits the receipt layers needed for that target",
+      "source": "null"
+    },
+    {
+      "claim_id": "94eb7048e0f16481",
+      "claim_sha256": "94eb7048e0f16481dd507e806c9005d163858f5200a05385e76017b26aad741c",
+      "challenge": "test the stated falsification: any pass 0010 artifact labels a new physical law, theorem breakthrough, biological result, material result, medical result, finance result, or safety result as promoted",
+      "measurable": "any pass 0010 artifact labels a new physical law, theorem breakthrough, biological result, material result, medical result, finance result, or safety result as promoted",
+      "source": "null"
+    }
+  ],
+  "assessment": {
+    "started_at": 1782901379.9835448,
+    "thesis_id": "0ac7c2a7f7fe3d3f",
+    "thesis_seal": "0ac7c2a7f7fe3d3f24b1f709396ed4f1c18b8a1c5dec0b8e5683a552360d7d4a",
+    "claims": 6,
+    "match": 6,
+    "drift": 0,
+    "unverifiable": 0,
+    "verdict_seal": "f2d3a9de396a7ddea75f1220bb68b0cb80c8c340f8757ef2a454870514732bf5",
+    "measurement_seal": "412a6eaafee4cfaae94fa72353624d5f813771f84262b12d776980bbf1cc8f7a",
+    "disposition": "fenced",
+    "stored": null,
+    "verdicts": [
+      {
+        "claim_id": "6f539e58fdc7752c",
+        "claim_sha256": "6f539e58fdc7752cfdcc7e95fe73610e1be06e045874d14420a242072dc77e85",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "schema-structure-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "f7df342b2fbfecb9",
+        "claim_sha256": "f7df342b2fbfecb948752bd9519155c6dd949193b908fe88bd425fd55bee3579",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "receipt-set-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "74f79cfe60d79a14",
+        "claim_sha256": "74f79cfe60d79a1445c3ae84ce3bebb3906075db654eabd722cb1751e0cb3341",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "receipt-field-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "dbdf084806228fe4",
+        "claim_sha256": "dbdf084806228fe4d5299ebf7927d8424b21d8868a192602540329d1246cce04",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "validator-run-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "16c15ef52af16d81",
+        "claim_sha256": "16c15ef52af16d812b1b475354740b81c0aef00212898a9441cbddaf91cbba49",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "adapter-target-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "94eb7048e0f16481",
+        "claim_sha256": "94eb7048e0f16481dd507e806c9005d163858f5200a05385e76017b26aad741c",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "artifact-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      }
+    ],
+    "measurements": [
+      {
+        "claim_id": "6f539e58fdc7752c",
+        "claim_sha256": "6f539e58fdc7752cfdcc7e95fe73610e1be06e045874d14420a242072dc77e85",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "schema-structure-review",
+        "measured_at": 1782901379.9832,
+        "evidence": [
+          "schemas/buildlang-scientific-runtime-receipt-schema-pass-0010.json schema=BuildScientificRuntimeReceiptSchema/v1",
+          "required_receipt_fields count=16",
+          "verification layer source present",
+          "verification layer build present",
+          "verification layer runtime present",
+          "verification layer problem present",
+          "verification layer measurement present",
+          "verification layer invariant present",
+          "verification layer external_verdict present"
+        ]
+      },
+      {
+        "claim_id": "f7df342b2fbfecb9",
+        "claim_sha256": "f7df342b2fbfecb948752bd9519155c6dd949193b908fe88bd425fd55bee3579",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "receipt-set-review",
+        "measured_at": 1782901379.9832118,
+        "evidence": [
+          "schemas/buildlang-scientific-runtime-receipts-pass-0010.json schema=BuildScientificRuntimeReceiptSet/v1",
+          "receipt_count=2",
+          "roles include primary_positive",
+          "roles include negative_fixture",
+          "statuses include PASS",
+          "statuses include FAIL_EXPECTED",
+          "negative fixture receipt negative_fixture=true and receipt_status=FAIL_EXPECTED"
+        ]
+      },
+      {
+        "claim_id": "74f79cfe60d79a14",
+        "claim_sha256": "74f79cfe60d79a1445c3ae84ce3bebb3906075db654eabd722cb1751e0cb3341",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "receipt-field-review",
+        "measured_at": 1782901379.9832163,
+        "evidence": [
+          "validator required fields include source_state, build_state, runtime_state, problem_state, measurement_state, invariant_checks, failure_labels, and verification_verdicts",
+          "both receipts include build_state.compiler=buildc",
+          "both receipts include build_state.compiler_status=ADAPTER_FIXTURE_NOT_BUILDC_EXECUTED",
+          "both receipts include failure label BUILDC_NOT_EXECUTED_IN_THIS_PASS",
+          "packets/020-buildlang-scientific-runtime-receipts.md says status is schema fixture, not a compiled buildc execution"
+        ]
+      },
+      {
+        "claim_id": "dbdf084806228fe4",
+        "claim_sha256": "dbdf084806228fe4d5299ebf7927d8424b21d8868a192602540329d1246cce04",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "validator-run-review",
+        "measured_at": 1782901379.9832196,
+        "evidence": [
+          "schemas/pass-0010-scientific-runtime-validator-result.json status=MATCH",
+          "match=2",
+          "drift=0",
+          "checks include BuildScientificRuntimeReceiptSchema",
+          "checks include BuildScientificRuntimeReceiptSet"
+        ]
+      },
+      {
+        "claim_id": "16c15ef52af16d81",
+        "claim_sha256": "16c15ef52af16d812b1b475354740b81c0aef00212898a9441cbddaf91cbba49",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "adapter-target-review",
+        "measured_at": 1782901379.983223,
+        "evidence": [
+          "packets/020-buildlang-scientific-runtime-receipts.md BuildLang/buildc Implication lists compile kernel",
+          "packet lists seal source and build inputs",
+          "packet lists execute deterministic fixture",
+          "packet lists compute invariant checks",
+          "packet lists preserve expected failures",
+          "packet lists export a proof-packet-compatible JSON receipt",
+          "packet lists run Crucible or another verifier against the receipt"
+        ]
+      },
+      {
+        "claim_id": "94eb7048e0f16481",
+        "claim_sha256": "94eb7048e0f16481dd507e806c9005d163858f5200a05385e76017b26aad741c",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "artifact-review",
+        "measured_at": 1782901379.9832263,
+        "evidence": [
+          "packets/020-buildlang-scientific-runtime-receipts.md Non-Promotion Statement promotes no discovery",
+          "schemas/buildlang-scientific-runtime-receipts-pass-0010.json promotion_state=SCHEMA_FIXTURE for both receipts",
+          "schemas/buildlang-scientific-runtime-receipt-schema-pass-0010.json non_promotion_policy new_natural_law_claims_allowed=false",
+          "both receipts include NOT_A_NEW_PHYSICAL_LAW"
+        ]
+      }
+    ],
+    "seal": "5db233398f8117a97a57d27566d91d2dd9900aae1648af919091124295d9ae8b"
+  },
+  "verdicts": [
+    {
+      "claim_id": "6f539e58fdc7752c",
+      "claim_sha256": "6f539e58fdc7752cfdcc7e95fe73610e1be06e045874d14420a242072dc77e85",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "schema-structure-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "f7df342b2fbfecb9",
+      "claim_sha256": "f7df342b2fbfecb948752bd9519155c6dd949193b908fe88bd425fd55bee3579",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "receipt-set-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "74f79cfe60d79a14",
+      "claim_sha256": "74f79cfe60d79a1445c3ae84ce3bebb3906075db654eabd722cb1751e0cb3341",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "receipt-field-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "dbdf084806228fe4",
+      "claim_sha256": "dbdf084806228fe4d5299ebf7927d8424b21d8868a192602540329d1246cce04",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "validator-run-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "16c15ef52af16d81",
+      "claim_sha256": "16c15ef52af16d812b1b475354740b81c0aef00212898a9441cbddaf91cbba49",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "adapter-target-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "94eb7048e0f16481",
+      "claim_sha256": "94eb7048e0f16481dd507e806c9005d163858f5200a05385e76017b26aad741c",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "artifact-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    }
+  ],
+  "checks": {
+    "seals_ok": true,
+    "thesis_ok": true,
+    "verdicts_rederive": true
+  },
+  "report": "C:\\dev\\public\\telos\\docs\\research\\dogfood\\crucible\\pass-0010-report.md",
+  "record": "C:\\dev\\public\\telos\\docs\\research\\dogfood\\crucible\\pass-0010-run.json",
+  "bundle": null,
+  "spec": null,
+  "review": null,
+  "verifier": {
+    "mode": "cleanroom",
+    "inputs": [],
+    "excluded": [
+      "worker context",
+      "reasoning trace",
+      "intermediate steps"
+    ],
+    "checkability": "If success cannot be evaluated from the original spec and the artifact, the spec is not checkable yet."
+  }
+}

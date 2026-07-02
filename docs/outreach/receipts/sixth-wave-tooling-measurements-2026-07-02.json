@@ -1,0 +1,62 @@
+{
+  "measurements": [
+    {
+      "claim": "The sixth-wave live GitHub scout produced a project-telos.oss-scout/v1 packet with status MATCH and three candidates.",
+      "method": "live-scout-command-review",
+      "evidence": [
+        "docs/outreach/receipts/sixth-wave/oss-showcase-live-scout/scout.json has schema project-telos.oss-scout/v1",
+        "live scout status is MATCH",
+        "live scout candidate count is 3"
+      ],
+      "deviation": 0.0,
+      "tolerance": 0.5
+    },
+    {
+      "claim": "The top live scout candidate is pandas-dev/pandas#63458 with priority 60 and updated_at 2026-06-27T23:25:33Z.",
+      "method": "top-candidate-command-review",
+      "evidence": [
+        "docs/outreach/receipts/sixth-wave/oss-showcase-live-top-candidate.json repository is pandas-dev/pandas",
+        "top candidate issue number is 63458",
+        "top candidate priority is 60",
+        "top candidate updated_at is 2026-06-27T23:25:33Z"
+      ],
+      "deviation": 0.0,
+      "tolerance": 0.5
+    },
+    {
+      "claim": "The live top-candidate readiness packet is blocked with pr_ready false, operator_next_action revise, verdict UNVERIFIABLE, and missing-evidence blockers.",
+      "method": "blocked-live-packet-command-review",
+      "evidence": [
+        "docs/outreach/receipts/sixth-wave/oss-showcase-live-blocked-packet.json has schema project-telos.oss-pr-readiness/v1",
+        "blocked live packet pr_ready is false",
+        "blocked live packet operator_next_action is revise",
+        "blocked live packet verdict is UNVERIFIABLE",
+        "blocked live packet blockers include missing reproduction command, missing passing test evidence, crucible verdict is not MATCH, and missing patch summary"
+      ],
+      "deviation": 0.0,
+      "tolerance": 0.5
+    },
+    {
+      "claim": "The sixth-wave demo document distinguishes live GitHub intake from code inspection, test execution, maintainer contact, and PR readiness.",
+      "method": "document-boundary-review",
+      "evidence": [
+        "docs/outreach/SIXTH-WAVE-LIVE-OSS-SCOUT-2026-07-02.md states the live scout does not clone pandas, inspect source, run tests, or contact maintainers",
+        "same doc states the blocked packet is the desired current state because live intake has not become PR-ready",
+        "Do Not Post section says not to claim a fix, ease, maintainer interest, or PR readiness"
+      ],
+      "deviation": 0.0,
+      "tolerance": 0.5
+    },
+    {
+      "claim": "The sixth-wave content queue packages the live scout, the blocked packet, and the next local reproduction step for the parallel posting session.",
+      "method": "document-review",
+      "evidence": [
+        "Post 35 cites the live scout",
+        "Post 36 cites the top candidate, blocked evidence, and blocked packet",
+        "Operating rule says the next useful demo is a local reproduction packet, not a public upstream claim"
+      ],
+      "deviation": 0.0,
+      "tolerance": 0.5
+    }
+  ]
+}

@@ -1,0 +1,134 @@
+{
+  "generated_on": "2026-07-01",
+  "non_promotion_statement": "Tool receipts prove packet readback, competitor matrix validator MATCH, 45 live source anchors, Telos/Index/Gather/Forum/Crucible availability, and hypothesis-only uniqueness boundaries. They do not prove product-market fit, uniqueness as fact, buyer adoption, scientific truth, or any natural law.",
+  "pass": "0048",
+  "receipts": [
+    {
+      "command": "map --root docs/research/dogfood --json",
+      "dirty_count": 0,
+      "repo_count": 0,
+      "root_sha256_prefix": "f2f0af39219698a9",
+      "schema_version": 1,
+      "status": "MATCH",
+      "tool": "index",
+      "tool_version": "2.8.0",
+      "top_level_count": 57
+    },
+    {
+      "command": "index_context_envelope",
+      "graph_pack_sha256": "8ee383e19ae9a6141bee70de733fb6aa09201ff9d284ce6778ce58b06e6b68b2",
+      "privacy_source_refs_only": true,
+      "schema": "project-telos.context-envelope/v1",
+      "status": "MATCH",
+      "tool": "mcp__index.index_context_envelope",
+      "verification_verdict": "MATCH"
+    },
+    {
+      "artifact": "packets/058-competitor-proof-gap-matrix.md",
+      "chars": 4235,
+      "command": "docs",
+      "seal": "6d199fe1ec6703412300dcee12d3e551cd21e18c05746b1ef2be44c25e7e0e3a",
+      "sha256": "7495cc2b341c98afbdaff9b4999a352b4546f1a2dd12b8d09c48cfe9ec835b42",
+      "status": "MATCH",
+      "tool": "gather",
+      "verified": true
+    },
+    {
+      "command": "probe_competitor_proof_gap_matrix.py",
+      "gap_status_counts": {
+        "inferred": 43,
+        "verified": 2
+      },
+      "line_count": 282,
+      "market_row_count": 45,
+      "schema": "CompetitorProofGapMatrixSet/v1",
+      "seal": "9e64ca4adde189e2d8da66152c8b0fefaa7664b49fc12ec5dd743342b9910274",
+      "source_match_count": 45,
+      "status": "COMPETITOR_PROOF_GAP_MATRIX_MATCH",
+      "tool": "python",
+      "track_counts": {
+        "ai_infra_agent_ops": 15,
+        "research_ai4science": 15,
+        "visual_compiler_compute": 15
+      },
+      "uniqueness_claim_status": "HYPOTHESIS_ONLY"
+    },
+    {
+      "command": "validate_pass_0048_competitor_proof_gap_matrix.py",
+      "drift": 0,
+      "line_count": 102,
+      "market_row_count": 45,
+      "match": 1,
+      "schema": "Pass0048CompetitorProofGapMatrixValidatorRun/v1",
+      "source_match_count": 45,
+      "status": "MATCH",
+      "tool": "python"
+    },
+    {
+      "aggregate_verdict": "MATCH",
+      "check_count": 14,
+      "command": "telos_operator_doctor",
+      "passed_count": 14,
+      "status": "MATCH",
+      "telos_tool_count": 37,
+      "tool": "mcp__telos.telos_operator_doctor",
+      "tool_count": 65
+    },
+    {
+      "candidates": [
+        {
+          "agent": "code-review",
+          "score": 0.2
+        },
+        {
+          "agent": "deep-research",
+          "score": 0.2
+        },
+        {
+          "agent": "project-telos",
+          "score": 0.045454545454545456
+        }
+      ],
+      "command": "route",
+      "confidence": 0.0,
+      "decided": null,
+      "needs_escalation": true,
+      "status": "MATCH",
+      "tool": "forum"
+    },
+    {
+      "chain": true,
+      "command": "ledger verify",
+      "deep": true,
+      "status": "MATCH",
+      "tool": "forum"
+    },
+    {
+      "command": "submit",
+      "error": "submit needs a model executor. Forum is model-agnostic: pass --cmd \"<model cli>\" (any command, local models need no account), --chat-url <openai-compatible url> (e.g. a local Ollama server), or --api (Anthropic).",
+      "request": "Dogfood pass 0048 adversarial review for 45-row competitor proof-gap matrix",
+      "status": "UNVERIFIABLE",
+      "tool": "forum"
+    },
+    {
+      "assessment_seal": "f2bdae0224ef5b16a30e7af0168659af0f02404f029b2a6ab606d7d80e12e9f6",
+      "claims": 8,
+      "command": "run",
+      "drift": 0,
+      "match": 8,
+      "measurement_seal": "3942a750c008ee9ea0b9fdbc0822a2158efe67ae10f4841fa74760e6b70fa37f",
+      "run_sha256": "736b2fdbed300c373c0423f9a5bd70e0a7788ea3472d7ca9f1909ca85aa2d890",
+      "seals_ok": true,
+      "status": "MATCH",
+      "thesis_id": "798b96bc79af9c1a",
+      "thesis_ok": true,
+      "thesis_seal": "798b96bc79af9c1adb9434b487e6664bf8dc81ddf402f235de314749decafa22",
+      "tool": "crucible",
+      "unverifiable": 0,
+      "verdict_seal": "563c6837eba84b790cf290b13bb01a58ba0f91505ac9c40c28dec97297f75fe5",
+      "verdicts_rederive": true
+    }
+  ],
+  "schema": "DogfoodToolReceiptSet/v1",
+  "status": "MATCH_WITH_FORUM_SUBMIT_GAP_AND_HYPOTHESIS_ONLY_UNIQUENESS"
+}

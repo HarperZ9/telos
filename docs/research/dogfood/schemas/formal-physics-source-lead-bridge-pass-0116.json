@@ -1,0 +1,391 @@
+{
+  "bridge_cases": [
+    {
+      "case_id": "category_set_identity_associativity",
+      "checks": {
+        "associativity": true,
+        "left_identity": true,
+        "right_identity": true
+      },
+      "domain": "formal_math_category_theory_toy",
+      "negative_fixture": {
+        "bad_identity": {
+          "b0": "b1",
+          "b1": "b0"
+        },
+        "classification": "BAD_IDENTITY_DRIFT"
+      },
+      "status": "MATCH",
+      "witness": {
+        "composite": {
+          "a0": "d1",
+          "a1": "d0"
+        },
+        "f": {
+          "a0": "b0",
+          "a1": "b1"
+        },
+        "g": {
+          "b0": "c1",
+          "b1": "c0"
+        },
+        "h": {
+          "c0": "d0",
+          "c1": "d1"
+        }
+      }
+    },
+    {
+      "amplitudes": {
+        "q0": "3/5",
+        "q1": "4/5"
+      },
+      "case_id": "born_rule_normalization_toy",
+      "domain": "quantum_foundations_toy",
+      "negative_fixture": {
+        "amplitudes": {
+          "q0": "1",
+          "q1": "1"
+        },
+        "classification": "NON_NORMALIZED_STATE_REJECTED",
+        "probability_sum": "2"
+      },
+      "probabilities": {
+        "q0": "9/25",
+        "q1": "16/25"
+      },
+      "probability_sum": "1",
+      "status": "MATCH"
+    },
+    {
+      "case_id": "counterexample_revision_toy",
+      "counterexamples": [
+        -2,
+        -1,
+        0
+      ],
+      "domain": "theoretical_cs_counterexample_toy",
+      "initial_claim": "Every sampled integer is positive.",
+      "initial_claim_status": "REFUTED_BY_COUNTEREXAMPLE",
+      "revised_claim": "Every sampled integer has nonnegative square.",
+      "revised_claim_status": "MATCH",
+      "sample_domain": [
+        -2,
+        -1,
+        0,
+        1,
+        2
+      ],
+      "status": "MATCH"
+    },
+    {
+      "attempt_count": 2,
+      "attempts": [
+        {
+          "answer": "5",
+          "attempt": 1,
+          "receipt": "arithmetic-counterexample:2+2!=5",
+          "receipt_sha256": "028cb99ec23cdf77f1e6e2070a4268e2e091105ad2bf28de7f550ea4e25085e2",
+          "verifier": "DRIFT"
+        },
+        {
+          "answer": "4",
+          "attempt": 2,
+          "receipt": "arithmetic-match:2+2=4",
+          "receipt_sha256": "ad881ae7d0d53d3b6083cfd5c55a24c805f4f67647a184f21fc5ec29dadaef15",
+          "verifier": "MATCH"
+        }
+      ],
+      "case_id": "loop_replay_receipt_toy",
+      "domain": "agent_loop_replay_toy",
+      "external_verifier": "integer-arithmetic-equality",
+      "final_status": "MATCH",
+      "reasoning_trace_exposed": false,
+      "status": "MATCH"
+    }
+  ],
+  "current_promoted_natural_laws": [],
+  "flagship_receipts": {
+    "forum": {
+      "confidence": 0.0,
+      "decided": null,
+      "exit_code": 0,
+      "needs_escalation": true,
+      "status": "MATCH",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "4fe3841632e2f93c96084b52acb57b2c0fa681cb74375a1b20d42389ca51dde2",
+      "top_candidates": [
+        {
+          "agent": "backend",
+          "score": 0.0
+        },
+        {
+          "agent": "ci-cd",
+          "score": 0.0
+        },
+        {
+          "agent": "cloud-infra",
+          "score": 0.0
+        },
+        {
+          "agent": "code-review",
+          "score": 0.0
+        },
+        {
+          "agent": "compiler-systems",
+          "score": 0.0
+        }
+      ]
+    },
+    "index": {
+      "exit_code": 0,
+      "schema": "project-telos.context-envelope/v1",
+      "status": "MATCH",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "f896c56f58593508b72cb4a7a0a762790a739e4a7aa8aa88fc03660bc28f0431",
+      "verification_verdict": "MATCH"
+    },
+    "telos": {
+      "exit_code": 0,
+      "status": "MATCH",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "be17cb15259234cb4e8e95c2b36e76c90d841431729beb140294e34c5f9ebfa7",
+      "tool": "telos",
+      "tool_version": "0.1.0"
+    }
+  },
+  "generated_on": "2026-07-01",
+  "measurements": [
+    {
+      "id": "category_set_identity_associativity",
+      "status": "MATCH"
+    },
+    {
+      "id": "born_rule_normalization_toy",
+      "status": "MATCH"
+    },
+    {
+      "id": "counterexample_revision_toy",
+      "status": "MATCH"
+    },
+    {
+      "id": "loop_replay_receipt_toy",
+      "status": "MATCH"
+    },
+    {
+      "id": "promotion_boundary",
+      "status": "MATCH"
+    }
+  ],
+  "new_youtube_source_leads": [
+    {
+      "claim_status": "SOURCE_LEAD_ONLY",
+      "digest_seal": "2ec1fc0cac70edd22d6942b71b76cd9600ca3fd6a6ab9901d6d046e66e03ba27",
+      "metadata_method": "yt-dlp",
+      "metadata_sha256": "be5751851152a31048551f45068d7d9c298c290e0145648e5632e37f4b44652c",
+      "raw_transcript_included": false,
+      "receipt_count": 2,
+      "semantic_gap_status": "inferred",
+      "source_status": "GATHER_VERIFIED_RECEIPT",
+      "start_seconds": 0,
+      "store_path": "gather/pass-0115-youtube-leads/gather-HbKzqvey5PA.json",
+      "title": "The Born rule is Entropy",
+      "topic_hypothesis": "quantum_foundations_born_rule_entropy",
+      "transcript_chars": 13254,
+      "transcript_method": "auto-caption",
+      "transcript_sha256": "26fcba7763c4467d1b3aa5d327ce4100a160b6f8c3e349b1a992cbbda52c5f70",
+      "url": "https://www.youtube.com/watch?v=HbKzqvey5PA",
+      "verified": true,
+      "video_id": "HbKzqvey5PA"
+    },
+    {
+      "claim_status": "SOURCE_LEAD_ONLY",
+      "digest_seal": "48fea33b0f7b7510ab290fa91665e1441d62fd583247f081a22d9f2fe5c0374b",
+      "metadata_method": "yt-dlp",
+      "metadata_sha256": "4c5a5336dd7591e9bf94b0898f93722a4f3df0c6801106f40d450f1bf1feb2ba",
+      "raw_transcript_included": false,
+      "receipt_count": 2,
+      "semantic_gap_status": "inferred",
+      "source_status": "GATHER_VERIFIED_RECEIPT",
+      "start_seconds": 0,
+      "store_path": "gather/pass-0115-youtube-leads/gather-4MQbd5wTlI8.json",
+      "title": "Emily Riehl - Higher Category Theory, Homotopy & AI in Math | aboutlogic #15",
+      "topic_hypothesis": "higher_category_theory_homotopy_ai_math",
+      "transcript_chars": 55388,
+      "transcript_method": "auto-caption",
+      "transcript_sha256": "4ed1cf2ac702f78e9b8d2e052015a72e38d321906651745c2d8a0f485911542d",
+      "url": "https://www.youtube.com/watch?v=4MQbd5wTlI8",
+      "verified": true,
+      "video_id": "4MQbd5wTlI8"
+    },
+    {
+      "claim_status": "SOURCE_LEAD_ONLY",
+      "digest_seal": "1798c8b44d88ad7ea25140a2db5ff239a33892f5eec6b9d2dfc85689960d0370",
+      "metadata_method": "yt-dlp",
+      "metadata_sha256": "1a0979ac83189638f692c6be99a15a204f4ca8c6afa272ec368de5a057266846",
+      "raw_transcript_included": false,
+      "receipt_count": 2,
+      "semantic_gap_status": "inferred",
+      "source_status": "GATHER_VERIFIED_RECEIPT",
+      "start_seconds": 337,
+      "store_path": "gather/pass-0115-youtube-leads/gather-EdVG5qNm2rY.json",
+      "title": "21 Yr Old Disproves 4 Decades Old Belief in Computing",
+      "topic_hypothesis": "theoretical_cs_belief_revision",
+      "transcript_chars": 16009,
+      "transcript_method": "yt-dlp",
+      "transcript_sha256": "304feec6cab459937db1d38aa87abcbda3979a176799cbf6c3724e55a2fb29cf",
+      "url": "https://www.youtube.com/watch?v=EdVG5qNm2rY&t=337s",
+      "verified": true,
+      "video_id": "EdVG5qNm2rY"
+    },
+    {
+      "claim_status": "SOURCE_LEAD_ONLY",
+      "digest_seal": "c6577ea567d92846957d9c0c20893e484c4d0d196622ff025b41fecd85578ee5",
+      "metadata_method": "yt-dlp",
+      "metadata_sha256": "944549e6a866e419bf9420b9934b7bde74a2ace7e22c4f3b01cc5039709fc2cd",
+      "raw_transcript_included": false,
+      "receipt_count": 2,
+      "semantic_gap_status": "inferred",
+      "source_status": "GATHER_VERIFIED_RECEIPT",
+      "start_seconds": 0,
+      "store_path": "gather/pass-0115-youtube-leads/gather-nYwid6Q5HXk.json",
+      "title": "LLM that loops instead of Doing Chain-of-Thought",
+      "topic_hypothesis": "looped_llm_reasoning_architecture",
+      "transcript_chars": 22750,
+      "transcript_method": "auto-caption",
+      "transcript_sha256": "671d1d47e04306c223ff504d0503bc7895f3e364ab0f58f2c6a8b42ba9e2a5eb",
+      "url": "https://www.youtube.com/watch?v=nYwid6Q5HXk",
+      "verified": true,
+      "video_id": "nYwid6Q5HXk"
+    }
+  ],
+  "non_promotion_statement": "This pass proves only bounded toy identities and receipt requirements. It does not settle category theory, quantum interpretation, theoretical CS, or agent reasoning research.",
+  "pass": "0116",
+  "roadmap_requirements": [
+    {
+      "claim_status": "HYPOTHESIS",
+      "requirement": "formal packet must carry notation system, theorem prover target, and proof-object or countermodel slot",
+      "title": "Emily Riehl - Higher Category Theory, Homotopy & AI in Math | aboutlogic #15",
+      "video_id": "4MQbd5wTlI8"
+    },
+    {
+      "claim_status": "HYPOTHESIS",
+      "requirement": "physics packet must separate normalized-state arithmetic from interpretive Born-rule claims",
+      "title": "The Born rule is Entropy",
+      "video_id": "HbKzqvey5PA"
+    },
+    {
+      "claim_status": "HYPOTHESIS",
+      "requirement": "research packet must keep initial claim, counterexample, revised claim, and bounded domain explicit",
+      "title": "21 Yr Old Disproves 4 Decades Old Belief in Computing",
+      "video_id": "EdVG5qNm2rY"
+    },
+    {
+      "claim_status": "HYPOTHESIS",
+      "requirement": "agent packet must carry loop attempts, external verifier verdicts, and action receipts without exposing hidden reasoning",
+      "title": "LLM that loops instead of Doing Chain-of-Thought",
+      "video_id": "nYwid6Q5HXk"
+    }
+  ],
+  "schema": "FormalPhysicsSourceLeadBridgeReceipt/v1",
+  "seal": "fec934e33f768d3138b79edf680926123886199ce2fca4a3103e6b992366f29e",
+  "source_bindings": {
+    "new_youtube_lead_count": 4,
+    "solver_replay_pass": "0115",
+    "youtube_roadmap_pass": "0102",
+    "youtube_source_pass": "0085"
+  },
+  "source_surface": {
+    "anchor_count": 14,
+    "anchors": [
+      {
+        "area": "formal_math",
+        "gap_status": "verified",
+        "name": "Lean language reference",
+        "url": "https://lean-lang.org/doc/reference/latest/"
+      },
+      {
+        "area": "formal_math",
+        "gap_status": "verified",
+        "name": "Theorem Proving in Lean 4",
+        "url": "https://lean-lang.org/theorem_proving_in_lean4/"
+      },
+      {
+        "area": "formal_math",
+        "gap_status": "verified",
+        "name": "Mathlib documentation",
+        "url": "https://leanprover-community.github.io/mathlib4_docs/"
+      },
+      {
+        "area": "formal_math",
+        "gap_status": "verified",
+        "name": "Lean mathlib use case",
+        "url": "https://lean-lang.org/use-cases/mathlib/"
+      },
+      {
+        "area": "homotopy",
+        "gap_status": "verified",
+        "name": "Homotopy Type Theory book",
+        "url": "https://homotopytypetheory.org/book/"
+      },
+      {
+        "area": "homotopy",
+        "gap_status": "verified",
+        "name": "UniMath",
+        "url": "https://unimath.github.io/"
+      },
+      {
+        "area": "quantum",
+        "gap_status": "verified",
+        "name": "IBM quantum information basics",
+        "url": "https://learning.quantum.ibm.com/course/basics-of-quantum-information/single-systems"
+      },
+      {
+        "area": "quantum",
+        "gap_status": "verified",
+        "name": "Stanford Encyclopedia quantum mechanics",
+        "url": "https://plato.stanford.edu/entries/qm/"
+      },
+      {
+        "area": "ai_math",
+        "gap_status": "verified",
+        "name": "LeanDojo",
+        "url": "https://leandojo.org/"
+      },
+      {
+        "area": "ai_math",
+        "gap_status": "verified",
+        "name": "AlphaEvolve",
+        "url": "https://deepmind.google/blog/alphaevolve-a-gemini-powered-coding-agent-for-designing-advanced-algorithms/"
+      },
+      {
+        "area": "agent_loops",
+        "gap_status": "verified",
+        "name": "Self-Refine",
+        "url": "https://arxiv.org/abs/2303.17651"
+      },
+      {
+        "area": "agent_loops",
+        "gap_status": "verified",
+        "name": "Reflexion",
+        "url": "https://arxiv.org/abs/2303.11366"
+      },
+      {
+        "area": "agent_loops",
+        "gap_status": "verified",
+        "name": "Tree of Thoughts",
+        "url": "https://arxiv.org/abs/2305.10601"
+      },
+      {
+        "area": "agent_loops",
+        "gap_status": "verified",
+        "name": "ReAct",
+        "url": "https://arxiv.org/abs/2210.03629"
+      }
+    ],
+    "gap_status": "hypothesis"
+  },
+  "status": "FORMAL_PHYSICS_SOURCE_LEAD_BRIDGE_MATCH",
+  "unsupported_claim_count": 0,
+  "validation_errors": []
+}

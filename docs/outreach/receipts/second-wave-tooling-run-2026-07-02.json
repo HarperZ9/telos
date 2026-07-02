@@ -1,0 +1,290 @@
+{
+  "ok": true,
+  "thesis": {
+    "id": "ab5d74554f865ec4",
+    "title": "Project Telos Second-Wave Source-Checkout Tooling Claims",
+    "registered_at": 1782983308.255724,
+    "disposition": "fenced",
+    "seal": "ab5d74554f865ec494770d31ddca83adeafb2b393d49e7fe7466d77cf0953fc1",
+    "claims": [
+      {
+        "id": "eabae67475bb0a96",
+        "sha256": "eabae67475bb0a96a5eac006a94a3c53c196e1eb7b1247f57db1d3073bc01388"
+      },
+      {
+        "id": "6562f676ee31b95d",
+        "sha256": "6562f676ee31b95d6661ab8ed485f488ed2cb5d2638b76e2c32d444c40e9b324"
+      },
+      {
+        "id": "223df9719fa343d0",
+        "sha256": "223df9719fa343d0af8e0af696e0f77a0f358eda0ac32a5217b0a09de309a654"
+      },
+      {
+        "id": "f7028c7bfdc2750e",
+        "sha256": "f7028c7bfdc2750e90716e562bfeda1368af552888b8fc2399e1a833e5a2262f"
+      },
+      {
+        "id": "15c21b2f7013b4d8",
+        "sha256": "15c21b2f7013b4d8e59dd280e592b918a3a898a7e9b2aec03f1e37c37dca0537"
+      }
+    ]
+  },
+  "refutations": [
+    {
+      "claim_id": "eabae67475bb0a96",
+      "claim_sha256": "eabae67475bb0a96a5eac006a94a3c53c196e1eb7b1247f57db1d3073bc01388",
+      "challenge": "test the stated falsification: A current flagship MCP status or Telos room check reports a non-MATCH status, fewer than five ready flagships, or a tool count other than 70.",
+      "measurable": "A current flagship MCP status or Telos room check reports a non-MATCH status, fewer than five ready flagships, or a tool count other than 70.",
+      "source": "null"
+    },
+    {
+      "claim_id": "6562f676ee31b95d",
+      "claim_sha256": "6562f676ee31b95d6661ab8ed485f488ed2cb5d2638b76e2c32d444c40e9b324",
+      "challenge": "test the stated falsification: Learn status or doctor fails, the targeted test slice fails, or the temp study receipt does not report verified true.",
+      "measurable": "Learn status or doctor fails, the targeted test slice fails, or the temp study receipt does not report verified true.",
+      "source": "null"
+    },
+    {
+      "claim_id": "223df9719fa343d0",
+      "claim_sha256": "223df9719fa343d0af8e0af696e0f77a0f358eda0ac32a5217b0a09de309a654",
+      "challenge": "test the stated falsification: The isolated-target doctor fails, the C backend is not ready, hello.bld does not emit a passed receipt, or corpus verify does not report 8 C executions passed.",
+      "measurable": "The isolated-target doctor fails, the C backend is not ready, hello.bld does not emit a passed receipt, or corpus verify does not report 8 C executions passed.",
+      "source": "null"
+    },
+    {
+      "claim_id": "f7028c7bfdc2750e",
+      "claim_sha256": "f7028c7bfdc2750e90716e562bfeda1368af552888b8fc2399e1a833e5a2262f",
+      "challenge": "test the stated falsification: Emet selftest fails, the conformance suite reports fewer than 35 passing vectors, or the handoff claims the broken PATH wrapper is fixed.",
+      "measurable": "Emet selftest fails, the conformance suite reports fewer than 35 passing vectors, or the handoff claims the broken PATH wrapper is fixed.",
+      "source": "null"
+    },
+    {
+      "claim_id": "15c21b2f7013b4d8",
+      "claim_sha256": "15c21b2f7013b4d8e59dd280e592b918a3a898a7e9b2aec03f1e37c37dca0537",
+      "challenge": "test the stated falsification: The second-wave docs are missing, omit the PATH/source-checkout boundary, or promote unverified PATH installs.",
+      "measurable": "The second-wave docs are missing, omit the PATH/source-checkout boundary, or promote unverified PATH installs.",
+      "source": "null"
+    }
+  ],
+  "assessment": {
+    "started_at": 1782983308.264372,
+    "thesis_id": "ab5d74554f865ec4",
+    "thesis_seal": "ab5d74554f865ec494770d31ddca83adeafb2b393d49e7fe7466d77cf0953fc1",
+    "claims": 5,
+    "match": 5,
+    "drift": 0,
+    "unverifiable": 0,
+    "verdict_seal": "67a6325b756cd84724b317f178a06ec33139b58dad1696b8f96478c129abca85",
+    "measurement_seal": "2391434f2e4b2af5b7caa4fa655c290bcd77edaa46b0cc973fe8064e6490e2ce",
+    "disposition": "fenced",
+    "stored": null,
+    "verdicts": [
+      {
+        "claim_id": "eabae67475bb0a96",
+        "claim_sha256": "eabae67475bb0a96a5eac006a94a3c53c196e1eb7b1247f57db1d3073bc01388",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "mcp-status-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "6562f676ee31b95d",
+        "claim_sha256": "6562f676ee31b95d6661ab8ed485f488ed2cb5d2638b76e2c32d444c40e9b324",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "source-checkout-command-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "223df9719fa343d0",
+        "claim_sha256": "223df9719fa343d0af8e0af696e0f77a0f358eda0ac32a5217b0a09de309a654",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "source-checkout-command-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "f7028c7bfdc2750e",
+        "claim_sha256": "f7028c7bfdc2750e90716e562bfeda1368af552888b8fc2399e1a833e5a2262f",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "source-checkout-command-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "15c21b2f7013b4d8",
+        "claim_sha256": "15c21b2f7013b4d8e59dd280e592b918a3a898a7e9b2aec03f1e37c37dca0537",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "document-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      }
+    ],
+    "measurements": [
+      {
+        "claim_id": "eabae67475bb0a96",
+        "claim_sha256": "eabae67475bb0a96a5eac006a94a3c53c196e1eb7b1247f57db1d3073bc01388",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "mcp-status-review",
+        "measured_at": 1782983308.264372,
+        "evidence": [
+          "telos_room: ready 5 / total 5, checks_passed 20 / checks_total 20, tools 70",
+          "gather_status: tool_version 1.5.0, status MATCH",
+          "index_status: tool_version 2.8.0, status MATCH",
+          "forum_status: tool_version 1.12.0, status MATCH",
+          "crucible_status: tool_version 1.1.0, status MATCH"
+        ]
+      },
+      {
+        "claim_id": "6562f676ee31b95d",
+        "claim_sha256": "6562f676ee31b95d6661ab8ed485f488ed2cb5d2638b76e2c32d444c40e9b324",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "source-checkout-command-review",
+        "measured_at": 1782983308.264372,
+        "evidence": [
+          "C:\\dev\\public\\learn\\package.json: version 1.5.0",
+          "node src/cli.mjs doctor: learn doctor MATCH with 9 MATCH checks",
+          "temp CLI demo: tutor study-receipt research-proof reported verified true",
+          "node --test tests\\tutor.test.mjs tests\\learn-study-cli.test.mjs tests\\tutor-reverify.test.mjs tests\\tutor-prooflesson.test.mjs: 53 pass, 0 fail"
+        ]
+      },
+      {
+        "claim_id": "223df9719fa343d0",
+        "claim_sha256": "223df9719fa343d0af8e0af696e0f77a0f358eda0ac32a5217b0a09de309a654",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "source-checkout-command-review",
+        "measured_at": 1782983308.264372,
+        "evidence": [
+          "C:\\dev\\public\\pubscan\\quantalang\\compiler\\Cargo.toml: package buildlang version 1.0.6",
+          "isolated-target buildc doctor: buildc 1.0.6 (windows), C backend ready via MSVC Build Tools",
+          "buildc check examples\\quickstart\\hello.bld --receipt -: schema buildlang-check-receipt/v1, status passed, source digest 0e542c60fbd874a38a2a3a87eaf61be04532a0df23e3ea25512d03301883dfae",
+          "buildc corpus verify: manifest 8 programs, c execution 8 passed"
+        ]
+      },
+      {
+        "claim_id": "f7028c7bfdc2750e",
+        "claim_sha256": "f7028c7bfdc2750e90716e562bfeda1368af552888b8fc2399e1a833e5a2262f",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "source-checkout-command-review",
+        "measured_at": 1782983308.264372,
+        "evidence": [
+          "python membrane.py selftest: emet_self_sha256 b75ae75283ae774d4d8fc68452de34636fc5e47fd544d1d2d1c9783f1f282f1a",
+          "python conformance\\run.py membrane.py: CONFORMANCE 35/35 vectors pass",
+          "docs/outreach/SECOND-WAVE-DEMO-PACKAGES-2026-07-02.md records the PATH wrapper boundary"
+        ]
+      },
+      {
+        "claim_id": "15c21b2f7013b4d8",
+        "claim_sha256": "15c21b2f7013b4d8e59dd280e592b918a3a898a7e9b2aec03f1e37c37dca0537",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "document-review",
+        "measured_at": 1782983308.264372,
+        "evidence": [
+          "docs/outreach/SECOND-WAVE-DEMO-PACKAGES-2026-07-02.md exists and labels current claims as source-checkout claims",
+          "docs/outreach/SECOND-WAVE-CONTENT-QUEUE-2026-07-02.md exists and repeats the re-run-before-posting rule",
+          "docs/outreach/PARALLEL-CODEX-HANDOFF-2026-07-02.md references the second-wave package",
+          "docs/TOOLING-SHAPE-ASSESSMENT-2026-07-02.md distinguishes source-checkout evidence from PATH availability"
+        ]
+      }
+    ],
+    "seal": "0d62b195545bb82b7a9d760106c375f3c7935e782fa60b8995f5534634defb25"
+  },
+  "verdicts": [
+    {
+      "claim_id": "eabae67475bb0a96",
+      "claim_sha256": "eabae67475bb0a96a5eac006a94a3c53c196e1eb7b1247f57db1d3073bc01388",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "mcp-status-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "6562f676ee31b95d",
+      "claim_sha256": "6562f676ee31b95d6661ab8ed485f488ed2cb5d2638b76e2c32d444c40e9b324",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "source-checkout-command-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "223df9719fa343d0",
+      "claim_sha256": "223df9719fa343d0af8e0af696e0f77a0f358eda0ac32a5217b0a09de309a654",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "source-checkout-command-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "f7028c7bfdc2750e",
+      "claim_sha256": "f7028c7bfdc2750e90716e562bfeda1368af552888b8fc2399e1a833e5a2262f",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "source-checkout-command-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "15c21b2f7013b4d8",
+      "claim_sha256": "15c21b2f7013b4d8e59dd280e592b918a3a898a7e9b2aec03f1e37c37dca0537",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "document-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    }
+  ],
+  "measurement_warnings": [],
+  "checks": {
+    "seals_ok": true,
+    "thesis_ok": true,
+    "verdicts_rederive": true
+  },
+  "report": "docs\\outreach\\receipts\\second-wave-tooling-report-2026-07-02.md",
+  "record": "docs\\outreach\\receipts\\second-wave-tooling-run-2026-07-02.json",
+  "bundle": null,
+  "spec": null,
+  "review": null,
+  "verifier": {
+    "mode": "cleanroom",
+    "inputs": [],
+    "excluded": [
+      "worker context",
+      "reasoning trace",
+      "intermediate steps"
+    ],
+    "checkability": "If success cannot be evaluated from the original spec and the artifact, the spec is not checkable yet."
+  }
+}

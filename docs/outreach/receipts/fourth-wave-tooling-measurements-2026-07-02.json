@@ -1,0 +1,62 @@
+{
+  "measurements": [
+    {
+      "claim": "A UTF-8 Telos measurement packet containing the five Crucible-supported layer types passes crucible measurement-gate with MATCH, decision_outcome allow, and five matched rows.",
+      "method": "measurement-gate-command-review",
+      "evidence": [
+        "docs/outreach/receipts/fourth-wave-measurement-gate-packet.json exists and has schema project-telos.measurement-layers/v1",
+        "packet layers are visual.histogram-field, visual.dither-spectrum-meter, spatial.splat-probe, lighting.cluster-meter, and audio.spectral-meter",
+        "crucible measurement-gate with positive criteria returned verification_verdict MATCH",
+        "positive result decision_outcome allow and summary MATCH 5 / DRIFT 0 / UNVERIFIABLE 0"
+      ],
+      "deviation": 0.0,
+      "tolerance": 0.5
+    },
+    {
+      "claim": "The same measurement packet fails closed under a bad explicit histogram criterion, returning UNVERIFIABLE, decision_outcome block, and pixel_dimensions_mismatch.",
+      "method": "negative-measurement-gate-command-review",
+      "evidence": [
+        "docs/outreach/receipts/fourth-wave-measurement-gate-negative-criteria.json requires visual.histogram-field expected_total_pixels 32",
+        "negative result returned verification_verdict UNVERIFIABLE",
+        "negative result decision_outcome block",
+        "negative result failure_codes includes pixel_dimensions_mismatch"
+      ],
+      "deviation": 0.0,
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Learn rejects a proof packet with illegal verdict enum VERIFIED_SUPREME, exits nonzero, and writes no prooflesson receipt.",
+      "method": "negative-prooflesson-command-review",
+      "evidence": [
+        "docs/outreach/receipts/fourth-wave-forged-proof-packet.json uses verdicts.overall VERIFIED_SUPREME",
+        "learn tutor prooflesson forged exited 1",
+        "observed output says illegal verdict enum VERIFIED_SUPREME",
+        "receipt_exists false in docs/outreach/receipts/fourth-wave-negative-prooflesson-result.json"
+      ],
+      "deviation": 0.0,
+      "tolerance": 0.5
+    },
+    {
+      "claim": "The fourth-wave package distinguishes the five currently Crucible-gated measurement layers from Telos's broader ten-layer measurement bus.",
+      "method": "document-boundary-review",
+      "evidence": [
+        "docs/outreach/FOURTH-WAVE-MEASUREMENT-GATE-DEMO-2026-07-02.md states current Crucible gate verifies five layer types",
+        "same doc states Telos broader measurement bus reports ten layers and not all ten are accepted by crucible measurement-gate",
+        "docs/outreach/FOURTH-WAVE-CONTENT-QUEUE-2026-07-02.md repeats the five-vs-ten boundary"
+      ],
+      "deviation": 0.0,
+      "tolerance": 0.5
+    },
+    {
+      "claim": "The fourth-wave content queue packages both positive and negative evidence for the parallel posting session.",
+      "method": "document-review",
+      "evidence": [
+        "Post 26 cites positive and negative measurement-gate result files",
+        "Post 28 cites the forged proof packet and negative prooflesson result",
+        "Operating rule says to pair the positive result with the negative fixture"
+      ],
+      "deviation": 0.0,
+      "tolerance": 0.5
+    }
+  ]
+}

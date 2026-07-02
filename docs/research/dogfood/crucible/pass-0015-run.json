@@ -1,0 +1,492 @@
+{
+  "ok": true,
+  "thesis": {
+    "id": "9523ffdeed3a5a59",
+    "title": "Dogfood Pass 0015 Cloud Quantum Task Receipt Profiles",
+    "registered_at": 1782903111.7099962,
+    "disposition": "fenced",
+    "seal": "9523ffdeed3a5a59e5d3e567b7d94bd6bfd29be53b57023620279dffef7adfb8",
+    "claims": [
+      {
+        "id": "41cb1cb73ea9e3d3",
+        "sha256": "41cb1cb73ea9e3d3013d83663898d19a61faa5407ae62e28c1f5a7b2c4297298"
+      },
+      {
+        "id": "770ad490f655bc5a",
+        "sha256": "770ad490f655bc5a88e564a963a57e6402dd00ce5e201248bf7224c0d5666f1f"
+      },
+      {
+        "id": "a04e4da5d7b2c4ce",
+        "sha256": "a04e4da5d7b2c4ceb7334fff08665dd44b277b23b2b0825b0ce327c25691b511"
+      },
+      {
+        "id": "dba799af16877514",
+        "sha256": "dba799af16877514b580b39c006d96d5ef90e2f31d37c8a12cd4b5a5a3294726"
+      },
+      {
+        "id": "4bd29497a0e517f8",
+        "sha256": "4bd29497a0e517f88f3aa222ee3408c9a31625bc5fd5d633095414f32b85c723"
+      },
+      {
+        "id": "05495b7466ff163f",
+        "sha256": "05495b7466ff163f48720ec3726d8b84026856da5ed123a4a429927b57ee7eb4"
+      },
+      {
+        "id": "b9ff1c19414ad17e",
+        "sha256": "b9ff1c19414ad17e094b5227ec2e6363f680e77bb64b904f1f0306a711508e18"
+      },
+      {
+        "id": "866409deb91547ec",
+        "sha256": "866409deb91547eca64f6ac952d70debd5fe9c39e462f264477fd81539476a24"
+      },
+      {
+        "id": "5a63bd9fcca1e94a",
+        "sha256": "5a63bd9fcca1e94a644bebd37a7cc3ae7567cdb7a33106de628d09d60b9cd091"
+      }
+    ]
+  },
+  "refutations": [
+    {
+      "claim_id": "41cb1cb73ea9e3d3",
+      "claim_sha256": "41cb1cb73ea9e3d3013d83663898d19a61faa5407ae62e28c1f5a7b2c4297298",
+      "challenge": "test the stated falsification: schemas/cloud-quantum-task-receipt-profiles-pass-0015.json is missing, is not CloudQuantumTaskReceiptProfileSet/v1, reports non-MATCH status, has fewer than four profiles, fewer than four negative fixtures, fewer than three sample receipts, or lacks the expected seal",
+      "measurable": "schemas/cloud-quantum-task-receipt-profiles-pass-0015.json is missing, is not CloudQuantumTaskReceiptProfileSet/v1, reports non-MATCH status, has fewer than four profiles, fewer than four negative fixtures, fewer than three sample receipts, or lacks the expected seal",
+      "source": "null"
+    },
+    {
+      "claim_id": "770ad490f655bc5a",
+      "claim_sha256": "770ad490f655bc5a88e564a963a57e6402dd00ce5e201248bf7224c0d5666f1f",
+      "challenge": "test the stated falsification: schemas/cloud-quantum-task-receipt-profiles-pass-0015.json lacks any of cloud-quantum-profile-braket-task, cloud-quantum-profile-ibm-runtime-job, cloud-quantum-profile-azure-job, or cloud-quantum-profile-provider-simulator",
+      "measurable": "schemas/cloud-quantum-task-receipt-profiles-pass-0015.json lacks any of cloud-quantum-profile-braket-task, cloud-quantum-profile-ibm-runtime-job, cloud-quantum-profile-azure-job, or cloud-quantum-profile-provider-simulator",
+      "source": "null"
+    },
+    {
+      "claim_id": "a04e4da5d7b2c4ce",
+      "claim_sha256": "a04e4da5d7b2c4ceb7334fff08665dd44b277b23b2b0825b0ce327c25691b511",
+      "challenge": "test the stated falsification: the Braket profile is missing or its hardware_claim_allowed_requirements omit any required Braket field",
+      "measurable": "the Braket profile is missing or its hardware_claim_allowed_requirements omit any required Braket field",
+      "source": "null"
+    },
+    {
+      "claim_id": "dba799af16877514",
+      "claim_sha256": "dba799af16877514b580b39c006d96d5ef90e2f31d37c8a12cd4b5a5a3294726",
+      "challenge": "test the stated falsification: the IBM profile is missing or its hardware_claim_allowed_requirements omit any required IBM field",
+      "measurable": "the IBM profile is missing or its hardware_claim_allowed_requirements omit any required IBM field",
+      "source": "null"
+    },
+    {
+      "claim_id": "4bd29497a0e517f8",
+      "claim_sha256": "4bd29497a0e517f88f3aa222ee3408c9a31625bc5fd5d633095414f32b85c723",
+      "challenge": "test the stated falsification: the Azure profile is missing, omits any required Azure field, or lacks the resource-estimator separation rule",
+      "measurable": "the Azure profile is missing, omits any required Azure field, or lacks the resource-estimator separation rule",
+      "source": "null"
+    },
+    {
+      "claim_id": "05495b7466ff163f",
+      "claim_sha256": "05495b7466ff163f48720ec3726d8b84026856da5ed123a4a429927b57ee7eb4",
+      "challenge": "test the stated falsification: the Provider Simulator profile is missing, uses a branch other than CLOUD_SIMULATOR, or includes hardware-claim allowed requirements",
+      "measurable": "the Provider Simulator profile is missing, uses a branch other than CLOUD_SIMULATOR, or includes hardware-claim allowed requirements",
+      "source": "null"
+    },
+    {
+      "claim_id": "b9ff1c19414ad17e",
+      "claim_sha256": "b9ff1c19414ad17e094b5227ec2e6363f680e77bb64b904f1f0306a711508e18",
+      "challenge": "test the stated falsification: schemas/pass-0015-cloud-quantum-profile-validator-result.json is missing, reports non-MATCH status, does not report match=1, or reports drift above zero",
+      "measurable": "schemas/pass-0015-cloud-quantum-profile-validator-result.json is missing, reports non-MATCH status, does not report match=1, or reports drift above zero",
+      "source": "null"
+    },
+    {
+      "claim_id": "866409deb91547ec",
+      "claim_sha256": "866409deb91547eca64f6ac952d70debd5fe9c39e462f264477fd81539476a24",
+      "challenge": "test the stated falsification: schemas/tool-receipts-pass-0015.json is missing, lacks any required tool status, or treats Forum submit as successful rather than UNVERIFIABLE",
+      "measurable": "schemas/tool-receipts-pass-0015.json is missing, lacks any required tool status, or treats Forum submit as successful rather than UNVERIFIABLE",
+      "source": "null"
+    },
+    {
+      "claim_id": "5a63bd9fcca1e94a",
+      "claim_sha256": "5a63bd9fcca1e94a644bebd37a7cc3ae7567cdb7a33106de628d09d60b9cd091",
+      "challenge": "test the stated falsification: any pass 0015 artifact labels a new quantum hardware result, quantum advantage claim, theorem proof, natural law, biological result, material result, medical result, finance result, or safety result as promoted",
+      "measurable": "any pass 0015 artifact labels a new quantum hardware result, quantum advantage claim, theorem proof, natural law, biological result, material result, medical result, finance result, or safety result as promoted",
+      "source": "null"
+    }
+  ],
+  "assessment": {
+    "started_at": 1782903111.7163317,
+    "thesis_id": "9523ffdeed3a5a59",
+    "thesis_seal": "9523ffdeed3a5a59e5d3e567b7d94bd6bfd29be53b57023620279dffef7adfb8",
+    "claims": 9,
+    "match": 9,
+    "drift": 0,
+    "unverifiable": 0,
+    "verdict_seal": "4fc49f7dfc047f75faa3a2c78f92d8f332ebfdfad8c35d92db9fad78d5cdc22a",
+    "measurement_seal": "3c6bf38af77a52c55f7b4851f2cff3995a086eb9b2d2192a9a0d5b8d07c1fb1d",
+    "disposition": "fenced",
+    "stored": null,
+    "verdicts": [
+      {
+        "claim_id": "41cb1cb73ea9e3d3",
+        "claim_sha256": "41cb1cb73ea9e3d3013d83663898d19a61faa5407ae62e28c1f5a7b2c4297298",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "profile-set-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "770ad490f655bc5a",
+        "claim_sha256": "770ad490f655bc5a88e564a963a57e6402dd00ce5e201248bf7224c0d5666f1f",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "profile-id-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "a04e4da5d7b2c4ce",
+        "claim_sha256": "a04e4da5d7b2c4ceb7334fff08665dd44b277b23b2b0825b0ce327c25691b511",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "braket-profile-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "dba799af16877514",
+        "claim_sha256": "dba799af16877514b580b39c006d96d5ef90e2f31d37c8a12cd4b5a5a3294726",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "ibm-profile-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "4bd29497a0e517f8",
+        "claim_sha256": "4bd29497a0e517f88f3aa222ee3408c9a31625bc5fd5d633095414f32b85c723",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "azure-profile-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "05495b7466ff163f",
+        "claim_sha256": "05495b7466ff163f48720ec3726d8b84026856da5ed123a4a429927b57ee7eb4",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "simulator-profile-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "b9ff1c19414ad17e",
+        "claim_sha256": "b9ff1c19414ad17e094b5227ec2e6363f680e77bb64b904f1f0306a711508e18",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "validator-run-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "866409deb91547ec",
+        "claim_sha256": "866409deb91547eca64f6ac952d70debd5fe9c39e462f264477fd81539476a24",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "tool-receipt-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "5a63bd9fcca1e94a",
+        "claim_sha256": "5a63bd9fcca1e94a644bebd37a7cc3ae7567cdb7a33106de628d09d60b9cd091",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "non-promotion-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      }
+    ],
+    "measurements": [
+      {
+        "claim_id": "41cb1cb73ea9e3d3",
+        "claim_sha256": "41cb1cb73ea9e3d3013d83663898d19a61faa5407ae62e28c1f5a7b2c4297298",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "profile-set-review",
+        "measured_at": 1782903111.7159965,
+        "evidence": [
+          "schemas/cloud-quantum-task-receipt-profiles-pass-0015.json schema=CloudQuantumTaskReceiptProfileSet/v1",
+          "status=PROFILE_SET_MATCH",
+          "profile_count=4",
+          "negative_fixture_count=4",
+          "sample_receipt_count=3",
+          "seal=da29ddb01c060ea4af511cec8c901895e9f1c3c62622d367aefb15e7f82fcf62"
+        ]
+      },
+      {
+        "claim_id": "770ad490f655bc5a",
+        "claim_sha256": "770ad490f655bc5a88e564a963a57e6402dd00ce5e201248bf7224c0d5666f1f",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "profile-id-review",
+        "measured_at": 1782903111.716007,
+        "evidence": [
+          "profile cloud-quantum-profile-braket-task present",
+          "profile cloud-quantum-profile-ibm-runtime-job present",
+          "profile cloud-quantum-profile-azure-job present",
+          "profile cloud-quantum-profile-provider-simulator present"
+        ]
+      },
+      {
+        "claim_id": "a04e4da5d7b2c4ce",
+        "claim_sha256": "a04e4da5d7b2c4ceb7334fff08665dd44b277b23b2b0825b0ce327c25691b511",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "braket-profile-review",
+        "measured_at": 1782903111.7160113,
+        "evidence": [
+          "Braket hardware_claim_allowed_requirements include device_arn",
+          "Braket hardware_claim_allowed_requirements include task_id",
+          "Braket hardware_claim_allowed_requirements include shots",
+          "Braket hardware_claim_allowed_requirements include status",
+          "Braket hardware_claim_allowed_requirements include result_payload_hash",
+          "Braket hardware_claim_allowed_requirements include calibration_or_device_properties_reference"
+        ]
+      },
+      {
+        "claim_id": "dba799af16877514",
+        "claim_sha256": "dba799af16877514b580b39c006d96d5ef90e2f31d37c8a12cd4b5a5a3294726",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "ibm-profile-review",
+        "measured_at": 1782903111.716015,
+        "evidence": [
+          "IBM hardware_claim_allowed_requirements include backend_name",
+          "IBM hardware_claim_allowed_requirements include job_id",
+          "IBM hardware_claim_allowed_requirements include primitive_name",
+          "IBM hardware_claim_allowed_requirements include result_payload_hash",
+          "IBM hardware_claim_allowed_requirements include session_or_job_mode",
+          "IBM hardware_claim_allowed_requirements include calibration_or_backend_properties_reference"
+        ]
+      },
+      {
+        "claim_id": "4bd29497a0e517f8",
+        "claim_sha256": "4bd29497a0e517f88f3aa222ee3408c9a31625bc5fd5d633095414f32b85c723",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "azure-profile-review",
+        "measured_at": 1782903111.7160184,
+        "evidence": [
+          "Azure hardware_claim_allowed_requirements include workspace_ref",
+          "Azure hardware_claim_allowed_requirements include provider_id",
+          "Azure hardware_claim_allowed_requirements include target_id",
+          "Azure hardware_claim_allowed_requirements include job_id",
+          "Azure hardware_claim_allowed_requirements include job_input_hash",
+          "Azure hardware_claim_allowed_requirements include result_payload_hash",
+          "Azure hardware_claim_allowed_requirements include calibration_or_target_properties_reference",
+          "Azure non_promotion_rules include Resource-estimator output must remain separate from job execution output"
+        ]
+      },
+      {
+        "claim_id": "05495b7466ff163f",
+        "claim_sha256": "05495b7466ff163f48720ec3726d8b84026856da5ed123a4a429927b57ee7eb4",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "simulator-profile-review",
+        "measured_at": 1782903111.716022,
+        "evidence": [
+          "Provider Simulator profile present",
+          "branch=CLOUD_SIMULATOR",
+          "hardware_claim_allowed_requirements=[]",
+          "non_promotion_rules include Cloud simulator results are not cloud QPU hardware results"
+        ]
+      },
+      {
+        "claim_id": "b9ff1c19414ad17e",
+        "claim_sha256": "b9ff1c19414ad17e094b5227ec2e6363f680e77bb64b904f1f0306a711508e18",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "validator-run-review",
+        "measured_at": 1782903111.7160249,
+        "evidence": [
+          "schemas/pass-0015-cloud-quantum-profile-validator-result.json status=MATCH",
+          "match=1",
+          "drift=0",
+          "checks include CloudQuantumTaskReceiptProfileSet status MATCH"
+        ]
+      },
+      {
+        "claim_id": "866409deb91547ec",
+        "claim_sha256": "866409deb91547eca64f6ac952d70debd5fe9c39e462f264477fd81539476a24",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "tool-receipt-review",
+        "measured_at": 1782903111.716028,
+        "evidence": [
+          "schemas/tool-receipts-pass-0015.json status=MATCH_WITH_FORUM_SUBMIT_GAP",
+          "tool receipts include index status MATCH",
+          "tool receipts include gather status MATCH",
+          "tool receipts include telos operator_doctor status MATCH",
+          "tool receipts include forum status MATCH and verify MATCH",
+          "tool receipts include forum_submit status UNVERIFIABLE",
+          "tool receipts include crucible status MATCH",
+          "Forum submit error recorded: configured executor did not return valid JSON"
+        ]
+      },
+      {
+        "claim_id": "5a63bd9fcca1e94a",
+        "claim_sha256": "5a63bd9fcca1e94a644bebd37a7cc3ae7567cdb7a33106de628d09d60b9cd091",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "non-promotion-review",
+        "measured_at": 1782903111.716031,
+        "evidence": [
+          "packets/025-cloud-quantum-task-receipt-profiles.md states this pass does not run a cloud job",
+          "schemas/cloud-quantum-task-receipt-profiles-pass-0015.json non_promotion_statement states sample receipts are shape-only and not executed",
+          "sample receipts hardware_claim_allowed=false",
+          "sample receipts sample_status=SHAPE_ONLY_NOT_EXECUTED",
+          "Current promoted natural laws: none"
+        ]
+      }
+    ],
+    "seal": "c40e10b77824dc6600428b7617269aa4ee76f52f04a1199317e685852fa73cb0"
+  },
+  "verdicts": [
+    {
+      "claim_id": "41cb1cb73ea9e3d3",
+      "claim_sha256": "41cb1cb73ea9e3d3013d83663898d19a61faa5407ae62e28c1f5a7b2c4297298",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "profile-set-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "770ad490f655bc5a",
+      "claim_sha256": "770ad490f655bc5a88e564a963a57e6402dd00ce5e201248bf7224c0d5666f1f",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "profile-id-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "a04e4da5d7b2c4ce",
+      "claim_sha256": "a04e4da5d7b2c4ceb7334fff08665dd44b277b23b2b0825b0ce327c25691b511",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "braket-profile-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "dba799af16877514",
+      "claim_sha256": "dba799af16877514b580b39c006d96d5ef90e2f31d37c8a12cd4b5a5a3294726",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "ibm-profile-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "4bd29497a0e517f8",
+      "claim_sha256": "4bd29497a0e517f88f3aa222ee3408c9a31625bc5fd5d633095414f32b85c723",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "azure-profile-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "05495b7466ff163f",
+      "claim_sha256": "05495b7466ff163f48720ec3726d8b84026856da5ed123a4a429927b57ee7eb4",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "simulator-profile-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "b9ff1c19414ad17e",
+      "claim_sha256": "b9ff1c19414ad17e094b5227ec2e6363f680e77bb64b904f1f0306a711508e18",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "validator-run-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "866409deb91547ec",
+      "claim_sha256": "866409deb91547eca64f6ac952d70debd5fe9c39e462f264477fd81539476a24",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "tool-receipt-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "5a63bd9fcca1e94a",
+      "claim_sha256": "5a63bd9fcca1e94a644bebd37a7cc3ae7567cdb7a33106de628d09d60b9cd091",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "non-promotion-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    }
+  ],
+  "checks": {
+    "seals_ok": true,
+    "thesis_ok": true,
+    "verdicts_rederive": true
+  },
+  "report": "C:\\dev\\public\\telos\\docs\\research\\dogfood\\crucible\\pass-0015-report.md",
+  "record": "C:\\dev\\public\\telos\\docs\\research\\dogfood\\crucible\\pass-0015-run.json",
+  "bundle": null,
+  "spec": null,
+  "review": null,
+  "verifier": {
+    "mode": "cleanroom",
+    "inputs": [],
+    "excluded": [
+      "worker context",
+      "reasoning trace",
+      "intermediate steps"
+    ],
+    "checkability": "If success cannot be evaluated from the original spec and the artifact, the spec is not checkable yet."
+  }
+}

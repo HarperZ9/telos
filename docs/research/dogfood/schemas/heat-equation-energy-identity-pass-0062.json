@@ -1,0 +1,136 @@
+{
+  "analytic_identity": {
+    "derivation_steps": [
+      "Let E(t) = integral_0^(2*pi) u(x,t)^2 dx.",
+      "Differentiate under the integral for smooth u: E'(t) = 2 integral u u_t dx.",
+      "Substitute u_t = kappa u_xx.",
+      "Integrate by parts: integral u u_xx dx = [u u_x]_0^(2*pi) - integral u_x^2 dx.",
+      "Periodic boundary conditions make [u u_x]_0^(2*pi) vanish.",
+      "Therefore E'(t) = -2*kappa integral u_x^2 dx."
+    ],
+    "identity": "d/dt ||u||_L2^2 = -2*kappa*||u_x||_L2^2",
+    "proof_status": "ANALYTIC_DERIVATION_WITH_NUMERIC_PROBE"
+  },
+  "current_promoted_natural_laws": [],
+  "domain_scope": {
+    "boundary_condition": "periodic",
+    "equation": "u_t = kappa * u_xx",
+    "kappa": 0.7,
+    "regularity": "smooth finite Fourier series",
+    "spatial_domain": "[0, 2*pi]"
+  },
+  "falsifiers": [
+    "Boundary conditions are not periodic and boundary flux is nonzero.",
+    "Solution regularity is too weak to justify differentiating under the integral or integration by parts.",
+    "The equation includes forcing, advection, nonlinear diffusion, or source terms not represented in the scope.",
+    "A numeric probe produces positive L2 energy growth inside the declared assumptions."
+  ],
+  "generated_on": "2026-07-01",
+  "known_limits": [
+    "nonperiodic_boundary_flux",
+    "forced_heat_equation",
+    "nonlinear_diffusion",
+    "weak_solution_regularization_not_proved_here",
+    "physical_law_not_claimed"
+  ],
+  "law_candidate_status": "BOUNDED_MATHEMATICAL_IDENTITY",
+  "non_promotion_statement": "Pass 0062 proves and probes a bounded mathematical identity for a scoped heat equation. It does not claim a new natural law, empirical physics result, or general PDE theorem beyond the stated assumptions.",
+  "numeric_probe": {
+    "basis": "finite Fourier series",
+    "energy_monotone_nonincreasing": true,
+    "finite_difference_step": 1e-07,
+    "kappa": 0.7,
+    "max_finite_difference_residual": 2.7235955712967552e-09,
+    "max_symbolic_residual": 0.0,
+    "mode_count": 3,
+    "modes": [
+      {
+        "amplitude": 1.0,
+        "basis": "sin",
+        "mode": 1
+      },
+      {
+        "amplitude": 0.4,
+        "basis": "cos",
+        "mode": 3
+      },
+      {
+        "amplitude": -0.2,
+        "basis": "sin",
+        "mode": 5
+      }
+    ],
+    "time_samples": [
+      {
+        "energy_derivative": -15.129910219688444,
+        "energy_l2": 3.7699111843077517,
+        "gradient_energy_l2": 10.80707872834889,
+        "identity_rhs": -15.129910219688444,
+        "symbolic_residual": 0.0,
+        "t": 0.0
+      },
+      {
+        "energy_derivative": -8.238323889238956,
+        "energy_l2": 3.21874849093909,
+        "gradient_energy_l2": 5.884517063742112,
+        "identity_rhs": -8.238323889238956,
+        "symbolic_residual": 0.0,
+        "t": 0.05
+      },
+      {
+        "energy_derivative": -5.752961071136102,
+        "energy_l2": 2.877544225713417,
+        "gradient_energy_l2": 4.109257907954359,
+        "identity_rhs": -5.752961071136102,
+        "symbolic_residual": 0.0,
+        "t": 0.1
+      },
+      {
+        "energy_derivative": -3.8377081360630894,
+        "energy_l2": 2.4149226498432808,
+        "gradient_energy_l2": 2.741220097187921,
+        "identity_rhs": -3.8377081360630894,
+        "symbolic_residual": 0.0,
+        "t": 0.2
+      },
+      {
+        "energy_derivative": -2.553313501764578,
+        "energy_l2": 1.7977603639695887,
+        "gradient_energy_l2": 1.8237953584032702,
+        "identity_rhs": -2.553313501764578,
+        "symbolic_residual": 0.0,
+        "t": 0.4
+      }
+    ]
+  },
+  "pass": "0062",
+  "promotion_state": "IDENTITY_NOT_PROMOTED_LAW",
+  "schema": "HeatEquationEnergyIdentity/v1",
+  "seal": "9a94678d4e820cb5f6d806bf9d7f56287971e708912cdeef9284f16b3c1a80bf",
+  "source_anchors": [
+    {
+      "confidence": "high",
+      "source_id": "mit-ocw-18-303-heat-equation",
+      "summary": "MIT OCW heat-equation notes describe heat transfer and the one-dimensional heat equation.",
+      "url": "https://ocw.mit.edu/courses/18-303-linear-partial-differential-equations-fall-2006/d11b374a85c3fde55ec971fe587f8a50_heateqni.pdf",
+      "verification_status": "source_lead"
+    },
+    {
+      "confidence": "high",
+      "source_id": "stanford-math220b-heat-equation",
+      "summary": "Stanford notes give periodic heat-equation Fourier-series solutions.",
+      "url": "https://web.stanford.edu/class/math220b/handouts/heateqn.pdf",
+      "verification_status": "source_lead"
+    },
+    {
+      "confidence": "medium",
+      "source_id": "ut-finite-difference-heat-equation",
+      "summary": "UT teaching material describes finite-difference discretization for the one-dimensional heat equation.",
+      "url": "https://www-udc.ig.utexas.edu/external/becker/teaching/557/problem_sets/problem_set_fd_explicit.pdf",
+      "verification_status": "source_lead"
+    }
+  ],
+  "status": "HEAT_EQUATION_ENERGY_IDENTITY_MATCH",
+  "unsupported_claim_count": 0,
+  "validation_errors": []
+}

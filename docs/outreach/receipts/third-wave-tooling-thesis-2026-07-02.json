@@ -1,0 +1,26 @@
+{
+  "title": "Project Telos Third-Wave Closed-Loop Demo Claims",
+  "disposition": "fenced",
+  "claims": [
+    {
+      "text": "The BuildLang source checkout produced a ci-review policy-pinned check receipt for examples\\quickstart\\hello.bld, and buildc receipt verify accepted it with status passed.",
+      "falsification": "The receipt is missing, does not name ci-review, has status other than passed, or buildc receipt verify does not return status passed."
+    },
+    {
+      "text": "The BuildLang receipt was packaged as a Telos-style proof packet that carries source refs and hashes only, then Learn generated and re-verified a prooflesson receipt from that packet.",
+      "falsification": "The proof packet is missing, carries source bodies, has a non-MATCH verdict, Learn prooflesson fails, or Learn reverify fails."
+    },
+    {
+      "text": "Build Color is source-checkout verified as a software-side measurement lane: version 1.0.2, CLI info/convert/difference commands run, and the test suite reports 458 passed.",
+      "falsification": "Build Color version differs, any listed CLI command fails, the test count is not 458 passed, or the package claims physical display calibration."
+    },
+    {
+      "text": "Telos measurement and display-calibration contracts are wired for this visual proof lane: measurement layers report 10 measurements with MATCH, display calibration is read-only, and the focused tests pass.",
+      "falsification": "Measurement layers do not report 10 measurements, display calibration allows hardware mutation, or the focused Node tests fail."
+    },
+    {
+      "text": "The third-wave outreach package preserves boundaries: no Julia-replacement claim, no credential-completion claim, no physical calibration claim, and no solved-frontier-science claim.",
+      "falsification": "The third-wave docs make any of those overclaims or omit the command-backed evidence path."
+    }
+  ]
+}

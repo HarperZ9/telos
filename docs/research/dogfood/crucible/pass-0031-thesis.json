@@ -1,0 +1,46 @@
+{
+  "claims": [
+    {
+      "falsification": "schemas/lean-replay-environment-contract-pass-0031.json is missing, has a different schema, status, seal, Bash status, verifier exit code, failure class, replay status, or negative fixture count",
+      "text": "Pass 0031 created a LeanReplayEnvironmentContract/v1 artifact with status LEAN_REPLAY_ENVIRONMENT_CONTRACT_MATCH_WITH_REPLAY_GAP, absolute_bash_invocation_status=MATCH, verify_script_exit_code=1, failure_class=crlf_pin_file_path_drift, theorem_replay_status=UNVERIFIABLE_ENVIRONMENT_NOT_READY, negative_fixture_count=10, and seal 4532f819ea8d8f7760323b2920d131b4909bedc05960ad3da553424e1f38a0bc."
+    },
+    {
+      "falsification": "the environment fixture is missing, has a different SHA-256 or seal, or does not bind to pass 0030",
+      "text": "Pass 0031 records fixture fixtures/lean-replay-environment-contract-pass-0031.json with sha256 9c8a6ed07113c0880126e3ee5d19b1314a92b9d767c57d896df36e0222a62082 and seal c80c6f03f37ec172e1354293f709d399aa8d80a9c69e0d9e9cc6e697f81be555, and binds to pass 0030 preflight sha256 da9a0d68491325bd636f876dfca60ab0540be2a9c247931bf22064a5db13a557."
+    },
+    {
+      "falsification": "the runner probe is missing, treats bash as on PATH, omits absolute Git Bash status, or reports a different Bash version",
+      "text": "Pass 0031 runner probe records absolute Git Bash invocation status MATCH, bash_on_path=false, and Bash version 5.2.37(1)-release."
+    },
+    {
+      "falsification": "the verifier attempt is missing, has a different exit code, first failed check, failure class, raw-log policy, or says Lean/Lake were reached",
+      "text": "Pass 0031 verifier attempt records exit_code=1, status=DRIFT, first_failed_check=Frozen SHA pins, failure_class=crlf_pin_file_path_drift, raw_log_included=false, and lean_or_lake_reached=false."
+    },
+    {
+      "falsification": "the toolchain availability map is missing, treats unavailable runtime tools as available, or omits git/python/absolute Git Bash as present",
+      "text": "Pass 0031 toolchain availability records docker, wsl, podman, winget, elan, lake, and lean unavailable while git, python, and absolute Git Bash are available."
+    },
+    {
+      "falsification": "the replay policy is missing or promotes theorem replay, Lake build, axiom check, statement gate, installation, or external write",
+      "text": "Pass 0031 replay policy marks theorem replay, Lake build, axiom checks, and statement gates as UNVERIFIABLE_ENVIRONMENT_NOT_READY, with toolchain_install_performed=false, external_write_performed=false, and replay_promotion_allowed=false."
+    },
+    {
+      "falsification": "negative fixtures are missing, fewer than ten, have different IDs, or any negative fixture is not marked expected_validator_status REJECT",
+      "text": "Pass 0031 defines ten negative fixtures covering Bash PATH assumptions, ignored CRLF failure, replay promotion after script failure, container availability without Docker/WSL, claimed toolchain install, missing pass 0030 link, axiom-check promotion, Lake-build promotion, hidden external write, and natural-law promotion; every negative fixture expects validator status REJECT."
+    },
+    {
+      "falsification": "the validator result is missing, reports DRIFT, has different failure class, says Lean/Lake were reached, reports a different missing runtime count, or promotes replay",
+      "text": "Pass 0031 validator result reports MATCH with absolute_bash_invocation_status=MATCH, bash_on_path=false, verify_script_exit_code=1, failure_class=crlf_pin_file_path_drift, lean_or_lake_reached=false, missing_runtime_count=6, theorem_replay_status=UNVERIFIABLE_ENVIRONMENT_NOT_READY, and negative_fixture_count=10."
+    },
+    {
+      "falsification": "packet 041 is missing, Gather does not verify it, or the packet SHA-256, digest seal, or character count differs",
+      "text": "Pass 0031 packet 041 was gathered and verified with SHA-256 8f1c9afaf01579e601db4a4d396bce96f1a562167dff85da630f90209539cb88, digest seal 029c28ce59a153e2c35214225d931892987c9be1aecee43aea689c29d9309d40, and 5095 characters."
+    },
+    {
+      "falsification": "schemas/tool-receipts-pass-0031.json is missing, lacks required tool receipts, treats Forum submit as successful, hides the replay-environment gap, or promotes theorem replay",
+      "text": "Pass 0031 tool receipts record Index, Gather, absolute Git Bash, verifier-script failure, runtime availability, Telos MCP status/action receipt/loop ledger, Forum status/ledger verification, and Crucible status while preserving Forum submit as UNVERIFIABLE and replay runtime as not ready."
+    }
+  ],
+  "disposition": "fenced",
+  "title": "Dogfood Pass 0031 Lean Replay Environment Contract"
+}

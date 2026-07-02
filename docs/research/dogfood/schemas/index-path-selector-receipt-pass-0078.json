@@ -1,0 +1,4457 @@
+{
+  "bridge_source_pass": "0076",
+  "contract_schema": "IndexPathSelectorReceipt/v1",
+  "contract_source_pass": "0077",
+  "excluded_dirs": [
+    ".git",
+    ".pytest_cache",
+    ".ruff_cache",
+    "__pycache__",
+    "node_modules",
+    "target"
+  ],
+  "freshness_root_sha256": "f24571d62898367bfd5e85ebfb9f02d20deac850bb99cfc4263cffb294dc3ddb",
+  "generated_on": "2026-07-01",
+  "graph_pack_sha256": "d3bae65c0703599721168f6cf6e77fa44bb85445bd03752d1fc2a9c4a04e51d8",
+  "join_key": "ef66c7aea890bc9a60845d3dfb60001677ba182ad382644d0390adac1c6f7a5e",
+  "missing_selector_rejections": [
+    "build-universe"
+  ],
+  "negative_fixtures": [
+    {
+      "expected_status": "REJECT",
+      "fixture_id": "missing_selector_silently_omitted",
+      "reject_reason": "missing selectors require explicit REJECT"
+    },
+    {
+      "expected_status": "REJECT",
+      "fixture_id": "target_directory_included",
+      "reject_reason": "generated build outputs excluded from source receipt"
+    },
+    {
+      "expected_status": "REJECT",
+      "fixture_id": "raw_payload_included",
+      "reject_reason": "source refs only"
+    },
+    {
+      "expected_status": "REJECT",
+      "fixture_id": "repo_root_claimed_path_scoped",
+      "reject_reason": "selected paths required"
+    },
+    {
+      "expected_status": "REJECT",
+      "fixture_id": "selector_without_tree_digest",
+      "reject_reason": "tree digest required for selected paths"
+    },
+    {
+      "expected_status": "REJECT",
+      "fixture_id": "unsupported_claim_promoted",
+      "reject_reason": "unsupported claim count must remain zero"
+    }
+  ],
+  "non_promotion_statement": "Pass 0078 emits an adapter fixture for path-selector receipts. It does not modify Index itself, include raw source payloads, cover missing build-universe sources, prove market adoption, or promote a natural law.",
+  "pass": "0078",
+  "raw_source_included": false,
+  "rejected_selector_count": 1,
+  "root": "C:\\dev\\public\\pubscan\\quantalang",
+  "schema": "IndexPathSelectorReceipt/v1",
+  "seal": "56e47de47e3875151e310a9cc9763cc7b08976b282e0e830d03e5a967985f276",
+  "selected_selector_count": 2,
+  "selector_results": [
+    {
+      "file_count": 342,
+      "kind": "directory",
+      "reason": "selected",
+      "selector": "buildlang",
+      "source_ref_count": 64,
+      "source_refs": [
+        {
+          "expand": {
+            "arguments": {
+              "path": "buildlang/ASPIRATIONAL.md",
+              "scope": "index.path-selector.receipt"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "file",
+          "line": null,
+          "path": "buildlang/ASPIRATIONAL.md",
+          "repo": "quantalang",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "selector": "buildlang",
+          "sha256": "2aec31772c3f52d46478a16c7650dbfaaae32ee5c28cfc7727de7efe773012ac"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "buildlang/Build.toml",
+              "scope": "index.path-selector.receipt"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "file",
+          "line": null,
+          "path": "buildlang/Build.toml",
+          "repo": "quantalang",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "selector": "buildlang",
+          "sha256": "0d490aa999ba804653ff251a71e68049a97ce5325f5243ed103ae2b2d0a29a1c"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "buildlang/CHANGELOG.md",
+              "scope": "index.path-selector.receipt"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "file",
+          "line": null,
+          "path": "buildlang/CHANGELOG.md",
+          "repo": "quantalang",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "selector": "buildlang",
+          "sha256": "f2ccb65877b5bc294c2fea95274a434f3cb14aecbd47eb500bf9fc6f06d87a1c"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "buildlang/CONTRIBUTING.md",
+              "scope": "index.path-selector.receipt"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "file",
+          "line": null,
+          "path": "buildlang/CONTRIBUTING.md",
+          "repo": "quantalang",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "selector": "buildlang",
+          "sha256": "1a0082a4ad77648399066185ae3d5aa0cc0c78483572274e1d424bdc38a790d6"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "buildlang/README.md",
+              "scope": "index.path-selector.receipt"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "file",
+          "line": null,
+          "path": "buildlang/README.md",
+          "repo": "quantalang",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "selector": "buildlang",
+          "sha256": "75c5528d8c0aaa51a5cff53659c7298e134d7a9cd84bd5b6ad565c991e866372"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "buildlang/RELEASE_CHECKLIST.md",
+              "scope": "index.path-selector.receipt"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "file",
+          "line": null,
+          "path": "buildlang/RELEASE_CHECKLIST.md",
+          "repo": "quantalang",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "selector": "buildlang",
+          "sha256": "6193450a20d5a026c17474db3b92c9a24ac708ab87247e30ead16ebe058d9b0c"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "buildlang/STATUS.md",
+              "scope": "index.path-selector.receipt"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "file",
+          "line": null,
+          "path": "buildlang/STATUS.md",
+          "repo": "quantalang",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "selector": "buildlang",
+          "sha256": "28f8a38dad772be6793c4781ec8ae9c20ff134cb52fc4e8dff892741edab08ad"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "buildlang/docs/LANGUAGE.md",
+              "scope": "index.path-selector.receipt"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "file",
+          "line": null,
+          "path": "buildlang/docs/LANGUAGE.md",
+          "repo": "quantalang",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "selector": "buildlang",
+          "sha256": "fcdbb9bd6058792f950a5a5a1aacd29fb98d2378c3ffcf6575bb8389742aeaf2"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "buildlang/docs/api/std.md",
+              "scope": "index.path-selector.receipt"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "file",
+          "line": null,
+          "path": "buildlang/docs/api/std.md",
+          "repo": "quantalang",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "selector": "buildlang",
+          "sha256": "22aabdc8a8bc2f3dbb2fe14636d67e2245c244fff0e78a6cc69a222cf6b2c8ba"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "buildlang/docs/compliance/COMPLIANCE.md",
+              "scope": "index.path-selector.receipt"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "file",
+          "line": null,
+          "path": "buildlang/docs/compliance/COMPLIANCE.md",
+          "repo": "quantalang",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "selector": "buildlang",
+          "sha256": "1137b1306f36fa61b4b69ad40f12fd6ec9aacf6d9f2d5dd0017b1718afe649c2"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "buildlang/docs/guide/getting-started.md",
+              "scope": "index.path-selector.receipt"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "file",
+          "line": null,
+          "path": "buildlang/docs/guide/getting-started.md",
+          "repo": "quantalang",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "selector": "buildlang",
+          "sha256": "36c928937864d9a514fc5713d8426eea6aca6a1d88c19bdad2569a090257996d"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "buildlang/docs/reference/language.md",
+              "scope": "index.path-selector.receipt"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "file",
+          "line": null,
+          "path": "buildlang/docs/reference/language.md",
+          "repo": "quantalang",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "selector": "buildlang",
+          "sha256": "7a8524a1bce855b21ffefdee1ec87947432002a5141dbd65cf8ef713f94d2f27"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "buildlang/docs/tutorials/cli-application.md",
+              "scope": "index.path-selector.receipt"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "file",
+          "line": null,
+          "path": "buildlang/docs/tutorials/cli-application.md",
+          "repo": "quantalang",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "selector": "buildlang",
+          "sha256": "1cbddfbb80510658133e8560a795c10e09870f917307eb951f5e32d9dd0de656"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "buildlang/examples/01_hello_world.bld",
+              "scope": "index.path-selector.receipt"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "file",
+          "line": null,
+          "path": "buildlang/examples/01_hello_world.bld",
+          "repo": "quantalang",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "selector": "buildlang",
+          "sha256": "26e923c0f1783b93dd72b432c38c2f1375fb794bc72c8e1e2467c7da123af2b7"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "buildlang/examples/02_http_server_future.bld",
+              "scope": "index.path-selector.receipt"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "file",
+          "line": null,
+          "path": "buildlang/examples/02_http_server_future.bld",
+          "repo": "quantalang",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "selector": "buildlang",
+          "sha256": "9dc6e6413cccf285d58d2bec6082b0c79be0dd63b3660d515cc95959a8262c15"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "buildlang/examples/03_cli_tool_future.bld",
+              "scope": "index.path-selector.receipt"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "file",
+          "line": null,
+          "path": "buildlang/examples/03_cli_tool_future.bld",
+          "repo": "quantalang",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "selector": "buildlang",
+          "sha256": "5342af4ade8fa732a1a090f4b4ff057974428aff643c5d87d6f1014cc4ae5d53"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "buildlang/examples/04_concurrency_future.bld",
+              "scope": "index.path-selector.receipt"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "file",
+          "line": null,
+          "path": "buildlang/examples/04_concurrency_future.bld",
+          "repo": "quantalang",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "selector": "buildlang",
+          "sha256": "a62e289c2be5f45228495d35230de29810c944d95adef64ab1ea6e5141f272a0"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "buildlang/examples/05_json_api_future.bld",
+              "scope": "index.path-selector.receipt"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "file",
+          "line": null,
+          "path": "buildlang/examples/05_json_api_future.bld",
+          "repo": "quantalang",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "selector": "buildlang",
+          "sha256": "ffa1246702f66df1a919164c2b4993ecaedd2601df30b0895eab385775b6d102"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "buildlang/examples/cli_tool.bld",
+              "scope": "index.path-selector.receipt"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "file",
+          "line": null,
+          "path": "buildlang/examples/cli_tool.bld",
+          "repo": "quantalang",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "selector": "buildlang",
+          "sha256": "9704a36fbb1a3a3a90bac41e2a1ef299d309dbaae32cfdf80f99860daf9b313c"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "buildlang/examples/concurrency.bld",
+              "scope": "index.path-selector.receipt"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "file",
+          "line": null,
+          "path": "buildlang/examples/concurrency.bld",
+          "repo": "quantalang",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "selector": "buildlang",
+          "sha256": "29c76ffce4c9fcd2ac2e6b32ab86f1d4c69ab1eca7fbf724c73cf8047172f5e1"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "buildlang/examples/effects_async.bld",
+              "scope": "index.path-selector.receipt"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "file",
+          "line": null,
+          "path": "buildlang/examples/effects_async.bld",
+          "repo": "quantalang",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "selector": "buildlang",
+          "sha256": "b1280eaad975fd45348e29ee7a2dce6f22f54f5c4b8b709c31c0124fb097d232"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "buildlang/examples/effects_comparison.bld",
+              "scope": "index.path-selector.receipt"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "file",
+          "line": null,
+          "path": "buildlang/examples/effects_comparison.bld",
+          "repo": "quantalang",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "selector": "buildlang",
+          "sha256": "1212aa64c8e23dff997ede959faa14039ef19dd19765479f66157a5cf74304af"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "buildlang/examples/effects_error.bld",
+              "scope": "index.path-selector.receipt"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "file",
+          "line": null,
+          "path": "buildlang/examples/effects_error.bld",
+          "repo": "quantalang",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "selector": "buildlang",
+          "sha256": "d0f9f8617ad193027bf2af38aa067bac6c9351a816103c1ef6fea16908756d7e"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "buildlang/examples/effects_intro.bld",
+              "scope": "index.path-selector.receipt"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "file",
+          "line": null,
+          "path": "buildlang/examples/effects_intro.bld",
+          "repo": "quantalang",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "selector": "buildlang",
+          "sha256": "910ec54f908774f99874267ff2c662f7a617994b4b9c596a44d8ab2e87300de5"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "buildlang/examples/effects_state.bld",
+              "scope": "index.path-selector.receipt"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "file",
+          "line": null,
+          "path": "buildlang/examples/effects_state.bld",
+          "repo": "quantalang",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "selector": "buildlang",
+          "sha256": "aabe3302fc0819e0820bbe922607e5fa0b54846fa818f00547b6aee915e23adf"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "buildlang/examples/hello.bld",
+              "scope": "index.path-selector.receipt"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "file",
+          "line": null,
+          "path": "buildlang/examples/hello.bld",
+          "repo": "quantalang",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "selector": "buildlang",
+          "sha256": "a872615ee15c7ec583c55d6747ec3ae4d4e7d7139a742de6c057183ec9e060b5"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "buildlang/examples/http_server.bld",
+              "scope": "index.path-selector.receipt"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "file",
+          "line": null,
+          "path": "buildlang/examples/http_server.bld",
+          "repo": "quantalang",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "selector": "buildlang",
+          "sha256": "ca2e0301bb8f28098ab7f2a5eef2de1db275c4a113a3b3955215a091be72760a"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "buildlang/examples/json_processing.bld",
+              "scope": "index.path-selector.receipt"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "file",
+          "line": null,
+          "path": "buildlang/examples/json_processing.bld",
+          "repo": "quantalang",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "selector": "buildlang",
+          "sha256": "8dbdb78ee4bc5d158c82d497f183741dc3fca895c7523a106098172ae15e6f01"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "buildlang/release/ANNOUNCEMENT.md",
+              "scope": "index.path-selector.receipt"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "file",
+          "line": null,
+          "path": "buildlang/release/ANNOUNCEMENT.md",
+          "repo": "quantalang",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "selector": "buildlang",
+          "sha256": "d5d2ca51a752c16a8c04365101aba379a1b349ae4f8cdf1b1092a864c1e789e7"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "buildlang/release/CHANGELOG.md",
+              "scope": "index.path-selector.receipt"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "file",
+          "line": null,
+          "path": "buildlang/release/CHANGELOG.md",
+          "repo": "quantalang",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "selector": "buildlang",
+          "sha256": "d34c0acc2f3d4b671e0931b1e44f6ca02d40f2d50be7dfaa1a819a9b613be6f9"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "buildlang/release/README.md",
+              "scope": "index.path-selector.receipt"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "file",
+          "line": null,
+          "path": "buildlang/release/README.md",
+          "repo": "quantalang",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "selector": "buildlang",
+          "sha256": "26f4dddda9a26c8a95e2b2f96642e16ae9d73bdef6945ae693bd72789280afad"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "buildlang/release/package.json",
+              "scope": "index.path-selector.receipt"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "file",
+          "line": null,
+          "path": "buildlang/release/package.json",
+          "repo": "quantalang",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "selector": "buildlang",
+          "sha256": "7b376a4c600299958a203c086f471c623ddb8e55473fc105495635bceac2c4f6"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "buildlang/release/share/doc/api/std.md",
+              "scope": "index.path-selector.receipt"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "file",
+          "line": null,
+          "path": "buildlang/release/share/doc/api/std.md",
+          "repo": "quantalang",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "selector": "buildlang",
+          "sha256": "ec85440d888223955ca43f39a36a7086d37177ee8f47018b3195581e2b207fbd"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "buildlang/release/share/doc/compliance/COMPLIANCE.md",
+              "scope": "index.path-selector.receipt"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "file",
+          "line": null,
+          "path": "buildlang/release/share/doc/compliance/COMPLIANCE.md",
+          "repo": "quantalang",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "selector": "buildlang",
+          "sha256": "539a83ecc4538d7fc6852312a30da32b008fad964726e63fb8bf106cb9b9738b"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "buildlang/release/share/doc/guide/getting-started.md",
+              "scope": "index.path-selector.receipt"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "file",
+          "line": null,
+          "path": "buildlang/release/share/doc/guide/getting-started.md",
+          "repo": "quantalang",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "selector": "buildlang",
+          "sha256": "5d8224630b9be4377610c249fb88ae50af8ccaa9d0b06fa751411afe52b5911a"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "buildlang/release/share/doc/reference/language.md",
+              "scope": "index.path-selector.receipt"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "file",
+          "line": null,
+          "path": "buildlang/release/share/doc/reference/language.md",
+          "repo": "quantalang",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "selector": "buildlang",
+          "sha256": "54596329731c9104bff49805b68c5df7e347fd62bfa7a64fd97ed0184e611c9a"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "buildlang/release/share/doc/tutorials/cli-application.md",
+              "scope": "index.path-selector.receipt"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "file",
+          "line": null,
+          "path": "buildlang/release/share/doc/tutorials/cli-application.md",
+          "repo": "quantalang",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "selector": "buildlang",
+          "sha256": "2609eecf30b3665197bb02b7d7cf522a9f091d971ff69c0337973ede9ac8aa06"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "buildlang/release/share/examples/01_hello_world.bld",
+              "scope": "index.path-selector.receipt"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "file",
+          "line": null,
+          "path": "buildlang/release/share/examples/01_hello_world.bld",
+          "repo": "quantalang",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "selector": "buildlang",
+          "sha256": "26e923c0f1783b93dd72b432c38c2f1375fb794bc72c8e1e2467c7da123af2b7"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "buildlang/release/share/examples/02_http_server.bld",
+              "scope": "index.path-selector.receipt"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "file",
+          "line": null,
+          "path": "buildlang/release/share/examples/02_http_server.bld",
+          "repo": "quantalang",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "selector": "buildlang",
+          "sha256": "9dc6e6413cccf285d58d2bec6082b0c79be0dd63b3660d515cc95959a8262c15"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "buildlang/release/share/examples/03_cli_tool.bld",
+              "scope": "index.path-selector.receipt"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "file",
+          "line": null,
+          "path": "buildlang/release/share/examples/03_cli_tool.bld",
+          "repo": "quantalang",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "selector": "buildlang",
+          "sha256": "5342af4ade8fa732a1a090f4b4ff057974428aff643c5d87d6f1014cc4ae5d53"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "buildlang/release/share/examples/04_concurrency.bld",
+              "scope": "index.path-selector.receipt"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "file",
+          "line": null,
+          "path": "buildlang/release/share/examples/04_concurrency.bld",
+          "repo": "quantalang",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "selector": "buildlang",
+          "sha256": "a62e289c2be5f45228495d35230de29810c944d95adef64ab1ea6e5141f272a0"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "buildlang/release/share/examples/05_json_api.bld",
+              "scope": "index.path-selector.receipt"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "file",
+          "line": null,
+          "path": "buildlang/release/share/examples/05_json_api.bld",
+          "repo": "quantalang",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "selector": "buildlang",
+          "sha256": "ffa1246702f66df1a919164c2b4993ecaedd2601df30b0895eab385775b6d102"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "buildlang/release/share/examples/cli_tool.bld",
+              "scope": "index.path-selector.receipt"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "file",
+          "line": null,
+          "path": "buildlang/release/share/examples/cli_tool.bld",
+          "repo": "quantalang",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "selector": "buildlang",
+          "sha256": "9704a36fbb1a3a3a90bac41e2a1ef299d309dbaae32cfdf80f99860daf9b313c"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "buildlang/release/share/examples/concurrency.bld",
+              "scope": "index.path-selector.receipt"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "file",
+          "line": null,
+          "path": "buildlang/release/share/examples/concurrency.bld",
+          "repo": "quantalang",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "selector": "buildlang",
+          "sha256": "29c76ffce4c9fcd2ac2e6b32ab86f1d4c69ab1eca7fbf724c73cf8047172f5e1"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "buildlang/release/share/examples/hello.bld",
+              "scope": "index.path-selector.receipt"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "file",
+          "line": null,
+          "path": "buildlang/release/share/examples/hello.bld",
+          "repo": "quantalang",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "selector": "buildlang",
+          "sha256": "a872615ee15c7ec583c55d6747ec3ae4d4e7d7139a742de6c057183ec9e060b5"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "buildlang/release/share/examples/http_server.bld",
+              "scope": "index.path-selector.receipt"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "file",
+          "line": null,
+          "path": "buildlang/release/share/examples/http_server.bld",
+          "repo": "quantalang",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "selector": "buildlang",
+          "sha256": "ca2e0301bb8f28098ab7f2a5eef2de1db275c4a113a3b3955215a091be72760a"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "buildlang/release/share/examples/json_processing.bld",
+              "scope": "index.path-selector.receipt"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "file",
+          "line": null,
+          "path": "buildlang/release/share/examples/json_processing.bld",
+          "repo": "quantalang",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "selector": "buildlang",
+          "sha256": "8dbdb78ee4bc5d158c82d497f183741dc3fca895c7523a106098172ae15e6f01"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "buildlang/src/ast.bld",
+              "scope": "index.path-selector.receipt"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "file",
+          "line": null,
+          "path": "buildlang/src/ast.bld",
+          "repo": "quantalang",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "selector": "buildlang",
+          "sha256": "7dcc25ecde30545fa16185f226903a1465ee9cd9c0a6809ef66957632b5bdef2"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "buildlang/src/async/channel.bld",
+              "scope": "index.path-selector.receipt"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "file",
+          "line": null,
+          "path": "buildlang/src/async/channel.bld",
+          "repo": "quantalang",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "selector": "buildlang",
+          "sha256": "010b44e3cf802a0f5372393cd34c289118d51a155302102aaaf31e5e2c2fd4b7"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "buildlang/src/async/executor.bld",
+              "scope": "index.path-selector.receipt"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "file",
+          "line": null,
+          "path": "buildlang/src/async/executor.bld",
+          "repo": "quantalang",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "selector": "buildlang",
+          "sha256": "b1f4ba79c273912559153728a384df2a2e9578787fb2b28a8a22e07fb16d9c2b"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "buildlang/src/async/io.bld",
+              "scope": "index.path-selector.receipt"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "file",
+          "line": null,
+          "path": "buildlang/src/async/io.bld",
+          "repo": "quantalang",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "selector": "buildlang",
+          "sha256": "d0f6ee84518edb7fa350aab1d44996cf2024d09e2b2581934651231b88015d38"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "buildlang/src/async/mod.bld",
+              "scope": "index.path-selector.receipt"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "file",
+          "line": null,
+          "path": "buildlang/src/async/mod.bld",
+          "repo": "quantalang",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "selector": "buildlang",
+          "sha256": "f447d5b665d1adf6688a5e7e8c8d52eb51b4fa0ba03209ce264bd119fbe62a14"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "buildlang/src/async/sync.bld",
+              "scope": "index.path-selector.receipt"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "file",
+          "line": null,
+          "path": "buildlang/src/async/sync.bld",
+          "repo": "quantalang",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "selector": "buildlang",
+          "sha256": "c7f0324ea743dcf3b9178ed91f88d747d851ae944278361b9309ec7a7a85f037"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "buildlang/src/async/task.bld",
+              "scope": "index.path-selector.receipt"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "file",
+          "line": null,
+          "path": "buildlang/src/async/task.bld",
+          "repo": "quantalang",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "selector": "buildlang",
+          "sha256": "2f1812e5a19ba0598f66288e1254e5f8a7ea0110ba77628bc999a39780fb100b"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "buildlang/src/async/timer.bld",
+              "scope": "index.path-selector.receipt"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "file",
+          "line": null,
+          "path": "buildlang/src/async/timer.bld",
+          "repo": "quantalang",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "selector": "buildlang",
+          "sha256": "b80a3846c05579d86e11e60585e42e09d29f91316d5ddbcc9eed957ba866ba22"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "buildlang/src/async/waker.bld",
+              "scope": "index.path-selector.receipt"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "file",
+          "line": null,
+          "path": "buildlang/src/async/waker.bld",
+          "repo": "quantalang",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "selector": "buildlang",
+          "sha256": "f1abc32a955ce31f4c951979c570b77fd02f4703e1501ecc25395e6f54278535"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "buildlang/src/bench/mod.bld",
+              "scope": "index.path-selector.receipt"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "file",
+          "line": null,
+          "path": "buildlang/src/bench/mod.bld",
+          "repo": "quantalang",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "selector": "buildlang",
+          "sha256": "0cdfb060ea2553ef082adf088174778d30276d3dea6214f096f7334ee5ff46c4"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "buildlang/src/bench/report.bld",
+              "scope": "index.path-selector.receipt"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "file",
+          "line": null,
+          "path": "buildlang/src/bench/report.bld",
+          "repo": "quantalang",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "selector": "buildlang",
+          "sha256": "8ce78bb54bc7f1516d075a273d0d06e30a58d81e312d87e10547cd27ca6cc161"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "buildlang/src/bench/runner.bld",
+              "scope": "index.path-selector.receipt"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "file",
+          "line": null,
+          "path": "buildlang/src/bench/runner.bld",
+          "repo": "quantalang",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "selector": "buildlang",
+          "sha256": "2cdac0f79d7f3add8312d71ab53eff62727ba54ee942ace0d80726eec5978475"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "buildlang/src/bench/statistics.bld",
+              "scope": "index.path-selector.receipt"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "file",
+          "line": null,
+          "path": "buildlang/src/bench/statistics.bld",
+          "repo": "quantalang",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "selector": "buildlang",
+          "sha256": "5e1be17ab0b386b0bf357e45348fe92915ccf1432b3024bf4eae5ebceb514226"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "buildlang/src/bootstrap/driver.bld",
+              "scope": "index.path-selector.receipt"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "file",
+          "line": null,
+          "path": "buildlang/src/bootstrap/driver.bld",
+          "repo": "quantalang",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "selector": "buildlang",
+          "sha256": "f178aee18f790915d55cc1db87549f14e1a46c49afd9035d9ce35866cf1bf087"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "buildlang/src/bootstrap/mod.bld",
+              "scope": "index.path-selector.receipt"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "file",
+          "line": null,
+          "path": "buildlang/src/bootstrap/mod.bld",
+          "repo": "quantalang",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "selector": "buildlang",
+          "sha256": "8c2db1ae19d5b94fa8bb37e9eff496269e6ddc13e328be5520f10964d19b903f"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "buildlang/src/bootstrap/stage0/spec.bld",
+              "scope": "index.path-selector.receipt"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "file",
+          "line": null,
+          "path": "buildlang/src/bootstrap/stage0/spec.bld",
+          "repo": "quantalang",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "selector": "buildlang",
+          "sha256": "c021b4dc5c75ac7cd595ec40c7e20790c1df9925f53c73c713145b3d14fc0adb"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "buildlang/src/bootstrap/stage1/compiler.bld",
+              "scope": "index.path-selector.receipt"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "file",
+          "line": null,
+          "path": "buildlang/src/bootstrap/stage1/compiler.bld",
+          "repo": "quantalang",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "selector": "buildlang",
+          "sha256": "64196da9956a9c00f869c5f18d0151fc8d18648753b43f885be1bdc935953cbe"
+        }
+      ],
+      "status": "MATCH",
+      "tree_sha256": "278d603ac12584770501ce309854b7732f965870db3928e71f5581f008bcb6ba"
+    },
+    {
+      "file_count": 145,
+      "kind": "directory",
+      "reason": "selected",
+      "selector": "compiler",
+      "source_ref_count": 64,
+      "source_refs": [
+        {
+          "expand": {
+            "arguments": {
+              "path": "compiler/Cargo.lock",
+              "scope": "index.path-selector.receipt"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "file",
+          "line": null,
+          "path": "compiler/Cargo.lock",
+          "repo": "quantalang",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "selector": "compiler",
+          "sha256": "c18164c9ae80066ea2687f6ca7edb78d84c4ea3fd2220260eac074c20ddb9cd0"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "compiler/Cargo.toml",
+              "scope": "index.path-selector.receipt"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "file",
+          "line": null,
+          "path": "compiler/Cargo.toml",
+          "repo": "quantalang",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "selector": "compiler",
+          "sha256": "ce4473fdea8325e28dcd46683233675fa2855797c51151bfa50aef320af27cf1"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "compiler/README.md",
+              "scope": "index.path-selector.receipt"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "file",
+          "line": null,
+          "path": "compiler/README.md",
+          "repo": "quantalang",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "selector": "compiler",
+          "sha256": "b91663ebd8e7375c3bdfd3e1b6852d2ce1e9cbf423546d5ebf27fcc1a4079287"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "compiler/benches/lexer_benchmark.rs",
+              "scope": "index.path-selector.receipt"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "file",
+          "line": null,
+          "path": "compiler/benches/lexer_benchmark.rs",
+          "repo": "quantalang",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "selector": "compiler",
+          "sha256": "fd31fa867a23f5cf1b2b764e714ad3479721483f1a9557cfdb847d1021a35e6b"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "compiler/examples/gen_triangle.rs",
+              "scope": "index.path-selector.receipt"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "file",
+          "line": null,
+          "path": "compiler/examples/gen_triangle.rs",
+          "repo": "quantalang",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "selector": "compiler",
+          "sha256": "0468290a40bc586564286e989d09f15e480da11c251af5b700a9e97396bf061b"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "compiler/src/ast/expr.rs",
+              "scope": "index.path-selector.receipt"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "file",
+          "line": null,
+          "path": "compiler/src/ast/expr.rs",
+          "repo": "quantalang",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "selector": "compiler",
+          "sha256": "e1a03a1ea719fb5778aa9847aeaaf3570d4226e893efa3b04cd0d99eaf44afbc"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "compiler/src/ast/item.rs",
+              "scope": "index.path-selector.receipt"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "file",
+          "line": null,
+          "path": "compiler/src/ast/item.rs",
+          "repo": "quantalang",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "selector": "compiler",
+          "sha256": "c6fc61b40e8e754dc80961385e87b7917aecb9ad13fbda8f9230376601929780"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "compiler/src/ast/mod.rs",
+              "scope": "index.path-selector.receipt"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "file",
+          "line": null,
+          "path": "compiler/src/ast/mod.rs",
+          "repo": "quantalang",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "selector": "compiler",
+          "sha256": "74b7799af1d174e62d7725ca39a7196a492bba99d2637ab96fc7043d12cbabe0"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "compiler/src/ast/operators.rs",
+              "scope": "index.path-selector.receipt"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "file",
+          "line": null,
+          "path": "compiler/src/ast/operators.rs",
+          "repo": "quantalang",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "selector": "compiler",
+          "sha256": "f180a72588bc5468e64551c9f1a52dc18d464314c1158e89023b86c0e0d9206e"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "compiler/src/ast/pattern.rs",
+              "scope": "index.path-selector.receipt"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "file",
+          "line": null,
+          "path": "compiler/src/ast/pattern.rs",
+          "repo": "quantalang",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "selector": "compiler",
+          "sha256": "8f2318010e4f9ebdb0c4180be947c36e3d19e202f0c674230baefa123e8d83a6"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "compiler/src/ast/stmt.rs",
+              "scope": "index.path-selector.receipt"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "file",
+          "line": null,
+          "path": "compiler/src/ast/stmt.rs",
+          "repo": "quantalang",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "selector": "compiler",
+          "sha256": "eda92b2dd0df6647b593566f515a061d4740c3815ce4b3360c531f7a6fc1a053"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "compiler/src/ast/ty.rs",
+              "scope": "index.path-selector.receipt"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "file",
+          "line": null,
+          "path": "compiler/src/ast/ty.rs",
+          "repo": "quantalang",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "selector": "compiler",
+          "sha256": "be3bcb05fc606b0d84de8b4ba033cb0f4dfcccda8cbe886d3d1d2b25890e8564"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "compiler/src/bdf.rs",
+              "scope": "index.path-selector.receipt"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "file",
+          "line": null,
+          "path": "compiler/src/bdf.rs",
+          "repo": "quantalang",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "selector": "compiler",
+          "sha256": "9f04e360db8de3c2af58b84c11af974cbb751b626b326fb05bb177bda45489fe"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "compiler/src/bdf/flagship.rs",
+              "scope": "index.path-selector.receipt"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "file",
+          "line": null,
+          "path": "compiler/src/bdf/flagship.rs",
+          "repo": "quantalang",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "selector": "compiler",
+          "sha256": "a9c824643c076d3de4c703439710e4c3693d9c55fe6dc9b04b0353fe6e6a8a8a"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "compiler/src/bdf/json.rs",
+              "scope": "index.path-selector.receipt"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "file",
+          "line": null,
+          "path": "compiler/src/bdf/json.rs",
+          "repo": "quantalang",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "selector": "compiler",
+          "sha256": "f74fc7d75ea520c6cae19fa080bade36f452752fd9011905c1acc643c8b851d9"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "compiler/src/codegen/analysis/cfg.rs",
+              "scope": "index.path-selector.receipt"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "file",
+          "line": null,
+          "path": "compiler/src/codegen/analysis/cfg.rs",
+          "repo": "quantalang",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "selector": "compiler",
+          "sha256": "6cd1bcba6b2d4074e5e62d969c94aacebed674fa6b10c29583bbb48939697554"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "compiler/src/codegen/analysis/drops.rs",
+              "scope": "index.path-selector.receipt"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "file",
+          "line": null,
+          "path": "compiler/src/codegen/analysis/drops.rs",
+          "repo": "quantalang",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "selector": "compiler",
+          "sha256": "bc1d27876ca09af5ab88124234a90acb4373433edfed849d19f2aac050d4e4cc"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "compiler/src/codegen/analysis/linear.rs",
+              "scope": "index.path-selector.receipt"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "file",
+          "line": null,
+          "path": "compiler/src/codegen/analysis/linear.rs",
+          "repo": "quantalang",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "selector": "compiler",
+          "sha256": "5cb84374fb2055c49f88d41bd87f7407ccd2963ca32d11f4d996a64fae1be20a"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "compiler/src/codegen/analysis/liveness.rs",
+              "scope": "index.path-selector.receipt"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "file",
+          "line": null,
+          "path": "compiler/src/codegen/analysis/liveness.rs",
+          "repo": "quantalang",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "selector": "compiler",
+          "sha256": "99f20de8b2d487c027b5ad61a6b2865cdfaa2b1e5bbfa5ac9a92811b9348c0a8"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "compiler/src/codegen/analysis/mod.rs",
+              "scope": "index.path-selector.receipt"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "file",
+          "line": null,
+          "path": "compiler/src/codegen/analysis/mod.rs",
+          "repo": "quantalang",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "selector": "compiler",
+          "sha256": "3e9997fbd252bffa07edbdd04ec6971d93da19f4dcdb3c44707f9a3b32f310b1"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "compiler/src/codegen/backend/STATUS.md",
+              "scope": "index.path-selector.receipt"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "file",
+          "line": null,
+          "path": "compiler/src/codegen/backend/STATUS.md",
+          "repo": "quantalang",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "selector": "compiler",
+          "sha256": "c07e0325afc6c651cc0034ef8b2fa0d1c2df9564e344f255701a4a7bf19fc48b"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "compiler/src/codegen/backend/arm64.rs",
+              "scope": "index.path-selector.receipt"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "file",
+          "line": null,
+          "path": "compiler/src/codegen/backend/arm64.rs",
+          "repo": "quantalang",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "selector": "compiler",
+          "sha256": "1ff65449e3bcfb533809b8ab01e43f9a8726b4bd7562fe39784452d8bf8833be"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "compiler/src/codegen/backend/arm64_enc.rs",
+              "scope": "index.path-selector.receipt"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "file",
+          "line": null,
+          "path": "compiler/src/codegen/backend/arm64_enc.rs",
+          "repo": "quantalang",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "selector": "compiler",
+          "sha256": "55c8b6e77fe0aa23e9345034e6e4cdae359e0a0c41f54974d429ac551f39bb0f"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "compiler/src/codegen/backend/c.rs",
+              "scope": "index.path-selector.receipt"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "file",
+          "line": null,
+          "path": "compiler/src/codegen/backend/c.rs",
+          "repo": "quantalang",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "selector": "compiler",
+          "sha256": "f7b131518a2927ec9e11c8a1ec836d098340aec9e89086d2fe2065d002272805"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "compiler/src/codegen/backend/glsl.rs",
+              "scope": "index.path-selector.receipt"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "file",
+          "line": null,
+          "path": "compiler/src/codegen/backend/glsl.rs",
+          "repo": "quantalang",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "selector": "compiler",
+          "sha256": "552e6ca4461e54c27e71aee7861bfd7ff7afd849e2885c315ce83bd21a0b1e46"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "compiler/src/codegen/backend/hlsl.rs",
+              "scope": "index.path-selector.receipt"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "file",
+          "line": null,
+          "path": "compiler/src/codegen/backend/hlsl.rs",
+          "repo": "quantalang",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "selector": "compiler",
+          "sha256": "6fa2d0db57de2478acbf6848accc7680579ba645790e43a79cdcf424c48d49c0"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "compiler/src/codegen/backend/llvm.rs",
+              "scope": "index.path-selector.receipt"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "file",
+          "line": null,
+          "path": "compiler/src/codegen/backend/llvm.rs",
+          "repo": "quantalang",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "selector": "compiler",
+          "sha256": "ceb08094bead53099872bbb03b3fea2d303669c24382abcfcd7714a16a6916c9"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "compiler/src/codegen/backend/mod.rs",
+              "scope": "index.path-selector.receipt"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "file",
+          "line": null,
+          "path": "compiler/src/codegen/backend/mod.rs",
+          "repo": "quantalang",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "selector": "compiler",
+          "sha256": "5d98cbf8e72831a99dfd6c43d1dcd0d37a89962e428073f1298a3ebe31834232"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "compiler/src/codegen/backend/rust.rs",
+              "scope": "index.path-selector.receipt"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "file",
+          "line": null,
+          "path": "compiler/src/codegen/backend/rust.rs",
+          "repo": "quantalang",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "selector": "compiler",
+          "sha256": "fb6d421d6f0aff028e5f4e2f952e70e5e0a49dd532cf5b0efc1988826efd3e67"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "compiler/src/codegen/backend/spirv.rs",
+              "scope": "index.path-selector.receipt"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "file",
+          "line": null,
+          "path": "compiler/src/codegen/backend/spirv.rs",
+          "repo": "quantalang",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "selector": "compiler",
+          "sha256": "80a6264b299f4508c744cda5ce3058d37b65eed8b9258afda3130e51e40f66c0"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "compiler/src/codegen/backend/wasm.rs",
+              "scope": "index.path-selector.receipt"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "file",
+          "line": null,
+          "path": "compiler/src/codegen/backend/wasm.rs",
+          "repo": "quantalang",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "selector": "compiler",
+          "sha256": "e6cbebb108d62ea091156ce3b499948e3f23778187b8b21a60802e41bce3b28e"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "compiler/src/codegen/backend/x86_64.rs",
+              "scope": "index.path-selector.receipt"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "file",
+          "line": null,
+          "path": "compiler/src/codegen/backend/x86_64.rs",
+          "repo": "quantalang",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "selector": "compiler",
+          "sha256": "b8cfb577ace377787601b2b48408cb42c965961a119e2ba0f5eeb7267c88698a"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "compiler/src/codegen/backend/x86_64_enc.rs",
+              "scope": "index.path-selector.receipt"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "file",
+          "line": null,
+          "path": "compiler/src/codegen/backend/x86_64_enc.rs",
+          "repo": "quantalang",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "selector": "compiler",
+          "sha256": "0a9587e3f8fb39dd294f8d9b7455daffa3982424f512fc14010ac9115e3e667d"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "compiler/src/codegen/builder.rs",
+              "scope": "index.path-selector.receipt"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "file",
+          "line": null,
+          "path": "compiler/src/codegen/builder.rs",
+          "repo": "quantalang",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "selector": "compiler",
+          "sha256": "9f6ff64400493c4871c21253debac46c0ffb22a07f231279945edd0b60066cd1"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "compiler/src/codegen/debug.rs",
+              "scope": "index.path-selector.receipt"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "file",
+          "line": null,
+          "path": "compiler/src/codegen/debug.rs",
+          "repo": "quantalang",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "selector": "compiler",
+          "sha256": "62c1e56a899117c6a686e6faddd75e3cd3d0b7d6859403418d44182df50f6176"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "compiler/src/codegen/ir.rs",
+              "scope": "index.path-selector.receipt"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "file",
+          "line": null,
+          "path": "compiler/src/codegen/ir.rs",
+          "repo": "quantalang",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "selector": "compiler",
+          "sha256": "4e1db322922fc085c87ea267a2f263d39a69c0a5162966d26e2ceed8427082db"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "compiler/src/codegen/lower/expr.rs",
+              "scope": "index.path-selector.receipt"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "file",
+          "line": null,
+          "path": "compiler/src/codegen/lower/expr.rs",
+          "repo": "quantalang",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "selector": "compiler",
+          "sha256": "8f775d984d7f85b0270c46458feab05320dafb4212ce662ed09d4cdc52f4d4ba"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "compiler/src/codegen/lower/macros.rs",
+              "scope": "index.path-selector.receipt"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "file",
+          "line": null,
+          "path": "compiler/src/codegen/lower/macros.rs",
+          "repo": "quantalang",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "selector": "compiler",
+          "sha256": "bbc648a93f3e896fa4c717d937c0fd10cced0f5e0a59e4ec04ba3e2486647665"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "compiler/src/codegen/lower/mod.rs",
+              "scope": "index.path-selector.receipt"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "file",
+          "line": null,
+          "path": "compiler/src/codegen/lower/mod.rs",
+          "repo": "quantalang",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "selector": "compiler",
+          "sha256": "a51e6513b0bac407e866af7220748924221ff8c077df7f64bde12b36c28494fc"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "compiler/src/codegen/lower/tests.rs",
+              "scope": "index.path-selector.receipt"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "file",
+          "line": null,
+          "path": "compiler/src/codegen/lower/tests.rs",
+          "repo": "quantalang",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "selector": "compiler",
+          "sha256": "265ea2eec0ef52e53f1e42c576e0577a7f9724136ae347b0125c2da0381ee9ed"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "compiler/src/codegen/lower/types.rs",
+              "scope": "index.path-selector.receipt"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "file",
+          "line": null,
+          "path": "compiler/src/codegen/lower/types.rs",
+          "repo": "quantalang",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "selector": "compiler",
+          "sha256": "e6734698002848d50601381ec547b4cd60b19c142826b76607d2763e9fefd35e"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "compiler/src/codegen/mod.rs",
+              "scope": "index.path-selector.receipt"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "file",
+          "line": null,
+          "path": "compiler/src/codegen/mod.rs",
+          "repo": "quantalang",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "selector": "compiler",
+          "sha256": "6839896965972a0243577782070aca0789e01b31631db0b4882d0b3351e76025"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "compiler/src/codegen/runtime.rs",
+              "scope": "index.path-selector.receipt"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "file",
+          "line": null,
+          "path": "compiler/src/codegen/runtime.rs",
+          "repo": "quantalang",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "selector": "compiler",
+          "sha256": "b3e1d32131051c450f1f93eb158cd3e12d9bc4cde17b56a59ca92e75c82b5ae3"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "compiler/src/fmt/config.rs",
+              "scope": "index.path-selector.receipt"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "file",
+          "line": null,
+          "path": "compiler/src/fmt/config.rs",
+          "repo": "quantalang",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "selector": "compiler",
+          "sha256": "12a2d1a4c8c3683f01f9127e5a701d0e543e4b3f643216323f414ffd9b4f5fe5"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "compiler/src/fmt/formatter.rs",
+              "scope": "index.path-selector.receipt"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "file",
+          "line": null,
+          "path": "compiler/src/fmt/formatter.rs",
+          "repo": "quantalang",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "selector": "compiler",
+          "sha256": "f99090a2549ff48b64275e78fc12b35f8ff9032af2649b33f9bc695a28a36365"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "compiler/src/fmt/mod.rs",
+              "scope": "index.path-selector.receipt"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "file",
+          "line": null,
+          "path": "compiler/src/fmt/mod.rs",
+          "repo": "quantalang",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "selector": "compiler",
+          "sha256": "343fbfc18c356823032573e1a1cbbb5f50e358db1ccb737dc3aa22df687c7e7c"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "compiler/src/fmt/pretty.rs",
+              "scope": "index.path-selector.receipt"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "file",
+          "line": null,
+          "path": "compiler/src/fmt/pretty.rs",
+          "repo": "quantalang",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "selector": "compiler",
+          "sha256": "3b2631a9a8ff269bc5598d0883909ef29806138ea96e760ba8ec56ac1b600c3e"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "compiler/src/lexer/cursor.rs",
+              "scope": "index.path-selector.receipt"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "file",
+          "line": null,
+          "path": "compiler/src/lexer/cursor.rs",
+          "repo": "quantalang",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "selector": "compiler",
+          "sha256": "a6757f3c084a0e5e9451c8572b2ac7edefb66e7518d4f361f9e46143ee904979"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "compiler/src/lexer/error.rs",
+              "scope": "index.path-selector.receipt"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "file",
+          "line": null,
+          "path": "compiler/src/lexer/error.rs",
+          "repo": "quantalang",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "selector": "compiler",
+          "sha256": "d445265521182f1a5f719e5d51a5217703ced02be1fa40e334c6150355989e2e"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "compiler/src/lexer/mod.rs",
+              "scope": "index.path-selector.receipt"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "file",
+          "line": null,
+          "path": "compiler/src/lexer/mod.rs",
+          "repo": "quantalang",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "selector": "compiler",
+          "sha256": "a971c572183b4169f4c008f9a98c5fc72d46a6ee8d3d7f88c5ed573119c6c14b"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "compiler/src/lexer/scanner.rs",
+              "scope": "index.path-selector.receipt"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "file",
+          "line": null,
+          "path": "compiler/src/lexer/scanner.rs",
+          "repo": "quantalang",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "selector": "compiler",
+          "sha256": "5d881dac9a2d289383cdb9d5de0d507228eacb5908d07335dae7b150c2b23160"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "compiler/src/lexer/span.rs",
+              "scope": "index.path-selector.receipt"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "file",
+          "line": null,
+          "path": "compiler/src/lexer/span.rs",
+          "repo": "quantalang",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "selector": "compiler",
+          "sha256": "67b4ed799dc1a13702360aae01117d09b0d853a7176543987c4f4bc68195becd"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "compiler/src/lexer/token.rs",
+              "scope": "index.path-selector.receipt"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "file",
+          "line": null,
+          "path": "compiler/src/lexer/token.rs",
+          "repo": "quantalang",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "selector": "compiler",
+          "sha256": "0e1210ebe24bd9be9fb32af379bd3d99b44d76c0a50327eace6ec846f982c3d2"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "compiler/src/lib.rs",
+              "scope": "index.path-selector.receipt"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "file",
+          "line": null,
+          "path": "compiler/src/lib.rs",
+          "repo": "quantalang",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "selector": "compiler",
+          "sha256": "5f7cf8067251405f70e497d7ccfc185a235d9df4793b193f4c658307590bd63d"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "compiler/src/lsp/STATUS.md",
+              "scope": "index.path-selector.receipt"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "file",
+          "line": null,
+          "path": "compiler/src/lsp/STATUS.md",
+          "repo": "quantalang",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "selector": "compiler",
+          "sha256": "dbd39d9a073f5ef4a97863e370409899385e3d4983e79d2bd4ac18fe8d50ecdb"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "compiler/src/lsp/actions.rs",
+              "scope": "index.path-selector.receipt"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "file",
+          "line": null,
+          "path": "compiler/src/lsp/actions.rs",
+          "repo": "quantalang",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "selector": "compiler",
+          "sha256": "077e9823ee10200e6e088c3a05c09aaadb4d22403771b5bf8837caa2faab5ef7"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "compiler/src/lsp/completion.rs",
+              "scope": "index.path-selector.receipt"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "file",
+          "line": null,
+          "path": "compiler/src/lsp/completion.rs",
+          "repo": "quantalang",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "selector": "compiler",
+          "sha256": "d6f8d0dfb1d105e926775fbc0b8903e7d40ca7f393d840f8f53ad8bdd5d102ed"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "compiler/src/lsp/definition.rs",
+              "scope": "index.path-selector.receipt"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "file",
+          "line": null,
+          "path": "compiler/src/lsp/definition.rs",
+          "repo": "quantalang",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "selector": "compiler",
+          "sha256": "423a9f81f99f728012b2b5fe51ae2b438e8428f9daf6ca98f2a225f8aa604a0a"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "compiler/src/lsp/diagnostics.rs",
+              "scope": "index.path-selector.receipt"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "file",
+          "line": null,
+          "path": "compiler/src/lsp/diagnostics.rs",
+          "repo": "quantalang",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "selector": "compiler",
+          "sha256": "b3e3dadae90f2061ea3d83e2d681918f711e0a89da110f98993b6d2aeb0bd7c5"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "compiler/src/lsp/document.rs",
+              "scope": "index.path-selector.receipt"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "file",
+          "line": null,
+          "path": "compiler/src/lsp/document.rs",
+          "repo": "quantalang",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "selector": "compiler",
+          "sha256": "2573380f16d1461b56d273ba37b24fd94ec4bc0c7c18d58f9993654297f58bc0"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "compiler/src/lsp/hover.rs",
+              "scope": "index.path-selector.receipt"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "file",
+          "line": null,
+          "path": "compiler/src/lsp/hover.rs",
+          "repo": "quantalang",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "selector": "compiler",
+          "sha256": "bb86f3980af899799f89724d3ae04decabbf728d95aea7bc69de77809fb2cbe2"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "compiler/src/lsp/jsonrpc.rs",
+              "scope": "index.path-selector.receipt"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "file",
+          "line": null,
+          "path": "compiler/src/lsp/jsonrpc.rs",
+          "repo": "quantalang",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "selector": "compiler",
+          "sha256": "4102fc62ba6899b486ccc326794743ecb458b925e317aa8d395100e3faf3e745"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "compiler/src/lsp/message.rs",
+              "scope": "index.path-selector.receipt"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "file",
+          "line": null,
+          "path": "compiler/src/lsp/message.rs",
+          "repo": "quantalang",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "selector": "compiler",
+          "sha256": "46f4ae1ee6fe23adaa129f7cf15ff71baccc24ccf3f292fbc403839143c33436"
+        },
+        {
+          "expand": {
+            "arguments": {
+              "path": "compiler/src/lsp/mod.rs",
+              "scope": "index.path-selector.receipt"
+            },
+            "tool": "gather.docs"
+          },
+          "kind": "file",
+          "line": null,
+          "path": "compiler/src/lsp/mod.rs",
+          "repo": "quantalang",
+          "repo_path": ".",
+          "schema": "project-telos.source-ref/v1",
+          "selector": "compiler",
+          "sha256": "52d85e852581dfbdcbcb2bdd65d310e4139c9b3d0a5e733263e0b9d1fa846991"
+        }
+      ],
+      "status": "MATCH",
+      "tree_sha256": "1022f744c3cb5831f85c8e667f180eb387fc647930e99249cea09e09293c7faa"
+    },
+    {
+      "file_count": 0,
+      "kind": null,
+      "reason": "missing_selector",
+      "selector": "build-universe",
+      "source_ref_count": 0,
+      "status": "REJECT",
+      "tree_sha256": null
+    }
+  ],
+  "selectors": [
+    "buildlang",
+    "compiler",
+    "build-universe"
+  ],
+  "source_ref_count": 128,
+  "source_refs": [
+    {
+      "expand": {
+        "arguments": {
+          "path": "buildlang/ASPIRATIONAL.md",
+          "scope": "index.path-selector.receipt"
+        },
+        "tool": "gather.docs"
+      },
+      "kind": "file",
+      "line": null,
+      "path": "buildlang/ASPIRATIONAL.md",
+      "repo": "quantalang",
+      "repo_path": ".",
+      "schema": "project-telos.source-ref/v1",
+      "selector": "buildlang",
+      "sha256": "2aec31772c3f52d46478a16c7650dbfaaae32ee5c28cfc7727de7efe773012ac"
+    },
+    {
+      "expand": {
+        "arguments": {
+          "path": "buildlang/Build.toml",
+          "scope": "index.path-selector.receipt"
+        },
+        "tool": "gather.docs"
+      },
+      "kind": "file",
+      "line": null,
+      "path": "buildlang/Build.toml",
+      "repo": "quantalang",
+      "repo_path": ".",
+      "schema": "project-telos.source-ref/v1",
+      "selector": "buildlang",
+      "sha256": "0d490aa999ba804653ff251a71e68049a97ce5325f5243ed103ae2b2d0a29a1c"
+    },
+    {
+      "expand": {
+        "arguments": {
+          "path": "buildlang/CHANGELOG.md",
+          "scope": "index.path-selector.receipt"
+        },
+        "tool": "gather.docs"
+      },
+      "kind": "file",
+      "line": null,
+      "path": "buildlang/CHANGELOG.md",
+      "repo": "quantalang",
+      "repo_path": ".",
+      "schema": "project-telos.source-ref/v1",
+      "selector": "buildlang",
+      "sha256": "f2ccb65877b5bc294c2fea95274a434f3cb14aecbd47eb500bf9fc6f06d87a1c"
+    },
+    {
+      "expand": {
+        "arguments": {
+          "path": "buildlang/CONTRIBUTING.md",
+          "scope": "index.path-selector.receipt"
+        },
+        "tool": "gather.docs"
+      },
+      "kind": "file",
+      "line": null,
+      "path": "buildlang/CONTRIBUTING.md",
+      "repo": "quantalang",
+      "repo_path": ".",
+      "schema": "project-telos.source-ref/v1",
+      "selector": "buildlang",
+      "sha256": "1a0082a4ad77648399066185ae3d5aa0cc0c78483572274e1d424bdc38a790d6"
+    },
+    {
+      "expand": {
+        "arguments": {
+          "path": "buildlang/README.md",
+          "scope": "index.path-selector.receipt"
+        },
+        "tool": "gather.docs"
+      },
+      "kind": "file",
+      "line": null,
+      "path": "buildlang/README.md",
+      "repo": "quantalang",
+      "repo_path": ".",
+      "schema": "project-telos.source-ref/v1",
+      "selector": "buildlang",
+      "sha256": "75c5528d8c0aaa51a5cff53659c7298e134d7a9cd84bd5b6ad565c991e866372"
+    },
+    {
+      "expand": {
+        "arguments": {
+          "path": "buildlang/RELEASE_CHECKLIST.md",
+          "scope": "index.path-selector.receipt"
+        },
+        "tool": "gather.docs"
+      },
+      "kind": "file",
+      "line": null,
+      "path": "buildlang/RELEASE_CHECKLIST.md",
+      "repo": "quantalang",
+      "repo_path": ".",
+      "schema": "project-telos.source-ref/v1",
+      "selector": "buildlang",
+      "sha256": "6193450a20d5a026c17474db3b92c9a24ac708ab87247e30ead16ebe058d9b0c"
+    },
+    {
+      "expand": {
+        "arguments": {
+          "path": "buildlang/STATUS.md",
+          "scope": "index.path-selector.receipt"
+        },
+        "tool": "gather.docs"
+      },
+      "kind": "file",
+      "line": null,
+      "path": "buildlang/STATUS.md",
+      "repo": "quantalang",
+      "repo_path": ".",
+      "schema": "project-telos.source-ref/v1",
+      "selector": "buildlang",
+      "sha256": "28f8a38dad772be6793c4781ec8ae9c20ff134cb52fc4e8dff892741edab08ad"
+    },
+    {
+      "expand": {
+        "arguments": {
+          "path": "buildlang/docs/LANGUAGE.md",
+          "scope": "index.path-selector.receipt"
+        },
+        "tool": "gather.docs"
+      },
+      "kind": "file",
+      "line": null,
+      "path": "buildlang/docs/LANGUAGE.md",
+      "repo": "quantalang",
+      "repo_path": ".",
+      "schema": "project-telos.source-ref/v1",
+      "selector": "buildlang",
+      "sha256": "fcdbb9bd6058792f950a5a5a1aacd29fb98d2378c3ffcf6575bb8389742aeaf2"
+    },
+    {
+      "expand": {
+        "arguments": {
+          "path": "buildlang/docs/api/std.md",
+          "scope": "index.path-selector.receipt"
+        },
+        "tool": "gather.docs"
+      },
+      "kind": "file",
+      "line": null,
+      "path": "buildlang/docs/api/std.md",
+      "repo": "quantalang",
+      "repo_path": ".",
+      "schema": "project-telos.source-ref/v1",
+      "selector": "buildlang",
+      "sha256": "22aabdc8a8bc2f3dbb2fe14636d67e2245c244fff0e78a6cc69a222cf6b2c8ba"
+    },
+    {
+      "expand": {
+        "arguments": {
+          "path": "buildlang/docs/compliance/COMPLIANCE.md",
+          "scope": "index.path-selector.receipt"
+        },
+        "tool": "gather.docs"
+      },
+      "kind": "file",
+      "line": null,
+      "path": "buildlang/docs/compliance/COMPLIANCE.md",
+      "repo": "quantalang",
+      "repo_path": ".",
+      "schema": "project-telos.source-ref/v1",
+      "selector": "buildlang",
+      "sha256": "1137b1306f36fa61b4b69ad40f12fd6ec9aacf6d9f2d5dd0017b1718afe649c2"
+    },
+    {
+      "expand": {
+        "arguments": {
+          "path": "buildlang/docs/guide/getting-started.md",
+          "scope": "index.path-selector.receipt"
+        },
+        "tool": "gather.docs"
+      },
+      "kind": "file",
+      "line": null,
+      "path": "buildlang/docs/guide/getting-started.md",
+      "repo": "quantalang",
+      "repo_path": ".",
+      "schema": "project-telos.source-ref/v1",
+      "selector": "buildlang",
+      "sha256": "36c928937864d9a514fc5713d8426eea6aca6a1d88c19bdad2569a090257996d"
+    },
+    {
+      "expand": {
+        "arguments": {
+          "path": "buildlang/docs/reference/language.md",
+          "scope": "index.path-selector.receipt"
+        },
+        "tool": "gather.docs"
+      },
+      "kind": "file",
+      "line": null,
+      "path": "buildlang/docs/reference/language.md",
+      "repo": "quantalang",
+      "repo_path": ".",
+      "schema": "project-telos.source-ref/v1",
+      "selector": "buildlang",
+      "sha256": "7a8524a1bce855b21ffefdee1ec87947432002a5141dbd65cf8ef713f94d2f27"
+    },
+    {
+      "expand": {
+        "arguments": {
+          "path": "buildlang/docs/tutorials/cli-application.md",
+          "scope": "index.path-selector.receipt"
+        },
+        "tool": "gather.docs"
+      },
+      "kind": "file",
+      "line": null,
+      "path": "buildlang/docs/tutorials/cli-application.md",
+      "repo": "quantalang",
+      "repo_path": ".",
+      "schema": "project-telos.source-ref/v1",
+      "selector": "buildlang",
+      "sha256": "1cbddfbb80510658133e8560a795c10e09870f917307eb951f5e32d9dd0de656"
+    },
+    {
+      "expand": {
+        "arguments": {
+          "path": "buildlang/examples/01_hello_world.bld",
+          "scope": "index.path-selector.receipt"
+        },
+        "tool": "gather.docs"
+      },
+      "kind": "file",
+      "line": null,
+      "path": "buildlang/examples/01_hello_world.bld",
+      "repo": "quantalang",
+      "repo_path": ".",
+      "schema": "project-telos.source-ref/v1",
+      "selector": "buildlang",
+      "sha256": "26e923c0f1783b93dd72b432c38c2f1375fb794bc72c8e1e2467c7da123af2b7"
+    },
+    {
+      "expand": {
+        "arguments": {
+          "path": "buildlang/examples/02_http_server_future.bld",
+          "scope": "index.path-selector.receipt"
+        },
+        "tool": "gather.docs"
+      },
+      "kind": "file",
+      "line": null,
+      "path": "buildlang/examples/02_http_server_future.bld",
+      "repo": "quantalang",
+      "repo_path": ".",
+      "schema": "project-telos.source-ref/v1",
+      "selector": "buildlang",
+      "sha256": "9dc6e6413cccf285d58d2bec6082b0c79be0dd63b3660d515cc95959a8262c15"
+    },
+    {
+      "expand": {
+        "arguments": {
+          "path": "buildlang/examples/03_cli_tool_future.bld",
+          "scope": "index.path-selector.receipt"
+        },
+        "tool": "gather.docs"
+      },
+      "kind": "file",
+      "line": null,
+      "path": "buildlang/examples/03_cli_tool_future.bld",
+      "repo": "quantalang",
+      "repo_path": ".",
+      "schema": "project-telos.source-ref/v1",
+      "selector": "buildlang",
+      "sha256": "5342af4ade8fa732a1a090f4b4ff057974428aff643c5d87d6f1014cc4ae5d53"
+    },
+    {
+      "expand": {
+        "arguments": {
+          "path": "buildlang/examples/04_concurrency_future.bld",
+          "scope": "index.path-selector.receipt"
+        },
+        "tool": "gather.docs"
+      },
+      "kind": "file",
+      "line": null,
+      "path": "buildlang/examples/04_concurrency_future.bld",
+      "repo": "quantalang",
+      "repo_path": ".",
+      "schema": "project-telos.source-ref/v1",
+      "selector": "buildlang",
+      "sha256": "a62e289c2be5f45228495d35230de29810c944d95adef64ab1ea6e5141f272a0"
+    },
+    {
+      "expand": {
+        "arguments": {
+          "path": "buildlang/examples/05_json_api_future.bld",
+          "scope": "index.path-selector.receipt"
+        },
+        "tool": "gather.docs"
+      },
+      "kind": "file",
+      "line": null,
+      "path": "buildlang/examples/05_json_api_future.bld",
+      "repo": "quantalang",
+      "repo_path": ".",
+      "schema": "project-telos.source-ref/v1",
+      "selector": "buildlang",
+      "sha256": "ffa1246702f66df1a919164c2b4993ecaedd2601df30b0895eab385775b6d102"
+    },
+    {
+      "expand": {
+        "arguments": {
+          "path": "buildlang/examples/cli_tool.bld",
+          "scope": "index.path-selector.receipt"
+        },
+        "tool": "gather.docs"
+      },
+      "kind": "file",
+      "line": null,
+      "path": "buildlang/examples/cli_tool.bld",
+      "repo": "quantalang",
+      "repo_path": ".",
+      "schema": "project-telos.source-ref/v1",
+      "selector": "buildlang",
+      "sha256": "9704a36fbb1a3a3a90bac41e2a1ef299d309dbaae32cfdf80f99860daf9b313c"
+    },
+    {
+      "expand": {
+        "arguments": {
+          "path": "buildlang/examples/concurrency.bld",
+          "scope": "index.path-selector.receipt"
+        },
+        "tool": "gather.docs"
+      },
+      "kind": "file",
+      "line": null,
+      "path": "buildlang/examples/concurrency.bld",
+      "repo": "quantalang",
+      "repo_path": ".",
+      "schema": "project-telos.source-ref/v1",
+      "selector": "buildlang",
+      "sha256": "29c76ffce4c9fcd2ac2e6b32ab86f1d4c69ab1eca7fbf724c73cf8047172f5e1"
+    },
+    {
+      "expand": {
+        "arguments": {
+          "path": "buildlang/examples/effects_async.bld",
+          "scope": "index.path-selector.receipt"
+        },
+        "tool": "gather.docs"
+      },
+      "kind": "file",
+      "line": null,
+      "path": "buildlang/examples/effects_async.bld",
+      "repo": "quantalang",
+      "repo_path": ".",
+      "schema": "project-telos.source-ref/v1",
+      "selector": "buildlang",
+      "sha256": "b1280eaad975fd45348e29ee7a2dce6f22f54f5c4b8b709c31c0124fb097d232"
+    },
+    {
+      "expand": {
+        "arguments": {
+          "path": "buildlang/examples/effects_comparison.bld",
+          "scope": "index.path-selector.receipt"
+        },
+        "tool": "gather.docs"
+      },
+      "kind": "file",
+      "line": null,
+      "path": "buildlang/examples/effects_comparison.bld",
+      "repo": "quantalang",
+      "repo_path": ".",
+      "schema": "project-telos.source-ref/v1",
+      "selector": "buildlang",
+      "sha256": "1212aa64c8e23dff997ede959faa14039ef19dd19765479f66157a5cf74304af"
+    },
+    {
+      "expand": {
+        "arguments": {
+          "path": "buildlang/examples/effects_error.bld",
+          "scope": "index.path-selector.receipt"
+        },
+        "tool": "gather.docs"
+      },
+      "kind": "file",
+      "line": null,
+      "path": "buildlang/examples/effects_error.bld",
+      "repo": "quantalang",
+      "repo_path": ".",
+      "schema": "project-telos.source-ref/v1",
+      "selector": "buildlang",
+      "sha256": "d0f9f8617ad193027bf2af38aa067bac6c9351a816103c1ef6fea16908756d7e"
+    },
+    {
+      "expand": {
+        "arguments": {
+          "path": "buildlang/examples/effects_intro.bld",
+          "scope": "index.path-selector.receipt"
+        },
+        "tool": "gather.docs"
+      },
+      "kind": "file",
+      "line": null,
+      "path": "buildlang/examples/effects_intro.bld",
+      "repo": "quantalang",
+      "repo_path": ".",
+      "schema": "project-telos.source-ref/v1",
+      "selector": "buildlang",
+      "sha256": "910ec54f908774f99874267ff2c662f7a617994b4b9c596a44d8ab2e87300de5"
+    },
+    {
+      "expand": {
+        "arguments": {
+          "path": "buildlang/examples/effects_state.bld",
+          "scope": "index.path-selector.receipt"
+        },
+        "tool": "gather.docs"
+      },
+      "kind": "file",
+      "line": null,
+      "path": "buildlang/examples/effects_state.bld",
+      "repo": "quantalang",
+      "repo_path": ".",
+      "schema": "project-telos.source-ref/v1",
+      "selector": "buildlang",
+      "sha256": "aabe3302fc0819e0820bbe922607e5fa0b54846fa818f00547b6aee915e23adf"
+    },
+    {
+      "expand": {
+        "arguments": {
+          "path": "buildlang/examples/hello.bld",
+          "scope": "index.path-selector.receipt"
+        },
+        "tool": "gather.docs"
+      },
+      "kind": "file",
+      "line": null,
+      "path": "buildlang/examples/hello.bld",
+      "repo": "quantalang",
+      "repo_path": ".",
+      "schema": "project-telos.source-ref/v1",
+      "selector": "buildlang",
+      "sha256": "a872615ee15c7ec583c55d6747ec3ae4d4e7d7139a742de6c057183ec9e060b5"
+    },
+    {
+      "expand": {
+        "arguments": {
+          "path": "buildlang/examples/http_server.bld",
+          "scope": "index.path-selector.receipt"
+        },
+        "tool": "gather.docs"
+      },
+      "kind": "file",
+      "line": null,
+      "path": "buildlang/examples/http_server.bld",
+      "repo": "quantalang",
+      "repo_path": ".",
+      "schema": "project-telos.source-ref/v1",
+      "selector": "buildlang",
+      "sha256": "ca2e0301bb8f28098ab7f2a5eef2de1db275c4a113a3b3955215a091be72760a"
+    },
+    {
+      "expand": {
+        "arguments": {
+          "path": "buildlang/examples/json_processing.bld",
+          "scope": "index.path-selector.receipt"
+        },
+        "tool": "gather.docs"
+      },
+      "kind": "file",
+      "line": null,
+      "path": "buildlang/examples/json_processing.bld",
+      "repo": "quantalang",
+      "repo_path": ".",
+      "schema": "project-telos.source-ref/v1",
+      "selector": "buildlang",
+      "sha256": "8dbdb78ee4bc5d158c82d497f183741dc3fca895c7523a106098172ae15e6f01"
+    },
+    {
+      "expand": {
+        "arguments": {
+          "path": "buildlang/release/ANNOUNCEMENT.md",
+          "scope": "index.path-selector.receipt"
+        },
+        "tool": "gather.docs"
+      },
+      "kind": "file",
+      "line": null,
+      "path": "buildlang/release/ANNOUNCEMENT.md",
+      "repo": "quantalang",
+      "repo_path": ".",
+      "schema": "project-telos.source-ref/v1",
+      "selector": "buildlang",
+      "sha256": "d5d2ca51a752c16a8c04365101aba379a1b349ae4f8cdf1b1092a864c1e789e7"
+    },
+    {
+      "expand": {
+        "arguments": {
+          "path": "buildlang/release/CHANGELOG.md",
+          "scope": "index.path-selector.receipt"
+        },
+        "tool": "gather.docs"
+      },
+      "kind": "file",
+      "line": null,
+      "path": "buildlang/release/CHANGELOG.md",
+      "repo": "quantalang",
+      "repo_path": ".",
+      "schema": "project-telos.source-ref/v1",
+      "selector": "buildlang",
+      "sha256": "d34c0acc2f3d4b671e0931b1e44f6ca02d40f2d50be7dfaa1a819a9b613be6f9"
+    },
+    {
+      "expand": {
+        "arguments": {
+          "path": "buildlang/release/README.md",
+          "scope": "index.path-selector.receipt"
+        },
+        "tool": "gather.docs"
+      },
+      "kind": "file",
+      "line": null,
+      "path": "buildlang/release/README.md",
+      "repo": "quantalang",
+      "repo_path": ".",
+      "schema": "project-telos.source-ref/v1",
+      "selector": "buildlang",
+      "sha256": "26f4dddda9a26c8a95e2b2f96642e16ae9d73bdef6945ae693bd72789280afad"
+    },
+    {
+      "expand": {
+        "arguments": {
+          "path": "buildlang/release/package.json",
+          "scope": "index.path-selector.receipt"
+        },
+        "tool": "gather.docs"
+      },
+      "kind": "file",
+      "line": null,
+      "path": "buildlang/release/package.json",
+      "repo": "quantalang",
+      "repo_path": ".",
+      "schema": "project-telos.source-ref/v1",
+      "selector": "buildlang",
+      "sha256": "7b376a4c600299958a203c086f471c623ddb8e55473fc105495635bceac2c4f6"
+    },
+    {
+      "expand": {
+        "arguments": {
+          "path": "buildlang/release/share/doc/api/std.md",
+          "scope": "index.path-selector.receipt"
+        },
+        "tool": "gather.docs"
+      },
+      "kind": "file",
+      "line": null,
+      "path": "buildlang/release/share/doc/api/std.md",
+      "repo": "quantalang",
+      "repo_path": ".",
+      "schema": "project-telos.source-ref/v1",
+      "selector": "buildlang",
+      "sha256": "ec85440d888223955ca43f39a36a7086d37177ee8f47018b3195581e2b207fbd"
+    },
+    {
+      "expand": {
+        "arguments": {
+          "path": "buildlang/release/share/doc/compliance/COMPLIANCE.md",
+          "scope": "index.path-selector.receipt"
+        },
+        "tool": "gather.docs"
+      },
+      "kind": "file",
+      "line": null,
+      "path": "buildlang/release/share/doc/compliance/COMPLIANCE.md",
+      "repo": "quantalang",
+      "repo_path": ".",
+      "schema": "project-telos.source-ref/v1",
+      "selector": "buildlang",
+      "sha256": "539a83ecc4538d7fc6852312a30da32b008fad964726e63fb8bf106cb9b9738b"
+    },
+    {
+      "expand": {
+        "arguments": {
+          "path": "buildlang/release/share/doc/guide/getting-started.md",
+          "scope": "index.path-selector.receipt"
+        },
+        "tool": "gather.docs"
+      },
+      "kind": "file",
+      "line": null,
+      "path": "buildlang/release/share/doc/guide/getting-started.md",
+      "repo": "quantalang",
+      "repo_path": ".",
+      "schema": "project-telos.source-ref/v1",
+      "selector": "buildlang",
+      "sha256": "5d8224630b9be4377610c249fb88ae50af8ccaa9d0b06fa751411afe52b5911a"
+    },
+    {
+      "expand": {
+        "arguments": {
+          "path": "buildlang/release/share/doc/reference/language.md",
+          "scope": "index.path-selector.receipt"
+        },
+        "tool": "gather.docs"
+      },
+      "kind": "file",
+      "line": null,
+      "path": "buildlang/release/share/doc/reference/language.md",
+      "repo": "quantalang",
+      "repo_path": ".",
+      "schema": "project-telos.source-ref/v1",
+      "selector": "buildlang",
+      "sha256": "54596329731c9104bff49805b68c5df7e347fd62bfa7a64fd97ed0184e611c9a"
+    },
+    {
+      "expand": {
+        "arguments": {
+          "path": "buildlang/release/share/doc/tutorials/cli-application.md",
+          "scope": "index.path-selector.receipt"
+        },
+        "tool": "gather.docs"
+      },
+      "kind": "file",
+      "line": null,
+      "path": "buildlang/release/share/doc/tutorials/cli-application.md",
+      "repo": "quantalang",
+      "repo_path": ".",
+      "schema": "project-telos.source-ref/v1",
+      "selector": "buildlang",
+      "sha256": "2609eecf30b3665197bb02b7d7cf522a9f091d971ff69c0337973ede9ac8aa06"
+    },
+    {
+      "expand": {
+        "arguments": {
+          "path": "buildlang/release/share/examples/01_hello_world.bld",
+          "scope": "index.path-selector.receipt"
+        },
+        "tool": "gather.docs"
+      },
+      "kind": "file",
+      "line": null,
+      "path": "buildlang/release/share/examples/01_hello_world.bld",
+      "repo": "quantalang",
+      "repo_path": ".",
+      "schema": "project-telos.source-ref/v1",
+      "selector": "buildlang",
+      "sha256": "26e923c0f1783b93dd72b432c38c2f1375fb794bc72c8e1e2467c7da123af2b7"
+    },
+    {
+      "expand": {
+        "arguments": {
+          "path": "buildlang/release/share/examples/02_http_server.bld",
+          "scope": "index.path-selector.receipt"
+        },
+        "tool": "gather.docs"
+      },
+      "kind": "file",
+      "line": null,
+      "path": "buildlang/release/share/examples/02_http_server.bld",
+      "repo": "quantalang",
+      "repo_path": ".",
+      "schema": "project-telos.source-ref/v1",
+      "selector": "buildlang",
+      "sha256": "9dc6e6413cccf285d58d2bec6082b0c79be0dd63b3660d515cc95959a8262c15"
+    },
+    {
+      "expand": {
+        "arguments": {
+          "path": "buildlang/release/share/examples/03_cli_tool.bld",
+          "scope": "index.path-selector.receipt"
+        },
+        "tool": "gather.docs"
+      },
+      "kind": "file",
+      "line": null,
+      "path": "buildlang/release/share/examples/03_cli_tool.bld",
+      "repo": "quantalang",
+      "repo_path": ".",
+      "schema": "project-telos.source-ref/v1",
+      "selector": "buildlang",
+      "sha256": "5342af4ade8fa732a1a090f4b4ff057974428aff643c5d87d6f1014cc4ae5d53"
+    },
+    {
+      "expand": {
+        "arguments": {
+          "path": "buildlang/release/share/examples/04_concurrency.bld",
+          "scope": "index.path-selector.receipt"
+        },
+        "tool": "gather.docs"
+      },
+      "kind": "file",
+      "line": null,
+      "path": "buildlang/release/share/examples/04_concurrency.bld",
+      "repo": "quantalang",
+      "repo_path": ".",
+      "schema": "project-telos.source-ref/v1",
+      "selector": "buildlang",
+      "sha256": "a62e289c2be5f45228495d35230de29810c944d95adef64ab1ea6e5141f272a0"
+    },
+    {
+      "expand": {
+        "arguments": {
+          "path": "buildlang/release/share/examples/05_json_api.bld",
+          "scope": "index.path-selector.receipt"
+        },
+        "tool": "gather.docs"
+      },
+      "kind": "file",
+      "line": null,
+      "path": "buildlang/release/share/examples/05_json_api.bld",
+      "repo": "quantalang",
+      "repo_path": ".",
+      "schema": "project-telos.source-ref/v1",
+      "selector": "buildlang",
+      "sha256": "ffa1246702f66df1a919164c2b4993ecaedd2601df30b0895eab385775b6d102"
+    },
+    {
+      "expand": {
+        "arguments": {
+          "path": "buildlang/release/share/examples/cli_tool.bld",
+          "scope": "index.path-selector.receipt"
+        },
+        "tool": "gather.docs"
+      },
+      "kind": "file",
+      "line": null,
+      "path": "buildlang/release/share/examples/cli_tool.bld",
+      "repo": "quantalang",
+      "repo_path": ".",
+      "schema": "project-telos.source-ref/v1",
+      "selector": "buildlang",
+      "sha256": "9704a36fbb1a3a3a90bac41e2a1ef299d309dbaae32cfdf80f99860daf9b313c"
+    },
+    {
+      "expand": {
+        "arguments": {
+          "path": "buildlang/release/share/examples/concurrency.bld",
+          "scope": "index.path-selector.receipt"
+        },
+        "tool": "gather.docs"
+      },
+      "kind": "file",
+      "line": null,
+      "path": "buildlang/release/share/examples/concurrency.bld",
+      "repo": "quantalang",
+      "repo_path": ".",
+      "schema": "project-telos.source-ref/v1",
+      "selector": "buildlang",
+      "sha256": "29c76ffce4c9fcd2ac2e6b32ab86f1d4c69ab1eca7fbf724c73cf8047172f5e1"
+    },
+    {
+      "expand": {
+        "arguments": {
+          "path": "buildlang/release/share/examples/hello.bld",
+          "scope": "index.path-selector.receipt"
+        },
+        "tool": "gather.docs"
+      },
+      "kind": "file",
+      "line": null,
+      "path": "buildlang/release/share/examples/hello.bld",
+      "repo": "quantalang",
+      "repo_path": ".",
+      "schema": "project-telos.source-ref/v1",
+      "selector": "buildlang",
+      "sha256": "a872615ee15c7ec583c55d6747ec3ae4d4e7d7139a742de6c057183ec9e060b5"
+    },
+    {
+      "expand": {
+        "arguments": {
+          "path": "buildlang/release/share/examples/http_server.bld",
+          "scope": "index.path-selector.receipt"
+        },
+        "tool": "gather.docs"
+      },
+      "kind": "file",
+      "line": null,
+      "path": "buildlang/release/share/examples/http_server.bld",
+      "repo": "quantalang",
+      "repo_path": ".",
+      "schema": "project-telos.source-ref/v1",
+      "selector": "buildlang",
+      "sha256": "ca2e0301bb8f28098ab7f2a5eef2de1db275c4a113a3b3955215a091be72760a"
+    },
+    {
+      "expand": {
+        "arguments": {
+          "path": "buildlang/release/share/examples/json_processing.bld",
+          "scope": "index.path-selector.receipt"
+        },
+        "tool": "gather.docs"
+      },
+      "kind": "file",
+      "line": null,
+      "path": "buildlang/release/share/examples/json_processing.bld",
+      "repo": "quantalang",
+      "repo_path": ".",
+      "schema": "project-telos.source-ref/v1",
+      "selector": "buildlang",
+      "sha256": "8dbdb78ee4bc5d158c82d497f183741dc3fca895c7523a106098172ae15e6f01"
+    },
+    {
+      "expand": {
+        "arguments": {
+          "path": "buildlang/src/ast.bld",
+          "scope": "index.path-selector.receipt"
+        },
+        "tool": "gather.docs"
+      },
+      "kind": "file",
+      "line": null,
+      "path": "buildlang/src/ast.bld",
+      "repo": "quantalang",
+      "repo_path": ".",
+      "schema": "project-telos.source-ref/v1",
+      "selector": "buildlang",
+      "sha256": "7dcc25ecde30545fa16185f226903a1465ee9cd9c0a6809ef66957632b5bdef2"
+    },
+    {
+      "expand": {
+        "arguments": {
+          "path": "buildlang/src/async/channel.bld",
+          "scope": "index.path-selector.receipt"
+        },
+        "tool": "gather.docs"
+      },
+      "kind": "file",
+      "line": null,
+      "path": "buildlang/src/async/channel.bld",
+      "repo": "quantalang",
+      "repo_path": ".",
+      "schema": "project-telos.source-ref/v1",
+      "selector": "buildlang",
+      "sha256": "010b44e3cf802a0f5372393cd34c289118d51a155302102aaaf31e5e2c2fd4b7"
+    },
+    {
+      "expand": {
+        "arguments": {
+          "path": "buildlang/src/async/executor.bld",
+          "scope": "index.path-selector.receipt"
+        },
+        "tool": "gather.docs"
+      },
+      "kind": "file",
+      "line": null,
+      "path": "buildlang/src/async/executor.bld",
+      "repo": "quantalang",
+      "repo_path": ".",
+      "schema": "project-telos.source-ref/v1",
+      "selector": "buildlang",
+      "sha256": "b1f4ba79c273912559153728a384df2a2e9578787fb2b28a8a22e07fb16d9c2b"
+    },
+    {
+      "expand": {
+        "arguments": {
+          "path": "buildlang/src/async/io.bld",
+          "scope": "index.path-selector.receipt"
+        },
+        "tool": "gather.docs"
+      },
+      "kind": "file",
+      "line": null,
+      "path": "buildlang/src/async/io.bld",
+      "repo": "quantalang",
+      "repo_path": ".",
+      "schema": "project-telos.source-ref/v1",
+      "selector": "buildlang",
+      "sha256": "d0f6ee84518edb7fa350aab1d44996cf2024d09e2b2581934651231b88015d38"
+    },
+    {
+      "expand": {
+        "arguments": {
+          "path": "buildlang/src/async/mod.bld",
+          "scope": "index.path-selector.receipt"
+        },
+        "tool": "gather.docs"
+      },
+      "kind": "file",
+      "line": null,
+      "path": "buildlang/src/async/mod.bld",
+      "repo": "quantalang",
+      "repo_path": ".",
+      "schema": "project-telos.source-ref/v1",
+      "selector": "buildlang",
+      "sha256": "f447d5b665d1adf6688a5e7e8c8d52eb51b4fa0ba03209ce264bd119fbe62a14"
+    },
+    {
+      "expand": {
+        "arguments": {
+          "path": "buildlang/src/async/sync.bld",
+          "scope": "index.path-selector.receipt"
+        },
+        "tool": "gather.docs"
+      },
+      "kind": "file",
+      "line": null,
+      "path": "buildlang/src/async/sync.bld",
+      "repo": "quantalang",
+      "repo_path": ".",
+      "schema": "project-telos.source-ref/v1",
+      "selector": "buildlang",
+      "sha256": "c7f0324ea743dcf3b9178ed91f88d747d851ae944278361b9309ec7a7a85f037"
+    },
+    {
+      "expand": {
+        "arguments": {
+          "path": "buildlang/src/async/task.bld",
+          "scope": "index.path-selector.receipt"
+        },
+        "tool": "gather.docs"
+      },
+      "kind": "file",
+      "line": null,
+      "path": "buildlang/src/async/task.bld",
+      "repo": "quantalang",
+      "repo_path": ".",
+      "schema": "project-telos.source-ref/v1",
+      "selector": "buildlang",
+      "sha256": "2f1812e5a19ba0598f66288e1254e5f8a7ea0110ba77628bc999a39780fb100b"
+    },
+    {
+      "expand": {
+        "arguments": {
+          "path": "buildlang/src/async/timer.bld",
+          "scope": "index.path-selector.receipt"
+        },
+        "tool": "gather.docs"
+      },
+      "kind": "file",
+      "line": null,
+      "path": "buildlang/src/async/timer.bld",
+      "repo": "quantalang",
+      "repo_path": ".",
+      "schema": "project-telos.source-ref/v1",
+      "selector": "buildlang",
+      "sha256": "b80a3846c05579d86e11e60585e42e09d29f91316d5ddbcc9eed957ba866ba22"
+    },
+    {
+      "expand": {
+        "arguments": {
+          "path": "buildlang/src/async/waker.bld",
+          "scope": "index.path-selector.receipt"
+        },
+        "tool": "gather.docs"
+      },
+      "kind": "file",
+      "line": null,
+      "path": "buildlang/src/async/waker.bld",
+      "repo": "quantalang",
+      "repo_path": ".",
+      "schema": "project-telos.source-ref/v1",
+      "selector": "buildlang",
+      "sha256": "f1abc32a955ce31f4c951979c570b77fd02f4703e1501ecc25395e6f54278535"
+    },
+    {
+      "expand": {
+        "arguments": {
+          "path": "buildlang/src/bench/mod.bld",
+          "scope": "index.path-selector.receipt"
+        },
+        "tool": "gather.docs"
+      },
+      "kind": "file",
+      "line": null,
+      "path": "buildlang/src/bench/mod.bld",
+      "repo": "quantalang",
+      "repo_path": ".",
+      "schema": "project-telos.source-ref/v1",
+      "selector": "buildlang",
+      "sha256": "0cdfb060ea2553ef082adf088174778d30276d3dea6214f096f7334ee5ff46c4"
+    },
+    {
+      "expand": {
+        "arguments": {
+          "path": "buildlang/src/bench/report.bld",
+          "scope": "index.path-selector.receipt"
+        },
+        "tool": "gather.docs"
+      },
+      "kind": "file",
+      "line": null,
+      "path": "buildlang/src/bench/report.bld",
+      "repo": "quantalang",
+      "repo_path": ".",
+      "schema": "project-telos.source-ref/v1",
+      "selector": "buildlang",
+      "sha256": "8ce78bb54bc7f1516d075a273d0d06e30a58d81e312d87e10547cd27ca6cc161"
+    },
+    {
+      "expand": {
+        "arguments": {
+          "path": "buildlang/src/bench/runner.bld",
+          "scope": "index.path-selector.receipt"
+        },
+        "tool": "gather.docs"
+      },
+      "kind": "file",
+      "line": null,
+      "path": "buildlang/src/bench/runner.bld",
+      "repo": "quantalang",
+      "repo_path": ".",
+      "schema": "project-telos.source-ref/v1",
+      "selector": "buildlang",
+      "sha256": "2cdac0f79d7f3add8312d71ab53eff62727ba54ee942ace0d80726eec5978475"
+    },
+    {
+      "expand": {
+        "arguments": {
+          "path": "buildlang/src/bench/statistics.bld",
+          "scope": "index.path-selector.receipt"
+        },
+        "tool": "gather.docs"
+      },
+      "kind": "file",
+      "line": null,
+      "path": "buildlang/src/bench/statistics.bld",
+      "repo": "quantalang",
+      "repo_path": ".",
+      "schema": "project-telos.source-ref/v1",
+      "selector": "buildlang",
+      "sha256": "5e1be17ab0b386b0bf357e45348fe92915ccf1432b3024bf4eae5ebceb514226"
+    },
+    {
+      "expand": {
+        "arguments": {
+          "path": "buildlang/src/bootstrap/driver.bld",
+          "scope": "index.path-selector.receipt"
+        },
+        "tool": "gather.docs"
+      },
+      "kind": "file",
+      "line": null,
+      "path": "buildlang/src/bootstrap/driver.bld",
+      "repo": "quantalang",
+      "repo_path": ".",
+      "schema": "project-telos.source-ref/v1",
+      "selector": "buildlang",
+      "sha256": "f178aee18f790915d55cc1db87549f14e1a46c49afd9035d9ce35866cf1bf087"
+    },
+    {
+      "expand": {
+        "arguments": {
+          "path": "buildlang/src/bootstrap/mod.bld",
+          "scope": "index.path-selector.receipt"
+        },
+        "tool": "gather.docs"
+      },
+      "kind": "file",
+      "line": null,
+      "path": "buildlang/src/bootstrap/mod.bld",
+      "repo": "quantalang",
+      "repo_path": ".",
+      "schema": "project-telos.source-ref/v1",
+      "selector": "buildlang",
+      "sha256": "8c2db1ae19d5b94fa8bb37e9eff496269e6ddc13e328be5520f10964d19b903f"
+    },
+    {
+      "expand": {
+        "arguments": {
+          "path": "buildlang/src/bootstrap/stage0/spec.bld",
+          "scope": "index.path-selector.receipt"
+        },
+        "tool": "gather.docs"
+      },
+      "kind": "file",
+      "line": null,
+      "path": "buildlang/src/bootstrap/stage0/spec.bld",
+      "repo": "quantalang",
+      "repo_path": ".",
+      "schema": "project-telos.source-ref/v1",
+      "selector": "buildlang",
+      "sha256": "c021b4dc5c75ac7cd595ec40c7e20790c1df9925f53c73c713145b3d14fc0adb"
+    },
+    {
+      "expand": {
+        "arguments": {
+          "path": "buildlang/src/bootstrap/stage1/compiler.bld",
+          "scope": "index.path-selector.receipt"
+        },
+        "tool": "gather.docs"
+      },
+      "kind": "file",
+      "line": null,
+      "path": "buildlang/src/bootstrap/stage1/compiler.bld",
+      "repo": "quantalang",
+      "repo_path": ".",
+      "schema": "project-telos.source-ref/v1",
+      "selector": "buildlang",
+      "sha256": "64196da9956a9c00f869c5f18d0151fc8d18648753b43f885be1bdc935953cbe"
+    },
+    {
+      "expand": {
+        "arguments": {
+          "path": "compiler/Cargo.lock",
+          "scope": "index.path-selector.receipt"
+        },
+        "tool": "gather.docs"
+      },
+      "kind": "file",
+      "line": null,
+      "path": "compiler/Cargo.lock",
+      "repo": "quantalang",
+      "repo_path": ".",
+      "schema": "project-telos.source-ref/v1",
+      "selector": "compiler",
+      "sha256": "c18164c9ae80066ea2687f6ca7edb78d84c4ea3fd2220260eac074c20ddb9cd0"
+    },
+    {
+      "expand": {
+        "arguments": {
+          "path": "compiler/Cargo.toml",
+          "scope": "index.path-selector.receipt"
+        },
+        "tool": "gather.docs"
+      },
+      "kind": "file",
+      "line": null,
+      "path": "compiler/Cargo.toml",
+      "repo": "quantalang",
+      "repo_path": ".",
+      "schema": "project-telos.source-ref/v1",
+      "selector": "compiler",
+      "sha256": "ce4473fdea8325e28dcd46683233675fa2855797c51151bfa50aef320af27cf1"
+    },
+    {
+      "expand": {
+        "arguments": {
+          "path": "compiler/README.md",
+          "scope": "index.path-selector.receipt"
+        },
+        "tool": "gather.docs"
+      },
+      "kind": "file",
+      "line": null,
+      "path": "compiler/README.md",
+      "repo": "quantalang",
+      "repo_path": ".",
+      "schema": "project-telos.source-ref/v1",
+      "selector": "compiler",
+      "sha256": "b91663ebd8e7375c3bdfd3e1b6852d2ce1e9cbf423546d5ebf27fcc1a4079287"
+    },
+    {
+      "expand": {
+        "arguments": {
+          "path": "compiler/benches/lexer_benchmark.rs",
+          "scope": "index.path-selector.receipt"
+        },
+        "tool": "gather.docs"
+      },
+      "kind": "file",
+      "line": null,
+      "path": "compiler/benches/lexer_benchmark.rs",
+      "repo": "quantalang",
+      "repo_path": ".",
+      "schema": "project-telos.source-ref/v1",
+      "selector": "compiler",
+      "sha256": "fd31fa867a23f5cf1b2b764e714ad3479721483f1a9557cfdb847d1021a35e6b"
+    },
+    {
+      "expand": {
+        "arguments": {
+          "path": "compiler/examples/gen_triangle.rs",
+          "scope": "index.path-selector.receipt"
+        },
+        "tool": "gather.docs"
+      },
+      "kind": "file",
+      "line": null,
+      "path": "compiler/examples/gen_triangle.rs",
+      "repo": "quantalang",
+      "repo_path": ".",
+      "schema": "project-telos.source-ref/v1",
+      "selector": "compiler",
+      "sha256": "0468290a40bc586564286e989d09f15e480da11c251af5b700a9e97396bf061b"
+    },
+    {
+      "expand": {
+        "arguments": {
+          "path": "compiler/src/ast/expr.rs",
+          "scope": "index.path-selector.receipt"
+        },
+        "tool": "gather.docs"
+      },
+      "kind": "file",
+      "line": null,
+      "path": "compiler/src/ast/expr.rs",
+      "repo": "quantalang",
+      "repo_path": ".",
+      "schema": "project-telos.source-ref/v1",
+      "selector": "compiler",
+      "sha256": "e1a03a1ea719fb5778aa9847aeaaf3570d4226e893efa3b04cd0d99eaf44afbc"
+    },
+    {
+      "expand": {
+        "arguments": {
+          "path": "compiler/src/ast/item.rs",
+          "scope": "index.path-selector.receipt"
+        },
+        "tool": "gather.docs"
+      },
+      "kind": "file",
+      "line": null,
+      "path": "compiler/src/ast/item.rs",
+      "repo": "quantalang",
+      "repo_path": ".",
+      "schema": "project-telos.source-ref/v1",
+      "selector": "compiler",
+      "sha256": "c6fc61b40e8e754dc80961385e87b7917aecb9ad13fbda8f9230376601929780"
+    },
+    {
+      "expand": {
+        "arguments": {
+          "path": "compiler/src/ast/mod.rs",
+          "scope": "index.path-selector.receipt"
+        },
+        "tool": "gather.docs"
+      },
+      "kind": "file",
+      "line": null,
+      "path": "compiler/src/ast/mod.rs",
+      "repo": "quantalang",
+      "repo_path": ".",
+      "schema": "project-telos.source-ref/v1",
+      "selector": "compiler",
+      "sha256": "74b7799af1d174e62d7725ca39a7196a492bba99d2637ab96fc7043d12cbabe0"
+    },
+    {
+      "expand": {
+        "arguments": {
+          "path": "compiler/src/ast/operators.rs",
+          "scope": "index.path-selector.receipt"
+        },
+        "tool": "gather.docs"
+      },
+      "kind": "file",
+      "line": null,
+      "path": "compiler/src/ast/operators.rs",
+      "repo": "quantalang",
+      "repo_path": ".",
+      "schema": "project-telos.source-ref/v1",
+      "selector": "compiler",
+      "sha256": "f180a72588bc5468e64551c9f1a52dc18d464314c1158e89023b86c0e0d9206e"
+    },
+    {
+      "expand": {
+        "arguments": {
+          "path": "compiler/src/ast/pattern.rs",
+          "scope": "index.path-selector.receipt"
+        },
+        "tool": "gather.docs"
+      },
+      "kind": "file",
+      "line": null,
+      "path": "compiler/src/ast/pattern.rs",
+      "repo": "quantalang",
+      "repo_path": ".",
+      "schema": "project-telos.source-ref/v1",
+      "selector": "compiler",
+      "sha256": "8f2318010e4f9ebdb0c4180be947c36e3d19e202f0c674230baefa123e8d83a6"
+    },
+    {
+      "expand": {
+        "arguments": {
+          "path": "compiler/src/ast/stmt.rs",
+          "scope": "index.path-selector.receipt"
+        },
+        "tool": "gather.docs"
+      },
+      "kind": "file",
+      "line": null,
+      "path": "compiler/src/ast/stmt.rs",
+      "repo": "quantalang",
+      "repo_path": ".",
+      "schema": "project-telos.source-ref/v1",
+      "selector": "compiler",
+      "sha256": "eda92b2dd0df6647b593566f515a061d4740c3815ce4b3360c531f7a6fc1a053"
+    },
+    {
+      "expand": {
+        "arguments": {
+          "path": "compiler/src/ast/ty.rs",
+          "scope": "index.path-selector.receipt"
+        },
+        "tool": "gather.docs"
+      },
+      "kind": "file",
+      "line": null,
+      "path": "compiler/src/ast/ty.rs",
+      "repo": "quantalang",
+      "repo_path": ".",
+      "schema": "project-telos.source-ref/v1",
+      "selector": "compiler",
+      "sha256": "be3bcb05fc606b0d84de8b4ba033cb0f4dfcccda8cbe886d3d1d2b25890e8564"
+    },
+    {
+      "expand": {
+        "arguments": {
+          "path": "compiler/src/bdf.rs",
+          "scope": "index.path-selector.receipt"
+        },
+        "tool": "gather.docs"
+      },
+      "kind": "file",
+      "line": null,
+      "path": "compiler/src/bdf.rs",
+      "repo": "quantalang",
+      "repo_path": ".",
+      "schema": "project-telos.source-ref/v1",
+      "selector": "compiler",
+      "sha256": "9f04e360db8de3c2af58b84c11af974cbb751b626b326fb05bb177bda45489fe"
+    },
+    {
+      "expand": {
+        "arguments": {
+          "path": "compiler/src/bdf/flagship.rs",
+          "scope": "index.path-selector.receipt"
+        },
+        "tool": "gather.docs"
+      },
+      "kind": "file",
+      "line": null,
+      "path": "compiler/src/bdf/flagship.rs",
+      "repo": "quantalang",
+      "repo_path": ".",
+      "schema": "project-telos.source-ref/v1",
+      "selector": "compiler",
+      "sha256": "a9c824643c076d3de4c703439710e4c3693d9c55fe6dc9b04b0353fe6e6a8a8a"
+    },
+    {
+      "expand": {
+        "arguments": {
+          "path": "compiler/src/bdf/json.rs",
+          "scope": "index.path-selector.receipt"
+        },
+        "tool": "gather.docs"
+      },
+      "kind": "file",
+      "line": null,
+      "path": "compiler/src/bdf/json.rs",
+      "repo": "quantalang",
+      "repo_path": ".",
+      "schema": "project-telos.source-ref/v1",
+      "selector": "compiler",
+      "sha256": "f74fc7d75ea520c6cae19fa080bade36f452752fd9011905c1acc643c8b851d9"
+    },
+    {
+      "expand": {
+        "arguments": {
+          "path": "compiler/src/codegen/analysis/cfg.rs",
+          "scope": "index.path-selector.receipt"
+        },
+        "tool": "gather.docs"
+      },
+      "kind": "file",
+      "line": null,
+      "path": "compiler/src/codegen/analysis/cfg.rs",
+      "repo": "quantalang",
+      "repo_path": ".",
+      "schema": "project-telos.source-ref/v1",
+      "selector": "compiler",
+      "sha256": "6cd1bcba6b2d4074e5e62d969c94aacebed674fa6b10c29583bbb48939697554"
+    },
+    {
+      "expand": {
+        "arguments": {
+          "path": "compiler/src/codegen/analysis/drops.rs",
+          "scope": "index.path-selector.receipt"
+        },
+        "tool": "gather.docs"
+      },
+      "kind": "file",
+      "line": null,
+      "path": "compiler/src/codegen/analysis/drops.rs",
+      "repo": "quantalang",
+      "repo_path": ".",
+      "schema": "project-telos.source-ref/v1",
+      "selector": "compiler",
+      "sha256": "bc1d27876ca09af5ab88124234a90acb4373433edfed849d19f2aac050d4e4cc"
+    },
+    {
+      "expand": {
+        "arguments": {
+          "path": "compiler/src/codegen/analysis/linear.rs",
+          "scope": "index.path-selector.receipt"
+        },
+        "tool": "gather.docs"
+      },
+      "kind": "file",
+      "line": null,
+      "path": "compiler/src/codegen/analysis/linear.rs",
+      "repo": "quantalang",
+      "repo_path": ".",
+      "schema": "project-telos.source-ref/v1",
+      "selector": "compiler",
+      "sha256": "5cb84374fb2055c49f88d41bd87f7407ccd2963ca32d11f4d996a64fae1be20a"
+    },
+    {
+      "expand": {
+        "arguments": {
+          "path": "compiler/src/codegen/analysis/liveness.rs",
+          "scope": "index.path-selector.receipt"
+        },
+        "tool": "gather.docs"
+      },
+      "kind": "file",
+      "line": null,
+      "path": "compiler/src/codegen/analysis/liveness.rs",
+      "repo": "quantalang",
+      "repo_path": ".",
+      "schema": "project-telos.source-ref/v1",
+      "selector": "compiler",
+      "sha256": "99f20de8b2d487c027b5ad61a6b2865cdfaa2b1e5bbfa5ac9a92811b9348c0a8"
+    },
+    {
+      "expand": {
+        "arguments": {
+          "path": "compiler/src/codegen/analysis/mod.rs",
+          "scope": "index.path-selector.receipt"
+        },
+        "tool": "gather.docs"
+      },
+      "kind": "file",
+      "line": null,
+      "path": "compiler/src/codegen/analysis/mod.rs",
+      "repo": "quantalang",
+      "repo_path": ".",
+      "schema": "project-telos.source-ref/v1",
+      "selector": "compiler",
+      "sha256": "3e9997fbd252bffa07edbdd04ec6971d93da19f4dcdb3c44707f9a3b32f310b1"
+    },
+    {
+      "expand": {
+        "arguments": {
+          "path": "compiler/src/codegen/backend/STATUS.md",
+          "scope": "index.path-selector.receipt"
+        },
+        "tool": "gather.docs"
+      },
+      "kind": "file",
+      "line": null,
+      "path": "compiler/src/codegen/backend/STATUS.md",
+      "repo": "quantalang",
+      "repo_path": ".",
+      "schema": "project-telos.source-ref/v1",
+      "selector": "compiler",
+      "sha256": "c07e0325afc6c651cc0034ef8b2fa0d1c2df9564e344f255701a4a7bf19fc48b"
+    },
+    {
+      "expand": {
+        "arguments": {
+          "path": "compiler/src/codegen/backend/arm64.rs",
+          "scope": "index.path-selector.receipt"
+        },
+        "tool": "gather.docs"
+      },
+      "kind": "file",
+      "line": null,
+      "path": "compiler/src/codegen/backend/arm64.rs",
+      "repo": "quantalang",
+      "repo_path": ".",
+      "schema": "project-telos.source-ref/v1",
+      "selector": "compiler",
+      "sha256": "1ff65449e3bcfb533809b8ab01e43f9a8726b4bd7562fe39784452d8bf8833be"
+    },
+    {
+      "expand": {
+        "arguments": {
+          "path": "compiler/src/codegen/backend/arm64_enc.rs",
+          "scope": "index.path-selector.receipt"
+        },
+        "tool": "gather.docs"
+      },
+      "kind": "file",
+      "line": null,
+      "path": "compiler/src/codegen/backend/arm64_enc.rs",
+      "repo": "quantalang",
+      "repo_path": ".",
+      "schema": "project-telos.source-ref/v1",
+      "selector": "compiler",
+      "sha256": "55c8b6e77fe0aa23e9345034e6e4cdae359e0a0c41f54974d429ac551f39bb0f"
+    },
+    {
+      "expand": {
+        "arguments": {
+          "path": "compiler/src/codegen/backend/c.rs",
+          "scope": "index.path-selector.receipt"
+        },
+        "tool": "gather.docs"
+      },
+      "kind": "file",
+      "line": null,
+      "path": "compiler/src/codegen/backend/c.rs",
+      "repo": "quantalang",
+      "repo_path": ".",
+      "schema": "project-telos.source-ref/v1",
+      "selector": "compiler",
+      "sha256": "f7b131518a2927ec9e11c8a1ec836d098340aec9e89086d2fe2065d002272805"
+    },
+    {
+      "expand": {
+        "arguments": {
+          "path": "compiler/src/codegen/backend/glsl.rs",
+          "scope": "index.path-selector.receipt"
+        },
+        "tool": "gather.docs"
+      },
+      "kind": "file",
+      "line": null,
+      "path": "compiler/src/codegen/backend/glsl.rs",
+      "repo": "quantalang",
+      "repo_path": ".",
+      "schema": "project-telos.source-ref/v1",
+      "selector": "compiler",
+      "sha256": "552e6ca4461e54c27e71aee7861bfd7ff7afd849e2885c315ce83bd21a0b1e46"
+    },
+    {
+      "expand": {
+        "arguments": {
+          "path": "compiler/src/codegen/backend/hlsl.rs",
+          "scope": "index.path-selector.receipt"
+        },
+        "tool": "gather.docs"
+      },
+      "kind": "file",
+      "line": null,
+      "path": "compiler/src/codegen/backend/hlsl.rs",
+      "repo": "quantalang",
+      "repo_path": ".",
+      "schema": "project-telos.source-ref/v1",
+      "selector": "compiler",
+      "sha256": "6fa2d0db57de2478acbf6848accc7680579ba645790e43a79cdcf424c48d49c0"
+    },
+    {
+      "expand": {
+        "arguments": {
+          "path": "compiler/src/codegen/backend/llvm.rs",
+          "scope": "index.path-selector.receipt"
+        },
+        "tool": "gather.docs"
+      },
+      "kind": "file",
+      "line": null,
+      "path": "compiler/src/codegen/backend/llvm.rs",
+      "repo": "quantalang",
+      "repo_path": ".",
+      "schema": "project-telos.source-ref/v1",
+      "selector": "compiler",
+      "sha256": "ceb08094bead53099872bbb03b3fea2d303669c24382abcfcd7714a16a6916c9"
+    },
+    {
+      "expand": {
+        "arguments": {
+          "path": "compiler/src/codegen/backend/mod.rs",
+          "scope": "index.path-selector.receipt"
+        },
+        "tool": "gather.docs"
+      },
+      "kind": "file",
+      "line": null,
+      "path": "compiler/src/codegen/backend/mod.rs",
+      "repo": "quantalang",
+      "repo_path": ".",
+      "schema": "project-telos.source-ref/v1",
+      "selector": "compiler",
+      "sha256": "5d98cbf8e72831a99dfd6c43d1dcd0d37a89962e428073f1298a3ebe31834232"
+    },
+    {
+      "expand": {
+        "arguments": {
+          "path": "compiler/src/codegen/backend/rust.rs",
+          "scope": "index.path-selector.receipt"
+        },
+        "tool": "gather.docs"
+      },
+      "kind": "file",
+      "line": null,
+      "path": "compiler/src/codegen/backend/rust.rs",
+      "repo": "quantalang",
+      "repo_path": ".",
+      "schema": "project-telos.source-ref/v1",
+      "selector": "compiler",
+      "sha256": "fb6d421d6f0aff028e5f4e2f952e70e5e0a49dd532cf5b0efc1988826efd3e67"
+    },
+    {
+      "expand": {
+        "arguments": {
+          "path": "compiler/src/codegen/backend/spirv.rs",
+          "scope": "index.path-selector.receipt"
+        },
+        "tool": "gather.docs"
+      },
+      "kind": "file",
+      "line": null,
+      "path": "compiler/src/codegen/backend/spirv.rs",
+      "repo": "quantalang",
+      "repo_path": ".",
+      "schema": "project-telos.source-ref/v1",
+      "selector": "compiler",
+      "sha256": "80a6264b299f4508c744cda5ce3058d37b65eed8b9258afda3130e51e40f66c0"
+    },
+    {
+      "expand": {
+        "arguments": {
+          "path": "compiler/src/codegen/backend/wasm.rs",
+          "scope": "index.path-selector.receipt"
+        },
+        "tool": "gather.docs"
+      },
+      "kind": "file",
+      "line": null,
+      "path": "compiler/src/codegen/backend/wasm.rs",
+      "repo": "quantalang",
+      "repo_path": ".",
+      "schema": "project-telos.source-ref/v1",
+      "selector": "compiler",
+      "sha256": "e6cbebb108d62ea091156ce3b499948e3f23778187b8b21a60802e41bce3b28e"
+    },
+    {
+      "expand": {
+        "arguments": {
+          "path": "compiler/src/codegen/backend/x86_64.rs",
+          "scope": "index.path-selector.receipt"
+        },
+        "tool": "gather.docs"
+      },
+      "kind": "file",
+      "line": null,
+      "path": "compiler/src/codegen/backend/x86_64.rs",
+      "repo": "quantalang",
+      "repo_path": ".",
+      "schema": "project-telos.source-ref/v1",
+      "selector": "compiler",
+      "sha256": "b8cfb577ace377787601b2b48408cb42c965961a119e2ba0f5eeb7267c88698a"
+    },
+    {
+      "expand": {
+        "arguments": {
+          "path": "compiler/src/codegen/backend/x86_64_enc.rs",
+          "scope": "index.path-selector.receipt"
+        },
+        "tool": "gather.docs"
+      },
+      "kind": "file",
+      "line": null,
+      "path": "compiler/src/codegen/backend/x86_64_enc.rs",
+      "repo": "quantalang",
+      "repo_path": ".",
+      "schema": "project-telos.source-ref/v1",
+      "selector": "compiler",
+      "sha256": "0a9587e3f8fb39dd294f8d9b7455daffa3982424f512fc14010ac9115e3e667d"
+    },
+    {
+      "expand": {
+        "arguments": {
+          "path": "compiler/src/codegen/builder.rs",
+          "scope": "index.path-selector.receipt"
+        },
+        "tool": "gather.docs"
+      },
+      "kind": "file",
+      "line": null,
+      "path": "compiler/src/codegen/builder.rs",
+      "repo": "quantalang",
+      "repo_path": ".",
+      "schema": "project-telos.source-ref/v1",
+      "selector": "compiler",
+      "sha256": "9f6ff64400493c4871c21253debac46c0ffb22a07f231279945edd0b60066cd1"
+    },
+    {
+      "expand": {
+        "arguments": {
+          "path": "compiler/src/codegen/debug.rs",
+          "scope": "index.path-selector.receipt"
+        },
+        "tool": "gather.docs"
+      },
+      "kind": "file",
+      "line": null,
+      "path": "compiler/src/codegen/debug.rs",
+      "repo": "quantalang",
+      "repo_path": ".",
+      "schema": "project-telos.source-ref/v1",
+      "selector": "compiler",
+      "sha256": "62c1e56a899117c6a686e6faddd75e3cd3d0b7d6859403418d44182df50f6176"
+    },
+    {
+      "expand": {
+        "arguments": {
+          "path": "compiler/src/codegen/ir.rs",
+          "scope": "index.path-selector.receipt"
+        },
+        "tool": "gather.docs"
+      },
+      "kind": "file",
+      "line": null,
+      "path": "compiler/src/codegen/ir.rs",
+      "repo": "quantalang",
+      "repo_path": ".",
+      "schema": "project-telos.source-ref/v1",
+      "selector": "compiler",
+      "sha256": "4e1db322922fc085c87ea267a2f263d39a69c0a5162966d26e2ceed8427082db"
+    },
+    {
+      "expand": {
+        "arguments": {
+          "path": "compiler/src/codegen/lower/expr.rs",
+          "scope": "index.path-selector.receipt"
+        },
+        "tool": "gather.docs"
+      },
+      "kind": "file",
+      "line": null,
+      "path": "compiler/src/codegen/lower/expr.rs",
+      "repo": "quantalang",
+      "repo_path": ".",
+      "schema": "project-telos.source-ref/v1",
+      "selector": "compiler",
+      "sha256": "8f775d984d7f85b0270c46458feab05320dafb4212ce662ed09d4cdc52f4d4ba"
+    },
+    {
+      "expand": {
+        "arguments": {
+          "path": "compiler/src/codegen/lower/macros.rs",
+          "scope": "index.path-selector.receipt"
+        },
+        "tool": "gather.docs"
+      },
+      "kind": "file",
+      "line": null,
+      "path": "compiler/src/codegen/lower/macros.rs",
+      "repo": "quantalang",
+      "repo_path": ".",
+      "schema": "project-telos.source-ref/v1",
+      "selector": "compiler",
+      "sha256": "bbc648a93f3e896fa4c717d937c0fd10cced0f5e0a59e4ec04ba3e2486647665"
+    },
+    {
+      "expand": {
+        "arguments": {
+          "path": "compiler/src/codegen/lower/mod.rs",
+          "scope": "index.path-selector.receipt"
+        },
+        "tool": "gather.docs"
+      },
+      "kind": "file",
+      "line": null,
+      "path": "compiler/src/codegen/lower/mod.rs",
+      "repo": "quantalang",
+      "repo_path": ".",
+      "schema": "project-telos.source-ref/v1",
+      "selector": "compiler",
+      "sha256": "a51e6513b0bac407e866af7220748924221ff8c077df7f64bde12b36c28494fc"
+    },
+    {
+      "expand": {
+        "arguments": {
+          "path": "compiler/src/codegen/lower/tests.rs",
+          "scope": "index.path-selector.receipt"
+        },
+        "tool": "gather.docs"
+      },
+      "kind": "file",
+      "line": null,
+      "path": "compiler/src/codegen/lower/tests.rs",
+      "repo": "quantalang",
+      "repo_path": ".",
+      "schema": "project-telos.source-ref/v1",
+      "selector": "compiler",
+      "sha256": "265ea2eec0ef52e53f1e42c576e0577a7f9724136ae347b0125c2da0381ee9ed"
+    },
+    {
+      "expand": {
+        "arguments": {
+          "path": "compiler/src/codegen/lower/types.rs",
+          "scope": "index.path-selector.receipt"
+        },
+        "tool": "gather.docs"
+      },
+      "kind": "file",
+      "line": null,
+      "path": "compiler/src/codegen/lower/types.rs",
+      "repo": "quantalang",
+      "repo_path": ".",
+      "schema": "project-telos.source-ref/v1",
+      "selector": "compiler",
+      "sha256": "e6734698002848d50601381ec547b4cd60b19c142826b76607d2763e9fefd35e"
+    },
+    {
+      "expand": {
+        "arguments": {
+          "path": "compiler/src/codegen/mod.rs",
+          "scope": "index.path-selector.receipt"
+        },
+        "tool": "gather.docs"
+      },
+      "kind": "file",
+      "line": null,
+      "path": "compiler/src/codegen/mod.rs",
+      "repo": "quantalang",
+      "repo_path": ".",
+      "schema": "project-telos.source-ref/v1",
+      "selector": "compiler",
+      "sha256": "6839896965972a0243577782070aca0789e01b31631db0b4882d0b3351e76025"
+    },
+    {
+      "expand": {
+        "arguments": {
+          "path": "compiler/src/codegen/runtime.rs",
+          "scope": "index.path-selector.receipt"
+        },
+        "tool": "gather.docs"
+      },
+      "kind": "file",
+      "line": null,
+      "path": "compiler/src/codegen/runtime.rs",
+      "repo": "quantalang",
+      "repo_path": ".",
+      "schema": "project-telos.source-ref/v1",
+      "selector": "compiler",
+      "sha256": "b3e1d32131051c450f1f93eb158cd3e12d9bc4cde17b56a59ca92e75c82b5ae3"
+    },
+    {
+      "expand": {
+        "arguments": {
+          "path": "compiler/src/fmt/config.rs",
+          "scope": "index.path-selector.receipt"
+        },
+        "tool": "gather.docs"
+      },
+      "kind": "file",
+      "line": null,
+      "path": "compiler/src/fmt/config.rs",
+      "repo": "quantalang",
+      "repo_path": ".",
+      "schema": "project-telos.source-ref/v1",
+      "selector": "compiler",
+      "sha256": "12a2d1a4c8c3683f01f9127e5a701d0e543e4b3f643216323f414ffd9b4f5fe5"
+    },
+    {
+      "expand": {
+        "arguments": {
+          "path": "compiler/src/fmt/formatter.rs",
+          "scope": "index.path-selector.receipt"
+        },
+        "tool": "gather.docs"
+      },
+      "kind": "file",
+      "line": null,
+      "path": "compiler/src/fmt/formatter.rs",
+      "repo": "quantalang",
+      "repo_path": ".",
+      "schema": "project-telos.source-ref/v1",
+      "selector": "compiler",
+      "sha256": "f99090a2549ff48b64275e78fc12b35f8ff9032af2649b33f9bc695a28a36365"
+    },
+    {
+      "expand": {
+        "arguments": {
+          "path": "compiler/src/fmt/mod.rs",
+          "scope": "index.path-selector.receipt"
+        },
+        "tool": "gather.docs"
+      },
+      "kind": "file",
+      "line": null,
+      "path": "compiler/src/fmt/mod.rs",
+      "repo": "quantalang",
+      "repo_path": ".",
+      "schema": "project-telos.source-ref/v1",
+      "selector": "compiler",
+      "sha256": "343fbfc18c356823032573e1a1cbbb5f50e358db1ccb737dc3aa22df687c7e7c"
+    },
+    {
+      "expand": {
+        "arguments": {
+          "path": "compiler/src/fmt/pretty.rs",
+          "scope": "index.path-selector.receipt"
+        },
+        "tool": "gather.docs"
+      },
+      "kind": "file",
+      "line": null,
+      "path": "compiler/src/fmt/pretty.rs",
+      "repo": "quantalang",
+      "repo_path": ".",
+      "schema": "project-telos.source-ref/v1",
+      "selector": "compiler",
+      "sha256": "3b2631a9a8ff269bc5598d0883909ef29806138ea96e760ba8ec56ac1b600c3e"
+    },
+    {
+      "expand": {
+        "arguments": {
+          "path": "compiler/src/lexer/cursor.rs",
+          "scope": "index.path-selector.receipt"
+        },
+        "tool": "gather.docs"
+      },
+      "kind": "file",
+      "line": null,
+      "path": "compiler/src/lexer/cursor.rs",
+      "repo": "quantalang",
+      "repo_path": ".",
+      "schema": "project-telos.source-ref/v1",
+      "selector": "compiler",
+      "sha256": "a6757f3c084a0e5e9451c8572b2ac7edefb66e7518d4f361f9e46143ee904979"
+    },
+    {
+      "expand": {
+        "arguments": {
+          "path": "compiler/src/lexer/error.rs",
+          "scope": "index.path-selector.receipt"
+        },
+        "tool": "gather.docs"
+      },
+      "kind": "file",
+      "line": null,
+      "path": "compiler/src/lexer/error.rs",
+      "repo": "quantalang",
+      "repo_path": ".",
+      "schema": "project-telos.source-ref/v1",
+      "selector": "compiler",
+      "sha256": "d445265521182f1a5f719e5d51a5217703ced02be1fa40e334c6150355989e2e"
+    },
+    {
+      "expand": {
+        "arguments": {
+          "path": "compiler/src/lexer/mod.rs",
+          "scope": "index.path-selector.receipt"
+        },
+        "tool": "gather.docs"
+      },
+      "kind": "file",
+      "line": null,
+      "path": "compiler/src/lexer/mod.rs",
+      "repo": "quantalang",
+      "repo_path": ".",
+      "schema": "project-telos.source-ref/v1",
+      "selector": "compiler",
+      "sha256": "a971c572183b4169f4c008f9a98c5fc72d46a6ee8d3d7f88c5ed573119c6c14b"
+    },
+    {
+      "expand": {
+        "arguments": {
+          "path": "compiler/src/lexer/scanner.rs",
+          "scope": "index.path-selector.receipt"
+        },
+        "tool": "gather.docs"
+      },
+      "kind": "file",
+      "line": null,
+      "path": "compiler/src/lexer/scanner.rs",
+      "repo": "quantalang",
+      "repo_path": ".",
+      "schema": "project-telos.source-ref/v1",
+      "selector": "compiler",
+      "sha256": "5d881dac9a2d289383cdb9d5de0d507228eacb5908d07335dae7b150c2b23160"
+    },
+    {
+      "expand": {
+        "arguments": {
+          "path": "compiler/src/lexer/span.rs",
+          "scope": "index.path-selector.receipt"
+        },
+        "tool": "gather.docs"
+      },
+      "kind": "file",
+      "line": null,
+      "path": "compiler/src/lexer/span.rs",
+      "repo": "quantalang",
+      "repo_path": ".",
+      "schema": "project-telos.source-ref/v1",
+      "selector": "compiler",
+      "sha256": "67b4ed799dc1a13702360aae01117d09b0d853a7176543987c4f4bc68195becd"
+    },
+    {
+      "expand": {
+        "arguments": {
+          "path": "compiler/src/lexer/token.rs",
+          "scope": "index.path-selector.receipt"
+        },
+        "tool": "gather.docs"
+      },
+      "kind": "file",
+      "line": null,
+      "path": "compiler/src/lexer/token.rs",
+      "repo": "quantalang",
+      "repo_path": ".",
+      "schema": "project-telos.source-ref/v1",
+      "selector": "compiler",
+      "sha256": "0e1210ebe24bd9be9fb32af379bd3d99b44d76c0a50327eace6ec846f982c3d2"
+    },
+    {
+      "expand": {
+        "arguments": {
+          "path": "compiler/src/lib.rs",
+          "scope": "index.path-selector.receipt"
+        },
+        "tool": "gather.docs"
+      },
+      "kind": "file",
+      "line": null,
+      "path": "compiler/src/lib.rs",
+      "repo": "quantalang",
+      "repo_path": ".",
+      "schema": "project-telos.source-ref/v1",
+      "selector": "compiler",
+      "sha256": "5f7cf8067251405f70e497d7ccfc185a235d9df4793b193f4c658307590bd63d"
+    },
+    {
+      "expand": {
+        "arguments": {
+          "path": "compiler/src/lsp/STATUS.md",
+          "scope": "index.path-selector.receipt"
+        },
+        "tool": "gather.docs"
+      },
+      "kind": "file",
+      "line": null,
+      "path": "compiler/src/lsp/STATUS.md",
+      "repo": "quantalang",
+      "repo_path": ".",
+      "schema": "project-telos.source-ref/v1",
+      "selector": "compiler",
+      "sha256": "dbd39d9a073f5ef4a97863e370409899385e3d4983e79d2bd4ac18fe8d50ecdb"
+    },
+    {
+      "expand": {
+        "arguments": {
+          "path": "compiler/src/lsp/actions.rs",
+          "scope": "index.path-selector.receipt"
+        },
+        "tool": "gather.docs"
+      },
+      "kind": "file",
+      "line": null,
+      "path": "compiler/src/lsp/actions.rs",
+      "repo": "quantalang",
+      "repo_path": ".",
+      "schema": "project-telos.source-ref/v1",
+      "selector": "compiler",
+      "sha256": "077e9823ee10200e6e088c3a05c09aaadb4d22403771b5bf8837caa2faab5ef7"
+    },
+    {
+      "expand": {
+        "arguments": {
+          "path": "compiler/src/lsp/completion.rs",
+          "scope": "index.path-selector.receipt"
+        },
+        "tool": "gather.docs"
+      },
+      "kind": "file",
+      "line": null,
+      "path": "compiler/src/lsp/completion.rs",
+      "repo": "quantalang",
+      "repo_path": ".",
+      "schema": "project-telos.source-ref/v1",
+      "selector": "compiler",
+      "sha256": "d6f8d0dfb1d105e926775fbc0b8903e7d40ca7f393d840f8f53ad8bdd5d102ed"
+    },
+    {
+      "expand": {
+        "arguments": {
+          "path": "compiler/src/lsp/definition.rs",
+          "scope": "index.path-selector.receipt"
+        },
+        "tool": "gather.docs"
+      },
+      "kind": "file",
+      "line": null,
+      "path": "compiler/src/lsp/definition.rs",
+      "repo": "quantalang",
+      "repo_path": ".",
+      "schema": "project-telos.source-ref/v1",
+      "selector": "compiler",
+      "sha256": "423a9f81f99f728012b2b5fe51ae2b438e8428f9daf6ca98f2a225f8aa604a0a"
+    },
+    {
+      "expand": {
+        "arguments": {
+          "path": "compiler/src/lsp/diagnostics.rs",
+          "scope": "index.path-selector.receipt"
+        },
+        "tool": "gather.docs"
+      },
+      "kind": "file",
+      "line": null,
+      "path": "compiler/src/lsp/diagnostics.rs",
+      "repo": "quantalang",
+      "repo_path": ".",
+      "schema": "project-telos.source-ref/v1",
+      "selector": "compiler",
+      "sha256": "b3e3dadae90f2061ea3d83e2d681918f711e0a89da110f98993b6d2aeb0bd7c5"
+    },
+    {
+      "expand": {
+        "arguments": {
+          "path": "compiler/src/lsp/document.rs",
+          "scope": "index.path-selector.receipt"
+        },
+        "tool": "gather.docs"
+      },
+      "kind": "file",
+      "line": null,
+      "path": "compiler/src/lsp/document.rs",
+      "repo": "quantalang",
+      "repo_path": ".",
+      "schema": "project-telos.source-ref/v1",
+      "selector": "compiler",
+      "sha256": "2573380f16d1461b56d273ba37b24fd94ec4bc0c7c18d58f9993654297f58bc0"
+    },
+    {
+      "expand": {
+        "arguments": {
+          "path": "compiler/src/lsp/hover.rs",
+          "scope": "index.path-selector.receipt"
+        },
+        "tool": "gather.docs"
+      },
+      "kind": "file",
+      "line": null,
+      "path": "compiler/src/lsp/hover.rs",
+      "repo": "quantalang",
+      "repo_path": ".",
+      "schema": "project-telos.source-ref/v1",
+      "selector": "compiler",
+      "sha256": "bb86f3980af899799f89724d3ae04decabbf728d95aea7bc69de77809fb2cbe2"
+    },
+    {
+      "expand": {
+        "arguments": {
+          "path": "compiler/src/lsp/jsonrpc.rs",
+          "scope": "index.path-selector.receipt"
+        },
+        "tool": "gather.docs"
+      },
+      "kind": "file",
+      "line": null,
+      "path": "compiler/src/lsp/jsonrpc.rs",
+      "repo": "quantalang",
+      "repo_path": ".",
+      "schema": "project-telos.source-ref/v1",
+      "selector": "compiler",
+      "sha256": "4102fc62ba6899b486ccc326794743ecb458b925e317aa8d395100e3faf3e745"
+    },
+    {
+      "expand": {
+        "arguments": {
+          "path": "compiler/src/lsp/message.rs",
+          "scope": "index.path-selector.receipt"
+        },
+        "tool": "gather.docs"
+      },
+      "kind": "file",
+      "line": null,
+      "path": "compiler/src/lsp/message.rs",
+      "repo": "quantalang",
+      "repo_path": ".",
+      "schema": "project-telos.source-ref/v1",
+      "selector": "compiler",
+      "sha256": "46f4ae1ee6fe23adaa129f7cf15ff71baccc24ccf3f292fbc403839143c33436"
+    },
+    {
+      "expand": {
+        "arguments": {
+          "path": "compiler/src/lsp/mod.rs",
+          "scope": "index.path-selector.receipt"
+        },
+        "tool": "gather.docs"
+      },
+      "kind": "file",
+      "line": null,
+      "path": "compiler/src/lsp/mod.rs",
+      "repo": "quantalang",
+      "repo_path": ".",
+      "schema": "project-telos.source-ref/v1",
+      "selector": "compiler",
+      "sha256": "52d85e852581dfbdcbcb2bdd65d310e4139c9b3d0a5e733263e0b9d1fa846991"
+    }
+  ],
+  "source_refs_only": true,
+  "status": "INDEX_PATH_SELECTOR_RECEIPT_FIXTURE_MATCH",
+  "unsupported_claim_count": 0,
+  "validation_errors": []
+}

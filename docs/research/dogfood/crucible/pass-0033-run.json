@@ -1,0 +1,536 @@
+{
+  "ok": true,
+  "thesis": {
+    "id": "e0fbf2e80a5bb575",
+    "title": "Dogfood Pass 0033 Lean Provisioning Build Timeout",
+    "registered_at": 1782912860.690586,
+    "disposition": "fenced",
+    "seal": "e0fbf2e80a5bb57507ac827d4273b024059c3a5cd91950da7596e6e8b29ae7b4",
+    "claims": [
+      {
+        "id": "514603e36cd8c6ec",
+        "sha256": "514603e36cd8c6ec2b8223cf06d1de8601276998f72d264241d213c90d41bd28"
+      },
+      {
+        "id": "9b2987e5e0ea2d9a",
+        "sha256": "9b2987e5e0ea2d9a042bc19547a2127f00499a254871df2f9db9c9bfc7458b93"
+      },
+      {
+        "id": "7f5c1ae7c57f9162",
+        "sha256": "7f5c1ae7c57f9162bea0a2de622301951f6e959b207ee922435e09d9e171d2e9"
+      },
+      {
+        "id": "a015b8731100bb9f",
+        "sha256": "a015b8731100bb9fb32c5aa42b160f290adfca1f7c9dc8cfdf27aa2a3f5a92eb"
+      },
+      {
+        "id": "c1e64f84ecadc7ef",
+        "sha256": "c1e64f84ecadc7efe5c55a1e678231ef2aed29857f006c01bc1c509ccb60786c"
+      },
+      {
+        "id": "24decef2a0eadf78",
+        "sha256": "24decef2a0eadf7802d19fb2a150f551c0265a71b3ab2152db1d0ccebb897f88"
+      },
+      {
+        "id": "864fb7578da99cae",
+        "sha256": "864fb7578da99caefbdcd713878aee6287fef62dc87a9f8b853e401a96603186"
+      },
+      {
+        "id": "daf270d0ab1658be",
+        "sha256": "daf270d0ab1658bec9969f7b9a15ba2cf49846b58a37903790ef563a94e70b31"
+      },
+      {
+        "id": "ab0c184ea2433560",
+        "sha256": "ab0c184ea2433560a38cbe693f9f73911571d5f99aecac79ac5cc81e2b2a6e31"
+      },
+      {
+        "id": "4574567fd918dd63",
+        "sha256": "4574567fd918dd637cbb32e623b3f23dfe76f3fd66173ea4382f176100341abe"
+      }
+    ]
+  },
+  "refutations": [
+    {
+      "claim_id": "514603e36cd8c6ec",
+      "claim_sha256": "514603e36cd8c6ec2b8223cf06d1de8601276998f72d264241d213c90d41bd28",
+      "challenge": "test the stated falsification: schemas/lean-provisioning-build-timeout-pass-0033.json is missing, has a different schema, status, source binding, build timeout status, negative fixture count, or seal",
+      "measurable": "schemas/lean-provisioning-build-timeout-pass-0033.json is missing, has a different schema, status, source binding, build timeout status, negative fixture count, or seal",
+      "source": "null"
+    },
+    {
+      "claim_id": "9b2987e5e0ea2d9a",
+      "claim_sha256": "9b2987e5e0ea2d9a042bc19547a2127f00499a254871df2f9db9c9bfc7458b93",
+      "challenge": "test the stated falsification: the provisioning fixture is missing, has a different SHA-256 or seal, or is not linked from the schema",
+      "measurable": "the provisioning fixture is missing, has a different SHA-256 or seal, or is not linked from the schema",
+      "source": "null"
+    },
+    {
+      "claim_id": "7f5c1ae7c57f9162",
+      "claim_sha256": "7f5c1ae7c57f9162bea0a2de622301951f6e959b207ee922435e09d9e171d2e9",
+      "challenge": "test the stated falsification: the release receipt is missing, has a different tag, asset name, archive hash, elan-init hash, or omits --no-modify-path",
+      "measurable": "the release receipt is missing, has a different tag, asset name, archive hash, elan-init hash, or omits --no-modify-path",
+      "source": "null"
+    },
+    {
+      "claim_id": "a015b8731100bb9f",
+      "claim_sha256": "a015b8731100bb9fb32c5aa42b160f290adfca1f7c9dc8cfdf27aa2a3f5a92eb",
+      "challenge": "test the stated falsification: the contained install probe is missing, reports nonzero exit, omits temp ELAN_HOME, modifies normal PATH, hides external write, or omits lean.exe or lake.exe",
+      "measurable": "the contained install probe is missing, reports nonzero exit, omits temp ELAN_HOME, modifies normal PATH, hides external write, or omits lean.exe or lake.exe",
+      "source": "null"
+    },
+    {
+      "claim_id": "c1e64f84ecadc7ef",
+      "claim_sha256": "c1e64f84ecadc7efe5c55a1e678231ef2aed29857f006c01bc1c509ccb60786c",
+      "challenge": "test the stated falsification: the toolchain probe is missing or reports a different Elan, Lean, Lake, or Lean toolchain commit",
+      "measurable": "the toolchain probe is missing or reports a different Elan, Lean, Lake, or Lean toolchain commit",
+      "source": "null"
+    },
+    {
+      "claim_id": "24decef2a0eadf78",
+      "claim_sha256": "24decef2a0eadf7802d19fb2a150f551c0265a71b3ab2152db1d0ccebb897f88",
+      "challenge": "test the stated falsification: the build attempt is missing, does not reach Lake or Lean workers, reports semantic failure, promotes theorem replay, or has a different timeout classification",
+      "measurable": "the build attempt is missing, does not reach Lake or Lean workers, reports semantic failure, promotes theorem replay, or has a different timeout classification",
+      "source": "null"
+    },
+    {
+      "claim_id": "864fb7578da99cae",
+      "claim_sha256": "864fb7578da99caefbdcd713878aee6287fef62dc87a9f8b853e401a96603186",
+      "challenge": "test the stated falsification: the process stop receipt is missing, has a different stopped count, or leaves matching temp Lean/Lake/Bash processes running",
+      "measurable": "the process stop receipt is missing, has a different stopped count, or leaves matching temp Lean/Lake/Bash processes running",
+      "source": "null"
+    },
+    {
+      "claim_id": "daf270d0ab1658be",
+      "claim_sha256": "daf270d0ab1658bec9969f7b9a15ba2cf49846b58a37903790ef563a94e70b31",
+      "challenge": "test the stated falsification: the build artifact snapshot is missing or reports different file count, byte sum, or .olean count",
+      "measurable": "the build artifact snapshot is missing or reports different file count, byte sum, or .olean count",
+      "source": "null"
+    },
+    {
+      "claim_id": "ab0c184ea2433560",
+      "claim_sha256": "ab0c184ea2433560a38cbe693f9f73911571d5f99aecac79ac5cc81e2b2a6e31",
+      "challenge": "test the stated falsification: the validator result is missing, reports DRIFT, has different install status, Lake reachability, replay completion, process count, or negative fixture count",
+      "measurable": "the validator result is missing, reports DRIFT, has different install status, Lake reachability, replay completion, process count, or negative fixture count",
+      "source": "null"
+    },
+    {
+      "claim_id": "4574567fd918dd63",
+      "claim_sha256": "4574567fd918dd637cbb32e623b3f23dfe76f3fd66173ea4382f176100341abe",
+      "challenge": "test the stated falsification: pass 0033 artifacts promote Lake build success, theorem replay, theorem correctness, system install, buyer adoption, or a natural law",
+      "measurable": "pass 0033 artifacts promote Lake build success, theorem replay, theorem correctness, system install, buyer adoption, or a natural law",
+      "source": "null"
+    }
+  ],
+  "assessment": {
+    "started_at": 1782912860.690586,
+    "thesis_id": "e0fbf2e80a5bb575",
+    "thesis_seal": "e0fbf2e80a5bb57507ac827d4273b024059c3a5cd91950da7596e6e8b29ae7b4",
+    "claims": 10,
+    "match": 10,
+    "drift": 0,
+    "unverifiable": 0,
+    "verdict_seal": "01c8238db7bf4945322a4aafc844170aa6f0efd234c22c0c6840459e1c7d38bf",
+    "measurement_seal": "50199bb646d896426d1465ddc5e84355253ce7c8a2d14d1ba7eb9c46066a9242",
+    "disposition": "fenced",
+    "stored": null,
+    "verdicts": [
+      {
+        "claim_id": "514603e36cd8c6ec",
+        "claim_sha256": "514603e36cd8c6ec2b8223cf06d1de8601276998f72d264241d213c90d41bd28",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "lean-provisioning-contract-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "9b2987e5e0ea2d9a",
+        "claim_sha256": "9b2987e5e0ea2d9a042bc19547a2127f00499a254871df2f9db9c9bfc7458b93",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "fixture-binding-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "7f5c1ae7c57f9162",
+        "claim_sha256": "7f5c1ae7c57f9162bea0a2de622301951f6e959b207ee922435e09d9e171d2e9",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "release-receipt-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "a015b8731100bb9f",
+        "claim_sha256": "a015b8731100bb9fb32c5aa42b160f290adfca1f7c9dc8cfdf27aa2a3f5a92eb",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "contained-install-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "c1e64f84ecadc7ef",
+        "claim_sha256": "c1e64f84ecadc7efe5c55a1e678231ef2aed29857f006c01bc1c509ccb60786c",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "toolchain-version-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "24decef2a0eadf78",
+        "claim_sha256": "24decef2a0eadf7802d19fb2a150f551c0265a71b3ab2152db1d0ccebb897f88",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "build-timeout-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "864fb7578da99cae",
+        "claim_sha256": "864fb7578da99caefbdcd713878aee6287fef62dc87a9f8b853e401a96603186",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "process-stop-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "daf270d0ab1658be",
+        "claim_sha256": "daf270d0ab1658bec9969f7b9a15ba2cf49846b58a37903790ef563a94e70b31",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "build-artifact-snapshot-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "ab0c184ea2433560",
+        "claim_sha256": "ab0c184ea2433560a38cbe693f9f73911571d5f99aecac79ac5cc81e2b2a6e31",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "validator-result-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "4574567fd918dd63",
+        "claim_sha256": "4574567fd918dd637cbb32e623b3f23dfe76f3fd66173ea4382f176100341abe",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "non-promotion-boundary-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      }
+    ],
+    "measurements": [
+      {
+        "claim_id": "514603e36cd8c6ec",
+        "claim_sha256": "514603e36cd8c6ec2b8223cf06d1de8601276998f72d264241d213c90d41bd28",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "lean-provisioning-contract-review",
+        "measured_at": 1782912860.690586,
+        "evidence": [
+          "schema=LeanProvisioningBuildTimeoutContract/v1",
+          "status=LEAN_PROVISIONING_MATCH_WITH_BUILD_TIMEOUT",
+          "source_remediation_sha256=fd35080a7d14c8be0fcb96cea88293d2ca106977080a4eeae687228ce77e3a62",
+          "timeout status=TIMEOUT_TERMINATED",
+          "negative_fixture_count=10",
+          "seal=8871fe5c59a75d81f24e6396a62d6cf484c7504d3304c695861c4b4799c16a9c"
+        ]
+      },
+      {
+        "claim_id": "9b2987e5e0ea2d9a",
+        "claim_sha256": "9b2987e5e0ea2d9a042bc19547a2127f00499a254871df2f9db9c9bfc7458b93",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "fixture-binding-review",
+        "measured_at": 1782912860.690586,
+        "evidence": [
+          "fixture path=fixtures/lean-provisioning-build-timeout-pass-0033.json",
+          "fixture sha256=0fdac6d4a3e787b78c9bb11bbc19f089e87c1f3b694fde89ef8ec1a2c782dc91",
+          "fixture seal=253454846e935adc19ad0cb1ff251eaeef33d00b40dc00e0473f4644fa8adf7d"
+        ]
+      },
+      {
+        "claim_id": "7f5c1ae7c57f9162",
+        "claim_sha256": "7f5c1ae7c57f9162bea0a2de622301951f6e959b207ee922435e09d9e171d2e9",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "release-receipt-review",
+        "measured_at": 1782912860.690586,
+        "evidence": [
+          "release_tag=v4.2.3",
+          "asset=elan-x86_64-pc-windows-msvc.zip",
+          "asset_sha256=be5e92a2dfdd8176099b2db0b810c27237c9054f1e5db1126f4f2a1134773b25",
+          "elan_init_sha256=175089915efc623126a1560ed517cd52ec2d4d09f2adc1c10f22f56568fed5ad",
+          "installer_help.no_modify_path_flag=--no-modify-path"
+        ]
+      },
+      {
+        "claim_id": "a015b8731100bb9f",
+        "claim_sha256": "a015b8731100bb9fb32c5aa42b160f290adfca1f7c9dc8cfdf27aa2a3f5a92eb",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "contained-install-review",
+        "measured_at": 1782912860.690586,
+        "evidence": [
+          "install_exit_code=0",
+          "elan_home_ref=temp:telos-pass0033-elan-home",
+          "normal_path_modified=false",
+          "external_write_performed=false",
+          "temp_write_performed=true",
+          "bin_files include lean.exe and lake.exe"
+        ]
+      },
+      {
+        "claim_id": "c1e64f84ecadc7ef",
+        "claim_sha256": "c1e64f84ecadc7efe5c55a1e678231ef2aed29857f006c01bc1c509ccb60786c",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "toolchain-version-review",
+        "measured_at": 1782912860.690586,
+        "evidence": [
+          "elan_version=elan 4.2.3",
+          "lean_version=Lean 4.31.0",
+          "toolchain_commit=68218e876d2a38b1985b8590fff244a83c321783",
+          "lake_version=Lake version 5.0.0-src+68218e8"
+        ]
+      },
+      {
+        "claim_id": "24decef2a0eadf78",
+        "claim_sha256": "24decef2a0eadf7802d19fb2a150f551c0265a71b3ab2152db1d0ccebb897f88",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "build-timeout-review",
+        "measured_at": 1782912860.690586,
+        "evidence": [
+          "status=TIMEOUT_TERMINATED",
+          "failure_class=mathlib_build_long_running_timeout",
+          "elapsed_timeout_seconds=604",
+          "monitor_window_seconds=600",
+          "lake_reached=true",
+          "lean_workers_reached=true",
+          "semantic_failure_observed=false",
+          "theorem_replay_completed=false"
+        ]
+      },
+      {
+        "claim_id": "864fb7578da99cae",
+        "claim_sha256": "864fb7578da99caefbdcd713878aee6287fef62dc87a9f8b853e401a96603186",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "process-stop-review",
+        "measured_at": 1782912860.690586,
+        "evidence": [
+          "stopped_count=27",
+          "remaining_count_after_stop=0",
+          "stop_scope=temp Elan home, temp pipeline-math clone, temp python3 shim"
+        ]
+      },
+      {
+        "claim_id": "daf270d0ab1658be",
+        "claim_sha256": "daf270d0ab1658bec9969f7b9a15ba2cf49846b58a37903790ef563a94e70b31",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "build-artifact-snapshot-review",
+        "measured_at": 1782912860.690586,
+        "evidence": [
+          "file_count=46930",
+          "byte_sum=3208367614",
+          ".olean count=2659"
+        ]
+      },
+      {
+        "claim_id": "ab0c184ea2433560",
+        "claim_sha256": "ab0c184ea2433560a38cbe693f9f73911571d5f99aecac79ac5cc81e2b2a6e31",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "validator-result-review",
+        "measured_at": 1782912860.690586,
+        "evidence": [
+          "validator status=MATCH",
+          "contained_install_status=MATCH",
+          "lake_reached=true",
+          "theorem_replay_completed=false",
+          "processes_remaining_after_stop=0",
+          "negative_fixture_count=10"
+        ]
+      },
+      {
+        "claim_id": "4574567fd918dd63",
+        "claim_sha256": "4574567fd918dd637cbb32e623b3f23dfe76f3fd66173ea4382f176100341abe",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "non-promotion-boundary-review",
+        "measured_at": 1782912860.690586,
+        "evidence": [
+          "toolchain_install_scope=temp_elan_home",
+          "normal_path_modified=false",
+          "external_write_performed=false",
+          "timeout_status=TIMEOUT_TERMINATED",
+          "theorem_replay_completed=false",
+          "replay_promotion_allowed=false",
+          "semantic_failure_observed=false",
+          "current_promoted_natural_laws=[]"
+        ]
+      }
+    ],
+    "seal": "996d0fb95c0e4e2e9f81eefe8d5871fdbd94531bc641e9a77d2e82e339669f8b"
+  },
+  "verdicts": [
+    {
+      "claim_id": "514603e36cd8c6ec",
+      "claim_sha256": "514603e36cd8c6ec2b8223cf06d1de8601276998f72d264241d213c90d41bd28",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "lean-provisioning-contract-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "9b2987e5e0ea2d9a",
+      "claim_sha256": "9b2987e5e0ea2d9a042bc19547a2127f00499a254871df2f9db9c9bfc7458b93",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "fixture-binding-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "7f5c1ae7c57f9162",
+      "claim_sha256": "7f5c1ae7c57f9162bea0a2de622301951f6e959b207ee922435e09d9e171d2e9",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "release-receipt-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "a015b8731100bb9f",
+      "claim_sha256": "a015b8731100bb9fb32c5aa42b160f290adfca1f7c9dc8cfdf27aa2a3f5a92eb",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "contained-install-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "c1e64f84ecadc7ef",
+      "claim_sha256": "c1e64f84ecadc7efe5c55a1e678231ef2aed29857f006c01bc1c509ccb60786c",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "toolchain-version-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "24decef2a0eadf78",
+      "claim_sha256": "24decef2a0eadf7802d19fb2a150f551c0265a71b3ab2152db1d0ccebb897f88",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "build-timeout-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "864fb7578da99cae",
+      "claim_sha256": "864fb7578da99caefbdcd713878aee6287fef62dc87a9f8b853e401a96603186",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "process-stop-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "daf270d0ab1658be",
+      "claim_sha256": "daf270d0ab1658bec9969f7b9a15ba2cf49846b58a37903790ef563a94e70b31",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "build-artifact-snapshot-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "ab0c184ea2433560",
+      "claim_sha256": "ab0c184ea2433560a38cbe693f9f73911571d5f99aecac79ac5cc81e2b2a6e31",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "validator-result-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "4574567fd918dd63",
+      "claim_sha256": "4574567fd918dd637cbb32e623b3f23dfe76f3fd66173ea4382f176100341abe",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "non-promotion-boundary-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    }
+  ],
+  "checks": {
+    "seals_ok": true,
+    "thesis_ok": true,
+    "verdicts_rederive": true
+  },
+  "report": "docs\\research\\dogfood\\crucible\\pass-0033-report.md",
+  "record": "docs\\research\\dogfood\\crucible\\pass-0033-run.json",
+  "bundle": null,
+  "spec": null,
+  "review": null,
+  "verifier": {
+    "mode": "cleanroom",
+    "inputs": [],
+    "excluded": [
+      "worker context",
+      "reasoning trace",
+      "intermediate steps"
+    ],
+    "checkability": "If success cannot be evaluated from the original spec and the artifact, the spec is not checkable yet."
+  }
+}

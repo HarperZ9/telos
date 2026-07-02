@@ -1,0 +1,1232 @@
+Jump to content
+Main menu
+Main menu
+move to sidebar
+hide
+Navigation
+Main page
+Contents
+Current events
+Random article
+About Wikipedia
+Contact us
+Contribute
+Help
+Learn to edit
+Community portal
+Recent changes
+Upload file
+Special pages
+Print/export
+Download as PDF
+Printable version
+In other projects
+Wikidata item
+Search
+Search
+Appearance
+Donate
+Create account
+Log in
+Personal tools
+Donate
+Create account
+Log in
+Contents
+move to sidebar
+hide
+(Top)
+1
+Overview
+2
+Examples
+3
+Elementary constructions
+Toggle Elementary constructions subsection
+3.1
+Lower dimensions
+3.2
+Higher dimensions
+3.3
+Primitives
+4
+Properties
+Toggle Properties subsection
+4.1
+Matrix properties
+4.2
+Group properties
+4.3
+Canonical form
+4.4
+Lie algebra
+5
+Numerical linear algebra
+Toggle Numerical linear algebra subsection
+5.1
+Benefits
+5.2
+Decompositions
+5.2.1
+Examples
+5.3
+Randomization
+5.4
+Nearest orthogonal matrix
+6
+Spin and pin
+7
+Rectangular matrices
+8
+See also
+9
+References
+Toggle References subsection
+9.1
+Works cited
+10
+Further reading
+11
+External links
+Toggle the table of contents
+Orthogonal matrix
+32 languages
+العربية
+Беларуская
+Català
+Čeština
+Чӑвашла
+Dansk
+Deutsch
+Ελληνικά
+Esperanto
+Español
+Euskara
+فارسی
+Suomi
+Français
+Galego
+עברית
+Magyar
+Bahasa Indonesia
+Italiano
+日本語
+한국어
+Nederlands
+Polski
+Português
+Русский
+Slovenščina
+Svenska
+தமிழ்
+Українська
+اردو
+閩南語 / Bân-lâm-gí
+中文
+Edit links
+Article
+Talk
+English
+Read
+Edit
+View history
+Tools
+Tools
+move to sidebar
+hide
+Actions
+Read
+Edit
+View history
+General
+What links here
+Related changes
+Upload file
+Permanent link
+Page information
+Cite this page
+Get shortened URL
+Print/export
+Download as PDF
+Printable version
+In other projects
+Wikidata item
+Appearance
+move to sidebar
+hide
+From Wikipedia, the free encyclopedia
+Real square matrix whose columns and rows are orthogonal unit vectors
+For matrices with orthogonality over the complex number field, see unitary matrix.
+This article includes a list of general references, but it lacks sufficient corresponding inline citations. Please help to improve this article by introducing more precise citations. (May 2023) (Learn how and when to remove this message)
+In linear algebra, an orthogonal matrix or orthonormal matrix Q, is a real-valued square matrix whose columns and rows are orthonormal vectors.
+One way to express this is
+Q
+T
+Q
+=
+Q
+Q
+T
+=
+I
+,
+{\displaystyle Q^{\mathrm {T} }Q=QQ^{\mathrm {T} }=I,}
+where QT is the transpose of Q and I is the identity matrix.
+This leads to the equivalent characterization: a matrix Q is orthogonal if its transpose is equal to its inverse:
+Q
+T
+=
+Q
+−
+1
+,
+{\displaystyle Q^{\mathrm {T} }=Q^{-1},}
+where Q−1 is the inverse of Q.
+An orthogonal matrix Q is necessarily invertible (with inverse Q−1 = QT), unitary (Q−1 = Q∗), where Q∗ is the Hermitian adjoint (conjugate transpose) of Q, and therefore normal (Q∗Q = QQ∗) over the real numbers. The determinant of any orthogonal matrix is either +1 or −1. As a linear transformation, an orthogonal matrix preserves the inner product of vectors, and therefore acts as an isometry of Euclidean space, such as a rotation, reflection or rotoreflection. In other words, it is a unitary transformation.
+The set of n × n orthogonal matrices, under multiplication, forms the group O(n), known as the orthogonal group. The subgroup SO(n) consisting of orthogonal matrices with determinant +1 is called the special orthogonal group, and each of its elements is a special orthogonal matrix. As a linear transformation, every special orthogonal matrix acts as a rotation.
+Overview
+[edit]
+Visual understanding of multiplication by the transpose of a matrix. If A is an orthogonal matrix and B is its transpose, the ij-th element of the product AAT will vanish if i≠j, because the i-th row of A is orthogonal to the j-th row of A.
+An orthogonal matrix is the real specialization of a unitary matrix, and thus always a normal matrix. Although we consider only real matrices here, the definition can be used for matrices with entries from any field. However, orthogonal matrices arise naturally from dot products, and for matrices of complex numbers that leads instead to the unitary requirement. Orthogonal matrices preserve the dot product,[1] so, for vectors u and v in an n-dimensional real Euclidean space
+u
+⋅
+v
+=
+(
+Q
+u
+)
+⋅
+(
+Q
+v
+)
+{\displaystyle {\mathbf {u} }\cdot {\mathbf {v} }=\left(Q{\mathbf {u} }\right)\cdot \left(Q{\mathbf {v} }\right)}
+where Q is an orthogonal matrix. To see the inner product connection, consider a vector v in an n-dimensional real Euclidean space. Written with respect to an orthonormal basis, the squared length of v is vTv. If a linear transformation, in matrix form Qv, preserves vector lengths, then
+v
+T
+v
+=
+(
+Q
+v
+)
+T
+(
+Q
+v
+)
+=
+v
+T
+Q
+T
+Q
+v
+.
+{\displaystyle {\mathbf {v} }^{\mathrm {T} }{\mathbf {v} }=(Q{\mathbf {v} })^{\mathrm {T} }(Q{\mathbf {v} })={\mathbf {v} }^{\mathrm {T} }Q^{\mathrm {T} }Q{\mathbf {v} }.}
+Thus finite-dimensional linear isometries—rotations, reflections, and their combinations—produce orthogonal matrices. The converse is also true: orthogonal matrices imply orthogonal transformations. However, linear algebra includes orthogonal transformations between spaces which may be neither finite-dimensional nor of the same dimension, and these have no orthogonal matrix equivalent.
+Orthogonal matrices are important for a number of reasons, both theoretical and practical. The n × n orthogonal matrices form a group under matrix multiplication, the orthogonal group denoted by O(n), which—with its subgroups—is widely used in mathematics and the physical sciences. For example, the point group of a molecule is a subgroup of O(3). Because floating point versions of orthogonal matrices have advantageous properties, they are key to many algorithms in numerical linear algebra, such as QR decomposition. As another example, with appropriate normalization the discrete cosine transform (used in MP3 compression) is represented by an orthogonal matrix.
+Examples
+[edit]
+Below are a few examples of small orthogonal matrices and possible interpretations.
+[
+1
+0
+0
+1
+]
+{\displaystyle {\begin{bmatrix}1&0\\0&1\\\end{bmatrix}}}
+(identity transformation)
+[
+cos
+⁡
+θ
+−
+sin
+⁡
+θ
+sin
+⁡
+θ
+cos
+⁡
+θ
+]
+{\displaystyle {\begin{bmatrix}\cos \theta &-\sin \theta \\\sin \theta &\cos \theta \\\end{bmatrix}}}
+(rotation about the origin)
+[
+1
+0
+0
+−
+1
+]
+{\displaystyle {\begin{bmatrix}1&0\\0&-1\\\end{bmatrix}}}
+(reflection across x-axis)
+[
+0
+0
+0
+1
+0
+0
+1
+0
+1
+0
+0
+0
+0
+1
+0
+0
+]
+{\displaystyle {\begin{bmatrix}0&0&0&1\\0&0&1&0\\1&0&0&0\\0&1&0&0\end{bmatrix}}}
+(permutation of coordinate axes)
+Elementary constructions
+[edit]
+Lower dimensions
+[edit]
+The simplest orthogonal matrices are the 1 × 1 matrices [1] and [−1], which we can interpret as the identity and a reflection of the real line across the origin.
+The 2 × 2 matrices have the form
+[
+p
+t
+q
+u
+]
+,
+{\displaystyle {\begin{bmatrix}p&t\\q&u\end{bmatrix}},}
+which orthogonality demands satisfy the three equations
+1
+=
+p
+2
++
+t
+2
+,
+1
+=
+q
+2
++
+u
+2
+,
+0
+=
+p
+q
++
+t
+u
+.
+{\displaystyle {\begin{aligned}1&=p^{2}+t^{2},\\1&=q^{2}+u^{2},\\0&=pq+tu.\end{aligned}}}
+In consideration of the first equation, without loss of generality let p = cos θ, q = sin θ; then either t = −q, u = p or t = q, u = −p. We can interpret the first case as a rotation by θ (where θ = 0 is the identity), and the second as a reflection across a line at an angle of ⁠θ/2⁠.
+[
+cos
+⁡
+θ
+−
+sin
+⁡
+θ
+sin
+⁡
+θ
+cos
+⁡
+θ
+]
+(rotation),
+[
+cos
+⁡
+θ
+sin
+⁡
+θ
+sin
+⁡
+θ
+−
+cos
+⁡
+θ
+]
+(reflection)
+{\displaystyle {\begin{bmatrix}\cos \theta &-\sin \theta \\\sin \theta &\cos \theta \\\end{bmatrix}}{\text{ (rotation), }}\qquad {\begin{bmatrix}\cos \theta &\sin \theta \\\sin \theta &-\cos \theta \\\end{bmatrix}}{\text{ (reflection)}}}
+The special case of the reflection matrix with θ = 90° generates a reflection about the line at 45° given by y = x and therefore exchanges x and y; it is a permutation matrix, with a single 1 in each column and row (and otherwise 0):
+[
+0
+1
+1
+0
+]
+.
+{\displaystyle {\begin{bmatrix}0&1\\1&0\end{bmatrix}}.}
+The identity is also a permutation matrix.
+A reflection is its own inverse, which implies that a reflection matrix is symmetric (equal to its transpose) as well as orthogonal. The product of two rotation matrices is a rotation matrix, and the product of two reflection matrices is also a rotation matrix.
+Higher dimensions
+[edit]
+Regardless of the dimension, it is always possible to classify orthogonal matrices as purely rotational or not, but for 3 × 3 matrices and larger the non-rotational matrices can be more complicated than reflections. For example,
+[
+−
+1
+0
+0
+0
+−
+1
+0
+0
+0
+−
+1
+]
+and
+[
+0
+−
+1
+0
+1
+0
+0
+0
+0
+−
+1
+]
+{\displaystyle {\begin{bmatrix}-1&0&0\\0&-1&0\\0&0&-1\end{bmatrix}}{\text{ and }}{\begin{bmatrix}0&-1&0\\1&0&0\\0&0&-1\end{bmatrix}}}
+represent an inversion through the origin and a rotoinversion, respectively, about the z-axis.
+Rotations become more complicated in higher dimensions; they can no longer be completely characterized by one angle, and may affect more than one planar subspace. It is common to describe a 3 × 3 rotation matrix in terms of an axis and angle, but this only works in three dimensions. Above three dimensions two or more angles are needed, each associated with a plane of rotation.
+However, we have elementary building blocks for permutations, reflections, and rotations that apply in general.
+Primitives
+[edit]
+The most elementary permutation is a transposition, obtained from the identity matrix by exchanging two rows. Any n × n permutation matrix can be constructed as a product of no more than n − 1 transpositions.
+A Householder reflection is constructed from a non-null vector v as
+Q
+=
+I
+−
+2
+v
+v
+T
+v
+T
+v
+.
+{\displaystyle Q=I-2{\frac {{\mathbf {v} }{\mathbf {v} }^{\mathrm {T} }}{{\mathbf {v} }^{\mathrm {T} }{\mathbf {v} }}}.}
+Here the numerator is a symmetric matrix while the denominator is a number, the squared magnitude of v. This is a reflection in the hyperplane perpendicular to v (negating any vector component parallel to v). If v is a unit vector, then Q = I − 2vvT suffices. A Householder reflection is typically used to simultaneously zero the lower part of a column. Any orthogonal matrix of size n × n can be constructed as a product of at most n such reflections.
+A Givens rotation acts on a two-dimensional (planar) subspace spanned by two coordinate axes, rotating by a chosen angle. It is typically used to zero a single subdiagonal entry. Any rotation matrix of size n × n can be constructed as a product of at most ⁠n(n − 1)/2⁠ such rotations. In the case of 3 × 3 matrices, three such rotations suffice; and by fixing the sequence we can thus describe all 3 × 3 rotation matrices (though not uniquely) in terms of the three angles used, often called Euler angles.
+A Jacobi rotation has the same form as a Givens rotation, but is used to zero both off-diagonal entries of a 2 × 2 symmetric submatrix.
+Properties
+[edit]
+Matrix properties
+[edit]
+A real square matrix is orthogonal if and only if its columns form an orthonormal basis of the Euclidean space Rn with the ordinary Euclidean dot product, which is the case if and only if its rows form an orthonormal basis of Rn. It might be tempting to suppose a matrix with orthogonal (not orthonormal) columns would be called an orthogonal matrix, but such matrices have no special interest and no special name; they only satisfy MTM = D, with D a diagonal matrix.
+The determinant of any orthogonal matrix is +1 or −1. This follows from basic facts about determinants, as follows:
+1
+=
+det
+(
+I
+)
+=
+det
+(
+Q
+T
+Q
+)
+=
+det
+(
+Q
+T
+)
+det
+(
+Q
+)
+=
+(
+det
+(
+Q
+)
+)
+2
+.
+{\displaystyle 1=\det(I)=\det \left(Q^{\mathrm {T} }Q\right)=\det \left(Q^{\mathrm {T} }\right)\det(Q)={\bigl (}\det(Q){\bigr )}^{2}.}
+The converse is not true; having a determinant of ±1 is no guarantee of orthogonality, even with orthogonal columns, as shown by the following counterexample.
+[
+2
+0
+0
+1
+2
+]
+{\displaystyle {\begin{bmatrix}2&0\\0&{\frac {1}{2}}\end{bmatrix}}}
+With permutation matrices the determinant matches the signature, being +1 or −1 as the parity of the permutation is even or odd, for the determinant is an alternating function of the rows.
+Stronger than the determinant restriction is the fact that an orthogonal matrix can always be diagonalized over the complex numbers to exhibit a full set of eigenvalues, all of which must have (complex) modulus 1.
+Group properties
+[edit]
+The inverse of every orthogonal matrix is again orthogonal, as is the matrix product of two orthogonal matrices. In fact, the set of all n × n orthogonal matrices satisfies all the axioms of a group. It is a compact Lie group of dimension ⁠n(n − 1)/2⁠, called the orthogonal group and denoted by O(n).
+The orthogonal matrices whose determinant is +1 form a path-connected normal subgroup of O(n) of index 2, the special orthogonal group SO(n) of rotations. The quotient group O(n)/SO(n) is isomorphic to O(1), with the projection map choosing [+1] or [−1] according to the determinant. Orthogonal matrices with determinant −1 do not include the identity, and so do not form a subgroup but only a coset; it is also (separately) connected. Thus each orthogonal group falls into two pieces; and because the projection map splits, O(n) is a semidirect product of SO(n) by O(1). In practical terms, a comparable statement is that any orthogonal matrix can be produced by taking a rotation matrix and possibly negating one of its columns, as we saw with 2 × 2 matrices. If n is odd, then the semidirect product is in fact a direct product, and any orthogonal matrix can be produced by taking a rotation matrix and possibly negating all of its columns. This follows from the property of determinants that negating a column negates the determinant, and thus negating an odd (but not even) number of columns negates the determinant.
+Now consider (n + 1) × (n + 1) orthogonal matrices with bottom right entry equal to 1. The remainder of the last column (and last row) must be zeros, and the product of any two such matrices has the same form. The rest of the matrix is an n × n orthogonal matrix; thus O(n) is a subgroup of O(n + 1) (and of all higher groups).
+[
+0
+O
+(
+n
+)
+⋮
+0
+0
+⋯
+0
+1
+]
+{\displaystyle {\begin{bmatrix}&&&0\\&\mathrm {O} (n)&&\vdots \\&&&0\\0&\cdots &0&1\end{bmatrix}}}
+Since an elementary reflection in the form of a Householder matrix can reduce any orthogonal matrix to this constrained form, a series of such reflections can bring any orthogonal matrix to the identity; thus an orthogonal group is a reflection group. The last column can be fixed to any unit vector, and each choice gives a different copy of O(n) in O(n + 1); in this way O(n + 1) is a bundle over the unit sphere Sn with fiber O(n).
+Similarly, SO(n) is a subgroup of SO(n + 1); and any special orthogonal matrix can be generated by Givens plane rotations using an analogous procedure. The bundle structure persists:
+S
+O
+(
+n
+)
+↪
+S
+O
+(
+n
++
+1
+)
+→
+S
+n
+{\displaystyle \mathrm {SO} (n)\hookrightarrow \mathrm {SO} (n+1)\to S^{n}}
+. A single rotation can produce a zero in the first row of the last column, and series of n − 1 rotations will zero all but the last row of the last column of an n × n rotation matrix. Since the planes are fixed, each rotation has only one degree of freedom, its angle. By induction, SO(n) therefore has
+(
+n
+−
+1
+)
++
+(
+n
+−
+2
+)
++
+⋯
++
+1
+=
+n
+(
+n
+−
+1
+)
+2
+{\displaystyle (n-1)+(n-2)+\cdots +1={\frac {n(n-1)}{2}}}
+degrees of freedom, and so does O(n).
+Permutation matrices are simpler still; they form, not a Lie group, but only a finite group, the order n! symmetric group Sn. By the same kind of argument, Sn is a subgroup of Sn + 1. The even permutations produce the subgroup of permutation matrices of determinant +1, the order ⁠n!/2⁠ alternating group.
+Canonical form
+[edit]
+More broadly, the effect of any orthogonal matrix separates into independent actions on orthogonal two-dimensional subspaces. That is, if Q is special orthogonal then one can always find an orthogonal matrix P, a (rotational) change of basis, that brings Q into block diagonal form:
+P
+T
+Q
+P
+=
+[
+R
+1
+⋱
+R
+k
+]
+(
+n
+even
+)
+,
+P
+T
+Q
+P
+=
+[
+R
+1
+⋱
+R
+k
+1
+]
+(
+n
+odd
+)
+.
+{\displaystyle P^{\mathrm {T} }QP={\begin{bmatrix}R_{1}&&\\&\ddots &\\&&R_{k}\end{bmatrix}}\ (n{\text{ even}}),\ P^{\mathrm {T} }QP={\begin{bmatrix}R_{1}&&&\\&\ddots &&\\&&R_{k}&\\&&&1\end{bmatrix}}\ (n{\text{ odd}}).}
+where the matrices R1, ..., Rk are 2 × 2 rotation matrices, and with the remaining entries zero. Exceptionally, a rotation block may be diagonal, ±I. Thus, negating one column if necessary, and noting that a 2 × 2 reflection diagonalizes to a +1 and −1, any orthogonal matrix can be brought to the form [2][3]
+P
+T
+Q
+P
+=
+[
+R
+1
+⋱
+R
+k
+0
+0
+±
+1
+⋱
+±
+1
+]
+,
+{\displaystyle P^{\mathrm {T} }QP={\begin{bmatrix}{\begin{matrix}R_{1}&&\\&\ddots &\\&&R_{k}\end{matrix}}&0\\0&{\begin{matrix}\pm 1&&\\&\ddots &\\&&\pm 1\end{matrix}}\\\end{bmatrix}},}
+The matrices R1, ..., Rk give conjugate pairs of eigenvalues lying on the unit circle in the complex plane; so this decomposition confirms that all eigenvalues have absolute value 1. If n is odd, there is at least one real eigenvalue, +1 or −1; for a 3 × 3 rotation, the eigenvector associated with +1 is the rotation axis.
+Lie algebra
+[edit]
+Suppose the entries of Q are differentiable functions of t, and that t = 0 gives Q = I. Differentiating the orthogonality condition
+Q
+T
+Q
+=
+I
+{\displaystyle Q^{\mathrm {T} }Q=I}
+yields
+Q
+˙
+T
+Q
++
+Q
+T
+Q
+˙
+=
+0
+{\displaystyle {\dot {Q}}^{\mathrm {T} }Q+Q^{\mathrm {T} }{\dot {Q}}=0}
+Evaluation at t = 0 (Q = I) then implies
+Q
+˙
+T
+=
+−
+Q
+˙
+.
+{\displaystyle {\dot {Q}}^{\mathrm {T} }=-{\dot {Q}}.}
+In Lie group terms, this means that the Lie algebra of an orthogonal matrix group consists of skew-symmetric matrices. Going the other direction, the matrix exponential of any skew-symmetric matrix is an orthogonal matrix (in fact, special orthogonal).
+For example, the three-dimensional object physics calls angular velocity is a differential rotation, thus a vector in the Lie algebra
+s
+o
+(
+3
+)
+{\displaystyle {\mathfrak {so}}(3)}
+tangent to SO(3). Given ω = (xθ, yθ, zθ), with v = (x, y, z) being a unit vector, the correct skew-symmetric matrix form of ω is
+Ω
+=
+[
+0
+−
+z
+θ
+y
+θ
+z
+θ
+0
+−
+x
+θ
+−
+y
+θ
+x
+θ
+0
+]
+.
+{\displaystyle \Omega ={\begin{bmatrix}0&-z\theta &y\theta \\z\theta &0&-x\theta \\-y\theta &x\theta &0\end{bmatrix}}.}
+The exponential of this is the orthogonal matrix for rotation around axis v by angle θ; setting c = cos ⁠θ/2⁠, s = sin ⁠θ/2⁠,
+exp
+⁡
+(
+Ω
+)
+=
+[
+1
+−
+2
+s
+2
++
+2
+x
+2
+s
+2
+2
+x
+y
+s
+2
+−
+2
+z
+s
+c
+2
+x
+z
+s
+2
++
+2
+y
+s
+c
+2
+x
+y
+s
+2
++
+2
+z
+s
+c
+1
+−
+2
+s
+2
++
+2
+y
+2
+s
+2
+2
+y
+z
+s
+2
+−
+2
+x
+s
+c
+2
+x
+z
+s
+2
+−
+2
+y
+s
+c
+2
+y
+z
+s
+2
++
+2
+x
+s
+c
+1
+−
+2
+s
+2
++
+2
+z
+2
+s
+2
+]
+.
+{\displaystyle \exp(\Omega )={\begin{bmatrix}1-2s^{2}+2x^{2}s^{2}&2xys^{2}-2zsc&2xzs^{2}+2ysc\\2xys^{2}+2zsc&1-2s^{2}+2y^{2}s^{2}&2yzs^{2}-2xsc\\2xzs^{2}-2ysc&2yzs^{2}+2xsc&1-2s^{2}+2z^{2}s^{2}\end{bmatrix}}.}
+Numerical linear algebra
+[edit]
+Benefits
+[edit]
+Numerical analysis takes advantage of many of the properties of orthogonal matrices for numerical linear algebra, and they arise naturally. For example, it is often desirable to compute an orthonormal basis for a space, or an orthogonal change of bases; both take the form of orthogonal matrices. Having determinant ±1 and all eigenvalues of magnitude 1 is of great benefit for numerical stability. One implication is that the condition number is 1 (which is the minimum), so errors are not magnified when multiplying with an orthogonal matrix. Many algorithms use orthogonal matrices like Householder reflections and Givens rotations for this reason. It is also helpful that, not only is an orthogonal matrix invertible, but its inverse is available essentially free, by exchanging indices.
+Permutations are essential to the success of many algorithms, including the workhorse Gaussian elimination with partial pivoting (where permutations do the pivoting). However, they rarely appear explicitly as matrices; their special form allows more efficient representation, such as a list of n indices.
+Likewise, algorithms using Householder and Givens matrices typically use specialized methods of multiplication and storage. For example, a Givens rotation affects only two rows of a matrix it multiplies, changing a full multiplication of order n3 to a much more efficient order n. When uses of these reflections and rotations introduce zeros in a matrix, the space vacated is enough to store sufficient data to reproduce the transform, and to do so robustly. (Following G. W. Stewart of UMD,[4] we do not store a rotation angle, which is both expensive and badly behaved.)
+Decompositions
+[edit]
+A number of important matrix decompositions involve orthogonal matrices, including especially:
+QR decomposition
+M = QR, Q orthogonal, R upper triangular[5]
+Singular value decomposition
+M = UΣVT, U and V orthogonal, Σ diagonal matrix[6]
+Eigendecomposition of a symmetric matrix (decomposition according to the spectral theorem)
+S = QΛQT, S symmetric, Q orthogonal, Λ diagonal
+Polar decomposition
+M = QS, Q orthogonal[citation needed], S symmetric positive-semidefinite[7]
+Examples
+[edit]
+Consider an overdetermined system of linear equations, as might occur with repeated measurements of a physical phenomenon to compensate for experimental errors. Write Ax = b, where A is m × n, m > n.
+A QR decomposition reduces A to upper triangular R. For example, if A is 5 × 3 then R has the form
+R
+=
+[
+⋅
+⋅
+⋅
+0
+⋅
+⋅
+0
+0
+⋅
+0
+0
+0
+0
+0
+0
+]
+.
+{\displaystyle R={\begin{bmatrix}\cdot &\cdot &\cdot \\0&\cdot &\cdot \\0&0&\cdot \\0&0&0\\0&0&0\end{bmatrix}}.}
+The linear least squares problem is to find the x that minimizes ‖Ax − b‖, which is equivalent to projecting b to the subspace spanned by the columns of A. Assuming the columns of A (and hence R) are independent, the projection solution is found from ATAx = ATb. Now ATA is square (n × n) and invertible, and also equal to RTR. But the lower rows of zeros in R are superfluous in the product, which is thus already in lower-triangular upper-triangular factored form, as in Gaussian elimination (Cholesky decomposition). Here orthogonality is important not only for reducing ATA = (RTQT)QR to RTR, but also for allowing solution without magnifying numerical problems.
+In the case of a linear system which is underdetermined, or an otherwise non-invertible matrix, singular value decomposition (SVD) is equally useful. With A factored as UΣVT, a satisfactory solution uses the Moore-Penrose pseudoinverse, VΣ+UT, where Σ+ merely replaces each non-zero diagonal entry with its reciprocal. Set x to VΣ+UTb.
+The case of a square invertible matrix also holds interest. Suppose, for example, that A is a 3 × 3 rotation matrix which has been computed as the composition of numerous twists and turns. Floating point does not match the mathematical ideal of real numbers, so A has gradually lost its true orthogonality. A Gram–Schmidt process could orthogonalize the columns, but it is not the most reliable, nor the most efficient, nor the most invariant method. The polar decomposition factors a matrix into a pair, one of which is the unique closest orthogonal matrix to the given matrix, or one of the closest if the given matrix is singular. (Closeness can be measured by any matrix norm invariant under an orthogonal change of basis, such as the spectral norm or the Frobenius norm.) For a near-orthogonal matrix, rapid convergence to the orthogonal factor can be achieved by a "Newton's method" approach due to Nicholas Higham of Manchester[8][9], repeatedly averaging the matrix with its inverse transpose. Augustin A. Dubrulle of ORNL has published an accelerated method with a convenient convergence test.[10]
+For example, consider a non-orthogonal matrix for which the simple averaging algorithm takes seven steps
+[
+3
+1
+7
+5
+]
+→
+[
+1.8125
+0.0625
+3.4375
+2.6875
+]
+→
+⋯
+→
+[
+0.8
+−
+0.6
+0.6
+0.8
+]
+{\displaystyle {\begin{bmatrix}3&1\\7&5\end{bmatrix}}\rightarrow {\begin{bmatrix}1.8125&0.0625\\3.4375&2.6875\end{bmatrix}}\rightarrow \cdots \rightarrow {\begin{bmatrix}0.8&-0.6\\0.6&0.8\end{bmatrix}}}
+and which acceleration trims to two steps (with γ = 0.353553, 0.565685).
+[
+3
+1
+7
+5
+]
+→
+[
+1.41421
+−
+1.06066
+1.06066
+1.41421
+]
+→
+[
+0.8
+−
+0.6
+0.6
+0.8
+]
+{\displaystyle {\begin{bmatrix}3&1\\7&5\end{bmatrix}}\rightarrow {\begin{bmatrix}1.41421&-1.06066\\1.06066&1.41421\end{bmatrix}}\rightarrow {\begin{bmatrix}0.8&-0.6\\0.6&0.8\end{bmatrix}}}
+Gram-Schmidt yields an inferior solution, shown by a Frobenius distance of 8.28659 instead of the minimum 8.12404.
+[
+3
+1
+7
+5
+]
+→
+[
+0.393919
+−
+0.919145
+0.919145
+0.393919
+]
+{\displaystyle {\begin{bmatrix}3&1\\7&5\end{bmatrix}}\rightarrow {\begin{bmatrix}0.393919&-0.919145\\0.919145&0.393919\end{bmatrix}}}
+Randomization
+[edit]
+Some numerical applications, such as Monte Carlo methods and exploration of high-dimensional data spaces, require generation of uniformly distributed random orthogonal matrices. In this context, "uniform" is defined in terms of Haar measure, which essentially requires that the distribution not change if multiplied by any freely chosen orthogonal matrix. Orthogonalizing matrices with independent uniformly distributed random entries does not result in uniformly distributed orthogonal matrices[citation needed], but the QR decomposition of independent normally distributed random entries does, as long as the diagonal of R contains only positive entries.[11] G. W. Stewart of UMD[12] replaced this with a more efficient idea that Persi Diaconis of Stanford and Mehrdad Shahshahani of JPL later generalized as the "subgroup algorithm" (in which form it works just as well for permutations and rotations). To generate an (n + 1) × (n + 1) orthogonal matrix, take an n × n one and a uniformly distributed unit vector of dimension n + 1. Construct a Householder reflection from the vector, then apply it to the smaller matrix (embedded in the larger size with a 1 at the bottom right corner).[13]
+Nearest orthogonal matrix
+[edit]
+The problem of finding the orthogonal matrix Q nearest a given matrix M is related to the Orthogonal Procrustes problem. There are several different ways to get the unique solution, the simplest of which is taking the singular value decomposition of M and replacing the singular values with ones. Another method expresses the R explicitly but requires the use of a matrix square root:[14]
+Q
+=
+M
+(
+M
+T
+M
+)
+−
+1
+2
+{\displaystyle Q=M\left(M^{\mathrm {T} }M\right)^{-{\frac {1}{2}}}}
+This may be combined with the Babylonian method for extracting the square root of a matrix to give a recurrence which converges to an orthogonal matrix quadratically:
+Q
+n
++
+1
+=
+2
+M
+(
+Q
+n
+−
+1
+M
++
+M
+T
+Q
+n
+)
+−
+1
+{\displaystyle Q_{n+1}=2M\left(Q_{n}^{-1}M+M^{\mathrm {T} }Q_{n}\right)^{-1}}
+where Q0 = M.
+These iterations are stable provided the condition number of M is less than three.[15][verification needed]
+Using a first-order approximation of the inverse and the same initialization results in the modified iteration:
+N
+n
+=
+Q
+n
+T
+Q
+n
+{\displaystyle N_{n}=Q_{n}^{\mathrm {T} }Q_{n}}
+P
+n
+=
+1
+2
+Q
+n
+N
+n
+{\displaystyle P_{n}={\frac {1}{2}}Q_{n}N_{n}}
+Q
+n
++
+1
+=
+2
+Q
+n
++
+P
+n
+N
+n
+−
+3
+P
+n
+{\displaystyle Q_{n+1}=2Q_{n}+P_{n}N_{n}-3P_{n}}
+Spin and pin
+[edit]
+A subtle technical problem afflicts some uses of orthogonal matrices. Not only are the group components with determinant +1 and −1 not connected to each other, even the +1 component, SO(n), is not simply connected (except for SO(1), which is trivial). Thus it is sometimes advantageous, or even necessary, to work with a covering group of SO(n), the spin group, Spin(n). Likewise, O(n) has covering groups, the pin groups, Pin(n). For n > 2, Spin(n) is simply connected and thus the universal covering group for SO(n). By far the most famous example of a spin group is Spin(3), which is nothing but SU(2), or the group of unit quaternions.
+The Pin and Spin groups are found within Clifford algebras, which themselves can be built from orthogonal matrices.
+Rectangular matrices
+[edit]
+Main article: Semi-orthogonal matrix
+If Q is not a square matrix, then the conditions QTQ = I and QQT = I are not equivalent. The condition QTQ = I says that the columns of Q are orthonormal. This can only happen if Q is an m × n matrix with n ≤ m (due to linear dependence). Similarly, QQT = I says that the rows of Q are orthonormal, which requires n ≥ m.
+There is no standard terminology for these matrices. They are variously called "semi-orthogonal matrices", "orthonormal matrices", "orthogonal matrices", and sometimes simply "matrices with orthonormal rows/columns".
+For the case n ≤ m, matrices with orthonormal columns may be referred to as orthogonal k-frames and they are elements of the Stiefel manifold.
+A matrix
+A
+∈
+R
+2
+×
+3
+{\displaystyle A\in \mathbb {R} ^{2\times 3}}
+with orthonormal rows represents a linear map
+f
+:
+R
+3
+→
+R
+2
+,
+{\displaystyle f\colon \,\mathbb {R} ^{3}\to \mathbb {R} ^{2},}
+which describes an orthographic projection. Two specific examples can be found in the article Axonometry (Examples 3 and 4 in the section Coordinate calculation).
+See also
+[edit]
+Biorthogonal system
+References
+[edit]
+^ Dawkins (2005), p. 298, theorem 3, (a) and (c)
+^ Gantmacher (1959), p. 285, eq. 113 / Гантмахер (n.d.), p. 258, eq. 123 harvp error: no target: CITEREFГантмахерn.d. (help)
+^ Lang (1987), § 6 "UNITARY OPERATORS", p. 230
+^ Stewart, G. W. (June 1976) [received February 3, 1975]. "The Economical Storage of Plane Rotations". Numerische Mathematik. 25 (2): 137–138. doi:10.1007/BF01462266. eISSN 0945-3245. ISSN 0029-599X. S2CID 120372682.
+^ Golub & Van Loan (1996), pp. 206–208, 223–236, ...
+^ Golub & Van Loan (1996), pp. 69–75
+^ Golub & Van Loan (1996), p. 149
+^ Higham, Nicholas J. (October 1986) [received March 13, 1985]. "Computing the Polar Decomposition—with Applications" (PDF). SIAM Journal on Scientific and Statistical Computing. 7 (4): 1160–1174. doi:10.1137/0907079. ISSN 0196-5204. MIMS EPrint 2007.9. ProQuest 920895097. Archived from the original (PDF) on 2007-04-18.
+^ Higham, Nicholas J.; Schreiber, Robert S. (July 1990). "Fast polar decomposition of an arbitrary matrix" (PDF). SIAM Journal on Scientific and Statistical Computing. 11 (4): 648–655. CiteSeerX 10.1.1.230.4322. doi:10.1137/0911038. ISSN 0196-5204. S2CID 14268409. ProQuest 921763908. Archived from the original (PDF) on 2023-05-21.
+^ Dubrulle, A. A. (1999). "An Optimum Iteration for the Matrix Polar Decomposition". Electronic Transactions on Numerical Analysis. 8: 21–25. ISSN 1068-9613. Zbl 0939.65068. EMIS 7655. EuDML 120380.
+^ Mezzadri, Francesco (May 2007) [arXiv preprint first submitted 18 Sep 2006, last revised 27 Feb 2007]. "How to Generate Random Matrices from the Classical Compact Groups" (PDF). Notices of the American Mathematical Society (AMS). 54 (5): 592–604. arXiv:math-ph/0609050. Bibcode:2006math.ph...9050M.
+^ Stewart, G. W. (June 1980). "The Efficient Generation of Random Orthogonal Matrices with an Application to Condition Estimators". SIAM Journal on Numerical Analysis. 17 (3): 403–409, appendix of 16 microfiches. Bibcode:1980SJNA...17..403S. doi:10.1137/0717034. eISSN 1095-7170. ISSN 0036-1429.
+^ Diaconis & Shahshahani (1987), pp. 19, 22–23, 32
+^ Horn, Berthold K.P. (21 November 2008). "Finding the Nearest Orthonormal Matrix" (PDF). Computer Science and Artificial Intelligence Laboratory (CSAIL), Massachusetts Institute of Technology.
+^ Higham, Nicholas J. (April 1986) [Received October 22, 1984; revised July 30, 1985]. "Newton's Method for the Matrix Square Root" (PDF). Mathematics of Computation. 46 (174): 537–549. doi:10.1090/S0025-5718-1986-0829624-5. eISSN 1088-6842. ISSN 0025-5718. JSTOR 2007992. Archived from the original (PDF) on 2011-09-29.
+Works cited
+[edit]
+Dawkins, Paul (2005). "Orthogonal Matrices". Linear Algebra (PDF). Paul's Online Math Notes. Lamar University. pp. 295–300. Archived from the original on 2012-12-18.
+Diaconis, Persi; Shahshahani, Mehrdad (January 1987). "The subgroup algorithm for generating uniform random variables". Probability in the Engineering and Informational Sciences. 1 (1): 15–32 (see pp. 21–28, 31–32). doi:10.1017/S0269964800000255. ISSN 0269-9648. S2CID 122752374.
+Gantmacher, F. R. (1959). "IX. Linear Operators in a Unitary Space : § 7. Orthonormal Bases, § 13. Linear Operators in a Euclidean Space, § 14. Polar Decomposition of an Operator and the Cayley Formulas in a Euclidean Space, § 15. Commuting Normal Operators; X. Quadratic and Hermitian Forms : § 5. Reduction of a Quadratic Form to Principal Axes". The Theory of Matrices. Vol. 1. Chelsea Publishing Company. pp. 262–309. ISBN 978-1-4704-8159-9. Internet Archive gantmacher-the-theory-of-matrices-vol-1-1959. {{cite book}}: ISBN / Date incompatibility (help) (Translated from: Гантмахер, Ф.Р. "IX. Линейные операторы в унитарном пространстве : § 7. Ортонормированный базис, § 13. Линейные операторы в евклидовом пространстве, § 14. Полярное разложение оператора и формулы Кэли в евклидовом пространстве, § 15. Коммутирующие нормальные операторы; X. Квадратичные и эрмитовы формы : § 5. Приведение квадратичной формы к главным осям". Теория Матриц (PDF). Vol. I: Основы Теории. pp. 237–280.)
+Golub, Gene H.; Van Loan, Charles F. (1996) [first ed. 1983]. Matrix Computations. Johns Hopkins Series in the Mathematical Sciences (3rd ed.). Baltimore: Johns Hopkins University Press. pp. 69–80, 206–212, ..., 601–611. ISBN 978-0-8018-5414-9. Google Books mlOa7wPX6OYC.
+Lang, Serge (1987). "Chapter VIII: Eigenvectors and Eigenvalues". Linear Algebra (3rd ed.). Springer New York. pp. 194–230. doi:10.1007/978-1-4757-1949-9_8. ISBN 978-1-4419-3081-1.
+Further reading
+[edit]
+Wikiversity introduces the orthogonal matrix.
+"Orthogonal matrix". Encyclopedia of Mathematics. 7 June 2020. Archived from the original on 2024-12-11. "This article was adapted from an original article by D.A. Suprunenko (originator), which appeared in Encyclopedia of Mathematics - ISBN 1402006098. See original article"
+External links
+[edit]
+Tutorial and Interactive Program on Orthogonal Matrix by Kardi Teknomo
+v
+t
+e
+Matrix classes
+Explicitly constrained entries
+Alternant
+Anti-diagonal
+Anti-Hermitian
+Anti-symmetric
+Arrowhead
+Band
+Bidiagonal
+Bisymmetric
+Block-diagonal
+Block
+Block tridiagonal
+Boolean
+Cauchy
+Centrosymmetric
+Conference
+Complex Hadamard
+Copositive
+Diagonally dominant
+Diagonal
+Discrete Fourier Transform
+Elementary
+Equivalent
+Frobenius
+Generalized permutation
+Hadamard
+Hankel
+Hermitian
+Hessenberg
+Hollow
+Integer
+Logical
+Matrix unit
+Metzler
+Moore
+Nonnegative
+Pentadiagonal
+Permutation
+Persymmetric
+Polynomial
+Quaternionic
+Signature
+Skew-Hermitian
+Skew-symmetric
+Skyline
+Sparse
+Sylvester
+Symmetric
+Toeplitz
+Triangular
+Tridiagonal
+Vandermonde
+Walsh
+Z
+Constant
+Exchange
+Hilbert
+Identity
+Lehmer
+Of ones
+Pascal
+Pauli
+Redheffer
+Shift
+Zero
+Conditions on eigenvalues or eigenvectors
+Companion
+Convergent
+Defective
+Definite
+Diagonalizable
+Hurwitz-stable
+Positive-definite
+Stieltjes
+Satisfying conditions on products or inverses
+Congruent
+Idempotent or Projection
+Invertible
+Involutory
+Nilpotent
+Normal
+Orthogonal
+Unimodular
+Unipotent
+Unitary
+Totally unimodular
+Weighing
+With specific applications
+Adjugate
+Alternating sign
+Augmented
+Bézout
+Jabotinsky
+Cartan
+Circulant
+Cofactor
+Commutation
+Confusion
+Coxeter
+Distance
+Duplication and elimination
+Euclidean distance
+Fundamental (linear differential equation)
+Generator
+Gram
+Hessian
+Householder
+Jacobian
+Moment
+Payoff
+Pick
+Random
+Rotation
+Routh-Hurwitz
+Seifert
+Shear
+Similarity
+Symplectic
+Totally positive
+Transformation
+Used in statistics
+Centering
+Correlation
+Covariance
+Design
+Doubly stochastic
+Fisher information
+Hat
+Precision
+Stochastic
+Transition
+Used in graph theory
+Adjacency
+Biadjacency
+Degree
+Edmonds
+Incidence
+Laplacian
+Seidel adjacency
+Tutte
+Used in science and engineering
+Cabibbo–Kobayashi–Maskawa
+Density
+Fundamental (computer vision)
+Fuzzy associative
+Gamma
+Gell-Mann
+Hamiltonian
+Irregular
+Overlap
+S
+State transition
+Substitution
+Z (chemistry)
+Related terms
+Jordan normal form
+Linear independence
+Matrix exponential
+Matrix representation of conic sections
+Perfect matrix
+Pseudoinverse
+Row echelon form
+Wronskian
+Mathematics portal
+List of matrices
+Category:Matrices (mathematics)
+Retrieved from "https://en.wikipedia.org/w/index.php?title=Orthogonal_matrix&oldid=1359670568"
+Category:
+Matrices (mathematics)
+Hidden categories:
+Harv and Sfn no-target errors
+Articles with short description
+Short description matches Wikidata
+Articles lacking in-text citations from May 2023
+All articles lacking in-text citations
+All articles with unsourced statements
+Articles with unsourced statements from April 2026
+Articles with unsourced statements from June 2009
+All pages needing factual verification
+Wikipedia articles needing factual verification from April 2026
+CS1 errors: ISBN date
+CS1: long volume value
+This page was last edited on 16 June 2026, at 14:57 (UTC).
+Text is available under the Creative Commons Attribution-ShareAlike 4.0 License;
+additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy. Wikipedia® is a registered trademark of the Wikimedia Foundation, Inc., a non-profit organization.
+Privacy policy
+About Wikipedia
+Disclaimers
+Contact Wikipedia
+Legal & safety contacts
+Code of Conduct
+Developers
+Statistics
+Cookie statement
+Mobile view
+Search
+Search
+Toggle the table of contents
+Orthogonal matrix
+32 languages
+Add topic

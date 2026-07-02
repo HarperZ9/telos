@@ -1,0 +1,565 @@
+{
+  "collection_plan": {
+    "collection_steps": [
+      "Run Gather over the primary source URLs and store source receipts.",
+      "Run buyer interviews with the nine prompts and bind answers to evidence requirements.",
+      "Score urgency, budget, proof gap, demo fit, and adoption friction only after evidence is collected.",
+      "Promote candidate wedges only if source, buyer, and demo evidence agree.",
+      "Run Crucible against any claimed market gap before public use."
+    ],
+    "next_pass": "0060",
+    "status": "READY_FOR_EVIDENCE_COLLECTION"
+  },
+  "current_promoted_natural_laws": [],
+  "generated_on": "2026-07-01",
+  "market_claim_boundary": "HYPOTHESIS_ONLY",
+  "market_data_status": "COLLECTION_TARGETS_DEFINED",
+  "non_promotion_statement": "Pass 0059 defines evidence scorecards and market-data collection targets. It does not prove market size, buyer budget, customer adoption, scientific truth, or any natural law.",
+  "pass": "0059",
+  "schema": "BuyerDiscoveryEvidenceScorecards/v1",
+  "scorecards": [
+    {
+      "buyer_id": "research_lab",
+      "evidence_requirements": [
+        "research_lab: named buyer role and budget path",
+        "research_lab: source-backed workflow pain with primary URL",
+        "research_lab: replayable proof-packet demo acceptance criterion",
+        "research_lab: negative verdict that would disqualify the pilot",
+        "research_lab: measurable next action with owner and date"
+      ],
+      "interview_prompt_count": 3,
+      "interview_prompts": [
+        {
+          "buyer_id": "research_lab",
+          "evidence_refs": [
+            "microsoft-discovery",
+            "nist-ai-rmf",
+            "pass-0056-demo-manifest"
+          ],
+          "guardrails": [
+            "no_universal_uniqueness_claim",
+            "no_scientific_truth_promotion",
+            "source_boundaries_preserved"
+          ],
+          "interview_prompt": "When evaluating a Project Telos proof-packet workflow, how would your team answer this objection: We already have agentic discovery platforms; why is this different?",
+          "objection_id": "research-lab-001",
+          "target_lane_split": [
+            "project-telos",
+            "deep-research",
+            "technical-writing"
+          ]
+        },
+        {
+          "buyer_id": "research_lab",
+          "evidence_refs": [
+            "pass-0056-demo-manifest",
+            "pass-0056-failure-verdicts"
+          ],
+          "guardrails": [
+            "no_universal_uniqueness_claim",
+            "no_scientific_truth_promotion",
+            "source_boundaries_preserved"
+          ],
+          "interview_prompt": "When evaluating a Project Telos proof-packet workflow, how would your team answer this objection: Does this prove scientific truth or open-problem resolution?",
+          "objection_id": "research-lab-002",
+          "target_lane_split": [
+            "project-telos",
+            "deep-research",
+            "technical-writing"
+          ]
+        },
+        {
+          "buyer_id": "research_lab",
+          "evidence_refs": [
+            "nist-ai-rmf",
+            "pass-0056-review-panes"
+          ],
+          "guardrails": [
+            "no_universal_uniqueness_claim",
+            "no_scientific_truth_promotion",
+            "source_boundaries_preserved"
+          ],
+          "interview_prompt": "When evaluating a Project Telos proof-packet workflow, how would your team answer this objection: Can a reviewer inspect provenance without receiving raw private payloads?",
+          "objection_id": "research-lab-003",
+          "target_lane_split": [
+            "project-telos",
+            "deep-research",
+            "technical-writing"
+          ]
+        }
+      ],
+      "market_data_targets": [
+        {
+          "source_refs": [
+            "microsoft-discovery"
+          ],
+          "target": "Identify the buyer who can fund proof-packet pilots.",
+          "target_id": "research_lab-budget-owner",
+          "verification_status": "unverified"
+        },
+        {
+          "source_refs": [
+            "nist-ai-rmf"
+          ],
+          "target": "Measure what evidence threshold converts interest into a pilot.",
+          "target_id": "research_lab-proof-threshold",
+          "verification_status": "inferred"
+        },
+        {
+          "source_refs": [
+            "futurehouse-home",
+            "microsoft-discovery"
+          ],
+          "target": "Map current AI4Science workflow bottlenecks against agentic discovery platforms.",
+          "target_id": "research-lab-ai4science-workflow",
+          "verification_status": "verified"
+        },
+        {
+          "source_refs": [
+            "pipeline-math",
+            "leandojo"
+          ],
+          "target": "Collect proof or formalization requirements for math and scientific claims.",
+          "target_id": "research-lab-formal-proof-need",
+          "verification_status": "verified"
+        },
+        {
+          "source_refs": [
+            "sakana-ai-scientist",
+            "pipeline-math"
+          ],
+          "target": "Collect top whitepapers, open problems, and reproducibility requirements per field.",
+          "target_id": "research-lab-whitepaper-queue",
+          "verification_status": "inferred"
+        }
+      ],
+      "route_lane_split": [
+        "project-telos",
+        "deep-research",
+        "technical-writing"
+      ],
+      "score_dimensions": [
+        {
+          "dimension": "urgency",
+          "requires": "buyer interview evidence",
+          "score": "UNSCORED"
+        },
+        {
+          "dimension": "budget",
+          "requires": "budget-owner evidence",
+          "score": "UNSCORED"
+        },
+        {
+          "dimension": "proof_gap",
+          "requires": "gap between incumbent tools and proof-packet requirement",
+          "score": "UNSCORED"
+        },
+        {
+          "dimension": "demo_fit",
+          "requires": "demo acceptance criterion",
+          "score": "UNSCORED"
+        },
+        {
+          "dimension": "adoption_friction",
+          "requires": "integration and security constraints",
+          "score": "UNSCORED"
+        }
+      ],
+      "scorecard_status": "NEEDS_INTERVIEW_DATA",
+      "source_ids": [
+        "futurehouse-home",
+        "futurehouse-tools",
+        "sakana-ai-scientist",
+        "microsoft-discovery",
+        "pipeline-math",
+        "leandojo"
+      ]
+    },
+    {
+      "buyer_id": "ai_infra",
+      "evidence_requirements": [
+        "ai_infra: named buyer role and budget path",
+        "ai_infra: source-backed workflow pain with primary URL",
+        "ai_infra: replayable proof-packet demo acceptance criterion",
+        "ai_infra: negative verdict that would disqualify the pilot",
+        "ai_infra: measurable next action with owner and date"
+      ],
+      "interview_prompt_count": 3,
+      "interview_prompts": [
+        {
+          "buyer_id": "ai_infra",
+          "evidence_refs": [
+            "opentelemetry-traces",
+            "langsmith-observability",
+            "langfuse-observability",
+            "pass-0056-demo-manifest"
+          ],
+          "guardrails": [
+            "no_universal_uniqueness_claim",
+            "no_scientific_truth_promotion",
+            "source_boundaries_preserved"
+          ],
+          "interview_prompt": "When evaluating a Project Telos proof-packet workflow, how would your team answer this objection: We already have tracing and LLM observability.",
+          "objection_id": "ai-infra-001",
+          "target_lane_split": [
+            "project-telos",
+            "deep-research",
+            "technical-writing"
+          ]
+        },
+        {
+          "buyer_id": "ai_infra",
+          "evidence_refs": [
+            "pass-0056-failure-verdicts"
+          ],
+          "guardrails": [
+            "no_universal_uniqueness_claim",
+            "no_scientific_truth_promotion",
+            "source_boundaries_preserved"
+          ],
+          "interview_prompt": "When evaluating a Project Telos proof-packet workflow, how would your team answer this objection: Can the system catch receipt substitution or missing provenance?",
+          "objection_id": "ai-infra-002",
+          "target_lane_split": [
+            "project-telos",
+            "deep-research",
+            "technical-writing"
+          ]
+        },
+        {
+          "buyer_id": "ai_infra",
+          "evidence_refs": [
+            "pass-0056-replay-commands"
+          ],
+          "guardrails": [
+            "no_universal_uniqueness_claim",
+            "no_scientific_truth_promotion",
+            "source_boundaries_preserved"
+          ],
+          "interview_prompt": "When evaluating a Project Telos proof-packet workflow, how would your team answer this objection: Can this be replayed by an engineering team?",
+          "objection_id": "ai-infra-003",
+          "target_lane_split": [
+            "project-telos",
+            "deep-research",
+            "technical-writing"
+          ]
+        }
+      ],
+      "market_data_targets": [
+        {
+          "source_refs": [
+            "microsoft-discovery"
+          ],
+          "target": "Identify the buyer who can fund proof-packet pilots.",
+          "target_id": "ai_infra-budget-owner",
+          "verification_status": "unverified"
+        },
+        {
+          "source_refs": [
+            "nist-ai-rmf"
+          ],
+          "target": "Measure what evidence threshold converts interest into a pilot.",
+          "target_id": "ai_infra-proof-threshold",
+          "verification_status": "inferred"
+        },
+        {
+          "source_refs": [
+            "opentelemetry-traces"
+          ],
+          "target": "Measure where traces stop short of durable action receipts.",
+          "target_id": "ai-infra-trace-receipt-gap",
+          "verification_status": "verified"
+        },
+        {
+          "source_refs": [
+            "opentelemetry-context"
+          ],
+          "target": "Collect cases where context propagation cannot prove action authority.",
+          "target_id": "ai-infra-context-causality-gap",
+          "verification_status": "inferred"
+        },
+        {
+          "source_refs": [
+            "opentelemetry-traces"
+          ],
+          "target": "Estimate buyer budget path for proof packets layered over observability stacks.",
+          "target_id": "ai-infra-observability-budget",
+          "verification_status": "unverified"
+        }
+      ],
+      "route_lane_split": [
+        "project-telos",
+        "deep-research",
+        "technical-writing"
+      ],
+      "score_dimensions": [
+        {
+          "dimension": "urgency",
+          "requires": "buyer interview evidence",
+          "score": "UNSCORED"
+        },
+        {
+          "dimension": "budget",
+          "requires": "budget-owner evidence",
+          "score": "UNSCORED"
+        },
+        {
+          "dimension": "proof_gap",
+          "requires": "gap between incumbent tools and proof-packet requirement",
+          "score": "UNSCORED"
+        },
+        {
+          "dimension": "demo_fit",
+          "requires": "demo acceptance criterion",
+          "score": "UNSCORED"
+        },
+        {
+          "dimension": "adoption_friction",
+          "requires": "integration and security constraints",
+          "score": "UNSCORED"
+        }
+      ],
+      "scorecard_status": "NEEDS_INTERVIEW_DATA",
+      "source_ids": [
+        "opentelemetry-traces",
+        "opentelemetry-context",
+        "microsoft-discovery",
+        "nist-ai-rmf"
+      ]
+    },
+    {
+      "buyer_id": "regulated_agent",
+      "evidence_requirements": [
+        "regulated_agent: named buyer role and budget path",
+        "regulated_agent: source-backed workflow pain with primary URL",
+        "regulated_agent: replayable proof-packet demo acceptance criterion",
+        "regulated_agent: negative verdict that would disqualify the pilot",
+        "regulated_agent: measurable next action with owner and date"
+      ],
+      "interview_prompt_count": 3,
+      "interview_prompts": [
+        {
+          "buyer_id": "regulated_agent",
+          "evidence_refs": [
+            "nist-ai-rmf",
+            "pass-0056-demo-manifest"
+          ],
+          "guardrails": [
+            "no_universal_uniqueness_claim",
+            "no_scientific_truth_promotion",
+            "source_boundaries_preserved"
+          ],
+          "interview_prompt": "When evaluating a Project Telos proof-packet workflow, how would your team answer this objection: Does this map to AI risk-management needs?",
+          "objection_id": "regulated-agent-001",
+          "target_lane_split": [
+            "project-telos",
+            "deep-research",
+            "technical-writing"
+          ]
+        },
+        {
+          "buyer_id": "regulated_agent",
+          "evidence_refs": [
+            "pass-0056-demo-manifest"
+          ],
+          "guardrails": [
+            "no_universal_uniqueness_claim",
+            "no_scientific_truth_promotion",
+            "source_boundaries_preserved"
+          ],
+          "interview_prompt": "When evaluating a Project Telos proof-packet workflow, how would your team answer this objection: Can we show a review artifact without claiming production readiness?",
+          "objection_id": "regulated-agent-002",
+          "target_lane_split": [
+            "project-telos",
+            "deep-research",
+            "technical-writing"
+          ]
+        },
+        {
+          "buyer_id": "regulated_agent",
+          "evidence_refs": [
+            "microsoft-discovery",
+            "pass-0056-review-panes"
+          ],
+          "guardrails": [
+            "no_universal_uniqueness_claim",
+            "no_scientific_truth_promotion",
+            "source_boundaries_preserved"
+          ],
+          "interview_prompt": "When evaluating a Project Telos proof-packet workflow, how would your team answer this objection: Can human oversight and trust boundaries be represented?",
+          "objection_id": "regulated-agent-003",
+          "target_lane_split": [
+            "project-telos",
+            "deep-research",
+            "technical-writing"
+          ]
+        }
+      ],
+      "market_data_targets": [
+        {
+          "source_refs": [
+            "microsoft-discovery"
+          ],
+          "target": "Identify the buyer who can fund proof-packet pilots.",
+          "target_id": "regulated_agent-budget-owner",
+          "verification_status": "unverified"
+        },
+        {
+          "source_refs": [
+            "nist-ai-rmf"
+          ],
+          "target": "Measure what evidence threshold converts interest into a pilot.",
+          "target_id": "regulated_agent-proof-threshold",
+          "verification_status": "inferred"
+        },
+        {
+          "source_refs": [
+            "nist-ai-rmf",
+            "nist-genai-profile"
+          ],
+          "target": "Map proof packets to AI RMF and GenAI profile risk-management evidence needs.",
+          "target_id": "regulated-risk-profile-fit",
+          "verification_status": "verified"
+        },
+        {
+          "source_refs": [
+            "microsoft-discovery",
+            "nist-ai-rmf"
+          ],
+          "target": "Collect approval, review, and human oversight requirements for high-stakes actions.",
+          "target_id": "regulated-human-oversight",
+          "verification_status": "inferred"
+        },
+        {
+          "source_refs": [
+            "nist-genai-profile"
+          ],
+          "target": "Find the audit event that creates urgency for action receipts.",
+          "target_id": "regulated-audit-packet-buying-trigger",
+          "verification_status": "unverified"
+        }
+      ],
+      "route_lane_split": [
+        "project-telos",
+        "deep-research",
+        "technical-writing"
+      ],
+      "score_dimensions": [
+        {
+          "dimension": "urgency",
+          "requires": "buyer interview evidence",
+          "score": "UNSCORED"
+        },
+        {
+          "dimension": "budget",
+          "requires": "budget-owner evidence",
+          "score": "UNSCORED"
+        },
+        {
+          "dimension": "proof_gap",
+          "requires": "gap between incumbent tools and proof-packet requirement",
+          "score": "UNSCORED"
+        },
+        {
+          "dimension": "demo_fit",
+          "requires": "demo acceptance criterion",
+          "score": "UNSCORED"
+        },
+        {
+          "dimension": "adoption_friction",
+          "requires": "integration and security constraints",
+          "score": "UNSCORED"
+        }
+      ],
+      "scorecard_status": "NEEDS_INTERVIEW_DATA",
+      "source_ids": [
+        "nist-ai-rmf",
+        "nist-genai-profile",
+        "microsoft-discovery",
+        "opentelemetry-context"
+      ]
+    }
+  ],
+  "seal": "c347b6e91c759b5338289c02e0db1ab60a07f900d6caf0d2e1585c0fca171853",
+  "source_anchor_count": 10,
+  "source_anchors": [
+    {
+      "confidence": "high",
+      "official_claim": "FutureHouse describes its work as building AI agents to automate research in biology and complex sciences.",
+      "source_id": "futurehouse-home",
+      "url": "https://www.futurehouse.org/",
+      "verification_status": "verified_primary_source"
+    },
+    {
+      "confidence": "high",
+      "official_claim": "FutureHouse lists PaperQA2 and platform access to scientific agents for discovery.",
+      "source_id": "futurehouse-tools",
+      "url": "https://www.futurehouse.org/tools",
+      "verification_status": "verified_primary_source"
+    },
+    {
+      "confidence": "high",
+      "official_claim": "Sakana frames The AI Scientist around automating the research process itself.",
+      "source_id": "sakana-ai-scientist",
+      "url": "https://sakana.ai/ai-scientist/",
+      "verification_status": "verified_primary_source"
+    },
+    {
+      "confidence": "high",
+      "official_claim": "Microsoft positions Discovery as an enterprise agentic AI platform for R&D with lifecycle and trust claims.",
+      "source_id": "microsoft-discovery",
+      "url": "https://azure.microsoft.com/en-us/solutions/discovery",
+      "verification_status": "verified_primary_source"
+    },
+    {
+      "confidence": "high",
+      "official_claim": "NIST publishes the AI RMF, GenAI Profile, and critical-infrastructure profile concept note.",
+      "source_id": "nist-ai-rmf",
+      "url": "https://www.nist.gov/itl/ai-risk-management-framework",
+      "verification_status": "verified_primary_source"
+    },
+    {
+      "confidence": "high",
+      "official_claim": "NIST AI 600-1 is a cross-sectoral companion profile for generative AI risk management.",
+      "source_id": "nist-genai-profile",
+      "url": "https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-generative-artificial-intelligence",
+      "verification_status": "verified_primary_source"
+    },
+    {
+      "confidence": "high",
+      "official_claim": "pipeline-math collects claimed resolutions of open problems with a prover-verifier workflow and Lean formalization links.",
+      "source_id": "pipeline-math",
+      "url": "https://github.com/Pengbinghui/pipeline-math",
+      "verification_status": "verified_primary_source"
+    },
+    {
+      "confidence": "high",
+      "official_claim": "LeanDojo documents theorem-proving data extraction, an interactive Lean environment, and formal proof benchmarks.",
+      "source_id": "leandojo",
+      "url": "https://leandojo.org/leandojo.html",
+      "verification_status": "verified_primary_source"
+    },
+    {
+      "confidence": "high",
+      "official_claim": "OpenTelemetry traces document spans, trace exporters, and context propagation.",
+      "source_id": "opentelemetry-traces",
+      "url": "https://opentelemetry.io/docs/concepts/signals/traces/",
+      "verification_status": "verified_primary_source"
+    },
+    {
+      "confidence": "high",
+      "official_claim": "OpenTelemetry context propagation correlates traces, metrics, and logs across distributed systems.",
+      "source_id": "opentelemetry-context",
+      "url": "https://opentelemetry.io/docs/concepts/context-propagation/",
+      "verification_status": "verified_primary_source"
+    }
+  ],
+  "status": "BUYER_DISCOVERY_EVIDENCE_SCORECARDS_MATCH",
+  "unsupported_claim_count": 0,
+  "upstream_bridge": {
+    "path": "C:\\dev\\public\\telos\\docs\\research\\dogfood\\schemas\\forum-route-vocabulary-bridge-pass-0058.json",
+    "seal": "bab65c42e455f0364989ec958f4dce5a14cee7a88ca08c5797e4907175d0a9ee",
+    "sha256": "7d778fd820d41e06e6381edc0768a5362f0e18441c02b0566247ba039cf7d61d",
+    "status": "FORUM_ROUTE_VOCABULARY_BRIDGE_MATCH"
+  },
+  "validation_errors": []
+}

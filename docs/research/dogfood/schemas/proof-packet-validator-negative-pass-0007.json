@@ -1,0 +1,29 @@
+{
+  "schema": "ProofPacketValidatorRun/v1",
+  "status": "DRIFT",
+  "observed_exit_code": 1,
+  "check": {
+    "artifact": "ProofPacketMinimumValidator",
+    "path": "schemas\\proof-packet-negative-pass-0007.json",
+    "required_fields": [
+      "packet_id",
+      "schema",
+      "domain",
+      "claim_set",
+      "source_receipts",
+      "action_receipts",
+      "authority_receipts",
+      "workspace_state",
+      "verification_verdicts",
+      "failure_labels",
+      "decision_summary"
+    ],
+    "claim_count": 1,
+    "errors": [
+      "missing authority_receipts"
+    ],
+    "status": "DRIFT"
+  },
+  "match": 0,
+  "drift": 1
+}

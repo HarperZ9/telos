@@ -1,0 +1,528 @@
+{
+  "ok": true,
+  "thesis": {
+    "id": "e3ad254908aef8ef",
+    "title": "Dogfood Pass 0034 Lean Replay Verification",
+    "registered_at": 1782914537.6612506,
+    "disposition": "fenced",
+    "seal": "e3ad254908aef8ef374691fca1de455d7de3b1a951186f73bf6e83eb53d233f8",
+    "claims": [
+      {
+        "id": "641d010dd6edaef3",
+        "sha256": "641d010dd6edaef3e14624f640c89eed4cfc48423ac95466b4281d583222f738"
+      },
+      {
+        "id": "abbf387499ad2a87",
+        "sha256": "abbf387499ad2a87d9b2911eee3b3225107bd9d5ed055e3190e2c5fa45cfceac"
+      },
+      {
+        "id": "8b9279e43c23d461",
+        "sha256": "8b9279e43c23d4617854d87c120c86ad4eb443287187ef7e715d33bb98140ab2"
+      },
+      {
+        "id": "316e7c91ee35c3b0",
+        "sha256": "316e7c91ee35c3b02835ab3a9ad3ded262220786ea1694ffb61bf6e4b337a34a"
+      },
+      {
+        "id": "03e95e452b3fa509",
+        "sha256": "03e95e452b3fa509451344d6fc58f1a13b237dc289135c512bc7eebf06a91f6f"
+      },
+      {
+        "id": "4258cadbe535628a",
+        "sha256": "4258cadbe535628aa6a40831d68f088357011bd4ead2a828ac75a4ceb8f74c47"
+      },
+      {
+        "id": "a47311fb26093b52",
+        "sha256": "a47311fb26093b5225e9db173f2a53342df1171b0afb89c864ed4d20910bcc08"
+      },
+      {
+        "id": "c2cb211425cbba90",
+        "sha256": "c2cb211425cbba901ff1e0d051c43cf5183816553c2f418b49921467ab08fb93"
+      },
+      {
+        "id": "0163d3a79e190ce5",
+        "sha256": "0163d3a79e190ce56dc2da59ff98d136e2a3aedb42672a0fdb2b930a409ab934"
+      },
+      {
+        "id": "6a59a50407a83e25",
+        "sha256": "6a59a50407a83e259cb47f49f569e3fcb37561d493d0b385c68227f9679bbf66"
+      }
+    ]
+  },
+  "refutations": [
+    {
+      "claim_id": "641d010dd6edaef3",
+      "claim_sha256": "641d010dd6edaef3e14624f640c89eed4cfc48423ac95466b4281d583222f738",
+      "challenge": "test the stated falsification: schemas/lean-replay-verification-pass-0034.json is missing, has a different schema, status, source binding, verifier exit code, axiom check count, or seal",
+      "measurable": "schemas/lean-replay-verification-pass-0034.json is missing, has a different schema, status, source binding, verifier exit code, axiom check count, or seal",
+      "source": "null"
+    },
+    {
+      "claim_id": "abbf387499ad2a87",
+      "claim_sha256": "abbf387499ad2a87d9b2911eee3b3225107bd9d5ed055e3190e2c5fa45cfceac",
+      "challenge": "test the stated falsification: the replay fixture is missing, has a different SHA-256 or seal, or is not linked from the schema",
+      "measurable": "the replay fixture is missing, has a different SHA-256 or seal, or is not linked from the schema",
+      "source": "null"
+    },
+    {
+      "claim_id": "8b9279e43c23d461",
+      "claim_sha256": "8b9279e43c23d4617854d87c120c86ad4eb443287187ef7e715d33bb98140ab2",
+      "challenge": "test the stated falsification: cache hydration is missing, has nonzero exit, or reports different downloaded/decompressed/cache file counts",
+      "measurable": "cache hydration is missing, has nonzero exit, or reports different downloaded/decompressed/cache file counts",
+      "source": "null"
+    },
+    {
+      "claim_id": "316e7c91ee35c3b0",
+      "claim_sha256": "316e7c91ee35c3b02835ab3a9ad3ded262220786ea1694ffb61bf6e4b337a34a",
+      "challenge": "test the stated falsification: the verifier run is missing, has nonzero exit, a non-PASS result, nonzero issue count, or a different duration or build job count",
+      "measurable": "the verifier run is missing, has nonzero exit, a non-PASS result, nonzero issue count, or a different duration or build job count",
+      "source": "null"
+    },
+    {
+      "claim_id": "03e95e452b3fa509",
+      "claim_sha256": "03e95e452b3fa509451344d6fc58f1a13b237dc289135c512bc7eebf06a91f6f",
+      "challenge": "test the stated falsification: frozen SHA pins, banned keyword scan, or Lake build status is missing or not PASS",
+      "measurable": "frozen SHA pins, banned keyword scan, or Lake build status is missing or not PASS",
+      "source": "null"
+    },
+    {
+      "claim_id": "4258cadbe535628a",
+      "claim_sha256": "4258cadbe535628aa6a40831d68f088357011bd4ead2a828ac75a4ceb8f74c47",
+      "challenge": "test the stated falsification: the axiom checks are missing, fewer than ten, not PASS, or use a different axiom set",
+      "measurable": "the axiom checks are missing, fewer than ten, not PASS, or use a different axiom set",
+      "source": "null"
+    },
+    {
+      "claim_id": "a47311fb26093b52",
+      "claim_sha256": "a47311fb26093b5225e9db173f2a53342df1171b0afb89c864ed4d20910bcc08",
+      "challenge": "test the stated falsification: statement gates are missing or either Prob4b.Discharge or Prob4b.Solution is not PASS",
+      "measurable": "statement gates are missing or either Prob4b.Discharge or Prob4b.Solution is not PASS",
+      "source": "null"
+    },
+    {
+      "claim_id": "c2cb211425cbba90",
+      "claim_sha256": "c2cb211425cbba901ff1e0d051c43cf5183816553c2f418b49921467ab08fb93",
+      "challenge": "test the stated falsification: build artifact snapshot is missing or reports different .lake, cache, Prob4b build, or process counts",
+      "measurable": "build artifact snapshot is missing or reports different .lake, cache, Prob4b build, or process counts",
+      "source": "null"
+    },
+    {
+      "claim_id": "0163d3a79e190ce5",
+      "claim_sha256": "0163d3a79e190ce56dc2da59ff98d136e2a3aedb42672a0fdb2b930a409ab934",
+      "challenge": "test the stated falsification: the validator result is missing, reports DRIFT, has different verifier result, Lake status, axiom status, cache count, Prob4b build count, or process count",
+      "measurable": "the validator result is missing, reports DRIFT, has different verifier result, Lake status, axiom status, cache count, Prob4b build count, or process count",
+      "source": "null"
+    },
+    {
+      "claim_id": "6a59a50407a83e25",
+      "claim_sha256": "6a59a50407a83e259cb47f49f569e3fcb37561d493d0b385c68227f9679bbf66",
+      "challenge": "test the stated falsification: pass 0034 artifacts claim a natural law, axiom-free proof, all pipeline-math public claims verified, or a theorem outside the Lean artifact",
+      "measurable": "pass 0034 artifacts claim a natural law, axiom-free proof, all pipeline-math public claims verified, or a theorem outside the Lean artifact",
+      "source": "null"
+    }
+  ],
+  "assessment": {
+    "started_at": 1782914537.6612506,
+    "thesis_id": "e3ad254908aef8ef",
+    "thesis_seal": "e3ad254908aef8ef374691fca1de455d7de3b1a951186f73bf6e83eb53d233f8",
+    "claims": 10,
+    "match": 10,
+    "drift": 0,
+    "unverifiable": 0,
+    "verdict_seal": "9f5bf5ef2cac282901e5ea728085f27459300c49ba17aa1e575d3aa513552f40",
+    "measurement_seal": "51a490de6a3f0e30b48432641cc1cb5dadecc73a83ed1d251e9437701c703ac4",
+    "disposition": "fenced",
+    "stored": null,
+    "verdicts": [
+      {
+        "claim_id": "641d010dd6edaef3",
+        "claim_sha256": "641d010dd6edaef3e14624f640c89eed4cfc48423ac95466b4281d583222f738",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "lean-replay-verification-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "abbf387499ad2a87",
+        "claim_sha256": "abbf387499ad2a87d9b2911eee3b3225107bd9d5ed055e3190e2c5fa45cfceac",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "fixture-binding-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "8b9279e43c23d461",
+        "claim_sha256": "8b9279e43c23d4617854d87c120c86ad4eb443287187ef7e715d33bb98140ab2",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "cache-hydration-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "316e7c91ee35c3b0",
+        "claim_sha256": "316e7c91ee35c3b02835ab3a9ad3ded262220786ea1694ffb61bf6e4b337a34a",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "verifier-run-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "03e95e452b3fa509",
+        "claim_sha256": "03e95e452b3fa509451344d6fc58f1a13b237dc289135c512bc7eebf06a91f6f",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "verifier-check-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "4258cadbe535628a",
+        "claim_sha256": "4258cadbe535628aa6a40831d68f088357011bd4ead2a828ac75a4ceb8f74c47",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "axiom-check-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "a47311fb26093b52",
+        "claim_sha256": "a47311fb26093b5225e9db173f2a53342df1171b0afb89c864ed4d20910bcc08",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "statement-gate-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "c2cb211425cbba90",
+        "claim_sha256": "c2cb211425cbba901ff1e0d051c43cf5183816553c2f418b49921467ab08fb93",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "build-artifact-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "0163d3a79e190ce5",
+        "claim_sha256": "0163d3a79e190ce56dc2da59ff98d136e2a3aedb42672a0fdb2b930a409ab934",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "validator-result-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "6a59a50407a83e25",
+        "claim_sha256": "6a59a50407a83e259cb47f49f569e3fcb37561d493d0b385c68227f9679bbf66",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "non-promotion-boundary-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      }
+    ],
+    "measurements": [
+      {
+        "claim_id": "641d010dd6edaef3",
+        "claim_sha256": "641d010dd6edaef3e14624f640c89eed4cfc48423ac95466b4281d583222f738",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "lean-replay-verification-review",
+        "measured_at": 1782914537.6612506,
+        "evidence": [
+          "schema=LeanReplayVerificationPacket/v1",
+          "status=LEAN_REPLAY_VERIFIED_WITH_AXIOM_BOUNDARY",
+          "source_provisioning_sha256=e4a4085f9711d672ee18a08e85aa55b6fabe8f64807daad53eff382506b9a366",
+          "verifier_exit_code=0",
+          "axiom_check_count=10",
+          "seal=bbe72907f7bc745c4bdc19f2162050d0dc7e48ea9382bc0b09f226f2500539bd"
+        ]
+      },
+      {
+        "claim_id": "abbf387499ad2a87",
+        "claim_sha256": "abbf387499ad2a87d9b2911eee3b3225107bd9d5ed055e3190e2c5fa45cfceac",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "fixture-binding-review",
+        "measured_at": 1782914537.6612506,
+        "evidence": [
+          "fixture sha256=eef39b1caa78dd2d996589b08c40b93881cfe45d17e2b15479ec9aa8d5b9fafb",
+          "fixture seal=fd38f5abf22c501b06e28321e9408d5562e154eb4a012c4988a64b910a6ffa2f"
+        ]
+      },
+      {
+        "claim_id": "8b9279e43c23d461",
+        "claim_sha256": "8b9279e43c23d4617854d87c120c86ad4eb443287187ef7e715d33bb98140ab2",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "cache-hydration-review",
+        "measured_at": 1782914537.6612506,
+        "evidence": [
+          "exit_code=0",
+          "downloaded_files=8542",
+          "decompressed_files=8542",
+          "cache_file_count=8542",
+          "cache_byte_sum=432264798"
+        ]
+      },
+      {
+        "claim_id": "316e7c91ee35c3b0",
+        "claim_sha256": "316e7c91ee35c3b02835ab3a9ad3ded262220786ea1694ffb61bf6e4b337a34a",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "verifier-run-review",
+        "measured_at": 1782914537.6612506,
+        "evidence": [
+          "exit_code=0",
+          "result=PASS",
+          "result_issue_count=0",
+          "duration_seconds=1184",
+          "build_jobs=8574"
+        ]
+      },
+      {
+        "claim_id": "03e95e452b3fa509",
+        "claim_sha256": "03e95e452b3fa509451344d6fc58f1a13b237dc289135c512bc7eebf06a91f6f",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "verifier-check-review",
+        "measured_at": 1782914537.6612506,
+        "evidence": [
+          "frozen_sha_pins_status=PASS",
+          "banned_keywords_status=PASS",
+          "lake_build_status=PASS"
+        ]
+      },
+      {
+        "claim_id": "4258cadbe535628a",
+        "claim_sha256": "4258cadbe535628aa6a40831d68f088357011bd4ead2a828ac75a4ceb8f74c47",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "axiom-check-review",
+        "measured_at": 1782914537.6612506,
+        "evidence": [
+          "axiom_check_count=10",
+          "theorem_axiom_status=PASS",
+          "axiom_set=[propext, Classical.choice, Quot.sound]"
+        ]
+      },
+      {
+        "claim_id": "a47311fb26093b52",
+        "claim_sha256": "a47311fb26093b5225e9db173f2a53342df1171b0afb89c864ed4d20910bcc08",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "statement-gate-review",
+        "measured_at": 1782914537.6612506,
+        "evidence": [
+          "Prob4b.Discharge=PASS",
+          "Prob4b.Solution=PASS"
+        ]
+      },
+      {
+        "claim_id": "c2cb211425cbba90",
+        "claim_sha256": "c2cb211425cbba901ff1e0d051c43cf5183816553c2f418b49921467ab08fb93",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "build-artifact-review",
+        "measured_at": 1782914537.6612506,
+        "evidence": [
+          "lake_file_count=123892",
+          "lake_byte_sum=8009101293",
+          "cache_file_count=8542",
+          "prob4b_build_file_count=75",
+          "remaining_temp_processes=0"
+        ]
+      },
+      {
+        "claim_id": "0163d3a79e190ce5",
+        "claim_sha256": "0163d3a79e190ce56dc2da59ff98d136e2a3aedb42672a0fdb2b930a409ab934",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "validator-result-review",
+        "measured_at": 1782914537.6612506,
+        "evidence": [
+          "validator status=MATCH",
+          "verifier_exit_code=0",
+          "verifier_result=PASS",
+          "lake_build_status=PASS",
+          "theorem_axiom_status=PASS",
+          "axiom_check_count=10",
+          "cache_file_count=8542",
+          "prob4b_build_file_count=75",
+          "remaining_temp_processes=0"
+        ]
+      },
+      {
+        "claim_id": "6a59a50407a83e25",
+        "claim_sha256": "6a59a50407a83e259cb47f49f569e3fcb37561d493d0b385c68227f9679bbf66",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "non-promotion-boundary-review",
+        "measured_at": 1782914537.6612506,
+        "evidence": [
+          "current_promoted_natural_laws=[]",
+          "non_promotion_statement present",
+          "negative-public-claim-overpromoted expected_validator_status=REJECT",
+          "negative-natural-law-promoted expected_validator_status=REJECT"
+        ]
+      }
+    ],
+    "seal": "79407783c76966bea42da1ef031f26aaac1b965d762fab2113965e8cf63d0b06"
+  },
+  "verdicts": [
+    {
+      "claim_id": "641d010dd6edaef3",
+      "claim_sha256": "641d010dd6edaef3e14624f640c89eed4cfc48423ac95466b4281d583222f738",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "lean-replay-verification-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "abbf387499ad2a87",
+      "claim_sha256": "abbf387499ad2a87d9b2911eee3b3225107bd9d5ed055e3190e2c5fa45cfceac",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "fixture-binding-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "8b9279e43c23d461",
+      "claim_sha256": "8b9279e43c23d4617854d87c120c86ad4eb443287187ef7e715d33bb98140ab2",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "cache-hydration-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "316e7c91ee35c3b0",
+      "claim_sha256": "316e7c91ee35c3b02835ab3a9ad3ded262220786ea1694ffb61bf6e4b337a34a",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "verifier-run-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "03e95e452b3fa509",
+      "claim_sha256": "03e95e452b3fa509451344d6fc58f1a13b237dc289135c512bc7eebf06a91f6f",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "verifier-check-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "4258cadbe535628a",
+      "claim_sha256": "4258cadbe535628aa6a40831d68f088357011bd4ead2a828ac75a4ceb8f74c47",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "axiom-check-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "a47311fb26093b52",
+      "claim_sha256": "a47311fb26093b5225e9db173f2a53342df1171b0afb89c864ed4d20910bcc08",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "statement-gate-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "c2cb211425cbba90",
+      "claim_sha256": "c2cb211425cbba901ff1e0d051c43cf5183816553c2f418b49921467ab08fb93",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "build-artifact-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "0163d3a79e190ce5",
+      "claim_sha256": "0163d3a79e190ce56dc2da59ff98d136e2a3aedb42672a0fdb2b930a409ab934",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "validator-result-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "6a59a50407a83e25",
+      "claim_sha256": "6a59a50407a83e259cb47f49f569e3fcb37561d493d0b385c68227f9679bbf66",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "non-promotion-boundary-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    }
+  ],
+  "checks": {
+    "seals_ok": true,
+    "thesis_ok": true,
+    "verdicts_rederive": true
+  },
+  "report": "docs\\research\\dogfood\\crucible\\pass-0034-report.md",
+  "record": "docs\\research\\dogfood\\crucible\\pass-0034-run.json",
+  "bundle": null,
+  "spec": null,
+  "review": null,
+  "verifier": {
+    "mode": "cleanroom",
+    "inputs": [],
+    "excluded": [
+      "worker context",
+      "reasoning trace",
+      "intermediate steps"
+    ],
+    "checkability": "If success cannot be evaluated from the original spec and the artifact, the spec is not checkable yet."
+  }
+}

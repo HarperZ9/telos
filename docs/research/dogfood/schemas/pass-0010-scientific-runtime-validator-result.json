@@ -1,0 +1,32 @@
+{
+  "schema": "Pass0010ScientificRuntimeReceiptValidatorRun/v1",
+  "pass": "0010",
+  "status": "MATCH",
+  "match": 2,
+  "drift": 0,
+  "observed_exit_code": 0,
+  "checks": [
+    {
+      "artifact": "BuildScientificRuntimeReceiptSchema",
+      "path": "schemas\\buildlang-scientific-runtime-receipt-schema-pass-0010.json",
+      "status": "MATCH",
+      "required_count": 16,
+      "errors": []
+    },
+    {
+      "artifact": "BuildScientificRuntimeReceiptSet",
+      "path": "schemas\\buildlang-scientific-runtime-receipts-pass-0010.json",
+      "status": "MATCH",
+      "receipt_count": 2,
+      "roles": [
+        "negative_fixture",
+        "primary_positive"
+      ],
+      "statuses": [
+        "FAIL_EXPECTED",
+        "PASS"
+      ],
+      "errors": []
+    }
+  ]
+}

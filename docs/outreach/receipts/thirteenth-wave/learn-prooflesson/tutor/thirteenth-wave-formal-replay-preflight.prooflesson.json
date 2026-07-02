@@ -1,0 +1,204 @@
+{
+  "kind": "proof-lesson",
+  "packet_id": "thirteenth-wave-formal-replay-preflight-2026-07-02",
+  "verdict": "MATCH",
+  "lesson": {
+    "kind": "proof-lesson",
+    "packet_id": "thirteenth-wave-formal-replay-preflight-2026-07-02",
+    "packet_version": "research-claim-proof-packet/v0",
+    "claim": "Project Telos has a thirteenth-wave formal-replay preflight package that adds a BuildLang parity witness for the Navier-Stokes periodic skew-symmetry packet, records theorem-prover replay as blocked by missing local prover executables, demotes fresh arXiv metadata to SOURCE_LEAD_ONLY, writes outreach and working-paper drafts, and keeps the parent Navier-Stokes problem UNVERIFIABLE.",
+    "scope": "Local thirteenth-wave documentation and receipt package only. This is not theorem-prover replay, not a proof of Navier-Stokes existence and smoothness, not PDE correctness, not physical-fluid validation, not source-body review of arXiv papers, not exhaustive literature coverage, not warning-clean buildc certification, and not an accepted publication.",
+    "verdict": "MATCH",
+    "sources": [
+      {
+        "ref": "docs/outreach/THIRTEENTH-WAVE-FORMAL-REPLAY-PREFLIGHT-2026-07-02.md",
+        "sha256": "ebf678a4b3dff9070a65b5dab2696ace49298c2b4f2ff6ca95b0bdeb3f505a2a"
+      },
+      {
+        "ref": "docs/research/whitepapers/FORMAL-REPLAY-PREFLIGHT-FOR-PDE-PACKETS-2026-07-02.md",
+        "sha256": "56e11525606aabf343dc834785f3608d2597f5a70b6d597a31458eb53193392d"
+      },
+      {
+        "ref": "docs/outreach/THIRTEENTH-WAVE-CONTENT-QUEUE-2026-07-02.md",
+        "sha256": "0d4d188aa229885cc19bbbf433fbe42a170dfdcdcf4e21c456b39f440b97169a"
+      },
+      {
+        "ref": "docs/research/proof-packets/navier-stokes-periodic-skew-symmetry-v0/kernel.buildlang.bld",
+        "sha256": "ac9c110b34d6a7d3e766ffc84549431f91eca374664a31c1f9d549df87a1224e"
+      },
+      {
+        "ref": "docs/research/proof-packets/navier-stokes-periodic-skew-symmetry-v0/buildlang-parity.receipt.json",
+        "sha256": "bf7844e620856f9707630a36108d9a411a31b7c6153882bd1b6d39bb80290429"
+      },
+      {
+        "ref": "docs/outreach/receipts/thirteenth-wave/source-lead-demotion-gate.json",
+        "sha256": "dce4207094e44f38554fa2974be4243a9525048f35efdda691ac8a5975523d92"
+      },
+      {
+        "ref": "docs/outreach/receipts/thirteenth-wave/theorem-prover-preflight-2026-07-02.json",
+        "sha256": "1137251b6acbc1dafe65cfb2e8719154377141ce331db691a6f50917faf01109"
+      },
+      {
+        "ref": "docs/outreach/receipts/thirteenth-wave-tooling-run-2026-07-02.json",
+        "sha256": "db23771f2570210959d1a1f3d2b48252f81c822951a03986d9ebcff23532a21b"
+      }
+    ],
+    "scaffold": [
+      {
+        "step": 1,
+        "prompt": "Restate, in your own words, exactly what this claim asserts and nothing more: \"Project Telos has a thirteenth-wave formal-replay preflight package that adds a BuildLang parity witness for the Navier-Stokes periodic skew-symmetry packet, records theorem-prover replay as blocked by missing local prover executables, demotes fresh arXiv metadata to SOURCE_LEAD_ONLY, writes outreach and working-paper drafts, and keeps the parent Navier-Stokes problem UNVERIFIABLE.\" (scope: Local thirteenth-wave documentation and receipt package only. This is not theorem-prover replay, not a proof of Navier-Stokes existence and smoothness, not PDE correctness, not physical-fluid validation, not source-body review of arXiv papers, not exhaustive literature coverage, not warning-clean buildc certification, and not an accepted publication.)."
+      },
+      {
+        "step": 2,
+        "prompt": "Judging by their refs alone (docs/outreach/THIRTEENTH-WAVE-FORMAL-REPLAY-PREFLIGHT-2026-07-02.md, docs/research/whitepapers/FORMAL-REPLAY-PREFLIGHT-FOR-PDE-PACKETS-2026-07-02.md, docs/outreach/THIRTEENTH-WAVE-CONTENT-QUEUE-2026-07-02.md, docs/research/proof-packets/navier-stokes-periodic-skew-symmetry-v0/kernel.buildlang.bld, docs/research/proof-packets/navier-stokes-periodic-skew-symmetry-v0/buildlang-parity.receipt.json, docs/outreach/receipts/thirteenth-wave/source-lead-demotion-gate.json, docs/outreach/receipts/thirteenth-wave/theorem-prover-preflight-2026-07-02.json, docs/outreach/receipts/thirteenth-wave-tooling-run-2026-07-02.json), predict what each recorded source could contribute as evidence for or against the claim."
+      },
+      {
+        "step": 3,
+        "prompt": "The packet's overall verdict is MATCH. Before reading anything else, derive what a MATCH verdict must mean about the relationship between the claim and the recorded checks."
+      },
+      {
+        "step": 4,
+        "prompt": "List the checks you would run to reach your own verdict on this claim, then compare your list against what the packet's verdict implies was actually checked."
+      }
+    ],
+    "retrievalQuestions": [
+      {
+        "question": "What evidence would falsify this claim: \"Project Telos has a thirteenth-wave formal-replay preflight package that adds a BuildLang parity witness for the Navier-Stokes periodic skew-symmetry packet, records theorem-prover replay as blocked by missing local prover executables, demotes fresh arXiv metadata to SOURCE_LEAD_ONLY, writes outreach and working-paper drafts, and keeps the parent Navier-Stokes problem UNVERIFIABLE.\"?",
+        "derivedFrom": "claim"
+      },
+      {
+        "question": "Which recorded source would you re-check first, and what does its content hash let you prove about it?",
+        "derivedFrom": "sources"
+      },
+      {
+        "question": "What does an overall verdict of MATCH entitle you to claim, and what does it not?",
+        "derivedFrom": "verdicts.overall"
+      },
+      {
+        "question": "The packet's scope is \"Local thirteenth-wave documentation and receipt package only. This is not theorem-prover replay, not a proof of Navier-Stokes existence and smoothness, not PDE correctness, not physical-fluid validation, not source-body review of arXiv papers, not exhaustive literature coverage, not warning-clean buildc certification, and not an accepted publication.\". Give one claim that would exceed that scope.",
+        "derivedFrom": "scope"
+      }
+    ],
+    "verifierBinding": {
+      "packet_id": "thirteenth-wave-formal-replay-preflight-2026-07-02",
+      "verdict": "MATCH",
+      "sourceHashes": [
+        "ebf678a4b3dff9070a65b5dab2696ace49298c2b4f2ff6ca95b0bdeb3f505a2a",
+        "56e11525606aabf343dc834785f3608d2597f5a70b6d597a31458eb53193392d",
+        "0d4d188aa229885cc19bbbf433fbe42a170dfdcdcf4e21c456b39f440b97169a",
+        "ac9c110b34d6a7d3e766ffc84549431f91eca374664a31c1f9d549df87a1224e",
+        "bf7844e620856f9707630a36108d9a411a31b7c6153882bd1b6d39bb80290429",
+        "dce4207094e44f38554fa2974be4243a9525048f35efdda691ac8a5975523d92",
+        "1137251b6acbc1dafe65cfb2e8719154377141ce331db691a6f50917faf01109",
+        "db23771f2570210959d1a1f3d2b48252f81c822951a03986d9ebcff23532a21b"
+      ]
+    },
+    "boundary": "Lesson scaffold only -- prompts for the operator to derive the reasoning; never an answer dump, never a graded-assessment answer."
+  },
+  "misconception": null,
+  "sourceCount": 8,
+  "entries": [
+    {
+      "seq": 0,
+      "prevHash": "0000000000000000000000000000000000000000000000000000000000000000",
+      "hash": "199a6a001583ceff7f7a26f81d01af0f7d9a7d8433a6e4bce0016bcf8929fcc9",
+      "entry": {
+        "kind": "packet-binding",
+        "packet_id": "thirteenth-wave-formal-replay-preflight-2026-07-02",
+        "verdict": "MATCH",
+        "claim": "Project Telos has a thirteenth-wave formal-replay preflight package that adds a BuildLang parity witness for the Navier-Stokes periodic skew-symmetry packet, records theorem-prover replay as blocked by missing local prover executables, demotes fresh arXiv metadata to SOURCE_LEAD_ONLY, writes outreach and working-paper drafts, and keeps the parent Navier-Stokes problem UNVERIFIABLE."
+      }
+    },
+    {
+      "seq": 1,
+      "prevHash": "199a6a001583ceff7f7a26f81d01af0f7d9a7d8433a6e4bce0016bcf8929fcc9",
+      "hash": "92df632ba1e65f1a11ed6a8baa560634f4f09bef1cf41b3aa9bbe019ce129e35",
+      "entry": {
+        "kind": "source",
+        "ref": "docs/outreach/THIRTEENTH-WAVE-FORMAL-REPLAY-PREFLIGHT-2026-07-02.md",
+        "sha256": "ebf678a4b3dff9070a65b5dab2696ace49298c2b4f2ff6ca95b0bdeb3f505a2a"
+      }
+    },
+    {
+      "seq": 2,
+      "prevHash": "92df632ba1e65f1a11ed6a8baa560634f4f09bef1cf41b3aa9bbe019ce129e35",
+      "hash": "f60f8b1cd9394720441547db40c56762aefc4663418b80e317a8f2c454bec317",
+      "entry": {
+        "kind": "source",
+        "ref": "docs/research/whitepapers/FORMAL-REPLAY-PREFLIGHT-FOR-PDE-PACKETS-2026-07-02.md",
+        "sha256": "56e11525606aabf343dc834785f3608d2597f5a70b6d597a31458eb53193392d"
+      }
+    },
+    {
+      "seq": 3,
+      "prevHash": "f60f8b1cd9394720441547db40c56762aefc4663418b80e317a8f2c454bec317",
+      "hash": "e9e5ce86808f180524bf256433323d70536059ec2e2caf11f21b77e8619844a5",
+      "entry": {
+        "kind": "source",
+        "ref": "docs/outreach/THIRTEENTH-WAVE-CONTENT-QUEUE-2026-07-02.md",
+        "sha256": "0d4d188aa229885cc19bbbf433fbe42a170dfdcdcf4e21c456b39f440b97169a"
+      }
+    },
+    {
+      "seq": 4,
+      "prevHash": "e9e5ce86808f180524bf256433323d70536059ec2e2caf11f21b77e8619844a5",
+      "hash": "eb100a1ece315ce99feb3b1fcadad20a3e148415761a780dedf5611ca2337bef",
+      "entry": {
+        "kind": "source",
+        "ref": "docs/research/proof-packets/navier-stokes-periodic-skew-symmetry-v0/kernel.buildlang.bld",
+        "sha256": "ac9c110b34d6a7d3e766ffc84549431f91eca374664a31c1f9d549df87a1224e"
+      }
+    },
+    {
+      "seq": 5,
+      "prevHash": "eb100a1ece315ce99feb3b1fcadad20a3e148415761a780dedf5611ca2337bef",
+      "hash": "f3c22f44655b900f36bebb38d6f492c9c1894cc1b8fbc81729b7b039d6d484bb",
+      "entry": {
+        "kind": "source",
+        "ref": "docs/research/proof-packets/navier-stokes-periodic-skew-symmetry-v0/buildlang-parity.receipt.json",
+        "sha256": "bf7844e620856f9707630a36108d9a411a31b7c6153882bd1b6d39bb80290429"
+      }
+    },
+    {
+      "seq": 6,
+      "prevHash": "f3c22f44655b900f36bebb38d6f492c9c1894cc1b8fbc81729b7b039d6d484bb",
+      "hash": "6b65ee52fa3095c48afad60fbc40bc1a3e170d9053ce94bb9b8fb7ea67f1df06",
+      "entry": {
+        "kind": "source",
+        "ref": "docs/outreach/receipts/thirteenth-wave/source-lead-demotion-gate.json",
+        "sha256": "dce4207094e44f38554fa2974be4243a9525048f35efdda691ac8a5975523d92"
+      }
+    },
+    {
+      "seq": 7,
+      "prevHash": "6b65ee52fa3095c48afad60fbc40bc1a3e170d9053ce94bb9b8fb7ea67f1df06",
+      "hash": "1360f16bf3c86a2bbb1f5cc80993db8d3e314d1ab7c5a07711f9b19c76d6d5fb",
+      "entry": {
+        "kind": "source",
+        "ref": "docs/outreach/receipts/thirteenth-wave/theorem-prover-preflight-2026-07-02.json",
+        "sha256": "1137251b6acbc1dafe65cfb2e8719154377141ce331db691a6f50917faf01109"
+      }
+    },
+    {
+      "seq": 8,
+      "prevHash": "1360f16bf3c86a2bbb1f5cc80993db8d3e314d1ab7c5a07711f9b19c76d6d5fb",
+      "hash": "0dafa7618f63f2c70e965aae7abab050142933dd97f730ba9d1a3a3e689de481",
+      "entry": {
+        "kind": "source",
+        "ref": "docs/outreach/receipts/thirteenth-wave-tooling-run-2026-07-02.json",
+        "sha256": "db23771f2570210959d1a1f3d2b48252f81c822951a03986d9ebcff23532a21b"
+      }
+    },
+    {
+      "seq": 9,
+      "prevHash": "0dafa7618f63f2c70e965aae7abab050142933dd97f730ba9d1a3a3e689de481",
+      "hash": "5836f12518c54c52653f1e83b208afe9e7342d1bd752b9f0b8f3b3a6c5db2dd7",
+      "entry": {
+        "kind": "lesson-digest",
+        "digest": "sha256:47ace5eed581e7679873332ebe8165ba51aa55781967f69daeb5a95c2f290fce",
+        "misconception_class": null
+      }
+    }
+  ],
+  "boundary": "Lesson receipt only -- binds the lesson to its packet's verdict and source hashes; never a graded-assessment answer."
+}

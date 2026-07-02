@@ -1,0 +1,420 @@
+{
+  "generated_on": "2026-07-01",
+  "local_environment": {
+    "installer_boundary": "PLAN_ONLY_NO_PACKAGE_INSTALL",
+    "pip_version": "26.1.2",
+    "platform": "Windows-11-10.0.26220-SP0",
+    "python_executable_hash": "7e4d69d2867b25edf888e2a1af3b16fa65d10d1baa85026542dd62a622ab776f",
+    "python_version": "3.12.10",
+    "schema": "LocalPythonEnvironmentReceipt/v1"
+  },
+  "negative_fixture_count": 9,
+  "negative_fixtures": [
+    {
+      "expected_validator_status": "REJECT",
+      "failure_mode": "Installs quantum SDKs into the shared base environment without an environment receipt.",
+      "fixture_id": "negative-installing-into-shared-base-env"
+    },
+    {
+      "expected_validator_status": "REJECT",
+      "failure_mode": "Runs a framework demo without resolving and freezing dependency versions and hashes.",
+      "fixture_id": "negative-unpinned-runtime-demo"
+    },
+    {
+      "expected_validator_status": "REJECT",
+      "failure_mode": "Requires IBM/AWS/cloud credentials for a framework-import fixture.",
+      "fixture_id": "negative-cloud-credential-required-for-import-fixture"
+    },
+    {
+      "expected_validator_status": "REJECT",
+      "failure_mode": "Treats SDK import success as a cloud/provider execution receipt.",
+      "fixture_id": "negative-sdk-import-claimed-as-provider-execution"
+    },
+    {
+      "expected_validator_status": "REJECT",
+      "failure_mode": "Treats an API-only NonRecordingSpan as exported trace evidence.",
+      "fixture_id": "negative-nonrecording-otel-span-claimed-as-exported-trace"
+    },
+    {
+      "expected_validator_status": "REJECT",
+      "failure_mode": "Treats CUDA-Q import success as GPU acceleration evidence.",
+      "fixture_id": "negative-cudaq-import-claimed-as-gpu-acceleration"
+    },
+    {
+      "expected_validator_status": "REJECT",
+      "failure_mode": "Creates QIR fixture without result record map or IR hash.",
+      "fixture_id": "negative-qir-without-record-map"
+    },
+    {
+      "expected_validator_status": "REJECT",
+      "failure_mode": "Claims BuildLang/buildc runtime proof without compiler/runtime receipt.",
+      "fixture_id": "negative-buildlang-runtime-without-compiler-receipt"
+    },
+    {
+      "expected_validator_status": "REJECT",
+      "failure_mode": "Claims color/rendering proof without measured-output receipt.",
+      "fixture_id": "negative-color-runtime-without-measurement-receipt"
+    }
+  ],
+  "non_promotion_statement": "Pass 0021 imports opentelemetry-api only because it is already present locally. It does not install quantum SDKs, import unavailable quantum frameworks, create cloud credentials, run provider jobs, run quantum hardware, or promote scientific results.",
+  "opentelemetry_action_bridge_fixture": {
+    "action_receipt_mapping": {
+      "span.name": "action.name",
+      "span_id_hex": "action.span_id",
+      "telos.action.kind": "action.kind",
+      "telos.promotion_state": "action.promotion_state",
+      "trace_id_hex": "action.trace_id"
+    },
+    "api_version": "1.41.0",
+    "attribute_recording_status": "NOT_RECORDED_WITH_API_ONLY_NONRECORDING_SPAN",
+    "attributes_attempted": [
+      "telos.pass",
+      "telos.action.kind",
+      "telos.promotion_state"
+    ],
+    "distribution": "opentelemetry-api",
+    "fixture_hash": "a95002a2f3db465b1b460dc66fade557da46c1c70f8bac68dc149723167b6f90",
+    "is_recording": false,
+    "module_imported": true,
+    "schema": "OpenTelemetryActionBridgeFixture/v1",
+    "sdk_installed": false,
+    "source_anchors": [
+      "https://opentelemetry.io/docs/languages/python/",
+      "https://opentelemetry-python.readthedocs.io/en/latest/api/trace.html",
+      "https://opentelemetry.io/docs/specs/otel/trace/api/"
+    ],
+    "span_class": "NonRecordingSpan",
+    "span_id_hex": "0000000000000000",
+    "span_name": "telos.synthetic_action_bridge",
+    "status": "API_IMPORT_MATCH_NONRECORDING",
+    "trace_flags_int": 0,
+    "trace_id_hex": "00000000000000000000000000000000",
+    "trace_state": "[]",
+    "tracer_name": "telos.pass0021"
+  },
+  "package_plan_count": 11,
+  "package_plans": [
+    {
+      "cloud_credentials_required_for_import_fixture": false,
+      "cloud_credentials_required_for_live_provider_fixture": false,
+      "distribution": "qiskit",
+      "first_framework_import_fixture": "Create a two-qubit Bell circuit and emit source/circuit/canonical-count layout receipts without provider execution.",
+      "import_targets": [
+        "qiskit",
+        "qiskit.circuit"
+      ],
+      "install_command": "python -m pip install qiskit",
+      "install_now": false,
+      "notes": [],
+      "pin_policy": "RESOLVE_IN_ISOLATED_ENV_THEN_FREEZE_WITH_HASHES",
+      "plan_hash": "19bd2568e796bf9c5453e414998c452b5ae1f923272e9a2b8553218d5b5eaed9",
+      "promotion_state_after_install": "FRAMEWORK_IMPORT_FIXTURE_ELIGIBLE",
+      "schema": "QuantumFrameworkPackagePlan/v1",
+      "source_anchors": [
+        "https://quantum.cloud.ibm.com/docs/guides/install-qiskit",
+        "https://pypi.org/project/qiskit/"
+      ]
+    },
+    {
+      "cloud_credentials_required_for_import_fixture": false,
+      "cloud_credentials_required_for_live_provider_fixture": true,
+      "distribution": "qiskit-ibm-runtime",
+      "first_framework_import_fixture": "Import runtime client classes and create a metadata-only client-shape receipt; no token, account, session, or job execution.",
+      "import_targets": [
+        "qiskit_ibm_runtime"
+      ],
+      "install_command": "python -m pip install qiskit-ibm-runtime",
+      "install_now": false,
+      "notes": [
+        "Live provider fixture requires credentials and a separate live-provider receipt gate."
+      ],
+      "pin_policy": "RESOLVE_IN_ISOLATED_ENV_THEN_FREEZE_WITH_HASHES",
+      "plan_hash": "5f7f8e3904f6aee98925915d8711778daba6d3eef11fa338f4d49c1457b47ebf",
+      "promotion_state_after_install": "FRAMEWORK_IMPORT_FIXTURE_ELIGIBLE",
+      "schema": "QuantumFrameworkPackagePlan/v1",
+      "source_anchors": [
+        "https://quantum.cloud.ibm.com/docs/guides/install-qiskit-runtime",
+        "https://quantum.cloud.ibm.com/docs/api/qiskit-ibm-runtime"
+      ]
+    },
+    {
+      "cloud_credentials_required_for_import_fixture": false,
+      "cloud_credentials_required_for_live_provider_fixture": true,
+      "distribution": "amazon-braket-sdk",
+      "first_framework_import_fixture": "Create a local Braket Circuit object and parse local/synthetic measurement count shape; no AWS task execution.",
+      "import_targets": [
+        "braket",
+        "braket.circuits"
+      ],
+      "install_command": "python -m pip install amazon-braket-sdk",
+      "install_now": false,
+      "notes": [
+        "Live provider fixture requires AWS account configuration and separate task receipt."
+      ],
+      "pin_policy": "RESOLVE_IN_ISOLATED_ENV_THEN_FREEZE_WITH_HASHES",
+      "plan_hash": "5261a38d4419e5b4de923174de9c5b464fe7ebea4247b08e0f967432fe7c3934",
+      "promotion_state_after_install": "FRAMEWORK_IMPORT_FIXTURE_ELIGIBLE",
+      "schema": "QuantumFrameworkPackagePlan/v1",
+      "source_anchors": [
+        "https://amazon-braket-sdk-python.readthedocs.io/",
+        "https://aws.amazon.com/braket/getting-started/"
+      ]
+    },
+    {
+      "cloud_credentials_required_for_import_fixture": false,
+      "cloud_credentials_required_for_live_provider_fixture": false,
+      "distribution": "cirq",
+      "first_framework_import_fixture": "Create a Bell circuit with cirq.LineQubit objects and local simulator/result canonicalization.",
+      "import_targets": [
+        "cirq"
+      ],
+      "install_command": "python -m pip install cirq",
+      "install_now": false,
+      "notes": [],
+      "pin_policy": "RESOLVE_IN_ISOLATED_ENV_THEN_FREEZE_WITH_HASHES",
+      "plan_hash": "f06ad6653544b0a3de9cc535b90d816481f5bac9a049fc9ca4cd745ece5ee03d",
+      "promotion_state_after_install": "FRAMEWORK_IMPORT_FIXTURE_ELIGIBLE",
+      "schema": "QuantumFrameworkPackagePlan/v1",
+      "source_anchors": [
+        "https://quantumai.google/cirq/start/install",
+        "https://quantumai.google/cirq"
+      ]
+    },
+    {
+      "cloud_credentials_required_for_import_fixture": false,
+      "cloud_credentials_required_for_live_provider_fixture": false,
+      "distribution": "pennylane",
+      "first_framework_import_fixture": "Create default.qubit QNode with fixed shots and wire-order receipt.",
+      "import_targets": [
+        "pennylane"
+      ],
+      "install_command": "python -m pip install pennylane",
+      "install_now": false,
+      "notes": [],
+      "pin_policy": "RESOLVE_IN_ISOLATED_ENV_THEN_FREEZE_WITH_HASHES",
+      "plan_hash": "72a668cd3b014bc1021e84c2b0c2f5196caf69fe8465bbf7959cebef0625cf4b",
+      "promotion_state_after_install": "FRAMEWORK_IMPORT_FIXTURE_ELIGIBLE",
+      "schema": "QuantumFrameworkPackagePlan/v1",
+      "source_anchors": [
+        "https://pennylane.ai/install",
+        "https://docs.pennylane.ai/en/stable/development/guide/installation.html"
+      ]
+    },
+    {
+      "cloud_credentials_required_for_import_fixture": false,
+      "cloud_credentials_required_for_live_provider_fixture": false,
+      "distribution": "pyqir",
+      "first_framework_import_fixture": "Create or parse a minimal QIR module and emit result-record-map receipt.",
+      "import_targets": [
+        "pyqir"
+      ],
+      "install_command": "python -m pip install pyqir",
+      "install_now": false,
+      "notes": [],
+      "pin_policy": "RESOLVE_IN_ISOLATED_ENV_THEN_FREEZE_WITH_HASHES",
+      "plan_hash": "00c593db166be5f6b418afe42c5a8a49cc3d7c275db9a9a05a40c16c87f7b0c9",
+      "promotion_state_after_install": "FRAMEWORK_IMPORT_FIXTURE_ELIGIBLE",
+      "schema": "QuantumFrameworkPackagePlan/v1",
+      "source_anchors": [
+        "https://www.qir-alliance.org/pyqir/",
+        "https://github.com/qir-alliance/pyqir"
+      ]
+    },
+    {
+      "cloud_credentials_required_for_import_fixture": false,
+      "cloud_credentials_required_for_live_provider_fixture": false,
+      "distribution": "pytket",
+      "first_framework_import_fixture": "Create a pytket Circuit and emit compiler/routing metadata receipt without backend execution.",
+      "import_targets": [
+        "pytket"
+      ],
+      "install_command": "python -m pip install pytket",
+      "install_now": false,
+      "notes": [],
+      "pin_policy": "RESOLVE_IN_ISOLATED_ENV_THEN_FREEZE_WITH_HASHES",
+      "plan_hash": "52a1455ff1fb4a15c2650901db8ef6377fc5333b6f5f046f78038d4ac08ee5d1",
+      "promotion_state_after_install": "FRAMEWORK_IMPORT_FIXTURE_ELIGIBLE",
+      "schema": "QuantumFrameworkPackagePlan/v1",
+      "source_anchors": [
+        "https://docs.quantinuum.com/tket/api-docs/install.html",
+        "https://docs.quantinuum.com/tket/api-docs/getting_started.html"
+      ]
+    },
+    {
+      "cloud_credentials_required_for_import_fixture": false,
+      "cloud_credentials_required_for_live_provider_fixture": false,
+      "distribution": "pytket-qir",
+      "first_framework_import_fixture": "Convert a local pytket circuit to QIR and bind QIR hash to the framework-import fixture.",
+      "import_targets": [
+        "pytket.extensions.qir"
+      ],
+      "install_command": "python -m pip install pytket-qir",
+      "install_now": false,
+      "notes": [],
+      "pin_policy": "RESOLVE_IN_ISOLATED_ENV_THEN_FREEZE_WITH_HASHES",
+      "plan_hash": "f14ef467bb21c939c59ff30ea935fab06ab7936833464f15640bd7e82be11462",
+      "promotion_state_after_install": "FRAMEWORK_IMPORT_FIXTURE_ELIGIBLE",
+      "schema": "QuantumFrameworkPackagePlan/v1",
+      "source_anchors": [
+        "https://docs.quantinuum.com/tket/extensions/pytket-qir/"
+      ]
+    },
+    {
+      "cloud_credentials_required_for_import_fixture": false,
+      "cloud_credentials_required_for_live_provider_fixture": false,
+      "distribution": "cudaq",
+      "first_framework_import_fixture": "Import CUDA-Q and run a CPU/local simulator fixture if available; GPU acceleration must be separately detected.",
+      "import_targets": [
+        "cudaq"
+      ],
+      "install_command": "python -m pip install cudaq",
+      "install_now": false,
+      "notes": [
+        "Do not assume GPU acceleration from package import."
+      ],
+      "pin_policy": "RESOLVE_IN_ISOLATED_ENV_THEN_FREEZE_WITH_HASHES",
+      "plan_hash": "d96d4bf6b39e28c1fe0836ab33405b60f2f282cceb4f46c910c31d1e2763a947",
+      "promotion_state_after_install": "FRAMEWORK_IMPORT_FIXTURE_ELIGIBLE",
+      "schema": "QuantumFrameworkPackagePlan/v1",
+      "source_anchors": [
+        "https://nvidia.github.io/cuda-quantum/latest/using/quick_start.html",
+        "https://developer.nvidia.com/cuda-q"
+      ]
+    },
+    {
+      "cloud_credentials_required_for_import_fixture": false,
+      "cloud_credentials_required_for_live_provider_fixture": false,
+      "distribution": "opentelemetry-api",
+      "first_framework_import_fixture": "Map local tool/action spans to Telos ActionReceipt/v1; API-only spans remain non-recording without SDK/exporter.",
+      "import_targets": [
+        "opentelemetry",
+        "opentelemetry.trace"
+      ],
+      "install_command": "python -m pip install opentelemetry-api",
+      "install_now": false,
+      "notes": [],
+      "pin_policy": "RESOLVE_IN_ISOLATED_ENV_THEN_FREEZE_WITH_HASHES",
+      "plan_hash": "e4f4efd68110a915d069af401af431c21f9316e9f3225a5c9ad0624f1853d2b1",
+      "promotion_state_after_install": "FRAMEWORK_IMPORT_FIXTURE_ELIGIBLE",
+      "schema": "QuantumFrameworkPackagePlan/v1",
+      "source_anchors": [
+        "https://opentelemetry.io/docs/languages/python/",
+        "https://opentelemetry-python.readthedocs.io/en/latest/api/trace.html"
+      ]
+    },
+    {
+      "cloud_credentials_required_for_import_fixture": false,
+      "cloud_credentials_required_for_live_provider_fixture": false,
+      "distribution": "opentelemetry-sdk",
+      "first_framework_import_fixture": "Create a local in-memory recording span fixture with resource and attribute receipts.",
+      "import_targets": [
+        "opentelemetry.sdk"
+      ],
+      "install_command": "python -m pip install opentelemetry-sdk",
+      "install_now": false,
+      "notes": [
+        "Separate from opentelemetry-api; not present in pass 0020 audit."
+      ],
+      "pin_policy": "RESOLVE_IN_ISOLATED_ENV_THEN_FREEZE_WITH_HASHES",
+      "plan_hash": "1b77e3d375f383cdfb251f276ea112bb382dcfa3d15e967b1a66a49d22524ba8",
+      "promotion_state_after_install": "FRAMEWORK_IMPORT_FIXTURE_ELIGIBLE",
+      "schema": "QuantumFrameworkPackagePlan/v1",
+      "source_anchors": [
+        "https://opentelemetry.io/docs/languages/python/",
+        "https://opentelemetry.io/docs/languages/python/instrumentation/"
+      ]
+    }
+  ],
+  "pass": "0021",
+  "promotion_gates": [
+    "ISOLATED_ENVIRONMENT_REQUIRED",
+    "RESOLVE_AND_FREEZE_WITH_HASHES_REQUIRED",
+    "NO_CLOUD_CREDENTIALS_FOR_FRAMEWORK_IMPORT_FIXTURES",
+    "NO_CLOUD_PROVIDER_EXECUTION_WITHOUT_LIVE_PROVIDER_RECEIPT",
+    "SDK_IMPORT_DOES_NOT_PROVE_PROVIDER_EXECUTION",
+    "OTEL_API_NONRECORDING_SPAN_DOES_NOT_PROVE_EXPORTED_TRACE",
+    "BUILD_RUNTIME_RECEIPTS_REQUIRED_FOR_BUILDLANG_PROMOTION",
+    "MEASURED_OUTPUT_RECEIPTS_REQUIRED_FOR_COLOR_RENDERING_PROMOTION"
+  ],
+  "quantum_proof_demo_contract": {
+    "packet_layers": [
+      "source_anchor_receipts",
+      "workspace_context_receipt",
+      "framework_import_receipt",
+      "circuit_or_program_receipt",
+      "canonical_result_receipt",
+      "negative_fixture_receipts",
+      "otel_action_bridge_receipt",
+      "crucible_verdict_receipt"
+    ],
+    "public_demo_scope": "local framework import and simulator/result canonicalization only until live-provider receipts exist",
+    "schema": "QuantumProofDemoContract/v1",
+    "shared_runtime_extension": "same packet layers can wrap BuildLang/buildc numeric kernels and Build Color measurement kernels"
+  },
+  "schema": "QuantumFrameworkEnvironmentPlanSet/v1",
+  "seal": "1ce3a1aaab7392d4a825564415a76e71a4f8b59c2a954dbb794d4ffe7e67cb1f",
+  "source_anchor_count": 15,
+  "source_anchors": [
+    {
+      "source": "IBM Quantum install Qiskit",
+      "url": "https://quantum.cloud.ibm.com/docs/guides/install-qiskit"
+    },
+    {
+      "source": "IBM Quantum install Qiskit Runtime",
+      "url": "https://quantum.cloud.ibm.com/docs/guides/install-qiskit-runtime"
+    },
+    {
+      "source": "Amazon Braket Python SDK docs",
+      "url": "https://amazon-braket-sdk-python.readthedocs.io/"
+    },
+    {
+      "source": "Amazon Braket getting started",
+      "url": "https://aws.amazon.com/braket/getting-started/"
+    },
+    {
+      "source": "Cirq install docs",
+      "url": "https://quantumai.google/cirq/start/install"
+    },
+    {
+      "source": "PennyLane install",
+      "url": "https://pennylane.ai/install"
+    },
+    {
+      "source": "PennyLane installation dependencies",
+      "url": "https://docs.pennylane.ai/en/stable/development/guide/installation.html"
+    },
+    {
+      "source": "PyQIR documentation",
+      "url": "https://www.qir-alliance.org/pyqir/"
+    },
+    {
+      "source": "pytket install docs",
+      "url": "https://docs.quantinuum.com/tket/api-docs/install.html"
+    },
+    {
+      "source": "pytket QIR extension docs",
+      "url": "https://docs.quantinuum.com/tket/extensions/pytket-qir/"
+    },
+    {
+      "source": "NVIDIA CUDA-Q quick start",
+      "url": "https://nvidia.github.io/cuda-quantum/latest/using/quick_start.html"
+    },
+    {
+      "source": "pip install docs",
+      "url": "https://pip.pypa.io/en/stable/cli/pip_install/"
+    },
+    {
+      "source": "OpenTelemetry Python docs",
+      "url": "https://opentelemetry.io/docs/languages/python/"
+    },
+    {
+      "source": "OpenTelemetry trace API docs",
+      "url": "https://opentelemetry-python.readthedocs.io/en/latest/api/trace.html"
+    },
+    {
+      "source": "OpenTelemetry trace API spec",
+      "url": "https://opentelemetry.io/docs/specs/otel/trace/api/"
+    }
+  ],
+  "status": "ENVIRONMENT_PLAN_AND_OTEL_BRIDGE_MATCH"
+}

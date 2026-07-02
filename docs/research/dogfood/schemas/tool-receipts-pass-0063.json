@@ -1,0 +1,112 @@
+{
+  "schema": "DogfoodToolReceipts/v1",
+  "pass": "0063",
+  "generated_on": "2026-07-01",
+  "status": "MATCH_WITH_FORUM_ROUTE_ESCALATION_FINDING",
+  "index": {
+    "tool_version": "2.8.0",
+    "status": "MATCH",
+    "role": "structure-context",
+    "current_status": "2.8.0 workspace atlas, certificates, freshness, benchmarking, selection-aware context envelopes, and MCP parity"
+  },
+  "gather": {
+    "status": "MATCH",
+    "doctor": "MATCH",
+    "docs_packet": {
+      "path": "docs/research/dogfood/packets/073-frontier-problem-to-proof-opportunity-map.md",
+      "sha256": "2cada8190944c4e288434564f86c4fef689463f230771438164a18f56e274f26",
+      "seal": "14623a9373cbee0ac761fa0b5b72645ccbb18e9d70fe0c2cbd6dba1795fe2839",
+      "verified": true
+    }
+  },
+  "forum": {
+    "status": {
+      "entries": 17,
+      "checkpoint": "6c3f18bbb2062abc67161322883da81b5b3f16fa4108d57b5fd11950071d0f49"
+    },
+    "verify": {
+      "chain": true,
+      "deep": true
+    },
+    "route_observation": {
+      "request": "Pass 0063 cross-domain frontier problem-to-proof opportunity map",
+      "decided": null,
+      "confidence": 0.0,
+      "needs_escalation": true,
+      "finding": "The broad prompt spanning AI4Science, compiler systems, rendering, market strategy, and proof packets did not cleanly route to one Forum lane."
+    }
+  },
+  "crucible": {
+    "run_status": "MATCH",
+    "thesis_id": "17f2c8bdddee9a9e",
+    "thesis_seal": "17f2c8bdddee9a9ed1e5260d44402715641d29f37697791f91c131a5ffab19c6",
+    "assessment_seal": "462b056644b441032cd23367d0b094e71b3b2fd06cd0b4742786ae21e4330964",
+    "claims": 10,
+    "match": 10,
+    "drift": 0,
+    "unverifiable": 0,
+    "registry_stats_absolute_path": {
+      "theses": 51,
+      "claims": 426,
+      "unique_claims": 419,
+      "assessments": 52,
+      "latest_assessments": 51,
+      "invalid_latest_assessments": 0,
+      "match": 426,
+      "drift": 0,
+      "unverifiable": 0
+    },
+    "path_sensitivity_note": "A relative-path MCP registry stats call returned an empty registry; absolute path stats returned the expected dogfood registry."
+  },
+  "telos": {
+    "workflow_status": "MATCH",
+    "tool_version": "0.1.0",
+    "native": {
+      "index_repo_count": 1,
+      "index_dirty_count": 0,
+      "gather_receipts": 1,
+      "forum_decided": "project-telos",
+      "forum_needs_escalation": false,
+      "crucible_match": 1,
+      "crucible_drift": 0,
+      "crucible_unverifiable": 1,
+      "telos_demo_recheck": true
+    }
+  },
+  "shell": {
+    "commands": [
+      {
+        "command": "python docs\\research\\dogfood\\tools\\test_frontier_problem_to_proof_opportunity_map.py",
+        "status": "MATCH"
+      },
+      {
+        "command": "python docs\\research\\dogfood\\tools\\probe_frontier_problem_to_proof_opportunity_map.py",
+        "status": "MATCH"
+      },
+      {
+        "command": "python docs\\research\\dogfood\\tools\\validate_pass_0063_frontier_problem_to_proof_opportunity_map.py",
+        "status": "MATCH"
+      },
+      {
+        "command": "crucible run docs\\research\\dogfood\\crucible\\pass-0063-thesis.json --measurements docs\\research\\dogfood\\crucible\\pass-0063-measurements.json --registry docs\\research\\dogfood\\crucible\\registry --report docs\\research\\dogfood\\crucible\\pass-0063-report.md --out docs\\research\\dogfood\\crucible\\pass-0063-run.json --json",
+        "status": "MATCH"
+      }
+    ],
+    "line_counts": {
+      "compose_frontier_problem_to_proof_opportunity_map.py": 267,
+      "probe_frontier_problem_to_proof_opportunity_map.py": 178,
+      "test_frontier_problem_to_proof_opportunity_map.py": 91,
+      "validate_pass_0063_frontier_problem_to_proof_opportunity_map.py": 108
+    },
+    "sha256": {
+      "compose_frontier_problem_to_proof_opportunity_map.py": "33836b262a3dada95d8d42f3b4d134cfc755e23dbeaed12b2e7f447dab9281aa",
+      "probe_frontier_problem_to_proof_opportunity_map.py": "4df843895ce0689bcf3cae73714e1d574ad948b96a07ea09f49e1c0aa7334061",
+      "test_frontier_problem_to_proof_opportunity_map.py": "2926801f5f7c568cebaf77fcd5b2212966ba3626ad237303eba742ac50782c4b",
+      "validate_pass_0063_frontier_problem_to_proof_opportunity_map.py": "569672c20ebc650e2ed28d18ba8ead6dd448d8a117b10ae3b03e8a62bf8b51d7",
+      "frontier-problem-to-proof-opportunity-map-pass-0063.json": "b4beb591b59402550d7ab9deef7b779710101e294d5de557ecd60dd9dce6fdcd",
+      "073-frontier-problem-to-proof-opportunity-map.md": "2cada8190944c4e288434564f86c4fef689463f230771438164a18f56e274f26",
+      "pass-0063-frontier-problem-to-proof-opportunity-map-steelman.md": "d6f58a48c4708a8d34e3458bf4030afe5f4dc9be86ce9fda6d85bf85696cb633",
+      "pass-0063-run.json": "81e8d570fb80b1ac5d32491643d6da4407397be92ceb52283a0a53d8f8b32d0b"
+    }
+  }
+}

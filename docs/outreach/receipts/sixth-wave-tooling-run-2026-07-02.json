@@ -1,0 +1,288 @@
+{
+  "ok": true,
+  "thesis": {
+    "id": "b179e20f59073633",
+    "title": "Project Telos Sixth-Wave Live OSS Scout Claims",
+    "registered_at": 1782984870.3888874,
+    "disposition": "fenced",
+    "seal": "b179e20f590736334d0fb1786d92f50da5d5ae7792cd004801e721fb9a76aba7",
+    "claims": [
+      {
+        "id": "a46bd4867a51bb15",
+        "sha256": "a46bd4867a51bb152e232af885ac9a811ceb25cabe48a47b4f5704036406cae1"
+      },
+      {
+        "id": "315f880748b2e3fa",
+        "sha256": "315f880748b2e3fae6e716eadfddfb88cc5e87aa86b3e17207c004d282fa2ffe"
+      },
+      {
+        "id": "fb5b13e3d44e8e88",
+        "sha256": "fb5b13e3d44e8e88374cfe5d55f5eb19abba493fd641b64301e4bf2665f3a007"
+      },
+      {
+        "id": "fb025ae456d1dd7e",
+        "sha256": "fb025ae456d1dd7ec1a7c38e154929cc6b851caa1976cc1f006acd593f808fbe"
+      },
+      {
+        "id": "84144119c9cc2215",
+        "sha256": "84144119c9cc22157805156b016089f94378870d4bbee72748a675f7a4620546"
+      }
+    ]
+  },
+  "refutations": [
+    {
+      "claim_id": "a46bd4867a51bb15",
+      "claim_sha256": "a46bd4867a51bb152e232af885ac9a811ceb25cabe48a47b4f5704036406cae1",
+      "challenge": "test the stated falsification: The live scout output is missing, has the wrong schema, is not MATCH, or does not contain three candidates.",
+      "measurable": "The live scout output is missing, has the wrong schema, is not MATCH, or does not contain three candidates.",
+      "source": "null"
+    },
+    {
+      "claim_id": "315f880748b2e3fa",
+      "claim_sha256": "315f880748b2e3fae6e716eadfddfb88cc5e87aa86b3e17207c004d282fa2ffe",
+      "challenge": "test the stated falsification: The generated top-candidate packet names a different candidate, has a different priority, or records a different updated_at value.",
+      "measurable": "The generated top-candidate packet names a different candidate, has a different priority, or records a different updated_at value.",
+      "source": "null"
+    },
+    {
+      "claim_id": "fb5b13e3d44e8e88",
+      "claim_sha256": "fb5b13e3d44e8e88374cfe5d55f5eb19abba493fd641b64301e4bf2665f3a007",
+      "challenge": "test the stated falsification: The generated live packet is PR-ready, chooses open-pr, carries MATCH, or omits blockers for missing reproduction, missing passing tests, non-MATCH verifier verdict, or missing patch summary.",
+      "measurable": "The generated live packet is PR-ready, chooses open-pr, carries MATCH, or omits blockers for missing reproduction, missing passing tests, non-MATCH verifier verdict, or missing patch summary.",
+      "source": "null"
+    },
+    {
+      "claim_id": "fb025ae456d1dd7e",
+      "claim_sha256": "fb025ae456d1dd7ec1a7c38e154929cc6b851caa1976cc1f006acd593f808fbe",
+      "challenge": "test the stated falsification: The demo document claims source inspection, tests, maintainer contact, or PR readiness from the live scout alone.",
+      "measurable": "The demo document claims source inspection, tests, maintainer contact, or PR readiness from the live scout alone.",
+      "source": "null"
+    },
+    {
+      "claim_id": "84144119c9cc2215",
+      "claim_sha256": "84144119c9cc22157805156b016089f94378870d4bbee72748a675f7a4620546",
+      "challenge": "test the stated falsification: The content queue omits the live scout, omits the blocked packet, or suggests posting an upstream PR claim before local reproduction.",
+      "measurable": "The content queue omits the live scout, omits the blocked packet, or suggests posting an upstream PR claim before local reproduction.",
+      "source": "null"
+    }
+  ],
+  "assessment": {
+    "started_at": 1782984870.3979769,
+    "thesis_id": "b179e20f59073633",
+    "thesis_seal": "b179e20f590736334d0fb1786d92f50da5d5ae7792cd004801e721fb9a76aba7",
+    "claims": 5,
+    "match": 5,
+    "drift": 0,
+    "unverifiable": 0,
+    "verdict_seal": "8a27e077f85a0e1425ab67e934204de61833a6b79ae4324bc49b64e2f058682d",
+    "measurement_seal": "733d005703ff25bb6bf32c4c0b420e333cf4194e0477ca722481449542466728",
+    "disposition": "fenced",
+    "stored": null,
+    "verdicts": [
+      {
+        "claim_id": "a46bd4867a51bb15",
+        "claim_sha256": "a46bd4867a51bb152e232af885ac9a811ceb25cabe48a47b4f5704036406cae1",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "live-scout-command-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "315f880748b2e3fa",
+        "claim_sha256": "315f880748b2e3fae6e716eadfddfb88cc5e87aa86b3e17207c004d282fa2ffe",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "top-candidate-command-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "fb5b13e3d44e8e88",
+        "claim_sha256": "fb5b13e3d44e8e88374cfe5d55f5eb19abba493fd641b64301e4bf2665f3a007",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "blocked-live-packet-command-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "fb025ae456d1dd7e",
+        "claim_sha256": "fb025ae456d1dd7ec1a7c38e154929cc6b851caa1976cc1f006acd593f808fbe",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "document-boundary-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "84144119c9cc2215",
+        "claim_sha256": "84144119c9cc22157805156b016089f94378870d4bbee72748a675f7a4620546",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "document-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      }
+    ],
+    "measurements": [
+      {
+        "claim_id": "a46bd4867a51bb15",
+        "claim_sha256": "a46bd4867a51bb152e232af885ac9a811ceb25cabe48a47b4f5704036406cae1",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "live-scout-command-review",
+        "measured_at": 1782984870.3979769,
+        "evidence": [
+          "docs/outreach/receipts/sixth-wave/oss-showcase-live-scout/scout.json has schema project-telos.oss-scout/v1",
+          "live scout status is MATCH",
+          "live scout candidate count is 3"
+        ]
+      },
+      {
+        "claim_id": "315f880748b2e3fa",
+        "claim_sha256": "315f880748b2e3fae6e716eadfddfb88cc5e87aa86b3e17207c004d282fa2ffe",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "top-candidate-command-review",
+        "measured_at": 1782984870.3979769,
+        "evidence": [
+          "docs/outreach/receipts/sixth-wave/oss-showcase-live-top-candidate.json repository is pandas-dev/pandas",
+          "top candidate issue number is 63458",
+          "top candidate priority is 60",
+          "top candidate updated_at is 2026-06-27T23:25:33Z"
+        ]
+      },
+      {
+        "claim_id": "fb5b13e3d44e8e88",
+        "claim_sha256": "fb5b13e3d44e8e88374cfe5d55f5eb19abba493fd641b64301e4bf2665f3a007",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "blocked-live-packet-command-review",
+        "measured_at": 1782984870.3979769,
+        "evidence": [
+          "docs/outreach/receipts/sixth-wave/oss-showcase-live-blocked-packet.json has schema project-telos.oss-pr-readiness/v1",
+          "blocked live packet pr_ready is false",
+          "blocked live packet operator_next_action is revise",
+          "blocked live packet verdict is UNVERIFIABLE",
+          "blocked live packet blockers include missing reproduction command, missing passing test evidence, crucible verdict is not MATCH, and missing patch summary"
+        ]
+      },
+      {
+        "claim_id": "fb025ae456d1dd7e",
+        "claim_sha256": "fb025ae456d1dd7ec1a7c38e154929cc6b851caa1976cc1f006acd593f808fbe",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "document-boundary-review",
+        "measured_at": 1782984870.3979769,
+        "evidence": [
+          "docs/outreach/SIXTH-WAVE-LIVE-OSS-SCOUT-2026-07-02.md states the live scout does not clone pandas, inspect source, run tests, or contact maintainers",
+          "same doc states the blocked packet is the desired current state because live intake has not become PR-ready",
+          "Do Not Post section says not to claim a fix, ease, maintainer interest, or PR readiness"
+        ]
+      },
+      {
+        "claim_id": "84144119c9cc2215",
+        "claim_sha256": "84144119c9cc22157805156b016089f94378870d4bbee72748a675f7a4620546",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "document-review",
+        "measured_at": 1782984870.3979769,
+        "evidence": [
+          "Post 35 cites the live scout",
+          "Post 36 cites the top candidate, blocked evidence, and blocked packet",
+          "Operating rule says the next useful demo is a local reproduction packet, not a public upstream claim"
+        ]
+      }
+    ],
+    "seal": "46c6d8202712274d9322dc1561b9161750d462ca02b283cf983e539b15689037"
+  },
+  "verdicts": [
+    {
+      "claim_id": "a46bd4867a51bb15",
+      "claim_sha256": "a46bd4867a51bb152e232af885ac9a811ceb25cabe48a47b4f5704036406cae1",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "live-scout-command-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "315f880748b2e3fa",
+      "claim_sha256": "315f880748b2e3fae6e716eadfddfb88cc5e87aa86b3e17207c004d282fa2ffe",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "top-candidate-command-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "fb5b13e3d44e8e88",
+      "claim_sha256": "fb5b13e3d44e8e88374cfe5d55f5eb19abba493fd641b64301e4bf2665f3a007",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "blocked-live-packet-command-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "fb025ae456d1dd7e",
+      "claim_sha256": "fb025ae456d1dd7ec1a7c38e154929cc6b851caa1976cc1f006acd593f808fbe",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "document-boundary-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "84144119c9cc2215",
+      "claim_sha256": "84144119c9cc22157805156b016089f94378870d4bbee72748a675f7a4620546",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "document-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    }
+  ],
+  "measurement_warnings": [],
+  "checks": {
+    "seals_ok": true,
+    "thesis_ok": true,
+    "verdicts_rederive": true
+  },
+  "report": "docs\\outreach\\receipts\\sixth-wave-tooling-report-2026-07-02.md",
+  "record": "docs\\outreach\\receipts\\sixth-wave-tooling-run-2026-07-02.json",
+  "bundle": null,
+  "spec": null,
+  "review": null,
+  "verifier": {
+    "mode": "cleanroom",
+    "inputs": [],
+    "excluded": [
+      "worker context",
+      "reasoning trace",
+      "intermediate steps"
+    ],
+    "checkability": "If success cannot be evaluated from the original spec and the artifact, the spec is not checkable yet."
+  }
+}

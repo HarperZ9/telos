@@ -1,0 +1,93 @@
+# Parallel Codex Handoff
+
+Date: 2026-07-02
+
+Recipient: parallel Codex posting/session operator.
+
+Objective: continuously post accurate Project Telos visibility content while this session keeps assessing the tooling, packaging demos, and producing grounded content.
+
+## Current Source Of Truth
+
+Start from these files:
+
+- `docs/TOOLING-SHAPE-ASSESSMENT-2026-07-02.md`
+- `docs/outreach/DEMO-PACKAGES-2026-07-02.md`
+- `docs/outreach/OUTREACH-PACKAGES-2026-07-02.md`
+- `docs/outreach/VISIBILITY-CONTENT-QUEUE-2026-07-02.md`
+- `docs/CURRENT-STATE.md`
+- `docs/PROJECT-TELOS-MASTER-PLAN-2026-07-02.md`
+- `docs/PROJECT-TELOS-MASTER-PLAN-ROADMAP-2026-07-02.md`
+
+## Current Verified Claims
+
+- Gather is installed as `1.5.0`; status and doctor are `MATCH`.
+- Index is installed as `2.8.0`; status and doctor are `MATCH`.
+- Forum is installed as `1.12.0`; status and doctor are `MATCH`.
+- Crucible is installed as `1.1.0`; status and doctor are `MATCH`.
+- Telos catalog now reports 70 total tools and 70 available tools.
+- Telos manifest now reports 70 expected MCP tools.
+- Source-checkout MCP launch parity passes.
+- Compatibility doctor reports 14/14 checks and `MATCH`.
+- Operator doctor reports 14/14 checks and `MATCH`.
+
+## Current Boundaries
+
+- `learn` is repo-available at `C:\dev\public\learn`, but not on PATH in this shell.
+- `buildc` and `buildlang` are repo-available through `C:\dev\public\pubscan\quantalang`, but not on PATH in this shell.
+- `emet` is repo-available at `C:\dev\public\pubscan\emet`; the PATH wrapper fails with `ModuleNotFoundError: No module named 'warden_shell'`.
+- Build Universe is alpha and explicitly does not compile as a whole.
+- The current research corpus packages source admission and verification scaffolds; it does not prove new laws of physics or solved frontier science.
+
+## Post First
+
+Post the MCP drift/freshness story first.
+
+Command evidence:
+
+```powershell
+npm.cmd run catalog
+npm.cmd run manifest
+node demo/compatibility-doctor.mjs --summary
+node demo/operator-doctor.mjs --summary
+node --test demo/telos-mcp.test.mjs demo/mcp-server-launch.test.mjs
+```
+
+Suggested post:
+
+> MCP drift is a real failure mode. A host can load a stale server while source and tests are current. Telos now checks the tool surface itself: catalog, manifest, source-checkout launch, compatibility doctor, and operator doctor. Current local result: 70 tools, 70 available, launch parity passing.
+
+## Then Post
+
+1. Five-flagship loop: Gather, Index, Forum, Crucible, Telos.
+2. Source federation pass 0151.
+3. Agent action proof packet.
+4. Learn as receipt-backed study loop.
+5. BuildLang/buildc as accountable scientific runtime.
+6. Build Color as visible measurement domain.
+7. Emet as external witness.
+
+## Never Post Without Rechecking
+
+Before posting any number, version, count, or pass/fail claim, rerun the command or cite a file that was read in that posting session.
+
+Do not post:
+
+- "Build Universe compiles as a whole."
+- "BuildLang has fully sound linear types."
+- "Telos solved frontier science."
+- "Emet says trusted."
+- "Learn completes graded work for the learner."
+- "All tools are installed on PATH."
+
+## Feedback Loop To This Session
+
+For each post, record:
+
+- Platform.
+- Timestamp.
+- Exact text.
+- Evidence file or command.
+- Any replies/questions.
+- Any claim that needs a stronger demo.
+
+Return those notes as a Forum ledger capsule or a plain Markdown packet so this session can turn replies into the next demo package.

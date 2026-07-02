@@ -1,0 +1,276 @@
+{
+  "schema": "SAIRMathResearchInfrastructureSourceLeadReceipt/v1",
+  "pass": "0136",
+  "generated_on": "2026-07-02",
+  "status": "SAIR_MATH_RESEARCH_INFRASTRUCTURE_SOURCE_LEADS_MATCH",
+  "boundary": "This pass treats SAIR, its competitions, its YouTube channel, and related public repositories as source leads for math and AI research infrastructure. It does not claim that Telos, BuildLang/buildc, SAIR, or any model has solved a theorem, produced a verified competition result, or proven market demand.",
+  "source_store": "docs\\research\\dogfood\\gather\\pass-0136-sair-source-leads",
+  "gather_summary": {
+    "source_count": 13,
+    "usable_body_count": 7,
+    "empty_capture_count": 6,
+    "distinct_body_count": 8,
+    "video_metadata_count": 1,
+    "video_transcript_count": 1,
+    "github_body_count": 3
+  },
+  "source_receipts": [
+    {
+      "ref": "https://sair.foundation/",
+      "title": "The Foundation for Science and AI Research (SAIR)",
+      "kind": "webpage",
+      "method": "http-get",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "quality": "EMPTY_CAPTURE_WITH_WEB_OBSERVATION"
+    },
+    {
+      "ref": "https://www.youtube.com/@SAIRfoundation/videos",
+      "title": "SAIR - YouTube",
+      "kind": "webpage",
+      "method": "http-get",
+      "sha256": "d61a7a5790bfd9f4027fb5e0ee11800aaef50b03b200fafd7867f7dfcadf5fc7",
+      "quality": "CHANNEL_PAGE_RECEIPT"
+    },
+    {
+      "ref": "nbZA4N7BDCU",
+      "title": "Terence Tao: What's Next for SAIR Competitions",
+      "kind": "metadata",
+      "method": "yt-dlp",
+      "sha256": "bee289f795233742e65f60df828cb48867792ddfab6eb30904c7ffb4602f524a",
+      "quality": "VIDEO_METADATA_RECEIPT"
+    },
+    {
+      "ref": "nbZA4N7BDCU",
+      "title": "Terence Tao: What's Next for SAIR Competitions",
+      "kind": "transcript",
+      "method": "auto-caption",
+      "sha256": "889da192722561cf8b70c123bf2e232f77a50f901b7fa34bcc1b841264692831",
+      "quality": "AUTO_CAPTION_SOURCE_LEAD"
+    },
+    {
+      "ref": "https://competition.sair.foundation/",
+      "title": "The Foundation for Science and AI Research (SAIR)",
+      "kind": "webpage",
+      "method": "http-get",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "quality": "EMPTY_CAPTURE_WITH_WEB_OBSERVATION"
+    },
+    {
+      "ref": "https://blog.sair.foundation/",
+      "title": "SAIR Blog - Science, AI, and the Future of Discovery",
+      "kind": "webpage",
+      "method": "http-get",
+      "sha256": "9675822ea5736f2461174f018e5f4bc6b0fde822cb20bfbfe04264a27a41a174",
+      "quality": "USABLE_WEB_BODY"
+    },
+    {
+      "ref": "https://competition.sair.foundation/competitions/igp24/overview",
+      "title": "Inverse Galois Problem (IGP24) | SAIR Foundation",
+      "kind": "webpage",
+      "method": "http-get",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "quality": "EMPTY_CAPTURE_WITH_SEARCH_OBSERVATION"
+    },
+    {
+      "ref": "https://competition.sair.foundation/competitions/modular-arithmetic-challenge/overview",
+      "title": "Modular Arithmetic Challenge | SAIR Foundation",
+      "kind": "webpage",
+      "method": "http-get",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "quality": "EMPTY_CAPTURE_WITH_SEARCH_OBSERVATION"
+    },
+    {
+      "ref": "https://competition.sair.foundation/competitions/mathematics-distillation-challenge-equational-theories-stage1/overview",
+      "title": "Mathematics Distillation Challenge - Equational Theories - Stage1 | SAIR Foundation",
+      "kind": "webpage",
+      "method": "http-get",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "quality": "EMPTY_CAPTURE_WITH_SEARCH_OBSERVATION"
+    },
+    {
+      "ref": "https://competition.sair.foundation/competitions/mathematics-distillation-challenge-equational-theories-stage2/overview",
+      "title": "Mathematics Distillation Challenge - Equational Theories - Stage2 | SAIR Foundation",
+      "kind": "webpage",
+      "method": "http-get",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "quality": "EMPTY_CAPTURE_WITH_SEARCH_OBSERVATION"
+    },
+    {
+      "ref": "https://github.com/SAIRcompetition/equational-theories-stage1-judge",
+      "title": "SAIRcompetition/equational-theories-stage1-judge",
+      "kind": "webpage",
+      "method": "http-get",
+      "sha256": "12a76386ee563c59ae4f3fce59df5b100e970e08d72cec0594e6e8dd17ae1083",
+      "quality": "USABLE_GITHUB_BODY"
+    },
+    {
+      "ref": "https://github.com/SAIRcompetition/equational-theories-lean-stage2",
+      "title": "SAIRcompetition/equational-theories-lean-stage2",
+      "kind": "webpage",
+      "method": "http-get",
+      "sha256": "5efa488d9f0596912eed46a4090b8820cfdf9de5f674d1f85bb4f9460c483aae",
+      "quality": "USABLE_GITHUB_BODY"
+    },
+    {
+      "ref": "https://github.com/teorth/equational_theories",
+      "title": "teorth/equational_theories",
+      "kind": "webpage",
+      "method": "http-get",
+      "sha256": "7b981e83748a866d0e9ec02ca2e1d5146adb1c420b9cbe04c465dac648988eda",
+      "quality": "USABLE_GITHUB_BODY"
+    }
+  ],
+  "observations": [
+    {
+      "id": "sair_mission",
+      "source_refs": ["https://sair.foundation/"],
+      "claim": "SAIR positions itself around connecting scientific research, AI, enterprise collaboration, compute/tools, and discovery infrastructure.",
+      "evidence_status": "OFFICIAL_PAGE_WEB_OBSERVED",
+      "promotion_status": "SOURCE_LEAD"
+    },
+    {
+      "id": "competition_surface",
+      "source_refs": ["https://competition.sair.foundation/"],
+      "claim": "SAIR presents competitions as open mathematical and AI discovery challenges.",
+      "evidence_status": "OFFICIAL_PAGE_WEB_OBSERVED",
+      "promotion_status": "SOURCE_LEAD"
+    },
+    {
+      "id": "video_infrastructure_theme",
+      "source_refs": ["nbZA4N7BDCU"],
+      "claim": "The supplied Terence Tao video is source evidence for the idea that math and science need redesigned infrastructure for AI-era proof generation, verification, and result digestion.",
+      "evidence_status": "AUTO_CAPTION_SOURCE_LEAD",
+      "promotion_status": "SOURCE_LEAD"
+    },
+    {
+      "id": "stage1_judge_repo",
+      "source_refs": ["https://github.com/SAIRcompetition/equational-theories-stage1-judge"],
+      "claim": "The Stage 1 repository exposes a local evaluation toolkit for prompt-rendering, model calls, verdict extraction, and smoke testing for equation implication tasks.",
+      "evidence_status": "USABLE_GITHUB_BODY",
+      "promotion_status": "SOURCE_LEAD"
+    },
+    {
+      "id": "stage2_lean_repo",
+      "source_refs": ["https://github.com/SAIRcompetition/equational-theories-lean-stage2"],
+      "claim": "The Stage 2 repository is a lead for Lean 4 problem sets, judging tools, and submission harnesses that generate machine-checkable proof certificates.",
+      "evidence_status": "USABLE_GITHUB_BODY",
+      "promotion_status": "SOURCE_LEAD"
+    },
+    {
+      "id": "equational_theories_project",
+      "source_refs": ["https://github.com/teorth/equational_theories"],
+      "claim": "The upstream Equational Theories Project is a public source lead for a large equation-implication graph, Lean verification boundaries, conjecture tracking, and collaborative mathematical infrastructure.",
+      "evidence_status": "USABLE_GITHUB_BODY",
+      "promotion_status": "SOURCE_LEAD"
+    }
+  ],
+  "research_infrastructure_patterns": [
+    {
+      "pattern": "competition_to_proof_packet",
+      "description": "Turn competition statement, dataset, judge, model run, result, proof certificate, counterexample, and leaderboard record into one re-checkable packet.",
+      "telos_fit": "High. This is close to existing Gather -> Index -> Forum -> Crucible -> Telos proof-packet shape.",
+      "status": "HYPOTHESIS"
+    },
+    {
+      "pattern": "proof_indigestion_queue",
+      "description": "Treat AI-generated proof volume as an intake and triage problem, not only as a model-generation problem.",
+      "telos_fit": "High. Gather can capture, Index can map dependency/context, Forum can route, Crucible can verify, Telos can preserve receipts.",
+      "status": "HYPOTHESIS"
+    },
+    {
+      "pattern": "machine_checkable_certificate_bridge",
+      "description": "Bridge informal reasoning, model output, Lean proof, finite counterexample, and evaluator verdict as separate receipt layers.",
+      "telos_fit": "High. This should become a reusable proof-certificate adapter.",
+      "status": "HYPOTHESIS"
+    },
+    {
+      "pattern": "exact_reasoning_benchmark_adapter",
+      "description": "Use modular arithmetic and equation implication tasks as exact-reasoning stress tests for model foundry and BuildLang/buildc runtime claims.",
+      "telos_fit": "Medium-high. Requires runnable fixtures and no external API dependency for baseline tests.",
+      "status": "HYPOTHESIS"
+    },
+    {
+      "pattern": "mathematical_discovery_registry",
+      "description": "Represent open problems, submitted candidates, validated proofs, rejected proofs, and discovered counterexamples as a durable graph.",
+      "telos_fit": "High. This aligns with Index context graphs and Crucible verdict registries.",
+      "status": "HYPOTHESIS"
+    }
+  ],
+  "megatool_integration_map": [
+    {
+      "node": "Gather",
+      "role": "Capture competition pages, repositories, videos, transcripts, papers, datasets, and judge outputs with source-quality warnings.",
+      "upgrade_needed": "JS-rendered browser fallback and better empty-body diagnostics."
+    },
+    {
+      "node": "Index",
+      "role": "Map competition repositories, theorem/problem graphs, proof dependencies, and source references.",
+      "upgrade_needed": "Challenge-aware graph summaries and theorem/proof object source refs."
+    },
+    {
+      "node": "Forum",
+      "role": "Route challenges to math, formal methods, model foundry, compiler/runtime, or pedagogy lanes.",
+      "upgrade_needed": "Better routing confidence for cross-domain research programs."
+    },
+    {
+      "node": "Crucible",
+      "role": "Separate source leads, claimed results, proof certificates, counterexamples, and reproducible measurements.",
+      "upgrade_needed": "Lean proof/counterexample verifier adapters."
+    },
+    {
+      "node": "Telos",
+      "role": "Preserve proof-packet state, action receipts, loop ledgers, objective monitors, and promotion gates.",
+      "upgrade_needed": "Competition-to-proof-packet contract."
+    },
+    {
+      "node": "BuildLang/buildc",
+      "role": "Candidate exact-compute and proof-workbench language for contest harnesses, modular arithmetic kernels, finite algebra search, and reproducible runtime receipts.",
+      "upgrade_needed": "Runnable adapters against public SAIR-style tasks before any replacement claim is made."
+    },
+    {
+      "node": "Model Foundry",
+      "role": "Run local and hosted model baselines against exact-reasoning tasks under contamination and receipt gates.",
+      "upgrade_needed": "Pinned model/task/result packets and contamination checks."
+    }
+  ],
+  "negative_fixtures": [
+    {
+      "fixture_id": "video_as_theorem_result_rejected",
+      "reason": "A video or transcript can motivate infrastructure work but cannot establish a theorem result or model capability result.",
+      "status": "REJECTED"
+    },
+    {
+      "fixture_id": "empty_gather_body_as_source_body_rejected",
+      "reason": "An empty Gather body can prove URL receipt existence but not page content.",
+      "status": "REJECTED"
+    },
+    {
+      "fixture_id": "competition_page_as_leaderboard_result_rejected",
+      "reason": "Competition descriptions do not prove submitted result quality or current leaderboard state.",
+      "status": "REJECTED"
+    },
+    {
+      "fixture_id": "github_readme_as_mathematical_correctness_rejected",
+      "reason": "Repository documentation does not itself prove that judge code or submitted proofs are correct.",
+      "status": "REJECTED"
+    },
+    {
+      "fixture_id": "source_lead_as_market_demand_rejected",
+      "reason": "A compelling infrastructure pattern is not evidence of buyer urgency or willingness to pay.",
+      "status": "REJECTED"
+    },
+    {
+      "fixture_id": "buildlang_replacement_claim_rejected",
+      "reason": "BuildLang/buildc can be positioned as a candidate exact-compute workbench only after runnable contest adapters and receipts exist.",
+      "status": "REJECTED"
+    }
+  ],
+  "next_experiments": [
+    "Create a SAIR Stage 1 local fixture adapter that runs the public smoke-test path without external model calls.",
+    "Create a Lean-proof receipt schema that separates informal claim, Lean theorem file, finite counterexample artifact, judge result, and verifier command.",
+    "Build a BuildLang/buildc modular arithmetic microbenchmark with exact big-integer receipt fields.",
+    "Map the Equational Theories Project graph into Index source refs and Crucible claim/counterclaim rows.",
+    "Add a Gather browser fallback so SAIR and competition pages can be captured as usable bodies instead of empty static fetches."
+  ],
+  "current_promoted_results": []
+}

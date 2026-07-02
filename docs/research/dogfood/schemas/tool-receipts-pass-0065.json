@@ -1,0 +1,101 @@
+{
+  "schema": "DogfoodToolReceipts/v1",
+  "pass": "0065",
+  "generated_on": "2026-07-01",
+  "status": "MATCH_OTEL_TRACE_TO_ACTION_RECEIPT_FIXTURE",
+  "index": {
+    "tool_version": "2.8.0",
+    "status": "MATCH",
+    "role": "structure-context"
+  },
+  "gather": {
+    "docs_packet": {
+      "path": "docs/research/dogfood/packets/075-otel-trace-to-action-receipt-fixture.md",
+      "sha256": "99f2ff824ab1b7825084e3764d4d85ff97e94a0b0687a3030654c58892ca83b1",
+      "seal": "96fb1dd7a200af80e0b5dba8fab88e422d50975163ba20c601859e5b64b055df",
+      "verified": true
+    }
+  },
+  "forum": {
+    "status": {
+      "entries": 17,
+      "checkpoint": "6c3f18bbb2062abc67161322883da81b5b3f16fa4108d57b5fd11950071d0f49"
+    },
+    "verify": {
+      "chain": true,
+      "deep": true
+    }
+  },
+  "crucible": {
+    "run_status": "MATCH",
+    "thesis_id": "41af816e4556a37c",
+    "thesis_seal": "41af816e4556a37ce758700629eb2ea1b4998c0367b72a95c897d0aff0c261ab",
+    "assessment_seal": "cd383c2757ad996649a083b4ba516cf6cfb2aebabaef34bac87ecd612e1929e7",
+    "claims": 7,
+    "match": 7,
+    "drift": 0,
+    "unverifiable": 0,
+    "registry_stats": {
+      "theses": 53,
+      "claims": 441,
+      "unique_claims": 434,
+      "assessments": 54,
+      "latest_assessments": 53,
+      "invalid_latest_assessments": 0,
+      "match": 441,
+      "drift": 0,
+      "unverifiable": 0
+    }
+  },
+  "telos": {
+    "workflow_status": "MATCH",
+    "tool_version": "0.1.0",
+    "native": {
+      "index_repo_count": 1,
+      "index_dirty_count": 0,
+      "gather_receipts": 1,
+      "forum_decided": "project-telos",
+      "forum_needs_escalation": false,
+      "crucible_match": 1,
+      "crucible_drift": 0,
+      "crucible_unverifiable": 1,
+      "telos_demo_recheck": true
+    }
+  },
+  "shell": {
+    "commands": [
+      {
+        "command": "python docs\\research\\dogfood\\tools\\test_otel_trace_to_action_receipt_fixture.py",
+        "status": "MATCH"
+      },
+      {
+        "command": "python docs\\research\\dogfood\\tools\\probe_otel_trace_to_action_receipt_fixture.py",
+        "status": "MATCH"
+      },
+      {
+        "command": "python docs\\research\\dogfood\\tools\\validate_pass_0065_otel_trace_to_action_receipt_fixture.py",
+        "status": "MATCH"
+      },
+      {
+        "command": "crucible run docs\\research\\dogfood\\crucible\\pass-0065-thesis.json --measurements docs\\research\\dogfood\\crucible\\pass-0065-measurements.json --registry docs\\research\\dogfood\\crucible\\registry --report docs\\research\\dogfood\\crucible\\pass-0065-report.md --out docs\\research\\dogfood\\crucible\\pass-0065-run.json --json",
+        "status": "MATCH"
+      }
+    ],
+    "line_counts": {
+      "compose_otel_trace_to_action_receipt_fixture.py": 160,
+      "probe_otel_trace_to_action_receipt_fixture.py": 150,
+      "test_otel_trace_to_action_receipt_fixture.py": 62,
+      "validate_pass_0065_otel_trace_to_action_receipt_fixture.py": 90
+    },
+    "sha256": {
+      "compose_otel_trace_to_action_receipt_fixture.py": "c59debbd63f4355dfc01bad6919effa8086222e6cd94f7b09767fcb46dbe76f5",
+      "probe_otel_trace_to_action_receipt_fixture.py": "d6a01647638bd210a5e2b0497dcf1178cd6e994b55c1cf49ad5782f0377fa8e0",
+      "test_otel_trace_to_action_receipt_fixture.py": "be2c5e87b290efbf03ab393702f2a78bed7f58c390289ce0e7d05a4384013fca",
+      "validate_pass_0065_otel_trace_to_action_receipt_fixture.py": "a2596e4c085805a6f4e0c300998bc6a80181981f60b774b721ef4b65cfa1eafb",
+      "otel-trace-to-action-receipt-fixture-pass-0065.json": "798fb31522a117d97b84816fa84440e79e6ffe4c82425c3cb37f0ba596991d87",
+      "075-otel-trace-to-action-receipt-fixture.md": "99f2ff824ab1b7825084e3764d4d85ff97e94a0b0687a3030654c58892ca83b1",
+      "pass-0065-otel-trace-to-action-receipt-fixture-steelman.md": "e2e2feb46b77a203771d46316bd4aae61d264eb1dda9b692af13775f3019f2a2",
+      "pass-0065-run.json": "ca7a038557e82c93ac29ee5fb922232e78101065688332871d8f50999dde3a60"
+    }
+  }
+}

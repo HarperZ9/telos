@@ -1,0 +1,141 @@
+{
+  "schema": "project-telos.oss-scout/v1",
+  "captured_at": "2026-07-02T09:32:58.402Z",
+  "status": "MATCH",
+  "source": {
+    "kind": "github",
+    "query": "repo:pandas-dev/pandas is:issue is:open label:Bug pd.array masked array"
+  },
+  "candidates": [
+    {
+      "schema": "project-telos.oss-candidate/v1",
+      "captured_at": "2026-07-02T09:32:58.402Z",
+      "repository": {
+        "full_name": "pandas-dev/pandas",
+        "url": "https://github.com/pandas-dev/pandas",
+        "stars": 0,
+        "language": "unknown",
+        "open_issues": 0
+      },
+      "issue": {
+        "number": 63458,
+        "url": "https://github.com/pandas-dev/pandas/issues/63458",
+        "title": "BUG: 3.0rc0: comparing `StringArray`s with `==` yields a `bool[pyarrow]` array with no `.sum()` method",
+        "labels": [
+          "Bug",
+          "API - Consistency",
+          "Arrow"
+        ],
+        "comments_count": 11,
+        "updated_at": "2026-06-27T23:25:33Z"
+      },
+      "signals": {
+        "has_reproduction": true,
+        "has_expected_behavior": true,
+        "maintainer_invited_pr": false,
+        "likely_docs_only": true,
+        "requires_gpu_or_large_model": false,
+        "security_sensitive": false,
+        "ambiguous_expected_behavior": false
+      },
+      "score": {
+        "patchability": 60,
+        "showcase_value": 0,
+        "risk": 0,
+        "priority": 60,
+        "reasons": [
+          "has reproduction",
+          "has expected behavior",
+          "updated within 14 days"
+        ]
+      },
+      "next_actions": []
+    },
+    {
+      "schema": "project-telos.oss-candidate/v1",
+      "captured_at": "2026-07-02T09:32:58.402Z",
+      "repository": {
+        "full_name": "pandas-dev/pandas",
+        "url": "https://github.com/pandas-dev/pandas",
+        "stars": 0,
+        "language": "unknown",
+        "open_issues": 0
+      },
+      "issue": {
+        "number": 49056,
+        "url": "https://github.com/pandas-dev/pandas/issues/49056",
+        "title": "BUG?: 2D int64 block can't be cast to Int64",
+        "labels": [
+          "Bug",
+          "Dtype Conversions",
+          "NA - MaskedArrays"
+        ],
+        "comments_count": 4,
+        "updated_at": "2023-05-20T21:06:24Z"
+      },
+      "signals": {
+        "has_reproduction": true,
+        "has_expected_behavior": true,
+        "maintainer_invited_pr": false,
+        "likely_docs_only": true,
+        "requires_gpu_or_large_model": false,
+        "security_sensitive": false,
+        "ambiguous_expected_behavior": false
+      },
+      "score": {
+        "patchability": 50,
+        "showcase_value": 0,
+        "risk": 0,
+        "priority": 50,
+        "reasons": [
+          "has reproduction",
+          "has expected behavior"
+        ]
+      },
+      "next_actions": []
+    },
+    {
+      "schema": "project-telos.oss-candidate/v1",
+      "captured_at": "2026-07-02T09:32:58.402Z",
+      "repository": {
+        "full_name": "pandas-dev/pandas",
+        "url": "https://github.com/pandas-dev/pandas",
+        "stars": 0,
+        "language": "unknown",
+        "open_issues": 0
+      },
+      "issue": {
+        "number": 30188,
+        "url": "https://github.com/pandas-dev/pandas/issues/30188",
+        "title": "Maybe buggy nullable integer floor division by 0",
+        "labels": [
+          "Bug",
+          "Numeric Operations",
+          "ExtensionArray",
+          "NA - MaskedArrays"
+        ],
+        "comments_count": 23,
+        "updated_at": "2025-10-12T16:09:00Z"
+      },
+      "signals": {
+        "has_reproduction": false,
+        "has_expected_behavior": false,
+        "maintainer_invited_pr": false,
+        "likely_docs_only": false,
+        "requires_gpu_or_large_model": false,
+        "security_sensitive": false,
+        "ambiguous_expected_behavior": true
+      },
+      "score": {
+        "patchability": 0,
+        "showcase_value": 0,
+        "risk": 25,
+        "priority": 0,
+        "reasons": [
+          "ambiguous expected behavior"
+        ]
+      },
+      "next_actions": []
+    }
+  ]
+}

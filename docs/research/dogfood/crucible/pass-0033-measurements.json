@@ -1,0 +1,136 @@
+{
+  "measurements": [
+    {
+      "claim": "Pass 0033 created a LeanProvisioningBuildTimeoutContract/v1 artifact with status LEAN_PROVISIONING_MATCH_WITH_BUILD_TIMEOUT, source_remediation_sha256 fd35080a7d14c8be0fcb96cea88293d2ca106977080a4eeae687228ce77e3a62, timeout status TIMEOUT_TERMINATED, negative_fixture_count 10, and seal 8871fe5c59a75d81f24e6396a62d6cf484c7504d3304c695861c4b4799c16a9c.",
+      "deviation": 0.0,
+      "evidence": [
+        "schema=LeanProvisioningBuildTimeoutContract/v1",
+        "status=LEAN_PROVISIONING_MATCH_WITH_BUILD_TIMEOUT",
+        "source_remediation_sha256=fd35080a7d14c8be0fcb96cea88293d2ca106977080a4eeae687228ce77e3a62",
+        "timeout status=TIMEOUT_TERMINATED",
+        "negative_fixture_count=10",
+        "seal=8871fe5c59a75d81f24e6396a62d6cf484c7504d3304c695861c4b4799c16a9c"
+      ],
+      "method": "lean-provisioning-contract-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0033 records fixture fixtures/lean-provisioning-build-timeout-pass-0033.json with sha256 0fdac6d4a3e787b78c9bb11bbc19f089e87c1f3b694fde89ef8ec1a2c782dc91 and seal 253454846e935adc19ad0cb1ff251eaeef33d00b40dc00e0473f4644fa8adf7d.",
+      "deviation": 0.0,
+      "evidence": [
+        "fixture path=fixtures/lean-provisioning-build-timeout-pass-0033.json",
+        "fixture sha256=0fdac6d4a3e787b78c9bb11bbc19f089e87c1f3b694fde89ef8ec1a2c782dc91",
+        "fixture seal=253454846e935adc19ad0cb1ff251eaeef33d00b40dc00e0473f4644fa8adf7d"
+      ],
+      "method": "fixture-binding-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0033 release receipt records Elan release tag v4.2.3, asset elan-x86_64-pc-windows-msvc.zip, asset_sha256 be5e92a2dfdd8176099b2db0b810c27237c9054f1e5db1126f4f2a1134773b25, elan_init_sha256 175089915efc623126a1560ed517cd52ec2d4d09f2adc1c10f22f56568fed5ad, and installer flag --no-modify-path.",
+      "deviation": 0.0,
+      "evidence": [
+        "release_tag=v4.2.3",
+        "asset=elan-x86_64-pc-windows-msvc.zip",
+        "asset_sha256=be5e92a2dfdd8176099b2db0b810c27237c9054f1e5db1126f4f2a1134773b25",
+        "elan_init_sha256=175089915efc623126a1560ed517cd52ec2d4d09f2adc1c10f22f56568fed5ad",
+        "installer_help.no_modify_path_flag=--no-modify-path"
+      ],
+      "method": "release-receipt-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0033 contained install probe records install_exit_code 0, elan_home_ref temp:telos-pass0033-elan-home, normal_path_modified false, external_write_performed false, temp_write_performed true, and temp bin files including lean.exe and lake.exe.",
+      "deviation": 0.0,
+      "evidence": [
+        "install_exit_code=0",
+        "elan_home_ref=temp:telos-pass0033-elan-home",
+        "normal_path_modified=false",
+        "external_write_performed=false",
+        "temp_write_performed=true",
+        "bin_files include lean.exe and lake.exe"
+      ],
+      "method": "contained-install-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0033 toolchain probe records elan 4.2.3, Lean 4.31.0 commit 68218e876d2a38b1985b8590fff244a83c321783, and Lake version 5.0.0-src+68218e8.",
+      "deviation": 0.0,
+      "evidence": [
+        "elan_version=elan 4.2.3",
+        "lean_version=Lean 4.31.0",
+        "toolchain_commit=68218e876d2a38b1985b8590fff244a83c321783",
+        "lake_version=Lake version 5.0.0-src+68218e8"
+      ],
+      "method": "toolchain-version-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0033 verifier attempt records status TIMEOUT_TERMINATED, failure_class mathlib_build_long_running_timeout, elapsed_timeout_seconds 604, monitor_window_seconds 600, lake_reached true, lean_workers_reached true, semantic_failure_observed false, and theorem_replay_completed false.",
+      "deviation": 0.0,
+      "evidence": [
+        "status=TIMEOUT_TERMINATED",
+        "failure_class=mathlib_build_long_running_timeout",
+        "elapsed_timeout_seconds=604",
+        "monitor_window_seconds=600",
+        "lake_reached=true",
+        "lean_workers_reached=true",
+        "semantic_failure_observed=false",
+        "theorem_replay_completed=false"
+      ],
+      "method": "build-timeout-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0033 process stop receipt records stopped_count 27 and remaining_count_after_stop 0 for processes whose command lines referenced the temp Elan home, temp pipeline-math clone, or temp python3 shim.",
+      "deviation": 0.0,
+      "evidence": [
+        "stopped_count=27",
+        "remaining_count_after_stop=0",
+        "stop_scope=temp Elan home, temp pipeline-math clone, temp python3 shim"
+      ],
+      "method": "process-stop-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0033 build artifact snapshot records 46930 files, 3208367614 bytes, and 2659 .olean files under the partial .lake tree at timeout.",
+      "deviation": 0.0,
+      "evidence": [
+        "file_count=46930",
+        "byte_sum=3208367614",
+        ".olean count=2659"
+      ],
+      "method": "build-artifact-snapshot-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0033 validator result reports MATCH with contained_install_status MATCH, lake_reached true, theorem_replay_completed false, processes_remaining_after_stop 0, and negative_fixture_count 10.",
+      "deviation": 0.0,
+      "evidence": [
+        "validator status=MATCH",
+        "contained_install_status=MATCH",
+        "lake_reached=true",
+        "theorem_replay_completed=false",
+        "processes_remaining_after_stop=0",
+        "negative_fixture_count=10"
+      ],
+      "method": "validator-result-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0033 preserves non-promotion boundaries: toolchain_install_scope temp_elan_home, normal_path_modified false, external_write_performed false, lake build timed out, theorem_replay_completed false, replay_promotion_allowed false, semantic_failure_observed false, and current_promoted_natural_laws none.",
+      "deviation": 0.0,
+      "evidence": [
+        "toolchain_install_scope=temp_elan_home",
+        "normal_path_modified=false",
+        "external_write_performed=false",
+        "timeout_status=TIMEOUT_TERMINATED",
+        "theorem_replay_completed=false",
+        "replay_promotion_allowed=false",
+        "semantic_failure_observed=false",
+        "current_promoted_natural_laws=[]"
+      ],
+      "method": "non-promotion-boundary-review",
+      "tolerance": 0.5
+    }
+  ]
+}

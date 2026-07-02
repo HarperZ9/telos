@@ -1,0 +1,324 @@
+{
+  "current_promoted_natural_laws": [],
+  "flagship_receipts": {
+    "forum": {
+      "confidence": 0.045454545454545456,
+      "decided": null,
+      "exit_code": 0,
+      "needs_escalation": true,
+      "status": "MATCH",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "ed94aa833c87bcdb8e11efb2d17b0a6f49e805bd8f008027ab7c368b7d707b56",
+      "top_candidates": [
+        {
+          "agent": "project-telos",
+          "score": 0.045454545454545456
+        },
+        {
+          "agent": "backend",
+          "score": 0.0
+        },
+        {
+          "agent": "ci-cd",
+          "score": 0.0
+        },
+        {
+          "agent": "cloud-infra",
+          "score": 0.0
+        },
+        {
+          "agent": "code-review",
+          "score": 0.0
+        }
+      ]
+    },
+    "index": {
+      "exit_code": 0,
+      "graph_pack_sha256": "8ee383e19ae9a6141bee70de733fb6aa09201ff9d284ce6778ce58b06e6b68b2",
+      "schema": "project-telos.context-envelope/v1",
+      "source_refs_only": true,
+      "status": "MATCH",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "8bfde5b17d71da9d7fbea0731206fe426f485be087b9c882fb3d8106cf1edecc",
+      "verification_verdict": "MATCH"
+    },
+    "telos": {
+      "exit_code": 0,
+      "status": "MATCH",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "be17cb15259234cb4e8e95c2b36e76c90d841431729beb140294e34c5f9ebfa7",
+      "tool": "telos",
+      "tool_version": "0.1.0"
+    }
+  },
+  "generated_on": "2026-07-01",
+  "law_candidate": {
+    "name": "finite_markov_detailed_balance_stationarity",
+    "scope": "finite row-stochastic transition kernels with positive pi satisfying detailed balance",
+    "status": "LAW_CANDIDATE"
+  },
+  "market_surface": {
+    "gap_hypothesis": "Probabilistic runtimes expose samplers and diagnostics, but portable proof packets can bind transition kernels, detailed-balance residuals, stationary residuals, convergence probes, and negative fixtures.",
+    "gap_status": "hypothesis",
+    "tool_count": 8,
+    "tools": [
+      {
+        "category": "Bayesian modeling and MCMC",
+        "gap_status": "inferred",
+        "source": "https://mc-stan.org/docs/reference-manual/mcmc.html",
+        "tool": "Stan"
+      },
+      {
+        "category": "JAX-backed probabilistic programming and MCMC",
+        "gap_status": "inferred",
+        "source": "https://num.pyro.ai/en/latest/mcmc.html",
+        "tool": "NumPyro"
+      },
+      {
+        "category": "probabilistic reasoning and MCMC in TensorFlow",
+        "gap_status": "inferred",
+        "source": "https://www.tensorflow.org/probability/api_docs/python/tfp",
+        "tool": "TensorFlow Probability"
+      },
+      {
+        "category": "Bayesian modeling and MCMC ecosystem",
+        "gap_status": "inferred",
+        "source": "https://www.pymc.io/projects/examples/en/latest/statistical_rethinking_lectures/08-Markov_Chain_Monte_Carlo.html",
+        "tool": "PyMC"
+      },
+      {
+        "category": "JAX sampling algorithms",
+        "gap_status": "inferred",
+        "source": "https://blackjax-devs.github.io/blackjax/",
+        "tool": "BlackJAX"
+      },
+      {
+        "category": "Julia probabilistic programming",
+        "gap_status": "inferred",
+        "source": "https://turinglang.org/",
+        "tool": "Turing.jl"
+      },
+      {
+        "category": "Bayesian diagnostics and visualization",
+        "gap_status": "inferred",
+        "source": "https://python.arviz.org/",
+        "tool": "ArviZ"
+      },
+      {
+        "category": "uncertainty quantification with MCMC sampling",
+        "gap_status": "inferred",
+        "source": "https://uqpyproject.readthedocs.io/en/latest/sampling/mcmc/index.html",
+        "tool": "UQpy"
+      }
+    ]
+  },
+  "measurements": [
+    {
+      "id": "detailed_balance_residual",
+      "status": "MATCH"
+    },
+    {
+      "id": "stationary_residual",
+      "status": "MATCH"
+    },
+    {
+      "id": "row_stochastic_negative",
+      "status": "MATCH"
+    },
+    {
+      "id": "nonnecessary_boundary",
+      "status": "MATCH"
+    },
+    {
+      "id": "market_surface",
+      "status": "MATCH"
+    },
+    {
+      "id": "flagships",
+      "status": "MATCH"
+    },
+    {
+      "id": "promotion_boundary",
+      "status": "MATCH"
+    }
+  ],
+  "negative_fixtures": {
+    "row_stochastic_not_stationary": {
+      "max_detailed_balance_residual": "1/6",
+      "row_sums": [
+        "1",
+        "1",
+        "1"
+      ],
+      "stationary_residual": [
+        "-2/15",
+        "11/60",
+        "-1/20"
+      ],
+      "status": "DRIFT_EXPECTED",
+      "transition_matrix": [
+        [
+          "3/5",
+          "2/5",
+          "0"
+        ],
+        [
+          "1/10",
+          "4/5",
+          "1/10"
+        ],
+        [
+          "1/5",
+          "3/10",
+          "1/2"
+        ]
+      ]
+    },
+    "stationary_not_reversible": {
+      "max_detailed_balance_residual": "1/3",
+      "pi": [
+        "1/3",
+        "1/3",
+        "1/3"
+      ],
+      "stationary_residual": [
+        "0",
+        "0",
+        "0"
+      ],
+      "status": "BOUNDARY_EXPECTED",
+      "transition_matrix": [
+        [
+          "0",
+          "1",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "1"
+        ],
+        [
+          "1",
+          "0",
+          "0"
+        ]
+      ]
+    }
+  },
+  "non_promotion_statement": "This pass proves a bounded finite Markov-chain identity and market proof-packet gap. It does not prove sampler correctness for Stan, NumPyro, TFP, PyMC, or any production probabilistic runtime.",
+  "pass": "0108",
+  "promotion_requirements": [
+    "independent reproduction",
+    "larger stochastic-kernel corpus",
+    "MCMC runtime adapter",
+    "domain reviewer signoff"
+  ],
+  "proof": {
+    "boundary": "detailed balance is sufficient for stationarity, not necessary",
+    "claim": "detailed balance implies stationarity for finite Markov kernels",
+    "symbolic_step": "sum_i pi_i P_ij = sum_i pi_j P_ji = pi_j"
+  },
+  "reversible_kernel": {
+    "max_detailed_balance_residual": "0",
+    "pi": [
+      "1/2",
+      "1/3",
+      "1/6"
+    ],
+    "row_sums": [
+      "1",
+      "1",
+      "1"
+    ],
+    "simulation_probe": {
+      "final_distribution": [
+        0.4999999999999995,
+        0.33333333333333304,
+        0.16666666666666652
+      ],
+      "l1_distance_to_pi": 9.159339953157541e-16,
+      "start": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "steps": 200
+    },
+    "stationary_residual": [
+      "0",
+      "0",
+      "0"
+    ],
+    "transition_matrix": [
+      [
+        "7/10",
+        "1/5",
+        "1/10"
+      ],
+      [
+        "3/10",
+        "3/5",
+        "1/10"
+      ],
+      [
+        "3/10",
+        "1/5",
+        "1/2"
+      ]
+    ]
+  },
+  "schema": "DetailedBalanceMarkovReceipt/v1",
+  "seal": "a1a1694780c096fce96074a5e48ca94fdde9f31bb085ffd6c56b8ac83260f8fd",
+  "source_anchors": [
+    {
+      "claim": "Stan exposes HMC and NUTS Markov chain Monte Carlo algorithms",
+      "kind": "official_docs",
+      "title": "Stan Reference Manual: MCMC Sampling",
+      "url": "https://mc-stan.org/docs/reference-manual/mcmc.html"
+    },
+    {
+      "claim": "NumPyro provides MCMC algorithms including HMC/NUTS",
+      "kind": "official_docs",
+      "title": "NumPyro Markov Chain Monte Carlo",
+      "url": "https://num.pyro.ai/en/latest/mcmc.html"
+    },
+    {
+      "claim": "TensorFlow Probability includes an MCMC module for probabilistic reasoning",
+      "kind": "official_docs",
+      "title": "TensorFlow Probability API",
+      "url": "https://www.tensorflow.org/probability/api_docs/python/tfp"
+    },
+    {
+      "claim": "uncalibrated MCMC kernels can fail to converge to the target distribution",
+      "kind": "official_docs",
+      "title": "TensorFlow Probability UncalibratedRandomWalk",
+      "url": "https://www.tensorflow.org/probability/api_docs/python/tfp/mcmc/UncalibratedRandomWalk"
+    },
+    {
+      "claim": "detailed balance is used in physics and statistics for reversible Markov chains",
+      "kind": "course_notes",
+      "title": "Detailed Balance and Markov Chain Monte Carlo",
+      "url": "https://personal.math.ubc.ca/~holmescerfon/teaching/asa22/handout-Lecture3_2022.pdf"
+    },
+    {
+      "claim": "detailed balance can check stationary distributions for reversible Markov chains",
+      "kind": "course_notes",
+      "title": "Markov Chains and Markov Chain Monte Carlo",
+      "url": "https://www.stats.ox.ac.uk/~teh/teaching/dtc2014/Markov4.pdf"
+    },
+    {
+      "claim": "TFP MCMC is positioned as modern MCMC tooling for hardware-backed probabilistic computation",
+      "kind": "whitepaper",
+      "title": "tfp.mcmc: Modern Markov Chain Monte Carlo Tools Built for Modern Hardware",
+      "url": "https://arxiv.org/pdf/2002.01184"
+    }
+  ],
+  "source_bindings": {
+    "reaction_corpus_pass": "0107",
+    "source_packet": "ReactionNetworkCorpusHarnessReceipt/v1"
+  },
+  "status": "DETAILED_BALANCE_MARKOV_RECEIPT_MATCH",
+  "unsupported_claim_count": 0,
+  "validation_errors": []
+}

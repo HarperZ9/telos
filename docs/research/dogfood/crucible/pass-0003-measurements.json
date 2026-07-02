@@ -1,0 +1,71 @@
+{
+  "measurements": [
+    {
+      "claim": "Pass 0003 produced Index-backed substrate receipts for build-universe, build-color, calibrate-pro, and telos, and project-scanner reported C:\\dev\\public is not a single monorepo.",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "method": "index-and-project-scanner-receipt-review",
+      "evidence": [
+        "build-universe index map: branch=main head=362e053 dirty_count=0",
+        "build-color index map: branch=main head=96560ee dirty_count=0",
+        "calibrate-pro index map: branch=main head=0f1c7b1 dirty_count=0",
+        "telos index map: branch=main head=cbbf82c",
+        "project_scanner.detect_monorepo directory=C:\\dev\\public is_monorepo=false"
+      ]
+    },
+    {
+      "claim": "Pass 0003 verified that Calibrate Pro enterprise receipt models are specified in project-docs but were not implemented as a calibrate_pro/enterprise package in this pass.",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "method": "ripgrep-implementation-search",
+      "evidence": [
+        "rg found project-docs/specs/SPEC-calibrate-pro-flagship-enterprise-2026-06-28.md for CalibrationReceipt and VerificationReceipt",
+        "rg --files calibrate-pro | rg enterprise|receipt|policy|inventory|buildlang|bridge returned only the spec path",
+        "no calibrate_pro/enterprise package path was listed"
+      ]
+    },
+    {
+      "claim": "The pass 0003 MarketRow artifact contains 42 rows, every row has at least one source, and the three categories each contain at least 12 rows.",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "method": "json-structure-validation",
+      "evidence": [
+        "market-rows-pass-0003.json rows=42",
+        "with_sources=42",
+        "research-labs-ai4science=14",
+        "ai-infrastructure-agent-ops=13",
+        "visual-compiler-scientific-compute=15"
+      ]
+    },
+    {
+      "claim": "The pass 0003 WedgeScore artifact contains 8 scores and ranks AgentActionProofPacket first.",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "method": "json-structure-validation",
+      "evidence": [
+        "wedge-scores-pass-0003.json scores=8",
+        "top=AgentActionProofPacket"
+      ]
+    },
+    {
+      "claim": "The pass 0003 MegatoolNode artifact contains 8 nodes.",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "method": "json-structure-validation",
+      "evidence": [
+        "megatool-nodes-pass-0003.json nodes=8"
+      ]
+    },
+    {
+      "claim": "Pass 0003 promotes zero natural-law discoveries; all outputs remain market research, schema artifacts, or implementation plans.",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "method": "artifact-review",
+      "evidence": [
+        "pass-0003-ledger says no uniqueness claim is treated as fact",
+        "schema artifacts are market rows, wedge scores, and megatool nodes",
+        "README still states current promoted natural laws: none"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,200 @@
+{
+  "action_receipt_proposal": {
+    "action_id": "act_dogfood_0030_theorem_replay_preflight",
+    "authority_class": "read_only_public_repo_preflight",
+    "event_id": "evt_dogfood_0030_theorem_replay_preflight",
+    "event_type": "theorem_replay_preflight_created",
+    "external_write_performed": false,
+    "input_digests": [
+      "sha256:f29a296e74ef39eda2b70234f45abca062f86361c9572a1ea6105e747991a642",
+      "sha256:8164e622fcafc9a8220674530e7d64ff664dfdb298c564eadd9d5fd2fdb26624"
+    ],
+    "input_refs": [
+      "artifact:schemas/research-claim-packet-pass-0029.json",
+      "artifact:fixtures/pipeline-math-problem4b-preflight-pass-0030.json"
+    ],
+    "output_ref": "artifact:schemas/theorem-replay-preflight-pass-0030.json",
+    "replay_promotion_allowed": false,
+    "schema": "ActionReceiptTheoremReplayPreflight/v1",
+    "toolchain_install_performed": false,
+    "verification": {
+      "ref": "validator:pass-0030-theorem-replay-preflight",
+      "verdict": "MATCH"
+    }
+  },
+  "current_promoted_natural_laws": [],
+  "frozen_pin_receipt": {
+    "git_blob_hashes": {
+      "Prob4b/Defs.lean": "f596023b79726b87da05ccaf825e512bd17237f29a43df3ce31dc01c7646868a",
+      "Prob4b/Theorems.lean": "cb80242d1bfd9e9b142e442dac9d0784081dabefbf7bd400dd0a27cd0e8bd3ae"
+    },
+    "line_ending_probe": {
+      "eol_drift": true,
+      "git_index": "lf",
+      "replay_requirement": "Use Git blob bytes, enforce LF checkout, or normalize before frozen SHA validation.",
+      "working_tree": "crlf"
+    },
+    "pin_file": "lean/problem-4b-formalization/scripts/frozen.sha256",
+    "pin_matches_git_blob_bytes": true,
+    "pin_matches_windows_worktree_bytes": false,
+    "pinned_git_blob_hashes": {
+      "Prob4b/Defs.lean": "f596023b79726b87da05ccaf825e512bd17237f29a43df3ce31dc01c7646868a",
+      "Prob4b/Theorems.lean": "cb80242d1bfd9e9b142e442dac9d0784081dabefbf7bd400dd0a27cd0e8bd3ae"
+    },
+    "working_tree_hashes": {
+      "Prob4b/Defs.lean": "4d3285bae57a53a42c33311745f5afdf6990d483cf0d1a0ffd796101a8051b2d",
+      "Prob4b/Theorems.lean": "70356618935d908762980a8dc0aead297f8d02a1ebdb997b5caaa1bfdfaa1b2e"
+    }
+  },
+  "generated_on": "2026-07-01",
+  "market_implication": {
+    "buyer_relevance": [
+      "Math and AI4Science labs need proof artifacts that distinguish source claims from replayed formal verification.",
+      "Agent-ops teams need tooling that blocks proof-success promotion when toolchains are absent.",
+      "BuildLang/buildc can reuse the same preflight contract for compiler/runtime proof receipts before claiming numerical or formal correctness."
+    ],
+    "uniqueness_status": "hypothesis",
+    "wedge_hypothesis": "Research proof packets need theorem-level replay preflights that separate source availability, environment readiness, line-ending/hash integrity, and proof replay success."
+  },
+  "negative_fixture_count": 10,
+  "negative_fixtures": [
+    {
+      "expected_validator_status": "REJECT",
+      "failure_mode": "The packet claims Lean replay success even though lean is unavailable.",
+      "fixture_id": "negative-lean-replay-promoted-without-lean"
+    },
+    {
+      "expected_validator_status": "REJECT",
+      "failure_mode": "The packet claims Lake build success even though lake is unavailable.",
+      "fixture_id": "negative-lake-build-promoted-without-lake"
+    },
+    {
+      "expected_validator_status": "REJECT",
+      "failure_mode": "The packet claims verify.sh success even though bash is unavailable.",
+      "fixture_id": "negative-verify-script-promoted-without-bash"
+    },
+    {
+      "expected_validator_status": "REJECT",
+      "failure_mode": "The packet ignores CRLF working-tree hash drift when checking frozen SHA pins.",
+      "fixture_id": "negative-frozen-pin-worktree-mismatch-ignored"
+    },
+    {
+      "expected_validator_status": "REJECT",
+      "failure_mode": "The source repository commit is missing from the replay receipt.",
+      "fixture_id": "negative-git-commit-missing"
+    },
+    {
+      "expected_validator_status": "REJECT",
+      "failure_mode": "The selected theorem names are missing or not counted.",
+      "fixture_id": "negative-theorem-names-missing"
+    },
+    {
+      "expected_validator_status": "REJECT",
+      "failure_mode": "The Lean toolchain pin is missing.",
+      "fixture_id": "negative-toolchain-pin-missing"
+    },
+    {
+      "expected_validator_status": "REJECT",
+      "failure_mode": "The pass 0030 packet is not linked back to pass 0029.",
+      "fixture_id": "negative-source-packet-link-missing"
+    },
+    {
+      "expected_validator_status": "REJECT",
+      "failure_mode": "The packet claims #print axioms success without running Lean.",
+      "fixture_id": "negative-axiom-check-promoted"
+    },
+    {
+      "expected_validator_status": "REJECT",
+      "failure_mode": "The packet promotes a theorem replay preflight into a natural-law or solved-theorem claim.",
+      "fixture_id": "negative-natural-law-promoted"
+    }
+  ],
+  "next_replay_requirements": [
+    "Install or provision bash, elan, lake, and Lean v4.31.0 in an isolated environment.",
+    "Clone with LF-preserving checkout or hash Git blob bytes for frozen pin checks.",
+    "Run scripts/verify.sh --no-log --all from lean/problem-4b-formalization.",
+    "Capture lake build output, #print axioms output, statement-gate output, and exit code.",
+    "Bind completed replay logs through action receipts and Crucible measurements."
+  ],
+  "non_promotion_statement": "Pass 0030 verifies a theorem replay preflight only. It does not run Lean, does not run Lake, does not prove any Problem 4(b) theorem, does not prove pipeline-math proof correctness, and does not promote any natural law.",
+  "packet_title": "Pipeline-math Problem 4(b) Lean Replay Preflight",
+  "pass": "0030",
+  "preflight_fixture": {
+    "path": "fixtures/pipeline-math-problem4b-preflight-pass-0030.json",
+    "schema": "PipelineMathProblem4bPreflightFixture/v1",
+    "seal": "87114d508a057eab4a4011b3670ae7a2844689fdd9bda1d2fca573ffb1dfccba",
+    "sha256": "8164e622fcafc9a8220674530e7d64ff664dfdb298c564eadd9d5fd2fdb26624"
+  },
+  "repo_receipt": {
+    "clone_method": "git clone --depth 1",
+    "commit": "69d7df765a8f377a5e0628c6d36c088bce7642c9",
+    "formalization_project_count": 4,
+    "formalization_projects": [
+      "lean/problem-20-formalization",
+      "lean/problem-27b-form",
+      "lean/problem-30c-formalization",
+      "lean/problem-4b-formalization"
+    ],
+    "lean_file_count": 66,
+    "observed_on": "2026-07-01",
+    "temp_ref": "temp:pipeline-math-pass0030",
+    "url": "https://github.com/Pengbinghui/pipeline-math.git"
+  },
+  "schema": "TheoremReplayPreflightPacket/v1",
+  "seal": "fb2428b6a7d960e44fe44768e1864d6fc524e99b9461b7fc64d08012f6760180",
+  "selected_project": {
+    "lean_toolchain": "leanprover/lean4:v4.31.0",
+    "path": "lean/problem-4b-formalization",
+    "reason": "Problem 4(b) includes a verification harness, frozen SHA pins, and ten named solution theorems.",
+    "theorem_count": 10,
+    "theorem_names": [
+      "B_triple_zero",
+      "M_triple_defect",
+      "M_annihilator",
+      "M_pairwise_intersection",
+      "triple_defect_survives",
+      "R_finite_conductor",
+      "R_not_quasi_coherent",
+      "prob4b_counterexample",
+      "problem4b_false",
+      "quasiCoherent_imp_finiteConductor"
+    ]
+  },
+  "source_packet_binding": {
+    "path": "schemas/research-claim-packet-pass-0029.json",
+    "schema": "ResearchClaimPacket/v1",
+    "seal": "272b3afd43cd60688f06fabd11d66934796f448ba1f07a02d62a3798443a62f4",
+    "sha256": "f29a296e74ef39eda2b70234f45abca062f86361c9572a1ea6105e747991a642"
+  },
+  "status": "THEOREM_REPLAY_PREFLIGHT_MATCH_WITH_TOOLCHAIN_GAP",
+  "toolchain_receipt": {
+    "bash": "UNAVAILABLE",
+    "git": "MATCH",
+    "lake": "UNAVAILABLE",
+    "lean": "UNAVAILABLE",
+    "lean_replay_status": "UNVERIFIABLE_TOOL_UNAVAILABLE",
+    "python": "MATCH",
+    "replay_promotion_allowed": false,
+    "verify_script_attempt_status": "UNVERIFIABLE_TOOL_UNAVAILABLE",
+    "verify_script_missing_command": "bash"
+  },
+  "verifier_measurements": {
+    "formalization_project_count": 4,
+    "lean_file_count": 66,
+    "lean_replay_status": "UNVERIFIABLE_TOOL_UNAVAILABLE",
+    "line_ending_drift_detected": true,
+    "measurement_status": "MATCH",
+    "pin_matches_git_blob_bytes": true,
+    "pin_matches_windows_worktree_bytes": false,
+    "replay_success_promoted": false,
+    "required_commands_available": {
+      "bash": false,
+      "git": true,
+      "lake": false,
+      "lean": false,
+      "python": true
+    },
+    "schema": "TheoremReplayPreflightMeasurements/v1",
+    "selected_theorem_count": 10
+  }
+}

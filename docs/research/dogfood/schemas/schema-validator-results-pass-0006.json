@@ -1,0 +1,97 @@
+{
+  "checks": [
+    {
+      "artifact": "MarketRowValidator",
+      "count": 42,
+      "errors": [],
+      "key": "rows",
+      "minimum": 42,
+      "path": "schemas\\market-rows-pass-0003.json",
+      "required_fields": ["category", "company_tool", "buyer", "official_claim", "capabilities", "gaps", "gap_status", "sources", "confidence"],
+      "status": "MATCH"
+    },
+    {
+      "artifact": "WedgeScoreValidator",
+      "count": 8,
+      "errors": [],
+      "key": "scores",
+      "minimum": 8,
+      "path": "schemas\\wedge-scores-pass-0003.json",
+      "required_fields": ["market", "urgency", "budget", "differentiation", "feasibility", "proof_demo_readiness", "risk", "rank"],
+      "status": "MATCH"
+    },
+    {
+      "artifact": "MegatoolNodeValidator",
+      "count": 8,
+      "errors": [],
+      "key": "nodes",
+      "minimum": 8,
+      "path": "schemas\\megatool-nodes-pass-0003.json",
+      "required_fields": ["internal_tool", "external_analogs", "inputs", "outputs", "receipts", "verification_layer", "market_facing_product"],
+      "status": "MATCH"
+    },
+    {
+      "artifact": "ResearchClaimValidator",
+      "count": 14,
+      "errors": [],
+      "key": "claims",
+      "minimum": 12,
+      "path": "schemas\\research-claims-pass-0004.json",
+      "required_fields": ["claim", "evidence_url", "confidence", "verification_status", "notes"],
+      "status": "MATCH"
+    },
+    {
+      "artifact": "ProofPacketAdapterValidator",
+      "count": 10,
+      "errors": [],
+      "key": "adapters",
+      "minimum": 10,
+      "path": "schemas\\proof-packet-adapters-pass-0005.json",
+      "required_fields": ["priority", "adapter", "external_analogs", "buyer_workflow", "evidence_inputs", "telos_outputs", "missing_binding", "build_first", "source_urls", "confidence"],
+      "status": "MATCH"
+    },
+    {
+      "artifact": "BuyerObjectionValidator",
+      "count": 8,
+      "errors": [],
+      "key": "objections",
+      "minimum": 7,
+      "path": "schemas\\buyer-objections-pass-0005.json",
+      "required_fields": ["objection", "buyer_question", "required_demo_evidence", "product_response", "status", "confidence"],
+      "status": "MATCH"
+    },
+    {
+      "artifact": "ValidatorContractValidator",
+      "count": 8,
+      "errors": [],
+      "key": "contracts",
+      "minimum": 8,
+      "path": "schemas\\validator-contracts-pass-0005.json",
+      "required_fields": ["validator", "target_schema", "required_fields", "minimum_rows", "failure_modes", "first_target"],
+      "status": "MATCH"
+    },
+    {
+      "artifact": "OpenTelemetryActionNormalizationValidator",
+      "count": 10,
+      "errors": [],
+      "key": "mappings",
+      "minimum": 8,
+      "path": "schemas\\otel-action-normalization-pass-0006.json",
+      "required_fields": ["otel_field", "telos_field", "normalization_rule", "lossiness", "required"],
+      "status": "MATCH"
+    },
+    {
+      "artifact": "ProofPacketMinimumValidator",
+      "claim_count": 3,
+      "errors": [],
+      "path": "schemas\\proof-packet-pass-0006.json",
+      "required_fields": ["packet_id", "schema", "domain", "claim_set", "source_receipts", "action_receipts", "authority_receipts", "workspace_state", "verification_verdicts", "failure_labels", "decision_summary"],
+      "status": "MATCH"
+    }
+  ],
+  "drift": 0,
+  "match": 9,
+  "pass": "0006",
+  "schema": "DogfoodValidatorRun/v1",
+  "status": "MATCH"
+}

@@ -1,0 +1,291 @@
+Skip to content
+Open Machine Learning
+REST API
+Initializing search
+openml/docs
+OpenML
+Get Started
+Datasets
+Benchmarking
+Ecosystem
+Contributing
+Questions
+Python
+PyTorch
+TensorFlow
+Julia
+R
+APIv2
+Open Machine Learning
+openml/docs
+OpenML
+Get Started
+Get Started
+OpenML in 10 minutes
+Concepts
+Concepts
+Data
+Tasks
+Flows
+Runs
+Collections & Benchmarks
+Tagging
+Authentication
+Sharing
+Showcase
+Governance
+Terms
+Datasets
+Datasets
+Using datasets
+Technical specs
+Benchmarking
+Benchmarking
+AutoML Benchmark
+AutoML Benchmark
+AutoML Benchmark
+Important Parameters
+Benchmark on OpenML
+Tutorials
+Tutorials
+Basic Example - Random Forest
+Specific Task and Fold
+Ecosystem
+Ecosystem
+Python Integrations
+Scikit-learn
+Scikit-learn
+Tutorials
+Tutorials
+Basic tutorial
+Datasets
+MLR
+Weka
+MOA
+Java
+REST API
+REST API
+Table of contents
+Getting started
+Testing
+Error messages
+Examples
+Download a dataset
+Download a flow
+Download a task
+Contributing
+Contributing
+Documentation
+Backend
+Backend
+Local Installation
+Datasets
+Code structure
+Evaluation Engine
+Frontend
+Frontend
+Getting started
+Flask backend
+React frontend
+Dash visualizations
+Clients
+Clients
+Client development
+Metadata definition
+REST API
+Style guide
+Resources
+Questions
+Python
+Python
+Code Reference
+Code Reference
+base
+cli
+config
+evaluations
+evaluations
+evaluation
+functions
+exceptions
+extensions
+extensions
+extension_interface
+functions
+sklearn
+sklearn
+extension
+flows
+flows
+flow
+functions
+runs
+runs
+functions
+run
+trace
+setups
+setups
+functions
+setup
+study
+study
+functions
+study
+tasks
+tasks
+functions
+split
+task
+testing
+utils
+Examples
+Examples
+Basic
+Basic
+Introduction tutorial & Setup
+Datasets
+Flows and Runs
+Benchmark suites
+Extended
+Extended
+benchmark_with_optunahub.py
+Logging
+Dataset upload tutorial
+Creating and Using a Custom Flow
+Datasets
+Fetching Evaluations
+Preparing tasks and scikit-learn models
+Obtaining Flow IDs
+Flows and Runs
+Plotting hyperparameter surfaces
+Run Setup
+Benchmark studies
+Benchmark suites
+Tasks: retrieving splits
+Tasks
+Paper
+Paper
+Feurer et al. (2015)
+Strang et al. (2018)
+van Rijn and Hutter (2018)
+Perrone et al. (2018)
+Usage
+Contributing
+Extensions
+Changelog
+PyTorch
+PyTorch
+API Reference
+API Reference
+Callbacks
+Custom Datasets
+Metrics
+OpenML Connection
+Trainer
+Examples
+Examples
+Beginner
+Beginner
+Create dataset and task - tiniest imagenet
+Image Classification Task
+Pretrained Transformer Image Classification Task
+Sequential Classification Task
+Tabular Classification
+Advanced
+Advanced
+Choose a Custom Optimizer
+Other Integrations
+Limitations of the API
+Philosophy behind the API Design
+TensorFlow
+TensorFlow
+API Reference
+API Reference
+Config
+OpenML Integration
+Docker Reference
+Docker Reference
+Docker
+Examples
+Examples
+Tensorflow image classification model example I
+Performance check of tensorflow image classification model
+Tensorflow image dataset classification model example II
+Tensorflow image classification using pre-trained model example II
+Tensorflow image classification using pre-trained model example I
+Limitations of the API
+Julia
+Julia
+R
+APIv2
+APIv2
+Getting Started
+Contributing
+Contributing
+Development
+Tests
+Documentation
+Project Overview
+Changes
+Table of contents
+Getting started
+Testing
+Error messages
+Examples
+Download a dataset
+Download a flow
+Download a task
+REST tutorial¶
+OpenML offers a RESTful Web API, with predictive URLs, for uploading and downloading machine learning resources. Try the API Documentation to see examples of all calls, and test them right in your browser.
+Getting started¶
+REST services can be called using simple HTTP GET or POST actions.
+The REST Endpoint URL is https://www.openml.org/api/v1/
+The default endpoint returns data in XML. If you prefer JSON, use the endpoint https://www.openml.org/api/v1/json/. Note that, to upload content, you still need to use XML (at least for now).
+Testing¶
+For continuous integration and testing purposes, we have a test server offering the same API, but which does not affect the production server.
+The test server REST Endpoint URL is https://test.openml.org/api/v1/
+Error messages¶
+Error messages will look like this:
+1
+2
+3
+4
+5
+<oml:error xmlns:oml="http://openml.org/error">
+<oml:code>100</oml:code>
+<oml:message>Please invoke legal function</oml:message>
+<oml:additional_information>Additional information, not always available.</oml:additional_information>
+</oml:error>
+All error messages are listed in the API documentation. E.g. try to get a non-existing dataset:
+in XML: https://www.openml.org/api_new/v1/data/99999
+in JSON: https://www.openml.org/api_new/v1/json/data/99999
+Examples¶
+You need to be logged in for these examples to work.
+Download a dataset¶
+User asks for a dataset using the /data/{id} service. The dataset id is typically part of a task, or can be found on OpenML.org.
+OpenML returns a description of the dataset as an XML file (or JSON). Try it now
+The dataset description contains the URL where the dataset can be downloaded. The user calls that URL to download the dataset.
+The dataset is returned by the server hosting the dataset. This can be OpenML, but also any other data repository. Try it now
+Download a flow¶
+User asks for a flow using the /flow/{id} service and a flow id. The flow id can be found on OpenML.org.
+OpenML returns a description of the flow as an XML file (or JSON). Try it now
+The flow description contains the URL where the flow can be downloaded (e.g. GitHub), either as source, binary or both, as well as additional information on history, dependencies and licence. The user calls the right URL to download it.
+The flow is returned by the server hosting it. This can be OpenML, but also any other code repository. Try it now
+Download a task¶
+User asks for a task using the /task/{id} service and a task id. The task id is typically returned when searching for tasks.
+OpenML returns a description of the task as an XML file (or JSON). Try it now
+The task description contains the dataset id(s) of the datasets involved in this task. The user asks for the dataset using the /data/{id} service and the dataset id.
+OpenML returns a description of the dataset as an XML file (or JSON). Try it now
+The dataset description contains the URL where the dataset can be downloaded. The user calls that URL to download the dataset.
+The dataset is returned by the server hosting it. This can be OpenML, but also any other data repository. Try it now
+The task description may also contain links to other resources, such as the train-test splits to be used in cross-validation. The user calls that URL to download the train-test splits.
+The train-test splits are returned by OpenML. Try it now
+October 21, 2024
+June 29, 2019
+Previous
+Java
+Next
+How to Contribute
+Made with
+Material for MkDocs

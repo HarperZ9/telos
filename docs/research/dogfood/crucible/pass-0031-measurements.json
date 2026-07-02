@@ -1,0 +1,161 @@
+{
+  "measurements": [
+    {
+      "claim": "Pass 0031 created a LeanReplayEnvironmentContract/v1 artifact with status LEAN_REPLAY_ENVIRONMENT_CONTRACT_MATCH_WITH_REPLAY_GAP, absolute_bash_invocation_status=MATCH, verify_script_exit_code=1, failure_class=crlf_pin_file_path_drift, theorem_replay_status=UNVERIFIABLE_ENVIRONMENT_NOT_READY, negative_fixture_count=10, and seal 4532f819ea8d8f7760323b2920d131b4909bedc05960ad3da553424e1f38a0bc.",
+      "deviation": 0.0,
+      "evidence": [
+        "schema=LeanReplayEnvironmentContract/v1",
+        "status=LEAN_REPLAY_ENVIRONMENT_CONTRACT_MATCH_WITH_REPLAY_GAP",
+        "absolute_bash_invocation_status=MATCH",
+        "verify_script_exit_code=1",
+        "failure_class=crlf_pin_file_path_drift",
+        "theorem_replay_status=UNVERIFIABLE_ENVIRONMENT_NOT_READY",
+        "negative_fixture_count=10",
+        "seal=4532f819ea8d8f7760323b2920d131b4909bedc05960ad3da553424e1f38a0bc"
+      ],
+      "method": "lean-environment-contract-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0031 records fixture fixtures/lean-replay-environment-contract-pass-0031.json with sha256 9c8a6ed07113c0880126e3ee5d19b1314a92b9d767c57d896df36e0222a62082 and seal c80c6f03f37ec172e1354293f709d399aa8d80a9c69e0d9e9cc6e697f81be555, and binds to pass 0030 preflight sha256 da9a0d68491325bd636f876dfca60ab0540be2a9c247931bf22064a5db13a557.",
+      "deviation": 0.0,
+      "evidence": [
+        "environment fixture path=fixtures/lean-replay-environment-contract-pass-0031.json",
+        "fixture sha256=9c8a6ed07113c0880126e3ee5d19b1314a92b9d767c57d896df36e0222a62082",
+        "fixture seal=c80c6f03f37ec172e1354293f709d399aa8d80a9c69e0d9e9cc6e697f81be555",
+        "source preflight sha256=da9a0d68491325bd636f876dfca60ab0540be2a9c247931bf22064a5db13a557"
+      ],
+      "method": "fixture-and-source-binding-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0031 runner probe records absolute Git Bash invocation status MATCH, bash_on_path=false, and Bash version 5.2.37(1)-release.",
+      "deviation": 0.0,
+      "evidence": [
+        "git_bash_absolute_path_observed=true",
+        "absolute_bash_invocation_status=MATCH",
+        "bash_on_path=false",
+        "bash_version includes 5.2.37(1)-release"
+      ],
+      "method": "runner-probe-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0031 verifier attempt records exit_code=1, status=DRIFT, first_failed_check=Frozen SHA pins, failure_class=crlf_pin_file_path_drift, raw_log_included=false, and lean_or_lake_reached=false.",
+      "deviation": 0.0,
+      "evidence": [
+        "verify_script_attempt exit_code=1",
+        "status=DRIFT",
+        "first_failed_check=Frozen SHA pins",
+        "failure_class=crlf_pin_file_path_drift",
+        "raw_log_included=false",
+        "lean_or_lake_reached=false"
+      ],
+      "method": "verify-script-attempt-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0031 toolchain availability records docker, wsl, podman, winget, elan, lake, and lean unavailable while git, python, and absolute Git Bash are available.",
+      "deviation": 0.0,
+      "evidence": [
+        "docker=UNAVAILABLE",
+        "wsl=UNAVAILABLE_NOT_INSTALLED",
+        "podman=UNAVAILABLE",
+        "winget=UNAVAILABLE",
+        "elan=UNAVAILABLE",
+        "lake=UNAVAILABLE",
+        "lean=UNAVAILABLE",
+        "git=MATCH",
+        "python=MATCH",
+        "git_bash_absolute=MATCH"
+      ],
+      "method": "toolchain-availability-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0031 replay policy marks theorem replay, Lake build, axiom checks, and statement gates as UNVERIFIABLE_ENVIRONMENT_NOT_READY, with toolchain_install_performed=false, external_write_performed=false, and replay_promotion_allowed=false.",
+      "deviation": 0.0,
+      "evidence": [
+        "theorem_replay_status=UNVERIFIABLE_ENVIRONMENT_NOT_READY",
+        "lake_build_status=UNVERIFIABLE_ENVIRONMENT_NOT_READY",
+        "axiom_check_status=UNVERIFIABLE_ENVIRONMENT_NOT_READY",
+        "statement_gate_status=UNVERIFIABLE_ENVIRONMENT_NOT_READY",
+        "toolchain_install_performed=false",
+        "external_write_performed=false",
+        "replay_promotion_allowed=false"
+      ],
+      "method": "replay-policy-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0031 defines ten negative fixtures covering Bash PATH assumptions, ignored CRLF failure, replay promotion after script failure, container availability without Docker/WSL, claimed toolchain install, missing pass 0030 link, axiom-check promotion, Lake-build promotion, hidden external write, and natural-law promotion; every negative fixture expects validator status REJECT.",
+      "deviation": 0.0,
+      "evidence": [
+        "negative_fixture_count=10",
+        "negative-bash-path-assumed-from-path expected_validator_status=REJECT",
+        "negative-crlf-failure-ignored expected_validator_status=REJECT",
+        "negative-lean-replay-promoted-after-script-failure expected_validator_status=REJECT",
+        "negative-container-available-without-docker-or-wsl expected_validator_status=REJECT",
+        "negative-toolchain-install-claimed expected_validator_status=REJECT",
+        "negative-source-preflight-link-missing expected_validator_status=REJECT",
+        "negative-axiom-check-promoted expected_validator_status=REJECT",
+        "negative-lake-build-promoted expected_validator_status=REJECT",
+        "negative-external-write-hidden expected_validator_status=REJECT",
+        "negative-natural-law-promoted expected_validator_status=REJECT"
+      ],
+      "method": "negative-fixture-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0031 validator result reports MATCH with absolute_bash_invocation_status=MATCH, bash_on_path=false, verify_script_exit_code=1, failure_class=crlf_pin_file_path_drift, lean_or_lake_reached=false, missing_runtime_count=6, theorem_replay_status=UNVERIFIABLE_ENVIRONMENT_NOT_READY, and negative_fixture_count=10.",
+      "deviation": 0.0,
+      "evidence": [
+        "schemas/pass-0031-lean-environment-contract-validator-result.json status=MATCH",
+        "absolute_bash_invocation_status=MATCH",
+        "bash_on_path=false",
+        "verify_script_exit_code=1",
+        "failure_class=crlf_pin_file_path_drift",
+        "lean_or_lake_reached=false",
+        "missing_runtime_count=6",
+        "theorem_replay_status=UNVERIFIABLE_ENVIRONMENT_NOT_READY",
+        "negative_fixture_count=10"
+      ],
+      "method": "validator-result-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0031 packet 041 was gathered and verified with SHA-256 8f1c9afaf01579e601db4a4d396bce96f1a562167dff85da630f90209539cb88, digest seal 029c28ce59a153e2c35214225d931892987c9be1aecee43aea689c29d9309d40, and 5095 characters.",
+      "deviation": 0.0,
+      "evidence": [
+        "gather docs verified=true",
+        "artifact=packets/041-lean-replay-environment-contract.md",
+        "sha256=8f1c9afaf01579e601db4a4d396bce96f1a562167dff85da630f90209539cb88",
+        "seal=029c28ce59a153e2c35214225d931892987c9be1aecee43aea689c29d9309d40",
+        "chars=5095"
+      ],
+      "method": "gather-packet-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0031 tool receipts record Index, Gather, absolute Git Bash, verifier-script failure, runtime availability, Telos MCP status/action receipt/loop ledger, Forum status/ledger verification, and Crucible status while preserving Forum submit as UNVERIFIABLE and replay runtime as not ready.",
+      "deviation": 0.0,
+      "evidence": [
+        "schemas/tool-receipts-pass-0031.json status=MATCH_WITH_FORUM_SUBMIT_GAP_AND_REPLAY_ENVIRONMENT_GAP",
+        "index status MATCH",
+        "gather docs verified=true",
+        "absolute Git Bash status MATCH",
+        "verifier-script failure status DRIFT",
+        "runtime availability status=UNVERIFIABLE_ENVIRONMENT_NOT_READY",
+        "mcp__telos.telos_status MATCH",
+        "mcp__telos.telos_action_receipt MATCH",
+        "mcp__telos.telos_loop_ledger MATCH",
+        "forum status MATCH",
+        "forum ledger verify chain=true deep=true",
+        "forum submit status=UNVERIFIABLE",
+        "crucible status MATCH"
+      ],
+      "method": "tool-receipt-review",
+      "tolerance": 0.5
+    }
+  ]
+}

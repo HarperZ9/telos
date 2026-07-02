@@ -1,0 +1,107 @@
+{
+  "measurements": [
+    {
+      "claim": "The nineteenth-wave package adds a bounded Lean finite edge/operator replay rung while keeping smooth periodic integration by parts NOT_REPLAYED and the parent Millennium problem UNVERIFIABLE.",
+      "method": "nineteenth-wave-package-boundary-review",
+      "evidence": [
+        "docs/outreach/NINETEENTH-WAVE-FINITE-EDGE-OPERATOR-REPLAY-2026-07-02.md exists",
+        "the package describes one kernel-checked finite edge/operator replay rung",
+        "the package states smooth periodic integration by parts is not replayed",
+        "the package states the parent Navier-Stokes Millennium problem remains UNVERIFIABLE"
+      ],
+      "deviation": 0.0,
+      "tolerance": 0.5
+    },
+    {
+      "claim": "The nineteenth-wave theorem is stored in a separate Lean file and preserves the fourteenth-, fifteenth-, sixteenth-, and seventeenth-wave source hashes.",
+      "method": "historical-receipt-stability-review",
+      "evidence": [
+        "docs/research/proof-packets/navier-stokes-periodic-skew-symmetry-v0/formal/lean/FiniteEdgeOperatorPreflight.lean exists",
+        "PeriodicCancellationPreflight.lean retains SHA-256 77e5cba345adc1fd99003bfc17092750fddca1a9f879b4ac59f99e74c374a936",
+        "CyclicFiniteSumPreflight.lean retains SHA-256 e69d314e73710f8ab58e45f1fdf9f353777dfd51e70087ebc575c8913014e115",
+        "CyclicSummationByPartsPreflight.lean retains SHA-256 f70b9df9da80e97b825ffbbf1bc30dbfe389bcee574167e4a18e36a12583f1a5",
+        "TypedFiniteGridSummationByPartsPreflight.lean retains SHA-256 4789ffa95f4bc1eecd8b917025815ce20eac1e06c8b0445f4e1731ea92793609",
+        "lean-finite-edge-operator replay receipt records all prior source hashes as preserved"
+      ],
+      "deviation": 0.0,
+      "tolerance": 0.5
+    },
+    {
+      "claim": "FiniteEdgeOperatorPreflight.lean compiles with Lean exit code 0, emits no Lean stdout/stderr, and replays the explicit finite edge/operator declarations and theorem.",
+      "method": "lean-finite-edge-operator-replay-receipt-review",
+      "evidence": [
+        "docs/research/proof-packets/navier-stokes-periodic-skew-symmetry-v0/formal/lean/FiniteEdgeOperatorPreflight.lean exists",
+        "docs/outreach/receipts/nineteenth-wave/lean-finite-edge-operator-sbp-replay-2026-07-02.json records exit_code 0",
+        "receipt records warning_clean true",
+        "receipt records ProjectTelos.FormalReplay.FiniteEdge",
+        "receipt records ProjectTelos.FormalReplay.ForwardScalarDifference",
+        "receipt records ProjectTelos.FormalReplay.BackwardVelocityDifference",
+        "receipt records ProjectTelos.FormalReplay.gradientEdgeOperator",
+        "receipt records ProjectTelos.FormalReplay.divergenceNodeOperator",
+        "receipt records ProjectTelos.FormalReplay.cyclicGradientOperatorSum",
+        "receipt records ProjectTelos.FormalReplay.cyclicDivergenceOperatorSum",
+        "receipt records ProjectTelos.FormalReplay.open_edge_operator_summation_by_parts",
+        "receipt records ProjectTelos.FormalReplay.finite_edge_operator_summation_by_parts_cancels",
+        "receipt records smooth_periodic_integration_by_parts NOT_REPLAYED"
+      ],
+      "deviation": 0.0,
+      "tolerance": 0.5
+    },
+    {
+      "claim": "The nineteenth-wave source refresh retains 20 arXiv metadata rows, 19 unique IDs, verifies both Gather stores as MATCH, and demotes the rows to SOURCE_LEAD_ONLY.",
+      "method": "source-lead-demotion-review",
+      "evidence": [
+        "docs/outreach/receipts/nineteenth-wave/source-lead-demotion-gate.json exists",
+        "source-lead-demotion-gate records retained_rows 20",
+        "source-lead-demotion-gate records unique_arxiv_ids 19",
+        "source-lead-demotion-gate records all_store_verifications_match true",
+        "source-lead-demotion-gate verdict is SOURCE_LEAD_ONLY"
+      ],
+      "deviation": 0.0,
+      "tolerance": 0.5
+    },
+    {
+      "claim": "The nineteenth-wave routing summary records Forum routing, source-checkout Index success, installed Index wrapper failure, and missing Telos PATH wrapper without promoting wrapper health.",
+      "method": "forum-index-route-boundary-review",
+      "evidence": [
+        "docs/outreach/receipts/nineteenth-wave/forum-index-route-2026-07-02.json exists",
+        "forum decided project-telos and needs_escalation false",
+        "installed index wrapper status is ERROR",
+        "source-checkout Index status_command_status is MATCH",
+        "source-checkout Index doctor_command_status is MATCH",
+        "concrete telos context envelope verification_verdict is MATCH",
+        "telos path_wrapper_status is NOT_FOUND"
+      ],
+      "deviation": 0.0,
+      "tolerance": 0.5
+    },
+    {
+      "claim": "The website copy and official-copy scaffold distinguish FINITE_EDGE_OPERATOR_SBP_MATCH from NOT_REPLAYED smooth theorem claims.",
+      "method": "publication-surface-boundary-review",
+      "evidence": [
+        "research-formal-replay-preflight.html states FINITE_EDGE_OPERATOR_SBP_MATCH for the finite edge/operator theorem",
+        "research-formal-replay-preflight.html states continuous periodic integration by parts is NOT_REPLAYED",
+        "docs/research/official/FORMAL-REPLAY-PREFLIGHT-FOR-PDE-PACKETS-2026-07-02.md includes FINITE_EDGE_OPERATOR_SBP_MATCH and NOT_REPLAYED terms"
+      ],
+      "deviation": 0.0,
+      "tolerance": 0.5
+    },
+    {
+      "claim": "The nineteenth-wave content queue includes explicit do-not-post boundaries for Navier-Stokes, smooth periodic integration by parts, source truth, exhaustive coverage, native BuildLang relation receipts, wrapper health, and accepted-publication claims.",
+      "method": "content-boundary-review",
+      "evidence": [
+        "docs/outreach/NINETEENTH-WAVE-CONTENT-QUEUE-2026-07-02.md exists",
+        "Do Not Post forbids Project Telos solved Navier-Stokes",
+        "Do Not Post forbids Lean proved smooth periodic integration by parts",
+        "Do Not Post forbids source leads prove paper claims",
+        "Do Not Post forbids latest/exhaustive coverage",
+        "Do Not Post forbids native BuildLang relation-invariant support",
+        "Do Not Post forbids installed index wrapper health",
+        "Do Not Post forbids telos wrapper PATH claim",
+        "Do Not Post forbids website copy is submitted, accepted, or peer-reviewed"
+      ],
+      "deviation": 0.0,
+      "tolerance": 0.5
+    }
+  ]
+}

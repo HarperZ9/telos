@@ -1,0 +1,266 @@
+{
+  "closed_network": {
+    "reactions": [
+      "A_to_B",
+      "B_to_C",
+      "C_to_A"
+    ],
+    "species": [
+      "A",
+      "B",
+      "C"
+    ],
+    "stoichiometric_matrix": [
+      [
+        -1,
+        0,
+        1
+      ],
+      [
+        1,
+        -1,
+        0
+      ],
+      [
+        0,
+        1,
+        -1
+      ]
+    ],
+    "system_boundary": "closed"
+  },
+  "current_promoted_natural_laws": [],
+  "derived_conservation_vectors": [
+    {
+      "invariant": "A+B+C",
+      "residual": [
+        0,
+        0,
+        0
+      ],
+      "vector": [
+        1,
+        1,
+        1
+      ]
+    }
+  ],
+  "flagship_receipts": {
+    "forum": {
+      "confidence": 0.0,
+      "decided": null,
+      "exit_code": 0,
+      "needs_escalation": true,
+      "status": "MATCH",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "4fe3841632e2f93c96084b52acb57b2c0fa681cb74375a1b20d42389ca51dde2",
+      "top_candidates": [
+        {
+          "agent": "backend",
+          "score": 0.0
+        },
+        {
+          "agent": "ci-cd",
+          "score": 0.0
+        },
+        {
+          "agent": "cloud-infra",
+          "score": 0.0
+        },
+        {
+          "agent": "code-review",
+          "score": 0.0
+        },
+        {
+          "agent": "compiler-systems",
+          "score": 0.0
+        }
+      ]
+    },
+    "index": {
+      "exit_code": 0,
+      "graph_pack_sha256": "8ee383e19ae9a6141bee70de733fb6aa09201ff9d284ce6778ce58b06e6b68b2",
+      "schema": "project-telos.context-envelope/v1",
+      "source_refs_only": true,
+      "status": "MATCH",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "6bff045d7ddc97da03d786505a2c77b9ca8c9b6bdc5dea7ba77a64f4646a54ef",
+      "verification_verdict": "MATCH"
+    },
+    "telos": {
+      "exit_code": 0,
+      "status": "MATCH",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "be17cb15259234cb4e8e95c2b36e76c90d841431729beb140294e34c5f9ebfa7",
+      "tool": "telos",
+      "tool_version": "0.1.0"
+    }
+  },
+  "generated_on": "2026-07-01",
+  "law_candidate": {
+    "name": "stoichiometric_left_nullspace_conservation_invariant",
+    "scope": "closed reaction networks where l^T S = 0 for a candidate conservation vector l",
+    "status": "LAW_CANDIDATE"
+  },
+  "measurements": [
+    {
+      "id": "left_nullspace_vector",
+      "status": "MATCH"
+    },
+    {
+      "id": "closed_cycle_probe",
+      "status": "MATCH"
+    },
+    {
+      "id": "leaky_negative_fixture",
+      "status": "MATCH"
+    },
+    {
+      "id": "youtube_signal_binding",
+      "status": "MATCH"
+    },
+    {
+      "id": "flagships",
+      "status": "MATCH"
+    },
+    {
+      "id": "promotion_boundary",
+      "status": "MATCH"
+    }
+  ],
+  "negative_network": {
+    "breaks_invariant": true,
+    "candidate_residual": [
+      0,
+      0,
+      0,
+      -1
+    ],
+    "candidate_vector": [
+      1,
+      1,
+      1
+    ],
+    "max_total_drift": 0.455672581497486,
+    "network_id": "cycle_with_C_sink",
+    "status": "DRIFT_EXPECTED"
+  },
+  "non_promotion_statement": "This pass implements a bounded stoichiometric invariant checker. It does not prove a new natural law, biological discovery, wet-lab result, or production scientific runtime.",
+  "numerical_probe": {
+    "dt": 0.025,
+    "grid_points": 201,
+    "initial_state": {
+      "A": 2.0,
+      "B": 0.5,
+      "C": 1.25
+    },
+    "initial_total": 3.75,
+    "max_total_drift": 3.9968028886505635e-15,
+    "rate_constants": [
+      0.23,
+      0.31,
+      0.17
+    ],
+    "samples": [
+      {
+        "A": 2.0,
+        "B": 0.5,
+        "C": 1.25,
+        "t": 0.0,
+        "total": 3.75
+      },
+      {
+        "A": 1.727851322285959,
+        "B": 0.781557941687494,
+        "C": 1.240590736026546,
+        "t": 1.25,
+        "total": 3.749999999999999
+      },
+      {
+        "A": 1.5300923955599974,
+        "B": 0.9167209940723117,
+        "C": 1.3031866103676892,
+        "t": 2.5,
+        "total": 3.7499999999999982
+      },
+      {
+        "A": 1.3958342006762403,
+        "B": 0.9692552849946103,
+        "C": 1.3849105143291458,
+        "t": 3.75,
+        "total": 3.7499999999999964
+      },
+      {
+        "A": 1.310022599659551,
+        "B": 0.9791112091344576,
+        "C": 1.4608661912059895,
+        "t": 5.0,
+        "total": 3.7499999999999982
+      }
+    ]
+  },
+  "pass": "0106",
+  "promotion_requirements": [
+    "independent reproduction",
+    "formal symbolic checker adapter",
+    "larger reaction-network corpus",
+    "reviewer signoff"
+  ],
+  "schema": "StoichiometricInvariantCheckerReceipt/v1",
+  "seal": "93ee54b44bc5b863fb386e08067ce1ee69747bf8395ac07aacaea8fbfd9ad5f8",
+  "source_anchors": [
+    {
+      "claim": "stoichiometric left-nullspace vectors encode conserved moieties",
+      "kind": "paper",
+      "title": "The Convex Basis of the Left Null Space of the Stoichiometric Matrix",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC1303061/"
+    },
+    {
+      "claim": "reaction-network stoichiometry is constrained by conservation structure",
+      "kind": "paper",
+      "title": "What makes a reaction network chemical?",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9484159/"
+    },
+    {
+      "claim": "chemical reaction network analysis includes conservation laws",
+      "kind": "official_docs",
+      "title": "Catalyst.jl CRN Theory",
+      "url": "https://docs.sciml.ai/Catalyst/stable/network_analysis/crn_theory/"
+    },
+    {
+      "claim": "conservation-law rows are computed from net stoichiometry",
+      "kind": "official_docs",
+      "title": "Catalyst.jl Network Analysis API",
+      "url": "https://docs.sciml.ai/Catalyst/stable/api/network_analysis_api/"
+    },
+    {
+      "claim": "conservation matrices span the nullspace associated with stoichiometry",
+      "kind": "official_docs",
+      "title": "EQTK Core Concepts",
+      "url": "https://eqtk.github.io/user_guide/core_concepts.html"
+    }
+  ],
+  "source_bindings": {
+    "ai4science_pass": "0104",
+    "reaction_pass": "0105",
+    "source_packet": "AI4ScienceClaimToExperimentReceipt/v1"
+  },
+  "status": "STOICHIOMETRIC_INVARIANT_CHECKER_RECEIPT_MATCH",
+  "unsupported_claim_count": 0,
+  "validation_errors": [],
+  "youtube_signal_binding": {
+    "ai4science_video_count": 1,
+    "architecture_pull": "turn source leads into executable invariant, simulation, runtime, and proof receipts",
+    "buildlang_scientific_runtime_video_count": 14,
+    "raw_transcript_included": false,
+    "relevant_clusters": [
+      "molecular_ai_drug_discovery",
+      "enterprise_quantum_optimization",
+      "quantitative_finance_laws"
+    ],
+    "roadmap_pass": "0102",
+    "transcript_receipt_count": 19,
+    "valid_video_count": 19,
+    "youtube_pass": "0085"
+  }
+}

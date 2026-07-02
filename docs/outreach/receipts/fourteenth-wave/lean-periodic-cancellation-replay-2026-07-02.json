@@ -1,0 +1,36 @@
+{
+  "schema": "project-telos.theorem-prover-replay-receipt/v1",
+  "packet_id": "navier-stokes-periodic-skew-symmetry-v0",
+  "generated_at": "2026-07-02",
+  "toolchain": {
+    "elan": "elan 4.2.3 (b6cec7e10 2026-06-08)",
+    "lean": "Lean (version 4.31.0, x86_64-w64-windows-gnu, commit 68218e876d2a38b1985b8590fff244a83c321783, Release)",
+    "lake": "Lake version 5.0.0-src+68218e8 (Lean version 4.31.0)",
+    "installer": "elan-init.ps1 -NoPrompt 1 -NoModifyPath 1 -DefaultToolchain stable"
+  },
+  "source": {
+    "path": "docs/research/proof-packets/navier-stokes-periodic-skew-symmetry-v0/formal/lean/PeriodicCancellationPreflight.lean",
+    "sha256": "77e5cba345adc1fd99003bfc17092750fddca1a9f879b4ac59f99e74c374a936"
+  },
+  "command": "C:\\Users\\Zain\\.elan\\bin\\lean.exe docs\\research\\proof-packets\\navier-stokes-periodic-skew-symmetry-v0\\formal\\lean\\PeriodicCancellationPreflight.lean",
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": "",
+  "replayed_declarations": [
+    "ProjectTelos.FormalReplay.opposite_face_flux_cancels",
+    "ProjectTelos.FormalReplay.two_cell_periodic_flux_stencil_cancels"
+  ],
+  "verdicts": {
+    "lean_kernel_replay": "MATCH",
+    "formal_replay_rung": "ALGEBRAIC_CANCELLATION_ONLY",
+    "continuous_periodic_integration_by_parts": "NOT_REPLAYED",
+    "parent_millennium_problem": "UNVERIFIABLE"
+  },
+  "boundaries": [
+    "The Lean file proves integer algebra cancellation lemmas only.",
+    "It does not define integrals, smooth periodic fields, weak solutions, or Navier-Stokes equations.",
+    "It is not a proof of continuous periodic integration by parts.",
+    "It is not a proof of Navier-Stokes existence, uniqueness, smoothness, or global regularity.",
+    "It does not replace the BuildLang finite-mode witness or the source-body review queue."
+  ]
+}

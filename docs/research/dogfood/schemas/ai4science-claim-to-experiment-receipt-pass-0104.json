@@ -1,0 +1,388 @@
+{
+  "current_promoted_natural_laws": [],
+  "flagship_receipts": {
+    "forum": {
+      "confidence": 0.125,
+      "decided": null,
+      "exit_code": 0,
+      "needs_escalation": true,
+      "status": "MATCH",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "a70d5f95cb9dd305f9ec5dd544439bf31a9ebeb4813bfd5394a01fa229da18b8",
+      "top_candidates": [
+        {
+          "agent": "model-foundry",
+          "score": 0.125
+        },
+        {
+          "agent": "backend",
+          "score": 0.0
+        },
+        {
+          "agent": "ci-cd",
+          "score": 0.0
+        },
+        {
+          "agent": "cloud-infra",
+          "score": 0.0
+        },
+        {
+          "agent": "code-review",
+          "score": 0.0
+        }
+      ]
+    },
+    "index": {
+      "exit_code": 0,
+      "graph_pack_sha256": "8ee383e19ae9a6141bee70de733fb6aa09201ff9d284ce6778ce58b06e6b68b2",
+      "schema": "project-telos.context-envelope/v1",
+      "source_refs_only": true,
+      "status": "MATCH",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "a2f110e6019c20688bc1aa3844edffd4668638a27313a826db6855654cbdf7ab",
+      "verification_verdict": "MATCH"
+    },
+    "telos": {
+      "exit_code": 0,
+      "status": "MATCH",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "be17cb15259234cb4e8e95c2b36e76c90d841431729beb140294e34c5f9ebfa7",
+      "tool": "telos",
+      "tool_version": "0.1.0"
+    }
+  },
+  "generated_on": "2026-07-01",
+  "market_gap": {
+    "claim": "AI4Science tools cover agents, models, workflows, and lab records, but the unified claim-to-experiment proof packet remains a Telos wedge hypothesis.",
+    "gap_status": "inferred",
+    "missing_proof_layers": [
+      "claim provenance",
+      "agent action receipts",
+      "protocol receipts",
+      "measurement receipts",
+      "negative results",
+      "review verdicts"
+    ]
+  },
+  "measurements": [
+    {
+      "id": "source_count",
+      "status": "MATCH"
+    },
+    {
+      "id": "official_sources",
+      "status": "MATCH"
+    },
+    {
+      "id": "minimum_fields",
+      "status": "MATCH"
+    },
+    {
+      "id": "promotion_gates",
+      "status": "MATCH"
+    },
+    {
+      "id": "flagships",
+      "status": "MATCH"
+    },
+    {
+      "id": "promotion_boundary",
+      "status": "MATCH"
+    }
+  ],
+  "minimum_packet_fields": [
+    "source_claim",
+    "source_receipts",
+    "model_or_agent_actions",
+    "experiment_or_simulation_protocol",
+    "workflow_runtime_receipt",
+    "measurement_receipt",
+    "statistical_or_scoring_plan",
+    "reproduction_status",
+    "negative_result_path",
+    "reviewer_objections",
+    "promotion_verdict"
+  ],
+  "negative_fixtures": [
+    {
+      "expected_status": "REJECT",
+      "fixture_id": "discovery_claim_without_measurement"
+    },
+    {
+      "expected_status": "REJECT",
+      "fixture_id": "prediction_without_experimental_boundary"
+    },
+    {
+      "expected_status": "REJECT",
+      "fixture_id": "paper_without_reproduction_status"
+    }
+  ],
+  "next_experiments": [
+    {
+      "acceptance": [
+        "one biological claim has source receipt",
+        "protocol placeholder is explicit",
+        "promotion verdict remains UNVERIFIABLE"
+      ],
+      "experiment_id": "source_claim_to_unverified_protocol",
+      "status": "READY_NEXT"
+    },
+    {
+      "acceptance": [
+        "Nextflow/Snakemake analog fields map to Telos receipts",
+        "environment and output hashes are required"
+      ],
+      "experiment_id": "workflow_runtime_bridge",
+      "status": "READY_AFTER_SCHEMA"
+    },
+    {
+      "acceptance": [
+        "failed experiment is first-class",
+        "reviewer objections block promotion",
+        "human review is required"
+      ],
+      "experiment_id": "negative_result_and_review_lane",
+      "status": "READY_AFTER_MINIMUM_PACKET"
+    }
+  ],
+  "non_promotion_statement": "Pass 0104 maps AI4Science source anchors into receipt requirements. It does not prove biological discovery, drug efficacy, benchmark superiority, or a natural law.",
+  "pass": "0104",
+  "promotion_gates": {
+    "rejects_unmeasured_discovery_claim": true,
+    "requires_human_review": true,
+    "requires_reproduction_status": true
+  },
+  "schema": "AI4ScienceClaimToExperimentReceipt/v1",
+  "seal": "cdc127d906c82e1a485c434f2cea03c47902842a5182f7bac69e7d57205b6593",
+  "source_anchors": [
+    {
+      "confidence": "high",
+      "direct_claim": "AI agents for research in biology and complex sciences",
+      "name": "FutureHouse",
+      "source_kind": "official",
+      "url": "https://www.futurehouse.org/"
+    },
+    {
+      "confidence": "high",
+      "direct_claim": "scientific agents via web interface and API",
+      "name": "FutureHouse Platform",
+      "source_kind": "official",
+      "url": "https://www.futurehouse.org/research-announcements/launching-futurehouse-platform-ai-agents"
+    },
+    {
+      "confidence": "high",
+      "direct_claim": "automated pipeline for idea generation, literature search, experiments, writing, and review",
+      "name": "Sakana AI Scientist",
+      "source_kind": "official",
+      "url": "https://sakana.ai/ai-scientist/"
+    },
+    {
+      "confidence": "high",
+      "direct_claim": "framework for automated open-ended scientific discovery",
+      "name": "Sakana AI Scientist paper",
+      "source_kind": "primary_paper",
+      "url": "https://arxiv.org/abs/2408.06292"
+    },
+    {
+      "confidence": "high",
+      "direct_claim": "agentic R&D loop for hypotheses, tests, validation, and iteration",
+      "name": "Microsoft Discovery blog",
+      "source_kind": "official",
+      "url": "https://azure.microsoft.com/en-us/blog/microsoft-discovery-advancing-agentic-rd-at-scale/"
+    },
+    {
+      "confidence": "high",
+      "direct_claim": "enterprise R&D platform spanning idea, execution, analysis, and iteration",
+      "name": "Microsoft Discovery product",
+      "source_kind": "official",
+      "url": "https://azure.microsoft.com/en-us/solutions/discovery"
+    },
+    {
+      "confidence": "high",
+      "direct_claim": "biomolecular models and workflows for training, fine-tuning, and inference",
+      "name": "NVIDIA BioNeMo",
+      "source_kind": "official_docs",
+      "url": "https://docs.nvidia.com/bionemo-framework/latest/main/about/overview/"
+    },
+    {
+      "confidence": "high",
+      "direct_claim": "biomolecular interaction structure prediction model",
+      "name": "AlphaFold 3 Nature",
+      "source_kind": "primary_paper",
+      "url": "https://www.nature.com/articles/s41586-024-07487-w"
+    },
+    {
+      "confidence": "high",
+      "direct_claim": "scalable, reproducible, portable scientific workflows",
+      "name": "Nextflow",
+      "source_kind": "official",
+      "url": "https://www.nextflow.io/"
+    },
+    {
+      "confidence": "high",
+      "direct_claim": "reproducible and scalable data analysis workflows",
+      "name": "Snakemake",
+      "source_kind": "official_docs",
+      "url": "https://snakemake.readthedocs.io/"
+    },
+    {
+      "confidence": "high",
+      "direct_claim": "cloud platform for biotech R&D data, collaboration, and workflows",
+      "name": "Benchling",
+      "source_kind": "official",
+      "url": "https://www.benchling.com/"
+    }
+  ],
+  "source_bindings": {
+    "roadmap_pass": "0102",
+    "roadmap_top_priority": "optimization_proof_workbench",
+    "youtube_pass": "0085"
+  },
+  "source_summary": {
+    "official_or_primary_count": 11,
+    "source_count": 11,
+    "youtube_ai4science_video_count": 1
+  },
+  "source_to_receipt_map": [
+    {
+      "confidence": "high",
+      "direct_claim": "AI agents for research in biology and complex sciences",
+      "gap_status": "inferred",
+      "name": "FutureHouse",
+      "required_receipts": [
+        "source_claim",
+        "agent_action_receipt",
+        "reviewer_objections"
+      ],
+      "source_kind": "official",
+      "url": "https://www.futurehouse.org/"
+    },
+    {
+      "confidence": "high",
+      "direct_claim": "scientific agents via web interface and API",
+      "gap_status": "inferred",
+      "name": "FutureHouse Platform",
+      "required_receipts": [
+        "agent_action_receipt",
+        "workflow_runtime_receipt"
+      ],
+      "source_kind": "official",
+      "url": "https://www.futurehouse.org/research-announcements/launching-futurehouse-platform-ai-agents"
+    },
+    {
+      "confidence": "high",
+      "direct_claim": "automated pipeline for idea generation, literature search, experiments, writing, and review",
+      "gap_status": "inferred",
+      "name": "Sakana AI Scientist",
+      "required_receipts": [
+        "model_or_agent_actions",
+        "experiment_or_simulation_protocol",
+        "reviewer_objections"
+      ],
+      "source_kind": "official",
+      "url": "https://sakana.ai/ai-scientist/"
+    },
+    {
+      "confidence": "high",
+      "direct_claim": "framework for automated open-ended scientific discovery",
+      "gap_status": "inferred",
+      "name": "Sakana AI Scientist paper",
+      "required_receipts": [
+        "source_claim",
+        "measurement_receipt",
+        "promotion_verdict"
+      ],
+      "source_kind": "primary_paper",
+      "url": "https://arxiv.org/abs/2408.06292"
+    },
+    {
+      "confidence": "high",
+      "direct_claim": "agentic R&D loop for hypotheses, tests, validation, and iteration",
+      "gap_status": "inferred",
+      "name": "Microsoft Discovery blog",
+      "required_receipts": [
+        "hypothesis_receipt",
+        "validation_loop_receipt",
+        "iteration_receipt"
+      ],
+      "source_kind": "official",
+      "url": "https://azure.microsoft.com/en-us/blog/microsoft-discovery-advancing-agentic-rd-at-scale/"
+    },
+    {
+      "confidence": "high",
+      "direct_claim": "enterprise R&D platform spanning idea, execution, analysis, and iteration",
+      "gap_status": "inferred",
+      "name": "Microsoft Discovery product",
+      "required_receipts": [
+        "enterprise_context_receipt",
+        "human_review_receipt"
+      ],
+      "source_kind": "official",
+      "url": "https://azure.microsoft.com/en-us/solutions/discovery"
+    },
+    {
+      "confidence": "high",
+      "direct_claim": "biomolecular models and workflows for training, fine-tuning, and inference",
+      "gap_status": "inferred",
+      "name": "NVIDIA BioNeMo",
+      "required_receipts": [
+        "model_checkpoint_receipt",
+        "training_or_inference_receipt"
+      ],
+      "source_kind": "official_docs",
+      "url": "https://docs.nvidia.com/bionemo-framework/latest/main/about/overview/"
+    },
+    {
+      "confidence": "high",
+      "direct_claim": "biomolecular interaction structure prediction model",
+      "gap_status": "inferred",
+      "name": "AlphaFold 3 Nature",
+      "required_receipts": [
+        "primary_paper_receipt",
+        "prediction_measurement_receipt",
+        "experimental_validation_boundary"
+      ],
+      "source_kind": "primary_paper",
+      "url": "https://www.nature.com/articles/s41586-024-07487-w"
+    },
+    {
+      "confidence": "high",
+      "direct_claim": "scalable, reproducible, portable scientific workflows",
+      "gap_status": "inferred",
+      "name": "Nextflow",
+      "required_receipts": [
+        "workflow_runtime_receipt",
+        "container_or_environment_receipt"
+      ],
+      "source_kind": "official",
+      "url": "https://www.nextflow.io/"
+    },
+    {
+      "confidence": "high",
+      "direct_claim": "reproducible and scalable data analysis workflows",
+      "gap_status": "inferred",
+      "name": "Snakemake",
+      "required_receipts": [
+        "workflow_runtime_receipt",
+        "reproducibility_receipt"
+      ],
+      "source_kind": "official_docs",
+      "url": "https://snakemake.readthedocs.io/"
+    },
+    {
+      "confidence": "high",
+      "direct_claim": "cloud platform for biotech R&D data, collaboration, and workflows",
+      "gap_status": "inferred",
+      "name": "Benchling",
+      "required_receipts": [
+        "lab_record_receipt",
+        "sample_or_entity_lineage_receipt"
+      ],
+      "source_kind": "official",
+      "url": "https://www.benchling.com/"
+    }
+  ],
+  "status": "AI4SCIENCE_CLAIM_TO_EXPERIMENT_RECEIPT_MATCH",
+  "unsupported_claim_count": 0,
+  "validation_errors": []
+}

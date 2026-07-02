@@ -1,0 +1,83 @@
+{
+  "schema": "project-telos.local-reproduction-receipt/v1",
+  "captured_at": "2026-07-02T00:00:00.000Z",
+  "candidate": "pandas-dev/pandas#63458",
+  "source_issue_summary": "docs/outreach/receipts/seventh-wave/oss-showcase-live-issue-63458-summary.json",
+  "environment": {
+    "python": "3.12.10",
+    "platform": "Windows-11-10.0.26220-SP0",
+    "pandas": "3.0.3",
+    "pyarrow": "24.0.0",
+    "dependency_freeze": [
+      "numpy==2.5.0",
+      "packaging==26.2",
+      "pandas==3.0.3",
+      "pyarrow==24.0.0",
+      "python-dateutil==2.9.0.post0",
+      "setuptools==82.0.1",
+      "six==1.17.0",
+      "tzdata==2026.2",
+      "wheel==0.47.0"
+    ],
+    "dependency_freeze_sha256": "e895d9278d618028f73cd44d1c9697e618d06c8df74502e29f8a654e109c1799"
+  },
+  "command_under_test": "python reproduce_pandas_63458.py",
+  "expression": "arr = pd.array(['a'], dtype='string[pyarrow]'); (arr == arr).sum()",
+  "reproduction": {
+    "status": "failed-before-patch",
+    "exception_type": "AttributeError",
+    "exception_message": "'ArrowExtensionArray' object has no attribute 'sum'",
+    "traceback_tail": [
+      "Traceback (most recent call last):",
+      "  File \"%TEMP%\\telos-pandas-63458-repro\\reproduce_pandas_63458.py\", line 17, in <module>",
+      "    result = comparison.sum()",
+      "             ^^^^^^^^^^^^^^",
+      "AttributeError: 'ArrowExtensionArray' object has no attribute 'sum'"
+    ],
+    "stdout_sha256": "c01a283ae461b21999efdb6c66379607dd753357d86f24fc3e3f14948007e46a",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "setup_steps": [
+    {
+      "name": "create-venv",
+      "exit_code": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "python-version",
+      "exit_code": 0,
+      "stdout": "Python 3.12.10",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "pip-upgrade",
+      "exit_code": 0,
+      "stdout_sha256": "fe03c97ca5738b5167b71221c746b83e37f71c68de1ca876beb59a7ce86dbdff",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "pip-install",
+      "exit_code": 0,
+      "stdout_sha256": "664749e3720fd08997c3b167c109f51340a701c148ed25a4cd0ea429b0d116b9",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "pip-freeze",
+      "exit_code": 0,
+      "stdout_sha256": "e895d9278d618028f73cd44d1c9697e618d06c8df74502e29f8a654e109c1799",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "boundary": {
+    "clean_virtualenv_created": true,
+    "local_reproduction_command_executed": true,
+    "source_clone_inspected": false,
+    "pandas_tests_run": false,
+    "patch_authored": false,
+    "current_main_verified": false,
+    "maintainer_intent_verified": false,
+    "pr_ready": false
+  },
+  "note": "This proves the issue-authored expression fails in a clean local pandas 3.0.3 + pyarrow 24.0.0 environment. It does not prove a patch, upstream main behavior, or PR readiness."
+}

@@ -1,0 +1,201 @@
+{
+  "current_promoted_natural_laws": [],
+  "flagship_receipts": {
+    "forum": {
+      "confidence": 0.125,
+      "decided": null,
+      "exit_code": 0,
+      "needs_escalation": true,
+      "status": "MATCH",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "a70d5f95cb9dd305f9ec5dd544439bf31a9ebeb4813bfd5394a01fa229da18b8",
+      "top_candidates": [
+        {
+          "agent": "model-foundry",
+          "score": 0.125
+        },
+        {
+          "agent": "backend",
+          "score": 0.0
+        },
+        {
+          "agent": "ci-cd",
+          "score": 0.0
+        },
+        {
+          "agent": "cloud-infra",
+          "score": 0.0
+        },
+        {
+          "agent": "code-review",
+          "score": 0.0
+        }
+      ]
+    },
+    "index": {
+      "exit_code": 0,
+      "graph_pack_sha256": "8ee383e19ae9a6141bee70de733fb6aa09201ff9d284ce6778ce58b06e6b68b2",
+      "schema": "project-telos.context-envelope/v1",
+      "source_refs_only": true,
+      "status": "MATCH",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "b3723b453ae0663890fbd822bce2edb6b2b69e7fa2b3f2379df9d143c13dad2a",
+      "verification_verdict": "MATCH"
+    },
+    "telos": {
+      "exit_code": 0,
+      "status": "MATCH",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "be17cb15259234cb4e8e95c2b36e76c90d841431729beb140294e34c5f9ebfa7",
+      "tool": "telos",
+      "tool_version": "0.1.0"
+    }
+  },
+  "generated_on": "2026-07-01",
+  "law_candidate": {
+    "name": "closed_first_order_reaction_total_mass_invariant",
+    "scope": "closed two-species first-order conversion A -> B with stoichiometry -1,+1",
+    "status": "LAW_CANDIDATE"
+  },
+  "measurements": [
+    {
+      "id": "symbolic_derivative",
+      "status": "MATCH"
+    },
+    {
+      "id": "exact_invariant",
+      "status": "MATCH"
+    },
+    {
+      "id": "euler_invariant",
+      "status": "MATCH"
+    },
+    {
+      "id": "negative_fixture",
+      "status": "MATCH"
+    },
+    {
+      "id": "flagships",
+      "status": "MATCH"
+    },
+    {
+      "id": "promotion_boundary",
+      "status": "MATCH"
+    }
+  ],
+  "negative_fixture": {
+    "breaks_invariant": true,
+    "fixture_id": "open_system_degradation",
+    "max_total_drift": 0.2959392161530001,
+    "status": "DRIFT_EXPECTED"
+  },
+  "non_promotion_statement": "This pass proves a bounded invariant for a closed toy reaction model. It does not prove a new natural law, biological discovery, enzyme mechanism, or experimental result.",
+  "numerical_probe": {
+    "A0": 2.5,
+    "B0": 0.75,
+    "dt": 0.125,
+    "grid_points": 97,
+    "initial_total": 3.25,
+    "k": 0.37,
+    "max_euler_invariant_drift": 4.440892098500626e-16,
+    "max_exact_invariant_drift": 0.0,
+    "samples": [
+      {
+        "A_euler": 2.5,
+        "A_exact": 2.5,
+        "B_euler": 0.75,
+        "B_exact": 0.75,
+        "t": 0.0,
+        "total_euler": 3.25
+      },
+      {
+        "A_euler": 0.8023599299511733,
+        "A_exact": 0.8238974026879728,
+        "B_euler": 2.4476400700488266,
+        "B_exact": 2.426102597312027,
+        "t": 3.0,
+        "total_euler": 3.25
+      },
+      {
+        "A_euler": 0.25751258287650075,
+        "A_exact": 0.27152277206239506,
+        "B_euler": 2.992487417123499,
+        "B_exact": 2.978477227937605,
+        "t": 6.0,
+        "total_euler": 3.2499999999999996
+      },
+      {
+        "A_euler": 0.08264711118333397,
+        "A_exact": 0.08948276266913824,
+        "B_euler": 3.167352888816666,
+        "B_exact": 3.1605172373308617,
+        "t": 9.0,
+        "total_euler": 3.25
+      },
+      {
+        "A_euler": 0.026525092135890674,
+        "A_exact": 0.02948984629937893,
+        "B_euler": 3.2234749078641096,
+        "B_exact": 3.220510153700621,
+        "t": 12.0,
+        "total_euler": 3.2500000000000004
+      }
+    ]
+  },
+  "pass": "0105",
+  "promotion_requirements": [
+    "independent reproduction",
+    "symbolic checker adapter",
+    "broader reaction-network class proof",
+    "reviewer signoff"
+  ],
+  "proof": {
+    "derivation": "d(A+B)/dt=dA/dt+dB/dt=-kA+kA",
+    "invariant": "A+B",
+    "symbolic_derivative_total": "0"
+  },
+  "reaction": {
+    "equation": "A -> B",
+    "rate_law": "dA/dt=-kA; dB/dt=kA",
+    "stoichiometry": {
+      "A": -1,
+      "B": 1
+    },
+    "system_boundary": "closed"
+  },
+  "schema": "ReactionMassConservationReceipt/v1",
+  "seal": "44d61ff374c7ac528a4c837c31e8470e5ba539c19164bb098918c436f86ca26d",
+  "source_anchors": [
+    {
+      "claim": "mass action is used for chemical reaction kinetics",
+      "kind": "primary_or_review",
+      "title": "Chemical Kinetics and Mass Action in Coexisting Phases",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9620980/"
+    },
+    {
+      "claim": "conservation of mass links loss of one species to gain of another",
+      "kind": "course_notes",
+      "title": "Modeling with ODE",
+      "url": "https://people.tamu.edu/~phoward/m647/modode.pdf"
+    },
+    {
+      "claim": "mass-action kinetics yield polynomial ODE systems",
+      "kind": "paper",
+      "title": "Modeling and Analysis of Mass-Action Kinetics",
+      "url": "https://haddad.gatech.edu/journal/Mass_Action.pdf"
+    },
+    {
+      "claim": "reaction rate is proportional to collision frequency under mass action assumptions",
+      "kind": "textbook",
+      "title": "Law of Mass Action",
+      "url": "https://math.libretexts.org/Bookshelves/Applied_Mathematics/Mathematical_Biology_%28Chasnov%29/06%3A_Biochemical_Reactions/6.01%3A_The_Law_of_Mass_Action"
+    }
+  ],
+  "source_bindings": {
+    "ai4science_pass": "0104",
+    "source_packet": "AI4ScienceClaimToExperimentReceipt/v1"
+  },
+  "status": "REACTION_MASS_CONSERVATION_RECEIPT_MATCH",
+  "unsupported_claim_count": 0,
+  "validation_errors": []
+}

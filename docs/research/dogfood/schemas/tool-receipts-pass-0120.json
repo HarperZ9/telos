@@ -1,0 +1,230 @@
+{
+  "availability": {
+    "build": {
+      "path": null,
+      "status": "MISSING"
+    },
+    "buildc": {
+      "path": null,
+      "status": "MISSING"
+    },
+    "jax": {
+      "status": "MISSING"
+    },
+    "julia": {
+      "path": null,
+      "status": "MISSING"
+    },
+    "numpy": {
+      "status": "AVAILABLE"
+    },
+    "python": {
+      "path": "C:\\Users\\Zain\\AppData\\Local\\Programs\\Python\\Python312\\python.EXE",
+      "status": "AVAILABLE"
+    },
+    "scipy": {
+      "status": "AVAILABLE"
+    }
+  },
+  "compose": {
+    "command": "C:\\Users\\Zain\\AppData\\Local\\Programs\\Python\\Python312\\python.exe C:\\dev\\public\\telos\\docs\\research\\dogfood\\tools\\compose_hamiltonian_runtime_branch_receipt.py --out C:\\dev\\public\\telos\\docs\\research\\dogfood\\schemas\\hamiltonian-runtime-branch-receipt-pass-0120.json",
+    "exit_code": 0,
+    "status": "MATCH",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "ea06d4309506847b7bef003b05e3eb30be09aea871f4215f46e96deb30567982"
+  },
+  "forum": {
+    "confidence": 0.125,
+    "decided": null,
+    "exit_code": 0,
+    "needs_escalation": true,
+    "status": "MATCH",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "a70d5f95cb9dd305f9ec5dd544439bf31a9ebeb4813bfd5394a01fa229da18b8",
+    "top_candidates": [
+      {
+        "agent": "model-foundry",
+        "score": 0.125
+      },
+      {
+        "agent": "backend",
+        "score": 0.0
+      },
+      {
+        "agent": "ci-cd",
+        "score": 0.0
+      },
+      {
+        "agent": "cloud-infra",
+        "score": 0.0
+      },
+      {
+        "agent": "code-review",
+        "score": 0.0
+      }
+    ]
+  },
+  "index": {
+    "exit_code": 0,
+    "schema": "project-telos.context-envelope/v1",
+    "status": "MATCH",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "38ddc6fe54641baff4a8563e502c0d5cf9e07750350bc41eadf8db75a223fc47",
+    "verification_verdict": "MATCH"
+  },
+  "pass": "0120",
+  "runtime_branches": [
+    {
+      "branch_id": "numpy_float64_h_1/3",
+      "determinant_abs_drift": 0.0,
+      "determinant_float64": 1.0,
+      "h": "1/3",
+      "modified_final_float64": 0.9999999999999987,
+      "modified_initial_float64": 1.0,
+      "modified_max_abs_drift": 1.3322676295501878e-15,
+      "runtime": "numpy",
+      "standard_final_float64": 0.5579495314020098,
+      "standard_initial_float64": 0.5,
+      "status": "MATCH",
+      "steps": 24,
+      "tolerance": 1e-12
+    },
+    {
+      "branch_id": "numpy_float64_h_1/2",
+      "determinant_abs_drift": 0.0,
+      "determinant_float64": 1.0,
+      "h": "1/2",
+      "modified_final_float64": 1.0,
+      "modified_initial_float64": 1.0,
+      "modified_max_abs_drift": 0.0,
+      "runtime": "numpy",
+      "standard_final_float64": 0.6111035186572087,
+      "standard_initial_float64": 0.5,
+      "status": "MATCH",
+      "steps": 24,
+      "tolerance": 1e-12
+    },
+    {
+      "branch_id": "numpy_float64_h_2/3",
+      "determinant_abs_drift": 0.0,
+      "determinant_float64": 1.0,
+      "h": "2/3",
+      "modified_final_float64": 0.9999999999999994,
+      "modified_initial_float64": 1.0,
+      "modified_max_abs_drift": 5.551115123125783e-16,
+      "runtime": "numpy",
+      "standard_final_float64": 0.3750476390018574,
+      "standard_initial_float64": 0.5,
+      "status": "MATCH",
+      "steps": 24,
+      "tolerance": 1e-12
+    },
+    {
+      "branch_id": "numpy_explicit_euler_negative",
+      "determinant_float64": 1.1111111111111112,
+      "energy_final_float64": 6.26830006094342,
+      "energy_growth": true,
+      "energy_initial_float64": 0.5,
+      "runtime": "numpy",
+      "status": "MATCH"
+    },
+    {
+      "branch_id": "scipy_linalg_det_h_1/3",
+      "determinant_abs_drift": 0.0,
+      "determinant_float64": 1.0,
+      "h": "1/3",
+      "runtime": "scipy.linalg.det",
+      "status": "MATCH",
+      "tolerance": 1e-12
+    },
+    {
+      "branch_id": "scipy_linalg_det_h_1/2",
+      "determinant_abs_drift": 0.0,
+      "determinant_float64": 1.0,
+      "h": "1/2",
+      "runtime": "scipy.linalg.det",
+      "status": "MATCH",
+      "tolerance": 1e-12
+    },
+    {
+      "branch_id": "scipy_linalg_det_h_2/3",
+      "determinant_abs_drift": 0.0,
+      "determinant_float64": 1.0,
+      "h": "2/3",
+      "runtime": "scipy.linalg.det",
+      "status": "MATCH",
+      "tolerance": 1e-12
+    },
+    {
+      "branch_id": "jax_runtime_branch",
+      "runtime": "jax",
+      "status": "UNAVAILABLE_FENCED"
+    },
+    {
+      "branch_id": "buildlang_runtime_branch",
+      "runtime": "buildc",
+      "status": "UNAVAILABLE_FENCED"
+    },
+    {
+      "branch_id": "julia_sciml_branch",
+      "runtime": "julia",
+      "status": "UNAVAILABLE_FENCED"
+    }
+  ],
+  "schema": "DogfoodToolReceipts/v1",
+  "seal": "f50c8262024a518b3b34382f020809d013391e69bba9ba6b7b75200c165199a9",
+  "source_surface": {
+    "anchor_count": 4,
+    "anchors": [
+      {
+        "gap_status": "inferred",
+        "tool": "NumPy linalg",
+        "url": "https://numpy.org/doc/stable/reference/generated/numpy.linalg.det.html"
+      },
+      {
+        "gap_status": "inferred",
+        "tool": "SciPy linalg.det",
+        "url": "https://docs.scipy.org/doc/scipy/reference/generated/scipy.linalg.det.html"
+      },
+      {
+        "gap_status": "inferred",
+        "tool": "JAX Quickstart",
+        "url": "https://docs.jax.dev/en/latest/quickstart.html"
+      },
+      {
+        "gap_status": "inferred",
+        "tool": "Python decimal",
+        "url": "https://docs.python.org/3/library/decimal.html"
+      }
+    ]
+  },
+  "telos": {
+    "exit_code": 0,
+    "status": "MATCH",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "be17cb15259234cb4e8e95c2b36e76c90d841431729beb140294e34c5f9ebfa7",
+    "tool": "telos",
+    "tool_version": "0.1.0"
+  },
+  "telos_catalog": {
+    "exit_code": 0,
+    "status": "MATCH",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "ef95a6f1ff803c483c3c4dd553fe19c37ab144113a21bc005cf4148cf31a8564",
+    "summary_detected": true
+  },
+  "test": {
+    "command": "C:\\Users\\Zain\\AppData\\Local\\Programs\\Python\\Python312\\python.exe C:\\dev\\public\\telos\\docs\\research\\dogfood\\tools\\test_hamiltonian_runtime_branch_receipt.py",
+    "exit_code": 0,
+    "status": "MATCH",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "validator": {
+    "command": "C:\\Users\\Zain\\AppData\\Local\\Programs\\Python\\Python312\\python.exe C:\\dev\\public\\telos\\docs\\research\\dogfood\\tools\\validate_pass_0120_hamiltonian_runtime_branch.py",
+    "exit_code": 0,
+    "status": "MATCH",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "1aeaf7c239b6f7f357ecc70302499e1905bd4b402ceb1d1df0c85055f26631d4"
+  }
+}

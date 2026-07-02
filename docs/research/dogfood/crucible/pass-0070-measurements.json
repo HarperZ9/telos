@@ -1,0 +1,89 @@
+{
+  "measurements": [
+    {
+      "claim": "Pass 0070 created a LiveActionReceiptReplacement/v1 artifact with status LIVE_ACTION_RECEIPT_REPLACEMENT_MATCH, sha256 3a16014f465fc42b0527dd7cfe9c870cd150fba92e0e6eacb7bb9d1ba4fa4276, and seal 5b1e2c17698817d251186dac6e943f6ace5ab8f13fcca6592ebf1f10a7a6e6f3.",
+      "deviation": 0.0,
+      "evidence": [
+        "schema=LiveActionReceiptReplacement/v1",
+        "status=LIVE_ACTION_RECEIPT_REPLACEMENT_MATCH",
+        "sha256=3a16014f465fc42b0527dd7cfe9c870cd150fba92e0e6eacb7bb9d1ba4fa4276",
+        "seal=5b1e2c17698817d251186dac6e943f6ace5ab8f13fcca6592ebf1f10a7a6e6f3"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0070 loaded live action surface command node demo/action-receipt.mjs with status MATCH and schema project-telos.action-receipt/v1.",
+      "deviation": 0.0,
+      "evidence": [
+        "command=node demo/action-receipt.mjs",
+        "status=MATCH",
+        "schema=project-telos.action-receipt/v1"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0070 action surface checks have match 8 and drift 0.",
+      "deviation": 0.0,
+      "evidence": [
+        "match=8",
+        "drift=0"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0070 replaced the action component with telos.action.receipt.live.happy_path.0070 and digest 014ec1cef9f25f98411f60ec9e747e0777461130e89882490f41bdebc2d52717.",
+      "deviation": 0.0,
+      "evidence": [
+        "action_component=telos.action.receipt.live.happy_path.0070",
+        "action_digest=014ec1cef9f25f98411f60ec9e747e0777461130e89882490f41bdebc2d52717"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0070 product packet has component_count 6 and unsupported_claim_count 0.",
+      "deviation": 0.0,
+      "evidence": [
+        "component_count=6",
+        "unsupported_claim_count=0"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0070 contains 5 negative fixtures and 7 ablation results.",
+      "deviation": 0.0,
+      "evidence": [
+        "negative_fixture_count=5",
+        "ablation_count=7"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0070 composer sha256 is e5dd81810b5cab55d6e56c91dc75a88ebc08788f78ccad2344044386505f0e82 and compose_receipt status is MATCH.",
+      "deviation": 0.0,
+      "evidence": [
+        "composer_sha256=e5dd81810b5cab55d6e56c91dc75a88ebc08788f78ccad2344044386505f0e82",
+        "compose_status=MATCH"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0070 packet sha256 is 9ff374405a88f7502c576d6b79a506b015d7a66f9199fe6ae787ceb9f18bc255, steelman sha256 is 2b7fdcfc35b58a93de1f0c849fdeaca1699ce24bb721ba66244ca0422b214282, and test sha256 is 328e7a0cd2b409207d291cd7ecce0017b86109456d8b981f22b0cc96163480db with test_receipt status MATCH.",
+      "deviation": 0.0,
+      "evidence": [
+        "packet_sha256=9ff374405a88f7502c576d6b79a506b015d7a66f9199fe6ae787ceb9f18bc255",
+        "steelman_sha256=2b7fdcfc35b58a93de1f0c849fdeaca1699ce24bb721ba66244ca0422b214282",
+        "test_sha256=328e7a0cd2b409207d291cd7ecce0017b86109456d8b981f22b0cc96163480db",
+        "test_status=MATCH"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "frozen_pin_check": {
+    "git_blob_hashes": {
+      "Prob4b/Defs.lean": "f596023b79726b87da05ccaf825e512bd17237f29a43df3ce31dc01c7646868a",
+      "Prob4b/Theorems.lean": "cb80242d1bfd9e9b142e442dac9d0784081dabefbf7bd400dd0a27cd0e8bd3ae"
+    },
+    "line_ending_probe": {
+      "eol_drift": true,
+      "git_index": "lf",
+      "replay_requirement": "Use Git blob bytes, enforce LF checkout, or normalize before frozen SHA validation.",
+      "working_tree": "crlf"
+    },
+    "pin_file": "lean/problem-4b-formalization/scripts/frozen.sha256",
+    "pin_matches_git_blob_bytes": true,
+    "pin_matches_windows_worktree_bytes": false,
+    "pinned_git_blob_hashes": {
+      "Prob4b/Defs.lean": "f596023b79726b87da05ccaf825e512bd17237f29a43df3ce31dc01c7646868a",
+      "Prob4b/Theorems.lean": "cb80242d1bfd9e9b142e442dac9d0784081dabefbf7bd400dd0a27cd0e8bd3ae"
+    },
+    "working_tree_hashes": {
+      "Prob4b/Defs.lean": "4d3285bae57a53a42c33311745f5afdf6990d483cf0d1a0ffd796101a8051b2d",
+      "Prob4b/Theorems.lean": "70356618935d908762980a8dc0aead297f8d02a1ebdb997b5caaa1bfdfaa1b2e"
+    }
+  },
+  "non_claims": [
+    "This preflight does not prove any Problem 4(b) theorem.",
+    "This preflight does not run Lake or Lean.",
+    "This preflight does not verify theorem axiom output.",
+    "This preflight does not promote pipeline-math proof correctness."
+  ],
+  "schema": "PipelineMathProblem4bPreflightFixture/v1",
+  "seal": "87114d508a057eab4a4011b3670ae7a2844689fdd9bda1d2fca573ffb1dfccba",
+  "selected_project": {
+    "lean_toolchain": "leanprover/lean4:v4.31.0",
+    "path": "lean/problem-4b-formalization",
+    "reason": "Problem 4(b) includes a verification harness, frozen SHA pins, and ten named solution theorems.",
+    "theorem_count": 10,
+    "theorem_names": [
+      "B_triple_zero",
+      "M_triple_defect",
+      "M_annihilator",
+      "M_pairwise_intersection",
+      "triple_defect_survives",
+      "R_finite_conductor",
+      "R_not_quasi_coherent",
+      "prob4b_counterexample",
+      "problem4b_false",
+      "quasiCoherent_imp_finiteConductor"
+    ]
+  },
+  "source_hashes": {
+    "frozen_sha256_file_sha256": "64eabbdb5e601149590d2bda5c1957c585d53ba2f0dd5679253af55913f10bce",
+    "lakefile_toml_sha256": "00fef5f7a14febfb4b9e1a3473ac00f16d45b039309ed4bb5a92b13263751f5f",
+    "lean_toolchain_sha256": "465c68148dd061230368e3cbe5d1d2973069172b48b684c928ef1a665b627832",
+    "root_prob4b_sha256": "b549dda1f16b3bf7ce569ef5f729f4d7bf12d755cbe178056d2077bd728d9753",
+    "solution_worktree_sha256": "66f6fd1422de69a4c74aab403f3c0e5585c7ae1325fc0b8af61b5260b28467b6",
+    "theorems_worktree_sha256": "70356618935d908762980a8dc0aead297f8d02a1ebdb997b5caaa1bfdfaa1b2e",
+    "verify_sh_sha256": "fdb7f355ae2bbc0059b29fb5c2d9a834f433da22fa4e52ee704d2f5f148f39a7"
+  },
+  "source_repo": {
+    "clone_method": "git clone --depth 1",
+    "commit": "69d7df765a8f377a5e0628c6d36c088bce7642c9",
+    "formalization_project_count": 4,
+    "formalization_projects": [
+      "lean/problem-20-formalization",
+      "lean/problem-27b-form",
+      "lean/problem-30c-formalization",
+      "lean/problem-4b-formalization"
+    ],
+    "lean_file_count": 66,
+    "observed_on": "2026-07-01",
+    "temp_ref": "temp:pipeline-math-pass0030",
+    "url": "https://github.com/Pengbinghui/pipeline-math.git"
+  },
+  "toolchain_probe": {
+    "bash": "UNAVAILABLE",
+    "git": "MATCH",
+    "lake": "UNAVAILABLE",
+    "lean": "UNAVAILABLE",
+    "lean_replay_status": "UNVERIFIABLE_TOOL_UNAVAILABLE",
+    "python": "MATCH",
+    "replay_promotion_allowed": false,
+    "verify_script_attempt_status": "UNVERIFIABLE_TOOL_UNAVAILABLE",
+    "verify_script_missing_command": "bash"
+  }
+}

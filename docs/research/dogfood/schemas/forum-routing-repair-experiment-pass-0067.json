@@ -1,0 +1,92 @@
+{
+  "generated_on": "2026-07-01",
+  "negative_fixture": {
+    "expected_failure": "needs_escalation_true",
+    "probe_id": "broad_cross_domain",
+    "status": "FAIL_EXPECTED"
+  },
+  "non_promotion_statement": "Pass 0067 proves a prompt-shaping route repair for Forum. It does not modify Forum source code or prove all cross-domain prompts will route correctly.",
+  "pass": "0067",
+  "previous_pass_binding": {
+    "pass": "0066",
+    "path": "schemas/tool-growth-vector-experiment-matrix-pass-0066.json",
+    "schema": "ToolGrowthVectorExperimentMatrix/v1",
+    "seal": "12a30f44b3b7ba75608c5a2283a82eb6999014515d7e3ad39e4010cca7131531",
+    "sha256": "7337d9d350ee174baa94137f0d3404efb0b6fa2ae40b9bff7737a263881fa32e",
+    "status": "TOOL_GROWTH_VECTOR_EXPERIMENT_MATRIX_MATCH"
+  },
+  "repair_metrics": {
+    "baseline_project_telos_score": 0.09090909090909091,
+    "best_repaired_project_telos_score": 0.3181818181818182,
+    "project_telos_score_lift": 0.227272727273,
+    "repaired_no_escalation_count": 2,
+    "routing_repair_status": "MATCH"
+  },
+  "repair_rule": {
+    "required_prefix": "Project Telos dogfood pass",
+    "required_tool_chain": [
+      "Gather",
+      "Index",
+      "Forum",
+      "Crucible",
+      "Telos"
+    ],
+    "required_vocabulary": [
+      "growth-vector",
+      "proof packet",
+      "action receipt",
+      "loop ledger",
+      "scoped adapter lanes"
+    ]
+  },
+  "route_probes": [
+    {
+      "confidence": 0.0,
+      "decided": null,
+      "needs_escalation": true,
+      "probe_id": "broad_cross_domain",
+      "project_telos_score": 0.09090909090909091,
+      "prompt_shape": "broad frontier problem-to-proof map without explicit Telos dogfood framing",
+      "top_competing_scores": {
+        "ci-cd": 0.2,
+        "compiler-systems": 0.2,
+        "data-ml": 0.2,
+        "deep-research": 0.2,
+        "native-cpp": 0.2,
+        "render-pipeline": 0.2
+      }
+    },
+    {
+      "confidence": 0.5,
+      "decided": "project-telos",
+      "needs_escalation": false,
+      "probe_id": "decomposed_telos_tool_chain",
+      "project_telos_score": 0.3181818181818182,
+      "prompt_shape": "Project Telos dogfood pass with Gather/Index/Forum/Crucible/Telos chain and scoped adapter lanes",
+      "top_competing_scores": {
+        "data-ml": 0.2,
+        "function-routing": 0.2,
+        "model-foundry": 0.25
+      }
+    },
+    {
+      "confidence": 0.5,
+      "decided": "project-telos",
+      "needs_escalation": false,
+      "probe_id": "growth_vector_vocabulary",
+      "project_telos_score": 0.3181818181818182,
+      "prompt_shape": "Project Telos growth-vector experiment matrix with proof_os_core and explicit receipt vocabulary",
+      "top_competing_scores": {
+        "ci-cd": 0.2,
+        "data-ml": 0.2,
+        "deep-research": 0.2,
+        "model-foundry": 0.25
+      }
+    }
+  ],
+  "schema": "ForumRoutingRepairExperiment/v1",
+  "seal": "786203893e6a0e43fc5f0a2d48a483d532bb23d1d1d8902f683bb42f22938f39",
+  "status": "FORUM_ROUTING_REPAIR_EXPERIMENT_MATCH",
+  "unsupported_claim_count": 0,
+  "validation_errors": []
+}

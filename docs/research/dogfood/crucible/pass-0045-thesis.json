@@ -1,0 +1,38 @@
+{
+  "claims": [
+    {
+      "falsification": "schemas/lean-toolchain-acquisition-sources-pass-0045.json is missing, has a different schema, status, source_count, source_match_count, SHA-256, or seal",
+      "text": "Pass 0045 created a LeanToolchainAcquisitionSourcesSet/v1 artifact with status LEAN_TOOLCHAIN_ACQUISITION_SOURCES_MATCH, source_count 4, source_match_count 4, sha256 924ef19e25fbaf101001b0cc9caf25d929f13fcb034f2aa6bcc4720101c56117, and seal b31f2684d77de7f83ef71ec4b4ef1230d8b265c36758736d03cffade4149868e."
+    },
+    {
+      "falsification": "the Lean toolchain acquisition fixture is missing, has a different SHA-256 or seal, or is not linked from the schema",
+      "text": "Pass 0045 records fixture fixtures/lean-toolchain-acquisition-sources-pass-0045.json with sha256 ade36a73501fa595da988852cbbd89a5ff69039d06359c22b2c5d41f2e30ac56 and seal 3aa096cc668fe8cc30ccdb52f752ec548d851e3a4acd5c05bfb3fd814f9ec31e."
+    },
+    {
+      "falsification": "any of the four source receipts is missing, has non-200 status, reports DRIFT, or has a different SHA-256",
+      "text": "Pass 0045 records four official source receipts as MATCH with HTTP 200: lean_manual_install sha256 a452aecbbaad48706bd5a63443e13d49af8aef314ed2e9b0d46cbf5231d1a723, lean_elan_toolchains sha256 fb7052c9a665a1e685ec930895eb92bb7111ccea519de43a482597b4f6d167f6, elan_readme sha256 6778277cc096b30fbd7132ac420a85184a39a7f5b2b863b1841efee13de84d44, and elan_windows_installer_script sha256 1d3c66430d0e7b719b104e1dea80e395a066e96c37b886f2de4b0e9025a037fb."
+    },
+    {
+      "falsification": "the installer script fetch status, execution status, or expected project toolchain differs",
+      "text": "Pass 0045 records the Windows installer script as fetched true, executed false, installer sha256 1d3c66430d0e7b719b104e1dea80e395a066e96c37b886f2de4b0e9025a037fb, and expected project toolchain leanprover/lean4:v4.31.0."
+    },
+    {
+      "falsification": "the pass 0044 binding is missing, has a different SHA-256 or seal, or does not report the expected executable-preflight status",
+      "text": "Pass 0045 binds to pass 0044 Lean/Lake executable preflight with sha256 d98513f50b384ed38e4d52d6379916bc6b43dacc318571e0299ecd1d3dcc055f, seal 7139ea2e8ed154dcb5069fd5d5433fec85103b88d9bf309450dfd1193a6de607, and source status LEAN_LAKE_EXECUTABLE_PREFLIGHT_BLOCKED."
+    },
+    {
+      "falsification": "the pass 0045 validator result is missing, reports DRIFT, or source_match_count is not four",
+      "text": "Pass 0045 validator result reports MATCH with source_match_count 4."
+    },
+    {
+      "falsification": "packet 055 or the pass 0045 steelman is missing or has a different SHA-256",
+      "text": "Pass 0045 records packet 055 with sha256 288e9c39b0256a24ed86a9d183d5811accb80e7eb7a88dae9d7b9227eb6228b4 and local steelman with sha256 66a47a94715d8ed93462e1ec43ecf3388bb8afc73fc5ca6fa1188d4a441aa313."
+    },
+    {
+      "falsification": "pass 0045 artifacts claim Elan installation, Lean replay, lake build, dependency compilation, validation of every public pipeline-math claim, or a promoted natural law",
+      "text": "Pass 0045 preserves non-promotion boundaries: it fetches official source anchors only, does not install Elan, does not run Lean or lake build, and current_promoted_natural_laws remains none."
+    }
+  ],
+  "disposition": "fenced",
+  "title": "Dogfood Pass 0045 Lean Toolchain Acquisition Sources"
+}

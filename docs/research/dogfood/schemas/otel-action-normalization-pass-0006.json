@@ -1,0 +1,140 @@
+{
+  "schema": "OpenTelemetryActionNormalization/v1",
+  "pass": "0006",
+  "generated_on": "2026-07-01",
+  "source_url": "https://opentelemetry.io/docs/concepts/signals/traces/",
+  "purpose": "Map OpenTelemetry spans into Telos action events while preserving causality and making missing proof-layer fields explicit.",
+  "mappings": [
+    {
+      "otel_field": "trace_id",
+      "telos_field": "action_trace_id",
+      "normalization_rule": "copy as stable trace correlation id",
+      "lossiness": "none",
+      "required": true
+    },
+    {
+      "otel_field": "span_id",
+      "telos_field": "action_event_id",
+      "normalization_rule": "copy as event-local id",
+      "lossiness": "none",
+      "required": true
+    },
+    {
+      "otel_field": "parent_id",
+      "telos_field": "parent_action_event_id",
+      "normalization_rule": "copy if present; null for root span",
+      "lossiness": "none",
+      "required": false
+    },
+    {
+      "otel_field": "name",
+      "telos_field": "action_name",
+      "normalization_rule": "copy span operation name",
+      "lossiness": "none",
+      "required": true
+    },
+    {
+      "otel_field": "start_time",
+      "telos_field": "started_at",
+      "normalization_rule": "copy timestamp in source timezone/format and normalize downstream when needed",
+      "lossiness": "none",
+      "required": true
+    },
+    {
+      "otel_field": "end_time",
+      "telos_field": "finished_at",
+      "normalization_rule": "copy timestamp in source timezone/format and normalize downstream when needed",
+      "lossiness": "none",
+      "required": true
+    },
+    {
+      "otel_field": "attributes",
+      "telos_field": "runtime_attributes",
+      "normalization_rule": "copy key-value metadata; reserve Telos authority/workspace fields for explicit receipts rather than inferring them from arbitrary attributes",
+      "lossiness": "none",
+      "required": false
+    },
+    {
+      "otel_field": "events",
+      "telos_field": "action_observations",
+      "normalization_rule": "copy span events as timestamped observations",
+      "lossiness": "low",
+      "required": false
+    },
+    {
+      "otel_field": "links",
+      "telos_field": "causal_links",
+      "normalization_rule": "copy linked span references as causal or asynchronous relationships",
+      "lossiness": "low",
+      "required": false
+    },
+    {
+      "otel_field": "status",
+      "telos_field": "runtime_status",
+      "normalization_rule": "copy Unset/Error/Ok where available; do not translate Ok into proof acceptance",
+      "lossiness": "none",
+      "required": false
+    }
+  ],
+  "non_inferable_telos_fields": [
+    {
+      "telos_field": "authority_receipt",
+      "reason": "OpenTelemetry spans may show what happened, but not who admitted the action under which policy."
+    },
+    {
+      "telos_field": "workspace_state",
+      "reason": "Trace spans do not inherently include repository head, dirty state, or artifact digests."
+    },
+    {
+      "telos_field": "verification_verdict",
+      "reason": "Span status is runtime telemetry, not independent verification."
+    },
+    {
+      "telos_field": "decision_summary",
+      "reason": "Trace data does not decide whether to approve, block, rerun, escalate, publish, or deploy."
+    }
+  ],
+  "sample": {
+    "otel_span": {
+      "name": "build-color.roundtrip-probe",
+      "context": {
+        "trace_id": "00000000000000000000000000000666",
+        "span_id": "0000000000000606"
+      },
+      "parent_id": "0000000000000505",
+      "start_time": "2026-07-01T09:50:00Z",
+      "end_time": "2026-07-01T09:50:01Z",
+      "attributes": {
+        "repo.head": "96560ee",
+        "probe.kind": "color-roundtrip"
+      },
+      "events": [
+        {
+          "name": "probe.completed",
+          "timestamp": "2026-07-01T09:50:01Z"
+        }
+      ],
+      "status": "Ok"
+    },
+    "telos_action_event": {
+      "action_trace_id": "00000000000000000000000000000666",
+      "action_event_id": "0000000000000606",
+      "parent_action_event_id": "0000000000000505",
+      "action_name": "build-color.roundtrip-probe",
+      "started_at": "2026-07-01T09:50:00Z",
+      "finished_at": "2026-07-01T09:50:01Z",
+      "runtime_attributes": {
+        "repo.head": "96560ee",
+        "probe.kind": "color-roundtrip"
+      },
+      "action_observations": [
+        {
+          "name": "probe.completed",
+          "timestamp": "2026-07-01T09:50:01Z"
+        }
+      ],
+      "runtime_status": "Ok",
+      "proof_layer_status": "requires authority_receipt, workspace_state, and verification_verdict before promotion"
+    }
+  }
+}

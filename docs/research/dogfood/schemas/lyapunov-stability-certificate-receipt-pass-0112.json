@@ -1,0 +1,365 @@
+{
+  "buildlang_target": {
+    "status": "TARGET_INTERFACE_NOT_COMPILED",
+    "target_kernel": "lyapunov_certificate_kernel.bld"
+  },
+  "current_promoted_natural_laws": [],
+  "flagship_receipts": {
+    "forum": {
+      "confidence": 0.125,
+      "decided": null,
+      "exit_code": 0,
+      "needs_escalation": true,
+      "status": "MATCH",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "a70d5f95cb9dd305f9ec5dd544439bf31a9ebeb4813bfd5394a01fa229da18b8",
+      "top_candidates": [
+        {
+          "agent": "model-foundry",
+          "score": 0.125
+        },
+        {
+          "agent": "backend",
+          "score": 0.0
+        },
+        {
+          "agent": "ci-cd",
+          "score": 0.0
+        },
+        {
+          "agent": "cloud-infra",
+          "score": 0.0
+        },
+        {
+          "agent": "code-review",
+          "score": 0.0
+        }
+      ]
+    },
+    "index": {
+      "exit_code": 0,
+      "graph_pack_sha256": "8ee383e19ae9a6141bee70de733fb6aa09201ff9d284ce6778ce58b06e6b68b2",
+      "schema": "project-telos.context-envelope/v1",
+      "source_refs_only": true,
+      "status": "MATCH",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "191751e2dc8a314a6d60be0e3c5437632df3cda5bd0fe3d1296257286063727c",
+      "verification_verdict": "MATCH"
+    },
+    "telos": {
+      "exit_code": 0,
+      "status": "MATCH",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "be17cb15259234cb4e8e95c2b36e76c90d841431729beb140294e34c5f9ebfa7",
+      "tool": "telos",
+      "tool_version": "0.1.0"
+    }
+  },
+  "generated_on": "2026-07-01",
+  "law_candidate": {
+    "name": "discrete_lyapunov_certificate_energy_decrease",
+    "scope": "diagonal finite-dimensional discrete-time linear systems with exact rational certificate",
+    "status": "LAW_CANDIDATE"
+  },
+  "market_surface": {
+    "gap_hypothesis": "Control and optimization tools expose solvers, MPC, and modeling APIs, but portable proof packets can bind the system matrix, certificate, residual, simulation trace, source provenance, and negative fixtures.",
+    "gap_status": "hypothesis",
+    "tool_count": 9,
+    "tools": [
+      {
+        "gap_status": "inferred",
+        "source": "https://docs.scipy.org/doc/scipy/reference/generated/scipy.linalg.solve_discrete_lyapunov.html",
+        "tool": "SciPy"
+      },
+      {
+        "gap_status": "inferred",
+        "source": "https://www.mathworks.com/help/control/ref/dlyap.html",
+        "tool": "MATLAB dlyap"
+      },
+      {
+        "gap_status": "inferred",
+        "source": "https://www.mathworks.com/products/control.html",
+        "tool": "MATLAB Control System Toolbox"
+      },
+      {
+        "gap_status": "inferred",
+        "source": "https://python-control.readthedocs.io/en/0.10.2/generated/control.dlyap.html",
+        "tool": "python-control"
+      },
+      {
+        "gap_status": "inferred",
+        "source": "https://drake.mit.edu/",
+        "tool": "Drake"
+      },
+      {
+        "gap_status": "inferred",
+        "source": "https://web.casadi.org/docs/",
+        "tool": "CasADi"
+      },
+      {
+        "gap_status": "inferred",
+        "source": "https://www.do-mpc.com/",
+        "tool": "do-mpc"
+      },
+      {
+        "gap_status": "inferred",
+        "source": "https://osqp.org/docs/examples/mpc.html",
+        "tool": "OSQP"
+      },
+      {
+        "gap_status": "inferred",
+        "source": "https://www.cvxpy.org/",
+        "tool": "CVXPY"
+      }
+    ]
+  },
+  "measurements": [
+    {
+      "id": "stable_certificate",
+      "status": "MATCH"
+    },
+    {
+      "id": "energy_samples",
+      "status": "MATCH"
+    },
+    {
+      "id": "unstable_fixture",
+      "status": "MATCH"
+    },
+    {
+      "id": "bad_certificate_fixture",
+      "status": "MATCH"
+    },
+    {
+      "id": "market_surface",
+      "status": "MATCH"
+    },
+    {
+      "id": "flagships",
+      "status": "MATCH"
+    },
+    {
+      "id": "promotion_boundary",
+      "status": "MATCH"
+    }
+  ],
+  "negative_fixtures": {
+    "bad_certificate_fixture": {
+      "A": [
+        [
+          "1/2",
+          "0"
+        ],
+        [
+          "0",
+          "1/3"
+        ]
+      ],
+      "P": [
+        [
+          "1",
+          "0"
+        ],
+        [
+          "0",
+          "1"
+        ]
+      ],
+      "classification": "RESIDUAL_DRIFT_EXPECTED",
+      "lyapunov_residual": [
+        [
+          "1/4",
+          "0"
+        ],
+        [
+          "0",
+          "1/9"
+        ]
+      ],
+      "max_identity_residual": "1/4"
+    },
+    "unstable_spectral_fixture": {
+      "A": [
+        [
+          "6/5",
+          "0"
+        ],
+        [
+          "0",
+          "1/3"
+        ]
+      ],
+      "candidate_P": [
+        [
+          "-25/11",
+          "0"
+        ],
+        [
+          "0",
+          "9/8"
+        ]
+      ],
+      "classification": "PD_FAIL_EXPECTED",
+      "positive_definite": false
+    }
+  },
+  "non_promotion_statement": "This pass proves a bounded exact Lyapunov identity for one rational linear system. It does not validate hardware control, prove nonlinear stability, compile BuildLang, or promote a natural law.",
+  "pass": "0112",
+  "schema": "LyapunovStabilityCertificateReceipt/v1",
+  "seal": "fcb8647a852df0d3fa14ed16115e9cc15cb812427012773b4cca5a967bb31ac4",
+  "source_anchors": [
+    {
+      "claim": "solves the discrete Lyapunov equation",
+      "kind": "official_docs",
+      "tool": "SciPy",
+      "url": "https://docs.scipy.org/doc/scipy/reference/generated/scipy.linalg.solve_discrete_lyapunov.html"
+    },
+    {
+      "claim": "solves discrete-time Lyapunov equations",
+      "kind": "official_docs",
+      "tool": "MATLAB dlyap",
+      "url": "https://www.mathworks.com/help/control/ref/dlyap.html"
+    },
+    {
+      "claim": "models, analyzes, and designs control systems",
+      "kind": "official_product",
+      "tool": "MATLAB Control System Toolbox",
+      "url": "https://www.mathworks.com/products/control.html"
+    },
+    {
+      "claim": "provides dlyap for discrete Lyapunov equations",
+      "kind": "official_docs",
+      "tool": "python-control",
+      "url": "https://python-control.readthedocs.io/en/0.10.2/generated/control.dlyap.html"
+    },
+    {
+      "claim": "model-based design and verification for robotics",
+      "kind": "official_docs",
+      "tool": "Drake",
+      "url": "https://drake.mit.edu/"
+    },
+    {
+      "claim": "numerical optimization and optimal control",
+      "kind": "official_docs",
+      "tool": "CasADi",
+      "url": "https://web.casadi.org/docs/"
+    },
+    {
+      "claim": "robust model predictive control and moving horizon estimation",
+      "kind": "official_docs",
+      "tool": "do-mpc",
+      "url": "https://www.do-mpc.com/"
+    },
+    {
+      "claim": "model predictive control example for LTI systems",
+      "kind": "official_docs",
+      "tool": "OSQP",
+      "url": "https://osqp.org/docs/examples/mpc.html"
+    },
+    {
+      "claim": "Python-embedded convex optimization modeling",
+      "kind": "official_docs",
+      "tool": "CVXPY",
+      "url": "https://www.cvxpy.org/"
+    },
+    {
+      "claim": "Lyapunov analysis for control guarantees",
+      "kind": "course_notes",
+      "tool": "MIT Underactuated",
+      "url": "https://underactuated.mit.edu/lyapunov.html"
+    }
+  ],
+  "source_bindings": {
+    "runtime_suite_pass": "0111",
+    "youtube_roadmap_pass": "0102",
+    "youtube_source_pass": "0085"
+  },
+  "stable_certificate": {
+    "A": [
+      [
+        "1/2",
+        "0"
+      ],
+      [
+        "0",
+        "1/3"
+      ]
+    ],
+    "P": [
+      [
+        "4/3",
+        "0"
+      ],
+      [
+        "0",
+        "9/8"
+      ]
+    ],
+    "Q": [
+      [
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "1"
+      ]
+    ],
+    "energy_samples": [
+      {
+        "delta_v": "-1",
+        "identity_residual": "0",
+        "negative_q_energy": "-1",
+        "status": "MATCH",
+        "x": [
+          "1",
+          "0"
+        ]
+      },
+      {
+        "delta_v": "-4",
+        "identity_residual": "0",
+        "negative_q_energy": "-4",
+        "status": "MATCH",
+        "x": [
+          "0",
+          "2"
+        ]
+      },
+      {
+        "delta_v": "-13",
+        "identity_residual": "0",
+        "negative_q_energy": "-13",
+        "status": "MATCH",
+        "x": [
+          "3",
+          "-2"
+        ]
+      }
+    ],
+    "lyapunov_residual": [
+      [
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0"
+      ]
+    ],
+    "max_identity_residual": "0",
+    "max_spectral_radius_abs": "1/2",
+    "positive_definite": true
+  },
+  "status": "LYAPUNOV_STABILITY_CERTIFICATE_RECEIPT_MATCH",
+  "unsupported_claim_count": 0,
+  "validation_errors": [],
+  "youtube_binding": {
+    "dominant_cluster": "enterprise_quantum_optimization",
+    "raw_transcript_included": false,
+    "roadmap_pass": "0102",
+    "source_policy": "YouTube videos are treated as critical source leads. Metadata and Gather receipts are first-order evidence; synthesized product implications remain hypotheses.",
+    "transcript_receipt_count": 19,
+    "valid_video_count": 19
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "buildc": {
+    "cwd": "C:\\dev\\public\\pubscan\\quantalang\\compiler",
+    "exit_code": 0,
+    "line_checks": {
+      "c execution: 8 passed": true,
+      "c receipt: ok": true,
+      "lsp dispatch receipt: ok": true,
+      "manifest: 8 program(s)": true,
+      "memory layout receipt: ok": true,
+      "mir representation receipt: ok": true,
+      "module graph receipt: ok": true,
+      "rust receipt: ok": true,
+      "substrate receipt: ok": true,
+      "symbol graph receipt: ok": true
+    },
+    "status": "MATCH",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "fbe2daff8da1804b00cafe9a9fff36fc649429071b25f6a2561003255f6310d3"
+  },
+  "compose": {
+    "command": "C:\\Users\\Zain\\AppData\\Local\\Programs\\Python\\Python312\\python.exe C:\\dev\\public\\telos\\docs\\research\\dogfood\\tools\\compose_solver_availability_matrix_receipt.py --out C:\\dev\\public\\telos\\docs\\research\\dogfood\\schemas\\solver-availability-matrix-receipt-pass-0090.json",
+    "exit_code": 0,
+    "status": "MATCH",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "22f975a4a72b5fa4d818bcb22923befaa6ef49638feece0c7e18ef9610c55589"
+  },
+  "forum": {
+    "confidence": 0.09090909090909091,
+    "decided": null,
+    "exit_code": 0,
+    "needs_escalation": true,
+    "status": "MATCH",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "a72455b90f29ed2ce0ba1cca16cddb1e0d9efffa176ad3c7f3092a91e1ab34c8",
+    "top_candidates": [
+      {
+        "agent": "project-telos",
+        "score": 0.09090909090909091
+      },
+      {
+        "agent": "backend",
+        "score": 0.0
+      },
+      {
+        "agent": "ci-cd",
+        "score": 0.0
+      },
+      {
+        "agent": "cloud-infra",
+        "score": 0.0
+      },
+      {
+        "agent": "code-review",
+        "score": 0.0
+      }
+    ]
+  },
+  "index": {
+    "exit_code": 0,
+    "graph_pack_sha256": "8ee383e19ae9a6141bee70de733fb6aa09201ff9d284ce6778ce58b06e6b68b2",
+    "schema": "project-telos.context-envelope/v1",
+    "source_refs_only": true,
+    "status": "MATCH",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "281c6444de49d915a3144d41e963eec8a1b97e6985bc0d8fd61a814bcb9f0386",
+    "verification_verdict": "MATCH"
+  },
+  "pass": "0090",
+  "schema": "DogfoodToolReceipts/v1",
+  "seal": "957a8b3cf6edf1bd42c770b427bb9f4eef036b711830fb9c166510657f236389",
+  "summary": {
+    "local_available_rows": 11,
+    "local_unavailable_rows": 17,
+    "recommended_next": [
+      "buildlang_corpus_receipt_adapter",
+      "networkx_graph_optimization_adapter",
+      "ortools_cp_sat_dependency_receipt",
+      "sympy_symbolic_math_dependency_receipt"
+    ],
+    "row_count": 28
+  },
+  "telos": {
+    "exit_code": 0,
+    "status": "MATCH",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "be17cb15259234cb4e8e95c2b36e76c90d841431729beb140294e34c5f9ebfa7",
+    "tool": "telos",
+    "tool_version": "0.1.0"
+  },
+  "test": {
+    "command": "C:\\Users\\Zain\\AppData\\Local\\Programs\\Python\\Python312\\python.exe C:\\dev\\public\\telos\\docs\\research\\dogfood\\tools\\test_solver_availability_matrix_receipt.py",
+    "exit_code": 0,
+    "status": "MATCH",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

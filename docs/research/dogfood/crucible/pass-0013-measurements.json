@@ -1,0 +1,108 @@
+{
+  "measurements": [
+    {
+      "claim": "Pass 0013 created a QuantumExperimentReceiptSchema/v1 artifact with required receipt fields, four branch values, and branch_promotion_forbidden set to true.",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "method": "schema-review",
+      "evidence": [
+        "schemas/quantum-experiment-receipt-schema-pass-0013.json schema=QuantumExperimentReceiptSchema/v1",
+        "required_receipt_fields include receipt_id, schema, branch, hardware_claim_allowed, theorem_claim_ref, circuit, backend, resource_estimate, result, verdict",
+        "branch_values include EXACT_SIMULATOR, NOISY_SIMULATOR, HARDWARE_MOCK, CLOUD_HARDWARE",
+        "branch_promotion_forbidden=true",
+        "source_anchors include Qiskit Aer, IBM Quantum, Cirq, Azure Quantum Resource Estimator, Amazon Braket, and IonQ"
+      ]
+    },
+    {
+      "claim": "Pass 0013 created a QuantumExperimentReceiptSet/v1 fixture with exact and noisy simulator receipts, status RECEIPT_SET_MATCH, branch separation status BRANCH_SEPARATION_MATCH, and seal e5bcaf8a0cbe73fd51d6745539a8fca2ea1faff3ff9f375fe94a646761ce3ea9.",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "method": "receipt-set-review",
+      "evidence": [
+        "schemas/quantum-experiment-receipts-pass-0013.json schema=QuantumExperimentReceiptSet/v1",
+        "status=RECEIPT_SET_MATCH",
+        "receipt branches include EXACT_SIMULATOR and NOISY_SIMULATOR",
+        "branch_separation.status=BRANCH_SEPARATION_MATCH",
+        "seal=e5bcaf8a0cbe73fd51d6745539a8fca2ea1faff3ff9f375fe94a646761ce3ea9"
+      ]
+    },
+    {
+      "claim": "The pass 0013 exact simulator branch records hardware_claim_allowed=false, fidelity_to_desired_clone=0.5, and computational-basis histogram {00:0.5, 01:0.0, 10:0.0, 11:0.5}.",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "method": "exact-branch-review",
+      "evidence": [
+        "receipt_id=quantum-exp-pass-0013-exact-simulator",
+        "branch=EXACT_SIMULATOR",
+        "hardware_claim_allowed=false",
+        "result.status=FAILS_CLONING_AS_EXPECTED",
+        "fidelity_to_desired_clone=0.5",
+        "measurement_histogram 00=0.5, 01=0.0, 10=0.0, 11=0.5"
+      ]
+    },
+    {
+      "claim": "The pass 0013 noisy simulator branch records hardware_claim_allowed=false, status NOISY_BRANCH_NOT_THEOREM_PROOF, histogram_l1_drift_from_exact=0.0, and fidelity_to_desired_clone=0.45.",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "method": "noisy-branch-review",
+      "evidence": [
+        "receipt_id=quantum-exp-pass-0013-noisy-simulator",
+        "branch=NOISY_SIMULATOR",
+        "hardware_claim_allowed=false",
+        "result.status=NOISY_BRANCH_NOT_THEOREM_PROOF",
+        "histogram_l1_drift_from_exact=0.0",
+        "fidelity_to_desired_clone=0.45"
+      ]
+    },
+    {
+      "claim": "Pass 0013 records the negative evidence lesson that identical computational-basis histograms can hide phase-sensitive fidelity drift, so histogram equality alone is insufficient evidence.",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "method": "negative-fixture-review",
+      "evidence": [
+        "schemas/quantum-experiment-receipts-pass-0013.json branch_separation.histogram_warning records identical histogram insufficiency",
+        "packets/023-quantum-experiment-receipts.md states histogram_l1_drift_from_exact=0.0",
+        "packets/023-quantum-experiment-receipts.md states exact fidelity=0.5 and noisy fidelity=0.45",
+        "packets/023-quantum-experiment-receipts.md forbids histogram match to state/fidelity match promotion"
+      ]
+    },
+    {
+      "claim": "The pass 0013 validator reports MATCH with two matched checks and zero drift.",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "method": "validator-run-review",
+      "evidence": [
+        "schemas/pass-0013-quantum-experiment-validator-result.json status=MATCH",
+        "match=2",
+        "drift=0",
+        "checks include QuantumExperimentReceiptSchema status MATCH",
+        "checks include QuantumExperimentReceiptSet status MATCH"
+      ]
+    },
+    {
+      "claim": "Pass 0013 attempted Forum submit paths, preserved the executor JSON parsing error as UNVERIFIABLE, and did not treat the local steelman as a witnessed Forum adversarial result.",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "method": "forum-tool-review",
+      "evidence": [
+        "adversarial/pass-0013-branch-separation-steelman.md status=UNVERIFIABLE for Forum submit",
+        "Forum status entries=3 checkpoint=a146467e8ef2c07fac3932cf8ce3900a532b8829795d6bf377f012f476b62668",
+        "Forum verify chain=true deep=true",
+        "Forum submit error recorded: configured executor did not return valid JSON",
+        "file states this pass does not claim a witnessed Forum adversarial answer"
+      ]
+    },
+    {
+      "claim": "Pass 0013 promotes zero new quantum hardware results, quantum advantage claims, theorem proofs, natural laws, or scientific discoveries.",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "method": "non-promotion-review",
+      "evidence": [
+        "packets/023-quantum-experiment-receipts.md states target is not a new theorem, quantum hardware result, or quantum-advantage claim",
+        "schemas/quantum-experiment-receipt-schema-pass-0013.json non_promotion_policy forbids hardware result without CLOUD_HARDWARE and hardware_claim_allowed=true",
+        "schemas/quantum-experiment-receipt-schema-pass-0013.json non_promotion_policy forbids theorem promotion from experiment receipt alone",
+        "Current promoted natural laws: none"
+      ]
+    }
+  ]
+}

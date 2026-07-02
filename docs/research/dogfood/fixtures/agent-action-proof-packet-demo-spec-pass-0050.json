@@ -1,0 +1,151 @@
+{
+  "component_receipts": [
+    {
+      "component": "action_receipt",
+      "exists": true,
+      "line_count": 509,
+      "path": "demo/integrations/action-receipt-conventions.json",
+      "schema_hint": "project-telos.action-receipt/v1",
+      "schema_match": true,
+      "sha256": "c9019be88e858369503be6ddb35de733cc2e2ddac1b361ada5a7a5e7d619ff83",
+      "status": "existing"
+    },
+    {
+      "component": "admission_telemetry",
+      "exists": true,
+      "line_count": 208,
+      "path": "demo/integrations/admission-telemetry-conventions.json",
+      "schema_hint": "project-telos.admission-telemetry/v1",
+      "schema_match": true,
+      "sha256": "5d92ddde8e7de304cb9c40558a728ce536a1fa1219e5c5ca02bdf759ab6c19c9",
+      "status": "existing"
+    },
+    {
+      "component": "browser_evidence",
+      "exists": true,
+      "line_count": 58,
+      "path": "demo/integrations/browser-evidence.json",
+      "schema_hint": "project-telos.browser-evidence/v1",
+      "schema_match": true,
+      "sha256": "380652f54b2de78153c32cfd5cea946f350d5dfcfe38c52fd469a13b897c51c9",
+      "status": "existing"
+    },
+    {
+      "component": "loop_ledger",
+      "exists": true,
+      "line_count": 216,
+      "path": "demo/integrations/loop-ledger-conventions.json",
+      "schema_hint": "project-telos.loop-ledger/v1",
+      "schema_match": true,
+      "sha256": "9581fb2cb6290fc92b842075127de63913d5c62ef419d4434dc970428ade6e5a",
+      "status": "existing"
+    },
+    {
+      "component": "workstation_substrate",
+      "exists": true,
+      "line_count": 122,
+      "path": "demo/integrations/workstation-substrate.json",
+      "schema_hint": "project-telos.workstation-substrate/v1",
+      "schema_match": true,
+      "sha256": "5c7ed7913f9d9dd6273fd81f294394f0c5f528e180973eb585e74cd0dd62eca9",
+      "status": "existing"
+    },
+    {
+      "component": "model_foundry",
+      "exists": true,
+      "line_count": 255,
+      "path": "demo/model-foundry.mjs",
+      "schema_hint": "project-telos.model-foundry/v1",
+      "schema_match": true,
+      "sha256": "13924534722b115ac51b718f353af21e33f6f8790542b6451a4435f412e277df",
+      "status": "existing_executable"
+    },
+    {
+      "component": "flagship_action",
+      "exists": true,
+      "line_count": 62,
+      "path": "demo/flagship-action.mjs",
+      "schema_hint": "project-telos.flagship-action/v1",
+      "schema_match": true,
+      "sha256": "9ac83e300388b40d62eb6b839c6a8fe6ec2dbed44aa334d16ca22f750a6c6381",
+      "status": "existing_module"
+    },
+    {
+      "component": "context_pack",
+      "exists": true,
+      "line_count": 272,
+      "path": "demo/context-pack.mjs",
+      "schema_hint": "project-telos.context-pack/v1",
+      "schema_match": true,
+      "sha256": "78e178fadd55991a357d8cdbc16801ce2b700ff3bee841be487430ecc1d0790a",
+      "status": "existing_module"
+    },
+    {
+      "component": "telos_mcp",
+      "exists": true,
+      "line_count": 325,
+      "path": "demo/telos-mcp.mjs",
+      "schema_hint": "telos.mcp",
+      "schema_match": true,
+      "sha256": "9bfeff327f5411f8b31c1863f3f768db71f9b96c3cf1e113a0f46ac529baf3e8",
+      "status": "existing_module"
+    },
+    {
+      "component": "operator_doctor",
+      "exists": true,
+      "line_count": 276,
+      "path": "demo/operator-doctor.mjs",
+      "schema_hint": "telos.operator.doctor",
+      "schema_match": true,
+      "sha256": "eccf97105448835627db7716e48aa28dbaf05888d0b76e242d3d628f331a06ce",
+      "status": "existing_module"
+    },
+    {
+      "component": "display_calibration",
+      "exists": true,
+      "line_count": 34,
+      "path": "demo/display-calibration.mjs",
+      "schema_hint": "project-telos.display-calibration/v1",
+      "schema_match": true,
+      "sha256": "5ddad60d074a7a398491fbc371249c5af664e9ca80880b8f776e7bbb10454483",
+      "status": "follow_on_domain"
+    }
+  ],
+  "generated_on": "2026-07-01",
+  "pass": "0050",
+  "schema": "AgentActionProofPacketDemoSpecFixture/v1",
+  "seal": "75ef74b6e1a4706376d67f38d63d90652956716cd619af2e6332ba939f3a707d",
+  "summary_receipts": [
+    {
+      "command": "node demo/browser-evidence.mjs --summary",
+      "component": "browser_evidence",
+      "contains": {
+        "valid    MATCH": true,
+        "verdict  MATCH": true
+      },
+      "exit_code": 0,
+      "output_sha256": "1ab3ca882efa8c8d995ef47ebeded142beb521aa6fce2811b111a12e05a4ca28",
+      "status": "MATCH"
+    },
+    {
+      "command": "node demo/workstation-substrate.mjs --summary",
+      "component": "workstation_substrate",
+      "contains": {
+        "verdict      MATCH": true
+      },
+      "exit_code": 0,
+      "output_sha256": "48447e16512486f82f1f3a72e30ac481b793b2d42cc13fe99f51de0f5f3f7917",
+      "status": "MATCH"
+    },
+    {
+      "command": "node demo/model-foundry.mjs --summary",
+      "component": "model_foundry",
+      "contains": {
+        "verdict MATCH": true
+      },
+      "exit_code": 0,
+      "output_sha256": "46c1ec359fa88dfaa9bd65cd3c7fdf3ebc85db9a7623b0403facb9270ebf24c1",
+      "status": "MATCH"
+    }
+  ]
+}

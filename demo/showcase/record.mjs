@@ -34,6 +34,8 @@ function blockersForEvidence(evidence = {}) {
   const blockers = [];
   if (!evidence.reproduction?.command) {
     blockers.push("missing reproduction command");
+  } else if (evidence.reproduction.status !== "failed-before-patch") {
+    blockers.push("missing failing reproduction evidence");
   }
   if (!Array.isArray(evidence.tests) || !evidence.tests.some((test) => test.status === "passed")) {
     blockers.push("missing passing test evidence");

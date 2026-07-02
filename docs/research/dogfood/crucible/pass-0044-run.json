@@ -1,0 +1,424 @@
+{
+  "ok": true,
+  "thesis": {
+    "id": "2a61d018b04208e7",
+    "title": "Dogfood Pass 0044 Lean/Lake Executable Preflight",
+    "registered_at": 1782918546.1975672,
+    "disposition": "fenced",
+    "seal": "2a61d018b04208e7380b792f260a0a90c875c042bd3028a7fb0fc6e45493eb8e",
+    "claims": [
+      {
+        "id": "c4016df1a4f5d4f8",
+        "sha256": "c4016df1a4f5d4f8081302ff96bc91800912c4f984340d61412a506d582b4886"
+      },
+      {
+        "id": "4187197f438691a4",
+        "sha256": "4187197f438691a4a53c395e765082da4156ed450b6ed507111b44940a293365"
+      },
+      {
+        "id": "d17e179a8b8566c5",
+        "sha256": "d17e179a8b8566c57c37bc8957b9b1954178520a5ae2c85f22a0362a841e707a"
+      },
+      {
+        "id": "210ca0fc3164a794",
+        "sha256": "210ca0fc3164a794eb302eb538ae406c54fb9c92463cf8c81d6e9f9d3293c61c"
+      },
+      {
+        "id": "177c54464ca0af01",
+        "sha256": "177c54464ca0af01c093e44798fc177ac706e430f4ad9fe33fe9a0f9ccb8b1dd"
+      },
+      {
+        "id": "8e2f94ec576268f4",
+        "sha256": "8e2f94ec576268f45f548881a4b20cf5929e98109fa58af55a0cd8dd97cd5cb2"
+      },
+      {
+        "id": "ba5e2e0b372052b7",
+        "sha256": "ba5e2e0b372052b756275bb33ac6d6ba874328f1f9c166f02a7f3a82554aeff1"
+      },
+      {
+        "id": "234063390a037e28",
+        "sha256": "234063390a037e28be2f2dbe03c42c64fb18d6832327ce4b21a3febf884a6bd9"
+      }
+    ]
+  },
+  "refutations": [
+    {
+      "claim_id": "c4016df1a4f5d4f8",
+      "claim_sha256": "c4016df1a4f5d4f8081302ff96bc91800912c4f984340d61412a506d582b4886",
+      "challenge": "test the stated falsification: schemas/lean-lake-executable-preflight-pass-0044.json is missing, has a different schema, status, compiled_replay_admissible value, SHA-256, or seal",
+      "measurable": "schemas/lean-lake-executable-preflight-pass-0044.json is missing, has a different schema, status, compiled_replay_admissible value, SHA-256, or seal",
+      "source": "null"
+    },
+    {
+      "claim_id": "4187197f438691a4",
+      "claim_sha256": "4187197f438691a4a53c395e765082da4156ed450b6ed507111b44940a293365",
+      "challenge": "test the stated falsification: the Lean/Lake executable preflight fixture is missing, has a different SHA-256 or seal, or is not linked from the schema",
+      "measurable": "the Lean/Lake executable preflight fixture is missing, has a different SHA-256 or seal, or is not linked from the schema",
+      "source": "null"
+    },
+    {
+      "claim_id": "d17e179a8b8566c5",
+      "claim_sha256": "d17e179a8b8566c57c37bc8957b9b1954178520a5ae2c85f22a0362a841e707a",
+      "challenge": "test the stated falsification: the pass 0043 binding is missing, has a different SHA-256 or seal, or does not report the expected dependency-cache status",
+      "measurable": "the pass 0043 binding is missing, has a different SHA-256 or seal, or does not report the expected dependency-cache status",
+      "source": "null"
+    },
+    {
+      "claim_id": "210ca0fc3164a794",
+      "claim_sha256": "210ca0fc3164a794eb302eb538ae406c54fb9c92463cf8c81d6e9f9d3293c61c",
+      "challenge": "test the stated falsification: the expected toolchain differs, any of lake/lean/elan is recorded as on PATH, or common_elan_candidates_present is not zero",
+      "measurable": "the expected toolchain differs, any of lake/lean/elan is recorded as on PATH, or common_elan_candidates_present is not zero",
+      "source": "null"
+    },
+    {
+      "claim_id": "177c54464ca0af01",
+      "claim_sha256": "177c54464ca0af01c093e44798fc177ac706e430f4ad9fe33fe9a0f9ccb8b1dd",
+      "challenge": "test the stated falsification: the Lake project name observations differ or project_name_match is not false",
+      "measurable": "the Lake project name observations differ or project_name_match is not false",
+      "source": "null"
+    },
+    {
+      "claim_id": "8e2f94ec576268f4",
+      "claim_sha256": "8e2f94ec576268f45f548881a4b20cf5929e98109fa58af55a0cd8dd97cd5cb2",
+      "challenge": "test the stated falsification: the pass 0044 validator result is missing, reports DRIFT, or compiled_replay_admissible is not false",
+      "measurable": "the pass 0044 validator result is missing, reports DRIFT, or compiled_replay_admissible is not false",
+      "source": "null"
+    },
+    {
+      "claim_id": "ba5e2e0b372052b7",
+      "claim_sha256": "ba5e2e0b372052b756275bb33ac6d6ba874328f1f9c166f02a7f3a82554aeff1",
+      "challenge": "test the stated falsification: packet 054 or the pass 0044 steelman is missing or has a different SHA-256",
+      "measurable": "packet 054 or the pass 0044 steelman is missing or has a different SHA-256",
+      "source": "null"
+    },
+    {
+      "claim_id": "234063390a037e28",
+      "claim_sha256": "234063390a037e28be2f2dbe03c42c64fb18d6832327ce4b21a3febf884a6bd9",
+      "challenge": "test the stated falsification: pass 0044 artifacts claim Lean replay, lake build, dependency compilation, semantic proof review, validation of every public pipeline-math claim, or a promoted natural law",
+      "measurable": "pass 0044 artifacts claim Lean replay, lake build, dependency compilation, semantic proof review, validation of every public pipeline-math claim, or a promoted natural law",
+      "source": "null"
+    }
+  ],
+  "assessment": {
+    "started_at": 1782918546.2122452,
+    "thesis_id": "2a61d018b04208e7",
+    "thesis_seal": "2a61d018b04208e7380b792f260a0a90c875c042bd3028a7fb0fc6e45493eb8e",
+    "claims": 8,
+    "match": 8,
+    "drift": 0,
+    "unverifiable": 0,
+    "verdict_seal": "973a0ca42746a6916accbb055210438a2812f06c506431035e7ea95df0bcfa2c",
+    "measurement_seal": "d38d9082cefa02691c03d2a3f4ceccbd14cb250cd040722f27e862ed3123c55c",
+    "disposition": "fenced",
+    "stored": null,
+    "verdicts": [
+      {
+        "claim_id": "c4016df1a4f5d4f8",
+        "claim_sha256": "c4016df1a4f5d4f8081302ff96bc91800912c4f984340d61412a506d582b4886",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "lean-lake-preflight-schema-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "4187197f438691a4",
+        "claim_sha256": "4187197f438691a4a53c395e765082da4156ed450b6ed507111b44940a293365",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "fixture-binding-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "d17e179a8b8566c5",
+        "claim_sha256": "d17e179a8b8566c57c37bc8957b9b1954178520a5ae2c85f22a0362a841e707a",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "source-binding-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "210ca0fc3164a794",
+        "claim_sha256": "210ca0fc3164a794eb302eb538ae406c54fb9c92463cf8c81d6e9f9d3293c61c",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "executable-availability-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "177c54464ca0af01",
+        "claim_sha256": "177c54464ca0af01c093e44798fc177ac706e430f4ad9fe33fe9a0f9ccb8b1dd",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "lake-project-name-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "8e2f94ec576268f4",
+        "claim_sha256": "8e2f94ec576268f45f548881a4b20cf5929e98109fa58af55a0cd8dd97cd5cb2",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "validator-result-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "ba5e2e0b372052b7",
+        "claim_sha256": "ba5e2e0b372052b756275bb33ac6d6ba874328f1f9c166f02a7f3a82554aeff1",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "packet-presence-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "234063390a037e28",
+        "claim_sha256": "234063390a037e28be2f2dbe03c42c64fb18d6832327ce4b21a3febf884a6bd9",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "non-promotion-boundary-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      }
+    ],
+    "measurements": [
+      {
+        "claim_id": "c4016df1a4f5d4f8",
+        "claim_sha256": "c4016df1a4f5d4f8081302ff96bc91800912c4f984340d61412a506d582b4886",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "lean-lake-preflight-schema-review",
+        "measured_at": 1782918546.2122452,
+        "evidence": [
+          "schema=LeanLakeExecutablePreflightSet/v1",
+          "status=LEAN_LAKE_EXECUTABLE_PREFLIGHT_BLOCKED",
+          "compiled_replay_admissible=false",
+          "sha256=d98513f50b384ed38e4d52d6379916bc6b43dacc318571e0299ecd1d3dcc055f",
+          "seal=7139ea2e8ed154dcb5069fd5d5433fec85103b88d9bf309450dfd1193a6de607"
+        ]
+      },
+      {
+        "claim_id": "4187197f438691a4",
+        "claim_sha256": "4187197f438691a4a53c395e765082da4156ed450b6ed507111b44940a293365",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "fixture-binding-review",
+        "measured_at": 1782918546.2122452,
+        "evidence": [
+          "fixture sha256=51f60da2e6581cf87b26111818060e37c59af0dec859f43df8b67bbe9e1b8898",
+          "fixture seal=7eb73ddc3f379c7c51a31fe570be2430171a8ad3242ad0e7bc582998f7959746"
+        ]
+      },
+      {
+        "claim_id": "d17e179a8b8566c5",
+        "claim_sha256": "d17e179a8b8566c57c37bc8957b9b1954178520a5ae2c85f22a0362a841e707a",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "source-binding-review",
+        "measured_at": 1782918546.2122452,
+        "evidence": [
+          "dependency_cache_binding_sha256=393f71b91fb69d800aff7f81751517eb62af2ee0d098670ae97d4f16a869de22",
+          "dependency_cache_binding_seal=8e88cd761c7ae0996c6d20bfeb78fb5cf9bf6083a3de1f09601a62463a5d665b",
+          "dependency_cache_binding_status=LAKE_DEPENDENCY_CACHE_BINDING_MATCH"
+        ]
+      },
+      {
+        "claim_id": "210ca0fc3164a794",
+        "claim_sha256": "210ca0fc3164a794eb302eb538ae406c54fb9c92463cf8c81d6e9f9d3293c61c",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "executable-availability-review",
+        "measured_at": 1782918546.2122452,
+        "evidence": [
+          "expected_toolchain=leanprover/lean4:v4.31.0",
+          "lake_on_path=false",
+          "lean_on_path=false",
+          "elan_on_path=false",
+          "common_elan_candidates_present=0"
+        ]
+      },
+      {
+        "claim_id": "177c54464ca0af01",
+        "claim_sha256": "177c54464ca0af01c093e44798fc177ac706e430f4ad9fe33fe9a0f9ccb8b1dd",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "lake-project-name-review",
+        "measured_at": 1782918546.2122452,
+        "evidence": [
+          "lakefile_name=Prob4b",
+          "manifest_name=Prob27b",
+          "project_name_match=false"
+        ]
+      },
+      {
+        "claim_id": "8e2f94ec576268f4",
+        "claim_sha256": "8e2f94ec576268f45f548881a4b20cf5929e98109fa58af55a0cd8dd97cd5cb2",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "validator-result-review",
+        "measured_at": 1782918546.2122452,
+        "evidence": [
+          "schemas/pass-0044-lean-lake-executable-preflight-validator-result.json status=MATCH",
+          "compiled_replay_admissible=false"
+        ]
+      },
+      {
+        "claim_id": "ba5e2e0b372052b7",
+        "claim_sha256": "ba5e2e0b372052b756275bb33ac6d6ba874328f1f9c166f02a7f3a82554aeff1",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "packet-presence-review",
+        "measured_at": 1782918546.2122452,
+        "evidence": [
+          "packets/054-lean-lake-executable-preflight.md sha256=91e38389327c8daee3c939e605a43213f8001707d3ade0a9ca2bfaa3107db570",
+          "adversarial/pass-0044-lean-lake-executable-preflight-steelman.md sha256=daf30c73299f750087984036939bcc8b77f23b59cc083bb1b2838c221273155f"
+        ]
+      },
+      {
+        "claim_id": "234063390a037e28",
+        "claim_sha256": "234063390a037e28be2f2dbe03c42c64fb18d6832327ce4b21a3febf884a6bd9",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "non-promotion-boundary-review",
+        "measured_at": 1782918546.2122452,
+        "evidence": [
+          "non_promotion_statement present",
+          "current_promoted_natural_laws=[]",
+          "compiled_replay_status=NOT_RUN",
+          "steelman states pass is not compilation"
+        ]
+      }
+    ],
+    "seal": "07766394f2a3f056e117bffe51ce4ede154715f348903c1cf273399846b827be"
+  },
+  "verdicts": [
+    {
+      "claim_id": "c4016df1a4f5d4f8",
+      "claim_sha256": "c4016df1a4f5d4f8081302ff96bc91800912c4f984340d61412a506d582b4886",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "lean-lake-preflight-schema-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "4187197f438691a4",
+      "claim_sha256": "4187197f438691a4a53c395e765082da4156ed450b6ed507111b44940a293365",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "fixture-binding-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "d17e179a8b8566c5",
+      "claim_sha256": "d17e179a8b8566c57c37bc8957b9b1954178520a5ae2c85f22a0362a841e707a",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "source-binding-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "210ca0fc3164a794",
+      "claim_sha256": "210ca0fc3164a794eb302eb538ae406c54fb9c92463cf8c81d6e9f9d3293c61c",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "executable-availability-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "177c54464ca0af01",
+      "claim_sha256": "177c54464ca0af01c093e44798fc177ac706e430f4ad9fe33fe9a0f9ccb8b1dd",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "lake-project-name-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "8e2f94ec576268f4",
+      "claim_sha256": "8e2f94ec576268f45f548881a4b20cf5929e98109fa58af55a0cd8dd97cd5cb2",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "validator-result-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "ba5e2e0b372052b7",
+      "claim_sha256": "ba5e2e0b372052b756275bb33ac6d6ba874328f1f9c166f02a7f3a82554aeff1",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "packet-presence-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "234063390a037e28",
+      "claim_sha256": "234063390a037e28be2f2dbe03c42c64fb18d6832327ce4b21a3febf884a6bd9",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "non-promotion-boundary-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    }
+  ],
+  "checks": {
+    "seals_ok": true,
+    "thesis_ok": true,
+    "verdicts_rederive": true
+  },
+  "report": "docs\\research\\dogfood\\crucible\\pass-0044-report.md",
+  "record": "docs\\research\\dogfood\\crucible\\pass-0044-run.json",
+  "bundle": null,
+  "spec": null,
+  "review": null,
+  "verifier": {
+    "mode": "cleanroom",
+    "inputs": [],
+    "excluded": [
+      "worker context",
+      "reasoning trace",
+      "intermediate steps"
+    ],
+    "checkability": "If success cannot be evaluated from the original spec and the artifact, the spec is not checkable yet."
+  }
+}

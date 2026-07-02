@@ -1,0 +1,44 @@
+{
+  "schema": "HeatEquationEnergyProbe/v1",
+  "identity": "For u_t = alpha u_xx with zero Dirichlet boundary conditions, d/dt int u^2 dx = -2 alpha int |u_x|^2 dx <= 0.",
+  "stable_probe": {
+    "grid_points": 129,
+    "alpha": 1.0,
+    "dx": 0.0078125,
+    "dt": 0.0000274658203125,
+    "cfl": 0.45,
+    "steps": 400,
+    "initial_energy": 0.53125,
+    "final_energy": 0.4069449317114255,
+    "max_single_step_increase": 0.0,
+    "increase_count": 0,
+    "first_increase": null,
+    "status": "ENERGY_MONOTONE"
+  },
+  "unstable_probe": {
+    "grid_points": 129,
+    "alpha": 1.0,
+    "dx": 0.0078125,
+    "dt": 0.0000335693359375,
+    "cfl": 0.55,
+    "steps": 400,
+    "initial_energy": 0.53125,
+    "final_energy": 1.5979193736301155e+28,
+    "max_single_step_increase": 4.857579569627854e+27,
+    "increase_count": 199,
+    "first_increase": {
+      "step": 201,
+      "before": 0.448053971125224,
+      "after": 0.4481385086840946,
+      "increase": 0.0000845375588706121
+    },
+    "status": "ENERGY_INCREASE_DETECTED"
+  },
+  "interpretation": {
+    "stable_expected": "The explicit scheme should preserve discrete energy monotonicity for this smooth test under a conservative CFL.",
+    "unstable_expected": "The intentionally high CFL run is a negative fixture and should detect energy growth.",
+    "limits": "This is a bounded numerical witness and not a substitute for the continuous integration-by-parts proof."
+  },
+  "seal": "b3021c14b0e5dc8adeddadf0d22e2780dbf259c349caf5cbc2ba255b591fd7d5",
+  "status": "PROBE_MATCH"
+}

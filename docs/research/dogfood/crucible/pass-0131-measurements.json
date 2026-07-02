@@ -1,0 +1,118 @@
+{
+  "measurements": [
+    {
+      "claim": "Pass 0131 created a TraditionDerivationAtlasReceipt/v1 artifact with status TRADITION_DERIVATION_ATLAS_MATCH, sha256 ea8cceda1433286f97914368ac0bc180e3b85e9b424ff7f026ae3110f54930e0, and seal 69312c0f6f914696201cb9153b2893b222671a59c012697b4f569a9d49209d45.",
+      "deviation": 0.0,
+      "evidence": [
+        "schema=TraditionDerivationAtlasReceipt/v1",
+        "status=TRADITION_DERIVATION_ATLAS_MATCH",
+        "sha256=ea8cceda1433286f97914368ac0bc180e3b85e9b424ff7f026ae3110f54930e0",
+        "seal=69312c0f6f914696201cb9153b2893b222671a59c012697b4f569a9d49209d45"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0131 binds upstream pass {'brandom_work_graph_pass': '0130', 'brandom_work_graph_seal': 'ff9b4fb1da095a4cee0ee2eda60f48347b00d2e901c1ef8365b7e8ca31e1fea4', 'source_store': 'gather/pass-0131-tradition-derivation-atlas'} and records 10 source receipts.",
+      "deviation": 0.0,
+      "evidence": [
+        "source_bindings={'brandom_work_graph_pass': '0130', 'brandom_work_graph_seal': 'ff9b4fb1da095a4cee0ee2eda60f48347b00d2e901c1ef8365b7e8ca31e1fea4', 'source_store': 'gather/pass-0131-tradition-derivation-atlas'}",
+        "source_receipts=[{'chars': 117806, 'kind': 'webpage', 'method': 'http-get', 'raw_body_exported': False, 'ref': 'https://plato.stanford.edu/entries/frege/', 'sha256': 'e0b3ca8f7c64a7d86433f2d27749f581ad9ffe31ef6ec8050bcd21538456ab4e', 'source': 'web', 'status': 'GATHER_VERIFIED', 'title': 'Gottlob Frege (Stanford Encyclopedia of Philosophy)'}, {'chars': 151001, 'kind': 'webpage', 'method': 'http-get', 'raw_body_exported': False, 'ref': 'https://plato.stanford.edu/entries/hegel/', 'sha256': '32015a02bfe4002c8d6cfc9191507a16be796361c08942213723700a38567dde', 'source': 'web', 'status': 'GATHER_VERIFIED', 'title': 'Georg Wilhelm Friedrich Hegel (Stanford Encyclopedia of Philosophy)'}, {'chars': 149573, 'kind': 'webpage', 'method': 'http-get', 'raw_body_exported': False, 'ref': 'https://plato.stanford.edu/entries/kant/', 'sha256': 'dc9449021a3fa6e861f897e8906e58e0ab66b630acaf53eb2bee491401efcaf1', 'source': 'web', 'status': 'GATHER_VERIFIED', 'title': 'Immanuel Kant (Stanford Encyclopedia of Philosophy)'}, {'chars': 113704, 'kind': 'webpage', 'method': 'http-get', 'raw_body_exported': False, 'ref': 'https://plato.stanford.edu/entries/logic-classical/', 'sha256': 'c86fa0e2cc0179aa36375c0b19c83b17e20211ad0265c27ee211e7ed760b1003', 'source': 'web', 'status': 'GATHER_VERIFIED', 'title': 'Classical Logic (Stanford Encyclopedia of Philosophy)'}, {'chars': 102597, 'kind': 'webpage', 'method': 'http-get', 'raw_body_exported': False, 'ref': 'https://plato.stanford.edu/entries/logical-empiricism/', 'sha256': '6de18ea3fc240aaf18f97fd5c55760441637492e0fc000f942f2444032fba3c9', 'source': 'web', 'status': 'GATHER_VERIFIED', 'title': 'Logical Empiricism (Stanford Encyclopedia of Philosophy)'}, {'chars': 89334, 'kind': 'webpage', 'method': 'http-get', 'raw_body_exported': False, 'ref': 'https://plato.stanford.edu/entries/pragmatism/', 'sha256': '03c203c3c29f082b7707dfd43df396d45165f6580c4e7a240f25afb46329eeb9', 'source': 'web', 'status': 'GATHER_VERIFIED', 'title': 'Pragmatism (Stanford Encyclopedia of Philosophy)'}, {'chars': 72727, 'kind': 'webpage', 'method': 'http-get', 'raw_body_exported': False, 'ref': 'https://plato.stanford.edu/entries/rorty/', 'sha256': '12246ceb76e025da9db5bdaa0e29bfed185e73aec94e5080476b7f1b59fc2fae', 'source': 'web', 'status': 'GATHER_VERIFIED', 'title': 'Richard Rorty (Stanford Encyclopedia of Philosophy)'}, {'chars': 117488, 'kind': 'webpage', 'method': 'http-get', 'raw_body_exported': False, 'ref': 'https://plato.stanford.edu/entries/sellars/', 'sha256': '7aae2f1864f33e8784e08809c88ce4fffbbcb0b3b6c170e83cdf0959447d8fab', 'source': 'web', 'status': 'GATHER_VERIFIED', 'title': 'Wilfrid Sellars (Stanford Encyclopedia of Philosophy)'}, {'chars': 86336, 'kind': 'webpage', 'method': 'http-get', 'raw_body_exported': False, 'ref': 'https://plato.stanford.edu/entries/wittgenstein/', 'sha256': '54cf8480c1b87db5a4afca673d4b3496ba1afc276304caa02f1c6b32f4e8de5b', 'source': 'web', 'status': 'GATHER_VERIFIED', 'title': 'Ludwig Wittgenstein (Stanford Encyclopedia of Philosophy)'}, {'chars': 7600, 'kind': 'webpage', 'method': 'http-get', 'raw_body_exported': False, 'ref': 'https://sites.pitt.edu/~rbrandom/Texts%20Mark%201%20p.html', 'sha256': 'bc801e10d78960b928caec6973ce5361a456f6b4a55f18112b6f2ae95fc2b3a1', 'source': 'web', 'status': 'GATHER_VERIFIED', 'title': 'Texts Available for Download'}]"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0131 defines 10 atlas nodes with dominant terms.",
+      "deviation": 0.0,
+      "evidence": [
+        "atlas_nodes=[{'dominant_terms': ['logic', 'language', 'reason', 'semantics', 'inference', 'meaning'], 'id': 'classical_logic', 'label': 'Classical Logic', 'source_ref': 'https://plato.stanford.edu/entries/logic-classical/', 'source_sha256': 'c86fa0e2cc0179aa36375c0b19c83b17e20211ad0265c27ee211e7ed760b1003', 'status': 'SOURCE_BACKED_NODE', 'term_hit_count': 408}, {'dominant_terms': ['Frege', 'logic', 'concept', 'language', 'Kant', 'inference'], 'id': 'frege', 'label': 'Frege', 'source_ref': 'https://plato.stanford.edu/entries/frege/', 'source_sha256': 'e0b3ca8f7c64a7d86433f2d27749f581ad9ffe31ef6ec8050bcd21538456ab4e', 'status': 'SOURCE_BACKED_NODE', 'term_hit_count': 943}, {'dominant_terms': ['Wittgenstein', 'logic', 'language', 'meaning', 'concept', 'representation'], 'id': 'wittgenstein', 'label': 'Wittgenstein', 'source_ref': 'https://plato.stanford.edu/entries/wittgenstein/', 'source_sha256': '54cf8480c1b87db5a4afca673d4b3496ba1afc276304caa02f1c6b32f4e8de5b', 'status': 'SOURCE_BACKED_NODE', 'term_hit_count': 590}, {'dominant_terms': ['Kant', 'reason', 'experience', 'representation', 'concept', 'logic'], 'id': 'kant', 'label': 'Kant', 'source_ref': 'https://plato.stanford.edu/entries/kant/', 'source_sha256': 'dc9449021a3fa6e861f897e8906e58e0ab66b630acaf53eb2bee491401efcaf1', 'status': 'SOURCE_BACKED_NODE', 'term_hit_count': 845}, {'dominant_terms': ['Hegel', 'logic', 'concept', 'Kant', 'reason', 'analytic'], 'id': 'hegel', 'label': 'Hegel', 'source_ref': 'https://plato.stanford.edu/entries/hegel/', 'source_sha256': '32015a02bfe4002c8d6cfc9191507a16be796361c08942213723700a38567dde', 'status': 'SOURCE_BACKED_NODE', 'term_hit_count': 999}, {'dominant_terms': ['logic', 'language', 'concept', 'empiricism', 'analytic', 'meaning'], 'id': 'logical_empiricism', 'label': 'Logical Empiricism', 'source_ref': 'https://plato.stanford.edu/entries/logical-empiricism/', 'source_sha256': '6de18ea3fc240aaf18f97fd5c55760441637492e0fc000f942f2444032fba3c9', 'status': 'SOURCE_BACKED_NODE', 'term_hit_count': 532}, {'dominant_terms': ['pragmatism', 'experience', 'concept', 'logic', 'reason', 'norm'], 'id': 'pragmatism', 'label': 'Pragmatism', 'source_ref': 'https://plato.stanford.edu/entries/pragmatism/', 'source_sha256': '03c203c3c29f082b7707dfd43df396d45165f6580c4e7a240f25afb46329eeb9', 'status': 'SOURCE_BACKED_NODE', 'term_hit_count': 388}, {'dominant_terms': ['Sellars', 'concept', 'language', 'logic', 'norm', 'reason'], 'id': 'sellars', 'label': 'Sellars', 'source_ref': 'https://plato.stanford.edu/entries/sellars/', 'source_sha256': '7aae2f1864f33e8784e08809c88ce4fffbbcb0b3b6c170e83cdf0959447d8fab', 'status': 'SOURCE_BACKED_NODE', 'term_hit_count': 792}, {'dominant_terms': ['Rorty', 'pragmatism', 'analytic', 'concept', 'logic', 'representation'], 'id': 'rorty', 'label': 'Rorty', 'source_ref': 'https://plato.stanford.edu/entries/rorty/', 'source_sha256': '12246ceb76e025da9db5bdaa0e29bfed185e73aec94e5080476b7f1b59fc2fae', 'status': 'SOURCE_BACKED_NODE', 'term_hit_count': 494}, {'dominant_terms': ['Hegel', 'concept', 'norm', 'reason', 'logic', 'pragmatism'], 'id': 'brandom', 'label': 'Brandom', 'source_ref': 'https://sites.pitt.edu/~rbrandom/Texts%20Mark%201%20p.html', 'source_sha256': 'bc801e10d78960b928caec6973ce5361a456f6b4a55f18112b6f2ae95fc2b3a1', 'status': 'SOURCE_BACKED_NODE', 'term_hit_count': 128}]"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0131 defines 13 atlas edges and each edge is HYPOTHESIS_SOURCE_BACKED.",
+      "deviation": 0.0,
+      "evidence": [
+        "atlas_edges=[{'from': 'classical_logic', 'relation': 'formal logic and semantics prerequisite', 'source_refs': ['https://plato.stanford.edu/entries/logic-classical/', 'https://plato.stanford.edu/entries/frege/'], 'status': 'HYPOTHESIS_SOURCE_BACKED', 'to': 'frege', 'verification_boundary': 'source-backed prerequisite/contrast edge, not a proven causal influence claim'}, {'from': 'frege', 'relation': 'logic-language analytic tradition', 'source_refs': ['https://plato.stanford.edu/entries/frege/', 'https://plato.stanford.edu/entries/wittgenstein/'], 'status': 'HYPOTHESIS_SOURCE_BACKED', 'to': 'wittgenstein', 'verification_boundary': 'source-backed prerequisite/contrast edge, not a proven causal influence claim'}, {'from': 'kant', 'relation': 'post-Kantian idealism line', 'source_refs': ['https://plato.stanford.edu/entries/kant/', 'https://plato.stanford.edu/entries/hegel/'], 'status': 'HYPOTHESIS_SOURCE_BACKED', 'to': 'hegel', 'verification_boundary': 'source-backed prerequisite/contrast edge, not a proven causal influence claim'}, {'from': 'hegel', 'relation': 'Hegelian recognitive/normative source lead', 'source_refs': ['https://plato.stanford.edu/entries/hegel/', 'https://sites.pitt.edu/~rbrandom/Texts%20Mark%201%20p.html'], 'status': 'HYPOTHESIS_SOURCE_BACKED', 'to': 'brandom', 'verification_boundary': 'source-backed prerequisite/contrast edge, not a proven causal influence claim'}, {'from': 'classical_logic', 'relation': 'logic-centered analytic context', 'source_refs': ['https://plato.stanford.edu/entries/logic-classical/', 'https://plato.stanford.edu/entries/logical-empiricism/'], 'status': 'HYPOTHESIS_SOURCE_BACKED', 'to': 'logical_empiricism', 'verification_boundary': 'source-backed prerequisite/contrast edge, not a proven causal influence claim'}, {'from': 'logical_empiricism', 'relation': 'empiricism as contrast and inheritance', 'source_refs': ['https://plato.stanford.edu/entries/logical-empiricism/', 'https://plato.stanford.edu/entries/sellars/'], 'status': 'HYPOTHESIS_SOURCE_BACKED', 'to': 'sellars', 'verification_boundary': 'source-backed prerequisite/contrast edge, not a proven causal influence claim'}, {'from': 'kant', 'relation': 'Kantian categories and experience source lead', 'source_refs': ['https://plato.stanford.edu/entries/kant/', 'https://plato.stanford.edu/entries/sellars/'], 'status': 'HYPOTHESIS_SOURCE_BACKED', 'to': 'sellars', 'verification_boundary': 'source-backed prerequisite/contrast edge, not a proven causal influence claim'}, {'from': 'pragmatism', 'relation': 'pragmatist anti-foundational context', 'source_refs': ['https://plato.stanford.edu/entries/pragmatism/', 'https://plato.stanford.edu/entries/rorty/'], 'status': 'HYPOTHESIS_SOURCE_BACKED', 'to': 'rorty', 'verification_boundary': 'source-backed prerequisite/contrast edge, not a proven causal influence claim'}, {'from': 'sellars', 'relation': 'Sellarsian analytic-pragmatist bridge', 'source_refs': ['https://plato.stanford.edu/entries/sellars/', 'https://plato.stanford.edu/entries/rorty/'], 'status': 'HYPOTHESIS_SOURCE_BACKED', 'to': 'rorty', 'verification_boundary': 'source-backed prerequisite/contrast edge, not a proven causal influence claim'}, {'from': 'sellars', 'relation': 'norms, reasons, and scorekeeping dependency', 'source_refs': ['https://plato.stanford.edu/entries/sellars/', 'https://sites.pitt.edu/~rbrandom/Texts%20Mark%201%20p.html'], 'status': 'HYPOTHESIS_SOURCE_BACKED', 'to': 'brandom', 'verification_boundary': 'source-backed prerequisite/contrast edge, not a proven causal influence claim'}, {'from': 'rorty', 'relation': 'pragmatist conversation source lead', 'source_refs': ['https://plato.stanford.edu/entries/rorty/', 'https://sites.pitt.edu/~rbrandom/Texts%20Mark%201%20p.html'], 'status': 'HYPOTHESIS_SOURCE_BACKED', 'to': 'brandom', 'verification_boundary': 'source-backed prerequisite/contrast edge, not a proven causal influence claim'}, {'from': 'pragmatism', 'relation': 'pragmatist inferentialist source lead', 'source_refs': ['https://plato.stanford.edu/entries/pragmatism/', 'https://sites.pitt.edu/~rbrandom/Texts%20Mark%201%20p.html'], 'status': 'HYPOTHESIS_SOURCE_BACKED', 'to': 'brandom', 'verification_boundary': 'source-backed prerequisite/contrast edge, not a proven causal influence claim'}, {'from': 'frege', 'relation': 'inferential semantics source lead', 'source_refs': ['https://plato.stanford.edu/entries/frege/', 'https://sites.pitt.edu/~rbrandom/Texts%20Mark%201%20p.html'], 'status': 'HYPOTHESIS_SOURCE_BACKED', 'to': 'brandom', 'verification_boundary': 'source-backed prerequisite/contrast edge, not a proven causal influence claim'}]"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0131 defines 5 learning modules with verifiers.",
+      "deviation": 0.0,
+      "evidence": [
+        "learning_modules=[{'exercise': 'trace one Brandom claim to two predecessor anchors', 'id': 'source_trace', 'verifier': 'every concept edge names source refs'}, {'exercise': 'compare Sellars and logical empiricism as source-backed contrast', 'id': 'contrast_class', 'verifier': 'learner names inherited and rejected commitments'}, {'exercise': 'construct a Kant -> Hegel -> Brandom path', 'id': 'prerequisite_path', 'verifier': 'all path nodes exist in atlas'}, {'exercise': 'rewrite one tradition relation as an inferential move', 'id': 'inferential_rewrite', 'verifier': 'answer contains claim, rule, consequence, and objection'}, {'exercise': 'demote one attractive but under-evidenced claim', 'id': 'overclaim_audit', 'verifier': 'unsupported causality and completeness claims are rejected'}]"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0131 defines 4 product hypotheses.",
+      "deviation": 0.0,
+      "evidence": [
+        "product_hypotheses=[{'status': 'HYPOTHESIS', 'tool': 'Tradition Derivation Atlas', 'wedge': 'source-backed intellectual dependency maps with explicit overclaim gates'}, {'status': 'HYPOTHESIS', 'tool': 'Concept Prerequisite Tutor', 'wedge': 'turns dense theory into prerequisite paths and checkable exercises'}, {'status': 'HYPOTHESIS', 'tool': 'Citation-to-Exercise Studio', 'wedge': 'converts citation clusters into learner tasks, objections, and repair receipts'}, {'status': 'HYPOTHESIS', 'tool': 'Research Lineage Packet', 'wedge': 'packages tradition edges with provenance, confidence, and falsifiers'}]"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0131 rejects 6 negative fixtures.",
+      "deviation": 0.0,
+      "evidence": [
+        "negative_fixtures=[{'failures': ['sampled_sources_only', 'requires_bibliographic_exhaustiveness'], 'fixture_id': 'complete_genealogy_rejected', 'status': 'REJECTED'}, {'failures': ['edge_is_prerequisite_hypothesis', 'requires_primary_historical_evidence'], 'fixture_id': 'causal_influence_from_edge_rejected', 'status': 'REJECTED'}, {'failures': ['no_user_study', 'no_outcome_measure'], 'fixture_id': 'learning_efficacy_rejected', 'status': 'REJECTED'}, {'failures': ['missing_source_refs', 'no_receipt'], 'fixture_id': 'sourceless_edge_rejected', 'status': 'REJECTED'}, {'failures': ['copyright_boundary', 'receipt_digest_only'], 'fixture_id': 'raw_article_export_rejected', 'status': 'REJECTED'}, {'failures': ['not_a_physics_law', 'requires_independent_reproduction'], 'fixture_id': 'humanities_to_natural_law_rejected', 'status': 'REJECTED'}]"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0131 boundary rejects complete genealogy, causal influence proof, learning efficacy, raw export, and natural-law promotion.",
+      "deviation": 0.0,
+      "evidence": [
+        "boundary=Pass 0131 builds a sampled, source-backed tradition atlas. Edges are prerequisite or contrast hypotheses, not complete genealogy, causality proof, learning-efficacy evidence, or natural-law promotion."
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0131 flagship receipts for Forum, Index, Telos status, and Telos catalog all have MATCH status.",
+      "deviation": 0.0,
+      "evidence": [
+        "flagship_receipts={'forum': {'decided': None, 'exit_code': 0, 'status': 'MATCH', 'stderr_sha256': 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855', 'stdout_sha256': '4fe3841632e2f93c96084b52acb57b2c0fa681cb74375a1b20d42389ca51dde2'}, 'index': {'exit_code': 0, 'status': 'MATCH', 'stderr_sha256': 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855', 'stdout_sha256': 'a6642b7c2ecfd19acb791bc3d527625e84af01bcc0f7ccda1335a480f974a12d', 'verification_verdict': 'MATCH'}, 'telos': {'exit_code': 0, 'status': 'MATCH', 'stderr_sha256': 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855', 'stdout_sha256': 'be17cb15259234cb4e8e95c2b36e76c90d841431729beb140294e34c5f9ebfa7', 'tool_version': '0.1.0'}, 'telos_catalog': {'exit_code': 0, 'status': 'MATCH', 'stderr_sha256': 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855', 'stdout_sha256': 'ef95a6f1ff803c483c3c4dd553fe19c37ab144113a21bc005cf4148cf31a8564'}}"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0131 validator receipt status is MATCH and test receipt status is MATCH.",
+      "deviation": 0.0,
+      "evidence": [
+        "validator={'command': 'C:\\\\Users\\\\Zain\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python312\\\\python.exe C:\\\\dev\\\\public\\\\telos\\\\docs\\\\research\\\\dogfood\\\\tools\\\\validate_pass_0131_tradition_derivation_atlas.py', 'exit_code': 0, 'stdout_sha256': '03feff08f540e12a907b8f37ccba481b67f66615957b61641e29a4260b578007', 'stderr_sha256': 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855', 'status': 'MATCH'}",
+        "test={'command': 'C:\\\\Users\\\\Zain\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python312\\\\python.exe C:\\\\dev\\\\public\\\\telos\\\\docs\\\\research\\\\dogfood\\\\tools\\\\test_tradition_derivation_atlas.py', 'exit_code': 0, 'stdout_sha256': 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855', 'stderr_sha256': 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855', 'status': 'MATCH'}"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0131 records unsupported_claim_count 0 and current_promoted_natural_laws length 0.",
+      "deviation": 0.0,
+      "evidence": [
+        "unsupported_claim_count=0",
+        "natural_law_count=0"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0131 file hashes are {'artifact': 'ea8cceda1433286f97914368ac0bc180e3b85e9b424ff7f026ae3110f54930e0', 'composer': '653eddd2d04e05c252d356ca05570ea7ea071f52ca2da24b46e66701d4a27153', 'packet': '90ce43619ccd00c2f8529fb20661f4a68a2eaf33aaea5d3d46c7a83e4199d339', 'brief': '8516fe0dd6b76bc5f6faf62d7747659467c4d7b42a9585c4e6ff600d2ae694a5', 'steelman': 'ff9de35f7b80b6e622fee279dd231e96977017a2224197831fa0d5030f068d68', 'test': '1ff12433e3fd50497294d0abb76c2219c78974f9aa71750e596c96b800ae49a1', 'validator': '85e8ca959aaccfe446c3c515553c0045f440a3951c665301b244284bb5234854', 'validator_result': 'd23d7c7826a6ac2b880c4f5e728a30a11f7fddcfd0daaa970623d395a9a907d8', 'tool_receipts': '720260adc1a84acb62a845ec7311783304ba725b41b2579b4ee5e2315af83268'}.",
+      "deviation": 0.0,
+      "evidence": [
+        "file_hashes={'artifact': 'ea8cceda1433286f97914368ac0bc180e3b85e9b424ff7f026ae3110f54930e0', 'composer': '653eddd2d04e05c252d356ca05570ea7ea071f52ca2da24b46e66701d4a27153', 'packet': '90ce43619ccd00c2f8529fb20661f4a68a2eaf33aaea5d3d46c7a83e4199d339', 'brief': '8516fe0dd6b76bc5f6faf62d7747659467c4d7b42a9585c4e6ff600d2ae694a5', 'steelman': 'ff9de35f7b80b6e622fee279dd231e96977017a2224197831fa0d5030f068d68', 'test': '1ff12433e3fd50497294d0abb76c2219c78974f9aa71750e596c96b800ae49a1', 'validator': '85e8ca959aaccfe446c3c515553c0045f440a3951c665301b244284bb5234854', 'validator_result': 'd23d7c7826a6ac2b880c4f5e728a30a11f7fddcfd0daaa970623d395a9a907d8', 'tool_receipts': '720260adc1a84acb62a845ec7311783304ba725b41b2579b4ee5e2315af83268'}"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    }
+  ]
+}

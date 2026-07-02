@@ -1,0 +1,344 @@
+Back
+Product
+Solutions
+Resources
+Open Source
+Docs
+Blog
+Company
+Request a Demo
+Sign up
+Inference Products
+Shared Endpoints
+Access frontier models via an API
+Dedicated Endpoints
+Mission critical reliability
+Custom models
+Your model, peak performance
+Deployment Options
+Our Cloud
+Fully managed, pay by usage
+Your Cloud
+Modular stack in your VPC
+Pricing
+Flexible plans for every team
+Models
+DeepSeek V4 Pro
+FLUX.2 Klein 9B
+GLM-5.2
+Kimi K2.7 Code
+MiniMax M3
+View All
+Text to audio
+Turn text into natural speech
+Image generation
+Generate images from text prompts
+Code generation
+Generate production-ready code
+Video generation
+Generate video from text + image
+Agentic
+Deploy AI agents anywhere
+Custom Models
+Kernel-level model control
+Case Studies
+Proven results from real customers
+Models
+DeepSeek V4 Pro
+FLUX.2 Klein 9B
+GLM-5.2
+Kimi K2.7 Code
+MiniMax M3
+View All
+MAX Framework
+GenAI native modeling & serving
+Mojo Language
+The best GPU & CPU performance
+Self-Hosted
+MAX+Mojo self-hosted by you
+Community
+Build the future of AI together
+Mojo Agent Skills
+Official AI agent skills from Modular
+Docs
+Deploy GenAI models, our cloud or yours
+Model Library
+Latest supported open models
+Mojo Docs
+Write high-performance kernels for CPUs and GPUs
+Community
+Build the future of AI together
+About
+Build AI for anyone, anywhere.
+Careers
+👋 We’re currently hiring!
+Culture
+What we believe
+Contact Us
+Request a demo
+Request a Demo
+Sign up
+close
+GenAI-native serving and modeling, built for performance.
+Build once, deploy anywhere with a single programmable stack for high-performance GenAI on any hardware
+Get started
+Request a demo
+Serve Models
+Deploy DeepSeek, Gemma, Qwen, and hundreds more with a high-speed OpenAI-compatible endpoint, on NVIDIA or AMD and on any cloud.
+View Models
+Customize or Build Models
+Load fine-tuned weights to existing models or build custom models with a PyTorch-like Python API that’s uniquely built to deliver top performance in production.
+Optimize Kernels with ease
+Get the best GPU kernel performance without the GPU programming pain of the past—write in Mojo🔥, a pythonic language purpose-built for portability across any hardware.
+Full Guide
+Zero Vendor Lock-in
+MAX doesn't depend on PyTorch, CUDA, or ROCm, so there's nothing to bundle, patch, or keep in sync. The result: dramatically smaller containers and faster cold starts.
+Your entire AI infrastructure in a single dependency
+With MAX
+Without MAX
+GPU agnostic
+The same code runs on NVIDIA, AMD, and Apple Silicon. When new generations of hardware enter the datacenter, MAX is the fastest to take advantage and deliver top performance. Hardware will only get more exciting - be ready for it with MAX.
+sync.🔥
+# Compile-time warp synchronization per hardware
+@always_inline("nodebug")
+fn syncwarp(mask: Int = -1):
+"""Synchronizes threads within a warp using a barrier."""
+@parameter
+if is_nvidia_gpu():
+__mlir_op.`nvvm.bar.warp.sync`(
+__mlir_op.`index.casts`[_type = __mlir_type.i32](
+mask._mlir_value
+)
+)
+elif is_amd_gpu():
+# In AMD GPU this is a nop (everything executed in lock-step).
+return
+Open source & extensible
+All of the MAX Python API, all of the model pipelines, and all the GPU kernels (for NVIDIA, AMD, and Apple) are open sourced for you to learn from and contribute to.
+Modular Github
+arch.py
+# Registers Qwen2 models with composable components
+qwen2_arch = SupportedArchitecture(
+name="Qwen2ForCausalLM", # Supports HuggingFace model class names
+task=PipelineTask.TEXT_GENERATION,
+example_repo_ids=["Qwen/Qwen2.5-7B-Instruct", "Qwen/QwQ-32B"],
+default_weights_format=WeightsFormat.safetensors,
+default_encoding=SupportedEncoding.bfloat16,
+supported_encodings={
+SupportedEncoding.float32: [KVCacheStrategy.PAGED],
+SupportedEncoding.bfloat16: [KVCacheStrategy.PAGED],
+},
+pipeline_model=Qwen2Model, # Implement a custom model
+tokenizer=TextTokenizer,
+rope_type=RopeType.normal,
+weight_adapters={ # Reuse composable converters & utilities
+WeightsFormat.safetensors: llama3.weight_adapters.convert_safetensor_state_dict,
+WeightsFormat.gguf: llama3.weight_adapters.convert_gguf_state_dict,
+},
+)
+Measurable performance
+See the numbers for yourself. MAX includes max benchmark, an open-source benchmarking tool adapted from vLLM. Run it against your endpoint with datasets like ShareGPT or arxiv-summarization, or bring your own. Export shareable YAML configs for reproducible results.
+Benchmark tutorial
+171%
+Improved throughput
+Gemma3-27B | AMD-MI355x | Sonnet decode heavy
+500+ Models
+Instant access to the most popular OSS models - optimized for cost, speed, and quality. Search our library of open source models and deploy in seconds.
+Run a model in 3 minutes
+max_quickstart.py
+# OpenAI-compatible API for OSS models
+from openai import OpenAI
+client = OpenAI(base_url="http://localhost:8000/v1", api_key="EMPTY")
+completion = client.chat.completions.create(
+model="[choose from library]",
+messages=[
+{
+"role": "user",
+"content": "Who won the world series in 2020?"
+},
+],
+)
+print(completion.choices[0].message.content)
+Get started with MAX
+Start using MAX
+( FREE )
+Run any open source model in 5 minutes, then benchmark it. Scale it to millions yourself (for free!), or book a demo anytime you want to upgrade to our managed enterprise product.
+Install MAX now
+MAX for Enterprise
+( Book a demo )
+Schedule a demo of MAX Enterprise and explore a custom end-to-end deployment built around your models, hardware, and performance goals.
+Distributed, large-scale online inference endpoints
+Highest-performance to maximize ROI and latency
+Deploy in Modular cloud or your cloud
+View all features with a custom demo
+Book a demo
+Talk with our sales lead Jay!
+30min demo. Evaluate with your workloads. Ask us anything.
+Popular MAX tech talks
+(Re)introducing MAX with Chris Lattner
+14:31
+MAX Graph Compilation to Execution
+46:56
+MAX’s Graph Compiler Internals with Feras Boulala
+30:01
+Developer Approved
+impressed
+justin_76273
+“The more I benchmark, the more impressed I am with the MAX Engine.”
+amazing achievements
+Eprahim
+“I'm excited, you're excited, everyone is excited to see what's new in Mojo and MAX and the amazing achievements of the team at Modular.”
+potential to take over
+svpino
+“A few weeks ago, I started learning Mojo 🔥 and MAX. Mojo has the potential to take over AI development. It's Python++. Simple to learn, and extremely fast.”
+feeling of superpowers
+Aydyn
+"Mojo gives me the feeling of superpowers. I did not expect it to outperform a well-known solution like llama.cpp."
+very excited
+strangemonad
+“I'm very excited to see this coming together and what it represents, not just for MAX, but my hope for what it could also mean for the broader ecosystem that mojo could interact with.”
+impressive speed
+Adalseno
+"It worked like a charm, with impressive speed. Now my version is about twice as fast as Julia's (7 ms vs. 12 ms for a 10 million vector; 7 ms on the playground. I guess on my computer, it might be even faster). Amazing."
+high performance code
+jeremyphoward
+"Mojo is Python++. It will be, when complete, a strict superset of the Python language. But it also has additional functionality so we can write high performance code that takes advantage of modern accelerators."
+12x faster without even trying
+svpino
+“Mojo destroys Python in speed. 12x faster without even trying. The future is bright!”
+was a breeze!
+NL
+“Max installation on Mac M2 and running llama3 in (q6_k and q4_k) was a breeze! Thank you Modular team!”
+huge increase in performance
+Aydyn
+"C is known for being as fast as assembly, but when we implemented the same logic on Mojo and used some of the out-of-the-box features, it showed a huge increase in performance... It was amazing."
+Community is incredible
+benny.n
+“The Community is incredible and so supportive. It’s awesome to be part of.”
+pure iteration power
+Jayesh
+"This is about unlocking freedom for devs like me, no more vendor traps or rewrites, just pure iteration power. As someone working on challenging ML problems, this is a big thing."
+easy to optimize
+dorjeduck
+“It’s fast which is awesome. And it’s easy. It’s not CUDA programming...easy to optimize.”
+one language all the way through
+fnands
+“Tired of the two language problem. I have one foot in the ML world and one foot in the geospatial world, and both struggle with the 'two-language' problem. Having Mojo - as one language all the way through is be awesome.”
+works across the stack
+scrumtuous
+“Mojo can replace the C programs too. It works across the stack. It’s not glue code. It’s the whole ecosystem.”
+completely different ballgame
+scrumtuous
+“What @modular is doing with Mojo and the MaxPlatform is a completely different ballgame.”
+surest bet for longterm
+pagilgukey
+“Mojo and the MAX Graph API are the surest bet for longterm multi-arch future-substrate NN compilation”
+performance is insane
+drdude81
+“I tried MAX builds last night, impressive indeed. I couldn't believe what I was seeing... performance is insane.”
+The future is bright!
+mytechnotalent
+Mojo destroys Python in speed. 12x faster without even trying. The future is bright!
+actually flies on the GPU
+Sanika
+"after wrestling with CUDA drivers for years, it felt surprisingly… smooth. No, really: for once I wasn’t battling obscure libstdc++ errors at midnight or re-compiling kernels to coax out speed. Instead, I got a peek at writing almost-Pythonic code that compiles down to something that actually flies on the GPU."
+Show more quotes
+Latest from our blog:
+New
+Qualcomm to Acquire Modular
+Get the latest news,
+announcements & updates:
+Join our Newsletter
+INFERENCE
+Shared Endpoints
+Dedicated Endpoints
+Custom Models
+DEPLOYMENTS
+Our Cloud
+Your Cloud
+Pricing
+Solutions
+Text to audio
+Image generation
+Code generation
+AI Agents
+Open SOURCE
+MAX
+Mojo🔥
+Agent Skills
+Connect
+Blog
+Community
+Report a security issue
+Company
+About Us
+Culture
+Careers
+Request a demo
+Copyright © 2026 Modular Inc
+Terms, Privacy & Acceptable Use
+Join our newsletter
+Get all our latest news, announcements and updates delivered directly to your inbox. Unsubscribe at anytime.
+Email*
+First Name
+Last Name
+Thanks for signing up to our newsletter! 🚀
+Thank you,
+Modular Sales Team
+Oops! Something went wrong while submitting the form.
+Return to page
+Modular Champions
+X/X
+Owen Hilyard
+I'm a PhD student at the University of New Hampshire in the Cloud Computing Lab, where I conduct research on hardware acceleration of networking and distributed systems reliability. I'm also a former component maintainer for DPDK, the Data Plane Development Kit, which is where I got my start looking "under the hood" at networking before resigning to work in my PhD. All of this means I like making computers go fast, and Mojo + MAX is a great place to combine my love of hardware, high performance software, and my interest in programming languages. I also act as one of the community moderators for Modular on the Discord server and Discourse forum.
+Connect with Owen Hilyard
+Seth Stadick
+I'm a Bioinformatics Software Engineer passionate about building high-performance systems. For the past six years, I've developed in Rust across environments ranging from Raspberry Pi devices to full-scale HPC clusters in the cloud. I'm excited about Mojo's potential to reshape how we approach performance-critical computing.When I'm not coding, I’m usually spending time with my family — or trying to land new tricks on a skateboard (I just learned to Ollie)!
+Connect with Seth Stadick
+Brian Grenier
+I am C++ developer working for a cardiac image processing company. I've been a Mojo standard library contributor since 2024. I also actively maintain two libraries, EmberJSON, a JSON library written in pure Mojo, and Kelvin, a type safe dimensional analysis library. I often hang out in the Mojo discord and forum!
+Connect with Brian Grenier
+Martin Vuyk
+I'm a Mechatronics Engineer who pivoted into Software Development. I like tackling complex problems and building lasting solutions. I invest my time into things that I think will be impactful.
+Connect with Martin Vuyk
+Sawyer Bergeron
+Compiler, PL, and systems/performance engineering enthusiast with an eyebrow-raising amount of VAX assembly experience. Collector (of hobbies). Enjoys bagels just a bit too much.
+Connect with Sawyer Bergeron
+Valentin Erokhin
+Author of Lightbug, a Mojo HTTP Framework (https://github.com/Lightbug-HQ/lightbug_http)
+Connect with Valentin Erokhin
+Sora
+Connect with Sora
+Maxim Zaks
+I tell computers how to waste electricity, hopefully in an efficient or at least useful way.
+Connect with Maxim Zaks
+Gabriel de Marmiesse
+Former core dev of Keras, author of Python-on-whales, currently working at Kyutai to democratize AI through open science
+Connect with Gabriel de Marmiesse
+Max Brylski
+Explorer of the computational universe
+Connect with Max Brylski
+Tilli Fe
+Connect with Tilli Fe
+Return to page
+Leadership team
+X/X
+Chris Lattner
+Distinguished Leader who founded and scaled critical infrastructure including LLVM, Clang, MLIR, Cloud TPUs and the Swift programming language. Chris built AI and core systems at multiple world leading technology companies including Apple, Google, SiFive and Tesla.
+Connect with Chris Lattner
+Tim Davis
+Repeat Entrepreneur and Product Leader. Tim helped build, found and scale large parts of Google's AI infrastructure at Google Brain and Core Systems from APIs (TensorFlow), Compilers (XLA & MLIR) and runtimes for server (CPU/GPU/TPU) and TF Lite (Mobile/Micro/Web), Android ML & NNAPI, large model infrastructure & OSS for billions of users and devices. Loves running, building and scaling products to help people, and the world.
+Connect with Tim Davis
+Mostafa Hagog
+Mostafa is a seasoned engineering leader in high-performance computing. During his tenure at NVIDIA, he served as Engineering Director and led teams to develop optimized deep learning libraries like cuDNN and CUTLASS, revolutionizing GPU-accelerated AI. At SiFive, as VP of Software, Mostafa assumed a leadership role guiding teams in the development of an MLIR/LLVM-based software stack for SiFive Intelligence & performance cores. His contributions also extend to optimizing Intel GPU hardware/software features, playing a pivotal role in developing the AVX1/2 SIMD ISA for Intel CPUs, and contributing to the GNU C Compiler. Mostafa holds a Master of Science in Electrical Engineering from the Technion, with a specialization in compiler optimizations. His unwavering passion for innovation continues to drive advancements in the field of high-performance computing.
+Connect with Mostafa Hagog
+Kalor Lewis
+Kalor is Modular's VP, Finance and leads all our Finance operations. Prior to Modular, Kalor was a VP, Finance at Fivetran where he was the first finance hire in 2018 and built out the companies entire finance function. Before Fivetran, Kalor was part of Palantir Technologies, where he scaled their strategic finance function.
+Connect with Kalor Lewis
+Eric Johnson
+Product leader who has built and scaled AI applications and infrastructure. Eric led the TensorFlow API, Compiler, and Runtime teams at Google Brain and Core Systems, including the founding of TFRT and the productionization of JAX. He holds an MBA from Wharton and Computer Science MS from Penn and loves soccer, fitness, and the great outdoors.
+Connect with Eric Johnson
+Mike Edwards
+Mike has spent over 25 years working in the fields of IT, corporate operations, and software development - most recently at Apple. Mike volunteers his time serving as a Board member with the LLVM Foundation, focusing on finance and operations. Mike truly believes in the power of AI to help address some of the world’s greatest needs.
+Connect with Mike Edwards
+Return to page

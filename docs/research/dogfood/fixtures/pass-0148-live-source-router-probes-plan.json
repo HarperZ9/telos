@@ -1,0 +1,55 @@
+{
+  "pass": "0148",
+  "source_store": "docs/research/dogfood/gather/pass-0148-live-source-router-probes",
+  "prior_receipts": [
+    "docs/research/dogfood/schemas/source-registry-federation-pass-0142.json",
+    "docs/research/dogfood/schemas/adapter-retry-policy-pass-0146.json",
+    "docs/research/dogfood/schemas/policy-aware-institution-queue-pass-0147.json"
+  ],
+  "updated_tool_floor": {
+    "crucible": "1.1.0",
+    "forum": "1.12.0",
+    "gather": "1.5.0",
+    "index": "2.8.0",
+    "telos": "0.1.0"
+  },
+  "routes": [
+    {"id": "arxiv_query", "family": "preprint_press", "system": "arXiv", "primary_url": "https://export.arxiv.org/api/query?search_query=all:quantum&start=0&max_results=1", "required_signals": ["arxiv", "quantum"], "policy": "preprint_metadata_sample"},
+    {"id": "biorxiv_details", "family": "preprint_press", "system": "bioRxiv", "primary_url": "https://api.biorxiv.org/details/biorxiv/2026-06-01/2026-06-30/0", "required_signals": ["messages", "collection"], "policy": "preprint_metadata_sample"},
+    {"id": "medrxiv_details", "family": "preprint_press", "system": "medRxiv", "primary_url": "https://api.medrxiv.org/details/medrxiv/2026-06-01/2026-06-30/0", "required_signals": ["messages", "collection"], "policy": "medical_preprint_metadata_sample"},
+    {"id": "chemrxiv_public_api", "family": "preprint_press", "system": "ChemRxiv", "primary_url": "https://chemrxiv.org/engage/chemrxiv/public-api/v1/items?limit=1", "required_signals": ["items"], "expected_failure": "HTTP_403_SOURCE_LEAD_ONLY", "policy": "preprint_route_needs_allowed_access"},
+    {"id": "osf_preprints", "family": "preprint_press", "system": "OSF Preprints", "primary_url": "https://api.osf.io/v2/preprints/?page[size]=1", "fallback_urls": ["https://developer.osf.io/"], "required_signals": ["data", "preprints"], "policy": "preprint_metadata_sample"},
+    {"id": "hal_search", "family": "preprint_press", "system": "HAL", "primary_url": "https://api.archives-ouvertes.fr/search/?q=machine%20learning&rows=1&wt=json", "fallback_urls": ["http://api.archives-ouvertes.fr/search/?q=machine%20learning&rows=1&wt=json"], "required_signals": ["response", "numFound"], "expected_failure": "HTTPS_TRANSPORT_FALLBACK", "policy": "alternate_scheme_recorded"},
+    {"id": "crossref_query", "family": "scholarly_graph", "system": "Crossref", "primary_url": "https://api.crossref.org/works?query.title=quantum&rows=1&select=DOI,title,container-title,published-print,published-online,URL", "fallback_urls": ["https://www.crossref.org/documentation/retrieve-metadata/rest-api/"], "required_signals": ["status", "message"], "policy": "publisher_metadata_sample"},
+    {"id": "openalex_works", "family": "scholarly_graph", "system": "OpenAlex", "primary_url": "https://api.openalex.org/works?search=quantum&per-page=1", "fallback_urls": ["https://developers.openalex.org/api-reference/errors", "https://developers.openalex.org/"], "required_signals": ["OpenAlex", "HTTP Status Codes"], "expected_failure": "HTTP_503_RETRYABLE", "policy": "retry_with_backoff_and_docs"},
+    {"id": "datacite_dois", "family": "scholarly_graph", "system": "DataCite", "primary_url": "https://api.datacite.org/dois?query=quantum&page[size]=1", "required_signals": ["data", "doi"], "policy": "data_doi_metadata_sample"},
+    {"id": "europepmc_search", "family": "biomedical_literature", "system": "Europe PMC", "primary_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=quantum%20biology&pageSize=1&format=json", "required_signals": ["hitCount", "resultList"], "policy": "biomedical_literature_sample"},
+    {"id": "pubmed_esearch", "family": "biomedical_literature", "system": "NCBI PubMed", "primary_url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=robotics%20medicine&retmax=1&retmode=json", "required_signals": ["esearchresult", "idlist"], "policy": "biomedical_literature_sample"},
+    {"id": "semantic_scholar_search", "family": "scholarly_graph", "system": "Semantic Scholar", "primary_url": "https://api.semanticscholar.org/graph/v1/paper/search?query=robotics&limit=1&fields=title,year,url", "fallback_urls": ["https://api.semanticscholar.org/api-docs/"], "required_signals": ["Academic Graph API"], "expected_failure": "HTTP_429_RETRYABLE", "policy": "retry_with_backoff_and_docs"},
+    {"id": "doaj_articles", "family": "open_access", "system": "DOAJ", "primary_url": "https://doaj.org/api/v2/search/articles/quantum?pageSize=1", "required_signals": ["total", "results"], "policy": "open_access_article_sample"},
+    {"id": "re3data_docs", "family": "repository_directory", "system": "re3data docs", "primary_url": "https://www.re3data.org/api/doc/", "required_signals": ["API", "Documentation"], "policy": "repository_directory_docs"},
+    {"id": "re3data_search", "family": "repository_directory", "system": "re3data search", "primary_url": "https://www.re3data.org/api/beta/repositories?query=physics", "required_signals": ["r3d", "physics"], "policy": "repository_directory_sample"},
+    {"id": "opendoar_developers", "family": "repository_directory", "system": "OpenDOAR", "primary_url": "https://opendoar.ac.uk/help/developers", "required_signals": ["API"], "expected_failure": "TLS_HANDSHAKE_SOURCE_LEAD_ONLY", "policy": "transport_policy_warning"},
+    {"id": "base_oai", "family": "repository_directory", "system": "BASE OAI", "primary_url": "http://oai.base-search.net/oai?verb=Identify", "fallback_urls": ["https://oai.base-search.net/"], "required_signals": ["IP-restricted", "OAI-PMH"], "expected_failure": "HTTP_403_RESTRICTED_INTERFACE", "policy": "registration_required"},
+    {"id": "openaire_publications", "family": "scholarly_graph", "system": "OpenAIRE", "primary_url": "https://api.openaire.eu/search/publications?keywords=quantum&size=1", "fallback_urls": ["https://graph.openaire.eu/docs/apis/search-api/research-products/"], "required_signals": ["result", "quantum"], "policy": "scholarly_graph_sample"},
+    {"id": "mit_dspace_site", "family": "college_repository", "system": "MIT DSpace", "primary_url": "https://dspace.mit.edu/server/api/core/sites", "required_signals": ["MIT Open Scholarship"], "policy": "institutional_repository_sample"},
+    {"id": "harvard_dash_site", "family": "college_repository", "system": "Harvard DASH", "primary_url": "https://dash.harvard.edu/server/api/core/sites", "required_signals": ["Harvard DASH"], "policy": "institutional_repository_sample"},
+    {"id": "oxford_ora_oai", "family": "college_repository", "system": "Oxford ORA", "primary_url": "https://ora.ox.ac.uk/oai2?verb=Identify", "required_signals": ["Oxford University Research Archive", "2.0"], "policy": "institutional_oai_identify_sample"},
+    {"id": "cambridge_apollo_oai", "family": "college_repository", "system": "Cambridge Apollo", "primary_url": "https://www.repository.cam.ac.uk/server/oai/request?verb=Identify", "fallback_urls": ["https://www.repository.cam.ac.uk/"], "required_signals": ["Apollo", "University of Cambridge"], "expected_failure": "HTTP_404_ENDPOINT_ALIAS_REQUIRED", "policy": "endpoint_alias_required"},
+    {"id": "southampton_eprints_oai", "family": "college_repository", "system": "Southampton ePrints", "primary_url": "https://eprints.soton.ac.uk/cgi/oai2?verb=Identify", "required_signals": ["ePrints Soton", "2.0"], "policy": "institutional_oai_identify_sample"},
+    {"id": "harvard_dataverse_search", "family": "research_data_repository", "system": "Harvard Dataverse", "primary_url": "https://dataverse.harvard.edu/api/search?q=quantum&per_page=1", "required_signals": ["status", "items"], "policy": "research_data_repository_sample"},
+    {"id": "zenodo_records", "family": "research_data_repository", "system": "Zenodo", "primary_url": "https://zenodo.org/api/records?q=quantum&size=1", "required_signals": ["hits", "doi"], "policy": "research_data_repository_sample"}
+  ],
+  "negative_fixtures": [
+    "source_breadth_as_truth",
+    "preprint_as_peer_review",
+    "metadata_as_full_text",
+    "query_success_as_endpoint_stability",
+    "docs_capture_as_authorized_bulk_harvest",
+    "repository_directory_as_institutional_completeness",
+    "college_repository_as_university_endorsement",
+    "doi_metadata_as_claim_validity",
+    "live_sample_as_domain_coverage",
+    "route_failure_as_source_absence"
+  ]
+}

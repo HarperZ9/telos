@@ -1,0 +1,131 @@
+# Project Telos Second-Wave Demo Packages
+
+Date: 2026-07-02
+
+Purpose: upgrade the first handoff with source-checkout experiments for the newer adjacent tools: Learn, BuildLang/buildc, and Emet. These are not PATH-installed claims. They are current local checkout claims with exact commands and boundaries.
+
+## Current Verified Source-Checkout Claims
+
+| Tool | Current local evidence | Boundary |
+| --- | --- | --- |
+| Learn | `node src/cli.mjs status` reports `@harperz9/learn` 1.5.0; `node src/cli.mjs doctor` reports `MATCH`; the tutor/prooflesson/reverify test slice passed 53/53; a temp research-proof study loop wrote a `verified: true` study receipt. | `learn` is not on PATH in this shell. Demo from `C:\dev\public\learn` or by invoking `node C:\dev\public\learn\src\cli.mjs` from a temp directory. |
+| BuildLang/buildc | `Cargo.toml` reports `buildlang` 1.0.6; isolated-target `buildc doctor` completed; C backend ready through MSVC Build Tools; `buildc check examples\quickstart\hello.bld --receipt -` emitted a passed receipt; `buildc corpus verify` reported 8 C executions passed. | `buildc` is not on PATH in this shell. The default Cargo target had a Windows file-lock issue, so use an isolated `--target-dir` until the shared lock is cleared. |
+| Emet | `python membrane.py selftest` emitted the self hash; `python conformance\run.py membrane.py` passed 35/35 conformance vectors. | The `emet` PATH wrapper still fails with `ModuleNotFoundError: No module named 'warden_shell'`; demo from checkout. |
+| Five flagships | MCP status surfaces report Gather 1.5.0, Index 2.8.0, Forum 1.12.0, Crucible 1.1.0, Telos 0.1.0, and Telos room reports 70 tools with 20/20 flagship checks. | Host-loaded MCP freshness still needs host-specific probes before claiming a third-party host is current. |
+
+## Demo A: Learn Research-Training Proof Loop
+
+Core message: a research learning loop should preserve learner evidence, misconceptions, review order, and re-verification without crossing into graded-work automation.
+
+Run from any temp directory:
+
+```powershell
+$demo = Join-Path $env:TEMP ("learn-proof-demo-" + [guid]::NewGuid().ToString("N"))
+New-Item -ItemType Directory -Path $demo | Out-Null
+Push-Location $demo
+node C:\dev\public\learn\src\cli.mjs tutor plan research-proof --topic "research proof packets" --objectives "source provenance,verification receipts"
+node C:\dev\public\learn\src\cli.mjs tutor record research-proof --objective "source provenance" --prompt "What must a research proof packet bind?" --answer "sources to claims" --correct true
+node C:\dev\public\learn\src\cli.mjs tutor record research-proof --objective "source provenance" --prompt "What detects drift?" --answer "reverification" --correct true
+node C:\dev\public\learn\src\cli.mjs tutor record research-proof --objective "verification receipts" --prompt "What should a receipt carry?" --answer "hashes and verdicts" --correct false --feedback "missing action provenance"
+node C:\dev\public\learn\src\cli.mjs tutor study research-proof --now 2026-07-02T00:00:00.000Z
+node C:\dev\public\learn\src\cli.mjs tutor study-receipt research-proof --now 2026-07-02T00:00:00.000Z
+node C:\dev\public\learn\src\cli.mjs tutor reverify research-proof
+Pop-Location
+```
+
+Expected local result:
+
+- Study plan reports one misconception and mastery `not yet`.
+- Study receipt reports `verified true`.
+- Reverify reports the stored receipt verifies from its evidence.
+
+Post angle:
+
+> Learn is not a credential bypass. It is a pressure system for evidence: practice attempts, misconceptions, study order, receipts, and re-verification.
+
+## Demo B: BuildLang Source Receipt And Semantic Corpus
+
+Core message: BuildLang/buildc is the compiler/runtime pillar because it makes effects, source digests, backend posture, and corpus evidence visible.
+
+Run from `C:\dev\public\pubscan\quantalang`:
+
+```powershell
+cargo run --target-dir C:\Users\Zain\AppData\Local\Temp\buildlang-codex-target-20260702 --manifest-path compiler\Cargo.toml --bin buildc -- doctor
+& C:\Users\Zain\AppData\Local\Temp\buildlang-codex-target-20260702\debug\buildc.exe check examples\quickstart\hello.bld --receipt -
+& C:\Users\Zain\AppData\Local\Temp\buildlang-codex-target-20260702\debug\buildc.exe corpus verify
+```
+
+Expected local result:
+
+- Doctor reports `buildc: 1.0.6 (windows)`.
+- C backend is ready through MSVC Build Tools.
+- Stdlib is not found unless `BUILDLANG_STDLIB` is set or stdlib is installed beside `buildc`.
+- Optional `clang`, `nasm`, and `wasmtime` are missing in this shell; `spirv-val` is found.
+- `hello.bld` check receipt has schema `buildlang-check-receipt/v1`, status `passed`, source digest `0e542c60fbd874a38a2a3a87eaf61be04532a0df23e3ea25512d03301883dfae`, and observed `Console` capability through `println!`.
+- Corpus verify reports 8 semantic programs and 8 C executions passed.
+
+Post angle:
+
+> A scientific language should leave evidence: source digests, effects, policy posture, backend maturity, and corpus receipts. BuildLang is the runtime lane in the Telos proof stack.
+
+## Demo C: Emet External Witness
+
+Core message: Emet is the narrow witness layer. It does not say "trusted"; it says whether source and view still match.
+
+Run from `C:\dev\public\pubscan\emet`:
+
+```powershell
+python membrane.py selftest
+python conformance\run.py membrane.py
+```
+
+Expected local result:
+
+- Self hash: `b75ae75283ae774d4d8fc68452de34636fc5e47fd544d1d2d1c9783f1f282f1a`.
+- Conformance: 35/35 vectors pass.
+- Notes state that the hash is only a credential and grants no authority or safety decision.
+
+Post angle:
+
+> The witness has a deliberately small vocabulary: `MATCH`, `DRIFT`, `UNVERIFIABLE`. That restraint is the feature.
+
+## Demo D: Megatool Composition
+
+Core message: the product story is the integration, not any one tool. The same proof packet can become research evidence, a learning object, compiler/runtime evidence, and an external witness target.
+
+Composition path:
+
+1. Gather captures source material and emits source receipts.
+2. Index selects the relevant workspace and source context with a freshness root.
+3. Forum routes the work and records the handoff.
+4. Crucible converts claims into `MATCH`, `DRIFT`, or `UNVERIFIABLE`.
+5. Telos packages context, action, browser evidence, and loop ledgers.
+6. Learn turns a proof packet into retrieval practice, misconceptions, and re-verifiable study receipts.
+7. BuildLang/buildc emits source, effect, policy, backend, and corpus receipts for executable proof domains.
+8. Emet independently checks byte/view consistency.
+
+Minimal local command set:
+
+```powershell
+node demo/context-pack.mjs
+node demo/action-receipt.mjs
+node demo/loop-ledger.mjs
+index context-envelope --root . --budget 1600 --focus telos --hops 0 --json
+forum route "Package second-wave Project Telos demos for Learn, BuildLang, and Emet." --json
+crucible run --thesis docs\outreach\receipts\second-wave-tooling-thesis-2026-07-02.json --measurements docs\outreach\receipts\second-wave-tooling-measurements-2026-07-02.json --out docs\outreach\receipts\second-wave-tooling-run-2026-07-02.json --report docs\outreach\receipts\second-wave-tooling-report-2026-07-02.md
+```
+
+## Post Order
+
+1. Learn research-training proof loop.
+2. BuildLang source receipt and corpus.
+3. Emet external witness.
+4. Megatool composition: one packet moving through Gather, Index, Forum, Crucible, Telos, Learn, BuildLang, and Emet.
+
+## Do Not Overclaim
+
+- Do not say Learn completes credentials or graded work.
+- Do not say BuildLang has fully sound linear types.
+- Do not say Build Universe compiles as one system.
+- Do not say Emet grants trust, approval, or authority.
+- Do not say PATH installs are working for Learn, BuildLang, or Emet in this shell.

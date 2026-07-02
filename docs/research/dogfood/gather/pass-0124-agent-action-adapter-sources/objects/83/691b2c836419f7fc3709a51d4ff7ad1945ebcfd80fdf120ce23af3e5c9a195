@@ -1,0 +1,514 @@
+Trace Context
+W3C Recommendation 23 November 2021
+More details about this document
+This version:
+https://www.w3.org/TR/2021/REC-trace-context-1-20211123/
+Latest published version:
+https://www.w3.org/TR/trace-context-1/
+Latest editor's draft:
+https://w3c.github.io/trace-context/
+History:
+https://www.w3.org/standards/history/trace-context-1
+Commit history
+Implementation report:
+https://github.com/w3c/trace-context/#reference-implementations
+Editors:
+Sergey Kanzhelev (Microsoft)
+Morgan McLean (Google)
+Alois Reitbauer (Dynatrace)
+Bogdan Drutu (Google)
+Nik Molnar (Microsoft)
+Yuri Shkuro (Invited Expert)
+Feedback:
+GitHub w3c/trace-context
+(pull requests,
+new issue,
+open issues)
+public-trace-context@w3.org with subject line trace-context (archives)
+Errata:
+Errata exists.
+Discussions
+We are on Gitter.
+See also
+translations.
+Copyright
+©
+2021
+W3C® (MIT,
+ERCIM, Keio,
+Beihang). W3C
+liability,
+trademark and
+permissive document license rules apply.
+Abstract
+This specification defines standard HTTP headers and a value format to propagate context information that enables distributed tracing scenarios. The specification standardizes how context information is sent and modified between services. Context information uniquely identifies individual requests in a distributed system and also defines a means to add and propagate provider-specific context information.
+Status of This Document
+This section describes the status of this
+document at the time of its publication. A list of current W3C
+publications and the latest revision of this technical report can be found
+in the W3C technical reports index at
+https://www.w3.org/TR/.
+This specification includes editorial updates since the 6 February 2020 W3C Recommendation.
+This document was published by the Distributed Tracing Working Group as
+a Recommendation using the
+Recommendation track.
+W3C recommends the wide deployment of this specification as a standard for
+the Web.
+A W3C Recommendation is a specification that, after extensive consensus-building, is endorsed by W3C and its Members, and has commitments from Working Group members to royalty-free licensing for implementations.
+This document was produced by a group
+operating under the
+1 August 2017 W3C Patent
+Policy.
+W3C maintains a
+public list of any patent disclosures
+made in connection with the deliverables of
+the group; that page also includes
+instructions for disclosing a patent. An individual who has actual
+knowledge of a patent which the individual believes contains
+Essential Claim(s)
+must disclose the information in accordance with
+section 6 of the W3C Patent Policy.
+This document is governed by the
+2 November 2021 W3C Process Document.
+Table of Contents
+Abstract
+Status of This Document
+1. Conformance
+2. Overview
+2.1 Problem Statement
+2.2 Solution
+2.3 Design Overview
+3. Trace Context HTTP Headers Format
+3.1 Relationship Between the Headers
+3.2 Traceparent Header
+3.2.1 Header Name
+3.2.2 traceparent Header Field Values
+3.2.2.1 version
+3.2.2.2 version-format
+3.2.2.3 trace-id
+3.2.2.4 parent-id
+3.2.2.5 trace-flags
+3.2.2.5.1 Sampled flag
+3.2.2.5.2 Other Flags
+3.2.3 Examples of HTTP traceparent Headers
+3.2.4 Versioning of traceparent
+3.3 Tracestate Header
+3.3.1 Header Name
+3.3.1.1 tracestate Header Field Values
+3.3.1.2 list
+3.3.1.3 list-members
+3.3.1.3.1 Key
+3.3.1.3.2 Value
+3.3.1.4 Combined Header Value
+3.3.1.5 tracestate Limits:
+3.3.2 Examples of tracestate HTTP Headers
+3.3.3 Versioning of tracestate
+3.4 Mutating the traceparent Field
+3.5 Mutating the tracestate Field
+4. Processing Model
+4.1 Processing Model for Working with Trace Context
+4.2 No traceparent Received
+4.3 A traceparent is Received
+4.4 Alternative Processing
+5. Other Communication Protocols
+6. Privacy Considerations
+6.1 Privacy of traceparent field
+6.2 Privacy of tracestate field
+6.3 Other risks
+7. Security Considerations
+7.1 Information Exposure
+7.2 Denial of Service
+7.3 Other Risks
+8. Considerations for trace-id field generation
+8.1 Uniqueness of trace-id
+8.2 Randomness of trace-id
+8.3 Handling trace-id for compliant platforms with shorter internal identifiers
+8.4 Interoperating with existing systems which use shorter identifiers
+A. Acknowledgments
+B. Glossary
+C. References
+C.1 Normative references
+1. Conformance
+As well as sections marked as non-normative, all authoring guidelines, diagrams, examples, and notes in this specification are non-normative. Everything else in this specification is normative.
+The key words MAY, MUST, MUST NOT, SHOULD, and SHOULD NOT in this document
+are to be interpreted as described in
+BCP 14
+[RFC2119] [RFC8174]
+when, and only when, they appear in all capitals, as shown here.
+2. Overview
+2.1 Problem Statement
+Distributed tracing is a methodology implemented by tracing tools to follow, analyze and debug a transaction across multiple software components. Typically, a distributed trace traverses more than one component which requires it to be uniquely identifiable across all participating systems. Trace context propagation passes along this unique identification. Today, trace context propagation is implemented individually by each tracing vendor. In multi-vendor environments, this causes interoperability problems, like:
+Traces that are collected by different tracing vendors cannot be correlated as there is no shared unique identifier.
+Traces that cross boundaries between different tracing vendors can not be propagated as there is no uniformly agreed set of identification that is forwarded.
+Vendor specific metadata might be dropped by intermediaries.
+Cloud platform vendors, intermediaries and service providers, cannot guarantee to support trace context propagation as there is no standard to follow.
+In the past, these problems did not have a significant impact as most applications were monitored by a single tracing vendor and stayed within the boundaries of a single platform provider. Today, an increasing number of applications are highly distributed and leverage multiple middleware services and cloud platforms.
+This transformation of modern applications calls for a distributed tracing context propagation standard.
+2.2 Solution
+The trace context specification defines a universally agreed-upon format for the exchange of trace context propagation data - referred to as trace context. Trace context solves the problems described above by
+providing an unique identifier for individual traces and requests, allowing trace data of multiple providers to be linked together.
+providing an agreed-upon mechanism to forward vendor-specific trace data and avoid broken traces when multiple tracing tools participate in a single transaction.
+providing an industry standard that intermediaries, platforms, and hardware providers can support.
+A unified approach for propagating trace data improves visibility into the behavior of distributed applications, facilitating problem and performance analysis. The interoperability provided by trace context is a prerequisite to manage modern micro-service based applications.
+2.3 Design Overview
+Trace context is split into two individual propagation fields supporting interoperability and vendor-specific extensibility:
+traceparent describes the position of the incoming request in its trace graph in a portable, fixed-length format. Its design focuses on fast parsing. Every tracing tool MUST properly set traceparent even when it only relies on vendor-specific information in tracestate
+tracestate extends traceparent with vendor-specific data represented by a set of name/value pairs. Storing information in tracestate is optional.
+Tracing tools can provide two levels of compliant behavior interacting with trace context:
+At a minimum they MUST propagate the traceparent and tracestate headers and guarantee traces are not broken. This behavior is also referred to as forwarding a trace.
+In addition they CAN also choose to participate in a trace by modifying the traceparent header and relevant parts of the tracestate header containing their proprietary information. This is also referred to as participating in a trace.
+A tracing tool can choose to change this behavior for each individual request to a component it is monitoring.
+3. Trace Context HTTP Headers Format
+This section describes the binding of the distributed trace context to traceparent and tracestate HTTP headers.
+3.1 Relationship Between the Headers
+The traceparent header represents the incoming request in a tracing system in a common format, understood by all vendors. Here’s an example of a traceparent header.
+traceparent: 00-0af7651916cd43dd8448eb211c80319c-b7ad6b7169203331-01
+The tracestate header includes the parent in a potentially vendor-specific format:
+tracestate: congo=t61rcWkgMzE
+For example, say a client and server in a system use different tracing vendors: Congo and Rojo. A client traced in the Congo system adds the following headers to an outbound HTTP request.
+traceparent: 00-0af7651916cd43dd8448eb211c80319c-b7ad6b7169203331-01
+tracestate: congo=t61rcWkgMzE
+Note: In this case, the tracestate value t61rcWkgMzE is the result of Base64 encoding the parent ID (b7ad6b7169203331), though such manipulations are not required.
+The receiving server, traced in the Rojo tracing system, carries over the tracestate it received and adds a new entry to the left.
+traceparent: 00-0af7651916cd43dd8448eb211c80319c-00f067aa0ba902b7-01
+tracestate: rojo=00f067aa0ba902b7,congo=t61rcWkgMzE
+You'll notice that the Rojo system reuses the value of its traceparent for its entry in tracestate. This means it is a generic tracing system (no proprietary information is being passed). Otherwise, tracestate entries are opaque and can be vendor-specific.
+If the next receiving server uses Congo, it carries over the tracestate from Rojo and adds a new entry for the parent to the left of the previous entry.
+traceparent: 00-0af7651916cd43dd8448eb211c80319c-b9c7c989f97918e1-01
+tracestate: congo=ucfJifl5GOE,rojo=00f067aa0ba902b7
+Note: ucfJifl5GOE is the Base64 encoded parent ID b9c7c989f97918e1.
+Notice when Congo wrote its traceparent entry, it is not encoded, which helps in consistency for those doing correlation. However, the value of its entry tracestate is encoded and different from traceparent. This is ok.
+Finally, you'll see tracestate retains an entry for Rojo exactly as it was, except pushed to the right. The left-most position lets the next server know which tracing system corresponds with traceparent. In this case, since Congo wrote traceparent, its tracestate entry should be left-most.
+3.2 Traceparent Header
+The traceparent HTTP header field identifies the incoming request in a tracing system. It has four fields:
+version
+trace-id
+parent-id
+trace-flags
+3.2.1 Header Name
+Header name: traceparent
+In order to increase interoperability across multiple protocols and encourage successful integration, by default vendors SHOULD keep the header name lowercase. The header name is a single word without any delimiters, for example, a hyphen (-).
+Vendors MUST expect the header name in any case (upper, lower, mixed), and SHOULD send the header name in lowercase.
+3.2.2 traceparent Header Field Values
+This section uses the Augmented Backus-Naur Form (ABNF) notation of [RFC5234], including the DIGIT rule from that document. The DIGIT rule defines a single number character 0-9.
+HEXDIGLC = DIGIT / "a" / "b" / "c" / "d" / "e" / "f" ; lowercase hex character
+value = version "-" version-format
+The dash (-) character is used as a delimiter between fields.
+3.2.2.1 version
+version = 2HEXDIGLC ; this document assumes version 00. Version ff is forbidden
+The value is US-ASCII encoded (which is UTF-8 compliant).
+Version (version) is 1 byte representing an 8-bit unsigned integer. Version ff is invalid. The current specification assumes the version is set to 00.
+3.2.2.2 version-format
+The following version-format definition is used for version 00.
+version-format = trace-id "-" parent-id "-" trace-flags
+trace-id = 32HEXDIGLC ; 16 bytes array identifier. All zeroes forbidden
+parent-id = 16HEXDIGLC ; 8 bytes array identifier. All zeroes forbidden
+trace-flags = 2HEXDIGLC ; 8 bit flags. Currently, only one bit is used. See below for details
+3.2.2.3 trace-id
+This is the ID of the whole trace forest and is used to uniquely identify a distributed trace through a system. It is represented as a 16-byte array, for example, 4bf92f3577b34da6a3ce929d0e0e4736. All bytes as zero (00000000000000000000000000000000) is considered an invalid value.
+If the trace-id value is invalid (for example if it contains non-allowed characters or all zeros), vendors MUST ignore the traceparent.
+See considerations for trace-id field
+generation for recommendations
+on how to operate with trace-id.
+3.2.2.4 parent-id
+This is the ID of this request as known by the caller (in some tracing systems, this is known as the span-id, where a span is the execution of a client request). It is represented as an 8-byte array, for example, 00f067aa0ba902b7. All bytes as zero (0000000000000000) is considered an invalid value.
+Vendors MUST ignore the traceparent when the parent-id is invalid (for example, if it contains non-lowercase hex characters).
+3.2.2.5 trace-flags
+An 8-bit field that controls tracing flags such as sampling, trace level, etc. These flags are recommendations given by the caller rather than strict rules to follow for three reasons:
+Trust and abuse
+Bug in the caller
+Different load between caller service and callee service might force callee to downsample.
+You can find more in the section Security considerations of this specification.
+Like other fields, trace-flags is hex-encoded. For example, all 8 flags set would be ff and no flags set would be 00.
+As this is a bit field, you cannot interpret flags by decoding the hex value and looking at the resulting number. For example, a flag 00000001 could be encoded as 01 in hex, or 09 in hex if present with the flag 00001000. A common mistake in bit fields is forgetting to mask when interpreting flags.
+Here is an example of properly handling trace flags:
+static final byte FLAG_SAMPLED = 1; // 00000001
+...
+boolean sampled = (traceFlags & FLAG_SAMPLED) == FLAG_SAMPLED;
+3.2.2.5.1 Sampled flag
+The current version of this specification (00) only supports a single flag called sampled.
+When set, the least significant bit (right-most), denotes that the caller may have recorded trace data. When unset, the caller did not record trace data out-of-band.
+There are a number of recording scenarios that may break distributed tracing:
+Only recording a subset of requests results in broken traces.
+Recording information about all incoming and outgoing requests becomes prohibitively expensive, at load.
+Making random or component-specific data collection decisions leads to fragmented data in all traces.
+Because of these issues, tracing vendors make their own recording decisions, and there is no consensus on what is the best algorithm for this job.
+Various techniques include:
+Probability sampling (sample 1 out of 100 distributed traces by flipping a coin)
+Delayed decision (make collection decision based on duration or a result of a request)
+Deferred sampling (let the callee decide whether information about this request needs to be collected)
+How these techniques are implemented can be tracing vendor-specific or application-defined.
+The tracestate field is designed to handle the variety of techniques for making recording decisions (or other specific information) specific for a given vendor. The sampled flag provides better interoperability between vendors. It allows vendors to communicate recording decisions and enable a better experience for the customer.
+For example, when a SaaS service participates in a distributed trace, this service has no knowledge of the tracing vendor used by its caller. This service may produce records of incoming requests for monitoring or troubleshooting purposes. The sampled flag can be used to ensure that information about requests that were marked for recording by the caller will also be recorded by SaaS service downstream so that the caller can troubleshoot the behavior of every recorded request.
+The sampled flag has no restriction on its mutations except that it can only be mutated when parent-id is updated.
+The following are a set of suggestions that vendors SHOULD use to increase vendor interoperability.
+If a component made definitive recording decision - this decision SHOULD be reflected in the sampled flag.
+If a component needs to make a recording decision - it SHOULD respect the sampled flag value.
+Security considerations SHOULD be applied to protect from abusive or malicious use of this flag.
+If a component deferred or delayed the decision and only a subset of telemetry will be recorded, the sampled flag should be propagated unchanged. It should be set to 0 as the default option when the trace is initiated by this component.
+There are two additional options that vendors MAY follow:
+A component that makes a deferred or delayed recording decision may communicate the priority of a recording by setting sampled flag to 1 for a subset of requests.
+A component may also fall back to probability sampling and set the sampled flag to 1 for the subset of requests.
+3.2.2.5.2 Other Flags
+The behavior of other flags, such as (00000100) is not defined and is reserved for future use. Vendors MUST set those to zero.
+3.2.3 Examples of HTTP traceparent Headers
+Valid traceparent when caller sampled this request:
+Value = 00-4bf92f3577b34da6a3ce929d0e0e4736-00f067aa0ba902b7-01
+base16(version) = 00
+base16(trace-id) = 4bf92f3577b34da6a3ce929d0e0e4736
+base16(parent-id) = 00f067aa0ba902b7
+base16(trace-flags) = 01 // sampled
+Valid traceparent when caller didn’t sample this request:
+Value = 00-4bf92f3577b34da6a3ce929d0e0e4736-00f067aa0ba902b7-00
+base16(version) = 00
+base16(trace-id) = 4bf92f3577b34da6a3ce929d0e0e4736
+base16(parent-id) = 00f067aa0ba902b7
+base16(trace-flags) = 00 // not sampled
+3.2.4 Versioning of traceparent
+This specification is opinionated about future versions of trace context. The current version of this specification assumes that future versions of the traceparent header will be additive to the current one.
+Vendors MUST follow these rules when parsing headers with an unexpected format:
+Pass-through services should not analyze the version. They should expect that headers may have larger size limits in the future and only disallow prohibitively large headers.
+When the version prefix cannot be parsed (it's not 2 hex characters followed by a dash (-)), the implementation should restart the trace.
+If a higher version is detected, the implementation SHOULD try to parse it by trying the following:
+If the size of the header is shorter than 55 characters, the vendor should not parse the header and should restart the trace.
+Parse trace-id (from the first dash through the next 32 characters). Vendors MUST check that the 32 characters are hex, and that they are followed by a dash (-).
+Parse parent-id (from the second dash at the 35th position through the next 16 characters). Vendors MUST check that the 16 characters are hex and followed by a dash.
+Parse the sampled bit of flags (2 characters from the third dash). Vendors MUST check that the 2 characters are either the end of the string or a dash.
+If all three values were parsed successfully, the vendor should use them.
+Vendors MUST NOT parse or assume anything about unknown fields for this version. Vendors MUST use these fields to construct the new traceparent field according to the highest version of the specification known to the implementation (in this specification it is 00).
+3.3 Tracestate Header
+The main purpose of the tracestate HTTP header is to provide additional vendor-specific trace identification information across different distributed tracing systems and is a companion header for the traceparent field. It also conveys information about the request’s position in multiple distributed tracing graphs.
+If the vendor failed to parse traceparent, it MUST NOT attempt to parse tracestate. Note that the opposite is not true: failure to parse tracestate MUST NOT affect the parsing of traceparent.
+3.3.1 Header Name
+Header name: tracestate
+In order to increase interoperability across multiple protocols and encourage successful integration, by default you SHOULD keep the header name lowercase. The header name is a single word without any delimiters, for example, a hyphen (-).
+Vendors MUST expect the header name in any case (upper, lower, mixed), and SHOULD send the header name in lowercase.
+3.3.1.1 tracestate Header Field Values
+The tracestate field may contain any opaque value in any of the keys. Tracestate MAY be sent or received as multiple header fields. Multiple tracestate header fields MUST be handled as specified by RFC7230 Section 3.2.2 Field Order. The tracestate header SHOULD be sent as a single field when possible, but MAY be split into multiple header fields. When sending tracestate as multiple header fields, it MUST be split according to RFC7230. When receiving multiple tracestate header fields, they MUST be combined into a single header according to RFC7230.
+This section uses the Augmented Backus-Naur Form (ABNF) notation of [RFC5234], including the DIGIT rule in appendix B.1 for RFC5234. It also includes the OWS rule from RFC7230 section 3.2.3.
+The DIGIT rule defines numbers 0-9.
+The OWS rule defines an optional whitespace character. To improve readability, it is used where zero or more whitespace characters might appear.
+The caller SHOULD generate the optional whitespace as a single space; otherwise, a caller SHOULD NOT generate optional whitespace. See details in the corresponding RFC.
+The tracestate field value is a list of list-members separated by commas (,). A list-member is a key/value pair separated by an equals sign (=). Spaces and horizontal tabs surrounding list-members are ignored. There can be a maximum of 32 list-members in a list.
+Empty and whitespace-only list members are allowed. Vendors MUST accept empty tracestate headers but SHOULD avoid sending them. Empty list members are allowed in tracestate because it is difficult for a vendor to recognize the empty value when multiple tracestate headers are sent. Whitespace characters are allowed for a similar reason, as some vendors automatically inject whitespace after a comma separator, even in the case of an empty header.
+3.3.1.2 list
+A simple example of a list with two list-members might look like:
+vendorname1=opaqueValue1,vendorname2=opaqueValue2.
+list = list-member 0*31( OWS "," OWS list-member )
+list-member = (key "=" value) / OWS
+Identifiers for a list are short (up to 256 characters) textual identifiers.
+3.3.1.3 list-members
+A list-member contains a key/value pair.
+3.3.1.3.1 Key
+The key identifies the tracestate entry.
+key = simple-key / multi-tenant-key
+simple-key = lcalpha 0*255( lcalpha / DIGIT / "_" / "-"/ "*" / "/" )
+multi-tenant-key = tenant-id "@" system-id
+tenant-id = ( lcalpha / DIGIT ) 0*240( lcalpha / DIGIT / "_" / "-"/ "*" / "/" )
+system-id = lcalpha 0*13( lcalpha / DIGIT / "_" / "-"/ "*" / "/" )
+lcalpha = %x61-7A ; a-z
+Note: Identifiers MUST begin with a lowercase letter or a digit, and can only contain lowercase letters (a-z), digits (0-9), underscores (_), dashes (-), asterisks (*), and forward slashes (/).
+There are two different types of tracestate keys. The first type of key is a simple key used by tracing systems which do not have multiple tenants. Simple keys contain only lowercase alphanumeric characters, underscores, dashes, asterisks, and forward slashes. For example: my-tracing-system.
+The second type of key is used by multi-tenant tracing systems where each tenant requires a unique tracestate entry. Multi-tenant keys consist of a tenant ID followed by the @ character followed by a system ID. This allows for fast and robust parsing. For example, tracing system xyz can easily find all of its tracestate entries by searching for all instances of @xyz=.
+3.3.1.3.2 Value
+The value is an opaque string containing up to 256 printable ASCII [RFC0020] characters (i.e., the range 0x20 to 0x7E) except comma (,) and (=). Note that this also excludes tabs, newlines, carriage returns, etc.
+value = 0*255(chr) nblk-chr
+nblk-chr = %x21-2B / %x2D-3C / %x3E-7E
+chr = %x20 / nblk-chr
+3.3.1.4 Combined Header Value
+The tracestate value is the concatenation of trace graph key/value pairs
+Example: vendorname1=opaqueValue1,vendorname2=opaqueValue2
+Only one entry per key is allowed because the entry represents that last position in the trace. Hence vendors must overwrite their entry upon reentry to their tracing system.
+For example, if a vendor name is Congo and a trace started in their system and then went through a system named Rojo and later returned to Congo, the tracestate value would not be:
+congo=congosFirstPosition,rojo=rojosFirstPosition,congo=congosSecondPosition
+Instead, the entry would be rewritten to only include the most recent position:
+congo=congosSecondPosition,rojo=rojosFirstPosition
+3.3.1.5 tracestate Limits:
+Vendors SHOULD propagate at least 512 characters of a combined header. This length includes commas required to separate list items and optional white space (OWS) characters.
+There are systems where propagating of 512 characters of tracestate may be expensive. In this case, the maximum size of the propagated tracestate header SHOULD be documented and explained. The cost of propagating tracestate SHOULD be weighted against the value of monitoring scenarios enabled for the end users.
+In a situation where tracestate needs to be truncated due to size limitations, the vendor MUST truncate whole entries. Entries larger than 128 characters long SHOULD be removed first. Then entries SHOULD be removed starting from the end of tracestate. Note that other truncation strategies like safe list entries, blocked list entries, or size-based truncation MAY be used, but are highly discouraged. Those strategies decrease the interoperability of various tracing vendors.
+3.3.2 Examples of tracestate HTTP Headers
+Single tracing system (generic format):
+tracestate: rojo=00f067aa0ba902b7
+Multiple tracing systems (with different formatting):
+tracestate: rojo=00f067aa0ba902b7,congo=t61rcWkgMzE
+3.3.3 Versioning of tracestate
+The version of tracestate is defined by the version prefix of traceparent header. Vendors need to attempt to parse tracestate if a higher version is detected, to the best of its ability. It is the vendor’s decision whether to use partially-parsed tracestate key/value pairs or not.
+3.4 Mutating the traceparent Field
+A vendor receiving a traceparent request header MUST send it to outgoing requests. It MAY mutate the value of this header before passing it to outgoing requests.
+If the value of the traceparent field wasn't changed before propagation, tracestate MUST NOT be modified as well. Unmodified header propagation is typically implemented in pass-through services like proxies. This behavior may also be implemented in a service which currently does not collect distributed tracing information.
+Following is the list of allowed mutations:
+Update parent-id: The value of the parent-id field can be set to the new value representing the ID of the current operation. This is the most typical mutation and should be considered a default.
+Update sampled: The value of the sampled field reflects the caller's recording behavior: either trace data was dropped or may have been recorded out-of-band. This can be indicated by toggling the flag in both directions. This mutation gives the downstream vendor information about the likelihood that its parent's information was recorded. The parent-id field MUST be set to a new value with the sampled flag update.
+Restart trace: All properties (trace-id, parent-id, trace-flags) are regenerated. This mutation is used in services that are defined as a front gate into secure networks and eliminates a potential denial-of-service attack surface. Vendors SHOULD clean up tracestate collection on traceparent restart. There are rare cases when the original tracestate entries must be preserved after a restart. This typically happens when the trace-id is reverted back at some point of the trace flow, for instance, when it leaves the secure network. However, it SHOULD be an explicit decision, and not the default behavior.
+Downgrade the version: This version of the specification (00) defines the behavior for a vendor that receives a traceparent header of a higher version. In this case, the first mutation is to downgrade the version of the header. Other mutations are allowed in combination with this one.
+Vendors MUST NOT make any other mutations to the traceparent header.
+3.5 Mutating the tracestate Field
+Vendors receiving a tracestate request header MUST send it to outgoing requests. It MAY mutate the value of this header before passing to outgoing requests. When mutating tracestate, the order of unmodified key/value pairs MUST be preserved. Modified keys SHOULD be moved to the beginning (left) of the list.
+Following are allowed mutations:
+Add a new key/value pair. The new key/value pair SHOULD be added to the beginning of the list.
+Update an existing value. The value for any given key can be updated. Modified keys SHOULD be moved to the beginning (left) of the list.
+Delete a key/value pair. Any key/value pair MAY be deleted. Vendors SHOULD NOT delete keys that were not generated by them. The deletion of an unknown key/value pair will break correlation in other systems. This mutation enables two scenarios. The first is that proxies can block certain tracestate keys for privacy and security concerns. The second scenario is a truncation of long tracestates.
+4. Processing Model
+This section is non-normative.
+This section provides a step-by-step example of a tracing vendor receiving a request with trace context headers, processing the request and then potentially forwarding it. This description can be used as a reference when implementing a trace context-compliant tracing system, middleware (like a proxy or messaging bus), or a cloud service.
+4.1 Processing Model for Working with Trace Context
+This processing model describes the behavior of a vendor that modifies and forwards trace context headers. How the model works depends on whether or not a traceparent header is received.
+4.2 No traceparent Received
+If no traceparent header is received:
+The vendor checks an incoming request for a traceparent and a tracestate header.
+Because the traceparent header is not received, the vendor creates a new trace-id and parent-id that represents the current request.
+If a tracestate header is received without an accompanying traceparent header, it is invalid and MUST be discarded.
+The vendor SHOULD create a new tracestate header and add a new key/value pair.
+The vendor sets the traceparent and tracestate header for the outgoing request.
+4.3 A traceparent is Received
+If a traceparent header is received:
+The vendor checks an incoming request for a traceparent and a tracestate header.
+Because the traceparent header is present, the vendor tries to parse the version of the traceparent header.
+If the version cannot be parsed, the vendor creates a new traceparent header and deletes tracestate.
+If the version number is higher than supported by the tracer, the vendor uses the format defined in this specification (00) to parse trace-id and parent-id.
+The vendor will only parse the trace-flags values supported by this version of this specification and ignore all other values. If parsing fails, the vendor creates a new traceparent header and deletes the tracestate. Vendors will set all unparsed / unknown trace-flags to 0 on outgoing requests.
+If the vendor supports the version number, it validates trace-id and parent-id. If either trace-id, parent-id or trace-flags are invalid, the vendor creates a new traceparent header and deletes tracestate.
+The vendor MAY validate the tracestate header. If the tracestate header cannot be parsed the vendor MAY discard the entire header. Invalid tracestate entries MAY also be discarded.
+For each outgoing request the vendor performs the following steps:
+The vendor MUST modify the traceparent header:
+Update parent-id: The value of property parent-id MUST be set to a value representing the ID of the current operation.
+Update sampled: The value of sampled reflects the caller's recording behavior. The value of the sampled flag of trace-flags MAY be set to 1 if the trace data is likely to be recorded or to 0 otherwise. Setting the flag is no guarantee that the trace will be recorded but increases the likeliness of end-to-end recorded traces.
+The vendor MAY modify the tracestate header:
+Update a key value: The value of any key can be updated. Modified keys MUST be moved to the beginning (left) of the list.
+Add a new key/value pair: The new key-value pair MUST be added to the beginning (left) of the list.
+Delete a key/value pair: Any key/value pair MAY be deleted. Vendors SHOULD NOT delete keys that weren't generated by themselves. Deletion of any key/value pair MAY break correlation in other systems.
+The vendor sets the traceparent and tracestate header for the outgoing request.
+4.4 Alternative Processing
+The processing model above describes the complete set of steps for processing trace context headers. There are, however, situations when a vendor might only support a subset of the steps described above. Proxies or messaging middleware MAY decide not to modify the traceparent headers but remove invalid headers or add additional information to tracestate.
+5. Other Communication Protocols
+While trace context is defined for HTTP, the authors acknowledge it is also relevant for other communication protocols. Extensions of this specification, as well as specifications produced by external organizations, define the format of trace context serialization and deserialization for other protocols. Note that these extensions may be at a different maturity level than this specification.
+Please refer to the [trace-context-protocols-registry] for the details of trace context implementation for other protocols.
+6. Privacy Considerations
+Requirements to propagate headers to downstream services, as well as storing values of these headers, open up potential privacy concerns. Tracing vendors MUST NOT use traceparent and tracestate fields for any personally identifiable or otherwise sensitive information. The only purpose of these fields is to enable trace correlation.
+Vendors MUST assess the risk of header abuse. This section provides some considerations and initial assessment of the risk associated with storing and propagating these headers. Tracing vendors may choose to inspect and remove sensitive information from the fields before allowing the tracing system to execute code that can potentially propagate or store these fields. All mutations should, however, conform to the list of mutations defined in this specification.
+6.1 Privacy of traceparent field
+The traceparent field is comprised of randomly-generated numbers. If a random number generator leverages any user identifiable information like IP address as seed state, this information may be exposed. Random number generators MUST NOT rely on any information that can potentially be user-identifiable.
+Another privacy risk of the traceparent field is the ability to correlate requests made as part of a single transaction. A downstream service may track and correlate two or more requests made in a single transaction and may make assumptions about the identity of the caller of a request based on information from another request.
+Note that these privacy concerns of the traceparent field are theoretical rather than practical. Some services initiating or receiving a request MAY choose to restart a traceparent field to eliminate those risks completely. Vendors SHOULD find a way to minimize the number of distributed trace restarts to promote interoperability of tracing vendors. Instead of restarts, different techniques may be used. For example, services may define trust boundaries of upstream and downstream connections and the level of exposure that any requests may bring. For instance, a vendor might only restart traceparent for authentication requests from or to external services.
+Services may also define an algorithm and audit mechanism to validate the randomness of incoming or outgoing random numbers in the traceparent field. Note that this algorithm is services-specific and not a part of this specification. One example might be a temporal algorithm where a reversible hash function is applied to the current clock time. The receiver can validate that the time is within agreed upon boundaries, meaning the random number was generated with the required algorithm and in fact doesn't contain any personally identifiable information.
+6.2 Privacy of tracestate field
+The tracestate field may contain any opaque value in any of the keys. The main purpose of this header is to provide additional vendor-specific trace-identification information across different distributed tracing systems.
+Vendors MUST NOT include any personally identifiable information in the tracestate header.
+Vendors extremely sensitive to personal information exposure MAY implement selective removal of values corresponding to the unknown keys. Vendors SHOULD NOT mutate the tracestate field, as it defeats the purpose of allowing multiple tracing systems to collaborate.
+6.3 Other risks
+When vendors include traceparent and tracestate headers in responses, these values may inadvertently be passed to cross-origin callers. Vendors should ensure that they include only these response headers when responding to systems that participated in the trace.
+7. Security Considerations
+There are two types of potential security risks associated with this specification: information exposure and denial-of-service attacks against the vendor.
+Vendors relying on traceparent and tracestate headers should also follow all best practices for parsing potentially malicious headers, including checking for header length and content of header values. These practices help to avoid buffer overflow and HTML injection attacks.
+7.1 Information Exposure
+As mentioned in the privacy section, information in the traceparent and tracestate headers may carry information that can be considered sensitive. For example, traceparent may allow one request to be correlated to the data sent with another requeest, or the tracestate header may imply the version of monitoring software used by the caller. This information could potentially be used to create a larger attack.
+Application owners should either ensure that no proprietary or confidential information is stored in tracestate, or they should ensure that tracestate isn't present in requests to external systems.
+7.2 Denial of Service
+When distributed tracing is enabled on a service with a public API and naively continues any trace with the sampled flag set, a malicious attacker could overwhelm an application with tracing overhead, forge trace-id collisions that make monitoring data unusable, or run up your tracing bill with your SaaS tracing vendor.
+Tracing vendors and platforms should account for these situations and make sure that checks and balances are in place to protect denial of monitoring by malicious or badly authored callers.
+One example of such protection may be different tracing behavior for authenticated and unauthenticated requests. Various rate limiters for data recording can also be implemented.
+7.3 Other Risks
+Application owners need to make sure to test all code paths leading to the sending of traceparent and tracestate headers. For example, in single page browser applications, it is typical to make cross-origin requests. If one of these code paths leads to traceparent and tracestate headers being sent by cross-origin calls that are restricted using Access-Control-Allow-Headers [FETCH], it may fail.
+8. Considerations for trace-id field generation
+This section is non-normative.
+This section suggests some best practices to consider when platform or tracing
+vendor implement trace-id generation and propagation algorithms. These
+practices will ensure better interoperability of different systems.
+8.1 Uniqueness of trace-id
+The value of trace-id SHOULD be globally unique. This field is typically used
+for unique identification of a distributed trace. It is common for
+distributed traces to span various components, including, for example,
+cloud services. Cloud services tend to serve variety of clients and have a very
+high throughput of requests. So global uniqueness of trace-id is important,
+even when local uniqueness might seem like a good solution.
+8.2 Randomness of trace-id
+Randomly generated value of trace-id SHOULD be preferred over other
+algorithms of generating a globally unique identifiers. Randomness of trace-id
+addresses some security and privacy
+concerns of exposing unwanted information. Randomness
+also allows tracing vendors to base sampling decisions on trace-id field value
+and avoid propagating an additional sampling context.
+As shown in the next section, it is important for trace-id to carry
+"uniqueness" and "randomness" in the right part of the trace-id, for better
+inter-operability with some existing systems.
+8.3 Handling trace-id for compliant platforms with shorter internal identifiers
+There are tracing systems which use a trace-id that is shorter than 16 bytes,
+which are still willing to adopt this specification.
+If such a system is capable of propagating a fully compliant trace-id, even
+while still requiring a shorter, non-compliant identifier for internal purposes,
+the system is encouraged to utilize the tracestate header to propagate the
+additional internal identifier. However, if a system would instead prefer to use
+the internal identifier as the basis for a fully compliant trace-id, it SHOULD
+be incorporated at the as rightmost part of a trace-id. For example, tracing
+system may receive 234a5bcd543ef3fa53ce929d0e0e4736 as a trace-id, hovewer
+internally it will use 53ce929d0e0e4736 as an identifier.
+8.4 Interoperating with existing systems which use shorter identifiers
+There are tracing systems which are not capable of propagating the entire 16
+bytes of a trace-id. For better interoperability between a fully compliant
+systems with these existing systems, the following practices are recommended:
+When a system creates an outbound message and needs to generate a fully
+compliant 16 bytes trace-id from a shorter identifier, it SHOULD left pad
+the original identifier with zeroes. For example, the identifier
+53ce929d0e0e4736, SHOULD be converted to trace-id value
+000000000000000053ce929d0e0e4736.
+When a system receives an inbound message and needs to convert the 16 bytes
+trace-id to a shorter identifier, the rightmost part of trace-id SHOULD
+be used as this identifier. For instance, if the value of trace-id was
+234a5bcd543ef3fa53ce929d0e0e4736 on an incoming request, tracing system
+SHOULD use identifier with the value of 53ce929d0e0e4736.
+Similar transformations are expected when tracing system converts other
+distributed trace context propagation formats to W3C Trace Context. Shorter
+identifiers SHOULD be left padded with zeros when converted to 16 bytes
+trace-id and rightmost part of trace-id SHOULD be used as a shorter
+identifier.
+Note, many existing systems that are not capable of propagating the whole
+trace-id will not propagate tracestate header either. However, such system
+can still use tracestate header to propagate additional data that is known by
+this system. For example, some systems use two flags indicating whether
+distributed trace needs to be recorded or not. In this case one flag can be send
+as sampled flag of traceparent header and tracestate can be used to send
+and receive an additional flag. Compliant systems will propagate this flag along
+all other key/value pairs. Existing systems which are not capable of
+tracestate propagation will truncate all additional values from tracestate
+and only pass along that flag.
+A. Acknowledgments
+Thanks to Adrian Cole, Christoph Neumüller, Daniel Khan, Erika Arnold, Fabian Lange, Matthew Wear, Reiley Yang, Ted Young, Tyler Benson, Victor Soares for their contributions to this work.
+B. Glossary
+This section is non-normative.
+Distributed trace
+A distributed trace is a set of events, triggered as a result
+of a single logical operation, consolidated across various
+components of an application. A distributed trace contains
+events that cross process, network and security boundaries.
+A distributed trace may be initiated when someone presses a
+button to start an action on a website - in this example, the
+trace will represent calls made between the downstream services
+that handled the chain of requests initiated by this button
+being pressed.
+C. References
+C.1 Normative references
+[BIT-FIELD]
+8-bit field. Wikipedia. URL: https://en.wikipedia.org/wiki/Bit_field
+[FETCH]
+Fetch Standard. Anne van Kesteren. WHATWG. Living Standard. URL: https://fetch.spec.whatwg.org/
+[RFC0020]
+ASCII format for network interchange. V.G. Cerf. IETF. October 1969. Internet Standard. URL: https://www.rfc-editor.org/rfc/rfc20
+[RFC2119]
+Key words for use in RFCs to Indicate Requirement Levels. S. Bradner. IETF. March 1997. Best Current Practice. URL: https://www.rfc-editor.org/rfc/rfc2119
+[RFC5234]
+Augmented BNF for Syntax Specifications: ABNF. D. Crocker, Ed.; P. Overell. IETF. January 2008. Internet Standard. URL: https://www.rfc-editor.org/rfc/rfc5234
+[RFC7230]
+Hypertext Transfer Protocol (HTTP/1.1): Message Syntax and Routing. R. Fielding, Ed.; J. Reschke, Ed.. IETF. June 2014. Proposed Standard. URL: https://httpwg.org/specs/rfc7230.html
+[RFC8174]
+Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words. B. Leiba. IETF. May 2017. Best Current Practice. URL: https://www.rfc-editor.org/rfc/rfc8174
+[trace-context-protocols-registry]
+Trace Context Protocols Registry. Sergey Kanzhelev; Philippe Le Hégaret. W3C. 19 November 2019. W3C Working Group Note. URL: https://www.w3.org/TR/trace-context-protocols-registry/
+↑
+Permalink
+Referenced in:
+§ 2.1 Problem Statement
+§ 3.2.2.3 trace-id
+§ 3.2.2.5.1 Sampled flag (2)
+§ 6.1 Privacy of traceparent field
+§ 8.1 Uniqueness of trace-id (2)

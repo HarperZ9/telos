@@ -1,0 +1,123 @@
+Skip to main content
+Back to top
+Ctrl+K
+Industrial Optimization
+Quantum Research
+Ocean SDK
+Leap Service
+Concepts
+More
+Licenses
+Bibliography
+Search
+Ctrl+K
+GitHub
+Search
+Ctrl+K
+Industrial Optimization
+Quantum Research
+Ocean SDK
+Leap Service
+Concepts
+Licenses
+Bibliography
+GitHub
+Section Navigation
+Get Started with Ocean Software
+Reference Documentation
+dimod — 0.12.22
+dwavebinarycsp — deprecated
+dwave-cloud-client — 0.14.6
+dwave-gate — 0.3.5
+dwave-graphs — 1.0.0
+dwave-hybrid — 0.6.16
+dwave-inspector — 0.5.5
+dwave-networkx — deprecated
+dwave-optimization — 0.7.1
+API Reference
+Philosophy
+Implicit Constraints
+dwave-preprocessing — 0.6.11
+dwave-samplers — 1.8.0
+dwave-system — 1.35.0
+minorminer — 0.2.22
+penaltymodel — deprecated
+CLI
+Source Code
+Ocean SDK Release Notes
+Contribute
+AI Policy
+Ocean SDK
+Reference Documentation
+dwave-optimization
+dwave-optimization#
+Reference documentation for dwave-optimization:
+API Reference
+About dwave-optimization#
+dwave-optimization is an open-source library for formulating nonlinear optimization
+models for use with D-Wave’s Stride™ hybrid solver.
+Models are constructed symbolically using an array-based syntax inspired by NumPy.
+The package includes:
+A class for nonlinear models used by the Stride quantum-classical
+hybrid nonlinear solver.
+Model generators for common optimization problems.
+For explanations of the terminology, see the
+Concepts section.
+Design Principles#
+dwave-optimization and the hybrid nonlinear solver incorporate features and
+design principles from each of the following
+areas:
+Quantum Optimization
+Take advantage of quantum-mechanical effects not available to classical
+compute.
+Quantum Optimization
+(Mixed-Integer) Linear Programming
+Learn the basics of solving optimization problems with linear program
+solvers.
+(Mixed-Integer) Linear Programming
+Lists, Sets, and Other Combinatorial Variables
+Explore how lists, sets, and other combinatorial structures make
+optimization simpler and more performant.
+Lists, Sets, and Other Combinatorial Variables
+Tensor Programming
+Use N-dimensional arrays and operations to work with your data directly
+and succinctly.
+Tensor Programming
+Example Usage#
+The quadratic assignment problem problem is a combinatorial
+optimization problem.
+There are n facilities and n potential locations, a flow between each pair
+of facilities, and a distance between each pair of locations.
+The problem is to assign each facility to a location in order to minimize the
+sum of each distance multiplied by each matching flow.
+This small example builds a quadratic assignment using dwave-optimization
+symbols. There is also a
+generator
+for this problem.
+from dwave.optimization import Model
+model = Model()
+flows = model.constant([[0, 4, 2],
+[3, 0, 7],
+[1, 8, 0]])
+distances = model.constant([[0, 1, 2],
+[1, 0, 3],
+[2, 3, 0]])
+assignment = model.list(3)
+model.minimize((flows * distances[assignment, :][:, assignment]).sum())
+Usage Information#
+Concepts for terminology.
+Model Construction for an introduction to using this package
+to model problems.
+Get Started with Optimization for an introduction to optimizing with
+hybrid solvers.
+Stride Solver Properties and Stride Solver Parameters for the
+solver’s properties and parameters.
+Improving Hybrid Solutions for best practices and examples.
+On this page
+About dwave-optimization
+Design Principles
+Example Usage
+Usage Information
+Show Source
+© Copyright D-Wave.
+Ocean SDK version 9.4.0.

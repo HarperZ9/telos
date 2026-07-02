@@ -1,0 +1,32 @@
+{
+  "schema": "Pass0011ColorCalibrationValidatorRun/v1",
+  "pass": "0011",
+  "status": "MATCH",
+  "match": 2,
+  "drift": 0,
+  "observed_exit_code": 0,
+  "checks": [
+    {
+      "artifact": "ColorCalibrationMarketMap",
+      "path": "schemas\\color-calibration-market-map-pass-0011.json",
+      "status": "MATCH",
+      "count": 8,
+      "categories": [
+        "calibration-software",
+        "color-management",
+        "color-standard",
+        "grading-tool",
+        "open-source-calibration",
+        "profile-standard"
+      ],
+      "errors": []
+    },
+    {
+      "artifact": "BuildColorCalibrationProofKit",
+      "path": "schemas\\build-color-calibration-proof-kit-pass-0011.json",
+      "status": "MATCH",
+      "metric_count": 4,
+      "errors": []
+    }
+  ]
+}

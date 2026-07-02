@@ -1,0 +1,9 @@
+{
+  "schema": "project-telos.negative-prooflesson-result/v1",
+  "command": "node C:\\dev\\public\\learn\\src\\cli.mjs tutor prooflesson forged --packet C:\\dev\\public\\telos\\docs\\outreach\\receipts\\fourth-wave-forged-proof-packet.json",
+  "status": "rejected",
+  "exit_code": 1,
+  "receipt_exists": false,
+  "observed_output": "tutor prooflesson forged: packet rejected: illegal verdict enum \"VERIFIED_SUPREME\" (expected MATCH|DRIFT|UNVERIFIABLE)",
+  "boundary": "Negative fixture only. A forged verdict enum must not produce a prooflesson receipt."
+}

@@ -1,0 +1,570 @@
+{
+  "ok": true,
+  "thesis": {
+    "id": "6be019ee93947947",
+    "title": "Dogfood Pass 0029 Research Claim Packet",
+    "registered_at": 1782909691.8624392,
+    "disposition": "fenced",
+    "seal": "6be019ee939479473817f9aef90de23ee0c47c0555bc18aa514f8b353912b84d",
+    "claims": [
+      {
+        "id": "07a547cfee93053f",
+        "sha256": "07a547cfee93053f3c4ca4d808e190433847d0a9f77db7cf307e7f2e846b0c4c"
+      },
+      {
+        "id": "6fb553c757bd2696",
+        "sha256": "6fb553c757bd2696aac184b48dc30262f6658e9ca9f54909e82a0b9be7df5bfc"
+      },
+      {
+        "id": "ceac21e83065a548",
+        "sha256": "ceac21e83065a5482660f3a871c0afcdd0cb7ea507e3a8f53c166207d88400cf"
+      },
+      {
+        "id": "9042fdb83e09fc64",
+        "sha256": "9042fdb83e09fc640af147ec2c36a9a2c09a4868e870bfe7609e3cdc8cc00667"
+      },
+      {
+        "id": "473f69e029e6ee39",
+        "sha256": "473f69e029e6ee3904a7084c7446119d8bd4be083f87ed562340b94d3b52004a"
+      },
+      {
+        "id": "20769fb4fee7f445",
+        "sha256": "20769fb4fee7f4453ef3bcefbb71d829364fb75d4cea6ae18a5433f232348898"
+      },
+      {
+        "id": "6196c0c9a20ccc84",
+        "sha256": "6196c0c9a20ccc84879ff304cc7916789aad60f2590641f13cdb158663bcf72a"
+      },
+      {
+        "id": "2094dd2d56c0df29",
+        "sha256": "2094dd2d56c0df29276a1883049facba2c98d094de1878834fc64d2a5d4c4342"
+      },
+      {
+        "id": "67799d43d55414e4",
+        "sha256": "67799d43d55414e450c765587d939b61492f070b92c851bbdc0a82e8e8eab993"
+      },
+      {
+        "id": "1cf96920302fda4b",
+        "sha256": "1cf96920302fda4bc0c245abcc0d4c27e1e7941bc5890019c090544afdd67c6b"
+      }
+    ]
+  },
+  "refutations": [
+    {
+      "claim_id": "07a547cfee93053f",
+      "claim_sha256": "07a547cfee93053f3c4ca4d808e190433847d0a9f77db7cf307e7f2e846b0c4c",
+      "challenge": "test the stated falsification: schemas/research-claim-packet-pass-0029.json is missing, has a different schema, status, claim counts, negative fixture count, or seal",
+      "measurable": "schemas/research-claim-packet-pass-0029.json is missing, has a different schema, status, claim counts, negative fixture count, or seal",
+      "source": "null"
+    },
+    {
+      "claim_id": "6fb553c757bd2696",
+      "claim_sha256": "6fb553c757bd2696aac184b48dc30262f6658e9ca9f54909e82a0b9be7df5bfc",
+      "challenge": "test the stated falsification: the public source receipt is missing, has a different source URL, verification status, confidence, SHA-256, seal, or locator count",
+      "measurable": "the public source receipt is missing, has a different source URL, verification status, confidence, SHA-256, seal, or locator count",
+      "source": "null"
+    },
+    {
+      "claim_id": "ceac21e83065a548",
+      "claim_sha256": "ceac21e83065a5482660f3a871c0afcdd0cb7ea507e3a8f53c166207d88400cf",
+      "challenge": "test the stated falsification: the prior source evidence binding is missing, has a different SHA-256, seal, schema, or promotes pass 0028 network/console UNVERIFIABLE to MATCH",
+      "measurable": "the prior source evidence binding is missing, has a different SHA-256, seal, schema, or promotes pass 0028 network/console UNVERIFIABLE to MATCH",
+      "source": "null"
+    },
+    {
+      "claim_id": "9042fdb83e09fc64",
+      "claim_sha256": "9042fdb83e09fc640af147ec2c36a9a2c09a4868e870bfe7609e3cdc8cc00667",
+      "challenge": "test the stated falsification: the action receipt proposal is missing, has a different schema or event type, omits either input digest, requires raw source/browser/model reasoning material, or lacks verification verdict MATCH",
+      "measurable": "the action receipt proposal is missing, has a different schema or event type, omits either input digest, requires raw source/browser/model reasoning material, or lacks verification verdict MATCH",
+      "source": "null"
+    },
+    {
+      "claim_id": "473f69e029e6ee39",
+      "claim_sha256": "473f69e029e6ee3904a7084c7446119d8bd4be083f87ed562340b94d3b52004a",
+      "challenge": "test the stated falsification: the claim set has different IDs, fewer or more than three verified claims, fewer or more than two UNVERIFIABLE claims, or promotes proof correctness/future currentness",
+      "measurable": "the claim set has different IDs, fewer or more than three verified claims, fewer or more than two UNVERIFIABLE claims, or promotes proof correctness/future currentness",
+      "source": "null"
+    },
+    {
+      "claim_id": "20769fb4fee7f445",
+      "claim_sha256": "20769fb4fee7f4453ef3bcefbb71d829364fb75d4cea6ae18a5433f232348898",
+      "challenge": "test the stated falsification: negative fixtures are missing, fewer than ten, have different IDs, or any negative fixture is not marked expected_validator_status REJECT",
+      "measurable": "negative fixtures are missing, fewer than ten, have different IDs, or any negative fixture is not marked expected_validator_status REJECT",
+      "source": "null"
+    },
+    {
+      "claim_id": "6196c0c9a20ccc84",
+      "claim_sha256": "6196c0c9a20ccc84879ff304cc7916789aad60f2590641f13cdb158663bcf72a",
+      "challenge": "test the stated falsification: the validator result is missing, reports DRIFT, different claim counts, unsupported_claim_promotion_rejected not true, or network/console verdicts not UNVERIFIABLE",
+      "measurable": "the validator result is missing, reports DRIFT, different claim counts, unsupported_claim_promotion_rejected not true, or network/console verdicts not UNVERIFIABLE",
+      "source": "null"
+    },
+    {
+      "claim_id": "2094dd2d56c0df29",
+      "claim_sha256": "2094dd2d56c0df29276a1883049facba2c98d094de1878834fc64d2a5d4c4342",
+      "challenge": "test the stated falsification: packet 039 is missing, Gather does not verify it, or the packet SHA-256, digest seal, or character count differs",
+      "measurable": "packet 039 is missing, Gather does not verify it, or the packet SHA-256, digest seal, or character count differs",
+      "source": "null"
+    },
+    {
+      "claim_id": "67799d43d55414e4",
+      "claim_sha256": "67799d43d55414e450c765587d939b61492f070b92c851bbdc0a82e8e8eab993",
+      "challenge": "test the stated falsification: schemas/tool-receipts-pass-0029.json is missing, lacks required Index/Gather/Telos/Forum/Crucible receipts, treats Forum submit as successful, or hides the missing shell telos command",
+      "measurable": "schemas/tool-receipts-pass-0029.json is missing, lacks required Index/Gather/Telos/Forum/Crucible receipts, treats Forum submit as successful, or hides the missing shell telos command",
+      "source": "null"
+    },
+    {
+      "claim_id": "1cf96920302fda4b",
+      "claim_sha256": "1cf96920302fda4bc0c245abcc0d4c27e1e7941bc5890019c090544afdd67c6b",
+      "challenge": "test the stated falsification: the market implication treats uniqueness as fact, omits the non-promotion boundary, or promotes a natural law",
+      "measurable": "the market implication treats uniqueness as fact, omits the non-promotion boundary, or promotes a natural law",
+      "source": "null"
+    }
+  ],
+  "assessment": {
+    "started_at": 1782909691.8707266,
+    "thesis_id": "6be019ee93947947",
+    "thesis_seal": "6be019ee939479473817f9aef90de23ee0c47c0555bc18aa514f8b353912b84d",
+    "claims": 10,
+    "match": 10,
+    "drift": 0,
+    "unverifiable": 0,
+    "verdict_seal": "7710e5ea65c236743205afa3c22b3bcdb3a6ed8029caf4c5f19ea2448c73a7a4",
+    "measurement_seal": "a754749c13b684a6318986d25a8d4e5c085e7da00abde2c938b06ad75f4eb0e5",
+    "disposition": "fenced",
+    "stored": null,
+    "verdicts": [
+      {
+        "claim_id": "07a547cfee93053f",
+        "claim_sha256": "07a547cfee93053f3c4ca4d808e190433847d0a9f77db7cf307e7f2e846b0c4c",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "research-claim-packet-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "6fb553c757bd2696",
+        "claim_sha256": "6fb553c757bd2696aac184b48dc30262f6658e9ca9f54909e82a0b9be7df5bfc",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "public-source-receipt-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "ceac21e83065a548",
+        "claim_sha256": "ceac21e83065a5482660f3a871c0afcdd0cb7ea507e3a8f53c166207d88400cf",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "prior-source-evidence-binding-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "9042fdb83e09fc64",
+        "claim_sha256": "9042fdb83e09fc640af147ec2c36a9a2c09a4868e870bfe7609e3cdc8cc00667",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "action-receipt-proposal-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "473f69e029e6ee39",
+        "claim_sha256": "473f69e029e6ee3904a7084c7446119d8bd4be083f87ed562340b94d3b52004a",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "claim-status-boundary-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "20769fb4fee7f445",
+        "claim_sha256": "20769fb4fee7f4453ef3bcefbb71d829364fb75d4cea6ae18a5433f232348898",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "negative-fixture-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "6196c0c9a20ccc84",
+        "claim_sha256": "6196c0c9a20ccc84879ff304cc7916789aad60f2590641f13cdb158663bcf72a",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "validator-result-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "2094dd2d56c0df29",
+        "claim_sha256": "2094dd2d56c0df29276a1883049facba2c98d094de1878834fc64d2a5d4c4342",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "gather-packet-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "67799d43d55414e4",
+        "claim_sha256": "67799d43d55414e450c765587d939b61492f070b92c851bbdc0a82e8e8eab993",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "tool-receipt-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "1cf96920302fda4b",
+        "claim_sha256": "1cf96920302fda4bc0c245abcc0d4c27e1e7941bc5890019c090544afdd67c6b",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "market-boundary-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      }
+    ],
+    "measurements": [
+      {
+        "claim_id": "07a547cfee93053f",
+        "claim_sha256": "07a547cfee93053f3c4ca4d808e190433847d0a9f77db7cf307e7f2e846b0c4c",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "research-claim-packet-review",
+        "measured_at": 1782909691.8707266,
+        "evidence": [
+          "schemas/research-claim-packet-pass-0029.json schema=ResearchClaimPacket/v1",
+          "status=RESEARCH_CLAIM_PACKET_MATCH",
+          "claim_count=5",
+          "verified_claim_count=3",
+          "unverifiable_claim_count=2",
+          "negative_fixture_count=10",
+          "seal=272b3afd43cd60688f06fabd11d66934796f448ba1f07a02d62a3798443a62f4"
+        ]
+      },
+      {
+        "claim_id": "6fb553c757bd2696",
+        "claim_sha256": "6fb553c757bd2696aac184b48dc30262f6658e9ca9f54909e82a0b9be7df5bfc",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "public-source-receipt-review",
+        "measured_at": 1782909691.8707266,
+        "evidence": [
+          "public_source_receipt path=fixtures/pipeline-math-source-receipt-pass-0029.json",
+          "url=https://raw.githubusercontent.com/Pengbinghui/pipeline-math/main/README.md",
+          "sha256=fcc8d3d9dea488bfd4dee9bbc9898cde12472df26ecbcc3665aaaae9d045bf62",
+          "seal=280633352b3f7c285f167f846d816b5b7de2efdfbc79ce13c418efaa6bc2a76b",
+          "verification_status=verified",
+          "confidence=high",
+          "evidence_locator_count=3"
+        ]
+      },
+      {
+        "claim_id": "ceac21e83065a548",
+        "claim_sha256": "ceac21e83065a5482660f3a871c0afcdd0cb7ea507e3a8f53c166207d88400cf",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "prior-source-evidence-binding-review",
+        "measured_at": 1782909691.8707266,
+        "evidence": [
+          "prior_source_evidence_binding path=schemas/source-evidence-binding-pass-0028.json",
+          "sha256=75aeda5b9afa02eb1da746aa319d2908a7895f26aefe5d1949d1d949ff3c0f32",
+          "seal=879c147a7c755ca357eaf07802a893cb6a3a92752af0664a3ea2e1ec9565337e",
+          "schema=SourceEvidenceBindingSet/v1",
+          "network_summary_verdict=UNVERIFIABLE",
+          "console_summary_verdict=UNVERIFIABLE"
+        ]
+      },
+      {
+        "claim_id": "9042fdb83e09fc64",
+        "claim_sha256": "9042fdb83e09fc640af147ec2c36a9a2c09a4868e870bfe7609e3cdc8cc00667",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "action-receipt-proposal-review",
+        "measured_at": 1782909691.8707266,
+        "evidence": [
+          "action_receipt_proposal schema=ActionReceiptResearchClaimProposal/v1",
+          "event_type=research_claim_packet_created",
+          "input_digest=sha256:fcc8d3d9dea488bfd4dee9bbc9898cde12472df26ecbcc3665aaaae9d045bf62",
+          "input_digest=sha256:75aeda5b9afa02eb1da746aa319d2908a7895f26aefe5d1949d1d949ff3c0f32",
+          "raw_source_material_required=false",
+          "raw_browser_payload_required=false",
+          "model_reasoning_required_for_replay=false",
+          "verification verdict=MATCH"
+        ]
+      },
+      {
+        "claim_id": "473f69e029e6ee39",
+        "claim_sha256": "473f69e029e6ee3904a7084c7446119d8bd4be083f87ed562340b94d3b52004a",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "claim-status-boundary-review",
+        "measured_at": 1782909691.8707266,
+        "evidence": [
+          "claim ids include rc_pipeline_math_scope",
+          "claim ids include rc_pipeline_math_prover_verifier",
+          "claim ids include rc_pipeline_math_lean_formalization",
+          "claim ids include rc_pipeline_math_proof_correctness",
+          "claim ids include rc_pipeline_math_future_currentness",
+          "verified_claim_count=3",
+          "UNVERIFIABLE claim count=2",
+          "BLOCKED claim count=2",
+          "proof correctness verification_status=UNVERIFIABLE",
+          "future currentness verification_status=UNVERIFIABLE"
+        ]
+      },
+      {
+        "claim_id": "20769fb4fee7f445",
+        "claim_sha256": "20769fb4fee7f4453ef3bcefbb71d829364fb75d4cea6ae18a5433f232348898",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "negative-fixture-review",
+        "measured_at": 1782909691.8707266,
+        "evidence": [
+          "negative_fixture_count=10",
+          "negative-proof-correctness-promoted expected_validator_status=REJECT",
+          "negative-future-currentness-promoted expected_validator_status=REJECT",
+          "negative-broad-science-generalization expected_validator_status=REJECT",
+          "negative-source-url-missing expected_validator_status=REJECT",
+          "negative-source-receipt-sha-drift expected_validator_status=REJECT",
+          "negative-pass-0028-binding-drift expected_validator_status=REJECT",
+          "negative-unverifiable-network-promoted expected_validator_status=REJECT",
+          "negative-unverifiable-console-promoted expected_validator_status=REJECT",
+          "negative-action-receipt-proposal-missing expected_validator_status=REJECT",
+          "negative-verifier-measurement-missing expected_validator_status=REJECT"
+        ]
+      },
+      {
+        "claim_id": "6196c0c9a20ccc84",
+        "claim_sha256": "6196c0c9a20ccc84879ff304cc7916789aad60f2590641f13cdb158663bcf72a",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "validator-result-review",
+        "measured_at": 1782909691.8707266,
+        "evidence": [
+          "schemas/pass-0029-research-claim-packet-validator-result.json status=MATCH",
+          "match=1",
+          "drift=0",
+          "claim_count=5",
+          "verified_claim_count=3",
+          "unverifiable_claim_count=2",
+          "blocked_claim_count=2",
+          "negative_fixture_count=10",
+          "unsupported_claim_promotion_rejected=true",
+          "network_summary_verdict=UNVERIFIABLE",
+          "console_summary_verdict=UNVERIFIABLE"
+        ]
+      },
+      {
+        "claim_id": "2094dd2d56c0df29",
+        "claim_sha256": "2094dd2d56c0df29276a1883049facba2c98d094de1878834fc64d2a5d4c4342",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "gather-packet-review",
+        "measured_at": 1782909691.8707266,
+        "evidence": [
+          "gather docs verified=true",
+          "artifact=packets/039-research-claim-packet.md",
+          "sha256=c0236e7a5faf433774f5fc40b36ab04ef9e59c355e78d64779d9bb9519fc7a84",
+          "seal=6fd9b99b4c07240278eabc45d4d4bc77fddadec5254743d7ef787226e3602a87",
+          "chars=5957"
+        ]
+      },
+      {
+        "claim_id": "67799d43d55414e4",
+        "claim_sha256": "67799d43d55414e450c765587d939b61492f070b92c851bbdc0a82e8e8eab993",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "tool-receipt-review",
+        "measured_at": 1782909691.8707266,
+        "evidence": [
+          "schemas/tool-receipts-pass-0029.json status=MATCH_WITH_FORUM_SUBMIT_GAP_AND_TELOS_SHELL_GAP",
+          "index status MATCH",
+          "index doctor MATCH",
+          "gather status MATCH",
+          "gather docs verified=true",
+          "mcp__telos.telos_status MATCH",
+          "mcp__telos.telos_operator_doctor MATCH",
+          "mcp__telos.telos_catalog MATCH",
+          "mcp__telos.telos_browser_evidence MATCH",
+          "mcp__telos.telos_action_receipt MATCH",
+          "mcp__telos.telos_loop_ledger MATCH",
+          "mcp__telos.telos_native_control MATCH",
+          "forum status MATCH",
+          "forum doctor MATCH",
+          "forum ledger verify chain=true deep=true",
+          "forum submit status=UNVERIFIABLE",
+          "shell telos status=UNVERIFIABLE",
+          "crucible status MATCH"
+        ]
+      },
+      {
+        "claim_id": "1cf96920302fda4b",
+        "claim_sha256": "1cf96920302fda4bc0c245abcc0d4c27e1e7941bc5890019c090544afdd67c6b",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "market-boundary-review",
+        "measured_at": 1782909691.8707266,
+        "evidence": [
+          "market_implication uniqueness_status=hypothesis",
+          "non_promotion_statement includes does not prove",
+          "current_promoted_natural_laws=[]"
+        ]
+      }
+    ],
+    "seal": "f461b7c0f1f71a78bf19ca5abd7dce34396aab3915937dd609df138fbaa66c0d"
+  },
+  "verdicts": [
+    {
+      "claim_id": "07a547cfee93053f",
+      "claim_sha256": "07a547cfee93053f3c4ca4d808e190433847d0a9f77db7cf307e7f2e846b0c4c",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "research-claim-packet-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "6fb553c757bd2696",
+      "claim_sha256": "6fb553c757bd2696aac184b48dc30262f6658e9ca9f54909e82a0b9be7df5bfc",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "public-source-receipt-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "ceac21e83065a548",
+      "claim_sha256": "ceac21e83065a5482660f3a871c0afcdd0cb7ea507e3a8f53c166207d88400cf",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "prior-source-evidence-binding-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "9042fdb83e09fc64",
+      "claim_sha256": "9042fdb83e09fc640af147ec2c36a9a2c09a4868e870bfe7609e3cdc8cc00667",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "action-receipt-proposal-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "473f69e029e6ee39",
+      "claim_sha256": "473f69e029e6ee3904a7084c7446119d8bd4be083f87ed562340b94d3b52004a",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "claim-status-boundary-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "20769fb4fee7f445",
+      "claim_sha256": "20769fb4fee7f4453ef3bcefbb71d829364fb75d4cea6ae18a5433f232348898",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "negative-fixture-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "6196c0c9a20ccc84",
+      "claim_sha256": "6196c0c9a20ccc84879ff304cc7916789aad60f2590641f13cdb158663bcf72a",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "validator-result-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "2094dd2d56c0df29",
+      "claim_sha256": "2094dd2d56c0df29276a1883049facba2c98d094de1878834fc64d2a5d4c4342",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "gather-packet-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "67799d43d55414e4",
+      "claim_sha256": "67799d43d55414e450c765587d939b61492f070b92c851bbdc0a82e8e8eab993",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "tool-receipt-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "1cf96920302fda4b",
+      "claim_sha256": "1cf96920302fda4bc0c245abcc0d4c27e1e7941bc5890019c090544afdd67c6b",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "market-boundary-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    }
+  ],
+  "checks": {
+    "seals_ok": true,
+    "thesis_ok": true,
+    "verdicts_rederive": true
+  },
+  "report": "docs/research/dogfood/crucible/pass-0029-report.md",
+  "record": "docs/research/dogfood/crucible/pass-0029-run.json",
+  "bundle": null,
+  "spec": null,
+  "review": null,
+  "verifier": {
+    "mode": "cleanroom",
+    "inputs": [],
+    "excluded": [
+      "worker context",
+      "reasoning trace",
+      "intermediate steps"
+    ],
+    "checkability": "If success cannot be evaluated from the original spec and the artifact, the spec is not checkable yet."
+  }
+}

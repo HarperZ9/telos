@@ -1,0 +1,93 @@
+{
+  "buildlang_runtime_bridge": {
+    "boundary": "This pass does not compile a new BuildLang chemistry kernel; it binds the existing buildc receipt and specifies the next runtime receipt target.",
+    "compiler": "buildc",
+    "compiler_version": "1.0.6",
+    "native_pass": "0095",
+    "native_status": "BUILDLANG_NATIVE_OPTIMIZATION_KERNEL_RECEIPT_MATCH",
+    "required_kernel_receipts": [
+      "stoichiometric_matrix_digest",
+      "conservation_vector_receipt",
+      "residual_zero_check",
+      "numeric_tolerance_receipt",
+      "negative_fixture_receipt"
+    ],
+    "source_digest": "2480f503aa672459ccdd437a93f8d50c71dbc9b90d1ce236a52259727e1e29e9",
+    "status": "TARGET_SPECIFIED_WITH_EXISTING_BUILDC_RECEIPT",
+    "target_kernel": "reaction_network_invariant_kernel.bld",
+    "verify_check_count": 18
+  },
+  "compose": {
+    "command": "C:\\Users\\Zain\\AppData\\Local\\Programs\\Python\\Python312\\python.exe C:\\dev\\public\\telos\\docs\\research\\dogfood\\tools\\compose_reaction_network_corpus_harness_receipt.py --out C:\\dev\\public\\telos\\docs\\research\\dogfood\\schemas\\reaction-network-corpus-harness-receipt-pass-0107.json",
+    "exit_code": 0,
+    "status": "MATCH",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "5d2cfb9fa365ba6ac9c0c176a2c5a0bd6bd01e5c9667724b7e4aa2c170357ac2"
+  },
+  "corpus_summary": {
+    "candidate_check_count": 5,
+    "derived_invariant_count": 4,
+    "drift_expected_count": 1,
+    "match_count": 3,
+    "network_count": 4
+  },
+  "forum": {
+    "confidence": 0.045454545454545456,
+    "decided": null,
+    "exit_code": 0,
+    "needs_escalation": true,
+    "status": "MATCH",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "ed94aa833c87bcdb8e11efb2d17b0a6f49e805bd8f008027ab7c368b7d707b56",
+    "top_candidates": [
+      {
+        "agent": "project-telos",
+        "score": 0.045454545454545456
+      },
+      {
+        "agent": "backend",
+        "score": 0.0
+      },
+      {
+        "agent": "ci-cd",
+        "score": 0.0
+      },
+      {
+        "agent": "cloud-infra",
+        "score": 0.0
+      },
+      {
+        "agent": "code-review",
+        "score": 0.0
+      }
+    ]
+  },
+  "index": {
+    "exit_code": 0,
+    "graph_pack_sha256": "8ee383e19ae9a6141bee70de733fb6aa09201ff9d284ce6778ce58b06e6b68b2",
+    "schema": "project-telos.context-envelope/v1",
+    "source_refs_only": true,
+    "status": "MATCH",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "a724beb64b12479bf426696177b7ddaf1fb398a200f811f624939d10abdbe6c6",
+    "verification_verdict": "MATCH"
+  },
+  "pass": "0107",
+  "schema": "DogfoodToolReceipts/v1",
+  "seal": "1cb8fe5dc6c355b9952f51ac1656d967a165cd4aeab756cb7b676e5dfbebc432",
+  "telos": {
+    "exit_code": 0,
+    "status": "MATCH",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "be17cb15259234cb4e8e95c2b36e76c90d841431729beb140294e34c5f9ebfa7",
+    "tool": "telos",
+    "tool_version": "0.1.0"
+  },
+  "test": {
+    "command": "C:\\Users\\Zain\\AppData\\Local\\Programs\\Python\\Python312\\python.exe C:\\dev\\public\\telos\\docs\\research\\dogfood\\tools\\test_reaction_network_corpus_harness_receipt.py",
+    "exit_code": 0,
+    "status": "MATCH",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

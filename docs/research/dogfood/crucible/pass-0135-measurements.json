@@ -1,0 +1,109 @@
+{
+  "measurements": [
+    {
+      "claim": "Pass 0135 created a BioMedRoboticsNomenclatureMapReceipt/v1 artifact with status BIO_MED_ROBOTICS_NOMENCLATURE_MAP_MATCH, sha256 3da47a2b085f9958308cd17609d9c51ddd35e8927a8822ad3311f9681528604b, and seal 8e1112d188c3d758859f1ee10016355e190c079c462b6cd8fa50145b535c847e.",
+      "deviation": 0.0,
+      "evidence": [
+        "schema=BioMedRoboticsNomenclatureMapReceipt/v1",
+        "status=BIO_MED_ROBOTICS_NOMENCLATURE_MAP_MATCH",
+        "sha256=3da47a2b085f9958308cd17609d9c51ddd35e8927a8822ad3311f9681528604b",
+        "seal=8e1112d188c3d758859f1ee10016355e190c079c462b6cd8fa50145b535c847e"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0135 gathered 32 source receipts with 26 usable captures.",
+      "deviation": 0.0,
+      "evidence": [
+        "gather_summary={'client_challenge_count': 4, 'distinct_body_count': 28, 'empty_capture_count': 2, 'source_count': 32, 'usable_source_count': 26}"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0135 records 6 source-quality warnings for blocked or empty captures.",
+      "deviation": 0.0,
+      "evidence": [
+        "source_quality_warnings=[{'ref': 'https://developer.osf.io/', 'sha256': 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855', 'title': 'OSF APIv2 Documentation', 'warning': 'empty_capture'}, {'ref': 'https://ui.adsabs.harvard.edu/help/api/', 'sha256': 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855', 'title': 'https://ui.adsabs.harvard.edu/help/api/', 'warning': 'empty_capture'}, {'ref': 'https://www.nature.com/articles/s12276-025-01547-5', 'sha256': '21e4d17ef30b902b10e8bf980b565a7435d1e7936d193098e76b2ec443ce8965', 'title': 'Client Challenge', 'warning': 'client_challenge'}, {'ref': 'https://www.nature.com/articles/s41467-024-48058-x', 'sha256': '21e4d17ef30b902b10e8bf980b565a7435d1e7936d193098e76b2ec443ce8965', 'title': 'Client Challenge', 'warning': 'client_challenge'}, {'ref': 'https://www.nature.com/articles/s41467-026-71188-3', 'sha256': '21e4d17ef30b902b10e8bf980b565a7435d1e7936d193098e76b2ec443ce8965', 'title': 'Client Challenge', 'warning': 'client_challenge'}, {'ref': 'https://www.nature.com/articles/s42003-024-06037-4', 'sha256': '21e4d17ef30b902b10e8bf980b565a7435d1e7936d193098e76b2ec443ce8965', 'title': 'Client Challenge', 'warning': 'client_challenge'}]"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0135 catalogs 12 archive/database substrates for broad research intake.",
+      "deviation": 0.0,
+      "evidence": [
+        "archive_substrate_catalog=[{'coverage': 'works, authors, sources, institutions, topics', 'kind': 'metadata_graph', 'name': 'OpenAlex', 'scope': 'global scholarly graph', 'status': 'SOURCE_SUBSTRATE'}, {'coverage': 'works, funders, licenses, references, ORCID/ROR', 'kind': 'metadata_graph', 'name': 'Crossref', 'scope': 'publisher DOI metadata', 'status': 'SOURCE_SUBSTRATE'}, {'coverage': 'papers, authors, citations, recommendations, datasets', 'kind': 'metadata_graph', 'name': 'Semantic Scholar', 'scope': 'AI-linked scholarly graph', 'status': 'SOURCE_SUBSTRATE'}, {'coverage': 'repository metadata and open full-text access points', 'kind': 'full_text_aggregator', 'name': 'CORE', 'scope': 'open-access aggregation', 'status': 'SOURCE_SUBSTRATE'}, {'coverage': 'math, physics, computer science, quantitative biology, statistics', 'kind': 'preprint_archive', 'name': 'arXiv', 'scope': 'preprint archive', 'status': 'SOURCE_SUBSTRATE'}, {'coverage': 'preprints, publication links, interval feeds', 'kind': 'preprint_archive', 'name': 'bioRxiv/medRxiv', 'scope': 'life-science and medical preprints', 'status': 'SOURCE_SUBSTRATE'}, {'coverage': 'PubMed, PMC, Gene, Nuccore, Protein', 'kind': 'biomedical_archive', 'name': 'NCBI/PubMed/PMC', 'scope': 'biomedical literature and databases', 'status': 'SOURCE_SUBSTRATE'}, {'coverage': 'search, metrics, export functions', 'kind': 'domain_archive', 'name': 'NASA ADS', 'scope': 'astronomy and physics literature', 'status': 'SOURCE_SUBSTRATE'}, {'coverage': 'datasets, files, metadata, permissions', 'kind': 'data_repository', 'name': 'Dataverse', 'scope': 'research data repository network', 'status': 'SOURCE_SUBSTRATE'}, {'coverage': 'records, files, deposits, OAI-PMH', 'kind': 'data_repository', 'name': 'Zenodo', 'scope': 'general research outputs', 'status': 'SOURCE_SUBSTRATE'}, {'coverage': 'projects, study designs, data, manuscripts, materials', 'kind': 'data_repository', 'name': 'OSF', 'scope': 'open science workflow repository', 'status': 'SOURCE_SUBSTRATE'}, {'coverage': 'computed material properties and API client', 'kind': 'domain_database', 'name': 'Materials Project', 'scope': 'materials discovery database', 'status': 'SOURCE_SUBSTRATE'}]"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0135 maps 8 biology/medicine/robotics correlated lanes.",
+      "deviation": 0.0,
+      "evidence": [
+        "domain_lanes=[{'biology_terms': ['bioelectricity', 'morphogenesis', 'collective intelligence'], 'gap_status': 'inferred', 'lane_id': 'morphogenesis_bioelectricity_collective_intelligence', 'medicine_terms': ['regenerative medicine', 'morphoceutics', 'cancer suppression'], 'promotion_gate': 'Requires primary source receipts, task fixture, negative control, and independent verifier before proof or law promotion.', 'robotics_terms': ['swarm intelligence', 'morphogenetic robotics'], 'status': 'HYPOTHESIS_SOURCE_MAP', 'tool_product_hypothesis': 'Morphogenesis claim-to-experiment packet'}, {'biology_terms': ['single-cell foundation model', 'spatial omics', 'virtual cell'], 'gap_status': 'inferred', 'lane_id': 'virtual_cell_single_cell_spatial_omics', 'medicine_terms': ['patient stratification', 'preclinical virtual cell'], 'promotion_gate': 'Requires primary source receipts, task fixture, negative control, and independent verifier before proof or law promotion.', 'robotics_terms': ['world model', 'state representation'], 'status': 'HYPOTHESIS_SOURCE_MAP', 'tool_product_hypothesis': 'Virtual-cell evidence packet'}, {'biology_terms': ['bioelectronic medicine', 'neuromodulation', 'autonomic control'], 'gap_status': 'inferred', 'lane_id': 'bioelectronic_closed_loop_therapy', 'medicine_terms': ['closed-loop therapy', 'adaptive stimulation'], 'promotion_gate': 'Requires primary source receipts, task fixture, negative control, and independent verifier before proof or law promotion.', 'robotics_terms': ['feedback control', 'sensor-actuator loop'], 'status': 'HYPOTHESIS_SOURCE_MAP', 'tool_product_hypothesis': 'Therapy action receipt'}, {'biology_terms': ['microphysiological system', 'organoid', 'organ-on-chip'], 'gap_status': 'inferred', 'lane_id': 'organ_chip_organoid_human_on_chip', 'medicine_terms': ['drug testing', 'toxicity', 'aging model'], 'promotion_gate': 'Requires primary source receipts, task fixture, negative control, and independent verifier before proof or law promotion.', 'robotics_terms': ['sim-to-real testbed', 'embodied benchmark'], 'status': 'HYPOTHESIS_SOURCE_MAP', 'tool_product_hypothesis': 'Experiment reproducibility packet'}, {'biology_terms': ['VLA', 'robot foundation model', 'diffusion policy'], 'gap_status': 'inferred', 'lane_id': 'physical_ai_robot_foundation_models', 'medicine_terms': ['assistive robotics', 'rehabilitation robotics'], 'promotion_gate': 'Requires primary source receipts, task fixture, negative control, and independent verifier before proof or law promotion.', 'robotics_terms': ['generalist policy', 'embodied AI'], 'status': 'HYPOTHESIS_SOURCE_MAP', 'tool_product_hypothesis': 'Robot policy proof packet'}, {'biology_terms': ['continuum robot', 'soft robot', 'endoluminal intervention'], 'gap_status': 'inferred', 'lane_id': 'surgical_ai_medical_robotics_continuum', 'medicine_terms': ['minimally invasive surgery', 'surgical autonomy'], 'promotion_gate': 'Requires primary source receipts, task fixture, negative control, and independent verifier before proof or law promotion.', 'robotics_terms': ['compliant body control', 'teleoperation'], 'status': 'HYPOTHESIS_SOURCE_MAP', 'tool_product_hypothesis': 'Operating-room evidence packet'}, {'biology_terms': ['stochastic dynamics', 'thermodynamic compute'], 'gap_status': 'inferred', 'lane_id': 'thermodynamic_probabilistic_biophysical_compute', 'medicine_terms': ['Bayesian medicine', 'scientific simulation'], 'promotion_gate': 'Requires primary source receipts, task fixture, negative control, and independent verifier before proof or law promotion.', 'robotics_terms': ['probabilistic controller', 'sampling hardware'], 'status': 'HYPOTHESIS_SOURCE_MAP', 'tool_product_hypothesis': 'Stochastic compute receipt'}, {'biology_terms': ['same mechanism, different vocabulary'], 'gap_status': 'inferred', 'lane_id': 'translation_and_nomenclature', 'medicine_terms': ['clinical endpoint', 'regulatory evidence'], 'promotion_gate': 'Requires primary source receipts, task fixture, negative control, and independent verifier before proof or law promotion.', 'robotics_terms': ['task success', 'safety case'], 'status': 'HYPOTHESIS_SOURCE_MAP', 'tool_product_hypothesis': 'Cross-domain nomenclature resolver'}]"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0135 queues 14 broader domains for future source pulls.",
+      "deviation": 0.0,
+      "evidence": [
+        "domain_expansion_queue=[{'domain': 'biology', 'first_tooling_target': 'claim-to-experiment packets', 'search_terms': 'morphogenesis, evolution, omics, synthetic biology', 'status': 'EXPANSION_QUEUE'}, {'domain': 'medicine', 'first_tooling_target': 'safety and endpoint receipts', 'search_terms': 'clinical evidence, devices, drug discovery, trials', 'status': 'EXPANSION_QUEUE'}, {'domain': 'robotics', 'first_tooling_target': 'embodied action replay', 'search_terms': 'physical AI, surgical robotics, soft robotics', 'status': 'EXPANSION_QUEUE'}, {'domain': 'mathematics', 'first_tooling_target': 'prover-verifier packets', 'search_terms': 'open problems, proof assistants, theorem graphs', 'status': 'EXPANSION_QUEUE'}, {'domain': 'physics', 'first_tooling_target': 'law-boundary and simulator receipts', 'search_terms': 'foundations, quantum, statistical mechanics, cosmology', 'status': 'EXPANSION_QUEUE'}, {'domain': 'materials', 'first_tooling_target': 'materials property proof packets', 'search_terms': 'crystals, molecules, batteries, catalysts', 'status': 'EXPANSION_QUEUE'}, {'domain': 'chemistry', 'first_tooling_target': 'stoichiometry and synthesis receipts', 'search_terms': 'reaction networks, synthesis, molecular design', 'status': 'EXPANSION_QUEUE'}, {'domain': 'climate_energy', 'first_tooling_target': 'simulation provenance packets', 'search_terms': 'earth systems, grid, fusion, storage', 'status': 'EXPANSION_QUEUE'}, {'domain': 'security', 'first_tooling_target': 'exploit/fix proof packets', 'search_terms': 'formal methods, systems, cryptography', 'status': 'EXPANSION_QUEUE'}, {'domain': 'finance', 'first_tooling_target': 'model-risk and optimization receipts', 'search_terms': 'risk, markets, optimization, fraud', 'status': 'EXPANSION_QUEUE'}, {'domain': 'education', 'first_tooling_target': 'source-backed lesson receipts', 'search_terms': 'learning science, tutoring, curriculum graphs', 'status': 'EXPANSION_QUEUE'}, {'domain': 'governance_law', 'first_tooling_target': 'claim provenance and decision receipts', 'search_terms': 'policy, regulation, institutional design', 'status': 'EXPANSION_QUEUE'}, {'domain': 'neuroscience', 'first_tooling_target': 'closed-loop experiment receipts', 'search_terms': 'BCI, cognition, neural dynamics', 'status': 'EXPANSION_QUEUE'}, {'domain': 'economics', 'first_tooling_target': 'causal evidence packets', 'search_terms': 'mechanism design, labor, macro systems', 'status': 'EXPANSION_QUEUE'}]"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0135 records 8 nomenclature bridges.",
+      "deviation": 0.0,
+      "evidence": [
+        "terminology_bridges=[{'biology_name': 'homeostasis / bioelectric control', 'concept': 'feedback_control', 'medicine_name': 'closed-loop therapy', 'robotics_name': 'policy feedback / controller', 'status': 'NOMENCLATURE_BRIDGE'}, {'biology_name': 'virtual cell / tissue state model', 'concept': 'world_model', 'medicine_name': 'digital twin / patient model', 'robotics_name': 'robot scene or dynamics model', 'status': 'NOMENCLATURE_BRIDGE'}, {'biology_name': 'perturbation / morphogenetic signal', 'concept': 'intervention', 'medicine_name': 'therapy / stimulation / drug', 'robotics_name': 'action / motor command', 'status': 'NOMENCLATURE_BRIDGE'}, {'biology_name': 'fitness landscape / viability', 'concept': 'fitness_or_loss', 'medicine_name': 'clinical endpoint / safety outcome', 'robotics_name': 'reward / cost function', 'status': 'NOMENCLATURE_BRIDGE'}, {'biology_name': 'cell collective / body plan', 'concept': 'embodiment', 'medicine_name': 'anatomy / implant interface', 'robotics_name': 'morphology / robot body', 'status': 'NOMENCLATURE_BRIDGE'}, {'biology_name': 'atlas / organoid / perturb-seq', 'concept': 'benchmark', 'medicine_name': 'trial endpoint / assay', 'robotics_name': 'task suite / sim-to-real evaluation', 'status': 'NOMENCLATURE_BRIDGE'}, {'biology_name': 'heterogeneity / stochastic cell state', 'concept': 'uncertainty', 'medicine_name': 'risk / confidence interval', 'robotics_name': 'domain randomization / policy entropy', 'status': 'NOMENCLATURE_BRIDGE'}, {'biology_name': 'source plus experiment plus assay', 'concept': 'proof_packet', 'medicine_name': 'source plus protocol plus safety gate', 'robotics_name': 'source plus run plus replay verifier', 'status': 'NOMENCLATURE_BRIDGE'}]"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0135 defines 5 product hypotheses and rejects 7 negative fixtures.",
+      "deviation": 0.0,
+      "evidence": [
+        "market_hypotheses=[{'buyer': 'research labs and venture studios', 'product': 'Cross-Domain Nomenclature Resolver', 'status': 'HYPOTHESIS', 'wedge': 'map equivalent concepts across biology, medicine, robotics, AI, and controls with source receipts'}, {'buyer': 'AI4Science and translational medicine teams', 'product': 'Bio-Med-Robotics Claim Packet', 'status': 'HYPOTHESIS', 'wedge': 'bind paper, assay, model, intervention, negative control, and verifier before promotion'}, {'buyer': 'bioelectronic medicine and medical device teams', 'product': 'Closed-Loop Therapy Action Receipt', 'status': 'HYPOTHESIS', 'wedge': 'separate sensor evidence, controller policy, stimulation action, safety gate, and clinical endpoint'}, {'buyer': 'robotics and organ-chip platform teams', 'product': 'Embodied Experiment Replay Kit', 'status': 'HYPOTHESIS', 'wedge': 'treat organ chips, robot testbeds, and surgical data factories as replayable embodied evidence surfaces'}, {'buyer': 'scientific compute groups', 'product': 'BuildLang Multiscale Dynamics Kernel', 'status': 'HYPOTHESIS', 'wedge': 'compile and receipt bounded dynamical systems shared by morphogenesis, therapy control, robotics, and stochastic compute'}]",
+        "negative_fixtures=[{'failures': ['nomenclature_overlap_only', 'requires_mechanistic_bridge'], 'fixture_id': 'same_word_same_mechanism_rejected', 'status': 'REJECTED'}, {'failures': ['review_article', 'no_protocol_replay'], 'fixture_id': 'review_as_validated_intervention_rejected', 'status': 'REJECTED'}, {'failures': ['benchmark_only', 'requires_clinical_endpoint'], 'fixture_id': 'foundation_model_as_clinical_validity_rejected', 'status': 'REJECTED'}, {'failures': ['blocked_capture', 'not_article_body'], 'fixture_id': 'nature_client_challenge_as_article_rejected', 'status': 'REJECTED'}, {'failures': ['demo_signal_only', 'requires_hazard_analysis'], 'fixture_id': 'robot_demo_as_safety_case_rejected', 'status': 'REJECTED'}, {'failures': ['industry_claim', 'requires_independent_measurement'], 'fixture_id': 'market_signal_as_efficacy_rejected', 'status': 'REJECTED'}, {'failures': ['taxonomy_only', 'requires_proof_and_reproduction'], 'fixture_id': 'nomenclature_map_as_natural_law_rejected', 'status': 'REJECTED'}]"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0135 does not promote shared terminology, market signals, reviews, demos, or archive coverage into natural laws.",
+      "deviation": 0.0,
+      "evidence": [
+        "boundary=Pass 0135 maps current source terminology across biology, medicine, robotics, AI, controls, and scientific compute. It does not claim that shared vocabulary proves shared mechanism, clinical efficacy, robot safety, or natural law.",
+        "current_promoted_natural_laws=[]"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0135 validator status is MATCH and test status is MATCH.",
+      "deviation": 0.0,
+      "evidence": [
+        "validator={'command': 'C:\\\\Users\\\\Zain\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python312\\\\python.exe C:\\\\dev\\\\public\\\\telos\\\\docs\\\\research\\\\dogfood\\\\tools\\\\validate_pass_0135_bio_med_robotics_nomenclature_map.py', 'exit_code': 0, 'stdout_sha256': '5042dd1c100fac596e07fb8c2fcff32d4b18005dbb6188313521ce4534bba96c', 'stderr_sha256': 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855', 'status': 'MATCH'}",
+        "test={'command': 'C:\\\\Users\\\\Zain\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python312\\\\python.exe C:\\\\dev\\\\public\\\\telos\\\\docs\\\\research\\\\dogfood\\\\tools\\\\test_bio_med_robotics_nomenclature_map.py', 'exit_code': 0, 'stdout_sha256': 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855', 'stderr_sha256': 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855', 'status': 'MATCH'}"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0135 file hashes are {'artifact': '3da47a2b085f9958308cd17609d9c51ddd35e8927a8822ad3311f9681528604b', 'composer': '0104593e3739f9edb01016d73e5180296ba487ec6e170b0f57a29bbad458c018', 'packet': 'cb75018df9b77e70f407ea3f3eaa0102a60521144c94fa3f9e570d06ea4b1e7b', 'brief': 'd37cae24191546863ea9d83151dd43f7be683f42c2f40f2ad1702bb37e5533c2', 'steelman': '572b9126bb389cd3414955adca42aeb4b9e02486083edb5a154ff2a29367498a', 'test': '6c9e816aac5fb0a01ea35b53f4bb11f6d207718c28bfa51a0ff0fa8a9fd6f419', 'validator': 'bbe35d824962b91e0042b9e5a9b14abdf1e05bf8ca0d92bae21c0c500d47a849', 'validator_result': 'b715085e0eb87e4e458b8967e0ce3edbdd7f7fe4427307f181171f9c45715174', 'tool_receipts': '8cc4fc4f4c56fecce2dba7f6d3e83993d77f1a31b607d58e977b1b6f2b572700'}.",
+      "deviation": 0.0,
+      "evidence": [
+        "file_hashes={'artifact': '3da47a2b085f9958308cd17609d9c51ddd35e8927a8822ad3311f9681528604b', 'composer': '0104593e3739f9edb01016d73e5180296ba487ec6e170b0f57a29bbad458c018', 'packet': 'cb75018df9b77e70f407ea3f3eaa0102a60521144c94fa3f9e570d06ea4b1e7b', 'brief': 'd37cae24191546863ea9d83151dd43f7be683f42c2f40f2ad1702bb37e5533c2', 'steelman': '572b9126bb389cd3414955adca42aeb4b9e02486083edb5a154ff2a29367498a', 'test': '6c9e816aac5fb0a01ea35b53f4bb11f6d207718c28bfa51a0ff0fa8a9fd6f419', 'validator': 'bbe35d824962b91e0042b9e5a9b14abdf1e05bf8ca0d92bae21c0c500d47a849', 'validator_result': 'b715085e0eb87e4e458b8967e0ce3edbdd7f7fe4427307f181171f9c45715174', 'tool_receipts': '8cc4fc4f4c56fecce2dba7f6d3e83993d77f1a31b607d58e977b1b6f2b572700'}"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    }
+  ]
+}

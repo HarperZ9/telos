@@ -1,0 +1,98 @@
+{
+  "schema": "DogfoodToolReceipts/v1",
+  "pass": "0074",
+  "generated_on": "2026-07-01",
+  "status": "MATCH_BUILDLANG_SOURCE_REF_RECEIPT",
+  "buildlang": {
+    "root": "C:/dev/public/pubscan/quantalang",
+    "source_ref_count": 13,
+    "corpus_verify_command": "cargo run --quiet --bin buildc -- corpus verify",
+    "corpus_verify_status": "MATCH",
+    "corpus_verify_expected_lines": 10,
+    "corpus_verify_drift": 0,
+    "program_count": 8,
+    "production_backend_claim": "C backend only",
+    "receipt_surfaces": [
+      "c execution",
+      "rust execution",
+      "substrate",
+      "mir representation",
+      "memory layout",
+      "module graph",
+      "symbol graph",
+      "lsp dispatch"
+    ]
+  },
+  "gather": {
+    "status": "MATCH",
+    "docs_packet": {
+      "path": "docs/research/dogfood/packets/084-buildlang-source-ref-receipt.md",
+      "sha256": "ae02477ce37cb9d01b27a3ca3eca9bb57a4bb25dff32f4eabbe8292e3a7a8b0c",
+      "seal": "4b9de4c923e322d292788e2f03e1c6bf153cb4886a154482a42468e04bcd004f",
+      "verified": true,
+      "dropped": 0
+    }
+  },
+  "crucible": {
+    "run_status": "MATCH",
+    "thesis_id": "4ba9bb823fa2a749",
+    "thesis_seal": "4ba9bb823fa2a7495529ac2260add2bfad4a671e19b384636d579ebf49476b2d",
+    "assessment_seal": "6698934b24693c6962f01c7f352ca315d9afd4140fee84ebf18bdf68039c46ee",
+    "claims": 8,
+    "match": 8,
+    "drift": 0,
+    "unverifiable": 0,
+    "registry_stats": {
+      "theses": 62,
+      "claims": 513,
+      "unique_claims": 506,
+      "assessments": 63,
+      "latest_assessments": 62,
+      "invalid_latest_assessments": 0,
+      "match": 513,
+      "drift": 0,
+      "unverifiable": 0
+    }
+  },
+  "telos": {
+    "domain_envelope_next": "Replace BuildLang root-fallback domain envelope source layer with this source-ref receipt.",
+    "non_promotion_boundary": "Does not prove all backends production-ready, self-hosting, Julia replacement, market adoption, scientific discovery, or a natural law."
+  },
+  "shell": {
+    "commands": [
+      {
+        "command": "python docs\\research\\dogfood\\tools\\test_buildlang_source_ref_receipt.py",
+        "status": "MATCH"
+      },
+      {
+        "command": "python docs\\research\\dogfood\\tools\\probe_buildlang_source_ref_receipt.py",
+        "status": "MATCH"
+      },
+      {
+        "command": "python docs\\research\\dogfood\\tools\\validate_pass_0074_buildlang_source_ref_receipt.py",
+        "status": "MATCH"
+      },
+      {
+        "command": "crucible run docs\\research\\dogfood\\crucible\\pass-0074-thesis.json --measurements docs\\research\\dogfood\\crucible\\pass-0074-measurements.json --registry docs\\research\\dogfood\\crucible\\registry --report docs\\research\\dogfood\\crucible\\pass-0074-report.md --out docs\\research\\dogfood\\crucible\\pass-0074-run.json --json",
+        "status": "MATCH"
+      }
+    ],
+    "line_counts": {
+      "compose_buildlang_source_ref_receipt.py": 160,
+      "probe_buildlang_source_ref_receipt.py": 105,
+      "test_buildlang_source_ref_receipt.py": 29,
+      "validate_pass_0074_buildlang_source_ref_receipt.py": 62
+    },
+    "sha256": {
+      "compose_buildlang_source_ref_receipt.py": "787d27f706791c87a1390d2ad7bb81993529187f7aac24b9e6ce37440e4a9d6b",
+      "probe_buildlang_source_ref_receipt.py": "5b718c98e27803200e21158abf9fa529b88f1209cda6341561085f6b289f1f38",
+      "test_buildlang_source_ref_receipt.py": "d2f73e4255f675b5a04d87a83900e0cb693824fdb6fbea4f2c3c85779a421f15",
+      "validate_pass_0074_buildlang_source_ref_receipt.py": "0cc83bd18c9373e5dfbb8ee626d3aed6316ff91ec98de12ca5d87e473a223dc0",
+      "buildlang-source-ref-receipt-pass-0074.json": "9cf8b30babce31ef6e4c0c556712e447dd80a3ee66382e8a02b3db3bde09f014",
+      "pass-0074-buildlang-source-ref-receipt-validator-result.json": "722e84e220d24fade32b571b3f31b1544f092722b7f6e84e2aabebec15dbf42f",
+      "084-buildlang-source-ref-receipt.md": "ae02477ce37cb9d01b27a3ca3eca9bb57a4bb25dff32f4eabbe8292e3a7a8b0c",
+      "pass-0074-buildlang-source-ref-receipt-steelman.md": "44c684ec615a1e5c5b9f59081f8ec426a68edb82d866635adbe1816eb38aedc1",
+      "pass-0074-run.json": "c389bba77e4a7ac690023384da45b01ea27cbd7714ae5b26589fb7c389700e72"
+    }
+  }
+}

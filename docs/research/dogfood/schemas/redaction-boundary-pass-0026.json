@@ -1,0 +1,126 @@
+{
+  "action_receipt_redaction": {
+    "action_id": "act_dogfood_0024_001",
+    "event_id": "evt_dogfood_0026_redaction_boundary",
+    "raw_payload_digest": "sha256:8c53911bf4e3763486de4c3dd43a0e1a8a587f3b172e08c322202d1b3fd66ca4",
+    "raw_payload_required_for_model": false,
+    "redacted_after_ref": "artifact:fixtures/redacted-after-pass-0026.json",
+    "redacted_before_ref": "artifact:fixtures/redacted-before-pass-0026.json",
+    "schema": "ActionReceiptRedactionRef/v1",
+    "verification": {
+      "ref": "validator:pass-0026-redaction-boundary",
+      "verdict": "MATCH"
+    }
+  },
+  "generated_on": "2026-07-01",
+  "leak_scan": {
+    "raw_payload_absent_required": true,
+    "scan_target_count": 8,
+    "scan_targets": [
+      "schemas/redaction-boundary-pass-0026.json",
+      "fixtures/redacted-before-pass-0026.json",
+      "fixtures/redacted-after-pass-0026.json",
+      "packets/036-redaction-boundary.md",
+      "adversarial/pass-0026-redaction-boundary-steelman.md",
+      "schemas/tool-receipts-pass-0026.json",
+      "crucible/pass-0026-thesis.json",
+      "crucible/pass-0026-measurements.json"
+    ],
+    "schema": "RedactionLeakScanPlan/v1"
+  },
+  "negative_fixture_count": 8,
+  "negative_fixtures": [
+    {
+      "expected_validator_status": "REJECT",
+      "failure_mode": "The raw payload appears in a packet or measurement artifact.",
+      "fixture_id": "negative-raw-payload-in-packet"
+    },
+    {
+      "expected_validator_status": "REJECT",
+      "failure_mode": "The receipt stores the raw payload value instead of a digest ref.",
+      "fixture_id": "negative-raw-payload-in-receipt"
+    },
+    {
+      "expected_validator_status": "REJECT",
+      "failure_mode": "A redacted before or after ref omits the raw payload digest.",
+      "fixture_id": "negative-redacted-ref-missing-digest"
+    },
+    {
+      "expected_validator_status": "REJECT",
+      "failure_mode": "The digest in the redacted ref does not match the temp-private raw payload.",
+      "fixture_id": "negative-digest-mismatch"
+    },
+    {
+      "expected_validator_status": "REJECT",
+      "failure_mode": "The action receipt has no redacted_before_ref.",
+      "fixture_id": "negative-before-ref-missing"
+    },
+    {
+      "expected_validator_status": "REJECT",
+      "failure_mode": "The action receipt has no redacted_after_ref.",
+      "fixture_id": "negative-after-ref-missing"
+    },
+    {
+      "expected_validator_status": "REJECT",
+      "failure_mode": "The raw payload is stored under the repo instead of a temp-private boundary.",
+      "fixture_id": "negative-raw-path-committed"
+    },
+    {
+      "expected_validator_status": "REJECT",
+      "failure_mode": "A model-facing artifact is omitted from the leak scan target list.",
+      "fixture_id": "negative-leak-scan-target-missing"
+    }
+  ],
+  "non_promotion_statement": "Pass 0026 proves only a local redaction-boundary fixture: a temp-private raw payload, digest-bound redacted refs, and leak scans over model-facing artifacts. It does not prove production DLP, cryptographic secrecy, external vault integration, live Telos runtime integration, scientific discovery, theorem proof, or any natural law.",
+  "pass": "0026",
+  "raw_payload": {
+    "length": 85,
+    "path_sha256": "3aa2a4ba0eaf82f4e807fb6681bd1682798f38f3aeac53f88aa8d31ac7390fb0",
+    "schema": "TempPrivateRawPayloadRef/v1",
+    "sha256": "8c53911bf4e3763486de4c3dd43a0e1a8a587f3b172e08c322202d1b3fd66ca4",
+    "storage_boundary": "TEMP_PRIVATE_NOT_COMMITTED",
+    "value_in_model_facing_artifacts": false,
+    "value_in_receipts": false
+  },
+  "redacted_ref_count": 2,
+  "redacted_refs": [
+    {
+      "contains_digest_ref": true,
+      "contains_raw_payload": false,
+      "kind": "before",
+      "path": "fixtures/redacted-before-pass-0026.json",
+      "sha256": "32ba5ef8fcc63fb0e7bb2f3d9a84d272693971dcc524f27021fe4ad29d6dc231"
+    },
+    {
+      "contains_digest_ref": true,
+      "contains_raw_payload": false,
+      "kind": "after",
+      "path": "fixtures/redacted-after-pass-0026.json",
+      "sha256": "e697e1ecd32c15eec3032b001596cae71021b08808db9d597bbb4a08c6bf8c9f"
+    }
+  ],
+  "schema": "RedactionBoundaryFixtureSet/v1",
+  "seal": "adcdfc1abcdb59427573760f4779182da9f9fde18553c633af5b08fc57f1816c",
+  "source_anchors": [
+    {
+      "source": "Telos action receipt interface",
+      "url": "mcp:telos.action.receipt"
+    },
+    {
+      "source": "Telos browser evidence privacy boundary",
+      "url": "mcp:telos.browser.evidence"
+    },
+    {
+      "source": "Python tempfile module",
+      "url": "https://docs.python.org/3/library/tempfile.html"
+    }
+  ],
+  "source_receipt": {
+    "ledger_head_hash": "6d194872068da0e9c74d95478cca7e4f2c5a447da9a82a73be3ce9b5aa44f371",
+    "path": "schemas/action-receipt-persistence-replay-pass-0025.json",
+    "schema": "ActionReceiptPersistenceReplaySet/v1",
+    "seal": "7203957ec04350756af9cdb2d244760ebbc2c00bbc3fcc048acd7c9ff2a1a177",
+    "sha256": "03832d00e62c33828cbb5c6d351a10e47e5f61ac185f318044829910bdd0f293"
+  },
+  "status": "REDACTION_BOUNDARY_MATCH"
+}

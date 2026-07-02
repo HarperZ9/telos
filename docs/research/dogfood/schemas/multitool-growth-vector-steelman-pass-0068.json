@@ -1,0 +1,744 @@
+{
+  "experiment_queue": [
+    {
+      "id": "p0068-telos-upgrade-ablation",
+      "kind": "tool_upgrade",
+      "priority": 4.2,
+      "tool": "Telos"
+    },
+    {
+      "id": "p0068-action-receipts-telos-join",
+      "kind": "tool_join",
+      "priority": 4.1,
+      "tool": "action receipts->Telos"
+    },
+    {
+      "id": "p0068-crucible-telos-join",
+      "kind": "tool_join",
+      "priority": 4.1,
+      "tool": "Crucible->Telos"
+    },
+    {
+      "id": "p0068-action-receipts-upgrade-ablation",
+      "kind": "tool_upgrade",
+      "priority": 4.0,
+      "tool": "action receipts"
+    },
+    {
+      "id": "p0068-crucible-upgrade-ablation",
+      "kind": "tool_upgrade",
+      "priority": 4.0,
+      "tool": "Crucible"
+    },
+    {
+      "id": "p0068-gather-upgrade-ablation",
+      "kind": "tool_upgrade",
+      "priority": 4.0,
+      "tool": "Gather"
+    },
+    {
+      "id": "p0068-telos-loop-ledger-join",
+      "kind": "tool_join",
+      "priority": 4.0,
+      "tool": "Telos->loop ledger"
+    },
+    {
+      "id": "p0068-forum-crucible-join",
+      "kind": "tool_join",
+      "priority": 3.9,
+      "tool": "Forum->Crucible"
+    },
+    {
+      "id": "p0068-gather-index-join",
+      "kind": "tool_join",
+      "priority": 3.9,
+      "tool": "Gather->Index"
+    },
+    {
+      "id": "p0068-loop-ledger-action-receipts-join",
+      "kind": "tool_join",
+      "priority": 3.9,
+      "tool": "loop ledger->action receipts"
+    },
+    {
+      "id": "p0068-forum-upgrade-ablation",
+      "kind": "tool_upgrade",
+      "priority": 3.8,
+      "tool": "Forum"
+    },
+    {
+      "id": "p0068-index-upgrade-ablation",
+      "kind": "tool_upgrade",
+      "priority": 3.8,
+      "tool": "Index"
+    },
+    {
+      "id": "p0068-loop-ledger-upgrade-ablation",
+      "kind": "tool_upgrade",
+      "priority": 3.8,
+      "tool": "loop ledger"
+    },
+    {
+      "id": "p0068-buildlang-buildc-upgrade-ablation",
+      "kind": "tool_upgrade",
+      "priority": 3.6,
+      "tool": "BuildLang/buildc"
+    }
+  ],
+  "generated_on": "2026-07-01",
+  "non_promotion_statement": "Pass 0068 ranks hypotheses and executable experiment designs. It does not prove market adoption, product completion, unique competitor absence, scientific discovery, or new natural laws.",
+  "pass": "0068",
+  "previous_pass_bindings": [
+    {
+      "pass": "0066",
+      "path": "schemas/tool-growth-vector-experiment-matrix-pass-0066.json",
+      "schema": "ToolGrowthVectorExperimentMatrix/v1",
+      "seal": "12a30f44b3b7ba75608c5a2283a82eb6999014515d7e3ad39e4010cca7131531",
+      "sha256": "7337d9d350ee174baa94137f0d3404efb0b6fa2ae40b9bff7737a263881fa32e",
+      "status": "TOOL_GROWTH_VECTOR_EXPERIMENT_MATRIX_MATCH"
+    },
+    {
+      "pass": "0067",
+      "path": "schemas/forum-routing-repair-experiment-pass-0067.json",
+      "schema": "ForumRoutingRepairExperiment/v1",
+      "seal": "786203893e6a0e43fc5f0a2d48a483d532bb23d1d1d8902f683bb42f22938f39",
+      "sha256": "dd2c1ed7bf2ea600612e64b0d256e589f2e6a78228a9f53cae2e837fbe9b67a0",
+      "status": "FORUM_ROUTING_REPAIR_EXPERIMENT_MATCH"
+    }
+  ],
+  "schema": "MultiToolGrowthVectorSteelman/v1",
+  "seal": "10e642fab785fa49d42fc6c1acc2ecca3d9bc3dad78a9b61abdf81e6678a2bf6",
+  "source_anchors": [
+    {
+      "confidence": "high",
+      "label": "OpenTelemetry",
+      "retrieved_on": "2026-07-01",
+      "source_id": "opentelemetry",
+      "summary": "Vendor-neutral telemetry standard with traces, metrics, logs, and baggage.",
+      "url": "https://opentelemetry.io/docs/what-is-opentelemetry/"
+    },
+    {
+      "confidence": "high",
+      "label": "OpenLineage",
+      "retrieved_on": "2026-07-01",
+      "source_id": "openlineage",
+      "summary": "Open standard for data lineage collection and analysis.",
+      "url": "https://openlineage.io/"
+    },
+    {
+      "confidence": "high",
+      "label": "RO-Crate",
+      "retrieved_on": "2026-07-01",
+      "source_id": "ro_crate",
+      "summary": "Research object packaging model for data, software, workflows, and provenance.",
+      "url": "https://www.researchobject.org/ro-crate/"
+    },
+    {
+      "confidence": "high",
+      "label": "Software Heritage",
+      "retrieved_on": "2026-07-01",
+      "source_id": "software_heritage",
+      "summary": "Archive and reference infrastructure for source code.",
+      "url": "https://www.softwareheritage.org/"
+    },
+    {
+      "confidence": "high",
+      "label": "MLflow",
+      "retrieved_on": "2026-07-01",
+      "source_id": "mlflow",
+      "summary": "ML lifecycle platform for experiment tracking and model management.",
+      "url": "https://mlflow.org/docs/latest/index.html"
+    },
+    {
+      "confidence": "high",
+      "label": "Weights & Biases",
+      "retrieved_on": "2026-07-01",
+      "source_id": "wandb",
+      "summary": "AI developer platform with experiments, models, and agent/application tooling.",
+      "url": "https://docs.wandb.ai/"
+    },
+    {
+      "confidence": "high",
+      "label": "Langfuse",
+      "retrieved_on": "2026-07-01",
+      "source_id": "langfuse",
+      "summary": "LLM engineering platform for tracing, evals, prompt management, and metrics.",
+      "url": "https://langfuse.com/docs"
+    },
+    {
+      "confidence": "high",
+      "label": "LangSmith",
+      "retrieved_on": "2026-07-01",
+      "source_id": "langsmith",
+      "summary": "LLM application observability and evaluation tooling.",
+      "url": "https://docs.langchain.com/langsmith/observability"
+    },
+    {
+      "confidence": "high",
+      "label": "Nextflow",
+      "retrieved_on": "2026-07-01",
+      "source_id": "nextflow",
+      "summary": "Scalable and reproducible scientific workflow engine.",
+      "url": "https://www.nextflow.io/"
+    },
+    {
+      "confidence": "high",
+      "label": "Snakemake",
+      "retrieved_on": "2026-07-01",
+      "source_id": "snakemake",
+      "summary": "Reproducible and scalable workflow management system.",
+      "url": "https://snakemake.readthedocs.io/"
+    },
+    {
+      "confidence": "high",
+      "label": "MLIR",
+      "retrieved_on": "2026-07-01",
+      "source_id": "mlir",
+      "summary": "Compiler infrastructure for reusable and extensible compiler construction.",
+      "url": "https://mlir.llvm.org/"
+    },
+    {
+      "confidence": "high",
+      "label": "Triton",
+      "retrieved_on": "2026-07-01",
+      "source_id": "triton",
+      "summary": "GPU programming and compiler stack for custom kernels.",
+      "url": "https://triton-lang.org/main/index.html"
+    },
+    {
+      "confidence": "high",
+      "label": "OpenColorIO",
+      "retrieved_on": "2026-07-01",
+      "source_id": "opencolorio",
+      "summary": "Color management solution for motion picture production.",
+      "url": "https://opencolorio.org/"
+    },
+    {
+      "confidence": "high",
+      "label": "ACES",
+      "retrieved_on": "2026-07-01",
+      "source_id": "aces",
+      "summary": "Industry color-management knowledge base and ecosystem.",
+      "url": "https://acescentral.com/knowledge-base-2/"
+    },
+    {
+      "confidence": "high",
+      "label": "Spack",
+      "retrieved_on": "2026-07-01",
+      "source_id": "spack",
+      "summary": "Package manager for reproducible HPC software stacks.",
+      "url": "https://spack.readthedocs.io/en/latest/"
+    },
+    {
+      "confidence": "high",
+      "label": "NIST AI RMF",
+      "retrieved_on": "2026-07-01",
+      "source_id": "nist_ai_rmf",
+      "summary": "AI risk-management framework anchor for governance-facing receipts.",
+      "url": "https://www.nist.gov/itl/ai-risk-management-framework"
+    }
+  ],
+  "status": "MULTITOOL_GROWTH_VECTOR_STEELMAN_MATCH",
+  "steelman_objections": [
+    {
+      "counter_experiment": "Run buyer-review demos with incumbent export adapters.",
+      "kill_criterion": "No buyer can name a must-have audit gap.",
+      "objection": "Buyers may prefer incumbent dashboards over proof packets.",
+      "risk_id": "market_pull"
+    },
+    {
+      "counter_experiment": "Limit each pass to one replayable adapter and one negative fixture.",
+      "kill_criterion": "Adapters require raw private payloads to replay.",
+      "objection": "A megatool can become integration debt.",
+      "risk_id": "integration_cost"
+    },
+    {
+      "counter_experiment": "Tie compiler work to measured physics/color/finance receipts.",
+      "kill_criterion": "No runtime receipt beats incumbent reproducibility workflows.",
+      "objection": "BuildLang/buildc could overfit to language ambition before proof demand is validated.",
+      "risk_id": "compiler_scope"
+    },
+    {
+      "counter_experiment": "Require source, proof, experiment, and verifier layers.",
+      "kill_criterion": "A packet cannot reject false or overstated claims.",
+      "objection": "Research proof packets can become polished summaries, not discovery tools.",
+      "risk_id": "research_claim_quality"
+    },
+    {
+      "counter_experiment": "Promote pass 0067 repair into roster/scoring tests.",
+      "kill_criterion": "Broad Telos prompts still escalate after route fixtures are added.",
+      "objection": "Forum routing may depend on prompt phrasing.",
+      "risk_id": "routing_fragility"
+    },
+    {
+      "counter_experiment": "Measure minimal sufficient receipt sets per buyer.",
+      "kill_criterion": "Replay confidence does not increase after adding receipts.",
+      "objection": "Too many receipts can slow operators.",
+      "risk_id": "receipt_fatigue"
+    },
+    {
+      "counter_experiment": "Treat them as ingestion surfaces, not enemies.",
+      "kill_criterion": "A Telos packet cannot add claim verification or action authority beyond imports.",
+      "objection": "OpenTelemetry, RO-Crate, OpenLineage, MLflow, and W&B already cover pieces.",
+      "risk_id": "standards_overlap"
+    },
+    {
+      "counter_experiment": "Keep unsupported_claim_count at zero and publish falsifiers first.",
+      "kill_criterion": "Any artifact promotes market uniqueness or scientific discovery without evidence.",
+      "objection": "World-scale claims can outrun evidence.",
+      "risk_id": "proof_overclaim"
+    }
+  ],
+  "synergy_edges": [
+    {
+      "experiment_id": "p0068-gather-index-join",
+      "falsifier": "Join fails if either side cannot emit a hashable receipt with a negative fixture.",
+      "from": "Gather",
+      "receipt_target": "source receipt to ResearchClaim adapter joins workspace context envelope to proof packet adapter",
+      "synergy_score": 3.9,
+      "to": "Index"
+    },
+    {
+      "experiment_id": "p0068-index-forum-join",
+      "falsifier": "Join fails if either side cannot emit a hashable receipt with a negative fixture.",
+      "from": "Index",
+      "receipt_target": "workspace context envelope to proof packet adapter joins route decision receipt to action ledger adapter",
+      "synergy_score": 3.8,
+      "to": "Forum"
+    },
+    {
+      "experiment_id": "p0068-forum-crucible-join",
+      "falsifier": "Join fails if either side cannot emit a hashable receipt with a negative fixture.",
+      "from": "Forum",
+      "receipt_target": "route decision receipt to action ledger adapter joins negative fixture verdict registry",
+      "synergy_score": 3.9,
+      "to": "Crucible"
+    },
+    {
+      "experiment_id": "p0068-crucible-telos-join",
+      "falsifier": "Join fails if either side cannot emit a hashable receipt with a negative fixture.",
+      "from": "Crucible",
+      "receipt_target": "negative fixture verdict registry joins multi-receipt join and product packet exporter",
+      "synergy_score": 4.1,
+      "to": "Telos"
+    },
+    {
+      "experiment_id": "p0068-telos-loop-ledger-join",
+      "falsifier": "Join fails if either side cannot emit a hashable receipt with a negative fixture.",
+      "from": "Telos",
+      "receipt_target": "multi-receipt join and product packet exporter joins cross-pass replay ledger with hash checkpoints",
+      "synergy_score": 4.0,
+      "to": "loop ledger"
+    },
+    {
+      "experiment_id": "p0068-loop-ledger-action-receipts-join",
+      "falsifier": "Join fails if either side cannot emit a hashable receipt with a negative fixture.",
+      "from": "loop ledger",
+      "receipt_target": "cross-pass replay ledger with hash checkpoints joins tool authority/action/result receipt envelope",
+      "synergy_score": 3.9,
+      "to": "action receipts"
+    },
+    {
+      "experiment_id": "p0068-action-receipts-browser-evidence-join",
+      "falsifier": "Join fails if either side cannot emit a hashable receipt with a negative fixture.",
+      "from": "action receipts",
+      "receipt_target": "tool authority/action/result receipt envelope joins redacted browser state to claim evidence packet",
+      "synergy_score": 3.7,
+      "to": "browser evidence"
+    },
+    {
+      "experiment_id": "p0068-buildlang-buildc-build-universe-join",
+      "falsifier": "Join fails if either side cannot emit a hashable receipt with a negative fixture.",
+      "from": "BuildLang/buildc",
+      "receipt_target": "equation-to-kernel runtime receipt joins adapter package manifest and reproducible environment lock",
+      "synergy_score": 3.4,
+      "to": "build-universe"
+    },
+    {
+      "experiment_id": "p0068-build-universe-telos-join",
+      "falsifier": "Join fails if either side cannot emit a hashable receipt with a negative fixture.",
+      "from": "build-universe",
+      "receipt_target": "adapter package manifest and reproducible environment lock joins multi-receipt join and product packet exporter",
+      "synergy_score": 3.7,
+      "to": "Telos"
+    },
+    {
+      "experiment_id": "p0068-color-calibration-browser-evidence-join",
+      "falsifier": "Join fails if either side cannot emit a hashable receipt with a negative fixture.",
+      "from": "color calibration",
+      "receipt_target": "display/render measurement receipt joins redacted browser state to claim evidence packet",
+      "synergy_score": 3.1,
+      "to": "browser evidence"
+    },
+    {
+      "experiment_id": "p0068-model-foundry-crucible-join",
+      "falsifier": "Join fails if either side cannot emit a hashable receipt with a negative fixture.",
+      "from": "model foundry",
+      "receipt_target": "model loop run card to Crucible verdict joins negative fixture verdict registry",
+      "synergy_score": 3.7,
+      "to": "Crucible"
+    },
+    {
+      "experiment_id": "p0068-gather-model-foundry-join",
+      "falsifier": "Join fails if either side cannot emit a hashable receipt with a negative fixture.",
+      "from": "Gather",
+      "receipt_target": "source receipt to ResearchClaim adapter joins model loop run card to Crucible verdict",
+      "synergy_score": 3.7,
+      "to": "model foundry"
+    },
+    {
+      "experiment_id": "p0068-buildlang-buildc-color-calibration-join",
+      "falsifier": "Join fails if either side cannot emit a hashable receipt with a negative fixture.",
+      "from": "BuildLang/buildc",
+      "receipt_target": "equation-to-kernel runtime receipt joins display/render measurement receipt",
+      "synergy_score": 3.2,
+      "to": "color calibration"
+    },
+    {
+      "experiment_id": "p0068-browser-evidence-crucible-join",
+      "falsifier": "Join fails if either side cannot emit a hashable receipt with a negative fixture.",
+      "from": "browser evidence",
+      "receipt_target": "redacted browser state to claim evidence packet joins negative fixture verdict registry",
+      "synergy_score": 3.7,
+      "to": "Crucible"
+    },
+    {
+      "experiment_id": "p0068-action-receipts-telos-join",
+      "falsifier": "Join fails if either side cannot emit a hashable receipt with a negative fixture.",
+      "from": "action receipts",
+      "receipt_target": "tool authority/action/result receipt envelope joins multi-receipt join and product packet exporter",
+      "synergy_score": 4.1,
+      "to": "Telos"
+    }
+  ],
+  "tool_rows": [
+    {
+      "bottleneck_hypothesis": "cross-tool receipt joins",
+      "buyer": "platform buyers",
+      "claim_status": "hypothesis",
+      "falsifier": "Telos row fails if a receipt cannot be replayed, a negative fixture is absent, or the market wedge remains untestable.",
+      "gap_status": "inferred",
+      "integration_target": "multi-receipt join and product packet exporter",
+      "market_wedge_hypothesis": "platform buyers need proof packet operating system spine when local proof is not enough for audit, replay, or collaboration.",
+      "primary_experiment": "p0068-telos-upgrade-ablation",
+      "role": "receipt-room",
+      "scores": {
+        "implementation_friction": 2,
+        "integration_centrality": 8,
+        "market_pull": 5,
+        "priority": 4.2,
+        "proof_advantage": 5,
+        "readiness": 4
+      },
+      "source_ids": [
+        "opentelemetry",
+        "openlineage",
+        "ro_crate",
+        "nist_ai_rmf"
+      ],
+      "success_metric": "Telos improves a cross-tool proof packet without increasing unsupported_claim_count above 0.",
+      "tool": "Telos",
+      "upgrade_lever": "proof packet operating system spine"
+    },
+    {
+      "bottleneck_hypothesis": "measurement quality and negative fixtures",
+      "buyer": "regulated AI teams",
+      "claim_status": "hypothesis",
+      "falsifier": "Crucible row fails if a receipt cannot be replayed, a negative fixture is absent, or the market wedge remains untestable.",
+      "gap_status": "inferred",
+      "integration_target": "negative fixture verdict registry",
+      "market_wedge_hypothesis": "regulated AI teams need claim-to-verdict regression harness when local proof is not enough for audit, replay, or collaboration.",
+      "primary_experiment": "p0068-crucible-upgrade-ablation",
+      "role": "verification-pressure",
+      "scores": {
+        "implementation_friction": 2,
+        "integration_centrality": 7,
+        "market_pull": 4,
+        "priority": 4.0,
+        "proof_advantage": 5,
+        "readiness": 4
+      },
+      "source_ids": [
+        "nist_ai_rmf",
+        "mlflow",
+        "wandb"
+      ],
+      "success_metric": "Crucible improves a cross-tool proof packet without increasing unsupported_claim_count above 0.",
+      "tool": "Crucible",
+      "upgrade_lever": "claim-to-verdict regression harness"
+    },
+    {
+      "bottleneck_hypothesis": "source packet recall",
+      "buyer": "research labs",
+      "claim_status": "hypothesis",
+      "falsifier": "Gather row fails if a receipt cannot be replayed, a negative fixture is absent, or the market wedge remains untestable.",
+      "gap_status": "inferred",
+      "integration_target": "source receipt to ResearchClaim adapter",
+      "market_wedge_hypothesis": "research labs need source-to-claim ingestion adapters when local proof is not enough for audit, replay, or collaboration.",
+      "primary_experiment": "p0068-gather-upgrade-ablation",
+      "role": "perception-intake",
+      "scores": {
+        "implementation_friction": 2,
+        "integration_centrality": 4,
+        "market_pull": 5,
+        "priority": 4.0,
+        "proof_advantage": 4,
+        "readiness": 4
+      },
+      "source_ids": [
+        "ro_crate",
+        "software_heritage",
+        "nextflow",
+        "snakemake"
+      ],
+      "success_metric": "Gather improves a cross-tool proof packet without increasing unsupported_claim_count above 0.",
+      "tool": "Gather",
+      "upgrade_lever": "source-to-claim ingestion adapters"
+    },
+    {
+      "bottleneck_hypothesis": "authority/action/result binding",
+      "buyer": "regulated agent teams",
+      "claim_status": "hypothesis",
+      "falsifier": "action receipts row fails if a receipt cannot be replayed, a negative fixture is absent, or the market wedge remains untestable.",
+      "gap_status": "inferred",
+      "integration_target": "tool authority/action/result receipt envelope",
+      "market_wedge_hypothesis": "regulated agent teams need agent action proof packets when local proof is not enough for audit, replay, or collaboration.",
+      "primary_experiment": "p0068-action-receipts-upgrade-ablation",
+      "role": "execution-accountability",
+      "scores": {
+        "implementation_friction": 2,
+        "integration_centrality": 3,
+        "market_pull": 5,
+        "priority": 4.0,
+        "proof_advantage": 5,
+        "readiness": 4
+      },
+      "source_ids": [
+        "opentelemetry",
+        "langfuse",
+        "langsmith"
+      ],
+      "success_metric": "action receipts improves a cross-tool proof packet without increasing unsupported_claim_count above 0.",
+      "tool": "action receipts",
+      "upgrade_lever": "agent action proof packets"
+    },
+    {
+      "bottleneck_hypothesis": "broad cross-domain prompt ambiguity",
+      "buyer": "agent operators",
+      "claim_status": "hypothesis",
+      "falsifier": "Forum row fails if a receipt cannot be replayed, a negative fixture is absent, or the market wedge remains untestable.",
+      "gap_status": "inferred",
+      "integration_target": "route decision receipt to action ledger adapter",
+      "market_wedge_hypothesis": "agent operators need route repair vocabulary and lane adapters when local proof is not enough for audit, replay, or collaboration.",
+      "primary_experiment": "p0068-forum-upgrade-ablation",
+      "role": "orchestration-routing",
+      "scores": {
+        "implementation_friction": 2,
+        "integration_centrality": 4,
+        "market_pull": 4,
+        "priority": 3.8,
+        "proof_advantage": 4,
+        "readiness": 4
+      },
+      "source_ids": [
+        "langfuse",
+        "langsmith",
+        "opentelemetry"
+      ],
+      "success_metric": "Forum improves a cross-tool proof packet without increasing unsupported_claim_count above 0.",
+      "tool": "Forum",
+      "upgrade_lever": "route repair vocabulary and lane adapters"
+    },
+    {
+      "bottleneck_hypothesis": "context selection freshness",
+      "buyer": "AI infra teams",
+      "claim_status": "hypothesis",
+      "falsifier": "Index row fails if a receipt cannot be replayed, a negative fixture is absent, or the market wedge remains untestable.",
+      "gap_status": "inferred",
+      "integration_target": "workspace context envelope to proof packet adapter",
+      "market_wedge_hypothesis": "AI infra teams need proof-aware workspace atlas slices when local proof is not enough for audit, replay, or collaboration.",
+      "primary_experiment": "p0068-index-upgrade-ablation",
+      "role": "structure-context",
+      "scores": {
+        "implementation_friction": 2,
+        "integration_centrality": 4,
+        "market_pull": 4,
+        "priority": 3.8,
+        "proof_advantage": 4,
+        "readiness": 4
+      },
+      "source_ids": [
+        "software_heritage",
+        "openlineage",
+        "opentelemetry"
+      ],
+      "success_metric": "Index improves a cross-tool proof packet without increasing unsupported_claim_count above 0.",
+      "tool": "Index",
+      "upgrade_lever": "proof-aware workspace atlas slices"
+    },
+    {
+      "bottleneck_hypothesis": "cross-pass continuity and replay",
+      "buyer": "agent ops teams",
+      "claim_status": "hypothesis",
+      "falsifier": "loop ledger row fails if a receipt cannot be replayed, a negative fixture is absent, or the market wedge remains untestable.",
+      "gap_status": "inferred",
+      "integration_target": "cross-pass replay ledger with hash checkpoints",
+      "market_wedge_hypothesis": "agent ops teams need append-only dogfood memory receipts when local proof is not enough for audit, replay, or collaboration.",
+      "primary_experiment": "p0068-loop-ledger-upgrade-ablation",
+      "role": "continuity-ledger",
+      "scores": {
+        "implementation_friction": 2,
+        "integration_centrality": 4,
+        "market_pull": 4,
+        "priority": 3.8,
+        "proof_advantage": 4,
+        "readiness": 4
+      },
+      "source_ids": [
+        "opentelemetry",
+        "openlineage",
+        "nist_ai_rmf"
+      ],
+      "success_metric": "loop ledger improves a cross-tool proof packet without increasing unsupported_claim_count above 0.",
+      "tool": "loop ledger",
+      "upgrade_lever": "append-only dogfood memory receipts"
+    },
+    {
+      "bottleneck_hypothesis": "compiler/runtime proof receipts",
+      "buyer": "scientific compute teams",
+      "claim_status": "hypothesis",
+      "falsifier": "BuildLang/buildc row fails if a receipt cannot be replayed, a negative fixture is absent, or the market wedge remains untestable.",
+      "gap_status": "inferred",
+      "integration_target": "equation-to-kernel runtime receipt",
+      "market_wedge_hypothesis": "scientific compute teams need equation-to-kernel accountable runtime when local proof is not enough for audit, replay, or collaboration.",
+      "primary_experiment": "p0068-buildlang-buildc-upgrade-ablation",
+      "role": "scientific-runtime",
+      "scores": {
+        "implementation_friction": 4,
+        "integration_centrality": 2,
+        "market_pull": 5,
+        "priority": 3.6,
+        "proof_advantage": 5,
+        "readiness": 3
+      },
+      "source_ids": [
+        "mlir",
+        "triton",
+        "spack"
+      ],
+      "success_metric": "BuildLang/buildc improves a cross-tool proof packet without increasing unsupported_claim_count above 0.",
+      "tool": "BuildLang/buildc",
+      "upgrade_lever": "equation-to-kernel accountable runtime"
+    },
+    {
+      "bottleneck_hypothesis": "inspectable source capture boundaries",
+      "buyer": "research and compliance teams",
+      "claim_status": "hypothesis",
+      "falsifier": "browser evidence row fails if a receipt cannot be replayed, a negative fixture is absent, or the market wedge remains untestable.",
+      "gap_status": "inferred",
+      "integration_target": "redacted browser state to claim evidence packet",
+      "market_wedge_hypothesis": "research and compliance teams need redacted browser evidence packets when local proof is not enough for audit, replay, or collaboration.",
+      "primary_experiment": "p0068-browser-evidence-upgrade-ablation",
+      "role": "web-evidence",
+      "scores": {
+        "implementation_friction": 2,
+        "integration_centrality": 2,
+        "market_pull": 4,
+        "priority": 3.4,
+        "proof_advantage": 4,
+        "readiness": 4
+      },
+      "source_ids": [
+        "opentelemetry",
+        "langfuse",
+        "software_heritage"
+      ],
+      "success_metric": "browser evidence improves a cross-tool proof packet without increasing unsupported_claim_count above 0.",
+      "tool": "browser evidence",
+      "upgrade_lever": "redacted browser evidence packets"
+    },
+    {
+      "bottleneck_hypothesis": "model loop provenance",
+      "buyer": "AI research teams",
+      "claim_status": "hypothesis",
+      "falsifier": "model foundry row fails if a receipt cannot be replayed, a negative fixture is absent, or the market wedge remains untestable.",
+      "gap_status": "inferred",
+      "integration_target": "model loop run card to Crucible verdict",
+      "market_wedge_hypothesis": "AI research teams need model workflow receipt ledger when local proof is not enough for audit, replay, or collaboration.",
+      "primary_experiment": "p0068-model-foundry-upgrade-ablation",
+      "role": "model-improvement",
+      "scores": {
+        "implementation_friction": 2,
+        "integration_centrality": 2,
+        "market_pull": 4,
+        "priority": 3.4,
+        "proof_advantage": 4,
+        "readiness": 4
+      },
+      "source_ids": [
+        "mlflow",
+        "wandb",
+        "langsmith"
+      ],
+      "success_metric": "model foundry improves a cross-tool proof packet without increasing unsupported_claim_count above 0.",
+      "tool": "model foundry",
+      "upgrade_lever": "model workflow receipt ledger"
+    },
+    {
+      "bottleneck_hypothesis": "adapter distribution and reproducible environments",
+      "buyer": "HPC and research platform teams",
+      "claim_status": "hypothesis",
+      "falsifier": "build-universe row fails if a receipt cannot be replayed, a negative fixture is absent, or the market wedge remains untestable.",
+      "gap_status": "inferred",
+      "integration_target": "adapter package manifest and reproducible environment lock",
+      "market_wedge_hypothesis": "HPC and research platform teams need proof package registry when local proof is not enough for audit, replay, or collaboration.",
+      "primary_experiment": "p0068-build-universe-upgrade-ablation",
+      "role": "package-ecosystem",
+      "scores": {
+        "implementation_friction": 4,
+        "integration_centrality": 2,
+        "market_pull": 4,
+        "priority": 3.2,
+        "proof_advantage": 4,
+        "readiness": 3
+      },
+      "source_ids": [
+        "spack",
+        "software_heritage",
+        "openlineage"
+      ],
+      "success_metric": "build-universe improves a cross-tool proof packet without increasing unsupported_claim_count above 0.",
+      "tool": "build-universe",
+      "upgrade_lever": "proof package registry"
+    },
+    {
+      "bottleneck_hypothesis": "measurement binding to rendered output",
+      "buyer": "post-production and rendering teams",
+      "claim_status": "hypothesis",
+      "falsifier": "color calibration row fails if a receipt cannot be replayed, a negative fixture is absent, or the market wedge remains untestable.",
+      "gap_status": "inferred",
+      "integration_target": "display/render measurement receipt",
+      "market_wedge_hypothesis": "post-production and rendering teams need color proof kit with calibrated receipts when local proof is not enough for audit, replay, or collaboration.",
+      "primary_experiment": "p0068-color-calibration-upgrade-ablation",
+      "role": "visual-truth",
+      "scores": {
+        "implementation_friction": 4,
+        "integration_centrality": 1,
+        "market_pull": 4,
+        "priority": 2.8,
+        "proof_advantage": 4,
+        "readiness": 4
+      },
+      "source_ids": [
+        "aces",
+        "opencolorio",
+        "nist_ai_rmf"
+      ],
+      "success_metric": "color calibration improves a cross-tool proof packet without increasing unsupported_claim_count above 0.",
+      "tool": "color calibration",
+      "upgrade_lever": "color proof kit with calibrated receipts"
+    }
+  ],
+  "unsupported_claim_count": 0,
+  "validation_errors": []
+}

@@ -1,0 +1,486 @@
+{
+  "buildlang_runtime_bridge": {
+    "boundary": "This pass does not compile a new BuildLang chemistry kernel; it binds the existing buildc receipt and specifies the next runtime receipt target.",
+    "compiler": "buildc",
+    "compiler_version": "1.0.6",
+    "native_pass": "0095",
+    "native_status": "BUILDLANG_NATIVE_OPTIMIZATION_KERNEL_RECEIPT_MATCH",
+    "required_kernel_receipts": [
+      "stoichiometric_matrix_digest",
+      "conservation_vector_receipt",
+      "residual_zero_check",
+      "numeric_tolerance_receipt",
+      "negative_fixture_receipt"
+    ],
+    "source_digest": "2480f503aa672459ccdd437a93f8d50c71dbc9b90d1ce236a52259727e1e29e9",
+    "status": "TARGET_SPECIFIED_WITH_EXISTING_BUILDC_RECEIPT",
+    "target_kernel": "reaction_network_invariant_kernel.bld",
+    "verify_check_count": 18
+  },
+  "corpus_summary": {
+    "candidate_check_count": 5,
+    "derived_invariant_count": 4,
+    "drift_expected_count": 1,
+    "match_count": 3,
+    "network_count": 4
+  },
+  "current_promoted_natural_laws": [],
+  "flagship_receipts": {
+    "forum": {
+      "confidence": 0.045454545454545456,
+      "decided": null,
+      "exit_code": 0,
+      "needs_escalation": true,
+      "status": "MATCH",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "ed94aa833c87bcdb8e11efb2d17b0a6f49e805bd8f008027ab7c368b7d707b56",
+      "top_candidates": [
+        {
+          "agent": "project-telos",
+          "score": 0.045454545454545456
+        },
+        {
+          "agent": "backend",
+          "score": 0.0
+        },
+        {
+          "agent": "ci-cd",
+          "score": 0.0
+        },
+        {
+          "agent": "cloud-infra",
+          "score": 0.0
+        },
+        {
+          "agent": "code-review",
+          "score": 0.0
+        }
+      ]
+    },
+    "index": {
+      "exit_code": 0,
+      "graph_pack_sha256": "8ee383e19ae9a6141bee70de733fb6aa09201ff9d284ce6778ce58b06e6b68b2",
+      "schema": "project-telos.context-envelope/v1",
+      "source_refs_only": true,
+      "status": "MATCH",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "a724beb64b12479bf426696177b7ddaf1fb398a200f811f624939d10abdbe6c6",
+      "verification_verdict": "MATCH"
+    },
+    "telos": {
+      "exit_code": 0,
+      "status": "MATCH",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "be17cb15259234cb4e8e95c2b36e76c90d841431729beb140294e34c5f9ebfa7",
+      "tool": "telos",
+      "tool_version": "0.1.0"
+    }
+  },
+  "generated_on": "2026-07-01",
+  "law_candidate": {
+    "name": "reaction_network_corpus_left_nullspace_conservation_harness",
+    "scope": "bounded corpus of closed reaction networks with exact residual checks and open-network rejection fixtures",
+    "status": "LAW_CANDIDATE"
+  },
+  "measurements": [
+    {
+      "id": "corpus_summary",
+      "status": "MATCH"
+    },
+    {
+      "id": "closed_networks",
+      "status": "MATCH"
+    },
+    {
+      "id": "open_rejection",
+      "status": "MATCH"
+    },
+    {
+      "id": "buildlang_bridge",
+      "status": "MATCH"
+    },
+    {
+      "id": "youtube_signal_binding",
+      "status": "MATCH"
+    },
+    {
+      "id": "flagships",
+      "status": "MATCH"
+    },
+    {
+      "id": "promotion_boundary",
+      "status": "MATCH"
+    }
+  ],
+  "network_results": [
+    {
+      "basis_dimension": 1,
+      "candidate_checks": [
+        {
+          "invariant": "A+B+C",
+          "residual": [
+            0,
+            0,
+            0
+          ],
+          "residual_zero": true,
+          "vector": [
+            1,
+            1,
+            1
+          ]
+        }
+      ],
+      "derived_conservation_vectors": [
+        {
+          "invariant": "A+B+C",
+          "residual": [
+            0,
+            0,
+            0
+          ],
+          "residual_zero": true,
+          "vector": [
+            1,
+            1,
+            1
+          ]
+        }
+      ],
+      "matrix_sha256": "c3ee70a50012464831dfc2069a4fc5c78f3818af6c289ba3009ef56ace61b1f1",
+      "network_id": "closed_cycle_abc",
+      "numerical_probe": {
+        "final_state": [
+          1.3086986510241339,
+          0.979055727211708,
+          1.4622456217641562
+        ],
+        "grid_points": 201,
+        "initial_invariants": [
+          3.75
+        ],
+        "max_drift": 3.9968028886505635e-15,
+        "max_invariant_drifts": [
+          3.9968028886505635e-15
+        ]
+      },
+      "reactions": [
+        "A_to_B",
+        "B_to_C",
+        "C_to_A"
+      ],
+      "species": [
+        "A",
+        "B",
+        "C"
+      ],
+      "status": "MATCH",
+      "stoichiometric_matrix": [
+        [
+          -1,
+          0,
+          1
+        ],
+        [
+          1,
+          -1,
+          0
+        ],
+        [
+          0,
+          1,
+          -1
+        ]
+      ]
+    },
+    {
+      "basis_dimension": 1,
+      "candidate_checks": [
+        {
+          "invariant": "A+2*B",
+          "residual": [
+            0,
+            0
+          ],
+          "residual_zero": true,
+          "vector": [
+            1,
+            2
+          ]
+        }
+      ],
+      "derived_conservation_vectors": [
+        {
+          "invariant": "A+2*B",
+          "residual": [
+            0,
+            0
+          ],
+          "residual_zero": true,
+          "vector": [
+            1,
+            2
+          ]
+        }
+      ],
+      "matrix_sha256": "822ceb38ebded77f83e37fa7413ebd45934486f3ade720a9252f1ce60f2d3f09",
+      "network_id": "reversible_dimerization",
+      "numerical_probe": {
+        "final_state": [
+          2.196183345973554,
+          0.6019083270132228
+        ],
+        "grid_points": 201,
+        "initial_invariants": [
+          3.4
+        ],
+        "max_drift": 2.220446049250313e-15,
+        "max_invariant_drifts": [
+          2.220446049250313e-15
+        ]
+      },
+      "reactions": [
+        "2A_to_B",
+        "B_to_2A"
+      ],
+      "species": [
+        "A",
+        "B"
+      ],
+      "status": "MATCH",
+      "stoichiometric_matrix": [
+        [
+          -2,
+          2
+        ],
+        [
+          1,
+          -1
+        ]
+      ]
+    },
+    {
+      "basis_dimension": 2,
+      "candidate_checks": [
+        {
+          "invariant": "E+ES",
+          "residual": [
+            0,
+            0,
+            0
+          ],
+          "residual_zero": true,
+          "vector": [
+            1,
+            0,
+            1,
+            0
+          ]
+        },
+        {
+          "invariant": "S+ES+P",
+          "residual": [
+            0,
+            0,
+            0
+          ],
+          "residual_zero": true,
+          "vector": [
+            0,
+            1,
+            1,
+            1
+          ]
+        }
+      ],
+      "derived_conservation_vectors": [
+        {
+          "invariant": "E+ES",
+          "residual": [
+            0,
+            0,
+            0
+          ],
+          "residual_zero": true,
+          "vector": [
+            1,
+            0,
+            1,
+            0
+          ]
+        },
+        {
+          "invariant": "E+-1*S+-1*P",
+          "residual": [
+            0,
+            0,
+            0
+          ],
+          "residual_zero": true,
+          "vector": [
+            1,
+            -1,
+            0,
+            -1
+          ]
+        }
+      ],
+      "matrix_sha256": "0a9d51aa124ca98b6089d2b62d082969713a0c387fbc93cd0964960f92a53cae",
+      "network_id": "enzyme_product_skeleton",
+      "numerical_probe": {
+        "final_state": [
+          0.8787245268662063,
+          1.8451535015686529,
+          0.2212754731337935,
+          0.03357102529755514
+        ],
+        "grid_points": 201,
+        "initial_invariants": [
+          1.1,
+          2.1
+        ],
+        "max_drift": 1.7763568394002505e-15,
+        "max_invariant_drifts": [
+          4.440892098500626e-16,
+          1.7763568394002505e-15
+        ]
+      },
+      "reactions": [
+        "E_plus_S_to_ES",
+        "ES_to_E_plus_S",
+        "ES_to_E_plus_P"
+      ],
+      "species": [
+        "E",
+        "S",
+        "ES",
+        "P"
+      ],
+      "status": "MATCH",
+      "stoichiometric_matrix": [
+        [
+          -1,
+          1,
+          1
+        ],
+        [
+          -1,
+          1,
+          0
+        ],
+        [
+          1,
+          -1,
+          -1
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ]
+    },
+    {
+      "basis_dimension": 0,
+      "candidate_checks": [
+        {
+          "invariant": "A",
+          "residual": [
+            -1
+          ],
+          "residual_zero": false,
+          "vector": [
+            1
+          ]
+        }
+      ],
+      "derived_conservation_vectors": [],
+      "matrix_sha256": "3aa68b41fe21beb89166e0e32d3467a7e1dfa6923a33e9779ef226e3233da949",
+      "network_id": "open_degradation",
+      "numerical_probe": {
+        "final_state": [
+          1.2092713724699398
+        ],
+        "grid_points": 201,
+        "initial_invariants": [
+          2.0
+        ],
+        "max_drift": 0.7876978722105867,
+        "max_invariant_drifts": [
+          0.7876978722105867
+        ]
+      },
+      "reactions": [
+        "A_to_sink"
+      ],
+      "species": [
+        "A"
+      ],
+      "status": "DRIFT_EXPECTED",
+      "stoichiometric_matrix": [
+        [
+          -1
+        ]
+      ]
+    }
+  ],
+  "non_promotion_statement": "This pass proves only a bounded corpus harness and target BuildLang runtime bridge. It does not prove a new natural law, biological discovery, wet-lab result, or compiled chemistry kernel.",
+  "pass": "0107",
+  "promotion_requirements": [
+    "larger curated network corpus",
+    "BuildLang chemistry kernel execution",
+    "independent reproduction",
+    "domain reviewer signoff"
+  ],
+  "schema": "ReactionNetworkCorpusHarnessReceipt/v1",
+  "seal": "9f9143003830feb042ae906a61e2313297b92c81688beab1f370fa727395bd27",
+  "source_anchors": [
+    {
+      "claim": "stoichiometric left-nullspace vectors encode conserved moieties",
+      "kind": "paper",
+      "title": "The Convex Basis of the Left Null Space of the Stoichiometric Matrix",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC1303061/"
+    },
+    {
+      "claim": "reaction-network stoichiometry is constrained by conservation structure",
+      "kind": "paper",
+      "title": "What makes a reaction network chemical?",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9484159/"
+    },
+    {
+      "claim": "chemical reaction network analysis includes conservation laws",
+      "kind": "official_docs",
+      "title": "Catalyst.jl CRN Theory",
+      "url": "https://docs.sciml.ai/Catalyst/stable/network_analysis/crn_theory/"
+    },
+    {
+      "claim": "conservation-law rows are computed from net stoichiometry",
+      "kind": "official_docs",
+      "title": "Catalyst.jl Network Analysis API",
+      "url": "https://docs.sciml.ai/Catalyst/stable/api/network_analysis_api/"
+    },
+    {
+      "claim": "conservation matrices span the nullspace associated with stoichiometry",
+      "kind": "official_docs",
+      "title": "EQTK Core Concepts",
+      "url": "https://eqtk.github.io/user_guide/core_concepts.html"
+    }
+  ],
+  "source_bindings": {
+    "buildlang_native_pass": "0095",
+    "stoichiometric_pass": "0106",
+    "youtube_roadmap_pass": "0102",
+    "youtube_scorecard_pass": "0096"
+  },
+  "status": "REACTION_NETWORK_CORPUS_HARNESS_RECEIPT_MATCH",
+  "unsupported_claim_count": 0,
+  "validation_errors": [],
+  "youtube_signal_binding": {
+    "ai4science_video_count": 1,
+    "architecture_pull": "move from single invariant packet to corpus and runtime receipt targets",
+    "buildlang_scientific_runtime_video_count": 14,
+    "roadmap_pass": "0102",
+    "valid_video_count": 19,
+    "youtube_scorecard_pass": "0096"
+  }
+}

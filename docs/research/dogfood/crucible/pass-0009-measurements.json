@@ -1,0 +1,88 @@
+{
+  "measurements": [
+    {
+      "claim": "Pass 0009 created a ProofPacket/v1 heat-equation energy packet with three claims: continuous L2 energy identity, stable finite-difference witness, and unstable negative fixture.",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "method": "json-structure-review",
+      "evidence": [
+        "schemas/heat-equation-proof-packet-pass-0009.json schema=ProofPacket/v1",
+        "packet_id=proof-packet-pass-0009-heat-equation-energy",
+        "claim_count=3",
+        "claim ids include claim-continuous-heat-energy-identity",
+        "claim ids include claim-bounded-stable-cfl-witness",
+        "claim ids include claim-negative-unstable-cfl-fixture"
+      ]
+    },
+    {
+      "claim": "The heat-equation probe reports PROBE_MATCH, with cfl=0.45 recording zero stable energy increases over 400 steps and cfl=0.55 detecting unstable energy growth.",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "method": "numerical-probe-review",
+      "evidence": [
+        "schemas/heat-equation-energy-probe-pass-0009.json status=PROBE_MATCH",
+        "stable_probe cfl=0.45",
+        "stable_probe steps=400",
+        "stable_probe increase_count=0",
+        "stable_probe status=ENERGY_MONOTONE",
+        "unstable_probe cfl=0.55",
+        "unstable_probe status=ENERGY_INCREASE_DETECTED",
+        "unstable_probe first_increase step=201",
+        "probe seal=b3021c14b0e5dc8adeddadf0d22e2780dbf259c349caf5cbc2ba255b591fd7d5"
+      ]
+    },
+    {
+      "claim": "The pass 0009 scientific-compute market map includes at least ten rows and covers language-ecosystem, pde-framework, hpc-solver, physics-ai, and commercial-simulation categories.",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "method": "market-map-validator-review",
+      "evidence": [
+        "schemas/scientific-compute-market-map-pass-0009.json rows=10",
+        "category language-ecosystem present",
+        "category pde-framework present",
+        "category hpc-solver present",
+        "category physics-ai present",
+        "category commercial-simulation present",
+        "schemas/pass-0009-scientific-compute-validator-result.json categories list contains all required categories"
+      ]
+    },
+    {
+      "claim": "Every pass 0009 market-map row includes an HTTPS source URL and a BuildLang/buildc wedge hypothesis.",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "method": "market-row-field-review",
+      "evidence": [
+        "validator required_fields includes source_url",
+        "validator required_fields includes buildlang_wedge_hypothesis",
+        "validator rejects non-HTTPS source URLs",
+        "rows include Julia, SciML, FEniCS, Firedrake, PETSc, OpenFOAM, NVIDIA PhysicsNeMo, COMSOL Multiphysics, Ansys Fluent, and SimScale"
+      ]
+    },
+    {
+      "claim": "The pass 0009 validators report MATCH: the ProofPacket validator reports one match and zero drift; the scientific-compute validator reports two matches and zero drift.",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "method": "validator-run-review",
+      "evidence": [
+        "schemas/proof-packet-validator-pass-0009.json status=MATCH",
+        "schemas/proof-packet-validator-pass-0009.json match=1",
+        "schemas/proof-packet-validator-pass-0009.json drift=0",
+        "schemas/pass-0009-scientific-compute-validator-result.json status=MATCH",
+        "schemas/pass-0009-scientific-compute-validator-result.json match=2",
+        "schemas/pass-0009-scientific-compute-validator-result.json drift=0"
+      ]
+    },
+    {
+      "claim": "Pass 0009 promotes zero natural-law discoveries; the heat-equation energy identity is explicitly treated as a classical identity and proof-packet systems test.",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "method": "artifact-review",
+      "evidence": [
+        "schemas/heat-equation-proof-packet-pass-0009.json failure_labels include NOT_A_NEW_PHYSICAL_LAW",
+        "packets/019-heat-equation-energy-proof.md says this is not promoted as a new law",
+        "schemas/heat-equation-proof-packet-pass-0009.json claim-continuous-heat-energy-identity promotion_state=IDENTITY",
+        "pass 0009 artifacts use proof-packet systems-test language rather than promoted discovery language"
+      ]
+    }
+  ]
+}

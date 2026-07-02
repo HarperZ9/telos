@@ -1,0 +1,175 @@
+{
+  "generated_on": "2026-07-01",
+  "non_promotion_statement": "Tool receipts prove packet readback, Git-blob statement replay validator MATCH, Telos/Index/Gather/Forum/Crucible availability, and no remaining temp Lean/Lake/Elan processes. They do not prove Lean replay, semantic proof correctness by elaboration, axiom-free proof, every public pipeline-math claim, buyer adoption, or any natural law.",
+  "pass": "0038",
+  "receipts": [
+    {
+      "command": "map --root docs/research/dogfood --json",
+      "dirty_count": 0,
+      "repo_count": 0,
+      "role": "dogfood-substrate-map",
+      "root_sha256_prefix": "f2f0af39219698a9",
+      "schema_version": 1,
+      "status": "MATCH",
+      "tool": "index",
+      "tool_version": "2.8.0",
+      "top_level_count": 46
+    },
+    {
+      "artifact": "packets/048-theorem-blob-statement-replay.md",
+      "chars": 1998,
+      "command": "docs",
+      "seal": "bf5799d708edd1ef5c481b4feab56bf4aa07c5435bb210960c5fcaed913df8bf",
+      "sha256": "751c40c4ad423e60ee375452cccbf3624ef6fd7e3c5ddf8ffd12356babef50ad",
+      "status": "MATCH",
+      "tool": "gather",
+      "verified": true
+    },
+    {
+      "blob_check_count": 10,
+      "command": "probe_theorem_blob_statement_replay.py",
+      "schema": "TheoremBlobStatementReplaySet/v1",
+      "seal": "53541e1bdcb049e8823dff70b6f20b873a5dabea3ce63a854bdcdd53133e43bd",
+      "status": "BLOB_STATEMENT_REPLAY_MATCH",
+      "theorem_count": 10,
+      "tool": "python",
+      "unique_blob_file_count": 10
+    },
+    {
+      "blob_check_count": 10,
+      "command": "validate_pass_0038_theorem_blob_statement_replay.py",
+      "drift": 0,
+      "match": 1,
+      "schema": "Pass0038TheoremBlobStatementReplayValidatorRun/v1",
+      "status": "MATCH",
+      "theorem_count": 10,
+      "tool": "python",
+      "unique_blob_file_count": 10
+    },
+    {
+      "command": "process check",
+      "remaining_temp_processes": 0,
+      "status": "MATCH",
+      "tool": "shell"
+    },
+    {
+      "command": "telos_catalog",
+      "selected_tools_available": [
+        "gather.docs",
+        "index.map",
+        "forum.route",
+        "crucible.run",
+        "telos.action.receipt",
+        "telos.context.envelope",
+        "telos.loop.ledger"
+      ],
+      "status": "MATCH",
+      "tool": "mcp__telos.telos_catalog"
+    },
+    {
+      "append_only_compensation_required": true,
+      "command": "telos_action_receipt",
+      "digest_references_required": true,
+      "raw_parameters_required": false,
+      "receipt_is_trace_span": false,
+      "schema": "project-telos.action-receipt/v1",
+      "status": "MATCH",
+      "tool": "mcp__telos.telos_action_receipt"
+    },
+    {
+      "command": "telos_context_envelope",
+      "lossless_requirement": "claims are lossless through source refs and hashes, not through compressed prose",
+      "schema": "project-telos.context-envelope/v1",
+      "status": "MATCH",
+      "tool": "mcp__telos.telos_context_envelope"
+    },
+    {
+      "command": "telos_loop_ledger",
+      "fresh_context_reads_ledger_first": true,
+      "one_action_per_iteration": true,
+      "schema": "project-telos.loop-ledger/v1",
+      "status": "MATCH",
+      "tool": "mcp__telos.telos_loop_ledger",
+      "unverifiable_required": true
+    },
+    {
+      "command": "status",
+      "role": "structure-context",
+      "status": "MATCH",
+      "tool": "mcp__index.index_status",
+      "tool_version": "2.8.0"
+    },
+    {
+      "command": "status",
+      "role": "perception-intake",
+      "status": "MATCH",
+      "tool": "mcp__gather.gather_status",
+      "tool_version": "1.5.0"
+    },
+    {
+      "command": "status",
+      "role": "orchestration-routing",
+      "status": "MATCH",
+      "tool": "mcp__forum.forum_status",
+      "tool_version": "1.12.0"
+    },
+    {
+      "command": "status",
+      "role": "verification-pressure",
+      "status": "MATCH",
+      "tool": "mcp__crucible.crucible_status",
+      "tool_version": "1.1.0"
+    },
+    {
+      "candidates": [
+        {
+          "agent": "model-foundry",
+          "score": 0.125
+        },
+        {
+          "agent": "project-telos",
+          "score": 0.045454545454545456
+        }
+      ],
+      "command": "route",
+      "confidence": 0.07954545454545454,
+      "decided": null,
+      "needs_escalation": true,
+      "status": "MATCH",
+      "tool": "forum"
+    },
+    {
+      "chain": true,
+      "command": "ledger verify",
+      "deep": true,
+      "status": "MATCH",
+      "tool": "forum"
+    },
+    {
+      "command": "submit",
+      "error": "submit needs a model executor. Forum is model-agnostic: pass --cmd \"<model cli>\" (any command, local models need no account), --chat-url <openai-compatible url> (e.g. a local Ollama server), or --api (Anthropic).",
+      "request": "Dogfood pass 0038 adversarial review for Git blob statement replay",
+      "status": "UNVERIFIABLE",
+      "tool": "forum"
+    },
+    {
+      "assessment_seal": "be23d83f3ae1a2c366630fc95291baf7ecc4e6434c63cb99ea1d03d44938ae97",
+      "claims": 8,
+      "command": "run",
+      "drift": 0,
+      "match": 8,
+      "measurement_seal": "df986da4a9c828a654355f5b0fc14a9a6e8bf149142472e370798276e37f1c90",
+      "seals_ok": true,
+      "status": "MATCH",
+      "thesis_id": "d6d119b3e807945b",
+      "thesis_ok": true,
+      "thesis_seal": "d6d119b3e807945b2405f0b48da345fa221ef4477232b26431e26ad48fd3deba",
+      "tool": "crucible",
+      "unverifiable": 0,
+      "verdict_seal": "bfdea09f048ab4440b3d36f776606e3dc8a8f571aa320499b49683fb8679b9e1",
+      "verdicts_rederive": true
+    }
+  ],
+  "schema": "DogfoodToolReceiptSet/v1",
+  "status": "MATCH_WITH_FORUM_SUBMIT_GAP_AND_NON_SEMANTIC_BOUNDARY"
+}

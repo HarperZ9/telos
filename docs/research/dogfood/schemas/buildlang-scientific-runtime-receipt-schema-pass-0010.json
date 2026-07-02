@@ -1,0 +1,77 @@
+{
+  "schema": "BuildScientificRuntimeReceiptSchema/v1",
+  "pass": "0010",
+  "generated_on": "2026-07-01",
+  "purpose": "Define the minimum receipt shape BuildLang/buildc should emit for scientific kernels whose outputs support proof-packet claims.",
+  "required_receipt_fields": [
+    "receipt_id",
+    "schema",
+    "role",
+    "claim_id",
+    "domain",
+    "source_state",
+    "build_state",
+    "runtime_state",
+    "problem_state",
+    "measurement_state",
+    "invariant_checks",
+    "negative_fixture",
+    "verification_verdicts",
+    "failure_labels",
+    "promotion_state",
+    "receipt_status"
+  ],
+  "status_values": [
+    "PASS",
+    "FAIL_EXPECTED",
+    "FAIL_UNEXPECTED",
+    "UNVERIFIABLE"
+  ],
+  "verification_layers": [
+    {
+      "layer": "source",
+      "required": true,
+      "receipt_obligation": "record workspace, head, source files, source refs, and source hash"
+    },
+    {
+      "layer": "build",
+      "required": true,
+      "receipt_obligation": "record compiler, compiler status, target, flags, dependencies, and build hash"
+    },
+    {
+      "layer": "runtime",
+      "required": true,
+      "receipt_obligation": "record runtime, operating system, hardware class, deterministic seed, and environment hash"
+    },
+    {
+      "layer": "problem",
+      "required": true,
+      "receipt_obligation": "record equation/model, domain, boundary conditions, and discretization"
+    },
+    {
+      "layer": "measurement",
+      "required": true,
+      "receipt_obligation": "record metric, observed values, threshold, and units"
+    },
+    {
+      "layer": "invariant",
+      "required": true,
+      "receipt_obligation": "record invariant name, expectation, observed result, tolerance, and status"
+    },
+    {
+      "layer": "external_verdict",
+      "required": true,
+      "receipt_obligation": "record validator, Crucible, formal checker, reviewer, or lab verdicts"
+    }
+  ],
+  "non_promotion_policy": {
+    "new_natural_law_claims_allowed": false,
+    "required_label_for_classical_identity": "NOT_A_NEW_PHYSICAL_LAW",
+    "required_label_for_adapter_fixture": "BUILDC_NOT_EXECUTED_IN_THIS_PASS"
+  },
+  "market_wedge": {
+    "hypothesis": "BuildLang/buildc can differentiate from Julia, PDE frameworks, HPC solvers, physics AI tools, and commercial simulation environments by making compiler/runtime receipts native to scientific claims.",
+    "status": "inferred",
+    "confidence": "high"
+  }
+}

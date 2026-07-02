@@ -1,0 +1,377 @@
+Skip to content
+Navigation Menu
+Toggle navigation
+Sign in
+Appearance settings
+Platform
+AI CODE CREATION
+GitHub CopilotWrite better code with AI
+GitHub Copilot appDirect agents from issue to merge
+MCP RegistryNewIntegrate external tools
+DEVELOPER WORKFLOWS
+ActionsAutomate any workflow
+CodespacesInstant dev environments
+IssuesPlan and track work
+Code ReviewManage code changes
+APPLICATION SECURITY
+GitHub Advanced SecurityFind and fix vulnerabilities
+Code securitySecure your code as you build
+Secret protectionStop leaks before they start
+EXPLORE
+Why GitHub
+Documentation
+Blog
+Changelog
+Marketplace
+View all features
+Solutions
+BY COMPANY SIZE
+Enterprises
+Small and medium teams
+Startups
+Nonprofits
+BY USE CASE
+App Modernization
+DevSecOps
+DevOps
+CI/CD
+View all use cases
+BY INDUSTRY
+Healthcare
+Financial services
+Manufacturing
+Government
+View all industries
+View all solutions
+Resources
+EXPLORE BY TOPIC
+AI
+Software Development
+DevOps
+Security
+View all topics
+EXPLORE BY TYPE
+Customer stories
+Events & webinars
+Ebooks & reports
+Business insights
+GitHub Skills
+SUPPORT & SERVICES
+Documentation
+Customer support
+Community forum
+Trust center
+Partners
+View all resources
+Open Source
+COMMUNITY
+GitHub SponsorsFund open source developers
+PROGRAMS
+Security Lab
+Maintainer Community
+Accelerator
+GitHub Stars
+Archive Program
+REPOSITORIES
+Topics
+Trending
+Collections
+Enterprise
+ENTERPRISE SOLUTIONS
+Enterprise platformAI-powered developer platform
+AVAILABLE ADD-ONS
+GitHub Advanced SecurityEnterprise-grade security features
+Copilot for BusinessEnterprise-grade AI features
+Premium SupportEnterprise-grade 24/7 support
+Pricing
+Search or jump to...
+Search code, repositories, users, issues, pull requests...
+Search
+Clear
+Search syntax tips
+Provide feedback
+We read every piece of feedback, and take your input very seriously.
+Include my email address so I can be contacted
+Cancel
+Submit feedback
+Saved searches
+Use saved searches to filter your results more quickly
+Name
+Query
+To see all available qualifiers, see our documentation.
+Cancel
+Create saved search
+Sign in
+Sign up
+Appearance settings
+Resetting focus
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+Dismiss alert
+teorth
+/
+equational_theories
+Public
+Notifications
+You must be signed in to change notification settings
+Fork
+99
+Star
+532
+Code
+Issues
+19
+Pull requests
+11
+Actions
+Projects
+Wiki
+Security and quality
+0
+Insights
+Additional navigation options
+Code
+Issues
+Pull requests
+Actions
+Projects
+Wiki
+Security and quality
+Insights
+teorth/equational_theories
+main
+BranchesTags
+Go to file
+Code
+Open more actions menu
+Folders and files
+Name
+Name
+Last commit message
+Last commit date
+Latest commit
+History
+1,774 Commits
+1,774 Commits
+.github
+.github
+.vscode
+.vscode
+blueprint/src
+blueprint/src
+commentary
+commentary
+data
+data
+docbuild
+docbuild
+docs
+docs
+equational_theories
+equational_theories
+home_page
+home_page
+images
+images
+paper
+paper
+scripts
+scripts
+tools
+tools
+widget
+widget
+.gitattributes
+.gitattributes
+.gitignore
+.gitignore
+.gitpod.yml
+.gitpod.yml
+CITATION.cff
+CITATION.cff
+CODE_OF_CONDUCT.md
+CODE_OF_CONDUCT.md
+CONTRIBUTING.md
+CONTRIBUTING.md
+LICENSE
+LICENSE
+README.md
+README.md
+equational-theories.code-workspace
+equational-theories.code-workspace
+equational_theories.lean
+equational_theories.lean
+flake.lock
+flake.lock
+flake.nix
+flake.nix
+full_entries.json
+full_entries.json
+lake-manifest.json
+lake-manifest.json
+lakefile.toml
+lakefile.toml
+lean-toolchain
+lean-toolchain
+requirements.in
+requirements.in
+requirements.txt
+requirements.txt
+View all files
+Repository files navigation
+README
+Code of conduct
+Contributing
+Apache-2.0 license
+More items
+Equational theories project
+The purpose of this project, launched on Sep 25, 2024, is to explore the space of equational theories of magmas, ordered by implication. To begin with we shall focus only on theories of a single equation, and specifically on the 4694 equational laws
+involving at most four magma operations, up to symmetry and relabeling (here is the list in Lean and in plain text). This creates 4694*(4694-1) = 22,028,942 implications that need to be proven or disproven, creating both "implications" and "anti-implications".
+We will accumulate both "proven" and "conjectured" implications and anti-implications: proven assertions will be verified in the proof assistant language Lean, and "conjectured" assertions represent all claims (either human-generated or computer-generated) that have not yet been verified in Lean. The current status of the project can be found on the dashboard.
+Some selected equations of interest are listed here (in Lean form) and here (in a human readable blueprint). Examples include
+Equation 1: x = x. The trivial law.
+Equation 2: x = y. The singleton law.
+Equation 43: x ◇ y = y ◇ x. The commutative law.
+Equation 46: x ◇ y = z ◇ w. The constant law.
+Equation 4512: x ◇ (y ◇ z) = (x ◇ y) ◇ z. The associative law.
+Here is a tour of several selected equations, including the ones above.
+Current statistics and data files, updated automatically:
+dashboard
+Current visualizations, updated automatically:
+Equation Explorer is a tool for exploring the graph of equation implications.
+Finite Magma Explorer is a tool for exploring finite magmas and the equations they satisfy.
+Graphiti is a tool for visualizing the implication graph.
+For guidelines on how to contribute, see the CONTRIBUTING.md file. Participants are requested to abide by our code of conduct.
+Building the project
+To build this project after installing Lean and cloning this repository, follow these steps:
+% cd equational_theories/
+% lake exe cache get
+% lake build
+Links
+Main web page
+Blueprint
+Documentation
+The Lean Zulip stream for the project
+Instructions on how to contribute
+Code of conduct
+Wiki
+Older progress
+A blog post describing the project., Sep 25, 2024.
+The equational theories project: a brief tour, Oct 12, 2024 - a followup to the previous post.
+Initial discussion on Zulip, Sep 26, 2024.
+Initial discussion on Mastodon, Jul 18, 2023.
+Followup discussion on Mastodon, Sep 25, 2024.
+The MathOverflow post that inspired the project, Jul 17, 2023.
+A related MathOverflow post, Jul 16, 2023.
+Data
+Text list of equations. Larger list with equations of up to five operations
+List of duals of equations (JSON)
+The smallest magma satisfying a given equation (up to N=5), if it exists (and the magmas themselves)
+To download the current state of the implication graph, see this thread.
+Scripts
+Shell
+run_before_push – performs some of the CI checks, suitable for running just before pushing a new PR
+Lean
+extract_implications – extracts implications from one or more Lean files. This outputs the "ground truth" of implication data, for use by other scripts
+Python
+explore_magma – test a given magma table against all or a subset of the equations in Equations/All.lean
+find_dual – finds the dual of an equation
+find_equation_id – finds the equation number of an equation string
+find_powerful_theorems.py – finds theorems that, if proved, would imply many others
+generate_eqs_list – generates a list of equations
+generate_image – generates an image of implications
+generate_most_wanted_list – generates the "most wanted" implications
+generate_z3_counterexample – given an implication statement between two equations, calls Z3 to try to generate a counterexample
+process_implications – processes implications from one or more Lean files
+Ruby
+generate_graphviz_graph – creates a graphviz graph
+transitive_closure – computes the transitive closure of a set of implications
+transitive_reduction – finds a transitive reduction of a set of implications
+graph – graph library
+Automated provers for equational theories
+Prover9 and Mace4
+aa – a project to use Prover9/Mace4 to brute force axioms for finite mathematical domains
+Vampire
+eprover
+twee
+zipperposition
+Z3
+Knuckledragger
+A blog post by Philip Zucker testing many of the above provers on a sample implication of this project.
+"Guided Equality Saturation", Thomas Kœhler, Andrés Goens, Siddharth Bhat, Tobias Grosser, Phil Trinder, Michel Steuwer, Jan 5, 2024.
+"Rewrite Rule Inference Using Equality Saturation", Chandrakana Nandi, Max Willsey, Amy Zhu, Yisu Remy Wang, Brett Saiki, Adam Anderson, Adriana Schulz, Dan Grossman, Zachary Tatlock, 23 Aug, 2021.
+Other tools
+egg - e-graphs good
+MiniZinc – high-level constraint modeling language
+nauty – graph automorphism tool
+KBCV – Knuth-Bendix completion visualizer
+Instagraph – knowledge graph generator
+Logic Programming in F# – Code and Examples from John Harrison's "Handbook of Practical Logic and Automated Reasoning"
+Blog posts and media mentioning this project
+"We're Entering Uncharted Territory for Math", Matteo Wong, The Atlantic, Oct 4 2024.
+"On Math Platform", Michael Bucko, Substack von Michael, Oct 5 2024.
+About
+A project to map out the relations between different equational theories of Magmas.
+teorth.github.io/equational_theories/
+Resources
+Readme
+License
+Apache-2.0 license
+Code of conduct
+Code of conduct
+Contributing
+Contributing
+Uh oh!
+There was an error while loading. Please reload this page.
+Activity
+Stars
+532
+stars
+Watchers
+7
+watching
+Forks
+99
+forks
+Report repository
+Releases
+4
+Arxiv v2 submission version
+Latest
+Dec 20, 2025
++ 3 releases
+Uh oh!
+There was an error while loading. Please reload this page.
+Contributors
+Uh oh!
+There was an error while loading. Please reload this page.
+Languages
+Lean
+38.8%
+C
+38.4%
+TeX
+9.4%
+Python
+6.8%
+JavaScript
+3.3%
+Ruby
+1.4%
+Other
+1.9%
+Generated from leanprover-community/LeanProject
+Footer
+© 2026 GitHub, Inc.
+Footer navigation
+Terms
+Privacy
+Security
+Status
+Community
+Docs
+Contact
+Manage cookies
+Do not share my personal information
+You can’t perform that action at this time.

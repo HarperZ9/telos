@@ -1,0 +1,49 @@
+{
+  "schema": "project-telos.oss-issue-detail-summary/v1",
+  "captured_at": "2026-07-02T00:00:00.000Z",
+  "source": {
+    "kind": "github_issue_view",
+    "command": "gh issue view 63458 --repo pandas-dev/pandas --json number,title,url,state,body,author,labels,comments,createdAt,updatedAt",
+    "raw_ref": "docs/outreach/receipts/seventh-wave/oss-showcase-live-issue-63458-gh.json"
+  },
+  "repository": "pandas-dev/pandas",
+  "issue": {
+    "number": 63458,
+    "url": "https://github.com/pandas-dev/pandas/issues/63458",
+    "title": "BUG: 3.0rc0: comparing `StringArray`s with `==` yields a `bool[pyarrow]` array with no `.sum()` method",
+    "state": "OPEN",
+    "author_login": "flying-sheep",
+    "labels": [
+      "Bug",
+      "API - Consistency",
+      "Arrow"
+    ],
+    "comments_count": 11,
+    "created_at": "2025-12-22T10:29:27Z",
+    "updated_at": "2026-06-27T23:25:33Z"
+  },
+  "evidence_markers": {
+    "body_sha256": "05a4c5677502a0e04ea7a50eb89f44d15a36eabe9f424aaf75550f452f6619f5",
+    "body_chars": 2963,
+    "code_fence_count": 4,
+    "has_code_fence": true,
+    "has_expected_marker": true,
+    "has_version_marker": true,
+    "has_reproduction_lead": true
+  },
+  "verification_boundary": {
+    "issue_body_captured": true,
+    "local_reproduction_run": false,
+    "source_clone_inspected": false,
+    "tests_run": false,
+    "patch_authored": false,
+    "maintainer_intent_verified": false,
+    "pr_ready": false
+  },
+  "next_actions": [
+    "clone or use a clean pandas checkout",
+    "translate the issue-authored reproduction lead into a local failing test or script",
+    "record stdout/stderr and environment metadata",
+    "only then attempt a patch and verifier-gated readiness packet"
+  ]
+}

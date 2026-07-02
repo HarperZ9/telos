@@ -1,0 +1,35 @@
+# crucible report: Dogfood Pass 0091 BuildLang Corpus Crucible Adapter
+
+## Summary
+
+- thesis_id: `925dda9fef050ba8`
+- thesis_seal: `925dda9fef050ba8c8f333071618f7bffba004bb3394f91e2443d975ae1fe4fb`
+- assessment_seal: `20882ec1cd23c058b7542166d86e6382c9b6b712b1bb2752df0fb834116fe203`
+- counts: MATCH 8 / DRIFT 0 / UNVERIFIABLE 0
+- integrity: seals_ok=True, thesis_ok=True, verdicts_rederive=True
+
+## Verdicts
+
+| Claim | Status | Disposition | Margin | Method | Grounds |
+| --- | --- | --- | ---: | --- | --- |
+| Pass 0091 created a BuildLangCorpusCrucibleAdapterReceipt/v1 artifact with status BUILDLANG_CORPUS_CRUCIBLE_ADAPTER_MATCH, sha256 1ed04f72baf9376681f6d67d609fe78f68c4d7a9dc53e644a643746a9063c990, and seal 0ecba8c12f9c041ed6dc3a126e5722afae3afe8881cd262f69adcafda4ca60ac. | MATCH | fenced | 1 | artifact-review | deviation 0 within tolerance 0.5 |
+| Pass 0091 binds prior pass 0090 and BuildLang proof-surface pass 0080. | MATCH | fenced | 1 | artifact-review | deviation 0 within tolerance 0.5 |
+| Pass 0091 BuildLang repo state exists=True branch_line ## fix/module-double-register dirty_count 0. | MATCH | fenced | 1 | artifact-review | deviation 0 within tolerance 0.5 |
+| Pass 0091 live buildc corpus run status is MATCH with exit_code 0, match 10, drift 0, and stdout sha256 fbe2daff8da1804b00cafe9a9fff36fc649429071b25f6a2561003255f6310d3. | MATCH | fenced | 1 | artifact-review | deviation 0 within tolerance 0.5 |
+| Pass 0091 adapter creates 10 Crucible-ready measurements with 10 MATCH and 0 DRIFT. | MATCH | fenced | 1 | artifact-review | deviation 0 within tolerance 0.5 |
+| Pass 0091 records 3 source anchors and no Julia replacement, scientific discovery, or natural-law claim. | MATCH | fenced | 1 | artifact-review | deviation 0 within tolerance 0.5 |
+| Pass 0091 flagship receipts for Forum, Index, and Telos all have MATCH status. | MATCH | fenced | 1 | artifact-review | deviation 0 within tolerance 0.5 |
+| Pass 0091 composer sha256 is 4664d791bc4b40fae157d0bf9051f0a03518437f7b0a6af1c70d5ff536594955, packet sha256 is 4cba65f534c59c82b6827c9c259789d5896beb700f1443a87f69401fdbf708b7, brief sha256 is d33ac6ab6c71ad6ee93468a73da23d0f14e89d3c86397ae984d0decfbdc8fedd, steelman sha256 is ea5e14b509759bb75eec141ee5ed7968f8becf77fa57270d23a6bc4430e65581, test sha256 is 0d7a2217b2922ce5bac96e3057952b08a653163be442ecd8300c08a991d519ae, and tool_receipts sha256 is 7ee55a25f9bf969bbe961a78a31ad241195cd4e3d5684113def71150233470a5 with test_receipt status MATCH. | MATCH | fenced | 1 | artifact-review | deviation 0 within tolerance 0.5 |
+
+## Measurement Evidence
+
+| Claim | Method | Evidence |
+| --- | --- | --- |
+| Pass 0091 created a BuildLangCorpusCrucibleAdapterReceipt/v1 artifact with status BUILDLANG_CORPUS_CRUCIBLE_ADAPTER_MATCH, sha256 1ed04f72baf9376681f6d67d609fe78f68c4d7a9dc53e644a643746a9063c990, and seal 0ecba8c12f9c041ed6dc3a126e5722afae3afe8881cd262f69adcafda4ca60ac. | artifact-review | schema=BuildLangCorpusCrucibleAdapterReceipt/v1; status=BUILDLANG_CORPUS_CRUCIBLE_ADAPTER_MATCH; sha256=1ed04f72baf9376681f6d67d609fe78f68c4d7a9dc53e644a643746a9063c990; seal=0ecba8c12f9c041ed6dc3a126e5722afae3afe8881cd262f69adcafda4ca60ac |
+| Pass 0091 binds prior pass 0090 and BuildLang proof-surface pass 0080. | artifact-review | source_pass=0090; proof_surface_pass=0080 |
+| Pass 0091 BuildLang repo state exists=True branch_line ## fix/module-double-register dirty_count 0. | artifact-review | repo_exists=True; branch_line=## fix/module-double-register; dirty_count=0 |
+| Pass 0091 live buildc corpus run status is MATCH with exit_code 0, match 10, drift 0, and stdout sha256 fbe2daff8da1804b00cafe9a9fff36fc649429071b25f6a2561003255f6310d3. | artifact-review | corpus_status=MATCH; exit_code=0; match=10; drift=0; stdout_sha256=fbe2daff8da1804b00cafe9a9fff36fc649429071b25f6a2561003255f6310d3 |
+| Pass 0091 adapter creates 10 Crucible-ready measurements with 10 MATCH and 0 DRIFT. | artifact-review | measurement_count=10; match=10; drift=0 |
+| Pass 0091 records 3 source anchors and no Julia replacement, scientific discovery, or natural-law claim. | artifact-review | source_anchor_count=3; promotion_boundary={'adapter_only': True, 'julia_replacement_claim': False, 'new_natural_law_claim': False, 'scientific_discovery_claim': False} |
+| Pass 0091 flagship receipts for Forum, Index, and Telos all have MATCH status. | artifact-review | forum=MATCH; index=MATCH; telos=MATCH |
+| Pass 0091 composer sha256 is 4664d791bc4b40fae157d0bf9051f0a03518437f7b0a6af1c70d5ff536594955, packet sha256 is 4cba65f534c59c82b6827c9c259789d5896beb700f1443a87f69401fdbf708b7, brief sha256 is d33ac6ab6c71ad6ee93468a73da23d0f14e89d3c86397ae984d0decfbdc8fedd, steelman sha256 is ea5e14b509759bb75eec141ee5ed7968f8becf77fa57270d23a6bc4430e65581, test sha256 is 0d7a2217b2922ce5bac96e3057952b08a653163be442ecd8300c08a991d519ae, and tool_receipts sha256 is 7ee55a25f9bf969bbe961a78a31ad241195cd4e3d5684113def71150233470a5 with test_receipt status MATCH. | artifact-review | composer_sha256=4664d791bc4b40fae157d0bf9051f0a03518437f7b0a6af1c70d5ff536594955; packet_sha256=4cba65f534c59c82b6827c9c259789d5896beb700f1443a87f69401fdbf708b7; brief_sha256=d33ac6ab6c71ad6ee93468a73da23d0f14e89d3c86397ae984d0decfbdc8fedd; steelman_sha256=ea5e14b509759bb75eec141ee5ed7968f8becf77fa57270d23a6bc4430e65581; test_sha256=0d7a2217b2922ce5bac96e3057952b08a653163be442ecd8300c08a991d519ae; tool_receipts_sha256=7ee55a25f9bf969bbe961a78a31ad241195cd4e3d5684113def71150233470a5; test_status=MATCH; compose_status=MATCH |

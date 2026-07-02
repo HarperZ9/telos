@@ -1,0 +1,38 @@
+{
+  "measurements": [
+    {
+      "claim": "The Navier-Stokes periodic skew-symmetry packet has a reference kernel receipt whose deterministic finite-mode nonlinear energy-transfer probe reports MATCH within declared tolerances.",
+      "method": "reference-kernel-skew-symmetry-receipt-review",
+      "evidence": [
+        "run.receipt.json exists",
+        "bounded_skew_symmetry_probe is MATCH",
+        "nonlinear_energy_transfer_abs 7.792811534956812e-14 <= 1e-10",
+        "max_divergence_abs 0 <= 1e-12"
+      ],
+      "deviation": 0,
+      "tolerance": 0.5
+    },
+    {
+      "claim": "The Navier-Stokes periodic skew-symmetry packet explicitly keeps the parent Navier-Stokes Millennium problem UNVERIFIABLE.",
+      "method": "grand-claim-boundary-review",
+      "evidence": [
+        "run receipt parent_millennium_problem is UNVERIFIABLE",
+        "problem.statement.json grand_claim_status is UNVERIFIABLE",
+        "subclaim.skew_symmetry.md What This Does Not Prove section blocks Navier-Stokes parent promotion"
+      ],
+      "deviation": 0,
+      "tolerance": 0.5
+    },
+    {
+      "claim": "The packet includes negative boundaries that block promoting a finite-mode skew-symmetry witness into a global regularity theorem, physical-fluid validation, or new law-of-physics claim.",
+      "method": "negative-boundary-review",
+      "evidence": [
+        "problem.statement.json negative_boundaries block parent, global regularity, physical-fluid, and law claims",
+        "subclaim.skew_symmetry.md What This Does Not Prove section lists parent/global/physical/law boundaries",
+        "run.receipt.json boundaries block arbitrary numerical discretization and physical-fluid validity"
+      ],
+      "deviation": 0,
+      "tolerance": 0.5
+    }
+  ]
+}

@@ -1,0 +1,149 @@
+{
+  "updated_tool_floor": {
+    "gather": "1.5.0",
+    "index": "2.8.0",
+    "forum": "1.12.0",
+    "crucible": "1.1.0",
+    "telos": "0.1.0"
+  },
+  "registry_layers": [
+    {
+      "id": "repository_directories",
+      "sources": ["OpenDOAR", "re3data", "OpenAIRE data sources", "BASE"],
+      "purpose": "Find institutional, disciplinary, and data repositories before adapter work begins.",
+      "adapter": "RepositoryDirectoryAdapter"
+    },
+    {
+      "id": "research_org_identity",
+      "sources": ["ROR"],
+      "purpose": "Connect university, lab, funder, hospital, and institute identities to outputs and repositories.",
+      "adapter": "OrganizationIdentityAdapter"
+    },
+    {
+      "id": "scholarly_graphs",
+      "sources": ["OpenAlex", "Semantic Scholar", "Crossref", "DataCite", "CORE"],
+      "purpose": "Map works, authors, institutions, citations, funders, licenses, datasets, and repository links.",
+      "adapter": "ScholarlyGraphAdapter"
+    },
+    {
+      "id": "open_access_and_journals",
+      "sources": ["DOAJ", "Unpaywall"],
+      "purpose": "Classify open access state, journal metadata, license state, and legal full-text routes.",
+      "adapter": "OpenAccessStateAdapter"
+    },
+    {
+      "id": "preprint_press",
+      "sources": ["arXiv", "bioRxiv", "medRxiv", "OSF Preprints"],
+      "purpose": "Capture fast-moving claims before peer review while fencing publication and replication state.",
+      "adapter": "PreprintIntakeAdapter"
+    },
+    {
+      "id": "biomedical_literature",
+      "sources": ["Europe PMC", "NCBI APIs", "PubMed", "PMC"],
+      "purpose": "Route biomedical literature, grants, clinical links, full text, and annotations into claim cards.",
+      "adapter": "BiomedicalLiteratureAdapter"
+    },
+    {
+      "id": "repository_platforms",
+      "sources": ["Dataverse", "DSpace", "InvenioRDM", "OAI-PMH"],
+      "purpose": "Normalize institutional repository platform protocols into one ingest and replay contract.",
+      "adapter": "RepositoryPlatformAdapter"
+    },
+    {
+      "id": "domain_data_systems",
+      "sources": ["UniProt", "RCSB PDB", "Materials Project"],
+      "purpose": "Capture domain databases where claims depend on sequences, structures, materials, and measured properties.",
+      "adapter": "DomainDataAdapter"
+    },
+    {
+      "id": "ml_dataset_hubs",
+      "sources": ["OpenML", "Hugging Face Dataset Viewer"],
+      "purpose": "Track dataset rows, splits, tasks, model-eval context, contamination risk, and benchmark provenance.",
+      "adapter": "MLDatasetHubAdapter"
+    },
+    {
+      "id": "interoperability_protocols",
+      "sources": ["OAI-PMH", "REST", "Graph APIs", "bulk dumps"],
+      "purpose": "Choose the cheapest reliable route for massive, repeatable, source-bounded harvesting.",
+      "adapter": "ProtocolNegotiationAdapter"
+    }
+  ],
+  "cross_industry_underpinnings": [
+    "Every field needs source identity, organization identity, version identity, license state, access route, and freshness receipts.",
+    "Every scientific claim must separate source existence, claim text, measurement, computation, proof, replication, and market relevance.",
+    "Preprint, dataset, registry, and repository records are leads until paired with verification, replay, or independent measurement.",
+    "A universal research substrate needs adapters for metadata graphs, repository protocols, full text, domain databases, executable kernels, and review verdicts.",
+    "Hard-problem work should start with falsifiable claim cards and negative controls before synthesis or theorem promotion."
+  ],
+  "world_problem_workbenches": [
+    {
+      "id": "formal_math_theorem_factory",
+      "substrates": ["arXiv math", "Lean/mathlib", "SAIR competitions", "OpenAlex citations"],
+      "first_experiment": "Convert one theorem source cluster into statement variants, proof obligations, Lean replay gates, and counterexample search receipts."
+    },
+    {
+      "id": "physics_law_candidate_lab",
+      "substrates": ["arXiv physics", "NASA ADS followup", "Materials Project", "simulation kernels"],
+      "first_experiment": "Build law-candidate packets with units, invariants, simulation replay, uncertainty, and falsification criteria."
+    },
+    {
+      "id": "biology_mechanism_lab",
+      "substrates": ["Europe PMC", "NCBI", "UniProt", "RCSB PDB", "bioRxiv"],
+      "first_experiment": "Join paper claims to sequence, protein, structure, pathway, and experiment records before biological synthesis."
+    },
+    {
+      "id": "clinical_evidence_lab",
+      "substrates": ["Europe PMC", "ClinicalTrials.gov followup", "medRxiv", "PMC"],
+      "first_experiment": "Separate protocol, endpoint, cohort, result, replication, and safety evidence into clinical claim packets."
+    },
+    {
+      "id": "materials_discovery_lab",
+      "substrates": ["Materials Project", "DataCite", "Zenodo", "arXiv"],
+      "first_experiment": "Build property-prediction packets that join source claim, computed property, structure, code, and error bounds."
+    },
+    {
+      "id": "ai_benchmark_truth_lab",
+      "substrates": ["OpenML", "Hugging Face datasets", "Semantic Scholar", "OpenAlex"],
+      "first_experiment": "Create contamination, split, license, model-output, and verifier receipts for benchmark claims."
+    },
+    {
+      "id": "institutional_knowledge_graph",
+      "substrates": ["ROR", "OpenDOAR", "Dataverse", "DSpace", "OAI-PMH"],
+      "first_experiment": "Map one university from organization identity to repository endpoints, datasets, theses, papers, grants, and labs."
+    },
+    {
+      "id": "buildlang_scientific_runtime",
+      "substrates": ["Domain databases", "preprints", "datasets", "compiler/runtime receipts"],
+      "first_experiment": "Compile one exact scientific kernel with source, data, units, benchmark, runtime, and verifier receipts."
+    }
+  ],
+  "adapter_requirements": [
+    "source_system",
+    "source_url",
+    "protocol",
+    "record_identifier",
+    "record_version",
+    "organization_identifier",
+    "license_or_terms_ref",
+    "access_route",
+    "body_or_metadata_hash",
+    "freshness_time",
+    "claim_extraction_state",
+    "domain_units_or_schema",
+    "negative_controls",
+    "verifier",
+    "promotion_boundary"
+  ],
+  "negative_fixtures": [
+    "Registry presence is not source correctness.",
+    "Repository count or breadth is not full domain coverage.",
+    "Preprint presence is not peer review or replication.",
+    "Metadata record is not full text or experimental data.",
+    "Dataset availability is not benchmark validity.",
+    "Institutional repository membership is not organization endorsement.",
+    "Open access route is not license clearance for every downstream use.",
+    "API documentation is not a stable adapter until endpoint behavior is probed.",
+    "Domain database record is not a law, theorem, or mechanism proof.",
+    "Cross-domain synthesis is not promoted without claim-level verification."
+  ]
+}

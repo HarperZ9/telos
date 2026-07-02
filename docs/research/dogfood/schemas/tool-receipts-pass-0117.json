@@ -1,0 +1,229 @@
+{
+  "availability": {
+    "agda": {
+      "executable": "agda",
+      "path": null,
+      "status": "MISSING"
+    },
+    "coqc": {
+      "executable": "coqc",
+      "path": null,
+      "status": "MISSING"
+    },
+    "isabelle": {
+      "executable": "isabelle",
+      "path": null,
+      "status": "MISSING"
+    },
+    "lake": {
+      "executable": "lake",
+      "path": null,
+      "status": "MISSING"
+    },
+    "lean": {
+      "executable": "lean",
+      "path": null,
+      "status": "MISSING"
+    }
+  },
+  "compose": {
+    "command": "C:\\Users\\Zain\\AppData\\Local\\Programs\\Python\\Python312\\python.exe C:\\dev\\public\\telos\\docs\\research\\dogfood\\tools\\compose_theorem_prover_adapter_receipt.py --out C:\\dev\\public\\telos\\docs\\research\\dogfood\\schemas\\theorem-prover-adapter-receipt-pass-0117.json",
+    "exit_code": 0,
+    "status": "MATCH",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "3d1b08f53192c3c08ee5317a5cc9296bb9e80558c287995e3b855ed1a5181ba6"
+  },
+  "countermodel": {
+    "bad_identity": {
+      "b0": "b1",
+      "b1": "b0"
+    },
+    "classification": "BAD_IDENTITY_DRIFT",
+    "expected": {
+      "a0": "b0",
+      "a1": "b1"
+    },
+    "observed": {
+      "a0": "b1",
+      "a1": "b0"
+    },
+    "status": "MATCH"
+  },
+  "forum": {
+    "confidence": 0.125,
+    "decided": null,
+    "exit_code": 0,
+    "needs_escalation": true,
+    "status": "MATCH",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "a70d5f95cb9dd305f9ec5dd544439bf31a9ebeb4813bfd5394a01fa229da18b8",
+    "top_candidates": [
+      {
+        "agent": "model-foundry",
+        "score": 0.125
+      },
+      {
+        "agent": "backend",
+        "score": 0.0
+      },
+      {
+        "agent": "ci-cd",
+        "score": 0.0
+      },
+      {
+        "agent": "cloud-infra",
+        "score": 0.0
+      },
+      {
+        "agent": "code-review",
+        "score": 0.0
+      }
+    ]
+  },
+  "index": {
+    "exit_code": 0,
+    "schema": "project-telos.context-envelope/v1",
+    "status": "MATCH",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "901fc2d515c1b8422a90e02aea1f48aeef1daa46ff76d1399ff340e6d817306f",
+    "verification_verdict": "MATCH"
+  },
+  "pass": "0117",
+  "prover_branches": [
+    {
+      "branch_id": "python_finite_model_replay",
+      "status": "MATCH",
+      "target_count": 3,
+      "verifier": "python_finite_function_equality"
+    },
+    {
+      "branch_id": "lean4_target",
+      "executable": "lean",
+      "status": "UNAVAILABLE_FENCED",
+      "target_count": 3
+    },
+    {
+      "branch_id": "rocq_target",
+      "executable": "coqc",
+      "status": "UNAVAILABLE_FENCED",
+      "target_count": 3
+    },
+    {
+      "branch_id": "isabelle_target",
+      "executable": "isabelle",
+      "status": "UNAVAILABLE_FENCED",
+      "target_count": 3
+    },
+    {
+      "branch_id": "agda_target",
+      "executable": "agda",
+      "status": "UNAVAILABLE_FENCED",
+      "target_count": 3
+    }
+  ],
+  "schema": "DogfoodToolReceipts/v1",
+  "seal": "28d8191a8d3e3b3e5432c748a581f4eb56cc4918718fac22ea33a684a1a01f69",
+  "source_surface": {
+    "anchor_count": 7,
+    "anchors": [
+      {
+        "kind": "official_docs",
+        "tool": "Lean",
+        "url": "https://lean-lang.org/doc/reference/latest/"
+      },
+      {
+        "kind": "official_docs",
+        "tool": "Lean TPIL",
+        "url": "https://lean-lang.org/theorem_proving_in_lean4/"
+      },
+      {
+        "kind": "official_docs",
+        "tool": "Lean mathlib",
+        "url": "https://leanprover-community.github.io/mathlib4_docs/"
+      },
+      {
+        "kind": "official_docs",
+        "tool": "Lean Lake",
+        "url": "https://leanprover-community.github.io/install/project.html"
+      },
+      {
+        "kind": "official_docs",
+        "tool": "Rocq",
+        "url": "https://rocq-prover.org/"
+      },
+      {
+        "kind": "official_docs",
+        "tool": "Isabelle",
+        "url": "https://isabelle.in.tum.de/"
+      },
+      {
+        "kind": "official_docs",
+        "tool": "Agda",
+        "url": "https://agda.readthedocs.io/en/latest/getting-started/what-is-agda.html"
+      }
+    ],
+    "gap_status": "hypothesis"
+  },
+  "telos": {
+    "exit_code": 0,
+    "status": "MATCH",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "be17cb15259234cb4e8e95c2b36e76c90d841431729beb140294e34c5f9ebfa7",
+    "tool": "telos",
+    "tool_version": "0.1.0"
+  },
+  "test": {
+    "command": "C:\\Users\\Zain\\AppData\\Local\\Programs\\Python\\Python312\\python.exe C:\\dev\\public\\telos\\docs\\research\\dogfood\\tools\\test_theorem_prover_adapter_receipt.py",
+    "exit_code": 0,
+    "status": "MATCH",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "theorem_targets": [
+    {
+      "claim_status": "FINITE_MODEL_VERIFIED",
+      "expected": {
+        "a0": "b0",
+        "a1": "b1"
+      },
+      "lean_style_target": "theorem idB_comp_f_eq_f : finite_model_check := by native_decide",
+      "observed": {
+        "a0": "b0",
+        "a1": "b1"
+      },
+      "proof_object_status": "NOT_EXECUTED_PROVER_UNAVAILABLE",
+      "proposition": "idB_comp_f_eq_f",
+      "target_id": "left_identity"
+    },
+    {
+      "claim_status": "FINITE_MODEL_VERIFIED",
+      "expected": {
+        "a0": "b0",
+        "a1": "b1"
+      },
+      "lean_style_target": "theorem f_comp_idA_eq_f : finite_model_check := by native_decide",
+      "observed": {
+        "a0": "b0",
+        "a1": "b1"
+      },
+      "proof_object_status": "NOT_EXECUTED_PROVER_UNAVAILABLE",
+      "proposition": "f_comp_idA_eq_f",
+      "target_id": "right_identity"
+    },
+    {
+      "claim_status": "FINITE_MODEL_VERIFIED",
+      "expected": {
+        "a0": "d1",
+        "a1": "d0"
+      },
+      "lean_style_target": "theorem h_comp_g_comp_f_assoc : finite_model_check := by native_decide",
+      "observed": {
+        "a0": "d1",
+        "a1": "d0"
+      },
+      "proof_object_status": "NOT_EXECUTED_PROVER_UNAVAILABLE",
+      "proposition": "h_comp_g_comp_f_assoc",
+      "target_id": "associativity"
+    }
+  ]
+}

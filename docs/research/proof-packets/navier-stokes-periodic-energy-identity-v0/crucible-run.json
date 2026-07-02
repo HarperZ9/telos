@@ -1,0 +1,196 @@
+{
+  "ok": true,
+  "thesis": {
+    "id": "1a771e171c3b7f52",
+    "title": "Navier-Stokes Periodic Energy Identity Bounded Subclaim",
+    "registered_at": 1782988924.954699,
+    "disposition": "fenced",
+    "seal": "1a771e171c3b7f527243c16057fb197efda05e6863f41730a7d054fc33963c35",
+    "claims": [
+      {
+        "id": "25e3d1ef45a09c17",
+        "sha256": "25e3d1ef45a09c178e3b622249063c3582e099b5b2cf9fcbcf1e16a057b24d76"
+      },
+      {
+        "id": "7e1d7d9ddd3b00ea",
+        "sha256": "7e1d7d9ddd3b00eafce24417057ca1fb1778f642ea2a0ab11c53ca650cee5f67"
+      },
+      {
+        "id": "905fa52679ad6a31",
+        "sha256": "905fa52679ad6a31b663cf537887f21ed75a4b02d42ee79e9659f7b30d5e4210"
+      }
+    ]
+  },
+  "refutations": [
+    {
+      "claim_id": "25e3d1ef45a09c17",
+      "claim_sha256": "25e3d1ef45a09c178e3b622249063c3582e099b5b2cf9fcbcf1e16a057b24d76",
+      "challenge": "test the stated falsification: The run receipt is missing, the bounded_identity_probe is not MATCH, or the energy/dissipation/residual/divergence measurements exceed tolerance.",
+      "measurable": "The run receipt is missing, the bounded_identity_probe is not MATCH, or the energy/dissipation/residual/divergence measurements exceed tolerance.",
+      "source": "null"
+    },
+    {
+      "claim_id": "7e1d7d9ddd3b00ea",
+      "claim_sha256": "7e1d7d9ddd3b00eafce24417057ca1fb1778f642ea2a0ab11c53ca650cee5f67",
+      "challenge": "test the stated falsification: The packet or run receipt claims the parent Navier-Stokes existence and smoothness problem is solved or verified.",
+      "measurable": "The packet or run receipt claims the parent Navier-Stokes existence and smoothness problem is solved or verified.",
+      "source": "null"
+    },
+    {
+      "claim_id": "905fa52679ad6a31",
+      "claim_sha256": "905fa52679ad6a31b663cf537887f21ed75a4b02d42ee79e9659f7b30d5e4210",
+      "challenge": "test the stated falsification: The packet omits negative boundaries or states that a finite grid check proves the continuous grand theorem.",
+      "measurable": "The packet omits negative boundaries or states that a finite grid check proves the continuous grand theorem.",
+      "source": "null"
+    }
+  ],
+  "assessment": {
+    "started_at": 1782988924.963786,
+    "thesis_id": "1a771e171c3b7f52",
+    "thesis_seal": "1a771e171c3b7f527243c16057fb197efda05e6863f41730a7d054fc33963c35",
+    "claims": 3,
+    "match": 3,
+    "drift": 0,
+    "unverifiable": 0,
+    "verdict_seal": "1f2351c3aee05689a904cdb6f7b68a2ca3948b730bbc48e857244100de11bcd0",
+    "measurement_seal": "7b2773abb0b106e20aa82cd3b6844e9f896d09b01407e3cd4fad6d29b735128f",
+    "disposition": "fenced",
+    "stored": null,
+    "verdicts": [
+      {
+        "claim_id": "25e3d1ef45a09c17",
+        "claim_sha256": "25e3d1ef45a09c178e3b622249063c3582e099b5b2cf9fcbcf1e16a057b24d76",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "reference-kernel-run-receipt-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "7e1d7d9ddd3b00ea",
+        "claim_sha256": "7e1d7d9ddd3b00eafce24417057ca1fb1778f642ea2a0ab11c53ca650cee5f67",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "grand-claim-boundary-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "905fa52679ad6a31",
+        "claim_sha256": "905fa52679ad6a31b663cf537887f21ed75a4b02d42ee79e9659f7b30d5e4210",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "negative-boundary-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      }
+    ],
+    "measurements": [
+      {
+        "claim_id": "25e3d1ef45a09c17",
+        "claim_sha256": "25e3d1ef45a09c178e3b622249063c3582e099b5b2cf9fcbcf1e16a057b24d76",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "reference-kernel-run-receipt-review",
+        "measured_at": 1782988924.963786,
+        "evidence": [
+          "docs/research/proof-packets/navier-stokes-periodic-energy-identity-v0/run.receipt.json exists",
+          "bounded_identity_probe is MATCH",
+          "energy_abs_error 1.8385293287792592e-13 <= 1e-10",
+          "dissipation_abs_error 7.460698725481052e-14 <= 1e-10",
+          "residual_numeric_abs 7.460698725481052e-14 <= 1e-10",
+          "max_divergence_abs 0 <= 1e-12"
+        ]
+      },
+      {
+        "claim_id": "7e1d7d9ddd3b00ea",
+        "claim_sha256": "7e1d7d9ddd3b00eafce24417057ca1fb1778f642ea2a0ab11c53ca650cee5f67",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "grand-claim-boundary-review",
+        "measured_at": 1782988924.963786,
+        "evidence": [
+          "run receipt parent_millennium_problem is UNVERIFIABLE",
+          "problem.statement.json grand_claim_status is UNVERIFIABLE",
+          "subclaim.energy_identity.md says it does not prove existence and smoothness for arbitrary Navier-Stokes solutions"
+        ]
+      },
+      {
+        "claim_id": "905fa52679ad6a31",
+        "claim_sha256": "905fa52679ad6a31b663cf537887f21ed75a4b02d42ee79e9659f7b30d5e4210",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "negative-boundary-review",
+        "measured_at": 1782988924.963786,
+        "evidence": [
+          "problem.statement.json negative_boundaries include no grand-proof promotion",
+          "subclaim.energy_identity.md What This Does Not Prove section blocks global regularity and physical-simulator claims",
+          "run receipt boundaries block arbitrary simulation and physical-fluid validation claims"
+        ]
+      }
+    ],
+    "seal": "c65b234f56f85720c1dc322c7c15f44bdc782f48ab0541f7e815d2e89e06ed06"
+  },
+  "verdicts": [
+    {
+      "claim_id": "25e3d1ef45a09c17",
+      "claim_sha256": "25e3d1ef45a09c178e3b622249063c3582e099b5b2cf9fcbcf1e16a057b24d76",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "reference-kernel-run-receipt-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "7e1d7d9ddd3b00ea",
+      "claim_sha256": "7e1d7d9ddd3b00eafce24417057ca1fb1778f642ea2a0ab11c53ca650cee5f67",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "grand-claim-boundary-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "905fa52679ad6a31",
+      "claim_sha256": "905fa52679ad6a31b663cf537887f21ed75a4b02d42ee79e9659f7b30d5e4210",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "negative-boundary-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    }
+  ],
+  "measurement_warnings": [],
+  "checks": {
+    "seals_ok": true,
+    "thesis_ok": true,
+    "verdicts_rederive": true
+  },
+  "report": "docs\\research\\proof-packets\\navier-stokes-periodic-energy-identity-v0\\crucible-report.md",
+  "record": "docs\\research\\proof-packets\\navier-stokes-periodic-energy-identity-v0\\crucible-run.json",
+  "bundle": null,
+  "spec": null,
+  "review": null,
+  "verifier": {
+    "mode": "cleanroom",
+    "inputs": [],
+    "excluded": [
+      "worker context",
+      "reasoning trace",
+      "intermediate steps"
+    ],
+    "checkability": "If success cannot be evaluated from the original spec and the artifact, the spec is not checkable yet."
+  }
+}

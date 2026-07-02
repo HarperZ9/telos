@@ -1,0 +1,216 @@
+{
+  "author": {
+    "id": "MDQ6VXNlcjI5MTU3NQ==",
+    "is_bot": false,
+    "login": "flying-sheep",
+    "name": "Philipp A."
+  },
+  "body": "### Pandas version checks\n\n- [x] I have checked that this issue has not already been reported.\n- [x] I have confirmed this bug exists on the [latest version](https://pandas.pydata.org/docs/whatsnew/index.html) of pandas.\n- [ ] I have confirmed this bug exists on the [main branch](https://pandas.pydata.org/docs/dev/getting_started/install.html#installing-the-development-version-of-pandas) of pandas.\n\n\n### Reproducible Example\n\n```python\nimport pandas as pd\n\narr = pd.array([\"a\"], dtype=\"string[pyarrow]\")  # or \"string\" with pyarrow installed\n(arr == arr).sum()\n```\n\n### Issue Description\n\nthe dtype of `(arr == arr)` is `bool[pyarrow]`, and the MRE yields:\n\n```pytb\nAttributeError: 'ArrowExtensionArray' object has no attribute 'sum'\n```\n\n### Expected Behavior\n\n[the docs](https://pandas.pydata.org/docs/reference/api/pandas.arrays.ArrowExtensionArray.html) say that “Most methods are implemented using [pyarrow compute functions](https://arrow.apache.org/docs/python/api/compute.html)”, so I expect some methods to be available.\n\nOlder pandas versions probably returned a `pd.arrays.BooleanArray` which has these methods.\n\n### Installed Versions\n\n<details>\n\n\nINSTALLED VERSIONS\n------------------\ncommit                : 72427599b673c58e91c4e96a610fe753e3edc550\npython                : 3.14.0\n\npython-bits           : 64\nOS                    : Linux\nOS-release            : 6.18.1-zen1-2-zen\nVersion               : #1 ZEN SMP PREEMPT_DYNAMIC Sat, 13 Dec 2025 18:23:05 +0000\nmachine               : x86_64\nprocessor             : \nbyteorder             : little\nLC_ALL                : None\nLANG                  : de_DE.UTF-8\nLOCALE                : en_US.UTF-8\n\npandas                : 3.0.0rc1\nnumpy                 : 2.3.5\ndateutil              : 2.9.0.post0\npip                   : None\nCython                : None\nsphinx                : None\nIPython               : 9.8.0\nadbc-driver-postgresql: None\nadbc-driver-sqlite    : None\nbs4                   : None\nbottleneck            : None\nfastparquet           : None\nfsspec                : 2025.12.0\nhtml5lib              : None\nhypothesis            : None\ngcsfs                 : None\njinja2                : 3.1.6\nlxml.etree            : None\nmatplotlib            : 3.10.8\nnumba                 : 0.63.1\nnumexpr               : None\nodfpy                 : None\nopenpyxl              : None\npsycopg2              : None\npymysql               : None\npyarrow               : 22.0.0\npyiceberg             : None\npyreadstat            : None\npytest                : 9.0.2\npython-calamine       : None\npytz                  : 2025.2\npyxlsb                : None\ns3fs                  : None\nscipy                 : 1.17.0rc1\nsqlalchemy            : None\ntables                : None\ntabulate              : None\nxarray                : None\nxlrd                  : None\nxlsxwriter            : None\nzstandard             : None\nqtpy                  : None\npyqt5                 : None\n\n\n</details>\n",
+  "comments": [
+    {
+      "id": "IC_kwDOAA0YD87bc1iP",
+      "author": {
+        "login": "rhshadrach"
+      },
+      "authorAssociation": "MEMBER",
+      "body": "Methods such as `sum` can be used by wrapping the array in a Series.\n\n```python\narr = pd.array([\"a\"], dtype=\"string[pyarrow]\")\nprint(Series(arr == arr).sum())\n# 1\n```\n\nThese methods are only implemented at the array level on an as-needed basis.",
+      "createdAt": "2025-12-22T12:00:11Z",
+      "includesCreatedEdit": true,
+      "isMinimized": false,
+      "minimizedReason": "",
+      "reactionGroups": [],
+      "url": "https://github.com/pandas-dev/pandas/issues/63458#issuecomment-3681769615",
+      "viewerDidAuthor": false
+    },
+    {
+      "id": "IC_kwDOAA0YD87bducS",
+      "author": {
+        "login": "flying-sheep"
+      },
+      "authorAssociation": "CONTRIBUTOR",
+      "body": "Why? Series have an `.index`, which complicates semantics, e.g. a RangeIndex becomes a integer index when slicing and allocates the integers, whereas an array just has positional indices.",
+      "createdAt": "2025-12-22T12:58:25Z",
+      "includesCreatedEdit": true,
+      "isMinimized": false,
+      "minimizedReason": "",
+      "reactionGroups": [],
+      "url": "https://github.com/pandas-dev/pandas/issues/63458#issuecomment-3682002706",
+      "viewerDidAuthor": false
+    },
+    {
+      "id": "IC_kwDOAA0YD87bd1Ep",
+      "author": {
+        "login": "rhshadrach"
+      },
+      "authorAssociation": "MEMBER",
+      "body": "Actually, looking at this in more detail it seems to me adding e.g. a `sum` method may have just be overlooked. \n\n@jbrockmendel @jorisvandenbossche - good to add `sum` et al methods here?",
+      "createdAt": "2025-12-22T13:06:39Z",
+      "includesCreatedEdit": false,
+      "isMinimized": false,
+      "minimizedReason": "",
+      "reactionGroups": [],
+      "url": "https://github.com/pandas-dev/pandas/issues/63458#issuecomment-3682029865",
+      "viewerDidAuthor": false
+    },
+    {
+      "id": "IC_kwDOAA0YD87bePKV",
+      "author": {
+        "login": "jorisvandenbossche"
+      },
+      "authorAssociation": "MEMBER",
+      "body": "FWIW, this is not a regression related to 3.0.0, as this is already the behaviour we have since (at least) 2.0.0. \n\n> Older pandas versions probably returned a `pd.arraysBooleanArray` which has these methods.\n\nThis is a correct assumption. At some point we changed the NA string dtype to return arrow extension arrays for certain operations. Personally, I think that was a mistake, and we never really discussed it (it only has come up after the fact in related discussions around logical dtypes, and eg because of a similar change in value_counts: https://github.com/pandas-dev/pandas/issues/59346)\n\n---\n\nOn the actual issue of a missing `sum`, that sounds fine to add to ArrowExtensionArray (but then it is not just sum, and we have to decide which keywords to support exactly, etc, although making it consistent to the other extension arrays (eg the masked array) probably makes the most sense) ",
+      "createdAt": "2025-12-22T13:41:53Z",
+      "includesCreatedEdit": false,
+      "isMinimized": false,
+      "minimizedReason": "",
+      "reactionGroups": [],
+      "url": "https://github.com/pandas-dev/pandas/issues/63458#issuecomment-3682136725",
+      "viewerDidAuthor": false
+    },
+    {
+      "id": "IC_kwDOAA0YD87bgq9C",
+      "author": {
+        "login": "flying-sheep"
+      },
+      "authorAssociation": "CONTRIBUTOR",
+      "body": "> FWIW, this is not a regression related to 3.0.0, as this is already the behaviour we have since (at least) 2.0.0.\n\nright, it’s just that people will run into this vastly more often when `pd.options.future.infer_string` flips to `True` by default in 3.0",
+      "createdAt": "2025-12-22T16:16:11Z",
+      "includesCreatedEdit": false,
+      "isMinimized": false,
+      "minimizedReason": "",
+      "reactionGroups": [],
+      "url": "https://github.com/pandas-dev/pandas/issues/63458#issuecomment-3682774850",
+      "viewerDidAuthor": false
+    },
+    {
+      "id": "IC_kwDOAA0YD87bg0tJ",
+      "author": {
+        "login": "jorisvandenbossche"
+      },
+      "authorAssociation": "MEMBER",
+      "body": "That shouldn't be the case, because the default string dtype is not `\"string[pyarrow]\"` (the already longer existing StringDtype that uses NA as missing value indicator), but \"str\" (the newer variant of StringDtype that still uses np.nan as missing value indicator). \n\nFor the default dtype, the comparison still returns numpy bool dtype, and so the example works as expected (this is on main):\n\n```\n>>> ser = pd.Series([\"a\"])\n>>> ser\n0    a\ndtype: str\n>>> arr = ser.array\n>>> (arr == arr).sum()\nnp.int64(1)\n```",
+      "createdAt": "2025-12-22T16:27:47Z",
+      "includesCreatedEdit": false,
+      "isMinimized": false,
+      "minimizedReason": "",
+      "reactionGroups": [],
+      "url": "https://github.com/pandas-dev/pandas/issues/63458#issuecomment-3682814793",
+      "viewerDidAuthor": false
+    },
+    {
+      "id": "IC_kwDOAA0YD87biZht",
+      "author": {
+        "login": "flying-sheep"
+      },
+      "authorAssociation": "CONTRIBUTOR",
+      "body": "Sorry, I guess I was confused. I checked, and we\n1. create the array using `dtype=\"string\"`, and\n2. had `pyarrow` installed on that CI job for a long time\n\nSo whatever the case, switching to pandas 3 caused the comparison between the two arrays to return an arrow-backed array with no `.sum`, which wasn’t the case before. And that means we’re not the only ones who will run into this.\n\nSorry for the distraction!",
+      "createdAt": "2025-12-22T18:01:50Z",
+      "includesCreatedEdit": true,
+      "isMinimized": false,
+      "minimizedReason": "",
+      "reactionGroups": [],
+      "url": "https://github.com/pandas-dev/pandas/issues/63458#issuecomment-3683227757",
+      "viewerDidAuthor": false
+    },
+    {
+      "id": "IC_kwDOAA0YD87bidXb",
+      "author": {
+        "login": "jorisvandenbossche"
+      },
+      "authorAssociation": "MEMBER",
+      "body": "Ah no, it is related to 3.0 then! I forgot about this: the default engine for `dtype=\"string\"` was changed from python to pyarrow, if installed. So before 3.0 you had `string[python]` and that now changed to `string[pyarrow]`, causing this change",
+      "createdAt": "2025-12-22T18:04:20Z",
+      "includesCreatedEdit": false,
+      "isMinimized": false,
+      "minimizedReason": "",
+      "reactionGroups": [
+        {
+          "content": "THUMBS_UP",
+          "users": {
+            "totalCount": 1
+          }
+        }
+      ],
+      "url": "https://github.com/pandas-dev/pandas/issues/63458#issuecomment-3683243483",
+      "viewerDidAuthor": false
+    },
+    {
+      "id": "IC_kwDOAA0YD87e4FhG",
+      "author": {
+        "login": "sanrishi"
+      },
+      "authorAssociation": "CONTRIBUTOR",
+      "body": "@rhshadrach - I noticed this issue has been quiet for a few weeks. Are you still working on this?\n\nIf not, I'd be happy to pick it up. Since Joris confirmed this is a regression in 3.0, it seems important to get ArrowExtensionArray to feature parity with BooleanArray to prevent breakage.\n\nI plan to implement standard reductions like .sum() and .mean() on ArrowExtensionArray by delegating to pyarrow.compute, ensuring full consistency with BooleanArray behavior regarding keywords like skipna and return types.\n\nDoes this sound like the right direction?",
+      "createdAt": "2026-01-12T15:49:40Z",
+      "includesCreatedEdit": true,
+      "isMinimized": false,
+      "minimizedReason": "",
+      "reactionGroups": [],
+      "url": "https://github.com/pandas-dev/pandas/issues/63458#issuecomment-3739244614",
+      "viewerDidAuthor": false
+    },
+    {
+      "id": "IC_kwDOAA0YD87e8uMw",
+      "author": {
+        "login": "rhshadrach"
+      },
+      "authorAssociation": "MEMBER",
+      "body": "> I plan to implement standard reductions like .sum() and .mean() on ArrowExtensionArray by delegating to pyarrow.compute\n\nNo, this is not the right direction. These ops are already implemented, we shouldn't be implementing them again.\n\nYes, I am working on this. It likely won't make it into 3.0.",
+      "createdAt": "2026-01-12T20:57:41Z",
+      "includesCreatedEdit": true,
+      "isMinimized": false,
+      "minimizedReason": "",
+      "reactionGroups": [
+        {
+          "content": "THUMBS_UP",
+          "users": {
+            "totalCount": 1
+          }
+        }
+      ],
+      "url": "https://github.com/pandas-dev/pandas/issues/63458#issuecomment-3740459824",
+      "viewerDidAuthor": false
+    },
+    {
+      "id": "IC_kwDOAA0YD88AAAABH3eS-w",
+      "author": {
+        "login": "jorisvandenbossche"
+      },
+      "authorAssociation": "MEMBER",
+      "body": "@rhshadrach I think this has been fixed in the meantime? (but for 3.1)",
+      "createdAt": "2026-06-27T23:25:33Z",
+      "includesCreatedEdit": false,
+      "isMinimized": false,
+      "minimizedReason": "",
+      "reactionGroups": [],
+      "url": "https://github.com/pandas-dev/pandas/issues/63458#issuecomment-4822897403",
+      "viewerDidAuthor": false
+    }
+  ],
+  "createdAt": "2025-12-22T10:29:27Z",
+  "labels": [
+    {
+      "id": "MDU6TGFiZWw3NjgxMQ==",
+      "name": "Bug",
+      "description": "",
+      "color": "e10c02"
+    },
+    {
+      "id": "MDU6TGFiZWwxNzQxODQxMzg5",
+      "name": "API - Consistency",
+      "description": "Internal Consistency of API/Behavior",
+      "color": "b60205"
+    },
+    {
+      "id": "MDU6TGFiZWwzMzAzMTU4NDQ2",
+      "name": "Arrow",
+      "description": "pyarrow functionality",
+      "color": "f9d0c4"
+    }
+  ],
+  "number": 63458,
+  "state": "OPEN",
+  "title": "BUG: 3.0rc0: comparing `StringArray`s with `==` yields a `bool[pyarrow]` array with no `.sum()` method",
+  "updatedAt": "2026-06-27T23:25:33Z",
+  "url": "https://github.com/pandas-dev/pandas/issues/63458"
+}

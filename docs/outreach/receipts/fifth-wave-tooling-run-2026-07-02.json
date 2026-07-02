@@ -1,0 +1,288 @@
+{
+  "ok": true,
+  "thesis": {
+    "id": "f98d83348c98504a",
+    "title": "Project Telos Fifth-Wave OSS Proof Showcase Claims",
+    "registered_at": 1782984581.7433498,
+    "disposition": "fenced",
+    "seal": "f98d83348c98504a92b6312f3c0dbbd78f076b2a212dd94a906a3af84c5836a6",
+    "claims": [
+      {
+        "id": "dc520b53a7c92d4a",
+        "sha256": "dc520b53a7c92d4a8600ffc7c10f1f9a40b003ee77eecd0ef4d2c82cbf8f734e"
+      },
+      {
+        "id": "0e2718dc053ec3b3",
+        "sha256": "0e2718dc053ec3b35c6d2b71e3d7d82d60cd11a7756c3cf1bc6fed827d59a5a9"
+      },
+      {
+        "id": "cb33625b12158f19",
+        "sha256": "cb33625b12158f196dfefe477de2e313dba45a6974eacd0dd7ac687da97d2247"
+      },
+      {
+        "id": "feac672a06c025ff",
+        "sha256": "feac672a06c025ff25e202257fd22e84246f4eb43c955f9f8246973b4fe4fe8e"
+      },
+      {
+        "id": "bd53b08f6c16943c",
+        "sha256": "bd53b08f6c16943cd3d68cdb2c8ea9278679e8e8e44a24fd59b49dd3dcbafb7e"
+      }
+    ]
+  },
+  "refutations": [
+    {
+      "claim_id": "dc520b53a7c92d4a",
+      "claim_sha256": "dc520b53a7c92d4a8600ffc7c10f1f9a40b003ee77eecd0ef4d2c82cbf8f734e",
+      "challenge": "test the stated falsification: The scout output is missing, has the wrong schema, names a different candidate, or reports a priority other than 70.",
+      "measurable": "The scout output is missing, has the wrong schema, names a different candidate, or reports a priority other than 70.",
+      "source": "null"
+    },
+    {
+      "claim_id": "0e2718dc053ec3b3",
+      "claim_sha256": "0e2718dc053ec3b35c6d2b71e3d7d82d60cd11a7756c3cf1bc6fed827d59a5a9",
+      "challenge": "test the stated falsification: The generated ready packet is missing, has the wrong schema, is not PR-ready, chooses a different next action, or carries a non-MATCH verdict.",
+      "measurable": "The generated ready packet is missing, has the wrong schema, is not PR-ready, chooses a different next action, or carries a non-MATCH verdict.",
+      "source": "null"
+    },
+    {
+      "claim_id": "cb33625b12158f19",
+      "claim_sha256": "cb33625b12158f196dfefe477de2e313dba45a6974eacd0dd7ac687da97d2247",
+      "challenge": "test the stated falsification: The generated blocked packet is PR-ready, chooses open-pr, lacks the expected blockers, or carries a MATCH verdict.",
+      "measurable": "The generated blocked packet is PR-ready, chooses open-pr, lacks the expected blockers, or carries a MATCH verdict.",
+      "source": "null"
+    },
+    {
+      "claim_id": "feac672a06c025ff",
+      "claim_sha256": "feac672a06c025ff25e202257fd22e84246f4eb43c955f9f8246973b4fe4fe8e",
+      "challenge": "test the stated falsification: The demo document omits the fixture-only boundary or claims Project Telos fixed pandas.",
+      "measurable": "The demo document omits the fixture-only boundary or claims Project Telos fixed pandas.",
+      "source": "null"
+    },
+    {
+      "claim_id": "bd53b08f6c16943c",
+      "claim_sha256": "bd53b08f6c16943cd3d68cdb2c8ea9278679e8e8e44a24fd59b49dd3dcbafb7e",
+      "challenge": "test the stated falsification: The content queue omits either the ready packet or the blocked packet.",
+      "measurable": "The content queue omits either the ready packet or the blocked packet.",
+      "source": "null"
+    }
+  ],
+  "assessment": {
+    "started_at": 1782984581.7513494,
+    "thesis_id": "f98d83348c98504a",
+    "thesis_seal": "f98d83348c98504a92b6312f3c0dbbd78f076b2a212dd94a906a3af84c5836a6",
+    "claims": 5,
+    "match": 5,
+    "drift": 0,
+    "unverifiable": 0,
+    "verdict_seal": "9a4f6b0130450dbcdc8d677ff6eb12cd0b13179b515dee553759d1ec7b6627dd",
+    "measurement_seal": "ae3d4d7d8886eaf873814173f9e6a07744a7b97564ecc3dcafafb69393d54e30",
+    "disposition": "fenced",
+    "stored": null,
+    "verdicts": [
+      {
+        "claim_id": "dc520b53a7c92d4a",
+        "claim_sha256": "dc520b53a7c92d4a8600ffc7c10f1f9a40b003ee77eecd0ef4d2c82cbf8f734e",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "fixture-scout-command-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "0e2718dc053ec3b3",
+        "claim_sha256": "0e2718dc053ec3b35c6d2b71e3d7d82d60cd11a7756c3cf1bc6fed827d59a5a9",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "ready-packet-command-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "cb33625b12158f19",
+        "claim_sha256": "cb33625b12158f196dfefe477de2e313dba45a6974eacd0dd7ac687da97d2247",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "blocked-packet-command-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "feac672a06c025ff",
+        "claim_sha256": "feac672a06c025ff25e202257fd22e84246f4eb43c955f9f8246973b4fe4fe8e",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "document-boundary-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "bd53b08f6c16943c",
+        "claim_sha256": "bd53b08f6c16943cd3d68cdb2c8ea9278679e8e8e44a24fd59b49dd3dcbafb7e",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "document-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      }
+    ],
+    "measurements": [
+      {
+        "claim_id": "dc520b53a7c92d4a",
+        "claim_sha256": "dc520b53a7c92d4a8600ffc7c10f1f9a40b003ee77eecd0ef4d2c82cbf8f734e",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "fixture-scout-command-review",
+        "measured_at": 1782984581.7513494,
+        "evidence": [
+          "docs/outreach/receipts/fifth-wave/oss-showcase-scout/scout.json has schema project-telos.oss-scout/v1",
+          "scout candidate is pandas-dev/pandas#66050",
+          "scout score priority is 70"
+        ]
+      },
+      {
+        "claim_id": "0e2718dc053ec3b3",
+        "claim_sha256": "0e2718dc053ec3b35c6d2b71e3d7d82d60cd11a7756c3cf1bc6fed827d59a5a9",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "ready-packet-command-review",
+        "measured_at": 1782984581.7513494,
+        "evidence": [
+          "docs/outreach/receipts/fifth-wave/oss-showcase-fixture-ready-packet.json has schema project-telos.oss-pr-readiness/v1",
+          "ready packet pr_ready is true",
+          "ready packet operator_next_action is open-pr",
+          "ready packet verdict is MATCH"
+        ]
+      },
+      {
+        "claim_id": "cb33625b12158f19",
+        "claim_sha256": "cb33625b12158f196dfefe477de2e313dba45a6974eacd0dd7ac687da97d2247",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "blocked-packet-command-review",
+        "measured_at": 1782984581.7513494,
+        "evidence": [
+          "docs/outreach/receipts/fifth-wave/oss-showcase-fixture-blocked-packet.json has schema project-telos.oss-pr-readiness/v1",
+          "blocked packet pr_ready is false",
+          "blocked packet operator_next_action is revise",
+          "blocked packet verdict is UNVERIFIABLE",
+          "blocked packet blockers include missing passing test evidence, crucible verdict is not MATCH, and missing patch summary"
+        ]
+      },
+      {
+        "claim_id": "feac672a06c025ff",
+        "claim_sha256": "feac672a06c025ff25e202257fd22e84246f4eb43c955f9f8246973b4fe4fe8e",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "document-boundary-review",
+        "measured_at": 1782984581.7513494,
+        "evidence": [
+          "docs/outreach/FIFTH-WAVE-OSS-PROOF-SHOWCASE-2026-07-02.md says this is a package-shape demo, not a claim Project Telos fixed pandas",
+          "Do Not Post section says not to claim Project Telos fixed pandas-dev/pandas#66050",
+          "Do Not Post section says not to claim live GitHub scouting ran unless a fresh live-scout receipt exists"
+        ]
+      },
+      {
+        "claim_id": "bd53b08f6c16943c",
+        "claim_sha256": "bd53b08f6c16943cd3d68cdb2c8ea9278679e8e8e44a24fd59b49dd3dcbafb7e",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "document-review",
+        "measured_at": 1782984581.7513494,
+        "evidence": [
+          "Post 31 cites the ready evidence and ready packet",
+          "Post 32 cites the blocked evidence and blocked packet",
+          "Operating rule says to pair the ready fixture with the blocked fixture"
+        ]
+      }
+    ],
+    "seal": "93296db47b7424ac802d78ed13d0b54b26373f6864405c11dc23a7d5a61b0c1b"
+  },
+  "verdicts": [
+    {
+      "claim_id": "dc520b53a7c92d4a",
+      "claim_sha256": "dc520b53a7c92d4a8600ffc7c10f1f9a40b003ee77eecd0ef4d2c82cbf8f734e",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "fixture-scout-command-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "0e2718dc053ec3b3",
+      "claim_sha256": "0e2718dc053ec3b35c6d2b71e3d7d82d60cd11a7756c3cf1bc6fed827d59a5a9",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "ready-packet-command-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "cb33625b12158f19",
+      "claim_sha256": "cb33625b12158f196dfefe477de2e313dba45a6974eacd0dd7ac687da97d2247",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "blocked-packet-command-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "feac672a06c025ff",
+      "claim_sha256": "feac672a06c025ff25e202257fd22e84246f4eb43c955f9f8246973b4fe4fe8e",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "document-boundary-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "bd53b08f6c16943c",
+      "claim_sha256": "bd53b08f6c16943cd3d68cdb2c8ea9278679e8e8e44a24fd59b49dd3dcbafb7e",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "document-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    }
+  ],
+  "measurement_warnings": [],
+  "checks": {
+    "seals_ok": true,
+    "thesis_ok": true,
+    "verdicts_rederive": true
+  },
+  "report": "docs\\outreach\\receipts\\fifth-wave-tooling-report-2026-07-02.md",
+  "record": "docs\\outreach\\receipts\\fifth-wave-tooling-run-2026-07-02.json",
+  "bundle": null,
+  "spec": null,
+  "review": null,
+  "verifier": {
+    "mode": "cleanroom",
+    "inputs": [],
+    "excluded": [
+      "worker context",
+      "reasoning trace",
+      "intermediate steps"
+    ],
+    "checkability": "If success cannot be evaluated from the original spec and the artifact, the spec is not checkable yet."
+  }
+}

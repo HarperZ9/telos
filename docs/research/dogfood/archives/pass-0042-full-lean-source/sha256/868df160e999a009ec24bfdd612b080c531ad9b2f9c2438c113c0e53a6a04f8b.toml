@@ -1,0 +1,22 @@
+name = "Prob4b"
+version = "0.1.0"
+keywords = ["math"]
+defaultTargets = ["Prob4b"]
+
+[leanOptions]
+pp.unicode.fun = true # pretty-prints `fun a ↦ b`
+relaxedAutoImplicit = false
+weak.linter.mathlibStandardSet = true
+maxSynthPendingDepth = 6
+# The idealization `C = B ⋉ M` over the quotient module `M = B⁴/Bv` requires
+# synthesizing `Module Bᵐᵒᵖ M` / `IsScalarTower Bᵐᵒᵖ B (Fin 4 → B)`, a deep
+# `Pi`/opposite-action search that exceeds the default instance-search budget.
+synthInstance.maxHeartbeats = 1000000
+
+[[require]]
+name = "mathlib"
+scope = "leanprover-community"
+rev = "v4.31.0"
+
+[[lean_lib]]
+name = "Prob4b"

@@ -1,0 +1,402 @@
+{
+  "check_command": {
+    "command": "cargo run --quiet --bin buildc -- check C:\\dev\\public\\telos\\docs\\research\\dogfood\\fixtures\\buildlang-knapsack-exact-pass-0095.bld --profile console-only --receipt C:\\dev\\public\\telos\\docs\\research\\dogfood\\schemas\\buildlang-knapsack-check-receipt-pass-0095.json",
+    "cwd": "C:\\dev\\public\\pubscan\\quantalang\\compiler",
+    "exit_code": 0,
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "fb2e563e5d4f73f883b27ef25a53a9b1067d9821e732f423b77854bf4a467f92"
+  },
+  "check_receipt": {
+    "compiler": "buildc",
+    "compiler_version": "1.0.6",
+    "declared_effects": {
+      "main": [
+        "Console"
+      ],
+      "selected": []
+    },
+    "diagnostics": [],
+    "input_digests": [
+      {
+        "digest": {
+          "algorithm": "sha256",
+          "hex": "2480f503aa672459ccdd437a93f8d50c71dbc9b90d1ce236a52259727e1e29e9"
+        },
+        "role": "entry",
+        "source": "\\\\?\\C:\\dev\\public\\telos\\docs\\research\\dogfood\\fixtures\\buildlang-knapsack-exact-pass-0095.bld"
+      }
+    ],
+    "input_graph_digest": {
+      "algorithm": "sha256",
+      "hex": "0974547c463a693891e265b648d7ecf6017a5ffa598886b63d06c41c91ab76ff"
+    },
+    "items": 2,
+    "language_version": "1.0.0",
+    "observed_capabilities": {
+      "main": {
+        "Console": [
+          "println"
+        ]
+      },
+      "selected": {}
+    },
+    "policy": {
+      "profile": "console-only",
+      "profile_digest": {
+        "algorithm": "sha256",
+        "hex": "30462cb37d20d7c5cd2e156b62a8deeb53fc89f647e913b22c9e42033b53c4ce"
+      },
+      "schema": "buildlang-check-policy/v1",
+      "source": "builtin:console-only",
+      "source_digest": {
+        "algorithm": "sha256",
+        "hex": "30462cb37d20d7c5cd2e156b62a8deeb53fc89f647e913b22c9e42033b53c4ce"
+      },
+      "status": "passed",
+      "violations": []
+    },
+    "propagated_effects": {
+      "main": {},
+      "selected": {}
+    },
+    "schema": "buildlang-check-receipt/v1",
+    "source": "C:\\dev\\public\\telos\\docs\\research\\dogfood\\fixtures\\buildlang-knapsack-exact-pass-0095.bld",
+    "source_digest": {
+      "algorithm": "sha256",
+      "hex": "2480f503aa672459ccdd437a93f8d50c71dbc9b90d1ce236a52259727e1e29e9"
+    },
+    "status": "passed",
+    "tokens": 287
+  },
+  "check_receipt_path": "C:\\dev\\public\\telos\\docs\\research\\dogfood\\schemas\\buildlang-knapsack-check-receipt-pass-0095.json",
+  "current_promoted_natural_laws": [],
+  "flagship_receipts": {
+    "forum": {
+      "confidence": 0.0,
+      "decided": null,
+      "exit_code": 0,
+      "needs_escalation": true,
+      "status": "MATCH",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "de5c941e40e05b0ba0190e5cd89a0fc22dd8d642d1b7866982a96da97baed548",
+      "top_candidates": [
+        {
+          "agent": "gpu-compute",
+          "score": 0.2
+        },
+        {
+          "agent": "native-cpp",
+          "score": 0.2
+        },
+        {
+          "agent": "model-foundry",
+          "score": 0.125
+        },
+        {
+          "agent": "project-telos",
+          "score": 0.045454545454545456
+        },
+        {
+          "agent": "backend",
+          "score": 0.0
+        }
+      ]
+    },
+    "index": {
+      "exit_code": 0,
+      "graph_pack_sha256": "8ee383e19ae9a6141bee70de733fb6aa09201ff9d284ce6778ce58b06e6b68b2",
+      "schema": "project-telos.context-envelope/v1",
+      "source_refs_only": true,
+      "status": "MATCH",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "e76a53358d12c37fb00ab24a8c3727903c9d340ec28970ea73650486531b5b6b",
+      "verification_verdict": "MATCH"
+    },
+    "telos": {
+      "exit_code": 0,
+      "status": "MATCH",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "be17cb15259234cb4e8e95c2b36e76c90d841431729beb140294e34c5f9ebfa7",
+      "tool": "telos",
+      "tool_version": "0.1.0"
+    }
+  },
+  "generated_on": "2026-07-01",
+  "measurements": [
+    {
+      "claim": "buildc check receipt passed",
+      "deviation": 0.0,
+      "measurement_id": "buildlang_native_opt.check_receipt",
+      "method": "receipt-and-run-output",
+      "status": "MATCH",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "receipt verify passed all required checks",
+      "deviation": 0.0,
+      "measurement_id": "buildlang_native_opt.verify_report",
+      "method": "receipt-and-run-output",
+      "status": "MATCH",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "BuildLang run finds exact best value 162",
+      "deviation": 0.0,
+      "measurement_id": "buildlang_native_opt.run_output_best_value",
+      "method": "receipt-and-run-output",
+      "status": "MATCH",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "BuildLang run finds exact best weight 29",
+      "deviation": 0.0,
+      "measurement_id": "buildlang_native_opt.run_output_best_weight",
+      "method": "receipt-and-run-output",
+      "status": "MATCH",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "BuildLang run enumerates 1275 feasible masks",
+      "deviation": 0.0,
+      "measurement_id": "buildlang_native_opt.run_output_feasible_count",
+      "method": "receipt-and-run-output",
+      "status": "MATCH",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "BuildLang output matches pass 0094 exact baseline",
+      "deviation": 0.0,
+      "measurement_id": "buildlang_native_opt.matches_prior_workflow",
+      "method": "receipt-and-run-output",
+      "status": "MATCH",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "source digest is sha256 hex",
+      "deviation": 0.0,
+      "measurement_id": "buildlang_native_opt.source_digest",
+      "method": "receipt-and-run-output",
+      "status": "MATCH",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "console-only policy passes",
+      "deviation": 0.0,
+      "measurement_id": "buildlang_native_opt.console_policy",
+      "method": "receipt-and-run-output",
+      "status": "MATCH",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Forum, Index, and Telos receipts match",
+      "deviation": 0.0,
+      "measurement_id": "buildlang_native_opt.flagships",
+      "method": "receipt-and-run-output",
+      "status": "MATCH",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "no replacement, discovery, or natural-law claim is promoted",
+      "deviation": 0.0,
+      "measurement_id": "buildlang_native_opt.promotion_boundary",
+      "method": "receipt-and-run-output",
+      "status": "MATCH",
+      "tolerance": 0.5
+    }
+  ],
+  "negative_fixtures": [
+    {
+      "expected_status": "REJECT",
+      "fixture_id": "run_output_missing"
+    },
+    {
+      "expected_status": "REJECT",
+      "fixture_id": "receipt_not_verified"
+    },
+    {
+      "expected_status": "REJECT",
+      "fixture_id": "best_value_mismatch"
+    },
+    {
+      "expected_status": "REJECT",
+      "fixture_id": "language_replacement_claim"
+    }
+  ],
+  "non_promotion_statement": "Pass 0095 proves one BuildLang exact-enumeration fixture can run and emit receipts. It does not prove language replacement, production optimization, scientific discovery, or a natural law.",
+  "pass": "0095",
+  "prior_workflow_binding": {
+    "artifact_seal": "8652ed0887bcbeb542ce3f88b99ea4849d009d46e27f3476b107a6062de90f50",
+    "exact_value": 162,
+    "feasible_count": 1275,
+    "source_pass": "0094"
+  },
+  "repo_state": {
+    "branch_line": "## feat/sci-runtime-receipt",
+    "dirty_count": 0,
+    "exists": true,
+    "exit_code": 0,
+    "path": "C:\\dev\\public\\pubscan\\quantalang",
+    "status_sha256": "0c37f46bc5a57fcf4db1e6e1c82c59cd3b248ad5527b973870bd698cfb9cf8a9"
+  },
+  "run_command": {
+    "command": "cargo run --quiet --bin buildc -- run C:\\dev\\public\\telos\\docs\\research\\dogfood\\fixtures\\buildlang-knapsack-exact-pass-0095.bld",
+    "cwd": "C:\\dev\\public\\pubscan\\quantalang\\compiler",
+    "exit_code": 0,
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_lines": [
+      "best value 162",
+      "best weight 29",
+      "best mask 2347",
+      "feasible count 1275"
+    ],
+    "stdout_sha256": "1b99d07994c342c0bae002820c1ed5357a815c8e2799122cee82b29b4d5184c2"
+  },
+  "run_output": {
+    "best mask": 2347,
+    "best value": 162,
+    "best weight": 29,
+    "feasible count": 1275
+  },
+  "schema": "BuildLangNativeOptimizationKernelReceipt/v1",
+  "seal": "031c57ec173432bf92ba092b4cc321b17c9ab2a01dc3e1d372488b08f2f39107",
+  "source_fixture": {
+    "path": "C:\\dev\\public\\telos\\docs\\research\\dogfood\\fixtures\\buildlang-knapsack-exact-pass-0095.bld",
+    "profile": "console-only"
+  },
+  "status": "BUILDLANG_NATIVE_OPTIMIZATION_KERNEL_RECEIPT_MATCH",
+  "unsupported_claim_count": 0,
+  "validation_errors": [],
+  "verify_command": {
+    "command": "cargo run --quiet --bin buildc -- receipt verify C:\\dev\\public\\telos\\docs\\research\\dogfood\\schemas\\buildlang-knapsack-check-receipt-pass-0095.json --source C:\\dev\\public\\telos\\docs\\research\\dogfood\\fixtures\\buildlang-knapsack-exact-pass-0095.bld --expect-profile console-only --json",
+    "cwd": "C:\\dev\\public\\pubscan\\quantalang\\compiler",
+    "exit_code": 0,
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "6458fb0798bddf35de515e8603befb58173b01683db51e8c5e79d331f9137e66"
+  },
+  "verify_report": {
+    "checks": [
+      {
+        "actual": "buildlang-check-receipt/v1",
+        "expected": "buildlang-check-receipt/v1",
+        "name": "schema",
+        "status": "passed"
+      },
+      {
+        "actual": "buildc",
+        "expected": "buildc",
+        "name": "compiler",
+        "status": "passed"
+      },
+      {
+        "actual": "1.0.6",
+        "expected": "1.0.6",
+        "name": "compiler_version",
+        "status": "passed"
+      },
+      {
+        "actual": "1.0.0",
+        "expected": "1.0.0",
+        "name": "language_version",
+        "status": "passed"
+      },
+      {
+        "actual": "builtin:console-only",
+        "expected": "builtin:console-only",
+        "name": "expected_profile",
+        "profile": "console-only",
+        "status": "passed"
+      },
+      {
+        "actual": "sha256:2480f503aa672459ccdd437a93f8d50c71dbc9b90d1ce236a52259727e1e29e9",
+        "expected": "sha256:2480f503aa672459ccdd437a93f8d50c71dbc9b90d1ce236a52259727e1e29e9",
+        "name": "source_digest",
+        "status": "passed"
+      },
+      {
+        "actual": "sha256:0974547c463a693891e265b648d7ecf6017a5ffa598886b63d06c41c91ab76ff",
+        "expected": "sha256:0974547c463a693891e265b648d7ecf6017a5ffa598886b63d06c41c91ab76ff",
+        "name": "input_graph_digest",
+        "status": "passed"
+      },
+      {
+        "actual": "sha256:30462cb37d20d7c5cd2e156b62a8deeb53fc89f647e913b22c9e42033b53c4ce",
+        "expected": "sha256:30462cb37d20d7c5cd2e156b62a8deeb53fc89f647e913b22c9e42033b53c4ce",
+        "name": "policy_source_digest",
+        "status": "passed"
+      },
+      {
+        "actual": "sha256:30462cb37d20d7c5cd2e156b62a8deeb53fc89f647e913b22c9e42033b53c4ce",
+        "expected": "sha256:30462cb37d20d7c5cd2e156b62a8deeb53fc89f647e913b22c9e42033b53c4ce",
+        "name": "policy_profile_digest",
+        "profile": "console-only",
+        "status": "passed"
+      },
+      {
+        "actual": "\"passed\"",
+        "expected": "\"passed\"",
+        "name": "status",
+        "status": "passed"
+      },
+      {
+        "actual": "2",
+        "expected": "2",
+        "name": "items",
+        "status": "passed"
+      },
+      {
+        "actual": "287",
+        "expected": "287",
+        "name": "tokens",
+        "status": "passed"
+      },
+      {
+        "actual": "{\"main\":[\"Console\"],\"selected\":[]}",
+        "expected": "{\"main\":[\"Console\"],\"selected\":[]}",
+        "name": "declared_effects",
+        "status": "passed"
+      },
+      {
+        "actual": "{\"main\":{\"Console\":[\"println\"]},\"selected\":{}}",
+        "expected": "{\"main\":{\"Console\":[\"println\"]},\"selected\":{}}",
+        "name": "observed_capabilities",
+        "status": "passed"
+      },
+      {
+        "actual": "{\"main\":{},\"selected\":{}}",
+        "expected": "{\"main\":{},\"selected\":{}}",
+        "name": "propagated_effects",
+        "status": "passed"
+      },
+      {
+        "actual": "[]",
+        "expected": "[]",
+        "name": "diagnostics",
+        "status": "passed"
+      },
+      {
+        "actual": "\"passed\"",
+        "expected": "\"passed\"",
+        "name": "policy_status",
+        "status": "passed"
+      },
+      {
+        "actual": "[]",
+        "expected": "[]",
+        "name": "policy_violations",
+        "status": "passed"
+      }
+    ],
+    "receipt": "C:\\dev\\public\\telos\\docs\\research\\dogfood\\schemas\\buildlang-knapsack-check-receipt-pass-0095.json",
+    "schema": "buildlang-receipt-verification/v1",
+    "source": "C:\\dev\\public\\telos\\docs\\research\\dogfood\\fixtures\\buildlang-knapsack-exact-pass-0095.bld",
+    "status": "passed"
+  },
+  "verify_report_path": "C:\\dev\\public\\telos\\docs\\research\\dogfood\\schemas\\buildlang-knapsack-receipt-verification-pass-0095.json",
+  "verify_summary": {
+    "all_required_passed": true,
+    "check_count": 18,
+    "failed_checks": [],
+    "missing_required": [],
+    "status": "passed"
+  }
+}

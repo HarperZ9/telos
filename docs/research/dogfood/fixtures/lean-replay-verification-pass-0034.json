@@ -1,0 +1,160 @@
+{
+  "build_artifacts": {
+    "cache_byte_sum": 432264798,
+    "cache_file_count": 8542,
+    "lake_byte_sum": 8009101293,
+    "lake_file_count": 123892,
+    "prob4b_build_byte_sum": 10048128,
+    "prob4b_build_file_count": 75,
+    "prob4b_build_outputs": {
+      ".hash": 30,
+      ".ilean": 15,
+      ".olean": 15,
+      ".trace": 15
+    },
+    "remaining_temp_processes": 0
+  },
+  "cache_hydration": {
+    "cache_byte_sum": 432264798,
+    "cache_dir_ref": "temp:telos-pass0034-mathlib-cache",
+    "cache_file_count": 8542,
+    "command": "lake exe cache get",
+    "decompressed_files": 8542,
+    "downloaded_files": 8542,
+    "exit_code": 0,
+    "external_call_performed": true,
+    "local_cache_extension": ".ltar",
+    "status": "MATCH",
+    "temp_write_performed": true
+  },
+  "pass": "0034",
+  "schema": "LeanReplayVerificationFixture/v1",
+  "seal": "fd38f5abf22c501b06e28321e9408d5562e154eb4a012c4988a64b910a6ffa2f",
+  "source_provisioning_ref": "schemas/lean-provisioning-build-timeout-pass-0033.json",
+  "source_provisioning_seal": "8871fe5c59a75d81f24e6396a62d6cf484c7504d3304c695861c4b4799c16a9c",
+  "source_provisioning_sha256": "e4a4085f9711d672ee18a08e85aa55b6fabe8f64807daad53eff382506b9a366",
+  "verifier_run": {
+    "banned_keywords_status": "PASS",
+    "build_jobs": 8574,
+    "duration_seconds": 1184,
+    "exit_code": 0,
+    "frozen_sha_pins_status": "PASS",
+    "lake_build_status": "PASS",
+    "result": "PASS",
+    "result_issue_count": 0,
+    "statement_gates": [
+      {
+        "module": "Prob4b.Discharge",
+        "status": "PASS"
+      },
+      {
+        "module": "Prob4b.Solution",
+        "status": "PASS"
+      }
+    ],
+    "status": "MATCH",
+    "theorem_axiom_checks": [
+      {
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "name": "B_triple_zero",
+        "namespace": "Prob4b.Solution.B_triple_zero",
+        "status": "PASS"
+      },
+      {
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "name": "M_triple_defect",
+        "namespace": "Prob4b.Solution.M_triple_defect",
+        "status": "PASS"
+      },
+      {
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "name": "M_annihilator",
+        "namespace": "Prob4b.Solution.M_annihilator",
+        "status": "PASS"
+      },
+      {
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "name": "M_pairwise_intersection",
+        "namespace": "Prob4b.Solution.M_pairwise_intersection",
+        "status": "PASS"
+      },
+      {
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "name": "triple_defect_survives",
+        "namespace": "Prob4b.Solution.triple_defect_survives",
+        "status": "PASS"
+      },
+      {
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "name": "R_finite_conductor",
+        "namespace": "Prob4b.Solution.R_finite_conductor",
+        "status": "PASS"
+      },
+      {
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "name": "R_not_quasi_coherent",
+        "namespace": "Prob4b.Solution.R_not_quasi_coherent",
+        "status": "PASS"
+      },
+      {
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "name": "prob4b_counterexample",
+        "namespace": "Prob4b.Solution.prob4b_counterexample",
+        "status": "PASS"
+      },
+      {
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "name": "problem4b_false",
+        "namespace": "Prob4b.Solution.problem4b_false",
+        "status": "PASS"
+      },
+      {
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "name": "quasiCoherent_imp_finiteConductor",
+        "namespace": "Prob4b.Solution.quasiCoherent_imp_finiteConductor",
+        "status": "PASS"
+      }
+    ],
+    "theorem_axiom_status": "PASS"
+  }
+}

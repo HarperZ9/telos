@@ -1,0 +1,163 @@
+{
+  "generated_on": "2026-07-01",
+  "non_promotion_statement": "Tool receipts prove packet readback, cache hydration, verifier exit 0, Lake build PASS, ten axiom checks PASS under the recorded axiom set, statement gates PASS, Telos/Forum/Crucible availability, and no remaining temp replay processes. They do not prove every public pipeline-math claim, an axiom-free proof, a theorem outside the Lean artifact, buyer adoption, or any natural law.",
+  "pass": "0034",
+  "receipts": [
+    {
+      "command": "map --root docs/research/dogfood --json",
+      "dirty_count": 0,
+      "repo_count": 0,
+      "role": "dogfood-substrate-map",
+      "root_sha256_prefix": "f2f0af39219698a9",
+      "schema_version": 1,
+      "status": "MATCH",
+      "tool": "index",
+      "tool_version": "2.8.0",
+      "top_level_count": 41
+    },
+    {
+      "artifact": "packets/044-lean-replay-verification.md",
+      "chars": 5053,
+      "command": "docs",
+      "seal": "8f287f3f712ec49f1339e1ddf87e1c25cb974d41a3c5e6ce6b341d62e73781bb",
+      "sha256": "235ee663eafe3719147da59c54c8a63d60d1bc74f9766da889b7f748bd8b70c1",
+      "status": "MATCH",
+      "tool": "gather",
+      "verified": true
+    },
+    {
+      "cache_byte_sum": 432264798,
+      "cache_dir_ref": "temp:telos-pass0034-mathlib-cache",
+      "cache_file_count": 8542,
+      "command": "lake exe cache get",
+      "decompressed_files": 8542,
+      "downloaded_files": 8542,
+      "exit_code": 0,
+      "external_call_performed": true,
+      "status": "MATCH",
+      "temp_write_performed": true,
+      "tool": "shell"
+    },
+    {
+      "build_jobs": 8574,
+      "command": "scripts/verify.sh --no-log --all",
+      "duration_seconds": 1184,
+      "exit_code": 0,
+      "result": "PASS",
+      "result_issue_count": 0,
+      "status": "MATCH",
+      "tool": "shell"
+    },
+    {
+      "banned_keywords_status": "PASS",
+      "command": "verify check summary",
+      "frozen_sha_pins_status": "PASS",
+      "lake_build_status": "PASS",
+      "statement_gate_count": 2,
+      "theorem_axiom_status": "PASS",
+      "tool": "shell"
+    },
+    {
+      "axiom_check_count": 10,
+      "axiom_set": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "command": "#print axioms Prob4b.Solution.*",
+      "status": "MATCH",
+      "tool": "shell"
+    },
+    {
+      "cache_file_count": 8542,
+      "command": "build artifact snapshot",
+      "lake_byte_sum": 8009101293,
+      "lake_file_count": 123892,
+      "prob4b_build_byte_sum": 10048128,
+      "prob4b_build_file_count": 75,
+      "remaining_temp_processes": 0,
+      "status": "MATCH",
+      "tool": "shell"
+    },
+    {
+      "command": "telos_status",
+      "status": "MATCH",
+      "tool": "mcp__telos.telos_status",
+      "tool_version": "0.1.0"
+    },
+    {
+      "command": "telos_action_receipt",
+      "digest_references_required": true,
+      "raw_parameters_required": false,
+      "receipt_is_trace_span": false,
+      "schema": "project-telos.action-receipt/v1",
+      "status": "MATCH",
+      "tool": "mcp__telos.telos_action_receipt"
+    },
+    {
+      "command": "status",
+      "role": "orchestration-routing",
+      "status": "MATCH",
+      "tool": "forum",
+      "tool_version": "1.12.0"
+    },
+    {
+      "candidates": [
+        {
+          "agent": "ci-cd",
+          "score": 0.2
+        },
+        {
+          "agent": "project-telos",
+          "score": 0.045454545454545456
+        }
+      ],
+      "command": "route",
+      "confidence": 0.15454545454545454,
+      "decided": null,
+      "needs_escalation": true,
+      "status": "MATCH",
+      "tool": "forum"
+    },
+    {
+      "chain": true,
+      "command": "ledger verify",
+      "deep": true,
+      "status": "MATCH",
+      "tool": "forum"
+    },
+    {
+      "command": "submit",
+      "error": "submit needs a model executor. Forum is model-agnostic: pass --cmd \"<model cli>\" (any command, local models need no account), --chat-url <openai-compatible url> (e.g. a local Ollama server), or --api (Anthropic).",
+      "request": "Dogfood pass 0034 adversarial review for Lean replay verification",
+      "status": "UNVERIFIABLE",
+      "tool": "forum"
+    },
+    {
+      "command": "status",
+      "role": "verification-pressure",
+      "status": "MATCH",
+      "tool": "crucible",
+      "tool_version": "1.1.0"
+    },
+    {
+      "assessment_seal": "79407783c76966bea42da1ef031f26aaac1b965d762fab2113965e8cf63d0b06",
+      "claims": 10,
+      "command": "run",
+      "drift": 0,
+      "match": 10,
+      "measurement_seal": "51a490de6a3f0e30b48432641cc1cb5dadecc73a83ed1d251e9437701c703ac4",
+      "seals_ok": true,
+      "status": "MATCH",
+      "thesis_id": "e3ad254908aef8ef",
+      "thesis_ok": true,
+      "thesis_seal": "e3ad254908aef8ef374691fca1de455d7de3b1a951186f73bf6e83eb53d233f8",
+      "tool": "crucible",
+      "unverifiable": 0,
+      "verdict_seal": "9f5bf5ef2cac282901e5ea728085f27459300c49ba17aa1e575d3aa513552f40",
+      "verdicts_rederive": true
+    }
+  ],
+  "schema": "DogfoodToolReceiptSet/v1",
+  "status": "MATCH_WITH_FORUM_SUBMIT_GAP_AND_AXIOM_BOUNDARY"
+}

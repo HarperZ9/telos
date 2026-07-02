@@ -1,0 +1,515 @@
+{
+  "schema": "project-telos.measurement-layers/v1",
+  "tool": "telos.measurement.layers",
+  "generated_at": "2026-06-28T00:00:00.000Z",
+  "status": "MATCH",
+  "purpose": "Fourth-wave Crucible measurement-gate packet using the currently supported Telos measurement-layer subset.",
+  "measurement_bus": {
+    "schema": "project-telos.measurement-bus/v1",
+    "description": "Typed event envelope for sensors, meters, and creative-engine probes. The bus can carry estimated, witnessed, calibrated, or unverifiable values without reducing the engine to verification alone or requiring raw assets.",
+    "event_fields": [
+      "event_id",
+      "run_id",
+      "frame_id",
+      "actor",
+      "domain",
+      "subject_ref",
+      "timestamp",
+      "clock_domain",
+      "coordinate_space",
+      "units",
+      "value_shape",
+      "value",
+      "uncertainty",
+      "provenance",
+      "privacy",
+      "severity",
+      "event_hash"
+    ],
+    "uncertainty_statuses": [
+      "estimated",
+      "witnessed",
+      "calibrated",
+      "unverifiable"
+    ],
+    "sensor_lanes": {
+      "render": [
+        "spatial.splat-probe",
+        "lighting.cluster-meter",
+        "temporal.flicker-meter",
+        "performance.frame-budget-meter"
+      ],
+      "creative": [
+        "visual.histogram-field",
+        "visual.dither-spectrum-meter",
+        "audio.spectral-meter",
+        "interaction.trace-meter"
+      ],
+      "scientific": [
+        "visual.histogram-field",
+        "spatial.splat-probe",
+        "audio.spectral-meter",
+        "geometry.curvature-meter",
+        "uncertainty.budget-meter"
+      ],
+      "engine": [
+        "temporal.flicker-meter",
+        "geometry.curvature-meter",
+        "interaction.trace-meter",
+        "uncertainty.budget-meter",
+        "performance.frame-budget-meter"
+      ]
+    },
+    "privacy_boundary": "Events export summaries, hashes, units, and coordinate spaces; raw assets, prompts, keys, and private captures stay outside the public packet."
+  },
+  "layers": [
+    "visual.histogram-field",
+    "visual.dither-spectrum-meter",
+    "spatial.splat-probe",
+    "lighting.cluster-meter",
+    "audio.spectral-meter"
+  ],
+  "measurements": [
+    {
+      "layer_id": "visual.histogram-field",
+      "total_pixels": 64,
+      "bin_count": 8,
+      "bins": [
+        9,
+        9,
+        7,
+        8,
+        8,
+        8,
+        8,
+        7
+      ],
+      "min_luminance": 0,
+      "max_luminance": 248,
+      "mean_luminance": 122,
+      "contrast_ratio": 249,
+      "measurement_hash": "fnv1a:49924c4e"
+    },
+    {
+      "layer_id": "visual.dither-spectrum-meter",
+      "unique_levels": 46,
+      "pattern": "ordered-bayer-candidate",
+      "matrix_size": 4,
+      "horizontal_transition_count": 56,
+      "algorithm_candidates": [
+        "ordered-bayer",
+        "void-and-cluster",
+        "blue-noise"
+      ],
+      "measurement_hash": "fnv1a:8952eeaf"
+    },
+    {
+      "layer_id": "spatial.splat-probe",
+      "splat_count": 4,
+      "bounds": {
+        "x": [
+          -0.7,
+          0.62
+        ],
+        "y": [
+          -0.4,
+          0.68
+        ],
+        "z": [
+          -0.08,
+          0.2
+        ]
+      },
+      "radius_mean": 0.34,
+      "opacity_mean": 0.75,
+      "coverage_estimate": 0.1239,
+      "measurement_hash": "fnv1a:fa75cf7f"
+    },
+    {
+      "layer_id": "lighting.cluster-meter",
+      "grid": {
+        "columns": 4,
+        "rows": 3
+      },
+      "cluster_count": 12,
+      "max_lights_per_cluster": 2,
+      "mean_lights_per_cluster": 0.6667,
+      "over_budget_clusters": 0,
+      "histogram": {
+        "0": 6,
+        "1": 4,
+        "2": 2
+      },
+      "measurement_hash": "fnv1a:6d0ec007"
+    },
+    {
+      "layer_id": "audio.spectral-meter",
+      "bin_count": 32,
+      "dominant_bins": [
+        {
+          "bin": 5,
+          "magnitude": 32
+        },
+        {
+          "bin": 11,
+          "magnitude": 14.4
+        },
+        {
+          "bin": 0,
+          "magnitude": 0
+        },
+        {
+          "bin": 1,
+          "magnitude": 0
+        },
+        {
+          "bin": 2,
+          "magnitude": 0
+        }
+      ],
+      "spectral_centroid_bin": 6.8621,
+      "measurement_hash": "fnv1a:1696b786"
+    }
+  ],
+  "events": [
+    {
+      "event_id": "demo.measurement-layers:visual.histogram-field",
+      "run_id": "demo.measurement-layers",
+      "frame_id": "frame:0",
+      "actor": "telos.measurement.layers",
+      "domain": "visual",
+      "subject_ref": "visual.histogram-field",
+      "timestamp": "2026-06-28T00:00:00.000Z",
+      "clock_domain": "demo.logical",
+      "coordinate_space": "image.pixel",
+      "units": {
+        "luminance": "0..255",
+        "count": "pixels"
+      },
+      "value_shape": "histogram",
+      "value": {
+        "layer_id": "visual.histogram-field",
+        "total_pixels": 64,
+        "bin_count": 8,
+        "bins": [
+          9,
+          9,
+          7,
+          8,
+          8,
+          8,
+          8,
+          7
+        ],
+        "min_luminance": 0,
+        "max_luminance": 248,
+        "mean_luminance": 122,
+        "contrast_ratio": 249,
+        "measurement_hash": "fnv1a:49924c4e"
+      },
+      "uncertainty": {
+        "status": "estimated",
+        "reason": "demo_fixture_without_external_calibration"
+      },
+      "provenance": {
+        "measurement_hash": "fnv1a:49924c4e",
+        "source": "demo/measurement-layers.mjs",
+        "generated_by": "deterministic-demo-fixture"
+      },
+      "privacy": {
+        "raw_payload_required": false,
+        "exported_value_is_summary": true
+      },
+      "severity": "info",
+      "event_hash": "fnv1a:fa6ef0b0"
+    },
+    {
+      "event_id": "demo.measurement-layers:visual.dither-spectrum-meter",
+      "run_id": "demo.measurement-layers",
+      "frame_id": "frame:0",
+      "actor": "telos.measurement.layers",
+      "domain": "sampling",
+      "subject_ref": "visual.dither-spectrum-meter",
+      "timestamp": "2026-06-28T00:00:00.000Z",
+      "clock_domain": "demo.logical",
+      "coordinate_space": "image.pixel",
+      "units": {
+        "level": "0..255",
+        "count": "pixels"
+      },
+      "value_shape": "operator-summary",
+      "value": {
+        "layer_id": "visual.dither-spectrum-meter",
+        "unique_levels": 46,
+        "pattern": "ordered-bayer-candidate",
+        "matrix_size": 4,
+        "horizontal_transition_count": 56,
+        "algorithm_candidates": [
+          "ordered-bayer",
+          "void-and-cluster",
+          "blue-noise"
+        ],
+        "measurement_hash": "fnv1a:8952eeaf"
+      },
+      "uncertainty": {
+        "status": "estimated",
+        "reason": "demo_fixture_without_external_calibration"
+      },
+      "provenance": {
+        "measurement_hash": "fnv1a:8952eeaf",
+        "source": "demo/measurement-layers.mjs",
+        "generated_by": "deterministic-demo-fixture"
+      },
+      "privacy": {
+        "raw_payload_required": false,
+        "exported_value_is_summary": true
+      },
+      "severity": "info",
+      "event_hash": "fnv1a:58a1aa61"
+    },
+    {
+      "event_id": "demo.measurement-layers:spatial.splat-probe",
+      "run_id": "demo.measurement-layers",
+      "frame_id": "frame:0",
+      "actor": "telos.measurement.layers",
+      "domain": "splat",
+      "subject_ref": "spatial.splat-probe",
+      "timestamp": "2026-06-28T00:00:00.000Z",
+      "clock_domain": "demo.logical",
+      "coordinate_space": "scene.normalized",
+      "units": {
+        "position": "scene-unit",
+        "opacity": "0..1",
+        "coverage": "viewport-ratio"
+      },
+      "value_shape": "field-summary",
+      "value": {
+        "layer_id": "spatial.splat-probe",
+        "splat_count": 4,
+        "bounds": {
+          "x": [
+            -0.7,
+            0.62
+          ],
+          "y": [
+            -0.4,
+            0.68
+          ],
+          "z": [
+            -0.08,
+            0.2
+          ]
+        },
+        "radius_mean": 0.34,
+        "opacity_mean": 0.75,
+        "coverage_estimate": 0.1239,
+        "measurement_hash": "fnv1a:fa75cf7f"
+      },
+      "uncertainty": {
+        "status": "estimated",
+        "reason": "demo_fixture_without_external_calibration"
+      },
+      "provenance": {
+        "measurement_hash": "fnv1a:fa75cf7f",
+        "source": "demo/measurement-layers.mjs",
+        "generated_by": "deterministic-demo-fixture"
+      },
+      "privacy": {
+        "raw_payload_required": false,
+        "exported_value_is_summary": true
+      },
+      "severity": "info",
+      "event_hash": "fnv1a:5bd286c4"
+    },
+    {
+      "event_id": "demo.measurement-layers:lighting.cluster-meter",
+      "run_id": "demo.measurement-layers",
+      "frame_id": "frame:0",
+      "actor": "telos.measurement.layers",
+      "domain": "lighting",
+      "subject_ref": "lighting.cluster-meter",
+      "timestamp": "2026-06-28T00:00:00.000Z",
+      "clock_domain": "demo.logical",
+      "coordinate_space": "view.cluster-grid",
+      "units": {
+        "count": "lights"
+      },
+      "value_shape": "cluster-histogram",
+      "value": {
+        "layer_id": "lighting.cluster-meter",
+        "grid": {
+          "columns": 4,
+          "rows": 3
+        },
+        "cluster_count": 12,
+        "max_lights_per_cluster": 2,
+        "mean_lights_per_cluster": 0.6667,
+        "over_budget_clusters": 0,
+        "histogram": {
+          "0": 6,
+          "1": 4,
+          "2": 2
+        },
+        "measurement_hash": "fnv1a:6d0ec007"
+      },
+      "uncertainty": {
+        "status": "estimated",
+        "reason": "demo_fixture_without_external_calibration"
+      },
+      "provenance": {
+        "measurement_hash": "fnv1a:6d0ec007",
+        "source": "demo/measurement-layers.mjs",
+        "generated_by": "deterministic-demo-fixture"
+      },
+      "privacy": {
+        "raw_payload_required": false,
+        "exported_value_is_summary": true
+      },
+      "severity": "info",
+      "event_hash": "fnv1a:5609ed0b"
+    },
+    {
+      "event_id": "demo.measurement-layers:audio.spectral-meter",
+      "run_id": "demo.measurement-layers",
+      "frame_id": "frame:0",
+      "actor": "telos.measurement.layers",
+      "domain": "audio",
+      "subject_ref": "audio.spectral-meter",
+      "timestamp": "2026-06-28T00:00:00.000Z",
+      "clock_domain": "demo.logical",
+      "coordinate_space": "frequency.bin",
+      "units": {
+        "magnitude": "relative",
+        "bin": "fft-bin"
+      },
+      "value_shape": "spectrum-summary",
+      "value": {
+        "layer_id": "audio.spectral-meter",
+        "bin_count": 32,
+        "dominant_bins": [
+          {
+            "bin": 5,
+            "magnitude": 32
+          },
+          {
+            "bin": 11,
+            "magnitude": 14.4
+          },
+          {
+            "bin": 0,
+            "magnitude": 0
+          },
+          {
+            "bin": 1,
+            "magnitude": 0
+          },
+          {
+            "bin": 2,
+            "magnitude": 0
+          }
+        ],
+        "spectral_centroid_bin": 6.8621,
+        "measurement_hash": "fnv1a:1696b786"
+      },
+      "uncertainty": {
+        "status": "estimated",
+        "reason": "demo_fixture_without_external_calibration"
+      },
+      "provenance": {
+        "measurement_hash": "fnv1a:1696b786",
+        "source": "demo/measurement-layers.mjs",
+        "generated_by": "deterministic-demo-fixture"
+      },
+      "privacy": {
+        "raw_payload_required": false,
+        "exported_value_is_summary": true
+      },
+      "severity": "info",
+      "event_hash": "fnv1a:31c00ffb"
+    }
+  ],
+  "source_receipts": [
+    {
+      "title": "Forward+ rendering publication record",
+      "url": "https://diglib.eg.org/items/5a8806ed-5b06-447a-a6f3-4edfa2d814fb",
+      "source_kind": "open-publication-record",
+      "resolved_at": "2026-06-28T00:00:00Z",
+      "provenance_class": "lawful_source",
+      "receipt_hash": "sha256:680a425aa798284d4c7e1ee0a34ab9ae5acba7c4429c8282a84f248ece088882"
+    },
+    {
+      "title": "NVIDIA spatiotemporal blue noise discussion",
+      "url": "https://developer.nvidia.com/blog/rendering-in-real-time-with-spatiotemporal-blue-noise-textures-part-1/",
+      "source_kind": "official-vendor-technical-blog",
+      "resolved_at": "2026-06-28T00:00:00Z",
+      "provenance_class": "lawful_source",
+      "receipt_hash": "sha256:e9db89ce6e4a71aa9b7c092af61218ece2534db323bd5ef44e0c4823745bc8d2"
+    },
+    {
+      "title": "Void-and-cluster method for dither array generation",
+      "url": "https://doi.org/10.1117/12.59015",
+      "source_kind": "publication-record",
+      "resolved_at": "2026-06-28T00:00:00Z",
+      "provenance_class": "lawful_source",
+      "receipt_hash": "sha256:2977c8a06de0ee51f56ec8e7c4e0a07ba9df1fb0a3ca27622fd6700e3c8027ae"
+    },
+    {
+      "title": "Project Telos measurement layers",
+      "url": "demo/measurement-layers.mjs",
+      "source_kind": "local-source",
+      "resolved_at": "2026-06-28T00:00:00Z",
+      "provenance_class": "lawful_source",
+      "receipt_hash": "sha256:392e4e363398d03217cf6f62eb42395c0131e4c7e0edd0f897693c45d547a5a3"
+    }
+  ],
+  "privacy": {
+    "raw_payload_required": false,
+    "raw_assets_required_for_interop": false,
+    "exported_fields": [
+      "layer_id",
+      "measurement_hash",
+      "bounds",
+      "counts",
+      "dominant_bins",
+      "failure_code",
+      "verification_verdict",
+      "coordinate_space",
+      "units",
+      "uncertainty_status",
+      "budget_utilization"
+    ]
+  },
+  "failure_codes": [
+    "measurement_source_missing",
+    "pixel_dimensions_mismatch",
+    "dither_pattern_unverifiable",
+    "asset_provenance_missing",
+    "cluster_budget_exceeded",
+    "audio_spectrum_unverifiable",
+    "raw_payload_leak",
+    "frame_dimensions_mismatch",
+    "temporal_flicker_unverifiable",
+    "geometry_curvature_unverifiable",
+    "interaction_trace_unverifiable",
+    "uncertainty_status_unknown",
+    "frame_budget_exceeded"
+  ],
+  "next_actions": [
+    {
+      "tool": "crucible.assess",
+      "action": "verify-measurement-gates",
+      "reason": "Turn sensor outputs into MATCH, DRIFT, or UNVERIFIABLE verdicts against explicit criteria."
+    },
+    {
+      "tool": "index.context",
+      "action": "map-engine-organs",
+      "reason": "Attach revived raster, sound, splat, and lighting organs to the same measurement surface."
+    },
+    {
+      "tool": "telos.measurement.layers",
+      "action": "add-parallel-engine-sensor-pack",
+      "reason": "Treat verification as one organ of a broader engine that can also sense flicker, curvature, interaction, uncertainty, and performance."
+    }
+  ],
+  "receipt_hash": "fnv1a:304fe8b4"
+}

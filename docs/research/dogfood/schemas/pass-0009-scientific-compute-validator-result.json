@@ -1,0 +1,30 @@
+{
+  "schema": "Pass0009ScientificComputeValidatorRun/v1",
+  "pass": "0009",
+  "status": "MATCH",
+  "match": 2,
+  "drift": 0,
+  "observed_exit_code": 0,
+  "checks": [
+    {
+      "artifact": "HeatEquationEnergyProbe",
+      "path": "schemas\\heat-equation-energy-probe-pass-0009.json",
+      "status": "MATCH",
+      "errors": []
+    },
+    {
+      "artifact": "ScientificComputeMarketMap",
+      "path": "schemas\\scientific-compute-market-map-pass-0009.json",
+      "status": "MATCH",
+      "count": 10,
+      "categories": [
+        "commercial-simulation",
+        "hpc-solver",
+        "language-ecosystem",
+        "pde-framework",
+        "physics-ai"
+      ],
+      "errors": []
+    }
+  ]
+}

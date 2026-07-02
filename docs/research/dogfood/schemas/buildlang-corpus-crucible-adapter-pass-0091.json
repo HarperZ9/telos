@@ -1,0 +1,301 @@
+{
+  "buildc_corpus_run": {
+    "command": "cargo run --quiet --bin buildc -- corpus verify",
+    "cwd": "C:\\dev\\public\\pubscan\\quantalang\\compiler",
+    "drift": 0,
+    "exit_code": 0,
+    "line_checks": {
+      "c_execution": true,
+      "c_receipt": true,
+      "lsp_dispatch_receipt": true,
+      "manifest_programs": true,
+      "memory_layout_receipt": true,
+      "mir_representation_receipt": true,
+      "module_graph_receipt": true,
+      "rust_receipt": true,
+      "substrate_receipt": true,
+      "symbol_graph_receipt": true
+    },
+    "match": 10,
+    "status": "MATCH",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "fbe2daff8da1804b00cafe9a9fff36fc649429071b25f6a2561003255f6310d3"
+  },
+  "crucible_adapter": {
+    "adapter_id": "buildc_corpus_to_crucible_measurements",
+    "drift": 0,
+    "match": 10,
+    "measurement_count": 10,
+    "measurements": [
+      {
+        "claim": "BuildLang corpus verification includes expected line: manifest: 8 program(s)",
+        "deviation": 0.0,
+        "evidence": [
+          "stdout_sha256=fbe2daff8da1804b00cafe9a9fff36fc649429071b25f6a2561003255f6310d3",
+          "exit_code=0",
+          "line_key=manifest_programs"
+        ],
+        "expected_line": "manifest: 8 program(s)",
+        "measurement_id": "buildc_corpus.manifest_programs",
+        "method": "stdout-line-presence",
+        "status": "MATCH",
+        "tolerance": 0.5
+      },
+      {
+        "claim": "BuildLang corpus verification includes expected line: c receipt: ok",
+        "deviation": 0.0,
+        "evidence": [
+          "stdout_sha256=fbe2daff8da1804b00cafe9a9fff36fc649429071b25f6a2561003255f6310d3",
+          "exit_code=0",
+          "line_key=c_receipt"
+        ],
+        "expected_line": "c receipt: ok",
+        "measurement_id": "buildc_corpus.c_receipt",
+        "method": "stdout-line-presence",
+        "status": "MATCH",
+        "tolerance": 0.5
+      },
+      {
+        "claim": "BuildLang corpus verification includes expected line: rust receipt: ok",
+        "deviation": 0.0,
+        "evidence": [
+          "stdout_sha256=fbe2daff8da1804b00cafe9a9fff36fc649429071b25f6a2561003255f6310d3",
+          "exit_code=0",
+          "line_key=rust_receipt"
+        ],
+        "expected_line": "rust receipt: ok",
+        "measurement_id": "buildc_corpus.rust_receipt",
+        "method": "stdout-line-presence",
+        "status": "MATCH",
+        "tolerance": 0.5
+      },
+      {
+        "claim": "BuildLang corpus verification includes expected line: substrate receipt: ok",
+        "deviation": 0.0,
+        "evidence": [
+          "stdout_sha256=fbe2daff8da1804b00cafe9a9fff36fc649429071b25f6a2561003255f6310d3",
+          "exit_code=0",
+          "line_key=substrate_receipt"
+        ],
+        "expected_line": "substrate receipt: ok",
+        "measurement_id": "buildc_corpus.substrate_receipt",
+        "method": "stdout-line-presence",
+        "status": "MATCH",
+        "tolerance": 0.5
+      },
+      {
+        "claim": "BuildLang corpus verification includes expected line: mir representation receipt: ok",
+        "deviation": 0.0,
+        "evidence": [
+          "stdout_sha256=fbe2daff8da1804b00cafe9a9fff36fc649429071b25f6a2561003255f6310d3",
+          "exit_code=0",
+          "line_key=mir_representation_receipt"
+        ],
+        "expected_line": "mir representation receipt: ok",
+        "measurement_id": "buildc_corpus.mir_representation_receipt",
+        "method": "stdout-line-presence",
+        "status": "MATCH",
+        "tolerance": 0.5
+      },
+      {
+        "claim": "BuildLang corpus verification includes expected line: memory layout receipt: ok",
+        "deviation": 0.0,
+        "evidence": [
+          "stdout_sha256=fbe2daff8da1804b00cafe9a9fff36fc649429071b25f6a2561003255f6310d3",
+          "exit_code=0",
+          "line_key=memory_layout_receipt"
+        ],
+        "expected_line": "memory layout receipt: ok",
+        "measurement_id": "buildc_corpus.memory_layout_receipt",
+        "method": "stdout-line-presence",
+        "status": "MATCH",
+        "tolerance": 0.5
+      },
+      {
+        "claim": "BuildLang corpus verification includes expected line: module graph receipt: ok",
+        "deviation": 0.0,
+        "evidence": [
+          "stdout_sha256=fbe2daff8da1804b00cafe9a9fff36fc649429071b25f6a2561003255f6310d3",
+          "exit_code=0",
+          "line_key=module_graph_receipt"
+        ],
+        "expected_line": "module graph receipt: ok",
+        "measurement_id": "buildc_corpus.module_graph_receipt",
+        "method": "stdout-line-presence",
+        "status": "MATCH",
+        "tolerance": 0.5
+      },
+      {
+        "claim": "BuildLang corpus verification includes expected line: symbol graph receipt: ok",
+        "deviation": 0.0,
+        "evidence": [
+          "stdout_sha256=fbe2daff8da1804b00cafe9a9fff36fc649429071b25f6a2561003255f6310d3",
+          "exit_code=0",
+          "line_key=symbol_graph_receipt"
+        ],
+        "expected_line": "symbol graph receipt: ok",
+        "measurement_id": "buildc_corpus.symbol_graph_receipt",
+        "method": "stdout-line-presence",
+        "status": "MATCH",
+        "tolerance": 0.5
+      },
+      {
+        "claim": "BuildLang corpus verification includes expected line: lsp dispatch receipt: ok",
+        "deviation": 0.0,
+        "evidence": [
+          "stdout_sha256=fbe2daff8da1804b00cafe9a9fff36fc649429071b25f6a2561003255f6310d3",
+          "exit_code=0",
+          "line_key=lsp_dispatch_receipt"
+        ],
+        "expected_line": "lsp dispatch receipt: ok",
+        "measurement_id": "buildc_corpus.lsp_dispatch_receipt",
+        "method": "stdout-line-presence",
+        "status": "MATCH",
+        "tolerance": 0.5
+      },
+      {
+        "claim": "BuildLang corpus verification includes expected line: c execution: 8 passed",
+        "deviation": 0.0,
+        "evidence": [
+          "stdout_sha256=fbe2daff8da1804b00cafe9a9fff36fc649429071b25f6a2561003255f6310d3",
+          "exit_code=0",
+          "line_key=c_execution"
+        ],
+        "expected_line": "c execution: 8 passed",
+        "measurement_id": "buildc_corpus.c_execution",
+        "method": "stdout-line-presence",
+        "status": "MATCH",
+        "tolerance": 0.5
+      }
+    ]
+  },
+  "current_promoted_natural_laws": [],
+  "flagship_receipts": {
+    "forum": {
+      "confidence": 0.09090909090909091,
+      "decided": null,
+      "exit_code": 0,
+      "needs_escalation": true,
+      "status": "MATCH",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "a72455b90f29ed2ce0ba1cca16cddb1e0d9efffa176ad3c7f3092a91e1ab34c8",
+      "top_candidates": [
+        {
+          "agent": "project-telos",
+          "score": 0.09090909090909091
+        },
+        {
+          "agent": "backend",
+          "score": 0.0
+        },
+        {
+          "agent": "ci-cd",
+          "score": 0.0
+        },
+        {
+          "agent": "cloud-infra",
+          "score": 0.0
+        },
+        {
+          "agent": "code-review",
+          "score": 0.0
+        }
+      ]
+    },
+    "index": {
+      "exit_code": 0,
+      "graph_pack_sha256": "8ee383e19ae9a6141bee70de733fb6aa09201ff9d284ce6778ce58b06e6b68b2",
+      "schema": "project-telos.context-envelope/v1",
+      "source_refs_only": true,
+      "status": "MATCH",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "2c6edcbe595b6d6b097100b48d44b766fb6bef2e8bf5ebc14757ba396462999b",
+      "verification_verdict": "MATCH"
+    },
+    "telos": {
+      "exit_code": 0,
+      "status": "MATCH",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "be17cb15259234cb4e8e95c2b36e76c90d841431729beb140294e34c5f9ebfa7",
+      "tool": "telos",
+      "tool_version": "0.1.0"
+    }
+  },
+  "generated_on": "2026-07-01",
+  "negative_fixtures": [
+    {
+      "expected_status": "REJECT",
+      "fixture_id": "missing_corpus_stdout_digest",
+      "reject_reason": "adapter_requires_stdout_digest"
+    },
+    {
+      "expected_status": "REJECT",
+      "fixture_id": "missing_expected_line",
+      "reject_reason": "every_corpus_line_becomes_measurement"
+    },
+    {
+      "expected_status": "REJECT",
+      "fixture_id": "unrecorded_repo_dirty_state",
+      "reject_reason": "repo_state_must_be_recorded"
+    },
+    {
+      "expected_status": "REJECT",
+      "fixture_id": "claims_julia_replacement",
+      "reject_reason": "corpus_adapter_does_not_prove_language_replacement"
+    },
+    {
+      "expected_status": "REJECT",
+      "fixture_id": "claims_new_law",
+      "reject_reason": "verification_adapter_is_not_a_natural_law"
+    }
+  ],
+  "non_promotion_statement": "Pass 0091 converts live buildc corpus verification into Crucible-ready measurements. It does not prove language-market replacement, scientific discovery, or a natural law.",
+  "pass": "0091",
+  "prior_binding": {
+    "source_pass": "0090",
+    "source_schema": "SolverAvailabilityMatrixReceipt/v1",
+    "source_seal": "d32050ec5d7ef77d6eafdc555118938cdac546580fdfaa90c479299507d4ead1"
+  },
+  "promotion_boundary": {
+    "adapter_only": true,
+    "julia_replacement_claim": false,
+    "new_natural_law_claim": false,
+    "scientific_discovery_claim": false
+  },
+  "proof_surface_binding": {
+    "market_motion": "buildlang_proof_packets",
+    "source_pass": "0080",
+    "source_schema": "BuildLangProofPacketDemoSurface/v1",
+    "source_seal": "d0d79d658de3546edfaebf5791ed08e1a7656cc5d7987052fd90a992d7e8a000"
+  },
+  "repo_state": {
+    "branch_line": "## fix/module-double-register",
+    "dirty_count": 0,
+    "exists": true,
+    "exit_code": 0,
+    "path": "C:\\dev\\public\\pubscan\\quantalang",
+    "status_sha256": "71aadc1c5562e51fa4da4b1e138d09aa219ca5d27203056419a2c351350623fc"
+  },
+  "schema": "BuildLangCorpusCrucibleAdapterReceipt/v1",
+  "seal": "0ecba8c12f9c041ed6dc3a126e5722afae3afe8881cd262f69adcafda4ca60ac",
+  "source_anchors": [
+    {
+      "source_id": "buildlang-readme",
+      "url": "C:\\dev\\public\\pubscan\\quantalang\\README.md",
+      "verification_status": "LOCAL_SOURCE"
+    },
+    {
+      "source_id": "pass-0090-solver-matrix",
+      "url": "docs/research/dogfood/pass-0090-ledger.md",
+      "verification_status": "LOCAL_BASELINE"
+    },
+    {
+      "source_id": "pass-0080-buildlang-proof-surface",
+      "url": "docs/research/dogfood/pass-0080-ledger.md",
+      "verification_status": "LOCAL_BASELINE"
+    }
+  ],
+  "status": "BUILDLANG_CORPUS_CRUCIBLE_ADAPTER_MATCH",
+  "unsupported_claim_count": 0,
+  "validation_errors": []
+}

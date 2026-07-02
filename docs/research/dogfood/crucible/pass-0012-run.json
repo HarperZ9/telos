@@ -1,0 +1,445 @@
+{
+  "ok": true,
+  "thesis": {
+    "id": "123dcf1159cd431d",
+    "title": "Dogfood Pass 0012 Quantum No-Cloning Proof Packet",
+    "registered_at": 1782902006.6846027,
+    "disposition": "fenced",
+    "seal": "123dcf1159cd431d5981bc66a02bc6f317bfc6774813c262de9de8f5e1093407",
+    "claims": [
+      {
+        "id": "c6ff064449fd7eca",
+        "sha256": "c6ff064449fd7eca4a941abeddf37d5d1d065d8c06541400e31f5663b2b95f07"
+      },
+      {
+        "id": "bd74b6412c5e89bc",
+        "sha256": "bd74b6412c5e89bcbc3c90e125bc7caac5da423bd1e1a9d7210110021abde81c"
+      },
+      {
+        "id": "d6d968fefaf950c2",
+        "sha256": "d6d968fefaf950c22fd047ef3f69ef929486fa56f30bf521ea44306efe4281f7"
+      },
+      {
+        "id": "127319254d59a5b0",
+        "sha256": "127319254d59a5b08bca453010cf7ae82e815206716e76acf24f74169f2a5993"
+      },
+      {
+        "id": "5cd5be51386ec3a6",
+        "sha256": "5cd5be51386ec3a6f60f6a4e2be3b2c141140f4d38c73eb708ebd18428a6a4aa"
+      },
+      {
+        "id": "e56cd9ea193770b2",
+        "sha256": "e56cd9ea193770b206ff5d19604d17766887463234f702a0245664a808612361"
+      },
+      {
+        "id": "5aa5d3ea9e4778bb",
+        "sha256": "5aa5d3ea9e4778bb4fb8891d6f48f5ae462b864a2358327f6eef224717256ee7"
+      },
+      {
+        "id": "effb97eb4761166f",
+        "sha256": "effb97eb4761166f09d7f0c6d111417d147eed3d893863f2b09d88756fa5f696"
+      }
+    ]
+  },
+  "refutations": [
+    {
+      "claim_id": "c6ff064449fd7eca",
+      "claim_sha256": "c6ff064449fd7eca4a941abeddf37d5d1d065d8c06541400e31f5663b2b95f07",
+      "challenge": "test the stated falsification: schemas/no-cloning-probe-pass-0012.json is missing, reports non-PROBE_MATCH status, lacks two passing basis checks with fidelity 1.0, or does not report FAILS_SUPERPOSITION with fidelity 0.5",
+      "measurable": "schemas/no-cloning-probe-pass-0012.json is missing, reports non-PROBE_MATCH status, lacks two passing basis checks with fidelity 1.0, or does not report FAILS_SUPERPOSITION with fidelity 0.5",
+      "source": "null"
+    },
+    {
+      "claim_id": "bd74b6412c5e89bc",
+      "claim_sha256": "bd74b6412c5e89bcbc3c90e125bc7caac5da423bd1e1a9d7210110021abde81c",
+      "challenge": "test the stated falsification: schemas/no-cloning-probe-pass-0012.json lacks the inner_product_impossibility fields or reports nonpositive defect",
+      "measurable": "schemas/no-cloning-probe-pass-0012.json lacks the inner_product_impossibility fields or reports nonpositive defect",
+      "source": "null"
+    },
+    {
+      "claim_id": "d6d968fefaf950c2",
+      "claim_sha256": "d6d968fefaf950c22fd047ef3f69ef929486fa56f30bf521ea44306efe4281f7",
+      "challenge": "test the stated falsification: schemas/quantum-computing-market-map-pass-0012.json has fewer than 13 rows or omits any required category",
+      "measurable": "schemas/quantum-computing-market-map-pass-0012.json has fewer than 13 rows or omits any required category",
+      "source": "null"
+    },
+    {
+      "claim_id": "127319254d59a5b0",
+      "claim_sha256": "127319254d59a5b08bca453010cf7ae82e815206716e76acf24f74169f2a5993",
+      "challenge": "test the stated falsification: any row in schemas/quantum-computing-market-map-pass-0012.json lacks a required field, uses a non-HTTPS source URL, or has an invalid gap_status",
+      "measurable": "any row in schemas/quantum-computing-market-map-pass-0012.json lacks a required field, uses a non-HTTPS source URL, or has an invalid gap_status",
+      "source": "null"
+    },
+    {
+      "claim_id": "5cd5be51386ec3a6",
+      "claim_sha256": "5cd5be51386ec3a6f60f6a4e2be3b2c141140f4d38c73eb708ebd18428a6a4aa",
+      "challenge": "test the stated falsification: schemas/no-cloning-proof-packet-pass-0012.json is missing, is not ProofPacket/v1, has fewer than four claims, or contains PROMOTED_LAW",
+      "measurable": "schemas/no-cloning-proof-packet-pass-0012.json is missing, is not ProofPacket/v1, has fewer than four claims, or contains PROMOTED_LAW",
+      "source": "null"
+    },
+    {
+      "claim_id": "e56cd9ea193770b2",
+      "claim_sha256": "e56cd9ea193770b206ff5d19604d17766887463234f702a0245664a808612361",
+      "challenge": "test the stated falsification: schemas/pass-0012-quantum-validator-result.json or schemas/proof-packet-validator-pass-0012.json is missing, reports non-MATCH status, or reports drift above zero",
+      "measurable": "schemas/pass-0012-quantum-validator-result.json or schemas/proof-packet-validator-pass-0012.json is missing, reports non-MATCH status, or reports drift above zero",
+      "source": "null"
+    },
+    {
+      "claim_id": "5aa5d3ea9e4778bb",
+      "claim_sha256": "5aa5d3ea9e4778bb4fb8891d6f48f5ae462b864a2358327f6eef224717256ee7",
+      "challenge": "test the stated falsification: adversarial/pass-0012-forum-steelman.md is missing, does not record the Forum executor JSON error, or schemas/no-cloning-proof-packet-pass-0012.json does not mark ForumSteelman as UNVERIFIABLE",
+      "measurable": "adversarial/pass-0012-forum-steelman.md is missing, does not record the Forum executor JSON error, or schemas/no-cloning-proof-packet-pass-0012.json does not mark ForumSteelman as UNVERIFIABLE",
+      "source": "null"
+    },
+    {
+      "claim_id": "effb97eb4761166f",
+      "claim_sha256": "effb97eb4761166f09d7f0c6d111417d147eed3d893863f2b09d88756fa5f696",
+      "challenge": "test the stated falsification: any pass 0012 artifact labels a new theorem, hardware result, quantum advantage claim, cryptographic break, natural law, biological result, material result, medical result, finance result, or safety result as promoted",
+      "measurable": "any pass 0012 artifact labels a new theorem, hardware result, quantum advantage claim, cryptographic break, natural law, biological result, material result, medical result, finance result, or safety result as promoted",
+      "source": "null"
+    }
+  ],
+  "assessment": {
+    "started_at": 1782902006.6907957,
+    "thesis_id": "123dcf1159cd431d",
+    "thesis_seal": "123dcf1159cd431d5981bc66a02bc6f317bfc6774813c262de9de8f5e1093407",
+    "claims": 8,
+    "match": 8,
+    "drift": 0,
+    "unverifiable": 0,
+    "verdict_seal": "935490c7c8b81e0c6c242e5962597807ac7a0c2d17cbeda1636c02e9f9427ff8",
+    "measurement_seal": "c325206e5ee5cf138606cddb25cc80b0ae33b4110dc1e0f52a85e247bfc98514",
+    "disposition": "fenced",
+    "stored": null,
+    "verdicts": [
+      {
+        "claim_id": "c6ff064449fd7eca",
+        "claim_sha256": "c6ff064449fd7eca4a941abeddf37d5d1d065d8c06541400e31f5663b2b95f07",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "probe-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "bd74b6412c5e89bc",
+        "claim_sha256": "bd74b6412c5e89bcbc3c90e125bc7caac5da423bd1e1a9d7210110021abde81c",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "inner-product-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "d6d968fefaf950c2",
+        "claim_sha256": "d6d968fefaf950c22fd047ef3f69ef929486fa56f30bf521ea44306efe4281f7",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "market-map-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "127319254d59a5b0",
+        "claim_sha256": "127319254d59a5b08bca453010cf7ae82e815206716e76acf24f74169f2a5993",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "market-row-field-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "5cd5be51386ec3a6",
+        "claim_sha256": "5cd5be51386ec3a6f60f6a4e2be3b2c141140f4d38c73eb708ebd18428a6a4aa",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "proof-packet-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "e56cd9ea193770b2",
+        "claim_sha256": "e56cd9ea193770b206ff5d19604d17766887463234f702a0245664a808612361",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "validator-run-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "5aa5d3ea9e4778bb",
+        "claim_sha256": "5aa5d3ea9e4778bb4fb8891d6f48f5ae462b864a2358327f6eef224717256ee7",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "forum-receipt-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "effb97eb4761166f",
+        "claim_sha256": "effb97eb4761166f09d7f0c6d111417d147eed3d893863f2b09d88756fa5f696",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "artifact-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      }
+    ],
+    "measurements": [
+      {
+        "claim_id": "c6ff064449fd7eca",
+        "claim_sha256": "c6ff064449fd7eca4a941abeddf37d5d1d065d8c06541400e31f5663b2b95f07",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "probe-review",
+        "measured_at": 1782902006.6905587,
+        "evidence": [
+          "schemas/no-cloning-probe-pass-0012.json schema=NoCloningProbe/v1",
+          "status=PROBE_MATCH",
+          "basis check |0>|0> fidelity=1.0 status=PASS",
+          "basis check |1>|0> fidelity=1.0 status=PASS",
+          "superposition_negative_fixture status=FAILS_SUPERPOSITION",
+          "superposition fidelity_to_desired_clone=0.5",
+          "probe seal=c8c9baf1cebd832cc4f49caca611fc3c578ab8511c2b01b51ba9d6bc1a2b270a"
+        ]
+      },
+      {
+        "claim_id": "bd74b6412c5e89bc",
+        "claim_sha256": "bd74b6412c5e89bcbc3c90e125bc7caac5da423bd1e1a9d7210110021abde81c",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "inner-product-review",
+        "measured_at": 1782902006.6905682,
+        "evidence": [
+          "inner_product_impossibility states include |0> and |+>",
+          "overlap=0.707106781186547",
+          "overlap_squared=0.5",
+          "defect=0.207106781186548",
+          "status=IMPOSSIBLE_FOR_NONORTHOGONAL_DISTINCT_STATES"
+        ]
+      },
+      {
+        "claim_id": "d6d968fefaf950c2",
+        "claim_sha256": "d6d968fefaf950c22fd047ef3f69ef929486fa56f30bf521ea44306efe4281f7",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "market-map-review",
+        "measured_at": 1782902006.690572,
+        "evidence": [
+          "schemas/quantum-computing-market-map-pass-0012.json rows=13",
+          "category quantum-sdk present",
+          "category cloud-platform present",
+          "category hardware-platform present",
+          "category quantum-ai present",
+          "category quantum-compiler present",
+          "category neutral-atom present",
+          "category annealing present"
+        ]
+      },
+      {
+        "claim_id": "127319254d59a5b0",
+        "claim_sha256": "127319254d59a5b08bca453010cf7ae82e815206716e76acf24f74169f2a5993",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "market-row-field-review",
+        "measured_at": 1782902006.6905897,
+        "evidence": [
+          "validator required_fields includes source_url",
+          "validator required_fields includes proof_receipt_gap",
+          "validator required_fields includes telos_wedge_hypothesis",
+          "validator required_fields includes gap_status",
+          "validator required_fields includes confidence",
+          "validator rejects non-HTTPS source URLs",
+          "validator restricts gap_status to verified, inferred, or unverified"
+        ]
+      },
+      {
+        "claim_id": "5cd5be51386ec3a6",
+        "claim_sha256": "5cd5be51386ec3a6f60f6a4e2be3b2c141140f4d38c73eb708ebd18428a6a4aa",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "proof-packet-review",
+        "measured_at": 1782902006.6906025,
+        "evidence": [
+          "schemas/no-cloning-proof-packet-pass-0012.json schema=ProofPacket/v1",
+          "packet_id=proof-packet-pass-0012-no-cloning",
+          "claim_count=4",
+          "failure_labels include NOT_A_NEW_THEOREM",
+          "failure_labels include NO_QUANTUM_HARDWARE_RUN",
+          "validator rejects PROMOTED_LAW in pass 0012 packet"
+        ]
+      },
+      {
+        "claim_id": "e56cd9ea193770b2",
+        "claim_sha256": "e56cd9ea193770b206ff5d19604d17766887463234f702a0245664a808612361",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "validator-run-review",
+        "measured_at": 1782902006.6906054,
+        "evidence": [
+          "schemas/pass-0012-quantum-validator-result.json status=MATCH",
+          "schemas/pass-0012-quantum-validator-result.json match=3",
+          "schemas/pass-0012-quantum-validator-result.json drift=0",
+          "schemas/proof-packet-validator-pass-0012.json status=MATCH",
+          "schemas/proof-packet-validator-pass-0012.json match=1",
+          "schemas/proof-packet-validator-pass-0012.json drift=0"
+        ]
+      },
+      {
+        "claim_id": "5aa5d3ea9e4778bb",
+        "claim_sha256": "5aa5d3ea9e4778bb4fb8891d6f48f5ae462b864a2358327f6eef224717256ee7",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "forum-receipt-review",
+        "measured_at": 1782902006.6906073,
+        "evidence": [
+          "adversarial/pass-0012-forum-steelman.md status=UNVERIFIABLE",
+          "adversarial/pass-0012-forum-steelman.md records configured executor did not return valid JSON",
+          "schemas/no-cloning-proof-packet-pass-0012.json ForumSteelman status=UNVERIFIABLE",
+          "local steelman is labeled local rather than Forum-verified"
+        ]
+      },
+      {
+        "claim_id": "effb97eb4761166f",
+        "claim_sha256": "effb97eb4761166f09d7f0c6d111417d147eed3d893863f2b09d88756fa5f696",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "artifact-review",
+        "measured_at": 1782902006.6906095,
+        "evidence": [
+          "packets/022-quantum-no-cloning-proof-packet.md Non-Promotion Statement promotes no new theorem or hardware result",
+          "schemas/no-cloning-proof-packet-pass-0012.json failure label NOT_A_NEW_THEOREM",
+          "schemas/no-cloning-proof-packet-pass-0012.json failure label NO_QUANTUM_HARDWARE_RUN",
+          "no pass 0012 claim uses PROMOTED_LAW"
+        ]
+      }
+    ],
+    "seal": "70fff2aa721b83ed088980398822071e62e1c5aebf0aa7afbd6d3fbadf4912f9"
+  },
+  "verdicts": [
+    {
+      "claim_id": "c6ff064449fd7eca",
+      "claim_sha256": "c6ff064449fd7eca4a941abeddf37d5d1d065d8c06541400e31f5663b2b95f07",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "probe-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "bd74b6412c5e89bc",
+      "claim_sha256": "bd74b6412c5e89bcbc3c90e125bc7caac5da423bd1e1a9d7210110021abde81c",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "inner-product-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "d6d968fefaf950c2",
+      "claim_sha256": "d6d968fefaf950c22fd047ef3f69ef929486fa56f30bf521ea44306efe4281f7",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "market-map-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "127319254d59a5b0",
+      "claim_sha256": "127319254d59a5b08bca453010cf7ae82e815206716e76acf24f74169f2a5993",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "market-row-field-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "5cd5be51386ec3a6",
+      "claim_sha256": "5cd5be51386ec3a6f60f6a4e2be3b2c141140f4d38c73eb708ebd18428a6a4aa",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "proof-packet-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "e56cd9ea193770b2",
+      "claim_sha256": "e56cd9ea193770b206ff5d19604d17766887463234f702a0245664a808612361",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "validator-run-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "5aa5d3ea9e4778bb",
+      "claim_sha256": "5aa5d3ea9e4778bb4fb8891d6f48f5ae462b864a2358327f6eef224717256ee7",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "forum-receipt-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "effb97eb4761166f",
+      "claim_sha256": "effb97eb4761166f09d7f0c6d111417d147eed3d893863f2b09d88756fa5f696",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "artifact-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    }
+  ],
+  "checks": {
+    "seals_ok": true,
+    "thesis_ok": true,
+    "verdicts_rederive": true
+  },
+  "report": "C:\\dev\\public\\telos\\docs\\research\\dogfood\\crucible\\pass-0012-report.md",
+  "record": "C:\\dev\\public\\telos\\docs\\research\\dogfood\\crucible\\pass-0012-run.json",
+  "bundle": null,
+  "spec": null,
+  "review": null,
+  "verifier": {
+    "mode": "cleanroom",
+    "inputs": [],
+    "excluded": [
+      "worker context",
+      "reasoning trace",
+      "intermediate steps"
+    ],
+    "checkability": "If success cannot be evaluated from the original spec and the artifact, the spec is not checkable yet."
+  }
+}

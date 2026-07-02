@@ -1,0 +1,259 @@
+{
+  "action_receipt_proposal": {
+    "action_id": "act_dogfood_0034_lean_replay_verification",
+    "authority_class": "contained_temp_toolchain_replay",
+    "event_id": "evt_dogfood_0034_lean_replay_verification",
+    "event_type": "lean_replay_verification_recorded",
+    "external_call_performed": true,
+    "external_write_performed": false,
+    "normal_path_modified": false,
+    "result_state": "completed",
+    "side_effect_class": "network_read_and_temp_write",
+    "stop_reason": "completed",
+    "verification_verdict": "MATCH"
+  },
+  "build_artifacts": {
+    "cache_byte_sum": 432264798,
+    "cache_file_count": 8542,
+    "lake_byte_sum": 8009101293,
+    "lake_file_count": 123892,
+    "prob4b_build_byte_sum": 10048128,
+    "prob4b_build_file_count": 75,
+    "prob4b_build_outputs": {
+      ".hash": 30,
+      ".ilean": 15,
+      ".olean": 15,
+      ".trace": 15
+    },
+    "remaining_temp_processes": 0
+  },
+  "cache_hydration": {
+    "cache_byte_sum": 432264798,
+    "cache_dir_ref": "temp:telos-pass0034-mathlib-cache",
+    "cache_file_count": 8542,
+    "command": "lake exe cache get",
+    "decompressed_files": 8542,
+    "downloaded_files": 8542,
+    "exit_code": 0,
+    "external_call_performed": true,
+    "local_cache_extension": ".ltar",
+    "status": "MATCH",
+    "temp_write_performed": true
+  },
+  "current_promoted_natural_laws": [],
+  "generated_on": "2026-07-01",
+  "negative_fixture_count": 10,
+  "negative_fixtures": [
+    {
+      "expected_validator_status": "REJECT",
+      "id": "negative-cache-get-promoted-without-exit-zero"
+    },
+    {
+      "expected_validator_status": "REJECT",
+      "id": "negative-lake-build-promoted-without-pass"
+    },
+    {
+      "expected_validator_status": "REJECT",
+      "id": "negative-axiom-check-omitted"
+    },
+    {
+      "expected_validator_status": "REJECT",
+      "id": "negative-axiom-set-missing"
+    },
+    {
+      "expected_validator_status": "REJECT",
+      "id": "negative-statement-gate-omitted"
+    },
+    {
+      "expected_validator_status": "REJECT",
+      "id": "negative-banned-keywords-ignored"
+    },
+    {
+      "expected_validator_status": "REJECT",
+      "id": "negative-frozen-pins-ignored"
+    },
+    {
+      "expected_validator_status": "REJECT",
+      "id": "negative-processes-left-running"
+    },
+    {
+      "expected_validator_status": "REJECT",
+      "id": "negative-public-claim-overpromoted"
+    },
+    {
+      "expected_validator_status": "REJECT",
+      "id": "negative-natural-law-promoted"
+    }
+  ],
+  "next_actions": [
+    "extract theorem-specific proof packet with exact command transcript digest",
+    "run target-specific verification for each theorem independently",
+    "compare replay packet to pipeline-math README claims without overpromoting",
+    "map BuildLang/buildc proof-packet equivalents for dependency cache, build, theorem, and output gates"
+  ],
+  "non_promotion_statement": "Pass 0034 verifies the local Lean replay harness for pipeline-math Problem 4(b) under the stated project, toolchain, cache, axiom, and statement-gate boundaries. It does not prove every public claim about pipeline-math, does not establish a new mathematical theorem outside the Lean artifact, and does not promote any natural law.",
+  "pass": "0034",
+  "public_source_receipts": [
+    {
+      "claim": "The replay target is the public pipeline-math repository previously bound to commit 69d7df765a8f377a5e0628c6d36c088bce7642c9.",
+      "source": "pipeline-math GitHub repository",
+      "url": "https://github.com/Pengbinghui/pipeline-math",
+      "verification_status": "verified_prior_pass"
+    },
+    {
+      "claim": "Elan supplied the Lean 4.31.0 toolchain used for replay.",
+      "source": "elan GitHub release",
+      "url": "https://github.com/leanprover/elan/releases/tag/v4.2.3",
+      "verification_status": "verified_prior_pass"
+    }
+  ],
+  "replay_fixture": {
+    "path": "fixtures/lean-replay-verification-pass-0034.json",
+    "schema": "LeanReplayVerificationFixture/v1",
+    "seal": "fd38f5abf22c501b06e28321e9408d5562e154eb4a012c4988a64b910a6ffa2f",
+    "sha256": "eef39b1caa78dd2d996589b08c40b93881cfe45d17e2b15479ec9aa8d5b9fafb"
+  },
+  "schema": "LeanReplayVerificationPacket/v1",
+  "seal": "bbe72907f7bc745c4bdc19f2162050d0dc7e48ea9382bc0b09f226f2500539bd",
+  "source_provisioning_binding": {
+    "path": "schemas/lean-provisioning-build-timeout-pass-0033.json",
+    "seal": "8871fe5c59a75d81f24e6396a62d6cf484c7504d3304c695861c4b4799c16a9c",
+    "sha256": "e4a4085f9711d672ee18a08e85aa55b6fabe8f64807daad53eff382506b9a366",
+    "source_status": "LEAN_PROVISIONING_MATCH_WITH_BUILD_TIMEOUT"
+  },
+  "status": "LEAN_REPLAY_VERIFIED_WITH_AXIOM_BOUNDARY",
+  "verifier_measurements": {
+    "axiom_check_count": 10,
+    "cache_get_status": "MATCH",
+    "lake_build_status": "PASS",
+    "remaining_temp_processes": 0,
+    "statement_gate_count": 2,
+    "theorem_axiom_status": "PASS",
+    "verifier_exit_code": 0,
+    "verifier_issue_count": 0
+  },
+  "verifier_run": {
+    "banned_keywords_status": "PASS",
+    "build_jobs": 8574,
+    "duration_seconds": 1184,
+    "exit_code": 0,
+    "frozen_sha_pins_status": "PASS",
+    "lake_build_status": "PASS",
+    "result": "PASS",
+    "result_issue_count": 0,
+    "statement_gates": [
+      {
+        "module": "Prob4b.Discharge",
+        "status": "PASS"
+      },
+      {
+        "module": "Prob4b.Solution",
+        "status": "PASS"
+      }
+    ],
+    "status": "MATCH",
+    "theorem_axiom_checks": [
+      {
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "name": "B_triple_zero",
+        "namespace": "Prob4b.Solution.B_triple_zero",
+        "status": "PASS"
+      },
+      {
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "name": "M_triple_defect",
+        "namespace": "Prob4b.Solution.M_triple_defect",
+        "status": "PASS"
+      },
+      {
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "name": "M_annihilator",
+        "namespace": "Prob4b.Solution.M_annihilator",
+        "status": "PASS"
+      },
+      {
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "name": "M_pairwise_intersection",
+        "namespace": "Prob4b.Solution.M_pairwise_intersection",
+        "status": "PASS"
+      },
+      {
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "name": "triple_defect_survives",
+        "namespace": "Prob4b.Solution.triple_defect_survives",
+        "status": "PASS"
+      },
+      {
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "name": "R_finite_conductor",
+        "namespace": "Prob4b.Solution.R_finite_conductor",
+        "status": "PASS"
+      },
+      {
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "name": "R_not_quasi_coherent",
+        "namespace": "Prob4b.Solution.R_not_quasi_coherent",
+        "status": "PASS"
+      },
+      {
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "name": "prob4b_counterexample",
+        "namespace": "Prob4b.Solution.prob4b_counterexample",
+        "status": "PASS"
+      },
+      {
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "name": "problem4b_false",
+        "namespace": "Prob4b.Solution.problem4b_false",
+        "status": "PASS"
+      },
+      {
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "name": "quasiCoherent_imp_finiteConductor",
+        "namespace": "Prob4b.Solution.quasiCoherent_imp_finiteConductor",
+        "status": "PASS"
+      }
+    ],
+    "theorem_axiom_status": "PASS"
+  }
+}

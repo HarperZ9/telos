@@ -1,0 +1,58 @@
+{
+  "schema": "ToolReceiptSet/v1",
+  "pass": "0015",
+  "generated_on": "2026-07-01",
+  "status": "MATCH_WITH_FORUM_SUBMIT_GAP",
+  "receipts": [
+    {
+      "tool": "index",
+      "tool_version": "2.8.0",
+      "command": "status",
+      "status": "MATCH",
+      "role": "structure-context"
+    },
+    {
+      "tool": "gather",
+      "tool_version": "1.5.0",
+      "command": "status",
+      "status": "MATCH",
+      "role": "perception-intake"
+    },
+    {
+      "tool": "telos",
+      "command": "operator_doctor",
+      "status": "MATCH",
+      "check_count": 14,
+      "passed_count": 14,
+      "tool_count": 65,
+      "telos_tool_count": 37
+    },
+    {
+      "tool": "forum",
+      "command": "status",
+      "status": "MATCH",
+      "entries": 6,
+      "checkpoint": "253900c51d9c6444119aac10be5730f2d00bfc13894c5bec9ebde8e2634b9c6b"
+    },
+    {
+      "tool": "forum",
+      "command": "verify",
+      "status": "MATCH",
+      "chain": true,
+      "deep": true
+    },
+    {
+      "tool": "forum",
+      "command": "forum_submit",
+      "status": "UNVERIFIABLE",
+      "submit_error": "the configured executor did not return valid JSON"
+    },
+    {
+      "tool": "crucible",
+      "tool_version": "1.1.0",
+      "command": "status",
+      "status": "MATCH",
+      "role": "verification-pressure"
+    }
+  ]
+}

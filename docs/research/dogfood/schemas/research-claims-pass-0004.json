@@ -1,0 +1,105 @@
+{
+  "schema": "ResearchClaim/v1",
+  "pass": "0004",
+  "generated_on": "2026-07-01",
+  "claims": [
+    {
+      "claim": "NIST AI 600-1 is a cross-sectoral Generative AI Profile for AI RMF 1.0 that helps organizations incorporate trustworthiness considerations into GenAI design, development, use, and evaluation.",
+      "evidence_url": "https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-generative-artificial-intelligence",
+      "confidence": "high",
+      "verification_status": "verified",
+      "notes": "Used as governance pressure: proof packets must map to trustworthiness and risk-management concerns."
+    },
+    {
+      "claim": "The OWASP Top 10 for LLM Applications 2025 identifies Prompt Injection as a top LLM/GenAI application risk.",
+      "evidence_url": "https://genai.owasp.org/llm-top-10/",
+      "confidence": "high",
+      "verification_status": "verified",
+      "notes": "Used as safety pressure on agent action receipts."
+    },
+    {
+      "claim": "The OWASP Top 10 for LLM Applications 2025 identifies Excessive Agency as a top LLM/GenAI application risk.",
+      "evidence_url": "https://genai.owasp.org/llm-top-10/",
+      "confidence": "high",
+      "verification_status": "verified",
+      "notes": "Directly relevant to tool authority, action admission, and proof-packet replay."
+    },
+    {
+      "claim": "METR proposes measuring AI progress by the length of tasks agents can complete and reports a historical trend of roughly exponential increase in task length.",
+      "evidence_url": "https://metr.org/blog/2025-03-19-measuring-ai-ability-to-complete-long-tasks/",
+      "confidence": "high",
+      "verification_status": "verified",
+      "notes": "Used to pressure long-horizon reliability claims."
+    },
+    {
+      "claim": "METR reports that current models are near 100 percent on tasks under about 4 minutes but below 10 percent on tasks above roughly 4 hours in its task suite.",
+      "evidence_url": "https://metr.org/blog/2025-03-19-measuring-ai-ability-to-complete-long-tasks/",
+      "confidence": "high",
+      "verification_status": "verified",
+      "notes": "This does not prove general-world task performance; it is evidence for why long-horizon receipts matter."
+    },
+    {
+      "claim": "NIST SP 800-218A augments the Secure Software Development Framework with practices, tasks, and recommendations specific to AI model development through the software development lifecycle.",
+      "evidence_url": "https://www.nist.gov/publications/secure-software-development-practices-generative-ai-and-dual-use-foundation-models-ssdf",
+      "confidence": "high",
+      "verification_status": "verified",
+      "notes": "Used as secure development lifecycle pressure for AI proof packets."
+    },
+    {
+      "claim": "Sakana's AI Scientist is positioned as automating parts of the scientific research lifecycle.",
+      "evidence_url": "https://sakana.ai/ai-scientist/",
+      "confidence": "high",
+      "verification_status": "verified",
+      "notes": "External analog for autonomous research workflows."
+    },
+    {
+      "claim": "Sakana's AI Scientist page documents limitations and risks such as incorrect implementation, unfair baselines, critical errors, and safety concerns around sandboxing/self-modification.",
+      "evidence_url": "https://sakana.ai/ai-scientist/",
+      "confidence": "high",
+      "verification_status": "verified",
+      "notes": "Used to define failure labels that Telos research proof packets must preserve."
+    },
+    {
+      "claim": "Forum pass 0004 adversarial submit failed because the configured executor did not return valid JSON.",
+      "evidence_url": "internal://forum/pass-0004-submit-error",
+      "confidence": "high",
+      "verification_status": "verified",
+      "notes": "Recorded as a tool-surface failure, not as an adversarial strategy verdict."
+    },
+    {
+      "claim": "Forum pass 0004 ledger verification still returned chain=true and deep=true after the failed submit.",
+      "evidence_url": "internal://forum/pass-0004-verify",
+      "confidence": "high",
+      "verification_status": "verified",
+      "notes": "Ledger integrity and executor reliability are separate concerns."
+    },
+    {
+      "claim": "Gather pass 0004 web intake gathered 6 sources, kept 5, dropped 1, and produced digest seal 293d0769cf92bf4cf0f3bece93f6825e581fde5eb960d6b97029bb4189d7d895.",
+      "evidence_url": "internal://gather/pass-0004-web-intake",
+      "confidence": "high",
+      "verification_status": "verified",
+      "notes": "Used as the source-intake receipt for this adversarial pass."
+    },
+    {
+      "claim": "Gather arXiv intake for the METR long-task source dropped for both direct identifier and title-query attempts.",
+      "evidence_url": "internal://gather/pass-0004-arxiv-drop",
+      "confidence": "high",
+      "verification_status": "verified",
+      "notes": "The web source remained available and was used as the source anchor."
+    },
+    {
+      "claim": "Pass 0003 contained a stale next-pass queue row count of 41 even though the validated market artifact contains 42 rows.",
+      "evidence_url": "file:///C:/dev/public/telos/docs/research/dogfood/pass-0003-ledger.md",
+      "confidence": "high",
+      "verification_status": "verified",
+      "notes": "Corrected in pass 0004."
+    },
+    {
+      "claim": "No dogfood artifact through pass 0004 promotes a natural-law discovery.",
+      "evidence_url": "file:///C:/dev/public/telos/docs/research/dogfood/README.md",
+      "confidence": "high",
+      "verification_status": "verified",
+      "notes": "README still states current promoted natural laws: none."
+    }
+  ]
+}

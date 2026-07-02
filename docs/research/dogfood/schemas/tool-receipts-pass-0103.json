@@ -1,0 +1,79 @@
+{
+  "compose": {
+    "command": "C:\\Users\\Zain\\AppData\\Local\\Programs\\Python\\Python312\\python.exe C:\\dev\\public\\telos\\docs\\research\\dogfood\\tools\\compose_constraint_encoding_receipt_adapter.py --out C:\\dev\\public\\telos\\docs\\research\\dogfood\\schemas\\constraint-encoding-receipt-adapter-pass-0103.json",
+    "exit_code": 0,
+    "status": "MATCH",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "d5096c937d28119876f99560d7385cf7812e5f4d1eb8b8dd065f017a59221ae5"
+  },
+  "coverage": {
+    "all_executed_have_feasibility_check": true,
+    "boundary_only_count": 2,
+    "executed_receipt_count": 8,
+    "promotion_blocked_executed_count": 1,
+    "receipt_count": 10,
+    "safe_executed_count": 7,
+    "unsafe_executed_branch_ids": [
+      "ocean_dimod_exact_bqm"
+    ]
+  },
+  "forum": {
+    "confidence": 0.125,
+    "decided": null,
+    "exit_code": 0,
+    "needs_escalation": true,
+    "status": "MATCH",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "a70d5f95cb9dd305f9ec5dd544439bf31a9ebeb4813bfd5394a01fa229da18b8",
+    "top_candidates": [
+      {
+        "agent": "model-foundry",
+        "score": 0.125
+      },
+      {
+        "agent": "backend",
+        "score": 0.0
+      },
+      {
+        "agent": "ci-cd",
+        "score": 0.0
+      },
+      {
+        "agent": "cloud-infra",
+        "score": 0.0
+      },
+      {
+        "agent": "code-review",
+        "score": 0.0
+      }
+    ]
+  },
+  "index": {
+    "exit_code": 0,
+    "graph_pack_sha256": "8ee383e19ae9a6141bee70de733fb6aa09201ff9d284ce6778ce58b06e6b68b2",
+    "schema": "project-telos.context-envelope/v1",
+    "source_refs_only": true,
+    "status": "MATCH",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "1b9306bf6a16f821dd245d6155a64a9aab0b7bab91a9282420acc3b75348d98d",
+    "verification_verdict": "MATCH"
+  },
+  "pass": "0103",
+  "schema": "DogfoodToolReceipts/v1",
+  "seal": "ade996e6548fd04733e2651e8dbdae120e2db81c05935b1a3f054aaed63919c6",
+  "telos": {
+    "exit_code": 0,
+    "status": "MATCH",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "be17cb15259234cb4e8e95c2b36e76c90d841431729beb140294e34c5f9ebfa7",
+    "tool": "telos",
+    "tool_version": "0.1.0"
+  },
+  "test": {
+    "command": "C:\\Users\\Zain\\AppData\\Local\\Programs\\Python\\Python312\\python.exe C:\\dev\\public\\telos\\docs\\research\\dogfood\\tools\\test_constraint_encoding_receipt_adapter.py",
+    "exit_code": 0,
+    "status": "MATCH",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

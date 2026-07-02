@@ -1,0 +1,30 @@
+{
+  "title": "Dogfood Pass 0010 BuildLang Scientific Runtime Receipt Schema",
+  "disposition": "fenced",
+  "claims": [
+    {
+      "text": "Pass 0010 created a BuildScientificRuntimeReceiptSchema/v1 artifact with sixteen required receipt fields and seven verification layers: source, build, runtime, problem, measurement, invariant, and external_verdict.",
+      "falsification": "schemas/buildlang-scientific-runtime-receipt-schema-pass-0010.json is missing, has the wrong schema id, lacks any required receipt field, or omits any required verification layer"
+    },
+    {
+      "text": "Pass 0010 created a BuildScientificRuntimeReceiptSet/v1 artifact with a primary_positive PASS receipt and a negative_fixture FAIL_EXPECTED receipt.",
+      "falsification": "schemas/buildlang-scientific-runtime-receipts-pass-0010.json is missing, has fewer than two receipts, lacks primary_positive or negative_fixture roles, lacks PASS or FAIL_EXPECTED status, or labels a negative fixture as a normal pass"
+    },
+    {
+      "text": "The pass 0010 receipts explicitly preserve source, build, runtime, problem, measurement, invariant, failure-label, and verifier state while labeling the compiler state as ADAPTER_FIXTURE_NOT_BUILDC_EXECUTED.",
+      "falsification": "any pass 0010 receipt lacks a required substate, lacks failure labels, lacks verifier state, or implies that buildc executed the kernel in this pass"
+    },
+    {
+      "text": "The pass 0010 validator reports MATCH with two checks and zero drift.",
+      "falsification": "schemas/pass-0010-scientific-runtime-validator-result.json is missing, reports non-MATCH status, reports fewer than two matches, or reports drift above zero"
+    },
+    {
+      "text": "Pass 0010 defines a concrete buildc adapter target: compile a scientific kernel, emit source/build/runtime/problem/measurement/invariant receipts, preserve expected failures, and export proof-packet-compatible JSON.",
+      "falsification": "packets/020-buildlang-scientific-runtime-receipts.md does not describe the buildc adapter target or the schema artifact omits the receipt layers needed for that target"
+    },
+    {
+      "text": "Pass 0010 promotes zero natural-law discoveries and treats the receipts as schema fixtures rather than scientific discoveries.",
+      "falsification": "any pass 0010 artifact labels a new physical law, theorem breakthrough, biological result, material result, medical result, finance result, or safety result as promoted"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<title>Multi-Trace Causality Demo</title>
+<style>
+body { color: #111; font-family: system-ui, sans-serif; margin: 2rem; }
+table { border-collapse: collapse; margin-block: 1rem 2rem; width: 100%; }
+td, th { border: 1px solid #bbb; padding: .45rem; text-align: left; vertical-align: top; }
+code { background: #f1f1f1; padding: .1rem .25rem; }
+</style>
+<h1>Multi-Trace Causality Demo</h1>
+<p>Status: <code>BUYER_DEMO_MANIFEST_MATCH</code></p>
+<p>Production ready: <code>false</code></p>
+<h2>Review Panes</h2>
+<table><thead><tr><th>#</th><th>Pane</th><th>Receipt kind</th><th>Display</th><th>Verdict</th></tr></thead><tbody><tr><td>1</td><td>Source Intake</td><td><code>GatherDocumentReceipt/v1</code></td><td>hash_only</td><td>MATCH</td></tr>
+<tr><td>2</td><td>Browser Evidence</td><td><code>project-telos.browser-evidence/v1</code></td><td>redacted</td><td>MATCH</td></tr>
+<tr><td>3</td><td>Command Execution</td><td><code>ShellCommandReceipt/v1</code></td><td>hash_only</td><td>MATCH</td></tr>
+<tr><td>4</td><td>Action Receipt</td><td><code>TelosActionReceiptFixtureChain/v1</code></td><td>hash_only</td><td>MATCH</td></tr></tbody></table>
+<h2>Failure Verdicts</h2>
+<table><thead><tr><th>Fixture</th><th>Failure code</th><th>Status</th></tr></thead><tbody><tr><td>missing_trace_link</td><td>missing_trace_link</td><td>MATCH</td></tr>
+<tr><td>trace_id_substitutes_receipt_id</td><td>trace_id_substitutes_receipt_id</td><td>MATCH</td></tr>
+<tr><td>missing_durable_receipt_hash</td><td>missing_durable_receipt</td><td>MATCH</td></tr>
+<tr><td>missing_gather_node</td><td>broken_trace_link, missing_tool_class:gather</td><td>MATCH</td></tr>
+<tr><td>raw_browser_payload_required</td><td>raw_browser_payload_required</td><td>MATCH</td></tr></tbody></table>
+</html>

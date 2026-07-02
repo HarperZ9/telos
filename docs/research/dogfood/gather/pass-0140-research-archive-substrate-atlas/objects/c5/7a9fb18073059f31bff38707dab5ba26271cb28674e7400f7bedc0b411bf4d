@@ -1,0 +1,195 @@
+Skip to main content
+An official website of the United States government
+Here's how you know
+Here's how you know
+Official websites use .gov
+A
+.gov website belongs to an official
+government organization in the United States.
+Secure .gov websites use HTTPS
+A lock (
+) or https:// means you've safely
+connected to the .gov website. Share sensitive
+information only on official, secure websites.
+Search
+Log in
+Dashboard
+Publications
+Account settings
+Log out
+Search…
+Search NCBI
+Primary site navigation
+Search
+Logged in as:
+Dashboard
+Publications
+Account settings
+Log in
+Search PMC Full-Text Archive
+Search in PMC
+Journal List
+User Guide
+About PMC
+About PMC
+Accessibility
+Citation Search
+Copyright Notice
+Disclaimer
+FAQs
+Journal List
+Journal Selection Statistics
+National Advisory Committee
+New in PMC
+PMC and Research Funder Policies
+PMC International
+Policies
+User Guide
+Collections
+Collections - Home
+Author Manuscripts
+Back Issue Digitization
+COVID-19 Collection
+Journal List
+Mpox Collection
+NIH Preprint Pilot
+Open Access Subset
+PMC Article Datasets
+Selective Deposit Collections
+For Authors
+For Authors - Home
+Author Manuscripts in PMC
+FAQs for Authors
+Journal List
+NIH Manuscript Submission System
+NIH Public Access and PMC
+PMC and Research Funder Policies
+PMC ID Converter
+For Publishers
+For Publishers - Home
+FAQs for Publishers
+File Submission Specifications
+PMC Banner Specifications
+File Validation Tools
+Application and Evaluation Process
+Journal Selection for PMC
+Minimum Data Criteria
+Participation Agreements
+Policies
+Production Data Requirements
+For Developers
+For Developers - Home
+Cloud Service
+FTP Service
+OA Web Service
+OAI-PMH Service
+PMC Article Datasets
+PMC ID Converter
+PMC ID Converter API
+PMC OAI-PMH API
+The PubMed Central OAI-PMH API provides access to metadata of all items in PubMed Central (PMC), as well as to the full text of articles with licenses or usage rights that allow for reuse.
+It is an implementation of the Open Archives Initiative Protocol for Metadata Harvesting (OAI-PMH), a standard for retrieving metadata from digital document repositories. Visit the Open Archives Initiative site for more information about the protocol and other activities of the OAI group.
+The PMC OAI-PMH API supports OAI-PMH version 2.0. It does not support earlier versions of the protocol.
+September 2, 2025: Updated OAI-PMH API Now in Production
+The PMC OAI-PMH API has been updated as part of ongoing efforts to modernize NLM's products and services. It is now in production and the old API base URL is redirecting to the new API base URL.
+Old base URL: https://www.ncbi.nlm.nih.gov/pmc/oai/oai.cgi
+New base URL: https://pmc.ncbi.nlm.nih.gov/api/oai/v1/mh/
+Changes include:
+Number of records returned per ListRecords call has been reduced to 10. A resumptionToken is returned if there are more records.
+Resumption token format has changed
+Metadata for embargoed articles is now available for oai_dc and pmc_fm formats; current API returns an error for embargoed articles
+OCR full text for author manuscripts, scanned articles in the Historical OCR Dataset and PDF-only articles that allow reuse will now be returned in the XML for the pmc format
+More robust metadata due to augmentation with data available in the PMC database, such as related-article links from original articles to corrections, retractions and/or expressions of concern, indication of PDF availability and more
+Machine-readable license URLs (when available) are included as a separate <dc:rights> element in the oai_dc format, in addition to the current <dc:rights> element with the text of the rights and/or license statement
+<dc:identifier> values have been standardized to canonical URLs for PMC, PubMed, and the DOI Foundation (where available)
+Please contact the PMC help desk if you have any feedback or questions.
+If you have questions or comments about this, or any of the other services provided by PMC, please contact the PMC help desk. To stay informed about new or updated tools or services provided by PMC, subscribe to the PMC-Utils-Announce mailing list.
+Not all articles in PMC are available for text mining and other reuse.
+The PMC Cloud Service, PMC OAI-PMH Service, PMC FTP Service, E-Utilities and BioC API are the only services that may be used for automated retrieval of PMC content. Systematic retrieval (or bulk retrieval) of articles through any other automated process is prohibited.
+License terms vary. Please refer to the license statement in each article for specific terms of use.
+Users of this dataset are directly and solely responsible for compliance with copyright restrictions and are expected to adhere to the terms and conditions defined by the copyright holder (see the PMC Copyright Notice).
+Using the PMC OAI-PMH API
+The base URL for the API is https://pmc.ncbi.nlm.nih.gov/api/oai/v1/mh/.
+See the examples, below, for details about how to use this API to retrieve metadata for all articles in PMC and full text XML for articles with licenses allowing reuse.
+High-Volume Retrievals
+Requests are limited to 3 requests per second (rps); rates higher than that will receive an error message. If you are using a script that makes more than 100 requests of any kind, please run it outside of the PMC system's peak hours. Also, please make sure that your system does not make concurrent requests, even at off-peak times. Peak hours are Monday to Friday, 5:00 AM to 9:00 PM, U.S. Eastern time.
+The PMC OAI-PMH API supports HTTP compression, and the Accept-Encoding HTTP header must be set to 'gzip, deflate' for the most efficient data transfer. See also HTTP compression for further information about this capability.
+Access to Full Text
+Some articles in PMC allow reuse of the full text while many do not allow it at all. See the PMC Copyright and the PMC Article Datasets web pages for details.
+The parameter set=pmc-open identifies the complete collection of items in PMC for which the full text may be retrieved.
+Supported Data Formats
+Records may be retrieved using the PMC OAI-PMH API in one of the following formats:
+Formats:
+The NISO JATS Journal Archiving and Interchange XML format, for metadata or full-text article records. Schemas and complete documentation are available from https://jats.nlm.nih.gov/archiving/.
+Metadata: metadataPrefix=pmc_fm
+Full Text: metadataPrefix=pmc
+The Dublin Core format, https://dublincore.org
+Metadata: metadataPrefix=oai_dc
+OAI PMC identifiers
+The identifiers used by this system are of the form:
+oai:pubmedcentral.nih.gov:pmcid
+where pmcid is the numerical portion of the article's PMCID. For example, the OAI identifier for the article PMC12314748 is oai:pubmedcentral.nih.gov:12314748.
+Automatic Segmentation of Large Result Sets
+If a ListIdentifiers request results in more than 50 hits, the API will return the first 50 with a resumptionToken that can be used to get the next 50 items, and so on.
+If a ListRecords request results in more than 10 records, the API will return the first 10 with a resumptionToken to retrieve the next 10, and so on.
+Examples
+Identify
+Identify the PMC OAI-PMH API interface.
+https://pmc.ncbi.nlm.nih.gov/api/oai/v1/mh/?verb=Identify
+ListMetadataFormats
+List metadata formats available in PMC.
+https://pmc.ncbi.nlm.nih.gov/api/oai/v1/mh/?verb=ListMetadataFormats
+List metadata formats available for an article with the identifier oai:pubmedcentral.nih.gov:12314748
+https://pmc.ncbi.nlm.nih.gov/api/oai/v1/mh/?verb=ListMetadataFormats&identifier=oai:pubmedcentral.nih.gov:12314748
+ListIdentifiers – returns a fixed number of identifiers per request
+The first response to this request will contain up to a maxiumum of 50 identifiers, and if there are more it will include a resumption token.
+List (the first set of) identifiers for all articles released in PMC after 2025-07-01 in PMC front matter format
+https://pmc.ncbi.nlm.nih.gov/api/oai/v1/mh/?verb=ListIdentifiers&from=2025-07-01&metadataPrefix=pmc_fm
+If the above request returned resumptionToken=".eJyLNjQxNTfUySvNyUEilPITM-NTkpViAZ1NCj8:BS-nP2VWjaWJNQ_h9hlxLuWYNyZ7JmdtQhvqHs6WQz4", then the following request returns the next set of 50 identifiers:
+https://pmc.ncbi.nlm.nih.gov/api/oai/v1/mh/?verb=ListIdentifiers&resumptionToken=.eJyLNjQxNTfUySvNyUEilPITM-NTkpViAZ1NCj8:BS-nP2VWjaWJNQ_h9hlxLuWYNyZ7JmdtQhvqHs6WQz4
+List identifiers for articles in the set=bmj, released from March through July 2025, available in full-text XML.
+https://pmc.ncbi.nlm.nih.gov/api/oai/v1/mh/?verb=ListIdentifiers&from=2025-03-01&until=2025-07-31&metadataPrefix=pmc&set=bmj
+ListRecords – returns a fixed number of records per request
+The response will contain up to a maximum of 10 records; if there are more it will include a resumptionToken.
+List the full text XML for the records in the set for the journal with the abbreviation "bmj", encoded in the URL as set=bmj, released between 2025-03-22 to 2025-06-12
+https://pmc.ncbi.nlm.nih.gov/api/oai/v1/mh/?verb=ListRecords&from=2025-03-22&until=2025-06-12&set=bmj&metadataPrefix=pmc
+To get the next 10, insert the value of the resumptionToken provided in the previous call as follows:
+https://pmc.ncbi.nlm.nih.gov/api/oai/v1/mh/?verb=ListRecords&resumptionToken=value
+For each record listed, if it has permissions that allow for full text to be output, the full text will be output. Otherwise, an error will be returned.
+ListSets – returns a fixed number of sets per request
+This response will contain the first 10 sets.
+https://pmc.ncbi.nlm.nih.gov/api/oai/v1/mh/?verb=ListSets
+Use the value of the resumptionToken returned by the call above to get the next 10.
+https://pmc.ncbi.nlm.nih.gov/api/oai/v1/mh/?verb=ListSets&resumptionToken=value
+GetRecord – retrieves a record by identifier
+Get record with front matter in Dublin Core format with an identifier.
+https://pmc.ncbi.nlm.nih.gov/api/oai/v1/mh/?verb=GetRecord&identifier=oai:pubmedcentral.nih.gov:12124693&metadataPrefix=oai_dc
+Get record with front matter in PMC XML format with an identifier.
+https://pmc.ncbi.nlm.nih.gov/api/oai/v1/mh/?verb=GetRecord&identifier=oai:pubmedcentral.nih.gov:12124693&metadataPrefix=pmc_fm
+Get record with full-text in PMC XML format with an identifier.
+https://pmc.ncbi.nlm.nih.gov/api/oai/v1/mh/?verb=GetRecord&identifier=oai:pubmedcentral.nih.gov:12124693&metadataPrefix=pmc
+Last modified: Mon Feb. 23 2026
+Follow NCBI
+NCBI on X (formerly known as Twitter)
+NCBI on Facebook
+NCBI on LinkedIn
+NCBI on GitHub
+NCBI RSS feed
+Connect with NLM
+NLM on X (formerly known as Twitter)
+NLM on Facebook
+NLM on YouTube
+National Library of Medicine
+8600 Rockville Pike
+Bethesda, MD 20894
+Web Policies
+FOIA
+HHS Vulnerability Disclosure
+Help
+Accessibility
+Careers
+NLM
+NIH
+HHS
+USA.gov
+Back to Top

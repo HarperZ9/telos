@@ -1,0 +1,128 @@
+{
+  "current_promoted_natural_laws": [],
+  "durable_receipt_identity": {
+    "action_id": "act_dogfood_0024_001",
+    "action_intent_id": "intent_dogfood_0024_001",
+    "chain_head_hash": "0617602eed957e0bc6c2e4a21548528f6defc542c4468433bde85df76cb51b3a",
+    "event_count": 4,
+    "idempotency_key": "idem_dogfood_0024_001",
+    "receipt_hash": "9c6402f98774170311d78ea3f6983cae71a665dd38ab2ee7e88d413398990ff4",
+    "receipt_is_trace_span": false,
+    "receipt_ref": "telos:action-receipt/act_dogfood_0024_001/chain/0617602eed957e0bc6c2e4a21548528f6defc542c4468433bde85df76cb51b3a"
+  },
+  "generated_on": "2026-07-01",
+  "imported_trace_ref": "otel:trace/aaa76491660d7a56086f69d1be94debe/span/1424d4ca9a6c5b58",
+  "join_summary": {
+    "joined_event_count": 4,
+    "trace_replaces_receipt_count": 0,
+    "trace_span_count": 1
+  },
+  "joins": [
+    {
+      "event_id": "evt_dogfood_0024_001_proposed",
+      "event_trace_join_status": "MATCH",
+      "event_type": "action_proposed",
+      "failure_code": null,
+      "receipt_is_trace_span": false,
+      "span_ref": "otel:trace/aaa76491660d7a56086f69d1be94debe/span/1424d4ca9a6c5b58"
+    },
+    {
+      "event_id": "evt_dogfood_0024_002_admitted",
+      "event_trace_join_status": "MATCH",
+      "event_type": "action_admitted",
+      "failure_code": null,
+      "receipt_is_trace_span": false,
+      "span_ref": "otel:trace/aaa76491660d7a56086f69d1be94debe/span/1424d4ca9a6c5b58"
+    },
+    {
+      "event_id": "evt_dogfood_0024_003_execution_completed",
+      "event_trace_join_status": "MATCH",
+      "event_type": "execution_completed",
+      "failure_code": null,
+      "receipt_is_trace_span": false,
+      "span_ref": "otel:trace/aaa76491660d7a56086f69d1be94debe/span/1424d4ca9a6c5b58"
+    },
+    {
+      "event_id": "evt_dogfood_0024_004_verification_recorded",
+      "event_trace_join_status": "MATCH",
+      "event_type": "verification_recorded",
+      "failure_code": null,
+      "receipt_is_trace_span": false,
+      "span_ref": "otel:trace/aaa76491660d7a56086f69d1be94debe/span/1424d4ca9a6c5b58"
+    }
+  ],
+  "negative_fixture_count": 4,
+  "negative_match_count": 4,
+  "negative_pass_observed_count": 0,
+  "negative_report": {
+    "negative_fixture_count": 4,
+    "negative_match_count": 4,
+    "negative_pass_observed_count": 0,
+    "rows": [
+      {
+        "expected_failure_code": "missing_trace_span",
+        "expected_verdict": "UNVERIFIABLE",
+        "fixture_id": "missing_trace_span",
+        "observed_failures": [
+          "missing_trace_span"
+        ],
+        "observed_verdicts": [
+          "UNVERIFIABLE"
+        ],
+        "status": "MATCH"
+      },
+      {
+        "expected_failure_code": "trace_span_replaces_receipt",
+        "expected_verdict": "DRIFT",
+        "fixture_id": "trace_span_replaces_receipt",
+        "observed_failures": [
+          "trace_span_replaces_receipt"
+        ],
+        "observed_verdicts": [
+          "DRIFT",
+          "MATCH"
+        ],
+        "status": "MATCH"
+      },
+      {
+        "expected_failure_code": "trace_id_substitutes_receipt_id",
+        "expected_verdict": "DRIFT",
+        "fixture_id": "trace_id_substitutes_receipt_id",
+        "observed_failures": [
+          "trace_attribute_join_broken",
+          "trace_id_substitutes_receipt_id"
+        ],
+        "observed_verdicts": [
+          "DRIFT"
+        ],
+        "status": "MATCH"
+      },
+      {
+        "expected_failure_code": "trace_attribute_join_broken",
+        "expected_verdict": "DRIFT",
+        "fixture_id": "idempotency_key_unjoined",
+        "observed_failures": [
+          "trace_attribute_join_broken"
+        ],
+        "observed_verdicts": [
+          "DRIFT"
+        ],
+        "status": "MATCH"
+      }
+    ]
+  },
+  "non_promotion_statement": "Pass 0054 proves only local OTel-style trace import joins to an existing action receipt fixture. It does not prove live runtime observability, buyer adoption, scientific truth, or any natural law.",
+  "pass": "0054",
+  "receipt_source": {
+    "path": "C:\\dev\\public\\telos\\docs\\research\\dogfood\\schemas\\telos-action-receipt-fixture-pass-0024.json",
+    "sha256": "9c6402f98774170311d78ea3f6983cae71a665dd38ab2ee7e88d413398990ff4"
+  },
+  "schema": "OTelTraceReceiptJoinSet/v1",
+  "seal": "61027668055bf022aad7958d41e28e35512ad63f72d309bbb124c1efd2c4b12d",
+  "span_source": {
+    "path": "C:\\dev\\public\\telos\\docs\\research\\dogfood\\fixtures\\otel-trace-receipt-join-spans-pass-0054.json",
+    "sha256": "1481a8962a1e0e0094922ef0846cfaf07de655ff3259fb077daf91b5e18fa2fe",
+    "span_count": 1
+  },
+  "status": "OTEL_TRACE_RECEIPT_JOIN_MATCH"
+}

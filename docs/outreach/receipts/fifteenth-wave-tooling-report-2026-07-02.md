@@ -1,0 +1,31 @@
+# crucible report: Project Telos Fifteenth-Wave Cyclic Finite-Sum Replay Claims
+
+## Summary
+
+- thesis_id: `34995559c8c1670d`
+- thesis_seal: `34995559c8c1670de266453f57b318bd62eab00073c896069a77f1c11ffb45cf`
+- assessment_seal: `8cbaec87c4ab7378f2f63fe35100220d5621b9fe6b2c9b6a7f889fa38420d48f`
+- counts: MATCH 6 / DRIFT 0 / UNVERIFIABLE 0
+- integrity: seals_ok=True, thesis_ok=True, verdicts_rederive=True
+
+## Verdicts
+
+| Claim | Status | Disposition | Margin | Method | Grounds |
+| --- | --- | --- | ---: | --- | --- |
+| The fifteenth-wave package adds a bounded Lean cyclic finite-sum replay rung while keeping continuous periodic integration by parts NOT_REPLAYED and the parent Millennium problem UNVERIFIABLE. | MATCH | fenced | 1 | fifteenth-wave-package-boundary-review | deviation 0 within tolerance 0.5 |
+| The fifteenth-wave theorem is stored in a separate Lean file and preserves the fourteenth-wave PeriodicCancellationPreflight.lean hash at 77e5cba345adc1fd99003bfc17092750fddca1a9f879b4ac59f99e74c374a936. | MATCH | fenced | 1 | historical-receipt-stability-review | deviation 0 within tolerance 0.5 |
+| CyclicFiniteSumPreflight.lean compiles with Lean exit code 0 and replays lastValue, pathDiffSum, pathDiffSum_telescopes, and cyclic_pathDiffSum_cancels. | MATCH | fenced | 1 | lean-cyclic-replay-receipt-review | deviation 0 within tolerance 0.5 |
+| The fifteenth-wave source refresh retains 15 arXiv metadata rows, 15 unique IDs, verifies both Gather stores as MATCH, and demotes the rows to SOURCE_LEAD_ONLY. | MATCH | fenced | 1 | source-lead-demotion-review | deviation 0 within tolerance 0.5 |
+| The website copy, official-copy scaffold, handoff, revision queue, and tooling assessment distinguish CYCLIC_SUM_REPLAY_MATCH from NOT_REPLAYED continuous theorem claims. | MATCH | fenced | 1 | publication-surface-boundary-review | deviation 0 within tolerance 0.5 |
+| The fifteenth-wave content queue includes explicit do-not-post boundaries for Navier-Stokes, smooth periodic integration by parts, source truth, exhaustive coverage, native BuildLang relation receipts, and accepted-publication claims. | MATCH | fenced | 1 | content-boundary-review | deviation 0 within tolerance 0.5 |
+
+## Measurement Evidence
+
+| Claim | Method | Evidence |
+| --- | --- | --- |
+| The fifteenth-wave package adds a bounded Lean cyclic finite-sum replay rung while keeping continuous periodic integration by parts NOT_REPLAYED and the parent Millennium problem UNVERIFIABLE. | fifteenth-wave-package-boundary-review | docs/outreach/FIFTEENTH-WAVE-CYCLIC-FINITE-SUM-REPLAY-2026-07-02.md exists; the package describes one kernel-checked cyclic finite-sum replay rung; the package states smooth periodic integration by parts is not replayed; the package states the parent Navier-Stokes Millennium problem remains UNVERIFIABLE |
+| The fifteenth-wave theorem is stored in a separate Lean file and preserves the fourteenth-wave PeriodicCancellationPreflight.lean hash at 77e5cba345adc1fd99003bfc17092750fddca1a9f879b4ac59f99e74c374a936. | historical-receipt-stability-review | docs/research/proof-packets/navier-stokes-periodic-skew-symmetry-v0/formal/lean/CyclicFiniteSumPreflight.lean exists; docs/research/proof-packets/navier-stokes-periodic-skew-symmetry-v0/formal/lean/PeriodicCancellationPreflight.lean retains SHA-256 77e5cba345adc1fd99003bfc17092750fddca1a9f879b4ac59f99e74c374a936; lean-cyclic-finite-sum replay receipt records the fourteenth-wave dependency hash as preserved |
+| CyclicFiniteSumPreflight.lean compiles with Lean exit code 0 and replays lastValue, pathDiffSum, pathDiffSum_telescopes, and cyclic_pathDiffSum_cancels. | lean-cyclic-replay-receipt-review | docs/research/proof-packets/navier-stokes-periodic-skew-symmetry-v0/formal/lean/CyclicFiniteSumPreflight.lean exists; docs/outreach/receipts/fifteenth-wave/lean-cyclic-finite-sum-replay-2026-07-02.json records exit_code 0; receipt records ProjectTelos.FormalReplay.lastValue; receipt records ProjectTelos.FormalReplay.pathDiffSum; receipt records ProjectTelos.FormalReplay.pathDiffSum_telescopes; receipt records ProjectTelos.FormalReplay.cyclic_pathDiffSum_cancels; receipt records continuous_periodic_integration_by_parts NOT_REPLAYED |
+| The fifteenth-wave source refresh retains 15 arXiv metadata rows, 15 unique IDs, verifies both Gather stores as MATCH, and demotes the rows to SOURCE_LEAD_ONLY. | source-lead-demotion-review | docs/outreach/receipts/fifteenth-wave/source-lead-demotion-gate.json exists; source-lead-demotion-gate records retained_rows 15; source-lead-demotion-gate records unique_arxiv_ids 15; source-lead-demotion-gate records all_store_verifications_match true; source-lead-demotion-gate verdict is SOURCE_LEAD_ONLY |
+| The website copy, official-copy scaffold, handoff, revision queue, and tooling assessment distinguish CYCLIC_SUM_REPLAY_MATCH from NOT_REPLAYED continuous theorem claims. | publication-surface-boundary-review | research-formal-replay-preflight.html states CYCLIC_SUM_REPLAY_MATCH for the finite cyclic first-difference sum; research-formal-replay-preflight.html states continuous periodic integration by parts is NOT_REPLAYED; docs/research/official/FORMAL-REPLAY-PREFLIGHT-FOR-PDE-PACKETS-2026-07-02.md includes CYCLIC_SUM_REPLAY_MATCH and NOT_REPLAYED terms; docs/outreach/PARALLEL-CODEX-HANDOFF-2026-07-02.md includes the fifteenth-wave cyclic finite-sum boundary; docs/research/whitepapers/OFFICIAL-PAPER-REVISION-QUEUE-2026-07-02.md includes the fifteenth-wave cyclic finite-sum boundary; docs/TOOLING-SHAPE-ASSESSMENT-2026-07-02.md records the next target as a finite-dimensional cyclic integration-by-parts stencil |
+| The fifteenth-wave content queue includes explicit do-not-post boundaries for Navier-Stokes, smooth periodic integration by parts, source truth, exhaustive coverage, native BuildLang relation receipts, and accepted-publication claims. | content-boundary-review | docs/outreach/FIFTEENTH-WAVE-CONTENT-QUEUE-2026-07-02.md exists; Do Not Post forbids Project Telos solved Navier-Stokes; Do Not Post forbids Lean proved smooth periodic integration by parts; Do Not Post forbids arXiv metadata proves paper truth; Do Not Post forbids latest/exhaustive coverage; Do Not Post forbids native BuildLang relation-invariant support; Do Not Post forbids official accepted publication claims |

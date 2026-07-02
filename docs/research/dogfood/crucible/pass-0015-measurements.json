@@ -1,0 +1,127 @@
+{
+  "measurements": [
+    {
+      "claim": "Pass 0015 created a CloudQuantumTaskReceiptProfileSet/v1 artifact with status PROFILE_SET_MATCH, four profiles, four negative fixtures, three shape-only sample receipts, and seal da29ddb01c060ea4af511cec8c901895e9f1c3c62622d367aefb15e7f82fcf62.",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "method": "profile-set-review",
+      "evidence": [
+        "schemas/cloud-quantum-task-receipt-profiles-pass-0015.json schema=CloudQuantumTaskReceiptProfileSet/v1",
+        "status=PROFILE_SET_MATCH",
+        "profile_count=4",
+        "negative_fixture_count=4",
+        "sample_receipt_count=3",
+        "seal=da29ddb01c060ea4af511cec8c901895e9f1c3c62622d367aefb15e7f82fcf62"
+      ]
+    },
+    {
+      "claim": "Pass 0015 defines provider profiles for Amazon Braket, IBM Quantum Runtime, Azure Quantum, and Provider Simulator.",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "method": "profile-id-review",
+      "evidence": [
+        "profile cloud-quantum-profile-braket-task present",
+        "profile cloud-quantum-profile-ibm-runtime-job present",
+        "profile cloud-quantum-profile-azure-job present",
+        "profile cloud-quantum-profile-provider-simulator present"
+      ]
+    },
+    {
+      "claim": "The Braket profile requires device ARN, task id, shots, status, result payload hash, and calibration or device-properties reference for hardware-claim eligibility.",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "method": "braket-profile-review",
+      "evidence": [
+        "Braket hardware_claim_allowed_requirements include device_arn",
+        "Braket hardware_claim_allowed_requirements include task_id",
+        "Braket hardware_claim_allowed_requirements include shots",
+        "Braket hardware_claim_allowed_requirements include status",
+        "Braket hardware_claim_allowed_requirements include result_payload_hash",
+        "Braket hardware_claim_allowed_requirements include calibration_or_device_properties_reference"
+      ]
+    },
+    {
+      "claim": "The IBM Runtime profile requires backend name, job id, primitive name, result payload hash, job/session mode, and calibration or backend-properties reference for hardware-claim eligibility.",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "method": "ibm-profile-review",
+      "evidence": [
+        "IBM hardware_claim_allowed_requirements include backend_name",
+        "IBM hardware_claim_allowed_requirements include job_id",
+        "IBM hardware_claim_allowed_requirements include primitive_name",
+        "IBM hardware_claim_allowed_requirements include result_payload_hash",
+        "IBM hardware_claim_allowed_requirements include session_or_job_mode",
+        "IBM hardware_claim_allowed_requirements include calibration_or_backend_properties_reference"
+      ]
+    },
+    {
+      "claim": "The Azure Quantum profile requires workspace, provider, target, job id, job input hash, result payload hash, calibration or target-properties reference, and explicitly separates resource-estimator output from execution output.",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "method": "azure-profile-review",
+      "evidence": [
+        "Azure hardware_claim_allowed_requirements include workspace_ref",
+        "Azure hardware_claim_allowed_requirements include provider_id",
+        "Azure hardware_claim_allowed_requirements include target_id",
+        "Azure hardware_claim_allowed_requirements include job_id",
+        "Azure hardware_claim_allowed_requirements include job_input_hash",
+        "Azure hardware_claim_allowed_requirements include result_payload_hash",
+        "Azure hardware_claim_allowed_requirements include calibration_or_target_properties_reference",
+        "Azure non_promotion_rules include Resource-estimator output must remain separate from job execution output"
+      ]
+    },
+    {
+      "claim": "The Provider Simulator profile uses branch CLOUD_SIMULATOR and allows no hardware-claim requirements.",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "method": "simulator-profile-review",
+      "evidence": [
+        "Provider Simulator profile present",
+        "branch=CLOUD_SIMULATOR",
+        "hardware_claim_allowed_requirements=[]",
+        "non_promotion_rules include Cloud simulator results are not cloud QPU hardware results"
+      ]
+    },
+    {
+      "claim": "Pass 0015 validator reports MATCH with one matched check and zero drift.",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "method": "validator-run-review",
+      "evidence": [
+        "schemas/pass-0015-cloud-quantum-profile-validator-result.json status=MATCH",
+        "match=1",
+        "drift=0",
+        "checks include CloudQuantumTaskReceiptProfileSet status MATCH"
+      ]
+    },
+    {
+      "claim": "Pass 0015 records tool receipts showing Index, Gather, Telos, Forum, and Crucible status MATCH while preserving Forum submit as UNVERIFIABLE due to executor JSON parsing.",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "method": "tool-receipt-review",
+      "evidence": [
+        "schemas/tool-receipts-pass-0015.json status=MATCH_WITH_FORUM_SUBMIT_GAP",
+        "tool receipts include index status MATCH",
+        "tool receipts include gather status MATCH",
+        "tool receipts include telos operator_doctor status MATCH",
+        "tool receipts include forum status MATCH and verify MATCH",
+        "tool receipts include forum_submit status UNVERIFIABLE",
+        "tool receipts include crucible status MATCH",
+        "Forum submit error recorded: configured executor did not return valid JSON"
+      ]
+    },
+    {
+      "claim": "Pass 0015 promotes zero new quantum hardware results, quantum advantage claims, theorem proofs, natural laws, or scientific discoveries.",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "method": "non-promotion-review",
+      "evidence": [
+        "packets/025-cloud-quantum-task-receipt-profiles.md states this pass does not run a cloud job",
+        "schemas/cloud-quantum-task-receipt-profiles-pass-0015.json non_promotion_statement states sample receipts are shape-only and not executed",
+        "sample receipts hardware_claim_allowed=false",
+        "sample receipts sample_status=SHAPE_ONLY_NOT_EXECUTED",
+        "Current promoted natural laws: none"
+      ]
+    }
+  ]
+}

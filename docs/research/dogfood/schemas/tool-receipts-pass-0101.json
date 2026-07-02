@@ -1,0 +1,69 @@
+{
+  "compose": {
+    "command": "C:\\Users\\Zain\\AppData\\Local\\Programs\\Python\\Python312\\python.exe C:\\dev\\public\\telos\\docs\\research\\dogfood\\tools\\compose_inequality_safe_bqm_receipt.py --out C:\\dev\\public\\telos\\docs\\research\\dogfood\\schemas\\inequality-safe-bqm-receipt-pass-0101.json",
+    "exit_code": 0,
+    "status": "MATCH",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "153e3e3f5290bc8aaacba449e6603beb1875dcdc628552897f968abd74786781"
+  },
+  "forum": {
+    "confidence": 0.045454545454545456,
+    "decided": null,
+    "exit_code": 0,
+    "needs_escalation": true,
+    "status": "MATCH",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "ed94aa833c87bcdb8e11efb2d17b0a6f49e805bd8f008027ab7c368b7d707b56",
+    "top_candidates": [
+      {
+        "agent": "project-telos",
+        "score": 0.045454545454545456
+      },
+      {
+        "agent": "backend",
+        "score": 0.0
+      },
+      {
+        "agent": "ci-cd",
+        "score": 0.0
+      },
+      {
+        "agent": "cloud-infra",
+        "score": 0.0
+      },
+      {
+        "agent": "code-review",
+        "score": 0.0
+      }
+    ]
+  },
+  "index": {
+    "exit_code": 0,
+    "graph_pack_sha256": "8ee383e19ae9a6141bee70de733fb6aa09201ff9d284ce6778ce58b06e6b68b2",
+    "schema": "project-telos.context-envelope/v1",
+    "source_refs_only": true,
+    "status": "MATCH",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "643ac585122c29a22aec5ff2b74172118bb3a150c335f690a54ea45c2fc67ebd",
+    "verification_verdict": "MATCH"
+  },
+  "law_candidate": "knapsack_inequality_bqm_requires_slack_or_inequality_encoding",
+  "pass": "0101",
+  "schema": "DogfoodToolReceipts/v1",
+  "seal": "1bbcdeb77fea20169d5c1e17ef56bb0c6dd4bdbbda0fde5798ad3c7214cf7a46",
+  "telos": {
+    "exit_code": 0,
+    "status": "MATCH",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "be17cb15259234cb4e8e95c2b36e76c90d841431729beb140294e34c5f9ebfa7",
+    "tool": "telos",
+    "tool_version": "0.1.0"
+  },
+  "test": {
+    "command": "C:\\Users\\Zain\\AppData\\Local\\Programs\\Python\\Python312\\python.exe C:\\dev\\public\\telos\\docs\\research\\dogfood\\tools\\test_inequality_safe_bqm_receipt.py",
+    "exit_code": 0,
+    "status": "MATCH",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "lf_clone_probe": {
+    "checkout_policy": "core.autocrlf=false",
+    "command": "git -c core.autocrlf=false clone --depth 1 https://github.com/Pengbinghui/pipeline-math.git temp:pipeline-math-pass0032-lf",
+    "eol_probe": {
+      "Prob4b/Defs.lean": "i/lf w/lf",
+      "Prob4b/Theorems.lean": "i/lf w/lf",
+      "scripts/frozen.sha256": "i/lf w/lf"
+    },
+    "repo_commit": "69d7df765a8f377a5e0628c6d36c088bce7642c9",
+    "status": "MATCH"
+  },
+  "non_claims": [
+    "This remediation contract does not install elan.",
+    "This remediation contract does not run lake successfully.",
+    "This remediation contract does not run Lean theorem checking.",
+    "This remediation contract does not prove Problem 4(b)."
+  ],
+  "pass": "0032",
+  "public_source_receipts": [
+    {
+      "claim": "Elan manages Lean installations and places lean and lake binaries on PATH, selecting the version from lean-toolchain when needed.",
+      "locator": "web:turn0view0:L285-L287",
+      "source": "elan README",
+      "url": "https://github.com/leanprover/elan",
+      "verification_status": "verified"
+    },
+    {
+      "claim": "Elan installs and runs Lean toolchains; projects can use lean-toolchain files to select a Lean version.",
+      "locator": "web:turn1view0:L84-L88 and web:turn1view1:L149-L162",
+      "source": "Lean reference manual",
+      "url": "https://lean-lang.org/doc/reference/latest/Build-Tools-and-Distribution/Managing-Toolchains-with-Elan/",
+      "verification_status": "verified"
+    },
+    {
+      "claim": "core.autocrlf=true converts working-directory text files to CRLF; core.eol is ignored when core.autocrlf is true or input.",
+      "locator": "web:turn1view2:L1644-L1658",
+      "source": "Git config manual",
+      "url": "https://git-scm.com/docs/git-config",
+      "verification_status": "verified"
+    }
+  ],
+  "python3_shim_probe": {
+    "external_write_performed": false,
+    "python3_resolution": "temp:telos-pass0032-shim/python3",
+    "python_version": "Python 3.12.10",
+    "shim_contents_hash": "191c4de6997d024bf5e53e99274285654c6ac05c66706054b5f8be29ba68476d",
+    "shim_kind": "reversible_temp_path_wrapper",
+    "shim_ref": "temp:telos-pass0032-shim/python3",
+    "status": "MATCH",
+    "temp_write_performed": true
+  },
+  "remediation_decision": {
+    "line_ending_gate_status": "RESOLVED_IN_TEMP_LF_CLONE",
+    "next_blocker": "lake_missing",
+    "official_source_basis": [
+      "elan README",
+      "Lean reference manual",
+      "Git config manual"
+    ],
+    "python3_gate_status": "RESOLVED_BY_REVERSIBLE_TEMP_SHIM",
+    "replay_success_promoted": false,
+    "selected_next_strategy": "provision_elan_or_lake_lean_in_reversible_environment",
+    "toolchain_install_performed": false
+  },
+  "schema": "LeanReplayRemediationContractFixture/v1",
+  "seal": "5bca5d4aa6b3c1b735da0c2e7a10bd1568194723e88781fa4f39955b5dafc08c",
+  "source_environment_ref": "schemas/lean-replay-environment-contract-pass-0031.json",
+  "source_environment_seal": "4532f819ea8d8f7760323b2920d131b4909bedc05960ad3da553424e1f38a0bc",
+  "source_environment_sha256": "e10e07a409bf9a0cde7dcf8aae823b176b44a9b1610fcf133dc228b94219d3f1",
+  "verify_attempts": [
+    {
+      "attempt_id": "lf_no_python3_shim",
+      "command": "absolute Git Bash scripts/verify.sh --no-log --all",
+      "exit_code": 1,
+      "failed_check": "Banned keywords",
+      "failure_class": "python3_missing_in_git_bash",
+      "lake_or_lean_reached": false,
+      "passed_checks": [
+        "Frozen SHA pins"
+      ],
+      "status": "DRIFT"
+    },
+    {
+      "attempt_id": "lf_with_python3_shim",
+      "command": "absolute Git Bash with temp python3 shim scripts/verify.sh --no-log --all",
+      "exit_code": 1,
+      "failed_check": "lake build",
+      "failure_class": "lake_missing",
+      "lake_or_lean_reached": false,
+      "passed_checks": [
+        "Frozen SHA pins",
+        "Banned keywords"
+      ],
+      "status": "DRIFT"
+    }
+  ]
+}

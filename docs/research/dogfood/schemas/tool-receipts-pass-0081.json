@@ -1,0 +1,133 @@
+{
+  "schema": "DogfoodToolReceipts/v1",
+  "pass": "0081",
+  "generated_on": "2026-07-01",
+  "status": "MATCH_VISUAL_TRUTH_PROOF_PACKET_REFRESH",
+  "demo_surface": {
+    "schema": "VisualTruthProofPacketRefresh/v1",
+    "artifact": "docs/research/dogfood/schemas/visual-truth-proof-packet-refresh-pass-0081.json",
+    "artifact_sha256": "898b92367b2d1df6123413a0d48dc3c356224532e0d7f692c6ac4e558e1669d4",
+    "seal": "c04b0162bd0bbd6702aef58495d3a0603c9b47d07f6f1b5c0a9322a8c59cf6a3",
+    "demo_id": "visual-truth-proof-packet-refresh-0081",
+    "proof_kit_pass": "0011",
+    "proof_metric_count": 4,
+    "market_map_pass": "0011",
+    "market_row_count": 8,
+    "source_ref_count": 8,
+    "targeted_regression_status": "MATCH",
+    "targeted_regression_passed": 88,
+    "forum_route_status": "MATCH",
+    "forum_route_needs_escalation": true,
+    "forum_route_top_candidates": [
+      "ci-cd",
+      "deep-research",
+      "sdk-platform"
+    ],
+    "hardware_measurement_used": false,
+    "physical_calibration_claim": false,
+    "negative_fixtures": 8,
+    "unsupported_claim_count": 0,
+    "current_promoted_natural_laws": 0
+  },
+  "gather": {
+    "packet": {
+      "status": "MATCH",
+      "path": "docs/research/dogfood/packets/091-visual-truth-proof-packet-refresh.md",
+      "sha256": "95336f62fc6204667f0cf64911b8207fd8ca5e0efba3634b63b90dddea82439f",
+      "seal": "e5787d9ac64c7d70fcfbbc3be32e856a64a0045ece096ee2fa1ac40a353b8043",
+      "verified": true,
+      "dropped": 0
+    },
+    "buyer_brief": {
+      "status": "MATCH",
+      "path": "docs/research/dogfood/briefs/091-visual-truth-proof-packet-brief.md",
+      "sha256": "020e4235e2a3d11abbc66460ecf975088e775163e82b55526e2c0a59b92393bf",
+      "seal": "b7226e1fb4e4304d3c7a47ff817a623138a4820fec18f2b52f156506d7111c36",
+      "verified": true,
+      "dropped": 0
+    }
+  },
+  "crucible": {
+    "run_status": "MATCH",
+    "thesis_id": "647d15fdcefa8ce5",
+    "thesis_seal": "647d15fdcefa8ce58908f93d241f47ba94a52162da26805990a5c09abacee3aa",
+    "assessment_seal": "f791eb78629798b97804e4ef125b7fc87394bba2cd06b01f205bcef0d39ab962",
+    "assessment_record_seal": "d2185aec719ffdef95ecc12b56b163b6bd0f802d33c4692c3889da33767e9d36",
+    "measurement_seal": "7868e683cf68d9b0e21922fac982169c9fcfe377e65e4c7d8335c45b9b0a8fb1",
+    "claims": 8,
+    "match": 8,
+    "drift": 0,
+    "unverifiable": 0,
+    "registry_stats": {
+      "theses": 69,
+      "claims": 569,
+      "unique_claims": 562,
+      "assessments": 70,
+      "latest_assessments": 69,
+      "invalid_latest_assessments": 0,
+      "match": 569,
+      "drift": 0,
+      "unverifiable": 0
+    }
+  },
+  "telos": {
+    "integration_result": "Packaged Build Color software metrics, color-calibration market gaps, negative hardware-calibration boundaries, Forum routing, Gather docs, and Crucible verdicts into one visual-truth proof-packet refresh.",
+    "market_motion": "visual_truth_proof_packets",
+    "growth_vector": "Create an owning visual-proof / measured-output evidence lane so CI, deep research, SDK platform, color, rendering, and scientific visualization packets stop routing as unresolved cross-domain work.",
+    "non_promotion_boundary": "Does not prove physical display calibration, ICC/LUT installation, display mutation, new color science, market adoption, scientific discovery, or a natural law."
+  },
+  "shell": {
+    "commands": [
+      {
+        "command": "python docs\\research\\dogfood\\tools\\test_visual_truth_proof_packet_refresh.py",
+        "status": "MATCH"
+      },
+      {
+        "command": "python -m py_compile docs\\research\\dogfood\\tools\\compose_visual_truth_proof_packet_refresh.py docs\\research\\dogfood\\tools\\probe_visual_truth_proof_packet_refresh.py docs\\research\\dogfood\\tools\\test_visual_truth_proof_packet_refresh.py docs\\research\\dogfood\\tools\\validate_pass_0081_visual_truth_proof_packet_refresh.py",
+        "status": "MATCH"
+      },
+      {
+        "command": "python docs\\research\\dogfood\\tools\\probe_visual_truth_proof_packet_refresh.py",
+        "status": "MATCH"
+      },
+      {
+        "command": "python docs\\research\\dogfood\\tools\\validate_pass_0081_visual_truth_proof_packet_refresh.py",
+        "status": "MATCH"
+      },
+      {
+        "command": "crucible run docs\\research\\dogfood\\crucible\\pass-0081-thesis.json --measurements docs\\research\\dogfood\\crucible\\pass-0081-measurements.json --registry docs\\research\\dogfood\\crucible\\registry --report docs\\research\\dogfood\\crucible\\pass-0081-report.md --out docs\\research\\dogfood\\crucible\\pass-0081-run.json --json",
+        "status": "MATCH"
+      },
+      {
+        "command": "gather docs docs\\research\\dogfood\\packets\\091-visual-truth-proof-packet-refresh.md --json",
+        "status": "MATCH"
+      },
+      {
+        "command": "gather docs docs\\research\\dogfood\\briefs\\091-visual-truth-proof-packet-brief.md --json",
+        "status": "MATCH"
+      },
+      {
+        "command": "crucible registry stats docs\\research\\dogfood\\crucible\\registry --json",
+        "status": "MATCH"
+      }
+    ],
+    "line_counts": {
+      "compose_visual_truth_proof_packet_refresh.py": 229,
+      "probe_visual_truth_proof_packet_refresh.py": 174,
+      "test_visual_truth_proof_packet_refresh.py": 41,
+      "validate_pass_0081_visual_truth_proof_packet_refresh.py": 75
+    },
+    "sha256": {
+      "compose_visual_truth_proof_packet_refresh.py": "3d73061d4f52ad4a6a8d9825f89720b8595dce4612fda150610affd075f8ddeb",
+      "probe_visual_truth_proof_packet_refresh.py": "4d949fe355da5fd8d3cbbedafd1c22e1e6532901e8df470aee176dff26053f79",
+      "test_visual_truth_proof_packet_refresh.py": "a5b003c9440dd2308088a8319ab8b720449a5b7c4e7edda012652b2c55b6fd02",
+      "validate_pass_0081_visual_truth_proof_packet_refresh.py": "161ce235cc386e844ce5abf6323d3594e0b39a5494b9bba184b7c3d2008a977e",
+      "visual-truth-proof-packet-refresh-pass-0081.json": "898b92367b2d1df6123413a0d48dc3c356224532e0d7f692c6ac4e558e1669d4",
+      "pass-0081-visual-truth-proof-packet-refresh-validator-result.json": "dbbe9f03175e77fb6795dc672095dd3a1bef31f55c0be670fa50444270f7d8fe",
+      "091-visual-truth-proof-packet-refresh.md": "95336f62fc6204667f0cf64911b8207fd8ca5e0efba3634b63b90dddea82439f",
+      "091-visual-truth-proof-packet-brief.md": "020e4235e2a3d11abbc66460ecf975088e775163e82b55526e2c0a59b92393bf",
+      "pass-0081-visual-truth-proof-packet-refresh-steelman.md": "9b47789dc87ce93c898ad3c1a0d086a574cff13bdaf91048866a0a1a2af247d0",
+      "pass-0081-run.json": "f6bbafb1888387f4c92e93900953de5d68a82bba58a9ead7796b18e747cedee2"
+    }
+  }
+}

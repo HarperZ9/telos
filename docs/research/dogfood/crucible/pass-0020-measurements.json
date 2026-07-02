@@ -1,0 +1,165 @@
+{
+  "measurements": [
+    {
+      "claim": "Pass 0020 created a QuantumWorkflowMarketImportSet/v1 artifact with status MARKET_IMPORT_AUDIT_MATCH, 22 market rows, four wedge scores, 15 package import audit rows, 12 megatool nodes, 26 source anchors, and seal 1c3263fe19f05d45e4f719f96c02703ca4e1f2739ecf8b85d03449ee49665eaf.",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "method": "quantum-workflow-market-artifact-review",
+      "evidence": [
+        "schemas/quantum-workflow-market-import-audit-pass-0020.json schema=QuantumWorkflowMarketImportSet/v1",
+        "status=MARKET_IMPORT_AUDIT_MATCH",
+        "market_row_count=22",
+        "wedge_score_count=4",
+        "audit_row_count=15",
+        "megatool_node_count=12",
+        "source_anchor_count=26",
+        "seal=1c3263fe19f05d45e4f719f96c02703ca4e1f2739ecf8b85d03449ee49665eaf"
+      ]
+    },
+    {
+      "claim": "Every pass 0020 market row has MarketRow/v1 schema, category, buyer, official claim, at least one HTTPS source, an allowed gap status, and the uniqueness policy HYPOTHESIS_ONLY_UNLESS_MATRIX_PROVES_EXCLUSION.",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "method": "market-row-contract-review",
+      "evidence": [
+        "validator checks every market row for MarketRow/v1 schema",
+        "validator checks category, buyer, and official_claim",
+        "validator checks at least one HTTPS source",
+        "validator checks allowed gap status in verified/inferred/unverified",
+        "validator checks hypothesis-only uniqueness policy"
+      ]
+    },
+    {
+      "claim": "Pass 0020 includes no unsupported literal claim that 'no competitor does this' in the structured market rows.",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "method": "unsupported-uniqueness-scan",
+      "evidence": [
+        "validator scans structured market rows for phrase 'no competitor does this'",
+        "validator result errors=[]",
+        "rg placeholder/claim scan over pass 0020 artifacts produced no TODO/TBD/FIXME/PLACEHOLDER/REPLACE_ME matches"
+      ]
+    },
+    {
+      "claim": "Pass 0020 records a four-item wedge scorecard and ranks the primary market push as scientific workflow provenance bridge with quantum as the public proof domain.",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "method": "wedge-score-review",
+      "evidence": [
+        "wedge_score_count=4",
+        "all score fields are constrained to 1-5 by validator",
+        "primary_market_push rank=1",
+        "primary_market_push market=scientific workflow provenance bridge with quantum as the public proof domain",
+        "primary_market_push why_now is hypothesis-labelled"
+      ]
+    },
+    {
+      "claim": "Pass 0020 local package audit checks 15 distributions with import_attempted=false for every row and finds opentelemetry-api version 1.41.0 while keeping it scoped to AVAILABLE_FOR_OTEL_BRIDGE_ONLY.",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "method": "local-import-audit-review",
+      "evidence": [
+        "audit_row_count=15",
+        "all package_import_audit rows import_attempted=false",
+        "opentelemetry-api find_spec_available=true",
+        "opentelemetry-api version=1.41.0",
+        "opentelemetry-api promotion_status=AVAILABLE_FOR_OTEL_BRIDGE_ONLY"
+      ]
+    },
+    {
+      "claim": "Pass 0020 local package audit records Qiskit, qiskit-ibm-runtime, Amazon Braket SDK, Cirq, PennyLane, pyqir, pytket, CUDA-Q, qnexus, Pulser, Covalent, MLflow, W&B, and DVC as NOT_INSTALLED in this environment.",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "method": "local-import-absence-review",
+      "evidence": [
+        "qiskit version_status=NOT_INSTALLED",
+        "qiskit-ibm-runtime version_status=NOT_INSTALLED",
+        "amazon-braket-sdk version_status=NOT_INSTALLED",
+        "cirq version_status=NOT_INSTALLED",
+        "pennylane version_status=NOT_INSTALLED",
+        "pyqir version_status=NOT_INSTALLED",
+        "pytket version_status=NOT_INSTALLED",
+        "cudaq version_status=NOT_INSTALLED",
+        "qnexus version_status=NOT_INSTALLED",
+        "pulser version_status=NOT_INSTALLED",
+        "covalent version_status=NOT_INSTALLED",
+        "mlflow version_status=NOT_INSTALLED",
+        "wandb version_status=NOT_INSTALLED",
+        "dvc version_status=NOT_INSTALLED"
+      ]
+    },
+    {
+      "claim": "Pass 0020 megatool integration map includes Gather, Index, Forum, Crucible, Telos, BuildLang/buildc, build-universe, Build Color / calibration tools, browser evidence, model foundry, loop ledger, and action receipts.",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "method": "megatool-node-review",
+      "evidence": [
+        "megatool nodes include Gather",
+        "megatool nodes include Index",
+        "megatool nodes include Forum",
+        "megatool nodes include Crucible",
+        "megatool nodes include Telos",
+        "megatool nodes include BuildLang/buildc",
+        "megatool nodes include build-universe",
+        "megatool nodes include Build Color / calibration tools",
+        "megatool nodes include browser evidence",
+        "megatool nodes include model foundry",
+        "megatool nodes include loop ledger",
+        "megatool nodes include action receipts"
+      ]
+    },
+    {
+      "claim": "Pass 0020 promotion ladder includes SYNTHETIC_ADAPTER_FIXTURE, FRAMEWORK_IMPORT_FIXTURE, LIVE_PROVIDER_FIXTURE, and PUBLIC_PROOF_DEMO states.",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "method": "promotion-ladder-review",
+      "evidence": [
+        "promotion_ladder contains SYNTHETIC_ADAPTER_FIXTURE",
+        "promotion_ladder contains FRAMEWORK_IMPORT_FIXTURE",
+        "promotion_ladder contains LIVE_PROVIDER_FIXTURE",
+        "promotion_ladder contains PUBLIC_PROOF_DEMO"
+      ]
+    },
+    {
+      "claim": "Pass 0020 validator reports MATCH with one matched check and zero drift.",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "method": "validator-run-review",
+      "evidence": [
+        "schemas/pass-0020-quantum-workflow-market-validator-result.json status=MATCH",
+        "match=1",
+        "drift=0",
+        "checks include QuantumWorkflowMarketImportSet status MATCH"
+      ]
+    },
+    {
+      "claim": "Pass 0020 records tool receipts showing Index, Gather, Telos, Forum status/verify, and Crucible status as MATCH while preserving Forum submit as UNVERIFIABLE due to executor JSON parsing.",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "method": "tool-receipt-review",
+      "evidence": [
+        "schemas/tool-receipts-pass-0020.json status=MATCH_WITH_FORUM_SUBMIT_GAP",
+        "index status MATCH",
+        "gather status MATCH",
+        "gather docs verified=true",
+        "telos operator_doctor status MATCH",
+        "forum status MATCH entries=12",
+        "forum verify chain=true deep=true",
+        "forum submit status=UNVERIFIABLE",
+        "crucible status MATCH"
+      ]
+    },
+    {
+      "claim": "Pass 0020 promotes zero live framework integrations, package installations, cloud provider executions, quantum hardware results, buyer-demand proof, natural laws, or scientific discoveries.",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "method": "non-promotion-review",
+      "evidence": [
+        "schemas/quantum-workflow-market-import-audit-pass-0020.json non_promotion_statement states no installs, unavailable framework imports, quantum hardware, provider job, or scientific result",
+        "packets/030-quantum-workflow-provenance-market.md states no framework import, provider job, quantum hardware result, or promoted scientific result",
+        "schemas/tool-receipts-pass-0020.json non_promotion_statement states no live quantum framework execution, cloud provider execution, buyer demand, or scientific discovery",
+        "Current promoted natural laws: none"
+      ]
+    }
+  ]
+}

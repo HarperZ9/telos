@@ -1,0 +1,68 @@
+{
+  "measurements": [
+    {
+      "claim": "Pass 0151 created a FrontierProblemSourceFederationReceipt/v1 artifact with status FRONTIER_PROBLEM_SOURCE_FEDERATION_MATCH_WITH_WARNINGS and seal 487cb905ed43cb8e3df8f6e6ef58ff2fe73aa17f29003aaf3f22bc3a822af1d7.",
+      "deviation": 0.0,
+      "evidence": [
+        "schema=FrontierProblemSourceFederationReceipt/v1",
+        "status=FRONTIER_PROBLEM_SOURCE_FEDERATION_MATCH_WITH_WARNINGS",
+        "seal=487cb905ed43cb8e3df8f6e6ef58ff2fe73aa17f29003aaf3f22bc3a822af1d7"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0151 records 83 candidate sources across 15 families and 40 domains.",
+      "deviation": 0.0,
+      "evidence": [
+        "candidate_sources=83",
+        "families=15",
+        "domains=40"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0151 records 28 capture probes, 24 Gather-verified captures, and 4 warning probes.",
+      "deviation": 0.0,
+      "evidence": [
+        "capture_jobs=28",
+        "gather_verified=24",
+        "capture_warnings=4"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0151 records 12 college/database sources, 10 preprint sources, and 10 scholarly graph sources.",
+      "deviation": 0.0,
+      "evidence": [
+        "college_database_sources=12",
+        "preprint_sources=10",
+        "scholarly_graph_sources=10"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0151 combines pass 0149 context and current candidates into 214 non-deduplicated substrate references.",
+      "deviation": 0.0,
+      "evidence": [
+        "prior_pass_0149_candidate_substrates=131",
+        "combined_nondeduplicated_substrate_context=214"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0151 promotes no theorem, natural law, or world solution.",
+      "deviation": 0.0,
+      "evidence": [
+        "current_promoted_theorems=[]",
+        "current_promoted_world_solutions=[]"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    }
+  ]
+}

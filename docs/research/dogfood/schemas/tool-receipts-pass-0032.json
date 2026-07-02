@@ -1,0 +1,178 @@
+{
+  "generated_on": "2026-07-01",
+  "non_promotion_statement": "Tool receipts prove packet readback, Index substrate mapping, Telos MCP availability, Forum routing and ledger availability, reversible local remediation probes, and Crucible claim assessment only. They do not prove Lean replay, Lake build success, theorem correctness, environment installation, buyer adoption, or any natural law.",
+  "pass": "0032",
+  "receipts": [
+    {
+      "command": "status",
+      "role": "structure-context",
+      "status": "MATCH",
+      "tool": "index",
+      "tool_version": "2.8.0"
+    },
+    {
+      "command": "map --root docs/research/dogfood --json",
+      "dirty_count": 0,
+      "repo_count": 0,
+      "role": "dogfood-substrate-map",
+      "root_sha256_prefix": "f2f0af39219698a9",
+      "schema_version": 1,
+      "status": "MATCH",
+      "tool": "index",
+      "tool_version": "2.8.0",
+      "top_level_count": 39
+    },
+    {
+      "command": "status",
+      "role": "perception-intake",
+      "status": "MATCH",
+      "tool": "gather",
+      "tool_version": "1.5.0"
+    },
+    {
+      "artifact": "packets/042-lean-replay-remediation-contract.md",
+      "chars": 7447,
+      "command": "docs",
+      "seal": "b5bf7a03332117d1d7019e10c44f6daa116bf2a473361bbcf8d9116ab1ed1ec3",
+      "sha256": "0a899851fff621770ffc2cc4c8141c00c45eb94f951a5c3bb21a2096cd3794da",
+      "status": "MATCH",
+      "tool": "gather",
+      "verified": true
+    },
+    {
+      "checkout_policy": "core.autocrlf=false",
+      "command": "git -c core.autocrlf=false clone --depth 1 pipeline-math temp:pipeline-math-pass0032-lf",
+      "eol_probe": {
+        "Prob4b/Defs.lean": "i/lf w/lf",
+        "Prob4b/Theorems.lean": "i/lf w/lf",
+        "scripts/frozen.sha256": "i/lf w/lf"
+      },
+      "repo_commit": "69d7df765a8f377a5e0628c6d36c088bce7642c9",
+      "status": "MATCH",
+      "tool": "shell"
+    },
+    {
+      "command": "scripts/verify.sh --no-log --all through absolute Git Bash in LF clone",
+      "exit_code": 1,
+      "failed_check": "Banned keywords",
+      "failure_class": "python3_missing_in_git_bash",
+      "lake_or_lean_reached": false,
+      "passed_checks": [
+        "Frozen SHA pins"
+      ],
+      "status": "DRIFT",
+      "tool": "shell"
+    },
+    {
+      "command": "temporary python3 shim in Git Bash PATH",
+      "external_write_performed": false,
+      "python_version": "Python 3.12.10",
+      "shim_contents_hash": "191c4de6997d024bf5e53e99274285654c6ac05c66706054b5f8be29ba68476d",
+      "shim_kind": "reversible_temp_path_wrapper",
+      "status": "MATCH",
+      "temp_write_performed": true,
+      "tool": "shell"
+    },
+    {
+      "command": "scripts/verify.sh --no-log --all through absolute Git Bash with temp python3 shim",
+      "exit_code": 1,
+      "failed_check": "lake build",
+      "failure_class": "lake_missing",
+      "lake_or_lean_reached": false,
+      "passed_checks": [
+        "Frozen SHA pins",
+        "Banned keywords"
+      ],
+      "status": "DRIFT",
+      "tool": "shell"
+    },
+    {
+      "command": "telos_status",
+      "status": "MATCH",
+      "tool": "mcp__telos.telos_status",
+      "tool_version": "0.1.0"
+    },
+    {
+      "command": "telos_action_receipt",
+      "digest_references_required": true,
+      "raw_parameters_required": false,
+      "receipt_is_trace_span": false,
+      "schema": "project-telos.action-receipt/v1",
+      "status": "MATCH",
+      "tool": "mcp__telos.telos_action_receipt"
+    },
+    {
+      "command": "telos_loop_ledger",
+      "fresh_context_reads_ledger_first": true,
+      "ledger_durable": true,
+      "schema": "project-telos.loop-ledger/v1",
+      "status": "MATCH",
+      "tool": "mcp__telos.telos_loop_ledger"
+    },
+    {
+      "command": "status",
+      "role": "orchestration-routing",
+      "status": "MATCH",
+      "tool": "forum",
+      "tool_version": "1.12.0"
+    },
+    {
+      "candidates": [
+        {
+          "agent": "model-foundry",
+          "score": 0.125
+        },
+        {
+          "agent": "project-telos",
+          "score": 0.045454545454545456
+        }
+      ],
+      "command": "route",
+      "confidence": 0.07954545454545454,
+      "decided": null,
+      "needs_escalation": true,
+      "status": "MATCH",
+      "tool": "forum"
+    },
+    {
+      "chain": true,
+      "command": "ledger verify",
+      "deep": true,
+      "status": "MATCH",
+      "tool": "forum"
+    },
+    {
+      "command": "submit",
+      "error": "submit needs a model executor. Forum is model-agnostic: pass --cmd \"<model cli>\" (any command, local models need no account), --chat-url <openai-compatible url> (e.g. a local Ollama server), or --api (Anthropic).",
+      "request": "Dogfood pass 0032 adversarial review for Lean replay remediation contract",
+      "status": "UNVERIFIABLE",
+      "tool": "forum"
+    },
+    {
+      "command": "status",
+      "role": "verification-pressure",
+      "status": "MATCH",
+      "tool": "crucible",
+      "tool_version": "1.1.0"
+    },
+    {
+      "assessment_seal": "2714d8f63f2b3e2aa55b4df5d204cb9cf3f08b6739ab411d4b72e9cbc1699096",
+      "claims": 10,
+      "command": "run",
+      "drift": 0,
+      "match": 10,
+      "measurement_seal": "ef8a8fae49c32275d0b325be9eee93b3fd69be59daab7339758b5cf377e5e19a",
+      "seals_ok": true,
+      "status": "MATCH",
+      "thesis_id": "a7d8d84c56a97301",
+      "thesis_ok": true,
+      "thesis_seal": "a7d8d84c56a973015cba5ca02f56a81b7cb4efbe0c51df4718e081b8a305d076",
+      "tool": "crucible",
+      "unverifiable": 0,
+      "verdict_seal": "b770b3216ae3dea07c172dc126af163c63c5c8b4b78f7dd6c58b5654dba9661d",
+      "verdicts_rederive": true
+    }
+  ],
+  "schema": "DogfoodToolReceiptSet/v1",
+  "status": "MATCH_WITH_FORUM_SUBMIT_GAP_AND_LAKE_REPLAY_GAP"
+}

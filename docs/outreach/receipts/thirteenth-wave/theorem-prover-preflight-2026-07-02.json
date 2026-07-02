@@ -1,0 +1,36 @@
+{
+  "schema": "project-telos.theorem-prover-preflight/v1",
+  "generated_at": "2026-07-02",
+  "target_packet": "docs/research/proof-packets/navier-stokes-periodic-skew-symmetry-v0/",
+  "target_subclaim": "For smooth divergence-free periodic two-dimensional velocity fields, integral u dot ((u dot grad)u) dx dy = 0.",
+  "checked_commands": [
+    {
+      "command": "where.exe lean",
+      "status": "NOT_FOUND"
+    },
+    {
+      "command": "where.exe lake",
+      "status": "NOT_FOUND"
+    },
+    {
+      "command": "where.exe coqc",
+      "status": "NOT_FOUND"
+    },
+    {
+      "command": "where.exe isabelle",
+      "status": "NOT_FOUND"
+    }
+  ],
+  "verdict": "THEOREM_REPLAY_BLOCKED_ENVIRONMENT",
+  "next_requirements": [
+    "Install Lean 4 and Lake, or bind a remote theorem-prover runner with receipt capture.",
+    "Create a minimal lake project for the smooth periodic integration-by-parts identity.",
+    "Separate analytic identity proof from finite-grid witness.",
+    "Emit theorem-replay receipt only after proof assistant accepts the statement."
+  ],
+  "boundaries": [
+    "No theorem-prover replay was performed in this shell.",
+    "No theorem assistant acceptance is claimed.",
+    "This preflight is an environment receipt, not mathematical proof."
+  ]
+}

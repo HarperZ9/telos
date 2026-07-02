@@ -1,0 +1,63 @@
+{
+  "schema": "project-telos.crucible.measurement-gate/v1",
+  "tool": "crucible.measurement_gate",
+  "verification_verdict": "UNVERIFIABLE",
+  "decision_outcome": "block",
+  "evaluated_at": "2026-07-02T09:21:51Z",
+  "summary": {
+    "MATCH": 4,
+    "DRIFT": 0,
+    "UNVERIFIABLE": 1
+  },
+  "failure_codes": [
+    "pixel_dimensions_mismatch"
+  ],
+  "rows": [
+    {
+      "layer_id": "visual.histogram-field",
+      "verification_verdict": "UNVERIFIABLE",
+      "failure_code": "pixel_dimensions_mismatch",
+      "criterion_source": "explicit criteria",
+      "evidence_ref": "histogram dimensions or criteria did not verify"
+    },
+    {
+      "layer_id": "visual.dither-spectrum-meter",
+      "verification_verdict": "MATCH",
+      "failure_code": null,
+      "criterion_source": "telos.measurement.layers",
+      "evidence_ref": "dither pattern has checkable structure"
+    },
+    {
+      "layer_id": "spatial.splat-probe",
+      "verification_verdict": "MATCH",
+      "failure_code": null,
+      "criterion_source": "telos.measurement.layers",
+      "evidence_ref": "splat bounds and provenance verified"
+    },
+    {
+      "layer_id": "lighting.cluster-meter",
+      "verification_verdict": "MATCH",
+      "failure_code": null,
+      "criterion_source": "telos.measurement.layers",
+      "evidence_ref": "cluster light budget verified"
+    },
+    {
+      "layer_id": "audio.spectral-meter",
+      "verification_verdict": "MATCH",
+      "failure_code": null,
+      "criterion_source": "telos.measurement.layers",
+      "evidence_ref": "audio spectrum has checkable bins"
+    }
+  ],
+  "privacy": {
+    "raw_payload_required": false,
+    "raw_assets_required_for_interop": false,
+    "exported_fields": [
+      "layer_id",
+      "measurement_hash",
+      "failure_code",
+      "verification_verdict",
+      "decision_outcome"
+    ]
+  }
+}

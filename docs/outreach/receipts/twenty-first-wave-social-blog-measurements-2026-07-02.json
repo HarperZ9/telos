@@ -1,0 +1,59 @@
+{
+  "measurements": [
+    {
+      "claim": "The twenty-first-wave packet expands the active outreach queue only across YouTube, Reddit, and social/blog surfaces while keeping funding and new GitHub work out of scope.",
+      "method": "social-scope-review",
+      "evidence": [
+        "TWENTY-FIRST-WAVE-SOCIAL-BLOG-COMMENT-EXPANSION-2026-07-02.md purpose states YouTube, Reddit, and social/blog outreach",
+        "the purpose states funding and new GitHub work remain out of scope unless an active reply, review, CI failure, or maintainer request needs response"
+      ],
+      "deviation": 0.0,
+      "tolerance": 0.5
+    },
+    {
+      "claim": "The packet includes exact, non-identical comment drafts for 6 Reddit targets, 7 YouTube targets, and 8 social/blog targets with URLs and reasons.",
+      "method": "comment-draft-review",
+      "evidence": [
+        "Reddit targets R20-R25 include URL, reason, and text",
+        "YouTube targets Y21-Y27 include URL, reason, and text",
+        "Blog/social targets B7-B14 include URL, reason, and text",
+        "drafts vary by target and do not duplicate the same comment"
+      ],
+      "deviation": 0.0,
+      "tolerance": 0.5
+    },
+    {
+      "claim": "The packet explicitly marks public posting as not completed and requires action-time confirmation before representational communication is posted.",
+      "method": "side-effect-boundary-review",
+      "evidence": [
+        "Posting rule says no public comment should be claimed as posted until the public side effect actually completes",
+        "Posting rule says representational communication still needs action-time confirmation of exact destination and exact text",
+        "Posting Confirmation Template requires destinations and exact text"
+      ],
+      "deviation": 0.0,
+      "tolerance": 0.5
+    },
+    {
+      "claim": "The packet limits link-bearing outreach to one self-promotion-thread comment and recommends an initial no-link first run.",
+      "method": "link-discipline-review",
+      "evidence": [
+        "Current Social Posture says prefer no-link comments unless the target explicitly asks for tools, repos, examples, or self-promotion",
+        "R24 is the only target-specific comment containing https://github.com/HarperZ9/telos; the other occurrence is the general link policy",
+        "Recommended Next Run says start with 8 no-link comments and hold R24 for a self-promotion-specific pass"
+      ],
+      "deviation": 0.0,
+      "tolerance": 0.5
+    },
+    {
+      "claim": "The packet records the current browser limitation that Chrome was unavailable and no running browser window was found for authenticated posting.",
+      "method": "posting-path-review",
+      "evidence": [
+        "Browser state note says Chrome was not available through the Chrome extension backend",
+        "Browser state note says Windows Computer Use did not find a running Chrome, Edge, Brave, or browser window",
+        "Browser state note says Firefox is installed but not running and the packet advances preparation and validation, not public submission"
+      ],
+      "deviation": 0.0,
+      "tolerance": 0.5
+    }
+  ]
+}

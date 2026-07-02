@@ -1,0 +1,122 @@
+{
+  "build_gates": [
+    {
+      "criterion": "all required input sections present",
+      "id": "schema_gate"
+    },
+    {
+      "criterion": "admission action_intent_id matches action receipt action_intent_id",
+      "id": "linkage_gate"
+    },
+    {
+      "criterion": "ledger chain flag and hash refs are present",
+      "id": "ledger_gate"
+    },
+    {
+      "criterion": "raw private payload flag is false",
+      "id": "redaction_gate"
+    },
+    {
+      "criterion": "pass 0051 negative fixtures fail as expected",
+      "id": "negative_fixture_gate"
+    },
+    {
+      "criterion": "Crucible returns MATCH for bundled measurable claims",
+      "id": "crucible_gate"
+    }
+  ],
+  "generated_on": "2026-07-01",
+  "input_schemas": [
+    {
+      "description": "Gather/source URL, repo path, or local source-ref hashes",
+      "id": "source_refs",
+      "mode": "required"
+    },
+    {
+      "description": "Index context envelope or graph-pack hash",
+      "id": "workspace_context_ref",
+      "mode": "required"
+    },
+    {
+      "description": "Telos admission decision with action_intent_id",
+      "id": "admission_record",
+      "mode": "required"
+    },
+    {
+      "description": "Action receipt joined to admission action_intent_id",
+      "id": "action_receipt",
+      "mode": "required"
+    },
+    {
+      "description": "Browser evidence when browser or page state is involved",
+      "id": "browser_evidence_ref",
+      "mode": "conditional"
+    },
+    {
+      "description": "Loop ledger entry with sequence and chain continuity",
+      "id": "loop_ledger_entry",
+      "mode": "required"
+    },
+    {
+      "description": "Crucible assessment or validator verdict",
+      "id": "crucible_verdict",
+      "mode": "required"
+    },
+    {
+      "description": "Private-payload boundary and hash-only indicators",
+      "id": "redaction_status",
+      "mode": "required"
+    }
+  ],
+  "milestones": [
+    {
+      "id": "day_1_3",
+      "work": "write packet composer fixture loader and canonical JSON bundle writer"
+    },
+    {
+      "id": "day_4_7",
+      "work": "add markdown and static HTML exporters"
+    },
+    {
+      "id": "day_8_14",
+      "work": "add validator runner and negative fixture report"
+    },
+    {
+      "id": "day_15_21",
+      "work": "add trace import adapters for OpenTelemetry-style spans"
+    },
+    {
+      "id": "day_22_30",
+      "work": "ship public demo packet and buyer walkthrough"
+    }
+  ],
+  "output_artifacts": [
+    {
+      "path": "packet.json",
+      "role": "canonical JSON proof packet"
+    },
+    {
+      "path": "packet.md",
+      "role": "human-readable buyer/reviewer packet"
+    },
+    {
+      "path": "receipts.json",
+      "role": "tool and validation receipts"
+    },
+    {
+      "path": "negative-fixture-report.json",
+      "role": "negative fixture verdict summary"
+    },
+    {
+      "path": "index.html",
+      "role": "static review page with no remote dependencies"
+    },
+    {
+      "path": "replay-commands.md",
+      "role": "local commands to re-run validators and Crucible"
+    }
+  ],
+  "pass": "0052",
+  "schema": "AgentActionPacketComposerBuildContractFixture/v1",
+  "seal": "2ec7c543d30471c24f6b0587713745015e1dff94e0bba3d732a25c621a7caa4a"
+}

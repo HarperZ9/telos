@@ -1,0 +1,244 @@
+{
+  "backend_kind_mapping": [
+    {
+      "hardware_claim_rule": "Reject hardware claims when simulator indicators match or QPU indicators are absent.",
+      "provider": "Amazon Braket",
+      "qpu_indicators": [
+        "device_kind=QPU",
+        "device_arn contains /device/qpu/"
+      ],
+      "simulator_indicators": [
+        "device_kind=SIMULATOR",
+        "device_arn contains /device/quantum-simulator/"
+      ]
+    },
+    {
+      "hardware_claim_rule": "Reject hardware claims when backend simulator status is true or unavailable.",
+      "provider": "IBM Quantum Runtime",
+      "qpu_indicators": [
+        "backend.simulator is false",
+        "backend configuration identifies a real backend"
+      ],
+      "simulator_indicators": [
+        "backend.simulator is true",
+        "backend name or configuration identifies simulator"
+      ]
+    },
+    {
+      "hardware_claim_rule": "Reject hardware claims when target profile is simulator or target kind cannot be verified.",
+      "provider": "Azure Quantum",
+      "qpu_indicators": [
+        "target_id belongs to hardware target profile",
+        "provider target metadata identifies QPU"
+      ],
+      "simulator_indicators": [
+        "target_id belongs to simulator target profile",
+        "target metadata identifies simulator"
+      ]
+    }
+  ],
+  "calibration_reference_profiles": [
+    {
+      "profile_id": "calibration-ref-braket-device-properties",
+      "provider": "Amazon Braket",
+      "required_fields": [
+        "device_arn",
+        "retrieval_timestamp",
+        "device_properties_reference",
+        "device_properties_payload_hash",
+        "calibration_data_reference_or_unavailable_reason",
+        "native_gate_set_reference"
+      ],
+      "schema": "CloudQuantumCalibrationReferenceProfile/v1",
+      "source_anchors": [
+        "https://docs.aws.amazon.com/braket/latest/developerguide/braket-devices.html",
+        "https://docs.aws.amazon.com/braket/latest/developerguide/braket-result-types.html"
+      ],
+      "unavailable_policy": "If provider calibration data is unavailable, record unavailable reason and mark hardware-calibration-dependent claims UNVERIFIABLE."
+    },
+    {
+      "profile_id": "calibration-ref-ibm-backend-properties",
+      "provider": "IBM Quantum Runtime",
+      "required_fields": [
+        "backend_name",
+        "retrieval_timestamp",
+        "backend_properties_reference",
+        "backend_properties_payload_hash",
+        "last_update_date",
+        "qubit_properties_reference",
+        "gate_properties_reference"
+      ],
+      "schema": "CloudQuantumCalibrationReferenceProfile/v1",
+      "source_anchors": [
+        "https://quantum.cloud.ibm.com/docs/en/guides/qpu-information",
+        "https://quantum.cloud.ibm.com/docs/en/api/qiskit-ibm-runtime/models-backend-properties"
+      ],
+      "unavailable_policy": "If backend properties are unavailable, mark calibration-dependent claims UNVERIFIABLE."
+    },
+    {
+      "profile_id": "calibration-ref-azure-target-properties",
+      "provider": "Azure Quantum",
+      "required_fields": [
+        "workspace_ref",
+        "provider_id",
+        "target_id",
+        "retrieval_timestamp",
+        "target_properties_reference",
+        "target_properties_payload_hash",
+        "capability_profile_reference"
+      ],
+      "schema": "CloudQuantumCalibrationReferenceProfile/v1",
+      "source_anchors": [
+        "https://learn.microsoft.com/en-us/azure/quantum/how-to-submit-jobs",
+        "https://learn.microsoft.com/en-us/cli/azure/quantum/job?view=azure-cli-latest"
+      ],
+      "unavailable_policy": "If target properties or calibration data are not exposed, record target metadata and mark calibration-dependent claims UNVERIFIABLE."
+    }
+  ],
+  "canonicalization_policy": {
+    "canonicalization_policy_hash": "55d4d35347fc7760887d04781556b7b88e4cfa230a02f46b2e051335981039ae",
+    "canonicalization_reference": "RFC 8785 JSON Canonicalization Scheme, with this fixture using a strict sorted-key JSON subset for reproducible local testing.",
+    "normalization_steps": [
+      {
+        "lossiness": "LOSSLESS",
+        "output": "raw_payload_hash",
+        "step": "preserve_raw_provider_payload"
+      },
+      {
+        "lossiness": "LOSSLESS_IF_PROVIDER_JSON_VALID_AND_DUPLICATE_KEYS_ABSENT",
+        "output": "parsed_payload",
+        "step": "parse_json_payload"
+      },
+      {
+        "lossiness": "LOSSLESS_FOR_JSON_SEMANTICS_BUT_BYTE_LAYOUT_LOSSY",
+        "output": "canonical_json",
+        "step": "sort_object_keys_and_strip_insignificant_whitespace"
+      },
+      {
+        "lossiness": "PROVIDER_METADATA_LOSSY_UNLESS_RAW_PAYLOAD_RETAINED",
+        "output": "normalized_result",
+        "step": "normalize_provider_counts_to_common_counts_map"
+      }
+    ],
+    "normalized_result_hash_required": true,
+    "raw_payload_hash_required": true,
+    "required_hashes": [
+      "raw_payload_hash",
+      "normalized_result_hash",
+      "canonicalization_policy_hash"
+    ],
+    "schema": "CloudQuantumResultCanonicalization/v1"
+  },
+  "generated_on": "2026-07-01",
+  "negative_fixtures": [
+    {
+      "expected_validator_status": "REJECT",
+      "failure_mode": "A normalized result claim cites only raw_payload_hash and omits normalized_result_hash.",
+      "fixture_id": "negative-raw-only-hash-for-normalized-claim"
+    },
+    {
+      "expected_validator_status": "REJECT",
+      "failure_mode": "A forensic provenance claim cites only normalized_result_hash and omits raw_payload_hash.",
+      "fixture_id": "negative-normalized-only-hash-for-forensic-claim"
+    },
+    {
+      "expected_validator_status": "REJECT",
+      "failure_mode": "Two semantically equal JSON payloads have different raw hashes and no canonicalization policy hash.",
+      "fixture_id": "negative-nondeterministic-payload-order-without-canonicalization"
+    },
+    {
+      "expected_validator_status": "REJECT",
+      "failure_mode": "Backend kind maps to simulator but claim branch is CLOUD_HARDWARE QPU.",
+      "fixture_id": "negative-simulator-backend-cited-as-qpu"
+    },
+    {
+      "expected_validator_status": "REJECT",
+      "failure_mode": "Azure resource estimate receipt is cited as executed hardware result.",
+      "fixture_id": "negative-resource-estimator-cited-as-execution"
+    }
+  ],
+  "non_promotion_statement": "Pass 0016 defines canonicalization and calibration receipt profiles only. It does not run a cloud job, report a quantum hardware result, or promote a resource estimate to execution evidence.",
+  "pass": "0016",
+  "raw_payload_order_fixture": {
+    "expected_status": "RAW_HASH_DRIFT_NORMALIZED_HASH_MATCH",
+    "fixture_id": "raw-order-normalized-equality",
+    "normalized_result": {
+      "counts": {
+        "00": 500,
+        "11": 500
+      },
+      "shots": 1000,
+      "status": "COMPLETED"
+    },
+    "normalized_result_canonical_json": "{\"counts\":{\"00\":500,\"11\":500},\"shots\":1000,\"status\":\"COMPLETED\"}",
+    "normalized_result_hash_a": "601220fead53491134647a9c82790700cb98267b764237a93b94320d85dd3747",
+    "normalized_result_hash_b": "601220fead53491134647a9c82790700cb98267b764237a93b94320d85dd3747",
+    "parsed_payloads_equal": true,
+    "raw_payload_a": "{\"status\":\"COMPLETED\",\"shots\":1000,\"counts\":{\"00\":500,\"11\":500}}",
+    "raw_payload_a_hash": "0e1dcbc4d17e5aefa10085b2e94ffea9d50f54bbda8ab9ecdb5ea10a5d7289e2",
+    "raw_payload_b": "{ \"counts\": { \"11\": 500, \"00\": 500 }, \"shots\": 1000, \"status\": \"COMPLETED\" }",
+    "raw_payload_b_hash": "5a74fc56521b8ad30033a3b828a7fefeeb3c01687a2c74c5c39d1ccf7fdc653f"
+  },
+  "resource_estimator_profile": {
+    "execution_claim_allowed": false,
+    "hardware_claim_allowed": false,
+    "non_promotion_rules": [
+      "Resource estimates are planning artifacts, not execution results.",
+      "Resource estimates cannot satisfy cloud hardware task receipt requirements.",
+      "Claims using resource estimates must state model assumptions and uncertainty."
+    ],
+    "profile_id": "cloud-quantum-resource-estimate-profile-azure",
+    "provider": "Azure Quantum",
+    "required_fields": [
+      "application_model_hash",
+      "architecture_model_hash",
+      "error_correction_model_hash",
+      "max_error",
+      "resource_estimator_version_or_tool_ref",
+      "estimate_payload_hash",
+      "normalized_estimate_hash",
+      "physical_qubits",
+      "runtime",
+      "overall_error_or_error_budget",
+      "pareto_point_count_or_selection_rule"
+    ],
+    "schema": "CloudQuantumResourceEstimateReceiptProfile/v1",
+    "source_anchors": [
+      "https://learn.microsoft.com/en-us/azure/quantum/intro-to-resource-estimation",
+      "https://learn.microsoft.com/en-us/azure/quantum/qre-estimation-results"
+    ]
+  },
+  "schema": "CloudQuantumCanonicalizationSet/v1",
+  "seal": "11b2ee3baa95764f32395bb4a22e975a0f63b751c127f7f6b2351c79efb75915",
+  "source_anchors": [
+    {
+      "source": "RFC 8785 JSON Canonicalization Scheme",
+      "url": "https://www.rfc-editor.org/info/rfc8785/"
+    },
+    {
+      "source": "Amazon Braket device properties",
+      "url": "https://docs.aws.amazon.com/braket/latest/developerguide/braket-devices.html"
+    },
+    {
+      "source": "Amazon Braket result types",
+      "url": "https://docs.aws.amazon.com/braket/latest/developerguide/braket-result-types.html"
+    },
+    {
+      "source": "IBM Quantum QPU information",
+      "url": "https://quantum.cloud.ibm.com/docs/en/guides/qpu-information"
+    },
+    {
+      "source": "IBM BackendProperties API",
+      "url": "https://quantum.cloud.ibm.com/docs/en/api/qiskit-ibm-runtime/models-backend-properties"
+    },
+    {
+      "source": "Azure Quantum Resource Estimator",
+      "url": "https://learn.microsoft.com/en-us/azure/quantum/intro-to-resource-estimation"
+    },
+    {
+      "source": "Azure Quantum resource-estimator results",
+      "url": "https://learn.microsoft.com/en-us/azure/quantum/qre-estimation-results"
+    }
+  ],
+  "status": "CANONICALIZATION_MATCH"
+}

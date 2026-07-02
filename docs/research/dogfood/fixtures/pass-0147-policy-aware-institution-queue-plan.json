@@ -1,0 +1,69 @@
+{
+  "pass": "0147",
+  "prior_policy_receipt": "docs/research/dogfood/schemas/adapter-retry-policy-pass-0146.json",
+  "source_store": "docs/research/dogfood/gather/pass-0147-policy-aware-institution-queue",
+  "updated_tool_floor": {
+    "crucible": "1.1.0",
+    "forum": "1.12.0",
+    "gather": "1.5.0",
+    "index": "2.8.0"
+  },
+  "institutions": [
+    {
+      "id": "eth-zurich",
+      "label": "ETH Zurich",
+      "country_code": "CH",
+      "identity_aliases": ["ETH Zurich", "ETH Zuerich", "Eidgenoessische Technische Hochschule Zuerich"],
+      "repository_signals": ["ETH Research Collection", "2.0"],
+      "ror_url": "https://api.ror.org/organizations?query=ETH%20Zurich",
+      "openalex_url": "https://api.openalex.org/institutions?search=ETH%20Zurich&per-page=2",
+      "oai_url": "https://www.research-collection.ethz.ch/oai/request?verb=Identify",
+      "crossref_url": "https://api.crossref.org/works?query.affiliation=ETH%20Zurich&rows=2&select=DOI,title,author,container-title,published-online,license,URL"
+    },
+    {
+      "id": "university-of-tokyo",
+      "label": "University of Tokyo",
+      "country_code": "JP",
+      "identity_aliases": ["University of Tokyo", "The University of Tokyo", "Tokyo Daigaku"],
+      "repository_signals": ["UTokyo Repository", "2.0"],
+      "ror_url": "https://api.ror.org/organizations?query=University%20of%20Tokyo",
+      "openalex_url": "https://api.openalex.org/institutions?search=University%20of%20Tokyo&per-page=2",
+      "oai_url": "https://repository.dl.itc.u-tokyo.ac.jp/oai?verb=Identify",
+      "crossref_url": "https://api.crossref.org/works?query.affiliation=University%20of%20Tokyo&rows=2&select=DOI,title,author,container-title,published-online,license,URL"
+    },
+    {
+      "id": "university-of-cape-town",
+      "label": "University of Cape Town",
+      "country_code": "ZA",
+      "identity_aliases": ["University of Cape Town", "UCT"],
+      "repository_signals": ["OpenUCT", "2.0"],
+      "ror_url": "https://api.ror.org/organizations?query=University%20of%20Cape%20Town",
+      "openalex_url": "https://api.openalex.org/institutions?search=University%20of%20Cape%20Town&per-page=2",
+      "oai_url": "https://open.uct.ac.za/oai/request?verb=Identify",
+      "crossref_url": "https://api.crossref.org/works?query.affiliation=University%20of%20Cape%20Town&rows=2&select=DOI,title,author,container-title,published-online,license,URL"
+    },
+    {
+      "id": "universidade-de-sao-paulo",
+      "label": "Universidade de Sao Paulo",
+      "country_code": "BR",
+      "identity_aliases": ["Universidade de Sao Paulo", "University of Sao Paulo", "USP"],
+      "repository_signals": ["Universidade de Sao Paulo", "2.0"],
+      "ror_url": "https://api.ror.org/organizations?query=Universidade%20de%20Sao%20Paulo",
+      "openalex_url": "https://api.openalex.org/institutions?search=Universidade%20de%20Sao%20Paulo&per-page=2",
+      "oai_url": "https://repositorio.usp.br/oai/request?verb=Identify",
+      "crossref_url": "https://api.crossref.org/works?query.affiliation=Universidade%20de%20Sao%20Paulo&rows=2&select=DOI,title,author,container-title,published-online,license,URL"
+    }
+  ],
+  "negative_fixtures": [
+    "non_us_sample_as_world_coverage",
+    "translated_name_as_identity_without_ror",
+    "repository_identify_as_full_harvest",
+    "crossref_affiliation_as_publication_truth",
+    "failed_oai_endpoint_as_repository_absence",
+    "missing_crossref_as_no_research",
+    "openalex_works_count_as_quality",
+    "ror_match_as_current_operational_status",
+    "source_policy_rule_as_scheduler_execution",
+    "four_institutions_as_global_registry"
+  ]
+}

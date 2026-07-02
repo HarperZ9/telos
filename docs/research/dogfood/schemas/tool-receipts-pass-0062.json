@@ -1,0 +1,138 @@
+{
+  "generated_on": "2026-07-01",
+  "non_promotion_statement": "Tool receipts prove local heat-equation energy identity generation, validator MATCH, Gather packet intake, Forum routing, and Crucible MATCH. They do not prove a new natural law, empirical physics result, general PDE theorem, or correctness outside the stated periodic smooth finite-Fourier scope.",
+  "pass": "0062",
+  "receipts": [
+    {
+      "check_count": 14,
+      "command": "telos_operator_doctor",
+      "passed_count": 14,
+      "status": "MATCH",
+      "tool": "mcp__telos.telos_operator_doctor",
+      "tool_count": 65
+    },
+    {
+      "command": "index_status",
+      "command_count": 6,
+      "mcp_tool_count": 10,
+      "role": "structure-context",
+      "status": "MATCH",
+      "tool": "mcp__index.index_status",
+      "tool_version": "2.8.0"
+    },
+    {
+      "artifact": "packets/072-heat-equation-energy-identity.md",
+      "chars": 602,
+      "command": "docs",
+      "seal": "3e731ca80aa562640fcc49961b7f7b6631f6d375c7bf28068e2ddf4878b413ee",
+      "sha256": "a466dc0f609a9d7f53ad586298fb4473f47e2a09b6043a14b8cb21e2d1effd0e",
+      "status": "MATCH",
+      "tool": "mcp__gather.gather_docs",
+      "verified": true
+    },
+    {
+      "command": "test_heat_equation_energy_identity.py",
+      "exit_code": 0,
+      "line_count": 47,
+      "sha256": "8d559860b5eaae064559658d186a7d547cb4c768050253caf80cf33ab88c52a2",
+      "status": "MATCH",
+      "tool": "python"
+    },
+    {
+      "command": "compose_heat_equation_energy_identity.py",
+      "law_candidate_status": "BOUNDED_MATHEMATICAL_IDENTITY",
+      "line_count": 177,
+      "max_finite_difference_residual": 2.7235955712967552e-09,
+      "max_symbolic_residual": 0.0,
+      "promotion_state": "IDENTITY_NOT_PROMOTED_LAW",
+      "seal": "9a94678d4e820cb5f6d806bf9d7f56287971e708912cdeef9284f16b3c1a80bf",
+      "sha256": "998a3f4070ab056039f547301502930a1f86673655f749c28c7309bc29287779",
+      "status": "HEAT_EQUATION_ENERGY_IDENTITY_MATCH",
+      "tool": "python"
+    },
+    {
+      "command": "probe_heat_equation_energy_identity.py",
+      "line_count": 113,
+      "seal": "9a94678d4e820cb5f6d806bf9d7f56287971e708912cdeef9284f16b3c1a80bf",
+      "sha256": "45b7344978b22e25a7bd3f8fa5346c4ee86938426f2eb1c4c85913c0b4824347",
+      "status": "MATCH",
+      "tool": "python"
+    },
+    {
+      "command": "validate_pass_0062_heat_equation_energy_identity.py",
+      "drift": 0,
+      "line_count": 70,
+      "match": 1,
+      "max_finite_difference_residual": 2.7235955712967552e-09,
+      "max_symbolic_residual": 0.0,
+      "mode_count": 3,
+      "promotion_state": "IDENTITY_NOT_PROMOTED_LAW",
+      "schema": "Pass0062HeatEquationEnergyIdentityValidatorRun/v1",
+      "sha256": "3cd6c5f7824b60d9c80607f7f4d7c8bd91a9a4c3734141a7ad9d02dc10198c82",
+      "status": "MATCH",
+      "tool": "python"
+    },
+    {
+      "command": "forum_doctor",
+      "match_count": 4,
+      "status": "MATCH",
+      "tool": "mcp__forum.forum_doctor",
+      "tool_version": "1.12.0"
+    },
+    {
+      "candidates": [
+        {
+          "agent": "project-telos",
+          "score": 0.3181818181818182
+        }
+      ],
+      "command": "route heat-equation identity prompt",
+      "confidence": 0.5,
+      "decided": "project-telos",
+      "needs_escalation": false,
+      "status": "MATCH",
+      "tool": "mcp__forum.route"
+    },
+    {
+      "capability_count": 4,
+      "command": "crucible_status",
+      "mcp_tool_count": 13,
+      "role": "verification-pressure",
+      "status": "MATCH",
+      "tool": "mcp__crucible.crucible_status",
+      "tool_version": "1.1.0"
+    },
+    {
+      "assessments": 51,
+      "claims": 416,
+      "command": "crucible_registry stats",
+      "drift": 0,
+      "invalid_latest_assessments": 0,
+      "match": 416,
+      "status": "MATCH",
+      "theses": 50,
+      "tool": "mcp__crucible.crucible_registry",
+      "unverifiable": 0
+    },
+    {
+      "assessment_seal": "fab185ee5ed40c1228565bd2552cd0ebb8b16e3f6c618b0df1a1456a0b9e144f",
+      "claims": 8,
+      "command": "crucible run --registry",
+      "drift": 0,
+      "match": 8,
+      "measurement_seal": "3f456284ba0940f75f9521c6956dff0cc38747353ddce04b757d8b1b0ea41d96",
+      "run_sha256": "b4a0fb7d935376e529f2f8b2d05c461b5201beac3e01b10dda728ae658fb6081",
+      "seals_ok": true,
+      "status": "MATCH",
+      "thesis_id": "233dc9ba5d536495",
+      "thesis_ok": true,
+      "thesis_seal": "233dc9ba5d5364955b1f0e6780bd42c83f067f3fb382ac2fc4759b105826e87d",
+      "tool": "crucible",
+      "unverifiable": 0,
+      "verdict_seal": "f0b576ccc11ae480e1e96f8778c7176b4153e740df4fcae6fe375594b9b896c8",
+      "verdicts_rederive": true
+    }
+  ],
+  "schema": "DogfoodToolReceiptSet/v1",
+  "status": "MATCH_HEAT_EQUATION_IDENTITY_NOT_PROMOTED_LAW"
+}

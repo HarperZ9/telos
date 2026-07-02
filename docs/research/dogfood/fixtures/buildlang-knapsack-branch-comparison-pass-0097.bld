@@ -1,0 +1,103 @@
+fn selected(mask: i32, divisor: i32) -> bool {
+    ((mask / divisor) % 2) == 1
+}
+
+fn main() ~ Console {
+    let values = [31, 21, 27, 40, 17, 33, 18, 13, 32, 27, 19, 5];
+    let weights = [5, 4, 7, 6, 3, 7, 7, 6, 5, 11, 7, 2];
+    let order = [3, 8, 0, 4, 1, 5, 2, 10, 6, 11, 9, 7];
+    let capacity: i32 = 29;
+
+    let mut exact_value: i32 = 0;
+    let mut exact_weight: i32 = 0;
+    let mut exact_mask: i32 = 0;
+    let mut exact_feasible: i32 = 0;
+    let mut mask: i32 = 0;
+
+    while mask < 4096 {
+        let mut value: i32 = 0;
+        let mut weight: i32 = 0;
+        let mut i: i32 = 0;
+        let mut divisor: i32 = 1;
+
+        while i < 12 {
+            if selected(mask, divisor) {
+                value = value + values[i];
+                weight = weight + weights[i];
+            }
+            divisor = divisor * 2;
+            i = i + 1;
+        }
+
+        if weight <= capacity {
+            exact_feasible = exact_feasible + 1;
+            if value > exact_value {
+                exact_value = value;
+                exact_weight = weight;
+                exact_mask = mask;
+            }
+        }
+
+        mask = mask + 1;
+    }
+
+    let mut greedy_value: i32 = 0;
+    let mut greedy_weight: i32 = 0;
+    let mut greedy_mask: i32 = 0;
+    let mut pos: i32 = 0;
+
+    while pos < 12 {
+        let item: i32 = order[pos];
+        if greedy_weight + weights[item] <= capacity {
+            greedy_weight = greedy_weight + weights[item];
+            greedy_value = greedy_value + values[item];
+            greedy_mask = greedy_mask + (1 << item);
+        }
+        pos = pos + 1;
+    }
+
+    let mut bounded_value: i32 = 0;
+    let mut bounded_weight: i32 = 0;
+    let mut bounded_mask: i32 = 0;
+    let mut bounded_feasible: i32 = 0;
+    mask = 0;
+
+    while mask < 2048 {
+        let mut value: i32 = 0;
+        let mut weight: i32 = 0;
+        let mut i: i32 = 0;
+        let mut divisor: i32 = 1;
+
+        while i < 12 {
+            if selected(mask, divisor) {
+                value = value + values[i];
+                weight = weight + weights[i];
+            }
+            divisor = divisor * 2;
+            i = i + 1;
+        }
+
+        if weight <= capacity {
+            bounded_feasible = bounded_feasible + 1;
+            if value > bounded_value {
+                bounded_value = value;
+                bounded_weight = weight;
+                bounded_mask = mask;
+            }
+        }
+
+        mask = mask + 1;
+    }
+
+    println("exact value {}", exact_value);
+    println("exact weight {}", exact_weight);
+    println("exact mask {}", exact_mask);
+    println("exact feasible {}", exact_feasible);
+    println("greedy value {}", greedy_value);
+    println("greedy weight {}", greedy_weight);
+    println("greedy mask {}", greedy_mask);
+    println("bounded value {}", bounded_value);
+    println("bounded weight {}", bounded_weight);
+    println("bounded mask {}", bounded_mask);
+    println("bounded feasible {}", bounded_feasible);
+}

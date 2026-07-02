@@ -1,0 +1,495 @@
+{
+  "ok": true,
+  "thesis": {
+    "id": "06cb6c4d2955e456",
+    "title": "Dogfood Pass 0018 Quantum Strict Canonicalization Adapters",
+    "registered_at": 1782904127.6342402,
+    "disposition": "fenced",
+    "seal": "06cb6c4d2955e456abb26e0fda948beddd4a135ce8e4b35779ec4985ae505b86",
+    "claims": [
+      {
+        "id": "07c737f9ca47583d",
+        "sha256": "07c737f9ca47583d5d6882219239776a38fc05feaf5f52742eff3fe44d5e73bd"
+      },
+      {
+        "id": "0212e170acae7496",
+        "sha256": "0212e170acae7496b0deadad06eecdd1fa68464c57a56a662170a25eb4cd3b35"
+      },
+      {
+        "id": "5af8c845808b5942",
+        "sha256": "5af8c845808b5942950bc31cd3054ad12374549dbf31923841329ee38473360a"
+      },
+      {
+        "id": "e55e5339a02f8085",
+        "sha256": "e55e5339a02f8085f11355f6927f64f13ca4d3f3a26acfb5b034aa18a717e8ba"
+      },
+      {
+        "id": "e60dba940aad8021",
+        "sha256": "e60dba940aad8021378f81bcbc2974d112b12a2ec65d4049c1dd2970fdc76d9f"
+      },
+      {
+        "id": "14f7041a4e81593c",
+        "sha256": "14f7041a4e81593cae74cef66346c971eaec5e28e878469082db6b9246adc97c"
+      },
+      {
+        "id": "f0239befe281bd5f",
+        "sha256": "f0239befe281bd5fba241aafa62df4d39ca4eef06105d050b34e4ed841c2e14a"
+      },
+      {
+        "id": "4085a427e168b67f",
+        "sha256": "4085a427e168b67f1f2bad0ac281789350948b81d696ba8967b729f71cd47e71"
+      },
+      {
+        "id": "b42c31bdc32f8df4",
+        "sha256": "b42c31bdc32f8df407f3dfcef94aaf892cf664574555ccacf9e32c2446f3bbc8"
+      }
+    ]
+  },
+  "refutations": [
+    {
+      "claim_id": "07c737f9ca47583d",
+      "claim_sha256": "07c737f9ca47583d5d6882219239776a38fc05feaf5f52742eff3fe44d5e73bd",
+      "challenge": "test the stated falsification: schemas/quantum-strict-canonicalization-adapters-pass-0018.json is missing, is not QuantumStrictCanonicalizationAdapterSet/v1, reports non-MATCH status, has fewer than five adapters, fewer than nine negative fixtures, fewer than eight source anchors, or lacks the expected seal",
+      "measurable": "schemas/quantum-strict-canonicalization-adapters-pass-0018.json is missing, is not QuantumStrictCanonicalizationAdapterSet/v1, reports non-MATCH status, has fewer than five adapters, fewer than nine negative fixtures, fewer than eight source anchors, or lacks the expected seal",
+      "source": "null"
+    },
+    {
+      "claim_id": "0212e170acae7496",
+      "claim_sha256": "0212e170acae7496b0deadad06eecdd1fa68464c57a56a662170a25eb4cd3b35",
+      "challenge": "test the stated falsification: the strict policy is missing, has a different schema, omits any required policy, or lacks the expected policy hash",
+      "measurable": "the strict policy is missing, has a different schema, omits any required policy, or lacks the expected policy hash",
+      "source": "null"
+    },
+    {
+      "claim_id": "5af8c845808b5942",
+      "claim_sha256": "5af8c845808b5942950bc31cd3054ad12374549dbf31923841329ee38473360a",
+      "challenge": "test the stated falsification: any of layout-adapter-qiskit, layout-adapter-amazon-braket, layout-adapter-cirq, layout-adapter-pennylane, or layout-adapter-qir is missing",
+      "measurable": "any of layout-adapter-qiskit, layout-adapter-amazon-braket, layout-adapter-cirq, layout-adapter-pennylane, or layout-adapter-qir is missing",
+      "source": "null"
+    },
+    {
+      "claim_id": "e55e5339a02f8085",
+      "claim_sha256": "e55e5339a02f8085f11355f6927f64f13ca4d3f3a26acfb5b034aa18a717e8ba",
+      "challenge": "test the stated falsification: any adapter has the wrong schema, lacks HTTPS source, lacks required receipt fields, lacks adapter status, or lacks adapter hash",
+      "measurable": "any adapter has the wrong schema, lacks HTTPS source, lacks required receipt fields, lacks adapter status, or lacks adapter hash",
+      "source": "null"
+    },
+    {
+      "claim_id": "e60dba940aad8021",
+      "claim_sha256": "e60dba940aad8021378f81bcbc2974d112b12a2ec65d4049c1dd2970fdc76d9f",
+      "challenge": "test the stated falsification: the post-processing operation is missing, has a different schema, omits any required hash, or is not deterministic",
+      "measurable": "the post-processing operation is missing, has a different schema, omits any required hash, or is not deterministic",
+      "source": "null"
+    },
+    {
+      "claim_id": "14f7041a4e81593c",
+      "claim_sha256": "14f7041a4e81593cae74cef66346c971eaec5e28e878469082db6b9246adc97c",
+      "challenge": "test the stated falsification: any of the nine expected negative fixture ids is missing or has expected_validator_status other than REJECT",
+      "measurable": "any of the nine expected negative fixture ids is missing or has expected_validator_status other than REJECT",
+      "source": "null"
+    },
+    {
+      "claim_id": "f0239befe281bd5f",
+      "claim_sha256": "f0239befe281bd5fba241aafa62df4d39ca4eef06105d050b34e4ed841c2e14a",
+      "challenge": "test the stated falsification: schemas/pass-0018-strict-canonicalization-adapter-validator-result.json is missing, reports non-MATCH status, does not report match=1, or reports drift above zero",
+      "measurable": "schemas/pass-0018-strict-canonicalization-adapter-validator-result.json is missing, reports non-MATCH status, does not report match=1, or reports drift above zero",
+      "source": "null"
+    },
+    {
+      "claim_id": "4085a427e168b67f",
+      "claim_sha256": "4085a427e168b67f1f2bad0ac281789350948b81d696ba8967b729f71cd47e71",
+      "challenge": "test the stated falsification: schemas/tool-receipts-pass-0018.json is missing, lacks any required tool status, or treats Forum submit as successful rather than UNVERIFIABLE",
+      "measurable": "schemas/tool-receipts-pass-0018.json is missing, lacks any required tool status, or treats Forum submit as successful rather than UNVERIFIABLE",
+      "source": "null"
+    },
+    {
+      "claim_id": "b42c31bdc32f8df4",
+      "claim_sha256": "b42c31bdc32f8df407f3dfcef94aaf892cf664574555ccacf9e32c2446f3bbc8",
+      "challenge": "test the stated falsification: any pass 0018 artifact labels a new quantum job, hardware result, quantum advantage claim, theorem proof, natural law, or scientific discovery as promoted",
+      "measurable": "any pass 0018 artifact labels a new quantum job, hardware result, quantum advantage claim, theorem proof, natural law, or scientific discovery as promoted",
+      "source": "null"
+    }
+  ],
+  "assessment": {
+    "started_at": 1782904127.640764,
+    "thesis_id": "06cb6c4d2955e456",
+    "thesis_seal": "06cb6c4d2955e456abb26e0fda948beddd4a135ce8e4b35779ec4985ae505b86",
+    "claims": 9,
+    "match": 9,
+    "drift": 0,
+    "unverifiable": 0,
+    "verdict_seal": "d7d5ec7a1f66e2925029df6a75581b2d51d2c36fec55eaaebbaa02642cbd5b88",
+    "measurement_seal": "eedc62bbd504da9016e787535c649bd8fec04a0065313bdf89d4dcf61ee27692",
+    "disposition": "fenced",
+    "stored": null,
+    "verdicts": [
+      {
+        "claim_id": "07c737f9ca47583d",
+        "claim_sha256": "07c737f9ca47583d5d6882219239776a38fc05feaf5f52742eff3fe44d5e73bd",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "strict-adapter-set-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "0212e170acae7496",
+        "claim_sha256": "0212e170acae7496b0deadad06eecdd1fa68464c57a56a662170a25eb4cd3b35",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "strict-policy-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "5af8c845808b5942",
+        "claim_sha256": "5af8c845808b5942950bc31cd3054ad12374549dbf31923841329ee38473360a",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "adapter-id-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "e55e5339a02f8085",
+        "claim_sha256": "e55e5339a02f8085f11355f6927f64f13ca4d3f3a26acfb5b034aa18a717e8ba",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "adapter-contract-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "e60dba940aad8021",
+        "claim_sha256": "e60dba940aad8021378f81bcbc2974d112b12a2ec65d4049c1dd2970fdc76d9f",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "post-processing-operation-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "14f7041a4e81593c",
+        "claim_sha256": "14f7041a4e81593cae74cef66346c971eaec5e28e878469082db6b9246adc97c",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "negative-fixture-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "f0239befe281bd5f",
+        "claim_sha256": "f0239befe281bd5fba241aafa62df4d39ca4eef06105d050b34e4ed841c2e14a",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "validator-run-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "4085a427e168b67f",
+        "claim_sha256": "4085a427e168b67f1f2bad0ac281789350948b81d696ba8967b729f71cd47e71",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "tool-receipt-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "b42c31bdc32f8df4",
+        "claim_sha256": "b42c31bdc32f8df407f3dfcef94aaf892cf664574555ccacf9e32c2446f3bbc8",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "non-promotion-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      }
+    ],
+    "measurements": [
+      {
+        "claim_id": "07c737f9ca47583d",
+        "claim_sha256": "07c737f9ca47583d5d6882219239776a38fc05feaf5f52742eff3fe44d5e73bd",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "strict-adapter-set-review",
+        "measured_at": 1782904127.6405659,
+        "evidence": [
+          "schemas/quantum-strict-canonicalization-adapters-pass-0018.json schema=QuantumStrictCanonicalizationAdapterSet/v1",
+          "status=STRICT_ADAPTER_MATCH",
+          "adapter_profile_count=5",
+          "negative_fixture_count=9",
+          "source_anchor_count=8",
+          "seal=0727efc532db5c9c759bec5319d0ab547942129880d20823764cba12edd007fd"
+        ]
+      },
+      {
+        "claim_id": "0212e170acae7496",
+        "claim_sha256": "0212e170acae7496b0deadad06eecdd1fa68464c57a56a662170a25eb4cd3b35",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "strict-policy-review",
+        "measured_at": 1782904127.6405714,
+        "evidence": [
+          "strict_policy schema=StrictQuantumCanonicalizationPolicy/v1",
+          "duplicate_json_key_detection_required=true",
+          "binary_payload_policy content_hash_required=true",
+          "binary_payload_policy parsed_json_allowed=false",
+          "object_storage_reference_policy required_fields include content_hash",
+          "floating_point_policy precision_policy_required=true",
+          "policy_hash=a54c16072736fa63bece139a42caf3265931553087cbca8738058ad7dbd57e62"
+        ]
+      },
+      {
+        "claim_id": "5af8c845808b5942",
+        "claim_sha256": "5af8c845808b5942950bc31cd3054ad12374549dbf31923841329ee38473360a",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "adapter-id-review",
+        "measured_at": 1782904127.6405733,
+        "evidence": [
+          "layout-adapter-qiskit present",
+          "layout-adapter-amazon-braket present",
+          "layout-adapter-cirq present",
+          "layout-adapter-pennylane present",
+          "layout-adapter-qir present"
+        ]
+      },
+      {
+        "claim_id": "e55e5339a02f8085",
+        "claim_sha256": "e55e5339a02f8085f11355f6927f64f13ca4d3f3a26acfb5b034aa18a717e8ba",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "adapter-contract-review",
+        "measured_at": 1782904127.640575,
+        "evidence": [
+          "all adapters schema=QuantumRegisterLayoutAdapter/v1",
+          "all adapters have HTTPS source_anchor",
+          "all adapters have required_receipt_fields",
+          "all adapters have adapter_status",
+          "all adapters have adapter_hash"
+        ]
+      },
+      {
+        "claim_id": "e60dba940aad8021",
+        "claim_sha256": "e60dba940aad8021378f81bcbc2974d112b12a2ec65d4049c1dd2970fdc76d9f",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "post-processing-operation-review",
+        "measured_at": 1782904127.6405766,
+        "evidence": [
+          "post_processing_operation schema=QuantumPostProcessingOperation/v1",
+          "input_hash present",
+          "output_hash present",
+          "parameters_hash present",
+          "operation_hash present",
+          "deterministic=true"
+        ]
+      },
+      {
+        "claim_id": "14f7041a4e81593c",
+        "claim_sha256": "14f7041a4e81593cae74cef66346c971eaec5e28e878469082db6b9246adc97c",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "negative-fixture-review",
+        "measured_at": 1782904127.6405785,
+        "evidence": [
+          "negative-duplicate-json-key-accepted expected_validator_status=REJECT",
+          "negative-binary-payload-parsed-as-json expected_validator_status=REJECT",
+          "negative-object-storage-uri-without-content-hash expected_validator_status=REJECT",
+          "negative-float-result-without-precision-policy expected_validator_status=REJECT",
+          "negative-qiskit-counts-using-braket-layout expected_validator_status=REJECT",
+          "negative-cirq-histogram-without-fold-func expected_validator_status=REJECT",
+          "negative-pennylane-counts-without-wire-order expected_validator_status=REJECT",
+          "negative-qir-result-without-record-map expected_validator_status=REJECT",
+          "negative-post-processing-operation-without-hashes expected_validator_status=REJECT"
+        ]
+      },
+      {
+        "claim_id": "f0239befe281bd5f",
+        "claim_sha256": "f0239befe281bd5fba241aafa62df4d39ca4eef06105d050b34e4ed841c2e14a",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "validator-run-review",
+        "measured_at": 1782904127.6405802,
+        "evidence": [
+          "schemas/pass-0018-strict-canonicalization-adapter-validator-result.json status=MATCH",
+          "match=1",
+          "drift=0",
+          "checks include QuantumStrictCanonicalizationAdapterSet status MATCH"
+        ]
+      },
+      {
+        "claim_id": "4085a427e168b67f",
+        "claim_sha256": "4085a427e168b67f1f2bad0ac281789350948b81d696ba8967b729f71cd47e71",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "tool-receipt-review",
+        "measured_at": 1782904127.6405818,
+        "evidence": [
+          "schemas/tool-receipts-pass-0018.json status=MATCH_WITH_FORUM_SUBMIT_GAP",
+          "tool receipts include index status MATCH",
+          "tool receipts include gather status MATCH",
+          "tool receipts include telos operator_doctor status MATCH",
+          "tool receipts include forum status MATCH and verify MATCH",
+          "tool receipts include forum_submit status UNVERIFIABLE",
+          "tool receipts include crucible status MATCH",
+          "Forum submit error recorded: configured executor did not return valid JSON"
+        ]
+      },
+      {
+        "claim_id": "b42c31bdc32f8df4",
+        "claim_sha256": "b42c31bdc32f8df407f3dfcef94aaf892cf664574555ccacf9e32c2446f3bbc8",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "non-promotion-review",
+        "measured_at": 1782904127.6405835,
+        "evidence": [
+          "packets/028-quantum-strict-canonicalization-adapters.md states no cloud job was run",
+          "schemas/quantum-strict-canonicalization-adapters-pass-0018.json non_promotion_statement states no quantum job or hardware result is promoted",
+          "adversarial/pass-0018-strict-adapter-steelman.md recommends non-promotional status",
+          "Current promoted natural laws: none"
+        ]
+      }
+    ],
+    "seal": "42b11dbdb1892ced33402b88b0be6082f65dfc9739506af71c8b592951df0222"
+  },
+  "verdicts": [
+    {
+      "claim_id": "07c737f9ca47583d",
+      "claim_sha256": "07c737f9ca47583d5d6882219239776a38fc05feaf5f52742eff3fe44d5e73bd",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "strict-adapter-set-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "0212e170acae7496",
+      "claim_sha256": "0212e170acae7496b0deadad06eecdd1fa68464c57a56a662170a25eb4cd3b35",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "strict-policy-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "5af8c845808b5942",
+      "claim_sha256": "5af8c845808b5942950bc31cd3054ad12374549dbf31923841329ee38473360a",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "adapter-id-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "e55e5339a02f8085",
+      "claim_sha256": "e55e5339a02f8085f11355f6927f64f13ca4d3f3a26acfb5b034aa18a717e8ba",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "adapter-contract-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "e60dba940aad8021",
+      "claim_sha256": "e60dba940aad8021378f81bcbc2974d112b12a2ec65d4049c1dd2970fdc76d9f",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "post-processing-operation-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "14f7041a4e81593c",
+      "claim_sha256": "14f7041a4e81593cae74cef66346c971eaec5e28e878469082db6b9246adc97c",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "negative-fixture-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "f0239befe281bd5f",
+      "claim_sha256": "f0239befe281bd5fba241aafa62df4d39ca4eef06105d050b34e4ed841c2e14a",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "validator-run-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "4085a427e168b67f",
+      "claim_sha256": "4085a427e168b67f1f2bad0ac281789350948b81d696ba8967b729f71cd47e71",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "tool-receipt-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "b42c31bdc32f8df4",
+      "claim_sha256": "b42c31bdc32f8df407f3dfcef94aaf892cf664574555ccacf9e32c2446f3bbc8",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "non-promotion-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    }
+  ],
+  "checks": {
+    "seals_ok": true,
+    "thesis_ok": true,
+    "verdicts_rederive": true
+  },
+  "report": "C:\\dev\\public\\telos\\docs\\research\\dogfood\\crucible\\pass-0018-report.md",
+  "record": "C:\\dev\\public\\telos\\docs\\research\\dogfood\\crucible\\pass-0018-run.json",
+  "bundle": null,
+  "spec": null,
+  "review": null,
+  "verifier": {
+    "mode": "cleanroom",
+    "inputs": [],
+    "excluded": [
+      "worker context",
+      "reasoning trace",
+      "intermediate steps"
+    ],
+    "checkability": "If success cannot be evaluated from the original spec and the artifact, the spec is not checkable yet."
+  }
+}

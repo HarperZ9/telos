@@ -1,0 +1,148 @@
+{
+  "generated_on": "2026-07-01",
+  "non_promotion_statement": "Tool receipts prove operator-surface availability, packet intake, Forum ledger verification, and Telos interface discoverability only. They do not prove Telos runtime action-receipt integration, cloud trace export, live agent safety, market adoption, or scientific discovery.",
+  "pass": "0023",
+  "receipts": [
+    {
+      "command": "status",
+      "role": "structure-context",
+      "status": "MATCH",
+      "tool": "index",
+      "tool_version": "2.8.0"
+    },
+    {
+      "checks": [
+        "workspace_map",
+        "context_pack",
+        "structural_verification",
+        "mcp_map_probe"
+      ],
+      "command": "doctor",
+      "mcp_map_probe_repo_count": 1,
+      "status": "MATCH",
+      "tool": "index"
+    },
+    {
+      "command": "status",
+      "role": "perception-intake",
+      "status": "MATCH",
+      "tool": "gather",
+      "tool_version": "1.5.0"
+    },
+    {
+      "artifact": "packets/033-otel-recording-span-venv.md",
+      "chars": 7736,
+      "command": "docs",
+      "seal": "68f9ce4e29ff0147006858732dfb26683ebbe24c2b5b62f5782a1e75334e7a91",
+      "sha256": "945054a1aed15ecffcfd46427b97dd268056a05d08997906a99faab29eed5b05",
+      "status": "MATCH",
+      "tool": "gather",
+      "verified": true
+    },
+    {
+      "check_count": 14,
+      "command": "operator_doctor",
+      "generated_at": "2026-07-01T11:42:31.038Z",
+      "passed_count": 14,
+      "status": "MATCH",
+      "telos_tool_count": 37,
+      "tool": "telos.operator.doctor",
+      "tool_count": 65
+    },
+    {
+      "command": "catalog",
+      "noted_tools": [
+        "telos.action.receipt",
+        "telos.loop.ledger",
+        "telos.model.foundry",
+        "telos.native.control",
+        "gather.docs",
+        "index.context.envelope",
+        "forum.ledger.summary",
+        "crucible.assess"
+      ],
+      "schema": "project-telos.mcp-tool-catalog/v1",
+      "status": "MATCH",
+      "tool": "telos.catalog"
+    },
+    {
+      "command": "action_receipt",
+      "links_to_trace_span": true,
+      "receipt_is_trace_span": false,
+      "schema": "project-telos.action-receipt/v1",
+      "status": "MATCH",
+      "tool": "telos.action.receipt",
+      "verified_on": "2026-06-27"
+    },
+    {
+      "command": "loop_ledger",
+      "schema": "project-telos.loop-ledger/v1",
+      "status": "MATCH",
+      "tool": "telos.loop.ledger",
+      "verified_on": "2026-06-28"
+    },
+    {
+      "action": "help",
+      "at": "2026-07-01T11:42:59.975Z",
+      "browser_verbs": [
+        "tabs",
+        "navigate",
+        "eval",
+        "click",
+        "fill",
+        "focus",
+        "type",
+        "gettext",
+        "waitfor",
+        "screenshot",
+        "snapshot-dom",
+        "snapshot-text",
+        "snapshot-visual",
+        "evidence"
+      ],
+      "command": "native_control",
+      "schema": "project-telos.native-control/v1",
+      "status": "MATCH",
+      "tool": "telos.native.control"
+    },
+    {
+      "command": "status",
+      "role": "orchestration-routing",
+      "status": "MATCH",
+      "tool": "forum",
+      "tool_version": "1.12.0"
+    },
+    {
+      "checkpoint": "0000000000000000000000000000000000000000000000000000000000000000",
+      "command": "ledger summary",
+      "entries": 0,
+      "model_calls_total": 0,
+      "status": "MATCH",
+      "tool": "forum",
+      "verified": true
+    },
+    {
+      "chain": true,
+      "command": "ledger verify",
+      "deep": true,
+      "status": "MATCH",
+      "tool": "forum"
+    },
+    {
+      "command": "submit",
+      "error": "submit needs a model executor. Forum is model-agnostic: pass --cmd \"<model cli>\" (any command, local models need no account), --chat-url <openai-compatible url> (e.g. a local Ollama server), or --api (Anthropic).",
+      "request": "Dogfood pass 0023 adversarial review for isolated OpenTelemetry recording-span venv packet and Telos action-receipt bridge sketch",
+      "status": "UNVERIFIABLE",
+      "tool": "forum"
+    },
+    {
+      "command": "status",
+      "role": "verification-pressure",
+      "status": "MATCH",
+      "tool": "crucible",
+      "tool_version": "1.1.0"
+    }
+  ],
+  "schema": "DogfoodToolReceiptSet/v1",
+  "status": "MATCH_WITH_FORUM_SUBMIT_GAP"
+}

@@ -1,0 +1,30 @@
+{
+  "title": "Dogfood Pass 0003 Structured Market and Megatool Artifacts",
+  "disposition": "publishable",
+  "claims": [
+    {
+      "text": "Pass 0003 produced Index-backed substrate receipts for build-universe, build-color, calibrate-pro, and telos, and project-scanner reported C:\\dev\\public is not a single monorepo.",
+      "falsification": "recorded tool outputs do not include the four Index maps or project-scanner is_monorepo=false"
+    },
+    {
+      "text": "Pass 0003 verified that Calibrate Pro enterprise receipt models are specified in project-docs but were not implemented as a calibrate_pro/enterprise package in this pass.",
+      "falsification": "recorded search output shows implemented calibrate_pro/enterprise files or enterprise receipt tests rather than only the spec/docs"
+    },
+    {
+      "text": "The pass 0003 MarketRow artifact contains 42 rows, every row has at least one source, and the three categories each contain at least 12 rows.",
+      "falsification": "JSON row count is not 42, any row lacks sources, or any category has fewer than 12 rows"
+    },
+    {
+      "text": "The pass 0003 WedgeScore artifact contains 8 scores and ranks AgentActionProofPacket first.",
+      "falsification": "JSON score count is not 8 or the first score is not AgentActionProofPacket"
+    },
+    {
+      "text": "The pass 0003 MegatoolNode artifact contains 8 nodes.",
+      "falsification": "JSON node count is not 8"
+    },
+    {
+      "text": "Pass 0003 promotes zero natural-law discoveries; all outputs remain market research, schema artifacts, or implementation plans.",
+      "falsification": "any pass 0003 artifact labels a new natural law, theorem, medical conclusion, finance result, or safety result as promoted"
+    }
+  ]
+}

@@ -1,0 +1,232 @@
+{
+  "competition_packet": {
+    "attempt_receipts": [
+      {
+        "attempt_id": "local_fixture::singleton_implies_commutative",
+        "correct": true,
+        "expected_answer": "TRUE",
+        "external_model_call": false,
+        "parse_method": "labeled_answer",
+        "parsed_verdict": "TRUE",
+        "problem_id": "singleton_implies_commutative",
+        "prompt_sha256": "5b3fcc6e7ca7c350226dd1cfc6e1ac4e8fe7670ab8ba42ef4f9445568baabd26",
+        "response_sha256": "ac24e6f6a9a2692d3d4b6231c2ff796aaf1f4a2a2d8114a47d7cecd6101ec64c",
+        "runner": "deterministic_local_fixture_no_model_call"
+      },
+      {
+        "attempt_id": "local_fixture::commutative_not_associative",
+        "correct": true,
+        "expected_answer": "FALSE",
+        "external_model_call": false,
+        "parse_method": "labeled_answer",
+        "parsed_verdict": "FALSE",
+        "problem_id": "commutative_not_associative",
+        "prompt_sha256": "5b6f3a72ecb0b188c7a9fd641b47055e01b8d0bf90634e198e31008f4a9ec516",
+        "response_sha256": "bfeb6281b0567dd2c244919833b24dff9b52211feecba87b06f7397e4f14d130",
+        "runner": "deterministic_local_fixture_no_model_call"
+      },
+      {
+        "attempt_id": "local_fixture::associative_not_commutative",
+        "correct": true,
+        "expected_answer": "FALSE",
+        "external_model_call": false,
+        "parse_method": "labeled_answer",
+        "parsed_verdict": "FALSE",
+        "problem_id": "associative_not_commutative",
+        "prompt_sha256": "692fccc8fe3adaac8ddc1b32a8092071c0bf3bb6057b4488d4d394e3e25be433",
+        "response_sha256": "1de1500e1a673c19a735afab4e92a85895e7d70b9cb7a24d82bf8301c0bd27ac",
+        "runner": "deterministic_local_fixture_no_model_call"
+      },
+      {
+        "attempt_id": "local_fixture::left_projection_implies_associative",
+        "correct": true,
+        "expected_answer": "TRUE",
+        "external_model_call": false,
+        "parse_method": "labeled_answer",
+        "parsed_verdict": "TRUE",
+        "problem_id": "left_projection_implies_associative",
+        "prompt_sha256": "7781aeeae9ab5ab802543df88ed8dd70b987e1668a5da0c6013592d1f57d97ee",
+        "response_sha256": "eef47ae554691f1d8fb615033f5c670b0ab18cf2586c64a4508f4bb6371c9da9",
+        "runner": "deterministic_local_fixture_no_model_call"
+      }
+    ],
+    "competition_ref": "https://competition.sair.foundation/competitions/mathematics-distillation-challenge-equational-theories-stage1/overview",
+    "current_promoted_results": [],
+    "negative_fixtures": [
+      {
+        "expected_status": "REJECTED",
+        "failures": [
+          "missing_source_refs"
+        ],
+        "fixture_id": "missing_source_refs",
+        "observed_status": "REJECTED",
+        "status": "MATCH"
+      },
+      {
+        "expected_status": "REJECTED",
+        "failures": [
+          "unrendered_prompt_placeholder"
+        ],
+        "fixture_id": "unrendered_prompt_placeholder",
+        "observed_status": "REJECTED",
+        "status": "MATCH"
+      },
+      {
+        "expected_status": "REJECTED",
+        "failures": [
+          "incorrect_attempt_verdict"
+        ],
+        "fixture_id": "malformed_verdict",
+        "observed_status": "REJECTED",
+        "status": "MATCH"
+      },
+      {
+        "expected_status": "REJECTED",
+        "failures": [
+          "incorrect_attempt_verdict"
+        ],
+        "fixture_id": "wrong_answer",
+        "observed_status": "REJECTED",
+        "status": "MATCH"
+      },
+      {
+        "expected_status": "REJECTED",
+        "failures": [
+          "external_model_call_present"
+        ],
+        "fixture_id": "external_model_claim_without_receipt",
+        "observed_status": "REJECTED",
+        "status": "MATCH"
+      },
+      {
+        "expected_status": "REJECTED",
+        "failures": [
+          "promoted_result_present"
+        ],
+        "fixture_id": "promoted_theorem_result",
+        "observed_status": "REJECTED",
+        "status": "MATCH"
+      }
+    ],
+    "packet_id": "sair_stage1_local_fixture_packet",
+    "parser_policy": {
+      "boxed_answers_beat_labeled": true,
+      "ignore_instruction_pattern_true_or_false": true,
+      "labeled_answers_beat_bare_edge_lines": true,
+      "last_marker_wins_within_same_marker_type": true,
+      "unparseable_verdict": "UNVERIFIABLE"
+    },
+    "positive_validation": {
+      "failures": [],
+      "status": "MATCH"
+    },
+    "problem_set_sha256": "adc9fb45ea8d5e3f0ceb65fdec9c57edcb0d527fa7f24df13ca065e5aa589227",
+    "promotion_boundary": "This packet verifies local fixture mechanics only. It does not submit to SAIR, call official models, claim leaderboard performance, or prove new mathematics.",
+    "prompt_template_sha256": "41f46ec1490c96b1879eac46b9a29f41fe8fda6e165a927343757bb54ab52116",
+    "rendered_prompt_sample": "You are judging whether Equation 1 implies Equation 2 over all magmas.\n\nEquation 1:\nx = y\n\nEquation 2:\nx * y = y * x\n\nReturn exactly one final line in this format:\nVERDICT: TRUE\nor\nVERDICT: FALSE\n",
+    "source_refs": [
+      "https://github.com/SAIRcompetition/equational-theories-stage1-judge",
+      "https://competition.sair.foundation/competitions/mathematics-distillation-challenge-equational-theories-stage1/overview",
+      "https://github.com/teorth/equational_theories",
+      "docs/research/dogfood/schemas/sair-math-research-infrastructure-source-leads-pass-0136.json"
+    ],
+    "verdict_summary": {
+      "attempts": 4,
+      "correct": 4,
+      "external_model_calls": 0,
+      "incorrect": 0
+    }
+  },
+  "generated_on": "2026-07-02",
+  "parser_tests": [
+    {
+      "case_id": "boxed_beats_labeled",
+      "expected_method": "boxed_answer",
+      "expected_verdict": "FALSE",
+      "observed_method": "boxed_answer",
+      "observed_verdict": "FALSE",
+      "status": "MATCH"
+    },
+    {
+      "case_id": "last_labeled_wins",
+      "expected_method": "labeled_answer",
+      "expected_verdict": "TRUE",
+      "observed_method": "labeled_answer",
+      "observed_verdict": "TRUE",
+      "status": "MATCH"
+    },
+    {
+      "case_id": "instruction_pattern_ignored",
+      "expected_method": "labeled_answer",
+      "expected_verdict": "FALSE",
+      "observed_method": "labeled_answer",
+      "observed_verdict": "FALSE",
+      "status": "MATCH"
+    },
+    {
+      "case_id": "bare_last_line",
+      "expected_method": "bare_edge_line",
+      "expected_verdict": "TRUE",
+      "observed_method": "bare_edge_line",
+      "observed_verdict": "TRUE",
+      "status": "MATCH"
+    },
+    {
+      "case_id": "malformed_unparseable",
+      "expected_method": "unparseable",
+      "expected_verdict": null,
+      "observed_method": "unparseable",
+      "observed_verdict": null,
+      "status": "MATCH"
+    }
+  ],
+  "pass": "0137",
+  "problem_fixtures": [
+    {
+      "equation1": "x = y",
+      "equation2": "x * y = y * x",
+      "expected_answer": "TRUE",
+      "oracle_kind": "human_curated_fixture",
+      "problem_id": "singleton_implies_commutative",
+      "witness": "The singleton law collapses all variables, so both sides of every binary equation denote the same element."
+    },
+    {
+      "equation1": "x * y = y * x",
+      "equation2": "(x * y) * z = x * (y * z)",
+      "expected_answer": "FALSE",
+      "oracle_kind": "finite_counterexample_fixture",
+      "problem_id": "commutative_not_associative",
+      "witness": "Boolean NAND is commutative but not associative: (1 NAND 1) NAND 0 = 1, while 1 NAND (1 NAND 0) = 0."
+    },
+    {
+      "equation1": "(x * y) * z = x * (y * z)",
+      "equation2": "x * y = y * x",
+      "expected_answer": "FALSE",
+      "oracle_kind": "finite_counterexample_fixture",
+      "problem_id": "associative_not_commutative",
+      "witness": "Left projection x*y=x is associative but not commutative when x != y."
+    },
+    {
+      "equation1": "x * y = x",
+      "equation2": "(x * y) * z = x * (y * z)",
+      "expected_answer": "TRUE",
+      "oracle_kind": "human_curated_fixture",
+      "problem_id": "left_projection_implies_associative",
+      "witness": "Under left projection, both sides reduce to x."
+    }
+  ],
+  "schema": "CompetitionProofPacketFixtureReceipt/v1",
+  "seal": "57eeba3e2f4048bdec9ec4ac7bcdd6aa67f53885b1a236156da9606ca20a0efb",
+  "source_basis": {
+    "equational_theories_observation": "Upstream project frames equation implication graph and Lean verification boundaries.",
+    "source_status": "SOURCE_LEAD_PLUS_LOCAL_FIXTURE",
+    "stage1_competition_observation": "Official competition page frames Stage 1 as in-context mathematical distillation.",
+    "stage1_repo_observation": "Official local toolkit exposes prompt rendering, model calls, verdict extraction, and smoke tests."
+  },
+  "status": "COMPETITION_PROOF_PACKET_FIXTURE_MATCH",
+  "tooling_gap": {
+    "forum_route_status": "needs_escalation",
+    "needed_router_lane": "formal_math_competition_proof_packet"
+  },
+  "validation_errors": []
+}

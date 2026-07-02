@@ -1,0 +1,37 @@
+# crucible report: Dogfood Pass 0015 Cloud Quantum Task Receipt Profiles
+
+## Summary
+
+- thesis_id: `9523ffdeed3a5a59`
+- thesis_seal: `9523ffdeed3a5a59e5d3e567b7d94bd6bfd29be53b57023620279dffef7adfb8`
+- assessment_seal: `c40e10b77824dc6600428b7617269aa4ee76f52f04a1199317e685852fa73cb0`
+- counts: MATCH 9 / DRIFT 0 / UNVERIFIABLE 0
+- integrity: seals_ok=True, thesis_ok=True, verdicts_rederive=True
+
+## Verdicts
+
+| Claim | Status | Disposition | Margin | Method | Grounds |
+| --- | --- | --- | ---: | --- | --- |
+| Pass 0015 created a CloudQuantumTaskReceiptProfileSet/v1 artifact with status PROFILE_SET_MATCH, four profiles, four negative fixtures, three shape-only sample receipts, and seal da29ddb01c060ea4af511cec8c901895e9f1c3c62622d367aefb15e7f82fcf62. | MATCH | fenced | 1 | profile-set-review | deviation 0 within tolerance 0.5 |
+| Pass 0015 defines provider profiles for Amazon Braket, IBM Quantum Runtime, Azure Quantum, and Provider Simulator. | MATCH | fenced | 1 | profile-id-review | deviation 0 within tolerance 0.5 |
+| The Braket profile requires device ARN, task id, shots, status, result payload hash, and calibration or device-properties reference for hardware-claim eligibility. | MATCH | fenced | 1 | braket-profile-review | deviation 0 within tolerance 0.5 |
+| The IBM Runtime profile requires backend name, job id, primitive name, result payload hash, job/session mode, and calibration or backend-properties reference for hardware-claim eligibility. | MATCH | fenced | 1 | ibm-profile-review | deviation 0 within tolerance 0.5 |
+| The Azure Quantum profile requires workspace, provider, target, job id, job input hash, result payload hash, calibration or target-properties reference, and explicitly separates resource-estimator output from execution output. | MATCH | fenced | 1 | azure-profile-review | deviation 0 within tolerance 0.5 |
+| The Provider Simulator profile uses branch CLOUD_SIMULATOR and allows no hardware-claim requirements. | MATCH | fenced | 1 | simulator-profile-review | deviation 0 within tolerance 0.5 |
+| Pass 0015 validator reports MATCH with one matched check and zero drift. | MATCH | fenced | 1 | validator-run-review | deviation 0 within tolerance 0.5 |
+| Pass 0015 records tool receipts showing Index, Gather, Telos, Forum, and Crucible status MATCH while preserving Forum submit as UNVERIFIABLE due to executor JSON parsing. | MATCH | fenced | 1 | tool-receipt-review | deviation 0 within tolerance 0.5 |
+| Pass 0015 promotes zero new quantum hardware results, quantum advantage claims, theorem proofs, natural laws, or scientific discoveries. | MATCH | fenced | 1 | non-promotion-review | deviation 0 within tolerance 0.5 |
+
+## Measurement Evidence
+
+| Claim | Method | Evidence |
+| --- | --- | --- |
+| Pass 0015 created a CloudQuantumTaskReceiptProfileSet/v1 artifact with status PROFILE_SET_MATCH, four profiles, four negative fixtures, three shape-only sample receipts, and seal da29ddb01c060ea4af511cec8c901895e9f1c3c62622d367aefb15e7f82fcf62. | profile-set-review | schemas/cloud-quantum-task-receipt-profiles-pass-0015.json schema=CloudQuantumTaskReceiptProfileSet/v1; status=PROFILE_SET_MATCH; profile_count=4; negative_fixture_count=4; sample_receipt_count=3; seal=da29ddb01c060ea4af511cec8c901895e9f1c3c62622d367aefb15e7f82fcf62 |
+| Pass 0015 defines provider profiles for Amazon Braket, IBM Quantum Runtime, Azure Quantum, and Provider Simulator. | profile-id-review | profile cloud-quantum-profile-braket-task present; profile cloud-quantum-profile-ibm-runtime-job present; profile cloud-quantum-profile-azure-job present; profile cloud-quantum-profile-provider-simulator present |
+| The Braket profile requires device ARN, task id, shots, status, result payload hash, and calibration or device-properties reference for hardware-claim eligibility. | braket-profile-review | Braket hardware_claim_allowed_requirements include device_arn; Braket hardware_claim_allowed_requirements include task_id; Braket hardware_claim_allowed_requirements include shots; Braket hardware_claim_allowed_requirements include status; Braket hardware_claim_allowed_requirements include result_payload_hash; Braket hardware_claim_allowed_requirements include calibration_or_device_properties_reference |
+| The IBM Runtime profile requires backend name, job id, primitive name, result payload hash, job/session mode, and calibration or backend-properties reference for hardware-claim eligibility. | ibm-profile-review | IBM hardware_claim_allowed_requirements include backend_name; IBM hardware_claim_allowed_requirements include job_id; IBM hardware_claim_allowed_requirements include primitive_name; IBM hardware_claim_allowed_requirements include result_payload_hash; IBM hardware_claim_allowed_requirements include session_or_job_mode; IBM hardware_claim_allowed_requirements include calibration_or_backend_properties_reference |
+| The Azure Quantum profile requires workspace, provider, target, job id, job input hash, result payload hash, calibration or target-properties reference, and explicitly separates resource-estimator output from execution output. | azure-profile-review | Azure hardware_claim_allowed_requirements include workspace_ref; Azure hardware_claim_allowed_requirements include provider_id; Azure hardware_claim_allowed_requirements include target_id; Azure hardware_claim_allowed_requirements include job_id; Azure hardware_claim_allowed_requirements include job_input_hash; Azure hardware_claim_allowed_requirements include result_payload_hash; Azure hardware_claim_allowed_requirements include calibration_or_target_properties_reference; Azure non_promotion_rules include Resource-estimator output must remain separate from job execution output |
+| The Provider Simulator profile uses branch CLOUD_SIMULATOR and allows no hardware-claim requirements. | simulator-profile-review | Provider Simulator profile present; branch=CLOUD_SIMULATOR; hardware_claim_allowed_requirements=[]; non_promotion_rules include Cloud simulator results are not cloud QPU hardware results |
+| Pass 0015 validator reports MATCH with one matched check and zero drift. | validator-run-review | schemas/pass-0015-cloud-quantum-profile-validator-result.json status=MATCH; match=1; drift=0; checks include CloudQuantumTaskReceiptProfileSet status MATCH |
+| Pass 0015 records tool receipts showing Index, Gather, Telos, Forum, and Crucible status MATCH while preserving Forum submit as UNVERIFIABLE due to executor JSON parsing. | tool-receipt-review | schemas/tool-receipts-pass-0015.json status=MATCH_WITH_FORUM_SUBMIT_GAP; tool receipts include index status MATCH; tool receipts include gather status MATCH; tool receipts include telos operator_doctor status MATCH; tool receipts include forum status MATCH and verify MATCH; tool receipts include forum_submit status UNVERIFIABLE; tool receipts include crucible status MATCH; Forum submit error recorded: configured executor did not return valid JSON |
+| Pass 0015 promotes zero new quantum hardware results, quantum advantage claims, theorem proofs, natural laws, or scientific discoveries. | non-promotion-review | packets/025-cloud-quantum-task-receipt-profiles.md states this pass does not run a cloud job; schemas/cloud-quantum-task-receipt-profiles-pass-0015.json non_promotion_statement states sample receipts are shape-only and not executed; sample receipts hardware_claim_allowed=false; sample receipts sample_status=SHAPE_ONLY_NOT_EXECUTED; Current promoted natural laws: none |
