@@ -1,0 +1,36 @@
+{
+  "version": "proof-packet/twenty-ninth-wave-embodied-sim2real/v1",
+  "packet_id": "twenty-ninth-wave-embodied-sim2real",
+  "claim": "The embodied sim-to-real preflight is a replayable local differential-drive proof packet: it declares robot units, command logs, predicted and observed traces, tolerances, safety envelope, latency bound, emits EMBODIED_SIM2REAL_FIXTURE_MATCH, rejects five negative controls, and keeps real robot safety, medical robotics, foundation-model, sim-to-real-at-scale, and BuildLang/buildc-native claims out of scope.",
+  "scope": "Project Telos twenty-ninth-wave prooflesson for proof-carrying embodied robotics claims",
+  "sources": [
+    {
+      "ref": "demo/research/embodied-sim2real-source-receipts.json",
+      "sha256": "63350e2b93206b74c58fa74e8ee15498f8c66ee5ef98415f17d20f67d744d298"
+    },
+    {
+      "ref": "demo/embodied-sim2real-proof-packet.mjs",
+      "sha256": "db9b1d57fe3e6e39e986ea7023b58151646efcd0b8f270c8332b2d72bc804e11"
+    },
+    {
+      "ref": "demo/embodied-sim2real-proof-packet.test.mjs",
+      "sha256": "c67233677af874e96ce7c631442a16bdb9bec9312005428a3961352753b6754d"
+    },
+    {
+      "ref": "docs/outreach/receipts/twenty-ninth-wave/embodied-sim2real-proof-packet-2026-07-02.json",
+      "sha256": "ace2d54978b6822aacb3bc816b3047b625c85cba568a610e0ccb291d0e3bf487"
+    },
+    {
+      "ref": "docs/outreach/receipts/twenty-ninth-wave-embodied-sim2real-run-2026-07-02.json",
+      "sha256": "b1f5bd65975c9a454ca9593c3b9310b9b7683ece8711ecbbcbdc789cff1f9704"
+    },
+    {
+      "ref": "docs/outreach/receipts/twenty-ninth-wave-embodied-sim2real-report-2026-07-02.md",
+      "sha256": "195c5b908d4597e38ee98dbf963d71aca564ac79fb7293f17b9a65b113d4fe2e"
+    }
+  ],
+  "verdicts": {
+    "overall": "MATCH"
+  },
+  "decision_summary": "The packet verifies the local embodied sim-to-real fixture shape and claim boundary. It does not verify real-world robot safety, medical robotics, embodied foundation models, large-scale sim-to-real transfer, or BuildLang/buildc-native runtime execution."
+}

@@ -1,0 +1,144 @@
+{
+  "kind": "proof-lesson",
+  "packet_id": "twenty-second-wave-hyphal-context-benchmark",
+  "verdict": "MATCH",
+  "lesson": {
+    "kind": "proof-lesson",
+    "packet_id": "twenty-second-wave-hyphal-context-benchmark",
+    "packet_version": "proof-packet/twenty-second-wave-hyphal-context-benchmark/v1",
+    "claim": "A deterministic fixture over the twenty-first-wave biology corpus reports HYPHAL_CONTEXT_FIXTURE_MATCH: the hyphal route recovers the same required evidence classes and guardrails as the full-context route with fewer estimated prompt tokens, but it does not prove universal route superiority or model answer quality.",
+    "scope": "Project Telos twenty-second-wave prooflesson for receipt-first context routing benchmarks",
+    "verdict": "MATCH",
+    "sources": [
+      {
+        "ref": "demo/hyphal-context-benchmark.mjs",
+        "sha256": "11b5fcb0c79d5c3436bd7eba0474672a65f8c30f68f38906891203b35ce627a7"
+      },
+      {
+        "ref": "demo/hyphal-context-benchmark.test.mjs",
+        "sha256": "000f774e85f9c5d1885e0f3e8607f91af8d11a35f5bdbbe67abb62c4571ef1d3"
+      },
+      {
+        "ref": "docs/outreach/receipts/twenty-second-wave/hyphal-context-benchmark-2026-07-02.json",
+        "sha256": "7bf59b737ca49ea1230188f708b52e6d79b5730cec648b7949ba77ca48839e22"
+      },
+      {
+        "ref": "docs/outreach/receipts/twenty-first-wave/biology-network-intelligence-source-gate-2026-07-02.json",
+        "sha256": "1347af4a99aad6b124bc434e09b9e17b6aafcf95dd8736aad6be136001a09f3d"
+      }
+    ],
+    "scaffold": [
+      {
+        "step": 1,
+        "prompt": "Restate, in your own words, exactly what this claim asserts and nothing more: \"A deterministic fixture over the twenty-first-wave biology corpus reports HYPHAL_CONTEXT_FIXTURE_MATCH: the hyphal route recovers the same required evidence classes and guardrails as the full-context route with fewer estimated prompt tokens, but it does not prove universal route superiority or model answer quality.\" (scope: Project Telos twenty-second-wave prooflesson for receipt-first context routing benchmarks)."
+      },
+      {
+        "step": 2,
+        "prompt": "Judging by their refs alone (demo/hyphal-context-benchmark.mjs, demo/hyphal-context-benchmark.test.mjs, docs/outreach/receipts/twenty-second-wave/hyphal-context-benchmark-2026-07-02.json, docs/outreach/receipts/twenty-first-wave/biology-network-intelligence-source-gate-2026-07-02.json), predict what each recorded source could contribute as evidence for or against the claim."
+      },
+      {
+        "step": 3,
+        "prompt": "The packet's overall verdict is MATCH. Before reading anything else, derive what a MATCH verdict must mean about the relationship between the claim and the recorded checks."
+      },
+      {
+        "step": 4,
+        "prompt": "List the checks you would run to reach your own verdict on this claim, then compare your list against what the packet's verdict implies was actually checked."
+      }
+    ],
+    "retrievalQuestions": [
+      {
+        "question": "What evidence would falsify this claim: \"A deterministic fixture over the twenty-first-wave biology corpus reports HYPHAL_CONTEXT_FIXTURE_MATCH: the hyphal route recovers the same required evidence classes and guardrails as the full-context route with fewer estimated prompt tokens, but it does not prove universal route superiority or model answer quality.\"?",
+        "derivedFrom": "claim"
+      },
+      {
+        "question": "Which recorded source would you re-check first, and what does its content hash let you prove about it?",
+        "derivedFrom": "sources"
+      },
+      {
+        "question": "What does an overall verdict of MATCH entitle you to claim, and what does it not?",
+        "derivedFrom": "verdicts.overall"
+      },
+      {
+        "question": "The packet's scope is \"Project Telos twenty-second-wave prooflesson for receipt-first context routing benchmarks\". Give one claim that would exceed that scope.",
+        "derivedFrom": "scope"
+      }
+    ],
+    "verifierBinding": {
+      "packet_id": "twenty-second-wave-hyphal-context-benchmark",
+      "verdict": "MATCH",
+      "sourceHashes": [
+        "11b5fcb0c79d5c3436bd7eba0474672a65f8c30f68f38906891203b35ce627a7",
+        "000f774e85f9c5d1885e0f3e8607f91af8d11a35f5bdbbe67abb62c4571ef1d3",
+        "7bf59b737ca49ea1230188f708b52e6d79b5730cec648b7949ba77ca48839e22",
+        "1347af4a99aad6b124bc434e09b9e17b6aafcf95dd8736aad6be136001a09f3d"
+      ]
+    },
+    "boundary": "Lesson scaffold only -- prompts for the operator to derive the reasoning; never an answer dump, never a graded-assessment answer."
+  },
+  "misconception": null,
+  "sourceCount": 4,
+  "entries": [
+    {
+      "seq": 0,
+      "prevHash": "0000000000000000000000000000000000000000000000000000000000000000",
+      "hash": "f233946d9eecad4b9ffe8f9fad32f5d64b90a5072b378f130385503b878ffa28",
+      "entry": {
+        "kind": "packet-binding",
+        "packet_id": "twenty-second-wave-hyphal-context-benchmark",
+        "verdict": "MATCH",
+        "claim": "A deterministic fixture over the twenty-first-wave biology corpus reports HYPHAL_CONTEXT_FIXTURE_MATCH: the hyphal route recovers the same required evidence classes and guardrails as the full-context route with fewer estimated prompt tokens, but it does not prove universal route superiority or model answer quality."
+      }
+    },
+    {
+      "seq": 1,
+      "prevHash": "f233946d9eecad4b9ffe8f9fad32f5d64b90a5072b378f130385503b878ffa28",
+      "hash": "9fa46627375cfc854441d2bfe01525afa64013f4723a06fd6b864d636081920d",
+      "entry": {
+        "kind": "source",
+        "ref": "demo/hyphal-context-benchmark.mjs",
+        "sha256": "11b5fcb0c79d5c3436bd7eba0474672a65f8c30f68f38906891203b35ce627a7"
+      }
+    },
+    {
+      "seq": 2,
+      "prevHash": "9fa46627375cfc854441d2bfe01525afa64013f4723a06fd6b864d636081920d",
+      "hash": "865ec434135c5e137e2695f8625c193d0ccc4ca35ea6802f1b7f3e03380c8f20",
+      "entry": {
+        "kind": "source",
+        "ref": "demo/hyphal-context-benchmark.test.mjs",
+        "sha256": "000f774e85f9c5d1885e0f3e8607f91af8d11a35f5bdbbe67abb62c4571ef1d3"
+      }
+    },
+    {
+      "seq": 3,
+      "prevHash": "865ec434135c5e137e2695f8625c193d0ccc4ca35ea6802f1b7f3e03380c8f20",
+      "hash": "d01daf9fcc23e184beb69ad3d4807a6ccc674974296b9c1d5a67b5adfed02fab",
+      "entry": {
+        "kind": "source",
+        "ref": "docs/outreach/receipts/twenty-second-wave/hyphal-context-benchmark-2026-07-02.json",
+        "sha256": "7bf59b737ca49ea1230188f708b52e6d79b5730cec648b7949ba77ca48839e22"
+      }
+    },
+    {
+      "seq": 4,
+      "prevHash": "d01daf9fcc23e184beb69ad3d4807a6ccc674974296b9c1d5a67b5adfed02fab",
+      "hash": "cf5afc1347867f63bb78a28fe0be36ce9b35e6e015cbbe0e22c6708f9f5384c7",
+      "entry": {
+        "kind": "source",
+        "ref": "docs/outreach/receipts/twenty-first-wave/biology-network-intelligence-source-gate-2026-07-02.json",
+        "sha256": "1347af4a99aad6b124bc434e09b9e17b6aafcf95dd8736aad6be136001a09f3d"
+      }
+    },
+    {
+      "seq": 5,
+      "prevHash": "cf5afc1347867f63bb78a28fe0be36ce9b35e6e015cbbe0e22c6708f9f5384c7",
+      "hash": "8661b609d8cfaf5d44a2cd03aa87dedf5a9e3f362d6c853a0582124c27e04e33",
+      "entry": {
+        "kind": "lesson-digest",
+        "digest": "sha256:e25c3329cbcdbbfe64940cf06b970afd9aa663f584fab7348d78bbde5858cb3a",
+        "misconception_class": null
+      }
+    }
+  ],
+  "boundary": "Lesson receipt only -- binds the lesson to its packet's verdict and source hashes; never a graded-assessment answer."
+}

@@ -1,0 +1,127 @@
+{
+  "kind": "proof-lesson",
+  "packet_id": "twentieth-wave-vector-finite-operator",
+  "verdict": "MATCH",
+  "lesson": {
+    "kind": "proof-lesson",
+    "packet_id": "twentieth-wave-vector-finite-operator",
+    "packet_version": "proof-packet/twentieth-wave-vector-finite-operator/v1",
+    "claim": "A two-component finite integer vector/operator summation-by-parts identity type-checks in Lean, but it does not prove smooth periodic integration by parts or Navier-Stokes.",
+    "scope": "Project Telos twentieth-wave prooflesson for finite vector/operator replay boundaries",
+    "verdict": "MATCH",
+    "sources": [
+      {
+        "ref": "docs/research/proof-packets/navier-stokes-periodic-skew-symmetry-v0/formal/lean/VectorFiniteOperatorPreflight.lean",
+        "sha256": "a4d2682ea6bb4d9a38957a37b95cd9cdc63ba9ae9dedb2a559e8a47c8d12989a"
+      },
+      {
+        "ref": "docs/outreach/receipts/twentieth-wave/source-lead-demotion-gate.json",
+        "sha256": null
+      },
+      {
+        "ref": "docs/outreach/receipts/twentieth-wave/lean-vector-finite-operator-sbp-replay-2026-07-02.json",
+        "sha256": null
+      }
+    ],
+    "scaffold": [
+      {
+        "step": 1,
+        "prompt": "Restate, in your own words, exactly what this claim asserts and nothing more: \"A two-component finite integer vector/operator summation-by-parts identity type-checks in Lean, but it does not prove smooth periodic integration by parts or Navier-Stokes.\" (scope: Project Telos twentieth-wave prooflesson for finite vector/operator replay boundaries)."
+      },
+      {
+        "step": 2,
+        "prompt": "Judging by their refs alone (docs/research/proof-packets/navier-stokes-periodic-skew-symmetry-v0/formal/lean/VectorFiniteOperatorPreflight.lean, docs/outreach/receipts/twentieth-wave/source-lead-demotion-gate.json, docs/outreach/receipts/twentieth-wave/lean-vector-finite-operator-sbp-replay-2026-07-02.json), predict what each recorded source could contribute as evidence for or against the claim."
+      },
+      {
+        "step": 3,
+        "prompt": "The packet's overall verdict is MATCH. Before reading anything else, derive what a MATCH verdict must mean about the relationship between the claim and the recorded checks."
+      },
+      {
+        "step": 4,
+        "prompt": "List the checks you would run to reach your own verdict on this claim, then compare your list against what the packet's verdict implies was actually checked."
+      }
+    ],
+    "retrievalQuestions": [
+      {
+        "question": "What evidence would falsify this claim: \"A two-component finite integer vector/operator summation-by-parts identity type-checks in Lean, but it does not prove smooth periodic integration by parts or Navier-Stokes.\"?",
+        "derivedFrom": "claim"
+      },
+      {
+        "question": "Which recorded source would you re-check first, and what does its content hash let you prove about it?",
+        "derivedFrom": "sources"
+      },
+      {
+        "question": "What does an overall verdict of MATCH entitle you to claim, and what does it not?",
+        "derivedFrom": "verdicts.overall"
+      },
+      {
+        "question": "The packet's scope is \"Project Telos twentieth-wave prooflesson for finite vector/operator replay boundaries\". Give one claim that would exceed that scope.",
+        "derivedFrom": "scope"
+      }
+    ],
+    "verifierBinding": {
+      "packet_id": "twentieth-wave-vector-finite-operator",
+      "verdict": "MATCH",
+      "sourceHashes": [
+        "a4d2682ea6bb4d9a38957a37b95cd9cdc63ba9ae9dedb2a559e8a47c8d12989a"
+      ]
+    },
+    "boundary": "Lesson scaffold only -- prompts for the operator to derive the reasoning; never an answer dump, never a graded-assessment answer."
+  },
+  "misconception": null,
+  "sourceCount": 3,
+  "entries": [
+    {
+      "seq": 0,
+      "prevHash": "0000000000000000000000000000000000000000000000000000000000000000",
+      "hash": "e1d883b735e6b8d6d18bbbf32acef58a983b5dec0d5b6b5c853c7a051d14b5c6",
+      "entry": {
+        "kind": "packet-binding",
+        "packet_id": "twentieth-wave-vector-finite-operator",
+        "verdict": "MATCH",
+        "claim": "A two-component finite integer vector/operator summation-by-parts identity type-checks in Lean, but it does not prove smooth periodic integration by parts or Navier-Stokes."
+      }
+    },
+    {
+      "seq": 1,
+      "prevHash": "e1d883b735e6b8d6d18bbbf32acef58a983b5dec0d5b6b5c853c7a051d14b5c6",
+      "hash": "87e4dfa5493e9afa94eedb9e854e98991af496260e25fe8fe02708402d2e696b",
+      "entry": {
+        "kind": "source",
+        "ref": "docs/research/proof-packets/navier-stokes-periodic-skew-symmetry-v0/formal/lean/VectorFiniteOperatorPreflight.lean",
+        "sha256": "a4d2682ea6bb4d9a38957a37b95cd9cdc63ba9ae9dedb2a559e8a47c8d12989a"
+      }
+    },
+    {
+      "seq": 2,
+      "prevHash": "87e4dfa5493e9afa94eedb9e854e98991af496260e25fe8fe02708402d2e696b",
+      "hash": "22f274310edc5866efdd3a0f6ce901eebe9ca3fea1cb9e5656de20820efd144c",
+      "entry": {
+        "kind": "source",
+        "ref": "docs/outreach/receipts/twentieth-wave/source-lead-demotion-gate.json",
+        "sha256": null
+      }
+    },
+    {
+      "seq": 3,
+      "prevHash": "22f274310edc5866efdd3a0f6ce901eebe9ca3fea1cb9e5656de20820efd144c",
+      "hash": "ebc939adb7736105b1e0f08311372d896a607ceb59067a9ef13f124d83499555",
+      "entry": {
+        "kind": "source",
+        "ref": "docs/outreach/receipts/twentieth-wave/lean-vector-finite-operator-sbp-replay-2026-07-02.json",
+        "sha256": null
+      }
+    },
+    {
+      "seq": 4,
+      "prevHash": "ebc939adb7736105b1e0f08311372d896a607ceb59067a9ef13f124d83499555",
+      "hash": "b4d7fb7fac447e12bf19a2cb521ad7eba48dc7b5454cc684fc6f64dee8e0cee4",
+      "entry": {
+        "kind": "lesson-digest",
+        "digest": "sha256:49b27cc2ffe81ebb93f7d436fb9886e7b57ea559d1000b23b312b05f4d54fc9f",
+        "misconception_class": null
+      }
+    }
+  ],
+  "boundary": "Lesson receipt only -- binds the lesson to its packet's verdict and source hashes; never a graded-assessment answer."
+}

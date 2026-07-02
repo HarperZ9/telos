@@ -1,0 +1,45 @@
+﻿{
+  "command": "doctor",
+  "diagnostics": [],
+  "inputs": [],
+  "native": {
+    "checks": [
+      {
+        "name": "workspace_map",
+        "status": "MATCH"
+      },
+      {
+        "name": "context_pack",
+        "status": "MATCH"
+      },
+      {
+        "name": "structural_verification",
+        "status": "MATCH"
+      },
+      {
+        "absolute_paths_included": false,
+        "elapsed_ms": 357,
+        "name": "mcp_map_probe",
+        "repo_count": 1,
+        "side_effect": "temporary_workspace",
+        "status": "MATCH"
+      }
+    ],
+    "filesystem_writes_performed": true
+  },
+  "next_actions": [
+    {
+      "action": "route",
+      "inputs": [],
+      "priority": "normal",
+      "reason": "route the next workspace action",
+      "tool": "forum"
+    }
+  ],
+  "outputs": [],
+  "receipts": [],
+  "schema": "project-telos.flagship-action/v1",
+  "status": "MATCH",
+  "tool": "index",
+  "tool_version": "2.8.0"
+}

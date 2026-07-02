@@ -1,0 +1,224 @@
+{
+  "schema": "project-telos.embodied-sim2real/proof-packet-fixture/v1",
+  "generated_at": "2026-07-02T00:00:00.000Z",
+  "result": "EMBODIED_SIM2REAL_FIXTURE_MATCH",
+  "fixture": {
+    "robot": {
+      "model": "differential_drive_planar_fixture",
+      "wheel_base_m": 0.5,
+      "robot_radius_m": 0.08,
+      "max_wheel_speed_mps": 0.6,
+      "max_angular_speed_rad_s": 1.1,
+      "max_latency_s": 0.1
+    },
+    "environment": {
+      "workspace_m": {
+        "min_x": -0.2,
+        "max_x": 2,
+        "min_y": -0.4,
+        "max_y": 0.8
+      },
+      "obstacles": [
+        {
+          "id": "bench_fixture",
+          "x_m": 0.72,
+          "y_m": 0.44,
+          "radius_m": 0.1
+        }
+      ]
+    },
+    "tolerances": {
+      "mean_path_error_m": 0.025,
+      "max_path_error_m": 0.04,
+      "terminal_position_error_m": 0.04,
+      "terminal_heading_error_rad": 0.05,
+      "min_obstacle_clearance_m": 0.08
+    },
+    "commands": [
+      {
+        "dt_s": 1,
+        "left_mps": 0.42,
+        "right_mps": 0.42
+      },
+      {
+        "dt_s": 1,
+        "left_mps": 0.24,
+        "right_mps": 0.48
+      },
+      {
+        "dt_s": 1,
+        "left_mps": 0.46,
+        "right_mps": 0.46
+      },
+      {
+        "dt_s": 1,
+        "left_mps": 0.44,
+        "right_mps": 0.2
+      }
+    ]
+  },
+  "traces": {
+    "predicted": [
+      {
+        "x_m": 0,
+        "y_m": 0,
+        "heading_rad": 0
+      },
+      {
+        "x_m": 0.42,
+        "y_m": 0,
+        "heading_rad": 0
+      },
+      {
+        "x_m": 0.769682,
+        "y_m": 0.085573,
+        "heading_rad": 0.48
+      },
+      {
+        "x_m": 1.1777,
+        "y_m": 0.297991,
+        "heading_rad": 0.48
+      },
+      {
+        "x_m": 1.488528,
+        "y_m": 0.374056,
+        "heading_rad": 0
+      }
+    ],
+    "observed": [
+      {
+        "x_m": 0,
+        "y_m": 0,
+        "heading_rad": 0
+      },
+      {
+        "x_m": 0.426,
+        "y_m": -0.003,
+        "heading_rad": 0.004
+      },
+      {
+        "x_m": 0.780682,
+        "y_m": 0.090573,
+        "heading_rad": 0.487
+      },
+      {
+        "x_m": 1.1937,
+        "y_m": 0.306991,
+        "heading_rad": 0.49
+      },
+      {
+        "x_m": 1.506528,
+        "y_m": 0.386056,
+        "heading_rad": 0.011
+      }
+    ]
+  },
+  "metrics": {
+    "mean_path_error_m": 0.011756,
+    "max_path_error_m": 0.021633,
+    "terminal_position_error_m": 0.021633,
+    "terminal_heading_error_rad": 0.011,
+    "min_obstacle_clearance_m": 0.177892,
+    "command_envelope": {
+      "max_wheel_speed_mps": 0.48,
+      "max_angular_speed_rad_s": 0.48,
+      "wheel_speed_ok": true,
+      "angular_speed_ok": true
+    },
+    "observed_latency_s": 0.04
+  },
+  "checks": {
+    "trajectory_match": true,
+    "safety_envelope_match": true,
+    "latency_match": true,
+    "unit_contract_match": true,
+    "negative_controls": [
+      {
+        "id": "wrong_wheel_base",
+        "verdict": "DRIFT",
+        "metrics": {
+          "mean_path_error_m": 0.087858,
+          "max_path_error_m": 0.211924,
+          "terminal_position_error_m": 0.211924,
+          "terminal_heading_error_rad": 0.011
+        },
+        "failed_checks": [
+          "trajectory_match"
+        ]
+      },
+      {
+        "id": "swapped_wheels",
+        "verdict": "DRIFT",
+        "metrics": {
+          "mean_path_error_m": 0.309743,
+          "max_path_error_m": 0.760325,
+          "terminal_position_error_m": 0.760325,
+          "terminal_heading_error_rad": 0.011
+        },
+        "failed_checks": [
+          "trajectory_match"
+        ]
+      },
+      {
+        "id": "centimeters_treated_as_meters",
+        "verdict": "DRIFT",
+        "metrics": {
+          "mean_path_error_m": 57.052971,
+          "max_path_error_m": 105.164512,
+          "terminal_position_error_m": 105.164512,
+          "terminal_heading_error_rad": 0.011
+        },
+        "failed_checks": [
+          "trajectory_match",
+          "safety_envelope_match"
+        ]
+      },
+      {
+        "id": "unsafe_clearance",
+        "verdict": "DRIFT",
+        "metrics": {
+          "mean_path_error_m": 0.011756,
+          "max_path_error_m": 0.021633,
+          "terminal_position_error_m": 0.021633,
+          "terminal_heading_error_rad": 0.011
+        },
+        "failed_checks": [
+          "safety_envelope_match"
+        ]
+      },
+      {
+        "id": "latency_over_limit",
+        "verdict": "DRIFT",
+        "metrics": {
+          "mean_path_error_m": 0.011756,
+          "max_path_error_m": 0.021633,
+          "terminal_position_error_m": 0.021633,
+          "terminal_heading_error_rad": 0.011
+        },
+        "failed_checks": [
+          "latency_match"
+        ]
+      }
+    ]
+  },
+  "claim_card": {
+    "claim": "In the deterministic planar robotics fixture, the observed trace matches the differential-drive prediction within tolerance, stays inside the declared safety envelope, preserves units and latency limits, and rejects configured negative controls.",
+    "verdict": "MATCH",
+    "scope": "One local differential-drive sim-to-real fixture only; not a real robot safety claim, not a medical robotics claim, and not a foundation-model benchmark.",
+    "falsification": "The trajectory exceeds tolerance, the safety envelope fails, latency exceeds limit, units are ill-posed, or any negative control is accepted as MATCH."
+  },
+  "toolchain_implications": [
+    "Gather owns robotics, embodied AI, surgical robotics, soft robotics, benchmark, and safety source receipts.",
+    "Index should package robot morphology, command logs, sensor traces, environment state, and source refs.",
+    "Forum should route embodied claims through robotics, safety, domain, and verification lanes.",
+    "BuildLang/buildc should become the typed runtime for units, kinematics, dynamics, traces, and tolerance proofs.",
+    "Crucible should reject sim-to-real claims without units, tolerances, safety envelopes, trace comparisons, and negative controls.",
+    "Learn should turn fixtures into exercises about units, kinematics, latency, clearance, and overclaim boundaries."
+  ],
+  "non_claims": [
+    "This fixture does not prove real-world robot safety.",
+    "This fixture does not validate a vision-language-action model.",
+    "This fixture does not make a surgical or medical recommendation.",
+    "This fixture is not yet a BuildLang/buildc-native receipt."
+  ]
+}

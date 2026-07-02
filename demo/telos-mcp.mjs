@@ -200,6 +200,26 @@ export const tools = [
     name: "telos.showcase.scout",
     description: "Use when a host needs fixture-backed OSS Proof Showcase candidate rankings before public patch work. Read-only, zero-auth, no external side effects. Returns JSON scout results.",
     inputSchema: emptyInputSchema
+  },
+  {
+    name: "telos.proof",
+    description: "Use when a host needs the fixture-backed agent-action proof packet joining source refs, context refs, route, admission, side effects, output digests, verifier checks, and the Emet witness stage. Read-only, zero-auth, no external side effects beyond local subprocess reads. Returns a JSON agent-action proof packet.",
+    inputSchema: emptyInputSchema
+  },
+  {
+    name: "telos.proof.research",
+    description: "Use when a host needs the fixture-backed research-claim proof packet joining source provenance, a bounded claim, a required negative control fixture, attempt records, recomputed source digests, and a promotion rung the verifier derives rather than trusts. Read-only, zero-auth, no external side effects beyond local subprocess reads. Returns a JSON research-claim proof packet.",
+    inputSchema: emptyInputSchema
+  },
+  {
+    name: "telos.proof.visual",
+    description: "Use when a host needs the fixture-backed visual-truth proof packet whose color and luminance measurements are recomputed from the artifact's own embedded sRGB samples, with a read-only boundary and no physical-calibration overclaim. Read-only, zero-auth, no external side effects beyond local subprocess reads. Returns a JSON visual-truth proof packet.",
+    inputSchema: emptyInputSchema
+  },
+  {
+    name: "telos.proof.build",
+    description: "Use when a host needs the fixture-backed build scientific-runtime proof packet whose conserved-quantity invariant and conservation drift are recomputed from the run's own embedded samples with stdlib math, checked within bounded tolerances, and controlled by a required negative fixture that must break the invariant. Read-only, zero-auth, no external side effects beyond local subprocess reads. Returns a JSON build proof packet.",
+    inputSchema: emptyInputSchema
   }
 ];
 
@@ -240,7 +260,11 @@ const toolScripts = new Map([
   ["telos.display.calibration", ["display-calibration.mjs"]],
   ["telos.native.control", ["native-control.mjs"]],
   ["telos.browser.evidence", ["browser-evidence.mjs"]],
-  ["telos.showcase.scout", ["showcase.mjs", "scout", "--fixture", "--json"]]
+  ["telos.showcase.scout", ["showcase.mjs", "scout", "--fixture", "--json"]],
+  ["telos.proof", ["proof.mjs", "agent-action", "--demo", "--json"]],
+  ["telos.proof.research", ["proof.mjs", "research", "--demo", "--json"]],
+  ["telos.proof.visual", ["proof.mjs", "visual", "--demo", "--json"]],
+  ["telos.proof.build", ["proof.mjs", "build", "--demo", "--json"]]
 ]);
 function runTool(name) {
   const args = toolScripts.get(name);
