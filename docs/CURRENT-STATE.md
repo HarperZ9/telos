@@ -1,11 +1,29 @@
 # Project Telos Current State
 
-Generated: 2026-06-30
+Generated: 2026-07-02
 
 This document is a live state packet for Project Telos. It is deliberately evidence-first: current capability, repo shape, and ambition are separated so the project can grow without turning roadmap into a false capability claim.
 
 ## Refresh Receipts
 
+- Index public workspace map generated `2026-07-02T13:27:18-07:00`: 68 repositories, 62 public-class, 6 local-class, 10 dirty repositories, root SHA256 prefix `92ef331e0850ccf6`.
+- Flagship MCP refresh on 2026-07-02 returned `MATCH` for Gather `1.5.0`, Index `2.8.0`, Forum `1.12.0`, and Crucible `1.1.0`.
+- Telos MCP server manifest refresh on 2026-07-02 returned the five source-checkout launch profiles and host targets for Codex, Claude, OpenAI Agents, and OpenAI Apps.
+- The active consolidation roadmap is `docs/PROJECT-TELOS-LARGE-SCALE-ROADMAP-2026-07-02.md`.
+- The active documentation registry is `docs/DOCUMENTATION-CONSOLIDATION-REGISTRY-2026-07-02.md`.
+- The active machine-readable documentation registry is `docs/registry/documentation-registry.json`.
+- The active public-workspace documentation catalog is `docs/registry/PUBLIC-WORKSPACE-DOC-CATALOG-2026-07-02.md`, with machine data in `docs/registry/public-workspace-doc-catalog-2026-07-02.json`.
+- The active Senses and Sensibility subregistry is `docs/registry/SENSES-AND-SENSIBILITY-SUBREGISTRY-2026-07-02.md`, with machine data in `docs/registry/senses-and-sensibility-subregistry-2026-07-02.json`.
+- The active Build ecosystem subregistry is `docs/registry/BUILD-ECOSYSTEM-SUBREGISTRY-2026-07-02.md`, with machine data in `docs/registry/build-ecosystem-subregistry-2026-07-02.json`.
+- The active proof/witnessing subregistry is `docs/registry/PROOF-WITNESSING-SUBREGISTRY-2026-07-02.md`, with machine data in `docs/registry/proof-witnessing-subregistry-2026-07-02.json`.
+- The active Telos repo subregistry is `docs/registry/TELOS-REPO-SUBREGISTRY-2026-07-02.md`, with machine data in `docs/registry/telos-repo-subregistry-2026-07-02.json`.
+- The active publication queue is `docs/research/PUBLICATION-QUEUE-2026-07-02.md`.
+- The active frontier R&D posture is `docs/FRONTIER-RD-OPERATING-POSTURE-2026-07-02.md`.
+- Gather federation validated the current Ti Morse and adjacent video source registry on 2026-07-02: 5 requested videos plus 1 Ti Morse channel catalog, seal `63a2b0cc6865791ea04bb7abdb7895db5ac4bc267c96785566e842833b9b1428`.
+- Gather docs sealed the Senses and Sensibility corpus on 2026-07-02 with seal `4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945`; the model-facing catalog dropped 173 large corpus payloads, so the subregistry uses direct file reads for classification.
+- Gather docs sealed the Telos docs surface on 2026-07-02 with seal `24b94d64f78e323245338463f79b6b87d97738bf1db489234826ff438a3d6270`; the model-facing catalog dropped 38 large payloads, so the Telos repo subregistry uses direct file reads plus Index, Forum, and Telos operator-doctor receipts.
+- Latest Telos repo Index map generated `2026-07-02T13:37:49-07:00`: one public repo on `main`, head `1e0e1a1`, dirty count 3, untracked count 35, root SHA256 prefix `45e8256faa8bdc98`.
+- Telos operator doctor generated `2026-07-02T20:37:50.274Z` returned `MATCH` with 14/14 checks passed across README, current state, CI, catalog, manifest, and status discoverability surfaces.
 - Index workspace map: `C:\dev\public`, generated `2026-06-28T17:29:42-07:00`.
 - Index public workspace `repo_count: 52`, public repos 48, local repos 4.
 - Index public workspace `root_sha256_prefix: 92ef331e0850ccf6`.
@@ -81,8 +99,14 @@ The engine is becoming a universal media and research workbench:
 - Science and mathematics: geometry, physics, dimensions, bundle-style representations, physical constants, measurement overlays, formal checks, and reproducible demonstrations.
 - Machine learning: model-foundry orchestration, large-context context envelopes, local model runtime hooks, feasible post-training labs, memory layers, retrieval receipts, uncertainty measurements, eval gates, and model-observation records.
 - Security and reliability: defensive find-and-fix, release scanning, redacted IO, proof indexing, agent audit, and open-source patch demonstration packets.
+- Frontier R&D: advanced computation, AI/ML, mathematics, physics, biology, medicine, robotics, cybernetics, quant, finance, color/rendering/scientific compute, nuclear and energy systems, and defense-adjacent technology when the artifact is framed as research, measurement, safety, assurance, simulation, verification, education, or accountable tooling.
 
 The ambition is intentionally large. The delivery posture remains bounded: live, prototype, planned, promotion-ready, promotion-candidate, and quarantine-and-adapt are different labels.
+
+The active scope update is explicit: military-adjacent and defense-adjacent
+frontier R&D are not excluded by default. The publication boundary is still
+strict. Public artifacts must name source basis, measured claim, non-claims,
+failure condition, safety-to-publish rationale, and internal/fenced details.
 
 ## Research Receipts
 
@@ -96,6 +120,7 @@ Fresh Gather receipts used in this pass:
 - TI Morse / Relentless field-intake packet: `project-telos.research-intake/youtube-field-scope-receipts-v1` records five video metadata/transcript receipts and one bounded channel-list receipt under `demo/research/youtube-ti-morse-field-receipts.json`. It maps industrial science proof packets, causal research workbench, agentic benchmark foundry, and compute/infrastructure ledger as inferred megatool lanes while keeping all domain correctness claims `UNVERIFIABLE_UNTIL_PRIMARY_SOURCE_OR_REPLAY`. Crucible assessed the bounded intake claims as `MATCH`; Learn reverified the prooflesson as `VERIFIED`.
 - Causal Research Workbench preflight: `project-telos.causal-workbench/proof-packet-fixture/v1` records source-ledger arXiv metadata under `demo/research/causal-workbench-source-receipts.json` and a deterministic toy-DAG proof packet under `demo/causal-workbench-proof-packet.mjs`. The fixture emits `CAUSAL_DAG_FIXTURE_MATCH`, identifies `age + baseline_health` as the exact minimal adjustment set, rejects negative controls, and keeps causal discovery, LLM causal reasoning, biomedical, and BuildLang/buildc-native claims out of scope. Crucible assessed the bounded preflight claims as `MATCH`; Learn reverified the prooflesson as `VERIFIED` with witness SHA-256 `6e358d9ea652f8e5efee0882ca7046705dc1f1c23421763d9607dd3274b6ad35`.
 - Embodied Sim-to-Real preflight: `project-telos.embodied-sim2real/proof-packet-fixture/v1` records source-ledger arXiv metadata under `demo/research/embodied-sim2real-source-receipts.json` and a deterministic differential-drive proof packet under `demo/embodied-sim2real-proof-packet.mjs`. The fixture emits `EMBODIED_SIM2REAL_FIXTURE_MATCH`, checks units, command logs, predicted and observed traces, safety envelope, latency, and five negative controls, while keeping real robot safety, surgical/medical, foundation-model, large-scale sim-to-real, and BuildLang/buildc-native claims out of scope. Crucible assessed the bounded preflight claims as `MATCH`; Learn reverified the prooflesson as `VERIFIED` with witness SHA-256 `258663c0dd0d647de661602ceaeb00771a1a750a478ddb562bf21c0af71c7d6a`.
+- Quantum Error-Correction preflight: `project-telos.quantum-error-correction/proof-packet-fixture/v1` records source-ledger arXiv metadata under `demo/research/quantum-error-correction-source-receipts.json` and a deterministic 3-qubit bit-flip stabilizer proof packet under `demo/quantum-error-correction-proof-packet.mjs`. The fixture emits `QEC_STABILIZER_FIXTURE_MATCH`, checks no-error and single Pauli-X recovery for both logical basis states, rejects or marks unverifiable five negative controls, and keeps surface-code, hardware QEC, fault-tolerant computation, quantum advantage, cryptographic, and BuildLang/buildc-native claims out of scope. Crucible assessed the bounded preflight claims as `MATCH`; Learn reverified the prooflesson as `VERIFIED` with witness SHA-256 `3093cea9b0746b052dba844a6745cdba1d11ae836be5468503af41f93c4702f3`.
 
 Local research inputs used in this pass:
 
@@ -131,7 +156,8 @@ The operator doctor lane turns discoverability into a native receipt. `node demo
 
 ## Operating Posture
 
-The next layer is not one monolithic rewrite. It is a shared action-to-action workflow:
+The next layer is not one monolithic rewrite. It is a shared
+source-to-context-to-action-to-verdict workflow:
 
 Gather collects lawful, source-labeled inputs. Index maps the relevant code and context. Forum routes the task and keeps the operator-facing language legible. Crucible pressures the claims. Telos binds the result into receipts, ledgers, engine artifacts, and integration contracts.
 
@@ -140,6 +166,71 @@ The rewardspy concept now feeds back into that loop through `telos.objective.mon
 The model-foundry lane sits one layer above that. A self-improving daemon should gather fresh evidence, index context, route one bounded improvement, admit one action, execute one patch or experiment, run Crucible, inspect objective drift, and promote only `MATCH`. `DRIFT` blocks; `UNVERIFIABLE` requests more evidence or human review. This is the shape that can improve models and model workflows without becoming blind self-training.
 
 When the project adds a new renderer, model adapter, research source, OSS patch workflow, or creative organ, it should enter through that loop.
+
+The consolidation layer now adds a corpus-control plane: docs, nested repo
+research, scratch artifacts, local-only packets, official papers, whitepapers,
+site pages, and proof demos should be classified before publication. Public
+docs use the labels `public-index`, `public-official`, `public-whitepaper`,
+`proof-demo`, and `paper-candidate`. Internal or risky source payloads use
+`internal-source`, `quarantine-and-adapt`, or `deprecated-lineage` until a
+sanitized release shape exists.
+
+The machine-readable registry now makes that classification explicit in
+`docs/registry/documentation-registry.json`, and the publication queue ranks
+BuildLang scientific runtime receipts, causal research workbench, and agent
+action proof packets as the first Tier-A methods pushes. QEC, embodied
+sim-to-real, hyphal context, formal replay, and color/rendering remain proof
+demo hardening lanes. Ti Morse industrial science, biology network
+intelligence, microscopy/materials, and AI-scale economics remain source-led
+domain-expansion lanes until primary sources or replayed experiments promote
+one claim at a time.
+
+The first cross-repo public-doc catalog now scans 54 top-level Git repos under
+`C:\dev\public` and counts 909 Markdown/RST docs. It separates seven lanes:
+research/philosophy corpus, five-flagship spine, supporting tooling,
+agent-accountability organs, Build ecosystem, proof/witnessing, and
+creative/rendering engine. The highest-priority subregistries are
+`telos` plus the now-created `senses-and-sensibility`, `emet`/`proof-surface`,
+and Build ecosystem registries.
+
+The Senses and Sensibility research/philosophy corpus now has its own
+subregistry. It records 172 Markdown/RST docs, 1 preserved `.txt` source file,
+125 dissertation docs, 4 submission docs, and a clean local repo that is one
+commit behind `origin/main`. The current boundary is strict: Senses can motivate
+Telos vocabulary around accountability, human gates, authorship, provenance,
+authn/authz separation, and proof-before-trust, but it is not a shipped tool
+capability, not philosophical proof, and not publication-ready scholarship. The
+subregistry also records referenced-missing curation artifacts that must be
+restored or corrected before stronger publication cleanup.
+
+The Build ecosystem now has its own subregistry. It records 10 top-level
+Build-adjacent repos, 115 top-level Build docs, 131 BuildLang lineage docs
+under `pubscan/quantalang`, and 11 planning rows. The current split is:
+BuildLang/buildc as the receipt-bearing compute layer; Build Universe as the
+alpha module and domain ledger; Build Color and Calibrate Pro as
+color/rendering measurement lanes; Build Finance, Build Oracle, and Build
+Engine as quant/forecasting lanes with non-advice gates; Build UI, VS Code, and
+TextMate grammar as support surfaces.
+
+The proof/witnessing layer now has its own subregistry. It records 5 repos, 112
+docs, and 5 layer rows: EMET as witness, Proof Surface as validator contract,
+Repo Proof Index as index, Proof Surface Report as report renderer, and
+Witnessing Spine as theory corpus. The first Telos bridges are agent action
+proof packets, research claim packets, visual measurement packets, and
+AI4Science packets. These are planning and integration rows, not release,
+compliance, safety, or product-capability approvals.
+
+The Telos repo now has its own subregistry. It records 94 repo Markdown/RST
+docs, 150 docs Markdown/JSON/RST files, 198 demo MJS/JSON/MD files, 7 official
+research docs, 7 whitepaper research docs, 12 outreach docs, 61 outreach
+receipt JSON files, and 13 research receipt JSON files. The split is explicit:
+front-door docs are navigation and stable demo claims; control-plane docs
+describe strategy with claim-state labels; research docs stay behind
+publication gates; demos prove bounded fixtures only; outreach copy is not
+evidence; receipt stores are cited by digest and typed packet; caches and raw
+payloads remain internal or quarantined. The first Telos repo gates are the
+commit-boundary publication gate, receipt-index bridge, outreach-to-official
+claim gate, and cache/raw payload quarantine.
 
 The causal workbench lane now provides the first replayable causal-claim
 preflight. Its next promotion target is a synthetic SCM with known treatment
@@ -150,3 +241,9 @@ The embodied sim-to-real lane now provides the first replayable robotics-claim
 preflight. Its next promotion target is a BuildLang/buildc typed-unit
 differential-drive replay, then a manipulation fixture with object pose, contact
 state, action budget, safety envelope, negative controls, and Learn exercises.
+
+The quantum error-correction lane now provides the first replayable
+quantum-claim preflight. Its next promotion target is a BuildLang/buildc typed
+Pauli/stabilizer runtime, then a small surface-code syndrome fixture and a
+Clifford-circuit equivalence checker with explicit resource-estimation
+non-claim gates.

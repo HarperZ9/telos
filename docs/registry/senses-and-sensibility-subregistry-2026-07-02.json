@@ -1,0 +1,322 @@
+{
+  "schema": "project-telos.senses-and-sensibility-subregistry/v1",
+  "generated_at": "2026-07-02",
+  "status": "first research and philosophy corpus consolidation pass",
+  "purpose": "Classify the senses-and-sensibility corpus as research, philosophy, dissertation, paper, and Telos-theory substrate without treating it as shipped tooling or publication-ready scholarship.",
+  "claim_boundary": "This registry is based on current local file reads plus live flagship receipts. It does not verify journal requirements, citations, page locators, institutional AI policy, authorship attestation, or philosophical correctness.",
+  "evidence": [
+    {
+      "id": "flagship-status-refresh-2026-07-02",
+      "tools": {
+        "gather": "1.5.0 MATCH",
+        "index": "2.8.0 MATCH",
+        "forum": "1.12.0 MATCH",
+        "crucible": "1.1.0 MATCH"
+      },
+      "summary": "Live flagship status tools returned MATCH before this subregistry was created.",
+      "confidence": "high"
+    },
+    {
+      "id": "index-map-public-workspace-2026-07-02T13-27-18",
+      "tool": "index.map",
+      "status": "MATCH",
+      "metrics": {
+        "root": "C:/dev/public",
+        "repo_count": 68,
+        "public_class_repos": 62,
+        "local_class_repos": 6,
+        "dirty_repos": 10,
+        "root_sha256_prefix": "92ef331e0850ccf6"
+      },
+      "confidence": "high"
+    },
+    {
+      "id": "forum-route-senses-consolidation-2026-07-02",
+      "tool": "forum.route",
+      "status": "ESCALATION",
+      "metrics": {
+        "needs_escalation": true,
+        "top_candidates": [
+          "deep-research",
+          "technical-writing",
+          "project-telos"
+        ]
+      },
+      "summary": "Forum did not force a single lane; it treated the task as cross-lane research, technical writing, and Project Telos coordination.",
+      "confidence": "high"
+    },
+    {
+      "id": "gather-docs-senses-2026-07-02",
+      "tool": "gather.docs",
+      "status": "MATCH_WITH_PAYLOAD_DROPPED",
+      "metrics": {
+        "verified": true,
+        "catalog_rows": 0,
+        "dropped": 173,
+        "seal": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      "summary": "Gather sealed the directory digest but dropped the large corpus payload from the model-facing catalog.",
+      "confidence": "high"
+    },
+    {
+      "id": "senses-git-status-2026-07-02",
+      "tool": "git status",
+      "status": "CLEAN_BEHIND_ORIGIN",
+      "metrics": {
+        "branch": "main",
+        "behind_origin_main": 1,
+        "dirty_files": 0
+      },
+      "confidence": "high"
+    },
+    {
+      "id": "senses-path-count-2026-07-02",
+      "tool": "filesystem-read",
+      "status": "MATCH",
+      "metrics": {
+        "markdown_rst_docs": 172,
+        "txt_source_files": 1,
+        "manifest_present": true
+      },
+      "confidence": "high"
+    },
+    {
+      "id": "readme-index-thesis-prospectus-read",
+      "paths": [
+        "C:/dev/public/senses-and-sensibility/README.md",
+        "C:/dev/public/senses-and-sensibility/INDEX.md",
+        "C:/dev/public/senses-and-sensibility/THESIS.md",
+        "C:/dev/public/senses-and-sensibility/DISSERTATION-PROSPECTUS.md",
+        "C:/dev/public/senses-and-sensibility/THE-STRAIGHT-LINE.md",
+        "C:/dev/public/senses-and-sensibility/references/BIBLIOGRAPHY.md"
+      ],
+      "summary": "Core docs frame the corpus as live scholarship, pre-proof, AI-assisted research substrate, apparatus gated on human re-derivation, and citation-locator verification.",
+      "confidence": "high"
+    },
+    {
+      "id": "missing-curation-artifacts-check",
+      "paths": [
+        "C:/dev/public/senses-and-sensibility/CURATION.md",
+        "C:/dev/public/senses-and-sensibility/CONSOLIDATION.md",
+        "C:/dev/public/senses-and-sensibility/CROSS-MODEL-AUDIT.md",
+        "C:/dev/public/senses-and-sensibility/HUMAN-GATE-RUNBOOK.md",
+        "C:/dev/public/senses-and-sensibility/submission/SHIPPING-MANIFEST.md",
+        "C:/dev/public/senses-and-sensibility/SPRINT.md"
+      ],
+      "status": "REFERENCED_MISSING",
+      "summary": "Current index prose references these artifacts, but the files were not present in the checkout during this pass.",
+      "confidence": "high"
+    }
+  ],
+  "totals": {
+    "markdown_rst_docs": 172,
+    "txt_source_files": 1,
+    "root_markdown_docs": 12,
+    "front_docs": 4,
+    "conferred_existence_docs": 5,
+    "dissertation_docs": 125,
+    "paper_docs": 3,
+    "reference_docs": 1,
+    "submission_docs": 4,
+    "thesis_docs": 18
+  },
+  "rows": [
+    {
+      "id": "front-door-and-map",
+      "role": "public research-corpus front door and navigation layer",
+      "paths": [
+        "README.md",
+        "INDEX.md",
+        "CATALOG.md",
+        "00-ABSTRACT.md",
+        "THESIS.md",
+        "THE-STRAIGHT-LINE.md",
+        "PRESENTATION.md",
+        "DISSERTATION-PROSPECTUS.md",
+        "SYLLABUS.md"
+      ],
+      "maturity_label": "live scholarship and corpus map",
+      "publication_target": "site page or research corpus landing",
+      "telos_overlap": "Provides the philosophical vocabulary for accountability, authorship, human gate, evidence, and conferral.",
+      "publication_boundary": "Can be linked as a research corpus, but not cited as final dissertation, proof, or tool capability.",
+      "current_action": "Keep indexed; repair references to missing curation artifacts or restore those artifacts before stronger publication claims.",
+      "confidence": "high"
+    },
+    {
+      "id": "integrated-thesis",
+      "role": "large integrated thesis substrate",
+      "paths": [
+        "THESIS.md"
+      ],
+      "maturity_label": "AI-assisted integrated edition with explicit confidence, source, and human-ownership caveats",
+      "publication_target": "dissertation substrate, not direct submission",
+      "telos_overlap": "Explains the intrinsic accountability thesis that Telos implements as receipts, gates, and source-bound action.",
+      "publication_boundary": "Not submittable scholarship until a human re-derives, owns, and defends the claims under the stated method and institutional policy.",
+      "current_action": "Use only through summarized, non-overclaiming theory references in Telos docs.",
+      "confidence": "high"
+    },
+    {
+      "id": "dissertation-apparatus",
+      "role": "dissertation, viva, contribution, verdict, and adversarial audit apparatus",
+      "paths": [
+        "DISSERTATION-PROSPECTUS.md",
+        "dissertation/CONTRIBUTION-LEDGER.md",
+        "dissertation/VIVA-PREP.md",
+        "dissertation/MOCK-VIVA.md",
+        "dissertation/00-CONTRIBUTION.md",
+        "dissertation/*-VERDICT.md",
+        "dissertation/*-VERIFICATION.md"
+      ],
+      "maturity_label": "research apparatus with explicit viva and authorship gates",
+      "publication_target": "dissertation plan and internal publication-prep corpus",
+      "telos_overlap": "Useful for Telos publication gates, proof packet non-claims, and human-ownership requirements.",
+      "publication_boundary": "Must not be treated as a completed institutional submission or authorship attestation.",
+      "current_action": "Convert its gates into Telos publication-control checklist rows.",
+      "confidence": "high"
+    },
+    {
+      "id": "paper-track",
+      "role": "submission-shaped paper drafts and venue kits",
+      "paths": [
+        "papers/forcing-argument-paper.md",
+        "papers/arity-gap-paper.md",
+        "papers/self-given-paper.md",
+        "dissertation/MEMBRANE-PAPER-v3.md",
+        "submission/membrane-submission.md",
+        "submission/forcing-submission.md",
+        "submission/arity-submission.md",
+        "submission/self-given-submission.md"
+      ],
+      "maturity_label": "apparatus ready pending human re-derivation",
+      "publication_target": "journal paper candidates after live guideline, citation, anonymization, AI-disclosure, and authorship gates",
+      "telos_overlap": "Source material for arXiv/ORCiD-style methods and theory papers once gates clear.",
+      "publication_boundary": "Venue requirements, APCs, and policies are time-sensitive; this pass did not re-check live journal pages.",
+      "current_action": "Queue as paper candidates with blocker labels, not as publish-ready papers.",
+      "confidence": "high"
+    },
+    {
+      "id": "bibliography-and-citation-policy",
+      "role": "citation integrity and reference boundary",
+      "paths": [
+        "references/BIBLIOGRAPHY.md"
+      ],
+      "maturity_label": "working bibliography with confidence labels and locator caveats",
+      "publication_target": "paper-source after citation locator verification",
+      "telos_overlap": "Model for source discipline: no page numbers or exact locators unless independently verified.",
+      "publication_boundary": "Bibliography entries are not live citation verification or permission to assert page-specific claims.",
+      "current_action": "Adopt the citation-locator rule in Telos paper queues and source ledgers.",
+      "confidence": "high"
+    },
+    {
+      "id": "source-substrate",
+      "role": "preserved source substrate and discussion lineage",
+      "paths": [
+        "CONFERRED-EXISTENCE.txt",
+        "conferred-existence/README.md",
+        "conferred-existence/thesis/conferred-existence-thesis.md",
+        "conferred-existence/memory/conferred-existence-knowledge-base.md",
+        "conferred-existence/discussion/curated-discussion-log.md",
+        "conferred-existence/kickoff/NEXT-SESSION-kickoff-five-open-questions.md"
+      ],
+      "maturity_label": "preserved audited source substrate",
+      "publication_target": "internal-source or cited corpus appendix after sanitization review",
+      "telos_overlap": "Useful for theory provenance, but too large and raw for Telos front-door docs.",
+      "publication_boundary": "Do not copy long source bodies into Telos docs; reference by path, digest, and summarized boundary only.",
+      "current_action": "Keep separate from tool docs and public product claims.",
+      "confidence": "high"
+    },
+    {
+      "id": "engineering-security-bridge",
+      "role": "philosophy-to-security bridge for accountability systems",
+      "paths": [
+        "CATALOG.md",
+        "dissertation/MEMBRANE-PAPER-v3.md",
+        "dissertation/ACTUATOR-MET.md",
+        "thesis/03-part-III-security-architecture.md",
+        "thesis/part-III-security-architecture.md"
+      ],
+      "maturity_label": "theory bridge, not implementation spec",
+      "publication_target": "Telos theory note or methods appendix",
+      "telos_overlap": "Directly informs action receipts, authentication/authorization separation, human gate, revocation, and proof-before-trust language.",
+      "publication_boundary": "Do not infer operational security sufficiency or implementation maturity from the philosophy corpus.",
+      "current_action": "Use as conceptual rationale behind existing Telos receipts and proof packets, not as a substitute for tests.",
+      "confidence": "high"
+    },
+    {
+      "id": "adversarial-verdict-corpus",
+      "role": "hostile review, cross-examination, and self-limiting verdict material",
+      "paths": [
+        "CROSS-EXAMINATION.md",
+        "SUTURE-TEST.md",
+        "ASEITY-CONFRONTATION.md",
+        "dissertation/REMAINDER-LAW-TEST.md",
+        "dissertation/TYPE-B.md",
+        "dissertation/MOCK-VIVA.md",
+        "dissertation/foundations-src/*attack*.md",
+        "dissertation/foundations-src/*defense*.md"
+      ],
+      "maturity_label": "adversarial research substrate",
+      "publication_target": "internal review packets and possible methods appendix",
+      "telos_overlap": "Useful pattern for Crucible-style verdicts, negative controls, and non-claim gates.",
+      "publication_boundary": "Agent/adversarial agreement is not independent proof; corpus itself warns against treating one corpus interrogating itself as independent witness.",
+      "current_action": "Translate the method into proof-packet critique patterns, not into philosophical truth claims.",
+      "confidence": "high"
+    },
+    {
+      "id": "referenced-missing-curation-artifacts",
+      "role": "missing or stale curation references",
+      "paths": [
+        "CURATION.md",
+        "CONSOLIDATION.md",
+        "CROSS-MODEL-AUDIT.md",
+        "HUMAN-GATE-RUNBOOK.md",
+        "submission/SHIPPING-MANIFEST.md",
+        "SPRINT.md"
+      ],
+      "maturity_label": "referenced_missing",
+      "publication_target": "quarantine-and-adapt until restored or references are corrected",
+      "telos_overlap": "Important because Telos docs should not point to absent curation apparatus as evidence.",
+      "publication_boundary": "Do not cite these artifacts as present evidence in current Telos docs until the files exist or the references are updated.",
+      "current_action": "Restore, regenerate, or patch references before public publication cleanup.",
+      "confidence": "high"
+    }
+  ],
+  "publication_gates": [
+    "Human re-derivation gate: the author must be able to reconstruct and defend the claims without relying on the substrate.",
+    "Provenance ledger gate: contribution origin, candidate repair, citation verification, and AI assistance must be recorded before submission.",
+    "Live policy gate: journal requirements, APCs, AI-use policies, word limits, and blinding rules must be checked at submission time.",
+    "Citation locator gate: no page, volume, verse, or exact locator should be asserted unless independently verified against the edition used.",
+    "AI-use disclosure gate: material generative drafting must be disclosed in the venue-appropriate location.",
+    "Anonymization gate: submission kits must strip author-identifying corpus references for double-blind review.",
+    "Telos separation gate: philosophy/theory corpus can motivate tools, but tool capability requires separate receipts, tests, and verifier reports."
+  ],
+  "telos_integration_priorities": [
+    {
+      "rank": 1,
+      "name": "Publication gate import",
+      "first_artifact": "Add Senses human-gate, provenance-ledger, citation-locator, and AI-disclosure gates to the Telos publication queue rubric."
+    },
+    {
+      "rank": 2,
+      "name": "Theory-to-receipt vocabulary map",
+      "first_artifact": "Map authentication/authorization, human gate, non-aseity, witness, and conferral terms to Telos action-receipt vocabulary without overclaiming philosophy."
+    },
+    {
+      "rank": 3,
+      "name": "Adversarial review pattern",
+      "first_artifact": "Translate the attack/defense/verdict pattern into a reusable Crucible cleanroom-review packet for paper candidates."
+    },
+    {
+      "rank": 4,
+      "name": "Missing-artifact repair pass",
+      "first_artifact": "Resolve or restore the absent curation artifacts named by current Senses index prose."
+    }
+  ],
+  "next_actions": [
+    "Create a Telos publication gate checklist that imports the Senses human-ownership and citation-locator rules.",
+    "Open a targeted Senses repair pass for referenced-missing curation artifacts.",
+    "Decide whether Senses front-door docs should be updated in its own repo after rebasing its one-behind main branch.",
+    "Keep Senses theory references in Telos docs as hypotheses, rationale, or source substrate unless a separate Telos receipt proves an implementation claim.",
+    "Add a Telos subregistry next; it is the remaining dense mixed surface after Build, proof/witnessing, and Senses."
+  ]
+}

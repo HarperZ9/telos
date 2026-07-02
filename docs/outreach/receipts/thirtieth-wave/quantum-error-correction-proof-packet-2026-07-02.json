@@ -1,0 +1,342 @@
+{
+  "schema": "project-telos.quantum-error-correction/proof-packet-fixture/v1",
+  "generated_at": "2026-07-02T00:00:00.000Z",
+  "result": "QEC_STABILIZER_FIXTURE_MATCH",
+  "code": {
+    "name": "three_qubit_bit_flip_repetition_code",
+    "logical_zero": [
+      0,
+      0,
+      0
+    ],
+    "logical_one": [
+      1,
+      1,
+      1
+    ],
+    "stabilizers": [
+      "Z0Z1",
+      "Z1Z2"
+    ],
+    "syndrome_bits": [
+      "q0_xor_q1",
+      "q1_xor_q2"
+    ],
+    "correction_map": {
+      "0,0": null,
+      "1,0": 0,
+      "1,1": 1,
+      "0,1": 2
+    },
+    "supported_error_model": "single Pauli-X bit flip on at most one physical qubit",
+    "unsupported_error_models": [
+      "phase errors",
+      "arbitrary rotations",
+      "amplitude damping",
+      "measurement noise",
+      "surface-code decoding",
+      "hardware threshold claims"
+    ]
+  },
+  "checks": {
+    "single_error_rows": [
+      {
+        "logical": 0,
+        "error": "none",
+        "encoded": [
+          0,
+          0,
+          0
+        ],
+        "after_error": [
+          0,
+          0,
+          0
+        ],
+        "syndrome": [
+          0,
+          0
+        ],
+        "correction_index": null,
+        "after_correction": [
+          0,
+          0,
+          0
+        ],
+        "decoded": 0,
+        "logical_match": true
+      },
+      {
+        "logical": 0,
+        "error": "X0",
+        "encoded": [
+          0,
+          0,
+          0
+        ],
+        "after_error": [
+          1,
+          0,
+          0
+        ],
+        "syndrome": [
+          1,
+          0
+        ],
+        "correction_index": 0,
+        "after_correction": [
+          0,
+          0,
+          0
+        ],
+        "decoded": 0,
+        "logical_match": true
+      },
+      {
+        "logical": 0,
+        "error": "X1",
+        "encoded": [
+          0,
+          0,
+          0
+        ],
+        "after_error": [
+          0,
+          1,
+          0
+        ],
+        "syndrome": [
+          1,
+          1
+        ],
+        "correction_index": 1,
+        "after_correction": [
+          0,
+          0,
+          0
+        ],
+        "decoded": 0,
+        "logical_match": true
+      },
+      {
+        "logical": 0,
+        "error": "X2",
+        "encoded": [
+          0,
+          0,
+          0
+        ],
+        "after_error": [
+          0,
+          0,
+          1
+        ],
+        "syndrome": [
+          0,
+          1
+        ],
+        "correction_index": 2,
+        "after_correction": [
+          0,
+          0,
+          0
+        ],
+        "decoded": 0,
+        "logical_match": true
+      },
+      {
+        "logical": 1,
+        "error": "none",
+        "encoded": [
+          1,
+          1,
+          1
+        ],
+        "after_error": [
+          1,
+          1,
+          1
+        ],
+        "syndrome": [
+          0,
+          0
+        ],
+        "correction_index": null,
+        "after_correction": [
+          1,
+          1,
+          1
+        ],
+        "decoded": 1,
+        "logical_match": true
+      },
+      {
+        "logical": 1,
+        "error": "X0",
+        "encoded": [
+          1,
+          1,
+          1
+        ],
+        "after_error": [
+          0,
+          1,
+          1
+        ],
+        "syndrome": [
+          1,
+          0
+        ],
+        "correction_index": 0,
+        "after_correction": [
+          1,
+          1,
+          1
+        ],
+        "decoded": 1,
+        "logical_match": true
+      },
+      {
+        "logical": 1,
+        "error": "X1",
+        "encoded": [
+          1,
+          1,
+          1
+        ],
+        "after_error": [
+          1,
+          0,
+          1
+        ],
+        "syndrome": [
+          1,
+          1
+        ],
+        "correction_index": 1,
+        "after_correction": [
+          1,
+          1,
+          1
+        ],
+        "decoded": 1,
+        "logical_match": true
+      },
+      {
+        "logical": 1,
+        "error": "X2",
+        "encoded": [
+          1,
+          1,
+          1
+        ],
+        "after_error": [
+          1,
+          1,
+          0
+        ],
+        "syndrome": [
+          0,
+          1
+        ],
+        "correction_index": 2,
+        "after_correction": [
+          1,
+          1,
+          1
+        ],
+        "decoded": 1,
+        "logical_match": true
+      }
+    ],
+    "unique_syndromes": true,
+    "all_single_x_errors_correct": true,
+    "negative_controls": [
+      {
+        "id": "double_bit_flip_aliases_to_logical_error",
+        "verdict": "DRIFT",
+        "logical": 0,
+        "after_error": [
+          1,
+          1,
+          0
+        ],
+        "syndrome": [
+          0,
+          1
+        ],
+        "correction_index": 2,
+        "after_correction": [
+          1,
+          1,
+          1
+        ],
+        "decoded": 1,
+        "failed_reason": "two X errors are outside the fixture code distance"
+      },
+      {
+        "id": "phase_error_out_of_scope",
+        "verdict": "UNVERIFIABLE",
+        "requested_error": "Z1",
+        "measured_syndrome": [
+          0,
+          0
+        ],
+        "failed_reason": "the bit-flip repetition fixture does not measure phase syndromes"
+      },
+      {
+        "id": "wrong_syndrome_map_for_middle_qubit",
+        "verdict": "DRIFT",
+        "expected_correction_index": 1,
+        "observed_correction_index": 2,
+        "after_correction": [
+          0,
+          1,
+          1
+        ],
+        "decoded": null,
+        "failed_reason": "syndrome [1,1] must correct the middle physical qubit"
+      },
+      {
+        "id": "missing_stabilizer_measurement",
+        "verdict": "UNVERIFIABLE",
+        "available_syndrome_bits": [
+          "q0_xor_q1"
+        ],
+        "failed_reason": "one stabilizer bit cannot identify all three single-qubit X errors"
+      },
+      {
+        "id": "non_codeword_input",
+        "verdict": "DRIFT",
+        "input_bits": [
+          1,
+          0,
+          1
+        ],
+        "hamming_weight": 2,
+        "failed_reason": "fixture accepts only encoded logical 000 or 111 before an allowed error"
+      }
+    ]
+  },
+  "claim_card": {
+    "claim": "In the deterministic 3-qubit bit-flip code fixture, the declared stabilizer syndrome table corrects no-error and single Pauli-X errors for both logical basis states, while double-X, phase-error, missing-syndrome, wrong-map, and non-codeword controls are rejected or marked unverifiable.",
+    "verdict": "MATCH",
+    "scope": "One local stabilizer-code fixture only; not a surface-code decoder, hardware threshold, quantum advantage, cryptographic, or fault-tolerant computation claim.",
+    "falsification": "Any single X error fails to recover the encoded logical bit, syndromes are not unique, or any configured negative control is accepted as MATCH."
+  },
+  "toolchain_implications": [
+    "Gather owns QEC, syndrome decoder, quantum compiler, hardware, and resource-estimation source receipts.",
+    "Index should package circuit specs, syndrome tables, code distance, logical operators, decoder configs, and source refs.",
+    "Forum should route quantum claims through physics, formal methods, compiler, hardware, and verification lanes.",
+    "BuildLang/buildc should become the typed runtime for Pauli operators, stabilizers, circuits, syndromes, and resource estimates.",
+    "Crucible should reject quantum claims without supported error model, code distance, syndrome table, decoder verdicts, and negative controls.",
+    "Learn should turn fixtures into exercises about stabilizers, syndromes, logical errors, unsupported error models, and overclaim boundaries."
+  ],
+  "non_claims": [
+    "This fixture does not implement a surface-code decoder.",
+    "This fixture does not prove hardware-level quantum error correction.",
+    "This fixture does not establish fault-tolerant quantum computing.",
+    "This fixture does not validate quantum advantage or resource estimates.",
+    "This fixture is not yet a BuildLang/buildc-native receipt."
+  ]
+}

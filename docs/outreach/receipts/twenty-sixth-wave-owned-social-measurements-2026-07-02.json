@@ -1,0 +1,69 @@
+{
+  "measurements": [
+    {
+      "claim": "The twenty-sixth wave owned social post packet records the refreshed Project Telos tool snapshot for Index, Forum, Gather, Crucible, Telos, the Telos model-foundry lane, and the Telos creative-engine lane before drafting.",
+      "method": "mcp-status-telos-manifest-and-packet-review",
+      "evidence": [
+        "MCP status checks returned MATCH for Index 2.8.0, Forum 1.12.0, Gather 1.5.0, and Crucible 1.1.0.",
+        "Telos server manifest returned the five-flagship MCP launch map and 65-tool Telos surface.",
+        "Telos model-foundry returned schema project-telos.model-foundry/v1 with validation verdict MATCH and receipt hash fnv1a:5089690f.",
+        "Telos creative-engine returned schema project-telos.creative-engine/v1 with receipts_required true and domains for generative art, retro CGI, raster effects, sound, film/media, typography, math/physics, node graphs, and verification.",
+        "TWENTY-SIXTH-WAVE-OWNED-SOCIAL-POST-PACK-2026-07-02.md includes a Current Tool Snapshot section with those surfaces."
+      ],
+      "deviation": 0.0,
+      "tolerance": 0.5
+    },
+    {
+      "claim": "The packet provides exact text for 33 prepared owned-channel drafts across LinkedIn, X/Bluesky, Mastodon/Threads, Substack Notes, blog seeds, and profile updates.",
+      "method": "heading-and-block-count-review",
+      "evidence": [
+        "Packet contains five LinkedIn draft headings: L01-L05.",
+        "Packet contains ten X/Bluesky short post headings: S01-S10.",
+        "Packet contains six Mastodon/Threads post headings: M01-M06.",
+        "Packet contains four Substack Note headings: N01-N04.",
+        "Packet contains five blog seed headings: A01-A05.",
+        "Packet contains three profile update headings: P01-P03.",
+        "Total owned-channel draft headings: 33."
+      ],
+      "deviation": 0.0,
+      "tolerance": 0.5
+    },
+    {
+      "claim": "The short-form drafts satisfy the packet's conservative length rules: X/Bluesky drafts are under 280 characters, Mastodon/Threads drafts are under 500 characters, and LinkedIn drafts are under 3,000 characters.",
+      "method": "character-count-and-source-reference-review",
+      "evidence": [
+        "X Help says longer posts extend beyond the typical 280 character limit, and the packet keeps S01-S10 within 170-247 characters.",
+        "LinkedIn Help says the character limit for a post is 3,000 characters, and the packet keeps L01-L05 within 602-807 characters.",
+        "Substack Help says there is not a fixed word or character restriction on Substack posts, while some email clients may truncate large messages; the packet keeps N01-N04 within 286-406 characters.",
+        "The packet keeps M01-M06 within 271-302 characters, below its conservative 500-character drafting rule for Mastodon/Threads."
+      ],
+      "deviation": 0.0,
+      "tolerance": 0.5
+    },
+    {
+      "claim": "The packet preserves the public side-effect boundary by marking all drafts as prepared but not posted and requiring exact action-time confirmation of platform, account, and exact text before posting.",
+      "method": "posting-boundary-review",
+      "evidence": [
+        "The packet status line says prepared, not posted.",
+        "Posting Boundary says no posts in this packet have been published.",
+        "Posting Boundary says public posting requires exact action-time confirmation of platform, account, and exact text.",
+        "Exact Confirmation Prompt requires checking the visible authenticated owned account and composer state before each post.",
+        "The receipt template contains a Posted successfully field for future logging; it is not a claim that posting occurred."
+      ],
+      "deviation": 0.0,
+      "tolerance": 0.5
+    },
+    {
+      "claim": "The packet distinguishes owned-channel posting from third-party community comments by allowing the Project Telos repository link only in owned-channel drafts and retaining confirmation gates before any public submission.",
+      "method": "link-policy-and-scope-review",
+      "evidence": [
+        "Posting Boundary says owned posts may include https://github.com/HarperZ9/telos.",
+        "Local scan found 11 Project Telos repository links in the owned-channel packet.",
+        "The packet says it complements Reddit/YouTube/comment queues rather than replacing the separate third-party comment boundary.",
+        "No public posts or comments were submitted during this receipt run."
+      ],
+      "deviation": 0.0,
+      "tolerance": 0.5
+    }
+  ]
+}
