@@ -12,6 +12,9 @@ const mathEducatorLedger = JSON.parse(
 const learningForgeReceiptLedger = JSON.parse(
   readFileSync(new URL("./research/youtube-learning-forge-receipts.json", import.meta.url), "utf8")
 );
+const tiMorseFieldLedger = JSON.parse(
+  readFileSync(new URL("./research/youtube-ti-morse-field-receipts.json", import.meta.url), "utf8")
+);
 
 assert.equal(ledger.schema, "project-telos.research-intake/youtube-video-receipts-v1");
 assert.equal(ledger.tool, "gather.video");
@@ -95,4 +98,57 @@ for (const channel of learningForgeReceiptLedger.channel_results) {
   assert.match(channel.metadata_sha256, hash64);
   assert.ok(channel.captured_entries > 0);
   assert.equal("description" in channel, false);
+}
+
+assert.equal(tiMorseFieldLedger.schema, "project-telos.research-intake/youtube-field-scope-receipts-v1");
+assert.equal(tiMorseFieldLedger.tool, "gather.video+yt-dlp.channel");
+assert.equal(tiMorseFieldLedger.privacy_boundary.raw_transcripts_stored_in_repo, false);
+assert.equal(tiMorseFieldLedger.privacy_boundary.raw_video_stored_in_repo, false);
+assert.equal(tiMorseFieldLedger.source_request.input_count, 6);
+assert.equal(tiMorseFieldLedger.video_results.length, 5);
+assert.equal(tiMorseFieldLedger.channel_results.length, 1);
+assert.match(tiMorseFieldLedger.receipt_set.receipt_set_seal, hash64);
+assert.match(tiMorseFieldLedger.claim_state.domain_correctness, /UNVERIFIABLE/);
+assert.match(tiMorseFieldLedger.claim_state.market_strategy, /INFERRED/);
+
+const tiMorseIds = new Set(tiMorseFieldLedger.video_results.map((result) => result.catalog[0].id));
+for (const id of ["RZiM3Xfp-eY", "7lPWtFXsuzk", "Vg6FBKTlfOw", "DyIQkqBXhS0", "bgWq678Oed4"]) {
+  assert.ok(tiMorseIds.has(id), `missing TI Morse source ${id}`);
+}
+
+for (const result of tiMorseFieldLedger.video_results) {
+  assert.equal(result.returncode, 0, `${result.url} gathered successfully`);
+  assert.equal(result.integration_status, "INFERRED");
+  assert.equal(typeof result.field_lane, "string");
+  assert.ok(result.telos_integration_requirements.length >= 3);
+  assert.match(result.digest.seal, hash64);
+  const kinds = new Set(result.catalog.map((item) => item.kind));
+  assert.ok(kinds.has("metadata"), `${result.url} has metadata`);
+  assert.ok(kinds.has("transcript"), `${result.url} has transcript receipt`);
+  for (const item of result.catalog) {
+    assert.match(item.sha256, hash64);
+    assert.equal("text" in item, false);
+    assert.equal("transcript_text" in item, false);
+    assert.equal("raw_transcript" in item, false);
+  }
+}
+
+const tiMorseChannel = tiMorseFieldLedger.channel_results[0];
+assert.equal(tiMorseChannel.source_type, "youtube_channel");
+assert.equal(tiMorseChannel.method, "yt-dlp-flat-playlist");
+assert.equal(tiMorseChannel.video_list_state, "match");
+assert.equal(tiMorseChannel.uploader_id, "@ti_morse");
+assert.equal(tiMorseChannel.captured_entries, 12);
+assert.match(tiMorseChannel.metadata_sha256, hash64);
+assert.equal("description" in tiMorseChannel, false);
+assert.ok(tiMorseChannel.entries.some((entry) => entry.id === "Xolqw4B35rQ"));
+
+const tiMorseProductLanes = new Set(tiMorseFieldLedger.megatool_map.map((lane) => lane.product_lane));
+for (const lane of [
+  "Industrial Science Proof Packets",
+  "Causal Research Workbench",
+  "Agentic Benchmark Foundry",
+  "Compute and Infrastructure Ledger"
+]) {
+  assert.ok(tiMorseProductLanes.has(lane), `missing megatool lane ${lane}`);
 }

@@ -1,0 +1,35 @@
+{
+  "measurements": [
+    {
+      "claim": "The TI Morse field intake ledger records the five requested YouTube videos with metadata and transcript receipts and one bounded channel-list snapshot.",
+      "deviation": 0.0,
+      "tolerance": 0.1,
+      "method": "youtube-field-ledger-shape-test",
+      "evidence": [
+        "demo/research/youtube-ti-morse-field-receipts.json",
+        "demo/youtube-research-receipts.test.mjs"
+      ]
+    },
+    {
+      "claim": "The publication copy labels field lanes as inferred and domain claims as unverifiable until primary-source or replay evidence exists.",
+      "deviation": 0.0,
+      "tolerance": 0.1,
+      "method": "claim-boundary-copy-scan",
+      "evidence": [
+        "docs/outreach/TWENTY-SIXTH-WAVE-TI-MORSE-FIELD-INTAKE-2026-07-02.md",
+        "docs/research/whitepapers/TI-MORSE-FIELD-SCOPE-INTEGRATION-2026-07-02.md",
+        "docs/research/official/TI-MORSE-FIELD-SCOPE-INTEGRATION-2026-07-02.md"
+      ]
+    },
+    {
+      "claim": "The tracked ledger stores receipt fields only and does not embed raw transcript bodies, raw video, or channel descriptions.",
+      "deviation": 0.0,
+      "tolerance": 0.1,
+      "method": "raw-payload-boundary-scan",
+      "evidence": [
+        "demo/research/youtube-ti-morse-field-receipts.json",
+        "demo/youtube-research-receipts.test.mjs"
+      ]
+    }
+  ]
+}

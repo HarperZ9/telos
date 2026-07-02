@@ -1,0 +1,192 @@
+{
+  "ok": true,
+  "thesis": {
+    "id": "82509cd5351d1b50",
+    "title": "Twenty-eighth-wave causal research workbench preflight",
+    "registered_at": 1783020755.2521927,
+    "disposition": "publishable",
+    "seal": "82509cd5351d1b50d059cf97d1a85d68b8e58d5591a9e0db68177a0d232e4d5f",
+    "claims": [
+      {
+        "id": "9c56ac9168e25112",
+        "sha256": "9c56ac9168e25112bf7dd35f4e221096e5d9c9a502abdbd83d28a8c6b7481de1"
+      },
+      {
+        "id": "31d87b38db33e3d6",
+        "sha256": "31d87b38db33e3d61b4ab31eee486f71992f36153e78e9d5f1c1219c3567cb2a"
+      },
+      {
+        "id": "1de979d1e8f9ead5",
+        "sha256": "1de979d1e8f9ead5b6b0e09c369e08165c84bc93bf38f1199015693ca30faa25"
+      }
+    ]
+  },
+  "refutations": [
+    {
+      "claim_id": "9c56ac9168e25112",
+      "claim_sha256": "9c56ac9168e25112bf7dd35f4e221096e5d9c9a502abdbd83d28a8c6b7481de1",
+      "challenge": "test the stated falsification: The fixture output is missing CAUSAL_DAG_FIXTURE_MATCH, the minimal adjustment set differs from [age, baseline_health], or any configured negative control is accepted as valid.",
+      "measurable": "The fixture output is missing CAUSAL_DAG_FIXTURE_MATCH, the minimal adjustment set differs from [age, baseline_health], or any configured negative control is accepted as valid.",
+      "source": "null"
+    },
+    {
+      "claim_id": "31d87b38db33e3d6",
+      "claim_sha256": "31d87b38db33e3d61b4ab31eee486f71992f36153e78e9d5f1c1219c3567cb2a",
+      "challenge": "test the stated falsification: The source ledger or publication copy promotes arXiv rows into verified domain results or stores full raw paper/transcript payloads as evidence bodies.",
+      "measurable": "The source ledger or publication copy promotes arXiv rows into verified domain results or stores full raw paper/transcript payloads as evidence bodies.",
+      "source": "null"
+    },
+    {
+      "claim_id": "1de979d1e8f9ead5",
+      "claim_sha256": "1de979d1e8f9ead5b6b0e09c369e08165c84bc93bf38f1199015693ca30faa25",
+      "challenge": "test the stated falsification: The official, working-paper, or outreach copy claims real causal discovery, validates LLM causal reasoning, makes a medical recommendation, or says the fixture already runs natively through BuildLang/buildc.",
+      "measurable": "The official, working-paper, or outreach copy claims real causal discovery, validates LLM causal reasoning, makes a medical recommendation, or says the fixture already runs natively through BuildLang/buildc.",
+      "source": "null"
+    }
+  ],
+  "assessment": {
+    "started_at": 1783020755.2608767,
+    "thesis_id": "82509cd5351d1b50",
+    "thesis_seal": "82509cd5351d1b50d059cf97d1a85d68b8e58d5591a9e0db68177a0d232e4d5f",
+    "claims": 3,
+    "match": 3,
+    "drift": 0,
+    "unverifiable": 0,
+    "verdict_seal": "342ceb4752abfd312d55a0bd2e2eb7aa4d78ffb7f2517c47f29bace3956668bf",
+    "measurement_seal": "895f23eb53b29ad4d76728fab89bed974ca3229745afc3e14a707af55db3e6c1",
+    "disposition": "publishable",
+    "stored": null,
+    "verdicts": [
+      {
+        "claim_id": "9c56ac9168e25112",
+        "claim_sha256": "9c56ac9168e25112bf7dd35f4e221096e5d9c9a502abdbd83d28a8c6b7481de1",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.1,
+        "margin": 1.0,
+        "method": "causal-dag-fixture-replay",
+        "grounds": "deviation 0 within tolerance 0.1",
+        "disposition": "publishable"
+      },
+      {
+        "claim_id": "31d87b38db33e3d6",
+        "claim_sha256": "31d87b38db33e3d61b4ab31eee486f71992f36153e78e9d5f1c1219c3567cb2a",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.1,
+        "margin": 1.0,
+        "method": "source-ledger-boundary-scan",
+        "grounds": "deviation 0 within tolerance 0.1",
+        "disposition": "publishable"
+      },
+      {
+        "claim_id": "1de979d1e8f9ead5",
+        "claim_sha256": "1de979d1e8f9ead5b6b0e09c369e08165c84bc93bf38f1199015693ca30faa25",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.1,
+        "margin": 1.0,
+        "method": "claim-boundary-copy-scan",
+        "grounds": "deviation 0 within tolerance 0.1",
+        "disposition": "publishable"
+      }
+    ],
+    "measurements": [
+      {
+        "claim_id": "9c56ac9168e25112",
+        "claim_sha256": "9c56ac9168e25112bf7dd35f4e221096e5d9c9a502abdbd83d28a8c6b7481de1",
+        "deviation": 0.0,
+        "tolerance": 0.1,
+        "method": "causal-dag-fixture-replay",
+        "measured_at": 1783020755.2608767,
+        "evidence": [
+          "demo/causal-workbench-proof-packet.mjs",
+          "demo/causal-workbench-proof-packet.test.mjs",
+          "docs/outreach/receipts/twenty-eighth-wave/causal-workbench-proof-packet-2026-07-02.json"
+        ]
+      },
+      {
+        "claim_id": "31d87b38db33e3d6",
+        "claim_sha256": "31d87b38db33e3d61b4ab31eee486f71992f36153e78e9d5f1c1219c3567cb2a",
+        "deviation": 0.0,
+        "tolerance": 0.1,
+        "method": "source-ledger-boundary-scan",
+        "measured_at": 1783020755.2608767,
+        "evidence": [
+          "demo/research/causal-workbench-source-receipts.json",
+          "docs/research/whitepapers/CAUSAL-RESEARCH-WORKBENCH-FOR-PROOF-CARRYING-CLAIMS-2026-07-02.md"
+        ]
+      },
+      {
+        "claim_id": "1de979d1e8f9ead5",
+        "claim_sha256": "1de979d1e8f9ead5b6b0e09c369e08165c84bc93bf38f1199015693ca30faa25",
+        "deviation": 0.0,
+        "tolerance": 0.1,
+        "method": "claim-boundary-copy-scan",
+        "measured_at": 1783020755.2608767,
+        "evidence": [
+          "docs/outreach/TWENTY-EIGHTH-WAVE-CAUSAL-WORKBENCH-PREFLIGHT-2026-07-02.md",
+          "docs/research/official/CAUSAL-RESEARCH-WORKBENCH-FOR-PROOF-CARRYING-CLAIMS-2026-07-02.md",
+          "docs/research/whitepapers/CAUSAL-RESEARCH-WORKBENCH-FOR-PROOF-CARRYING-CLAIMS-2026-07-02.md"
+        ]
+      }
+    ],
+    "seal": "501da73806b5eb87043b222edfa827b8c465994c4cb6f5ef1f09aaeb8c9da7de"
+  },
+  "verdicts": [
+    {
+      "claim_id": "9c56ac9168e25112",
+      "claim_sha256": "9c56ac9168e25112bf7dd35f4e221096e5d9c9a502abdbd83d28a8c6b7481de1",
+      "status": "MATCH",
+      "disposition": "publishable",
+      "deviation": 0.0,
+      "tolerance": 0.1,
+      "margin": 1.0,
+      "method": "causal-dag-fixture-replay",
+      "grounds": "deviation 0 within tolerance 0.1"
+    },
+    {
+      "claim_id": "31d87b38db33e3d6",
+      "claim_sha256": "31d87b38db33e3d61b4ab31eee486f71992f36153e78e9d5f1c1219c3567cb2a",
+      "status": "MATCH",
+      "disposition": "publishable",
+      "deviation": 0.0,
+      "tolerance": 0.1,
+      "margin": 1.0,
+      "method": "source-ledger-boundary-scan",
+      "grounds": "deviation 0 within tolerance 0.1"
+    },
+    {
+      "claim_id": "1de979d1e8f9ead5",
+      "claim_sha256": "1de979d1e8f9ead5b6b0e09c369e08165c84bc93bf38f1199015693ca30faa25",
+      "status": "MATCH",
+      "disposition": "publishable",
+      "deviation": 0.0,
+      "tolerance": 0.1,
+      "margin": 1.0,
+      "method": "claim-boundary-copy-scan",
+      "grounds": "deviation 0 within tolerance 0.1"
+    }
+  ],
+  "measurement_warnings": [],
+  "checks": {
+    "seals_ok": true,
+    "thesis_ok": true,
+    "verdicts_rederive": true
+  },
+  "report": "docs\\outreach\\receipts\\twenty-eighth-wave-causal-workbench-report-2026-07-02.md",
+  "record": "docs\\outreach\\receipts\\twenty-eighth-wave-causal-workbench-run-2026-07-02.json",
+  "bundle": null,
+  "spec": null,
+  "review": null,
+  "verifier": {
+    "mode": "cleanroom",
+    "inputs": [],
+    "excluded": [
+      "worker context",
+      "reasoning trace",
+      "intermediate steps"
+    ],
+    "checkability": "If success cannot be evaluated from the original spec and the artifact, the spec is not checkable yet."
+  }
+}
