@@ -4,6 +4,14 @@ All notable changes to Project Telos. Telos is currently a source demo and share
 
 ## Unreleased
 
+- Embodied Sim-to-Real preflight: adds
+  `demo/embodied-sim2real-proof-packet.mjs`, a deterministic
+  differential-drive proof packet, source-ledger receipts, official,
+  working-paper, outreach, Crucible, and Learn prooflesson artifacts. The pass
+  verifies `EMBODIED_SIM2REAL_FIXTURE_MATCH` for the local fixture while
+  keeping real robot safety, medical robotics, foundation-model, large-scale
+  sim-to-real, and BuildLang/buildc-native claims out of scope.
+
 - Causal Research Workbench preflight: adds
   `demo/causal-workbench-proof-packet.mjs`, a deterministic toy-DAG proof
   packet, source-ledger receipts, official, working-paper, outreach, Crucible,

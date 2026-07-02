@@ -1,0 +1,174 @@
+{
+  "kind": "proof-lesson",
+  "packet_id": "twenty-ninth-wave-embodied-sim2real",
+  "verdict": "MATCH",
+  "lesson": {
+    "kind": "proof-lesson",
+    "packet_id": "twenty-ninth-wave-embodied-sim2real",
+    "packet_version": "proof-packet/twenty-ninth-wave-embodied-sim2real/v1",
+    "claim": "The embodied sim-to-real preflight is a replayable local differential-drive proof packet: it declares robot units, command logs, predicted and observed traces, tolerances, safety envelope, latency bound, emits EMBODIED_SIM2REAL_FIXTURE_MATCH, rejects five negative controls, and keeps real robot safety, medical robotics, foundation-model, sim-to-real-at-scale, and BuildLang/buildc-native claims out of scope.",
+    "scope": "Project Telos twenty-ninth-wave prooflesson for proof-carrying embodied robotics claims",
+    "verdict": "MATCH",
+    "sources": [
+      {
+        "ref": "demo/research/embodied-sim2real-source-receipts.json",
+        "sha256": "63350e2b93206b74c58fa74e8ee15498f8c66ee5ef98415f17d20f67d744d298"
+      },
+      {
+        "ref": "demo/embodied-sim2real-proof-packet.mjs",
+        "sha256": "db9b1d57fe3e6e39e986ea7023b58151646efcd0b8f270c8332b2d72bc804e11"
+      },
+      {
+        "ref": "demo/embodied-sim2real-proof-packet.test.mjs",
+        "sha256": "c67233677af874e96ce7c631442a16bdb9bec9312005428a3961352753b6754d"
+      },
+      {
+        "ref": "docs/outreach/receipts/twenty-ninth-wave/embodied-sim2real-proof-packet-2026-07-02.json",
+        "sha256": "ace2d54978b6822aacb3bc816b3047b625c85cba568a610e0ccb291d0e3bf487"
+      },
+      {
+        "ref": "docs/outreach/receipts/twenty-ninth-wave-embodied-sim2real-run-2026-07-02.json",
+        "sha256": "b1f5bd65975c9a454ca9593c3b9310b9b7683ece8711ecbbcbdc789cff1f9704"
+      },
+      {
+        "ref": "docs/outreach/receipts/twenty-ninth-wave-embodied-sim2real-report-2026-07-02.md",
+        "sha256": "195c5b908d4597e38ee98dbf963d71aca564ac79fb7293f17b9a65b113d4fe2e"
+      }
+    ],
+    "scaffold": [
+      {
+        "step": 1,
+        "prompt": "Restate, in your own words, exactly what this claim asserts and nothing more: \"The embodied sim-to-real preflight is a replayable local differential-drive proof packet: it declares robot units, command logs, predicted and observed traces, tolerances, safety envelope, latency bound, emits EMBODIED_SIM2REAL_FIXTURE_MATCH, rejects five negative controls, and keeps real robot safety, medical robotics, foundation-model, sim-to-real-at-scale, and BuildLang/buildc-native claims out of scope.\" (scope: Project Telos twenty-ninth-wave prooflesson for proof-carrying embodied robotics claims)."
+      },
+      {
+        "step": 2,
+        "prompt": "Judging by their refs alone (demo/research/embodied-sim2real-source-receipts.json, demo/embodied-sim2real-proof-packet.mjs, demo/embodied-sim2real-proof-packet.test.mjs, docs/outreach/receipts/twenty-ninth-wave/embodied-sim2real-proof-packet-2026-07-02.json, docs/outreach/receipts/twenty-ninth-wave-embodied-sim2real-run-2026-07-02.json, docs/outreach/receipts/twenty-ninth-wave-embodied-sim2real-report-2026-07-02.md), predict what each recorded source could contribute as evidence for or against the claim."
+      },
+      {
+        "step": 3,
+        "prompt": "The packet's overall verdict is MATCH. Before reading anything else, derive what a MATCH verdict must mean about the relationship between the claim and the recorded checks."
+      },
+      {
+        "step": 4,
+        "prompt": "List the checks you would run to reach your own verdict on this claim, then compare your list against what the packet's verdict implies was actually checked."
+      }
+    ],
+    "retrievalQuestions": [
+      {
+        "question": "What evidence would falsify this claim: \"The embodied sim-to-real preflight is a replayable local differential-drive proof packet: it declares robot units, command logs, predicted and observed traces, tolerances, safety envelope, latency bound, emits EMBODIED_SIM2REAL_FIXTURE_MATCH, rejects five negative controls, and keeps real robot safety, medical robotics, foundation-model, sim-to-real-at-scale, and BuildLang/buildc-native claims out of scope.\"?",
+        "derivedFrom": "claim"
+      },
+      {
+        "question": "Which recorded source would you re-check first, and what does its content hash let you prove about it?",
+        "derivedFrom": "sources"
+      },
+      {
+        "question": "What does an overall verdict of MATCH entitle you to claim, and what does it not?",
+        "derivedFrom": "verdicts.overall"
+      },
+      {
+        "question": "The packet's scope is \"Project Telos twenty-ninth-wave prooflesson for proof-carrying embodied robotics claims\". Give one claim that would exceed that scope.",
+        "derivedFrom": "scope"
+      }
+    ],
+    "verifierBinding": {
+      "packet_id": "twenty-ninth-wave-embodied-sim2real",
+      "verdict": "MATCH",
+      "sourceHashes": [
+        "63350e2b93206b74c58fa74e8ee15498f8c66ee5ef98415f17d20f67d744d298",
+        "db9b1d57fe3e6e39e986ea7023b58151646efcd0b8f270c8332b2d72bc804e11",
+        "c67233677af874e96ce7c631442a16bdb9bec9312005428a3961352753b6754d",
+        "ace2d54978b6822aacb3bc816b3047b625c85cba568a610e0ccb291d0e3bf487",
+        "b1f5bd65975c9a454ca9593c3b9310b9b7683ece8711ecbbcbdc789cff1f9704",
+        "195c5b908d4597e38ee98dbf963d71aca564ac79fb7293f17b9a65b113d4fe2e"
+      ]
+    },
+    "boundary": "Lesson scaffold only -- prompts for the operator to derive the reasoning; never an answer dump, never a graded-assessment answer."
+  },
+  "misconception": null,
+  "sourceCount": 6,
+  "entries": [
+    {
+      "seq": 0,
+      "prevHash": "0000000000000000000000000000000000000000000000000000000000000000",
+      "hash": "91dd19f0dbd5cfcc78c15ffa5cd718dacbb1d34192ef84c010cfa1bd612d2791",
+      "entry": {
+        "kind": "packet-binding",
+        "packet_id": "twenty-ninth-wave-embodied-sim2real",
+        "verdict": "MATCH",
+        "claim": "The embodied sim-to-real preflight is a replayable local differential-drive proof packet: it declares robot units, command logs, predicted and observed traces, tolerances, safety envelope, latency bound, emits EMBODIED_SIM2REAL_FIXTURE_MATCH, rejects five negative controls, and keeps real robot safety, medical robotics, foundation-model, sim-to-real-at-scale, and BuildLang/buildc-native claims out of scope."
+      }
+    },
+    {
+      "seq": 1,
+      "prevHash": "91dd19f0dbd5cfcc78c15ffa5cd718dacbb1d34192ef84c010cfa1bd612d2791",
+      "hash": "0ff23a07a8e368b1ab6a15601bed612a66b6a5d7630184386e9822871becfbeb",
+      "entry": {
+        "kind": "source",
+        "ref": "demo/research/embodied-sim2real-source-receipts.json",
+        "sha256": "63350e2b93206b74c58fa74e8ee15498f8c66ee5ef98415f17d20f67d744d298"
+      }
+    },
+    {
+      "seq": 2,
+      "prevHash": "0ff23a07a8e368b1ab6a15601bed612a66b6a5d7630184386e9822871becfbeb",
+      "hash": "f565ce74769f8b733efc621a170c5e00aa85231a1c703baa2118416f9ac5dc23",
+      "entry": {
+        "kind": "source",
+        "ref": "demo/embodied-sim2real-proof-packet.mjs",
+        "sha256": "db9b1d57fe3e6e39e986ea7023b58151646efcd0b8f270c8332b2d72bc804e11"
+      }
+    },
+    {
+      "seq": 3,
+      "prevHash": "f565ce74769f8b733efc621a170c5e00aa85231a1c703baa2118416f9ac5dc23",
+      "hash": "9c8b8fe060b5bf60ebfedc315f733d90c95e4448757762f946cd6ce2bced415d",
+      "entry": {
+        "kind": "source",
+        "ref": "demo/embodied-sim2real-proof-packet.test.mjs",
+        "sha256": "c67233677af874e96ce7c631442a16bdb9bec9312005428a3961352753b6754d"
+      }
+    },
+    {
+      "seq": 4,
+      "prevHash": "9c8b8fe060b5bf60ebfedc315f733d90c95e4448757762f946cd6ce2bced415d",
+      "hash": "0c6fb48224557b35d615b1928c1d4ce73693ad3ca207a4dedfa0b37daf218e4f",
+      "entry": {
+        "kind": "source",
+        "ref": "docs/outreach/receipts/twenty-ninth-wave/embodied-sim2real-proof-packet-2026-07-02.json",
+        "sha256": "ace2d54978b6822aacb3bc816b3047b625c85cba568a610e0ccb291d0e3bf487"
+      }
+    },
+    {
+      "seq": 5,
+      "prevHash": "0c6fb48224557b35d615b1928c1d4ce73693ad3ca207a4dedfa0b37daf218e4f",
+      "hash": "c421315aa05757cda0ae9b051f5577652764a404eb2bee065ad545b49d6ff7d7",
+      "entry": {
+        "kind": "source",
+        "ref": "docs/outreach/receipts/twenty-ninth-wave-embodied-sim2real-run-2026-07-02.json",
+        "sha256": "b1f5bd65975c9a454ca9593c3b9310b9b7683ece8711ecbbcbdc789cff1f9704"
+      }
+    },
+    {
+      "seq": 6,
+      "prevHash": "c421315aa05757cda0ae9b051f5577652764a404eb2bee065ad545b49d6ff7d7",
+      "hash": "1b32b9a9633e5e97397031293fa71261627471d45c2938b8f86bf7899537edd0",
+      "entry": {
+        "kind": "source",
+        "ref": "docs/outreach/receipts/twenty-ninth-wave-embodied-sim2real-report-2026-07-02.md",
+        "sha256": "195c5b908d4597e38ee98dbf963d71aca564ac79fb7293f17b9a65b113d4fe2e"
+      }
+    },
+    {
+      "seq": 7,
+      "prevHash": "1b32b9a9633e5e97397031293fa71261627471d45c2938b8f86bf7899537edd0",
+      "hash": "d2b1eca29289eaedcb92249813d0d51428d66922d216f22acd47eced20b76d7c",
+      "entry": {
+        "kind": "lesson-digest",
+        "digest": "sha256:b96a54ffb5119bbc41af35acb129f488c71685c9f630929df88af5d8a5b6d62f",
+        "misconception_class": null
+      }
+    }
+  ],
+  "boundary": "Lesson receipt only -- binds the lesson to its packet's verdict and source hashes; never a graded-assessment answer."
+}
