@@ -1,0 +1,167 @@
+﻿{
+  "decided": "project-telos",
+  "confidence": 0.5,
+  "needs_escalation": false,
+  "candidates": [
+    {
+      "agent": "project-telos",
+      "score": 0.08108108108108109
+    },
+    {
+      "agent": "sdk-platform",
+      "score": 0.2
+    },
+    {
+      "agent": "teaching",
+      "score": 0.2
+    },
+    {
+      "agent": "model-foundry",
+      "score": 0.125
+    },
+    {
+      "agent": "backend",
+      "score": 0.0
+    },
+    {
+      "agent": "ci-cd",
+      "score": 0.0
+    },
+    {
+      "agent": "cloud-infra",
+      "score": 0.0
+    },
+    {
+      "agent": "code-review",
+      "score": 0.0
+    },
+    {
+      "agent": "compiler-systems",
+      "score": 0.0
+    },
+    {
+      "agent": "data-ml",
+      "score": 0.0
+    },
+    {
+      "agent": "data-pipeline",
+      "score": 0.0
+    },
+    {
+      "agent": "deep-research",
+      "score": 0.0
+    },
+    {
+      "agent": "frontend",
+      "score": 0.0
+    },
+    {
+      "agent": "function-routing",
+      "score": 0.0
+    },
+    {
+      "agent": "gpu-compute",
+      "score": 0.0
+    },
+    {
+      "agent": "knowledge-mgmt",
+      "score": 0.0
+    },
+    {
+      "agent": "materials-pbr",
+      "score": 0.0
+    },
+    {
+      "agent": "mobile",
+      "score": 0.0
+    },
+    {
+      "agent": "native-cpp",
+      "score": 0.0
+    },
+    {
+      "agent": "prose-humanization",
+      "score": 0.0
+    },
+    {
+      "agent": "python-apps",
+      "score": 0.0
+    },
+    {
+      "agent": "render-pipeline",
+      "score": 0.0
+    },
+    {
+      "agent": "scene-environment",
+      "score": 0.0
+    },
+    {
+      "agent": "shader-effects",
+      "score": 0.0
+    },
+    {
+      "agent": "sre-ops",
+      "score": 0.0
+    },
+    {
+      "agent": "synthesis",
+      "score": 0.0
+    },
+    {
+      "agent": "technical-writing",
+      "score": 0.0
+    },
+    {
+      "agent": "web-intel",
+      "score": 0.0
+    }
+  ],
+  "frame": {
+    "schema": "forum.route-frame/v1",
+    "agent": "project-telos",
+    "domain": "evidence",
+    "intent": "investigate",
+    "posture": "investigator",
+    "delivery_profile": "researcher",
+    "model_tier": "frontier",
+    "executor": "cli",
+    "proof_lane": "observe",
+    "domain_lane": "source-federation",
+    "human_contract": "Answer as an investigator: separate observations from inference, cite the captured evidence, and preserve provenance.",
+    "communication_contract": {
+      "schema": "forum.communication-contract/v1",
+      "domain": "evidence",
+      "intent": "investigate",
+      "posture": "investigator",
+      "profile": "researcher",
+      "proof_lane": "observe",
+      "domain_lane": "source-federation",
+      "lead": "Lead with what was observed, then what is inferred.",
+      "structure": [
+        "observation",
+        "source",
+        "inference",
+        "unknowns",
+        "next check"
+      ],
+      "evidence": [
+        "separate observation from inference",
+        "name sources or unknowns"
+      ],
+      "avoid": [
+        "model preambles",
+        "unsupported superlatives",
+        "vague optimism",
+        "performative hedging"
+      ],
+      "required_moves": [
+        "preserve provenance",
+        "separate observations from inference"
+      ],
+      "human_contract": "Answer as an investigator: separate observations from inference, cite the captured evidence, and preserve provenance."
+    },
+    "signals": [
+      "source"
+    ]
+  }
+}
