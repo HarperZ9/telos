@@ -213,6 +213,11 @@ export const tools = [
     name: "telos.proof.visual",
     description: "Use when a host needs the fixture-backed visual-truth proof packet whose color and luminance measurements are recomputed from the artifact's own embedded sRGB samples, with a read-only boundary and no physical-calibration overclaim. Read-only, zero-auth, no external side effects beyond local subprocess reads. Returns a JSON visual-truth proof packet.",
     inputSchema: emptyInputSchema
+  },
+  {
+    name: "telos.proof.build",
+    description: "Use when a host needs the fixture-backed build scientific-runtime proof packet whose conserved-quantity invariant and conservation drift are recomputed from the run's own embedded samples with stdlib math, checked within bounded tolerances, and controlled by a required negative fixture that must break the invariant. Read-only, zero-auth, no external side effects beyond local subprocess reads. Returns a JSON build proof packet.",
+    inputSchema: emptyInputSchema
   }
 ];
 
@@ -256,7 +261,8 @@ const toolScripts = new Map([
   ["telos.showcase.scout", ["showcase.mjs", "scout", "--fixture", "--json"]],
   ["telos.proof", ["proof.mjs", "agent-action", "--demo", "--json"]],
   ["telos.proof.research", ["proof.mjs", "research", "--demo", "--json"]],
-  ["telos.proof.visual", ["proof.mjs", "visual", "--demo", "--json"]]
+  ["telos.proof.visual", ["proof.mjs", "visual", "--demo", "--json"]],
+  ["telos.proof.build", ["proof.mjs", "build", "--demo", "--json"]]
 ]);
 function runTool(name) {
   const args = toolScripts.get(name);

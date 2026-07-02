@@ -4,45 +4,46 @@ All notable changes to Project Telos. Telos is currently a source demo and share
 
 ## Unreleased
 
-- Research-claim and visual-truth proof lanes: adds two sibling proof lanes to
-  the agent-action lane, each with a frozen contract, a pure verifier that can
-  fail, and a proof-surface export. `project-telos.research-proof-packet/v1`
-  joins source provenance, a bounded claim, a required negative control fixture,
-  attempt records, and a promotion rung; its verifier recomputes each source and
-  negative-fixture digest from the embedded body, rejects a control that did not
-  survive, and refuses to assert a reproduction-gated rung
-  (`PROMOTED_DISCOVERY`, `LAW_CANDIDATE`) inside a single packet. It exports to
-  the proof-surface `research-claim-proof-packet/v0` contract.
-  `project-telos.visual-proof-packet/v1` recomputes every relative-luminance and
-  CIE76 delta-E measurement from the artifact's own embedded sRGB samples with
-  stdlib color math, rejects a non-read-only packet, and rejects a physical
-  calibration claim over a read-only surface; it exports to the proof-surface
-  `visual-measurement-proof-packet/v0` contract. Both lanes derive
-  `decision_summary` from the overall verdict, treat a missing recomputable
-  basis as an `UNVERIFIABLE` gap named by its path, and make a canned `MATCH`
-  structurally impossible. Ships `node demo/proof.mjs research` and
-  `node demo/proof.mjs visual` subcommands, with `verify` and `export`
-  dispatching by the packet's schema id. Registers the read-only
-  `telos.proof.research` and `telos.proof.visual` MCP tools, moving the
-  five-flagship catalog from 66 to 68 tools.
+- Proof lanes: four sibling proof lanes now ship through one CLI,
+  `node demo/proof.mjs`, each with a frozen contract, a pure verifier that
+  recomputes every load-bearing claim from embedded materials and can return
+  `DRIFT` or `UNVERIFIABLE`, and a proof-surface export whose `decision_summary`
+  is derived from the overall verdict. Every lane treats a missing recomputable
+  basis as an `UNVERIFIABLE` gap named by its path, floors an empty check set to
+  `UNVERIFIABLE` rather than a silent `MATCH`, and makes a canned `MATCH`
+  structurally impossible.
+  - Agent-action (`project-telos.proof-packet/v1`, MCP `telos.proof`, subcommand
+    `agent-action`): joins source refs, context refs, route, admission, side
+    effects, and output digests, with an optional Emet coherence witness stage
+    that records `unavailable` honestly. Exports to the proof-surface
+    `agent-action-proof-packet/v0` contract.
+  - Research-claim (`project-telos.research-proof-packet/v1`, MCP
+    `telos.proof.research`, subcommand `research`): joins source provenance, a
+    bounded claim, a required negative control fixture, attempt records, and a
+    promotion rung; its verifier recomputes each source and negative-fixture
+    digest from the embedded body, rejects a control that did not survive, and
+    refuses to assert a reproduction-gated rung (`PROMOTED_DISCOVERY`,
+    `LAW_CANDIDATE`) inside a single packet. Exports to
+    `research-claim-proof-packet/v0`.
+  - Visual-truth (`project-telos.visual-proof-packet/v1`, MCP
+    `telos.proof.visual`, subcommand `visual`): recomputes every
+    relative-luminance and CIE76 delta-E measurement from the artifact's own
+    embedded sRGB samples with stdlib color math, rejects a non-read-only packet,
+    and rejects a physical-calibration claim over a read-only surface. Exports to
+    `visual-measurement-proof-packet/v0`.
+  - Build scientific-runtime (`project-telos.build-proof-packet/v1`, MCP
+    `telos.proof.build`, subcommand `build`): recomputes a conserved-quantity
+    invariant (mean total energy) and a conservation drift (maximum relative
+    energy drift) from the run's own embedded samples with stdlib math, bounds
+    each tolerance to a small fraction of the metric's physical range so an
+    oversized author-declared tolerance is itself `DRIFT`, and requires a
+    negative fixture that must break the invariant. Exports to the proof-surface
+    `conservation-proof-packet/v0` contract.
 
-- Agent-action proof lane: adds `project-telos.proof-packet/v1`, a frozen
-  agent-action proof packet contract that joins source refs, context refs,
-  route, admission, side effects, output digests, and an optional durable
-  ledger entry by reference rather than by copied payload, composing the
-  existing `project-telos.action-receipt/v1`, `project-telos.context-envelope/v1`,
-  and `project-telos.loop-ledger/v1` contracts. Ships `node demo/proof.mjs`
-  with `agent-action`, `verify`, and `export` subcommands, a pure verifier that
-  derives `MATCH`, `DRIFT`, or `UNVERIFIABLE` from named checks (required
-  fields, state-model legality, packet-hash and artifact-digest recomputation,
-  admission-before-execution ordering, and compensation presence for external
-  writes) so a canned verdict is structurally impossible, an optional Emet
-  coherence witness stage that records `unavailable` honestly when no
-  implementation is reachable and never fabricates a verdict, and a frozen
-  `toProofSurfacePacket()` export to the proof-surface
-  `agent-action-proof-packet/v0` contract. Registers the read-only `telos.proof`
-  MCP tool that emits the fixture demo packet, moving the five-flagship catalog
-  from 65 to 66 tools.
+  `verify` and `export` dispatch by the packet's own schema id, so each lane is
+  re-checked and exported by its own verifier and exporter and an unknown schema
+  is an error rather than a silent pass. The four read-only MCP tools move the
+  five-flagship catalog from 65 to 69 tools (telos from 37 to 41).
 
 - Browser evidence kernel: adds `project-telos.browser-evidence/v1`,
   `node demo/browser-evidence.mjs`, and `telos.browser.evidence` as the

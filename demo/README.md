@@ -97,7 +97,7 @@ verdict is always derived from the checks. `node demo/proof.mjs export
 <packet.json|->` prints the proof-surface `agent-action-proof-packet/v0` shaped
 object for cross-tool interchange.
 
-`proof.mjs` also carries two sibling lanes. `node demo/proof.mjs research --demo
+`proof.mjs` also carries three sibling lanes. `node demo/proof.mjs research --demo
 [--out <dir>] [--json]` assembles the research-claim proof packet, whose verifier
 recomputes each source and negative-fixture digest from the embedded body,
 requires a negative control that the claim survived, and refuses to assert a
@@ -105,13 +105,21 @@ reproduction-gated promotion rung inside one packet. `node demo/proof.mjs visual
 --demo [--out <dir>] [--json]` assembles the visual-truth proof packet, whose
 verifier recomputes each relative-luminance and CIE76 delta-E measurement from
 the artifact's own embedded sRGB samples, rejects a non-read-only packet, and
-rejects a physical-calibration overclaim. `node demo/proof.mjs verify
-<packet.json|->` and `node demo/proof.mjs export <packet.json|->` dispatch by the
-packet's schema id, so each lane is re-checked and exported by its own verifier
-and exporter. The research lane exports to `research-claim-proof-packet/v0` and
-the visual lane to `visual-measurement-proof-packet/v0`. As with the agent-action
-lane, a tampered packet drifts with the actual deltas, a missing recomputable
-basis is unverifiable with the item named, and a canned `MATCH` can never win.
+rejects a physical-calibration overclaim. `node demo/proof.mjs build --demo
+[--out <dir>] [--json]` assembles the build scientific-runtime proof packet, whose
+verifier recomputes a conserved-quantity invariant (mean total energy) and a
+conservation drift (maximum relative energy drift) from the run's own embedded
+samples with stdlib math, bounds each tolerance to a small fraction of the
+metric's physical range so an oversized author-declared tolerance is itself
+`DRIFT`, and requires a negative fixture that must break the invariant.
+`node demo/proof.mjs verify <packet.json|->` and `node demo/proof.mjs export
+<packet.json|->` dispatch by the packet's schema id, so each lane is re-checked
+and exported by its own verifier and exporter. The research lane exports to
+`research-claim-proof-packet/v0`, the visual lane to
+`visual-measurement-proof-packet/v0`, and the build lane to
+`conservation-proof-packet/v0`. As with the agent-action lane, a tampered packet
+drifts with the actual deltas, a missing recomputable basis is unverifiable with
+the item named, and a canned `MATCH` can never win.
 
 `research/youtube-learning-forge-receipts.json` records the current Learning
 Forge seed intake: eight video metadata/transcript receipts and two channel-list
