@@ -55,6 +55,46 @@ function clone(value) {
   return JSON.parse(JSON.stringify(value));
 }
 
+// The proof-surface boundary-fixture and negative-fixture gate rules, frozen here
+// so a MATCH export is asserted to satisfy them in-suite without importing or
+// spawning proof-surface. Verified verbatim against proof-surface HEAD 8757032
+// conservation/_gates.py validate_negative_fixture and validate_boundary_fixture.
+// The negative fixture must break the invariant (breaks_invariant true AND drift >
+// tolerance); the optional boundary fixture must show the goal HOLDING
+// (goal_holds true) and the claimed condition FAILING (condition_holds false).
+// Returns a list of proof-surface-shaped gate issues; an empty list means valid.
+function proofSurfaceGateIssues(exported) {
+  const issues = [];
+  const neg = exported.negative_fixture;
+  if (!neg || typeof neg !== "object") {
+    issues.push("$.negative_fixture: expected object");
+  } else {
+    if (neg.breaks_invariant !== true) {
+      issues.push("$.negative_fixture.breaks_invariant: expected true");
+    } else if (
+      typeof neg.drift === "number" &&
+      typeof neg.tolerance === "number" &&
+      neg.drift <= neg.tolerance
+    ) {
+      issues.push("$.negative_fixture: breaks_invariant is true but drift is within tolerance");
+    }
+  }
+  const bnd = exported.boundary_fixture;
+  if (bnd !== null && bnd !== undefined) {
+    if (typeof bnd !== "object") {
+      issues.push("$.boundary_fixture: expected object");
+    } else {
+      if (bnd.goal_holds !== true) {
+        issues.push("$.boundary_fixture.goal_holds: a boundary fixture must show the goal HOLDING");
+      }
+      if (bnd.condition_holds !== false) {
+        issues.push("$.boundary_fixture.condition_holds: a boundary fixture must show the claimed condition FAILING");
+      }
+    }
+  }
+  return issues;
+}
+
 // ---------------------------------------------------------------------------
 // 1. Determinism and byte stability.
 // ---------------------------------------------------------------------------
@@ -219,6 +259,65 @@ function clone(value) {
     fail.recomputed_drift <= fail.conservation_tolerance,
     "the control's recomputed drift is within tolerance, so it does not break the invariant"
   );
+}
+
+// ---------------------------------------------------------------------------
+// 5c. The boundary run must show the goal HOLDING while the claimed condition
+// FAILS. A boundary run whose recomputed mean lands on the claimed value makes
+// condition_holds true, which proof-surface's boundary-fixture gate rejects; the
+// verifier must catch it first as DRIFT so no MATCH ever pairs with a
+// proof-surface-invalid export. This is the guard that closes the laundered-MATCH
+// hole where a hash-consistent boundary equal to the happy run verified clean.
+// ---------------------------------------------------------------------------
+{
+  const packet = assembleBuildPacket(happyFixture);
+
+  // Boundary run equal to the happy run: its mean lands on the claimed value, so
+  // the claimed condition holds. That must be DRIFT, not MATCH.
+  const conditionHolds = clone(packet);
+  conditionHolds.boundary_run.samples = clone(happyFixture.run.samples);
+  conditionHolds.packet_hash = packetHash(conditionHolds);
+  const cResult = verifyBuildPacket(conditionHolds);
+  assert.equal(cResult.verdict, "DRIFT", "a boundary run on which the claimed condition holds is DRIFT, not MATCH");
+  const cFail = cResult.failures.find((f) => f.code === "boundary_condition_holds");
+  assert.ok(cFail, "reports boundary_condition_holds");
+  assert.equal(cFail.path, "boundary_run.samples", "names the boundary samples path");
+  assert.ok(cFail.delta <= cFail.invariant_tolerance, "the boundary mean is within the invariant tolerance of the claimed value");
+  // The export of this DRIFT packet blocks, never approves.
+  const cExport = toProofSurfaceBuildPacket(conditionHolds);
+  assert.equal(cExport.verdicts.overall, "DRIFT", "the condition-holds boundary export is DRIFT");
+  assert.equal(cExport.decision_summary.decision, "block", "DRIFT derives block, not approve");
+  assert.equal(cExport.boundary_fixture.condition_holds, true, "the export honestly records condition_holds true");
+
+  // Boundary run that is not conserved (the damped control): the goal does not
+  // hold, so it is a mislabeled negative case, not a sufficiency boundary. DRIFT.
+  const goalBroken = clone(packet);
+  goalBroken.boundary_run.samples = clone(happyFixture.negative_fixture.samples);
+  goalBroken.packet_hash = packetHash(goalBroken);
+  const gResult = verifyBuildPacket(goalBroken);
+  assert.equal(gResult.verdict, "DRIFT", "a boundary run whose energy is not conserved is DRIFT");
+  const gFail = gResult.failures.find((f) => f.code === "boundary_goal_broken");
+  assert.ok(gFail, "reports boundary_goal_broken");
+  assert.ok(gFail.recomputed_drift > gFail.goal_tolerance, "the boundary drift exceeds the conservation tolerance");
+
+  // A boundary run whose samples cannot be recomputed is an UNVERIFIABLE gap.
+  const unrecomputable = clone(packet);
+  unrecomputable.boundary_run.samples = [[0, "x", 1]];
+  unrecomputable.packet_hash = packetHash(unrecomputable);
+  const uResult = verifyBuildPacket(unrecomputable);
+  assert.equal(uResult.verdict, "UNVERIFIABLE", "a boundary run that cannot be recomputed is UNVERIFIABLE");
+  assert.ok(
+    uResult.failures.some((f) => f.code === "invariant_not_recomputable" && f.path === "boundary_run.samples"),
+    "names the boundary samples path as the unrecomputable basis"
+  );
+  assert.ok(!uResult.failures.some((f) => f.verdict === "DRIFT"), "no DRIFT masks the boundary evidence gap");
+
+  // The honest happy-path boundary keeps the goal holding and the condition
+  // failing, so it stays MATCH.
+  const clean = verifyBuildPacket(packet);
+  assert.equal(clean.verdict, "MATCH", "the honest happy-path boundary stays MATCH");
+  const boundaryCheck = clean.checks.find((c) => c.name === "check.boundary_run");
+  assert.ok(boundaryCheck && boundaryCheck.passed, "check.boundary_run passes on the honest boundary");
 }
 
 // ---------------------------------------------------------------------------
@@ -393,6 +492,14 @@ function clone(value) {
       p.negative_fixture.samples = clone(happyFixture.run.samples);
       return { rehash: true };
     },
+    boundary_condition_holds: (p) => {
+      p.boundary_run.samples = clone(happyFixture.run.samples);
+      return { rehash: true };
+    },
+    boundary_goal_broken: (p) => {
+      p.boundary_run.samples = clone(happyFixture.negative_fixture.samples);
+      return { rehash: true };
+    },
     tolerance_exceeds_bound: (p) => {
       p.invariant.tolerance = p.invariant.value; // above the mean/100 ceiling
       return { rehash: true };
@@ -565,6 +672,81 @@ function clone(value) {
   assert.equal(driftExport.verdicts.overall, "DRIFT", "tampered export is DRIFT");
   assert.equal(driftExport.decision_summary.decision, "block", "DRIFT derives block");
   assert.ok(driftExport.failure_labels.includes("binding_failed"), "DRIFT export labels binding_failed");
+}
+
+// ---------------------------------------------------------------------------
+// 12b. A MATCH export satisfies the proof-surface negative-fixture and
+// boundary-fixture gates, and the boundary-condition-holds and conserved-negative
+// DRIFT exports are correctly flagged by those same gates. This asserts the core
+// contract that closed the review holes: no MATCH is ever paired with an export
+// that proof-surface would reject, because the verifier catches both the
+// condition-holds boundary and the conserved negative control as DRIFT first.
+// ---------------------------------------------------------------------------
+{
+  // The honest MATCH export passes both gates.
+  const packet = assembleBuildPacket(happyFixture);
+  const matchResult = verifyBuildPacket(packet);
+  assert.equal(matchResult.verdict, "MATCH", "the happy-path packet verifies as MATCH");
+  const matchExport = toProofSurfaceBuildPacket(packet);
+  assert.deepEqual(
+    proofSurfaceGateIssues(matchExport),
+    [],
+    "the MATCH export satisfies the proof-surface negative and boundary gates"
+  );
+
+  // The condition-holds boundary is DRIFT, so it is never exported as a MATCH; the
+  // export it does produce (block) is the honestly-labeled DRIFT document, and the
+  // gate flags the condition_holds:true it records.
+  const conditionHolds = clone(packet);
+  conditionHolds.boundary_run.samples = clone(happyFixture.run.samples);
+  conditionHolds.packet_hash = packetHash(conditionHolds);
+  const chResult = verifyBuildPacket(conditionHolds);
+  assert.notEqual(chResult.verdict, "MATCH", "a condition-holds boundary never reaches MATCH");
+  const chExport = toProofSurfaceBuildPacket(conditionHolds);
+  assert.ok(
+    proofSurfaceGateIssues(chExport).some((i) => i.includes("condition_holds")),
+    "the condition-holds boundary export is flagged by the boundary gate, and it is a DRIFT/block document"
+  );
+
+  // A conserved negative control is DRIFT, so it is never a MATCH; the gate flags
+  // the breaks_invariant:false it records, and the export is a block document.
+  const conservedNeg = clone(packet);
+  conservedNeg.negative_fixture.samples = clone(happyFixture.run.samples);
+  conservedNeg.packet_hash = packetHash(conservedNeg);
+  const cnResult = verifyBuildPacket(conservedNeg);
+  assert.notEqual(cnResult.verdict, "MATCH", "a conserved negative control never reaches MATCH");
+  const cnExport = toProofSurfaceBuildPacket(conservedNeg);
+  assert.equal(cnExport.decision_summary.decision, "block", "the conserved-control export blocks, never approves");
+  assert.ok(
+    proofSurfaceGateIssues(cnExport).some((i) => i.includes("breaks_invariant")),
+    "the conserved-control export is flagged by the negative gate, and it is a DRIFT/block document"
+  );
+}
+
+// ---------------------------------------------------------------------------
+// 12c. The assembler does not alias the fixture: mutating a nested field of an
+// assembled packet can never corrupt the shared fixture for a later assembly.
+// This is the robustness guard behind the deep clone in assembleBuildPacket.
+// ---------------------------------------------------------------------------
+{
+  const shared = clone(happyFixture);
+  const first = assembleBuildPacket(shared);
+  // The assembled packet must not share references with the fixture.
+  assert.notEqual(first.run, shared.run, "assembled run does not alias the fixture run");
+  assert.notEqual(first.run.samples, shared.run.samples, "assembled samples do not alias the fixture samples");
+  assert.notEqual(first.invariant, shared.invariant, "assembled invariant does not alias the fixture");
+  assert.notEqual(first.negative_fixture, shared.negative_fixture, "assembled negative fixture does not alias the fixture");
+  assert.notEqual(first.boundary_run, shared.boundary_run, "assembled boundary run does not alias the fixture");
+
+  // Mutate the first packet in place, then assemble again from the same fixture.
+  const originalLength = shared.run.samples.length;
+  first.run.samples.length = 0;
+  first.invariant.value = -12345;
+  const second = assembleBuildPacket(shared);
+  assert.equal(second.run.samples.length, originalLength, "a later assembly is unaffected by an earlier mutation");
+  assert.notEqual(second.invariant.value, -12345, "the fixture invariant value was not corrupted");
+  const secondResult = verifyBuildPacket(second);
+  assert.equal(secondResult.verdict, "MATCH", "the later assembly still verifies as MATCH");
 }
 
 // ---------------------------------------------------------------------------
