@@ -1,4 +1,6 @@
+#!/usr/bin/env node
 import { spawnSync } from "node:child_process";
+import { realpathSync } from "node:fs";
 import readline from "node:readline";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -279,7 +281,7 @@ export function handleRequest(request) {
       return result(id, {
         protocolVersion,
         capabilities: { tools: {} },
-        serverInfo: { name: "project-telos-telos", version: "0.1.0" }
+        serverInfo: { name: "project-telos-telos", version: "0.2.0" }
       });
     }
     if (request.method === "ping") {
@@ -320,6 +322,21 @@ function main() {
   });
 }
 
-if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
+// Compare realpaths on both sides so the guard fires when npm installs the bin
+// as a symlink and when node runs with --preserve-symlinks-main.
+function samePath(a, b) {
+  const canonical = (value) => {
+    let resolved = path.resolve(value);
+    try {
+      resolved = realpathSync(resolved);
+    } catch {
+      // keep the resolved path when realpath is unavailable
+    }
+    return process.platform === "win32" ? resolved.toLowerCase() : resolved;
+  };
+  return canonical(a) === canonical(b);
+}
+
+if (process.argv[1] && samePath(process.argv[1], fileURLToPath(import.meta.url))) {
   main();
 }

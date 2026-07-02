@@ -109,7 +109,7 @@ try {
 
   const payload = actionEnvelope({
     tool: "telos",
-    toolVersion: "0.1.0",
+    toolVersion: "0.2.0",
     command: "flagship-workflow",
     native: {
       index_repo_count: indexMap.repo_count ?? indexMap.repositories?.length ?? 0,
