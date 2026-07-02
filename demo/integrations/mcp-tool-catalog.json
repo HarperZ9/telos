@@ -1355,6 +1355,29 @@
         "index.map",
         "crucible.assess"
       ]
+    },
+    {
+      "name": "telos.proof",
+      "flagship": "telos",
+      "description": "Use when a host needs the fixture-backed agent-action proof packet joining source refs, context refs, route, admission, side effects, output digests, verifier checks, and the Emet witness stage. Read-only, zero-auth, no external side effects beyond local subprocess reads. Returns a JSON agent-action proof packet.",
+      "cli": [
+        "node",
+        "demo/proof.mjs",
+        "agent-action",
+        "--demo",
+        "--json"
+      ],
+      "mcp": {
+        "status": "available",
+        "server": "telos",
+        "method": "tools/call",
+        "tool": "telos.proof"
+      },
+      "next_actions": [
+        "gather.docs",
+        "index.map",
+        "crucible.assess"
+      ]
     }
   ]
 }

@@ -83,6 +83,20 @@ the Telos certificate loop.
 candidate offline and, when the GitHub CLI is available, scout live public
 issues without making public changes.
 
+`proof.mjs` is the agent-action proof lane. `node demo/proof.mjs agent-action
+--demo [--out <dir>] [--json]` assembles the fixture proof packet, runs the
+verifier, and attempts the optional Emet witness stage. `node demo/proof.mjs
+verify <packet.json|-> [--json]` replays required-field validation, state-model
+legality, packet-hash and artifact-digest recomputation, admission ordering,
+compensation presence, and the witness stage, then prints `MATCH`, `DRIFT`, or
+`UNVERIFIABLE`. It exits `0` on `MATCH`, `1` on `DRIFT`, and `2` on
+`UNVERIFIABLE`, mirroring the Emet exit codes. A tampered packet drifts with the
+actual deltas, a packet missing evidence is unverifiable with the missing item
+named, and a canned `MATCH` embedded in a packet can never win because the
+verdict is always derived from the checks. `node demo/proof.mjs export
+<packet.json|->` prints the proof-surface `agent-action-proof-packet/v0` shaped
+object for cross-tool interchange.
+
 `research/youtube-learning-forge-receipts.json` records the current Learning
 Forge seed intake: eight video metadata/transcript receipts and two channel-list
 receipts captured through Gather and yt-dlp. It intentionally stores hashes,

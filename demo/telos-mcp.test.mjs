@@ -58,7 +58,8 @@ for (const name of [
   "telos.display.calibration",
   "telos.native.control",
   "telos.browser.evidence",
-  "telos.showcase.scout"
+  "telos.showcase.scout",
+  "telos.proof"
 ]) {
   assert.ok(names.has(name), `missing ${name}`);
 }
@@ -420,6 +421,13 @@ const showcase = handleRequest(request("tools/call", { name: "telos.showcase.sco
 assert.equal(showcase.result.structuredContent.schema, "project-telos.oss-scout/v1");
 assert.equal(showcase.result.structuredContent.candidates[0].issue.number, 66050);
 
+const proof = handleRequest(request("tools/call", { name: "telos.proof", arguments: {} }));
+assert.equal(proof.result.structuredContent.schema, "project-telos.proof-packet/v1");
+assert.equal(proof.result.structuredContent.packet_id, "prfpkt_20260702_001");
+assert.match(proof.result.structuredContent.packet_hash, /^sha256:[a-f0-9]{64}$/);
+assert.equal(proof.result.structuredContent.verifier.verdict, "MATCH");
+assert.deepEqual(JSON.parse(proof.result.content[0].text), proof.result.structuredContent);
+
 const badTool = handleRequest(request("tools/call", { name: "telos.missing", arguments: {} }));
 assert.equal(badTool.error.code, -32000);
 assert.match(badTool.error.message, /unknown tool/);
@@ -465,3 +473,4 @@ assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.display
 assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.native.control"));
 assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.browser.evidence"));
 assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.showcase.scout"));
+assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.proof"));
