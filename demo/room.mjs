@@ -3,6 +3,7 @@ import { readFileSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { actionEnvelope } from "./flagship-action.mjs";
+import { flagshipPreflight, describeMissing } from "./flagship-preflight.mjs";
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const telosRoot = path.resolve(here, "..");
@@ -98,7 +99,7 @@ function collectRoom() {
 function roomEnvelope(room) {
   return actionEnvelope({
     tool: "telos",
-    toolVersion: "0.1.0",
+    toolVersion: "0.2.0",
     command: "room",
     status: room.ready === room.total && room.checksPassed === room.checksTotal ? "MATCH" : "DRIFT",
     native: {
@@ -142,9 +143,56 @@ function printHuman(payload) {
   console.log("next      node demo/flagship-workflow.mjs");
 }
 
-const payload = roomEnvelope(collectRoom());
+function unjoinableEnvelope(missing) {
+  return actionEnvelope({
+    tool: "telos",
+    toolVersion: "0.2.0",
+    command: "room",
+    status: "UNVERIFIABLE",
+    native: {
+      ready: 0,
+      total: 5,
+      reason: "flagship_room_unjoinable",
+      missing,
+      catalog: catalogSummary()
+    },
+    diagnostics: [
+      {
+        code: "flagship_room_unjoinable",
+        detail:
+          "the five-flagship room reads the gather, crucible, index, and forum " +
+          "source checkouts over a local python interpreter; " +
+          `missing dependency: ${describeMissing(missing)}`
+      }
+    ],
+    nextActions: [
+      {
+        tool: "telos",
+        action: "catalog",
+        reason: "the provider-neutral catalog needs no sibling checkouts",
+        inputs: [],
+        priority: "normal"
+      }
+    ]
+  });
+}
+
+function printUnjoinable(payload) {
+  console.log("Project Telos Room");
+  console.log(`${payload.status} ${payload.native.ready}/${payload.native.total} flagships ready`);
+  console.log(`reason    ${payload.native.reason}`);
+  console.log(`missing   ${describeMissing(payload.native.missing)}`);
+  console.log("next      node demo/catalog.mjs --summary");
+}
+
+const preflight = flagshipPreflight({ publicRoot });
+const payload = preflight.ok
+  ? roomEnvelope(collectRoom())
+  : unjoinableEnvelope(preflight.missing);
 if (asJson) {
   console.log(JSON.stringify(payload, null, 2));
-} else {
+} else if (preflight.ok) {
   printHuman(payload);
+} else {
+  printUnjoinable(payload);
 }
