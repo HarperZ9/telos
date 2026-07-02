@@ -2,7 +2,7 @@ import { actionEnvelope } from "./flagship-action.mjs";
 
 const payload = actionEnvelope({
   tool: "telos",
-  toolVersion: "0.1.0",
+  toolVersion: "0.2.0",
   command: "doctor",
   native: {
     checks: [
