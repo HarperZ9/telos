@@ -1,0 +1,144 @@
+{
+  "kind": "proof-lesson",
+  "packet_id": "twenty-sixth-wave-ti-morse-field-intake",
+  "verdict": "MATCH",
+  "lesson": {
+    "kind": "proof-lesson",
+    "packet_id": "twenty-sixth-wave-ti-morse-field-intake",
+    "packet_version": "proof-packet/twenty-sixth-wave-ti-morse-field-intake/v1",
+    "claim": "The TI Morse / Relentless source pass is a receipt-backed field-scope intake: five requested videos and one bounded channel list were captured as source receipts, the field lanes are inferred integration hypotheses, and domain claims remain unverifiable until primary-source or replay evidence exists.",
+    "scope": "Project Telos twenty-sixth-wave prooflesson for field-scope intake and source-to-proof-packet promotion",
+    "verdict": "MATCH",
+    "sources": [
+      {
+        "ref": "demo/research/youtube-ti-morse-field-receipts.json",
+        "sha256": "6a117ae06b55f71f72df043bd43114cdc9b0fef33b2c61160f5f787be7895830"
+      },
+      {
+        "ref": "demo/youtube-research-receipts.test.mjs",
+        "sha256": "e834affe856579100081c73def5abcb641f36d9ee63f15ac34b4561169fa9bea"
+      },
+      {
+        "ref": "docs/outreach/receipts/twenty-sixth-wave-ti-morse-field-run-2026-07-02.json",
+        "sha256": "6041fa136fc75780605d1770d125aa58f3e7e489c532821ccd3058fbc646994a"
+      },
+      {
+        "ref": "docs/outreach/receipts/twenty-sixth-wave-ti-morse-field-report-2026-07-02.md",
+        "sha256": "6e8d3a3086f8d62f89c2ca6db8d851d5cdfd5272ce90c3d2c8886df67ac6149e"
+      }
+    ],
+    "scaffold": [
+      {
+        "step": 1,
+        "prompt": "Restate, in your own words, exactly what this claim asserts and nothing more: \"The TI Morse / Relentless source pass is a receipt-backed field-scope intake: five requested videos and one bounded channel list were captured as source receipts, the field lanes are inferred integration hypotheses, and domain claims remain unverifiable until primary-source or replay evidence exists.\" (scope: Project Telos twenty-sixth-wave prooflesson for field-scope intake and source-to-proof-packet promotion)."
+      },
+      {
+        "step": 2,
+        "prompt": "Judging by their refs alone (demo/research/youtube-ti-morse-field-receipts.json, demo/youtube-research-receipts.test.mjs, docs/outreach/receipts/twenty-sixth-wave-ti-morse-field-run-2026-07-02.json, docs/outreach/receipts/twenty-sixth-wave-ti-morse-field-report-2026-07-02.md), predict what each recorded source could contribute as evidence for or against the claim."
+      },
+      {
+        "step": 3,
+        "prompt": "The packet's overall verdict is MATCH. Before reading anything else, derive what a MATCH verdict must mean about the relationship between the claim and the recorded checks."
+      },
+      {
+        "step": 4,
+        "prompt": "List the checks you would run to reach your own verdict on this claim, then compare your list against what the packet's verdict implies was actually checked."
+      }
+    ],
+    "retrievalQuestions": [
+      {
+        "question": "What evidence would falsify this claim: \"The TI Morse / Relentless source pass is a receipt-backed field-scope intake: five requested videos and one bounded channel list were captured as source receipts, the field lanes are inferred integration hypotheses, and domain claims remain unverifiable until primary-source or replay evidence exists.\"?",
+        "derivedFrom": "claim"
+      },
+      {
+        "question": "Which recorded source would you re-check first, and what does its content hash let you prove about it?",
+        "derivedFrom": "sources"
+      },
+      {
+        "question": "What does an overall verdict of MATCH entitle you to claim, and what does it not?",
+        "derivedFrom": "verdicts.overall"
+      },
+      {
+        "question": "The packet's scope is \"Project Telos twenty-sixth-wave prooflesson for field-scope intake and source-to-proof-packet promotion\". Give one claim that would exceed that scope.",
+        "derivedFrom": "scope"
+      }
+    ],
+    "verifierBinding": {
+      "packet_id": "twenty-sixth-wave-ti-morse-field-intake",
+      "verdict": "MATCH",
+      "sourceHashes": [
+        "6a117ae06b55f71f72df043bd43114cdc9b0fef33b2c61160f5f787be7895830",
+        "e834affe856579100081c73def5abcb641f36d9ee63f15ac34b4561169fa9bea",
+        "6041fa136fc75780605d1770d125aa58f3e7e489c532821ccd3058fbc646994a",
+        "6e8d3a3086f8d62f89c2ca6db8d851d5cdfd5272ce90c3d2c8886df67ac6149e"
+      ]
+    },
+    "boundary": "Lesson scaffold only -- prompts for the operator to derive the reasoning; never an answer dump, never a graded-assessment answer."
+  },
+  "misconception": null,
+  "sourceCount": 4,
+  "entries": [
+    {
+      "seq": 0,
+      "prevHash": "0000000000000000000000000000000000000000000000000000000000000000",
+      "hash": "5f99bbc615ea459c385dbff9bb8e1b62650bbc23730eabb1eb699f8bfa643943",
+      "entry": {
+        "kind": "packet-binding",
+        "packet_id": "twenty-sixth-wave-ti-morse-field-intake",
+        "verdict": "MATCH",
+        "claim": "The TI Morse / Relentless source pass is a receipt-backed field-scope intake: five requested videos and one bounded channel list were captured as source receipts, the field lanes are inferred integration hypotheses, and domain claims remain unverifiable until primary-source or replay evidence exists."
+      }
+    },
+    {
+      "seq": 1,
+      "prevHash": "5f99bbc615ea459c385dbff9bb8e1b62650bbc23730eabb1eb699f8bfa643943",
+      "hash": "3ae85b2485ccad32091b60aa53825126b42d41a911723996a66afcf05a14fbe4",
+      "entry": {
+        "kind": "source",
+        "ref": "demo/research/youtube-ti-morse-field-receipts.json",
+        "sha256": "6a117ae06b55f71f72df043bd43114cdc9b0fef33b2c61160f5f787be7895830"
+      }
+    },
+    {
+      "seq": 2,
+      "prevHash": "3ae85b2485ccad32091b60aa53825126b42d41a911723996a66afcf05a14fbe4",
+      "hash": "93563284524c38bfa73ff271d992ef15fa79748b0e65e0895be5d39376be50e4",
+      "entry": {
+        "kind": "source",
+        "ref": "demo/youtube-research-receipts.test.mjs",
+        "sha256": "e834affe856579100081c73def5abcb641f36d9ee63f15ac34b4561169fa9bea"
+      }
+    },
+    {
+      "seq": 3,
+      "prevHash": "93563284524c38bfa73ff271d992ef15fa79748b0e65e0895be5d39376be50e4",
+      "hash": "02d64095e632ce074c9f5d6eb04653d162dd489a163f6a32b752a36aaedb53ae",
+      "entry": {
+        "kind": "source",
+        "ref": "docs/outreach/receipts/twenty-sixth-wave-ti-morse-field-run-2026-07-02.json",
+        "sha256": "6041fa136fc75780605d1770d125aa58f3e7e489c532821ccd3058fbc646994a"
+      }
+    },
+    {
+      "seq": 4,
+      "prevHash": "02d64095e632ce074c9f5d6eb04653d162dd489a163f6a32b752a36aaedb53ae",
+      "hash": "b43cf3948dd312287bfd1ac32d130381a63474836b732580bdd336923f77c30f",
+      "entry": {
+        "kind": "source",
+        "ref": "docs/outreach/receipts/twenty-sixth-wave-ti-morse-field-report-2026-07-02.md",
+        "sha256": "6e8d3a3086f8d62f89c2ca6db8d851d5cdfd5272ce90c3d2c8886df67ac6149e"
+      }
+    },
+    {
+      "seq": 5,
+      "prevHash": "b43cf3948dd312287bfd1ac32d130381a63474836b732580bdd336923f77c30f",
+      "hash": "c2cc7962e12e15a71d7f56eceebad6ade2063a3122b190aed108b9f044d9e639",
+      "entry": {
+        "kind": "lesson-digest",
+        "digest": "sha256:76074a1db43a67f78eb021972d0ec51d1cb39f039ed866e06e994ee2f79e857c",
+        "misconception_class": null
+      }
+    }
+  ],
+  "boundary": "Lesson receipt only -- binds the lesson to its packet's verdict and source hashes; never a graded-assessment answer."
+}
