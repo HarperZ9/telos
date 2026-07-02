@@ -59,7 +59,9 @@ for (const name of [
   "telos.native.control",
   "telos.browser.evidence",
   "telos.showcase.scout",
-  "telos.proof"
+  "telos.proof",
+  "telos.proof.research",
+  "telos.proof.visual"
 ]) {
   assert.ok(names.has(name), `missing ${name}`);
 }
@@ -428,6 +430,19 @@ assert.match(proof.result.structuredContent.packet_hash, /^sha256:[a-f0-9]{64}$/
 assert.equal(proof.result.structuredContent.verifier.verdict, "MATCH");
 assert.deepEqual(JSON.parse(proof.result.content[0].text), proof.result.structuredContent);
 
+const proofResearch = handleRequest(request("tools/call", { name: "telos.proof.research", arguments: {} }));
+assert.equal(proofResearch.result.structuredContent.schema, "project-telos.research-proof-packet/v1");
+assert.match(proofResearch.result.structuredContent.packet_hash, /^sha256:[a-f0-9]{64}$/);
+assert.equal(proofResearch.result.structuredContent.verifier.verdict, "MATCH");
+assert.deepEqual(JSON.parse(proofResearch.result.content[0].text), proofResearch.result.structuredContent);
+
+const proofVisual = handleRequest(request("tools/call", { name: "telos.proof.visual", arguments: {} }));
+assert.equal(proofVisual.result.structuredContent.schema, "project-telos.visual-proof-packet/v1");
+assert.match(proofVisual.result.structuredContent.packet_hash, /^sha256:[a-f0-9]{64}$/);
+assert.equal(proofVisual.result.structuredContent.verifier.verdict, "MATCH");
+assert.equal(proofVisual.result.structuredContent.read_only, true);
+assert.deepEqual(JSON.parse(proofVisual.result.content[0].text), proofVisual.result.structuredContent);
+
 const badTool = handleRequest(request("tools/call", { name: "telos.missing", arguments: {} }));
 assert.equal(badTool.error.code, -32000);
 assert.match(badTool.error.message, /unknown tool/);
@@ -474,3 +489,5 @@ assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.native.
 assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.browser.evidence"));
 assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.showcase.scout"));
 assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.proof"));
+assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.proof.research"));
+assert.ok(stdioResponse.result.tools.some((tool) => tool.name === "telos.proof.visual"));
