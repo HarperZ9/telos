@@ -36,6 +36,8 @@ OpenAI Apps, OpenAI Agents, Anthropic Claude, Claude Code, Codex plugins, skills
 
 `action-receipt-conventions.json` records the enterprise receipt interface and append-only persistence contract for auditable agent actions, including digest inputs, component/config identity, policy decisions, verification verdicts, and compensation events.
 
+`proof-packet-conventions.json` records the `project-telos.proof-packet/v1` agent-action proof packet contract: the durable, independently re-checkable justification for one admitted agent action that joins source, context, route, admission, execution, output digests, verification, and an optional Emet witness by reference. It carries the assembler, verifier, witness, and exporter adapter interfaces, the typed failure codes with a negative case per code, and the frozen export mapping to the proof-surface `agent-action-proof-packet/v0` contract. `../proof.mjs agent-action --demo` assembles the fixture packet; `../proof.mjs verify` replays validation, digest recomputation, and the witness stage.
+
 `atp-adapter-validation.json` records a public/synthetic adapter-validation profile for ATP v1.2.0 transaction receipts: digest refs, component/config identity, side-effect class, policy decision, verification verdict, typed stop reason, and append-only compensation. It is a fixture profile, not a live ATP/Haystack conformance claim.
 
 `scankii-synthetic-receipt.json` records a public/synthetic dogfood run against scankii's replayable-receipt branch. It preserves normalized replay fields and explicit drift cases from the raw scanner output; it is not a private corpus scan or a production security claim.
