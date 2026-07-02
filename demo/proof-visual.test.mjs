@@ -242,6 +242,85 @@ function clone(value) {
 }
 
 // ---------------------------------------------------------------------------
+// 8b. A packet with no measurements recomputes nothing -> UNVERIFIABLE, never
+// MATCH. This is the empty-check floor: nothing was checked, so no claim holds.
+// ---------------------------------------------------------------------------
+{
+  const packet = assembleVisualPacket(happyFixture);
+  const empty = clone(packet);
+  empty.measurements = [];
+  empty.packet_hash = packetHash(empty);
+  const result = verifyVisualPacket(empty);
+  assert.equal(result.verdict, "UNVERIFIABLE", "a packet with no measurements is UNVERIFIABLE, never MATCH");
+  const gap = result.failures.find((f) => f.code === "no_measurements");
+  assert.ok(gap, "reports no_measurements");
+  assert.equal(gap.path, "measurements", "names the measurements path");
+  assert.ok(!result.failures.some((f) => f.verdict === "DRIFT"), "no DRIFT masks the empty-set gap");
+  const measCheck = result.checks.find((c) => c.name === "check.measurements");
+  assert.ok(measCheck && measCheck.passed === false, "check.measurements does not pass on an empty set");
+
+  // The export propagates the honest UNVERIFIABLE and its escalate decision, so
+  // an empty-measurement packet can never launder into an approve.
+  const emptyExport = toProofSurfaceVisualPacket(empty);
+  assert.equal(emptyExport.verdicts.overall, "UNVERIFIABLE", "empty-measurement export is UNVERIFIABLE");
+  assert.equal(emptyExport.decision_summary.decision, "escalate", "UNVERIFIABLE derives escalate");
+  assert.ok(emptyExport.failure_labels.includes("evidence_gap"), "empty-measurement export labels evidence_gap");
+}
+
+// ---------------------------------------------------------------------------
+// 8c. Tolerance is bounded to the metric's physical range. A whole-range
+// tolerance cannot launder a false value into MATCH: an oversized tolerance is
+// itself DRIFT, so the recompute's discriminating power can never be nullified.
+// ---------------------------------------------------------------------------
+{
+  const packet = assembleVisualPacket(happyFixture);
+
+  // An honest value with a whole-range tolerance is still DRIFT: the tolerance
+  // exceeds the metric's bounded range, so it can no longer discriminate.
+  const oversized = clone(packet);
+  oversized.measurements[0].tolerance = 1.0; // relative_luminance is on [0, 1]; ceiling is 0.1
+  oversized.packet_hash = packetHash(oversized);
+  const result = verifyVisualPacket(oversized);
+  assert.equal(result.verdict, "DRIFT", "a tolerance above the metric ceiling is DRIFT even with an honest value");
+  const fail = result.failures.find((f) => f.code === "tolerance_exceeds_bound");
+  assert.ok(fail, "reports tolerance_exceeds_bound");
+  assert.equal(fail.path, "measurements[0].tolerance", "names the tolerance path");
+  assert.equal(fail.ceiling, 0.1, "carries the per-method ceiling");
+  assert.ok(fail.observed > fail.ceiling, "records the oversized tolerance");
+
+  // The concrete laundering attempt from the review: a false luminance value
+  // (0.99999 vs the recomputed 0.1845) with a whole-range tolerance no longer
+  // reaches MATCH; it is DRIFT on the tolerance bound before the value even runs.
+  const launder = clone(packet);
+  launder.measurements[0].value = 0.99999;
+  launder.measurements[0].tolerance = 1.0;
+  launder.packet_hash = packetHash(launder);
+  const laundered = verifyVisualPacket(launder);
+  assert.equal(laundered.verdict, "DRIFT", "a false value hidden behind a whole-range tolerance is DRIFT, not MATCH");
+  const laundExport = toProofSurfaceVisualPacket(launder);
+  assert.equal(laundExport.verdicts.overall, "DRIFT", "the laundering export is DRIFT");
+  assert.equal(laundExport.decision_summary.decision, "block", "DRIFT derives block");
+
+  // A tolerance at the ceiling is admissible; just above it is not.
+  const atCeiling = clone(packet);
+  atCeiling.measurements[0].tolerance = 0.1;
+  atCeiling.packet_hash = packetHash(atCeiling);
+  assert.ok(
+    !verifyVisualPacket(atCeiling).failures.some((f) => f.code === "tolerance_exceeds_bound"),
+    "a tolerance exactly at the ceiling is admissible"
+  );
+
+  // The happy-path fixture tolerances are within their ceilings, so the honest
+  // packet is unaffected by the bound.
+  const clean = verifyVisualPacket(packet);
+  assert.equal(clean.verdict, "MATCH", "the honest happy-path packet stays MATCH under the tolerance bound");
+  assert.ok(
+    !clean.failures.some((f) => f.code === "tolerance_exceeds_bound"),
+    "no honest measurement trips the tolerance bound"
+  );
+}
+
+// ---------------------------------------------------------------------------
 // 9. proof-surface visual-measurement shape conformance (frozen field list).
 // ---------------------------------------------------------------------------
 {
