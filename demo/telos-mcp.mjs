@@ -1,4 +1,6 @@
+#!/usr/bin/env node
 import { spawnSync } from "node:child_process";
+import { realpathSync } from "node:fs";
 import readline from "node:readline";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -26,12 +28,12 @@ export const tools = [
   },
   {
     name: "telos.room",
-    description: "Use when an agent needs the current five-flagship room summary before routing work. Read-only, zero-auth, no external side effects. Returns a JSON action envelope.",
+    description: "Use when an agent needs the current five-flagship room summary before routing work. Read-only and zero-auth. Requires the sibling gather, crucible, index, and forum source checkouts next to this repo plus a local python interpreter; without them it returns an UNVERIFIABLE envelope naming the missing dependency rather than a live summary. Returns a JSON action envelope.",
     inputSchema: emptyInputSchema
   },
   {
     name: "telos.workflow",
-    description: "Use when validating the local five-flagship golden workflow from source checkouts. Read-only, zero-auth, no external side effects beyond local subprocess reads. Returns JSON receipts and verdict counts.",
+    description: "Use when validating the local five-flagship golden workflow from source checkouts. Read-only and zero-auth, no external side effects beyond local subprocess reads. Requires the sibling gather, crucible, index, and forum source checkouts next to this repo plus a local python interpreter; without them it returns an UNVERIFIABLE envelope naming the missing dependency rather than running the workflow. Returns JSON receipts and verdict counts.",
     inputSchema: emptyInputSchema
   },
   {
@@ -303,7 +305,7 @@ export function handleRequest(request) {
       return result(id, {
         protocolVersion,
         capabilities: { tools: {} },
-        serverInfo: { name: "project-telos-telos", version: "0.1.0" }
+        serverInfo: { name: "project-telos-telos", version: "0.2.0" }
       });
     }
     if (request.method === "ping") {
@@ -344,6 +346,21 @@ function main() {
   });
 }
 
-if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
+// Compare realpaths on both sides so the guard fires when npm installs the bin
+// as a symlink and when node runs with --preserve-symlinks-main.
+function samePath(a, b) {
+  const canonical = (value) => {
+    let resolved = path.resolve(value);
+    try {
+      resolved = realpathSync(resolved);
+    } catch {
+      // keep the resolved path when realpath is unavailable
+    }
+    return process.platform === "win32" ? resolved.toLowerCase() : resolved;
+  };
+  return canonical(a) === canonical(b);
+}
+
+if (process.argv[1] && samePath(process.argv[1], fileURLToPath(import.meta.url))) {
   main();
 }

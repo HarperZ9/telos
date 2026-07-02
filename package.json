@@ -1,13 +1,26 @@
 {
   "name": "project-telos-mcp",
-  "version": "0.1.0",
-  "private": true,
+  "version": "0.2.0",
   "type": "module",
   "description": "Local-first MCP workbench for Project Telos receipts, manifests, routing ledgers, creative engines, model-foundry lanes, and verification packets.",
   "license": "FSL-1.1-ALv2",
   "engines": {
     "node": ">=20"
   },
+  "bin": {
+    "telos": "./demo/telos.mjs",
+    "telos-mcp": "./demo/telos-mcp.mjs"
+  },
+  "files": [
+    "demo",
+    "!demo/**/*.test.mjs",
+    "!demo/integrations/scankii-synthetic-corpus",
+    "!demo/integrations/smallharness-dogfood-pack",
+    "!demo/README.md",
+    "docs/CURRENT-STATE.md",
+    "docs/brand",
+    "USAGE.md"
+  ],
   "scripts": {
     "start": "node demo/telos-mcp.mjs",
     "mcp": "node demo/telos-mcp.mjs",
