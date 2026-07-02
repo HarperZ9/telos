@@ -25,8 +25,8 @@ const receipt = JSON.parse(result.stdout);
 assert.equal(receipt.schema, "project-telos.brand-render/v2");
 assert.equal(receipt.mode, "check-existing");
 assert.equal(receipt.source_contract, "telos.rendering.research");
-assert.equal(receipt.dimensions.width, 1600);
-assert.equal(receipt.dimensions.height, 640);
+assert.equal(receipt.dimensions.width, 2400);
+assert.equal(receipt.dimensions.height, 1260);
 assert.equal(receipt.outputs.length, 5);
 assert.equal(receipt.font_inputs.every((font) => font.committed === false), true);
 assert.match(receipt.provenance_boundary, /font files remain local/);
@@ -37,8 +37,8 @@ assert.ok(receipt.design_gates.includes("contained engine viewport for procedura
 const byTool = new Map(receipt.outputs.map((output) => [output.tool, output]));
 for (const tool of ["gather", "crucible", "index", "forum", "telos"]) {
   const output = byTool.get(tool);
-  assert.equal(output.width, 1600, `${tool} hero width`);
-  assert.equal(output.height, 640, `${tool} hero height`);
+  assert.equal(output.width, 2400, `${tool} hero width`);
+  assert.equal(output.height, 1260, `${tool} hero height`);
   assert.match(output.sha256, /^[a-f0-9]{64}$/);
   assert.ok(output.image.endsWith(`${tool}-hero.png`));
   assert.ok(output.readme.endsWith("README.md"));
