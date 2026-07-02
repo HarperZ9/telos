@@ -18,6 +18,25 @@ Provenance boundary: no shadow-library material was used for this seed. If a pap
 not legally retrievable, Telos should record the citation and mark claim coverage as
 `UNVERIFIABLE_FROM_LOCAL_CORPUS` until a lawful copy or author manuscript is available.
 
+## 2026-07-02 Publication Refresh
+
+Twenty-first-wave publication packet:
+`docs/outreach/receipts/twenty-first-wave/biology-network-intelligence-source-gate-2026-07-02.json`.
+
+Refresh verdict: `BIOLOGY_NETWORK_INTELLIGENCE_MATCH` for one bounded Gather source packet.
+
+Fresh corpus: 10 retained items, 10 distinct bodies, all object hashes `MATCH`, and a verified
+run digest. The refresh adds recent source leads around fungal electrical signaling, plant
+glutamate/calcium signaling, common fungal network evidence, and common mycorrhizal network
+critique/response material. Two publisher DOI routes are marked `HTTP_403_SOURCE_LEAD_ONLY`
+rather than treated as locally reviewed full text.
+
+Updated terminology:
+- `BIOLOGY_NETWORK_INTELLIGENCE_MATCH`: the local corpus and source gate verify.
+- `SOURCE_LEAD_ONLY`: a source is a citation or route lead, not locally reviewed full text.
+- `HYPHAL_CONTEXT_PROTOCOL_HYPOTHESIS`: biology-inspired sparse-signal routing remains a
+  benchmark target until Crucible and BuildLang/buildc receipts exist.
+
 ## Clean Source Set
 
 - Fungal electrical signaling review: `https://pmc.ncbi.nlm.nih.gov/articles/PMC11995700/`
