@@ -1,0 +1,392 @@
+{
+  "schema": "project-telos.research-proof-packet/v1",
+  "verified_on": "2026-07-02",
+  "purpose": "Define a research-claim proof packet: the durable, independently re-checkable justification for one bounded research claim, joining source refs, an extracted statement, prover and checker attempts, a required negative fixture, verification checks, and a re-derivable verdict by reference and embedded digest rather than by uncited assertion. A failed or unverifiable run still produces a valid packet: a negative result is evidence, not a discarded run.",
+  "sources_checked": [
+    {
+      "name": "project-telos.science-research-adapters/v1",
+      "path": "demo/integrations/science-research-adapters.json",
+      "role": "supplies the lawful preprint, literature, and open-access source adapters a claim is extracted from, plus the source-lead non-evidentiary boundary"
+    },
+    {
+      "name": "gather provenance receipt",
+      "path": "external:gather/receipt",
+      "role": "supplies the source-ref shape joined by id and content hash; the source body is embedded so its digest is recomputable"
+    },
+    {
+      "name": "crucible verdict",
+      "path": "external:crucible/thesis-measurements",
+      "role": "supplies the check-to-measurement mapping (pass to deviation 0, fail to deviation 1, unverifiable to deviation null) that a check status is derived from, joined by check name"
+    },
+    {
+      "name": "project-telos.context-envelope/v1",
+      "path": "demo/integrations/context-envelope-conventions.json",
+      "role": "supplies the optional context-ref shape joined by envelope id and content hash"
+    },
+    {
+      "name": "research-claim-proof-packet/v0",
+      "path": "c:/dev/public/proof-surface/src/proof_surface/research_claim/packet.py",
+      "commit": "875703262f561c49ef7f05ebc88b6c44059e2a96",
+      "role": "the external export target the exporter conforms to; validated read-only against its ROOT_FIELDS, never imported or spawned at runtime"
+    }
+  ],
+  "contract": {
+    "joins_by_reference_only": true,
+    "source_body_embedded_for_digest_recompute": true,
+    "negative_fixture_required": true,
+    "negative_fixture_control_outcome_recorded": true,
+    "check_resolves_to_declared_source_refs": true,
+    "promoted_discovery_not_assertable_in_single_packet": true,
+    "verdict_derived_not_asserted": true,
+    "canonical_hash_excludes_wall_clock": true,
+    "verification_required": "Every packet verdict is MATCH, DRIFT, or UNVERIFIABLE. PROMOTED_DISCOVERY is never assertable in a single packet: it needs independent review."
+  },
+  "roadmap_flow": {
+    "steps": [
+      "an archive, preprint, or college source is resolved through a lawful science adapter",
+      "one bounded claim is extracted from the source (not a grand theorem, not a clinical result)",
+      "a negative fixture is written: a control variant the claim must survive, with a recorded control outcome",
+      "prover and checker attempts run and are recorded, positive or negative",
+      "each verification check is derived from a crucible measurement and resolved to its declared source refs",
+      "the overall verdict is derived by folding the per-check statuses; a single packet reaches at most CRUCIBLE_MATCH, never PROMOTED_DISCOVERY"
+    ]
+  },
+  "state_model": {
+    "verification_verdicts": [
+      "MATCH",
+      "DRIFT",
+      "UNVERIFIABLE"
+    ],
+    "attempt_results": [
+      "proved",
+      "refuted",
+      "incomplete",
+      "bounded",
+      "failed"
+    ],
+    "check_statuses": [
+      "pass",
+      "fail",
+      "unverifiable"
+    ],
+    "control_outcomes": {
+      "note": "the recorded outcome of running the claim's check against the negative fixture. survived means the check correctly rejected the control (evidence the check discriminates); not_survived means the check accepted the control (the check does not discriminate and the claim is not established).",
+      "values": [
+        "survived",
+        "not_survived"
+      ]
+    },
+    "promotions": {
+      "note": "the single-packet promotion rungs, aligned with research-claim-proof-packet/v0 PROMOTIONS minus the reproduction-gated rungs. PROMOTED_DISCOVERY is never assertable here.",
+      "values": [
+        "SOURCE_LEAD",
+        "HYPOTHESIS",
+        "IDENTITY",
+        "PROBE_MATCH",
+        "CRUCIBLE_MATCH",
+        "UNVERIFIABLE",
+        "REFUTED"
+      ],
+      "reserved_not_assertable": [
+        "PROMOTED_DISCOVERY",
+        "LAW_CANDIDATE"
+      ]
+    }
+  },
+  "required_fields": [
+    "schema",
+    "packet_id",
+    "objective.claim",
+    "objective.scope",
+    "objective.statement",
+    "objective.bounded",
+    "source_refs[].id",
+    "source_refs[].ref",
+    "source_refs[].content_hash",
+    "source_refs[].body",
+    "negative_fixture.id",
+    "negative_fixture.description",
+    "negative_fixture.body",
+    "negative_fixture.content_hash",
+    "negative_fixture.control_outcome",
+    "attempts[].attempt_id",
+    "attempts[].method",
+    "attempts[].result",
+    "checks[].checker",
+    "checks[].status",
+    "checks[].source_ref_ids",
+    "verdicts.overall",
+    "promotion",
+    "uncertainty",
+    "packet_hash"
+  ],
+  "adapter_interfaces": {
+    "assembler": {
+      "accepts": "a conformance fixture (happy_path or an operator-supplied fixture)",
+      "returns": "a canonical research proof packet plus packet_hash over the hash scope"
+    },
+    "verifier": {
+      "accepts": "a research proof packet",
+      "returns": "named check results, a typed failure list, and a derived verdict MATCH, DRIFT, or UNVERIFIABLE"
+    },
+    "exporter": {
+      "accepts": "a research proof packet",
+      "returns": "a proof-surface research-claim-proof-packet/v0 shaped object whose decision_summary is derived from the overall verdict"
+    }
+  },
+  "join_interfaces": {
+    "gather_provenance": {
+      "join_field": "source_refs[].content_hash",
+      "note": "each source ref carries the gather receipt ref and the content hash of the embedded body; the verifier recomputes the digest from the body and reports DRIFT on mismatch"
+    },
+    "crucible_verdict": {
+      "join_field": "checks[].checker",
+      "note": "a check status is the crucible measurement verdict for that checker (pass to deviation 0, fail to deviation 1, unverifiable to deviation null, fail-closed)"
+    },
+    "context_envelope": {
+      "join_field": "context_refs[].envelope_hash",
+      "note": "optional; when present, each context ref joins a context envelope by id and content hash"
+    }
+  },
+  "export_contract": {
+    "target_schema": "research-claim-proof-packet/v0",
+    "proof_surface_root_fields": [
+      "version",
+      "packet_id",
+      "claim",
+      "scope",
+      "statement",
+      "sources",
+      "attempts",
+      "checks",
+      "verdicts",
+      "promotion",
+      "uncertainty",
+      "decision_summary",
+      "formal",
+      "failure_labels",
+      "declared_branches",
+      "witness_tier",
+      "evidence_classes"
+    ],
+    "digest_form": "bare-64-hex-or-null",
+    "decision_summary_source": "derived from the packet overall verdict, not from any attempt result or promotion field",
+    "promotion_map": {
+      "note": "the internal promotion carries through unchanged; the reserved rungs are never emitted by the exporter",
+      "SOURCE_LEAD": "SOURCE_LEAD",
+      "HYPOTHESIS": "HYPOTHESIS",
+      "IDENTITY": "IDENTITY",
+      "PROBE_MATCH": "PROBE_MATCH",
+      "CRUCIBLE_MATCH": "CRUCIBLE_MATCH",
+      "UNVERIFIABLE": "UNVERIFIABLE",
+      "REFUTED": "REFUTED"
+    },
+    "check_status_map": {
+      "note": "internal check status to proof-surface CHECK_STATUSES",
+      "pass": "pass",
+      "fail": "fail",
+      "unverifiable": "unverifiable"
+    },
+    "per_check_verdict_map": {
+      "note": "internal check status to proof-surface per_check OVERALL_VERDICTS",
+      "pass": "MATCH",
+      "fail": "DRIFT",
+      "unverifiable": "UNVERIFIABLE"
+    },
+    "decision_summary_map": {
+      "note": "proof-surface overall verdict to decision_summary, from _decision.derive_decision_summary",
+      "MATCH": {
+        "decision": "approve",
+        "confidence": "high"
+      },
+      "DRIFT": {
+        "decision": "block",
+        "confidence": "high"
+      },
+      "UNVERIFIABLE": {
+        "decision": "escalate",
+        "confidence": "low"
+      }
+    }
+  },
+  "conformance_fixture": {
+    "happy_path": {
+      "packet_id": "resprf_20260702_001",
+      "objective": {
+        "claim": "The sum of the first n odd positive integers equals n squared for every n from 1 through 64.",
+        "scope": "one bounded arithmetic identity checked exhaustively over the stated finite range, not a general theorem over all n",
+        "statement": "For n in 1..64, 1 + 3 + 5 + ... + (2n - 1) equals n*n. The identity is checked by direct summation at every n in the range.",
+        "bounded": true
+      },
+      "source_refs": [
+        {
+          "id": "src_identity_note",
+          "ref": "gather:receipt/odd-sum-identity-note-20260702",
+          "content_hash": "recompute",
+          "body": "Extracted claim: the partial sums of the odd positive integers are the perfect squares. Stated for the finite range n=1..64 so it is checkable by exhaustive summation. Source lead resolved through the open-access literature adapter; the note itself carries the arithmetic definition, so the check does not depend on retrieving the full text."
+        },
+        {
+          "id": "src_check_procedure",
+          "ref": "gather:receipt/odd-sum-check-procedure-20260702",
+          "content_hash": "recompute",
+          "body": "Check procedure: for each n in 1..64, compute S(n) = sum of (2k-1) for k=1..n by direct addition, and compare S(n) to n*n. The claim passes only if S(n) equals n*n at every n in the range."
+        }
+      ],
+      "context_refs": [
+        {
+          "envelope_id": "ctxenv_research_demo_001",
+          "envelope_hash": "sha256:07d12cf406aaf820d2804512f4088b29617d7c13bca247f846c56895ce9fba5b"
+        }
+      ],
+      "negative_fixture": {
+        "id": "neg_off_by_one_variant",
+        "description": "A control the claim must survive: the false variant that the sum of the first n odd integers equals n squared plus one. The check must reject this variant. If the check accepted it, the check would not discriminate and the claim would not be established.",
+        "body": "Control variant: assert that 1 + 3 + 5 + ... + (2n - 1) equals n*n + 1 for n in 1..64. Run the same direct-summation check against this variant. The variant is false at every n, so a discriminating check reports fail and the control is survived.",
+        "content_hash": "recompute",
+        "control_outcome": "survived"
+      },
+      "attempts": [
+        {
+          "attempt_id": "att_exhaustive_sum",
+          "method": "direct summation over n=1..64 comparing S(n) to n*n",
+          "result": "proved",
+          "notes": "S(n) equals n*n at every n in the range; no counterexample in the bounded interval."
+        }
+      ],
+      "checks": [
+        {
+          "checker": "exhaustive_summation",
+          "status": "pass",
+          "source_ref_ids": [
+            "src_identity_note",
+            "src_check_procedure"
+          ],
+          "evidence": [
+            "S(n) recomputed by direct addition equals n*n for all n in 1..64"
+          ]
+        },
+        {
+          "checker": "negative_control_rejected",
+          "status": "pass",
+          "source_ref_ids": [
+            "src_check_procedure"
+          ],
+          "evidence": [
+            "the off-by-one control variant reports fail at every n, so the negative fixture is survived"
+          ]
+        }
+      ],
+      "verdicts": {
+        "overall": "recompute"
+      },
+      "promotion": "CRUCIBLE_MATCH",
+      "uncertainty": [
+        "the identity is verified only over the finite range n=1..64; nothing is claimed for n outside the range",
+        "source bodies are embedded and digest-bound but the upstream full texts are not re-fetched during verification"
+      ],
+      "evidence_classes": [
+        "primary-source",
+        "executable-check"
+      ],
+      "wall_clock": {
+        "assembled_at": "2026-07-02T00:00:00.000Z"
+      }
+    },
+    "tampered_source_body": {
+      "from": "happy_path",
+      "mutate": "change source_refs[0].body after the content_hash was pinned",
+      "expected_verdict": "DRIFT",
+      "expected_failure_code": "source_digest_mismatch"
+    },
+    "missing_negative_fixture": {
+      "from": "happy_path",
+      "mutate": "delete the negative_fixture block",
+      "expected_verdict": "UNVERIFIABLE",
+      "expected_failure_code": "missing_required_field"
+    },
+    "negative_fixture_no_control_outcome": {
+      "from": "happy_path",
+      "mutate": "delete negative_fixture.control_outcome",
+      "expected_verdict": "UNVERIFIABLE",
+      "expected_failure_code": "missing_required_field"
+    },
+    "negative_fixture_not_survived": {
+      "from": "happy_path",
+      "mutate": "set negative_fixture.control_outcome to not_survived",
+      "expected_verdict": "DRIFT",
+      "expected_failure_code": "negative_control_not_survived"
+    },
+    "check_unresolvable_source_ref": {
+      "from": "happy_path",
+      "mutate": "set checks[0].source_ref_ids to include an id that is not declared in source_refs",
+      "expected_verdict": "UNVERIFIABLE",
+      "expected_failure_code": "evidence_ref_unresolvable"
+    },
+    "promoted_discovery_asserted": {
+      "from": "happy_path",
+      "mutate": "set promotion to PROMOTED_DISCOVERY",
+      "expected_verdict": "DRIFT",
+      "expected_failure_code": "promotion_not_assertable_in_single_packet"
+    },
+    "embedded_canned_match": {
+      "from": "happy_path",
+      "mutate": "tamper a source body but embed verdicts.overall MATCH",
+      "expected_verdict": "DRIFT",
+      "expected_failure_code": "embedded_verdict_not_derived"
+    }
+  },
+  "failure_codes": [
+    "missing_required_field",
+    "state_model_violation",
+    "packet_hash_mismatch",
+    "source_digest_mismatch",
+    "negative_fixture_digest_mismatch",
+    "negative_control_not_survived",
+    "check_status_not_derivable",
+    "evidence_ref_unresolvable",
+    "promotion_not_assertable_in_single_packet",
+    "embedded_verdict_not_derived"
+  ],
+  "negative_test_cases": [
+    {
+      "name": "packet_missing_negative_fixture_block",
+      "failure_code": "missing_required_field"
+    },
+    {
+      "name": "negative_fixture_missing_control_outcome",
+      "failure_code": "missing_required_field"
+    },
+    {
+      "name": "source_body_does_not_match_content_hash",
+      "failure_code": "source_digest_mismatch"
+    },
+    {
+      "name": "negative_fixture_body_does_not_match_content_hash",
+      "failure_code": "negative_fixture_digest_mismatch"
+    },
+    {
+      "name": "negative_control_recorded_not_survived",
+      "failure_code": "negative_control_not_survived"
+    },
+    {
+      "name": "check_references_source_ref_that_is_not_declared",
+      "failure_code": "evidence_ref_unresolvable"
+    },
+    {
+      "name": "attempt_result_outside_taxonomy",
+      "failure_code": "state_model_violation"
+    },
+    {
+      "name": "recorded_packet_hash_does_not_match_materials",
+      "failure_code": "packet_hash_mismatch"
+    },
+    {
+      "name": "promotion_claims_promoted_discovery_in_single_packet",
+      "failure_code": "promotion_not_assertable_in_single_packet"
+    },
+    {
+      "name": "embedded_match_over_tampered_source_body",
+      "failure_code": "embedded_verdict_not_derived"
+    }
+  ]
+}
