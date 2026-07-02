@@ -1,0 +1,270 @@
+{
+  "schema": "project-telos.visual-proof-packet/v1",
+  "verified_on": "2026-07-02",
+  "purpose": "Define a visual-truth proof packet: the durable, independently re-checkable justification for one read-only visual or color measurement. It joins an artifact digest, declared color assumptions, embedded sRGB sample values, measurements recomputed from those samples, honest display caveats, an explicit calibration boundary, and a derived MATCH, DRIFT, or UNVERIFIABLE verdict. The packet never mutates hardware: it records and re-checks measurements, it never writes a monitor, LUT, or ICC profile, and it never claims a physical calibration it did not perform.",
+  "sources_checked": [
+    {
+      "name": "project-telos.proof-packet/v1",
+      "path": "demo/integrations/proof-packet-conventions.json",
+      "role": "supplies the sibling agent-action lane style this contract mirrors: canonical hash scope, derived-not-asserted verdict, recompute-from-materials verifier, and the frozen conformance-fixture and negative-test-case blocks"
+    },
+    {
+      "name": "visual-measurement-proof-packet/v0",
+      "path": "c:/dev/public/proof-surface/src/proof_surface/visual_measurement/packet.py",
+      "commit": "875703262f561c49ef7f05ebc88b6c44059e2a96",
+      "role": "the external export target the exporter conforms to; validated read-only with proof-surface on sys.path, never imported or spawned at runtime"
+    }
+  ],
+  "contract": {
+    "read_only_required": true,
+    "no_hardware_mutation": true,
+    "no_monitor_lut_or_icc_write": true,
+    "measurements_recomputed_from_embedded_samples": true,
+    "calibration_boundary_makes_no_physical_calibration_claim": true,
+    "display_caveats_explicit": true,
+    "verdict_derived_not_asserted": true,
+    "canonical_hash_excludes_wall_clock": true,
+    "measurement_without_recomputable_basis_is_unverifiable": true,
+    "verification_required": "Every packet verdict is MATCH, DRIFT, or UNVERIFIABLE. PROMOTED and any physical-calibration claim are never assertable from a single read-only packet."
+  },
+  "measurement_recompute_relation": {
+    "claim": "A measurement is a load-bearing claim, not an assertion. Every measurement value is recomputed from the artifact's embedded sRGB sample values using stdlib math only. A measurement whose method points at samples the artifact does not carry cannot be recomputed: that is an UNVERIFIABLE evidence gap named by its JSON path, never a silent pass.",
+    "recompute_methods": {
+      "relative_luminance_srgb": "Linearize each embedded sRGB channel with the IEC 61966-2-1 transfer, then take the Rec. 709 weighted sum 0.2126 R + 0.7152 G + 0.0722 B. The sample is named by artifact.samples[<id>].",
+      "delta_e_cie76": "Convert two embedded sRGB samples to CIE Lab under the D65 white point, then take the Euclidean distance between the two Lab points. The two samples are named by measurement.sample_refs."
+    },
+    "tolerance_rule": "deviation is the absolute difference between the claimed value and the recomputed value. A deviation at or below tolerance is a per-metric MATCH; a deviation above tolerance is a per-metric DRIFT carrying the recomputed value; a measurement with no recomputable basis is a per-metric UNVERIFIABLE."
+  },
+  "state_model": {
+    "verification_verdicts": [
+      "MATCH",
+      "DRIFT",
+      "UNVERIFIABLE"
+    ],
+    "artifact_kinds": [
+      "image",
+      "render",
+      "lut",
+      "icc",
+      "video"
+    ],
+    "recompute_methods": [
+      "relative_luminance_srgb",
+      "delta_e_cie76"
+    ]
+  },
+  "required_fields": [
+    "schema",
+    "packet_id",
+    "claim",
+    "scope",
+    "artifact.name",
+    "artifact.digest",
+    "artifact.kind",
+    "artifact.samples",
+    "color.color_space",
+    "color.transfer",
+    "read_only",
+    "measurements[].metric",
+    "measurements[].method",
+    "measurements[].value",
+    "measurements[].unit",
+    "measurements[].tolerance",
+    "display_caveats",
+    "calibration_boundary.hardware_measurement_used",
+    "calibration_boundary.physical_calibration_claim",
+    "packet_hash"
+  ],
+  "adapter_interfaces": {
+    "assembler": {
+      "accepts": "a conformance fixture (happy_path or an operator-supplied fixture)",
+      "returns": "a canonical visual proof packet plus packet_hash over the hash scope"
+    },
+    "verifier": {
+      "accepts": "a visual proof packet",
+      "returns": "named check results, a typed failure list, and a derived verdict MATCH, DRIFT, or UNVERIFIABLE"
+    },
+    "exporter": {
+      "accepts": "a visual proof packet",
+      "returns": "a proof-surface visual-measurement-proof-packet/v0 shaped object"
+    }
+  },
+  "export_contract": {
+    "target_schema": "visual-measurement-proof-packet/v0",
+    "proof_surface_root_fields": [
+      "version",
+      "packet_id",
+      "claim",
+      "scope",
+      "artifact",
+      "color",
+      "read_only",
+      "measurements",
+      "display_caveats",
+      "calibration_boundary",
+      "failure_labels",
+      "verdicts",
+      "uncertainty",
+      "decision_summary"
+    ],
+    "digest_form": "bare-64-hex",
+    "read_only_required_true": true,
+    "calibration_boundary_no_physical_claim": true,
+    "decision_summary_source": "derived from the packet overall verdict, not from any embedded decision field",
+    "decision_summary_map": {
+      "note": "proof-surface overall verdict to decision_summary, from _decision.derive_decision_summary",
+      "MATCH": {
+        "decision": "approve",
+        "confidence": "high"
+      },
+      "DRIFT": {
+        "decision": "block",
+        "confidence": "high"
+      },
+      "UNVERIFIABLE": {
+        "decision": "escalate",
+        "confidence": "low"
+      }
+    },
+    "failure_label_map": {
+      "note": "telos visual failure codes to proof-surface FAILURE_CODES (closed set in _failure.py at proof-surface HEAD)",
+      "missing_required_field": "evidence_gap",
+      "measurement_not_recomputable": "evidence_gap",
+      "read_only_not_true": "binding_failed",
+      "physical_calibration_overclaim": "binding_failed",
+      "measurement_value_mismatch": "binding_failed",
+      "packet_hash_mismatch": "binding_failed",
+      "state_model_violation": "binding_failed"
+    }
+  },
+  "conformance_fixture": {
+    "happy_path": {
+      "packet_id": "vizpkt_20260702_001",
+      "claim": "The mid-gray patch renders at the recomputed relative luminance and the two warm-red swatches differ by the recomputed CIE76 delta-E, both within their declared tolerances, from the artifact's embedded sRGB samples and with no display touched.",
+      "scope": "one read-only sRGB color measurement over an embedded swatch strip in the Telos visual-proof-lane demo",
+      "artifact": {
+        "name": "swatch_strip",
+        "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "kind": "image",
+        "width": 3,
+        "height": 1,
+        "samples": {
+          "mid_gray": [119, 119, 119],
+          "swatch_a": [200, 60, 60],
+          "swatch_b": [190, 66, 64]
+        }
+      },
+      "color": {
+        "color_space": "sRGB",
+        "transfer": "sRGB (IEC 61966-2-1)",
+        "white_point": "D65",
+        "primaries": "sRGB / Rec. 709"
+      },
+      "read_only": true,
+      "measurements": [
+        {
+          "metric": "relative_luminance_mid_gray",
+          "method": "relative_luminance_srgb",
+          "sample_refs": ["mid_gray"],
+          "value": 0.184474994500441,
+          "unit": "relative_luminance",
+          "target": 0.184474994500441,
+          "tolerance": 0.0005
+        },
+        {
+          "metric": "delta_e_swatch_a_vs_b",
+          "method": "delta_e_cie76",
+          "sample_refs": ["swatch_a", "swatch_b"],
+          "value": 6.734452961677303,
+          "unit": "delta_e_cie76",
+          "target": 6.734452961677303,
+          "tolerance": 0.01
+        }
+      ],
+      "display_caveats": [
+        "values are computed from the artifact's embedded sRGB samples, not measured off a physical display",
+        "no monitor, LUT, or ICC profile was read or written; the packet is read-only by construction",
+        "relative luminance assumes the sRGB IEC 61966-2-1 transfer and the Rec. 709 luminance weights",
+        "delta-E is CIE76 under the D65 white point and is a first-order color-difference estimate, not a perceptual guarantee"
+      ],
+      "calibration_boundary": {
+        "hardware_measurement_used": false,
+        "physical_calibration_claim": false,
+        "instrument": null,
+        "note": "no colorimeter or spectrophotometer was used; no display state was mutated; this packet measures encoded sample values only"
+      },
+      "wall_clock": {
+        "assembled_at": "2026-07-02T00:00:00.000Z"
+      }
+    },
+    "tampered_measurement_value": {
+      "from": "happy_path",
+      "mutate": "replace measurements[0] value with a wrong number outside tolerance while the embedded samples stay unchanged",
+      "expected_verdict": "DRIFT",
+      "expected_failure_code": "measurement_value_mismatch"
+    },
+    "measurement_without_recomputable_basis": {
+      "from": "happy_path",
+      "mutate": "point measurements[0] sample_refs at a sample id the artifact does not carry",
+      "expected_verdict": "UNVERIFIABLE",
+      "expected_failure_code": "measurement_not_recomputable"
+    },
+    "read_only_false": {
+      "from": "happy_path",
+      "mutate": "set read_only false",
+      "expected_verdict": "DRIFT",
+      "expected_failure_code": "read_only_not_true"
+    },
+    "physical_calibration_overclaim": {
+      "from": "happy_path",
+      "mutate": "set calibration_boundary.physical_calibration_claim true while the packet stays read-only with no hardware measurement",
+      "expected_verdict": "DRIFT",
+      "expected_failure_code": "physical_calibration_overclaim"
+    },
+    "missing_artifact_samples": {
+      "from": "happy_path",
+      "mutate": "delete artifact.samples",
+      "expected_verdict": "UNVERIFIABLE",
+      "expected_failure_code": "missing_required_field"
+    }
+  },
+  "failure_codes": [
+    "missing_required_field",
+    "state_model_violation",
+    "packet_hash_mismatch",
+    "measurement_value_mismatch",
+    "measurement_not_recomputable",
+    "read_only_not_true",
+    "physical_calibration_overclaim"
+  ],
+  "negative_test_cases": [
+    {
+      "name": "packet_missing_artifact_samples",
+      "failure_code": "missing_required_field"
+    },
+    {
+      "name": "artifact_kind_outside_taxonomy",
+      "failure_code": "state_model_violation"
+    },
+    {
+      "name": "recorded_packet_hash_does_not_match_materials",
+      "failure_code": "packet_hash_mismatch"
+    },
+    {
+      "name": "measurement_value_does_not_match_recomputed_value",
+      "failure_code": "measurement_value_mismatch"
+    },
+    {
+      "name": "measurement_points_at_samples_the_artifact_does_not_carry",
+      "failure_code": "measurement_not_recomputable"
+    },
+    {
+      "name": "packet_is_not_read_only",
+      "failure_code": "read_only_not_true"
+    },
+    {
+      "name": "read_only_packet_claims_a_physical_calibration",
+      "failure_code": "physical_calibration_overclaim"
+    }
+  ]
+}
