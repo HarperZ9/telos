@@ -1,0 +1,57 @@
+{
+  "measurements": [
+    {
+      "claim": "The social posting run manifest records that the previously referenced social wave packet paths are absent from the current filesystem state.",
+      "method": "filesystem-inventory-review",
+      "evidence": [
+        "Inventory command found C:\\dev\\public\\telos\\docs\\outreach exists but only current non-social packet files were present at top level",
+        "SOCIAL-POSTING-RUN-MANIFEST-2026-07-02.md lists four missing social wave packet paths under Verified Missing Paths"
+      ],
+      "deviation": 0.0,
+      "tolerance": 0.5
+    },
+    {
+      "claim": "The manifest provides an immediate dispatch batch with exact text for 8 public comments across Reddit, YouTube, dev.to, and Hacker News.",
+      "method": "dispatch-batch-review",
+      "evidence": [
+        "Immediate Dispatch Batch lists R33, R35, R37, R39, Y36, Y42, B23, and B25",
+        "Each immediate item includes URL and exact comment text",
+        "Destinations cover Reddit, YouTube, dev.to, and Hacker News"
+      ],
+      "deviation": 0.0,
+      "tolerance": 0.5
+    },
+    {
+      "claim": "The immediate dispatch batch contains no Project Telos repository link and is framed around technical value rather than link promotion.",
+      "method": "link-discipline-review",
+      "evidence": [
+        "Posting Boundary says do not include a Project Telos repository link in this first repair batch",
+        "Immediate Dispatch Batch comments do not contain https://github.com/HarperZ9/telos"
+      ],
+      "deviation": 0.0,
+      "tolerance": 0.5
+    },
+    {
+      "claim": "The manifest requires action-time confirmation before public posting and explicitly says not to claim posts until the public side effect completes.",
+      "method": "side-effect-boundary-review",
+      "evidence": [
+        "Posting Boundary says do not claim comments were posted until the public side effect actually completes",
+        "Exact Confirmation Prompt asks for confirmation of the exact public-comment batch from the authenticated account",
+        "Receipt Template After Posting requires posted-success and moderation state fields"
+      ],
+      "deviation": 0.0,
+      "tolerance": 0.5
+    },
+    {
+      "claim": "The manifest keeps quant/trading comments framed as engineering validation rather than investment advice.",
+      "method": "quant-safety-review",
+      "evidence": [
+        "Posting Boundary says quant/trading comments are engineering validation comments, not investment advice",
+        "Immediate quant comments discuss backtest receipts, data versions, slippage, split rules, tests, and assumptions",
+        "Immediate quant comments do not recommend buying, selling, allocating capital, or expecting a specific return"
+      ],
+      "deviation": 0.0,
+      "tolerance": 0.5
+    }
+  ]
+}

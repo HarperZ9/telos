@@ -1,0 +1,392 @@
+{
+  "schema": "project-telos.telos-repo-subregistry/v1",
+  "generated_at": "2026-07-02",
+  "status": "first Telos repo mixed-surface consolidation pass",
+  "purpose": "Classify the Telos repository's front-door, control-plane, research, proof-demo, outreach, receipt, integration, and quarantine surfaces without treating working-tree artifacts as shipped release state.",
+  "claim_boundary": "This registry is based on current local reads plus live flagship receipts. It is not a release certification, site-publication proof, scientific result, market claim, or proof that all local changes are committed or pushed.",
+  "evidence": [
+    {
+      "id": "flagship-status-refresh-2026-07-02",
+      "tools": {
+        "gather": "1.5.0 MATCH",
+        "index": "2.8.0 MATCH",
+        "forum": "1.12.0 MATCH",
+        "crucible": "1.1.0 MATCH"
+      },
+      "summary": "Live flagship status tools returned MATCH before this subregistry was created.",
+      "confidence": "high"
+    },
+    {
+      "id": "telos-server-manifest-2026-07-02",
+      "tool": "telos.server.manifest",
+      "status": "MATCH",
+      "summary": "Manifest records source-checkout profiles, package profiles, host targets, expected tool surfaces, and freshness probes for Gather, Index, Forum, Crucible, and Telos.",
+      "confidence": "high"
+    },
+    {
+      "id": "index-map-telos-repo-2026-07-02T13-34-26",
+      "tool": "index.map",
+      "status": "MATCH",
+      "metrics": {
+        "root": "C:/dev/public/telos",
+        "repo_count": 1,
+        "public_class_repos": 1,
+        "dirty_repos": 1,
+        "branch": "main",
+        "head": "1e0e1a1",
+        "dirty_count": 3,
+        "untracked_count": 35,
+        "root_sha256_prefix": "45e8256faa8bdc98"
+      },
+      "confidence": "high"
+    },
+    {
+      "id": "forum-route-telos-subregistry-2026-07-02",
+      "tool": "forum.route",
+      "status": "MATCH",
+      "metrics": {
+        "decided": "project-telos",
+        "confidence": 0.5,
+        "needs_escalation": false
+      },
+      "confidence": "high"
+    },
+    {
+      "id": "gather-docs-telos-docs-2026-07-02",
+      "tool": "gather.docs",
+      "status": "MATCH_WITH_DROPPED_PAYLOADS",
+      "metrics": {
+        "verified": true,
+        "dropped": 38,
+        "seal": "24b94d64f78e323245338463f79b6b87d97738bf1db489234826ff438a3d6270"
+      },
+      "summary": "Gather sealed a docs digest and returned a bounded catalog, with large payloads dropped from model context.",
+      "confidence": "high"
+    },
+    {
+      "id": "filesystem-counts-2026-07-02",
+      "tool": "filesystem-read",
+      "status": "MATCH",
+      "metrics": {
+        "repo_markdown_rst_docs": 94,
+        "docs_markdown_json_rst_files": 150,
+        "demo_mjs_json_md_files": 198,
+        "root_markdown_docs": 7,
+        "docs_root_markdown_docs": 14,
+        "docs_research_official_docs": 7,
+        "docs_research_whitepapers": 7,
+        "docs_outreach_docs": 12,
+        "docs_outreach_receipt_markdown": 7,
+        "docs_outreach_receipt_json": 61,
+        "docs_registry_json": 6,
+        "docs_registry_markdown": 5,
+        "demo_root_mjs": 106,
+        "demo_root_test_mjs": 54,
+        "demo_research_json": 13
+      },
+      "confidence": "high"
+    },
+    {
+      "id": "git-status-2026-07-02",
+      "tool": "git status",
+      "status": "DIRTY_BEHIND_ORIGIN",
+      "metrics": {
+        "branch": "main",
+        "behind_origin_main": 17,
+        "modified_tracked": [
+          "CHANGELOG.md",
+          "README.md",
+          "docs/CURRENT-STATE.md"
+        ],
+        "untracked_families": [
+          "QEC proof packet demo and source receipts",
+          "new consolidation docs",
+          "new registry docs",
+          "outreach packs",
+          "outreach receipts",
+          "publication queue",
+          "QEC official and whitepaper docs"
+        ]
+      },
+      "confidence": "high"
+    }
+  ],
+  "totals": {
+    "repo_markdown_rst_docs": 94,
+    "docs_markdown_json_rst_files": 150,
+    "demo_mjs_json_md_files": 198,
+    "root_markdown_docs": 7,
+    "docs_root_markdown_docs": 14,
+    "docs_research_official_docs": 7,
+    "docs_research_whitepapers": 7,
+    "docs_outreach_docs": 12,
+    "docs_outreach_receipt_markdown": 7,
+    "docs_outreach_receipt_json": 61,
+    "docs_registry_json": 6,
+    "docs_registry_markdown": 5,
+    "demo_root_mjs": 106,
+    "demo_root_test_mjs": 54,
+    "demo_research_json": 13
+  },
+  "rows": [
+    {
+      "id": "front-door",
+      "role": "public repository front door and release ledger",
+      "paths": [
+        "README.md",
+        "CHANGELOG.md",
+        "PRODUCT.md",
+        "USAGE.md",
+        "AGENTS.md",
+        "AUTHORS.md",
+        "CONTRIBUTING.md"
+      ],
+      "labels": [
+        "public-index"
+      ],
+      "current_action": "Keep concise and link to subregistries; do not move detailed strategy or raw research payloads into the README.",
+      "publication_boundary": "Front-door docs should only claim stable public demos and current registry links.",
+      "confidence": "high"
+    },
+    {
+      "id": "control-plane-docs",
+      "role": "current-state, architecture, roadmap, posture, connection, and inventory docs",
+      "paths": [
+        "docs/CURRENT-STATE.md",
+        "docs/PROJECT-TELOS-LARGE-SCALE-ROADMAP-2026-07-02.md",
+        "docs/DOCUMENTATION-CONSOLIDATION-REGISTRY-2026-07-02.md",
+        "docs/FRONTIER-RD-OPERATING-POSTURE-2026-07-02.md",
+        "docs/PROJECT-CONNECTION-MAP.md",
+        "docs/FORWARD-FACING-REPOSITORY-INVENTORY.md",
+        "docs/ARCHITECTURE.md",
+        "docs/HOW-IT-WORKS.md",
+        "docs/WHO-USES-IT.md"
+      ],
+      "labels": [
+        "public-index",
+        "registry-source"
+      ],
+      "current_action": "Use as human-readable control plane; refresh after Index, Forum, Gather, and Crucible passes.",
+      "publication_boundary": "These docs can state strategy and scope, but must distinguish committed, working-tree, planned, inferred, and unverifiable claims.",
+      "confidence": "high"
+    },
+    {
+      "id": "registry-control-plane",
+      "role": "machine and human registries for cross-repo and subregistry classification",
+      "paths": [
+        "docs/registry/documentation-registry.json",
+        "docs/registry/PUBLIC-WORKSPACE-DOC-CATALOG-2026-07-02.md",
+        "docs/registry/public-workspace-doc-catalog-2026-07-02.json",
+        "docs/registry/BUILD-ECOSYSTEM-SUBREGISTRY-2026-07-02.md",
+        "docs/registry/build-ecosystem-subregistry-2026-07-02.json",
+        "docs/registry/PROOF-WITNESSING-SUBREGISTRY-2026-07-02.md",
+        "docs/registry/proof-witnessing-subregistry-2026-07-02.json",
+        "docs/registry/SENSES-AND-SENSIBILITY-SUBREGISTRY-2026-07-02.md",
+        "docs/registry/senses-and-sensibility-subregistry-2026-07-02.json",
+        "docs/registry/TELOS-REPO-SUBREGISTRY-2026-07-02.md",
+        "docs/registry/telos-repo-subregistry-2026-07-02.json"
+      ],
+      "labels": [
+        "public-index",
+        "registry-source"
+      ],
+      "current_action": "Treat as the source of truth for documentation routing until superseded by newer dated registries.",
+      "publication_boundary": "Registries classify and route; they do not prove content correctness, publication readiness, or release status.",
+      "confidence": "high"
+    },
+    {
+      "id": "research-official-and-whitepapers",
+      "role": "public-safe official packets and longer paper drafts for frontier research lanes",
+      "paths": [
+        "docs/research/official/*.md",
+        "docs/research/whitepapers/*.md",
+        "docs/research/PUBLICATION-QUEUE-2026-07-02.md",
+        "docs/research/mycology-network-intelligence.md",
+        "docs/research/rl-scaling-receipt-spine.md"
+      ],
+      "labels": [
+        "public-official",
+        "public-whitepaper",
+        "paper-candidate"
+      ],
+      "current_action": "Route through the publication queue and require source, scope, falsification, reproduction, risk, and freshness gates.",
+      "publication_boundary": "Research docs are not field-result proof; each must retain non-claims for biology, QEC, robotics, PDE, TI Morse field intake, and BuildLang-native execution.",
+      "confidence": "high"
+    },
+    {
+      "id": "proof-demo-fixtures",
+      "role": "runnable local fixtures, tests, and source receipts for bounded proof packets",
+      "paths": [
+        "demo/causal-workbench-proof-packet.mjs",
+        "demo/causal-workbench-proof-packet.test.mjs",
+        "demo/embodied-sim2real-proof-packet.mjs",
+        "demo/embodied-sim2real-proof-packet.test.mjs",
+        "demo/quantum-error-correction-proof-packet.mjs",
+        "demo/quantum-error-correction-proof-packet.test.mjs",
+        "demo/research/*source-receipts.json",
+        "demo/research/youtube-ti-morse-field-receipts.json"
+      ],
+      "labels": [
+        "proof-demo",
+        "working-tree-evidence"
+      ],
+      "current_action": "Keep fixtures paired with targeted tests and explicit non-claims; mark QEC as working-tree evidence until committed.",
+      "publication_boundary": "Fixture MATCH does not imply real-world QEC, robotics, medical, industrial, causal-discovery, or BuildLang-native claims.",
+      "confidence": "high"
+    },
+    {
+      "id": "outreach-copy",
+      "role": "social, comment, and wave outreach drafts",
+      "paths": [
+        "docs/outreach/*.md"
+      ],
+      "labels": [
+        "outreach",
+        "quarantine-and-adapt"
+      ],
+      "current_action": "Keep separated from official claims; only cite public artifacts that are verified and live.",
+      "publication_boundary": "Outreach copy is not evidence. It can summarize a claim only after the official packet, proof demo, and receipt are ready.",
+      "confidence": "high"
+    },
+    {
+      "id": "outreach-and-proof-receipts",
+      "role": "run receipts, measurements, theses, reports, Learn packets, and Crucible registry objects",
+      "paths": [
+        "docs/outreach/receipts/**/*.json",
+        "docs/outreach/receipts/**/*.jsonl",
+        "docs/outreach/receipts/**/*.md"
+      ],
+      "labels": [
+        "proof-demo",
+        "receipt-source",
+        "internal-source"
+      ],
+      "current_action": "Use hashes, reports, and typed receipt refs in public docs; keep raw object stores and run internals out of front-door copy.",
+      "publication_boundary": "Receipts support bounded claims only when the referenced packet and verifier are in scope.",
+      "confidence": "high"
+    },
+    {
+      "id": "demo-and-integration-surface",
+      "role": "CLI demos, MCP tool catalog, host manifests, research seed adapters, and capability tests",
+      "paths": [
+        "demo/*.mjs",
+        "demo/*.test.mjs",
+        "demo/integrations/*.json",
+        "demo/integrations/*.md"
+      ],
+      "labels": [
+        "public-index",
+        "proof-demo",
+        "implementation-source"
+      ],
+      "current_action": "Treat tested demos as implementation evidence only for their bounded contracts; keep catalog and manifest parity validated.",
+      "publication_boundary": "A demo command proving a contract does not prove external service integration, production readiness, or scientific field results.",
+      "confidence": "high"
+    },
+    {
+      "id": "frontier-posture-and-risk",
+      "role": "frontier R&D scope and high-risk publication boundary",
+      "paths": [
+        "docs/FRONTIER-RD-OPERATING-POSTURE-2026-07-02.md",
+        "docs/research/PUBLICATION-QUEUE-2026-07-02.md",
+        "docs/CURRENT-STATE.md"
+      ],
+      "labels": [
+        "public-index",
+        "risk-boundary"
+      ],
+      "current_action": "Use to permit broad frontier R&D scope while requiring public-safe shapes for cybernetics, biochem, nuclear, AI/ML, quant, defense-adjacent, medical, and robotics material.",
+      "publication_boundary": "Public docs should emphasize research, measurement, safety, simulation, assurance, education, and accountable tooling rather than operational instructions.",
+      "confidence": "high"
+    },
+    {
+      "id": "superpowers-specs-and-verification",
+      "role": "implementation plans, specs, and verification reports",
+      "paths": [
+        "docs/superpowers/**/*.md",
+        "docs/verification/**/*.md",
+        "docs/verification/**/*.json"
+      ],
+      "labels": [
+        "internal-source",
+        "paper-source"
+      ],
+      "current_action": "Reference as implementation lineage and verification evidence only when the matching demo or report is current.",
+      "publication_boundary": "Specs and historical verification reports can drift from current behavior; rerun relevant commands before making capability claims.",
+      "confidence": "high"
+    },
+    {
+      "id": "funding-brand-and-support",
+      "role": "funding, brand, and support documentation",
+      "paths": [
+        "docs/funding/*.md",
+        "docs/brand/*.md",
+        "docs/PRESENTATION-STANDARD.md",
+        "docs/OSS-PROOF-SHOWCASE-CANDIDATES.md",
+        "docs/QUALITY-TOOL-REVIVAL.md"
+      ],
+      "labels": [
+        "public-index",
+        "internal-source"
+      ],
+      "current_action": "Keep budget and presentation docs factual and separate from scientific proof or market uniqueness claims.",
+      "publication_boundary": "Budget and brand docs are operational context, not proof of traction, funding, or market validation.",
+      "confidence": "high"
+    },
+    {
+      "id": "caches-and-local-payloads",
+      "role": "caches, local Gather payloads, temporary data, and ignored source-like material",
+      "paths": [
+        ".telos/**",
+        ".pytest_cache/**",
+        ".ruff_cache/**",
+        "docs/research/dogfood/**/.cache",
+        "docs/research/dogfood/tools/.pytest_cache/**"
+      ],
+      "labels": [
+        "internal-source",
+        "quarantine-and-adapt"
+      ],
+      "current_action": "Do not copy raw payloads, caches, private paths, or local run state into public docs.",
+      "publication_boundary": "Public artifacts may refer to digest seals, redacted refs, and claim boundaries only.",
+      "confidence": "high"
+    }
+  ],
+  "publication_controls": [
+    "Working-tree artifacts must be labeled working-tree-only until committed or explicitly published.",
+    "Outreach copy must not become evidence; official packets and proof demos come first.",
+    "Receipt object stores should be cited by digest, report, and typed packet reference rather than copied into front-door docs.",
+    "Raw transcripts, caches, and private/local payloads remain internal-source or quarantine-and-adapt.",
+    "Every research packet needs source, scope, falsification, reproduction, risk, and freshness gates before public promotion.",
+    "Every demo claim is bounded to the command, fixture, and negative controls that were actually run."
+  ],
+  "telos_integration_priorities": [
+    {
+      "rank": 1,
+      "name": "Commit-boundary publication gate",
+      "first_artifact": "Add a check that blocks README/site claims when the referenced demo or doc is still working-tree-only."
+    },
+    {
+      "rank": 2,
+      "name": "Receipt-index bridge",
+      "first_artifact": "Feed docs/outreach/receipts and demo/research receipts into Repo Proof Index or a Telos proof index row."
+    },
+    {
+      "rank": 3,
+      "name": "Outreach-to-official claim gate",
+      "first_artifact": "Require each outreach wave to cite an official packet, proof-demo command, and receipt id."
+    },
+    {
+      "rank": 4,
+      "name": "Cache and raw payload quarantine",
+      "first_artifact": "Add a stale/raw payload scan that flags docs/research/dogfood caches and local Gather payload references."
+    }
+  ],
+  "next_actions": [
+    "Keep this Telos repo subregistry synchronized with each documentation consolidation pass.",
+    "Create one row per public site page once the portfolio site QEC and proof-demo pages are committed and live.",
+    "Build a receipt-index bridge over docs/outreach/receipts and demo/research receipts.",
+    "Add a commit-boundary check before README, site, or outreach copy says a working-tree artifact is shipped.",
+    "Review docs/research/dogfood cache files and ignore policy so cache artifacts cannot pollute public research evidence."
+  ]
+}

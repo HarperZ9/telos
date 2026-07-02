@@ -58,6 +58,9 @@
         "gather.arxiv",
         "gather.run"
       ],
+      "auxiliary_tools": [
+        "gather.federation"
+      ],
       "freshness": {
         "status_tool": "gather.status",
         "expected_version": "1.5.0",
@@ -156,7 +159,10 @@
         "index_focus",
         "index_verify",
         "index_router",
-        "index_internals"
+        "index_internals",
+        "index.invalidate",
+        "index.select",
+        "index.wiki"
       ],
       "freshness": {
         "status_tool": "index.status",
@@ -247,7 +253,12 @@
         "status",
         "verify",
         "ledger_get",
-        "forum.submit"
+        "forum.submit",
+        "forum.context.preflight",
+        "forum.ledger.capsule",
+        "forum.prose.contract",
+        "forum.run.room",
+        "forum.runtime.inspect"
       ],
       "freshness": {
         "status_tool": "forum.status",

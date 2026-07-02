@@ -40,6 +40,7 @@ node demo/learning-forge.mjs
 node demo/learning-forge-labs.mjs --summary
 node demo/causal-workbench-proof-packet.mjs --summary
 node demo/embodied-sim2real-proof-packet.mjs --summary
+node demo/quantum-error-correction-proof-packet.mjs --summary
 node demo/showcase.mjs scout --fixture --json
 node demo/thermodynamic-ai-chip-receipt.mjs
 node demo/rendering-research.mjs
@@ -73,6 +74,7 @@ Use `node demo/learning-forge.mjs` for the receipt-backed education and research
 Use `node demo/learning-forge-labs.mjs --summary` for the executable Learning Forge lab contract: tiny autoregressive prediction, accuracy-per-token verification, MCP action receipts, coding-agent contamination checks, explanation faithfulness, spec representation, and stochastic-compute measurement.
 Use `node demo/causal-workbench-proof-packet.mjs --summary` for the causal research workbench preflight: a deterministic toy-DAG proof packet that verifies the exact minimal adjustment set `age + baseline_health`, rejects negative controls, and blocks causal-discovery, LLM causal-reasoning, biomedical, and BuildLang/buildc-native claims for this pass.
 Use `node demo/embodied-sim2real-proof-packet.mjs --summary` for the embodied robotics preflight: a deterministic differential-drive sim-to-real proof packet with units, command logs, predicted and observed traces, tolerances, safety envelope, latency bound, negative controls, and explicit non-claims.
+Use `node demo/quantum-error-correction-proof-packet.mjs --summary` for the quantum error-correction preflight: a deterministic 3-qubit bit-flip stabilizer proof packet with logical states, stabilizers, syndrome table, correction map, negative controls, and explicit non-claims.
 Use `node demo/showcase.mjs scout --fixture --json` for the OSS Proof Showcase lane: fixture-first public issue ranking, PR-readiness packet shape, and optional live GitHub scout smoke without making public changes.
 Use `node demo/rendering-capabilities.mjs --summary` for the WebGPU/WebGL/canvas/static renderer selection and fallback contract.
 Use `node demo/measurement-layers.mjs --summary` for ten runnable meters across histogram, dither, splat, cluster, audio, flicker, curvature, interaction, uncertainty, and frame budget signals.
@@ -102,6 +104,41 @@ guess. The useful next pressure is verification, testing against real workflows,
 traction from people willing to inspect receipts, collaborator feedback, and modest
 grassroots research funding.
 
+## Roadmap and consolidation
+
+Project Telos is now tracked as a frontier R&D substrate, not only as an
+agent-accountability demo. The current consolidation plan is
+[`docs/PROJECT-TELOS-LARGE-SCALE-ROADMAP-2026-07-02.md`](docs/PROJECT-TELOS-LARGE-SCALE-ROADMAP-2026-07-02.md):
+it maps Telos, Gather, Index, Forum, Crucible, Learn, BuildLang/buildc,
+build-universe, Build Color, calibration, model foundry, browser evidence, and
+research packets into a family of proof-centered megatools.
+
+The documentation control plane is
+[`docs/DOCUMENTATION-CONSOLIDATION-REGISTRY-2026-07-02.md`](docs/DOCUMENTATION-CONSOLIDATION-REGISTRY-2026-07-02.md).
+It classifies docs as public index, official, whitepaper, proof demo,
+paper candidate, internal source, quarantine-and-adapt, or deprecated lineage.
+The machine-readable registry is
+[`docs/registry/documentation-registry.json`](docs/registry/documentation-registry.json),
+and the current publication queue is
+[`docs/research/PUBLICATION-QUEUE-2026-07-02.md`](docs/research/PUBLICATION-QUEUE-2026-07-02.md).
+The cross-repo documentation catalog is
+[`docs/registry/PUBLIC-WORKSPACE-DOC-CATALOG-2026-07-02.md`](docs/registry/PUBLIC-WORKSPACE-DOC-CATALOG-2026-07-02.md).
+The Senses and Sensibility subregistry is
+[`docs/registry/SENSES-AND-SENSIBILITY-SUBREGISTRY-2026-07-02.md`](docs/registry/SENSES-AND-SENSIBILITY-SUBREGISTRY-2026-07-02.md).
+The Build ecosystem subregistry is
+[`docs/registry/BUILD-ECOSYSTEM-SUBREGISTRY-2026-07-02.md`](docs/registry/BUILD-ECOSYSTEM-SUBREGISTRY-2026-07-02.md).
+The proof/witnessing subregistry is
+[`docs/registry/PROOF-WITNESSING-SUBREGISTRY-2026-07-02.md`](docs/registry/PROOF-WITNESSING-SUBREGISTRY-2026-07-02.md).
+The Telos repo subregistry is
+[`docs/registry/TELOS-REPO-SUBREGISTRY-2026-07-02.md`](docs/registry/TELOS-REPO-SUBREGISTRY-2026-07-02.md).
+The frontier R&D posture is
+[`docs/FRONTIER-RD-OPERATING-POSTURE-2026-07-02.md`](docs/FRONTIER-RD-OPERATING-POSTURE-2026-07-02.md):
+advanced computation, AI/ML, mathematics, physics, biology, medicine,
+robotics, cybernetics, quant, finance, color/rendering/scientific compute,
+nuclear and energy systems, and defense-adjacent technology are in scope when
+the work is routed through source evidence, bounded experiments, receipts,
+verification, and publication gates.
+
 ## What to test first
 
 - Pick a workflow where a model answer is not enough: source intake, codebase handoff, agent action, creative export, or math/physics demo.
@@ -119,6 +156,8 @@ The current research queue also includes receipt-only source leads from Inigo Qu
 The causal research workbench preflight under [`demo/research/causal-workbench-source-receipts.json`](demo/research/causal-workbench-source-receipts.json) and `node demo/causal-workbench-proof-packet.mjs --summary` promotes the causal lane into a replayable toy-DAG receipt. It returns `CAUSAL_DAG_FIXTURE_MATCH`, verifies `age + baseline_health` as the exact minimal adjustment set, rejects configured negative controls, and explicitly does not claim causal discovery, LLM causal reasoning, medical recommendation, or BuildLang/buildc-native execution yet.
 
 The embodied sim-to-real preflight under [`demo/research/embodied-sim2real-source-receipts.json`](demo/research/embodied-sim2real-source-receipts.json) and `node demo/embodied-sim2real-proof-packet.mjs --summary` promotes the robotics lane into a replayable differential-drive receipt. It returns `EMBODIED_SIM2REAL_FIXTURE_MATCH`, checks units, commands, traces, safety envelope, latency, and five negative controls, and explicitly does not claim real robot safety, surgical/medical validity, foundation-model validation, large-scale sim-to-real transfer, or BuildLang/buildc-native execution yet.
+
+The quantum error-correction preflight under [`demo/research/quantum-error-correction-source-receipts.json`](demo/research/quantum-error-correction-source-receipts.json) and `node demo/quantum-error-correction-proof-packet.mjs --summary` promotes the quantum-computing lane into a replayable 3-qubit stabilizer-code receipt. It returns `QEC_STABILIZER_FIXTURE_MATCH`, checks no-error and single Pauli-X recovery for both logical basis states, rejects or marks unverifiable five negative controls, and explicitly does not claim surface-code decoding, hardware QEC, fault-tolerant computation, quantum advantage, cryptographic security, or BuildLang/buildc-native execution yet.
 
 `node demo/thermodynamic-ai-chip-receipt.mjs` promotes the verified Machine Learning Street Talk interview with Thomas Ahle into a transcript-backed Telos research packet. The packet turns the discussion into a public-source integration lane for Normal Computing-adjacent work: spec representation, Verilog/formal receipts, stochastic simulation, uncertainty meters, and hybrid search/check loops. It records transcript themes as `MATCH`, treats Telos integration as `INFERRED`, and keeps Normal Computing, ProgramBench, and thermodynamic-chip technical correctness `UNVERIFIABLE_FROM_THIS_PACKET` until primary sources and independent checks promote them.
 
@@ -157,7 +196,7 @@ The first rule is visibility before transplanting: a dormant tool gets a lane, a
 - **Proof lane:** `node demo/showcase.mjs scout --fixture --json` starts the OSS Proof Showcase, a local-first path from public issue evidence to PR-readiness packets. `node demo/proof.mjs agent-action --demo` assembles the agent-action proof packet, which joins source refs, context, route, admission, side effects, and output digests through a verifier that can fail and an optional Emet witness; replay any packet with `node demo/proof.mjs verify`.
 - **Release:** `0.1.0` source registry package; command surface is `node demo/run.mjs`, `node demo/room.mjs`, `node demo/status.mjs`, `node demo/doctor.mjs`, `node demo/catalog.mjs`, `node demo/server-manifest.mjs`, `node demo/mcp-freshness.mjs`, `node demo/ci-doctor.mjs`, `node demo/ci-triage.mjs`, `node demo/presentation-doctor.mjs`, `node demo/accessibility-doctor.mjs`, `node demo/performance-doctor.mjs`, `node demo/compatibility-doctor.mjs`, `node demo/operator-doctor.mjs`, `node demo/admission-telemetry.mjs`, `node demo/context-envelope.mjs`, `node demo/context-pack.mjs`, `node demo/action-receipt.mjs`, `node demo/loop-ledger.mjs`, `node demo/model-foundry.mjs`, `node demo/learning-forge.mjs`, `node demo/learning-forge-labs.mjs`, `node demo/showcase.mjs`, `node demo/research-seed.mjs`, `node demo/thermodynamic-ai-chip-receipt.mjs`, `node demo/rendering-research.mjs`, `node demo/rendering-capabilities.mjs`, `node demo/measurement-layers.mjs`, `node demo/creative-engine.mjs`, `node demo/creative-kernels.mjs`, `node demo/revival-registry.mjs`, `node demo/second-level-flagship-queue.mjs`, `node demo/workstation-substrate.mjs`, `node demo/display-calibration.mjs`, `node demo/browser-evidence.mjs`, and `node demo/flagship-workflow.mjs`.
 - **Operator surface:** `node demo/telos-mcp.mjs` exposes native MCP tools: `telos.status`, `telos.doctor`, `telos.room`, `telos.catalog`, `telos.workflow`, `telos.server.manifest`, `telos.mcp.freshness`, `telos.ci.doctor`, `telos.ci.triage`, `telos.presentation.doctor`, `telos.accessibility.doctor`, `telos.performance.doctor`, `telos.compatibility.doctor`, `telos.operator.doctor`, `telos.admission.telemetry`, `telos.context.envelope`, `telos.context.pack`, `telos.action.receipt`, `telos.loop.ledger`, `telos.objective.monitor`, `telos.model.foundry`, `telos.learning.forge`, `telos.learning.labs`, `telos.research.seed`, `telos.research.thermodynamic`, `telos.rendering.research`, `telos.rendering.capabilities`, `telos.measurement.layers`, `telos.creative.engine`, `telos.creative.kernels`, `telos.revival.registry`, `telos.second_level.queue`, `telos.workstation.substrate`, `telos.display.calibration`, `telos.native.control`, `telos.browser.evidence`, and `telos.showcase.scout`.
-- **Current floor:** the operator room reconciles 65 preferred tools plus 12 declared auxiliary compatibility tools across gather, crucible, index, forum, and telos, with a provider-neutral catalog, executable server manifest, MCP freshness verifier, CI doctor for GitHub Actions runtime/action drift, CI triage for separating fatal gates from runtime warnings, presentation doctor for README/changelog/brand parity, accessibility doctor for Studio host quality, performance doctor for static byte/asset/embed budgets, compatibility doctor for protocol and host parity, operator doctor for discoverability parity, browser evidence packets for automation review, causal and embodied proof packets, and OSS Proof Showcase scout across CLI, MCP, plugin, IDE, TUI, and app hosts. See [CHANGELOG.md](CHANGELOG.md).
+- **Current floor:** the operator room reconciles 65 preferred tools plus 12 declared auxiliary compatibility tools across gather, crucible, index, forum, and telos, with a provider-neutral catalog, executable server manifest, MCP freshness verifier, CI doctor for GitHub Actions runtime/action drift, CI triage for separating fatal gates from runtime warnings, presentation doctor for README/changelog/brand parity, accessibility doctor for Studio host quality, performance doctor for static byte/asset/embed budgets, compatibility doctor for protocol and host parity, operator doctor for discoverability parity, browser evidence packets for automation review, causal, embodied, and quantum proof packets, and OSS Proof Showcase scout across CLI, MCP, plugin, IDE, TUI, and app hosts. See [CHANGELOG.md](CHANGELOG.md).
 - **Proof lane:** `node demo/showcase.mjs scout --fixture --json` starts the OSS Proof Showcase, a local-first path from public issue evidence to PR-readiness packets.
 - **Brand renderer:** `python tools/render_flagship_heroes.py --check-existing --public-root ..` verifies the five README hero PNGs and brand receipts without redistributing the operator-owned fonts.
 

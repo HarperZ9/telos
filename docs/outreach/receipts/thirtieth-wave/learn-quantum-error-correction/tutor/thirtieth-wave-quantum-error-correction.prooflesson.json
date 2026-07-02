@@ -1,0 +1,174 @@
+{
+  "kind": "proof-lesson",
+  "packet_id": "thirtieth-wave-quantum-error-correction",
+  "verdict": "MATCH",
+  "lesson": {
+    "kind": "proof-lesson",
+    "packet_id": "thirtieth-wave-quantum-error-correction",
+    "packet_version": "proof-packet/thirtieth-wave-quantum-error-correction/v1",
+    "claim": "The quantum error-correction preflight is a replayable local 3-qubit bit-flip stabilizer proof packet: it declares logical states, stabilizers, syndrome bits, correction map, supported error model, emits QEC_STABILIZER_FIXTURE_MATCH for no-error and single Pauli-X errors on both logical basis states, rejects or marks unverifiable five negative controls, and keeps surface-code, hardware QEC, fault-tolerant computation, quantum advantage, cryptographic, and BuildLang/buildc-native claims out of scope.",
+    "scope": "Project Telos thirtieth-wave prooflesson for proof-carrying quantum-computing claims",
+    "verdict": "MATCH",
+    "sources": [
+      {
+        "ref": "demo/research/quantum-error-correction-source-receipts.json",
+        "sha256": "3a932329844b84afb50cabacc048cb52815a19985215fea802891a6768f9ff05"
+      },
+      {
+        "ref": "demo/quantum-error-correction-proof-packet.mjs",
+        "sha256": "ebf761cea222f85694de7581a9ac01af3b2a649a5115297dd1ff26dafb140aea"
+      },
+      {
+        "ref": "demo/quantum-error-correction-proof-packet.test.mjs",
+        "sha256": "c4fc44f0803ab848452f5badee2fbeaae94d69dfcc280c81187afbea603e6ac4"
+      },
+      {
+        "ref": "docs/outreach/receipts/thirtieth-wave/quantum-error-correction-proof-packet-2026-07-02.json",
+        "sha256": "152b691a4f78c776f58f5109ef1b181fe4624c6d882a0275778e58e93faafd0c"
+      },
+      {
+        "ref": "docs/outreach/receipts/thirtieth-wave-quantum-error-correction-run-2026-07-02.json",
+        "sha256": "3d46985ec81ed6330bd38ee87f05a93814503dca286a74d2718ce02e24cca438"
+      },
+      {
+        "ref": "docs/outreach/receipts/thirtieth-wave-quantum-error-correction-report-2026-07-02.md",
+        "sha256": "1612e3007d41bde5f106aa2b4c99156ad0af131abf10a362315040080ee01872"
+      }
+    ],
+    "scaffold": [
+      {
+        "step": 1,
+        "prompt": "Restate, in your own words, exactly what this claim asserts and nothing more: \"The quantum error-correction preflight is a replayable local 3-qubit bit-flip stabilizer proof packet: it declares logical states, stabilizers, syndrome bits, correction map, supported error model, emits QEC_STABILIZER_FIXTURE_MATCH for no-error and single Pauli-X errors on both logical basis states, rejects or marks unverifiable five negative controls, and keeps surface-code, hardware QEC, fault-tolerant computation, quantum advantage, cryptographic, and BuildLang/buildc-native claims out of scope.\" (scope: Project Telos thirtieth-wave prooflesson for proof-carrying quantum-computing claims)."
+      },
+      {
+        "step": 2,
+        "prompt": "Judging by their refs alone (demo/research/quantum-error-correction-source-receipts.json, demo/quantum-error-correction-proof-packet.mjs, demo/quantum-error-correction-proof-packet.test.mjs, docs/outreach/receipts/thirtieth-wave/quantum-error-correction-proof-packet-2026-07-02.json, docs/outreach/receipts/thirtieth-wave-quantum-error-correction-run-2026-07-02.json, docs/outreach/receipts/thirtieth-wave-quantum-error-correction-report-2026-07-02.md), predict what each recorded source could contribute as evidence for or against the claim."
+      },
+      {
+        "step": 3,
+        "prompt": "The packet's overall verdict is MATCH. Before reading anything else, derive what a MATCH verdict must mean about the relationship between the claim and the recorded checks."
+      },
+      {
+        "step": 4,
+        "prompt": "List the checks you would run to reach your own verdict on this claim, then compare your list against what the packet's verdict implies was actually checked."
+      }
+    ],
+    "retrievalQuestions": [
+      {
+        "question": "What evidence would falsify this claim: \"The quantum error-correction preflight is a replayable local 3-qubit bit-flip stabilizer proof packet: it declares logical states, stabilizers, syndrome bits, correction map, supported error model, emits QEC_STABILIZER_FIXTURE_MATCH for no-error and single Pauli-X errors on both logical basis states, rejects or marks unverifiable five negative controls, and keeps surface-code, hardware QEC, fault-tolerant computation, quantum advantage, cryptographic, and BuildLang/buildc-native claims out of scope.\"?",
+        "derivedFrom": "claim"
+      },
+      {
+        "question": "Which recorded source would you re-check first, and what does its content hash let you prove about it?",
+        "derivedFrom": "sources"
+      },
+      {
+        "question": "What does an overall verdict of MATCH entitle you to claim, and what does it not?",
+        "derivedFrom": "verdicts.overall"
+      },
+      {
+        "question": "The packet's scope is \"Project Telos thirtieth-wave prooflesson for proof-carrying quantum-computing claims\". Give one claim that would exceed that scope.",
+        "derivedFrom": "scope"
+      }
+    ],
+    "verifierBinding": {
+      "packet_id": "thirtieth-wave-quantum-error-correction",
+      "verdict": "MATCH",
+      "sourceHashes": [
+        "3a932329844b84afb50cabacc048cb52815a19985215fea802891a6768f9ff05",
+        "ebf761cea222f85694de7581a9ac01af3b2a649a5115297dd1ff26dafb140aea",
+        "c4fc44f0803ab848452f5badee2fbeaae94d69dfcc280c81187afbea603e6ac4",
+        "152b691a4f78c776f58f5109ef1b181fe4624c6d882a0275778e58e93faafd0c",
+        "3d46985ec81ed6330bd38ee87f05a93814503dca286a74d2718ce02e24cca438",
+        "1612e3007d41bde5f106aa2b4c99156ad0af131abf10a362315040080ee01872"
+      ]
+    },
+    "boundary": "Lesson scaffold only -- prompts for the operator to derive the reasoning; never an answer dump, never a graded-assessment answer."
+  },
+  "misconception": null,
+  "sourceCount": 6,
+  "entries": [
+    {
+      "seq": 0,
+      "prevHash": "0000000000000000000000000000000000000000000000000000000000000000",
+      "hash": "fe9bbdc07e8be66b15097386b2feb0bfa869ce0d52b259e22ac9e24f08189df2",
+      "entry": {
+        "kind": "packet-binding",
+        "packet_id": "thirtieth-wave-quantum-error-correction",
+        "verdict": "MATCH",
+        "claim": "The quantum error-correction preflight is a replayable local 3-qubit bit-flip stabilizer proof packet: it declares logical states, stabilizers, syndrome bits, correction map, supported error model, emits QEC_STABILIZER_FIXTURE_MATCH for no-error and single Pauli-X errors on both logical basis states, rejects or marks unverifiable five negative controls, and keeps surface-code, hardware QEC, fault-tolerant computation, quantum advantage, cryptographic, and BuildLang/buildc-native claims out of scope."
+      }
+    },
+    {
+      "seq": 1,
+      "prevHash": "fe9bbdc07e8be66b15097386b2feb0bfa869ce0d52b259e22ac9e24f08189df2",
+      "hash": "3843bb40a40386ce634a295022dc8f112821757304b2f0bf008297c8879d09fa",
+      "entry": {
+        "kind": "source",
+        "ref": "demo/research/quantum-error-correction-source-receipts.json",
+        "sha256": "3a932329844b84afb50cabacc048cb52815a19985215fea802891a6768f9ff05"
+      }
+    },
+    {
+      "seq": 2,
+      "prevHash": "3843bb40a40386ce634a295022dc8f112821757304b2f0bf008297c8879d09fa",
+      "hash": "316db11c00bb698eebf38d12f5e594aea7aae1ccc5dd6d906f457c99934aa6dd",
+      "entry": {
+        "kind": "source",
+        "ref": "demo/quantum-error-correction-proof-packet.mjs",
+        "sha256": "ebf761cea222f85694de7581a9ac01af3b2a649a5115297dd1ff26dafb140aea"
+      }
+    },
+    {
+      "seq": 3,
+      "prevHash": "316db11c00bb698eebf38d12f5e594aea7aae1ccc5dd6d906f457c99934aa6dd",
+      "hash": "cec7207c93c72ebb1a8a16b2973c3bdc28a029bfb5fd1255889c6c8156235916",
+      "entry": {
+        "kind": "source",
+        "ref": "demo/quantum-error-correction-proof-packet.test.mjs",
+        "sha256": "c4fc44f0803ab848452f5badee2fbeaae94d69dfcc280c81187afbea603e6ac4"
+      }
+    },
+    {
+      "seq": 4,
+      "prevHash": "cec7207c93c72ebb1a8a16b2973c3bdc28a029bfb5fd1255889c6c8156235916",
+      "hash": "b9ff38d849c0cdf9906eaf85d24e239ffaf319094821212675673aa2a7c9cef3",
+      "entry": {
+        "kind": "source",
+        "ref": "docs/outreach/receipts/thirtieth-wave/quantum-error-correction-proof-packet-2026-07-02.json",
+        "sha256": "152b691a4f78c776f58f5109ef1b181fe4624c6d882a0275778e58e93faafd0c"
+      }
+    },
+    {
+      "seq": 5,
+      "prevHash": "b9ff38d849c0cdf9906eaf85d24e239ffaf319094821212675673aa2a7c9cef3",
+      "hash": "f5dea27a779f7456a8d00263d4b385da5b3c1399b8713d56a9595d418c6242a1",
+      "entry": {
+        "kind": "source",
+        "ref": "docs/outreach/receipts/thirtieth-wave-quantum-error-correction-run-2026-07-02.json",
+        "sha256": "3d46985ec81ed6330bd38ee87f05a93814503dca286a74d2718ce02e24cca438"
+      }
+    },
+    {
+      "seq": 6,
+      "prevHash": "f5dea27a779f7456a8d00263d4b385da5b3c1399b8713d56a9595d418c6242a1",
+      "hash": "636fe7314698a6f78acbbd46c56f9476852f9894c12ec567c38a86a104df65f0",
+      "entry": {
+        "kind": "source",
+        "ref": "docs/outreach/receipts/thirtieth-wave-quantum-error-correction-report-2026-07-02.md",
+        "sha256": "1612e3007d41bde5f106aa2b4c99156ad0af131abf10a362315040080ee01872"
+      }
+    },
+    {
+      "seq": 7,
+      "prevHash": "636fe7314698a6f78acbbd46c56f9476852f9894c12ec567c38a86a104df65f0",
+      "hash": "550d654be6e855ccfcc64b954d526c9d5bb1c62bcb18b1d51b6e1bcd8dfab8b2",
+      "entry": {
+        "kind": "lesson-digest",
+        "digest": "sha256:e3de4b1bbafe6a024f437f5250d385ee1086b4fde8e51b39ebd33d3c330f086b",
+        "misconception_class": null
+      }
+    }
+  ],
+  "boundary": "Lesson receipt only -- binds the lesson to its packet's verdict and source hashes; never a graded-assessment answer."
+}

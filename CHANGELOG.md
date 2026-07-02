@@ -61,6 +61,41 @@ All notable changes to Project Telos. Telos is currently a source demo and share
   `agent-action-proof-packet/v0` contract. Registers the read-only `telos.proof`
   MCP tool that emits the fixture demo packet, moving the five-flagship catalog
   from 65 to 66 tools.
+
+- Documentation consolidation: adds
+  `docs/PROJECT-TELOS-LARGE-SCALE-ROADMAP-2026-07-02.md`,
+  `docs/DOCUMENTATION-CONSOLIDATION-REGISTRY-2026-07-02.md`, and
+  `docs/FRONTIER-RD-OPERATING-POSTURE-2026-07-02.md` as the new control-plane
+  docs for Project Telos roadmap, corpus classification, publication gates,
+  Build ecosystem integration, and broadened frontier R&D scope. The pass also
+  adds `docs/registry/documentation-registry.json` and
+  `docs/research/PUBLICATION-QUEUE-2026-07-02.md`, plus the cross-repo
+  documentation catalog in
+  `docs/registry/PUBLIC-WORKSPACE-DOC-CATALOG-2026-07-02.md` and
+  `docs/registry/public-workspace-doc-catalog-2026-07-02.json`, the Senses and
+  Sensibility subregistry in
+  `docs/registry/SENSES-AND-SENSIBILITY-SUBREGISTRY-2026-07-02.md` and
+  `docs/registry/senses-and-sensibility-subregistry-2026-07-02.json`, and the Build
+  ecosystem subregistry in
+  `docs/registry/BUILD-ECOSYSTEM-SUBREGISTRY-2026-07-02.md` and
+  `docs/registry/build-ecosystem-subregistry-2026-07-02.json`, plus the
+  proof/witnessing subregistry in
+  `docs/registry/PROOF-WITNESSING-SUBREGISTRY-2026-07-02.md` and
+  `docs/registry/proof-witnessing-subregistry-2026-07-02.json`, plus the Telos
+  repo subregistry in
+  `docs/registry/TELOS-REPO-SUBREGISTRY-2026-07-02.md` and
+  `docs/registry/telos-repo-subregistry-2026-07-02.json`. It links the
+  docs from `README.md` and `docs/CURRENT-STATE.md` while keeping public claims
+  receipt-bound and high-risk source details fenced.
+
+- Quantum Error-Correction preflight: adds
+  `demo/quantum-error-correction-proof-packet.mjs`, a deterministic 3-qubit
+  bit-flip stabilizer proof packet, source-ledger receipts, official,
+  working-paper, outreach, Crucible, and Learn prooflesson artifacts. The pass
+  verifies `QEC_STABILIZER_FIXTURE_MATCH` for the local fixture while keeping
+  surface-code, hardware QEC, fault-tolerant computation, quantum advantage,
+  cryptographic, and BuildLang/buildc-native claims out of scope.
+
 - Embodied Sim-to-Real preflight: adds
   `demo/embodied-sim2real-proof-packet.mjs`, a deterministic
   differential-drive proof packet, source-ledger receipts, official,
