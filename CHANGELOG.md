@@ -21,6 +21,29 @@ All notable changes to Project Telos. Telos is currently a source demo and share
   `agent-action-proof-packet/v0` contract. Registers the read-only `telos.proof`
   MCP tool that emits the fixture demo packet, moving the five-flagship catalog
   from 65 to 66 tools.
+- Embodied Sim-to-Real preflight: adds
+  `demo/embodied-sim2real-proof-packet.mjs`, a deterministic
+  differential-drive proof packet, source-ledger receipts, official,
+  working-paper, outreach, Crucible, and Learn prooflesson artifacts. The pass
+  verifies `EMBODIED_SIM2REAL_FIXTURE_MATCH` for the local fixture while
+  keeping real robot safety, medical robotics, foundation-model, large-scale
+  sim-to-real, and BuildLang/buildc-native claims out of scope.
+
+- Causal Research Workbench preflight: adds
+  `demo/causal-workbench-proof-packet.mjs`, a deterministic toy-DAG proof
+  packet, source-ledger receipts, official, working-paper, outreach, Crucible,
+  and Learn prooflesson artifacts. The pass verifies `CAUSAL_DAG_FIXTURE_MATCH`
+  for the local fixture while keeping causal discovery, LLM causal reasoning,
+  biomedical, and BuildLang/buildc-native claims out of scope.
+
+- TI Morse / Relentless field intake: adds
+  `demo/research/youtube-ti-morse-field-receipts.json`, a bounded source-ledger
+  for five metadata/transcript receipts and one channel-list receipt, plus
+  official, working-paper, outreach, Crucible, and Learn prooflesson artifacts.
+  The pass maps industrial science proof packets, causal research workbench,
+  agentic benchmark foundry, and compute/infrastructure ledger as inferred
+  megatool lanes while leaving domain correctness
+  `UNVERIFIABLE_UNTIL_PRIMARY_SOURCE_OR_REPLAY`.
 
 - Browser evidence kernel: adds `project-telos.browser-evidence/v1`,
   `node demo/browser-evidence.mjs`, and `telos.browser.evidence` as the

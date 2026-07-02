@@ -1,0 +1,191 @@
+{
+  "ok": true,
+  "thesis": {
+    "id": "8324b46cc2d915a0",
+    "title": "Twenty-sixth-wave TI Morse field intake packet",
+    "registered_at": 1783019877.9583855,
+    "disposition": "publishable",
+    "seal": "8324b46cc2d915a0f359e0fcb1912370d38bd11692154fe3f3d46b2a7149c559",
+    "claims": [
+      {
+        "id": "7f738875a27337d5",
+        "sha256": "7f738875a27337d59619da4896b8d6224d7f71c23e43a9059d956ec9cc08567a"
+      },
+      {
+        "id": "11f52bb318c351b3",
+        "sha256": "11f52bb318c351b3f7f2927a8165d5fba97d5d284b2406ff02bba523ecbb682e"
+      },
+      {
+        "id": "005200142ea1785e",
+        "sha256": "005200142ea1785e85fe8ead84d50fa3e5e3662cb6a27188302871985ef51682"
+      }
+    ]
+  },
+  "refutations": [
+    {
+      "claim_id": "7f738875a27337d5",
+      "claim_sha256": "7f738875a27337d59619da4896b8d6224d7f71c23e43a9059d956ec9cc08567a",
+      "challenge": "test the stated falsification: The ledger is missing any requested video, lacks metadata or transcript receipt entries for a video, or lacks the requested channel snapshot.",
+      "measurable": "The ledger is missing any requested video, lacks metadata or transcript receipt entries for a video, or lacks the requested channel snapshot.",
+      "source": "null"
+    },
+    {
+      "claim_id": "11f52bb318c351b3",
+      "claim_sha256": "11f52bb318c351b3f7f2927a8165d5fba97d5d284b2406ff02bba523ecbb682e",
+      "challenge": "test the stated falsification: Publication copy promotes nuclear, causal, AGI, microscopy, AI-scale, or infrastructure claims as verified domain facts from the video intake alone.",
+      "measurable": "Publication copy promotes nuclear, causal, AGI, microscopy, AI-scale, or infrastructure claims as verified domain facts from the video intake alone.",
+      "source": "null"
+    },
+    {
+      "claim_id": "005200142ea1785e",
+      "claim_sha256": "005200142ea1785e85fe8ead84d50fa3e5e3662cb6a27188302871985ef51682",
+      "challenge": "test the stated falsification: Tracked JSON or docs include raw transcript text, raw video payloads, or channel descriptions as evidence bodies.",
+      "measurable": "Tracked JSON or docs include raw transcript text, raw video payloads, or channel descriptions as evidence bodies.",
+      "source": "null"
+    }
+  ],
+  "assessment": {
+    "started_at": 1783019877.966634,
+    "thesis_id": "8324b46cc2d915a0",
+    "thesis_seal": "8324b46cc2d915a0f359e0fcb1912370d38bd11692154fe3f3d46b2a7149c559",
+    "claims": 3,
+    "match": 3,
+    "drift": 0,
+    "unverifiable": 0,
+    "verdict_seal": "58e94f403ce25779b31dbe2efee27d0a2badc027563d28743bfa17eeefc805e8",
+    "measurement_seal": "91e0b5158a5c415bbe97fae4665de73391af95bd29843bf2273a1ac4ad78a5cf",
+    "disposition": "publishable",
+    "stored": null,
+    "verdicts": [
+      {
+        "claim_id": "7f738875a27337d5",
+        "claim_sha256": "7f738875a27337d59619da4896b8d6224d7f71c23e43a9059d956ec9cc08567a",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.1,
+        "margin": 1.0,
+        "method": "youtube-field-ledger-shape-test",
+        "grounds": "deviation 0 within tolerance 0.1",
+        "disposition": "publishable"
+      },
+      {
+        "claim_id": "11f52bb318c351b3",
+        "claim_sha256": "11f52bb318c351b3f7f2927a8165d5fba97d5d284b2406ff02bba523ecbb682e",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.1,
+        "margin": 1.0,
+        "method": "claim-boundary-copy-scan",
+        "grounds": "deviation 0 within tolerance 0.1",
+        "disposition": "publishable"
+      },
+      {
+        "claim_id": "005200142ea1785e",
+        "claim_sha256": "005200142ea1785e85fe8ead84d50fa3e5e3662cb6a27188302871985ef51682",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.1,
+        "margin": 1.0,
+        "method": "raw-payload-boundary-scan",
+        "grounds": "deviation 0 within tolerance 0.1",
+        "disposition": "publishable"
+      }
+    ],
+    "measurements": [
+      {
+        "claim_id": "7f738875a27337d5",
+        "claim_sha256": "7f738875a27337d59619da4896b8d6224d7f71c23e43a9059d956ec9cc08567a",
+        "deviation": 0.0,
+        "tolerance": 0.1,
+        "method": "youtube-field-ledger-shape-test",
+        "measured_at": 1783019877.966634,
+        "evidence": [
+          "demo/research/youtube-ti-morse-field-receipts.json",
+          "demo/youtube-research-receipts.test.mjs"
+        ]
+      },
+      {
+        "claim_id": "11f52bb318c351b3",
+        "claim_sha256": "11f52bb318c351b3f7f2927a8165d5fba97d5d284b2406ff02bba523ecbb682e",
+        "deviation": 0.0,
+        "tolerance": 0.1,
+        "method": "claim-boundary-copy-scan",
+        "measured_at": 1783019877.966634,
+        "evidence": [
+          "docs/outreach/TWENTY-SIXTH-WAVE-TI-MORSE-FIELD-INTAKE-2026-07-02.md",
+          "docs/research/whitepapers/TI-MORSE-FIELD-SCOPE-INTEGRATION-2026-07-02.md",
+          "docs/research/official/TI-MORSE-FIELD-SCOPE-INTEGRATION-2026-07-02.md"
+        ]
+      },
+      {
+        "claim_id": "005200142ea1785e",
+        "claim_sha256": "005200142ea1785e85fe8ead84d50fa3e5e3662cb6a27188302871985ef51682",
+        "deviation": 0.0,
+        "tolerance": 0.1,
+        "method": "raw-payload-boundary-scan",
+        "measured_at": 1783019877.966634,
+        "evidence": [
+          "demo/research/youtube-ti-morse-field-receipts.json",
+          "demo/youtube-research-receipts.test.mjs"
+        ]
+      }
+    ],
+    "seal": "8a19992119728a4db0a20c22fd99a60c4b0c5e99da8a9421e57e9191d0517cc3"
+  },
+  "verdicts": [
+    {
+      "claim_id": "7f738875a27337d5",
+      "claim_sha256": "7f738875a27337d59619da4896b8d6224d7f71c23e43a9059d956ec9cc08567a",
+      "status": "MATCH",
+      "disposition": "publishable",
+      "deviation": 0.0,
+      "tolerance": 0.1,
+      "margin": 1.0,
+      "method": "youtube-field-ledger-shape-test",
+      "grounds": "deviation 0 within tolerance 0.1"
+    },
+    {
+      "claim_id": "11f52bb318c351b3",
+      "claim_sha256": "11f52bb318c351b3f7f2927a8165d5fba97d5d284b2406ff02bba523ecbb682e",
+      "status": "MATCH",
+      "disposition": "publishable",
+      "deviation": 0.0,
+      "tolerance": 0.1,
+      "margin": 1.0,
+      "method": "claim-boundary-copy-scan",
+      "grounds": "deviation 0 within tolerance 0.1"
+    },
+    {
+      "claim_id": "005200142ea1785e",
+      "claim_sha256": "005200142ea1785e85fe8ead84d50fa3e5e3662cb6a27188302871985ef51682",
+      "status": "MATCH",
+      "disposition": "publishable",
+      "deviation": 0.0,
+      "tolerance": 0.1,
+      "margin": 1.0,
+      "method": "raw-payload-boundary-scan",
+      "grounds": "deviation 0 within tolerance 0.1"
+    }
+  ],
+  "measurement_warnings": [],
+  "checks": {
+    "seals_ok": true,
+    "thesis_ok": true,
+    "verdicts_rederive": true
+  },
+  "report": "docs\\outreach\\receipts\\twenty-sixth-wave-ti-morse-field-report-2026-07-02.md",
+  "record": "docs\\outreach\\receipts\\twenty-sixth-wave-ti-morse-field-run-2026-07-02.json",
+  "bundle": null,
+  "spec": null,
+  "review": null,
+  "verifier": {
+    "mode": "cleanroom",
+    "inputs": [],
+    "excluded": [
+      "worker context",
+      "reasoning trace",
+      "intermediate steps"
+    ],
+    "checkability": "If success cannot be evaluated from the original spec and the artifact, the spec is not checkable yet."
+  }
+}
