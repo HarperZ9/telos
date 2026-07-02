@@ -4,6 +4,15 @@ All notable changes to Project Telos. Telos is currently a source demo and share
 
 ## Unreleased
 
+- TI Morse / Relentless field intake: adds
+  `demo/research/youtube-ti-morse-field-receipts.json`, a bounded source-ledger
+  for five metadata/transcript receipts and one channel-list receipt, plus
+  official, working-paper, outreach, Crucible, and Learn prooflesson artifacts.
+  The pass maps industrial science proof packets, causal research workbench,
+  agentic benchmark foundry, and compute/infrastructure ledger as inferred
+  megatool lanes while leaving domain correctness
+  `UNVERIFIABLE_UNTIL_PRIMARY_SOURCE_OR_REPLAY`.
+
 - Browser evidence kernel: adds `project-telos.browser-evidence/v1`,
   `node demo/browser-evidence.mjs`, and `telos.browser.evidence` as the
   local-first browser automation evidence contract for Gather/Index/Forum/
