@@ -1,0 +1,37 @@
+{
+  "measurements": [
+    {
+      "claim": "VectorFiniteOperatorPreflight.lean compiles under Lean 4.31.0.",
+      "deviation": 0.0,
+      "tolerance": 0.1,
+      "method": "lean-exit-code",
+      "evidence": [
+        "docs/research/proof-packets/navier-stokes-periodic-skew-symmetry-v0/formal/lean/VectorFiniteOperatorPreflight.lean",
+        "docs/outreach/receipts/twentieth-wave/lean-vector-finite-operator-sbp-replay-2026-07-02.json"
+      ]
+    },
+    {
+      "claim": "The twentieth-wave arXiv stores verify as content-addressed MATCH stores.",
+      "deviation": 0.0,
+      "tolerance": 0.1,
+      "method": "gather-corpus-verify",
+      "evidence": [
+        "docs/outreach/receipts/twentieth-wave/arxiv-vector-sbp-formal-pde",
+        "docs/outreach/receipts/twentieth-wave/arxiv-lean-pde-vector-formalization",
+        "docs/outreach/receipts/twentieth-wave/arxiv-vector-sbp-numerical-analysis",
+        "docs/outreach/receipts/twentieth-wave/source-lead-demotion-gate.json"
+      ]
+    },
+    {
+      "claim": "The public claim boundary keeps smooth periodic integration by parts and Navier-Stokes outside the finite Lean theorem.",
+      "deviation": 0.0,
+      "tolerance": 0.1,
+      "method": "bounded-claim-scan",
+      "evidence": [
+        "docs/research/whitepapers/FORMAL-REPLAY-PREFLIGHT-FOR-PDE-PACKETS-2026-07-02.md",
+        "docs/research/official/FORMAL-REPLAY-PREFLIGHT-FOR-PDE-PACKETS-2026-07-02.md",
+        "docs/outreach/TWENTIETH-WAVE-VECTOR-FINITE-OPERATOR-REPLAY-2026-07-02.md"
+      ]
+    }
+  ]
+}
