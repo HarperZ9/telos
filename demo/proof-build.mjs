@@ -78,6 +78,15 @@ function getPath(obj, path) {
   return path.split(".").reduce((node, key) => (node == null ? undefined : node[key]), obj);
 }
 
+// Deep clone via a JSON round trip. The packet materials are plain JSON (numbers,
+// strings, arrays, objects), so a round trip is a faithful and dependency-free
+// deep copy. Used by the assembler so the returned packet never aliases the
+// fixture's nested arrays or objects: a caller that mutates packet.run.samples in
+// place can never corrupt the shared fixture for a later assembly.
+function deepClone(value) {
+  return value === undefined ? undefined : JSON.parse(JSON.stringify(value));
+}
+
 // ---------------------------------------------------------------------------
 // Invariant math. Stdlib only. A sample is [t, position, velocity].
 // The total mechanical energy of a one-dimensional harmonic oscillator is
@@ -150,7 +159,12 @@ export function assembleBuildPacket(fixture) {
   if (!fixture) {
     throw new Error("assembleBuildPacket requires a fixture object");
   }
-  const receipt = { ...fixture.receipt };
+  // Deep clone every nested block copied out of the fixture. Without this the
+  // returned packet aliases the fixture's arrays and objects, so a caller that
+  // mutates packet.run.samples (or any nested field) in place would silently
+  // corrupt the shared fixture for every later assembly. The clone makes the
+  // assembler safe to call repeatedly against one reused fixture.
+  const receipt = deepClone(fixture.receipt) ?? {};
   if (receipt.source_digest === "recompute" && receipt.source_program !== undefined) {
     receipt.source_digest = recomputeSourceDigest(receipt.source_program);
   }
@@ -160,17 +174,17 @@ export function assembleBuildPacket(fixture) {
     claim: fixture.claim,
     scope: fixture.scope,
     receipt,
-    run: fixture.run,
-    invariant: fixture.invariant,
-    drift: fixture.drift,
-    negative_fixture: fixture.negative_fixture,
-    boundary_run: fixture.boundary_run
+    run: deepClone(fixture.run),
+    invariant: deepClone(fixture.invariant),
+    drift: deepClone(fixture.drift),
+    negative_fixture: deepClone(fixture.negative_fixture),
+    boundary_run: deepClone(fixture.boundary_run)
   };
   if (fixture.context_refs) {
-    base.context_refs = fixture.context_refs;
+    base.context_refs = deepClone(fixture.context_refs);
   }
   if (fixture.uncertainty) {
-    base.uncertainty = fixture.uncertainty;
+    base.uncertainty = deepClone(fixture.uncertainty);
   }
   const packet = { ...base, packet_hash: packetHash(base) };
   packet.wall_clock = fixture.wall_clock ?? { assembled_at: "unpinned" };
@@ -487,6 +501,78 @@ export function verifyBuildPacket(packet, options = {}) {
   }
   checks.push({ name: "check.negative_fixture", passed: negativeOk });
 
+  // check.boundary_run -> the sufficiency boundary the export claims. The boundary
+  // run exists to witness that the conservation goal is sufficient but NOT
+  // necessary for the exact happy-path claimed value: it must show the goal
+  // HOLDING (its own energy is conserved within the drift tolerance) while the
+  // specific claimed condition FAILS (its recomputed mean energy does not land on
+  // the happy-path claimed value within the invariant tolerance).
+  //
+  // proof-surface's boundary-fixture gate rejects condition_holds == true. The
+  // exporter derives goal_holds and condition_holds purely from these samples, so
+  // without this check a boundary run whose mean coincides with the claimed value
+  // (condition_holds would be true) or whose energy is not conserved (goal_holds
+  // would be false) still verifies clean MATCH while the exported packet is
+  // structurally invalid to proof-surface. Recomputing the boundary semantics here
+  // closes that gap: a boundary that would set condition_holds true or goal_holds
+  // false is DRIFT, so no MATCH ever pairs with a proof-surface-rejected export. A
+  // boundary run whose samples cannot be recomputed is an UNVERIFIABLE gap.
+  let boundaryOk = true;
+  const bnd = packet.boundary_run;
+  if (structurallyComplete && bnd && Array.isArray(bnd.samples)) {
+    const bndStats = recomputeEnergyStats(bnd.samples, mass, stiffness);
+    if (!bndStats.ok) {
+      boundaryOk = false;
+      addFailure(failures, "invariant_not_recomputable", "UNVERIFIABLE", {
+        path: "boundary_run.samples",
+        reason: `boundary run cannot be recomputed: ${bndStats.missing}`
+      });
+    } else {
+      // The drift tolerance bounds "the boundary run conserves energy" (the goal).
+      // When the drift tolerance is not a usable positive number the drift check
+      // above already drifts, so fall back to the relative-drift ceiling here only
+      // to compute goal_holds; the packet is already DRIFT in that case.
+      const goalTolerance =
+        typeof driftTolerance === "number" && driftTolerance > 0
+          ? driftTolerance
+          : RELATIVE_DRIFT_CEILING;
+      if (bndStats.maxRelDrift > goalTolerance) {
+        boundaryOk = false;
+        addFailure(failures, "boundary_goal_broken", "DRIFT", {
+          path: "boundary_run.samples",
+          recomputed_drift: bndStats.maxRelDrift,
+          goal_tolerance: goalTolerance,
+          reason:
+            "the boundary run's recomputed energy drift exceeds the conservation tolerance, so the conservation goal does not hold on it: it is a negative case, not a sufficiency boundary"
+        });
+      }
+      // The claimed condition must FAIL on the boundary run: its recomputed mean
+      // energy must differ from the happy-path claimed value by more than the
+      // invariant tolerance. If it lands within tolerance the condition holds, so
+      // the boundary does not witness sufficient-not-necessary and proof-surface
+      // rejects condition_holds == true. That is DRIFT carrying the delta.
+      const claimedValue = packet.invariant?.value;
+      const invTol =
+        typeof invTolerance === "number" && invTolerance > 0 ? invTolerance : 0;
+      if (typeof claimedValue === "number") {
+        const meanDelta = Math.abs(bndStats.mean - claimedValue);
+        if (meanDelta <= invTol) {
+          boundaryOk = false;
+          addFailure(failures, "boundary_condition_holds", "DRIFT", {
+            path: "boundary_run.samples",
+            claimed_value: claimedValue,
+            recomputed_mean: bndStats.mean,
+            delta: meanDelta,
+            invariant_tolerance: invTol,
+            reason:
+              "the boundary run's recomputed mean energy lands within the invariant tolerance of the happy-path claimed value, so the claimed condition holds on it: a sufficiency boundary must show the claimed condition FAILING"
+          });
+        }
+      }
+    }
+  }
+  checks.push({ name: "check.boundary_run", passed: boundaryOk });
+
   // check.packet_hash -> DRIFT with expected and observed. Only runs when the
   // packet is structurally complete; a missing required field is UNVERIFIABLE and
   // must not be masked by a derivative hash mismatch.
@@ -597,6 +683,8 @@ const FAILURE_LABEL_MAP = {
   packet_hash_mismatch: "binding_failed",
   state_model_violation: "binding_failed",
   tolerance_exceeds_bound: "binding_failed",
+  boundary_goal_broken: "binding_failed",
+  boundary_condition_holds: "binding_failed",
   negative_control_conserved: "verification_unverifiable",
   embedded_verdict_not_derived: "verification_unverifiable"
 };

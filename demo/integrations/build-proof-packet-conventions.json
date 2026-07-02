@@ -42,6 +42,8 @@
     "invariant_tolerance_bounded_to_metric_range": true,
     "negative_fixture_required": true,
     "negative_fixture_must_break_the_invariant": true,
+    "boundary_run_goal_holds_and_condition_fails": true,
+    "match_export_is_proof_surface_valid": true,
     "empty_run_samples_is_unverifiable": true,
     "backend_label_honest_no_maturity_overclaim": true,
     "verdict_derived_not_asserted": true,
@@ -67,7 +69,8 @@
     "tolerance_rule": "deviation is the absolute difference between the claimed value and the recomputed value. A deviation at or below tolerance is a per-invariant MATCH; a deviation above tolerance is a per-invariant DRIFT carrying the recomputed value; a claim with no recomputable basis is a per-invariant UNVERIFIABLE.",
     "tolerance_ceiling_rule": "Tolerance is bounded to a small fraction of each metric's physical range so an oversized author-declared tolerance can never nullify the recompute's discriminating power. max_relative_energy_drift is a relative fraction on [0, 1] and its tolerance may not exceed 0.1; mean_total_energy is bounded to a small fraction of the energy scale and its tolerance may not exceed one hundredth of the recomputed mean energy. A tolerance above its ceiling is a DRIFT (tolerance_exceeds_bound), never a silent pass.",
     "empty_samples_rule": "A run with no samples recomputes nothing, so it never reaches MATCH. An empty sample series is an UNVERIFIABLE evidence gap (no_run_samples): nothing was checked, so no claim is established.",
-    "negative_fixture_rule": "The negative fixture is a control run that must break the invariant. Its max_relative_energy_drift is recomputed the same way and must exceed the claimed conservation tolerance. A control whose recomputed drift stays within tolerance does not break the invariant, so the check has no discriminating power: that is a DRIFT (negative_control_conserved), never a silent pass."
+    "negative_fixture_rule": "The negative fixture is a control run that must break the invariant. Its max_relative_energy_drift is recomputed the same way and must exceed the claimed conservation tolerance. A control whose recomputed drift stays within tolerance does not break the invariant, so the check has no discriminating power: that is a DRIFT (negative_control_conserved), never a silent pass.",
+    "boundary_run_rule": "The boundary run witnesses that the conservation goal is sufficient but not necessary for the exact happy-path claimed value. It is recomputed the same way and must satisfy both semantics the proof-surface boundary-fixture gate enforces: the goal must HOLD on it (its recomputed energy drift stays within the conservation tolerance, so goal_holds is true) while the claimed condition must FAIL on it (its recomputed mean energy differs from the happy-path claimed value by more than the invariant tolerance, so condition_holds is false). A boundary run whose energy is not conserved would set goal_holds false, making it a mislabeled negative case (boundary_goal_broken, DRIFT). A boundary run whose recomputed mean lands within the invariant tolerance of the claimed value would set condition_holds true, so proof-surface rejects the export; the verifier catches this first as a DRIFT (boundary_condition_holds). A boundary run whose samples cannot be recomputed is an UNVERIFIABLE gap. This guarantees that whenever the verifier returns MATCH the exported boundary_fixture is proof-surface-valid: no MATCH is ever paired with a proof-surface-rejected export."
   },
   "state_model": {
     "verification_verdicts": [
@@ -213,6 +216,8 @@
       "packet_hash_mismatch": "binding_failed",
       "state_model_violation": "binding_failed",
       "tolerance_exceeds_bound": "binding_failed",
+      "boundary_goal_broken": "binding_failed",
+      "boundary_condition_holds": "binding_failed",
       "negative_control_conserved": "verification_unverifiable",
       "embedded_verdict_not_derived": "verification_unverifiable"
     }
@@ -309,6 +314,18 @@
       "expected_verdict": "DRIFT",
       "expected_failure_code": "negative_control_conserved"
     },
+    "boundary_condition_holds": {
+      "from": "happy_path",
+      "mutate": "replace boundary_run.samples with the happy-path run samples so the boundary run's recomputed mean lands on the claimed value and the claimed condition holds on it",
+      "expected_verdict": "DRIFT",
+      "expected_failure_code": "boundary_condition_holds"
+    },
+    "boundary_goal_broken": {
+      "from": "happy_path",
+      "mutate": "replace boundary_run.samples with the damped control samples so the boundary run's energy is not conserved and the goal does not hold on it",
+      "expected_verdict": "DRIFT",
+      "expected_failure_code": "boundary_goal_broken"
+    },
     "tolerance_exceeds_bound": {
       "from": "happy_path",
       "mutate": "set invariant.tolerance above its per-method ceiling while the value stays honest",
@@ -339,6 +356,8 @@
     "no_run_samples",
     "tolerance_exceeds_bound",
     "negative_control_conserved",
+    "boundary_goal_broken",
+    "boundary_condition_holds",
     "embedded_verdict_not_derived"
   ],
   "negative_test_cases": [
@@ -365,6 +384,14 @@
     {
       "name": "negative_control_does_not_break_the_invariant",
       "failure_code": "negative_control_conserved"
+    },
+    {
+      "name": "boundary_run_claimed_condition_holds",
+      "failure_code": "boundary_condition_holds"
+    },
+    {
+      "name": "boundary_run_conservation_goal_broken",
+      "failure_code": "boundary_goal_broken"
     },
     {
       "name": "invariant_tolerance_exceeds_metric_range_ceiling",

@@ -84,6 +84,22 @@ an unknown schema is an error rather than a silent pass.
   negative fixture must break the invariant; a control that does not break it has
   no discriminating power and is `DRIFT`. An empty run recomputes nothing and is
   `UNVERIFIABLE`, never a silent `MATCH`.
+- Boundary guarantee: the boundary run is recomputed to enforce the same
+  sufficiency-boundary contract the proof-surface export declares. The boundary
+  must show the conservation goal HOLDING (its recomputed energy drift stays
+  within tolerance) while the claimed condition FAILS (its recomputed mean energy
+  differs from the claimed value by more than the invariant tolerance). A boundary
+  that is not conserved is `boundary_goal_broken` (`DRIFT`); a boundary whose mean
+  lands on the claimed value is `boundary_condition_holds` (`DRIFT`). This closes
+  the gap where a boundary run equal to the happy run verified as a clean `MATCH`
+  yet exported a `condition_holds: true` packet that proof-surface rejects.
+  Whenever the verifier returns `MATCH`, the exported conservation packet is
+  proof-surface-valid: no `MATCH` is ever paired with a proof-surface-rejected
+  export, and the honest happy-path export validates against proof-surface's
+  Python validator with zero issues.
+- Assembler robustness: the assembler deep-clones the fixture, so a caller that
+  mutates a nested field of an assembled packet in place can never corrupt the
+  shared fixture for a later assembly.
 
 ### 4. Learn-lesson (shipped-elsewhere)
 
