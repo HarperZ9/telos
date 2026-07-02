@@ -1,0 +1,84 @@
+{
+  "schema": "OpenTelemetrySpanExportFixture/v1",
+  "spans": [
+    {
+      "attributes": {
+        "telos.raw_payload_included": false,
+        "telos.receipt_hash": "71b39e899e143294fb810a2d335bb11cbeff43abf26114cdda22573dd2502952",
+        "telos.receipt_kind": "GatherDocumentReceipt/v1",
+        "telos.receipt_ref": "gather:docs/packets/064-otel-trace-receipt-join-adapter.md",
+        "telos.tool_class": "gather"
+      },
+      "context": {
+        "span_id": "0055000000000001",
+        "trace_id": "00550000000000000000000000000001"
+      },
+      "links": [],
+      "name": "gather.docs.packet"
+    },
+    {
+      "attributes": {
+        "telos.raw_payload_required": false,
+        "telos.receipt_hash": "d30289cfdcaf8630e7fb7b3ba911cbac485a62f5306e3b5c37338768dbfe9e7a",
+        "telos.receipt_kind": "project-telos.browser-evidence/v1",
+        "telos.receipt_ref": "artifact:fixtures/browser-evidence-redacted-pass-0028.json",
+        "telos.redaction_status": "redacted",
+        "telos.tool_class": "browser_evidence"
+      },
+      "context": {
+        "span_id": "0055000000000002",
+        "trace_id": "00550000000000000000000000000002"
+      },
+      "links": [
+        {
+          "kind": "source",
+          "span_id": "0055000000000001",
+          "trace_id": "00550000000000000000000000000001"
+        }
+      ],
+      "name": "browser.evidence.redacted"
+    },
+    {
+      "attributes": {
+        "telos.exit_code": 0,
+        "telos.receipt_hash": "validator-pass-0054-match",
+        "telos.receipt_kind": "ShellCommandReceipt/v1",
+        "telos.receipt_ref": "command:python docs/research/dogfood/tools/validate_pass_0054_otel_trace_receipt_join_adapter.py",
+        "telos.tool_class": "command_execution"
+      },
+      "context": {
+        "span_id": "0055000000000003",
+        "trace_id": "00550000000000000000000000000003"
+      },
+      "links": [
+        {
+          "kind": "evidence",
+          "span_id": "0055000000000002",
+          "trace_id": "00550000000000000000000000000002"
+        }
+      ],
+      "name": "shell.command.validation"
+    },
+    {
+      "attributes": {
+        "telos.action_id": "act_dogfood_0024_001",
+        "telos.receipt_hash": "9c6402f98774170311d78ea3f6983cae71a665dd38ab2ee7e88d413398990ff4",
+        "telos.receipt_kind": "TelosActionReceiptFixtureChain/v1",
+        "telos.receipt_ref": "telos:action-receipt/act_dogfood_0024_001/chain/0617602eed957e0bc6c2e4a21548528f6defc542c4468433bde85df76cb51b3a",
+        "telos.tool_class": "action_receipt"
+      },
+      "context": {
+        "span_id": "1424d4ca9a6c5b58",
+        "trace_id": "aaa76491660d7a56086f69d1be94debe"
+      },
+      "links": [
+        {
+          "kind": "execution",
+          "span_id": "0055000000000003",
+          "trace_id": "00550000000000000000000000000003"
+        }
+      ],
+      "name": "telos.action.receipt.fixture"
+    }
+  ]
+}

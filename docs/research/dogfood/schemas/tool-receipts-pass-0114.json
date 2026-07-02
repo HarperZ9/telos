@@ -1,0 +1,293 @@
+{
+  "cases": [
+    {
+      "case_id": "warehouse_capacity_assignment",
+      "classification": "MATCH",
+      "constraint_checks": {
+        "capacity_ok": true,
+        "coverage_ok": true,
+        "max_load": 3
+      },
+      "domain": "warehouse_operations",
+      "negative_fixture": {
+        "capacity": 3,
+        "classification": "CAPACITY_VIOLATION_EXPECTED",
+        "load": 4,
+        "plan": {
+          "vehicle_1": [
+            "A",
+            "B",
+            "C"
+          ],
+          "vehicle_2": []
+        }
+      },
+      "objective": "9",
+      "plan": {
+        "vehicle_1": [
+          "A",
+          "B"
+        ],
+        "vehicle_2": [
+          "C"
+        ]
+      },
+      "source_clusters": [
+        "enterprise_quantum_optimization"
+      ]
+    },
+    {
+      "case_id": "robotics_quality_inspection",
+      "classification": "MATCH",
+      "constraint_checks": {
+        "coverage_ok": true,
+        "covered_parts": [
+          "part_1",
+          "part_2",
+          "part_3"
+        ],
+        "robot_capacity_ok": true
+      },
+      "domain": "robotics_quality_control",
+      "negative_fixture": {
+        "classification": "COVERAGE_VIOLATION_EXPECTED",
+        "missing": [
+          "part_3"
+        ],
+        "plan": {
+          "robot_1": [
+            "part_1"
+          ],
+          "robot_2": [
+            "part_2"
+          ]
+        }
+      },
+      "objective": "16",
+      "plan": {
+        "robot_1": [
+          "part_1",
+          "part_3"
+        ],
+        "robot_2": [
+          "part_2"
+        ]
+      },
+      "source_clusters": [
+        "enterprise_quantum_optimization"
+      ]
+    },
+    {
+      "case_id": "safety_allocation_toy",
+      "classification": "MATCH",
+      "constraint_checks": {
+        "covered": [
+          "threat_alpha",
+          "threat_beta"
+        ],
+        "high_priority_covered": true,
+        "one_target_per_resource": true
+      },
+      "domain": "safety_critical_resource_allocation_toy",
+      "negative_fixture": {
+        "classification": "INFEASIBLE_EXPECTED",
+        "high_priority_threats": 3,
+        "minimum_uncovered_high_priority": 1,
+        "resources": 2
+      },
+      "objective": "17",
+      "plan": {
+        "interceptor_1": "threat_alpha",
+        "interceptor_2": "threat_beta"
+      },
+      "source_clusters": [
+        "enterprise_quantum_optimization",
+        "agi_risk_scenarios"
+      ]
+    },
+    {
+      "case_id": "quant_risk_budget",
+      "classification": "MATCH",
+      "constraint_checks": {
+        "max_weight_ok": true,
+        "risk": "3/2",
+        "risk_budget_ok": true,
+        "sector_budget_ok": true,
+        "sum_to_one": true
+      },
+      "domain": "quantitative_finance_risk_budget",
+      "negative_fixture": {
+        "classification": "RISK_BUDGET_VIOLATION_EXPECTED",
+        "limit": "1/2",
+        "max_weight": "3/4",
+        "plan": {
+          "asset_a": "3/4",
+          "asset_b": "1/8",
+          "asset_c": "1/8"
+        }
+      },
+      "objective": "9/2",
+      "plan": {
+        "asset_a": "1/2",
+        "asset_b": "1/4",
+        "asset_c": "1/4"
+      },
+      "source_clusters": [
+        "quantitative_finance_laws"
+      ]
+    }
+  ],
+  "compose": {
+    "command": "C:\\Users\\Zain\\AppData\\Local\\Programs\\Python\\Python312\\python.exe C:\\dev\\public\\telos\\docs\\research\\dogfood\\tools\\compose_multi_domain_constrained_optimization_suite.py --out C:\\dev\\public\\telos\\docs\\research\\dogfood\\schemas\\multi-domain-constrained-optimization-suite-pass-0114.json",
+    "exit_code": 0,
+    "status": "MATCH",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "a63706db0e96d86996cd5c51ccc4f6457558f59cc8298ede0cfceba373b4beb3"
+  },
+  "domain_coverage": {
+    "case_count": 4,
+    "domain_count": 4,
+    "negative_fixture_count": 4,
+    "youtube_cluster_count": 3,
+    "youtube_clusters": [
+      "agi_risk_scenarios",
+      "enterprise_quantum_optimization",
+      "quantitative_finance_laws"
+    ]
+  },
+  "forum": {
+    "confidence": 0.15454545454545454,
+    "decided": null,
+    "exit_code": 0,
+    "needs_escalation": true,
+    "status": "MATCH",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "bcf6343dc65e054eeff696a56abb216ee647170be57bebde5d9747d7e6edb6ad",
+    "top_candidates": [
+      {
+        "agent": "data-pipeline",
+        "score": 0.2
+      },
+      {
+        "agent": "project-telos",
+        "score": 0.045454545454545456
+      },
+      {
+        "agent": "backend",
+        "score": 0.0
+      },
+      {
+        "agent": "ci-cd",
+        "score": 0.0
+      },
+      {
+        "agent": "cloud-infra",
+        "score": 0.0
+      }
+    ]
+  },
+  "index": {
+    "exit_code": 0,
+    "graph_pack_sha256": "8ee383e19ae9a6141bee70de733fb6aa09201ff9d284ce6778ce58b06e6b68b2",
+    "schema": "project-telos.context-envelope/v1",
+    "source_refs_only": true,
+    "status": "MATCH",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "d43a32b236cf4aa346a89bb755934a71c7b91a592366cd52429d18110b1c84b4",
+    "verification_verdict": "MATCH"
+  },
+  "market_surface": {
+    "gap_hypothesis": "Cross-domain optimizers and simulators solve fragments; a portable proof packet can bind domain source leads, exact constraints, feasible witnesses, negative witnesses, solver branch, and verification verdicts across markets.",
+    "gap_status": "hypothesis",
+    "tool_count": 12,
+    "tools": [
+      {
+        "gap_status": "inferred",
+        "source": "https://developers.google.com/optimization",
+        "tool": "OR-Tools"
+      },
+      {
+        "gap_status": "inferred",
+        "source": "https://developers.google.com/optimization/routing",
+        "tool": "OR-Tools routing"
+      },
+      {
+        "gap_status": "inferred",
+        "source": "https://ibmdecisionoptimization.github.io/docplex-doc/",
+        "tool": "IBM DOcplex"
+      },
+      {
+        "gap_status": "inferred",
+        "source": "https://www.ibm.com/products/ilog-cplex-optimization-studio",
+        "tool": "IBM CPLEX Optimization Studio"
+      },
+      {
+        "gap_status": "inferred",
+        "source": "https://docs.isaacsim.omniverse.nvidia.com/",
+        "tool": "NVIDIA Isaac Sim"
+      },
+      {
+        "gap_status": "inferred",
+        "source": "https://isaac-sim.github.io/IsaacLab/",
+        "tool": "Isaac Lab"
+      },
+      {
+        "gap_status": "inferred",
+        "source": "https://www.darpa.mil/research/programs/logx",
+        "tool": "DARPA LogX"
+      },
+      {
+        "gap_status": "inferred",
+        "source": "https://www.rand.org/pubs/tools/TLA3060-1.html",
+        "tool": "RAND TAB-ROM"
+      },
+      {
+        "gap_status": "inferred",
+        "source": "https://archive.ll.mit.edu/publications/technotes/SDDEC.html",
+        "tool": "MIT Lincoln Laboratory SDDEC"
+      },
+      {
+        "gap_status": "inferred",
+        "source": "https://pyportfolioopt.readthedocs.io/",
+        "tool": "PyPortfolioOpt"
+      },
+      {
+        "gap_status": "inferred",
+        "source": "https://skfolio.org/",
+        "tool": "skfolio"
+      },
+      {
+        "gap_status": "inferred",
+        "source": "https://www.cvxpy.org/examples/",
+        "tool": "CVXPY"
+      }
+    ]
+  },
+  "pass": "0114",
+  "schema": "DogfoodToolReceipts/v1",
+  "seal": "91afe9a168f5a47e86cde741415970f1d33be06140df48627c4f15c3b19196f3",
+  "telos": {
+    "exit_code": 0,
+    "status": "MATCH",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "be17cb15259234cb4e8e95c2b36e76c90d841431729beb140294e34c5f9ebfa7",
+    "tool": "telos",
+    "tool_version": "0.1.0"
+  },
+  "test": {
+    "command": "C:\\Users\\Zain\\AppData\\Local\\Programs\\Python\\Python312\\python.exe C:\\dev\\public\\telos\\docs\\research\\dogfood\\tools\\test_multi_domain_constrained_optimization_suite.py",
+    "exit_code": 0,
+    "status": "MATCH",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "youtube_binding": {
+    "dominant_cluster": "enterprise_quantum_optimization",
+    "dominant_cluster_video_count": 13,
+    "raw_transcript_included": false,
+    "roadmap_pass": "0102",
+    "source_policy": "YouTube videos are treated as critical source leads. Metadata and Gather receipts are first-order evidence; synthesized product implications remain hypotheses.",
+    "transcript_receipt_count": 19,
+    "valid_video_count": 19
+  }
+}

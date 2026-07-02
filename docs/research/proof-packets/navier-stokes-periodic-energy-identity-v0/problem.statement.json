@@ -1,0 +1,34 @@
+{
+  "schema": "project-telos.frontier-problem/v1",
+  "id": "navier-stokes-periodic-energy-identity-v0",
+  "parent_problem": {
+    "id": "navier-stokes-existence-smoothness",
+    "official_status": "UNSOLVED_SOURCE_LEAD",
+    "official_refs": [
+      "https://www.claymath.org/millennium/navier-stokes-equation/",
+      "https://www.claymath.org/millennium-problems/"
+    ],
+    "grand_claim_status": "UNVERIFIABLE",
+    "boundary": "This packet does not prove existence, uniqueness, smoothness, or global regularity for the Navier-Stokes equations."
+  },
+  "subclaim": {
+    "id": "periodic-taylor-green-energy-identity",
+    "statement": "For the smooth two-dimensional periodic Taylor-Green velocity field u(x,y,t)=A(t)*(sin(x)cos(y), -cos(x)sin(y)) with A(t)=exp(-2*nu*t), the kinetic energy E(t)=0.5*integral(|u|^2) and dissipation nu*integral(|grad u|^2) satisfy dE/dt = -nu*integral(|grad u|^2) on the periodic square [0,2*pi]^2.",
+    "assumptions": [
+      "two-dimensional periodic domain [0,2*pi]^2",
+      "smooth velocity field",
+      "incompressibility for this velocity field",
+      "positive viscosity nu",
+      "Taylor-Green form with amplitude A(t)=exp(-2*nu*t)",
+      "energy identity scoped to this field, not to arbitrary solutions"
+    ],
+    "status": "PROBE_READY",
+    "promotion_target": "IDENTITY_OR_CRUCIBLE_MATCH_FOR_THIS_FIELD_ONLY"
+  },
+  "negative_boundaries": [
+    "A matching energy identity for this field is not a proof of the Millennium problem.",
+    "A finite grid check is not a theorem for the continuous PDE.",
+    "This packet does not validate turbulence, climate, hardware, or physical-fluid predictions.",
+    "Any omitted incompressibility, smoothness, viscosity, or periodic-boundary assumption blocks promotion."
+  ]
+}

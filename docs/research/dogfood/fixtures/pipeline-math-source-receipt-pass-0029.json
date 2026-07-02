@@ -1,0 +1,44 @@
+{
+  "access_method": "web.open",
+  "confidence": "high",
+  "evidence_locators": [
+    {
+      "locator": "README line 0",
+      "summary": "The README describes the repository as collecting resolutions of open problems across COLT, commutative ring theory, an Erdos problem, and a FOCS 2023 open question.",
+      "supports_claim_ids": [
+        "rc_pipeline_math_scope"
+      ]
+    },
+    {
+      "locator": "README line 1",
+      "summary": "The README says proof discovery used a simple prover-verifier pipeline, with papers assembled in Claude Code and then polished and verified by the authors.",
+      "supports_claim_ids": [
+        "rc_pipeline_math_prover_verifier"
+      ]
+    },
+    {
+      "locator": "README line 2",
+      "summary": "The README says commutative-ring-theory solutions are formalized in Lean via an agentic Lean formalization pipeline, with open source release pending.",
+      "supports_claim_ids": [
+        "rc_pipeline_math_lean_formalization"
+      ]
+    }
+  ],
+  "non_claims": [
+    "This source receipt does not verify mathematical correctness of any listed paper.",
+    "This source receipt does not verify that the repository state will remain unchanged on a future replay.",
+    "This source receipt does not verify that the pipeline generalizes to all fields of science.",
+    "This source receipt does not verify a Telos uniqueness claim against all competitors."
+  ],
+  "observed_on": "2026-07-01",
+  "official_source": true,
+  "raw_page_material_required_for_replay": false,
+  "schema": "PublicSourceReceipt/v1",
+  "seal": "ca2eed3a5cc8327408c2e77b52ea84149161e8543106aa65fcd542637a4c40af",
+  "source_evidence_digest": "web-open:turn1view0",
+  "source_id": "source_pipeline_math_readme_2026_07_01",
+  "source_kind": "github_raw_readme",
+  "source_name": "Pengbinghui/pipeline-math README",
+  "url": "https://raw.githubusercontent.com/Pengbinghui/pipeline-math/main/README.md",
+  "verification_status": "verified"
+}

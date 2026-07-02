@@ -1,0 +1,253 @@
+{
+  "contract": {
+    "acceptance_rules": [
+      "Existing directory selectors produce source refs with path, repo, sha256, and expansion handle.",
+      "Missing selectors produce explicit REJECT entries, not silent omissions.",
+      "Receipts include graph and freshness hashes for the selected path manifest.",
+      "Raw private payload is not included; downstream tools expand refs locally.",
+      "The receipt can replace or refine a Telos domain-envelope workspace_context layer."
+    ],
+    "negative_rules": [
+      "Do not treat repo-root context as path-scoped context.",
+      "Do not promote missing paths such as build-universe as covered.",
+      "Do not call the bridge implemented until Index emits the receipt natively or an adapter emits equivalent receipts."
+    ],
+    "purpose": "Produce source-ref-only context receipts for explicit path selectors under a workspace root.",
+    "required_fields": [
+      "root",
+      "selectors",
+      "selector_results",
+      "source_refs",
+      "graph_pack_sha256",
+      "freshness_root_sha256",
+      "raw_source_included",
+      "source_refs_only",
+      "missing_selector_rejections",
+      "join_key"
+    ],
+    "schema": "IndexPathSelectorReceipt/v1"
+  },
+  "current_promoted_natural_laws": [],
+  "evidence": [
+    {
+      "description": "BuildLang source refs and live buildc corpus receipt.",
+      "path": "docs/research/dogfood/schemas/buildlang-source-ref-receipt-pass-0074.json",
+      "schema": "BuildLangSourceRefReceipt/v1",
+      "sha256": "9cf8b30babce31ef6e4c0c556712e447dd80a3ee66382e8a02b3db3bde09f014",
+      "status": "BUILDLANG_SOURCE_REF_RECEIPT_MATCH"
+    },
+    {
+      "description": "BuildLang source receipt joined into domain envelope.",
+      "path": "docs/research/dogfood/schemas/buildlang-domain-envelope-join-pass-0075.json",
+      "schema": "BuildLangDomainEnvelopeJoin/v1",
+      "sha256": "4fa408c98ecef32ad1a9005ea0301ebde038bb1f76aa40a4c8f7fa4b32004319",
+      "status": "BUILDLANG_DOMAIN_ENVELOPE_JOIN_MATCH"
+    },
+    {
+      "description": "Index focus bridge requirement from live path probes.",
+      "path": "docs/research/dogfood/schemas/buildlang-index-focus-bridge-pass-0076.json",
+      "schema": "BuildLangIndexFocusBridge/v1",
+      "sha256": "c6298c0ef61683f1a6fd31254ca1356aa5ffe9a288795347e1568fe218b1114d",
+      "status": "BUILDLANG_INDEX_FOCUS_BRIDGE_REQUIRED"
+    },
+    {
+      "description": "Build Color software proof kit with bounded metrics.",
+      "path": "docs/research/dogfood/schemas/build-color-calibration-proof-kit-pass-0011.json",
+      "schema": "BuildColorCalibrationProofKit/v1",
+      "sha256": "86cb1d7a2a09d682556922b065fb2e9a4c11914326a0136a8d876110cd4f5c2d",
+      "status": "PROOF_KIT_MATCH"
+    },
+    {
+      "description": "Color calibration and rendering market map.",
+      "path": "docs/research/dogfood/schemas/color-calibration-market-map-pass-0011.json",
+      "schema": "ColorCalibrationMarketMap/v1",
+      "sha256": "010a608d32e02f9b71262c19309152802f91c42c48a470476c6826caa3aae1bc",
+      "status": "UNLABELED"
+    },
+    {
+      "description": "AI4Science source anchor set.",
+      "path": "docs/research/dogfood/schemas/ai4science-proof-market-sources-pass-0047.json",
+      "schema": "AI4ScienceProofMarketSourcesSet/v1",
+      "sha256": "5aaa93c606fc606099f3c9236f03bac8ea2b25967b10eec17bcbb4b0e64c8da5",
+      "status": "AI4SCIENCE_PROOF_MARKET_SOURCES_MATCH"
+    },
+    {
+      "description": "Three-track competitor proof-gap matrix.",
+      "path": "docs/research/dogfood/schemas/competitor-proof-gap-matrix-pass-0048.json",
+      "schema": "CompetitorProofGapMatrixSet/v1",
+      "sha256": "b7cc365722810063beceba129df1dcc3663c08a79e1b2fadc58be7e6ddb5fa46",
+      "status": "COMPETITOR_PROOF_GAP_MATRIX_MATCH"
+    },
+    {
+      "description": "Frontier problem and megatool opportunity map.",
+      "path": "docs/research/dogfood/schemas/frontier-problem-to-proof-opportunity-map-pass-0063.json",
+      "schema": "FrontierProblemToProofOpportunityMap/v1",
+      "sha256": "b4beb591b59402550d7ab9deef7b779710101e294d5de557ecd60dd9dce6fdcd",
+      "status": "FRONTIER_PROBLEM_TO_PROOF_OPPORTUNITY_MAP_MATCH"
+    }
+  ],
+  "generated_on": "2026-07-01",
+  "growth_vectors": [
+    {
+      "next_experiment": "Emit an IndexPathSelectorReceipt fixture for buildlang and compiler, while rejecting build-universe.",
+      "unlocks": [
+        "BuildLang domain packets",
+        "color/rendering packets",
+        "AI4Science source packets"
+      ],
+      "vector": "path_scoped_source_ref_receipts",
+      "why": "Large monorepos and scientific codebases need proof packets around selected subsystems, not only repo roots."
+    },
+    {
+      "next_experiment": "Define a telos proof build command over one existing packet and one BuildLang receipt.",
+      "unlocks": [
+        "public demos",
+        "buyer pilots",
+        "repeatable packet generation"
+      ],
+      "vector": "proof_packet_builder_cli",
+      "why": "The research surface needs one command that joins Gather source, Index context, Forum route, action receipts, and Crucible verdicts."
+    },
+    {
+      "next_experiment": "Expose rejected claims alongside MATCH claims in a public-safe proof packet viewer.",
+      "unlocks": [
+        "regulated AI ops",
+        "scientific reproducibility",
+        "compiler/runtime credibility"
+      ],
+      "vector": "negative_fixture_market_positioning",
+      "why": "Buyers trust systems that refuse overclaims; repeated REJECT fixtures are a product asset, not internal ceremony."
+    },
+    {
+      "next_experiment": "Recheck the pass 0011 Build Color proof kit through the same path-selector contract shape.",
+      "unlocks": [
+        "color calibration proof kits",
+        "scientific visualization packets",
+        "UI/browser evidence"
+      ],
+      "vector": "visual_truth_foundry",
+      "why": "Color, rendering, display, and perception evidence is under-integrated with AI and research proof systems."
+    },
+    {
+      "next_experiment": "Bind one AI4Science source map row to a claim packet with explicit unverified boundaries.",
+      "unlocks": [
+        "pipeline-math++ packets",
+        "formal math forge",
+        "biology evidence packets"
+      ],
+      "vector": "ai4science_claim_ledger",
+      "why": "AI4Science tools generate claims across literature, model runs, proof attempts, and experiments; the market gap is claim-level verification continuity."
+    }
+  ],
+  "negative_fixtures": [
+    {
+      "expected_status": "REJECT",
+      "fixture_id": "claims_index_path_selector_already_native"
+    },
+    {
+      "expected_status": "REJECT",
+      "fixture_id": "claims_market_uniqueness_as_fact"
+    },
+    {
+      "expected_status": "REJECT",
+      "fixture_id": "claims_ai4science_domain_validation_complete"
+    },
+    {
+      "expected_status": "REJECT",
+      "fixture_id": "claims_color_hardware_calibration_complete"
+    },
+    {
+      "expected_status": "REJECT",
+      "fixture_id": "claims_buildlang_julia_replacement_proven"
+    }
+  ],
+  "non_promotion_statement": "Pass 0077 defines a contract and ranked hypotheses. It does not implement Index path selection, prove market uniqueness, validate AI4Science discoveries, calibrate hardware, prove Julia replacement, or promote a natural law.",
+  "pass": "0077",
+  "primary_30_day_push": {
+    "hypothesis": "Ship the Index path-selector receipt and wrap the live buildc corpus receipt into a public BuildLang proof-packet demo first.",
+    "motion": "buildlang_proof_packets",
+    "reason": "It has the strongest current proof advantage and demo readiness while directly improving the shared substrate needed by color/rendering and AI4Science packets."
+  },
+  "product_motions": [
+    {
+      "evidence_paths": [
+        "schemas/buildlang-source-ref-receipt-pass-0074.json",
+        "schemas/buildlang-domain-envelope-join-pass-0075.json",
+        "schemas/buildlang-index-focus-bridge-pass-0076.json"
+      ],
+      "id": "buildlang_proof_packets",
+      "label": "BuildLang/buildc proof packets",
+      "primary_risk": "Compiler ecosystem adoption is hard; the first wedge must sell accountability, not broad Julia replacement.",
+      "rationale": "Best near-term proof surface: live buildc corpus receipt, domain-envelope join, and a crisp path-selector gap.",
+      "scores": {
+        "adoption_ease": 3,
+        "buyer_budget": 4,
+        "demo_readiness": 5,
+        "integration_readiness": 4,
+        "proof_advantage": 5,
+        "strategic_upside": 5,
+        "urgency": 4
+      },
+      "uniqueness_status": "hypothesis",
+      "weighted_score": 4.38
+    },
+    {
+      "evidence_paths": [
+        "schemas/ai4science-frontier-map-pass-0008.json",
+        "schemas/ai4science-proof-market-sources-pass-0047.json",
+        "schemas/competitor-proof-gap-matrix-pass-0048.json"
+      ],
+      "id": "ai4science_research_packets",
+      "label": "AI4Science research proof packets",
+      "primary_risk": "A research packet that cannot satisfy domain reviewers becomes ceremony; start with formal/math sources before wet-lab claims.",
+      "rationale": "Highest mission upside and strong market need, but independent domain validation remains harder than compiler/color demos.",
+      "scores": {
+        "adoption_ease": 2,
+        "buyer_budget": 4,
+        "demo_readiness": 3,
+        "integration_readiness": 3,
+        "proof_advantage": 5,
+        "strategic_upside": 5,
+        "urgency": 5
+      },
+      "uniqueness_status": "hypothesis",
+      "weighted_score": 3.96
+    },
+    {
+      "evidence_paths": [
+        "schemas/build-color-calibration-proof-kit-pass-0011.json",
+        "schemas/color-calibration-market-map-pass-0011.json",
+        "schemas/competitor-proof-gap-matrix-pass-0048.json"
+      ],
+      "id": "visual_truth_packets",
+      "label": "Color/rendering measurement packets",
+      "primary_risk": "Hardware calibration claims need sensor-backed receipts before promotion.",
+      "rationale": "Distinctive trust layer with bounded software metrics and clear non-hardware-calibration boundaries.",
+      "scores": {
+        "adoption_ease": 4,
+        "buyer_budget": 3,
+        "demo_readiness": 4,
+        "integration_readiness": 4,
+        "proof_advantage": 5,
+        "strategic_upside": 4,
+        "urgency": 3
+      },
+      "uniqueness_status": "hypothesis",
+      "weighted_score": 3.88
+    }
+  ],
+  "schema": "PathSelectorContractGrowthScorecard/v1",
+  "seal": "8f99f16826f90353b3494e4e111a6e7140244c82735152a297ebed99197f001c",
+  "status": "PATH_SELECTOR_CONTRACT_SCORECARD_MATCH",
+  "unsupported_claim_count": 0,
+  "validation_errors": [],
+  "weights": {
+    "adoption_ease": 0.1,
+    "buyer_budget": 0.14,
+    "demo_readiness": 0.2,
+    "integration_readiness": 0.1,
+    "proof_advantage": 0.2,
+    "strategic_upside": 0.08,
+    "urgency": 0.18
+  }
+}

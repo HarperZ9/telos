@@ -1,0 +1,174 @@
+{
+  "kind": "proof-lesson",
+  "packet_id": "ninth-wave-source-federation-2026-07-02",
+  "verdict": "MATCH",
+  "lesson": {
+    "kind": "proof-lesson",
+    "packet_id": "ninth-wave-source-federation-2026-07-02",
+    "packet_version": "research-claim-proof-packet/v0",
+    "claim": "Project Telos has a ninth-wave source-federation package for biology, medicine, robotics, source-lead demotion, and hard-problem reduction, with Crucible v2 matching package-boundary claims while leaving biomedical, clinical, protein-design, robotics-safety, paper-truth, and grand-challenge claims unproven.",
+    "scope": "Local ninth-wave documentation and receipt package only. This is not clinical evidence, wet-lab evidence, physical-robot validation, protein-design validation, paper acceptance, exhaustive literature coverage, or a solved grand-challenge claim.",
+    "verdict": "MATCH",
+    "sources": [
+      {
+        "ref": "docs/outreach/NINTH-WAVE-BIO-MED-ROBOTICS-SOURCE-FEDERATION-2026-07-02.md",
+        "sha256": "0577d9c57f6ab38cd3db61086d3410a974150dccbb34eb6867b29b3f5105db6a"
+      },
+      {
+        "ref": "docs/research/FRONTIER-HARD-PROBLEM-REGISTRY-2026-07-02.md",
+        "sha256": "75ef38d985c968b2fa2fb094c8c1b0d45fe895685d10c799b2c08f492feb0ef7"
+      },
+      {
+        "ref": "docs/outreach/receipts/ninth-wave/source-lead-demotion-gate.json",
+        "sha256": "82b65fb02522b67901594035bb9d08e08bfef3aedf3334b8e887cd47b4653af7"
+      },
+      {
+        "ref": "docs/outreach/receipts/ninth-wave-tooling-run-v2-2026-07-02.json",
+        "sha256": "3f532f6035dee9b469c3e37a92b710f6e7528fda2738c170014a26cce8cf1d3b"
+      },
+      {
+        "ref": "docs/research/whitepapers/BIO-MED-ROBOTICS-SOURCE-FEDERATION-2026-07-02.md",
+        "sha256": "8dc8d8d3ff8a896a9e681e43b05965b5d65982ac6efc0aacfafc627a87a87956"
+      },
+      {
+        "ref": "docs/outreach/NINTH-WAVE-CONTENT-QUEUE-2026-07-02.md",
+        "sha256": "85295001fb51f3cd37a3503b285bfaaf2c63495e0af8f39e4fed8f10de41db13"
+      }
+    ],
+    "scaffold": [
+      {
+        "step": 1,
+        "prompt": "Restate, in your own words, exactly what this claim asserts and nothing more: \"Project Telos has a ninth-wave source-federation package for biology, medicine, robotics, source-lead demotion, and hard-problem reduction, with Crucible v2 matching package-boundary claims while leaving biomedical, clinical, protein-design, robotics-safety, paper-truth, and grand-challenge claims unproven.\" (scope: Local ninth-wave documentation and receipt package only. This is not clinical evidence, wet-lab evidence, physical-robot validation, protein-design validation, paper acceptance, exhaustive literature coverage, or a solved grand-challenge claim.)."
+      },
+      {
+        "step": 2,
+        "prompt": "Judging by their refs alone (docs/outreach/NINTH-WAVE-BIO-MED-ROBOTICS-SOURCE-FEDERATION-2026-07-02.md, docs/research/FRONTIER-HARD-PROBLEM-REGISTRY-2026-07-02.md, docs/outreach/receipts/ninth-wave/source-lead-demotion-gate.json, docs/outreach/receipts/ninth-wave-tooling-run-v2-2026-07-02.json, docs/research/whitepapers/BIO-MED-ROBOTICS-SOURCE-FEDERATION-2026-07-02.md, docs/outreach/NINTH-WAVE-CONTENT-QUEUE-2026-07-02.md), predict what each recorded source could contribute as evidence for or against the claim."
+      },
+      {
+        "step": 3,
+        "prompt": "The packet's overall verdict is MATCH. Before reading anything else, derive what a MATCH verdict must mean about the relationship between the claim and the recorded checks."
+      },
+      {
+        "step": 4,
+        "prompt": "List the checks you would run to reach your own verdict on this claim, then compare your list against what the packet's verdict implies was actually checked."
+      }
+    ],
+    "retrievalQuestions": [
+      {
+        "question": "What evidence would falsify this claim: \"Project Telos has a ninth-wave source-federation package for biology, medicine, robotics, source-lead demotion, and hard-problem reduction, with Crucible v2 matching package-boundary claims while leaving biomedical, clinical, protein-design, robotics-safety, paper-truth, and grand-challenge claims unproven.\"?",
+        "derivedFrom": "claim"
+      },
+      {
+        "question": "Which recorded source would you re-check first, and what does its content hash let you prove about it?",
+        "derivedFrom": "sources"
+      },
+      {
+        "question": "What does an overall verdict of MATCH entitle you to claim, and what does it not?",
+        "derivedFrom": "verdicts.overall"
+      },
+      {
+        "question": "The packet's scope is \"Local ninth-wave documentation and receipt package only. This is not clinical evidence, wet-lab evidence, physical-robot validation, protein-design validation, paper acceptance, exhaustive literature coverage, or a solved grand-challenge claim.\". Give one claim that would exceed that scope.",
+        "derivedFrom": "scope"
+      }
+    ],
+    "verifierBinding": {
+      "packet_id": "ninth-wave-source-federation-2026-07-02",
+      "verdict": "MATCH",
+      "sourceHashes": [
+        "0577d9c57f6ab38cd3db61086d3410a974150dccbb34eb6867b29b3f5105db6a",
+        "75ef38d985c968b2fa2fb094c8c1b0d45fe895685d10c799b2c08f492feb0ef7",
+        "82b65fb02522b67901594035bb9d08e08bfef3aedf3334b8e887cd47b4653af7",
+        "3f532f6035dee9b469c3e37a92b710f6e7528fda2738c170014a26cce8cf1d3b",
+        "8dc8d8d3ff8a896a9e681e43b05965b5d65982ac6efc0aacfafc627a87a87956",
+        "85295001fb51f3cd37a3503b285bfaaf2c63495e0af8f39e4fed8f10de41db13"
+      ]
+    },
+    "boundary": "Lesson scaffold only -- prompts for the operator to derive the reasoning; never an answer dump, never a graded-assessment answer."
+  },
+  "misconception": null,
+  "sourceCount": 6,
+  "entries": [
+    {
+      "seq": 0,
+      "prevHash": "0000000000000000000000000000000000000000000000000000000000000000",
+      "hash": "06d0a3234de86e4df17f1a82a2c01ba8ce23a5621c20883ae47aaf29195b3f4e",
+      "entry": {
+        "kind": "packet-binding",
+        "packet_id": "ninth-wave-source-federation-2026-07-02",
+        "verdict": "MATCH",
+        "claim": "Project Telos has a ninth-wave source-federation package for biology, medicine, robotics, source-lead demotion, and hard-problem reduction, with Crucible v2 matching package-boundary claims while leaving biomedical, clinical, protein-design, robotics-safety, paper-truth, and grand-challenge claims unproven."
+      }
+    },
+    {
+      "seq": 1,
+      "prevHash": "06d0a3234de86e4df17f1a82a2c01ba8ce23a5621c20883ae47aaf29195b3f4e",
+      "hash": "f4a54ca97f16f906a4e6a9b12f4c3996c58e7919a42817c097df193663057090",
+      "entry": {
+        "kind": "source",
+        "ref": "docs/outreach/NINTH-WAVE-BIO-MED-ROBOTICS-SOURCE-FEDERATION-2026-07-02.md",
+        "sha256": "0577d9c57f6ab38cd3db61086d3410a974150dccbb34eb6867b29b3f5105db6a"
+      }
+    },
+    {
+      "seq": 2,
+      "prevHash": "f4a54ca97f16f906a4e6a9b12f4c3996c58e7919a42817c097df193663057090",
+      "hash": "db2fe525a582bc5f155584597b06016fb6e9dccefe4215adb61b5b33d2eb055b",
+      "entry": {
+        "kind": "source",
+        "ref": "docs/research/FRONTIER-HARD-PROBLEM-REGISTRY-2026-07-02.md",
+        "sha256": "75ef38d985c968b2fa2fb094c8c1b0d45fe895685d10c799b2c08f492feb0ef7"
+      }
+    },
+    {
+      "seq": 3,
+      "prevHash": "db2fe525a582bc5f155584597b06016fb6e9dccefe4215adb61b5b33d2eb055b",
+      "hash": "1735d9fc57b43c5b43f092f96537baaa3e488c3b09d6183952f5b4dbf3db55ee",
+      "entry": {
+        "kind": "source",
+        "ref": "docs/outreach/receipts/ninth-wave/source-lead-demotion-gate.json",
+        "sha256": "82b65fb02522b67901594035bb9d08e08bfef3aedf3334b8e887cd47b4653af7"
+      }
+    },
+    {
+      "seq": 4,
+      "prevHash": "1735d9fc57b43c5b43f092f96537baaa3e488c3b09d6183952f5b4dbf3db55ee",
+      "hash": "6e3a049c0d850a9916f8db70d76ed31f149d19c54f74653ca32e17c9ee5b7553",
+      "entry": {
+        "kind": "source",
+        "ref": "docs/outreach/receipts/ninth-wave-tooling-run-v2-2026-07-02.json",
+        "sha256": "3f532f6035dee9b469c3e37a92b710f6e7528fda2738c170014a26cce8cf1d3b"
+      }
+    },
+    {
+      "seq": 5,
+      "prevHash": "6e3a049c0d850a9916f8db70d76ed31f149d19c54f74653ca32e17c9ee5b7553",
+      "hash": "d05eebc8a083c2d53d746d065535c52605011b27131dea0891fc196776a8e6a0",
+      "entry": {
+        "kind": "source",
+        "ref": "docs/research/whitepapers/BIO-MED-ROBOTICS-SOURCE-FEDERATION-2026-07-02.md",
+        "sha256": "8dc8d8d3ff8a896a9e681e43b05965b5d65982ac6efc0aacfafc627a87a87956"
+      }
+    },
+    {
+      "seq": 6,
+      "prevHash": "d05eebc8a083c2d53d746d065535c52605011b27131dea0891fc196776a8e6a0",
+      "hash": "0318b7187651dfb08af1b09c829c63e2adec8bac604ab1f58b2342133eb5c218",
+      "entry": {
+        "kind": "source",
+        "ref": "docs/outreach/NINTH-WAVE-CONTENT-QUEUE-2026-07-02.md",
+        "sha256": "85295001fb51f3cd37a3503b285bfaaf2c63495e0af8f39e4fed8f10de41db13"
+      }
+    },
+    {
+      "seq": 7,
+      "prevHash": "0318b7187651dfb08af1b09c829c63e2adec8bac604ab1f58b2342133eb5c218",
+      "hash": "224a617185650801e61c1c4e0a8f8595b659442555449d77eea6ab2746a18670",
+      "entry": {
+        "kind": "lesson-digest",
+        "digest": "sha256:8f5e49518590e5ab63d44de5885bb3f25335546f4bf06e81e8c02ed26c63ce55",
+        "misconception_class": null
+      }
+    }
+  ],
+  "boundary": "Lesson receipt only -- binds the lesson to its packet's verdict and source hashes; never a graded-assessment answer."
+}

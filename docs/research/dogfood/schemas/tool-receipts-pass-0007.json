@@ -1,0 +1,109 @@
+{
+  "schema": "DogfoodToolReceipts/v1",
+  "pass": "0007",
+  "generated_on": "2026-07-01",
+  "receipts": [
+    {
+      "tool": "gather",
+      "surface": "gather_status",
+      "status": "MATCH",
+      "tool_version": "1.5.0",
+      "role": "perception-intake",
+      "evidence": "completion floor with Project Telos operator-spine MCP parity"
+    },
+    {
+      "tool": "forum",
+      "surface": "status",
+      "status": "MATCH",
+      "entries": 1,
+      "checkpoint": "0d88da42deb02a0891e910298c244b66a3654ed5ea9863e585a897c6beb0f806"
+    },
+    {
+      "tool": "forum",
+      "surface": "verify",
+      "status": "MATCH",
+      "chain": true,
+      "deep": true
+    },
+    {
+      "tool": "telos",
+      "surface": "loop_ledger",
+      "status": "MATCH",
+      "verified_on": "2026-06-28",
+      "contract_checks": [
+        "ledger_first_class",
+        "fresh_context_reads_ledger_first",
+        "evidence_first_verify_gate",
+        "unverifiable_required"
+      ]
+    },
+    {
+      "tool": "telos",
+      "surface": "server_manifest",
+      "status": "MATCH",
+      "verified_on": "2026-06-28",
+      "servers": [
+        "gather",
+        "crucible",
+        "index",
+        "forum",
+        "telos"
+      ]
+    },
+    {
+      "tool": "index",
+      "surface": "status",
+      "status": "MATCH",
+      "tool_version": "2.8.0",
+      "role": "structure-context",
+      "evidence": "workspace atlas, certificates, freshness, benchmarking, selection-aware context envelopes, and MCP parity"
+    },
+    {
+      "tool": "index",
+      "surface": "context_envelope",
+      "status": "MATCH",
+      "root": "C:\\dev\\public\\telos",
+      "selection_mode": "workspace",
+      "retained_names": [
+        "telos"
+      ],
+      "graph_pack_sha256": "8ee383e19ae9a6141bee70de733fb6aa09201ff9d284ce6778ce58b06e6b68b2"
+    },
+    {
+      "tool": "index",
+      "surface": "context_envelope_focus",
+      "status": "DRIFT",
+      "focus": "docs/research/dogfood",
+      "evidence": "error: unknown focus repo: docs/research/dogfood",
+      "integration_gap": "Index focus selection currently appears repo-oriented; dogfood needs a path-scoped envelope mode."
+    },
+    {
+      "tool": "index",
+      "surface": "map",
+      "status": "MATCH",
+      "repo_count": 1,
+      "dirty_count": 0,
+      "head": "1046c81",
+      "untracked_count": 7
+    },
+    {
+      "tool": "crucible",
+      "surface": "status",
+      "status": "MATCH",
+      "tool_version": "1.1.0",
+      "role": "verification-pressure"
+    },
+    {
+      "tool": "crucible",
+      "surface": "registry_verify_before_pass",
+      "status": "MATCH",
+      "ok": true,
+      "body_count": 20,
+      "seal_count": 3
+    }
+  ],
+  "decision": {
+    "status": "MATCH_WITH_INTEGRATION_GAP",
+    "next_action": "add a path-scoped Index focus adapter for dogfood packets and docs"
+  }
+}

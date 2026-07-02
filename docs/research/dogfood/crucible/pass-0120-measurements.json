@@ -1,0 +1,123 @@
+{
+  "measurements": [
+    {
+      "claim": "Pass 0120 created a HamiltonianRuntimeBranchReceipt/v1 artifact with status HAMILTONIAN_RUNTIME_BRANCH_MATCH, sha256 f16b1a61e135ecacfd4a31b6e70690918d95f8a5daff29f5a99c416bcaf1c759, and seal 9100835b059bd5d8d5d21f3e899bfd78c36d68f27d76bdc09b0cfb561d9fe0e5.",
+      "deviation": 0.0,
+      "evidence": [
+        "schema=HamiltonianRuntimeBranchReceipt/v1",
+        "status=HAMILTONIAN_RUNTIME_BRANCH_MATCH",
+        "sha256=f16b1a61e135ecacfd4a31b6e70690918d95f8a5daff29f5a99c416bcaf1c759",
+        "seal=9100835b059bd5d8d5d21f3e899bfd78c36d68f27d76bdc09b0cfb561d9fe0e5"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0120 binds Hamiltonian symplectic pass 0119 with seal 8fb6fe8a7b9155318c4e4512c9ef3c916e816365186d3566ea6bbf5c317ca05c.",
+      "deviation": 0.0,
+      "evidence": [
+        "source_bindings={'hamiltonian_symplectic_pass': '0119', 'hamiltonian_symplectic_seal': '8fb6fe8a7b9155318c4e4512c9ef3c916e816365186d3566ea6bbf5c317ca05c'}"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0120 records NumPy AVAILABLE and runs 3 positive NumPy float64 branches with MATCH status.",
+      "deviation": 0.0,
+      "evidence": [
+        "availability={'status': 'AVAILABLE'}",
+        "numpy_count=3"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0120 records SciPy AVAILABLE and runs 3 SciPy determinant branches with MATCH status.",
+      "deviation": 0.0,
+      "evidence": [
+        "availability={'status': 'AVAILABLE'}",
+        "scipy_count=3"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0120 records a NumPy explicit-Euler negative branch with MATCH status, determinant above 1, and energy growth.",
+      "deviation": 0.0,
+      "evidence": [
+        "{'branch_id': 'numpy_explicit_euler_negative', 'determinant_float64': 1.1111111111111112, 'energy_final_float64': 6.26830006094342, 'energy_growth': True, 'energy_initial_float64': 0.5, 'runtime': 'numpy', 'status': 'MATCH'}"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0120 fences unavailable runtime branches ['jax_runtime_branch', 'buildlang_runtime_branch', 'julia_sciml_branch'].",
+      "deviation": 0.0,
+      "evidence": [
+        "fenced=['jax_runtime_branch', 'buildlang_runtime_branch', 'julia_sciml_branch']",
+        "availability={'build': {'path': None, 'status': 'MISSING'}, 'buildc': {'path': None, 'status': 'MISSING'}, 'jax': {'status': 'MISSING'}, 'julia': {'path': None, 'status': 'MISSING'}, 'numpy': {'status': 'AVAILABLE'}, 'python': {'path': 'C:\\\\Users\\\\Zain\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python312\\\\python.EXE', 'status': 'AVAILABLE'}, 'scipy': {'status': 'AVAILABLE'}}"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0120 records source anchor_count 4 for NumPy, SciPy, JAX, and Python decimal references.",
+      "deviation": 0.0,
+      "evidence": [
+        "source_surface={'anchor_count': 4, 'anchors': [{'gap_status': 'inferred', 'tool': 'NumPy linalg', 'url': 'https://numpy.org/doc/stable/reference/generated/numpy.linalg.det.html'}, {'gap_status': 'inferred', 'tool': 'SciPy linalg.det', 'url': 'https://docs.scipy.org/doc/scipy/reference/generated/scipy.linalg.det.html'}, {'gap_status': 'inferred', 'tool': 'JAX Quickstart', 'url': 'https://docs.jax.dev/en/latest/quickstart.html'}, {'gap_status': 'inferred', 'tool': 'Python decimal', 'url': 'https://docs.python.org/3/library/decimal.html'}]}"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0120 flagship receipts for Forum, Index, Telos status, and Telos catalog all have MATCH status.",
+      "deviation": 0.0,
+      "evidence": [
+        "forum=MATCH",
+        "index=MATCH",
+        "telos=MATCH",
+        "telos_catalog=MATCH"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0120 validator receipt status is MATCH and test receipt status is MATCH.",
+      "deviation": 0.0,
+      "evidence": [
+        "validator={'command': 'C:\\\\Users\\\\Zain\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python312\\\\python.exe C:\\\\dev\\\\public\\\\telos\\\\docs\\\\research\\\\dogfood\\\\tools\\\\validate_pass_0120_hamiltonian_runtime_branch.py', 'exit_code': 0, 'stdout_sha256': '1aeaf7c239b6f7f357ecc70302499e1905bd4b402ceb1d1df0c85055f26631d4', 'stderr_sha256': 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855', 'status': 'MATCH'}",
+        "test={'command': 'C:\\\\Users\\\\Zain\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python312\\\\python.exe C:\\\\dev\\\\public\\\\telos\\\\docs\\\\research\\\\dogfood\\\\tools\\\\test_hamiltonian_runtime_branch_receipt.py', 'exit_code': 0, 'stdout_sha256': 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855', 'stderr_sha256': 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855', 'status': 'MATCH'}"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0120 records unsupported_claim_count 0 and current_promoted_natural_laws length 0.",
+      "deviation": 0.0,
+      "evidence": [
+        "unsupported_claim_count=0",
+        "natural_law_count=0"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0120 non-promotion statement is: Pass 0120 measures runtime replay drift against pass 0119's exact oracle. It does not prove BuildLang, JAX, GPU, or Julia execution when those branches are unavailable.",
+      "deviation": 0.0,
+      "evidence": [
+        "Pass 0120 measures runtime replay drift against pass 0119's exact oracle. It does not prove BuildLang, JAX, GPU, or Julia execution when those branches are unavailable."
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0120 file hashes are {'artifact': 'f16b1a61e135ecacfd4a31b6e70690918d95f8a5daff29f5a99c416bcaf1c759', 'composer': 'eb981b2e7380423e9bfc12f873922da332663fe8ce16297307cda222dc6f5025', 'packet': 'fd09fbc08621984ba199245b7c74fde1e13b915b6af0b01acd835af2daca8137', 'brief': 'f702c0aa7dedbe394a1bb75f058ce68ee1952f1fb2f925c2b80513c3f82442c3', 'steelman': '75ca700ff9af0c7a53c7523f66f02987fea455dc51b57272d1f2c53d964ef8c5', 'test': '75c61c3770a6b6bcb99ff5485ab47a06686a0d3ad7b0074361115649aae6731b', 'validator': '2a3f0333ff29e682011600c7b4f5fff2474074c35d5981ca9d9d01e96a3d6ba6', 'validator_result': '7047ad1055b8eed1526225ffec40de400661dabfcef837a26ff7693a633f2dd8', 'tool_receipts': '00533ae287da71c27b706a1303aff6ffcd0fe810601996a535cda6f09c752969'}.",
+      "deviation": 0.0,
+      "evidence": [
+        "file_hashes={'artifact': 'f16b1a61e135ecacfd4a31b6e70690918d95f8a5daff29f5a99c416bcaf1c759', 'composer': 'eb981b2e7380423e9bfc12f873922da332663fe8ce16297307cda222dc6f5025', 'packet': 'fd09fbc08621984ba199245b7c74fde1e13b915b6af0b01acd835af2daca8137', 'brief': 'f702c0aa7dedbe394a1bb75f058ce68ee1952f1fb2f925c2b80513c3f82442c3', 'steelman': '75ca700ff9af0c7a53c7523f66f02987fea455dc51b57272d1f2c53d964ef8c5', 'test': '75c61c3770a6b6bcb99ff5485ab47a06686a0d3ad7b0074361115649aae6731b', 'validator': '2a3f0333ff29e682011600c7b4f5fff2474074c35d5981ca9d9d01e96a3d6ba6', 'validator_result': '7047ad1055b8eed1526225ffec40de400661dabfcef837a26ff7693a633f2dd8', 'tool_receipts': '00533ae287da71c27b706a1303aff6ffcd0fe810601996a535cda6f09c752969'}"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    }
+  ]
+}

@@ -1,0 +1,103 @@
+{
+  "measurements": [
+    {
+      "claim": "Pass 0039 created a TheoremRemoteBlobStatementReplaySet/v1 artifact with status REMOTE_BLOB_STATEMENT_REPLAY_MATCH, theorem_count 10, remote_check_count 10, unique_remote_file_count 10, sha256 0e13f8c76728c20d3cfdb298638da8c5054f9b2bdf4e6fd8db0f74065fb20376, and seal c01eb59d75eb418f551e302b19dbaf47c4193373f72c4af5d229567fa96ebc58.",
+      "deviation": 0.0,
+      "evidence": [
+        "schema=TheoremRemoteBlobStatementReplaySet/v1",
+        "status=REMOTE_BLOB_STATEMENT_REPLAY_MATCH",
+        "theorem_count=10",
+        "remote_check_count=10",
+        "unique_remote_file_count=10",
+        "sha256=0e13f8c76728c20d3cfdb298638da8c5054f9b2bdf4e6fd8db0f74065fb20376",
+        "seal=c01eb59d75eb418f551e302b19dbaf47c4193373f72c4af5d229567fa96ebc58"
+      ],
+      "method": "remote-blob-schema-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0039 records fixture fixtures/theorem-remote-blob-statement-replay-pass-0039.json with sha256 0c584a64729156670ed5e3d74d25d483ef7f664fa8a983994358bb6d17a645a9 and seal d105da2ac0b6422f12f77e924bdf2b88b70517a0355a61f8b601dd11add1c495.",
+      "deviation": 0.0,
+      "evidence": [
+        "fixture sha256=0c584a64729156670ed5e3d74d25d483ef7f664fa8a983994358bb6d17a645a9",
+        "fixture seal=d105da2ac0b6422f12f77e924bdf2b88b70517a0355a61f8b601dd11add1c495"
+      ],
+      "method": "fixture-binding-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0039 binds to pass 0038 Git-blob statement replay and pass 0036 source-ref integrity with the recorded SHA-256 and seals, and source statuses BLOB_STATEMENT_REPLAY_MATCH and SOURCE_REF_INTEGRITY_MATCH.",
+      "deviation": 0.0,
+      "evidence": [
+        "blob_statement_replay_sha256=9ee5d5c8330911c04cc5de9a8a5856d18a46373a8a641e6f3fe3c2cffa4c2915",
+        "blob_statement_replay_seal=53541e1bdcb049e8823dff70b6f20b873a5dabea3ce63a854bdcdd53133e43bd",
+        "blob_statement_replay_status=BLOB_STATEMENT_REPLAY_MATCH",
+        "source_ref_integrity_sha256=74d89981ae7598f7a7381f6fdbb1196cf9be97ca854688a49c4e3c4bce9f6f6f",
+        "source_ref_integrity_seal=68382866e7e78895eb3d7fd0d613fcc8b17afc30398b7823cb198702262da2fb",
+        "source_ref_integrity_status=SOURCE_REF_INTEGRITY_MATCH"
+      ],
+      "method": "source-binding-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0039 records all ten theorem remote statement checks with remote frozen-solution, frozen-proof, discharge-gate, and overall signature statuses MATCH.",
+      "deviation": 0.0,
+      "evidence": [
+        "remote_check_count=10",
+        "all_remote_frozen_solution_match=true",
+        "all_remote_frozen_proof_match=true",
+        "all_remote_discharge_gates_match=true",
+        "all_remote_statement_checks_match=true"
+      ],
+      "method": "remote-statement-row-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0039 records all ten unique remote files with public GitHub raw URLs, remote raw SHA-256 matching pass 0038 blob bytes, and remote raw SHA-256 matching pass 0036 source-ref integrity.",
+      "deviation": 0.0,
+      "evidence": [
+        "unique_remote_file_count=10",
+        "all_remote_file_sha_match_pass0038=true",
+        "remote_base=https://raw.githubusercontent.com/Pengbinghui/pipeline-math/69d7df765a8f377a5e0628c6d36c088bce7642c9/",
+        "external_call_performed=true",
+        "worktree_text_used_for_signatures=false"
+      ],
+      "method": "remote-file-binding-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0039 validator result reports MATCH with theorem_count 10, remote_check_count 10, and unique_remote_file_count 10 after a fresh remote fetch.",
+      "deviation": 0.0,
+      "evidence": [
+        "schemas/pass-0039-theorem-remote-blob-statement-replay-validator-result.json status=MATCH",
+        "theorem_count=10",
+        "remote_check_count=10",
+        "unique_remote_file_count=10",
+        "fresh_remote_fetch=true"
+      ],
+      "method": "validator-result-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0039 records packet 049 with sha256 4a6ec0126557fa2de5ba878669371a61993689cf7661f0ae0339669c08b3fcc8 and local steelman with sha256 4ddceacc0a3b763ecbbe9871c8790070a7cfb9e63fe268afb083375e543e68f6.",
+      "deviation": 0.0,
+      "evidence": [
+        "packets/049-theorem-remote-blob-statement-replay.md sha256=4a6ec0126557fa2de5ba878669371a61993689cf7661f0ae0339669c08b3fcc8",
+        "adversarial/pass-0039-remote-blob-statement-replay-steelman.md sha256=4ddceacc0a3b763ecbbe9871c8790070a7cfb9e63fe268afb083375e543e68f6"
+      ],
+      "method": "packet-presence-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0039 preserves non-promotion boundaries: it checks public raw-source replay by commit only, does not re-run Lean, does not claim semantic proof review, and current_promoted_natural_laws remains none.",
+      "deviation": 0.0,
+      "evidence": [
+        "non_promotion_statement present",
+        "current_promoted_natural_laws=[]",
+        "steelman states remote replay is not semantic proof verification"
+      ],
+      "method": "non-promotion-boundary-review",
+      "tolerance": 0.5
+    }
+  ]
+}

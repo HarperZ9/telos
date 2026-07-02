@@ -1,0 +1,101 @@
+{
+  "measurements": [
+    {
+      "claim": "Pass 0140 created a ResearchArchiveSubstrateAtlasReceipt/v1 artifact with status RESEARCH_ARCHIVE_SUBSTRATE_ATLAS_MATCH, sha256 44041e9ced82a6c1d86e18b5b5cce831ba16c850413e35cdc8cda8e275276b54, and seal 2f3e0d8715396aeda6823b937a141664e8372e273c735d9d05429dffa4edb1ff.",
+      "deviation": 0.0,
+      "evidence": [
+        "schema=ResearchArchiveSubstrateAtlasReceipt/v1",
+        "status=RESEARCH_ARCHIVE_SUBSTRATE_ATLAS_MATCH",
+        "sha256=44041e9ced82a6c1d86e18b5b5cce831ba16c850413e35cdc8cda8e275276b54",
+        "seal=2f3e0d8715396aeda6823b937a141664e8372e273c735d9d05429dffa4edb1ff"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0140 records 28 captured sources and 26 usable captures.",
+      "deviation": 0.0,
+      "evidence": [
+        "gather_summary={'captured_sources': 28, 'distinct_body_count': 27, 'usable_captures': 26, 'warning_count': 4}"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0140 records 30 source systems and 4 source-quality warnings.",
+      "deviation": 0.0,
+      "evidence": [
+        "source_system_count=30",
+        "warnings=[{'category': 'academic_search_index', 'chars': 0, 'coverage': 'institutional_or_academic_repository', 'evidence_status': 'STATIC_CAPTURE_FAILED_SOURCE_LEAD', 'ingestion_protocol': 'browser_or_oai_followup_required', 'market_use': 'research_substrate_route', 'sha256': None, 'system': 'BASE', 'title': 'BASE', 'url': 'https://www.base-search.net/'}, {'category': 'domain_literature_index', 'chars': 0, 'coverage': 'astronomy_physics_search_metrics_export', 'evidence_status': 'GATHER_VERIFIED_EMPTY_CAPTURE', 'ingestion_protocol': 'rest_json_api_key', 'market_use': 'research_substrate_route', 'sha256': 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855', 'system': 'NASA ADS', 'title': 'https://ui.adsabs.harvard.edu/help/api/', 'url': 'https://ui.adsabs.harvard.edu/help/api/'}, {'category': 'open_science_repository', 'chars': 0, 'coverage': 'projects_registrations_files', 'evidence_status': 'GATHER_VERIFIED_EMPTY_CAPTURE', 'ingestion_protocol': 'rest_json', 'market_use': 'institutional_repository_harvest', 'sha256': 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855', 'system': 'OSF API', 'title': 'OSF APIv2 Documentation', 'url': 'https://developer.osf.io/'}, {'category': 'university_repository', 'chars': 0, 'coverage': 'institutional_or_academic_repository', 'evidence_status': 'STATIC_CAPTURE_FAILED_SOURCE_LEAD', 'ingestion_protocol': 'browser_or_oai_followup_required', 'market_use': 'institutional_repository_harvest', 'sha256': None, 'system': 'DSpace@MIT', 'title': 'DSpace@MIT', 'url': 'https://dspace.mit.edu/'}]"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0140 records 14 substrate families.",
+      "deviation": 0.0,
+      "evidence": [
+        "substrate_families=[{'examples': 'arXiv, bioRxiv, medRxiv, ChemRxiv, SSRN, Research Square', 'family': 'preprint_archives', 'status': 'SUBSTRATE_FAMILY', 'tooling_target': 'rapid frontier claim intake'}, {'examples': 'Crossref, DataCite, DOI registration agencies', 'family': 'publisher_metadata_graphs', 'status': 'SUBSTRATE_FAMILY', 'tooling_target': 'provenance, references, licenses, funders'}, {'examples': 'OpenAlex, Semantic Scholar, CORE, BASE', 'family': 'scholarly_graphs', 'status': 'SUBSTRATE_FAMILY', 'tooling_target': 'literature graph and institutional coverage'}, {'examples': 'PMC OAI, CORE, repository full text', 'family': 'open_full_text', 'status': 'SUBSTRATE_FAMILY', 'tooling_target': 'text mining and claim extraction'}, {'examples': 'ClinicalTrials.gov and related registries', 'family': 'clinical_registries', 'status': 'SUBSTRATE_FAMILY', 'tooling_target': 'protocol and endpoint receipts'}, {'examples': 'NCBI, PMC, GEO, SRA, UniProt, RCSB PDB', 'family': 'biomedical_databases', 'status': 'SUBSTRATE_FAMILY', 'tooling_target': 'bio/medicine experiment substrate'}, {'examples': 'Materials Project, chemistry preprints, molecule databases', 'family': 'materials_chemistry', 'status': 'SUBSTRATE_FAMILY', 'tooling_target': 'property prediction and simulation receipts'}, {'examples': 'OpenML, Hugging Face, Kaggle-style hubs', 'family': 'ml_dataset_hubs', 'status': 'SUBSTRATE_FAMILY', 'tooling_target': 'benchmark provenance and contamination checks'}, {'examples': 'Zenodo, OSF, Dataverse, Figshare, Dryad', 'family': 'general_data_repositories', 'status': 'SUBSTRATE_FAMILY', 'tooling_target': 'data DOI and reproducibility packets'}, {'examples': 'MIT, Harvard, Stanford, Caltech, Oxford, Cambridge', 'family': 'university_repositories', 'status': 'SUBSTRATE_FAMILY', 'tooling_target': 'institutional thesis/report/article harvesting'}, {'examples': 'NASA, NOAA, DOE, NIH, NSF portals', 'family': 'government_science_data', 'status': 'SUBSTRATE_FAMILY', 'tooling_target': 'public measurement substrates'}, {'examples': 'Lean mathlib, theorem prover repos, problem archives', 'family': 'formal_math_repositories', 'status': 'SUBSTRATE_FAMILY', 'tooling_target': 'machine-checkable proof receipts'}, {'examples': 'NIST, W3C, ISO metadata, patent offices', 'family': 'standards_and_patents', 'status': 'SUBSTRATE_FAMILY', 'tooling_target': 'engineering constraints and prior art'}, {'examples': 'regulators, courts, legislation portals', 'family': 'policy_and_law', 'status': 'SUBSTRATE_FAMILY', 'tooling_target': 'governance claim provenance'}]"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0140 records 18 domain expansion queue rows.",
+      "deviation": 0.0,
+      "evidence": [
+        "domain_expansion_queue=[{'domain': 'math_formal_methods', 'first_product': 'ProofPacket and LeanProofReceipt', 'source_targets': 'proof assistants, arXiv math, theorem archives', 'status': 'EXPANSION_QUEUE'}, {'domain': 'physics_quantum_cosmology', 'first_product': 'simulator and law-boundary receipts', 'source_targets': 'arXiv physics, NASA ADS, HEPData', 'status': 'EXPANSION_QUEUE'}, {'domain': 'biology_genomics', 'first_product': 'claim-to-experiment packets', 'source_targets': 'bioRxiv, NCBI, ENA, GEO, SRA', 'status': 'EXPANSION_QUEUE'}, {'domain': 'medicine_clinical', 'first_product': 'clinical endpoint receipts', 'source_targets': 'medRxiv, PubMed, PMC, ClinicalTrials.gov', 'status': 'EXPANSION_QUEUE'}, {'domain': 'materials_chemistry', 'first_product': 'property replay packets', 'source_targets': 'Materials Project, RCSB, ChemRxiv', 'status': 'EXPANSION_QUEUE'}, {'domain': 'robotics_embodied_ai', 'first_product': 'embodied action receipts', 'source_targets': 'OpenReview, arXiv cs.RO, robot datasets', 'status': 'EXPANSION_QUEUE'}, {'domain': 'ai_ml', 'first_product': 'dataset/model contamination receipts', 'source_targets': 'arXiv cs.LG, OpenML, Hugging Face, Papers with Code', 'status': 'EXPANSION_QUEUE'}, {'domain': 'climate_energy', 'first_product': 'earth/energy simulation receipts', 'source_targets': 'NASA, NOAA, DOE, arXiv physics', 'status': 'EXPANSION_QUEUE'}, {'domain': 'security_cryptography', 'first_product': 'exploit/fix proof packets', 'source_targets': 'ePrint, CVE, GitHub advisories, arXiv', 'status': 'EXPANSION_QUEUE'}, {'domain': 'finance_economics', 'first_product': 'risk and causal evidence packets', 'source_targets': 'SSRN, NBER, FRED, SEC EDGAR', 'status': 'EXPANSION_QUEUE'}, {'domain': 'education_learning', 'first_product': 'learning graph receipts', 'source_targets': 'ERIC, university repos, lesson datasets', 'status': 'EXPANSION_QUEUE'}, {'domain': 'law_policy_governance', 'first_product': 'decision provenance receipts', 'source_targets': 'court/regulator portals, legislation APIs', 'status': 'EXPANSION_QUEUE'}, {'domain': 'neuroscience_bci', 'first_product': 'closed-loop experiment packets', 'source_targets': 'PubMed, bioRxiv, OpenNeuro', 'status': 'EXPANSION_QUEUE'}, {'domain': 'agriculture_food', 'first_product': 'crop/system optimization receipts', 'source_targets': 'USDA, FAO, genomics repositories', 'status': 'EXPANSION_QUEUE'}, {'domain': 'transportation_cities', 'first_product': 'infrastructure optimization packets', 'source_targets': 'DOT, city open data, simulation papers', 'status': 'EXPANSION_QUEUE'}, {'domain': 'semiconductors_hpc', 'first_product': 'compiler/runtime receipts', 'source_targets': 'DOE, arXiv, MLIR/OpenXLA repos', 'status': 'EXPANSION_QUEUE'}, {'domain': 'color_rendering_media', 'first_product': 'measurement truth kits', 'source_targets': 'ACES/OCIO, display datasets, standards', 'status': 'EXPANSION_QUEUE'}, {'domain': 'philosophy_cognitive_science', 'first_product': 'functional learning maps', 'source_targets': 'university repos, PhilPapers, archives', 'status': 'EXPANSION_QUEUE'}]"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0140 records 6 megatool routes and 10 adapter requirements.",
+      "deviation": 0.0,
+      "evidence": [
+        "megatool_routes=[{'output': 'source-backed claim with verification state', 'route': 'archive_to_claim_packet', 'tools': ['Gather', 'Index', 'Crucible']}, {'output': 'protocol, runtime receipt, measurement, verifier', 'route': 'claim_to_experiment_packet', 'tools': ['Gather', 'Telos', 'Crucible', 'BuildLang/buildc']}, {'output': 'dataset lineage, contamination gate, eval receipt', 'route': 'dataset_to_model_receipt', 'tools': ['Gather', 'Index', 'Model Foundry', 'Crucible']}, {'output': 'machine-checkable theorem replay packet', 'route': 'paper_to_formal_proof', 'tools': ['Gather', 'Index', 'Lean/ATP adapter', 'Crucible']}, {'output': 'source-backed lesson and prerequisite graph', 'route': 'university_repo_to_learning_graph', 'tools': ['Gather', 'Index', 'Forum', 'Learning Forge']}, {'output': 'compiled scientific kernel with data provenance', 'route': 'domain_database_to_build_kernel', 'tools': ['Gather', 'BuildLang/buildc', 'Crucible']}]",
+        "adapter_requirements=['source_url', 'source_system', 'ingestion_protocol', 'body_or_metadata_hash', 'license_or_terms_ref', 'freshness_time', 'claim_extraction_state', 'negative_controls', 'verifier', 'promotion_boundary']"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0140 rejects 10 negative fixtures.",
+      "deviation": 0.0,
+      "evidence": [
+        "negative_fixtures=[{'failures': ['many_sources', 'no_verifier'], 'fixture_id': 'source_breadth_as_truth', 'status': 'REJECTED'}, {'failures': ['preprint_state', 'needs_publication_or_replication'], 'fixture_id': 'preprint_as_peer_review', 'status': 'REJECTED'}, {'failures': ['metadata_only', 'no_claim_body'], 'fixture_id': 'metadata_as_full_text', 'status': 'REJECTED'}, {'failures': ['empty_capture', 'needs_browser_or_api_followup'], 'fixture_id': 'empty_capture_as_evidence', 'status': 'REJECTED'}, {'failures': ['static_capture_failed', 'source_lead_only'], 'fixture_id': 'failed_static_capture_as_verified', 'status': 'REJECTED'}, {'failures': ['registry_record', 'needs_results_analysis'], 'fixture_id': 'clinical_trial_record_as_efficacy', 'status': 'REJECTED'}, {'failures': ['dataset_found', 'needs_schema_and_task_receipt'], 'fixture_id': 'dataset_presence_as_benchmark_validity', 'status': 'REJECTED'}, {'failures': ['institutional_subset', 'coverage_unknown'], 'fixture_id': 'university_repo_as_complete_corpus', 'status': 'REJECTED'}, {'failures': ['api_docs_only', 'needs_license_terms'], 'fixture_id': 'api_docs_as_license_clearance', 'status': 'REJECTED'}, {'failures': ['classification_only', 'needs_proof_or_reproduction'], 'fixture_id': 'taxonomy_as_natural_law', 'status': 'REJECTED'}]"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0140 promotes no source breadth, preprint, metadata, dataset, clinical record, or taxonomy into a natural law.",
+      "deviation": 0.0,
+      "evidence": [
+        "current_promoted_natural_laws=[]",
+        "boundary=Pass 0140 is a first-wave archive substrate atlas. It does not claim complete world coverage, source correctness, publication validity, market demand, theorem proof, experimental truth, or natural-law promotion."
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0140 flagship receipts are {'forum': {'confidence': 0.2, 'needs_escalation': True, 'status': 'MATCH_WITH_ROUTE_GAP', 'stderr_sha256': 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855', 'stdout_sha256': 'f5e5ed8975b10099960499e97c69c5dd8eeba0ad56712ad0a58a4484e20dde84'}, 'index': {'status': 'MATCH', 'stderr_sha256': 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855', 'stdout_sha256': '46e334cf7e0591a88a94426c521b464ddc8538cb9cea441f0f01938427fa5349', 'verification_verdict': 'MATCH'}, 'telos': {'status': 'MATCH', 'stderr_sha256': 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855', 'stdout_sha256': 'be17cb15259234cb4e8e95c2b36e76c90d841431729beb140294e34c5f9ebfa7', 'tool_version': '0.1.0'}, 'telos_catalog': {'status': 'MATCH', 'stderr_sha256': 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855', 'stdout_sha256': 'ef95a6f1ff803c483c3c4dd553fe19c37ab144113a21bc005cf4148cf31a8564'}}.",
+      "deviation": 0.0,
+      "evidence": [
+        "flagship_receipts={'forum': {'confidence': 0.2, 'needs_escalation': True, 'status': 'MATCH_WITH_ROUTE_GAP', 'stderr_sha256': 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855', 'stdout_sha256': 'f5e5ed8975b10099960499e97c69c5dd8eeba0ad56712ad0a58a4484e20dde84'}, 'index': {'status': 'MATCH', 'stderr_sha256': 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855', 'stdout_sha256': '46e334cf7e0591a88a94426c521b464ddc8538cb9cea441f0f01938427fa5349', 'verification_verdict': 'MATCH'}, 'telos': {'status': 'MATCH', 'stderr_sha256': 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855', 'stdout_sha256': 'be17cb15259234cb4e8e95c2b36e76c90d841431729beb140294e34c5f9ebfa7', 'tool_version': '0.1.0'}, 'telos_catalog': {'status': 'MATCH', 'stderr_sha256': 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855', 'stdout_sha256': 'ef95a6f1ff803c483c3c4dd553fe19c37ab144113a21bc005cf4148cf31a8564'}}"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0140 validator status is MATCH and test status is MATCH.",
+      "deviation": 0.0,
+      "evidence": [
+        "validator={'command': 'C:\\\\Users\\\\Zain\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python312\\\\python.exe C:\\\\dev\\\\public\\\\telos\\\\docs\\\\research\\\\dogfood\\\\tools\\\\validate_pass_0140_research_archive_substrate_atlas.py', 'exit_code': 0, 'stdout_sha256': '3a911c1fc3e071fb6f2c40615bd44ba1d949f9e54c85b35f467233918a00e83e', 'stderr_sha256': 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855', 'status': 'MATCH'}",
+        "test={'command': 'C:\\\\Users\\\\Zain\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python312\\\\python.exe C:\\\\dev\\\\public\\\\telos\\\\docs\\\\research\\\\dogfood\\\\tools\\\\test_research_archive_substrate_atlas.py', 'exit_code': 0, 'stdout_sha256': 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855', 'stderr_sha256': 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855', 'status': 'MATCH'}"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    }
+  ]
+}

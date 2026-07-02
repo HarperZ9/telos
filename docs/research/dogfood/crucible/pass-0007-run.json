@@ -1,0 +1,347 @@
+{
+  "ok": true,
+  "thesis": {
+    "id": "182b2b3fc3fdcb67",
+    "title": "Dogfood Pass 0007 Formal Identity Proof Packet and Reusable Validator",
+    "registered_at": 1782900245.2257466,
+    "disposition": "fenced",
+    "seal": "182b2b3fc3fdcb673ae25fff1bfd104237fcfc5e8390c4c9e1863f9afa719447",
+    "claims": [
+      {
+        "id": "5c8dd63c45fc422c",
+        "sha256": "5c8dd63c45fc422cd6b42413629953cda455f40269438dd4d1a94363c8c5f296"
+      },
+      {
+        "id": "ad886d462c0519e6",
+        "sha256": "ad886d462c0519e6a930af053357a1407786aaa6bc511d3a2f457d9f5ab25e5a"
+      },
+      {
+        "id": "a8b96e04baa51f5d",
+        "sha256": "a8b96e04baa51f5dfce4db339b3df5ff7f92c45a4cae5e3cbd551e498507d3db"
+      },
+      {
+        "id": "f0b1df3bac473276",
+        "sha256": "f0b1df3bac4732767b0a569ad6d5c424fd36b4f2bd4fa54a90005ba3e38cbd34"
+      },
+      {
+        "id": "b3d752d1439795ef",
+        "sha256": "b3d752d1439795efd9140e792b9825aca345eefc91ee629fbc4cb48e423f99d5"
+      },
+      {
+        "id": "936802e7744f9415",
+        "sha256": "936802e7744f941516a16e2be3145c233f4b27180009d7fec2d5c7e45911c826"
+      }
+    ]
+  },
+  "refutations": [
+    {
+      "claim_id": "5c8dd63c45fc422c",
+      "claim_sha256": "5c8dd63c45fc422cd6b42413629953cda455f40269438dd4d1a94363c8c5f296",
+      "challenge": "test the stated falsification: formal-identity-proof-packet-pass-0007.json is missing, lacks the identity claim, or contains a PROMOTED_LAW claim",
+      "measurable": "formal-identity-proof-packet-pass-0007.json is missing, lacks the identity claim, or contains a PROMOTED_LAW claim",
+      "source": "null"
+    },
+    {
+      "claim_id": "ad886d462c0519e6",
+      "claim_sha256": "ad886d462c0519e6a930af053357a1407786aaa6bc511d3a2f457d9f5ab25e5a",
+      "challenge": "test the stated falsification: formal-identity-probe-pass-0007.json reports failures, checks a smaller range, or records a different probe seal",
+      "measurable": "formal-identity-probe-pass-0007.json reports failures, checks a smaller range, or records a different probe seal",
+      "source": "null"
+    },
+    {
+      "claim_id": "a8b96e04baa51f5d",
+      "claim_sha256": "a8b96e04baa51f5dfce4db339b3df5ff7f92c45a4cae5e3cbd551e498507d3db",
+      "challenge": "test the stated falsification: proof-packet-validator-positive-pass-0007.json reports non-MATCH status, match not equal to 1, or drift not equal to 0",
+      "measurable": "proof-packet-validator-positive-pass-0007.json reports non-MATCH status, match not equal to 1, or drift not equal to 0",
+      "source": "null"
+    },
+    {
+      "claim_id": "f0b1df3bac473276",
+      "claim_sha256": "f0b1df3bac4732767b0a569ad6d5c424fd36b4f2bd4fa54a90005ba3e38cbd34",
+      "challenge": "test the stated falsification: proof-packet-validator-negative-pass-0007.json reports non-DRIFT status, omits missing authority_receipts, or records an exit code other than 1",
+      "measurable": "proof-packet-validator-negative-pass-0007.json reports non-DRIFT status, omits missing authority_receipts, or records an exit code other than 1",
+      "source": "null"
+    },
+    {
+      "claim_id": "b3d752d1439795ef",
+      "claim_sha256": "b3d752d1439795efd9140e792b9825aca345eefc91ee629fbc4cb48e423f99d5",
+      "challenge": "test the stated falsification: otel-normalized-action-pass-0007.json is missing, reports non-MATCH normalization, or lacks non-inferable authority/workspace/verification/decision fields",
+      "measurable": "otel-normalized-action-pass-0007.json is missing, reports non-MATCH normalization, or lacks non-inferable authority/workspace/verification/decision fields",
+      "source": "null"
+    },
+    {
+      "claim_id": "936802e7744f9415",
+      "claim_sha256": "936802e7744f941516a16e2be3145c233f4b27180009d7fec2d5c7e45911c826",
+      "challenge": "test the stated falsification: any pass 0007 artifact labels a natural law, theorem breakthrough, medical result, finance result, safety result, or physical discovery as promoted",
+      "measurable": "any pass 0007 artifact labels a natural law, theorem breakthrough, medical result, finance result, safety result, or physical discovery as promoted",
+      "source": "null"
+    }
+  ],
+  "assessment": {
+    "started_at": 1782900245.231647,
+    "thesis_id": "182b2b3fc3fdcb67",
+    "thesis_seal": "182b2b3fc3fdcb673ae25fff1bfd104237fcfc5e8390c4c9e1863f9afa719447",
+    "claims": 6,
+    "match": 6,
+    "drift": 0,
+    "unverifiable": 0,
+    "verdict_seal": "221a9ca932018419b45bdfe376aa265b8aef9d4fadb34e1acbe366845587a7f8",
+    "measurement_seal": "dcf35af59934725ff08463d1cd2646e4073ecaaeb4091108ef4f551c10b1064d",
+    "disposition": "fenced",
+    "stored": null,
+    "verdicts": [
+      {
+        "claim_id": "5c8dd63c45fc422c",
+        "claim_sha256": "5c8dd63c45fc422cd6b42413629953cda455f40269438dd4d1a94363c8c5f296",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "json-and-packet-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "ad886d462c0519e6",
+        "claim_sha256": "ad886d462c0519e6a930af053357a1407786aaa6bc511d3a2f457d9f5ab25e5a",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "bounded-computation-receipt-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "a8b96e04baa51f5d",
+        "claim_sha256": "a8b96e04baa51f5dfce4db339b3df5ff7f92c45a4cae5e3cbd551e498507d3db",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "validator-run-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "f0b1df3bac473276",
+        "claim_sha256": "f0b1df3bac4732767b0a569ad6d5c424fd36b4f2bd4fa54a90005ba3e38cbd34",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "negative-validator-run-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "b3d752d1439795ef",
+        "claim_sha256": "b3d752d1439795efd9140e792b9825aca345eefc91ee629fbc4cb48e423f99d5",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "normalization-output-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "936802e7744f9415",
+        "claim_sha256": "936802e7744f941516a16e2be3145c233f4b27180009d7fec2d5c7e45911c826",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "artifact-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      }
+    ],
+    "measurements": [
+      {
+        "claim_id": "5c8dd63c45fc422c",
+        "claim_sha256": "5c8dd63c45fc422cd6b42413629953cda455f40269438dd4d1a94363c8c5f296",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "json-and-packet-review",
+        "measured_at": 1782900245.2314491,
+        "evidence": [
+          "schemas/formal-identity-proof-packet-pass-0007.json exists",
+          "packet_id=proof-packet-pass-0007-formal-identity-odd-sum",
+          "claim_id=claim-odd-sum-square-identity",
+          "promotion_state=IDENTITY",
+          "packets/017-formal-identity-odd-sum.md records a human-readable induction proof",
+          "no claim_set entry uses promotion_state=PROMOTED_LAW"
+        ]
+      },
+      {
+        "claim_id": "ad886d462c0519e6",
+        "claim_sha256": "ad886d462c0519e6a930af053357a1407786aaa6bc511d3a2f457d9f5ab25e5a",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "bounded-computation-receipt-review",
+        "measured_at": 1782900245.2314568,
+        "evidence": [
+          "schemas/formal-identity-probe-pass-0007.json status=PROBE_MATCH",
+          "range_checked.min_n=0",
+          "range_checked.max_n=100000",
+          "failures=[]",
+          "seal=e9293c7bb2fd8d0b4bbcf9ff547f4f50f90c3b0d008fe261a3c7bd338a779d5f",
+          "first naive repeated-summation probe timed out and was recorded as a measurement-design lesson"
+        ]
+      },
+      {
+        "claim_id": "a8b96e04baa51f5d",
+        "claim_sha256": "a8b96e04baa51f5dfce4db339b3df5ff7f92c45a4cae5e3cbd551e498507d3db",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "validator-run-review",
+        "measured_at": 1782900245.231459,
+        "evidence": [
+          "schemas/proof-packet-validator-positive-pass-0007.json status=MATCH",
+          "match=1",
+          "drift=0",
+          "observed_exit_code=0",
+          "check.path=schemas\\\\formal-identity-proof-packet-pass-0007.json"
+        ]
+      },
+      {
+        "claim_id": "f0b1df3bac473276",
+        "claim_sha256": "f0b1df3bac4732767b0a569ad6d5c424fd36b4f2bd4fa54a90005ba3e38cbd34",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "negative-validator-run-review",
+        "measured_at": 1782900245.2314603,
+        "evidence": [
+          "schemas/proof-packet-validator-negative-pass-0007.json status=DRIFT",
+          "match=0",
+          "drift=1",
+          "observed_exit_code=1",
+          "errors include missing authority_receipts"
+        ]
+      },
+      {
+        "claim_id": "b3d752d1439795ef",
+        "claim_sha256": "b3d752d1439795efd9140e792b9825aca345eefc91ee629fbc4cb48e423f99d5",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "normalization-output-review",
+        "measured_at": 1782900245.2314622,
+        "evidence": [
+          "schemas/otel-normalized-action-pass-0007.json schema=TelosActionEvent/v1",
+          "source_schema=OpenTelemetrySpanLike/v1",
+          "normalization_status=MATCH",
+          "missing_required_source_fields=[]",
+          "non_inferable_telos_fields includes authority_receipts",
+          "non_inferable_telos_fields includes workspace_state",
+          "non_inferable_telos_fields includes verification_verdicts",
+          "non_inferable_telos_fields includes decision_summary"
+        ]
+      },
+      {
+        "claim_id": "936802e7744f9415",
+        "claim_sha256": "936802e7744f941516a16e2be3145c233f4b27180009d7fec2d5c7e45911c826",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "artifact-review",
+        "measured_at": 1782900245.2314637,
+        "evidence": [
+          "packets/017-formal-identity-odd-sum.md explicitly says no new theorem, natural law, or PROMOTED_LAW",
+          "schemas/formal-identity-proof-packet-pass-0007.json failure_labels include NOT_A_NEW_THEOREM",
+          "schemas/formal-identity-proof-packet-pass-0007.json failure_labels include NO_KERNEL_CERTIFICATE",
+          "schemas/formal-identity-proof-packet-pass-0007.json failure_labels include FINITE_PROBE_NOT_UNIVERSAL",
+          "README continues to say current promoted natural laws: none"
+        ]
+      }
+    ],
+    "seal": "53fcf10d1e070a70e9549f9317612bae04c70ef5157469499b76d6646682f441"
+  },
+  "verdicts": [
+    {
+      "claim_id": "5c8dd63c45fc422c",
+      "claim_sha256": "5c8dd63c45fc422cd6b42413629953cda455f40269438dd4d1a94363c8c5f296",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "json-and-packet-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "ad886d462c0519e6",
+      "claim_sha256": "ad886d462c0519e6a930af053357a1407786aaa6bc511d3a2f457d9f5ab25e5a",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "bounded-computation-receipt-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "a8b96e04baa51f5d",
+      "claim_sha256": "a8b96e04baa51f5dfce4db339b3df5ff7f92c45a4cae5e3cbd551e498507d3db",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "validator-run-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "f0b1df3bac473276",
+      "claim_sha256": "f0b1df3bac4732767b0a569ad6d5c424fd36b4f2bd4fa54a90005ba3e38cbd34",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "negative-validator-run-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "b3d752d1439795ef",
+      "claim_sha256": "b3d752d1439795efd9140e792b9825aca345eefc91ee629fbc4cb48e423f99d5",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "normalization-output-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "936802e7744f9415",
+      "claim_sha256": "936802e7744f941516a16e2be3145c233f4b27180009d7fec2d5c7e45911c826",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "artifact-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    }
+  ],
+  "checks": {
+    "seals_ok": true,
+    "thesis_ok": true,
+    "verdicts_rederive": true
+  },
+  "report": "C:\\dev\\public\\telos\\docs\\research\\dogfood\\crucible\\pass-0007-report.md",
+  "record": "C:\\dev\\public\\telos\\docs\\research\\dogfood\\crucible\\pass-0007-run.json",
+  "bundle": null,
+  "spec": null,
+  "review": null,
+  "verifier": {
+    "mode": "cleanroom",
+    "inputs": [],
+    "excluded": [
+      "worker context",
+      "reasoning trace",
+      "intermediate steps"
+    ],
+    "checkability": "If success cannot be evaluated from the original spec and the artifact, the spec is not checkable yet."
+  }
+}

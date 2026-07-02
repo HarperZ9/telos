@@ -1,0 +1,38 @@
+{
+  "version": "project-telos.proof-packet/v1",
+  "packet_id": "third-wave-buildlang-hello-ci-review",
+  "claim": "BuildLang hello.bld type-checks under the built-in ci-review policy profile, emits a passed check receipt, declares only the Console effect for main, and observes the Console println capability.",
+  "scope": "Local source-checkout demo only: C:\\dev\\public\\pubscan\\quantalang with buildc 1.0.6 from isolated Cargo target; this does not prove whole-language correctness, full compiler correctness, physical scientific validity, or Build Universe compilation.",
+  "verdicts": {
+    "overall": "MATCH"
+  },
+  "sources": [
+    {
+      "ref": "C:\\dev\\public\\pubscan\\quantalang\\examples\\quickstart\\hello.bld",
+      "sha256": "0e542c60fbd874a38a2a3a87eaf61be04532a0df23e3ea25512d03301883dfae"
+    },
+    {
+      "ref": "C:\\dev\\public\\telos\\docs\\outreach\\receipts\\third-wave\\buildlang-hello-ci-review-receipt.json",
+      "sha256": "ca46b87feb969af1896bf8fd53281ec84143a43ca7ae558e206baf23fb34ca1d"
+    }
+  ],
+  "checks": [
+    {
+      "id": "buildc.check.ci-review",
+      "command": "buildc check examples\\quickstart\\hello.bld --profile ci-review --expect-profile-digest 265584dc495e50171aaa14ab84e0522a34de5b645a703b360c8209068b36f43b --receipt <path>",
+      "status": "passed"
+    },
+    {
+      "id": "buildc.receipt.verify",
+      "command": "buildc receipt verify <receipt> --source examples\\quickstart\\hello.bld --expect-profile ci-review --json",
+      "status": "passed"
+    }
+  ],
+  "decision_summary": "The local buildc receipt and verification report agree on schema, compiler version 1.0.6, source digest, input graph digest, ci-review policy digest, passed status, declared Console effect, observed Console println capability, and empty diagnostics.",
+  "non_promotion": [
+    "Does not claim BuildLang replaces Julia today.",
+    "Does not claim full linear type soundness.",
+    "Does not claim Build Universe compiles as a whole.",
+    "Does not claim scientific discovery or physical measurement."
+  ]
+}

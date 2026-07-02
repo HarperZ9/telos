@@ -1,0 +1,156 @@
+{
+  "schema": "ProofPacket/v1",
+  "packet_id": "proof-packet-pass-0006-build-color-action",
+  "pass": "0006",
+  "generated_on": "2026-07-01",
+  "domain": "agent-action-scientific-runtime",
+  "claim_set": [
+    {
+      "claim_id": "claim-build-color-bounded-roundtrip",
+      "claim": "A bounded Build Color probe matched its declared numerical thresholds for sRGB/XYZ roundtrip, sRGB/Oklab roundtrip, PQ roundtrip, and CIEDE2000 Sharma pair 1.",
+      "promotion_state": "PROBE_MATCH",
+      "confidence": "high",
+      "limits": "This is a bounded numerical probe and targeted regression result, not a full calibration proof."
+    },
+    {
+      "claim_id": "claim-otel-normalization",
+      "claim": "An OpenTelemetry span can be normalized into a Telos action event while preserving trace/span causality fields, but authority, workspace state, verification, and decision fields must be supplied by Telos receipts.",
+      "promotion_state": "HYPOTHESIS",
+      "confidence": "high",
+      "limits": "The mapping is a schema-level adapter design, not a production importer."
+    },
+    {
+      "claim_id": "claim-proof-packet-minimum",
+      "claim": "The packet includes the required ProofPacket/v1 minimum fields from the pass 0005 validator contract.",
+      "promotion_state": "PROBE_MATCH",
+      "confidence": "high",
+      "limits": "Shape validity does not imply market validation or production security."
+    }
+  ],
+  "source_receipts": [
+    {
+      "source_id": "source-otel-traces",
+      "kind": "url",
+      "url": "https://opentelemetry.io/docs/concepts/signals/traces/",
+      "used_for": "trace/span/action normalization semantics",
+      "confidence": "high"
+    },
+    {
+      "source_id": "source-build-color-spaces",
+      "kind": "file",
+      "path": "C:\\dev\\public\\build-color\\build_color\\spaces.py",
+      "used_for": "sRGB, XYZ, Oklab conversion functions",
+      "confidence": "high"
+    },
+    {
+      "source_id": "source-build-color-tonemap",
+      "kind": "file",
+      "path": "C:\\dev\\public\\build-color\\build_color\\tonemap.py",
+      "used_for": "PQ transfer functions",
+      "confidence": "high"
+    },
+    {
+      "source_id": "source-build-color-difference-tests",
+      "kind": "file",
+      "path": "C:\\dev\\public\\build-color\\tests\\test_difference.py",
+      "used_for": "CIEDE2000 Sharma reference pair test expectations",
+      "confidence": "high"
+    }
+  ],
+  "action_receipts": [
+    {
+      "action_id": "action-run-build-color-probe",
+      "actor": "Codex",
+      "action": "ran inline Python Build Color measurement probe",
+      "result": "PROBE_MATCH",
+      "receipt_ref": "schemas/build-color-measurement-receipt-pass-0006.json"
+    },
+    {
+      "action_id": "action-run-build-color-tests",
+      "actor": "Codex",
+      "action": "ran targeted Build Color pytest slice",
+      "command": "python -m pytest tests/test_spaces.py tests/test_tonemap.py::TestPQRoundtrip tests/test_difference.py::TestCIEDE2000KnownPairs",
+      "result": "88 passed in 0.39s"
+    },
+    {
+      "action_id": "action-map-otel-span",
+      "actor": "Codex",
+      "action": "created OpenTelemetry-to-Telos normalization map",
+      "result": "SCHEMA_ARTIFACT",
+      "receipt_ref": "schemas/otel-action-normalization-pass-0006.json"
+    }
+  ],
+  "authority_receipts": [
+    {
+      "authority_id": "authority-dogfood-local-research",
+      "scope": "local dogfood research artifact creation and verification",
+      "admission": "allowed",
+      "notes": "No production deployment, destructive action, credential access, or external side effect."
+    }
+  ],
+  "workspace_state": {
+    "telos": {
+      "repo": "C:\\dev\\public\\telos",
+      "head": "cbbf82c",
+      "tracked_dirty_state": "clean",
+      "untracked_context": "dogfood research artifacts and prior market recon docs"
+    },
+    "build_color": {
+      "repo": "C:\\dev\\public\\build-color",
+      "head": "96560ee",
+      "tracked_dirty_state": "clean"
+    },
+    "build_universe": {
+      "repo": "C:\\dev\\public\\build-universe",
+      "head": "362e053",
+      "tracked_dirty_state": "clean"
+    },
+    "calibrate_pro": {
+      "repo": "C:\\dev\\public\\calibrate-pro",
+      "head": "0f1c7b1",
+      "tracked_dirty_state": "clean"
+    }
+  },
+  "verification_verdicts": [
+    {
+      "verifier": "BuildColorProbe",
+      "status": "PROBE_MATCH",
+      "evidence_ref": "schemas/build-color-measurement-receipt-pass-0006.json"
+    },
+    {
+      "verifier": "BuildColorPytestSlice",
+      "status": "MATCH",
+      "evidence": "88 passed in 0.39s"
+    },
+    {
+      "verifier": "DogfoodSchemaValidator",
+      "status": "MATCH",
+      "evidence_ref": "schemas/schema-validator-results-pass-0006.json"
+    },
+    {
+      "verifier": "Crucible",
+      "status": "MATCH",
+      "evidence_ref": "crucible/pass-0006-report.md"
+    }
+  ],
+  "failure_labels": [
+    {
+      "label": "NOT_A_NATURAL_LAW",
+      "reason": "The packet validates bounded artifact shape and numerical probes only."
+    },
+    {
+      "label": "NOT_A_PHYSICAL_CALIBRATION",
+      "reason": "No hardware measurement or display instrument was used."
+    },
+    {
+      "label": "NOT_A_PRODUCTION_IMPORTER",
+      "reason": "OpenTelemetry normalization is a design artifact, not a shipped adapter."
+    }
+  ],
+  "decision_summary": {
+    "decision": "advance_to_validator_and_adapter_implementation",
+    "reason": "The packet spine can hold source receipts, action receipts, authority receipts, workspace state, verification verdicts, failure labels, and a measured Build Color receipt.",
+    "confidence": "high",
+    "next_action": "turn the local validator and normalization table into production-facing adapter stubs after more dogfood passes"
+  }
+}

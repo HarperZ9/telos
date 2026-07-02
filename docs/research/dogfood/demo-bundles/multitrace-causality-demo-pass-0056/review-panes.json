@@ -1,0 +1,54 @@
+{
+  "panes": [
+    {
+      "display_redaction": "hash_only",
+      "durable_receipt_hash": "71b39e899e143294fb810a2d335bb11cbeff43abf26114cdda22573dd2502952",
+      "durable_receipt_kind": "GatherDocumentReceipt/v1",
+      "durable_receipt_ref": "gather:docs/packets/064-otel-trace-receipt-join-adapter.md",
+      "order": 1,
+      "pane_id": "pane-01-gather",
+      "span_ref": "otel:trace/00550000000000000000000000000001/span/0055000000000001",
+      "title": "Source Intake",
+      "tool_class": "gather",
+      "verdict": "MATCH"
+    },
+    {
+      "display_redaction": "redacted",
+      "durable_receipt_hash": "d30289cfdcaf8630e7fb7b3ba911cbac485a62f5306e3b5c37338768dbfe9e7a",
+      "durable_receipt_kind": "project-telos.browser-evidence/v1",
+      "durable_receipt_ref": "artifact:fixtures/browser-evidence-redacted-pass-0028.json",
+      "order": 2,
+      "pane_id": "pane-02-browser_evidence",
+      "span_ref": "otel:trace/00550000000000000000000000000002/span/0055000000000002",
+      "title": "Browser Evidence",
+      "tool_class": "browser_evidence",
+      "verdict": "MATCH"
+    },
+    {
+      "display_redaction": "hash_only",
+      "durable_receipt_hash": "validator-pass-0054-match",
+      "durable_receipt_kind": "ShellCommandReceipt/v1",
+      "durable_receipt_ref": "command:python docs/research/dogfood/tools/validate_pass_0054_otel_trace_receipt_join_adapter.py",
+      "order": 3,
+      "pane_id": "pane-03-command_execution",
+      "span_ref": "otel:trace/00550000000000000000000000000003/span/0055000000000003",
+      "title": "Command Execution",
+      "tool_class": "command_execution",
+      "verdict": "MATCH"
+    },
+    {
+      "display_redaction": "hash_only",
+      "durable_receipt_hash": "9c6402f98774170311d78ea3f6983cae71a665dd38ab2ee7e88d413398990ff4",
+      "durable_receipt_kind": "TelosActionReceiptFixtureChain/v1",
+      "durable_receipt_ref": "telos:action-receipt/act_dogfood_0024_001/chain/0617602eed957e0bc6c2e4a21548528f6defc542c4468433bde85df76cb51b3a",
+      "order": 4,
+      "pane_id": "pane-04-action_receipt",
+      "span_ref": "otel:trace/aaa76491660d7a56086f69d1be94debe/span/1424d4ca9a6c5b58",
+      "title": "Action Receipt",
+      "tool_class": "action_receipt",
+      "verdict": "MATCH"
+    }
+  ],
+  "schema": "BuyerDemoReviewPanes/v1",
+  "status": "MATCH"
+}

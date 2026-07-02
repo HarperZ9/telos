@@ -1,0 +1,294 @@
+This website uses cookies to ensure you get the best experience. Learn more about DOAJ’s privacy policy.
+Hide this message
+The Directory of Open Access Journals
+Open
+Global
+Trusted
+Main actions
+Get Premium
+Support
+Institutions and libraries
+Publishers
+Institutional and library supporters
+Funders
+Premium Mode
+Apply
+Application form
+Guide to applying
+Transparency & best practice
+Publisher information
+Licensing & copyright
+Search
+Menu
+Secondary actions
+Get Premium
+Support
+Institutions and libraries
+Publishers
+Institutional and library supporters
+Funders
+Premium Mode
+Apply
+Application form
+Guide to applying
+Transparency & best practice
+Publisher information
+Licensing & copyright
+Search
+Journals
+Articles
+Data
+API
+Journal CSV
+OAI-PMH
+Widgets
+Public data dump
+OpenURL
+XML
+Metadata help
+Preservation
+About
+About DOAJ
+DOAJ at 20
+DOAJ team
+Ambassadors
+Foundation and Advisory Boards
+Editorial Policy Advisory Group
+Volunteers
+Blog
+Login
+Login
+Quick search
+Close×
+Journals
+Articles
+Search by keywords:
+In the field:
+In all fields
+Title
+ISSN
+Subject
+Publisher
+Country of publisher
+Search
+Docs
+API
+This is the current version of the DOAJ API
+This page documents v.4.0.0 of the DOAJ API.
+Base URL: https://doaj.org/api/
+Using this live documentation page
+This page contains a list of all routes available via the DOAJ API. It also serves as a live demo page.
+You can fill in the parameters needed by the API and it will construct and send a request to the live API for you, letting you see all the details you might need for your integration.
+Please note that not all fields will be available on all records.
+Further information on advanced usage of the routes, and FAQs, are available further down this page.
+Authentication information
+API keys are usually only available to publishers who submit data to DOAJ. If you think you could benefit from integrating more closely with the API, please contact us.
+If you already have an account, please log in, click 'My Account' and 'Settings' to see your API key. If you do not see an API key then please contact us
+Help and support
+We have 3 API groups that you can join for API announcements and discussion:
+an announcement-only group (e.g. we release changes, updates, a new version or we are retiring a version)
+a public discussion group for the public api. A public archive of discussions.
+a private discussion group for the publishers api, for those with API keys.
+Full API reference
+How-To Guide on Search API
+Query string syntax
+If you'd like to do more complex queries than simple words or phrases, read https://www.elastic.co/guide/en/elasticsearch/reference/1.4/query-dsl-query-string-query.html#query-string-syntax. The DOAJ database is built on Elasticsearch and knowing more about its query syntax will let you send more advanced queries. (This is not a prerequisite for using the DOAJ API - in the sections below, we provide instructions for the most common use cases.) If you think that what you have achieved with the API would be useful for others to know and would like us to add an example to this documentation, submit it to our API group.
+Searching inside a specific field
+When you are querying on a specific field you can use the json dot notation used by Elasticsearch, so for example to access the journal title of an article, you could use
+bibjson.journal.title:"Journal of Science"
+Note that all fields are analysed, which means that the above search does not look for the exact string "Journal of Science". To do that, add ".exact" to any string field (not date or number fields) to match the exact contents:
+bibjson.journal.title.exact:"Journal of Science"
+Special characters
+All forward slash / characters will be automatically escaped for you unless you escape them yourself. This means any forward slashes / will become \/ which ends up encoded as %5C/ in a URL. A"naked" backslash \ is not allowed in a URL. You can search for a DOI by giving the articles endpoint either of the following queries (they will give you the same results):
+doi:10.3389/fpsyg.2013.00479
+doi:10.3389%5C/fpsyg.2013.00479
+Short field names
+For convenience we also offer shorter field names for you to use when querying. Note that you cannot use the ".exact" notation mentioned above on these substitutions.
+The substitutions for journals are as follows:
+title - search within the journal's title
+issn - the journal's issn
+publisher - the journal's publisher (not exact match)
+license - the exact license
+In addition, if you have a publisher account with the DOAJ, you may use the field "username" to query for your own publicly available journal records.
+Usernames are not available in the returned journal records, and no list of usernames is available to the public;
+you need to know your own username to use this field. You would include "username:myusername" in your search.
+The substitutions for articles are as follows:
+title - search within the article title
+doi - the article's doi
+issn - the article's journal's ISSN
+publisher - the article's journal's publisher (not exact match)
+abstract - search within the article abstract
+Sorting of results
+Each request can take a "sort" url parameter, which can be of the form of one of:
+sort=field
+sort=field:direction
+The field again uses the dot notation.
+If specifying the direction, it must be one of "asc" or "desc". If no direction is supplied then "asc" is used.
+So for example
+sort=bibjson.title
+sort=bibjson.title:desc
+Note that for fields which may contain multiple values (i.e. arrays), the sort will use the "smallest" value in that field to sort by (depending on the definition of "smallest" for that field type)
+The query string - advanced usage
+The format of the query part of the URL is that of an Elasticsearch query string, as documented here: https://www.elastic.co/guide/en/elasticsearch/reference/1.4/query-dsl-query-string-query.html#query-string-syntax. Elasticsearch uses Lucene under the hood.
+Some of the Elasticsearch query syntax has been disabled in order to prevent queries which may damage performance. The disabled features are:
+Wildcard searches. You may not put a * into a query string: https://www.elastic.co/guide/en/elasticsearch/reference/1.4/query-dsl-query-string-query.html#_wildcards
+Regular expression searches. You may not put an expression between two forward slashes /regex/ into a query string: https://www.elastic.co/guide/en/elasticsearch/reference/1.4/query-dsl-query-string-query.html#_regular_expressions. This is done both for performance reasons and because of the escaping of forward slashes / described above.
+Fuzzy Searches. You may not use the ~ notation: https://www.elastic.co/guide/en/elasticsearch/reference/1.4/query-dsl-query-string-query.html#_fuzziness
+Proximity Searches. https://www.elastic.co/guide/en/elasticsearch/reference/1.4/query-dsl-query-string-query.html#_proximity_searches
+How-To Guide on CRUD API
+Creating articles
+Documentation for the structure of the JSON documents that you can send to our API
+is hosted on our Github repository.
+If you try to create an article with a DOI or a full-text URL as another one of the articles associated with your account,
+then the system will detect this as a duplicate. It will overwrite the old article we have with the new data you're supplying
+via the CRUD Article Create endpoint. It works in the same way as submitting article metadata to DOAJ via XML upload or
+manual entry with your publisher user account.
+Applications - Update Requests
+If you wish to submit an application which is intended to provide updated information for an existing Journal you
+have in DOAJ, then you can submit an Update Request.
+An Update Request can be created by sending a new application record via the Application CRUD endpoint, and including
+the identifier of the Journal it replaces in the "admin.current_journal" field:
+POST /api/applications?api_key=?????
+{
+"admin" : {
+"current_journal" : 1234567890
+},
+"bibjson : { ... }
+}
+When you do this, a new application will be created, based on the pre-existing Journal. There are a number of fields that will be ignored
+when provided during an Update Request, these are:
+Title - bibjson.title
+Alternative Title - bibjson.alternative_title
+Print ISSN - bibjson.identifier type=pissn
+Electronic ISSN - bibjson.identifier type=eissn
+Contact Name - admin.contact.name
+Contact Email - admin.contact.email
+If you need to change any of these fields, please contact us.
+Once you have created a new Update Request, you can make changes to that via the CRUD endpoint (both Update and Delete) until an
+administrator at DOAJ picks it up for review. Once it is picked up for review, attempts to update or delete the Update Request will
+be rejected by the API with a 403 (Forbidden).
+API FAQs
+Is there an upload limit for uploading articles, or a rate limit?
+No, there is no limit set on how many articles you can upload, but we do have a rate limit. See below.
+There are two ways to upload articles to DOAJ:
+One by one via the Article CRUD API. This allows one article at a time but it should be possible to upload 1-2 per second, or more if you have multiple IP addresses sending them at once.
+In batches using the Article Bulk API (only for authenticated users). There are no limits to how many articles are uploaded in a batch. However, processing happens synchronously so you may encounter a timeout based on how long the articles take to process in our system. The timeout is set very high: our server has 10 minutes to respond before the web server closes the connection. Your client may drop the connection sooner, however. Keep the batch sizes small to help mitigate this. We recommend around 600 kilobytes.
+There is a rate limit of two requests per second on all API routes. "Bursts" are permitted, which means up to five requests per user are queued by the system and are fulfilled in turn so long as they average out to two requests per second overall.
+When making a POST request, do we need to include any of the fields in the admin hash (e.g. in_doaj or upload_id)?
+In applications, only the contact subfield is required in the admin section. The full list is handled in our validation structure.
+Should language and country be spelled out or can I use codes?
+You can use either but using the correct ISO-3166 two-character code is the most robust route. The incoming data is passed to our get_country_code() function which looks up from that list so a name will also work.
+How do you identify ISSNs via POST requests?
+To identify the correct ISSN, use "https://doaj.org/api/search/journals/issn:XXXX-XXXX" where XXXX-XXXX is the ISSN of your journals.
+I am seeing a "status": "forbidden", "error" message. Why?
+This may be because you are trying to upload content that contains an ISSN that we don't have in DOAJ, or that belongs to another journal that isn't associated with your account. It could also be that you are sending JSON with 'DOI' instead of 'doi'. We only accept the latter.
+Do we need the last_updated or created_date to be included?
+No, these fields are generated by the system and will be ignored if included.
+Should keywords be comma-separated as a single string (e.g. "foo, bar") or separate strings (e.g. ["foo", "bar"])?
+As a list of separate strings.
+For the link[:content_type] - what are acceptable values?
+We expect one of ["PDF", "HTML", "ePUB", "XML"]
+Are start_page and end_page required?
+In articles these fields are not required. See this list for required fields in article uploads.
+Version History
+Date changes were made live
+Changes
+21st August 2025
+v4.0.1 - Article API now normalises bibjson.identifier.type to lower-case (e.g.
+DOI becomes doi), and ignores identifier types which are not
+explicitly managed by DOAJ (DOIs and ISSNs).
+6th March 2025
+v4.0.0 - Expose labels in bibjson.labels for journals
+18th June 2024
+v4.0.0 - Bulk article uploads are now asynchronous
+21st March 2022
+v3.0.1 - Exposed OA Start field bibjson.oa_start for journals and applications.
+30th September 2021
+v3.0.0 - Addition of OA Start date as a required field bibjson.oa_start
+in incoming applications. Corresponds to application form question
+"When did the journal start to publish all content using an open license?"
+Jump to:
+Using this live documentation page
+Authentication information
+Help and support
+Full API reference
+CRUD Applications
+CRUD Articles
+Bulk API
+Crud Journals
+Search
+How-To Guide on Search API
+Query string syntax
+Searching inside a specific field
+Special characters
+Short field names
+Sorting of results
+The query string - advanced usage
+How-To Guide on CRUD API
+Creating articles
+Applications - Update Requests
+API FAQs
+Version History
+WeChat QR code
+Close
+Back to top
+Search
+Journals
+Articles
+Data
+API
+Journal CSV
+OAI-PMH
+Widgets
+Public data dump
+OpenURL
+XML
+Metadata help
+Preservation
+About
+About DOAJ
+DOAJ at 20
+DOAJ team
+Ambassadors
+Foundation and Advisory Boards
+Editorial Policy Advisory Group
+Volunteers
+Blog
+Support
+Institutions and libraries
+Publishers
+Institutional and library supporters
+Funders
+Premium Mode
+Apply
+Application form
+Guide to applying
+Transparency & best practice
+Publisher information
+Licensing & copyright
+Stay up to date
+Bluesky
+Facebook
+Github
+Instagram
+Linkedin
+Mastodon
+WeChat
+Atom feed
+Legal & admin
+The Directory of Open Access Journals
+Open
+Global
+Trusted
+© DOAJ 2026 default by all rights reserved unless otherwise specified.
+Accessibility
+Privacy
+Contact
+T&Cs
+Code of Conduct
+Media
+IS4OA
+Cottage Labs
+Content on this site is licensed under a Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0) license.
+Copyrights and related rights for article metadata waived via CC0 1.0 Universal (CC0) Public Domain Dedication.
+Photos used throughout the site by David Jorre, Jean-Philippe Delberghe, JJ Ying, Luca Bravo, Brandi Redd, & Christian Perner from Unsplash.

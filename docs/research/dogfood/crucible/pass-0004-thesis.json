@@ -1,0 +1,34 @@
+{
+  "title": "Dogfood Pass 0004 Adversarial Proof-Packet Pressure Test",
+  "disposition": "fenced",
+  "claims": [
+    {
+      "text": "Pass 0004 recorded MATCH or contract-read receipts for Index, Gather, Forum, Crucible, Telos freshness, and the Telos loop ledger.",
+      "falsification": "the pass 0004 ledger lacks one of the six tool-surface receipts or records a non-MATCH/non-contract status as MATCH"
+    },
+    {
+      "text": "Pass 0004 recorded a Forum adversarial submit failure caused by invalid JSON from the configured executor while Forum ledger chain and deep verification still succeeded.",
+      "falsification": "the pass 0004 ledger does not record the Forum submit failure or does not record chain=true and deep=true"
+    },
+    {
+      "text": "Gather pass 0004 web intake gathered 6 sources, kept 5, dropped 1, and recorded digest seal 293d0769cf92bf4cf0f3bece93f6825e581fde5eb960d6b97029bb4189d7d895.",
+      "falsification": "the pass 0004 ledger records different Gather counts or a different digest seal"
+    },
+    {
+      "text": "The pass 0004 ResearchClaim artifact contains at least 12 claims and every claim has claim, evidence_url, confidence, verification_status, and notes fields.",
+      "falsification": "research-claims-pass-0004.json has fewer than 12 claims or any claim lacks a required field"
+    },
+    {
+      "text": "The pass 0004 adversarial steelman covers 8 wedges and each wedge includes a strongest objection, fatal-risk test, evidence that would change the strategy, immediate countermeasure, and verdict.",
+      "falsification": "the steelman artifact covers fewer than 8 wedges or lacks any required section for a wedge"
+    },
+    {
+      "text": "Pass 0004 corrected the pass 0003 next-pass queue row-count line from stale 41-row phrasing to 42-row phrasing.",
+      "falsification": "pass-0003-ledger.md still contains the stale 41-row phrasing"
+    },
+    {
+      "text": "Pass 0004 promotes zero natural-law discoveries; all outputs remain strategy, evidence, or verification artifacts.",
+      "falsification": "any pass 0004 artifact labels a natural law, theorem, medical result, finance result, safety result, or physical discovery as promoted"
+    }
+  ]
+}

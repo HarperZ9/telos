@@ -1,0 +1,63 @@
+{
+  "schema": "project-telos.oss-pr-readiness/v1",
+  "captured_at": "2026-07-02T00:00:00.000Z",
+  "candidate": {
+    "repository": "pandas-dev/pandas",
+    "issue": 63458,
+    "issue_url": "https://github.com/pandas-dev/pandas/issues/63458",
+    "candidate_schema": "project-telos.oss-candidate/v1"
+  },
+  "evidence": {
+    "live_issue_detail": true,
+    "scope": "Issue-detail and reproduction-lead intake for pandas-dev/pandas#63458. This is not a local reproduction run, patch, passing test, verifier result, maintainer-ready PR packet, or claim that the issue is easy to fix.",
+    "issue_detail_summary": "docs/outreach/receipts/seventh-wave/oss-showcase-live-issue-63458-summary.json",
+    "issue_detail_raw": "docs/outreach/receipts/seventh-wave/oss-showcase-live-issue-63458-gh.json",
+    "reproduction": {
+      "command": "python -c \"import pandas as pd; arr = pd.array(['a'], dtype='string[pyarrow]'); (arr == arr).sum()\"",
+      "status": "not-run",
+      "source": "issue-authored reproduction lead captured from GitHub issue body"
+    },
+    "tests": [],
+    "crucible": {
+      "verdict": "UNVERIFIABLE",
+      "detail": "GitHub issue detail and a reproduction lead were captured, but no local command execution, failure observation, patch, passing test, or verifier check has been run."
+    },
+    "not_verified": {
+      "files_not_inspected": [
+        "pandas source tree"
+      ],
+      "tests_skipped": [
+        "issue reproduction command",
+        "targeted pandas regression test",
+        "full pandas test suite"
+      ],
+      "assumptions": [
+        "issue-authored reproduction lead is suitable for a later local reproduction attempt",
+        "candidate priority is a scout heuristic, not a correctness claim"
+      ],
+      "unobserved_state": [
+        "local Python environment",
+        "pyarrow availability",
+        "current pandas main branch behavior",
+        "patch feasibility",
+        "maintainer intent"
+      ]
+    },
+    "risk_notes": [
+      "issue detail captured only",
+      "reproduction command not run",
+      "no patch evidence",
+      "no local test evidence"
+    ]
+  },
+  "verdict": "UNVERIFIABLE",
+  "blockers": [
+    "missing failing reproduction evidence",
+    "missing passing test evidence",
+    "crucible verdict is not MATCH",
+    "missing patch summary"
+  ],
+  "pr_ready": false,
+  "operator_next_action": "revise",
+  "public_pr_draft": null
+}

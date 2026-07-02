@@ -1,0 +1,38 @@
+{
+  "claims": [
+    {
+      "falsification": "schemas/ai4science-proof-market-sources-pass-0047.json is missing, has a different schema, status, source counts, SHA-256, or seal",
+      "text": "Pass 0047 created an AI4ScienceProofMarketSourcesSet/v1 artifact with status AI4SCIENCE_PROOF_MARKET_SOURCES_MATCH, source_count 10, source_match_count 10, sha256 5aaa93c606fc606099f3c9236f03bac8ea2b25967b10eec17bcbb4b0e64c8da5, and seal aeee3afe3d60ce448325851bf5121dbc2229bcb6f74cfcf7515e8f7a5d117002."
+    },
+    {
+      "falsification": "the AI4Science proof-market fixture is missing, has a different SHA-256 or seal, or is not linked from the schema",
+      "text": "Pass 0047 records fixture fixtures/ai4science-proof-market-sources-pass-0047.json with sha256 4e8d2889f69b0d97df3d653da679802c8bbbe326c391c0921baf3418bf23a00b and seal daaec6d9224c52f50a1cf4822aa646eb2faef6b7900cb17d4c8ffbaed714936f."
+    },
+    {
+      "falsification": "any of the ten source receipts is missing or reports DRIFT",
+      "text": "Pass 0047 records ten source receipts as MATCH across pipeline_math, sakana_ai_scientist, futurehouse, microsoft_discovery, nvidia_bionemo, leandojo, deepmind_alphaproof, openalex_docs, semantic_scholar_api, and nextflow."
+    },
+    {
+      "falsification": "the category count, wedge count, or uniqueness status differs",
+      "text": "Pass 0047 records category_count 9, wedge_count 5, and uniqueness_claim_status HYPOTHESIS_ONLY."
+    },
+    {
+      "falsification": "the pass 0046 binding is missing, has a different SHA-256 or seal, or does not report the expected controlled-install-plan status",
+      "text": "Pass 0047 binds to pass 0046 controlled Elan install plan with sha256 6620e88e5ed7afe4e4706ae884ff7dd66af2692081d8a135a485dbe80b3c25d5, seal 0e79d9f03e7029462e50fcd7785d4ff3406cdb8fcd125f9202c51f32ee1e5d57, and source status ELAN_CONTROLLED_INSTALL_PLAN_MATCH."
+    },
+    {
+      "falsification": "the pass 0047 validator result is missing, reports DRIFT, or source_match_count is not ten",
+      "text": "Pass 0047 validator result reports MATCH with source_match_count 10."
+    },
+    {
+      "falsification": "packet 057 or the pass 0047 steelman is missing or has a different SHA-256",
+      "text": "Pass 0047 records packet 057 with sha256 33b9e430bd8de0c8a9ab316b819e79d5dc287ded8f8d997dd30f1126f3e23278 and local steelman with sha256 62b786f572eb6b1af39cc3f0a47a66a2183b46372f3e0bfedd872469ffa4894a."
+    },
+    {
+      "falsification": "pass 0047 artifacts claim product-market fit, uniqueness as fact, buyer adoption, scientific truth, or a promoted natural law",
+      "text": "Pass 0047 preserves non-promotion boundaries: it is a source-backed market/research matrix only, treats uniqueness as a hypothesis, and current_promoted_natural_laws remains none."
+    }
+  ],
+  "disposition": "fenced",
+  "title": "Dogfood Pass 0047 AI4Science Proof-Market Sources"
+}

@@ -1,0 +1,561 @@
+{
+  "ok": true,
+  "thesis": {
+    "id": "ff9e71ee0e80c364",
+    "title": "Dogfood Pass 0031 Lean Replay Environment Contract",
+    "registered_at": 1782910461.9494264,
+    "disposition": "fenced",
+    "seal": "ff9e71ee0e80c36451387bddb2b2dc7b0d8b886983c1e1f65f4ca60c6b270caa",
+    "claims": [
+      {
+        "id": "de1ab1d21fba3703",
+        "sha256": "de1ab1d21fba37030cd9f9f3184a0c95ff243b1b957f466d823e1f9eeb1c9d51"
+      },
+      {
+        "id": "532bf6ebca97c877",
+        "sha256": "532bf6ebca97c8770a8ca1736a3d037f9131f55eafe8b8b2710e1d11d5d5a7f5"
+      },
+      {
+        "id": "ad97bbf911da918c",
+        "sha256": "ad97bbf911da918c56be9f544ac0f1080e4792f3969b6f5ace008a5378526acf"
+      },
+      {
+        "id": "f78fd2e6520d987d",
+        "sha256": "f78fd2e6520d987dd5b8899d6cc44cadc8ddae26fd93dd7a01320c9ba7357dc3"
+      },
+      {
+        "id": "322d595ac3a912ed",
+        "sha256": "322d595ac3a912ed7d9d87ec3676883479ae477f2aaa574de2724ba4cebcd5d3"
+      },
+      {
+        "id": "b2e30008aaaab05c",
+        "sha256": "b2e30008aaaab05cf70185a753c1b8433f7e8fae5cce1dfc5c067950af8cc444"
+      },
+      {
+        "id": "1959cb2218cda4e2",
+        "sha256": "1959cb2218cda4e27cd85f00c985dc980cb32b92a962689e5a78067037c87a54"
+      },
+      {
+        "id": "dafde6d310663ebf",
+        "sha256": "dafde6d310663ebfb31e909f908a967a797d3ecbc22f3b16ea45c19364c8d6b2"
+      },
+      {
+        "id": "dd72009b907e4606",
+        "sha256": "dd72009b907e46068a0f29b24f29e582c1a270b3b1a5c09ec45a39a29dc2d72f"
+      },
+      {
+        "id": "f367edbd49926aa8",
+        "sha256": "f367edbd49926aa8a0f9ad0e63f229dcbe12e16dca44edd10ed3df3614dc1499"
+      }
+    ]
+  },
+  "refutations": [
+    {
+      "claim_id": "de1ab1d21fba3703",
+      "claim_sha256": "de1ab1d21fba37030cd9f9f3184a0c95ff243b1b957f466d823e1f9eeb1c9d51",
+      "challenge": "test the stated falsification: schemas/lean-replay-environment-contract-pass-0031.json is missing, has a different schema, status, seal, Bash status, verifier exit code, failure class, replay status, or negative fixture count",
+      "measurable": "schemas/lean-replay-environment-contract-pass-0031.json is missing, has a different schema, status, seal, Bash status, verifier exit code, failure class, replay status, or negative fixture count",
+      "source": "null"
+    },
+    {
+      "claim_id": "532bf6ebca97c877",
+      "claim_sha256": "532bf6ebca97c8770a8ca1736a3d037f9131f55eafe8b8b2710e1d11d5d5a7f5",
+      "challenge": "test the stated falsification: the environment fixture is missing, has a different SHA-256 or seal, or does not bind to pass 0030",
+      "measurable": "the environment fixture is missing, has a different SHA-256 or seal, or does not bind to pass 0030",
+      "source": "null"
+    },
+    {
+      "claim_id": "ad97bbf911da918c",
+      "claim_sha256": "ad97bbf911da918c56be9f544ac0f1080e4792f3969b6f5ace008a5378526acf",
+      "challenge": "test the stated falsification: the runner probe is missing, treats bash as on PATH, omits absolute Git Bash status, or reports a different Bash version",
+      "measurable": "the runner probe is missing, treats bash as on PATH, omits absolute Git Bash status, or reports a different Bash version",
+      "source": "null"
+    },
+    {
+      "claim_id": "f78fd2e6520d987d",
+      "claim_sha256": "f78fd2e6520d987dd5b8899d6cc44cadc8ddae26fd93dd7a01320c9ba7357dc3",
+      "challenge": "test the stated falsification: the verifier attempt is missing, has a different exit code, first failed check, failure class, raw-log policy, or says Lean/Lake were reached",
+      "measurable": "the verifier attempt is missing, has a different exit code, first failed check, failure class, raw-log policy, or says Lean/Lake were reached",
+      "source": "null"
+    },
+    {
+      "claim_id": "322d595ac3a912ed",
+      "claim_sha256": "322d595ac3a912ed7d9d87ec3676883479ae477f2aaa574de2724ba4cebcd5d3",
+      "challenge": "test the stated falsification: the toolchain availability map is missing, treats unavailable runtime tools as available, or omits git/python/absolute Git Bash as present",
+      "measurable": "the toolchain availability map is missing, treats unavailable runtime tools as available, or omits git/python/absolute Git Bash as present",
+      "source": "null"
+    },
+    {
+      "claim_id": "b2e30008aaaab05c",
+      "claim_sha256": "b2e30008aaaab05cf70185a753c1b8433f7e8fae5cce1dfc5c067950af8cc444",
+      "challenge": "test the stated falsification: the replay policy is missing or promotes theorem replay, Lake build, axiom check, statement gate, installation, or external write",
+      "measurable": "the replay policy is missing or promotes theorem replay, Lake build, axiom check, statement gate, installation, or external write",
+      "source": "null"
+    },
+    {
+      "claim_id": "1959cb2218cda4e2",
+      "claim_sha256": "1959cb2218cda4e27cd85f00c985dc980cb32b92a962689e5a78067037c87a54",
+      "challenge": "test the stated falsification: negative fixtures are missing, fewer than ten, have different IDs, or any negative fixture is not marked expected_validator_status REJECT",
+      "measurable": "negative fixtures are missing, fewer than ten, have different IDs, or any negative fixture is not marked expected_validator_status REJECT",
+      "source": "null"
+    },
+    {
+      "claim_id": "dafde6d310663ebf",
+      "claim_sha256": "dafde6d310663ebfb31e909f908a967a797d3ecbc22f3b16ea45c19364c8d6b2",
+      "challenge": "test the stated falsification: the validator result is missing, reports DRIFT, has different failure class, says Lean/Lake were reached, reports a different missing runtime count, or promotes replay",
+      "measurable": "the validator result is missing, reports DRIFT, has different failure class, says Lean/Lake were reached, reports a different missing runtime count, or promotes replay",
+      "source": "null"
+    },
+    {
+      "claim_id": "dd72009b907e4606",
+      "claim_sha256": "dd72009b907e46068a0f29b24f29e582c1a270b3b1a5c09ec45a39a29dc2d72f",
+      "challenge": "test the stated falsification: packet 041 is missing, Gather does not verify it, or the packet SHA-256, digest seal, or character count differs",
+      "measurable": "packet 041 is missing, Gather does not verify it, or the packet SHA-256, digest seal, or character count differs",
+      "source": "null"
+    },
+    {
+      "claim_id": "f367edbd49926aa8",
+      "claim_sha256": "f367edbd49926aa8a0f9ad0e63f229dcbe12e16dca44edd10ed3df3614dc1499",
+      "challenge": "test the stated falsification: schemas/tool-receipts-pass-0031.json is missing, lacks required tool receipts, treats Forum submit as successful, hides the replay-environment gap, or promotes theorem replay",
+      "measurable": "schemas/tool-receipts-pass-0031.json is missing, lacks required tool receipts, treats Forum submit as successful, hides the replay-environment gap, or promotes theorem replay",
+      "source": "null"
+    }
+  ],
+  "assessment": {
+    "started_at": 1782910461.9574254,
+    "thesis_id": "ff9e71ee0e80c364",
+    "thesis_seal": "ff9e71ee0e80c36451387bddb2b2dc7b0d8b886983c1e1f65f4ca60c6b270caa",
+    "claims": 10,
+    "match": 10,
+    "drift": 0,
+    "unverifiable": 0,
+    "verdict_seal": "ea78c5c66b3bcdccadf1a527ffb0b646c4f024c86441ba20d958ec6a3ce5587a",
+    "measurement_seal": "6cb9566ee493e2819e4ef4d7dbc5f902d92d465e1553fca599db309c823de946",
+    "disposition": "fenced",
+    "stored": null,
+    "verdicts": [
+      {
+        "claim_id": "de1ab1d21fba3703",
+        "claim_sha256": "de1ab1d21fba37030cd9f9f3184a0c95ff243b1b957f466d823e1f9eeb1c9d51",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "lean-environment-contract-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "532bf6ebca97c877",
+        "claim_sha256": "532bf6ebca97c8770a8ca1736a3d037f9131f55eafe8b8b2710e1d11d5d5a7f5",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "fixture-and-source-binding-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "ad97bbf911da918c",
+        "claim_sha256": "ad97bbf911da918c56be9f544ac0f1080e4792f3969b6f5ace008a5378526acf",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "runner-probe-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "f78fd2e6520d987d",
+        "claim_sha256": "f78fd2e6520d987dd5b8899d6cc44cadc8ddae26fd93dd7a01320c9ba7357dc3",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "verify-script-attempt-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "322d595ac3a912ed",
+        "claim_sha256": "322d595ac3a912ed7d9d87ec3676883479ae477f2aaa574de2724ba4cebcd5d3",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "toolchain-availability-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "b2e30008aaaab05c",
+        "claim_sha256": "b2e30008aaaab05cf70185a753c1b8433f7e8fae5cce1dfc5c067950af8cc444",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "replay-policy-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "1959cb2218cda4e2",
+        "claim_sha256": "1959cb2218cda4e27cd85f00c985dc980cb32b92a962689e5a78067037c87a54",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "negative-fixture-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "dafde6d310663ebf",
+        "claim_sha256": "dafde6d310663ebfb31e909f908a967a797d3ecbc22f3b16ea45c19364c8d6b2",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "validator-result-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "dd72009b907e4606",
+        "claim_sha256": "dd72009b907e46068a0f29b24f29e582c1a270b3b1a5c09ec45a39a29dc2d72f",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "gather-packet-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "f367edbd49926aa8",
+        "claim_sha256": "f367edbd49926aa8a0f9ad0e63f229dcbe12e16dca44edd10ed3df3614dc1499",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "tool-receipt-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      }
+    ],
+    "measurements": [
+      {
+        "claim_id": "de1ab1d21fba3703",
+        "claim_sha256": "de1ab1d21fba37030cd9f9f3184a0c95ff243b1b957f466d823e1f9eeb1c9d51",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "lean-environment-contract-review",
+        "measured_at": 1782910461.9574254,
+        "evidence": [
+          "schema=LeanReplayEnvironmentContract/v1",
+          "status=LEAN_REPLAY_ENVIRONMENT_CONTRACT_MATCH_WITH_REPLAY_GAP",
+          "absolute_bash_invocation_status=MATCH",
+          "verify_script_exit_code=1",
+          "failure_class=crlf_pin_file_path_drift",
+          "theorem_replay_status=UNVERIFIABLE_ENVIRONMENT_NOT_READY",
+          "negative_fixture_count=10",
+          "seal=4532f819ea8d8f7760323b2920d131b4909bedc05960ad3da553424e1f38a0bc"
+        ]
+      },
+      {
+        "claim_id": "532bf6ebca97c877",
+        "claim_sha256": "532bf6ebca97c8770a8ca1736a3d037f9131f55eafe8b8b2710e1d11d5d5a7f5",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "fixture-and-source-binding-review",
+        "measured_at": 1782910461.9574254,
+        "evidence": [
+          "environment fixture path=fixtures/lean-replay-environment-contract-pass-0031.json",
+          "fixture sha256=9c8a6ed07113c0880126e3ee5d19b1314a92b9d767c57d896df36e0222a62082",
+          "fixture seal=c80c6f03f37ec172e1354293f709d399aa8d80a9c69e0d9e9cc6e697f81be555",
+          "source preflight sha256=da9a0d68491325bd636f876dfca60ab0540be2a9c247931bf22064a5db13a557"
+        ]
+      },
+      {
+        "claim_id": "ad97bbf911da918c",
+        "claim_sha256": "ad97bbf911da918c56be9f544ac0f1080e4792f3969b6f5ace008a5378526acf",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "runner-probe-review",
+        "measured_at": 1782910461.9574254,
+        "evidence": [
+          "git_bash_absolute_path_observed=true",
+          "absolute_bash_invocation_status=MATCH",
+          "bash_on_path=false",
+          "bash_version includes 5.2.37(1)-release"
+        ]
+      },
+      {
+        "claim_id": "f78fd2e6520d987d",
+        "claim_sha256": "f78fd2e6520d987dd5b8899d6cc44cadc8ddae26fd93dd7a01320c9ba7357dc3",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "verify-script-attempt-review",
+        "measured_at": 1782910461.9574254,
+        "evidence": [
+          "verify_script_attempt exit_code=1",
+          "status=DRIFT",
+          "first_failed_check=Frozen SHA pins",
+          "failure_class=crlf_pin_file_path_drift",
+          "raw_log_included=false",
+          "lean_or_lake_reached=false"
+        ]
+      },
+      {
+        "claim_id": "322d595ac3a912ed",
+        "claim_sha256": "322d595ac3a912ed7d9d87ec3676883479ae477f2aaa574de2724ba4cebcd5d3",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "toolchain-availability-review",
+        "measured_at": 1782910461.9574254,
+        "evidence": [
+          "docker=UNAVAILABLE",
+          "wsl=UNAVAILABLE_NOT_INSTALLED",
+          "podman=UNAVAILABLE",
+          "winget=UNAVAILABLE",
+          "elan=UNAVAILABLE",
+          "lake=UNAVAILABLE",
+          "lean=UNAVAILABLE",
+          "git=MATCH",
+          "python=MATCH",
+          "git_bash_absolute=MATCH"
+        ]
+      },
+      {
+        "claim_id": "b2e30008aaaab05c",
+        "claim_sha256": "b2e30008aaaab05cf70185a753c1b8433f7e8fae5cce1dfc5c067950af8cc444",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "replay-policy-review",
+        "measured_at": 1782910461.9574254,
+        "evidence": [
+          "theorem_replay_status=UNVERIFIABLE_ENVIRONMENT_NOT_READY",
+          "lake_build_status=UNVERIFIABLE_ENVIRONMENT_NOT_READY",
+          "axiom_check_status=UNVERIFIABLE_ENVIRONMENT_NOT_READY",
+          "statement_gate_status=UNVERIFIABLE_ENVIRONMENT_NOT_READY",
+          "toolchain_install_performed=false",
+          "external_write_performed=false",
+          "replay_promotion_allowed=false"
+        ]
+      },
+      {
+        "claim_id": "1959cb2218cda4e2",
+        "claim_sha256": "1959cb2218cda4e27cd85f00c985dc980cb32b92a962689e5a78067037c87a54",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "negative-fixture-review",
+        "measured_at": 1782910461.9574254,
+        "evidence": [
+          "negative_fixture_count=10",
+          "negative-bash-path-assumed-from-path expected_validator_status=REJECT",
+          "negative-crlf-failure-ignored expected_validator_status=REJECT",
+          "negative-lean-replay-promoted-after-script-failure expected_validator_status=REJECT",
+          "negative-container-available-without-docker-or-wsl expected_validator_status=REJECT",
+          "negative-toolchain-install-claimed expected_validator_status=REJECT",
+          "negative-source-preflight-link-missing expected_validator_status=REJECT",
+          "negative-axiom-check-promoted expected_validator_status=REJECT",
+          "negative-lake-build-promoted expected_validator_status=REJECT",
+          "negative-external-write-hidden expected_validator_status=REJECT",
+          "negative-natural-law-promoted expected_validator_status=REJECT"
+        ]
+      },
+      {
+        "claim_id": "dafde6d310663ebf",
+        "claim_sha256": "dafde6d310663ebfb31e909f908a967a797d3ecbc22f3b16ea45c19364c8d6b2",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "validator-result-review",
+        "measured_at": 1782910461.9574254,
+        "evidence": [
+          "schemas/pass-0031-lean-environment-contract-validator-result.json status=MATCH",
+          "absolute_bash_invocation_status=MATCH",
+          "bash_on_path=false",
+          "verify_script_exit_code=1",
+          "failure_class=crlf_pin_file_path_drift",
+          "lean_or_lake_reached=false",
+          "missing_runtime_count=6",
+          "theorem_replay_status=UNVERIFIABLE_ENVIRONMENT_NOT_READY",
+          "negative_fixture_count=10"
+        ]
+      },
+      {
+        "claim_id": "dd72009b907e4606",
+        "claim_sha256": "dd72009b907e46068a0f29b24f29e582c1a270b3b1a5c09ec45a39a29dc2d72f",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "gather-packet-review",
+        "measured_at": 1782910461.9574254,
+        "evidence": [
+          "gather docs verified=true",
+          "artifact=packets/041-lean-replay-environment-contract.md",
+          "sha256=8f1c9afaf01579e601db4a4d396bce96f1a562167dff85da630f90209539cb88",
+          "seal=029c28ce59a153e2c35214225d931892987c9be1aecee43aea689c29d9309d40",
+          "chars=5095"
+        ]
+      },
+      {
+        "claim_id": "f367edbd49926aa8",
+        "claim_sha256": "f367edbd49926aa8a0f9ad0e63f229dcbe12e16dca44edd10ed3df3614dc1499",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "tool-receipt-review",
+        "measured_at": 1782910461.9574254,
+        "evidence": [
+          "schemas/tool-receipts-pass-0031.json status=MATCH_WITH_FORUM_SUBMIT_GAP_AND_REPLAY_ENVIRONMENT_GAP",
+          "index status MATCH",
+          "gather docs verified=true",
+          "absolute Git Bash status MATCH",
+          "verifier-script failure status DRIFT",
+          "runtime availability status=UNVERIFIABLE_ENVIRONMENT_NOT_READY",
+          "mcp__telos.telos_status MATCH",
+          "mcp__telos.telos_action_receipt MATCH",
+          "mcp__telos.telos_loop_ledger MATCH",
+          "forum status MATCH",
+          "forum ledger verify chain=true deep=true",
+          "forum submit status=UNVERIFIABLE",
+          "crucible status MATCH"
+        ]
+      }
+    ],
+    "seal": "e2bec3e13a55933426981eb770ebf19a02d423fb46596c9e191b1e39bbf025c5"
+  },
+  "verdicts": [
+    {
+      "claim_id": "de1ab1d21fba3703",
+      "claim_sha256": "de1ab1d21fba37030cd9f9f3184a0c95ff243b1b957f466d823e1f9eeb1c9d51",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "lean-environment-contract-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "532bf6ebca97c877",
+      "claim_sha256": "532bf6ebca97c8770a8ca1736a3d037f9131f55eafe8b8b2710e1d11d5d5a7f5",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "fixture-and-source-binding-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "ad97bbf911da918c",
+      "claim_sha256": "ad97bbf911da918c56be9f544ac0f1080e4792f3969b6f5ace008a5378526acf",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "runner-probe-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "f78fd2e6520d987d",
+      "claim_sha256": "f78fd2e6520d987dd5b8899d6cc44cadc8ddae26fd93dd7a01320c9ba7357dc3",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "verify-script-attempt-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "322d595ac3a912ed",
+      "claim_sha256": "322d595ac3a912ed7d9d87ec3676883479ae477f2aaa574de2724ba4cebcd5d3",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "toolchain-availability-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "b2e30008aaaab05c",
+      "claim_sha256": "b2e30008aaaab05cf70185a753c1b8433f7e8fae5cce1dfc5c067950af8cc444",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "replay-policy-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "1959cb2218cda4e2",
+      "claim_sha256": "1959cb2218cda4e27cd85f00c985dc980cb32b92a962689e5a78067037c87a54",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "negative-fixture-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "dafde6d310663ebf",
+      "claim_sha256": "dafde6d310663ebfb31e909f908a967a797d3ecbc22f3b16ea45c19364c8d6b2",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "validator-result-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "dd72009b907e4606",
+      "claim_sha256": "dd72009b907e46068a0f29b24f29e582c1a270b3b1a5c09ec45a39a29dc2d72f",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "gather-packet-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "f367edbd49926aa8",
+      "claim_sha256": "f367edbd49926aa8a0f9ad0e63f229dcbe12e16dca44edd10ed3df3614dc1499",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "tool-receipt-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    }
+  ],
+  "checks": {
+    "seals_ok": true,
+    "thesis_ok": true,
+    "verdicts_rederive": true
+  },
+  "report": "docs/research/dogfood/crucible/pass-0031-report.md",
+  "record": "docs/research/dogfood/crucible/pass-0031-run.json",
+  "bundle": null,
+  "spec": null,
+  "review": null,
+  "verifier": {
+    "mode": "cleanroom",
+    "inputs": [],
+    "excluded": [
+      "worker context",
+      "reasoning trace",
+      "intermediate steps"
+    ],
+    "checkability": "If success cannot be evaluated from the original spec and the artifact, the spec is not checkable yet."
+  }
+}

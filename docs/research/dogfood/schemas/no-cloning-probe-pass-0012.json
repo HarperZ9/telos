@@ -1,0 +1,83 @@
+{
+  "basis_cloner_fixture": {
+    "basis_checks": [
+      {
+        "expected": "|0>|0>",
+        "fidelity": 1.0,
+        "input": "|0>|0>",
+        "status": "PASS"
+      },
+      {
+        "expected": "|1>|1>",
+        "fidelity": 1.0,
+        "input": "|1>|0>",
+        "status": "PASS"
+      }
+    ],
+    "operation": "CNOT with blank target |0>",
+    "status": "CLONES_COMPUTATIONAL_BASIS_ONLY"
+  },
+  "inner_product_impossibility": {
+    "defect": 0.207106781186548,
+    "overlap": 0.707106781186547,
+    "overlap_squared": 0.5,
+    "states": [
+      "|0>",
+      "|+>"
+    ],
+    "status": "IMPOSSIBLE_FOR_NONORTHOGONAL_DISTINCT_STATES",
+    "unitary_clone_would_require": "overlap == overlap^2"
+  },
+  "limits": [
+    "This is a bounded two-state/two-qubit witness plus a human-readable algebraic proof target.",
+    "It does not prove a new theorem; the no-cloning theorem is classical quantum information theory.",
+    "No quantum hardware execution occurred."
+  ],
+  "pass": "0012",
+  "schema": "NoCloningProbe/v1",
+  "seal": "c8c9baf1cebd832cc4f49caca611fc3c578ab8511c2b01b51ba9d6bc1a2b270a",
+  "status": "PROBE_MATCH",
+  "superposition_negative_fixture": {
+    "actual_state_after_cnot": [
+      [
+        0.707106781186547,
+        0.0
+      ],
+      [
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0
+      ],
+      [
+        0.707106781186547,
+        0.0
+      ]
+    ],
+    "desired_clone_state": [
+      [
+        0.5,
+        0.0
+      ],
+      [
+        0.5,
+        0.0
+      ],
+      [
+        0.5,
+        0.0
+      ],
+      [
+        0.5,
+        0.0
+      ]
+    ],
+    "error_norm": 0.765366864730179,
+    "fidelity_to_desired_clone": 0.5,
+    "input": "|+>|0>",
+    "status": "FAILS_SUPERPOSITION"
+  },
+  "theorem": "No unitary operation can clone all unknown quantum states."
+}

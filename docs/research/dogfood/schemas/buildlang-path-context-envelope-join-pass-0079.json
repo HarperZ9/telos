@@ -1,0 +1,126 @@
+{
+  "adapter_fixture": true,
+  "domain_id": "buildlang_buildc",
+  "generated_on": "2026-07-01",
+  "joined_envelope": {
+    "adapter_fixture": true,
+    "buildlang_corpus_verify_status": "MATCH",
+    "buildlang_production_backend_claim": "C backend only",
+    "buildlang_program_count": 8,
+    "buildlang_source_ref_count": 13,
+    "component_digests": {
+      "action": "014ec1cef9f25f98411f60ec9e747e0777461130e89882490f41bdebc2d52717",
+      "continuity": "586cf789118b7ef6630e7bcd20833bbc5311ba367b94b89c0ad0695962e53bb5",
+      "routing": "3657495a34b965a9e3784cba0baae29fb7e43acb248d5e311c080680acf6dd26",
+      "source_intake": "be025df926cbb5fa2948552e9b43941fd0d6f863cad19ea2e4d18d32330a3a03",
+      "verification": "c1551300a0baab4dec1d13a26610dccd48856ed5b4a9be47b8e676917477e447",
+      "workspace_context": "56e47de47e3875151e310a9cc9763cc7b08976b282e0e830d03e5a967985f276"
+    },
+    "domain_id": "buildlang_buildc",
+    "domain_source_ref_replaced": true,
+    "envelope_id": "telos.domain-focus.buildlang_buildc.0079",
+    "index_strategy": "adapter_path_selector_receipt_plus_source_refs",
+    "label": "BuildLang/buildc scientific compute",
+    "missing_selector_rejections": [
+      "build-universe"
+    ],
+    "model_reasoning_required_for_replay": false,
+    "native_index_path_selector": false,
+    "path_scoped_context": true,
+    "raw_private_payload_required": false,
+    "requested_paths": [
+      "buildlang",
+      "buildc",
+      "build-universe"
+    ],
+    "required_layers": [
+      "source_intake",
+      "workspace_context",
+      "routing",
+      "verification",
+      "continuity",
+      "action"
+    ],
+    "root_context_fallback": false,
+    "route_decision": "project-telos",
+    "route_needs_escalation": false,
+    "schema": "TelosDomainFocusEnvelope/v1",
+    "seal": "d3077af2397399c920a917031f19e8019c328f36e6150ed8719d2c3e55fba8e7",
+    "source_component_id": "buildlang.source-ref.receipt.0074",
+    "unsupported_claim_count": 0,
+    "verification_status": "MATCH",
+    "workspace_context_component_id": "index.path-selector.receipt.0078",
+    "workspace_context_graph_pack_sha256": "d3bae65c0703599721168f6cf6e77fa44bb85445bd03752d1fc2a9c4a04e51d8",
+    "workspace_context_rejected_selector_count": 1,
+    "workspace_context_selected_selector_count": 2,
+    "workspace_context_source_ref_count": 128
+  },
+  "native_index_path_selector": false,
+  "negative_fixtures": [
+    {
+      "expected_status": "REJECT",
+      "fixture_id": "claims_native_index_path_selector",
+      "reject_reason": "adapter_fixture_not_native_index"
+    },
+    {
+      "expected_status": "REJECT",
+      "fixture_id": "claims_build_universe_covered",
+      "reject_reason": "missing_selector_rejected"
+    },
+    {
+      "expected_status": "REJECT",
+      "fixture_id": "path_context_without_source_refs",
+      "reject_reason": "source_refs_required"
+    },
+    {
+      "expected_status": "REJECT",
+      "fixture_id": "raw_payload_required",
+      "reject_reason": "source_refs_only_boundary"
+    },
+    {
+      "expected_status": "REJECT",
+      "fixture_id": "target_output_promoted",
+      "reject_reason": "generated_outputs_excluded"
+    },
+    {
+      "expected_status": "REJECT",
+      "fixture_id": "root_context_fallback_claim",
+      "reject_reason": "path_context_replaces_root_fallback"
+    },
+    {
+      "expected_status": "REJECT",
+      "fixture_id": "unsupported_claim_promoted",
+      "reject_reason": "unsupported_claim_count_nonzero"
+    }
+  ],
+  "non_promotion_statement": "Pass 0079 joins an adapter path-selector receipt into the BuildLang domain envelope. It does not modify Index natively, cover missing build-universe sources, include raw payloads, prove market adoption, or promote a natural law.",
+  "pass": "0079",
+  "path_context_component": {
+    "adapter_fixture": true,
+    "component_id": "index.path-selector.receipt.0078",
+    "digest": "56e47de47e3875151e310a9cc9763cc7b08976b282e0e830d03e5a967985f276",
+    "graph_pack_sha256": "d3bae65c0703599721168f6cf6e77fa44bb85445bd03752d1fc2a9c4a04e51d8",
+    "kind": "workspace_context",
+    "label": "BuildLang selected-path IndexPathSelectorReceipt adapter fixture",
+    "missing_selector_rejections": [
+      "build-universe"
+    ],
+    "native_index_path_selector": false,
+    "raw_payload_included": false,
+    "rejected_selector_count": 1,
+    "selected_selector_count": 2,
+    "source_ref_count": 128,
+    "source_refs_only": true,
+    "verification_status": "MATCH"
+  },
+  "path_context_receipt_pass": "0078",
+  "path_scoped_context": true,
+  "previous_envelope_pass": "0075",
+  "previous_workspace_context_digest": "685ceead9ed304de1d0429a04c21ff54c3710117299b42ec8148de0f3834c423",
+  "root_context_fallback_replaced": true,
+  "schema": "BuildLangPathContextEnvelopeJoin/v1",
+  "seal": "aeec65f0c0329099cd9cdc90c4fe6f3cb7ad1c02137769a6af1298923db1c314",
+  "status": "BUILDLANG_PATH_CONTEXT_ENVELOPE_JOIN_MATCH",
+  "unsupported_claim_count": 0,
+  "validation_errors": []
+}

@@ -1,0 +1,50 @@
+{
+  "title": "Dogfood Pass 0020 Quantum Workflow Provenance Market and Import Audit",
+  "disposition": "fenced",
+  "claims": [
+    {
+      "text": "Pass 0020 created a QuantumWorkflowMarketImportSet/v1 artifact with status MARKET_IMPORT_AUDIT_MATCH, 22 market rows, four wedge scores, 15 package import audit rows, 12 megatool nodes, 26 source anchors, and seal 1c3263fe19f05d45e4f719f96c02703ca4e1f2739ecf8b85d03449ee49665eaf.",
+      "falsification": "schemas/quantum-workflow-market-import-audit-pass-0020.json is missing, has a different schema or status, reports different counts, or lacks the expected seal"
+    },
+    {
+      "text": "Every pass 0020 market row has MarketRow/v1 schema, category, buyer, official claim, at least one HTTPS source, an allowed gap status, and the uniqueness policy HYPOTHESIS_ONLY_UNLESS_MATRIX_PROVES_EXCLUSION.",
+      "falsification": "any market row is missing a required field, lacks HTTPS sources, uses an invalid gap status, or lacks the hypothesis-only uniqueness policy"
+    },
+    {
+      "text": "Pass 0020 includes no unsupported literal claim that 'no competitor does this' in the structured market rows.",
+      "falsification": "the structured market rows contain the phrase 'no competitor does this'"
+    },
+    {
+      "text": "Pass 0020 records a four-item wedge scorecard and ranks the primary market push as scientific workflow provenance bridge with quantum as the public proof domain.",
+      "falsification": "the wedge scorecard has fewer than four items, score fields fall outside 1-5, or the primary market push is missing or not ranked first"
+    },
+    {
+      "text": "Pass 0020 local package audit checks 15 distributions with import_attempted=false for every row and finds opentelemetry-api version 1.41.0 while keeping it scoped to AVAILABLE_FOR_OTEL_BRIDGE_ONLY.",
+      "falsification": "the package audit has fewer than 15 rows, any row has import_attempted=true, or opentelemetry-api is absent, lacks version 1.41.0, or is promoted beyond OTel bridge scope"
+    },
+    {
+      "text": "Pass 0020 local package audit records Qiskit, qiskit-ibm-runtime, Amazon Braket SDK, Cirq, PennyLane, pyqir, pytket, CUDA-Q, qnexus, Pulser, Covalent, MLflow, W&B, and DVC as NOT_INSTALLED in this environment.",
+      "falsification": "any named distribution is absent from the audit or has a status other than NOT_INSTALLED in the persisted pass 0020 artifact"
+    },
+    {
+      "text": "Pass 0020 megatool integration map includes Gather, Index, Forum, Crucible, Telos, BuildLang/buildc, build-universe, Build Color / calibration tools, browser evidence, model foundry, loop ledger, and action receipts.",
+      "falsification": "any named internal tool is absent from the megatool integration map"
+    },
+    {
+      "text": "Pass 0020 promotion ladder includes SYNTHETIC_ADAPTER_FIXTURE, FRAMEWORK_IMPORT_FIXTURE, LIVE_PROVIDER_FIXTURE, and PUBLIC_PROOF_DEMO states.",
+      "falsification": "any required promotion state is missing"
+    },
+    {
+      "text": "Pass 0020 validator reports MATCH with one matched check and zero drift.",
+      "falsification": "schemas/pass-0020-quantum-workflow-market-validator-result.json is missing, reports non-MATCH status, does not report match=1, or reports drift above zero"
+    },
+    {
+      "text": "Pass 0020 records tool receipts showing Index, Gather, Telos, Forum status/verify, and Crucible status as MATCH while preserving Forum submit as UNVERIFIABLE due to executor JSON parsing.",
+      "falsification": "schemas/tool-receipts-pass-0020.json is missing, lacks required tool status receipts, or treats Forum submit as successful rather than UNVERIFIABLE"
+    },
+    {
+      "text": "Pass 0020 promotes zero live framework integrations, package installations, cloud provider executions, quantum hardware results, buyer-demand proof, natural laws, or scientific discoveries.",
+      "falsification": "any pass 0020 artifact labels a live framework integration, package installation, provider execution, hardware result, buyer-demand proof, natural law, or scientific discovery as promoted"
+    }
+  ]
+}

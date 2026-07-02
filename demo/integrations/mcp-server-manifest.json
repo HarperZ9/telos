@@ -56,7 +56,8 @@
         "gather.doctor",
         "gather.docs",
         "gather.arxiv",
-        "gather.run"
+        "gather.run",
+        "gather.federation"
       ],
       "freshness": {
         "status_tool": "gather.status",
@@ -149,7 +150,10 @@
         "index.context",
         "index.context.envelope",
         "index.status",
-        "index.doctor"
+        "index.doctor",
+        "index.select",
+        "index.wiki",
+        "index.invalidate"
       ],
       "auxiliary_tools": [
         "index_graph",
@@ -238,7 +242,8 @@
         "forum.ledger.summary",
         "forum.prose.humanize",
         "forum.status",
-        "forum.doctor"
+        "forum.doctor",
+        "forum.ledger.capsule"
       ],
       "auxiliary_tools": [
         "submit",
@@ -353,7 +358,7 @@
       "freshness": {
         "status_tool": "telos.status",
         "expected_version": "0.1.0",
-        "expected_current_status": "0.1.0 source registry package with 65-tool five-flagship catalog, CI doctor, CI triage, presentation doctor, accessibility doctor, performance doctor, compatibility doctor, operator doctor, context envelopes, context packs, action receipts, loop ledger, objective monitoring, model foundry, Learning Forge, executable Learning Forge labs, OSS Proof Showcase scout, MCP freshness, research seeds, transcript-backed thermodynamic research, rendering research, rendering capabilities, measurement layers, creative engine, creative kernels, revival registry, second-level queue, workstation substrate, display calibration, native background control of browser and apps, browser evidence packets, and native Telos MCP surface",
+        "expected_current_status": "0.1.0 source registry package with 70-tool five-flagship catalog, CI doctor, CI triage, presentation doctor, accessibility doctor, performance doctor, compatibility doctor, operator doctor, context envelopes, context packs, action receipts, loop ledger, objective monitoring, model foundry, Learning Forge, executable Learning Forge labs, OSS Proof Showcase scout, MCP freshness, research seeds, transcript-backed thermodynamic research, rendering research, rendering capabilities, measurement layers, creative engine, creative kernels, revival registry, second-level queue, workstation substrate, display calibration, native background control of browser and apps, browser evidence packets, and native Telos MCP surface",
         "failure_codes": [
           "stale_mcp_server",
           "tool_surface_drift",

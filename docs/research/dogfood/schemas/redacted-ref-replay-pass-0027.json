@@ -1,0 +1,164 @@
+{
+  "fresh_bundle": {
+    "bundle_index_hash": "5b7ee765157d297dd17db5f61a7057c1a6a2c315bb03484346cd7d118bbdb32e",
+    "bundle_path_sha256": "093b7d30e872d8609be9f6731fe7a042491f9662db55dbabc687f1d20bd905ec",
+    "bundle_storage_boundary": "TEMP_PRIVATE_NOT_COMMITTED",
+    "bundle_under_repo": false,
+    "file_count": 3,
+    "manifest_path": "fixtures/redacted-ref-replay-manifest-pass-0027.json",
+    "manifest_seal": "2eb54dfc3b6974d35396c2ef597e3eec2ccb1269a88f678ceea976ad34a5f739",
+    "manifest_sha256": "47181c707049aea7573282b30cce175f51de014845ca5dd26bd1c933dd208fa3",
+    "schema": "FreshContextRedactedReplayBundle/v1",
+    "temp_manifest_sha256": "47181c707049aea7573282b30cce175f51de014845ca5dd26bd1c933dd208fa3"
+  },
+  "generated_on": "2026-07-01",
+  "leak_scan": {
+    "scan_target_count": 9,
+    "scan_targets": [
+      "schemas/redacted-ref-replay-pass-0027.json",
+      "fixtures/redacted-ref-replay-manifest-pass-0027.json",
+      "fixtures/redacted-before-pass-0026.json",
+      "fixtures/redacted-after-pass-0026.json",
+      "packets/037-redacted-ref-replay.md",
+      "adversarial/pass-0027-redacted-ref-replay-steelman.md",
+      "schemas/tool-receipts-pass-0027.json",
+      "crucible/pass-0027-thesis.json",
+      "crucible/pass-0027-measurements.json"
+    ],
+    "schema": "ReplayLeakScanPlan/v1",
+    "sentinel_prefix_absent_required": true
+  },
+  "negative_fixture_count": 9,
+  "negative_fixtures": [
+    {
+      "expected_validator_status": "REJECT",
+      "failure_mode": "Replay requires raw payload material instead of digest refs.",
+      "fixture_id": "negative-raw-payload-value-required"
+    },
+    {
+      "expected_validator_status": "REJECT",
+      "failure_mode": "Replay omits the before redacted artifact ref.",
+      "fixture_id": "negative-missing-before-ref"
+    },
+    {
+      "expected_validator_status": "REJECT",
+      "failure_mode": "Replay omits the after redacted artifact ref.",
+      "fixture_id": "negative-missing-after-ref"
+    },
+    {
+      "expected_validator_status": "REJECT",
+      "failure_mode": "Replay before artifact SHA-256 differs from the source ref.",
+      "fixture_id": "negative-before-sha-drift"
+    },
+    {
+      "expected_validator_status": "REJECT",
+      "failure_mode": "Replay after artifact SHA-256 differs from the source ref.",
+      "fixture_id": "negative-after-sha-drift"
+    },
+    {
+      "expected_validator_status": "REJECT",
+      "failure_mode": "Replay raw payload digest differs from pass 0026 digest refs.",
+      "fixture_id": "negative-digest-mismatch"
+    },
+    {
+      "expected_validator_status": "REJECT",
+      "failure_mode": "Fresh replay bundle is stored under the dogfood repo.",
+      "fixture_id": "negative-temp-bundle-under-repo"
+    },
+    {
+      "expected_validator_status": "REJECT",
+      "failure_mode": "A model-facing replay artifact contains the unredacted payload sentinel prefix.",
+      "fixture_id": "negative-unredacted-sentinel-present"
+    },
+    {
+      "expected_validator_status": "REJECT",
+      "failure_mode": "Replay binds to a different pass 0026 source seal.",
+      "fixture_id": "negative-source-seal-drift"
+    }
+  ],
+  "non_promotion_statement": "Pass 0027 proves only a local fresh-context replay from redacted refs and digest strings. It does not prove production DLP, cryptographic secrecy, external vault integration, live Telos runtime integration, theorem proof, scientific discovery, buyer adoption, or any natural law.",
+  "pass": "0027",
+  "raw_material_policy": {
+    "digest_ref_required": true,
+    "raw_payload_material_available_to_replay": false,
+    "raw_payload_value_required": false,
+    "raw_payload_value_used": false,
+    "redacted_refs_required": true,
+    "schema": "RawMaterialReplayPolicy/v1",
+    "sentinel_prefix_allowed_in_model_facing_artifacts": false,
+    "sentinel_prefix_sha256": "96ec1bf4fc72002389e059a1a237017de7f9b7953a2505121bcdf106f0671ece"
+  },
+  "replay_contract": {
+    "action_id": "act_dogfood_0024_001",
+    "contract_hash": "4498487ca72ca41e69ebb1fb84a9d2991855ee4537c2b24c77198d2ebc2335f9",
+    "event_id": "evt_dogfood_0026_redaction_boundary",
+    "fresh_replay_verdict": "MATCH",
+    "raw_payload_digest": "sha256:8c53911bf4e3763486de4c3dd43a0e1a8a587f3b172e08c322202d1b3fd66ca4",
+    "raw_payload_material_available_to_replay": false,
+    "raw_payload_value_used": false,
+    "redacted_ref_count": 2,
+    "redacted_refs": [
+      {
+        "bundle_path": "redacted-before.json",
+        "bundle_sha256": "32ba5ef8fcc63fb0e7bb2f3d9a84d272693971dcc524f27021fe4ad29d6dc231",
+        "contains_digest_ref": true,
+        "contains_unredacted_sentinel_prefix": false,
+        "kind": "before",
+        "source_bundle_sha_match": true,
+        "source_path": "fixtures/redacted-before-pass-0026.json",
+        "source_sha256": "32ba5ef8fcc63fb0e7bb2f3d9a84d272693971dcc524f27021fe4ad29d6dc231"
+      },
+      {
+        "bundle_path": "redacted-after.json",
+        "bundle_sha256": "e697e1ecd32c15eec3032b001596cae71021b08808db9d597bbb4a08c6bf8c9f",
+        "contains_digest_ref": true,
+        "contains_unredacted_sentinel_prefix": false,
+        "kind": "after",
+        "source_bundle_sha_match": true,
+        "source_path": "fixtures/redacted-after-pass-0026.json",
+        "source_sha256": "e697e1ecd32c15eec3032b001596cae71021b08808db9d597bbb4a08c6bf8c9f"
+      }
+    ],
+    "replay_inputs": [
+      "source action_receipt_redaction object",
+      "redacted before artifact",
+      "redacted after artifact",
+      "artifact SHA-256 values",
+      "digest refs"
+    ],
+    "schema": "RedactedRefReplayContract/v1",
+    "source_pass": "0026",
+    "source_schema": "RedactionBoundaryFixtureSet/v1",
+    "source_seal": "adcdfc1abcdb59427573760f4779182da9f9fde18553c633af5b08fc57f1816c",
+    "source_sha256": "cb4233fcdafb0c35fb7b87ac78dcbc6f7dbec980614049d1fd63f08595757e80"
+  },
+  "schema": "RedactedRefReplaySet/v1",
+  "seal": "da9d1c939bcc56eb33711537ab6cd491f8e9e70c91920d3e6a42572b8d985576",
+  "source_anchors": [
+    {
+      "source": "Pass 0026 redaction-boundary fixture",
+      "url": "artifact:schemas/redaction-boundary-pass-0026.json"
+    },
+    {
+      "source": "Telos action receipt interface",
+      "url": "mcp:telos.action.receipt"
+    },
+    {
+      "source": "Telos loop ledger interface",
+      "url": "mcp:telos.loop.ledger"
+    },
+    {
+      "source": "Python tempfile module",
+      "url": "https://docs.python.org/3/library/tempfile.html"
+    }
+  ],
+  "source_receipt": {
+    "path": "schemas/redaction-boundary-pass-0026.json",
+    "raw_payload_digest": "sha256:8c53911bf4e3763486de4c3dd43a0e1a8a587f3b172e08c322202d1b3fd66ca4",
+    "redacted_ref_count": 2,
+    "schema": "RedactionBoundaryFixtureSet/v1",
+    "seal": "adcdfc1abcdb59427573760f4779182da9f9fde18553c633af5b08fc57f1816c",
+    "sha256": "cb4233fcdafb0c35fb7b87ac78dcbc6f7dbec980614049d1fd63f08595757e80"
+  },
+  "status": "REDACTED_REF_REPLAY_MATCH"
+}

@@ -1,0 +1,60 @@
+{
+  "schema": "project-telos.build-color-cli-measurement/v1",
+  "tool": "build-color",
+  "tool_version": "1.0.2",
+  "workspace": "C:\\dev\\public\\build-color",
+  "commands": [
+    {
+      "command": "python -m build_color.cli --version",
+      "status": "passed",
+      "observed": "Build Color v1.0.2"
+    },
+    {
+      "command": "python -m build_color.cli info ff6030",
+      "status": "passed",
+      "observed": {
+        "srgb": [1.0, 0.3765, 0.1882],
+        "srgb_8_bit": [255, 96, 48],
+        "xyz": [0.4596, 0.2985, 0.0614],
+        "oklab": [0.6904, 0.1627, 0.1214],
+        "oklch": [0.6904, 0.2030, 36.7],
+        "luminance": 0.2984,
+        "contrast_vs_white": 3.01,
+        "contrast_vs_black": 6.97
+      }
+    },
+    {
+      "command": "python -m build_color.cli convert ff6030 --to oklab",
+      "status": "passed",
+      "observed": {
+        "source": "srgb (1.0000, 0.3765, 0.1882) #ff6030",
+        "target": "oklab (0.6904, 0.1627, 0.1214)"
+      }
+    },
+    {
+      "command": "python -m build_color.cli difference ff6030 ff7040 --metric all",
+      "status": "passed",
+      "observed": {
+        "CIE76": 9.1104,
+        "CIE94": 3.4460,
+        "CIEDE2000": 3.1581,
+        "CMC_2_1": 3.0685,
+        "HyAB": 11.4841
+      }
+    },
+    {
+      "command": "python -m pytest tests -q",
+      "status": "passed",
+      "observed": "458 passed in 0.94s"
+    }
+  ],
+  "telos_measurement_bridge": {
+    "measurement_layers_summary": "Telos measurement layers report 10 layers, 10 measurements, status MATCH.",
+    "display_calibration_summary": "Telos display calibration contract is read-only, with 3 targets, 4 patch sets, 5 artifact types, and hardware mutation disabled."
+  },
+  "boundary": [
+    "This is a software-side color science and measurement demo.",
+    "It does not use a physical colorimeter, mutate display state, install an ICC profile, or claim physical calibration accuracy.",
+    "It is suitable as a public measurement proof lane only when those boundaries remain visible."
+  ]
+}

@@ -1,0 +1,87 @@
+{
+  "adapter": {
+    "drift": 0,
+    "match": 10,
+    "measurement_count": 10
+  },
+  "check_command": {
+    "command": "cargo run --quiet --bin buildc -- check C:\\dev\\public\\pubscan\\quantalang\\examples\\quickstart\\hello.bld --profile console-only --receipt C:\\dev\\public\\telos\\docs\\research\\dogfood\\schemas\\buildlang-check-receipt-pass-0092.json",
+    "cwd": "C:\\dev\\public\\pubscan\\quantalang\\compiler",
+    "exit_code": 0,
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "d779b2f7826bac833d3cf74ba00b75533393358adf72a3ca6d8da1f5e748d1c5"
+  },
+  "compose": {
+    "command": "C:\\Users\\Zain\\AppData\\Local\\Programs\\Python\\Python312\\python.exe C:\\dev\\public\\telos\\docs\\research\\dogfood\\tools\\compose_buildlang_check_receipt_adapter.py --out C:\\dev\\public\\telos\\docs\\research\\dogfood\\schemas\\buildlang-check-receipt-adapter-pass-0092.json",
+    "exit_code": 0,
+    "status": "MATCH",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "420845e356fbb6110b709f6073933e12da6119925601c14290d6de39eae1a75c"
+  },
+  "forum": {
+    "confidence": 0.07954545454545454,
+    "decided": null,
+    "exit_code": 0,
+    "needs_escalation": true,
+    "status": "MATCH",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "84a0a6d5b0736b84f3aab69dd89aebd59d188bad2ae162a11cb8b6e7da24f92c",
+    "top_candidates": [
+      {
+        "agent": "model-foundry",
+        "score": 0.125
+      },
+      {
+        "agent": "project-telos",
+        "score": 0.045454545454545456
+      },
+      {
+        "agent": "backend",
+        "score": 0.0
+      },
+      {
+        "agent": "ci-cd",
+        "score": 0.0
+      },
+      {
+        "agent": "cloud-infra",
+        "score": 0.0
+      }
+    ]
+  },
+  "index": {
+    "exit_code": 0,
+    "graph_pack_sha256": "8ee383e19ae9a6141bee70de733fb6aa09201ff9d284ce6778ce58b06e6b68b2",
+    "schema": "project-telos.context-envelope/v1",
+    "source_refs_only": true,
+    "status": "MATCH",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "f6de55e11a987a43cf72e01049e0e5804ca04ade90722f8da72f7cd72b5e1a72",
+    "verification_verdict": "MATCH"
+  },
+  "pass": "0092",
+  "schema": "DogfoodToolReceipts/v1",
+  "seal": "e8996e46b0fb1d837e8bf0b94755f744760ebdf1407efdb13d57acf536f140bd",
+  "telos": {
+    "exit_code": 0,
+    "status": "MATCH",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "be17cb15259234cb4e8e95c2b36e76c90d841431729beb140294e34c5f9ebfa7",
+    "tool": "telos",
+    "tool_version": "0.1.0"
+  },
+  "test": {
+    "command": "C:\\Users\\Zain\\AppData\\Local\\Programs\\Python\\Python312\\python.exe C:\\dev\\public\\telos\\docs\\research\\dogfood\\tools\\test_buildlang_check_receipt_adapter.py",
+    "exit_code": 0,
+    "status": "MATCH",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "verify_command": {
+    "command": "cargo run --quiet --bin buildc -- receipt verify C:\\dev\\public\\telos\\docs\\research\\dogfood\\schemas\\buildlang-check-receipt-pass-0092.json --source C:\\dev\\public\\pubscan\\quantalang\\examples\\quickstart\\hello.bld --expect-profile console-only --json",
+    "cwd": "C:\\dev\\public\\pubscan\\quantalang\\compiler",
+    "exit_code": 0,
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "df044e4aaa25bb822b61d7668badf198ec28ab6b1180da254c5b3ab19f91650f"
+  }
+}

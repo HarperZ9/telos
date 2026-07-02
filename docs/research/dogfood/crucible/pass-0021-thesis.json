@@ -1,0 +1,50 @@
+{
+  "title": "Dogfood Pass 0021 Quantum Environment Plan and OpenTelemetry Bridge",
+  "disposition": "fenced",
+  "claims": [
+    {
+      "text": "Pass 0021 created a QuantumFrameworkEnvironmentPlanSet/v1 artifact with status ENVIRONMENT_PLAN_AND_OTEL_BRIDGE_MATCH, 11 package plans, nine negative fixtures, 15 source anchors, OTel status API_IMPORT_MATCH_NONRECORDING, and seal 1ce3a1aaab7392d4a825564415a76e71a4f8b59c2a954dbb794d4ffe7e67cb1f.",
+      "falsification": "schemas/quantum-environment-plan-otel-bridge-pass-0021.json is missing, has a different schema or status, reports different counts, lacks OTel status API_IMPORT_MATCH_NONRECORDING, or lacks the expected seal"
+    },
+    {
+      "text": "Pass 0021 local environment receipt records Python 3.12.10, pip 26.1.2, platform Windows-11-10.0.26220-SP0, and installer boundary PLAN_ONLY_NO_PACKAGE_INSTALL.",
+      "falsification": "the local environment receipt is missing, has a different schema, reports different Python/pip/platform values, or lacks the plan-only installation boundary"
+    },
+    {
+      "text": "Every pass 0021 package plan has QuantumFrameworkPackagePlan/v1 schema, install_now=false, pin_policy RESOLVE_IN_ISOLATED_ENV_THEN_FREEZE_WITH_HASHES, no cloud credentials required for import fixtures, at least one HTTPS source anchor, import targets, a first fixture contract, and a plan hash.",
+      "falsification": "any package plan lacks a required field, requests install_now=true, lacks the pin policy, requires cloud credentials for import fixtures, lacks HTTPS sources, lacks import targets, lacks a fixture contract, or lacks a plan hash"
+    },
+    {
+      "text": "Pass 0021 package plans include qiskit, qiskit-ibm-runtime, amazon-braket-sdk, cirq, pennylane, pyqir, pytket, pytket-qir, cudaq, opentelemetry-api, and opentelemetry-sdk.",
+      "falsification": "any named distribution is absent from the package plan set"
+    },
+    {
+      "text": "Pass 0021 promotion gates include isolated environment, resolve/freeze with hashes, no cloud credentials for framework-import fixtures, no provider execution without live-provider receipts, SDK import is not provider execution, and OTel API non-recording span is not exported trace evidence.",
+      "falsification": "any required promotion gate is missing"
+    },
+    {
+      "text": "Pass 0021 imports opentelemetry-api version 1.41.0, creates a NonRecordingSpan, records is_recording=false, zero trace id, zero span id, and attribute recording status NOT_RECORDED_WITH_API_ONLY_NONRECORDING_SPAN.",
+      "falsification": "the OTel fixture is missing, does not import opentelemetry-api, reports a different version, does not create NonRecordingSpan, records a recording span, has nonzero trace/span id, or lacks the API-only non-recording boundary"
+    },
+    {
+      "text": "Pass 0021 QuantumProofDemoContract/v1 includes source anchor, framework import, canonical result, negative fixture, OTel action bridge, and Crucible verdict packet layers.",
+      "falsification": "the demo contract is missing or lacks any required packet layer"
+    },
+    {
+      "text": "Pass 0021 negative fixtures reject shared-base installation, unpinned runtime demo, credential-required import fixture, SDK import as provider execution, nonrecording OTel span as exported trace, CUDA-Q import as GPU acceleration, QIR without record map, BuildLang runtime without compiler receipt, and color runtime without measurement receipt.",
+      "falsification": "any of the nine expected negative fixture categories is missing or has expected_validator_status other than REJECT"
+    },
+    {
+      "text": "Pass 0021 validator reports MATCH with one matched check and zero drift.",
+      "falsification": "schemas/pass-0021-quantum-environment-plan-validator-result.json is missing, reports non-MATCH status, does not report match=1, or reports drift above zero"
+    },
+    {
+      "text": "Pass 0021 records tool receipts showing Index, Gather, Telos, Forum status/verify, and Crucible status as MATCH while preserving Forum submit as UNVERIFIABLE due to executor JSON parsing.",
+      "falsification": "schemas/tool-receipts-pass-0021.json is missing, lacks required tool status receipts, or treats Forum submit as successful rather than UNVERIFIABLE"
+    },
+    {
+      "text": "Pass 0021 promotes zero quantum SDK installations, unavailable quantum framework imports, cloud credentials, provider jobs, quantum hardware results, natural laws, or scientific discoveries.",
+      "falsification": "any pass 0021 artifact labels quantum SDK installation, unavailable quantum framework import, cloud credential creation, provider job, hardware result, natural law, or scientific discovery as promoted"
+    }
+  ]
+}

@@ -1,0 +1,105 @@
+{
+  "schema": "QuantumExperimentReceiptSchema/v1",
+  "pass": "0013",
+  "generated_on": "2026-07-01",
+  "purpose": "Define a portable quantum experiment receipt that prevents simulator, noisy-simulator, mock-hardware, and cloud-hardware evidence from being promoted across branch boundaries.",
+  "required_receipt_fields": [
+    "receipt_id",
+    "schema",
+    "branch",
+    "hardware_claim_allowed",
+    "theorem_claim_ref",
+    "circuit",
+    "backend",
+    "resource_estimate",
+    "result",
+    "verdict"
+  ],
+  "branch_values": [
+    "EXACT_SIMULATOR",
+    "NOISY_SIMULATOR",
+    "HARDWARE_MOCK",
+    "CLOUD_HARDWARE"
+  ],
+  "branch_promotion_forbidden": true,
+  "verification_layers": [
+    {
+      "layer": "theorem",
+      "receipt_requirement": "Reference the theorem, identity, or formal claim being probed.",
+      "non_promotion_rule": "A simulator receipt can support a bounded witness, not a new theorem unless a separate formal proof receipt exists."
+    },
+    {
+      "layer": "circuit",
+      "receipt_requirement": "Record source state, qubit count, operations, gate count, two-qubit gate count, and depth.",
+      "non_promotion_rule": "Circuit equality is not backend equality; the same circuit can have exact, noisy, mock, and hardware receipts."
+    },
+    {
+      "layer": "sdk",
+      "receipt_requirement": "Record SDK or adapter identity and deterministic seed or analytic mode.",
+      "non_promotion_rule": "SDK execution is not automatically portable across simulator or hardware branches."
+    },
+    {
+      "layer": "backend",
+      "receipt_requirement": "Record backend branch, simulator or hardware identity, shot mode, and noise model.",
+      "non_promotion_rule": "Noisy simulator and hardware-mock branches cannot be cited as cloud-hardware results."
+    },
+    {
+      "layer": "resource_estimate",
+      "receipt_requirement": "Record logical qubits, physical-qubit assumption, gate count, depth, QEC scheme, and runtime estimate.",
+      "non_promotion_rule": "A resource estimate is a planning artifact until tied to an executed backend receipt."
+    },
+    {
+      "layer": "result",
+      "receipt_requirement": "Record statevector, density-mixture summary, histogram, fidelity, or task-result reference as applicable.",
+      "non_promotion_rule": "Histogram equality alone is insufficient when phase-sensitive or amplitude-sensitive claims are at issue."
+    },
+    {
+      "layer": "branch",
+      "receipt_requirement": "Expose branch labels and a hardware_claim_allowed boolean in every receipt.",
+      "non_promotion_rule": "Any branch-crossing claim must be rejected unless a new receipt explicitly binds the target branch."
+    },
+    {
+      "layer": "external_verdict",
+      "receipt_requirement": "Attach verifier, Crucible, Forum, or independent reproduction verdicts when available.",
+      "non_promotion_rule": "A missing external verdict must be marked UNVERIFIABLE, not silently inferred."
+    }
+  ],
+  "source_anchors": [
+    {
+      "source": "Qiskit Aer noise models",
+      "url": "https://qiskit.github.io/qiskit-aer/apidocs/aer_noise.html",
+      "used_for": "Noise model and noisy-simulator branch semantics."
+    },
+    {
+      "source": "IBM Quantum noise-model guide",
+      "url": "https://quantum.cloud.ibm.com/docs/guides/build-noise-models",
+      "used_for": "Backend-derived and explicit noise model receipt fields."
+    },
+    {
+      "source": "Cirq noisy simulation",
+      "url": "https://quantumai.google/cirq/simulate/noisy_simulation",
+      "used_for": "Noisy simulation and Kraus-channel branch semantics."
+    },
+    {
+      "source": "Azure Quantum Resource Estimator",
+      "url": "https://learn.microsoft.com/en-us/azure/quantum/intro-to-resource-estimation",
+      "used_for": "Resource-estimation receipt fields and assumptions."
+    },
+    {
+      "source": "Amazon Braket task monitoring",
+      "url": "https://docs.aws.amazon.com/braket/latest/developerguide/braket-monitor-tasks.html",
+      "used_for": "Cloud task, status, and result receipt boundaries."
+    },
+    {
+      "source": "IonQ simulation with noise models",
+      "url": "https://docs.ionq.com/guides/simulation-with-noise-models",
+      "used_for": "Simulator noise-model evidence boundaries across cloud-style quantum workflows."
+    }
+  ],
+  "non_promotion_policy": {
+    "hardware_result": "Forbidden unless branch is CLOUD_HARDWARE and hardware_claim_allowed is true.",
+    "quantum_advantage": "Forbidden in this schema unless a separate benchmark receipt binds classical baseline, quantum backend, cost, calibration, and verifier verdict.",
+    "theorem_promotion": "Forbidden from an experiment receipt alone; requires an explicit proof packet or formal-verifier receipt.",
+    "market_claim": "Any uniqueness or category-leadership claim must remain a hypothesis unless backed by a documented comparison matrix."
+  }
+}

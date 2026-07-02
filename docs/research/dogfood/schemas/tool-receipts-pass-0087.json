@@ -1,0 +1,74 @@
+{
+  "compose": {
+    "command": "C:\\Users\\Zain\\AppData\\Local\\Programs\\Python\\Python312\\python.exe C:\\dev\\public\\telos\\docs\\research\\dogfood\\tools\\compose_quantum_simulator_branch_adapter.py --out C:\\dev\\public\\telos\\docs\\research\\dogfood\\schemas\\quantum-simulator-branch-adapter-pass-0087.json",
+    "exit_code": 0,
+    "status": "MATCH",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "711967171ac13e75ac62a9d85b741b7059d0faba003d631050dea7094f02d6a6"
+  },
+  "forum": {
+    "confidence": 0.07954545454545454,
+    "decided": null,
+    "exit_code": 0,
+    "needs_escalation": true,
+    "status": "MATCH",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "84a0a6d5b0736b84f3aab69dd89aebd59d188bad2ae162a11cb8b6e7da24f92c",
+    "top_candidates": [
+      {
+        "agent": "model-foundry",
+        "score": 0.125
+      },
+      {
+        "agent": "project-telos",
+        "score": 0.045454545454545456
+      },
+      {
+        "agent": "backend",
+        "score": 0.0
+      },
+      {
+        "agent": "ci-cd",
+        "score": 0.0
+      },
+      {
+        "agent": "cloud-infra",
+        "score": 0.0
+      }
+    ]
+  },
+  "index": {
+    "exit_code": 0,
+    "graph_pack_sha256": "8ee383e19ae9a6141bee70de733fb6aa09201ff9d284ce6778ce58b06e6b68b2",
+    "schema": "project-telos.context-envelope/v1",
+    "source_refs_only": true,
+    "status": "MATCH",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "b503c3792b8e3e49e56ccf92904f640b05b9a5dda2ad4cfddec686d750844ac0",
+    "verification_verdict": "MATCH"
+  },
+  "pass": "0087",
+  "schema": "DogfoodToolReceipts/v1",
+  "seal": "c6d3fc3cfb211f0418e8ff690a9ee023878a430e6163cd0f70142235d9e3b964",
+  "simulator": {
+    "optimum_hit_count": 30,
+    "replay_gate": "MATCH",
+    "run_count": 32,
+    "runs_sha256": "4df12bbe1c5b3ee42d05f5ccce708bd5880f4d1d4c1c5a90f3f9528656d912b7"
+  },
+  "telos": {
+    "exit_code": 0,
+    "status": "MATCH",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "be17cb15259234cb4e8e95c2b36e76c90d841431729beb140294e34c5f9ebfa7",
+    "tool": "telos",
+    "tool_version": "0.1.0"
+  },
+  "test": {
+    "command": "C:\\Users\\Zain\\AppData\\Local\\Programs\\Python\\Python312\\python.exe C:\\dev\\public\\telos\\docs\\research\\dogfood\\tools\\test_quantum_simulator_branch_adapter.py",
+    "exit_code": 0,
+    "status": "MATCH",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

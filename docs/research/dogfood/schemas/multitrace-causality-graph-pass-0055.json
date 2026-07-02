@@ -1,0 +1,165 @@
+{
+  "current_promoted_natural_laws": [],
+  "edges": [
+    {
+      "causal_kind": "source",
+      "source_span_ref": "otel:trace/00550000000000000000000000000001/span/0055000000000001",
+      "source_tool_class": "gather",
+      "status": "MATCH",
+      "target_span_ref": "otel:trace/00550000000000000000000000000002/span/0055000000000002",
+      "target_tool_class": "browser_evidence"
+    },
+    {
+      "causal_kind": "evidence",
+      "source_span_ref": "otel:trace/00550000000000000000000000000002/span/0055000000000002",
+      "source_tool_class": "browser_evidence",
+      "status": "MATCH",
+      "target_span_ref": "otel:trace/00550000000000000000000000000003/span/0055000000000003",
+      "target_tool_class": "command_execution"
+    },
+    {
+      "causal_kind": "execution",
+      "source_span_ref": "otel:trace/00550000000000000000000000000003/span/0055000000000003",
+      "source_tool_class": "command_execution",
+      "status": "MATCH",
+      "target_span_ref": "otel:trace/aaa76491660d7a56086f69d1be94debe/span/1424d4ca9a6c5b58",
+      "target_tool_class": "action_receipt"
+    }
+  ],
+  "failure_codes": [],
+  "generated_on": "2026-07-01",
+  "graph_summary": {
+    "edge_count": 3,
+    "independent_receipt_count": 4,
+    "matched_required_tool_classes": 4,
+    "node_count": 4,
+    "trace_identity_substitution_count": 0,
+    "valid_edge_count": 3
+  },
+  "negative_fixture_count": 5,
+  "negative_match_count": 5,
+  "negative_pass_observed_count": 0,
+  "negative_report": {
+    "negative_fixture_count": 5,
+    "negative_match_count": 5,
+    "negative_pass_observed_count": 0,
+    "rows": [
+      {
+        "expected_failure_code": "missing_trace_link",
+        "fixture_id": "missing_trace_link",
+        "observed_failure_codes": [
+          "missing_trace_link"
+        ],
+        "observed_status": "MULTITRACE_CAUSALITY_GRAPH_DRIFT",
+        "status": "MATCH"
+      },
+      {
+        "expected_failure_code": "trace_id_substitutes_receipt_id",
+        "fixture_id": "trace_id_substitutes_receipt_id",
+        "observed_failure_codes": [
+          "trace_id_substitutes_receipt_id"
+        ],
+        "observed_status": "MULTITRACE_CAUSALITY_GRAPH_DRIFT",
+        "status": "MATCH"
+      },
+      {
+        "expected_failure_code": "missing_durable_receipt",
+        "fixture_id": "missing_durable_receipt_hash",
+        "observed_failure_codes": [
+          "missing_durable_receipt"
+        ],
+        "observed_status": "MULTITRACE_CAUSALITY_GRAPH_DRIFT",
+        "status": "MATCH"
+      },
+      {
+        "expected_failure_code": "missing_tool_class:gather",
+        "fixture_id": "missing_gather_node",
+        "observed_failure_codes": [
+          "broken_trace_link",
+          "missing_tool_class:gather"
+        ],
+        "observed_status": "MULTITRACE_CAUSALITY_GRAPH_DRIFT",
+        "status": "MATCH"
+      },
+      {
+        "expected_failure_code": "raw_browser_payload_required",
+        "fixture_id": "raw_browser_payload_required",
+        "observed_failure_codes": [
+          "raw_browser_payload_required"
+        ],
+        "observed_status": "MULTITRACE_CAUSALITY_GRAPH_DRIFT",
+        "status": "MATCH"
+      }
+    ]
+  },
+  "nodes": [
+    {
+      "durable_receipt_hash": "71b39e899e143294fb810a2d335bb11cbeff43abf26114cdda22573dd2502952",
+      "durable_receipt_kind": "GatherDocumentReceipt/v1",
+      "durable_receipt_ref": "gather:docs/packets/064-otel-trace-receipt-join-adapter.md",
+      "name": "gather.docs.packet",
+      "raw_payload_included": false,
+      "raw_payload_required": false,
+      "redaction_status": null,
+      "span_ref": "otel:trace/00550000000000000000000000000001/span/0055000000000001",
+      "tool_class": "gather"
+    },
+    {
+      "durable_receipt_hash": "d30289cfdcaf8630e7fb7b3ba911cbac485a62f5306e3b5c37338768dbfe9e7a",
+      "durable_receipt_kind": "project-telos.browser-evidence/v1",
+      "durable_receipt_ref": "artifact:fixtures/browser-evidence-redacted-pass-0028.json",
+      "name": "browser.evidence.redacted",
+      "raw_payload_included": false,
+      "raw_payload_required": false,
+      "redaction_status": "redacted",
+      "span_ref": "otel:trace/00550000000000000000000000000002/span/0055000000000002",
+      "tool_class": "browser_evidence"
+    },
+    {
+      "durable_receipt_hash": "validator-pass-0054-match",
+      "durable_receipt_kind": "ShellCommandReceipt/v1",
+      "durable_receipt_ref": "command:python docs/research/dogfood/tools/validate_pass_0054_otel_trace_receipt_join_adapter.py",
+      "name": "shell.command.validation",
+      "raw_payload_included": false,
+      "raw_payload_required": false,
+      "redaction_status": null,
+      "span_ref": "otel:trace/00550000000000000000000000000003/span/0055000000000003",
+      "tool_class": "command_execution"
+    },
+    {
+      "durable_receipt_hash": "9c6402f98774170311d78ea3f6983cae71a665dd38ab2ee7e88d413398990ff4",
+      "durable_receipt_kind": "TelosActionReceiptFixtureChain/v1",
+      "durable_receipt_ref": "telos:action-receipt/act_dogfood_0024_001/chain/0617602eed957e0bc6c2e4a21548528f6defc542c4468433bde85df76cb51b3a",
+      "name": "telos.action.receipt.fixture",
+      "raw_payload_included": false,
+      "raw_payload_required": false,
+      "redaction_status": null,
+      "span_ref": "otel:trace/aaa76491660d7a56086f69d1be94debe/span/1424d4ca9a6c5b58",
+      "tool_class": "action_receipt"
+    }
+  ],
+  "non_promotion_statement": "Pass 0055 proves only a local multi-trace causality graph over synthetic span links and existing dogfood receipts. It does not prove live collector ingestion, complete distributed causality, buyer adoption, scientific truth, or any natural law.",
+  "pass": "0055",
+  "schema": "MultiTraceCausalityGraph/v1",
+  "seal": "24c794be2c0f30058530507ef328da71fa54744e818f4ea5b877c31d81dd3d31",
+  "sources": {
+    "source_binding": {
+      "path": "C:\\dev\\public\\telos\\docs\\research\\dogfood\\schemas\\source-evidence-binding-pass-0028.json",
+      "sha256": "75aeda5b9afa02eb1da746aa319d2908a7895f26aefe5d1949d1d949ff3c0f32"
+    },
+    "spans": {
+      "path": "C:\\dev\\public\\telos\\docs\\research\\dogfood\\fixtures\\multitrace-causality-spans-pass-0055.json",
+      "sha256": "fa3db5410b602b77eaf689bde95f6e260f8c74f3d270c4d1a1c1d91341ec9ee4",
+      "span_count": 4
+    },
+    "tool_receipts": {
+      "path": "C:\\dev\\public\\telos\\docs\\research\\dogfood\\schemas\\tool-receipts-pass-0054.json",
+      "sha256": "9cbdbc1bd4ecfdc0e36e2e6bfac047aa3315be02b1b3f1bdc6a7c5d24b0c0867"
+    },
+    "trace_join": {
+      "path": "C:\\dev\\public\\telos\\docs\\research\\dogfood\\schemas\\otel-trace-receipt-join-pass-0054.json",
+      "sha256": "cbaaf059b6da49cab92fac4bb15ea0b525cc5948ad90c40fc7741371791887ed"
+    }
+  },
+  "status": "MULTITRACE_CAUSALITY_GRAPH_MATCH"
+}

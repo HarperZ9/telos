@@ -1,0 +1,225 @@
+{
+  "component_receipts": [
+    {
+      "component": "action_receipt",
+      "exists": true,
+      "line_count": 509,
+      "path": "demo/integrations/action-receipt-conventions.json",
+      "schema_hint": "project-telos.action-receipt/v1",
+      "schema_match": true,
+      "sha256": "c9019be88e858369503be6ddb35de733cc2e2ddac1b361ada5a7a5e7d619ff83",
+      "status": "existing"
+    },
+    {
+      "component": "admission_telemetry",
+      "exists": true,
+      "line_count": 208,
+      "path": "demo/integrations/admission-telemetry-conventions.json",
+      "schema_hint": "project-telos.admission-telemetry/v1",
+      "schema_match": true,
+      "sha256": "5d92ddde8e7de304cb9c40558a728ce536a1fa1219e5c5ca02bdf759ab6c19c9",
+      "status": "existing"
+    },
+    {
+      "component": "browser_evidence",
+      "exists": true,
+      "line_count": 58,
+      "path": "demo/integrations/browser-evidence.json",
+      "schema_hint": "project-telos.browser-evidence/v1",
+      "schema_match": true,
+      "sha256": "380652f54b2de78153c32cfd5cea946f350d5dfcfe38c52fd469a13b897c51c9",
+      "status": "existing"
+    },
+    {
+      "component": "loop_ledger",
+      "exists": true,
+      "line_count": 216,
+      "path": "demo/integrations/loop-ledger-conventions.json",
+      "schema_hint": "project-telos.loop-ledger/v1",
+      "schema_match": true,
+      "sha256": "9581fb2cb6290fc92b842075127de63913d5c62ef419d4434dc970428ade6e5a",
+      "status": "existing"
+    },
+    {
+      "component": "workstation_substrate",
+      "exists": true,
+      "line_count": 122,
+      "path": "demo/integrations/workstation-substrate.json",
+      "schema_hint": "project-telos.workstation-substrate/v1",
+      "schema_match": true,
+      "sha256": "5c7ed7913f9d9dd6273fd81f294394f0c5f528e180973eb585e74cd0dd62eca9",
+      "status": "existing"
+    },
+    {
+      "component": "model_foundry",
+      "exists": true,
+      "line_count": 255,
+      "path": "demo/model-foundry.mjs",
+      "schema_hint": "project-telos.model-foundry/v1",
+      "schema_match": true,
+      "sha256": "13924534722b115ac51b718f353af21e33f6f8790542b6451a4435f412e277df",
+      "status": "existing_executable"
+    },
+    {
+      "component": "flagship_action",
+      "exists": true,
+      "line_count": 62,
+      "path": "demo/flagship-action.mjs",
+      "schema_hint": "project-telos.flagship-action/v1",
+      "schema_match": true,
+      "sha256": "9ac83e300388b40d62eb6b839c6a8fe6ec2dbed44aa334d16ca22f750a6c6381",
+      "status": "existing_module"
+    },
+    {
+      "component": "context_pack",
+      "exists": true,
+      "line_count": 272,
+      "path": "demo/context-pack.mjs",
+      "schema_hint": "project-telos.context-pack/v1",
+      "schema_match": true,
+      "sha256": "78e178fadd55991a357d8cdbc16801ce2b700ff3bee841be487430ecc1d0790a",
+      "status": "existing_module"
+    },
+    {
+      "component": "telos_mcp",
+      "exists": true,
+      "line_count": 325,
+      "path": "demo/telos-mcp.mjs",
+      "schema_hint": "telos.mcp",
+      "schema_match": true,
+      "sha256": "9bfeff327f5411f8b31c1863f3f768db71f9b96c3cf1e113a0f46ac529baf3e8",
+      "status": "existing_module"
+    },
+    {
+      "component": "operator_doctor",
+      "exists": true,
+      "line_count": 276,
+      "path": "demo/operator-doctor.mjs",
+      "schema_hint": "telos.operator.doctor",
+      "schema_match": true,
+      "sha256": "eccf97105448835627db7716e48aa28dbaf05888d0b76e242d3d628f331a06ce",
+      "status": "existing_module"
+    },
+    {
+      "component": "display_calibration",
+      "exists": true,
+      "line_count": 34,
+      "path": "demo/display-calibration.mjs",
+      "schema_hint": "project-telos.display-calibration/v1",
+      "schema_match": true,
+      "sha256": "5ddad60d074a7a398491fbc371249c5af664e9ca80880b8f776e7bbb10454483",
+      "status": "follow_on_domain"
+    }
+  ],
+  "current_promoted_natural_laws": [],
+  "demo_flow": [
+    "Gather source refs and task input without raw private payload export.",
+    "Index workspace context into a lossless-by-reference envelope.",
+    "Forum routes the proposed action and records route confidence.",
+    "Telos records proposed action intent and admission decision.",
+    "Action executes through a bounded tool or browser step.",
+    "Browser evidence captures redacted before/after state when relevant.",
+    "Loop ledger appends the action, result, and continuation boundary.",
+    "Crucible checks the packet against measurements and negative fixtures.",
+    "Packet composer emits portable JSON and markdown proof bundle.",
+    "Demo UI shows source refs, action refs, verdicts, gaps, and replay commands."
+  ],
+  "fixture": {
+    "path": "fixtures/agent-action-proof-packet-demo-spec-pass-0050.json",
+    "schema": "AgentActionProofPacketDemoSpecFixture/v1",
+    "seal": "75ef74b6e1a4706376d67f38d63d90652956716cd619af2e6332ba939f3a707d",
+    "sha256": "b7c5222754081694a6cadc762d1eebe8c5ffadad0da0b0ba40325e14ca28da82"
+  },
+  "generated_on": "2026-07-01",
+  "integration_gaps": [
+    {
+      "id": "trace_ingest_adapter",
+      "need": "Import LangSmith/Langfuse/Phoenix/OpenTelemetry traces into proof packet source refs.",
+      "status": "needs_integration"
+    },
+    {
+      "id": "packet_composer",
+      "need": "Join source refs, workspace refs, admission telemetry, action receipt, browser evidence, loop ledger, and Crucible verdict.",
+      "status": "needs_integration"
+    },
+    {
+      "id": "public_demo_fixture",
+      "need": "Create one sanitized multi-tool action fixture with no private payloads and stable hashes.",
+      "status": "needs_packaging"
+    },
+    {
+      "id": "redaction_policy",
+      "need": "Define field-level public/private boundaries for evidence, screenshots, page state, and tool outputs.",
+      "status": "needs_integration"
+    },
+    {
+      "id": "verifier_runner",
+      "need": "Run validator and Crucible from one command and emit a portable proof bundle.",
+      "status": "needs_packaging"
+    },
+    {
+      "id": "export_bundle",
+      "need": "Emit markdown, JSON, and small static web view for buyer review.",
+      "status": "needs_packaging"
+    }
+  ],
+  "non_promotion_statement": "Pass 0050 is a demo architecture and packaging spec. It does not prove the integrated public demo exists, product-market fit, buyer adoption, scientific truth, or any natural law.",
+  "pass": "0050",
+  "previous_pass_binding": {
+    "path": "schemas/wedge-budget-signal-scorecard-pass-0049.json",
+    "seal": "ef12ec077e084e6de19ae003350166f624aa104458e1a08de5a0e2a4cfcba1da",
+    "sha256": "7a200dbd54415ae1eb23453c19973cff42ad3a9040fe5941c432727837cab0ae",
+    "source_status": "WEDGE_BUDGET_SIGNAL_SCORECARD_MATCH"
+  },
+  "primary_market": "agent_action_proof_packets",
+  "schema": "AgentActionProofPacketDemoSpecSet/v1",
+  "seal": "7b75deb022c435da463fd124b9aebcb1ccefd6081819ebe9cf1c4421e8c84af9",
+  "status": "AGENT_ACTION_PROOF_PACKET_DEMO_SPEC_MATCH",
+  "summary_receipts": [
+    {
+      "command": "node demo/browser-evidence.mjs --summary",
+      "component": "browser_evidence",
+      "contains": {
+        "valid    MATCH": true,
+        "verdict  MATCH": true
+      },
+      "exit_code": 0,
+      "output_sha256": "1ab3ca882efa8c8d995ef47ebeded142beb521aa6fce2811b111a12e05a4ca28",
+      "status": "MATCH"
+    },
+    {
+      "command": "node demo/workstation-substrate.mjs --summary",
+      "component": "workstation_substrate",
+      "contains": {
+        "verdict      MATCH": true
+      },
+      "exit_code": 0,
+      "output_sha256": "48447e16512486f82f1f3a72e30ac481b793b2d42cc13fe99f51de0f5f3f7917",
+      "status": "MATCH"
+    },
+    {
+      "command": "node demo/model-foundry.mjs --summary",
+      "component": "model_foundry",
+      "contains": {
+        "verdict MATCH": true
+      },
+      "exit_code": 0,
+      "output_sha256": "46c1ec359fa88dfaa9bd65cd3c7fdf3ebc85db9a7623b0403facb9270ebf24c1",
+      "status": "MATCH"
+    }
+  ],
+  "thirty_day_acceptance_checks": [
+    "one command builds JSON and markdown proof bundle",
+    "bundle contains source refs, workspace refs, admission, action receipt, browser evidence, ledger entry, and Crucible verdict",
+    "all private payloads are replaced by hashes or source refs",
+    "negative fixture produces DRIFT or UNVERIFIABLE"
+  ],
+  "uniqueness_claim_status": "HYPOTHESIS_ONLY",
+  "verifier_measurements": {
+    "component_count": 11,
+    "component_match_count": 11,
+    "demo_flow_step_count": 10,
+    "integration_gap_count": 6,
+    "summary_match_count": 3
+  }
+}

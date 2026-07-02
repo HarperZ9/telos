@@ -1,0 +1,227 @@
+{
+  "compose": {
+    "command": "C:\\Users\\Zain\\AppData\\Local\\Programs\\Python\\Python312\\python.exe C:\\dev\\public\\telos\\docs\\research\\dogfood\\tools\\compose_constrained_mpc_feasibility_receipt.py --out C:\\dev\\public\\telos\\docs\\research\\dogfood\\schemas\\constrained-mpc-feasibility-receipt-pass-0113.json",
+    "exit_code": 0,
+    "status": "MATCH",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "69739705e97fa66ef4dd99e86cff314ee226e83315e6183ea19c9866cae4ce4d"
+  },
+  "feasible_case": {
+    "constraint_status": "MATCH",
+    "constraints": {
+      "input_bound": "1",
+      "input_bound_max_abs": "1",
+      "state_bound": "2",
+      "state_bound_max_abs": "2",
+      "terminal_residual": "0",
+      "terminal_target": "0"
+    },
+    "controls": [
+      "-1",
+      "-1",
+      "0"
+    ],
+    "horizon": 3,
+    "objective": "7",
+    "states": [
+      "2",
+      "1",
+      "0",
+      "0"
+    ],
+    "system": "x[k+1] = x[k] + u[k]",
+    "terminal_residual": "0",
+    "x0": "2"
+  },
+  "forum": {
+    "confidence": 0.125,
+    "decided": null,
+    "exit_code": 0,
+    "needs_escalation": true,
+    "status": "MATCH",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "a70d5f95cb9dd305f9ec5dd544439bf31a9ebeb4813bfd5394a01fa229da18b8",
+    "top_candidates": [
+      {
+        "agent": "model-foundry",
+        "score": 0.125
+      },
+      {
+        "agent": "backend",
+        "score": 0.0
+      },
+      {
+        "agent": "ci-cd",
+        "score": 0.0
+      },
+      {
+        "agent": "cloud-infra",
+        "score": 0.0
+      },
+      {
+        "agent": "code-review",
+        "score": 0.0
+      }
+    ]
+  },
+  "index": {
+    "exit_code": 0,
+    "graph_pack_sha256": "8ee383e19ae9a6141bee70de733fb6aa09201ff9d284ce6778ce58b06e6b68b2",
+    "schema": "project-telos.context-envelope/v1",
+    "source_refs_only": true,
+    "status": "MATCH",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "2b0cc6edf38799498dc995ee52784facdd45b7e3161812b0598f8caa3533cdac",
+    "verification_verdict": "MATCH"
+  },
+  "market_surface": {
+    "gap_hypothesis": "MPC and control stacks expose solvers and modeling APIs, while a proof packet can bind the finite-horizon problem, constraints, candidate plan, rollout, infeasibility witness, source provenance, and verification verdicts.",
+    "gap_status": "hypothesis",
+    "tool_count": 9,
+    "tools": [
+      {
+        "gap_status": "inferred",
+        "source": "https://osqp.org/docs/examples/mpc.html",
+        "tool": "OSQP"
+      },
+      {
+        "gap_status": "inferred",
+        "source": "https://www.do-mpc.com/en/latest/theory_mpc.html",
+        "tool": "do-mpc"
+      },
+      {
+        "gap_status": "inferred",
+        "source": "https://web.casadi.org/docs/",
+        "tool": "CasADi"
+      },
+      {
+        "gap_status": "inferred",
+        "source": "https://www.cvxpy.org/examples/",
+        "tool": "CVXPY"
+      },
+      {
+        "gap_status": "inferred",
+        "source": "https://www.mathworks.com/help/mpc/gs/what-is-mpc.html",
+        "tool": "MathWorks MPC"
+      },
+      {
+        "gap_status": "inferred",
+        "source": "https://www.cvxgrp.org/scs/examples/python/mpc.html",
+        "tool": "SCS"
+      },
+      {
+        "gap_status": "inferred",
+        "source": "https://drake.mit.edu/",
+        "tool": "Drake"
+      },
+      {
+        "gap_status": "inferred",
+        "source": "https://www.mathworks.com/products/control.html",
+        "tool": "MATLAB Control System Toolbox"
+      },
+      {
+        "gap_status": "inferred",
+        "source": "https://python-control.readthedocs.io/en/0.10.2/",
+        "tool": "python-control"
+      }
+    ]
+  },
+  "negative_fixtures": {
+    "bad_plan_fixture": {
+      "classification": "TERMINAL_VIOLATION_EXPECTED",
+      "controls": [
+        "-1",
+        "0",
+        "0"
+      ],
+      "states": [
+        "2",
+        "1",
+        "1",
+        "1"
+      ],
+      "terminal_residual": "1",
+      "terminal_target": "0",
+      "x0": "2"
+    },
+    "infeasible_terminal_fixture": {
+      "classification": "INFEASIBLE_EXPECTED",
+      "horizon": 2,
+      "input_bound": "1",
+      "minimum_terminal_abs_residual": "1",
+      "terminal_target": "0",
+      "x0": "3"
+    }
+  },
+  "pass": "0113",
+  "schema": "DogfoodToolReceipts/v1",
+  "seal": "f978ba7118cb2bd5ec23a70c2595899aa211f30fe86ae523ae081ec0e0ed5b3d",
+  "telos": {
+    "exit_code": 0,
+    "status": "MATCH",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "be17cb15259234cb4e8e95c2b36e76c90d841431729beb140294e34c5f9ebfa7",
+    "tool": "telos",
+    "tool_version": "0.1.0"
+  },
+  "test": {
+    "command": "C:\\Users\\Zain\\AppData\\Local\\Programs\\Python\\Python312\\python.exe C:\\dev\\public\\telos\\docs\\research\\dogfood\\tools\\test_constrained_mpc_feasibility_receipt.py",
+    "exit_code": 0,
+    "status": "MATCH",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "youtube_binding": {
+    "dominant_cluster": "enterprise_quantum_optimization",
+    "dominant_cluster_video_count": 13,
+    "raw_transcript_included": false,
+    "roadmap_pass": "0102",
+    "source_policy": "YouTube videos are treated as critical source leads. Metadata and Gather receipts are first-order evidence; synthesized product implications remain hypotheses.",
+    "transcript_receipt_count": 19,
+    "valid_video_count": 19
+  },
+  "youtube_requirements": {
+    "dominant_cluster": "enterprise_quantum_optimization",
+    "dominant_cluster_video_count": 13,
+    "required_receipt_fields": [
+      "constraint_type",
+      "encoding_method",
+      "slack_variables",
+      "feasibility_check",
+      "counterexample_fixture"
+    ],
+    "requirement_id": "constraint_encoding_receipt",
+    "source_policy": "YouTube videos are treated as critical source leads. Metadata and Gather receipts are first-order evidence; synthesized product implications remain hypotheses.",
+    "source_titles": [
+      "Panel: Quantum Optimization in the Enterprise | Qubits Europe 2026",
+      "Panel: On Premise Quantum Infrastructure and Advanced Computing | Qubits Europe 2026",
+      "Dr. Trevor Lanting | Qubits Europe 2026",
+      "Panel: Quantum Investment in Europe | Qubits Europe 2026",
+      "Dr. Andrei Petrenko | Qubits Europe 2026",
+      "Dr. Mayowa Ayodele | Qubit Europe 2026",
+      "D-Wave Investor Day 2026 - Full Event",
+      "Missile Defense Optimization with Quantum",
+      "Rethinking Warehouse Operations with Quantum",
+      "Quantum + Robotics For Optimized Quality Control",
+      "Insights from a Quantum Optimization Expert",
+      "Quantum Computing Meets Real-World Impact",
+      "Dr. Vladimir Gusev | Qubit Europe 2026"
+    ],
+    "source_video_ids": [
+      "yW_TAAl3H8w",
+      "iDILQL8US68",
+      "dBG9jGKaM_M",
+      "1jJ3zHfQGsU",
+      "kDAU5aD_a0I",
+      "x-yTG0oThr0",
+      "afAgs9LBnm0",
+      "RzmPzsgVDY4",
+      "7zjyj9ClmQw",
+      "QillFoj4OVY",
+      "jtBwnFqU3K4",
+      "GQlC3NYRjK8",
+      "8wWDeFuivdw"
+    ],
+    "top_priority": "optimization_proof_workbench"
+  }
+}

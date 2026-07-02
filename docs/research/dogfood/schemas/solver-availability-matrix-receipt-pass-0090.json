@@ -1,0 +1,676 @@
+{
+  "buildc_corpus_receipt": {
+    "cwd": "C:\\dev\\public\\pubscan\\quantalang\\compiler",
+    "exit_code": 0,
+    "line_checks": {
+      "c execution: 8 passed": true,
+      "c receipt: ok": true,
+      "lsp dispatch receipt: ok": true,
+      "manifest: 8 program(s)": true,
+      "memory layout receipt: ok": true,
+      "mir representation receipt: ok": true,
+      "module graph receipt: ok": true,
+      "rust receipt: ok": true,
+      "substrate receipt: ok": true,
+      "symbol graph receipt: ok": true
+    },
+    "status": "MATCH",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "fbe2daff8da1804b00cafe9a9fff36fc649429071b25f6a2561003255f6310d3"
+  },
+  "command_receipts": {
+    "buildc": {
+      "available": false,
+      "command": "buildc",
+      "path": null
+    },
+    "cargo": {
+      "available": true,
+      "command": "cargo",
+      "path": "C:\\Users\\Zain\\.cargo\\bin\\cargo.EXE"
+    },
+    "cmake": {
+      "available": true,
+      "command": "cmake",
+      "path": "C:\\Program Files\\CMake\\bin\\cmake.EXE"
+    },
+    "dwave": {
+      "available": false,
+      "command": "dwave",
+      "path": null
+    },
+    "julia": {
+      "available": false,
+      "command": "julia",
+      "path": null
+    },
+    "mojo": {
+      "available": false,
+      "command": "mojo",
+      "path": null
+    },
+    "node": {
+      "available": true,
+      "command": "node",
+      "path": "C:\\Program Files\\nodejs\\node.EXE"
+    },
+    "qiskit": {
+      "available": false,
+      "command": "qiskit",
+      "path": null
+    },
+    "z3": {
+      "available": false,
+      "command": "z3",
+      "path": null
+    }
+  },
+  "current_promoted_natural_laws": [],
+  "environment": {
+    "platform": "Windows-11-10.0.26220-SP0",
+    "python": "3.12.10"
+  },
+  "flagship_receipts": {
+    "forum": {
+      "confidence": 0.09090909090909091,
+      "decided": null,
+      "exit_code": 0,
+      "needs_escalation": true,
+      "status": "MATCH",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "a72455b90f29ed2ce0ba1cca16cddb1e0d9efffa176ad3c7f3092a91e1ab34c8",
+      "top_candidates": [
+        {
+          "agent": "project-telos",
+          "score": 0.09090909090909091
+        },
+        {
+          "agent": "backend",
+          "score": 0.0
+        },
+        {
+          "agent": "ci-cd",
+          "score": 0.0
+        },
+        {
+          "agent": "cloud-infra",
+          "score": 0.0
+        },
+        {
+          "agent": "code-review",
+          "score": 0.0
+        }
+      ]
+    },
+    "index": {
+      "exit_code": 0,
+      "graph_pack_sha256": "8ee383e19ae9a6141bee70de733fb6aa09201ff9d284ce6778ce58b06e6b68b2",
+      "schema": "project-telos.context-envelope/v1",
+      "source_refs_only": true,
+      "status": "MATCH",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "281c6444de49d915a3144d41e963eec8a1b97e6985bc0d8fd61a814bcb9f0386",
+      "verification_verdict": "MATCH"
+    },
+    "telos": {
+      "exit_code": 0,
+      "status": "MATCH",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "be17cb15259234cb4e8e95c2b36e76c90d841431729beb140294e34c5f9ebfa7",
+      "tool": "telos",
+      "tool_version": "0.1.0"
+    }
+  },
+  "generated_on": "2026-07-01",
+  "matrix_rows": [
+    {
+      "category": "array_baseline",
+      "local_status": "LOCAL_AVAILABLE",
+      "next_action": "build_adapter_receipt",
+      "proof_gap": "adapter_needed",
+      "row_id": "numpy",
+      "source_ids": [
+        "numpy"
+      ],
+      "surface": "numpy",
+      "version": "2.4.5"
+    },
+    {
+      "category": "continuous_global_optimization",
+      "local_status": "LOCAL_AVAILABLE",
+      "next_action": "build_adapter_receipt",
+      "proof_gap": "adapter_needed",
+      "row_id": "scipy",
+      "source_ids": [
+        "scipy-dual-annealing"
+      ],
+      "surface": "scipy",
+      "version": "1.17.1"
+    },
+    {
+      "category": "graph_algorithms",
+      "local_status": "LOCAL_AVAILABLE",
+      "next_action": "build_adapter_receipt",
+      "proof_gap": "adapter_needed",
+      "row_id": "networkx",
+      "source_ids": [
+        "networkx"
+      ],
+      "surface": "networkx",
+      "version": "3.6.1"
+    },
+    {
+      "category": "table_ingest",
+      "local_status": "LOCAL_AVAILABLE",
+      "next_action": "build_adapter_receipt",
+      "proof_gap": "adapter_needed",
+      "row_id": "pandas",
+      "source_ids": [
+        "pandas"
+      ],
+      "surface": "pandas",
+      "version": "3.0.3"
+    },
+    {
+      "category": "symbolic_math",
+      "local_status": "LOCAL_UNAVAILABLE",
+      "next_action": "install_or_remote_adapter_receipt",
+      "proof_gap": "dependency_missing",
+      "row_id": "sympy",
+      "source_ids": [
+        "sympy"
+      ],
+      "surface": "sympy",
+      "version": null
+    },
+    {
+      "category": "convex_optimization",
+      "local_status": "LOCAL_UNAVAILABLE",
+      "next_action": "install_or_remote_adapter_receipt",
+      "proof_gap": "dependency_missing",
+      "row_id": "cvxpy",
+      "source_ids": [
+        "cvxpy"
+      ],
+      "surface": "cvxpy",
+      "version": null
+    },
+    {
+      "category": "algebraic_modeling",
+      "local_status": "LOCAL_UNAVAILABLE",
+      "next_action": "install_or_remote_adapter_receipt",
+      "proof_gap": "dependency_missing",
+      "row_id": "pyomo",
+      "source_ids": [
+        "pyomo"
+      ],
+      "surface": "pyomo",
+      "version": null
+    },
+    {
+      "category": "cp_sat_mip",
+      "local_status": "LOCAL_UNAVAILABLE",
+      "next_action": "install_or_remote_adapter_receipt",
+      "proof_gap": "dependency_missing",
+      "row_id": "ortools",
+      "source_ids": [
+        "ortools-cp-sat"
+      ],
+      "surface": "ortools",
+      "version": null
+    },
+    {
+      "category": "qubo_bqm_modeling",
+      "local_status": "LOCAL_UNAVAILABLE",
+      "next_action": "install_or_remote_adapter_receipt",
+      "proof_gap": "dependency_missing",
+      "row_id": "dimod",
+      "source_ids": [
+        "dwave-ocean"
+      ],
+      "surface": "dimod",
+      "version": null
+    },
+    {
+      "category": "quantum_hybrid_samplers",
+      "local_status": "LOCAL_UNAVAILABLE",
+      "next_action": "install_or_remote_adapter_receipt",
+      "proof_gap": "dependency_missing",
+      "row_id": "dwave_system",
+      "source_ids": [
+        "dwave-ocean"
+      ],
+      "surface": "dwave.system",
+      "version": null
+    },
+    {
+      "category": "quantum_circuits",
+      "local_status": "LOCAL_UNAVAILABLE",
+      "next_action": "install_or_remote_adapter_receipt",
+      "proof_gap": "dependency_missing",
+      "row_id": "qiskit",
+      "source_ids": [
+        "qiskit"
+      ],
+      "surface": "qiskit",
+      "version": null
+    },
+    {
+      "category": "quantum_dynamics",
+      "local_status": "LOCAL_UNAVAILABLE",
+      "next_action": "install_or_remote_adapter_receipt",
+      "proof_gap": "dependency_missing",
+      "row_id": "qutip",
+      "source_ids": [
+        "qutip"
+      ],
+      "surface": "qutip",
+      "version": null
+    },
+    {
+      "category": "smt_solving",
+      "local_status": "LOCAL_UNAVAILABLE",
+      "next_action": "install_or_remote_adapter_receipt",
+      "proof_gap": "dependency_missing",
+      "row_id": "z3",
+      "source_ids": [
+        "z3"
+      ],
+      "surface": "z3",
+      "version": null
+    },
+    {
+      "category": "ml_tensor_training",
+      "local_status": "LOCAL_UNAVAILABLE",
+      "next_action": "install_or_remote_adapter_receipt",
+      "proof_gap": "dependency_missing",
+      "row_id": "torch",
+      "source_ids": [
+        "torch"
+      ],
+      "surface": "torch",
+      "version": null
+    },
+    {
+      "category": "accelerated_autodiff",
+      "local_status": "LOCAL_UNAVAILABLE",
+      "next_action": "install_or_remote_adapter_receipt",
+      "proof_gap": "dependency_missing",
+      "row_id": "jax",
+      "source_ids": [
+        "jax"
+      ],
+      "surface": "jax",
+      "version": null
+    },
+    {
+      "category": "compiler_runtime_receipts",
+      "local_status": "SOURCE_AVAILABLE_CORPUS_MATCH",
+      "next_action": "convert_buildc_corpus_receipt_to_solver_runtime_packet",
+      "proof_gap": "adapter_to_solver_matrix_needed",
+      "row_id": "buildlang_buildc",
+      "source_ids": [
+        "buildlang-local"
+      ],
+      "surface": "BuildLang/buildc",
+      "version": null
+    },
+    {
+      "category": "domain_module_ecosystem",
+      "local_status": "LOCAL_SOURCE_PRESENT",
+      "next_action": "module_level_availability_matrix",
+      "proof_gap": "whole_ecosystem_compilation_not_claimed",
+      "row_id": "build_universe",
+      "source_ids": [
+        "build-universe-local"
+      ],
+      "surface": "Build Universe",
+      "version": null
+    },
+    {
+      "category": "visual_measurement_kernel",
+      "local_status": "LOCAL_SOURCE_PRESENT",
+      "next_action": "measurement_kernel_receipt_join",
+      "proof_gap": "connect_color_metrics_to_solver_receipts",
+      "row_id": "build_color",
+      "source_ids": [
+        "build-universe-local"
+      ],
+      "surface": "Build Color",
+      "version": null
+    },
+    {
+      "category": "instrumentation_measurement",
+      "local_status": "LOCAL_SOURCE_PRESENT",
+      "next_action": "instrumentation_receipt_join",
+      "proof_gap": "display_instrument_receipts_not_solver_receipts",
+      "row_id": "calibrate_pro",
+      "source_ids": [
+        "build-universe-local"
+      ],
+      "surface": "Calibrate Pro",
+      "version": null
+    },
+    {
+      "category": "cli_surface",
+      "local_status": "CLI_UNAVAILABLE",
+      "next_action": "install_or_remote_cli_adapter",
+      "proof_gap": "cli_missing",
+      "row_id": "cli_buildc",
+      "source_ids": [],
+      "surface": "buildc",
+      "version": null
+    },
+    {
+      "category": "cli_surface",
+      "local_status": "CLI_UNAVAILABLE",
+      "next_action": "install_or_remote_cli_adapter",
+      "proof_gap": "cli_missing",
+      "row_id": "cli_julia",
+      "source_ids": [],
+      "surface": "julia",
+      "version": null
+    },
+    {
+      "category": "cli_surface",
+      "local_status": "CLI_UNAVAILABLE",
+      "next_action": "install_or_remote_cli_adapter",
+      "proof_gap": "cli_missing",
+      "row_id": "cli_mojo",
+      "source_ids": [],
+      "surface": "mojo",
+      "version": null
+    },
+    {
+      "category": "cli_surface",
+      "local_status": "CLI_UNAVAILABLE",
+      "next_action": "install_or_remote_cli_adapter",
+      "proof_gap": "cli_missing",
+      "row_id": "cli_dwave",
+      "source_ids": [],
+      "surface": "dwave",
+      "version": null
+    },
+    {
+      "category": "cli_surface",
+      "local_status": "CLI_UNAVAILABLE",
+      "next_action": "install_or_remote_cli_adapter",
+      "proof_gap": "cli_missing",
+      "row_id": "cli_qiskit",
+      "source_ids": [],
+      "surface": "qiskit",
+      "version": null
+    },
+    {
+      "category": "cli_surface",
+      "local_status": "CLI_UNAVAILABLE",
+      "next_action": "install_or_remote_cli_adapter",
+      "proof_gap": "cli_missing",
+      "row_id": "cli_z3",
+      "source_ids": [],
+      "surface": "z3",
+      "version": null
+    },
+    {
+      "category": "cli_surface",
+      "local_status": "CLI_AVAILABLE",
+      "next_action": "record_cli_version_and_adapter",
+      "proof_gap": "cli_adapter_needed",
+      "row_id": "cli_cmake",
+      "source_ids": [],
+      "surface": "cmake",
+      "version": null
+    },
+    {
+      "category": "cli_surface",
+      "local_status": "CLI_AVAILABLE",
+      "next_action": "record_cli_version_and_adapter",
+      "proof_gap": "cli_adapter_needed",
+      "row_id": "cli_cargo",
+      "source_ids": [],
+      "surface": "cargo",
+      "version": null
+    },
+    {
+      "category": "cli_surface",
+      "local_status": "CLI_AVAILABLE",
+      "next_action": "record_cli_version_and_adapter",
+      "proof_gap": "cli_adapter_needed",
+      "row_id": "cli_node",
+      "source_ids": [],
+      "surface": "node",
+      "version": null
+    }
+  ],
+  "package_receipts": {
+    "cvxpy": {
+      "available": false,
+      "module": "cvxpy",
+      "origin": null,
+      "version": null
+    },
+    "dimod": {
+      "available": false,
+      "module": "dimod",
+      "origin": null,
+      "version": null
+    },
+    "dwave_system": {
+      "available": false,
+      "find_error": "ModuleNotFoundError",
+      "module": "dwave.system",
+      "origin": null,
+      "version": null
+    },
+    "jax": {
+      "available": false,
+      "module": "jax",
+      "origin": null,
+      "version": null
+    },
+    "networkx": {
+      "available": true,
+      "module": "networkx",
+      "origin": "C:\\Users\\Zain\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\networkx\\__init__.py",
+      "version": "3.6.1"
+    },
+    "numpy": {
+      "available": true,
+      "module": "numpy",
+      "origin": "C:\\Users\\Zain\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\numpy\\__init__.py",
+      "version": "2.4.5"
+    },
+    "ortools": {
+      "available": false,
+      "module": "ortools",
+      "origin": null,
+      "version": null
+    },
+    "pandas": {
+      "available": true,
+      "module": "pandas",
+      "origin": "C:\\Users\\Zain\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pandas\\__init__.py",
+      "version": "3.0.3"
+    },
+    "pyomo": {
+      "available": false,
+      "module": "pyomo",
+      "origin": null,
+      "version": null
+    },
+    "qiskit": {
+      "available": false,
+      "module": "qiskit",
+      "origin": null,
+      "version": null
+    },
+    "qutip": {
+      "available": false,
+      "module": "qutip",
+      "origin": null,
+      "version": null
+    },
+    "scipy": {
+      "available": true,
+      "module": "scipy",
+      "origin": "C:\\Users\\Zain\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\scipy\\__init__.py",
+      "version": "1.17.1"
+    },
+    "sympy": {
+      "available": false,
+      "module": "sympy",
+      "origin": null,
+      "version": null
+    },
+    "torch": {
+      "available": false,
+      "module": "torch",
+      "origin": null,
+      "version": null
+    },
+    "z3": {
+      "available": false,
+      "module": "z3",
+      "origin": null,
+      "version": null
+    }
+  },
+  "pass": "0090",
+  "prior_binding": {
+    "adapter": "scipy.optimize.dual_annealing",
+    "source_pass": "0089",
+    "source_schema": "ExternalSolverAdapterReceipt/v1",
+    "source_seal": "86ef9d4327f0ecf8aa1266a069b149e162f31f03715ddc5bf94260fdf79ed504"
+  },
+  "promotion_boundary": {
+    "availability_matrix_only": true,
+    "new_natural_law_claim": false,
+    "solver_superiority_claim": false,
+    "world_problem_solved_claim": false
+  },
+  "repo_receipts": {
+    "build_color": {
+      "dirty_count": 0,
+      "exists": true,
+      "git_status_exit_code": 0,
+      "path": "C:\\dev\\public\\build-color",
+      "status_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "build_universe": {
+      "dirty_count": 0,
+      "exists": true,
+      "git_status_exit_code": 0,
+      "path": "C:\\dev\\public\\build-universe",
+      "status_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "buildlang_compiler": {
+      "dirty_count": 0,
+      "exists": true,
+      "git_status_exit_code": 0,
+      "path": "C:\\dev\\public\\pubscan\\quantalang",
+      "status_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "buildlang_tm_language": {
+      "dirty_count": 0,
+      "exists": true,
+      "git_status_exit_code": 0,
+      "path": "C:\\dev\\public\\buildlang-tmLanguage",
+      "status_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "buildlang_vscode": {
+      "dirty_count": 0,
+      "exists": true,
+      "git_status_exit_code": 0,
+      "path": "C:\\dev\\public\\buildlang-vscode",
+      "status_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "calibrate_pro": {
+      "dirty_count": 0,
+      "exists": true,
+      "git_status_exit_code": 0,
+      "path": "C:\\dev\\public\\calibrate-pro",
+      "status_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "schema": "SolverAvailabilityMatrixReceipt/v1",
+  "seal": "d32050ec5d7ef77d6eafdc555118938cdac546580fdfaa90c479299507d4ead1",
+  "source_anchors": [
+    {
+      "source_id": "scipy-dual-annealing",
+      "url": "https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.dual_annealing.html",
+      "verification_status": "WEB_VERIFIED_2026_07_01"
+    },
+    {
+      "source_id": "ortools-cp-sat",
+      "url": "https://developers.google.com/optimization/cp/cp_solver",
+      "verification_status": "WEB_VERIFIED_2026_07_01"
+    },
+    {
+      "source_id": "dwave-ocean",
+      "url": "https://docs.dwavequantum.com/en/latest/ocean/index.html",
+      "verification_status": "WEB_VERIFIED_2026_07_01"
+    },
+    {
+      "source_id": "cvxpy",
+      "url": "https://www.cvxpy.org/",
+      "verification_status": "WEB_VERIFIED_2026_07_01"
+    },
+    {
+      "source_id": "pyomo",
+      "url": "https://www.pyomo.org/",
+      "verification_status": "WEB_VERIFIED_2026_07_01"
+    },
+    {
+      "source_id": "qiskit",
+      "url": "https://quantum.cloud.ibm.com/docs/en/guides",
+      "verification_status": "WEB_VERIFIED_2026_07_01"
+    },
+    {
+      "source_id": "sympy",
+      "url": "https://docs.sympy.org/latest/index.html",
+      "verification_status": "WEB_VERIFIED_2026_07_01"
+    },
+    {
+      "source_id": "networkx",
+      "url": "https://networkx.org/documentation/stable/",
+      "verification_status": "WEB_VERIFIED_2026_07_01"
+    },
+    {
+      "source_id": "pass-0089-external-adapter",
+      "url": "docs/research/dogfood/pass-0089-ledger.md",
+      "verification_status": "LOCAL_BASELINE"
+    },
+    {
+      "source_id": "buildlang-local",
+      "url": "C:\\dev\\public\\pubscan\\quantalang\\README.md",
+      "verification_status": "LOCAL_SOURCE"
+    },
+    {
+      "source_id": "build-universe-local",
+      "url": "C:\\dev\\public\\build-universe\\STATUS.md",
+      "verification_status": "LOCAL_SOURCE"
+    }
+  ],
+  "status": "SOLVER_AVAILABILITY_MATRIX_RECEIPT_MATCH",
+  "summary": {
+    "local_available_rows": 11,
+    "local_unavailable_rows": 17,
+    "recommended_next": [
+      "buildlang_corpus_receipt_adapter",
+      "networkx_graph_optimization_adapter",
+      "ortools_cp_sat_dependency_receipt",
+      "sympy_symbolic_math_dependency_receipt"
+    ],
+    "row_count": 28
+  },
+  "unsupported_claim_count": 0,
+  "upstream_research_binding": {
+    "dominant_cluster": "enterprise_quantum_optimization",
+    "dominant_cluster_video_count": 13,
+    "source_pass": "0085",
+    "source_policy": "YouTube videos are treated as critical source leads. Metadata and Gather receipts are first-order evidence; synthesized product implications remain hypotheses.",
+    "source_schema": "YouTubeResearchCompoundingPacket/v1",
+    "source_seal": "e49f658e5bbc711892cbed698cb9c110996c03ae80ea394bc2abc9cc11edd06b"
+  },
+  "validation_errors": []
+}

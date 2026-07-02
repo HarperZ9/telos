@@ -1,0 +1,89 @@
+For AI agents: visit https://ror.readme.io/llms.txt for an index of all pages formatted in Markdown and endpoints in OpenAPI.
+Jump to Content
+Contact supportReport a bug or request a featureSee ROR docs on GitHub
+HomeGuidesChangelogContact supportReport a bug or request a featureSee ROR docs on GitHubLog In
+Guides
+Log In
+HomeGuidesChangelog
+About the ROR REST API
+Getting Started with ROR
+ROR basics
+Identifier pattern
+Infrastructure
+Logos and display guidelines
+See who uses ROR
+Get involved
+Community feedback documents
+Contact us
+ROR Metadata
+Updates and curation
+Data structure
+Fields and sub-fields
+Relationships and hierarchies
+Schema versions
+Schema 1.0
+Schema 2.0
+Schema 2.1
+ROR REST API
+About the ROR REST API
+Register for a client ID
+Retrieve a single record
+Retrieve a list of records
+Query parameter
+Filtering
+Paging
+Advanced query parameter
+Affiliation parameter
+API versions
+ROR Tools & Services
+Data dump
+Web search
+OpenRefine reconciler
+Collecting ROR IDs
+Create ROR-powered forms
+Match organization names to ROR IDs
+Map other organization IDs to ROR IDs
+Retrieve ROR data from Zenodo
+Transition from GRID to ROR
+Transition from Open Funder Registry to ROR
+Sharing ROR IDs
+Add ROR IDs to Crossref DOIs
+Add ROR IDs to DataCite DOIs
+Add ROR IDs to JATS XML
+Add ROR IDs to ORCID records
+Powered by
+About the ROR REST API
+The ROR API allows retrieving, searching and filtering the organizations indexed in ROR. The results are returned in JSON. The code for the ROR API is openly available on GitHub, and the README on the repository includes instructions for how to run the ROR API locally using Docker.
+To suggest features for or report problems with the ROR API, open an issue on the ROR roadmap or email [email protected].
+Responses
+Queries to the ROR API will return all Fields and sub-fields in ROR's Data structure regardless of whether they have a value. JSON will include null values and empty arrays and objects if there is no value available for the given organization.
+Values in fields that contain multiple values are sorted by Unicode value, which is alphabetical for characters in the Basic Latin set.
+Beginning 1 Dec 2022, the ROR API by default returns only records whose status is "active". Records with the status values "inactive" and "withdrawn" can be included using the query parameter ?all_status. In addition, after this date, some ROR records contain the new values "Predecessor" and "Successor" in relationships.type. See the changelog post 2022-12-01 Organization status changes and our documentation on Relationships and hierarchies for more details.
+Parameters
+The ROR API supports three primary parameters, each of which has different use cases.
+The Query parameter is best for finding organization records by name keywords or by non-ROR identifiers (GRID, Wikidata, Crossref Funder ID, ISNI) and is the recommended parameter to use when creating user-facing forms. The ROR web search is powered by the query parameter of the ROR API. Queries can be filtered by location, organization type, and record status.
+The Advanced query parameter is best for finding organization records by created or last modified date, domain, website, Wikipedia page, or relationship to other organizations. Queries can be filtered by location, organization type, and record status.
+The Affiliation parameter is best for large-scale programmatic matching of complex, unstructured text strings to ROR IDs.
+Registration and rate limits
+No registration is currently required to use the ROR API, but note that the rate limit is a maximum of 2000 requests in a 5-minute period per IP address, and API traffic can be quite heavy at popular times like midnight UTC. If you need to make more requests or want to ensure faster response times, you can also run the entire ROR API locally in Docker. See the README on the ROR API GitHub repository for instructions on running the ROR API locally.
+The API is best for use cases that involve querying or retrieving individual records. The maximum number of results that can be retrieved via the API is 10,000, which means that it is currently not possible to retrieve all 120,000+ records from the ROR API. If you need to use the entire ROR dataset in your application, please download the data dump.
+🚧
+Register for a client ID by Q3 2026
+Beginning sometime in the third quarter of 2026, ROR API requests will need to use a client ID in order to receive the current rate limit of 2000 requests per 5 minute period. Requests without identification will receive a lower rate limit of 50 requests per 5 minute period. There is no cost to register a client ID.
+You can register now for a client ID at https://ror.org/api-client-id and read more about ROR API client IDs at https://ror.readme.io/docs/client-id.
+News and support
+Users of the ROR API are strongly encouraged to sign up for the ROR Technical Forum Google Group in order to receive announcements, calls for feedback, release notifications, and other important information about the ROR API. Message volume is about twice monthly. ROR API users are also welcome to ask technical questions in the group.
+Heartbeat
+If your application uses the ROR API and you'd like it to send a quick health check to determine if the ROR API is operational, you can send a query to the ROR API heartbeat at https://api.ror.org/heartbeat. If the ROR API is up, you will receive a status of OK.
+Status and uptime
+If you'd like to check manually on the status of the ROR API or assess its uptime, see https://ror1.statuspage.io/ for full API status details and history. Our current API status and recent history is below.
+Usage insights
+Want to see how others are using the ROR API? Visit the public ROR API usage insights dashboard by DataDog.
+Copy Page
+Responses
+Parameters
+Registration and rate limits
+News and support
+Heartbeat
+Status and uptime
+Usage insights

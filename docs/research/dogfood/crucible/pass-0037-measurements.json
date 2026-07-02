@@ -1,0 +1,95 @@
+{
+  "measurements": [
+    {
+      "claim": "Pass 0037 created a TheoremStatementEquivalenceSet/v1 artifact with status STATEMENT_EQUIVALENCE_MATCH, theorem_count 10, statement_check_count 10, sha256 a0928a953f609aa5ea96aecc79e355a0d5aaab949761d4efa4b1b704210986bf, and seal 78ede605591460b7a2aa8fee7e2ebca0f56688575e5c9ce7ab919f2948a0934f.",
+      "deviation": 0.0,
+      "evidence": [
+        "schema=TheoremStatementEquivalenceSet/v1",
+        "status=STATEMENT_EQUIVALENCE_MATCH",
+        "theorem_count=10",
+        "statement_check_count=10",
+        "sha256=a0928a953f609aa5ea96aecc79e355a0d5aaab949761d4efa4b1b704210986bf",
+        "seal=78ede605591460b7a2aa8fee7e2ebca0f56688575e5c9ce7ab919f2948a0934f"
+      ],
+      "method": "statement-schema-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0037 records fixture fixtures/theorem-statement-equivalence-pass-0037.json with sha256 87070b9d57571fc04f6d2f491705c32c0e736ba6c5e9158087bfb80990087802 and seal 4dc44e06e549b964f1030778c53c9a814ccf5fdd779eea87495489e9eb779b4c.",
+      "deviation": 0.0,
+      "evidence": [
+        "fixture sha256=87070b9d57571fc04f6d2f491705c32c0e736ba6c5e9158087bfb80990087802",
+        "fixture seal=4dc44e06e549b964f1030778c53c9a814ccf5fdd779eea87495489e9eb779b4c"
+      ],
+      "method": "fixture-binding-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0037 binds to pass 0036 source-ref integrity with sha256 74d89981ae7598f7a7381f6fdbb1196cf9be97ca854688a49c4e3c4bce9f6f6f, seal 68382866e7e78895eb3d7fd0d613fcc8b17afc30398b7823cb198702262da2fb, and source_status SOURCE_REF_INTEGRITY_MATCH.",
+      "deviation": 0.0,
+      "evidence": [
+        "source_ref_integrity_sha256=74d89981ae7598f7a7381f6fdbb1196cf9be97ca854688a49c4e3c4bce9f6f6f",
+        "source_ref_integrity_seal=68382866e7e78895eb3d7fd0d613fcc8b17afc30398b7823cb198702262da2fb",
+        "source_status=SOURCE_REF_INTEGRITY_MATCH"
+      ],
+      "method": "source-binding-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0037 records all ten theorem statement checks with frozen_solution_status MATCH, frozen_proof_status MATCH, discharge_gate_status MATCH, and overall status MATCH.",
+      "deviation": 0.0,
+      "evidence": [
+        "statement_check_count=10",
+        "all_frozen_solution_match=true",
+        "all_frozen_proof_match=true",
+        "all_discharge_gates_match=true",
+        "all_statement_checks_match=true"
+      ],
+      "method": "statement-row-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0037 records raw signature text, canonical signature, signature SHA-256, and signature span for frozen, solution, and proof declarations for every theorem.",
+      "deviation": 0.0,
+      "evidence": [
+        "all rows include frozen_signature.signature_text/canonical_signature/signature_sha256/signature_span",
+        "all rows include solution_signature.signature_text/canonical_signature/signature_sha256/signature_span",
+        "all rows include proof_signature.signature_text/canonical_signature/signature_sha256/signature_span"
+      ],
+      "method": "signature-binding-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0037 validator result reports MATCH with theorem_count 10 and statement_check_count 10.",
+      "deviation": 0.0,
+      "evidence": [
+        "schemas/pass-0037-theorem-statement-equivalence-validator-result.json status=MATCH",
+        "theorem_count=10",
+        "statement_check_count=10"
+      ],
+      "method": "validator-result-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0037 records packet 047 with sha256 0f1138781897eee84b486512c9399e9ba3d4ab34e3d079d99cd2a98a0fcebb7b and local steelman with sha256 28a350fb52ea8e292c2e41a7e750212cba38132c5ec9a7f47bea5989260f5917.",
+      "deviation": 0.0,
+      "evidence": [
+        "packets/047-theorem-statement-equivalence.md sha256=0f1138781897eee84b486512c9399e9ba3d4ab34e3d079d99cd2a98a0fcebb7b",
+        "adversarial/pass-0037-statement-equivalence-steelman.md sha256=28a350fb52ea8e292c2e41a7e750212cba38132c5ec9a7f47bea5989260f5917"
+      ],
+      "method": "packet-presence-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0037 preserves non-promotion boundaries: it checks declaration-signature equivalence only, does not re-run Lean, does not claim semantic proof review, and current_promoted_natural_laws remains none.",
+      "deviation": 0.0,
+      "evidence": [
+        "non_promotion_statement present",
+        "current_promoted_natural_laws=[]",
+        "steelman states this is text normalization, not Lean elaboration"
+      ],
+      "method": "non-promotion-boundary-review",
+      "tolerance": 0.5
+    }
+  ]
+}

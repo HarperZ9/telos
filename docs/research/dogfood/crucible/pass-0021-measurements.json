@@ -1,0 +1,168 @@
+{
+  "measurements": [
+    {
+      "claim": "Pass 0021 created a QuantumFrameworkEnvironmentPlanSet/v1 artifact with status ENVIRONMENT_PLAN_AND_OTEL_BRIDGE_MATCH, 11 package plans, nine negative fixtures, 15 source anchors, OTel status API_IMPORT_MATCH_NONRECORDING, and seal 1ce3a1aaab7392d4a825564415a76e71a4f8b59c2a954dbb794d4ffe7e67cb1f.",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "method": "quantum-environment-plan-artifact-review",
+      "evidence": [
+        "schemas/quantum-environment-plan-otel-bridge-pass-0021.json schema=QuantumFrameworkEnvironmentPlanSet/v1",
+        "status=ENVIRONMENT_PLAN_AND_OTEL_BRIDGE_MATCH",
+        "package_plan_count=11",
+        "negative_fixture_count=9",
+        "source_anchor_count=15",
+        "opentelemetry_action_bridge_fixture status=API_IMPORT_MATCH_NONRECORDING",
+        "seal=1ce3a1aaab7392d4a825564415a76e71a4f8b59c2a954dbb794d4ffe7e67cb1f"
+      ]
+    },
+    {
+      "claim": "Pass 0021 local environment receipt records Python 3.12.10, pip 26.1.2, platform Windows-11-10.0.26220-SP0, and installer boundary PLAN_ONLY_NO_PACKAGE_INSTALL.",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "method": "local-environment-review",
+      "evidence": [
+        "local_environment schema=LocalPythonEnvironmentReceipt/v1",
+        "python_version=3.12.10",
+        "pip_version=26.1.2",
+        "platform=Windows-11-10.0.26220-SP0",
+        "installer_boundary=PLAN_ONLY_NO_PACKAGE_INSTALL"
+      ]
+    },
+    {
+      "claim": "Every pass 0021 package plan has QuantumFrameworkPackagePlan/v1 schema, install_now=false, pin_policy RESOLVE_IN_ISOLATED_ENV_THEN_FREEZE_WITH_HASHES, no cloud credentials required for import fixtures, at least one HTTPS source anchor, import targets, a first fixture contract, and a plan hash.",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "method": "package-plan-contract-review",
+      "evidence": [
+        "validator checks QuantumFrameworkPackagePlan/v1 schema",
+        "validator checks install_now=false",
+        "validator checks pin_policy=RESOLVE_IN_ISOLATED_ENV_THEN_FREEZE_WITH_HASHES",
+        "validator checks cloud_credentials_required_for_import_fixture=false",
+        "validator checks all source anchors are HTTPS",
+        "validator checks import_targets, first_framework_import_fixture, and plan_hash"
+      ]
+    },
+    {
+      "claim": "Pass 0021 package plans include qiskit, qiskit-ibm-runtime, amazon-braket-sdk, cirq, pennylane, pyqir, pytket, pytket-qir, cudaq, opentelemetry-api, and opentelemetry-sdk.",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "method": "package-plan-membership-review",
+      "evidence": [
+        "required package plan qiskit present",
+        "required package plan qiskit-ibm-runtime present",
+        "required package plan amazon-braket-sdk present",
+        "required package plan cirq present",
+        "required package plan pennylane present",
+        "required package plan pyqir present",
+        "required package plan pytket present",
+        "required package plan pytket-qir present",
+        "required package plan cudaq present",
+        "required package plan opentelemetry-api present",
+        "required package plan opentelemetry-sdk present"
+      ]
+    },
+    {
+      "claim": "Pass 0021 promotion gates include isolated environment, resolve/freeze with hashes, no cloud credentials for framework-import fixtures, no provider execution without live-provider receipts, SDK import is not provider execution, and OTel API non-recording span is not exported trace evidence.",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "method": "promotion-gate-review",
+      "evidence": [
+        "ISOLATED_ENVIRONMENT_REQUIRED present",
+        "RESOLVE_AND_FREEZE_WITH_HASHES_REQUIRED present",
+        "NO_CLOUD_CREDENTIALS_FOR_FRAMEWORK_IMPORT_FIXTURES present",
+        "NO_CLOUD_PROVIDER_EXECUTION_WITHOUT_LIVE_PROVIDER_RECEIPT present",
+        "SDK_IMPORT_DOES_NOT_PROVE_PROVIDER_EXECUTION present",
+        "OTEL_API_NONRECORDING_SPAN_DOES_NOT_PROVE_EXPORTED_TRACE present"
+      ]
+    },
+    {
+      "claim": "Pass 0021 imports opentelemetry-api version 1.41.0, creates a NonRecordingSpan, records is_recording=false, zero trace id, zero span id, and attribute recording status NOT_RECORDED_WITH_API_ONLY_NONRECORDING_SPAN.",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "method": "otel-action-bridge-fixture-review",
+      "evidence": [
+        "opentelemetry_action_bridge_fixture distribution=opentelemetry-api",
+        "module_imported=true",
+        "api_version=1.41.0",
+        "span_class=NonRecordingSpan",
+        "is_recording=false",
+        "trace_id_hex=00000000000000000000000000000000",
+        "span_id_hex=0000000000000000",
+        "attribute_recording_status=NOT_RECORDED_WITH_API_ONLY_NONRECORDING_SPAN"
+      ]
+    },
+    {
+      "claim": "Pass 0021 QuantumProofDemoContract/v1 includes source anchor, framework import, canonical result, negative fixture, OTel action bridge, and Crucible verdict packet layers.",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "method": "quantum-proof-demo-contract-review",
+      "evidence": [
+        "quantum_proof_demo_contract schema=QuantumProofDemoContract/v1",
+        "packet_layers include source_anchor_receipts",
+        "packet_layers include framework_import_receipt",
+        "packet_layers include canonical_result_receipt",
+        "packet_layers include negative_fixture_receipts",
+        "packet_layers include otel_action_bridge_receipt",
+        "packet_layers include crucible_verdict_receipt"
+      ]
+    },
+    {
+      "claim": "Pass 0021 negative fixtures reject shared-base installation, unpinned runtime demo, credential-required import fixture, SDK import as provider execution, nonrecording OTel span as exported trace, CUDA-Q import as GPU acceleration, QIR without record map, BuildLang runtime without compiler receipt, and color runtime without measurement receipt.",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "method": "negative-fixture-review",
+      "evidence": [
+        "negative-installing-into-shared-base-env expected_validator_status=REJECT",
+        "negative-unpinned-runtime-demo expected_validator_status=REJECT",
+        "negative-cloud-credential-required-for-import-fixture expected_validator_status=REJECT",
+        "negative-sdk-import-claimed-as-provider-execution expected_validator_status=REJECT",
+        "negative-nonrecording-otel-span-claimed-as-exported-trace expected_validator_status=REJECT",
+        "negative-cudaq-import-claimed-as-gpu-acceleration expected_validator_status=REJECT",
+        "negative-qir-without-record-map expected_validator_status=REJECT",
+        "negative-buildlang-runtime-without-compiler-receipt expected_validator_status=REJECT",
+        "negative-color-runtime-without-measurement-receipt expected_validator_status=REJECT"
+      ]
+    },
+    {
+      "claim": "Pass 0021 validator reports MATCH with one matched check and zero drift.",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "method": "validator-run-review",
+      "evidence": [
+        "schemas/pass-0021-quantum-environment-plan-validator-result.json status=MATCH",
+        "match=1",
+        "drift=0",
+        "checks include QuantumFrameworkEnvironmentPlanSet status MATCH"
+      ]
+    },
+    {
+      "claim": "Pass 0021 records tool receipts showing Index, Gather, Telos, Forum status/verify, and Crucible status as MATCH while preserving Forum submit as UNVERIFIABLE due to executor JSON parsing.",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "method": "tool-receipt-review",
+      "evidence": [
+        "schemas/tool-receipts-pass-0021.json status=MATCH_WITH_FORUM_SUBMIT_GAP",
+        "index status MATCH",
+        "gather status MATCH",
+        "gather docs verified=true",
+        "telos operator_doctor status MATCH",
+        "forum status MATCH entries=13",
+        "forum verify chain=true deep=true",
+        "forum submit status=UNVERIFIABLE",
+        "crucible status MATCH"
+      ]
+    },
+    {
+      "claim": "Pass 0021 promotes zero quantum SDK installations, unavailable quantum framework imports, cloud credentials, provider jobs, quantum hardware results, natural laws, or scientific discoveries.",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "method": "non-promotion-review",
+      "evidence": [
+        "schemas/quantum-environment-plan-otel-bridge-pass-0021.json non_promotion_statement states no quantum SDK installs, unavailable quantum framework imports, credentials, provider jobs, hardware, or scientific results",
+        "packets/031-quantum-environment-plan-otel-bridge.md states no quantum SDKs were installed and no unavailable quantum framework was imported",
+        "schemas/tool-receipts-pass-0021.json non_promotion_statement states no package installation, quantum framework import, recording OTel export, cloud provider execution, or scientific discovery",
+        "Current promoted natural laws: none"
+      ]
+    }
+  ]
+}

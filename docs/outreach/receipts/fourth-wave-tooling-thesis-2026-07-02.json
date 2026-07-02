@@ -1,0 +1,26 @@
+{
+  "title": "Project Telos Fourth-Wave Measurement Gate And Negative Fixture Claims",
+  "disposition": "fenced",
+  "claims": [
+    {
+      "text": "A UTF-8 Telos measurement packet containing the five Crucible-supported layer types passes crucible measurement-gate with MATCH, decision_outcome allow, and five matched rows.",
+      "falsification": "The positive packet is missing, cannot be parsed as UTF-8 JSON, or crucible measurement-gate does not return MATCH/allow with five matched rows."
+    },
+    {
+      "text": "The same measurement packet fails closed under a bad explicit histogram criterion, returning UNVERIFIABLE, decision_outcome block, and pixel_dimensions_mismatch.",
+      "falsification": "The negative criteria file is missing, the negative gate returns MATCH/allow, or the histogram row does not report pixel_dimensions_mismatch."
+    },
+    {
+      "text": "Learn rejects a proof packet with illegal verdict enum VERIFIED_SUPREME, exits nonzero, and writes no prooflesson receipt.",
+      "falsification": "Learn accepts the forged packet, exits 0, or writes a prooflesson receipt."
+    },
+    {
+      "text": "The fourth-wave package distinguishes the five currently Crucible-gated measurement layers from Telos's broader ten-layer measurement bus.",
+      "falsification": "The docs claim all ten Telos measurement layers are currently accepted by crucible measurement-gate."
+    },
+    {
+      "text": "The fourth-wave content queue packages both positive and negative evidence for the parallel posting session.",
+      "falsification": "The content queue omits either the positive measurement-gate result or the negative fixture result."
+    }
+  ]
+}

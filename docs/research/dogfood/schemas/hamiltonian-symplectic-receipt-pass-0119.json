@@ -1,0 +1,398 @@
+{
+  "current_promoted_natural_laws": [],
+  "flagship_receipts": {
+    "forum": {
+      "confidence": 0.07500000000000001,
+      "decided": null,
+      "exit_code": 0,
+      "needs_escalation": true,
+      "status": "MATCH",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "f97ecfbd885b578ac95170a4a6b8f7d850ce92e5a1279fa61602bc8c03b418ba",
+      "top_candidates": [
+        {
+          "agent": "gpu-compute",
+          "score": 0.2
+        },
+        {
+          "agent": "model-foundry",
+          "score": 0.125
+        },
+        {
+          "agent": "backend",
+          "score": 0.0
+        },
+        {
+          "agent": "ci-cd",
+          "score": 0.0
+        },
+        {
+          "agent": "cloud-infra",
+          "score": 0.0
+        }
+      ]
+    },
+    "index": {
+      "exit_code": 0,
+      "schema": "project-telos.context-envelope/v1",
+      "status": "MATCH",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "c72cf4238cd0ce27cf49a55a28b8b92afc16321144890a838278171ed3687aaa",
+      "verification_verdict": "MATCH"
+    },
+    "telos": {
+      "exit_code": 0,
+      "status": "MATCH",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "be17cb15259234cb4e8e95c2b36e76c90d841431729beb140294e34c5f9ebfa7",
+      "tool": "telos",
+      "tool_version": "0.1.0"
+    },
+    "telos_catalog": {
+      "exit_code": 0,
+      "status": "MATCH",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "ef95a6f1ff803c483c3c4dd553fe19c37ab144113a21bc005cf4148cf31a8564",
+      "summary_detected": true
+    }
+  },
+  "generated_on": "2026-07-01",
+  "identity": "For the scoped harmonic oscillator kick-drift symplectic Euler map, det(M)=1 and M^T S M=S for S=[[1,-h/2],[-h/2,1]].",
+  "law_candidate": {
+    "name": "scoped_symplectic_euler_modified_quadratic_invariant",
+    "scope": "exact rational harmonic oscillator kick-drift update; not empirical physics and not a general theorem for arbitrary systems",
+    "status": "LAW_CANDIDATE"
+  },
+  "measurements": [
+    {
+      "id": "symplectic_h_1/3",
+      "status": "MATCH"
+    },
+    {
+      "id": "symplectic_h_1/2",
+      "status": "MATCH"
+    },
+    {
+      "id": "symplectic_h_2/3",
+      "status": "MATCH"
+    },
+    {
+      "id": "explicit_euler_area_energy_growth",
+      "status": "MATCH"
+    }
+  ],
+  "negative_fixtures": [
+    {
+      "determinant": "10/9",
+      "expected_reject_reason": "determinant_exceeds_one_and_standard_energy_grows",
+      "fixture_id": "explicit_euler_area_energy_growth",
+      "h": "1/3",
+      "matrix": [
+        [
+          "1",
+          "1/3"
+        ],
+        [
+          "-1/3",
+          "1"
+        ]
+      ],
+      "phase_space_area_preserved": false,
+      "standard_energy_final": "500000000000000000000000/79766443076872509863361",
+      "standard_energy_growth": true,
+      "standard_energy_initial": "1/2",
+      "status": "MATCH",
+      "steps": 24
+    }
+  ],
+  "non_promotion_statement": "Pass 0119 records a scoped computational law candidate for a bounded integrator identity. It does not claim new natural law, empirical physics discovery, or correctness beyond the stated update rule.",
+  "pass": "0119",
+  "schema": "HamiltonianSymplecticReceipt/v1",
+  "seal": "8fb6fe8a7b9155318c4e4512c9ef3c916e816365186d3566ea6bbf5c317ca05c",
+  "source_bindings": {
+    "formal_target_packaging_pass": "0118",
+    "formal_target_packaging_seal": "9b8b6f17a8380c5feb47172d665313eeadaefca3e56f163b30c2dbcf334490f7"
+  },
+  "source_surface": {
+    "anchor_count": 14,
+    "anchors": [
+      {
+        "gap_status": "inferred",
+        "tool": "SciML SymplecticRK",
+        "url": "https://docs.sciml.ai/DiffEqDocs/latest/api/ordinarydiffeq/dynamicalodeexplicit/SymplecticRK/"
+      },
+      {
+        "gap_status": "inferred",
+        "tool": "SciML Dynamical ODE",
+        "url": "https://docs.sciml.ai/DiffEqDocs/stable/types/dynamical_types/"
+      },
+      {
+        "gap_status": "inferred",
+        "tool": "ModelingToolkit",
+        "url": "https://docs.sciml.ai/ModelingToolkit/"
+      },
+      {
+        "gap_status": "inferred",
+        "tool": "Modelica",
+        "url": "https://modelica.org/"
+      },
+      {
+        "gap_status": "inferred",
+        "tool": "OpenModelica",
+        "url": "https://www.openmodelica.org/"
+      },
+      {
+        "gap_status": "inferred",
+        "tool": "NVIDIA PhysicsNeMo",
+        "url": "https://docs.nvidia.com/physicsnemo/index.html"
+      },
+      {
+        "gap_status": "inferred",
+        "tool": "COMSOL Multiphysics",
+        "url": "https://www.comsol.com/comsol-multiphysics"
+      },
+      {
+        "gap_status": "inferred",
+        "tool": "MathWorks Simscape",
+        "url": "https://www.mathworks.com/products/simscape.html"
+      },
+      {
+        "gap_status": "inferred",
+        "tool": "Drake",
+        "url": "https://drake.mit.edu/"
+      },
+      {
+        "gap_status": "inferred",
+        "tool": "MuJoCo",
+        "url": "https://mujoco.org/"
+      },
+      {
+        "gap_status": "inferred",
+        "tool": "FEniCS",
+        "url": "https://fenicsproject.org/"
+      },
+      {
+        "gap_status": "inferred",
+        "tool": "PETSc",
+        "url": "https://petsc.org/"
+      },
+      {
+        "gap_status": "inferred",
+        "tool": "Ansys Fluent",
+        "url": "https://www.ansys.com/products/fluids/ansys-fluent"
+      },
+      {
+        "gap_status": "inferred",
+        "tool": "JAX Autodiff",
+        "url": "https://docs.jax.dev/en/latest/automatic-differentiation.html"
+      }
+    ],
+    "market_rows": [
+      {
+        "buyer": "scientific computing and Hamiltonian simulation teams",
+        "gap_status": "inferred",
+        "proof_gap_hypothesis": "needs portable invariant receipts that bind source, update rule, exact witness, negative fixture, runtime branch, and verifier verdict",
+        "source": "https://docs.sciml.ai/DiffEqDocs/latest/api/ordinarydiffeq/dynamicalodeexplicit/SymplecticRK/",
+        "tool": "SciML SymplecticRK"
+      },
+      {
+        "buyer": "scientific computing users",
+        "gap_status": "inferred",
+        "proof_gap_hypothesis": "needs portable invariant receipts that bind source, update rule, exact witness, negative fixture, runtime branch, and verifier verdict",
+        "source": "https://docs.sciml.ai/DiffEqDocs/stable/types/dynamical_types/",
+        "tool": "SciML Dynamical ODE"
+      },
+      {
+        "buyer": "scientific computing users",
+        "gap_status": "inferred",
+        "proof_gap_hypothesis": "needs portable invariant receipts that bind source, update rule, exact witness, negative fixture, runtime branch, and verifier verdict",
+        "source": "https://docs.sciml.ai/ModelingToolkit/",
+        "tool": "ModelingToolkit"
+      },
+      {
+        "buyer": "scientific computing users",
+        "gap_status": "inferred",
+        "proof_gap_hypothesis": "needs portable invariant receipts that bind source, update rule, exact witness, negative fixture, runtime branch, and verifier verdict",
+        "source": "https://modelica.org/",
+        "tool": "Modelica"
+      },
+      {
+        "buyer": "scientific computing users",
+        "gap_status": "inferred",
+        "proof_gap_hypothesis": "needs portable invariant receipts that bind source, update rule, exact witness, negative fixture, runtime branch, and verifier verdict",
+        "source": "https://www.openmodelica.org/",
+        "tool": "OpenModelica"
+      },
+      {
+        "buyer": "physics-AI and engineering surrogate-model teams",
+        "gap_status": "inferred",
+        "proof_gap_hypothesis": "needs portable invariant receipts that bind source, update rule, exact witness, negative fixture, runtime branch, and verifier verdict",
+        "source": "https://docs.nvidia.com/physicsnemo/index.html",
+        "tool": "NVIDIA PhysicsNeMo"
+      },
+      {
+        "buyer": "engineering simulation and multiphysics teams",
+        "gap_status": "inferred",
+        "proof_gap_hypothesis": "needs portable invariant receipts that bind source, update rule, exact witness, negative fixture, runtime branch, and verifier verdict",
+        "source": "https://www.comsol.com/comsol-multiphysics",
+        "tool": "COMSOL Multiphysics"
+      },
+      {
+        "buyer": "multidomain physical-modeling teams",
+        "gap_status": "inferred",
+        "proof_gap_hypothesis": "needs portable invariant receipts that bind source, update rule, exact witness, negative fixture, runtime branch, and verifier verdict",
+        "source": "https://www.mathworks.com/products/simscape.html",
+        "tool": "MathWorks Simscape"
+      },
+      {
+        "buyer": "robotics dynamics and verification teams",
+        "gap_status": "inferred",
+        "proof_gap_hypothesis": "needs portable invariant receipts that bind source, update rule, exact witness, negative fixture, runtime branch, and verifier verdict",
+        "source": "https://drake.mit.edu/",
+        "tool": "Drake"
+      },
+      {
+        "buyer": "robotics, biomechanics, graphics, and RL simulation teams",
+        "gap_status": "inferred",
+        "proof_gap_hypothesis": "needs portable invariant receipts that bind source, update rule, exact witness, negative fixture, runtime branch, and verifier verdict",
+        "source": "https://mujoco.org/",
+        "tool": "MuJoCo"
+      },
+      {
+        "buyer": "scientific computing users",
+        "gap_status": "inferred",
+        "proof_gap_hypothesis": "needs portable invariant receipts that bind source, update rule, exact witness, negative fixture, runtime branch, and verifier verdict",
+        "source": "https://fenicsproject.org/",
+        "tool": "FEniCS"
+      },
+      {
+        "buyer": "HPC PDE and solver teams",
+        "gap_status": "inferred",
+        "proof_gap_hypothesis": "needs portable invariant receipts that bind source, update rule, exact witness, negative fixture, runtime branch, and verifier verdict",
+        "source": "https://petsc.org/",
+        "tool": "PETSc"
+      },
+      {
+        "buyer": "scientific computing users",
+        "gap_status": "inferred",
+        "proof_gap_hypothesis": "needs portable invariant receipts that bind source, update rule, exact witness, negative fixture, runtime branch, and verifier verdict",
+        "source": "https://www.ansys.com/products/fluids/ansys-fluent",
+        "tool": "Ansys Fluent"
+      },
+      {
+        "buyer": "scientific computing users",
+        "gap_status": "inferred",
+        "proof_gap_hypothesis": "needs portable invariant receipts that bind source, update rule, exact witness, negative fixture, runtime branch, and verifier verdict",
+        "source": "https://docs.jax.dev/en/latest/automatic-differentiation.html",
+        "tool": "JAX Autodiff"
+      }
+    ]
+  },
+  "status": "HAMILTONIAN_SYMPLECTIC_MATCH",
+  "symplectic_cases": [
+    {
+      "determinant": "1",
+      "h": "1/3",
+      "invariant_matrix": [
+        [
+          "1",
+          "-1/6"
+        ],
+        [
+          "-1/6",
+          "1"
+        ]
+      ],
+      "matrix": [
+        [
+          "8/9",
+          "1/3"
+        ],
+        [
+          "-1/3",
+          "1"
+        ]
+      ],
+      "modified_final": "1",
+      "modified_initial": "1",
+      "modified_quadratic_invariant_preserved": true,
+      "phase_space_area_preserved": true,
+      "standard_energy_exactly_preserved": false,
+      "standard_energy_final": "7100114720680386280358476981969268617010763265/12725370882271884716949657525077068461780432642",
+      "standard_energy_initial": "1/2",
+      "status": "MATCH",
+      "steps": 24,
+      "symplectic_form_preserved": true
+    },
+    {
+      "determinant": "1",
+      "h": "1/2",
+      "invariant_matrix": [
+        [
+          "1",
+          "-1/4"
+        ],
+        [
+          "-1/4",
+          "1"
+        ]
+      ],
+      "matrix": [
+        [
+          "3/4",
+          "1/2"
+        ],
+        [
+          "-1/2",
+          "1"
+        ]
+      ],
+      "modified_final": "1",
+      "modified_initial": "1",
+      "modified_quadratic_invariant_preserved": true,
+      "phase_space_area_preserved": true,
+      "standard_energy_exactly_preserved": false,
+      "standard_energy_final": "96833217778424187050084429245/158456325028528675187087900672",
+      "standard_energy_initial": "1/2",
+      "status": "MATCH",
+      "steps": 24,
+      "symplectic_form_preserved": true
+    },
+    {
+      "determinant": "1",
+      "h": "2/3",
+      "invariant_matrix": [
+        [
+          "1",
+          "-1/3"
+        ],
+        [
+          "-1/3",
+          "1"
+        ]
+      ],
+      "matrix": [
+        [
+          "5/9",
+          "2/3"
+        ],
+        [
+          "-2/3",
+          "1"
+        ]
+      ],
+      "modified_final": "1",
+      "modified_initial": "1",
+      "modified_quadratic_invariant_preserved": true,
+      "phase_space_area_preserved": true,
+      "standard_energy_exactly_preserved": false,
+      "standard_energy_final": "4772620304819055641150999742061795276683375841/12725370882271884716949657525077068461780432642",
+      "standard_energy_initial": "1/2",
+      "status": "MATCH",
+      "steps": 24,
+      "symplectic_form_preserved": true
+    }
+  ],
+  "unsupported_claim_count": 0,
+  "validation_errors": []
+}

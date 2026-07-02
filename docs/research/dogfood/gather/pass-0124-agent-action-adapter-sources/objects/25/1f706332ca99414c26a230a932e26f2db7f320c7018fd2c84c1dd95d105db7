@@ -1,0 +1,169 @@
+Documentation Index
+Fetch the complete documentation index at: /docs/llms.txt
+Use this file to discover all available pages before exploring further.
+Skip to main content
+Braintrust home page
+Search...
+⌘KAsk Assistant
+Request demo
+Start building
+Start building
+Search...
+Navigation
+Instrument
+Instrument your application
+Guides
+Integrations
+SDKs
+Reference
+Cookbook
+Troubleshooting
+Changelog
+Start
+Introduction
+Braintrust workflow
+Tracing quickstart
+Evaluation quickstart
+Loop agent
+Plans and limits
+Instrument
+Overview
+Tracing
+User feedback
+Attachments
+Observe
+Overview
+Logs
+Topics
+Dashboards
+Annotate
+Overview
+Human review
+Custom views
+Labels and corrections
+Datasets
+Exports
+Evaluate
+Overview
+Prompts
+Scorers and classifiers
+Playgrounds
+Experiments
+Remote evals
+Online scoring
+Best practices
+Deploy
+Overview
+Prompts
+Functions
+Braintrust gateway
+Environments
+Monitoring
+Streaming
+Admin
+Overview
+Organizations
+Projects
+AI providers
+Audit logging
+Access control
+Billing
+Automations
+Deployment
+Authentication
+Personal settings
+Service health
+Best practices
+Evaluating agents
+Writing scorers
+PM workflows
+Security
+On this page
+Anatomy of a trace
+What gets captured
+How to instrument
+Provider and framework support
+Next steps
+Instrument
+Instrument your application
+Copy page
+Add tracing to your AI application to capture LLM calls, application logic, and user feedback — the foundation for observability and evaluation.
+Copy page
+Instrumentation captures detailed traces from your AI application, recording inputs, outputs, model parameters, latency, token usage, and metadata for every request. This gives you visibility into:
+How your application behaves with real user inputs
+Where failures and edge cases occur
+Performance bottlenecks and token usage
+Data for building evaluation datasets
+New to Braintrust? Start with the tracing quickstart to log your first trace in minutes.
+​
+Anatomy of a trace
+A trace represents one end-to-end execution — a single request or interaction in logs, or a single test case run in experiments. Every trace contains one or more spans, each representing a unit of work with a start and end time. Spans nest inside each other to reflect your application’s execution flow.
+Braintrust assigns a type to each span:
+Span type
+What it represents
+eval
+The root span for an evaluation run, wrapping a task span for your application code. One per test case — contains the input, expected output, and all child spans.
+task
+A unit of application logic — a workflow, pipeline step, or named operation. In logs, the root span is always a task span. Multiple task spans can appear in a single trace.
+llm
+A single call to an LLM. Shows the model, messages, parameters, token usage, and cost.
+function
+A named block of application logic — retrieval, formatting, routing, etc.
+tool
+A tool call made by the model — an external API, code execution, database query, etc.
+score
+The result of a scorer — online (in logs) or offline (in evaluations). Contains the score value, scorer name, and for LLM-as-a-judge scorers, the judge’s reasoning.
+classifier
+The result of a classifier — online (in logs) or offline (in evaluations). Contains the chosen label (as id and label), the classifier name, and the model’s reasoning in metadata.
+Each span has an id that identifies it individually, while the trace as a whole is identified by its root_span_id. To learn how these IDs work and which to use when querying or linking, see identify spans and traces.
+Each span captures:
+Input: The data sent to this step
+Output: The result produced
+Metadata: Model parameters, tags, custom data
+Metrics: Latency, token counts, costs
+Scores: Quality metrics (added later)
+​
+What gets captured
+Every instrumented request automatically captures:
+Request inputs and outputs
+Model parameters (model name, temperature, etc.)
+Timing information (start time, duration)
+Token usage and costs
+Nested function calls and tool invocations
+Errors and exceptions
+Custom metadata you add
+This data flows directly to Braintrust, where you can view it in real time, filter and search, add human feedback, and build evaluation datasets.
+​
+How to instrument
+Braintrust makes it easy to get started with auto-instrumentation, which traces your LLM calls with no per-call code changes. When you need more control, you can trace your application logic — data retrieval, tool calls, business logic — alongside those calls.
+Trace LLM calls
+Trace LLM calls from AI providers and frameworks
+Trace application logic
+Trace non-LLM application logic like data retrieval and tool calls
+​
+Provider and framework support
+Braintrust integrates with all major AI providers and frameworks:
+AI Providers: OpenAI, Anthropic, Gemini, AWS Bedrock, Azure, Mistral, Together, Groq, and many more
+Frameworks and Libraries: LangChain, LangGraph, CrewAI, Vercel AI SDK, Pydantic AI, DSPy, and many more
+Browse the complete integrations directory to find setup guides for your stack.
+​
+Next steps
+Get started instrumenting your application:
+Trace LLM calls to automatically capture LLM calls
+Trace application logic for application logic
+Capture user feedback like thumbs up/down
+Was this page helpful?
+YesNo
+Plans and limits
+Previous
+Trace LLM calls
+Next
+⌘I
+Braintrust home page
+githubxdiscordyoutube
+PricingBlogCareersStatus
+githubxdiscordyoutube
+Powered byThis documentation is built and hosted on Mintlify, a developer documentation platform
+Assistant
+Responses are generated using AI and may contain mistakes.
+Contact support

@@ -1,0 +1,350 @@
+For forty years, theoretical computer science
+has struggled to make progress on hash tables, a
+basic data structure that underpins much of modern
+computing. Whenever a database pulls up a customer
+record, a web browser checks a saved password, or
+a router sends data, a hash table is probably at
+work. Think of these structures as the internet’s
+filing cabinets, built for speed. Trouble starts
+when the cabinet fills up. For decades, computer
+scientists believed that as a hash table gets
+close to full, its performance must drop. If
+you try to fill a storage system to ninety-nine
+percent, probability says you’ll pay with slower
+speeds. Instead of quick lookups, you end up
+searching through a mess. This belief was codified
+in 1985 by Andrew Yao. He is a titan in the field
+and a recipient of the Turing Award, which is the
+Nobel Prize of computing. Yao published a seminal
+analysis that seemed to set a speed limit on how
+efficiently a dense hash table could operate. This
+conclusion became a foundation of the field for
+forty years, until Andrew Krapivin came along.
+Krapivin, at just 21 years old undergraduate
+student at Rutgers University, has written a paper
+that has demolished this 40-year-old conjecture.
+In fact, Andrew did not even know the conjecture
+existed. He was simply working on a side project
+about memory compression, and he needed a tool
+that did not exist. He sat alone late at night,
+staring at a research paper about a concept called
+tiny pointers. He started tinkering with the math
+just for fun. He wanted to see if he could make a
+computer memory system that was just a little
+bit more efficient. Little did he realize that
+he was stepping into a problem that had stumped
+top computer scientists for forty years. Without
+realizing it, he has overturned a long-held belief
+and shown that Yao’s speed limit could be broken.
+To see why Krapivin’s discovery matters, let’s
+look at one of computing’s biggest challenges:
+how to find data quickly and efficiently. Picture
+a library with millions of books. If you want The
+Great Gatsby and there’s no sorting system, you’d
+have to check every shelf until you find it. In
+computer science, this is called linear time. As
+the library grows, so does the search time. For
+computers that need to work at lightning speed,
+linear time just isn’t good enough. Hash tables
+solve this problem. They’re like a magic trick
+that lets you find the needle without digging
+through the hay. This trick uses a mathematical
+formula called a hash function. You put in the
+data you want to store—like the title The Great
+Gatsby—and the function gives you a number. Let’s
+say it gives you 42. That number is an address,
+telling the computer to put The Great Gatsby on
+Shelf 42, Slot 1. When you want the book later,
+you don’t have to search. Just put the title back
+into the function, get 42 again, and go straight
+to that spot. The book is waiting for you.
+In a perfect world, this process is instant. It
+takes the same amount of time whether there are
+ten books or ten trillion. That’s why hash tables
+are everywhere—they promise instant access. But
+things aren’t always perfect. Hash functions are
+blunt tools—they map lots of possible data onto
+a limited number of slots. Sooner or later, two
+pieces of data will end up fighting for the same
+spot. You now have a collision. Two books cannot
+occupy the same physical space. The system must
+decide what to do. Engineers have two main ways to
+handle this. The first is called chaining. Here,
+Shelf 42 acts like a bucket—you just pile all
+the books that land there into it. If more books
+map to that slot, they go in too. It’s simple,
+but messy. It needs extra memory to track the
+overflow, and the computer has to jump around to
+find the scattered data, which slows things down.
+The second approach is more elegant but riskier.
+It’s called open addressing. In an open addressing
+system, every slot holds exactly one item. There
+are no buckets. If Shelf 42 already has The Great
+Gatsby, the system has to find another spot for
+Moby Dick. It checks Shelf 43, then 44, and keeps
+going until it finds an empty slot. As the table
+fills up, the collisions become more frequent.
+The empty spaces become rarer. The "hunt" for a
+free slot takes longer. This is the phenomenon
+that Andrew Yao analyzed forty years ago. It is
+known as the problem of the full parking lot.
+Everyone knows what it’s like to drive into
+a parking lot that’s only ten percent full.
+You find a spot right away and park with no
+trouble. Now imagine a parking lot that is
+ninety-nine percent full. There are one thousand
+spaces, and nine hundred and ninety of them are
+occupied. You drive in. You cannot find a spot.
+You spend ten minutes driving past occupied spots,
+hunting for that one elusive opening. In a hash
+table, this search is called probing. As the table
+gets closer to full, the number of probes needed
+to find a spot goes way up. In 1985, Andrew Yao
+wanted to quantify exactly how bad this problem
+could get. He focused on the extreme regime.
+He looked at tables that were nearly full.
+He used a variable, which we will call x,
+to represent the inverse of the free space.
+If the table is ninety-nine percent full,
+one percent is free. The variable
+x is one hundred. If the table is
+ninety-nine point nine percent full, one
+tenth of one percent is free. The variable
+x is one thousand. Yao studied how "greedy"
+algorithms work. These algorithms grab the
+first empty slot they find when storing data. They
+don’t wait or look ahead—they just take the first
+available spot. Yao argued that for any greedy
+strategy, you are at the mercy of probability.
+If only one in a thousand slots is empty, you
+will, on average, have to check a thousand
+slots to find one. The work required to
+insert a new item grows linearly with x.
+This means that if you double the density of the
+table, you double the work. If you increase the
+density by a factor of ten, the system slows
+down by a factor of ten. Yao went further. He
+formulated a conjecture about the worst-case
+scenario. He proposed that among all possible
+strategies for placing data in this restrictive
+model, the best you could possibly do was to mimic
+pure randomness. This is known as uniform hashing.
+The idea is that if you scatter data randomly,
+you avoid creating patterns. Yao’s conjecture
+implied that randomness was the ceiling of
+performance. You could not do better than
+chaos. This idea became widely accepted.
+It meant you had to choose: a fast hash table or
+a full one, but not both. To keep things speedy,
+you had to leave a lot of memory empty,
+wasting valuable space just to avoid slowdowns.
+Andrew Krapivin came to Rutgers with many
+interests and was double-majoring in math
+and computer science. He also likes to browse
+research papers outside his classes. In fall 2021,
+he found a paper called "Tiny Pointers". The
+paper was co-authored by Martín Farach-Colton,
+a professor at Rutgers who would later become
+Krapivin’s mentor. The paper tackled a problem
+of compression. In a computer, a "pointer" is
+just an address. It is the number that tells
+the machine where a piece of data lives. In
+massive systems with billions of data points,
+these addresses can become very large
+numbers. Large numbers take up space.
+The paper proposed a clever way to
+shrink these pointers to save memory.
+Krapivin became fascinated by how the
+problem worked. He wondered if he could
+make the compression even better—could he
+make the pointers even smaller? But there
+was a catch. To use a very small
+pointer, you need to know exactly
+where the data is. You cannot afford to
+have the data scattered across a vast,
+sparse landscape. You need the data to be packed
+tightly together. A small pointer implies a small
+address space. This led Krapivin to hash
+tables. To make his tiny pointer idea work,
+he needed a hash table that could be almost
+completely full and still run quickly.
+The usual methods, such as linear probing,
+quadratic probing, and the standard greedy
+algorithms, just didn't cut it when he looked into
+them. They kept failing his most important test:
+once the data structure started filling up,
+they'd inevitably choke, which confirmed the
+bottleneck Yao had warned about. But Krapivin
+didn’t know about Yao or his famous theory. He
+just saw that the usual methods failed, so
+he set out to design his own way to insert
+data. He started to question whether greedy
+algorithms were really the best approach.
+In a standard hash table, if the algorithm hashes
+a book to Slot 42 and Slot 42 is empty, it puts
+the book there. Why would it not? It seems foolish
+to skip an empty space. It seems inefficient to
+drive past a parking spot near the front of the
+store. But Krapivin saw that greedy choices have
+hidden downsides. When algorithms always take the
+first open spot, they create clusters. Imagine ten
+slots in a row: if slots 1, 2, and 3 are filled,
+they form a block. If a new item lands at slot 2,
+it’s taken, so it checks slot 3, then slot
+4, and ends up there. Now the block is even
+longer. These clusters act like gravity wells.
+The bigger they get, the more likely they are
+to catch new items. The clusters merge. They grow.
+They form long, continuous runs of occupied data.
+These runs are the traffic jams of the hash
+table. When the table is ninety-nine percent full,
+these runs can become massive. A new item might
+have to travel thousands of slots to get to the
+other side of the jam. Krapivin wondered what
+would happen if the algorithm were less desperate.
+What if it exercised a little self-control? He
+developed a strategy that he eventually called
+"Elastic Hashing". The idea was counterintuitive.
+When the algorithm tries to insert an item,
+it probes a sequence of spots. It might find an
+empty spot early in the sequence. But instead of
+taking it, the algorithm might decide to skip
+it. It might leave that spot empty on purpose.
+Why would you leave a spot empty? Because
+an empty spot acts like a firebreak. By
+strategically leaving empty spaces in the middle
+of dense regions, the algorithm prevents the
+clusters from merging. It keeps the traffic jams
+short. It sacrifices the immediate convenience
+of the first available spot to preserve the
+long-term health of the entire structure.
+Krapivin started modeling his idea, working
+through the logic on whiteboards and running
+simulations. He wanted to see how performance
+changed as the table filled up. He expected
+some improvement, but he didn’t expect
+to overturn the established rules. When
+he looked at the worst-case scenarios
+for Elastic Hashing, he saw that the
+link between how full the table was and its
+speed had changed. It wasn’t linear anymore.
+It didn’t depend directly on x. Performance
+now followed a logarithmic curve. The time
+needed to insert an item grew with
+the square of the logarithm of x.
+In the world of large numbers, it is the
+difference between a mountain and a molehill.
+Let us return to the parking lot. Suppose
+the lot is so full that x is one million.
+There are a million occupied spots for every
+one free spot. Under Yao’s linear prediction,
+finding a spot would require, in the worst
+case, one million checks. The system would
+be unusable. Under Krapivin’s logarithmic model,
+you calculate the logarithm of a million, which is
+roughly twenty. You square twenty. You get four
+hundred. One million versus four hundred. That
+is the scale of the breakthrough. Krapivin
+had designed a system that could be filled to
+the absolute brim—99.999% full—and still function
+with the snap and speed of a nearly empty system.
+He realized he’d found something big.
+He gathered his notes and went to see
+Professor Farach-Colton. Farach-Colton,
+a veteran of the algorithmic trenches,
+was skeptical. Andrew had to be missing something
+since the conjecture had stood out for 40 years.
+The smartest minds in the world had looked at
+it. If there were a simple trick like "skipping a
+spot," surely someone would have found it by now.
+But Farach-Colton also knew Krapivin was different
+and invited him to prove it. Farach-Colton
+brought in a third mind, William Kuszmaul,
+a theoretical computer scientist at
+Carnegie Mellon University. Kuszmaul
+is a prodigy who specializes in the
+granular details of data structures.
+Kuszmaul reviewed the manuscript and checked
+the probability calculations. Then it hit him.
+Kuszmaul told Krapivin, "You didn’t just come up
+with a cool hash table. You’ve actually completely
+wiped out a 40-year-old conjecture!"
+The three researchers spent the next
+year rigorously formalizing the mathematics.
+They had to construct a bulletproof logical
+argument showing why the log(x)^2 bound held
+true for every possible case. In their paper,
+"Optimal Bounds for Open Addressing
+Without Reordering," they presented
+the proof. They showed that by giving up greedy
+algorithms, you could avoid the linear slowdown.
+But as they dug deeper, they uncovered a second
+surprise, even more shocking than the first.
+Yao’s 1985 paper had also established a limit
+for the average time to find data. Yao proved
+that for any greedy algorithm, the average
+search time must grow logarithmically as the
+table fills up. But Krapivin’s algorithm is
+not greedy. Because it broke the greedy rule,
+the team found it could also break the
+average-time barrier. They discovered a
+variant of their strategy where the average search
+time does not grow at all. It remains constant.
+This implies that you can have a memory bank that
+is effectively one hundred percent full, and yet,
+on average, you can find a piece of data just as
+quickly as if the bank were empty. It all comes
+down to managing disorder perfectly. In Krapivin’s
+system, the algorithm manages the empty spaces so
+aggressively that they are distributed with
+perfect evenness. You are never far from a
+hole. The "firebreaks" are spaced out so regularly
+that the probe sequence never has to travel far to
+find one. The team proved that this constant-time
+performance was achievable with high probability.
+The team did one last thing. They proved that they
+could not go any further. Krapivin, Farach-Colton,
+and Kuszmaul derived a "lower bound" for the
+problem. They proved mathematically that for
+this class of hash tables, the worst-case time
+of log(x)^2 is the absolute floor. There is no
+algorithm, discovered or undiscovered, that
+can do better. Krapivin had hit the bedrock
+of the problem and found the optimal solution.
+The paper came out in January 2025 and made
+waves in theoretical computer science. Guy
+Blelloch, a professor at Carnegie Mellon,
+called the result "beautiful". Sepehr Assadi, a
+professor at the University of Waterloo, pointed
+out how lucky the timing was—they could have gone
+another forty years believing in the linear wall.
+Andrew Krapivin surprised himself when
+he overturned a famous conjecture—one put
+forward by a Turing Award winner! He says the
+breakthrough came down to a few things: he was
+"just having fun," but he also credits the solid
+support he got from his mentors and his family.
+The implications of this work will take
+years to fully filter through. Today,
+computing is moving to the edge—putting
+powerful AI on phones, watches,
+and tiny sensors. In these devices,
+memory is precious. Before this work,
+engineers would leave twenty or thirty percent
+of the memory empty just to avoid slowdowns.
+Krapivin’s work suggests that we can run
+these systems hotter. We can push them to
+ninety-nine percent capacity and keep
+them running at top speed. This could
+lead to faster databases, more efficient
+caches, and leaner systems. As for Andrew,
+he finished his undergraduate studies in 2024
+and is currently an incoming PhD student at
+Carnegie Mellon University. He was named a
+2024 Siebel Scholar. His paper was accepted
+in the 65th Annual Symposium on Foundations of
+Computer Science and covered in Quanta Magazine’s
+Biggest Computer Science Breakthroughs for
+2025. He has interned with Jane Street,
+one of Wall Street’s most successful quantitative
+hedge funds. For Andrew, the sky is the limit.

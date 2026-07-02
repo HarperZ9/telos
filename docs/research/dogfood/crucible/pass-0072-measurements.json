@@ -1,0 +1,87 @@
+{
+  "measurements": [
+    {
+      "claim": "Pass 0072 created a DomainFocusAdapterExperiment/v1 artifact with status DOMAIN_FOCUS_ADAPTER_EXPERIMENT_MATCH, sha256 5d77c5824d381de93ae49c2e64fdb4c03a372b0efe0e5841e3794956266a7d93, and seal 586cf789118b7ef6630e7bcd20833bbc5311ba367b94b89c0ad0695962e53bb5.",
+      "deviation": 0.0,
+      "evidence": [
+        "schema=DomainFocusAdapterExperiment/v1",
+        "status=DOMAIN_FOCUS_ADAPTER_EXPERIMENT_MATCH",
+        "sha256=5d77c5824d381de93ae49c2e64fdb4c03a372b0efe0e5841e3794956266a7d93",
+        "seal=586cf789118b7ef6630e7bcd20833bbc5311ba367b94b89c0ad0695962e53bb5"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0072 covers 6 domain-focus rows.",
+      "deviation": 0.0,
+      "evidence": [
+        "domain_count=6"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0072 adapted Forum route probes decide project-telos for 6 domains with adapted_escalations 0.",
+      "deviation": 0.0,
+      "evidence": [
+        "adapted_project_telos=6",
+        "adapted_escalations=0"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0072 Index focus probes have valid focuses ['telos'] and rejected_focus_count 7.",
+      "deviation": 0.0,
+      "evidence": [
+        "valid_focuses=['telos']",
+        "rejected_focus_count=7"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0072 defines 5 tool improvement rows across Index, Forum, Gather, Crucible, and Telos.",
+      "deviation": 0.0,
+      "evidence": [
+        "tool_improvement_count=5"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0072 contains 6 negative fixtures and unsupported_claim_count 0.",
+      "deviation": 0.0,
+      "evidence": [
+        "negative_fixture_count=6",
+        "unsupported_claim_count=0"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0072 average Project Telos route score lift is 0.393939.",
+      "deviation": 0.0,
+      "evidence": [
+        "average_project_telos_score_lift=0.393939"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0072 composer sha256 is 3732e7978f8c0f2c98108a0b5540734da9851690b921bc41111c93853e38b39b, packet sha256 is 5cf28727160169d5147ad23b278dded219dbda640070caaba97e05d99785b518, steelman sha256 is 79fe38c77bb291f2b665552ab65a2a6dc26aaf368c52d75cf6312f09080b8fef, and test sha256 is 0ff5e206da0277f1aa7ff15d8999596757c2790bd48de1620d968b9e2f390153 with test_receipt status MATCH.",
+      "deviation": 0.0,
+      "evidence": [
+        "composer_sha256=3732e7978f8c0f2c98108a0b5540734da9851690b921bc41111c93853e38b39b",
+        "packet_sha256=5cf28727160169d5147ad23b278dded219dbda640070caaba97e05d99785b518",
+        "steelman_sha256=79fe38c77bb291f2b665552ab65a2a6dc26aaf368c52d75cf6312f09080b8fef",
+        "test_sha256=0ff5e206da0277f1aa7ff15d8999596757c2790bd48de1620d968b9e2f390153",
+        "test_status=MATCH",
+        "compose_status=MATCH"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    }
+  ]
+}

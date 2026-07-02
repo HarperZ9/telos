@@ -1,0 +1,39 @@
+{
+  "schema": "Pass0012QuantumValidatorRun/v1",
+  "pass": "0012",
+  "status": "MATCH",
+  "match": 3,
+  "drift": 0,
+  "observed_exit_code": 0,
+  "checks": [
+    {
+      "artifact": "NoCloningProbe",
+      "path": "schemas\\no-cloning-probe-pass-0012.json",
+      "status": "MATCH",
+      "errors": []
+    },
+    {
+      "artifact": "QuantumComputingMarketMap",
+      "path": "schemas\\quantum-computing-market-map-pass-0012.json",
+      "status": "MATCH",
+      "count": 13,
+      "categories": [
+        "annealing",
+        "cloud-platform",
+        "hardware-platform",
+        "neutral-atom",
+        "quantum-ai",
+        "quantum-compiler",
+        "quantum-sdk"
+      ],
+      "errors": []
+    },
+    {
+      "artifact": "NoCloningProofPacket",
+      "path": "schemas\\no-cloning-proof-packet-pass-0012.json",
+      "status": "MATCH",
+      "claim_count": 4,
+      "errors": []
+    }
+  ]
+}

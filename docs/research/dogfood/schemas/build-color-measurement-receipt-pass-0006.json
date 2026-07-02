@@ -1,0 +1,54 @@
+{
+  "schema": "BuildColorMeasurementReceipt/v1",
+  "pass": "0006",
+  "generated_on": "2026-07-01",
+  "workspace": {
+    "repo": "C:\\dev\\public\\build-color",
+    "head": "96560ee",
+    "status": "clean"
+  },
+  "probe": {
+    "method": "inline Python probe importing build_color.spaces, build_color.tonemap, and build_color.difference",
+    "inputs": {
+      "srgb_colors": [
+        [1.0, 0.0, 0.0],
+        [0.0, 1.0, 0.0],
+        [0.0, 0.0, 1.0],
+        [1.0, 1.0, 1.0],
+        [0.5, 0.5, 0.5],
+        [0.18, 0.18, 0.18],
+        [0.8, 0.3, 0.5]
+      ],
+      "pq_nits": [0.0, 0.1, 1.0, 100.0, 1000.0, 4000.0, 10000.0],
+      "cie2000_sharma_pair_1": {
+        "lab1": [50.0, 2.6772, -79.7751],
+        "lab2": [50.0, 0.0, -82.7485],
+        "expected": 2.0425
+      }
+    },
+    "outputs": {
+      "srgb_xyz_max_abs_error": 0.0000017030280945010406,
+      "srgb_oklab_max_abs_error": 0.00000000000001072185665305766,
+      "pq_max_abs_nits_error": 0.00000000008458300726488233,
+      "cie2000_sharma_pair_1": 2.0424596801565738,
+      "cie2000_pair_1_abs_error": 0.00004031984342622863
+    },
+    "thresholds": {
+      "srgb_xyz_max_abs_error": 0.00001,
+      "srgb_oklab_max_abs_error": 0.0000000001,
+      "pq_max_abs_nits_error": 0.000001,
+      "cie2000_pair_1_abs_error": 0.005
+    },
+    "status": "PROBE_MATCH",
+    "seal": "c97850b96f0813b80bfdf084d9c8d63c22bf089a3f59f9a6f39283b1fe86400f"
+  },
+  "targeted_regression": {
+    "command": "python -m pytest tests/test_spaces.py tests/test_tonemap.py::TestPQRoundtrip tests/test_difference.py::TestCIEDE2000KnownPairs",
+    "result": "88 passed in 0.39s",
+    "status": "MATCH"
+  },
+  "limits": [
+    "This receipt proves only bounded numerical probes and targeted existing tests.",
+    "It does not prove full display calibration, physical measurement accuracy, or a new color science law."
+  ]
+}

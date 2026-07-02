@@ -1,0 +1,290 @@
+{
+  "ok": true,
+  "thesis": {
+    "id": "9187ac789dd3b4d6",
+    "title": "Project Telos Seventh-Wave Issue Detail And Reproduction Lead Claims",
+    "registered_at": 1782985260.3094018,
+    "disposition": "fenced",
+    "seal": "9187ac789dd3b4d6eda0e12f6e303b661da098ebee82b83a9a701ee79e288523",
+    "claims": [
+      {
+        "id": "a28182bdc945262c",
+        "sha256": "a28182bdc945262ca7cf7e75565d028032a1248b6df704061e06c765c08dcb45"
+      },
+      {
+        "id": "fb3c5bba56fee9d0",
+        "sha256": "fb3c5bba56fee9d070512e2be8a766b7e5c81400befaed00f069fdacabe4a0c6"
+      },
+      {
+        "id": "95d634bcd017f2b3",
+        "sha256": "95d634bcd017f2b379d37965a29f9bcd754db0b591dd247a4f7c99f295aa7e72"
+      },
+      {
+        "id": "4f42b03f22728027",
+        "sha256": "4f42b03f227280271a5d0309e46bfad2c504115a6494f7b358c8bfbe6589a82a"
+      },
+      {
+        "id": "b1c245966a1f67ee",
+        "sha256": "b1c245966a1f67ee12e118be9a8f37e8db7eac812cc947f4c9f2cc00866043f7"
+      }
+    ]
+  },
+  "refutations": [
+    {
+      "claim_id": "a28182bdc945262c",
+      "claim_sha256": "a28182bdc945262ca7cf7e75565d028032a1248b6df704061e06c765c08dcb45",
+      "challenge": "test the stated falsification: The capture file is missing, has the wrong schema, or records a non-MATCH status.",
+      "measurable": "The capture file is missing, has the wrong schema, or records a non-MATCH status.",
+      "source": "null"
+    },
+    {
+      "claim_id": "fb3c5bba56fee9d0",
+      "claim_sha256": "fb3c5bba56fee9d070512e2be8a766b7e5c81400befaed00f069fdacabe4a0c6",
+      "challenge": "test the stated falsification: The summary file is missing or any of those recorded fields differ.",
+      "measurable": "The summary file is missing or any of those recorded fields differ.",
+      "source": "null"
+    },
+    {
+      "claim_id": "95d634bcd017f2b3",
+      "claim_sha256": "95d634bcd017f2b379d37965a29f9bcd754db0b591dd247a4f7c99f295aa7e72",
+      "challenge": "test the stated falsification: The showcase test does not cover status not-run, or the generated reproduction-lead packet is PR-ready.",
+      "measurable": "The showcase test does not cover status not-run, or the generated reproduction-lead packet is PR-ready.",
+      "source": "null"
+    },
+    {
+      "claim_id": "4f42b03f22728027",
+      "claim_sha256": "4f42b03f227280271a5d0309e46bfad2c504115a6494f7b358c8bfbe6589a82a",
+      "challenge": "test the stated falsification: The generated packet is PR-ready, chooses open-pr, carries MATCH, or omits blockers for missing failing reproduction evidence, missing passing tests, non-MATCH verifier verdict, or missing patch summary.",
+      "measurable": "The generated packet is PR-ready, chooses open-pr, carries MATCH, or omits blockers for missing failing reproduction evidence, missing passing tests, non-MATCH verifier verdict, or missing patch summary.",
+      "source": "null"
+    },
+    {
+      "claim_id": "b1c245966a1f67ee",
+      "claim_sha256": "b1c245966a1f67ee12e118be9a8f37e8db7eac812cc947f4c9f2cc00866043f7",
+      "challenge": "test the stated falsification: The docs claim local reproduction, source inspection, tests, patch, or PR readiness from issue-detail capture alone.",
+      "measurable": "The docs claim local reproduction, source inspection, tests, patch, or PR readiness from issue-detail capture alone.",
+      "source": "null"
+    }
+  ],
+  "assessment": {
+    "started_at": 1782985260.3094018,
+    "thesis_id": "9187ac789dd3b4d6",
+    "thesis_seal": "9187ac789dd3b4d6eda0e12f6e303b661da098ebee82b83a9a701ee79e288523",
+    "claims": 5,
+    "match": 5,
+    "drift": 0,
+    "unverifiable": 0,
+    "verdict_seal": "b3b83ea001e67e269be61a4c3b7af57395310edecce7c195f272c0796b8360e3",
+    "measurement_seal": "c4999322a70bb788d83986f27d64ab9432451166ae4b563f230029787a3f25bd",
+    "disposition": "fenced",
+    "stored": null,
+    "verdicts": [
+      {
+        "claim_id": "a28182bdc945262c",
+        "claim_sha256": "a28182bdc945262ca7cf7e75565d028032a1248b6df704061e06c765c08dcb45",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "issue-detail-command-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "fb3c5bba56fee9d0",
+        "claim_sha256": "fb3c5bba56fee9d070512e2be8a766b7e5c81400befaed00f069fdacabe4a0c6",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "issue-summary-command-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "95d634bcd017f2b3",
+        "claim_sha256": "95d634bcd017f2b379d37965a29f9bcd754db0b591dd247a4f7c99f295aa7e72",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "readiness-gate-test-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "4f42b03f22728027",
+        "claim_sha256": "4f42b03f227280271a5d0309e46bfad2c504115a6494f7b358c8bfbe6589a82a",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "reproduction-lead-packet-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "b1c245966a1f67ee",
+        "claim_sha256": "b1c245966a1f67ee12e118be9a8f37e8db7eac812cc947f4c9f2cc00866043f7",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "document-boundary-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      }
+    ],
+    "measurements": [
+      {
+        "claim_id": "a28182bdc945262c",
+        "claim_sha256": "a28182bdc945262ca7cf7e75565d028032a1248b6df704061e06c765c08dcb45",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "issue-detail-command-review",
+        "measured_at": 1782985260.3094018,
+        "evidence": [
+          "docs/outreach/receipts/seventh-wave/oss-showcase-live-issue-63458-capture.json has schema project-telos.oss-issue-detail-capture/v1",
+          "capture status is MATCH",
+          "capture issue number is 63458"
+        ]
+      },
+      {
+        "claim_id": "fb3c5bba56fee9d0",
+        "claim_sha256": "fb3c5bba56fee9d070512e2be8a766b7e5c81400befaed00f069fdacabe4a0c6",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "issue-summary-command-review",
+        "measured_at": 1782985260.3094018,
+        "evidence": [
+          "docs/outreach/receipts/seventh-wave/oss-showcase-live-issue-63458-summary.json records issue number 63458",
+          "issue state is OPEN",
+          "comments_count is 11",
+          "code_fence_count is 4",
+          "body_chars is 2963",
+          "has_reproduction_lead is true"
+        ]
+      },
+      {
+        "claim_id": "95d634bcd017f2b3",
+        "claim_sha256": "95d634bcd017f2b379d37965a29f9bcd754db0b591dd247a4f7c99f295aa7e72",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "readiness-gate-test-review",
+        "measured_at": 1782985260.3094018,
+        "evidence": [
+          "demo/showcase.test.mjs includes notRunReproductionPacket with reproduction.status not-run",
+          "node --test demo/showcase.test.mjs passes after the gate change",
+          "docs/outreach/receipts/seventh-wave/oss-showcase-live-reproduction-lead-blocked-packet.json blockers include missing failing reproduction evidence"
+        ]
+      },
+      {
+        "claim_id": "4f42b03f22728027",
+        "claim_sha256": "4f42b03f227280271a5d0309e46bfad2c504115a6494f7b358c8bfbe6589a82a",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "reproduction-lead-packet-review",
+        "measured_at": 1782985260.3094018,
+        "evidence": [
+          "docs/outreach/receipts/seventh-wave/oss-showcase-live-reproduction-lead-blocked-packet.json has schema project-telos.oss-pr-readiness/v1",
+          "packet pr_ready is false",
+          "packet operator_next_action is revise",
+          "packet verdict is UNVERIFIABLE",
+          "packet blockers include missing failing reproduction evidence, missing passing test evidence, crucible verdict is not MATCH, and missing patch summary"
+        ]
+      },
+      {
+        "claim_id": "b1c245966a1f67ee",
+        "claim_sha256": "b1c245966a1f67ee12e118be9a8f37e8db7eac812cc947f4c9f2cc00866043f7",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "document-boundary-review",
+        "measured_at": 1782985260.3094018,
+        "evidence": [
+          "docs/outreach/SEVENTH-WAVE-ISSUE-DETAIL-REPRODUCTION-LEAD-2026-07-02.md says issue detail does not clone the repo, inspect source, run the issue body, or prove current main",
+          "same doc says not to claim reproduction, source inspection, patches, tests, or current-main validity",
+          "docs/outreach/SEVENTH-WAVE-CONTENT-QUEUE-2026-07-02.md says issue detail is a source packet and local execution is separate evidence"
+        ]
+      }
+    ],
+    "seal": "7d5f7969806745e416a43f6d9abb23d4ed8c269260ad82025d16358454e77c57"
+  },
+  "verdicts": [
+    {
+      "claim_id": "a28182bdc945262c",
+      "claim_sha256": "a28182bdc945262ca7cf7e75565d028032a1248b6df704061e06c765c08dcb45",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "issue-detail-command-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "fb3c5bba56fee9d0",
+      "claim_sha256": "fb3c5bba56fee9d070512e2be8a766b7e5c81400befaed00f069fdacabe4a0c6",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "issue-summary-command-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "95d634bcd017f2b3",
+      "claim_sha256": "95d634bcd017f2b379d37965a29f9bcd754db0b591dd247a4f7c99f295aa7e72",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "readiness-gate-test-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "4f42b03f22728027",
+      "claim_sha256": "4f42b03f227280271a5d0309e46bfad2c504115a6494f7b358c8bfbe6589a82a",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "reproduction-lead-packet-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "b1c245966a1f67ee",
+      "claim_sha256": "b1c245966a1f67ee12e118be9a8f37e8db7eac812cc947f4c9f2cc00866043f7",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "document-boundary-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    }
+  ],
+  "measurement_warnings": [],
+  "checks": {
+    "seals_ok": true,
+    "thesis_ok": true,
+    "verdicts_rederive": true
+  },
+  "report": "docs\\outreach\\receipts\\seventh-wave-tooling-report-2026-07-02.md",
+  "record": "docs\\outreach\\receipts\\seventh-wave-tooling-run-2026-07-02.json",
+  "bundle": null,
+  "spec": null,
+  "review": null,
+  "verifier": {
+    "mode": "cleanroom",
+    "inputs": [],
+    "excluded": [
+      "worker context",
+      "reasoning trace",
+      "intermediate steps"
+    ],
+    "checkability": "If success cannot be evaluated from the original spec and the artifact, the spec is not checkable yet."
+  }
+}

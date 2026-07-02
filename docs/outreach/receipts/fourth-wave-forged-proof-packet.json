@@ -1,0 +1,15 @@
+{
+  "version": "project-telos.proof-packet/v1",
+  "packet_id": "fourth-wave-forged-verdict-negative",
+  "claim": "This packet intentionally uses an illegal verdict enum to prove Learn rejects forged proof packet verdicts.",
+  "scope": "Negative fixture only. It must be rejected and must not produce a prooflesson receipt.",
+  "verdicts": {
+    "overall": "VERIFIED_SUPREME"
+  },
+  "sources": [
+    {
+      "ref": "docs/outreach/receipts/third-wave/buildlang-hello-proof-packet.json",
+      "sha256": "unverified-negative-fixture"
+    }
+  ]
+}

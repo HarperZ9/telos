@@ -1,0 +1,46 @@
+{
+  "title": "Dogfood Pass 0019 Strict Receipt Runtime Fixtures",
+  "disposition": "fenced",
+  "claims": [
+    {
+      "text": "Pass 0019 created a StrictReceiptRuntimeFixtureSet/v1 artifact with status STRICT_RUNTIME_MATCH, three numeric precision receipts, five executable framework output fixtures, nine negative fixtures, eleven source anchors, and seal e69d6fad6a9edc8c93044001a749967406c8047b21426c2640b671059cc8154a.",
+      "falsification": "schemas/strict-receipt-runtime-fixtures-pass-0019.json is missing, is not StrictReceiptRuntimeFixtureSet/v1, reports non-MATCH status, has fewer than three numeric receipts, fewer than five executable fixtures, fewer than nine negative fixtures, fewer than eleven source anchors, or lacks the expected seal"
+    },
+    {
+      "text": "Pass 0019 defines StrictJsonLoaderReceipt/v1 requiring object_pairs_hook duplicate-key detection, parse_constant non-finite rejection, allow_nan_on_serialization=false, a positive MATCH fixture, a duplicate-key REJECT fixture detecting key 00, and NaN/Infinity REJECT fixtures.",
+      "falsification": "the strict JSON loader receipt is missing, has a different schema, omits required strict-loader controls, fails to detect key 00, or fails to reject NaN and Infinity"
+    },
+    {
+      "text": "Pass 0019 defines NumericPrecisionReceipt/v1 examples for exact decimal string 0.1, binary float expanded 0.1, and rounded one-seventh with ROUND_HALF_EVEN.",
+      "falsification": "any of decimal-string-exact-0p1, binary-float-expanded-0p1, or decimal-quantized-one-seventh is missing, has the wrong schema, or lacks a receipt hash"
+    },
+    {
+      "text": "Pass 0019 defines ObjectStorageEvidenceReceipt/v1 with S3 URI, retrieval timestamp, version id, ETag/generation, content length, SHA-256 hex, SHA-256 base64, locator_only_allowed=false, and receipt hash.",
+      "falsification": "the object storage receipt is missing, has a different schema, or omits URI, retrieval timestamp, version id, etag/generation, content hash, base64 hash, locator boundary, or receipt hash"
+    },
+    {
+      "text": "Pass 0019 defines executable local adapter fixtures for Qiskit, Amazon Braket, Cirq, PennyLane, and QIR with framework_imported=false and execution mode LOCAL_ADAPTER_FUNCTION_OVER_SYNTHETIC_OUTPUT.",
+      "falsification": "any expected executable fixture is missing or any fixture imports a framework or uses a different execution mode"
+    },
+    {
+      "text": "Every pass 0019 executable fixture records raw output hash, normalized output hash, normalized counts, HTTPS source anchor, fixture hash, and ADAPTER_EXECUTION_MATCH status.",
+      "falsification": "any executable fixture lacks required hashes, normalized counts, source anchor, fixture hash, or match status"
+    },
+    {
+      "text": "Pass 0019 negative fixtures reject missing strict loader, NaN accepted as JSON, decimal-as-float precision loss, URI-only object storage, and missing framework layout fields for Qiskit, Braket, Cirq, PennyLane, and QIR.",
+      "falsification": "any of the nine expected negative fixture ids is missing or has expected_validator_status other than REJECT"
+    },
+    {
+      "text": "Pass 0019 validator reports MATCH with one matched check and zero drift.",
+      "falsification": "schemas/pass-0019-strict-receipt-runtime-validator-result.json is missing, reports non-MATCH status, does not report match=1, or reports drift above zero"
+    },
+    {
+      "text": "Pass 0019 records tool receipts showing Index, Gather, Telos, Forum, and Crucible status MATCH while preserving Forum submit as UNVERIFIABLE due to executor JSON parsing.",
+      "falsification": "schemas/tool-receipts-pass-0019.json is missing, lacks any required tool status, or treats Forum submit as successful rather than UNVERIFIABLE"
+    },
+    {
+      "text": "Pass 0019 promotes zero live framework integrations, cloud object retrievals, quantum jobs, quantum hardware results, theorem proofs, natural laws, or scientific discoveries.",
+      "falsification": "any pass 0019 artifact labels a live framework integration, cloud object retrieval, quantum job, hardware result, theorem proof, natural law, or scientific discovery as promoted"
+    }
+  ]
+}

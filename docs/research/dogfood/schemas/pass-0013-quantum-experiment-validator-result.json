@@ -1,0 +1,26 @@
+{
+  "checks": [
+    {
+      "artifact": "QuantumExperimentReceiptSchema",
+      "errors": [],
+      "path": "schemas\\quantum-experiment-receipt-schema-pass-0013.json",
+      "status": "MATCH"
+    },
+    {
+      "artifact": "QuantumExperimentReceiptSet",
+      "branches": [
+        "EXACT_SIMULATOR",
+        "NOISY_SIMULATOR"
+      ],
+      "errors": [],
+      "path": "schemas\\quantum-experiment-receipts-pass-0013.json",
+      "receipt_count": 2,
+      "status": "MATCH"
+    }
+  ],
+  "drift": 0,
+  "match": 2,
+  "pass": "0013",
+  "schema": "Pass0013QuantumExperimentValidatorRun/v1",
+  "status": "MATCH"
+}

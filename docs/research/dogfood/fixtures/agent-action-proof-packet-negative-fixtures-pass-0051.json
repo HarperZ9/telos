@@ -1,0 +1,167 @@
+{
+  "generated_on": "2026-07-01",
+  "negative_fixtures": [
+    {
+      "expected_failure_code": "source_refs_missing",
+      "expected_verdict": "UNVERIFIABLE",
+      "fixture_id": "missing_source_refs",
+      "observed": {
+        "component": "source_refs",
+        "failure_code": "source_refs_missing",
+        "verdict": "UNVERIFIABLE"
+      },
+      "packet_hash": "d50b90dbb030260c158a21c5b17e17086c4f0bb98747b5f234283d9b74c4bd78",
+      "status": "MATCH"
+    },
+    {
+      "expected_failure_code": "workspace_context_ref_missing",
+      "expected_verdict": "UNVERIFIABLE",
+      "fixture_id": "missing_workspace_context",
+      "observed": {
+        "component": "workspace_context_ref",
+        "failure_code": "workspace_context_ref_missing",
+        "verdict": "UNVERIFIABLE"
+      },
+      "packet_hash": "83f1e56d34a2ecc171c7d4013b857c179f789efe45bcd3421e2c4565b7a08f5e",
+      "status": "MATCH"
+    },
+    {
+      "expected_failure_code": "admission_record_missing",
+      "expected_verdict": "UNVERIFIABLE",
+      "fixture_id": "missing_admission_record",
+      "observed": {
+        "component": "admission_record",
+        "failure_code": "admission_record_missing",
+        "verdict": "UNVERIFIABLE"
+      },
+      "packet_hash": "36418f420f4831366b1fd7f2e6392b0e25f70dcda391229ffb5f570fb07b1f11",
+      "status": "MATCH"
+    },
+    {
+      "expected_failure_code": "action_receipt_linkage_broken",
+      "expected_verdict": "DRIFT",
+      "fixture_id": "broken_action_receipt_linkage",
+      "observed": {
+        "component": "action_receipt",
+        "failure_code": "action_receipt_linkage_broken",
+        "verdict": "DRIFT"
+      },
+      "packet_hash": "99e0d5947a64a3b6cd235e03d286f9d066d3ef6b568846f53f7bc938b6d80dca",
+      "status": "MATCH"
+    },
+    {
+      "expected_failure_code": "browser_evidence_missing",
+      "expected_verdict": "UNVERIFIABLE",
+      "fixture_id": "missing_browser_evidence",
+      "observed": {
+        "component": "browser_evidence_ref",
+        "failure_code": "browser_evidence_missing",
+        "verdict": "UNVERIFIABLE"
+      },
+      "packet_hash": "011ab36888f82cda8b81bd533d638c5672478ca233df8753c857353484bc0e19",
+      "status": "MATCH"
+    },
+    {
+      "expected_failure_code": "ledger_continuity_broken",
+      "expected_verdict": "DRIFT",
+      "fixture_id": "broken_ledger_continuity",
+      "observed": {
+        "component": "loop_ledger_entry",
+        "failure_code": "ledger_continuity_broken",
+        "verdict": "DRIFT"
+      },
+      "packet_hash": "818d338f02a920222503a51474b7bdc4e6800064a0b2d0882310d5b1ed4d5e96",
+      "status": "MATCH"
+    },
+    {
+      "expected_failure_code": "crucible_verdict_missing",
+      "expected_verdict": "UNVERIFIABLE",
+      "fixture_id": "missing_crucible_verdict",
+      "observed": {
+        "component": "crucible_verdict",
+        "failure_code": "crucible_verdict_missing",
+        "verdict": "UNVERIFIABLE"
+      },
+      "packet_hash": "682dcb9287e9798cc30cfbd6f0d008eaba6ac80ae2d01d9f0853d27224539476",
+      "status": "MATCH"
+    },
+    {
+      "expected_failure_code": "private_payload_boundary_violation",
+      "expected_verdict": "DRIFT",
+      "fixture_id": "raw_private_payload_leak",
+      "observed": {
+        "component": "redaction_status",
+        "failure_code": "private_payload_boundary_violation",
+        "verdict": "DRIFT"
+      },
+      "packet_hash": "1c36e5af4834122f5435f0572b451b23451d547a933269e042c99704880365ca",
+      "status": "MATCH"
+    }
+  ],
+  "pass": "0051",
+  "positive_fixture": {
+    "action_receipt": {
+      "action_id": "act-0051-demo",
+      "action_intent_id": "intent-0051-demo",
+      "event_id": "evt-0051-demo",
+      "receipt_hash": "sha256:demo-action-receipt",
+      "trace": {
+        "span_ref": "trace:span-0051-demo"
+      }
+    },
+    "admission_record": {
+      "action_intent_id": "intent-0051-demo",
+      "args_hash": "sha256:demo-args",
+      "criterion_ref": "criterion:agent-action-proof-packet-demo",
+      "decision": {
+        "outcome": "allow"
+      },
+      "verification": {
+        "verdict": "MATCH"
+      }
+    },
+    "browser_evidence_ref": {
+      "action_receipt_ref": "act-0051-demo",
+      "artifact_hashes": [
+        "sha256:demo-browser-state"
+      ],
+      "verification": {
+        "verdict": "MATCH"
+      }
+    },
+    "crucible_verdict": {
+      "assessment_seal": "sha256:demo-assessment-seal",
+      "status": "MATCH"
+    },
+    "exports": {
+      "json_bundle": true,
+      "markdown_packet": true
+    },
+    "loop_ledger_entry": {
+      "chain": true,
+      "entry_hash": "sha256:current-ledger-entry",
+      "previous_hash": "sha256:previous-ledger-entry",
+      "sequence": 51
+    },
+    "packet_hash": "53064bde9b64163961004651b1959b38e94ebd0d28cafb5f9b344266c5946f7c",
+    "packet_id": "agent-action-proof-packet-positive-0051",
+    "redaction_status": {
+      "hashes_only": true,
+      "raw_private_payloads_included": false
+    },
+    "schema": "project-telos.agent-action-proof-packet/v0",
+    "source_refs": [
+      {
+        "id": "src-demo",
+        "sha256": "sha256:demo-source",
+        "uri": "repo:demo/action-receipt.mjs"
+      }
+    ],
+    "workspace_context_ref": {
+      "graph_pack_sha256": "sha256:demo-graph-pack",
+      "tool": "index"
+    }
+  },
+  "schema": "AgentActionProofPacketNegativeFixturesFixture/v1",
+  "seal": "37d478f0bef7ed4912dcaa8167366a1220b87172336ca5c22eeaaeaa59fe5df5"
+}

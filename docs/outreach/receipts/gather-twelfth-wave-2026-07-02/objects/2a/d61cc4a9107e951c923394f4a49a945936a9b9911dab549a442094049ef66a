@@ -1,0 +1,35 @@
+# crucible report: Dogfood Pass 0014 Quantum Receipt Promotion Hardening
+
+## Summary
+
+- thesis_id: `c21d40b308c02a39`
+- thesis_seal: `c21d40b308c02a3943bb16e09826858dc5ebf9245cfe10d3e6609d9f08d8cccf`
+- assessment_seal: `e5e7d91eb68145e57197d99b3d14a06e48b243261bc9ff4be5b3fd8050a66881`
+- counts: MATCH 8 / DRIFT 0 / UNVERIFIABLE 0
+- integrity: seals_ok=True, thesis_ok=True, verdicts_rederive=True
+
+## Verdicts
+
+| Claim | Status | Disposition | Margin | Method | Grounds |
+| --- | --- | --- | ---: | --- | --- |
+| Pass 0014 created a QuantumReceiptHardeningFixture/v1 artifact with status HARDENING_FIXTURE_MATCH and seal 5f68b4cb41349c3b0b8fd83a0ba35c6a9aef09283e61b55cb11a407172ecb8c4. | MATCH | fenced | 1 | fixture-review | deviation 0 within tolerance 0.5 |
+| Pass 0014 includes a negative promotion fixture that attempts EXACT_SIMULATOR to CLOUD_HARDWARE promotion and expects REJECT with branch, hardware-claim, cloud task metadata, calibration, and result-payload rejection reasons. | MATCH | fenced | 1 | negative-promotion-review | deviation 0 within tolerance 0.5 |
+| Pass 0014 includes a HARDWARE_MOCK receipt with hardware_claim_allowed=false, cloud-task-shaped backend metadata, and verdict MOCK_MATCH_NOT_HARDWARE. | MATCH | fenced | 1 | hardware-mock-review | deviation 0 within tolerance 0.5 |
+| Pass 0014 includes Qiskit/OpenQASM 3 and Cirq JSON shape adapter fixtures that normalize to two qubits, two gates, one two-qubit gate, and depth two with HTTPS source anchors. | MATCH | fenced | 1 | adapter-fixture-review | deviation 0 within tolerance 0.5 |
+| Pass 0014 includes a QuantumResourceEstimateReceipt/v1 with status ESTIMATE_ONLY_NOT_EXECUTION and execution_claim_allowed=false. | MATCH | fenced | 1 | resource-estimate-review | deviation 0 within tolerance 0.5 |
+| Pass 0014 binds phase-sensitive clone claims to statevector-or-density evidence plus fidelity, rejects histogram-only evidence for that claim, and requires provider/device, task id, shots, calibration, and payload hash for cloud hardware result claims. | MATCH | fenced | 1 | metric-binding-review | deviation 0 within tolerance 0.5 |
+| Pass 0014 records tool receipts showing Index, Gather, Telos, Forum, and Crucible status MATCH while preserving Forum submit as UNVERIFIABLE due to executor JSON parsing. | MATCH | fenced | 1 | tool-receipt-review | deviation 0 within tolerance 0.5 |
+| Pass 0014 promotes zero new quantum hardware results, quantum advantage claims, theorem proofs, natural laws, or scientific discoveries. | MATCH | fenced | 1 | non-promotion-review | deviation 0 within tolerance 0.5 |
+
+## Measurement Evidence
+
+| Claim | Method | Evidence |
+| --- | --- | --- |
+| Pass 0014 created a QuantumReceiptHardeningFixture/v1 artifact with status HARDENING_FIXTURE_MATCH and seal 5f68b4cb41349c3b0b8fd83a0ba35c6a9aef09283e61b55cb11a407172ecb8c4. | fixture-review | schemas/quantum-receipt-hardening-fixtures-pass-0014.json schema=QuantumReceiptHardeningFixture/v1; status=HARDENING_FIXTURE_MATCH; pass=0014; seal=5f68b4cb41349c3b0b8fd83a0ba35c6a9aef09283e61b55cb11a407172ecb8c4 |
+| Pass 0014 includes a negative promotion fixture that attempts EXACT_SIMULATOR to CLOUD_HARDWARE promotion and expects REJECT with branch, hardware-claim, cloud task metadata, calibration, and result-payload rejection reasons. | negative-promotion-review | fixture_id=negative-exact-simulator-to-cloud-hardware; source_branch=EXACT_SIMULATOR; attempted_target_branch=CLOUD_HARDWARE; expected_validator_status=REJECT; rejection_reasons include branch_mismatch; rejection_reasons include hardware_claim_allowed_false; rejection_reasons include missing_cloud_task_metadata; rejection_reasons include missing_calibration_reference; rejection_reasons include missing_result_payload_hash |
+| Pass 0014 includes a HARDWARE_MOCK receipt with hardware_claim_allowed=false, cloud-task-shaped backend metadata, and verdict MOCK_MATCH_NOT_HARDWARE. | hardware-mock-review | receipt_id=quantum-exp-pass-0014-hardware-mock; branch=HARDWARE_MOCK; hardware_claim_allowed=false; backend includes provider, device_arn, task_id, shots, queue_timestamp, calibration_ref, result_payload_hash; verdict=MOCK_MATCH_NOT_HARDWARE; result.status=MOCK_TASK_SHAPE_ONLY |
+| Pass 0014 includes Qiskit/OpenQASM 3 and Cirq JSON shape adapter fixtures that normalize to two qubits, two gates, one two-qubit gate, and depth two with HTTPS source anchors. | adapter-fixture-review | adapter qiskit-openqasm3-export-fixture present; adapter cirq-json-shape-fixture present; both adapters report adapter_status=ADAPTER_FIXTURE_MATCH; both normalized circuits report qubits=2, gate_count=2, two_qubit_gate_count=1, depth=2; adapter source anchors are HTTPS; qiskit program contains OPENQASM 3.0 |
+| Pass 0014 includes a QuantumResourceEstimateReceipt/v1 with status ESTIMATE_ONLY_NOT_EXECUTION and execution_claim_allowed=false. | resource-estimate-review | resource_estimate_receipt schema=QuantumResourceEstimateReceipt/v1; status=ESTIMATE_ONLY_NOT_EXECUTION; execution_claim_allowed=false; source_anchor=https://learn.microsoft.com/en-us/azure/quantum/intro-to-resource-estimation; assumptions include resource-estimate receipt is a planning artifact only |
+| Pass 0014 binds phase-sensitive clone claims to statevector-or-density evidence plus fidelity, rejects histogram-only evidence for that claim, and requires provider/device, task id, shots, calibration, and payload hash for cloud hardware result claims. | metric-binding-review | metric_claim_bindings include phase_sensitive_clone_claim; phase_sensitive_clone_claim sufficient_metrics include statevector_or_density_matrix and fidelity_to_desired_clone; phase_sensitive_clone_claim insufficient_metrics include measurement_histogram_only; cloud_hardware_result_claim sufficient_metrics include provider_device_identity, cloud_task_id, shots, calibration_reference, result_payload_hash; cloud_hardware_result_claim insufficient_metrics include simulator_histogram and hardware_mock_task_shape |
+| Pass 0014 records tool receipts showing Index, Gather, Telos, Forum, and Crucible status MATCH while preserving Forum submit as UNVERIFIABLE due to executor JSON parsing. | tool-receipt-review | schemas/tool-receipts-pass-0014.json status=MATCH_WITH_FORUM_SUBMIT_GAP; tool receipts include index status MATCH; tool receipts include gather status MATCH; tool receipts include telos catalog/operator_doctor status MATCH; tool receipts include forum status MATCH and submit_status=UNVERIFIABLE; tool receipts include crucible status MATCH; Forum submit error recorded: configured executor did not return valid JSON |
+| Pass 0014 promotes zero new quantum hardware results, quantum advantage claims, theorem proofs, natural laws, or scientific discoveries. | non-promotion-review | packets/024-quantum-receipt-hardening.md states it does not claim a quantum hardware result; hardware_mock_receipt hardware_claim_allowed=false; resource_estimate_receipt execution_claim_allowed=false; negative promotion expected_validator_status=REJECT; Current promoted natural laws: none |

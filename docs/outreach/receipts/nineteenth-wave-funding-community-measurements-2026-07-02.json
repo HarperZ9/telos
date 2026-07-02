@@ -1,0 +1,50 @@
+{
+  "measurements": [
+    {
+      "claim": "The nineteenth-wave funding packet adds field-level drafts for OpenAI Cybersecurity Grant, Cline OSS Grant, Google DeepMind/Schmidt multi-agent AI safety, grantmaking.ai, and SFF without claiming any submission occurred.",
+      "method": "funding-packet-review",
+      "evidence": [
+        "NINETEENTH-WAVE-FUNDING-SUBMISSION-PACKETS-2026-07-02.md contains sections 1 through 5 for the named opportunities",
+        "the packet says these are ready-to-review drafts, not submitted applications",
+        "the submit-ready boundary requires operator confirmation before any application submission"
+      ],
+      "deviation": 0.0,
+      "tolerance": 0.5
+    },
+    {
+      "claim": "The funding queue now includes Cline, Google DeepMind/Schmidt, grantmaking.ai, and SFF with current fit, source, and blocker notes while preserving existing no-submit boundaries.",
+      "method": "funding-queue-review",
+      "evidence": [
+        "FUNDING-APPLICATION-QUEUE-2026-07-02.md opportunity matrix includes Cline Open Source Grant",
+        "the opportunity matrix includes Google DeepMind / Schmidt Sciences Multi-Agent AI Safety",
+        "the opportunity matrix includes grantmaking.ai AI Safety Launch Round",
+        "the opportunity matrix includes Survival and Flourishing Fund",
+        "the Do Not Submit Yet section remains present"
+      ],
+      "deviation": 0.0,
+      "tolerance": 0.5
+    },
+    {
+      "claim": "The community endpoint queue adds exact non-GitHub comment drafts for OpenAI Community and Hugging Face discussions around agent execution, side-effect gates, state, replay, receipts, and drift.",
+      "method": "community-queue-review",
+      "evidence": [
+        "NINETEENTH-WAVE-COMMUNITY-ENDPOINT-QUEUE-2026-07-02.md includes OpenAI Community targets C1, C2, C3",
+        "the queue includes Hugging Face targets C4, C5, C6",
+        "each target includes URL, fit reason, and exact draft text"
+      ],
+      "deviation": 0.0,
+      "tolerance": 0.5
+    },
+    {
+      "claim": "The community queue requires exact confirmation before public posting and blocks identical comments, partnership claims, production adoption claims, and solved-agent-safety claims.",
+      "method": "public-side-effect-boundary-review",
+      "evidence": [
+        "the queue says final submission is a public side effect",
+        "the queue includes a confirmation packet with exact destinations and exact text",
+        "the boundaries block identical comments, official partnership/funding/adoption claims, solved-agent-safety claims, and non-active GitHub work"
+      ],
+      "deviation": 0.0,
+      "tolerance": 0.5
+    }
+  ]
+}

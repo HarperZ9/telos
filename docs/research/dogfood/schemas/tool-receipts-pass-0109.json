@@ -1,0 +1,156 @@
+{
+  "adapter_spec": {
+    "acceptance_rule": "A sampler adapter cannot claim target-stationary behavior without kernel provenance, calibration or acceptance correction, diagnostics, and a negative fixture.",
+    "required_field_count": 12,
+    "required_fields": [
+      "target_log_prob_digest",
+      "transition_kernel_digest",
+      "kernel_family",
+      "calibration_layer",
+      "acceptance_correction",
+      "stationary_residual_check",
+      "detailed_balance_or_invariance_check",
+      "chain_seed_receipt",
+      "warmup_schedule_receipt",
+      "diagnostics_receipt",
+      "negative_fixture_receipt",
+      "source_provenance_receipt"
+    ],
+    "schema": "StochasticKernelAdapterSpec/v1",
+    "target_tools": [
+      "Stan",
+      "NumPyro",
+      "TensorFlow Probability",
+      "PyMC",
+      "BlackJAX",
+      "Turing.jl"
+    ]
+  },
+  "compose": {
+    "command": "C:\\Users\\Zain\\AppData\\Local\\Programs\\Python\\Python312\\python.exe C:\\dev\\public\\telos\\docs\\research\\dogfood\\tools\\compose_stochastic_kernel_corpus_harness_receipt.py --out C:\\dev\\public\\telos\\docs\\research\\dogfood\\schemas\\stochastic-kernel-corpus-harness-receipt-pass-0109.json",
+    "exit_code": 0,
+    "status": "MATCH",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "2932cc3bfb67f362b23c6d8e33bc19febfabb88be3491abbe020d92a74b38fc0"
+  },
+  "forum": {
+    "confidence": 0.15454545454545454,
+    "decided": null,
+    "exit_code": 0,
+    "needs_escalation": true,
+    "status": "MATCH",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "0b60510f9ade2bb5d0ce06bed9311ecb7891df408a1a92907065176d420ff2c5",
+    "top_candidates": [
+      {
+        "agent": "gpu-compute",
+        "score": 0.2
+      },
+      {
+        "agent": "project-telos",
+        "score": 0.045454545454545456
+      },
+      {
+        "agent": "backend",
+        "score": 0.0
+      },
+      {
+        "agent": "ci-cd",
+        "score": 0.0
+      },
+      {
+        "agent": "cloud-infra",
+        "score": 0.0
+      }
+    ]
+  },
+  "index": {
+    "exit_code": 0,
+    "graph_pack_sha256": "8ee383e19ae9a6141bee70de733fb6aa09201ff9d284ce6778ce58b06e6b68b2",
+    "schema": "project-telos.context-envelope/v1",
+    "source_refs_only": true,
+    "status": "MATCH",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "e3e7005c165e803ffe43e54f693988d2a0546e7f3ef7321ee45230ab73e16aac",
+    "verification_verdict": "MATCH"
+  },
+  "law_candidate": {
+    "name": "stochastic_kernel_invariance_receipt_corpus",
+    "scope": "finite exact kernels plus explicit source-boundary cases for sampler adapters",
+    "status": "LAW_CANDIDATE"
+  },
+  "pass": "0109",
+  "schema": "DogfoodToolReceipts/v1",
+  "seal": "61fbc080498851fb5bbfede419846fd904b81b0bbfe38858117c35f119af76b9",
+  "telos": {
+    "exit_code": 0,
+    "status": "MATCH",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "be17cb15259234cb4e8e95c2b36e76c90d841431729beb140294e34c5f9ebfa7",
+    "tool": "telos",
+    "tool_version": "0.1.0"
+  },
+  "test": {
+    "command": "C:\\Users\\Zain\\AppData\\Local\\Programs\\Python\\Python312\\python.exe C:\\dev\\public\\telos\\docs\\research\\dogfood\\tools\\test_stochastic_kernel_corpus_harness_receipt.py",
+    "exit_code": 0,
+    "status": "MATCH",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "youtube_binding": {
+    "architecture_pull_count": 7,
+    "architecture_pulls": [
+      {
+        "architecture_pull": "AI4Science packets that bind source intake, model decisions, assay handoff, verifier verdicts, and reproduction status.",
+        "cluster_id": "molecular_ai_drug_discovery",
+        "evidence_status": "SOURCE_LEAD",
+        "video_count": 1
+      },
+      {
+        "architecture_pull": "Eval receipt lab with replayable attempts, prompt/model boundaries, tool-use records, and benchmark authority receipts.",
+        "cluster_id": "arc_agi_eval_and_generalization",
+        "evidence_status": "SOURCE_LEAD",
+        "video_count": 1
+      },
+      {
+        "architecture_pull": "BuildLang quant proof kernels with stress receipts, identity checks, and execution provenance.",
+        "cluster_id": "quantitative_finance_laws",
+        "evidence_status": "SOURCE_LEAD",
+        "video_count": 1
+      },
+      {
+        "architecture_pull": "Search-verifier loop ledger that records proposals, rollouts, verifier gates, and accepted proof states.",
+        "cluster_id": "search_rl_alpha_zero",
+        "evidence_status": "SOURCE_LEAD",
+        "video_count": 1
+      },
+      {
+        "architecture_pull": "Quantum optimization workflow receipts spanning problem formulation, solver branch, hardware/simulator context, calibration reference, and measured objective.",
+        "cluster_id": "enterprise_quantum_optimization",
+        "evidence_status": "SOURCE_LEAD",
+        "video_count": 13
+      },
+      {
+        "architecture_pull": "Risk scenario proof packets with assumptions, mitigations, authority boundaries, likelihood evidence, and review status.",
+        "cluster_id": "agi_risk_scenarios",
+        "evidence_status": "SOURCE_LEAD",
+        "video_count": 1
+      },
+      {
+        "architecture_pull": "Societal proof-packet lane binding public claims, governance choices, model actions, and accountable review.",
+        "cluster_id": "ai_society_governance",
+        "evidence_status": "SOURCE_LEAD",
+        "video_count": 1
+      }
+    ],
+    "dominant_cluster": "enterprise_quantum_optimization",
+    "dominant_cluster_video_count": 13,
+    "metadata_match_count": 19,
+    "raw_transcript_included": false,
+    "roadmap_pass": "0102",
+    "source_policy": "YouTube videos are treated as critical source leads. Metadata and Gather receipts are first-order evidence; synthesized product implications remain hypotheses.",
+    "top_priority": "optimization_proof_workbench",
+    "transcript_receipt_count": 19,
+    "valid_video_count": 19
+  }
+}

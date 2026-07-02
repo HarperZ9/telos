@@ -1,0 +1,117 @@
+Skip to main content
+Back to top
+Ctrl+K
+SciPy
+Installing
+User Guide
+API reference
+Building from source
+Development
+Release notes
+Choose version
+System Settings
+Light
+Dark
+GitHub
+Scientific Python Forum
+Installing
+User Guide
+API reference
+Building from source
+Development
+Release notes
+Choose version
+System Settings
+Light
+Dark
+GitHub
+Scientific Python Forum
+Search
+Ctrl+K
+Section Navigation
+scipy
+scipy.cluster
+scipy.constants
+scipy.datasets
+scipy.differentiate
+scipy.fft
+scipy.fftpack
+scipy.integrate
+scipy.interpolate
+scipy.io
+scipy.linalg
+scipy.ndimage
+scipy.odr
+scipy.optimize
+scipy.signal
+scipy.sparse
+scipy.spatial
+scipy.special
+scipy.stats
+SciPy API
+Linear algebra (scipy.linalg)
+expm
+scipy.linalg.
+expm#
+scipy.linalg.expm(A)[source]#
+Compute the matrix exponential of an array.
+Array argument(s) of this function may have additional
+“batch” dimensions prepended to the core shape. In this case, the array is treated
+as a batch of lower-dimensional slices; see Batched Linear Operations for details.
+Parameters:
+Andarray
+Input with last two dimensions are square (..., n, n).
+Returns:
+eAndarray
+The resulting matrix exponential with the same shape of A
+Notes
+Implements the algorithm given in [1], which is essentially a Pade
+approximation with a variable order that is decided based on the array
+data.
+For input with size n, the memory usage is in the worst case in the
+order of 8*(n**2). If the input data is not of single and double
+precision of real and complex dtypes, it is copied to a new array.
+For cases n >= 400, the exact 1-norm computation cost, breaks even with
+1-norm estimation and from that point on the estimation scheme given in
+[2] is used to decide on the approximation order.
+References
+[1]
+Awad H. Al-Mohy and Nicholas J. Higham, (2009), “A New Scaling
+and Squaring Algorithm for the Matrix Exponential”, SIAM J. Matrix
+Anal. Appl. 31(3):970-989, DOI:10.1137/09074721X
+[2]
+Nicholas J. Higham and Francoise Tisseur (2000), “A Block Algorithm
+for Matrix 1-Norm Estimation, with an Application to 1-Norm
+Pseudospectra.” SIAM J. Matrix Anal. Appl. 21(4):1185-1201,
+DOI:10.1137/S0895479899356080
+Examples
+Try it in your browser!
+>>> import numpy as np
+>>> from scipy.linalg import expm, sinm, cosm
+Matrix version of the formula exp(0) = 1:
+>>> expm(np.zeros((3, 2, 2)))
+array([[[1., 0.],
+[0., 1.]],
+[[1., 0.],
+[0., 1.]],
+[[1., 0.],
+[0., 1.]]])
+Euler’s identity (exp(i*theta) = cos(theta) + i*sin(theta))
+applied to a matrix:
+>>> a = np.array([[1.0, 2.0], [-1.0, 3.0]])
+>>> expm(1j*a)
+array([[ 0.42645930+1.89217551j, -2.13721484-0.97811252j],
+[ 1.06860742+0.48905626j, -1.71075555+0.91406299j]])
+>>> cosm(a) + 1j*sinm(a)
+array([[ 0.42645930+1.89217551j, -2.13721484-0.97811252j],
+[ 1.06860742+0.48905626j, -1.71075555+0.91406299j]])
+Go BackOpen In Tab
+previous
+cossin
+next
+logm
+On this page
+expm
+© Copyright 2008, The SciPy community.
+Created using Sphinx 8.1.3.
+Built with the PyData Sphinx Theme 0.19.0.

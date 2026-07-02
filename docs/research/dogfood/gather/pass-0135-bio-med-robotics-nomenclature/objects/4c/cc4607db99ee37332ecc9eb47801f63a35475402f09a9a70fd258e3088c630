@@ -1,0 +1,594 @@
+Skip to content
+Navigation Menu
+Toggle navigation
+Sign in
+Appearance settings
+Platform
+AI CODE CREATION
+GitHub CopilotWrite better code with AI
+GitHub Copilot appDirect agents from issue to merge
+MCP RegistryNewIntegrate external tools
+DEVELOPER WORKFLOWS
+ActionsAutomate any workflow
+CodespacesInstant dev environments
+IssuesPlan and track work
+Code ReviewManage code changes
+APPLICATION SECURITY
+GitHub Advanced SecurityFind and fix vulnerabilities
+Code securitySecure your code as you build
+Secret protectionStop leaks before they start
+EXPLORE
+Why GitHub
+Documentation
+Blog
+Changelog
+Marketplace
+View all features
+Solutions
+BY COMPANY SIZE
+Enterprises
+Small and medium teams
+Startups
+Nonprofits
+BY USE CASE
+App Modernization
+DevSecOps
+DevOps
+CI/CD
+View all use cases
+BY INDUSTRY
+Healthcare
+Financial services
+Manufacturing
+Government
+View all industries
+View all solutions
+Resources
+EXPLORE BY TOPIC
+AI
+Software Development
+DevOps
+Security
+View all topics
+EXPLORE BY TYPE
+Customer stories
+Events & webinars
+Ebooks & reports
+Business insights
+GitHub Skills
+SUPPORT & SERVICES
+Documentation
+Customer support
+Community forum
+Trust center
+Partners
+View all resources
+Open Source
+COMMUNITY
+GitHub SponsorsFund open source developers
+PROGRAMS
+Security Lab
+Maintainer Community
+Accelerator
+GitHub Stars
+Archive Program
+REPOSITORIES
+Topics
+Trending
+Collections
+Enterprise
+ENTERPRISE SOLUTIONS
+Enterprise platformAI-powered developer platform
+AVAILABLE ADD-ONS
+GitHub Advanced SecurityEnterprise-grade security features
+Copilot for BusinessEnterprise-grade AI features
+Premium SupportEnterprise-grade 24/7 support
+Pricing
+Search or jump to...
+Search code, repositories, users, issues, pull requests...
+Search
+Clear
+Search syntax tips
+Provide feedback
+We read every piece of feedback, and take your input very seriously.
+Include my email address so I can be contacted
+Cancel
+Submit feedback
+Saved searches
+Use saved searches to filter your results more quickly
+Name
+Query
+To see all available qualifiers, see our documentation.
+Cancel
+Create saved search
+Sign in
+Sign up
+Appearance settings
+Resetting focus
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+Dismiss alert
+Uh oh!
+There was an error while loading. Please reload this page.
+OmicsML
+/
+awesome-foundation-model-single-cell-papers
+Public
+Notifications
+You must be signed in to change notification settings
+Fork
+54
+Star
+486
+Code
+Issues
+3
+Pull requests
+2
+Actions
+Projects
+Security and quality
+0
+Insights
+Additional navigation options
+Code
+Issues
+Pull requests
+Actions
+Projects
+Security and quality
+Insights
+OmicsML/awesome-foundation-model-single-cell-papers
+main
+BranchesTags
+Go to file
+Code
+Open more actions menu
+Folders and files
+Name
+Name
+Last commit message
+Last commit date
+Latest commit
+History
+196 Commits
+196 Commits
+figs
+figs
+LICENSE
+LICENSE
+README.md
+README.md
+View all files
+Repository files navigation
+README
+MIT license
+More items
+Awesome Foundation Models for Single-Cell
+A curated, continuously updated reading list of foundation-model research for single-cell genomics. The structure follows our review "The landscape of single-cell foundation models: design principles, applications, and open challenges": single-cell foundation models are organized into unimodal, multimodal, and LLM-based scFMs, and the surrounding literature is grouped into perturbation modeling, virtual cells, pretraining datasets, benchmarks, infrastructure & agents, and surveys.
+Contributions are very welcome! Found a paper we missed, or a broken link? Open an issue or a pull request.
+Evolutionary tree credit: Mooler0410/LLMsPracticalGuide
+Catalog
+Catalog
+Single-Cell Foundation Models
+Unimodal scFMs
+scRNA-seq
+scATAC-seq
+Multimodal scFMs
+Transcriptomics and Perturbation
+Spatial, Proteomics and Histology
+Multi-omics: RNA, ATAC and Protein
+LLM-based scFMs
+Genetic Perturbation: Models, Atlases and Benchmarks
+Models and prediction frameworks
+Perturbation atlases and datasets
+Perturbation benchmarks
+Virtual Cell, World Models and Digital Human
+Reviews, comments, and perspectives
+Models and frameworks
+Pretraining Datasets and Resources
+Single-cell transcriptomic atlases and repositories
+Multimodal and spatial pretraining corpora
+Data formats and frameworks
+Benchmarks and Evaluation
+Benchmarks and critical evaluations
+Data privacy and accessibility
+Infrastructure, Platforms and AI Agents
+Infrastructure and platforms
+AI agents for single-cell discovery
+Lab-in-the-loop and active discovery
+Surveys and Perspectives
+Foundation Models for Pathology (related work)
+Single-Cell Foundation Models
+Single-cell foundation models are pretrained on large-scale atlases to learn transferable representations of cellular state. Following the review, they are grouped by the modalities they are pretrained on: unimodal (a single omic), multimodal (jointly modeling transcriptomic, epigenomic, proteomic and/or spatial measurements), and LLM-based (incorporating large language models or textual biological knowledge).
+Unimodal scFMs
+Models trained within a single omic modality (scRNA-seq or scATAC-seq), learning representations through masked reconstruction, autoregressive generation, contrastive/relational alignment, or supervised prediction.
+scRNA-seq
+[2026 bioRxiv] MaxToki: Temporal AI model predicts drivers of cell state trajectories across human aging [paper]
+[2026 arXiv] Lingshu-Cell: A generative cellular world model for transcriptome modeling toward virtual cells [paper]
+[2026 Nature Communications] CellVQ: Illuminating cell states by a comprehensive and interpretable single cell foundation model [paper]
+[2026 arXiv] ScDiVa: Masked discrete diffusion for joint modeling of single-cell identity and expression [paper]
+[2026 arXiv] Cell-JEPA: Latent Representation Learning for Single-Cell Transcriptomics [paper]
+[2026 bioRxiv] Stack: In-Context Learning of Single-Cell Biology [paper]
+[2026 Nature Communications] scLong: A Billion-Parameter Foundation Model for Capturing Long-Range Gene Context in Single-Cell Transcriptomics [paper]
+[2026 Nature Communications] RegFormer: a single-cell foundation model powered by gene regulatory hierarchies [paper]
+[2026 Nature Computational Science] GeneformerV2: Scaling and quantization of a large-scale foundation model enables resource-efficient predictions in network biology [paper]
+[2026 ICML] Scalable Single-Cell Gene Expression Generation with Latent Diffusion Models [paper]
+[2025 bioRxiv] scPRINT-2: Towards the next-generation of cell foundation models and benchmarks [paper]
+[2025 bioRxiv] Towards foundation models that learn across biological scales [paper]
+[2025 bioRxiv] PULSAR: a Foundation Model for Multi-scale and Multicellular Biology [paper]
+[2025 bioRxiv] scConcept: Contrastive pretraining for technology-agnostic single-cell representations beyond reconstruction [paper]
+[2025 Nature Machine Intelligence] Harnessing the power of single-cell large language models with parameter-efficient fine-tuning using scPEFT [paper]
+[2025 Nature Methods] scNET: learning context-specific gene and cell embeddings by integrating single-cell gene expression data with protein–protein interactions [paper]
+[2025 Science] TranscriptFormer: A Cross-Species Generative Cell Atlas Across 1.5 Billion Years of Evolution [paper]
+[2025 arXiv] TEDDY: A Family of Foundation Models for Understanding Single Cell Biology [paper]
+[2025 NeurIPS] Tabula: A Tabular Self-Supervised Foundation Model for Single-Cell Transcriptomics [paper]
+[2025 Nature Communications] scPRINT: pre-training on 50 million cells allows robust gene network predictions [paper]
+[2025 Nature Communications] CellFM: a large-scale foundation model pre-trained on transcriptomics of 100 million human cells [paper]
+[2025 National Science Review] Cell-GraphCompass: Modeling Single Cells with Graph Structure Foundation Model [paper]
+[2025 Nature] SCimilarity: A cell atlas foundation model for scalable search of similar human cells [paper]
+[2025 arXiv] GeneMamba: Bidirectional Mamba for Single-Cell Data — Efficient Context Learning with Biological Fidelity [paper]
+[2024 bioRxiv] CancerFoundation: A single-cell RNA sequencing foundation model to decipher drug resistance in cancer [paper]
+[2024 bioRxiv] AIDO.Cell: Scaling Dense Representations for Single Cell with Transcriptome-Scale Context [paper]
+[2024 NeurIPS] scCello: Cell-ontology guided transcriptome foundation model [paper]
+[2024 RECOMB] scMulan: a multitask generative pre-trained language model for single-cell analysis [paper]
+[2024 Nature Methods] scGPT: toward building a foundation model for single-cell multi-omics using generative AI [paper]
+[2024 Nature Methods] scFoundation: Large Scale Foundation Model on Single-cell Transcriptomics [paper]
+[2024 Nature Methods] SATURN: Toward universal cell embeddings — integrating single-cell RNA-seq datasets across species [paper]
+[2024 Nature Methods] scPROTEIN: a versatile deep graph contrastive learning framework for single-cell proteomics embedding [paper]
+[2024 Cell Research] GeneCompass: Deciphering Universal Gene Regulatory Mechanisms with Knowledge-Informed Cross-Species Foundation Model [paper]
+[2024 bioRxiv] Large-scale characterization of cell niches in spatial atlases using bio-inspired graph learning [paper]
+[2024] scmFormer Integrates Large-Scale Single-Cell Proteomics and Transcriptomics Data by Multi-Task Transformer [paper]
+[2024] Single-cell metadata as language [paper]
+[2024 ICLR] CellPLM: Pre-training of Cell Language Model Beyond Single Cells [paper]
+[2023 bioRxiv] UCE: Universal Cell Embeddings — A Foundation Model for Cell Biology [paper]
+[2023 Nature] Geneformer: Transfer learning enables predictions in network biology [paper]
+[2023 NeurIPS] xTrimoGene: An Efficient and Scalable Representation Learner for Single-Cell RNA-Seq Data [paper]
+[2023 iScience] tGPT: Generative pretraining from large-scale transcriptomes for single-cell deciphering [paper]
+[2023 Nature Methods] scPoli: Population-level integration of single-cell datasets enables multi-scale analysis across samples [paper]
+[2023 NeurIPS] MuSe-GNN: Learning Unified Gene Representation From Multimodal Biological Graph Data [paper]
+[2023 NeurIPS Workshop] Single-cell Masked Autoencoder: An Accurate and Interpretable Automated Immunophenotyper [paper]
+[2023 bioRxiv] Large-Scale Cell Representation Learning via Divide-and-Conquer Contrastive Learning [paper]
+[2023 bioRxiv] CellPolaris: Decoding Cell Fate through Generalization Transfer Learning of Gene Regulatory Networks [paper]
+[2023 bioRxiv] scHyena: Foundation Model for Full-Length Single-Cell RNA-Seq Analysis in Brain [paper]
+[2022 Nature Machine Intelligence] scBERT as a large-scale pretrained deep language model for cell type annotation of single-cell RNA-seq data [paper]
+[2022 arXiv] Exceiver: A single-cell gene expression language model [paper]
+[2022 Bioinformatics] scPretrain: multi-task self-supervised learning for cell-type classification [paper]
+scATAC-seq
+[2025 bioRxiv] Atacformer: A transformer-based foundation model for analysis and interpretation of ATAC-seq data [paper]
+[2026 AAAI] CLM-Access: A specialized foundation model for high-dimensional single-cell ATAC-seq analysis [paper]
+[2025 NeurIPS] ChromFound: Towards A Universal Foundation Model for Single-Cell Chromatin Accessibility Data [paper]
+[2025 bioRxiv] EpiFoundation: A Foundation Model for Single-Cell ATAC-seq via Peak-to-Gene Alignment [paper]
+[2025 Nature Methods] EpiAgent: foundation model for single-cell epigenomics [paper]
+[2025 Nature] GET: A foundation model of transcription across human cell types [paper]
+Multimodal scFMs
+Models that jointly encode complementary modalities — transcriptomic, epigenomic, proteomic, perturbational and spatial — through modality-specific reconstruction, cross-modality alignment, or task-informed supervision.
+Transcriptomics and Perturbation
+[2026 bioRxiv] X-Cell: Scaling Causal Perturbation Prediction Across Diverse Cellular Contexts via Diffusion Language Models [paper]
+[2026 arXiv] SCALE: Scalable conditional atlas-level endpoint transport for virtual cell perturbation prediction [paper]
+[2026 bioRxiv] PerturbGen: Predicting how perturbations reshape cellular trajectories [paper]
+[2025 bioRxiv] GeneJepa: A Predictive World Model of the Transcriptome [paper]
+[2025 bioRxiv] Tahoe-x1: Scaling Perturbation-Trained Single-Cell Foundation Models to 3 Billion Parameters [paper]
+[2025 bioRxiv] STATE: Predicting cellular responses to perturbation across diverse contexts [paper]
+Spatial, Proteomics and Histology
+[2026 bioRxiv] Integrating Histology with Spatial Molecular Programs Using a Multimodal Foundation Model [paper]
+[2026 Nature Medicine] HEX: AI-enabled virtual spatial proteomics from histopathology for interpretable biomarker discovery in lung cancer [paper]
+[2026 bioRxiv] xVERSE: A transcriptomics-native foundation model for universal cell representation and virtual cell synthesis [paper]
+[2026 arXiv] STORM: A Multimodal Foundation Model of Spatial Transcriptomics and Histology for Biological Discovery and Clinical Prediction [paper]
+[2026 bioRxiv] SpatialFusion: A lightweight multimodal foundation model for pathway-informed spatial niche mapping [paper]
+[2025 arXiv] HEIST: A graph foundation model for spatial transcriptomics and proteomics data [paper]
+[2025 arXiv] KRONOS: A Foundation Model for Spatial Proteomics [paper]
+[2025 arXiv] SPATIA: Multimodal Generation and Prediction of Spatial Cell Phenotypes [paper]
+[2025 bioRxiv] OmniCell: Unified Foundation Modeling of Single-Cell and Spatial Transcriptomics for Cellular and Molecular Insights [paper]
+[2025 bioRxiv] scGPT-spatial: Continual Pretraining of Single-Cell Foundation Model for Spatial Transcriptomics [paper]
+[2025 ICML] SToFM: a Multi-scale Foundation Model for Spatial Transcriptomics [paper]
+[2025 Nature Methods] Nicheformer: a foundation model for single-cell and spatial omics [paper]
+[2025 bioRxiv] AIDO.Tissue: Spatial Cell-Guided Pretraining for Scalable Spatial Transcriptomics Foundation Model [paper]
+[2025 bioRxiv] SpaFoundation: Inferring spatial gene expression from tissue images using a large-scale histology foundation model [paper]
+[2024 bioRxiv] stFormer: a foundation model for spatial transcriptomics [paper]
+[2025 Nature Methods] Novae: a graph-based foundation model for spatial transcriptomics data [paper]
+[2025 NPJ Digital Medicine] STPath: a generative foundation model for integrating spatial transcriptomics and whole-slide images [paper]
+[2025 Nature Methods] OmiCLIP: A visual–omics foundation model to bridge histopathology with spatial transcriptomics [paper]
+[2024 arXiv] ST-Align: A multimodal foundation model for image-gene alignment in spatial transcriptomics [paper]
+[2025 Nature Computational Science] SWITCH: Integrative deep learning of spatial multi-omics [paper]
+[2025 bioRxiv] SpaTranslator: A deep generative framework for universal spatial multi-omics cross-modality translation [paper]
+Multi-omics: RNA, ATAC and Protein
+[2026 bioRxiv] HoloCell: A Generative Foundation Model for Holistic Cellular Modeling [paper]
+[2026 bioRxiv] CLM-X: A multimodal single-cell foundation model with flexible multi-way Transformer for unified scRNA-seq and scATAC-seq analysis [paper]
+[2025 bioRxiv] SCARF: Single Cell ATAC-seq and RNA-seq Foundation model [paper]
+[2026 Nature Communications] CAPTAIN: A multimodal foundation model pretrained on co-assayed single-cell RNA and protein [paper]
+[2025 bioRxiv] scLinguist: A pre-trained hyena-based foundation model for cross-modality translation in single-cell multi-omics [paper]
+[2024 bioRxiv] PertFormer: Multimodal foundation model predicts zero-shot functional perturbations and cell fate dynamics [paper]
+[2025 Nature Biomedical Engineering] scTranslator: A pre-trained large generative model for translating single-cell transcriptomes to proteomes [paper]
+[2023 NeurIPS Workshop] scCLIP: Multi-modal Single-cell Contrastive Learning Integration Pre-training [paper]
+LLM-based scFMs
+Models that incorporate large language models or textual biological knowledge into cellular representation learning — through reconstruction, autoregressive generation, contrastive/relational alignment, or text-derived representation.
+[2026 bioRxiv] OKR-Cell: Open World Knowledge Aided Single-Cell Foundation Model with Robust Cross-Modal Cell-Language Pre-training [paper]
+[2026 bioRxiv] RVQ-Alpha: Bridging single-cell transcriptomics and large language models via discrete tokenization and verifiable reinforcement learning [paper]
+[2026 bioRxiv] PGL: Generative single-cell transcriptomics via large language models [paper]
+[2026 Nature Biomedical Engineering] spEMO: Leveraging Multi-Modal Foundation Models for Analyzing Spatial Multi-Omic and Histopathology Data [paper]
+[2025 bioRxiv] TissueNarrator: Generative Modeling of Spatial Transcriptomics with Large Language Models [paper]
+[2025 bioRxiv] CellHermes: Language may be all omics needs — Harmonizing multimodal data for omics understanding [paper]
+[2025 bioRxiv] CellTok: Early-Fusion Multimodal Large Language Model for Single-Cell Transcriptomics via Tokenization [paper]
+[2025 arXiv] Cell2Text: Multimodal LLM for Generating Single-Cell Descriptions from RNA-Seq Data [paper]
+[2025 arXiv] InstructCell: A multi-modal AI copilot for single-cell analysis with instruction following [paper]
+[2025 bioRxiv] C2S-Scale: Scaling Large Language Models for Next-Generation Single-Cell Analysis [paper]
+[2025 Nature Biotechnology] CellWhisperer: Multimodal learning enables chat-based exploration of single-cell data [paper]
+[2025 bioRxiv] Large Language Model Consensus Substantially Improves the Cell Type Annotation Accuracy for scRNA-seq Data (mLLMCelltype) [paper]
+[2025 arXiv] Towards Applying Large Language Models to Complement Single-Cell Foundation Models (scMPT) [paper]
+[2025 ICML] sciLaMA: A Single-Cell Representation Learning Framework to Leverage Prior Knowledge from Large Language Models [paper]
+[2025 arXiv] scMMGPT: Language-Enhanced Representation Learning for Single-Cell Transcriptomics [paper]
+[2025 Patterns] scELMo: Embeddings from Language Models are Good Learners for Single-cell Data Analysis [paper]
+[2025 Nature Biomedical Engineering] GenePT: Simple and effective embedding model for single-cell biology built from ChatGPT [paper]
+[2026 Advanced Science] CELLama: Foundation Model for Single Cell and Spatial Transcriptomics by Cell Embedding Leveraging Language Model Abilities [paper]
+[2026 AIChE Journal] scChat: A Large Language Model-Powered Co-Pilot for Contextualized Single-Cell RNA Sequencing Analysis [paper]
+[2024 ICML] LangCell: Language-Cell Pre-training for Cell Identity Understanding [paper]
+[2024 ICLR Workshop] Joint embedding of transcriptomes and text enables interactive single-cell RNA-seq data exploration via natural language [paper]
+[2024 arXiv] scReader: Prompting Large Language Models to Interpret scRNA-seq Data [paper]
+[2024 ICML] Cell2Sentence: Teaching Large Language Models the Language of Biology [paper]
+[2024 Nature Methods] Assessing GPT-4 for cell type annotation in single-cell RNA-seq analysis [paper]
+Genetic Perturbation: Models, Atlases and Benchmarks
+Perturbation-centric foundation models, prediction frameworks, large-scale perturbation atlases, and benchmarks. (Perturbation-trained scFMs such as X-Cell, SCALE, PerturbGen, STATE, GeneJepa and Tahoe-x1 are listed under Multimodal scFMs.)
+Models and prediction frameworks
+[2026 ICLR] scDFM: Distributional Flow Matching for Robust Single-Cell Perturbation Prediction [paper]
+[2026 arXiv] PRiMeFlow: Capturing Complex Expression Heterogeneity in Perturbation Response Modelling [paper]
+[2026 bioRxiv] AetherCell: A generative engine for virtual cell perturbation and in vivo drug discovery [paper]
+[2026 bioRxiv] MAP: A Knowledge-driven Framework for Predicting Single-cell Responses for Unprofiled Drugs [paper]
+[2026 arXiv] PerturbDiff: Functional diffusion for single-cell perturbation modeling [paper]
+[2025 bioRxiv] Closing the loop: Teaching single-cell foundation models to learn from perturbations [paper]
+[2025 PNAS] Predicting the unseen: A diffusion-based debiasing framework for transcriptional response prediction at single-cell resolution [paper]
+[2026 Nature Methods] Squidiff: predicting cellular development and responses to perturbations using a diffusion model [paper]
+[2025 bioRxiv] Unified multimodal learning enables generalized cellular response prediction to diverse perturbations [paper]
+[2025 bioRxiv] SpatialProp: tissue perturbation modeling with spatially resolved single-cell transcriptomics [paper]
+[2025 bioRxiv] PertAdapt: Unlocking Single-Cell Foundation Models for Genetic Perturbation Prediction via Condition-Sensitive Adaptation [paper]
+[2025 Nature Computational Science] In silico biological discovery with large perturbation models [paper]
+[2025 Nature Computational Science] Scouter predicts transcriptional responses to genetic perturbations with large language model embeddings [paper]
+[2024 bioRxiv] scLAMBDA: Modeling and predicting single-cell multi-gene perturbation responses [paper]
+[2024 bioRxiv] scGenePT: Is language all you need for modeling single-cell perturbations? [paper]
+[2024 Nature Biotechnology] GEARS: Predicting transcriptional outcomes of novel multigene perturbations [paper]
+[2023 Nature Methods] CINEMA-OT: Causal identification of single-cell experimental perturbation effects [paper]
+Perturbation atlases and datasets
+[2025 bioRxiv] Tahoe-100M: A Giga-Scale Single-Cell Perturbation Atlas for Context-Dependent Gene Function and Cellular Modeling [paper]
+[2025 bioRxiv] X-Atlas/Orion: Genome-wide Perturb-seq datasets via a scalable fix-cryopreserve platform [paper]
+[2025 Nucleic Acids Research] PerturBase: a comprehensive database for single-cell perturbation data analysis and visualization [paper]
+[2025 Science] Transcription factor networks disproportionately enrich for heritability of blood cell phenotypes (Perturb-multiome) [paper]
+[2025 bioRxiv] A single-cell cytokine dictionary of human peripheral blood [paper]
+[2016 Cell] Perturb-seq: dissecting molecular circuits with scalable single-cell RNA profiling of pooled genetic screens [paper]
+Perturbation benchmarks
+[2026 Genome Biology] scArchon: a scalable benchmarking framework for assessing single-cell perturbation models [paper]
+[2026 bioRxiv] Foundation Models Improve Perturbation Response Prediction [paper]
+[2026 bioRxiv] Evaluating Single-Cell Perturbation Response Models Is Far from Straightforward [paper]
+[2025 Nature Methods] Benchmarking algorithms for generalizable single-cell perturbation response prediction [paper]
+[2025 Nature Methods] Deep-learning-based gene perturbation effect prediction does not yet outperform simple linear baselines [paper]
+[2025 Nature Biotechnology] Systema: a framework for evaluating genetic perturbation response prediction beyond systematic variation [paper]
+[2025 bioRxiv] Single Cell Foundation Models Evaluation (scFME) for In-Silico Perturbation [paper]
+[2025 bioRxiv] Deep Learning-Based Genetic Perturbation Models Do Outperform Uninformative Baselines on Well-Calibrated Metrics [paper]
+[2025 arXiv] Diversity by Design: Addressing Mode Collapse Improves scRNA-seq Perturbation Modeling on Well-Calibrated Metrics [paper]
+[2025 NeurIPS] PerturBench: Benchmarking Machine Learning Models for Cellular Perturbation Analysis [paper]
+[2024 bioRxiv] A systematic comparison of single-cell perturbation response prediction models [paper]
+[2025 ICML] PertEval-scFM: Benchmarking Single-Cell Foundation Models for Perturbation Effect Prediction [paper]
+[2025 BMC Genomics] Benchmarking foundation cell models for post-perturbation RNA-seq prediction [paper]
+[2024 arXiv] Benchmarking Transcriptomics Foundation Models for Perturbation Analysis: one PCA still rules them all [paper]
+Virtual Cell, World Models and Digital Human
+Emerging generative training paradigms that recast scFMs as cellular world models, and efforts toward virtual embryos and digital humans.
+Reviews, comments, and perspectives
+[2026 Nature] ‘Virtual cells’ aim to turn raw data into predictive models of biology [paper]
+[2026 GenBio AI] A world model of the virtual cell [paper]
+[2026 Nature Methods] Towards predictive virtual embryos with genomics and AI [paper]
+[2026 Bioactive Materials] Artificial Intelligence Virtual Organoids (AIVOs) [paper]
+[2025 Nature Methods] The virtual cell [paper]
+[2025 npj Digital Medicine] AI-driven virtual cell models in preclinical research: technical pathways, validation mechanisms, and clinical translation potential [paper]
+[2025 Cell Research] Grow AI virtual cells: three data pillars and closed-loop learning [paper]
+[2025 arXiv] Large Language Models Meet Virtual Cell: A Survey [paper]
+[2025 arXiv] Virtual Cells: Predict, Explain, Discover [paper]
+[2025 Cell] Virtual Cell Challenge: Toward a Turing test for the virtual cell [paper]
+[2024 Cell] How to build the virtual cell with artificial intelligence: Priorities and opportunities [paper]
+Models and frameworks
+[2026 bioRxiv] Towards Autonomous Mechanistic Reasoning in Virtual Cells [paper]
+[2026 arXiv] OCOO-T : A Simple and Scalable Virtual Cell Model for Transcriptional Perturbation Response Prediction [paper]
+[2026 arXiv] Cell-JEPA: Latent Representation Learning for Single-Cell Transcriptomics [paper]
+[2025 bioRxiv] GeneJepa: A Predictive World Model of the Transcriptome [paper]
+[2026 bioRxiv] AlphaCell: Towards building a World Model to simulate perturbation-induced cellular dynamics [paper]
+[2026 arXiv] Chreode: A cell world model for one-step temporal dynamics and perturbation prediction [paper]
+[2026 bioRxiv] CellFluxV2: An Image Generative Foundation Model for Virtual Cell Modeling [paper]
+[2025 arXiv] CellForge: Agentic Design of Virtual Cell Models [paper]
+[2026 ICLR] VCWorld: A Biological World Model for Virtual Cell Simulation [paper]
+Pretraining Datasets and Resources
+Large-scale atlases, multimodal corpora, and data frameworks used for pretraining and preprocessing single-cell foundation models.
+Single-cell transcriptomic atlases and repositories
+[2025 bioRxiv] scBaseCount: an AI agent-curated, uniformly processed, and continually expanding single-cell data repository [paper]
+[2025 Scientific Data] hECA v2.0: an AI-ready ensemble cell atlas of single-cell RNA and ATAC sequencing data [paper]
+[2022 Science] Tabula Sapiens: a multiple-organ, single-cell transcriptomic atlas of humans [paper]
+[2022 iScience] hECA: the cell-centric assembly of a cell atlas [paper]
+[2022 Nucleic Acids Research] DISCO: a database of deeply integrated human single-cell omics data [paper]
+[2024 Nucleic Acids Research] Expression Atlas update: insights from sequencing data at both bulk and single cell level [paper]
+[2025 Nucleic Acids Research] CZ CELLxGENE Discover: a single-cell data platform for scalable exploration, analysis and modeling of aggregated data [paper] · [portal]
+[2021 Bioinformatics] UCSC Cell Browser: visualize your single-cell data [paper]
+[2023 bioRxiv] Single Cell Portal: an interactive home for single-cell genomics data [paper]
+[2002 Nucleic Acids Research] Gene Expression Omnibus (GEO) [paper]
+[2010 Nucleic Acids Research] The Sequence Read Archive (SRA) [paper]
+Multimodal and spatial pretraining corpora
+[2025 bioRxiv] SCARF / X-Omics: a 2.7M-cell scRNA-seq/scATAC-seq pretraining corpus [paper]
+[2024 Nucleic Acids Research] SPDB: a comprehensive resource and knowledgebase for proteomic data at the single-cell resolution [paper]
+[2025 Nature Methods] SpatialCorpus-110M (Nicheformer pretraining corpus) [paper]
+[2025 ICML] SToCorpus-88M (SToFM pretraining corpus) [paper]
+Data formats and frameworks
+[2018 Genome Biology] Scanpy / AnnData: large-scale single-cell gene expression data analysis [paper]
+[2022 Nature Biotechnology] scvi-tools: a Python library for probabilistic analysis of single-cell omics data [paper]
+[2025 Nature Methods] Pertpy: an end-to-end framework for perturbation analysis [paper]
+[2019 Cell] Seurat: Comprehensive integration of single-cell data [paper]
+Benchmarks and Evaluation
+Benchmarks, reusability reports, and critical evaluations of single-cell foundation models, plus the science of evaluation and data-privacy considerations.
+Benchmarks and critical evaluations
+[2026 bioRxiv] Benchmarking gene expression reconstruction from single-cell latent representations [paper]
+[2026 Nature Methods] Scaling up training dataset size for transcriptomic AI models is much pain with little gain [paper]
+[2026 Nature Methods] Evaluating the role of pretraining dataset size and diversity on single-cell foundation model performance [paper]
+[2026 Nature Biotechnology] Scoring gene importance by interpreting single-cell foundation models [paper]
+[2026 arXiv] Benchmarking virtual cell models for in-the-wild perturbation response [paper]
+[2026 Nature Communications] SCMBench: benchmarking domain-specific and foundation models for single-cell multi-omics data integration [paper]
+[2026 bioRxiv] A unified framework enables accessible deployment and comprehensive benchmarking of single-cell foundation models [paper]
+[2026 Nature Computational Science] Improving atlas-scale single-cell annotation models with hierarchical cross-entropy loss [paper]
+[2026 bioRxiv] CellBench-LS: Benchmark Evaluation of Single-cell Foundation Models for Low-supervision Scenarios [paper]
+[2026 bioRxiv] Benchmarking single-cell foundation models for real-world RNA-seq data integration [paper]
+[2026 bioRxiv] Benchmarking zero-shot single-cell foundation model embeddings for cellular dynamics reconstruction [paper]
+[2026 arXiv] Sparse autoencoders reveal organized biological knowledge but minimal regulatory logic in single-cell foundation models [paper]
+[2026 bioRxiv] Parameter-free representations outperform single-cell foundation models on downstream benchmarks [paper]
+[2025 Nature Biotechnology] Defining and benchmarking open problems in single-cell analysis [paper]
+[2025 Nature Biotechnology] Limitations of cell embedding metrics assessed using drifting islands [paper]
+[2025 Nature Biotechnology] Shortcomings of silhouette in single-cell integration benchmarking [paper]
+[2025 NeurIPS] CellVerse: Do Large Language Models Really Understand Cell Biology? [paper]
+[2025 bioRxiv] Batch Effects Remain a Fundamental Barrier to Universal Embeddings in Single-Cell Foundation Models [paper]
+[2025 bioRxiv] HEIMDALL: A Modular Framework for Tokenization in Single-Cell Foundation Models [paper]
+[2025 bioRxiv] Empirical Evaluation of Single-Cell Foundation Models for Predicting Cancer Outcomes [paper]
+[2025 Nature Communications] Benchmarking cell type and gene set annotation by large language models with AnnDictionary [paper]
+[2025 bioRxiv] Sparse Autoencoders Reveal Interpretable Features in Single-Cell Foundation Models [paper]
+[2025 bioRxiv] USHER: Guiding Foundation Model Representations through Distribution Shifts (Transforming biological foundation model representations for out-of-distribution data) [paper]
+[2025 bioRxiv] Fundamental Limitations of Foundation Models in Single-Cell Transcriptomics [paper]
+[2025 Nature Machine Intelligence] Reusability report: Exploring the transferability of self-supervised learning models from single-cell to spatial transcriptomics [paper]
+[2025 Nature Methods] Multitask benchmarking of single-cell multimodal omics integration methods [paper]
+[2025 arXiv] BMFM-RNA: An Open Framework for Building and Evaluating Transcriptomic Foundation Models [paper]
+[2025 Genome Biology] Biology-driven insights into the power of single-cell foundation models [paper]
+[2025 bioRxiv] Benchmarking gene embeddings from sequence, expression, network, and text models for functional prediction tasks [paper]
+[2025 Genome Biology] Zero-shot evaluation reveals limitations of single-cell foundation models [paper]
+[2025 Nature Communications] scDrugMap: benchmarking large foundation models for drug response prediction [paper]
+[2026 AAAI] scCluBench: Comprehensive Benchmarking of Clustering Algorithms for Single-Cell RNA Sequencing [paper]
+[2025 WSDM] A Systematic Evaluation of Single-Cell Foundation Models on Cell-Type Classification Task [paper]
+[2025 Briefings in Bioinformatics] The current landscape and emerging challenges of benchmarking single-cell methods [paper]
+[2025 bioRxiv] GeneRNIB: a living benchmark for gene regulatory network inference [paper]
+[2024 Nature Communications] scTab: Scaling cross-tissue single-cell annotation models [paper]
+[2024 Nature Machine Intelligence] Delineating the effective use of self-supervised learning in single-cell genomics [paper]
+[2024 Patterns] BioLLM: A standardized framework for integrating and benchmarking single-cell foundation models [paper]
+[2024 bioRxiv] Evaluating the role of pre-training dataset size and diversity on single-cell foundation model performance [paper]
+[2024 Nature Machine Intelligence] Deeper evaluation of a single-cell foundation model [paper]
+[2024 Advanced Science] scEval: Evaluating the Utilities of Large Language Models in Single-cell Data Analysis [paper]
+[2024 bioRxiv] Metric Mirages in Cell Embeddings [paper]
+[2023 Nature Machine Intelligence] Reusability report: Learning the transcriptional grammar in single-cell RNA-sequencing data using transformers [paper]
+[2023 bioRxiv] A Deep Dive into Single-Cell RNA Sequencing Foundation Models [paper]
+[2023 bioRxiv] Foundation Models Meet Imbalanced Single-Cell Data When Learning Cell Type Annotations [paper]
+[2023 arXiv] Evaluation of large language models for discovery of gene set function [paper]
+[2024 ICLR] BEND: Benchmarking DNA Language Models on Biologically Meaningful Tasks [paper]
+Data privacy and accessibility
+[2024 Cell] Private information leakage from single-cell count matrices [paper]
+[2025 Research Square] CLIFTI-GPT: Privacy-preserving federated fine-tuning and transferable inference of foundation models on clinical single-cell data [paper]
+[2025 Genome Biology] FedscGen: privacy-preserving federated batch effect correction of single-cell RNA sequencing data [paper]
+[2023 Nature] Foundation models for generalist medical artificial intelligence [paper]
+Infrastructure, Platforms and AI Agents
+Platforms, model repositories, and scalable infrastructure for scFMs, and emerging AI-agent systems for single-cell discovery.
+Infrastructure and platforms
+[2026 Lamin Blog] Simpler queries for the 2.5B transcriptional profiles of the Arc Virtual Cell Atlas [blog]
+[2026 bioRxiv] CytoVerse: Single-cell AI foundation models in the browser [paper]
+[2026 bioRxiv] cellNexus: Quality control, annotation, aggregation and analytical layers for the Human Cell Atlas data [paper]
+[2026 Nature Computational Science] Toward informed batch correction for single-cell transcriptome integration [paper]
+[2026 arXiv] annbatch unlocks terabyte-scale training of biological data in AnnData [paper]
+[2026 bioRxiv] scUnify: A Unified Framework for Zero-shot Inference of Single-Cell Foundation Models [paper]
+[2026 arXiv] GPU-accelerated single-cell analysis at scale with rapids-singlecell [paper]
+[2025 Nature Methods] scvi-hub: an actionable repository for model-driven single-cell analysis [paper]
+[2025 Nature Biotechnology] SaProtHub: Democratizing protein language model training, sharing and collaboration [paper]
+[2024 arXiv] BioNeMo framework: a modular, high-performance library for AI model development in drug discovery [paper]
+[2022 Nature Methods] ColabFold: making protein folding accessible to all [paper]
+AI agents for single-cell discovery
+[2026 Nature] An AI system to help scientists write expert-level empirical software [paper]
+[2026 npj Artificial Intelligence] CellAtria: An agentic AI framework for ingestion and standardization of single-cell RNA-seq data analysis [paper]
+[2026 Innovation Oncology] From equations to agents: The artificial intelligence virtual cell reshaping precision oncology [paper]
+[2026 Nature Biotechnology] Agentic AI and the rise of in silico team science in biomedical research [paper]
+[2026 Nature Methods] CellVoyager: AI compbio agent generates new insights by autonomously analyzing biological data [paper]
+[2026 arXiv] ELISA: An Interpretable Hybrid Generative AI Agent for Expression-Grounded Discovery in Single-Cell Genomics [paper]
+[2026 bioRxiv] ToolsGenie 2.0: A Scalable and Extensible Multi-Agent System for Bioinformatics Automation [paper]
+[2026 bioRxiv] PantheonOS: An Evolvable Multi-Agent Framework for Automatic Genomics Discovery [paper]
+[2025 Nature Communications] CASSIA: a multi-agent large language model for automated and interpretable cell annotation [paper]
+[2025 bioRxiv] CyteType: Multi-agent AI enables evidence-based cell annotation in single-cell transcriptomics [paper]
+[2025 arXiv] CellTypeAgent: Trustworthy cell type annotation with Large Language Models [paper]
+[2025 ICLR] CellAgent: LLM-driven multi-agent framework for natural language-based single-cell analysis [paper]
+[2025 NeurIPS] scPilot: Large language model reasoning toward automated single-cell analysis and discovery [paper]
+[2025 bioRxiv] Biomni: A general-purpose biomedical AI agent [paper]
+Lab-in-the-loop and active discovery
+[2025 Science] Active learning framework leveraging transcriptomics identifies modulators of disease phenotypes [paper]
+[2026 ICML] Many needles in a haystack: Active hit discovery for perturbation experiments [paper]
+Surveys and Perspectives
+More surveys and perspectives on virtual cell can be found in "Virtual Cell, World Models and Digital Human" section above.
+Here is the list of surveys and perspectives that are more focused on single-cell foundation models in general, rather than the virtual cell paradigm specifically.
+[2026 Nature Machine Intelligence] Flow matching for generative modelling in bioinformatics and computational biology [paper]
+[2026 Nature Biotechnology] Tracing the rise of biomedical foundation models [paper]
+[2026 Cell Systems] From modality-specific to compositional foundation models for cell biology [paper]
+[2026 Cancer Cell] Spatial omics at the forefront: emerging technologies, analytical innovations, and clinical applications [paper]
+[2026 Nature Reviews Genetics] Interpretation, extrapolation and perturbation of single cells [paper]
+[2025 Nature] Towards multimodal foundation models in molecular cell biology [paper]
+[2025 arXiv] LLM4Cell: A Survey of Large Language and Agentic Models for Single-Cell Biology [paper]
+[2025 Nature Methods] Computational strategies for cross-species knowledge transfer [paper]
+[2025 Nature Methods] Multimodal foundation transformer models for multiscale genomics [paper]
+[2025 Nature Machine Intelligence] Transformers and genome language models [paper]
+[2025 Nature Methods] Overcoming barriers to the wide adoption of single-cell large language models in biomedical research [paper]
+[2025 National Science Review] Foundation models in bioinformatics [paper]
+[2025 Patterns] Large language models for drug discovery and development [paper]
+[2025 Experimental & Molecular Medicine] Single-cell foundation models: bringing artificial intelligence into cell biology [paper]
+[2025 ACL] A survey on foundation language models for single-cell biology [paper]
+[2025 Computational and Structural Biotechnology Journal] Tokenization and deep learning architectures in genomics: A comprehensive review [paper]
+[2025 Bioinformatics] Decoding Cell Fate: Integrated Experimental and Computational Analysis at the Single-Cell Level [paper]
+[2025 Quantitative Biology] A perspective on developing foundation models for analyzing spatial transcriptomic data [paper]
+[2025 Genome Biology] Insights, opportunities, and challenges provided by large cell atlases [paper]
+[2024 Quantitative Biology] Perspectives on benchmarking foundation models for network biology [paper]
+[2024 Nature Reviews Molecular Cell Biology] Harnessing the deep learning power of foundation models in single-cell omics [paper]
+[2024 Nature Methods] Transformers in single-cell omics: a review and new perspectives [paper]
+[2024 National Science Review] General-purpose pre-trained large cellular models for single-cell transcriptomic [paper]
+[2024 Cell] Toward a foundation model of causal cell and tissue biology with a Perturbation Cell and Tissue Atlas [paper]
+[2024 Cell] The future of rapid and automated single-cell data analysis using reference mapping [paper]
+[2024 Nature] The Human Cell Atlas from a cell census to a unified foundation model [paper]
+[2024 Computational and Structural Biotechnology Journal] A mini-review on perturbation modelling across single-cell omic modalities [paper]
+[2024 Briefings in Bioinformatics] Progress and opportunities of foundation models in bioinformatics [paper]
+Foundation Models for Pathology (related work)
+General-purpose computational-pathology foundation models. These are outside the scope of the single-cell review above but are kept here as closely related work.
+[2024 Nature Methods] A foundation model for joint segmentation, detection and recognition of biomedical objects across nine modalities [paper]
+[2024 Nature] A whole-slide foundation model for digital pathology from real-world data [paper]
+[2024 Nature Medicine] Towards a general-purpose foundation model for computational pathology [paper]
+[2024 Nature Medicine] A visual-language foundation model for computational pathology [paper]
+[2023 Nature Medicine] A visual–language foundation model for pathology image analysis using medical Twitter [paper]
+About
+No description or website provided.
+Topics
+survey
+single-cell-multiomics
+large-language-models
+ai-virtual-cell
+single-cell-foundation-model
+biological-foundation-model
+Resources
+Readme
+License
+MIT license
+Uh oh!
+There was an error while loading. Please reload this page.
+Activity
+Custom properties
+Stars
+486
+stars
+Watchers
+18
+watching
+Forks
+54
+forks
+Report repository
+Releases
+No releases published
+Packages
+0
+Uh oh!
+There was an error while loading. Please reload this page.
+Contributors
+Uh oh!
+There was an error while loading. Please reload this page.
+Footer
+© 2026 GitHub, Inc.
+Footer navigation
+Terms
+Privacy
+Security
+Status
+Community
+Docs
+Contact
+Manage cookies
+Do not share my personal information
+You can’t perform that action at this time.

@@ -1,0 +1,143 @@
+{
+  "schema": "ProofPacket/v1",
+  "packet_id": "proof-packet-pass-0012-no-cloning",
+  "pass": "0012",
+  "generated_on": "2026-07-01",
+  "domain": "quantum-computing-theorem-market",
+  "claim_set": [
+    {
+      "claim_id": "claim-no-cloning-inner-product-identity",
+      "claim": "A universal unitary cloner cannot clone all unknown quantum states because preserving inner products would require <psi|phi> = <psi|phi>^2 for nonorthogonal distinct states.",
+      "formal_statement": "For |0> and |+>, overlap=1/sqrt(2), overlap^2=1/2, so the unitary-cloner requirement fails.",
+      "promotion_state": "IDENTITY",
+      "confidence": "high",
+      "limits": "Human-readable algebraic proof only; no proof-assistant kernel certificate in this pass."
+    },
+    {
+      "claim_id": "claim-cnot-clones-computational-basis-only",
+      "claim": "A CNOT operation with blank target |0> clones computational basis inputs |0> and |1> with fidelity 1.0.",
+      "promotion_state": "PROBE_MATCH",
+      "confidence": "high",
+      "limits": "This proves only the two computational basis fixtures."
+    },
+    {
+      "claim_id": "claim-cnot-fails-plus-state-cloning",
+      "claim": "The same CNOT fixture fails to clone |+>, with fidelity 0.5 to the desired |+>|+> cloned state.",
+      "promotion_state": "NEGATIVE_FIXTURE_MATCH",
+      "confidence": "high",
+      "limits": "This is a bounded simulator negative fixture, not a hardware run."
+    },
+    {
+      "claim_id": "claim-quantum-market-map-proof-gap",
+      "claim": "The pass 0012 market map covers at least 12 quantum tools across SDK, cloud, hardware, quantum AI, compiler, neutral-atom, and annealing categories, with gap claims labeled as inferred.",
+      "promotion_state": "SOURCE_BACKED_HYPOTHESIS",
+      "confidence": "high",
+      "limits": "Market gap claims are hypotheses, not uniqueness facts."
+    }
+  ],
+  "source_receipts": [
+    {
+      "source_id": "packet-022-proof",
+      "kind": "file",
+      "path": "C:\\dev\\public\\telos\\docs\\research\\dogfood\\packets\\022-quantum-no-cloning-proof-packet.md",
+      "used_for": "human-readable no-cloning proof and market thesis",
+      "confidence": "high"
+    },
+    {
+      "source_id": "no-cloning-probe-pass-0012",
+      "kind": "file",
+      "path": "C:\\dev\\public\\telos\\docs\\research\\dogfood\\schemas\\no-cloning-probe-pass-0012.json",
+      "used_for": "bounded CNOT basis and superposition measurement receipt",
+      "confidence": "high"
+    },
+    {
+      "source_id": "quantum-market-map-pass-0012",
+      "kind": "file",
+      "path": "C:\\dev\\public\\telos\\docs\\research\\dogfood\\schemas\\quantum-computing-market-map-pass-0012.json",
+      "used_for": "quantum tooling market context",
+      "confidence": "high"
+    }
+  ],
+  "action_receipts": [
+    {
+      "action_id": "action-run-no-cloning-probe",
+      "actor": "Codex",
+      "action": "ran bounded no-cloning theorem probe with CNOT basis fixture and |+> negative fixture",
+      "result": "PROBE_MATCH",
+      "receipt_ref": "schemas/no-cloning-probe-pass-0012.json"
+    },
+    {
+      "action_id": "action-map-quantum-market",
+      "actor": "Codex",
+      "action": "mapped quantum SDK, cloud, hardware, compiler, AI, neutral-atom, and annealing tools into proof-packet gap hypotheses",
+      "result": "SOURCE_BACKED_HYPOTHESIS",
+      "receipt_ref": "schemas/quantum-computing-market-map-pass-0012.json"
+    }
+  ],
+  "authority_receipts": [
+    {
+      "authority_id": "authority-dogfood-local-research",
+      "scope": "local dogfood research artifact creation and verification",
+      "admission": "allowed",
+      "notes": "No production deployment, destructive action, credential access, external quantum execution, or hardware side effect."
+    }
+  ],
+  "workspace_state": {
+    "telos": {
+      "repo": "C:\\dev\\public\\telos",
+      "head": "1046c81",
+      "tracked_dirty_state": "clean",
+      "untracked_context": "dogfood research artifacts and prior market recon docs"
+    }
+  },
+  "verification_verdicts": [
+    {
+      "verifier": "NoCloningProbe",
+      "status": "PROBE_MATCH",
+      "evidence_ref": "schemas/no-cloning-probe-pass-0012.json"
+    },
+    {
+      "verifier": "Pass0012QuantumValidator",
+      "status": "MATCH",
+      "evidence_ref": "schemas/pass-0012-quantum-validator-result.json"
+    },
+    {
+      "verifier": "ForumSteelman",
+      "status": "UNVERIFIABLE",
+      "evidence_ref": "adversarial/pass-0012-forum-steelman.md"
+    },
+    {
+      "verifier": "Crucible",
+      "status": "MATCH",
+      "evidence_ref": "crucible/pass-0012-report.md"
+    }
+  ],
+  "failure_labels": [
+    {
+      "label": "NOT_A_NEW_THEOREM",
+      "reason": "No-cloning is a classical quantum information theorem and is used here as a proof-packet systems test."
+    },
+    {
+      "label": "NO_QUANTUM_HARDWARE_RUN",
+      "reason": "The pass used a local deterministic simulator fixture only."
+    },
+    {
+      "label": "BOUNDED_SIMULATOR_PROBE_ONLY",
+      "reason": "The probe checks CNOT on |0>, |1>, and |+>, while the algebraic proof carries the theorem claim."
+    },
+    {
+      "label": "NO_PROOF_ASSISTANT_CERTIFICATE",
+      "reason": "No Lean, Coq, Isabelle, or other proof assistant checked the theorem in this pass."
+    },
+    {
+      "label": "MARKET_GAP_HYPOTHESIS_ONLY",
+      "reason": "Quantum market gaps are inferred from official positioning and not treated as uniqueness facts."
+    }
+  ],
+  "decision_summary": {
+    "decision": "advance_to_quantum_receipt_schema",
+    "reason": "The pass binds theorem proof, circuit fixture, simulator branch, negative fixture, market map, and verifier slots into a portable quantum proof-packet target.",
+    "confidence": "high",
+    "next_action": "add a resource-estimation receipt layer and a backend metadata schema for cloud/hardware quantum jobs"
+  }
+}

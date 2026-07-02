@@ -1,0 +1,60 @@
+{
+  "fetches": [
+    {
+      "bytes": 131365,
+      "contains": {
+        "elan-init.ps1": true,
+        "lake build": true,
+        "powershell -ExecutionPolicy Bypass": true
+      },
+      "id": "lean_manual_install",
+      "sha256": "a452aecbbaad48706bd5a63443e13d49af8aef314ed2e9b0d46cbf5231d1a723",
+      "status": "MATCH",
+      "status_code": 200,
+      "url": "https://lean-lang.org/install/manual/"
+    },
+    {
+      "bytes": 122985,
+      "contains": {
+        "lean-toolchain": true,
+        "leanprover/lean4": true,
+        "toolchain file": true
+      },
+      "id": "lean_elan_toolchains",
+      "sha256": "fb7052c9a665a1e685ec930895eb92bb7111ccea519de43a482597b4f6d167f6",
+      "status": "MATCH",
+      "status_code": 200,
+      "url": "https://lean-lang.org/doc/reference/latest/Build-Tools-and-Distribution/Managing-Toolchains-with-Elan/"
+    },
+    {
+      "bytes": 3578,
+      "contains": {
+        "elan-init.ps1": true,
+        "lake": true,
+        "lean": true
+      },
+      "id": "elan_readme",
+      "sha256": "6778277cc096b30fbd7132ac420a85184a39a7f5b2b863b1841efee13de84d44",
+      "status": "MATCH",
+      "status_code": 200,
+      "url": "https://raw.githubusercontent.com/leanprover/elan/master/README.md"
+    },
+    {
+      "bytes": 3044,
+      "contains": {
+        "DefaultToolchain": true,
+        "NoModifyPath": true,
+        "elan-init": true
+      },
+      "id": "elan_windows_installer_script",
+      "sha256": "1d3c66430d0e7b719b104e1dea80e395a066e96c37b886f2de4b0e9025a037fb",
+      "status": "MATCH",
+      "status_code": 200,
+      "url": "https://elan.lean-lang.org/elan-init.ps1"
+    }
+  ],
+  "generated_on": "2026-07-01",
+  "pass": "0045",
+  "schema": "LeanToolchainAcquisitionSourcesFixture/v1",
+  "seal": "3aa096cc668fe8cc30ccdb52f752ec548d851e3a4acd5c05bfb3fd814f9ec31e"
+}

@@ -1,0 +1,152 @@
+{
+  "measurements": [
+    {
+      "claim": "Pass 0019 created a StrictReceiptRuntimeFixtureSet/v1 artifact with status STRICT_RUNTIME_MATCH, three numeric precision receipts, five executable framework output fixtures, nine negative fixtures, eleven source anchors, and seal e69d6fad6a9edc8c93044001a749967406c8047b21426c2640b671059cc8154a.",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "method": "strict-runtime-set-review",
+      "evidence": [
+        "schemas/strict-receipt-runtime-fixtures-pass-0019.json schema=StrictReceiptRuntimeFixtureSet/v1",
+        "status=STRICT_RUNTIME_MATCH",
+        "numeric_receipt_count=3",
+        "executable_fixture_count=5",
+        "negative_fixture_count=9",
+        "source_anchor_count=11",
+        "seal=e69d6fad6a9edc8c93044001a749967406c8047b21426c2640b671059cc8154a"
+      ]
+    },
+    {
+      "claim": "Pass 0019 defines StrictJsonLoaderReceipt/v1 requiring object_pairs_hook duplicate-key detection, parse_constant non-finite rejection, allow_nan_on_serialization=false, a positive MATCH fixture, a duplicate-key REJECT fixture detecting key 00, and NaN/Infinity REJECT fixtures.",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "method": "strict-loader-review",
+      "evidence": [
+        "strict_json_loader_receipt schema=StrictJsonLoaderReceipt/v1",
+        "object_pairs_hook_required=true",
+        "parse_constant_rejects_nonfinite=true",
+        "allow_nan_on_serialization=false",
+        "positive_fixture expected_validator_status=MATCH",
+        "duplicate_key_fixture expected_validator_status=REJECT",
+        "duplicate_key_fixture duplicate_keys=[00]",
+        "nonfinite fixtures for NaN and Infinity expected_validator_status=REJECT"
+      ]
+    },
+    {
+      "claim": "Pass 0019 defines NumericPrecisionReceipt/v1 examples for exact decimal string 0.1, binary float expanded 0.1, and rounded one-seventh with ROUND_HALF_EVEN.",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "method": "numeric-receipt-review",
+      "evidence": [
+        "decimal-string-exact-0p1 present schema=NumericPrecisionReceipt/v1",
+        "binary-float-expanded-0p1 present schema=NumericPrecisionReceipt/v1",
+        "decimal-quantized-one-seventh present schema=NumericPrecisionReceipt/v1",
+        "decimal-quantized-one-seventh rounding_mode=ROUND_HALF_EVEN",
+        "all numeric receipts have receipt_hash"
+      ]
+    },
+    {
+      "claim": "Pass 0019 defines ObjectStorageEvidenceReceipt/v1 with S3 URI, retrieval timestamp, version id, ETag/generation, content length, SHA-256 hex, SHA-256 base64, locator_only_allowed=false, and receipt hash.",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "method": "object-storage-receipt-review",
+      "evidence": [
+        "object_storage_evidence_receipt schema=ObjectStorageEvidenceReceipt/v1",
+        "uri starts s3://",
+        "retrieval_timestamp present",
+        "version_id present",
+        "etag_or_generation present",
+        "content_length=36",
+        "content_sha256 present",
+        "content_sha256_base64 present",
+        "locator_only_allowed=false",
+        "receipt_hash present"
+      ]
+    },
+    {
+      "claim": "Pass 0019 defines executable local adapter fixtures for Qiskit, Amazon Braket, Cirq, PennyLane, and QIR with framework_imported=false and execution mode LOCAL_ADAPTER_FUNCTION_OVER_SYNTHETIC_OUTPUT.",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "method": "executable-fixture-identity-review",
+      "evidence": [
+        "executable-fixture-qiskit-counts present",
+        "executable-fixture-braket-measurement-counts present",
+        "executable-fixture-cirq-histogram present",
+        "executable-fixture-pennylane-counts present",
+        "executable-fixture-qir-result-record-map present",
+        "all fixtures framework_imported=false",
+        "all fixtures execution_mode=LOCAL_ADAPTER_FUNCTION_OVER_SYNTHETIC_OUTPUT"
+      ]
+    },
+    {
+      "claim": "Every pass 0019 executable fixture records raw output hash, normalized output hash, normalized counts, HTTPS source anchor, fixture hash, and ADAPTER_EXECUTION_MATCH status.",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "method": "executable-fixture-contract-review",
+      "evidence": [
+        "all executable fixtures include raw_output_hash",
+        "all executable fixtures include normalized_output_hash",
+        "all executable fixtures include normalized_output.normalized_counts",
+        "all executable fixtures include HTTPS source_anchor",
+        "all executable fixtures include fixture_hash",
+        "all executable fixtures status=ADAPTER_EXECUTION_MATCH"
+      ]
+    },
+    {
+      "claim": "Pass 0019 negative fixtures reject missing strict loader, NaN accepted as JSON, decimal-as-float precision loss, URI-only object storage, and missing framework layout fields for Qiskit, Braket, Cirq, PennyLane, and QIR.",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "method": "negative-fixture-review",
+      "evidence": [
+        "negative-strict-json-loader-not-used expected_validator_status=REJECT",
+        "negative-nan-accepted-as-json-number expected_validator_status=REJECT",
+        "negative-decimal-serialized-as-float expected_validator_status=REJECT",
+        "negative-object-storage-uri-only expected_validator_status=REJECT",
+        "negative-qiskit-fixture-without-layout expected_validator_status=REJECT",
+        "negative-braket-fixture-without-measured-qubit-order expected_validator_status=REJECT",
+        "negative-cirq-fixture-without-fold-func expected_validator_status=REJECT",
+        "negative-pennylane-fixture-without-wire-order expected_validator_status=REJECT",
+        "negative-qir-fixture-without-record-map expected_validator_status=REJECT"
+      ]
+    },
+    {
+      "claim": "Pass 0019 validator reports MATCH with one matched check and zero drift.",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "method": "validator-run-review",
+      "evidence": [
+        "schemas/pass-0019-strict-receipt-runtime-validator-result.json status=MATCH",
+        "match=1",
+        "drift=0",
+        "checks include StrictReceiptRuntimeFixtureSet status MATCH"
+      ]
+    },
+    {
+      "claim": "Pass 0019 records tool receipts showing Index, Gather, Telos, Forum, and Crucible status MATCH while preserving Forum submit as UNVERIFIABLE due to executor JSON parsing.",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "method": "tool-receipt-review",
+      "evidence": [
+        "schemas/tool-receipts-pass-0019.json status=MATCH_WITH_FORUM_SUBMIT_GAP",
+        "tool receipts include index status MATCH",
+        "tool receipts include gather status MATCH",
+        "tool receipts include telos operator_doctor status MATCH",
+        "tool receipts include forum status MATCH and verify MATCH",
+        "tool receipts include forum_submit status UNVERIFIABLE",
+        "tool receipts include crucible status MATCH",
+        "Forum submit error recorded: configured executor did not return valid JSON"
+      ]
+    },
+    {
+      "claim": "Pass 0019 promotes zero live framework integrations, cloud object retrievals, quantum jobs, quantum hardware results, theorem proofs, natural laws, or scientific discoveries.",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "method": "non-promotion-review",
+      "evidence": [
+        "packets/029-strict-receipt-runtime.md states no framework import, cloud object fetch, or quantum job",
+        "schemas/strict-receipt-runtime-fixtures-pass-0019.json non_promotion_statement states no quantum framework import, cloud object fetch, quantum job, or hardware result",
+        "adversarial/pass-0019-strict-runtime-steelman.md recommends non-promotional status",
+        "Current promoted natural laws: none"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,127 @@
+{
+  "generated_on": "2026-07-01",
+  "non_promotion_statement": "Tool receipts prove packet readback, wedge scorecard validator MATCH, 14 live budget-signal source anchors, Telos/Index/Gather/Forum/Crucible availability, and hypothesis-only uniqueness boundaries. They do not prove product-market fit, uniqueness as fact, buyer adoption, scientific truth, or any natural law.",
+  "pass": "0049",
+  "receipts": [
+    {
+      "command": "map --root docs/research/dogfood --json",
+      "dirty_count": 0,
+      "repo_count": 0,
+      "root_sha256_prefix": "f2f0af39219698a9",
+      "schema_version": 1,
+      "status": "MATCH",
+      "tool": "index",
+      "tool_version": "2.8.0",
+      "top_level_count": 58
+    },
+    {
+      "artifact": "packets/059-wedge-budget-signal-scorecard.md",
+      "chars": 854,
+      "command": "docs",
+      "seal": "2e0ea2bb0c5fb896f113836befecbfd1cf7cbf29601e9a73304778cbbfb4ccfb",
+      "sha256": "2259b1d0c1869263016df5bd75a40cf4043136c557ff03e784c6faa60fb21055",
+      "status": "MATCH",
+      "tool": "gather",
+      "verified": true
+    },
+    {
+      "budget_signal_source_count": 14,
+      "budget_signal_source_match_count": 14,
+      "command": "probe_wedge_budget_signal_scorecard.py",
+      "line_count": 249,
+      "primary_30_day_market_push": "agent_action_proof_packets",
+      "schema": "WedgeBudgetSignalScorecardSet/v1",
+      "seal": "ef12ec077e084e6de19ae003350166f624aa104458e1a08de5a0e2a4cfcba1da",
+      "status": "WEDGE_BUDGET_SIGNAL_SCORECARD_MATCH",
+      "tool": "python",
+      "uniqueness_claim_status": "HYPOTHESIS_ONLY",
+      "wedge_order": [
+        "agent_action_proof_packets",
+        "research_proof_packets",
+        "buildlang_runtime_receipts"
+      ],
+      "weighted_rank_scores": [
+        34,
+        31,
+        28
+      ]
+    },
+    {
+      "budget_signal_source_match_count": 14,
+      "command": "validate_pass_0049_wedge_budget_signal_scorecard.py",
+      "drift": 0,
+      "line_count": 96,
+      "match": 1,
+      "primary_30_day_market_push": "agent_action_proof_packets",
+      "schema": "Pass0049WedgeBudgetSignalScorecardValidatorRun/v1",
+      "status": "MATCH",
+      "tool": "python"
+    },
+    {
+      "aggregate_verdict": "MATCH",
+      "check_count": 14,
+      "command": "telos_operator_doctor",
+      "passed_count": 14,
+      "status": "MATCH",
+      "telos_tool_count": 37,
+      "tool": "mcp__telos.telos_operator_doctor",
+      "tool_count": 65
+    },
+    {
+      "candidates": [
+        {
+          "agent": "code-review",
+          "score": 0.2
+        },
+        {
+          "agent": "project-telos",
+          "score": 0.045454545454545456
+        },
+        {
+          "agent": "backend",
+          "score": 0.0
+        }
+      ],
+      "command": "route",
+      "confidence": 0.15454545454545454,
+      "decided": null,
+      "needs_escalation": true,
+      "status": "MATCH",
+      "tool": "forum"
+    },
+    {
+      "chain": true,
+      "command": "ledger verify",
+      "deep": true,
+      "status": "MATCH",
+      "tool": "forum"
+    },
+    {
+      "command": "submit",
+      "error": "submit needs a model executor. Forum is model-agnostic: pass --cmd \"<model cli>\" (any command, local models need no account), --chat-url <openai-compatible url> (e.g. a local Ollama server), or --api (Anthropic).",
+      "request": "Dogfood pass 0049 adversarial review for wedge budget signal scorecard",
+      "status": "UNVERIFIABLE",
+      "tool": "forum"
+    },
+    {
+      "assessment_seal": "734c1700b037dfcd6e8a0aaffb951dfd7d5851c14705fdcc58942682a606c7dd",
+      "claims": 8,
+      "command": "run",
+      "drift": 0,
+      "match": 8,
+      "measurement_seal": "96b020348875be8496efb53fe1a0802eab14d76f3b4a90bd7e6ed1f6db027844",
+      "run_sha256": "4cb0da4056c523ebd78f9281db5f12dc181c9b7dddc08286792e1250215ed717",
+      "seals_ok": true,
+      "status": "MATCH",
+      "thesis_id": "1df1e3c507b04bff",
+      "thesis_ok": true,
+      "thesis_seal": "1df1e3c507b04bff8ece511442806d2d5b387b72fd116d268f197123b37fd095",
+      "tool": "crucible",
+      "unverifiable": 0,
+      "verdict_seal": "87b5e42af0f530bcc9b50a26b315e438ff2c7f7ec14841712efa07d05bcb7877",
+      "verdicts_rederive": true
+    }
+  ],
+  "schema": "DogfoodToolReceiptSet/v1",
+  "status": "MATCH_WITH_FORUM_SUBMIT_GAP_AND_HYPOTHESIS_ONLY_UNIQUENESS"
+}

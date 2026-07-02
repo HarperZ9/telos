@@ -1,0 +1,174 @@
+{
+  "kind": "proof-lesson",
+  "packet_id": "tenth-wave-experiment-router-2026-07-02",
+  "verdict": "MATCH",
+  "lesson": {
+    "kind": "proof-lesson",
+    "packet_id": "tenth-wave-experiment-router-2026-07-02",
+    "packet_version": "research-claim-proof-packet/v0",
+    "claim": "Project Telos has a tenth-wave cross-domain experiment-router package that captures 39 arXiv source leads across five lanes, classifies them with a source-router demotion gate, verifies six package-boundary claims in Crucible, and preserves explicit boundaries against quantum, climate, materials, neuroscience, theorem-replay, hardware, wet-lab, and exhaustive-literature overclaims.",
+    "scope": "Local tenth-wave documentation and receipt package only. This is not a scientific result, theorem replay, quantum hardware validation, climate-model validation, materials discovery, neuroscience truth, wet-lab result, official submission, or exhaustive literature review.",
+    "verdict": "MATCH",
+    "sources": [
+      {
+        "ref": "docs/outreach/TENTH-WAVE-CROSS-DOMAIN-EXPERIMENT-ROUTER-2026-07-02.md",
+        "sha256": "47cedefc73363af4715c79067452b5c67e897943835626605135433899878a98"
+      },
+      {
+        "ref": "docs/research/whitepapers/CROSS-DOMAIN-EXPERIMENT-ROUTERS-2026-07-02.md",
+        "sha256": "fb83a2eb3427515378aa651b7a28b2cb22804fd0377555d74296349a3e88c021"
+      },
+      {
+        "ref": "docs/outreach/TENTH-WAVE-CONTENT-QUEUE-2026-07-02.md",
+        "sha256": "e1f912ecb89b16f92079229bbdca323c90bbdafe2bc78d2f18d20d9330636e11"
+      },
+      {
+        "ref": "docs/outreach/receipts/tenth-wave/source-router-demotion-gate.json",
+        "sha256": "b5b0ed3d74defa0777751056bc8921e73b6f133db59cff7c2a31e2c040671b28"
+      },
+      {
+        "ref": "docs/outreach/receipts/tenth-wave-tooling-run-2026-07-02.json",
+        "sha256": "53365aabf3946129d67a62064f8b82d8fcb2dfbde724982edc8aab8f9bb71647"
+      },
+      {
+        "ref": "docs/outreach/receipts/tenth-wave-forum-index-route-2026-07-02.json",
+        "sha256": "096d3c61e1d6857ef23773815963aeb9cce40f99b2ced805905b867c797e17ff"
+      }
+    ],
+    "scaffold": [
+      {
+        "step": 1,
+        "prompt": "Restate, in your own words, exactly what this claim asserts and nothing more: \"Project Telos has a tenth-wave cross-domain experiment-router package that captures 39 arXiv source leads across five lanes, classifies them with a source-router demotion gate, verifies six package-boundary claims in Crucible, and preserves explicit boundaries against quantum, climate, materials, neuroscience, theorem-replay, hardware, wet-lab, and exhaustive-literature overclaims.\" (scope: Local tenth-wave documentation and receipt package only. This is not a scientific result, theorem replay, quantum hardware validation, climate-model validation, materials discovery, neuroscience truth, wet-lab result, official submission, or exhaustive literature review.)."
+      },
+      {
+        "step": 2,
+        "prompt": "Judging by their refs alone (docs/outreach/TENTH-WAVE-CROSS-DOMAIN-EXPERIMENT-ROUTER-2026-07-02.md, docs/research/whitepapers/CROSS-DOMAIN-EXPERIMENT-ROUTERS-2026-07-02.md, docs/outreach/TENTH-WAVE-CONTENT-QUEUE-2026-07-02.md, docs/outreach/receipts/tenth-wave/source-router-demotion-gate.json, docs/outreach/receipts/tenth-wave-tooling-run-2026-07-02.json, docs/outreach/receipts/tenth-wave-forum-index-route-2026-07-02.json), predict what each recorded source could contribute as evidence for or against the claim."
+      },
+      {
+        "step": 3,
+        "prompt": "The packet's overall verdict is MATCH. Before reading anything else, derive what a MATCH verdict must mean about the relationship between the claim and the recorded checks."
+      },
+      {
+        "step": 4,
+        "prompt": "List the checks you would run to reach your own verdict on this claim, then compare your list against what the packet's verdict implies was actually checked."
+      }
+    ],
+    "retrievalQuestions": [
+      {
+        "question": "What evidence would falsify this claim: \"Project Telos has a tenth-wave cross-domain experiment-router package that captures 39 arXiv source leads across five lanes, classifies them with a source-router demotion gate, verifies six package-boundary claims in Crucible, and preserves explicit boundaries against quantum, climate, materials, neuroscience, theorem-replay, hardware, wet-lab, and exhaustive-literature overclaims.\"?",
+        "derivedFrom": "claim"
+      },
+      {
+        "question": "Which recorded source would you re-check first, and what does its content hash let you prove about it?",
+        "derivedFrom": "sources"
+      },
+      {
+        "question": "What does an overall verdict of MATCH entitle you to claim, and what does it not?",
+        "derivedFrom": "verdicts.overall"
+      },
+      {
+        "question": "The packet's scope is \"Local tenth-wave documentation and receipt package only. This is not a scientific result, theorem replay, quantum hardware validation, climate-model validation, materials discovery, neuroscience truth, wet-lab result, official submission, or exhaustive literature review.\". Give one claim that would exceed that scope.",
+        "derivedFrom": "scope"
+      }
+    ],
+    "verifierBinding": {
+      "packet_id": "tenth-wave-experiment-router-2026-07-02",
+      "verdict": "MATCH",
+      "sourceHashes": [
+        "47cedefc73363af4715c79067452b5c67e897943835626605135433899878a98",
+        "fb83a2eb3427515378aa651b7a28b2cb22804fd0377555d74296349a3e88c021",
+        "e1f912ecb89b16f92079229bbdca323c90bbdafe2bc78d2f18d20d9330636e11",
+        "b5b0ed3d74defa0777751056bc8921e73b6f133db59cff7c2a31e2c040671b28",
+        "53365aabf3946129d67a62064f8b82d8fcb2dfbde724982edc8aab8f9bb71647",
+        "096d3c61e1d6857ef23773815963aeb9cce40f99b2ced805905b867c797e17ff"
+      ]
+    },
+    "boundary": "Lesson scaffold only -- prompts for the operator to derive the reasoning; never an answer dump, never a graded-assessment answer."
+  },
+  "misconception": null,
+  "sourceCount": 6,
+  "entries": [
+    {
+      "seq": 0,
+      "prevHash": "0000000000000000000000000000000000000000000000000000000000000000",
+      "hash": "0645ee7b433187941d811e6d71d7a1d88a2e56c21b260482b72f99f3fdec566e",
+      "entry": {
+        "kind": "packet-binding",
+        "packet_id": "tenth-wave-experiment-router-2026-07-02",
+        "verdict": "MATCH",
+        "claim": "Project Telos has a tenth-wave cross-domain experiment-router package that captures 39 arXiv source leads across five lanes, classifies them with a source-router demotion gate, verifies six package-boundary claims in Crucible, and preserves explicit boundaries against quantum, climate, materials, neuroscience, theorem-replay, hardware, wet-lab, and exhaustive-literature overclaims."
+      }
+    },
+    {
+      "seq": 1,
+      "prevHash": "0645ee7b433187941d811e6d71d7a1d88a2e56c21b260482b72f99f3fdec566e",
+      "hash": "be1c2d9fdcc6d3ddc144cdcea2e3f333b49dcb3e835517c38b18b822a28ae59b",
+      "entry": {
+        "kind": "source",
+        "ref": "docs/outreach/TENTH-WAVE-CROSS-DOMAIN-EXPERIMENT-ROUTER-2026-07-02.md",
+        "sha256": "47cedefc73363af4715c79067452b5c67e897943835626605135433899878a98"
+      }
+    },
+    {
+      "seq": 2,
+      "prevHash": "be1c2d9fdcc6d3ddc144cdcea2e3f333b49dcb3e835517c38b18b822a28ae59b",
+      "hash": "d1556c813ec1c15f95a044d0f1e42fd46cc68cacbf9ac22aca77d907850482a8",
+      "entry": {
+        "kind": "source",
+        "ref": "docs/research/whitepapers/CROSS-DOMAIN-EXPERIMENT-ROUTERS-2026-07-02.md",
+        "sha256": "fb83a2eb3427515378aa651b7a28b2cb22804fd0377555d74296349a3e88c021"
+      }
+    },
+    {
+      "seq": 3,
+      "prevHash": "d1556c813ec1c15f95a044d0f1e42fd46cc68cacbf9ac22aca77d907850482a8",
+      "hash": "4e5cac057d6a4047a51a30096152a218f7b939cb0b4912afd1066f8d9abacfb6",
+      "entry": {
+        "kind": "source",
+        "ref": "docs/outreach/TENTH-WAVE-CONTENT-QUEUE-2026-07-02.md",
+        "sha256": "e1f912ecb89b16f92079229bbdca323c90bbdafe2bc78d2f18d20d9330636e11"
+      }
+    },
+    {
+      "seq": 4,
+      "prevHash": "4e5cac057d6a4047a51a30096152a218f7b939cb0b4912afd1066f8d9abacfb6",
+      "hash": "69f456d552b58452e92a21b307dc1cc32e91b4c0f44cc06f1d45b5c6301ba690",
+      "entry": {
+        "kind": "source",
+        "ref": "docs/outreach/receipts/tenth-wave/source-router-demotion-gate.json",
+        "sha256": "b5b0ed3d74defa0777751056bc8921e73b6f133db59cff7c2a31e2c040671b28"
+      }
+    },
+    {
+      "seq": 5,
+      "prevHash": "69f456d552b58452e92a21b307dc1cc32e91b4c0f44cc06f1d45b5c6301ba690",
+      "hash": "4960cc89c88f722a265361f4ccabd1e8fbd03073b69089f67a75b0db744df51b",
+      "entry": {
+        "kind": "source",
+        "ref": "docs/outreach/receipts/tenth-wave-tooling-run-2026-07-02.json",
+        "sha256": "53365aabf3946129d67a62064f8b82d8fcb2dfbde724982edc8aab8f9bb71647"
+      }
+    },
+    {
+      "seq": 6,
+      "prevHash": "4960cc89c88f722a265361f4ccabd1e8fbd03073b69089f67a75b0db744df51b",
+      "hash": "59853f427beadfd843f295df0f0009f02329acb5a5345de2211a79c7590afd06",
+      "entry": {
+        "kind": "source",
+        "ref": "docs/outreach/receipts/tenth-wave-forum-index-route-2026-07-02.json",
+        "sha256": "096d3c61e1d6857ef23773815963aeb9cce40f99b2ced805905b867c797e17ff"
+      }
+    },
+    {
+      "seq": 7,
+      "prevHash": "59853f427beadfd843f295df0f0009f02329acb5a5345de2211a79c7590afd06",
+      "hash": "a045f8a26fcb3a5fd68a96f477f4ace8e09e194dd4f4884fdd16a04eacfc002a",
+      "entry": {
+        "kind": "lesson-digest",
+        "digest": "sha256:46d43d9447250612c8bb28d9bb982696da7a169ce0532b512cfb758b793f4edd",
+        "misconception_class": null
+      }
+    }
+  ],
+  "boundary": "Lesson receipt only -- binds the lesson to its packet's verdict and source hashes; never a graded-assessment answer."
+}

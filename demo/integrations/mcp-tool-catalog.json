@@ -110,6 +110,28 @@
       ]
     },
     {
+      "name": "gather.federation",
+      "flagship": "gather",
+      "description": "Validate a source-federation registry or compile its capture plans.",
+      "cli": [
+        "gather",
+        "federation",
+        "{registry}",
+        "--json"
+      ],
+      "mcp": {
+        "status": "available",
+        "server": "gather",
+        "method": "tools/call",
+        "tool": "gather.federation"
+      },
+      "next_actions": [
+        "index.context.envelope",
+        "crucible.assess",
+        "telos.context.pack"
+      ]
+    },
+    {
       "name": "index.map",
       "flagship": "index",
       "description": "Map a workspace or repo and emit structural context.",
@@ -218,6 +240,75 @@
       ]
     },
     {
+      "name": "index.select",
+      "flagship": "index",
+      "description": "Select files under a root and emit typed rejection receipts for budgeted context work.",
+      "cli": [
+        "index",
+        "select",
+        "--root",
+        "{root}",
+        "--json"
+      ],
+      "mcp": {
+        "status": "available",
+        "server": "index",
+        "method": "tools/call",
+        "tool": "index.select"
+      },
+      "next_actions": [
+        "index.context.envelope",
+        "forum.route",
+        "telos.context.pack"
+      ]
+    },
+    {
+      "name": "index.wiki",
+      "flagship": "index",
+      "description": "Derive or verify a sealed single-repo wiki from the current module graph.",
+      "cli": [
+        "index",
+        "wiki",
+        "--root",
+        "{root}",
+        "--json"
+      ],
+      "mcp": {
+        "status": "available",
+        "server": "index",
+        "method": "tools/call",
+        "tool": "index.wiki"
+      },
+      "next_actions": [
+        "gather.docs",
+        "crucible.assess",
+        "forum.route"
+      ]
+    },
+    {
+      "name": "index.invalidate",
+      "flagship": "index",
+      "description": "Mint or compare tree pins and report exactly what current changes invalidate.",
+      "cli": [
+        "index",
+        "invalidate",
+        "--root",
+        "{root}",
+        "--json"
+      ],
+      "mcp": {
+        "status": "available",
+        "server": "index",
+        "method": "tools/call",
+        "tool": "index.invalidate"
+      },
+      "next_actions": [
+        "index.freshness",
+        "crucible.assess",
+        "telos.mcp.freshness"
+      ]
+    },
+    {
       "name": "forum.route",
       "flagship": "forum",
       "description": "Route a request to a capability lane and expose low-confidence escalation.",
@@ -318,6 +409,30 @@
       },
       "next_actions": [
         "index.map"
+      ]
+    },
+    {
+      "name": "forum.ledger.capsule",
+      "flagship": "forum",
+      "description": "Compact a Forum ledger into a reusable context capsule for handoffs.",
+      "cli": [
+        "forum",
+        "ledger",
+        "capsule",
+        "--ledger",
+        "{dir}",
+        "--json"
+      ],
+      "mcp": {
+        "status": "available",
+        "server": "forum",
+        "method": "tools/call",
+        "tool": "forum.ledger.capsule"
+      },
+      "next_actions": [
+        "telos.context.pack",
+        "index.context.envelope",
+        "crucible.assess"
       ]
     },
     {

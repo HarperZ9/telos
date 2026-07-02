@@ -1,0 +1,459 @@
+{
+  "action_receipt_proposal": {
+    "action_id": "act_dogfood_0037_statement_equivalence",
+    "authority_class": "read_only_source_signature_verification",
+    "event_id": "evt_dogfood_0037_statement_equivalence",
+    "event_type": "theorem_statement_equivalence_verified",
+    "external_call_performed": false,
+    "external_write_performed": false,
+    "normal_path_modified": false,
+    "result_state": "completed",
+    "side_effect_class": "local_read_and_repo_artifact_write",
+    "stop_reason": "completed",
+    "verification_verdict": "MATCH"
+  },
+  "current_promoted_natural_laws": [],
+  "generated_on": "2026-07-01",
+  "negative_fixture_count": 8,
+  "negative_fixtures": [
+    {
+      "expected_validator_status": "REJECT",
+      "id": "negative-frozen-solution-signature-drift"
+    },
+    {
+      "expected_validator_status": "REJECT",
+      "id": "negative-frozen-proof-signature-drift"
+    },
+    {
+      "expected_validator_status": "REJECT",
+      "id": "negative-discharge-gate-drift"
+    },
+    {
+      "expected_validator_status": "REJECT",
+      "id": "negative-signature-span-missing"
+    },
+    {
+      "expected_validator_status": "REJECT",
+      "id": "negative-signature-hash-missing"
+    },
+    {
+      "expected_validator_status": "REJECT",
+      "id": "negative-source-ref-binding-missing"
+    },
+    {
+      "expected_validator_status": "REJECT",
+      "id": "negative-public-claim-overpromoted"
+    },
+    {
+      "expected_validator_status": "REJECT",
+      "id": "negative-natural-law-promoted"
+    }
+  ],
+  "non_promotion_statement": "Pass 0037 checks declaration-signature equivalence and discharge gate shape. It does not re-run Lean, prove semantic equivalence by elaboration, prove an axiom-free result, validate every public pipeline-math claim, or promote any natural law.",
+  "pass": "0037",
+  "schema": "TheoremStatementEquivalenceSet/v1",
+  "seal": "78ede605591460b7a2aa8fee7e2ebca0f56688575e5c9ce7ab919f2948a0934f",
+  "source_ref_integrity_binding": {
+    "path": "schemas/theorem-source-ref-integrity-pass-0036.json",
+    "seal": "68382866e7e78895eb3d7fd0d613fcc8b17afc30398b7823cb198702262da2fb",
+    "sha256": "74d89981ae7598f7a7381f6fdbb1196cf9be97ca854688a49c4e3c4bce9f6f6f",
+    "source_status": "SOURCE_REF_INTEGRITY_MATCH"
+  },
+  "statement_checks": [
+    {
+      "discharge_gate_ref": "Prob4b/Discharge.lean:27",
+      "discharge_gate_status": "MATCH",
+      "frozen_proof_status": "MATCH",
+      "frozen_ref": "Prob4b/Theorems.lean:32",
+      "frozen_signature": {
+        "canonical_signature": ": Ideal.span {a} ⊓ Ideal.span {b} ⊓ Ideal.span {a + b} = (⊥ : Ideal B)",
+        "signature_sha256": "9fc5f9df76dfb408218d73e2d2ddc49b7961c3a618df7d89284115e4c75bef4a",
+        "signature_span": [
+          32,
+          33
+        ],
+        "signature_text": "theorem B_triple_zero :\n    Ideal.span {a} ⊓ Ideal.span {b} ⊓ Ideal.span {a + b} = (⊥ : Ideal B)"
+      },
+      "frozen_solution_status": "MATCH",
+      "proof_ref": "Prob4b/Proofs/Triple/Basic.lean:211",
+      "proof_signature": {
+        "canonical_signature": ": Ideal.span {a} ⊓ Ideal.span {b} ⊓ Ideal.span {a + b} = (⊥ : Ideal B)",
+        "signature_sha256": "09ef02fe1c333493cb72dde83681ba020b339f976c98bf01e43fe7d124b93263",
+        "signature_span": [
+          211,
+          212
+        ],
+        "signature_text": "theorem B_triple_zero_proof :\n    Ideal.span {a} ⊓ Ideal.span {b} ⊓ Ideal.span {a + b} = (⊥ : Ideal B)"
+      },
+      "solution_ref": "Prob4b/Solution.lean:29",
+      "solution_signature": {
+        "canonical_signature": ": Ideal.span {a} ⊓ Ideal.span {b} ⊓ Ideal.span {a + b} = (⊥ : Ideal B)",
+        "signature_sha256": "9fc5f9df76dfb408218d73e2d2ddc49b7961c3a618df7d89284115e4c75bef4a",
+        "signature_span": [
+          29,
+          30
+        ],
+        "signature_text": "theorem B_triple_zero :\n    Ideal.span {a} ⊓ Ideal.span {b} ⊓ Ideal.span {a + b} = (⊥ : Ideal B)"
+      },
+      "status": "MATCH",
+      "theorem": "B_triple_zero"
+    },
+    {
+      "discharge_gate_ref": "Prob4b/Discharge.lean:28",
+      "discharge_gate_status": "MATCH",
+      "frozen_proof_status": "MATCH",
+      "frozen_ref": "Prob4b/Theorems.lean:38",
+      "frozen_signature": {
+        "canonical_signature": ": u ≠ 0 ∧ u ∈ smulSub a ∧ u ∈ smulSub b ∧ u ∈ smulSub (a + b)",
+        "signature_sha256": "989f0b8ff9f0d00cd451857bd3a501410300015106dc9c15cabb47af51a97e3f",
+        "signature_span": [
+          38,
+          39
+        ],
+        "signature_text": "theorem M_triple_defect :\n    u ≠ 0 ∧ u ∈ smulSub a ∧ u ∈ smulSub b ∧ u ∈ smulSub (a + b)"
+      },
+      "frozen_solution_status": "MATCH",
+      "proof_ref": "Prob4b/Proofs/Triple/Basic.lean:342",
+      "proof_signature": {
+        "canonical_signature": ": u ≠ 0 ∧ u ∈ smulSub a ∧ u ∈ smulSub b ∧ u ∈ smulSub (a + b)",
+        "signature_sha256": "bad13f6648180ffabaca0d520f0321e5dbad0ca330b7cea0ad1faeacc09bd53a",
+        "signature_span": [
+          342,
+          343
+        ],
+        "signature_text": "theorem M_triple_defect_proof :\n    u ≠ 0 ∧ u ∈ smulSub a ∧ u ∈ smulSub b ∧ u ∈ smulSub (a + b)"
+      },
+      "solution_ref": "Prob4b/Solution.lean:35",
+      "solution_signature": {
+        "canonical_signature": ": u ≠ 0 ∧ u ∈ smulSub a ∧ u ∈ smulSub b ∧ u ∈ smulSub (a + b)",
+        "signature_sha256": "989f0b8ff9f0d00cd451857bd3a501410300015106dc9c15cabb47af51a97e3f",
+        "signature_span": [
+          35,
+          36
+        ],
+        "signature_text": "theorem M_triple_defect :\n    u ≠ 0 ∧ u ∈ smulSub a ∧ u ∈ smulSub b ∧ u ∈ smulSub (a + b)"
+      },
+      "status": "MATCH",
+      "theorem": "M_triple_defect"
+    },
+    {
+      "discharge_gate_ref": "Prob4b/Discharge.lean:31",
+      "discharge_gate_status": "MATCH",
+      "frozen_proof_status": "MATCH",
+      "frozen_ref": "Prob4b/Theorems.lean:43",
+      "frozen_signature": {
+        "canonical_signature": ": ∀ x : B, annihM x = (annih x) • (⊤ : Submodule B M)",
+        "signature_sha256": "e8633e199080f4776b102dc2de87b3619f57de075bd01d748e344d2cb587ea8d",
+        "signature_span": [
+          43,
+          44
+        ],
+        "signature_text": "theorem M_annihilator :\n    ∀ x : B, annihM x = (annih x) • (⊤ : Submodule B M)"
+      },
+      "frozen_solution_status": "MATCH",
+      "proof_ref": "Prob4b/Proofs/Module/Basic.lean:1494",
+      "proof_signature": {
+        "canonical_signature": ": ∀ x : B, annihM x = (annih x) • (⊤ : Submodule B M)",
+        "signature_sha256": "24308081b36707815b3a50c6f474600528d4e4a6926a99aeb06bd58be26bf55e",
+        "signature_span": [
+          1494,
+          1495
+        ],
+        "signature_text": "theorem M_annihilator_proof :\n    ∀ x : B, annihM x = (annih x) • (⊤ : Submodule B M)"
+      },
+      "solution_ref": "Prob4b/Solution.lean:40",
+      "solution_signature": {
+        "canonical_signature": ": ∀ x : B, annihM x = (annih x) • (⊤ : Submodule B M)",
+        "signature_sha256": "e8633e199080f4776b102dc2de87b3619f57de075bd01d748e344d2cb587ea8d",
+        "signature_span": [
+          40,
+          41
+        ],
+        "signature_text": "theorem M_annihilator :\n    ∀ x : B, annihM x = (annih x) • (⊤ : Submodule B M)"
+      },
+      "status": "MATCH",
+      "theorem": "M_annihilator"
+    },
+    {
+      "discharge_gate_ref": "Prob4b/Discharge.lean:32",
+      "discharge_gate_status": "MATCH",
+      "frozen_proof_status": "MATCH",
+      "frozen_ref": "Prob4b/Theorems.lean:48",
+      "frozen_signature": {
+        "canonical_signature": ": ∀ x y : B, smulSub x ⊓ smulSub y = (Ideal.span {x} ⊓ Ideal.span {y}) • (⊤ : Submodule B M)",
+        "signature_sha256": "10a35935852facad28574ec4e04a91624e2de208e4953d896df7f6b37e2c983c",
+        "signature_span": [
+          48,
+          50
+        ],
+        "signature_text": "theorem M_pairwise_intersection :\n    ∀ x y : B, smulSub x ⊓ smulSub y\n      = (Ideal.span {x} ⊓ Ideal.span {y}) • (⊤ : Submodule B M)"
+      },
+      "frozen_solution_status": "MATCH",
+      "proof_ref": "Prob4b/Proofs/Module/Basic.lean:1533",
+      "proof_signature": {
+        "canonical_signature": ": ∀ x y : B, smulSub x ⊓ smulSub y = (Ideal.span {x} ⊓ Ideal.span {y}) • (⊤ : Submodule B M)",
+        "signature_sha256": "0c60ca3648376e00126a6bd4a4c53cfecbccb4798ccd51c7757e7c9bf6c86584",
+        "signature_span": [
+          1533,
+          1535
+        ],
+        "signature_text": "theorem M_pairwise_intersection_proof :\n    ∀ x y : B, smulSub x ⊓ smulSub y\n      = (Ideal.span {x} ⊓ Ideal.span {y}) • (⊤ : Submodule B M)"
+      },
+      "solution_ref": "Prob4b/Solution.lean:46",
+      "solution_signature": {
+        "canonical_signature": ": ∀ x y : B, smulSub x ⊓ smulSub y = (Ideal.span {x} ⊓ Ideal.span {y}) • (⊤ : Submodule B M)",
+        "signature_sha256": "10a35935852facad28574ec4e04a91624e2de208e4953d896df7f6b37e2c983c",
+        "signature_span": [
+          46,
+          48
+        ],
+        "signature_text": "theorem M_pairwise_intersection :\n    ∀ x y : B, smulSub x ⊓ smulSub y\n      = (Ideal.span {x} ⊓ Ideal.span {y}) • (⊤ : Submodule B M)"
+      },
+      "status": "MATCH",
+      "theorem": "M_pairwise_intersection"
+    },
+    {
+      "discharge_gate_ref": "Prob4b/Discharge.lean:35",
+      "discharge_gate_status": "MATCH",
+      "frozen_proof_status": "MATCH",
+      "frozen_ref": "Prob4b/Theorems.lean:55",
+      "frozen_signature": {
+        "canonical_signature": ": Ideal.span {aC} ⊓ Ideal.span {bC} ⊓ Ideal.span {aC + bC} ≠ (Ideal.span {a} ⊓ Ideal.span {b} ⊓ Ideal.span {a + b}).map inlB",
+        "signature_sha256": "ee004f3dacfec0f81cfcdbd2457be5ef93cca2b8df071fa21aa922599b94c998",
+        "signature_span": [
+          55,
+          57
+        ],
+        "signature_text": "theorem triple_defect_survives :\n    Ideal.span {aC} ⊓ Ideal.span {bC} ⊓ Ideal.span {aC + bC}\n      ≠ (Ideal.span {a} ⊓ Ideal.span {b} ⊓ Ideal.span {a + b}).map inlB"
+      },
+      "frozen_solution_status": "MATCH",
+      "proof_ref": "Prob4b/Proofs/Idealization/Basic.lean:88",
+      "proof_signature": {
+        "canonical_signature": ": Ideal.span {aC} ⊓ Ideal.span {bC} ⊓ Ideal.span {aC + bC} ≠ (Ideal.span {a} ⊓ Ideal.span {b} ⊓ Ideal.span {a + b}).map inlB",
+        "signature_sha256": "c3587794fff878320f715326de58fd544680b43e1f45ec87d9451a890058f5eb",
+        "signature_span": [
+          88,
+          90
+        ],
+        "signature_text": "theorem triple_defect_survives_proof :\n    Ideal.span {aC} ⊓ Ideal.span {bC} ⊓ Ideal.span {aC + bC}\n      ≠ (Ideal.span {a} ⊓ Ideal.span {b} ⊓ Ideal.span {a + b}).map inlB"
+      },
+      "solution_ref": "Prob4b/Solution.lean:52",
+      "solution_signature": {
+        "canonical_signature": ": Ideal.span {aC} ⊓ Ideal.span {bC} ⊓ Ideal.span {aC + bC} ≠ (Ideal.span {a} ⊓ Ideal.span {b} ⊓ Ideal.span {a + b}).map inlB",
+        "signature_sha256": "ee004f3dacfec0f81cfcdbd2457be5ef93cca2b8df071fa21aa922599b94c998",
+        "signature_span": [
+          52,
+          54
+        ],
+        "signature_text": "theorem triple_defect_survives :\n    Ideal.span {aC} ⊓ Ideal.span {bC} ⊓ Ideal.span {aC + bC}\n      ≠ (Ideal.span {a} ⊓ Ideal.span {b} ⊓ Ideal.span {a + b}).map inlB"
+      },
+      "status": "MATCH",
+      "theorem": "triple_defect_survives"
+    },
+    {
+      "discharge_gate_ref": "Prob4b/Discharge.lean:38",
+      "discharge_gate_status": "MATCH",
+      "frozen_proof_status": "MATCH",
+      "frozen_ref": "Prob4b/Theorems.lean:61",
+      "frozen_signature": {
+        "canonical_signature": ": FiniteConductor R",
+        "signature_sha256": "fffb468cf116ea55b205c0905a9cdd39585c6082d489517a9b817b12604b20ab",
+        "signature_span": [
+          61,
+          61
+        ],
+        "signature_text": "theorem R_finite_conductor : FiniteConductor R"
+      },
+      "frozen_solution_status": "MATCH",
+      "proof_ref": "Prob4b/Proofs/Amplify/FiniteConductor.lean:676",
+      "proof_signature": {
+        "canonical_signature": ": FiniteConductor R",
+        "signature_sha256": "7a407f228706171d7f3c7ccddeca744eb402fe75067d17c4c45ab1b95ef886e8",
+        "signature_span": [
+          676,
+          676
+        ],
+        "signature_text": "theorem R_finite_conductor_proof : FiniteConductor R"
+      },
+      "solution_ref": "Prob4b/Solution.lean:58",
+      "solution_signature": {
+        "canonical_signature": ": FiniteConductor R",
+        "signature_sha256": "fffb468cf116ea55b205c0905a9cdd39585c6082d489517a9b817b12604b20ab",
+        "signature_span": [
+          58,
+          58
+        ],
+        "signature_text": "theorem R_finite_conductor : FiniteConductor R"
+      },
+      "status": "MATCH",
+      "theorem": "R_finite_conductor"
+    },
+    {
+      "discharge_gate_ref": "Prob4b/Discharge.lean:39",
+      "discharge_gate_status": "MATCH",
+      "frozen_proof_status": "MATCH",
+      "frozen_ref": "Prob4b/Theorems.lean:66",
+      "frozen_signature": {
+        "canonical_signature": ": ¬ QuasiCoherent R",
+        "signature_sha256": "376eb2f1475a4c8e5e4211f7c7deaf72002fa811acb534a1c600af3d44afa4a9",
+        "signature_span": [
+          66,
+          66
+        ],
+        "signature_text": "theorem R_not_quasi_coherent : ¬ QuasiCoherent R"
+      },
+      "frozen_solution_status": "MATCH",
+      "proof_ref": "Prob4b/Proofs/Amplify/NotQuasiCoherent.lean:138",
+      "proof_signature": {
+        "canonical_signature": ": ¬ QuasiCoherent R",
+        "signature_sha256": "6cebe736f1767b20fb3c6cc09171f69bf02997612313ce7119401130e1179759",
+        "signature_span": [
+          138,
+          138
+        ],
+        "signature_text": "theorem R_not_quasi_coherent_proof : ¬ QuasiCoherent R"
+      },
+      "solution_ref": "Prob4b/Solution.lean:61",
+      "solution_signature": {
+        "canonical_signature": ": ¬ QuasiCoherent R",
+        "signature_sha256": "376eb2f1475a4c8e5e4211f7c7deaf72002fa811acb534a1c600af3d44afa4a9",
+        "signature_span": [
+          61,
+          61
+        ],
+        "signature_text": "theorem R_not_quasi_coherent : ¬ QuasiCoherent R"
+      },
+      "status": "MATCH",
+      "theorem": "R_not_quasi_coherent"
+    },
+    {
+      "discharge_gate_ref": "Prob4b/Discharge.lean:42",
+      "discharge_gate_status": "MATCH",
+      "frozen_proof_status": "MATCH",
+      "frozen_ref": "Prob4b/Theorems.lean:70",
+      "frozen_signature": {
+        "canonical_signature": ": FiniteConductor R ∧ ¬ QuasiCoherent R",
+        "signature_sha256": "ff06ca959e1a062d6a0d2c1f9a8a11db5941e83bf58aca72e44ff6469ea34639",
+        "signature_span": [
+          70,
+          70
+        ],
+        "signature_text": "theorem prob4b_counterexample : FiniteConductor R ∧ ¬ QuasiCoherent R"
+      },
+      "frozen_solution_status": "MATCH",
+      "proof_ref": "Prob4b/Proofs/Amplify/Basic.lean:28",
+      "proof_signature": {
+        "canonical_signature": ": FiniteConductor R ∧ ¬ QuasiCoherent R",
+        "signature_sha256": "ff2595c312f276cd6dc4f65891573d739ed468255971ef99031a4444d6b4e251",
+        "signature_span": [
+          28,
+          28
+        ],
+        "signature_text": "theorem prob4b_counterexample_proof : FiniteConductor R ∧ ¬ QuasiCoherent R"
+      },
+      "solution_ref": "Prob4b/Solution.lean:64",
+      "solution_signature": {
+        "canonical_signature": ": FiniteConductor R ∧ ¬ QuasiCoherent R",
+        "signature_sha256": "ff06ca959e1a062d6a0d2c1f9a8a11db5941e83bf58aca72e44ff6469ea34639",
+        "signature_span": [
+          64,
+          64
+        ],
+        "signature_text": "theorem prob4b_counterexample : FiniteConductor R ∧ ¬ QuasiCoherent R"
+      },
+      "status": "MATCH",
+      "theorem": "prob4b_counterexample"
+    },
+    {
+      "discharge_gate_ref": "Prob4b/Discharge.lean:43",
+      "discharge_gate_status": "MATCH",
+      "frozen_proof_status": "MATCH",
+      "frozen_ref": "Prob4b/Theorems.lean:75",
+      "frozen_signature": {
+        "canonical_signature": ": ∃ (S : Type) (_ : CommRing S), FiniteConductor S ∧ ¬ QuasiCoherent S",
+        "signature_sha256": "fc506c229ffc1e058c1acbf365205b5bfdc986d93aae28552b8fbddd78dba276",
+        "signature_span": [
+          75,
+          76
+        ],
+        "signature_text": "theorem problem4b_false :\n    ∃ (S : Type) (_ : CommRing S), FiniteConductor S ∧ ¬ QuasiCoherent S"
+      },
+      "frozen_solution_status": "MATCH",
+      "proof_ref": "Prob4b/Proofs/Amplify/Basic.lean:35",
+      "proof_signature": {
+        "canonical_signature": ": ∃ (S : Type) (_ : CommRing S), FiniteConductor S ∧ ¬ QuasiCoherent S",
+        "signature_sha256": "e2c09108251f6e8f3c136fdecd2b378cc3ff6715b10d567a41f3fa053643b684",
+        "signature_span": [
+          35,
+          36
+        ],
+        "signature_text": "theorem problem4b_false_proof :\n    ∃ (S : Type) (_ : CommRing S), FiniteConductor S ∧ ¬ QuasiCoherent S"
+      },
+      "solution_ref": "Prob4b/Solution.lean:69",
+      "solution_signature": {
+        "canonical_signature": ": ∃ (S : Type) (_ : CommRing S), FiniteConductor S ∧ ¬ QuasiCoherent S",
+        "signature_sha256": "fc506c229ffc1e058c1acbf365205b5bfdc986d93aae28552b8fbddd78dba276",
+        "signature_span": [
+          69,
+          70
+        ],
+        "signature_text": "theorem problem4b_false :\n    ∃ (S : Type) (_ : CommRing S), FiniteConductor S ∧ ¬ QuasiCoherent S"
+      },
+      "status": "MATCH",
+      "theorem": "problem4b_false"
+    },
+    {
+      "discharge_gate_ref": "Prob4b/Discharge.lean:46",
+      "discharge_gate_status": "MATCH",
+      "frozen_proof_status": "MATCH",
+      "frozen_ref": "Prob4b/Theorems.lean:84",
+      "frozen_signature": {
+        "canonical_signature": "{S : Type*} [CommRing S] (h : QuasiCoherent S) : FiniteConductor S",
+        "signature_sha256": "f2e967db2a9939a05f40e2af2b1a31b99cc9e1be3af1c2e768deff2951e7d7c2",
+        "signature_span": [
+          84,
+          85
+        ],
+        "signature_text": "theorem quasiCoherent_imp_finiteConductor {S : Type*} [CommRing S]\n    (h : QuasiCoherent S) : FiniteConductor S"
+      },
+      "frozen_solution_status": "MATCH",
+      "proof_ref": "Prob4b/Proofs/EasyDirection/Basic.lean:30",
+      "proof_signature": {
+        "canonical_signature": "{S : Type*} [CommRing S] (h : QuasiCoherent S) : FiniteConductor S",
+        "signature_sha256": "05bfbefbbcca05c1e7e4d874fc6e145740c9bfc5de45867e621c611d46c2c90c",
+        "signature_span": [
+          30,
+          31
+        ],
+        "signature_text": "theorem quasiCoherent_imp_finiteConductor_proof {S : Type*} [CommRing S]\n    (h : QuasiCoherent S) : FiniteConductor S"
+      },
+      "solution_ref": "Prob4b/Solution.lean:74",
+      "solution_signature": {
+        "canonical_signature": "{S : Type*} [CommRing S] (h : QuasiCoherent S) : FiniteConductor S",
+        "signature_sha256": "f2e967db2a9939a05f40e2af2b1a31b99cc9e1be3af1c2e768deff2951e7d7c2",
+        "signature_span": [
+          74,
+          75
+        ],
+        "signature_text": "theorem quasiCoherent_imp_finiteConductor {S : Type*} [CommRing S]\n    (h : QuasiCoherent S) : FiniteConductor S"
+      },
+      "status": "MATCH",
+      "theorem": "quasiCoherent_imp_finiteConductor"
+    }
+  ],
+  "statement_equivalence_fixture": {
+    "path": "fixtures/theorem-statement-equivalence-pass-0037.json",
+    "schema": "TheoremStatementEquivalenceFixture/v1",
+    "seal": "4dc44e06e549b964f1030778c53c9a814ccf5fdd779eea87495489e9eb779b4c",
+    "sha256": "87070b9d57571fc04f6d2f491705c32c0e736ba6c5e9158087bfb80990087802"
+  },
+  "status": "STATEMENT_EQUIVALENCE_MATCH",
+  "verifier_measurements": {
+    "all_discharge_gates_match": true,
+    "all_frozen_proof_match": true,
+    "all_frozen_solution_match": true,
+    "all_statement_checks_match": true,
+    "statement_check_count": 10,
+    "theorem_count": 10
+  }
+}

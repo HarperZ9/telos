@@ -1,0 +1,75 @@
+{
+  "action_receipt_proposal": {
+    "action_id": "act_dogfood_0044_lean_lake_executable_preflight",
+    "authority_class": "read_only_executable_preflight",
+    "event_id": "evt_dogfood_0044_lean_lake_executable_preflight",
+    "event_type": "lean_lake_executable_preflight_checked",
+    "external_call_performed": false,
+    "external_write_performed": false,
+    "normal_path_modified": false,
+    "result_state": "blocked",
+    "side_effect_class": "local_executable_probe_and_repo_artifact_write",
+    "stop_reason": "lake_lean_elan_missing_from_path",
+    "verification_verdict": "UNVERIFIABLE"
+  },
+  "compiled_replay_status": "NOT_RUN",
+  "current_promoted_natural_laws": [],
+  "dependency_cache_binding": {
+    "path": "schemas/lake-dependency-cache-binding-pass-0043.json",
+    "seal": "8e88cd761c7ae0996c6d20bfeb78fb5cf9bf6083a3de1f09601a62463a5d665b",
+    "sha256": "393f71b91fb69d800aff7f81751517eb62af2ee0d098670ae97d4f16a869de22",
+    "source_status": "LAKE_DEPENDENCY_CACHE_BINDING_MATCH"
+  },
+  "executable_preflight_fixture": {
+    "path": "fixtures/lean-lake-executable-preflight-pass-0044.json",
+    "schema": "LeanLakeExecutablePreflightFixture/v1",
+    "seal": "7eb73ddc3f379c7c51a31fe570be2430171a8ad3242ad0e7bc582998f7959746",
+    "sha256": "51f60da2e6581cf87b26111818060e37c59af0dec859f43df8b67bbe9e1b8898"
+  },
+  "generated_on": "2026-07-01",
+  "negative_fixture_count": 6,
+  "negative_fixtures": [
+    {
+      "expected_validator_status": "REJECT",
+      "id": "negative-toolchain-mismatch"
+    },
+    {
+      "expected_validator_status": "REJECT",
+      "id": "negative-pass0043-binding-missing"
+    },
+    {
+      "expected_validator_status": "REJECT",
+      "id": "negative-compiled-replay-overclaimed"
+    },
+    {
+      "expected_validator_status": "REJECT",
+      "id": "negative-executable-path-forged"
+    },
+    {
+      "expected_validator_status": "REJECT",
+      "id": "negative-project-name-mismatch-hidden"
+    },
+    {
+      "expected_validator_status": "REJECT",
+      "id": "negative-natural-law-promoted"
+    }
+  ],
+  "non_promotion_statement": "Pass 0044 is an executable preflight only. It does not run Lean, run lake build, compile dependencies, prove semantic equivalence by elaboration, validate every public pipeline-math claim, or promote any natural law.",
+  "pass": "0044",
+  "schema": "LeanLakeExecutablePreflightSet/v1",
+  "seal": "7139ea2e8ed154dcb5069fd5d5433fec85103b88d9bf309450dfd1193a6de607",
+  "status": "LEAN_LAKE_EXECUTABLE_PREFLIGHT_BLOCKED",
+  "verifier_measurements": {
+    "common_elan_candidates_present": 0,
+    "compiled_replay_admissible": false,
+    "compiled_replay_status": "NOT_RUN",
+    "elan_on_path": false,
+    "expected_toolchain": "leanprover/lean4:v4.31.0",
+    "lake_manifest_package_count": 9,
+    "lake_on_path": false,
+    "lakefile_name": "Prob4b",
+    "lean_on_path": false,
+    "manifest_name": "Prob27b",
+    "project_name_match": false
+  }
+}

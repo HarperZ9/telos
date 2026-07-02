@@ -1,0 +1,410 @@
+Home
+Modeling
+Modeling Languages
+ModelingToolkitCatalystNBodySimulatorParameterizedFunctions
+Model Libraries and Importers
+ModelingToolkitStandardLibraryModelingToolkitNeuralNetsDiffEqCallbacksFiniteStateProjectionCellMLToolkitSBMLToolkitBaseModelicaReactionNetworkImporters
+Symbolic Tools
+ModelOrderReductionSymbolicsSymbolicUtilsSymbolicIntegrationSymbolicSMTSymbolicLimitsSymbolicAnalysis
+Array Libraries
+RecursiveArrayToolsComponentArraysLabelledArraysMultiScaleArrays
+Solvers
+Equation Solvers
+LinearSolveNonlinearSolveDifferentialEquationsIntegralsDifferenceEquationsOptimizationJumpProcessesLineSearch
+Inverse Problems / Estimation
+CurveFitSciMLSensitivityDiffEqParamEstimDiffEqBayes
+PDE Solvers
+MethodOfLinesNeuralPDENeuralOperatorsFEniCSHighDimPDEDiffEqOperatorsFiniteVolumeMethodFiniteVolumeMethod1D
+Advanced Solver APIs
+OrdinaryDiffEqBoundaryValueDiffEqDiffEqGPU
+Analysis
+Parameter Analysis
+EasyModelAnalysisGlobalSensitivityStructuralIdentifiability
+Third-Party Parameter Analysis
+BifurcationKit
+Uncertainty Quantification
+PolyChaosSciMLExpectations
+Machine Learning
+Function Approximation
+SurrogatesReservoirComputing
+Implicit Layer Deep Learning
+DiffEqFluxDeepEquilibriumNetworksNeuralLyapunov
+Symbolic Learning
+DataDrivenDiffEqSymbolicNumericIntegration
+Third-Party Differentiation Tooling
+SparseDiffToolsFiniteDiff
+Developer Tools
+Numerical Utilities
+ExponentialUtilitiesDiffEqNoiseProcessPreallocationToolsEllipsisNotationDataInterpolationsDataInterpolationsNDPoissonRandomQuasiMonteCarloRuntimeGeneratedFunctionsMuladdMacroFindFirstFunctionsSparseDiffToolsBipartiteGraphs
+High-Level Interfaces
+SciMLBaseSciMLStructuresSciMLLoggingADTypesSymbolicIndexingInterfaceTermInterfaceSciMLOperatorsSurrogatesBaseCommonSolve
+Third-Party Interfaces
+ArrayInterfaceStaticArrayInterface
+Developer Documentation
+SciMLStyleColPracDiffEq Developer Documentation
+Extra Resources
+SciMLWorkshopExtended SciML TutorialsThe SciML BenchmarksModelingToolkitCourse
+Commercial Support
+Commercial Support
+JuliaHub offers commercial support for ModelingToolkit and the SciML ecosystem. Contact us today to discuss your needs!
+Products built with SciML
+Dyad
+Pumas
+Cedar EDA
+Neuroblox
+Planting Space
+/
+DifferentialEquations.jl
+Search docs (Ctrl + /)
+DifferentialEquations.jl: Efficient Differential Equation Solving in Julia
+Getting Started with Differential Equations in Julia
+Tutorials
+Code Optimization for Differential Equations
+Solving Large Stiff Equations
+Stochastic Differential Equations
+Random Ordinary Differential Equations
+Delay Differential Equations
+Differential Algebraic Equations
+Jump Diffusion Equations
+Boundary Value Problems
+Examples
+Beginner
+Classical Physics Models
+Conditional Dosing in Pharmacometrics
+The Kepler Problem
+Simulating the Outer Solar System
+Finding Maxima and Minima of ODEs Solutions
+Advanced
+Spiking Neural Systems
+An Implicit/Explicit CUDA-Accelerated Solver for the 2D Beeler-Reuter Model
+Solving the heat equation with diffusion-implicit time-stepping
+Basics
+Overview of DifferentialEquations.jl
+Common Solver Options (Solve Keyword Arguments)
+Solution Handling
+Plot Functions
+Integrator Interface
+Problem Interface
+Frequently Asked Questions
+Solver Compatibility Chart
+Problem Types
+Discrete Problems
+ODE Problems
+Non-autonomous Linear ODE / Lie Group Problems
+Dynamical, Hamiltonian and 2nd Order ODE Problems
+Split ODE Problems
+Steady State Problems
+BVP Problems
+SDE Problems
+SDAE Problems
+RODE Problems
+DDE Problems
+SDDE Problems
+DAE Problems
+Solver Algorithms
+Discrete Solvers
+ODE Solvers
+Non-autonomous Linear ODE / Lie Group ODE Solvers
+Dynamical, Hamiltonian, and 2nd Order ODE Solvers
+Split ODE Solvers
+Steady State Solvers
+BVP Solvers
+SDE Solvers
+SDAE Solvers
+RODE Solvers
+DDE Solvers
+SDDE Solvers
+Mass Matrix and Fully Implicit DAE Solvers
+Solver Benchmarks
+Additional Features
+Jacobians, Gradients, etc.
+DiffEq-Specific Array Types
+Matrix-Free Linear Operators with SciMLOperators.jl
+Noise Processes
+Specifying (Non)Linear Solvers and Preconditioners
+DAE Initialization
+Event Handling and Callback Functions
+Callback Library
+Parallel Ensemble Simulations
+I/O: Saving and Loading Solution Data
+Reduced Compile Time, Optimizing Runtime, and Low Dependency Usage
+Progress Bar Integration
+Verbosity Specification with SciMLLogging.jl
+Solver Package APIs
+Native Julia Solvers
+DelayDiffEq.jl
+SteadyStateDiffEq.jl
+BoundaryValueDiffEq.jl
+DiffEqCallbacks.jl
+SimpleDiffEq.jl
+DASSL.jl
+External Wrappers
+Sundials.jl
+DASKR.jl
+LSODA.jl
+ODEInterfaceDiffEq.jl
+OrdinaryDiffEq.jl API
+OrdinaryDiffEq.jl: ODE solvers and utilities
+Usage
+Explicit Solvers
+OrdinaryDiffEqTsit5
+OrdinaryDiffEqVerner
+OrdinaryDiffEqAdamsBashforthMoulton
+OrdinaryDiffEqLowStorageRK
+OrdinaryDiffEqSSPRK
+OrdinaryDiffEqLowOrderRK
+OrdinaryDiffEqHighOrderRK
+OrdinaryDiffEqFeagin
+OrdinaryDiffEqPRK
+OrdinaryDiffEqQPRK
+OrdinaryDiffEqTaylorSeries
+OrdinaryDiffEqExtrapolation
+Semi-Implicit Solvers
+OrdinaryDiffEqRosenbrock
+OrdinaryDiffEqAMF
+OrdinaryDiffEqStabilizedRK
+OrdinaryDiffEqExponentialRK
+Implicit Solvers
+OrdinaryDiffEqSDIRK
+OrdinaryDiffEqFIRK
+OrdinaryDiffEqBDF
+OrdinaryDiffEqExtrapolation
+OrdinaryDiffEqPDIRK
+OrdinaryDiffEqNordsieck
+IMEX Solvers
+OrdinaryDiffEqIMEXMultistep
+OrdinaryDiffEqStabilizedIRK
+OrdinaryDiffEqBDF
+Dynamical ODE Explicit Solvers
+OrdinaryDiffEqRKN
+OrdinaryDiffEqSymplecticRK
+Key Properties
+When to Use Symplectic Methods
+Mathematical Background
+Solver Selection Guide
+Method Selection Guidelines
+Installation
+Example usage
+Full list of solvers
+Semilinear ODE Solvers
+OrdinaryDiffEqExponentialRK
+OrdinaryDiffEqLinear
+Mass Matrix DAE Solvers
+OrdinaryDiffEqRosenbrock
+OrdinaryDiffEqBDF
+Fully Implicit DAE Solvers
+OrdinaryDiffEqBDF
+Misc Solvers
+Miscellaneous Solvers
+APIs
+Controller API
+StochasticDiffEq.jl API
+StochasticDiffEq.jl: SDE solvers and utilities
+Usage
+Nonstiff Solvers
+Basic Nonstiff Methods
+SRA/SRI Methods - Stochastic Runge-Kutta
+High Weak Order Methods
+Commutative Noise Methods
+Stiff Solvers
+Implicit Methods for Stiff SDEs
+Split-Step Methods for Fully Stiff Problems
+Stabilized Methods (SROCK Family)
+Jump Diffusion
+Tau-Leaping Methods for Jump-Diffusion
+Misc Solvers
+Miscellaneous Methods
+Extra Details
+Timestepping Method Descriptions
+Change Log
+DifferentialEquations.jl v8 / OrdinaryDiffEq v7 Migration Guide
+Version
+OrdinaryDiffEq.jl API
+Dynamical ODE Explicit Solvers
+OrdinaryDiffEqSymplecticRK
+OrdinaryDiffEqSymplecticRK
+OrdinaryDiffEqSymplecticRK
+Symplectic integrators are specialized methods for solving Hamiltonian systems and second-order differential equations that preserve important geometric properties of the phase space. These methods are essential for long-time integration of conservative mechanical systems.
+Key Properties
+Symplectic integrators provide:
+Exact conservation of symplectic structure in phase space
+Bounded energy error over long time periods
+Excellent long-time stability without secular drift
+Preservation of periodic orbits and other geometric structures
+Linear energy drift instead of quadratic (much better than standard methods)
+When to Use Symplectic Methods
+Symplectic integrators are essential for:
+Hamiltonian systems and conservative mechanical problems
+Molecular dynamics and N-body simulations
+Celestial mechanics and orbital computations
+Plasma physics and charged particle dynamics
+Long-time integration where energy conservation is critical
+Oscillatory problems requiring preservation of periodic structure
+Classical mechanics problems with known analytical properties
+Mathematical Background
+For a Hamiltonian system with energy H(p,q), symplectic integrators preserve the symplectic structure dp ∧ dq. While standard integrators have energy error growing quadratically over time, symplectic methods maintain bounded energy with only linear drift, making them superior for long-time integration.
+Solver Selection Guide
+First-order methods
+SymplecticEuler: First-order, simplest symplectic method. Only recommended when the dynamics function f is not differentiable.
+Second-order methods
+McAte2: Optimized second-order McLachlan-Atela method, recommended for most applications
+VelocityVerlet: Second-order, common choice for molecular dynamics but less efficient in terms of accuracy than McAte2
+VerletLeapfrog: Second-order, kick-drift-kick formulation
+LeapfrogDriftKickDrift: Alternative second-order leapfrog
+PseudoVerletLeapfrog: Modified Verlet scheme
+Third-order methods
+Ruth3: Third-order method
+McAte3: Optimized third-order McLachlan-Atela method
+Fourth-order methods
+CandyRoz4: Fourth-order method
+McAte4: Fourth-order McLachlan-Atela (requires quadratic kinetic energy)
+CalvoSanz4: Optimized fourth-order method
+McAte42: Alternative fourth-order method (BROKEN)
+Higher-order methods
+McAte5: Fifth-order McLachlan-Atela method
+Yoshida6: Sixth-order method
+KahanLi6: Optimized sixth-order method
+McAte8: Eighth-order McLachlan-Atela method
+KahanLi8: Optimized eighth-order method
+SofSpa10: Tenth-order method for highest precision
+Method Selection Guidelines
+For most applications: McAte2 (second-order, optimal efficiency)
+For molecular dynamics (common choice): VelocityVerlet (less efficient than McAte2 but widely used)
+For non-differentiable dynamics: SymplecticEuler (first-order, only when necessary)
+For computational efficiency: McAte2 or McAte3
+Important Note on Chaotic Systems
+Most N-body problems (molecular dynamics, astrophysics) are chaotic systems where solutions diverge onto shadow trajectories. In such cases, higher-order methods provide no practical advantage because the true error remains O(1) for sufficiently long integrations - exactly the scenarios where symplectic methods are most needed. The geometric properties preserved by symplectic integrators are more important than high-order accuracy for chaotic systems.
+For more information on chaos and accuracy in numerical integration, see: How Chaotic is Chaos? How Some AI for Science (SciML) Papers are Overstating Accuracy Claims
+Installation
+To be able to access the solvers in OrdinaryDiffEqSymplecticRK, you must first install them use the Julia package manager:
+using Pkg
+Pkg.add("OrdinaryDiffEqSymplecticRK")
+This will only install the solvers listed at the bottom of this page. If you want to explore other solvers for your problem, you will need to install some of the other libraries listed in the navigation bar on the left.
+Example usage
+using OrdinaryDiffEqSymplecticRK
+function HH_acceleration!(dv, v, u, p, t)
+x, y = u
+dx, dy = dv
+dv[1] = -x - 2 * x * y
+dv[2] = y^2 - y - x^2
+end
+initial_positions = [0.0, 0.1]
+initial_velocities = [0.5, 0.0]
+tspan = (0.0, 1.0)
+prob = SecondOrderODEProblem(HH_acceleration!, initial_velocities, initial_positions, tspan)
+sol = solve(prob, KahanLi8(), dt = 1 / 10)
+Full list of solvers
+OrdinaryDiffEqSymplecticRK.SymplecticEuler — Type
+SymplecticEuler()
+Symplectic Runge-Kutta Methods First order explicit symplectic integrator.
+Keyword Arguments
+References
+https://en.wikipedia.org/wiki/Semi-implicitEulermethod
+OrdinaryDiffEqSymplecticRK.VelocityVerlet — Type
+VelocityVerlet()
+Symplectic Runge-Kutta Methods 2nd order explicit symplectic integrator. Requires f_2(t,u) = v, i.e. a second order ODE.
+Keyword Arguments
+References
+@article{verlet1967computer, title={Computer" experiments" on classical fluids. I. Thermodynamical properties of Lennard-Jones molecules}, author={Verlet, Loup}, journal={Physical review}, volume={159}, number={1}, pages={98}, year={1967}, publisher={APS} }
+OrdinaryDiffEqSymplecticRK.VerletLeapfrog — Type
+VerletLeapfrog()
+Symplectic Runge-Kutta Methods 2nd order explicit symplectic integrator. Kick-drift-kick form. Requires only one evaluation of f1 per step.
+Keyword Arguments
+References
+@article{monaghan2005, title = {Smoothed particle hydrodynamics}, author = {Monaghan, Joseph J.}, year = {2005}, journal = {Reports on Progress in Physics}, volume = {68}, number = {8}, pages = {1703–1759}, doi = {10.1088/0034-4885/68/8/R01}, }
+OrdinaryDiffEqSymplecticRK.LeapfrogDriftKickDrift — Type
+LeapfrogDriftKickDrift()
+Symplectic Runge-Kutta Methods 2nd order explicit symplectic integrator. Drift-kick-drift form of VerletLeapfrog designed to work when f1 depends on v. Requires two evaluation of f1 per step.
+Keyword Arguments
+References
+@article{monaghan2005, title = {Smoothed particle hydrodynamics}, author = {Monaghan, Joseph J.}, year = {2005}, journal = {Reports on Progress in Physics}, volume = {68}, number = {8}, pages = {1703–1759}, doi = {10.1088/0034-4885/68/8/R01}, }
+OrdinaryDiffEqSymplecticRK.PseudoVerletLeapfrog — Type
+PseudoVerletLeapfrog()
+Symplectic Runge-Kutta Methods 2nd order explicit symplectic integrator.
+Keyword Arguments
+References
+@article{verlet1967computer, title={Computer" experiments" on classical fluids. I. Thermodynamical properties of Lennard-Jones molecules}, author={Verlet, Loup}, journal={Physical review}, volume={159}, number={1}, pages={98}, year={1967}, publisher={APS} }
+OrdinaryDiffEqSymplecticRK.McAte2 — Type
+McAte2()
+Symplectic Runge-Kutta Methods Optimized efficiency 2nd order explicit symplectic integrator.
+Keyword Arguments
+References
+@article{mclachlan1992accuracy, title={The accuracy of symplectic integrators}, author={McLachlan, Robert I and Atela, Pau}, journal={Nonlinearity}, volume={5}, number={2}, pages={541}, year={1992}, publisher={IOP Publishing} }
+OrdinaryDiffEqSymplecticRK.Ruth3 — Type
+Ruth3()
+Symplectic Runge-Kutta Methods 3rd order explicit symplectic integrator.
+Keyword Arguments
+References
+@article{ruth1983canonical, title={A canonical integration technique}, author={Ruth, Ronald D}, journal={IEEE Trans. Nucl. Sci.}, volume={30}, number={CERN-LEP-TH-83-14}, pages={2669–2671}, year={1983}}
+OrdinaryDiffEqSymplecticRK.McAte3 — Type
+McAte3()
+Symplectic Runge-Kutta Methods Optimized efficiency 3rd order explicit symplectic integrator.
+Keyword Arguments
+References
+@article{mclachlan1992accuracy, title={The accuracy of symplectic integrators}, author={McLachlan, Robert I and Atela, Pau}, journal={Nonlinearity}, volume={5}, number={2}, pages={541}, year={1992}, publisher={IOP Publishing} }
+OrdinaryDiffEqSymplecticRK.CandyRoz4 — Type
+CandyRoz4()
+Symplectic Runge-Kutta Methods 4th order explicit symplectic integrator.
+Keyword Arguments
+References
+@article{candy1991symplectic, itle={A symplectic integration algorithm for separable Hamiltonian functions}, uthor={Candy, J and Rozmus, W}, ournal={Journal of Computational Physics}, olume={92}, umber={1}, ages={230–256}, ear={1991}, publisher={Elsevier}}
+OrdinaryDiffEqSymplecticRK.McAte4 — Type
+McAte4()
+Symplectic Runge-Kutta Methods 4th order explicit symplectic integrator. Requires quadratic kinetic energy.
+Keyword Arguments
+References
+@article{mclachlan1992accuracy, title={The accuracy of symplectic integrators}, author={McLachlan, Robert I and Atela, Pau}, journal={Nonlinearity}, volume={5}, number={2}, pages={541}, year={1992}, publisher={IOP Publishing} }
+OrdinaryDiffEqSymplecticRK.CalvoSanz4 — Type
+CalvoSanz4()
+Symplectic Runge-Kutta Methods Optimized efficiency 4th order explicit symplectic integrator.
+Keyword Arguments
+References
+@article{sanz1993symplectic, title={Symplectic numerical methods for Hamiltonian problems}, author={Sanz-Serna, Jes{'u}s Maria and Calvo, Mari-Paz}, journal={International Journal of Modern Physics C}, volume={4}, number={02}, pages={385–392}, year={1993}, publisher={World Scientific} }
+OrdinaryDiffEqSymplecticRK.McAte42 — Type
+McAte42()
+Symplectic Runge-Kutta Methods 4th order explicit symplectic integrator. BROKEN
+Keyword Arguments
+References
+@article{mclachlan1992accuracy, title={The accuracy of symplectic integrators}, author={McLachlan, Robert I and Atela, Pau}, journal={Nonlinearity}, volume={5}, number={2}, pages={541}, year={1992}, publisher={IOP Publishing} }
+OrdinaryDiffEqSymplecticRK.McAte5 — Type
+McAte5()
+Symplectic Runge-Kutta Methods Optimized efficiency 5th order explicit symplectic integrator. Requires quadratic kinetic energy.
+Keyword Arguments
+References
+@article{mclachlan1992accuracy, title={The accuracy of symplectic integrators}, author={McLachlan, Robert I and Atela, Pau}, journal={Nonlinearity}, volume={5}, number={2}, pages={541}, year={1992}, publisher={IOP Publishing} }
+OrdinaryDiffEqSymplecticRK.Yoshida6 — Type
+Yoshida6()
+Symplectic Runge-Kutta Methods 6th order explicit symplectic integrator.
+Keyword Arguments
+References
+@article{yoshida1990construction, title={Construction of higher order symplectic integrators}, author={Yoshida, Haruo}, journal={Physics letters A}, volume={150}, number={5-7}, pages={262–268}, year={1990}, publisher={Elsevier}}
+OrdinaryDiffEqSymplecticRK.KahanLi6 — Type
+KahanLi6()
+Symplectic Runge-Kutta Methods Optimized efficiency 6th order explicit symplectic integrator.
+Keyword Arguments
+References
+@article{yoshida1990construction, title={Construction of higher order symplectic integrators}, author={Yoshida, Haruo}, journal={Physics letters A}, volume={150}, number={5-7}, pages={262–268}, year={1990}, publisher={Elsevier}}
+OrdinaryDiffEqSymplecticRK.McAte8 — Type
+McAte8()
+Symplectic Runge-Kutta Methods 8th order explicit symplectic integrator.
+Keyword Arguments
+References
+@article{mclachlan1995numerical, title={On the numerical integration of ordinary differential equations by symmetric composition methods}, author={McLachlan, Robert I}, journal={SIAM Journal on Scientific Computing}, volume={16}, number={1}, pages={151–168}, year={1995}, publisher={SIAM} }
+OrdinaryDiffEqSymplecticRK.KahanLi8 — Type
+KahanLi8()
+Symplectic Runge-Kutta Methods Optimized efficiency 8th order explicit symplectic integrator.
+Keyword Arguments
+References
+@article{kahan1997composition, title={Composition constants for raising the orders of unconventional schemes for ordinary differential equations}, author={Kahan, William and Li, Ren-Cang}, journal={Mathematics of computation}, volume={66}, number={219}, pages={1089–1099}, year={1997}}
+OrdinaryDiffEqSymplecticRK.SofSpa10 — Type
+SofSpa10()
+Symplectic Runge-Kutta Methods 10th order explicit symplectic integrator.
+Keyword Arguments
+References
+@article{sofroniou2005derivation, title={Derivation of symmetric composition constants for symmetric integrators}, author={Sofroniou, Mark and Spaletta, Giulia}, journal={Optimization Methods and Software}, volume={20}, number={4-5}, pages={597–613}, year={2005}, publisher={Taylor \& Francis}}
+« OrdinaryDiffEqRKNOrdinaryDiffEqExponentialRK »
+Powered by Documenter.jl and the Julia Programming Language.
+Settings
+Theme
+Automatic (OS)documenter-lightdocumenter-darkcatppuccin-lattecatppuccin-frappecatppuccin-macchiatocatppuccin-mocha
+This document was generated with Documenter.jl version 1.17.0 on Friday 26 June 2026. Using Julia version 1.12.6.

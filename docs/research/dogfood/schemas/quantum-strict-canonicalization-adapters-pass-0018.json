@@ -1,0 +1,210 @@
+{
+  "adapter_profiles": [
+    {
+      "adapter_hash": "1dd1a8d14a920f854b0e1ad80a640bbb05a3f9d962fc47d3428c875691a83886",
+      "adapter_id": "layout-adapter-qiskit",
+      "adapter_status": "FRAMEWORK_POLICY_DEFINED",
+      "framework": "Qiskit",
+      "known_policy": "Bit n-1 is displayed leftmost and bit 0 rightmost in strings.",
+      "required_receipt_fields": [
+        "quantum_registers",
+        "classical_registers",
+        "measurement_map",
+        "string_position_policy"
+      ],
+      "schema": "QuantumRegisterLayoutAdapter/v1",
+      "source_anchor": "https://quantum.cloud.ibm.com/docs/guides/bit-ordering"
+    },
+    {
+      "adapter_hash": "cb349a7d702709c3f2eee053f047e303ec7b46fe99e35cd52bcb27ddf1549ea0",
+      "adapter_id": "layout-adapter-amazon-braket",
+      "adapter_status": "FRAMEWORK_POLICY_DEFINED",
+      "framework": "Amazon Braket",
+      "known_policy": "Measurement-count keys are big-endian binary strings in the SDK result helper.",
+      "required_receipt_fields": [
+        "measured_qubit_order",
+        "measurement_counts_key_policy",
+        "result_source"
+      ],
+      "schema": "QuantumRegisterLayoutAdapter/v1",
+      "source_anchor": "https://amazon-braket-sdk-python.readthedocs.io/en/latest/_apidoc/braket.tasks.gate_model_quantum_task_result.html"
+    },
+    {
+      "adapter_hash": "fa4d2d18115968e98226b19887548f74e1781adc918afac32ebd1f3c3b447446",
+      "adapter_id": "layout-adapter-cirq",
+      "adapter_status": "FRAMEWORK_POLICY_DEFINED",
+      "framework": "Cirq",
+      "known_policy": "Result.histogram fold_func defaults to interpreting sampled bits as a big-endian integer.",
+      "required_receipt_fields": [
+        "measurement_key",
+        "qubit_order",
+        "fold_func",
+        "histogram_key_policy"
+      ],
+      "schema": "QuantumRegisterLayoutAdapter/v1",
+      "source_anchor": "https://quantumai.google/reference/python/cirq/Result"
+    },
+    {
+      "adapter_hash": "ad9e0636dc165818b1738c83662acca20f535bf6c3a467732fdaea062998504c",
+      "adapter_id": "layout-adapter-pennylane",
+      "adapter_status": "COUNTS_SHAPE_DEFINED_LAYOUT_POLICY_REQUIRED",
+      "framework": "PennyLane",
+      "known_policy": "Counts return a dictionary of sampled quantum states; proof packets must still bind wire order and device policy.",
+      "required_receipt_fields": [
+        "wire_order",
+        "counts_key_policy",
+        "device_name",
+        "shots"
+      ],
+      "schema": "QuantumRegisterLayoutAdapter/v1",
+      "source_anchor": "https://docs.pennylane.ai/en/stable/code/qp_measurements.html"
+    },
+    {
+      "adapter_hash": "53e0bc88cc0a6d2906fb0580f91565f2632b62a5fda1598b71a67b31d01d3759",
+      "adapter_id": "layout-adapter-qir",
+      "adapter_status": "INTERMEDIATE_REPRESENTATION_LAYOUT_POLICY_REQUIRED",
+      "framework": "QIR",
+      "known_policy": "QIR is an LLVM-based representation for quantum programs; proof packets must bind output-recording and result mapping policy.",
+      "required_receipt_fields": [
+        "qir_module_hash",
+        "result_record_map",
+        "runtime_output_policy"
+      ],
+      "schema": "QuantumRegisterLayoutAdapter/v1",
+      "source_anchor": "https://github.com/qir-alliance/qir-spec/blob/main/specification/README.md"
+    }
+  ],
+  "generated_on": "2026-07-01",
+  "negative_fixtures": [
+    {
+      "expected_validator_status": "REJECT",
+      "failure_mode": "Duplicate JSON key payload is accepted as canonical JSON.",
+      "fixture_id": "negative-duplicate-json-key-accepted"
+    },
+    {
+      "expected_validator_status": "REJECT",
+      "failure_mode": "Binary payload is routed through JSON canonicalization.",
+      "fixture_id": "negative-binary-payload-parsed-as-json"
+    },
+    {
+      "expected_validator_status": "REJECT",
+      "failure_mode": "Object storage URI is treated as immutable evidence without content hash.",
+      "fixture_id": "negative-object-storage-uri-without-content-hash"
+    },
+    {
+      "expected_validator_status": "REJECT",
+      "failure_mode": "Floating-point result is normalized without precision policy.",
+      "fixture_id": "negative-float-result-without-precision-policy"
+    },
+    {
+      "expected_validator_status": "REJECT",
+      "failure_mode": "Qiskit counts are normalized using the Braket adapter.",
+      "fixture_id": "negative-qiskit-counts-using-braket-layout"
+    },
+    {
+      "expected_validator_status": "REJECT",
+      "failure_mode": "Cirq histogram is cited without measurement key and fold_func policy.",
+      "fixture_id": "negative-cirq-histogram-without-fold-func"
+    },
+    {
+      "expected_validator_status": "REJECT",
+      "failure_mode": "PennyLane counts are cited without wire-order receipt.",
+      "fixture_id": "negative-pennylane-counts-without-wire-order"
+    },
+    {
+      "expected_validator_status": "REJECT",
+      "failure_mode": "QIR result output is cited without result-record map.",
+      "fixture_id": "negative-qir-result-without-record-map"
+    },
+    {
+      "expected_validator_status": "REJECT",
+      "failure_mode": "Post-processing operation lacks input or output hash.",
+      "fixture_id": "negative-post-processing-operation-without-hashes"
+    }
+  ],
+  "non_promotion_statement": "Pass 0018 defines strict canonicalization and framework layout adapter fixtures only. It does not run a quantum job or promote a hardware result.",
+  "pass": "0018",
+  "post_processing_operation": {
+    "deterministic": true,
+    "input_hash": "601220fead53491134647a9c82790700cb98267b764237a93b94320d85dd3747",
+    "operation_hash": "16884278600cf76f54aa463c0e4dc4459afdd71df5c5b046a663ec4eefac4a43",
+    "operation_id": "counts-normalization-noop",
+    "operation_kind": "NOOP_BASELINE",
+    "output_hash": "601220fead53491134647a9c82790700cb98267b764237a93b94320d85dd3747",
+    "parameters_hash": "c769c10a29fc6f05ca2164d2b3ccd6668b633a29c99c9e758ec09ab09c03cdbf",
+    "schema": "QuantumPostProcessingOperation/v1"
+  },
+  "schema": "QuantumStrictCanonicalizationAdapterSet/v1",
+  "seal": "0727efc532db5c9c759bec5319d0ab547942129880d20823764cba12edd007fd",
+  "source_anchors": [
+    {
+      "source": "RFC 8785 JSON Canonicalization Scheme",
+      "url": "https://www.rfc-editor.org/info/rfc8785/"
+    },
+    {
+      "source": "Amazon Braket task results",
+      "url": "https://docs.aws.amazon.com/braket/latest/developerguide/braket-submit-tasks-to-braket.html"
+    },
+    {
+      "source": "Amazon Braket SDK task result",
+      "url": "https://amazon-braket-sdk-python.readthedocs.io/en/latest/_apidoc/braket.tasks.gate_model_quantum_task_result.html"
+    },
+    {
+      "source": "Cirq Result API",
+      "url": "https://quantumai.google/reference/python/cirq/Result"
+    },
+    {
+      "source": "PennyLane counts measurement",
+      "url": "https://docs.pennylane.ai/en/stable/code/qp_measurements.html"
+    },
+    {
+      "source": "IBM Quantum bit-ordering guide",
+      "url": "https://quantum.cloud.ibm.com/docs/guides/bit-ordering"
+    },
+    {
+      "source": "QIR specification",
+      "url": "https://github.com/qir-alliance/qir-spec/blob/main/specification/README.md"
+    },
+    {
+      "source": "OpenQASM 3 introduction",
+      "url": "https://openqasm.com/versions/3.0/intro.html"
+    }
+  ],
+  "status": "STRICT_ADAPTER_MATCH",
+  "strict_policy": {
+    "binary_payload_policy": {
+      "content_hash_required": true,
+      "media_type_required": true,
+      "parsed_json_allowed": false,
+      "sample_media_type": "application/gzip",
+      "sample_payload_hash": "bb5af75eef46fe7421f75c59fb77a35499678566c6ca9b265c895c11fb15e7a3"
+    },
+    "duplicate_json_key_detection_required": true,
+    "duplicate_key_fixture": {
+      "detected_duplicate_keys": [
+        "00"
+      ],
+      "expected_validator_status": "REJECT",
+      "raw_payload": "{\"counts\":{\"00\":1,\"00\":2},\"shots\":3}"
+    },
+    "floating_point_policy": {
+      "canonicalization_reference": "RFC 8785 constrains JSON numbers to IEEE 754 double precision; higher precision should be represented as strings.",
+      "precision_policy_required": true,
+      "sample_policy": "IEEE754_DOUBLE_OR_DECIMAL_STRING_REQUIRED",
+      "sample_value": 0.1
+    },
+    "object_storage_reference_policy": {
+      "claim_rule": "A storage URI without a content hash is a locator, not an immutable evidence receipt.",
+      "required_fields": [
+        "uri",
+        "provider",
+        "retrieval_timestamp",
+        "content_hash",
+        "etag_or_generation"
+      ]
+    },
+    "policy_hash": "a54c16072736fa63bece139a42caf3265931553087cbca8738058ad7dbd57e62",
+    "policy_id": "strict-json-binary-float-object-storage",
+    "schema": "StrictQuantumCanonicalizationPolicy/v1"
+  }
+}

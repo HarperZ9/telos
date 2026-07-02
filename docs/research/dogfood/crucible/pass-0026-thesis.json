@@ -1,0 +1,46 @@
+{
+  "claims": [
+    {
+      "falsification": "schemas/redaction-boundary-pass-0026.json is missing, has a different schema or status, reports a different redacted ref count or negative fixture count, or has a different seal",
+      "text": "Pass 0026 created a RedactionBoundaryFixtureSet/v1 artifact with status REDACTION_BOUNDARY_MATCH, redacted_ref_count=2, negative_fixture_count=8, and seal adcdfc1abcdb59427573760f4779182da9f9fde18553c633af5b08fc57f1816c."
+    },
+    {
+      "falsification": "the source receipt is missing, binds to the wrong path, has a different source SHA-256, seal, or ledger head hash, or does not reference pass 0025 persistence replay",
+      "text": "Pass 0026 binds back to schemas/action-receipt-persistence-replay-pass-0025.json with sha256 03832d00e62c33828cbb5c6d351a10e47e5f61ac185f318044829910bdd0f293, source seal 7203957ec04350756af9cdb2d244760ebbc2c00bbc3fcc048acd7c9ff2a1a177, and ledger_head_hash 6d194872068da0e9c74d95478cca7e4f2c5a447da9a82a73be3ce9b5aa44f371."
+    },
+    {
+      "falsification": "the raw payload reference stores a model-facing value, reports the wrong storage boundary, lacks a digest, or marks raw payload values as allowed in receipts or model-facing artifacts",
+      "text": "Pass 0026 stores only a temp-private synthetic raw payload reference in the fixture, with storage_boundary=TEMP_PRIVATE_NOT_COMMITTED, raw_payload_sha256 8c53911bf4e3763486de4c3dd43a0e1a8a587f3b172e08c322202d1b3fd66ca4, length=85, value_in_receipts=false, and value_in_model_facing_artifacts=false."
+    },
+    {
+      "falsification": "either redacted ref is missing, contains the raw payload value, lacks a digest ref, or reports a different SHA-256",
+      "text": "Pass 0026 writes two redacted refs, fixtures/redacted-before-pass-0026.json and fixtures/redacted-after-pass-0026.json, with contains_raw_payload=false, contains_digest_ref=true, and SHA-256 values 32ba5ef8fcc63fb0e7bb2f3d9a84d272693971dcc524f27021fe4ad29d6dc231 and e697e1ecd32c15eec3032b001596cae71021b08808db9d597bbb4a08c6bf8c9f."
+    },
+    {
+      "falsification": "the action receipt redaction object is missing, uses the wrong schema, lacks before/after artifact refs, lacks the digest ref, requires the raw payload for the model, or reports a non-MATCH verification verdict",
+      "text": "Pass 0026 records ActionReceiptRedactionRef/v1 with redacted_before_ref=artifact:fixtures/redacted-before-pass-0026.json, redacted_after_ref=artifact:fixtures/redacted-after-pass-0026.json, raw_payload_digest=sha256:8c53911bf4e3763486de4c3dd43a0e1a8a587f3b172e08c322202d1b3fd66ca4, raw_payload_required_for_model=false, and verification verdict MATCH."
+    },
+    {
+      "falsification": "the leak scan plan is missing, includes fewer than the required eight targets, omits any required model-facing artifact, or does not require raw payload absence",
+      "text": "Pass 0026 leak_scan requires raw payload absence over eight targets: the redaction schema, both redacted fixtures, packet 036, adversarial steelman, tool receipts, Crucible thesis, and Crucible measurements."
+    },
+    {
+      "falsification": "any scan target contains the synthetic raw payload value, the validator reports a leak, or the validator cannot read all eight targets",
+      "text": "Pass 0026 validator scans all eight configured targets and reports raw_payload_leak_count=0 with scan_target_count=8."
+    },
+    {
+      "falsification": "negative fixtures are missing, fewer than eight, or any is not marked with expected_validator_status REJECT",
+      "text": "Pass 0026 defines eight negative fixtures covering raw payload leakage, receipt leakage, missing digest, digest mismatch, missing before and after refs, committed raw path, and missing leak scan target; every negative fixture expects validator status REJECT."
+    },
+    {
+      "falsification": "packet 036 is missing, Gather does not verify it, the packet SHA-256 or seal differs, or packet/adversarial files promote production secrecy, scientific discovery, theorem proof, or a natural law",
+      "text": "Pass 0026 packet 036 was gathered and verified with SHA-256 39af9c048ffb9f65128e820bd76d8ed4f836e35a6bfe73d283ab4ffe962af0c8 and digest seal e389dcba07e1383397e99bb58dd423884e441f274274e9e8a5d994ea5faafad3, while packet 036 and the adversarial steelman preserve the non-promotion boundary."
+    },
+    {
+      "falsification": "schemas/tool-receipts-pass-0026.json is missing, lacks required tool status receipts, treats Forum submit as successful, or omits Telos action receipt and loop ledger receipts",
+      "text": "Pass 0026 records tool receipts showing Index, Gather, Telos, Forum status and ledger verify, and Crucible status as MATCH while preserving Forum submit as UNVERIFIABLE because no model executor is configured."
+    }
+  ],
+  "disposition": "fenced",
+  "title": "Dogfood Pass 0026 Redaction Boundary"
+}

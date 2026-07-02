@@ -1,0 +1,548 @@
+{
+  "boundary": "Pass 0133 ingests supplied YouTube links as source leads only. Metadata and transcript receipts may seed future work, but video-only claims are not verified facts, proofs, market evidence, or natural laws.",
+  "current_promoted_natural_laws": [],
+  "flagship_receipts": {
+    "forum": {
+      "decided": null,
+      "exit_code": 0,
+      "status": "MATCH",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "4fe3841632e2f93c96084b52acb57b2c0fa681cb74375a1b20d42389ca51dde2"
+    },
+    "index": {
+      "exit_code": 0,
+      "status": "MATCH",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "6568bf449bf5444d846b0cdbf0aa132a7b810272948ebc88b0e2c7515929353b",
+      "verification_verdict": "MATCH"
+    },
+    "telos": {
+      "exit_code": 0,
+      "status": "MATCH",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "be17cb15259234cb4e8e95c2b36e76c90d841431729beb140294e34c5f9ebfa7",
+      "tool_version": "0.1.0"
+    },
+    "telos_catalog": {
+      "exit_code": 0,
+      "status": "MATCH",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "ef95a6f1ff803c483c3c4dd553fe19c37ab144113a21bc005cf4148cf31a8564"
+    }
+  },
+  "generated_on": "2026-07-01",
+  "negative_fixtures": [
+    {
+      "failures": [
+        "title_is_source_lead",
+        "requires_primary_source"
+      ],
+      "fixture_id": "video_title_as_fact_rejected",
+      "status": "REJECTED"
+    },
+    {
+      "failures": [
+        "auto_caption_noise",
+        "requires_verification"
+      ],
+      "fixture_id": "auto_caption_as_ground_truth_rejected",
+      "status": "REJECTED"
+    },
+    {
+      "failures": [
+        "dynamic_page",
+        "partial_http_capture"
+      ],
+      "fixture_id": "channel_page_as_complete_catalog_rejected",
+      "status": "REJECTED"
+    },
+    {
+      "failures": [
+        "copyright_boundary",
+        "digest_only"
+      ],
+      "fixture_id": "raw_transcript_export_rejected",
+      "status": "REJECTED"
+    },
+    {
+      "failures": [
+        "no_buyer_evidence",
+        "no_competitor_matrix"
+      ],
+      "fixture_id": "video_only_market_claim_rejected",
+      "status": "REJECTED"
+    },
+    {
+      "failures": [
+        "requires_independent_proof",
+        "requires_reproduction"
+      ],
+      "fixture_id": "source_lead_as_law_rejected",
+      "status": "REJECTED"
+    }
+  ],
+  "pass": "0133",
+  "product_hypotheses": [
+    {
+      "status": "HYPOTHESIS",
+      "tool": "Argument-to-Proof Packet Router",
+      "wedge": "turn philosophy videos into source leads, claim graphs, objections, and proof gates"
+    },
+    {
+      "status": "HYPOTHESIS",
+      "tool": "Bio-Evolution Geometry Queue",
+      "wedge": "route biology/evolution geometry talks into executable model and falsifier packets"
+    },
+    {
+      "status": "HYPOTHESIS",
+      "tool": "TCS Breakthrough Replication Queue",
+      "wedge": "turn computing-breakthrough videos into paper/source retrieval and independent proof replay tasks"
+    },
+    {
+      "status": "HYPOTHESIS",
+      "tool": "Transcript Boundary Auditor",
+      "wedge": "separate metadata, transcript, speaker claims, and independently verified claims"
+    }
+  ],
+  "route_summary": [
+    {
+      "route": "biology_evolution_geometry",
+      "status": "SOURCE_LEAD_ONLY",
+      "video_count": 1
+    },
+    {
+      "route": "epistemology_ethics_learning",
+      "status": "SOURCE_LEAD_ONLY",
+      "video_count": 5
+    },
+    {
+      "route": "philosophy_learning",
+      "status": "SOURCE_LEAD_ONLY",
+      "video_count": 2
+    },
+    {
+      "route": "theoretical_computing_breakthrough",
+      "status": "SOURCE_LEAD_ONLY",
+      "video_count": 1
+    }
+  ],
+  "schema": "YouTubeSourceLeadIntakeReceipt/v1",
+  "seal": "3e489c7334fbcdb2acd5d3ee9bb52c6bdf7bc9d5730942fbefc58e53e6d5e5ce",
+  "source_bindings": {
+    "proof_transfer_pass": "0132",
+    "proof_transfer_seal": "7f2c491c2bfc21f6b382539da946067a1108d43315b4660834c0d5b42c8be094",
+    "source_store": "gather/pass-0133-youtube-source-lead-intake"
+  },
+  "source_receipts": [
+    {
+      "chars": 149,
+      "id": "1luMT2KUAOo",
+      "kind": "metadata",
+      "method": "yt-dlp",
+      "raw_body_exported": false,
+      "ref": "1luMT2KUAOo",
+      "sha256": "7b26e9f66d89bec2963ab9446ea627828f6add5521654ab4094af0341d9ce4cb",
+      "source": "video",
+      "status": "GATHER_VERIFIED",
+      "title": "The Veridicalist Response to Skepticism",
+      "uploader": "Kane B"
+    },
+    {
+      "chars": 48379,
+      "id": "1luMT2KUAOo",
+      "kind": "transcript",
+      "method": "auto-caption",
+      "raw_body_exported": false,
+      "ref": "1luMT2KUAOo",
+      "sha256": "537b0364c19d4b7a334bcf3c7b2011de494404f155af824694017178c3e10805",
+      "source": "video",
+      "status": "GATHER_VERIFIED",
+      "title": "The Veridicalist Response to Skepticism",
+      "uploader": "Kane B"
+    },
+    {
+      "chars": 174,
+      "id": "3_XRPv1OcPg",
+      "kind": "metadata",
+      "method": "yt-dlp",
+      "raw_body_exported": false,
+      "ref": "3_XRPv1OcPg",
+      "sha256": "0bf37000f378994a7df8cd0665233ba8338fecefd417d5599bda190c51326f82",
+      "source": "video",
+      "status": "GATHER_VERIFIED",
+      "title": "\"Geometric Framework for Biological Evolution\" by Vitaly Vanchurin",
+      "uploader": "Michael Levin's Academic Content"
+    },
+    {
+      "chars": 59595,
+      "id": "3_XRPv1OcPg",
+      "kind": "transcript",
+      "method": "auto-caption",
+      "raw_body_exported": false,
+      "ref": "3_XRPv1OcPg",
+      "sha256": "2aaced66b05cab0e98acf04dd2369f4683a88b64dcfaaf4a649f83161fa1d4be",
+      "source": "video",
+      "status": "GATHER_VERIFIED",
+      "title": "\"Geometric Framework for Biological Evolution\" by Vitaly Vanchurin",
+      "uploader": "Michael Levin's Academic Content"
+    },
+    {
+      "chars": 149,
+      "id": "6Jd1syHnjAQ",
+      "kind": "metadata",
+      "method": "yt-dlp",
+      "raw_body_exported": false,
+      "ref": "6Jd1syHnjAQ",
+      "sha256": "014fbd6dbb8ffa439b92b512ffbbb1248fe7f2feb4f6da9cb4e4ede2d3c186d8",
+      "source": "video",
+      "status": "GATHER_VERIFIED",
+      "title": "Can we eliminate the harm of death?",
+      "uploader": "Kane B"
+    },
+    {
+      "chars": 58051,
+      "id": "6Jd1syHnjAQ",
+      "kind": "transcript",
+      "method": "auto-caption",
+      "raw_body_exported": false,
+      "ref": "6Jd1syHnjAQ",
+      "sha256": "426cf0ee6ae1208455bfeeed100a1da8e77558a610eb0ce7f2d85348f1720f00",
+      "source": "video",
+      "status": "GATHER_VERIFIED",
+      "title": "Can we eliminate the harm of death?",
+      "uploader": "Kane B"
+    },
+    {
+      "chars": 151,
+      "id": "EdVG5qNm2rY",
+      "kind": "metadata",
+      "method": "yt-dlp",
+      "raw_body_exported": false,
+      "ref": "EdVG5qNm2rY",
+      "sha256": "21487bbc4d7877efe38915567f8221ef7f560e95676dd402be0865af15303891",
+      "source": "video",
+      "status": "GATHER_VERIFIED",
+      "title": "21 Yr Old Disproves 4 Decades Old Belief in Computing",
+      "uploader": "Turing"
+    },
+    {
+      "chars": 16009,
+      "id": "EdVG5qNm2rY",
+      "kind": "transcript",
+      "method": "yt-dlp",
+      "raw_body_exported": false,
+      "ref": "EdVG5qNm2rY",
+      "sha256": "304feec6cab459937db1d38aa87abcbda3979a176799cbf6c3724e55a2fb29cf",
+      "source": "video",
+      "status": "GATHER_VERIFIED",
+      "title": "21 Yr Old Disproves 4 Decades Old Belief in Computing",
+      "uploader": "Turing"
+    },
+    {
+      "chars": 148,
+      "id": "PxucUNi3UZo",
+      "kind": "metadata",
+      "method": "yt-dlp",
+      "raw_body_exported": false,
+      "ref": "PxucUNi3UZo",
+      "sha256": "086bc4d181c57c9b9f563386b48e044f884057562817bb6ce33ad0f673d6f7d9",
+      "source": "video",
+      "status": "GATHER_VERIFIED",
+      "title": "Is Skepticism Immoral?",
+      "uploader": "Kane B"
+    },
+    {
+      "chars": 58883,
+      "id": "PxucUNi3UZo",
+      "kind": "transcript",
+      "method": "auto-caption",
+      "raw_body_exported": false,
+      "ref": "PxucUNi3UZo",
+      "sha256": "a16e0ce2c7c44140a94af14e5cef746792b063be06c762ce92c9e7a989da59ea",
+      "source": "video",
+      "status": "GATHER_VERIFIED",
+      "title": "Is Skepticism Immoral?",
+      "uploader": "Kane B"
+    },
+    {
+      "chars": 150,
+      "id": "WN0sl_jQ3Mg",
+      "kind": "metadata",
+      "method": "yt-dlp",
+      "raw_body_exported": false,
+      "ref": "WN0sl_jQ3Mg",
+      "sha256": "c9d95c9f088e358d96f869362b6a08a2a059c9ad2f25030c167c1e6ef955756d",
+      "source": "video",
+      "status": "GATHER_VERIFIED",
+      "title": "Who is the Best Philosopher Ever?",
+      "uploader": "Kane B"
+    },
+    {
+      "chars": 49829,
+      "id": "WN0sl_jQ3Mg",
+      "kind": "transcript",
+      "method": "auto-caption",
+      "raw_body_exported": false,
+      "ref": "WN0sl_jQ3Mg",
+      "sha256": "c1d03c7b2b215a6e0d36fa5e76db9b21e9cd4f3a03cd52b280be7d995a562afc",
+      "source": "video",
+      "status": "GATHER_VERIFIED",
+      "title": "Who is the Best Philosopher Ever?",
+      "uploader": "Kane B"
+    },
+    {
+      "chars": 149,
+      "id": "XcnCnNQlNnE",
+      "kind": "metadata",
+      "method": "yt-dlp",
+      "raw_body_exported": false,
+      "ref": "XcnCnNQlNnE",
+      "sha256": "758df042a93ce47722a28d3315852cc6b07cc14902e815710a37dc0eb8750516",
+      "source": "video",
+      "status": "GATHER_VERIFIED",
+      "title": "Skepticism Isn't About What You Don't Know",
+      "uploader": "Kane B"
+    },
+    {
+      "chars": 28195,
+      "id": "XcnCnNQlNnE",
+      "kind": "transcript",
+      "method": "auto-caption",
+      "raw_body_exported": false,
+      "ref": "XcnCnNQlNnE",
+      "sha256": "f4652a7d29ea8ae087bd1c1f3fb4bdcfc58d91bb74b25457c4d2ca981467c2ae",
+      "source": "video",
+      "status": "GATHER_VERIFIED",
+      "title": "Skepticism Isn't About What You Don't Know",
+      "uploader": "Kane B"
+    },
+    {
+      "chars": 150,
+      "id": "c9BFn4Kqj0E",
+      "kind": "metadata",
+      "method": "yt-dlp",
+      "raw_body_exported": false,
+      "ref": "c9BFn4Kqj0E",
+      "sha256": "38a9b0424b5fcc51eb48ba755e0b94c5852baf0795673f3b132103c321bbda9c",
+      "source": "video",
+      "status": "GATHER_VERIFIED",
+      "title": "Nonpropositional Truth",
+      "uploader": "Kane B"
+    },
+    {
+      "chars": 72709,
+      "id": "c9BFn4Kqj0E",
+      "kind": "transcript",
+      "method": "auto-caption",
+      "raw_body_exported": false,
+      "ref": "c9BFn4Kqj0E",
+      "sha256": "be5ecb121f0419baf2e754342c5ed670dfb993863dc5087db9bf7476ee917d94",
+      "source": "video",
+      "status": "GATHER_VERIFIED",
+      "title": "Nonpropositional Truth",
+      "uploader": "Kane B"
+    },
+    {
+      "chars": 152,
+      "id": "https://www.youtube.com/@KaneB/videos",
+      "kind": "webpage",
+      "method": "http-get",
+      "raw_body_exported": false,
+      "ref": "https://www.youtube.com/@KaneB/videos",
+      "sha256": "d61a7a5790bfd9f4027fb5e0ee11800aaef50b03b200fafd7867f7dfcadf5fc7",
+      "source": "web",
+      "status": "GATHER_VERIFIED",
+      "title": "Kane B - YouTube",
+      "uploader": ""
+    },
+    {
+      "chars": 149,
+      "id": "jOqymknUa_k",
+      "kind": "metadata",
+      "method": "yt-dlp",
+      "raw_body_exported": false,
+      "ref": "jOqymknUa_k",
+      "sha256": "e15ecf773a16844420711a0fc3d6d62e25c04a49b336db9d6d6c05f6c8507b24",
+      "source": "video",
+      "status": "GATHER_VERIFIED",
+      "title": "Threshold Deontology",
+      "uploader": "Kane B"
+    },
+    {
+      "chars": 71588,
+      "id": "jOqymknUa_k",
+      "kind": "transcript",
+      "method": "auto-caption",
+      "raw_body_exported": false,
+      "ref": "jOqymknUa_k",
+      "sha256": "b87e8309f1ee9a8f0bbc0145b2b6bd482eb5e6cfec8104050bdb8416ff8cb6af",
+      "source": "video",
+      "status": "GATHER_VERIFIED",
+      "title": "Threshold Deontology",
+      "uploader": "Kane B"
+    }
+  ],
+  "status": "YOUTUBE_SOURCE_LEAD_INTAKE_MATCH",
+  "unsupported_claim_count": 0,
+  "validation_errors": [],
+  "video_leads": [
+    {
+      "metadata_sha256": "7b26e9f66d89bec2963ab9446ea627828f6add5521654ab4094af0341d9ce4cb",
+      "route": "epistemology_ethics_learning",
+      "status": "SOURCE_LEAD_ONLY",
+      "title": "The Veridicalist Response to Skepticism",
+      "top_terms": [
+        "veridical",
+        "skepticism",
+        "knowledge",
+        "truth",
+        "physics",
+        "learning"
+      ],
+      "transcript_chars": 48379,
+      "transcript_method": "auto-caption",
+      "transcript_sha256": "537b0364c19d4b7a334bcf3c7b2011de494404f155af824694017178c3e10805",
+      "uploader": "Kane B",
+      "video_id": "1luMT2KUAOo"
+    },
+    {
+      "metadata_sha256": "0bf37000f378994a7df8cd0665233ba8338fecefd417d5599bda190c51326f82",
+      "route": "biology_evolution_geometry",
+      "status": "SOURCE_LEAD_ONLY",
+      "title": "\"Geometric Framework for Biological Evolution\" by Vitaly Vanchurin",
+      "top_terms": [
+        "learning",
+        "evolution",
+        "model",
+        "math",
+        "biology",
+        "physics"
+      ],
+      "transcript_chars": 59595,
+      "transcript_method": "auto-caption",
+      "transcript_sha256": "2aaced66b05cab0e98acf04dd2369f4683a88b64dcfaaf4a649f83161fa1d4be",
+      "uploader": "Michael Levin's Academic Content",
+      "video_id": "3_XRPv1OcPg"
+    },
+    {
+      "metadata_sha256": "014fbd6dbb8ffa439b92b512ffbbb1248fe7f2feb4f6da9cb4e4ede2d3c186d8",
+      "route": "philosophy_learning",
+      "status": "SOURCE_LEAD_ONLY",
+      "title": "Can we eliminate the harm of death?",
+      "top_terms": [
+        "death",
+        "philosopher",
+        "evolution",
+        "knowledge"
+      ],
+      "transcript_chars": 58051,
+      "transcript_method": "auto-caption",
+      "transcript_sha256": "426cf0ee6ae1208455bfeeed100a1da8e77558a610eb0ce7f2d85348f1720f00",
+      "uploader": "Kane B",
+      "video_id": "6Jd1syHnjAQ"
+    },
+    {
+      "metadata_sha256": "21487bbc4d7877efe38915567f8221ef7f560e95676dd402be0865af15303891",
+      "route": "theoretical_computing_breakthrough",
+      "status": "SOURCE_LEAD_ONLY",
+      "title": "21 Yr Old Disproves 4 Decades Old Belief in Computing",
+      "top_terms": [
+        "computing",
+        "math",
+        "model",
+        "proof"
+      ],
+      "transcript_chars": 16009,
+      "transcript_method": "yt-dlp",
+      "transcript_sha256": "304feec6cab459937db1d38aa87abcbda3979a176799cbf6c3724e55a2fb29cf",
+      "uploader": "Turing",
+      "video_id": "EdVG5qNm2rY"
+    },
+    {
+      "metadata_sha256": "086bc4d181c57c9b9f563386b48e044f884057562817bb6ce33ad0f673d6f7d9",
+      "route": "epistemology_ethics_learning",
+      "status": "SOURCE_LEAD_ONLY",
+      "title": "Is Skepticism Immoral?",
+      "top_terms": [
+        "skepticism",
+        "knowledge",
+        "truth"
+      ],
+      "transcript_chars": 58883,
+      "transcript_method": "auto-caption",
+      "transcript_sha256": "a16e0ce2c7c44140a94af14e5cef746792b063be06c762ce92c9e7a989da59ea",
+      "uploader": "Kane B",
+      "video_id": "PxucUNi3UZo"
+    },
+    {
+      "metadata_sha256": "c9d95c9f088e358d96f869362b6a08a2a059c9ad2f25030c167c1e6ef955756d",
+      "route": "philosophy_learning",
+      "status": "SOURCE_LEAD_ONLY",
+      "title": "Who is the Best Philosopher Ever?",
+      "top_terms": [
+        "philosopher",
+        "physics",
+        "truth",
+        "knowledge",
+        "biology",
+        "evolution"
+      ],
+      "transcript_chars": 49829,
+      "transcript_method": "auto-caption",
+      "transcript_sha256": "c1d03c7b2b215a6e0d36fa5e76db9b21e9cd4f3a03cd52b280be7d995a562afc",
+      "uploader": "Kane B",
+      "video_id": "WN0sl_jQ3Mg"
+    },
+    {
+      "metadata_sha256": "758df042a93ce47722a28d3315852cc6b07cc14902e815710a37dc0eb8750516",
+      "route": "epistemology_ethics_learning",
+      "status": "SOURCE_LEAD_ONLY",
+      "title": "Skepticism Isn't About What You Don't Know",
+      "top_terms": [
+        "knowledge",
+        "skepticism"
+      ],
+      "transcript_chars": 28195,
+      "transcript_method": "auto-caption",
+      "transcript_sha256": "f4652a7d29ea8ae087bd1c1f3fb4bdcfc58d91bb74b25457c4d2ca981467c2ae",
+      "uploader": "Kane B",
+      "video_id": "XcnCnNQlNnE"
+    },
+    {
+      "metadata_sha256": "38a9b0424b5fcc51eb48ba755e0b94c5852baf0795673f3b132103c321bbda9c",
+      "route": "epistemology_ethics_learning",
+      "status": "SOURCE_LEAD_ONLY",
+      "title": "Nonpropositional Truth",
+      "top_terms": [
+        "truth",
+        "philosopher",
+        "knowledge",
+        "learning",
+        "evolution",
+        "physics"
+      ],
+      "transcript_chars": 72709,
+      "transcript_method": "auto-caption",
+      "transcript_sha256": "be5ecb121f0419baf2e754342c5ed670dfb993863dc5087db9bf7476ee917d94",
+      "uploader": "Kane B",
+      "video_id": "c9BFn4Kqj0E"
+    },
+    {
+      "metadata_sha256": "e15ecf773a16844420711a0fc3d6d62e25c04a49b336db9d6d6c05f6c8507b24",
+      "route": "epistemology_ethics_learning",
+      "status": "SOURCE_LEAD_ONLY",
+      "title": "Threshold Deontology",
+      "top_terms": [
+        "deontology",
+        "death",
+        "model",
+        "philosopher"
+      ],
+      "transcript_chars": 71588,
+      "transcript_method": "auto-caption",
+      "transcript_sha256": "b87e8309f1ee9a8f0bbc0145b2b6bd482eb5e6cfec8104050bdb8416ff8cb6af",
+      "uploader": "Kane B",
+      "video_id": "jOqymknUa_k"
+    }
+  ]
+}

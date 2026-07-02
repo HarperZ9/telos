@@ -1,0 +1,89 @@
+{
+  "measurements": [
+    {
+      "claim": "Pass 0066 created a ToolGrowthVectorExperimentMatrix/v1 artifact with status TOOL_GROWTH_VECTOR_EXPERIMENT_MATRIX_MATCH, sha256 7337d9d350ee174baa94137f0d3404efb0b6fa2ae40b9bff7737a263881fa32e, and seal 12a30f44b3b7ba75608c5a2283a82eb6999014515d7e3ad39e4010cca7131531.",
+      "deviation": 0.0,
+      "evidence": [
+        "schema=ToolGrowthVectorExperimentMatrix/v1",
+        "status=TOOL_GROWTH_VECTOR_EXPERIMENT_MATRIX_MATCH",
+        "sha256=7337d9d350ee174baa94137f0d3404efb0b6fa2ae40b9bff7737a263881fa32e",
+        "seal=12a30f44b3b7ba75608c5a2283a82eb6999014515d7e3ad39e4010cca7131531"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0066 contains 12 internal tools, 16 source anchors, and 36 growth vectors.",
+      "deviation": 0.0,
+      "evidence": [
+        "tool_count=12",
+        "source_anchor_count=16",
+        "growth_vector_count=36"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0066 contains 10 cross-tool experiments and top bundle proof_os_core.",
+      "deviation": 0.0,
+      "evidence": [
+        "cross_tool_experiment_count=10",
+        "top_bundle=proof_os_core"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0066 centrality counts include Telos 8 and Crucible 7.",
+      "deviation": 0.0,
+      "evidence": [
+        "Telos=8",
+        "Crucible=7"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0066 binds previous pass 0065 with sha256 798fb31522a117d97b84816fa84440e79e6ffe4c82425c3cb37f0ba596991d87.",
+      "deviation": 0.0,
+      "evidence": [
+        "previous_pass=0065",
+        "previous_sha256=798fb31522a117d97b84816fa84440e79e6ffe4c82425c3cb37f0ba596991d87"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0066 unsupported_claim_count is 0 and promotion_state is EXPERIMENT_MATRIX_NOT_MARKET_PROOF.",
+      "deviation": 0.0,
+      "evidence": [
+        "unsupported_claim_count=0",
+        "promotion_state=EXPERIMENT_MATRIX_NOT_MARKET_PROOF"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0066 composer sha256 is 4839b9137ecf72b19d6a616f4133cdbc637bb68db86031fb5914ab6ea89c08f1 and compose_receipt status is MATCH.",
+      "deviation": 0.0,
+      "evidence": [
+        "composer_sha256=4839b9137ecf72b19d6a616f4133cdbc637bb68db86031fb5914ab6ea89c08f1",
+        "compose_status=MATCH"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0066 packet sha256 is 9f17054cbe5da12d9a1daa026a69d9ed399a9689a1292c7f8af0f20880291033, steelman sha256 is d7231de7377bde76ae1f59ac0358c62297e9bd7513ed353122ff0f37fae62f93, and test sha256 is 5e969037df83d8c4ed53a0bed309d2bfd6c51418accd71b0acdf93201682e1a8 with test_receipt status MATCH.",
+      "deviation": 0.0,
+      "evidence": [
+        "packet_sha256=9f17054cbe5da12d9a1daa026a69d9ed399a9689a1292c7f8af0f20880291033",
+        "steelman_sha256=d7231de7377bde76ae1f59ac0358c62297e9bd7513ed353122ff0f37fae62f93",
+        "test_sha256=5e969037df83d8c4ed53a0bed309d2bfd6c51418accd71b0acdf93201682e1a8",
+        "test_status=MATCH"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    }
+  ]
+}

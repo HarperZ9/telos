@@ -1,0 +1,143 @@
+{
+  "schema": "ProofPacket/v1",
+  "packet_id": "proof-packet-pass-0009-heat-equation-energy",
+  "pass": "0009",
+  "generated_on": "2026-07-01",
+  "domain": "physics-pde-scientific-compute",
+  "claim_set": [
+    {
+      "claim_id": "claim-continuous-heat-energy-identity",
+      "claim": "For sufficiently smooth solutions of u_t = alpha u_xx on [0,1] with zero Dirichlet boundary conditions and alpha > 0, the squared L2 energy is non-increasing.",
+      "formal_statement": "d/dt int_0^1 u^2 dx = -2 alpha int_0^1 |u_x|^2 dx <= 0",
+      "promotion_state": "IDENTITY",
+      "confidence": "high",
+      "limits": "Human-readable calculus proof only; no proof-assistant kernel certificate in this pass."
+    },
+    {
+      "claim_id": "claim-bounded-stable-cfl-witness",
+      "claim": "The explicit finite-difference probe with cfl=0.45 recorded zero discrete energy increases over 400 steps.",
+      "promotion_state": "PROBE_MATCH",
+      "confidence": "high",
+      "limits": "Finite numerical witness for one smooth initial condition and grid, not a universal numerical stability proof."
+    },
+    {
+      "claim_id": "claim-negative-unstable-cfl-fixture",
+      "claim": "The explicit finite-difference probe with cfl=0.55 detected energy growth, serving as a negative fixture for the receipt validator.",
+      "promotion_state": "NEGATIVE_FIXTURE_MATCH",
+      "confidence": "high",
+      "limits": "Demonstrates one unstable configuration, not a complete instability characterization."
+    }
+  ],
+  "source_receipts": [
+    {
+      "source_id": "packet-019-proof",
+      "kind": "file",
+      "path": "C:\\dev\\public\\telos\\docs\\research\\dogfood\\packets\\019-heat-equation-energy-proof.md",
+      "used_for": "continuous energy identity proof and BuildLang receipt requirements",
+      "confidence": "high"
+    },
+    {
+      "source_id": "heat-probe-pass-0009",
+      "kind": "file",
+      "path": "C:\\dev\\public\\telos\\docs\\research\\dogfood\\schemas\\heat-equation-energy-probe-pass-0009.json",
+      "used_for": "stable and unstable finite-difference measurement receipts",
+      "confidence": "high"
+    },
+    {
+      "source_id": "scientific-compute-market-pass-0009",
+      "kind": "file",
+      "path": "C:\\dev\\public\\telos\\docs\\research\\dogfood\\schemas\\scientific-compute-market-map-pass-0009.json",
+      "used_for": "scientific-compute market context and BuildLang/buildc positioning",
+      "confidence": "high"
+    }
+  ],
+  "action_receipts": [
+    {
+      "action_id": "action-write-continuous-identity-proof",
+      "actor": "Codex",
+      "action": "recorded integration-by-parts proof for heat-equation L2 energy monotonicity",
+      "result": "IDENTITY"
+    },
+    {
+      "action_id": "action-run-heat-equation-probe",
+      "actor": "Codex",
+      "action": "ran stable and intentionally unstable explicit finite-difference heat-equation probes",
+      "result": "PROBE_MATCH",
+      "receipt_ref": "schemas/heat-equation-energy-probe-pass-0009.json"
+    },
+    {
+      "action_id": "action-map-scientific-compute-market",
+      "actor": "Codex",
+      "action": "mapped PDE and scientific-compute incumbents into BuildLang/buildc proof-receipt wedges",
+      "result": "SOURCE_BACKED_HYPOTHESIS",
+      "receipt_ref": "schemas/scientific-compute-market-map-pass-0009.json"
+    }
+  ],
+  "authority_receipts": [
+    {
+      "authority_id": "authority-dogfood-local-research",
+      "scope": "local dogfood research artifact creation and verification",
+      "admission": "allowed",
+      "notes": "No production deployment, destructive action, credential access, or external side effect."
+    }
+  ],
+  "workspace_state": {
+    "telos": {
+      "repo": "C:\\dev\\public\\telos",
+      "head": "1046c81",
+      "tracked_dirty_state": "clean",
+      "untracked_context": "dogfood research artifacts and prior market recon docs"
+    }
+  },
+  "verification_verdicts": [
+    {
+      "verifier": "HumanReadableCalculusProof",
+      "status": "IDENTITY",
+      "evidence_ref": "packets/019-heat-equation-energy-proof.md"
+    },
+    {
+      "verifier": "HeatEquationEnergyProbe",
+      "status": "PROBE_MATCH",
+      "evidence_ref": "schemas/heat-equation-energy-probe-pass-0009.json"
+    },
+    {
+      "verifier": "ProofPacketValidator",
+      "status": "MATCH",
+      "evidence_ref": "schemas/proof-packet-validator-pass-0009.json"
+    },
+    {
+      "verifier": "Pass0009ScientificComputeValidator",
+      "status": "MATCH",
+      "evidence_ref": "schemas/pass-0009-scientific-compute-validator-result.json"
+    },
+    {
+      "verifier": "Crucible",
+      "status": "MATCH",
+      "evidence_ref": "crucible/pass-0009-report.md"
+    }
+  ],
+  "failure_labels": [
+    {
+      "label": "NOT_A_NEW_PHYSICAL_LAW",
+      "reason": "The heat-equation energy identity is classical and used as a proof-packet systems test."
+    },
+    {
+      "label": "NO_KERNEL_CERTIFICATE",
+      "reason": "No Lean/Coq/Isabelle proof assistant checked this calculus proof in pass 0009."
+    },
+    {
+      "label": "FINITE_PROBE_NOT_UNIVERSAL",
+      "reason": "The numerical probe checks one grid, initial condition, and finite time horizon."
+    },
+    {
+      "label": "UNSTABLE_RUN_IS_NEGATIVE_FIXTURE",
+      "reason": "The cfl=0.55 run is included to prove the receipt layer can preserve failure evidence."
+    }
+  ],
+  "decision_summary": {
+    "decision": "advance_to_buildlang_scientific_receipt_schema",
+    "reason": "The packet binds a continuous identity, bounded positive probe, bounded negative probe, market context, and verifier slots into a concrete BuildLang/buildc proof-kit target.",
+    "confidence": "high",
+    "next_action": "implement a reusable scientific runtime receipt schema with compiler, environment, input, output, invariant, and threshold fields"
+  }
+}

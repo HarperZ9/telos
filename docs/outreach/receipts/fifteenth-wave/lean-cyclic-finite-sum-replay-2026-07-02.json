@@ -1,0 +1,42 @@
+{
+  "schema": "project-telos.theorem-prover-replay-receipt/v1",
+  "packet_id": "navier-stokes-periodic-skew-symmetry-v0",
+  "generated_at": "2026-07-02",
+  "toolchain": {
+    "elan": "elan 4.2.3 (b6cec7e10 2026-06-08)",
+    "lean": "Lean (version 4.31.0, x86_64-w64-windows-gnu, commit 68218e876d2a38b1985b8590fff244a83c321783, Release)",
+    "lake": "Lake version 5.0.0-src+68218e8 (Lean version 4.31.0)",
+    "path_boundary": "Used explicit C:\\Users\\Zain\\.elan\\bin paths; no global PATH claim."
+  },
+  "source": {
+    "path": "docs/research/proof-packets/navier-stokes-periodic-skew-symmetry-v0/formal/lean/CyclicFiniteSumPreflight.lean",
+    "sha256": "e69d314e73710f8ab58e45f1fdf9f353777dfd51e70087ebc575c8913014e115"
+  },
+  "historical_dependency_boundary": {
+    "fourteenth_wave_source_path": "docs/research/proof-packets/navier-stokes-periodic-skew-symmetry-v0/formal/lean/PeriodicCancellationPreflight.lean",
+    "fourteenth_wave_source_sha256_preserved": "77e5cba345adc1fd99003bfc17092750fddca1a9f879b4ac59f99e74c374a936"
+  },
+  "command": "C:\\Users\\Zain\\.elan\\bin\\lean.exe docs\\research\\proof-packets\\navier-stokes-periodic-skew-symmetry-v0\\formal\\lean\\CyclicFiniteSumPreflight.lean",
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": "",
+  "replayed_declarations": [
+    "ProjectTelos.FormalReplay.lastValue",
+    "ProjectTelos.FormalReplay.pathDiffSum",
+    "ProjectTelos.FormalReplay.pathDiffSum_telescopes",
+    "ProjectTelos.FormalReplay.cyclic_pathDiffSum_cancels"
+  ],
+  "verdicts": {
+    "lean_kernel_replay": "MATCH",
+    "formal_replay_rung": "CYCLIC_SUM_REPLAY_MATCH",
+    "continuous_periodic_integration_by_parts": "NOT_REPLAYED",
+    "parent_millennium_problem": "UNVERIFIABLE"
+  },
+  "boundaries": [
+    "The Lean file proves a finite List/Int telescoping identity over a closed discrete path.",
+    "It does not define integrals, smooth periodic fields, weak solutions, or Navier-Stokes equations.",
+    "It is not a proof of continuous periodic integration by parts.",
+    "It is not a proof of Navier-Stokes existence, uniqueness, smoothness, or global regularity.",
+    "It does not establish source-body review or native BuildLang relation-invariant receipt support."
+  ]
+}

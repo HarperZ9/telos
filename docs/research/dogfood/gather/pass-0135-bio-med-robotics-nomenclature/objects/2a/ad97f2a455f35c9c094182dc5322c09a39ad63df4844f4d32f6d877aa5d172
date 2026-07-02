@@ -1,0 +1,133 @@
+Skip to content
+National Robotics Week — Latest Physical AI Research, Breakthroughs and Resources
+April 10, 2026 by NVIDIA Writers
+0 Comments
+Share
+Share This Article
+X
+Facebook
+LinkedIn
+Copy link
+Link copied!
+Your browser doesn't support HTML5 video. Here is a link to the video instead.
+This National Robotics Week, NVIDIA is highlighting the breakthroughs that are bringing AI into the physical world — as well as the growing wave of robots transforming industries, from agricultural and manufacturing to energy and beyond.
+Advancements in robot learning, simulation and foundation models are accelerating development, enabling robots to move from training in virtual environments to real-world deployment faster than ever.
+With NVIDIA platforms for simulation, synthetic data and AI-powered robot learning, developers now have the tools to build machines that can perceive, reason and act in complex environments.
+Building the Next Generation of AI Robots 🔗
+At NVIDIA GTC last month, a new wave of technologies was introduced to accelerate the development of AI-powered robots.
+At the core is a full-stack, cloud-to-robot workflow that connects simulation, robot learning and edge computing — making it faster to build, train and deploy intelligent machines.
+https://blogs.nvidia.com/wp-content/uploads/2026/04/GTC26-Robots_16x9_v3-2-1.mp4
+Key announcements include:
+New NVIDIA Isaac GR00T open models enable robots to understand natural language instructions and perform complex, multistep tasks using vision language action reasoning.
+New NVIDIA Cosmos world models for generating synthetic data and training robots at scale help systems learn more efficiently and generalize across environments.
+The general availability of open source physics engine Newton 1.0 provides a fast and reliable foundation for dexterous robot manipulation with accurate collision detection, realistic object contact and stable simulation of complex systems with both rigid and flexible parts.
+Expanded simulation capabilities with the general availability of NVIDIA Isaac Sim 6.0, Isaac Lab 3.0 and Omniverse NuRec technologies allow developers to model real-world scenarios and validate robotic systems before deployment.
+Watch on-demand sessions from the NVIDIA GTC global AI conference to catch up on recent breakthroughs in robotics, showcased by leading experts in the field.
+Driving Breakthroughs in Surgical Precision 🔗
+PeritasAI is advancing a new generation of surgical robotics by integrating physical AI into real-world operating environments. Using NVIDIA Isaac for Healthcare and the Rheo blueprint for hospital automation, the company is developing multi-agent intelligence that can sense, coordinate and act in real time.
+In collaboration with Lightwheel and Advent Health Hospitals, this work brings embodied intelligence into the operating room — supporting surgical teams with situational awareness, sterile coordination and intelligent management of instruments, implants and workflows.
+From Words to Motion: NVIDIA NemoClaw Brings Natural Language Commands to Isaac Sim 🔗
+NVIDIA Omniverse developer Umang Chudasama has integrated NVIDIA NemoClaw with NVIDIA Isaac Sim to navigate a Nova Carter autonomous robot using plain natural language commands — no manual coding required. NemoClaw translates text instructions (like “move two meters forward”) into executable Python scripts, which are then sent to Isaac Sim via a custom REST application programming interface in real time.
+https://blogs.nvidia.com/wp-content/uploads/2026/04/nemoclaw-isaacsim.mp4
+The entire system runs within Isaac Sim, giving the robot a realistic, physics-accurate warehouse environment to operate in before ever touching the real world. Pairing Isaac Sim with NemoClaw means faster development, safer testing and a smarter path to deployment. Rather than programming robots line by line, developers can now simply talk to them, marking a meaningful shift toward truly collaborative, language-driven robotics.
+OceanSim: A GPU-Accelerated Underwater Robot Perception Simulation Framework 🔗
+Underwater simulators are crucial for developing reliable perception systems, but they still struggle with accurate physics‑based sensor modeling and fast rendering.
+Helping close this gap is OceanSim, a GPU‑accelerated, high‑fidelity simulator developed by researchers at the University of Michigan. It uses advanced physics‑based rendering techniques to make synthetic underwater images look more realistic. Using GPUs, the simulator can render imaging sonar in real time and generate synthetic data quickly.
+OceanSim uses NVIDIA Isaac Sim and plugs into NVIDIA Omniverse libraries, creating a seamless link between robot‑learning research and underwater robotics. This integration lets developers easily develop and deploy embodied AI techniques for underwater applications.
+RoboLab: Benchmarking the Next Generation of Generalist Robots 🔗
+RoboLab is a high-fidelity simulation benchmark for developing and evaluating generalist robot policies — powering systems designed to perform diverse tasks across environments.
+https://blogs.nvidia.com/wp-content/uploads/2026/04/Put_the_onion_in_the_wood_bowl_0_viewport_3X.mp4
+Built on NVIDIA Isaac and NVIDIA Omniverse simulation technologies, RoboLab taps into photorealistic environments and physics-based modeling to train and test robotic policies at scale. This enables researchers to measure how well behaviors learned in simulation transfer to the real world as tasks grow in complexity.
+By combining advanced simulation with structured evaluation, RoboLab accelerates the path from virtual training to real-world deployment.
+RoboLab features will be incorporated into the roadmap of NVIDIA Isaac Lab-Arena, an open source framework for large-scale policy setup and evaluation.
+Smarter Palletizing With AI-Driven Reasoning 🔗
+In warehouse environments, palletizing robots typically follow fixed rules — handling boxes the same way regardless of contents, condition or fragility. A project developed by Doosan Robotics introduces a more adaptive approach using NVIDIA Cosmos Reason.
+By analyzing a single camera image, the system can infer box contents, detect damage and adjust how each item is handled — such as placement, speed and grip — based on estimated weight and fragility. This reduces common issues like incorrectly stacking damaged or fragile goods.
+To build robots that understand the physical world before they ever deploy in it, robotics researchers and developers are building policy models powered by NVIDIA Cosmos world foundation models (WFMs). Toyota Research Institute customizes Cosmos WFMs for their own world model to achieve state-of-the-art results across dynamic view synthesis, state-of-the-art teleoperation data augmentation and navigation world models.
+https://blogs.nvidia.com/wp-content/uploads/2026/04/nvidia_cosmos_accelerates_ai_training_for_robotics.mp4
+Mimic robotics takes a different angle with mimic-video, a video-action model that pairs a pretrained internet-scale video model with a flow-matching action decoder, replacing the static image-language backbones of traditional VLAs with video-learned physical dynamics — achieving 10x better sample efficiency and 2x faster convergence on real-world manipulation tasks.
+Together, both teams demonstrate a fundamental shift: robots trained on world models that capture physics and causality need dramatically less real-world data to perform reliably in conditions they’ve never seen.
+Open, Intelligent Robotics on NVIDIA Jetson: Community Innovations Powering the Next Wave of Physical AI 🔗
+This National Robotics Week, OpenClaw running on the NVIDIA Jetson platform showcases how quickly open source innovation is evolving into real-world, intelligent robotics.
+From practical applications to innovative projects, the robotics community is building what’s next — and fast.
+Developers are pushing the boundaries of autonomy — including hardware-in-the-loop testing powered by Jetson Thor, evaluating camera streams from NVIDIA Isaac Sim and even building systems that can generate their own code to complete tasks.
+https://blogs.nvidia.com/wp-content/uploads/2026/04/oss-on-jetson-models-nrw.mp4
+In addition, OpenClaw now running entirely locally on NVIDIA Jetson Thor — powered by optimized NVIDIA Nemotron open models and the vLLM open inference library — marks a major leap toward private, low-latency edge AI for robotics. And innovations like the NVIDIA NemoClaw stack on Jetson are expanding what’s possible at the intersection of open source and high-performance robotics platforms.
+Training and Refining Movement in Simulation 🔗
+Gennady Plyushchev, a robotics creator known as Skyentific, is documenting the process of building a walking bipedal robot, from simulation and design to real-world deployment — showcasing a simulation-first approach to robot development.
+By using NVIDIA Isaac based simulation workflows alongside NVIDIA Jetson for on-device AI and control, the project demonstrates how developers can rapidly iterate in virtual environments before deploying to physical systems.
+The result highlights a broader shift in robotics: using AI, simulation and edge computing to accelerate development and bring increasingly capable humanoid robots to life.
+University of Maryland Researchers Develop Robots for Complex Household Tasks 🔗
+To bring robots into everyday life, researchers at the University of Maryland, recipients of a grant from the NVIDIA Academic Grant Program, are developing AI-powered humanoid systems capable of performing complex household tasks with greater autonomy.
+The project centers on building robot foundation models that unify perception, planning and control. Using the NVIDIA Isaac open robotics development platform, researchers can create photorealistic, high-fidelity virtual home environments populated with diverse objects and layouts, allowing robots to practice millions of task variations and safely test rare or complex scenarios.
+NVIDIA RTX PRO 6000 Blackwell GPUs for training large models and NVIDIA Jetson AGX Thor developer kits for efficient deployment on physical robots help bridge the gap between research and real-world applications.
+By combining advancements in generative AI, sequential decision-making and scalable computing, the work represents a key step toward general-purpose robots that can support people in homes, healthcare settings and beyond.
+Announcing the MassRobotics Fellowship 🔗
+The second cohort of the Amazon Web Services (AWS) MassRobotics fellowship comprises startups being recognized for compelling industrial use cases harnessing robotics and computer vision. They will receive access to technical resources and AWS cloud credits.
+The cohort includes NVIDIA Inception members Burro, Config Intelligence, Deltia, Haply Robotics, Luminous Robotics, Roboto AI, Telexistence, Terra Robotics and WiRobotics, each developing technologies spanning humanoid robotics, industrial automation, haptics and agricultural systems.
+Burro creates autonomous agricultural robots for tasks like grape harvesting and crop scouting.
+Config Intelligence builds data infrastructure for general-purpose bimanual robotics to enable reliable two-handed tasks in real-world settings.
+Deltia provides AI-driven manufacturing intelligence that optimizes assembly lines using computer vision and analytics.
+Haply Robotics designs haptic control devices that serve as “steering wheels” for physical AI systems across industries.
+Luminous Robotics deploys AI-powered robotic systems for fast, low-cost solar-panel installation and maintenance.
+Roboto AI offers a data-analytics platform that accelerates robot development by managing and analyzing robotics data.
+Telexistence develops AI-powered humanoid robots and remote-controlled systems for retail and logistics.
+Terra Robotics develops laser-weeding agricultural robots to automate sustainable farming.
+WiRobotics creates wearable walking-assist and humanoid robots to enhance mobility and physical interaction, using training data from assisted products to train its humanoids.
+Accelerating How Utility-Scale Solar Projects Are Built in the Field 🔗
+Maximo, a solar robotics business incubated within The AES Corporation, recently completed a 100-megawatt solar installation using its robot fleet. Developed with NVIDIA accelerated computing, NVIDIA Omniverse libraries and the NVIDIA Isaac Sim framework, Maximo demonstrated that autonomous installations can operate reliably for utility-scale projects.
+https://blogs.nvidia.com/wp-content/uploads/2026/04/maximo-nrw.mp4
+The solution improves installation speed, safety and consistency, helping close the gap between rising demand for faster time to power and construction capacity.
+As solar expansion faces ongoing labor constraints and rising demand, AI-driven field robotics systems like Maximo are helping accelerate infrastructure buildout, reduce costs and redefine how energy projects are delivered.
+Aigen Advances Sustainable Farming With Agricultural Robotics 🔗
+To help regenerate the Earth, Aigen’s solar-powered autonomous robots are breaking farmers’ dependency on chemicals through precision weed control powered by vision AI.
+The NVIDIA Inception startup is building a new kind of farming system that’s powered by clean energy and continuously enriched by data. Aigen’s fleet of solar-driven rovers uses advanced computer vision to identify and remove weeds, dramatically reducing the need for herbicides.
+Farming has no standard environment. Every field is different — different crops, different soil, different equipment, weeds, growth stages and geographies. That fragmentation makes real-world data collection slow, expensive and inconsistent. By post-training NVIDIA Cosmos open world foundation models on their specialized data and harnessing NVIDIA Isaac Sim pipelines, Aigen is building the system that generalizes for millions of agriculture scenarios.
+On the ground, each rover runs inference using an NVIDIA Jetson Orin edge AI module to distinguish crops from weeds in real time.
+https://blogs.nvidia.com/wp-content/uploads/2026/04/Aigen_Element_Weeding_1.mp4
+Using these rovers, farmers can grow crops more sustainably and profitably, using regenerative practices that heal the land and foster ecological balance.
+NVIDIA GTC Berlin Registration Is Now Open
+October 20-22
+Register Now
+Recent News
+AI
+NVIDIA and Partners Build in America, for America
+July 1, 2026
+AI
+NVIDIA BioNeMo Agent Toolkit Brings Accelerated AI to Life Sciences Researchers in Claude Science
+June 30, 2026
+AI Infrastructure
+How NVIDIA’s Inference Software Stack Powers the Lowest Token Cost
+June 30, 2026
+Robotics
+Into the Omniverse: Three Workflows for Improving Vision AI Agent Accuracy With Synthetic Data and Fine-Tuning
+June 30, 2026
+View All Recent News
+Categories:
+Robotics
+Tags:
+Computer Vision
+Inception
+Physical AI
+Robotics
+Simulation and Design
+Synthetic Data Generation
+Related News
+AI
+NVIDIA and Partners Build in America, for America
+Jul 1, 2026
+AI
+NVIDIA BioNeMo Agent Toolkit Brings Accelerated AI to Life Sciences Researchers in Claude Science
+Jun 30, 2026
+AI
+Firefly Aerospace Operates NVIDIA Jetson in Lunar Orbit for the First Time
+Jun 29, 2026
+AI
+Open Models, Closed Environments: Palantir Brings Secure AI to US Agencies With NVIDIA Nemotron
+Jun 29, 2026
+Share This
+Facebook
+LinkedIn
+Share on Mastodon
+Enter your Mastodon instance URL (optional)
+Share

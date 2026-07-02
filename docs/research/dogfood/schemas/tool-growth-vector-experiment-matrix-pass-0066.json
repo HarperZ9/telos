@@ -1,0 +1,1164 @@
+{
+  "cross_tool_experiments": [
+    {
+      "expected_receipt": "claim-to-verdict packet",
+      "experiment_id": "proof_os_core",
+      "falsifier": "proof_os_core fails if any tool boundary cannot be replayed from receipts.",
+      "status": "HYPOTHESIS",
+      "tools": [
+        "Gather",
+        "Index",
+        "Forum",
+        "Crucible",
+        "Telos"
+      ]
+    },
+    {
+      "expected_receipt": "trace-to-receipt packet",
+      "experiment_id": "regulated_agent_spine",
+      "falsifier": "regulated_agent_spine fails if any tool boundary cannot be replayed from receipts.",
+      "status": "HYPOTHESIS",
+      "tools": [
+        "action receipts",
+        "action receipts",
+        "loop ledger",
+        "Crucible",
+        "Telos"
+      ]
+    },
+    {
+      "expected_receipt": "compiler-runtime proof receipt",
+      "experiment_id": "scientific_runtime_spine",
+      "falsifier": "scientific_runtime_spine fails if any tool boundary cannot be replayed from receipts.",
+      "status": "HYPOTHESIS",
+      "tools": [
+        "BuildLang/buildc",
+        "build-universe",
+        "Crucible",
+        "Telos"
+      ]
+    },
+    {
+      "expected_receipt": "measured color proof kit",
+      "experiment_id": "color_truth_spine",
+      "falsifier": "color_truth_spine fails if any tool boundary cannot be replayed from receipts.",
+      "status": "HYPOTHESIS",
+      "tools": [
+        "color calibration",
+        "browser evidence",
+        "Crucible",
+        "Telos"
+      ]
+    },
+    {
+      "expected_receipt": "research proof packet",
+      "experiment_id": "ai4science_lab_spine",
+      "falsifier": "ai4science_lab_spine fails if any tool boundary cannot be replayed from receipts.",
+      "status": "HYPOTHESIS",
+      "tools": [
+        "Gather",
+        "model foundry",
+        "BuildLang/buildc",
+        "Crucible",
+        "Telos"
+      ]
+    },
+    {
+      "expected_receipt": "route vocabulary repair receipt",
+      "experiment_id": "routing_repair_spine",
+      "falsifier": "routing_repair_spine fails if any tool boundary cannot be replayed from receipts.",
+      "status": "HYPOTHESIS",
+      "tools": [
+        "Forum",
+        "Index",
+        "loop ledger",
+        "Telos"
+      ]
+    },
+    {
+      "expected_receipt": "browser evidence claim packet",
+      "experiment_id": "browser_to_claim_spine",
+      "falsifier": "browser_to_claim_spine fails if any tool boundary cannot be replayed from receipts.",
+      "status": "HYPOTHESIS",
+      "tools": [
+        "browser evidence",
+        "Gather",
+        "Index",
+        "Crucible"
+      ]
+    },
+    {
+      "expected_receipt": "model workflow improvement receipt",
+      "experiment_id": "model_improvement_spine",
+      "falsifier": "model_improvement_spine fails if any tool boundary cannot be replayed from receipts.",
+      "status": "HYPOTHESIS",
+      "tools": [
+        "model foundry",
+        "loop ledger",
+        "Crucible",
+        "action receipts"
+      ]
+    },
+    {
+      "expected_receipt": "adapter package map",
+      "experiment_id": "package_ecosystem_spine",
+      "falsifier": "package_ecosystem_spine fails if any tool boundary cannot be replayed from receipts.",
+      "status": "HYPOTHESIS",
+      "tools": [
+        "build-universe",
+        "Index",
+        "Forum",
+        "Telos"
+      ]
+    },
+    {
+      "expected_receipt": "buyer learning loop packet",
+      "experiment_id": "market_learning_spine",
+      "falsifier": "market_learning_spine fails if any tool boundary cannot be replayed from receipts.",
+      "status": "HYPOTHESIS",
+      "tools": [
+        "Gather",
+        "Forum",
+        "loop ledger",
+        "Telos"
+      ]
+    }
+  ],
+  "generated_on": "2026-07-01",
+  "growth_vectors": [
+    {
+      "claim_status": "hypothesis",
+      "experiment_id": "gather-adapter_hardening",
+      "falsifier": "Gather adapter contract fails if it cannot emit a re-checkable receipt with a clear negative fixture.",
+      "gap_status": "inferred",
+      "market_need": "Make Gather legible as part of a cross-tool proof system instead of a standalone capability.",
+      "priority_score": 4,
+      "source_ids": [
+        "futurehouse",
+        "sakana_ai_scientist",
+        "microsoft_discovery"
+      ],
+      "success_metric": "round-trip one incumbent artifact into a Telos receipt",
+      "tool": "Gather",
+      "vector": "adapter contract"
+    },
+    {
+      "claim_status": "hypothesis",
+      "experiment_id": "gather-benchmark_harness",
+      "falsifier": "Gather measurement harness fails if it cannot emit a re-checkable receipt with a clear negative fixture.",
+      "gap_status": "inferred",
+      "market_need": "Make Gather legible as part of a cross-tool proof system instead of a standalone capability.",
+      "priority_score": 4,
+      "source_ids": [
+        "futurehouse",
+        "sakana_ai_scientist",
+        "microsoft_discovery"
+      ],
+      "success_metric": "measure latency, completeness, and replay fidelity",
+      "tool": "Gather",
+      "vector": "measurement harness"
+    },
+    {
+      "claim_status": "hypothesis",
+      "experiment_id": "gather-buyer_packet",
+      "falsifier": "Gather market packet fails if it cannot emit a re-checkable receipt with a clear negative fixture.",
+      "gap_status": "inferred",
+      "market_need": "Make Gather legible as part of a cross-tool proof system instead of a standalone capability.",
+      "priority_score": 4,
+      "source_ids": [
+        "futurehouse",
+        "sakana_ai_scientist",
+        "microsoft_discovery"
+      ],
+      "success_metric": "convert the capability into a buyer-readable proof artifact",
+      "tool": "Gather",
+      "vector": "market packet"
+    },
+    {
+      "claim_status": "hypothesis",
+      "experiment_id": "index-adapter_hardening",
+      "falsifier": "Index adapter contract fails if it cannot emit a re-checkable receipt with a clear negative fixture.",
+      "gap_status": "inferred",
+      "market_need": "Make Index legible as part of a cross-tool proof system instead of a standalone capability.",
+      "priority_score": 5,
+      "source_ids": [
+        "opentelemetry",
+        "mlflow",
+        "nist_ai_rmf"
+      ],
+      "success_metric": "round-trip one incumbent artifact into a Telos receipt",
+      "tool": "Index",
+      "vector": "adapter contract"
+    },
+    {
+      "claim_status": "hypothesis",
+      "experiment_id": "index-benchmark_harness",
+      "falsifier": "Index measurement harness fails if it cannot emit a re-checkable receipt with a clear negative fixture.",
+      "gap_status": "inferred",
+      "market_need": "Make Index legible as part of a cross-tool proof system instead of a standalone capability.",
+      "priority_score": 5,
+      "source_ids": [
+        "opentelemetry",
+        "mlflow",
+        "nist_ai_rmf"
+      ],
+      "success_metric": "measure latency, completeness, and replay fidelity",
+      "tool": "Index",
+      "vector": "measurement harness"
+    },
+    {
+      "claim_status": "hypothesis",
+      "experiment_id": "index-buyer_packet",
+      "falsifier": "Index market packet fails if it cannot emit a re-checkable receipt with a clear negative fixture.",
+      "gap_status": "inferred",
+      "market_need": "Make Index legible as part of a cross-tool proof system instead of a standalone capability.",
+      "priority_score": 4,
+      "source_ids": [
+        "opentelemetry",
+        "mlflow",
+        "nist_ai_rmf"
+      ],
+      "success_metric": "convert the capability into a buyer-readable proof artifact",
+      "tool": "Index",
+      "vector": "market packet"
+    },
+    {
+      "claim_status": "hypothesis",
+      "experiment_id": "forum-adapter_hardening",
+      "falsifier": "Forum adapter contract fails if it cannot emit a re-checkable receipt with a clear negative fixture.",
+      "gap_status": "inferred",
+      "market_need": "Make Forum legible as part of a cross-tool proof system instead of a standalone capability.",
+      "priority_score": 4,
+      "source_ids": [
+        "langsmith",
+        "langfuse",
+        "braintrust"
+      ],
+      "success_metric": "round-trip one incumbent artifact into a Telos receipt",
+      "tool": "Forum",
+      "vector": "adapter contract"
+    },
+    {
+      "claim_status": "hypothesis",
+      "experiment_id": "forum-benchmark_harness",
+      "falsifier": "Forum measurement harness fails if it cannot emit a re-checkable receipt with a clear negative fixture.",
+      "gap_status": "inferred",
+      "market_need": "Make Forum legible as part of a cross-tool proof system instead of a standalone capability.",
+      "priority_score": 4,
+      "source_ids": [
+        "langsmith",
+        "langfuse",
+        "braintrust"
+      ],
+      "success_metric": "measure latency, completeness, and replay fidelity",
+      "tool": "Forum",
+      "vector": "measurement harness"
+    },
+    {
+      "claim_status": "hypothesis",
+      "experiment_id": "forum-buyer_packet",
+      "falsifier": "Forum market packet fails if it cannot emit a re-checkable receipt with a clear negative fixture.",
+      "gap_status": "inferred",
+      "market_need": "Make Forum legible as part of a cross-tool proof system instead of a standalone capability.",
+      "priority_score": 4,
+      "source_ids": [
+        "langsmith",
+        "langfuse",
+        "braintrust"
+      ],
+      "success_metric": "convert the capability into a buyer-readable proof artifact",
+      "tool": "Forum",
+      "vector": "market packet"
+    },
+    {
+      "claim_status": "hypothesis",
+      "experiment_id": "crucible-adapter_hardening",
+      "falsifier": "Crucible adapter contract fails if it cannot emit a re-checkable receipt with a clear negative fixture.",
+      "gap_status": "inferred",
+      "market_need": "Make Crucible legible as part of a cross-tool proof system instead of a standalone capability.",
+      "priority_score": 5,
+      "source_ids": [
+        "nist_ai_rmf",
+        "eu_ai_act",
+        "braintrust"
+      ],
+      "success_metric": "round-trip one incumbent artifact into a Telos receipt",
+      "tool": "Crucible",
+      "vector": "adapter contract"
+    },
+    {
+      "claim_status": "hypothesis",
+      "experiment_id": "crucible-benchmark_harness",
+      "falsifier": "Crucible measurement harness fails if it cannot emit a re-checkable receipt with a clear negative fixture.",
+      "gap_status": "inferred",
+      "market_need": "Make Crucible legible as part of a cross-tool proof system instead of a standalone capability.",
+      "priority_score": 5,
+      "source_ids": [
+        "nist_ai_rmf",
+        "eu_ai_act",
+        "braintrust"
+      ],
+      "success_metric": "measure latency, completeness, and replay fidelity",
+      "tool": "Crucible",
+      "vector": "measurement harness"
+    },
+    {
+      "claim_status": "hypothesis",
+      "experiment_id": "crucible-buyer_packet",
+      "falsifier": "Crucible market packet fails if it cannot emit a re-checkable receipt with a clear negative fixture.",
+      "gap_status": "inferred",
+      "market_need": "Make Crucible legible as part of a cross-tool proof system instead of a standalone capability.",
+      "priority_score": 4,
+      "source_ids": [
+        "nist_ai_rmf",
+        "eu_ai_act",
+        "braintrust"
+      ],
+      "success_metric": "convert the capability into a buyer-readable proof artifact",
+      "tool": "Crucible",
+      "vector": "market packet"
+    },
+    {
+      "claim_status": "hypothesis",
+      "experiment_id": "telos-adapter_hardening",
+      "falsifier": "Telos adapter contract fails if it cannot emit a re-checkable receipt with a clear negative fixture.",
+      "gap_status": "inferred",
+      "market_need": "Make Telos legible as part of a cross-tool proof system instead of a standalone capability.",
+      "priority_score": 5,
+      "source_ids": [
+        "opentelemetry",
+        "mlflow",
+        "eu_ai_act"
+      ],
+      "success_metric": "round-trip one incumbent artifact into a Telos receipt",
+      "tool": "Telos",
+      "vector": "adapter contract"
+    },
+    {
+      "claim_status": "hypothesis",
+      "experiment_id": "telos-benchmark_harness",
+      "falsifier": "Telos measurement harness fails if it cannot emit a re-checkable receipt with a clear negative fixture.",
+      "gap_status": "inferred",
+      "market_need": "Make Telos legible as part of a cross-tool proof system instead of a standalone capability.",
+      "priority_score": 5,
+      "source_ids": [
+        "opentelemetry",
+        "mlflow",
+        "eu_ai_act"
+      ],
+      "success_metric": "measure latency, completeness, and replay fidelity",
+      "tool": "Telos",
+      "vector": "measurement harness"
+    },
+    {
+      "claim_status": "hypothesis",
+      "experiment_id": "telos-buyer_packet",
+      "falsifier": "Telos market packet fails if it cannot emit a re-checkable receipt with a clear negative fixture.",
+      "gap_status": "inferred",
+      "market_need": "Make Telos legible as part of a cross-tool proof system instead of a standalone capability.",
+      "priority_score": 4,
+      "source_ids": [
+        "opentelemetry",
+        "mlflow",
+        "eu_ai_act"
+      ],
+      "success_metric": "convert the capability into a buyer-readable proof artifact",
+      "tool": "Telos",
+      "vector": "market packet"
+    },
+    {
+      "claim_status": "hypothesis",
+      "experiment_id": "buildlang-buildc-adapter_hardening",
+      "falsifier": "BuildLang/buildc adapter contract fails if it cannot emit a re-checkable receipt with a clear negative fixture.",
+      "gap_status": "inferred",
+      "market_need": "Make BuildLang/buildc legible as part of a cross-tool proof system instead of a standalone capability.",
+      "priority_score": 4,
+      "source_ids": [
+        "julia",
+        "openxla",
+        "triton"
+      ],
+      "success_metric": "round-trip one incumbent artifact into a Telos receipt",
+      "tool": "BuildLang/buildc",
+      "vector": "adapter contract"
+    },
+    {
+      "claim_status": "hypothesis",
+      "experiment_id": "buildlang-buildc-benchmark_harness",
+      "falsifier": "BuildLang/buildc measurement harness fails if it cannot emit a re-checkable receipt with a clear negative fixture.",
+      "gap_status": "inferred",
+      "market_need": "Make BuildLang/buildc legible as part of a cross-tool proof system instead of a standalone capability.",
+      "priority_score": 4,
+      "source_ids": [
+        "julia",
+        "openxla",
+        "triton"
+      ],
+      "success_metric": "measure latency, completeness, and replay fidelity",
+      "tool": "BuildLang/buildc",
+      "vector": "measurement harness"
+    },
+    {
+      "claim_status": "hypothesis",
+      "experiment_id": "buildlang-buildc-buyer_packet",
+      "falsifier": "BuildLang/buildc market packet fails if it cannot emit a re-checkable receipt with a clear negative fixture.",
+      "gap_status": "inferred",
+      "market_need": "Make BuildLang/buildc legible as part of a cross-tool proof system instead of a standalone capability.",
+      "priority_score": 4,
+      "source_ids": [
+        "julia",
+        "openxla",
+        "triton"
+      ],
+      "success_metric": "convert the capability into a buyer-readable proof artifact",
+      "tool": "BuildLang/buildc",
+      "vector": "market packet"
+    },
+    {
+      "claim_status": "hypothesis",
+      "experiment_id": "build-universe-adapter_hardening",
+      "falsifier": "build-universe adapter contract fails if it cannot emit a re-checkable receipt with a clear negative fixture.",
+      "gap_status": "inferred",
+      "market_need": "Make build-universe legible as part of a cross-tool proof system instead of a standalone capability.",
+      "priority_score": 4,
+      "source_ids": [
+        "julia",
+        "openxla",
+        "mlflow"
+      ],
+      "success_metric": "round-trip one incumbent artifact into a Telos receipt",
+      "tool": "build-universe",
+      "vector": "adapter contract"
+    },
+    {
+      "claim_status": "hypothesis",
+      "experiment_id": "build-universe-benchmark_harness",
+      "falsifier": "build-universe measurement harness fails if it cannot emit a re-checkable receipt with a clear negative fixture.",
+      "gap_status": "inferred",
+      "market_need": "Make build-universe legible as part of a cross-tool proof system instead of a standalone capability.",
+      "priority_score": 4,
+      "source_ids": [
+        "julia",
+        "openxla",
+        "mlflow"
+      ],
+      "success_metric": "measure latency, completeness, and replay fidelity",
+      "tool": "build-universe",
+      "vector": "measurement harness"
+    },
+    {
+      "claim_status": "hypothesis",
+      "experiment_id": "build-universe-buyer_packet",
+      "falsifier": "build-universe market packet fails if it cannot emit a re-checkable receipt with a clear negative fixture.",
+      "gap_status": "inferred",
+      "market_need": "Make build-universe legible as part of a cross-tool proof system instead of a standalone capability.",
+      "priority_score": 4,
+      "source_ids": [
+        "julia",
+        "openxla",
+        "mlflow"
+      ],
+      "success_metric": "convert the capability into a buyer-readable proof artifact",
+      "tool": "build-universe",
+      "vector": "market packet"
+    },
+    {
+      "claim_status": "hypothesis",
+      "experiment_id": "color-calibration-adapter_hardening",
+      "falsifier": "color calibration adapter contract fails if it cannot emit a re-checkable receipt with a clear negative fixture.",
+      "gap_status": "inferred",
+      "market_need": "Make color calibration legible as part of a cross-tool proof system instead of a standalone capability.",
+      "priority_score": 4,
+      "source_ids": [
+        "aces",
+        "opencolorio",
+        "nist_ai_rmf"
+      ],
+      "success_metric": "round-trip one incumbent artifact into a Telos receipt",
+      "tool": "color calibration",
+      "vector": "adapter contract"
+    },
+    {
+      "claim_status": "hypothesis",
+      "experiment_id": "color-calibration-benchmark_harness",
+      "falsifier": "color calibration measurement harness fails if it cannot emit a re-checkable receipt with a clear negative fixture.",
+      "gap_status": "inferred",
+      "market_need": "Make color calibration legible as part of a cross-tool proof system instead of a standalone capability.",
+      "priority_score": 4,
+      "source_ids": [
+        "aces",
+        "opencolorio",
+        "nist_ai_rmf"
+      ],
+      "success_metric": "measure latency, completeness, and replay fidelity",
+      "tool": "color calibration",
+      "vector": "measurement harness"
+    },
+    {
+      "claim_status": "hypothesis",
+      "experiment_id": "color-calibration-buyer_packet",
+      "falsifier": "color calibration market packet fails if it cannot emit a re-checkable receipt with a clear negative fixture.",
+      "gap_status": "inferred",
+      "market_need": "Make color calibration legible as part of a cross-tool proof system instead of a standalone capability.",
+      "priority_score": 4,
+      "source_ids": [
+        "aces",
+        "opencolorio",
+        "nist_ai_rmf"
+      ],
+      "success_metric": "convert the capability into a buyer-readable proof artifact",
+      "tool": "color calibration",
+      "vector": "market packet"
+    },
+    {
+      "claim_status": "hypothesis",
+      "experiment_id": "browser-evidence-adapter_hardening",
+      "falsifier": "browser evidence adapter contract fails if it cannot emit a re-checkable receipt with a clear negative fixture.",
+      "gap_status": "inferred",
+      "market_need": "Make browser evidence legible as part of a cross-tool proof system instead of a standalone capability.",
+      "priority_score": 4,
+      "source_ids": [
+        "opentelemetry",
+        "langfuse",
+        "phoenix"
+      ],
+      "success_metric": "round-trip one incumbent artifact into a Telos receipt",
+      "tool": "browser evidence",
+      "vector": "adapter contract"
+    },
+    {
+      "claim_status": "hypothesis",
+      "experiment_id": "browser-evidence-benchmark_harness",
+      "falsifier": "browser evidence measurement harness fails if it cannot emit a re-checkable receipt with a clear negative fixture.",
+      "gap_status": "inferred",
+      "market_need": "Make browser evidence legible as part of a cross-tool proof system instead of a standalone capability.",
+      "priority_score": 4,
+      "source_ids": [
+        "opentelemetry",
+        "langfuse",
+        "phoenix"
+      ],
+      "success_metric": "measure latency, completeness, and replay fidelity",
+      "tool": "browser evidence",
+      "vector": "measurement harness"
+    },
+    {
+      "claim_status": "hypothesis",
+      "experiment_id": "browser-evidence-buyer_packet",
+      "falsifier": "browser evidence market packet fails if it cannot emit a re-checkable receipt with a clear negative fixture.",
+      "gap_status": "inferred",
+      "market_need": "Make browser evidence legible as part of a cross-tool proof system instead of a standalone capability.",
+      "priority_score": 4,
+      "source_ids": [
+        "opentelemetry",
+        "langfuse",
+        "phoenix"
+      ],
+      "success_metric": "convert the capability into a buyer-readable proof artifact",
+      "tool": "browser evidence",
+      "vector": "market packet"
+    },
+    {
+      "claim_status": "hypothesis",
+      "experiment_id": "model-foundry-adapter_hardening",
+      "falsifier": "model foundry adapter contract fails if it cannot emit a re-checkable receipt with a clear negative fixture.",
+      "gap_status": "inferred",
+      "market_need": "Make model foundry legible as part of a cross-tool proof system instead of a standalone capability.",
+      "priority_score": 4,
+      "source_ids": [
+        "mlflow",
+        "braintrust",
+        "microsoft_discovery"
+      ],
+      "success_metric": "round-trip one incumbent artifact into a Telos receipt",
+      "tool": "model foundry",
+      "vector": "adapter contract"
+    },
+    {
+      "claim_status": "hypothesis",
+      "experiment_id": "model-foundry-benchmark_harness",
+      "falsifier": "model foundry measurement harness fails if it cannot emit a re-checkable receipt with a clear negative fixture.",
+      "gap_status": "inferred",
+      "market_need": "Make model foundry legible as part of a cross-tool proof system instead of a standalone capability.",
+      "priority_score": 4,
+      "source_ids": [
+        "mlflow",
+        "braintrust",
+        "microsoft_discovery"
+      ],
+      "success_metric": "measure latency, completeness, and replay fidelity",
+      "tool": "model foundry",
+      "vector": "measurement harness"
+    },
+    {
+      "claim_status": "hypothesis",
+      "experiment_id": "model-foundry-buyer_packet",
+      "falsifier": "model foundry market packet fails if it cannot emit a re-checkable receipt with a clear negative fixture.",
+      "gap_status": "inferred",
+      "market_need": "Make model foundry legible as part of a cross-tool proof system instead of a standalone capability.",
+      "priority_score": 4,
+      "source_ids": [
+        "mlflow",
+        "braintrust",
+        "microsoft_discovery"
+      ],
+      "success_metric": "convert the capability into a buyer-readable proof artifact",
+      "tool": "model foundry",
+      "vector": "market packet"
+    },
+    {
+      "claim_status": "hypothesis",
+      "experiment_id": "loop-ledger-adapter_hardening",
+      "falsifier": "loop ledger adapter contract fails if it cannot emit a re-checkable receipt with a clear negative fixture.",
+      "gap_status": "inferred",
+      "market_need": "Make loop ledger legible as part of a cross-tool proof system instead of a standalone capability.",
+      "priority_score": 4,
+      "source_ids": [
+        "opentelemetry",
+        "nist_ai_rmf",
+        "eu_ai_act"
+      ],
+      "success_metric": "round-trip one incumbent artifact into a Telos receipt",
+      "tool": "loop ledger",
+      "vector": "adapter contract"
+    },
+    {
+      "claim_status": "hypothesis",
+      "experiment_id": "loop-ledger-benchmark_harness",
+      "falsifier": "loop ledger measurement harness fails if it cannot emit a re-checkable receipt with a clear negative fixture.",
+      "gap_status": "inferred",
+      "market_need": "Make loop ledger legible as part of a cross-tool proof system instead of a standalone capability.",
+      "priority_score": 4,
+      "source_ids": [
+        "opentelemetry",
+        "nist_ai_rmf",
+        "eu_ai_act"
+      ],
+      "success_metric": "measure latency, completeness, and replay fidelity",
+      "tool": "loop ledger",
+      "vector": "measurement harness"
+    },
+    {
+      "claim_status": "hypothesis",
+      "experiment_id": "loop-ledger-buyer_packet",
+      "falsifier": "loop ledger market packet fails if it cannot emit a re-checkable receipt with a clear negative fixture.",
+      "gap_status": "inferred",
+      "market_need": "Make loop ledger legible as part of a cross-tool proof system instead of a standalone capability.",
+      "priority_score": 4,
+      "source_ids": [
+        "opentelemetry",
+        "nist_ai_rmf",
+        "eu_ai_act"
+      ],
+      "success_metric": "convert the capability into a buyer-readable proof artifact",
+      "tool": "loop ledger",
+      "vector": "market packet"
+    },
+    {
+      "claim_status": "hypothesis",
+      "experiment_id": "action-receipts-adapter_hardening",
+      "falsifier": "action receipts adapter contract fails if it cannot emit a re-checkable receipt with a clear negative fixture.",
+      "gap_status": "inferred",
+      "market_need": "Make action receipts legible as part of a cross-tool proof system instead of a standalone capability.",
+      "priority_score": 5,
+      "source_ids": [
+        "opentelemetry",
+        "langsmith",
+        "phoenix"
+      ],
+      "success_metric": "round-trip one incumbent artifact into a Telos receipt",
+      "tool": "action receipts",
+      "vector": "adapter contract"
+    },
+    {
+      "claim_status": "hypothesis",
+      "experiment_id": "action-receipts-benchmark_harness",
+      "falsifier": "action receipts measurement harness fails if it cannot emit a re-checkable receipt with a clear negative fixture.",
+      "gap_status": "inferred",
+      "market_need": "Make action receipts legible as part of a cross-tool proof system instead of a standalone capability.",
+      "priority_score": 5,
+      "source_ids": [
+        "opentelemetry",
+        "langsmith",
+        "phoenix"
+      ],
+      "success_metric": "measure latency, completeness, and replay fidelity",
+      "tool": "action receipts",
+      "vector": "measurement harness"
+    },
+    {
+      "claim_status": "hypothesis",
+      "experiment_id": "action-receipts-buyer_packet",
+      "falsifier": "action receipts market packet fails if it cannot emit a re-checkable receipt with a clear negative fixture.",
+      "gap_status": "inferred",
+      "market_need": "Make action receipts legible as part of a cross-tool proof system instead of a standalone capability.",
+      "priority_score": 4,
+      "source_ids": [
+        "opentelemetry",
+        "langsmith",
+        "phoenix"
+      ],
+      "success_metric": "convert the capability into a buyer-readable proof artifact",
+      "tool": "action receipts",
+      "vector": "market packet"
+    }
+  ],
+  "internal_tools": [
+    {
+      "role": "source and research intake",
+      "state": "present",
+      "tool": "Gather"
+    },
+    {
+      "role": "workspace context and atlas",
+      "state": "present",
+      "tool": "Index"
+    },
+    {
+      "role": "routing and handoff",
+      "state": "present",
+      "tool": "Forum"
+    },
+    {
+      "role": "verification pressure",
+      "state": "present",
+      "tool": "Crucible"
+    },
+    {
+      "role": "shared receipt room",
+      "state": "present",
+      "tool": "Telos"
+    },
+    {
+      "role": "scientific compiler/runtime",
+      "state": "partial",
+      "tool": "BuildLang/buildc"
+    },
+    {
+      "role": "package and adapter ecosystem",
+      "state": "partial",
+      "tool": "build-universe"
+    },
+    {
+      "role": "measured visual/color proof",
+      "state": "present",
+      "tool": "color calibration"
+    },
+    {
+      "role": "inspectable web evidence",
+      "state": "present",
+      "tool": "browser evidence"
+    },
+    {
+      "role": "model workflow improvement",
+      "state": "present",
+      "tool": "model foundry"
+    },
+    {
+      "role": "append-only continuity",
+      "state": "present",
+      "tool": "loop ledger"
+    },
+    {
+      "role": "accountable execution packet",
+      "state": "present",
+      "tool": "action receipts"
+    }
+  ],
+  "non_promotion_statement": "Pass 0066 is a growth-vector experiment matrix. It does not prove market adoption, technical completion, unique competitor absence, or new natural laws.",
+  "pass": "0066",
+  "previous_pass_binding": {
+    "pass": "0065",
+    "path": "schemas/otel-trace-to-action-receipt-fixture-pass-0065.json",
+    "schema": "OtelTraceToTelosActionReceiptFixture/v1",
+    "seal": "cb3c38e0568793121fb80660d9e584c574b54d69375a82d6337f033193ce199a",
+    "sha256": "798fb31522a117d97b84816fa84440e79e6ffe4c82425c3cb37f0ba596991d87",
+    "status": "OTEL_TRACE_TO_ACTION_RECEIPT_FIXTURE_MATCH"
+  },
+  "promotion_state": "EXPERIMENT_MATRIX_NOT_MARKET_PROOF",
+  "schema": "ToolGrowthVectorExperimentMatrix/v1",
+  "seal": "12a30f44b3b7ba75608c5a2283a82eb6999014515d7e3ad39e4010cca7131531",
+  "source_anchors": [
+    {
+      "confidence": "high",
+      "label": "OpenTelemetry",
+      "retrieved_on": "2026-07-01",
+      "source_id": "opentelemetry",
+      "summary": "Vendor-neutral traces, metrics, and logs.",
+      "url": "https://opentelemetry.io/docs/",
+      "verification_status": "source_anchor"
+    },
+    {
+      "confidence": "high",
+      "label": "MLflow",
+      "retrieved_on": "2026-07-01",
+      "source_id": "mlflow",
+      "summary": "Model registry with lineage and versioning.",
+      "url": "https://mlflow.org/docs/latest/ml/model-registry/",
+      "verification_status": "source_anchor"
+    },
+    {
+      "confidence": "high",
+      "label": "LangSmith",
+      "retrieved_on": "2026-07-01",
+      "source_id": "langsmith",
+      "summary": "LLM application traces and production metrics.",
+      "url": "https://docs.langchain.com/langsmith/observability",
+      "verification_status": "source_anchor"
+    },
+    {
+      "confidence": "high",
+      "label": "Langfuse",
+      "retrieved_on": "2026-07-01",
+      "source_id": "langfuse",
+      "summary": "Open-source tracing, prompt management, and evaluations.",
+      "url": "https://langfuse.com/docs",
+      "verification_status": "source_anchor"
+    },
+    {
+      "confidence": "high",
+      "label": "Arize Phoenix",
+      "retrieved_on": "2026-07-01",
+      "source_id": "phoenix",
+      "summary": "AI tracing and evaluation with OpenTelemetry ingest.",
+      "url": "https://arize.com/docs/phoenix",
+      "verification_status": "source_anchor"
+    },
+    {
+      "confidence": "high",
+      "label": "Braintrust",
+      "retrieved_on": "2026-07-01",
+      "source_id": "braintrust",
+      "summary": "AI observability, evals, and regression detection.",
+      "url": "https://www.braintrust.dev/docs",
+      "verification_status": "source_anchor"
+    },
+    {
+      "confidence": "high",
+      "label": "FutureHouse",
+      "retrieved_on": "2026-07-01",
+      "source_id": "futurehouse",
+      "summary": "AI agents for biology and complex sciences.",
+      "url": "https://www.futurehouse.org/",
+      "verification_status": "source_anchor"
+    },
+    {
+      "confidence": "high",
+      "label": "Sakana AI Scientist",
+      "retrieved_on": "2026-07-01",
+      "source_id": "sakana_ai_scientist",
+      "summary": "Automated scientific discovery workflow.",
+      "url": "https://sakana.ai/ai-scientist/",
+      "verification_status": "source_anchor"
+    },
+    {
+      "confidence": "high",
+      "label": "Microsoft Discovery",
+      "retrieved_on": "2026-07-01",
+      "source_id": "microsoft_discovery",
+      "summary": "Enterprise agentic AI for scientific R&D.",
+      "url": "https://azure.microsoft.com/en-us/solutions/discovery",
+      "verification_status": "source_anchor"
+    },
+    {
+      "confidence": "high",
+      "label": "Julia",
+      "retrieved_on": "2026-07-01",
+      "source_id": "julia",
+      "summary": "Fast dynamic scientific computing language.",
+      "url": "https://julialang.org/",
+      "verification_status": "source_anchor"
+    },
+    {
+      "confidence": "high",
+      "label": "OpenXLA",
+      "retrieved_on": "2026-07-01",
+      "source_id": "openxla",
+      "summary": "Portable performant ML compiler ecosystem.",
+      "url": "https://openxla.org/",
+      "verification_status": "source_anchor"
+    },
+    {
+      "confidence": "high",
+      "label": "Triton",
+      "retrieved_on": "2026-07-01",
+      "source_id": "triton",
+      "summary": "Parallel programming language/compiler for modern GPUs.",
+      "url": "https://triton-lang.org/",
+      "verification_status": "source_anchor"
+    },
+    {
+      "confidence": "high",
+      "label": "ACES",
+      "retrieved_on": "2026-07-01",
+      "source_id": "aces",
+      "summary": "Industry color-management standard.",
+      "url": "https://docs.acescentral.com/",
+      "verification_status": "source_anchor"
+    },
+    {
+      "confidence": "high",
+      "label": "OpenColorIO",
+      "retrieved_on": "2026-07-01",
+      "source_id": "opencolorio",
+      "summary": "Production color-management solution.",
+      "url": "https://opencolorio.org/",
+      "verification_status": "source_anchor"
+    },
+    {
+      "confidence": "high",
+      "label": "NIST AI RMF",
+      "retrieved_on": "2026-07-01",
+      "source_id": "nist_ai_rmf",
+      "summary": "Voluntary AI risk-management framework.",
+      "url": "https://www.nist.gov/itl/ai-risk-management-framework",
+      "verification_status": "source_anchor"
+    },
+    {
+      "confidence": "high",
+      "label": "EU AI Act",
+      "retrieved_on": "2026-07-01",
+      "source_id": "eu_ai_act",
+      "summary": "EU risk-based AI regulation text.",
+      "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj/eng",
+      "verification_status": "source_anchor"
+    }
+  ],
+  "status": "TOOL_GROWTH_VECTOR_EXPERIMENT_MATRIX_MATCH",
+  "synergy_graph": {
+    "centrality": {
+      "BuildLang/buildc": 2,
+      "Crucible": 7,
+      "Forum": 4,
+      "Gather": 4,
+      "Index": 4,
+      "Telos": 8,
+      "action receipts": 3,
+      "browser evidence": 2,
+      "build-universe": 2,
+      "color calibration": 1,
+      "loop ledger": 4,
+      "model foundry": 2
+    },
+    "edges": [
+      {
+        "experiment_id": "proof_os_core",
+        "from": "Gather",
+        "to": "Index"
+      },
+      {
+        "experiment_id": "proof_os_core",
+        "from": "Index",
+        "to": "Forum"
+      },
+      {
+        "experiment_id": "proof_os_core",
+        "from": "Forum",
+        "to": "Crucible"
+      },
+      {
+        "experiment_id": "proof_os_core",
+        "from": "Crucible",
+        "to": "Telos"
+      },
+      {
+        "experiment_id": "regulated_agent_spine",
+        "from": "action receipts",
+        "to": "action receipts"
+      },
+      {
+        "experiment_id": "regulated_agent_spine",
+        "from": "action receipts",
+        "to": "loop ledger"
+      },
+      {
+        "experiment_id": "regulated_agent_spine",
+        "from": "loop ledger",
+        "to": "Crucible"
+      },
+      {
+        "experiment_id": "regulated_agent_spine",
+        "from": "Crucible",
+        "to": "Telos"
+      },
+      {
+        "experiment_id": "scientific_runtime_spine",
+        "from": "BuildLang/buildc",
+        "to": "build-universe"
+      },
+      {
+        "experiment_id": "scientific_runtime_spine",
+        "from": "build-universe",
+        "to": "Crucible"
+      },
+      {
+        "experiment_id": "scientific_runtime_spine",
+        "from": "Crucible",
+        "to": "Telos"
+      },
+      {
+        "experiment_id": "color_truth_spine",
+        "from": "color calibration",
+        "to": "browser evidence"
+      },
+      {
+        "experiment_id": "color_truth_spine",
+        "from": "browser evidence",
+        "to": "Crucible"
+      },
+      {
+        "experiment_id": "color_truth_spine",
+        "from": "Crucible",
+        "to": "Telos"
+      },
+      {
+        "experiment_id": "ai4science_lab_spine",
+        "from": "Gather",
+        "to": "model foundry"
+      },
+      {
+        "experiment_id": "ai4science_lab_spine",
+        "from": "model foundry",
+        "to": "BuildLang/buildc"
+      },
+      {
+        "experiment_id": "ai4science_lab_spine",
+        "from": "BuildLang/buildc",
+        "to": "Crucible"
+      },
+      {
+        "experiment_id": "ai4science_lab_spine",
+        "from": "Crucible",
+        "to": "Telos"
+      },
+      {
+        "experiment_id": "routing_repair_spine",
+        "from": "Forum",
+        "to": "Index"
+      },
+      {
+        "experiment_id": "routing_repair_spine",
+        "from": "Index",
+        "to": "loop ledger"
+      },
+      {
+        "experiment_id": "routing_repair_spine",
+        "from": "loop ledger",
+        "to": "Telos"
+      },
+      {
+        "experiment_id": "browser_to_claim_spine",
+        "from": "browser evidence",
+        "to": "Gather"
+      },
+      {
+        "experiment_id": "browser_to_claim_spine",
+        "from": "Gather",
+        "to": "Index"
+      },
+      {
+        "experiment_id": "browser_to_claim_spine",
+        "from": "Index",
+        "to": "Crucible"
+      },
+      {
+        "experiment_id": "model_improvement_spine",
+        "from": "model foundry",
+        "to": "loop ledger"
+      },
+      {
+        "experiment_id": "model_improvement_spine",
+        "from": "loop ledger",
+        "to": "Crucible"
+      },
+      {
+        "experiment_id": "model_improvement_spine",
+        "from": "Crucible",
+        "to": "action receipts"
+      },
+      {
+        "experiment_id": "package_ecosystem_spine",
+        "from": "build-universe",
+        "to": "Index"
+      },
+      {
+        "experiment_id": "package_ecosystem_spine",
+        "from": "Index",
+        "to": "Forum"
+      },
+      {
+        "experiment_id": "package_ecosystem_spine",
+        "from": "Forum",
+        "to": "Telos"
+      },
+      {
+        "experiment_id": "market_learning_spine",
+        "from": "Gather",
+        "to": "Forum"
+      },
+      {
+        "experiment_id": "market_learning_spine",
+        "from": "Forum",
+        "to": "loop ledger"
+      },
+      {
+        "experiment_id": "market_learning_spine",
+        "from": "loop ledger",
+        "to": "Telos"
+      }
+    ],
+    "top_nodes": [
+      "Telos",
+      "Crucible",
+      "Forum",
+      "Gather",
+      "Index"
+    ]
+  },
+  "top_growth_bundles": [
+    {
+      "bundle_id": "proof_os_core",
+      "market": "research and agent proof packets",
+      "tools": [
+        "Gather",
+        "Index",
+        "Forum",
+        "Crucible",
+        "Telos"
+      ]
+    },
+    {
+      "bundle_id": "accountable_agent_ops",
+      "market": "regulated agent operations",
+      "tools": [
+        "action receipts",
+        "loop ledger",
+        "browser evidence",
+        "Crucible",
+        "Telos"
+      ]
+    },
+    {
+      "bundle_id": "accountable_scientific_compute",
+      "market": "scientific runtime receipts",
+      "tools": [
+        "BuildLang/buildc",
+        "build-universe",
+        "Crucible",
+        "Telos"
+      ]
+    },
+    {
+      "bundle_id": "visual_truth_lab",
+      "market": "color/render measurement proof",
+      "tools": [
+        "color calibration",
+        "browser evidence",
+        "Crucible",
+        "Telos"
+      ]
+    }
+  ],
+  "unsupported_claim_count": 0,
+  "validation_errors": []
+}

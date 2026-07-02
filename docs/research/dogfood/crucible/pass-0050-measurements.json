@@ -1,0 +1,90 @@
+{
+  "measurements": [
+    {
+      "claim": "Pass 0050 created an AgentActionProofPacketDemoSpecSet/v1 artifact with status AGENT_ACTION_PROOF_PACKET_DEMO_SPEC_MATCH, component_count 11, summary_match_count 3, integration_gap_count 6, sha256 efe24bb1b1a161c2adaeea1dd72b18a253348d977c2039532699c968e1930e2a, and seal 7b75deb022c435da463fd124b9aebcb1ccefd6081819ebe9cf1c4421e8c84af9.",
+      "deviation": 0.0,
+      "evidence": [
+        "schema=AgentActionProofPacketDemoSpecSet/v1",
+        "status=AGENT_ACTION_PROOF_PACKET_DEMO_SPEC_MATCH",
+        "component_count=11",
+        "summary_match_count=3",
+        "integration_gap_count=6",
+        "sha256=efe24bb1b1a161c2adaeea1dd72b18a253348d977c2039532699c968e1930e2a",
+        "seal=7b75deb022c435da463fd124b9aebcb1ccefd6081819ebe9cf1c4421e8c84af9"
+      ],
+      "method": "demo-spec-schema-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0050 maps 11 local components into the demo spec: [\"action_receipt\", \"admission_telemetry\", \"browser_evidence\", \"loop_ledger\", \"workstation_substrate\", \"model_foundry\", \"flagship_action\", \"context_pack\", \"telos_mcp\", \"operator_doctor\", \"display_calibration\"].",
+      "deviation": 0.0,
+      "evidence": [
+        "components=[\"action_receipt\", \"admission_telemetry\", \"browser_evidence\", \"loop_ledger\", \"workstation_substrate\", \"model_foundry\", \"flagship_action\", \"context_pack\", \"telos_mcp\", \"operator_doctor\", \"display_calibration\"]"
+      ],
+      "method": "component-map-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0050 records three executable summary receipts as MATCH for browser_evidence, workstation_substrate, and model_foundry.",
+      "deviation": 0.0,
+      "evidence": [
+        "summary_statuses={\"browser_evidence\": \"MATCH\", \"model_foundry\": \"MATCH\", \"workstation_substrate\": \"MATCH\"}"
+      ],
+      "method": "summary-receipt-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0050 records six explicit integration gaps: [\"trace_ingest_adapter\", \"packet_composer\", \"public_demo_fixture\", \"redaction_policy\", \"verifier_runner\", \"export_bundle\"].",
+      "deviation": 0.0,
+      "evidence": [
+        "integration_gaps=[\"trace_ingest_adapter\", \"packet_composer\", \"public_demo_fixture\", \"redaction_policy\", \"verifier_runner\", \"export_bundle\"]"
+      ],
+      "method": "integration-gap-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0050 binds to pass 0049 wedge budget-signal scorecard with sha256 7a200dbd54415ae1eb23453c19973cff42ad3a9040fe5941c432727837cab0ae, seal ef12ec077e084e6de19ae003350166f624aa104458e1a08de5a0e2a4cfcba1da, and source status WEDGE_BUDGET_SIGNAL_SCORECARD_MATCH.",
+      "deviation": 0.0,
+      "evidence": [
+        "previous_sha256=7a200dbd54415ae1eb23453c19973cff42ad3a9040fe5941c432727837cab0ae",
+        "previous_seal=ef12ec077e084e6de19ae003350166f624aa104458e1a08de5a0e2a4cfcba1da",
+        "previous_status=WEDGE_BUDGET_SIGNAL_SCORECARD_MATCH"
+      ],
+      "method": "previous-pass-binding-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0050 records fixture fixtures/agent-action-proof-packet-demo-spec-pass-0050.json with sha256 b7c5222754081694a6cadc762d1eebe8c5ffadad0da0b0ba40325e14ca28da82 and seal 75ef74b6e1a4706376d67f38d63d90652956716cd619af2e6332ba939f3a707d.",
+      "deviation": 0.0,
+      "evidence": [
+        "fixture_sha256=b7c5222754081694a6cadc762d1eebe8c5ffadad0da0b0ba40325e14ca28da82",
+        "fixture_seal=75ef74b6e1a4706376d67f38d63d90652956716cd619af2e6332ba939f3a707d"
+      ],
+      "method": "fixture-binding-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0050 validator result reports MATCH with component_count 11 and integration_gap_count 6.",
+      "deviation": 0.0,
+      "evidence": [
+        "validator_status=MATCH",
+        "component_count=11",
+        "integration_gap_count=6"
+      ],
+      "method": "validator-result-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0050 records packet 060 sha256 3fd93a23b0c4d70dec9c3bd28fc587b3e8aaec6b3d4513b17bae1eb2b4f19cd1, steelman sha256 443283bd35d9c9818c588dfa08749bbe0158d3389ed95bd056cde441d4e78776, uniqueness_claim_status HYPOTHESIS_ONLY, and current_promoted_natural_laws remains none.",
+      "deviation": 0.0,
+      "evidence": [
+        "packet_sha256=3fd93a23b0c4d70dec9c3bd28fc587b3e8aaec6b3d4513b17bae1eb2b4f19cd1",
+        "steelman_sha256=443283bd35d9c9818c588dfa08749bbe0158d3389ed95bd056cde441d4e78776",
+        "uniqueness_claim_status=HYPOTHESIS_ONLY",
+        "current_promoted_natural_laws=[]"
+      ],
+      "method": "non-promotion-boundary-review",
+      "tolerance": 0.5
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "branch_count": 8,
+  "compose": {
+    "command": "C:\\Users\\Zain\\AppData\\Local\\Programs\\Python\\Python312\\python.exe C:\\dev\\public\\telos\\docs\\research\\dogfood\\tools\\compose_solver_branch_receipt_interop_schema.py --out C:\\dev\\public\\telos\\docs\\research\\dogfood\\schemas\\solver-branch-receipt-interop-schema-pass-0098.json",
+    "exit_code": 0,
+    "status": "MATCH",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "6fd6ae558c303dcb61535c5e15b45fac7a5693259feff580cf9fe7078ccd8147"
+  },
+  "executed_count": 6,
+  "forum": {
+    "confidence": 0.09090909090909091,
+    "decided": null,
+    "exit_code": 0,
+    "needs_escalation": true,
+    "status": "MATCH",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "a72455b90f29ed2ce0ba1cca16cddb1e0d9efffa176ad3c7f3092a91e1ab34c8",
+    "top_candidates": [
+      {
+        "agent": "project-telos",
+        "score": 0.09090909090909091
+      },
+      {
+        "agent": "backend",
+        "score": 0.0
+      },
+      {
+        "agent": "ci-cd",
+        "score": 0.0
+      },
+      {
+        "agent": "cloud-infra",
+        "score": 0.0
+      },
+      {
+        "agent": "code-review",
+        "score": 0.0
+      }
+    ]
+  },
+  "index": {
+    "exit_code": 0,
+    "graph_pack_sha256": "8ee383e19ae9a6141bee70de733fb6aa09201ff9d284ce6778ce58b06e6b68b2",
+    "schema": "project-telos.context-envelope/v1",
+    "source_refs_only": true,
+    "status": "MATCH",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "4866fdd92e0b97bb76e931bb37e6e7e0708ba91cf6aa3748b4b20006ce88e49e",
+    "verification_verdict": "MATCH"
+  },
+  "pass": "0098",
+  "schema": "DogfoodToolReceipts/v1",
+  "seal": "8a1afb6b68349362cb7fa13ce7397bd4e92efa20ae12754f1b89afd8665cb378",
+  "telos": {
+    "exit_code": 0,
+    "status": "MATCH",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "be17cb15259234cb4e8e95c2b36e76c90d841431729beb140294e34c5f9ebfa7",
+    "tool": "telos",
+    "tool_version": "0.1.0"
+  },
+  "test": {
+    "command": "C:\\Users\\Zain\\AppData\\Local\\Programs\\Python\\Python312\\python.exe C:\\dev\\public\\telos\\docs\\research\\dogfood\\tools\\test_solver_branch_receipt_interop_schema.py",
+    "exit_code": 0,
+    "status": "MATCH",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

@@ -1,0 +1,120 @@
+{
+  "measurements": [
+    {
+      "claim": "Pass 0118 created a FormalTargetPackagingReceipt/v1 artifact with status FORMAL_TARGET_PACKAGING_MATCH, sha256 0289c5da4f4bf47c52eac38132e03c22920c8af1a3375e894a51adfc44dc74e0, and seal 9b8b6f17a8380c5feb47172d665313eeadaefca3e56f163b30c2dbcf334490f7.",
+      "deviation": 0.0,
+      "evidence": [
+        "schema=FormalTargetPackagingReceipt/v1",
+        "status=FORMAL_TARGET_PACKAGING_MATCH",
+        "sha256=0289c5da4f4bf47c52eac38132e03c22920c8af1a3375e894a51adfc44dc74e0",
+        "seal=9b8b6f17a8380c5feb47172d665313eeadaefca3e56f163b30c2dbcf334490f7"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0118 binds theorem prover adapter pass 0117 with adapter seal 0acf2e699a4a24b1cc0a9426f3525d56d44edd3a7f418e269d1ab8a2cff1fa3e.",
+      "deviation": 0.0,
+      "evidence": [
+        "source_bindings={'adapter_artifact_seal': '0acf2e699a4a24b1cc0a9426f3525d56d44edd3a7f418e269d1ab8a2cff1fa3e', 'theorem_prover_adapter_pass': '0117'}"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0118 emits 4 formal source target files for languages lean4, rocq, isabelle, and agda.",
+      "deviation": 0.0,
+      "evidence": [
+        "languages=['lean4', 'rocq', 'isabelle', 'agda']"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0118 source files all contain 3 adapter proposition ids and all have SOURCE_EMITTED_NOT_EXECUTED status.",
+      "deviation": 0.0,
+      "evidence": [
+        "source_targets=[{'ascii': True, 'bytes': 918, 'execution_status': 'NOT_EXECUTED', 'expected_proposition_count': 3, 'language': 'lean4', 'parser_command': 'lean FiniteCategory.lean', 'path': 'formal-targets/pass-0118/FiniteCategory.lean', 'proposition_ids_present': ['idB_comp_f_eq_f', 'f_comp_idA_eq_f', 'h_comp_g_comp_f_assoc'], 'sha256': 'ffef63a7ebbe7ae35bb552dbd9d5723d71e61a666f0722dda5824176790401b2', 'status': 'SOURCE_EMITTED_NOT_EXECUTED', 'toolchain_executable': 'lean', 'toolchain_status': 'MISSING'}, {'ascii': True, 'bytes': 997, 'execution_status': 'NOT_EXECUTED', 'expected_proposition_count': 3, 'language': 'rocq', 'parser_command': 'coqc FiniteCategory.v', 'path': 'formal-targets/pass-0118/FiniteCategory.v', 'proposition_ids_present': ['idB_comp_f_eq_f', 'f_comp_idA_eq_f', 'h_comp_g_comp_f_assoc'], 'sha256': 'cda4c34d252e4f82cf4f77ad3e72eda082402b6e8d168b0f2770808cb5b6af4c', 'status': 'SOURCE_EMITTED_NOT_EXECUTED', 'toolchain_executable': 'coqc', 'toolchain_status': 'MISSING'}, {'ascii': True, 'bytes': 847, 'execution_status': 'NOT_EXECUTED', 'expected_proposition_count': 3, 'language': 'isabelle', 'parser_command': 'isabelle process -T Pass0118_Finite_Category', 'path': 'formal-targets/pass-0118/Pass0118_Finite_Category.thy', 'proposition_ids_present': ['idB_comp_f_eq_f', 'f_comp_idA_eq_f', 'h_comp_g_comp_f_assoc'], 'sha256': 'e54e3f4d1108ba37a510f38ddb72e2a20fed83301507aa91b2d9aebf901f84b9', 'status': 'SOURCE_EMITTED_NOT_EXECUTED', 'toolchain_executable': 'isabelle', 'toolchain_status': 'MISSING'}, {'ascii': True, 'bytes': 932, 'execution_status': 'NOT_EXECUTED', 'expected_proposition_count': 3, 'language': 'agda', 'parser_command': 'agda Pass0118FiniteCategory.agda', 'path': 'formal-targets/pass-0118/Pass0118FiniteCategory.agda', 'proposition_ids_present': ['idB_comp_f_eq_f', 'f_comp_idA_eq_f', 'h_comp_g_comp_f_assoc'], 'sha256': '060eedf4f76f4b9f88cda436997c95939070a1983575737d1ae09a8dc1ade896', 'status': 'SOURCE_EMITTED_NOT_EXECUTED', 'toolchain_executable': 'agda', 'toolchain_status': 'MISSING'}]"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0118 records NOT_EXECUTED for every formal parser/prover branch.",
+      "deviation": 0.0,
+      "evidence": [
+        "execution_statuses=['NOT_EXECUTED', 'NOT_EXECUTED', 'NOT_EXECUTED', 'NOT_EXECUTED']"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0118 writes a FormalTargetSourceManifest/v1 manifest at formal-targets/pass-0118/manifest.json with sha256 c15ad680605cd2f03fc30bbfd22a620213af81c763fc98339c323033421d3ebc.",
+      "deviation": 0.0,
+      "evidence": [
+        "manifest={'pass': '0118', 'path': 'formal-targets/pass-0118/manifest.json', 'schema': 'FormalTargetSourceManifest/v1', 'sha256': 'c15ad680605cd2f03fc30bbfd22a620213af81c763fc98339c323033421d3ebc', 'source_count': 4, 'sources': [{'ascii': True, 'bytes': 918, 'execution_status': 'NOT_EXECUTED', 'expected_proposition_count': 3, 'language': 'lean4', 'parser_command': 'lean FiniteCategory.lean', 'path': 'formal-targets/pass-0118/FiniteCategory.lean', 'proposition_ids_present': ['idB_comp_f_eq_f', 'f_comp_idA_eq_f', 'h_comp_g_comp_f_assoc'], 'sha256': 'ffef63a7ebbe7ae35bb552dbd9d5723d71e61a666f0722dda5824176790401b2', 'status': 'SOURCE_EMITTED_NOT_EXECUTED', 'toolchain_executable': 'lean', 'toolchain_status': 'MISSING'}, {'ascii': True, 'bytes': 997, 'execution_status': 'NOT_EXECUTED', 'expected_proposition_count': 3, 'language': 'rocq', 'parser_command': 'coqc FiniteCategory.v', 'path': 'formal-targets/pass-0118/FiniteCategory.v', 'proposition_ids_present': ['idB_comp_f_eq_f', 'f_comp_idA_eq_f', 'h_comp_g_comp_f_assoc'], 'sha256': 'cda4c34d252e4f82cf4f77ad3e72eda082402b6e8d168b0f2770808cb5b6af4c', 'status': 'SOURCE_EMITTED_NOT_EXECUTED', 'toolchain_executable': 'coqc', 'toolchain_status': 'MISSING'}, {'ascii': True, 'bytes': 847, 'execution_status': 'NOT_EXECUTED', 'expected_proposition_count': 3, 'language': 'isabelle', 'parser_command': 'isabelle process -T Pass0118_Finite_Category', 'path': 'formal-targets/pass-0118/Pass0118_Finite_Category.thy', 'proposition_ids_present': ['idB_comp_f_eq_f', 'f_comp_idA_eq_f', 'h_comp_g_comp_f_assoc'], 'sha256': 'e54e3f4d1108ba37a510f38ddb72e2a20fed83301507aa91b2d9aebf901f84b9', 'status': 'SOURCE_EMITTED_NOT_EXECUTED', 'toolchain_executable': 'isabelle', 'toolchain_status': 'MISSING'}, {'ascii': True, 'bytes': 932, 'execution_status': 'NOT_EXECUTED', 'expected_proposition_count': 3, 'language': 'agda', 'parser_command': 'agda Pass0118FiniteCategory.agda', 'path': 'formal-targets/pass-0118/Pass0118FiniteCategory.agda', 'proposition_ids_present': ['idB_comp_f_eq_f', 'f_comp_idA_eq_f', 'h_comp_g_comp_f_assoc'], 'sha256': '060eedf4f76f4b9f88cda436997c95939070a1983575737d1ae09a8dc1ade896', 'status': 'SOURCE_EMITTED_NOT_EXECUTED', 'toolchain_executable': 'agda', 'toolchain_status': 'MISSING'}], 'target_ids': ['idB_comp_f_eq_f', 'f_comp_idA_eq_f', 'h_comp_g_comp_f_assoc']}"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0118 records a negative fixture that rejects missing associativity source targets.",
+      "deviation": 0.0,
+      "evidence": [
+        "negative_fixtures=[{'expected_status': 'REJECT', 'fixture_id': 'missing_associativity_source_target', 'reject_reason': 'source_file_must_contain_all_adapter_target_ids'}]"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0118 flagship receipts for Forum, Index, Telos status, and Telos catalog all have MATCH status.",
+      "deviation": 0.0,
+      "evidence": [
+        "forum=MATCH",
+        "index=MATCH",
+        "telos=MATCH",
+        "telos_catalog=MATCH"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0118 validator receipt status is MATCH and test receipt status is MATCH.",
+      "deviation": 0.0,
+      "evidence": [
+        "validator={'command': 'C:\\\\Users\\\\Zain\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python312\\\\python.exe C:\\\\dev\\\\public\\\\telos\\\\docs\\\\research\\\\dogfood\\\\tools\\\\validate_pass_0118_formal_target_packaging.py', 'exit_code': 0, 'stdout_sha256': '2a8686468ee0ab141a442601f6944ae6b6a97bd1f5d9bea30adde4a764eeebcd', 'stderr_sha256': 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855', 'status': 'MATCH'}",
+        "test={'command': 'C:\\\\Users\\\\Zain\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python312\\\\python.exe C:\\\\dev\\\\public\\\\telos\\\\docs\\\\research\\\\dogfood\\\\tools\\\\test_formal_target_packaging_receipt.py', 'exit_code': 0, 'stdout_sha256': 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855', 'stderr_sha256': 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855', 'status': 'MATCH'}"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0118 source target hashes are lean4=ffef63a7ebbe7ae35bb552dbd9d5723d71e61a666f0722dda5824176790401b2, rocq=cda4c34d252e4f82cf4f77ad3e72eda082402b6e8d168b0f2770808cb5b6af4c, isabelle=e54e3f4d1108ba37a510f38ddb72e2a20fed83301507aa91b2d9aebf901f84b9, agda=060eedf4f76f4b9f88cda436997c95939070a1983575737d1ae09a8dc1ade896.",
+      "deviation": 0.0,
+      "evidence": [
+        "lean4=ffef63a7ebbe7ae35bb552dbd9d5723d71e61a666f0722dda5824176790401b2, rocq=cda4c34d252e4f82cf4f77ad3e72eda082402b6e8d168b0f2770808cb5b6af4c, isabelle=e54e3f4d1108ba37a510f38ddb72e2a20fed83301507aa91b2d9aebf901f84b9, agda=060eedf4f76f4b9f88cda436997c95939070a1983575737d1ae09a8dc1ade896"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0118 records unsupported_claim_count 0 and current_promoted_natural_laws length 0.",
+      "deviation": 0.0,
+      "evidence": [
+        "unsupported_claim_count=0",
+        "natural_law_count=0"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0118 composer sha256 is b9f81067cf3e69227fac32cffefdf1e5e2261649c6f933929b1990c4f7a88517, source helper sha256 is 692183818f1089af45106c2db1492c060577326aed8ded8f343b55c323286e7c, packet sha256 is ad3bb4c0a6cd04f8d046c52ce08000e209404423e45ac1f75aa16bf6375ff224, brief sha256 is ebfb1ff8477ee78475a0bf13c774ad45af60c0c5cb59395f54c88292f2dd0992, steelman sha256 is 6a62f453d17991e83e1137c6af2084f9c33ca146385012a4a8b77005f6479026, test sha256 is b30e03881e41baba0a3bdebcdfb308054ac6c349af5ada493e8376f11d5a4f09, validator sha256 is 9079562cd7844aa0886130129c712bd28a1b958bedc1f1f71f80f005c51bffe4, validator result sha256 is 35aabee74e2772782c8dea471619f98ef726a6828a23c67ec1b18192e8dcf2a7, and tool receipts sha256 is eebcff87defd74dc7a4ac9ee9926b50b00b7921bbcc0042b3bbb87057c836fbe.",
+      "deviation": 0.0,
+      "evidence": [
+        "file_hashes={'artifact': '0289c5da4f4bf47c52eac38132e03c22920c8af1a3375e894a51adfc44dc74e0', 'composer': 'b9f81067cf3e69227fac32cffefdf1e5e2261649c6f933929b1990c4f7a88517', 'source_helper': '692183818f1089af45106c2db1492c060577326aed8ded8f343b55c323286e7c', 'packet': 'ad3bb4c0a6cd04f8d046c52ce08000e209404423e45ac1f75aa16bf6375ff224', 'brief': 'ebfb1ff8477ee78475a0bf13c774ad45af60c0c5cb59395f54c88292f2dd0992', 'steelman': '6a62f453d17991e83e1137c6af2084f9c33ca146385012a4a8b77005f6479026', 'test': 'b30e03881e41baba0a3bdebcdfb308054ac6c349af5ada493e8376f11d5a4f09', 'validator': '9079562cd7844aa0886130129c712bd28a1b958bedc1f1f71f80f005c51bffe4', 'validator_result': '35aabee74e2772782c8dea471619f98ef726a6828a23c67ec1b18192e8dcf2a7', 'tool_receipts': 'eebcff87defd74dc7a4ac9ee9926b50b00b7921bbcc0042b3bbb87057c836fbe'}"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    }
+  ]
+}

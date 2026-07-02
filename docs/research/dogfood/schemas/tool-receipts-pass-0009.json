@@ -1,0 +1,103 @@
+{
+  "schema": "DogfoodToolReceipts/v1",
+  "pass": "0009",
+  "generated_on": "2026-07-01",
+  "receipts": [
+    {
+      "tool": "gather",
+      "surface": "gather_status",
+      "status": "MATCH",
+      "tool_version": "1.5.0",
+      "role": "perception-intake",
+      "evidence": "completion floor with Project Telos operator-spine MCP parity"
+    },
+    {
+      "tool": "index",
+      "surface": "index_status",
+      "status": "MATCH",
+      "tool_version": "2.8.0",
+      "role": "structure-context",
+      "evidence": "workspace atlas, certificates, freshness, benchmarking, selection-aware context envelopes, and MCP parity"
+    },
+    {
+      "tool": "forum",
+      "surface": "status",
+      "status": "MATCH",
+      "entries": 1,
+      "checkpoint": "0d88da42deb02a0891e910298c244b66a3654ed5ea9863e585a897c6beb0f806"
+    },
+    {
+      "tool": "forum",
+      "surface": "verify",
+      "status": "MATCH",
+      "chain": true,
+      "deep": true
+    },
+    {
+      "tool": "telos",
+      "surface": "loop_ledger",
+      "status": "MATCH",
+      "verified_on": "2026-06-28",
+      "contract_checks": [
+        "ledger_first_class",
+        "fresh_context_reads_ledger_first",
+        "one_action_per_iteration",
+        "evidence_first_verify_gate",
+        "unverifiable_required"
+      ]
+    },
+    {
+      "tool": "telos",
+      "surface": "server_manifest",
+      "status": "MATCH",
+      "verified_on": "2026-06-28",
+      "servers": [
+        "gather",
+        "crucible",
+        "index",
+        "forum",
+        "telos"
+      ]
+    },
+    {
+      "tool": "crucible",
+      "surface": "crucible_status",
+      "status": "MATCH",
+      "tool_version": "1.1.0",
+      "role": "verification-pressure"
+    },
+    {
+      "tool": "crucible",
+      "surface": "registry_verify_before_pass",
+      "status": "MATCH",
+      "ok": true,
+      "body_count": 32,
+      "seal_count": 5
+    },
+    {
+      "tool": "crucible",
+      "surface": "registry_verify_after_pass",
+      "status": "MATCH",
+      "ok": true,
+      "body_count": 38,
+      "seal_count": 6
+    },
+    {
+      "tool": "crucible",
+      "surface": "verdicts_verify_after_pass",
+      "status": "MATCH",
+      "ok": true,
+      "seal_count": 6
+    },
+    {
+      "tool": "crucible",
+      "surface": "drift_after_pass",
+      "status": "UNVERIFIABLE",
+      "evidence": "drift tracking requires two assessments of the same thesis; pass 0009 has one assessment"
+    }
+  ],
+  "decision": {
+    "status": "MATCH",
+    "next_action": "seal pass 0009 with Crucible and advance to reusable BuildLang scientific runtime receipts"
+  }
+}

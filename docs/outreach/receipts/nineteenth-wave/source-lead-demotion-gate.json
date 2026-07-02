@@ -1,0 +1,62 @@
+{
+  "schema": "project-telos.source-lead-demotion-gate/v1",
+  "generated_at": "2026-07-02",
+  "wave": "nineteenth",
+  "purpose": "Demote finite operator, summation-by-parts, Lean, finite-volume, and formal-PDE arXiv metadata into source leads only after adding an explicit finite edge/operator Lean replay rung.",
+  "stores": [
+    {
+      "path": "docs/outreach/receipts/nineteenth-wave/arxiv-finite-operator-sbp-lean",
+      "retained_rows": 10,
+      "digest_seal": "d56d81f0fd01a5ad5eed375bbc70c71ea1d5aa43c0b7e79a60b5fcb1b5687242",
+      "verify_status": "MATCH"
+    },
+    {
+      "path": "docs/outreach/receipts/nineteenth-wave/arxiv-finite-volume-formal-pde",
+      "retained_rows": 10,
+      "digest_seal": "4651683b8bcb1cf1f43c7b6e118ddc62cee55b2de04b09d4509bd980eb544911",
+      "verify_status": "MATCH"
+    }
+  ],
+  "coverage": {
+    "retained_rows": 20,
+    "unique_arxiv_ids": 19,
+    "duplicate_rows": 1,
+    "dropped_by_gather_scope": 0,
+    "all_store_verifications_match": true
+  },
+  "classification_counts": {
+    "formal_replay_infrastructure": 8,
+    "formal_pde_or_analysis_lead": 2,
+    "adjacent_scientific_computing_lead": 3,
+    "query_noise": 6,
+    "high_risk_grand_claim": 0
+  },
+  "classifications": [
+    {"id": "2606.12594v1", "class": "formal_replay_infrastructure", "reason": "Lean formal-proving workflow lead; duplicate across both stores."},
+    {"id": "2604.16507v1", "class": "formal_replay_infrastructure", "reason": "Lean 4 formalization lead."},
+    {"id": "2404.12534v3", "class": "formal_replay_infrastructure", "reason": "Lean theorem-proving assistant workflow lead."},
+    {"id": "2604.05238v1", "class": "formal_replay_infrastructure", "reason": "Lean 4 formalization lead."},
+    {"id": "2210.12150v5", "class": "formal_replay_infrastructure", "reason": "Lean formalization in physics lead."},
+    {"id": "2501.03352v3", "class": "formal_replay_infrastructure", "reason": "Lean education and proof workflow lead."},
+    {"id": "2110.08453v1", "class": "formal_replay_infrastructure", "reason": "Lean formalization lead outside PDE."},
+    {"id": "2505.20613v3", "class": "formal_replay_infrastructure", "reason": "Retrieval-augmented Lean proving lead."},
+    {"id": "1501.02994v3", "class": "formal_pde_or_analysis_lead", "reason": "Difference-equation analysis lead; source-body review required before citation use."},
+    {"id": "2602.03254v2", "class": "formal_pde_or_analysis_lead", "reason": "Analysis lead returned by finite/PDE query; source-body review required."},
+    {"id": "1504.06109v1", "class": "adjacent_scientific_computing_lead", "reason": "Finite-volume simulation lead; not formal proof evidence."},
+    {"id": "cs/0702167v1", "class": "adjacent_scientific_computing_lead", "reason": "Finite-volume analysis lead; not theorem-prover evidence."},
+    {"id": "1509.00440v1", "class": "adjacent_scientific_computing_lead", "reason": "Finite-volume/boundary-element coupling lead; not local proof evidence."},
+    {"id": "math/9906169v1", "class": "query_noise", "reason": "Operator-term retrieval noise outside the finite edge/PDE proof target."},
+    {"id": "1711.06392v3", "class": "query_noise", "reason": "Finite-field retrieval noise."},
+    {"id": "1102.5335v1", "class": "query_noise", "reason": "Finite-field retrieval noise."},
+    {"id": "1001.1448v3", "class": "query_noise", "reason": "Finite-field retrieval noise."},
+    {"id": "2004.08001v2", "class": "query_noise", "reason": "Finite-field retrieval noise."},
+    {"id": "1401.2434v2", "class": "query_noise", "reason": "Finite-field retrieval noise."}
+  ],
+  "verdict": "SOURCE_LEAD_ONLY",
+  "boundaries": [
+    "This gate classifies arXiv metadata only.",
+    "It does not establish paper truth, source-body review, latest literature coverage, or exhaustive literature coverage.",
+    "It does not promote any PDE result, theorem-prover result beyond the local Lean file, or grand-problem claim.",
+    "No row is used as proof of the finite edge/operator theorem; the Lean replay receipt is the proof artifact for that bounded theorem."
+  ]
+}

@@ -1,0 +1,600 @@
+{
+  "ok": true,
+  "thesis": {
+    "id": "acc644ea2448e9ed",
+    "title": "Dogfood Pass 0020 Quantum Workflow Provenance Market and Import Audit",
+    "registered_at": 1782905166.5239813,
+    "disposition": "fenced",
+    "seal": "acc644ea2448e9ed9e7e3cadfdf54a9c41f8fb5d173b82aa5c7bdc065f066a50",
+    "claims": [
+      {
+        "id": "b41cc1635f0cda85",
+        "sha256": "b41cc1635f0cda8567448fee5b6f138a402a8ab7435f0bb3f9daa599ceaf85ed"
+      },
+      {
+        "id": "08793ace527d752b",
+        "sha256": "08793ace527d752bea189ae72fb2c9d86d4daa4233b7def254c6e8e4e25c53fb"
+      },
+      {
+        "id": "ebb75fd3c6360c44",
+        "sha256": "ebb75fd3c6360c441fa853e7059b6d36c52c7cba45251544e629521fc24df226"
+      },
+      {
+        "id": "520f21a03d3f1acb",
+        "sha256": "520f21a03d3f1acbecfea489ca83f94a56612036aead2c1855a0416ca9231d86"
+      },
+      {
+        "id": "f19aa89a1dd54102",
+        "sha256": "f19aa89a1dd541027a54f8547a2f61b6f86d1872e82b9577029d3a2ed87dc49c"
+      },
+      {
+        "id": "eb119b94f8c838fe",
+        "sha256": "eb119b94f8c838fe789c615e97423eb6ee635cf55d45d9fce0e01a65650b9c42"
+      },
+      {
+        "id": "8d7238ba90224e61",
+        "sha256": "8d7238ba90224e61b7a632224f7cffe8de16cdd1c87a07831af724f383a13b76"
+      },
+      {
+        "id": "65fcd768bb96504c",
+        "sha256": "65fcd768bb96504cb7de70f707f76c551eb7df028521a6928dfdf92e95dc26f4"
+      },
+      {
+        "id": "24e9e451ce1af1fc",
+        "sha256": "24e9e451ce1af1fc66b6d8201a14b2556a8297aa2ed2b98759e113098f1f724f"
+      },
+      {
+        "id": "cb927622a3fddb91",
+        "sha256": "cb927622a3fddb9106b1a04336ffa6f9c8340bf666ce9ca70730ce3bc1704fb4"
+      },
+      {
+        "id": "4636ed306557ebb9",
+        "sha256": "4636ed306557ebb95eb1911695cc25c8241b6e3eec78959b2a0f7275e83fc350"
+      }
+    ]
+  },
+  "refutations": [
+    {
+      "claim_id": "b41cc1635f0cda85",
+      "claim_sha256": "b41cc1635f0cda8567448fee5b6f138a402a8ab7435f0bb3f9daa599ceaf85ed",
+      "challenge": "test the stated falsification: schemas/quantum-workflow-market-import-audit-pass-0020.json is missing, has a different schema or status, reports different counts, or lacks the expected seal",
+      "measurable": "schemas/quantum-workflow-market-import-audit-pass-0020.json is missing, has a different schema or status, reports different counts, or lacks the expected seal",
+      "source": "null"
+    },
+    {
+      "claim_id": "08793ace527d752b",
+      "claim_sha256": "08793ace527d752bea189ae72fb2c9d86d4daa4233b7def254c6e8e4e25c53fb",
+      "challenge": "test the stated falsification: any market row is missing a required field, lacks HTTPS sources, uses an invalid gap status, or lacks the hypothesis-only uniqueness policy",
+      "measurable": "any market row is missing a required field, lacks HTTPS sources, uses an invalid gap status, or lacks the hypothesis-only uniqueness policy",
+      "source": "null"
+    },
+    {
+      "claim_id": "ebb75fd3c6360c44",
+      "claim_sha256": "ebb75fd3c6360c441fa853e7059b6d36c52c7cba45251544e629521fc24df226",
+      "challenge": "test the stated falsification: the structured market rows contain the phrase 'no competitor does this'",
+      "measurable": "the structured market rows contain the phrase 'no competitor does this'",
+      "source": "null"
+    },
+    {
+      "claim_id": "520f21a03d3f1acb",
+      "claim_sha256": "520f21a03d3f1acbecfea489ca83f94a56612036aead2c1855a0416ca9231d86",
+      "challenge": "test the stated falsification: the wedge scorecard has fewer than four items, score fields fall outside 1-5, or the primary market push is missing or not ranked first",
+      "measurable": "the wedge scorecard has fewer than four items, score fields fall outside 1-5, or the primary market push is missing or not ranked first",
+      "source": "null"
+    },
+    {
+      "claim_id": "f19aa89a1dd54102",
+      "claim_sha256": "f19aa89a1dd541027a54f8547a2f61b6f86d1872e82b9577029d3a2ed87dc49c",
+      "challenge": "test the stated falsification: the package audit has fewer than 15 rows, any row has import_attempted=true, or opentelemetry-api is absent, lacks version 1.41.0, or is promoted beyond OTel bridge scope",
+      "measurable": "the package audit has fewer than 15 rows, any row has import_attempted=true, or opentelemetry-api is absent, lacks version 1.41.0, or is promoted beyond OTel bridge scope",
+      "source": "null"
+    },
+    {
+      "claim_id": "eb119b94f8c838fe",
+      "claim_sha256": "eb119b94f8c838fe789c615e97423eb6ee635cf55d45d9fce0e01a65650b9c42",
+      "challenge": "test the stated falsification: any named distribution is absent from the audit or has a status other than NOT_INSTALLED in the persisted pass 0020 artifact",
+      "measurable": "any named distribution is absent from the audit or has a status other than NOT_INSTALLED in the persisted pass 0020 artifact",
+      "source": "null"
+    },
+    {
+      "claim_id": "8d7238ba90224e61",
+      "claim_sha256": "8d7238ba90224e61b7a632224f7cffe8de16cdd1c87a07831af724f383a13b76",
+      "challenge": "test the stated falsification: any named internal tool is absent from the megatool integration map",
+      "measurable": "any named internal tool is absent from the megatool integration map",
+      "source": "null"
+    },
+    {
+      "claim_id": "65fcd768bb96504c",
+      "claim_sha256": "65fcd768bb96504cb7de70f707f76c551eb7df028521a6928dfdf92e95dc26f4",
+      "challenge": "test the stated falsification: any required promotion state is missing",
+      "measurable": "any required promotion state is missing",
+      "source": "null"
+    },
+    {
+      "claim_id": "24e9e451ce1af1fc",
+      "claim_sha256": "24e9e451ce1af1fc66b6d8201a14b2556a8297aa2ed2b98759e113098f1f724f",
+      "challenge": "test the stated falsification: schemas/pass-0020-quantum-workflow-market-validator-result.json is missing, reports non-MATCH status, does not report match=1, or reports drift above zero",
+      "measurable": "schemas/pass-0020-quantum-workflow-market-validator-result.json is missing, reports non-MATCH status, does not report match=1, or reports drift above zero",
+      "source": "null"
+    },
+    {
+      "claim_id": "cb927622a3fddb91",
+      "claim_sha256": "cb927622a3fddb9106b1a04336ffa6f9c8340bf666ce9ca70730ce3bc1704fb4",
+      "challenge": "test the stated falsification: schemas/tool-receipts-pass-0020.json is missing, lacks required tool status receipts, or treats Forum submit as successful rather than UNVERIFIABLE",
+      "measurable": "schemas/tool-receipts-pass-0020.json is missing, lacks required tool status receipts, or treats Forum submit as successful rather than UNVERIFIABLE",
+      "source": "null"
+    },
+    {
+      "claim_id": "4636ed306557ebb9",
+      "claim_sha256": "4636ed306557ebb95eb1911695cc25c8241b6e3eec78959b2a0f7275e83fc350",
+      "challenge": "test the stated falsification: any pass 0020 artifact labels a live framework integration, package installation, provider execution, hardware result, buyer-demand proof, natural law, or scientific discovery as promoted",
+      "measurable": "any pass 0020 artifact labels a live framework integration, package installation, provider execution, hardware result, buyer-demand proof, natural law, or scientific discovery as promoted",
+      "source": "null"
+    }
+  ],
+  "assessment": {
+    "started_at": 1782905166.5307188,
+    "thesis_id": "acc644ea2448e9ed",
+    "thesis_seal": "acc644ea2448e9ed9e7e3cadfdf54a9c41f8fb5d173b82aa5c7bdc065f066a50",
+    "claims": 11,
+    "match": 11,
+    "drift": 0,
+    "unverifiable": 0,
+    "verdict_seal": "c23fe049ecf1fb8ad89c7df05bd838b6f069453cd292d9c35ca09b5b09465d4a",
+    "measurement_seal": "272da60afd4d44d3241c16b5bf3d12e950bf0a23d2fef6386f27453159a5f851",
+    "disposition": "fenced",
+    "stored": null,
+    "verdicts": [
+      {
+        "claim_id": "b41cc1635f0cda85",
+        "claim_sha256": "b41cc1635f0cda8567448fee5b6f138a402a8ab7435f0bb3f9daa599ceaf85ed",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "quantum-workflow-market-artifact-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "08793ace527d752b",
+        "claim_sha256": "08793ace527d752bea189ae72fb2c9d86d4daa4233b7def254c6e8e4e25c53fb",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "market-row-contract-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "ebb75fd3c6360c44",
+        "claim_sha256": "ebb75fd3c6360c441fa853e7059b6d36c52c7cba45251544e629521fc24df226",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "unsupported-uniqueness-scan",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "520f21a03d3f1acb",
+        "claim_sha256": "520f21a03d3f1acbecfea489ca83f94a56612036aead2c1855a0416ca9231d86",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "wedge-score-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "f19aa89a1dd54102",
+        "claim_sha256": "f19aa89a1dd541027a54f8547a2f61b6f86d1872e82b9577029d3a2ed87dc49c",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "local-import-audit-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "eb119b94f8c838fe",
+        "claim_sha256": "eb119b94f8c838fe789c615e97423eb6ee635cf55d45d9fce0e01a65650b9c42",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "local-import-absence-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "8d7238ba90224e61",
+        "claim_sha256": "8d7238ba90224e61b7a632224f7cffe8de16cdd1c87a07831af724f383a13b76",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "megatool-node-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "65fcd768bb96504c",
+        "claim_sha256": "65fcd768bb96504cb7de70f707f76c551eb7df028521a6928dfdf92e95dc26f4",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "promotion-ladder-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "24e9e451ce1af1fc",
+        "claim_sha256": "24e9e451ce1af1fc66b6d8201a14b2556a8297aa2ed2b98759e113098f1f724f",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "validator-run-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "cb927622a3fddb91",
+        "claim_sha256": "cb927622a3fddb9106b1a04336ffa6f9c8340bf666ce9ca70730ce3bc1704fb4",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "tool-receipt-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "4636ed306557ebb9",
+        "claim_sha256": "4636ed306557ebb95eb1911695cc25c8241b6e3eec78959b2a0f7275e83fc350",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "non-promotion-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      }
+    ],
+    "measurements": [
+      {
+        "claim_id": "b41cc1635f0cda85",
+        "claim_sha256": "b41cc1635f0cda8567448fee5b6f138a402a8ab7435f0bb3f9daa599ceaf85ed",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "quantum-workflow-market-artifact-review",
+        "measured_at": 1782905166.5304012,
+        "evidence": [
+          "schemas/quantum-workflow-market-import-audit-pass-0020.json schema=QuantumWorkflowMarketImportSet/v1",
+          "status=MARKET_IMPORT_AUDIT_MATCH",
+          "market_row_count=22",
+          "wedge_score_count=4",
+          "audit_row_count=15",
+          "megatool_node_count=12",
+          "source_anchor_count=26",
+          "seal=1c3263fe19f05d45e4f719f96c02703ca4e1f2739ecf8b85d03449ee49665eaf"
+        ]
+      },
+      {
+        "claim_id": "08793ace527d752b",
+        "claim_sha256": "08793ace527d752bea189ae72fb2c9d86d4daa4233b7def254c6e8e4e25c53fb",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "market-row-contract-review",
+        "measured_at": 1782905166.5304115,
+        "evidence": [
+          "validator checks every market row for MarketRow/v1 schema",
+          "validator checks category, buyer, and official_claim",
+          "validator checks at least one HTTPS source",
+          "validator checks allowed gap status in verified/inferred/unverified",
+          "validator checks hypothesis-only uniqueness policy"
+        ]
+      },
+      {
+        "claim_id": "ebb75fd3c6360c44",
+        "claim_sha256": "ebb75fd3c6360c441fa853e7059b6d36c52c7cba45251544e629521fc24df226",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "unsupported-uniqueness-scan",
+        "measured_at": 1782905166.5304155,
+        "evidence": [
+          "validator scans structured market rows for phrase 'no competitor does this'",
+          "validator result errors=[]",
+          "rg placeholder/claim scan over pass 0020 artifacts produced no TODO/TBD/FIXME/PLACEHOLDER/REPLACE_ME matches"
+        ]
+      },
+      {
+        "claim_id": "520f21a03d3f1acb",
+        "claim_sha256": "520f21a03d3f1acbecfea489ca83f94a56612036aead2c1855a0416ca9231d86",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "wedge-score-review",
+        "measured_at": 1782905166.530419,
+        "evidence": [
+          "wedge_score_count=4",
+          "all score fields are constrained to 1-5 by validator",
+          "primary_market_push rank=1",
+          "primary_market_push market=scientific workflow provenance bridge with quantum as the public proof domain",
+          "primary_market_push why_now is hypothesis-labelled"
+        ]
+      },
+      {
+        "claim_id": "f19aa89a1dd54102",
+        "claim_sha256": "f19aa89a1dd541027a54f8547a2f61b6f86d1872e82b9577029d3a2ed87dc49c",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "local-import-audit-review",
+        "measured_at": 1782905166.5304224,
+        "evidence": [
+          "audit_row_count=15",
+          "all package_import_audit rows import_attempted=false",
+          "opentelemetry-api find_spec_available=true",
+          "opentelemetry-api version=1.41.0",
+          "opentelemetry-api promotion_status=AVAILABLE_FOR_OTEL_BRIDGE_ONLY"
+        ]
+      },
+      {
+        "claim_id": "eb119b94f8c838fe",
+        "claim_sha256": "eb119b94f8c838fe789c615e97423eb6ee635cf55d45d9fce0e01a65650b9c42",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "local-import-absence-review",
+        "measured_at": 1782905166.5304263,
+        "evidence": [
+          "qiskit version_status=NOT_INSTALLED",
+          "qiskit-ibm-runtime version_status=NOT_INSTALLED",
+          "amazon-braket-sdk version_status=NOT_INSTALLED",
+          "cirq version_status=NOT_INSTALLED",
+          "pennylane version_status=NOT_INSTALLED",
+          "pyqir version_status=NOT_INSTALLED",
+          "pytket version_status=NOT_INSTALLED",
+          "cudaq version_status=NOT_INSTALLED",
+          "qnexus version_status=NOT_INSTALLED",
+          "pulser version_status=NOT_INSTALLED",
+          "covalent version_status=NOT_INSTALLED",
+          "mlflow version_status=NOT_INSTALLED",
+          "wandb version_status=NOT_INSTALLED",
+          "dvc version_status=NOT_INSTALLED"
+        ]
+      },
+      {
+        "claim_id": "8d7238ba90224e61",
+        "claim_sha256": "8d7238ba90224e61b7a632224f7cffe8de16cdd1c87a07831af724f383a13b76",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "megatool-node-review",
+        "measured_at": 1782905166.5304298,
+        "evidence": [
+          "megatool nodes include Gather",
+          "megatool nodes include Index",
+          "megatool nodes include Forum",
+          "megatool nodes include Crucible",
+          "megatool nodes include Telos",
+          "megatool nodes include BuildLang/buildc",
+          "megatool nodes include build-universe",
+          "megatool nodes include Build Color / calibration tools",
+          "megatool nodes include browser evidence",
+          "megatool nodes include model foundry",
+          "megatool nodes include loop ledger",
+          "megatool nodes include action receipts"
+        ]
+      },
+      {
+        "claim_id": "65fcd768bb96504c",
+        "claim_sha256": "65fcd768bb96504cb7de70f707f76c551eb7df028521a6928dfdf92e95dc26f4",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "promotion-ladder-review",
+        "measured_at": 1782905166.530433,
+        "evidence": [
+          "promotion_ladder contains SYNTHETIC_ADAPTER_FIXTURE",
+          "promotion_ladder contains FRAMEWORK_IMPORT_FIXTURE",
+          "promotion_ladder contains LIVE_PROVIDER_FIXTURE",
+          "promotion_ladder contains PUBLIC_PROOF_DEMO"
+        ]
+      },
+      {
+        "claim_id": "24e9e451ce1af1fc",
+        "claim_sha256": "24e9e451ce1af1fc66b6d8201a14b2556a8297aa2ed2b98759e113098f1f724f",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "validator-run-review",
+        "measured_at": 1782905166.5304356,
+        "evidence": [
+          "schemas/pass-0020-quantum-workflow-market-validator-result.json status=MATCH",
+          "match=1",
+          "drift=0",
+          "checks include QuantumWorkflowMarketImportSet status MATCH"
+        ]
+      },
+      {
+        "claim_id": "cb927622a3fddb91",
+        "claim_sha256": "cb927622a3fddb9106b1a04336ffa6f9c8340bf666ce9ca70730ce3bc1704fb4",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "tool-receipt-review",
+        "measured_at": 1782905166.530439,
+        "evidence": [
+          "schemas/tool-receipts-pass-0020.json status=MATCH_WITH_FORUM_SUBMIT_GAP",
+          "index status MATCH",
+          "gather status MATCH",
+          "gather docs verified=true",
+          "telos operator_doctor status MATCH",
+          "forum status MATCH entries=12",
+          "forum verify chain=true deep=true",
+          "forum submit status=UNVERIFIABLE",
+          "crucible status MATCH"
+        ]
+      },
+      {
+        "claim_id": "4636ed306557ebb9",
+        "claim_sha256": "4636ed306557ebb95eb1911695cc25c8241b6e3eec78959b2a0f7275e83fc350",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "non-promotion-review",
+        "measured_at": 1782905166.530442,
+        "evidence": [
+          "schemas/quantum-workflow-market-import-audit-pass-0020.json non_promotion_statement states no installs, unavailable framework imports, quantum hardware, provider job, or scientific result",
+          "packets/030-quantum-workflow-provenance-market.md states no framework import, provider job, quantum hardware result, or promoted scientific result",
+          "schemas/tool-receipts-pass-0020.json non_promotion_statement states no live quantum framework execution, cloud provider execution, buyer demand, or scientific discovery",
+          "Current promoted natural laws: none"
+        ]
+      }
+    ],
+    "seal": "c2bec28e353db326d5b46e8500813ff64cfce45dbaf5f05f1f245d3faa292d60"
+  },
+  "verdicts": [
+    {
+      "claim_id": "b41cc1635f0cda85",
+      "claim_sha256": "b41cc1635f0cda8567448fee5b6f138a402a8ab7435f0bb3f9daa599ceaf85ed",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "quantum-workflow-market-artifact-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "08793ace527d752b",
+      "claim_sha256": "08793ace527d752bea189ae72fb2c9d86d4daa4233b7def254c6e8e4e25c53fb",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "market-row-contract-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "ebb75fd3c6360c44",
+      "claim_sha256": "ebb75fd3c6360c441fa853e7059b6d36c52c7cba45251544e629521fc24df226",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "unsupported-uniqueness-scan",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "520f21a03d3f1acb",
+      "claim_sha256": "520f21a03d3f1acbecfea489ca83f94a56612036aead2c1855a0416ca9231d86",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "wedge-score-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "f19aa89a1dd54102",
+      "claim_sha256": "f19aa89a1dd541027a54f8547a2f61b6f86d1872e82b9577029d3a2ed87dc49c",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "local-import-audit-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "eb119b94f8c838fe",
+      "claim_sha256": "eb119b94f8c838fe789c615e97423eb6ee635cf55d45d9fce0e01a65650b9c42",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "local-import-absence-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "8d7238ba90224e61",
+      "claim_sha256": "8d7238ba90224e61b7a632224f7cffe8de16cdd1c87a07831af724f383a13b76",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "megatool-node-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "65fcd768bb96504c",
+      "claim_sha256": "65fcd768bb96504cb7de70f707f76c551eb7df028521a6928dfdf92e95dc26f4",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "promotion-ladder-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "24e9e451ce1af1fc",
+      "claim_sha256": "24e9e451ce1af1fc66b6d8201a14b2556a8297aa2ed2b98759e113098f1f724f",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "validator-run-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "cb927622a3fddb91",
+      "claim_sha256": "cb927622a3fddb9106b1a04336ffa6f9c8340bf666ce9ca70730ce3bc1704fb4",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "tool-receipt-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "4636ed306557ebb9",
+      "claim_sha256": "4636ed306557ebb95eb1911695cc25c8241b6e3eec78959b2a0f7275e83fc350",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "non-promotion-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    }
+  ],
+  "checks": {
+    "seals_ok": true,
+    "thesis_ok": true,
+    "verdicts_rederive": true
+  },
+  "report": "C:\\dev\\public\\telos\\docs\\research\\dogfood\\crucible\\pass-0020-report.md",
+  "record": "C:\\dev\\public\\telos\\docs\\research\\dogfood\\crucible\\pass-0020-run.json",
+  "bundle": null,
+  "spec": null,
+  "review": null,
+  "verifier": {
+    "mode": "cleanroom",
+    "inputs": [],
+    "excluded": [
+      "worker context",
+      "reasoning trace",
+      "intermediate steps"
+    ],
+    "checkability": "If success cannot be evaluated from the original spec and the artifact, the spec is not checkable yet."
+  }
+}

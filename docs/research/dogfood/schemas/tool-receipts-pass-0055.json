@@ -1,0 +1,166 @@
+{
+  "schema": "DogfoodToolReceiptSet/v1",
+  "pass": "0055",
+  "generated_on": "2026-07-01",
+  "status": "MATCH_WITH_FORUM_SUBMIT_GAP_AND_HYPOTHESIS_ONLY_UNIQUENESS",
+  "non_promotion_statement": "Tool receipts prove local multi-trace graph generation, graph validator MATCH, negative-fixture replay, Telos/Index/Gather/Forum/Crucible availability, and hypothesis-only uniqueness boundaries. They do not prove live collector ingestion, complete distributed causality, buyer adoption, scientific truth, or any natural law.",
+  "receipts": [
+    {
+      "tool": "index",
+      "command": "map --root docs/research/dogfood --json",
+      "status": "MATCH",
+      "schema_version": 1,
+      "tool_version": "2.8.0",
+      "root_sha256_prefix": "f2f0af39219698a9",
+      "repo_count": 0,
+      "dirty_count": 0,
+      "top_level_count": 65
+    },
+    {
+      "tool": "mcp__index.index_doctor",
+      "command": "index_doctor",
+      "status": "MATCH",
+      "tool_version": "2.8.0",
+      "check_count": 4,
+      "match_count": 4
+    },
+    {
+      "tool": "gather",
+      "command": "docs",
+      "artifact": "packets/065-multitrace-causality-graph.md",
+      "status": "MATCH",
+      "sha256": "6a7694f83271f8456c9d4fcfa24fd6eed39ecbaef062d3fff668e182f8cbb330",
+      "chars": 536,
+      "seal": "241e1ac765d2cb6e16596f3f2b9be1050059b9d1679ccd19f0a7022c439195d1",
+      "verified": true
+    },
+    {
+      "tool": "mcp__gather.gather_status",
+      "command": "gather_status",
+      "status": "MATCH",
+      "tool_version": "1.5.0",
+      "role": "perception-intake",
+      "command_count": 6,
+      "mcp_tool_count": 5
+    },
+    {
+      "tool": "python",
+      "command": "test_multitrace_causality_graph.py",
+      "status": "MATCH",
+      "exit_code": 0,
+      "stdout_sha256": "a3d03f49869e29480c9140761b79a1be237dd8fc7966393dca2ba977086bb8e6",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "line_count": 126
+    },
+    {
+      "tool": "python",
+      "command": "probe_multitrace_causality_graph.py",
+      "status": "MULTITRACE_CAUSALITY_GRAPH_ADAPTER_MATCH",
+      "implementation_status": "IMPLEMENTED_LOCAL_MULTITRACE_GRAPH_ADAPTER",
+      "seal": "c2c73932b6f2ef042d0381ae7f0efc6e0e1a2a72bc7d96f9ad1e828753fa9b3b",
+      "node_count": 4,
+      "edge_count": 3,
+      "trace_identity_substitution_count": 0,
+      "negative_match_count": 5,
+      "negative_pass_observed_count": 0,
+      "line_count": 214
+    },
+    {
+      "tool": "python",
+      "command": "build_multitrace_causality_graph.py",
+      "status": "MATCH",
+      "sha256": "a3cd3f36278e6b0478f0bb55a47755d6042708c2be76246da717acedfb632a07",
+      "line_count": 245,
+      "graph_status": "MULTITRACE_CAUSALITY_GRAPH_MATCH",
+      "node_count": 4,
+      "edge_count": 3
+    },
+    {
+      "tool": "python",
+      "command": "validate_pass_0055_multitrace_causality_graph.py",
+      "status": "MATCH",
+      "schema": "Pass0055MultiTraceCausalityGraphValidatorRun/v1",
+      "match": 1,
+      "drift": 0,
+      "node_count": 4,
+      "edge_count": 3,
+      "trace_identity_substitution_count": 0,
+      "line_count": 102
+    },
+    {
+      "tool": "mcp__telos.telos_operator_doctor",
+      "command": "telos_operator_doctor",
+      "status": "MATCH",
+      "aggregate_verdict": "MATCH",
+      "check_count": 14,
+      "passed_count": 14,
+      "tool_count": 65,
+      "telos_tool_count": 37,
+      "source": "MCP result captured in Codex session on 2026-07-01T16:09:05.590Z"
+    },
+    {
+      "tool": "forum",
+      "command": "route",
+      "status": "MATCH",
+      "confidence": 0.15454545454545454,
+      "decided": null,
+      "needs_escalation": true,
+      "candidates": [
+        {
+          "agent": "code-review",
+          "score": 0.2
+        },
+        {
+          "agent": "project-telos",
+          "score": 0.045454545454545456
+        },
+        {
+          "agent": "backend",
+          "score": 0.0
+        }
+      ]
+    },
+    {
+      "tool": "forum",
+      "command": "ledger verify",
+      "status": "MATCH",
+      "chain": true,
+      "deep": true
+    },
+    {
+      "tool": "forum",
+      "command": "submit",
+      "status": "UNVERIFIABLE",
+      "request": "Dogfood pass 0055 adversarial review for multi-trace causality graph",
+      "exit_code": 2,
+      "error": "submit needs a model executor. Forum is model-agnostic: pass --cmd \"<model cli>\" (any command, local models need no account), --chat-url <openai-compatible url> (e.g. a local Ollama server), or --api (Anthropic)."
+    },
+    {
+      "tool": "mcp__crucible.crucible_status",
+      "command": "crucible_status",
+      "status": "MATCH",
+      "tool_version": "1.1.0",
+      "role": "verification-pressure",
+      "capability_count": 4,
+      "mcp_tool_count": 13
+    },
+    {
+      "tool": "crucible",
+      "command": "run",
+      "status": "MATCH",
+      "claims": 8,
+      "match": 8,
+      "drift": 0,
+      "unverifiable": 0,
+      "thesis_id": "ac1c85b8ffbdc89e",
+      "thesis_seal": "ac1c85b8ffbdc89e8e18673fbd8905f187ff76f2f9737da27a7b919145c501c1",
+      "verdict_seal": "1edf26131c5a002c7159e39de9d8de4e861d12d88920b05ec32c0c8351150e26",
+      "measurement_seal": "ae70e07cb689f0d08c7718d8143caa3327623eacef5286374be27af500d5d961",
+      "assessment_seal": "78565efaa08bc77c6ea80d97382c45d7eda2bced272b3172798e2cb0a21f6d51",
+      "run_sha256": "18857d5b4f85d13a5e6d6f88f445d6caff8987ab61d34d1dc869afbad9fd4d61",
+      "seals_ok": true,
+      "thesis_ok": true,
+      "verdicts_rederive": true
+    }
+  ]
+}

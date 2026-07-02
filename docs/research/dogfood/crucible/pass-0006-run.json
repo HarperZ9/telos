@@ -1,0 +1,349 @@
+{
+  "ok": true,
+  "thesis": {
+    "id": "968e1d7e97fc5245",
+    "title": "Dogfood Pass 0006 Executable Validator and Minimal Proof Packet",
+    "registered_at": 1782899809.9218123,
+    "disposition": "fenced",
+    "seal": "968e1d7e97fc524528efa1491dd48b9d049b3a1ad25d202e0bc90882049fc39a",
+    "claims": [
+      {
+        "id": "5e442f200bb7780d",
+        "sha256": "5e442f200bb7780d6a36c0c2908194ec559721913786dbb705e8305c08cdde85"
+      },
+      {
+        "id": "eb128a719542f105",
+        "sha256": "eb128a719542f1057cae4f85a54e6578635972f2d84ace88dc2412ad15fd25f4"
+      },
+      {
+        "id": "7059666d9da4b0c2",
+        "sha256": "7059666d9da4b0c2ab5b5663d5d40b97a8a83a4d17f1dd0bd3301d20b1c694c3"
+      },
+      {
+        "id": "ac5c64a38f8044ef",
+        "sha256": "ac5c64a38f8044ef5dd4cc383994e34c2894487fe803e5cc3fb10cc306992803"
+      },
+      {
+        "id": "adddb64d59d179fc",
+        "sha256": "adddb64d59d179fcf501c0dd614e3dc7f11dc8ba2b8e9a5428b06adcb4338673"
+      },
+      {
+        "id": "eb7c03f6747c8f39",
+        "sha256": "eb7c03f6747c8f397b0e7b13ab6f637fc9a7e0b5bac1372576a7578f1d512644"
+      }
+    ]
+  },
+  "refutations": [
+    {
+      "claim_id": "5e442f200bb7780d",
+      "claim_sha256": "5e442f200bb7780d6a36c0c2908194ec559721913786dbb705e8305c08cdde85",
+      "challenge": "test the stated falsification: tools/validate_dogfood_artifacts.py is missing or the validator does not reference the prior schema artifacts and pass 0006 artifacts",
+      "measurable": "tools/validate_dogfood_artifacts.py is missing or the validator does not reference the prior schema artifacts and pass 0006 artifacts",
+      "source": "null"
+    },
+    {
+      "claim_id": "eb128a719542f105",
+      "claim_sha256": "eb128a719542f1057cae4f85a54e6578635972f2d84ace88dc2412ad15fd25f4",
+      "challenge": "test the stated falsification: proof-packet-pass-0006.json lacks any required ProofPacket/v1 minimum field",
+      "measurable": "proof-packet-pass-0006.json lacks any required ProofPacket/v1 minimum field",
+      "source": "null"
+    },
+    {
+      "claim_id": "7059666d9da4b0c2",
+      "claim_sha256": "7059666d9da4b0c2ab5b5663d5d40b97a8a83a4d17f1dd0bd3301d20b1c694c3",
+      "challenge": "test the stated falsification: otel-action-normalization-pass-0006.json has fewer than 8 mappings or lacks the non-inferable Telos proof-layer fields",
+      "measurable": "otel-action-normalization-pass-0006.json has fewer than 8 mappings or lacks the non-inferable Telos proof-layer fields",
+      "source": "null"
+    },
+    {
+      "claim_id": "ac5c64a38f8044ef",
+      "claim_sha256": "ac5c64a38f8044ef5dd4cc383994e34c2894487fe803e5cc3fb10cc306992803",
+      "challenge": "test the stated falsification: build-color-measurement-receipt-pass-0006.json records any probe value over threshold or lacks the 88-passing-test evidence",
+      "measurable": "build-color-measurement-receipt-pass-0006.json records any probe value over threshold or lacks the 88-passing-test evidence",
+      "source": "null"
+    },
+    {
+      "claim_id": "adddb64d59d179fc",
+      "claim_sha256": "adddb64d59d179fcf501c0dd614e3dc7f11dc8ba2b8e9a5428b06adcb4338673",
+      "challenge": "test the stated falsification: schema-validator-results-pass-0006.json is missing, reports non-MATCH status, reports fewer than 9 checks, or reports drift above zero",
+      "measurable": "schema-validator-results-pass-0006.json is missing, reports non-MATCH status, reports fewer than 9 checks, or reports drift above zero",
+      "source": "null"
+    },
+    {
+      "claim_id": "eb7c03f6747c8f39",
+      "claim_sha256": "eb7c03f6747c8f397b0e7b13ab6f637fc9a7e0b5bac1372576a7578f1d512644",
+      "challenge": "test the stated falsification: any pass 0006 artifact labels a natural law, theorem, medical result, finance result, safety result, or physical discovery as promoted",
+      "measurable": "any pass 0006 artifact labels a natural law, theorem, medical result, finance result, safety result, or physical discovery as promoted",
+      "source": "null"
+    }
+  ],
+  "assessment": {
+    "started_at": 1782899809.9222496,
+    "thesis_id": "968e1d7e97fc5245",
+    "thesis_seal": "968e1d7e97fc524528efa1491dd48b9d049b3a1ad25d202e0bc90882049fc39a",
+    "claims": 6,
+    "match": 6,
+    "drift": 0,
+    "unverifiable": 0,
+    "verdict_seal": "1d93d0b6c13df4b666a8c55e607cc68414e7eecfc640865029b855482f28580a",
+    "measurement_seal": "2f54714533080fcccd017305c324ebd13c922a6fd264d2fb19cdb85aa556a6da",
+    "disposition": "fenced",
+    "stored": null,
+    "verdicts": [
+      {
+        "claim_id": "5e442f200bb7780d",
+        "claim_sha256": "5e442f200bb7780d6a36c0c2908194ec559721913786dbb705e8305c08cdde85",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "script-structure-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "eb128a719542f105",
+        "claim_sha256": "eb128a719542f1057cae4f85a54e6578635972f2d84ace88dc2412ad15fd25f4",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "json-structure-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "7059666d9da4b0c2",
+        "claim_sha256": "7059666d9da4b0c2ab5b5663d5d40b97a8a83a4d17f1dd0bd3301d20b1c694c3",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "json-structure-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "ac5c64a38f8044ef",
+        "claim_sha256": "ac5c64a38f8044ef5dd4cc383994e34c2894487fe803e5cc3fb10cc306992803",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "measurement-and-test-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "adddb64d59d179fc",
+        "claim_sha256": "adddb64d59d179fcf501c0dd614e3dc7f11dc8ba2b8e9a5428b06adcb4338673",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "validator-run-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "eb7c03f6747c8f39",
+        "claim_sha256": "eb7c03f6747c8f397b0e7b13ab6f637fc9a7e0b5bac1372576a7578f1d512644",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "artifact-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      }
+    ],
+    "measurements": [
+      {
+        "claim_id": "5e442f200bb7780d",
+        "claim_sha256": "5e442f200bb7780d6a36c0c2908194ec559721913786dbb705e8305c08cdde85",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "script-structure-review",
+        "measured_at": 1782899809.9219937,
+        "evidence": [
+          "tools/validate_dogfood_artifacts.py exists",
+          "validator references market-rows-pass-0003.json",
+          "validator references wedge-scores-pass-0003.json",
+          "validator references megatool-nodes-pass-0003.json",
+          "validator references research-claims-pass-0004.json",
+          "validator references proof-packet-adapters-pass-0005.json",
+          "validator references buyer-objections-pass-0005.json",
+          "validator references validator-contracts-pass-0005.json",
+          "validator references otel-action-normalization-pass-0006.json",
+          "validator references proof-packet-pass-0006.json"
+        ]
+      },
+      {
+        "claim_id": "eb128a719542f105",
+        "claim_sha256": "eb128a719542f1057cae4f85a54e6578635972f2d84ace88dc2412ad15fd25f4",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "json-structure-review",
+        "measured_at": 1782899809.922003,
+        "evidence": [
+          "proof-packet-pass-0006.json includes packet_id",
+          "proof-packet-pass-0006.json includes domain",
+          "proof-packet-pass-0006.json includes claim_set",
+          "proof-packet-pass-0006.json includes source_receipts",
+          "proof-packet-pass-0006.json includes action_receipts",
+          "proof-packet-pass-0006.json includes authority_receipts",
+          "proof-packet-pass-0006.json includes workspace_state",
+          "proof-packet-pass-0006.json includes verification_verdicts",
+          "proof-packet-pass-0006.json includes failure_labels",
+          "proof-packet-pass-0006.json includes decision_summary"
+        ]
+      },
+      {
+        "claim_id": "7059666d9da4b0c2",
+        "claim_sha256": "7059666d9da4b0c2ab5b5663d5d40b97a8a83a4d17f1dd0bd3301d20b1c694c3",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "json-structure-review",
+        "measured_at": 1782899809.9220061,
+        "evidence": [
+          "otel-action-normalization-pass-0006.json mappings=10",
+          "non_inferable_telos_fields includes authority_receipt",
+          "non_inferable_telos_fields includes workspace_state",
+          "non_inferable_telos_fields includes verification_verdict",
+          "non_inferable_telos_fields includes decision_summary"
+        ]
+      },
+      {
+        "claim_id": "ac5c64a38f8044ef",
+        "claim_sha256": "ac5c64a38f8044ef5dd4cc383994e34c2894487fe803e5cc3fb10cc306992803",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "measurement-and-test-review",
+        "measured_at": 1782899809.9220085,
+        "evidence": [
+          "srgb_xyz_max_abs_error=0.0000017030280945010406 under threshold 0.00001",
+          "srgb_oklab_max_abs_error=0.00000000000001072185665305766 under threshold 0.0000000001",
+          "pq_max_abs_nits_error=0.00000000008458300726488233 under threshold 0.000001",
+          "cie2000_pair_1_abs_error=0.00004031984342622863 under threshold 0.005",
+          "targeted pytest slice: 88 passed in 0.39s",
+          "measurement seal=c97850b96f0813b80bfdf084d9c8d63c22bf089a3f59f9a6f39283b1fe86400f"
+        ]
+      },
+      {
+        "claim_id": "adddb64d59d179fc",
+        "claim_sha256": "adddb64d59d179fcf501c0dd614e3dc7f11dc8ba2b8e9a5428b06adcb4338673",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "validator-run-review",
+        "measured_at": 1782899809.9220104,
+        "evidence": [
+          "schema-validator-results-pass-0006.json status=MATCH",
+          "schema-validator-results-pass-0006.json match=9",
+          "schema-validator-results-pass-0006.json drift=0"
+        ]
+      },
+      {
+        "claim_id": "eb7c03f6747c8f39",
+        "claim_sha256": "eb7c03f6747c8f397b0e7b13ab6f637fc9a7e0b5bac1372576a7578f1d512644",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "artifact-review",
+        "measured_at": 1782899809.922013,
+        "evidence": [
+          "pass-0006-ledger.md says current promoted natural laws: none",
+          "README says current promoted natural laws: none",
+          "proof-packet-pass-0006.json failure_labels include NOT_A_NATURAL_LAW"
+        ]
+      }
+    ],
+    "seal": "4b780f21291c7d4464ec07a10b3feb8130d0951e5b0ef6bd3f716343cedcebc1"
+  },
+  "verdicts": [
+    {
+      "claim_id": "5e442f200bb7780d",
+      "claim_sha256": "5e442f200bb7780d6a36c0c2908194ec559721913786dbb705e8305c08cdde85",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "script-structure-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "eb128a719542f105",
+      "claim_sha256": "eb128a719542f1057cae4f85a54e6578635972f2d84ace88dc2412ad15fd25f4",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "json-structure-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "7059666d9da4b0c2",
+      "claim_sha256": "7059666d9da4b0c2ab5b5663d5d40b97a8a83a4d17f1dd0bd3301d20b1c694c3",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "json-structure-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "ac5c64a38f8044ef",
+      "claim_sha256": "ac5c64a38f8044ef5dd4cc383994e34c2894487fe803e5cc3fb10cc306992803",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "measurement-and-test-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "adddb64d59d179fc",
+      "claim_sha256": "adddb64d59d179fcf501c0dd614e3dc7f11dc8ba2b8e9a5428b06adcb4338673",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "validator-run-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "eb7c03f6747c8f39",
+      "claim_sha256": "eb7c03f6747c8f397b0e7b13ab6f637fc9a7e0b5bac1372576a7578f1d512644",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "artifact-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    }
+  ],
+  "checks": {
+    "seals_ok": true,
+    "thesis_ok": true,
+    "verdicts_rederive": true
+  },
+  "report": "C:\\dev\\public\\telos\\docs\\research\\dogfood\\crucible\\pass-0006-report.md",
+  "record": "C:\\dev\\public\\telos\\docs\\research\\dogfood\\crucible\\pass-0006-run.json",
+  "bundle": null,
+  "spec": null,
+  "review": null,
+  "verifier": {
+    "mode": "cleanroom",
+    "inputs": [],
+    "excluded": [
+      "worker context",
+      "reasoning trace",
+      "intermediate steps"
+    ],
+    "checkability": "If success cannot be evaluated from the original spec and the artifact, the spec is not checkable yet."
+  }
+}

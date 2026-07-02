@@ -1,0 +1,142 @@
+{
+  "claim_status": "PROBE_MATCH",
+  "current_promoted_natural_laws": [],
+  "demotion_gate_result": {
+    "fixture_id": "source_lead_only_ok",
+    "gate_status": "ACCEPTED",
+    "requested_status": "SOURCE_LEAD_ONLY"
+  },
+  "exact_oracle": {
+    "amplitudes": [
+      "3",
+      "4",
+      "0"
+    ],
+    "norm": "25",
+    "probabilities": [
+      "9/25",
+      "16/25",
+      "0"
+    ],
+    "probability_sum": "1",
+    "squared_amplitudes": [
+      "9",
+      "16",
+      "0"
+    ],
+    "status": "MATCH"
+  },
+  "flagship_receipts": {
+    "forum": {
+      "decided": null,
+      "exit_code": 0,
+      "status": "MATCH",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "4fe3841632e2f93c96084b52acb57b2c0fa681cb74375a1b20d42389ca51dde2"
+    },
+    "index": {
+      "exit_code": 0,
+      "status": "MATCH",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "688fcf9c1a7640156fa78334cb2f6cfe8114a3212af2ca2cc6ba33c914a34cd8",
+      "verification_verdict": "MATCH"
+    },
+    "telos": {
+      "exit_code": 0,
+      "status": "MATCH",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "be17cb15259234cb4e8e95c2b36e76c90d841431729beb140294e34c5f9ebfa7",
+      "tool_version": "0.1.0"
+    },
+    "telos_catalog": {
+      "exit_code": 0,
+      "status": "MATCH",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "ef95a6f1ff803c483c3c4dd553fe19c37ab144113a21bc005cf4148cf31a8564"
+    }
+  },
+  "generated_on": "2026-07-01",
+  "interpretation_claim_status": "SOURCE_LEAD_ONLY",
+  "market_claim_status": "UNVERIFIED",
+  "negative_fixtures": [
+    {
+      "attempt": "treat squared amplitudes as probabilities without norm division",
+      "failures": [
+        "probability_sum_not_one",
+        "missing_normalization_receipt"
+      ],
+      "fixture_id": "unnormalized_squares_rejected",
+      "probability_sum": "25",
+      "status": "REJECTED"
+    },
+    {
+      "attempt": "promote a quantum interpretation claim from the video source lead",
+      "failures": [
+        "source_lead_only",
+        "requires_independent_physics_evidence"
+      ],
+      "fixture_id": "interpretation_claim_rejected",
+      "requested_status": "VERIFIED_FACT",
+      "status": "REJECTED"
+    },
+    {
+      "attempt": "claim market fit for the router from this single fixture",
+      "failures": [
+        "single_fixture_not_market_evidence",
+        "requires_buyer_evidence"
+      ],
+      "fixture_id": "market_claim_rejected",
+      "requested_status": "MARKET_FIT_VERIFIED",
+      "status": "REJECTED"
+    }
+  ],
+  "non_promotion_statement": "Pass 0127 routes one video source lead into a bounded normalization runtime fixture. It proves only the exact arithmetic and local branch agreement for this fixture; it does not verify the video's physics claims, market fit, BuildLang/buildc execution, or a natural law.",
+  "pass": "0127",
+  "router_status": "PROBE_MATCH",
+  "runtime_branch": {
+    "branch_id": "python_float64_born_normalization_fixture",
+    "input_sha256": "29163c3ed606e568f5386c0ac65f4ac1a11ba89b9be1b8ad53500abd737bd448",
+    "output_sha256": "f64abd6b78fd5d854d76bdfbded791ccb0799c03839396d17e6eca57368f0fb6",
+    "probabilities": [
+      0.36,
+      0.64,
+      0.0
+    ],
+    "probability_sum": 1.0,
+    "probability_sum_abs_drift": 0.0,
+    "runtime": "python",
+    "runtime_mode": "float64",
+    "status": "MATCH",
+    "tolerance": 1e-15
+  },
+  "runtime_receipt_contract": [
+    "source_receipts",
+    "oracle",
+    "runtime_branch",
+    "compiler_branch",
+    "telemetry_branch",
+    "lineage_branch",
+    "verifier_verdict",
+    "non_promotion_boundary"
+  ],
+  "schema": "CrossFieldScientificRuntimeRouterReceipt/v1",
+  "seal": "5257c922609d09aab485356b09e3947d2876f977510c2291dbfe3d90b510612d",
+  "source_bindings": {
+    "demotion_gate_pass": "0126",
+    "demotion_gate_seal": "67b045645bb0ff265f585a2c92768684ba47e2956920030eb756191bbd737926",
+    "runtime_layer_pass": "0122",
+    "runtime_layer_seal": "135c16c1f6d840cbb26ae6ba9257b3863844035c90975e9248aa13ffc1899312",
+    "youtube_router_pass": "0125",
+    "youtube_router_seal": "6def88f8a777647f886e2b4a0c2a44eda348b50c81efa8dfe2b9170f14617233"
+  },
+  "source_lead": {
+    "claim_status": "SOURCE_LEAD_ONLY",
+    "dominant_signal": "quantum_physics",
+    "raw_transcript_included": false,
+    "theme": "quantum_foundation_claim_boundary",
+    "video_id": "HbKzqvey5PA"
+  },
+  "status": "CROSS_FIELD_SCIENTIFIC_RUNTIME_ROUTER_MATCH",
+  "unsupported_claim_count": 0,
+  "validation_errors": []
+}

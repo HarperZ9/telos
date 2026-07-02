@@ -1,0 +1,46 @@
+{
+  "title": "Dogfood Pass 0022 OpenTelemetry SDK Dry-Run Lock",
+  "disposition": "fenced",
+  "claims": [
+    {
+      "text": "Pass 0022 created an OTelSdkDryRunLockReceiptSet/v1 artifact with status OTEL_SDK_DRYRUN_LOCK_MATCH, two resolved install rows, five negative fixtures, post_dryrun_sdk_available=false, and seal 678d201ea634eeea2786f0c4effb22d4e38528a80d7cb05c9abe18b446ba3f3c.",
+      "falsification": "schemas/otel-sdk-dryrun-lock-pass-0022.json is missing, has a different schema or status, reports different counts, reports SDK available after dry-run, or lacks the expected seal"
+    },
+    {
+      "text": "Pass 0022 pip dry-run command returned 0, used --dry-run and --report -, targeted opentelemetry-sdk==1.41.0, and preserved no_install_boundary=true.",
+      "falsification": "the dry-run receipt is missing, returncode is nonzero, command lacks --dry-run or --report -, target requirement differs, or no-install boundary is false"
+    },
+    {
+      "text": "Pass 0022 resolved opentelemetry-sdk 1.41.0 as the requested wheel with SHA-256 a596f5687964a3e0d7f8edfdcf5b79cbca9c93c7025ebf5fb00f398a9443b0bd and dependency opentelemetry-api==1.41.0.",
+      "falsification": "the SDK resolved wheel is missing, has a different version, is not requested, has a different hash, or lacks the matching API dependency"
+    },
+    {
+      "text": "Pass 0022 resolved opentelemetry-semantic-conventions 0.62b0 as a transitive wheel with SHA-256 0ddac1ce59eaf1a827d9987ab60d9315fb27aea23304144242d1fcad9e16b489.",
+      "falsification": "the semantic-conventions wheel is missing, has a different version, is requested directly, or has a different hash"
+    },
+    {
+      "text": "Pass 0022 records local opentelemetry-api 1.41.0 as already satisfied and records opentelemetry.sdk as NOT_INSTALLED_AFTER_DRY_RUN.",
+      "falsification": "already-satisfied API is missing or not version 1.41.0, or post-dry-run audit reports SDK installed/available"
+    },
+    {
+      "text": "Pass 0022 records three pip invalid-distribution warnings with labels ~, ~arden-shell, and ~~rden-shell.",
+      "falsification": "invalid-distribution warning count or labels differ from the persisted artifact"
+    },
+    {
+      "text": "Pass 0022 negative fixtures reject treating dry-run as install, missing wheel hash, unmatched API/SDK versions, ignored invalid-distribution warnings, and recording-span claims without SDK import.",
+      "falsification": "any negative fixture category is missing or has expected_validator_status other than REJECT"
+    },
+    {
+      "text": "Pass 0022 validator reports MATCH with one matched check and zero drift.",
+      "falsification": "schemas/pass-0022-otel-sdk-dryrun-lock-validator-result.json is missing, reports non-MATCH status, does not report match=1, or reports drift above zero"
+    },
+    {
+      "text": "Pass 0022 records tool receipts showing Index, Gather, Telos, Forum status/verify, and Crucible status as MATCH while preserving Forum submit as UNVERIFIABLE due to executor JSON parsing.",
+      "falsification": "schemas/tool-receipts-pass-0022.json is missing, lacks required tool status receipts, or treats Forum submit as successful rather than UNVERIFIABLE"
+    },
+    {
+      "text": "Pass 0022 promotes zero package installations, opentelemetry.sdk imports, recording spans, environment modifications, trace evidence, natural laws, or scientific discoveries.",
+      "falsification": "any pass 0022 artifact labels package installation, SDK import, recording span, environment mutation, trace evidence, natural law, or scientific discovery as promoted"
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "schema": "project-telos.oss-scout/v1",
+  "captured_at": "2026-07-02T00:00:00.000Z",
+  "source": {
+    "kind": "fixture",
+    "query": "pandas-dev/pandas#66050"
+  },
+  "candidates": [
+    {
+      "schema": "project-telos.oss-candidate/v1",
+      "captured_at": "2026-06-27T07:05:00Z",
+      "repository": {
+        "full_name": "pandas-dev/pandas",
+        "url": "https://github.com/pandas-dev/pandas",
+        "stars": 491000,
+        "language": "Python",
+        "open_issues": 3500
+      },
+      "issue": {
+        "number": 66050,
+        "url": "https://github.com/pandas-dev/pandas/issues/66050",
+        "title": "BUG: pd.array() silently drops missing values when converting NumPy masked arrays",
+        "labels": [
+          "Bug",
+          "Needs Triage"
+        ],
+        "comments_count": 0,
+        "updated_at": "2026-06-27T06:58:11Z"
+      },
+      "signals": {
+        "has_reproduction": true,
+        "has_expected_behavior": true,
+        "maintainer_invited_pr": false,
+        "likely_docs_only": false,
+        "requires_gpu_or_large_model": false,
+        "security_sensitive": false,
+        "ambiguous_expected_behavior": false
+      },
+      "standards": {
+        "attestation": [
+          "in-toto"
+        ],
+        "inventory": [
+          "SBOM",
+          "AIBOM"
+        ],
+        "content_authenticity": [
+          "C2PA"
+        ],
+        "observation_class": "client_observed"
+      },
+      "score": {
+        "patchability": 60,
+        "showcase_value": 10,
+        "risk": 0,
+        "priority": 70,
+        "reasons": [
+          "has reproduction",
+          "has expected behavior",
+          "updated within 14 days",
+          "repository has over 100k stars"
+        ]
+      },
+      "next_actions": []
+    }
+  ]
+}

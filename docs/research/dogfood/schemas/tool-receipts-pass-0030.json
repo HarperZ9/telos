@@ -1,0 +1,124 @@
+{
+  "generated_on": "2026-07-01",
+  "non_promotion_statement": "Tool receipts prove source clone, preflight extraction, tool availability probes, packet readback, MCP Telos receipts, Forum ledger availability, and Crucible availability only. They do not prove Lean replay, Lake build success, theorem correctness, buyer adoption, Telos uniqueness, or any natural law.",
+  "pass": "0030",
+  "receipts": [
+    {
+      "command": "status",
+      "role": "structure-context",
+      "status": "MATCH",
+      "tool": "index",
+      "tool_version": "2.8.0"
+    },
+    {
+      "command": "status",
+      "role": "perception-intake",
+      "status": "MATCH",
+      "tool": "gather",
+      "tool_version": "1.5.0"
+    },
+    {
+      "artifact": "packets/040-theorem-replay-preflight.md",
+      "chars": 5609,
+      "command": "docs",
+      "seal": "cfe10ca7d018270e84c5d0e7041cb7a5fada4bf437a625a7ee279c3d35bf9155",
+      "sha256": "4793f878aa287f05da6ad76045195cb6734f8924844929912ef3575b2cfbc0ad",
+      "status": "MATCH",
+      "tool": "gather",
+      "verified": true
+    },
+    {
+      "command": "git clone --depth 1",
+      "commit": "69d7df765a8f377a5e0628c6d36c088bce7642c9",
+      "lean_file_count": 66,
+      "formalization_project_count": 4,
+      "repo": "https://github.com/Pengbinghui/pipeline-math.git",
+      "status": "MATCH",
+      "tool": "git"
+    },
+    {
+      "command": "git ls-files --eol",
+      "git_index_eol": "lf",
+      "status": "MATCH",
+      "tool": "git",
+      "working_tree_eol": "crlf"
+    },
+    {
+      "command": "toolchain probe",
+      "missing_commands": [
+        "bash",
+        "lake",
+        "lean"
+      ],
+      "present_commands": [
+        "git",
+        "python"
+      ],
+      "status": "UNVERIFIABLE_TOOL_UNAVAILABLE",
+      "tool": "shell"
+    },
+    {
+      "command": "telos_status",
+      "status": "MATCH",
+      "tool": "mcp__telos.telos_status",
+      "tool_version": "0.1.0"
+    },
+    {
+      "check_count": 14,
+      "command": "telos_operator_doctor",
+      "generated_at": "2026-07-01T12:38:44.091Z",
+      "passed_count": 14,
+      "status": "MATCH",
+      "telos_tool_count": 37,
+      "tool": "mcp__telos.telos_operator_doctor",
+      "tool_count": 65
+    },
+    {
+      "command": "telos_action_receipt",
+      "digest_references_required": true,
+      "raw_parameters_required": false,
+      "receipt_is_trace_span": false,
+      "schema": "project-telos.action-receipt/v1",
+      "status": "MATCH",
+      "tool": "mcp__telos.telos_action_receipt"
+    },
+    {
+      "command": "telos_loop_ledger",
+      "fresh_context_reads_ledger_first": true,
+      "ledger_durable": true,
+      "schema": "project-telos.loop-ledger/v1",
+      "status": "MATCH",
+      "tool": "mcp__telos.telos_loop_ledger"
+    },
+    {
+      "command": "status",
+      "role": "orchestration-routing",
+      "status": "MATCH",
+      "tool": "forum",
+      "tool_version": "1.12.0"
+    },
+    {
+      "chain": true,
+      "command": "ledger verify",
+      "deep": true,
+      "status": "MATCH",
+      "tool": "forum"
+    },
+    {
+      "command": "submit",
+      "error": "submit needs a model executor. Forum is model-agnostic: pass --cmd \"<model cli>\" (any command, local models need no account), --chat-url <openai-compatible url> (e.g. a local Ollama server), or --api (Anthropic).",
+      "request": "Dogfood pass 0030 adversarial review for theorem replay preflight",
+      "status": "UNVERIFIABLE",
+      "tool": "forum"
+    },
+    {
+      "command": "status",
+      "role": "verification-pressure",
+      "status": "MATCH",
+      "tool": "crucible",
+      "tool_version": "1.1.0"
+    }
+  ],
+  "schema": "DogfoodToolReceiptSet/v1",
+  "status": "MATCH_WITH_FORUM_SUBMIT_GAP_AND_TOOLCHAIN_GAP"
+}

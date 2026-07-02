@@ -1,0 +1,131 @@
+{
+  "compose": {
+    "command": "C:\\Users\\Zain\\AppData\\Local\\Programs\\Python\\Python312\\python.exe C:\\dev\\public\\telos\\docs\\research\\dogfood\\tools\\compose_multi_kernel_runtime_suite_receipt.py --out C:\\dev\\public\\telos\\docs\\research\\dogfood\\schemas\\multi-kernel-runtime-suite-receipt-pass-0111.json",
+    "exit_code": 0,
+    "status": "MATCH",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "7e92d373ceb95a42bc87ca14807c3a3af4ba152ee372721678931c6b6e14e4a9"
+  },
+  "forum": {
+    "confidence": 0.2,
+    "decided": null,
+    "exit_code": 0,
+    "needs_escalation": true,
+    "status": "MATCH",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "fde1b789ef6b204211784a56575e8491f87ea58de4a626f0b6f1a1ed57685cce",
+    "top_candidates": [
+      {
+        "agent": "gpu-compute",
+        "score": 0.2
+      },
+      {
+        "agent": "backend",
+        "score": 0.0
+      },
+      {
+        "agent": "ci-cd",
+        "score": 0.0
+      },
+      {
+        "agent": "cloud-infra",
+        "score": 0.0
+      },
+      {
+        "agent": "code-review",
+        "score": 0.0
+      }
+    ]
+  },
+  "index": {
+    "exit_code": 0,
+    "graph_pack_sha256": "8ee383e19ae9a6141bee70de733fb6aa09201ff9d284ce6778ce58b06e6b68b2",
+    "schema": "project-telos.context-envelope/v1",
+    "source_refs_only": true,
+    "status": "MATCH",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "aecc43f7d55902a6aaa3bb9ba5e18a29efd0ccaa0db0404594b3629490dd427c",
+    "verification_verdict": "MATCH"
+  },
+  "pass": "0111",
+  "schema": "DogfoodToolReceipts/v1",
+  "seal": "0d8857865ed974eeef2c753672a1f280f3deb508372223bcdb386dfdf483618e",
+  "suite_summary": {
+    "adapter_missing_field_total": 0,
+    "boundary_expected_count": 1,
+    "case_count": 3,
+    "drift_expected_count": 1,
+    "match_count": 1
+  },
+  "telos": {
+    "exit_code": 0,
+    "status": "MATCH",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "be17cb15259234cb4e8e95c2b36e76c90d841431729beb140294e34c5f9ebfa7",
+    "tool": "telos",
+    "tool_version": "0.1.0"
+  },
+  "test": {
+    "command": "C:\\Users\\Zain\\AppData\\Local\\Programs\\Python\\Python312\\python.exe C:\\dev\\public\\telos\\docs\\research\\dogfood\\tools\\test_multi_kernel_runtime_suite_receipt.py",
+    "exit_code": 0,
+    "status": "MATCH",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "youtube_binding": {
+    "architecture_pull_count": 7,
+    "architecture_pulls": [
+      {
+        "architecture_pull": "AI4Science packets that bind source intake, model decisions, assay handoff, verifier verdicts, and reproduction status.",
+        "cluster_id": "molecular_ai_drug_discovery",
+        "evidence_status": "SOURCE_LEAD",
+        "video_count": 1
+      },
+      {
+        "architecture_pull": "Eval receipt lab with replayable attempts, prompt/model boundaries, tool-use records, and benchmark authority receipts.",
+        "cluster_id": "arc_agi_eval_and_generalization",
+        "evidence_status": "SOURCE_LEAD",
+        "video_count": 1
+      },
+      {
+        "architecture_pull": "BuildLang quant proof kernels with stress receipts, identity checks, and execution provenance.",
+        "cluster_id": "quantitative_finance_laws",
+        "evidence_status": "SOURCE_LEAD",
+        "video_count": 1
+      },
+      {
+        "architecture_pull": "Search-verifier loop ledger that records proposals, rollouts, verifier gates, and accepted proof states.",
+        "cluster_id": "search_rl_alpha_zero",
+        "evidence_status": "SOURCE_LEAD",
+        "video_count": 1
+      },
+      {
+        "architecture_pull": "Quantum optimization workflow receipts spanning problem formulation, solver branch, hardware/simulator context, calibration reference, and measured objective.",
+        "cluster_id": "enterprise_quantum_optimization",
+        "evidence_status": "SOURCE_LEAD",
+        "video_count": 13
+      },
+      {
+        "architecture_pull": "Risk scenario proof packets with assumptions, mitigations, authority boundaries, likelihood evidence, and review status.",
+        "cluster_id": "agi_risk_scenarios",
+        "evidence_status": "SOURCE_LEAD",
+        "video_count": 1
+      },
+      {
+        "architecture_pull": "Societal proof-packet lane binding public claims, governance choices, model actions, and accountable review.",
+        "cluster_id": "ai_society_governance",
+        "evidence_status": "SOURCE_LEAD",
+        "video_count": 1
+      }
+    ],
+    "dominant_cluster": "enterprise_quantum_optimization",
+    "dominant_cluster_video_count": 13,
+    "metadata_match_count": 19,
+    "raw_transcript_included": false,
+    "roadmap_pass": "0102",
+    "source_policy": "YouTube videos are treated as critical source leads. Metadata and Gather receipts are first-order evidence; synthesized product implications remain hypotheses.",
+    "top_priority": "optimization_proof_workbench",
+    "transcript_receipt_count": 19,
+    "valid_video_count": 19
+  }
+}

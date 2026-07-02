@@ -1,0 +1,98 @@
+{
+  "schema": "MultiInstitutionClaimGraphPlan/v1",
+  "institutions": [
+    {
+      "id": "mit",
+      "name": "Massachusetts Institute of Technology",
+      "domain_lane": "science_engineering_compute",
+      "expected_ror": "https://ror.org/042nb2s44",
+      "expected_openalex": "https://openalex.org/I63966007",
+      "ror_url": "https://api.ror.org/organizations?query=Massachusetts%20Institute%20of%20Technology",
+      "openalex_url": "https://api.openalex.org/institutions?search=Massachusetts%20Institute%20of%20Technology&per-page=2",
+      "repository_url": "https://dspace.mit.edu/oai/request?verb=Identify",
+      "expected_repository_phrase": "MIT Open Scholarship",
+      "crossref_url": "https://api.crossref.org/works?query.affiliation=Massachusetts%20Institute%20of%20Technology&rows=2&select=DOI,title,author,container-title,published-online,license,URL",
+      "expected_crossref_affiliation": "Massachusetts Institute of Technology"
+    },
+    {
+      "id": "harvard",
+      "name": "Harvard University",
+      "domain_lane": "medicine_law_policy_science",
+      "expected_ror": "https://ror.org/03vek6s52",
+      "expected_openalex": "https://openalex.org/I136199984",
+      "ror_url": "https://api.ror.org/organizations?query=Harvard%20University",
+      "openalex_url": "https://api.openalex.org/institutions?search=Harvard%20University&per-page=2",
+      "repository_url": "https://dash.harvard.edu/oai/request?verb=Identify",
+      "expected_repository_phrase": "Harvard DASH",
+      "crossref_url": "https://api.crossref.org/works?query.affiliation=Harvard%20University&rows=2&select=DOI,title,author,container-title,published-online,license,URL",
+      "expected_crossref_affiliation": "Harvard University"
+    },
+    {
+      "id": "cornell",
+      "name": "Cornell University",
+      "domain_lane": "agriculture_engineering_life_science",
+      "expected_ror": "https://ror.org/05bnh6r87",
+      "expected_openalex": "https://openalex.org/I205783295",
+      "ror_url": "https://api.ror.org/organizations?query=Cornell%20University",
+      "openalex_url": "https://api.openalex.org/institutions?search=Cornell%20University&per-page=2",
+      "repository_url": "https://ecommons.cornell.edu/oai/request?verb=Identify",
+      "expected_repository_phrase": "eCommons and Cornell University Library",
+      "crossref_url": "https://api.crossref.org/works?query.affiliation=Cornell%20University&rows=2&select=DOI,title,author,container-title,published-online,license,URL",
+      "expected_crossref_affiliation": "Cornell University"
+    },
+    {
+      "id": "caltech",
+      "name": "California Institute of Technology",
+      "domain_lane": "physics_space_engineering",
+      "expected_ror": "https://ror.org/05dxps055",
+      "expected_openalex": "https://openalex.org/I122411786",
+      "ror_url": "https://api.ror.org/organizations?query=California%20Institute%20of%20Technology",
+      "openalex_url": "https://api.openalex.org/institutions?search=California%20Institute%20of%20Technology&per-page=2",
+      "repository_url": "https://authors.library.caltech.edu/oai2d?verb=Identify",
+      "expected_repository_phrase": "CaltechAUTHORS",
+      "crossref_url": "https://api.crossref.org/works?query.affiliation=California%20Institute%20of%20Technology&rows=2&select=DOI,title,author,container-title,published-online,license,URL",
+      "expected_crossref_affiliation": "California Institute of Technology"
+    }
+  ],
+  "repository_support_docs": [
+    "https://library.caltech.edu/caltechauthors",
+    "https://libanswers.caltech.edu/faq/227552",
+    "https://library.caltech.edu/search/repositories"
+  ],
+  "source_warnings": [
+    {
+      "source": "Cornell Crossref affiliation sample",
+      "status": "HTTP_429_SOURCE_LEAD_ONLY",
+      "reason": "The public Crossref request for Cornell hit a rate limit during capture, so Cornell work metadata stays source-lead-only in this pass."
+    },
+    {
+      "source": "Caltech OAI-PMH endpoint documentation",
+      "status": "ENDPOINT_VERSION_DRIFT_WARNING",
+      "reason": "Caltech documentation exposed an older /cgi/oai2 endpoint while the current CaltechAUTHORS page names /oai2d and the /oai2d Identify capture matched."
+    },
+    {
+      "source": "Repository Identify endpoints",
+      "status": "NOT_A_FULL_HARVEST",
+      "reason": "OAI-PMH Identify proves endpoint identity and protocol exposure only; it does not prove repository coverage, license status, full text, or metadata completeness."
+    }
+  ],
+  "negative_fixtures": [
+    "identity_join_as_complete_institution_graph",
+    "repository_identify_as_full_harvest",
+    "crossref_affiliation_as_claim_truth",
+    "rate_limit_as_absence_evidence",
+    "caltech_old_endpoint_as_current_endpoint",
+    "one_successful_institution_as_all_institutions",
+    "openalex_works_count_as_quality",
+    "gather_source_count_as_truth",
+    "source_lead_as_verified_relation",
+    "multi_institution_sample_as_world_coverage"
+  ],
+  "updated_tool_floor": {
+    "crucible": "1.1.0",
+    "forum": "1.12.0",
+    "gather": "1.5.0",
+    "index": "2.8.0",
+    "telos": "0.1.0"
+  }
+}

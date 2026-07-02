@@ -1,0 +1,59 @@
+{
+  "schema": "buildlang-check-receipt/v1",
+  "compiler": "buildc",
+  "compiler_version": "1.0.6",
+  "language_version": "1.0.0",
+  "source": "C:\\dev\\public\\pubscan\\quantalang\\examples\\quickstart\\hello.bld",
+  "source_digest": {
+    "algorithm": "sha256",
+    "hex": "0e542c60fbd874a38a2a3a87eaf61be04532a0df23e3ea25512d03301883dfae"
+  },
+  "input_graph_digest": {
+    "algorithm": "sha256",
+    "hex": "038a6f3aba486917d0ccbb9e4c0e858d0e79a8d1230450c3c40ca7dd08026d40"
+  },
+  "input_digests": [
+    {
+      "role": "entry",
+      "source": "\\\\?\\C:\\dev\\public\\pubscan\\quantalang\\examples\\quickstart\\hello.bld",
+      "digest": {
+        "algorithm": "sha256",
+        "hex": "0e542c60fbd874a38a2a3a87eaf61be04532a0df23e3ea25512d03301883dfae"
+      }
+    }
+  ],
+  "status": "passed",
+  "items": 1,
+  "tokens": 15,
+  "declared_effects": {
+    "main": [
+      "Console"
+    ]
+  },
+  "observed_capabilities": {
+    "main": {
+      "Console": [
+        "println!"
+      ]
+    }
+  },
+  "propagated_effects": {
+    "main": {}
+  },
+  "diagnostics": [],
+  "policy": {
+    "schema": "buildlang-check-policy/v1",
+    "source": "builtin:console-only",
+    "source_digest": {
+      "algorithm": "sha256",
+      "hex": "30462cb37d20d7c5cd2e156b62a8deeb53fc89f647e913b22c9e42033b53c4ce"
+    },
+    "profile": "console-only",
+    "profile_digest": {
+      "algorithm": "sha256",
+      "hex": "30462cb37d20d7c5cd2e156b62a8deeb53fc89f647e913b22c9e42033b53c4ce"
+    },
+    "status": "passed",
+    "violations": []
+  }
+}

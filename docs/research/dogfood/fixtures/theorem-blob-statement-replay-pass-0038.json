@@ -1,0 +1,892 @@
+{
+  "blob_statement_checks": [
+    {
+      "blob_discharge_status": "MATCH",
+      "blob_frozen_proof_status": "MATCH",
+      "blob_frozen_solution_status": "MATCH",
+      "blob_signature_status": "MATCH",
+      "refs": {
+        "discharge_gate": {
+          "blob_git_blob_id": "7b9dae96fca47c83620d55824458d2c2095dac52",
+          "blob_git_blob_sha256": "7b2342c3534965d7823134fab2f1000fe66f36e5752fcb9c42e165791b1e4499",
+          "git_path": "lean/problem-4b-formalization/Prob4b/Discharge.lean",
+          "line_no": 27,
+          "line_text": "example : @B_triple_zero = @B_triple_zero_proof := rfl",
+          "line_text_sha256": "3933b2070d5d824b0ea4c95b285350e9978a069f4522d564aa41536fb20680ea",
+          "normalized_line": "example : @B_triple_zero = @B_triple_zero_proof := rfl",
+          "pass0036_git_blob_id": "7b9dae96fca47c83620d55824458d2c2095dac52",
+          "pass0036_git_blob_sha256": "7b2342c3534965d7823134fab2f1000fe66f36e5752fcb9c42e165791b1e4499",
+          "ref": "Prob4b/Discharge.lean:27",
+          "signature_status": "MATCH"
+        },
+        "frozen_statement": {
+          "blob_git_blob_id": "7d186b51d15df3a0415464d564a0d5c6b5fd5810",
+          "blob_git_blob_sha256": "cb80242d1bfd9e9b142e442dac9d0784081dabefbf7bd400dd0a27cd0e8bd3ae",
+          "blob_line_count": 87,
+          "canonical_signature": ": Ideal.span {a} ⊓ Ideal.span {b} ⊓ Ideal.span {a + b} = (⊥ : Ideal B)",
+          "git_path": "lean/problem-4b-formalization/Prob4b/Theorems.lean",
+          "line_no": 32,
+          "pass0036_git_blob_id": "7d186b51d15df3a0415464d564a0d5c6b5fd5810",
+          "pass0036_git_blob_sha256": "cb80242d1bfd9e9b142e442dac9d0784081dabefbf7bd400dd0a27cd0e8bd3ae",
+          "prior_canonical_signature": ": Ideal.span {a} ⊓ Ideal.span {b} ⊓ Ideal.span {a + b} = (⊥ : Ideal B)",
+          "ref": "Prob4b/Theorems.lean:32",
+          "signature_sha256": "9fc5f9df76dfb408218d73e2d2ddc49b7961c3a618df7d89284115e4c75bef4a",
+          "signature_span": [
+            32,
+            33
+          ],
+          "signature_status": "MATCH",
+          "signature_text": "theorem B_triple_zero :\n    Ideal.span {a} ⊓ Ideal.span {b} ⊓ Ideal.span {a + b} = (⊥ : Ideal B)"
+        },
+        "proof_decl": {
+          "blob_git_blob_id": "4fda1d217a3165271ae7d4bfac68755d4ebcf97b",
+          "blob_git_blob_sha256": "bf59fb52a86ba6500553344c426fa2562b4ddaf8e0ec7b643725c745f78579f6",
+          "blob_line_count": 346,
+          "canonical_signature": ": Ideal.span {a} ⊓ Ideal.span {b} ⊓ Ideal.span {a + b} = (⊥ : Ideal B)",
+          "git_path": "lean/problem-4b-formalization/Prob4b/Proofs/Triple/Basic.lean",
+          "line_no": 211,
+          "pass0036_git_blob_id": "4fda1d217a3165271ae7d4bfac68755d4ebcf97b",
+          "pass0036_git_blob_sha256": "bf59fb52a86ba6500553344c426fa2562b4ddaf8e0ec7b643725c745f78579f6",
+          "prior_canonical_signature": ": Ideal.span {a} ⊓ Ideal.span {b} ⊓ Ideal.span {a + b} = (⊥ : Ideal B)",
+          "ref": "Prob4b/Proofs/Triple/Basic.lean:211",
+          "signature_sha256": "09ef02fe1c333493cb72dde83681ba020b339f976c98bf01e43fe7d124b93263",
+          "signature_span": [
+            211,
+            212
+          ],
+          "signature_status": "MATCH",
+          "signature_text": "theorem B_triple_zero_proof :\n    Ideal.span {a} ⊓ Ideal.span {b} ⊓ Ideal.span {a + b} = (⊥ : Ideal B)"
+        },
+        "solution_decl": {
+          "blob_git_blob_id": "e42636c4211007d5d2fd22d3211fa96904d42eec",
+          "blob_git_blob_sha256": "3a54396ea67ca38d62b57fa55bf546a3071d1d780809c523aff83691011ee821",
+          "blob_line_count": 78,
+          "canonical_signature": ": Ideal.span {a} ⊓ Ideal.span {b} ⊓ Ideal.span {a + b} = (⊥ : Ideal B)",
+          "git_path": "lean/problem-4b-formalization/Prob4b/Solution.lean",
+          "line_no": 29,
+          "pass0036_git_blob_id": "e42636c4211007d5d2fd22d3211fa96904d42eec",
+          "pass0036_git_blob_sha256": "3a54396ea67ca38d62b57fa55bf546a3071d1d780809c523aff83691011ee821",
+          "prior_canonical_signature": ": Ideal.span {a} ⊓ Ideal.span {b} ⊓ Ideal.span {a + b} = (⊥ : Ideal B)",
+          "ref": "Prob4b/Solution.lean:29",
+          "signature_sha256": "9fc5f9df76dfb408218d73e2d2ddc49b7961c3a618df7d89284115e4c75bef4a",
+          "signature_span": [
+            29,
+            30
+          ],
+          "signature_status": "MATCH",
+          "signature_text": "theorem B_triple_zero :\n    Ideal.span {a} ⊓ Ideal.span {b} ⊓ Ideal.span {a + b} = (⊥ : Ideal B)"
+        }
+      },
+      "theorem": "B_triple_zero"
+    },
+    {
+      "blob_discharge_status": "MATCH",
+      "blob_frozen_proof_status": "MATCH",
+      "blob_frozen_solution_status": "MATCH",
+      "blob_signature_status": "MATCH",
+      "refs": {
+        "discharge_gate": {
+          "blob_git_blob_id": "7b9dae96fca47c83620d55824458d2c2095dac52",
+          "blob_git_blob_sha256": "7b2342c3534965d7823134fab2f1000fe66f36e5752fcb9c42e165791b1e4499",
+          "git_path": "lean/problem-4b-formalization/Prob4b/Discharge.lean",
+          "line_no": 28,
+          "line_text": "example : @M_triple_defect = @M_triple_defect_proof := rfl",
+          "line_text_sha256": "5144f138c5a7f10fe53090b86761242a6bd23e33ff1f50e8a7d33763b0c71966",
+          "normalized_line": "example : @M_triple_defect = @M_triple_defect_proof := rfl",
+          "pass0036_git_blob_id": "7b9dae96fca47c83620d55824458d2c2095dac52",
+          "pass0036_git_blob_sha256": "7b2342c3534965d7823134fab2f1000fe66f36e5752fcb9c42e165791b1e4499",
+          "ref": "Prob4b/Discharge.lean:28",
+          "signature_status": "MATCH"
+        },
+        "frozen_statement": {
+          "blob_git_blob_id": "7d186b51d15df3a0415464d564a0d5c6b5fd5810",
+          "blob_git_blob_sha256": "cb80242d1bfd9e9b142e442dac9d0784081dabefbf7bd400dd0a27cd0e8bd3ae",
+          "blob_line_count": 87,
+          "canonical_signature": ": u ≠ 0 ∧ u ∈ smulSub a ∧ u ∈ smulSub b ∧ u ∈ smulSub (a + b)",
+          "git_path": "lean/problem-4b-formalization/Prob4b/Theorems.lean",
+          "line_no": 38,
+          "pass0036_git_blob_id": "7d186b51d15df3a0415464d564a0d5c6b5fd5810",
+          "pass0036_git_blob_sha256": "cb80242d1bfd9e9b142e442dac9d0784081dabefbf7bd400dd0a27cd0e8bd3ae",
+          "prior_canonical_signature": ": u ≠ 0 ∧ u ∈ smulSub a ∧ u ∈ smulSub b ∧ u ∈ smulSub (a + b)",
+          "ref": "Prob4b/Theorems.lean:38",
+          "signature_sha256": "989f0b8ff9f0d00cd451857bd3a501410300015106dc9c15cabb47af51a97e3f",
+          "signature_span": [
+            38,
+            39
+          ],
+          "signature_status": "MATCH",
+          "signature_text": "theorem M_triple_defect :\n    u ≠ 0 ∧ u ∈ smulSub a ∧ u ∈ smulSub b ∧ u ∈ smulSub (a + b)"
+        },
+        "proof_decl": {
+          "blob_git_blob_id": "4fda1d217a3165271ae7d4bfac68755d4ebcf97b",
+          "blob_git_blob_sha256": "bf59fb52a86ba6500553344c426fa2562b4ddaf8e0ec7b643725c745f78579f6",
+          "blob_line_count": 346,
+          "canonical_signature": ": u ≠ 0 ∧ u ∈ smulSub a ∧ u ∈ smulSub b ∧ u ∈ smulSub (a + b)",
+          "git_path": "lean/problem-4b-formalization/Prob4b/Proofs/Triple/Basic.lean",
+          "line_no": 342,
+          "pass0036_git_blob_id": "4fda1d217a3165271ae7d4bfac68755d4ebcf97b",
+          "pass0036_git_blob_sha256": "bf59fb52a86ba6500553344c426fa2562b4ddaf8e0ec7b643725c745f78579f6",
+          "prior_canonical_signature": ": u ≠ 0 ∧ u ∈ smulSub a ∧ u ∈ smulSub b ∧ u ∈ smulSub (a + b)",
+          "ref": "Prob4b/Proofs/Triple/Basic.lean:342",
+          "signature_sha256": "bad13f6648180ffabaca0d520f0321e5dbad0ca330b7cea0ad1faeacc09bd53a",
+          "signature_span": [
+            342,
+            343
+          ],
+          "signature_status": "MATCH",
+          "signature_text": "theorem M_triple_defect_proof :\n    u ≠ 0 ∧ u ∈ smulSub a ∧ u ∈ smulSub b ∧ u ∈ smulSub (a + b)"
+        },
+        "solution_decl": {
+          "blob_git_blob_id": "e42636c4211007d5d2fd22d3211fa96904d42eec",
+          "blob_git_blob_sha256": "3a54396ea67ca38d62b57fa55bf546a3071d1d780809c523aff83691011ee821",
+          "blob_line_count": 78,
+          "canonical_signature": ": u ≠ 0 ∧ u ∈ smulSub a ∧ u ∈ smulSub b ∧ u ∈ smulSub (a + b)",
+          "git_path": "lean/problem-4b-formalization/Prob4b/Solution.lean",
+          "line_no": 35,
+          "pass0036_git_blob_id": "e42636c4211007d5d2fd22d3211fa96904d42eec",
+          "pass0036_git_blob_sha256": "3a54396ea67ca38d62b57fa55bf546a3071d1d780809c523aff83691011ee821",
+          "prior_canonical_signature": ": u ≠ 0 ∧ u ∈ smulSub a ∧ u ∈ smulSub b ∧ u ∈ smulSub (a + b)",
+          "ref": "Prob4b/Solution.lean:35",
+          "signature_sha256": "989f0b8ff9f0d00cd451857bd3a501410300015106dc9c15cabb47af51a97e3f",
+          "signature_span": [
+            35,
+            36
+          ],
+          "signature_status": "MATCH",
+          "signature_text": "theorem M_triple_defect :\n    u ≠ 0 ∧ u ∈ smulSub a ∧ u ∈ smulSub b ∧ u ∈ smulSub (a + b)"
+        }
+      },
+      "theorem": "M_triple_defect"
+    },
+    {
+      "blob_discharge_status": "MATCH",
+      "blob_frozen_proof_status": "MATCH",
+      "blob_frozen_solution_status": "MATCH",
+      "blob_signature_status": "MATCH",
+      "refs": {
+        "discharge_gate": {
+          "blob_git_blob_id": "7b9dae96fca47c83620d55824458d2c2095dac52",
+          "blob_git_blob_sha256": "7b2342c3534965d7823134fab2f1000fe66f36e5752fcb9c42e165791b1e4499",
+          "git_path": "lean/problem-4b-formalization/Prob4b/Discharge.lean",
+          "line_no": 31,
+          "line_text": "example : @M_annihilator = @M_annihilator_proof := rfl",
+          "line_text_sha256": "8abc8de34ca5cbd653f06f59637e7f67d84b40c06d5795733f6636f5fc7d2a69",
+          "normalized_line": "example : @M_annihilator = @M_annihilator_proof := rfl",
+          "pass0036_git_blob_id": "7b9dae96fca47c83620d55824458d2c2095dac52",
+          "pass0036_git_blob_sha256": "7b2342c3534965d7823134fab2f1000fe66f36e5752fcb9c42e165791b1e4499",
+          "ref": "Prob4b/Discharge.lean:31",
+          "signature_status": "MATCH"
+        },
+        "frozen_statement": {
+          "blob_git_blob_id": "7d186b51d15df3a0415464d564a0d5c6b5fd5810",
+          "blob_git_blob_sha256": "cb80242d1bfd9e9b142e442dac9d0784081dabefbf7bd400dd0a27cd0e8bd3ae",
+          "blob_line_count": 87,
+          "canonical_signature": ": ∀ x : B, annihM x = (annih x) • (⊤ : Submodule B M)",
+          "git_path": "lean/problem-4b-formalization/Prob4b/Theorems.lean",
+          "line_no": 43,
+          "pass0036_git_blob_id": "7d186b51d15df3a0415464d564a0d5c6b5fd5810",
+          "pass0036_git_blob_sha256": "cb80242d1bfd9e9b142e442dac9d0784081dabefbf7bd400dd0a27cd0e8bd3ae",
+          "prior_canonical_signature": ": ∀ x : B, annihM x = (annih x) • (⊤ : Submodule B M)",
+          "ref": "Prob4b/Theorems.lean:43",
+          "signature_sha256": "e8633e199080f4776b102dc2de87b3619f57de075bd01d748e344d2cb587ea8d",
+          "signature_span": [
+            43,
+            44
+          ],
+          "signature_status": "MATCH",
+          "signature_text": "theorem M_annihilator :\n    ∀ x : B, annihM x = (annih x) • (⊤ : Submodule B M)"
+        },
+        "proof_decl": {
+          "blob_git_blob_id": "6dc1ec194ba9d41ee28d3d93e07bf7d8fc343ffd",
+          "blob_git_blob_sha256": "2e59e148f4452a5084a4ceee7b34552307ce86c63b245b65a7f43e2ac7ca2072",
+          "blob_line_count": 1580,
+          "canonical_signature": ": ∀ x : B, annihM x = (annih x) • (⊤ : Submodule B M)",
+          "git_path": "lean/problem-4b-formalization/Prob4b/Proofs/Module/Basic.lean",
+          "line_no": 1494,
+          "pass0036_git_blob_id": "6dc1ec194ba9d41ee28d3d93e07bf7d8fc343ffd",
+          "pass0036_git_blob_sha256": "2e59e148f4452a5084a4ceee7b34552307ce86c63b245b65a7f43e2ac7ca2072",
+          "prior_canonical_signature": ": ∀ x : B, annihM x = (annih x) • (⊤ : Submodule B M)",
+          "ref": "Prob4b/Proofs/Module/Basic.lean:1494",
+          "signature_sha256": "24308081b36707815b3a50c6f474600528d4e4a6926a99aeb06bd58be26bf55e",
+          "signature_span": [
+            1494,
+            1495
+          ],
+          "signature_status": "MATCH",
+          "signature_text": "theorem M_annihilator_proof :\n    ∀ x : B, annihM x = (annih x) • (⊤ : Submodule B M)"
+        },
+        "solution_decl": {
+          "blob_git_blob_id": "e42636c4211007d5d2fd22d3211fa96904d42eec",
+          "blob_git_blob_sha256": "3a54396ea67ca38d62b57fa55bf546a3071d1d780809c523aff83691011ee821",
+          "blob_line_count": 78,
+          "canonical_signature": ": ∀ x : B, annihM x = (annih x) • (⊤ : Submodule B M)",
+          "git_path": "lean/problem-4b-formalization/Prob4b/Solution.lean",
+          "line_no": 40,
+          "pass0036_git_blob_id": "e42636c4211007d5d2fd22d3211fa96904d42eec",
+          "pass0036_git_blob_sha256": "3a54396ea67ca38d62b57fa55bf546a3071d1d780809c523aff83691011ee821",
+          "prior_canonical_signature": ": ∀ x : B, annihM x = (annih x) • (⊤ : Submodule B M)",
+          "ref": "Prob4b/Solution.lean:40",
+          "signature_sha256": "e8633e199080f4776b102dc2de87b3619f57de075bd01d748e344d2cb587ea8d",
+          "signature_span": [
+            40,
+            41
+          ],
+          "signature_status": "MATCH",
+          "signature_text": "theorem M_annihilator :\n    ∀ x : B, annihM x = (annih x) • (⊤ : Submodule B M)"
+        }
+      },
+      "theorem": "M_annihilator"
+    },
+    {
+      "blob_discharge_status": "MATCH",
+      "blob_frozen_proof_status": "MATCH",
+      "blob_frozen_solution_status": "MATCH",
+      "blob_signature_status": "MATCH",
+      "refs": {
+        "discharge_gate": {
+          "blob_git_blob_id": "7b9dae96fca47c83620d55824458d2c2095dac52",
+          "blob_git_blob_sha256": "7b2342c3534965d7823134fab2f1000fe66f36e5752fcb9c42e165791b1e4499",
+          "git_path": "lean/problem-4b-formalization/Prob4b/Discharge.lean",
+          "line_no": 32,
+          "line_text": "example : @M_pairwise_intersection = @M_pairwise_intersection_proof := rfl",
+          "line_text_sha256": "f2b7842a09ea90042fd9eb87eb1f0f9b6e85934caf0c6598932ae95780bebc11",
+          "normalized_line": "example : @M_pairwise_intersection = @M_pairwise_intersection_proof := rfl",
+          "pass0036_git_blob_id": "7b9dae96fca47c83620d55824458d2c2095dac52",
+          "pass0036_git_blob_sha256": "7b2342c3534965d7823134fab2f1000fe66f36e5752fcb9c42e165791b1e4499",
+          "ref": "Prob4b/Discharge.lean:32",
+          "signature_status": "MATCH"
+        },
+        "frozen_statement": {
+          "blob_git_blob_id": "7d186b51d15df3a0415464d564a0d5c6b5fd5810",
+          "blob_git_blob_sha256": "cb80242d1bfd9e9b142e442dac9d0784081dabefbf7bd400dd0a27cd0e8bd3ae",
+          "blob_line_count": 87,
+          "canonical_signature": ": ∀ x y : B, smulSub x ⊓ smulSub y = (Ideal.span {x} ⊓ Ideal.span {y}) • (⊤ : Submodule B M)",
+          "git_path": "lean/problem-4b-formalization/Prob4b/Theorems.lean",
+          "line_no": 48,
+          "pass0036_git_blob_id": "7d186b51d15df3a0415464d564a0d5c6b5fd5810",
+          "pass0036_git_blob_sha256": "cb80242d1bfd9e9b142e442dac9d0784081dabefbf7bd400dd0a27cd0e8bd3ae",
+          "prior_canonical_signature": ": ∀ x y : B, smulSub x ⊓ smulSub y = (Ideal.span {x} ⊓ Ideal.span {y}) • (⊤ : Submodule B M)",
+          "ref": "Prob4b/Theorems.lean:48",
+          "signature_sha256": "10a35935852facad28574ec4e04a91624e2de208e4953d896df7f6b37e2c983c",
+          "signature_span": [
+            48,
+            50
+          ],
+          "signature_status": "MATCH",
+          "signature_text": "theorem M_pairwise_intersection :\n    ∀ x y : B, smulSub x ⊓ smulSub y\n      = (Ideal.span {x} ⊓ Ideal.span {y}) • (⊤ : Submodule B M)"
+        },
+        "proof_decl": {
+          "blob_git_blob_id": "6dc1ec194ba9d41ee28d3d93e07bf7d8fc343ffd",
+          "blob_git_blob_sha256": "2e59e148f4452a5084a4ceee7b34552307ce86c63b245b65a7f43e2ac7ca2072",
+          "blob_line_count": 1580,
+          "canonical_signature": ": ∀ x y : B, smulSub x ⊓ smulSub y = (Ideal.span {x} ⊓ Ideal.span {y}) • (⊤ : Submodule B M)",
+          "git_path": "lean/problem-4b-formalization/Prob4b/Proofs/Module/Basic.lean",
+          "line_no": 1533,
+          "pass0036_git_blob_id": "6dc1ec194ba9d41ee28d3d93e07bf7d8fc343ffd",
+          "pass0036_git_blob_sha256": "2e59e148f4452a5084a4ceee7b34552307ce86c63b245b65a7f43e2ac7ca2072",
+          "prior_canonical_signature": ": ∀ x y : B, smulSub x ⊓ smulSub y = (Ideal.span {x} ⊓ Ideal.span {y}) • (⊤ : Submodule B M)",
+          "ref": "Prob4b/Proofs/Module/Basic.lean:1533",
+          "signature_sha256": "0c60ca3648376e00126a6bd4a4c53cfecbccb4798ccd51c7757e7c9bf6c86584",
+          "signature_span": [
+            1533,
+            1535
+          ],
+          "signature_status": "MATCH",
+          "signature_text": "theorem M_pairwise_intersection_proof :\n    ∀ x y : B, smulSub x ⊓ smulSub y\n      = (Ideal.span {x} ⊓ Ideal.span {y}) • (⊤ : Submodule B M)"
+        },
+        "solution_decl": {
+          "blob_git_blob_id": "e42636c4211007d5d2fd22d3211fa96904d42eec",
+          "blob_git_blob_sha256": "3a54396ea67ca38d62b57fa55bf546a3071d1d780809c523aff83691011ee821",
+          "blob_line_count": 78,
+          "canonical_signature": ": ∀ x y : B, smulSub x ⊓ smulSub y = (Ideal.span {x} ⊓ Ideal.span {y}) • (⊤ : Submodule B M)",
+          "git_path": "lean/problem-4b-formalization/Prob4b/Solution.lean",
+          "line_no": 46,
+          "pass0036_git_blob_id": "e42636c4211007d5d2fd22d3211fa96904d42eec",
+          "pass0036_git_blob_sha256": "3a54396ea67ca38d62b57fa55bf546a3071d1d780809c523aff83691011ee821",
+          "prior_canonical_signature": ": ∀ x y : B, smulSub x ⊓ smulSub y = (Ideal.span {x} ⊓ Ideal.span {y}) • (⊤ : Submodule B M)",
+          "ref": "Prob4b/Solution.lean:46",
+          "signature_sha256": "10a35935852facad28574ec4e04a91624e2de208e4953d896df7f6b37e2c983c",
+          "signature_span": [
+            46,
+            48
+          ],
+          "signature_status": "MATCH",
+          "signature_text": "theorem M_pairwise_intersection :\n    ∀ x y : B, smulSub x ⊓ smulSub y\n      = (Ideal.span {x} ⊓ Ideal.span {y}) • (⊤ : Submodule B M)"
+        }
+      },
+      "theorem": "M_pairwise_intersection"
+    },
+    {
+      "blob_discharge_status": "MATCH",
+      "blob_frozen_proof_status": "MATCH",
+      "blob_frozen_solution_status": "MATCH",
+      "blob_signature_status": "MATCH",
+      "refs": {
+        "discharge_gate": {
+          "blob_git_blob_id": "7b9dae96fca47c83620d55824458d2c2095dac52",
+          "blob_git_blob_sha256": "7b2342c3534965d7823134fab2f1000fe66f36e5752fcb9c42e165791b1e4499",
+          "git_path": "lean/problem-4b-formalization/Prob4b/Discharge.lean",
+          "line_no": 35,
+          "line_text": "example : @triple_defect_survives = @triple_defect_survives_proof := rfl",
+          "line_text_sha256": "4a56d8c65ab1b9058b2259ddec4e3f89175ba78487278653d8ddd78c407fcf6a",
+          "normalized_line": "example : @triple_defect_survives = @triple_defect_survives_proof := rfl",
+          "pass0036_git_blob_id": "7b9dae96fca47c83620d55824458d2c2095dac52",
+          "pass0036_git_blob_sha256": "7b2342c3534965d7823134fab2f1000fe66f36e5752fcb9c42e165791b1e4499",
+          "ref": "Prob4b/Discharge.lean:35",
+          "signature_status": "MATCH"
+        },
+        "frozen_statement": {
+          "blob_git_blob_id": "7d186b51d15df3a0415464d564a0d5c6b5fd5810",
+          "blob_git_blob_sha256": "cb80242d1bfd9e9b142e442dac9d0784081dabefbf7bd400dd0a27cd0e8bd3ae",
+          "blob_line_count": 87,
+          "canonical_signature": ": Ideal.span {aC} ⊓ Ideal.span {bC} ⊓ Ideal.span {aC + bC} ≠ (Ideal.span {a} ⊓ Ideal.span {b} ⊓ Ideal.span {a + b}).map inlB",
+          "git_path": "lean/problem-4b-formalization/Prob4b/Theorems.lean",
+          "line_no": 55,
+          "pass0036_git_blob_id": "7d186b51d15df3a0415464d564a0d5c6b5fd5810",
+          "pass0036_git_blob_sha256": "cb80242d1bfd9e9b142e442dac9d0784081dabefbf7bd400dd0a27cd0e8bd3ae",
+          "prior_canonical_signature": ": Ideal.span {aC} ⊓ Ideal.span {bC} ⊓ Ideal.span {aC + bC} ≠ (Ideal.span {a} ⊓ Ideal.span {b} ⊓ Ideal.span {a + b}).map inlB",
+          "ref": "Prob4b/Theorems.lean:55",
+          "signature_sha256": "ee004f3dacfec0f81cfcdbd2457be5ef93cca2b8df071fa21aa922599b94c998",
+          "signature_span": [
+            55,
+            57
+          ],
+          "signature_status": "MATCH",
+          "signature_text": "theorem triple_defect_survives :\n    Ideal.span {aC} ⊓ Ideal.span {bC} ⊓ Ideal.span {aC + bC}\n      ≠ (Ideal.span {a} ⊓ Ideal.span {b} ⊓ Ideal.span {a + b}).map inlB"
+        },
+        "proof_decl": {
+          "blob_git_blob_id": "664c0b589b60e6abc90188defb13297c9fcaf19a",
+          "blob_git_blob_sha256": "a937f21bd0c8dfc670941e862c0d7a8a2d0d96fcf0818bfafc7a4a644f1eeb38",
+          "blob_line_count": 106,
+          "canonical_signature": ": Ideal.span {aC} ⊓ Ideal.span {bC} ⊓ Ideal.span {aC + bC} ≠ (Ideal.span {a} ⊓ Ideal.span {b} ⊓ Ideal.span {a + b}).map inlB",
+          "git_path": "lean/problem-4b-formalization/Prob4b/Proofs/Idealization/Basic.lean",
+          "line_no": 88,
+          "pass0036_git_blob_id": "664c0b589b60e6abc90188defb13297c9fcaf19a",
+          "pass0036_git_blob_sha256": "a937f21bd0c8dfc670941e862c0d7a8a2d0d96fcf0818bfafc7a4a644f1eeb38",
+          "prior_canonical_signature": ": Ideal.span {aC} ⊓ Ideal.span {bC} ⊓ Ideal.span {aC + bC} ≠ (Ideal.span {a} ⊓ Ideal.span {b} ⊓ Ideal.span {a + b}).map inlB",
+          "ref": "Prob4b/Proofs/Idealization/Basic.lean:88",
+          "signature_sha256": "c3587794fff878320f715326de58fd544680b43e1f45ec87d9451a890058f5eb",
+          "signature_span": [
+            88,
+            90
+          ],
+          "signature_status": "MATCH",
+          "signature_text": "theorem triple_defect_survives_proof :\n    Ideal.span {aC} ⊓ Ideal.span {bC} ⊓ Ideal.span {aC + bC}\n      ≠ (Ideal.span {a} ⊓ Ideal.span {b} ⊓ Ideal.span {a + b}).map inlB"
+        },
+        "solution_decl": {
+          "blob_git_blob_id": "e42636c4211007d5d2fd22d3211fa96904d42eec",
+          "blob_git_blob_sha256": "3a54396ea67ca38d62b57fa55bf546a3071d1d780809c523aff83691011ee821",
+          "blob_line_count": 78,
+          "canonical_signature": ": Ideal.span {aC} ⊓ Ideal.span {bC} ⊓ Ideal.span {aC + bC} ≠ (Ideal.span {a} ⊓ Ideal.span {b} ⊓ Ideal.span {a + b}).map inlB",
+          "git_path": "lean/problem-4b-formalization/Prob4b/Solution.lean",
+          "line_no": 52,
+          "pass0036_git_blob_id": "e42636c4211007d5d2fd22d3211fa96904d42eec",
+          "pass0036_git_blob_sha256": "3a54396ea67ca38d62b57fa55bf546a3071d1d780809c523aff83691011ee821",
+          "prior_canonical_signature": ": Ideal.span {aC} ⊓ Ideal.span {bC} ⊓ Ideal.span {aC + bC} ≠ (Ideal.span {a} ⊓ Ideal.span {b} ⊓ Ideal.span {a + b}).map inlB",
+          "ref": "Prob4b/Solution.lean:52",
+          "signature_sha256": "ee004f3dacfec0f81cfcdbd2457be5ef93cca2b8df071fa21aa922599b94c998",
+          "signature_span": [
+            52,
+            54
+          ],
+          "signature_status": "MATCH",
+          "signature_text": "theorem triple_defect_survives :\n    Ideal.span {aC} ⊓ Ideal.span {bC} ⊓ Ideal.span {aC + bC}\n      ≠ (Ideal.span {a} ⊓ Ideal.span {b} ⊓ Ideal.span {a + b}).map inlB"
+        }
+      },
+      "theorem": "triple_defect_survives"
+    },
+    {
+      "blob_discharge_status": "MATCH",
+      "blob_frozen_proof_status": "MATCH",
+      "blob_frozen_solution_status": "MATCH",
+      "blob_signature_status": "MATCH",
+      "refs": {
+        "discharge_gate": {
+          "blob_git_blob_id": "7b9dae96fca47c83620d55824458d2c2095dac52",
+          "blob_git_blob_sha256": "7b2342c3534965d7823134fab2f1000fe66f36e5752fcb9c42e165791b1e4499",
+          "git_path": "lean/problem-4b-formalization/Prob4b/Discharge.lean",
+          "line_no": 38,
+          "line_text": "example : @R_finite_conductor = @R_finite_conductor_proof := rfl",
+          "line_text_sha256": "b9b04d1b9471d4b64aa62cac7c0c2a1cae6965b6a2c409f54f603207fa868e7d",
+          "normalized_line": "example : @R_finite_conductor = @R_finite_conductor_proof := rfl",
+          "pass0036_git_blob_id": "7b9dae96fca47c83620d55824458d2c2095dac52",
+          "pass0036_git_blob_sha256": "7b2342c3534965d7823134fab2f1000fe66f36e5752fcb9c42e165791b1e4499",
+          "ref": "Prob4b/Discharge.lean:38",
+          "signature_status": "MATCH"
+        },
+        "frozen_statement": {
+          "blob_git_blob_id": "7d186b51d15df3a0415464d564a0d5c6b5fd5810",
+          "blob_git_blob_sha256": "cb80242d1bfd9e9b142e442dac9d0784081dabefbf7bd400dd0a27cd0e8bd3ae",
+          "blob_line_count": 87,
+          "canonical_signature": ": FiniteConductor R",
+          "git_path": "lean/problem-4b-formalization/Prob4b/Theorems.lean",
+          "line_no": 61,
+          "pass0036_git_blob_id": "7d186b51d15df3a0415464d564a0d5c6b5fd5810",
+          "pass0036_git_blob_sha256": "cb80242d1bfd9e9b142e442dac9d0784081dabefbf7bd400dd0a27cd0e8bd3ae",
+          "prior_canonical_signature": ": FiniteConductor R",
+          "ref": "Prob4b/Theorems.lean:61",
+          "signature_sha256": "fffb468cf116ea55b205c0905a9cdd39585c6082d489517a9b817b12604b20ab",
+          "signature_span": [
+            61,
+            61
+          ],
+          "signature_status": "MATCH",
+          "signature_text": "theorem R_finite_conductor : FiniteConductor R"
+        },
+        "proof_decl": {
+          "blob_git_blob_id": "2e620612f721d70cb36456fc199c309f42996d21",
+          "blob_git_blob_sha256": "da33d7d87e09ce628b755f120ec9927ced2e3dddda3c5698ffb1c2737fb1b07e",
+          "blob_line_count": 678,
+          "canonical_signature": ": FiniteConductor R",
+          "git_path": "lean/problem-4b-formalization/Prob4b/Proofs/Amplify/FiniteConductor.lean",
+          "line_no": 676,
+          "pass0036_git_blob_id": "2e620612f721d70cb36456fc199c309f42996d21",
+          "pass0036_git_blob_sha256": "da33d7d87e09ce628b755f120ec9927ced2e3dddda3c5698ffb1c2737fb1b07e",
+          "prior_canonical_signature": ": FiniteConductor R",
+          "ref": "Prob4b/Proofs/Amplify/FiniteConductor.lean:676",
+          "signature_sha256": "7a407f228706171d7f3c7ccddeca744eb402fe75067d17c4c45ab1b95ef886e8",
+          "signature_span": [
+            676,
+            676
+          ],
+          "signature_status": "MATCH",
+          "signature_text": "theorem R_finite_conductor_proof : FiniteConductor R"
+        },
+        "solution_decl": {
+          "blob_git_blob_id": "e42636c4211007d5d2fd22d3211fa96904d42eec",
+          "blob_git_blob_sha256": "3a54396ea67ca38d62b57fa55bf546a3071d1d780809c523aff83691011ee821",
+          "blob_line_count": 78,
+          "canonical_signature": ": FiniteConductor R",
+          "git_path": "lean/problem-4b-formalization/Prob4b/Solution.lean",
+          "line_no": 58,
+          "pass0036_git_blob_id": "e42636c4211007d5d2fd22d3211fa96904d42eec",
+          "pass0036_git_blob_sha256": "3a54396ea67ca38d62b57fa55bf546a3071d1d780809c523aff83691011ee821",
+          "prior_canonical_signature": ": FiniteConductor R",
+          "ref": "Prob4b/Solution.lean:58",
+          "signature_sha256": "fffb468cf116ea55b205c0905a9cdd39585c6082d489517a9b817b12604b20ab",
+          "signature_span": [
+            58,
+            58
+          ],
+          "signature_status": "MATCH",
+          "signature_text": "theorem R_finite_conductor : FiniteConductor R"
+        }
+      },
+      "theorem": "R_finite_conductor"
+    },
+    {
+      "blob_discharge_status": "MATCH",
+      "blob_frozen_proof_status": "MATCH",
+      "blob_frozen_solution_status": "MATCH",
+      "blob_signature_status": "MATCH",
+      "refs": {
+        "discharge_gate": {
+          "blob_git_blob_id": "7b9dae96fca47c83620d55824458d2c2095dac52",
+          "blob_git_blob_sha256": "7b2342c3534965d7823134fab2f1000fe66f36e5752fcb9c42e165791b1e4499",
+          "git_path": "lean/problem-4b-formalization/Prob4b/Discharge.lean",
+          "line_no": 39,
+          "line_text": "example : @R_not_quasi_coherent = @R_not_quasi_coherent_proof := rfl",
+          "line_text_sha256": "c7ca2d4e9a99865a1e568863c3caf0d6e8c333227aeb692967a579e4d5e8ea4a",
+          "normalized_line": "example : @R_not_quasi_coherent = @R_not_quasi_coherent_proof := rfl",
+          "pass0036_git_blob_id": "7b9dae96fca47c83620d55824458d2c2095dac52",
+          "pass0036_git_blob_sha256": "7b2342c3534965d7823134fab2f1000fe66f36e5752fcb9c42e165791b1e4499",
+          "ref": "Prob4b/Discharge.lean:39",
+          "signature_status": "MATCH"
+        },
+        "frozen_statement": {
+          "blob_git_blob_id": "7d186b51d15df3a0415464d564a0d5c6b5fd5810",
+          "blob_git_blob_sha256": "cb80242d1bfd9e9b142e442dac9d0784081dabefbf7bd400dd0a27cd0e8bd3ae",
+          "blob_line_count": 87,
+          "canonical_signature": ": ¬ QuasiCoherent R",
+          "git_path": "lean/problem-4b-formalization/Prob4b/Theorems.lean",
+          "line_no": 66,
+          "pass0036_git_blob_id": "7d186b51d15df3a0415464d564a0d5c6b5fd5810",
+          "pass0036_git_blob_sha256": "cb80242d1bfd9e9b142e442dac9d0784081dabefbf7bd400dd0a27cd0e8bd3ae",
+          "prior_canonical_signature": ": ¬ QuasiCoherent R",
+          "ref": "Prob4b/Theorems.lean:66",
+          "signature_sha256": "376eb2f1475a4c8e5e4211f7c7deaf72002fa811acb534a1c600af3d44afa4a9",
+          "signature_span": [
+            66,
+            66
+          ],
+          "signature_status": "MATCH",
+          "signature_text": "theorem R_not_quasi_coherent : ¬ QuasiCoherent R"
+        },
+        "proof_decl": {
+          "blob_git_blob_id": "f40db6b7ce353114c9179fcc03bff40ab5be7e9d",
+          "blob_git_blob_sha256": "341c5710c199c6345c9c7a0a5e296630b178effc764863ef173cb3b9d0d4267c",
+          "blob_line_count": 142,
+          "canonical_signature": ": ¬ QuasiCoherent R",
+          "git_path": "lean/problem-4b-formalization/Prob4b/Proofs/Amplify/NotQuasiCoherent.lean",
+          "line_no": 138,
+          "pass0036_git_blob_id": "f40db6b7ce353114c9179fcc03bff40ab5be7e9d",
+          "pass0036_git_blob_sha256": "341c5710c199c6345c9c7a0a5e296630b178effc764863ef173cb3b9d0d4267c",
+          "prior_canonical_signature": ": ¬ QuasiCoherent R",
+          "ref": "Prob4b/Proofs/Amplify/NotQuasiCoherent.lean:138",
+          "signature_sha256": "6cebe736f1767b20fb3c6cc09171f69bf02997612313ce7119401130e1179759",
+          "signature_span": [
+            138,
+            138
+          ],
+          "signature_status": "MATCH",
+          "signature_text": "theorem R_not_quasi_coherent_proof : ¬ QuasiCoherent R"
+        },
+        "solution_decl": {
+          "blob_git_blob_id": "e42636c4211007d5d2fd22d3211fa96904d42eec",
+          "blob_git_blob_sha256": "3a54396ea67ca38d62b57fa55bf546a3071d1d780809c523aff83691011ee821",
+          "blob_line_count": 78,
+          "canonical_signature": ": ¬ QuasiCoherent R",
+          "git_path": "lean/problem-4b-formalization/Prob4b/Solution.lean",
+          "line_no": 61,
+          "pass0036_git_blob_id": "e42636c4211007d5d2fd22d3211fa96904d42eec",
+          "pass0036_git_blob_sha256": "3a54396ea67ca38d62b57fa55bf546a3071d1d780809c523aff83691011ee821",
+          "prior_canonical_signature": ": ¬ QuasiCoherent R",
+          "ref": "Prob4b/Solution.lean:61",
+          "signature_sha256": "376eb2f1475a4c8e5e4211f7c7deaf72002fa811acb534a1c600af3d44afa4a9",
+          "signature_span": [
+            61,
+            61
+          ],
+          "signature_status": "MATCH",
+          "signature_text": "theorem R_not_quasi_coherent : ¬ QuasiCoherent R"
+        }
+      },
+      "theorem": "R_not_quasi_coherent"
+    },
+    {
+      "blob_discharge_status": "MATCH",
+      "blob_frozen_proof_status": "MATCH",
+      "blob_frozen_solution_status": "MATCH",
+      "blob_signature_status": "MATCH",
+      "refs": {
+        "discharge_gate": {
+          "blob_git_blob_id": "7b9dae96fca47c83620d55824458d2c2095dac52",
+          "blob_git_blob_sha256": "7b2342c3534965d7823134fab2f1000fe66f36e5752fcb9c42e165791b1e4499",
+          "git_path": "lean/problem-4b-formalization/Prob4b/Discharge.lean",
+          "line_no": 42,
+          "line_text": "example : @prob4b_counterexample = @prob4b_counterexample_proof := rfl",
+          "line_text_sha256": "7723c8e1eec8b4f1d045df121de53a8ff9ce265077a9e29009b188e88ad58b44",
+          "normalized_line": "example : @prob4b_counterexample = @prob4b_counterexample_proof := rfl",
+          "pass0036_git_blob_id": "7b9dae96fca47c83620d55824458d2c2095dac52",
+          "pass0036_git_blob_sha256": "7b2342c3534965d7823134fab2f1000fe66f36e5752fcb9c42e165791b1e4499",
+          "ref": "Prob4b/Discharge.lean:42",
+          "signature_status": "MATCH"
+        },
+        "frozen_statement": {
+          "blob_git_blob_id": "7d186b51d15df3a0415464d564a0d5c6b5fd5810",
+          "blob_git_blob_sha256": "cb80242d1bfd9e9b142e442dac9d0784081dabefbf7bd400dd0a27cd0e8bd3ae",
+          "blob_line_count": 87,
+          "canonical_signature": ": FiniteConductor R ∧ ¬ QuasiCoherent R",
+          "git_path": "lean/problem-4b-formalization/Prob4b/Theorems.lean",
+          "line_no": 70,
+          "pass0036_git_blob_id": "7d186b51d15df3a0415464d564a0d5c6b5fd5810",
+          "pass0036_git_blob_sha256": "cb80242d1bfd9e9b142e442dac9d0784081dabefbf7bd400dd0a27cd0e8bd3ae",
+          "prior_canonical_signature": ": FiniteConductor R ∧ ¬ QuasiCoherent R",
+          "ref": "Prob4b/Theorems.lean:70",
+          "signature_sha256": "ff06ca959e1a062d6a0d2c1f9a8a11db5941e83bf58aca72e44ff6469ea34639",
+          "signature_span": [
+            70,
+            70
+          ],
+          "signature_status": "MATCH",
+          "signature_text": "theorem prob4b_counterexample : FiniteConductor R ∧ ¬ QuasiCoherent R"
+        },
+        "proof_decl": {
+          "blob_git_blob_id": "483f006783afc0c93fc88d161d2fc354dd495b05",
+          "blob_git_blob_sha256": "09d0cce199bbfe21f2ec17523672eab0d1fa51cd3df2927a1176a8d6cc2f9574",
+          "blob_line_count": 39,
+          "canonical_signature": ": FiniteConductor R ∧ ¬ QuasiCoherent R",
+          "git_path": "lean/problem-4b-formalization/Prob4b/Proofs/Amplify/Basic.lean",
+          "line_no": 28,
+          "pass0036_git_blob_id": "483f006783afc0c93fc88d161d2fc354dd495b05",
+          "pass0036_git_blob_sha256": "09d0cce199bbfe21f2ec17523672eab0d1fa51cd3df2927a1176a8d6cc2f9574",
+          "prior_canonical_signature": ": FiniteConductor R ∧ ¬ QuasiCoherent R",
+          "ref": "Prob4b/Proofs/Amplify/Basic.lean:28",
+          "signature_sha256": "ff2595c312f276cd6dc4f65891573d739ed468255971ef99031a4444d6b4e251",
+          "signature_span": [
+            28,
+            28
+          ],
+          "signature_status": "MATCH",
+          "signature_text": "theorem prob4b_counterexample_proof : FiniteConductor R ∧ ¬ QuasiCoherent R"
+        },
+        "solution_decl": {
+          "blob_git_blob_id": "e42636c4211007d5d2fd22d3211fa96904d42eec",
+          "blob_git_blob_sha256": "3a54396ea67ca38d62b57fa55bf546a3071d1d780809c523aff83691011ee821",
+          "blob_line_count": 78,
+          "canonical_signature": ": FiniteConductor R ∧ ¬ QuasiCoherent R",
+          "git_path": "lean/problem-4b-formalization/Prob4b/Solution.lean",
+          "line_no": 64,
+          "pass0036_git_blob_id": "e42636c4211007d5d2fd22d3211fa96904d42eec",
+          "pass0036_git_blob_sha256": "3a54396ea67ca38d62b57fa55bf546a3071d1d780809c523aff83691011ee821",
+          "prior_canonical_signature": ": FiniteConductor R ∧ ¬ QuasiCoherent R",
+          "ref": "Prob4b/Solution.lean:64",
+          "signature_sha256": "ff06ca959e1a062d6a0d2c1f9a8a11db5941e83bf58aca72e44ff6469ea34639",
+          "signature_span": [
+            64,
+            64
+          ],
+          "signature_status": "MATCH",
+          "signature_text": "theorem prob4b_counterexample : FiniteConductor R ∧ ¬ QuasiCoherent R"
+        }
+      },
+      "theorem": "prob4b_counterexample"
+    },
+    {
+      "blob_discharge_status": "MATCH",
+      "blob_frozen_proof_status": "MATCH",
+      "blob_frozen_solution_status": "MATCH",
+      "blob_signature_status": "MATCH",
+      "refs": {
+        "discharge_gate": {
+          "blob_git_blob_id": "7b9dae96fca47c83620d55824458d2c2095dac52",
+          "blob_git_blob_sha256": "7b2342c3534965d7823134fab2f1000fe66f36e5752fcb9c42e165791b1e4499",
+          "git_path": "lean/problem-4b-formalization/Prob4b/Discharge.lean",
+          "line_no": 43,
+          "line_text": "example : @problem4b_false = @problem4b_false_proof := rfl",
+          "line_text_sha256": "7afa76981231b43c0c892ecf418deb347c54906d6db96b270235926c6b6eb726",
+          "normalized_line": "example : @problem4b_false = @problem4b_false_proof := rfl",
+          "pass0036_git_blob_id": "7b9dae96fca47c83620d55824458d2c2095dac52",
+          "pass0036_git_blob_sha256": "7b2342c3534965d7823134fab2f1000fe66f36e5752fcb9c42e165791b1e4499",
+          "ref": "Prob4b/Discharge.lean:43",
+          "signature_status": "MATCH"
+        },
+        "frozen_statement": {
+          "blob_git_blob_id": "7d186b51d15df3a0415464d564a0d5c6b5fd5810",
+          "blob_git_blob_sha256": "cb80242d1bfd9e9b142e442dac9d0784081dabefbf7bd400dd0a27cd0e8bd3ae",
+          "blob_line_count": 87,
+          "canonical_signature": ": ∃ (S : Type) (_ : CommRing S), FiniteConductor S ∧ ¬ QuasiCoherent S",
+          "git_path": "lean/problem-4b-formalization/Prob4b/Theorems.lean",
+          "line_no": 75,
+          "pass0036_git_blob_id": "7d186b51d15df3a0415464d564a0d5c6b5fd5810",
+          "pass0036_git_blob_sha256": "cb80242d1bfd9e9b142e442dac9d0784081dabefbf7bd400dd0a27cd0e8bd3ae",
+          "prior_canonical_signature": ": ∃ (S : Type) (_ : CommRing S), FiniteConductor S ∧ ¬ QuasiCoherent S",
+          "ref": "Prob4b/Theorems.lean:75",
+          "signature_sha256": "fc506c229ffc1e058c1acbf365205b5bfdc986d93aae28552b8fbddd78dba276",
+          "signature_span": [
+            75,
+            76
+          ],
+          "signature_status": "MATCH",
+          "signature_text": "theorem problem4b_false :\n    ∃ (S : Type) (_ : CommRing S), FiniteConductor S ∧ ¬ QuasiCoherent S"
+        },
+        "proof_decl": {
+          "blob_git_blob_id": "483f006783afc0c93fc88d161d2fc354dd495b05",
+          "blob_git_blob_sha256": "09d0cce199bbfe21f2ec17523672eab0d1fa51cd3df2927a1176a8d6cc2f9574",
+          "blob_line_count": 39,
+          "canonical_signature": ": ∃ (S : Type) (_ : CommRing S), FiniteConductor S ∧ ¬ QuasiCoherent S",
+          "git_path": "lean/problem-4b-formalization/Prob4b/Proofs/Amplify/Basic.lean",
+          "line_no": 35,
+          "pass0036_git_blob_id": "483f006783afc0c93fc88d161d2fc354dd495b05",
+          "pass0036_git_blob_sha256": "09d0cce199bbfe21f2ec17523672eab0d1fa51cd3df2927a1176a8d6cc2f9574",
+          "prior_canonical_signature": ": ∃ (S : Type) (_ : CommRing S), FiniteConductor S ∧ ¬ QuasiCoherent S",
+          "ref": "Prob4b/Proofs/Amplify/Basic.lean:35",
+          "signature_sha256": "e2c09108251f6e8f3c136fdecd2b378cc3ff6715b10d567a41f3fa053643b684",
+          "signature_span": [
+            35,
+            36
+          ],
+          "signature_status": "MATCH",
+          "signature_text": "theorem problem4b_false_proof :\n    ∃ (S : Type) (_ : CommRing S), FiniteConductor S ∧ ¬ QuasiCoherent S"
+        },
+        "solution_decl": {
+          "blob_git_blob_id": "e42636c4211007d5d2fd22d3211fa96904d42eec",
+          "blob_git_blob_sha256": "3a54396ea67ca38d62b57fa55bf546a3071d1d780809c523aff83691011ee821",
+          "blob_line_count": 78,
+          "canonical_signature": ": ∃ (S : Type) (_ : CommRing S), FiniteConductor S ∧ ¬ QuasiCoherent S",
+          "git_path": "lean/problem-4b-formalization/Prob4b/Solution.lean",
+          "line_no": 69,
+          "pass0036_git_blob_id": "e42636c4211007d5d2fd22d3211fa96904d42eec",
+          "pass0036_git_blob_sha256": "3a54396ea67ca38d62b57fa55bf546a3071d1d780809c523aff83691011ee821",
+          "prior_canonical_signature": ": ∃ (S : Type) (_ : CommRing S), FiniteConductor S ∧ ¬ QuasiCoherent S",
+          "ref": "Prob4b/Solution.lean:69",
+          "signature_sha256": "fc506c229ffc1e058c1acbf365205b5bfdc986d93aae28552b8fbddd78dba276",
+          "signature_span": [
+            69,
+            70
+          ],
+          "signature_status": "MATCH",
+          "signature_text": "theorem problem4b_false :\n    ∃ (S : Type) (_ : CommRing S), FiniteConductor S ∧ ¬ QuasiCoherent S"
+        }
+      },
+      "theorem": "problem4b_false"
+    },
+    {
+      "blob_discharge_status": "MATCH",
+      "blob_frozen_proof_status": "MATCH",
+      "blob_frozen_solution_status": "MATCH",
+      "blob_signature_status": "MATCH",
+      "refs": {
+        "discharge_gate": {
+          "blob_git_blob_id": "7b9dae96fca47c83620d55824458d2c2095dac52",
+          "blob_git_blob_sha256": "7b2342c3534965d7823134fab2f1000fe66f36e5752fcb9c42e165791b1e4499",
+          "git_path": "lean/problem-4b-formalization/Prob4b/Discharge.lean",
+          "line_no": 46,
+          "line_text": "example : @quasiCoherent_imp_finiteConductor = @quasiCoherent_imp_finiteConductor_proof := rfl",
+          "line_text_sha256": "b0a52a3b5ce9cd56f2397cf380eb5db8e1ae5d865cbabc4f10d6cce4bdf9dacc",
+          "normalized_line": "example : @quasiCoherent_imp_finiteConductor = @quasiCoherent_imp_finiteConductor_proof := rfl",
+          "pass0036_git_blob_id": "7b9dae96fca47c83620d55824458d2c2095dac52",
+          "pass0036_git_blob_sha256": "7b2342c3534965d7823134fab2f1000fe66f36e5752fcb9c42e165791b1e4499",
+          "ref": "Prob4b/Discharge.lean:46",
+          "signature_status": "MATCH"
+        },
+        "frozen_statement": {
+          "blob_git_blob_id": "7d186b51d15df3a0415464d564a0d5c6b5fd5810",
+          "blob_git_blob_sha256": "cb80242d1bfd9e9b142e442dac9d0784081dabefbf7bd400dd0a27cd0e8bd3ae",
+          "blob_line_count": 87,
+          "canonical_signature": "{S : Type*} [CommRing S] (h : QuasiCoherent S) : FiniteConductor S",
+          "git_path": "lean/problem-4b-formalization/Prob4b/Theorems.lean",
+          "line_no": 84,
+          "pass0036_git_blob_id": "7d186b51d15df3a0415464d564a0d5c6b5fd5810",
+          "pass0036_git_blob_sha256": "cb80242d1bfd9e9b142e442dac9d0784081dabefbf7bd400dd0a27cd0e8bd3ae",
+          "prior_canonical_signature": "{S : Type*} [CommRing S] (h : QuasiCoherent S) : FiniteConductor S",
+          "ref": "Prob4b/Theorems.lean:84",
+          "signature_sha256": "f2e967db2a9939a05f40e2af2b1a31b99cc9e1be3af1c2e768deff2951e7d7c2",
+          "signature_span": [
+            84,
+            85
+          ],
+          "signature_status": "MATCH",
+          "signature_text": "theorem quasiCoherent_imp_finiteConductor {S : Type*} [CommRing S]\n    (h : QuasiCoherent S) : FiniteConductor S"
+        },
+        "proof_decl": {
+          "blob_git_blob_id": "1f9a70cae875d7d7e7871d389e559e2ec11a4e05",
+          "blob_git_blob_sha256": "56c96c9a950bf89cc4327f01c9d75203f6e9ff42a09e9104e1bee009b3966c4a",
+          "blob_line_count": 44,
+          "canonical_signature": "{S : Type*} [CommRing S] (h : QuasiCoherent S) : FiniteConductor S",
+          "git_path": "lean/problem-4b-formalization/Prob4b/Proofs/EasyDirection/Basic.lean",
+          "line_no": 30,
+          "pass0036_git_blob_id": "1f9a70cae875d7d7e7871d389e559e2ec11a4e05",
+          "pass0036_git_blob_sha256": "56c96c9a950bf89cc4327f01c9d75203f6e9ff42a09e9104e1bee009b3966c4a",
+          "prior_canonical_signature": "{S : Type*} [CommRing S] (h : QuasiCoherent S) : FiniteConductor S",
+          "ref": "Prob4b/Proofs/EasyDirection/Basic.lean:30",
+          "signature_sha256": "05bfbefbbcca05c1e7e4d874fc6e145740c9bfc5de45867e621c611d46c2c90c",
+          "signature_span": [
+            30,
+            31
+          ],
+          "signature_status": "MATCH",
+          "signature_text": "theorem quasiCoherent_imp_finiteConductor_proof {S : Type*} [CommRing S]\n    (h : QuasiCoherent S) : FiniteConductor S"
+        },
+        "solution_decl": {
+          "blob_git_blob_id": "e42636c4211007d5d2fd22d3211fa96904d42eec",
+          "blob_git_blob_sha256": "3a54396ea67ca38d62b57fa55bf546a3071d1d780809c523aff83691011ee821",
+          "blob_line_count": 78,
+          "canonical_signature": "{S : Type*} [CommRing S] (h : QuasiCoherent S) : FiniteConductor S",
+          "git_path": "lean/problem-4b-formalization/Prob4b/Solution.lean",
+          "line_no": 74,
+          "pass0036_git_blob_id": "e42636c4211007d5d2fd22d3211fa96904d42eec",
+          "pass0036_git_blob_sha256": "3a54396ea67ca38d62b57fa55bf546a3071d1d780809c523aff83691011ee821",
+          "prior_canonical_signature": "{S : Type*} [CommRing S] (h : QuasiCoherent S) : FiniteConductor S",
+          "ref": "Prob4b/Solution.lean:74",
+          "signature_sha256": "f2e967db2a9939a05f40e2af2b1a31b99cc9e1be3af1c2e768deff2951e7d7c2",
+          "signature_span": [
+            74,
+            75
+          ],
+          "signature_status": "MATCH",
+          "signature_text": "theorem quasiCoherent_imp_finiteConductor {S : Type*} [CommRing S]\n    (h : QuasiCoherent S) : FiniteConductor S"
+        }
+      },
+      "theorem": "quasiCoherent_imp_finiteConductor"
+    }
+  ],
+  "generated_on": "2026-07-01",
+  "pass": "0038",
+  "schema": "TheoremBlobStatementReplayFixture/v1",
+  "seal": "ca0214a4d5693a02d5fac1d441058ea3c773f30307abcfec3514004f71c12848",
+  "source_ref_integrity_sha256": "74d89981ae7598f7a7381f6fdbb1196cf9be97ca854688a49c4e3c4bce9f6f6f",
+  "statement_equivalence_sha256": "a0928a953f609aa5ea96aecc79e355a0d5aaab949761d4efa4b1b704210986bf",
+  "unique_blob_files": [
+    {
+      "git_blob_id": "7d186b51d15df3a0415464d564a0d5c6b5fd5810",
+      "git_blob_sha256": "cb80242d1bfd9e9b142e442dac9d0784081dabefbf7bd400dd0a27cd0e8bd3ae",
+      "git_path": "lean/problem-4b-formalization/Prob4b/Theorems.lean",
+      "line_count": 87,
+      "pass0036_git_blob_id": "7d186b51d15df3a0415464d564a0d5c6b5fd5810",
+      "pass0036_git_blob_sha256": "cb80242d1bfd9e9b142e442dac9d0784081dabefbf7bd400dd0a27cd0e8bd3ae",
+      "pass0036_worktree_sha256": "cb80242d1bfd9e9b142e442dac9d0784081dabefbf7bd400dd0a27cd0e8bd3ae"
+    },
+    {
+      "git_blob_id": "e42636c4211007d5d2fd22d3211fa96904d42eec",
+      "git_blob_sha256": "3a54396ea67ca38d62b57fa55bf546a3071d1d780809c523aff83691011ee821",
+      "git_path": "lean/problem-4b-formalization/Prob4b/Solution.lean",
+      "line_count": 78,
+      "pass0036_git_blob_id": "e42636c4211007d5d2fd22d3211fa96904d42eec",
+      "pass0036_git_blob_sha256": "3a54396ea67ca38d62b57fa55bf546a3071d1d780809c523aff83691011ee821",
+      "pass0036_worktree_sha256": "3a54396ea67ca38d62b57fa55bf546a3071d1d780809c523aff83691011ee821"
+    },
+    {
+      "git_blob_id": "7b9dae96fca47c83620d55824458d2c2095dac52",
+      "git_blob_sha256": "7b2342c3534965d7823134fab2f1000fe66f36e5752fcb9c42e165791b1e4499",
+      "git_path": "lean/problem-4b-formalization/Prob4b/Discharge.lean",
+      "line_count": 48,
+      "pass0036_git_blob_id": "7b9dae96fca47c83620d55824458d2c2095dac52",
+      "pass0036_git_blob_sha256": "7b2342c3534965d7823134fab2f1000fe66f36e5752fcb9c42e165791b1e4499",
+      "pass0036_worktree_sha256": "7b2342c3534965d7823134fab2f1000fe66f36e5752fcb9c42e165791b1e4499"
+    },
+    {
+      "git_blob_id": "4fda1d217a3165271ae7d4bfac68755d4ebcf97b",
+      "git_blob_sha256": "bf59fb52a86ba6500553344c426fa2562b4ddaf8e0ec7b643725c745f78579f6",
+      "git_path": "lean/problem-4b-formalization/Prob4b/Proofs/Triple/Basic.lean",
+      "line_count": 346,
+      "pass0036_git_blob_id": "4fda1d217a3165271ae7d4bfac68755d4ebcf97b",
+      "pass0036_git_blob_sha256": "bf59fb52a86ba6500553344c426fa2562b4ddaf8e0ec7b643725c745f78579f6",
+      "pass0036_worktree_sha256": "bf59fb52a86ba6500553344c426fa2562b4ddaf8e0ec7b643725c745f78579f6"
+    },
+    {
+      "git_blob_id": "6dc1ec194ba9d41ee28d3d93e07bf7d8fc343ffd",
+      "git_blob_sha256": "2e59e148f4452a5084a4ceee7b34552307ce86c63b245b65a7f43e2ac7ca2072",
+      "git_path": "lean/problem-4b-formalization/Prob4b/Proofs/Module/Basic.lean",
+      "line_count": 1580,
+      "pass0036_git_blob_id": "6dc1ec194ba9d41ee28d3d93e07bf7d8fc343ffd",
+      "pass0036_git_blob_sha256": "2e59e148f4452a5084a4ceee7b34552307ce86c63b245b65a7f43e2ac7ca2072",
+      "pass0036_worktree_sha256": "2e59e148f4452a5084a4ceee7b34552307ce86c63b245b65a7f43e2ac7ca2072"
+    },
+    {
+      "git_blob_id": "664c0b589b60e6abc90188defb13297c9fcaf19a",
+      "git_blob_sha256": "a937f21bd0c8dfc670941e862c0d7a8a2d0d96fcf0818bfafc7a4a644f1eeb38",
+      "git_path": "lean/problem-4b-formalization/Prob4b/Proofs/Idealization/Basic.lean",
+      "line_count": 106,
+      "pass0036_git_blob_id": "664c0b589b60e6abc90188defb13297c9fcaf19a",
+      "pass0036_git_blob_sha256": "a937f21bd0c8dfc670941e862c0d7a8a2d0d96fcf0818bfafc7a4a644f1eeb38",
+      "pass0036_worktree_sha256": "a937f21bd0c8dfc670941e862c0d7a8a2d0d96fcf0818bfafc7a4a644f1eeb38"
+    },
+    {
+      "git_blob_id": "2e620612f721d70cb36456fc199c309f42996d21",
+      "git_blob_sha256": "da33d7d87e09ce628b755f120ec9927ced2e3dddda3c5698ffb1c2737fb1b07e",
+      "git_path": "lean/problem-4b-formalization/Prob4b/Proofs/Amplify/FiniteConductor.lean",
+      "line_count": 678,
+      "pass0036_git_blob_id": "2e620612f721d70cb36456fc199c309f42996d21",
+      "pass0036_git_blob_sha256": "da33d7d87e09ce628b755f120ec9927ced2e3dddda3c5698ffb1c2737fb1b07e",
+      "pass0036_worktree_sha256": "da33d7d87e09ce628b755f120ec9927ced2e3dddda3c5698ffb1c2737fb1b07e"
+    },
+    {
+      "git_blob_id": "f40db6b7ce353114c9179fcc03bff40ab5be7e9d",
+      "git_blob_sha256": "341c5710c199c6345c9c7a0a5e296630b178effc764863ef173cb3b9d0d4267c",
+      "git_path": "lean/problem-4b-formalization/Prob4b/Proofs/Amplify/NotQuasiCoherent.lean",
+      "line_count": 142,
+      "pass0036_git_blob_id": "f40db6b7ce353114c9179fcc03bff40ab5be7e9d",
+      "pass0036_git_blob_sha256": "341c5710c199c6345c9c7a0a5e296630b178effc764863ef173cb3b9d0d4267c",
+      "pass0036_worktree_sha256": "341c5710c199c6345c9c7a0a5e296630b178effc764863ef173cb3b9d0d4267c"
+    },
+    {
+      "git_blob_id": "483f006783afc0c93fc88d161d2fc354dd495b05",
+      "git_blob_sha256": "09d0cce199bbfe21f2ec17523672eab0d1fa51cd3df2927a1176a8d6cc2f9574",
+      "git_path": "lean/problem-4b-formalization/Prob4b/Proofs/Amplify/Basic.lean",
+      "line_count": 39,
+      "pass0036_git_blob_id": "483f006783afc0c93fc88d161d2fc354dd495b05",
+      "pass0036_git_blob_sha256": "09d0cce199bbfe21f2ec17523672eab0d1fa51cd3df2927a1176a8d6cc2f9574",
+      "pass0036_worktree_sha256": "09d0cce199bbfe21f2ec17523672eab0d1fa51cd3df2927a1176a8d6cc2f9574"
+    },
+    {
+      "git_blob_id": "1f9a70cae875d7d7e7871d389e559e2ec11a4e05",
+      "git_blob_sha256": "56c96c9a950bf89cc4327f01c9d75203f6e9ff42a09e9104e1bee009b3966c4a",
+      "git_path": "lean/problem-4b-formalization/Prob4b/Proofs/EasyDirection/Basic.lean",
+      "line_count": 44,
+      "pass0036_git_blob_id": "1f9a70cae875d7d7e7871d389e559e2ec11a4e05",
+      "pass0036_git_blob_sha256": "56c96c9a950bf89cc4327f01c9d75203f6e9ff42a09e9104e1bee009b3966c4a",
+      "pass0036_worktree_sha256": "56c96c9a950bf89cc4327f01c9d75203f6e9ff42a09e9104e1bee009b3966c4a"
+    }
+  ]
+}

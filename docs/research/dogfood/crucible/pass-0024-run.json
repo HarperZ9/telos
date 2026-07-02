@@ -1,0 +1,554 @@
+{
+  "ok": true,
+  "thesis": {
+    "id": "b6b32758c2889b1c",
+    "title": "Dogfood Pass 0024 Telos Action Receipt Fixture",
+    "registered_at": 1782907160.1552496,
+    "disposition": "fenced",
+    "seal": "b6b32758c2889b1cda2248dee527509c306df993a3444b16a98978b31b57ddb1",
+    "claims": [
+      {
+        "id": "9b33c4ced6e4a80a",
+        "sha256": "9b33c4ced6e4a80a83a87e53268866965c367e91d7e20761aa46176c738b4903"
+      },
+      {
+        "id": "4930bbe58fe1d6ac",
+        "sha256": "4930bbe58fe1d6aca3feb1de6d0a70c3b98dc2a80a2b1455ccb5582fe7266fae"
+      },
+      {
+        "id": "714a7c7d6aca3380",
+        "sha256": "714a7c7d6aca33804c36a897e382e2c7209dc51f92d2d6fa70adcedf39b9c995"
+      },
+      {
+        "id": "0b2bc1f763a0c0d1",
+        "sha256": "0b2bc1f763a0c0d1a3684ba7dfec6967bf46561913a3ff15ed7fb36656f292d9"
+      },
+      {
+        "id": "6dd6015e44ddf6cf",
+        "sha256": "6dd6015e44ddf6cf76ab655644f0447c447ec82fa2ebfa82eaabd830978d08c9"
+      },
+      {
+        "id": "dd142714733fca67",
+        "sha256": "dd142714733fca67bda66a6e2901c6aa9b103a67bc64f1e4a855b1d80ec01045"
+      },
+      {
+        "id": "80047995da40200d",
+        "sha256": "80047995da40200daa6d90d8109e550a991243b28793040e03c85a711b5520e1"
+      },
+      {
+        "id": "64b1bc77029c8b96",
+        "sha256": "64b1bc77029c8b96741622d9f5bd4788f3461810049d25a51c70200218f49382"
+      },
+      {
+        "id": "0858a78314ac916f",
+        "sha256": "0858a78314ac916f4068fa457b96a1f23cf8ee4c48e3ddd9919fe253df7c5e5f"
+      },
+      {
+        "id": "0565d9382f791472",
+        "sha256": "0565d9382f7914725d3d647fadcbae8d4a61446981fc81ae3067fd29c1dba052"
+      }
+    ]
+  },
+  "refutations": [
+    {
+      "claim_id": "9b33c4ced6e4a80a",
+      "claim_sha256": "9b33c4ced6e4a80a83a87e53268866965c367e91d7e20761aa46176c738b4903",
+      "challenge": "test the stated falsification: schemas/telos-action-receipt-fixture-pass-0024.json is missing, has a different schema or status, reports different counts, has a different seal, or has a different chain head hash",
+      "measurable": "schemas/telos-action-receipt-fixture-pass-0024.json is missing, has a different schema or status, reports different counts, has a different seal, or has a different chain head hash",
+      "source": "null"
+    },
+    {
+      "claim_id": "4930bbe58fe1d6ac",
+      "claim_sha256": "4930bbe58fe1d6aca3feb1de6d0a70c3b98dc2a80a2b1455ccb5582fe7266fae",
+      "challenge": "test the stated falsification: the source_artifacts array is missing, omits any of the three pass 0023 source artifacts, or reports different SHA-256 digests",
+      "measurable": "the source_artifacts array is missing, omits any of the three pass 0023 source artifacts, or reports different SHA-256 digests",
+      "source": "null"
+    },
+    {
+      "claim_id": "714a7c7d6aca3380",
+      "claim_sha256": "714a7c7d6aca33804c36a897e382e2c7209dc51f92d2d6fa70adcedf39b9c995",
+      "challenge": "test the stated falsification: upstream_span is missing, trace id or span id differs from pass 0023, exporter_sink_hash or fixture_hash differs, or receipt_is_trace_span is true",
+      "measurable": "upstream_span is missing, trace id or span id differs from pass 0023, exporter_sink_hash or fixture_hash differs, or receipt_is_trace_span is true",
+      "source": "null"
+    },
+    {
+      "claim_id": "0b2bc1f763a0c0d1",
+      "claim_sha256": "0b2bc1f763a0c0d1a3684ba7dfec6967bf46561913a3ff15ed7fb36656f292d9",
+      "challenge": "test the stated falsification: the Telos contract excerpt is missing, has a different digest, or does not require digest references, append-only compensation, trace linking, receipt-is-not-span separation, proposed/completed separation, and export outside trace retention",
+      "measurable": "the Telos contract excerpt is missing, has a different digest, or does not require digest references, append-only compensation, trace linking, receipt-is-not-span separation, proposed/completed separation, and export outside trace retention",
+      "source": "null"
+    },
+    {
+      "claim_id": "6dd6015e44ddf6cf",
+      "claim_sha256": "6dd6015e44ddf6cf76ab655644f0447c447ec82fa2ebfa82eaabd830978d08c9",
+      "challenge": "test the stated falsification: the action chain omits any event, changes the order, changes the action identifiers, or changes the external_request_id",
+      "measurable": "the action chain omits any event, changes the order, changes the action identifiers, or changes the external_request_id",
+      "source": "null"
+    },
+    {
+      "claim_id": "dd142714733fca67",
+      "claim_sha256": "dd142714733fca67bda66a6e2901c6aa9b103a67bc64f1e4a855b1d80ec01045",
+      "challenge": "test the stated falsification: any event hash differs, append_only is false, previous chain hashes do not link, write_hash is missing, or required action/policy/verification/material fields are absent",
+      "measurable": "any event hash differs, append_only is false, previous chain hashes do not link, write_hash is missing, or required action/policy/verification/material fields are absent",
+      "source": "null"
+    },
+    {
+      "claim_id": "80047995da40200d",
+      "claim_sha256": "80047995da40200daa6d90d8109e550a991243b28793040e03c85a711b5520e1",
+      "challenge": "test the stated falsification: schemas/pass-0024-telos-action-receipt-fixture-validator-result.json is missing, reports non-MATCH status, does not report match=1, reports drift above zero, or reports a different event count, negative count, trace id, or span id",
+      "measurable": "schemas/pass-0024-telos-action-receipt-fixture-validator-result.json is missing, reports non-MATCH status, does not report match=1, reports drift above zero, or reports a different event count, negative count, trace id, or span id",
+      "source": "null"
+    },
+    {
+      "claim_id": "64b1bc77029c8b96",
+      "claim_sha256": "64b1bc77029c8b96741622d9f5bd4788f3461810049d25a51c70200218f49382",
+      "challenge": "test the stated falsification: negative_fixtures is missing, has fewer than nine rows, lacks REJECT expectations, or omits failure codes for trace collapse, missing material digest, missing verification, missing policy, proposed/completed collapse, non-append-only compensation, or unjoinable execution span",
+      "measurable": "negative_fixtures is missing, has fewer than nine rows, lacks REJECT expectations, or omits failure codes for trace collapse, missing material digest, missing verification, missing policy, proposed/completed collapse, non-append-only compensation, or unjoinable execution span",
+      "source": "null"
+    },
+    {
+      "claim_id": "0858a78314ac916f",
+      "claim_sha256": "0858a78314ac916f4068fa457b96a1f23cf8ee4c48e3ddd9919fe253df7c5e5f",
+      "challenge": "test the stated falsification: packet 034 or the adversarial steelman is missing, Gather does not verify packet 034, the packet SHA-256 or seal differs, or the packet/adversarial files promote live runtime integration, external write safety, scientific discovery, theorem proof, or a natural law",
+      "measurable": "packet 034 or the adversarial steelman is missing, Gather does not verify packet 034, the packet SHA-256 or seal differs, or the packet/adversarial files promote live runtime integration, external write safety, scientific discovery, theorem proof, or a natural law",
+      "source": "null"
+    },
+    {
+      "claim_id": "0565d9382f791472",
+      "claim_sha256": "0565d9382f7914725d3d647fadcbae8d4a61446981fc81ae3067fd29c1dba052",
+      "challenge": "test the stated falsification: schemas/tool-receipts-pass-0024.json is missing, lacks required tool status receipts, treats Forum submit as successful, or omits the Telos action receipt and loop ledger receipts",
+      "measurable": "schemas/tool-receipts-pass-0024.json is missing, lacks required tool status receipts, treats Forum submit as successful, or omits the Telos action receipt and loop ledger receipts",
+      "source": "null"
+    }
+  ],
+  "assessment": {
+    "started_at": 1782907160.1636174,
+    "thesis_id": "b6b32758c2889b1c",
+    "thesis_seal": "b6b32758c2889b1cda2248dee527509c306df993a3444b16a98978b31b57ddb1",
+    "claims": 10,
+    "match": 10,
+    "drift": 0,
+    "unverifiable": 0,
+    "verdict_seal": "cab97bef341a19101155a6dee268f1a65d78b87be2b4e44f154b6fd5beac1892",
+    "measurement_seal": "5f053d42e59f58a01ed127aa003966924030a8da7582ea2152d35182d7f81748",
+    "disposition": "fenced",
+    "stored": null,
+    "verdicts": [
+      {
+        "claim_id": "9b33c4ced6e4a80a",
+        "claim_sha256": "9b33c4ced6e4a80a83a87e53268866965c367e91d7e20761aa46176c738b4903",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "action-receipt-fixture-artifact-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "4930bbe58fe1d6ac",
+        "claim_sha256": "4930bbe58fe1d6aca3feb1de6d0a70c3b98dc2a80a2b1455ccb5582fe7266fae",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "source-artifact-digest-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "714a7c7d6aca3380",
+        "claim_sha256": "714a7c7d6aca33804c36a897e382e2c7209dc51f92d2d6fa70adcedf39b9c995",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "otel-span-continuity-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "0b2bc1f763a0c0d1",
+        "claim_sha256": "0b2bc1f763a0c0d1a3684ba7dfec6967bf46561913a3ff15ed7fb36656f292d9",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "telos-contract-excerpt-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "6dd6015e44ddf6cf",
+        "claim_sha256": "6dd6015e44ddf6cf76ab655644f0447c447ec82fa2ebfa82eaabd830978d08c9",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "action-chain-identity-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "dd142714733fca67",
+        "claim_sha256": "dd142714733fca67bda66a6e2901c6aa9b103a67bc64f1e4a855b1d80ec01045",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "event-chain-hash-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "80047995da40200d",
+        "claim_sha256": "80047995da40200daa6d90d8109e550a991243b28793040e03c85a711b5520e1",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "validator-run-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "64b1bc77029c8b96",
+        "claim_sha256": "64b1bc77029c8b96741622d9f5bd4788f3461810049d25a51c70200218f49382",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "negative-fixture-coverage-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "0858a78314ac916f",
+        "claim_sha256": "0858a78314ac916f4068fa457b96a1f23cf8ee4c48e3ddd9919fe253df7c5e5f",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "gather-packet-and-boundary-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "0565d9382f791472",
+        "claim_sha256": "0565d9382f7914725d3d647fadcbae8d4a61446981fc81ae3067fd29c1dba052",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "tool-receipt-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      }
+    ],
+    "measurements": [
+      {
+        "claim_id": "9b33c4ced6e4a80a",
+        "claim_sha256": "9b33c4ced6e4a80a83a87e53268866965c367e91d7e20761aa46176c738b4903",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "action-receipt-fixture-artifact-review",
+        "measured_at": 1782907160.1636174,
+        "evidence": [
+          "schemas/telos-action-receipt-fixture-pass-0024.json schema=TelosActionReceiptFixtureSet/v1",
+          "status=ACTION_RECEIPT_FIXTURE_MATCH",
+          "event_count=4",
+          "negative_fixture_count=9",
+          "seal=58ed4ced91f18cbab776729f49f728d47013542cfc2448865bbdb8dccd1228e3",
+          "action_chain chain_head_hash=0617602eed957e0bc6c2e4a21548528f6defc542c4468433bde85df76cb51b3a"
+        ]
+      },
+      {
+        "claim_id": "4930bbe58fe1d6ac",
+        "claim_sha256": "4930bbe58fe1d6aca3feb1de6d0a70c3b98dc2a80a2b1455ccb5582fe7266fae",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "source-artifact-digest-review",
+        "measured_at": 1782907160.1636174,
+        "evidence": [
+          "source_artifacts[0] path=schemas/otel-recording-span-venv-pass-0023.json sha256=fc7beb76d616fd7823f0fe9a9cc879c92d00e5d7963a1e9228be89ae60486b1d",
+          "source_artifacts[1] path=schemas/pass-0023-otel-recording-span-venv-validator-result.json sha256=cf08afa51e45e70c6f9b66f9b43f976400a3d004f71e392ebe43e78ae797eddc",
+          "source_artifacts[2] path=packets/033-otel-recording-span-venv.md sha256=945054a1aed15ecffcfd46427b97dd268056a05d08997906a99faab29eed5b05",
+          "source_artifact_count=3"
+        ]
+      },
+      {
+        "claim_id": "714a7c7d6aca3380",
+        "claim_sha256": "714a7c7d6aca33804c36a897e382e2c7209dc51f92d2d6fa70adcedf39b9c995",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "otel-span-continuity-review",
+        "measured_at": 1782907160.1636174,
+        "evidence": [
+          "upstream_span trace_id_hex=aaa76491660d7a56086f69d1be94debe",
+          "upstream_span span_id_hex=1424d4ca9a6c5b58",
+          "upstream_span exporter_sink_hash=f2e9f33d12e261457731f6eedbe62c3c6d04d574c2c8274870da4eee0c2c2fc0",
+          "upstream_span fixture_hash=b1f3b6cd1c5b81d1784b29f5f9e11dd9ab1c2849f7510de94926dca07d5e2a25",
+          "upstream_span receipt_is_trace_span=false",
+          "upstream_span links_to_action_receipt=true"
+        ]
+      },
+      {
+        "claim_id": "0b2bc1f763a0c0d1",
+        "claim_sha256": "0b2bc1f763a0c0d1a3684ba7dfec6967bf46561913a3ff15ed7fb36656f292d9",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "telos-contract-excerpt-review",
+        "measured_at": 1782907160.1636174,
+        "evidence": [
+          "telos_contract_excerpt schema=project-telos.action-receipt/v1",
+          "telos_contract_excerpt_sha256=b2d08f56f2f8247c6661f81f25d5e84f916218ef132664f85365ce37a7ef5c5b",
+          "digest_references_required=true",
+          "append_only_compensation_required=true",
+          "receipt_is_trace_span=false",
+          "links_to_trace_span=true",
+          "proposed_completed_action_separation_required=true",
+          "exportable_outside_trace_retention=true"
+        ]
+      },
+      {
+        "claim_id": "6dd6015e44ddf6cf",
+        "claim_sha256": "6dd6015e44ddf6cf76ab655644f0447c447ec82fa2ebfa82eaabd830978d08c9",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "action-chain-identity-review",
+        "measured_at": 1782907160.1636174,
+        "evidence": [
+          "action_chain action_id=act_dogfood_0024_001",
+          "action_chain action_intent_id=intent_dogfood_0024_001",
+          "action_chain idempotency_key=idem_dogfood_0024_001",
+          "action_chain external_request_id=local:dogfood-pass-0024-action-receipt-fixture",
+          "action_chain event_types=action_proposed, action_admitted, execution_completed, verification_recorded"
+        ]
+      },
+      {
+        "claim_id": "dd142714733fca67",
+        "claim_sha256": "dd142714733fca67bda66a6e2901c6aa9b103a67bc64f1e4a855b1d80ec01045",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "event-chain-hash-review",
+        "measured_at": 1782907160.1636174,
+        "evidence": [
+          "event 1 hash=2e48696173973a47b9dc6d7a15371b50a6d6121a942846ee609c3afae3fb2a8b",
+          "event 2 hash=dfd5cbd9dfbec59ee45dff7b9622779b5ad5c094e709d457f4075e9af8be2fe6",
+          "event 3 hash=59121d18332e9171505259687e4f52d9a6eef576ad6b913093d34d208203e5e3",
+          "event 4 hash=e499b57cd42f808bd9859221914719737c8ea0111d918314df24d02803f938bf",
+          "validator recomputes event hashes and chain hashes",
+          "every event has policy.ref, verification.verdict, input_materials[].digest, trace.span_ref, and persistence.append_only=true"
+        ]
+      },
+      {
+        "claim_id": "80047995da40200d",
+        "claim_sha256": "80047995da40200daa6d90d8109e550a991243b28793040e03c85a711b5520e1",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "validator-run-review",
+        "measured_at": 1782907160.1636174,
+        "evidence": [
+          "schemas/pass-0024-telos-action-receipt-fixture-validator-result.json status=MATCH",
+          "match=1",
+          "drift=0",
+          "event_count=4",
+          "negative_fixture_count=9",
+          "receipt_is_trace_span=false",
+          "trace_id_hex=aaa76491660d7a56086f69d1be94debe",
+          "span_id_hex=1424d4ca9a6c5b58"
+        ]
+      },
+      {
+        "claim_id": "64b1bc77029c8b96",
+        "claim_sha256": "64b1bc77029c8b96741622d9f5bd4788f3461810049d25a51c70200218f49382",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "negative-fixture-coverage-review",
+        "measured_at": 1782907160.1636174,
+        "evidence": [
+          "negative_fixture_count=9",
+          "all negative_fixtures expected_validator_status=REJECT",
+          "failure_code completed_action_collapsed_into_trace_span present",
+          "failure_code missing_material_digest present",
+          "failure_code verification_missing present",
+          "failure_code policy_decision_unjoined present",
+          "failure_code proposed_completed_action_collapsed present",
+          "failure_code non_append_only_compensation present",
+          "failure_code unjoinable_execution_span present"
+        ]
+      },
+      {
+        "claim_id": "0858a78314ac916f",
+        "claim_sha256": "0858a78314ac916f4068fa457b96a1f23cf8ee4c48e3ddd9919fe253df7c5e5f",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "gather-packet-and-boundary-review",
+        "measured_at": 1782907160.1636174,
+        "evidence": [
+          "gather docs verified=true",
+          "artifact=packets/034-telos-action-receipt-fixture.md",
+          "sha256=2c5f373c9e7b3a70ad2e204060c159981a80c318d4ae22a1163f7d5b4cb47974",
+          "seal=e5f577d4667fb98aea9d6428c4c30a5663b6c96008331b145b14b6d5ef18968e",
+          "packet 034 states Current promoted natural laws: none",
+          "adversarial/pass-0024-action-receipt-steelman.md states no model-backed Forum adversarial answer was produced and current promoted natural laws: none"
+        ]
+      },
+      {
+        "claim_id": "0565d9382f791472",
+        "claim_sha256": "0565d9382f7914725d3d647fadcbae8d4a61446981fc81ae3067fd29c1dba052",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "tool-receipt-review",
+        "measured_at": 1782907160.1636174,
+        "evidence": [
+          "schemas/tool-receipts-pass-0024.json status=MATCH_WITH_FORUM_SUBMIT_GAP",
+          "index status MATCH",
+          "index doctor MATCH",
+          "gather status MATCH",
+          "gather docs verified=true",
+          "telos operator_doctor status MATCH",
+          "telos action_receipt status MATCH",
+          "telos loop_ledger status MATCH",
+          "forum status MATCH",
+          "forum ledger verify chain=true deep=true",
+          "forum submit status=UNVERIFIABLE",
+          "crucible status MATCH"
+        ]
+      }
+    ],
+    "seal": "ba2a2d3ad4bf80360d34d2b6b5de979f3261d8b111a0f481518c5edc4bf2d1b2"
+  },
+  "verdicts": [
+    {
+      "claim_id": "9b33c4ced6e4a80a",
+      "claim_sha256": "9b33c4ced6e4a80a83a87e53268866965c367e91d7e20761aa46176c738b4903",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "action-receipt-fixture-artifact-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "4930bbe58fe1d6ac",
+      "claim_sha256": "4930bbe58fe1d6aca3feb1de6d0a70c3b98dc2a80a2b1455ccb5582fe7266fae",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "source-artifact-digest-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "714a7c7d6aca3380",
+      "claim_sha256": "714a7c7d6aca33804c36a897e382e2c7209dc51f92d2d6fa70adcedf39b9c995",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "otel-span-continuity-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "0b2bc1f763a0c0d1",
+      "claim_sha256": "0b2bc1f763a0c0d1a3684ba7dfec6967bf46561913a3ff15ed7fb36656f292d9",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "telos-contract-excerpt-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "6dd6015e44ddf6cf",
+      "claim_sha256": "6dd6015e44ddf6cf76ab655644f0447c447ec82fa2ebfa82eaabd830978d08c9",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "action-chain-identity-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "dd142714733fca67",
+      "claim_sha256": "dd142714733fca67bda66a6e2901c6aa9b103a67bc64f1e4a855b1d80ec01045",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "event-chain-hash-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "80047995da40200d",
+      "claim_sha256": "80047995da40200daa6d90d8109e550a991243b28793040e03c85a711b5520e1",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "validator-run-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "64b1bc77029c8b96",
+      "claim_sha256": "64b1bc77029c8b96741622d9f5bd4788f3461810049d25a51c70200218f49382",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "negative-fixture-coverage-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "0858a78314ac916f",
+      "claim_sha256": "0858a78314ac916f4068fa457b96a1f23cf8ee4c48e3ddd9919fe253df7c5e5f",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "gather-packet-and-boundary-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "0565d9382f791472",
+      "claim_sha256": "0565d9382f7914725d3d647fadcbae8d4a61446981fc81ae3067fd29c1dba052",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "tool-receipt-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    }
+  ],
+  "checks": {
+    "seals_ok": true,
+    "thesis_ok": true,
+    "verdicts_rederive": true
+  },
+  "report": "C:\\dev\\public\\telos\\docs\\research\\dogfood\\crucible\\pass-0024-report.md",
+  "record": "C:\\dev\\public\\telos\\docs\\research\\dogfood\\crucible\\pass-0024-run.json",
+  "bundle": null,
+  "spec": null,
+  "review": null,
+  "verifier": {
+    "mode": "cleanroom",
+    "inputs": [],
+    "excluded": [
+      "worker context",
+      "reasoning trace",
+      "intermediate steps"
+    ],
+    "checkability": "If success cannot be evaluated from the original spec and the artifact, the spec is not checkable yet."
+  }
+}

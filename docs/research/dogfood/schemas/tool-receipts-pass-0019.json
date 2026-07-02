@@ -1,0 +1,61 @@
+{
+  "pass": "0019",
+  "schema": "DogfoodToolReceiptSet/v1",
+  "status": "MATCH_WITH_FORUM_SUBMIT_GAP",
+  "generated_on": "2026-07-01",
+  "receipts": [
+    {
+      "tool": "index",
+      "command": "status",
+      "status": "MATCH",
+      "tool_version": "2.8.0",
+      "role": "structure-context"
+    },
+    {
+      "tool": "gather",
+      "command": "status",
+      "status": "MATCH",
+      "tool_version": "1.5.0",
+      "role": "perception-intake"
+    },
+    {
+      "tool": "telos.operator.doctor",
+      "command": "operator_doctor",
+      "status": "MATCH",
+      "check_count": 14,
+      "passed_count": 14,
+      "tool_count": 65,
+      "telos_tool_count": 37,
+      "generated_at": "2026-07-01T11:14:09.661Z"
+    },
+    {
+      "tool": "forum",
+      "command": "status",
+      "status": "MATCH",
+      "entries": 10,
+      "checkpoint": "82df3227a2521b50f5582d8a523451c6806d76d550598ec1523627aa73b241fc"
+    },
+    {
+      "tool": "forum",
+      "command": "verify",
+      "status": "MATCH",
+      "chain": true,
+      "deep": true
+    },
+    {
+      "tool": "forum",
+      "command": "submit",
+      "status": "UNVERIFIABLE",
+      "request": "Pass 0019 adversarial review for strict receipt runtime fixtures",
+      "error": "the configured executor did not return valid JSON; point the daemon at a real model executor (could not parse JSON from output: Extra data: line 2 column 1 (char 98))"
+    },
+    {
+      "tool": "crucible",
+      "command": "status",
+      "status": "MATCH",
+      "tool_version": "1.1.0",
+      "role": "verification-pressure"
+    }
+  ],
+  "non_promotion_statement": "Tool receipts prove operator-surface availability only. They do not prove live quantum framework execution, cloud object retrieval, or quantum hardware execution."
+}

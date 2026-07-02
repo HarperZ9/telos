@@ -1,0 +1,36 @@
+{
+  "fixture_only": true,
+  "scope": "Negative fixture for the Telos OSS Proof Showcase lane. This packet must remain blocked because it lacks passing test evidence, a patch summary, and a MATCH verdict.",
+  "reproduction": {
+    "command": "python -m pytest pandas/tests/arrays/test_masked.py -q",
+    "status": "failed-before-patch",
+    "source": "fixture"
+  },
+  "tests": [],
+  "crucible": {
+    "verdict": "UNVERIFIABLE",
+    "detail": "No patch and no passing test evidence were supplied."
+  },
+  "not_verified": {
+    "files_not_inspected": [
+      "pandas/core/construction.py",
+      "pandas/_libs/**/*.pyx"
+    ],
+    "tests_skipped": [
+      "targeted regression test",
+      "full pandas test suite"
+    ],
+    "assumptions": [
+      "fixture is incomplete by design"
+    ],
+    "unobserved_state": [
+      "patch behavior",
+      "current pandas main branch"
+    ]
+  },
+  "risk_notes": [
+    "missing patch summary",
+    "missing passing test evidence",
+    "crucible verdict is not MATCH"
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "fixture_only": true,
+  "scope": "Schema and workflow demonstration for the Telos OSS Proof Showcase lane. This is not evidence of an actual upstream pandas patch.",
+  "clone": {
+    "commit": "fixture-abc1234",
+    "root": "external/pandas-fixture"
+  },
+  "reproduction": {
+    "command": "python -m pytest pandas/tests/arrays/test_masked.py -q",
+    "status": "failed-before-patch",
+    "source": "fixture"
+  },
+  "patch": {
+    "summary": "Preserve NumPy masked-array mask in pd.array conversion.",
+    "files_changed": [
+      "pandas/core/construction.py"
+    ],
+    "source": "fixture"
+  },
+  "tests": [
+    {
+      "command": "python -m pytest pandas/tests/arrays/test_masked.py -q",
+      "status": "passed",
+      "source": "fixture"
+    }
+  ],
+  "crucible": {
+    "verdict": "MATCH",
+    "detail": "Fixture-only before/after evidence contains a failing reproduction, a patch summary, a passing targeted test, and explicit not-verified scope."
+  },
+  "not_verified": {
+    "files_not_inspected": [
+      "pandas/_libs/**/*.pyx"
+    ],
+    "tests_skipped": [
+      "full pandas test suite"
+    ],
+    "assumptions": [
+      "fixture mirrors the issue shape but does not prove current upstream behavior"
+    ],
+    "unobserved_state": [
+      "upstream maintainer intent",
+      "current pandas main branch"
+    ]
+  },
+  "follow_up_events": [
+    {
+      "kind": "maintainer-feedback",
+      "status": "not-started",
+      "appended_at": "2026-07-02T00:00:00Z"
+    }
+  ],
+  "risk_notes": [
+    "untriaged upstream issue",
+    "fixture evidence only"
+  ]
+}

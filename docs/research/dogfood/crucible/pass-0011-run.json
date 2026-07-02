@@ -1,0 +1,393 @@
+{
+  "ok": true,
+  "thesis": {
+    "id": "0bf09ff1f6b62d9a",
+    "title": "Dogfood Pass 0011 Color Calibration Proof Kit",
+    "registered_at": 1782901614.894762,
+    "disposition": "fenced",
+    "seal": "0bf09ff1f6b62d9a568696ae62b873d473dc01393429a085df20b497af4f9c3a",
+    "claims": [
+      {
+        "id": "106b83248446251a",
+        "sha256": "106b83248446251ad8af0522baadbdad192728a580a456cf398ed7216b164e43"
+      },
+      {
+        "id": "54ced37a22d4b200",
+        "sha256": "54ced37a22d4b200d2901f908a541dc5a4332f761fc724c75439632ad1ea4dcf"
+      },
+      {
+        "id": "694699ab99af16ca",
+        "sha256": "694699ab99af16ca5a4b16e65d2813a92e7770b6f0fb49082353b2fbf7b9e7bb"
+      },
+      {
+        "id": "211af9921509c416",
+        "sha256": "211af9921509c4164780d307f08f5e76295d4115a087378e92d8447c8b7cacd2"
+      },
+      {
+        "id": "7491df5f06d4ffb1",
+        "sha256": "7491df5f06d4ffb1c20eeef74bc06ecff5e5676f68a08ecc5b2ee330f65152b6"
+      },
+      {
+        "id": "61b7108bc6b90cd6",
+        "sha256": "61b7108bc6b90cd6f554d5b2f5719fb5637257369380749dcf95ef1c55bc8f7b"
+      },
+      {
+        "id": "e0994f4ede8da319",
+        "sha256": "e0994f4ede8da319eeeba270b8d5f024dd51deb54635762029a8094843bd7e95"
+      }
+    ]
+  },
+  "refutations": [
+    {
+      "claim_id": "106b83248446251a",
+      "claim_sha256": "106b83248446251ad8af0522baadbdad192728a580a456cf398ed7216b164e43",
+      "challenge": "test the stated falsification: schemas/color-calibration-market-map-pass-0011.json is missing, has fewer than eight rows, or omits any required category",
+      "measurable": "schemas/color-calibration-market-map-pass-0011.json is missing, has fewer than eight rows, or omits any required category",
+      "source": "null"
+    },
+    {
+      "claim_id": "54ced37a22d4b200",
+      "claim_sha256": "54ced37a22d4b200d2901f908a541dc5a4332f761fc724c75439632ad1ea4dcf",
+      "challenge": "test the stated falsification: any row in schemas/color-calibration-market-map-pass-0011.json lacks a required row field, uses a non-HTTPS source URL, or has an invalid gap_status",
+      "measurable": "any row in schemas/color-calibration-market-map-pass-0011.json lacks a required row field, uses a non-HTTPS source URL, or has an invalid gap_status",
+      "source": "null"
+    },
+    {
+      "claim_id": "694699ab99af16ca",
+      "claim_sha256": "694699ab99af16ca5a4b16e65d2813a92e7770b6f0fb49082353b2fbf7b9e7bb",
+      "challenge": "test the stated falsification: schemas/build-color-calibration-proof-kit-pass-0011.json is missing, has fewer than four metrics, or any metric exceeds its threshold",
+      "measurable": "schemas/build-color-calibration-proof-kit-pass-0011.json is missing, has fewer than four metrics, or any metric exceeds its threshold",
+      "source": "null"
+    },
+    {
+      "claim_id": "211af9921509c416",
+      "claim_sha256": "211af9921509c4164780d307f08f5e76295d4115a087378e92d8447c8b7cacd2",
+      "challenge": "test the stated falsification: schemas/build-color-calibration-proof-kit-pass-0011.json marks any calibration-boundary field as true",
+      "measurable": "schemas/build-color-calibration-proof-kit-pass-0011.json marks any calibration-boundary field as true",
+      "source": "null"
+    },
+    {
+      "claim_id": "7491df5f06d4ffb1",
+      "claim_sha256": "7491df5f06d4ffb1c20eeef74bc06ecff5e5676f68a08ecc5b2ee330f65152b6",
+      "challenge": "test the stated falsification: schemas/build-color-calibration-proof-kit-pass-0011.json does not set negative_fixture.status to REJECTED_BY_BOUNDARY",
+      "measurable": "schemas/build-color-calibration-proof-kit-pass-0011.json does not set negative_fixture.status to REJECTED_BY_BOUNDARY",
+      "source": "null"
+    },
+    {
+      "claim_id": "61b7108bc6b90cd6",
+      "claim_sha256": "61b7108bc6b90cd6f554d5b2f5719fb5637257369380749dcf95ef1c55bc8f7b",
+      "challenge": "test the stated falsification: schemas/pass-0011-color-calibration-validator-result.json is missing, reports non-MATCH status, reports fewer than two matches, or reports drift above zero",
+      "measurable": "schemas/pass-0011-color-calibration-validator-result.json is missing, reports non-MATCH status, reports fewer than two matches, or reports drift above zero",
+      "source": "null"
+    },
+    {
+      "claim_id": "e0994f4ede8da319",
+      "claim_sha256": "e0994f4ede8da319eeeba270b8d5f024dd51deb54635762029a8094843bd7e95",
+      "challenge": "test the stated falsification: any pass 0011 artifact labels a new color science law, physical calibration result, display accuracy result, theorem breakthrough, biological result, material result, medical result, finance result, or safety result as promoted",
+      "measurable": "any pass 0011 artifact labels a new color science law, physical calibration result, display accuracy result, theorem breakthrough, biological result, material result, medical result, finance result, or safety result as promoted",
+      "source": "null"
+    }
+  ],
+  "assessment": {
+    "started_at": 1782901614.9011767,
+    "thesis_id": "0bf09ff1f6b62d9a",
+    "thesis_seal": "0bf09ff1f6b62d9a568696ae62b873d473dc01393429a085df20b497af4f9c3a",
+    "claims": 7,
+    "match": 7,
+    "drift": 0,
+    "unverifiable": 0,
+    "verdict_seal": "1bbacd4644e0078c6e5092a23f9c229319a67fe53d3a9fad94fb8d80721537a1",
+    "measurement_seal": "8a102a043a4bf08cd31a0b8b56a39cfcaa6b681d9653576fa9b48d700e204f0f",
+    "disposition": "fenced",
+    "stored": null,
+    "verdicts": [
+      {
+        "claim_id": "106b83248446251a",
+        "claim_sha256": "106b83248446251ad8af0522baadbdad192728a580a456cf398ed7216b164e43",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "market-map-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "54ced37a22d4b200",
+        "claim_sha256": "54ced37a22d4b200d2901f908a541dc5a4332f761fc724c75439632ad1ea4dcf",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "market-row-field-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "694699ab99af16ca",
+        "claim_sha256": "694699ab99af16ca5a4b16e65d2813a92e7770b6f0fb49082353b2fbf7b9e7bb",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "measurement-threshold-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "211af9921509c416",
+        "claim_sha256": "211af9921509c4164780d307f08f5e76295d4115a087378e92d8447c8b7cacd2",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "boundary-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "7491df5f06d4ffb1",
+        "claim_sha256": "7491df5f06d4ffb1c20eeef74bc06ecff5e5676f68a08ecc5b2ee330f65152b6",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "negative-fixture-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "61b7108bc6b90cd6",
+        "claim_sha256": "61b7108bc6b90cd6f554d5b2f5719fb5637257369380749dcf95ef1c55bc8f7b",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "validator-run-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "e0994f4ede8da319",
+        "claim_sha256": "e0994f4ede8da319eeeba270b8d5f024dd51deb54635762029a8094843bd7e95",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "artifact-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      }
+    ],
+    "measurements": [
+      {
+        "claim_id": "106b83248446251a",
+        "claim_sha256": "106b83248446251ad8af0522baadbdad192728a580a456cf398ed7216b164e43",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "market-map-review",
+        "measured_at": 1782901614.9009922,
+        "evidence": [
+          "schemas/color-calibration-market-map-pass-0011.json rows=8",
+          "category color-standard present",
+          "category color-management present",
+          "category calibration-software present",
+          "category grading-tool present",
+          "category open-source-calibration present",
+          "category profile-standard present"
+        ]
+      },
+      {
+        "claim_id": "54ced37a22d4b200",
+        "claim_sha256": "54ced37a22d4b200d2901f908a541dc5a4332f761fc724c75439632ad1ea4dcf",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "market-row-field-review",
+        "measured_at": 1782901614.9009988,
+        "evidence": [
+          "validator required_fields includes source_url",
+          "validator required_fields includes proof_receipt_gap",
+          "validator required_fields includes build_color_wedge_hypothesis",
+          "validator required_fields includes gap_status",
+          "validator required_fields includes confidence",
+          "validator rejects non-HTTPS source URLs",
+          "validator restricts gap_status to verified, inferred, or unverified"
+        ]
+      },
+      {
+        "claim_id": "694699ab99af16ca",
+        "claim_sha256": "694699ab99af16ca5a4b16e65d2813a92e7770b6f0fb49082353b2fbf7b9e7bb",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "measurement-threshold-review",
+        "measured_at": 1782901614.9010012,
+        "evidence": [
+          "schemas/build-color-calibration-proof-kit-pass-0011.json schema=BuildColorCalibrationProofKit/v1",
+          "metric srgb_xyz_max_abs_error observed=0.0000017030280945010406 threshold=0.00001 status=PASS",
+          "metric srgb_oklab_max_abs_error observed=0.00000000000001072185665305766 threshold=0.0000000001 status=PASS",
+          "metric pq_max_abs_nits_error observed=0.00000000008458300726488233 threshold=0.000001 status=PASS",
+          "metric cie2000_pair_1_abs_error observed=0.00004031984342622863 threshold=0.005 status=PASS"
+        ]
+      },
+      {
+        "claim_id": "211af9921509c416",
+        "claim_sha256": "211af9921509c4164780d307f08f5e76295d4115a087378e92d8447c8b7cacd2",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "boundary-review",
+        "measured_at": 1782901614.9010026,
+        "evidence": [
+          "hardware_measurement_used=false",
+          "display_state_mutated=false",
+          "icc_profile_installed=false",
+          "lut_written=false",
+          "physical_calibration_claim=false",
+          "boundary_status=PASS"
+        ]
+      },
+      {
+        "claim_id": "7491df5f06d4ffb1",
+        "claim_sha256": "7491df5f06d4ffb1c20eeef74bc06ecff5e5676f68a08ecc5b2ee330f65152b6",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "negative-fixture-review",
+        "measured_at": 1782901614.9010043,
+        "evidence": [
+          "negative_fixture.claim=This pass calibrated a physical display.",
+          "negative_fixture.status=REJECTED_BY_BOUNDARY",
+          "negative_fixture.reason=No meter, probe, display mutation, ICC install, or LUT write occurred."
+        ]
+      },
+      {
+        "claim_id": "61b7108bc6b90cd6",
+        "claim_sha256": "61b7108bc6b90cd6f554d5b2f5719fb5637257369380749dcf95ef1c55bc8f7b",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "validator-run-review",
+        "measured_at": 1782901614.901006,
+        "evidence": [
+          "schemas/pass-0011-color-calibration-validator-result.json status=MATCH",
+          "match=2",
+          "drift=0",
+          "checks include ColorCalibrationMarketMap",
+          "checks include BuildColorCalibrationProofKit"
+        ]
+      },
+      {
+        "claim_id": "e0994f4ede8da319",
+        "claim_sha256": "e0994f4ede8da319eeeba270b8d5f024dd51deb54635762029a8094843bd7e95",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "artifact-review",
+        "measured_at": 1782901614.901008,
+        "evidence": [
+          "packets/021-color-calibration-proof-kit.md Non-Promotion Statement promotes no discovery",
+          "schemas/build-color-calibration-proof-kit-pass-0011.json promotion_state=PROOF_KIT_FIXTURE",
+          "failure_labels include NOT_A_PHYSICAL_CALIBRATION",
+          "failure_labels include NOT_A_NEW_COLOR_SCIENCE_LAW",
+          "negative fixture rejects the physical display calibration claim"
+        ]
+      }
+    ],
+    "seal": "991f5f0ee6bb93270cbbde3df1cd9ce13fb032ddd9fbf135c823549ef39b8ea4"
+  },
+  "verdicts": [
+    {
+      "claim_id": "106b83248446251a",
+      "claim_sha256": "106b83248446251ad8af0522baadbdad192728a580a456cf398ed7216b164e43",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "market-map-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "54ced37a22d4b200",
+      "claim_sha256": "54ced37a22d4b200d2901f908a541dc5a4332f761fc724c75439632ad1ea4dcf",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "market-row-field-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "694699ab99af16ca",
+      "claim_sha256": "694699ab99af16ca5a4b16e65d2813a92e7770b6f0fb49082353b2fbf7b9e7bb",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "measurement-threshold-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "211af9921509c416",
+      "claim_sha256": "211af9921509c4164780d307f08f5e76295d4115a087378e92d8447c8b7cacd2",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "boundary-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "7491df5f06d4ffb1",
+      "claim_sha256": "7491df5f06d4ffb1c20eeef74bc06ecff5e5676f68a08ecc5b2ee330f65152b6",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "negative-fixture-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "61b7108bc6b90cd6",
+      "claim_sha256": "61b7108bc6b90cd6f554d5b2f5719fb5637257369380749dcf95ef1c55bc8f7b",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "validator-run-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "e0994f4ede8da319",
+      "claim_sha256": "e0994f4ede8da319eeeba270b8d5f024dd51deb54635762029a8094843bd7e95",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "artifact-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    }
+  ],
+  "checks": {
+    "seals_ok": true,
+    "thesis_ok": true,
+    "verdicts_rederive": true
+  },
+  "report": "C:\\dev\\public\\telos\\docs\\research\\dogfood\\crucible\\pass-0011-report.md",
+  "record": "C:\\dev\\public\\telos\\docs\\research\\dogfood\\crucible\\pass-0011-run.json",
+  "bundle": null,
+  "spec": null,
+  "review": null,
+  "verifier": {
+    "mode": "cleanroom",
+    "inputs": [],
+    "excluded": [
+      "worker context",
+      "reasoning trace",
+      "intermediate steps"
+    ],
+    "checkability": "If success cannot be evaluated from the original spec and the artifact, the spec is not checkable yet."
+  }
+}

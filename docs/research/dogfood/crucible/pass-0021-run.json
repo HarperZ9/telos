@@ -1,0 +1,603 @@
+{
+  "ok": true,
+  "thesis": {
+    "id": "127dabb2fa813b84",
+    "title": "Dogfood Pass 0021 Quantum Environment Plan and OpenTelemetry Bridge",
+    "registered_at": 1782905533.1898053,
+    "disposition": "fenced",
+    "seal": "127dabb2fa813b84d567c3a9122d1fa50c2c353d9091544f34483604034adcbf",
+    "claims": [
+      {
+        "id": "4879a669ca231f75",
+        "sha256": "4879a669ca231f75ce28d0ee34752bb11684f0dd45f3699729a6338292b27f0c"
+      },
+      {
+        "id": "795cb1f71dcd6d39",
+        "sha256": "795cb1f71dcd6d39e1041986a240ac621540929059161ddf069b54e82b3a202b"
+      },
+      {
+        "id": "7bac1bc80bb11340",
+        "sha256": "7bac1bc80bb11340e64acc39bb819108b57f8256baa78a9ac12b1f62e9c76781"
+      },
+      {
+        "id": "04ad43c9e3b20099",
+        "sha256": "04ad43c9e3b200992d57d652121f003e0e5f21026422e228a7a6ad45310248ad"
+      },
+      {
+        "id": "b3c2982aa54d6427",
+        "sha256": "b3c2982aa54d64273b969c94d88f310e3ccea8bbdc2830f2a1df21995bc16241"
+      },
+      {
+        "id": "e0f965150acebd94",
+        "sha256": "e0f965150acebd943f4845f086106533a08ec12a647423a405f34aa8af1e926c"
+      },
+      {
+        "id": "f5597504e8d3a96d",
+        "sha256": "f5597504e8d3a96d80cf1ab3904875d3dd8a0ec1be61bb515e12833356b682c4"
+      },
+      {
+        "id": "a8368ec00e952511",
+        "sha256": "a8368ec00e9525118dcb76727a4eaad992d3ec7ced9fbbaa0324a49aa00b440d"
+      },
+      {
+        "id": "d49cad5afdf84c69",
+        "sha256": "d49cad5afdf84c69f1963aba3853afc9cfdd7be63c392e2d80aa94a9354e61a7"
+      },
+      {
+        "id": "fb38b2444c4a90e2",
+        "sha256": "fb38b2444c4a90e22cd4151816592a9e35cb20562625411fa07a95501faaf1ff"
+      },
+      {
+        "id": "14483e26f052e29e",
+        "sha256": "14483e26f052e29e7fef9780a44ba3825d63f6d151d389e511a0ba58e14373b2"
+      }
+    ]
+  },
+  "refutations": [
+    {
+      "claim_id": "4879a669ca231f75",
+      "claim_sha256": "4879a669ca231f75ce28d0ee34752bb11684f0dd45f3699729a6338292b27f0c",
+      "challenge": "test the stated falsification: schemas/quantum-environment-plan-otel-bridge-pass-0021.json is missing, has a different schema or status, reports different counts, lacks OTel status API_IMPORT_MATCH_NONRECORDING, or lacks the expected seal",
+      "measurable": "schemas/quantum-environment-plan-otel-bridge-pass-0021.json is missing, has a different schema or status, reports different counts, lacks OTel status API_IMPORT_MATCH_NONRECORDING, or lacks the expected seal",
+      "source": "null"
+    },
+    {
+      "claim_id": "795cb1f71dcd6d39",
+      "claim_sha256": "795cb1f71dcd6d39e1041986a240ac621540929059161ddf069b54e82b3a202b",
+      "challenge": "test the stated falsification: the local environment receipt is missing, has a different schema, reports different Python/pip/platform values, or lacks the plan-only installation boundary",
+      "measurable": "the local environment receipt is missing, has a different schema, reports different Python/pip/platform values, or lacks the plan-only installation boundary",
+      "source": "null"
+    },
+    {
+      "claim_id": "7bac1bc80bb11340",
+      "claim_sha256": "7bac1bc80bb11340e64acc39bb819108b57f8256baa78a9ac12b1f62e9c76781",
+      "challenge": "test the stated falsification: any package plan lacks a required field, requests install_now=true, lacks the pin policy, requires cloud credentials for import fixtures, lacks HTTPS sources, lacks import targets, lacks a fixture contract, or lacks a plan hash",
+      "measurable": "any package plan lacks a required field, requests install_now=true, lacks the pin policy, requires cloud credentials for import fixtures, lacks HTTPS sources, lacks import targets, lacks a fixture contract, or lacks a plan hash",
+      "source": "null"
+    },
+    {
+      "claim_id": "04ad43c9e3b20099",
+      "claim_sha256": "04ad43c9e3b200992d57d652121f003e0e5f21026422e228a7a6ad45310248ad",
+      "challenge": "test the stated falsification: any named distribution is absent from the package plan set",
+      "measurable": "any named distribution is absent from the package plan set",
+      "source": "null"
+    },
+    {
+      "claim_id": "b3c2982aa54d6427",
+      "claim_sha256": "b3c2982aa54d64273b969c94d88f310e3ccea8bbdc2830f2a1df21995bc16241",
+      "challenge": "test the stated falsification: any required promotion gate is missing",
+      "measurable": "any required promotion gate is missing",
+      "source": "null"
+    },
+    {
+      "claim_id": "e0f965150acebd94",
+      "claim_sha256": "e0f965150acebd943f4845f086106533a08ec12a647423a405f34aa8af1e926c",
+      "challenge": "test the stated falsification: the OTel fixture is missing, does not import opentelemetry-api, reports a different version, does not create NonRecordingSpan, records a recording span, has nonzero trace/span id, or lacks the API-only non-recording boundary",
+      "measurable": "the OTel fixture is missing, does not import opentelemetry-api, reports a different version, does not create NonRecordingSpan, records a recording span, has nonzero trace/span id, or lacks the API-only non-recording boundary",
+      "source": "null"
+    },
+    {
+      "claim_id": "f5597504e8d3a96d",
+      "claim_sha256": "f5597504e8d3a96d80cf1ab3904875d3dd8a0ec1be61bb515e12833356b682c4",
+      "challenge": "test the stated falsification: the demo contract is missing or lacks any required packet layer",
+      "measurable": "the demo contract is missing or lacks any required packet layer",
+      "source": "null"
+    },
+    {
+      "claim_id": "a8368ec00e952511",
+      "claim_sha256": "a8368ec00e9525118dcb76727a4eaad992d3ec7ced9fbbaa0324a49aa00b440d",
+      "challenge": "test the stated falsification: any of the nine expected negative fixture categories is missing or has expected_validator_status other than REJECT",
+      "measurable": "any of the nine expected negative fixture categories is missing or has expected_validator_status other than REJECT",
+      "source": "null"
+    },
+    {
+      "claim_id": "d49cad5afdf84c69",
+      "claim_sha256": "d49cad5afdf84c69f1963aba3853afc9cfdd7be63c392e2d80aa94a9354e61a7",
+      "challenge": "test the stated falsification: schemas/pass-0021-quantum-environment-plan-validator-result.json is missing, reports non-MATCH status, does not report match=1, or reports drift above zero",
+      "measurable": "schemas/pass-0021-quantum-environment-plan-validator-result.json is missing, reports non-MATCH status, does not report match=1, or reports drift above zero",
+      "source": "null"
+    },
+    {
+      "claim_id": "fb38b2444c4a90e2",
+      "claim_sha256": "fb38b2444c4a90e22cd4151816592a9e35cb20562625411fa07a95501faaf1ff",
+      "challenge": "test the stated falsification: schemas/tool-receipts-pass-0021.json is missing, lacks required tool status receipts, or treats Forum submit as successful rather than UNVERIFIABLE",
+      "measurable": "schemas/tool-receipts-pass-0021.json is missing, lacks required tool status receipts, or treats Forum submit as successful rather than UNVERIFIABLE",
+      "source": "null"
+    },
+    {
+      "claim_id": "14483e26f052e29e",
+      "claim_sha256": "14483e26f052e29e7fef9780a44ba3825d63f6d151d389e511a0ba58e14373b2",
+      "challenge": "test the stated falsification: any pass 0021 artifact labels quantum SDK installation, unavailable quantum framework import, cloud credential creation, provider job, hardware result, natural law, or scientific discovery as promoted",
+      "measurable": "any pass 0021 artifact labels quantum SDK installation, unavailable quantum framework import, cloud credential creation, provider job, hardware result, natural law, or scientific discovery as promoted",
+      "source": "null"
+    }
+  ],
+  "assessment": {
+    "started_at": 1782905533.1962698,
+    "thesis_id": "127dabb2fa813b84",
+    "thesis_seal": "127dabb2fa813b84d567c3a9122d1fa50c2c353d9091544f34483604034adcbf",
+    "claims": 11,
+    "match": 11,
+    "drift": 0,
+    "unverifiable": 0,
+    "verdict_seal": "a2a420137c94cc12fa017a0f7988387c86a85308d439a2560649856cc97c45d7",
+    "measurement_seal": "d97fc6d9d478fcfd0c4babb592e95bd23f297722a1a30a236f8fc00c818de85b",
+    "disposition": "fenced",
+    "stored": null,
+    "verdicts": [
+      {
+        "claim_id": "4879a669ca231f75",
+        "claim_sha256": "4879a669ca231f75ce28d0ee34752bb11684f0dd45f3699729a6338292b27f0c",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "quantum-environment-plan-artifact-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "795cb1f71dcd6d39",
+        "claim_sha256": "795cb1f71dcd6d39e1041986a240ac621540929059161ddf069b54e82b3a202b",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "local-environment-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "7bac1bc80bb11340",
+        "claim_sha256": "7bac1bc80bb11340e64acc39bb819108b57f8256baa78a9ac12b1f62e9c76781",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "package-plan-contract-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "04ad43c9e3b20099",
+        "claim_sha256": "04ad43c9e3b200992d57d652121f003e0e5f21026422e228a7a6ad45310248ad",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "package-plan-membership-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "b3c2982aa54d6427",
+        "claim_sha256": "b3c2982aa54d64273b969c94d88f310e3ccea8bbdc2830f2a1df21995bc16241",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "promotion-gate-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "e0f965150acebd94",
+        "claim_sha256": "e0f965150acebd943f4845f086106533a08ec12a647423a405f34aa8af1e926c",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "otel-action-bridge-fixture-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "f5597504e8d3a96d",
+        "claim_sha256": "f5597504e8d3a96d80cf1ab3904875d3dd8a0ec1be61bb515e12833356b682c4",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "quantum-proof-demo-contract-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "a8368ec00e952511",
+        "claim_sha256": "a8368ec00e9525118dcb76727a4eaad992d3ec7ced9fbbaa0324a49aa00b440d",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "negative-fixture-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "d49cad5afdf84c69",
+        "claim_sha256": "d49cad5afdf84c69f1963aba3853afc9cfdd7be63c392e2d80aa94a9354e61a7",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "validator-run-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "fb38b2444c4a90e2",
+        "claim_sha256": "fb38b2444c4a90e22cd4151816592a9e35cb20562625411fa07a95501faaf1ff",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "tool-receipt-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "14483e26f052e29e",
+        "claim_sha256": "14483e26f052e29e7fef9780a44ba3825d63f6d151d389e511a0ba58e14373b2",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "non-promotion-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      }
+    ],
+    "measurements": [
+      {
+        "claim_id": "4879a669ca231f75",
+        "claim_sha256": "4879a669ca231f75ce28d0ee34752bb11684f0dd45f3699729a6338292b27f0c",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "quantum-environment-plan-artifact-review",
+        "measured_at": 1782905533.1960635,
+        "evidence": [
+          "schemas/quantum-environment-plan-otel-bridge-pass-0021.json schema=QuantumFrameworkEnvironmentPlanSet/v1",
+          "status=ENVIRONMENT_PLAN_AND_OTEL_BRIDGE_MATCH",
+          "package_plan_count=11",
+          "negative_fixture_count=9",
+          "source_anchor_count=15",
+          "opentelemetry_action_bridge_fixture status=API_IMPORT_MATCH_NONRECORDING",
+          "seal=1ce3a1aaab7392d4a825564415a76e71a4f8b59c2a954dbb794d4ffe7e67cb1f"
+        ]
+      },
+      {
+        "claim_id": "795cb1f71dcd6d39",
+        "claim_sha256": "795cb1f71dcd6d39e1041986a240ac621540929059161ddf069b54e82b3a202b",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "local-environment-review",
+        "measured_at": 1782905533.1960704,
+        "evidence": [
+          "local_environment schema=LocalPythonEnvironmentReceipt/v1",
+          "python_version=3.12.10",
+          "pip_version=26.1.2",
+          "platform=Windows-11-10.0.26220-SP0",
+          "installer_boundary=PLAN_ONLY_NO_PACKAGE_INSTALL"
+        ]
+      },
+      {
+        "claim_id": "7bac1bc80bb11340",
+        "claim_sha256": "7bac1bc80bb11340e64acc39bb819108b57f8256baa78a9ac12b1f62e9c76781",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "package-plan-contract-review",
+        "measured_at": 1782905533.1960728,
+        "evidence": [
+          "validator checks QuantumFrameworkPackagePlan/v1 schema",
+          "validator checks install_now=false",
+          "validator checks pin_policy=RESOLVE_IN_ISOLATED_ENV_THEN_FREEZE_WITH_HASHES",
+          "validator checks cloud_credentials_required_for_import_fixture=false",
+          "validator checks all source anchors are HTTPS",
+          "validator checks import_targets, first_framework_import_fixture, and plan_hash"
+        ]
+      },
+      {
+        "claim_id": "04ad43c9e3b20099",
+        "claim_sha256": "04ad43c9e3b200992d57d652121f003e0e5f21026422e228a7a6ad45310248ad",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "package-plan-membership-review",
+        "measured_at": 1782905533.196075,
+        "evidence": [
+          "required package plan qiskit present",
+          "required package plan qiskit-ibm-runtime present",
+          "required package plan amazon-braket-sdk present",
+          "required package plan cirq present",
+          "required package plan pennylane present",
+          "required package plan pyqir present",
+          "required package plan pytket present",
+          "required package plan pytket-qir present",
+          "required package plan cudaq present",
+          "required package plan opentelemetry-api present",
+          "required package plan opentelemetry-sdk present"
+        ]
+      },
+      {
+        "claim_id": "b3c2982aa54d6427",
+        "claim_sha256": "b3c2982aa54d64273b969c94d88f310e3ccea8bbdc2830f2a1df21995bc16241",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "promotion-gate-review",
+        "measured_at": 1782905533.1960769,
+        "evidence": [
+          "ISOLATED_ENVIRONMENT_REQUIRED present",
+          "RESOLVE_AND_FREEZE_WITH_HASHES_REQUIRED present",
+          "NO_CLOUD_CREDENTIALS_FOR_FRAMEWORK_IMPORT_FIXTURES present",
+          "NO_CLOUD_PROVIDER_EXECUTION_WITHOUT_LIVE_PROVIDER_RECEIPT present",
+          "SDK_IMPORT_DOES_NOT_PROVE_PROVIDER_EXECUTION present",
+          "OTEL_API_NONRECORDING_SPAN_DOES_NOT_PROVE_EXPORTED_TRACE present"
+        ]
+      },
+      {
+        "claim_id": "e0f965150acebd94",
+        "claim_sha256": "e0f965150acebd943f4845f086106533a08ec12a647423a405f34aa8af1e926c",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "otel-action-bridge-fixture-review",
+        "measured_at": 1782905533.1960785,
+        "evidence": [
+          "opentelemetry_action_bridge_fixture distribution=opentelemetry-api",
+          "module_imported=true",
+          "api_version=1.41.0",
+          "span_class=NonRecordingSpan",
+          "is_recording=false",
+          "trace_id_hex=00000000000000000000000000000000",
+          "span_id_hex=0000000000000000",
+          "attribute_recording_status=NOT_RECORDED_WITH_API_ONLY_NONRECORDING_SPAN"
+        ]
+      },
+      {
+        "claim_id": "f5597504e8d3a96d",
+        "claim_sha256": "f5597504e8d3a96d80cf1ab3904875d3dd8a0ec1be61bb515e12833356b682c4",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "quantum-proof-demo-contract-review",
+        "measured_at": 1782905533.1960804,
+        "evidence": [
+          "quantum_proof_demo_contract schema=QuantumProofDemoContract/v1",
+          "packet_layers include source_anchor_receipts",
+          "packet_layers include framework_import_receipt",
+          "packet_layers include canonical_result_receipt",
+          "packet_layers include negative_fixture_receipts",
+          "packet_layers include otel_action_bridge_receipt",
+          "packet_layers include crucible_verdict_receipt"
+        ]
+      },
+      {
+        "claim_id": "a8368ec00e952511",
+        "claim_sha256": "a8368ec00e9525118dcb76727a4eaad992d3ec7ced9fbbaa0324a49aa00b440d",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "negative-fixture-review",
+        "measured_at": 1782905533.1960824,
+        "evidence": [
+          "negative-installing-into-shared-base-env expected_validator_status=REJECT",
+          "negative-unpinned-runtime-demo expected_validator_status=REJECT",
+          "negative-cloud-credential-required-for-import-fixture expected_validator_status=REJECT",
+          "negative-sdk-import-claimed-as-provider-execution expected_validator_status=REJECT",
+          "negative-nonrecording-otel-span-claimed-as-exported-trace expected_validator_status=REJECT",
+          "negative-cudaq-import-claimed-as-gpu-acceleration expected_validator_status=REJECT",
+          "negative-qir-without-record-map expected_validator_status=REJECT",
+          "negative-buildlang-runtime-without-compiler-receipt expected_validator_status=REJECT",
+          "negative-color-runtime-without-measurement-receipt expected_validator_status=REJECT"
+        ]
+      },
+      {
+        "claim_id": "d49cad5afdf84c69",
+        "claim_sha256": "d49cad5afdf84c69f1963aba3853afc9cfdd7be63c392e2d80aa94a9354e61a7",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "validator-run-review",
+        "measured_at": 1782905533.1960843,
+        "evidence": [
+          "schemas/pass-0021-quantum-environment-plan-validator-result.json status=MATCH",
+          "match=1",
+          "drift=0",
+          "checks include QuantumFrameworkEnvironmentPlanSet status MATCH"
+        ]
+      },
+      {
+        "claim_id": "fb38b2444c4a90e2",
+        "claim_sha256": "fb38b2444c4a90e22cd4151816592a9e35cb20562625411fa07a95501faaf1ff",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "tool-receipt-review",
+        "measured_at": 1782905533.1960866,
+        "evidence": [
+          "schemas/tool-receipts-pass-0021.json status=MATCH_WITH_FORUM_SUBMIT_GAP",
+          "index status MATCH",
+          "gather status MATCH",
+          "gather docs verified=true",
+          "telos operator_doctor status MATCH",
+          "forum status MATCH entries=13",
+          "forum verify chain=true deep=true",
+          "forum submit status=UNVERIFIABLE",
+          "crucible status MATCH"
+        ]
+      },
+      {
+        "claim_id": "14483e26f052e29e",
+        "claim_sha256": "14483e26f052e29e7fef9780a44ba3825d63f6d151d389e511a0ba58e14373b2",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "non-promotion-review",
+        "measured_at": 1782905533.1960883,
+        "evidence": [
+          "schemas/quantum-environment-plan-otel-bridge-pass-0021.json non_promotion_statement states no quantum SDK installs, unavailable quantum framework imports, credentials, provider jobs, hardware, or scientific results",
+          "packets/031-quantum-environment-plan-otel-bridge.md states no quantum SDKs were installed and no unavailable quantum framework was imported",
+          "schemas/tool-receipts-pass-0021.json non_promotion_statement states no package installation, quantum framework import, recording OTel export, cloud provider execution, or scientific discovery",
+          "Current promoted natural laws: none"
+        ]
+      }
+    ],
+    "seal": "945f52a7b1f92006eae10eaa21a1eddf0698d8f8227c285938747a13ead2233d"
+  },
+  "verdicts": [
+    {
+      "claim_id": "4879a669ca231f75",
+      "claim_sha256": "4879a669ca231f75ce28d0ee34752bb11684f0dd45f3699729a6338292b27f0c",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "quantum-environment-plan-artifact-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "795cb1f71dcd6d39",
+      "claim_sha256": "795cb1f71dcd6d39e1041986a240ac621540929059161ddf069b54e82b3a202b",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "local-environment-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "7bac1bc80bb11340",
+      "claim_sha256": "7bac1bc80bb11340e64acc39bb819108b57f8256baa78a9ac12b1f62e9c76781",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "package-plan-contract-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "04ad43c9e3b20099",
+      "claim_sha256": "04ad43c9e3b200992d57d652121f003e0e5f21026422e228a7a6ad45310248ad",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "package-plan-membership-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "b3c2982aa54d6427",
+      "claim_sha256": "b3c2982aa54d64273b969c94d88f310e3ccea8bbdc2830f2a1df21995bc16241",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "promotion-gate-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "e0f965150acebd94",
+      "claim_sha256": "e0f965150acebd943f4845f086106533a08ec12a647423a405f34aa8af1e926c",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "otel-action-bridge-fixture-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "f5597504e8d3a96d",
+      "claim_sha256": "f5597504e8d3a96d80cf1ab3904875d3dd8a0ec1be61bb515e12833356b682c4",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "quantum-proof-demo-contract-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "a8368ec00e952511",
+      "claim_sha256": "a8368ec00e9525118dcb76727a4eaad992d3ec7ced9fbbaa0324a49aa00b440d",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "negative-fixture-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "d49cad5afdf84c69",
+      "claim_sha256": "d49cad5afdf84c69f1963aba3853afc9cfdd7be63c392e2d80aa94a9354e61a7",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "validator-run-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "fb38b2444c4a90e2",
+      "claim_sha256": "fb38b2444c4a90e22cd4151816592a9e35cb20562625411fa07a95501faaf1ff",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "tool-receipt-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "14483e26f052e29e",
+      "claim_sha256": "14483e26f052e29e7fef9780a44ba3825d63f6d151d389e511a0ba58e14373b2",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "non-promotion-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    }
+  ],
+  "checks": {
+    "seals_ok": true,
+    "thesis_ok": true,
+    "verdicts_rederive": true
+  },
+  "report": "C:\\dev\\public\\telos\\docs\\research\\dogfood\\crucible\\pass-0021-report.md",
+  "record": "C:\\dev\\public\\telos\\docs\\research\\dogfood\\crucible\\pass-0021-run.json",
+  "bundle": null,
+  "spec": null,
+  "review": null,
+  "verifier": {
+    "mode": "cleanroom",
+    "inputs": [],
+    "excluded": [
+      "worker context",
+      "reasoning trace",
+      "intermediate steps"
+    ],
+    "checkability": "If success cannot be evaluated from the original spec and the artifact, the spec is not checkable yet."
+  }
+}

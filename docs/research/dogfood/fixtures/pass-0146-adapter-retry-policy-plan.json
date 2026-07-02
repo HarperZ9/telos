@@ -1,0 +1,104 @@
+{
+  "schema": "AdapterRetryPolicyPlan/v1",
+  "source_store": "docs/research/dogfood/gather/pass-0146-adapter-retry-policy",
+  "prior_receipt": "docs/research/dogfood/schemas/multi-institution-claim-graph-pass-0145.json",
+  "policy_sources": [
+    {
+      "id": "crossref_access_auth",
+      "system": "Crossref",
+      "url": "https://www.crossref.org/documentation/retrieve-metadata/rest-api/access-and-authentication/",
+      "required_signals": ["mailto", "x-rate-limit-limit", "x-rate-limit-interval", "429", "403"]
+    },
+    {
+      "id": "crossref_tips",
+      "system": "Crossref",
+      "url": "https://www.crossref.org/documentation/retrieve-metadata/rest-api/tips-for-using-the-crossref-rest-api/",
+      "required_signals": ["cursor", "request", "error"]
+    },
+    {
+      "id": "crossref_2025_rate_limit_change",
+      "system": "Crossref",
+      "url": "https://www.crossref.org/blog/announcing-changes-to-rest-api-rate-limits/",
+      "required_signals": ["1 December 2025", "public", "polite", "rate limit", "concurrency"]
+    },
+    {
+      "id": "openalex_authentication",
+      "system": "OpenAlex",
+      "url": "https://developers.openalex.org/api-reference/authentication",
+      "required_signals": ["API key", "429", "exponential backoff", "requests per second"]
+    },
+    {
+      "id": "openalex_errors",
+      "system": "OpenAlex",
+      "url": "https://developers.openalex.org/api-reference/errors",
+      "required_signals": ["429", "Too Many Requests", "rate limit headers"]
+    },
+    {
+      "id": "openalex_deprecations",
+      "system": "OpenAlex",
+      "url": "https://developers.openalex.org/guides/deprecations",
+      "required_signals": ["mailto", "ignored", "API keys"]
+    },
+    {
+      "id": "ror_rest_api",
+      "system": "ROR",
+      "url": "https://ror.readme.io/docs/rest-api",
+      "required_signals": ["2000 requests", "5-minute period", "client ID", "Docker"]
+    },
+    {
+      "id": "oai_pmh_protocol",
+      "system": "OAI-PMH",
+      "url": "https://www.openarchives.org/OAI/openarchivesprotocol.html",
+      "required_signals": ["resumptionToken", "503", "Retry-After", "badResumptionToken"]
+    },
+    {
+      "id": "oai_harvester_guidelines",
+      "system": "OAI-PMH",
+      "url": "https://www.openarchives.org/OAI/2.0/guidelines-harvester.htm",
+      "required_signals": ["503", "Retry-After", "resumptionToken", "expired"]
+    },
+    {
+      "id": "rfc_6585_429",
+      "system": "HTTP",
+      "url": "https://datatracker.ietf.org/doc/html/rfc6585",
+      "required_signals": ["429", "Retry-After"]
+    },
+    {
+      "id": "rfc_9110_retry_after",
+      "system": "HTTP",
+      "url": "https://datatracker.ietf.org/doc/html/rfc9110#name-retry-after",
+      "required_signals": ["Retry-After", "HTTP-date", "delay-seconds", "503"]
+    }
+  ],
+  "scenario_fixtures": [
+    {"id": "crossref_429_no_retry_after", "expected_action": "BACKOFF_AND_DEMOTE_TO_SOURCE_LEAD"},
+    {"id": "crossref_403_blocked", "expected_action": "HALT_AND_ESCALATE_ACCESS"},
+    {"id": "openalex_429_with_headers", "expected_action": "HONOR_HEADERS_AND_BACKOFF"},
+    {"id": "openalex_mailto_only", "expected_action": "REJECT_STALE_POLITE_POOL_ASSUMPTION"},
+    {"id": "ror_anonymous_high_volume", "expected_action": "CLIENT_ID_OR_LOCAL_DOCKER_FALLBACK"},
+    {"id": "oai_503_retry_after", "expected_action": "WAIT_RETRY_AFTER"},
+    {"id": "oai_503_without_retry_after", "expected_action": "DO_NOT_AUTOMATICALLY_RETRY"},
+    {"id": "oai_bad_resumption_token", "expected_action": "RESTART_FROM_CHECKPOINT"},
+    {"id": "stale_repository_endpoint_404", "expected_action": "ENDPOINT_DRIFT_WARNING"},
+    {"id": "index_unknown_focus_repo", "expected_action": "RETRY_ROOT_ONLY_RECORD_SELECTOR_DRIFT"}
+  ],
+  "negative_fixtures": [
+    "429_as_absence_evidence",
+    "403_as_rate_limit_retry",
+    "mailto_as_openalex_current_auth",
+    "oai_identify_as_harvest_completion",
+    "resumption_token_as_portable_identifier",
+    "old_endpoint_404_as_repository_absence",
+    "headerless_503_as_safe_tight_loop",
+    "rate_limit_header_as_publication_truth",
+    "selector_failure_as_missing_repo",
+    "source_policy_as_market_uniqueness"
+  ],
+  "updated_tool_floor": {
+    "crucible": "1.1.0",
+    "forum": "1.12.0",
+    "gather": "1.5.0",
+    "index": "2.8.0",
+    "telos": "0.1.0"
+  }
+}

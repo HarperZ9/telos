@@ -1,0 +1,110 @@
+{
+  "measurements": [
+    {
+      "claim": "Pass 0134 created an AllVideoAuthorTheoryIndexReceipt/v1 artifact with status ALL_VIDEO_AUTHOR_THEORY_INDEX_MATCH, sha256 30ddf92bbbbec9b6106fcd7a2d1afb9a66de4f22a46a5c8dc688e2c858bc3b49, and seal 32a5ac015799a1c20944c0b483887ae71c73c3d6983939818e695bff473b63d4.",
+      "deviation": 0.0,
+      "evidence": [
+        "schema=AllVideoAuthorTheoryIndexReceipt/v1",
+        "status=ALL_VIDEO_AUTHOR_THEORY_INDEX_MATCH",
+        "sha256=30ddf92bbbbec9b6106fcd7a2d1afb9a66de4f22a46a5c8dc688e2c858bc3b49",
+        "seal=32a5ac015799a1c20944c0b483887ae71c73c3d6983939818e695bff473b63d4"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0134 indexes 54 locally recoverable video sources and 5 channel sources.",
+      "deviation": 0.0,
+      "evidence": [
+        "video_count=54",
+        "channel_count=5"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0134 builds 33 author nodes and 33 reference-expansion queue rows.",
+      "deviation": 0.0,
+      "evidence": [
+        "author_nodes=[{'evidence': ['uploader_or_channel'], 'lanes': ['quantum_optimization'], 'name': 'D-Wave', 'status': 'AUTHOR_SOURCE_NODE', 'video_count': 13, 'video_ids': ['1jJ3zHfQGsU', '7zjyj9ClmQw', '8wWDeFuivdw', 'GQlC3NYRjK8', 'QillFoj4OVY', 'RzmPzsgVDY4', 'afAgs9LBnm0', 'dBG9jGKaM_M', 'iDILQL8US68', 'jtBwnFqU3K4', 'kDAU5aD_a0I', 'x-yTG0oThr0', 'yW_TAAl3H8w']}, {'evidence': ['uploader_or_channel'], 'lanes': ['brandom_functional_learning'], 'name': 'Kane B', 'status': 'AUTHOR_SOURCE_NODE', 'video_count': 7, 'video_ids': ['1luMT2KUAOo', '6Jd1syHnjAQ', 'PxucUNi3UZo', 'WN0sl_jQ3Mg', 'XcnCnNQlNnE', 'c9BFn4Kqj0E', 'jOqymknUa_k']}, {'evidence': ['uploader_or_channel'], 'lanes': ['ai_model_eval_search'], 'name': 'Machine Learning Street Talk', 'status': 'AUTHOR_SOURCE_NODE', 'video_count': 2, 'video_ids': ['5pieVHmlbyk', 'Vg6FBKTlfOw']}, {'evidence': ['uploader_or_channel'], 'lanes': ['formal_compute_language'], 'name': 'aboutlogic', 'status': 'AUTHOR_SOURCE_NODE', 'video_count': 1, 'video_ids': ['4MQbd5wTlI8']}, {'evidence': ['title_pattern'], 'lanes': ['quantum_optimization'], 'name': 'Andrei Petrenko', 'status': 'AUTHOR_SOURCE_NODE', 'video_count': 1, 'video_ids': ['kDAU5aD_a0I']}, {'evidence': ['uploader_or_channel'], 'lanes': ['societal_governance'], 'name': 'Ben Goertzel', 'status': 'AUTHOR_SOURCE_NODE', 'video_count': 1, 'video_ids': ['P3gsKJWGwwA']}, {'evidence': ['uploader_or_channel'], 'lanes': ['ai_model_eval_search'], 'name': 'bycloud', 'status': 'AUTHOR_SOURCE_NODE', 'video_count': 1, 'video_ids': ['nYwid6Q5HXk']}, {'evidence': ['uploader_or_channel'], 'lanes': ['ai_model_eval_search'], 'name': 'Discover AI', 'status': 'AUTHOR_SOURCE_NODE', 'video_count': 1, 'video_ids': ['tv17bmE2FNY']}, {'evidence': ['title_mention'], 'lanes': ['formal_compute_language'], 'name': 'Emily Riehl', 'status': 'AUTHOR_SOURCE_NODE', 'video_count': 1, 'video_ids': ['4MQbd5wTlI8']}, {'evidence': ['uploader_or_channel'], 'lanes': ['physics_foundations'], 'name': 'Gabriele Carcassi', 'status': 'AUTHOR_SOURCE_NODE', 'video_count': 1, 'video_ids': ['HbKzqvey5PA']}]",
+        "reference_queue_count=33"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0134 builds 9 theory lanes and all lanes remain HYPOTHESIS_SOURCE_LEAD.",
+      "deviation": 0.0,
+      "evidence": [
+        "theory_lanes=[{'gap_status': 'inferred', 'lane_id': 'ai_model_eval_search', 'market_tool_hypothesis': 'Source-to-Proof Packet Factory', 'next_experiment': 'Convert source lead into primary-source retrieval, claim boundary, executable probe, and Crucible gate.', 'source_authors': ['Discover AI', 'Latent Space', 'Machine Learning Street Talk', 'MindVoice Production', 'Prof Mihai Nica', 'Prompt Engineering', 'Thomas Ahle', 'bycloud'], 'source_video_ids': ['1WH9_edB538', '5pieVHmlbyk', 'FHQfmJEpRmU', 'Mw60FH5iflI', 'SbafEATbfXQ', 'TUzgnbhdo2Y', 'Vg6FBKTlfOw', 'YQWXxnkK4dw', 'YsFQQynunMY', 'awsH0iq0O1A', 'bLSLN96Gn-w', 'eFgknPFK-g0', 'jH05mse8VbQ', 'nYwid6Q5HXk', 'pGENcaOBmXw', 'rl0jkP9kOMw', 'tv17bmE2FNY'], 'status': 'HYPOTHESIS_SOURCE_LEAD', 'theory_chain': ['source lead', 'benchmark or model claim', 'contamination boundary', 'replay attempt', 'verifier verdict'], 'video_count': 17}, {'gap_status': 'inferred', 'lane_id': 'quantum_optimization', 'market_tool_hypothesis': 'Optimization Proof Workbench', 'next_experiment': 'Normalize problem encoding, solver branch, calibration context, and objective receipts.', 'source_authors': ['Andrei Petrenko', 'D-Wave', 'Mayowa Ayodele', 'Trevor Lanting', 'Vladimir Gusev'], 'source_video_ids': ['1jJ3zHfQGsU', '7zjyj9ClmQw', '8wWDeFuivdw', 'GQlC3NYRjK8', 'QillFoj4OVY', 'RzmPzsgVDY4', 'afAgs9LBnm0', 'dBG9jGKaM_M', 'iDILQL8US68', 'jtBwnFqU3K4', 'kDAU5aD_a0I', 'x-yTG0oThr0', 'yW_TAAl3H8w'], 'status': 'HYPOTHESIS_SOURCE_LEAD', 'theory_chain': ['source lead', 'problem encoding', 'solver branch', 'calibration or backend context', 'objective receipt'], 'video_count': 13}, {'gap_status': 'inferred', 'lane_id': 'brandom_functional_learning', 'market_tool_hypothesis': 'Functional Learning and Theory Graph Workbench', 'next_experiment': 'Build author-work-reference graph and scorekeeping exercises over Brandom/Kane B source leads.', 'source_authors': ['Kane B', 'Robert Brandom', 'Robert Brandom at Zhejiang University'], 'source_video_ids': ['1luMT2KUAOo', '6Jd1syHnjAQ', 'JOvZWTk8KFU', 'PxucUNi3UZo', 'WN0sl_jQ3Mg', 'XcnCnNQlNnE', 'c9BFn4Kqj0E', 'jOqymknUa_k'], 'status': 'HYPOTHESIS_SOURCE_LEAD', 'theory_chain': ['source lead', 'author work catalog', 'reference lineage', 'commitment/entitlement exercise', 'learning receipt'], 'video_count': 8}, {'gap_status': 'inferred', 'lane_id': 'physics_foundations', 'market_tool_hypothesis': 'Physics Claim Boundary Kit', 'next_experiment': 'Separate normalization/invariant arithmetic from interpretation claims with negative fixtures.', 'source_authors': ['Gabriele Carcassi', 'Nathan Seiberg', 'Neil Turok', 'Simons Foundation', 'Universe of AI'], 'source_video_ids': ['21ZB0yhILZo', 'HbKzqvey5PA', 'Ihv542rCUns', 'VlP-12yc2f8', 'rf1FKWaSpEY', 'w-GugZv044I'], 'status': 'HYPOTHESIS_SOURCE_LEAD', 'theory_chain': ['source lead', 'mathematical object', 'normalization or invariant', 'interpretation boundary', 'runtime receipt'], 'video_count': 6}, {'gap_status': 'inferred', 'lane_id': 'ai4science_biology', 'market_tool_hypothesis': 'Bio/Neuro Claim-to-Experiment Packet', 'next_experiment': 'Retrieve primary papers and make a falsifiable model/reproduction queue for biology/evolution/neuro leads.', 'source_authors': [\"Michael Levin's Academic Content\", 'Tom Oxley', 'Vitaly Vanchurin'], 'source_video_ids': ['0gvHqRv8gTg', '3AhJNyj_X98', '3_XRPv1OcPg'], 'status': 'HYPOTHESIS_SOURCE_LEAD', 'theory_chain': ['source lead', 'paper or model lineage', 'simulation or assay target', 'negative result lane', 'claim-to-experiment packet'], 'video_count': 3}, {'gap_status': 'inferred', 'lane_id': 'formal_compute_language', 'market_tool_hypothesis': 'Counterexample and Formal Runtime Workbench', 'next_experiment': 'Extract theorem/program targets and run counterexample or formal-runtime fixtures.', 'source_authors': ['Emily Riehl', 'Turing', 'aboutlogic'], 'source_video_ids': ['4MQbd5wTlI8', 'EdVG5qNm2rY'], 'status': 'HYPOTHESIS_SOURCE_LEAD', 'theory_chain': ['source lead', 'definition boundary', 'theorem or program target', 'counterexample lane', 'proof/runtime receipt'], 'video_count': 2}, {'gap_status': 'inferred', 'lane_id': 'rendering_compute_kernels', 'market_tool_hypothesis': 'Visual/Compute Kernel Proof Kit', 'next_experiment': 'Attach formulas/kernels to measured rendered artifacts and calibration receipts.', 'source_authors': ['Inigo Quilez', 'regionaltantrums'], 'source_video_ids': ['DAMiS2PGTEE', 'XyUFPHRQtyw'], 'status': 'HYPOTHESIS_SOURCE_LEAD', 'theory_chain': ['source lead', 'formula/kernel', 'measured artifact', 'visual/calibration receipt', 'replay handle'], 'video_count': 2}, {'gap_status': 'inferred', 'lane_id': 'societal_governance', 'market_tool_hypothesis': 'Source-to-Proof Packet Factory', 'next_experiment': 'Convert source lead into primary-source retrieval, claim boundary, executable probe, and Crucible gate.', 'source_authors': ['Ben Goertzel', 'Yuval Noah Harari', 'Yuval Noah Harari '], 'source_video_ids': ['P3gsKJWGwwA', 'hBtVGwuJzpk'], 'status': 'HYPOTHESIS_SOURCE_LEAD', 'theory_chain': ['source lead', 'assumption ledger', 'stakeholder/authority boundary', 'review lane', 'decision receipt'], 'video_count': 2}, {'gap_status': 'inferred', 'lane_id': 'quant_finance', 'market_tool_hypothesis': 'Source-to-Proof Packet Factory', 'next_experiment': 'Convert source lead into primary-source retrieval, claim boundary, executable probe, and Crucible gate.', 'source_authors': ['jetbundle'], 'source_video_ids': ['cvL_uWtMTAo'], 'status': 'HYPOTHESIS_SOURCE_LEAD', 'theory_chain': ['source lead', 'identity or risk model', 'stress fixture', 'tolerance receipt', 'promotion gate'], 'video_count': 1}]"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0134 keeps all video sources at SOURCE_LEAD_ONLY status.",
+      "deviation": 0.0,
+      "evidence": [
+        "source_statuses=['SOURCE_LEAD_ONLY']"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0134 rejects 7 negative fixtures including thread-history completeness, raw transcript export, and natural-law promotion.",
+      "deviation": 0.0,
+      "evidence": [
+        "negative_fixtures=[{'failures': ['title_mentions_are_source_leads', 'requires_primary_author_source'], 'fixture_id': 'title_mention_as_authority_rejected', 'status': 'REJECTED'}, {'failures': ['video_only_claim', 'requires_independent_source'], 'fixture_id': 'video_claim_as_theory_edge_rejected', 'status': 'REJECTED'}, {'failures': ['local_thread_search_incomplete', 'requires_repo_or_exported_receipts'], 'fixture_id': 'thread_history_as_complete_corpus_rejected', 'status': 'REJECTED'}, {'failures': ['dynamic_playlist', 'partial_capture'], 'fixture_id': 'channel_page_as_complete_works_rejected', 'status': 'REJECTED'}, {'failures': ['copyright_boundary', 'digest_only'], 'fixture_id': 'raw_transcript_export_rejected', 'status': 'REJECTED'}, {'failures': ['citation_not_gathered', 'no_receipt'], 'fixture_id': 'reference_without_source_rejected', 'status': 'REJECTED'}, {'failures': ['planning_graph_only', 'requires_proof_and_reproduction'], 'fixture_id': 'theory_chain_as_natural_law_rejected', 'status': 'REJECTED'}]"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0134 records recovery boundary notes for repo-recoverable corpus and incomplete thread search.",
+      "deviation": 0.0,
+      "evidence": [
+        "recovery_boundary={'corpus_policy': 'This pass indexes locally recoverable repo and Gather receipts. Anything not represented by a receipt remains outside the verified corpus.', 'thread_search': 'codex_app list_threads query for video/youtube/learning returned no older matching threads; current Research market gaps thread was readable and confirmed Brandom, Kane B, and compaction events.'}"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0134 flagship receipts for Forum, Index, Telos status, and Telos catalog all have MATCH status.",
+      "deviation": 0.0,
+      "evidence": [
+        "flagship_receipts={'forum': {'decided': 'project-telos', 'exit_code': 0, 'status': 'MATCH', 'stderr_sha256': 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855', 'stdout_sha256': 'fa0f87043a38bf950d846a1624d6aef54cb10db368aa9c57e38f20f9aa026ede'}, 'index': {'exit_code': 0, 'status': 'MATCH', 'stderr_sha256': 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855', 'stdout_sha256': '0d1d7f141b9c327fcb63a22a621f6ff1b620319912e98a271646cc8cb8dc85f2', 'verification_verdict': 'MATCH'}, 'telos': {'exit_code': 0, 'status': 'MATCH', 'stderr_sha256': 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855', 'stdout_sha256': 'be17cb15259234cb4e8e95c2b36e76c90d841431729beb140294e34c5f9ebfa7', 'tool_version': '0.1.0'}, 'telos_catalog': {'exit_code': 0, 'status': 'MATCH', 'stderr_sha256': 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855', 'stdout_sha256': 'ef95a6f1ff803c483c3c4dd553fe19c37ab144113a21bc005cf4148cf31a8564'}}"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0134 validator receipt status is MATCH and test receipt status is MATCH.",
+      "deviation": 0.0,
+      "evidence": [
+        "validator={'command': 'C:\\\\Users\\\\Zain\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python312\\\\python.exe C:\\\\dev\\\\public\\\\telos\\\\docs\\\\research\\\\dogfood\\\\tools\\\\validate_pass_0134_all_video_author_theory_index.py', 'exit_code': 0, 'stdout_sha256': 'f6ca88ff058ff7bd2c5c21dd95e9983e51fea7a7562bff20b66672122cf9fe03', 'stderr_sha256': 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855', 'status': 'MATCH'}",
+        "test={'command': 'C:\\\\Users\\\\Zain\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python312\\\\python.exe C:\\\\dev\\\\public\\\\telos\\\\docs\\\\research\\\\dogfood\\\\tools\\\\test_all_video_author_theory_index.py', 'exit_code': 0, 'stdout_sha256': 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855', 'stderr_sha256': 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855', 'status': 'MATCH'}"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0134 records unsupported_claim_count 0 and current_promoted_natural_laws length 0.",
+      "deviation": 0.0,
+      "evidence": [
+        "unsupported_claim_count=0",
+        "natural_law_count=0"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0134 file hashes are {'artifact': '30ddf92bbbbec9b6106fcd7a2d1afb9a66de4f22a46a5c8dc688e2c858bc3b49', 'composer': '3d5ec6ff3cef69f172733c9bb3d2ee22df34bc3c7e61be10ff34de0eb0544f86', 'source_helper': '7391a4d72170352270ac87385672110227d39aff2b31e5804805406c0013cbb5', 'packet': '1e8d2e9956095628f289f084b151c299917ef8d1c930fab0d484365b3c36a06b', 'brief': '8ac50a83b5afbe1345584d6c49535fe0b5039912ac0733ee432371eeaebf1ea3', 'steelman': 'ca144574380050e04a16802455eec5dcb9b757c212a514093acd4e7292ee80e4', 'test': '8ca0fc1f26b869400d607e1831d80ca456f964c0f719b81dfb7223659e0d7417', 'validator': 'edc77bf85f1bf8a3d34a2a6e996b1a3386c3b6c7ccb4af0f0c4c2ed47d646eaf', 'validator_result': 'f82f61a920fec27eb5b56f44b6eb46b1d393a38f609db1893b63b29c8378b130', 'tool_receipts': '966b29b000e2cc514e28043de64b76d9ee8b00ba64293e718ada9ebc844138e3'}.",
+      "deviation": 0.0,
+      "evidence": [
+        "file_hashes={'artifact': '30ddf92bbbbec9b6106fcd7a2d1afb9a66de4f22a46a5c8dc688e2c858bc3b49', 'composer': '3d5ec6ff3cef69f172733c9bb3d2ee22df34bc3c7e61be10ff34de0eb0544f86', 'source_helper': '7391a4d72170352270ac87385672110227d39aff2b31e5804805406c0013cbb5', 'packet': '1e8d2e9956095628f289f084b151c299917ef8d1c930fab0d484365b3c36a06b', 'brief': '8ac50a83b5afbe1345584d6c49535fe0b5039912ac0733ee432371eeaebf1ea3', 'steelman': 'ca144574380050e04a16802455eec5dcb9b757c212a514093acd4e7292ee80e4', 'test': '8ca0fc1f26b869400d607e1831d80ca456f964c0f719b81dfb7223659e0d7417', 'validator': 'edc77bf85f1bf8a3d34a2a6e996b1a3386c3b6c7ccb4af0f0c4c2ed47d646eaf', 'validator_result': 'f82f61a920fec27eb5b56f44b6eb46b1d393a38f609db1893b63b29c8378b130', 'tool_receipts': '966b29b000e2cc514e28043de64b76d9ee8b00ba64293e718ada9ebc844138e3'}"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    }
+  ]
+}

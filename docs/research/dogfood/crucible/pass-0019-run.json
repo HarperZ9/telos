@@ -1,0 +1,552 @@
+{
+  "ok": true,
+  "thesis": {
+    "id": "06150758d8ab5f29",
+    "title": "Dogfood Pass 0019 Strict Receipt Runtime Fixtures",
+    "registered_at": 1782904520.047623,
+    "disposition": "fenced",
+    "seal": "06150758d8ab5f2969163713f3e48401694669d18c550558d2def56f397a5c3c",
+    "claims": [
+      {
+        "id": "5e5aeded8d2b4ed2",
+        "sha256": "5e5aeded8d2b4ed24a71e122f86a0cfeea7b748731260c40c81f6b702af87acb"
+      },
+      {
+        "id": "9289dd3ef24237ed",
+        "sha256": "9289dd3ef24237ed4f6a47c505f21198d1207d07756d5544d31ee680f5366747"
+      },
+      {
+        "id": "e4c3422d82933831",
+        "sha256": "e4c3422d82933831730001b692acba06403b47372116f8bd5adb1d52a1b495d5"
+      },
+      {
+        "id": "a45d549435b8dfa5",
+        "sha256": "a45d549435b8dfa540fed57dbd4404bc37517eeab68430189b2023fabc1b2341"
+      },
+      {
+        "id": "b66b2b5c15b760d0",
+        "sha256": "b66b2b5c15b760d068cb95ba56c41cf1aa56c20a49c070a09b9b887dc37a2afb"
+      },
+      {
+        "id": "488e629c7a05d5ac",
+        "sha256": "488e629c7a05d5acdcdffc16290d46037d829f6b3b0569c53f4c2df8ac678268"
+      },
+      {
+        "id": "9f3c8b791ab2c660",
+        "sha256": "9f3c8b791ab2c660dabf054ec65f8f7fb5129a2cc4c97201db4af9d3f1f90976"
+      },
+      {
+        "id": "a0fbcb2ef6134c8a",
+        "sha256": "a0fbcb2ef6134c8a95f16c327978d36d625783d87f013b13c1be836e4832e3ab"
+      },
+      {
+        "id": "e55d9d3c23a91d52",
+        "sha256": "e55d9d3c23a91d5257aec85f5657e80c54512c629119e6520b41d76b2ad95f4a"
+      },
+      {
+        "id": "2353e5c7696893ec",
+        "sha256": "2353e5c7696893ec6d57125a4a9d0e2d20d301dd81c1753118c3b3b54b6fdfb8"
+      }
+    ]
+  },
+  "refutations": [
+    {
+      "claim_id": "5e5aeded8d2b4ed2",
+      "claim_sha256": "5e5aeded8d2b4ed24a71e122f86a0cfeea7b748731260c40c81f6b702af87acb",
+      "challenge": "test the stated falsification: schemas/strict-receipt-runtime-fixtures-pass-0019.json is missing, is not StrictReceiptRuntimeFixtureSet/v1, reports non-MATCH status, has fewer than three numeric receipts, fewer than five executable fixtures, fewer than nine negative fixtures, fewer than eleven source anchors, or lacks the expected seal",
+      "measurable": "schemas/strict-receipt-runtime-fixtures-pass-0019.json is missing, is not StrictReceiptRuntimeFixtureSet/v1, reports non-MATCH status, has fewer than three numeric receipts, fewer than five executable fixtures, fewer than nine negative fixtures, fewer than eleven source anchors, or lacks the expected seal",
+      "source": "null"
+    },
+    {
+      "claim_id": "9289dd3ef24237ed",
+      "claim_sha256": "9289dd3ef24237ed4f6a47c505f21198d1207d07756d5544d31ee680f5366747",
+      "challenge": "test the stated falsification: the strict JSON loader receipt is missing, has a different schema, omits required strict-loader controls, fails to detect key 00, or fails to reject NaN and Infinity",
+      "measurable": "the strict JSON loader receipt is missing, has a different schema, omits required strict-loader controls, fails to detect key 00, or fails to reject NaN and Infinity",
+      "source": "null"
+    },
+    {
+      "claim_id": "e4c3422d82933831",
+      "claim_sha256": "e4c3422d82933831730001b692acba06403b47372116f8bd5adb1d52a1b495d5",
+      "challenge": "test the stated falsification: any of decimal-string-exact-0p1, binary-float-expanded-0p1, or decimal-quantized-one-seventh is missing, has the wrong schema, or lacks a receipt hash",
+      "measurable": "any of decimal-string-exact-0p1, binary-float-expanded-0p1, or decimal-quantized-one-seventh is missing, has the wrong schema, or lacks a receipt hash",
+      "source": "null"
+    },
+    {
+      "claim_id": "a45d549435b8dfa5",
+      "claim_sha256": "a45d549435b8dfa540fed57dbd4404bc37517eeab68430189b2023fabc1b2341",
+      "challenge": "test the stated falsification: the object storage receipt is missing, has a different schema, or omits URI, retrieval timestamp, version id, etag/generation, content hash, base64 hash, locator boundary, or receipt hash",
+      "measurable": "the object storage receipt is missing, has a different schema, or omits URI, retrieval timestamp, version id, etag/generation, content hash, base64 hash, locator boundary, or receipt hash",
+      "source": "null"
+    },
+    {
+      "claim_id": "b66b2b5c15b760d0",
+      "claim_sha256": "b66b2b5c15b760d068cb95ba56c41cf1aa56c20a49c070a09b9b887dc37a2afb",
+      "challenge": "test the stated falsification: any expected executable fixture is missing or any fixture imports a framework or uses a different execution mode",
+      "measurable": "any expected executable fixture is missing or any fixture imports a framework or uses a different execution mode",
+      "source": "null"
+    },
+    {
+      "claim_id": "488e629c7a05d5ac",
+      "claim_sha256": "488e629c7a05d5acdcdffc16290d46037d829f6b3b0569c53f4c2df8ac678268",
+      "challenge": "test the stated falsification: any executable fixture lacks required hashes, normalized counts, source anchor, fixture hash, or match status",
+      "measurable": "any executable fixture lacks required hashes, normalized counts, source anchor, fixture hash, or match status",
+      "source": "null"
+    },
+    {
+      "claim_id": "9f3c8b791ab2c660",
+      "claim_sha256": "9f3c8b791ab2c660dabf054ec65f8f7fb5129a2cc4c97201db4af9d3f1f90976",
+      "challenge": "test the stated falsification: any of the nine expected negative fixture ids is missing or has expected_validator_status other than REJECT",
+      "measurable": "any of the nine expected negative fixture ids is missing or has expected_validator_status other than REJECT",
+      "source": "null"
+    },
+    {
+      "claim_id": "a0fbcb2ef6134c8a",
+      "claim_sha256": "a0fbcb2ef6134c8a95f16c327978d36d625783d87f013b13c1be836e4832e3ab",
+      "challenge": "test the stated falsification: schemas/pass-0019-strict-receipt-runtime-validator-result.json is missing, reports non-MATCH status, does not report match=1, or reports drift above zero",
+      "measurable": "schemas/pass-0019-strict-receipt-runtime-validator-result.json is missing, reports non-MATCH status, does not report match=1, or reports drift above zero",
+      "source": "null"
+    },
+    {
+      "claim_id": "e55d9d3c23a91d52",
+      "claim_sha256": "e55d9d3c23a91d5257aec85f5657e80c54512c629119e6520b41d76b2ad95f4a",
+      "challenge": "test the stated falsification: schemas/tool-receipts-pass-0019.json is missing, lacks any required tool status, or treats Forum submit as successful rather than UNVERIFIABLE",
+      "measurable": "schemas/tool-receipts-pass-0019.json is missing, lacks any required tool status, or treats Forum submit as successful rather than UNVERIFIABLE",
+      "source": "null"
+    },
+    {
+      "claim_id": "2353e5c7696893ec",
+      "claim_sha256": "2353e5c7696893ec6d57125a4a9d0e2d20d301dd81c1753118c3b3b54b6fdfb8",
+      "challenge": "test the stated falsification: any pass 0019 artifact labels a live framework integration, cloud object retrieval, quantum job, hardware result, theorem proof, natural law, or scientific discovery as promoted",
+      "measurable": "any pass 0019 artifact labels a live framework integration, cloud object retrieval, quantum job, hardware result, theorem proof, natural law, or scientific discovery as promoted",
+      "source": "null"
+    }
+  ],
+  "assessment": {
+    "started_at": 1782904520.055134,
+    "thesis_id": "06150758d8ab5f29",
+    "thesis_seal": "06150758d8ab5f2969163713f3e48401694669d18c550558d2def56f397a5c3c",
+    "claims": 10,
+    "match": 10,
+    "drift": 0,
+    "unverifiable": 0,
+    "verdict_seal": "066daadc07f2daa8996b8cdc72269c04bd607340cce4ef688230ccd33459b498",
+    "measurement_seal": "eafcb4cb34e654127536ac9190ce39debdec14b5a5550188907e565ce9673ca4",
+    "disposition": "fenced",
+    "stored": null,
+    "verdicts": [
+      {
+        "claim_id": "5e5aeded8d2b4ed2",
+        "claim_sha256": "5e5aeded8d2b4ed24a71e122f86a0cfeea7b748731260c40c81f6b702af87acb",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "strict-runtime-set-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "9289dd3ef24237ed",
+        "claim_sha256": "9289dd3ef24237ed4f6a47c505f21198d1207d07756d5544d31ee680f5366747",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "strict-loader-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "e4c3422d82933831",
+        "claim_sha256": "e4c3422d82933831730001b692acba06403b47372116f8bd5adb1d52a1b495d5",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "numeric-receipt-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "a45d549435b8dfa5",
+        "claim_sha256": "a45d549435b8dfa540fed57dbd4404bc37517eeab68430189b2023fabc1b2341",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "object-storage-receipt-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "b66b2b5c15b760d0",
+        "claim_sha256": "b66b2b5c15b760d068cb95ba56c41cf1aa56c20a49c070a09b9b887dc37a2afb",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "executable-fixture-identity-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "488e629c7a05d5ac",
+        "claim_sha256": "488e629c7a05d5acdcdffc16290d46037d829f6b3b0569c53f4c2df8ac678268",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "executable-fixture-contract-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "9f3c8b791ab2c660",
+        "claim_sha256": "9f3c8b791ab2c660dabf054ec65f8f7fb5129a2cc4c97201db4af9d3f1f90976",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "negative-fixture-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "a0fbcb2ef6134c8a",
+        "claim_sha256": "a0fbcb2ef6134c8a95f16c327978d36d625783d87f013b13c1be836e4832e3ab",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "validator-run-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "e55d9d3c23a91d52",
+        "claim_sha256": "e55d9d3c23a91d5257aec85f5657e80c54512c629119e6520b41d76b2ad95f4a",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "tool-receipt-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "2353e5c7696893ec",
+        "claim_sha256": "2353e5c7696893ec6d57125a4a9d0e2d20d301dd81c1753118c3b3b54b6fdfb8",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "non-promotion-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      }
+    ],
+    "measurements": [
+      {
+        "claim_id": "5e5aeded8d2b4ed2",
+        "claim_sha256": "5e5aeded8d2b4ed24a71e122f86a0cfeea7b748731260c40c81f6b702af87acb",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "strict-runtime-set-review",
+        "measured_at": 1782904520.054862,
+        "evidence": [
+          "schemas/strict-receipt-runtime-fixtures-pass-0019.json schema=StrictReceiptRuntimeFixtureSet/v1",
+          "status=STRICT_RUNTIME_MATCH",
+          "numeric_receipt_count=3",
+          "executable_fixture_count=5",
+          "negative_fixture_count=9",
+          "source_anchor_count=11",
+          "seal=e69d6fad6a9edc8c93044001a749967406c8047b21426c2640b671059cc8154a"
+        ]
+      },
+      {
+        "claim_id": "9289dd3ef24237ed",
+        "claim_sha256": "9289dd3ef24237ed4f6a47c505f21198d1207d07756d5544d31ee680f5366747",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "strict-loader-review",
+        "measured_at": 1782904520.054873,
+        "evidence": [
+          "strict_json_loader_receipt schema=StrictJsonLoaderReceipt/v1",
+          "object_pairs_hook_required=true",
+          "parse_constant_rejects_nonfinite=true",
+          "allow_nan_on_serialization=false",
+          "positive_fixture expected_validator_status=MATCH",
+          "duplicate_key_fixture expected_validator_status=REJECT",
+          "duplicate_key_fixture duplicate_keys=[00]",
+          "nonfinite fixtures for NaN and Infinity expected_validator_status=REJECT"
+        ]
+      },
+      {
+        "claim_id": "e4c3422d82933831",
+        "claim_sha256": "e4c3422d82933831730001b692acba06403b47372116f8bd5adb1d52a1b495d5",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "numeric-receipt-review",
+        "measured_at": 1782904520.054877,
+        "evidence": [
+          "decimal-string-exact-0p1 present schema=NumericPrecisionReceipt/v1",
+          "binary-float-expanded-0p1 present schema=NumericPrecisionReceipt/v1",
+          "decimal-quantized-one-seventh present schema=NumericPrecisionReceipt/v1",
+          "decimal-quantized-one-seventh rounding_mode=ROUND_HALF_EVEN",
+          "all numeric receipts have receipt_hash"
+        ]
+      },
+      {
+        "claim_id": "a45d549435b8dfa5",
+        "claim_sha256": "a45d549435b8dfa540fed57dbd4404bc37517eeab68430189b2023fabc1b2341",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "object-storage-receipt-review",
+        "measured_at": 1782904520.0548806,
+        "evidence": [
+          "object_storage_evidence_receipt schema=ObjectStorageEvidenceReceipt/v1",
+          "uri starts s3://",
+          "retrieval_timestamp present",
+          "version_id present",
+          "etag_or_generation present",
+          "content_length=36",
+          "content_sha256 present",
+          "content_sha256_base64 present",
+          "locator_only_allowed=false",
+          "receipt_hash present"
+        ]
+      },
+      {
+        "claim_id": "b66b2b5c15b760d0",
+        "claim_sha256": "b66b2b5c15b760d068cb95ba56c41cf1aa56c20a49c070a09b9b887dc37a2afb",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "executable-fixture-identity-review",
+        "measured_at": 1782904520.0548832,
+        "evidence": [
+          "executable-fixture-qiskit-counts present",
+          "executable-fixture-braket-measurement-counts present",
+          "executable-fixture-cirq-histogram present",
+          "executable-fixture-pennylane-counts present",
+          "executable-fixture-qir-result-record-map present",
+          "all fixtures framework_imported=false",
+          "all fixtures execution_mode=LOCAL_ADAPTER_FUNCTION_OVER_SYNTHETIC_OUTPUT"
+        ]
+      },
+      {
+        "claim_id": "488e629c7a05d5ac",
+        "claim_sha256": "488e629c7a05d5acdcdffc16290d46037d829f6b3b0569c53f4c2df8ac678268",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "executable-fixture-contract-review",
+        "measured_at": 1782904520.0548863,
+        "evidence": [
+          "all executable fixtures include raw_output_hash",
+          "all executable fixtures include normalized_output_hash",
+          "all executable fixtures include normalized_output.normalized_counts",
+          "all executable fixtures include HTTPS source_anchor",
+          "all executable fixtures include fixture_hash",
+          "all executable fixtures status=ADAPTER_EXECUTION_MATCH"
+        ]
+      },
+      {
+        "claim_id": "9f3c8b791ab2c660",
+        "claim_sha256": "9f3c8b791ab2c660dabf054ec65f8f7fb5129a2cc4c97201db4af9d3f1f90976",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "negative-fixture-review",
+        "measured_at": 1782904520.0548894,
+        "evidence": [
+          "negative-strict-json-loader-not-used expected_validator_status=REJECT",
+          "negative-nan-accepted-as-json-number expected_validator_status=REJECT",
+          "negative-decimal-serialized-as-float expected_validator_status=REJECT",
+          "negative-object-storage-uri-only expected_validator_status=REJECT",
+          "negative-qiskit-fixture-without-layout expected_validator_status=REJECT",
+          "negative-braket-fixture-without-measured-qubit-order expected_validator_status=REJECT",
+          "negative-cirq-fixture-without-fold-func expected_validator_status=REJECT",
+          "negative-pennylane-fixture-without-wire-order expected_validator_status=REJECT",
+          "negative-qir-fixture-without-record-map expected_validator_status=REJECT"
+        ]
+      },
+      {
+        "claim_id": "a0fbcb2ef6134c8a",
+        "claim_sha256": "a0fbcb2ef6134c8a95f16c327978d36d625783d87f013b13c1be836e4832e3ab",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "validator-run-review",
+        "measured_at": 1782904520.0548923,
+        "evidence": [
+          "schemas/pass-0019-strict-receipt-runtime-validator-result.json status=MATCH",
+          "match=1",
+          "drift=0",
+          "checks include StrictReceiptRuntimeFixtureSet status MATCH"
+        ]
+      },
+      {
+        "claim_id": "e55d9d3c23a91d52",
+        "claim_sha256": "e55d9d3c23a91d5257aec85f5657e80c54512c629119e6520b41d76b2ad95f4a",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "tool-receipt-review",
+        "measured_at": 1782904520.054895,
+        "evidence": [
+          "schemas/tool-receipts-pass-0019.json status=MATCH_WITH_FORUM_SUBMIT_GAP",
+          "tool receipts include index status MATCH",
+          "tool receipts include gather status MATCH",
+          "tool receipts include telos operator_doctor status MATCH",
+          "tool receipts include forum status MATCH and verify MATCH",
+          "tool receipts include forum_submit status UNVERIFIABLE",
+          "tool receipts include crucible status MATCH",
+          "Forum submit error recorded: configured executor did not return valid JSON"
+        ]
+      },
+      {
+        "claim_id": "2353e5c7696893ec",
+        "claim_sha256": "2353e5c7696893ec6d57125a4a9d0e2d20d301dd81c1753118c3b3b54b6fdfb8",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "non-promotion-review",
+        "measured_at": 1782904520.0549212,
+        "evidence": [
+          "packets/029-strict-receipt-runtime.md states no framework import, cloud object fetch, or quantum job",
+          "schemas/strict-receipt-runtime-fixtures-pass-0019.json non_promotion_statement states no quantum framework import, cloud object fetch, quantum job, or hardware result",
+          "adversarial/pass-0019-strict-runtime-steelman.md recommends non-promotional status",
+          "Current promoted natural laws: none"
+        ]
+      }
+    ],
+    "seal": "19429e739d6c90d6e171e8617753ee1e32c2a64b5807e76175051ea51285b8ca"
+  },
+  "verdicts": [
+    {
+      "claim_id": "5e5aeded8d2b4ed2",
+      "claim_sha256": "5e5aeded8d2b4ed24a71e122f86a0cfeea7b748731260c40c81f6b702af87acb",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "strict-runtime-set-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "9289dd3ef24237ed",
+      "claim_sha256": "9289dd3ef24237ed4f6a47c505f21198d1207d07756d5544d31ee680f5366747",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "strict-loader-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "e4c3422d82933831",
+      "claim_sha256": "e4c3422d82933831730001b692acba06403b47372116f8bd5adb1d52a1b495d5",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "numeric-receipt-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "a45d549435b8dfa5",
+      "claim_sha256": "a45d549435b8dfa540fed57dbd4404bc37517eeab68430189b2023fabc1b2341",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "object-storage-receipt-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "b66b2b5c15b760d0",
+      "claim_sha256": "b66b2b5c15b760d068cb95ba56c41cf1aa56c20a49c070a09b9b887dc37a2afb",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "executable-fixture-identity-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "488e629c7a05d5ac",
+      "claim_sha256": "488e629c7a05d5acdcdffc16290d46037d829f6b3b0569c53f4c2df8ac678268",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "executable-fixture-contract-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "9f3c8b791ab2c660",
+      "claim_sha256": "9f3c8b791ab2c660dabf054ec65f8f7fb5129a2cc4c97201db4af9d3f1f90976",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "negative-fixture-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "a0fbcb2ef6134c8a",
+      "claim_sha256": "a0fbcb2ef6134c8a95f16c327978d36d625783d87f013b13c1be836e4832e3ab",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "validator-run-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "e55d9d3c23a91d52",
+      "claim_sha256": "e55d9d3c23a91d5257aec85f5657e80c54512c629119e6520b41d76b2ad95f4a",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "tool-receipt-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "2353e5c7696893ec",
+      "claim_sha256": "2353e5c7696893ec6d57125a4a9d0e2d20d301dd81c1753118c3b3b54b6fdfb8",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "non-promotion-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    }
+  ],
+  "checks": {
+    "seals_ok": true,
+    "thesis_ok": true,
+    "verdicts_rederive": true
+  },
+  "report": "C:\\dev\\public\\telos\\docs\\research\\dogfood\\crucible\\pass-0019-report.md",
+  "record": "C:\\dev\\public\\telos\\docs\\research\\dogfood\\crucible\\pass-0019-run.json",
+  "bundle": null,
+  "spec": null,
+  "review": null,
+  "verifier": {
+    "mode": "cleanroom",
+    "inputs": [],
+    "excluded": [
+      "worker context",
+      "reasoning trace",
+      "intermediate steps"
+    ],
+    "checkability": "If success cannot be evaluated from the original spec and the artifact, the spec is not checkable yet."
+  }
+}

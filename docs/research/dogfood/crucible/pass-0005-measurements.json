@@ -1,0 +1,97 @@
+{
+  "measurements": [
+    {
+      "claim": "Pass 0005 recorded official source anchors for at least 10 incumbent evidence surfaces that can become proof-packet adapters.",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "method": "source-anchor-review",
+      "evidence": [
+        "source anchors=11",
+        "OpenTelemetry traces official docs",
+        "LangSmith Observability official docs",
+        "Langfuse Observability official docs",
+        "MLflow Tracking official docs",
+        "W&B Artifacts official docs",
+        "DVC Versioning Data and Models official docs",
+        "Nextflow Reports official docs",
+        "Snakemake Reports official docs",
+        "OpenLineage docs",
+        "SLSA Provenance spec",
+        "in-toto official site"
+      ]
+    },
+    {
+      "claim": "The pass 0005 adapter artifact contains 10 adapters, and every adapter includes source URLs, evidence inputs, Telos outputs, and a missing-binding field.",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "method": "json-structure-review",
+      "evidence": [
+        "proof-packet-adapters-pass-0005.json adapters=10",
+        "all adapters include source_urls",
+        "all adapters include evidence_inputs",
+        "all adapters include telos_outputs",
+        "all adapters include missing_binding"
+      ]
+    },
+    {
+      "claim": "The pass 0005 buyer-objection matrix contains at least 7 objections, each with a buyer question, required demo evidence, and product response.",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "method": "json-structure-review",
+      "evidence": [
+        "buyer-objections-pass-0005.json objections=8",
+        "all objections include buyer_question",
+        "all objections include required_demo_evidence",
+        "all objections include product_response"
+      ]
+    },
+    {
+      "claim": "The pass 0005 validator contract artifact contains at least 8 validators and includes ProofPacketMinimumValidator.",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "method": "json-structure-review",
+      "evidence": [
+        "validator-contracts-pass-0005.json contracts=8",
+        "contract names include ProofPacketMinimumValidator"
+      ]
+    },
+    {
+      "claim": "Pass 0005 records Gather web-config friction and a successful unscoped Gather docs intake with 23 kept documents, zero drops, and seal 8afe8c29d704aff1ca6255e81704722bb5a347c9bed237e9ecca34facdeb09a3.",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "method": "gather-receipt-review",
+      "evidence": [
+        "web config attempt 1 rejected: non-empty jobs list required",
+        "web config attempt 2 rejected: each job needs source and target",
+        "web config attempt 3 rejected: unknown source for raw URL",
+        "unscoped gather_docs kept=23",
+        "unscoped gather_docs dropped=0",
+        "unscoped gather_docs seal=8afe8c29d704aff1ca6255e81704722bb5a347c9bed237e9ecca34facdeb09a3"
+      ]
+    },
+    {
+      "claim": "Pass 0005 records a low-confidence Forum route escalation while Forum ledger verification remained chain=true and deep=true.",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "method": "forum-receipt-review",
+      "evidence": [
+        "forum route decided=null",
+        "forum route needs_escalation=true",
+        "forum route confidence=0.17297297297297298",
+        "forum verify chain=true",
+        "forum verify deep=true"
+      ]
+    },
+    {
+      "claim": "Pass 0005 promotes zero natural-law discoveries; all outputs remain strategy, evidence, or validator-planning artifacts.",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "method": "artifact-review",
+      "evidence": [
+        "pass-0005-ledger.md says current promoted natural laws: none",
+        "README says current promoted natural laws: none",
+        "pass 0005 artifacts are adapter, buyer-objection, validator, thesis, measurement, or ledger artifacts"
+      ]
+    }
+  ]
+}

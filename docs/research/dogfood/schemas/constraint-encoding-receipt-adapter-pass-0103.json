@@ -1,0 +1,341 @@
+{
+  "adapter_rule": {
+    "required_fields": [
+      "constraint_type",
+      "encoding_method",
+      "feasibility_check",
+      "counterexample_ref",
+      "promotion_blocked"
+    ],
+    "requirement_id": "constraint_encoding_receipt",
+    "source_law_candidate": {
+      "claim": "A squared equality-to-capacity penalty is not a valid general encoding of <= capacity knapsack; slack or another inequality encoding is required.",
+      "counterexample": "values=[10,9], weights=[3,2], capacity=4",
+      "name": "knapsack_inequality_bqm_requires_slack_or_inequality_encoding",
+      "status": "LAW_CANDIDATE"
+    }
+  },
+  "constraint_encoding_receipts": [
+    {
+      "adapter_status": "MATCH",
+      "branch_id": "python_exact_enumeration",
+      "capacity": 29,
+      "constraint_type": "knapsack_weight_le_capacity",
+      "counterexample_ref": "schemas/inequality-safe-bqm-receipt-pass-0101.json",
+      "encoding_method": "explicit_feasibility_filter",
+      "encoding_safety": "MATCH",
+      "execution_status": "EXECUTED",
+      "feasibility_check": "weight <= capacity",
+      "feasible_under_capacity": true,
+      "law_candidate": "knapsack_inequality_bqm_requires_slack_or_inequality_encoding",
+      "origin_pass": "0094",
+      "promotion_blocked": false,
+      "requires_counterexample_fixture": false,
+      "runtime": "python",
+      "schema": "ConstraintEncodingReceipt/v1",
+      "value": 162,
+      "weight": 29
+    },
+    {
+      "adapter_status": "MATCH",
+      "branch_id": "scipy_dual_annealing",
+      "capacity": 29,
+      "constraint_type": "knapsack_weight_le_capacity",
+      "counterexample_ref": "schemas/inequality-safe-bqm-receipt-pass-0101.json",
+      "encoding_method": "explicit_feasibility_filter",
+      "encoding_safety": "MATCH",
+      "execution_status": "EXECUTED",
+      "feasibility_check": "weight <= capacity",
+      "feasible_under_capacity": true,
+      "law_candidate": "knapsack_inequality_bqm_requires_slack_or_inequality_encoding",
+      "origin_pass": "0094",
+      "promotion_blocked": false,
+      "requires_counterexample_fixture": false,
+      "runtime": "python/scipy",
+      "schema": "ConstraintEncodingReceipt/v1",
+      "value": 162,
+      "weight": 29
+    },
+    {
+      "adapter_status": "MATCH",
+      "branch_id": "networkx_capacity_dag_longest_path",
+      "capacity": 29,
+      "constraint_type": "knapsack_weight_le_capacity",
+      "counterexample_ref": "schemas/inequality-safe-bqm-receipt-pass-0101.json",
+      "encoding_method": "capacity_state_graph",
+      "encoding_safety": "MATCH",
+      "execution_status": "EXECUTED",
+      "feasibility_check": "weight <= capacity",
+      "feasible_under_capacity": true,
+      "law_candidate": "knapsack_inequality_bqm_requires_slack_or_inequality_encoding",
+      "origin_pass": "0094",
+      "promotion_blocked": false,
+      "requires_counterexample_fixture": false,
+      "runtime": "python/networkx",
+      "schema": "ConstraintEncodingReceipt/v1",
+      "value": 162,
+      "weight": 29
+    },
+    {
+      "adapter_status": "BOUNDARY_ONLY",
+      "branch_id": "ortools_knapsack",
+      "capacity": 29,
+      "constraint_type": "knapsack_weight_le_capacity",
+      "counterexample_ref": "schemas/inequality-safe-bqm-receipt-pass-0101.json",
+      "encoding_method": "solver_native_knapsack_capacity",
+      "encoding_safety": "MATCH",
+      "execution_status": "NOT_EXECUTED_DEPENDENCY_MISSING",
+      "feasibility_check": "not_executed",
+      "feasible_under_capacity": null,
+      "law_candidate": "knapsack_inequality_bqm_requires_slack_or_inequality_encoding",
+      "origin_pass": "0094",
+      "promotion_blocked": false,
+      "requires_counterexample_fixture": false,
+      "runtime": "python/ortools",
+      "schema": "ConstraintEncodingReceipt/v1",
+      "value": null,
+      "weight": null
+    },
+    {
+      "adapter_status": "BOUNDARY_ONLY",
+      "branch_id": "dwave_ocean_sampler",
+      "capacity": 29,
+      "constraint_type": "knapsack_weight_le_capacity",
+      "counterexample_ref": "schemas/inequality-safe-bqm-receipt-pass-0101.json",
+      "encoding_method": "provider_boundary_unknown",
+      "encoding_safety": "UNVERIFIABLE_UNTIL_EXECUTED",
+      "execution_status": "NOT_EXECUTED_DEPENDENCY_MISSING",
+      "feasibility_check": "not_executed",
+      "feasible_under_capacity": null,
+      "law_candidate": "knapsack_inequality_bqm_requires_slack_or_inequality_encoding",
+      "origin_pass": "0094",
+      "promotion_blocked": true,
+      "requires_counterexample_fixture": true,
+      "runtime": "python/dwave-ocean",
+      "schema": "ConstraintEncodingReceipt/v1",
+      "value": null,
+      "weight": null
+    },
+    {
+      "adapter_status": "MATCH",
+      "branch_id": "buildlang_exact_enumeration",
+      "capacity": 29,
+      "constraint_type": "knapsack_weight_le_capacity",
+      "counterexample_ref": "schemas/inequality-safe-bqm-receipt-pass-0101.json",
+      "encoding_method": "explicit_feasibility_filter",
+      "encoding_safety": "MATCH",
+      "execution_status": "EXECUTED",
+      "feasibility_check": "weight <= capacity",
+      "feasible_under_capacity": true,
+      "law_candidate": "knapsack_inequality_bqm_requires_slack_or_inequality_encoding",
+      "origin_pass": "0097",
+      "promotion_blocked": false,
+      "requires_counterexample_fixture": false,
+      "runtime": "buildlang/buildc",
+      "schema": "ConstraintEncodingReceipt/v1",
+      "value": 162,
+      "weight": 29
+    },
+    {
+      "adapter_status": "MATCH",
+      "branch_id": "buildlang_greedy_ratio_order",
+      "capacity": 29,
+      "constraint_type": "knapsack_weight_le_capacity",
+      "counterexample_ref": "schemas/inequality-safe-bqm-receipt-pass-0101.json",
+      "encoding_method": "explicit_feasibility_filter",
+      "encoding_safety": "MATCH",
+      "execution_status": "EXECUTED",
+      "feasibility_check": "weight <= capacity",
+      "feasible_under_capacity": true,
+      "law_candidate": "knapsack_inequality_bqm_requires_slack_or_inequality_encoding",
+      "origin_pass": "0097",
+      "promotion_blocked": false,
+      "requires_counterexample_fixture": false,
+      "runtime": "buildlang/buildc",
+      "schema": "ConstraintEncodingReceipt/v1",
+      "value": 146,
+      "weight": 25
+    },
+    {
+      "adapter_status": "MATCH",
+      "branch_id": "buildlang_bounded_prefix_2048",
+      "capacity": 29,
+      "constraint_type": "knapsack_weight_le_capacity",
+      "counterexample_ref": "schemas/inequality-safe-bqm-receipt-pass-0101.json",
+      "encoding_method": "explicit_feasibility_filter",
+      "encoding_safety": "MATCH",
+      "execution_status": "EXECUTED",
+      "feasibility_check": "weight <= capacity",
+      "feasible_under_capacity": true,
+      "law_candidate": "knapsack_inequality_bqm_requires_slack_or_inequality_encoding",
+      "origin_pass": "0097",
+      "promotion_blocked": false,
+      "requires_counterexample_fixture": false,
+      "runtime": "buildlang/buildc",
+      "schema": "ConstraintEncodingReceipt/v1",
+      "value": 157,
+      "weight": 27
+    },
+    {
+      "adapter_status": "MATCH",
+      "branch_id": "ortools_knapsack_dynamic_programming",
+      "capacity": 29,
+      "constraint_type": "knapsack_weight_le_capacity",
+      "counterexample_ref": "schemas/inequality-safe-bqm-receipt-pass-0101.json",
+      "encoding_method": "solver_native_knapsack_capacity",
+      "encoding_safety": "MATCH",
+      "execution_status": "EXECUTED_ISOLATED_TEMP_VENV",
+      "feasibility_check": "weight <= capacity",
+      "feasible_under_capacity": true,
+      "law_candidate": "knapsack_inequality_bqm_requires_slack_or_inequality_encoding",
+      "origin_pass": "0099",
+      "promotion_blocked": false,
+      "requires_counterexample_fixture": false,
+      "runtime": "python/ortools/temp-venv",
+      "schema": "ConstraintEncodingReceipt/v1",
+      "value": 162,
+      "weight": 29
+    },
+    {
+      "adapter_status": "MATCH_WITH_PROMOTION_BLOCK",
+      "branch_id": "ocean_dimod_exact_bqm",
+      "capacity": 29,
+      "constraint_type": "knapsack_weight_le_capacity",
+      "counterexample_ref": "schemas/inequality-safe-bqm-receipt-pass-0101.json",
+      "encoding_method": "bqm_equality_penalty_to_capacity",
+      "encoding_safety": "UNSAFE_WITHOUT_SLACK_OR_INEQUALITY_RECEIPT",
+      "execution_status": "EXECUTED_LOCAL_CPU_EXACT_SOLVER",
+      "feasibility_check": "weight <= capacity",
+      "feasible_under_capacity": true,
+      "law_candidate": "knapsack_inequality_bqm_requires_slack_or_inequality_encoding",
+      "origin_pass": "0100",
+      "promotion_blocked": true,
+      "requires_counterexample_fixture": true,
+      "runtime": "python/dimod/temp-venv",
+      "schema": "ConstraintEncodingReceipt/v1",
+      "value": 162,
+      "weight": 29
+    }
+  ],
+  "coverage": {
+    "all_executed_have_feasibility_check": true,
+    "boundary_only_count": 2,
+    "executed_receipt_count": 8,
+    "promotion_blocked_executed_count": 1,
+    "receipt_count": 10,
+    "safe_executed_count": 7,
+    "unsafe_executed_branch_ids": [
+      "ocean_dimod_exact_bqm"
+    ]
+  },
+  "current_promoted_natural_laws": [],
+  "flagship_receipts": {
+    "forum": {
+      "confidence": 0.125,
+      "decided": null,
+      "exit_code": 0,
+      "needs_escalation": true,
+      "status": "MATCH",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "a70d5f95cb9dd305f9ec5dd544439bf31a9ebeb4813bfd5394a01fa229da18b8",
+      "top_candidates": [
+        {
+          "agent": "model-foundry",
+          "score": 0.125
+        },
+        {
+          "agent": "backend",
+          "score": 0.0
+        },
+        {
+          "agent": "ci-cd",
+          "score": 0.0
+        },
+        {
+          "agent": "cloud-infra",
+          "score": 0.0
+        },
+        {
+          "agent": "code-review",
+          "score": 0.0
+        }
+      ]
+    },
+    "index": {
+      "exit_code": 0,
+      "graph_pack_sha256": "8ee383e19ae9a6141bee70de733fb6aa09201ff9d284ce6778ce58b06e6b68b2",
+      "schema": "project-telos.context-envelope/v1",
+      "source_refs_only": true,
+      "status": "MATCH",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "1b9306bf6a16f821dd245d6155a64a9aab0b7bab91a9282420acc3b75348d98d",
+      "verification_verdict": "MATCH"
+    },
+    "telos": {
+      "exit_code": 0,
+      "status": "MATCH",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "be17cb15259234cb4e8e95c2b36e76c90d841431729beb140294e34c5f9ebfa7",
+      "tool": "telos",
+      "tool_version": "0.1.0"
+    }
+  },
+  "generated_on": "2026-07-01",
+  "measurements": [
+    {
+      "id": "receipt_count",
+      "status": "MATCH"
+    },
+    {
+      "id": "executed_count",
+      "status": "MATCH"
+    },
+    {
+      "id": "unsafe_block",
+      "status": "MATCH"
+    },
+    {
+      "id": "feasibility_checks",
+      "status": "MATCH"
+    },
+    {
+      "id": "flagships",
+      "status": "MATCH"
+    },
+    {
+      "id": "promotion_boundary",
+      "status": "MATCH"
+    }
+  ],
+  "negative_fixtures": [
+    {
+      "expected_status": "REJECT",
+      "fixture_id": "bqm_without_slack_promoted",
+      "reject_reason": "pass_0101_counterexample_blocks_general_promotion"
+    },
+    {
+      "expected_status": "REJECT",
+      "fixture_id": "branch_without_feasibility_check",
+      "reject_reason": "executed_optimization_branch_must_record_feasibility"
+    },
+    {
+      "expected_status": "REJECT",
+      "fixture_id": "provider_branch_without_runtime_receipt",
+      "reject_reason": "hardware_or_provider_claim_needs_execution_receipt"
+    }
+  ],
+  "non_promotion_statement": "This adapter records solver-encoding safety and promotion blocks. It does not prove quantum advantage, production optimization, provider hardware execution, or a natural law.",
+  "pass": "0103",
+  "schema": "ConstraintEncodingReceiptAdapter/v1",
+  "seal": "475ed9bf02fd7885e884c57ae5ea57a1499c5147f54eb3b71c6f77007d820420",
+  "source_bindings": {
+    "inequality_pass": "0101",
+    "interop_pass": "0098",
+    "ocean_pass": "0100",
+    "ortools_pass": "0099",
+    "roadmap_pass": "0102"
+  },
+  "status": "CONSTRAINT_ENCODING_RECEIPT_ADAPTER_MATCH",
+  "unsupported_claim_count": 0,
+  "validation_errors": []
+}

@@ -1,0 +1,100 @@
+{
+  "schema": "BuildColorCalibrationProofKit/v1",
+  "pass": "0011",
+  "generated_on": "2026-07-01",
+  "status": "PROOF_KIT_MATCH",
+  "measurement_receipt_ref": "schemas/build-color-measurement-receipt-pass-0006.json",
+  "workspace": {
+    "repo": "C:\\dev\\public\\build-color",
+    "head": "96560ee",
+    "source_status": "clean_at_pass_0006_receipt"
+  },
+  "metrics": [
+    {
+      "metric": "srgb_xyz_max_abs_error",
+      "observed": 0.0000017030280945010406,
+      "threshold": 0.00001,
+      "status": "PASS",
+      "evidence_ref": "schemas/build-color-measurement-receipt-pass-0006.json"
+    },
+    {
+      "metric": "srgb_oklab_max_abs_error",
+      "observed": 0.00000000000001072185665305766,
+      "threshold": 0.0000000001,
+      "status": "PASS",
+      "evidence_ref": "schemas/build-color-measurement-receipt-pass-0006.json"
+    },
+    {
+      "metric": "pq_max_abs_nits_error",
+      "observed": 0.00000000008458300726488233,
+      "threshold": 0.000001,
+      "status": "PASS",
+      "evidence_ref": "schemas/build-color-measurement-receipt-pass-0006.json"
+    },
+    {
+      "metric": "cie2000_pair_1_abs_error",
+      "observed": 0.00004031984342622863,
+      "threshold": 0.005,
+      "status": "PASS",
+      "evidence_ref": "schemas/build-color-measurement-receipt-pass-0006.json"
+    }
+  ],
+  "calibration_boundary": {
+    "hardware_measurement_used": false,
+    "display_state_mutated": false,
+    "icc_profile_installed": false,
+    "lut_written": false,
+    "physical_calibration_claim": false,
+    "boundary_status": "PASS",
+    "notes": "This proof kit validates bounded software-side color math and receipt structure only."
+  },
+  "negative_fixture": {
+    "claim": "This pass calibrated a physical display.",
+    "status": "REJECTED_BY_BOUNDARY",
+    "reason": "No meter, probe, display mutation, ICC install, or LUT write occurred."
+  },
+  "source_receipts": [
+    {
+      "source_id": "build-color-pass-0006-receipt",
+      "kind": "file",
+      "path": "schemas/build-color-measurement-receipt-pass-0006.json",
+      "used_for": "bounded Build Color numerical measurement evidence"
+    },
+    {
+      "source_id": "color-market-map-pass-0011",
+      "kind": "file",
+      "path": "schemas/color-calibration-market-map-pass-0011.json",
+      "used_for": "market context and proof-kit wedge map"
+    }
+  ],
+  "market_wedge": {
+    "hypothesis": "A read-only color proof kit can differentiate by wrapping standards, transforms, measurement thresholds, and calibration-boundary caveats into one portable receipt.",
+    "status": "inferred",
+    "confidence": "high"
+  },
+  "verification_verdicts": [
+    {
+      "verifier": "BuildColorMeasurementReceipt",
+      "status": "PROBE_MATCH",
+      "evidence_ref": "schemas/build-color-measurement-receipt-pass-0006.json"
+    },
+    {
+      "verifier": "Pass0011ColorCalibrationValidator",
+      "status": "MATCH",
+      "evidence_ref": "schemas/pass-0011-color-calibration-validator-result.json"
+    },
+    {
+      "verifier": "Crucible",
+      "status": "MATCH",
+      "evidence_ref": "crucible/pass-0011-report.md"
+    }
+  ],
+  "failure_labels": [
+    "NOT_A_PHYSICAL_CALIBRATION",
+    "NO_HARDWARE_SENSOR_MEASUREMENT",
+    "NO_DISPLAY_STATE_MUTATION",
+    "NOT_A_NEW_COLOR_SCIENCE_LAW",
+    "BOUNDED_SOFTWARE_PROBE_ONLY"
+  ],
+  "promotion_state": "PROOF_KIT_FIXTURE"
+}

@@ -1,0 +1,117 @@
+{
+  "generated_on": "2026-07-01",
+  "non_promotion_statement": "Tool receipts prove packet readback, negative-fixture validator MATCH, Telos/Index/Gather/Forum/Crucible availability, and hypothesis-only uniqueness boundaries. They do not prove the integrated public demo exists, product-market fit, buyer adoption, scientific truth, or any natural law.",
+  "pass": "0051",
+  "receipts": [
+    {
+      "command": "map --root docs/research/dogfood --json",
+      "dirty_count": 0,
+      "repo_count": 0,
+      "root_sha256_prefix": "f2f0af39219698a9",
+      "schema_version": 1,
+      "status": "MATCH",
+      "tool": "index",
+      "tool_version": "2.8.0",
+      "top_level_count": 60
+    },
+    {
+      "artifact": "packets/061-agent-action-proof-packet-negative-fixtures.md",
+      "chars": 566,
+      "command": "docs",
+      "seal": "8dc28c3002d84086b3e00e14ebb1e15dfa4624cfb74017103cff179caeedb340",
+      "sha256": "71cc244a5ded5ebffac860ecc2369fbea0d4cd637c32532ed0c12557d613c999",
+      "status": "MATCH",
+      "tool": "gather",
+      "verified": true
+    },
+    {
+      "command": "probe_agent_action_proof_packet_negative_fixtures.py",
+      "failure_code_count": 8,
+      "line_count": 232,
+      "negative_fixture_count": 8,
+      "negative_match_count": 8,
+      "positive_match_count": 1,
+      "schema": "AgentActionProofPacketNegativeFixturesSet/v1",
+      "seal": "da66419608a9f7a5a818756e44a8e6f65fe06ab4f7ab5024471fd0787c0617b4",
+      "status": "AGENT_ACTION_PROOF_PACKET_NEGATIVE_FIXTURES_MATCH",
+      "tool": "python",
+      "uniqueness_claim_status": "HYPOTHESIS_ONLY"
+    },
+    {
+      "command": "validate_pass_0051_agent_action_proof_packet_negative_fixtures.py",
+      "drift": 0,
+      "line_count": 95,
+      "match": 1,
+      "negative_fixture_count": 8,
+      "schema": "Pass0051AgentActionProofPacketNegativeFixturesValidatorRun/v1",
+      "status": "MATCH",
+      "tool": "python"
+    },
+    {
+      "aggregate_verdict": "MATCH",
+      "check_count": 14,
+      "command": "telos_operator_doctor",
+      "passed_count": 14,
+      "status": "MATCH",
+      "telos_tool_count": 37,
+      "tool": "mcp__telos.telos_operator_doctor",
+      "tool_count": 65
+    },
+    {
+      "candidates": [
+        {
+          "agent": "code-review",
+          "score": 0.2
+        },
+        {
+          "agent": "project-telos",
+          "score": 0.045454545454545456
+        },
+        {
+          "agent": "backend",
+          "score": 0.0
+        }
+      ],
+      "command": "route",
+      "confidence": 0.15454545454545454,
+      "decided": null,
+      "needs_escalation": true,
+      "status": "MATCH",
+      "tool": "forum"
+    },
+    {
+      "chain": true,
+      "command": "ledger verify",
+      "deep": true,
+      "status": "MATCH",
+      "tool": "forum"
+    },
+    {
+      "command": "submit",
+      "error": "submit needs a model executor. Forum is model-agnostic: pass --cmd \"<model cli>\" (any command, local models need no account), --chat-url <openai-compatible url> (e.g. a local Ollama server), or --api (Anthropic).",
+      "request": "Dogfood pass 0051 adversarial review for agent action proof packet negative fixtures",
+      "status": "UNVERIFIABLE",
+      "tool": "forum"
+    },
+    {
+      "assessment_seal": "edf6060952e0c402547c220a56769af58193d7db22602e16630a9cdf88bfb3a0",
+      "claims": 8,
+      "command": "run",
+      "drift": 0,
+      "match": 8,
+      "measurement_seal": "cf323ad6a5b5e141cb0c118faf39b00887e43c9db4b663f743d97951a9f9862a",
+      "run_sha256": "82ca208e91f2211044dbe53f7d4a01a6b1049d51df4790c2686b4908d30c3886",
+      "seals_ok": true,
+      "status": "MATCH",
+      "thesis_id": "3363cc6e51abc319",
+      "thesis_ok": true,
+      "thesis_seal": "3363cc6e51abc319cc98c537a384c6443448fad1498908809372e015b6f8ae1a",
+      "tool": "crucible",
+      "unverifiable": 0,
+      "verdict_seal": "c33304428b49e3b7e3e57dd876c3fe3e2972ed93ca647d82e313275dd092d8b2",
+      "verdicts_rederive": true
+    }
+  ],
+  "schema": "DogfoodToolReceiptSet/v1",
+  "status": "MATCH_WITH_FORUM_SUBMIT_GAP_AND_HYPOTHESIS_ONLY_UNIQUENESS"
+}

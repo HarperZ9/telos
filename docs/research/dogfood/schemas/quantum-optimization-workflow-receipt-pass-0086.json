@@ -1,0 +1,432 @@
+{
+  "current_promoted_natural_laws": [],
+  "flagship_receipts": {
+    "forum": {
+      "confidence": 0.07500000000000001,
+      "decided": null,
+      "exit_code": 0,
+      "needs_escalation": true,
+      "status": "MATCH",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "75a1f8fb9fb0de2694649bccb1ffccca8c4952d7d85d15a8431777344f22fd00",
+      "top_candidates": [
+        {
+          "agent": "ci-cd",
+          "score": 0.2
+        },
+        {
+          "agent": "model-foundry",
+          "score": 0.125
+        },
+        {
+          "agent": "project-telos",
+          "score": 0.09090909090909091
+        },
+        {
+          "agent": "backend",
+          "score": 0.0
+        },
+        {
+          "agent": "cloud-infra",
+          "score": 0.0
+        }
+      ]
+    },
+    "index": {
+      "exit_code": 0,
+      "graph_pack_sha256": "8ee383e19ae9a6141bee70de733fb6aa09201ff9d284ce6778ce58b06e6b68b2",
+      "schema": "project-telos.context-envelope/v1",
+      "source_refs_only": true,
+      "status": "MATCH",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "9bcad66bbb9516d0d933037ca31feb8949b804b1b6bb0c969c5560bcc6b363ae",
+      "verification_verdict": "MATCH"
+    },
+    "telos": {
+      "exit_code": 0,
+      "status": "MATCH",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "be17cb15259234cb4e8e95c2b36e76c90d841431729beb140294e34c5f9ebfa7",
+      "tool": "telos",
+      "tool_version": "0.1.0"
+    }
+  },
+  "generated_on": "2026-07-01",
+  "measurement": {
+    "all_candidates_sha256": "f21e346dce0ee22bd9d7dffabf6acbf6d1befb18279e0d54fe42b8f89c1fcdde",
+    "best_feasible": {
+      "bits": [
+        0,
+        0,
+        1,
+        1,
+        1,
+        1
+      ],
+      "capacity_violation": 0,
+      "feasible": true,
+      "qubo_energy": -36,
+      "resource": 10,
+      "selected": [
+        "C",
+        "D",
+        "E",
+        "F"
+      ],
+      "value": 36
+    },
+    "best_qubo_energy": {
+      "bits": [
+        0,
+        0,
+        1,
+        1,
+        1,
+        1
+      ],
+      "capacity_violation": 0,
+      "feasible": true,
+      "qubo_energy": -36,
+      "resource": 10,
+      "selected": [
+        "C",
+        "D",
+        "E",
+        "F"
+      ],
+      "value": 36
+    },
+    "candidate_count": 64,
+    "feasible_count": 30,
+    "infeasible_count": 34,
+    "top_energy": [
+      {
+        "bits": [
+          0,
+          0,
+          1,
+          1,
+          1,
+          1
+        ],
+        "capacity_violation": 0,
+        "feasible": true,
+        "qubo_energy": -36,
+        "resource": 10,
+        "selected": [
+          "C",
+          "D",
+          "E",
+          "F"
+        ],
+        "value": 36
+      },
+      {
+        "bits": [
+          1,
+          0,
+          0,
+          0,
+          1,
+          1
+        ],
+        "capacity_violation": 0,
+        "feasible": true,
+        "qubo_energy": -34,
+        "resource": 10,
+        "selected": [
+          "A",
+          "E",
+          "F"
+        ],
+        "value": 34
+      },
+      {
+        "bits": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          1
+        ],
+        "capacity_violation": 0,
+        "feasible": true,
+        "qubo_energy": -32,
+        "resource": 10,
+        "selected": [
+          "B",
+          "C",
+          "F"
+        ],
+        "value": 32
+      },
+      {
+        "bits": [
+          0,
+          1,
+          0,
+          1,
+          1,
+          0
+        ],
+        "capacity_violation": 0,
+        "feasible": true,
+        "qubo_energy": -30,
+        "resource": 10,
+        "selected": [
+          "B",
+          "D",
+          "E"
+        ],
+        "value": 30
+      },
+      {
+        "bits": [
+          0,
+          0,
+          1,
+          1,
+          1,
+          0
+        ],
+        "capacity_violation": 0,
+        "feasible": true,
+        "qubo_energy": -29,
+        "resource": 9,
+        "selected": [
+          "C",
+          "D",
+          "E"
+        ],
+        "value": 29
+      }
+    ],
+    "top_feasible": [
+      {
+        "bits": [
+          0,
+          0,
+          1,
+          1,
+          1,
+          1
+        ],
+        "capacity_violation": 0,
+        "feasible": true,
+        "qubo_energy": -36,
+        "resource": 10,
+        "selected": [
+          "C",
+          "D",
+          "E",
+          "F"
+        ],
+        "value": 36
+      },
+      {
+        "bits": [
+          1,
+          0,
+          0,
+          0,
+          1,
+          1
+        ],
+        "capacity_violation": 0,
+        "feasible": true,
+        "qubo_energy": -34,
+        "resource": 10,
+        "selected": [
+          "A",
+          "E",
+          "F"
+        ],
+        "value": 34
+      },
+      {
+        "bits": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          1
+        ],
+        "capacity_violation": 0,
+        "feasible": true,
+        "qubo_energy": -32,
+        "resource": 10,
+        "selected": [
+          "B",
+          "C",
+          "F"
+        ],
+        "value": 32
+      },
+      {
+        "bits": [
+          0,
+          1,
+          0,
+          1,
+          1,
+          0
+        ],
+        "capacity_violation": 0,
+        "feasible": true,
+        "qubo_energy": -30,
+        "resource": 10,
+        "selected": [
+          "B",
+          "D",
+          "E"
+        ],
+        "value": 30
+      },
+      {
+        "bits": [
+          0,
+          1,
+          0,
+          1,
+          0,
+          1
+        ],
+        "capacity_violation": 0,
+        "feasible": true,
+        "qubo_energy": -29,
+        "resource": 9,
+        "selected": [
+          "B",
+          "D",
+          "F"
+        ],
+        "value": 29
+      }
+    ],
+    "verifier_status": "MATCH"
+  },
+  "negative_fixtures": [
+    {
+      "expected_status": "REJECT",
+      "fixture_id": "missing_problem_equation",
+      "reject_reason": "optimization_problem_must_include_objective_and_constraints"
+    },
+    {
+      "expected_status": "REJECT",
+      "fixture_id": "missing_solver_branch",
+      "reject_reason": "solver_branch_required_for_replay"
+    },
+    {
+      "expected_status": "REJECT",
+      "fixture_id": "quantum_advantage_claim",
+      "reject_reason": "no_hardware_or_comparative_runtime_evidence"
+    },
+    {
+      "expected_status": "REJECT",
+      "fixture_id": "hardware_execution_claim",
+      "reject_reason": "hardware_branch_status_not_run"
+    },
+    {
+      "expected_status": "REJECT",
+      "fixture_id": "missing_exact_verifier",
+      "reject_reason": "bounded_demo_requires_exhaustive_or_formal_verifier"
+    },
+    {
+      "expected_status": "REJECT",
+      "fixture_id": "unsealed_candidates",
+      "reject_reason": "candidate_space_digest_required"
+    }
+  ],
+  "non_promotion_statement": "Pass 0086 proves a bounded workflow receipt shape and exact toy optimizer result only; it does not claim quantum advantage, hardware execution, investment value, new physics, or a natural law.",
+  "optimization_problem": {
+    "capacity": 10,
+    "constraint": "sum(resource_i * x_i) <= 10",
+    "decision_variables": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F"
+    ],
+    "items": [
+      {
+        "id": "A",
+        "resource": 7,
+        "value": 19
+      },
+      {
+        "id": "B",
+        "resource": 5,
+        "value": 13
+      },
+      {
+        "id": "C",
+        "resource": 4,
+        "value": 12
+      },
+      {
+        "id": "D",
+        "resource": 3,
+        "value": 9
+      },
+      {
+        "id": "E",
+        "resource": 2,
+        "value": 8
+      },
+      {
+        "id": "F",
+        "resource": 1,
+        "value": 7
+      }
+    ],
+    "objective": "maximize sum(value_i * x_i)",
+    "penalty": 10,
+    "problem_id": "bounded_resource_selection_6_binary",
+    "qubo_surrogate": "minimize -sum(value_i * x_i) + 10 * max(0, sum(resource_i * x_i) - 10)^2"
+  },
+  "pass": "0086",
+  "promotion_boundary": {
+    "hardware_execution_claim": false,
+    "investment_claim": false,
+    "new_natural_law_claim": false,
+    "new_physics_claim": false,
+    "quantum_advantage_claim": false
+  },
+  "proof_obligation": {
+    "best_solution_equals_best_qubo_energy": true,
+    "expected_resource": 10,
+    "expected_selected": [
+      "C",
+      "D",
+      "E",
+      "F"
+    ],
+    "expected_value": 36,
+    "method": "exhaustive_enumeration_over_all_binary_assignments",
+    "status": "MATCH"
+  },
+  "schema": "QuantumOptimizationWorkflowReceipt/v1",
+  "seal": "412f8114dd197bb55adba90bee5c492b2c138b18125b8ebce1f7006d5aee37f0",
+  "solver_branch": {
+    "branch": "exact_classical_enumeration_baseline",
+    "candidate_space": "2^6",
+    "quantum_hardware_status": "NOT_RUN",
+    "simulated_quantum_status": "NOT_RUN",
+    "solver_claim": "bounded verifier receipt for future quantum optimizer adapter"
+  },
+  "source_binding": {
+    "dominant_cluster": "enterprise_quantum_optimization",
+    "dominant_cluster_video_count": 13,
+    "product_response": "Quantum optimization workflow receipts spanning problem formulation, solver branch, hardware/simulator context, calibration reference, and measured objective.",
+    "source_pass": "0085",
+    "source_schema": "YouTubeResearchCompoundingPacket/v1",
+    "source_seal": "e49f658e5bbc711892cbed698cb9c110996c03ae80ea394bc2abc9cc11edd06b"
+  },
+  "status": "QUANTUM_OPTIMIZATION_WORKFLOW_RECEIPT_MATCH",
+  "unsupported_claim_count": 0,
+  "validation_errors": []
+}

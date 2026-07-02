@@ -1,0 +1,96 @@
+{
+  "measurements": [
+    {
+      "claim": "Pass 0055 created a MultiTraceCausalityGraphAdapterSet/v1 artifact with status MULTITRACE_CAUSALITY_GRAPH_ADAPTER_MATCH, node_count 4, edge_count 3, sha256 978d1077d94d10606e3c1c946f766c52977b3f208eabcf3010a9578df7c3dc16, and seal c2c73932b6f2ef042d0381ae7f0efc6e0e1a2a72bc7d96f9ad1e828753fa9b3b.",
+      "deviation": 0.0,
+      "evidence": [
+        "schema=MultiTraceCausalityGraphAdapterSet/v1",
+        "status=MULTITRACE_CAUSALITY_GRAPH_ADAPTER_MATCH",
+        "node_count=4",
+        "edge_count=3",
+        "sha256=978d1077d94d10606e3c1c946f766c52977b3f208eabcf3010a9578df7c3dc16",
+        "seal=c2c73932b6f2ef042d0381ae7f0efc6e0e1a2a72bc7d96f9ad1e828753fa9b3b"
+      ],
+      "method": "adapter-schema-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0055 implements build_multitrace_causality_graph.py with sha256 a3cd3f36278e6b0478f0bb55a47755d6042708c2be76246da717acedfb632a07 and implementation_status IMPLEMENTED_LOCAL_MULTITRACE_GRAPH_ADAPTER.",
+      "deviation": 0.0,
+      "evidence": [
+        "adapter_sha256=a3cd3f36278e6b0478f0bb55a47755d6042708c2be76246da717acedfb632a07",
+        "implementation_status=IMPLEMENTED_LOCAL_MULTITRACE_GRAPH_ADAPTER"
+      ],
+      "method": "adapter-file-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0055 records a multi-trace causality test script with sha256 b8fe33c20c249f4f542db0ba92da9ee4536b92c6e4419cfdca01979b896c3105 and test_receipt status MATCH.",
+      "deviation": 0.0,
+      "evidence": [
+        "test_sha256=b8fe33c20c249f4f542db0ba92da9ee4536b92c6e4419cfdca01979b896c3105",
+        "test_status=MATCH"
+      ],
+      "method": "adapter-test-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0055 generated a MultiTraceCausalityGraph/v1 output with status MULTITRACE_CAUSALITY_GRAPH_MATCH, independent_receipt_count 4, trace_identity_substitution_count 0, and sha256 254f3bfc2b2e03cd4c0599956b17f79ec349ec2d9a1f207aa02a1619572834aa.",
+      "deviation": 0.0,
+      "evidence": [
+        "graph_status=MULTITRACE_CAUSALITY_GRAPH_MATCH",
+        "independent_receipt_count=4",
+        "trace_identity_substitution_count=0",
+        "sha256=254f3bfc2b2e03cd4c0599956b17f79ec349ec2d9a1f207aa02a1619572834aa"
+      ],
+      "method": "graph-output-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0055 records negative_fixture_count 5, negative_match_count 5, and negative_pass_observed_count 0 from the graph adapter.",
+      "deviation": 0.0,
+      "evidence": [
+        "negative_fixture_count=5",
+        "negative_match_count=5",
+        "negative_pass_observed_count=0"
+      ],
+      "method": "negative-fixture-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0055 binds source-evidence pass 0028 sha256 75aeda5b9afa02eb1da746aa319d2908a7895f26aefe5d1949d1d949ff3c0f32, trace-join pass 0054 sha256 cbaaf059b6da49cab92fac4bb15ea0b525cc5948ad90c40fc7741371791887ed, and tool-receipts pass 0054 sha256 9cbdbc1bd4ecfdc0e36e2e6bfac047aa3315be02b1b3f1bdc6a7c5d24b0c0867.",
+      "deviation": 0.0,
+      "evidence": [
+        "source_binding_sha256=75aeda5b9afa02eb1da746aa319d2908a7895f26aefe5d1949d1d949ff3c0f32",
+        "trace_join_sha256=cbaaf059b6da49cab92fac4bb15ea0b525cc5948ad90c40fc7741371791887ed",
+        "tool_receipts_sha256=9cbdbc1bd4ecfdc0e36e2e6bfac047aa3315be02b1b3f1bdc6a7c5d24b0c0867"
+      ],
+      "method": "upstream-binding-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0055 validator result reports MATCH with node_count 4, edge_count 3, and trace_identity_substitution_count 0.",
+      "deviation": 0.0,
+      "evidence": [
+        "validator_status=MATCH",
+        "node_count=4",
+        "edge_count=3",
+        "trace_identity_substitution_count=0"
+      ],
+      "method": "validator-result-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0055 records packet 065 sha256 6a7694f83271f8456c9d4fcfa24fd6eed39ecbaef062d3fff668e182f8cbb330, steelman sha256 0a28b0bfbc162ff54c6a1b892eeed48e0aa09f11de90010c869efa7a5e4a461a, uniqueness_claim_status HYPOTHESIS_ONLY, and current_promoted_natural_laws remains none.",
+      "deviation": 0.0,
+      "evidence": [
+        "packet_sha256=6a7694f83271f8456c9d4fcfa24fd6eed39ecbaef062d3fff668e182f8cbb330",
+        "steelman_sha256=0a28b0bfbc162ff54c6a1b892eeed48e0aa09f11de90010c869efa7a5e4a461a",
+        "uniqueness_claim_status=HYPOTHESIS_ONLY",
+        "current_promoted_natural_laws=[]"
+      ],
+      "method": "non-promotion-boundary-review",
+      "tolerance": 0.5
+    }
+  ]
+}

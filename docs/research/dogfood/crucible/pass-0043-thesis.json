@@ -1,0 +1,38 @@
+{
+  "claims": [
+    {
+      "falsification": "schemas/lake-dependency-cache-binding-pass-0043.json is missing, has a different schema, status, package_count, SHA-256, or seal",
+      "text": "Pass 0043 created a LakeDependencyCacheBindingSet/v1 artifact with status LAKE_DEPENDENCY_CACHE_BINDING_MATCH, package_count 9, sha256 393f71b91fb69d800aff7f81751517eb62af2ee0d098670ae97d4f16a869de22, and seal 8e88cd761c7ae0996c6d20bfeb78fb5cf9bf6083a3de1f09601a62463a5d665b."
+    },
+    {
+      "falsification": "the Lake dependency cache fixture is missing, has a different SHA-256 or seal, or is not linked from the schema",
+      "text": "Pass 0043 records fixture fixtures/lake-dependency-cache-binding-pass-0043.json with sha256 f5873cca174833d9f8e8e655586774d2a46487ee07a8b1710660e80eef5e3c5b and seal 4eb29447aeb8870d281f61e422bd4d4c0629dc3f812ec77368b5e11712e3f94d."
+    },
+    {
+      "falsification": "the pass 0042 binding is missing, has a different SHA-256 or seal, or does not report the expected source status",
+      "text": "Pass 0043 binds to pass 0042 full Lean source archive with sha256 83eefbfeab7e258aae80c8bb405bd93cc9dd7117804a3e84d3c74e1534142343, seal 0c5b4d29bf7ea2e72398278fd57c0cf23e5e297ce2d5d99cec84aab60e528d7c, and source status FULL_LEAN_SOURCE_ARCHIVE_MATCH."
+    },
+    {
+      "falsification": "the package count, present package count, head match count, or clean package count differs from nine",
+      "text": "Pass 0043 records nine Lake manifest packages, nine present local caches, nine package HEADs matching the manifest, and nine clean package worktrees."
+    },
+    {
+      "falsification": "any dependency package origin URL fails to match the manifest URL after the supported .git suffix normalization",
+      "text": "Pass 0043 records all nine package origin URLs matching the Lake manifest URLs after .git suffix normalization."
+    },
+    {
+      "falsification": "the pass 0043 validator result is missing, reports DRIFT, or has a different package_count",
+      "text": "Pass 0043 validator result reports MATCH with package_count 9 using local dependency cache checks."
+    },
+    {
+      "falsification": "packet 053 or the pass 0043 steelman is missing or has a different SHA-256",
+      "text": "Pass 0043 records packet 053 with sha256 96228fb6991631c4f84466bef2111e67143efe86434170f8931ca0cea6413473 and local steelman with sha256 9138c8b3b1682a56afb2afba86b5de8a7fafba19e6f782eb3119fb1e252156ae."
+    },
+    {
+      "falsification": "pass 0043 artifacts claim Lean replay, dependency compilation, semantic proof review, axiom-free proof, validation of every public pipeline-math claim, or a promoted natural law",
+      "text": "Pass 0043 preserves non-promotion boundaries: it checks dependency cache identity only, does not run Lean, does not compile dependencies, and current_promoted_natural_laws remains none."
+    }
+  ],
+  "disposition": "fenced",
+  "title": "Dogfood Pass 0043 Lake Dependency Cache Binding"
+}

@@ -1,0 +1,75 @@
+Skip to main content
+Getting StartedResourcesEcosystemCommunityBlogDocs
+SlackGitHub
+Version:
+1.50.0
+Next
+1.50.0
+1.49.0
+1.48.0
+1.47.1
+1.47.0
+1.46.0
+1.45.0
+1.44.1
+1.44.0
+1.43.0
+About OpenLineage
+Core Specification
+Client Libraries
+Integrations
+Guides
+FAQ
+Releases
+About OpenLineage
+Version: 1.50.0
+On this page
+About OpenLineage
+OpenLineage is an open framework for data lineage collection and analysis. At its core is an extensible specification that systems can use to interoperate with lineage metadata.
+Design​
+OpenLineage is an Open Standard for lineage metadata collection designed to record metadata for a job in execution.
+The standard defines a generic model of dataset, job, and run entities uniquely identified using consistent naming strategies. The core model is highly extensible via facets. A facet is user-defined metadata and enables entity enrichment. We encourage you to familiarize yourself with the core model below:
+How OpenLineage Benefits the Ecosystem​
+Below, we illustrate the challenges of collecting lineage metadata from multiple sources, schedulers and/or data processing frameworks. We then outline the design benefits of defining an Open Standard for lineage metadata collection.
+BEFORE:​
+Each project has to instrument its own custom metadata collection integration, therefore duplicating efforts.
+Integrations are external and can break with new versions of the underlying scheduler and/or data processing framework, requiring projects to ensure backwards compatibility.
+WITH OPENLINEAGE:​
+Integration efforts are shared across projects.
+Integrations can be pushed to the underlying scheduler and/or data processing framework; no longer does one need to play catch up and ensure compatibility!
+Scope​
+OpenLineage defines the metadata for running jobs and their corresponding events.
+A configurable backend allows the user to choose what protocol to send the events to.
+Core model​
+A facet is an atomic piece of metadata attached to one of the core entities.
+See the spec for more details.
+Spec​
+The specification is defined using OpenAPI and allows extension through custom facets.
+Integrations​
+OpenLineage supports integrations with several systems.
+Apache Airflow
+Apache Flink
+Apache Hive
+Apache Spark
+dbt
+Great Expectations
+SQL
+Trino
+Related projects​
+Marquez: Marquez is an LF AI & DATA project to collect, aggregate, and visualize a data ecosystem's metadata. It is the reference implementation of the OpenLineage API.
+OpenLineage collection implementation
+Egeria: Egeria Open Metadata and Governance. A metadata bus.
+Contributing to OpenLineage​
+OpenLineage is an LF AI & Data Foundation Graduate project under active development, and we welcome contributions.
+See CONTRIBUTING.md for more details about how to contribute.
+Edit this page
+Next
+Object Model
+Design
+How OpenLineage Benefits the Ecosystem
+Scope
+Core model
+Spec
+Integrations
+Related projects
+Contributing to OpenLineage

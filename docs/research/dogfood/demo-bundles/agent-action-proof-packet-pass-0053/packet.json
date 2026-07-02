@@ -1,0 +1,92 @@
+{
+  "bundle_hash": "45a14431097249925c4fd17b7290c0ee78c4d1b41d7dd64cacb4b4b5eaeeff5e",
+  "bundle_id": "agent-action-proof-packet-demo-0053",
+  "exports": {
+    "json_bundle": true,
+    "markdown_packet": true,
+    "static_html": true
+  },
+  "fixture_ref": {
+    "path": "C:\\dev\\public\\telos\\docs\\research\\dogfood\\fixtures\\agent-action-proof-packet-negative-fixtures-pass-0051.json",
+    "sha256": "b3e7d4597974411a918a894740b856a81ba7254bc00c5d7e477e11e20e954474"
+  },
+  "negative_fixture_summary": {
+    "negative_fixture_count": 8,
+    "negative_match_count": 8,
+    "negative_pass_observed_count": 0
+  },
+  "non_promotion_statement": "This demo bundle proves local packet composition and negative fixture replay only. It does not prove buyer adoption, scientific truth, or a natural law.",
+  "proof_packet": {
+    "action_receipt": {
+      "action_id": "act-0051-demo",
+      "action_intent_id": "intent-0051-demo",
+      "event_id": "evt-0051-demo",
+      "receipt_hash": "sha256:demo-action-receipt",
+      "trace": {
+        "span_ref": "trace:span-0051-demo"
+      }
+    },
+    "admission_record": {
+      "action_intent_id": "intent-0051-demo",
+      "args_hash": "sha256:demo-args",
+      "criterion_ref": "criterion:agent-action-proof-packet-demo",
+      "decision": {
+        "outcome": "allow"
+      },
+      "verification": {
+        "verdict": "MATCH"
+      }
+    },
+    "browser_evidence_ref": {
+      "action_receipt_ref": "act-0051-demo",
+      "artifact_hashes": [
+        "sha256:demo-browser-state"
+      ],
+      "verification": {
+        "verdict": "MATCH"
+      }
+    },
+    "crucible_verdict": {
+      "assessment_seal": "sha256:demo-assessment-seal",
+      "status": "MATCH"
+    },
+    "exports": {
+      "json_bundle": true,
+      "markdown_packet": true
+    },
+    "loop_ledger_entry": {
+      "chain": true,
+      "entry_hash": "sha256:current-ledger-entry",
+      "previous_hash": "sha256:previous-ledger-entry",
+      "sequence": 51
+    },
+    "packet_hash": "53064bde9b64163961004651b1959b38e94ebd0d28cafb5f9b344266c5946f7c",
+    "packet_id": "agent-action-proof-packet-positive-0051",
+    "redaction_status": {
+      "hashes_only": true,
+      "raw_private_payloads_included": false
+    },
+    "schema": "project-telos.agent-action-proof-packet/v0",
+    "source_refs": [
+      {
+        "id": "src-demo",
+        "sha256": "sha256:demo-source",
+        "uri": "repo:demo/action-receipt.mjs"
+      }
+    ],
+    "workspace_context_ref": {
+      "graph_pack_sha256": "sha256:demo-graph-pack",
+      "tool": "index"
+    }
+  },
+  "redaction_status": {
+    "hashes_only": true,
+    "raw_private_payloads_included": false
+  },
+  "schema": "project-telos.agent-action-proof-packet.bundle/v1",
+  "verification": {
+    "component": "packet",
+    "failure_code": null,
+    "verdict": "MATCH"
+  }
+}

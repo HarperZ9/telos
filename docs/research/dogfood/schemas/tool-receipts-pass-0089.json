@@ -1,0 +1,102 @@
+{
+  "adapter": {
+    "exact_hit_count": 10,
+    "exact_value_gap": 0,
+    "feasible_run_count": 16,
+    "hit_exact_bits": true,
+    "value_distribution": [
+      158,
+      162
+    ]
+  },
+  "compose": {
+    "command": "C:\\Users\\Zain\\AppData\\Local\\Programs\\Python\\Python312\\python.exe C:\\dev\\public\\telos\\docs\\research\\dogfood\\tools\\compose_external_solver_adapter_receipt.py --out C:\\dev\\public\\telos\\docs\\research\\dogfood\\schemas\\external-solver-adapter-receipt-pass-0089.json",
+    "exit_code": 0,
+    "status": "MATCH",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "0ab1699bec423a3485135e7ee194e91820935b25c8d281d6a1ff2d50d810a87e"
+  },
+  "dependencies": {
+    "numpy": {
+      "available": true,
+      "origin": "C:\\Users\\Zain\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\numpy\\__init__.py",
+      "package": "numpy",
+      "version": "2.4.5"
+    },
+    "ortools": {
+      "available": false,
+      "origin": null,
+      "package": "ortools",
+      "version": null
+    },
+    "python": {
+      "executable": "C:\\Users\\Zain\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "version": "3.12.10"
+    },
+    "scipy": {
+      "available": true,
+      "origin": "C:\\Users\\Zain\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\scipy\\__init__.py",
+      "package": "scipy",
+      "version": "1.17.1"
+    }
+  },
+  "forum": {
+    "confidence": 0.07954545454545454,
+    "decided": null,
+    "exit_code": 0,
+    "needs_escalation": true,
+    "status": "MATCH",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "84a0a6d5b0736b84f3aab69dd89aebd59d188bad2ae162a11cb8b6e7da24f92c",
+    "top_candidates": [
+      {
+        "agent": "model-foundry",
+        "score": 0.125
+      },
+      {
+        "agent": "project-telos",
+        "score": 0.045454545454545456
+      },
+      {
+        "agent": "backend",
+        "score": 0.0
+      },
+      {
+        "agent": "ci-cd",
+        "score": 0.0
+      },
+      {
+        "agent": "cloud-infra",
+        "score": 0.0
+      }
+    ]
+  },
+  "index": {
+    "exit_code": 0,
+    "graph_pack_sha256": "8ee383e19ae9a6141bee70de733fb6aa09201ff9d284ce6778ce58b06e6b68b2",
+    "schema": "project-telos.context-envelope/v1",
+    "source_refs_only": true,
+    "status": "MATCH",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "c906485e6daa0f3127788eec39967365f6606e4a7059a52a0d0fdcb32b39f0df",
+    "verification_verdict": "MATCH"
+  },
+  "pass": "0089",
+  "schema": "DogfoodToolReceipts/v1",
+  "seal": "d7907e8b7a741df6919ac1695d2fa8409582aba48392b2b12976930849752358",
+  "telos": {
+    "exit_code": 0,
+    "status": "MATCH",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "be17cb15259234cb4e8e95c2b36e76c90d841431729beb140294e34c5f9ebfa7",
+    "tool": "telos",
+    "tool_version": "0.1.0"
+  },
+  "test": {
+    "command": "C:\\Users\\Zain\\AppData\\Local\\Programs\\Python\\Python312\\python.exe C:\\dev\\public\\telos\\docs\\research\\dogfood\\tools\\test_external_solver_adapter_receipt.py",
+    "exit_code": 0,
+    "status": "MATCH",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

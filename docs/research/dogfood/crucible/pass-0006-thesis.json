@@ -1,0 +1,30 @@
+{
+  "title": "Dogfood Pass 0006 Executable Validator and Minimal Proof Packet",
+  "disposition": "fenced",
+  "claims": [
+    {
+      "text": "Pass 0006 created a local read-only dogfood validator script that checks existing schema artifacts plus the pass 0006 ProofPacket and OpenTelemetry normalization map.",
+      "falsification": "tools/validate_dogfood_artifacts.py is missing or the validator does not reference the prior schema artifacts and pass 0006 artifacts"
+    },
+    {
+      "text": "The pass 0006 ProofPacket artifact includes the ProofPacket/v1 minimum fields: packet id, domain, claim set, source receipts, action receipts, authority receipts, workspace state, verification verdicts, failure labels, and decision summary.",
+      "falsification": "proof-packet-pass-0006.json lacks any required ProofPacket/v1 minimum field"
+    },
+    {
+      "text": "The pass 0006 OpenTelemetry normalization artifact contains at least 8 field mappings and explicitly marks authority, workspace state, verification verdict, and decision summary as non-inferable from trace spans alone.",
+      "falsification": "otel-action-normalization-pass-0006.json has fewer than 8 mappings or lacks the non-inferable Telos proof-layer fields"
+    },
+    {
+      "text": "The Build Color pass 0006 measurement receipt reports bounded probe values under declared thresholds and a targeted pytest slice with 88 passing tests.",
+      "falsification": "build-color-measurement-receipt-pass-0006.json records any probe value over threshold or lacks the 88-passing-test evidence"
+    },
+    {
+      "text": "The dogfood validator run for pass 0006 reports MATCH with 9 checks and zero drift.",
+      "falsification": "schema-validator-results-pass-0006.json is missing, reports non-MATCH status, reports fewer than 9 checks, or reports drift above zero"
+    },
+    {
+      "text": "Pass 0006 promotes zero natural-law discoveries; all outputs remain schema, adapter, proof-packet, measurement, or verification artifacts.",
+      "falsification": "any pass 0006 artifact labels a natural law, theorem, medical result, finance result, safety result, or physical discovery as promoted"
+    }
+  ]
+}

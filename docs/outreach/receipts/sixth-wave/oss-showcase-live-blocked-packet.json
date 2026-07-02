@@ -1,0 +1,59 @@
+{
+  "schema": "project-telos.oss-pr-readiness/v1",
+  "captured_at": "2026-07-02T09:32:58.402Z",
+  "candidate": {
+    "repository": "pandas-dev/pandas",
+    "issue": 63458,
+    "issue_url": "https://github.com/pandas-dev/pandas/issues/63458",
+    "candidate_schema": "project-telos.oss-candidate/v1"
+  },
+  "evidence": {
+    "live_scout": true,
+    "scope": "Live read-only GitHub scout intake for the top current candidate. This is not a patch, reproduction run, test run, or maintainer-ready PR packet.",
+    "source_receipt": "docs/outreach/receipts/sixth-wave/oss-showcase-live-scout/scout.json",
+    "candidate_receipt": "docs/outreach/receipts/sixth-wave/oss-showcase-live-top-candidate.json",
+    "reproduction": {
+      "command": null,
+      "status": "not-run"
+    },
+    "tests": [],
+    "crucible": {
+      "verdict": "UNVERIFIABLE",
+      "detail": "Live scout identified a candidate, but no local reproduction, patch, passing test, or verifier check has been run."
+    },
+    "not_verified": {
+      "files_not_inspected": [
+        "pandas source tree"
+      ],
+      "tests_skipped": [
+        "targeted pandas regression test",
+        "full pandas test suite"
+      ],
+      "assumptions": [
+        "GitHub issue metadata was read through gh search at capture time",
+        "candidate priority is a scout heuristic, not a correctness claim"
+      ],
+      "unobserved_state": [
+        "local clone state",
+        "current pandas main branch behavior",
+        "patch feasibility",
+        "maintainer intent"
+      ]
+    },
+    "risk_notes": [
+      "live search result only",
+      "no patch evidence",
+      "no local test evidence"
+    ]
+  },
+  "verdict": "UNVERIFIABLE",
+  "blockers": [
+    "missing reproduction command",
+    "missing passing test evidence",
+    "crucible verdict is not MATCH",
+    "missing patch summary"
+  ],
+  "pr_ready": false,
+  "operator_next_action": "revise",
+  "public_pr_draft": null
+}

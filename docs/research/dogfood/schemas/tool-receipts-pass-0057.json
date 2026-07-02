@@ -1,0 +1,157 @@
+{
+  "generated_on": "2026-07-01",
+  "non_promotion_statement": "Tool receipts prove local buyer-objection brief generation, validator MATCH, source-anchor boundaries, Telos/Index/Gather/Forum/Crucible availability, and hypothesis-only uniqueness boundaries. They do not prove market demand, production compliance, customer adoption, scientific truth, or any natural law.",
+  "pass": "0057",
+  "receipts": [
+    {
+      "command": "telos_server_manifest",
+      "server_count": 5,
+      "source_count": 4,
+      "status": "MATCH",
+      "tool": "mcp__telos.telos_server_manifest",
+      "verified_on": "2026-06-28"
+    },
+    {
+      "check_count": 4,
+      "command": "index_doctor",
+      "match_count": 4,
+      "status": "MATCH",
+      "tool": "mcp__index.index_doctor",
+      "tool_version": "2.8.0"
+    },
+    {
+      "command": "index_map",
+      "dirty_count": 0,
+      "repo_count": 1,
+      "root_sha256_prefix": "45e8256faa8bdc98",
+      "status": "MATCH",
+      "tool": "mcp__index.index_map",
+      "tool_version": "2.8.0",
+      "top_level_count": 23,
+      "untracked_count": 7
+    },
+    {
+      "artifact": "packets/067-buyer-objection-brief.md",
+      "chars": 2135,
+      "command": "docs",
+      "seal": "3b4562f871daa005347093b88fbd332bb01c6794cc9940ae2d915f097fe4790b",
+      "sha256": "b86be2359f5f5fe6face5e0a403d3520c3a5460ff3a77bbf49360e6d0c857039",
+      "status": "MATCH",
+      "tool": "gather",
+      "verified": true
+    },
+    {
+      "command": "gather_status",
+      "command_count": 6,
+      "mcp_tool_count": 5,
+      "role": "perception-intake",
+      "status": "MATCH",
+      "tool": "mcp__gather.gather_status",
+      "tool_version": "1.5.0"
+    },
+    {
+      "command": "test_buyer_objection_brief.py",
+      "exit_code": 0,
+      "line_count": 78,
+      "sha256": "798acefc7b4aff56f3dc4e2c6c02cd37110a04d2fdd5d3c7e54b5ede9c667d45",
+      "status": "MATCH",
+      "tool": "python"
+    },
+    {
+      "buyer_brief_count": 3,
+      "command": "compose_buyer_objection_brief.py",
+      "line_count": 284,
+      "objection_count": 9,
+      "seal": "cab7a3e7d82a59f81e5b5286d20384ce8c33b717627a75901a240bd819f5be02",
+      "sha256": "e17b05df9f66846d7ddf5ec6ab532823a8a1d55ea05405751b1bfb5c8257b752",
+      "source_anchor_count": 5,
+      "status": "BUYER_OBJECTION_BRIEF_MATCH",
+      "tool": "python"
+    },
+    {
+      "command": "probe_buyer_objection_brief.py",
+      "line_count": 206,
+      "seal": "cab7a3e7d82a59f81e5b5286d20384ce8c33b717627a75901a240bd819f5be02",
+      "sha256": "b63dc92e6a27afac376511b1f19c8f9b49cc7b22aece672f6a9b6c04b9c1b55e",
+      "status": "MATCH",
+      "tool": "python"
+    },
+    {
+      "buyer_brief_count": 3,
+      "command": "validate_pass_0057_buyer_objection_brief.py",
+      "drift": 0,
+      "line_count": 116,
+      "match": 1,
+      "objection_count": 9,
+      "schema": "Pass0057BuyerObjectionBriefValidatorRun/v1",
+      "sha256": "ac4fa1cdb147561bf3b86303710e669c67653482aeab4c305efdfb266896990d",
+      "source_anchor_count": 5,
+      "status": "MATCH",
+      "tool": "python"
+    },
+    {
+      "command": "forum_doctor",
+      "match_count": 4,
+      "status": "MATCH",
+      "tool": "mcp__forum.forum_doctor",
+      "tool_version": "1.12.0"
+    },
+    {
+      "candidates": [
+        {
+          "agent": "deep-research",
+          "score": 0.4
+        },
+        {
+          "agent": "cloud-infra",
+          "score": 0.2
+        },
+        {
+          "agent": "project-telos",
+          "score": 0.05405405405405406
+        }
+      ],
+      "command": "route",
+      "confidence": 0.2,
+      "decided": null,
+      "needs_escalation": true,
+      "status": "ROUTE_ESCALATION_OBSERVED",
+      "tool": "mcp__forum.route"
+    },
+    {
+      "command": "forum_submit",
+      "error": "the configured executor did not return valid JSON; point the daemon at a real model executor",
+      "status": "UNVERIFIABLE",
+      "tool": "mcp__forum.forum_submit"
+    },
+    {
+      "capability_count": 4,
+      "command": "crucible_status",
+      "mcp_tool_count": 13,
+      "role": "verification-pressure",
+      "status": "MATCH",
+      "tool": "mcp__crucible.crucible_status",
+      "tool_version": "1.1.0"
+    },
+    {
+      "assessment_seal": "f1bc3ca1a4f9bcdd7d2b32e96d0f6efd44d006c58216f0de19a9ac653a11ab0f",
+      "claims": 8,
+      "command": "crucible run --registry",
+      "drift": 0,
+      "match": 8,
+      "measurement_seal": "1bade721f89e4b1e6380573f18c87ba3b3143203dd57f2fdd698227149870655",
+      "run_sha256": "7b1f083a5e3ba3b6382d578902935d263809890ea386fbd04f96396b11db28e7",
+      "seals_ok": true,
+      "status": "MATCH",
+      "thesis_id": "f21251ba50eb6fd5",
+      "thesis_ok": true,
+      "thesis_seal": "f21251ba50eb6fd5d2e8ede7b48415256c2ccfd095a32a3c2c3d109833e299c1",
+      "tool": "crucible",
+      "unverifiable": 0,
+      "verdict_seal": "3f098a32dc60d62fe8a9e356381261e21ab7b5a92812696f3c7ad3e548acc97b",
+      "verdicts_rederive": true
+    }
+  ],
+  "schema": "DogfoodToolReceiptSet/v1",
+  "status": "MATCH_WITH_FORUM_SUBMIT_GAP_AND_HYPOTHESIS_ONLY_UNIQUENESS"
+}

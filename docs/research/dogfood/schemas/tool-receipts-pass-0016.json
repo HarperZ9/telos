@@ -1,0 +1,69 @@
+{
+  "pass": "0016",
+  "schema": "DogfoodToolReceiptSet/v1",
+  "status": "MATCH_WITH_FORUM_SUBMIT_GAP",
+  "generated_on": "2026-07-01",
+  "receipts": [
+    {
+      "tool": "index",
+      "command": "status",
+      "status": "MATCH",
+      "tool_version": "2.8.0",
+      "role": "structure-context",
+      "observed_contract": "Project Telos flagship action envelope with context, atlas, verify, and MCP parity."
+    },
+    {
+      "tool": "gather",
+      "command": "status",
+      "status": "MATCH",
+      "tool_version": "1.5.0",
+      "role": "perception-intake",
+      "observed_contract": "Project Telos flagship action envelope with docs, web, feed, pdf, run, corpus, and MCP parity."
+    },
+    {
+      "tool": "telos.operator.doctor",
+      "command": "operator_doctor",
+      "status": "MATCH",
+      "check_count": 14,
+      "passed_count": 14,
+      "tool_count": 65,
+      "telos_tool_count": 37,
+      "generated_at": "2026-07-01T10:57:28.369Z"
+    },
+    {
+      "tool": "forum",
+      "command": "status",
+      "status": "MATCH",
+      "entries": 7,
+      "checkpoint": "bac6330587361860a30fb9e069d880f69a1a27b11d0aa0e3802220e95581c8f9"
+    },
+    {
+      "tool": "forum",
+      "command": "verify",
+      "status": "MATCH",
+      "chain": true,
+      "deep": true
+    },
+    {
+      "tool": "forum",
+      "command": "submit",
+      "status": "UNVERIFIABLE",
+      "request": "Pass 0016 adversarial review for CloudQuantumResultCanonicalization/v1",
+      "error": "the configured executor did not return valid JSON; point the daemon at a real model executor (could not parse JSON from output: Extra data: line 2 column 1 (char 98))"
+    },
+    {
+      "tool": "crucible",
+      "command": "status",
+      "status": "MATCH",
+      "tool_version": "1.1.0",
+      "role": "verification-pressure",
+      "observed_capabilities": [
+        "claim_verdicts",
+        "oracle_rechecks",
+        "cleanroom_review",
+        "creative_measurement_gate"
+      ]
+    }
+  ],
+  "non_promotion_statement": "Tool receipts prove operator-surface availability only. They do not prove quantum hardware execution, quantum advantage, theorem novelty, or a natural law."
+}

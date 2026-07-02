@@ -1,0 +1,55 @@
+{
+  "artifact": {
+    "path": "C:\\dev\\public\\telos\\docs\\research\\dogfood\\schemas\\policy-aware-institution-queue-pass-0147.json",
+    "sha256": "f3d240371f77fe58a15581db8db1a8f217ac8e97de7916e7de79c27f9693ab15"
+  },
+  "schema": "Pass0147ToolReceipts/v1",
+  "source_store": "docs/research/dogfood/gather/pass-0147-policy-aware-institution-queue",
+  "tool_receipts": {
+    "crucible": {
+      "command": "crucible --version",
+      "exit_code": 0,
+      "first_line": "crucible 1.1.0",
+      "observed_version": "1.1.0",
+      "status": "MATCH",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "c9a3c2e0a32c682af3a84e8ee4bbf32231c964dfe7dd961b946d197a743bdb75"
+    },
+    "forum": {
+      "command": "forum --version",
+      "exit_code": 0,
+      "first_line": "forum 1.12.0",
+      "observed_version": "1.12.0",
+      "status": "MATCH",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "c08e4475db0dea46f86c0441af54c7d13387881ae2557dcddcaeb2fdf5e8d18c"
+    },
+    "gather": {
+      "command": "gather --version",
+      "exit_code": 0,
+      "first_line": "gather 1.5.0",
+      "observed_version": "1.5.0",
+      "status": "MATCH",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "4d6ad2661e845c0cc04012d80b3bc4b2f376508b7854f73a932470f9e33b860f"
+    },
+    "index": {
+      "command": "index --version",
+      "exit_code": 0,
+      "first_line": "index 2.8.0",
+      "observed_version": "2.8.0",
+      "status": "MATCH",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "9952767d2790c2471796bc4d1b7980f55428298965835d9edb070b240d8060d3"
+    },
+    "telos": {
+      "command": "node -p \"telos \"+JSON.parse(require('fs').readFileSync('package.json','utf8')).version",
+      "exit_code": 0,
+      "first_line": "telos 0.1.0",
+      "observed_version": "0.1.0",
+      "status": "MATCH",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "0b8f3464457976df17a6545e76c55c1bb45d56376761c26195f999f3e5279e36"
+    }
+  }
+}

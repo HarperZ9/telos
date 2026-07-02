@@ -1,0 +1,205 @@
+{
+  "compose": {
+    "command": "C:\\Users\\Zain\\AppData\\Local\\Programs\\Python\\Python312\\python.exe C:\\dev\\public\\telos\\docs\\research\\dogfood\\tools\\compose_lyapunov_stability_certificate_receipt.py --out C:\\dev\\public\\telos\\docs\\research\\dogfood\\schemas\\lyapunov-stability-certificate-receipt-pass-0112.json",
+    "exit_code": 0,
+    "status": "MATCH",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "4797ffa654801a39695054a06731f1d1c6ee30c06d1345503b02b560f7032c76"
+  },
+  "forum": {
+    "confidence": 0.125,
+    "decided": null,
+    "exit_code": 0,
+    "needs_escalation": true,
+    "status": "MATCH",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "a70d5f95cb9dd305f9ec5dd544439bf31a9ebeb4813bfd5394a01fa229da18b8",
+    "top_candidates": [
+      {
+        "agent": "model-foundry",
+        "score": 0.125
+      },
+      {
+        "agent": "backend",
+        "score": 0.0
+      },
+      {
+        "agent": "ci-cd",
+        "score": 0.0
+      },
+      {
+        "agent": "cloud-infra",
+        "score": 0.0
+      },
+      {
+        "agent": "code-review",
+        "score": 0.0
+      }
+    ]
+  },
+  "index": {
+    "exit_code": 0,
+    "graph_pack_sha256": "8ee383e19ae9a6141bee70de733fb6aa09201ff9d284ce6778ce58b06e6b68b2",
+    "schema": "project-telos.context-envelope/v1",
+    "source_refs_only": true,
+    "status": "MATCH",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "191751e2dc8a314a6d60be0e3c5437632df3cda5bd0fe3d1296257286063727c",
+    "verification_verdict": "MATCH"
+  },
+  "market_surface": {
+    "gap_hypothesis": "Control and optimization tools expose solvers, MPC, and modeling APIs, but portable proof packets can bind the system matrix, certificate, residual, simulation trace, source provenance, and negative fixtures.",
+    "gap_status": "hypothesis",
+    "tool_count": 9,
+    "tools": [
+      {
+        "gap_status": "inferred",
+        "source": "https://docs.scipy.org/doc/scipy/reference/generated/scipy.linalg.solve_discrete_lyapunov.html",
+        "tool": "SciPy"
+      },
+      {
+        "gap_status": "inferred",
+        "source": "https://www.mathworks.com/help/control/ref/dlyap.html",
+        "tool": "MATLAB dlyap"
+      },
+      {
+        "gap_status": "inferred",
+        "source": "https://www.mathworks.com/products/control.html",
+        "tool": "MATLAB Control System Toolbox"
+      },
+      {
+        "gap_status": "inferred",
+        "source": "https://python-control.readthedocs.io/en/0.10.2/generated/control.dlyap.html",
+        "tool": "python-control"
+      },
+      {
+        "gap_status": "inferred",
+        "source": "https://drake.mit.edu/",
+        "tool": "Drake"
+      },
+      {
+        "gap_status": "inferred",
+        "source": "https://web.casadi.org/docs/",
+        "tool": "CasADi"
+      },
+      {
+        "gap_status": "inferred",
+        "source": "https://www.do-mpc.com/",
+        "tool": "do-mpc"
+      },
+      {
+        "gap_status": "inferred",
+        "source": "https://osqp.org/docs/examples/mpc.html",
+        "tool": "OSQP"
+      },
+      {
+        "gap_status": "inferred",
+        "source": "https://www.cvxpy.org/",
+        "tool": "CVXPY"
+      }
+    ]
+  },
+  "pass": "0112",
+  "schema": "DogfoodToolReceipts/v1",
+  "seal": "0cd590f95b483eef93fc7fad8486d19542a40b49cc1a4af4abc7d9fe277cea3f",
+  "stable_certificate": {
+    "A": [
+      [
+        "1/2",
+        "0"
+      ],
+      [
+        "0",
+        "1/3"
+      ]
+    ],
+    "P": [
+      [
+        "4/3",
+        "0"
+      ],
+      [
+        "0",
+        "9/8"
+      ]
+    ],
+    "Q": [
+      [
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "1"
+      ]
+    ],
+    "energy_samples": [
+      {
+        "delta_v": "-1",
+        "identity_residual": "0",
+        "negative_q_energy": "-1",
+        "status": "MATCH",
+        "x": [
+          "1",
+          "0"
+        ]
+      },
+      {
+        "delta_v": "-4",
+        "identity_residual": "0",
+        "negative_q_energy": "-4",
+        "status": "MATCH",
+        "x": [
+          "0",
+          "2"
+        ]
+      },
+      {
+        "delta_v": "-13",
+        "identity_residual": "0",
+        "negative_q_energy": "-13",
+        "status": "MATCH",
+        "x": [
+          "3",
+          "-2"
+        ]
+      }
+    ],
+    "lyapunov_residual": [
+      [
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0"
+      ]
+    ],
+    "max_identity_residual": "0",
+    "max_spectral_radius_abs": "1/2",
+    "positive_definite": true
+  },
+  "telos": {
+    "exit_code": 0,
+    "status": "MATCH",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "be17cb15259234cb4e8e95c2b36e76c90d841431729beb140294e34c5f9ebfa7",
+    "tool": "telos",
+    "tool_version": "0.1.0"
+  },
+  "test": {
+    "command": "C:\\Users\\Zain\\AppData\\Local\\Programs\\Python\\Python312\\python.exe C:\\dev\\public\\telos\\docs\\research\\dogfood\\tools\\test_lyapunov_stability_certificate_receipt.py",
+    "exit_code": 0,
+    "status": "MATCH",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "youtube_binding": {
+    "dominant_cluster": "enterprise_quantum_optimization",
+    "raw_transcript_included": false,
+    "roadmap_pass": "0102",
+    "source_policy": "YouTube videos are treated as critical source leads. Metadata and Gather receipts are first-order evidence; synthesized product implications remain hypotheses.",
+    "transcript_receipt_count": 19,
+    "valid_video_count": 19
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "version": "research-claim-proof-packet/v0",
+  "packet_id": "proof-carrying-research-loops-2026-07-02",
+  "claim": "Project Telos has a stricter proof-carrying research loop draft that binds source intake, local probes, verifier verdicts, learning receipts, website copy, and official-paper revision boundaries.",
+  "scope": "Eighth-wave planning and tooling receipt package only; not an arXiv, Zenodo, OSF, SSRN, journal, theorem, natural-law, or frontier-discovery claim.",
+  "sources": [
+    {
+      "ref": "docs/research/whitepapers/PROOF-CARRYING-RESEARCH-LOOPS-2026-07-02.md",
+      "sha256": "45b378bd01d2730a446af176e35366261eb08911b470f75dc46473c8ef583ad6"
+    },
+    {
+      "ref": "docs/outreach/EIGHTH-WAVE-LOCAL-REPRODUCTION-AND-PUBLISHING-PIPELINE-2026-07-02.md",
+      "sha256": "88eba21b25fd2039fdcd164d79843c1e3197c1c34a2075f316c3f048bf10fe90"
+    },
+    {
+      "ref": "docs/outreach/receipts/eighth-wave/pandas-63458-repro/local-reproduction-receipt.json",
+      "sha256": "5bfda2e8ca4e45138a37584609f39357c01abe6476dd611d0ce5007af27a9fbe"
+    },
+    {
+      "ref": "docs/outreach/receipts/eighth-wave-tooling-run-2026-07-02.json",
+      "sha256": "81dab6b8dd3cf2fe06f7e1567f53eb232b7439f34b9df10399c2fefee5fd2e00"
+    }
+  ],
+  "verdicts": {
+    "overall": "UNVERIFIABLE",
+    "per_check": [
+      {
+        "checker": "local-reproduction-probe",
+        "status": "MATCH",
+        "note": "The pandas issue expression failed locally in the clean virtualenv receipt."
+      },
+      {
+        "checker": "publishing-readiness",
+        "status": "UNVERIFIABLE",
+        "note": "The paper has not been submitted, archived, independently reviewed, or promoted beyond working-paper status."
+      }
+    ]
+  },
+  "decision_summary": "The packet supports a working-paper and tooling-loop claim, while blocking stronger publication, theorem, natural-law, and product-readiness claims."
+}

@@ -1,0 +1,189 @@
+{
+  "kind": "proof-lesson",
+  "packet_id": "navier-stokes-periodic-skew-symmetry-v0",
+  "verdict": "MATCH",
+  "lesson": {
+    "kind": "proof-lesson",
+    "packet_id": "navier-stokes-periodic-skew-symmetry-v0",
+    "packet_version": "research-claim-proof-packet/v0",
+    "claim": "The Navier-Stokes periodic skew-symmetry proof packet has a source-bound statement, derivation, deterministic finite-mode reference kernel, run receipt, and Crucible assessment that match the bounded nonlinear-energy-transfer claim while preserving the parent Millennium problem as UNVERIFIABLE.",
+    "scope": "One deterministic smooth two-dimensional periodic finite-mode divergence-free velocity field under declared assumptions. This does not prove Navier-Stokes existence, uniqueness, smoothness, global regularity, turbulence behavior, physical simulation validity, numerical convergence for arbitrary discretizations, or a new law of physics.",
+    "verdict": "MATCH",
+    "sources": [
+      {
+        "ref": "docs/research/proof-packets/navier-stokes-periodic-skew-symmetry-v0/problem.statement.json",
+        "sha256": "0ff92f7d51df4538a865dfd23a2125eeec80162feab78dbac66cd45228e17e62"
+      },
+      {
+        "ref": "docs/research/proof-packets/navier-stokes-periodic-skew-symmetry-v0/subclaim.skew_symmetry.md",
+        "sha256": "ce01022d4adaa5b61ecd2831591d5cb94ed281cfd0bd955b90d9d9c0a03b79dc"
+      },
+      {
+        "ref": "docs/research/proof-packets/navier-stokes-periodic-skew-symmetry-v0/kernel.reference.mjs",
+        "sha256": "911006d6d5e733518b9b56b59b46f60b0b8743dd3c3fd18237bdb58cd81066b3"
+      },
+      {
+        "ref": "docs/research/proof-packets/navier-stokes-periodic-skew-symmetry-v0/run.receipt.json",
+        "sha256": "3ada18d5085e62459b8ae37e3396297cb89281f07ac0ff320bd6606e35a9d047"
+      },
+      {
+        "ref": "docs/research/proof-packets/navier-stokes-periodic-skew-symmetry-v0/crucible-thesis.json",
+        "sha256": "391c628742c71b8e0593b7f7a08a592755f93890728f76634da4503fc813207f"
+      },
+      {
+        "ref": "docs/research/proof-packets/navier-stokes-periodic-skew-symmetry-v0/crucible-measurements.json",
+        "sha256": "603b694819a161526f72388103d0f55a11287639a44b4aafd581307b35aedcf9"
+      },
+      {
+        "ref": "docs/research/proof-packets/navier-stokes-periodic-skew-symmetry-v0/crucible-run.json",
+        "sha256": "314ecab335de0143582ea83cc6e9a817f13b2ee2e17f2c408604a913892cc2c2"
+      }
+    ],
+    "scaffold": [
+      {
+        "step": 1,
+        "prompt": "Restate, in your own words, exactly what this claim asserts and nothing more: \"The Navier-Stokes periodic skew-symmetry proof packet has a source-bound statement, derivation, deterministic finite-mode reference kernel, run receipt, and Crucible assessment that match the bounded nonlinear-energy-transfer claim while preserving the parent Millennium problem as UNVERIFIABLE.\" (scope: One deterministic smooth two-dimensional periodic finite-mode divergence-free velocity field under declared assumptions. This does not prove Navier-Stokes existence, uniqueness, smoothness, global regularity, turbulence behavior, physical simulation validity, numerical convergence for arbitrary discretizations, or a new law of physics.)."
+      },
+      {
+        "step": 2,
+        "prompt": "Judging by their refs alone (docs/research/proof-packets/navier-stokes-periodic-skew-symmetry-v0/problem.statement.json, docs/research/proof-packets/navier-stokes-periodic-skew-symmetry-v0/subclaim.skew_symmetry.md, docs/research/proof-packets/navier-stokes-periodic-skew-symmetry-v0/kernel.reference.mjs, docs/research/proof-packets/navier-stokes-periodic-skew-symmetry-v0/run.receipt.json, docs/research/proof-packets/navier-stokes-periodic-skew-symmetry-v0/crucible-thesis.json, docs/research/proof-packets/navier-stokes-periodic-skew-symmetry-v0/crucible-measurements.json, docs/research/proof-packets/navier-stokes-periodic-skew-symmetry-v0/crucible-run.json), predict what each recorded source could contribute as evidence for or against the claim."
+      },
+      {
+        "step": 3,
+        "prompt": "The packet's overall verdict is MATCH. Before reading anything else, derive what a MATCH verdict must mean about the relationship between the claim and the recorded checks."
+      },
+      {
+        "step": 4,
+        "prompt": "List the checks you would run to reach your own verdict on this claim, then compare your list against what the packet's verdict implies was actually checked."
+      }
+    ],
+    "retrievalQuestions": [
+      {
+        "question": "What evidence would falsify this claim: \"The Navier-Stokes periodic skew-symmetry proof packet has a source-bound statement, derivation, deterministic finite-mode reference kernel, run receipt, and Crucible assessment that match the bounded nonlinear-energy-transfer claim while preserving the parent Millennium problem as UNVERIFIABLE.\"?",
+        "derivedFrom": "claim"
+      },
+      {
+        "question": "Which recorded source would you re-check first, and what does its content hash let you prove about it?",
+        "derivedFrom": "sources"
+      },
+      {
+        "question": "What does an overall verdict of MATCH entitle you to claim, and what does it not?",
+        "derivedFrom": "verdicts.overall"
+      },
+      {
+        "question": "The packet's scope is \"One deterministic smooth two-dimensional periodic finite-mode divergence-free velocity field under declared assumptions. This does not prove Navier-Stokes existence, uniqueness, smoothness, global regularity, turbulence behavior, physical simulation validity, numerical convergence for arbitrary discretizations, or a new law of physics.\". Give one claim that would exceed that scope.",
+        "derivedFrom": "scope"
+      }
+    ],
+    "verifierBinding": {
+      "packet_id": "navier-stokes-periodic-skew-symmetry-v0",
+      "verdict": "MATCH",
+      "sourceHashes": [
+        "0ff92f7d51df4538a865dfd23a2125eeec80162feab78dbac66cd45228e17e62",
+        "ce01022d4adaa5b61ecd2831591d5cb94ed281cfd0bd955b90d9d9c0a03b79dc",
+        "911006d6d5e733518b9b56b59b46f60b0b8743dd3c3fd18237bdb58cd81066b3",
+        "3ada18d5085e62459b8ae37e3396297cb89281f07ac0ff320bd6606e35a9d047",
+        "391c628742c71b8e0593b7f7a08a592755f93890728f76634da4503fc813207f",
+        "603b694819a161526f72388103d0f55a11287639a44b4aafd581307b35aedcf9",
+        "314ecab335de0143582ea83cc6e9a817f13b2ee2e17f2c408604a913892cc2c2"
+      ]
+    },
+    "boundary": "Lesson scaffold only -- prompts for the operator to derive the reasoning; never an answer dump, never a graded-assessment answer."
+  },
+  "misconception": null,
+  "sourceCount": 7,
+  "entries": [
+    {
+      "seq": 0,
+      "prevHash": "0000000000000000000000000000000000000000000000000000000000000000",
+      "hash": "ddd611ce58369c587048b90e7647eb2349781a1dd56d59b6d87891773783117c",
+      "entry": {
+        "kind": "packet-binding",
+        "packet_id": "navier-stokes-periodic-skew-symmetry-v0",
+        "verdict": "MATCH",
+        "claim": "The Navier-Stokes periodic skew-symmetry proof packet has a source-bound statement, derivation, deterministic finite-mode reference kernel, run receipt, and Crucible assessment that match the bounded nonlinear-energy-transfer claim while preserving the parent Millennium problem as UNVERIFIABLE."
+      }
+    },
+    {
+      "seq": 1,
+      "prevHash": "ddd611ce58369c587048b90e7647eb2349781a1dd56d59b6d87891773783117c",
+      "hash": "376d20281ded026e205942f576188135b25b8cc36250c80aea481936a61524ac",
+      "entry": {
+        "kind": "source",
+        "ref": "docs/research/proof-packets/navier-stokes-periodic-skew-symmetry-v0/problem.statement.json",
+        "sha256": "0ff92f7d51df4538a865dfd23a2125eeec80162feab78dbac66cd45228e17e62"
+      }
+    },
+    {
+      "seq": 2,
+      "prevHash": "376d20281ded026e205942f576188135b25b8cc36250c80aea481936a61524ac",
+      "hash": "4ba88da3ae4aec74b3ff7be98b8a15c21cea408b1b96e4080f1bc0988b55d63f",
+      "entry": {
+        "kind": "source",
+        "ref": "docs/research/proof-packets/navier-stokes-periodic-skew-symmetry-v0/subclaim.skew_symmetry.md",
+        "sha256": "ce01022d4adaa5b61ecd2831591d5cb94ed281cfd0bd955b90d9d9c0a03b79dc"
+      }
+    },
+    {
+      "seq": 3,
+      "prevHash": "4ba88da3ae4aec74b3ff7be98b8a15c21cea408b1b96e4080f1bc0988b55d63f",
+      "hash": "18c88ebd54c2b1f6e4677c5e13babd009961fa03bde219989391fd056751978d",
+      "entry": {
+        "kind": "source",
+        "ref": "docs/research/proof-packets/navier-stokes-periodic-skew-symmetry-v0/kernel.reference.mjs",
+        "sha256": "911006d6d5e733518b9b56b59b46f60b0b8743dd3c3fd18237bdb58cd81066b3"
+      }
+    },
+    {
+      "seq": 4,
+      "prevHash": "18c88ebd54c2b1f6e4677c5e13babd009961fa03bde219989391fd056751978d",
+      "hash": "2c29de61b1dfbef35822eba188dbd039775d74153c7819169ed9bb14689ba4a7",
+      "entry": {
+        "kind": "source",
+        "ref": "docs/research/proof-packets/navier-stokes-periodic-skew-symmetry-v0/run.receipt.json",
+        "sha256": "3ada18d5085e62459b8ae37e3396297cb89281f07ac0ff320bd6606e35a9d047"
+      }
+    },
+    {
+      "seq": 5,
+      "prevHash": "2c29de61b1dfbef35822eba188dbd039775d74153c7819169ed9bb14689ba4a7",
+      "hash": "8fbef9429c21d37df9d3712d594e6b0761425a52cdd25b3af0f77b974cafda62",
+      "entry": {
+        "kind": "source",
+        "ref": "docs/research/proof-packets/navier-stokes-periodic-skew-symmetry-v0/crucible-thesis.json",
+        "sha256": "391c628742c71b8e0593b7f7a08a592755f93890728f76634da4503fc813207f"
+      }
+    },
+    {
+      "seq": 6,
+      "prevHash": "8fbef9429c21d37df9d3712d594e6b0761425a52cdd25b3af0f77b974cafda62",
+      "hash": "d624af43ca6896dfc33cd6fad1c75701d538a8726a1bb970e6d5d98d2220e3b7",
+      "entry": {
+        "kind": "source",
+        "ref": "docs/research/proof-packets/navier-stokes-periodic-skew-symmetry-v0/crucible-measurements.json",
+        "sha256": "603b694819a161526f72388103d0f55a11287639a44b4aafd581307b35aedcf9"
+      }
+    },
+    {
+      "seq": 7,
+      "prevHash": "d624af43ca6896dfc33cd6fad1c75701d538a8726a1bb970e6d5d98d2220e3b7",
+      "hash": "4c0b1b5f7d9c877df4daaf7798771665eac461d17e567155109a9188b2eb8fb6",
+      "entry": {
+        "kind": "source",
+        "ref": "docs/research/proof-packets/navier-stokes-periodic-skew-symmetry-v0/crucible-run.json",
+        "sha256": "314ecab335de0143582ea83cc6e9a817f13b2ee2e17f2c408604a913892cc2c2"
+      }
+    },
+    {
+      "seq": 8,
+      "prevHash": "4c0b1b5f7d9c877df4daaf7798771665eac461d17e567155109a9188b2eb8fb6",
+      "hash": "e721aa6acfdc95fb5b80506f203caf8fae1d4830485b986c47d98647f1992fbb",
+      "entry": {
+        "kind": "lesson-digest",
+        "digest": "sha256:93ba76afa37deefc2fc23360459413d0ff08a8b7516efa7d6a9a297d8948ff6b",
+        "misconception_class": null
+      }
+    }
+  ],
+  "boundary": "Lesson receipt only -- binds the lesson to its packet's verdict and source hashes; never a graded-assessment answer."
+}

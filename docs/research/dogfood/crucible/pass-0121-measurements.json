@@ -1,0 +1,111 @@
+{
+  "measurements": [
+    {
+      "claim": "Pass 0121 created a YoutubeMegatoolGrowthVectorReceipt/v1 artifact with status YOUTUBE_MEGATOOL_GROWTH_VECTOR_MATCH, sha256 f250829b7572861770509120ff53b65cabe79491d8f0b4536ec918e5fcd2574c, and seal 701f68e23d84059f60dae4b0dbfb59dff4b1903f1012ca7193887b0da49b292b.",
+      "deviation": 0.0,
+      "evidence": [
+        "schema=YoutubeMegatoolGrowthVectorReceipt/v1",
+        "status=YOUTUBE_MEGATOOL_GROWTH_VECTOR_MATCH",
+        "sha256=f250829b7572861770509120ff53b65cabe79491d8f0b4536ec918e5fcd2574c",
+        "seal=701f68e23d84059f60dae4b0dbfb59dff4b1903f1012ca7193887b0da49b292b"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0121 refreshed YouTube source leads ['HbKzqvey5PA', '4MQbd5wTlI8', 'EdVG5qNm2rY', 'nYwid6Q5HXk'] and every transcript object was present under its catalog receipt key.",
+      "deviation": 0.0,
+      "evidence": [
+        "video_ids=['HbKzqvey5PA', '4MQbd5wTlI8', 'EdVG5qNm2rY', 'nYwid6Q5HXk']",
+        "transcript_object_present=all_true"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0121 records no raw transcript text in the artifact and keeps all video leads at SOURCE_LEAD_ONLY.",
+      "deviation": 0.0,
+      "evidence": [
+        "raw_transcript_included=false",
+        "claim_status=SOURCE_LEAD_ONLY"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0121 ranks growth vectors ['scientific_runtime_receipt_layer', 'looped_agent_verifier_os', 'field_to_proof_packet_factory', 'formal_homotopy_proof_os', 'counterexample_revision_workbench', 'quantum_foundation_claim_boundary'] and sets primary_30_day_push to scientific_runtime_receipt_layer.",
+      "deviation": 0.0,
+      "evidence": [
+        "growth_vectors=['scientific_runtime_receipt_layer', 'looped_agent_verifier_os', 'field_to_proof_packet_factory', 'formal_homotopy_proof_os', 'counterexample_revision_workbench', 'quantum_foundation_claim_boundary']",
+        "primary_30_day_push=scientific_runtime_receipt_layer"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0121 binds pass 0116 formal/physics source-lead bridge and pass 0120 Hamiltonian runtime branch receipt.",
+      "deviation": 0.0,
+      "evidence": [
+        "source_bindings={'formal_physics_bridge_pass': '0116', 'formal_physics_bridge_seal': 'fec934e33f768d3138b79edf680926123886199ce2fca4a3103e6b992366f29e', 'runtime_branch_pass': '0120', 'runtime_branch_seal': '9100835b059bd5d8d5d21f3e899bfd78c36d68f27d76bdc09b0cfb561d9fe0e5', 'youtube_refresh_store': 'gather/pass-0121-youtube-refresh'}"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0121 includes a BuildLang/buildc node in the integration map and a scientific runtime receipt growth vector.",
+      "deviation": 0.0,
+      "evidence": [
+        "integration_map=[{'inputs': ['YouTube URLs', 'official docs', 'papers'], 'market_product': 'source intake ledger', 'node': 'Gather', 'outputs': ['source receipts', 'content hashes']}, {'inputs': ['repo', 'dogfood artifacts'], 'market_product': 'workspace substrate map', 'node': 'Index', 'outputs': ['context envelope']}, {'inputs': ['growth vector', 'field'], 'market_product': 'expert routing layer', 'node': 'Forum', 'outputs': ['route candidates']}, {'inputs': ['claims', 'measurements'], 'market_product': 'proof gate', 'node': 'Crucible', 'outputs': ['MATCH/DRIFT/UNVERIFIABLE verdict']}, {'inputs': ['actions', 'loops', 'receipts'], 'market_product': 'accountable agent OS', 'node': 'Telos', 'outputs': ['action ledger', 'catalog', 'status']}, {'inputs': ['proof kernels', 'scientific kernels'], 'market_product': 'accountable scientific runtime', 'node': 'BuildLang/buildc', 'outputs': ['compiler/runtime receipts']}, {'inputs': ['display measurements', 'render outputs'], 'market_product': 'visual truth kit', 'node': 'Color calibration', 'outputs': ['measurement truth receipts']}]"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0121 keeps every growth vector at HYPOTHESIS and gap_status inferred.",
+      "deviation": 0.0,
+      "evidence": [
+        "claim_statuses=['HYPOTHESIS', 'HYPOTHESIS', 'HYPOTHESIS', 'HYPOTHESIS', 'HYPOTHESIS', 'HYPOTHESIS']"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0121 flagship receipts for Forum, Index, Telos status, and Telos catalog all have MATCH status.",
+      "deviation": 0.0,
+      "evidence": [
+        "flagship_receipts={'forum': {'confidence': 0.0, 'decided': None, 'exit_code': 0, 'status': 'MATCH', 'stderr_sha256': 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855', 'stdout_sha256': '4fe3841632e2f93c96084b52acb57b2c0fa681cb74375a1b20d42389ca51dde2'}, 'index': {'exit_code': 0, 'status': 'MATCH', 'stderr_sha256': 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855', 'stdout_sha256': 'd3366fa0b055dfe204a7129500e43991fb4e11536d3b63d945f3c0ba93c3362c', 'verification_verdict': 'MATCH'}, 'telos': {'exit_code': 0, 'status': 'MATCH', 'stderr_sha256': 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855', 'stdout_sha256': 'be17cb15259234cb4e8e95c2b36e76c90d841431729beb140294e34c5f9ebfa7', 'tool_version': '0.1.0'}, 'telos_catalog': {'exit_code': 0, 'status': 'MATCH', 'stderr_sha256': 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855', 'stdout_sha256': 'ef95a6f1ff803c483c3c4dd553fe19c37ab144113a21bc005cf4148cf31a8564'}}"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0121 validator receipt status is MATCH and test receipt status is MATCH.",
+      "deviation": 0.0,
+      "evidence": [
+        "validator={'command': 'C:\\\\Users\\\\Zain\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python312\\\\python.exe C:\\\\dev\\\\public\\\\telos\\\\docs\\\\research\\\\dogfood\\\\tools\\\\validate_pass_0121_youtube_megatool_growth_vectors.py', 'exit_code': 0, 'stdout_sha256': 'ce2e7ec6d5fe4609be249f0e069af74b0de1a6bbbfb66c9c1503bd35a9d0e3ba', 'stderr_sha256': 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855', 'status': 'MATCH'}",
+        "test={'command': 'C:\\\\Users\\\\Zain\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python312\\\\python.exe C:\\\\dev\\\\public\\\\telos\\\\docs\\\\research\\\\dogfood\\\\tools\\\\test_youtube_megatool_growth_vector_receipt.py', 'exit_code': 0, 'stdout_sha256': 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855', 'stderr_sha256': 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855', 'status': 'MATCH'}"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0121 records unsupported_claim_count 0 and current_promoted_natural_laws length 0.",
+      "deviation": 0.0,
+      "evidence": [
+        "unsupported_claim_count=0",
+        "natural_law_count=0"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0121 file hashes are {'artifact': 'f250829b7572861770509120ff53b65cabe79491d8f0b4536ec918e5fcd2574c', 'composer': '3f262a467160b9a4a20a1ea06c8880ab2fe02c60c4550db0057f877f7c1eb221', 'packet': '921b361f452e236452d0feb750359aef73315b237444a45f17030f3bd401569a', 'brief': '32a5380469d284eea68bcc14a2af047395a22d4f5a6e2948ac66781f43376b88', 'steelman': '8497c61eb4075dcc32574cddcdbf0e9b6fd8ccdd20f8079c66636d044f34ea5d', 'test': 'becf72ed1d10fce7f56d641e9cd92a22935a2f61966d28d5b882c503d25aa0ac', 'validator': 'b912614b192f9b89199f92d72603a0874ba3036b89c981026a941b1735f20159', 'validator_result': '03c583b85c50a14641fa42105cab6ac768c322ce3d6f1abf832fbdcc5d436deb', 'tool_receipts': 'a73cf2cfb0babdc50b78055b1e156d2d67fe8bd21a38aa1e9d002e7c1c082d4d'}.",
+      "deviation": 0.0,
+      "evidence": [
+        "file_hashes={'artifact': 'f250829b7572861770509120ff53b65cabe79491d8f0b4536ec918e5fcd2574c', 'composer': '3f262a467160b9a4a20a1ea06c8880ab2fe02c60c4550db0057f877f7c1eb221', 'packet': '921b361f452e236452d0feb750359aef73315b237444a45f17030f3bd401569a', 'brief': '32a5380469d284eea68bcc14a2af047395a22d4f5a6e2948ac66781f43376b88', 'steelman': '8497c61eb4075dcc32574cddcdbf0e9b6fd8ccdd20f8079c66636d044f34ea5d', 'test': 'becf72ed1d10fce7f56d641e9cd92a22935a2f61966d28d5b882c503d25aa0ac', 'validator': 'b912614b192f9b89199f92d72603a0874ba3036b89c981026a941b1735f20159', 'validator_result': '03c583b85c50a14641fa42105cab6ac768c322ce3d6f1abf832fbdcc5d436deb', 'tool_receipts': 'a73cf2cfb0babdc50b78055b1e156d2d67fe8bd21a38aa1e9d002e7c1c082d4d'}"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    }
+  ]
+}

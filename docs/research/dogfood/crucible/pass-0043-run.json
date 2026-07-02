@@ -1,0 +1,424 @@
+{
+  "ok": true,
+  "thesis": {
+    "id": "dfb13dcdd32a219f",
+    "title": "Dogfood Pass 0043 Lake Dependency Cache Binding",
+    "registered_at": 1782918048.6655326,
+    "disposition": "fenced",
+    "seal": "dfb13dcdd32a219fa471c2aa10fd145a13651af1e5ed6fcea30a8c3e890a1114",
+    "claims": [
+      {
+        "id": "bb4cf3d357222658",
+        "sha256": "bb4cf3d357222658065415840448bdea16261630d32b9628cef6127c6340416a"
+      },
+      {
+        "id": "101188569f3a139e",
+        "sha256": "101188569f3a139e14452320e6e6b6814bc512c44604f68569de0878cfeddb13"
+      },
+      {
+        "id": "47158a3f736fc5e1",
+        "sha256": "47158a3f736fc5e10f254b2ea23b38160edc308a8d7168bbd3094e4352d31ca1"
+      },
+      {
+        "id": "b9af71b3fcdd0980",
+        "sha256": "b9af71b3fcdd09801aac3e545984c409727922685d6c61a591fae9e6e24f14c3"
+      },
+      {
+        "id": "f87ff6a3a9ea99c1",
+        "sha256": "f87ff6a3a9ea99c16e1339f45875058f022863852b70ccd757e5bd14ab82d0d8"
+      },
+      {
+        "id": "bfb1daaa206a1fee",
+        "sha256": "bfb1daaa206a1feed664e3b1128f01d1c0910478b935dcc1f2dfc40529aca224"
+      },
+      {
+        "id": "4c12cb01befcd626",
+        "sha256": "4c12cb01befcd626dedea0ce217a7deec899e88fcf22f83808a59d7dedc9b957"
+      },
+      {
+        "id": "8dece9274bf3cceb",
+        "sha256": "8dece9274bf3ccebe9417b4cec9949ef3c9e6c449df4de7290d1d16e5e2dd075"
+      }
+    ]
+  },
+  "refutations": [
+    {
+      "claim_id": "bb4cf3d357222658",
+      "claim_sha256": "bb4cf3d357222658065415840448bdea16261630d32b9628cef6127c6340416a",
+      "challenge": "test the stated falsification: schemas/lake-dependency-cache-binding-pass-0043.json is missing, has a different schema, status, package_count, SHA-256, or seal",
+      "measurable": "schemas/lake-dependency-cache-binding-pass-0043.json is missing, has a different schema, status, package_count, SHA-256, or seal",
+      "source": "null"
+    },
+    {
+      "claim_id": "101188569f3a139e",
+      "claim_sha256": "101188569f3a139e14452320e6e6b6814bc512c44604f68569de0878cfeddb13",
+      "challenge": "test the stated falsification: the Lake dependency cache fixture is missing, has a different SHA-256 or seal, or is not linked from the schema",
+      "measurable": "the Lake dependency cache fixture is missing, has a different SHA-256 or seal, or is not linked from the schema",
+      "source": "null"
+    },
+    {
+      "claim_id": "47158a3f736fc5e1",
+      "claim_sha256": "47158a3f736fc5e10f254b2ea23b38160edc308a8d7168bbd3094e4352d31ca1",
+      "challenge": "test the stated falsification: the pass 0042 binding is missing, has a different SHA-256 or seal, or does not report the expected source status",
+      "measurable": "the pass 0042 binding is missing, has a different SHA-256 or seal, or does not report the expected source status",
+      "source": "null"
+    },
+    {
+      "claim_id": "b9af71b3fcdd0980",
+      "claim_sha256": "b9af71b3fcdd09801aac3e545984c409727922685d6c61a591fae9e6e24f14c3",
+      "challenge": "test the stated falsification: the package count, present package count, head match count, or clean package count differs from nine",
+      "measurable": "the package count, present package count, head match count, or clean package count differs from nine",
+      "source": "null"
+    },
+    {
+      "claim_id": "f87ff6a3a9ea99c1",
+      "claim_sha256": "f87ff6a3a9ea99c16e1339f45875058f022863852b70ccd757e5bd14ab82d0d8",
+      "challenge": "test the stated falsification: any dependency package origin URL fails to match the manifest URL after the supported .git suffix normalization",
+      "measurable": "any dependency package origin URL fails to match the manifest URL after the supported .git suffix normalization",
+      "source": "null"
+    },
+    {
+      "claim_id": "bfb1daaa206a1fee",
+      "claim_sha256": "bfb1daaa206a1feed664e3b1128f01d1c0910478b935dcc1f2dfc40529aca224",
+      "challenge": "test the stated falsification: the pass 0043 validator result is missing, reports DRIFT, or has a different package_count",
+      "measurable": "the pass 0043 validator result is missing, reports DRIFT, or has a different package_count",
+      "source": "null"
+    },
+    {
+      "claim_id": "4c12cb01befcd626",
+      "claim_sha256": "4c12cb01befcd626dedea0ce217a7deec899e88fcf22f83808a59d7dedc9b957",
+      "challenge": "test the stated falsification: packet 053 or the pass 0043 steelman is missing or has a different SHA-256",
+      "measurable": "packet 053 or the pass 0043 steelman is missing or has a different SHA-256",
+      "source": "null"
+    },
+    {
+      "claim_id": "8dece9274bf3cceb",
+      "claim_sha256": "8dece9274bf3ccebe9417b4cec9949ef3c9e6c449df4de7290d1d16e5e2dd075",
+      "challenge": "test the stated falsification: pass 0043 artifacts claim Lean replay, dependency compilation, semantic proof review, axiom-free proof, validation of every public pipeline-math claim, or a promoted natural law",
+      "measurable": "pass 0043 artifacts claim Lean replay, dependency compilation, semantic proof review, axiom-free proof, validation of every public pipeline-math claim, or a promoted natural law",
+      "source": "null"
+    }
+  ],
+  "assessment": {
+    "started_at": 1782918048.6821668,
+    "thesis_id": "dfb13dcdd32a219f",
+    "thesis_seal": "dfb13dcdd32a219fa471c2aa10fd145a13651af1e5ed6fcea30a8c3e890a1114",
+    "claims": 8,
+    "match": 8,
+    "drift": 0,
+    "unverifiable": 0,
+    "verdict_seal": "7a7f292147b0c97c67a8fab64d05d6335f320e2bcf115c43987f00749c87fed6",
+    "measurement_seal": "4d52f30dba34800628c4b46bc27daecd42915860df3df6ede11dc002d83f8c50",
+    "disposition": "fenced",
+    "stored": null,
+    "verdicts": [
+      {
+        "claim_id": "bb4cf3d357222658",
+        "claim_sha256": "bb4cf3d357222658065415840448bdea16261630d32b9628cef6127c6340416a",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "lake-dependency-schema-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "101188569f3a139e",
+        "claim_sha256": "101188569f3a139e14452320e6e6b6814bc512c44604f68569de0878cfeddb13",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "fixture-binding-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "47158a3f736fc5e1",
+        "claim_sha256": "47158a3f736fc5e10f254b2ea23b38160edc308a8d7168bbd3094e4352d31ca1",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "source-binding-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "b9af71b3fcdd0980",
+        "claim_sha256": "b9af71b3fcdd09801aac3e545984c409727922685d6c61a591fae9e6e24f14c3",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "dependency-cache-count-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "f87ff6a3a9ea99c1",
+        "claim_sha256": "f87ff6a3a9ea99c16e1339f45875058f022863852b70ccd757e5bd14ab82d0d8",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "dependency-url-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "bfb1daaa206a1fee",
+        "claim_sha256": "bfb1daaa206a1feed664e3b1128f01d1c0910478b935dcc1f2dfc40529aca224",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "validator-result-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "4c12cb01befcd626",
+        "claim_sha256": "4c12cb01befcd626dedea0ce217a7deec899e88fcf22f83808a59d7dedc9b957",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "packet-presence-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "8dece9274bf3cceb",
+        "claim_sha256": "8dece9274bf3ccebe9417b4cec9949ef3c9e6c449df4de7290d1d16e5e2dd075",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "non-promotion-boundary-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      }
+    ],
+    "measurements": [
+      {
+        "claim_id": "bb4cf3d357222658",
+        "claim_sha256": "bb4cf3d357222658065415840448bdea16261630d32b9628cef6127c6340416a",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "lake-dependency-schema-review",
+        "measured_at": 1782918048.6816506,
+        "evidence": [
+          "schema=LakeDependencyCacheBindingSet/v1",
+          "status=LAKE_DEPENDENCY_CACHE_BINDING_MATCH",
+          "package_count=9",
+          "sha256=393f71b91fb69d800aff7f81751517eb62af2ee0d098670ae97d4f16a869de22",
+          "seal=8e88cd761c7ae0996c6d20bfeb78fb5cf9bf6083a3de1f09601a62463a5d665b"
+        ]
+      },
+      {
+        "claim_id": "101188569f3a139e",
+        "claim_sha256": "101188569f3a139e14452320e6e6b6814bc512c44604f68569de0878cfeddb13",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "fixture-binding-review",
+        "measured_at": 1782918048.6816506,
+        "evidence": [
+          "fixture sha256=f5873cca174833d9f8e8e655586774d2a46487ee07a8b1710660e80eef5e3c5b",
+          "fixture seal=4eb29447aeb8870d281f61e422bd4d4c0629dc3f812ec77368b5e11712e3f94d"
+        ]
+      },
+      {
+        "claim_id": "47158a3f736fc5e1",
+        "claim_sha256": "47158a3f736fc5e10f254b2ea23b38160edc308a8d7168bbd3094e4352d31ca1",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "source-binding-review",
+        "measured_at": 1782918048.6816506,
+        "evidence": [
+          "full_source_archive_sha256=83eefbfeab7e258aae80c8bb405bd93cc9dd7117804a3e84d3c74e1534142343",
+          "full_source_archive_seal=0c5b4d29bf7ea2e72398278fd57c0cf23e5e297ce2d5d99cec84aab60e528d7c",
+          "full_source_archive_status=FULL_LEAN_SOURCE_ARCHIVE_MATCH"
+        ]
+      },
+      {
+        "claim_id": "b9af71b3fcdd0980",
+        "claim_sha256": "b9af71b3fcdd09801aac3e545984c409727922685d6c61a591fae9e6e24f14c3",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "dependency-cache-count-review",
+        "measured_at": 1782918048.6816506,
+        "evidence": [
+          "package_count=9",
+          "present_package_count=9",
+          "head_match_count=9",
+          "clean_package_count=9",
+          "all_package_heads_match_manifest=true"
+        ]
+      },
+      {
+        "claim_id": "f87ff6a3a9ea99c1",
+        "claim_sha256": "f87ff6a3a9ea99c16e1339f45875058f022863852b70ccd757e5bd14ab82d0d8",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "dependency-url-review",
+        "measured_at": 1782918048.6816506,
+        "evidence": [
+          "all_package_urls_match_manifest=true",
+          "url_normalization=.git_suffix"
+        ]
+      },
+      {
+        "claim_id": "bfb1daaa206a1fee",
+        "claim_sha256": "bfb1daaa206a1feed664e3b1128f01d1c0910478b935dcc1f2dfc40529aca224",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "validator-result-review",
+        "measured_at": 1782918048.6816506,
+        "evidence": [
+          "schemas/pass-0043-lake-dependency-cache-binding-validator-result.json status=MATCH",
+          "package_count=9",
+          "local_dependency_cache_checks=true"
+        ]
+      },
+      {
+        "claim_id": "4c12cb01befcd626",
+        "claim_sha256": "4c12cb01befcd626dedea0ce217a7deec899e88fcf22f83808a59d7dedc9b957",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "packet-presence-review",
+        "measured_at": 1782918048.6816506,
+        "evidence": [
+          "packets/053-lake-dependency-cache-binding.md sha256=96228fb6991631c4f84466bef2111e67143efe86434170f8931ca0cea6413473",
+          "adversarial/pass-0043-lake-dependency-cache-binding-steelman.md sha256=9138c8b3b1682a56afb2afba86b5de8a7fafba19e6f782eb3119fb1e252156ae"
+        ]
+      },
+      {
+        "claim_id": "8dece9274bf3cceb",
+        "claim_sha256": "8dece9274bf3ccebe9417b4cec9949ef3c9e6c449df4de7290d1d16e5e2dd075",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "non-promotion-boundary-review",
+        "measured_at": 1782918048.6816506,
+        "evidence": [
+          "non_promotion_statement present",
+          "current_promoted_natural_laws=[]",
+          "compiled_replay_status=NOT_RUN",
+          "steelman states matching package HEADs is not compilation"
+        ]
+      }
+    ],
+    "seal": "a55bb92be117989e0e04d8e1b2202ea4f42a90f4f58a44d1e432e5b2ef175ef2"
+  },
+  "verdicts": [
+    {
+      "claim_id": "bb4cf3d357222658",
+      "claim_sha256": "bb4cf3d357222658065415840448bdea16261630d32b9628cef6127c6340416a",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "lake-dependency-schema-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "101188569f3a139e",
+      "claim_sha256": "101188569f3a139e14452320e6e6b6814bc512c44604f68569de0878cfeddb13",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "fixture-binding-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "47158a3f736fc5e1",
+      "claim_sha256": "47158a3f736fc5e10f254b2ea23b38160edc308a8d7168bbd3094e4352d31ca1",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "source-binding-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "b9af71b3fcdd0980",
+      "claim_sha256": "b9af71b3fcdd09801aac3e545984c409727922685d6c61a591fae9e6e24f14c3",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "dependency-cache-count-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "f87ff6a3a9ea99c1",
+      "claim_sha256": "f87ff6a3a9ea99c16e1339f45875058f022863852b70ccd757e5bd14ab82d0d8",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "dependency-url-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "bfb1daaa206a1fee",
+      "claim_sha256": "bfb1daaa206a1feed664e3b1128f01d1c0910478b935dcc1f2dfc40529aca224",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "validator-result-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "4c12cb01befcd626",
+      "claim_sha256": "4c12cb01befcd626dedea0ce217a7deec899e88fcf22f83808a59d7dedc9b957",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "packet-presence-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "8dece9274bf3cceb",
+      "claim_sha256": "8dece9274bf3ccebe9417b4cec9949ef3c9e6c449df4de7290d1d16e5e2dd075",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "non-promotion-boundary-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    }
+  ],
+  "checks": {
+    "seals_ok": true,
+    "thesis_ok": true,
+    "verdicts_rederive": true
+  },
+  "report": "docs\\research\\dogfood\\crucible\\pass-0043-report.md",
+  "record": "docs\\research\\dogfood\\crucible\\pass-0043-run.json",
+  "bundle": null,
+  "spec": null,
+  "review": null,
+  "verifier": {
+    "mode": "cleanroom",
+    "inputs": [],
+    "excluded": [
+      "worker context",
+      "reasoning trace",
+      "intermediate steps"
+    ],
+    "checkability": "If success cannot be evaluated from the original spec and the artifact, the spec is not checkable yet."
+  }
+}

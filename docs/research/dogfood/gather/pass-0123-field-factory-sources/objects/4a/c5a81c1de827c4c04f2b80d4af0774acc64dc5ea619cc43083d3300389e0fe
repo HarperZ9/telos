@@ -1,0 +1,431 @@
+Skip to content
+You are viewing documentation hosted on GitHub Pages. This documentation is not considered stable and is subject to change.
+Click here to go to the official NVIDIA documentation site.
+You are viewing an outdated version of the BioNeMo Documentation.
+Click here to go to the latest stable version.
+BioNeMo
+Overview
+Initializing search
+NVIDIA/bionemo-framework
+Home
+BioNeMo Framework
+Models
+BioNeMo
+NVIDIA/bionemo-framework
+Home
+BioNeMo Framework
+BioNeMo Framework
+About
+About
+Overview
+Overview
+Table of contents
+BioNeMo User Success Stories
+Background
+Background
+NeMo2
+Megatron Dataset Considerations
+Release Notes
+Get Started
+Get Started
+Hardware and Software Prerequisites
+Access and Startup
+Initialization Guide
+Development
+Training Models
+Developer Guide
+Developer Guide
+bionemo-amplify
+bionemo-core
+bionemo-esm2
+bionemo-evo2
+bionemo-example-model
+bionemo-fw
+bionemo-geneformer
+bionemo-llm
+bionemo-moco
+bionemo-noodles
+bionemo-scdl
+bionemo-size-aware-batching
+bionemo-testing
+bionemo-webdatamodule
+Recipes
+Recipes
+Models
+Models
+Amplify
+Amplify
+AMPLIFY Optimized with NVIDIA TransformerEngine
+Esm2
+Esm2
+ESM-2 Optimized with NVIDIA TransformerEngine
+Geneformer
+Geneformer
+Geneformer Implemented with Transformer Engine
+Llama3
+Llama3
+🚧 Llama-3.1 Optimized with NVIDIA TransformerEngine
+Recipes
+Recipes
+Codonfm ptl te
+Codonfm ptl te
+Codonfm ptl te
+Esm2 accelerate te
+Esm2 accelerate te
+TransformerEngine-accelerated ESM-2 training with Hugging Face Trainer
+Esm2 native te
+Esm2 native te
+TransformerEngine-accelerated ESM-2 training with native PyTorch training loop
+Esm2 peft te
+Esm2 peft te
+PEFT Fine-tuning with TransformerEngine-accelerated ESM-2
+Geneformer native te mfsdp fp8
+Geneformer native te mfsdp fp8
+Geneformer native te mfsdp fp8
+Vit
+Vit
+BioNeMo-Vision: Training a VisionTransformer (ViT) with Megatron-FSDP and TransformerEngine
+Tutorials
+Tutorials
+ESM-2
+Evo2
+Evo2
+Fine tuning tutorial
+Zero-shot prediction of BRCA1 variant effects with Evo 2
+Geneformer
+Geneformer
+Geneformer Cell Type Classification Benchmark
+Geneformer gene embeddings extraction and building a gene co-expression/regulation network (GRN)
+BioNeMo - Geneformer inferencing for single cell downstream tasks
+MoCo
+MoCo
+Building Generative Models for Continuous Data via Continuous Interpolants
+Building Generative Models for Continuous Data via Continuous Interpolants
+Building Generative Models for Continuous Data via Continuous Interpolants
+Building Generative Models for Discrete Data via Discrete Interpolants
+Entropic Flow Matching for Optimal Time Scheduling
+Optimal Transport Samplers Tutorial
+SCDL
+SCDL
+Example notebook
+Data Sets
+Data Sets
+CELLxGENE
+UniProt Dataset
+Contributing
+Contributing
+Code Review
+Contributing Guidelines
+Sub package dependency graph
+Writing Documentation
+Writing Documentation
+Jupyter Notebook Support
+MkDocs
+References
+References
+Frequently Asked Questions
+API reference
+API reference
+Bionemo
+Bionemo
+Core
+Core
+Api
+Data
+Data
+Api
+Load
+Multi epoch dataset
+Permute
+Resamplers
+Resource
+Model
+Model
+Config
+Utils
+Utils
+Batching utils
+Dtypes
+Random utils
+Subprocess utils
+Evo2
+Evo2
+Data
+Data
+Fasta dataset
+Preprocess
+Sharded Eden DataLoader Implementation
+Tokenizer
+Transcript extraction
+Models
+Models
+Llama
+Mamba
+Peft
+Run
+Run
+Infer
+Predict
+Train
+Utils
+Utils
+Utils
+Callbacks
+Config
+Checkpoint
+Checkpoint
+Convert checkpoint model parallel evo2
+Convert to nemo
+Convert zero3 to zero1
+Evo2 remove optimizer
+Nemo2 to hf
+Params
+Zero3 conversion lib
+Logging
+Logging
+Callbacks
+Loss
+Loss
+Embedding variance
+Example model
+Example model
+Lightning
+Lightning
+Lightning basic
+Training scripts
+Training scripts
+Finetune mnist
+Predict mnist
+Pretrain mnist
+Geneformer
+Geneformer
+Api
+Data
+Data
+Preprocess
+Singlecell
+Singlecell
+Datamodule
+Dataset
+Preprocess
+Utils
+Model
+Model
+Finetune token regressor
+Run
+Run
+Config models
+Main
+Recipes
+Scripts
+Scripts
+Infer geneformer
+Train geneformer
+Celltype classification bench
+Celltype classification bench
+Bench
+Download
+Tokenizer
+Tokenizer
+Gene tokenizer
+Utils
+Utils
+Callbacks
+Llm
+Llm
+Api
+Lightning
+Train
+Data
+Data
+Collate
+Datamodule
+Label2id tokenizer
+Masking
+Types
+Model
+Model
+Config
+Layers
+Loss
+Lr scheduler
+Biobert
+Biobert
+Lightning
+Model
+Testing utils
+Transformer specs
+Run
+Run
+Config models
+Utils
+Utils
+Callbacks
+Datamodule utils
+Iomixin utils
+Logger utils
+Megatron utils
+Remote
+Weight utils
+Moco
+Moco
+Distributions
+Distributions
+Prior
+Prior
+Distribution
+Continuous
+Continuous
+Gaussian
+Harmonic
+Utils
+Discrete
+Discrete
+Custom
+Mask
+Uniform
+Time
+Time
+Beta
+Distribution
+Logit normal
+Uniform
+Utils
+Interpolants
+Interpolants
+Base interpolant
+Batch augmentation
+Continuous time
+Continuous time
+Continuous
+Continuous
+Continuous flow matching
+Vdm
+Data augmentation
+Data augmentation
+Augmentation types
+Equivariant ot sampler
+Kabsch augmentation
+Ot sampler
+Discrete
+Discrete
+Discrete flow matching
+Mdlm
+Discrete time
+Discrete time
+Utils
+Continuous
+Continuous
+Ddpm
+Discrete
+Discrete
+D3pm
+Schedules
+Schedules
+Inference time schedules
+Utils
+Noise
+Noise
+Continuous noise transforms
+Continuous snr transforms
+Discrete noise schedules
+Testing
+Testing
+Parallel test utils
+Noodles
+Noodles
+Nvfaidx
+Scdl
+Scdl
+Api
+Api
+Single cell row dataset
+Data
+Data
+Load
+Index
+Index
+Row feature index
+Io
+Io
+Single cell collection
+Single cell memmap dataset
+Schema
+Schema
+Header
+Headerutil
+Magic
+Version
+Scripts
+Scripts
+Convert h5ad to scdl
+Util
+Util
+Async worker queue
+Filecopyutil
+Memmap utils
+Scdl constants
+Torch dataloader utils
+Scspeedtest
+Scspeedtest
+Benchmark
+Common
+Size aware batching
+Size aware batching
+Sampler
+Utils
+Testing
+Testing
+Assert optimizer grads match
+Callbacks
+Lightning
+Megatron dataset compatibility
+Megatron parallel state utils
+Subprocess utils
+Tensorboard
+Testing callbacks
+Torch
+Utils
+Data
+Data
+Esm2
+Fasta
+Load
+Resource
+Harnesses
+Harnesses
+Mode
+Stop and go
+Webdatamodule
+Webdatamodule
+Datamodule
+Utils
+Models
+Models
+Amplify
+Evo2
+Geneformer
+ESM 2
+ESM 2
+Pre-trained Checkpoints
+Table of contents
+BioNeMo User Success Stories
+Overview of BioNeMo
+BioNeMo is a software ecosystem produced by NVIDIA for the development and deployment of life sciences-oriented artificial intelligence models. BioNeMo provides a set of tools to help researchers build, train, and deploy AI models for various biological applications. The main components of BioNeMo are:
+BioNeMo Framework: A free-to-use collection of programming tools and packages offering access to optimized, pre-trained biomolecular models and workflows. The framework enables building and customizing models, including training and fine-tuning. Capabilities span various workloads and therapeutic modalities, such as molecular generation, protein structure prediction, protein-ligand, and representation learning.
+BioNeMo NIMs: Easy-to-use, enterprise-ready inference microservices with built-in API endpoints. NIMs are engineered for scalable, self- or cloud-hosted deployment of optimized, production-grade biomolecular foundation models. Check out the growing list of BioNeMo NIMs here.
+When choosing between the BioNeMo Framework and BioNeMo NIMs, consider your project's specific requirements. The Framework is ideal for scenarios that require model training, fine-tuning, or customization, offering a comprehensive suite of tools and packages. In contrast, NIMs are optimized for inference-only workflows, providing easy-to-use, enterprise-ready microservices with built-in API endpoints. As a rule, use the Framework for custom model development or high-control modeling, and NIMs for inference against existing models.
+Get notified of new releases, bug fixes, critical security updates, and more for biopharma. Subscribe.
+BioNeMo User Success Stories
+Enhancing Biologics Discovery and Development With Generative AI - Amgen leverages BioNeMo and DGX Cloud to train large language models (LLMs) on proprietary protein sequence data, predicting protein properties and designing biologics with enhanced capabilities. By using BioNeMo, Amgen achieved faster training and up to 100X faster post-training analysis, accelerating the drug discovery process.
+Cognizant to apply generative AI to enhance drug discovery for pharmaceutical clients with NVIDIA BioNeMo - Cognizant leverages BioNeMo to enhance drug discovery for pharmaceutical clients using generative AI technology. This collaboration enables researchers to rapidly analyze vast datasets, predict interactions between drug compounds, and create new development pathways, aiming to improve productivity, reduce costs, and accelerate the development of life-saving treatments.
+Cadence and NVIDIA Unveil Groundbreaking Generative AI and Accelerated Compute-Driven Innovations - Cadence's Orion molecular design platform will integrate with BioNeMo generative AI tool to accelerate therapeutic design and shorten time to trusted results in drug discovery. The combined platform will enable pharmaceutical companies to quickly generate and assess design hypotheses across various therapeutic modalities using on-demand GPU access.
+Find more user stories on NVIDIA's Customer Stories and Technical Blog sites.
+Back to top
+Previous
+Home
+Next
+NeMo2
+© Copyright 2023-2024 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+Made with
+Material for MkDocs

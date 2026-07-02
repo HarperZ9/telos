@@ -1,0 +1,215 @@
+{
+  "checkout": {
+    "head": "fe00cf9e9080dba6634882c9316b73d536c4fe60",
+    "path": "C:\\Users\\Zain\\AppData\\Local\\Temp\\telos-pass-0138-stage1-judge-fe00cf9e",
+    "reused": true
+  },
+  "competition_packet": {
+    "adapter_contract": {
+      "external_call_step": "OpenRouter call in examples/run_smoke.py; blocked without explicit action receipt and redacted provider receipt",
+      "inputs": [
+        "complete_prompt_template",
+        "problem_jsonl",
+        "evaluation_models_json",
+        "model_aliases",
+        "OPENROUTER_API_KEY"
+      ],
+      "local_no_secret_steps": [
+        "prompt_rendering",
+        "verdict_extraction",
+        "model_config_loading",
+        "pytest_suite"
+      ],
+      "outputs": [
+        "per_problem_json_line",
+        "summary_total_calls_parseable_correct"
+      ]
+    },
+    "current_promoted_results": [],
+    "execution_boundary": {
+      "external_model_calls": 0,
+      "official_leaderboard_submission": false,
+      "openrouter_api_key_captured": false,
+      "raw_model_response_exported": false
+    },
+    "local_command_receipts": {
+      "judge_cli": {
+        "combined_excerpt": "{\"correct\": true, \"reason\": \"Answered TRUE\"}",
+        "command": "python judge.py VERDICT: TRUE --expected true --json",
+        "exit_code": 0,
+        "status": "MATCH",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout_sha256": "103f61030ac97191ee0c84eec3a40cf327772c109104745e7b60721ffa3a02a7"
+      },
+      "missing_key_boundary": {
+        "combined_excerpt": "Missing API key: set OPENROUTER_API_KEY",
+        "command": "python examples/run_smoke.py --limit 1 --models gpt-oss-120b --hide-response",
+        "exit_code": 2,
+        "external_model_call_performed": false,
+        "status": "MATCH",
+        "stderr_sha256": "21ae18419013cc5f552e27892c2620c0b459957f52481089d4f3329de055cfcc",
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "prompt_cli": {
+        "combined_excerpt": "Does x=x imply x=x? Reply VERDICT: TRUE or FALSE.",
+        "command": "python prompt.py Does {{equation1}} imply {{equation2}}? Reply VERDICT: TRUE or FALSE. x=x x=x",
+        "exit_code": 0,
+        "status": "MATCH",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout_sha256": "78eab60d2af75425f346d6d5ae2f3de6c6631a7f4a7eef16f1499be833b3a134"
+      },
+      "pytest": {
+        "combined_excerpt": "============================= test session starts =============================\nplatform win32 -- Python 3.12.10, pytest-9.0.3, pluggy-1.6.0\nrootdir: C:\\Users\\Zain\\AppData\\Local\\Temp\\telos-pass-0138-stage1-judge-fe00cf9e\nconfigfile: pyproje",
+        "command": "python -m pytest tests",
+        "exit_code": 0,
+        "status": "MATCH",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout_sha256": "fb1fd7c9edd29b3cb4e0b662a43151b31a2ed1e86e1f794633eaad78560ba953"
+      }
+    },
+    "model_config_summary": {
+      "allow_fallbacks": false,
+      "max_output_tokens_cap": 8192,
+      "model_aliases": [
+        "gemma-4-31b-it",
+        "gpt-oss-120b",
+        "llama-3-3-70b-instruct"
+      ],
+      "model_count": 3,
+      "routes": [
+        {
+          "alias": "gemma-4-31b-it",
+          "max_output_tokens": 8192,
+          "model": "google/gemma-4-31b-it",
+          "provider": "novita/bf16",
+          "seed": 0,
+          "temperature": 0.0
+        },
+        {
+          "alias": "gpt-oss-120b",
+          "max_output_tokens": 8192,
+          "model": "openai/gpt-oss-120b",
+          "provider": "deepinfra/bf16",
+          "seed": 0,
+          "temperature": 0.0
+        },
+        {
+          "alias": "llama-3-3-70b-instruct",
+          "max_output_tokens": 8192,
+          "model": "meta-llama/llama-3.3-70b-instruct",
+          "provider": "deepinfra/fp8",
+          "seed": 0,
+          "temperature": 0.0
+        }
+      ]
+    },
+    "packet_id": "sair-stage1-judge-repo-adapter-pass-0138",
+    "promotion_boundary": "This pass verifies the public judge repository command surface and local no-secret gates. It does not claim official SAIR evaluation, model accuracy, leaderboard standing, theorem proof, market fit, or a promoted natural law.",
+    "repository": {
+      "checkout_kind": "temp_external_readonly_checkout",
+      "head_commit": "fe00cf9e9080dba6634882c9316b73d536c4fe60",
+      "ls_remote_head": "fe00cf9e9080dba6634882c9316b73d536c4fe60",
+      "observed_files": [
+        "README.md",
+        "pyproject.toml",
+        "evaluation_models.json",
+        "examples/run_smoke.py",
+        "examples/example_complete_prompt.txt",
+        "examples/problems_hard3_20.jsonl",
+        "judge.py",
+        "llm.py",
+        "models.py",
+        "prompt.py",
+        "tests/test_judge.py",
+        "tests/test_llm.py",
+        "tests/test_models.py",
+        "tests/test_prompt.py",
+        "tests/test_run_smoke.py"
+      ],
+      "source_hashes": {
+        "README.md": "323c7149baee4b1df562a5c6edccab9a4f1e27ff4c1a162d66883d3d2972941e",
+        "evaluation_models.json": "fbfa3fdc9a446172c6cbbb41f3d010c0f2013d14f5aded1e27938b7a7b717af1",
+        "examples/example_complete_prompt.txt": "bd08e1e2ae7a52088a7cda10ab90ec78a3d05ba31e92d48a3bcc123d765279b9",
+        "examples/problems_hard3_20.jsonl": "d85127887f4cc385bf7600afe713c2b141bc26dd77babe71d41d407a2a0abf83",
+        "examples/run_smoke.py": "03522422d063bef30fdade011fb8aac7dd8dc786b01e270b5fa5e0f0a1144590",
+        "judge.py": "2f8dfbdde73a711257d10ecc01f610b45aea46f819dd7e9b18f739d3b7f1c0cc",
+        "llm.py": "ca7e7fd1badb604204441a00aa0347ef0927476e27acfa89b6a09a77351228fc",
+        "models.py": "19fa4a49f47f66d712d91a00b4a9e0270583d7be4a5a53f47c4319e44f57dfc1",
+        "prompt.py": "8bf093aec5a25c17ecb94f5d991f2666bd9a9f7a2bceb54613b164121096022e",
+        "pyproject.toml": "6662a3ba824604715bcc7818c92adcf2a7901c5d40018ae73d25d20eba6b27b8",
+        "tests/test_judge.py": "e1ce2075d5223485cda6aa4b2252f57bd211176cf20d656f95b14e96ef6e81be",
+        "tests/test_llm.py": "b6365fe520516b7c54cf6504fe88c8da0354cfd7d583b23bccff4078d18fa7e0",
+        "tests/test_models.py": "04f5775b863c6d7437624514cafc7a4df9bd3a91482fef8a8c212377332a320e",
+        "tests/test_prompt.py": "afdfb7aa27862227ded8c54bf259353ae7bc9f86131f34ddcba470cad2530d1b",
+        "tests/test_run_smoke.py": "53dad327f01c0edf635545dba230793adf10e8554ef9de2c0f8e7748b7139936"
+      },
+      "url": "https://github.com/SAIRcompetition/equational-theories-stage1-judge.git"
+    },
+    "source_refs": [
+      "https://github.com/SAIRcompetition/equational-theories-stage1-judge",
+      "https://competition.sair.foundation/competitions/mathematics-distillation-challenge-equational-theories-stage1/overview",
+      "https://sair.foundation/",
+      "docs/research/dogfood/schemas/sair-stage1-competition-proof-packet-pass-0137.json"
+    ]
+  },
+  "generated_on": "2026-07-02",
+  "negative_fixtures": [
+    {
+      "failures": [
+        "head_commit_mismatch"
+      ],
+      "fixture_id": "head_commit_mismatch",
+      "observed_status": "REJECTED",
+      "status": "MATCH"
+    },
+    {
+      "failures": [
+        "missing_observed_source_hashes"
+      ],
+      "fixture_id": "missing_source_hashes",
+      "observed_status": "REJECTED",
+      "status": "MATCH"
+    },
+    {
+      "failures": [
+        "fallbacks_not_disabled"
+      ],
+      "fixture_id": "fallbacks_enabled",
+      "observed_status": "REJECTED",
+      "status": "MATCH"
+    },
+    {
+      "failures": [
+        "external_model_call_present"
+      ],
+      "fixture_id": "hidden_external_model_call",
+      "observed_status": "REJECTED",
+      "status": "MATCH"
+    },
+    {
+      "failures": [
+        "local_command_receipt_drift"
+      ],
+      "fixture_id": "missing_key_boundary_ignored",
+      "observed_status": "REJECTED",
+      "status": "MATCH"
+    },
+    {
+      "failures": [
+        "promoted_result_present"
+      ],
+      "fixture_id": "leaderboard_claim_promoted",
+      "observed_status": "REJECTED",
+      "status": "MATCH"
+    }
+  ],
+  "pass": "0138",
+  "positive_validation": {
+    "failures": [],
+    "status": "MATCH"
+  },
+  "schema": "SAIRStage1JudgeRepoAdapterReceipt/v1",
+  "seal": "2dc78bdbcfd8ec3350cb468ee5820cc3669ed32c2ff266295dd79a6141af8a0a",
+  "status": "SAIR_STAGE1_JUDGE_REPO_ADAPTER_MATCH",
+  "tooling_gap": "Forum needs a route for formal_math_competition_repo_adapter so source-lead, fixture, public judge repo, hosted-model receipt, and Lean certificate stages are distinguishable."
+}

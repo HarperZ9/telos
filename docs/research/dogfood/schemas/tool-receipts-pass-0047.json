@@ -1,0 +1,126 @@
+{
+  "generated_on": "2026-07-01",
+  "non_promotion_statement": "Tool receipts prove packet readback, AI4Science proof-market source validator MATCH, ten live source anchors, Telos/Index/Gather/Forum/Crucible availability, and hypothesis-only uniqueness boundaries. They do not prove product-market fit, uniqueness as fact, buyer adoption, scientific truth, or any natural law.",
+  "pass": "0047",
+  "receipts": [
+    {
+      "command": "map --root docs/research/dogfood --json",
+      "dirty_count": 0,
+      "repo_count": 0,
+      "role": "dogfood-substrate-map",
+      "root_sha256_prefix": "f2f0af39219698a9",
+      "schema_version": 1,
+      "status": "MATCH",
+      "tool": "index",
+      "tool_version": "2.8.0",
+      "top_level_count": 56
+    },
+    {
+      "command": "index_context_envelope",
+      "graph_pack_sha256": "185c0236c1370daa81b49d11c7cab1f29c2a279be3d83302150f0d63396ad6dd",
+      "privacy_source_refs_only": true,
+      "schema": "project-telos.context-envelope/v1",
+      "status": "MATCH",
+      "tool": "mcp__index.index_context_envelope",
+      "verification_verdict": "MATCH"
+    },
+    {
+      "artifact": "packets/057-ai4science-proof-market-sources.md",
+      "chars": 1021,
+      "command": "docs",
+      "seal": "c9fd9d98698673b4ef599b94aa93324c759f78c0d14c0fa9874c7aa999029638",
+      "sha256": "33b9e430bd8de0c8a9ab316b819e79d5dc287ded8f8d997dd30f1126f3e23278",
+      "status": "MATCH",
+      "tool": "gather",
+      "verified": true
+    },
+    {
+      "category_count": 9,
+      "command": "probe_ai4science_proof_market_sources.py",
+      "line_count": 209,
+      "schema": "AI4ScienceProofMarketSourcesSet/v1",
+      "seal": "aeee3afe3d60ce448325851bf5121dbc2229bcb6f74cfcf7515e8f7a5d117002",
+      "source_match_count": 10,
+      "status": "AI4SCIENCE_PROOF_MARKET_SOURCES_MATCH",
+      "tool": "python",
+      "uniqueness_claim_status": "HYPOTHESIS_ONLY",
+      "wedge_count": 5
+    },
+    {
+      "command": "validate_pass_0047_ai4science_proof_market_sources.py",
+      "drift": 0,
+      "line_count": 94,
+      "match": 1,
+      "schema": "Pass0047AI4ScienceProofMarketSourcesValidatorRun/v1",
+      "source_match_count": 10,
+      "status": "MATCH",
+      "tool": "python"
+    },
+    {
+      "aggregate_verdict": "MATCH",
+      "check_count": 14,
+      "command": "telos_operator_doctor",
+      "passed_count": 14,
+      "status": "MATCH",
+      "telos_tool_count": 37,
+      "tool": "mcp__telos.telos_operator_doctor",
+      "tool_count": 65
+    },
+    {
+      "candidates": [
+        {
+          "agent": "deep-research",
+          "score": 0.4
+        },
+        {
+          "agent": "data-pipeline",
+          "score": 0.2
+        },
+        {
+          "agent": "project-telos",
+          "score": 0.045454545454545456
+        }
+      ],
+      "command": "route",
+      "confidence": 0.2,
+      "decided": null,
+      "needs_escalation": true,
+      "status": "MATCH",
+      "tool": "forum"
+    },
+    {
+      "chain": true,
+      "command": "ledger verify",
+      "deep": true,
+      "status": "MATCH",
+      "tool": "forum"
+    },
+    {
+      "command": "submit",
+      "error": "submit needs a model executor. Forum is model-agnostic: pass --cmd \"<model cli>\" (any command, local models need no account), --chat-url <openai-compatible url> (e.g. a local Ollama server), or --api (Anthropic).",
+      "request": "Dogfood pass 0047 adversarial review for AI4Science proof-market source matrix",
+      "status": "UNVERIFIABLE",
+      "tool": "forum"
+    },
+    {
+      "assessment_seal": "a71b63e9d4a0f9a3a0f3fe0884b8f971ee45a9a7b25ccef3db6bbbc0a79f1943",
+      "claims": 8,
+      "command": "run",
+      "drift": 0,
+      "match": 8,
+      "measurement_seal": "d0877296c09c1e92ada75491127608af377fc10a6865c1a78cd1626308129979",
+      "run_sha256": "13a1d7f8b697cb0c8af67698b328294d5fc59f66bb5060942d8489772b1cd8d8",
+      "seals_ok": true,
+      "status": "MATCH",
+      "thesis_id": "c40f9db7b19dca1b",
+      "thesis_ok": true,
+      "thesis_seal": "c40f9db7b19dca1b049bfd63639b7a9f69c1702a704e801690a3992e74698f51",
+      "tool": "crucible",
+      "unverifiable": 0,
+      "verdict_seal": "b52c2a30263a2dbe2e387b502356b0db979b4522dcfe637e1725195e704155f8",
+      "verdicts_rederive": true
+    }
+  ],
+  "schema": "DogfoodToolReceiptSet/v1",
+  "status": "MATCH_WITH_FORUM_SUBMIT_GAP_AND_HYPOTHESIS_ONLY_UNIQUENESS"
+}

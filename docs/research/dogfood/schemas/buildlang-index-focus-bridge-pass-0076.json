@@ -1,0 +1,168 @@
+{
+  "advancement_vector": "Implement path-scoped Index source-ref expansion before promoting BuildLang domain envelopes beyond root-context fallback.",
+  "bridge_required": true,
+  "bridge_strategy": {
+    "name": "index_path_selector_source_ref_bridge",
+    "purpose": "Convert explicit BuildLang path selections into source-ref manifests that can be joined into Telos domain envelopes.",
+    "required_capabilities": [
+      "Accept filesystem path selectors under --root without treating them as repo names.",
+      "Emit source refs for selected directories and files without including raw private payloads.",
+      "Reject missing requested paths such as build-universe until a concrete source root exists.",
+      "Carry graph-pack and freshness receipts for selected path manifests."
+    ]
+  },
+  "buildlang_root": "C:\\dev\\public\\pubscan\\quantalang",
+  "focus_probes": [
+    {
+      "command": "index context --root C:\\dev\\public\\pubscan\\quantalang --json --focus buildlang",
+      "diagnostic_contains_unknown": true,
+      "exit_code": 2,
+      "expected_reject": true,
+      "stderr_excerpt": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_excerpt": "unknown project: 'buildlang'",
+      "stdout_sha256": "b4d905d4e548fe4c542b5024d51553a936f63d0ec8351c0d3360d62a71d034c5",
+      "verdict": "EXPECTED_REJECT"
+    },
+    {
+      "command": "index context --root C:\\dev\\public\\pubscan\\quantalang --json --focus compiler",
+      "diagnostic_contains_unknown": true,
+      "exit_code": 2,
+      "expected_reject": true,
+      "stderr_excerpt": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_excerpt": "unknown project: 'compiler'",
+      "stdout_sha256": "db3932710da3fbd41076c47063b4e994312e9843bd8b692059622c328bb3fbf6",
+      "verdict": "EXPECTED_REJECT"
+    },
+    {
+      "command": "index context --root C:\\dev\\public\\pubscan\\quantalang --json --focus build-universe",
+      "diagnostic_contains_unknown": true,
+      "exit_code": 2,
+      "expected_reject": true,
+      "stderr_excerpt": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_excerpt": "unknown project: 'build-universe'",
+      "stdout_sha256": "bfc12ad16a8a7cc5e81ec0a910fc22e7d401eb9d1364aa03f0270467834d90db",
+      "verdict": "EXPECTED_REJECT"
+    },
+    {
+      "command": "index context-envelope --root C:\\dev\\public\\pubscan\\quantalang --json --focus buildlang --budget 3000",
+      "diagnostic_contains_unknown": true,
+      "exit_code": 2,
+      "expected_reject": true,
+      "stderr_excerpt": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_excerpt": "unknown focus repo: buildlang",
+      "stdout_sha256": "7b24c1e9b24a9f1ead29d9ed5310dd70fe9eb8d423f198ca7a2c94ae3a55bd15",
+      "verdict": "EXPECTED_REJECT"
+    }
+  ],
+  "generated_on": "2026-07-01",
+  "index_map": {
+    "dirty_count": 1,
+    "repo_count": 1,
+    "requested_path_presence": {
+      "build-universe": {
+        "class": null,
+        "kind": null,
+        "present": false
+      },
+      "buildlang": {
+        "class": "entry",
+        "kind": "directory",
+        "present": true
+      },
+      "compiler": {
+        "class": "entry",
+        "kind": "directory",
+        "present": true
+      }
+    },
+    "schema_version": 1,
+    "status": "MATCH",
+    "tool_version": "2.8.0"
+  },
+  "negative_fixtures": [
+    {
+      "expected_status": "REJECT",
+      "fixture_id": "claims_path_scoped_context_match",
+      "reject_reason": "focus_probes_rejected"
+    },
+    {
+      "expected_status": "REJECT",
+      "fixture_id": "missing_root_context_envelope",
+      "reject_reason": "root_context_required"
+    },
+    {
+      "expected_status": "REJECT",
+      "fixture_id": "missing_focus_probe_rejections",
+      "reject_reason": "negative_evidence_required"
+    },
+    {
+      "expected_status": "REJECT",
+      "fixture_id": "claims_build_universe_top_level_present",
+      "reject_reason": "build_universe_absent_in_index_map"
+    },
+    {
+      "expected_status": "REJECT",
+      "fixture_id": "missing_buildlang_source_receipt",
+      "reject_reason": "source_ref_receipt_required"
+    },
+    {
+      "expected_status": "REJECT",
+      "fixture_id": "raw_private_payload_required",
+      "reject_reason": "source_refs_only_boundary"
+    },
+    {
+      "expected_status": "REJECT",
+      "fixture_id": "claims_bridge_implemented_in_index",
+      "reject_reason": "bridge_plan_not_index_feature"
+    },
+    {
+      "expected_status": "REJECT",
+      "fixture_id": "unsupported_claim_promoted",
+      "reject_reason": "unsupported_claim_count_nonzero"
+    }
+  ],
+  "non_promotion_statement": "Pass 0076 proves a bridge requirement, not a completed Index feature. It does not prove path-scoped context, Build Universe source coverage, market adoption, scientific discovery, or a natural law.",
+  "pass": "0076",
+  "path_scoped_context": false,
+  "requested_paths": [
+    "buildlang",
+    "compiler",
+    "build-universe"
+  ],
+  "root_context": {
+    "freshness_root_sha256": "f24571d62898367bfd5e85ebfb9f02d20deac850bb99cfc4263cffb294dc3ddb",
+    "graph_pack_sha256": "68992de7c0512a78c10911cbfba398b2ad828962ce06b941b78007dc2a211b58",
+    "raw_source_included": false,
+    "retained_names": [
+      "quantalang"
+    ],
+    "root": "C:\\dev\\public\\pubscan\\quantalang",
+    "schema": "project-telos.context-envelope/v1",
+    "selected_repos": 1,
+    "source_ref_count": 1,
+    "source_ref_paths": [
+      "README.md"
+    ],
+    "source_refs_only": true,
+    "status": "MATCH",
+    "tool": "index.context.envelope"
+  },
+  "root_context_fallback": true,
+  "schema": "BuildLangIndexFocusBridge/v1",
+  "seal": "9cf57e0ee809d246a97a6d5a6b6490836fb196c553dca86b8a66b1d14655e7e7",
+  "source_ref_receipt": {
+    "corpus_verify_status": "MATCH",
+    "production_backend_claim": "C backend only",
+    "program_count": 8,
+    "receipt_pass": "0074",
+    "receipt_seal": "be025df926cbb5fa2948552e9b43941fd0d6f863cad19ea2e4d18d32330a3a03",
+    "source_ref_count": 13
+  },
+  "status": "BUILDLANG_INDEX_FOCUS_BRIDGE_REQUIRED",
+  "unsupported_claim_count": 0,
+  "validation_errors": []
+}

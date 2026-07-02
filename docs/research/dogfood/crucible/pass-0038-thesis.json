@@ -1,0 +1,38 @@
+{
+  "claims": [
+    {
+      "falsification": "schemas/theorem-blob-statement-replay-pass-0038.json is missing, has a different schema, status, theorem_count, blob_check_count, unique_blob_file_count, SHA-256, or seal",
+      "text": "Pass 0038 created a TheoremBlobStatementReplaySet/v1 artifact with status BLOB_STATEMENT_REPLAY_MATCH, theorem_count 10, blob_check_count 10, unique_blob_file_count 10, sha256 9ee5d5c8330911c04cc5de9a8a5856d18a46373a8a641e6f3fe3c2cffa4c2915, and seal 53541e1bdcb049e8823dff70b6f20b873a5dabea3ce63a854bdcdd53133e43bd."
+    },
+    {
+      "falsification": "the blob statement replay fixture is missing, has a different SHA-256 or seal, or is not linked from the schema",
+      "text": "Pass 0038 records fixture fixtures/theorem-blob-statement-replay-pass-0038.json with sha256 9d6bef985d4440d10110b7398bee1fbb74059b9ac6f55512910e36932edbaf26 and seal ca0214a4d5693a02d5fac1d441058ea3c773f30307abcfec3514004f71c12848."
+    },
+    {
+      "falsification": "the pass 0037 or pass 0036 binding is missing, has a different SHA-256 or seal, or does not report the expected source status",
+      "text": "Pass 0038 binds to pass 0037 statement equivalence and pass 0036 source-ref integrity with the recorded SHA-256 and seals, and source statuses STATEMENT_EQUIVALENCE_MATCH and SOURCE_REF_INTEGRITY_MATCH."
+    },
+    {
+      "falsification": "any of the ten blob statement checks has blob_frozen_solution_status, blob_frozen_proof_status, blob_discharge_status, or blob_signature_status other than MATCH",
+      "text": "Pass 0038 records all ten theorem blob statement checks with frozen-solution, frozen-proof, discharge-gate, and overall blob signature statuses MATCH."
+    },
+    {
+      "falsification": "any unique blob file has Git blob SHA-256 or blob id differing from the pass 0036 source-ref packet",
+      "text": "Pass 0038 records all ten unique blob files with Git blob SHA-256 and blob id matching pass 0036 source-ref integrity rows."
+    },
+    {
+      "falsification": "the pass 0038 validator result is missing, reports DRIFT, or has different theorem_count, blob_check_count, or unique_blob_file_count",
+      "text": "Pass 0038 validator result reports MATCH with theorem_count 10, blob_check_count 10, and unique_blob_file_count 10."
+    },
+    {
+      "falsification": "packet 048 or the pass 0038 steelman is missing or has a different SHA-256",
+      "text": "Pass 0038 records packet 048 with sha256 751c40c4ad423e60ee375452cccbf3624ef6fd7e3c5ddf8ffd12356babef50ad and local steelman with sha256 09b2d1e186fbfcbfdfcfe64473a915b66eaf409f36786940a87ae06b7fc2b52c."
+    },
+    {
+      "falsification": "pass 0038 artifacts claim Lean replay, semantic proof review, axiom-free proof, validation of every public pipeline-math claim, or a promoted natural law",
+      "text": "Pass 0038 preserves non-promotion boundaries: it checks source-signature replay from Git blob bytes only, does not re-run Lean, does not claim semantic proof review, and current_promoted_natural_laws remains none."
+    }
+  ],
+  "disposition": "fenced",
+  "title": "Dogfood Pass 0038 Git Blob Statement Replay"
+}

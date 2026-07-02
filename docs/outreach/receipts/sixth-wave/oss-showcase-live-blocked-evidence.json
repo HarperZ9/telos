@@ -1,0 +1,39 @@
+{
+  "live_scout": true,
+  "scope": "Live read-only GitHub scout intake for the top current candidate. This is not a patch, reproduction run, test run, or maintainer-ready PR packet.",
+  "source_receipt": "docs/outreach/receipts/sixth-wave/oss-showcase-live-scout/scout.json",
+  "candidate_receipt": "docs/outreach/receipts/sixth-wave/oss-showcase-live-top-candidate.json",
+  "reproduction": {
+    "command": null,
+    "status": "not-run"
+  },
+  "tests": [],
+  "crucible": {
+    "verdict": "UNVERIFIABLE",
+    "detail": "Live scout identified a candidate, but no local reproduction, patch, passing test, or verifier check has been run."
+  },
+  "not_verified": {
+    "files_not_inspected": [
+      "pandas source tree"
+    ],
+    "tests_skipped": [
+      "targeted pandas regression test",
+      "full pandas test suite"
+    ],
+    "assumptions": [
+      "GitHub issue metadata was read through gh search at capture time",
+      "candidate priority is a scout heuristic, not a correctness claim"
+    ],
+    "unobserved_state": [
+      "local clone state",
+      "current pandas main branch behavior",
+      "patch feasibility",
+      "maintainer intent"
+    ]
+  },
+  "risk_notes": [
+    "live search result only",
+    "no patch evidence",
+    "no local test evidence"
+  ]
+}

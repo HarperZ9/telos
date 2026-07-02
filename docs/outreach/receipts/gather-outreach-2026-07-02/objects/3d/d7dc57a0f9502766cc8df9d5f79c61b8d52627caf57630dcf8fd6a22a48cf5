@@ -1,0 +1,141 @@
+# Project Telos Visibility Content Queue
+
+Date: 2026-07-02
+
+This queue is for the parallel Codex posting session. Posts should be adapted to the platform, but the claims and evidence boundaries should remain intact.
+
+## Post 1: MCP Drift
+
+Short post:
+
+> MCP drift is a real failure mode. A host can load a stale server while the source tree and tests are current. Telos now treats the tool list itself as evidence: catalog, manifest, source-checkout launch, compatibility doctor, operator doctor. Current local surface: 70 tools, 70 available.
+
+Evidence:
+
+- `npm.cmd run catalog`
+- `npm.cmd run manifest`
+- `node demo/compatibility-doctor.mjs --summary`
+
+## Post 2: The Five-Flagship Loop
+
+Short post:
+
+> The Telos loop is simple: Gather sources, Index context, Forum routes, Crucible verifies, Telos packages the action. The model can propose, but the packet decides what can be re-checked.
+
+Evidence:
+
+- `docs/CURRENT-STATE.md`
+- `node demo/operator-doctor.mjs --summary`
+
+## Post 3: Source Federation
+
+Short post:
+
+> The next bottleneck in AI research tools is not prettier summaries. It is source admission. Which sources were captured? Which failed? Which were fallback docs? Which claims were not promoted? Pass 0151 closes the broad source-expansion phase with 83 sources, 15 families, 40 domains, and 24 verified captures.
+
+Evidence:
+
+- `docs/research/dogfood/packets/161-frontier-problem-source-federation.md`
+- pass 0151 validator
+
+## Post 4: Proof Packets
+
+Short post:
+
+> A proof packet is not a claim that the AI is right. It is a record of what source entered, what test was run, what failed, what matched, and what remains unverifiable.
+
+Evidence:
+
+- `crucible --help`
+- `docs/research/PROJECT-TELOS-RESEARCH-WINDDOWN-2026-07-02.md`
+
+## Post 5: Agent Receipts
+
+Short post:
+
+> Tracing tells you what happened. An action proof packet should also tell you what was allowed, which context was selected, what changed, and which claims survived re-check.
+
+Evidence:
+
+- `node demo/action-receipt.mjs`
+- `node demo/context-pack.mjs`
+- `node demo/loop-ledger.mjs`
+
+## Post 6: Learn
+
+Short post:
+
+> A learning tool should not help you fake mastery. Learn separates study support from graded work, records practice evidence, and re-verifies tutor receipts from the evidence instead of trusting stored booleans.
+
+Evidence:
+
+- `C:\dev\public\learn\README.md`
+
+## Post 7: BuildLang
+
+Short post:
+
+> BuildLang/buildc is the compiler pillar of the Telos roadmap: typed effects, policy receipts, source digests, C as the production backend, HLSL/GLSL for shaders, and experimental future backends fenced honestly.
+
+Evidence:
+
+- `C:\dev\public\pubscan\quantalang\README.md`
+
+## Post 8: Build Universe Boundary
+
+Short post:
+
+> Build Universe is ambitious, but the honest line matters: it is alpha, BuildLang is the mature compiler piece, and the whole ecosystem does not compile as one system yet. That is not a weakness. That is a roadmap with receipts instead of mythology.
+
+Evidence:
+
+- `C:\dev\public\build-universe\README.md`
+
+## Post 9: Build Color
+
+Short post:
+
+> Build Color is a strong early proof domain because color has visible outputs, known metrics, and measurable disagreement. It is the right kind of substrate for Telos: human-inspectable and machine-checkable.
+
+Evidence:
+
+- `C:\dev\public\build-color\README.md`
+- `docs/research/dogfood/packets/021-color-calibration-proof-kit.md`
+
+## Post 10: Emet
+
+Short post:
+
+> Emet is the external witness. Three verdicts: `MATCH`, `DRIFT`, `UNVERIFIABLE`. No `TRUSTED`. No approval theater. Just re-derived bytes and source/view consistency.
+
+Evidence:
+
+- `C:\dev\public\pubscan\emet\README.md`
+
+## Post 11: What Telos Is Not
+
+Short post:
+
+> Telos is not "the model is always right." It is the opposite. Telos assumes the model is brilliant, forgetful, and overconfident, then builds the missing organs around it: memory, source intake, action receipts, and external verification.
+
+Evidence:
+
+- `README.md`
+
+## Post 12: Call For Workflows
+
+Short post:
+
+> The best Telos test case is a workflow where a model answer is not enough. Bring a task where you need to see sources, context, actions, and verification later. If a receipt cannot survive inspection, the system should say so.
+
+Evidence:
+
+- `node demo/compatibility-doctor.mjs --summary`
+- `node demo/operator-doctor.mjs --summary`
+
+## Posting Cadence
+
+- Start with Post 1 because it is current and fully verified.
+- Use one screenshot or terminal snippet per post when possible.
+- Do not post BuildLang, Learn, or Emet as live CLI demos until their local one-command paths are rechecked.
+- Convert every strong claim into a command-backed claim.

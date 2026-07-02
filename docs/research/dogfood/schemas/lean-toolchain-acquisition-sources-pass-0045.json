@@ -1,0 +1,95 @@
+{
+  "action_receipt_proposal": {
+    "action_id": "act_dogfood_0045_lean_toolchain_acquisition_sources",
+    "authority_class": "read_only_external_source_fetch",
+    "event_id": "evt_dogfood_0045_lean_toolchain_acquisition_sources",
+    "event_type": "lean_toolchain_acquisition_sources_verified",
+    "external_call_performed": true,
+    "external_write_performed": false,
+    "installer_script_executed": false,
+    "normal_path_modified": false,
+    "result_state": "completed",
+    "verification_verdict": "MATCH"
+  },
+  "current_promoted_natural_laws": [],
+  "executable_preflight_binding": {
+    "path": "schemas/lean-lake-executable-preflight-pass-0044.json",
+    "seal": "7139ea2e8ed154dcb5069fd5d5433fec85103b88d9bf309450dfd1193a6de607",
+    "sha256": "d98513f50b384ed38e4d52d6379916bc6b43dacc318571e0299ecd1d3dcc055f",
+    "source_status": "LEAN_LAKE_EXECUTABLE_PREFLIGHT_BLOCKED"
+  },
+  "expected_project_toolchain": "leanprover/lean4:v4.31.0",
+  "generated_on": "2026-07-01",
+  "non_promotion_statement": "Pass 0045 fetches official acquisition sources only. It does not install Elan, run Lean, run lake build, compile dependencies, validate every public pipeline-math claim, or promote any natural law.",
+  "pass": "0045",
+  "schema": "LeanToolchainAcquisitionSourcesSet/v1",
+  "seal": "b31f2684d77de7f83ef71ec4b4ef1230d8b265c36758736d03cffade4149868e",
+  "source_receipts": [
+    {
+      "bytes": 131365,
+      "contains": {
+        "elan-init.ps1": true,
+        "lake build": true,
+        "powershell -ExecutionPolicy Bypass": true
+      },
+      "id": "lean_manual_install",
+      "sha256": "a452aecbbaad48706bd5a63443e13d49af8aef314ed2e9b0d46cbf5231d1a723",
+      "status": "MATCH",
+      "status_code": 200,
+      "url": "https://lean-lang.org/install/manual/"
+    },
+    {
+      "bytes": 122985,
+      "contains": {
+        "lean-toolchain": true,
+        "leanprover/lean4": true,
+        "toolchain file": true
+      },
+      "id": "lean_elan_toolchains",
+      "sha256": "fb7052c9a665a1e685ec930895eb92bb7111ccea519de43a482597b4f6d167f6",
+      "status": "MATCH",
+      "status_code": 200,
+      "url": "https://lean-lang.org/doc/reference/latest/Build-Tools-and-Distribution/Managing-Toolchains-with-Elan/"
+    },
+    {
+      "bytes": 3578,
+      "contains": {
+        "elan-init.ps1": true,
+        "lake": true,
+        "lean": true
+      },
+      "id": "elan_readme",
+      "sha256": "6778277cc096b30fbd7132ac420a85184a39a7f5b2b863b1841efee13de84d44",
+      "status": "MATCH",
+      "status_code": 200,
+      "url": "https://raw.githubusercontent.com/leanprover/elan/master/README.md"
+    },
+    {
+      "bytes": 3044,
+      "contains": {
+        "DefaultToolchain": true,
+        "NoModifyPath": true,
+        "elan-init": true
+      },
+      "id": "elan_windows_installer_script",
+      "sha256": "1d3c66430d0e7b719b104e1dea80e395a066e96c37b886f2de4b0e9025a037fb",
+      "status": "MATCH",
+      "status_code": 200,
+      "url": "https://elan.lean-lang.org/elan-init.ps1"
+    }
+  ],
+  "status": "LEAN_TOOLCHAIN_ACQUISITION_SOURCES_MATCH",
+  "toolchain_acquisition_fixture": {
+    "path": "fixtures/lean-toolchain-acquisition-sources-pass-0045.json",
+    "schema": "LeanToolchainAcquisitionSourcesFixture/v1",
+    "seal": "3aa096cc668fe8cc30ccdb52f752ec548d851e3a4acd5c05bfb3fd814f9ec31e",
+    "sha256": "ade36a73501fa595da988852cbbd89a5ff69039d06359c22b2c5d41f2e30ac56"
+  },
+  "verifier_measurements": {
+    "installer_script_sha256": "1d3c66430d0e7b719b104e1dea80e395a066e96c37b886f2de4b0e9025a037fb",
+    "source_count": 4,
+    "source_match_count": 4,
+    "windows_installer_script_executed": false,
+    "windows_installer_script_fetched": true
+  }
+}

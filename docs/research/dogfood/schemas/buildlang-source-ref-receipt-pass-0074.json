@@ -1,0 +1,209 @@
+{
+  "buildlang_root": "C:\\dev\\public\\pubscan\\quantalang",
+  "corpus_verify": {
+    "command": "cargo run --quiet --bin buildc -- corpus verify",
+    "cwd": "C:\\dev\\public\\pubscan\\quantalang\\compiler",
+    "drift": 0,
+    "exit_code": 0,
+    "expected_line_checks": {
+      "c execution: 8 passed": true,
+      "c receipt: ok": true,
+      "lsp dispatch receipt: ok": true,
+      "manifest: 8 program(s)": true,
+      "memory layout receipt: ok": true,
+      "mir representation receipt: ok": true,
+      "module graph receipt: ok": true,
+      "rust receipt: ok": true,
+      "substrate receipt: ok": true,
+      "symbol graph receipt: ok": true
+    },
+    "match": 10,
+    "status": "MATCH",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "fbe2daff8da1804b00cafe9a9fff36fc649429071b25f6a2561003255f6310d3"
+  },
+  "experimental_backend_boundary": "Rust, HLSL, GLSL, SPIR-V, LLVM, WASM, x86-64, and ARM64 remain separate maturity lanes unless their own receipts prove more.",
+  "generated_on": "2026-07-01",
+  "negative_fixtures": [
+    {
+      "expected_status": "REJECT",
+      "fixture_id": "missing_readme_ref",
+      "reject_reason": "missing_source_ref:README.md"
+    },
+    {
+      "expected_status": "REJECT",
+      "fixture_id": "missing_manifest_ref",
+      "reject_reason": "missing_source_ref:semantic-corpus/manifest.json"
+    },
+    {
+      "expected_status": "REJECT",
+      "fixture_id": "corpus_verify_not_run",
+      "reject_reason": "missing_executable_receipt"
+    },
+    {
+      "expected_status": "REJECT",
+      "fixture_id": "receipt_line_drift",
+      "reject_reason": "expected_corpus_line_missing"
+    },
+    {
+      "expected_status": "REJECT",
+      "fixture_id": "claims_all_backends_production",
+      "reject_reason": "experimental_backends_promoted"
+    },
+    {
+      "expected_status": "REJECT",
+      "fixture_id": "self_hosted_compiler_promoted",
+      "reject_reason": "self_hosted_compiler_unverified"
+    },
+    {
+      "expected_status": "REJECT",
+      "fixture_id": "raw_payload_required",
+      "reject_reason": "raw_private_payload_required"
+    },
+    {
+      "expected_status": "REJECT",
+      "fixture_id": "unsupported_claim_promoted",
+      "reject_reason": "unsupported_claim_count_nonzero"
+    }
+  ],
+  "non_promotion_statement": "Pass 0074 binds BuildLang source refs and a live buildc corpus verification receipt. It does not prove all backends production-ready, self-hosting, Julia replacement, market adoption, scientific discovery, or a natural law.",
+  "pass": "0074",
+  "production_backend_claim": "C backend only",
+  "program_count": 8,
+  "receipt_surfaces": [
+    "c execution",
+    "rust execution",
+    "substrate",
+    "mir representation",
+    "memory layout",
+    "module graph",
+    "symbol graph",
+    "lsp dispatch"
+  ],
+  "schema": "BuildLangSourceRefReceipt/v1",
+  "seal": "be025df926cbb5fa2948552e9b43941fd0d6f863cad19ea2e4d18d32330a3a03",
+  "self_hosted_boundary": "The self-hosted compiler and stdlib are aspirational and are not promoted by this pass.",
+  "source_ref_count": 13,
+  "source_refs": [
+    {
+      "bytes": 42019,
+      "exists": true,
+      "id": "buildlang:README.md",
+      "path": "C:\\dev\\public\\pubscan\\quantalang\\README.md",
+      "raw_payload_included": false,
+      "relative_path": "README.md",
+      "sha256": "b91663ebd8e7375c3bdfd3e1b6852d2ce1e9cbf423546d5ebf27fcc1a4079287"
+    },
+    {
+      "bytes": 29421,
+      "exists": true,
+      "id": "buildlang:STATUS.md",
+      "path": "C:\\dev\\public\\pubscan\\quantalang\\STATUS.md",
+      "raw_payload_included": false,
+      "relative_path": "STATUS.md",
+      "sha256": "b5a2009c81c919612c2f618a33d825e3937411a70746c615829a70d1f19fc647"
+    },
+    {
+      "bytes": 2241,
+      "exists": true,
+      "id": "buildlang:compiler:Cargo.toml",
+      "path": "C:\\dev\\public\\pubscan\\quantalang\\compiler\\Cargo.toml",
+      "raw_payload_included": false,
+      "relative_path": "compiler/Cargo.toml",
+      "sha256": "ce4473fdea8325e28dcd46683233675fa2855797c51151bfa50aef320af27cf1"
+    },
+    {
+      "bytes": 2693,
+      "exists": true,
+      "id": "buildlang:semantic-corpus:README.md",
+      "path": "C:\\dev\\public\\pubscan\\quantalang\\semantic-corpus\\README.md",
+      "raw_payload_included": false,
+      "relative_path": "semantic-corpus/README.md",
+      "sha256": "b52b8a37f99e72dd8254a8257f63a8872da3e24c3d574177ddabfae397239f32"
+    },
+    {
+      "bytes": 2597,
+      "exists": true,
+      "id": "buildlang:semantic-corpus:manifest.json",
+      "path": "C:\\dev\\public\\pubscan\\quantalang\\semantic-corpus\\manifest.json",
+      "raw_payload_included": false,
+      "relative_path": "semantic-corpus/manifest.json",
+      "sha256": "fec426c030161c1fbe01f14ac40984f6fd3162231695a266de750a1c21f464cb"
+    },
+    {
+      "bytes": 2154,
+      "exists": true,
+      "id": "buildlang:semantic-corpus:receipts:c-execution-2026-06-13.json",
+      "path": "C:\\dev\\public\\pubscan\\quantalang\\semantic-corpus\\receipts\\c-execution-2026-06-13.json",
+      "raw_payload_included": false,
+      "relative_path": "semantic-corpus/receipts/c-execution-2026-06-13.json",
+      "sha256": "bcbd07099e191bdaeb1c8d5e3ad6419773509eca77d0fdba5f7e1e1c1b4a1450"
+    },
+    {
+      "bytes": 2148,
+      "exists": true,
+      "id": "buildlang:semantic-corpus:receipts:rust-execution-2026-06-13.json",
+      "path": "C:\\dev\\public\\pubscan\\quantalang\\semantic-corpus\\receipts\\rust-execution-2026-06-13.json",
+      "raw_payload_included": false,
+      "relative_path": "semantic-corpus/receipts/rust-execution-2026-06-13.json",
+      "sha256": "39888a5c6691af03e2f8c86ae3caf4a15d2ed8021e044ad63e6bfb94884f3c7f"
+    },
+    {
+      "bytes": 3801,
+      "exists": true,
+      "id": "buildlang:semantic-corpus:receipts:substrate-semantic-corpus-2026-06-18.json",
+      "path": "C:\\dev\\public\\pubscan\\quantalang\\semantic-corpus\\receipts\\substrate-semantic-corpus-2026-06-18.json",
+      "raw_payload_included": false,
+      "relative_path": "semantic-corpus/receipts/substrate-semantic-corpus-2026-06-18.json",
+      "sha256": "b569ffd11c8972de7e9abdc0719b8a3277dc4f4ad7dcd25776111230ee0a2366"
+    },
+    {
+      "bytes": 18017,
+      "exists": true,
+      "id": "buildlang:semantic-corpus:receipts:mir-representation-2026-06-18.json",
+      "path": "C:\\dev\\public\\pubscan\\quantalang\\semantic-corpus\\receipts\\mir-representation-2026-06-18.json",
+      "raw_payload_included": false,
+      "relative_path": "semantic-corpus/receipts/mir-representation-2026-06-18.json",
+      "sha256": "f0bff8aa0481ed0904de99ac1e1df77694c91f63b6399fc481bee6a101fb2d4e"
+    },
+    {
+      "bytes": 15715,
+      "exists": true,
+      "id": "buildlang:semantic-corpus:receipts:memory-layout-2026-06-18.json",
+      "path": "C:\\dev\\public\\pubscan\\quantalang\\semantic-corpus\\receipts\\memory-layout-2026-06-18.json",
+      "raw_payload_included": false,
+      "relative_path": "semantic-corpus/receipts/memory-layout-2026-06-18.json",
+      "sha256": "f024735d1ef4490455ad84db9b780e6f4004797955479e2e0a102cb1acdde2aa"
+    },
+    {
+      "bytes": 10985,
+      "exists": true,
+      "id": "buildlang:semantic-corpus:receipts:module-graph-2026-06-18.json",
+      "path": "C:\\dev\\public\\pubscan\\quantalang\\semantic-corpus\\receipts\\module-graph-2026-06-18.json",
+      "raw_payload_included": false,
+      "relative_path": "semantic-corpus/receipts/module-graph-2026-06-18.json",
+      "sha256": "4bb87eb52da6a49be485f62b8a1ee3094c88d83934251ce8e1ad234393862c32"
+    },
+    {
+      "bytes": 30399,
+      "exists": true,
+      "id": "buildlang:semantic-corpus:receipts:symbol-graph-2026-06-18.json",
+      "path": "C:\\dev\\public\\pubscan\\quantalang\\semantic-corpus\\receipts\\symbol-graph-2026-06-18.json",
+      "raw_payload_included": false,
+      "relative_path": "semantic-corpus/receipts/symbol-graph-2026-06-18.json",
+      "sha256": "b1b423b90c12a3c28f9223d73ad44f6f37df899023110ccdd978a411f8e54040"
+    },
+    {
+      "bytes": 7628,
+      "exists": true,
+      "id": "buildlang:semantic-corpus:receipts:lsp-dispatch-2026-06-18.json",
+      "path": "C:\\dev\\public\\pubscan\\quantalang\\semantic-corpus\\receipts\\lsp-dispatch-2026-06-18.json",
+      "raw_payload_included": false,
+      "relative_path": "semantic-corpus/receipts/lsp-dispatch-2026-06-18.json",
+      "sha256": "726a1f92994c068524586bb13ffab6ce4d9afbc0abf46f23ad7ed67e8a5d1be2"
+    }
+  ],
+  "status": "BUILDLANG_SOURCE_REF_RECEIPT_MATCH",
+  "unsupported_claim_count": 0,
+  "validation_errors": []
+}

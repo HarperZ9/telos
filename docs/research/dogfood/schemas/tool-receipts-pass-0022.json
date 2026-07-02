@@ -1,0 +1,70 @@
+{
+  "pass": "0022",
+  "schema": "DogfoodToolReceiptSet/v1",
+  "status": "MATCH_WITH_FORUM_SUBMIT_GAP",
+  "generated_on": "2026-07-01",
+  "receipts": [
+    {
+      "tool": "index",
+      "command": "status",
+      "status": "MATCH",
+      "tool_version": "2.8.0",
+      "role": "structure-context"
+    },
+    {
+      "tool": "gather",
+      "command": "status",
+      "status": "MATCH",
+      "tool_version": "1.5.0",
+      "role": "perception-intake"
+    },
+    {
+      "tool": "gather",
+      "command": "docs",
+      "status": "MATCH",
+      "verified": true,
+      "artifact": "packets/032-otel-sdk-dryrun-lock.md",
+      "sha256": "44b08320874922ed93ee0a2092988e50c251c5980ae9326f4dae2804c06ea171",
+      "seal": "c490bf76f9204e8f2e43cdf31d4ec3cb97c1fdf0f161b5ff4d67417ff6466637"
+    },
+    {
+      "tool": "telos.operator.doctor",
+      "command": "operator_doctor",
+      "status": "MATCH",
+      "check_count": 14,
+      "passed_count": 14,
+      "tool_count": 65,
+      "telos_tool_count": 37,
+      "generated_at": "2026-07-01T11:35:19.680Z"
+    },
+    {
+      "tool": "forum",
+      "command": "status",
+      "status": "MATCH",
+      "entries": 14,
+      "checkpoint": "10fabdd888316e6a2fa6744156842c0658bd8e46fa928a08bf3803955219cb9a"
+    },
+    {
+      "tool": "forum",
+      "command": "verify",
+      "status": "MATCH",
+      "chain": true,
+      "deep": true
+    },
+    {
+      "tool": "forum",
+      "command": "submit",
+      "status": "UNVERIFIABLE",
+      "request": "Dogfood pass 0022 adversarial review for OTel SDK dry-run lock packet",
+      "error": "the configured executor did not return valid JSON; point the daemon at a real model executor (could not parse JSON from output: Extra data: line 2 column 1 (char 98))"
+    },
+    {
+      "tool": "crucible",
+      "command": "status",
+      "status": "MATCH",
+      "tool_version": "1.1.0",
+      "role": "verification-pressure"
+    }
+  ],
+  "non_promotion_statement": "Tool receipts prove operator-surface availability and packet intake only. They do not prove package installation, opentelemetry.sdk import, recording span export, or scientific discovery."
+}

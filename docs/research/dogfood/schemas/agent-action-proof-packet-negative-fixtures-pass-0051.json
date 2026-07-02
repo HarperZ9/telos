@@ -1,0 +1,142 @@
+{
+  "current_promoted_natural_laws": [],
+  "failure_codes": [
+    "action_receipt_linkage_broken",
+    "admission_record_missing",
+    "browser_evidence_missing",
+    "crucible_verdict_missing",
+    "ledger_continuity_broken",
+    "private_payload_boundary_violation",
+    "source_refs_missing",
+    "workspace_context_ref_missing"
+  ],
+  "fixture": {
+    "path": "fixtures/agent-action-proof-packet-negative-fixtures-pass-0051.json",
+    "schema": "AgentActionProofPacketNegativeFixturesFixture/v1",
+    "seal": "37d478f0bef7ed4912dcaa8167366a1220b87172336ca5c22eeaaeaa59fe5df5",
+    "sha256": "b3e7d4597974411a918a894740b856a81ba7254bc00c5d7e477e11e20e954474"
+  },
+  "generated_on": "2026-07-01",
+  "negative_fixtures": [
+    {
+      "expected_failure_code": "source_refs_missing",
+      "expected_verdict": "UNVERIFIABLE",
+      "fixture_id": "missing_source_refs",
+      "observed": {
+        "component": "source_refs",
+        "failure_code": "source_refs_missing",
+        "verdict": "UNVERIFIABLE"
+      },
+      "packet_hash": "d50b90dbb030260c158a21c5b17e17086c4f0bb98747b5f234283d9b74c4bd78",
+      "status": "MATCH"
+    },
+    {
+      "expected_failure_code": "workspace_context_ref_missing",
+      "expected_verdict": "UNVERIFIABLE",
+      "fixture_id": "missing_workspace_context",
+      "observed": {
+        "component": "workspace_context_ref",
+        "failure_code": "workspace_context_ref_missing",
+        "verdict": "UNVERIFIABLE"
+      },
+      "packet_hash": "83f1e56d34a2ecc171c7d4013b857c179f789efe45bcd3421e2c4565b7a08f5e",
+      "status": "MATCH"
+    },
+    {
+      "expected_failure_code": "admission_record_missing",
+      "expected_verdict": "UNVERIFIABLE",
+      "fixture_id": "missing_admission_record",
+      "observed": {
+        "component": "admission_record",
+        "failure_code": "admission_record_missing",
+        "verdict": "UNVERIFIABLE"
+      },
+      "packet_hash": "36418f420f4831366b1fd7f2e6392b0e25f70dcda391229ffb5f570fb07b1f11",
+      "status": "MATCH"
+    },
+    {
+      "expected_failure_code": "action_receipt_linkage_broken",
+      "expected_verdict": "DRIFT",
+      "fixture_id": "broken_action_receipt_linkage",
+      "observed": {
+        "component": "action_receipt",
+        "failure_code": "action_receipt_linkage_broken",
+        "verdict": "DRIFT"
+      },
+      "packet_hash": "99e0d5947a64a3b6cd235e03d286f9d066d3ef6b568846f53f7bc938b6d80dca",
+      "status": "MATCH"
+    },
+    {
+      "expected_failure_code": "browser_evidence_missing",
+      "expected_verdict": "UNVERIFIABLE",
+      "fixture_id": "missing_browser_evidence",
+      "observed": {
+        "component": "browser_evidence_ref",
+        "failure_code": "browser_evidence_missing",
+        "verdict": "UNVERIFIABLE"
+      },
+      "packet_hash": "011ab36888f82cda8b81bd533d638c5672478ca233df8753c857353484bc0e19",
+      "status": "MATCH"
+    },
+    {
+      "expected_failure_code": "ledger_continuity_broken",
+      "expected_verdict": "DRIFT",
+      "fixture_id": "broken_ledger_continuity",
+      "observed": {
+        "component": "loop_ledger_entry",
+        "failure_code": "ledger_continuity_broken",
+        "verdict": "DRIFT"
+      },
+      "packet_hash": "818d338f02a920222503a51474b7bdc4e6800064a0b2d0882310d5b1ed4d5e96",
+      "status": "MATCH"
+    },
+    {
+      "expected_failure_code": "crucible_verdict_missing",
+      "expected_verdict": "UNVERIFIABLE",
+      "fixture_id": "missing_crucible_verdict",
+      "observed": {
+        "component": "crucible_verdict",
+        "failure_code": "crucible_verdict_missing",
+        "verdict": "UNVERIFIABLE"
+      },
+      "packet_hash": "682dcb9287e9798cc30cfbd6f0d008eaba6ac80ae2d01d9f0853d27224539476",
+      "status": "MATCH"
+    },
+    {
+      "expected_failure_code": "private_payload_boundary_violation",
+      "expected_verdict": "DRIFT",
+      "fixture_id": "raw_private_payload_leak",
+      "observed": {
+        "component": "redaction_status",
+        "failure_code": "private_payload_boundary_violation",
+        "verdict": "DRIFT"
+      },
+      "packet_hash": "1c36e5af4834122f5435f0572b451b23451d547a933269e042c99704880365ca",
+      "status": "MATCH"
+    }
+  ],
+  "non_promotion_statement": "Pass 0051 is a synthetic negative-fixture contract. It does not prove the integrated public demo exists, product-market fit, buyer adoption, scientific truth, or any natural law.",
+  "pass": "0051",
+  "positive_fixture_hash": "53064bde9b64163961004651b1959b38e94ebd0d28cafb5f9b344266c5946f7c",
+  "positive_fixture_verdict": {
+    "component": "packet",
+    "failure_code": null,
+    "verdict": "MATCH"
+  },
+  "previous_pass_binding": {
+    "path": "schemas/agent-action-proof-packet-demo-spec-pass-0050.json",
+    "seal": "7b75deb022c435da463fd124b9aebcb1ccefd6081819ebe9cf1c4421e8c84af9",
+    "sha256": "efe24bb1b1a161c2adaeea1dd72b18a253348d977c2039532699c968e1930e2a",
+    "source_status": "AGENT_ACTION_PROOF_PACKET_DEMO_SPEC_MATCH"
+  },
+  "schema": "AgentActionProofPacketNegativeFixturesSet/v1",
+  "seal": "da66419608a9f7a5a818756e44a8e6f65fe06ab4f7ab5024471fd0787c0617b4",
+  "status": "AGENT_ACTION_PROOF_PACKET_NEGATIVE_FIXTURES_MATCH",
+  "uniqueness_claim_status": "HYPOTHESIS_ONLY",
+  "verifier_measurements": {
+    "failure_code_count": 8,
+    "negative_fixture_count": 8,
+    "negative_match_count": 8,
+    "positive_match_count": 1
+  }
+}

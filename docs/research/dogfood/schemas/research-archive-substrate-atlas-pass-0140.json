@@ -1,0 +1,813 @@
+{
+  "adapter_requirements": [
+    "source_url",
+    "source_system",
+    "ingestion_protocol",
+    "body_or_metadata_hash",
+    "license_or_terms_ref",
+    "freshness_time",
+    "claim_extraction_state",
+    "negative_controls",
+    "verifier",
+    "promotion_boundary"
+  ],
+  "boundary": "Pass 0140 is a first-wave archive substrate atlas. It does not claim complete world coverage, source correctness, publication validity, market demand, theorem proof, experimental truth, or natural-law promotion.",
+  "current_promoted_natural_laws": [],
+  "domain_expansion_queue": [
+    {
+      "domain": "math_formal_methods",
+      "first_product": "ProofPacket and LeanProofReceipt",
+      "source_targets": "proof assistants, arXiv math, theorem archives",
+      "status": "EXPANSION_QUEUE"
+    },
+    {
+      "domain": "physics_quantum_cosmology",
+      "first_product": "simulator and law-boundary receipts",
+      "source_targets": "arXiv physics, NASA ADS, HEPData",
+      "status": "EXPANSION_QUEUE"
+    },
+    {
+      "domain": "biology_genomics",
+      "first_product": "claim-to-experiment packets",
+      "source_targets": "bioRxiv, NCBI, ENA, GEO, SRA",
+      "status": "EXPANSION_QUEUE"
+    },
+    {
+      "domain": "medicine_clinical",
+      "first_product": "clinical endpoint receipts",
+      "source_targets": "medRxiv, PubMed, PMC, ClinicalTrials.gov",
+      "status": "EXPANSION_QUEUE"
+    },
+    {
+      "domain": "materials_chemistry",
+      "first_product": "property replay packets",
+      "source_targets": "Materials Project, RCSB, ChemRxiv",
+      "status": "EXPANSION_QUEUE"
+    },
+    {
+      "domain": "robotics_embodied_ai",
+      "first_product": "embodied action receipts",
+      "source_targets": "OpenReview, arXiv cs.RO, robot datasets",
+      "status": "EXPANSION_QUEUE"
+    },
+    {
+      "domain": "ai_ml",
+      "first_product": "dataset/model contamination receipts",
+      "source_targets": "arXiv cs.LG, OpenML, Hugging Face, Papers with Code",
+      "status": "EXPANSION_QUEUE"
+    },
+    {
+      "domain": "climate_energy",
+      "first_product": "earth/energy simulation receipts",
+      "source_targets": "NASA, NOAA, DOE, arXiv physics",
+      "status": "EXPANSION_QUEUE"
+    },
+    {
+      "domain": "security_cryptography",
+      "first_product": "exploit/fix proof packets",
+      "source_targets": "ePrint, CVE, GitHub advisories, arXiv",
+      "status": "EXPANSION_QUEUE"
+    },
+    {
+      "domain": "finance_economics",
+      "first_product": "risk and causal evidence packets",
+      "source_targets": "SSRN, NBER, FRED, SEC EDGAR",
+      "status": "EXPANSION_QUEUE"
+    },
+    {
+      "domain": "education_learning",
+      "first_product": "learning graph receipts",
+      "source_targets": "ERIC, university repos, lesson datasets",
+      "status": "EXPANSION_QUEUE"
+    },
+    {
+      "domain": "law_policy_governance",
+      "first_product": "decision provenance receipts",
+      "source_targets": "court/regulator portals, legislation APIs",
+      "status": "EXPANSION_QUEUE"
+    },
+    {
+      "domain": "neuroscience_bci",
+      "first_product": "closed-loop experiment packets",
+      "source_targets": "PubMed, bioRxiv, OpenNeuro",
+      "status": "EXPANSION_QUEUE"
+    },
+    {
+      "domain": "agriculture_food",
+      "first_product": "crop/system optimization receipts",
+      "source_targets": "USDA, FAO, genomics repositories",
+      "status": "EXPANSION_QUEUE"
+    },
+    {
+      "domain": "transportation_cities",
+      "first_product": "infrastructure optimization packets",
+      "source_targets": "DOT, city open data, simulation papers",
+      "status": "EXPANSION_QUEUE"
+    },
+    {
+      "domain": "semiconductors_hpc",
+      "first_product": "compiler/runtime receipts",
+      "source_targets": "DOE, arXiv, MLIR/OpenXLA repos",
+      "status": "EXPANSION_QUEUE"
+    },
+    {
+      "domain": "color_rendering_media",
+      "first_product": "measurement truth kits",
+      "source_targets": "ACES/OCIO, display datasets, standards",
+      "status": "EXPANSION_QUEUE"
+    },
+    {
+      "domain": "philosophy_cognitive_science",
+      "first_product": "functional learning maps",
+      "source_targets": "university repos, PhilPapers, archives",
+      "status": "EXPANSION_QUEUE"
+    }
+  ],
+  "flagship_receipts": {
+    "forum": {
+      "confidence": 0.2,
+      "needs_escalation": true,
+      "status": "MATCH_WITH_ROUTE_GAP",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "f5e5ed8975b10099960499e97c69c5dd8eeba0ad56712ad0a58a4484e20dde84"
+    },
+    "index": {
+      "status": "MATCH",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "46e334cf7e0591a88a94426c521b464ddc8538cb9cea441f0f01938427fa5349",
+      "verification_verdict": "MATCH"
+    },
+    "telos": {
+      "status": "MATCH",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "be17cb15259234cb4e8e95c2b36e76c90d841431729beb140294e34c5f9ebfa7",
+      "tool_version": "0.1.0"
+    },
+    "telos_catalog": {
+      "status": "MATCH",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "ef95a6f1ff803c483c3c4dd553fe19c37ab144113a21bc005cf4148cf31a8564"
+    }
+  },
+  "gather_summary": {
+    "captured_sources": 28,
+    "distinct_body_count": 27,
+    "usable_captures": 26,
+    "warning_count": 4
+  },
+  "generated_on": "2026-07-02",
+  "market_vectors": [
+    "Research Substrate Router",
+    "Archive Adapter SDK",
+    "Claim-to-Experiment Packet",
+    "Dataset/Benchmark Provenance Kit",
+    "University Repository Learning Graph",
+    "BuildLang Scientific Kernel Receipt"
+  ],
+  "megatool_routes": [
+    {
+      "output": "source-backed claim with verification state",
+      "route": "archive_to_claim_packet",
+      "tools": [
+        "Gather",
+        "Index",
+        "Crucible"
+      ]
+    },
+    {
+      "output": "protocol, runtime receipt, measurement, verifier",
+      "route": "claim_to_experiment_packet",
+      "tools": [
+        "Gather",
+        "Telos",
+        "Crucible",
+        "BuildLang/buildc"
+      ]
+    },
+    {
+      "output": "dataset lineage, contamination gate, eval receipt",
+      "route": "dataset_to_model_receipt",
+      "tools": [
+        "Gather",
+        "Index",
+        "Model Foundry",
+        "Crucible"
+      ]
+    },
+    {
+      "output": "machine-checkable theorem replay packet",
+      "route": "paper_to_formal_proof",
+      "tools": [
+        "Gather",
+        "Index",
+        "Lean/ATP adapter",
+        "Crucible"
+      ]
+    },
+    {
+      "output": "source-backed lesson and prerequisite graph",
+      "route": "university_repo_to_learning_graph",
+      "tools": [
+        "Gather",
+        "Index",
+        "Forum",
+        "Learning Forge"
+      ]
+    },
+    {
+      "output": "compiled scientific kernel with data provenance",
+      "route": "domain_database_to_build_kernel",
+      "tools": [
+        "Gather",
+        "BuildLang/buildc",
+        "Crucible"
+      ]
+    }
+  ],
+  "negative_fixtures": [
+    {
+      "failures": [
+        "many_sources",
+        "no_verifier"
+      ],
+      "fixture_id": "source_breadth_as_truth",
+      "status": "REJECTED"
+    },
+    {
+      "failures": [
+        "preprint_state",
+        "needs_publication_or_replication"
+      ],
+      "fixture_id": "preprint_as_peer_review",
+      "status": "REJECTED"
+    },
+    {
+      "failures": [
+        "metadata_only",
+        "no_claim_body"
+      ],
+      "fixture_id": "metadata_as_full_text",
+      "status": "REJECTED"
+    },
+    {
+      "failures": [
+        "empty_capture",
+        "needs_browser_or_api_followup"
+      ],
+      "fixture_id": "empty_capture_as_evidence",
+      "status": "REJECTED"
+    },
+    {
+      "failures": [
+        "static_capture_failed",
+        "source_lead_only"
+      ],
+      "fixture_id": "failed_static_capture_as_verified",
+      "status": "REJECTED"
+    },
+    {
+      "failures": [
+        "registry_record",
+        "needs_results_analysis"
+      ],
+      "fixture_id": "clinical_trial_record_as_efficacy",
+      "status": "REJECTED"
+    },
+    {
+      "failures": [
+        "dataset_found",
+        "needs_schema_and_task_receipt"
+      ],
+      "fixture_id": "dataset_presence_as_benchmark_validity",
+      "status": "REJECTED"
+    },
+    {
+      "failures": [
+        "institutional_subset",
+        "coverage_unknown"
+      ],
+      "fixture_id": "university_repo_as_complete_corpus",
+      "status": "REJECTED"
+    },
+    {
+      "failures": [
+        "api_docs_only",
+        "needs_license_terms"
+      ],
+      "fixture_id": "api_docs_as_license_clearance",
+      "status": "REJECTED"
+    },
+    {
+      "failures": [
+        "classification_only",
+        "needs_proof_or_reproduction"
+      ],
+      "fixture_id": "taxonomy_as_natural_law",
+      "status": "REJECTED"
+    }
+  ],
+  "pass": "0140",
+  "schema": "ResearchArchiveSubstrateAtlasReceipt/v1",
+  "seal": "2f3e0d8715396aeda6823b937a141664e8372e273c735d9d05429dffa4edb1ff",
+  "source_quality_warnings": [
+    {
+      "category": "academic_search_index",
+      "chars": 0,
+      "coverage": "institutional_or_academic_repository",
+      "evidence_status": "STATIC_CAPTURE_FAILED_SOURCE_LEAD",
+      "ingestion_protocol": "browser_or_oai_followup_required",
+      "market_use": "research_substrate_route",
+      "sha256": null,
+      "system": "BASE",
+      "title": "BASE",
+      "url": "https://www.base-search.net/"
+    },
+    {
+      "category": "domain_literature_index",
+      "chars": 0,
+      "coverage": "astronomy_physics_search_metrics_export",
+      "evidence_status": "GATHER_VERIFIED_EMPTY_CAPTURE",
+      "ingestion_protocol": "rest_json_api_key",
+      "market_use": "research_substrate_route",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "system": "NASA ADS",
+      "title": "https://ui.adsabs.harvard.edu/help/api/",
+      "url": "https://ui.adsabs.harvard.edu/help/api/"
+    },
+    {
+      "category": "open_science_repository",
+      "chars": 0,
+      "coverage": "projects_registrations_files",
+      "evidence_status": "GATHER_VERIFIED_EMPTY_CAPTURE",
+      "ingestion_protocol": "rest_json",
+      "market_use": "institutional_repository_harvest",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "system": "OSF API",
+      "title": "OSF APIv2 Documentation",
+      "url": "https://developer.osf.io/"
+    },
+    {
+      "category": "university_repository",
+      "chars": 0,
+      "coverage": "institutional_or_academic_repository",
+      "evidence_status": "STATIC_CAPTURE_FAILED_SOURCE_LEAD",
+      "ingestion_protocol": "browser_or_oai_followup_required",
+      "market_use": "institutional_repository_harvest",
+      "sha256": null,
+      "system": "DSpace@MIT",
+      "title": "DSpace@MIT",
+      "url": "https://dspace.mit.edu/"
+    }
+  ],
+  "source_store": "docs/research/dogfood/gather/pass-0140-research-archive-substrate-atlas",
+  "source_systems": [
+    {
+      "category": "academic_search_index",
+      "chars": 0,
+      "coverage": "institutional_or_academic_repository",
+      "evidence_status": "STATIC_CAPTURE_FAILED_SOURCE_LEAD",
+      "ingestion_protocol": "browser_or_oai_followup_required",
+      "market_use": "research_substrate_route",
+      "sha256": null,
+      "system": "BASE",
+      "title": "BASE",
+      "url": "https://www.base-search.net/"
+    },
+    {
+      "category": "biomedical_api",
+      "chars": 3088,
+      "coverage": "pubmed_pmc_gene_nuccore_protein",
+      "evidence_status": "GATHER_VERIFIED",
+      "ingestion_protocol": "entrez_api",
+      "market_use": "research_substrate_route",
+      "sha256": "0c02105b91fe574f82829c97f1ffc1cde3021e2ca38d5148811e27d3cc0a94bc",
+      "system": "NCBI E-utilities",
+      "title": "APIs - Develop - NCBI",
+      "url": "https://www.ncbi.nlm.nih.gov/home/develop/api/"
+    },
+    {
+      "category": "clinical_registry",
+      "chars": 156,
+      "coverage": "trial_protocols_results_records",
+      "evidence_status": "GATHER_VERIFIED",
+      "ingestion_protocol": "rest_json_openapi",
+      "market_use": "trial_endpoint_and_protocol_receipts",
+      "sha256": "19f9d5c62dfcdd8efe74de54dfabe0d9d6e2b48fa882573e04c517a9a6af1453",
+      "system": "ClinicalTrials.gov",
+      "title": "ClinicalTrials.gov",
+      "url": "https://clinicaltrials.gov/data-api"
+    },
+    {
+      "category": "doi_metadata_graph",
+      "chars": 14796,
+      "coverage": "data_doi_metadata",
+      "evidence_status": "GATHER_VERIFIED",
+      "ingestion_protocol": "rest_jsonapi",
+      "market_use": "claim_context_and_citation_graph",
+      "sha256": "9b70e0447a687fd2d6afb449ad1ba223199bffaca39071abcd991eeb3b8ba372",
+      "system": "DataCite",
+      "title": "Introduction to the DataCite REST API",
+      "url": "https://support.datacite.org/docs/api"
+    },
+    {
+      "category": "domain_literature_index",
+      "chars": 0,
+      "coverage": "astronomy_physics_search_metrics_export",
+      "evidence_status": "GATHER_VERIFIED_EMPTY_CAPTURE",
+      "ingestion_protocol": "rest_json_api_key",
+      "market_use": "research_substrate_route",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "system": "NASA ADS",
+      "title": "https://ui.adsabs.harvard.edu/help/api/",
+      "url": "https://ui.adsabs.harvard.edu/help/api/"
+    },
+    {
+      "category": "full_text_open_access",
+      "chars": 10661,
+      "coverage": "pmc_metadata_and_reusable_full_text",
+      "evidence_status": "GATHER_VERIFIED",
+      "ingestion_protocol": "oai_pmh",
+      "market_use": "research_substrate_route",
+      "sha256": "c57a9fb18073059f31bff38707dab5ba26271cb28674e7400f7bedc0b411bf4d",
+      "system": "PMC OAI-PMH",
+      "title": "PMC OAI-PMH API - PMC",
+      "url": "https://pmc.ncbi.nlm.nih.gov/tools/oai/"
+    },
+    {
+      "category": "functional_genomics_repository",
+      "chars": 5085,
+      "coverage": "expression_arrays_sequence_profiles",
+      "evidence_status": "GATHER_VERIFIED",
+      "ingestion_protocol": "web_api_download",
+      "market_use": "bio_ai_experiment_packet",
+      "sha256": "698b2f5b9b9766c9b50412e4bc68e0b725dea39c18bdf3cdbf4c17e1669cb6d3",
+      "system": "NCBI GEO",
+      "title": "Home - GEO - NCBI",
+      "url": "https://www.ncbi.nlm.nih.gov/geo/"
+    },
+    {
+      "category": "genomics_archive",
+      "chars": 1935,
+      "coverage": "raw_sequencing_alignment_metadata",
+      "evidence_status": "GATHER_VERIFIED",
+      "ingestion_protocol": "ncbi_cloud_tools",
+      "market_use": "bio_ai_experiment_packet",
+      "sha256": "28a86bdcf8351f3755f0c374e460141fbf2e27079c68e8607c34d1046d19a885",
+      "system": "NCBI SRA",
+      "title": "Home - SRA - NCBI",
+      "url": "https://www.ncbi.nlm.nih.gov/sra"
+    },
+    {
+      "category": "materials_database",
+      "chars": 1342,
+      "coverage": "computed_material_properties",
+      "evidence_status": "GATHER_VERIFIED",
+      "ingestion_protocol": "python_client_api",
+      "market_use": "materials_property_replay_packet",
+      "sha256": "6a156725d8f56aff48465e73eacf7e72fd324678b55d4fa4d4f7bf1eb9664ac9",
+      "system": "Materials Project",
+      "title": "Using the API | Materials Project Documentation",
+      "url": "https://docs.materialsproject.org/downloading-data/using-the-api"
+    },
+    {
+      "category": "ml_dataset_benchmark_repository",
+      "chars": 6688,
+      "coverage": "datasets_tasks_flows_runs",
+      "evidence_status": "GATHER_VERIFIED",
+      "ingestion_protocol": "rest_api",
+      "market_use": "institutional_repository_harvest",
+      "sha256": "6c26726f7fe5b7bae4655078eecf96c39696bb3a57efeea12e21eb5ee2bd2a0d",
+      "system": "OpenML",
+      "title": "REST API - Open Machine Learning",
+      "url": "https://docs.openml.org/ecosystem/Rest/"
+    },
+    {
+      "category": "ml_dataset_hub",
+      "chars": 14320,
+      "coverage": "dataset_splits_rows_parquet_stats",
+      "evidence_status": "GATHER_VERIFIED",
+      "ingestion_protocol": "rest_api",
+      "market_use": "benchmark_contamination_and_dataset_receipts",
+      "sha256": "4f9daa3d8fde0fa5754e687e9468f9a5eff367fd36c19559b8ef6c892f990ecb",
+      "system": "Hugging Face Dataset Viewer",
+      "title": "Quickstart \u00b7 Hugging Face",
+      "url": "https://huggingface.co/docs/dataset-viewer/quick_start"
+    },
+    {
+      "category": "nucleotide_archive",
+      "chars": 196,
+      "coverage": "raw_sequence_assembly_annotation",
+      "evidence_status": "GATHER_VERIFIED",
+      "ingestion_protocol": "browser_api",
+      "market_use": "research_substrate_route",
+      "sha256": "4509f4e673d933467e9e3d551da16a9233536af9ece9cf8d1dd4a0fb03ae980f",
+      "system": "ENA",
+      "title": "ENA Browser",
+      "url": "https://www.ebi.ac.uk/ena/browser/"
+    },
+    {
+      "category": "open_access_aggregator",
+      "chars": 6020,
+      "coverage": "repository_metadata_and_full_text_routes",
+      "evidence_status": "GATHER_VERIFIED",
+      "ingestion_protocol": "api_bulk",
+      "market_use": "research_substrate_route",
+      "sha256": "20cce8036cbb90194f8ca4c3d04303ce2570a2d94cc98020561076d44a34c197",
+      "system": "CORE",
+      "title": "The world\u2019s largest collection of open access research papers",
+      "url": "https://core.ac.uk/"
+    },
+    {
+      "category": "open_science_repository",
+      "chars": 0,
+      "coverage": "projects_registrations_files",
+      "evidence_status": "GATHER_VERIFIED_EMPTY_CAPTURE",
+      "ingestion_protocol": "rest_json",
+      "market_use": "institutional_repository_harvest",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "system": "OSF API",
+      "title": "OSF APIv2 Documentation",
+      "url": "https://developer.osf.io/"
+    },
+    {
+      "category": "preprint_archive",
+      "chars": 5515,
+      "coverage": "math_physics_cs_quantbio_stats",
+      "evidence_status": "GATHER_VERIFIED",
+      "ingestion_protocol": "api_oai_bulk",
+      "market_use": "frontier_claim_intake",
+      "sha256": "7519897cf139a0b07b8b930011f2ecbf6f93818608bc7d5017b6197f042db6fc",
+      "system": "arXiv",
+      "title": "arXiv API Access - arXiv info | arXiv e-print repository",
+      "url": "https://info.arxiv.org/help/api/index.html"
+    },
+    {
+      "category": "preprint_archive",
+      "chars": 7593,
+      "coverage": "math_physics_cs_quantbio_stats",
+      "evidence_status": "GATHER_VERIFIED",
+      "ingestion_protocol": "api_oai_bulk",
+      "market_use": "frontier_claim_intake",
+      "sha256": "0ef5312e489633c2cf6bad6c526cccf870f011b22385d6c89ede79334634299c",
+      "system": "arXiv",
+      "title": "arXiv Bulk Data Access - arXiv info | arXiv e-print repository",
+      "url": "https://info.arxiv.org/help/bulk_data.html"
+    },
+    {
+      "category": "preprint_archive",
+      "chars": 10528,
+      "coverage": "biology",
+      "evidence_status": "GATHER_VERIFIED",
+      "ingestion_protocol": "api_interval_cursor",
+      "market_use": "frontier_claim_intake",
+      "sha256": "ff140b7c972bec5391886046b8bc71af3275aa9f2c3b4552e93fbefde4d2cdc8",
+      "system": "bioRxiv",
+      "title": "bioRxiv API",
+      "url": "https://api.biorxiv.org/"
+    },
+    {
+      "category": "preprint_archive",
+      "chars": 1777,
+      "coverage": "medicine_health",
+      "evidence_status": "GATHER_VERIFIED",
+      "ingestion_protocol": "api_interval_cursor",
+      "market_use": "frontier_claim_intake",
+      "sha256": "6fdfe756698cb20f1b96afbbf8524dfb8d27265a5c9bdf21a06d7b2cebe6ae96",
+      "system": "medRxiv",
+      "title": "bioRxiv API",
+      "url": "https://api.medrxiv.org/"
+    },
+    {
+      "category": "protein_knowledgebase",
+      "chars": 394,
+      "coverage": "protein_sequence_function",
+      "evidence_status": "GATHER_VERIFIED",
+      "ingestion_protocol": "rest_download",
+      "market_use": "bio_ai_experiment_packet",
+      "sha256": "8ff6e69ed6cc6ef247438bbf0f8e37b84ac90a3bd7ba88f06de9e4925baf2a06",
+      "system": "UniProt",
+      "title": "UniProt",
+      "url": "https://www.uniprot.org/"
+    },
+    {
+      "category": "publisher_metadata_graph",
+      "chars": 12903,
+      "coverage": "cross_domain_publication_metadata",
+      "evidence_status": "GATHER_VERIFIED",
+      "ingestion_protocol": "rest_json",
+      "market_use": "claim_context_and_citation_graph",
+      "sha256": "8db089a19af134f5aa1ff5082d3d6602d4aa4705e83cb81f97cc6f85f9d17227",
+      "system": "Crossref",
+      "title": "REST API - Crossref",
+      "url": "https://www.crossref.org/documentation/retrieve-metadata/rest-api/"
+    },
+    {
+      "category": "repository_interop_protocol",
+      "chars": 1546,
+      "coverage": "metadata_harvesting_protocol",
+      "evidence_status": "GATHER_VERIFIED",
+      "ingestion_protocol": "oai_pmh",
+      "market_use": "institutional_repository_harvest",
+      "sha256": "fe2fe6b989fab6fd1467b10ff5de9f425f1b639a10baf1c4b1ed24618f06bf9b",
+      "system": "OAI-PMH",
+      "title": "Open Archives Initiative Protocol for Metadata Harvesting",
+      "url": "https://www.openarchives.org/pmh/"
+    },
+    {
+      "category": "research_data_repository",
+      "chars": 61088,
+      "coverage": "records_files_deposits",
+      "evidence_status": "GATHER_VERIFIED",
+      "ingestion_protocol": "rest_oai",
+      "market_use": "institutional_repository_harvest",
+      "sha256": "8e656f9977c8070bf8047295923f16a1914d0bafb6b0492bebc029f2a4448d99",
+      "system": "Zenodo",
+      "title": "Developers | Zenodo",
+      "url": "https://developers.zenodo.org/"
+    },
+    {
+      "category": "scholarly_graph",
+      "chars": 3994,
+      "coverage": "works_authors_sources_institutions_topics",
+      "evidence_status": "GATHER_VERIFIED",
+      "ingestion_protocol": "rest_json_snapshot",
+      "market_use": "claim_context_and_citation_graph",
+      "sha256": "7f749637b4c478f4bcfe6f26b4ea02ea9061d600877de6e1ea56eb294302f9fb",
+      "system": "OpenAlex",
+      "title": "Overview - OpenAlex Developers",
+      "url": "https://developers.openalex.org/"
+    },
+    {
+      "category": "scholarly_graph",
+      "chars": 51,
+      "coverage": "papers_authors_citations_datasets",
+      "evidence_status": "GATHER_VERIFIED",
+      "ingestion_protocol": "rest_json_datasets",
+      "market_use": "claim_context_and_citation_graph",
+      "sha256": "d9d455e35e4ddf651817d2d3e3d3d38b4b84ce692ba0188c0756222b449c31c2",
+      "system": "Semantic Scholar",
+      "title": "Semantic Scholar - Academic Graph API",
+      "url": "https://api.semanticscholar.org/api-docs/"
+    },
+    {
+      "category": "structure_database",
+      "chars": 20451,
+      "coverage": "pdb_metadata_sequences_experimental_details",
+      "evidence_status": "GATHER_VERIFIED",
+      "ingestion_protocol": "rest_graphql",
+      "market_use": "bio_ai_experiment_packet",
+      "sha256": "3bc1b1b4c500a97d56721782dd80a6dfda646b292b5539b366b24436f602e23f",
+      "system": "RCSB PDB Data API",
+      "title": "RCSB PDB Data API: Understanding and Using",
+      "url": "https://data.rcsb.org/"
+    },
+    {
+      "category": "structure_search",
+      "chars": 47482,
+      "coverage": "pdb_search_queries",
+      "evidence_status": "GATHER_VERIFIED",
+      "ingestion_protocol": "rest_json",
+      "market_use": "bio_ai_experiment_packet",
+      "sha256": "325482fa22c4de1bddeebd9f4cc9cbf296bcd1eff5747ed601dd4a3d526f07f0",
+      "system": "RCSB PDB Search API",
+      "title": "RCSB PDB Search API: Understanding and Using",
+      "url": "https://search.rcsb.org/"
+    },
+    {
+      "category": "university_repository",
+      "chars": 1916,
+      "coverage": "caltech_authors_thesis_metadata",
+      "evidence_status": "GATHER_VERIFIED",
+      "ingestion_protocol": "oai_pmh",
+      "market_use": "institutional_repository_harvest",
+      "sha256": "e8c02985a550fef444f3a9ab4d1126e8bad8514816a2fdf5d1044efcd7429743",
+      "system": "Caltech repository OAI endpoints",
+      "title": "How can I access Caltech repositories using OAI-PMH? - LibAnswers",
+      "url": "https://libanswers.caltech.edu/faq/227552"
+    },
+    {
+      "category": "university_repository",
+      "chars": 0,
+      "coverage": "institutional_or_academic_repository",
+      "evidence_status": "STATIC_CAPTURE_FAILED_SOURCE_LEAD",
+      "ingestion_protocol": "browser_or_oai_followup_required",
+      "market_use": "institutional_repository_harvest",
+      "sha256": null,
+      "system": "DSpace@MIT",
+      "title": "DSpace@MIT",
+      "url": "https://dspace.mit.edu/"
+    },
+    {
+      "category": "university_repository",
+      "chars": 10556,
+      "coverage": "harvard_open_access_scholarship",
+      "evidence_status": "GATHER_VERIFIED",
+      "ingestion_protocol": "repository_oai",
+      "market_use": "institutional_repository_harvest",
+      "sha256": "701f5714ba27339e161ecf0551e33e6170a17c3441189ea29eabc24232b3f555",
+      "system": "Harvard DASH",
+      "title": "DASH Home",
+      "url": "https://dash.harvard.edu/"
+    },
+    {
+      "category": "university_repository",
+      "chars": 7351,
+      "coverage": "stanford_scholarly_objects",
+      "evidence_status": "GATHER_VERIFIED",
+      "ingestion_protocol": "repository_web",
+      "market_use": "institutional_repository_harvest",
+      "sha256": "0702e8ead4f808bfd98e72d0b587e8387e9252c60456547c83d638fd1bb20d03",
+      "system": "Stanford Digital Repository",
+      "title": "Stanford Digital Repository services",
+      "url": "https://sdr.library.stanford.edu/"
+    }
+  ],
+  "status": "RESEARCH_ARCHIVE_SUBSTRATE_ATLAS_MATCH",
+  "substrate_families": [
+    {
+      "examples": "arXiv, bioRxiv, medRxiv, ChemRxiv, SSRN, Research Square",
+      "family": "preprint_archives",
+      "status": "SUBSTRATE_FAMILY",
+      "tooling_target": "rapid frontier claim intake"
+    },
+    {
+      "examples": "Crossref, DataCite, DOI registration agencies",
+      "family": "publisher_metadata_graphs",
+      "status": "SUBSTRATE_FAMILY",
+      "tooling_target": "provenance, references, licenses, funders"
+    },
+    {
+      "examples": "OpenAlex, Semantic Scholar, CORE, BASE",
+      "family": "scholarly_graphs",
+      "status": "SUBSTRATE_FAMILY",
+      "tooling_target": "literature graph and institutional coverage"
+    },
+    {
+      "examples": "PMC OAI, CORE, repository full text",
+      "family": "open_full_text",
+      "status": "SUBSTRATE_FAMILY",
+      "tooling_target": "text mining and claim extraction"
+    },
+    {
+      "examples": "ClinicalTrials.gov and related registries",
+      "family": "clinical_registries",
+      "status": "SUBSTRATE_FAMILY",
+      "tooling_target": "protocol and endpoint receipts"
+    },
+    {
+      "examples": "NCBI, PMC, GEO, SRA, UniProt, RCSB PDB",
+      "family": "biomedical_databases",
+      "status": "SUBSTRATE_FAMILY",
+      "tooling_target": "bio/medicine experiment substrate"
+    },
+    {
+      "examples": "Materials Project, chemistry preprints, molecule databases",
+      "family": "materials_chemistry",
+      "status": "SUBSTRATE_FAMILY",
+      "tooling_target": "property prediction and simulation receipts"
+    },
+    {
+      "examples": "OpenML, Hugging Face, Kaggle-style hubs",
+      "family": "ml_dataset_hubs",
+      "status": "SUBSTRATE_FAMILY",
+      "tooling_target": "benchmark provenance and contamination checks"
+    },
+    {
+      "examples": "Zenodo, OSF, Dataverse, Figshare, Dryad",
+      "family": "general_data_repositories",
+      "status": "SUBSTRATE_FAMILY",
+      "tooling_target": "data DOI and reproducibility packets"
+    },
+    {
+      "examples": "MIT, Harvard, Stanford, Caltech, Oxford, Cambridge",
+      "family": "university_repositories",
+      "status": "SUBSTRATE_FAMILY",
+      "tooling_target": "institutional thesis/report/article harvesting"
+    },
+    {
+      "examples": "NASA, NOAA, DOE, NIH, NSF portals",
+      "family": "government_science_data",
+      "status": "SUBSTRATE_FAMILY",
+      "tooling_target": "public measurement substrates"
+    },
+    {
+      "examples": "Lean mathlib, theorem prover repos, problem archives",
+      "family": "formal_math_repositories",
+      "status": "SUBSTRATE_FAMILY",
+      "tooling_target": "machine-checkable proof receipts"
+    },
+    {
+      "examples": "NIST, W3C, ISO metadata, patent offices",
+      "family": "standards_and_patents",
+      "status": "SUBSTRATE_FAMILY",
+      "tooling_target": "engineering constraints and prior art"
+    },
+    {
+      "examples": "regulators, courts, legislation portals",
+      "family": "policy_and_law",
+      "status": "SUBSTRATE_FAMILY",
+      "tooling_target": "governance claim provenance"
+    }
+  ],
+  "validation_errors": []
+}

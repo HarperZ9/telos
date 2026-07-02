@@ -1,0 +1,454 @@
+The whole theme of my talk is
+mathematics is entering the 21st
+century. So this is actually very
+appropo. Um
+all right. Yeah. So as I said we have
+worked uh in much the same way for for
+centuries. Uh on the left is a picture
+of a a textbook uh from 200 years ago.
+Um and it's it's a bit hard to to see
+this resolution and it's written in
+French too but um if you're a
+mathematician you'll recognize the
+formats of the equations. Things have
+really not changed that much in 200
+years. is I mean we had latte and a
+couple other minor things but um and uh
+yeah the blackboards are so ubiquitous
+in fact they're even an art form um
+Jessica Win who I is a friend of mine
+actually she she actually photographs um
+well she's a professional photo
+photographer she she photographed um a
+whole bunch of mathematical um
+blackboards as works of art and made it
+into a nice coffee table book
+um yeah and here's the life cycle as I
+said of um mathematical problems there's
+a whole life cycle where where proofs of
+slowly get generated ated uh understood,
+digested and eventually end up in
+textbooks and also in uh now the
+training gate of AI and whatever. Um but
+um yeah so so what AI has been doing is
+sort of accelerating proof generation
+creating solutions and to some extent
+proof verification but not so much uh
+the rest of the digestion process. Um
+and so this has started creating um what
+I call proof indigestion or traffic jams
+in mathematics. Um and I think the same
+thing is happening in the other sciences
+too now. Um we are um yeah so journals
+for example we're suddenly um we're
+receiving floods of AI generated papers
+which actually many of them are actually
+very low quality but some actually have
+have some value but but we don't have
+the the human resources to referee all
+of these um um all these new advances
+and so we could all these new
+bottlenecks are emerging. Um there are
+um there are sites devoted to solving
+problems uh where suddenly solutions are
+piling up and people um are not um uh
+are not able to um to verify them. Um
+and so what this tells me is that
+traditional a um frameworks for doing
+research uh in mathematics you know
+journals and and and conferences and
+whatever uh they can't handle
+unrestricted AI use. Um um and in fact
+um and in fact adding more and more AI
+to uh to these these these sort of
+infrastructures is can actually be quite
+harmful um that can crowd out um human
+contributions. Um so um
+uh as an analogy I like to think of AI
+as sort of like the invention of the
+automobile. Um and in the 19th century
+when the uh in the end of the 19th
+century early 21st 20th century when
+automobiles came out the the only
+infrastructure available were the
+streets that were built in the 19th
+century and these very narrow
+cobblestone streets. Um and so they had
+to drive in these streets and it there
+was no no rules for traffic or or there
+was um and it was all mingled together
+humans and and and and automobiles and
+it was pretty chaotic. um and um and uh
+you know making the you know the cars
+the technology got better, they got
+faster and safer and more energy
+efficient and whatever but still that
+doesn't solve this this congestion
+problem. Um so that's kind of where
+mathematics and probably the sciences
+more more broadly stand today with
+regards to AI. So what we need is to
+redesign our infrastructure and create
+um new ways to do scientific research
+that can accommodate um uh AI use
+safely. So with the automobile, we
+figure this out. We have um you know
+some we have roads that are specifically
+forum automobiles or for trains or or or
+motors or whatever. Um and then we have
+pedestrian walkways for which no cars
+are allowed and then there's a very
+small number of hybrid um um uh roads
+where you have both. Um and we figured
+out ways to to have them coexist. Um now
+it's not perfect. Um some uh some cities
+may may may u may have may overweight
+their infrastructure towards cars. This
+is so um it's still it's still a um a
+work in progress but um uh but it is
+much better than the 19th century model
+of having everything pass through the
+same um infrastructures. So uh we should
+keep our infrastructures of journals and
+and all the traditional uh ways of
+producing research uh still valuable but
+we should also create new ones. So
+that's what I've been interested in at
+SEI. Um and so one of the the venues for
+this are the um SE competitions which
+I'm going to talk about. Um uh so um um
+so with AI there's a lot of new
+possibilities that that uh so in
+particular in mathematics um mathematics
+has been kind of a fairly highly
+gatekeeper until recently. You know you
+needed a math PhD often to even
+understand the problems that we work on
+let alone contribute to them. Um but now
+we have the capability to to really um
+accept um for certain for certain types
+of math problems you can you can you can
+um uh you can take in contributions from
+the broader um community of math
+adjacent people who may not have PhDs in
+mathematics some do some don't um but
+they they have these new tools AIs and
+whatever and they can contribute uh but
+the key is that um we need uh to design
+the right problems for them to work on
+for which we can safely incorporate
+hundreds or thousands of contributions
+from the public. Um, in the past this
+has not worked because we couldn't
+verify all the the contributions that
+come in and many are very low quality.
+Uh, but we've started to figure out some
+ways to um to do this. Uh, and the
+competitions we're talking about are an
+example there. So, right now we have
+three competitions um ongoing. Uh, none
+have completely finished yet. Um, but
+they have all produced nice intermediate
+results. Um, the first competition is
+what we called a distillation challenge.
+We launched it on Pi Day uh March 14th.
+Um so it built upon a previous um
+crowdsourced project that I ran about
+two years ago uh called the equation of
+theories project. Um so this was a an
+experiment to see whether we could
+really do mathematics at scale with
+modern technologies. Um so we created um
+22 million problems in algebra. Now this
+is not a math talk. So um uh okay the
+questions I think is like does the
+commutive law imply the associative law?
+if you know what these things are. Um
+and in this um but uh the exact um um
+problems are not important. Let's just
+say we generated this um big sort of um
+um uh test set of 22 million questions
+each of which were um most of which are
+not too hard like you get a graduate
+student in algebra working it for an
+hour they can solve any given one of
+these questions but we have 22 million
+of these questions. Two years ago we
+completed this project. Uh many many
+people contributed with many tools um
+AIS and and other and more traditional
+uh computational tools and we managed to
+settle this um uh all 22 million
+questions. So so uh we have 22 million
+true false questions yes or no. And so
+we have this nice little data set of of
+of math in algebra. Um but uh it's a
+very complicated data set. Um and um any
+individual question with with modern AI,
+you could feed any given one of these 22
+million data points to a frontier model
+and it will think for 30 minutes and
+spend a few dollars of of compute and it
+will answer most almost like 99% of
+these questions yes or no correctly. Uh
+which is fine but um um it um but this
+doesn't sort of tell you what what what
+the structure is. What what uh uh what
+are the features of this data set? uh is
+there a way to sort of uh describe all
+these answers in a condensed way? Um so
+we set up what we call a distillation
+challenge. So if you instead of using a
+premium fancy expensive model, if you
+use a a very cheap open- source model
+that just runs for for pennies, um then
+it's terrible on these problems
+currently. You you you give it one of
+these problems and it has a 51% chance
+of getting the answer right like barely
+better than than than random chance. Um
+but um uh so but um it turns out that if
+you give um these open source models a
+good prompt um like a one-paged set of
+tips on how to solve algebra problems
+and it turns out that they can do a lot
+better just like a very weak student um
+at taking an algebra midterm may do very
+badly unless they are given a one-page
+sheet of lots of helpful things to do
+and they can do a lot better. Um, so the
+distillation challenge that that we set
+up uh was the competition was to submit
+a one-page cheat sheet to help these
+very weak uh AI models um um um do well
+at sort of this this midterm of of
+solving these 22 million true false
+questions. So uh contestants would
+submit a cheat sheet. we would test them
+against a test set of of select
+carefully selected um sample problems
+and they get a grade and and and um they
+have to try to to find cheat sheets that
+uh um that that um that performed as as
+well as possible and these are cheat
+sheets that AIs can read but humans can
+read too. Um so the idea is whether you
+can sort of distill this entire
+knowledge of 22 million true force
+questions down to like a single page um
+that uh um uh that kind of explains the
+essence or can explain as much of of of
+this data set as possible. Um so uh that
+that challenge has um uh is still
+ongoing. Um we have um the the results
+so far are quite quite promising. So, so
+with the best cheat sheets currently, um
+the past the success rate of these weak
+AIS uh has increased by 20 30 percentage
+points from 50% to like 80% accuracy. Um
+and uh the the next stage is is um is to
+uh which is still ongoing is to get
+these these a um these um weak models to
+not just produce yes no true force
+answers but actually write proofs and
+actually give more detailed
+explanations. Um and I'll be very
+interested to see how how that goes.
+It's a much more challenging um task. Um
+okay, you can't really read it, but this
+this is what one one of these cheat
+sheets actually looks like. It's it's
+it's very tur because it has this it has
+to fit on one page, but it is actually
+um uh you can see that it it's encoding
+a lot of information about the problems
+we're solving.
+Okay. Um we're running uh short on time,
+so I think I'll skip one of the
+competitions. I I'll talk about the
+final competition that we are um um
+running right now. And it's actually
+quite exciting. We're checking it every
+day. The the the latest results. Um so
+um this is um a more mainstream
+mathematical challenge. We we have we we
+this challenge was created in in
+cooperation with the um uh LMFDB the L
+function say modular forms database uh
+which is um um a major database of
+mathematical objects of interest in
+number theory, cryptograph cryptography,
+many other fields of mathematics. Um and
+um they were interested in something
+called the inverse gow problem. Uh which
+um uh okay the exact technical details
+of this are again maybe not in the scope
+of this uh this conference but um you
+can think of it like an Easter egg hunt.
+Um so um we're looking for polinomials.
+So think think of them like eggs. Okay.
+So we have these these polinomials and
+each egg has a certain um property like
+a certain color if you wish. Okay. So um
+it's called a gawa group. Um and we're
+interested in collecting um um eggs of
+various colors. Okay. So, so there are
+some colors that are very common and and
+some are very rare. Um if you collected
+baseball cards or other trading cards,
+you you may have um you know you know
+some cards are common, some cards are
+rare and and there are people who try to
+collect the entire set of of all the
+cards of a certain type. And so this is
+roughly speaking what we are trying to
+do. We we are um we are try we are um it
+turns out that in this particular
+problem there are 160,000 colors if you
+wish or or types of polomials and we
+want to collect one of each. Um so so
+this this collection game or Easter egg
+hunt if you wish. Um all right. Yeah. So
+um
+so um so the thing about this challenge
+is that once you f you can type in a
+polinomial. A polinomial is is just is a
+these are polinoms of 22 24. You just
+have to type in 24 integers. And it's
+very easy with modern um um computer
+software to take this this polinomial
+and just work out its color. Okay. like
+okay this this this this polinomial has
+a G group which is 24T t146 okay that's
+that's one of the uh colors that that
+that you can get um and so it's very
+easy once you write write down um a
+polinomial to see u what what what which
+egg you you have gotten um but we want
+to collect all of them um and so that
+the for the common ones that's very easy
+but there's some ultraware ones in fact
+there may be some for which for which uh
+there are no for which no Easter eggs
+exist uh we don't know in fact the whole
+the whole inverse gawa problem is is to
+um uh is is is is whether every single
+possible color is actually attainable.
+That's that's an that's a major open
+question in in GAWA theory. Um so uh we
+decided to make this a competition. Um
+and so um yeah so we we've we've been um
+yeah so um contestants can submit
+polinomials and and we verify them. Uh
+we don't reveal so we have two stages of
+this competition. We have a competitive
+stage which is ongoing right now and
+then there'll be a cooperative stage
+afterwards that is hasn't started yet.
+Uh in the competitive stage um we don't
+reveal the polinomials. Each team has
+their own secret stash of polinomials
+they submit them and um if they're the
+first to get if they're the only ones
+who have a a certain color then they
+they get one point. If if if um if many
+um teams have submitted um have found
+the same color, then the points are
+shared in a somewhat complicated
+formula. Um so um uh we want to
+encourage um people finding very
+difficult hard to find uh uh Easter
+eggs. And part of the reason why we do
+this this experiment is because we don't
+know in advance which ones are hard,
+which ones are easy. Um and so we're
+hoping this competition will actually
+uncover kind of by market forces if you
+wish uh which of these um uh GA groups
+are actually very rare in which are
+common. Um we we have very little
+empirical data about this. We um
+mathematics traditionally has not been
+an experimental science. Um but now we
+can do kind of experimental studies um
+of u of mathematical objects and and
+this is really exciting a new capability
+um that these these these these tools
+are offering. Yeah. So there are many
+teams uh so this is a graph of of of
+team progress in the last week or two.
+Um there are some teams that have
+clearly using a lot of AI and it's sort
+of scooting ahead for now. Um but you
+know um the lead is not guaranteed. You
+know if if somebody else can also
+replicate and find the similar um um uh
+other eggs of the same colors as the
+leading teams they can steal these guys
+points and so we expect the the lead to
+to fluctuate. Yeah. And actually it um I
+don't have these this graph is from
+three days ago but it's it's been
+changed. It's not quite as monotonic as
+um there's been some some recent uh
+upsets. Um so this has been quite
+exciting. Um um the uh the organizers
+have been reporting that at math
+conferences in algebra people all know
+about this competition. Um that some
+people are organizing their own private
+teams and they're all very excited. um
+which is in contrast so so many of the
+other AI contributions mathematics they
+have a mixed reception in in mathematics
+some people uh welcome them and some
+people are afraid that that they're
+going to take away ma you know they will
+um they'll compete directly with what
+mathematicians do but this is an
+orthogonal capability to what
+traditional mathematicians do and um
+it's a I think it's it's a very good
+place to to to to direct these these AI
+u uh these new uh AI capabilities okay
+just like we have roads for humans and
+roads for AI. We will have competitions
+with heavy AI assistants, but we also
+have traditional um uh math workflows.
+Uh so this is still ongoing. Um I hope
+to report more about it in a future
+meeting how how these things these
+things go, but so far it's been very
+popular and uh um yeah, the leaderboards
+and yeah, I mean there's a little
+community um sharing tips and and so
+forth. Um okay, so I think I'll skip the
+um slides. Um we are trying to scale
+these up. So we are running three
+competitions on uh a fairly minimal
+budget right now. U you know we have
+just a few uh engineers and uh and some
+comput resources. Eventually we wanted
+to scale up um to do much larger
+competitions which with much more
+compute and and uh with some
+high-profile prizes and things. Um all
+the competitions right now are in
+mathematics u partly because that's the
+easiest where you can you can verify the
+submissions. You can score very quick
+easily. But in principle, there could be
+other scientific competitions that you
+could find. If there's some big data set
+that someone wants to wants to collect
+um and there's some way to do it in a
+crowdsourced fashion um you know yeah
+come talk to us. We might be able to set
+up a competition. Uh we do hope to set
+up a formal call for for proposals um in
+the near future. Uh but that's still you
+know having board meetings and lots of
+internal emails about how how best to do
+this. Um okay so I think um I will in
+interest of time I will stop here. So
+thank you very much.

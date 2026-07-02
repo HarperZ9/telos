@@ -1,0 +1,605 @@
+{
+  "adapter_pipeline": [
+    {
+      "role": "capture source URL, body hash, local docs, and warning state",
+      "stage": "Gather"
+    },
+    {
+      "role": "bind adapter contract to workspace and source-registry context",
+      "stage": "Index"
+    },
+    {
+      "role": "route source, domain, legal/license, and proof-packet validation lanes",
+      "stage": "Forum"
+    },
+    {
+      "role": "record adapter actions, admission decisions, and loop-ledger receipts",
+      "stage": "Telos"
+    },
+    {
+      "role": "reject negative fixtures and verify contract measurements",
+      "stage": "Crucible"
+    }
+  ],
+  "boundary": "Pass 0143 defines adapter contracts and fixtures. It does not certify live repository coverage, DOI correctness, full-text access, market uniqueness, theorem proof, or natural-law discovery.",
+  "contracts": [
+    {
+      "adapter": "RepositoryDirectoryAdapter",
+      "input_families": [
+        "registry_of_repositories",
+        "repository_platform",
+        "organization_identity"
+      ],
+      "market_product": "ResearchSourceRouter",
+      "outputs": [
+        "repository_directory_record",
+        "repository_endpoint_candidate",
+        "organization_repository_join"
+      ],
+      "purpose": "Normalize repository-directory and repository-platform evidence into harvestable, source-backed institutional and data repository records.",
+      "rejects": [
+        "repository listing as complete corpus",
+        "endpoint candidate as verified endpoint behavior",
+        "organization label as endorsement"
+      ],
+      "required_fields": [
+        "source_system",
+        "source_url",
+        "directory_record_id",
+        "repository_name_ref",
+        "repository_home_url",
+        "organization_id_ref",
+        "organization_type",
+        "country_or_region",
+        "repository_platform",
+        "protocol_candidates",
+        "endpoint_url_ref",
+        "content_scope",
+        "license_or_terms_ref",
+        "freshness_time",
+        "source_body_sha256",
+        "evidence_status",
+        "failure_codes",
+        "verifier_ref"
+      ]
+    },
+    {
+      "adapter": "ScholarlyGraphAdapter",
+      "input_families": [
+        "scholarly_graph",
+        "open_access",
+        "preprint_press",
+        "biomedical",
+        "domain_database",
+        "ml_dataset_hub"
+      ],
+      "market_product": "ClaimToExperimentPacket",
+      "outputs": [
+        "work_graph_record",
+        "claim_context_record",
+        "dataset_relation_record"
+      ],
+      "purpose": "Normalize work, citation, author, dataset, repository-location, funder, license, and version metadata into claim-to-proof packet context.",
+      "rejects": [
+        "metadata-only as full text",
+        "preprint as peer review",
+        "graph relation as causality"
+      ],
+      "required_fields": [
+        "source_system",
+        "source_url",
+        "work_id_ref",
+        "doi_ref",
+        "title_hash",
+        "author_refs",
+        "organization_refs",
+        "venue_ref",
+        "relation_type",
+        "reference_refs",
+        "citation_refs",
+        "dataset_refs",
+        "funder_refs",
+        "license_or_open_access_state",
+        "repository_locations",
+        "version_state",
+        "freshness_time",
+        "source_body_sha256",
+        "evidence_status",
+        "failure_codes",
+        "verifier_ref"
+      ]
+    }
+  ],
+  "current_promoted_natural_laws": [],
+  "current_promoted_theorems": [],
+  "first_workbench": {
+    "name": "one_institution_claim_graph",
+    "steps": [
+      "choose one university or lab",
+      "resolve ROR identity",
+      "discover repositories through directory records",
+      "harvest OAI-PMH or REST endpoint candidates",
+      "join works through Crossref/DataCite/OpenAlex/Semantic Scholar",
+      "emit claim-to-experiment packet with negative fixtures"
+    ]
+  },
+  "fixture_schema": "RegistryAdapterContractFixture/v1",
+  "join_keys": [
+    "source_system",
+    "source_url",
+    "source_body_sha256",
+    "record_identifier",
+    "repository_identifier",
+    "organization_identifier",
+    "ror_identifier",
+    "work_identifier",
+    "doi_identifier",
+    "dataset_identifier",
+    "oai_identifier",
+    "version",
+    "license_or_terms_ref",
+    "freshness_time",
+    "verifier_ref"
+  ],
+  "negative_fixtures": [
+    {
+      "expected_status": "REJECT",
+      "fixture_id": "registry-row-without-endpoint-policy",
+      "reason": "A repository registry row without an endpoint can seed discovery but cannot certify harvest behavior."
+    },
+    {
+      "expected_status": "REJECT",
+      "fixture_id": "doi-record-without-license-policy",
+      "reason": "A work DOI without license/open-access state cannot become a reusable full-text or dataset claim packet."
+    },
+    {
+      "expected_status": "REJECT",
+      "fixture_id": "preprint-treated-as-peer-reviewed",
+      "reason": "Preprint source state must remain distinct from peer-reviewed publication state."
+    },
+    {
+      "expected_status": "REJECT",
+      "fixture_id": "repository-count-as-coverage",
+      "reason": "Directory count is not corpus completeness or domain coverage."
+    },
+    {
+      "expected_status": "REJECT",
+      "fixture_id": "organization-label-as-endorsement",
+      "reason": "An institution or organization label is identity context, not endorsement or validity."
+    },
+    {
+      "expected_status": "REJECT",
+      "fixture_id": "open-access-route-as-clearance",
+      "reason": "Open-access discovery still needs license, terms, and reuse policy references."
+    },
+    {
+      "expected_status": "REJECT",
+      "fixture_id": "metadata-only-as-full-text",
+      "reason": "Metadata capture is not equivalent to claim body, figures, data, or methods."
+    },
+    {
+      "expected_status": "REJECT",
+      "fixture_id": "stale-version-as-current",
+      "reason": "Version and freshness fields must gate current-state assertions."
+    },
+    {
+      "expected_status": "REJECT",
+      "fixture_id": "api-docs-as-endpoint-behavior",
+      "reason": "API documentation does not prove a particular endpoint was reached and parsed."
+    },
+    {
+      "expected_status": "REJECT",
+      "fixture_id": "graph-relation-as-causality",
+      "reason": "Citation, relation, and co-occurrence edges are not causal evidence."
+    }
+  ],
+  "pass": "0143",
+  "repository_directory_records": [
+    {
+      "content_scope": "institutional repository discovery",
+      "directory_record_id": "fixture:opendoar:repository-record",
+      "endpoint_url_ref": "must_be_verified_before_harvest",
+      "evidence_status": "GATHER_TLS_FAILED_SOURCE_LEAD",
+      "evidence_status_expected": "SOURCE_LEAD_ALLOWED",
+      "failure_codes": [
+        "SOURCE_LEAD_OR_WARNING"
+      ],
+      "fixture_id": "repo-dir-opendoar",
+      "freshness_time": "capture_or_endpoint_time_required",
+      "license_or_terms_ref": "required_before_reuse",
+      "organization_id_ref": "ror_or_local_org_required",
+      "organization_type": "university_or_research_institution",
+      "protocol_candidates": [
+        "OAI-PMH",
+        "REST",
+        "Sitemap"
+      ],
+      "repository_home_url": null,
+      "repository_name_ref": "fixture-only institutional repository",
+      "repository_platform": "unknown_until_harvest",
+      "source_body_sha256": null,
+      "source_family": "registry_of_repositories",
+      "source_system": "OpenDOAR",
+      "source_system_contains": "OpenDOAR",
+      "source_url": "https://opendoar.ac.uk/",
+      "verifier_ref": "pass-0143-validator"
+    },
+    {
+      "content_scope": "research data repository discovery",
+      "directory_record_id": "fixture:re3data:repository-record",
+      "endpoint_url_ref": "must_be_verified_before_harvest",
+      "evidence_status": "GATHER_VERIFIED",
+      "evidence_status_expected": "GATHER_VERIFIED",
+      "failure_codes": [],
+      "fixture_id": "repo-dir-re3data",
+      "freshness_time": "capture_or_endpoint_time_required",
+      "license_or_terms_ref": "required_before_reuse",
+      "organization_id_ref": "ror_or_repository_owner_required",
+      "organization_type": "data_repository_operator",
+      "protocol_candidates": [
+        "REST",
+        "Sitemap",
+        "OAI-PMH"
+      ],
+      "repository_home_url": null,
+      "repository_name_ref": "fixture-only research data repository",
+      "repository_platform": "registry_declared_or_unknown",
+      "source_body_sha256": "af60e0f0ae507a00de93c7a013ee4c50a80b387bce86df00da28fdbdbb114e4d",
+      "source_family": "registry_of_repositories",
+      "source_system": "About | re3data.org",
+      "source_system_contains": "re3data",
+      "source_url": "https://www.re3data.org/about",
+      "verifier_ref": "pass-0143-validator"
+    },
+    {
+      "content_scope": "repository graph and project metadata",
+      "directory_record_id": "fixture:openaire:graph-source",
+      "endpoint_url_ref": "must_be_verified_before_harvest",
+      "evidence_status": "GATHER_VERIFIED",
+      "evidence_status_expected": "GATHER_VERIFIED",
+      "failure_codes": [],
+      "fixture_id": "repo-dir-openaire",
+      "freshness_time": "capture_or_endpoint_time_required",
+      "license_or_terms_ref": "required_before_reuse",
+      "organization_id_ref": "ror_join_candidate",
+      "organization_type": "research_graph_provider",
+      "protocol_candidates": [
+        "REST",
+        "Graph API"
+      ],
+      "repository_home_url": null,
+      "repository_name_ref": "fixture-only OpenAIRE source",
+      "repository_platform": "graph_api",
+      "source_body_sha256": "1fc461bf59ae31e53a8c00c679323ebb97168c2bb9d5b1abf5958b6713d7dd72",
+      "source_family": "registry_of_repositories",
+      "source_system": "Graph API | OpenAIRE Graph Documentation",
+      "source_system_contains": "OpenAIRE",
+      "source_url": "https://graph.openaire.eu/docs/apis/graph-api/",
+      "verifier_ref": "pass-0143-validator"
+    },
+    {
+      "content_scope": "organization identity join",
+      "directory_record_id": "fixture:ror:organization-record",
+      "endpoint_url_ref": "must_be_verified_before_harvest",
+      "evidence_status": "GATHER_VERIFIED",
+      "evidence_status_expected": "GATHER_VERIFIED",
+      "failure_codes": [],
+      "fixture_id": "repo-dir-ror-identity",
+      "freshness_time": "capture_or_endpoint_time_required",
+      "license_or_terms_ref": "required_before_reuse",
+      "organization_id_ref": "ror_required",
+      "organization_type": "organization_identity",
+      "protocol_candidates": [
+        "REST"
+      ],
+      "repository_home_url": null,
+      "repository_name_ref": "fixture-only organization",
+      "repository_platform": "identity_graph",
+      "source_body_sha256": "94cbc58f816e4a89d8ae1d12e9dc47568d52d7d0807393786f51af8a22d8e2b9",
+      "source_family": "organization_identity",
+      "source_system": "ROR basics",
+      "source_system_contains": "ROR",
+      "source_url": "https://ror.readme.io/docs/basics",
+      "verifier_ref": "pass-0143-validator"
+    },
+    {
+      "content_scope": "repository platform records and datasets",
+      "directory_record_id": "fixture:dataverse:repository-platform",
+      "endpoint_url_ref": "must_be_verified_before_harvest",
+      "evidence_status": "GATHER_VERIFIED",
+      "evidence_status_expected": "GATHER_VERIFIED",
+      "failure_codes": [],
+      "fixture_id": "repo-dir-dataverse",
+      "freshness_time": "capture_or_endpoint_time_required",
+      "license_or_terms_ref": "required_before_reuse",
+      "organization_id_ref": "repository_owner_required",
+      "organization_type": "repository_platform_operator",
+      "protocol_candidates": [
+        "REST",
+        "OAI-PMH"
+      ],
+      "repository_home_url": null,
+      "repository_name_ref": "fixture-only Dataverse installation",
+      "repository_platform": "Dataverse",
+      "source_body_sha256": "c200c9d40160ba7740497f9e50b5a7cfca7f41400c1c61efd2e101106a3fa083",
+      "source_family": "repository_platform",
+      "source_system": "API Guide \u2014 Dataverse.org",
+      "source_system_contains": "Dataverse",
+      "source_url": "https://guides.dataverse.org/en/latest/api/index.html",
+      "verifier_ref": "pass-0143-validator"
+    },
+    {
+      "content_scope": "repository protocol contract",
+      "directory_record_id": "fixture:oai-pmh:protocol-endpoint",
+      "endpoint_url_ref": "must_be_verified_before_harvest",
+      "evidence_status": "SOURCE_NOT_FOUND",
+      "evidence_status_expected": "GATHER_VERIFIED",
+      "failure_codes": [
+        "SOURCE_LEAD_OR_WARNING"
+      ],
+      "fixture_id": "repo-dir-oai-pmh",
+      "freshness_time": "capture_or_endpoint_time_required",
+      "license_or_terms_ref": "required_before_reuse",
+      "organization_id_ref": "repository_owner_required",
+      "organization_type": "repository_operator",
+      "protocol_candidates": [
+        "OAI-PMH"
+      ],
+      "repository_home_url": null,
+      "repository_name_ref": "fixture-only OAI-PMH repository",
+      "repository_platform": "protocol_adapter",
+      "source_body_sha256": null,
+      "source_family": "source_lead",
+      "source_system": "OAI-PMH",
+      "source_system_contains": "OAI-PMH",
+      "source_url": null,
+      "verifier_ref": "pass-0143-validator"
+    }
+  ],
+  "schema": "RegistryAdapterContractsReceipt/v1",
+  "scholarly_graph_records": [
+    {
+      "dataset_refs": [],
+      "doi_ref": "doi_or_null_required",
+      "endpoint_url_ref": "must_be_verified_before_harvest",
+      "evidence_status": "GATHER_VERIFIED",
+      "evidence_status_expected": "GATHER_VERIFIED",
+      "failure_codes": [],
+      "fixture_id": "graph-crossref-work",
+      "freshness_time": "capture_or_endpoint_time_required",
+      "license_or_terms_ref": "required_before_reuse",
+      "relation_type": "publication_metadata",
+      "source_body_sha256": "8db089a19af134f5aa1ff5082d3d6602d4aa4705e83cb81f97cc6f85f9d17227",
+      "source_family": "scholarly_graph",
+      "source_system": "REST API - Crossref",
+      "source_system_contains": "Crossref",
+      "source_url": "https://www.crossref.org/documentation/retrieve-metadata/rest-api/",
+      "verifier_ref": "pass-0143-validator",
+      "version_state": "metadata_current_at_capture"
+    },
+    {
+      "dataset_refs": [
+        "data_doi_candidate"
+      ],
+      "doi_ref": "doi_required_for_data_record",
+      "endpoint_url_ref": "must_be_verified_before_harvest",
+      "evidence_status": "GATHER_VERIFIED",
+      "evidence_status_expected": "GATHER_VERIFIED",
+      "failure_codes": [],
+      "fixture_id": "graph-datacite-dataset",
+      "freshness_time": "capture_or_endpoint_time_required",
+      "license_or_terms_ref": "required_before_reuse",
+      "relation_type": "dataset_metadata",
+      "source_body_sha256": "9b70e0447a687fd2d6afb449ad1ba223199bffaca39071abcd991eeb3b8ba372",
+      "source_family": "scholarly_graph",
+      "source_system": "Introduction to the DataCite REST API",
+      "source_system_contains": "DataCite",
+      "source_url": "https://support.datacite.org/docs/api",
+      "verifier_ref": "pass-0143-validator",
+      "version_state": "metadata_current_at_capture"
+    },
+    {
+      "dataset_refs": [],
+      "doi_ref": "doi_or_openalex_id_required",
+      "endpoint_url_ref": "must_be_verified_before_harvest",
+      "evidence_status": "GATHER_VERIFIED",
+      "evidence_status_expected": "GATHER_VERIFIED",
+      "failure_codes": [],
+      "fixture_id": "graph-openalex-work",
+      "freshness_time": "capture_or_endpoint_time_required",
+      "license_or_terms_ref": "required_before_reuse",
+      "relation_type": "work_author_institution_topic",
+      "source_body_sha256": "7f749637b4c478f4bcfe6f26b4ea02ea9061d600877de6e1ea56eb294302f9fb",
+      "source_family": "scholarly_graph",
+      "source_system": "Overview - OpenAlex Developers",
+      "source_system_contains": "OpenAlex",
+      "source_url": "https://developers.openalex.org/",
+      "verifier_ref": "pass-0143-validator",
+      "version_state": "metadata_current_at_capture"
+    },
+    {
+      "dataset_refs": [
+        "paper_dataset_link_candidate"
+      ],
+      "doi_ref": "doi_or_paper_id_required",
+      "endpoint_url_ref": "must_be_verified_before_harvest",
+      "evidence_status": "GATHER_VERIFIED",
+      "evidence_status_expected": "GATHER_VERIFIED",
+      "failure_codes": [],
+      "fixture_id": "graph-semantic-scholar-paper",
+      "freshness_time": "capture_or_endpoint_time_required",
+      "license_or_terms_ref": "required_before_reuse",
+      "relation_type": "paper_citation_dataset",
+      "source_body_sha256": "d9d455e35e4ddf651817d2d3e3d3d38b4b84ce692ba0188c0756222b449c31c2",
+      "source_family": "scholarly_graph",
+      "source_system": "Semantic Scholar - Academic Graph API",
+      "source_system_contains": "Semantic Scholar",
+      "source_url": "https://api.semanticscholar.org/api-docs/",
+      "verifier_ref": "pass-0143-validator",
+      "version_state": "metadata_current_at_capture"
+    },
+    {
+      "dataset_refs": [],
+      "doi_ref": "doi_or_repository_item_required",
+      "endpoint_url_ref": "must_be_verified_before_harvest",
+      "evidence_status": "GATHER_VERIFIED",
+      "evidence_status_expected": "GATHER_VERIFIED",
+      "failure_codes": [],
+      "fixture_id": "graph-core-repository-item",
+      "freshness_time": "capture_or_endpoint_time_required",
+      "license_or_terms_ref": "required_before_reuse",
+      "relation_type": "repository_item_or_full_text_route",
+      "source_body_sha256": "20cce8036cbb90194f8ca4c3d04303ce2570a2d94cc98020561076d44a34c197",
+      "source_family": "scholarly_graph",
+      "source_system": "The world\u2019s largest collection of open access research papers",
+      "source_system_contains": "CORE",
+      "source_url": "https://core.ac.uk/",
+      "verifier_ref": "pass-0143-validator",
+      "version_state": "metadata_current_at_capture"
+    },
+    {
+      "dataset_refs": [],
+      "doi_ref": "pubmed_or_pmc_or_doi_required",
+      "endpoint_url_ref": "must_be_verified_before_harvest",
+      "evidence_status": "GATHER_VERIFIED",
+      "evidence_status_expected": "GATHER_VERIFIED",
+      "failure_codes": [],
+      "fixture_id": "graph-europepmc-biomed",
+      "freshness_time": "capture_or_endpoint_time_required",
+      "license_or_terms_ref": "required_before_reuse",
+      "relation_type": "biomedical_work_metadata",
+      "source_body_sha256": "5f6580924fe59448d069ab98c9253f8c9a5fea6f27e6c319392032c2f1068075",
+      "source_family": "biomedical",
+      "source_system": "Europe PMCEurope PMCRESTful Web Service - Developers - Europe PMC",
+      "source_system_contains": "Europe PMC",
+      "source_url": "https://europepmc.org/RestfulWebService",
+      "verifier_ref": "pass-0143-validator",
+      "version_state": "metadata_current_at_capture"
+    },
+    {
+      "dataset_refs": [],
+      "doi_ref": "arxiv_id_required",
+      "endpoint_url_ref": "must_be_verified_before_harvest",
+      "evidence_status": "GATHER_VERIFIED",
+      "evidence_status_expected": "GATHER_VERIFIED",
+      "failure_codes": [],
+      "fixture_id": "graph-arxiv-preprint",
+      "freshness_time": "capture_or_endpoint_time_required",
+      "license_or_terms_ref": "required_before_reuse",
+      "relation_type": "preprint_metadata",
+      "source_body_sha256": "7519897cf139a0b07b8b930011f2ecbf6f93818608bc7d5017b6197f042db6fc",
+      "source_family": "preprint_press",
+      "source_system": "arXiv API Access - arXiv info | arXiv e-print repository",
+      "source_system_contains": "arXiv",
+      "source_url": "https://info.arxiv.org/help/api/index.html",
+      "verifier_ref": "pass-0143-validator",
+      "version_state": "preprint_version_required"
+    },
+    {
+      "dataset_refs": [
+        "ml_dataset_id_required"
+      ],
+      "doi_ref": "doi_or_dataset_id_required",
+      "endpoint_url_ref": "must_be_verified_before_harvest",
+      "evidence_status": "GATHER_VERIFIED",
+      "evidence_status_expected": "GATHER_VERIFIED",
+      "failure_codes": [],
+      "fixture_id": "graph-openml-dataset",
+      "freshness_time": "capture_or_endpoint_time_required",
+      "license_or_terms_ref": "required_before_reuse",
+      "relation_type": "ml_dataset_benchmark_metadata",
+      "source_body_sha256": "6c26726f7fe5b7bae4655078eecf96c39696bb3a57efeea12e21eb5ee2bd2a0d",
+      "source_family": "ml_dataset_hub",
+      "source_system": "REST API - Open Machine Learning",
+      "source_system_contains": "OpenML",
+      "source_url": "https://docs.openml.org/ecosystem/Rest/",
+      "verifier_ref": "pass-0143-validator",
+      "version_state": "dataset_version_required"
+    }
+  ],
+  "seal": "6d0ad15f379bb9bc4f971b1ec0c564a112e2fd9f80ad523fb88dac54905da88b",
+  "source_registry_ref": {
+    "pass": "0142",
+    "schema": "SourceRegistryFederationReceipt/v1",
+    "seal": "e683c908d5b0e4a3c6b2b6ffba3061198bb496ab9b7ce59a92a9a7c26db8f03b",
+    "source_rows": 33,
+    "status": "SOURCE_REGISTRY_FEDERATION_MATCH",
+    "usable_captures": 27
+  },
+  "status": "REGISTRY_ADAPTER_CONTRACTS_MATCH",
+  "tool_floor_mismatches": [],
+  "updated_tool_floor_expected": {
+    "crucible": {
+      "experiment_role": "adapter contract falsification and measurement verdicts",
+      "version": "1.1.0"
+    },
+    "forum": {
+      "experiment_role": "route adapter records to source, domain, and proof-packet lanes",
+      "version": "1.12.0"
+    },
+    "gather": {
+      "experiment_role": "source body, local docs, and receipt capture",
+      "version": "1.5.0"
+    },
+    "index": {
+      "experiment_role": "workspace context and adapter surface mapping",
+      "version": "2.8.0"
+    },
+    "telos": {
+      "experiment_role": "action receipt and loop-ledger envelope for adapter runs",
+      "version": "0.1.0"
+    }
+  },
+  "updated_tool_floor_observed": {
+    "crucible": {
+      "command": "crucible --version",
+      "exit_code": 0,
+      "observed_version": "1.1.0",
+      "status": "MATCH",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_first_line": "crucible 1.1.0",
+      "stdout_sha256": "c9a3c2e0a32c682af3a84e8ee4bbf32231c964dfe7dd961b946d197a743bdb75",
+      "tool": "crucible"
+    },
+    "forum": {
+      "command": "forum --version",
+      "exit_code": 0,
+      "observed_version": "1.12.0",
+      "status": "MATCH",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_first_line": "forum 1.12.0",
+      "stdout_sha256": "c08e4475db0dea46f86c0441af54c7d13387881ae2557dcddcaeb2fdf5e8d18c",
+      "tool": "forum"
+    },
+    "gather": {
+      "command": "gather --version",
+      "exit_code": 0,
+      "observed_version": "1.5.0",
+      "status": "MATCH",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_first_line": "gather 1.5.0",
+      "stdout_sha256": "4d6ad2661e845c0cc04012d80b3bc4b2f376508b7854f73a932470f9e33b860f",
+      "tool": "gather"
+    },
+    "index": {
+      "command": "index --version",
+      "exit_code": 0,
+      "observed_version": "2.8.0",
+      "status": "MATCH",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_first_line": "index 2.8.0",
+      "stdout_sha256": "9952767d2790c2471796bc4d1b7980f55428298965835d9edb070b240d8060d3",
+      "tool": "index"
+    },
+    "telos": {
+      "command": "node -p 'telos '+JSON.parse(require('fs').readFileSync('package.json','utf8')).version",
+      "exit_code": 0,
+      "observed_version": "0.1.0",
+      "status": "MATCH",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_first_line": "telos 0.1.0",
+      "stdout_sha256": "0b8f3464457976df17a6545e76c55c1bb45d56376761c26195f999f3e5279e36",
+      "tool": "telos"
+    }
+  }
+}

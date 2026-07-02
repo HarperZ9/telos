@@ -1,0 +1,163 @@
+{
+  "schema": "DogfoodToolReceiptSet/v1",
+  "pass": "0054",
+  "generated_on": "2026-07-01",
+  "status": "MATCH_WITH_FORUM_SUBMIT_GAP_AND_HYPOTHESIS_ONLY_UNIQUENESS",
+  "non_promotion_statement": "Tool receipts prove local OTel-style span import, receipt join output, negative-fixture replay, Telos/Index/Gather/Forum/Crucible availability, and hypothesis-only uniqueness boundaries. They do not prove live collector ingestion, distributed trace backend retention, buyer adoption, scientific truth, or any natural law.",
+  "receipts": [
+    {
+      "tool": "index",
+      "command": "map --root docs/research/dogfood --json",
+      "status": "MATCH",
+      "schema_version": 1,
+      "tool_version": "2.8.0",
+      "root_sha256_prefix": "f2f0af39219698a9",
+      "repo_count": 0,
+      "dirty_count": 0,
+      "top_level_count": 64
+    },
+    {
+      "tool": "mcp__index.index_doctor",
+      "command": "index_doctor",
+      "status": "MATCH",
+      "tool_version": "2.8.0",
+      "check_count": 4,
+      "match_count": 4
+    },
+    {
+      "tool": "gather",
+      "command": "docs",
+      "artifact": "packets/064-otel-trace-receipt-join-adapter.md",
+      "status": "MATCH",
+      "sha256": "71b39e899e143294fb810a2d335bb11cbeff43abf26114cdda22573dd2502952",
+      "chars": 598,
+      "seal": "79ccc8d1a8957e5cb165b31f91c47f3c923f22748eb2cab13d60b5e098cee5eb",
+      "verified": true
+    },
+    {
+      "tool": "mcp__gather.gather_status",
+      "command": "gather_status",
+      "status": "MATCH",
+      "tool_version": "1.5.0",
+      "role": "perception-intake",
+      "command_count": 6,
+      "mcp_tool_count": 5
+    },
+    {
+      "tool": "python",
+      "command": "test_otel_trace_receipt_join_adapter.py",
+      "status": "MATCH",
+      "exit_code": 0,
+      "stdout_sha256": "b2b1b4b03344f9abe713d9256152029d9da86b598c99aadd03f8fea37d6a2eac",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "line_count": 88
+    },
+    {
+      "tool": "python",
+      "command": "probe_otel_trace_receipt_join_adapter.py",
+      "status": "OTEL_TRACE_RECEIPT_JOIN_ADAPTER_MATCH",
+      "implementation_status": "IMPLEMENTED_LOCAL_TRACE_JOIN_ADAPTER",
+      "seal": "e85049e5d195d6eeda1aeadfea360b06884dfd5a5d93bdaadc1d78ff3d99b763",
+      "joined_event_count": 4,
+      "trace_replaces_receipt_count": 0,
+      "negative_match_count": 4,
+      "negative_pass_observed_count": 0,
+      "line_count": 250
+    },
+    {
+      "tool": "python",
+      "command": "import_otel_trace_receipts.py",
+      "status": "MATCH",
+      "sha256": "67036eaee6a648736006c355c0c5fe85accb0cac7a863c3e474f4886d39668ef",
+      "line_count": 237,
+      "join_output_status": "OTEL_TRACE_RECEIPT_JOIN_MATCH",
+      "joined_event_count": 4
+    },
+    {
+      "tool": "python",
+      "command": "validate_pass_0054_otel_trace_receipt_join_adapter.py",
+      "status": "MATCH",
+      "schema": "Pass0054OTelTraceReceiptJoinAdapterValidatorRun/v1",
+      "match": 1,
+      "drift": 0,
+      "joined_event_count": 4,
+      "trace_replaces_receipt_count": 0,
+      "line_count": 97
+    },
+    {
+      "tool": "mcp__telos.telos_operator_doctor",
+      "command": "telos_operator_doctor",
+      "status": "MATCH",
+      "aggregate_verdict": "MATCH",
+      "check_count": 14,
+      "passed_count": 14,
+      "tool_count": 65,
+      "telos_tool_count": 37,
+      "source": "MCP result captured in Codex session on 2026-07-01T16:02:42.623Z"
+    },
+    {
+      "tool": "forum",
+      "command": "route",
+      "status": "MATCH",
+      "confidence": 0.07500000000000001,
+      "decided": null,
+      "needs_escalation": true,
+      "candidates": [
+        {
+          "agent": "code-review",
+          "score": 0.2
+        },
+        {
+          "agent": "model-foundry",
+          "score": 0.125
+        },
+        {
+          "agent": "project-telos",
+          "score": 0.045454545454545456
+        }
+      ]
+    },
+    {
+      "tool": "forum",
+      "command": "ledger verify",
+      "status": "MATCH",
+      "chain": true,
+      "deep": true
+    },
+    {
+      "tool": "forum",
+      "command": "submit",
+      "status": "UNVERIFIABLE",
+      "request": "Dogfood pass 0054 adversarial review for OTel trace receipt join adapter",
+      "exit_code": 2,
+      "error": "submit needs a model executor. Forum is model-agnostic: pass --cmd \"<model cli>\" (any command, local models need no account), --chat-url <openai-compatible url> (e.g. a local Ollama server), or --api (Anthropic)."
+    },
+    {
+      "tool": "mcp__crucible.crucible_status",
+      "command": "crucible_status",
+      "status": "MATCH",
+      "tool_version": "1.1.0",
+      "role": "verification-pressure",
+      "capability_count": 4,
+      "mcp_tool_count": 13
+    },
+    {
+      "tool": "crucible",
+      "command": "run",
+      "status": "MATCH",
+      "claims": 8,
+      "match": 8,
+      "drift": 0,
+      "unverifiable": 0,
+      "thesis_id": "5290fb197e16630d",
+      "thesis_seal": "5290fb197e16630d0271a4c78f65e5118fb13bc860649eb8decb91e239395fa5",
+      "verdict_seal": "b62fa5611d439d710dd778355329a36acd7f3da0220465456811b0c1fb6afdea",
+      "measurement_seal": "b64856f45cafb2c08d8695ecce6482134a165e1ffd97118d10245e19bc252d08",
+      "assessment_seal": "263fc41a671dc81e16bf04ca5f7ff3d084666812e3e26ed580ad55045a504c12",
+      "run_sha256": "1c759c89aea334e264d72cc3f98e9f8f91e1d53da23f700010b31aeb2d741b49",
+      "seals_ok": true,
+      "thesis_ok": true,
+      "verdicts_rederive": true
+    }
+  ]
+}

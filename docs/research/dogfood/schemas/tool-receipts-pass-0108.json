@@ -1,0 +1,128 @@
+{
+  "compose": {
+    "command": "C:\\Users\\Zain\\AppData\\Local\\Programs\\Python\\Python312\\python.exe C:\\dev\\public\\telos\\docs\\research\\dogfood\\tools\\compose_detailed_balance_markov_receipt.py --out C:\\dev\\public\\telos\\docs\\research\\dogfood\\schemas\\detailed-balance-markov-receipt-pass-0108.json",
+    "exit_code": 0,
+    "status": "MATCH",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "41465dedff8349a1dea1dbd8d251b29a9b6c922410a2f5285c037bfcb6ac3209"
+  },
+  "forum": {
+    "confidence": 0.045454545454545456,
+    "decided": null,
+    "exit_code": 0,
+    "needs_escalation": true,
+    "status": "MATCH",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "ed94aa833c87bcdb8e11efb2d17b0a6f49e805bd8f008027ab7c368b7d707b56",
+    "top_candidates": [
+      {
+        "agent": "project-telos",
+        "score": 0.045454545454545456
+      },
+      {
+        "agent": "backend",
+        "score": 0.0
+      },
+      {
+        "agent": "ci-cd",
+        "score": 0.0
+      },
+      {
+        "agent": "cloud-infra",
+        "score": 0.0
+      },
+      {
+        "agent": "code-review",
+        "score": 0.0
+      }
+    ]
+  },
+  "index": {
+    "exit_code": 0,
+    "graph_pack_sha256": "8ee383e19ae9a6141bee70de733fb6aa09201ff9d284ce6778ce58b06e6b68b2",
+    "schema": "project-telos.context-envelope/v1",
+    "source_refs_only": true,
+    "status": "MATCH",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "8bfde5b17d71da9d7fbea0731206fe426f485be087b9c882fb3d8106cf1edecc",
+    "verification_verdict": "MATCH"
+  },
+  "law_candidate": {
+    "name": "finite_markov_detailed_balance_stationarity",
+    "scope": "finite row-stochastic transition kernels with positive pi satisfying detailed balance",
+    "status": "LAW_CANDIDATE"
+  },
+  "market_surface": {
+    "gap_hypothesis": "Probabilistic runtimes expose samplers and diagnostics, but portable proof packets can bind transition kernels, detailed-balance residuals, stationary residuals, convergence probes, and negative fixtures.",
+    "gap_status": "hypothesis",
+    "tool_count": 8,
+    "tools": [
+      {
+        "category": "Bayesian modeling and MCMC",
+        "gap_status": "inferred",
+        "source": "https://mc-stan.org/docs/reference-manual/mcmc.html",
+        "tool": "Stan"
+      },
+      {
+        "category": "JAX-backed probabilistic programming and MCMC",
+        "gap_status": "inferred",
+        "source": "https://num.pyro.ai/en/latest/mcmc.html",
+        "tool": "NumPyro"
+      },
+      {
+        "category": "probabilistic reasoning and MCMC in TensorFlow",
+        "gap_status": "inferred",
+        "source": "https://www.tensorflow.org/probability/api_docs/python/tfp",
+        "tool": "TensorFlow Probability"
+      },
+      {
+        "category": "Bayesian modeling and MCMC ecosystem",
+        "gap_status": "inferred",
+        "source": "https://www.pymc.io/projects/examples/en/latest/statistical_rethinking_lectures/08-Markov_Chain_Monte_Carlo.html",
+        "tool": "PyMC"
+      },
+      {
+        "category": "JAX sampling algorithms",
+        "gap_status": "inferred",
+        "source": "https://blackjax-devs.github.io/blackjax/",
+        "tool": "BlackJAX"
+      },
+      {
+        "category": "Julia probabilistic programming",
+        "gap_status": "inferred",
+        "source": "https://turinglang.org/",
+        "tool": "Turing.jl"
+      },
+      {
+        "category": "Bayesian diagnostics and visualization",
+        "gap_status": "inferred",
+        "source": "https://python.arviz.org/",
+        "tool": "ArviZ"
+      },
+      {
+        "category": "uncertainty quantification with MCMC sampling",
+        "gap_status": "inferred",
+        "source": "https://uqpyproject.readthedocs.io/en/latest/sampling/mcmc/index.html",
+        "tool": "UQpy"
+      }
+    ]
+  },
+  "pass": "0108",
+  "schema": "DogfoodToolReceipts/v1",
+  "seal": "0a4442ec4d92ea5802053c90be326c2fdb8966941bcad13e5fc9e5ca8812f078",
+  "telos": {
+    "exit_code": 0,
+    "status": "MATCH",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "be17cb15259234cb4e8e95c2b36e76c90d841431729beb140294e34c5f9ebfa7",
+    "tool": "telos",
+    "tool_version": "0.1.0"
+  },
+  "test": {
+    "command": "C:\\Users\\Zain\\AppData\\Local\\Programs\\Python\\Python312\\python.exe C:\\dev\\public\\telos\\docs\\research\\dogfood\\tools\\test_detailed_balance_markov_receipt.py",
+    "exit_code": 0,
+    "status": "MATCH",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

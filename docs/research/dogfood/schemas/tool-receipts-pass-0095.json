@@ -1,0 +1,74 @@
+{
+  "compose": {
+    "command": "C:\\Users\\Zain\\AppData\\Local\\Programs\\Python\\Python312\\python.exe C:\\dev\\public\\telos\\docs\\research\\dogfood\\tools\\compose_buildlang_native_optimization_kernel_receipt.py --out C:\\dev\\public\\telos\\docs\\research\\dogfood\\schemas\\buildlang-native-optimization-kernel-receipt-pass-0095.json",
+    "exit_code": 0,
+    "status": "MATCH",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "872b74efc64d7ef3b071bdc43d907bf64491270ed1f02625eb505a6817b9839a"
+  },
+  "forum": {
+    "confidence": 0.0,
+    "decided": null,
+    "exit_code": 0,
+    "needs_escalation": true,
+    "status": "MATCH",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "de5c941e40e05b0ba0190e5cd89a0fc22dd8d642d1b7866982a96da97baed548",
+    "top_candidates": [
+      {
+        "agent": "gpu-compute",
+        "score": 0.2
+      },
+      {
+        "agent": "native-cpp",
+        "score": 0.2
+      },
+      {
+        "agent": "model-foundry",
+        "score": 0.125
+      },
+      {
+        "agent": "project-telos",
+        "score": 0.045454545454545456
+      },
+      {
+        "agent": "backend",
+        "score": 0.0
+      }
+    ]
+  },
+  "index": {
+    "exit_code": 0,
+    "graph_pack_sha256": "8ee383e19ae9a6141bee70de733fb6aa09201ff9d284ce6778ce58b06e6b68b2",
+    "schema": "project-telos.context-envelope/v1",
+    "source_refs_only": true,
+    "status": "MATCH",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "e76a53358d12c37fb00ab24a8c3727903c9d340ec28970ea73650486531b5b6b",
+    "verification_verdict": "MATCH"
+  },
+  "pass": "0095",
+  "run_output": {
+    "best mask": 2347,
+    "best value": 162,
+    "best weight": 29,
+    "feasible count": 1275
+  },
+  "schema": "DogfoodToolReceipts/v1",
+  "seal": "8374986ebb3f052868eb4d5dd931cb4f88e9a973d0ad9fff1a9d4378199d8560",
+  "telos": {
+    "exit_code": 0,
+    "status": "MATCH",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "be17cb15259234cb4e8e95c2b36e76c90d841431729beb140294e34c5f9ebfa7",
+    "tool": "telos",
+    "tool_version": "0.1.0"
+  },
+  "test": {
+    "command": "C:\\Users\\Zain\\AppData\\Local\\Programs\\Python\\Python312\\python.exe C:\\dev\\public\\telos\\docs\\research\\dogfood\\tools\\test_buildlang_native_optimization_kernel_receipt.py",
+    "exit_code": 0,
+    "status": "MATCH",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

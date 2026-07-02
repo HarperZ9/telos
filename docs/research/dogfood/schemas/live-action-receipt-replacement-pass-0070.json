@@ -1,0 +1,508 @@
+{
+  "ablation_results": [
+    {
+      "case_id": "full_live_action_join",
+      "reason": "all required classes present with live action component",
+      "removed_class": null,
+      "verdict": "MATCH"
+    },
+    {
+      "case_id": "without_source_intake",
+      "reason": "missing_required_class:source_intake",
+      "removed_class": "source_intake",
+      "verdict": "REJECT"
+    },
+    {
+      "case_id": "without_workspace_context",
+      "reason": "missing_required_class:workspace_context",
+      "removed_class": "workspace_context",
+      "verdict": "REJECT"
+    },
+    {
+      "case_id": "without_routing",
+      "reason": "missing_required_class:routing",
+      "removed_class": "routing",
+      "verdict": "REJECT"
+    },
+    {
+      "case_id": "without_verification",
+      "reason": "missing_required_class:verification",
+      "removed_class": "verification",
+      "verdict": "REJECT"
+    },
+    {
+      "case_id": "without_continuity",
+      "reason": "missing_required_class:continuity",
+      "removed_class": "continuity",
+      "verdict": "REJECT"
+    },
+    {
+      "case_id": "without_action",
+      "reason": "missing_required_class:action",
+      "removed_class": "action",
+      "verdict": "REJECT"
+    }
+  ],
+  "action_surface_checks": {
+    "checks": {
+      "action_component_digest_bound": true,
+      "append_only": true,
+      "completed_state": true,
+      "digest_references_required": true,
+      "raw_parameters_not_required": true,
+      "receipt_is_not_trace_span": true,
+      "schema_match": true,
+      "verification_match": true
+    },
+    "drift": 0,
+    "match": 8
+  },
+  "component_receipts": [
+    {
+      "component_id": "gather.packet.078",
+      "digest": "7c30bdfae495d5ba354b4dc79fff8bc97c649c8e8eb1e4de9b0a494473064ea1",
+      "kind": "source_intake",
+      "label": "packet 078 source intake",
+      "raw_payload_included": false,
+      "seal": "e672f023f0e2fa2389e4902233931aa1abe72384ce5a256cb97297f7b411c965",
+      "verification_status": "MATCH"
+    },
+    {
+      "component_id": "index.status.0068",
+      "digest": "65744dd05f7296c8c85f27bff63fbb1436fd02fc4f2d5f50e3faa11b46b45cf8",
+      "kind": "workspace_context",
+      "label": "Index-context-bound artifact hash",
+      "raw_payload_included": false,
+      "seal": "10e642fab785fa49d42fc6c1acc2ecca3d9bc3dad78a9b61abdf81e6678a2bf6",
+      "verification_status": "MATCH"
+    },
+    {
+      "component_id": "forum.route-repair.0067",
+      "digest": "786203893e6a0e43fc5f0a2d48a483d532bb23d1d1d8902f683bb42f22938f39",
+      "kind": "routing",
+      "label": "Forum route repair receipt",
+      "raw_payload_included": false,
+      "seal": "674c6d3eb20458e9baaf1e2a900d1dd16cbcc7235e2b17f3ad735617997f10cd",
+      "verification_status": "MATCH"
+    },
+    {
+      "component_id": "crucible.assessment.0068",
+      "digest": "b5fd6bf0026003a0efce1ed15833fc4cac8d3eb0ae769ed8e225483e8bbca662",
+      "kind": "verification",
+      "label": "Crucible assessment receipt",
+      "raw_payload_included": false,
+      "seal": "a5e9efd7287255636d46032550eaab971c97e468ed640804d4904b8ee87714c4",
+      "verification_status": "MATCH"
+    },
+    {
+      "component_id": "loop-ledger.pass-chain.0069",
+      "digest": "03df3ebdc65fce3be7386115a6e4574a669891b079f01cf2a7f9d3d35156c20a",
+      "kind": "continuity",
+      "label": "Dogfood pass continuity checkpoint",
+      "raw_payload_included": false,
+      "seal": "786203893e6a0e43fc5f0a2d48a483d532bb23d1d1d8902f683bb42f22938f39",
+      "verification_status": "MATCH"
+    },
+    {
+      "action_id": "act_20260627_001",
+      "append_only": true,
+      "component_id": "telos.action.receipt.live.happy_path.0070",
+      "digest": "014ec1cef9f25f98411f60ec9e747e0777461130e89882490f41bdebc2d52717",
+      "event_id": "evt_20260627_001",
+      "kind": "action",
+      "label": "Live Telos action-receipt happy_path conformance fixture",
+      "raw_payload_included": false,
+      "receipt_is_trace_span": false,
+      "seal": "7dcd08a717e522b780feae38054d0daa5a7bceed1629855e3743efc9ca249453",
+      "source_surface": "node demo/action-receipt.mjs",
+      "verification_status": "MATCH"
+    }
+  ],
+  "generated_on": "2026-07-01",
+  "live_surface": {
+    "command": "node demo/action-receipt.mjs",
+    "negative_test_count": 20,
+    "required_field_count": 35,
+    "schema": "project-telos.action-receipt/v1",
+    "status": "MATCH",
+    "stdout_sha256": "f909690d59dfbd970b6840558e4304679df3d99eb640dcb419ed7d536c495b62"
+  },
+  "negative_fixtures": [
+    {
+      "components": [
+        {
+          "component_id": "gather.packet.078",
+          "digest": "7c30bdfae495d5ba354b4dc79fff8bc97c649c8e8eb1e4de9b0a494473064ea1",
+          "kind": "source_intake",
+          "label": "packet 078 source intake",
+          "raw_payload_included": false,
+          "seal": "e672f023f0e2fa2389e4902233931aa1abe72384ce5a256cb97297f7b411c965",
+          "verification_status": "MATCH"
+        },
+        {
+          "component_id": "index.status.0068",
+          "digest": "65744dd05f7296c8c85f27bff63fbb1436fd02fc4f2d5f50e3faa11b46b45cf8",
+          "kind": "workspace_context",
+          "label": "Index-context-bound artifact hash",
+          "raw_payload_included": false,
+          "seal": "10e642fab785fa49d42fc6c1acc2ecca3d9bc3dad78a9b61abdf81e6678a2bf6",
+          "verification_status": "MATCH"
+        },
+        {
+          "component_id": "forum.route-repair.0067",
+          "digest": "786203893e6a0e43fc5f0a2d48a483d532bb23d1d1d8902f683bb42f22938f39",
+          "kind": "routing",
+          "label": "Forum route repair receipt",
+          "raw_payload_included": false,
+          "seal": "674c6d3eb20458e9baaf1e2a900d1dd16cbcc7235e2b17f3ad735617997f10cd",
+          "verification_status": "MATCH"
+        },
+        {
+          "component_id": "crucible.assessment.0068",
+          "digest": "b5fd6bf0026003a0efce1ed15833fc4cac8d3eb0ae769ed8e225483e8bbca662",
+          "kind": "verification",
+          "label": "Crucible assessment receipt",
+          "raw_payload_included": false,
+          "seal": "a5e9efd7287255636d46032550eaab971c97e468ed640804d4904b8ee87714c4",
+          "verification_status": "MATCH"
+        },
+        {
+          "component_id": "loop-ledger.pass-chain.0069",
+          "digest": "03df3ebdc65fce3be7386115a6e4574a669891b079f01cf2a7f9d3d35156c20a",
+          "kind": "continuity",
+          "label": "Dogfood pass continuity checkpoint",
+          "raw_payload_included": false,
+          "seal": "786203893e6a0e43fc5f0a2d48a483d532bb23d1d1d8902f683bb42f22938f39",
+          "verification_status": "MATCH"
+        }
+      ],
+      "expected_status": "REJECT",
+      "fixture_id": "missing_action",
+      "reject_reason": "missing_required_class:action"
+    },
+    {
+      "components": [
+        {
+          "component_id": "gather.packet.078",
+          "digest": "7c30bdfae495d5ba354b4dc79fff8bc97c649c8e8eb1e4de9b0a494473064ea1",
+          "kind": "source_intake",
+          "label": "packet 078 source intake",
+          "raw_payload_included": false,
+          "seal": "e672f023f0e2fa2389e4902233931aa1abe72384ce5a256cb97297f7b411c965",
+          "verification_status": "MATCH"
+        },
+        {
+          "component_id": "index.status.0068",
+          "digest": "65744dd05f7296c8c85f27bff63fbb1436fd02fc4f2d5f50e3faa11b46b45cf8",
+          "kind": "workspace_context",
+          "label": "Index-context-bound artifact hash",
+          "raw_payload_included": false,
+          "seal": "10e642fab785fa49d42fc6c1acc2ecca3d9bc3dad78a9b61abdf81e6678a2bf6",
+          "verification_status": "MATCH"
+        },
+        {
+          "component_id": "forum.route-repair.0067",
+          "digest": "786203893e6a0e43fc5f0a2d48a483d532bb23d1d1d8902f683bb42f22938f39",
+          "kind": "routing",
+          "label": "Forum route repair receipt",
+          "raw_payload_included": false,
+          "seal": "674c6d3eb20458e9baaf1e2a900d1dd16cbcc7235e2b17f3ad735617997f10cd",
+          "verification_status": "MATCH"
+        },
+        {
+          "component_id": "loop-ledger.pass-chain.0069",
+          "digest": "03df3ebdc65fce3be7386115a6e4574a669891b079f01cf2a7f9d3d35156c20a",
+          "kind": "continuity",
+          "label": "Dogfood pass continuity checkpoint",
+          "raw_payload_included": false,
+          "seal": "786203893e6a0e43fc5f0a2d48a483d532bb23d1d1d8902f683bb42f22938f39",
+          "verification_status": "MATCH"
+        },
+        {
+          "action_id": "act_20260627_001",
+          "append_only": true,
+          "component_id": "telos.action.receipt.live.happy_path.0070",
+          "digest": "014ec1cef9f25f98411f60ec9e747e0777461130e89882490f41bdebc2d52717",
+          "event_id": "evt_20260627_001",
+          "kind": "action",
+          "label": "Live Telos action-receipt happy_path conformance fixture",
+          "raw_payload_included": false,
+          "receipt_is_trace_span": false,
+          "seal": "7dcd08a717e522b780feae38054d0daa5a7bceed1629855e3743efc9ca249453",
+          "source_surface": "node demo/action-receipt.mjs",
+          "verification_status": "MATCH"
+        }
+      ],
+      "expected_status": "REJECT",
+      "fixture_id": "missing_verification",
+      "reject_reason": "missing_required_class:verification"
+    },
+    {
+      "components": [
+        {
+          "component_id": "gather.packet.078",
+          "digest": "7c30bdfae495d5ba354b4dc79fff8bc97c649c8e8eb1e4de9b0a494473064ea1",
+          "kind": "source_intake",
+          "label": "packet 078 source intake",
+          "raw_payload_included": false,
+          "seal": "e672f023f0e2fa2389e4902233931aa1abe72384ce5a256cb97297f7b411c965",
+          "verification_status": "MATCH"
+        },
+        {
+          "component_id": "index.status.0068",
+          "digest": "65744dd05f7296c8c85f27bff63fbb1436fd02fc4f2d5f50e3faa11b46b45cf8",
+          "kind": "workspace_context",
+          "label": "Index-context-bound artifact hash",
+          "raw_payload_included": false,
+          "seal": "10e642fab785fa49d42fc6c1acc2ecca3d9bc3dad78a9b61abdf81e6678a2bf6",
+          "verification_status": "MATCH"
+        },
+        {
+          "component_id": "forum.route-repair.0067",
+          "digest": "786203893e6a0e43fc5f0a2d48a483d532bb23d1d1d8902f683bb42f22938f39",
+          "kind": "routing",
+          "label": "Forum route repair receipt",
+          "raw_payload_included": false,
+          "seal": "674c6d3eb20458e9baaf1e2a900d1dd16cbcc7235e2b17f3ad735617997f10cd",
+          "verification_status": "MATCH"
+        },
+        {
+          "component_id": "crucible.assessment.0068",
+          "digest": "b5fd6bf0026003a0efce1ed15833fc4cac8d3eb0ae769ed8e225483e8bbca662",
+          "kind": "verification",
+          "label": "Crucible assessment receipt",
+          "raw_payload_included": false,
+          "seal": "a5e9efd7287255636d46032550eaab971c97e468ed640804d4904b8ee87714c4",
+          "verification_status": "MATCH"
+        },
+        {
+          "component_id": "loop-ledger.pass-chain.0069",
+          "digest": "03df3ebdc65fce3be7386115a6e4574a669891b079f01cf2a7f9d3d35156c20a",
+          "kind": "continuity",
+          "label": "Dogfood pass continuity checkpoint",
+          "raw_payload_included": false,
+          "seal": "786203893e6a0e43fc5f0a2d48a483d532bb23d1d1d8902f683bb42f22938f39",
+          "verification_status": "MATCH"
+        },
+        {
+          "action_id": "act_20260627_001",
+          "append_only": true,
+          "component_id": "telos.action.receipt.live.happy_path.0070",
+          "digest": "0000000000000000000000000000000000000000000000000000000000000000",
+          "event_id": "evt_20260627_001",
+          "kind": "action",
+          "label": "Live Telos action-receipt happy_path conformance fixture",
+          "raw_payload_included": false,
+          "receipt_is_trace_span": false,
+          "seal": "7dcd08a717e522b780feae38054d0daa5a7bceed1629855e3743efc9ca249453",
+          "source_surface": "node demo/action-receipt.mjs",
+          "verification_status": "MATCH"
+        }
+      ],
+      "expected_status": "REJECT",
+      "fixture_id": "live_action_digest_drift",
+      "reject_reason": "component_digest_drift:action"
+    },
+    {
+      "expected_status": "REJECT",
+      "fixture_id": "raw_payload_required",
+      "packet": {
+        "claims": [
+          {
+            "claim": "Replacing the synthetic action fragment with a live Telos action-receipt fixture preserves the proof-packet join contract.",
+            "evidence_classes": [
+              "source_intake",
+              "workspace_context",
+              "routing",
+              "verification",
+              "continuity",
+              "action"
+            ],
+            "verification_status": "MATCH"
+          }
+        ],
+        "component_count": 6,
+        "component_digests": {
+          "action": "014ec1cef9f25f98411f60ec9e747e0777461130e89882490f41bdebc2d52717",
+          "continuity": "03df3ebdc65fce3be7386115a6e4574a669891b079f01cf2a7f9d3d35156c20a",
+          "routing": "786203893e6a0e43fc5f0a2d48a483d532bb23d1d1d8902f683bb42f22938f39",
+          "source_intake": "7c30bdfae495d5ba354b4dc79fff8bc97c649c8e8eb1e4de9b0a494473064ea1",
+          "verification": "b5fd6bf0026003a0efce1ed15833fc4cac8d3eb0ae769ed8e225483e8bbca662",
+          "workspace_context": "65744dd05f7296c8c85f27bff63fbb1436fd02fc4f2d5f50e3faa11b46b45cf8"
+        },
+        "join_graph": [
+          {
+            "from": "source_intake",
+            "to": "workspace_context"
+          },
+          {
+            "from": "workspace_context",
+            "to": "routing"
+          },
+          {
+            "from": "routing",
+            "to": "verification"
+          },
+          {
+            "from": "verification",
+            "to": "continuity"
+          },
+          {
+            "from": "continuity",
+            "to": "action"
+          }
+        ],
+        "live_action_component_id": "telos.action.receipt.live.happy_path.0070",
+        "model_reasoning_required_for_replay": false,
+        "packet_id": "pass-0070-proof-os-core-live-action",
+        "raw_private_payload_required": true,
+        "required_classes": [
+          "source_intake",
+          "workspace_context",
+          "routing",
+          "verification",
+          "continuity",
+          "action"
+        ],
+        "schema": "TelosProductProofPacket/v1",
+        "unsupported_claim_count": 0
+      },
+      "reject_reason": "raw_private_payload_required"
+    },
+    {
+      "expected_status": "REJECT",
+      "fixture_id": "unsupported_claim_promoted",
+      "packet": {
+        "claims": [
+          {
+            "claim": "Replacing the synthetic action fragment with a live Telos action-receipt fixture preserves the proof-packet join contract.",
+            "evidence_classes": [
+              "source_intake",
+              "workspace_context",
+              "routing",
+              "verification",
+              "continuity",
+              "action"
+            ],
+            "verification_status": "MATCH"
+          }
+        ],
+        "component_count": 6,
+        "component_digests": {
+          "action": "014ec1cef9f25f98411f60ec9e747e0777461130e89882490f41bdebc2d52717",
+          "continuity": "03df3ebdc65fce3be7386115a6e4574a669891b079f01cf2a7f9d3d35156c20a",
+          "routing": "786203893e6a0e43fc5f0a2d48a483d532bb23d1d1d8902f683bb42f22938f39",
+          "source_intake": "7c30bdfae495d5ba354b4dc79fff8bc97c649c8e8eb1e4de9b0a494473064ea1",
+          "verification": "b5fd6bf0026003a0efce1ed15833fc4cac8d3eb0ae769ed8e225483e8bbca662",
+          "workspace_context": "65744dd05f7296c8c85f27bff63fbb1436fd02fc4f2d5f50e3faa11b46b45cf8"
+        },
+        "join_graph": [
+          {
+            "from": "source_intake",
+            "to": "workspace_context"
+          },
+          {
+            "from": "workspace_context",
+            "to": "routing"
+          },
+          {
+            "from": "routing",
+            "to": "verification"
+          },
+          {
+            "from": "verification",
+            "to": "continuity"
+          },
+          {
+            "from": "continuity",
+            "to": "action"
+          }
+        ],
+        "live_action_component_id": "telos.action.receipt.live.happy_path.0070",
+        "model_reasoning_required_for_replay": false,
+        "packet_id": "pass-0070-proof-os-core-live-action",
+        "raw_private_payload_required": false,
+        "required_classes": [
+          "source_intake",
+          "workspace_context",
+          "routing",
+          "verification",
+          "continuity",
+          "action"
+        ],
+        "schema": "TelosProductProofPacket/v1",
+        "unsupported_claim_count": 1
+      },
+      "reject_reason": "unsupported_claim_count_nonzero"
+    }
+  ],
+  "non_promotion_statement": "Pass 0070 replaces one synthetic action component with a live local Telos action-receipt fixture. It does not prove production persistence, external write safety, market adoption, scientific discovery, or a natural law.",
+  "pass": "0070",
+  "previous_pass_binding": "366d4dc9809aeb8e9db70f73c5d89e5bec7df9491939793e3e5f84eae96c87a0",
+  "product_packet": {
+    "claims": [
+      {
+        "claim": "Replacing the synthetic action fragment with a live Telos action-receipt fixture preserves the proof-packet join contract.",
+        "evidence_classes": [
+          "source_intake",
+          "workspace_context",
+          "routing",
+          "verification",
+          "continuity",
+          "action"
+        ],
+        "verification_status": "MATCH"
+      }
+    ],
+    "component_count": 6,
+    "component_digests": {
+      "action": "014ec1cef9f25f98411f60ec9e747e0777461130e89882490f41bdebc2d52717",
+      "continuity": "03df3ebdc65fce3be7386115a6e4574a669891b079f01cf2a7f9d3d35156c20a",
+      "routing": "786203893e6a0e43fc5f0a2d48a483d532bb23d1d1d8902f683bb42f22938f39",
+      "source_intake": "7c30bdfae495d5ba354b4dc79fff8bc97c649c8e8eb1e4de9b0a494473064ea1",
+      "verification": "b5fd6bf0026003a0efce1ed15833fc4cac8d3eb0ae769ed8e225483e8bbca662",
+      "workspace_context": "65744dd05f7296c8c85f27bff63fbb1436fd02fc4f2d5f50e3faa11b46b45cf8"
+    },
+    "join_graph": [
+      {
+        "from": "source_intake",
+        "to": "workspace_context"
+      },
+      {
+        "from": "workspace_context",
+        "to": "routing"
+      },
+      {
+        "from": "routing",
+        "to": "verification"
+      },
+      {
+        "from": "verification",
+        "to": "continuity"
+      },
+      {
+        "from": "continuity",
+        "to": "action"
+      }
+    ],
+    "live_action_component_id": "telos.action.receipt.live.happy_path.0070",
+    "model_reasoning_required_for_replay": false,
+    "packet_id": "pass-0070-proof-os-core-live-action",
+    "raw_private_payload_required": false,
+    "required_classes": [
+      "source_intake",
+      "workspace_context",
+      "routing",
+      "verification",
+      "continuity",
+      "action"
+    ],
+    "schema": "TelosProductProofPacket/v1",
+    "unsupported_claim_count": 0
+  },
+  "schema": "LiveActionReceiptReplacement/v1",
+  "seal": "5b1e2c17698817d251186dac6e943f6ace5ab8f13fcca6592ebf1f10a7a6e6f3",
+  "status": "LIVE_ACTION_RECEIPT_REPLACEMENT_MATCH",
+  "unsupported_claim_count": 0,
+  "validation_errors": []
+}

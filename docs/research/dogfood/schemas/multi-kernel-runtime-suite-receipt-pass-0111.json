@@ -1,0 +1,538 @@
+{
+  "buildlang_target": {
+    "status": "TARGET_INTERFACE_NOT_COMPILED",
+    "target_kernel": "multi_kernel_stochastic_runtime_suite.bld"
+  },
+  "case_results": [
+    {
+      "adapter_contract": {
+        "missing_fields": [],
+        "required_field_count": 12,
+        "required_fields": [
+          "target_log_prob_digest",
+          "transition_kernel_digest",
+          "kernel_family",
+          "calibration_layer",
+          "acceptance_correction",
+          "stationary_residual_check",
+          "detailed_balance_or_invariance_check",
+          "chain_seed_receipt",
+          "warmup_schedule_receipt",
+          "diagnostics_receipt",
+          "negative_fixture_receipt",
+          "source_provenance_receipt"
+        ],
+        "required_fields_satisfied": 12
+      },
+      "case_id": "reversible_detailed_balance",
+      "classification": "MATCH",
+      "detailed_balance_or_invariance_check": {
+        "max_residual": "0",
+        "status": "MATCH"
+      },
+      "empirical_l1_distance_to_declared_pi": 0.03946666666666662,
+      "exact_distribution_l1_distance_to_declared_pi": 9.159339953157541e-16,
+      "expected_status": "MATCH",
+      "max_detailed_balance_residual": "0",
+      "row_sums": [
+        "1",
+        "1",
+        "1"
+      ],
+      "runtime_receipt": {
+        "acceptance_correction": "identity_or_boundary",
+        "calibration_layer": "suite_case_exact_matrix",
+        "chain_seed_receipt": {
+          "prng": "python.random.Random",
+          "reproducible": true,
+          "seed": 1111
+        },
+        "detailed_balance_or_invariance_check": {
+          "max_residual": "0",
+          "status": "MATCH"
+        },
+        "diagnostics_receipt": {
+          "empirical_counts": [
+            2563,
+            1568,
+            869
+          ],
+          "empirical_distribution": [
+            0.5126,
+            0.3136,
+            0.1738
+          ],
+          "exact_distribution": [
+            0.4999999999999995,
+            0.33333333333333304,
+            0.16666666666666652
+          ]
+        },
+        "kernel_family": "finite_markov_kernel",
+        "negative_fixture_receipt": {
+          "source_case_status": "MATCH"
+        },
+        "source_provenance_receipt": {
+          "case_id": "reversible_detailed_balance",
+          "stochastic_kernel_corpus_pass": "0109"
+        },
+        "stationary_residual_check": {
+          "max_residual": "0",
+          "residual": [
+            "0",
+            "0",
+            "0"
+          ],
+          "status": "MATCH"
+        },
+        "target_log_prob_digest": "31398862fb830847ab177eac28b960ec48f892cecbdb78b63146a36d26dee43c",
+        "transition_kernel_digest": "270700d284a29d6fcdacda3b0591ae7546c989c083292ec2ec3d2f62551a97cc",
+        "warmup_schedule_receipt": {
+          "sample_steps": 5000,
+          "start_state": 0,
+          "warmup_steps": 50
+        }
+      },
+      "stationary_residual_check": {
+        "max_residual": "0",
+        "residual": [
+          "0",
+          "0",
+          "0"
+        ],
+        "status": "MATCH"
+      }
+    },
+    {
+      "adapter_contract": {
+        "missing_fields": [],
+        "required_field_count": 12,
+        "required_fields": [
+          "target_log_prob_digest",
+          "transition_kernel_digest",
+          "kernel_family",
+          "calibration_layer",
+          "acceptance_correction",
+          "stationary_residual_check",
+          "detailed_balance_or_invariance_check",
+          "chain_seed_receipt",
+          "warmup_schedule_receipt",
+          "diagnostics_receipt",
+          "negative_fixture_receipt",
+          "source_provenance_receipt"
+        ],
+        "required_fields_satisfied": 12
+      },
+      "case_id": "row_stochastic_not_stationary",
+      "classification": "DRIFT_EXPECTED",
+      "detailed_balance_or_invariance_check": {
+        "max_residual": "1/6",
+        "status": "BOUNDARY_EXPECTED"
+      },
+      "empirical_l1_distance_to_declared_pi": 0.6101333333333333,
+      "exact_distribution_l1_distance_to_declared_pi": 0.6236559139784952,
+      "expected_status": "DRIFT_EXPECTED",
+      "max_detailed_balance_residual": "1/6",
+      "row_sums": [
+        "1",
+        "1",
+        "1"
+      ],
+      "runtime_receipt": {
+        "acceptance_correction": "identity_or_boundary",
+        "calibration_layer": "suite_case_exact_matrix",
+        "chain_seed_receipt": {
+          "prng": "python.random.Random",
+          "reproducible": true,
+          "seed": 1112
+        },
+        "detailed_balance_or_invariance_check": {
+          "max_residual": "1/6",
+          "status": "BOUNDARY_EXPECTED"
+        },
+        "diagnostics_receipt": {
+          "empirical_counts": [
+            1168,
+            3192,
+            640
+          ],
+          "empirical_distribution": [
+            0.2336,
+            0.6384,
+            0.128
+          ],
+          "exact_distribution": [
+            0.2258064516129035,
+            0.6451612903225816,
+            0.1290322580645163
+          ]
+        },
+        "kernel_family": "finite_markov_kernel",
+        "negative_fixture_receipt": {
+          "source_case_status": "DRIFT_EXPECTED"
+        },
+        "source_provenance_receipt": {
+          "case_id": "row_stochastic_not_stationary",
+          "stochastic_kernel_corpus_pass": "0109"
+        },
+        "stationary_residual_check": {
+          "max_residual": "11/60",
+          "residual": [
+            "-2/15",
+            "11/60",
+            "-1/20"
+          ],
+          "status": "DRIFT"
+        },
+        "target_log_prob_digest": "a702c6d668ce3746e392a92d0b54953abea211d15f945889c69c1d1214220209",
+        "transition_kernel_digest": "d6994075b0786d30579c2213bf04d38f24ebbbe7b16fecf2c570710241947723",
+        "warmup_schedule_receipt": {
+          "sample_steps": 5000,
+          "start_state": 0,
+          "warmup_steps": 50
+        }
+      },
+      "stationary_residual_check": {
+        "max_residual": "11/60",
+        "residual": [
+          "-2/15",
+          "11/60",
+          "-1/20"
+        ],
+        "status": "DRIFT"
+      }
+    },
+    {
+      "adapter_contract": {
+        "missing_fields": [],
+        "required_field_count": 12,
+        "required_fields": [
+          "target_log_prob_digest",
+          "transition_kernel_digest",
+          "kernel_family",
+          "calibration_layer",
+          "acceptance_correction",
+          "stationary_residual_check",
+          "detailed_balance_or_invariance_check",
+          "chain_seed_receipt",
+          "warmup_schedule_receipt",
+          "diagnostics_receipt",
+          "negative_fixture_receipt",
+          "source_provenance_receipt"
+        ],
+        "required_fields_satisfied": 12
+      },
+      "case_id": "stationary_nonreversible_cycle",
+      "classification": "BOUNDARY_EXPECTED",
+      "detailed_balance_or_invariance_check": {
+        "max_residual": "1/3",
+        "status": "BOUNDARY_EXPECTED"
+      },
+      "empirical_l1_distance_to_declared_pi": 0.0002666666666666373,
+      "exact_distribution_l1_distance_to_declared_pi": 1.3333333333333335,
+      "expected_status": "BOUNDARY_EXPECTED",
+      "max_detailed_balance_residual": "1/3",
+      "row_sums": [
+        "1",
+        "1",
+        "1"
+      ],
+      "runtime_receipt": {
+        "acceptance_correction": "identity_or_boundary",
+        "calibration_layer": "suite_case_exact_matrix",
+        "chain_seed_receipt": {
+          "prng": "python.random.Random",
+          "reproducible": true,
+          "seed": 1113
+        },
+        "detailed_balance_or_invariance_check": {
+          "max_residual": "1/3",
+          "status": "BOUNDARY_EXPECTED"
+        },
+        "diagnostics_receipt": {
+          "empirical_counts": [
+            1667,
+            1667,
+            1666
+          ],
+          "empirical_distribution": [
+            0.3334,
+            0.3334,
+            0.3332
+          ],
+          "exact_distribution": [
+            0.0,
+            1.0,
+            0.0
+          ]
+        },
+        "kernel_family": "finite_markov_kernel",
+        "negative_fixture_receipt": {
+          "source_case_status": "BOUNDARY_EXPECTED"
+        },
+        "source_provenance_receipt": {
+          "case_id": "stationary_nonreversible_cycle",
+          "stochastic_kernel_corpus_pass": "0109"
+        },
+        "stationary_residual_check": {
+          "max_residual": "0",
+          "residual": [
+            "0",
+            "0",
+            "0"
+          ],
+          "status": "MATCH"
+        },
+        "target_log_prob_digest": "2de9c80897671c7af6f9525017b56d9b6dff47c3bdb135f9acc19296ebd16f6f",
+        "transition_kernel_digest": "cc94af225ffe53fdd9dc3b29470e2e01e7b8ea341429ff8be5b735ba449f3a69",
+        "warmup_schedule_receipt": {
+          "sample_steps": 5000,
+          "start_state": 0,
+          "warmup_steps": 50
+        }
+      },
+      "stationary_residual_check": {
+        "max_residual": "0",
+        "residual": [
+          "0",
+          "0",
+          "0"
+        ],
+        "status": "MATCH"
+      }
+    }
+  ],
+  "current_promoted_natural_laws": [],
+  "flagship_receipts": {
+    "forum": {
+      "confidence": 0.2,
+      "decided": null,
+      "exit_code": 0,
+      "needs_escalation": true,
+      "status": "MATCH",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "fde1b789ef6b204211784a56575e8491f87ea58de4a626f0b6f1a1ed57685cce",
+      "top_candidates": [
+        {
+          "agent": "gpu-compute",
+          "score": 0.2
+        },
+        {
+          "agent": "backend",
+          "score": 0.0
+        },
+        {
+          "agent": "ci-cd",
+          "score": 0.0
+        },
+        {
+          "agent": "cloud-infra",
+          "score": 0.0
+        },
+        {
+          "agent": "code-review",
+          "score": 0.0
+        }
+      ]
+    },
+    "index": {
+      "exit_code": 0,
+      "graph_pack_sha256": "8ee383e19ae9a6141bee70de733fb6aa09201ff9d284ce6778ce58b06e6b68b2",
+      "schema": "project-telos.context-envelope/v1",
+      "source_refs_only": true,
+      "status": "MATCH",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "aecc43f7d55902a6aaa3bb9ba5e18a29efd0ccaa0db0404594b3629490dd427c",
+      "verification_verdict": "MATCH"
+    },
+    "telos": {
+      "exit_code": 0,
+      "status": "MATCH",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "be17cb15259234cb4e8e95c2b36e76c90d841431729beb140294e34c5f9ebfa7",
+      "tool": "telos",
+      "tool_version": "0.1.0"
+    }
+  },
+  "generated_on": "2026-07-01",
+  "law_candidate": {
+    "name": "multi_kernel_runtime_receipts_classify_match_drift_boundary",
+    "scope": "finite kernels under one adapter interface",
+    "status": "LAW_CANDIDATE"
+  },
+  "market_binding": {
+    "gap_hypothesis": "Probabilistic runtimes expose samplers and diagnostics, but portable proof packets can bind transition kernels, detailed-balance residuals, stationary residuals, convergence probes, and negative fixtures.",
+    "gap_status": "hypothesis",
+    "tool_count": 8,
+    "tools": [
+      {
+        "category": "Bayesian modeling and MCMC",
+        "gap_status": "inferred",
+        "source": "https://mc-stan.org/docs/reference-manual/mcmc.html",
+        "tool": "Stan"
+      },
+      {
+        "category": "JAX-backed probabilistic programming and MCMC",
+        "gap_status": "inferred",
+        "source": "https://num.pyro.ai/en/latest/mcmc.html",
+        "tool": "NumPyro"
+      },
+      {
+        "category": "probabilistic reasoning and MCMC in TensorFlow",
+        "gap_status": "inferred",
+        "source": "https://www.tensorflow.org/probability/api_docs/python/tfp",
+        "tool": "TensorFlow Probability"
+      },
+      {
+        "category": "Bayesian modeling and MCMC ecosystem",
+        "gap_status": "inferred",
+        "source": "https://www.pymc.io/projects/examples/en/latest/statistical_rethinking_lectures/08-Markov_Chain_Monte_Carlo.html",
+        "tool": "PyMC"
+      },
+      {
+        "category": "JAX sampling algorithms",
+        "gap_status": "inferred",
+        "source": "https://blackjax-devs.github.io/blackjax/",
+        "tool": "BlackJAX"
+      },
+      {
+        "category": "Julia probabilistic programming",
+        "gap_status": "inferred",
+        "source": "https://turinglang.org/",
+        "tool": "Turing.jl"
+      },
+      {
+        "category": "Bayesian diagnostics and visualization",
+        "gap_status": "inferred",
+        "source": "https://python.arviz.org/",
+        "tool": "ArviZ"
+      },
+      {
+        "category": "uncertainty quantification with MCMC sampling",
+        "gap_status": "inferred",
+        "source": "https://uqpyproject.readthedocs.io/en/latest/sampling/mcmc/index.html",
+        "tool": "UQpy"
+      }
+    ]
+  },
+  "measurements": [
+    {
+      "id": "suite_summary",
+      "status": "MATCH"
+    },
+    {
+      "id": "reversible",
+      "status": "MATCH"
+    },
+    {
+      "id": "row_only",
+      "status": "MATCH"
+    },
+    {
+      "id": "cycle_boundary",
+      "status": "MATCH"
+    },
+    {
+      "id": "youtube_binding",
+      "status": "MATCH"
+    },
+    {
+      "id": "flagships",
+      "status": "MATCH"
+    },
+    {
+      "id": "promotion_boundary",
+      "status": "MATCH"
+    }
+  ],
+  "non_promotion_statement": "This pass classifies finite stochastic kernels under one receipt interface. It does not prove production sampler correctness, compile BuildLang, validate YouTube video claims, or promote a natural law.",
+  "pass": "0111",
+  "schema": "MultiKernelRuntimeSuiteReceipt/v1",
+  "seal": "53a491c0046c55c603091f29920e968bfa7b49af0685b3e769c6defe864f2e5b",
+  "source_bindings": {
+    "detailed_balance_pass": "0108",
+    "runtime_chain_pass": "0110",
+    "stochastic_kernel_corpus_pass": "0109",
+    "youtube_roadmap_pass": "0102",
+    "youtube_source_pass": "0085"
+  },
+  "source_boundary_receipts": {
+    "uncalibrated_random_walk_source_boundary": {
+      "calibration_required": true,
+      "case_id": "uncalibrated_random_walk_source_boundary",
+      "case_type": "source_boundary",
+      "reason": "A source-level uncalibrated kernel is not a claim of target-stationary production sampling.",
+      "required_receipt": "acceptance_correction_or_calibration_layer",
+      "source_digest": "2c8bcec06693be973e85d486610f59d8411568c3336ad73af577b3f52f9d9f57",
+      "source_url": "https://www.tensorflow.org/probability/api_docs/python/tfp/mcmc/UncalibratedRandomWalk",
+      "status": "REQUIRES_CALIBRATION",
+      "title": "uncalibrated source boundary for production MCMC kernels"
+    }
+  },
+  "status": "MULTI_KERNEL_RUNTIME_SUITE_RECEIPT_MATCH",
+  "suite_summary": {
+    "adapter_missing_field_total": 0,
+    "boundary_expected_count": 1,
+    "case_count": 3,
+    "drift_expected_count": 1,
+    "match_count": 1
+  },
+  "unsupported_claim_count": 0,
+  "validation_errors": [],
+  "youtube_binding": {
+    "architecture_pull_count": 7,
+    "architecture_pulls": [
+      {
+        "architecture_pull": "AI4Science packets that bind source intake, model decisions, assay handoff, verifier verdicts, and reproduction status.",
+        "cluster_id": "molecular_ai_drug_discovery",
+        "evidence_status": "SOURCE_LEAD",
+        "video_count": 1
+      },
+      {
+        "architecture_pull": "Eval receipt lab with replayable attempts, prompt/model boundaries, tool-use records, and benchmark authority receipts.",
+        "cluster_id": "arc_agi_eval_and_generalization",
+        "evidence_status": "SOURCE_LEAD",
+        "video_count": 1
+      },
+      {
+        "architecture_pull": "BuildLang quant proof kernels with stress receipts, identity checks, and execution provenance.",
+        "cluster_id": "quantitative_finance_laws",
+        "evidence_status": "SOURCE_LEAD",
+        "video_count": 1
+      },
+      {
+        "architecture_pull": "Search-verifier loop ledger that records proposals, rollouts, verifier gates, and accepted proof states.",
+        "cluster_id": "search_rl_alpha_zero",
+        "evidence_status": "SOURCE_LEAD",
+        "video_count": 1
+      },
+      {
+        "architecture_pull": "Quantum optimization workflow receipts spanning problem formulation, solver branch, hardware/simulator context, calibration reference, and measured objective.",
+        "cluster_id": "enterprise_quantum_optimization",
+        "evidence_status": "SOURCE_LEAD",
+        "video_count": 13
+      },
+      {
+        "architecture_pull": "Risk scenario proof packets with assumptions, mitigations, authority boundaries, likelihood evidence, and review status.",
+        "cluster_id": "agi_risk_scenarios",
+        "evidence_status": "SOURCE_LEAD",
+        "video_count": 1
+      },
+      {
+        "architecture_pull": "Societal proof-packet lane binding public claims, governance choices, model actions, and accountable review.",
+        "cluster_id": "ai_society_governance",
+        "evidence_status": "SOURCE_LEAD",
+        "video_count": 1
+      }
+    ],
+    "dominant_cluster": "enterprise_quantum_optimization",
+    "dominant_cluster_video_count": 13,
+    "metadata_match_count": 19,
+    "raw_transcript_included": false,
+    "roadmap_pass": "0102",
+    "source_policy": "YouTube videos are treated as critical source leads. Metadata and Gather receipts are first-order evidence; synthesized product implications remain hypotheses.",
+    "top_priority": "optimization_proof_workbench",
+    "transcript_receipt_count": 19,
+    "valid_video_count": 19
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "version": "research-claim-proof-packet/v0",
+  "packet_id": "thirteenth-wave-formal-replay-preflight-2026-07-02",
+  "claim": "Project Telos has a thirteenth-wave formal-replay preflight package that adds a BuildLang parity witness for the Navier-Stokes periodic skew-symmetry packet, records theorem-prover replay as blocked by missing local prover executables, demotes fresh arXiv metadata to SOURCE_LEAD_ONLY, writes outreach and working-paper drafts, and keeps the parent Navier-Stokes problem UNVERIFIABLE.",
+  "scope": "Local thirteenth-wave documentation and receipt package only. This is not theorem-prover replay, not a proof of Navier-Stokes existence and smoothness, not PDE correctness, not physical-fluid validation, not source-body review of arXiv papers, not exhaustive literature coverage, not warning-clean buildc certification, and not an accepted publication.",
+  "verdicts": {
+    "overall": "MATCH",
+    "checks": [
+      {
+        "name": "thirteenth-wave package exists",
+        "status": "MATCH",
+        "evidence": "THIRTEENTH-WAVE-FORMAL-REPLAY-PREFLIGHT-2026-07-02.md exists and defines the formal-replay preflight lane."
+      },
+      {
+        "name": "whitepaper draft exists",
+        "status": "MATCH",
+        "evidence": "FORMAL-REPLAY-PREFLIGHT-FOR-PDE-PACKETS-2026-07-02.md exists and preserves the evidence boundary."
+      },
+      {
+        "name": "content queue exists",
+        "status": "MATCH",
+        "evidence": "THIRTEENTH-WAVE-CONTENT-QUEUE-2026-07-02.md exists and includes do-not-post boundaries."
+      },
+      {
+        "name": "BuildLang parity witness exists",
+        "status": "MATCH",
+        "evidence": "kernel.buildlang.bld exists; buildlang-parity.receipt.json records BUILD_PARITY_MATCH with transfer below tolerance and divergence zero."
+      },
+      {
+        "name": "theorem replay block exists",
+        "status": "MATCH",
+        "evidence": "theorem-prover-preflight records lean/lake/coqc/isabelle NOT_FOUND and verdict THEOREM_REPLAY_BLOCKED_ENVIRONMENT."
+      },
+      {
+        "name": "source demotion gate exists",
+        "status": "MATCH",
+        "evidence": "source-lead-demotion-gate records 32 retained rows, 27 unique IDs, and SOURCE_LEAD_ONLY verdict."
+      },
+      {
+        "name": "Crucible package-boundary assessment matches",
+        "status": "MATCH",
+        "evidence": "thirteenth-wave-tooling-run reports 7 MATCH, 0 DRIFT, 0 UNVERIFIABLE."
+      }
+    ]
+  },
+  "sources": [
+    {
+      "ref": "docs/outreach/THIRTEENTH-WAVE-FORMAL-REPLAY-PREFLIGHT-2026-07-02.md",
+      "sha256": "ebf678a4b3dff9070a65b5dab2696ace49298c2b4f2ff6ca95b0bdeb3f505a2a"
+    },
+    {
+      "ref": "docs/research/whitepapers/FORMAL-REPLAY-PREFLIGHT-FOR-PDE-PACKETS-2026-07-02.md",
+      "sha256": "56e11525606aabf343dc834785f3608d2597f5a70b6d597a31458eb53193392d"
+    },
+    {
+      "ref": "docs/outreach/THIRTEENTH-WAVE-CONTENT-QUEUE-2026-07-02.md",
+      "sha256": "0d4d188aa229885cc19bbbf433fbe42a170dfdcdcf4e21c456b39f440b97169a"
+    },
+    {
+      "ref": "docs/research/proof-packets/navier-stokes-periodic-skew-symmetry-v0/kernel.buildlang.bld",
+      "sha256": "ac9c110b34d6a7d3e766ffc84549431f91eca374664a31c1f9d549df87a1224e"
+    },
+    {
+      "ref": "docs/research/proof-packets/navier-stokes-periodic-skew-symmetry-v0/buildlang-parity.receipt.json",
+      "sha256": "bf7844e620856f9707630a36108d9a411a31b7c6153882bd1b6d39bb80290429"
+    },
+    {
+      "ref": "docs/outreach/receipts/thirteenth-wave/source-lead-demotion-gate.json",
+      "sha256": "dce4207094e44f38554fa2974be4243a9525048f35efdda691ac8a5975523d92"
+    },
+    {
+      "ref": "docs/outreach/receipts/thirteenth-wave/theorem-prover-preflight-2026-07-02.json",
+      "sha256": "1137251b6acbc1dafe65cfb2e8719154377141ce331db691a6f50917faf01109"
+    },
+    {
+      "ref": "docs/outreach/receipts/thirteenth-wave-tooling-run-2026-07-02.json",
+      "sha256": "db23771f2570210959d1a1f3d2b48252f81c822951a03986d9ebcff23532a21b"
+    }
+  ],
+  "boundary": "This packet teaches a bounded local package claim. It does not prove Navier-Stokes, theorem replay, PDE correctness, physical-fluid validity, paper truth, or publication acceptance."
+}

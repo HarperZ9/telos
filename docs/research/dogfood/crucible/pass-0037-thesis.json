@@ -1,0 +1,38 @@
+{
+  "claims": [
+    {
+      "falsification": "schemas/theorem-statement-equivalence-pass-0037.json is missing, has a different schema, status, theorem_count, statement_check_count, SHA-256, or seal",
+      "text": "Pass 0037 created a TheoremStatementEquivalenceSet/v1 artifact with status STATEMENT_EQUIVALENCE_MATCH, theorem_count 10, statement_check_count 10, sha256 a0928a953f609aa5ea96aecc79e355a0d5aaab949761d4efa4b1b704210986bf, and seal 78ede605591460b7a2aa8fee7e2ebca0f56688575e5c9ce7ab919f2948a0934f."
+    },
+    {
+      "falsification": "the statement-equivalence fixture is missing, has a different SHA-256 or seal, or is not linked from the schema",
+      "text": "Pass 0037 records fixture fixtures/theorem-statement-equivalence-pass-0037.json with sha256 87070b9d57571fc04f6d2f491705c32c0e736ba6c5e9158087bfb80990087802 and seal 4dc44e06e549b964f1030778c53c9a814ccf5fdd779eea87495489e9eb779b4c."
+    },
+    {
+      "falsification": "the source-ref integrity binding is missing, has a different SHA-256 or seal, or does not report SOURCE_REF_INTEGRITY_MATCH",
+      "text": "Pass 0037 binds to pass 0036 source-ref integrity with sha256 74d89981ae7598f7a7381f6fdbb1196cf9be97ca854688a49c4e3c4bce9f6f6f, seal 68382866e7e78895eb3d7fd0d613fcc8b17afc30398b7823cb198702262da2fb, and source_status SOURCE_REF_INTEGRITY_MATCH."
+    },
+    {
+      "falsification": "any of the ten statement checks has frozen_solution_status, frozen_proof_status, discharge_gate_status, or status other than MATCH",
+      "text": "Pass 0037 records all ten theorem statement checks with frozen_solution_status MATCH, frozen_proof_status MATCH, discharge_gate_status MATCH, and overall status MATCH."
+    },
+    {
+      "falsification": "any statement check omits raw signature text, canonical signature, signature SHA-256, or signature span for frozen, solution, or proof declarations",
+      "text": "Pass 0037 records raw signature text, canonical signature, signature SHA-256, and signature span for frozen, solution, and proof declarations for every theorem."
+    },
+    {
+      "falsification": "the pass 0037 validator result is missing, reports DRIFT, or has different theorem_count or statement_check_count",
+      "text": "Pass 0037 validator result reports MATCH with theorem_count 10 and statement_check_count 10."
+    },
+    {
+      "falsification": "packet 047 or the pass 0037 steelman is missing or has a different SHA-256",
+      "text": "Pass 0037 records packet 047 with sha256 0f1138781897eee84b486512c9399e9ba3d4ab34e3d079d99cd2a98a0fcebb7b and local steelman with sha256 28a350fb52ea8e292c2e41a7e750212cba38132c5ec9a7f47bea5989260f5917."
+    },
+    {
+      "falsification": "pass 0037 artifacts claim Lean replay, semantic proof review, axiom-free proof, validation of every public pipeline-math claim, or a promoted natural law",
+      "text": "Pass 0037 preserves non-promotion boundaries: it checks declaration-signature equivalence only, does not re-run Lean, does not claim semantic proof review, and current_promoted_natural_laws remains none."
+    }
+  ],
+  "disposition": "fenced",
+  "title": "Dogfood Pass 0037 Theorem Statement Equivalence"
+}

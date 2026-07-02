@@ -1,0 +1,331 @@
+Skip to content
+Navigation Menu
+Toggle navigation
+Sign in
+Appearance settings
+Platform
+AI CODE CREATION
+GitHub CopilotWrite better code with AI
+GitHub Copilot appDirect agents from issue to merge
+MCP RegistryNewIntegrate external tools
+DEVELOPER WORKFLOWS
+ActionsAutomate any workflow
+CodespacesInstant dev environments
+IssuesPlan and track work
+Code ReviewManage code changes
+APPLICATION SECURITY
+GitHub Advanced SecurityFind and fix vulnerabilities
+Code securitySecure your code as you build
+Secret protectionStop leaks before they start
+EXPLORE
+Why GitHub
+Documentation
+Blog
+Changelog
+Marketplace
+View all features
+Solutions
+BY COMPANY SIZE
+Enterprises
+Small and medium teams
+Startups
+Nonprofits
+BY USE CASE
+App Modernization
+DevSecOps
+DevOps
+CI/CD
+View all use cases
+BY INDUSTRY
+Healthcare
+Financial services
+Manufacturing
+Government
+View all industries
+View all solutions
+Resources
+EXPLORE BY TOPIC
+AI
+Software Development
+DevOps
+Security
+View all topics
+EXPLORE BY TYPE
+Customer stories
+Events & webinars
+Ebooks & reports
+Business insights
+GitHub Skills
+SUPPORT & SERVICES
+Documentation
+Customer support
+Community forum
+Trust center
+Partners
+View all resources
+Open Source
+COMMUNITY
+GitHub SponsorsFund open source developers
+PROGRAMS
+Security Lab
+Maintainer Community
+Accelerator
+GitHub Stars
+Archive Program
+REPOSITORIES
+Topics
+Trending
+Collections
+Enterprise
+ENTERPRISE SOLUTIONS
+Enterprise platformAI-powered developer platform
+AVAILABLE ADD-ONS
+GitHub Advanced SecurityEnterprise-grade security features
+Copilot for BusinessEnterprise-grade AI features
+Premium SupportEnterprise-grade 24/7 support
+Pricing
+Search or jump to...
+Search code, repositories, users, issues, pull requests...
+Search
+Clear
+Search syntax tips
+Provide feedback
+We read every piece of feedback, and take your input very seriously.
+Include my email address so I can be contacted
+Cancel
+Submit feedback
+Saved searches
+Use saved searches to filter your results more quickly
+Name
+Query
+To see all available qualifiers, see our documentation.
+Cancel
+Create saved search
+Sign in
+Sign up
+Appearance settings
+Resetting focus
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+Dismiss alert
+Uh oh!
+There was an error while loading. Please reload this page.
+dwavesystems
+/
+dwave-ocean-sdk
+Public
+Notifications
+You must be signed in to change notification settings
+Fork
+186
+Star
+529
+Code
+Issues
+24
+Pull requests
+4
+Actions
+Projects
+Security and quality
+0
+Insights
+Additional navigation options
+Code
+Issues
+Pull requests
+Actions
+Projects
+Security and quality
+Insights
+dwavesystems/dwave-ocean-sdk
+master
+BranchesTags
+Go to file
+Code
+Open more actions menu
+Folders and files
+Name
+Name
+Last commit message
+Last commit date
+Latest commit
+History
+1,915 Commits
+1,915 Commits
+.circleci
+.circleci
+.github
+.github
+dimod @ 3ecf9cc
+dimod @ 3ecf9cc
+docs
+docs
+dwave-cloud-client @ 8df9394
+dwave-cloud-client @ 8df9394
+dwave-gate @ a05aaa4
+dwave-gate @ a05aaa4
+dwave-graphs @ 52c5d8c
+dwave-graphs @ 52c5d8c
+dwave-hybrid @ ec17a70
+dwave-hybrid @ ec17a70
+dwave-inspector @ f0e3514
+dwave-inspector @ f0e3514
+dwave-networkx @ 5f45f2d
+dwave-networkx @ 5f45f2d
+dwave-optimization @ a4fbd07
+dwave-optimization @ a4fbd07
+dwave-preprocessing @ e10b776
+dwave-preprocessing @ e10b776
+dwave-samplers @ 6bb7f67
+dwave-samplers @ 6bb7f67
+dwave-system @ 74b56f7
+dwave-system @ 74b56f7
+dwaveoceansdk
+dwaveoceansdk
+minorminer @ e27ec28
+minorminer @ e27ec28
+penaltymodel @ 8ceefc7
+penaltymodel @ 8ceefc7
+tests
+tests
+.clang-format
+.clang-format
+.gitignore
+.gitignore
+.gitmodules
+.gitmodules
+.readthedocs.yaml
+.readthedocs.yaml
+CONTRIBUTING.rst
+CONTRIBUTING.rst
+LICENSE
+LICENSE
+README.rst
+README.rst
+pyproject.toml
+pyproject.toml
+setup.cfg
+setup.cfg
+setup.py
+setup.py
+View all files
+Repository files navigation
+README
+Contributing
+Apache-2.0 license
+More items
+Ocean SDK is
+D-Wave's suite of tools for solving hard
+problems with quantum computers.
+Installation
+Installation from PyPI:
+pip install dwave-ocean-sdk
+For more information, see the Ocean documentation's
+installation
+page.
+Getting Started
+Sign up for the Leap quantum cloud service here:
+Leap signup.
+Start learning with the following D-Wave resources:
+D-Wave Documentation
+to learn about quantum computers and how to use them.
+Get Started with Ocean Software
+to install and start coding with Ocean software.
+dwave-examples for code examples
+and Jupyter Notebooks.
+Resource Library on
+D-Wave website for whitepapers and additional resources.
+Example Quantum Program
+The following lines of code solve and visualize a
+random
+problem
+on a quantum computer.
+import dimod
+import dwave.inspector
+import dwave.system
+bqm = dimod.generators.ran_r(1, 20)
+sampler = dwave.system.EmbeddingComposite(dwave.system.DWaveSampler())
+sampleset = sampler.sample(bqm, num_reads=100)
+dwave.inspector.show(sampleset)
+The left side of the
+visualized
+solution represents the problem's variables as circles, with white dots for
+variables assigned values of -1 and blue dots for values of +1; the colors of the
+connecting lines represent values of the quadratic coefficients for each pair of
+variables. The right side shows the qubits representing these variables on a
+quantum processing unit.
+You can find introductory examples in the
+documentation
+and dwave-examples GitHub repository, and
+many customer prototype applications on the
+D-Wave website.
+Support
+Find support here:
+Leap user community
+to converse with a large community of D-Wave users.
+Leap help center
+to search the Leap knowledge base.
+SDK GitHub repo
+to open issues or request features on the Ocean SDK or on any one of its
+packages.
+Contributing
+Your contributions are welcome!
+Ocean's
+contributing guide
+has guidelines for contributing to Ocean packages.
+License
+Released under the Apache License 2.0. See LICENSE file.
+About
+Installer for D-Wave's Ocean tools
+docs.dwavequantum.com/
+Topics
+quantum-computing
+Resources
+Readme
+License
+Apache-2.0 license
+Contributing
+Contributing
+Uh oh!
+There was an error while loading. Please reload this page.
+Activity
+Custom properties
+Stars
+529
+stars
+Watchers
+37
+watching
+Forks
+186
+forks
+Report repository
+Releases
+75
+9.4.0
+Latest
+Jun 18, 2026
++ 74 releases
+Uh oh!
+There was an error while loading. Please reload this page.
+Contributors
+Uh oh!
+There was an error while loading. Please reload this page.
+Languages
+Python
+100.0%
+Footer
+© 2026 GitHub, Inc.
+Footer navigation
+Terms
+Privacy
+Security
+Status
+Community
+Docs
+Contact
+Manage cookies
+Do not share my personal information
+You can’t perform that action at this time.

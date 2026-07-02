@@ -1,0 +1,137 @@
+Documentation Index
+Fetch the complete documentation index at: /llms.txt
+Use this file to discover all available pages before exploring further.
+Skip to main content
+Phoenix home page
+Search...
+⌘KAsk Assistant
+Phoenix Cloud
+Phoenix Cloud
+Search...
+Navigation
+What is Arize Phoenix?
+Documentation
+Integrations
+SDK & API Reference
+Self-Hosting
+Phoenix Cloud
+Cookbooks
+Release Notes
+What is Arize Phoenix?
+Get Started
+Quick Start
+Coding Agents
+End to End Features Notebook
+Phoenix Demo
+PXI Agent
+Tracing
+Tutorial
+Overview: Tracing
+How-to: Tracing
+Evaluation
+Tutorial
+Overview
+LLM as a Judge
+Client-Side Evals (SDK)
+Server-Side Evals (UI)
+Integrations
+Datasets & Experiments
+Tutorial
+Overview: Datasets & Experiments
+How-to: Datasets
+How-to: Experiments
+Prompts
+Tutorial
+Overview: Prompts
+How to: Prompts
+Settings
+Access Control (RBAC)
+API Keys
+Secrets
+Data Retention
+Custom AI Providers
+Sandboxes
+Concepts
+User Guide
+Production Guide
+Environments
+Tracing
+Prompts
+Datasets & Experiments
+Resources
+Frequently Asked Questions
+Contribute to Phoenix
+Phoenix to Arize AX Migration
+TypeScript SDK
+Python SDK
+Github
+OpenInference
+On this page
+Features
+Quick Starts
+Next Steps
+Other Resources
+What is Arize Phoenix?
+Copy page
+AI Observability and Evaluation
+Copy page
+Phoenix helps you understand and improve AI applications by giving you a workflow for debugging and iteration. You can send detailed logging information, known as traces, from your app to see exactly what happened during a run, score outputs using evaluation tests to identify failures and regressions, iterate on your prompts using real production examples, and optimize your app with experiments that compare changes on the same inputs. Together, these tools help you move from inspecting individual runs to improving quality with evidence.
+Phoenix is built by Arize AI and the open-source community. It is built on top of OpenTelemetry and is powered by OpenInference instrumentation. See Integrations for details.
+​
+Features
+Tracing
+Evaluation
+Prompt Engineering
+Datasets & Experiments
+Tracing lets you see what happened during a single run of your AI application, step by step. A trace captures model calls, retrieval, tool use, and custom logic so you can debug behavior and understand where time is spent.Phoenix accepts traces over OpenTelemetry (OTLP) and provides auto-instrumentation for popular frameworks (LlamaIndex, LangChain, DSPy, Mastra, Vercel AI SDK), providers (OpenAI, Bedrock, Anthropic), and languages (Python, TypeScript, Java).
+Evaluations help you measure the output quality of your application. You can score traces & spans with LLM-based evaluators, code-based checks, or human labels so you can track performance and identify failures consistently.
+LLM-based evaluations — Run pre-built or custom evaluators on your data
+Dataset evaluators — Attach evaluators to datasets so they run automatically during experiments
+Evaluator integrations — Use Phoenix evals, or bring your own from Ragas, Deepeval, or Cleanlab
+Human annotations — Attach ground truth labels directly in the UI
+Phoenix helps you iterate on prompts using real examples from your application. You can version prompts, test prompt variants across datasets, and replay calls to see how changes affect outputs before rolling them out.
+Prompt Management — Version, store, and deploy prompts
+Prompt Playground — Experiment with prompts and models side-by-side
+Span Replay — Debug by replaying LLM calls with different inputs
+Prompts in Code — Sync prompts across environments via SDK
+Datasets & Experiments help you test changes systematically using the same inputs. You can group traces into datasets, rerun them through different versions of your application, and compare evaluation results to confirm whether a change actually improved performance.
+Run Experiments — Compare different versions of your application
+Create Datasets — Collect traces or upload from code/CSV
+Dataset Evaluators — Attach reusable evaluators to datasets as automated test cases
+Test at Scale — Run datasets through Playground or export for fine-tuning
+​
+Quick Starts
+Running Phoenix for the first time? Select a quick start below.
+Send Traces From Your App
+See what’s happening inside your LLM application with distributed tracing
+Measure Performance with Evaluations
+Measure quality with LLM-as-a-judge and custom evaluators
+Iterate on Your Prompts
+Experiment with prompts, compare models, and version your work
+Optimize Your App with Experiments
+Test your application systematically and track performance over time
+​
+Next Steps
+The best next step is to start using Phoenix. Start with a quickstart to send data into Phoenix, then build from there. See the Quickstart Overview for more information about what you’ll build.
+​
+Other Resources
+Built-in Agent (PXI)
+Use PXI, the agent built into Phoenix, to debug traces and iterate on prompts in context
+Integrations
+Add instrumentation for OpenAI, LangChain, LlamaIndex, and more
+Self-Host
+Deploy Phoenix on Docker, Kubernetes, or your cloud of choice
+Cookbooks
+Example notebooks for tracing, evals, RAG analysis, and more
+Community
+Join the Phoenix Slack to ask questions and connect with developers
+Was this page helpful?
+YesNo
+Suggest editsRaise issue
+Send Traces From Your App
+⌘I
+Phoenix home page
+English日本語 (Japanese)中文 (Chinese)
+Powered byThis documentation is built and hosted on Mintlify, a developer documentation platform
+Assistant
+Responses are generated using AI and may contain mistakes.

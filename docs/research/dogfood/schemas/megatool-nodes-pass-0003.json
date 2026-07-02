@@ -1,0 +1,78 @@
+{
+  "schema": "project-telos.megatool-nodes/v1",
+  "generated_at": "2026-07-01",
+  "nodes": [
+    {
+      "internal_tool": "ProofPacketLab",
+      "external_analogs": ["pipeline-math", "Sakana AI Scientist", "LangSmith", "Braintrust"],
+      "inputs": ["source URLs", "workspace refs", "model/tool traces", "measurements"],
+      "outputs": ["ResearchClaim", "WedgeScore", "Crucible verdict", "Markdown packet"],
+      "receipts": ["source digest", "action receipt", "measurement seal", "artifact hash"],
+      "verification_layer": "Crucible plus domain validators",
+      "market_facing_product": "Proof packet workbench for research and high-stakes agent workflows"
+    },
+    {
+      "internal_tool": "ResearchProofPacket",
+      "external_analogs": ["FutureHouse", "Elicit", "Semantic Scholar", "LeanDojo", "pipeline-math"],
+      "inputs": ["papers", "proof attempts", "formalization refs", "experiments"],
+      "outputs": ["claim graph", "evidence table", "formalization status", "review packet"],
+      "receipts": ["Gather digest", "Index source refs", "Forum route", "Crucible verdict"],
+      "verification_layer": "formal proof, reproducible experiment, or specialist review",
+      "market_facing_product": "Claim-to-proof packet for AI4Science and math research"
+    },
+    {
+      "internal_tool": "AgentActionProofPacket",
+      "external_analogs": ["LangSmith", "Langfuse", "Arize Phoenix", "OpenTelemetry"],
+      "inputs": ["tool calls", "authority envelope", "workspace state", "trace spans"],
+      "outputs": ["action receipt", "admission verdict", "audit packet"],
+      "receipts": ["Telos action receipt", "loop ledger", "Index context envelope"],
+      "verification_layer": "Crucible plus policy gates",
+      "market_facing_product": "Accountable agent execution layer"
+    },
+    {
+      "internal_tool": "ScientificRuntimeProofKit",
+      "external_analogs": ["Julia", "Mojo/MAX", "OpenXLA", "MLIR", "JAX"],
+      "inputs": ["BuildLang source", "Python kernel", "golden vectors", "runtime config"],
+      "outputs": ["kernel result", "build receipt", "runtime receipt"],
+      "receipts": ["BuildCompilerReceipt", "test vector hash", "Crucible measurement"],
+      "verification_layer": "compiler tests and numerical golden vectors",
+      "market_facing_product": "Accountable scientific compute substrate"
+    },
+    {
+      "internal_tool": "CalibrationEvidenceCore",
+      "external_analogs": ["Calman", "ColourSpace", "ACES", "OpenColorIO", "DaVinci Resolve"],
+      "inputs": ["display metadata", "patch set", "LUT/ICC artifacts", "measurement mode"],
+      "outputs": ["CalibrationReceipt", "VerificationReceipt", "VisualEnvironmentReceipt"],
+      "receipts": ["artifact hashes", "dE metrics", "profile manifest", "drift status"],
+      "verification_layer": "measured or predicted display verification with explicit label",
+      "market_facing_product": "Measured visual environment proof kit"
+    },
+    {
+      "internal_tool": "DomainValidatorMesh",
+      "external_analogs": ["model-risk review", "lab QA", "formal review", "CI gates"],
+      "inputs": ["Forum route", "domain packet", "claim risk", "validator roster"],
+      "outputs": ["route decision", "escalation flag", "validator verdict"],
+      "receipts": ["Forum route receipt", "review note", "Crucible handoff"],
+      "verification_layer": "domain-specific validator",
+      "market_facing_product": "Specialist validation routing for proof packets"
+    },
+    {
+      "internal_tool": "BuildCompilerReceipt",
+      "external_analogs": ["compiler build logs", "reproducible builds", "Bazel/Buck receipts"],
+      "inputs": [".bld source", "buildc version", "C output", "toolchain"],
+      "outputs": ["transpile receipt", "native compile receipt", "runtime output"],
+      "receipts": ["source hash", "compiler hash", "toolchain version", "test result"],
+      "verification_layer": "buildc plus native compiler plus Crucible",
+      "market_facing_product": "Language-level proof receipt for scientific kernels"
+    },
+    {
+      "internal_tool": "MarketRadar",
+      "external_analogs": ["analyst matrices", "competitive intelligence databases"],
+      "inputs": ["official sources", "pricing pages", "docs", "repo state"],
+      "outputs": ["MarketRow", "ResearchClaim", "WedgeScore"],
+      "receipts": ["source URL", "confidence label", "gap status"],
+      "verification_layer": "Gather source refresh plus human review",
+      "market_facing_product": "Living market map for proof-centered products"
+    }
+  ]
+}

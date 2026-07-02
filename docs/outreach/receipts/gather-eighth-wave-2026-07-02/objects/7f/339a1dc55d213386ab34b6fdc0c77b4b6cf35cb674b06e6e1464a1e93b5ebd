@@ -1,0 +1,74 @@
+# Official Paper Revision Queue
+
+Date: 2026-07-02
+
+Purpose: revise the current site-facing research papers into a stricter evidence-state format, and only incorporate new data when the new data is backed by a receipt, command, source capture, or verifier result.
+
+This queue is not a claim that any paper is archive-submitted, accepted, peer-reviewed, or final. It is the operating map for getting the official papers into a format that can support public release without overclaiming.
+
+## Required Evidence-State Terms
+
+Every revised paper should use these terms instead of loose "verified" language:
+
+| Term | Meaning |
+| --- | --- |
+| `SOURCE_LEAD` | Source worth examining; not a claim of truth. |
+| `HYPOTHESIS` | Plausible claim or research direction that still needs proof or measurement. |
+| `IDENTITY` | Symbolic or definitional result checked inside a named formal scope. |
+| `PROBE_MATCH` | Bounded experiment or reproduction matched a stated local criterion. |
+| `CRUCIBLE_MATCH` | A claim matched recorded measurements through Crucible. |
+| `UNVERIFIABLE` | Current evidence does not establish the claim as scoped. |
+| `LAW_CANDIDATE` | A candidate general law; requires stronger independent proof before promotion. |
+| `PROMOTED_LAW` | Reserved. Requires independent proof, reproduction, and review. None are promoted in this pass. |
+
+## Strict Official-Paper Format
+
+Each official-copy revision should include:
+
+- Title, author, date, version, and status.
+- Evidence-state glossary used by the paper.
+- Claims table: claim, scope, status, evidence ref, missing evidence, falsifier.
+- Methods: exact tools, commands, source stores, packet paths, and verifier commands.
+- Negative controls or blocked gates.
+- Revision log with superseded claims preserved.
+- Website-copy summary link.
+- Official-copy target only when ready: arXiv, Zenodo, OSF, SSRN, or discipline-specific archive.
+
+## Revision Queue
+
+| Paper or page | Current role | Required terminology update | New data to review | Revision action | Promotion limit |
+| --- | --- | --- | --- | --- | --- |
+| `research-proof-carrying-research-loops.html` and `docs/research/whitepapers/PROOF-CARRYING-RESEARCH-LOOPS-2026-07-02.md` | New working paper and website-copy page. | Already uses `SOURCE_LEAD`, `PROBE_MATCH`, `CRUCIBLE_MATCH`, `UNVERIFIABLE`, `LAW_CANDIDATE`, and reserved `PROMOTED_LAW`. | Eighth-wave local pandas failing reproduction receipt; blocked readiness packet; three arXiv source-lead stores; Crucible 5/5 matched tooling-boundary run; Learn prooflesson receipt reverified as `UNVERIFIABLE`. | Keep as the canonical strict-format draft. Next revision should add a claims table keyed to exact receipt paths and a Learn reading plan for each candidate paper lane. | Working paper only; not submitted or accepted. |
+| `research-witness-and-verification.html` | Synthesis thesis for witnessed verdicts and bounded rationality. | Replace generic `MATCH`/`UNVERIFIABLE` prose with `CRUCIBLE_MATCH`, `PROBE_MATCH`, and `UNVERIFIABLE` where the evidence source is known. | Eighth-wave Learn prooflesson is directly relevant: it preserves the packet verdict and re-verifies from its own chain. Local pandas reproduction is a concrete boundary case for "stronger evidence without readiness." | Add a 2026-07-02 revision note that cites the Learn prooflesson and local reproduction as examples of verdict-bound learning and blocked promotion. | Reviewable draft; does not become a theorem or law. |
+| `research-discovery-forge.html` | Discovery pipeline page. | Re-label source cards as `SOURCE_LEAD` or `HYPOTHESIS`; re-label C3 simulate leg as `PROBE_MATCH`/`CRUCIBLE_MATCH` only inside its stated criterion. | No new C3 measurement data in this pass. The new data is format-level: stricter promotion vocabulary and website/official split. | Revise language that says "verified MATCH" to say what matched, by which verifier, and inside which scope. Preserve existing `UNVERIFIABLE` boundaries. | Discovery scaffold plus bounded results only. |
+| `research-c3-thermodynamic.html` | Bounded simulation result page. | Replace broad "math leg returns MATCH" wording with `PROBE_MATCH` and `CRUCIBLE_MATCH` against the stated 5 percent tolerance. | No new simulation, hardware, or physical-chip data in this pass. | Add recheck command block and a claims table for mean error, covariance error, and physical-chip boundary. | Simulate leg only; physical-chip leg remains `UNVERIFIABLE`. |
+| `research-learning-forge.html` | Learning object / source-card framework page. | Map "evidence-backed" to `SOURCE_LEAD` or `PROBE_MATCH` depending on whether a source was merely captured or a check was run. Keep unjudged cards `UNVERIFIABLE`. | Learn 1.5.0 prooflesson and reverify output can be added as a concrete new Learn receipt example. | Add a Learn prooflesson section that makes the boundary explicit: scaffold and retrieval prompts are not graded answers, and the lesson verdict cannot exceed the packet verdict. | Learning-tooling paper, not autonomous credentialing or answer-generation claim. |
+| `research-conservation-of-faithfulness.html` | Conceptual thesis page. | Add an evidence-state preface that distinguishes philosophical argument, process report, source lead, and measured result. | No new source or measurement data identified in this pass. | Terminology-only revision unless a receipt-backed experiment is attached later. | Argument draft; no empirical or formal promotion. |
+| `research-conferred-existence.html` | Conceptual thesis page. | Keep process claims `UNVERIFIABLE` unless run records are linked; mark philosophical claims as argument-internal rather than measured. | No new philosophical source data identified in this pass. | Terminology-only cleanup; preserve the current caveats that process narration is not load-bearing evidence. | Argument draft; no archive or theorem claim from this pass. |
+
+## Candidate Official Papers From Dogfood Corpus
+
+These are not site-facing official papers yet, but they are strong candidates for the next official-copy cycle:
+
+| Candidate | Source packet family | First official-copy requirement |
+| --- | --- | --- |
+| Mixed-source protein proof packets | `docs/research/dogfood/packets/160-mixed-source-protein-proof-packet.md` | Convert source leads, model claims, and experiment gaps into a claims table. |
+| Stochastic kernel receipts | `docs/research/dogfood/packets/119-stochastic-kernel-corpus-harness-receipt.md` and related stochastic runtime packets | Re-run receipts and separate identities from bounded numeric probes. |
+| Theorem-prover adapter receipts | `docs/research/dogfood/packets/127-theorem-prover-adapter-receipt.md` and theorem packet family | Bind theorem statements to source refs, proof artifacts, and replay status. |
+| BuildLang scientific runtime receipts | `docs/research/dogfood/packets/020-buildlang-scientific-runtime-receipts.md` and BuildLang adapter packets | Convert compiler/runtime receipts into `PROBE_MATCH` and `CRUCIBLE_MATCH` claims. |
+| Color calibration proof kit | `docs/research/dogfood/packets/021-color-calibration-proof-kit.md` | Separate software-side color checks from hardware calibration claims. |
+
+## New Receipts Added For This Revision Pass
+
+| Receipt | Status |
+| --- | --- |
+| `docs/outreach/receipts/eighth-wave/proof-carrying-research-loops.learn-packet.json` | Proof-packet wrapper for Learn; overall verdict `UNVERIFIABLE`. |
+| `docs/outreach/receipts/eighth-wave/learn-prooflesson/tutor/proof-carrying-research-loops.prooflesson.json` | Learn prooflesson receipt; reverified `VERIFIED`, lesson verdict re-derived as `UNVERIFIABLE`, witness digest `sha256:cfd22a141d19c6ca3b6e408dd02ba558078fbf88cce0e602fdc0650b9336fd87`. |
+
+## Do Not Promote
+
+- Do not describe website-copy pages as official submissions.
+- Do not describe a `SOURCE_LEAD` as a proved claim.
+- Do not describe a local reproduction as a fix.
+- Do not describe a Learn lesson receipt as proof that the underlying paper claim is true.
+- Do not use `PROMOTED_LAW` until independent proof, reproduction, and review exist.

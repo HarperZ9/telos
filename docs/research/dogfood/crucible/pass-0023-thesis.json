@@ -1,0 +1,46 @@
+{
+  "claims": [
+    {
+      "falsification": "schemas/otel-recording-span-venv-pass-0023.json is missing, has a different schema or status, reports different counts, reports base SDK availability after the pass, reports no finished span, or lacks the expected seal",
+      "text": "Pass 0023 created an OTelRecordingSpanVenvReceiptSet/v1 artifact with status OTEL_RECORDING_SPAN_VENV_MATCH, six resolved install rows, six negative fixtures, base_sdk_available_after=false, finished_span_count=1, and seal 7d87821c3e35dbfe5493087092d7f5a1c3c0aea62a54e729e5ff7938b1d95796."
+    },
+    {
+      "falsification": "the install receipt is missing, returncode is nonzero, command lacks --force-reinstall or --report, required pinned OTel packages are absent, or any resolved critical package lacks a SHA-256 hash",
+      "text": "Pass 0023 installed pinned OTel packages only inside the temporary venv using pip --force-reinstall --report, returned 0, and recorded SHA-256 hashes for opentelemetry-api 1.41.0, opentelemetry-sdk 1.41.0, opentelemetry-semantic-conventions 0.62b0, and typing_extensions 4.15.0."
+    },
+    {
+      "falsification": "base_environment_before or base_environment_after reports opentelemetry_sdk_available=true, missing API version, or a different Python version",
+      "text": "Pass 0023 preserved the shared base interpreter boundary: before and after audits show Python 3.12.10, opentelemetry-api 1.41.0, and opentelemetry_sdk_available=false."
+    },
+    {
+      "falsification": "the recording span fixture is missing, did not import the SDK, used a different exporter or span processor, has a nonzero return code, reports a non-recording span, reports a finished span count other than one, or has zero/malformed trace or span ids",
+      "text": "Pass 0023 produced an OpenTelemetryRecordingSpanFixture/v1 using InMemorySpanExporter and SimpleSpanProcessor with sdk_imported=true, span_was_recording_inside_context=true, finished_span_count=1, trace_id_hex aaa76491660d7a56086f69d1be94debe, and span_id_hex 1424d4ca9a6c5b58."
+    },
+    {
+      "falsification": "the fixture lacks telos.pass, telos.action, telos.receipt.kind, telos.no_cloud_export, service.name, telos.export.boundary, exporter_sink_hash, or fixture_hash",
+      "text": "Pass 0023 binds the recording span to Telos fixture attributes and resource metadata, including telos.pass=0023, telos.action=recording-span-fixture, telos.receipt.kind=OpenTelemetryRecordingSpanFixture/v1, telos.no_cloud_export=true, service.name=telos-dogfood-pass-0023, exporter_sink_hash f2e9f33d12e261457731f6eedbe62c3c6d04d574c2c8274870da4eee0c2c2fc0, and fixture_hash b1f3b6cd1c5b81d1784b29f5f9e11dd9ab1c2849f7510de94926dca07d5e2a25."
+    },
+    {
+      "falsification": "action_receipt_bridge is missing, is not labeled BRIDGE_FIXTURE_READY_NOT_TELOS_RUNTIME, lacks telos.action.receipt, or lacks nonzero trace id/span id/finished span/receipt hash/base non-mutation verification layers",
+      "text": "Pass 0023 includes a TelosActionReceiptBridgeSketch/v1 labeled BRIDGE_FIXTURE_READY_NOT_TELOS_RUNTIME that maps the OTel fixture toward telos.action.receipt without claiming runtime integration."
+    },
+    {
+      "falsification": "schemas/pass-0023-otel-recording-span-venv-validator-result.json is missing, reports non-MATCH status, does not report match=1, or reports drift above zero",
+      "text": "Pass 0023 validator reports MATCH with one matched check and zero drift."
+    },
+    {
+      "falsification": "packets/033-otel-recording-span-venv.md is missing, Gather does not verify it, the packet SHA-256 differs, or the packet omits the natural-law non-promotion statement",
+      "text": "Pass 0023 packet 033 was gathered and verified with SHA-256 945054a1aed15ecffcfd46427b97dd268056a05d08997906a99faab29eed5b05 and digest seal 68f9ce4e29ff0147006858732dfb26683ebbe24c2b5b62f5782a1e75334e7a91."
+    },
+    {
+      "falsification": "schemas/tool-receipts-pass-0023.json is missing, lacks required tool status receipts, treats Forum submit as successful, or omits the Telos action receipt/loop ledger/native-control receipts",
+      "text": "Pass 0023 records tool receipts showing Index, Gather, Telos, Forum status/ledger verify, and Crucible status as MATCH while preserving Forum submit as UNVERIFIABLE because no model executor is configured."
+    },
+    {
+      "falsification": "any pass 0023 artifact labels Telos runtime integration, cloud trace export, live agent safety, market adoption, theorem proof, scientific discovery, or a natural law as promoted",
+      "text": "Pass 0023 promotes zero Telos runtime integrations, cloud trace exports, live agent safety claims, market adoption claims, theorem proofs, scientific discoveries, or natural laws."
+    }
+  ],
+  "disposition": "fenced",
+  "title": "Dogfood Pass 0023 Isolated OpenTelemetry Recording Span Fixture"
+}

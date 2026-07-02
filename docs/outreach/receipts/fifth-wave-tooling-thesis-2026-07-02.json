@@ -1,0 +1,26 @@
+{
+  "title": "Project Telos Fifth-Wave OSS Proof Showcase Claims",
+  "disposition": "fenced",
+  "claims": [
+    {
+      "text": "The fifth-wave fixture scout writes a project-telos.oss-scout/v1 packet for pandas-dev/pandas#66050 with priority 70.",
+      "falsification": "The scout output is missing, has the wrong schema, names a different candidate, or reports a priority other than 70."
+    },
+    {
+      "text": "The ready OSS showcase fixture produces a project-telos.oss-pr-readiness/v1 packet with pr_ready true, operator_next_action open-pr, and verdict MATCH.",
+      "falsification": "The generated ready packet is missing, has the wrong schema, is not PR-ready, chooses a different next action, or carries a non-MATCH verdict."
+    },
+    {
+      "text": "The blocked OSS showcase fixture produces a packet with pr_ready false, operator_next_action revise, verdict UNVERIFIABLE, and explicit missing-evidence blockers.",
+      "falsification": "The generated blocked packet is PR-ready, chooses open-pr, lacks the expected blockers, or carries a MATCH verdict."
+    },
+    {
+      "text": "The fifth-wave demo document labels the OSS showcase as fixture-only and warns not to post it as an actual pandas fix or live GitHub scout result.",
+      "falsification": "The demo document omits the fixture-only boundary or claims Project Telos fixed pandas."
+    },
+    {
+      "text": "The fifth-wave content queue packages both the ready fixture and the blocked fixture for the parallel posting session.",
+      "falsification": "The content queue omits either the ready packet or the blocked packet."
+    }
+  ]
+}

@@ -1,0 +1,1582 @@
+So uh I'm going to talk about my recent
+paper on geometric framework for
+biological evolution. Um and uh I do
+realize that there's some many things
+there are not commonly used by
+biologists. So I'll try to go slowly and
+uh if if something doesn't make sense
+just you know don't wait until the end
+just interrupt me and I'll try to
+clarify. Um so many things that may
+sound complex are not really complex and
+it's always possible to explain things
+uh on on on a on a level that would be
+understandable. So um now what this is
+not going to be about although you know
+I would ideally want to stop start start
+with that but it's this talk not going
+to be you know introducing all the
+machinery that you know I use in what I
+call neural physics uh which so far been
+applied to physical phenomena and
+complex phenomena biological phenomena
+I'm not going to do that um but some of
+the tools I will lose and uh and when I
+do again uh there is a warning uh for
+you. Don't don't get afraid right away
+if there is something isn't
+um something that isn't familiar to you.
+It just you know I'll spell it out. Um
+now it's not going to be again on on the
+multi-level learning which is I think
+very much exciting part and I I heard
+you gave it uh some information on that
+as well. So there's uh certainly a lot
+of experiments can can be done to
+clarify
+what is it sitting in in this way. You
+know we wrote a couple of papers about
+this. There was some uh more than a
+couple of papers about that. But again
+this isn't going to talk about
+multi-level. I'll just pick a given
+level and um tell tell what's happening
+there. What's what kind of you know what
+is the right u language to discuss
+things there. Um and and why why we need
+it? Why do we you know some you know
+people ask why why would you want to
+complicate things um why do you need to
+and I'll try to justify why this is the
+right language and then now this the
+third part is I'm particularly
+interested with regards to your lab
+because you guys are to try to um you
+know trying to define and understand how
+agents work and what the agents are um I
+think there's a lot of again exciting
+work that was done theoretical mostly on
+my side trying to understand how to what
+are the principle behind the the engines
+and by agents uh they can be on
+different levels. So you know in this
+talk the agent will be a populations of
+a of of organisms. So this entire
+population will be uh one agent and
+we'll try to see what are the
+appropriate tools to study how the
+population evolves. Um and this talk is
+not going to be uh you know connecting
+other other uh levels um in this grand
+multi-disiplinary program of uh you know
+modeling as much as we can using the the
+neural physics using the learning
+dynamics and then you know starting from
+elementary degrees of freedom uh like
+electrons all the way to um I don't know
+social phenomena and um biological
+evolutionary phenomenon essentially. So,
+so uh it will be a rather narrow talk
+but um with enough material to to
+uh argue that that this may be the right
+tools to use if we only concentrate on
+biological evolution. So that's kind of
+the the pitch here.
+>> Okay. So, so uh now from the biologist's
+perspective the um um my motivation
+would be is you know if you look at the
+standard classical evolution theory
+there is something that uh we physicists
+love and understand why we need it
+called uh coordinate independence
+formulation where uh we do use
+coordinates when we try to do
+calculations but we want to make sure
+that our results don't matter. uh now if
+you do me you do measurements using one
+coordinate system I do you measurements
+other coordinate system we better know
+how to translates about our results how
+to go back and forth so so this
+coordinate independence
+uh is is was an important
+um realization like 100 years ago or so
+and then we kind of push it to the
+limits and um the argument here will be
+that biology deserves the same
+evolutionary biology deserves the same
+and whatever you want to formulate it
+it's better be coordinate independent.
+Now if the if the um coordinate
+coordinates uh exist and and if there
+there is a preferred preferred set of
+coordinates then we call it uh symmetry
+breaking and we say okay well why do we
+need to break this symmetry then so you
+you either have to formulate your um uh
+system in a coordinate independent way
+or provide a mechanism of why is it that
+the preferred coordinate system emerged.
+So, so that's uh kind of uh the the
+general uh strategy here. So, like you
+know given an example um in in in
+physics we have so-cal law symmetries
+and there's certain transformations
+between space and time that kind of um
+make sense. They they shouldn't they
+shouldn't be preferred time coordinates
+but we didn't know about that you know
+200 years ago or so. And uh because
+apparently it is broken. We we do have a
+preferred coordinate system here. uh we
+we we have um cosmic microwave
+background radiation which kind of uh um
+prefers a slicing temporal slicing and
+and um and so so then then you say okay
+yeah your your theory may have this
+invariance but then it was broken uh and
+then you have to explain why is it
+broken. So, so either or uh you start
+with without making additional
+assumptions and I think you should do
+the same in biology and if if it turns
+out that the symmetry is broken then
+then provide a mechanism for that. Um so
+that's kind of the first motivations is
+kind of which which like from the very
+first time I started working in biology
+like bugged me a lot. Why why do we not
+have a clean mathematical formulations
+of what we what we mean by things? Okay.
+So the second one is this um you know
+fitness landscape that um as I
+understood more understood as as a as a
+metaphor when we when it it is asking
+for actually geometric formulation you
+know landscape is geometry there are
+distances there are shortcuts and and
+all that um and when when the organs are
+mutating there's certain distances which
+they look far away but actually closer
+there are different um forms of
+organisms that that have um same threads
+and they may be far away in the uh
+genotype space but should be closed in
+the phenotype space. So so all those
+things are um are present there without
+rigorous mathematical formulation so
+that um you know idea was actually let's
+let's fix that as well. So let's kind of
+identify all the spaces all the
+mathematics you know all the distances.
+Yeah, it may look heavy at first. Um,
+but once you uh actually, you know,
+study the, you know, once you once you
+settle all this mathematical chaos at
+the end of the day, you can start asking
+precise questions and that's um and and
+then you'll see that this mathematics is
+just a necessary condition for you to to
+make like even first step in
+understanding what evolution is. Um, and
+now there there's I entered this field
+through this evolution as learning uh
+paradigm. Um
+uh again there was not a clear
+indication of why should evolution be a
+learning dynamics and so it would be
+nice to uh derive and show that it is
+true that in certain limits starting
+from some assumptions you can show that
+the system is undergoing learning
+dynamics and you know learning dynamics
+is not uh classical Hamiltonian dynamics
+learning dynamics is not uh quantum uh
+unitary dynamics it's something else and
+and uh even if and some limits they can
+can um lead to similar. So so why why is
+it learning? Why is it learning other
+than again it looks like learning? Can
+can we actually you know set up uh
+minimal assumptions uh and you know
+solve equations and derive um
+evolutionary equation as a learning
+dynamics and then if that's so what are
+the corrections is it exactly like
+learning dynamics and machine learning
+or are there corrections you know what
+what's what's the status of that so
+that's kind of the three motivational
+steps you know it has to be uh
+independent you know by geometry we need
+to uh not just use metaphors it has to
+be geometry
+And if we we think that learning dynamic
+is somehow important uh we should show
+it where does it come from. Um so then
+the goals just in summary you know we we
+do want general coariance which is a
+fancy way of saying that has to be
+coordinate dependent. Uh we do need to
+have equations of motion. Uh you know
+the the the organism evolve evolving
+organ change their states and so there
+has to be equations that describe those
+evolutions. Uh now once we get those
+evolutionary equations are they the same
+as um machine learning? Are they um
+gradient descent-like equations or are
+they uh simple like classical mechanics
+or they you know what what are the
+equations? What what are the the
+equations? Uh now once we get there
+there is a choice of um using different
+equations and they would describe u a
+family of equations um which and they
+would describe different learning
+algorithms. So then once we are there we
+can ask okay what what is the learning
+algorithm that the nature lo uses on the
+level of evolutionary dynamics you know
+it may have it figured out the most
+useful algorithm or or or not or or
+maybe you know where do we maybe there's
+some other clever algorithm that we
+haven't discovered mathematically but
+you know nature has it and then we can
+kind of um use the hints from the
+evolution dynamics to to improve our
+algorithm. So it can go it can work both
+ways. We as long as we formulate it
+using the same kind of u mathematical
+language we can map it better very often
+certain algorithms from biology would
+come and help in machine learning and
+then now that we understand machine
+learning so much better maybe we can map
+and and model um the evolution dynamics
+um better and and again this the
+question I'm going to ask here on the
+level of evolutionary dynamics is um
+just one level, right? But you know, you
+can be asking the very same set of
+questions on any other level in the
+physics and chemistry and um um in the
+in the behavior of individual al um
+organisms
+you don't have to you know look at the
+entire populations here is I I'm picking
+that particular level uh as an
+illustration but the set of questions
+may would have to can be very very the
+same. uh the conclusion may be that the
+learning dynamics is not an appropriate
+language and and here's why and then you
+would have to you know turn to a
+different framework or or enhance that
+framework but but at least this is this
+is the problem. Okay. So um moving
+forward uh just an outline of results um
+and um so so uh there will be a
+generally current formulation
+um and for that one step step needs to
+be taken and we have to embed the
+discrete space in a continuous manifold.
+uh the fact that such embedding should
+exist tells us uh because we know about
+the existence of this genotype to
+phenotype uh map where we do know that
+discrete structures of the genotype are
+mapped to the continuous you know traits
+of the of the phenotype space. So, so
+the existence of the of this embedding
+is there. Uh we just need to to um
+define it and then once it defined it uh
+we we we can start working with it. We
+can use the machinery of differential
+geometry uh to move things around and um
+know exactly what they mean. Um like for
+example, you know, where are the
+distances defined? Is it in genotype
+space or in phenotype space or you know
+uh the the the evolutionary dynamics
+does take space in genotype or phenotype
+space you know and all those questions
+you can answer once uh you've clarified
+the mapping and uh the the one thing
+that is people in this community some
+kind kind of love a lot is a price
+equation um I never understood the
+reason um I will d use the price
+equation to derive lambda equation
+because price equation is an exact
+equation equation and it's uh in physics
+we kind of actually like non-exact
+equations because if something
+mathematically exa exact it's not
+physics uh if something that uh is not
+cannot be proved but discovered to match
+experiment that you know makes us
+exciting you know uh you cannot prove
+direct equation you cannot prove
+sheroninger equation but uh you can
+discover that this is the equation that
+describe the dynamics and certain limits
+and that that kind of so price equation
+is is a math equation But starting from
+this by making certain assumptions you
+actually end up with the lambda
+equation. Uh and and that is in my
+dictionary exciting equation because
+it's it's an an approximate it's not an
+exact but actually is describing um
+things that you can observe uh compare
+and check against um in your experiment.
+So I'll tell you about that. Uh there
+will also be corrections to l equation.
+So l equation is not a final answer but
+that that kind of brings us closer to
+why evolution is learning. So once I
+show you lambda equation you'll say oh
+yeah yeah yeah that's you know this is a
+gradient descent there is something that
+descending and something is is learning.
+um you you you you have to take one more
+step to get from the lambda equation to
+the learning equation to the coarian
+gradient descent or in this case case
+ascent uh and that is the identification
+of the coariance matrix with the metric.
+So metric is the machinery that measures
+distance
+um in in differential geometry coariance
+matrix. So it's geometry. So metric is
+geometry. Um now coariance is all about
+statistics. It's about how you know
+things are correlated or not. Uh and not
+clear you know both are matrices. Um not
+clear that one has to be um equal to
+another or proportional. Uh and actually
+to make this identification you have to
+use this so-called maximum entropy
+principle. Um now if if this would not
+be correct then the distribution would
+not be maximum entropy and um so so
+somehow the the uh variations tell us uh
+how hard it is to make steps in certain
+directions. So, so and and and uh and so
+it tells us about the measure of you
+know how far away how many fluctuation
+steps do you need to take to go east or
+how many fluctuation steps you have to
+take to go uh north and so that that
+gives you and that's kind of intuitive
+way of seeing why the coariance is
+equivalent to metric but not exactly
+metric it's inverse metric but
+nevertheless it's u again it's just a
+machinery to measure distances and once
+we get through that so once we derive
+the Lambda equation and u we are we'll
+be in the and once we map the lambda
+equation to the equation of learning we
+will be in the game of choosing learning
+algorithm and then here we will say okay
+well uh I can just reason with a pure
+thought and say okay nature should have
+discovered this algorithm because it's
+the most efficient and then you know
+that's my theoretical prediction or you
+can say well but you know this is still
+a a model So why not just go to the
+experiments and see what actually the
+nature discovered and then and then here
+you'll have you know theory tells you
+that it should be this um the the
+experiment will show you something else
+and then you'll say okay well that means
+my theory is not complete I have to uh
+completed something but anyways this is
+kind of will be the the final game I'll
+identify the experiment that should be
+conducted to identify exactly what is
+the learning algorithm that evolutionary
+system is uses uses. Now the the the
+single organism who is learning
+something during the lifetime may use a
+completely different learning algorithm
+and it um you know will work in
+completely different space and and uh
+you know it may may or may not discover
+have discovered the most efficient
+algorithm. Again this is a separate
+experiment on separate level uh where
+all those questions can be asked.
+Okay so let's move on. Um so mapping is
+the first thing and um I start with this
+genetic sequence of those uh letters
+from the four-letter alphabet right so
+uh the the standard setup now we we know
+that this genotypes are mapped to some
+phenotype space this is called the
+phenotype map u we don't really know
+what the map is um but we can study its
+properties and the one thing it should
+have there should be uh since the
+phenotype space is continuous and the
+genotype space is discrete. There has to
+be an intermediate. First you have to
+map it to some continue I'll call it
+continuous genotype space and then from
+there you can have a continuous map from
+the type. Think about this as uh kind of
+um embedding, right? So you embed um
+discrete numbers into now uh one example
+like digital computers do it all the
+time. We have uh bits that record the
+real numbers and and so the bits are
+mapped to real numbers but you know you
+have to do this mapping. So you have to
+kind of say uh what is close what is far
+away and uh and uh you know u if you you
+can ask me is it true that the genotypes
+are like bits are mapped to the real
+numbers like phenotypes or I've done at
+least that statistical test. No that's
+not true. So it's not that's not how uh
+genotype um are mapped but but but it is
+true that we have to map discrete
+genotypes to the continuous and that
+that mapping should exist. uh now what
+now this mapping doesn't uh yet tell us
+about the distances um uh but uh of how
+how things you know which
+[clears throat] things are far away
+which things are correlated all those
+things are are um additional structures
+they'll have to put in on the space but
+at least there has to be a mapping. So
+if we if you if you have the two
+organisms with exactly the same genotype
+they should be mapped to you know
+exactly the same phenotype space and um
+so I'll be denoting this genotype space
+with Q's head stands for the discrete
+[clears throat] and without hat is for
+the continuous analog uh and so you can
+kind of uh create for example a map of a
+single um you know letter from the al
+alphabet fourdimensional to some
+d-dimensional real space. So if you have
+four letters, you can cop you can map it
+to three-dimensional space for example.
+That would be non-trivial mapping. Um or
+you can map it two dimensional space or
+one dimensional. Mapping is to
+fourdimensional would not be very
+interesting. It would be like every
+letter has its own um uh dimension. But
+you can do that that as well. And then
+you do this mapping for every single um
+character in the sequence for every
+single site. And so overall you have a
+mapping which is you know d is some
+number from I don't know one to three
+and k is how many um how how long the
+sequence is. So this is uh d * k
+dimensional space to where very high
+dimensional space which I call
+continuous genotype space to where every
+se single uh sequence would be mapped uh
+to a point there. Now but but it is
+already a continuous space. It means
+that I can move continuously through
+that space. Even even if when I move off
+those lettuce points, the the points do
+not really represent any discrete
+genotypes. The the points are still
+there. So I can still do the uh
+integration. This is equivalent to kind
+of taking a lattice right which only has
+discrete lettuce position and trying to
+define a continuous space out of this uh
+for only for mathematical convenience
+not because those um
+because those other points represent any
+uh real gen genotypes. So that's the
+setup. So we have um we have a genotype
+space discrete genotype space
+um we have like you know b you know
+digits like binary digits binary um like
+in in a computer we have a continuous
+gen type space where you allowed to take
+intermediate values uh so it's not zero
+and one it can be for example anything
+between zero and one and then this guy
+eventually is mapped to the continuous
+phenotype case uh you can skip it and do
+the direct mapping. It doesn't matter
+the the the whole point is that there
+such map has has to exist and then the
+the whole idea is that in different
+spaces the different structures live and
+there will be metric that lives here
+there will be metric this this here but
+the question will be where is it defined
+is it defined here or is it defined here
+and how do you uh move certain
+structures back and forth. So in
+differential geometry we we call it push
+forward. If you have a structure here
+that you can push forward to this space
+or a pull back. If you have a structure
+here, then you can pull uh pull back.
+But uh not uh all the structures you can
+push forward and pull back. So some
+structures you will only be able to pull
+push forward and the others uh only pull
+back. So that's kind of them.
+Okay. Okay. So let's uh you know I spend
+a bit of time here but this is kind of
+foundation you know important setup. Uh
+we need uh we need this map you know
+with this map we cannot talk about
+continuous phenotype space that's just
+easily defined. So if you have a phenype
+map uh we need to have it. Okay. So so
+uh now uh a little bit about pushing
+forward and pulling back. Um and um so I
+start with the phenotype spaces n
+dimensional. So, so we'll keep it the
+genotype will be D * K dimensional. So,
+K is the length of your sequence
+number of sides and small D is uh
+embedding of each uh the dimensionality
+of embedding of each uh you know
+character um each site. So, it's D sub K
+and the N dimensional is the
+dimensionality of the phenotype space.
+Um and again usually people would you
+know discuss phenotype space and they
+would give names to different directions
+dimensions in this phenotype space you
+know this dimension describes the color
+of eyes this is dimension describes the
+you know color of hair or you know what
+what other traits there are here we are
+saying uh this is just one way of
+looking at it but it's just n
+dimensional space so let's just collect
+um all of them together and then try to
+see uh which directions in that space
+are um far away directions, closed
+directions, what is the metric? You
+know, if you are traveling in that
+space, how how how um if you are
+mutating in that space, how how well you
+are mutating in this space in the
+genotype, but how how it would
+corresponds to motion in the phenotype
+space. Okay, so the first uh the the the
+first object that you want to define is
+um um is is a metric. So you want to
+take a f type space and you say okay
+well there is there has to be a metric
+if it's a space certain things are close
+by other things are far away. Um now uh
+the machinery to define metric is
+uh n byn matrix
+uh so i and j go from one to n um and
+then it's it's in gerally position
+dependent so it's not um and that's what
+makes it curve if it was position
+independent. So if there was no x
+dependence then then you could just
+diagonalize it and define new
+coordinates where everything is flat. So
+in general it's not the case and that
+what makes uh the machinery of
+differential geometry useful. Okay. So
+now um so that's what measures distances
+in a genotype space. So that's is how
+far away or sorry in a phenotype space.
+Um now uh but uh what about how can you
+pull back this matrix back to the
+genotype space? So if you so if you have
+the notion of distances and a phenotype
+space and you if you have a map from the
+genotype to phenotype space uh can you
+measure distances in a genotype space
+and that's kind of uh where all this
+becomes uh useful. So yeah once you have
+once you know distances uh you know the
+how you know displacement is work. So
+you know the displacement uh how the
+displacement in the phenotype space
+affected by the displacements in a
+genype space through this formula. This
+is kind of a partial derivative of the
+phenotype map with respect to the
+genotype coordinates. Um and and so uh
+and this is like push forward. So if you
+changed your position in gen space this
+is by how much position in a phenotype
+space will change. So you uh your your
+starting object is you mutate it. Okay.
+So you mutate it and because you know
+this map you know by how much your
+phenotype will change and the but you
+cannot pull it back. What you can pull
+back is the metric. So and this is how
+it will work. If you know the distances
+in a phenotype space uh you put those
+two partial derivatives or what called
+jacobians and then you now you know the
+the metric in the genotype space. So so
+again once you know the distances in a
+phenotype you know the distances in a
+genotype space but the displacements go
+other way around. Now in order to know
+which object is can be pushed back and
+pulled forward the in physics we use
+this you know vector and co- vector and
+here it's just represented by either
+upper or lower indices but that's um
+okay so uh the and here's the like quick
+biological interpretation of what I just
+said. I'll I'll go a bit faster but let
+me just say so the two genotypes are
+close if they produce similar phenotypes
+uh and that is regardless of the
+molecular differences and that's kind of
+what uh defines the distance and the
+same genotype changes can have different
+uh phenotypic consequences depending on
+the genetic background. So that tells us
+that the system is in generally curved.
+So we there is no reason to expect that
+it would be um
+so so depending of the other states of
+the other genomes you know certain uh
+distances certain mutations will produce
+you similar phenotypic states or or same
+type and that's all just a way of saying
+that the space is curved. Uh it's really
+depends from where you start. So your
+metric depends on where you stand. It's
+not just one for all. Um okay so so
+that's about distances now uh let's go
+to this um statistics so it's always
+will be interplay between geometry and
+statistics so now uh so let's consider a
+population of organisms
+uh with different genotypes and I
+describe it by row um and the idea is
+that you want to apply this maximum
+entropy principle which says that choose
+the distribution with the largest
+entropy given certain mean and certain
+uh variance right or co-variance in the
+multi-dimensional case and if you do
+that the distribution will be this
+Gaussian distribution given by that and
+if you are working and that's important
+if you're looking in the in the locally
+flat frame then this will be just
+chronica delta so it's u zero everywhere
+but the main diagonal where it's one but
+it is just uh because your coariance
+matrix actually defines what the locally
+frame metric. Once you want to move to a
+different uh coordinate system uh then
+this has to transform as a tensor and
+and um uh this this is actually
+covariance matrix and this will have to
+transform in a certain way. So the
+coariance it's inverse of the coariance
+matrix. So uh and it has to transform uh
+as a tensor and so which which tells us
+that this
+inverse metric the the object that
+measures distances must be equal to the
+coariance object that measures measures
+statistics and like you know we already
+said it intuitively
+if it takes if your fluctuations are
+very small in certain directions it's
+kind of you know you have to go far uh
+in terms of how many fluctuation steps
+to get there and if they are large, you
+can kind of get there faster. Uh, and so
+in this sense, the the the only object
+that makes sense to define distances in
+this space. Uh, one of the objects there
+is I'll I'll mention the other object
+later um is is um is the coariance. And
+then if you do that, you actually end up
+with uh with a with a lambda equation
+giving you stochastic gradient descent.
+But we'll we'll get there. Okay. Okay.
+So, so then you have the object that you
+have you know population of organism
+they have some coariance. This coariance
+defines inverse metric in the genotype
+space and we have a map we have a map of
+how phenotype map of how to go from
+genotype to to phenotype and so
+therefore we can we can define we can
+take this object the coariance and push
+it forward. So if it had lower indices
+we would not be able to push it forward
+but because it's upper indices we can
+push it forward and and that and that
+will give us the metric on the on the
+phenotype space. So so we have a
+coariance in the genotype space uh that
+gives us inverse metric in a phenotype
+in the genotype space and now we can
+push it forward to acquire the inverse
+metric in the phenotype space and the
+coarance in the phenotype space. So the
+biological implication that this maximal
+entropy principle
+uh and without it we cannot really say
+anything about the distances. So we have
+to you know it's just a space right. So
+just coordinates in order to have a
+notion of what far close you have to
+have some scale that tells you what it
+is. So here the scale is fluctuations in
+the given directions. Um and so so the
+application is that this allows us to
+identify the geometry with statistics.
+Right? So the one defines the other. Now
+statistics is something we can go and
+measure, right? We can measure the
+coariances or genotypes and then say
+okay well there you go. So now we have a
+geometry. Uh now if that's the geometry
+what kind of algorithm does the nature
+use to uh move in that geometry to to
+mutate to to evolve in that geometry?
+Okay. But uh for that we need to take
+one more step in this going from the
+price equation and um the point of this
+slide is to demest demystify this price
+equation which again uh is is just uh um
+mathematical identity right so you
+defined uh a change in the phenotype
+um this way and w is u writing fitness
+which is the log uh malthusian fitness
+that I'll be using um basically this is
+the definition of what the change is
+defined.
+X prime is the um offspring and here we
+have the it depends on the parents,
+right? And then uh we're trying to
+measure here the difference of the
+average phenotype. So that's that's one
+way of of of saying what the average
+phenotype will be. By the way, this is
+uh uh not the only way. I could have uh
+not used this. just look at the uh
+entire population and say okay what's
+expectation value after the mutation but
+here I I I say uh change in the mutation
+with with the with a given x so there's
+there's a slight difference but anyways
+I mean this is a good definition for the
+change in the phenotype [snorts]
+um so it's evolution in the phenotype
+space of the average phenotype uh and
+then it is expressed here as this and
+it's continuous form here Um so usually
+you don't see it in a continuous form
+you have see it in a discrete form but
+here I just written continuous form x's
+are continuous variables um and um you
+can basically split into the coariance
+and the expectation value and uh it's
+just identity so for so in the
+expectation value um and if you say that
+the expectation value is is just
+basically equals zero so the offspring
+has the same phenotype as as the you the
+par parent then this vanishes and in
+that limit you can now do the tailor
+series expansion and convince yourself
+that uh to the leading order this change
+which is now written in the differential
+form is just given by this where cig is
+the coariance matrix of the x so it's
+like x i xj expectation value weighted
+by by w so um And then this is it. And
+so that that's kind of one uh I mean
+there should be probably one more line
+just to show the expansion of this
+actually gives you that. Um but you know
+the the reason why you you have to put
+log here because there is a change in w
+divided by w which is kind of what you
+have here. And so so there isn't uh much
+of a mystery here. The only thing that
+is uh true that there are other terms.
+So this is not a complete picture. So if
+you do this expansion there has to be
+other high order terms which will have
+second derivative of f uh with respect
+to the average phenotype.
+But this is interesting because you know
+this price equation under certain
+conditions and in a certain limit gives
+us something that is exactly what the uh
+coarian gradient descent is. Meaning the
+change of a variable equals to the
+gradient of the loss with what machine
+learning people call this is um um uh
+they call it um preconditioner.
+Okay. Um but this preconditioner is
+nothing but metric really. It's uh it
+tells you again how certain directions
+in the space are correlated and uh in
+which direction you should be taking
+large steps and which direction you
+should be taking small steps things like
+that. Okay. So uh and and lambda
+equation is not this is not the only way
+for you to define to derive it and
+actually kind of it it is this seems to
+be this the lowest order uh in whatever
+model of solution dynamics you have. So,
+so, so it's it's good because it tells
+us that you know modeling evolution as
+learning dynamics is not so bad but it
+comes with a price. So now we have to uh
+really think of this C uh as as a as a
+metric and if you see this C as a metric
+uh as a machinery of measuring distances
+then it becomes learning dynamics and
+the and the claim here that with the
+maximum entropy principle it is uh it it
+is the metric and so and so lambda
+equation is the uh the equation for the
+learning dynamics that we we have here.
+Okay, moving on. Once you have this
+equation in the phenotype space, you can
+map it to the um you know equivalent
+equation in the genotype space because
+you can uh take those objects back and
+then uh the biological implication will
+be that evolution is a coaring gradient.
+Well, ascent comes from the fact that we
+just define it as uh negative uh you
+know loss is negative of fitness. You
+know, in the loss you go down, in
+fitness you go up. So but but other than
+that uh this is pretty much the equation
+that we are using in the all modern uh
+machine learning algorithms right. So
+you know there is a trainable parameter
+there is a metric and there is a
+gradient of the loss and they together
+tell us how how to descent or here how
+to ascend. The only uh remaining part is
+to figure out what is the right metric.
+How do what is the right metric. So, so
+before I I I said that the metric is
+just given the by the coariance
+uh of the
+of the distribution but uh the the
+evolving system or machine learning
+system has to figure out at every step
+what should it do you know it doesn't
+have the luxury of like asking all of
+the um all of the organisms in the
+population you know what's your value of
+the gen type what's your value of the
+genotype let's get together calculate
+the metric and now we'll make a step. Uh
+there is no such like so it has to kind
+of locally figure out what are the right
+steps to take and that's where the
+algorithmic nature of evolution comes
+in. But the the the you know the result
+here is that price equation with the
+maximum entropy principle gives you the
+covering gradient ascent and uh that's
+great that's uh insurance. So quick map
+from biology to machine learning.
+So in biology we have a trainable
+variable Q's and there are weights and
+biases. However, Q's are not the ones
+who determine your loss. Uh it is the
+state of neurons that determines the
+loss in machine learning and this is the
+phenotype that determines your fitness
+in the in biology. Now objective in in
+machine learning it would be loss
+function. Here it would it is fitness.
+Uh now update rule lambda equation in um
+uh biology uh covering gradient descent
+in machine learning uh metric is uh
+genotype metric G uh and then in machine
+learning it is the you know people call
+inverse preconditioner but again I I
+would it is just metric it should be it
+should have been called metric and uh to
+to to avoid all the confusions now and
+here comes the the part that that is I
+haven't talked about that and that's
+kind of punch line here. Now metric is
+great but um in machine learning in
+order to interpret what is the right
+precondition you need to use statistics
+of your gradients. to use statistics of
+the gradients that you took um gradients
+u derivatives of the loss with respect
+to your trainable parameters uh and and
+that that uh that should determine your
+preconditioner and uh and the same you
+need here which I'll talk about but it's
+could be called noise coarian so it's
+different from the coariance of the
+distribution of organism it's a
+coariance of steps that um evol evolving
+system takes uh they're not the same. So
+for one you have to look at the entire
+population see its corance for other you
+just can look at the one organism and
+say okay what are the steps you're going
+to be taking when you mutate you know
+what is the distribution of the future
+or past mutations that you have taken
+those two different statistical objects
+um and um and why why is it important is
+because of what written on this slide so
+we have established that's a coarian
+gradient descent but there is uh you
+know the the fitness has some noise or
+the loss has some noise. And so when uh
+the um
+when when this um um loss function
+fluctuates the steps fluctuate this is
+like fluctuation of the environment and
+because of this fluctuations the steps
+uh descending or ascending steps will
+fluctuate and so what's the coariance of
+these steps and uh if you just ignore
+this coariance and you always put here
+metric equal to identity that's called
+stochcastic gradient descent that's the
+simplest algorith algorithms uh and and
+again in a way this is what we would do
+in the classical biology where we just
+you know we don't put a metric we just
+you know there's just different
+directions and let's uh let's deal with
+that later. Now there the other
+possibility is to have this natural
+gradient descent where you say the
+metric is actually equal to the uh noise
+coariance and um and the third
+possibility which shows to be more
+sufficient is in between uh is is
+Adamike algorithm where you take this
+noise coariance you take a square root
+of it and that determines your metric
+with uh some correction. So, so there
+are choices uh between the noise
+coariance in the coariance in the steps
+that evolving system organism will take
+and metric which is coariance of the
+entire populations and how those two
+structures are related to one another um
+will um will determine what kind of
+algorithm system uses. Does it does it
+really remember uh the um does the
+system remember all of the you know
+steps it had taken and then constructed
+a coariance matrix out of it took a
+square root of it you know by some
+algorithm and and used it or is it just
+ignoring uh all of the coariances at all
+and just uses identity matrix or it you
+know there there are choices and what
+what what is the right choice we don't
+know know um the theory suggests it has
+to be square root but um the theory may
+may not be the right one. Okay. So now
+um getting to the final uh slides of the
+talk uh when where I say okay so let's
+go to the real data uh what does the
+real data uh tell us um about
+>> by the way I'm I'm sorry there's
+something going on with the slide it's
+like um shifted like there's I don't
+know if you can see that too but there's
+the left part of it is missing somehow
+like it's there's something going on
+where the thing is bouncing back and
+forth between some kind of a zoomed view
+and
+>> Okay. So, uh, zoomed view. Okay.
+>> Yeah, there you go. That's Yeah, now now
+we're back to
+>> Okay, good. Good. All right. It's must
+be a bug or something. Okay. So, so now
+um Thanks. So, now we're going to uh to
+to to the data, right? So, uh and again,
+I'll just spell out once again what are
+the two matrices that we're trying to
+compare. Uh but uh if you go into the
+data and you say all right so let's look
+at the genotypic coariance let's take
+this um large space of of um um
+of of the of a population to take a
+population of a given organ I've done it
+myself for the um corona virus right so
+you can get all this data I mean it will
+take wouldn't take you much uh to
+analyze the statistics and you'll will
+see that coariance between um coariance
+matrix once you form it it will be a
+very large coariance matrix but
+effectively uh the number of values uh
+will be very effective rank will be very
+low because this spectrum uh decays it
+doesn't decay exponentially it decays as
+power law so what does say that you have
+some large values then uh then they
+decay as a power law with power from one
+to two and so on. So so very soon after
+you know certain 100 or so I you have
+very tiny values which means this space
+isn't effectively there. So, so yeah,
+the space is like 10 to the 9th
+dimensional because there are 10 to the
+nine u different uh characters in each
+uh you know sequence in each genotype.
+But but there's so much correlations
+between them. Then then if you actually
+analyze this space uh and and u
+construct a coariance matrix you'll
+realize there's only like a 100
+dimensions or so of of um which would be
+the effective rank of the of the system.
+And it's again the same similar thing
+would happen even with uh um digits
+right so computer digits you can have
+lots of computer digits
+uh and all of them are mapped to like
+single real number right so then
+eventually you will see that you know
+you have a very high dimensional
+discrete space of bits because there are
+lots of bits but then there maybe all
+just mapped to a single real number and
+then effective dimensionality is very
+low and there's some certain
+correlations but for that you need to
+see correlations and so I've checked
+correlations. Genotype doesn't have
+correlations as if we are mapping uh
+bits to to continuous numbers. That's
+not the correlations they have. They
+have a different correlations than uh
+but nevertheless this coariance matrix
+is a very low dimensional. It's about
+100 um and uh and so we are dealing with
+low dimensional spaces despite of being
+you know tricked by having this 10 to 9
+dimensional really it is rather low
+dimensional where all the interesting
+dynamics uh takes place and and then
+this 100 dimensional so mapped to the
+phenotype space which again I don't know
+what the dimensionality of this but this
+is this is set up but luckily we don't
+have to go to the phenotype space we can
+do all the anal analysis just in
+genotype space we can analyze the
+coariance of a populations of like let's
+say corona viruses uh and then uh if we
+conduct certain experiment analyze the
+coariance of changes of genotypes as
+they evol so so then we will have like
+two coariance matrices one coariance
+matrix in a population at a given time
+which may be evolving there's you know
+uh um
+the new new variants are produced and so
+the average genotype shifts and then you
+know once it shifts maybe the uh the the
+the coariance of them also you know
+fluctuates so that's kind of evolution
+uh of of the whole population that you
+can do and and that's been analyzed that
+that you know even I can do uh with
+available data but but what what is
+missing is actually tracking down
+individual you know mutations of you
+know this uh um coronairus is came from
+that. And so to do this such and such
+step was taken. And so uh and acquiring
+this uh like um individual mutational
+statistics you can get uh uh coariance
+ma matrix of of of mutations of
+individual mutations of changes right so
+so so and that and that's different
+different one one is about changes and
+and the other about you know state
+overall state of the entire and so if we
+had both if we had both then we would
+just take those two matrices and say
+what is the functional form of one
+matrix to produce the other. Um and u
+for the very least we could have just
+you know diagonalized those matrices and
+say well do they actually have the same
+um um you know the same vectors right so
+at least that or or they're completely
+different and they're random to one
+another and one is not a function of the
+other then then we would say okay so
+then there's more to model and
+understand but if there there they can
+be modeled as one as a function of the
+other then the answer can be you know
+it's one of those three or or something
+else some other functional form and then
+we can say all right so now we know the
+type of algorithm that the corona virus
+is using and then uh and then what will
+be missing the the mechanism right so
+even if you have the answer of what it
+using what is the mechanism of keeping
+track of those coariances how do how do
+where do they record the coariances so
+that they can use uh of the previous
+mutation is there a mechanism to record
+previous mutations so that the future
+mutations are using it or or it's just
+completely you know random shifts and
+there's not and there's no nothing
+clever into in that and there's just you
+know random noise that generates it then
+it would be more closer to the stoastic
+gradient descent and so you'll be able
+to distinguish uh between different
+learning algorithms. So uh here is the
+the summary of this experimental
+challenge. So we do know this we do know
+uh uh so QA again this is your genotypes
+and so we we we can calculate the
+average genotype for any population you
+can multiply them we can calculate the
+covariance uh of any genotype so this
+this can be done so finding this uh G
+inverse is easy uh but here is the
+challenge finding the changes in
+genotype uh with time that's hard that's
+kind of uh um you
+know it's yeah so it's kind of tracing
+back the statistics. So um and and that
+you you can think about algorithms how
+to do that but you need more than just
+information about uh here is the bunch
+of uh tests we've performed and here is
+the you know the sequences we extracted.
+you need more of the temporal um
+information about what's was happening
+and that that is not something that is
+available in those big data databases.
+You can upload there's temporal
+statistics of the entire population is
+there. You can you know all of the tests
+here all test there but following
+individual mutations is not something
+that it's it's a challenge. It's
+challenge uh experimental. How do you do
+that right? So you have all those
+viruses that mutate. How do you actually
+extract uh individual trajectories
+for for them? um and and figuring out
+what this coariance matrix is is is
+would be a big challenge. Uh but from
+the theory from the perspective of the
+learning theory from what we know this
+is where the answer to what the learning
+algorithm lies. So is it this or this or
+that? Okay. So let me um now one slide
+and I'll be done. So I'll not torture
+you more. Uh so one more slide is that
+this isn't a complete story. So uh the
+coaring gradient descent is great but if
+we are to follow this price equation and
+do the expansion further there were high
+order terms and so this next order term
+comes from the hashing uh from a second
+derivative of the um of the of the um of
+the loss function or of the fitness. Now
+if that is exists there uh if well this
+definitely exists but there's also this
+skewess tensor and that can be measured
+so that thing can be measured you can
+just go to the population say say okay
+so is it uh how um how isotropic it is
+right so is there a skewess in the so is
+a gaussian modeling
+um good enough or there like tails that
+are not gausian uh you know you always
+do first modeling gausian uh but then
+skewess is is something that and if it's
+essential if it's uh if it's uh if it
+has a you know there not necessarily the
+tail is non gausian that would be would
+not be something I expect but something
+non non symmetric right so you have uh
+um mutation to the left and mutation to
+the right are not um equally equally
+likely something like this distribution
+not mutation again we're not talking
+about for now it's a distribution and
+then there would be correction to lambda
+equation and if that
+uh that can be modeled as well but but I
+think the first you know starting point
+is just lambda equation and it's good
+that it is just reduces to a gradient
+descent which we understand very well
+okay so let me just summarize u mention
+uh challenge once again and then
+answer questions if you have um so so
+general coariance uh is a is a must in
+order for us to study any and model any
+system. Without that we do not um know
+whether our models or results will agree
+if somebody decides to use different
+coordinates different labeling. Now if
+it turns out that the some labeling is
+preferred
+uh then then let it be let let's then
+let's show that um this there has to be
+mechanism for this uh coordinates to be
+preferred. So, so it's either or. It's
+either you have to in usually you don't
+make an assumption until you prove
+Okam's razor, right? So, you start with
+the simplest possible assumption.
+There's nothing there. Uh so, it should
+be generally coarant. It's complete
+symmetry. But, you know, it may be
+broken and then then you have to study
+the symmetry breaking mechanisms. Um uh
+and so so we do know that embedding
+exist because of this phenotype being
+continuous variable. um and uh that
+gives us a hope that differential
+geometry can be useful. Now if the uh
+phenotype traits would be uh discrete
+then then would be dealing completely
+discrete spaces and then only an
+approximate notion of continuity could
+have been used. Maybe here it's also an
+approximate notion of continuity but
+nevertheless it's useful uh it allows us
+to use you know to differentiate use
+calculus basically. Um okay so then uh
+to to put metric we need study noise
+right so coariance matrix uh and the
+distance is defined by the uh through
+this maximum entropy principle is
+defined by the by the coariance uh now
+lambda equation uh which for some reason
+I don't know not very well known in the
+community or I think deserve a a lot
+more attention than it it has uh because
+nearly any derivation of the
+perturbative dynamics I've done leads to
+lambda equations. So here I showed the
+derivation from a price equation but uh
+there there were other uh things that I
+that I did and so lambda equation turns
+out to be uh following it follows from
+price equation and in under assumption
+of this maximum entropy principle it is
+exactly the covarian gradient ascent.
+So, so it is learning, it is learning,
+it is a learning dynamics um in the in
+the simplest limit and and and then we
+should kind of use all we know about
+learning dynamics to to study it and and
+the first thing uh we know I know is
+that metric plays a central role but how
+the metric um uh related to the uh to
+the to the steps the system takes or the
+noise coariance is the key. So um now
+you can run it on your computer and see
+the stoastic gradient descent works
+pretty well. Uh because uh G is just
+identity. Uh but then you can try Adam
+uh and it works even better. Now I know
+why it works better. I haven't talked
+about why it works better and it again
+has to do with uh with a certain
+symmetry breaking certain preferred
+coordinate systems that actually tell us
+that that Adam should work. It's uh and
+and there is a preferred coordinate
+system. Uh so I so I'm like arguing two
+opposite things. So first you have to
+start with general coariance nothing
+preferred but then I'm telling you there
+is something preferred. Yeah but you
+just have to follow steps. First you
+don't make an assumption and and later
+um and and and maybe that's why nature
+would use atom. It's just because of the
+realization that there is a preferred um
+preferred storage of states. Right? So
+genotypist has kind of preferred a way
+of storing states. It's has to be um
+okay. So and and then that raises this
+experimental challenge which um you know
+we're trying now to get the data but
+that's turned out to be not as easy as
+as it sounds. So measure the noise
+coariance of individual evolutionary
+changes and once you have that see how
+it is related to the population
+coariance and if there are relations
+then there we go. We've identified the
+what the algorithm nature uses for
+evolution. Now it may use a different
+algorithm for you know everyday dynamics
+right. So there's learning takes place
+on all time scales as um you know you
+know very well and uh and and uh you
+know the the answer you get on this
+evolutionary time scales for for covid
+for example may differ from the
+evolutionary time scales for human and
+and it's we don't know it's too early to
+say but I think there is enough
+theoretical support telling us that we
+should uh do more experiments trying to
+identify
+What is the learning algorithm that that
+that is being used? It's it's not just
+learning. Learning again, I don't want
+it to be a metaphor metaphor. I want it
+to be more precise. Okay, I'm done. I've
+exactly one hour. Okay, so that's good.
+As promised, uh sorry it took me so
+long.
+>> Cool. Thank Thanks very much. Yeah,
+unfortunately I'm going to have to run
+in a minute, but um uh I do have a
+question. Could you uh maybe just take a
+minute and summarize the implications
+for biologists who are not exactly in
+that field, maybe aren't as maths savvy
+as you are. What are what are the
+implications? Like what are you act what
+are you saying about evolution that
+everybody needs to understand even if
+they're not in the you know in the in
+the weeds on this stuff?
+>> Right. Right. Well, I mean um maybe I'll
+repeat it but once more trying to spell
+it out. So, so f first uh try to be as
+as agnostic as possible to to the
+variables you use. Uh because every time
+you say I use such and such variables,
+you make an assumption hidden
+assumption. Uh and if your results
+depends on the choice of the variables,
+this is
+>> so what what might an example of that
+be? Like for example, you know, I want
+to use color of the hair as one of the,
+you know, phenotype. And another person
+says, well, why why that? Why not, uh,
+you know, two times color of the of the
+hair times plus three times, I don't
+know, height. Uh, what made you so sure
+that this is the right variable? or uh I
+mean I'm I'm giving some ridiculous
+examples just to show that whenever you
+do your modeling and and you set some
+variable to something and then your
+result depends on that variable uh you
+you either your result should depend on
+the choice of the variable and then you
+have to show why the symmetry was broken
+or your result should independ
+so so so the coariance uh you know and
+or when you know you don't have to write
+equation you write do simulations. So in
+the simulations you you choose to call
+something
+uh something right and then if if it's
+one variable there is not much rotations
+you can do but once you have it
+simultaneously study two or three
+variables uh it's very important to to
+keep general coariance unless your point
+is to prove why it was broken. So
+coariance is choice of of coordinates.
+So that that's kind of one important uh
+lesson I guess. And then then um the
+second lesson is is uh
+what is the defining equation for your
+dynamics right so so first you know it's
+coordinates what is changing those are
+coordinates and secondly how they are
+changing right so so and identifying how
+they changing again you can just write
+stocastic gradient descent but you make
+uh another assumption hidden assumption
+that um that there that you think that
+the distances
+uh in the directions of the hair color
+and of the height are kind of what you
+wrote. Uh you make this assumption right
+other than just saying let's measure uh
+how important the displacements in that
+direction versus that direction and and
+and for the and then then we are coming
+not to just coariance of the state but
+the coariance of the equation of motion
+and the equation of motion should be
+coarant. So that's kind of the second
+message. Don't don't just write down
+equation uh and their distances like
+every every variable
+um should be dressed uh with with a
+metric. There can be other things that
+can be dressed with. So now I'm talking
+about metric but the you know classical
+mechanics there is simplectic structure
+that has to be present in order for us
+to actually make sense and be able to
+again go from one coordinate system to
+here it's the metric. So that's kind of
+uh the second once you identify your
+states and your evolution. Okay. Then
+then what is it that you're measuring
+exactly? Okay. State how it changes and
+what you're measuring. It's like three
+posture of the quantum mechanics. the
+state or classical again anything state
+how it changes and then what is it that
+you are measuring actually and and you
+want to come up with a with a with a
+measurement that is uh again agnostic as
+possible to your choice of coordinate
+system and and be as as uh um you know
+as invariant as possible. So that's kind
+of a a general general message. uh but
+but again I mean I'm sure the the
+specifics will depend very much on the
+on the setup because I'm claiming this
+is not just for evolutionary uh dynamics
+for any dynamics you would have to
+identify the state space the dynamics
+and then the measurement so that kind of
+yeah the idea
+>> got it got it yeah okay all right uh
+yeah thanks I need to I need to think
+about how we might be able to
+apply some of this to our computational
+models. I mean we don't have any biology
+data of the resolution that you need
+here but but we do have computational
+models of evolution and
+>> well it's the evolution or I mean you
+have uh great experiments with uh with
+with agents
+>> right so so modeling and understanding
+how how uh things learn on different I'm
+I would be more interested in actually
+in in that right so you have you have
+experimental data of um uh of of
+learning that takes place at the level
+of I don't know individual cells right
+so I mean
+>> we have cells we have gene regulatory
+networks we have lot of altera dynamics
+we have lots of weird stuff that learns
+>> right so so so so those systems have to
+be described with states and evolution
+laws okay so so uh and now I understand
+that the statistics you get from
+experiment may not be as clean as just
+you know state and here's evolution but
+theory always is in the theory. You have
+to identify what is the relevant state
+space, what are the relevant dynamics
+there and and uh and and if the if we
+can identify the relevant state space,
+write in the coarent way identify the
+correct uh you know derive lambda like
+equation or coarent gradient like
+equations but but for the dynamics of I
+don't know um individual cells that that
+are trying to minimize um or extra
+compromise some other function and that
+that would be um but but again this
+comes to the point what is it possible
+to measure so because you know I'm
+starting it here from the under
+assumption that certain things can be
+measured right so but but not everything
+can be measured so and and uh if you are
+able to measure certain states and
+changes of the certain states and if you
+do think that states are changing
+according to the some kind of learning
+dynamics optimization um then we're in
+business then we can say all right so
+let's uh figure out uh what is the
+metric in that space what is the and
+let's make predictions of how how you
+know what do we expect even like you
+know on average what will happen how
+fast the system will reach equilibrium
+uh um things like that so so yeah I mean
+uh that it's uh um I think I think I'm
+more interested in applying actually to
+different lab and and u what I wasn't
+talk didn't talk about at all is
+interaction between different levels
+because that's kind of a hidden uh
+missing missing piece in all of the
+theory uh constructed so far. So we we
+we know what happens as learning on a on
+a given level. We know how to describe
+it. But there is a coupling between
+levels and it's top down coupling and
+bottom up coupling uh both both ways and
+and and they they should basically
+modify the equations that that I wrote
+here and uh somehow and that's that's
+missing and so maybe for modeling
+certain levels coupling gives you the
+dominant contribution right so so and
+and if it does then this is not uh then
+in addition to you know this term Here
+there would be another term here that
+would you know even instead of that term
+that would describe uh coupling to um uh
+degrees of freedom that u working on a
+different level. So so there there there
+is um I think that the the theory of
+this multi-level learning is is not
+completely welldeveloped but that's
+that's another you know we do need
+experiments but yeah I mean I'll be
+happy if there's some interesting data
+you need to like interpret or something.
+I mean it would be real to to think
+about.

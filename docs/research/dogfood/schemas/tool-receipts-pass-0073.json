@@ -1,0 +1,105 @@
+{
+  "schema": "DogfoodToolReceipts/v1",
+  "pass": "0073",
+  "generated_on": "2026-07-01",
+  "status": "MATCH_TELOS_DOMAIN_FOCUS_ENVELOPE",
+  "domain_focus_envelope": {
+    "schema": "TelosDomainFocusEnvelopeSet/v1",
+    "status": "TELOS_DOMAIN_FOCUS_ENVELOPE_MATCH",
+    "domain_count": 6,
+    "root_fallback_envelopes": 6,
+    "path_scoped_envelopes": 0,
+    "seal": "ba5cbbf854a154e013c305f56dacbf25f1504a451325e7ee17e046342ed05b96"
+  },
+  "gather": {
+    "status": "MATCH",
+    "docs_packet": {
+      "path": "docs/research/dogfood/packets/083-telos-domain-focus-envelope.md",
+      "sha256": "4c58b0107b136b36180a0d202ebb6e7db347292a2ad2918605d8550bc0eae3e9",
+      "seal": "e10df44d1540a7ea325b0fe59e73f2ddc261ccdc9c32dede96f2f85416f62197",
+      "verified": true,
+      "dropped": 0
+    }
+  },
+  "index": {
+    "workspace_component": "index.context-envelope.live.root.0071",
+    "context_scope": "root_fallback",
+    "path_scoped_source_refs": false,
+    "next_growth_vector": "Replace root fallback with path-scoped source refs for each domain envelope."
+  },
+  "forum": {
+    "routing_source": "pass-0072 adapted route probes",
+    "all_domain_routes": "project-telos",
+    "needs_escalation": false
+  },
+  "crucible": {
+    "run_status": "MATCH",
+    "thesis_id": "f6099840b9104b37",
+    "thesis_seal": "f6099840b9104b37653688b85d821eb95730eab95f45940b3549aa2642964533",
+    "assessment_seal": "25985e7f42c949affb8e322aac07f5b20384883aad45ee4799ba27e4d87ecddc",
+    "claims": 8,
+    "match": 8,
+    "drift": 0,
+    "unverifiable": 0,
+    "registry_stats": {
+      "theses": 61,
+      "claims": 505,
+      "unique_claims": 498,
+      "assessments": 62,
+      "latest_assessments": 61,
+      "invalid_latest_assessments": 0,
+      "match": 505,
+      "drift": 0,
+      "unverifiable": 0
+    }
+  },
+  "telos": {
+    "proposed_product_schema": "TelosDomainFocusEnvelope/v1",
+    "joined_layers": [
+      "source_intake",
+      "workspace_context",
+      "routing",
+      "verification",
+      "continuity",
+      "action"
+    ],
+    "next_growth_vector": "Promote the fixture into a live Telos joiner after Index emits domain-scoped context refs."
+  },
+  "shell": {
+    "commands": [
+      {
+        "command": "python docs\\research\\dogfood\\tools\\test_telos_domain_focus_envelope.py",
+        "status": "MATCH"
+      },
+      {
+        "command": "python docs\\research\\dogfood\\tools\\probe_telos_domain_focus_envelope.py",
+        "status": "MATCH"
+      },
+      {
+        "command": "python docs\\research\\dogfood\\tools\\validate_pass_0073_telos_domain_focus_envelope.py",
+        "status": "MATCH"
+      },
+      {
+        "command": "crucible run docs\\research\\dogfood\\crucible\\pass-0073-thesis.json --measurements docs\\research\\dogfood\\crucible\\pass-0073-measurements.json --registry docs\\research\\dogfood\\crucible\\registry --report docs\\research\\dogfood\\crucible\\pass-0073-report.md --out docs\\research\\dogfood\\crucible\\pass-0073-run.json --json",
+        "status": "MATCH"
+      }
+    ],
+    "line_counts": {
+      "compose_telos_domain_focus_envelope.py": 186,
+      "probe_telos_domain_focus_envelope.py": 104,
+      "test_telos_domain_focus_envelope.py": 34,
+      "validate_pass_0073_telos_domain_focus_envelope.py": 70
+    },
+    "sha256": {
+      "compose_telos_domain_focus_envelope.py": "fd18b01966ee517fb2c36ebe3f167a77422d1d8378f2075d11aae8ad3bfc73e5",
+      "probe_telos_domain_focus_envelope.py": "38c9947bb208d0b38049dac16ea236734aa69535145318e61bbc2c8ce718c29a",
+      "test_telos_domain_focus_envelope.py": "52352b4b4d5806a7df313569352f6a275160d5f3bfddb0804edacebac17c1e02",
+      "validate_pass_0073_telos_domain_focus_envelope.py": "ae3a10979935c21df77503b47b2f80073e623ca322d6450511e5594462f0a5dc",
+      "telos-domain-focus-envelope-pass-0073.json": "6cae3572aa16f912c02b505b9d27e5a26a8e0ccd4eae9dafa83abfedf17a9171",
+      "pass-0073-telos-domain-focus-envelope-validator-result.json": "d47c5ec07a0827d771a242c3df7fda566c2c415d50d594d320138e725968907e",
+      "083-telos-domain-focus-envelope.md": "4c58b0107b136b36180a0d202ebb6e7db347292a2ad2918605d8550bc0eae3e9",
+      "pass-0073-telos-domain-focus-envelope-steelman.md": "3c4edb208332f7c198b9df0559136a8c2408c26f23622bba9556be25aecffdfa",
+      "pass-0073-run.json": "152bbd0790392f0b40c93c8bfa5a85e4821b4ecca71885a2c2acbf9b17c57827"
+    }
+  }
+}

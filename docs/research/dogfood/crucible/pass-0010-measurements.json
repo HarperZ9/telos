@@ -1,0 +1,89 @@
+{
+  "measurements": [
+    {
+      "claim": "Pass 0010 created a BuildScientificRuntimeReceiptSchema/v1 artifact with sixteen required receipt fields and seven verification layers: source, build, runtime, problem, measurement, invariant, and external_verdict.",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "method": "schema-structure-review",
+      "evidence": [
+        "schemas/buildlang-scientific-runtime-receipt-schema-pass-0010.json schema=BuildScientificRuntimeReceiptSchema/v1",
+        "required_receipt_fields count=16",
+        "verification layer source present",
+        "verification layer build present",
+        "verification layer runtime present",
+        "verification layer problem present",
+        "verification layer measurement present",
+        "verification layer invariant present",
+        "verification layer external_verdict present"
+      ]
+    },
+    {
+      "claim": "Pass 0010 created a BuildScientificRuntimeReceiptSet/v1 artifact with a primary_positive PASS receipt and a negative_fixture FAIL_EXPECTED receipt.",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "method": "receipt-set-review",
+      "evidence": [
+        "schemas/buildlang-scientific-runtime-receipts-pass-0010.json schema=BuildScientificRuntimeReceiptSet/v1",
+        "receipt_count=2",
+        "roles include primary_positive",
+        "roles include negative_fixture",
+        "statuses include PASS",
+        "statuses include FAIL_EXPECTED",
+        "negative fixture receipt negative_fixture=true and receipt_status=FAIL_EXPECTED"
+      ]
+    },
+    {
+      "claim": "The pass 0010 receipts explicitly preserve source, build, runtime, problem, measurement, invariant, failure-label, and verifier state while labeling the compiler state as ADAPTER_FIXTURE_NOT_BUILDC_EXECUTED.",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "method": "receipt-field-review",
+      "evidence": [
+        "validator required fields include source_state, build_state, runtime_state, problem_state, measurement_state, invariant_checks, failure_labels, and verification_verdicts",
+        "both receipts include build_state.compiler=buildc",
+        "both receipts include build_state.compiler_status=ADAPTER_FIXTURE_NOT_BUILDC_EXECUTED",
+        "both receipts include failure label BUILDC_NOT_EXECUTED_IN_THIS_PASS",
+        "packets/020-buildlang-scientific-runtime-receipts.md says status is schema fixture, not a compiled buildc execution"
+      ]
+    },
+    {
+      "claim": "The pass 0010 validator reports MATCH with two checks and zero drift.",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "method": "validator-run-review",
+      "evidence": [
+        "schemas/pass-0010-scientific-runtime-validator-result.json status=MATCH",
+        "match=2",
+        "drift=0",
+        "checks include BuildScientificRuntimeReceiptSchema",
+        "checks include BuildScientificRuntimeReceiptSet"
+      ]
+    },
+    {
+      "claim": "Pass 0010 defines a concrete buildc adapter target: compile a scientific kernel, emit source/build/runtime/problem/measurement/invariant receipts, preserve expected failures, and export proof-packet-compatible JSON.",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "method": "adapter-target-review",
+      "evidence": [
+        "packets/020-buildlang-scientific-runtime-receipts.md BuildLang/buildc Implication lists compile kernel",
+        "packet lists seal source and build inputs",
+        "packet lists execute deterministic fixture",
+        "packet lists compute invariant checks",
+        "packet lists preserve expected failures",
+        "packet lists export a proof-packet-compatible JSON receipt",
+        "packet lists run Crucible or another verifier against the receipt"
+      ]
+    },
+    {
+      "claim": "Pass 0010 promotes zero natural-law discoveries and treats the receipts as schema fixtures rather than scientific discoveries.",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "method": "artifact-review",
+      "evidence": [
+        "packets/020-buildlang-scientific-runtime-receipts.md Non-Promotion Statement promotes no discovery",
+        "schemas/buildlang-scientific-runtime-receipts-pass-0010.json promotion_state=SCHEMA_FIXTURE for both receipts",
+        "schemas/buildlang-scientific-runtime-receipt-schema-pass-0010.json non_promotion_policy new_natural_law_claims_allowed=false",
+        "both receipts include NOT_A_NEW_PHYSICAL_LAW"
+      ]
+    }
+  ]
+}

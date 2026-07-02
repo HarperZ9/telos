@@ -1,0 +1,148 @@
+{
+  "measurements": [
+    {
+      "claim": "Pass 0032 created a LeanReplayRemediationContract/v1 artifact with status LEAN_REPLAY_REMEDIATION_MATCH_WITH_LAKE_GAP, source_environment_sha256 e10e07a409bf9a0cde7dcf8aae823b176b44a9b1610fcf133dc228b94219d3f1, next_blocker lake_missing, negative_fixture_count 10, and seal 64e1d89130480d56bb5a54a19ee07e182537f73eca5ca12b29782f4689239b05.",
+      "deviation": 0.0,
+      "evidence": [
+        "schema=LeanReplayRemediationContract/v1",
+        "status=LEAN_REPLAY_REMEDIATION_MATCH_WITH_LAKE_GAP",
+        "source_environment_sha256=e10e07a409bf9a0cde7dcf8aae823b176b44a9b1610fcf133dc228b94219d3f1",
+        "next_blocker=lake_missing",
+        "negative_fixture_count=10",
+        "seal=64e1d89130480d56bb5a54a19ee07e182537f73eca5ca12b29782f4689239b05"
+      ],
+      "method": "lean-remediation-contract-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0032 records fixture fixtures/lean-replay-remediation-contract-pass-0032.json with sha256 27da59a624c60468ebebcd3c19580933f66d82df3a5e289242b7b7351cef02f3 and seal 5bca5d4aa6b3c1b735da0c2e7a10bd1568194723e88781fa4f39955b5dafc08c.",
+      "deviation": 0.0,
+      "evidence": [
+        "fixture path=fixtures/lean-replay-remediation-contract-pass-0032.json",
+        "fixture sha256=27da59a624c60468ebebcd3c19580933f66d82df3a5e289242b7b7351cef02f3",
+        "fixture seal=5bca5d4aa6b3c1b735da0c2e7a10bd1568194723e88781fa4f39955b5dafc08c"
+      ],
+      "method": "fixture-binding-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0032 LF clone probe records repo commit 69d7df765a8f377a5e0628c6d36c088bce7642c9, checkout_policy core.autocrlf=false, and i/lf w/lf for Prob4b/Defs.lean, Prob4b/Theorems.lean, and scripts/frozen.sha256.",
+      "deviation": 0.0,
+      "evidence": [
+        "repo_commit=69d7df765a8f377a5e0628c6d36c088bce7642c9",
+        "checkout_policy=core.autocrlf=false",
+        "Prob4b/Defs.lean=i/lf w/lf",
+        "Prob4b/Theorems.lean=i/lf w/lf",
+        "scripts/frozen.sha256=i/lf w/lf"
+      ],
+      "method": "lf-clone-eol-probe",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0032 first verifier attempt without the python3 shim records exit_code 1, status DRIFT, passed_checks Frozen SHA pins, failed_check Banned keywords, failure_class python3_missing_in_git_bash, and lake_or_lean_reached false.",
+      "deviation": 0.0,
+      "evidence": [
+        "attempt_id=lf_no_python3_shim",
+        "exit_code=1",
+        "status=DRIFT",
+        "passed_checks=Frozen SHA pins",
+        "failed_check=Banned keywords",
+        "failure_class=python3_missing_in_git_bash",
+        "lake_or_lean_reached=false"
+      ],
+      "method": "verify-attempt-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0032 python3 shim probe records status MATCH, shim_kind reversible_temp_path_wrapper, python3_resolution temp:telos-pass0032-shim/python3, python_version Python 3.12.10, shim_contents_hash 191c4de6997d024bf5e53e99274285654c6ac05c66706054b5f8be29ba68476d, temp_write_performed true, and external_write_performed false.",
+      "deviation": 0.0,
+      "evidence": [
+        "python3_shim_probe status=MATCH",
+        "shim_kind=reversible_temp_path_wrapper",
+        "python3_resolution=temp:telos-pass0032-shim/python3",
+        "python_version=Python 3.12.10",
+        "shim_contents_hash=191c4de6997d024bf5e53e99274285654c6ac05c66706054b5f8be29ba68476d",
+        "temp_write_performed=true",
+        "external_write_performed=false"
+      ],
+      "method": "python3-shim-probe-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0032 second verifier attempt with the python3 shim records exit_code 1, status DRIFT, passed_checks Frozen SHA pins and Banned keywords, failed_check lake build, failure_class lake_missing, and lake_or_lean_reached false.",
+      "deviation": 0.0,
+      "evidence": [
+        "attempt_id=lf_with_python3_shim",
+        "exit_code=1",
+        "status=DRIFT",
+        "passed_checks=Frozen SHA pins and Banned keywords",
+        "failed_check=lake build",
+        "failure_class=lake_missing",
+        "lake_or_lean_reached=false"
+      ],
+      "method": "verify-attempt-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0032 validator result reports MATCH with lf_clone_eol_match_count 3, python3_gate_status RESOLVED_BY_REVERSIBLE_TEMP_SHIM, next_blocker lake_missing, lake_build_status UNVERIFIABLE_TOOL_UNAVAILABLE, lean_replay_status UNVERIFIABLE_TOOL_UNAVAILABLE, and negative_fixture_count 10.",
+      "deviation": 0.0,
+      "evidence": [
+        "schemas/pass-0032-lean-replay-remediation-validator-result.json status=MATCH",
+        "lf_clone_eol_match_count=3",
+        "python3_gate_status=RESOLVED_BY_REVERSIBLE_TEMP_SHIM",
+        "next_blocker=lake_missing",
+        "lake_build_status=UNVERIFIABLE_TOOL_UNAVAILABLE",
+        "lean_replay_status=UNVERIFIABLE_TOOL_UNAVAILABLE",
+        "negative_fixture_count=10"
+      ],
+      "method": "validator-result-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0032 records three verified public source receipts for the elan README, the Lean reference manual, and the Git config manual.",
+      "deviation": 0.0,
+      "evidence": [
+        "public_source_receipts count=3",
+        "source=elan README verification_status=verified",
+        "source=Lean reference manual verification_status=verified",
+        "source=Git config manual verification_status=verified"
+      ],
+      "method": "public-source-receipt-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0032 defines ten negative fixtures covering LF clone requirement, python3 shim misclassification, banned-keyword promotion without shim, Lake build promotion without lake, Lean replay promotion, missing source environment link, missing official sources, hidden external write, wrong next blocker, and natural-law promotion; every negative fixture expects validator status REJECT.",
+      "deviation": 0.0,
+      "evidence": [
+        "negative_fixture_count=10",
+        "negative-lf-clone-not-required expected_validator_status=REJECT",
+        "negative-python3-shim-treated-as-system-install expected_validator_status=REJECT",
+        "negative-banned-keywords-promoted-without-shim expected_validator_status=REJECT",
+        "negative-lake-build-promoted-without-lake expected_validator_status=REJECT",
+        "negative-lean-replay-promoted expected_validator_status=REJECT",
+        "negative-source-environment-link-missing expected_validator_status=REJECT",
+        "negative-official-source-basis-missing expected_validator_status=REJECT",
+        "negative-external-write-hidden expected_validator_status=REJECT",
+        "negative-next-blocker-misidentified expected_validator_status=REJECT",
+        "negative-natural-law-promoted expected_validator_status=REJECT"
+      ],
+      "method": "negative-fixture-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0032 preserves non-promotion boundaries: toolchain_install_performed false, external_write_performed false except reversible temp shim write, lake_build_status UNVERIFIABLE_TOOL_UNAVAILABLE, lean_replay_status UNVERIFIABLE_TOOL_UNAVAILABLE, replay_promotion_allowed false, and current_promoted_natural_laws none.",
+      "deviation": 0.0,
+      "evidence": [
+        "toolchain_install_performed=false",
+        "external_write_performed=false",
+        "temp_write_performed=true",
+        "lake_build_status=UNVERIFIABLE_TOOL_UNAVAILABLE",
+        "lean_replay_status=UNVERIFIABLE_TOOL_UNAVAILABLE",
+        "replay_promotion_allowed=false",
+        "current_promoted_natural_laws=[]"
+      ],
+      "method": "non-promotion-boundary-review",
+      "tolerance": 0.5
+    }
+  ]
+}

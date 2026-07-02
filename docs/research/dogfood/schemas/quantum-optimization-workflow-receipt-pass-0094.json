@@ -1,0 +1,360 @@
+{
+  "buildlang_binding": {
+    "adapter_status": "BUILDLANG_CHECK_RECEIPT_ADAPTER_MATCH",
+    "measurement_count": 10,
+    "source_digest": "0e542c60fbd874a38a2a3a87eaf61be04532a0df23e3ea25512d03301883dfae",
+    "source_pass": "0092",
+    "verify_check_count": 18
+  },
+  "current_promoted_natural_laws": [],
+  "flagship_receipts": {
+    "forum": {
+      "confidence": 0.07954545454545454,
+      "decided": null,
+      "exit_code": 0,
+      "needs_escalation": true,
+      "status": "MATCH",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "84a0a6d5b0736b84f3aab69dd89aebd59d188bad2ae162a11cb8b6e7da24f92c",
+      "top_candidates": [
+        {
+          "agent": "model-foundry",
+          "score": 0.125
+        },
+        {
+          "agent": "project-telos",
+          "score": 0.045454545454545456
+        },
+        {
+          "agent": "backend",
+          "score": 0.0
+        },
+        {
+          "agent": "ci-cd",
+          "score": 0.0
+        },
+        {
+          "agent": "cloud-infra",
+          "score": 0.0
+        }
+      ]
+    },
+    "index": {
+      "exit_code": 0,
+      "graph_pack_sha256": "8ee383e19ae9a6141bee70de733fb6aa09201ff9d284ce6778ce58b06e6b68b2",
+      "schema": "project-telos.context-envelope/v1",
+      "source_refs_only": true,
+      "status": "MATCH",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "6f84d8747d7374a22998ae7c402f2c017f96cc79a3e2384d5883e7342bf0ba4b",
+      "verification_verdict": "MATCH"
+    },
+    "telos": {
+      "exit_code": 0,
+      "status": "MATCH",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "be17cb15259234cb4e8e95c2b36e76c90d841431729beb140294e34c5f9ebfa7",
+      "tool": "telos",
+      "tool_version": "0.1.0"
+    }
+  },
+  "generated_on": "2026-07-01",
+  "measurements": [
+    {
+      "claim": "YouTube source corpus binds dominant quantum-optimization cluster",
+      "deviation": 0.0,
+      "measurement_id": "quantum_workflow.source_corpus",
+      "method": "artifact-field-review",
+      "status": "MATCH",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "exact baseline value and weight match prior branch receipt",
+      "deviation": 0.0,
+      "measurement_id": "quantum_workflow.exact_baseline",
+      "method": "artifact-field-review",
+      "status": "MATCH",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "SciPy adapter preserves exact best value and hit count",
+      "deviation": 0.0,
+      "measurement_id": "quantum_workflow.scipy_branch",
+      "method": "artifact-field-review",
+      "status": "MATCH",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "NetworkX DAG branch reproduces exact optimum",
+      "deviation": 0.0,
+      "measurement_id": "quantum_workflow.networkx_branch",
+      "method": "artifact-field-review",
+      "status": "MATCH",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "executed branches satisfy capacity constraints",
+      "deviation": 0.0,
+      "measurement_id": "quantum_workflow.constraint_status",
+      "method": "artifact-field-review",
+      "status": "MATCH",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "missing OR-Tools and D-Wave branches are explicit dependency receipts",
+      "deviation": 0.0,
+      "measurement_id": "quantum_workflow.dependency_boundaries",
+      "method": "artifact-field-review",
+      "status": "MATCH",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "BuildLang source receipt is attached with verification checks",
+      "deviation": 0.0,
+      "measurement_id": "quantum_workflow.buildlang_receipt",
+      "method": "artifact-field-review",
+      "status": "MATCH",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "official source anchors are attached",
+      "deviation": 0.0,
+      "measurement_id": "quantum_workflow.source_anchors",
+      "method": "artifact-field-review",
+      "status": "MATCH",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Forum, Index, and Telos receipts match",
+      "deviation": 0.0,
+      "measurement_id": "quantum_workflow.flagships",
+      "method": "artifact-field-review",
+      "status": "MATCH",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "no quantum advantage, discovery, replacement, or natural-law claim is promoted",
+      "deviation": 0.0,
+      "measurement_id": "quantum_workflow.promotion_boundary",
+      "method": "artifact-field-review",
+      "status": "MATCH",
+      "tolerance": 0.5
+    }
+  ],
+  "negative_fixtures": [
+    {
+      "expected_status": "REJECT",
+      "fixture_id": "quantum_advantage_claim"
+    },
+    {
+      "expected_status": "REJECT",
+      "fixture_id": "missing_dependency_implies_coverage"
+    },
+    {
+      "expected_status": "REJECT",
+      "fixture_id": "branch_without_constraint_measurement"
+    },
+    {
+      "expected_status": "REJECT",
+      "fixture_id": "buildlang_replacement_claim"
+    }
+  ],
+  "non_promotion_statement": "Pass 0094 is a toy optimization workflow receipt. It does not prove quantum advantage, production solver coverage, BuildLang replacement, scientific discovery, or a natural law.",
+  "pass": "0094",
+  "schema": "QuantumOptimizationWorkflowReceipt/v1",
+  "seal": "8652ed0887bcbeb542ce3f88b99ea4849d009d46e27f3476b107a6062de90f50",
+  "source_anchors": [
+    {
+      "source_id": "networkx-dag-longest-path",
+      "url": "https://networkx.org/documentation/stable/reference/algorithms/generated/networkx.algorithms.dag.dag_longest_path.html",
+      "verification_status": "OFFICIAL_WEB_SOURCE_2026_07_01"
+    },
+    {
+      "source_id": "scipy-dual-annealing",
+      "url": "https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.dual_annealing.html",
+      "verification_status": "OFFICIAL_WEB_SOURCE_2026_07_01"
+    },
+    {
+      "source_id": "ortools-knapsack",
+      "url": "https://developers.google.com/optimization/pack/knapsack",
+      "verification_status": "OFFICIAL_WEB_SOURCE_2026_07_01"
+    },
+    {
+      "source_id": "dwave-ocean-samplers",
+      "url": "https://docs.dwavequantum.com/en/latest/ocean/api_ref_samplers/index.html",
+      "verification_status": "OFFICIAL_WEB_SOURCE_2026_07_01"
+    }
+  ],
+  "source_binding": {
+    "bridge_pass": "0093",
+    "dominant_cluster": "enterprise_quantum_optimization",
+    "dominant_cluster_video_count": 13,
+    "source_pass": "0085"
+  },
+  "status": "QUANTUM_OPTIMIZATION_WORKFLOW_RECEIPT_MATCH",
+  "unsupported_claim_count": 0,
+  "validation_errors": [],
+  "workflow": {
+    "objective_measurements": {
+      "all_executed_branches_feasible": true,
+      "capacity_violation": 0,
+      "dependency_boundary_branch_count": 2,
+      "exact_value": 162,
+      "exact_weight": 29,
+      "executed_branch_count": 3
+    },
+    "problem": {
+      "capacity": 29,
+      "items": [
+        {
+          "id": "A",
+          "value": 31,
+          "weight": 5
+        },
+        {
+          "id": "B",
+          "value": 21,
+          "weight": 4
+        },
+        {
+          "id": "C",
+          "value": 27,
+          "weight": 7
+        },
+        {
+          "id": "D",
+          "value": 40,
+          "weight": 6
+        },
+        {
+          "id": "E",
+          "value": 17,
+          "weight": 3
+        },
+        {
+          "id": "F",
+          "value": 33,
+          "weight": 7
+        },
+        {
+          "id": "G",
+          "value": 18,
+          "weight": 7
+        },
+        {
+          "id": "H",
+          "value": 13,
+          "weight": 6
+        },
+        {
+          "id": "I",
+          "value": 32,
+          "weight": 5
+        },
+        {
+          "id": "J",
+          "value": 27,
+          "weight": 11
+        },
+        {
+          "id": "K",
+          "value": 19,
+          "weight": 7
+        },
+        {
+          "id": "L",
+          "value": 5,
+          "weight": 2
+        }
+      ],
+      "penalty": 20,
+      "problem_id": "branch_comparison_knapsack_12_binary"
+    },
+    "solver_branches": {
+      "dwave_ocean_sampler": {
+        "branch": "dwave_ocean_sampler",
+        "dependency": {
+          "available": false,
+          "origin": null,
+          "package": "dwave.system"
+        },
+        "matrix_status": "LOCAL_UNAVAILABLE",
+        "next_action": "install_or_remote_adapter_receipt",
+        "non_execution_reason": "Local dependency is unavailable; this pass records a dependency receipt instead of implying coverage.",
+        "status": "NOT_EXECUTED_DEPENDENCY_MISSING"
+      },
+      "exact_enumeration": {
+        "candidate_count": 4096,
+        "feasible_count": 1275,
+        "selected": [
+          "A",
+          "B",
+          "D",
+          "F",
+          "I",
+          "L"
+        ],
+        "status": "MATCH",
+        "value": 162,
+        "weight": 29
+      },
+      "networkx_capacity_dag_longest_path": {
+        "branch": "networkx_capacity_dag_longest_path",
+        "dependency": {
+          "available": true,
+          "origin": "C:\\Users\\Zain\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\networkx\\__init__.py",
+          "package": "networkx"
+        },
+        "edge_count": 650,
+        "feasible": true,
+        "matches_exact_value": true,
+        "method": "capacity-layered DAG longest path",
+        "node_count": 390,
+        "path_length": 13,
+        "selected": [
+          "A",
+          "B",
+          "D",
+          "F",
+          "I",
+          "L"
+        ],
+        "status": "MATCH",
+        "value": 162,
+        "weight": 29
+      },
+      "ortools_knapsack": {
+        "branch": "ortools_knapsack",
+        "dependency": {
+          "available": false,
+          "origin": null,
+          "package": "ortools"
+        },
+        "matrix_status": "LOCAL_UNAVAILABLE",
+        "next_action": "install_or_remote_adapter_receipt",
+        "non_execution_reason": "Local dependency is unavailable; this pass records a dependency receipt instead of implying coverage.",
+        "status": "NOT_EXECUTED_DEPENDENCY_MISSING"
+      },
+      "scipy_dual_annealing": {
+        "adapter": "scipy.optimize.dual_annealing",
+        "exact_hit_count": 10,
+        "selected": [
+          "A",
+          "B",
+          "D",
+          "F",
+          "I",
+          "L"
+        ],
+        "status": "MATCH",
+        "value": 162,
+        "value_distribution": [
+          158,
+          162
+        ],
+        "weight": 29
+      }
+    },
+    "workflow_id": "quantum_optimization_knapsack_12_binary_fixture"
+  }
+}

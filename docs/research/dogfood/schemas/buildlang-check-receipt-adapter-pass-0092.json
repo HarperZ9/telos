@@ -1,0 +1,478 @@
+{
+  "check_command": {
+    "command": "cargo run --quiet --bin buildc -- check C:\\dev\\public\\pubscan\\quantalang\\examples\\quickstart\\hello.bld --profile console-only --receipt C:\\dev\\public\\telos\\docs\\research\\dogfood\\schemas\\buildlang-check-receipt-pass-0092.json",
+    "cwd": "C:\\dev\\public\\pubscan\\quantalang\\compiler",
+    "exit_code": 0,
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "d779b2f7826bac833d3cf74ba00b75533393358adf72a3ca6d8da1f5e748d1c5"
+  },
+  "check_receipt": {
+    "compiler": "buildc",
+    "compiler_version": "1.0.6",
+    "declared_effects": {
+      "main": [
+        "Console"
+      ]
+    },
+    "diagnostics": [],
+    "input_digests": [
+      {
+        "digest": {
+          "algorithm": "sha256",
+          "hex": "0e542c60fbd874a38a2a3a87eaf61be04532a0df23e3ea25512d03301883dfae"
+        },
+        "role": "entry",
+        "source": "\\\\?\\C:\\dev\\public\\pubscan\\quantalang\\examples\\quickstart\\hello.bld"
+      }
+    ],
+    "input_graph_digest": {
+      "algorithm": "sha256",
+      "hex": "038a6f3aba486917d0ccbb9e4c0e858d0e79a8d1230450c3c40ca7dd08026d40"
+    },
+    "items": 1,
+    "language_version": "1.0.0",
+    "observed_capabilities": {
+      "main": {
+        "Console": [
+          "println!"
+        ]
+      }
+    },
+    "policy": {
+      "profile": "console-only",
+      "profile_digest": {
+        "algorithm": "sha256",
+        "hex": "30462cb37d20d7c5cd2e156b62a8deeb53fc89f647e913b22c9e42033b53c4ce"
+      },
+      "schema": "buildlang-check-policy/v1",
+      "source": "builtin:console-only",
+      "source_digest": {
+        "algorithm": "sha256",
+        "hex": "30462cb37d20d7c5cd2e156b62a8deeb53fc89f647e913b22c9e42033b53c4ce"
+      },
+      "status": "passed",
+      "violations": []
+    },
+    "propagated_effects": {
+      "main": {}
+    },
+    "schema": "buildlang-check-receipt/v1",
+    "source": "C:\\dev\\public\\pubscan\\quantalang\\examples\\quickstart\\hello.bld",
+    "source_digest": {
+      "algorithm": "sha256",
+      "hex": "0e542c60fbd874a38a2a3a87eaf61be04532a0df23e3ea25512d03301883dfae"
+    },
+    "status": "passed",
+    "tokens": 15
+  },
+  "check_receipt_path": "C:\\dev\\public\\telos\\docs\\research\\dogfood\\schemas\\buildlang-check-receipt-pass-0092.json",
+  "crucible_adapter": {
+    "adapter_id": "buildc_check_receipt_to_crucible_measurements",
+    "drift": 0,
+    "match": 10,
+    "measurement_count": 10,
+    "measurements": [
+      {
+        "claim": "receipt schema is buildlang-check-receipt/v1",
+        "deviation": 0.0,
+        "evidence": [
+          "receipt_sha256=a06ad36eb06345baaa9a46ea79cc8afd267674096db663aaa48269f9982aae6e",
+          "verify_status=passed",
+          "verify_check=schema",
+          "verify_check_status=passed"
+        ],
+        "measurement_id": "buildc_check.receipt_schema",
+        "method": "receipt-field-and-verify-report",
+        "status": "MATCH",
+        "tolerance": 0.5
+      },
+      {
+        "claim": "check receipt status is passed",
+        "deviation": 0.0,
+        "evidence": [
+          "receipt_sha256=a06ad36eb06345baaa9a46ea79cc8afd267674096db663aaa48269f9982aae6e",
+          "verify_status=passed",
+          "verify_check=status",
+          "verify_check_status=passed"
+        ],
+        "measurement_id": "buildc_check.receipt_status",
+        "method": "receipt-field-and-verify-report",
+        "status": "MATCH",
+        "tolerance": 0.5
+      },
+      {
+        "claim": "source digest is sha256 hex",
+        "deviation": 0.0,
+        "evidence": [
+          "receipt_sha256=a06ad36eb06345baaa9a46ea79cc8afd267674096db663aaa48269f9982aae6e",
+          "verify_status=passed",
+          "verify_check=source_digest",
+          "verify_check_status=passed"
+        ],
+        "measurement_id": "buildc_check.source_digest",
+        "method": "receipt-field-and-verify-report",
+        "status": "MATCH",
+        "tolerance": 0.5
+      },
+      {
+        "claim": "input graph digest is sha256 hex",
+        "deviation": 0.0,
+        "evidence": [
+          "receipt_sha256=a06ad36eb06345baaa9a46ea79cc8afd267674096db663aaa48269f9982aae6e",
+          "verify_status=passed",
+          "verify_check=input_graph_digest",
+          "verify_check_status=passed"
+        ],
+        "measurement_id": "buildc_check.input_graph_digest",
+        "method": "receipt-field-and-verify-report",
+        "status": "MATCH",
+        "tolerance": 0.5
+      },
+      {
+        "claim": "policy profile is console-only",
+        "deviation": 0.0,
+        "evidence": [
+          "receipt_sha256=a06ad36eb06345baaa9a46ea79cc8afd267674096db663aaa48269f9982aae6e",
+          "verify_status=passed",
+          "verify_check=expected_profile",
+          "verify_check_status=passed"
+        ],
+        "measurement_id": "buildc_check.policy_profile",
+        "method": "receipt-field-and-verify-report",
+        "status": "MATCH",
+        "tolerance": 0.5
+      },
+      {
+        "claim": "policy status is passed",
+        "deviation": 0.0,
+        "evidence": [
+          "receipt_sha256=a06ad36eb06345baaa9a46ea79cc8afd267674096db663aaa48269f9982aae6e",
+          "verify_status=passed",
+          "verify_check=policy_status",
+          "verify_check_status=passed"
+        ],
+        "measurement_id": "buildc_check.policy_status",
+        "method": "receipt-field-and-verify-report",
+        "status": "MATCH",
+        "tolerance": 0.5
+      },
+      {
+        "claim": "main declares Console effect",
+        "deviation": 0.0,
+        "evidence": [
+          "receipt_sha256=a06ad36eb06345baaa9a46ea79cc8afd267674096db663aaa48269f9982aae6e",
+          "verify_status=passed",
+          "verify_check=declared_effects",
+          "verify_check_status=passed"
+        ],
+        "measurement_id": "buildc_check.declared_effects",
+        "method": "receipt-field-and-verify-report",
+        "status": "MATCH",
+        "tolerance": 0.5
+      },
+      {
+        "claim": "main observes Console println! capability",
+        "deviation": 0.0,
+        "evidence": [
+          "receipt_sha256=a06ad36eb06345baaa9a46ea79cc8afd267674096db663aaa48269f9982aae6e",
+          "verify_status=passed",
+          "verify_check=observed_capabilities",
+          "verify_check_status=passed"
+        ],
+        "measurement_id": "buildc_check.observed_capabilities",
+        "method": "receipt-field-and-verify-report",
+        "status": "MATCH",
+        "tolerance": 0.5
+      },
+      {
+        "claim": "diagnostics are empty",
+        "deviation": 0.0,
+        "evidence": [
+          "receipt_sha256=a06ad36eb06345baaa9a46ea79cc8afd267674096db663aaa48269f9982aae6e",
+          "verify_status=passed",
+          "verify_check=diagnostics",
+          "verify_check_status=passed"
+        ],
+        "measurement_id": "buildc_check.diagnostics",
+        "method": "receipt-field-and-verify-report",
+        "status": "MATCH",
+        "tolerance": 0.5
+      },
+      {
+        "claim": "receipt verify required checks all passed",
+        "deviation": 0.0,
+        "evidence": [
+          "receipt_sha256=a06ad36eb06345baaa9a46ea79cc8afd267674096db663aaa48269f9982aae6e",
+          "verify_status=passed",
+          "verify_check=schema",
+          "verify_check_status=passed"
+        ],
+        "measurement_id": "buildc_check.verify_report",
+        "method": "receipt-field-and-verify-report",
+        "status": "MATCH",
+        "tolerance": 0.5
+      }
+    ]
+  },
+  "current_promoted_natural_laws": [],
+  "flagship_receipts": {
+    "forum": {
+      "confidence": 0.07954545454545454,
+      "decided": null,
+      "exit_code": 0,
+      "needs_escalation": true,
+      "status": "MATCH",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "84a0a6d5b0736b84f3aab69dd89aebd59d188bad2ae162a11cb8b6e7da24f92c",
+      "top_candidates": [
+        {
+          "agent": "model-foundry",
+          "score": 0.125
+        },
+        {
+          "agent": "project-telos",
+          "score": 0.045454545454545456
+        },
+        {
+          "agent": "backend",
+          "score": 0.0
+        },
+        {
+          "agent": "ci-cd",
+          "score": 0.0
+        },
+        {
+          "agent": "cloud-infra",
+          "score": 0.0
+        }
+      ]
+    },
+    "index": {
+      "exit_code": 0,
+      "graph_pack_sha256": "8ee383e19ae9a6141bee70de733fb6aa09201ff9d284ce6778ce58b06e6b68b2",
+      "schema": "project-telos.context-envelope/v1",
+      "source_refs_only": true,
+      "status": "MATCH",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "f6de55e11a987a43cf72e01049e0e5804ca04ade90722f8da72f7cd72b5e1a72",
+      "verification_verdict": "MATCH"
+    },
+    "telos": {
+      "exit_code": 0,
+      "status": "MATCH",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "be17cb15259234cb4e8e95c2b36e76c90d841431729beb140294e34c5f9ebfa7",
+      "tool": "telos",
+      "tool_version": "0.1.0"
+    }
+  },
+  "generated_on": "2026-07-01",
+  "negative_fixtures": [
+    {
+      "expected_status": "REJECT",
+      "fixture_id": "missing_source_digest",
+      "reject_reason": "source_digest_required"
+    },
+    {
+      "expected_status": "REJECT",
+      "fixture_id": "missing_receipt_verify_report",
+      "reject_reason": "receipt_verify_required"
+    },
+    {
+      "expected_status": "REJECT",
+      "fixture_id": "policy_not_console_only",
+      "reject_reason": "expected_profile_required"
+    },
+    {
+      "expected_status": "REJECT",
+      "fixture_id": "observed_capability_missing",
+      "reject_reason": "capability_evidence_required"
+    },
+    {
+      "expected_status": "REJECT",
+      "fixture_id": "claims_language_replacement",
+      "reject_reason": "single_receipt_does_not_prove_language_market_replacement"
+    }
+  ],
+  "non_promotion_statement": "Pass 0092 converts one buildc check receipt into Crucible-ready measurements. It does not prove language replacement, scientific discovery, full compiler correctness, or a natural law.",
+  "pass": "0092",
+  "prior_binding": {
+    "source_pass": "0091",
+    "source_schema": "BuildLangCorpusCrucibleAdapterReceipt/v1",
+    "source_seal": "0ecba8c12f9c041ed6dc3a126e5722afae3afe8881cd262f69adcafda4ca60ac"
+  },
+  "promotion_boundary": {
+    "language_replacement_claim": false,
+    "new_natural_law_claim": false,
+    "scientific_discovery_claim": false,
+    "source_receipt_adapter_only": true
+  },
+  "repo_state": {
+    "branch_line": "## main...origin/main",
+    "dirty_count": 0,
+    "exists": true,
+    "exit_code": 0,
+    "path": "C:\\dev\\public\\pubscan\\quantalang",
+    "status_sha256": "5fbcb2990ad25e368c12219bf3ddca36e464d044e7acac16696fa8cd54159185"
+  },
+  "schema": "BuildLangCheckReceiptAdapter/v1",
+  "seal": "acae9b8ed2c0763e1f2e03f95ab05c316331da6f535932744561ba9114e7b361",
+  "source_anchors": [
+    {
+      "source_id": "buildlang-usage",
+      "url": "C:\\dev\\public\\pubscan\\quantalang\\USAGE.md",
+      "verification_status": "LOCAL_SOURCE"
+    },
+    {
+      "source_id": "buildlang-readme",
+      "url": "C:\\dev\\public\\pubscan\\quantalang\\README.md",
+      "verification_status": "LOCAL_SOURCE"
+    },
+    {
+      "source_id": "pass-0091-corpus-adapter",
+      "url": "docs/research/dogfood/pass-0091-ledger.md",
+      "verification_status": "LOCAL_BASELINE"
+    }
+  ],
+  "source_fixture": {
+    "path": "C:\\dev\\public\\pubscan\\quantalang\\examples\\quickstart\\hello.bld",
+    "profile": "console-only"
+  },
+  "status": "BUILDLANG_CHECK_RECEIPT_ADAPTER_MATCH",
+  "unsupported_claim_count": 0,
+  "validation_errors": [],
+  "verify_command": {
+    "command": "cargo run --quiet --bin buildc -- receipt verify C:\\dev\\public\\telos\\docs\\research\\dogfood\\schemas\\buildlang-check-receipt-pass-0092.json --source C:\\dev\\public\\pubscan\\quantalang\\examples\\quickstart\\hello.bld --expect-profile console-only --json",
+    "cwd": "C:\\dev\\public\\pubscan\\quantalang\\compiler",
+    "exit_code": 0,
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "df044e4aaa25bb822b61d7668badf198ec28ab6b1180da254c5b3ab19f91650f"
+  },
+  "verify_report": {
+    "checks": [
+      {
+        "actual": "buildlang-check-receipt/v1",
+        "expected": "buildlang-check-receipt/v1",
+        "name": "schema",
+        "status": "passed"
+      },
+      {
+        "actual": "buildc",
+        "expected": "buildc",
+        "name": "compiler",
+        "status": "passed"
+      },
+      {
+        "actual": "1.0.6",
+        "expected": "1.0.6",
+        "name": "compiler_version",
+        "status": "passed"
+      },
+      {
+        "actual": "1.0.0",
+        "expected": "1.0.0",
+        "name": "language_version",
+        "status": "passed"
+      },
+      {
+        "actual": "builtin:console-only",
+        "expected": "builtin:console-only",
+        "name": "expected_profile",
+        "profile": "console-only",
+        "status": "passed"
+      },
+      {
+        "actual": "sha256:0e542c60fbd874a38a2a3a87eaf61be04532a0df23e3ea25512d03301883dfae",
+        "expected": "sha256:0e542c60fbd874a38a2a3a87eaf61be04532a0df23e3ea25512d03301883dfae",
+        "name": "source_digest",
+        "status": "passed"
+      },
+      {
+        "actual": "sha256:038a6f3aba486917d0ccbb9e4c0e858d0e79a8d1230450c3c40ca7dd08026d40",
+        "expected": "sha256:038a6f3aba486917d0ccbb9e4c0e858d0e79a8d1230450c3c40ca7dd08026d40",
+        "name": "input_graph_digest",
+        "status": "passed"
+      },
+      {
+        "actual": "sha256:30462cb37d20d7c5cd2e156b62a8deeb53fc89f647e913b22c9e42033b53c4ce",
+        "expected": "sha256:30462cb37d20d7c5cd2e156b62a8deeb53fc89f647e913b22c9e42033b53c4ce",
+        "name": "policy_source_digest",
+        "status": "passed"
+      },
+      {
+        "actual": "sha256:30462cb37d20d7c5cd2e156b62a8deeb53fc89f647e913b22c9e42033b53c4ce",
+        "expected": "sha256:30462cb37d20d7c5cd2e156b62a8deeb53fc89f647e913b22c9e42033b53c4ce",
+        "name": "policy_profile_digest",
+        "profile": "console-only",
+        "status": "passed"
+      },
+      {
+        "actual": "\"passed\"",
+        "expected": "\"passed\"",
+        "name": "status",
+        "status": "passed"
+      },
+      {
+        "actual": "1",
+        "expected": "1",
+        "name": "items",
+        "status": "passed"
+      },
+      {
+        "actual": "15",
+        "expected": "15",
+        "name": "tokens",
+        "status": "passed"
+      },
+      {
+        "actual": "{\"main\":[\"Console\"]}",
+        "expected": "{\"main\":[\"Console\"]}",
+        "name": "declared_effects",
+        "status": "passed"
+      },
+      {
+        "actual": "{\"main\":{\"Console\":[\"println!\"]}}",
+        "expected": "{\"main\":{\"Console\":[\"println!\"]}}",
+        "name": "observed_capabilities",
+        "status": "passed"
+      },
+      {
+        "actual": "{\"main\":{}}",
+        "expected": "{\"main\":{}}",
+        "name": "propagated_effects",
+        "status": "passed"
+      },
+      {
+        "actual": "[]",
+        "expected": "[]",
+        "name": "diagnostics",
+        "status": "passed"
+      },
+      {
+        "actual": "\"passed\"",
+        "expected": "\"passed\"",
+        "name": "policy_status",
+        "status": "passed"
+      },
+      {
+        "actual": "[]",
+        "expected": "[]",
+        "name": "policy_violations",
+        "status": "passed"
+      }
+    ],
+    "receipt": "C:\\dev\\public\\telos\\docs\\research\\dogfood\\schemas\\buildlang-check-receipt-pass-0092.json",
+    "schema": "buildlang-receipt-verification/v1",
+    "source": "C:\\dev\\public\\pubscan\\quantalang\\examples\\quickstart\\hello.bld",
+    "status": "passed"
+  },
+  "verify_report_path": "C:\\dev\\public\\telos\\docs\\research\\dogfood\\schemas\\buildlang-receipt-verification-pass-0092.json",
+  "verify_summary": {
+    "all_required_passed": true,
+    "check_count": 18,
+    "failed_checks": [],
+    "missing_required": [],
+    "required_count": 18,
+    "status": "passed"
+  }
+}

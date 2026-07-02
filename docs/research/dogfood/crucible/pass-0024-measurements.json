@@ -1,0 +1,154 @@
+{
+  "measurements": [
+    {
+      "claim": "Pass 0024 created a TelosActionReceiptFixtureSet/v1 artifact with status ACTION_RECEIPT_FIXTURE_MATCH, four receipt events, nine negative fixtures, seal 58ed4ced91f18cbab776729f49f728d47013542cfc2448865bbdb8dccd1228e3, and chain_head_hash 0617602eed957e0bc6c2e4a21548528f6defc542c4468433bde85df76cb51b3a.",
+      "deviation": 0.0,
+      "evidence": [
+        "schemas/telos-action-receipt-fixture-pass-0024.json schema=TelosActionReceiptFixtureSet/v1",
+        "status=ACTION_RECEIPT_FIXTURE_MATCH",
+        "event_count=4",
+        "negative_fixture_count=9",
+        "seal=58ed4ced91f18cbab776729f49f728d47013542cfc2448865bbdb8dccd1228e3",
+        "action_chain chain_head_hash=0617602eed957e0bc6c2e4a21548528f6defc542c4468433bde85df76cb51b3a"
+      ],
+      "method": "action-receipt-fixture-artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0024 binds three upstream source artifacts: schemas/otel-recording-span-venv-pass-0023.json sha256 fc7beb76d616fd7823f0fe9a9cc879c92d00e5d7963a1e9228be89ae60486b1d, schemas/pass-0023-otel-recording-span-venv-validator-result.json sha256 cf08afa51e45e70c6f9b66f9b43f976400a3d004f71e392ebe43e78ae797eddc, and packets/033-otel-recording-span-venv.md sha256 945054a1aed15ecffcfd46427b97dd268056a05d08997906a99faab29eed5b05.",
+      "deviation": 0.0,
+      "evidence": [
+        "source_artifacts[0] path=schemas/otel-recording-span-venv-pass-0023.json sha256=fc7beb76d616fd7823f0fe9a9cc879c92d00e5d7963a1e9228be89ae60486b1d",
+        "source_artifacts[1] path=schemas/pass-0023-otel-recording-span-venv-validator-result.json sha256=cf08afa51e45e70c6f9b66f9b43f976400a3d004f71e392ebe43e78ae797eddc",
+        "source_artifacts[2] path=packets/033-otel-recording-span-venv.md sha256=945054a1aed15ecffcfd46427b97dd268056a05d08997906a99faab29eed5b05",
+        "source_artifact_count=3"
+      ],
+      "method": "source-artifact-digest-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0024 preserves pass 0023 OpenTelemetry continuity with trace_id_hex aaa76491660d7a56086f69d1be94debe, span_id_hex 1424d4ca9a6c5b58, exporter_sink_hash f2e9f33d12e261457731f6eedbe62c3c6d04d574c2c8274870da4eee0c2c2fc0, fixture_hash b1f3b6cd1c5b81d1784b29f5f9e11dd9ab1c2849f7510de94926dca07d5e2a25, receipt_is_trace_span=false, and links_to_action_receipt=true.",
+      "deviation": 0.0,
+      "evidence": [
+        "upstream_span trace_id_hex=aaa76491660d7a56086f69d1be94debe",
+        "upstream_span span_id_hex=1424d4ca9a6c5b58",
+        "upstream_span exporter_sink_hash=f2e9f33d12e261457731f6eedbe62c3c6d04d574c2c8274870da4eee0c2c2fc0",
+        "upstream_span fixture_hash=b1f3b6cd1c5b81d1784b29f5f9e11dd9ab1c2849f7510de94926dca07d5e2a25",
+        "upstream_span receipt_is_trace_span=false",
+        "upstream_span links_to_action_receipt=true"
+      ],
+      "method": "otel-span-continuity-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0024 includes a digest-bound project-telos.action-receipt/v1 contract excerpt with sha256 b2d08f56f2f8247c6661f81f25d5e84f916218ef132664f85365ce37a7ef5c5b and fields digest_references_required=true, append_only_compensation_required=true, receipt_is_trace_span=false, links_to_trace_span=true, proposed_completed_action_separation_required=true, and exportable_outside_trace_retention=true.",
+      "deviation": 0.0,
+      "evidence": [
+        "telos_contract_excerpt schema=project-telos.action-receipt/v1",
+        "telos_contract_excerpt_sha256=b2d08f56f2f8247c6661f81f25d5e84f916218ef132664f85365ce37a7ef5c5b",
+        "digest_references_required=true",
+        "append_only_compensation_required=true",
+        "receipt_is_trace_span=false",
+        "links_to_trace_span=true",
+        "proposed_completed_action_separation_required=true",
+        "exportable_outside_trace_retention=true"
+      ],
+      "method": "telos-contract-excerpt-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0024 action_chain has action_id act_dogfood_0024_001, action_intent_id intent_dogfood_0024_001, idempotency_key idem_dogfood_0024_001, external_request_id local:dogfood-pass-0024-action-receipt-fixture, and ordered event types action_proposed, action_admitted, execution_completed, verification_recorded.",
+      "deviation": 0.0,
+      "evidence": [
+        "action_chain action_id=act_dogfood_0024_001",
+        "action_chain action_intent_id=intent_dogfood_0024_001",
+        "action_chain idempotency_key=idem_dogfood_0024_001",
+        "action_chain external_request_id=local:dogfood-pass-0024-action-receipt-fixture",
+        "action_chain event_types=action_proposed, action_admitted, execution_completed, verification_recorded"
+      ],
+      "method": "action-chain-identity-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0024 events are append-only and hash-bound with event hashes 2e48696173973a47b9dc6d7a15371b50a6d6121a942846ee609c3afae3fb2a8b, dfd5cbd9dfbec59ee45dff7b9622779b5ad5c094e709d457f4075e9af8be2fe6, 59121d18332e9171505259687e4f52d9a6eef576ad6b913093d34d208203e5e3, and e499b57cd42f808bd9859221914719737c8ea0111d918314df24d02803f938bf, while every event carries policy, verification, input material digests, trace span ref, and append-only persistence metadata.",
+      "deviation": 0.0,
+      "evidence": [
+        "event 1 hash=2e48696173973a47b9dc6d7a15371b50a6d6121a942846ee609c3afae3fb2a8b",
+        "event 2 hash=dfd5cbd9dfbec59ee45dff7b9622779b5ad5c094e709d457f4075e9af8be2fe6",
+        "event 3 hash=59121d18332e9171505259687e4f52d9a6eef576ad6b913093d34d208203e5e3",
+        "event 4 hash=e499b57cd42f808bd9859221914719737c8ea0111d918314df24d02803f938bf",
+        "validator recomputes event hashes and chain hashes",
+        "every event has policy.ref, verification.verdict, input_materials[].digest, trace.span_ref, and persistence.append_only=true"
+      ],
+      "method": "event-chain-hash-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0024 validator reports MATCH with match=1, drift=0, event_count=4, negative_fixture_count=9, receipt_is_trace_span=false, trace_id_hex aaa76491660d7a56086f69d1be94debe, and span_id_hex 1424d4ca9a6c5b58.",
+      "deviation": 0.0,
+      "evidence": [
+        "schemas/pass-0024-telos-action-receipt-fixture-validator-result.json status=MATCH",
+        "match=1",
+        "drift=0",
+        "event_count=4",
+        "negative_fixture_count=9",
+        "receipt_is_trace_span=false",
+        "trace_id_hex=aaa76491660d7a56086f69d1be94debe",
+        "span_id_hex=1424d4ca9a6c5b58"
+      ],
+      "method": "validator-run-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0024 includes nine negative fixtures, all expected to REJECT, covering completed_action_collapsed_into_trace_span, missing_material_digest, verification_missing, policy_decision_unjoined, proposed_completed_action_collapsed, non_append_only_compensation, and unjoinable_execution_span.",
+      "deviation": 0.0,
+      "evidence": [
+        "negative_fixture_count=9",
+        "all negative_fixtures expected_validator_status=REJECT",
+        "failure_code completed_action_collapsed_into_trace_span present",
+        "failure_code missing_material_digest present",
+        "failure_code verification_missing present",
+        "failure_code policy_decision_unjoined present",
+        "failure_code proposed_completed_action_collapsed present",
+        "failure_code non_append_only_compensation present",
+        "failure_code unjoinable_execution_span present"
+      ],
+      "method": "negative-fixture-coverage-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0024 packet 034 was gathered and verified with SHA-256 2c5f373c9e7b3a70ad2e204060c159981a80c318d4ae22a1163f7d5b4cb47974 and digest seal e5f577d4667fb98aea9d6428c4c30a5663b6c96008331b145b14b6d5ef18968e, while packet 034 and the adversarial steelman preserve the non-promotion boundary.",
+      "deviation": 0.0,
+      "evidence": [
+        "gather docs verified=true",
+        "artifact=packets/034-telos-action-receipt-fixture.md",
+        "sha256=2c5f373c9e7b3a70ad2e204060c159981a80c318d4ae22a1163f7d5b4cb47974",
+        "seal=e5f577d4667fb98aea9d6428c4c30a5663b6c96008331b145b14b6d5ef18968e",
+        "packet 034 states Current promoted natural laws: none",
+        "adversarial/pass-0024-action-receipt-steelman.md states no model-backed Forum adversarial answer was produced and current promoted natural laws: none"
+      ],
+      "method": "gather-packet-and-boundary-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0024 records tool receipts showing Index, Gather, Telos, Forum status and ledger verify, and Crucible status as MATCH while preserving Forum submit as UNVERIFIABLE because no model executor is configured.",
+      "deviation": 0.0,
+      "evidence": [
+        "schemas/tool-receipts-pass-0024.json status=MATCH_WITH_FORUM_SUBMIT_GAP",
+        "index status MATCH",
+        "index doctor MATCH",
+        "gather status MATCH",
+        "gather docs verified=true",
+        "telos operator_doctor status MATCH",
+        "telos action_receipt status MATCH",
+        "telos loop_ledger status MATCH",
+        "forum status MATCH",
+        "forum ledger verify chain=true deep=true",
+        "forum submit status=UNVERIFIABLE",
+        "crucible status MATCH"
+      ],
+      "method": "tool-receipt-review",
+      "tolerance": 0.5
+    }
+  ]
+}

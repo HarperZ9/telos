@@ -1,0 +1,92 @@
+{
+  "measurements": [
+    {
+      "claim": "Pass 0061 created a BuyerEvidenceIntakeLedger/v1 artifact with status BUYER_EVIDENCE_INTAKE_LEDGER_MATCH, record_count 3, evidence_field_count 24, private_field_count 21, gate_count 18, sha256 2a236310e23d64ba0bcbf440916b44fc9ff37a9b199fd17baa0e830077336491, and seal d074d80cd84659f735b81dc5161d58f5b4212142723f97463a35ba0965bb6220.",
+      "deviation": 0.0,
+      "evidence": [
+        "schema=BuyerEvidenceIntakeLedger/v1",
+        "status=BUYER_EVIDENCE_INTAKE_LEDGER_MATCH",
+        "record_count=3",
+        "evidence_field_count=24",
+        "private_field_count=21",
+        "gate_count=18",
+        "sha256=2a236310e23d64ba0bcbf440916b44fc9ff37a9b199fd17baa0e830077336491",
+        "seal=d074d80cd84659f735b81dc5161d58f5b4212142723f97463a35ba0965bb6220"
+      ],
+      "method": "artifact-schema-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0061 implements compose_buyer_evidence_intake_ledger.py with sha256 56f3c46fe2c6f3c6ae0af7f9ff841b168f713f6ad1e669ad647c6be83d6c66f1 and compose_receipt status MATCH.",
+      "deviation": 0.0,
+      "evidence": [
+        "composer_sha256=56f3c46fe2c6f3c6ae0af7f9ff841b168f713f6ad1e669ad647c6be83d6c66f1",
+        "compose_status=MATCH"
+      ],
+      "method": "composer-file-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0061 records a buyer evidence intake test with sha256 266d184c91a1f5a7c1fb812993c52ee24158908c70773a9a5cf77dea1c5a05e1 and test_receipt status MATCH.",
+      "deviation": 0.0,
+      "evidence": [
+        "test_sha256=266d184c91a1f5a7c1fb812993c52ee24158908c70773a9a5cf77dea1c5a05e1",
+        "test_status=MATCH"
+      ],
+      "method": "composer-test-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0061 binds upstream pass 0060 seal 2bf5704d5e2065ee55732533a4f9bca3e5d892dc43e33fba676e5c56325c93ee and status BUYER_OUTREACH_PACKETS_MATCH.",
+      "deviation": 0.0,
+      "evidence": [
+        "upstream_seal=2bf5704d5e2065ee55732533a4f9bca3e5d892dc43e33fba676e5c56325c93ee",
+        "upstream_status=BUYER_OUTREACH_PACKETS_MATCH"
+      ],
+      "method": "upstream-binding-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0061 buyer_response_status is AWAITING_REAL_RESPONSES, crm_write_status is NOT_WRITTEN, and send_status is NOT_SENT.",
+      "deviation": 0.0,
+      "evidence": [
+        "buyer_response_status=AWAITING_REAL_RESPONSES",
+        "crm_write_status=NOT_WRITTEN",
+        "send_status=NOT_SENT"
+      ],
+      "method": "open-status-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0061 forbids private contact data in model context and records private_field_count 21.",
+      "deviation": 0.0,
+      "evidence": [
+        "private_field_count=21",
+        "privacy_boundary=NO_PRIVATE_CONTACT_DATA_IN_MODEL_CONTEXT"
+      ],
+      "method": "privacy-boundary-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0061 unsupported_claim_count is 0, market_claim_boundary is HYPOTHESIS_ONLY, and current_promoted_natural_laws remains none.",
+      "deviation": 0.0,
+      "evidence": [
+        "unsupported_claim_count=0",
+        "market_claim_boundary=HYPOTHESIS_ONLY",
+        "current_promoted_natural_laws=[]"
+      ],
+      "method": "non-promotion-boundary-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0061 records packet 071 sha256 020110248f5126a4f0e835deebb0d3804ba1d63c2ab18c95050ef95aea84330d and steelman sha256 c4a053cad91b4a973c20e34f791e5733eba54aacbcbd5a98affb8cea7bf1978e.",
+      "deviation": 0.0,
+      "evidence": [
+        "packet_sha256=020110248f5126a4f0e835deebb0d3804ba1d63c2ab18c95050ef95aea84330d",
+        "steelman_sha256=c4a053cad91b4a973c20e34f791e5733eba54aacbcbd5a98affb8cea7bf1978e"
+      ],
+      "method": "packet-steelman-review",
+      "tolerance": 0.5
+    }
+  ]
+}

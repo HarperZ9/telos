@@ -1,0 +1,46 @@
+{
+  "claims": [
+    {
+      "falsification": "schemas/lean-replay-remediation-contract-pass-0032.json is missing, has a different schema, status, seal, source binding, next blocker, or negative fixture count",
+      "text": "Pass 0032 created a LeanReplayRemediationContract/v1 artifact with status LEAN_REPLAY_REMEDIATION_MATCH_WITH_LAKE_GAP, source_environment_sha256 e10e07a409bf9a0cde7dcf8aae823b176b44a9b1610fcf133dc228b94219d3f1, next_blocker lake_missing, negative_fixture_count 10, and seal 64e1d89130480d56bb5a54a19ee07e182537f73eca5ca12b29782f4689239b05."
+    },
+    {
+      "falsification": "the remediation fixture is missing, has a different SHA-256 or seal, or is not linked from the schema",
+      "text": "Pass 0032 records fixture fixtures/lean-replay-remediation-contract-pass-0032.json with sha256 27da59a624c60468ebebcd3c19580933f66d82df3a5e289242b7b7351cef02f3 and seal 5bca5d4aa6b3c1b735da0c2e7a10bd1568194723e88781fa4f39955b5dafc08c."
+    },
+    {
+      "falsification": "the LF clone probe is missing, uses a different commit or checkout policy, omits any target file, or reports non-LF working tree values",
+      "text": "Pass 0032 LF clone probe records repo commit 69d7df765a8f377a5e0628c6d36c088bce7642c9, checkout_policy core.autocrlf=false, and i/lf w/lf for Prob4b/Defs.lean, Prob4b/Theorems.lean, and scripts/frozen.sha256."
+    },
+    {
+      "falsification": "the first verifier attempt is missing, has a different exit code, passed check, failed check, failure class, or says Lake or Lean were reached",
+      "text": "Pass 0032 first verifier attempt without the python3 shim records exit_code 1, status DRIFT, passed_checks Frozen SHA pins, failed_check Banned keywords, failure_class python3_missing_in_git_bash, and lake_or_lean_reached false."
+    },
+    {
+      "falsification": "the python3 shim probe is missing, treats the shim as an external write, has a different hash or Python version, or does not report MATCH",
+      "text": "Pass 0032 python3 shim probe records status MATCH, shim_kind reversible_temp_path_wrapper, python3_resolution temp:telos-pass0032-shim/python3, python_version Python 3.12.10, shim_contents_hash 191c4de6997d024bf5e53e99274285654c6ac05c66706054b5f8be29ba68476d, temp_write_performed true, and external_write_performed false."
+    },
+    {
+      "falsification": "the second verifier attempt is missing, has a different exit code, passed checks, failed check, failure class, or says Lake or Lean were reached",
+      "text": "Pass 0032 second verifier attempt with the python3 shim records exit_code 1, status DRIFT, passed_checks Frozen SHA pins and Banned keywords, failed_check lake build, failure_class lake_missing, and lake_or_lean_reached false."
+    },
+    {
+      "falsification": "the validator result is missing, reports DRIFT, has a different LF count, Python gate status, next blocker, replay status, or negative fixture count",
+      "text": "Pass 0032 validator result reports MATCH with lf_clone_eol_match_count 3, python3_gate_status RESOLVED_BY_REVERSIBLE_TEMP_SHIM, next_blocker lake_missing, lake_build_status UNVERIFIABLE_TOOL_UNAVAILABLE, lean_replay_status UNVERIFIABLE_TOOL_UNAVAILABLE, and negative_fixture_count 10."
+    },
+    {
+      "falsification": "official source receipts are missing, fewer than three, or omit elan README, Lean reference manual, or Git config manual",
+      "text": "Pass 0032 records three verified public source receipts for the elan README, the Lean reference manual, and the Git config manual."
+    },
+    {
+      "falsification": "negative fixtures are missing, fewer than ten, have different IDs, or any negative fixture is not marked expected_validator_status REJECT",
+      "text": "Pass 0032 defines ten negative fixtures covering LF clone requirement, python3 shim misclassification, banned-keyword promotion without shim, Lake build promotion without lake, Lean replay promotion, missing source environment link, missing official sources, hidden external write, wrong next blocker, and natural-law promotion; every negative fixture expects validator status REJECT."
+    },
+    {
+      "falsification": "pass 0032 artifacts promote theorem replay, Lake build success, Lean installation, proof correctness, buyer adoption, or a natural law",
+      "text": "Pass 0032 preserves non-promotion boundaries: toolchain_install_performed false, external_write_performed false except reversible temp shim write, lake_build_status UNVERIFIABLE_TOOL_UNAVAILABLE, lean_replay_status UNVERIFIABLE_TOOL_UNAVAILABLE, replay_promotion_allowed false, and current_promoted_natural_laws none."
+    }
+  ],
+  "disposition": "fenced",
+  "title": "Dogfood Pass 0032 Lean Replay Remediation Contract"
+}

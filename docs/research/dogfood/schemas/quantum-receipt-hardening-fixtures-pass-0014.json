@@ -1,0 +1,208 @@
+{
+  "adapter_fixtures": [
+    {
+      "adapter": "qiskit-openqasm3-export-fixture",
+      "adapter_status": "ADAPTER_FIXTURE_MATCH",
+      "normalized_circuit": {
+        "depth": 2,
+        "gate_count": 2,
+        "operations": [
+          "h q[0]",
+          "cx q[0], q[1]"
+        ],
+        "qubits": 2,
+        "two_qubit_gate_count": 1
+      },
+      "program": "OPENQASM 3.0;\ninclude \"stdgates.inc\";\nqubit[2] q;\nh q[0];\ncx q[0], q[1];",
+      "source_anchor": "https://quantum.cloud.ibm.com/docs/api/qiskit/qasm3",
+      "source_format": "OpenQASM 3"
+    },
+    {
+      "adapter": "cirq-json-shape-fixture",
+      "adapter_status": "ADAPTER_FIXTURE_MATCH",
+      "normalized_circuit": {
+        "depth": 2,
+        "gate_count": 2,
+        "operations": [
+          "H(q0)",
+          "CNOT(q0,q1)"
+        ],
+        "qubits": 2,
+        "two_qubit_gate_count": 1
+      },
+      "program": {
+        "cirq_type": "Circuit",
+        "moments": [
+          {
+            "operations": [
+              "H(q(0))"
+            ]
+          },
+          {
+            "operations": [
+              "CNOT(q(0), q(1))"
+            ]
+          }
+        ]
+      },
+      "source_anchor": "https://quantumai.google/cirq/build/interop",
+      "source_format": "Cirq JSON shape"
+    }
+  ],
+  "generated_on": "2026-07-01",
+  "hardware_mock_receipt": {
+    "backend": {
+      "calibration_ref": "mock-calibration-sha256:6d6f636b",
+      "cloud_task_shape_only": true,
+      "device_arn": "arn:aws:braket:us-east-1::device/qpu/mock/MockQPU",
+      "device_kind": "mock-qpu",
+      "provider": "amazon-braket-shape",
+      "queue_timestamp": "2026-07-01T00:00:00Z",
+      "result_payload_hash": "sha256:mock-result-payload-pass-0014",
+      "shots": 1000,
+      "task_id": "mock-task-pass-0014"
+    },
+    "branch": "HARDWARE_MOCK",
+    "circuit": {
+      "depth": 2,
+      "gate_count": 2,
+      "operations": [
+        "h q[0]",
+        "cx q[0], q[1]"
+      ],
+      "qubits": 2,
+      "source_format": "OpenQASM 3 fixture",
+      "source_hash": "sha256:0b3e3ff6fc5a0feec84d1f473cda20341e335a8f8ff3f72f62fd73f06d31cc65",
+      "two_qubit_gate_count": 1
+    },
+    "hardware_claim_allowed": false,
+    "receipt_id": "quantum-exp-pass-0014-hardware-mock",
+    "resource_estimate": {
+      "depth": 2,
+      "gate_count": 2,
+      "logical_qubits": 2,
+      "physical_qubits": "not_applicable_mock",
+      "qec_scheme": "none",
+      "runtime_estimate": "mock-not-executed"
+    },
+    "result": {
+      "measurement_histogram": {
+        "00": 0.5,
+        "01": 0.0,
+        "10": 0.0,
+        "11": 0.5
+      },
+      "status": "MOCK_TASK_SHAPE_ONLY"
+    },
+    "schema": "QuantumExperimentReceipt/v1",
+    "theorem_claim_ref": "claim-no-cloning-inner-product-identity",
+    "verdict": "MOCK_MATCH_NOT_HARDWARE"
+  },
+  "metric_claim_bindings": [
+    {
+      "claim_id": "basis_histogram_claim",
+      "insufficient_metrics": [
+        "statevector_absent_for_phase_claims"
+      ],
+      "status": "BOUND",
+      "sufficient_metrics": [
+        "measurement_histogram"
+      ]
+    },
+    {
+      "claim_id": "phase_sensitive_clone_claim",
+      "insufficient_metrics": [
+        "measurement_histogram_only"
+      ],
+      "status": "BOUND",
+      "sufficient_metrics": [
+        "statevector_or_density_matrix",
+        "fidelity_to_desired_clone"
+      ]
+    },
+    {
+      "claim_id": "cloud_hardware_result_claim",
+      "insufficient_metrics": [
+        "simulator_histogram",
+        "hardware_mock_task_shape"
+      ],
+      "status": "BOUND",
+      "sufficient_metrics": [
+        "provider_device_identity",
+        "cloud_task_id",
+        "shots",
+        "calibration_reference",
+        "result_payload_hash"
+      ]
+    }
+  ],
+  "negative_promotion_fixture": {
+    "attempted_claim": "hardware_result",
+    "attempted_target_branch": "CLOUD_HARDWARE",
+    "expected_validator_status": "REJECT",
+    "fixture_id": "negative-exact-simulator-to-cloud-hardware",
+    "rejection_reasons": [
+      "branch_mismatch",
+      "hardware_claim_allowed_false",
+      "missing_cloud_task_metadata",
+      "missing_calibration_reference",
+      "missing_result_payload_hash"
+    ],
+    "source_branch": "EXACT_SIMULATOR",
+    "source_hardware_claim_allowed": false,
+    "source_receipt_ref": "quantum-exp-pass-0013-exact-simulator"
+  },
+  "pass": "0014",
+  "resource_estimate_receipt": {
+    "assumptions": [
+      "toy no-cloning witness",
+      "not a fault-tolerant workload",
+      "resource-estimate receipt is a planning artifact only"
+    ],
+    "circuit_ref": "qiskit-openqasm3-export-fixture",
+    "execution_claim_allowed": false,
+    "logical_estimate": {
+      "logical_depth": 2,
+      "logical_gate_count": 2,
+      "logical_qubits": 2
+    },
+    "physical_estimate": {
+      "physical_qubits": "not_computed_for_toy_fixture",
+      "qec_scheme": "none",
+      "runtime": "not_computed_for_toy_fixture"
+    },
+    "receipt_id": "quantum-resource-estimate-pass-0014",
+    "schema": "QuantumResourceEstimateReceipt/v1",
+    "source_anchor": "https://learn.microsoft.com/en-us/azure/quantum/intro-to-resource-estimation",
+    "status": "ESTIMATE_ONLY_NOT_EXECUTION"
+  },
+  "schema": "QuantumReceiptHardeningFixture/v1",
+  "seal": "5f68b4cb41349c3b0b8fd83a0ba35c6a9aef09283e61b55cb11a407172ecb8c4",
+  "source_anchors": [
+    {
+      "source": "IBM Qiskit qasm3 API",
+      "url": "https://quantum.cloud.ibm.com/docs/api/qiskit/qasm3"
+    },
+    {
+      "source": "IBM Qiskit OpenQASM 3 interop guide",
+      "url": "https://quantum.cloud.ibm.com/docs/guides/interoperate-qiskit-qasm3"
+    },
+    {
+      "source": "Cirq import/export interop guide",
+      "url": "https://quantumai.google/cirq/build/interop"
+    },
+    {
+      "source": "Amazon Braket task monitoring",
+      "url": "https://docs.aws.amazon.com/braket/latest/developerguide/braket-monitor-tasks-sdk.html"
+    },
+    {
+      "source": "Amazon Braket task submission",
+      "url": "https://docs.aws.amazon.com/braket/latest/developerguide/braket-submit-tasks-to-braket.html"
+    },
+    {
+      "source": "Azure Quantum Resource Estimator",
+      "url": "https://learn.microsoft.com/en-us/azure/quantum/intro-to-resource-estimation"
+    }
+  ],
+  "status": "HARDENING_FIXTURE_MATCH"
+}

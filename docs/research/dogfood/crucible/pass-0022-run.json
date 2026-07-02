@@ -1,0 +1,536 @@
+{
+  "ok": true,
+  "thesis": {
+    "id": "f46a54165456f4c1",
+    "title": "Dogfood Pass 0022 OpenTelemetry SDK Dry-Run Lock",
+    "registered_at": 1782905789.2105222,
+    "disposition": "fenced",
+    "seal": "f46a54165456f4c180ce80823fc2d155db90a51d3caed07a206a3a76725b05ae",
+    "claims": [
+      {
+        "id": "e5f716f399e11d5c",
+        "sha256": "e5f716f399e11d5ca3cd929db18c46ecc31dca469953a09eefebd6e047d30720"
+      },
+      {
+        "id": "88032c251351536f",
+        "sha256": "88032c251351536f028522a19ed29412ef801e94070c8ce0a236589fc1e9b786"
+      },
+      {
+        "id": "42ce87d592ab7ebc",
+        "sha256": "42ce87d592ab7ebc1ce826a234d5b5146603fe16e212552c55a0460fbf53add0"
+      },
+      {
+        "id": "c27aa24f7c4b3f63",
+        "sha256": "c27aa24f7c4b3f63064dc8347fc87a7a97095f66f5006a9b3d43160da3ddfd0a"
+      },
+      {
+        "id": "6d115b7223991f1d",
+        "sha256": "6d115b7223991f1ddf4cdf9833ba28f507b09ae81154402dea82c45a7aad09d3"
+      },
+      {
+        "id": "847e5349cba677b4",
+        "sha256": "847e5349cba677b41e8138413bcb393afae833b99a88aa8d2f780c21cc6c6515"
+      },
+      {
+        "id": "520e2034b895c241",
+        "sha256": "520e2034b895c241769b1cc026d3aba9d04dd5e32d551809b9bc5bba3caad7c4"
+      },
+      {
+        "id": "8640bf9cc7cb0ecf",
+        "sha256": "8640bf9cc7cb0ecf9028b2ad9e80a5464fe3e19b62227ef313783e786694c922"
+      },
+      {
+        "id": "32b6e4d9d29b57fe",
+        "sha256": "32b6e4d9d29b57feb709186eafb045c4a992a50631dfbc11cd76d2c1184c3af3"
+      },
+      {
+        "id": "a742f0d6c7397354",
+        "sha256": "a742f0d6c73973544856f4a5972e2de9ad8acc88d9014b37a90a0d2b6f61a2bf"
+      }
+    ]
+  },
+  "refutations": [
+    {
+      "claim_id": "e5f716f399e11d5c",
+      "claim_sha256": "e5f716f399e11d5ca3cd929db18c46ecc31dca469953a09eefebd6e047d30720",
+      "challenge": "test the stated falsification: schemas/otel-sdk-dryrun-lock-pass-0022.json is missing, has a different schema or status, reports different counts, reports SDK available after dry-run, or lacks the expected seal",
+      "measurable": "schemas/otel-sdk-dryrun-lock-pass-0022.json is missing, has a different schema or status, reports different counts, reports SDK available after dry-run, or lacks the expected seal",
+      "source": "null"
+    },
+    {
+      "claim_id": "88032c251351536f",
+      "claim_sha256": "88032c251351536f028522a19ed29412ef801e94070c8ce0a236589fc1e9b786",
+      "challenge": "test the stated falsification: the dry-run receipt is missing, returncode is nonzero, command lacks --dry-run or --report -, target requirement differs, or no-install boundary is false",
+      "measurable": "the dry-run receipt is missing, returncode is nonzero, command lacks --dry-run or --report -, target requirement differs, or no-install boundary is false",
+      "source": "null"
+    },
+    {
+      "claim_id": "42ce87d592ab7ebc",
+      "claim_sha256": "42ce87d592ab7ebc1ce826a234d5b5146603fe16e212552c55a0460fbf53add0",
+      "challenge": "test the stated falsification: the SDK resolved wheel is missing, has a different version, is not requested, has a different hash, or lacks the matching API dependency",
+      "measurable": "the SDK resolved wheel is missing, has a different version, is not requested, has a different hash, or lacks the matching API dependency",
+      "source": "null"
+    },
+    {
+      "claim_id": "c27aa24f7c4b3f63",
+      "claim_sha256": "c27aa24f7c4b3f63064dc8347fc87a7a97095f66f5006a9b3d43160da3ddfd0a",
+      "challenge": "test the stated falsification: the semantic-conventions wheel is missing, has a different version, is requested directly, or has a different hash",
+      "measurable": "the semantic-conventions wheel is missing, has a different version, is requested directly, or has a different hash",
+      "source": "null"
+    },
+    {
+      "claim_id": "6d115b7223991f1d",
+      "claim_sha256": "6d115b7223991f1ddf4cdf9833ba28f507b09ae81154402dea82c45a7aad09d3",
+      "challenge": "test the stated falsification: already-satisfied API is missing or not version 1.41.0, or post-dry-run audit reports SDK installed/available",
+      "measurable": "already-satisfied API is missing or not version 1.41.0, or post-dry-run audit reports SDK installed/available",
+      "source": "null"
+    },
+    {
+      "claim_id": "847e5349cba677b4",
+      "claim_sha256": "847e5349cba677b41e8138413bcb393afae833b99a88aa8d2f780c21cc6c6515",
+      "challenge": "test the stated falsification: invalid-distribution warning count or labels differ from the persisted artifact",
+      "measurable": "invalid-distribution warning count or labels differ from the persisted artifact",
+      "source": "null"
+    },
+    {
+      "claim_id": "520e2034b895c241",
+      "claim_sha256": "520e2034b895c241769b1cc026d3aba9d04dd5e32d551809b9bc5bba3caad7c4",
+      "challenge": "test the stated falsification: any negative fixture category is missing or has expected_validator_status other than REJECT",
+      "measurable": "any negative fixture category is missing or has expected_validator_status other than REJECT",
+      "source": "null"
+    },
+    {
+      "claim_id": "8640bf9cc7cb0ecf",
+      "claim_sha256": "8640bf9cc7cb0ecf9028b2ad9e80a5464fe3e19b62227ef313783e786694c922",
+      "challenge": "test the stated falsification: schemas/pass-0022-otel-sdk-dryrun-lock-validator-result.json is missing, reports non-MATCH status, does not report match=1, or reports drift above zero",
+      "measurable": "schemas/pass-0022-otel-sdk-dryrun-lock-validator-result.json is missing, reports non-MATCH status, does not report match=1, or reports drift above zero",
+      "source": "null"
+    },
+    {
+      "claim_id": "32b6e4d9d29b57fe",
+      "claim_sha256": "32b6e4d9d29b57feb709186eafb045c4a992a50631dfbc11cd76d2c1184c3af3",
+      "challenge": "test the stated falsification: schemas/tool-receipts-pass-0022.json is missing, lacks required tool status receipts, or treats Forum submit as successful rather than UNVERIFIABLE",
+      "measurable": "schemas/tool-receipts-pass-0022.json is missing, lacks required tool status receipts, or treats Forum submit as successful rather than UNVERIFIABLE",
+      "source": "null"
+    },
+    {
+      "claim_id": "a742f0d6c7397354",
+      "claim_sha256": "a742f0d6c73973544856f4a5972e2de9ad8acc88d9014b37a90a0d2b6f61a2bf",
+      "challenge": "test the stated falsification: any pass 0022 artifact labels package installation, SDK import, recording span, environment mutation, trace evidence, natural law, or scientific discovery as promoted",
+      "measurable": "any pass 0022 artifact labels package installation, SDK import, recording span, environment mutation, trace evidence, natural law, or scientific discovery as promoted",
+      "source": "null"
+    }
+  ],
+  "assessment": {
+    "started_at": 1782905789.218343,
+    "thesis_id": "f46a54165456f4c1",
+    "thesis_seal": "f46a54165456f4c180ce80823fc2d155db90a51d3caed07a206a3a76725b05ae",
+    "claims": 10,
+    "match": 10,
+    "drift": 0,
+    "unverifiable": 0,
+    "verdict_seal": "77a1ac97a5c63e5e793e8b006022f7552c3c2ad8652f847ed847f7bb1f3346fa",
+    "measurement_seal": "afe08313d91bf8391566c6c5c37e678a200f1e36380f963d4a0f68c074ebecf2",
+    "disposition": "fenced",
+    "stored": null,
+    "verdicts": [
+      {
+        "claim_id": "e5f716f399e11d5c",
+        "claim_sha256": "e5f716f399e11d5ca3cd929db18c46ecc31dca469953a09eefebd6e047d30720",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "otel-sdk-dryrun-artifact-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "88032c251351536f",
+        "claim_sha256": "88032c251351536f028522a19ed29412ef801e94070c8ce0a236589fc1e9b786",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "pip-dryrun-command-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "42ce87d592ab7ebc",
+        "claim_sha256": "42ce87d592ab7ebc1ce826a234d5b5146603fe16e212552c55a0460fbf53add0",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "sdk-wheel-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "c27aa24f7c4b3f63",
+        "claim_sha256": "c27aa24f7c4b3f63064dc8347fc87a7a97095f66f5006a9b3d43160da3ddfd0a",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "semantic-conventions-wheel-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "6d115b7223991f1d",
+        "claim_sha256": "6d115b7223991f1ddf4cdf9833ba28f507b09ae81154402dea82c45a7aad09d3",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "post-dryrun-import-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "847e5349cba677b4",
+        "claim_sha256": "847e5349cba677b41e8138413bcb393afae833b99a88aa8d2f780c21cc6c6515",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "invalid-distribution-warning-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "520e2034b895c241",
+        "claim_sha256": "520e2034b895c241769b1cc026d3aba9d04dd5e32d551809b9bc5bba3caad7c4",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "negative-fixture-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "8640bf9cc7cb0ecf",
+        "claim_sha256": "8640bf9cc7cb0ecf9028b2ad9e80a5464fe3e19b62227ef313783e786694c922",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "validator-run-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "32b6e4d9d29b57fe",
+        "claim_sha256": "32b6e4d9d29b57feb709186eafb045c4a992a50631dfbc11cd76d2c1184c3af3",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "tool-receipt-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "a742f0d6c7397354",
+        "claim_sha256": "a742f0d6c73973544856f4a5972e2de9ad8acc88d9014b37a90a0d2b6f61a2bf",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "non-promotion-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      }
+    ],
+    "measurements": [
+      {
+        "claim_id": "e5f716f399e11d5c",
+        "claim_sha256": "e5f716f399e11d5ca3cd929db18c46ecc31dca469953a09eefebd6e047d30720",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "otel-sdk-dryrun-artifact-review",
+        "measured_at": 1782905789.2180836,
+        "evidence": [
+          "schemas/otel-sdk-dryrun-lock-pass-0022.json schema=OTelSdkDryRunLockReceiptSet/v1",
+          "status=OTEL_SDK_DRYRUN_LOCK_MATCH",
+          "resolved_install_count=2",
+          "negative_fixture_count=5",
+          "post_dryrun_import_audit find_spec_available=false",
+          "seal=678d201ea634eeea2786f0c4effb22d4e38528a80d7cb05c9abe18b446ba3f3c"
+        ]
+      },
+      {
+        "claim_id": "88032c251351536f",
+        "claim_sha256": "88032c251351536f028522a19ed29412ef801e94070c8ce0a236589fc1e9b786",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "pip-dryrun-command-review",
+        "measured_at": 1782905789.2180917,
+        "evidence": [
+          "dry_run returncode=0",
+          "dry_run command includes --dry-run",
+          "dry_run command includes --report -",
+          "target_requirement=opentelemetry-sdk==1.41.0",
+          "no_install_boundary=true"
+        ]
+      },
+      {
+        "claim_id": "42ce87d592ab7ebc",
+        "claim_sha256": "42ce87d592ab7ebc1ce826a234d5b5146603fe16e212552c55a0460fbf53add0",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "sdk-wheel-review",
+        "measured_at": 1782905789.218095,
+        "evidence": [
+          "resolved wheel opentelemetry-sdk present",
+          "version=1.41.0",
+          "requested=true",
+          "sha256=a596f5687964a3e0d7f8edfdcf5b79cbca9c93c7025ebf5fb00f398a9443b0bd",
+          "requires_dist includes opentelemetry-api==1.41.0"
+        ]
+      },
+      {
+        "claim_id": "c27aa24f7c4b3f63",
+        "claim_sha256": "c27aa24f7c4b3f63064dc8347fc87a7a97095f66f5006a9b3d43160da3ddfd0a",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "semantic-conventions-wheel-review",
+        "measured_at": 1782905789.218098,
+        "evidence": [
+          "resolved wheel opentelemetry-semantic-conventions present",
+          "version=0.62b0",
+          "requested=false",
+          "sha256=0ddac1ce59eaf1a827d9987ab60d9315fb27aea23304144242d1fcad9e16b489"
+        ]
+      },
+      {
+        "claim_id": "6d115b7223991f1d",
+        "claim_sha256": "6d115b7223991f1ddf4cdf9833ba28f507b09ae81154402dea82c45a7aad09d3",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "post-dryrun-import-review",
+        "measured_at": 1782905789.218101,
+        "evidence": [
+          "already_satisfied includes opentelemetry-api version=1.41.0",
+          "post_dryrun_import_audit distribution=opentelemetry-sdk",
+          "post_dryrun_import_audit module=opentelemetry.sdk",
+          "find_spec_available=false",
+          "install_performed=false",
+          "expected_status=NOT_INSTALLED_AFTER_DRY_RUN"
+        ]
+      },
+      {
+        "claim_id": "847e5349cba677b4",
+        "claim_sha256": "847e5349cba677b41e8138413bcb393afae833b99a88aa8d2f780c21cc6c6515",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "invalid-distribution-warning-review",
+        "measured_at": 1782905789.2181041,
+        "evidence": [
+          "invalid_distribution_warning_count=3",
+          "invalid_distribution_warning_labels include ~",
+          "invalid_distribution_warning_labels include ~arden-shell",
+          "invalid_distribution_warning_labels include ~~rden-shell"
+        ]
+      },
+      {
+        "claim_id": "520e2034b895c241",
+        "claim_sha256": "520e2034b895c241769b1cc026d3aba9d04dd5e32d551809b9bc5bba3caad7c4",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "negative-fixture-review",
+        "measured_at": 1782905789.2181075,
+        "evidence": [
+          "negative-dryrun-treated-as-install expected_validator_status=REJECT",
+          "negative-wheel-without-hash expected_validator_status=REJECT",
+          "negative-unmatched-api-sdk-version expected_validator_status=REJECT",
+          "negative-ignore-invalid-distribution-warnings expected_validator_status=REJECT",
+          "negative-recording-span-without-sdk-import expected_validator_status=REJECT"
+        ]
+      },
+      {
+        "claim_id": "8640bf9cc7cb0ecf",
+        "claim_sha256": "8640bf9cc7cb0ecf9028b2ad9e80a5464fe3e19b62227ef313783e786694c922",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "validator-run-review",
+        "measured_at": 1782905789.2181103,
+        "evidence": [
+          "schemas/pass-0022-otel-sdk-dryrun-lock-validator-result.json status=MATCH",
+          "match=1",
+          "drift=0",
+          "checks include OTelSdkDryRunLockReceiptSet status MATCH"
+        ]
+      },
+      {
+        "claim_id": "32b6e4d9d29b57fe",
+        "claim_sha256": "32b6e4d9d29b57feb709186eafb045c4a992a50631dfbc11cd76d2c1184c3af3",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "tool-receipt-review",
+        "measured_at": 1782905789.2181134,
+        "evidence": [
+          "schemas/tool-receipts-pass-0022.json status=MATCH_WITH_FORUM_SUBMIT_GAP",
+          "index status MATCH",
+          "gather status MATCH",
+          "gather docs verified=true",
+          "telos operator_doctor status MATCH",
+          "forum status MATCH entries=14",
+          "forum verify chain=true deep=true",
+          "forum submit status=UNVERIFIABLE",
+          "crucible status MATCH"
+        ]
+      },
+      {
+        "claim_id": "a742f0d6c7397354",
+        "claim_sha256": "a742f0d6c73973544856f4a5972e2de9ad8acc88d9014b37a90a0d2b6f61a2bf",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "non-promotion-review",
+        "measured_at": 1782905789.2181165,
+        "evidence": [
+          "schemas/otel-sdk-dryrun-lock-pass-0022.json non_promotion_statement states dry-run resolution only",
+          "packets/032-otel-sdk-dryrun-lock.md states no package was installed and opentelemetry.sdk remains unavailable",
+          "schemas/tool-receipts-pass-0022.json non_promotion_statement states no package installation, SDK import, recording export, or discovery",
+          "Current promoted natural laws: none"
+        ]
+      }
+    ],
+    "seal": "beacd4419e654dc1966a8a4ec1cfef62d9212193fcade4d405593d71ba86a406"
+  },
+  "verdicts": [
+    {
+      "claim_id": "e5f716f399e11d5c",
+      "claim_sha256": "e5f716f399e11d5ca3cd929db18c46ecc31dca469953a09eefebd6e047d30720",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "otel-sdk-dryrun-artifact-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "88032c251351536f",
+      "claim_sha256": "88032c251351536f028522a19ed29412ef801e94070c8ce0a236589fc1e9b786",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "pip-dryrun-command-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "42ce87d592ab7ebc",
+      "claim_sha256": "42ce87d592ab7ebc1ce826a234d5b5146603fe16e212552c55a0460fbf53add0",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "sdk-wheel-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "c27aa24f7c4b3f63",
+      "claim_sha256": "c27aa24f7c4b3f63064dc8347fc87a7a97095f66f5006a9b3d43160da3ddfd0a",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "semantic-conventions-wheel-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "6d115b7223991f1d",
+      "claim_sha256": "6d115b7223991f1ddf4cdf9833ba28f507b09ae81154402dea82c45a7aad09d3",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "post-dryrun-import-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "847e5349cba677b4",
+      "claim_sha256": "847e5349cba677b41e8138413bcb393afae833b99a88aa8d2f780c21cc6c6515",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "invalid-distribution-warning-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "520e2034b895c241",
+      "claim_sha256": "520e2034b895c241769b1cc026d3aba9d04dd5e32d551809b9bc5bba3caad7c4",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "negative-fixture-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "8640bf9cc7cb0ecf",
+      "claim_sha256": "8640bf9cc7cb0ecf9028b2ad9e80a5464fe3e19b62227ef313783e786694c922",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "validator-run-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "32b6e4d9d29b57fe",
+      "claim_sha256": "32b6e4d9d29b57feb709186eafb045c4a992a50631dfbc11cd76d2c1184c3af3",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "tool-receipt-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "a742f0d6c7397354",
+      "claim_sha256": "a742f0d6c73973544856f4a5972e2de9ad8acc88d9014b37a90a0d2b6f61a2bf",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "non-promotion-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    }
+  ],
+  "checks": {
+    "seals_ok": true,
+    "thesis_ok": true,
+    "verdicts_rederive": true
+  },
+  "report": "C:\\dev\\public\\telos\\docs\\research\\dogfood\\crucible\\pass-0022-report.md",
+  "record": "C:\\dev\\public\\telos\\docs\\research\\dogfood\\crucible\\pass-0022-run.json",
+  "bundle": null,
+  "spec": null,
+  "review": null,
+  "verifier": {
+    "mode": "cleanroom",
+    "inputs": [],
+    "excluded": [
+      "worker context",
+      "reasoning trace",
+      "intermediate steps"
+    ],
+    "checkability": "If success cannot be evaluated from the original spec and the artifact, the spec is not checkable yet."
+  }
+}

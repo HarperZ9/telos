@@ -1,0 +1,263 @@
+RCSB PDB
+Deposit
+Deposit via OneDep
+Prepare Files via pdb_extract
+Validate Structures
+PDBx/mmCIF Dictionary Resources
+Other Deposition Resources
+Search
+Advanced Search
+Sequence Similarity Search
+3D Similarity Search
+Chemical Similarity Search
+Browse by Annotations
+New Entries
+Unreleased Entries
+PDB Statistics
+Visualize
+Mol* (MolStar)
+Sequence Annotations Viewer
+Genome View
+Analyze
+Pairwise Structure Alignment
+Symmetry Resources in the PDB
+Structure Quality
+Grouping Structures
+PDB Citation MeSH Network Explorer
+PDB Statistics
+EPPIC Biological Assemblies
+External Data and Resources
+Integrated Resources
+Additional Resources
+Download
+Coordinates and Experimental Data
+Sequences
+Ligands
+File Download Services
+Web APIs
+Learn
+Training Courses
+Guide to PDB Data
+Molecule of the Month
+Educational Resources
+Curricula
+Browse
+News
+SciArt Galleries
+Irving Geis
+David Goodsell
+About
+Contact Us
+About RCSB PDB
+Vision and Mission
+Citation, Usage, Privacy Policies, Logo
+News
+PDB History
+PDB50
+User Community
+Publications
+RCSB PDB Advisory Committee
+Team Members
+Service Status
+Careers
+COVID-19
+Help
+Contact us
+256,292
+Structures from the PDB archive
+1,062,058
+Computed Structure Models (CSM)
+Help Articles
+General Help
+Organization of 3D Structures in the Protein Data Bank
+Identifiers in PDB
+Computed Structure Models and RCSB.org
+Integrative Structures on RCSB.org
+Assessing the Quality of 3D Structures
+Data From External Resources Integrated Into RCSB PDB
+Ligand Structure Quality in PDB Structures
+Symmetry Resources in the PDB
+Electron Density Maps and Coefficient Files
+Structures Without Legacy PDB Format Files
+Deposition Resources
+Software Supporters
+Membrane Protein Resources
+Website FAQ
+Glossary
+LigandExpo Shutdown
+Search and Browse
+Overview: Search and Browse
+Basic Search
+Advanced Search
+Overview: Advanced Search
+Attribute Search
+Attribute Details
+Sequence Similarity Search
+Sequence Motif Search
+3D Similarity Search
+3D Motif Search
+Chemical Similarity Search
+Search Examples
+MyPDB
+Browse Options
+Overview: Browse
+ATC
+Biological Process
+CARD
+CATH
+Cellular Component
+Disease Ontology
+ECOD
+Enzyme Classification
+Genome Location
+MeSH
+Membrane Protein (OPM)
+Molecular Function
+Membrane Protein (mpstruc)
+Protein Symmetry
+SCOP-e
+SCOP2
+Source Organism
+Exploring a 3D Structure
+Overview
+Structure Summary Page
+Structure (3D Visualization)
+Annotations
+Experiment
+Sequence
+Genome
+Ligands
+Versions
+Grouping Structures
+Overview: Grouping Structures
+Sequence-based Clustering
+Grouping Search Results
+Group Summary Pages
+Explore Sequence Alignments in 3D
+3D Viewers
+Mol*
+Getting Started
+Maneuvering in Mol*
+Making Selections
+Navigating by Sequence
+Managing the Display
+Common Actions
+FAQs/Scenarios
+Mol* Cheat Sheet
+Support for immersive AR/VR
+Jmol
+NGL to Mol* UI Migration Guide
+Sequence Viewers
+Sequence Annotations Viewer
+Sequence Annotations in 3D
+Genome View
+Protein Sequence Alignment View
+Tools
+Pairwise Structure Alignment
+Programmatic Access
+File Download Services
+Web APIs Overview
+Open-Source Tools
+Batch Downloads with Shell Script
+Migrating from Legacy APIs
+Access to Legacy Theoretical Models
+Additional Resources
+3D Printing
+Databases and Knowledgebases
+Crystallography Software
+Electron Microscopy Software
+Modeling and Simulation Software
+File Readers
+NMR Software
+Molecular Graphics Software
+SARS-CoV-2 and COVID-19
+Sequence Analysis
+Structure Classification and Analysis
+Data Management Standards and Best Practices
+Structure Prediction
+Structure Validation and Quality
+Programmatic Access
+Web APIs Overview
+The Application Programming Interface or APIs provide programmatic access to the PDB archive. APIs that power the rcsb.org website are:
+Data API serves to retrieve data when you know the PDB identifier
+Search API serves to find out what identifiers match a certain search condition
+ModelServer API is a service for accessing subsets of macromolecular model data
+VolumeServer API is a service for accessing subsets of volumetric data
+Sequence Coordinates API serves alignments between structural and sequence databases and integrates protein positional features from multiple resources
+Alignment API provides a streamlined method for programmatically executing structure alignment calculations
+Stay up-to-date with API developments by viewing (or subscribing) to the RCSB PDB API announcements Google group.
+For details on our Python API client and how to integrate it into your workflow, learn more about rcsb-api.
+Data API
+All static data that is exposed in rcsb.org is available in the Data API. The schema follows the mmCIF dictionary, extended with annotations coming from external resources. The core PDB data is split up into core objects, one per level of the structural data hierarchy, with entity subdivided into polymeric and non-polymeric subschemas (differing from the mmCIF dictionary). These are some of the core objects:
+core_entry: data that relates to a PDB entry or Computed Structure Model (CSM). Identified by an entry_id, which can be an alphanumeric PDB-ID or a CSM-ID that starts with AF_ or MA_
+core_polymer_entity: data for each polymeric molecular entity in an entry (e.g., protein, DNA, and RNA). Identified by entry ID and entity ID separated by a _ character, e.g. 3PQR_1
+core_nonpolymer_entity: data for each non-polymeric small chemical entity in an entry (e.g., enzyme cofactors, ligands, ions, etc). Identified by entry ID and entity ID separated by a _ character
+core_branched_entity: data for branched molecules (e.g., oligosaccharides). Identified by entry ID and entity ID separated by a _ character
+core_assembly: data for each biological assembly in an entry. Identified by entry ID and assembly ID separated by a _ character
+core_polymer_entity_instance: an instance of a certain polymeric molecular entity, also known as chain. Identified by entry ID and asym ID separated by a _ character
+core_chem_comp: a chemical component. Identified by a unique alphanumeric code chem_comp_id
+Both internal additions to the mmCIF dictionary and external resources annotations are prefixed with rcsb_. In each core object, the rcsb_<core_object>_container_identifiers field holds the cardinal identifiers for the objects and any parent/child. Additionally every core object contains a single string identifier in field rcsb_id.
+The data is available via 2 different interfaces:
+REST API Full Reference
+The REST API permits the retrieval of all data for one core object at a time.
+GraphQL API (GraphiQL interface)
+The GraphQL interface offers more flexible data retrieval, essentially making it possible to grab any piece of data from any level of the hierarchy in a single query. To use it programmatically POST your GraphQL queries under the data.rcsb.org/graphql endpoint.
+All output from both REST and GraphQL interfaces is offered in JSON format.
+Data API Tutorial
+Search API
+The search API programmatically exposes all search functionality available at rcsb.org. It is possible to perform queries with arbitrary Boolean logic across all data available in the RCSB PDB data API via a convenient JSON-format query language. At the root level it is also possible to combine text-based searches (any text/numerical field in the RCSB PDB data API) with protein/nucleotide sequence search (mmseqs2 software) and Structure similarity searches (BioZernike software, described in Guzenko et al 2020). All output from the Search API is offered in JSON format.
+Search API Tutorial
+Search API Full Reference
+This Search API example shows how to find all PDB structures and CSMs for a given UniProtKB sequence
+ModelServer API
+The ModelServer is a service for accessing subsets of macromolecular model data. It delivers atomic coordinates together with annotations in the primary data files in a compressed BinaryCIF encoding (BCIF). Structure data can be served at different levels of granularity (e.g., assembly, polymer chain, ligand), and ligand data may also be delivered in popular chemical informatics formats (e.g., SDF, MOL, MOL2).
+ModelServer API Specification
+The specification of the BinaryCIF format can be found at: https://github.com/molstar/BinaryCIF.
+VolumeServer API
+The VolumeServer is a service for accessing subsets of volumetric data. It automatically downsamples the data depending on the volume of the requested region to reduce the bandwidth requirements and provide near-instant access to even the largest data sets.
+VolumeServer API Specification
+Both ModelServer and VolumeServer are part of Mol* (D. Sehnal, A.S. Rose, J. Kovca, S.K. Burley, S. Velankar (2018) Mol*: Towards a common library and tools for web molecular graphics MolVA/EuroVis Proceedings.doi:10.2312/molva.20181103).
+Sequence Coordinates API
+The Sequence Coordinates API provides alignments between structural and sequence databases and integrates protein positional features from multiple resources. Alignment data is available for NCBI RefSeq (including protein and genomic sequences), UniProt and PDB sequences. Protein positional features are integrated from UniProt, CATH, SCOPe and RCSB PDB.
+Sequence Coordinates API Tutorial
+Alignment API
+The Alignment API serves as a comprehensive platform for the seamless computation of structure alignments. Structure alignment focuses on making an optimal superposition of the 3D coordinates of biological macromolecules to establish a residue-residue correspondence between sequences of related structures. This API provides a streamlined method for programmatically executing structure alignment calculations.
+Alignment API Tutorial
+API Rate Limits
+The RCSB PDB APIs implement rate-limiting measures to ensure fair usage. While access to static files is not restricted, all RCSB PDB APIs have rate limits in place. We recommend starting with a handful of requests per second. If you exceed the limit, the service will respond with a 429 HTTP error code, indicating that you need to reduce your request rate as described below.
+If you encounter this error, you can retry your query after a short waiting period or add a waiting period after each request. The exponential backoff strategy, which gradually increases the time between retries, is a common way to find an acceptable request rate. Additionally, if you are using a public IP address that is shared with other users, such as certain universities or when using a VPN, you might encounter rate-limiting issues earlier due to shared resources.
+License
+RCSB PDB Web Services are available under the same terms and condition as the RCSB PDB usage policies
+Contact RCSB PDB with questions or suggestions for specific services.
+Please report any encountered broken links to info@rcsb.org
+Last updated: 4/10/2026
+About
+About Us
+Citing Us
+Publications
+Team
+Careers
+Usage & Privacy
+Support
+Contact Us
+Help
+Website FAQ
+Glossary
+Service Status
+RCSB PDB is hosted by
+RCSB PDB is a member of
+RCSB Partners
+Nucleic Acid Knowledgebase
+wwPDB Partners
+RCSB PDB
+PDBe
+PDBj
+BMRB
+EMDB
+RCSB PDB Core Operations are funded by
+the U.S. National Science Foundation (DBI-2321666),
+the US Department of Energy (DE-SC0019749),
+and the National Cancer Institute,
+National Institute of Allergy and Infectious Diseases,
+and National Institute of General Medical Sciences of the National Institutes of Health under grant R01GM157729.
+RCSB PDB uses resources of the National Energy Research Scientific Computing Center (NERSC), a Department of Energy User Facility.

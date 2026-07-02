@@ -1,0 +1,425 @@
+{
+  "ok": true,
+  "thesis": {
+    "id": "92958de6b132f310",
+    "title": "Dogfood Pass 0037 Theorem Statement Equivalence",
+    "registered_at": 1782916186.2954698,
+    "disposition": "fenced",
+    "seal": "92958de6b132f310a64c960e61a1ef11f76c3a2df208eafad8c05d7393f77e44",
+    "claims": [
+      {
+        "id": "dd9fec875684de10",
+        "sha256": "dd9fec875684de105337ede0895c4a0b1a40ee6ce2c0813b6347852d793093a0"
+      },
+      {
+        "id": "10f4a6160ae39673",
+        "sha256": "10f4a6160ae39673434f1aeb4cd7f0213c8f2edb235aaa3379a386894ad4edc8"
+      },
+      {
+        "id": "720ffa13087a6d99",
+        "sha256": "720ffa13087a6d99057a6c62b2c274f914167c94c3068d8173912f6d2df3636e"
+      },
+      {
+        "id": "e1a08b53f52d770a",
+        "sha256": "e1a08b53f52d770a252613d0384313ecb524747b2876f426c876b6f12df5e5fc"
+      },
+      {
+        "id": "23df48e1ae867cbf",
+        "sha256": "23df48e1ae867cbfb214d7736156adf689fb4585941c95ff8e98e63d9daf47da"
+      },
+      {
+        "id": "d8a666204106964c",
+        "sha256": "d8a666204106964c3ddc565285ccd591415b85293f13f8fc7a2214b39425ccc1"
+      },
+      {
+        "id": "64c9a6bef8f6ffda",
+        "sha256": "64c9a6bef8f6ffda692945c3fa8d70080c39b86b707e60a6c710bd8b125a12b1"
+      },
+      {
+        "id": "24baedaac1ac1f78",
+        "sha256": "24baedaac1ac1f7865a530ed85ead3f071cf30c743253b12ba149741bd3abf47"
+      }
+    ]
+  },
+  "refutations": [
+    {
+      "claim_id": "dd9fec875684de10",
+      "claim_sha256": "dd9fec875684de105337ede0895c4a0b1a40ee6ce2c0813b6347852d793093a0",
+      "challenge": "test the stated falsification: schemas/theorem-statement-equivalence-pass-0037.json is missing, has a different schema, status, theorem_count, statement_check_count, SHA-256, or seal",
+      "measurable": "schemas/theorem-statement-equivalence-pass-0037.json is missing, has a different schema, status, theorem_count, statement_check_count, SHA-256, or seal",
+      "source": "null"
+    },
+    {
+      "claim_id": "10f4a6160ae39673",
+      "claim_sha256": "10f4a6160ae39673434f1aeb4cd7f0213c8f2edb235aaa3379a386894ad4edc8",
+      "challenge": "test the stated falsification: the statement-equivalence fixture is missing, has a different SHA-256 or seal, or is not linked from the schema",
+      "measurable": "the statement-equivalence fixture is missing, has a different SHA-256 or seal, or is not linked from the schema",
+      "source": "null"
+    },
+    {
+      "claim_id": "720ffa13087a6d99",
+      "claim_sha256": "720ffa13087a6d99057a6c62b2c274f914167c94c3068d8173912f6d2df3636e",
+      "challenge": "test the stated falsification: the source-ref integrity binding is missing, has a different SHA-256 or seal, or does not report SOURCE_REF_INTEGRITY_MATCH",
+      "measurable": "the source-ref integrity binding is missing, has a different SHA-256 or seal, or does not report SOURCE_REF_INTEGRITY_MATCH",
+      "source": "null"
+    },
+    {
+      "claim_id": "e1a08b53f52d770a",
+      "claim_sha256": "e1a08b53f52d770a252613d0384313ecb524747b2876f426c876b6f12df5e5fc",
+      "challenge": "test the stated falsification: any of the ten statement checks has frozen_solution_status, frozen_proof_status, discharge_gate_status, or status other than MATCH",
+      "measurable": "any of the ten statement checks has frozen_solution_status, frozen_proof_status, discharge_gate_status, or status other than MATCH",
+      "source": "null"
+    },
+    {
+      "claim_id": "23df48e1ae867cbf",
+      "claim_sha256": "23df48e1ae867cbfb214d7736156adf689fb4585941c95ff8e98e63d9daf47da",
+      "challenge": "test the stated falsification: any statement check omits raw signature text, canonical signature, signature SHA-256, or signature span for frozen, solution, or proof declarations",
+      "measurable": "any statement check omits raw signature text, canonical signature, signature SHA-256, or signature span for frozen, solution, or proof declarations",
+      "source": "null"
+    },
+    {
+      "claim_id": "d8a666204106964c",
+      "claim_sha256": "d8a666204106964c3ddc565285ccd591415b85293f13f8fc7a2214b39425ccc1",
+      "challenge": "test the stated falsification: the pass 0037 validator result is missing, reports DRIFT, or has different theorem_count or statement_check_count",
+      "measurable": "the pass 0037 validator result is missing, reports DRIFT, or has different theorem_count or statement_check_count",
+      "source": "null"
+    },
+    {
+      "claim_id": "64c9a6bef8f6ffda",
+      "claim_sha256": "64c9a6bef8f6ffda692945c3fa8d70080c39b86b707e60a6c710bd8b125a12b1",
+      "challenge": "test the stated falsification: packet 047 or the pass 0037 steelman is missing or has a different SHA-256",
+      "measurable": "packet 047 or the pass 0037 steelman is missing or has a different SHA-256",
+      "source": "null"
+    },
+    {
+      "claim_id": "24baedaac1ac1f78",
+      "claim_sha256": "24baedaac1ac1f7865a530ed85ead3f071cf30c743253b12ba149741bd3abf47",
+      "challenge": "test the stated falsification: pass 0037 artifacts claim Lean replay, semantic proof review, axiom-free proof, validation of every public pipeline-math claim, or a promoted natural law",
+      "measurable": "pass 0037 artifacts claim Lean replay, semantic proof review, axiom-free proof, validation of every public pipeline-math claim, or a promoted natural law",
+      "source": "null"
+    }
+  ],
+  "assessment": {
+    "started_at": 1782916186.301863,
+    "thesis_id": "92958de6b132f310",
+    "thesis_seal": "92958de6b132f310a64c960e61a1ef11f76c3a2df208eafad8c05d7393f77e44",
+    "claims": 8,
+    "match": 8,
+    "drift": 0,
+    "unverifiable": 0,
+    "verdict_seal": "75c464d6fd99346e705592d5db39d55f0ef6ac76d568a06be73a39b5042318da",
+    "measurement_seal": "0ad6f4d764f03354ef990a7a82cf87d7fb34f3725a74a84a6dca2b4fb7e3640b",
+    "disposition": "fenced",
+    "stored": null,
+    "verdicts": [
+      {
+        "claim_id": "dd9fec875684de10",
+        "claim_sha256": "dd9fec875684de105337ede0895c4a0b1a40ee6ce2c0813b6347852d793093a0",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "statement-schema-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "10f4a6160ae39673",
+        "claim_sha256": "10f4a6160ae39673434f1aeb4cd7f0213c8f2edb235aaa3379a386894ad4edc8",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "fixture-binding-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "720ffa13087a6d99",
+        "claim_sha256": "720ffa13087a6d99057a6c62b2c274f914167c94c3068d8173912f6d2df3636e",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "source-binding-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "e1a08b53f52d770a",
+        "claim_sha256": "e1a08b53f52d770a252613d0384313ecb524747b2876f426c876b6f12df5e5fc",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "statement-row-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "23df48e1ae867cbf",
+        "claim_sha256": "23df48e1ae867cbfb214d7736156adf689fb4585941c95ff8e98e63d9daf47da",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "signature-binding-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "d8a666204106964c",
+        "claim_sha256": "d8a666204106964c3ddc565285ccd591415b85293f13f8fc7a2214b39425ccc1",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "validator-result-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "64c9a6bef8f6ffda",
+        "claim_sha256": "64c9a6bef8f6ffda692945c3fa8d70080c39b86b707e60a6c710bd8b125a12b1",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "packet-presence-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "24baedaac1ac1f78",
+        "claim_sha256": "24baedaac1ac1f7865a530ed85ead3f071cf30c743253b12ba149741bd3abf47",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "non-promotion-boundary-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      }
+    ],
+    "measurements": [
+      {
+        "claim_id": "dd9fec875684de10",
+        "claim_sha256": "dd9fec875684de105337ede0895c4a0b1a40ee6ce2c0813b6347852d793093a0",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "statement-schema-review",
+        "measured_at": 1782916186.3016436,
+        "evidence": [
+          "schema=TheoremStatementEquivalenceSet/v1",
+          "status=STATEMENT_EQUIVALENCE_MATCH",
+          "theorem_count=10",
+          "statement_check_count=10",
+          "sha256=a0928a953f609aa5ea96aecc79e355a0d5aaab949761d4efa4b1b704210986bf",
+          "seal=78ede605591460b7a2aa8fee7e2ebca0f56688575e5c9ce7ab919f2948a0934f"
+        ]
+      },
+      {
+        "claim_id": "10f4a6160ae39673",
+        "claim_sha256": "10f4a6160ae39673434f1aeb4cd7f0213c8f2edb235aaa3379a386894ad4edc8",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "fixture-binding-review",
+        "measured_at": 1782916186.3016493,
+        "evidence": [
+          "fixture sha256=87070b9d57571fc04f6d2f491705c32c0e736ba6c5e9158087bfb80990087802",
+          "fixture seal=4dc44e06e549b964f1030778c53c9a814ccf5fdd779eea87495489e9eb779b4c"
+        ]
+      },
+      {
+        "claim_id": "720ffa13087a6d99",
+        "claim_sha256": "720ffa13087a6d99057a6c62b2c274f914167c94c3068d8173912f6d2df3636e",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "source-binding-review",
+        "measured_at": 1782916186.3016515,
+        "evidence": [
+          "source_ref_integrity_sha256=74d89981ae7598f7a7381f6fdbb1196cf9be97ca854688a49c4e3c4bce9f6f6f",
+          "source_ref_integrity_seal=68382866e7e78895eb3d7fd0d613fcc8b17afc30398b7823cb198702262da2fb",
+          "source_status=SOURCE_REF_INTEGRITY_MATCH"
+        ]
+      },
+      {
+        "claim_id": "e1a08b53f52d770a",
+        "claim_sha256": "e1a08b53f52d770a252613d0384313ecb524747b2876f426c876b6f12df5e5fc",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "statement-row-review",
+        "measured_at": 1782916186.301653,
+        "evidence": [
+          "statement_check_count=10",
+          "all_frozen_solution_match=true",
+          "all_frozen_proof_match=true",
+          "all_discharge_gates_match=true",
+          "all_statement_checks_match=true"
+        ]
+      },
+      {
+        "claim_id": "23df48e1ae867cbf",
+        "claim_sha256": "23df48e1ae867cbfb214d7736156adf689fb4585941c95ff8e98e63d9daf47da",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "signature-binding-review",
+        "measured_at": 1782916186.3016548,
+        "evidence": [
+          "all rows include frozen_signature.signature_text/canonical_signature/signature_sha256/signature_span",
+          "all rows include solution_signature.signature_text/canonical_signature/signature_sha256/signature_span",
+          "all rows include proof_signature.signature_text/canonical_signature/signature_sha256/signature_span"
+        ]
+      },
+      {
+        "claim_id": "d8a666204106964c",
+        "claim_sha256": "d8a666204106964c3ddc565285ccd591415b85293f13f8fc7a2214b39425ccc1",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "validator-result-review",
+        "measured_at": 1782916186.3016562,
+        "evidence": [
+          "schemas/pass-0037-theorem-statement-equivalence-validator-result.json status=MATCH",
+          "theorem_count=10",
+          "statement_check_count=10"
+        ]
+      },
+      {
+        "claim_id": "64c9a6bef8f6ffda",
+        "claim_sha256": "64c9a6bef8f6ffda692945c3fa8d70080c39b86b707e60a6c710bd8b125a12b1",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "packet-presence-review",
+        "measured_at": 1782916186.301658,
+        "evidence": [
+          "packets/047-theorem-statement-equivalence.md sha256=0f1138781897eee84b486512c9399e9ba3d4ab34e3d079d99cd2a98a0fcebb7b",
+          "adversarial/pass-0037-statement-equivalence-steelman.md sha256=28a350fb52ea8e292c2e41a7e750212cba38132c5ec9a7f47bea5989260f5917"
+        ]
+      },
+      {
+        "claim_id": "24baedaac1ac1f78",
+        "claim_sha256": "24baedaac1ac1f7865a530ed85ead3f071cf30c743253b12ba149741bd3abf47",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "non-promotion-boundary-review",
+        "measured_at": 1782916186.3016593,
+        "evidence": [
+          "non_promotion_statement present",
+          "current_promoted_natural_laws=[]",
+          "steelman states this is text normalization, not Lean elaboration"
+        ]
+      }
+    ],
+    "seal": "ed6d3c352124d8fe00e2ea579655134dea5704b1a3e11f04445f2b77fe502861"
+  },
+  "verdicts": [
+    {
+      "claim_id": "dd9fec875684de10",
+      "claim_sha256": "dd9fec875684de105337ede0895c4a0b1a40ee6ce2c0813b6347852d793093a0",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "statement-schema-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "10f4a6160ae39673",
+      "claim_sha256": "10f4a6160ae39673434f1aeb4cd7f0213c8f2edb235aaa3379a386894ad4edc8",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "fixture-binding-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "720ffa13087a6d99",
+      "claim_sha256": "720ffa13087a6d99057a6c62b2c274f914167c94c3068d8173912f6d2df3636e",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "source-binding-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "e1a08b53f52d770a",
+      "claim_sha256": "e1a08b53f52d770a252613d0384313ecb524747b2876f426c876b6f12df5e5fc",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "statement-row-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "23df48e1ae867cbf",
+      "claim_sha256": "23df48e1ae867cbfb214d7736156adf689fb4585941c95ff8e98e63d9daf47da",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "signature-binding-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "d8a666204106964c",
+      "claim_sha256": "d8a666204106964c3ddc565285ccd591415b85293f13f8fc7a2214b39425ccc1",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "validator-result-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "64c9a6bef8f6ffda",
+      "claim_sha256": "64c9a6bef8f6ffda692945c3fa8d70080c39b86b707e60a6c710bd8b125a12b1",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "packet-presence-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "24baedaac1ac1f78",
+      "claim_sha256": "24baedaac1ac1f7865a530ed85ead3f071cf30c743253b12ba149741bd3abf47",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "non-promotion-boundary-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    }
+  ],
+  "checks": {
+    "seals_ok": true,
+    "thesis_ok": true,
+    "verdicts_rederive": true
+  },
+  "report": "C:\\dev\\public\\telos\\docs\\research\\dogfood\\crucible\\pass-0037-report.md",
+  "record": "C:\\dev\\public\\telos\\docs\\research\\dogfood\\crucible\\pass-0037-run.json",
+  "bundle": null,
+  "spec": null,
+  "review": null,
+  "verifier": {
+    "mode": "cleanroom",
+    "inputs": [],
+    "excluded": [
+      "worker context",
+      "reasoning trace",
+      "intermediate steps"
+    ],
+    "checkability": "If success cannot be evaluated from the original spec and the artifact, the spec is not checkable yet."
+  }
+}

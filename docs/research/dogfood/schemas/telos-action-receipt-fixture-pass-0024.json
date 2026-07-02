@@ -1,0 +1,649 @@
+{
+  "action_chain": {
+    "action_id": "act_dogfood_0024_001",
+    "action_intent_id": "intent_dogfood_0024_001",
+    "chain_head_hash": "0617602eed957e0bc6c2e4a21548528f6defc542c4468433bde85df76cb51b3a",
+    "event_count": 4,
+    "event_types": [
+      "action_proposed",
+      "action_admitted",
+      "execution_completed",
+      "verification_recorded"
+    ],
+    "events": [
+      {
+        "action": {
+          "args_hash": "sha256:99049484d97257409507b9443db8a5e656cbec000aeeadefb161f1e8a92d4476",
+          "destination_class": "local_dogfood_artifact",
+          "kind": "file_write",
+          "risk_class": "local_research_fixture_write"
+        },
+        "action_id": "act_dogfood_0024_001",
+        "action_intent_id": "intent_dogfood_0024_001",
+        "actor": {
+          "agent_id": "agent:codex.dogfood-research",
+          "auth_scopes_ref": "scope-ref:local-filesystem-dogfood",
+          "external_account_ref": "account:none",
+          "mcp_connector_snapshot": "sha256:b2d08f56f2f8247c6661f81f25d5e84f916218ef132664f85365ce37a7ef5c5b",
+          "tool_id": "local:python"
+        },
+        "agent": {
+          "principal": "agent:codex.dogfood-research"
+        },
+        "authority": {
+          "capability_lease_ref": "capability:local-artifact-write/dogfood-research",
+          "credential_ref": "credential-ref:none",
+          "operator_goal_ref": "goal:019f1c75-ab64-79b0-92ba-63ecd9354d2e",
+          "policy_ref": "policy:dogfood-local-proof-fixture-v1"
+        },
+        "authority_ref": "goal:019f1c75-ab64-79b0-92ba-63ecd9354d2e",
+        "compensation_ref": null,
+        "component": {
+          "config_hash": "sha256:024c65b11bbbb828255759fa6cb2bcf65e271d966ca83941a10aeccf1043ef15",
+          "name": "telos.action.receipt.fixture",
+          "version": "pass-0024"
+        },
+        "created_at": "2026-07-01T12:00:00Z",
+        "event_hash": "2e48696173973a47b9dc6d7a15371b50a6d6121a942846ee609c3afae3fb2a8b",
+        "event_id": "evt_dogfood_0024_001_proposed",
+        "event_type": "action_proposed",
+        "evidence_ref": "artifact:schemas/otel-recording-span-venv-pass-0023.json",
+        "execution": {
+          "external_request_id": "local:dogfood-pass-0024-action-receipt-fixture",
+          "idempotency_key": "idem_dogfood_0024_001",
+          "redacted_after_ref": "artifact:schemas/telos-action-receipt-fixture-pass-0024.json",
+          "redacted_before_ref": "artifact:local-dogfood/pass-0023-state-redacted",
+          "result_hash": "sha256:99049484d97257409507b9443db8a5e656cbec000aeeadefb161f1e8a92d4476",
+          "result_ref": "artifact:schemas/telos-action-receipt-fixture-pass-0024.json",
+          "terminal_status": "completed"
+        },
+        "execution_ref": "local-command:tools/probe_telos_action_receipt_fixture.py",
+        "idempotency_key": "idem_dogfood_0024_001",
+        "input_materials": [
+          {
+            "digest": "sha256:fc7beb76d616fd7823f0fe9a9cc879c92d00e5d7963a1e9228be89ae60486b1d",
+            "ref": "schemas/otel-recording-span-venv-pass-0023.json",
+            "role": "upstream_span_receipt"
+          },
+          {
+            "digest": "sha256:cf08afa51e45e70c6f9b66f9b43f976400a3d004f71e392ebe43e78ae797eddc",
+            "ref": "schemas/pass-0023-otel-recording-span-venv-validator-result.json",
+            "role": "upstream_validator_receipt"
+          },
+          {
+            "digest": "sha256:945054a1aed15ecffcfd46427b97dd268056a05d08997906a99faab29eed5b05",
+            "ref": "packets/033-otel-recording-span-venv.md",
+            "role": "upstream_human_packet"
+          },
+          {
+            "digest": "sha256:b2d08f56f2f8247c6661f81f25d5e84f916218ef132664f85365ce37a7ef5c5b",
+            "ref": "mcp:telos.action.receipt/project-telos.action-receipt-v1-excerpt",
+            "role": "telos_contract_excerpt"
+          }
+        ],
+        "intent_ref": "artifact:packets/033-otel-recording-span-venv.md#next-push",
+        "persistence": {
+          "append_only": true,
+          "chain_hash": "27303a8415285b76b0d1043bfe4353dfe14822b6d62d9ef9b42b94b6a9815695",
+          "previous_chain_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+          "storage_ref": "artifact:schemas/telos-action-receipt-fixture-pass-0024.json",
+          "write_hash": "sha256:2e48696173973a47b9dc6d7a15371b50a6d6121a942846ee609c3afae3fb2a8b"
+        },
+        "policy": {
+          "decision": "allow",
+          "ref": "policy:dogfood-local-proof-fixture-v1"
+        },
+        "receipts": [
+          {
+            "hash": "sha256:b1f3b6cd1c5b81d1784b29f5f9e11dd9ab1c2849f7510de94926dca07d5e2a25",
+            "kind": "upstream_span_fixture"
+          },
+          {
+            "hash": "sha256:f2e9f33d12e261457731f6eedbe62c3c6d04d574c2c8274870da4eee0c2c2fc0",
+            "kind": "upstream_exporter_sink"
+          },
+          {
+            "hash": "sha256:9d60ed2bf1c7b6a635f9c462bb7b68bc237fed3dd57f0d954ea043389b8871ee",
+            "kind": "event_stage"
+          }
+        ],
+        "result": {
+          "output_ref": "artifact:schemas/telos-action-receipt-fixture-pass-0024.json",
+          "state": "proposed",
+          "stop_reason": "completed"
+        },
+        "retry": {
+          "attempt": 1,
+          "max_attempts": 1
+        },
+        "review_ref": "validator:tools/validate_pass_0024_telos_action_receipt_fixture.py",
+        "side_effect": {
+          "class": "write",
+          "reversible": true
+        },
+        "trace": {
+          "exporter_sink_hash": "f2e9f33d12e261457731f6eedbe62c3c6d04d574c2c8274870da4eee0c2c2fc0",
+          "receipt_is_trace_span": false,
+          "session_ref": "session:telos-dogfood-pass-0024",
+          "span_id_hex": "1424d4ca9a6c5b58",
+          "span_ref": "otel:trace/aaa76491660d7a56086f69d1be94debe/span/1424d4ca9a6c5b58",
+          "trace_id_hex": "aaa76491660d7a56086f69d1be94debe"
+        },
+        "verification": {
+          "ref": "validator:pass-0024-telos-action-receipt-fixture",
+          "verdict": "MATCH"
+        }
+      },
+      {
+        "action": {
+          "args_hash": "sha256:99049484d97257409507b9443db8a5e656cbec000aeeadefb161f1e8a92d4476",
+          "destination_class": "local_dogfood_artifact",
+          "kind": "file_write",
+          "risk_class": "local_research_fixture_write"
+        },
+        "action_id": "act_dogfood_0024_001",
+        "action_intent_id": "intent_dogfood_0024_001",
+        "actor": {
+          "agent_id": "agent:codex.dogfood-research",
+          "auth_scopes_ref": "scope-ref:local-filesystem-dogfood",
+          "external_account_ref": "account:none",
+          "mcp_connector_snapshot": "sha256:b2d08f56f2f8247c6661f81f25d5e84f916218ef132664f85365ce37a7ef5c5b",
+          "tool_id": "local:python"
+        },
+        "agent": {
+          "principal": "agent:codex.dogfood-research"
+        },
+        "authority": {
+          "capability_lease_ref": "capability:local-artifact-write/dogfood-research",
+          "credential_ref": "credential-ref:none",
+          "operator_goal_ref": "goal:019f1c75-ab64-79b0-92ba-63ecd9354d2e",
+          "policy_ref": "policy:dogfood-local-proof-fixture-v1"
+        },
+        "authority_ref": "goal:019f1c75-ab64-79b0-92ba-63ecd9354d2e",
+        "compensation_ref": null,
+        "component": {
+          "config_hash": "sha256:024c65b11bbbb828255759fa6cb2bcf65e271d966ca83941a10aeccf1043ef15",
+          "name": "telos.action.receipt.fixture",
+          "version": "pass-0024"
+        },
+        "created_at": "2026-07-01T12:01:00Z",
+        "event_hash": "dfd5cbd9dfbec59ee45dff7b9622779b5ad5c094e709d457f4075e9af8be2fe6",
+        "event_id": "evt_dogfood_0024_002_admitted",
+        "event_type": "action_admitted",
+        "evidence_ref": "artifact:schemas/otel-recording-span-venv-pass-0023.json",
+        "execution": {
+          "external_request_id": "local:dogfood-pass-0024-action-receipt-fixture",
+          "idempotency_key": "idem_dogfood_0024_001",
+          "redacted_after_ref": "artifact:schemas/telos-action-receipt-fixture-pass-0024.json",
+          "redacted_before_ref": "artifact:local-dogfood/pass-0023-state-redacted",
+          "result_hash": "sha256:99049484d97257409507b9443db8a5e656cbec000aeeadefb161f1e8a92d4476",
+          "result_ref": "artifact:schemas/telos-action-receipt-fixture-pass-0024.json",
+          "terminal_status": "completed"
+        },
+        "execution_ref": "local-command:tools/probe_telos_action_receipt_fixture.py",
+        "idempotency_key": "idem_dogfood_0024_001",
+        "input_materials": [
+          {
+            "digest": "sha256:fc7beb76d616fd7823f0fe9a9cc879c92d00e5d7963a1e9228be89ae60486b1d",
+            "ref": "schemas/otel-recording-span-venv-pass-0023.json",
+            "role": "upstream_span_receipt"
+          },
+          {
+            "digest": "sha256:cf08afa51e45e70c6f9b66f9b43f976400a3d004f71e392ebe43e78ae797eddc",
+            "ref": "schemas/pass-0023-otel-recording-span-venv-validator-result.json",
+            "role": "upstream_validator_receipt"
+          },
+          {
+            "digest": "sha256:945054a1aed15ecffcfd46427b97dd268056a05d08997906a99faab29eed5b05",
+            "ref": "packets/033-otel-recording-span-venv.md",
+            "role": "upstream_human_packet"
+          },
+          {
+            "digest": "sha256:b2d08f56f2f8247c6661f81f25d5e84f916218ef132664f85365ce37a7ef5c5b",
+            "ref": "mcp:telos.action.receipt/project-telos.action-receipt-v1-excerpt",
+            "role": "telos_contract_excerpt"
+          }
+        ],
+        "intent_ref": "artifact:packets/033-otel-recording-span-venv.md#next-push",
+        "persistence": {
+          "append_only": true,
+          "chain_hash": "ff5eb422be9041a22d153d1149f521439975cd7ed45eeef698dbf6e65859658f",
+          "previous_chain_hash": "27303a8415285b76b0d1043bfe4353dfe14822b6d62d9ef9b42b94b6a9815695",
+          "storage_ref": "artifact:schemas/telos-action-receipt-fixture-pass-0024.json",
+          "write_hash": "sha256:dfd5cbd9dfbec59ee45dff7b9622779b5ad5c094e709d457f4075e9af8be2fe6"
+        },
+        "policy": {
+          "decision": "allow",
+          "ref": "policy:dogfood-local-proof-fixture-v1"
+        },
+        "receipts": [
+          {
+            "hash": "sha256:b1f3b6cd1c5b81d1784b29f5f9e11dd9ab1c2849f7510de94926dca07d5e2a25",
+            "kind": "upstream_span_fixture"
+          },
+          {
+            "hash": "sha256:f2e9f33d12e261457731f6eedbe62c3c6d04d574c2c8274870da4eee0c2c2fc0",
+            "kind": "upstream_exporter_sink"
+          },
+          {
+            "hash": "sha256:90f6684a1fcea387ba34874e58ca90ec49a3dd6bfe9d1827b792824ab552fd21",
+            "kind": "event_stage"
+          }
+        ],
+        "result": {
+          "output_ref": "artifact:schemas/telos-action-receipt-fixture-pass-0024.json",
+          "state": "admitted",
+          "stop_reason": "completed"
+        },
+        "retry": {
+          "attempt": 1,
+          "max_attempts": 1
+        },
+        "review_ref": "validator:tools/validate_pass_0024_telos_action_receipt_fixture.py",
+        "side_effect": {
+          "class": "write",
+          "reversible": true
+        },
+        "trace": {
+          "exporter_sink_hash": "f2e9f33d12e261457731f6eedbe62c3c6d04d574c2c8274870da4eee0c2c2fc0",
+          "receipt_is_trace_span": false,
+          "session_ref": "session:telos-dogfood-pass-0024",
+          "span_id_hex": "1424d4ca9a6c5b58",
+          "span_ref": "otel:trace/aaa76491660d7a56086f69d1be94debe/span/1424d4ca9a6c5b58",
+          "trace_id_hex": "aaa76491660d7a56086f69d1be94debe"
+        },
+        "verification": {
+          "ref": "validator:pass-0024-telos-action-receipt-fixture",
+          "verdict": "MATCH"
+        }
+      },
+      {
+        "action": {
+          "args_hash": "sha256:99049484d97257409507b9443db8a5e656cbec000aeeadefb161f1e8a92d4476",
+          "destination_class": "local_dogfood_artifact",
+          "kind": "file_write",
+          "risk_class": "local_research_fixture_write"
+        },
+        "action_id": "act_dogfood_0024_001",
+        "action_intent_id": "intent_dogfood_0024_001",
+        "actor": {
+          "agent_id": "agent:codex.dogfood-research",
+          "auth_scopes_ref": "scope-ref:local-filesystem-dogfood",
+          "external_account_ref": "account:none",
+          "mcp_connector_snapshot": "sha256:b2d08f56f2f8247c6661f81f25d5e84f916218ef132664f85365ce37a7ef5c5b",
+          "tool_id": "local:python"
+        },
+        "agent": {
+          "principal": "agent:codex.dogfood-research"
+        },
+        "authority": {
+          "capability_lease_ref": "capability:local-artifact-write/dogfood-research",
+          "credential_ref": "credential-ref:none",
+          "operator_goal_ref": "goal:019f1c75-ab64-79b0-92ba-63ecd9354d2e",
+          "policy_ref": "policy:dogfood-local-proof-fixture-v1"
+        },
+        "authority_ref": "goal:019f1c75-ab64-79b0-92ba-63ecd9354d2e",
+        "compensation_ref": null,
+        "component": {
+          "config_hash": "sha256:024c65b11bbbb828255759fa6cb2bcf65e271d966ca83941a10aeccf1043ef15",
+          "name": "telos.action.receipt.fixture",
+          "version": "pass-0024"
+        },
+        "created_at": "2026-07-01T12:02:00Z",
+        "event_hash": "59121d18332e9171505259687e4f52d9a6eef576ad6b913093d34d208203e5e3",
+        "event_id": "evt_dogfood_0024_003_execution_completed",
+        "event_type": "execution_completed",
+        "evidence_ref": "artifact:schemas/otel-recording-span-venv-pass-0023.json",
+        "execution": {
+          "external_request_id": "local:dogfood-pass-0024-action-receipt-fixture",
+          "idempotency_key": "idem_dogfood_0024_001",
+          "redacted_after_ref": "artifact:schemas/telos-action-receipt-fixture-pass-0024.json",
+          "redacted_before_ref": "artifact:local-dogfood/pass-0023-state-redacted",
+          "result_hash": "sha256:99049484d97257409507b9443db8a5e656cbec000aeeadefb161f1e8a92d4476",
+          "result_ref": "artifact:schemas/telos-action-receipt-fixture-pass-0024.json",
+          "terminal_status": "completed"
+        },
+        "execution_ref": "local-command:tools/probe_telos_action_receipt_fixture.py",
+        "idempotency_key": "idem_dogfood_0024_001",
+        "input_materials": [
+          {
+            "digest": "sha256:fc7beb76d616fd7823f0fe9a9cc879c92d00e5d7963a1e9228be89ae60486b1d",
+            "ref": "schemas/otel-recording-span-venv-pass-0023.json",
+            "role": "upstream_span_receipt"
+          },
+          {
+            "digest": "sha256:cf08afa51e45e70c6f9b66f9b43f976400a3d004f71e392ebe43e78ae797eddc",
+            "ref": "schemas/pass-0023-otel-recording-span-venv-validator-result.json",
+            "role": "upstream_validator_receipt"
+          },
+          {
+            "digest": "sha256:945054a1aed15ecffcfd46427b97dd268056a05d08997906a99faab29eed5b05",
+            "ref": "packets/033-otel-recording-span-venv.md",
+            "role": "upstream_human_packet"
+          },
+          {
+            "digest": "sha256:b2d08f56f2f8247c6661f81f25d5e84f916218ef132664f85365ce37a7ef5c5b",
+            "ref": "mcp:telos.action.receipt/project-telos.action-receipt-v1-excerpt",
+            "role": "telos_contract_excerpt"
+          }
+        ],
+        "intent_ref": "artifact:packets/033-otel-recording-span-venv.md#next-push",
+        "persistence": {
+          "append_only": true,
+          "chain_hash": "fd192c3afc6025757309705b498db7f92b8c60c340ff4036a4fca2bf6a636253",
+          "previous_chain_hash": "ff5eb422be9041a22d153d1149f521439975cd7ed45eeef698dbf6e65859658f",
+          "storage_ref": "artifact:schemas/telos-action-receipt-fixture-pass-0024.json",
+          "write_hash": "sha256:59121d18332e9171505259687e4f52d9a6eef576ad6b913093d34d208203e5e3"
+        },
+        "policy": {
+          "decision": "allow",
+          "ref": "policy:dogfood-local-proof-fixture-v1"
+        },
+        "receipts": [
+          {
+            "hash": "sha256:b1f3b6cd1c5b81d1784b29f5f9e11dd9ab1c2849f7510de94926dca07d5e2a25",
+            "kind": "upstream_span_fixture"
+          },
+          {
+            "hash": "sha256:f2e9f33d12e261457731f6eedbe62c3c6d04d574c2c8274870da4eee0c2c2fc0",
+            "kind": "upstream_exporter_sink"
+          },
+          {
+            "hash": "sha256:febc124ae1ae0e351b8b3d544eb180635013d10954ceae7402b688ad23a90f41",
+            "kind": "event_stage"
+          }
+        ],
+        "result": {
+          "output_ref": "artifact:schemas/telos-action-receipt-fixture-pass-0024.json",
+          "state": "completed",
+          "stop_reason": "completed"
+        },
+        "retry": {
+          "attempt": 1,
+          "max_attempts": 1
+        },
+        "review_ref": "validator:tools/validate_pass_0024_telos_action_receipt_fixture.py",
+        "side_effect": {
+          "class": "write",
+          "reversible": true
+        },
+        "trace": {
+          "exporter_sink_hash": "f2e9f33d12e261457731f6eedbe62c3c6d04d574c2c8274870da4eee0c2c2fc0",
+          "receipt_is_trace_span": false,
+          "session_ref": "session:telos-dogfood-pass-0024",
+          "span_id_hex": "1424d4ca9a6c5b58",
+          "span_ref": "otel:trace/aaa76491660d7a56086f69d1be94debe/span/1424d4ca9a6c5b58",
+          "trace_id_hex": "aaa76491660d7a56086f69d1be94debe"
+        },
+        "verification": {
+          "ref": "validator:pass-0024-telos-action-receipt-fixture",
+          "verdict": "MATCH"
+        }
+      },
+      {
+        "action": {
+          "args_hash": "sha256:99049484d97257409507b9443db8a5e656cbec000aeeadefb161f1e8a92d4476",
+          "destination_class": "local_dogfood_artifact",
+          "kind": "file_write",
+          "risk_class": "local_research_fixture_write"
+        },
+        "action_id": "act_dogfood_0024_001",
+        "action_intent_id": "intent_dogfood_0024_001",
+        "actor": {
+          "agent_id": "agent:codex.dogfood-research",
+          "auth_scopes_ref": "scope-ref:local-filesystem-dogfood",
+          "external_account_ref": "account:none",
+          "mcp_connector_snapshot": "sha256:b2d08f56f2f8247c6661f81f25d5e84f916218ef132664f85365ce37a7ef5c5b",
+          "tool_id": "local:python"
+        },
+        "agent": {
+          "principal": "agent:codex.dogfood-research"
+        },
+        "authority": {
+          "capability_lease_ref": "capability:local-artifact-write/dogfood-research",
+          "credential_ref": "credential-ref:none",
+          "operator_goal_ref": "goal:019f1c75-ab64-79b0-92ba-63ecd9354d2e",
+          "policy_ref": "policy:dogfood-local-proof-fixture-v1"
+        },
+        "authority_ref": "goal:019f1c75-ab64-79b0-92ba-63ecd9354d2e",
+        "compensation_ref": null,
+        "component": {
+          "config_hash": "sha256:024c65b11bbbb828255759fa6cb2bcf65e271d966ca83941a10aeccf1043ef15",
+          "name": "telos.action.receipt.fixture",
+          "version": "pass-0024"
+        },
+        "created_at": "2026-07-01T12:03:00Z",
+        "event_hash": "e499b57cd42f808bd9859221914719737c8ea0111d918314df24d02803f938bf",
+        "event_id": "evt_dogfood_0024_004_verification_recorded",
+        "event_type": "verification_recorded",
+        "evidence_ref": "artifact:schemas/otel-recording-span-venv-pass-0023.json",
+        "execution": {
+          "external_request_id": "local:dogfood-pass-0024-action-receipt-fixture",
+          "idempotency_key": "idem_dogfood_0024_001",
+          "redacted_after_ref": "artifact:schemas/telos-action-receipt-fixture-pass-0024.json",
+          "redacted_before_ref": "artifact:local-dogfood/pass-0023-state-redacted",
+          "result_hash": "sha256:99049484d97257409507b9443db8a5e656cbec000aeeadefb161f1e8a92d4476",
+          "result_ref": "artifact:schemas/telos-action-receipt-fixture-pass-0024.json",
+          "terminal_status": "completed"
+        },
+        "execution_ref": "local-command:tools/probe_telos_action_receipt_fixture.py",
+        "idempotency_key": "idem_dogfood_0024_001",
+        "input_materials": [
+          {
+            "digest": "sha256:fc7beb76d616fd7823f0fe9a9cc879c92d00e5d7963a1e9228be89ae60486b1d",
+            "ref": "schemas/otel-recording-span-venv-pass-0023.json",
+            "role": "upstream_span_receipt"
+          },
+          {
+            "digest": "sha256:cf08afa51e45e70c6f9b66f9b43f976400a3d004f71e392ebe43e78ae797eddc",
+            "ref": "schemas/pass-0023-otel-recording-span-venv-validator-result.json",
+            "role": "upstream_validator_receipt"
+          },
+          {
+            "digest": "sha256:945054a1aed15ecffcfd46427b97dd268056a05d08997906a99faab29eed5b05",
+            "ref": "packets/033-otel-recording-span-venv.md",
+            "role": "upstream_human_packet"
+          },
+          {
+            "digest": "sha256:b2d08f56f2f8247c6661f81f25d5e84f916218ef132664f85365ce37a7ef5c5b",
+            "ref": "mcp:telos.action.receipt/project-telos.action-receipt-v1-excerpt",
+            "role": "telos_contract_excerpt"
+          }
+        ],
+        "intent_ref": "artifact:packets/033-otel-recording-span-venv.md#next-push",
+        "persistence": {
+          "append_only": true,
+          "chain_hash": "0617602eed957e0bc6c2e4a21548528f6defc542c4468433bde85df76cb51b3a",
+          "previous_chain_hash": "fd192c3afc6025757309705b498db7f92b8c60c340ff4036a4fca2bf6a636253",
+          "storage_ref": "artifact:schemas/telos-action-receipt-fixture-pass-0024.json",
+          "write_hash": "sha256:e499b57cd42f808bd9859221914719737c8ea0111d918314df24d02803f938bf"
+        },
+        "policy": {
+          "decision": "allow",
+          "ref": "policy:dogfood-local-proof-fixture-v1"
+        },
+        "receipts": [
+          {
+            "hash": "sha256:b1f3b6cd1c5b81d1784b29f5f9e11dd9ab1c2849f7510de94926dca07d5e2a25",
+            "kind": "upstream_span_fixture"
+          },
+          {
+            "hash": "sha256:f2e9f33d12e261457731f6eedbe62c3c6d04d574c2c8274870da4eee0c2c2fc0",
+            "kind": "upstream_exporter_sink"
+          },
+          {
+            "hash": "sha256:d104947074ca169db2f967dcd8e00d5ea72f8110e34b230facc9e3baa0219eb4",
+            "kind": "event_stage"
+          }
+        ],
+        "result": {
+          "output_ref": "artifact:schemas/telos-action-receipt-fixture-pass-0024.json",
+          "state": "completed",
+          "stop_reason": "completed"
+        },
+        "retry": {
+          "attempt": 1,
+          "max_attempts": 1
+        },
+        "review_ref": "validator:tools/validate_pass_0024_telos_action_receipt_fixture.py",
+        "side_effect": {
+          "class": "write",
+          "reversible": true
+        },
+        "trace": {
+          "exporter_sink_hash": "f2e9f33d12e261457731f6eedbe62c3c6d04d574c2c8274870da4eee0c2c2fc0",
+          "receipt_is_trace_span": false,
+          "session_ref": "session:telos-dogfood-pass-0024",
+          "span_id_hex": "1424d4ca9a6c5b58",
+          "span_ref": "otel:trace/aaa76491660d7a56086f69d1be94debe/span/1424d4ca9a6c5b58",
+          "trace_id_hex": "aaa76491660d7a56086f69d1be94debe"
+        },
+        "verification": {
+          "ref": "validator:pass-0024-telos-action-receipt-fixture",
+          "verdict": "MATCH"
+        }
+      }
+    ],
+    "external_request_id": "local:dogfood-pass-0024-action-receipt-fixture",
+    "idempotency_key": "idem_dogfood_0024_001",
+    "schema": "TelosActionReceiptFixtureChain/v1"
+  },
+  "event_count": 4,
+  "generated_on": "2026-07-01",
+  "market_wedge": {
+    "buyer": "AI infrastructure teams running multi-agent workflows with audit, policy, and provenance requirements",
+    "positioning_hypothesis": "OpenTelemetry spans become evidence inputs, while Telos receipts become the durable proof object for regulated or high-stakes agent actions.",
+    "product": "agent action proof packet",
+    "proof_advantage": "joins source digest, command intent, action admission, trace span, verification verdict, and append-only receipt chain"
+  },
+  "negative_fixture_count": 9,
+  "negative_fixtures": [
+    {
+      "expected_validator_status": "REJECT",
+      "failure_code": "completed_action_collapsed_into_trace_span",
+      "failure_mode": "The span id is stored as the only receipt and no action intent, policy, or evidence digest exists.",
+      "fixture_id": "negative-trace-only-receipt"
+    },
+    {
+      "expected_validator_status": "REJECT",
+      "failure_code": "missing_material_digest",
+      "failure_mode": "The action claims a local command but does not include any digest-bound execution or args receipt.",
+      "fixture_id": "negative-action-without-command-digest"
+    },
+    {
+      "expected_validator_status": "REJECT",
+      "failure_code": "missing_material_digest",
+      "failure_mode": "The receipt omits source artifact digests for the upstream OTel fixture and human packet.",
+      "fixture_id": "negative-action-without-source-digest"
+    },
+    {
+      "expected_validator_status": "REJECT",
+      "failure_code": "verification_missing",
+      "failure_mode": "A completed action lacks MATCH, DRIFT, or UNVERIFIABLE verification.",
+      "fixture_id": "negative-completed-without-verification"
+    },
+    {
+      "expected_validator_status": "REJECT",
+      "failure_code": "policy_decision_unjoined",
+      "failure_mode": "The event carries no policy decision or policy reference.",
+      "fixture_id": "negative-policy-missing"
+    },
+    {
+      "expected_validator_status": "REJECT",
+      "failure_code": "proposed_completed_action_collapsed",
+      "failure_mode": "A proposed action and completed action are represented as the same event.",
+      "fixture_id": "negative-proposed-completed-collapsed"
+    },
+    {
+      "expected_validator_status": "REJECT",
+      "failure_code": "non_append_only_compensation",
+      "failure_mode": "A compensation or correction mutates an earlier event instead of appending a new event.",
+      "fixture_id": "negative-non-append-only-compensation"
+    },
+    {
+      "expected_validator_status": "REJECT",
+      "failure_code": "unjoinable_execution_span",
+      "failure_mode": "The receipt cannot join action intent to execution because idempotency keys are missing.",
+      "fixture_id": "negative-missing-idempotency-key"
+    },
+    {
+      "expected_validator_status": "REJECT",
+      "failure_code": "completed_action_collapsed_into_trace_span",
+      "failure_mode": "The fixture treats receipt_is_trace_span=true, collapsing observability evidence into the durable receipt.",
+      "fixture_id": "negative-trace-span-treated-as-receipt"
+    }
+  ],
+  "non_promotion_statement": "Pass 0024 proves only a deterministic local TelosActionReceiptFixture/v1-style chain over pass 0023 evidence. It does not prove live Telos runtime persistence, external writes, cloud trace export, buyer adoption, scientific discovery, theorem proof, or any natural law.",
+  "pass": "0024",
+  "schema": "TelosActionReceiptFixtureSet/v1",
+  "seal": "58ed4ced91f18cbab776729f49f728d47013542cfc2448865bbdb8dccd1228e3",
+  "source_anchors": [
+    {
+      "source": "Telos action receipt interface",
+      "url": "mcp:telos.action.receipt"
+    },
+    {
+      "source": "Telos loop ledger contract",
+      "url": "mcp:telos.loop.ledger"
+    },
+    {
+      "source": "OpenTelemetry Python instrumentation",
+      "url": "https://opentelemetry.io/docs/languages/python/instrumentation/"
+    },
+    {
+      "source": "Pass 0023 OTel recording span packet",
+      "url": "artifact:packets/033-otel-recording-span-venv.md"
+    }
+  ],
+  "source_artifact_count": 3,
+  "source_artifacts": [
+    {
+      "path": "schemas/otel-recording-span-venv-pass-0023.json",
+      "role": "upstream_span_receipt",
+      "schema": "OTelRecordingSpanVenvReceiptSet/v1",
+      "sha256": "fc7beb76d616fd7823f0fe9a9cc879c92d00e5d7963a1e9228be89ae60486b1d",
+      "status": "OTEL_RECORDING_SPAN_VENV_MATCH"
+    },
+    {
+      "path": "schemas/pass-0023-otel-recording-span-venv-validator-result.json",
+      "role": "upstream_validator_receipt",
+      "schema": "Pass0023OTelRecordingSpanVenvValidatorRun/v1",
+      "sha256": "cf08afa51e45e70c6f9b66f9b43f976400a3d004f71e392ebe43e78ae797eddc",
+      "status": "MATCH"
+    },
+    {
+      "path": "packets/033-otel-recording-span-venv.md",
+      "role": "upstream_human_packet",
+      "schema": "MarkdownPacket/v1",
+      "sha256": "945054a1aed15ecffcfd46427b97dd268056a05d08997906a99faab29eed5b05",
+      "status": "GATHERED_IN_PASS_0023"
+    }
+  ],
+  "status": "ACTION_RECEIPT_FIXTURE_MATCH",
+  "telos_contract_excerpt": {
+    "append_only_compensation_required": true,
+    "digest_references_required": true,
+    "exportable_outside_trace_retention": true,
+    "links_to_trace_span": true,
+    "proposed_completed_action_separation_required": true,
+    "receipt_is_trace_span": false,
+    "schema": "project-telos.action-receipt/v1",
+    "verification_verdicts": [
+      "MATCH",
+      "DRIFT",
+      "UNVERIFIABLE"
+    ]
+  },
+  "telos_contract_excerpt_sha256": "b2d08f56f2f8247c6661f81f25d5e84f916218ef132664f85365ce37a7ef5c5b",
+  "upstream_span": {
+    "exporter_sink_hash": "f2e9f33d12e261457731f6eedbe62c3c6d04d574c2c8274870da4eee0c2c2fc0",
+    "fixture_hash": "b1f3b6cd1c5b81d1784b29f5f9e11dd9ab1c2849f7510de94926dca07d5e2a25",
+    "links_to_action_receipt": true,
+    "receipt_is_trace_span": false,
+    "schema": "OpenTelemetryRecordingSpanFixture/v1",
+    "source_pass": "0023",
+    "span_id_hex": "1424d4ca9a6c5b58",
+    "span_ref": "otel:trace/aaa76491660d7a56086f69d1be94debe/span/1424d4ca9a6c5b58",
+    "trace_id_hex": "aaa76491660d7a56086f69d1be94debe"
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "adapter_receipt": {
+    "command": "C:\\Users\\Zain\\AppData\\Local\\Programs\\Python\\Python312\\python.exe C:\\dev\\public\\telos\\docs\\research\\dogfood\\tools\\build_multitrace_causality_graph.py --spans C:\\dev\\public\\telos\\docs\\research\\dogfood\\fixtures\\multitrace-causality-spans-pass-0055.json --source-binding C:\\dev\\public\\telos\\docs\\research\\dogfood\\schemas\\source-evidence-binding-pass-0028.json --trace-join C:\\dev\\public\\telos\\docs\\research\\dogfood\\schemas\\otel-trace-receipt-join-pass-0054.json --tool-receipts C:\\dev\\public\\telos\\docs\\research\\dogfood\\schemas\\tool-receipts-pass-0054.json --out C:\\dev\\public\\telos\\docs\\research\\dogfood\\schemas\\multitrace-causality-graph-pass-0055.json",
+    "exit_code": 0,
+    "status": "MATCH",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "b7bb3f1030b298bb462d7e50d5e72c76331a8ca5e9f4d368679fbc2fb6d0e184"
+  },
+  "current_promoted_natural_laws": [],
+  "generated_on": "2026-07-01",
+  "graph_output": {
+    "path": "schemas/multitrace-causality-graph-pass-0055.json",
+    "schema": "MultiTraceCausalityGraph/v1",
+    "sha256": "254f3bfc2b2e03cd4c0599956b17f79ec349ec2d9a1f207aa02a1619572834aa",
+    "status": "MULTITRACE_CAUSALITY_GRAPH_MATCH"
+  },
+  "implementation_status": "IMPLEMENTED_LOCAL_MULTITRACE_GRAPH_ADAPTER",
+  "non_promotion_statement": "Pass 0055 proves only a local multi-trace causality graph over synthetic span links and existing dogfood receipts. It does not prove live collector ingestion, complete distributed causality, buyer adoption, scientific truth, or any natural law.",
+  "pass": "0055",
+  "schema": "MultiTraceCausalityGraphAdapterSet/v1",
+  "seal": "c2c73932b6f2ef042d0381ae7f0efc6e0e1a2a72bc7d96f9ad1e828753fa9b3b",
+  "span_fixture": {
+    "path": "fixtures/multitrace-causality-spans-pass-0055.json",
+    "sha256": "fa3db5410b602b77eaf689bde95f6e260f8c74f3d270c4d1a1c1d91341ec9ee4",
+    "span_count": 4
+  },
+  "status": "MULTITRACE_CAUSALITY_GRAPH_ADAPTER_MATCH",
+  "test_receipt": {
+    "command": "C:\\Users\\Zain\\AppData\\Local\\Programs\\Python\\Python312\\python.exe C:\\dev\\public\\telos\\docs\\research\\dogfood\\tools\\test_multitrace_causality_graph.py",
+    "exit_code": 0,
+    "status": "MATCH",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "a3d03f49869e29480c9140761b79a1be237dd8fc7966393dca2ba977086bb8e6"
+  },
+  "uniqueness_claim_status": "HYPOTHESIS_ONLY",
+  "upstream_bindings": {
+    "source_binding": {
+      "path": "schemas/source-evidence-binding-pass-0028.json",
+      "sha256": "75aeda5b9afa02eb1da746aa319d2908a7895f26aefe5d1949d1d949ff3c0f32"
+    },
+    "tool_receipts": {
+      "path": "schemas/tool-receipts-pass-0054.json",
+      "sha256": "9cbdbc1bd4ecfdc0e36e2e6bfac047aa3315be02b1b3f1bdc6a7c5d24b0c0867"
+    },
+    "trace_join": {
+      "path": "schemas/otel-trace-receipt-join-pass-0054.json",
+      "sha256": "cbaaf059b6da49cab92fac4bb15ea0b525cc5948ad90c40fc7741371791887ed"
+    }
+  },
+  "verifier_measurements": {
+    "edge_count": 3,
+    "independent_receipt_count": 4,
+    "matched_required_tool_classes": 4,
+    "negative_fixture_count": 5,
+    "negative_match_count": 5,
+    "negative_pass_observed_count": 0,
+    "node_count": 4,
+    "trace_identity_substitution_count": 0,
+    "valid_edge_count": 3
+  }
+}

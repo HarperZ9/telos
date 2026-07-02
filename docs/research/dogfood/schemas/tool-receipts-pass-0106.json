@@ -1,0 +1,88 @@
+{
+  "compose": {
+    "command": "C:\\Users\\Zain\\AppData\\Local\\Programs\\Python\\Python312\\python.exe C:\\dev\\public\\telos\\docs\\research\\dogfood\\tools\\compose_stoichiometric_invariant_checker_receipt.py --out C:\\dev\\public\\telos\\docs\\research\\dogfood\\schemas\\stoichiometric-invariant-checker-receipt-pass-0106.json",
+    "exit_code": 0,
+    "status": "MATCH",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "9018951e1c38f12ccbba0dc8ffe121dbe5c3da479d422e2ff578d24285fc37d0"
+  },
+  "forum": {
+    "confidence": 0.0,
+    "decided": null,
+    "exit_code": 0,
+    "needs_escalation": true,
+    "status": "MATCH",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "4fe3841632e2f93c96084b52acb57b2c0fa681cb74375a1b20d42389ca51dde2",
+    "top_candidates": [
+      {
+        "agent": "backend",
+        "score": 0.0
+      },
+      {
+        "agent": "ci-cd",
+        "score": 0.0
+      },
+      {
+        "agent": "cloud-infra",
+        "score": 0.0
+      },
+      {
+        "agent": "code-review",
+        "score": 0.0
+      },
+      {
+        "agent": "compiler-systems",
+        "score": 0.0
+      }
+    ]
+  },
+  "index": {
+    "exit_code": 0,
+    "graph_pack_sha256": "8ee383e19ae9a6141bee70de733fb6aa09201ff9d284ce6778ce58b06e6b68b2",
+    "schema": "project-telos.context-envelope/v1",
+    "source_refs_only": true,
+    "status": "MATCH",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "6bff045d7ddc97da03d786505a2c77b9ca8c9b6bdc5dea7ba77a64f4646a54ef",
+    "verification_verdict": "MATCH"
+  },
+  "law_candidate": {
+    "name": "stoichiometric_left_nullspace_conservation_invariant",
+    "scope": "closed reaction networks where l^T S = 0 for a candidate conservation vector l",
+    "status": "LAW_CANDIDATE"
+  },
+  "pass": "0106",
+  "schema": "DogfoodToolReceipts/v1",
+  "seal": "caebcf04c16d608bf22353cab360f7c7b006e2f5551774fa4cd9b9ece973a67f",
+  "telos": {
+    "exit_code": 0,
+    "status": "MATCH",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "be17cb15259234cb4e8e95c2b36e76c90d841431729beb140294e34c5f9ebfa7",
+    "tool": "telos",
+    "tool_version": "0.1.0"
+  },
+  "test": {
+    "command": "C:\\Users\\Zain\\AppData\\Local\\Programs\\Python\\Python312\\python.exe C:\\dev\\public\\telos\\docs\\research\\dogfood\\tools\\test_stoichiometric_invariant_checker_receipt.py",
+    "exit_code": 0,
+    "status": "MATCH",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "youtube_signal_binding": {
+    "ai4science_video_count": 1,
+    "architecture_pull": "turn source leads into executable invariant, simulation, runtime, and proof receipts",
+    "buildlang_scientific_runtime_video_count": 14,
+    "raw_transcript_included": false,
+    "relevant_clusters": [
+      "molecular_ai_drug_discovery",
+      "enterprise_quantum_optimization",
+      "quantitative_finance_laws"
+    ],
+    "roadmap_pass": "0102",
+    "transcript_receipt_count": 19,
+    "valid_video_count": 19,
+    "youtube_pass": "0085"
+  }
+}

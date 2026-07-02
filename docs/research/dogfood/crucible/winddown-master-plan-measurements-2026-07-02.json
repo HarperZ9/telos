@@ -1,0 +1,71 @@
+{
+  "measurements": [
+    {
+      "claim": "The wind-down synthesis and master plan documents exist and are linked from README.md.",
+      "method": "file-and-readme-review",
+      "evidence": [
+        "docs/research/PROJECT-TELOS-RESEARCH-WINDDOWN-2026-07-02.md exists",
+        "docs/PROJECT-TELOS-MASTER-PLAN-2026-07-02.md exists",
+        "README.md links both deliverables"
+      ],
+      "deviation": 0.0,
+      "tolerance": 0.5
+    },
+    {
+      "claim": "The research corpus inventory records at least 150 pass ledgers, 163 packets, 445 schema artifacts, 147 Crucible run records, and 26 Gather source stores.",
+      "method": "filesystem-inventory",
+      "evidence": [
+        "pass_ledgers>=150",
+        "packets>=163",
+        "schemas>=445",
+        "crucible_runs>=147",
+        "gather_stores>=26"
+      ],
+      "deviation": 0.0,
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0151 records the final frontier-problem source federation with 83 candidate sources, 24 Gather-verified captures, 12 problem lanes, and 8 admission gates.",
+      "method": "artifact-review",
+      "evidence": [
+        "schema=FrontierProblemSourceFederationReceipt/v1",
+        "candidate_sources=83",
+        "gather_verified=24",
+        "problem_lanes=12",
+        "admission_gates=8"
+      ],
+      "deviation": 0.0,
+      "tolerance": 0.5
+    },
+    {
+      "claim": "The master plan covers Gather, Index, Forum, Crucible, Telos, Learn, BuildLang/buildc, and Emet as named pillars.",
+      "method": "document-review",
+      "evidence": [
+        "Project Telos Master Plan includes System Pillars sections for all required names"
+      ],
+      "deviation": 0.0,
+      "tolerance": 0.5
+    },
+    {
+      "claim": "The wind-down deliverables preserve boundaries: they do not claim current proof of new laws of physics, clinical efficacy, or raw-scale frontier model superiority.",
+      "method": "boundary-review",
+      "evidence": [
+        "wind-down synthesis has explicit low-confidence/fenced claims",
+        "master plan says not to compete only on raw pretraining scale first"
+      ],
+      "deviation": 0.0,
+      "tolerance": 0.5
+    },
+    {
+      "claim": "The run corpus manifest records 150 pass-ledger rows through pass 0151.",
+      "method": "manifest-review",
+      "evidence": [
+        "docs/research/PROJECT-TELOS-RUN-CORPUS-MANIFEST-2026-07-02.md exists",
+        "pass-ledger rows=150",
+        "latest row includes pass-0151-ledger.md"
+      ],
+      "deviation": 0.0,
+      "tolerance": 0.5
+    }
+  ]
+}

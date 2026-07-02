@@ -1,0 +1,199 @@
+Skip to main content
+Back to top
+Ctrl+K
+Industrial Optimization
+Quantum Research
+Ocean SDK
+Leap Service
+Concepts
+More
+Licenses
+Bibliography
+Search
+Ctrl+K
+GitHub
+Search
+Ctrl+K
+Industrial Optimization
+Quantum Research
+Ocean SDK
+Leap Service
+Concepts
+Licenses
+Bibliography
+GitHub
+D‑Wave Documentation#
+Industrial Optimization
+The Industrial Optimization section shows how to optimize business
+problems using the Leap™ service’s quantum-classical hybrid
+solvers.
+Get Started with Optimization
+Learn about optimizing with hybrid solvers.
+Get Started with Optimization
+Developing Quantum Applications
+How D‑Wave and other companies develop successful
+quantum applications.
+Developing Quantum Applications
+Solver Properties & Parameters
+Properties and parameters of hybrid solvers in the Leap service.
+Solver Properties & Parameters
+Improving Hybrid Solutions
+Scaling and usage best-practices.
+Improving Hybrid Solutions
+Performance Benchmarks
+Performance studies on use cases.
+Performance Benchmarks
+The Quantum Research section shows how to use D‑Wave™
+quantum processing units (QPU) directly.
+Quantum Research
+The Quantum Research section shows how to use D‑Wave™
+quantum processing units (QPU) directly.
+Get Started with Quantum Computing
+Learn about D‑Wave quantum computers.
+Get Started with Quantum Computing
+QPU Hardware and Properties
+QPU architecture, properties, errors, timing, etc.
+QPU Hardware and Properties
+Using the QPU
+Configuring QPU parameters and usage best-practices.
+Using the QPU
+The Industrial Optimization section shows how to optimize business
+problems using the Leap™ service’s quantum-classical hybrid
+solvers.
+ML/AI
+D-Wave’s
+PyTorch Plugin
+provides an interface between D-Wave’s quantum-classical hybrid
+solvers and the PyTorch
+framework.
+Also see the Machine Learning section.
+Additional content for this topic is currently under development.
+Welcome to D‑Wave#
+First time here? Click to learn how to navigate the documentation
+Pages have three navigation bars: top, left, and right.
+Left navigation bar lets you select a subtopic; for example, how to
+get started, properties, best practices.
+Right navigation bar displays the topics on your current page.
+Top navigation bar lets you select the following sections:
+Industrial Optimization
+Solving hard commercial optimization problems using
+hybrid solvers.
+Quantum Research
+Using the quantum processing unit (QPU) directly on
+Ising problems and QUBO models.
+Ocean SDK
+Reference documentation for the software development
+kit (SDK) used with quantum computers.
+Leap Service
+Quantum cloud service’s account management, release
+notes, IDE support, etc.
+Concepts
+Learn the relevant terminology and the fundamental
+concepts. Search for terms here.
+More > Licenses
+Licensing information for the documentation and SDK.
+More > Bibliography
+Cited content.
+It’s not a Turing machine, but a machine of a different kind.
+— Richard Feynman, 1981
+What D-Wave Does
+Despite the incredible power of today’s supercomputers, many complex
+computing problems cannot be addressed by conventional systems. The huge
+growth of data and our need to better understand everything from the
+universe to our own DNA leads us to seek new tools that can help provide
+answers. Quantum computing is the next
+frontier in computing, providing an entirely new approach to solving the
+world’s most difficult problems.
+While certainly not easy, much progress has been made in the field of
+quantum computing since 1981, when Feynman gave his famous lecture at
+the California Institute of Technology. Still a relatively young field,
+quantum computing is complex and different approaches are being pursued
+around the world. Today, there are two leading candidate architectures
+for quantum computers: gate model (also known as circuit model) and
+quantum annealing.
+Gate-model quantum computing
+implements compute algorithms with quantum gates, analogously to the use
+of Boolean gates in classical computers.
+With quantum annealers you initialize the
+system in a low-energy state and gradually introduce the parameters of a
+problem you wish to solve. The slow change makes it likely that the
+system ends in a low-energy state of the problem, which corresponds to
+an optimal solution. This technique is explained in more detail in the
+What is Quantum Annealing? section.
+Quantum annealing is implemented in D‑Wave’s generally available
+quantum computers, such as the Advantage™ and Advantage2™ systems, as a single
+quantum algorithm, and this scalable approach to quantum computing has
+enabled us to create quantum processing units (QPUs) with
+more than 5000 quantum bits (qubits)—far beyond the
+state of the art for gate-model quantum computing.
+D‑Wave has been developing various generations of our “machine of
+a different kind,” to use Feynman’s words, since 1999. We are the
+world’s first commercial quantum computer company.
+Quantum Computers
+A D‑Wave quantum computer contains a QPU that must be
+kept at a temperature near absolute zero and isolated from the
+surrounding environment in order to behave quantum mechanically. The
+system achieves these requirements as follows:
+Cryogenic temperatures, achieved using a closed-loop cryogenic
+dilution refrigerator system. The QPU generally operates at
+temperatures below 20 mK.
+Shielding from electromagnetic interference, achieved using a radio
+frequency (RF)-shielded enclosure and a magnetic shielding
+subsystem.
+Fig. 271 Advantage2 quantum computer.#
+The D‑Wave QPU (Figure 272) is a lattice of tiny
+metal loops, each of which is a qubit or a coupler. Below temperatures
+of 9.2 kelvin, these loops become superconductors and exhibit
+quantum-mechanical effects.
+The QPU in D‑Wave’s Advantage2 system has more than 4,400 qubits
+and 40,000 couplers. To reach this scale, it uses over 1,000,000
+Josephson junctions.
+For details on the topology of the QPU, see the
+Topologies section.
+Fig. 272 D‑Wave QPU.#
+Note
+D‑Wave’s quantum computer systems are available for
+on-premises installation. For their physical specifications,
+including electrical, cooling, environmental, and networking
+requirements, download
+System Specifications for D-Wave Quantum Computers.
+For customers who directly access quantum computer hardware, see the
+D-Wave Quantum Computer Operations manual, which includes essential safety
+information.
+Software Environment
+Users interact with D‑Wave quantum computers through a web
+user interface (UI), and through open-source tools that communicate with
+the Solver API (SAPI).
+The SAPI components are responsible for user interaction, user
+authentication, and work scheduling. In turn, SAPI connects to back-end
+servers that send problems to and return results from QPUs and
+additional solvers, which are located in different geographical regions
+(for example, North America or Europe).[1]
+See Figure 273 for a simplified view of the
+D‑Wave software environment.
+[1]
+Solvers are available by region.
+To view the supported regions and solvers that are available in each
+one, go to your dashboard in the
+Leap service.
+Fig. 273 D‑Wave software environment.#
+Leap Service
+The Leap service is the quantum cloud service from D‑Wave.
+Learn about the types of problems that the D‑Wave quantum
+computer can solve, run interactive demos and coding examples on the
+system, contribute your coding ideas, and join the growing conversation
+in our community of like-minded users.
+For more information, see the Leap Service section.
+Sign up for the Leap service here:
+Leap service signup.
+Ocean SDK
+D‑Wave’s Python-based open-source software development kit (SDK),
+Ocean SDK, makes application development for quantum computers rapid and
+efficient and facilitates collaborative projects. See the
+Ocean SDK section for the SDK and its reference
+documentation.
+On this page
+Welcome to D‑Wave
+Show Source
+© Copyright D-Wave.
+Ocean SDK version 9.4.0.

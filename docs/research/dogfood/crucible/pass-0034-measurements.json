@@ -1,0 +1,128 @@
+{
+  "measurements": [
+    {
+      "claim": "Pass 0034 created a LeanReplayVerificationPacket/v1 artifact with status LEAN_REPLAY_VERIFIED_WITH_AXIOM_BOUNDARY, source_provisioning_sha256 e4a4085f9711d672ee18a08e85aa55b6fabe8f64807daad53eff382506b9a366, verifier_exit_code 0, axiom_check_count 10, and seal bbe72907f7bc745c4bdc19f2162050d0dc7e48ea9382bc0b09f226f2500539bd.",
+      "deviation": 0.0,
+      "evidence": [
+        "schema=LeanReplayVerificationPacket/v1",
+        "status=LEAN_REPLAY_VERIFIED_WITH_AXIOM_BOUNDARY",
+        "source_provisioning_sha256=e4a4085f9711d672ee18a08e85aa55b6fabe8f64807daad53eff382506b9a366",
+        "verifier_exit_code=0",
+        "axiom_check_count=10",
+        "seal=bbe72907f7bc745c4bdc19f2162050d0dc7e48ea9382bc0b09f226f2500539bd"
+      ],
+      "method": "lean-replay-verification-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0034 records fixture fixtures/lean-replay-verification-pass-0034.json with sha256 eef39b1caa78dd2d996589b08c40b93881cfe45d17e2b15479ec9aa8d5b9fafb and seal fd38f5abf22c501b06e28321e9408d5562e154eb4a012c4988a64b910a6ffa2f.",
+      "deviation": 0.0,
+      "evidence": [
+        "fixture sha256=eef39b1caa78dd2d996589b08c40b93881cfe45d17e2b15479ec9aa8d5b9fafb",
+        "fixture seal=fd38f5abf22c501b06e28321e9408d5562e154eb4a012c4988a64b910a6ffa2f"
+      ],
+      "method": "fixture-binding-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0034 cache hydration records lake exe cache get exit_code 0, downloaded_files 8542, decompressed_files 8542, cache_file_count 8542, and cache_byte_sum 432264798.",
+      "deviation": 0.0,
+      "evidence": [
+        "exit_code=0",
+        "downloaded_files=8542",
+        "decompressed_files=8542",
+        "cache_file_count=8542",
+        "cache_byte_sum=432264798"
+      ],
+      "method": "cache-hydration-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0034 verifier run records scripts/verify.sh --no-log --all exit_code 0, result PASS, result_issue_count 0, duration_seconds 1184, and build_jobs 8574.",
+      "deviation": 0.0,
+      "evidence": [
+        "exit_code=0",
+        "result=PASS",
+        "result_issue_count=0",
+        "duration_seconds=1184",
+        "build_jobs=8574"
+      ],
+      "method": "verifier-run-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0034 verifier checks record frozen_sha_pins_status PASS, banned_keywords_status PASS, and lake_build_status PASS.",
+      "deviation": 0.0,
+      "evidence": [
+        "frozen_sha_pins_status=PASS",
+        "banned_keywords_status=PASS",
+        "lake_build_status=PASS"
+      ],
+      "method": "verifier-check-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0034 records ten Prob4b.Solution axiom checks, all PASS, each with axiom set propext, Classical.choice, and Quot.sound.",
+      "deviation": 0.0,
+      "evidence": [
+        "axiom_check_count=10",
+        "theorem_axiom_status=PASS",
+        "axiom_set=[propext, Classical.choice, Quot.sound]"
+      ],
+      "method": "axiom-check-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0034 statement gates record Prob4b.Discharge PASS and Prob4b.Solution PASS.",
+      "deviation": 0.0,
+      "evidence": [
+        "Prob4b.Discharge=PASS",
+        "Prob4b.Solution=PASS"
+      ],
+      "method": "statement-gate-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0034 build artifact snapshot records .lake file_count 123892, .lake byte_sum 8009101293, cache_file_count 8542, Prob4b build file_count 75, and remaining_temp_processes 0.",
+      "deviation": 0.0,
+      "evidence": [
+        "lake_file_count=123892",
+        "lake_byte_sum=8009101293",
+        "cache_file_count=8542",
+        "prob4b_build_file_count=75",
+        "remaining_temp_processes=0"
+      ],
+      "method": "build-artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0034 validator result reports MATCH with verifier_exit_code 0, verifier_result PASS, lake_build_status PASS, theorem_axiom_status PASS, axiom_check_count 10, cache_file_count 8542, prob4b_build_file_count 75, and remaining_temp_processes 0.",
+      "deviation": 0.0,
+      "evidence": [
+        "validator status=MATCH",
+        "verifier_exit_code=0",
+        "verifier_result=PASS",
+        "lake_build_status=PASS",
+        "theorem_axiom_status=PASS",
+        "axiom_check_count=10",
+        "cache_file_count=8542",
+        "prob4b_build_file_count=75",
+        "remaining_temp_processes=0"
+      ],
+      "method": "validator-result-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0034 preserves non-promotion boundaries: it verifies the local Lean replay harness under recorded toolchain, cache, axiom, and statement-gate boundaries while current_promoted_natural_laws remains none and public-claim overpromotion remains rejected.",
+      "deviation": 0.0,
+      "evidence": [
+        "current_promoted_natural_laws=[]",
+        "non_promotion_statement present",
+        "negative-public-claim-overpromoted expected_validator_status=REJECT",
+        "negative-natural-law-promoted expected_validator_status=REJECT"
+      ],
+      "method": "non-promotion-boundary-review",
+      "tolerance": 0.5
+    }
+  ]
+}

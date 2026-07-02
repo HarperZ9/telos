@@ -1,0 +1,34 @@
+{
+  "title": "Dogfood Pass 0005 Adapter Strategy and Validator Contracts",
+  "disposition": "fenced",
+  "claims": [
+    {
+      "text": "Pass 0005 recorded official source anchors for at least 10 incumbent evidence surfaces that can become proof-packet adapters.",
+      "falsification": "pass-0005-ledger.md lists fewer than 10 source anchors or the anchors are not official project/vendor documentation"
+    },
+    {
+      "text": "The pass 0005 adapter artifact contains 10 adapters, and every adapter includes source URLs, evidence inputs, Telos outputs, and a missing-binding field.",
+      "falsification": "proof-packet-adapters-pass-0005.json has fewer than 10 adapters or any adapter lacks the required fields"
+    },
+    {
+      "text": "The pass 0005 buyer-objection matrix contains at least 7 objections, each with a buyer question, required demo evidence, and product response.",
+      "falsification": "buyer-objections-pass-0005.json has fewer than 7 objections or any row lacks buyer question, required demo evidence, or product response"
+    },
+    {
+      "text": "The pass 0005 validator contract artifact contains at least 8 validators and includes ProofPacketMinimumValidator.",
+      "falsification": "validator-contracts-pass-0005.json has fewer than 8 contracts or lacks ProofPacketMinimumValidator"
+    },
+    {
+      "text": "Pass 0005 records Gather web-config friction and a successful unscoped Gather docs intake with 23 kept documents, zero drops, and seal 8afe8c29d704aff1ca6255e81704722bb5a347c9bed237e9ecca34facdeb09a3.",
+      "falsification": "pass-0005-ledger.md lacks the Gather config failures or records different unscoped Gather docs counts or seal"
+    },
+    {
+      "text": "Pass 0005 records a low-confidence Forum route escalation while Forum ledger verification remained chain=true and deep=true.",
+      "falsification": "pass-0005-ledger.md does not record Forum escalation, confidence, or chain/deep verification"
+    },
+    {
+      "text": "Pass 0005 promotes zero natural-law discoveries; all outputs remain strategy, evidence, or validator-planning artifacts.",
+      "falsification": "any pass 0005 artifact labels a natural law, theorem, medical result, finance result, safety result, or physical discovery as promoted"
+    }
+  ]
+}

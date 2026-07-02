@@ -1,0 +1,135 @@
+{
+  "measurements": [
+    {
+      "claim": "Pass 0115 created a SolverBranchReplayAdapterReceipt/v1 artifact with status SOLVER_BRANCH_REPLAY_ADAPTER_MATCH, sha256 54934757886e58ce3a78edc6322cb49f02943137aef01a51941a545c51ac6d21, and seal b4930f6e1901aadc52ea67f2a958e3cd9220893e2be1ebbf15c2b2c24afc8a65.",
+      "deviation": 0.0,
+      "evidence": [
+        "schema=SolverBranchReplayAdapterReceipt/v1",
+        "status=SOLVER_BRANCH_REPLAY_ADAPTER_MATCH",
+        "sha256=54934757886e58ce3a78edc6322cb49f02943137aef01a51941a545c51ac6d21",
+        "seal=b4930f6e1901aadc52ea67f2a958e3cd9220893e2be1ebbf15c2b2c24afc8a65"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0115 binds suite pass 0114, YouTube roadmap pass 0102, and lead store gather/pass-0115-youtube-leads.",
+      "deviation": 0.0,
+      "evidence": [
+        "source_bindings={'new_youtube_lead_store': 'gather/pass-0115-youtube-leads', 'suite_pass': '0114', 'youtube_roadmap_pass': '0102', 'youtube_source_pass': '0085'}"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0115 records SciPy as AVAILABLE, OR-Tools as MISSING, and PuLP as MISSING.",
+      "deviation": 0.0,
+      "evidence": [
+        "availability={'ortools': {'module': 'ortools', 'status': 'MISSING'}, 'pulp': {'module': 'pulp', 'status': 'MISSING'}, 'scipy': {'module': 'scipy', 'status': 'AVAILABLE'}}"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0115 builtin exhaustive replay matched all four pass 0114 optimization cases.",
+      "deviation": 0.0,
+      "evidence": [
+        "exhaustive={'branch_id': 'builtin_exhaustive_replay', 'case_count': 4, 'case_results': [{'assignment': {'vehicle_1': ['A', 'B'], 'vehicle_2': ['C']}, 'candidate_count': 2, 'case_id': 'warehouse_capacity_assignment', 'expected_assignment': {'vehicle_1': ['A', 'B'], 'vehicle_2': ['C']}, 'expected_objective': '9', 'objective': '9', 'status': 'MATCH'}, {'assignment': {'robot_1': ['part_1', 'part_3'], 'robot_2': ['part_2']}, 'candidate_count': 6, 'case_id': 'robotics_quality_inspection', 'expected_assignment': {'robot_1': ['part_1', 'part_3'], 'robot_2': ['part_2']}, 'expected_objective': '16', 'objective': '16', 'status': 'MATCH'}, {'assignment': {'interceptor_1': 'threat_alpha', 'interceptor_2': 'threat_beta'}, 'candidate_count': 6, 'case_id': 'safety_allocation_toy', 'expected_assignment': {'interceptor_1': 'threat_alpha', 'interceptor_2': 'threat_beta'}, 'expected_objective': '17', 'objective': '17', 'status': 'MATCH'}, {'assignment': {'asset_a': '1/2', 'asset_b': '1/4', 'asset_c': '1/4'}, 'candidate_count': 1, 'case_id': 'quant_risk_budget', 'expected_assignment': {'asset_a': '1/2', 'asset_b': '1/4', 'asset_c': '1/4'}, 'expected_objective': '9/2', 'objective': '9/2', 'status': 'MATCH'}], 'kind': 'deterministic_local', 'status': 'MATCH'}"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0115 SciPy HiGHS replay matched quant_risk_budget objective 9/2 with asset weights 1/2, 1/4, and 1/4.",
+      "deviation": 0.0,
+      "evidence": [
+        "scipy={'assignment': {'asset_a': '1/2', 'asset_b': '1/4', 'asset_c': '1/4'}, 'branch_id': 'scipy_highs_quant_replay', 'case_id': 'quant_risk_budget', 'expected_assignment': {'asset_a': '1/2', 'asset_b': '1/4', 'asset_c': '1/4'}, 'expected_objective': '9/2', 'kind': 'scipy.optimize.linprog_highs', 'objective': '9/2', 'raw_fun': -4.5, 'solver_status': 0, 'status': 'MATCH'}"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0115 fenced OR-Tools CP-SAT and PuLP CBC as UNAVAILABLE_FENCED in this environment.",
+      "deviation": 0.0,
+      "evidence": [
+        "ortools={'branch_id': 'ortools_cp_sat', 'module': 'ortools', 'status': 'UNAVAILABLE_FENCED'}",
+        "pulp={'branch_id': 'pulp_cbc', 'module': 'pulp', 'status': 'UNAVAILABLE_FENCED'}"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0115 records 4 new YouTube source leads, 4 Gather-verified leads, 4 transcript receipts, and raw_transcripts_included False.",
+      "deviation": 0.0,
+      "evidence": [
+        "new_youtube_lead_summary={'gather_verified_count': 4, 'lead_count': 4, 'raw_transcripts_included': False, 'source_policy': 'New videos are crucial source leads, but pass 0115 only promotes metadata, receipt hashes, bounded topic hypotheses, and follow-on roadmap pressure.', 'transcript_receipt_count': 4}"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0115 records video ids HbKzqvey5PA, 4MQbd5wTlI8, EdVG5qNm2rY, and nYwid6Q5HXk as SOURCE_LEAD_ONLY.",
+      "deviation": 0.0,
+      "evidence": [
+        "video_ids=['HbKzqvey5PA', '4MQbd5wTlI8', 'EdVG5qNm2rY', 'nYwid6Q5HXk']"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0115 records 4 roadmap-pressure hypotheses derived from the four new source leads.",
+      "deviation": 0.0,
+      "evidence": [
+        "roadmap_pressure=[{'pressure': 'formal_math_proof_packets_need_category_theory_and_homotopy_receipts', 'source_video_id': '4MQbd5wTlI8', 'status': 'hypothesis'}, {'pressure': 'physics_packets_need_quantum_foundation_claim_boundaries_before_law_promotion', 'source_video_id': 'HbKzqvey5PA', 'status': 'hypothesis'}, {'pressure': 'research_packets_need_counterexample_and_belief_revision_workflows', 'source_video_id': 'EdVG5qNm2rY', 'status': 'hypothesis'}, {'pressure': 'agent_packets_need_loop_replay_receipts_not_chain_of_thought_exposure', 'source_video_id': 'nYwid6Q5HXk', 'status': 'hypothesis'}]"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0115 records market tool_count 5 with official solver documentation anchors.",
+      "deviation": 0.0,
+      "evidence": [
+        "market_surface={'gap_status': 'hypothesis', 'tool_count': 5, 'tools': [{'claim': 'CP-SAT solves integer programming models and returns solver statuses', 'kind': 'official_docs', 'tool': 'OR-Tools CP-SAT', 'url': 'https://developers.google.com/optimization/cp/cp_solver'}, {'claim': 'Python API exposes CpModel and CpSolver', 'kind': 'official_docs', 'tool': 'OR-Tools cp_model API', 'url': 'https://or-tools.github.io/docs/pdoc/ortools/sat/python/cp_model.html'}, {'claim': 'solves linear programs with HiGHS', 'kind': 'official_docs', 'tool': 'SciPy linprog HiGHS', 'url': 'https://docs.scipy.org/doc/scipy/reference/optimize.linprog-highs.html'}, {'claim': 'models linear and mixed-integer programming problems in Python', 'kind': 'official_docs', 'tool': 'PuLP', 'url': 'https://coin-or.github.io/pulp/'}, {'claim': 'high-performance linear optimization software', 'kind': 'official_docs', 'tool': 'HiGHS', 'url': 'https://highs.dev/'}]}"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0115 flagship receipts for Forum, Index, and Telos all have MATCH status.",
+      "deviation": 0.0,
+      "evidence": [
+        "forum=MATCH",
+        "index=MATCH",
+        "telos=MATCH"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0115 records unsupported_claim_count 0 and current_promoted_natural_laws length 0.",
+      "deviation": 0.0,
+      "evidence": [
+        "unsupported_claim_count=0",
+        "natural_law_count=0"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0115 composer sha256 is 2f818018af58e94b6e183978f4142a84b3786ccba06412f48b12d4abf2f395f1, packet sha256 is 4ba5e0f793e7af9ef055e4254000531170c9ba2744ede595a908b96a7ea9d081, brief sha256 is 13da264d214e0c59a5e6fbe93d47758a6710af425f4862763724a2351680f3f0, steelman sha256 is 0461a0f0d772f515f075cc591553f31b9103679cb3af7fb0cb026e5e42bc640e, test sha256 is f5fc74d38eededd12f936a4409454e20f18f5d01b6f248b93d45b3a137034d8b, and tool_receipts sha256 is b24517623975f1dd806b5a0cd2f21b58d89ada2ceb48e520c67e7d6ce943830a with test_receipt status MATCH.",
+      "deviation": 0.0,
+      "evidence": [
+        "composer_sha256=2f818018af58e94b6e183978f4142a84b3786ccba06412f48b12d4abf2f395f1",
+        "packet_sha256=4ba5e0f793e7af9ef055e4254000531170c9ba2744ede595a908b96a7ea9d081",
+        "brief_sha256=13da264d214e0c59a5e6fbe93d47758a6710af425f4862763724a2351680f3f0",
+        "steelman_sha256=0461a0f0d772f515f075cc591553f31b9103679cb3af7fb0cb026e5e42bc640e",
+        "test_sha256=f5fc74d38eededd12f936a4409454e20f18f5d01b6f248b93d45b3a137034d8b",
+        "tool_receipts_sha256=b24517623975f1dd806b5a0cd2f21b58d89ada2ceb48e520c67e7d6ce943830a",
+        "test_status=MATCH",
+        "compose_status=MATCH"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    }
+  ]
+}

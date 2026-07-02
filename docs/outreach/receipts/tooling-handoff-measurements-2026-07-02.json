@@ -1,0 +1,61 @@
+{
+  "measurements": [
+    {
+      "claim": "The Telos current catalog and manifest record a 70-tool five-flagship surface after the updated-tool pass.",
+      "method": "command-output-review",
+      "evidence": [
+        "npm.cmd run catalog: tools 70 total, 70 available",
+        "npm.cmd run manifest: tools 70 expected",
+        "node demo/compatibility-doctor.mjs --summary: verdict MATCH",
+        "node demo/operator-doctor.mjs --summary: verdict MATCH"
+      ],
+      "deviation": 0.0,
+      "tolerance": 0.5
+    },
+    {
+      "claim": "The updated tool-shape assessment document exists and distinguishes installed CLI surfaces from local repo surfaces.",
+      "method": "document-review",
+      "evidence": [
+        "docs/TOOLING-SHAPE-ASSESSMENT-2026-07-02.md exists",
+        "assessment has Current Command Evidence table",
+        "assessment labels Learn/buildc/buildlang as not on PATH",
+        "assessment labels Emet PATH wrapper as broken"
+      ],
+      "deviation": 0.0,
+      "tolerance": 0.5
+    },
+    {
+      "claim": "The outreach handoff package includes demo packages, audience outreach briefs, a visibility content queue, and a parallel Codex handoff.",
+      "method": "file-review",
+      "evidence": [
+        "docs/outreach/DEMO-PACKAGES-2026-07-02.md exists",
+        "docs/outreach/OUTREACH-PACKAGES-2026-07-02.md exists",
+        "docs/outreach/VISIBILITY-CONTENT-QUEUE-2026-07-02.md exists",
+        "docs/outreach/PARALLEL-CODEX-HANDOFF-2026-07-02.md exists"
+      ],
+      "deviation": 0.0,
+      "tolerance": 0.5
+    },
+    {
+      "claim": "The handoff package preserves current limitations for Learn, BuildLang/buildc, Emet, and Build Universe.",
+      "method": "boundary-review",
+      "evidence": [
+        "learn is repo-available but not on PATH in the assessment and handoff",
+        "buildc/buildlang are repo-available but not on PATH in the assessment and handoff",
+        "emet wrapper failure is recorded in the assessment and handoff",
+        "Build Universe alpha and whole-ecosystem non-compilation boundary is recorded"
+      ],
+      "deviation": 0.0,
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Targeted Telos tests pass for MCP launch parity, operator scripts, rendering research, current-state docs, and the Telos MCP surface.",
+      "method": "test-output-review",
+      "evidence": [
+        "node --test demo/telos-mcp.test.mjs demo/mcp-server-launch.test.mjs demo/operator-scripts.test.mjs demo/rendering-research.test.mjs demo/project-current-state-docs.test.mjs: 5 pass, 0 fail"
+      ],
+      "deviation": 0.0,
+      "tolerance": 0.5
+    }
+  ]
+}

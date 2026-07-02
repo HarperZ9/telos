@@ -1,0 +1,32 @@
+{
+  "artifact_status": "SAIR_STAGE2_LEAN_CERTIFICATE_PREFLIGHT_MATCH_WITH_TOOLCHAIN_GAP",
+  "compose": {
+    "command": "C:\\Users\\Zain\\AppData\\Local\\Programs\\Python\\Python312\\python.exe C:\\dev\\public\\telos\\docs\\research\\dogfood\\tools\\compose_sair_stage2_lean_certificate_preflight.py",
+    "exit_code": 0,
+    "status": "MATCH",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "41f4b6bd9bcd249acf863dc653b1783142e9a670910f69753e23afae525fc19b"
+  },
+  "external_model_calls": 0,
+  "lean_replay_status": "UNVERIFIABLE_TOOL_UNAVAILABLE",
+  "lean_toolchain": "leanprover/lean4:v4.30.0-rc2",
+  "pass": "0139",
+  "repo_head": "6805e2323018fbd8a85f41ca09fc33d74d5a02a5",
+  "schema": "DogfoodToolReceipts/v1",
+  "seal": "2baa0be66588c80e40a9ef0cef7e9b48018076df50142b7281b77be802a071d8",
+  "test": {
+    "command": "C:\\Users\\Zain\\AppData\\Local\\Programs\\Python\\Python312\\python.exe C:\\dev\\public\\telos\\docs\\research\\dogfood\\tools\\test_sair_stage2_lean_certificate_preflight.py",
+    "exit_code": 0,
+    "status": "MATCH",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "tooling_gap": "Install or containerize Lean/lake/elan before promoting this from certificate preflight to LeanProofReceipt replay.",
+  "validator": {
+    "command": "C:\\Users\\Zain\\AppData\\Local\\Programs\\Python\\Python312\\python.exe C:\\dev\\public\\telos\\docs\\research\\dogfood\\tools\\validate_pass_0139_sair_stage2_lean_certificate_preflight.py",
+    "exit_code": 0,
+    "status": "MATCH",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "3a6e64f17fc3c34ea16c8181642aa1e2e70bc92ae9f48ec6f5c31b11078d3001"
+  }
+}

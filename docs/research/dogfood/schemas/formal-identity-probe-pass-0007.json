@@ -1,0 +1,25 @@
+{
+  "schema": "FormalIdentityProbe/v1",
+  "identity": "sum_{k=1..n}(2k-1)=n^2",
+  "range_checked": {
+    "min_n": 0,
+    "max_n": 100000
+  },
+  "samples": {
+    "n_0": 0,
+    "n_0_expected": 0,
+    "n_1": 1,
+    "n_1_expected": 1,
+    "n_10": 100,
+    "n_10_expected": 100,
+    "n_100000": 10000000000,
+    "n_100000_expected": 10000000000
+  },
+  "failures": [],
+  "status": "PROBE_MATCH",
+  "seal": "e9293c7bb2fd8d0b4bbcf9ff547f4f50f90c3b0d008fe261a3c7bd338a779d5f",
+  "notes": [
+    "The first naive repeated-sum probe timed out; the recorded witness uses an incremental accumulator.",
+    "The computational probe is a witness over a finite range, not a substitute for the induction proof."
+  ]
+}

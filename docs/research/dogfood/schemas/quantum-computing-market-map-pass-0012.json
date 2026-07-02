@@ -1,0 +1,242 @@
+{
+  "schema": "QuantumComputingMarketMap/v1",
+  "pass": "0012",
+  "generated_on": "2026-07-01",
+  "scope": "Quantum SDKs, cloud platforms, hardware platforms, quantum AI, compilers, neutral-atom systems, and annealing ecosystems",
+  "rows": [
+    {
+      "category": "quantum-sdk",
+      "tool": "IBM Qiskit",
+      "buyer": "quantum researchers, algorithm developers, enterprise R&D teams, HPC/quantum workflow teams",
+      "source_url": "https://www.ibm.com/quantum/qiskit",
+      "official_positioning": "Open-source SDK for building, optimizing, and executing quantum workflows, with tools for quantum information science, algorithm development, and heterogeneous orchestration.",
+      "capabilities": [
+        "quantum circuits",
+        "operators and primitives",
+        "transpilation",
+        "algorithm development",
+        "quantum-classical orchestration"
+      ],
+      "proof_receipt_gap": "Qiskit supports serious quantum workflows; Telos can add claim-level proof packets that bind theorem assumptions, circuit fixtures, simulator receipts, hardware metadata, and verifier verdicts.",
+      "telos_wedge_hypothesis": "Use Qiskit-style circuits as inputs while Telos exports portable theorem/circuit/resource receipts across SDKs.",
+      "gap_status": "inferred",
+      "confidence": "high"
+    },
+    {
+      "category": "cloud-platform",
+      "tool": "Microsoft Azure Quantum",
+      "buyer": "enterprise quantum teams, researchers, HPC users, hybrid quantum-classical developers",
+      "source_url": "https://azure.microsoft.com/en-us/solutions/quantum-computing",
+      "official_positioning": "Quantum computing platform combining Azure high-performance computing, AI capabilities, and quantum technologies for scientific discovery and innovation.",
+      "capabilities": [
+        "cloud quantum access",
+        "HPC integration",
+        "AI integration",
+        "hybrid quantum workflows",
+        "resource estimation"
+      ],
+      "proof_receipt_gap": "Azure Quantum spans cloud, HPC, AI, and quantum workflows; Telos can make assumptions, resource estimates, proof status, and action provenance portable outside one cloud workspace.",
+      "telos_wedge_hypothesis": "Build proof packets that travel with Q#/Azure Quantum jobs, especially when resource estimates or cryptographic-impact claims need auditability.",
+      "gap_status": "inferred",
+      "confidence": "high"
+    },
+    {
+      "category": "cloud-platform",
+      "tool": "Amazon Braket",
+      "buyer": "researchers, scientists, developers, enterprise teams evaluating multiple quantum hardware modalities",
+      "source_url": "https://aws.amazon.com/braket/",
+      "official_positioning": "Quantum computing service for researchers and developers to use quantum computers and simulators, build quantum algorithms, and access different hardware types through AWS.",
+      "capabilities": [
+        "managed quantum service",
+        "multiple quantum hardware modalities",
+        "simulators",
+        "hybrid quantum-classical algorithms",
+        "workflow management"
+      ],
+      "proof_receipt_gap": "Braket exposes hardware and simulator execution; Telos can bind device choice, calibration metadata, simulator branch, circuit intent, theorem limits, and Crucible verdicts into one proof packet.",
+      "telos_wedge_hypothesis": "Make Braket experiments reviewable as claim packets instead of isolated jobs and notebooks.",
+      "gap_status": "inferred",
+      "confidence": "high"
+    },
+    {
+      "category": "quantum-sdk",
+      "tool": "Google Cirq",
+      "buyer": "quantum algorithm developers, NISQ researchers, simulator users, hardware-aware quantum programmers",
+      "source_url": "https://quantumai.google/cirq",
+      "official_positioning": "Python library for writing, manipulating, optimizing, and running quantum circuits on quantum computers and simulators, with abstractions for noisy intermediate-scale quantum computers.",
+      "capabilities": [
+        "circuit construction",
+        "circuit manipulation",
+        "circuit optimization",
+        "simulators",
+        "hardware-aware NISQ workflows"
+      ],
+      "proof_receipt_gap": "Cirq is strong at circuit/program representation; Telos can add theorem packets that distinguish algebraic proof, simulator fixture, noise model, and hardware execution status.",
+      "telos_wedge_hypothesis": "Use Cirq-like circuits as proof-packet fixtures with explicit simulator/hardware branch labels.",
+      "gap_status": "inferred",
+      "confidence": "high"
+    },
+    {
+      "category": "hardware-platform",
+      "tool": "Google Quantum AI",
+      "buyer": "quantum computing researchers, error-correction teams, advanced algorithm teams",
+      "source_url": "https://quantumai.google/",
+      "official_positioning": "Research program focused on developing a large-scale computer capable of complex, error-corrected computations.",
+      "capabilities": [
+        "quantum hardware research",
+        "error correction",
+        "quantum chips",
+        "quantum algorithms",
+        "open-source software"
+      ],
+      "proof_receipt_gap": "Google Quantum AI publishes major research and software; Telos can package external research claims, simulator reproductions, and hardware caveats into buyer-readable proof packets.",
+      "telos_wedge_hypothesis": "Use high-profile quantum results as source anchors while separating verified reproduction, inferred market implications, and unverified scale claims.",
+      "gap_status": "inferred",
+      "confidence": "moderate"
+    },
+    {
+      "category": "hardware-platform",
+      "tool": "Quantinuum",
+      "buyer": "enterprise quantum users, chemistry teams, optimization teams, cybersecurity teams, quantum researchers",
+      "source_url": "https://www.quantinuum.com/",
+      "official_positioning": "Full-stack quantum computing company with trapped-ion quantum computers and software solutions for complex industrial and research problems.",
+      "capabilities": [
+        "trapped-ion systems",
+        "hardware-as-a-service",
+        "software stack",
+        "quantum chemistry",
+        "quantum cybersecurity"
+      ],
+      "proof_receipt_gap": "Quantinuum provides hardware and software; Telos can add external proof packets for algorithm claims, device receipts, error assumptions, and cross-platform comparisons.",
+      "telos_wedge_hypothesis": "Turn Quantinuum-style hardware/software runs into portable proof packets with theorem and resource-estimation layers.",
+      "gap_status": "inferred",
+      "confidence": "high"
+    },
+    {
+      "category": "hardware-platform",
+      "tool": "IonQ",
+      "buyer": "research, development, enterprise quantum, networking, and sensing users",
+      "source_url": "https://www.ionq.com/quantum-cloud",
+      "official_positioning": "Cloud access to IonQ quantum computers for research, development, and enterprise use, with examples across AWS, Azure, Cirq, and Qiskit.",
+      "capabilities": [
+        "trapped-ion quantum computers",
+        "cloud access",
+        "multi-SDK examples",
+        "enterprise use",
+        "quantum networking"
+      ],
+      "proof_receipt_gap": "IonQ makes hardware accessible through clouds and SDKs; Telos can preserve which cloud, SDK, backend, calibration state, and proof claim the run actually supports.",
+      "telos_wedge_hypothesis": "Make multi-cloud IonQ experiments comparable by normalizing receipts across cloud wrappers.",
+      "gap_status": "inferred",
+      "confidence": "high"
+    },
+    {
+      "category": "hardware-platform",
+      "tool": "Rigetti",
+      "buyer": "quantum hardware researchers, cloud quantum users, superconducting QPU developers",
+      "source_url": "https://www.rigetti.com/",
+      "official_positioning": "Integrated systems company building quantum computers and superconducting quantum processors, with cloud integration through Quantum Cloud Services.",
+      "capabilities": [
+        "superconducting QPUs",
+        "quantum cloud services",
+        "integrated hardware systems",
+        "QPU access"
+      ],
+      "proof_receipt_gap": "Rigetti hardware access can support experiments; Telos can add portable proof receipts for device parameters, circuit runs, simulator controls, and theorem limits.",
+      "telos_wedge_hypothesis": "Normalize superconducting QPU experiment evidence into Telos proof packets for cross-backend comparison.",
+      "gap_status": "inferred",
+      "confidence": "moderate"
+    },
+    {
+      "category": "quantum-ai",
+      "tool": "PennyLane / Xanadu",
+      "buyer": "quantum machine learning, quantum chemistry, differentiable programming, and algorithm research teams",
+      "source_url": "https://pennylane.ai/",
+      "official_positioning": "Open-source quantum software platform for quantum computing, quantum machine learning, and quantum chemistry.",
+      "capabilities": [
+        "quantum machine learning",
+        "quantum chemistry",
+        "differentiable programming",
+        "cross-platform quantum workflows",
+        "algorithm demos"
+      ],
+      "proof_receipt_gap": "PennyLane is strong at differentiable quantum programming; Telos can add proof packets that bind objective functions, gradients, simulator/hardware branches, seeds, and verifier verdicts.",
+      "telos_wedge_hypothesis": "Make QML experiments auditable with claim-level receipts for data, ansatz, optimizer, backend, and theorem assumptions.",
+      "gap_status": "inferred",
+      "confidence": "high"
+    },
+    {
+      "category": "annealing",
+      "tool": "D-Wave Ocean",
+      "buyer": "optimization teams, quantum annealing users, hybrid solver developers",
+      "source_url": "https://www.dwavequantum.com/solutions-and-products/ocean/",
+      "official_positioning": "Open-source Python tools for solving hard problems with quantum computers, transforming posed problems into forms suitable for quantum solvers.",
+      "capabilities": [
+        "quantum annealing workflows",
+        "hybrid solvers",
+        "problem formulation",
+        "Python SDK",
+        "optimization"
+      ],
+      "proof_receipt_gap": "Ocean helps formulate and run annealing/hybrid problems; Telos can preserve original problem semantics, transformations, solver settings, objective values, and proof of what was actually optimized.",
+      "telos_wedge_hypothesis": "Use optimization proof packets to distinguish problem formulation correctness from solver performance claims.",
+      "gap_status": "inferred",
+      "confidence": "high"
+    },
+    {
+      "category": "quantum-compiler",
+      "tool": "Classiq",
+      "buyer": "quantum algorithm designers, financial institutions, enterprise quantum teams, hardware-aware circuit developers",
+      "source_url": "https://www.classiq.io/",
+      "official_positioning": "Quantum software platform for designing, generating, optimizing, and running sophisticated hardware-aware quantum algorithms and circuits.",
+      "capabilities": [
+        "algorithm design",
+        "circuit synthesis",
+        "optimization",
+        "hardware-aware deployment",
+        "cloud execution"
+      ],
+      "proof_receipt_gap": "Classiq raises abstraction for quantum program synthesis; Telos can bind high-level intent, generated circuit, constraints, resource estimates, and verifier outcomes into one receipt.",
+      "telos_wedge_hypothesis": "Pair compiler/synthesis outputs with proof packets that show exactly which claim the synthesized circuit is allowed to support.",
+      "gap_status": "inferred",
+      "confidence": "high"
+    },
+    {
+      "category": "neutral-atom",
+      "tool": "QuEra",
+      "buyer": "neutral-atom quantum researchers, cloud users, HPC/quantum infrastructure teams",
+      "source_url": "https://www.quera.com/",
+      "official_positioning": "Provider of quantum computers based on neutral atoms, with a mission to build scalable quantum computers.",
+      "capabilities": [
+        "neutral-atom quantum computers",
+        "cloud access",
+        "on-prem systems",
+        "analog and gate-based directions",
+        "HPC integration"
+      ],
+      "proof_receipt_gap": "Neutral-atom systems introduce modality-specific assumptions; Telos can preserve hardware modality, analog/digital branch, calibration state, and theorem/resource boundaries.",
+      "telos_wedge_hypothesis": "Use neutral-atom runs as evidence sources while clearly separating hardware claims from theorem proofs and simulator fixtures.",
+      "gap_status": "inferred",
+      "confidence": "moderate"
+    },
+    {
+      "category": "neutral-atom",
+      "tool": "Pasqal",
+      "buyer": "industrial quantum users, HPC/cloud teams, optimization, simulation, and AI-adjacent quantum teams",
+      "source_url": "https://www.pasqal.com/",
+      "official_positioning": "Quantum computing company developing neutral-atom quantum processors designed to scale toward industrial applications, with HPC and cloud integration.",
+      "capabilities": [
+        "neutral-atom processors",
+        "HPC integration",
+        "cloud integration",
+        "optimization",
+        "simulation",
+        "AI-related workloads"
+      ],
+      "proof_receipt_gap": "Pasqal targets industrial neutral-atom applications; Telos can require proof packets that distinguish business problem, quantum model, simulator branch, hardware branch, and result confidence.",
+      "telos_wedge_hypothesis": "Make industrial quantum pilots auditable by binding problem statements, hardware assumptions, solver receipts, and independent verdicts.",
+      "gap_status": "inferred",
+      "confidence": "moderate"
+    }
+  ]
+}

@@ -1,0 +1,109 @@
+# Frontier Hard-Problem Registry
+
+Date: 2026-07-02
+
+Purpose: turn "solve the hardest problems" into a rigorous Telos operating discipline. The registry names hard problems, binds them to source anchors, reduces them into solvable subclaims, and defines the first experiment/proof packets that can move evidence forward without pretending metadata, ambition, or model output is a solution.
+
+## Rule
+
+No frontier problem is marked solved until the packet contains:
+
+- a precise claim statement
+- source references
+- a falsifier or proof obligation
+- a reproducible experiment, formal proof, or independent measurement
+- a verifier verdict
+- missing-evidence boundaries
+- a publication target and review path
+
+The default state for a hard problem is `SOURCE_LEAD` or `HYPOTHESIS`. A subproblem may become `PROBE_MATCH`, `IDENTITY`, or `CRUCIBLE_MATCH`. A whole frontier problem remains `UNVERIFIABLE` until the appropriate domain proof or field-standard validation exists.
+
+## Source Anchors
+
+| Source | What it anchors | Registry use |
+| --- | --- | --- |
+| Clay Mathematics Institute Millennium Prize Problems, `https://www.claymath.org/millennium-problems/` | Long-standing mathematics frontier problems including Birch and Swinnerton-Dyer, Hodge, Navier-Stokes, P vs NP, Riemann, and Yang-Mills. | Mathematical proof target registry. |
+| Clay Navier-Stokes page, `https://www.claymath.org/millennium/navier-stokes-equation/` | Existence and uniqueness for fluid equations; Clay states the basic proof questions remain unresolved. | PDE proof-packet and numerical-counterexample lane. |
+| CZI AI and Biology Grand Challenges, `https://chanzuckerberg.com/blog/ai-biology-grand-scientific-challenges/` | AI/biology grand-challenge framing around human biology and disease burden. | Biomedical source-federation and mechanistic-model lane. |
+| Global Grand Challenges, `https://gcgh.grandchallenges.org/` | Global health and development priorities. | Societal-scale health/development problem registry. |
+| Northwestern Grand Challenges in Robotics, `https://robotics.northwestern.edu/grand-challenges/` | General-purpose robotic dexterity. | Robotics dexterity and manipulation verification lane. |
+| IEEE ICRA 2025 workshops page, `https://2025.ieee-icra.org/events/2025-05-19/?shortcode=b4e16ff2` | Nuclear-environment robotics and asset-inspection challenges. | Robotics deployment and safety-receipt lane. |
+| OpenDriveLab Challenge 2025, `https://opendrivelab.com/challenge2025/` | Generalizable embodied systems, world models, autonomous-driving/robotics challenge tracks. | Embodied-system benchmark and world-model packet lane. |
+| arXiv `2503.22444v2`, Scaling Laws in Scientific Discovery with AI and Robot Scientists | Autonomous AI/robot-scientist scaling hypothesis. | AI-scientist experiment-routing lane. |
+| arXiv `2509.06580v4`, AI for Scientific Discovery is a Social Problem | Data fragmentation, infrastructure inequity, coordination, and incentive challenges. | Tooling-market and institution-coordination lane. |
+
+These anchors are source leads, not proof that the registry's proposed reductions are correct.
+
+## Eleventh-Wave Primary Target
+
+Primary target: Navier-Stokes existence and smoothness.
+
+Selection rationale: it is a true grand problem, it sits at the intersection of mathematics, physics, scientific computing, rendering, climate, and HPC, and it can be decomposed into proof-carrying PDE subclaims without pretending that a bounded identity solves the parent problem.
+
+First bounded packet: `docs/research/proof-packets/navier-stokes-periodic-energy-identity-v0/`.
+
+Current executable result: `run.receipt.json` reports `bounded_identity_probe: MATCH`, `parent_millennium_problem: UNVERIFIABLE`, `residual_numeric_abs: 7.460698725481052e-14`, and `max_divergence_abs: 0` for a smooth two-dimensional periodic Taylor-Green field.
+
+Current verifier result: `crucible-run.json` reports 3 scoped `MATCH` verdicts for the bounded identity and negative-boundary checks. This promotes the subclaim only. It does not promote Navier-Stokes existence, uniqueness, smoothness, global regularity, turbulence behavior, climate validity, or physical simulation fidelity.
+
+## Hard-Problem Matrix
+
+| Domain | Hard problem | Why it has resisted solution | Telos reduction | First packet to build | Current status |
+| --- | --- | --- | --- | --- | --- |
+| Mathematics | Navier-Stokes existence and smoothness | Requires proof of global regularity or finite-time breakdown behavior for nonlinear PDEs. | Start with certified energy estimates, weak-solution assumptions, numeric blow-up falsifiers, and formal statement replay. | `navier-stokes-periodic-energy-identity-v0`, then `navier-stokes-energy-bound-packet` | Parent `UNVERIFIABLE`; bounded subclaim `CRUCIBLE_MATCH` |
+| Mathematics / CS | P vs NP | Requires separation or equality of complexity classes under rigorous proof standards. | Build proof-assistant statement packs for small reductions, SAT certificate verifiers, and failed-proof classifiers. | `p-vs-np-certificate-boundary-packet` | `SOURCE_LEAD` |
+| Mathematics | Riemann Hypothesis | Needs proof that nontrivial zeta zeros have real part 1/2. | Separate computational zero verification from theorem proof; build numeric receipt and formal-statement packs. | `riemann-zero-receipt-boundary-packet` | `SOURCE_LEAD` |
+| Physics | Yang-Mills existence and mass gap | Requires constructing quantum Yang-Mills theory and proving positive mass gap. | Start with lattice-gauge simulation receipts, continuum-limit source map, and theorem-statement binding. | `yang-mills-lattice-to-proof-boundary-packet` | `SOURCE_LEAD` |
+| Physics / fluids | Turbulence closure and multiscale predictability | Nonlinear multiscale dynamics resist stable general reduced models. | Build PDE/numeric kernels with uncertainty budgets and measurable invariants. | `turbulence-invariant-receipt` | `HYPOTHESIS` |
+| Biology | Mechanistic cell-state and disease-response models | Multiscale biology, sparse causal data, hidden confounders, and intervention limits. | Source federation plus causal-claim packets, perturbation datasets, and mechanistic falsifiers. | `mechanistic-cell-state-proof-packet` | `SOURCE_LEAD` |
+| Medicine | Robust, equitable clinical prediction and treatment-response modeling | Distribution shift, confounding, privacy, deployment, and evaluation across care settings. | EHR provenance, cohort definition receipts, model-output boundary, and clinical review gates. | `clinical-trajectory-evidence-packet` | `SOURCE_LEAD` |
+| Protein science | Reliable protein stability/design prediction under physical constraints | Sequence/structure/function landscape is large and validation is expensive. | Bind model predictions to physical invariants, benchmark sets, uncertainty, and wet-lab-needed boundaries. | `protein-stability-invariant-packet` | `SOURCE_LEAD` |
+| Robotics | General-purpose dexterity | Contact-rich manipulation, long-horizon planning, sim-to-real, perception, and safety. | Action receipts, world-state receipts, simulator/physical split, and failure taxonomy. | `dexterity-action-receipt-packet` | `SOURCE_LEAD` |
+| Robotics / autonomy | Generalizable embodied systems and world models | Generalization across environments and tasks remains brittle. | Benchmark source refs, world-model predictions, rollout receipts, and safety gates. | `embodied-world-model-receipt` | `SOURCE_LEAD` |
+| AI research | Autonomous scientific discovery | Claims can outrun evidence; source truth, experiment provenance, and review must be bound. | Proof-carrying research loops: source, claim, experiment, verifier, lesson, publication. | `ai-scientist-risk-boundary-packet` | `HYPOTHESIS` |
+| Social systems | Global health and development interventions | Causal attribution, local constraints, incentives, and implementation gaps. | Evidence graph with intervention, context, measurement, and counterfactual boundaries. | `global-health-intervention-receipt` | `SOURCE_LEAD` |
+
+## Experiment Protocol
+
+Every hard-problem lane follows the same promotion protocol:
+
+1. `SOURCE_LEAD`: Capture source metadata with Gather or a domain adapter.
+2. `HYPOTHESIS`: Extract one claim with a named scope.
+3. `FALSIFIER`: Name what would refute the claim or what proof obligation must be met.
+4. `PACKET`: Bind sources, code, data, assumptions, and missing evidence.
+5. `PROBE`: Run the smallest meaningful experiment or proof replay.
+6. `CRUCIBLE`: Compare claim against measurement.
+7. `LEARN`: Convert the packet into a prooflesson so the boundary is teachable.
+8. `PUBLISH`: Create website copy and official-copy draft only with the evidence state intact.
+
+## Near-Term Solvable Subproblems
+
+These are not the grand problems themselves. They are legitimate subproblem targets that can generate real proofs, identities, or reproducible evidence.
+
+| Subproblem | Why it is tractable now | Expected status if successful |
+| --- | --- | --- |
+| Heat-equation energy decay identity | Existing dogfood packets already show proof-packet machinery for PDE identities. | `IDENTITY` or `CRUCIBLE_MATCH` |
+| Reaction-network mass conservation | Stoichiometric invariants can be checked symbolically and numerically. | `IDENTITY` |
+| Markov detailed-balance checks | Reversible-chain identities can be validated with finite matrices. | `IDENTITY` |
+| LLM-to-MDP consistency for robotic planning | Generated MDPs can be checked for state/action well-formedness and policy rollout criteria. | `PROBE_MATCH` |
+| Protein-stability physical-invariant checks | A model prediction can be tested against stated mass/energy/uncertainty constraints before wet-lab claims. | `PROBE_MATCH` |
+| Biomedical EHR answer provenance | A generated clinical answer can be checked for cited source provenance and unsupported-claim rejection. | `PROBE_MATCH` |
+
+## Immediate Tooling Requirements
+
+| Need | Tooling improvement |
+| --- | --- |
+| Biomedical literature coverage beyond arXiv | Add token-free Gather adapter for Europe PMC or PubMed, or configure `GATHER_API_TOKEN` for approved API use. |
+| Source relevance under noisy searches | Add source-lead demotion gate: `domain_lead`, `adjacent_lead`, `query_noise`, `reject`. |
+| Hard-problem proof discipline | Add `FrontierProblem` and `FrontierSubclaim` schemas with required falsifier and promotion state. |
+| Formal proof replay | Extend theorem-prover adapter packets and statement-source binding. |
+| Experimental reproducibility | Bind code, data, environment, random seeds, uncertainty budgets, and measurement verdicts. |
+| Publication pipeline | Generate website copy and official copy from the same claims table. |
+
+## Do Not Claim
+
+- Do not claim Telos has solved any grand challenge in this registry.
+- Do not claim a subproblem receipt solves the parent frontier problem.
+- Do not promote arXiv, web, or institutional pages from `SOURCE_LEAD` to truth.
+- Do not make clinical or safety claims without domain-appropriate review.
+- Do not use `PROMOTED_LAW` until independent proof, reproduction, and review exist.

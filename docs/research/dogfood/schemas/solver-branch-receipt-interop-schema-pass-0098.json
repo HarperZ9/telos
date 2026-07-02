@@ -1,0 +1,364 @@
+{
+  "branch_receipts": [
+    {
+      "branch_id": "python_exact_enumeration",
+      "claim_status": "LOCAL_RECEIPT_MATCH",
+      "evidence_ref": "schemas/quantum-optimization-workflow-receipt-pass-0094.json",
+      "execution_status": "EXECUTED",
+      "feasible_count": 1275,
+      "gap_to_exact": 0,
+      "mask": null,
+      "method": "full mask enumeration",
+      "origin_pass": "0094",
+      "runtime": "python",
+      "schema": "SolverBranchReceipt/v1",
+      "selected": [
+        "A",
+        "B",
+        "D",
+        "F",
+        "I",
+        "L"
+      ],
+      "solver_status": "MATCH",
+      "source_anchor": null,
+      "value": 162,
+      "weight": 29
+    },
+    {
+      "branch_id": "scipy_dual_annealing",
+      "claim_status": "LOCAL_RECEIPT_MATCH",
+      "evidence_ref": "schemas/quantum-optimization-workflow-receipt-pass-0094.json",
+      "execution_status": "EXECUTED",
+      "feasible_count": null,
+      "gap_to_exact": 0,
+      "mask": null,
+      "method": "scipy.optimize.dual_annealing",
+      "origin_pass": "0094",
+      "runtime": "python/scipy",
+      "schema": "SolverBranchReceipt/v1",
+      "selected": [
+        "A",
+        "B",
+        "D",
+        "F",
+        "I",
+        "L"
+      ],
+      "solver_status": "MATCH",
+      "source_anchor": {
+        "claim": "Find the global minimum of a function using Dual Annealing.",
+        "title": "SciPy dual_annealing",
+        "url": "https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.dual_annealing.html"
+      },
+      "value": 162,
+      "weight": 29
+    },
+    {
+      "branch_id": "networkx_capacity_dag_longest_path",
+      "claim_status": "LOCAL_RECEIPT_MATCH",
+      "evidence_ref": "schemas/quantum-optimization-workflow-receipt-pass-0094.json",
+      "execution_status": "EXECUTED",
+      "feasible_count": null,
+      "gap_to_exact": 0,
+      "mask": null,
+      "method": "capacity-layered DAG longest path",
+      "origin_pass": "0094",
+      "runtime": "python/networkx",
+      "schema": "SolverBranchReceipt/v1",
+      "selected": [
+        "A",
+        "B",
+        "D",
+        "F",
+        "I",
+        "L"
+      ],
+      "solver_status": "MATCH",
+      "source_anchor": {
+        "claim": "Returns the longest path in a directed acyclic graph.",
+        "title": "NetworkX dag_longest_path",
+        "url": "https://networkx.org/documentation/stable/reference/algorithms/generated/networkx.algorithms.dag.dag_longest_path.html"
+      },
+      "value": 162,
+      "weight": 29
+    },
+    {
+      "branch_id": "ortools_knapsack",
+      "claim_status": "DEPENDENCY_BOUNDARY",
+      "dependency": {
+        "available": false,
+        "origin": null,
+        "package": "ortools"
+      },
+      "evidence_ref": "schemas/quantum-optimization-workflow-receipt-pass-0094.json",
+      "execution_status": "NOT_EXECUTED_DEPENDENCY_MISSING",
+      "gap_to_exact": null,
+      "method": "knapsack solver",
+      "origin_pass": "0094",
+      "runtime": "python/ortools",
+      "schema": "SolverBranchReceipt/v1",
+      "solver_status": "UNVERIFIABLE_UNTIL_EXECUTED",
+      "source_anchor": {
+        "claim": "Choose a subset of maximum total value that fits capacity.",
+        "title": "OR-Tools knapsack",
+        "url": "https://developers.google.com/optimization/pack/knapsack"
+      },
+      "value": null,
+      "weight": null
+    },
+    {
+      "branch_id": "dwave_ocean_sampler",
+      "claim_status": "DEPENDENCY_BOUNDARY",
+      "dependency": {
+        "available": false,
+        "origin": null,
+        "package": "dwave.system"
+      },
+      "evidence_ref": "schemas/quantum-optimization-workflow-receipt-pass-0094.json",
+      "execution_status": "NOT_EXECUTED_DEPENDENCY_MISSING",
+      "gap_to_exact": null,
+      "method": "sampler adapter",
+      "origin_pass": "0094",
+      "runtime": "python/dwave-ocean",
+      "schema": "SolverBranchReceipt/v1",
+      "solver_status": "UNVERIFIABLE_UNTIL_EXECUTED",
+      "source_anchor": {
+        "claim": "Ocean provides quantum, classical, and hybrid samplers.",
+        "title": "D-Wave Ocean samplers",
+        "url": "https://docs.dwavequantum.com/en/latest/ocean/api_ref_samplers/index.html"
+      },
+      "value": null,
+      "weight": null
+    },
+    {
+      "branch_id": "buildlang_exact_enumeration",
+      "claim_status": "LOCAL_RECEIPT_MATCH",
+      "evidence_ref": "schemas/buildlang-optimization-proof-workbench-receipt-pass-0097.json",
+      "execution_status": "EXECUTED",
+      "feasible_count": 1275,
+      "gap_to_exact": 0,
+      "mask": 2347,
+      "method": "full 4096-mask enumeration",
+      "origin_pass": "0097",
+      "runtime": "buildlang/buildc",
+      "schema": "SolverBranchReceipt/v1",
+      "selected": [],
+      "solver_status": "MATCH",
+      "source_anchor": null,
+      "value": 162,
+      "weight": 29
+    },
+    {
+      "branch_id": "buildlang_greedy_ratio_order",
+      "claim_status": "LOCAL_RECEIPT_MATCH",
+      "evidence_ref": "schemas/buildlang-optimization-proof-workbench-receipt-pass-0097.json",
+      "execution_status": "EXECUTED",
+      "feasible_count": null,
+      "gap_to_exact": 16,
+      "mask": 2331,
+      "method": "fixed value/weight ratio order",
+      "origin_pass": "0097",
+      "runtime": "buildlang/buildc",
+      "schema": "SolverBranchReceipt/v1",
+      "selected": [],
+      "solver_status": "MATCH",
+      "source_anchor": null,
+      "value": 146,
+      "weight": 25
+    },
+    {
+      "branch_id": "buildlang_bounded_prefix_2048",
+      "claim_status": "LOCAL_RECEIPT_MATCH",
+      "evidence_ref": "schemas/buildlang-optimization-proof-workbench-receipt-pass-0097.json",
+      "execution_status": "EXECUTED",
+      "feasible_count": 704,
+      "gap_to_exact": 5,
+      "mask": 299,
+      "method": "enumerates masks below 2048",
+      "origin_pass": "0097",
+      "runtime": "buildlang/buildc",
+      "schema": "SolverBranchReceipt/v1",
+      "selected": [],
+      "solver_status": "MATCH",
+      "source_anchor": null,
+      "value": 157,
+      "weight": 27
+    }
+  ],
+  "coverage": {
+    "best_value": 162,
+    "branch_count": 8,
+    "dependency_boundary_count": 2,
+    "executed_count": 6,
+    "max_observed_gap": 16,
+    "runtimes": [
+      "buildlang/buildc",
+      "python",
+      "python/dwave-ocean",
+      "python/networkx",
+      "python/ortools",
+      "python/scipy"
+    ]
+  },
+  "current_promoted_natural_laws": [],
+  "flagship_receipts": {
+    "forum": {
+      "confidence": 0.09090909090909091,
+      "decided": null,
+      "exit_code": 0,
+      "needs_escalation": true,
+      "status": "MATCH",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "a72455b90f29ed2ce0ba1cca16cddb1e0d9efffa176ad3c7f3092a91e1ab34c8",
+      "top_candidates": [
+        {
+          "agent": "project-telos",
+          "score": 0.09090909090909091
+        },
+        {
+          "agent": "backend",
+          "score": 0.0
+        },
+        {
+          "agent": "ci-cd",
+          "score": 0.0
+        },
+        {
+          "agent": "cloud-infra",
+          "score": 0.0
+        },
+        {
+          "agent": "code-review",
+          "score": 0.0
+        }
+      ]
+    },
+    "index": {
+      "exit_code": 0,
+      "graph_pack_sha256": "8ee383e19ae9a6141bee70de733fb6aa09201ff9d284ce6778ce58b06e6b68b2",
+      "schema": "project-telos.context-envelope/v1",
+      "source_refs_only": true,
+      "status": "MATCH",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "4866fdd92e0b97bb76e931bb37e6e7e0708ba91cf6aa3748b4b20006ce88e49e",
+      "verification_verdict": "MATCH"
+    },
+    "telos": {
+      "exit_code": 0,
+      "status": "MATCH",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "be17cb15259234cb4e8e95c2b36e76c90d841431729beb140294e34c5f9ebfa7",
+      "tool": "telos",
+      "tool_version": "0.1.0"
+    }
+  },
+  "generated_on": "2026-07-01",
+  "measurements": [
+    {
+      "claim": "8 solver branch receipts are normalized",
+      "id": "branch_count",
+      "status": "MATCH"
+    },
+    {
+      "claim": "6 branches executed locally",
+      "id": "executed_count",
+      "status": "MATCH"
+    },
+    {
+      "claim": "2 dependency-boundary branches are explicit",
+      "id": "dependency_boundaries",
+      "status": "MATCH"
+    },
+    {
+      "claim": "best observed value remains 162",
+      "id": "best_value",
+      "status": "MATCH"
+    },
+    {
+      "claim": "4 official source anchors are bound",
+      "id": "source_anchors",
+      "status": "MATCH"
+    },
+    {
+      "claim": "SolverBranchReceipt required fields are listed",
+      "id": "required_fields",
+      "status": "MATCH"
+    },
+    {
+      "claim": "Forum, Index, and Telos receipts match",
+      "id": "flagships",
+      "status": "MATCH"
+    },
+    {
+      "claim": "no unsupported claim or natural law is promoted",
+      "id": "promotion_boundary",
+      "status": "MATCH"
+    }
+  ],
+  "negative_fixtures": [
+    {
+      "expected_status": "REJECT",
+      "fixture_id": "missing_source_anchor",
+      "reject_reason": "external solver branch needs source anchor or local receipt"
+    },
+    {
+      "expected_status": "REJECT",
+      "fixture_id": "dependency_boundary_promoted",
+      "reject_reason": "missing dependency branch cannot claim execution"
+    },
+    {
+      "expected_status": "REJECT",
+      "fixture_id": "suboptimal_branch_claimed_exact",
+      "reject_reason": "gap_to_exact must remain nonzero"
+    }
+  ],
+  "non_promotion_statement": "Pass 0098 defines a shared solver-branch receipt schema. It does not prove solver superiority, external dependency coverage, quantum advantage, market adoption, or a natural law.",
+  "pass": "0098",
+  "required_fields": [
+    "branch_id",
+    "runtime",
+    "method",
+    "execution_status",
+    "solver_status",
+    "value",
+    "weight",
+    "gap_to_exact",
+    "source_anchor",
+    "evidence_ref",
+    "claim_status"
+  ],
+  "schema": "SolverBranchReceiptInteropSchema/v1",
+  "seal": "2181667403bd97ff87b8840526b50cab476743c215b28da41ef26fc33bc831f9",
+  "source_anchors": [
+    {
+      "claim": "Find the global minimum of a function using Dual Annealing.",
+      "title": "SciPy dual_annealing",
+      "url": "https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.dual_annealing.html"
+    },
+    {
+      "claim": "Returns the longest path in a directed acyclic graph.",
+      "title": "NetworkX dag_longest_path",
+      "url": "https://networkx.org/documentation/stable/reference/algorithms/generated/networkx.algorithms.dag.dag_longest_path.html"
+    },
+    {
+      "claim": "Choose a subset of maximum total value that fits capacity.",
+      "title": "OR-Tools knapsack",
+      "url": "https://developers.google.com/optimization/pack/knapsack"
+    },
+    {
+      "claim": "Ocean provides quantum, classical, and hybrid samplers.",
+      "title": "D-Wave Ocean samplers",
+      "url": "https://docs.dwavequantum.com/en/latest/ocean/api_ref_samplers/index.html"
+    }
+  ],
+  "source_bindings": {
+    "primary_vector": "optimization_proof_workbench",
+    "scorecard_pass": "0096",
+    "workbench_pass": "0097",
+    "workflow_pass": "0094"
+  },
+  "status": "SOLVER_BRANCH_RECEIPT_INTEROP_SCHEMA_MATCH",
+  "unsupported_claim_count": 0,
+  "validation_errors": []
+}

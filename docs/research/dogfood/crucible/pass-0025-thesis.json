@@ -1,0 +1,46 @@
+{
+  "claims": [
+    {
+      "falsification": "schemas/action-receipt-persistence-replay-pass-0025.json is missing, has a different schema or status, reports a different line count or negative fixture count, or has a different seal",
+      "text": "Pass 0025 created an ActionReceiptPersistenceReplaySet/v1 artifact with status ACTION_RECEIPT_PERSISTENCE_REPLAY_MATCH, line_count=5, negative_fixture_count=11, and seal 7203957ec04350756af9cdb2d244760ebbc2c00bbc3fcc048acd7c9ff2a1a177."
+    },
+    {
+      "falsification": "the ledger file is missing, has a different SHA-256, line count, or ledger head hash, or is not marked append-only JSONL with canonical JSON lines",
+      "text": "Pass 0025 wrote fixtures/telos-action-receipt-ledger-pass-0025.jsonl as append-only canonical JSONL with sha256 66a536120c2d95e2d5b1a879fbe34f8b908327dfc356bcfcf530dadc2f44dfab, line_count=5, and ledger_head_hash 6d194872068da0e9c74d95478cca7e4f2c5a447da9a82a73be3ce9b5aa44f371."
+    },
+    {
+      "falsification": "the source fixture binding is missing, has a different path, SHA-256, seal, event count, or source chain head",
+      "text": "Pass 0025 binds back to source fixture schemas/telos-action-receipt-fixture-pass-0024.json with sha256 9c6402f98774170311d78ea3f6983cae71a665dd38ab2ee7e88d413398990ff4, source_event_count=4, and source_chain_head_hash 0617602eed957e0bc6c2e4a21548528f6defc542c4468433bde85df76cb51b3a."
+    },
+    {
+      "falsification": "replay does not preserve the source chain at entry 4, mutates any of the first four event hashes, reports the wrong replay count, or reports the wrong event id index hash",
+      "text": "Pass 0025 replay reports replayed_event_count=5, source_chain_head_preserved_at_entry_4=true, original_event_hashes_match_source=true, and event_id_index_hash 47664ad56ddceb13b4356ad4152d119f4e52ef1a67baeb1a7c93e0d6945356ca."
+    },
+    {
+      "falsification": "the appended compensation event is missing, has a different event id, event type, event hash, previous chain hash, or chain hash, or mutates the original action events",
+      "text": "Pass 0025 appends compensation event evt_dogfood_0025_005_compensation_completed with event_type compensation_completed, event_hash 85ae96fca309e5303c4ca4aba9c7058c215c70ccf928fbf384f748689ddc044f, previous_chain_hash 0617602eed957e0bc6c2e4a21548528f6defc542c4468433bde85df76cb51b3a, and compensation_chain_hash 9e8311cf3b5cec4c3424cab1c5d7883b475fba35c70224dfb921fdacb2797a5f."
+    },
+    {
+      "falsification": "lookup probes are missing or report counts other than 5 for action id, 5 for intent id, 1 for compensation event id, and 1 for compensation idempotency key",
+      "text": "Pass 0025 lookup probes report match_count=5 for action id act_dogfood_0024_001, match_count=5 for intent id intent_dogfood_0024_001, match_count=1 for compensation event id evt_dogfood_0025_005_compensation_completed, and match_count=1 for idempotency key idem_dogfood_0025_compensation_001."
+    },
+    {
+      "falsification": "the strict loader requirements are missing or do not require canonical JSON lines, object_pairs_hook duplicate-key checks, non-finite rejection, duplicate key rejection, and allow_nan=false",
+      "text": "Pass 0025 ledger receipt requires canonical_json_lines=true, object_pairs_hook_required=true, parse_constant_rejects_nonfinite=true, duplicate_keys_rejected=true, and allow_nan_on_serialization=false."
+    },
+    {
+      "falsification": "schemas/pass-0025-action-receipt-persistence-validator-result.json is missing, reports non-MATCH status, does not report match=1, reports drift above zero, or reports a different line count, negative count, ledger head, or compensation event id",
+      "text": "Pass 0025 validator reports MATCH with match=1, drift=0, line_count=5, negative_fixture_count=11, ledger_head_hash 6d194872068da0e9c74d95478cca7e4f2c5a447da9a82a73be3ce9b5aa44f371, and compensation_event_id evt_dogfood_0025_005_compensation_completed."
+    },
+    {
+      "falsification": "packet 035 is missing, Gather does not verify it, the packet SHA-256 or seal differs, or packet/adversarial files promote production durability, external write safety, scientific discovery, theorem proof, or a natural law",
+      "text": "Pass 0025 packet 035 was gathered and verified with SHA-256 0d9694013e0555b8249c608b327692c1d58d022c7853528770572d656476a1f5 and digest seal 3fbf1c9cb69a4795cd1e2377f17a12a4cdb774fbbd77c07a43f86d50b1bcd663, while packet 035 and the adversarial steelman preserve the non-promotion boundary."
+    },
+    {
+      "falsification": "schemas/tool-receipts-pass-0025.json is missing, lacks required tool status receipts, treats Forum submit as successful, or omits Telos action receipt and loop ledger receipts",
+      "text": "Pass 0025 records tool receipts showing Index, Gather, Telos, Forum status and ledger verify, and Crucible status as MATCH while preserving Forum submit as UNVERIFIABLE because no model executor is configured."
+    }
+  ],
+  "disposition": "fenced",
+  "title": "Dogfood Pass 0025 Action Receipt Persistence Replay"
+}

@@ -1,0 +1,92 @@
+{
+  "measurements": [
+    {
+      "claim": "Pass 0080 created a BuildLangProofPacketDemoSurface/v1 artifact with status BUILDLANG_PROOF_PACKET_DEMO_SURFACE_MATCH, sha256 9eeba6aa9ef73ebfe0cfeacbd3dd162e4549770cb2bd30b17a12d84c7208f263, and seal d0d79d658de3546edfaebf5791ed08e1a7656cc5d7987052fd90a992d7e8a000.",
+      "deviation": 0.0,
+      "evidence": [
+        "schema=BuildLangProofPacketDemoSurface/v1",
+        "status=BUILDLANG_PROOF_PACKET_DEMO_SURFACE_MATCH",
+        "sha256=9eeba6aa9ef73ebfe0cfeacbd3dd162e4549770cb2bd30b17a12d84c7208f263",
+        "seal=d0d79d658de3546edfaebf5791ed08e1a7656cc5d7987052fd90a992d7e8a000"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0080 binds source intake pass 0074 with source_ref_count 13.",
+      "deviation": 0.0,
+      "evidence": [
+        "source_pass=0074",
+        "source_ref_count=13"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0080 binds workspace context pass 0079 with source_ref_count 128 and path_scoped_context True.",
+      "deviation": 0.0,
+      "evidence": [
+        "workspace_pass=0079",
+        "workspace_refs=128",
+        "path_scoped=True"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0080 live buildc corpus status is MATCH with match 10 and drift 0.",
+      "deviation": 0.0,
+      "evidence": [
+        "live_status=MATCH",
+        "match=10",
+        "drift=0"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0080 forum route status is MATCH with needs_escalation True.",
+      "deviation": 0.0,
+      "evidence": [
+        "route_status=MATCH",
+        "needs_escalation=True"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0080 buyer brief sha256 is 8645d62e81f1b18a0a313d648da74beebcb572aff1fabcc78016ef46ae7d06ca.",
+      "deviation": 0.0,
+      "evidence": [
+        "brief_sha256=8645d62e81f1b18a0a313d648da74beebcb572aff1fabcc78016ef46ae7d06ca"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0080 contains 9 negative fixtures, unsupported_claim_count 0, and current_promoted_natural_laws length 0.",
+      "deviation": 0.0,
+      "evidence": [
+        "negative_fixture_count=9",
+        "unsupported_claim_count=0",
+        "natural_law_count=0"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0080 composer sha256 is 09d2b49529743fda609e428b7c53316d669455a98e0e06a380b3a478d2b08b95, packet sha256 is 36dfd6e3c8334d2db68ab7fe50b87d09dcd5af8f71cb9a87498a56d383c820f1, steelman sha256 is 7f42130c8d71414e81901dc8680e95fc78ed331f34f8a04ca1c863dfd9ac2047, and test sha256 is 70142ec42e04ea869ac114ebc19152eec8b5ac8ffc4cd3b9e47c0ba7d758a4ab with test_receipt status MATCH.",
+      "deviation": 0.0,
+      "evidence": [
+        "composer_sha256=09d2b49529743fda609e428b7c53316d669455a98e0e06a380b3a478d2b08b95",
+        "packet_sha256=36dfd6e3c8334d2db68ab7fe50b87d09dcd5af8f71cb9a87498a56d383c820f1",
+        "steelman_sha256=7f42130c8d71414e81901dc8680e95fc78ed331f34f8a04ca1c863dfd9ac2047",
+        "test_sha256=70142ec42e04ea869ac114ebc19152eec8b5ac8ffc4cd3b9e47c0ba7d758a4ab",
+        "test_status=MATCH",
+        "compose_status=MATCH"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    }
+  ]
+}

@@ -1,0 +1,136 @@
+{
+  "schema": "DogfoodToolReceipts/v1",
+  "pass": "0078",
+  "generated_on": "2026-07-01",
+  "status": "MATCH_INDEX_PATH_SELECTOR_RECEIPT_FIXTURE",
+  "path_selector_receipt": {
+    "schema": "IndexPathSelectorReceipt/v1",
+    "artifact": "docs/research/dogfood/schemas/index-path-selector-receipt-pass-0078.json",
+    "artifact_sha256": "70c2c02cd58ac0274e1d3d6913ee205cbab69ecfbd077bd6cfc5d52e86477b9d",
+    "seal": "56e47de47e3875151e310a9cc9763cc7b08976b282e0e830d03e5a967985f276",
+    "root": "C:/dev/public/pubscan/quantalang",
+    "selected_selector_count": 2,
+    "rejected_selector_count": 1,
+    "source_ref_count": 128,
+    "graph_pack_sha256": "d3bae65c0703599721168f6cf6e77fa44bb85445bd03752d1fc2a9c4a04e51d8",
+    "raw_source_included": false,
+    "source_refs_only": true,
+    "selector_results": [
+      {
+        "selector": "buildlang",
+        "status": "MATCH",
+        "file_count": 342,
+        "source_ref_count": 64
+      },
+      {
+        "selector": "compiler",
+        "status": "MATCH",
+        "file_count": 145,
+        "source_ref_count": 64
+      },
+      {
+        "selector": "build-universe",
+        "status": "REJECT",
+        "reason": "missing_selector",
+        "file_count": 0,
+        "source_ref_count": 0
+      }
+    ],
+    "excluded_dirs": [
+      ".git",
+      ".pytest_cache",
+      ".ruff_cache",
+      "__pycache__",
+      "node_modules",
+      "target"
+    ],
+    "unsupported_claim_count": 0
+  },
+  "gather": {
+    "status": "MATCH",
+    "docs_packet": {
+      "path": "docs/research/dogfood/packets/088-index-path-selector-receipt.md",
+      "sha256": "dc0cc324d5648de0f38883977075088c9f80db243c66a66240a9ea890414b76f",
+      "seal": "4eac5f9c577b75fc8cd165dfd6782a585940629de87cf33db196d4e3efb02539",
+      "verified": true,
+      "dropped": 0
+    }
+  },
+  "crucible": {
+    "run_status": "MATCH",
+    "thesis_id": "37e5e0377165e3dd",
+    "thesis_seal": "37e5e0377165e3ddcc0cadede1360fa9fd1e03daa82f7d90ba8ea9c10269f419",
+    "assessment_seal": "0b0739ca537a5376db859659eee7b38fcf54705adce752781004c77d781cd2bd",
+    "assessment_record_seal": "28bad7450cef1e666300412d92521cd75ac9c6d8b67c90f1082f4ae287f18839",
+    "measurement_seal": "dacb01353f78d0e1ca28281ac100392e5d5343ad3873eb1c68c9a4005737ed35",
+    "claims": 8,
+    "match": 8,
+    "drift": 0,
+    "unverifiable": 0,
+    "registry_stats": {
+      "theses": 66,
+      "claims": 545,
+      "unique_claims": 538,
+      "assessments": 67,
+      "latest_assessments": 66,
+      "invalid_latest_assessments": 0,
+      "match": 545,
+      "drift": 0,
+      "unverifiable": 0
+    }
+  },
+  "telos": {
+    "integration_result": "Pass 0078 provides an adapter fixture that can replace BuildLang root-context fallback with selected path source refs in the next domain-envelope join.",
+    "non_promotion_boundary": "Does not modify Index itself, include raw source payloads, cover missing build-universe sources, prove market adoption, or promote a natural law."
+  },
+  "shell": {
+    "commands": [
+      {
+        "command": "python docs\\research\\dogfood\\tools\\test_index_path_selector_receipt.py",
+        "status": "MATCH"
+      },
+      {
+        "command": "python -m py_compile docs\\research\\dogfood\\tools\\compose_index_path_selector_receipt.py docs\\research\\dogfood\\tools\\probe_index_path_selector_receipt.py docs\\research\\dogfood\\tools\\test_index_path_selector_receipt.py docs\\research\\dogfood\\tools\\validate_pass_0078_index_path_selector_receipt.py",
+        "status": "MATCH"
+      },
+      {
+        "command": "python docs\\research\\dogfood\\tools\\probe_index_path_selector_receipt.py",
+        "status": "MATCH"
+      },
+      {
+        "command": "python docs\\research\\dogfood\\tools\\validate_pass_0078_index_path_selector_receipt.py",
+        "status": "MATCH"
+      },
+      {
+        "command": "crucible run docs\\research\\dogfood\\crucible\\pass-0078-thesis.json --measurements docs\\research\\dogfood\\crucible\\pass-0078-measurements.json --registry docs\\research\\dogfood\\crucible\\registry --report docs\\research\\dogfood\\crucible\\pass-0078-report.md --out docs\\research\\dogfood\\crucible\\pass-0078-run.json --json",
+        "status": "MATCH"
+      },
+      {
+        "command": "gather docs docs\\research\\dogfood\\packets\\088-index-path-selector-receipt.md --json",
+        "status": "MATCH"
+      },
+      {
+        "command": "crucible registry stats docs\\research\\dogfood\\crucible\\registry --json",
+        "status": "MATCH"
+      }
+    ],
+    "line_counts": {
+      "compose_index_path_selector_receipt.py": 176,
+      "probe_index_path_selector_receipt.py": 106,
+      "test_index_path_selector_receipt.py": 33,
+      "validate_pass_0078_index_path_selector_receipt.py": 64,
+      "index-path-selector-receipt-pass-0078.json": 4457
+    },
+    "sha256": {
+      "compose_index_path_selector_receipt.py": "e6f757cc36902614bd3494986588bc7c6bf457d2dc653f303c32c9af96ea7d51",
+      "probe_index_path_selector_receipt.py": "e941d37535b3f61c630d9cc965da08492e1cd24cf9ad7252e913fc8712f4aa58",
+      "test_index_path_selector_receipt.py": "f6681fba62670480afb02c941c3ebfeb5948cde54f0cd14ec0a3daf75c3b3106",
+      "validate_pass_0078_index_path_selector_receipt.py": "2121a53d84e0880777c88d918749842e62ad102cf3917da61f53e49a0e29f02e",
+      "index-path-selector-receipt-pass-0078.json": "70c2c02cd58ac0274e1d3d6913ee205cbab69ecfbd077bd6cfc5d52e86477b9d",
+      "pass-0078-index-path-selector-receipt-validator-result.json": "36b4d1bffb623b27f40c3741faf2ab163c1a98e4014e0d2e356784c494d11fd9",
+      "088-index-path-selector-receipt.md": "dc0cc324d5648de0f38883977075088c9f80db243c66a66240a9ea890414b76f",
+      "pass-0078-index-path-selector-receipt-steelman.md": "afc6bef2740656036730ec0d8f344a5637f2e56e6b42515ddb00db5a1fa39e2d",
+      "pass-0078-run.json": "a2cb6c2fbc089fcfaf561bafc2017b74109f51eff43909185dcfc1c89a9b730f"
+    }
+  }
+}

@@ -1,0 +1,526 @@
+{
+  "crm_import": {
+    "counterparty_seed_count": 3,
+    "next_touch_count": 3,
+    "outreach_event_count": 3,
+    "write_instruction": "Use warden-crm counterparty_upsert, outreach_emit, and next_touch_set only after operator approval."
+  },
+  "crm_write_status": "NOT_WRITTEN",
+  "current_promoted_natural_laws": [],
+  "generated_on": "2026-07-01",
+  "market_claim_boundary": "HYPOTHESIS_ONLY",
+  "non_promotion_statement": "Pass 0060 drafts outreach packets and CRM import shapes. It does not send outreach, write CRM records, prove buyer demand, prove budget, or promote any natural law.",
+  "outreach_packets": [
+    {
+      "acceptance_criteria": [
+        "Buyer names one workflow where a proof packet would be reviewed by a real stakeholder.",
+        "Buyer identifies a source, action, verification, or replay gap in the current workflow.",
+        "Buyer names a concrete artifact that would move the conversation from interest to pilot.",
+        "Pilot candidate can be bounded to a falsifiable research claim or reproduction task."
+      ],
+      "buyer_id": "research_lab",
+      "counterparty_seed": {
+        "id": "prospect-research-lab-proof-packets",
+        "name": "Research Lab Proof-Packet Prospect",
+        "notes": "Pass 0060 generated seed row; prospect identity is a placeholder until buyer discovery names a real organization.",
+        "sector": "research-ai4science",
+        "status": "prospect_unverified"
+      },
+      "evidence_intake_fields": [
+        {
+          "field_id": "buyer_role",
+          "label": "Named buyer role and authority path",
+          "required": true
+        },
+        {
+          "field_id": "budget_path",
+          "label": "Budget owner, procurement path, or explicit no-budget signal",
+          "required": true
+        },
+        {
+          "field_id": "workflow_pain",
+          "label": "Current workflow pain stated by the buyer",
+          "required": true
+        },
+        {
+          "field_id": "incumbent_stack",
+          "label": "Existing tools, platforms, observability, notebooks, or lab systems",
+          "required": true
+        },
+        {
+          "field_id": "proof_gap",
+          "label": "What evidence current tools fail to bind",
+          "required": true
+        },
+        {
+          "field_id": "acceptance_criterion",
+          "label": "Concrete demo condition that would justify a pilot",
+          "required": true
+        },
+        {
+          "field_id": "negative_disqualifier",
+          "label": "One result that should stop the pilot",
+          "required": true
+        },
+        {
+          "field_id": "reproducibility_requirement",
+          "label": "Formalization, replay, or experiment reproducibility requirement",
+          "required": true
+        }
+      ],
+      "follow_up_schedule": [
+        {
+          "offset_days": "0",
+          "reason": "Send draft proof-packet pilot note and request a 25-minute evidence-fit call.",
+          "touch_id": "research_lab-day-0"
+        },
+        {
+          "offset_days": "3",
+          "reason": "Ask for one current workflow artifact or incumbent-tool screenshot equivalent.",
+          "touch_id": "research_lab-day-3"
+        },
+        {
+          "offset_days": "10",
+          "reason": "Close loop with a go/no-go proof-demo acceptance criterion.",
+          "touch_id": "research_lab-day-10"
+        }
+      ],
+      "market_data_targets": [
+        {
+          "source_refs": [
+            "microsoft-discovery"
+          ],
+          "target": "Identify the buyer who can fund proof-packet pilots.",
+          "target_id": "research_lab-budget-owner",
+          "verification_status": "unverified"
+        },
+        {
+          "source_refs": [
+            "nist-ai-rmf"
+          ],
+          "target": "Measure what evidence threshold converts interest into a pilot.",
+          "target_id": "research_lab-proof-threshold",
+          "verification_status": "inferred"
+        },
+        {
+          "source_refs": [
+            "futurehouse-home",
+            "microsoft-discovery"
+          ],
+          "target": "Map current AI4Science workflow bottlenecks against agentic discovery platforms.",
+          "target_id": "research-lab-ai4science-workflow",
+          "verification_status": "verified"
+        },
+        {
+          "source_refs": [
+            "pipeline-math",
+            "leandojo"
+          ],
+          "target": "Collect proof or formalization requirements for math and scientific claims.",
+          "target_id": "research-lab-formal-proof-need",
+          "verification_status": "verified"
+        },
+        {
+          "source_refs": [
+            "sakana-ai-scientist",
+            "pipeline-math"
+          ],
+          "target": "Collect top whitepapers, open problems, and reproducibility requirements per field.",
+          "target_id": "research-lab-whitepaper-queue",
+          "verification_status": "inferred"
+        }
+      ],
+      "negative_disqualifiers": [
+        "Buyer only wants a generic chatbot, dashboard, or prose report.",
+        "Buyer cannot name any evidence artifact that current tools fail to provide.",
+        "Buyer expects unsupported claims of scientific discovery, market dominance, or production certification.",
+        "Research workflow cannot be bounded to replay, formalization, or reproducibility checks."
+      ],
+      "outreach_event": {
+        "counterparty_id": "prospect-research-lab-proof-packets",
+        "direction": "outbound",
+        "event_type": "proposal_draft",
+        "payload_ref": "docs/research/dogfood/packets/070-research_lab-outreach.md"
+      },
+      "payload_ref": "docs/research/dogfood/packets/070-research_lab-outreach.md",
+      "route_lane_split": [
+        "project-telos",
+        "deep-research",
+        "technical-writing"
+      ],
+      "source_refs": [
+        {
+          "source_id": "futurehouse-home",
+          "url": "https://www.futurehouse.org/",
+          "verification_status": "verified_primary_source"
+        },
+        {
+          "source_id": "futurehouse-tools",
+          "url": "https://www.futurehouse.org/tools",
+          "verification_status": "verified_primary_source"
+        },
+        {
+          "source_id": "sakana-ai-scientist",
+          "url": "https://sakana.ai/ai-scientist/",
+          "verification_status": "verified_primary_source"
+        },
+        {
+          "source_id": "microsoft-discovery",
+          "url": "https://azure.microsoft.com/en-us/solutions/discovery",
+          "verification_status": "verified_primary_source"
+        },
+        {
+          "source_id": "pipeline-math",
+          "url": "https://github.com/Pengbinghui/pipeline-math",
+          "verification_status": "verified_primary_source"
+        },
+        {
+          "source_id": "leandojo",
+          "url": "https://leandojo.org/leandojo.html",
+          "verification_status": "verified_primary_source"
+        }
+      ],
+      "subject": "Proof-packet pilot for replayable AI4Science claims",
+      "template_body": "We are testing whether research teams need claim-to-proof packets that bind sources, model actions, verification verdicts, and reproducibility evidence.\n\nPilot ask: Run one bounded pilot around a math, physics, biology, or AI4Science workflow where the acceptance criterion is replayable evidence rather than a claim of discovery.\n\nDemo anchor: Pipeline-math++ style formal research proof packet.\n\nDiscovery question: When evaluating a Project Telos proof-packet workflow, how would your team answer this objection: We already have agentic discovery platforms; why is this different?\n\nBoundary: this is a hypothesis-only market probe. It does not claim market proof, scientific truth, production readiness, or unique capability.",
+      "template_id": "pass-0060-research_lab-outreach",
+      "verification_status": "draft_ready_not_sent"
+    },
+    {
+      "acceptance_criteria": [
+        "Buyer names one workflow where a proof packet would be reviewed by a real stakeholder.",
+        "Buyer identifies a source, action, verification, or replay gap in the current workflow.",
+        "Buyer names a concrete artifact that would move the conversation from interest to pilot.",
+        "Pilot candidate can ingest traces or agent logs and produce durable action receipts."
+      ],
+      "buyer_id": "ai_infra",
+      "counterparty_seed": {
+        "id": "prospect-ai-infra-action-receipts",
+        "name": "AI Infrastructure Action-Receipt Prospect",
+        "notes": "Pass 0060 generated seed row; prospect identity is a placeholder until buyer discovery names a real organization.",
+        "sector": "ai-infrastructure-agent-ops",
+        "status": "prospect_unverified"
+      },
+      "evidence_intake_fields": [
+        {
+          "field_id": "buyer_role",
+          "label": "Named buyer role and authority path",
+          "required": true
+        },
+        {
+          "field_id": "budget_path",
+          "label": "Budget owner, procurement path, or explicit no-budget signal",
+          "required": true
+        },
+        {
+          "field_id": "workflow_pain",
+          "label": "Current workflow pain stated by the buyer",
+          "required": true
+        },
+        {
+          "field_id": "incumbent_stack",
+          "label": "Existing tools, platforms, observability, notebooks, or lab systems",
+          "required": true
+        },
+        {
+          "field_id": "proof_gap",
+          "label": "What evidence current tools fail to bind",
+          "required": true
+        },
+        {
+          "field_id": "acceptance_criterion",
+          "label": "Concrete demo condition that would justify a pilot",
+          "required": true
+        },
+        {
+          "field_id": "negative_disqualifier",
+          "label": "One result that should stop the pilot",
+          "required": true
+        },
+        {
+          "field_id": "trace_boundary",
+          "label": "Where tracing ends and action authority evidence is missing",
+          "required": true
+        }
+      ],
+      "follow_up_schedule": [
+        {
+          "offset_days": "0",
+          "reason": "Send draft proof-packet pilot note and request a 25-minute evidence-fit call.",
+          "touch_id": "ai_infra-day-0"
+        },
+        {
+          "offset_days": "3",
+          "reason": "Ask for one current workflow artifact or incumbent-tool screenshot equivalent.",
+          "touch_id": "ai_infra-day-3"
+        },
+        {
+          "offset_days": "10",
+          "reason": "Close loop with a go/no-go proof-demo acceptance criterion.",
+          "touch_id": "ai_infra-day-10"
+        }
+      ],
+      "market_data_targets": [
+        {
+          "source_refs": [
+            "microsoft-discovery"
+          ],
+          "target": "Identify the buyer who can fund proof-packet pilots.",
+          "target_id": "ai_infra-budget-owner",
+          "verification_status": "unverified"
+        },
+        {
+          "source_refs": [
+            "nist-ai-rmf"
+          ],
+          "target": "Measure what evidence threshold converts interest into a pilot.",
+          "target_id": "ai_infra-proof-threshold",
+          "verification_status": "inferred"
+        },
+        {
+          "source_refs": [
+            "opentelemetry-traces"
+          ],
+          "target": "Measure where traces stop short of durable action receipts.",
+          "target_id": "ai-infra-trace-receipt-gap",
+          "verification_status": "verified"
+        },
+        {
+          "source_refs": [
+            "opentelemetry-context"
+          ],
+          "target": "Collect cases where context propagation cannot prove action authority.",
+          "target_id": "ai-infra-context-causality-gap",
+          "verification_status": "inferred"
+        },
+        {
+          "source_refs": [
+            "opentelemetry-traces"
+          ],
+          "target": "Estimate buyer budget path for proof packets layered over observability stacks.",
+          "target_id": "ai-infra-observability-budget",
+          "verification_status": "unverified"
+        }
+      ],
+      "negative_disqualifiers": [
+        "Buyer only wants a generic chatbot, dashboard, or prose report.",
+        "Buyer cannot name any evidence artifact that current tools fail to provide.",
+        "Buyer expects unsupported claims of scientific discovery, market dominance, or production certification.",
+        "Agent workflow has no accessible traces, logs, tool calls, or state receipts."
+      ],
+      "outreach_event": {
+        "counterparty_id": "prospect-ai-infra-action-receipts",
+        "direction": "outbound",
+        "event_type": "proposal_draft",
+        "payload_ref": "docs/research/dogfood/packets/070-ai_infra-outreach.md"
+      },
+      "payload_ref": "docs/research/dogfood/packets/070-ai_infra-outreach.md",
+      "route_lane_split": [
+        "project-telos",
+        "deep-research",
+        "technical-writing"
+      ],
+      "source_refs": [
+        {
+          "source_id": "opentelemetry-traces",
+          "url": "https://opentelemetry.io/docs/concepts/signals/traces/",
+          "verification_status": "verified_primary_source"
+        },
+        {
+          "source_id": "opentelemetry-context",
+          "url": "https://opentelemetry.io/docs/concepts/context-propagation/",
+          "verification_status": "verified_primary_source"
+        },
+        {
+          "source_id": "microsoft-discovery",
+          "url": "https://azure.microsoft.com/en-us/solutions/discovery",
+          "verification_status": "verified_primary_source"
+        },
+        {
+          "source_id": "nist-ai-rmf",
+          "url": "https://www.nist.gov/itl/ai-risk-management-framework",
+          "verification_status": "verified_primary_source"
+        }
+      ],
+      "subject": "Action-receipt layer for agent tracing and replay",
+      "template_body": "We are testing whether AI infrastructure teams need a proof layer that connects traces, workspace state, tool authority, verification verdicts, and durable receipts.\n\nPilot ask: Evaluate one agent workflow where existing traces are converted into action receipts with replay and negative-verdict handling.\n\nDemo anchor: Agent observability-to-action-receipt proof packet.\n\nDiscovery question: When evaluating a Project Telos proof-packet workflow, how would your team answer this objection: We already have tracing and LLM observability.\n\nBoundary: this is a hypothesis-only market probe. It does not claim market proof, scientific truth, production readiness, or unique capability.",
+      "template_id": "pass-0060-ai_infra-outreach",
+      "verification_status": "draft_ready_not_sent"
+    },
+    {
+      "acceptance_criteria": [
+        "Buyer names one workflow where a proof packet would be reviewed by a real stakeholder.",
+        "Buyer identifies a source, action, verification, or replay gap in the current workflow.",
+        "Buyer names a concrete artifact that would move the conversation from interest to pilot.",
+        "Pilot candidate has an audit or governance review event that needs a compact evidence packet."
+      ],
+      "buyer_id": "regulated_agent",
+      "counterparty_seed": {
+        "id": "prospect-regulated-agent-audit-packets",
+        "name": "Regulated Agent Audit-Packet Prospect",
+        "notes": "Pass 0060 generated seed row; prospect identity is a placeholder until buyer discovery names a real organization.",
+        "sector": "regulated-agent-governance",
+        "status": "prospect_unverified"
+      },
+      "evidence_intake_fields": [
+        {
+          "field_id": "buyer_role",
+          "label": "Named buyer role and authority path",
+          "required": true
+        },
+        {
+          "field_id": "budget_path",
+          "label": "Budget owner, procurement path, or explicit no-budget signal",
+          "required": true
+        },
+        {
+          "field_id": "workflow_pain",
+          "label": "Current workflow pain stated by the buyer",
+          "required": true
+        },
+        {
+          "field_id": "incumbent_stack",
+          "label": "Existing tools, platforms, observability, notebooks, or lab systems",
+          "required": true
+        },
+        {
+          "field_id": "proof_gap",
+          "label": "What evidence current tools fail to bind",
+          "required": true
+        },
+        {
+          "field_id": "acceptance_criterion",
+          "label": "Concrete demo condition that would justify a pilot",
+          "required": true
+        },
+        {
+          "field_id": "negative_disqualifier",
+          "label": "One result that should stop the pilot",
+          "required": true
+        },
+        {
+          "field_id": "audit_boundary",
+          "label": "Review artifact boundary that avoids private payload disclosure",
+          "required": true
+        }
+      ],
+      "follow_up_schedule": [
+        {
+          "offset_days": "0",
+          "reason": "Send draft proof-packet pilot note and request a 25-minute evidence-fit call.",
+          "touch_id": "regulated_agent-day-0"
+        },
+        {
+          "offset_days": "3",
+          "reason": "Ask for one current workflow artifact or incumbent-tool screenshot equivalent.",
+          "touch_id": "regulated_agent-day-3"
+        },
+        {
+          "offset_days": "10",
+          "reason": "Close loop with a go/no-go proof-demo acceptance criterion.",
+          "touch_id": "regulated_agent-day-10"
+        }
+      ],
+      "market_data_targets": [
+        {
+          "source_refs": [
+            "microsoft-discovery"
+          ],
+          "target": "Identify the buyer who can fund proof-packet pilots.",
+          "target_id": "regulated_agent-budget-owner",
+          "verification_status": "unverified"
+        },
+        {
+          "source_refs": [
+            "nist-ai-rmf"
+          ],
+          "target": "Measure what evidence threshold converts interest into a pilot.",
+          "target_id": "regulated_agent-proof-threshold",
+          "verification_status": "inferred"
+        },
+        {
+          "source_refs": [
+            "nist-ai-rmf",
+            "nist-genai-profile"
+          ],
+          "target": "Map proof packets to AI RMF and GenAI profile risk-management evidence needs.",
+          "target_id": "regulated-risk-profile-fit",
+          "verification_status": "verified"
+        },
+        {
+          "source_refs": [
+            "microsoft-discovery",
+            "nist-ai-rmf"
+          ],
+          "target": "Collect approval, review, and human oversight requirements for high-stakes actions.",
+          "target_id": "regulated-human-oversight",
+          "verification_status": "inferred"
+        },
+        {
+          "source_refs": [
+            "nist-genai-profile"
+          ],
+          "target": "Find the audit event that creates urgency for action receipts.",
+          "target_id": "regulated-audit-packet-buying-trigger",
+          "verification_status": "unverified"
+        }
+      ],
+      "negative_disqualifiers": [
+        "Buyer only wants a generic chatbot, dashboard, or prose report.",
+        "Buyer cannot name any evidence artifact that current tools fail to provide.",
+        "Buyer expects unsupported claims of scientific discovery, market dominance, or production certification.",
+        "Governance workflow forbids any reviewable artifact or redacted receipt."
+      ],
+      "outreach_event": {
+        "counterparty_id": "prospect-regulated-agent-audit-packets",
+        "direction": "outbound",
+        "event_type": "proposal_draft",
+        "payload_ref": "docs/research/dogfood/packets/070-regulated_agent-outreach.md"
+      },
+      "payload_ref": "docs/research/dogfood/packets/070-regulated_agent-outreach.md",
+      "route_lane_split": [
+        "project-telos",
+        "deep-research",
+        "technical-writing"
+      ],
+      "source_refs": [
+        {
+          "source_id": "nist-ai-rmf",
+          "url": "https://www.nist.gov/itl/ai-risk-management-framework",
+          "verification_status": "verified_primary_source"
+        },
+        {
+          "source_id": "nist-genai-profile",
+          "url": "https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-generative-artificial-intelligence",
+          "verification_status": "verified_primary_source"
+        },
+        {
+          "source_id": "microsoft-discovery",
+          "url": "https://azure.microsoft.com/en-us/solutions/discovery",
+          "verification_status": "verified_primary_source"
+        },
+        {
+          "source_id": "opentelemetry-context",
+          "url": "https://opentelemetry.io/docs/concepts/context-propagation/",
+          "verification_status": "verified_primary_source"
+        }
+      ],
+      "subject": "Audit-ready proof packets for high-stakes agent actions",
+      "template_body": "We are testing whether regulated teams need reviewable proof packets that expose source provenance, human oversight, admission records, and verification boundaries without leaking private payloads.\n\nPilot ask: Score one high-stakes workflow against an audit packet that can show evidence without claiming production readiness.\n\nDemo anchor: Regulated agent action proof packet.\n\nDiscovery question: When evaluating a Project Telos proof-packet workflow, how would your team answer this objection: Does this map to AI risk-management needs?\n\nBoundary: this is a hypothesis-only market probe. It does not claim market proof, scientific truth, production readiness, or unique capability.",
+      "template_id": "pass-0060-regulated_agent-outreach",
+      "verification_status": "draft_ready_not_sent"
+    }
+  ],
+  "pass": "0060",
+  "schema": "BuyerOutreachPacketSet/v1",
+  "seal": "2bf5704d5e2065ee55732533a4f9bca3e5d892dc43e33fba676e5c56325c93ee",
+  "send_status": "NOT_SENT",
+  "status": "BUYER_OUTREACH_PACKETS_MATCH",
+  "unsupported_claim_count": 0,
+  "upstream_scorecards": {
+    "path": "C:\\dev\\public\\telos\\docs\\research\\dogfood\\schemas\\buyer-discovery-evidence-scorecards-pass-0059.json",
+    "seal": "c347b6e91c759b5338289c02e0db1ab60a07f900d6caf0d2e1585c0fca171853",
+    "sha256": "d66c5cbef2da91c8656449e34e3ba707220293677d57ff5caa4edec0a5adbadb",
+    "status": "BUYER_DISCOVERY_EVIDENCE_SCORECARDS_MATCH"
+  },
+  "validation_errors": []
+}

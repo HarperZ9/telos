@@ -1,0 +1,187 @@
+{
+  "schema": "ScientificComputeMarketMap/v1",
+  "pass": "0009",
+  "generated_on": "2026-07-01",
+  "scope": "PDE, scientific-compute, physics simulation, and BuildLang/buildc proof-receipt wedge map",
+  "rows": [
+    {
+      "category": "language-ecosystem",
+      "tool": "Julia",
+      "buyer": "scientific programmers, quant teams, research labs, HPC users",
+      "source_url": "https://julialang.org/",
+      "official_positioning": "High-performance dynamic programming language for technical and scientific computing, compiling to efficient native code via LLVM with reproducible environments and a large scientific ecosystem.",
+      "capabilities": [
+        "LLVM native code",
+        "multiple dispatch",
+        "scientific computing ecosystem",
+        "parallel and GPU computing",
+        "reproducible environments"
+      ],
+      "proof_receipt_gap": "Julia is a mature scientific language and ecosystem; the public positioning is language/runtime oriented rather than a claim-level proof packet binding source, compiler/runtime receipts, numerical thresholds, formal proofs, and external verdicts.",
+      "buildlang_wedge_hypothesis": "BuildLang/buildc can compete by making compiler/runtime receipts first-class for every scientific claim, not only by matching language ergonomics or performance.",
+      "gap_status": "inferred",
+      "confidence": "high"
+    },
+    {
+      "category": "language-ecosystem",
+      "tool": "SciML / DifferentialEquations.jl",
+      "buyer": "scientific machine learning, differential equation, inverse problem, and model-discovery teams",
+      "source_url": "https://sciml.ai/",
+      "official_positioning": "Composable open-source software for scientific machine learning, differential equations, nonlinear systems, inverse problems, automated model discovery, differentiable programming, and physics-informed AI.",
+      "capabilities": [
+        "ODE/SDE/DDE/DAE solvers",
+        "inverse problems",
+        "model discovery",
+        "differentiable simulation",
+        "GPU and distributed parallelism"
+      ],
+      "proof_receipt_gap": "SciML is strong at solver breadth and differentiable modeling; Telos/Build should add portable proof packets that distinguish continuous identities, discretization assumptions, runtime receipts, and verifier verdicts.",
+      "buildlang_wedge_hypothesis": "BuildLang/buildc should target receipt-rich scientific kernels where solver outputs carry invariant checks and falsification labels by default.",
+      "gap_status": "inferred",
+      "confidence": "high"
+    },
+    {
+      "category": "pde-framework",
+      "tool": "FEniCS",
+      "buyer": "PDE researchers, finite-element engineers, scientific computing users",
+      "source_url": "https://fenicsproject.org/",
+      "official_positioning": "Open-source computing platform for solving PDEs with finite element methods, translating scientific models into efficient finite-element code across laptops and HPC.",
+      "capabilities": [
+        "finite element methods",
+        "PDE modeling",
+        "Python and C++ interfaces",
+        "HPC execution"
+      ],
+      "proof_receipt_gap": "FEniCS helps express and solve PDEs; Telos/Build can wrap runs with claim semantics, invariant checks, source/workspace hashes, and Crucible verdicts.",
+      "buildlang_wedge_hypothesis": "Use FEniCS-like problems as benchmark packets for BuildLang/buildc PDE receipt design.",
+      "gap_status": "inferred",
+      "confidence": "high"
+    },
+    {
+      "category": "pde-framework",
+      "tool": "Firedrake",
+      "buyer": "finite-element researchers, simulation engineers, PDE method developers",
+      "source_url": "https://www.firedrakeproject.org/",
+      "official_positioning": "Automated system for solving PDEs with finite element methods, using code generation to create high-productivity high-performance simulations.",
+      "capabilities": [
+        "Unified Form Language",
+        "PETSc coupling",
+        "unstructured meshes",
+        "automatic optimization",
+        "custom preconditioners"
+      ],
+      "proof_receipt_gap": "Firedrake exposes sophisticated PDE generation and solvers; Telos/Build can add auditable proof packets that explain which mathematical invariant, discretization, mesh, and solver receipt supports a claim.",
+      "buildlang_wedge_hypothesis": "BuildLang/buildc should produce Firedrake-style high-performance kernels with attached proof receipts and negative stability probes.",
+      "gap_status": "inferred",
+      "confidence": "high"
+    },
+    {
+      "category": "hpc-solver",
+      "tool": "PETSc",
+      "buyer": "HPC scientific-computing teams, PDE framework builders, solver developers",
+      "source_url": "https://petsc.org/release/",
+      "official_positioning": "Portable, Extensible Toolkit for Scientific Computation for scalable parallel solution of scientific applications modeled by PDEs, with MPI, GPU, C, Fortran, and Python bindings.",
+      "capabilities": [
+        "parallel PDE solvers",
+        "MPI",
+        "GPU support",
+        "petsc4py",
+        "TAO optimization"
+      ],
+      "proof_receipt_gap": "PETSc is infrastructure for scalable solver execution; Telos/Build should consume solver metadata and attach claim-level thresholds, invariant probes, and reproducibility receipts.",
+      "buildlang_wedge_hypothesis": "BuildLang/buildc can target PETSc interoperability while making solver receipts part of the language/runtime contract.",
+      "gap_status": "inferred",
+      "confidence": "high"
+    },
+    {
+      "category": "hpc-solver",
+      "tool": "OpenFOAM",
+      "buyer": "CFD engineers, government labs, academia, industrial simulation teams",
+      "source_url": "https://openfoam.org/",
+      "official_positioning": "Free open-source CFD software written in C++, used for fluid motion, forces, heat transfer, thermodynamics, and chemistry in fluids and solids.",
+      "capabilities": [
+        "CFD",
+        "heat transfer",
+        "thermodynamics",
+        "source customization",
+        "engineering applications"
+      ],
+      "proof_receipt_gap": "OpenFOAM gives open CFD source and customization; Telos/Build can add verification packets for case setup, boundary conditions, solver version, mesh quality, invariants, and decision claims.",
+      "buildlang_wedge_hypothesis": "BuildLang/buildc can win early trust by exporting OpenFOAM-style case receipts and invariant checks instead of only presenting benchmark speed.",
+      "gap_status": "inferred",
+      "confidence": "high"
+    },
+    {
+      "category": "physics-ai",
+      "tool": "NVIDIA PhysicsNeMo",
+      "buyer": "engineering simulation, digital twin, CFD/structural/electromagnetic AI teams",
+      "source_url": "https://developer.nvidia.com/physicsnemo",
+      "official_positioning": "Open-source Python framework for building, training, and fine-tuning physics AI models at scale, including surrogate models, neural operators, GNNs, digital twins, and PDE-enabled training pipelines.",
+      "capabilities": [
+        "physics-informed ML",
+        "surrogate models",
+        "neural operators",
+        "distributed GPU training",
+        "digital twin validation"
+      ],
+      "proof_receipt_gap": "PhysicsNeMo targets physics AI model creation and deployment; Telos/Build should add evidence packets for what physics invariant, training receipt, validation set, and uncertainty bound makes an output credible.",
+      "buildlang_wedge_hypothesis": "BuildLang/buildc can become the deterministic receipt layer underneath physics AI demos, especially when surrogate outputs need invariant checks.",
+      "gap_status": "inferred",
+      "confidence": "high"
+    },
+    {
+      "category": "commercial-simulation",
+      "tool": "COMSOL Multiphysics",
+      "buyer": "engineers and scientists modeling coupled physical systems",
+      "source_url": "https://www.comsol.com/comsol-multiphysics",
+      "official_positioning": "Simulation platform for real-world designs, devices, and processes with fully coupled multiphysics and single-physics modeling, model builder, application builder, and model manager.",
+      "capabilities": [
+        "multiphysics simulation",
+        "model builder",
+        "application builder",
+        "model manager",
+        "version control"
+      ],
+      "proof_receipt_gap": "COMSOL organizes models and applications, but Telos/Build can create external proof packets that make assumptions, invariants, solver settings, and decision claims portable outside the commercial project file.",
+      "buildlang_wedge_hypothesis": "BuildLang/buildc should export compact proof kits for claims derived from multiphysics runs, interoperating with commercial simulation rather than replacing it immediately.",
+      "gap_status": "inferred",
+      "confidence": "moderate"
+    },
+    {
+      "category": "commercial-simulation",
+      "tool": "Ansys Fluent",
+      "buyer": "CFD, aerospace, automotive, energy, electronics cooling, and industrial simulation teams",
+      "source_url": "https://www.ansys.com/products/fluids/ansys-fluent",
+      "official_positioning": "General-purpose CFD software for fluid flow, heat and mass transfer, chemical reactions, advanced physics, multiphysics integrations, optimization, and scalable CPU/GPU solving.",
+      "capabilities": [
+        "CFD",
+        "advanced physics models",
+        "multiphysics integration",
+        "optimization",
+        "CPU/GPU solver scaling"
+      ],
+      "proof_receipt_gap": "Fluent is mature and broadly used; Telos/Build can differentiate at the review boundary by packaging case assumptions, exported data, solver settings, and invariant checks as independent proof packets.",
+      "buildlang_wedge_hypothesis": "BuildLang/buildc proof kits should target Fluent-adjacent workflows where decisions require auditable evidence outside a GUI-driven simulation environment.",
+      "gap_status": "inferred",
+      "confidence": "high"
+    },
+    {
+      "category": "physics-ai",
+      "tool": "SimScale",
+      "buyer": "engineering teams needing cloud-native simulation and design exploration",
+      "source_url": "https://www.simscale.com/",
+      "official_positioning": "AI-native cloud engineering simulation platform combining Engineering AI, Physics AI, multiphysics solvers, workflow orchestration, simulation at cloud scale, collaboration, and traceability.",
+      "capabilities": [
+        "cloud-native simulation",
+        "AI agents for setup and validation",
+        "design space exploration",
+        "collaboration",
+        "traceability"
+      ],
+      "proof_receipt_gap": "SimScale emphasizes cloud-scale simulation and traceability; Telos/Build can focus on portable claim packets that move across local, cloud, open-source, and commercial simulations.",
+      "buildlang_wedge_hypothesis": "BuildLang/buildc should treat SimScale-style workflows as evidence sources and compete on open proof receipt portability.",
+      "gap_status": "inferred",
+      "confidence": "high"
+    }
+  ]
+}

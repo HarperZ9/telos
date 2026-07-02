@@ -1,0 +1,53 @@
+{
+  "measurements": [
+    {
+      "claim": "Index status, Gather doctor, Crucible doctor, and Telos operator doctor all returned MATCH during pass 0001.",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "method": "mcp-tool-receipt-review",
+      "evidence": [
+        "index.status status=MATCH",
+        "gather.doctor status=MATCH",
+        "crucible.doctor status=MATCH",
+        "telos.operator.doctor aggregate.verdict=MATCH"
+      ]
+    },
+    {
+      "claim": "The corrected Gather web intake kept 3 of 4 sources and produced digest seal 429a5b75ba27f5bef8d4e113291d01d2e6b6bc7b12f57e7aeb91d87ab36272cb.",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "method": "gather-run-receipt",
+      "evidence": [
+        "gathered=4",
+        "kept=3",
+        "dropped=1",
+        "digest_seal=429a5b75ba27f5bef8d4e113291d01d2e6b6bc7b12f57e7aeb91d87ab36272cb"
+      ]
+    },
+    {
+      "claim": "The periodic heat-equation finite-difference probe produced monotonically non-increasing discrete energy for 200 steps.",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "method": "python-finite-difference-probe",
+      "evidence": [
+        "n=128",
+        "steps=200",
+        "energy_initial=0.265625",
+        "energy_final=0.20892202084351844",
+        "energy_drop=0.056702979156481564",
+        "increases=0"
+      ]
+    },
+    {
+      "claim": "Pass 0001 promotes zero natural-law discoveries; all law-like outputs remain hypotheses, identities, probes, or internal invariants.",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "method": "artifact-review",
+      "evidence": [
+        "README states current promoted natural laws: none",
+        "pass ledger states no new natural law is promoted",
+        "packet 003 labels heat equation as a known identity and bounded probe, not a new law"
+      ]
+    }
+  ]
+}

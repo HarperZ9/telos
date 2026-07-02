@@ -1,0 +1,62 @@
+{
+  "measurements": [
+    {
+      "claim": "The fifth-wave fixture scout writes a project-telos.oss-scout/v1 packet for pandas-dev/pandas#66050 with priority 70.",
+      "method": "fixture-scout-command-review",
+      "evidence": [
+        "docs/outreach/receipts/fifth-wave/oss-showcase-scout/scout.json has schema project-telos.oss-scout/v1",
+        "scout candidate is pandas-dev/pandas#66050",
+        "scout score priority is 70"
+      ],
+      "deviation": 0.0,
+      "tolerance": 0.5
+    },
+    {
+      "claim": "The ready OSS showcase fixture produces a project-telos.oss-pr-readiness/v1 packet with pr_ready true, operator_next_action open-pr, and verdict MATCH.",
+      "method": "ready-packet-command-review",
+      "evidence": [
+        "docs/outreach/receipts/fifth-wave/oss-showcase-fixture-ready-packet.json has schema project-telos.oss-pr-readiness/v1",
+        "ready packet pr_ready is true",
+        "ready packet operator_next_action is open-pr",
+        "ready packet verdict is MATCH"
+      ],
+      "deviation": 0.0,
+      "tolerance": 0.5
+    },
+    {
+      "claim": "The blocked OSS showcase fixture produces a packet with pr_ready false, operator_next_action revise, verdict UNVERIFIABLE, and explicit missing-evidence blockers.",
+      "method": "blocked-packet-command-review",
+      "evidence": [
+        "docs/outreach/receipts/fifth-wave/oss-showcase-fixture-blocked-packet.json has schema project-telos.oss-pr-readiness/v1",
+        "blocked packet pr_ready is false",
+        "blocked packet operator_next_action is revise",
+        "blocked packet verdict is UNVERIFIABLE",
+        "blocked packet blockers include missing passing test evidence, crucible verdict is not MATCH, and missing patch summary"
+      ],
+      "deviation": 0.0,
+      "tolerance": 0.5
+    },
+    {
+      "claim": "The fifth-wave demo document labels the OSS showcase as fixture-only and warns not to post it as an actual pandas fix or live GitHub scout result.",
+      "method": "document-boundary-review",
+      "evidence": [
+        "docs/outreach/FIFTH-WAVE-OSS-PROOF-SHOWCASE-2026-07-02.md says this is a package-shape demo, not a claim Project Telos fixed pandas",
+        "Do Not Post section says not to claim Project Telos fixed pandas-dev/pandas#66050",
+        "Do Not Post section says not to claim live GitHub scouting ran unless a fresh live-scout receipt exists"
+      ],
+      "deviation": 0.0,
+      "tolerance": 0.5
+    },
+    {
+      "claim": "The fifth-wave content queue packages both the ready fixture and the blocked fixture for the parallel posting session.",
+      "method": "document-review",
+      "evidence": [
+        "Post 31 cites the ready evidence and ready packet",
+        "Post 32 cites the blocked evidence and blocked packet",
+        "Operating rule says to pair the ready fixture with the blocked fixture"
+      ],
+      "deviation": 0.0,
+      "tolerance": 0.5
+    }
+  ]
+}

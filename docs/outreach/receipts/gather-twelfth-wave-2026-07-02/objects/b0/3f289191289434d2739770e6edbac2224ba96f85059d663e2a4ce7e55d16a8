@@ -1,0 +1,35 @@
+# crucible report: Dogfood Pass 0067 Forum Routing Repair Experiment
+
+## Summary
+
+- thesis_id: `170c379af77b0ede`
+- thesis_seal: `170c379af77b0edee7879d832ce276cf08e50d2ebe1fb0de36e7daec6e285478`
+- assessment_seal: `b7a8c032f621c7a83175abddd0904fc7381bf871f098c10646d14629c342baac`
+- counts: MATCH 8 / DRIFT 0 / UNVERIFIABLE 0
+- integrity: seals_ok=True, thesis_ok=True, verdicts_rederive=True
+
+## Verdicts
+
+| Claim | Status | Disposition | Margin | Method | Grounds |
+| --- | --- | --- | ---: | --- | --- |
+| Pass 0067 created a ForumRoutingRepairExperiment/v1 artifact with status FORUM_ROUTING_REPAIR_EXPERIMENT_MATCH, sha256 dd2c1ed7bf2ea600612e64b0d256e589f2e6a78228a9f53cae2e837fbe9b67a0, and seal 786203893e6a0e43fc5f0a2d48a483d532bb23d1d1d8902f683bb42f22938f39. | MATCH | fenced | 1 | artifact-review | deviation 0 within tolerance 0.5 |
+| Pass 0067 route probes count is 3 with baseline needs_escalation True. | MATCH | fenced | 1 | artifact-review | deviation 0 within tolerance 0.5 |
+| Pass 0067 repaired prompts route to project-telos with repaired_no_escalation_count 2. | MATCH | fenced | 1 | artifact-review | deviation 0 within tolerance 0.5 |
+| Pass 0067 project_telos_score_lift is 0.227272727273 from baseline 0.09090909090909091 to best repaired 0.3181818181818182. | MATCH | fenced | 1 | artifact-review | deviation 0 within tolerance 0.5 |
+| Pass 0067 repair rule requires prefix Project Telos dogfood pass and tool chain Gather,Index,Forum,Crucible,Telos. | MATCH | fenced | 1 | artifact-review | deviation 0 within tolerance 0.5 |
+| Pass 0067 binds previous pass 0066 with sha256 7337d9d350ee174baa94137f0d3404efb0b6fa2ae40b9bff7737a263881fa32e. | MATCH | fenced | 1 | artifact-review | deviation 0 within tolerance 0.5 |
+| Pass 0067 composer sha256 is d16ae2c86fc6070bb5079f04f2b9196a5eefb90e199869b360fe1e8608a66598 and compose_receipt status is MATCH. | MATCH | fenced | 1 | artifact-review | deviation 0 within tolerance 0.5 |
+| Pass 0067 packet sha256 is 4f06cee2244a84356a1cfe308a51d066c04f4000976a66cc864a25b3d93272e6, steelman sha256 is 3cd23c99d144f2b226b75d352b54eb73dbf6ca3fafc15ee372da2b6dceb2765d, and test sha256 is 4a64f6d36f2358935dbea1caeb8db6a9434d9c004cd62157bacb0038ab6158aa with test_receipt status MATCH. | MATCH | fenced | 1 | artifact-review | deviation 0 within tolerance 0.5 |
+
+## Measurement Evidence
+
+| Claim | Method | Evidence |
+| --- | --- | --- |
+| Pass 0067 created a ForumRoutingRepairExperiment/v1 artifact with status FORUM_ROUTING_REPAIR_EXPERIMENT_MATCH, sha256 dd2c1ed7bf2ea600612e64b0d256e589f2e6a78228a9f53cae2e837fbe9b67a0, and seal 786203893e6a0e43fc5f0a2d48a483d532bb23d1d1d8902f683bb42f22938f39. | artifact-review | schema=ForumRoutingRepairExperiment/v1; status=FORUM_ROUTING_REPAIR_EXPERIMENT_MATCH; sha256=dd2c1ed7bf2ea600612e64b0d256e589f2e6a78228a9f53cae2e837fbe9b67a0; seal=786203893e6a0e43fc5f0a2d48a483d532bb23d1d1d8902f683bb42f22938f39 |
+| Pass 0067 route probes count is 3 with baseline needs_escalation True. | artifact-review | probe_count=3; baseline_needs_escalation=True |
+| Pass 0067 repaired prompts route to project-telos with repaired_no_escalation_count 2. | artifact-review | repaired_no_escalation_count=2; decided=project-telos |
+| Pass 0067 project_telos_score_lift is 0.227272727273 from baseline 0.09090909090909091 to best repaired 0.3181818181818182. | artifact-review | project_telos_score_lift=0.227272727273; baseline=0.09090909090909091; best=0.3181818181818182 |
+| Pass 0067 repair rule requires prefix Project Telos dogfood pass and tool chain Gather,Index,Forum,Crucible,Telos. | artifact-review | prefix=Project Telos dogfood pass; Gather,Index,Forum,Crucible,Telos |
+| Pass 0067 binds previous pass 0066 with sha256 7337d9d350ee174baa94137f0d3404efb0b6fa2ae40b9bff7737a263881fa32e. | artifact-review | previous_pass=0066; previous_sha256=7337d9d350ee174baa94137f0d3404efb0b6fa2ae40b9bff7737a263881fa32e |
+| Pass 0067 composer sha256 is d16ae2c86fc6070bb5079f04f2b9196a5eefb90e199869b360fe1e8608a66598 and compose_receipt status is MATCH. | artifact-review | composer_sha256=d16ae2c86fc6070bb5079f04f2b9196a5eefb90e199869b360fe1e8608a66598; compose_status=MATCH |
+| Pass 0067 packet sha256 is 4f06cee2244a84356a1cfe308a51d066c04f4000976a66cc864a25b3d93272e6, steelman sha256 is 3cd23c99d144f2b226b75d352b54eb73dbf6ca3fafc15ee372da2b6dceb2765d, and test sha256 is 4a64f6d36f2358935dbea1caeb8db6a9434d9c004cd62157bacb0038ab6158aa with test_receipt status MATCH. | artifact-review | packet_sha256=4f06cee2244a84356a1cfe308a51d066c04f4000976a66cc864a25b3d93272e6; steelman_sha256=3cd23c99d144f2b226b75d352b54eb73dbf6ca3fafc15ee372da2b6dceb2765d; test_sha256=4a64f6d36f2358935dbea1caeb8db6a9434d9c004cd62157bacb0038ab6158aa; test_status=MATCH |

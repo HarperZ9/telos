@@ -1,0 +1,49 @@
+{
+  "schema": "project-telos.pde-identity-run-receipt/v1",
+  "packet_id": "navier-stokes-periodic-energy-identity-v0",
+  "generated_at": "2026-07-02T10:41:46.072Z",
+  "command": "C:\\Program Files\\nodejs\\node.exe C:\\dev\\public\\telos\\docs\\research\\proof-packets\\navier-stokes-periodic-energy-identity-v0\\kernel.reference.mjs --nu 0.1 --t 0.75 --grid 128 --out docs\\research\\proof-packets\\navier-stokes-periodic-energy-identity-v0\\run.receipt.json",
+  "parameters": {
+    "nu": 0.1,
+    "t": 0.75,
+    "grid": 128
+  },
+  "source_statement_sha256": "207e97a634d14ba2584896157c2d1b7ae1ac33ecce877a1920cb4931636b5074",
+  "assumptions": [
+    "smooth Taylor-Green velocity field",
+    "two-dimensional periodic domain",
+    "incompressible analytic field",
+    "positive viscosity",
+    "bounded identity only"
+  ],
+  "measurements": {
+    "integral_u_squared_numeric": 14.62316554249531,
+    "integral_grad_u_squared_numeric": 29.246331084990626,
+    "energy_numeric": 7.311582771247655,
+    "energy_analytic": 7.311582771247471,
+    "energy_abs_error": 1.8385293287792592e-13,
+    "dissipation_numeric": 2.9246331084990627,
+    "dissipation_analytic": 2.924633108498988,
+    "dissipation_abs_error": 7.460698725481052e-14,
+    "d_energy_dt_analytic": -2.924633108498988,
+    "residual_analytic": 0,
+    "residual_numeric": 7.460698725481052e-14,
+    "residual_numeric_abs": 7.460698725481052e-14,
+    "max_divergence_abs": 0
+  },
+  "tolerances": {
+    "energy_abs_error": 1e-10,
+    "dissipation_abs_error": 1e-10,
+    "residual_numeric_abs": 1e-10,
+    "max_divergence_abs": 1e-12
+  },
+  "verdicts": {
+    "bounded_identity_probe": "MATCH",
+    "parent_millennium_problem": "UNVERIFIABLE"
+  },
+  "boundaries": [
+    "This executable receipt checks a bounded periodic identity for one smooth field.",
+    "This executable receipt does not prove Navier-Stokes existence and smoothness.",
+    "This executable receipt does not validate arbitrary numerical simulations or physical fluids."
+  ]
+}

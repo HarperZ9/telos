@@ -1,0 +1,55 @@
+{
+  "environment_strategy": {
+    "blocked_until": [
+      "line_ending_normalization_decided",
+      "elan_or_container_available",
+      "lake_and_lean_available"
+    ],
+    "external_write_performed": false,
+    "recommended_next_strategy": "Clone with LF-preserving settings or normalize verifier inputs, then provision elan and Lean v4.31.0 in an isolated temp or container environment.",
+    "selected_strategy": "non_mutating_plan",
+    "toolchain_install_performed": false
+  },
+  "pass": "0031",
+  "replay_policy": {
+    "axiom_check_status": "UNVERIFIABLE_ENVIRONMENT_NOT_READY",
+    "lake_build_status": "UNVERIFIABLE_ENVIRONMENT_NOT_READY",
+    "replay_promotion_allowed": false,
+    "statement_gate_status": "UNVERIFIABLE_ENVIRONMENT_NOT_READY",
+    "theorem_replay_status": "UNVERIFIABLE_ENVIRONMENT_NOT_READY"
+  },
+  "runner_probe": {
+    "absolute_bash_invocation_status": "MATCH",
+    "bash_on_path": false,
+    "bash_version": "GNU bash, version 5.2.37(1)-release (x86_64-pc-msys)",
+    "git_bash_absolute_path_observed": true,
+    "git_bash_path_ref": "program-files-git-bash"
+  },
+  "schema": "LeanReplayEnvironmentContractFixture/v1",
+  "seal": "c80c6f03f37ec172e1354293f709d399aa8d80a9c69e0d9e9cc6e697f81be555",
+  "source_preflight_ref": "schemas/theorem-replay-preflight-pass-0030.json",
+  "source_preflight_seal": "fb2428b6a7d960e44fe44768e1864d6fc524e99b9461b7fc64d08012f6760180",
+  "source_preflight_sha256": "da9a0d68491325bd636f876dfca60ab0540be2a9c247931bf22064a5db13a557",
+  "toolchain_availability": {
+    "docker": "UNAVAILABLE",
+    "elan": "UNAVAILABLE",
+    "git": "MATCH",
+    "git_bash_absolute": "MATCH",
+    "lake": "UNAVAILABLE",
+    "lean": "UNAVAILABLE",
+    "podman": "UNAVAILABLE",
+    "python": "MATCH",
+    "winget": "UNAVAILABLE",
+    "wsl": "UNAVAILABLE_NOT_INSTALLED"
+  },
+  "verify_script_attempt": {
+    "command": "program-files-git-bash scripts/verify.sh --no-log --all",
+    "exit_code": 1,
+    "failure_class": "crlf_pin_file_path_drift",
+    "failure_summary": "scripts/frozen.sha256 is read with CRLF path text, so sha256sum sees Prob4b/Defs.lean with a trailing carriage return.",
+    "first_failed_check": "Frozen SHA pins",
+    "lean_or_lake_reached": false,
+    "raw_log_included": false,
+    "status": "DRIFT"
+  }
+}

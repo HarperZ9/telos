@@ -1,0 +1,55 @@
+{
+  "negative_fixture_count": 5,
+  "negative_match_count": 5,
+  "negative_pass_observed_count": 0,
+  "rows": [
+    {
+      "fixture_id": "missing_trace_link",
+      "observed_failure_codes": [
+        "missing_trace_link"
+      ],
+      "observed_status": "MULTITRACE_CAUSALITY_GRAPH_DRIFT",
+      "public_label": "missing trace link",
+      "status": "MATCH"
+    },
+    {
+      "fixture_id": "trace_id_substitutes_receipt_id",
+      "observed_failure_codes": [
+        "trace_id_substitutes_receipt_id"
+      ],
+      "observed_status": "MULTITRACE_CAUSALITY_GRAPH_DRIFT",
+      "public_label": "trace id substitutes receipt id",
+      "status": "MATCH"
+    },
+    {
+      "fixture_id": "missing_durable_receipt_hash",
+      "observed_failure_codes": [
+        "missing_durable_receipt"
+      ],
+      "observed_status": "MULTITRACE_CAUSALITY_GRAPH_DRIFT",
+      "public_label": "missing durable receipt hash",
+      "status": "MATCH"
+    },
+    {
+      "fixture_id": "missing_gather_node",
+      "observed_failure_codes": [
+        "broken_trace_link",
+        "missing_tool_class:gather"
+      ],
+      "observed_status": "MULTITRACE_CAUSALITY_GRAPH_DRIFT",
+      "public_label": "missing gather node",
+      "status": "MATCH"
+    },
+    {
+      "fixture_id": "raw_browser_payload_required",
+      "observed_failure_codes": [
+        "raw_browser_payload_required"
+      ],
+      "observed_status": "MULTITRACE_CAUSALITY_GRAPH_DRIFT",
+      "public_label": "raw browser payload required",
+      "status": "MATCH"
+    }
+  ],
+  "schema": "BuyerDemoFailureVerdicts/v1",
+  "status": "MATCH"
+}

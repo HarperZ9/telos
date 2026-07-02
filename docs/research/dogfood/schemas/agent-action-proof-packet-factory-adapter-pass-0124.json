@@ -1,0 +1,611 @@
+{
+  "action_receipts": [
+    {
+      "action_admission": {
+        "admission_id": "admit-opentelemetry-0124",
+        "decision": "admit",
+        "required": true
+      },
+      "adapter_missing_fields": [],
+      "adapter_status": "MATCH",
+      "authority_scope": {
+        "allowed_side_effects": [
+          "local_write",
+          "local_read"
+        ],
+        "scope": "local_dogfood_research"
+      },
+      "compensation_pointer": {
+        "reason": "local dogfood fixture",
+        "required": false
+      },
+      "eval_refs": [
+        {
+          "kind": "validator",
+          "ref": "pass-0124-validator"
+        }
+      ],
+      "materials_digest": "45bbeb732fdd6d27acceeccca09d773192aedb224c2262be76ba87c1f102dff1",
+      "model_refs": [
+        {
+          "kind": "model_boundary",
+          "ref": "hidden_reasoning_not_exported"
+        }
+      ],
+      "privacy_boundary": "no raw private payloads, secrets, tokens, PII, or hidden reasoning exported",
+      "receipt_digest": "9ba304ddeb873fcfec24b37f9c416073f4590c24699ee002712e37f58dd5a1f9",
+      "receipt_id": "agent-action-proof-pass-0124-opentelemetry",
+      "receipt_status": "MATCH",
+      "runtime_refs": [
+        {
+          "kind": "python",
+          "ref": "local interpreter"
+        }
+      ],
+      "schema": "project-telos.action-receipt/v1",
+      "side_effect_class": "local_write",
+      "source_refs": [
+        {
+          "kind": "official_source",
+          "ref": "source:opentelemetry"
+        },
+        {
+          "kind": "prior_pass",
+          "ref": "pass-0123"
+        }
+      ],
+      "stop_reason": "completed_with_match_verdict",
+      "tool_call": {
+        "mode": "synthetic_trace_import",
+        "name": "agent_action_proof_packet_factory_adapter",
+        "native_system": "opentelemetry"
+      },
+      "trace_refs": {
+        "native_refs": {
+          "metric_ref": "metric:latency_ms",
+          "span_ids": [
+            "0f1a",
+            "0f1b",
+            "0f1c"
+          ],
+          "trace_id": "4f7e65b0c6c34c2aa1d6f64e08b03a65"
+        },
+        "native_system": "opentelemetry"
+      },
+      "verification_verdict": "MATCH",
+      "workspace_state": {
+        "dirty_allowed": true,
+        "path": "docs/research/dogfood",
+        "repo": "telos"
+      }
+    },
+    {
+      "action_admission": {
+        "admission_id": "admit-langsmith-0124",
+        "decision": "admit",
+        "required": true
+      },
+      "adapter_missing_fields": [],
+      "adapter_status": "MATCH",
+      "authority_scope": {
+        "allowed_side_effects": [
+          "local_write",
+          "local_read"
+        ],
+        "scope": "local_dogfood_research"
+      },
+      "compensation_pointer": {
+        "reason": "local dogfood fixture",
+        "required": false
+      },
+      "eval_refs": [
+        {
+          "kind": "validator",
+          "ref": "pass-0124-validator"
+        }
+      ],
+      "materials_digest": "918130a90e3fe9368aa8fefc3abac340c40bab6216995f407bb7814eceb16870",
+      "model_refs": [
+        {
+          "kind": "model_boundary",
+          "ref": "hidden_reasoning_not_exported"
+        }
+      ],
+      "privacy_boundary": "no raw private payloads, secrets, tokens, PII, or hidden reasoning exported",
+      "receipt_digest": "5c6f10c01cf13bbca6067763c649597b58bfe493956fc19fb2fd79527c01ab5c",
+      "receipt_id": "agent-action-proof-pass-0124-langsmith",
+      "receipt_status": "MATCH",
+      "runtime_refs": [
+        {
+          "kind": "python",
+          "ref": "local interpreter"
+        }
+      ],
+      "schema": "project-telos.action-receipt/v1",
+      "side_effect_class": "local_write",
+      "source_refs": [
+        {
+          "kind": "official_source",
+          "ref": "source:langsmith"
+        },
+        {
+          "kind": "prior_pass",
+          "ref": "pass-0123"
+        }
+      ],
+      "stop_reason": "completed_with_match_verdict",
+      "tool_call": {
+        "mode": "synthetic_trace_import",
+        "name": "agent_action_proof_packet_factory_adapter",
+        "native_system": "langsmith"
+      },
+      "trace_refs": {
+        "native_refs": {
+          "evaluation_ref": "eval:authority-boundary",
+          "run_url": "local://langsmith/run/0124",
+          "trace_ref": "ls-trace-0124"
+        },
+        "native_system": "langsmith"
+      },
+      "verification_verdict": "MATCH",
+      "workspace_state": {
+        "dirty_allowed": true,
+        "path": "docs/research/dogfood",
+        "repo": "telos"
+      }
+    },
+    {
+      "action_admission": {
+        "admission_id": "admit-langfuse-0124",
+        "decision": "admit",
+        "required": true
+      },
+      "adapter_missing_fields": [],
+      "adapter_status": "MATCH",
+      "authority_scope": {
+        "allowed_side_effects": [
+          "local_write",
+          "local_read"
+        ],
+        "scope": "local_dogfood_research"
+      },
+      "compensation_pointer": {
+        "reason": "local dogfood fixture",
+        "required": false
+      },
+      "eval_refs": [
+        {
+          "kind": "validator",
+          "ref": "pass-0124-validator"
+        }
+      ],
+      "materials_digest": "a6c8eb4be651c2a70015b8535f258eee384fdf33b5bdf45772aa46cf52a3e26c",
+      "model_refs": [
+        {
+          "kind": "model_boundary",
+          "ref": "hidden_reasoning_not_exported"
+        }
+      ],
+      "privacy_boundary": "no raw private payloads, secrets, tokens, PII, or hidden reasoning exported",
+      "receipt_digest": "31b1b91b4ff1cbd5b2bc4d868a96a9a2c704827487b1861a12167e20f08a74dd",
+      "receipt_id": "agent-action-proof-pass-0124-langfuse",
+      "receipt_status": "MATCH",
+      "runtime_refs": [
+        {
+          "kind": "python",
+          "ref": "local interpreter"
+        }
+      ],
+      "schema": "project-telos.action-receipt/v1",
+      "side_effect_class": "local_write",
+      "source_refs": [
+        {
+          "kind": "official_source",
+          "ref": "source:langfuse"
+        },
+        {
+          "kind": "prior_pass",
+          "ref": "pass-0123"
+        }
+      ],
+      "stop_reason": "completed_with_match_verdict",
+      "tool_call": {
+        "mode": "synthetic_trace_import",
+        "name": "agent_action_proof_packet_factory_adapter",
+        "native_system": "langfuse"
+      },
+      "trace_refs": {
+        "native_refs": {
+          "prompt_version": "prompt:v3",
+          "score_ref": "score:unsupported-claim-count",
+          "trace_id": "lf-trace-0124"
+        },
+        "native_system": "langfuse"
+      },
+      "verification_verdict": "MATCH",
+      "workspace_state": {
+        "dirty_allowed": true,
+        "path": "docs/research/dogfood",
+        "repo": "telos"
+      }
+    },
+    {
+      "action_admission": {
+        "admission_id": "admit-phoenix-0124",
+        "decision": "admit",
+        "required": true
+      },
+      "adapter_missing_fields": [],
+      "adapter_status": "MATCH",
+      "authority_scope": {
+        "allowed_side_effects": [
+          "local_write",
+          "local_read"
+        ],
+        "scope": "local_dogfood_research"
+      },
+      "compensation_pointer": {
+        "reason": "local dogfood fixture",
+        "required": false
+      },
+      "eval_refs": [
+        {
+          "kind": "validator",
+          "ref": "pass-0124-validator"
+        }
+      ],
+      "materials_digest": "02d13f879436447b7309d012248914449d5922562fc8045ab02abd4142919747",
+      "model_refs": [
+        {
+          "kind": "model_boundary",
+          "ref": "hidden_reasoning_not_exported"
+        }
+      ],
+      "privacy_boundary": "no raw private payloads, secrets, tokens, PII, or hidden reasoning exported",
+      "receipt_digest": "86771ba23f82f96d8f74761759caf2f2c1d1835b63037588ed9f4dbcc216d452",
+      "receipt_id": "agent-action-proof-pass-0124-phoenix",
+      "receipt_status": "MATCH",
+      "runtime_refs": [
+        {
+          "kind": "python",
+          "ref": "local interpreter"
+        }
+      ],
+      "schema": "project-telos.action-receipt/v1",
+      "side_effect_class": "local_write",
+      "source_refs": [
+        {
+          "kind": "official_source",
+          "ref": "source:phoenix"
+        },
+        {
+          "kind": "prior_pass",
+          "ref": "pass-0123"
+        }
+      ],
+      "stop_reason": "completed_with_match_verdict",
+      "tool_call": {
+        "mode": "synthetic_trace_import",
+        "name": "agent_action_proof_packet_factory_adapter",
+        "native_system": "phoenix"
+      },
+      "trace_refs": {
+        "native_refs": {
+          "annotation_ref": "annotation:human-review",
+          "span_id": "px-span-root",
+          "trace_id": "px-trace-0124"
+        },
+        "native_system": "phoenix"
+      },
+      "verification_verdict": "MATCH",
+      "workspace_state": {
+        "dirty_allowed": true,
+        "path": "docs/research/dogfood",
+        "repo": "telos"
+      }
+    },
+    {
+      "action_admission": {
+        "admission_id": "admit-braintrust-0124",
+        "decision": "admit",
+        "required": true
+      },
+      "adapter_missing_fields": [],
+      "adapter_status": "MATCH",
+      "authority_scope": {
+        "allowed_side_effects": [
+          "local_write",
+          "local_read"
+        ],
+        "scope": "local_dogfood_research"
+      },
+      "compensation_pointer": {
+        "reason": "local dogfood fixture",
+        "required": false
+      },
+      "eval_refs": [
+        {
+          "kind": "validator",
+          "ref": "pass-0124-validator"
+        }
+      ],
+      "materials_digest": "32a5adcff211aee9ba37f603bf721315e658598874e6bedc2012ba2bea9f7fa5",
+      "model_refs": [
+        {
+          "kind": "model_boundary",
+          "ref": "hidden_reasoning_not_exported"
+        }
+      ],
+      "privacy_boundary": "no raw private payloads, secrets, tokens, PII, or hidden reasoning exported",
+      "receipt_digest": "ebab6dd79032c17018598ca7e0dbcf59560b0b55ffde593debb54102ffcb0d37",
+      "receipt_id": "agent-action-proof-pass-0124-braintrust",
+      "receipt_status": "MATCH",
+      "runtime_refs": [
+        {
+          "kind": "python",
+          "ref": "local interpreter"
+        }
+      ],
+      "schema": "project-telos.action-receipt/v1",
+      "side_effect_class": "local_write",
+      "source_refs": [
+        {
+          "kind": "official_source",
+          "ref": "source:braintrust"
+        },
+        {
+          "kind": "prior_pass",
+          "ref": "pass-0123"
+        }
+      ],
+      "stop_reason": "completed_with_match_verdict",
+      "tool_call": {
+        "mode": "synthetic_trace_import",
+        "name": "agent_action_proof_packet_factory_adapter",
+        "native_system": "braintrust"
+      },
+      "trace_refs": {
+        "native_refs": {
+          "eval_ref": "bt-eval-admission",
+          "experiment_id": "bt-exp-0124",
+          "trace_ref": "bt-trace-0124"
+        },
+        "native_system": "braintrust"
+      },
+      "verification_verdict": "MATCH",
+      "workspace_state": {
+        "dirty_allowed": true,
+        "path": "docs/research/dogfood",
+        "repo": "telos"
+      }
+    }
+  ],
+  "adapter_claim_status": "HYPOTHESIS_WITH_EXECUTABLE_FIXTURES",
+  "adapter_contract_fields": [
+    "receipt_id",
+    "schema",
+    "source_refs",
+    "workspace_state",
+    "authority_scope",
+    "action_admission",
+    "tool_call",
+    "side_effect_class",
+    "materials_digest",
+    "trace_refs",
+    "eval_refs",
+    "model_refs",
+    "runtime_refs",
+    "verification_verdict",
+    "stop_reason",
+    "compensation_pointer",
+    "privacy_boundary",
+    "receipt_status"
+  ],
+  "current_promoted_natural_laws": [],
+  "flagship_receipts": {
+    "forum": {
+      "confidence": 0.045454545454545456,
+      "decided": null,
+      "exit_code": 0,
+      "status": "MATCH",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "ed94aa833c87bcdb8e11efb2d17b0a6f49e805bd8f008027ab7c368b7d707b56"
+    },
+    "index": {
+      "exit_code": 0,
+      "status": "MATCH",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "cd2e3e000d9127db1b5f8f4d000e9e45247feca0fa5af90a37dc5ad46168b7c5",
+      "verification_verdict": "MATCH"
+    },
+    "telos": {
+      "exit_code": 0,
+      "status": "MATCH",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "be17cb15259234cb4e8e95c2b36e76c90d841431729beb140294e34c5f9ebfa7",
+      "tool_version": "0.1.0"
+    },
+    "telos_catalog": {
+      "exit_code": 0,
+      "status": "MATCH",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "ef95a6f1ff803c483c3c4dd553fe19c37ab144113a21bc005cf4148cf31a8564"
+    }
+  },
+  "generated_on": "2026-07-01",
+  "market_gap_status": "inferred",
+  "negative_fixtures": [
+    {
+      "failures": [
+        "missing_authority_scope"
+      ],
+      "fixture_id": "missing_authority_scope",
+      "status": "REJECTED"
+    },
+    {
+      "failures": [
+        "missing_action_admission",
+        "write_without_admission"
+      ],
+      "fixture_id": "missing_action_admission",
+      "status": "REJECTED"
+    },
+    {
+      "failures": [
+        "invalid_or_missing_verification_verdict",
+        "missing_verification_verdict"
+      ],
+      "fixture_id": "missing_verifier",
+      "status": "REJECTED"
+    },
+    {
+      "failures": [
+        "external_write_not_authorized",
+        "hidden_reasoning_exported"
+      ],
+      "fixture_id": "external_write_and_hidden_reasoning",
+      "status": "REJECTED"
+    }
+  ],
+  "non_promotion_statement": "Pass 0124 is a local synthetic adapter fixture across observability trace shapes. It does not claim production ingestion, replacement of incumbents, market fit, external-write authority, scientific discovery, or a promoted natural law.",
+  "pass": "0124",
+  "schema": "AgentActionProofPacketFactoryAdapter/v1",
+  "seal": "5be6a945b22e1c730f4fc93528321fce56bede4d750329a72c90894a9b1b5e7d",
+  "source_bindings": {
+    "adapter_matrix_pass": "0064",
+    "factory_pass": "0123",
+    "otel_fixture_pass": "0065",
+    "source_store": "gather/pass-0124-agent-action-adapter-sources"
+  },
+  "source_matrix": [
+    {
+      "chars": 5479,
+      "gap_status": "inferred",
+      "gather_status": "GATHER_VERIFIED",
+      "label": "Braintrust tracing",
+      "sha256": "251f706332ca99414c26a230a932e26f2db7f320c7018fd2c84c1dd95d105db7",
+      "source_id": "braintrust",
+      "title": "Instrument your application - Braintrust",
+      "url": "https://www.braintrust.dev/docs/guides/tracing"
+    },
+    {
+      "chars": 4578,
+      "gap_status": "inferred",
+      "gather_status": "GATHER_VERIFIED",
+      "label": "Langfuse observability",
+      "sha256": "6b3fdfe0c764bb315db0c622aa902502b75a5db6c38ae3a9b38cdc3bef702869",
+      "source_id": "langfuse",
+      "title": "LLM Observability & Application Tracing (Open Source) - Langfuse",
+      "url": "https://langfuse.com/docs/observability/overview"
+    },
+    {
+      "chars": 2317,
+      "gap_status": "inferred",
+      "gather_status": "GATHER_VERIFIED",
+      "label": "LangSmith observability",
+      "sha256": "ecd9a383d5c1ee6a6fcb3525aa000c6700eb57b172604cb7cc8a6dbd795793b6",
+      "source_id": "langsmith",
+      "title": "LangSmith Observability - Docs by LangChain",
+      "url": "https://docs.langchain.com/langsmith/observability"
+    },
+    {
+      "chars": 16939,
+      "gap_status": "inferred",
+      "gather_status": "GATHER_VERIFIED",
+      "label": "OpenTelemetry context propagation",
+      "sha256": "95a34190f7bd2c40ad8ddb7abb86c1603240c4388c24a82160f2bbbecc30d2e8",
+      "source_id": "opentelemetry_context",
+      "title": "Context propagation | OpenTelemetry",
+      "url": "https://opentelemetry.io/docs/concepts/context-propagation/"
+    },
+    {
+      "chars": 22513,
+      "gap_status": "inferred",
+      "gather_status": "GATHER_VERIFIED",
+      "label": "OpenTelemetry traces",
+      "sha256": "1b923e344b275bb4aea64aec20bb328dddf57f595c5b0f44146a73b432112af0",
+      "source_id": "opentelemetry_traces",
+      "title": "Traces | OpenTelemetry",
+      "url": "https://opentelemetry.io/docs/concepts/signals/traces/"
+    },
+    {
+      "chars": 5489,
+      "gap_status": "inferred",
+      "gather_status": "GATHER_VERIFIED",
+      "label": "Phoenix tracing",
+      "sha256": "3caf4c24f5498e5bbf6cc26c194ff3887c74ae9d0d99264a063cdcd11bb1d41d",
+      "source_id": "phoenix",
+      "title": "Overview: Tracing - Phoenix",
+      "url": "https://arize.com/docs/phoenix/tracing/llm-traces"
+    },
+    {
+      "chars": 46231,
+      "gap_status": "inferred",
+      "gather_status": "GATHER_VERIFIED",
+      "label": "W3C Trace Context",
+      "sha256": "83691b2c836419f7fc3709a51d4ff7ad1945ebcfd80fdf120ce23af3e5c9a195",
+      "source_id": "trace_context",
+      "title": "Trace Context",
+      "url": "https://www.w3.org/TR/trace-context/"
+    }
+  ],
+  "status": "AGENT_ACTION_PROOF_PACKET_FACTORY_ADAPTER_MATCH",
+  "trace_inputs": [
+    {
+      "native_ref_digest": "45bbeb732fdd6d27acceeccca09d773192aedb224c2262be76ba87c1f102dff1",
+      "native_refs": {
+        "metric_ref": "metric:latency_ms",
+        "span_ids": [
+          "0f1a",
+          "0f1b",
+          "0f1c"
+        ],
+        "trace_id": "4f7e65b0c6c34c2aa1d6f64e08b03a65"
+      },
+      "native_system": "opentelemetry",
+      "source_status": "TRACE_INPUT_FIXTURE"
+    },
+    {
+      "native_ref_digest": "918130a90e3fe9368aa8fefc3abac340c40bab6216995f407bb7814eceb16870",
+      "native_refs": {
+        "evaluation_ref": "eval:authority-boundary",
+        "run_url": "local://langsmith/run/0124",
+        "trace_ref": "ls-trace-0124"
+      },
+      "native_system": "langsmith",
+      "source_status": "TRACE_INPUT_FIXTURE"
+    },
+    {
+      "native_ref_digest": "a6c8eb4be651c2a70015b8535f258eee384fdf33b5bdf45772aa46cf52a3e26c",
+      "native_refs": {
+        "prompt_version": "prompt:v3",
+        "score_ref": "score:unsupported-claim-count",
+        "trace_id": "lf-trace-0124"
+      },
+      "native_system": "langfuse",
+      "source_status": "TRACE_INPUT_FIXTURE"
+    },
+    {
+      "native_ref_digest": "02d13f879436447b7309d012248914449d5922562fc8045ab02abd4142919747",
+      "native_refs": {
+        "annotation_ref": "annotation:human-review",
+        "span_id": "px-span-root",
+        "trace_id": "px-trace-0124"
+      },
+      "native_system": "phoenix",
+      "source_status": "TRACE_INPUT_FIXTURE"
+    },
+    {
+      "native_ref_digest": "32a5adcff211aee9ba37f603bf721315e658598874e6bedc2012ba2bea9f7fa5",
+      "native_refs": {
+        "eval_ref": "bt-eval-admission",
+        "experiment_id": "bt-exp-0124",
+        "trace_ref": "bt-trace-0124"
+      },
+      "native_system": "braintrust",
+      "source_status": "TRACE_INPUT_FIXTURE"
+    }
+  ],
+  "unsupported_claim_count": 0,
+  "validation_errors": []
+}

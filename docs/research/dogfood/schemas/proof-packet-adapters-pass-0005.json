@@ -1,0 +1,128 @@
+{
+  "schema": "ProofPacketAdapterPriority/v1",
+  "pass": "0005",
+  "generated_on": "2026-07-01",
+  "positioning": "Adapters import incumbent evidence fragments; Telos binds them into cross-layer proof packets.",
+  "adapters": [
+    {
+      "priority": 1,
+      "adapter": "OpenTelemetryTraceImporter",
+      "external_analogs": ["OpenTelemetry traces", "OpenTelemetry Collector", "vendor APM backends"],
+      "buyer_workflow": "distributed-service and agent execution tracing",
+      "evidence_inputs": ["trace_id", "span_id", "parent_id", "span status", "span events", "span links", "attributes", "exporter target"],
+      "telos_outputs": ["ActionEvent", "CausalityEdge", "RuntimeContextReceipt"],
+      "missing_binding": "OpenTelemetry provides causality context, but Telos must bind authority, workspace state, source provenance, verifier verdicts, and packet replay.",
+      "build_first": true,
+      "source_urls": ["https://opentelemetry.io/docs/concepts/signals/traces/"],
+      "confidence": "high"
+    },
+    {
+      "priority": 2,
+      "adapter": "LLMTraceImporter",
+      "external_analogs": ["Langfuse", "LangSmith"],
+      "buyer_workflow": "LLM and agent observability",
+      "evidence_inputs": ["prompt", "response", "tool call", "retrieval step", "token usage", "latency", "cost", "evaluation score", "feedback"],
+      "telos_outputs": ["ModelActionReceipt", "ToolCallReceipt", "EvaluationEvidence"],
+      "missing_binding": "LLM traces capture application behavior; Telos must add action admission, authority boundary, source/workspace hash, and independent verification verdicts.",
+      "build_first": true,
+      "source_urls": ["https://docs.langchain.com/langsmith/observability", "https://langfuse.com/docs/observability/overview"],
+      "confidence": "high"
+    },
+    {
+      "priority": 3,
+      "adapter": "MLflowRunImporter",
+      "external_analogs": ["MLflow Tracking", "MLflow Model Registry", "MLflow Dataset Tracking"],
+      "buyer_workflow": "model experimentation, model registry, and dataset-linked evaluation",
+      "evidence_inputs": ["run metadata", "parameters", "metrics", "artifacts", "model id", "dataset link", "code version", "tracking server"],
+      "telos_outputs": ["ExperimentRunReceipt", "ModelEvidenceReceipt", "DatasetEvidenceReceipt"],
+      "missing_binding": "MLflow tracks runs and artifacts; Telos must bind claims, authority, external source evidence, and verifier decisions around the run.",
+      "build_first": true,
+      "source_urls": ["https://mlflow.org/docs/latest/ml/tracking/", "https://mlflow.org/docs/latest/ml/model-registry/"],
+      "confidence": "high"
+    },
+    {
+      "priority": 4,
+      "adapter": "WandbArtifactImporter",
+      "external_analogs": ["Weights & Biases Artifacts"],
+      "buyer_workflow": "ML artifact versioning and lineage",
+      "evidence_inputs": ["run", "artifact type", "artifact version", "dataset artifact", "model checkpoint artifact", "metadata", "metrics"],
+      "telos_outputs": ["ArtifactLineageReceipt", "ModelCheckpointReceipt"],
+      "missing_binding": "W&B versions inputs and outputs; Telos must bind those versions to claim verification and action provenance.",
+      "build_first": true,
+      "source_urls": ["https://docs.wandb.ai/models/artifacts"],
+      "confidence": "high"
+    },
+    {
+      "priority": 5,
+      "adapter": "DVCLineageImporter",
+      "external_analogs": ["DVC", "Git-based data/model versioning"],
+      "buyer_workflow": "data/model reproducibility and audit history",
+      "evidence_inputs": ["Git commit", "DVC metafile", "data snapshot", "model snapshot", "metrics", "pipeline reproduction record"],
+      "telos_outputs": ["DataVersionReceipt", "ReproducibilityReceipt"],
+      "missing_binding": "DVC tracks data/code/model history; Telos must attach claim context, verifier status, and packet-level decision summaries.",
+      "build_first": true,
+      "source_urls": ["https://doc.dvc.org/example-scenarios/versioning-data-and-models"],
+      "confidence": "high"
+    },
+    {
+      "priority": 6,
+      "adapter": "NextflowRunImporter",
+      "external_analogs": ["Nextflow reports", "Seqera platform"],
+      "buyer_workflow": "scientific and bioinformatics workflow execution",
+      "evidence_inputs": ["execution log", "execution report", "timeline", "trace file", "workflow DAG", "task status", "resource metrics"],
+      "telos_outputs": ["WorkflowRunReceipt", "TaskEvidenceReceipt", "PipelineDAGReceipt"],
+      "missing_binding": "Nextflow reports pipeline execution; Telos must bind source claims, verification verdicts, and domain-specific proof status.",
+      "build_first": false,
+      "source_urls": ["https://docs.seqera.io/nextflow/reports"],
+      "confidence": "high"
+    },
+    {
+      "priority": 7,
+      "adapter": "SnakemakeReportImporter",
+      "external_analogs": ["Snakemake reports"],
+      "buyer_workflow": "shareable workflow reports and scientific reproducibility",
+      "evidence_inputs": ["runtime statistics", "provenance information", "workflow topology", "annotated results"],
+      "telos_outputs": ["WorkflowReportReceipt", "AnnotatedResultReceipt"],
+      "missing_binding": "Snakemake reports package workflow evidence; Telos must bind it to claim-level verification and packet promotion states.",
+      "build_first": false,
+      "source_urls": ["https://snakemake.readthedocs.io/en/stable/snakefiles/reporting.html"],
+      "confidence": "high"
+    },
+    {
+      "priority": 8,
+      "adapter": "OpenLineageImporter",
+      "external_analogs": ["OpenLineage", "Marquez"],
+      "buyer_workflow": "data lineage interoperability across jobs, datasets, and runs",
+      "evidence_inputs": ["job entity", "run entity", "dataset entity", "facet", "integration metadata"],
+      "telos_outputs": ["LineageReceipt", "DatasetCausalityEdge"],
+      "missing_binding": "OpenLineage standardizes lineage metadata; Telos must bind lineage to model actions, source claims, and verification verdicts.",
+      "build_first": false,
+      "source_urls": ["https://openlineage.io/docs/"],
+      "confidence": "high"
+    },
+    {
+      "priority": 9,
+      "adapter": "SLSAProvenanceImporter",
+      "external_analogs": ["SLSA Provenance"],
+      "buyer_workflow": "build provenance and software supply-chain verification",
+      "evidence_inputs": ["buildType", "externalParameters", "internalParameters", "resolvedDependencies", "builder", "runDetails", "byproducts"],
+      "telos_outputs": ["BuildProvenanceReceipt", "DependencyReceipt"],
+      "missing_binding": "SLSA covers build provenance; Telos must connect build provenance to agent actions, source intake, compiler/runtime receipts, and verifier verdicts.",
+      "build_first": true,
+      "source_urls": ["https://slsa.dev/spec/v1.0/provenance"],
+      "confidence": "high"
+    },
+    {
+      "priority": 10,
+      "adapter": "InTotoStepImporter",
+      "external_analogs": ["in-toto"],
+      "buyer_workflow": "software supply-chain step attestation",
+      "evidence_inputs": ["performed step", "actor", "order", "link metadata", "layout"],
+      "telos_outputs": ["ToolStepReceipt", "ActorAuthorityReceipt"],
+      "missing_binding": "in-toto attests supply-chain steps; Telos must generalize step receipts across agent tools, research workflows, and BuildLang/buildc runtime actions.",
+      "build_first": true,
+      "source_urls": ["https://in-toto.io/"],
+      "confidence": "high"
+    }
+  ]
+}

@@ -1,0 +1,377 @@
+{
+  "current_promoted_natural_laws": [],
+  "derivation_map": [
+    {
+      "anchor": "Sellars",
+      "evidence_status": "OBSERVED",
+      "role": "normative-pragmatic and anti-empiricist source lead"
+    },
+    {
+      "anchor": "Kant",
+      "evidence_status": "OBSERVED",
+      "role": "mind-independent objectivity and normativity source lead"
+    },
+    {
+      "anchor": "Hegel",
+      "evidence_status": "OBSERVED",
+      "role": "recognition, historical recollection, and social normativity source lead"
+    },
+    {
+      "anchor": "Inferentialism",
+      "evidence_status": "OBSERVED",
+      "role": "learning graph organized around reasons, consequences, commitments, and entitlements"
+    },
+    {
+      "anchor": "Logical expressivism",
+      "evidence_status": "OBSERVED",
+      "role": "make implicit inferential practices explicit through vocabulary and tooling"
+    }
+  ],
+  "digest_boundary": "This pass catalogs and digests Brandom source leads for learning-tool design. It does not claim a complete bibliography, export raw transcript text, verify blocked profiles, or turn philosophical claims into scientific laws.",
+  "flagship_receipts": {
+    "forum": {
+      "decided": null,
+      "exit_code": 0,
+      "status": "MATCH",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "0efd14944910a0888bf2720b33c615f279d7885f11ed62e12d7c15582c7e18be"
+    },
+    "index": {
+      "exit_code": 0,
+      "status": "MATCH",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "5ff17065210d65b4635d0d093849d05f8f246421ed895920ed31a921d89909ee",
+      "verification_verdict": "MATCH"
+    },
+    "telos": {
+      "exit_code": 0,
+      "status": "MATCH",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "be17cb15259234cb4e8e95c2b36e76c90d841431729beb140294e34c5f9ebfa7",
+      "tool_version": "0.1.0"
+    },
+    "telos_catalog": {
+      "exit_code": 0,
+      "status": "MATCH",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "ef95a6f1ff803c483c3c4dd553fe19c37ab144113a21bc005cf4148cf31a8564"
+    }
+  },
+  "generated_on": "2026-07-01",
+  "inaccessible_sources": [
+    {
+      "attempt": "gather web",
+      "ref": "https://www.researchgate.net/profile/Bob-Brandom",
+      "status": "INACCESSIBLE_HTTP_403"
+    },
+    {
+      "attempt": "gather web",
+      "ref": "https://pitt.academia.edu/RobertBrandom",
+      "status": "INACCESSIBLE_HTTP_403"
+    }
+  ],
+  "negative_fixtures": [
+    {
+      "failures": [
+        "copyright_boundary",
+        "requires_digest_not_dump"
+      ],
+      "fixture_id": "raw_transcript_as_textbook_rejected",
+      "status": "REJECTED"
+    },
+    {
+      "failures": [
+        "researchgate_403",
+        "academia_403"
+      ],
+      "fixture_id": "blocked_profiles_as_evidence_rejected",
+      "status": "REJECTED"
+    },
+    {
+      "failures": [
+        "profile_is_partial",
+        "requires_texts_and_courses_catalog"
+      ],
+      "fixture_id": "profile_as_complete_bibliography_rejected",
+      "status": "REJECTED"
+    },
+    {
+      "failures": [
+        "needs_learning_fixture",
+        "needs_measurable_outcome"
+      ],
+      "fixture_id": "philosophy_to_product_without_tasks_rejected",
+      "status": "REJECTED"
+    },
+    {
+      "failures": [
+        "humanities_digest",
+        "not_scientific_law"
+      ],
+      "fixture_id": "brandom_corpus_as_natural_law_rejected",
+      "status": "REJECTED"
+    }
+  ],
+  "pass": "0129",
+  "schema": "BrandomFunctionalLearningDigestReceipt/v1",
+  "scorekeeping_fixture": {
+    "final_commitments": [
+      "p",
+      "p_implies_q",
+      "q"
+    ],
+    "final_entitlements": [
+      "p",
+      "p_implies_q",
+      "q"
+    ],
+    "fixture_id": "deontic_scorekeeping_learning_loop",
+    "learning_objective": "teach claims as moves in a reason-governed practice rather than isolated notes",
+    "status": "MATCH",
+    "trace": [
+      {
+        "accepted": true,
+        "action": "assert",
+        "claim": "p",
+        "reason": "learner undertakes a commitment"
+      },
+      {
+        "accepted": true,
+        "action": "attach_source",
+        "claim": "p",
+        "reason": "source receipt licenses the commitment inside this bounded exercise"
+      },
+      {
+        "accepted": true,
+        "action": "add_rule",
+        "claim": "p -> q",
+        "reason": "explicit inferential link added"
+      },
+      {
+        "accepted": true,
+        "action": "infer",
+        "claim": "q",
+        "reason": "conclusion requires entitlement to antecedent and rule"
+      }
+    ]
+  },
+  "seal": "3c1fbb62dfdf5b3696e847b2020488b5a73093e7b4991228071ae3d218e7e31a",
+  "source_bindings": {
+    "proof_suite_pass": "0128",
+    "proof_suite_seal": "a156060486b999d141977cc5df8eda8c1c08b42872b589671987b98c5b724cc0",
+    "source_store": "gather/pass-0129-brandom-functional-learning"
+  },
+  "source_receipts": [
+    {
+      "chars": 153,
+      "kind": "metadata",
+      "method": "yt-dlp",
+      "raw_body_exported": false,
+      "ref": "JOvZWTk8KFU",
+      "sha256": "7589efc0ab4b2d469c6ce43b85b67789242b0e3ae7987db73e80c7ab3c0f9eb7",
+      "source": "video",
+      "status": "GATHER_VERIFIED",
+      "title": "Sellars, Kant, and the Mind-Independent World. Lecture by Robert Brandom at Zhejiang University 2026"
+    },
+    {
+      "chars": 66440,
+      "kind": "transcript",
+      "method": "auto-caption",
+      "raw_body_exported": false,
+      "ref": "JOvZWTk8KFU",
+      "sha256": "1e0538cdc0aae8dca484cced9f0a9b52b57be9433eb2dba862f939e9602a1772",
+      "source": "video",
+      "status": "GATHER_VERIFIED",
+      "title": "Sellars, Kant, and the Mind-Independent World. Lecture by Robert Brandom at Zhejiang University 2026"
+    },
+    {
+      "chars": 343,
+      "kind": "webpage",
+      "method": "http-get",
+      "raw_body_exported": false,
+      "ref": "https://sites.pitt.edu/~rbrandom/",
+      "sha256": "e18b789804ea94229451a6db56f30608ab25023f954120ad26f667fe9bf65aff",
+      "source": "web",
+      "status": "GATHER_VERIFIED",
+      "title": "Robert B. Brandom"
+    },
+    {
+      "chars": 1395,
+      "kind": "webpage",
+      "method": "http-get",
+      "raw_body_exported": false,
+      "ref": "https://sites.pitt.edu/~rbrandom/Courses%201%20c.html",
+      "sha256": "df90a0fc81d07eee9039738d4fac36977246879fc1cac070cdc3b8abb6f26cd1",
+      "source": "web",
+      "status": "GATHER_VERIFIED",
+      "title": "Courses"
+    },
+    {
+      "chars": 7600,
+      "kind": "webpage",
+      "method": "http-get",
+      "raw_body_exported": false,
+      "ref": "https://sites.pitt.edu/~rbrandom/Texts%20Mark%201%20p.html",
+      "sha256": "bc801e10d78960b928caec6973ce5361a456f6b4a55f18112b6f2ae95fc2b3a1",
+      "source": "web",
+      "status": "GATHER_VERIFIED",
+      "title": "Texts Available for Download"
+    },
+    {
+      "chars": 3324,
+      "kind": "webpage",
+      "method": "http-get",
+      "raw_body_exported": false,
+      "ref": "https://www.philosophy.pitt.edu/people/rbrandom",
+      "sha256": "36491130518b409d05c8ac709ee04b6d78422aa9ae74a43d1def3bbdc59fd2a3",
+      "source": "web",
+      "status": "GATHER_VERIFIED",
+      "title": "Robert Brandom | Department of Philosophy | University of Pittsburgh"
+    },
+    {
+      "chars": 152,
+      "kind": "webpage",
+      "method": "http-get",
+      "raw_body_exported": false,
+      "ref": "https://www.youtube.com/@BobBrandomPitt/videos",
+      "sha256": "d61a7a5790bfd9f4027fb5e0ee11800aaef50b03b200fafd7867f7dfcadf5fc7",
+      "source": "web",
+      "status": "GATHER_VERIFIED",
+      "title": "Bob Brandom - YouTube"
+    }
+  ],
+  "status": "BRANDOM_FUNCTIONAL_LEARNING_DIGEST_MATCH",
+  "term_signals": [
+    {
+      "documents": 2,
+      "hits": 5,
+      "status": "OBSERVED",
+      "term": "inferentialism"
+    },
+    {
+      "documents": 4,
+      "hits": 19,
+      "status": "OBSERVED",
+      "term": "pragmatism"
+    },
+    {
+      "documents": 5,
+      "hits": 16,
+      "status": "OBSERVED",
+      "term": "Sellars"
+    },
+    {
+      "documents": 3,
+      "hits": 52,
+      "status": "OBSERVED",
+      "term": "Kant"
+    },
+    {
+      "documents": 2,
+      "hits": 18,
+      "status": "OBSERVED",
+      "term": "Hegel"
+    },
+    {
+      "documents": 4,
+      "hits": 58,
+      "status": "OBSERVED",
+      "term": "logic"
+    },
+    {
+      "documents": 2,
+      "hits": 6,
+      "status": "OBSERVED",
+      "term": "modality"
+    },
+    {
+      "documents": 4,
+      "hits": 39,
+      "status": "OBSERVED",
+      "term": "reason"
+    },
+    {
+      "documents": 2,
+      "hits": 7,
+      "status": "OBSERVED",
+      "term": "semantics"
+    },
+    {
+      "documents": 4,
+      "hits": 32,
+      "status": "OBSERVED",
+      "term": "language"
+    },
+    {
+      "documents": 3,
+      "hits": 9,
+      "status": "OBSERVED",
+      "term": "expressivism"
+    },
+    {
+      "documents": 3,
+      "hits": 28,
+      "status": "OBSERVED",
+      "term": "representation"
+    },
+    {
+      "documents": 1,
+      "hits": 1,
+      "status": "OBSERVED",
+      "term": "objectivity"
+    },
+    {
+      "documents": 3,
+      "hits": 8,
+      "status": "OBSERVED",
+      "term": "commitment"
+    },
+    {
+      "documents": 0,
+      "hits": 0,
+      "status": "ABSENT",
+      "term": "entitlement"
+    },
+    {
+      "documents": 1,
+      "hits": 2,
+      "status": "OBSERVED",
+      "term": "recognition"
+    },
+    {
+      "documents": 0,
+      "hits": 0,
+      "status": "ABSENT",
+      "term": "scorekeeping"
+    }
+  ],
+  "tool_hypotheses": [
+    {
+      "market_need": "turn readings and lectures into claim, reason, consequence, and objection graphs",
+      "status": "HYPOTHESIS",
+      "tool": "Inferential Graph Tutor"
+    },
+    {
+      "market_need": "let learners practice commitments, entitlements, challenges, and repairs with action receipts",
+      "status": "HYPOTHESIS",
+      "tool": "Scorekeeping Lab"
+    },
+    {
+      "market_need": "show which vocabulary makes an implicit practice explicit",
+      "status": "HYPOTHESIS",
+      "tool": "Expressive Vocabulary Ladder"
+    },
+    {
+      "market_need": "convert lecture source leads into exercises, tests, and Crucible-checked learning packets",
+      "status": "HYPOTHESIS",
+      "tool": "Seminar-to-Proof Packet"
+    },
+    {
+      "market_need": "map Kant, Hegel, Sellars, Rorty, and Brandom dependencies across courses and texts",
+      "status": "HYPOTHESIS",
+      "tool": "Tradition Derivation Atlas"
+    }
+  ],
+  "unsupported_claim_count": 0,
+  "validation_errors": []
+}

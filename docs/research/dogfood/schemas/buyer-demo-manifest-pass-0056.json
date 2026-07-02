@@ -1,0 +1,80 @@
+{
+  "bundle_outputs": [
+    {
+      "bytes": 1021,
+      "exists": true,
+      "path": "demo-bundles/multitrace-causality-demo-pass-0056/manifest.json",
+      "sha256": "b98427320b74af8677b2359c52872290bebf129a61512f39660f294e8f10e7cc"
+    },
+    {
+      "bytes": 2322,
+      "exists": true,
+      "path": "demo-bundles/multitrace-causality-demo-pass-0056/review-panes.json",
+      "sha256": "a28bf65afd965c9588568f8288bf222c65cbfe832b31c444d174be35566c9649"
+    },
+    {
+      "bytes": 1592,
+      "exists": true,
+      "path": "demo-bundles/multitrace-causality-demo-pass-0056/failure-verdicts.json",
+      "sha256": "0074c9564dd9a82c060098a44568b03f41b67c807d2442ee1f60cc8d1c16a37f"
+    },
+    {
+      "bytes": 836,
+      "exists": true,
+      "path": "demo-bundles/multitrace-causality-demo-pass-0056/replay-commands.md",
+      "sha256": "5c567b6929c33e8e6ad1b24cf6ea1d4d7c1c15ba5a5a783d8ca19fe1314dce40"
+    },
+    {
+      "bytes": 1813,
+      "exists": true,
+      "path": "demo-bundles/multitrace-causality-demo-pass-0056/index.html",
+      "sha256": "92178ca3691bde049866b2bfe36f93a1df547a099d20645eff0c3909384edbdf"
+    },
+    {
+      "bytes": 728,
+      "exists": true,
+      "path": "demo-bundles/multitrace-causality-demo-pass-0056/receipts.json",
+      "sha256": "f571cd061d317a47fc89fb57938af36578003f7856f1110b5f2f866add1f1b18"
+    }
+  ],
+  "compose_receipt": {
+    "command": "C:\\Users\\Zain\\AppData\\Local\\Programs\\Python\\Python312\\python.exe C:\\dev\\public\\telos\\docs\\research\\dogfood\\tools\\compose_buyer_demo_manifest.py --graph C:\\dev\\public\\telos\\docs\\research\\dogfood\\schemas\\multitrace-causality-graph-pass-0055.json --out C:\\dev\\public\\telos\\docs\\research\\dogfood\\demo-bundles\\multitrace-causality-demo-pass-0056",
+    "exit_code": 0,
+    "status": "MATCH",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "37a37841af0df899f11965bdb0fdd6e02d1d3eccf6959e3b63b15f28d120d418"
+  },
+  "current_promoted_natural_laws": [],
+  "generated_on": "2026-07-01",
+  "implementation_status": "IMPLEMENTED_LOCAL_BUYER_DEMO_MANIFEST",
+  "non_promotion_statement": "Pass 0056 proves a local buyer-facing demo manifest over existing dogfood receipts. It does not prove live production telemetry, customer adoption, scientific truth, or any natural law.",
+  "pass": "0056",
+  "schema": "BuyerDemoManifestSet/v1",
+  "seal": "9cd9b52cde63edf035e90cb69d2828f02dbebf8127924b476d03250a20fad2c9",
+  "status": "BUYER_DEMO_MANIFEST_SET_MATCH",
+  "test_receipt": {
+    "command": "C:\\Users\\Zain\\AppData\\Local\\Programs\\Python\\Python312\\python.exe C:\\dev\\public\\telos\\docs\\research\\dogfood\\tools\\test_buyer_demo_manifest.py",
+    "exit_code": 0,
+    "status": "MATCH",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "b0d628bbe52dc59ebd58e70fb40bcabf2f37a61e5f37d066c8e9d59c2c4b62fd"
+  },
+  "uniqueness_claim_status": "HYPOTHESIS_ONLY",
+  "upstream_graph_binding": {
+    "path": "schemas/multitrace-causality-graph-pass-0055.json",
+    "sha256": "254f3bfc2b2e03cd4c0599956b17f79ec349ec2d9a1f207aa02a1619572834aa",
+    "source_seal": "24c794be2c0f30058530507ef328da71fa54744e818f4ea5b877c31d81dd3d31",
+    "source_status": "MULTITRACE_CAUSALITY_GRAPH_MATCH"
+  },
+  "verifier_measurements": {
+    "failure_verdict_count": 5,
+    "negative_match_count": 5,
+    "negative_pass_observed_count": 0,
+    "output_count": 6,
+    "output_match_count": 6,
+    "production_ready": false,
+    "public_review_ready": true,
+    "replay_command_count": 3,
+    "review_pane_count": 4
+  }
+}

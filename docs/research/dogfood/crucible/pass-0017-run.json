@@ -1,0 +1,590 @@
+{
+  "ok": true,
+  "thesis": {
+    "id": "76cc95d75900dfd1",
+    "title": "Dogfood Pass 0017 Cloud Quantum Metadata Parser Hardening",
+    "registered_at": 1782903839.2357237,
+    "disposition": "fenced",
+    "seal": "76cc95d75900dfd1cdcb1791245d943cd2c3a4531fda25b6ed0a6793c517703a",
+    "claims": [
+      {
+        "id": "71477a162e82a30f",
+        "sha256": "71477a162e82a30fafffec952825145e31c35751258a735080868ce47b0bd4b5"
+      },
+      {
+        "id": "4c9f0cf893fb4606",
+        "sha256": "4c9f0cf893fb46067e43f53ac4788532735e4c2e59d8b367dabb374f638eb57a"
+      },
+      {
+        "id": "b4f8234b1ceb1ec0",
+        "sha256": "b4f8234b1ceb1ec0432dfa2ea3fd7ceb51ea91e22526a45401f043f47a684311"
+      },
+      {
+        "id": "a76c411ba5d087aa",
+        "sha256": "a76c411ba5d087aaae1c2bdc53f5afe5b4a740c2d8cf8e1498f9ef4c319cf207"
+      },
+      {
+        "id": "1c6c843db1a8617e",
+        "sha256": "1c6c843db1a8617e49c6d0560d64e6f2231c1e1572521a73fff3defb41b1e6f1"
+      },
+      {
+        "id": "83831e8d4c46721c",
+        "sha256": "83831e8d4c46721c57d6aecb6f8a8dcc510c0b357c16af497f8eec8c5e1a0ef2"
+      },
+      {
+        "id": "4cdc9e2a17858607",
+        "sha256": "4cdc9e2a17858607d4d36201ccf1f6e4f482dbd4a09e0025a48574165f39c747"
+      },
+      {
+        "id": "bc8a7d51636cfa49",
+        "sha256": "bc8a7d51636cfa49b7251f3fd0f4f6a1114937798d75b1fc7a83817a9121abdf"
+      },
+      {
+        "id": "279987e540927ed4",
+        "sha256": "279987e540927ed4102a9ddb8212b8d8db71ee77e2f4f2fe9678a8749e5e826b"
+      },
+      {
+        "id": "254b14c5d922bf9f",
+        "sha256": "254b14c5d922bf9fb33c7b01fc50ecf8ab64d4893b080495a344c146dbec8afe"
+      },
+      {
+        "id": "481dd554358456ea",
+        "sha256": "481dd554358456ea260894bc0970dc759a364b099035ff55350a75b5e6f66396"
+      }
+    ]
+  },
+  "refutations": [
+    {
+      "claim_id": "71477a162e82a30f",
+      "claim_sha256": "71477a162e82a30fafffec952825145e31c35751258a735080868ce47b0bd4b5",
+      "challenge": "test the stated falsification: schemas/cloud-quantum-metadata-parsers-pass-0017.json is missing, is not CloudQuantumProviderMetadataParserSet/v1, reports non-MATCH status, has fewer than three parser profiles, fewer than eight negative fixtures, fewer than seven source anchors, or lacks the expected seal",
+      "measurable": "schemas/cloud-quantum-metadata-parsers-pass-0017.json is missing, is not CloudQuantumProviderMetadataParserSet/v1, reports non-MATCH status, has fewer than three parser profiles, fewer than eight negative fixtures, fewer than seven source anchors, or lacks the expected seal",
+      "source": "null"
+    },
+    {
+      "claim_id": "4c9f0cf893fb4606",
+      "claim_sha256": "4c9f0cf893fb46067e43f53ac4788532735e4c2e59d8b367dabb374f638eb57a",
+      "challenge": "test the stated falsification: any of parser-braket-get-device, parser-ibm-backend-properties, or parser-azure-target-list is missing",
+      "measurable": "any of parser-braket-get-device, parser-ibm-backend-properties, or parser-azure-target-list is missing",
+      "source": "null"
+    },
+    {
+      "claim_id": "b4f8234b1ceb1ec0",
+      "claim_sha256": "b4f8234b1ceb1ec0432dfa2ea3fd7ceb51ea91e22526a45401f043f47a684311",
+      "challenge": "test the stated falsification: the Braket parser profile is missing or omits any required raw field or rejection rule",
+      "measurable": "the Braket parser profile is missing or omits any required raw field or rejection rule",
+      "source": "null"
+    },
+    {
+      "claim_id": "a76c411ba5d087aa",
+      "claim_sha256": "a76c411ba5d087aaae1c2bdc53f5afe5b4a740c2d8cf8e1498f9ef4c319cf207",
+      "challenge": "test the stated falsification: the IBM parser profile is missing or omits any required raw field or rejection rule",
+      "measurable": "the IBM parser profile is missing or omits any required raw field or rejection rule",
+      "source": "null"
+    },
+    {
+      "claim_id": "1c6c843db1a8617e",
+      "claim_sha256": "1c6c843db1a8617e49c6d0560d64e6f2231c1e1572521a73fff3defb41b1e6f1",
+      "challenge": "test the stated falsification: the Azure parser profile is missing or omits any required raw field or rejection rule",
+      "measurable": "the Azure parser profile is missing or omits any required raw field or rejection rule",
+      "source": "null"
+    },
+    {
+      "claim_id": "83831e8d4c46721c",
+      "claim_sha256": "83831e8d4c46721c57d6aecb6f8a8dcc510c0b357c16af497f8eec8c5e1a0ef2",
+      "challenge": "test the stated falsification: the register layout receipt is missing, has a different schema, omits leftmost/rightmost string positions, omits the measurement map, or lacks the expected layout hash",
+      "measurable": "the register layout receipt is missing, has a different schema, omits leftmost/rightmost string positions, omits the measurement map, or lacks the expected layout hash",
+      "source": "null"
+    },
+    {
+      "claim_id": "4cdc9e2a17858607",
+      "claim_sha256": "4cdc9e2a17858607d4d36201ccf1f6e4f482dbd4a09e0025a48574165f39c747",
+      "challenge": "test the stated falsification: the post-processing receipt is missing, has a different schema, does not require both raw and normalized hashes, or marks mitigation/filtering/truncation true",
+      "measurable": "the post-processing receipt is missing, has a different schema, does not require both raw and normalized hashes, or marks mitigation/filtering/truncation true",
+      "source": "null"
+    },
+    {
+      "claim_id": "bc8a7d51636cfa49",
+      "claim_sha256": "bc8a7d51636cfa49b7251f3fd0f4f6a1114937798d75b1fc7a83817a9121abdf",
+      "challenge": "test the stated falsification: any of the eight expected negative fixture ids is missing or has expected_validator_status other than REJECT",
+      "measurable": "any of the eight expected negative fixture ids is missing or has expected_validator_status other than REJECT",
+      "source": "null"
+    },
+    {
+      "claim_id": "279987e540927ed4",
+      "claim_sha256": "279987e540927ed4102a9ddb8212b8d8db71ee77e2f4f2fe9678a8749e5e826b",
+      "challenge": "test the stated falsification: schemas/pass-0017-metadata-parser-validator-result.json is missing, reports non-MATCH status, does not report match=1, or reports drift above zero",
+      "measurable": "schemas/pass-0017-metadata-parser-validator-result.json is missing, reports non-MATCH status, does not report match=1, or reports drift above zero",
+      "source": "null"
+    },
+    {
+      "claim_id": "254b14c5d922bf9f",
+      "claim_sha256": "254b14c5d922bf9fb33c7b01fc50ecf8ab64d4893b080495a344c146dbec8afe",
+      "challenge": "test the stated falsification: schemas/tool-receipts-pass-0017.json is missing, lacks any required tool status, or treats Forum submit as successful rather than UNVERIFIABLE",
+      "measurable": "schemas/tool-receipts-pass-0017.json is missing, lacks any required tool status, or treats Forum submit as successful rather than UNVERIFIABLE",
+      "source": "null"
+    },
+    {
+      "claim_id": "481dd554358456ea",
+      "claim_sha256": "481dd554358456ea260894bc0970dc759a364b099035ff55350a75b5e6f66396",
+      "challenge": "test the stated falsification: any pass 0017 artifact labels live provider metadata retrieval, a new quantum hardware result, quantum advantage claim, theorem proof, natural law, or scientific discovery as promoted",
+      "measurable": "any pass 0017 artifact labels live provider metadata retrieval, a new quantum hardware result, quantum advantage claim, theorem proof, natural law, or scientific discovery as promoted",
+      "source": "null"
+    }
+  ],
+  "assessment": {
+    "started_at": 1782903839.2437987,
+    "thesis_id": "76cc95d75900dfd1",
+    "thesis_seal": "76cc95d75900dfd1cdcb1791245d943cd2c3a4531fda25b6ed0a6793c517703a",
+    "claims": 11,
+    "match": 11,
+    "drift": 0,
+    "unverifiable": 0,
+    "verdict_seal": "6d1e369b9946e788958472d85072127cfd9ed0f8eea91649d19fb17bd2fed1b8",
+    "measurement_seal": "4e15dbece7af885c4cb54396858c9d35f2460c6faaa1586a869071d957d3505f",
+    "disposition": "fenced",
+    "stored": null,
+    "verdicts": [
+      {
+        "claim_id": "71477a162e82a30f",
+        "claim_sha256": "71477a162e82a30fafffec952825145e31c35751258a735080868ce47b0bd4b5",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "parser-set-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "4c9f0cf893fb4606",
+        "claim_sha256": "4c9f0cf893fb46067e43f53ac4788532735e4c2e59d8b367dabb374f638eb57a",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "parser-profile-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "b4f8234b1ceb1ec0",
+        "claim_sha256": "b4f8234b1ceb1ec0432dfa2ea3fd7ceb51ea91e22526a45401f043f47a684311",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "braket-parser-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "a76c411ba5d087aa",
+        "claim_sha256": "a76c411ba5d087aaae1c2bdc53f5afe5b4a740c2d8cf8e1498f9ef4c319cf207",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "ibm-parser-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "1c6c843db1a8617e",
+        "claim_sha256": "1c6c843db1a8617e49c6d0560d64e6f2231c1e1572521a73fff3defb41b1e6f1",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "azure-parser-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "83831e8d4c46721c",
+        "claim_sha256": "83831e8d4c46721c57d6aecb6f8a8dcc510c0b357c16af497f8eec8c5e1a0ef2",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "register-layout-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "4cdc9e2a17858607",
+        "claim_sha256": "4cdc9e2a17858607d4d36201ccf1f6e4f482dbd4a09e0025a48574165f39c747",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "post-processing-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "bc8a7d51636cfa49",
+        "claim_sha256": "bc8a7d51636cfa49b7251f3fd0f4f6a1114937798d75b1fc7a83817a9121abdf",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "negative-fixture-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "279987e540927ed4",
+        "claim_sha256": "279987e540927ed4102a9ddb8212b8d8db71ee77e2f4f2fe9678a8749e5e826b",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "validator-run-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "254b14c5d922bf9f",
+        "claim_sha256": "254b14c5d922bf9fb33c7b01fc50ecf8ab64d4893b080495a344c146dbec8afe",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "tool-receipt-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "481dd554358456ea",
+        "claim_sha256": "481dd554358456ea260894bc0970dc759a364b099035ff55350a75b5e6f66396",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "non-promotion-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      }
+    ],
+    "measurements": [
+      {
+        "claim_id": "71477a162e82a30f",
+        "claim_sha256": "71477a162e82a30fafffec952825145e31c35751258a735080868ce47b0bd4b5",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "parser-set-review",
+        "measured_at": 1782903839.2435398,
+        "evidence": [
+          "schemas/cloud-quantum-metadata-parsers-pass-0017.json schema=CloudQuantumProviderMetadataParserSet/v1",
+          "status=PARSER_PROFILE_MATCH",
+          "parser_profile_count=3",
+          "negative_fixture_count=8",
+          "source_anchor_count=7",
+          "seal=e098df09eb2556049e1b9e676b0ace8f0000d1f0bda7565628e2195711e84b21"
+        ]
+      },
+      {
+        "claim_id": "4c9f0cf893fb4606",
+        "claim_sha256": "4c9f0cf893fb46067e43f53ac4788532735e4c2e59d8b367dabb374f638eb57a",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "parser-profile-review",
+        "measured_at": 1782903839.2435474,
+        "evidence": [
+          "profile parser-braket-get-device present",
+          "profile parser-ibm-backend-properties present",
+          "profile parser-azure-target-list present"
+        ]
+      },
+      {
+        "claim_id": "b4f8234b1ceb1ec0",
+        "claim_sha256": "b4f8234b1ceb1ec0432dfa2ea3fd7ceb51ea91e22526a45401f043f47a684311",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "braket-parser-review",
+        "measured_at": 1782903839.2435513,
+        "evidence": [
+          "Braket required_raw_fields include deviceArn",
+          "Braket required_raw_fields include deviceType",
+          "Braket required_raw_fields include deviceStatus",
+          "Braket required_raw_fields include deviceCapabilities",
+          "Braket required_raw_fields include payload_hash",
+          "Braket rejection rules include simulator and unavailable capabilities"
+        ]
+      },
+      {
+        "claim_id": "a76c411ba5d087aa",
+        "claim_sha256": "a76c411ba5d087aaae1c2bdc53f5afe5b4a740c2d8cf8e1498f9ef4c319cf207",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "ibm-parser-review",
+        "measured_at": 1782903839.2435544,
+        "evidence": [
+          "IBM required_raw_fields include backend_name",
+          "IBM required_raw_fields include backend_version",
+          "IBM required_raw_fields include last_update_date",
+          "IBM required_raw_fields include qubits",
+          "IBM required_raw_fields include gates",
+          "IBM required_raw_fields include payload_hash",
+          "IBM rejection rules include missing qubits/gates and paired simulator-status evidence"
+        ]
+      },
+      {
+        "claim_id": "1c6c843db1a8617e",
+        "claim_sha256": "1c6c843db1a8617e49c6d0560d64e6f2231c1e1572521a73fff3defb41b1e6f1",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "azure-parser-review",
+        "measured_at": 1782903839.2435575,
+        "evidence": [
+          "Azure required_raw_fields include workspace_ref",
+          "Azure required_raw_fields include provider_id",
+          "Azure required_raw_fields include target_id",
+          "Azure required_raw_fields include target_profile",
+          "Azure required_raw_fields include payload_hash",
+          "Azure rejection rules include simulator target and unverified target kind"
+        ]
+      },
+      {
+        "claim_id": "83831e8d4c46721c",
+        "claim_sha256": "83831e8d4c46721c57d6aecb6f8a8dcc510c0b357c16af497f8eec8c5e1a0ef2",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "register-layout-review",
+        "measured_at": 1782903839.2435608,
+        "evidence": [
+          "register_layout_receipt schema=QuantumRegisterLayoutReceipt/v1",
+          "measurement_map includes q[0] to c[0] rightmost",
+          "measurement_map includes q[1] to c[1] leftmost",
+          "interpretation includes bitstring_10 and bitstring_01",
+          "layout_hash=04cd4fff62e90a8888e74243fab8bf249d74c795650649c1a545e375fdde49fe"
+        ]
+      },
+      {
+        "claim_id": "4cdc9e2a17858607",
+        "claim_sha256": "4cdc9e2a17858607d4d36201ccf1f6e4f482dbd4a09e0025a48574165f39c747",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "post-processing-review",
+        "measured_at": 1782903839.2435641,
+        "evidence": [
+          "post_processing_receipt schema=QuantumPostProcessingReceipt/v1",
+          "raw_result_hash_required=true",
+          "normalized_result_hash_required=true",
+          "mitigation_applied=false",
+          "filtering_applied=false",
+          "truncation_applied=false"
+        ]
+      },
+      {
+        "claim_id": "bc8a7d51636cfa49",
+        "claim_sha256": "bc8a7d51636cfa49b7251f3fd0f4f6a1114937798d75b1fc7a83817a9121abdf",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "negative-fixture-review",
+        "measured_at": 1782903839.2435675,
+        "evidence": [
+          "negative-provider-metadata-without-payload-hash expected_validator_status=REJECT",
+          "negative-azure-unknown-target-kind-promoted-to-hardware expected_validator_status=REJECT",
+          "negative-register-layout-omitted expected_validator_status=REJECT",
+          "negative-endian-convention-absent expected_validator_status=REJECT",
+          "negative-duplicate-json-key-payload expected_validator_status=REJECT",
+          "negative-binary-payload-treated-as-json expected_validator_status=REJECT",
+          "negative-float-precision-policy-absent expected_validator_status=REJECT",
+          "negative-post-processing-without-receipt expected_validator_status=REJECT"
+        ]
+      },
+      {
+        "claim_id": "279987e540927ed4",
+        "claim_sha256": "279987e540927ed4102a9ddb8212b8d8db71ee77e2f4f2fe9678a8749e5e826b",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "validator-run-review",
+        "measured_at": 1782903839.2435703,
+        "evidence": [
+          "schemas/pass-0017-metadata-parser-validator-result.json status=MATCH",
+          "match=1",
+          "drift=0",
+          "checks include CloudQuantumProviderMetadataParserSet status MATCH"
+        ]
+      },
+      {
+        "claim_id": "254b14c5d922bf9f",
+        "claim_sha256": "254b14c5d922bf9fb33c7b01fc50ecf8ab64d4893b080495a344c146dbec8afe",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "tool-receipt-review",
+        "measured_at": 1782903839.2435737,
+        "evidence": [
+          "schemas/tool-receipts-pass-0017.json status=MATCH_WITH_FORUM_SUBMIT_GAP",
+          "tool receipts include index status MATCH",
+          "tool receipts include gather status MATCH",
+          "tool receipts include telos operator_doctor status MATCH",
+          "tool receipts include forum status MATCH and verify MATCH",
+          "tool receipts include forum_submit status UNVERIFIABLE",
+          "tool receipts include crucible status MATCH",
+          "Forum submit error recorded: configured executor did not return valid JSON"
+        ]
+      },
+      {
+        "claim_id": "481dd554358456ea",
+        "claim_sha256": "481dd554358456ea260894bc0970dc759a364b099035ff55350a75b5e6f66396",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "non-promotion-review",
+        "measured_at": 1782903839.2435768,
+        "evidence": [
+          "packets/027-cloud-quantum-metadata-parser-hardening.md states this is a profile pass",
+          "schemas/cloud-quantum-metadata-parsers-pass-0017.json non_promotion_statement states no live provider metadata fetch or cloud job was run",
+          "adversarial/pass-0017-metadata-parser-steelman.md recommends non-promotional status",
+          "Current promoted natural laws: none"
+        ]
+      }
+    ],
+    "seal": "16bde39313bb3bff66bcb3c1b30ad9b0309bc6d958e7af5e715dc2e43901e8fb"
+  },
+  "verdicts": [
+    {
+      "claim_id": "71477a162e82a30f",
+      "claim_sha256": "71477a162e82a30fafffec952825145e31c35751258a735080868ce47b0bd4b5",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "parser-set-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "4c9f0cf893fb4606",
+      "claim_sha256": "4c9f0cf893fb46067e43f53ac4788532735e4c2e59d8b367dabb374f638eb57a",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "parser-profile-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "b4f8234b1ceb1ec0",
+      "claim_sha256": "b4f8234b1ceb1ec0432dfa2ea3fd7ceb51ea91e22526a45401f043f47a684311",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "braket-parser-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "a76c411ba5d087aa",
+      "claim_sha256": "a76c411ba5d087aaae1c2bdc53f5afe5b4a740c2d8cf8e1498f9ef4c319cf207",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "ibm-parser-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "1c6c843db1a8617e",
+      "claim_sha256": "1c6c843db1a8617e49c6d0560d64e6f2231c1e1572521a73fff3defb41b1e6f1",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "azure-parser-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "83831e8d4c46721c",
+      "claim_sha256": "83831e8d4c46721c57d6aecb6f8a8dcc510c0b357c16af497f8eec8c5e1a0ef2",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "register-layout-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "4cdc9e2a17858607",
+      "claim_sha256": "4cdc9e2a17858607d4d36201ccf1f6e4f482dbd4a09e0025a48574165f39c747",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "post-processing-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "bc8a7d51636cfa49",
+      "claim_sha256": "bc8a7d51636cfa49b7251f3fd0f4f6a1114937798d75b1fc7a83817a9121abdf",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "negative-fixture-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "279987e540927ed4",
+      "claim_sha256": "279987e540927ed4102a9ddb8212b8d8db71ee77e2f4f2fe9678a8749e5e826b",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "validator-run-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "254b14c5d922bf9f",
+      "claim_sha256": "254b14c5d922bf9fb33c7b01fc50ecf8ab64d4893b080495a344c146dbec8afe",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "tool-receipt-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "481dd554358456ea",
+      "claim_sha256": "481dd554358456ea260894bc0970dc759a364b099035ff55350a75b5e6f66396",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "non-promotion-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    }
+  ],
+  "checks": {
+    "seals_ok": true,
+    "thesis_ok": true,
+    "verdicts_rederive": true
+  },
+  "report": "C:\\dev\\public\\telos\\docs\\research\\dogfood\\crucible\\pass-0017-report.md",
+  "record": "C:\\dev\\public\\telos\\docs\\research\\dogfood\\crucible\\pass-0017-run.json",
+  "bundle": null,
+  "spec": null,
+  "review": null,
+  "verifier": {
+    "mode": "cleanroom",
+    "inputs": [],
+    "excluded": [
+      "worker context",
+      "reasoning trace",
+      "intermediate steps"
+    ],
+    "checkability": "If success cannot be evaluated from the original spec and the artifact, the spec is not checkable yet."
+  }
+}

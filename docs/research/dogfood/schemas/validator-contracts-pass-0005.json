@@ -1,0 +1,71 @@
+{
+  "schema": "ValidatorContractSet/v1",
+  "pass": "0005",
+  "generated_on": "2026-07-01",
+  "contracts": [
+    {
+      "validator": "ResearchClaimValidator",
+      "target_schema": "ResearchClaim/v1",
+      "required_fields": ["claim", "evidence_url", "confidence", "verification_status", "notes"],
+      "minimum_rows": 1,
+      "failure_modes": ["missing evidence URL", "unsupported confidence label", "unsupported verification status", "claim without notes"],
+      "first_target": "schemas/research-claims-pass-0004.json"
+    },
+    {
+      "validator": "MarketRowValidator",
+      "target_schema": "MarketRow/v1",
+      "required_fields": ["category", "company_tool", "buyer", "official_claim", "capabilities", "gaps", "sources", "confidence"],
+      "minimum_rows": 42,
+      "failure_modes": ["row lacks source", "gap lacks verified/inferred/unverified label", "category count below acceptance criterion"],
+      "first_target": "schemas/market-rows-pass-0003.json"
+    },
+    {
+      "validator": "WedgeScoreValidator",
+      "target_schema": "WedgeScore/v1",
+      "required_fields": ["market", "urgency", "budget", "differentiation", "feasibility", "proof_demo_readiness", "risk"],
+      "minimum_rows": 8,
+      "failure_modes": ["score outside 1-5 where numeric", "missing risk", "ranking cannot be reproduced"],
+      "first_target": "schemas/wedge-scores-pass-0003.json"
+    },
+    {
+      "validator": "MegatoolNodeValidator",
+      "target_schema": "MegatoolNode/v1",
+      "required_fields": ["internal_tool", "external_analogs", "inputs", "outputs", "receipts", "verification_layer", "market_facing_product"],
+      "minimum_rows": 8,
+      "failure_modes": ["node has no receipt", "node has no market product", "verification layer missing"],
+      "first_target": "schemas/megatool-nodes-pass-0003.json"
+    },
+    {
+      "validator": "ProofPacketAdapterValidator",
+      "target_schema": "ProofPacketAdapterPriority/v1",
+      "required_fields": ["priority", "adapter", "external_analogs", "buyer_workflow", "evidence_inputs", "telos_outputs", "missing_binding", "build_first", "source_urls", "confidence"],
+      "minimum_rows": 8,
+      "failure_modes": ["adapter lacks source URL", "adapter lacks missing binding", "priority collision", "empty evidence input list"],
+      "first_target": "schemas/proof-packet-adapters-pass-0005.json"
+    },
+    {
+      "validator": "BuyerObjectionValidator",
+      "target_schema": "BuyerObjectionMatrix/v1",
+      "required_fields": ["objection", "buyer_question", "required_demo_evidence", "product_response", "status", "confidence"],
+      "minimum_rows": 5,
+      "failure_modes": ["objection has no demo evidence", "status not verified/inferred/unverified", "question not buyer-facing"],
+      "first_target": "schemas/buyer-objections-pass-0005.json"
+    },
+    {
+      "validator": "CruciblePassValidator",
+      "target_schema": "CrucibleThesisAndMeasurements/v1",
+      "required_fields": ["title", "disposition", "claims", "measurements"],
+      "minimum_rows": 1,
+      "failure_modes": ["thesis disposition outside Crucible schema", "measurement missing claim", "measurement evidence absent", "claim lacks falsification"],
+      "first_target": "crucible/pass-0005-thesis.json"
+    },
+    {
+      "validator": "ProofPacketMinimumValidator",
+      "target_schema": "ProofPacket/v1",
+      "required_fields": ["packet_id", "domain", "claim_set", "source_receipts", "action_receipts", "authority_receipts", "workspace_state", "verification_verdicts", "failure_labels", "decision_summary"],
+      "minimum_rows": 1,
+      "failure_modes": ["packet lacks decision summary", "packet lacks verifier verdict", "packet lacks source receipt", "packet promotes a result with missing evidence", "packet cannot distinguish public summary from private evidence"],
+      "first_target": "next-pass"
+    }
+  ]
+}

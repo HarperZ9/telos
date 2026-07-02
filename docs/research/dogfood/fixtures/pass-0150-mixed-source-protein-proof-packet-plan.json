@@ -1,0 +1,72 @@
+{
+  "pass": "0150",
+  "source_store": "docs/research/dogfood/gather/pass-0150-mixed-source-protein-proof-packet",
+  "target": {
+    "accession": "P69905",
+    "uniprot_id": "HBA_HUMAN",
+    "gene": "HBA1",
+    "organism": "Homo sapiens",
+    "protein": "Hemoglobin subunit alpha",
+    "pdb_id": "1A3N",
+    "pdb_entity": "1",
+    "pubmed_id": "6244294"
+  },
+  "sources": [
+    {
+      "id": "uniprot_record",
+      "kind": "domain_database",
+      "url": "https://rest.uniprot.org/uniprotkb/P69905.json"
+    },
+    {
+      "id": "alphafold_prediction",
+      "kind": "structure_prediction_database",
+      "url": "https://alphafold.ebi.ac.uk/api/prediction/P69905"
+    },
+    {
+      "id": "rcsb_polymer_entity",
+      "kind": "experimental_structure_database",
+      "url": "https://data.rcsb.org/rest/v1/core/polymer_entity/1A3N/1"
+    },
+    {
+      "id": "europepmc_pubmed_join",
+      "kind": "literature_metadata",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID:6244294&format=json&pageSize=1"
+    },
+    {
+      "id": "pubmed_summary",
+      "kind": "literature_metadata",
+      "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id=6244294&retmode=json"
+    }
+  ],
+  "checks": [
+    "all_sources_gather_verified",
+    "uniprot_primary_accession_match",
+    "alphafold_accession_and_sequence_match",
+    "rcsb_uniprot_cross_reference_match",
+    "rcsb_mature_chain_matches_uniprot_positions_2_142",
+    "literature_identifier_join_match",
+    "no_design_or_clinical_claim_promotion"
+  ],
+  "negative_fixtures": [
+    "wrong_accession_as_match",
+    "mutated_sequence_same_claim",
+    "rcsb_mature_chain_as_full_canonical_sequence",
+    "keyword_search_as_literature_join",
+    "preprint_as_peer_review",
+    "source_count_as_biological_discovery",
+    "alphafold_prediction_as_experimental_structure",
+    "metadata_join_as_functional_assay",
+    "pubmed_title_without_identifier_match",
+    "gather_api_token_failure_as_source_absence",
+    "single_database_record_as_clinical_claim",
+    "tool_version_from_prior_pass_as_current_receipt"
+  ],
+  "boundary": "Pass 0150 proves only a mixed-source protein identity and sequence-consistency packet for one bounded public record. It does not prove biological function, clinical relevance, wet-lab result validity, protein design success, literature completeness, or discovery.",
+  "updated_tool_floor": {
+    "gather": "1.5.0",
+    "index": "2.8.0",
+    "forum": "1.12.0",
+    "crucible": "1.1.0",
+    "telos": "0.1.0"
+  }
+}

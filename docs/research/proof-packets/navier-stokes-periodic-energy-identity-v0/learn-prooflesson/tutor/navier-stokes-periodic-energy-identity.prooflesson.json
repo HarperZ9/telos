@@ -1,0 +1,189 @@
+{
+  "kind": "proof-lesson",
+  "packet_id": "navier-stokes-periodic-energy-identity-v0",
+  "verdict": "MATCH",
+  "lesson": {
+    "kind": "proof-lesson",
+    "packet_id": "navier-stokes-periodic-energy-identity-v0",
+    "packet_version": "research-claim-proof-packet/v0",
+    "claim": "The Navier-Stokes periodic Taylor-Green energy-identity proof packet has a source-bound statement, derivation, deterministic reference kernel, run receipt, and Crucible assessment that match the bounded identity claim while preserving the parent Millennium problem as UNVERIFIABLE.",
+    "scope": "One smooth two-dimensional periodic Taylor-Green velocity field under declared assumptions. This does not prove Navier-Stokes existence, uniqueness, smoothness, global regularity, turbulence behavior, physical simulation validity, climate validity, or a new law of physics.",
+    "verdict": "MATCH",
+    "sources": [
+      {
+        "ref": "docs/research/proof-packets/navier-stokes-periodic-energy-identity-v0/problem.statement.json",
+        "sha256": "dc0c1846468a2d35d957a8f24043120562d29b02229eb543749f0e641ff4baca"
+      },
+      {
+        "ref": "docs/research/proof-packets/navier-stokes-periodic-energy-identity-v0/subclaim.energy_identity.md",
+        "sha256": "41586b2a59cd1216b0358752842c66ba8086f577689496510f3a0ba69459bf8c"
+      },
+      {
+        "ref": "docs/research/proof-packets/navier-stokes-periodic-energy-identity-v0/kernel.reference.mjs",
+        "sha256": "3dcb5abd0e5f2d749bd80cd92fc241917bfbc0f071ba6fad5e77cf4c53d411f5"
+      },
+      {
+        "ref": "docs/research/proof-packets/navier-stokes-periodic-energy-identity-v0/run.receipt.json",
+        "sha256": "fb33fb0db228c2a7befecc71d290fd63607c8d2e00d784726c99cb27b2e0cf55"
+      },
+      {
+        "ref": "docs/research/proof-packets/navier-stokes-periodic-energy-identity-v0/crucible-thesis.json",
+        "sha256": "89dfdae425072fa69559e47067da0fb1c9e57ddee046a065a5145e1ea5b84428"
+      },
+      {
+        "ref": "docs/research/proof-packets/navier-stokes-periodic-energy-identity-v0/crucible-measurements.json",
+        "sha256": "a89e71180e934ee9b0c0bc8aa31b3ab06d70aff9895f40ac67b204de1ad58b38"
+      },
+      {
+        "ref": "docs/research/proof-packets/navier-stokes-periodic-energy-identity-v0/crucible-run.json",
+        "sha256": "3f3990cb85971c93fabc6ecb7f04e4a4e33d01d9e8b69ba0dfa801b163f5aece"
+      }
+    ],
+    "scaffold": [
+      {
+        "step": 1,
+        "prompt": "Restate, in your own words, exactly what this claim asserts and nothing more: \"The Navier-Stokes periodic Taylor-Green energy-identity proof packet has a source-bound statement, derivation, deterministic reference kernel, run receipt, and Crucible assessment that match the bounded identity claim while preserving the parent Millennium problem as UNVERIFIABLE.\" (scope: One smooth two-dimensional periodic Taylor-Green velocity field under declared assumptions. This does not prove Navier-Stokes existence, uniqueness, smoothness, global regularity, turbulence behavior, physical simulation validity, climate validity, or a new law of physics.)."
+      },
+      {
+        "step": 2,
+        "prompt": "Judging by their refs alone (docs/research/proof-packets/navier-stokes-periodic-energy-identity-v0/problem.statement.json, docs/research/proof-packets/navier-stokes-periodic-energy-identity-v0/subclaim.energy_identity.md, docs/research/proof-packets/navier-stokes-periodic-energy-identity-v0/kernel.reference.mjs, docs/research/proof-packets/navier-stokes-periodic-energy-identity-v0/run.receipt.json, docs/research/proof-packets/navier-stokes-periodic-energy-identity-v0/crucible-thesis.json, docs/research/proof-packets/navier-stokes-periodic-energy-identity-v0/crucible-measurements.json, docs/research/proof-packets/navier-stokes-periodic-energy-identity-v0/crucible-run.json), predict what each recorded source could contribute as evidence for or against the claim."
+      },
+      {
+        "step": 3,
+        "prompt": "The packet's overall verdict is MATCH. Before reading anything else, derive what a MATCH verdict must mean about the relationship between the claim and the recorded checks."
+      },
+      {
+        "step": 4,
+        "prompt": "List the checks you would run to reach your own verdict on this claim, then compare your list against what the packet's verdict implies was actually checked."
+      }
+    ],
+    "retrievalQuestions": [
+      {
+        "question": "What evidence would falsify this claim: \"The Navier-Stokes periodic Taylor-Green energy-identity proof packet has a source-bound statement, derivation, deterministic reference kernel, run receipt, and Crucible assessment that match the bounded identity claim while preserving the parent Millennium problem as UNVERIFIABLE.\"?",
+        "derivedFrom": "claim"
+      },
+      {
+        "question": "Which recorded source would you re-check first, and what does its content hash let you prove about it?",
+        "derivedFrom": "sources"
+      },
+      {
+        "question": "What does an overall verdict of MATCH entitle you to claim, and what does it not?",
+        "derivedFrom": "verdicts.overall"
+      },
+      {
+        "question": "The packet's scope is \"One smooth two-dimensional periodic Taylor-Green velocity field under declared assumptions. This does not prove Navier-Stokes existence, uniqueness, smoothness, global regularity, turbulence behavior, physical simulation validity, climate validity, or a new law of physics.\". Give one claim that would exceed that scope.",
+        "derivedFrom": "scope"
+      }
+    ],
+    "verifierBinding": {
+      "packet_id": "navier-stokes-periodic-energy-identity-v0",
+      "verdict": "MATCH",
+      "sourceHashes": [
+        "dc0c1846468a2d35d957a8f24043120562d29b02229eb543749f0e641ff4baca",
+        "41586b2a59cd1216b0358752842c66ba8086f577689496510f3a0ba69459bf8c",
+        "3dcb5abd0e5f2d749bd80cd92fc241917bfbc0f071ba6fad5e77cf4c53d411f5",
+        "fb33fb0db228c2a7befecc71d290fd63607c8d2e00d784726c99cb27b2e0cf55",
+        "89dfdae425072fa69559e47067da0fb1c9e57ddee046a065a5145e1ea5b84428",
+        "a89e71180e934ee9b0c0bc8aa31b3ab06d70aff9895f40ac67b204de1ad58b38",
+        "3f3990cb85971c93fabc6ecb7f04e4a4e33d01d9e8b69ba0dfa801b163f5aece"
+      ]
+    },
+    "boundary": "Lesson scaffold only -- prompts for the operator to derive the reasoning; never an answer dump, never a graded-assessment answer."
+  },
+  "misconception": null,
+  "sourceCount": 7,
+  "entries": [
+    {
+      "seq": 0,
+      "prevHash": "0000000000000000000000000000000000000000000000000000000000000000",
+      "hash": "3626c2edd86f5148c1d0f792959bcad93cda53c760a4c3a95da91f3a710788c4",
+      "entry": {
+        "kind": "packet-binding",
+        "packet_id": "navier-stokes-periodic-energy-identity-v0",
+        "verdict": "MATCH",
+        "claim": "The Navier-Stokes periodic Taylor-Green energy-identity proof packet has a source-bound statement, derivation, deterministic reference kernel, run receipt, and Crucible assessment that match the bounded identity claim while preserving the parent Millennium problem as UNVERIFIABLE."
+      }
+    },
+    {
+      "seq": 1,
+      "prevHash": "3626c2edd86f5148c1d0f792959bcad93cda53c760a4c3a95da91f3a710788c4",
+      "hash": "6d5ee647cc30fa79c6c01c946b7e893451078269a1fe4d0c5f25d7014530bbf4",
+      "entry": {
+        "kind": "source",
+        "ref": "docs/research/proof-packets/navier-stokes-periodic-energy-identity-v0/problem.statement.json",
+        "sha256": "dc0c1846468a2d35d957a8f24043120562d29b02229eb543749f0e641ff4baca"
+      }
+    },
+    {
+      "seq": 2,
+      "prevHash": "6d5ee647cc30fa79c6c01c946b7e893451078269a1fe4d0c5f25d7014530bbf4",
+      "hash": "572030d5e52b3f251f60ded98e28648aa7c4773df4483f7074c120de90a01f41",
+      "entry": {
+        "kind": "source",
+        "ref": "docs/research/proof-packets/navier-stokes-periodic-energy-identity-v0/subclaim.energy_identity.md",
+        "sha256": "41586b2a59cd1216b0358752842c66ba8086f577689496510f3a0ba69459bf8c"
+      }
+    },
+    {
+      "seq": 3,
+      "prevHash": "572030d5e52b3f251f60ded98e28648aa7c4773df4483f7074c120de90a01f41",
+      "hash": "6ba2e0bf26a95380dccd8bad013f2f0ee736d118fea953094b6d08b67519c2c3",
+      "entry": {
+        "kind": "source",
+        "ref": "docs/research/proof-packets/navier-stokes-periodic-energy-identity-v0/kernel.reference.mjs",
+        "sha256": "3dcb5abd0e5f2d749bd80cd92fc241917bfbc0f071ba6fad5e77cf4c53d411f5"
+      }
+    },
+    {
+      "seq": 4,
+      "prevHash": "6ba2e0bf26a95380dccd8bad013f2f0ee736d118fea953094b6d08b67519c2c3",
+      "hash": "1c7e5c2026ce0886a602134d35669c136823b7f540176fb4adf39399fa1586bc",
+      "entry": {
+        "kind": "source",
+        "ref": "docs/research/proof-packets/navier-stokes-periodic-energy-identity-v0/run.receipt.json",
+        "sha256": "fb33fb0db228c2a7befecc71d290fd63607c8d2e00d784726c99cb27b2e0cf55"
+      }
+    },
+    {
+      "seq": 5,
+      "prevHash": "1c7e5c2026ce0886a602134d35669c136823b7f540176fb4adf39399fa1586bc",
+      "hash": "2f29c917ebe89d06a3a9300754c6caa37c7b95fa9e78f291c20df96d5b2e1058",
+      "entry": {
+        "kind": "source",
+        "ref": "docs/research/proof-packets/navier-stokes-periodic-energy-identity-v0/crucible-thesis.json",
+        "sha256": "89dfdae425072fa69559e47067da0fb1c9e57ddee046a065a5145e1ea5b84428"
+      }
+    },
+    {
+      "seq": 6,
+      "prevHash": "2f29c917ebe89d06a3a9300754c6caa37c7b95fa9e78f291c20df96d5b2e1058",
+      "hash": "e28f97e50645807cb5770b9de94c73cdfb58ebfd7b5df34ef064443c65465093",
+      "entry": {
+        "kind": "source",
+        "ref": "docs/research/proof-packets/navier-stokes-periodic-energy-identity-v0/crucible-measurements.json",
+        "sha256": "a89e71180e934ee9b0c0bc8aa31b3ab06d70aff9895f40ac67b204de1ad58b38"
+      }
+    },
+    {
+      "seq": 7,
+      "prevHash": "e28f97e50645807cb5770b9de94c73cdfb58ebfd7b5df34ef064443c65465093",
+      "hash": "7659998c5be71c3dddc9034fe6c54fbc07c359bde34a16c8019ab66c9ecc6f43",
+      "entry": {
+        "kind": "source",
+        "ref": "docs/research/proof-packets/navier-stokes-periodic-energy-identity-v0/crucible-run.json",
+        "sha256": "3f3990cb85971c93fabc6ecb7f04e4a4e33d01d9e8b69ba0dfa801b163f5aece"
+      }
+    },
+    {
+      "seq": 8,
+      "prevHash": "7659998c5be71c3dddc9034fe6c54fbc07c359bde34a16c8019ab66c9ecc6f43",
+      "hash": "93f90b996a8a5b0aac951c62708e2a28b67515f4a9eff749faafdb3edf13e7ce",
+      "entry": {
+        "kind": "lesson-digest",
+        "digest": "sha256:c7a9d93ac29a99b3d1c1c6d92190f4db0f71349d54614ae0a1b94fcac5073dd7",
+        "misconception_class": null
+      }
+    }
+  ],
+  "boundary": "Lesson receipt only -- binds the lesson to its packet's verdict and source hashes; never a graded-assessment answer."
+}

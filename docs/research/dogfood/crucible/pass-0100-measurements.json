@@ -1,0 +1,108 @@
+{
+  "measurements": [
+    {
+      "claim": "Pass 0100 created an OceanDimodBQMBranchReceipt/v1 artifact with status OCEAN_DIMOD_BQM_BRANCH_RECEIPT_MATCH, sha256 4f13f2776b6c5681a5968aecc6cdace0ae34225777e03f5162a320211adcc28c, and seal f387d6efcef2e71273f577213aa1db00afa00f225f4f32b8fe646680f2f3872b.",
+      "deviation": 0.0,
+      "evidence": [
+        "schema=OceanDimodBQMBranchReceipt/v1",
+        "status=OCEAN_DIMOD_BQM_BRANCH_RECEIPT_MATCH",
+        "sha256=4f13f2776b6c5681a5968aecc6cdace0ae34225777e03f5162a320211adcc28c",
+        "seal=f387d6efcef2e71273f577213aa1db00afa00f225f4f32b8fe646680f2f3872b"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0100 binds OR-Tools pass 0099 and records global dimod/dwave availability as false.",
+      "deviation": 0.0,
+      "evidence": [
+        "source_bindings={'interop_pass': '0098', 'ortools_pass': '0099', 'prior_dwave_status': 'NOT_EXECUTED_DEPENDENCY_MISSING'}",
+        "dimod_available=False",
+        "dwave_available=False"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0100 created a temp venv, installed dimod, executed ExactSolver, and cleaned the temp venv.",
+      "deviation": 0.0,
+      "evidence": [
+        "venv_create=0",
+        "install=0",
+        "run=0",
+        "cleaned=True"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0100 records dimod version 0.12.22.",
+      "deviation": 0.0,
+      "evidence": [
+        "dimod_version=0.12.22"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0100 SolverBranchReceipt/v1 branch ocean_dimod_exact_bqm records value 162, weight 29, mask 2347, and gap 0.",
+      "deviation": 0.0,
+      "evidence": [
+        "branch_id=ocean_dimod_exact_bqm",
+        "value=162",
+        "weight=29",
+        "mask=2347",
+        "gap=0"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0100 records BQM term counts linear=12 and quadratic=66.",
+      "deviation": 0.0,
+      "evidence": [
+        "linear_terms=12",
+        "quadratic_terms=66"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0100 flagship receipts for Forum, Index, and Telos all have MATCH status.",
+      "deviation": 0.0,
+      "evidence": [
+        "forum=MATCH",
+        "index=MATCH",
+        "telos=MATCH"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0100 records unsupported_claim_count 0 and current_promoted_natural_laws length 0.",
+      "deviation": 0.0,
+      "evidence": [
+        "unsupported_claim_count=0",
+        "natural_law_count=0"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0100 composer sha256 is 3145dcda98180e6674b5b1c282b6f3436d2cd5d5384539eb1a54f9f8a34758a7, packet sha256 is c3b0b7e0c210a87763e3b40baf886918f797a16ce306c6b7db6c8a7d16dc03d0, brief sha256 is e7bd4d8aa3254acff995fd0af8947712734a6fe6e57d56f31d06b7c0fa5a103e, steelman sha256 is 4ade01ec7f33e4541bf21e187f0e1147ca458a2843528c984f5e4f3629792f3a, test sha256 is 5069c6584f823dd4d928e290a4053c5ca8a54717095f5c49fd31ae0a75e2c201, and tool_receipts sha256 is 7e96c78177c7a554698cc0fae7a4e6b0afba6041ff7237b2dc57cf93eeef9359 with test_receipt status MATCH.",
+      "deviation": 0.0,
+      "evidence": [
+        "composer_sha256=3145dcda98180e6674b5b1c282b6f3436d2cd5d5384539eb1a54f9f8a34758a7",
+        "packet_sha256=c3b0b7e0c210a87763e3b40baf886918f797a16ce306c6b7db6c8a7d16dc03d0",
+        "brief_sha256=e7bd4d8aa3254acff995fd0af8947712734a6fe6e57d56f31d06b7c0fa5a103e",
+        "steelman_sha256=4ade01ec7f33e4541bf21e187f0e1147ca458a2843528c984f5e4f3629792f3a",
+        "test_sha256=5069c6584f823dd4d928e290a4053c5ca8a54717095f5c49fd31ae0a75e2c201",
+        "tool_receipts_sha256=7e96c78177c7a554698cc0fae7a4e6b0afba6041ff7237b2dc57cf93eeef9359",
+        "test_status=MATCH",
+        "compose_status=MATCH"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    }
+  ]
+}

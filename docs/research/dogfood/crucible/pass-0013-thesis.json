@@ -1,0 +1,38 @@
+{
+  "title": "Dogfood Pass 0013 Quantum Experiment Receipt Branch Separation",
+  "disposition": "fenced",
+  "claims": [
+    {
+      "text": "Pass 0013 created a QuantumExperimentReceiptSchema/v1 artifact with required receipt fields, four branch values, and branch_promotion_forbidden set to true.",
+      "falsification": "schemas/quantum-experiment-receipt-schema-pass-0013.json is missing, is not QuantumExperimentReceiptSchema/v1, omits any required receipt field, omits any of EXACT_SIMULATOR, NOISY_SIMULATOR, HARDWARE_MOCK, or CLOUD_HARDWARE, or does not set branch_promotion_forbidden to true"
+    },
+    {
+      "text": "Pass 0013 created a QuantumExperimentReceiptSet/v1 fixture with exact and noisy simulator receipts, status RECEIPT_SET_MATCH, branch separation status BRANCH_SEPARATION_MATCH, and seal e5bcaf8a0cbe73fd51d6745539a8fca2ea1faff3ff9f375fe94a646761ce3ea9.",
+      "falsification": "schemas/quantum-experiment-receipts-pass-0013.json is missing, is not QuantumExperimentReceiptSet/v1, lacks exact or noisy simulator receipts, reports non-MATCH status, lacks branch separation status, or lacks the expected seal"
+    },
+    {
+      "text": "The pass 0013 exact simulator branch records hardware_claim_allowed=false, fidelity_to_desired_clone=0.5, and computational-basis histogram {00:0.5, 01:0.0, 10:0.0, 11:0.5}.",
+      "falsification": "the exact simulator receipt is missing, allows hardware claims, lacks fidelity 0.5, or reports a different measurement histogram"
+    },
+    {
+      "text": "The pass 0013 noisy simulator branch records hardware_claim_allowed=false, status NOISY_BRANCH_NOT_THEOREM_PROOF, histogram_l1_drift_from_exact=0.0, and fidelity_to_desired_clone=0.45.",
+      "falsification": "the noisy simulator receipt is missing, allows hardware claims, lacks the noisy-branch theorem-warning status, reports nonzero histogram drift, or does not report fidelity 0.45"
+    },
+    {
+      "text": "Pass 0013 records the negative evidence lesson that identical computational-basis histograms can hide phase-sensitive fidelity drift, so histogram equality alone is insufficient evidence.",
+      "falsification": "packets/023-quantum-experiment-receipts.md or schemas/quantum-experiment-receipts-pass-0013.json does not record the histogram warning or the exact/noisy fidelity distinction"
+    },
+    {
+      "text": "The pass 0013 validator reports MATCH with two matched checks and zero drift.",
+      "falsification": "schemas/pass-0013-quantum-experiment-validator-result.json is missing, reports non-MATCH status, does not report match=2, or reports drift above zero"
+    },
+    {
+      "text": "Pass 0013 attempted Forum submit paths, preserved the executor JSON parsing error as UNVERIFIABLE, and did not treat the local steelman as a witnessed Forum adversarial result.",
+      "falsification": "adversarial/pass-0013-branch-separation-steelman.md is missing, does not record the Forum submit error, does not mark Forum submit as UNVERIFIABLE, or claims a successful witnessed Forum adversarial answer"
+    },
+    {
+      "text": "Pass 0013 promotes zero new quantum hardware results, quantum advantage claims, theorem proofs, natural laws, or scientific discoveries.",
+      "falsification": "any pass 0013 artifact labels a new quantum hardware result, quantum advantage claim, theorem proof, natural law, biological result, material result, medical result, finance result, or safety result as promoted"
+    }
+  ]
+}

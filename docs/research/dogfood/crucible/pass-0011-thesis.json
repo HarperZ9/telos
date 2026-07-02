@@ -1,0 +1,34 @@
+{
+  "title": "Dogfood Pass 0011 Color Calibration Proof Kit",
+  "disposition": "fenced",
+  "claims": [
+    {
+      "text": "Pass 0011 created an eight-row color calibration and rendering market map covering color-standard, color-management, calibration-software, grading-tool, open-source-calibration, and profile-standard categories.",
+      "falsification": "schemas/color-calibration-market-map-pass-0011.json is missing, has fewer than eight rows, or omits any required category"
+    },
+    {
+      "text": "Every pass 0011 market-map row includes an HTTPS source URL, proof receipt gap, Build Color wedge hypothesis, gap status, and confidence label.",
+      "falsification": "any row in schemas/color-calibration-market-map-pass-0011.json lacks a required row field, uses a non-HTTPS source URL, or has an invalid gap_status"
+    },
+    {
+      "text": "Pass 0011 created a BuildColorCalibrationProofKit/v1 artifact with four Build Color software metrics, and each observed value is at or below its declared threshold.",
+      "falsification": "schemas/build-color-calibration-proof-kit-pass-0011.json is missing, has fewer than four metrics, or any metric exceeds its threshold"
+    },
+    {
+      "text": "The pass 0011 proof kit preserves a read-only calibration boundary: no hardware measurement, no display mutation, no ICC profile install, no LUT write, and no physical calibration claim.",
+      "falsification": "schemas/build-color-calibration-proof-kit-pass-0011.json marks any calibration-boundary field as true"
+    },
+    {
+      "text": "The pass 0011 proof kit rejects the fake claim that this pass calibrated a physical display.",
+      "falsification": "schemas/build-color-calibration-proof-kit-pass-0011.json does not set negative_fixture.status to REJECTED_BY_BOUNDARY"
+    },
+    {
+      "text": "The pass 0011 validator reports MATCH with two checks and zero drift.",
+      "falsification": "schemas/pass-0011-color-calibration-validator-result.json is missing, reports non-MATCH status, reports fewer than two matches, or reports drift above zero"
+    },
+    {
+      "text": "Pass 0011 promotes zero color science laws, physical calibration claims, display accuracy results, or other scientific discoveries.",
+      "falsification": "any pass 0011 artifact labels a new color science law, physical calibration result, display accuracy result, theorem breakthrough, biological result, material result, medical result, finance result, or safety result as promoted"
+    }
+  ]
+}

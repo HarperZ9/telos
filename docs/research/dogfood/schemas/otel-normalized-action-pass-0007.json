@@ -1,0 +1,43 @@
+{
+  "schema": "TelosActionEvent/v1",
+  "source_schema": "OpenTelemetrySpanLike/v1",
+  "action_trace_id": "00000000000000000000000000000707",
+  "action_event_id": "0000000000000707",
+  "parent_action_event_id": "0000000000000006",
+  "action_name": "formal-identity.odd-sum.probe",
+  "started_at": "2026-07-01T10:07:00Z",
+  "finished_at": "2026-07-01T10:07:01Z",
+  "runtime_attributes": {
+    "domain": "formal-math",
+    "identity": "sum_{k=1..n}(2k-1)=n^2",
+    "probe.status": "PROBE_MATCH",
+    "range.max_n": 100000
+  },
+  "action_observations": [
+    {
+      "name": "induction-proof.recorded",
+      "timestamp": "2026-07-01T10:07:00Z"
+    },
+    {
+      "name": "bounded-computation.completed",
+      "timestamp": "2026-07-01T10:07:01Z"
+    }
+  ],
+  "causal_links": [
+    {
+      "relationship": "builds-on-pass-0006-proof-packet",
+      "trace_id": "00000000000000000000000000000606",
+      "span_id": "0000000000000606"
+    }
+  ],
+  "runtime_status": "Ok",
+  "proof_layer_status": "requires_authority_workspace_and_verification",
+  "non_inferable_telos_fields": [
+    "authority_receipts",
+    "workspace_state",
+    "verification_verdicts",
+    "decision_summary"
+  ],
+  "normalization_status": "MATCH",
+  "missing_required_source_fields": []
+}

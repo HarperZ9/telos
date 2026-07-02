@@ -1,0 +1,127 @@
+{
+  "pass": "0020",
+  "schema": "DogfoodToolReceiptSet/v1",
+  "status": "MATCH_WITH_FORUM_SUBMIT_GAP",
+  "generated_on": "2026-07-01",
+  "receipts": [
+    {
+      "tool": "index",
+      "command": "status",
+      "status": "MATCH",
+      "tool_version": "2.8.0",
+      "role": "structure-context"
+    },
+    {
+      "tool": "gather",
+      "command": "status",
+      "status": "MATCH",
+      "tool_version": "1.5.0",
+      "role": "perception-intake"
+    },
+    {
+      "tool": "gather",
+      "command": "docs",
+      "status": "MATCH",
+      "verified": true,
+      "artifact": "packets/030-quantum-workflow-provenance-market.md",
+      "sha256": "22959ecedd4f4e74ca97bd9a4d475732fbbb6c9fa201934b72273d0bce303259",
+      "seal": "66bea7c655e800963514be149debc0f2fe187e04a7949bf2fd6de0bbae9da0cc"
+    },
+    {
+      "tool": "telos.operator.doctor",
+      "command": "operator_doctor",
+      "status": "MATCH",
+      "check_count": 14,
+      "passed_count": 14,
+      "tool_count": 65,
+      "telos_tool_count": 37,
+      "generated_at": "2026-07-01T11:23:02.005Z"
+    },
+    {
+      "tool": "telos.catalog",
+      "command": "catalog",
+      "status": "MATCH",
+      "schema": "project-telos.mcp-tool-catalog/v1",
+      "noted_tools": [
+        "telos.model.foundry",
+        "telos.loop.ledger",
+        "telos.action.receipt",
+        "telos.display.calibration",
+        "telos.browser.evidence",
+        "telos.native.control",
+        "crucible.assess",
+        "index.context.envelope",
+        "gather.docs",
+        "forum.ledger.summary"
+      ]
+    },
+    {
+      "tool": "telos.revival.registry",
+      "command": "revival_registry",
+      "status": "MATCH",
+      "schema": "project-telos.revival-registry/v1",
+      "noted_promotion_lanes": [
+        "display-calibration",
+        "color-science-library",
+        "effects-language",
+        "agent-quality-gate",
+        "context-envelope-source",
+        "proof-indexing",
+        "rendering-verification",
+        "deterministic-renderer-verification"
+      ]
+    },
+    {
+      "tool": "telos.native.control",
+      "command": "native_control",
+      "status": "MATCH",
+      "schema": "project-telos.native-control/v1",
+      "browser_verbs": [
+        "tabs",
+        "navigate",
+        "eval",
+        "click",
+        "fill",
+        "screenshot",
+        "snapshot-dom",
+        "evidence"
+      ],
+      "app_verbs": [
+        "windows",
+        "tree",
+        "invoke",
+        "setvalue",
+        "focus"
+      ]
+    },
+    {
+      "tool": "forum",
+      "command": "status",
+      "status": "MATCH",
+      "entries": 12,
+      "checkpoint": "d5af64b2bd35e5803e783bb724edf64547aedc9743f452a8fd141f0daa3a6d87"
+    },
+    {
+      "tool": "forum",
+      "command": "verify",
+      "status": "MATCH",
+      "chain": true,
+      "deep": true
+    },
+    {
+      "tool": "forum",
+      "command": "submit",
+      "status": "UNVERIFIABLE",
+      "request": "Dogfood pass 0020 adversarial review for quantum workflow provenance market packet",
+      "error": "the configured executor did not return valid JSON; point the daemon at a real model executor (could not parse JSON from output: Extra data: line 2 column 1 (char 98))"
+    },
+    {
+      "tool": "crucible",
+      "command": "status",
+      "status": "MATCH",
+      "tool_version": "1.1.0",
+      "role": "verification-pressure"
+    }
+  ],
+  "non_promotion_statement": "Tool receipts prove operator-surface availability and local packet intake only. They do not prove live quantum framework execution, cloud provider execution, buyer demand, or scientific discovery."
+}

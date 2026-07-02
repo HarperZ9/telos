@@ -1,0 +1,75 @@
+{
+  "schema": "project-telos.pde-skew-symmetry-run-receipt/v1",
+  "packet_id": "navier-stokes-periodic-skew-symmetry-v0",
+  "generated_at": "2026-07-02T10:56:38.049Z",
+  "command": "C:\\Program Files\\nodejs\\node.exe C:\\dev\\public\\telos\\docs\\research\\proof-packets\\navier-stokes-periodic-skew-symmetry-v0\\kernel.reference.mjs --nu 0.1 --grid 256 --out docs\\research\\proof-packets\\navier-stokes-periodic-skew-symmetry-v0\\run.receipt.json",
+  "parameters": {
+    "grid": 256,
+    "nu": 0.1
+  },
+  "source_statement_sha256": "0ff92f7d51df4538a865dfd23a2125eeec80162feab78dbac66cd45228e17e62",
+  "derivation_sha256": "ce01022d4adaa5b61ecd2831591d5cb94ed281cfd0bd955b90d9d9c0a03b79dc",
+  "assumptions": [
+    "smooth finite Fourier-mode streamfunction",
+    "two-dimensional periodic domain",
+    "incompressible analytic velocity field",
+    "analytic derivatives evaluated on a uniform periodic grid",
+    "bounded witness only"
+  ],
+  "modes": [
+    {
+      "kx": 1,
+      "ky": 1,
+      "amp": 0.9,
+      "phase": 0.1
+    },
+    {
+      "kx": 2,
+      "ky": 1,
+      "amp": -0.35,
+      "phase": 0.7
+    },
+    {
+      "kx": 1,
+      "ky": 3,
+      "amp": 0.22,
+      "phase": -0.4
+    },
+    {
+      "kx": 3,
+      "ky": 2,
+      "amp": 0.15,
+      "phase": 1.2
+    },
+    {
+      "kx": 4,
+      "ky": 1,
+      "amp": -0.08,
+      "phase": -0.8
+    }
+  ],
+  "measurements": {
+    "grid": 256,
+    "mode_count": 5,
+    "kinetic_energy": 30.77145260171613,
+    "gradient_energy": 331.512116149073,
+    "viscous_dissipation_proxy": 33.151211614907304,
+    "nonlinear_energy_transfer": -7.792811534956812e-14,
+    "nonlinear_energy_transfer_abs": 7.792811534956812e-14,
+    "max_divergence_abs": 0
+  },
+  "tolerances": {
+    "nonlinear_energy_transfer_abs": 1e-10,
+    "max_divergence_abs": 1e-12
+  },
+  "verdicts": {
+    "bounded_skew_symmetry_probe": "MATCH",
+    "parent_millennium_problem": "UNVERIFIABLE"
+  },
+  "boundaries": [
+    "This executable receipt checks one deterministic smooth periodic finite-mode witness.",
+    "This executable receipt does not prove Navier-Stokes existence and smoothness.",
+    "This executable receipt does not prove global regularity or physical-fluid validity.",
+    "This executable receipt does not validate arbitrary numerical discretizations."
+  ]
+}

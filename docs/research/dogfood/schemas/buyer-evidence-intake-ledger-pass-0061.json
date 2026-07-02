@@ -1,0 +1,513 @@
+{
+  "buyer_response_status": "AWAITING_REAL_RESPONSES",
+  "crm_write_status": "NOT_WRITTEN",
+  "current_promoted_natural_laws": [],
+  "generated_on": "2026-07-01",
+  "intake_records": [
+    {
+      "buyer_id": "research_lab",
+      "counterparty_seed_id": "prospect-research-lab-proof-packets",
+      "evidence_capture_fields": [
+        {
+          "capture_status": "pending_real_buyer_input",
+          "evidence_hash": null,
+          "evidence_ref": "operator-local/research_lab/buyer_role",
+          "field_id": "buyer_role",
+          "label": "Named buyer role and authority path",
+          "model_context_value": "pending_redacted_summary",
+          "required": true,
+          "verification_status": "unverified"
+        },
+        {
+          "capture_status": "pending_real_buyer_input",
+          "evidence_hash": null,
+          "evidence_ref": "operator-local/research_lab/budget_path",
+          "field_id": "budget_path",
+          "label": "Budget owner, procurement path, or explicit no-budget signal",
+          "model_context_value": "pending_redacted_summary",
+          "required": true,
+          "verification_status": "unverified"
+        },
+        {
+          "capture_status": "pending_real_buyer_input",
+          "evidence_hash": null,
+          "evidence_ref": "operator-local/research_lab/workflow_pain",
+          "field_id": "workflow_pain",
+          "label": "Current workflow pain stated by the buyer",
+          "model_context_value": "pending_redacted_summary",
+          "required": true,
+          "verification_status": "unverified"
+        },
+        {
+          "capture_status": "pending_real_buyer_input",
+          "evidence_hash": null,
+          "evidence_ref": "operator-local/research_lab/incumbent_stack",
+          "field_id": "incumbent_stack",
+          "label": "Existing tools, platforms, observability, notebooks, or lab systems",
+          "model_context_value": "pending_redacted_summary",
+          "required": true,
+          "verification_status": "unverified"
+        },
+        {
+          "capture_status": "pending_real_buyer_input",
+          "evidence_hash": null,
+          "evidence_ref": "operator-local/research_lab/proof_gap",
+          "field_id": "proof_gap",
+          "label": "What evidence current tools fail to bind",
+          "model_context_value": "pending_redacted_summary",
+          "required": true,
+          "verification_status": "unverified"
+        },
+        {
+          "capture_status": "pending_real_buyer_input",
+          "evidence_hash": null,
+          "evidence_ref": "operator-local/research_lab/acceptance_criterion",
+          "field_id": "acceptance_criterion",
+          "label": "Concrete demo condition that would justify a pilot",
+          "model_context_value": "pending_redacted_summary",
+          "required": true,
+          "verification_status": "unverified"
+        },
+        {
+          "capture_status": "pending_real_buyer_input",
+          "evidence_hash": null,
+          "evidence_ref": "operator-local/research_lab/negative_disqualifier",
+          "field_id": "negative_disqualifier",
+          "label": "One result that should stop the pilot",
+          "model_context_value": "pending_redacted_summary",
+          "required": true,
+          "verification_status": "unverified"
+        },
+        {
+          "capture_status": "pending_real_buyer_input",
+          "evidence_hash": null,
+          "evidence_ref": "operator-local/research_lab/reproducibility_requirement",
+          "field_id": "reproducibility_requirement",
+          "label": "Formalization, replay, or experiment reproducibility requirement",
+          "model_context_value": "pending_redacted_summary",
+          "required": true,
+          "verification_status": "unverified"
+        }
+      ],
+      "evidence_quality_gates": [
+        "research_lab: buyer role must be named as a role category, not as a private person.",
+        "research_lab: budget path must be supported by buyer statement or operator-local evidence.",
+        "research_lab: incumbent stack must include at least one tool, workflow, or manual process.",
+        "research_lab: proof gap must name a source, action, verification, replay, or audit object.",
+        "research_lab: acceptance criterion must be measurable and demo-bound.",
+        "research_lab: negative disqualifier must be specific enough to stop the pilot."
+      ],
+      "falsifiers": [
+        "research_lab: no buyer role or authority path can be identified.",
+        "research_lab: buyer cannot name an incumbent workflow or proof gap.",
+        "research_lab: requested outcome requires unsupported market, science, production, or uniqueness claims.",
+        "research_lab: buyer evidence cannot be redacted into model-safe fields."
+      ],
+      "model_boundary_allowed_fields": [
+        "buyer_role_category",
+        "sector",
+        "workflow_pain_summary",
+        "incumbent_stack_summary",
+        "proof_gap_summary",
+        "acceptance_criterion_summary",
+        "negative_disqualifier_summary",
+        "verification_status"
+      ],
+      "operator_local_only_fields": [
+        "raw_buyer_notes",
+        "raw_call_transcript",
+        "raw_email_thread",
+        "private_org_name",
+        "private_contact_details",
+        "private_procurement_documents"
+      ],
+      "privacy_boundary": "NO_PRIVATE_CONTACT_DATA_IN_MODEL_CONTEXT",
+      "private_fields_forbidden_in_model_context": [
+        "contact_name",
+        "contact_email",
+        "phone_number",
+        "private_organization_name",
+        "private_calendar_link",
+        "private_document_url",
+        "private_slack_or_chat_handle"
+      ],
+      "response_status": "AWAITING_REAL_RESPONSE",
+      "route_lane_split": [
+        "project-telos",
+        "deep-research",
+        "technical-writing"
+      ],
+      "score_dimensions": [
+        {
+          "dimension": "urgency",
+          "requires": "real buyer pain statement",
+          "status": "UNSCORED"
+        },
+        {
+          "dimension": "budget",
+          "requires": "budget path or explicit no-budget evidence",
+          "status": "UNSCORED"
+        },
+        {
+          "dimension": "incumbent_gap",
+          "requires": "current stack and proof gap evidence",
+          "status": "UNSCORED"
+        },
+        {
+          "dimension": "pilot_fit",
+          "requires": "measurable acceptance criterion",
+          "status": "UNSCORED"
+        },
+        {
+          "dimension": "adoption_friction",
+          "requires": "security, privacy, integration, or procurement constraint",
+          "status": "UNSCORED"
+        }
+      ],
+      "score_status": "UNSCORED_PENDING_BUYER_EVIDENCE",
+      "source_payload_ref": "docs/research/dogfood/packets/070-research_lab-outreach.md"
+    },
+    {
+      "buyer_id": "ai_infra",
+      "counterparty_seed_id": "prospect-ai-infra-action-receipts",
+      "evidence_capture_fields": [
+        {
+          "capture_status": "pending_real_buyer_input",
+          "evidence_hash": null,
+          "evidence_ref": "operator-local/ai_infra/buyer_role",
+          "field_id": "buyer_role",
+          "label": "Named buyer role and authority path",
+          "model_context_value": "pending_redacted_summary",
+          "required": true,
+          "verification_status": "unverified"
+        },
+        {
+          "capture_status": "pending_real_buyer_input",
+          "evidence_hash": null,
+          "evidence_ref": "operator-local/ai_infra/budget_path",
+          "field_id": "budget_path",
+          "label": "Budget owner, procurement path, or explicit no-budget signal",
+          "model_context_value": "pending_redacted_summary",
+          "required": true,
+          "verification_status": "unverified"
+        },
+        {
+          "capture_status": "pending_real_buyer_input",
+          "evidence_hash": null,
+          "evidence_ref": "operator-local/ai_infra/workflow_pain",
+          "field_id": "workflow_pain",
+          "label": "Current workflow pain stated by the buyer",
+          "model_context_value": "pending_redacted_summary",
+          "required": true,
+          "verification_status": "unverified"
+        },
+        {
+          "capture_status": "pending_real_buyer_input",
+          "evidence_hash": null,
+          "evidence_ref": "operator-local/ai_infra/incumbent_stack",
+          "field_id": "incumbent_stack",
+          "label": "Existing tools, platforms, observability, notebooks, or lab systems",
+          "model_context_value": "pending_redacted_summary",
+          "required": true,
+          "verification_status": "unverified"
+        },
+        {
+          "capture_status": "pending_real_buyer_input",
+          "evidence_hash": null,
+          "evidence_ref": "operator-local/ai_infra/proof_gap",
+          "field_id": "proof_gap",
+          "label": "What evidence current tools fail to bind",
+          "model_context_value": "pending_redacted_summary",
+          "required": true,
+          "verification_status": "unverified"
+        },
+        {
+          "capture_status": "pending_real_buyer_input",
+          "evidence_hash": null,
+          "evidence_ref": "operator-local/ai_infra/acceptance_criterion",
+          "field_id": "acceptance_criterion",
+          "label": "Concrete demo condition that would justify a pilot",
+          "model_context_value": "pending_redacted_summary",
+          "required": true,
+          "verification_status": "unverified"
+        },
+        {
+          "capture_status": "pending_real_buyer_input",
+          "evidence_hash": null,
+          "evidence_ref": "operator-local/ai_infra/negative_disqualifier",
+          "field_id": "negative_disqualifier",
+          "label": "One result that should stop the pilot",
+          "model_context_value": "pending_redacted_summary",
+          "required": true,
+          "verification_status": "unverified"
+        },
+        {
+          "capture_status": "pending_real_buyer_input",
+          "evidence_hash": null,
+          "evidence_ref": "operator-local/ai_infra/trace_boundary",
+          "field_id": "trace_boundary",
+          "label": "Where tracing ends and action authority evidence is missing",
+          "model_context_value": "pending_redacted_summary",
+          "required": true,
+          "verification_status": "unverified"
+        }
+      ],
+      "evidence_quality_gates": [
+        "ai_infra: buyer role must be named as a role category, not as a private person.",
+        "ai_infra: budget path must be supported by buyer statement or operator-local evidence.",
+        "ai_infra: incumbent stack must include at least one tool, workflow, or manual process.",
+        "ai_infra: proof gap must name a source, action, verification, replay, or audit object.",
+        "ai_infra: acceptance criterion must be measurable and demo-bound.",
+        "ai_infra: negative disqualifier must be specific enough to stop the pilot."
+      ],
+      "falsifiers": [
+        "ai_infra: no buyer role or authority path can be identified.",
+        "ai_infra: buyer cannot name an incumbent workflow or proof gap.",
+        "ai_infra: requested outcome requires unsupported market, science, production, or uniqueness claims.",
+        "ai_infra: buyer evidence cannot be redacted into model-safe fields."
+      ],
+      "model_boundary_allowed_fields": [
+        "buyer_role_category",
+        "sector",
+        "workflow_pain_summary",
+        "incumbent_stack_summary",
+        "proof_gap_summary",
+        "acceptance_criterion_summary",
+        "negative_disqualifier_summary",
+        "verification_status"
+      ],
+      "operator_local_only_fields": [
+        "raw_buyer_notes",
+        "raw_call_transcript",
+        "raw_email_thread",
+        "private_org_name",
+        "private_contact_details",
+        "private_procurement_documents"
+      ],
+      "privacy_boundary": "NO_PRIVATE_CONTACT_DATA_IN_MODEL_CONTEXT",
+      "private_fields_forbidden_in_model_context": [
+        "contact_name",
+        "contact_email",
+        "phone_number",
+        "private_organization_name",
+        "private_calendar_link",
+        "private_document_url",
+        "private_slack_or_chat_handle"
+      ],
+      "response_status": "AWAITING_REAL_RESPONSE",
+      "route_lane_split": [
+        "project-telos",
+        "deep-research",
+        "technical-writing"
+      ],
+      "score_dimensions": [
+        {
+          "dimension": "urgency",
+          "requires": "real buyer pain statement",
+          "status": "UNSCORED"
+        },
+        {
+          "dimension": "budget",
+          "requires": "budget path or explicit no-budget evidence",
+          "status": "UNSCORED"
+        },
+        {
+          "dimension": "incumbent_gap",
+          "requires": "current stack and proof gap evidence",
+          "status": "UNSCORED"
+        },
+        {
+          "dimension": "pilot_fit",
+          "requires": "measurable acceptance criterion",
+          "status": "UNSCORED"
+        },
+        {
+          "dimension": "adoption_friction",
+          "requires": "security, privacy, integration, or procurement constraint",
+          "status": "UNSCORED"
+        }
+      ],
+      "score_status": "UNSCORED_PENDING_BUYER_EVIDENCE",
+      "source_payload_ref": "docs/research/dogfood/packets/070-ai_infra-outreach.md"
+    },
+    {
+      "buyer_id": "regulated_agent",
+      "counterparty_seed_id": "prospect-regulated-agent-audit-packets",
+      "evidence_capture_fields": [
+        {
+          "capture_status": "pending_real_buyer_input",
+          "evidence_hash": null,
+          "evidence_ref": "operator-local/regulated_agent/buyer_role",
+          "field_id": "buyer_role",
+          "label": "Named buyer role and authority path",
+          "model_context_value": "pending_redacted_summary",
+          "required": true,
+          "verification_status": "unverified"
+        },
+        {
+          "capture_status": "pending_real_buyer_input",
+          "evidence_hash": null,
+          "evidence_ref": "operator-local/regulated_agent/budget_path",
+          "field_id": "budget_path",
+          "label": "Budget owner, procurement path, or explicit no-budget signal",
+          "model_context_value": "pending_redacted_summary",
+          "required": true,
+          "verification_status": "unverified"
+        },
+        {
+          "capture_status": "pending_real_buyer_input",
+          "evidence_hash": null,
+          "evidence_ref": "operator-local/regulated_agent/workflow_pain",
+          "field_id": "workflow_pain",
+          "label": "Current workflow pain stated by the buyer",
+          "model_context_value": "pending_redacted_summary",
+          "required": true,
+          "verification_status": "unverified"
+        },
+        {
+          "capture_status": "pending_real_buyer_input",
+          "evidence_hash": null,
+          "evidence_ref": "operator-local/regulated_agent/incumbent_stack",
+          "field_id": "incumbent_stack",
+          "label": "Existing tools, platforms, observability, notebooks, or lab systems",
+          "model_context_value": "pending_redacted_summary",
+          "required": true,
+          "verification_status": "unverified"
+        },
+        {
+          "capture_status": "pending_real_buyer_input",
+          "evidence_hash": null,
+          "evidence_ref": "operator-local/regulated_agent/proof_gap",
+          "field_id": "proof_gap",
+          "label": "What evidence current tools fail to bind",
+          "model_context_value": "pending_redacted_summary",
+          "required": true,
+          "verification_status": "unverified"
+        },
+        {
+          "capture_status": "pending_real_buyer_input",
+          "evidence_hash": null,
+          "evidence_ref": "operator-local/regulated_agent/acceptance_criterion",
+          "field_id": "acceptance_criterion",
+          "label": "Concrete demo condition that would justify a pilot",
+          "model_context_value": "pending_redacted_summary",
+          "required": true,
+          "verification_status": "unverified"
+        },
+        {
+          "capture_status": "pending_real_buyer_input",
+          "evidence_hash": null,
+          "evidence_ref": "operator-local/regulated_agent/negative_disqualifier",
+          "field_id": "negative_disqualifier",
+          "label": "One result that should stop the pilot",
+          "model_context_value": "pending_redacted_summary",
+          "required": true,
+          "verification_status": "unverified"
+        },
+        {
+          "capture_status": "pending_real_buyer_input",
+          "evidence_hash": null,
+          "evidence_ref": "operator-local/regulated_agent/audit_boundary",
+          "field_id": "audit_boundary",
+          "label": "Review artifact boundary that avoids private payload disclosure",
+          "model_context_value": "pending_redacted_summary",
+          "required": true,
+          "verification_status": "unverified"
+        }
+      ],
+      "evidence_quality_gates": [
+        "regulated_agent: buyer role must be named as a role category, not as a private person.",
+        "regulated_agent: budget path must be supported by buyer statement or operator-local evidence.",
+        "regulated_agent: incumbent stack must include at least one tool, workflow, or manual process.",
+        "regulated_agent: proof gap must name a source, action, verification, replay, or audit object.",
+        "regulated_agent: acceptance criterion must be measurable and demo-bound.",
+        "regulated_agent: negative disqualifier must be specific enough to stop the pilot."
+      ],
+      "falsifiers": [
+        "regulated_agent: no buyer role or authority path can be identified.",
+        "regulated_agent: buyer cannot name an incumbent workflow or proof gap.",
+        "regulated_agent: requested outcome requires unsupported market, science, production, or uniqueness claims.",
+        "regulated_agent: buyer evidence cannot be redacted into model-safe fields."
+      ],
+      "model_boundary_allowed_fields": [
+        "buyer_role_category",
+        "sector",
+        "workflow_pain_summary",
+        "incumbent_stack_summary",
+        "proof_gap_summary",
+        "acceptance_criterion_summary",
+        "negative_disqualifier_summary",
+        "verification_status"
+      ],
+      "operator_local_only_fields": [
+        "raw_buyer_notes",
+        "raw_call_transcript",
+        "raw_email_thread",
+        "private_org_name",
+        "private_contact_details",
+        "private_procurement_documents"
+      ],
+      "privacy_boundary": "NO_PRIVATE_CONTACT_DATA_IN_MODEL_CONTEXT",
+      "private_fields_forbidden_in_model_context": [
+        "contact_name",
+        "contact_email",
+        "phone_number",
+        "private_organization_name",
+        "private_calendar_link",
+        "private_document_url",
+        "private_slack_or_chat_handle"
+      ],
+      "response_status": "AWAITING_REAL_RESPONSE",
+      "route_lane_split": [
+        "project-telos",
+        "deep-research",
+        "technical-writing"
+      ],
+      "score_dimensions": [
+        {
+          "dimension": "urgency",
+          "requires": "real buyer pain statement",
+          "status": "UNSCORED"
+        },
+        {
+          "dimension": "budget",
+          "requires": "budget path or explicit no-budget evidence",
+          "status": "UNSCORED"
+        },
+        {
+          "dimension": "incumbent_gap",
+          "requires": "current stack and proof gap evidence",
+          "status": "UNSCORED"
+        },
+        {
+          "dimension": "pilot_fit",
+          "requires": "measurable acceptance criterion",
+          "status": "UNSCORED"
+        },
+        {
+          "dimension": "adoption_friction",
+          "requires": "security, privacy, integration, or procurement constraint",
+          "status": "UNSCORED"
+        }
+      ],
+      "score_status": "UNSCORED_PENDING_BUYER_EVIDENCE",
+      "source_payload_ref": "docs/research/dogfood/packets/070-regulated_agent-outreach.md"
+    }
+  ],
+  "market_claim_boundary": "HYPOTHESIS_ONLY",
+  "next_pass": "0062",
+  "non_promotion_statement": "Pass 0061 defines model-safe buyer evidence intake records. It does not collect real buyer responses, write CRM records, prove budget, prove demand, or promote any natural law.",
+  "pass": "0061",
+  "schema": "BuyerEvidenceIntakeLedger/v1",
+  "seal": "d074d80cd84659f735b81dc5161d58f5b4212142723f97463a35ba0965bb6220",
+  "send_status": "NOT_SENT",
+  "status": "BUYER_EVIDENCE_INTAKE_LEDGER_MATCH",
+  "unsupported_claim_count": 0,
+  "upstream_outreach": {
+    "path": "C:\\dev\\public\\telos\\docs\\research\\dogfood\\schemas\\buyer-outreach-packets-pass-0060.json",
+    "seal": "2bf5704d5e2065ee55732533a4f9bca3e5d892dc43e33fba676e5c56325c93ee",
+    "sha256": "2b60b4e6c24c64919afd2b2c6f4b585b5a4445fb1b81dd0d7951b6e7d91a518e",
+    "status": "BUYER_OUTREACH_PACKETS_MATCH"
+  },
+  "validation_errors": []
+}

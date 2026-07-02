@@ -1,0 +1,382 @@
+{
+  "ablation_results": [
+    {
+      "case_id": "full_domain_focus_envelope",
+      "reason": "all required layers present",
+      "removed_layer": null,
+      "verdict": "MATCH"
+    },
+    {
+      "case_id": "without_source_intake",
+      "reason": "missing_required_layer:source_intake",
+      "removed_layer": "source_intake",
+      "verdict": "REJECT"
+    },
+    {
+      "case_id": "without_workspace_context",
+      "reason": "missing_required_layer:workspace_context",
+      "removed_layer": "workspace_context",
+      "verdict": "REJECT"
+    },
+    {
+      "case_id": "without_routing",
+      "reason": "missing_required_layer:routing",
+      "removed_layer": "routing",
+      "verdict": "REJECT"
+    },
+    {
+      "case_id": "without_verification",
+      "reason": "missing_required_layer:verification",
+      "removed_layer": "verification",
+      "verdict": "REJECT"
+    },
+    {
+      "case_id": "without_continuity",
+      "reason": "missing_required_layer:continuity",
+      "removed_layer": "continuity",
+      "verdict": "REJECT"
+    },
+    {
+      "case_id": "without_action",
+      "reason": "missing_required_layer:action",
+      "removed_layer": "action",
+      "verdict": "REJECT"
+    }
+  ],
+  "base_components": {
+    "action": {
+      "action_id": "act_20260627_001",
+      "append_only": true,
+      "component_id": "telos.action.receipt.live.happy_path.0070",
+      "digest": "014ec1cef9f25f98411f60ec9e747e0777461130e89882490f41bdebc2d52717",
+      "event_id": "evt_20260627_001",
+      "kind": "action",
+      "label": "Live Telos action-receipt happy_path conformance fixture",
+      "raw_payload_included": false,
+      "receipt_is_trace_span": false,
+      "seal": "7dcd08a717e522b780feae38054d0daa5a7bceed1629855e3743efc9ca249453",
+      "source_surface": "node demo/action-receipt.mjs",
+      "verification_status": "MATCH"
+    },
+    "continuity": {
+      "component_id": "loop-ledger.pass-chain.0072",
+      "digest": "586cf789118b7ef6630e7bcd20833bbc5311ba367b94b89c0ad0695962e53bb5",
+      "kind": "continuity",
+      "label": "Dogfood pass 0072 continuity checkpoint",
+      "raw_payload_included": false,
+      "seal": "dada3f39e0857d7eaef4108f2ba1960f2378eb167787aed361b02e30a90f1b47",
+      "verification_status": "MATCH"
+    },
+    "source_intake": {
+      "component_id": "gather.packet.082",
+      "digest": "5cf28727160169d5147ad23b278dded219dbda640070caaba97e05d99785b518",
+      "kind": "source_intake",
+      "label": "Domain-focus adapter packet source intake",
+      "raw_payload_included": false,
+      "seal": "cd254ea7a31e1b79d4d2d7613e433cfc425027892dcfd8c1d57297644f046f2a",
+      "verification_status": "MATCH"
+    },
+    "verification": {
+      "claims": 8,
+      "component_id": "crucible.assessment.0072",
+      "digest": "c1551300a0baab4dec1d13a26610dccd48856ed5b4a9be47b8e676917477e447",
+      "kind": "verification",
+      "label": "Crucible assessment for domain-focus adapter experiment",
+      "match": 8,
+      "raw_payload_included": false,
+      "seal": "eb9fe6ecfc658f38e0ab1d61c6dac9935e789872ce58c8eb751be52ef676fc96",
+      "verification_status": "MATCH"
+    },
+    "workspace_context": {
+      "budget_token_budget": 700,
+      "component_id": "index.context-envelope.live.root.0071",
+      "context_schema": "project-telos.context-envelope/v1",
+      "digest": "685ceead9ed304de1d0429a04c21ff54c3710117299b42ec8148de0f3834c423",
+      "kind": "workspace_context",
+      "label": "Live Index context-envelope root workspace receipt",
+      "raw_payload_included": false,
+      "receipt_count": 1,
+      "retained_count": 1,
+      "seal": "3846068a9671b23ef79744df76de8acfb74b65fd20876d2d8c89972c1e7ac817",
+      "source_surface": "index context-envelope --root C:\\dev\\public\\telos --budget 700 --hops 0 --json",
+      "verification_status": "MATCH"
+    }
+  },
+  "domain_count": 6,
+  "domain_envelopes": [
+    {
+      "component_digests": {
+        "action": "014ec1cef9f25f98411f60ec9e747e0777461130e89882490f41bdebc2d52717",
+        "continuity": "586cf789118b7ef6630e7bcd20833bbc5311ba367b94b89c0ad0695962e53bb5",
+        "routing": "3657495a34b965a9e3784cba0baae29fb7e43acb248d5e311c080680acf6dd26",
+        "source_intake": "5cf28727160169d5147ad23b278dded219dbda640070caaba97e05d99785b518",
+        "verification": "c1551300a0baab4dec1d13a26610dccd48856ed5b4a9be47b8e676917477e447",
+        "workspace_context": "685ceead9ed304de1d0429a04c21ff54c3710117299b42ec8148de0f3834c423"
+      },
+      "domain_id": "buildlang_buildc",
+      "envelope_id": "telos.domain-focus.buildlang_buildc.0073",
+      "index_strategy": "repo_root_context_plus_domain_path_filter_pending",
+      "label": "BuildLang/buildc scientific compute",
+      "model_reasoning_required_for_replay": false,
+      "path_scoped_context": false,
+      "raw_private_payload_required": false,
+      "requested_paths": [
+        "buildlang",
+        "buildc",
+        "build-universe"
+      ],
+      "required_layers": [
+        "source_intake",
+        "workspace_context",
+        "routing",
+        "verification",
+        "continuity",
+        "action"
+      ],
+      "root_context_fallback": true,
+      "route_decision": "project-telos",
+      "route_needs_escalation": false,
+      "schema": "TelosDomainFocusEnvelope/v1",
+      "seal": "a7c9342bb70a694cbb8f5301deee394cccbe7ff4518579c04de0a23db568270d",
+      "unsupported_claim_count": 0,
+      "verification_status": "MATCH"
+    },
+    {
+      "component_digests": {
+        "action": "014ec1cef9f25f98411f60ec9e747e0777461130e89882490f41bdebc2d52717",
+        "continuity": "586cf789118b7ef6630e7bcd20833bbc5311ba367b94b89c0ad0695962e53bb5",
+        "routing": "3657495a34b965a9e3784cba0baae29fb7e43acb248d5e311c080680acf6dd26",
+        "source_intake": "5cf28727160169d5147ad23b278dded219dbda640070caaba97e05d99785b518",
+        "verification": "c1551300a0baab4dec1d13a26610dccd48856ed5b4a9be47b8e676917477e447",
+        "workspace_context": "685ceead9ed304de1d0429a04c21ff54c3710117299b42ec8148de0f3834c423"
+      },
+      "domain_id": "color_calibration",
+      "envelope_id": "telos.domain-focus.color_calibration.0073",
+      "index_strategy": "repo_root_context_plus_domain_path_filter_pending",
+      "label": "Color calibration and rendering measurement",
+      "model_reasoning_required_for_replay": false,
+      "path_scoped_context": false,
+      "raw_private_payload_required": false,
+      "requested_paths": [
+        "color",
+        "rendering",
+        "display-calibration"
+      ],
+      "required_layers": [
+        "source_intake",
+        "workspace_context",
+        "routing",
+        "verification",
+        "continuity",
+        "action"
+      ],
+      "root_context_fallback": true,
+      "route_decision": "project-telos",
+      "route_needs_escalation": false,
+      "schema": "TelosDomainFocusEnvelope/v1",
+      "seal": "6fee1302d27656d52d99aae39888e3aef33a37ab54ee443346dd845c30f51ee5",
+      "unsupported_claim_count": 0,
+      "verification_status": "MATCH"
+    },
+    {
+      "component_digests": {
+        "action": "014ec1cef9f25f98411f60ec9e747e0777461130e89882490f41bdebc2d52717",
+        "continuity": "586cf789118b7ef6630e7bcd20833bbc5311ba367b94b89c0ad0695962e53bb5",
+        "routing": "3657495a34b965a9e3784cba0baae29fb7e43acb248d5e311c080680acf6dd26",
+        "source_intake": "5cf28727160169d5147ad23b278dded219dbda640070caaba97e05d99785b518",
+        "verification": "c1551300a0baab4dec1d13a26610dccd48856ed5b4a9be47b8e676917477e447",
+        "workspace_context": "685ceead9ed304de1d0429a04c21ff54c3710117299b42ec8148de0f3834c423"
+      },
+      "domain_id": "ai4science",
+      "envelope_id": "telos.domain-focus.ai4science.0073",
+      "index_strategy": "repo_root_context_plus_domain_path_filter_pending",
+      "label": "AI4Science research proof packets",
+      "model_reasoning_required_for_replay": false,
+      "path_scoped_context": false,
+      "raw_private_payload_required": false,
+      "requested_paths": [
+        "docs/research",
+        "science",
+        "proof-packets"
+      ],
+      "required_layers": [
+        "source_intake",
+        "workspace_context",
+        "routing",
+        "verification",
+        "continuity",
+        "action"
+      ],
+      "root_context_fallback": true,
+      "route_decision": "project-telos",
+      "route_needs_escalation": false,
+      "schema": "TelosDomainFocusEnvelope/v1",
+      "seal": "d81d2dd2ebdc11d949bfeb914b67de3e38a23543493dd46b8fe2a13304b5f4e9",
+      "unsupported_claim_count": 0,
+      "verification_status": "MATCH"
+    },
+    {
+      "component_digests": {
+        "action": "014ec1cef9f25f98411f60ec9e747e0777461130e89882490f41bdebc2d52717",
+        "continuity": "586cf789118b7ef6630e7bcd20833bbc5311ba367b94b89c0ad0695962e53bb5",
+        "routing": "3657495a34b965a9e3784cba0baae29fb7e43acb248d5e311c080680acf6dd26",
+        "source_intake": "5cf28727160169d5147ad23b278dded219dbda640070caaba97e05d99785b518",
+        "verification": "c1551300a0baab4dec1d13a26610dccd48856ed5b4a9be47b8e676917477e447",
+        "workspace_context": "685ceead9ed304de1d0429a04c21ff54c3710117299b42ec8148de0f3834c423"
+      },
+      "domain_id": "agent_ops",
+      "envelope_id": "telos.domain-focus.agent_ops.0073",
+      "index_strategy": "repo_root_context_plus_domain_path_filter_pending",
+      "label": "Agent operations and action receipts",
+      "model_reasoning_required_for_replay": false,
+      "path_scoped_context": false,
+      "raw_private_payload_required": false,
+      "requested_paths": [
+        "telos",
+        "action-receipts",
+        "agent-ops"
+      ],
+      "required_layers": [
+        "source_intake",
+        "workspace_context",
+        "routing",
+        "verification",
+        "continuity",
+        "action"
+      ],
+      "root_context_fallback": true,
+      "route_decision": "project-telos",
+      "route_needs_escalation": false,
+      "schema": "TelosDomainFocusEnvelope/v1",
+      "seal": "1d6c5b8dcd505424a66f3b47d7660cfa813fd073fdf07958e84b64facc910522",
+      "unsupported_claim_count": 0,
+      "verification_status": "MATCH"
+    },
+    {
+      "component_digests": {
+        "action": "014ec1cef9f25f98411f60ec9e747e0777461130e89882490f41bdebc2d52717",
+        "continuity": "586cf789118b7ef6630e7bcd20833bbc5311ba367b94b89c0ad0695962e53bb5",
+        "routing": "3657495a34b965a9e3784cba0baae29fb7e43acb248d5e311c080680acf6dd26",
+        "source_intake": "5cf28727160169d5147ad23b278dded219dbda640070caaba97e05d99785b518",
+        "verification": "c1551300a0baab4dec1d13a26610dccd48856ed5b4a9be47b8e676917477e447",
+        "workspace_context": "685ceead9ed304de1d0429a04c21ff54c3710117299b42ec8148de0f3834c423"
+      },
+      "domain_id": "market_recon",
+      "envelope_id": "telos.domain-focus.market_recon.0073",
+      "index_strategy": "repo_root_context_plus_domain_path_filter_pending",
+      "label": "Market recon and buyer evidence",
+      "model_reasoning_required_for_replay": false,
+      "path_scoped_context": false,
+      "raw_private_payload_required": false,
+      "requested_paths": [
+        "docs",
+        "market-recon",
+        "buyer-evidence"
+      ],
+      "required_layers": [
+        "source_intake",
+        "workspace_context",
+        "routing",
+        "verification",
+        "continuity",
+        "action"
+      ],
+      "root_context_fallback": true,
+      "route_decision": "project-telos",
+      "route_needs_escalation": false,
+      "schema": "TelosDomainFocusEnvelope/v1",
+      "seal": "52457eca724f41dda4fafc9e75f6d453dfcd2e82fa6b027220e96fe02cf6baea",
+      "unsupported_claim_count": 0,
+      "verification_status": "MATCH"
+    },
+    {
+      "component_digests": {
+        "action": "014ec1cef9f25f98411f60ec9e747e0777461130e89882490f41bdebc2d52717",
+        "continuity": "586cf789118b7ef6630e7bcd20833bbc5311ba367b94b89c0ad0695962e53bb5",
+        "routing": "3657495a34b965a9e3784cba0baae29fb7e43acb248d5e311c080680acf6dd26",
+        "source_intake": "5cf28727160169d5147ad23b278dded219dbda640070caaba97e05d99785b518",
+        "verification": "c1551300a0baab4dec1d13a26610dccd48856ed5b4a9be47b8e676917477e447",
+        "workspace_context": "685ceead9ed304de1d0429a04c21ff54c3710117299b42ec8148de0f3834c423"
+      },
+      "domain_id": "quantum_physics",
+      "envelope_id": "telos.domain-focus.quantum_physics.0073",
+      "index_strategy": "repo_root_context_plus_domain_path_filter_pending",
+      "label": "Quantum and physics proof packets",
+      "model_reasoning_required_for_replay": false,
+      "path_scoped_context": false,
+      "raw_private_payload_required": false,
+      "requested_paths": [
+        "quantum",
+        "physics",
+        "simulators"
+      ],
+      "required_layers": [
+        "source_intake",
+        "workspace_context",
+        "routing",
+        "verification",
+        "continuity",
+        "action"
+      ],
+      "root_context_fallback": true,
+      "route_decision": "project-telos",
+      "route_needs_escalation": false,
+      "schema": "TelosDomainFocusEnvelope/v1",
+      "seal": "788ffbdf42eb947a294fccfe5bac0306d583b4a06793e7225359b959cf3b0e12",
+      "unsupported_claim_count": 0,
+      "verification_status": "MATCH"
+    }
+  ],
+  "generated_on": "2026-07-01",
+  "negative_fixtures": [
+    {
+      "expected_status": "REJECT",
+      "fixture_id": "missing_source_intake",
+      "reject_reason": "missing_required_layer:source_intake"
+    },
+    {
+      "expected_status": "REJECT",
+      "fixture_id": "missing_workspace_context",
+      "reject_reason": "missing_required_layer:workspace_context"
+    },
+    {
+      "expected_status": "REJECT",
+      "fixture_id": "missing_routing",
+      "reject_reason": "missing_required_layer:routing"
+    },
+    {
+      "expected_status": "REJECT",
+      "fixture_id": "missing_verification",
+      "reject_reason": "missing_required_layer:verification"
+    },
+    {
+      "expected_status": "REJECT",
+      "fixture_id": "missing_action",
+      "reject_reason": "missing_required_layer:action"
+    },
+    {
+      "expected_status": "REJECT",
+      "fixture_id": "claims_path_scoped_context_without_refs",
+      "reject_reason": "path_scoped_context_unproven"
+    },
+    {
+      "expected_status": "REJECT",
+      "fixture_id": "unsupported_claim_promoted",
+      "reject_reason": "unsupported_claim_count_nonzero"
+    },
+    {
+      "expected_status": "REJECT",
+      "fixture_id": "raw_payload_required",
+      "reject_reason": "raw_private_payload_required"
+    }
+  ],
+  "non_promotion_statement": "Pass 0073 defines a replayable TelosDomainFocusEnvelope fixture over prior receipts. It does not implement path-scoped Index source refs, prove market adoption, solve a scientific problem, or establish a natural law.",
+  "pass": "0073",
+  "path_scoped_envelopes": 0,
+  "root_fallback_envelopes": 6,
+  "schema": "TelosDomainFocusEnvelopeSet/v1",
+  "seal": "ba5cbbf854a154e013c305f56dacbf25f1504a451325e7ee17e046342ed05b96",
+  "status": "TELOS_DOMAIN_FOCUS_ENVELOPE_MATCH",
+  "unsupported_claim_count": 0,
+  "validation_errors": []
+}

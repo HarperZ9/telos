@@ -1,0 +1,287 @@
+{
+  "ok": true,
+  "thesis": {
+    "id": "163a4a4ad4621d95",
+    "title": "Project Telos Updated Tooling And Outreach Handoff",
+    "registered_at": 1782982797.1002612,
+    "disposition": "fenced",
+    "seal": "163a4a4ad4621d955d2da1dd8f405e0c2ff867ef4f828983f131910874985985",
+    "claims": [
+      {
+        "id": "8a98e56b97372ac4",
+        "sha256": "8a98e56b97372ac4351a2341fb4926df3a490d54fe016ef6595b2191ff0e3776"
+      },
+      {
+        "id": "0bad18a2e6e78cee",
+        "sha256": "0bad18a2e6e78ceeddff047aebeccf298042a48229a0375afabc4aeb00207ba2"
+      },
+      {
+        "id": "e119e8a8533015f5",
+        "sha256": "e119e8a8533015f504de5d561aa17017e314b89146e51c835a72f1cc29bf35d8"
+      },
+      {
+        "id": "45a25750e31d1913",
+        "sha256": "45a25750e31d1913230ca6dc433a3deaac3a7714fc7eb2e079c0ffd2ab583e41"
+      },
+      {
+        "id": "1e163ee2671ed272",
+        "sha256": "1e163ee2671ed272e9c73c8a6a1e7da1a7bc0f483412477d7f78b7df29a6e437"
+      }
+    ]
+  },
+  "refutations": [
+    {
+      "claim_id": "8a98e56b97372ac4",
+      "claim_sha256": "8a98e56b97372ac4351a2341fb4926df3a490d54fe016ef6595b2191ff0e3776",
+      "challenge": "test the stated falsification: Catalog or manifest summary reports a different current expected/available tool count.",
+      "measurable": "Catalog or manifest summary reports a different current expected/available tool count.",
+      "source": "null"
+    },
+    {
+      "claim_id": "0bad18a2e6e78cee",
+      "claim_sha256": "0bad18a2e6e78ceeddff047aebeccf298042a48229a0375afabc4aeb00207ba2",
+      "challenge": "test the stated falsification: The assessment document is missing or conflates repo availability with installed PATH availability.",
+      "measurable": "The assessment document is missing or conflates repo availability with installed PATH availability.",
+      "source": "null"
+    },
+    {
+      "claim_id": "e119e8a8533015f5",
+      "claim_sha256": "e119e8a8533015f504de5d561aa17017e314b89146e51c835a72f1cc29bf35d8",
+      "challenge": "test the stated falsification: Any required handoff document is missing.",
+      "measurable": "Any required handoff document is missing.",
+      "source": "null"
+    },
+    {
+      "claim_id": "45a25750e31d1913",
+      "claim_sha256": "45a25750e31d1913230ca6dc433a3deaac3a7714fc7eb2e079c0ffd2ab583e41",
+      "challenge": "test the stated falsification: The handoff package promotes Learn, BuildLang/buildc, Emet, or Build Universe beyond the locally verified evidence.",
+      "measurable": "The handoff package promotes Learn, BuildLang/buildc, Emet, or Build Universe beyond the locally verified evidence.",
+      "source": "null"
+    },
+    {
+      "claim_id": "1e163ee2671ed272",
+      "claim_sha256": "1e163ee2671ed272e9c73c8a6a1e7da1a7bc0f483412477d7f78b7df29a6e437",
+      "challenge": "test the stated falsification: The targeted Node test slice fails.",
+      "measurable": "The targeted Node test slice fails.",
+      "source": "null"
+    }
+  ],
+  "assessment": {
+    "started_at": 1782982797.1085782,
+    "thesis_id": "163a4a4ad4621d95",
+    "thesis_seal": "163a4a4ad4621d955d2da1dd8f405e0c2ff867ef4f828983f131910874985985",
+    "claims": 5,
+    "match": 5,
+    "drift": 0,
+    "unverifiable": 0,
+    "verdict_seal": "9e6f1863c86dae1c99b745be2ec6985ca59572aed65d517716ef8dbe6d76b832",
+    "measurement_seal": "be4e0006f181fa1509e07ad03bf4119177717f86575e1e1d817ce1de4d4a5d53",
+    "disposition": "fenced",
+    "stored": null,
+    "verdicts": [
+      {
+        "claim_id": "8a98e56b97372ac4",
+        "claim_sha256": "8a98e56b97372ac4351a2341fb4926df3a490d54fe016ef6595b2191ff0e3776",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "command-output-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "0bad18a2e6e78cee",
+        "claim_sha256": "0bad18a2e6e78ceeddff047aebeccf298042a48229a0375afabc4aeb00207ba2",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "document-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "e119e8a8533015f5",
+        "claim_sha256": "e119e8a8533015f504de5d561aa17017e314b89146e51c835a72f1cc29bf35d8",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "file-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "45a25750e31d1913",
+        "claim_sha256": "45a25750e31d1913230ca6dc433a3deaac3a7714fc7eb2e079c0ffd2ab583e41",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "boundary-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      },
+      {
+        "claim_id": "1e163ee2671ed272",
+        "claim_sha256": "1e163ee2671ed272e9c73c8a6a1e7da1a7bc0f483412477d7f78b7df29a6e437",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "margin": 1.0,
+        "method": "test-output-review",
+        "grounds": "deviation 0 within tolerance 0.5",
+        "disposition": "fenced"
+      }
+    ],
+    "measurements": [
+      {
+        "claim_id": "8a98e56b97372ac4",
+        "claim_sha256": "8a98e56b97372ac4351a2341fb4926df3a490d54fe016ef6595b2191ff0e3776",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "command-output-review",
+        "measured_at": 1782982797.1085782,
+        "evidence": [
+          "npm.cmd run catalog: tools 70 total, 70 available",
+          "npm.cmd run manifest: tools 70 expected",
+          "node demo/compatibility-doctor.mjs --summary: verdict MATCH",
+          "node demo/operator-doctor.mjs --summary: verdict MATCH"
+        ]
+      },
+      {
+        "claim_id": "0bad18a2e6e78cee",
+        "claim_sha256": "0bad18a2e6e78ceeddff047aebeccf298042a48229a0375afabc4aeb00207ba2",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "document-review",
+        "measured_at": 1782982797.1085782,
+        "evidence": [
+          "docs/TOOLING-SHAPE-ASSESSMENT-2026-07-02.md exists",
+          "assessment has Current Command Evidence table",
+          "assessment labels Learn/buildc/buildlang as not on PATH",
+          "assessment labels Emet PATH wrapper as broken"
+        ]
+      },
+      {
+        "claim_id": "e119e8a8533015f5",
+        "claim_sha256": "e119e8a8533015f504de5d561aa17017e314b89146e51c835a72f1cc29bf35d8",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "file-review",
+        "measured_at": 1782982797.1085782,
+        "evidence": [
+          "docs/outreach/DEMO-PACKAGES-2026-07-02.md exists",
+          "docs/outreach/OUTREACH-PACKAGES-2026-07-02.md exists",
+          "docs/outreach/VISIBILITY-CONTENT-QUEUE-2026-07-02.md exists",
+          "docs/outreach/PARALLEL-CODEX-HANDOFF-2026-07-02.md exists"
+        ]
+      },
+      {
+        "claim_id": "45a25750e31d1913",
+        "claim_sha256": "45a25750e31d1913230ca6dc433a3deaac3a7714fc7eb2e079c0ffd2ab583e41",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "boundary-review",
+        "measured_at": 1782982797.1085782,
+        "evidence": [
+          "learn is repo-available but not on PATH in the assessment and handoff",
+          "buildc/buildlang are repo-available but not on PATH in the assessment and handoff",
+          "emet wrapper failure is recorded in the assessment and handoff",
+          "Build Universe alpha and whole-ecosystem non-compilation boundary is recorded"
+        ]
+      },
+      {
+        "claim_id": "1e163ee2671ed272",
+        "claim_sha256": "1e163ee2671ed272e9c73c8a6a1e7da1a7bc0f483412477d7f78b7df29a6e437",
+        "deviation": 0.0,
+        "tolerance": 0.5,
+        "method": "test-output-review",
+        "measured_at": 1782982797.1085782,
+        "evidence": [
+          "node --test demo/telos-mcp.test.mjs demo/mcp-server-launch.test.mjs demo/operator-scripts.test.mjs demo/rendering-research.test.mjs demo/project-current-state-docs.test.mjs: 5 pass, 0 fail"
+        ]
+      }
+    ],
+    "seal": "e5fceb834a4a694e084bda1c09d045e9230b12549864a41bf58a50494b952214"
+  },
+  "verdicts": [
+    {
+      "claim_id": "8a98e56b97372ac4",
+      "claim_sha256": "8a98e56b97372ac4351a2341fb4926df3a490d54fe016ef6595b2191ff0e3776",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "command-output-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "0bad18a2e6e78cee",
+      "claim_sha256": "0bad18a2e6e78ceeddff047aebeccf298042a48229a0375afabc4aeb00207ba2",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "document-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "e119e8a8533015f5",
+      "claim_sha256": "e119e8a8533015f504de5d561aa17017e314b89146e51c835a72f1cc29bf35d8",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "file-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "45a25750e31d1913",
+      "claim_sha256": "45a25750e31d1913230ca6dc433a3deaac3a7714fc7eb2e079c0ffd2ab583e41",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "boundary-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    },
+    {
+      "claim_id": "1e163ee2671ed272",
+      "claim_sha256": "1e163ee2671ed272e9c73c8a6a1e7da1a7bc0f483412477d7f78b7df29a6e437",
+      "status": "MATCH",
+      "disposition": "fenced",
+      "deviation": 0.0,
+      "tolerance": 0.5,
+      "margin": 1.0,
+      "method": "test-output-review",
+      "grounds": "deviation 0 within tolerance 0.5"
+    }
+  ],
+  "measurement_warnings": [],
+  "checks": {
+    "seals_ok": true,
+    "thesis_ok": true,
+    "verdicts_rederive": true
+  },
+  "report": "docs\\outreach\\receipts\\tooling-handoff-report-2026-07-02.md",
+  "record": "docs\\outreach\\receipts\\tooling-handoff-run-2026-07-02.json",
+  "bundle": null,
+  "spec": null,
+  "review": null,
+  "verifier": {
+    "mode": "cleanroom",
+    "inputs": [],
+    "excluded": [
+      "worker context",
+      "reasoning trace",
+      "intermediate steps"
+    ],
+    "checkability": "If success cannot be evaluated from the original spec and the artifact, the spec is not checkable yet."
+  }
+}

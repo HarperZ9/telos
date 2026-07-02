@@ -1,0 +1,101 @@
+{
+  "schema": "DogfoodToolReceipts/v1",
+  "pass": "0064",
+  "generated_on": "2026-07-01",
+  "status": "MATCH_AGENT_OBSERVABILITY_ADAPTER_MATRIX",
+  "index": {
+    "tool_version": "2.8.0",
+    "status": "MATCH",
+    "role": "structure-context"
+  },
+  "gather": {
+    "docs_packet": {
+      "path": "docs/research/dogfood/packets/074-agent-observability-action-receipt-adapter-matrix.md",
+      "sha256": "2cfb44ab8f21615243cd5d9d77934198b3915b62ccd4a383cc6ece4f436a6de6",
+      "seal": "c2e230b423dc68db6149179222b0f306ea539f7ff288fbe277394bfc51287c09",
+      "verified": true
+    }
+  },
+  "forum": {
+    "status": {
+      "entries": 17,
+      "checkpoint": "6c3f18bbb2062abc67161322883da81b5b3f16fa4108d57b5fd11950071d0f49"
+    },
+    "verify": {
+      "chain": true,
+      "deep": true
+    }
+  },
+  "crucible": {
+    "run_status": "MATCH",
+    "thesis_id": "34c751ce802ad08a",
+    "thesis_seal": "34c751ce802ad08a00625a5cba7f7b0e8f28c89b7b3a7b89f6e4dee5fb3f2b39",
+    "assessment_seal": "002dfed22d92866332b4e0d9f22f5f2b00707f048dda68be200e579928552be3",
+    "claims": 8,
+    "match": 8,
+    "drift": 0,
+    "unverifiable": 0,
+    "registry_stats": {
+      "theses": 52,
+      "claims": 434,
+      "unique_claims": 427,
+      "assessments": 53,
+      "latest_assessments": 52,
+      "invalid_latest_assessments": 0,
+      "match": 434,
+      "drift": 0,
+      "unverifiable": 0
+    }
+  },
+  "telos": {
+    "workflow_status": "MATCH",
+    "tool_version": "0.1.0",
+    "native": {
+      "index_repo_count": 1,
+      "index_dirty_count": 0,
+      "gather_receipts": 1,
+      "forum_decided": "project-telos",
+      "forum_needs_escalation": false,
+      "crucible_match": 1,
+      "crucible_drift": 0,
+      "crucible_unverifiable": 1,
+      "telos_demo_recheck": true
+    }
+  },
+  "shell": {
+    "commands": [
+      {
+        "command": "python docs\\research\\dogfood\\tools\\test_agent_observability_action_receipt_adapter_matrix.py",
+        "status": "MATCH"
+      },
+      {
+        "command": "python docs\\research\\dogfood\\tools\\probe_agent_observability_action_receipt_adapter_matrix.py",
+        "status": "MATCH"
+      },
+      {
+        "command": "python docs\\research\\dogfood\\tools\\validate_pass_0064_agent_observability_action_receipt_adapter_matrix.py",
+        "status": "MATCH"
+      },
+      {
+        "command": "crucible run docs\\research\\dogfood\\crucible\\pass-0064-thesis.json --measurements docs\\research\\dogfood\\crucible\\pass-0064-measurements.json --registry docs\\research\\dogfood\\crucible\\registry --report docs\\research\\dogfood\\crucible\\pass-0064-report.md --out docs\\research\\dogfood\\crucible\\pass-0064-run.json --json",
+        "status": "MATCH"
+      }
+    ],
+    "line_counts": {
+      "compose_agent_observability_action_receipt_adapter_matrix.py": 162,
+      "probe_agent_observability_action_receipt_adapter_matrix.py": 161,
+      "test_agent_observability_action_receipt_adapter_matrix.py": 70,
+      "validate_pass_0064_agent_observability_action_receipt_adapter_matrix.py": 94
+    },
+    "sha256": {
+      "compose_agent_observability_action_receipt_adapter_matrix.py": "ddbf67d170229c3096b6555bd822a3809e91d99cfbef0703fedd79eb6d258ffe",
+      "probe_agent_observability_action_receipt_adapter_matrix.py": "c4dda5a62baa522c77fc2d4a272de772bce2c71fd3d80e9db89b9eb6216847c6",
+      "test_agent_observability_action_receipt_adapter_matrix.py": "ff67dfc9c2dd51aa8b4a6f5915d22bddce486ed1db4f2ad10766d5d62aa1ab6c",
+      "validate_pass_0064_agent_observability_action_receipt_adapter_matrix.py": "952a1944a36c7baa07c6a97bb398ab5a12813684f974b2eba2613a572dc5dd0d",
+      "agent-observability-action-receipt-adapter-matrix-pass-0064.json": "853f89786d6143391f213b0e8faa6751fb98289ca87cf4a7ad4c3c1005d99b49",
+      "074-agent-observability-action-receipt-adapter-matrix.md": "2cfb44ab8f21615243cd5d9d77934198b3915b62ccd4a383cc6ece4f436a6de6",
+      "pass-0064-agent-observability-action-receipt-adapter-matrix-steelman.md": "9a5da21610b3701fa9c69020e7f4472f5899c98e33f140d2818416c9f82b15a5",
+      "pass-0064-run.json": "a4c5be4a2314625a032091c3572b1095a5e669fde3460019bf352e701f9edd7c"
+    }
+  }
+}

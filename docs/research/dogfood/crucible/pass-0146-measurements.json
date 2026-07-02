@@ -1,0 +1,55 @@
+{
+  "measurements": [
+    {
+      "claim": "Pass 0146 created an AdapterRetryPolicyReceipt/v1 artifact with status ADAPTER_RETRY_POLICY_MATCH and seal 8a20aae5a90e77621ecb7498d90665b17e53393b33109768e92eab17feaea4a5.",
+      "deviation": 0.0,
+      "evidence": [
+        "schema=AdapterRetryPolicyReceipt/v1",
+        "status=ADAPTER_RETRY_POLICY_MATCH",
+        "seal=8a20aae5a90e77621ecb7498d90665b17e53393b33109768e92eab17feaea4a5"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0146 records 11 source-policy captures across 6 source systems.",
+      "deviation": 0.0,
+      "evidence": [
+        "source_evidence=11",
+        "source_systems=['Crossref', 'HTTP', 'Index', 'OAI-PMH', 'OpenAlex', 'ROR']"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0146 records 12 policy rules and 10 scenario fixtures.",
+      "deviation": 0.0,
+      "evidence": [
+        "rules=12",
+        "scenarios=10"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0146 rejects 10 negative fixtures and carries 3 prior warnings forward.",
+      "deviation": 0.0,
+      "evidence": [
+        "negative_fixtures=10",
+        "prior_warnings=3"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    },
+    {
+      "claim": "Pass 0146 promotes no theorem or natural law.",
+      "deviation": 0.0,
+      "evidence": [
+        "current_promoted_theorems=[]",
+        "current_promoted_natural_laws=[]"
+      ],
+      "method": "artifact-review",
+      "tolerance": 0.5
+    }
+  ]
+}

@@ -1,0 +1,118 @@
+Documentation Index
+Fetch the complete documentation index at: /llms.txt
+Use this file to discover all available pages before exploring further.
+Skip to main content
+Help us improve these docs. Take our quick survey.
+Weights & Biases Documentation home page
+English
+Search...
+⌘KAsk Assistant
+Log in
+Sign Up
+Sign Up
+Search...
+Navigation
+Experiments
+Experiments overview
+Products
+Get Started
+Reference
+Release Notes
+Support
+W&B Models
+W&B Quickstart
+Get Started with W&B Models
+Guides
+Experiments
+Experiments overview
+Create an experiment
+Configure experiments
+Projects
+View experiments results
+What are runs?
+Log objects and media
+Track Jupyter notebooks
+Logging at scale and performance
+Reproduce experiments
+Import and export data
+Environment variables
+Sweeps
+Tables
+Artifacts
+Registry
+Reports
+Automations
+LLM Evaluation Jobs
+W&B App UI
+Integrations
+Integrations overview
+Add W&B to a Python library
+ML Frameworks and Libraries
+Cloud Platforms
+Other
+Reference
+Python SDK
+CLI
+Query Expression Language
+Reports and Workspaces API
+Support: Models
+On this page
+How it works
+Get started
+Best practices and tips
+Guides
+Experiments
+Experiments overview
+Install W&B MCP
+Track machine learning experiments with W&B to log metrics, hyperparameters, system metrics, and model artifacts.
+Install W&B MCP
+Try in ColabTry in W&B
+Track machine learning experiments with a few lines of code. You can then review the results in an interactive dashboard or export your data to Python for programmatic access using our Public API.
+Utilize W&B Integrations if you use popular frameworks such as Keras. See W&B Integrations for a full list of integrations and information on how to add W&B to your code.
+The image above shows an example dashboard where you can view and compare metrics across multiple runs.
+​
+How it works
+Track a machine learning experiment with a few lines of code:
+Create a W&B Run.
+Store a dictionary of hyperparameters, such as learning rate or model type, into your configuration (wandb.Run.config).
+Log metrics (wandb.Run.log()) over time in a training loop, such as accuracy and loss.
+Save outputs of a run, like the model weights or a table of predictions.
+The following code demonstrates a common W&B experiment tracking workflow:
+# Start a run.
+#
+# When this block exits, it waits for logged data to finish uploading.
+# If an exception is raised, the run is marked failed.
+with wandb.init(entity="", project="my-project-name") as run:
+# Save mode inputs and hyperparameters.
+run.config.learning_rate = 0.01
+# Run your experiment code.
+for epoch in range(num_epochs):
+# Do some training...
+# Log metrics over time to visualize model performance.
+run.log({"loss": loss})
+# Upload model outputs as artifacts.
+run.log_artifact(model)
+​
+Get started
+Depending on your use case, explore the following resources to get started with W&B Experiments:
+Read the W&B Quickstart for a step-by-step outline of the W&B Python SDK commands you could use to create, track, and use a dataset artifact.
+Explore this chapter to learn how to:
+Create an experiment
+Configure experiments
+Log data from experiments
+View results from experiments
+Explore the W&B Python Library within the W&B API Reference Guide.
+​
+Best practices and tips
+For best practices and tips for experiments and logging, see Best Practices: Experiments and Logging.
+Was this page helpful?
+YesNo
+Suggest editsRaise issue
+Get Started with W&B Models
+Previous
+Create an experiment
+Next
+⌘I
+discordgithublinkedinxyoutube
+Assistant
+Responses are generated using AI and may contain mistakes.

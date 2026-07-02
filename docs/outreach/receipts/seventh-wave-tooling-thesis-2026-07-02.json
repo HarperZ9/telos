@@ -1,0 +1,26 @@
+{
+  "title": "Project Telos Seventh-Wave Issue Detail And Reproduction Lead Claims",
+  "disposition": "fenced",
+  "claims": [
+    {
+      "text": "The seventh-wave issue-detail capture for pandas-dev/pandas#63458 succeeded with status MATCH.",
+      "falsification": "The capture file is missing, has the wrong schema, or records a non-MATCH status."
+    },
+    {
+      "text": "The seventh-wave issue summary records issue 63458 as OPEN with 11 comments, 4 code fences, body length 2963, and has_reproduction_lead true.",
+      "falsification": "The summary file is missing or any of those recorded fields differ."
+    },
+    {
+      "text": "The OSS showcase readiness gate now blocks a reproduction command whose status is not-run as missing failing reproduction evidence.",
+      "falsification": "The showcase test does not cover status not-run, or the generated reproduction-lead packet is PR-ready."
+    },
+    {
+      "text": "The seventh-wave reproduction-lead packet is blocked with pr_ready false, operator_next_action revise, verdict UNVERIFIABLE, and missing-evidence blockers.",
+      "falsification": "The generated packet is PR-ready, chooses open-pr, carries MATCH, or omits blockers for missing failing reproduction evidence, missing passing tests, non-MATCH verifier verdict, or missing patch summary."
+    },
+    {
+      "text": "The seventh-wave demo and content queue distinguish issue-detail capture from local reproduction, source inspection, tests, patches, and PR readiness.",
+      "falsification": "The docs claim local reproduction, source inspection, tests, patch, or PR readiness from issue-detail capture alone."
+    }
+  ]
+}

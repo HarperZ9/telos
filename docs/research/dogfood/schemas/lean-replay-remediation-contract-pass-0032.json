@@ -1,0 +1,206 @@
+{
+  "action_receipt_proposal": {
+    "action_id": "act_dogfood_0032_lean_replay_remediation",
+    "authority_class": "temp_clone_and_reversible_shim_probe",
+    "event_id": "evt_dogfood_0032_lean_replay_remediation",
+    "event_type": "lean_replay_remediation_contract_created",
+    "external_write_performed": false,
+    "input_digests": [
+      "sha256:e10e07a409bf9a0cde7dcf8aae823b176b44a9b1610fcf133dc228b94219d3f1",
+      "sha256:27da59a624c60468ebebcd3c19580933f66d82df3a5e289242b7b7351cef02f3"
+    ],
+    "input_refs": [
+      "artifact:schemas/lean-replay-environment-contract-pass-0031.json",
+      "artifact:fixtures/lean-replay-remediation-contract-pass-0032.json"
+    ],
+    "output_ref": "artifact:schemas/lean-replay-remediation-contract-pass-0032.json",
+    "replay_promotion_allowed": false,
+    "schema": "ActionReceiptLeanReplayRemediation/v1",
+    "temp_write_performed": true,
+    "toolchain_install_performed": false,
+    "verification": {
+      "ref": "validator:pass-0032-lean-replay-remediation",
+      "verdict": "MATCH"
+    }
+  },
+  "current_promoted_natural_laws": [],
+  "generated_on": "2026-07-01",
+  "lf_clone_probe": {
+    "checkout_policy": "core.autocrlf=false",
+    "command": "git -c core.autocrlf=false clone --depth 1 https://github.com/Pengbinghui/pipeline-math.git temp:pipeline-math-pass0032-lf",
+    "eol_probe": {
+      "Prob4b/Defs.lean": "i/lf w/lf",
+      "Prob4b/Theorems.lean": "i/lf w/lf",
+      "scripts/frozen.sha256": "i/lf w/lf"
+    },
+    "repo_commit": "69d7df765a8f377a5e0628c6d36c088bce7642c9",
+    "status": "MATCH"
+  },
+  "negative_fixture_count": 10,
+  "negative_fixtures": [
+    {
+      "expected_validator_status": "REJECT",
+      "failure_mode": "The packet ignores that LF checkout is required to pass frozen SHA pin checks on this workstation.",
+      "fixture_id": "negative-lf-clone-not-required"
+    },
+    {
+      "expected_validator_status": "REJECT",
+      "failure_mode": "The packet treats the temp python3 shim as a system Python install.",
+      "fixture_id": "negative-python3-shim-treated-as-system-install"
+    },
+    {
+      "expected_validator_status": "REJECT",
+      "failure_mode": "The packet claims banned-keyword check passed without resolving python3 in Git Bash.",
+      "fixture_id": "negative-banned-keywords-promoted-without-shim"
+    },
+    {
+      "expected_validator_status": "REJECT",
+      "failure_mode": "The packet claims lake build success even though lake is missing.",
+      "fixture_id": "negative-lake-build-promoted-without-lake"
+    },
+    {
+      "expected_validator_status": "REJECT",
+      "failure_mode": "The packet promotes theorem replay despite Lean never being reached.",
+      "fixture_id": "negative-lean-replay-promoted"
+    },
+    {
+      "expected_validator_status": "REJECT",
+      "failure_mode": "The remediation packet is not linked to pass 0031.",
+      "fixture_id": "negative-source-environment-link-missing"
+    },
+    {
+      "expected_validator_status": "REJECT",
+      "failure_mode": "The packet lacks official Lean/Git source basis for the remediation plan.",
+      "fixture_id": "negative-official-source-basis-missing"
+    },
+    {
+      "expected_validator_status": "REJECT",
+      "failure_mode": "The packet hides an external write or toolchain install.",
+      "fixture_id": "negative-external-write-hidden"
+    },
+    {
+      "expected_validator_status": "REJECT",
+      "failure_mode": "The packet identifies a blocker other than lake_missing after the temp shim run.",
+      "fixture_id": "negative-next-blocker-misidentified"
+    },
+    {
+      "expected_validator_status": "REJECT",
+      "failure_mode": "The packet promotes remediation progress into a solved theorem or natural law.",
+      "fixture_id": "negative-natural-law-promoted"
+    }
+  ],
+  "next_actions": [
+    "Provision elan or a lake/lean toolchain in a reversible temp environment.",
+    "Keep LF checkout policy or blob-byte frozen-pin validation.",
+    "Keep the python3 shim or patch verifier invocation in a temp copy only.",
+    "Rerun verify.sh and promote only if lake build, axiom checks, and statement gates complete."
+  ],
+  "non_promotion_statement": "Pass 0032 resolves line-ending and python3 Git Bash gates in temporary probes only. It does not install elan, does not run lake successfully, does not reach Lean theorem replay, and does not promote any natural law.",
+  "pass": "0032",
+  "public_source_receipts": [
+    {
+      "claim": "Elan manages Lean installations and places lean and lake binaries on PATH, selecting the version from lean-toolchain when needed.",
+      "locator": "web:turn0view0:L285-L287",
+      "source": "elan README",
+      "url": "https://github.com/leanprover/elan",
+      "verification_status": "verified"
+    },
+    {
+      "claim": "Elan installs and runs Lean toolchains; projects can use lean-toolchain files to select a Lean version.",
+      "locator": "web:turn1view0:L84-L88 and web:turn1view1:L149-L162",
+      "source": "Lean reference manual",
+      "url": "https://lean-lang.org/doc/reference/latest/Build-Tools-and-Distribution/Managing-Toolchains-with-Elan/",
+      "verification_status": "verified"
+    },
+    {
+      "claim": "core.autocrlf=true converts working-directory text files to CRLF; core.eol is ignored when core.autocrlf is true or input.",
+      "locator": "web:turn1view2:L1644-L1658",
+      "source": "Git config manual",
+      "url": "https://git-scm.com/docs/git-config",
+      "verification_status": "verified"
+    }
+  ],
+  "python3_shim_probe": {
+    "external_write_performed": false,
+    "python3_resolution": "temp:telos-pass0032-shim/python3",
+    "python_version": "Python 3.12.10",
+    "shim_contents_hash": "191c4de6997d024bf5e53e99274285654c6ac05c66706054b5f8be29ba68476d",
+    "shim_kind": "reversible_temp_path_wrapper",
+    "shim_ref": "temp:telos-pass0032-shim/python3",
+    "status": "MATCH",
+    "temp_write_performed": true
+  },
+  "remediation_decision": {
+    "line_ending_gate_status": "RESOLVED_IN_TEMP_LF_CLONE",
+    "next_blocker": "lake_missing",
+    "official_source_basis": [
+      "elan README",
+      "Lean reference manual",
+      "Git config manual"
+    ],
+    "python3_gate_status": "RESOLVED_BY_REVERSIBLE_TEMP_SHIM",
+    "replay_success_promoted": false,
+    "selected_next_strategy": "provision_elan_or_lake_lean_in_reversible_environment",
+    "toolchain_install_performed": false
+  },
+  "remediation_fixture": {
+    "path": "fixtures/lean-replay-remediation-contract-pass-0032.json",
+    "schema": "LeanReplayRemediationContractFixture/v1",
+    "seal": "5bca5d4aa6b3c1b735da0c2e7a10bd1568194723e88781fa4f39955b5dafc08c",
+    "sha256": "27da59a624c60468ebebcd3c19580933f66d82df3a5e289242b7b7351cef02f3"
+  },
+  "schema": "LeanReplayRemediationContract/v1",
+  "seal": "64e1d89130480d56bb5a54a19ee07e182537f73eca5ca12b29782f4689239b05",
+  "source_environment_binding": {
+    "path": "schemas/lean-replay-environment-contract-pass-0031.json",
+    "schema": "LeanReplayEnvironmentContract/v1",
+    "seal": "4532f819ea8d8f7760323b2920d131b4909bedc05960ad3da553424e1f38a0bc",
+    "sha256": "e10e07a409bf9a0cde7dcf8aae823b176b44a9b1610fcf133dc228b94219d3f1"
+  },
+  "status": "LEAN_REPLAY_REMEDIATION_MATCH_WITH_LAKE_GAP",
+  "verifier_measurements": {
+    "attempt_count": 2,
+    "external_write_performed": false,
+    "first_attempt_passed_check_count": 1,
+    "lake_build_status": "UNVERIFIABLE_TOOL_UNAVAILABLE",
+    "lean_replay_status": "UNVERIFIABLE_TOOL_UNAVAILABLE",
+    "lf_clone_eol_match_count": 3,
+    "line_ending_gate_status": "RESOLVED_IN_TEMP_LF_CLONE",
+    "measurement_status": "MATCH",
+    "next_blocker": "lake_missing",
+    "official_source_count": 3,
+    "python3_gate_status": "RESOLVED_BY_REVERSIBLE_TEMP_SHIM",
+    "python3_shim_status": "MATCH",
+    "replay_success_promoted": false,
+    "schema": "LeanReplayRemediationMeasurements/v1",
+    "second_attempt_passed_check_count": 2,
+    "toolchain_install_performed": false
+  },
+  "verify_attempts": [
+    {
+      "attempt_id": "lf_no_python3_shim",
+      "command": "absolute Git Bash scripts/verify.sh --no-log --all",
+      "exit_code": 1,
+      "failed_check": "Banned keywords",
+      "failure_class": "python3_missing_in_git_bash",
+      "lake_or_lean_reached": false,
+      "passed_checks": [
+        "Frozen SHA pins"
+      ],
+      "status": "DRIFT"
+    },
+    {
+      "attempt_id": "lf_with_python3_shim",
+      "command": "absolute Git Bash with temp python3 shim scripts/verify.sh --no-log --all",
+      "exit_code": 1,
+      "failed_check": "lake build",
+      "failure_class": "lake_missing",
+      "lake_or_lean_reached": false,
+      "passed_checks": [
+        "Frozen SHA pins",
+        "Banned keywords"
+      ],
+      "status": "DRIFT"
+    }
+  ]
+}

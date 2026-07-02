@@ -1,0 +1,119 @@
+{
+  "generated_on": "2026-07-01",
+  "non_promotion_statement": "Tool receipts prove packet readback, absolute Git Bash availability, verifier-script first failure, missing replay runtime, Telos MCP availability, Forum ledger availability, and Crucible availability only. They do not prove Lean replay, Lake build success, theorem correctness, environment installation, or any natural law.",
+  "pass": "0031",
+  "receipts": [
+    {
+      "command": "status",
+      "role": "structure-context",
+      "status": "MATCH",
+      "tool": "index",
+      "tool_version": "2.8.0"
+    },
+    {
+      "command": "status",
+      "role": "perception-intake",
+      "status": "MATCH",
+      "tool": "gather",
+      "tool_version": "1.5.0"
+    },
+    {
+      "artifact": "packets/041-lean-replay-environment-contract.md",
+      "chars": 5095,
+      "command": "docs",
+      "seal": "029c28ce59a153e2c35214225d931892987c9be1aecee43aea689c29d9309d40",
+      "sha256": "8f1c9afaf01579e601db4a4d396bce96f1a562167dff85da630f90209539cb88",
+      "status": "MATCH",
+      "tool": "gather",
+      "verified": true
+    },
+    {
+      "bash_on_path": false,
+      "command": "absolute Git Bash version",
+      "status": "MATCH",
+      "tool": "shell",
+      "version": "GNU bash, version 5.2.37(1)-release (x86_64-pc-msys)"
+    },
+    {
+      "command": "scripts/verify.sh --no-log --all through absolute Git Bash",
+      "exit_code": 1,
+      "failure_class": "crlf_pin_file_path_drift",
+      "first_failed_check": "Frozen SHA pins",
+      "lean_or_lake_reached": false,
+      "status": "DRIFT",
+      "tool": "shell"
+    },
+    {
+      "command": "runtime availability probe",
+      "missing": [
+        "docker",
+        "wsl",
+        "podman",
+        "winget",
+        "elan",
+        "lake",
+        "lean"
+      ],
+      "present": [
+        "git",
+        "python",
+        "absolute_git_bash"
+      ],
+      "status": "UNVERIFIABLE_ENVIRONMENT_NOT_READY",
+      "tool": "shell"
+    },
+    {
+      "command": "telos_status",
+      "status": "MATCH",
+      "tool": "mcp__telos.telos_status",
+      "tool_version": "0.1.0"
+    },
+    {
+      "command": "telos_action_receipt",
+      "digest_references_required": true,
+      "raw_parameters_required": false,
+      "receipt_is_trace_span": false,
+      "schema": "project-telos.action-receipt/v1",
+      "status": "MATCH",
+      "tool": "mcp__telos.telos_action_receipt"
+    },
+    {
+      "command": "telos_loop_ledger",
+      "fresh_context_reads_ledger_first": true,
+      "ledger_durable": true,
+      "schema": "project-telos.loop-ledger/v1",
+      "status": "MATCH",
+      "tool": "mcp__telos.telos_loop_ledger"
+    },
+    {
+      "command": "status",
+      "role": "orchestration-routing",
+      "status": "MATCH",
+      "tool": "forum",
+      "tool_version": "1.12.0"
+    },
+    {
+      "chain": true,
+      "command": "ledger verify",
+      "deep": true,
+      "status": "MATCH",
+      "tool": "forum"
+    },
+    {
+      "command": "submit",
+      "error": "submit needs a model executor. Forum is model-agnostic: pass --cmd \"<model cli>\" (any command, local models need no account), --chat-url <openai-compatible url> (e.g. a local Ollama server), or --api (Anthropic).",
+      "request": "Dogfood pass 0031 adversarial review for Lean replay environment contract",
+      "status": "UNVERIFIABLE",
+      "tool": "forum"
+    },
+    {
+      "command": "status",
+      "role": "verification-pressure",
+      "status": "MATCH",
+      "tool": "crucible",
+      "tool_version": "1.1.0"
+    }
+  ],
+  "schema": "DogfoodToolReceiptSet/v1",
+  "status": "MATCH_WITH_FORUM_SUBMIT_GAP_AND_REPLAY_ENVIRONMENT_GAP"
+}

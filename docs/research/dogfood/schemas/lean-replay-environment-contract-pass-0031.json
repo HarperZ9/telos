@@ -1,0 +1,165 @@
+{
+  "action_receipt_proposal": {
+    "action_id": "act_dogfood_0031_lean_environment_contract",
+    "authority_class": "read_only_environment_probe",
+    "event_id": "evt_dogfood_0031_lean_environment_contract",
+    "event_type": "lean_replay_environment_contract_created",
+    "external_write_performed": false,
+    "input_digests": [
+      "sha256:da9a0d68491325bd636f876dfca60ab0540be2a9c247931bf22064a5db13a557",
+      "sha256:9c8a6ed07113c0880126e3ee5d19b1314a92b9d767c57d896df36e0222a62082"
+    ],
+    "input_refs": [
+      "artifact:schemas/theorem-replay-preflight-pass-0030.json",
+      "artifact:fixtures/lean-replay-environment-contract-pass-0031.json"
+    ],
+    "output_ref": "artifact:schemas/lean-replay-environment-contract-pass-0031.json",
+    "replay_promotion_allowed": false,
+    "schema": "ActionReceiptLeanReplayEnvironmentContract/v1",
+    "toolchain_install_performed": false,
+    "verification": {
+      "ref": "validator:pass-0031-lean-replay-environment-contract",
+      "verdict": "MATCH"
+    }
+  },
+  "current_promoted_natural_laws": [],
+  "environment_fixture": {
+    "path": "fixtures/lean-replay-environment-contract-pass-0031.json",
+    "schema": "LeanReplayEnvironmentContractFixture/v1",
+    "seal": "c80c6f03f37ec172e1354293f709d399aa8d80a9c69e0d9e9cc6e697f81be555",
+    "sha256": "9c8a6ed07113c0880126e3ee5d19b1314a92b9d767c57d896df36e0222a62082"
+  },
+  "environment_strategy": {
+    "blocked_until": [
+      "line_ending_normalization_decided",
+      "elan_or_container_available",
+      "lake_and_lean_available"
+    ],
+    "external_write_performed": false,
+    "recommended_next_strategy": "Clone with LF-preserving settings or normalize verifier inputs, then provision elan and Lean v4.31.0 in an isolated temp or container environment.",
+    "selected_strategy": "non_mutating_plan",
+    "toolchain_install_performed": false
+  },
+  "generated_on": "2026-07-01",
+  "negative_fixture_count": 10,
+  "negative_fixtures": [
+    {
+      "expected_validator_status": "REJECT",
+      "failure_mode": "The packet treats bash as available on PATH instead of absolute Git Bash only.",
+      "fixture_id": "negative-bash-path-assumed-from-path"
+    },
+    {
+      "expected_validator_status": "REJECT",
+      "failure_mode": "The packet ignores the frozen.sha256 CRLF path failure.",
+      "fixture_id": "negative-crlf-failure-ignored"
+    },
+    {
+      "expected_validator_status": "REJECT",
+      "failure_mode": "The packet promotes theorem replay after verify.sh exits before Lean/Lake.",
+      "fixture_id": "negative-lean-replay-promoted-after-script-failure"
+    },
+    {
+      "expected_validator_status": "REJECT",
+      "failure_mode": "The packet chooses a container replay despite Docker and WSL being unavailable.",
+      "fixture_id": "negative-container-available-without-docker-or-wsl"
+    },
+    {
+      "expected_validator_status": "REJECT",
+      "failure_mode": "The packet claims a toolchain install occurred.",
+      "fixture_id": "negative-toolchain-install-claimed"
+    },
+    {
+      "expected_validator_status": "REJECT",
+      "failure_mode": "The environment contract is not linked to pass 0030.",
+      "fixture_id": "negative-source-preflight-link-missing"
+    },
+    {
+      "expected_validator_status": "REJECT",
+      "failure_mode": "The packet claims axiom checks ran.",
+      "fixture_id": "negative-axiom-check-promoted"
+    },
+    {
+      "expected_validator_status": "REJECT",
+      "failure_mode": "The packet claims Lake build success.",
+      "fixture_id": "negative-lake-build-promoted"
+    },
+    {
+      "expected_validator_status": "REJECT",
+      "failure_mode": "The packet hides an external write or environment mutation.",
+      "fixture_id": "negative-external-write-hidden"
+    },
+    {
+      "expected_validator_status": "REJECT",
+      "failure_mode": "The packet promotes an environment contract into a solved theorem or natural law.",
+      "fixture_id": "negative-natural-law-promoted"
+    }
+  ],
+  "next_actions": [
+    "Choose LF-preserving checkout or blob-byte hash policy.",
+    "Provision elan and Lean v4.31.0 in a reversible temp path or container.",
+    "Rerun scripts/verify.sh --no-log --all with logs captured as receipts.",
+    "Promote only after Lake build, axiom checks, and statement gates complete."
+  ],
+  "non_promotion_statement": "Pass 0031 verifies environment readiness and a verifier-script failure mode only. It does not install Lean, does not run Lake, does not prove any theorem, and does not promote any natural law.",
+  "pass": "0031",
+  "replay_policy": {
+    "axiom_check_status": "UNVERIFIABLE_ENVIRONMENT_NOT_READY",
+    "lake_build_status": "UNVERIFIABLE_ENVIRONMENT_NOT_READY",
+    "replay_promotion_allowed": false,
+    "statement_gate_status": "UNVERIFIABLE_ENVIRONMENT_NOT_READY",
+    "theorem_replay_status": "UNVERIFIABLE_ENVIRONMENT_NOT_READY"
+  },
+  "runner_probe": {
+    "absolute_bash_invocation_status": "MATCH",
+    "bash_on_path": false,
+    "bash_version": "GNU bash, version 5.2.37(1)-release (x86_64-pc-msys)",
+    "git_bash_absolute_path_observed": true,
+    "git_bash_path_ref": "program-files-git-bash"
+  },
+  "schema": "LeanReplayEnvironmentContract/v1",
+  "seal": "4532f819ea8d8f7760323b2920d131b4909bedc05960ad3da553424e1f38a0bc",
+  "source_preflight_binding": {
+    "path": "schemas/theorem-replay-preflight-pass-0030.json",
+    "schema": "TheoremReplayPreflightPacket/v1",
+    "seal": "fb2428b6a7d960e44fe44768e1864d6fc524e99b9461b7fc64d08012f6760180",
+    "sha256": "da9a0d68491325bd636f876dfca60ab0540be2a9c247931bf22064a5db13a557"
+  },
+  "status": "LEAN_REPLAY_ENVIRONMENT_CONTRACT_MATCH_WITH_REPLAY_GAP",
+  "toolchain_availability": {
+    "docker": "UNAVAILABLE",
+    "elan": "UNAVAILABLE",
+    "git": "MATCH",
+    "git_bash_absolute": "MATCH",
+    "lake": "UNAVAILABLE",
+    "lean": "UNAVAILABLE",
+    "podman": "UNAVAILABLE",
+    "python": "MATCH",
+    "winget": "UNAVAILABLE",
+    "wsl": "UNAVAILABLE_NOT_INSTALLED"
+  },
+  "verifier_measurements": {
+    "absolute_bash_invocation_status": "MATCH",
+    "bash_on_path": false,
+    "crlf_pin_file_path_drift_detected": true,
+    "external_write_performed": false,
+    "lean_or_lake_reached": false,
+    "measurement_status": "MATCH",
+    "missing_runtime_count": 6,
+    "replay_success_promoted": false,
+    "schema": "LeanReplayEnvironmentContractMeasurements/v1",
+    "theorem_replay_status": "UNVERIFIABLE_ENVIRONMENT_NOT_READY",
+    "toolchain_install_performed": false,
+    "verify_script_exit_code": 1,
+    "verify_script_first_failed_check": "Frozen SHA pins"
+  },
+  "verify_script_attempt": {
+    "command": "program-files-git-bash scripts/verify.sh --no-log --all",
+    "exit_code": 1,
+    "failure_class": "crlf_pin_file_path_drift",
+    "failure_summary": "scripts/frozen.sha256 is read with CRLF path text, so sha256sum sees Prob4b/Defs.lean with a trailing carriage return.",
+    "first_failed_check": "Frozen SHA pins",
+    "lean_or_lake_reached": false,
+    "raw_log_included": false,
+    "status": "DRIFT"
+  }
+}

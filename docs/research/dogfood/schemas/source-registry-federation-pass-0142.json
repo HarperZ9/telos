@@ -1,0 +1,682 @@
+{
+  "adapter_requirements": [
+    "source_system",
+    "source_url",
+    "protocol",
+    "record_identifier",
+    "record_version",
+    "organization_identifier",
+    "license_or_terms_ref",
+    "access_route",
+    "body_or_metadata_hash",
+    "freshness_time",
+    "claim_extraction_state",
+    "domain_units_or_schema",
+    "negative_controls",
+    "verifier",
+    "promotion_boundary"
+  ],
+  "boundary": "This pass maps scalable discovery substrate. It does not claim complete world coverage, source correctness, publication validity, theorem proof, experimental truth, or market uniqueness.",
+  "cross_industry_underpinnings": [
+    "Every field needs source identity, organization identity, version identity, license state, access route, and freshness receipts.",
+    "Every scientific claim must separate source existence, claim text, measurement, computation, proof, replication, and market relevance.",
+    "Preprint, dataset, registry, and repository records are leads until paired with verification, replay, or independent measurement.",
+    "A universal research substrate needs adapters for metadata graphs, repository protocols, full text, domain databases, executable kernels, and review verdicts.",
+    "Hard-problem work should start with falsifiable claim cards and negative controls before synthesis or theorem promotion."
+  ],
+  "current_promoted_natural_laws": [],
+  "current_promoted_theorems": [],
+  "gather_summary": {
+    "captured_sources": 30,
+    "families": 10,
+    "total_source_rows": 33,
+    "usable_captures": 27,
+    "warning_count": 6
+  },
+  "negative_fixtures": [
+    "Registry presence is not source correctness.",
+    "Repository count or breadth is not full domain coverage.",
+    "Preprint presence is not peer review or replication.",
+    "Metadata record is not full text or experimental data.",
+    "Dataset availability is not benchmark validity.",
+    "Institutional repository membership is not organization endorsement.",
+    "Open access route is not license clearance for every downstream use.",
+    "API documentation is not a stable adapter until endpoint behavior is probed.",
+    "Domain database record is not a law, theorem, or mechanism proof.",
+    "Cross-domain synthesis is not promoted without claim-level verification."
+  ],
+  "pass": "0142",
+  "registry_layers": [
+    {
+      "adapter": "RepositoryDirectoryAdapter",
+      "id": "repository_directories",
+      "purpose": "Find institutional, disciplinary, and data repositories before adapter work begins.",
+      "sources": [
+        "OpenDOAR",
+        "re3data",
+        "OpenAIRE data sources",
+        "BASE"
+      ]
+    },
+    {
+      "adapter": "OrganizationIdentityAdapter",
+      "id": "research_org_identity",
+      "purpose": "Connect university, lab, funder, hospital, and institute identities to outputs and repositories.",
+      "sources": [
+        "ROR"
+      ]
+    },
+    {
+      "adapter": "ScholarlyGraphAdapter",
+      "id": "scholarly_graphs",
+      "purpose": "Map works, authors, institutions, citations, funders, licenses, datasets, and repository links.",
+      "sources": [
+        "OpenAlex",
+        "Semantic Scholar",
+        "Crossref",
+        "DataCite",
+        "CORE"
+      ]
+    },
+    {
+      "adapter": "OpenAccessStateAdapter",
+      "id": "open_access_and_journals",
+      "purpose": "Classify open access state, journal metadata, license state, and legal full-text routes.",
+      "sources": [
+        "DOAJ",
+        "Unpaywall"
+      ]
+    },
+    {
+      "adapter": "PreprintIntakeAdapter",
+      "id": "preprint_press",
+      "purpose": "Capture fast-moving claims before peer review while fencing publication and replication state.",
+      "sources": [
+        "arXiv",
+        "bioRxiv",
+        "medRxiv",
+        "OSF Preprints"
+      ]
+    },
+    {
+      "adapter": "BiomedicalLiteratureAdapter",
+      "id": "biomedical_literature",
+      "purpose": "Route biomedical literature, grants, clinical links, full text, and annotations into claim cards.",
+      "sources": [
+        "Europe PMC",
+        "NCBI APIs",
+        "PubMed",
+        "PMC"
+      ]
+    },
+    {
+      "adapter": "RepositoryPlatformAdapter",
+      "id": "repository_platforms",
+      "purpose": "Normalize institutional repository platform protocols into one ingest and replay contract.",
+      "sources": [
+        "Dataverse",
+        "DSpace",
+        "InvenioRDM",
+        "OAI-PMH"
+      ]
+    },
+    {
+      "adapter": "DomainDataAdapter",
+      "id": "domain_data_systems",
+      "purpose": "Capture domain databases where claims depend on sequences, structures, materials, and measured properties.",
+      "sources": [
+        "UniProt",
+        "RCSB PDB",
+        "Materials Project"
+      ]
+    },
+    {
+      "adapter": "MLDatasetHubAdapter",
+      "id": "ml_dataset_hubs",
+      "purpose": "Track dataset rows, splits, tasks, model-eval context, contamination risk, and benchmark provenance.",
+      "sources": [
+        "OpenML",
+        "Hugging Face Dataset Viewer"
+      ]
+    },
+    {
+      "adapter": "ProtocolNegotiationAdapter",
+      "id": "interoperability_protocols",
+      "purpose": "Choose the cheapest reliable route for massive, repeatable, source-bounded harvesting.",
+      "sources": [
+        "OAI-PMH",
+        "REST",
+        "Graph APIs",
+        "bulk dumps"
+      ]
+    }
+  ],
+  "schema": "SourceRegistryFederationReceipt/v1",
+  "seal": "e683c908d5b0e4a3c6b2b6ffba3061198bb496ab9b7ce59a92a9a7c26db8f03b",
+  "source_quality_warnings": [
+    {
+      "chars": 0,
+      "evidence_status": "GATHER_VERIFIED_EMPTY_CAPTURE",
+      "family": "open_access",
+      "kind": "webpage",
+      "method": "http-get",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source": "web",
+      "system": "Unpaywall",
+      "url": "https://unpaywall.org/products/api"
+    },
+    {
+      "chars": 0,
+      "evidence_status": "GATHER_VERIFIED_EMPTY_CAPTURE",
+      "family": "preprint_press",
+      "kind": "webpage",
+      "method": "http-get",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source": "web",
+      "system": "OSF APIv2 Documentation",
+      "url": "https://developer.osf.io/"
+    },
+    {
+      "chars": 0,
+      "evidence_status": "GATHER_403_OR_EMPTY_SOURCE_LEAD",
+      "family": "registry_of_repositories",
+      "kind": "webpage",
+      "method": "http-get",
+      "sha256": null,
+      "source": "web",
+      "system": "BASE",
+      "url": "https://www.base-search.net/"
+    },
+    {
+      "chars": 0,
+      "evidence_status": "GATHER_TLS_FAILED_SOURCE_LEAD",
+      "family": "registry_of_repositories",
+      "kind": "webpage",
+      "method": "http-get",
+      "sha256": null,
+      "source": "web",
+      "system": "OpenDOAR",
+      "url": "https://opendoar.ac.uk/"
+    },
+    {
+      "chars": 0,
+      "evidence_status": "GATHER_TLS_FAILED_SOURCE_LEAD",
+      "family": "registry_of_repositories",
+      "kind": "webpage",
+      "method": "http-get",
+      "sha256": null,
+      "source": "web",
+      "system": "OpenDOAR developers",
+      "url": "https://opendoar.ac.uk/help/developers"
+    },
+    {
+      "chars": 0,
+      "evidence_status": "GATHER_VERIFIED_EMPTY_CAPTURE",
+      "family": "repository_platform",
+      "kind": "webpage",
+      "method": "http-get",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source": "web",
+      "system": "InvenioRDM API",
+      "url": "https://inveniosoftware.github.io/invenio-openapi/"
+    }
+  ],
+  "source_rows": [
+    {
+      "chars": 3088,
+      "evidence_status": "GATHER_VERIFIED",
+      "family": "biomedical",
+      "kind": "webpage",
+      "method": "http-get",
+      "sha256": "0c02105b91fe574f82829c97f1ffc1cde3021e2ca38d5148811e27d3cc0a94bc",
+      "source": "web",
+      "system": "APIs - Develop - NCBI",
+      "url": "https://www.ncbi.nlm.nih.gov/home/develop/api/"
+    },
+    {
+      "chars": 7669,
+      "evidence_status": "GATHER_VERIFIED",
+      "family": "biomedical",
+      "kind": "webpage",
+      "method": "http-get",
+      "sha256": "5f6580924fe59448d069ab98c9253f8c9a5fea6f27e6c319392032c2f1068075",
+      "source": "web",
+      "system": "Europe PMCEurope PMCRESTful Web Service - Developers - Europe PMC",
+      "url": "https://europepmc.org/RestfulWebService"
+    },
+    {
+      "chars": 20451,
+      "evidence_status": "GATHER_VERIFIED",
+      "family": "domain_database",
+      "kind": "webpage",
+      "method": "http-get",
+      "sha256": "3bc1b1b4c500a97d56721782dd80a6dfda646b292b5539b366b24436f602e23f",
+      "source": "web",
+      "system": "RCSB PDB Data API: Understanding and Using",
+      "url": "https://data.rcsb.org/"
+    },
+    {
+      "chars": 394,
+      "evidence_status": "GATHER_VERIFIED",
+      "family": "domain_database",
+      "kind": "webpage",
+      "method": "http-get",
+      "sha256": "8ff6e69ed6cc6ef247438bbf0f8e37b84ac90a3bd7ba88f06de9e4925baf2a06",
+      "source": "web",
+      "system": "UniProt",
+      "url": "https://www.uniprot.org/help/api"
+    },
+    {
+      "chars": 1342,
+      "evidence_status": "GATHER_VERIFIED",
+      "family": "domain_database",
+      "kind": "webpage",
+      "method": "http-get",
+      "sha256": "6a156725d8f56aff48465e73eacf7e72fd324678b55d4fa4d4f7bf1eb9664ac9",
+      "source": "web",
+      "system": "Using the API | Materials Project Documentation",
+      "url": "https://docs.materialsproject.org/downloading-data/using-the-api"
+    },
+    {
+      "chars": 14320,
+      "evidence_status": "GATHER_VERIFIED",
+      "family": "ml_dataset_hub",
+      "kind": "webpage",
+      "method": "http-get",
+      "sha256": "4f9daa3d8fde0fa5754e687e9468f9a5eff367fd36c19559b8ef6c892f990ecb",
+      "source": "web",
+      "system": "Quickstart \u00b7 Hugging Face",
+      "url": "https://huggingface.co/docs/dataset-viewer/quick_start"
+    },
+    {
+      "chars": 6688,
+      "evidence_status": "GATHER_VERIFIED",
+      "family": "ml_dataset_hub",
+      "kind": "webpage",
+      "method": "http-get",
+      "sha256": "6c26726f7fe5b7bae4655078eecf96c39696bb3a57efeea12e21eb5ee2bd2a0d",
+      "source": "web",
+      "system": "REST API - Open Machine Learning",
+      "url": "https://docs.openml.org/ecosystem/Rest/"
+    },
+    {
+      "chars": 13800,
+      "evidence_status": "GATHER_VERIFIED",
+      "family": "open_access",
+      "kind": "webpage",
+      "method": "http-get",
+      "sha256": "3b5afd10ca563d28f9ac55f980834f0ce45c9d92240ad7175a53998b83c8e3c9",
+      "source": "web",
+      "system": "API \u2013 DOAJ",
+      "url": "https://doaj.org/api/v2/docs"
+    },
+    {
+      "chars": 5092,
+      "evidence_status": "GATHER_VERIFIED",
+      "family": "open_access",
+      "kind": "webpage",
+      "method": "http-get",
+      "sha256": "13bb010eb903e48408a88757f09a342d2c2742ccec0c16f2eb46470c1d17facc",
+      "source": "web",
+      "system": "Directory of Open Access Journals \u2013 DOAJ",
+      "url": "https://doaj.org/"
+    },
+    {
+      "chars": 0,
+      "evidence_status": "GATHER_VERIFIED_EMPTY_CAPTURE",
+      "family": "open_access",
+      "kind": "webpage",
+      "method": "http-get",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source": "web",
+      "system": "Unpaywall",
+      "url": "https://unpaywall.org/products/api"
+    },
+    {
+      "chars": 4721,
+      "evidence_status": "GATHER_VERIFIED",
+      "family": "organization_identity",
+      "kind": "webpage",
+      "method": "http-get",
+      "sha256": "94cbc58f816e4a89d8ae1d12e9dc47568d52d7d0807393786f51af8a22d8e2b9",
+      "source": "web",
+      "system": "ROR basics",
+      "url": "https://ror.readme.io/docs/basics"
+    },
+    {
+      "chars": 3552,
+      "evidence_status": "GATHER_VERIFIED",
+      "family": "organization_identity",
+      "kind": "webpage",
+      "method": "http-get",
+      "sha256": "3992ca1129be2676e2b15f23f46bfb26a0c0cff709882604e05dd9fbffc20ac0",
+      "source": "web",
+      "system": "https://ror.org/",
+      "url": "https://ror.org/"
+    },
+    {
+      "chars": 0,
+      "evidence_status": "GATHER_VERIFIED_EMPTY_CAPTURE",
+      "family": "preprint_press",
+      "kind": "webpage",
+      "method": "http-get",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source": "web",
+      "system": "OSF APIv2 Documentation",
+      "url": "https://developer.osf.io/"
+    },
+    {
+      "chars": 5515,
+      "evidence_status": "GATHER_VERIFIED",
+      "family": "preprint_press",
+      "kind": "webpage",
+      "method": "http-get",
+      "sha256": "7519897cf139a0b07b8b930011f2ecbf6f93818608bc7d5017b6197f042db6fc",
+      "source": "web",
+      "system": "arXiv API Access - arXiv info | arXiv e-print repository",
+      "url": "https://info.arxiv.org/help/api/index.html"
+    },
+    {
+      "chars": 10528,
+      "evidence_status": "GATHER_VERIFIED",
+      "family": "preprint_press",
+      "kind": "webpage",
+      "method": "http-get",
+      "sha256": "ff140b7c972bec5391886046b8bc71af3275aa9f2c3b4552e93fbefde4d2cdc8",
+      "source": "web",
+      "system": "bioRxiv API",
+      "url": "https://api.biorxiv.org/"
+    },
+    {
+      "chars": 1777,
+      "evidence_status": "GATHER_VERIFIED",
+      "family": "preprint_press",
+      "kind": "webpage",
+      "method": "http-get",
+      "sha256": "6fdfe756698cb20f1b96afbbf8524dfb8d27265a5c9bdf21a06d7b2cebe6ae96",
+      "source": "web",
+      "system": "bioRxiv API",
+      "url": "https://api.medrxiv.org/"
+    },
+    {
+      "chars": 2951,
+      "evidence_status": "GATHER_VERIFIED",
+      "family": "registry_of_repositories",
+      "kind": "webpage",
+      "method": "http-get",
+      "sha256": "af60e0f0ae507a00de93c7a013ee4c50a80b387bce86df00da28fdbdbb114e4d",
+      "source": "web",
+      "system": "About | re3data.org",
+      "url": "https://www.re3data.org/about"
+    },
+    {
+      "chars": 0,
+      "evidence_status": "GATHER_403_OR_EMPTY_SOURCE_LEAD",
+      "family": "registry_of_repositories",
+      "kind": "webpage",
+      "method": "http-get",
+      "sha256": null,
+      "source": "web",
+      "system": "BASE",
+      "url": "https://www.base-search.net/"
+    },
+    {
+      "chars": 2266,
+      "evidence_status": "GATHER_VERIFIED",
+      "family": "registry_of_repositories",
+      "kind": "webpage",
+      "method": "http-get",
+      "sha256": "1fc461bf59ae31e53a8c00c679323ebb97168c2bb9d5b1abf5958b6713d7dd72",
+      "source": "web",
+      "system": "Graph API | OpenAIRE Graph Documentation",
+      "url": "https://graph.openaire.eu/docs/apis/graph-api/"
+    },
+    {
+      "chars": 0,
+      "evidence_status": "GATHER_TLS_FAILED_SOURCE_LEAD",
+      "family": "registry_of_repositories",
+      "kind": "webpage",
+      "method": "http-get",
+      "sha256": null,
+      "source": "web",
+      "system": "OpenDOAR",
+      "url": "https://opendoar.ac.uk/"
+    },
+    {
+      "chars": 0,
+      "evidence_status": "GATHER_TLS_FAILED_SOURCE_LEAD",
+      "family": "registry_of_repositories",
+      "kind": "webpage",
+      "method": "http-get",
+      "sha256": null,
+      "source": "web",
+      "system": "OpenDOAR developers",
+      "url": "https://opendoar.ac.uk/help/developers"
+    },
+    {
+      "chars": 1443,
+      "evidence_status": "GATHER_VERIFIED",
+      "family": "registry_of_repositories",
+      "kind": "webpage",
+      "method": "http-get",
+      "sha256": "8f23f34c3b751cf9811520580f4b164467b5a957b3f3883fbf798a956e1929f1",
+      "source": "web",
+      "system": "Public APIs | OpenAIRE Graph Documentation",
+      "url": "https://graph.openaire.eu/docs/apis/home/"
+    },
+    {
+      "chars": 1391,
+      "evidence_status": "GATHER_VERIFIED",
+      "family": "registry_of_repositories",
+      "kind": "webpage",
+      "method": "http-get",
+      "sha256": "fe8869f2544942b4e95dea9e9790f0e73f224d5b2e3f88b1b114875f64fdc171",
+      "source": "web",
+      "system": "| re3data.org",
+      "url": "https://www.re3data.org/api/doc/"
+    },
+    {
+      "chars": 6259,
+      "evidence_status": "GATHER_VERIFIED",
+      "family": "repository_platform",
+      "kind": "webpage",
+      "method": "http-get",
+      "sha256": "c200c9d40160ba7740497f9e50b5a7cfca7f41400c1c61efd2e101106a3fa083",
+      "source": "web",
+      "system": "API Guide \u2014 Dataverse.org",
+      "url": "https://guides.dataverse.org/en/latest/api/index.html"
+    },
+    {
+      "chars": 28111,
+      "evidence_status": "GATHER_VERIFIED",
+      "family": "repository_platform",
+      "kind": "webpage",
+      "method": "http-get",
+      "sha256": "de761d220746aefd2cc29b7bbb92ee250363c5bc85788b6cc6bf4db2d9ef5ea5",
+      "source": "web",
+      "system": "GitHub - DSpace/RestContract: REST Contract for DSpace 7\u201310 \u00b7 GitHub",
+      "url": "https://github.com/DSpace/RestContract"
+    },
+    {
+      "chars": 0,
+      "evidence_status": "GATHER_VERIFIED_EMPTY_CAPTURE",
+      "family": "repository_platform",
+      "kind": "webpage",
+      "method": "http-get",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source": "web",
+      "system": "InvenioRDM API",
+      "url": "https://inveniosoftware.github.io/invenio-openapi/"
+    },
+    {
+      "chars": 98753,
+      "evidence_status": "GATHER_VERIFIED",
+      "family": "repository_platform",
+      "kind": "webpage",
+      "method": "http-get",
+      "sha256": "a058280d6cce579913f93e44226233a420b2e5fbb18dc84feefc3485f3fd5803",
+      "source": "web",
+      "system": "Open Archives Initiative - Protocol for Metadata Harvesting - v.2.0",
+      "url": "https://www.openarchives.org/OAI/openarchivesprotocol.html"
+    },
+    {
+      "chars": 14796,
+      "evidence_status": "GATHER_VERIFIED",
+      "family": "scholarly_graph",
+      "kind": "webpage",
+      "method": "http-get",
+      "sha256": "9b70e0447a687fd2d6afb449ad1ba223199bffaca39071abcd991eeb3b8ba372",
+      "source": "web",
+      "system": "Introduction to the DataCite REST API",
+      "url": "https://support.datacite.org/docs/api"
+    },
+    {
+      "chars": 3994,
+      "evidence_status": "GATHER_VERIFIED",
+      "family": "scholarly_graph",
+      "kind": "webpage",
+      "method": "http-get",
+      "sha256": "7f749637b4c478f4bcfe6f26b4ea02ea9061d600877de6e1ea56eb294302f9fb",
+      "source": "web",
+      "system": "Overview - OpenAlex Developers",
+      "url": "https://developers.openalex.org/"
+    },
+    {
+      "chars": 12903,
+      "evidence_status": "GATHER_VERIFIED",
+      "family": "scholarly_graph",
+      "kind": "webpage",
+      "method": "http-get",
+      "sha256": "8db089a19af134f5aa1ff5082d3d6602d4aa4705e83cb81f97cc6f85f9d17227",
+      "source": "web",
+      "system": "REST API - Crossref",
+      "url": "https://www.crossref.org/documentation/retrieve-metadata/rest-api/"
+    },
+    {
+      "chars": 51,
+      "evidence_status": "GATHER_VERIFIED",
+      "family": "scholarly_graph",
+      "kind": "webpage",
+      "method": "http-get",
+      "sha256": "d9d455e35e4ddf651817d2d3e3d3d38b4b84ce692ba0188c0756222b449c31c2",
+      "source": "web",
+      "system": "Semantic Scholar - Academic Graph API",
+      "url": "https://api.semanticscholar.org/api-docs/"
+    },
+    {
+      "chars": 6020,
+      "evidence_status": "GATHER_VERIFIED",
+      "family": "scholarly_graph",
+      "kind": "webpage",
+      "method": "http-get",
+      "sha256": "20cce8036cbb90194f8ca4c3d04303ce2570a2d94cc98020561076d44a34c197",
+      "source": "web",
+      "system": "The world\u2019s largest collection of open access research papers",
+      "url": "https://core.ac.uk/"
+    },
+    {
+      "chars": 61088,
+      "evidence_status": "GATHER_VERIFIED",
+      "family": "source_lead",
+      "kind": "webpage",
+      "method": "http-get",
+      "sha256": "8e656f9977c8070bf8047295923f16a1914d0bafb6b0492bebc029f2a4448d99",
+      "source": "web",
+      "system": "Developers | Zenodo",
+      "url": "https://developers.zenodo.org/"
+    }
+  ],
+  "source_scope": "registry-of-registries expansion for publishing, preprints, repository platforms, college databases, domain databases, and dataset hubs",
+  "status": "SOURCE_REGISTRY_FEDERATION_MATCH",
+  "updated_tool_floor": {
+    "crucible": "1.1.0",
+    "forum": "1.12.0",
+    "gather": "1.5.0",
+    "index": "2.8.0",
+    "telos": "0.1.0"
+  },
+  "world_problem_workbenches": [
+    {
+      "first_experiment": "Convert one theorem source cluster into statement variants, proof obligations, Lean replay gates, and counterexample search receipts.",
+      "id": "formal_math_theorem_factory",
+      "substrates": [
+        "arXiv math",
+        "Lean/mathlib",
+        "SAIR competitions",
+        "OpenAlex citations"
+      ]
+    },
+    {
+      "first_experiment": "Build law-candidate packets with units, invariants, simulation replay, uncertainty, and falsification criteria.",
+      "id": "physics_law_candidate_lab",
+      "substrates": [
+        "arXiv physics",
+        "NASA ADS followup",
+        "Materials Project",
+        "simulation kernels"
+      ]
+    },
+    {
+      "first_experiment": "Join paper claims to sequence, protein, structure, pathway, and experiment records before biological synthesis.",
+      "id": "biology_mechanism_lab",
+      "substrates": [
+        "Europe PMC",
+        "NCBI",
+        "UniProt",
+        "RCSB PDB",
+        "bioRxiv"
+      ]
+    },
+    {
+      "first_experiment": "Separate protocol, endpoint, cohort, result, replication, and safety evidence into clinical claim packets.",
+      "id": "clinical_evidence_lab",
+      "substrates": [
+        "Europe PMC",
+        "ClinicalTrials.gov followup",
+        "medRxiv",
+        "PMC"
+      ]
+    },
+    {
+      "first_experiment": "Build property-prediction packets that join source claim, computed property, structure, code, and error bounds.",
+      "id": "materials_discovery_lab",
+      "substrates": [
+        "Materials Project",
+        "DataCite",
+        "Zenodo",
+        "arXiv"
+      ]
+    },
+    {
+      "first_experiment": "Create contamination, split, license, model-output, and verifier receipts for benchmark claims.",
+      "id": "ai_benchmark_truth_lab",
+      "substrates": [
+        "OpenML",
+        "Hugging Face datasets",
+        "Semantic Scholar",
+        "OpenAlex"
+      ]
+    },
+    {
+      "first_experiment": "Map one university from organization identity to repository endpoints, datasets, theses, papers, grants, and labs.",
+      "id": "institutional_knowledge_graph",
+      "substrates": [
+        "ROR",
+        "OpenDOAR",
+        "Dataverse",
+        "DSpace",
+        "OAI-PMH"
+      ]
+    },
+    {
+      "first_experiment": "Compile one exact scientific kernel with source, data, units, benchmark, runtime, and verifier receipts.",
+      "id": "buildlang_scientific_runtime",
+      "substrates": [
+        "Domain databases",
+        "preprints",
+        "datasets",
+        "compiler/runtime receipts"
+      ]
+    }
+  ]
+}

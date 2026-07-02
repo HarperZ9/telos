@@ -1,0 +1,146 @@
+{
+  "action_receipt_evidence_binding": {
+    "action_id": "act_dogfood_0028_source_evidence",
+    "event_id": "evt_dogfood_0028_source_evidence_bound",
+    "event_type": "evidence_bound",
+    "evidence_digest": "sha256:d30289cfdcaf8630e7fb7b3ba911cbac485a62f5306e3b5c37338768dbfe9e7a",
+    "evidence_ref": "artifact:fixtures/browser-evidence-redacted-pass-0028.json",
+    "raw_browser_payload_required": false,
+    "raw_source_material_required": false,
+    "redacted_after_ref": "fixtures/redacted-after-pass-0026.json",
+    "redacted_before_ref": "fixtures/redacted-before-pass-0026.json",
+    "schema": "ActionReceiptSourceEvidenceBinding/v1",
+    "source_replay_digest": "sha256:00573b3ff4eb47ca7a62759b9907af0e4db7c3bd4a4a468febc7700fa39527cb",
+    "source_replay_ref": "artifact:schemas/redacted-ref-replay-pass-0027.json",
+    "verification": {
+      "ref": "validator:pass-0028-source-evidence-binding",
+      "verdict": "MATCH"
+    }
+  },
+  "browser_evidence_receipt": {
+    "action_receipt_ref": "receipt:fixture-browser-evidence",
+    "after_text_digest": "text:sha256:f94d9486b327090cccbeb97d67953a1f234b83d67350b7b5f60196b0a30f24db",
+    "after_url_digest": "url:sha256:100680ad546ce6a577f42f52df33b4cfdca756859e664b8d7de329b150d09ce9",
+    "before_url_digest": "url:sha256:100680ad546ce6a577f42f52df33b4cfdca756859e664b8d7de329b150d09ce9",
+    "console_summary_verdict": "UNVERIFIABLE",
+    "network_summary_verdict": "UNVERIFIABLE",
+    "path": "fixtures/browser-evidence-redacted-pass-0028.json",
+    "redaction_status": "redacted",
+    "schema": "project-telos.browser-evidence/v1",
+    "sha256": "d30289cfdcaf8630e7fb7b3ba911cbac485a62f5306e3b5c37338768dbfe9e7a",
+    "target_ref": "url:sha256:100680ad546ce6a577f42f52df33b4cfdca756859e664b8d7de329b150d09ce9",
+    "tool": "telos.browser.evidence",
+    "verification_verdict": "MATCH"
+  },
+  "fresh_replay": {
+    "input_ref_count": 3,
+    "inputs": [
+      "source replay digest",
+      "browser evidence digest",
+      "redacted before/after refs"
+    ],
+    "manifest_path": "fixtures/source-evidence-replay-manifest-pass-0028.json",
+    "manifest_seal": "1e5209f5d84fd7ee77fbe4b5388d777e568d23dececdd7d48ddd18eb55c3da5f",
+    "manifest_sha256": "f14f6450c44b1cd2b7b070f5c0a3bb6d6d0de03ee133e6650427423e82233853",
+    "network_console_unverifiable_preserved": true,
+    "raw_browser_payload_required": false,
+    "raw_source_material_required": false,
+    "replay_verdict": "MATCH",
+    "schema": "SourceEvidenceDigestReplay/v1"
+  },
+  "generated_on": "2026-07-01",
+  "leak_scan": {
+    "raw_source_sentinel_absent_required": true,
+    "raw_source_sentinel_hash": "114e44d44df8ae029e56a81236283e0119aad6440759760771ced8054c463807",
+    "scan_target_count": 8,
+    "scan_targets": [
+      "schemas/source-evidence-binding-pass-0028.json",
+      "fixtures/browser-evidence-redacted-pass-0028.json",
+      "fixtures/source-evidence-replay-manifest-pass-0028.json",
+      "packets/038-source-evidence-binding.md",
+      "adversarial/pass-0028-source-evidence-steelman.md",
+      "schemas/tool-receipts-pass-0028.json",
+      "crucible/pass-0028-thesis.json",
+      "crucible/pass-0028-measurements.json"
+    ],
+    "schema": "SourceEvidenceLeakScanPlan/v1"
+  },
+  "negative_fixture_count": 9,
+  "negative_fixtures": [
+    {
+      "expected_validator_status": "REJECT",
+      "failure_mode": "Source replay digest differs from pass 0027.",
+      "fixture_id": "negative-source-replay-sha-drift"
+    },
+    {
+      "expected_validator_status": "REJECT",
+      "failure_mode": "Action receipt binding omits browser evidence ref or digest.",
+      "fixture_id": "negative-browser-evidence-omitted"
+    },
+    {
+      "expected_validator_status": "REJECT",
+      "failure_mode": "Browser evidence file SHA-256 differs from the receipt.",
+      "fixture_id": "negative-browser-evidence-sha-drift"
+    },
+    {
+      "expected_validator_status": "REJECT",
+      "failure_mode": "Replay requires raw source material.",
+      "fixture_id": "negative-raw-source-required"
+    },
+    {
+      "expected_validator_status": "REJECT",
+      "failure_mode": "Replay requires raw browser payload material.",
+      "fixture_id": "negative-raw-browser-payload-required"
+    },
+    {
+      "expected_validator_status": "REJECT",
+      "failure_mode": "Network capture UNVERIFIABLE is promoted to MATCH.",
+      "fixture_id": "negative-network-unverifiable-promoted"
+    },
+    {
+      "expected_validator_status": "REJECT",
+      "failure_mode": "Console capture UNVERIFIABLE is promoted to MATCH.",
+      "fixture_id": "negative-console-unverifiable-promoted"
+    },
+    {
+      "expected_validator_status": "REJECT",
+      "failure_mode": "Browser evidence redaction_status is not redacted.",
+      "fixture_id": "negative-redaction-status-unredacted"
+    },
+    {
+      "expected_validator_status": "REJECT",
+      "failure_mode": "A model-facing artifact contains the raw source sentinel token.",
+      "fixture_id": "negative-source-sentinel-present"
+    }
+  ],
+  "non_promotion_statement": "Pass 0028 proves only a local source/browser evidence binding from redacted evidence refs, digest strings, and pass 0027 replay refs. It does not prove live browser collection, production DLP, external vault integration, theorem proof, scientific discovery, buyer adoption, or any natural law.",
+  "pass": "0028",
+  "schema": "SourceEvidenceBindingSet/v1",
+  "seal": "879c147a7c755ca357eaf07802a893cb6a3a92752af0664a3ea2e1ec9565337e",
+  "source_anchors": [
+    {
+      "source": "Pass 0027 redacted-ref replay fixture",
+      "url": "artifact:schemas/redacted-ref-replay-pass-0027.json"
+    },
+    {
+      "source": "Telos browser evidence interface",
+      "url": "mcp:telos.browser.evidence"
+    },
+    {
+      "source": "Telos action receipt interface",
+      "url": "mcp:telos.action.receipt"
+    },
+    {
+      "source": "Telos loop ledger interface",
+      "url": "mcp:telos.loop.ledger"
+    }
+  ],
+  "source_receipt": {
+    "path": "schemas/redacted-ref-replay-pass-0027.json",
+    "replay_contract_hash": "4498487ca72ca41e69ebb1fb84a9d2991855ee4537c2b24c77198d2ebc2335f9",
+    "schema": "RedactedRefReplaySet/v1",
+    "seal": "da9d1c939bcc56eb33711537ab6cd491f8e9e70c91920d3e6a42572b8d985576",
+    "sha256": "00573b3ff4eb47ca7a62759b9907af0e4db7c3bd4a4a468febc7700fa39527cb"
+  },
+  "status": "SOURCE_EVIDENCE_BINDING_MATCH"
+}

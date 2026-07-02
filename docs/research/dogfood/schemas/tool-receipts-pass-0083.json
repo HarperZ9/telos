@@ -1,0 +1,126 @@
+{
+  "schema": "DogfoodToolReceipts/v1",
+  "pass": "0083",
+  "generated_on": "2026-07-01",
+  "status": "MATCH_FORUM_PROOF_LANE_VOCABULARY_REPAIR",
+  "repair_experiment": {
+    "schema": "ForumProofLaneVocabularyRepair/v1",
+    "artifact": "docs/research/dogfood/schemas/forum-proof-lane-vocabulary-repair-pass-0083.json",
+    "artifact_sha256": "0951b561a39ebff58dfda4b5334c3c07c9dc03021e1e877250bc8dcefaaa6307",
+    "seal": "90844f5d1c13087f14843fe38474ca5018fbe18dbbde0bed530ce4ecc188dfb5",
+    "baseline_source": "schemas/cross-tool-growth-vector-experiment-matrix-pass-0082.json",
+    "baseline_non_escalated": 1,
+    "baseline_escalations": 7,
+    "repaired_non_escalated": 8,
+    "repaired_escalations": 0,
+    "improvement_over_baseline": 7,
+    "taxonomy_patch_candidates": 7,
+    "remaining_gaps": 0,
+    "repair_caveats": 2,
+    "primary_caveat": "The repair is prompt-level vocabulary, not a Forum source or catalog patch.",
+    "secondary_caveat": "A strong Project Telos prefix can over-route domain work to project-telos.",
+    "negative_fixtures": 6,
+    "unsupported_claim_count": 0,
+    "current_promoted_natural_laws": 0
+  },
+  "gather": {
+    "packet": {
+      "status": "MATCH",
+      "path": "docs/research/dogfood/packets/093-forum-proof-lane-vocabulary-repair.md",
+      "sha256": "8425d8225f00c11fe1ae5ed817154014d4d46098a107896c2f1fb3737d8e49f6",
+      "seal": "04b5cd794b7a09452287aa33aa7464e41352ec85d05366380f2ce923516dff07",
+      "verified": true,
+      "dropped": 0
+    },
+    "buyer_brief": {
+      "status": "MATCH",
+      "path": "docs/research/dogfood/briefs/093-forum-proof-lane-repair-brief.md",
+      "sha256": "2bc10550547c4734a4eb6887ace8c2db5080bf7c28f1dc3a51ad75cb23bb0d4b",
+      "seal": "b5bc69806c85797cac330dabf9bf3d1ea6f60b5985693fb44a2101be9e5c8fe6",
+      "verified": true,
+      "dropped": 0
+    }
+  },
+  "crucible": {
+    "run_status": "MATCH",
+    "thesis_id": "e9ae422c399b1d65",
+    "thesis_seal": "e9ae422c399b1d65b936bcc4619c92312ef836cb059a48f1e81dc1a601746525",
+    "assessment_seal": "74046d73c3a1995ee5bc49dd990573f6ae0a0ada120b9c64326737702ce09544",
+    "assessment_record_seal": "22b121bd78836360bfba7660eca33964bd6680e37a63e9be1a67f40e00eb95d9",
+    "measurement_seal": "fe2cefec6889ac602a7ef5a5d2e7c49af3ce47cd55c2f1abac24d6f1bbc98b53",
+    "claims": 6,
+    "match": 6,
+    "drift": 0,
+    "unverifiable": 0,
+    "registry_stats": {
+      "theses": 71,
+      "claims": 582,
+      "unique_claims": 575,
+      "assessments": 72,
+      "latest_assessments": 71,
+      "invalid_latest_assessments": 0,
+      "match": 582,
+      "drift": 0,
+      "unverifiable": 0
+    }
+  },
+  "telos": {
+    "integration_result": "Converted pass 0082 route ambiguity into a proof-lane vocabulary bridge and reran the exact eight product-lane route probes.",
+    "market_motion": "forum_proof_lane_taxonomy_repair",
+    "non_promotion_boundary": "Does not patch Forum source, prove all production routes fixed, prove buyer demand, or promote a natural law."
+  },
+  "shell": {
+    "commands": [
+      {
+        "command": "python docs\\research\\dogfood\\tools\\test_forum_proof_lane_vocabulary_repair.py",
+        "status": "MATCH"
+      },
+      {
+        "command": "python -m py_compile docs\\research\\dogfood\\tools\\compose_forum_proof_lane_vocabulary_repair.py docs\\research\\dogfood\\tools\\probe_forum_proof_lane_vocabulary_repair.py docs\\research\\dogfood\\tools\\test_forum_proof_lane_vocabulary_repair.py docs\\research\\dogfood\\tools\\validate_pass_0083_forum_proof_lane_vocabulary_repair.py",
+        "status": "MATCH"
+      },
+      {
+        "command": "python docs\\research\\dogfood\\tools\\probe_forum_proof_lane_vocabulary_repair.py",
+        "status": "MATCH"
+      },
+      {
+        "command": "python docs\\research\\dogfood\\tools\\validate_pass_0083_forum_proof_lane_vocabulary_repair.py",
+        "status": "MATCH"
+      },
+      {
+        "command": "crucible run docs\\research\\dogfood\\crucible\\pass-0083-thesis.json --measurements docs\\research\\dogfood\\crucible\\pass-0083-measurements.json --registry docs\\research\\dogfood\\crucible\\registry --report docs\\research\\dogfood\\crucible\\pass-0083-report.md --out docs\\research\\dogfood\\crucible\\pass-0083-run.json --json",
+        "status": "MATCH"
+      },
+      {
+        "command": "gather docs docs\\research\\dogfood\\packets\\093-forum-proof-lane-vocabulary-repair.md --json",
+        "status": "MATCH"
+      },
+      {
+        "command": "gather docs docs\\research\\dogfood\\briefs\\093-forum-proof-lane-repair-brief.md --json",
+        "status": "MATCH"
+      },
+      {
+        "command": "crucible registry stats docs\\research\\dogfood\\crucible\\registry --json",
+        "status": "MATCH"
+      }
+    ],
+    "line_counts": {
+      "compose_forum_proof_lane_vocabulary_repair.py": 241,
+      "probe_forum_proof_lane_vocabulary_repair.py": 164,
+      "test_forum_proof_lane_vocabulary_repair.py": 47,
+      "validate_pass_0083_forum_proof_lane_vocabulary_repair.py": 82
+    },
+    "sha256": {
+      "compose_forum_proof_lane_vocabulary_repair.py": "aa8a26c9625588c8da0c0b26a35c2e85d17972a4d16ab9aa4597e41a69a02258",
+      "probe_forum_proof_lane_vocabulary_repair.py": "c10e9aa9e299608dd45b05a06e28dedeae78e4b19ee890cb346d59a03097d41d",
+      "test_forum_proof_lane_vocabulary_repair.py": "008658c793271b6b5bf71f416b90b057cb1d0d08e74d114563910c5205ce499d",
+      "validate_pass_0083_forum_proof_lane_vocabulary_repair.py": "b8a61ef3c327adfa7132e21c9a716392b33e9ffe282be09fcf7ead94071654c8",
+      "forum-proof-lane-vocabulary-repair-pass-0083.json": "0951b561a39ebff58dfda4b5334c3c07c9dc03021e1e877250bc8dcefaaa6307",
+      "pass-0083-forum-proof-lane-vocabulary-repair-validator-result.json": "e8c753c0caa02efdfc05ec26c523004f94bc65e1b564c6d84a481fc30e810b66",
+      "093-forum-proof-lane-vocabulary-repair.md": "8425d8225f00c11fe1ae5ed817154014d4d46098a107896c2f1fb3737d8e49f6",
+      "093-forum-proof-lane-repair-brief.md": "2bc10550547c4734a4eb6887ace8c2db5080bf7c28f1dc3a51ad75cb23bb0d4b",
+      "pass-0083-forum-proof-lane-vocabulary-repair-steelman.md": "78aa39a69ba80e3adf2c549d3d1de9e69d70d26c5df8073ad2d833508bca7203",
+      "pass-0083-run.json": "f93fa18999067faf8e8f9ac2ff6b3abfc5ff5898223d1665d34c2a07b4ca1147"
+    }
+  }
+}

@@ -1,0 +1,396 @@
+{
+  "executable_framework_output_fixtures": [
+    {
+      "adapter_id": "layout-adapter-qiskit",
+      "execution_mode": "LOCAL_ADAPTER_FUNCTION_OVER_SYNTHETIC_OUTPUT",
+      "fixture_hash": "c2d3a43dcefef1d4cd20462560acae9fc18573a82631c088fd3a59e9acd8fb1a",
+      "fixture_id": "executable-fixture-qiskit-counts",
+      "framework": "Qiskit",
+      "framework_imported": false,
+      "normalized_output": {
+        "layout_interpretation": {
+          "01": {
+            "q[0]": 1,
+            "q[1]": 0
+          },
+          "10": {
+            "q[0]": 0,
+            "q[1]": 1
+          }
+        },
+        "normalized_counts": {
+          "01": 5,
+          "10": 7
+        }
+      },
+      "normalized_output_hash": "b50021f02bb525fec1c889610a83bc980ba7e9305200084ee09899373e60e736",
+      "raw_output": {
+        "counts": {
+          "01": 5,
+          "10": 7
+        },
+        "shots": 12
+      },
+      "raw_output_hash": "b98a52d96dfcad02c1fac524db46a89e65d249f2b45a20c86f4825064b3aeaab",
+      "schema": "ExecutableFrameworkOutputFixture/v1",
+      "source_anchor": "https://quantum.cloud.ibm.com/docs/guides/bit-ordering",
+      "status": "ADAPTER_EXECUTION_MATCH"
+    },
+    {
+      "adapter_id": "layout-adapter-amazon-braket",
+      "execution_mode": "LOCAL_ADAPTER_FUNCTION_OVER_SYNTHETIC_OUTPUT",
+      "fixture_hash": "8da472059f7a4df5a76d9ffdca424fa0f0ebac8a8481fe288cc930098b7a766e",
+      "fixture_id": "executable-fixture-braket-measurement-counts",
+      "framework": "Amazon Braket",
+      "framework_imported": false,
+      "normalized_output": {
+        "key_policy": "BIG_ENDIAN_BINARY_STRING",
+        "measured_qubit_order": [
+          0,
+          1
+        ],
+        "normalized_counts": {
+          "01": 5,
+          "10": 7
+        }
+      },
+      "normalized_output_hash": "cc829cd3e55394d619c80477f12d1fcd900212a3635e0526ad90e609f4bf0ce4",
+      "raw_output": {
+        "measuredQubits": [
+          0,
+          1
+        ],
+        "measurementCounts": {
+          "01": 5,
+          "10": 7
+        },
+        "shots": 12
+      },
+      "raw_output_hash": "25c3d1ed53bd8de706ce2d5a74230d880fbca9f2ebcfa710c352139cb97928b6",
+      "schema": "ExecutableFrameworkOutputFixture/v1",
+      "source_anchor": "https://amazon-braket-sdk-python.readthedocs.io/en/latest/_apidoc/braket.tasks.gate_model_quantum_task_result.html",
+      "status": "ADAPTER_EXECUTION_MATCH"
+    },
+    {
+      "adapter_id": "layout-adapter-cirq",
+      "execution_mode": "LOCAL_ADAPTER_FUNCTION_OVER_SYNTHETIC_OUTPUT",
+      "fixture_hash": "c9f5c56b03912c129d030112abe21e5787d84d5b3a65ece28813a2f5e4ea2963",
+      "fixture_id": "executable-fixture-cirq-histogram",
+      "framework": "Cirq",
+      "framework_imported": false,
+      "normalized_output": {
+        "fold_func": "big_endian_bits_to_int",
+        "measurement_key": "m",
+        "normalized_counts": {
+          "01": 5,
+          "10": 7
+        }
+      },
+      "normalized_output_hash": "96371d467d9cdc948f172c32c3d442741eb3fe666523dcf5cbbf4f49e4d038d0",
+      "raw_output": {
+        "fold_func": "big_endian_bits_to_int",
+        "histogram": {
+          "1": 5,
+          "2": 7
+        },
+        "measurement_key": "m",
+        "qubit_order": [
+          "q0",
+          "q1"
+        ]
+      },
+      "raw_output_hash": "911ee1911804c46d6a88aaddb2bc13504dc26197c65b76c1b9f4d0684b617aef",
+      "schema": "ExecutableFrameworkOutputFixture/v1",
+      "source_anchor": "https://quantumai.google/reference/python/cirq/Result",
+      "status": "ADAPTER_EXECUTION_MATCH"
+    },
+    {
+      "adapter_id": "layout-adapter-pennylane",
+      "execution_mode": "LOCAL_ADAPTER_FUNCTION_OVER_SYNTHETIC_OUTPUT",
+      "fixture_hash": "eea3da0682977c8bfabfd25243233ae881118faced577aee7dabbd1b20165004",
+      "fixture_id": "executable-fixture-pennylane-counts",
+      "framework": "PennyLane",
+      "framework_imported": false,
+      "normalized_output": {
+        "device_name": "default.qubit-shape-fixture",
+        "normalized_counts": {
+          "01": 5,
+          "10": 7
+        },
+        "wire_order": [
+          0,
+          1
+        ]
+      },
+      "normalized_output_hash": "3e66af189825ad08fc4e79ee101256b5e234b2a6cd7e9f9965366957eeb1c72e",
+      "raw_output": {
+        "counts": {
+          "01": 5,
+          "10": 7
+        },
+        "device_name": "default.qubit-shape-fixture",
+        "shots": 12,
+        "wires": [
+          0,
+          1
+        ]
+      },
+      "raw_output_hash": "ecabfcd0562ad355745e756655d55683ef434010bef4f049de9947d02cf149fb",
+      "schema": "ExecutableFrameworkOutputFixture/v1",
+      "source_anchor": "https://docs.pennylane.ai/en/stable/code/qp_measurements.html",
+      "status": "ADAPTER_EXECUTION_MATCH"
+    },
+    {
+      "adapter_id": "layout-adapter-qir",
+      "execution_mode": "LOCAL_ADAPTER_FUNCTION_OVER_SYNTHETIC_OUTPUT",
+      "fixture_hash": "6a9a3450d431769fcae6b6f98080e88a1e53a9f18bab935b37b51097418c5bd8",
+      "fixture_id": "executable-fixture-qir-result-record-map",
+      "framework": "QIR",
+      "framework_imported": false,
+      "normalized_output": {
+        "normalized_counts": {
+          "01": 5,
+          "10": 7
+        },
+        "result_record_map": {
+          "r0": "q[0]",
+          "r1": "q[1]"
+        },
+        "runtime_output_policy": "record_map_required"
+      },
+      "normalized_output_hash": "aac815036d1177ae9c97f1658be9678237ae0f619b3876812e7efb4afcf39a6b",
+      "raw_output": {
+        "counts": {
+          "01": 5,
+          "10": 7
+        },
+        "result_record_map": {
+          "r0": "q[0]",
+          "r1": "q[1]"
+        },
+        "runtime_output_policy": "record_map_required"
+      },
+      "raw_output_hash": "46cb7e7d1709b2994be889c0d067c31a7888aa4a1578d34c01ca5309879ad9b7",
+      "schema": "ExecutableFrameworkOutputFixture/v1",
+      "source_anchor": "https://github.com/qir-alliance/qir-spec/blob/main/specification/README.md",
+      "status": "ADAPTER_EXECUTION_MATCH"
+    }
+  ],
+  "generated_on": "2026-07-01",
+  "negative_fixtures": [
+    {
+      "expected_validator_status": "REJECT",
+      "failure_mode": "JSON proof packet ingestion uses plain json.loads without duplicate-key and non-finite rejection.",
+      "fixture_id": "negative-strict-json-loader-not-used"
+    },
+    {
+      "expected_validator_status": "REJECT",
+      "failure_mode": "NaN is accepted as a canonical JSON number.",
+      "fixture_id": "negative-nan-accepted-as-json-number"
+    },
+    {
+      "expected_validator_status": "REJECT",
+      "failure_mode": "Decimal measurement is serialized through binary float without NumericPrecisionReceipt/v1.",
+      "fixture_id": "negative-decimal-serialized-as-float"
+    },
+    {
+      "expected_validator_status": "REJECT",
+      "failure_mode": "Object storage URI is cited without content hash, version/generation, and retrieval timestamp.",
+      "fixture_id": "negative-object-storage-uri-only"
+    },
+    {
+      "expected_validator_status": "REJECT",
+      "failure_mode": "Qiskit counts fixture omits string-position layout receipt.",
+      "fixture_id": "negative-qiskit-fixture-without-layout"
+    },
+    {
+      "expected_validator_status": "REJECT",
+      "failure_mode": "Braket measurement counts omit measured qubit order.",
+      "fixture_id": "negative-braket-fixture-without-measured-qubit-order"
+    },
+    {
+      "expected_validator_status": "REJECT",
+      "failure_mode": "Cirq histogram omits fold_func policy.",
+      "fixture_id": "negative-cirq-fixture-without-fold-func"
+    },
+    {
+      "expected_validator_status": "REJECT",
+      "failure_mode": "PennyLane counts omit wire order.",
+      "fixture_id": "negative-pennylane-fixture-without-wire-order"
+    },
+    {
+      "expected_validator_status": "REJECT",
+      "failure_mode": "QIR output omits result record map.",
+      "fixture_id": "negative-qir-fixture-without-record-map"
+    }
+  ],
+  "non_promotion_statement": "Pass 0019 executes local parser and adapter fixtures only. It does not import quantum frameworks, fetch cloud objects, run a quantum job, or promote a hardware result.",
+  "numeric_precision_receipts": [
+    {
+      "canonical_value": "0.1",
+      "lossiness": "LOSSLESS_DECIMAL_LITERAL",
+      "numeric_class": "DECIMAL_STRING",
+      "precision_digits": 1,
+      "receipt_hash": "b470c5045935be47cc4296be2cd7f7546d2f2d5f14b5de7eceac43328586662b",
+      "receipt_id": "decimal-string-exact-0p1",
+      "rounding_mode": "NONE",
+      "schema": "NumericPrecisionReceipt/v1",
+      "source_anchors": [
+        "https://docs.python.org/3/library/decimal.html",
+        "https://www.rfc-editor.org/info/rfc8785/"
+      ],
+      "source_literal": "0.1"
+    },
+    {
+      "canonical_value": "0.1000000000000000055511151231257827021181583404541015625",
+      "lossiness": "BINARY_FLOAT_NOT_DECIMAL_LITERAL",
+      "numeric_class": "IEEE754_DOUBLE",
+      "precision_digits": 55,
+      "receipt_hash": "fa5d0bc72937d080e25c4dc09482d4cbf41a0ec07839750efb7af79d89e684b9",
+      "receipt_id": "binary-float-expanded-0p1",
+      "rounding_mode": "BINARY_FLOAT_REPRESENTATION",
+      "schema": "NumericPrecisionReceipt/v1",
+      "source_anchors": [
+        "https://docs.python.org/3/library/decimal.html",
+        "https://www.rfc-editor.org/info/rfc8785/"
+      ],
+      "source_literal": "0.1"
+    },
+    {
+      "canonical_value": "0.142857",
+      "lossiness": "ROUNDED_WITH_POLICY",
+      "numeric_class": "DECIMAL_QUANTIZED",
+      "precision_digits": 6,
+      "receipt_hash": "72e6d983d362b14884c8f85f230860651b8701714f365919d4c1d3ab2e3a44d6",
+      "receipt_id": "decimal-quantized-one-seventh",
+      "rounding_mode": "ROUND_HALF_EVEN",
+      "schema": "NumericPrecisionReceipt/v1",
+      "source_anchors": [
+        "https://docs.python.org/3/library/decimal.html"
+      ],
+      "source_literal": "1/7",
+      "unrounded_value": "0.142857142857142857142857142857142857142857142857142857142857"
+    }
+  ],
+  "object_storage_evidence_receipt": {
+    "content_length": 36,
+    "content_sha256": "faedc3ea6ffe1e1e7993dfc286aaf5b49e3d6b7bfda85a142cafd621850c59b5",
+    "content_sha256_base64": "+u3D6m/+Hh55k9/Chqr1tJ49a3v9qFoULK/WIYUMWbU=",
+    "content_type": "application/json",
+    "etag_or_generation": "\"shape-fixture-etag-0019\"",
+    "locator_only_allowed": false,
+    "provider": "Amazon S3",
+    "receipt_hash": "ba08b21a009bca23e4bdee44dee2e893152ea0fa89b121ecb8d2fa0e7e433ff6",
+    "receipt_id": "s3-shape-fixture-content-addressed-result",
+    "retrieval_timestamp": "2026-07-01T00:00:00Z",
+    "schema": "ObjectStorageEvidenceReceipt/v1",
+    "source_anchors": [
+      "https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html",
+      "https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html",
+      "https://docs.aws.amazon.com/AmazonS3/latest/userguide/Versioning.html"
+    ],
+    "uri": "s3://example-bucket/quantum/results/pass-0019.json",
+    "version_id": "shape-fixture-version-0019"
+  },
+  "pass": "0019",
+  "schema": "StrictReceiptRuntimeFixtureSet/v1",
+  "seal": "e69d6fad6a9edc8c93044001a749967406c8047b21426c2640b671059cc8154a",
+  "source_anchors": [
+    {
+      "source": "RFC 8785 JSON Canonicalization Scheme",
+      "url": "https://www.rfc-editor.org/info/rfc8785/"
+    },
+    {
+      "source": "Python json module",
+      "url": "https://docs.python.org/3/library/json.html"
+    },
+    {
+      "source": "Python decimal module",
+      "url": "https://docs.python.org/3/library/decimal.html"
+    },
+    {
+      "source": "Amazon S3 GetObject API",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html"
+    },
+    {
+      "source": "Amazon S3 object integrity",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html"
+    },
+    {
+      "source": "Amazon S3 versioning",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/Versioning.html"
+    },
+    {
+      "source": "IBM Quantum bit-ordering guide",
+      "url": "https://quantum.cloud.ibm.com/docs/guides/bit-ordering"
+    },
+    {
+      "source": "Amazon Braket SDK task result",
+      "url": "https://amazon-braket-sdk-python.readthedocs.io/en/latest/_apidoc/braket.tasks.gate_model_quantum_task_result.html"
+    },
+    {
+      "source": "Cirq Result API",
+      "url": "https://quantumai.google/reference/python/cirq/Result"
+    },
+    {
+      "source": "PennyLane counts measurement",
+      "url": "https://docs.pennylane.ai/en/stable/code/qp_measurements.html"
+    },
+    {
+      "source": "QIR specification",
+      "url": "https://github.com/qir-alliance/qir-spec/blob/main/specification/README.md"
+    }
+  ],
+  "status": "STRICT_RUNTIME_MATCH",
+  "strict_json_loader_receipt": {
+    "allow_nan_on_serialization": false,
+    "duplicate_key_fixture": {
+      "duplicate_keys": [
+        "00"
+      ],
+      "error": "duplicate JSON object keys rejected",
+      "expected_validator_status": "REJECT",
+      "parsed_payload": null,
+      "raw_payload_hash": "19e5f3e0aa2a201cb2e6756998977a902b08b6fdb6e60526fe1678bd4c7aa90b"
+    },
+    "loader_id": "python-json-object-pairs-hook-parse-constant",
+    "nonfinite_fixtures": [
+      {
+        "duplicate_keys": [],
+        "error": "non-finite JSON constant rejected: NaN",
+        "expected_validator_status": "REJECT",
+        "parsed_payload": null,
+        "raw_payload_hash": "20470e62de603d28e0a0eff9667348896eda75118010524092d54c439386c1d9"
+      },
+      {
+        "duplicate_keys": [],
+        "error": "non-finite JSON constant rejected: Infinity",
+        "expected_validator_status": "REJECT",
+        "parsed_payload": null,
+        "raw_payload_hash": "f99b761206d08908942ca5a277860ff68b093ecdd958ea8a727d734d6aa89742"
+      }
+    ],
+    "object_pairs_hook_required": true,
+    "parse_constant_rejects_nonfinite": true,
+    "positive_fixture": {
+      "canonical_hash": "faedc3ea6ffe1e1e7993dfc286aaf5b49e3d6b7bfda85a142cafd621850c59b5",
+      "canonical_json": "{\"counts\":{\"00\":1,\"11\":2},\"shots\":3}",
+      "duplicate_keys": [],
+      "error": null,
+      "expected_validator_status": "MATCH",
+      "parsed_payload": {
+        "counts": {
+          "00": 1,
+          "11": 2
+        },
+        "shots": 3
+      },
+      "raw_payload_hash": "733d87bea8a913171feb0e2f82362cd584f599bda4b323ad470e2a8d70182690"
+    },
+    "schema": "StrictJsonLoaderReceipt/v1",
+    "source_anchors": [
+      "https://docs.python.org/3/library/json.html",
+      "https://www.rfc-editor.org/info/rfc8785/"
+    ]
+  }
+}

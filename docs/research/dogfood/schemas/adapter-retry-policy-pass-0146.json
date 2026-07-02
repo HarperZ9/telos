@@ -1,0 +1,497 @@
+{
+  "boundary": "Pass 0146 defines scheduler and promotion policy for source adapters. It does not prove source correctness, complete coverage, market uniqueness, theorem progress, or natural-law discovery.",
+  "current_promoted_natural_laws": [],
+  "current_promoted_theorems": [],
+  "integration_targets": [
+    "RateLimitLedger",
+    "EndpointAliasRegistry",
+    "SourceFamilyScheduler",
+    "IndexSelectorFallbackReceipt"
+  ],
+  "market_implication": "A research substrate product becomes more defensible when source-family flow control is captured as evidence, because rate limits and stale endpoints stop masquerading as missing knowledge.",
+  "negative_fixtures": [
+    {
+      "expected_status": "REJECT",
+      "fixture_id": "429_as_absence_evidence"
+    },
+    {
+      "expected_status": "REJECT",
+      "fixture_id": "403_as_rate_limit_retry"
+    },
+    {
+      "expected_status": "REJECT",
+      "fixture_id": "mailto_as_openalex_current_auth"
+    },
+    {
+      "expected_status": "REJECT",
+      "fixture_id": "oai_identify_as_harvest_completion"
+    },
+    {
+      "expected_status": "REJECT",
+      "fixture_id": "resumption_token_as_portable_identifier"
+    },
+    {
+      "expected_status": "REJECT",
+      "fixture_id": "old_endpoint_404_as_repository_absence"
+    },
+    {
+      "expected_status": "REJECT",
+      "fixture_id": "headerless_503_as_safe_tight_loop"
+    },
+    {
+      "expected_status": "REJECT",
+      "fixture_id": "rate_limit_header_as_publication_truth"
+    },
+    {
+      "expected_status": "REJECT",
+      "fixture_id": "selector_failure_as_missing_repo"
+    },
+    {
+      "expected_status": "REJECT",
+      "fixture_id": "source_policy_as_market_uniqueness"
+    }
+  ],
+  "pass": "0146",
+  "policy_rules": [
+    {
+      "action": "honor Retry-After if present; otherwise exponential backoff and lower concurrency",
+      "id": "RATE_LIMITED_429",
+      "status": "SOURCE_LEAD_ONLY_RETRYABLE"
+    },
+    {
+      "action": "accept HTTP-date or delay-seconds and record the parsed wait",
+      "id": "RETRY_AFTER_PARSE",
+      "status": "SCHEDULER_REQUIRED"
+    },
+    {
+      "action": "do not tight-loop when a repository omits Retry-After",
+      "id": "NO_AUTO_RETRY_ON_HEADERLESS_503",
+      "status": "HALT_OR_OPERATOR_POLICY"
+    },
+    {
+      "action": "include mailto or user-agent for Crossref public/polite pool accountability",
+      "id": "CROSSREF_POLITE_MAILTO",
+      "status": "CONTACTABILITY_REQUIRED"
+    },
+    {
+      "action": "stop retries and record block/support path",
+      "id": "CROSSREF_403_BLOCKED",
+      "status": "ACCESS_ESCALATION"
+    },
+    {
+      "action": "treat mailto-only OpenAlex polite-pool logic as stale after the API-key shift",
+      "id": "OPENALEX_API_KEY_CURRENT",
+      "status": "AUTH_POLICY"
+    },
+    {
+      "action": "read rate headers and use exponential backoff on 429",
+      "id": "OPENALEX_BACKOFF",
+      "status": "SCHEDULER_REQUIRED"
+    },
+    {
+      "action": "prepare client-id field for Q3 2026 rate-limit split",
+      "id": "ROR_CLIENT_ID_READY",
+      "status": "AUTH_POLICY"
+    },
+    {
+      "action": "route high-volume ROR work to local Docker mirror when needed",
+      "id": "ROR_LOCAL_DOCKER_FALLBACK",
+      "status": "BULK_FALLBACK"
+    },
+    {
+      "action": "persist token, cursor, completeListSize, and expiration when supplied",
+      "id": "OAI_RESUMPTION_TOKEN_CHAIN",
+      "status": "PAGINATION_CONTRACT"
+    },
+    {
+      "action": "restart from bounded date/set checkpoint, not from an arbitrary token",
+      "id": "OAI_BAD_RESUMPTION_RESTART",
+      "status": "CHECKPOINT_REQUIRED"
+    },
+    {
+      "action": "retry root-only context and record selector failure as tool-interface evidence",
+      "id": "INDEX_SELECTOR_ROOT_FALLBACK",
+      "status": "CONTEXT_SELECTOR_DRIFT"
+    }
+  ],
+  "prior_pass_warnings": [
+    {
+      "reason": "The public Crossref request for Cornell hit a rate limit during capture, so Cornell work metadata stays source-lead-only in this pass.",
+      "source": "Cornell Crossref affiliation sample",
+      "status": "HTTP_429_SOURCE_LEAD_ONLY"
+    },
+    {
+      "reason": "Caltech documentation exposed an older /cgi/oai2 endpoint while the current CaltechAUTHORS page names /oai2d and the /oai2d Identify capture matched.",
+      "source": "Caltech OAI-PMH endpoint documentation",
+      "status": "ENDPOINT_VERSION_DRIFT_WARNING"
+    },
+    {
+      "reason": "OAI-PMH Identify proves endpoint identity and protocol exposure only; it does not prove repository coverage, license status, full text, or metadata completeness.",
+      "source": "Repository Identify endpoints",
+      "status": "NOT_A_FULL_HARVEST"
+    }
+  ],
+  "scenario_fixtures": [
+    {
+      "expected_action": "BACKOFF_AND_DEMOTE_TO_SOURCE_LEAD",
+      "id": "crossref_429_no_retry_after",
+      "promotion_allowed": false,
+      "rule": "RATE_LIMITED_429",
+      "status": "MATCH"
+    },
+    {
+      "expected_action": "HALT_AND_ESCALATE_ACCESS",
+      "id": "crossref_403_blocked",
+      "promotion_allowed": false,
+      "rule": "CROSSREF_403_BLOCKED",
+      "status": "MATCH"
+    },
+    {
+      "expected_action": "HONOR_HEADERS_AND_BACKOFF",
+      "id": "openalex_429_with_headers",
+      "promotion_allowed": false,
+      "rule": "OPENALEX_BACKOFF",
+      "status": "MATCH"
+    },
+    {
+      "expected_action": "REJECT_STALE_POLITE_POOL_ASSUMPTION",
+      "id": "openalex_mailto_only",
+      "promotion_allowed": false,
+      "rule": "OPENALEX_API_KEY_CURRENT",
+      "status": "MATCH"
+    },
+    {
+      "expected_action": "CLIENT_ID_OR_LOCAL_DOCKER_FALLBACK",
+      "id": "ror_anonymous_high_volume",
+      "promotion_allowed": false,
+      "rule": "ROR_CLIENT_ID_READY",
+      "status": "MATCH"
+    },
+    {
+      "expected_action": "WAIT_RETRY_AFTER",
+      "id": "oai_503_retry_after",
+      "promotion_allowed": false,
+      "rule": "RETRY_AFTER_PARSE",
+      "status": "MATCH"
+    },
+    {
+      "expected_action": "DO_NOT_AUTOMATICALLY_RETRY",
+      "id": "oai_503_without_retry_after",
+      "promotion_allowed": false,
+      "rule": "NO_AUTO_RETRY_ON_HEADERLESS_503",
+      "status": "MATCH"
+    },
+    {
+      "expected_action": "RESTART_FROM_CHECKPOINT",
+      "id": "oai_bad_resumption_token",
+      "promotion_allowed": false,
+      "rule": "OAI_BAD_RESUMPTION_RESTART",
+      "status": "MATCH"
+    },
+    {
+      "expected_action": "ENDPOINT_DRIFT_WARNING",
+      "id": "stale_repository_endpoint_404",
+      "promotion_allowed": false,
+      "rule": "INDEX_SELECTOR_ROOT_FALLBACK",
+      "status": "MATCH"
+    },
+    {
+      "expected_action": "RETRY_ROOT_ONLY_RECORD_SELECTOR_DRIFT",
+      "id": "index_unknown_focus_repo",
+      "promotion_allowed": false,
+      "rule": "INDEX_SELECTOR_ROOT_FALLBACK",
+      "status": "MATCH"
+    }
+  ],
+  "schema": "AdapterRetryPolicyReceipt/v1",
+  "seal": "8a20aae5a90e77621ecb7498d90665b17e53393b33109768e92eab17feaea4a5",
+  "source_captures": 11,
+  "source_evidence": [
+    {
+      "id": "crossref_access_auth",
+      "matched_signals": [
+        "mailto",
+        "x-rate-limit-limit",
+        "x-rate-limit-interval",
+        "429",
+        "403"
+      ],
+      "required_signals": [
+        "mailto",
+        "x-rate-limit-limit",
+        "x-rate-limit-interval",
+        "429",
+        "403"
+      ],
+      "sha256": "172ae5f1497f17540eae54d28a2d73bc1632df70c6b676f602f12321bc673db3",
+      "status": "MATCH",
+      "system": "Crossref",
+      "title": "Access and authentication - Crossref",
+      "url": "https://www.crossref.org/documentation/retrieve-metadata/rest-api/access-and-authentication/"
+    },
+    {
+      "id": "crossref_tips",
+      "matched_signals": [
+        "cursor",
+        "request",
+        "error"
+      ],
+      "required_signals": [
+        "cursor",
+        "request",
+        "error"
+      ],
+      "sha256": "f5ba171d83247ca5c011d52acade3b22b514f174df6352c316585379eae5ab38",
+      "status": "MATCH",
+      "system": "Crossref",
+      "title": "Tips and tricks - Crossref",
+      "url": "https://www.crossref.org/documentation/retrieve-metadata/rest-api/tips-for-using-the-crossref-rest-api/"
+    },
+    {
+      "id": "crossref_2025_rate_limit_change",
+      "matched_signals": [
+        "1 December 2025",
+        "public",
+        "polite",
+        "rate limit",
+        "concurrency"
+      ],
+      "required_signals": [
+        "1 December 2025",
+        "public",
+        "polite",
+        "rate limit",
+        "concurrency"
+      ],
+      "sha256": "c5f7d8a6f67db0069327635f498d22f36a71cb9a2493c0453fdebb06771ea111",
+      "status": "MATCH",
+      "system": "Crossref",
+      "title": "Announcing changes to REST API rate limits - Crossref",
+      "url": "https://www.crossref.org/blog/announcing-changes-to-rest-api-rate-limits/"
+    },
+    {
+      "id": "openalex_authentication",
+      "matched_signals": [
+        "API key",
+        "429",
+        "exponential backoff",
+        "requests per second"
+      ],
+      "required_signals": [
+        "API key",
+        "429",
+        "exponential backoff",
+        "requests per second"
+      ],
+      "sha256": "1fc7dc0654a252da0f4098217e6ddf7711fd4e1129fddb1a3f4aa32f8b5af41f",
+      "status": "MATCH",
+      "system": "OpenAlex",
+      "title": "Authentication & Pricing - OpenAlex Developers",
+      "url": "https://developers.openalex.org/api-reference/authentication"
+    },
+    {
+      "id": "openalex_errors",
+      "matched_signals": [
+        "429",
+        "Too Many Requests",
+        "rate limit headers"
+      ],
+      "required_signals": [
+        "429",
+        "Too Many Requests",
+        "rate limit headers"
+      ],
+      "sha256": "77cdcbf125feb5a9b74a67c6c4b39084b95f081ec53abdc5847dc6fe5225d095",
+      "status": "MATCH",
+      "system": "OpenAlex",
+      "title": "Error Handling - OpenAlex Developers",
+      "url": "https://developers.openalex.org/api-reference/errors"
+    },
+    {
+      "id": "openalex_deprecations",
+      "matched_signals": [
+        "mailto",
+        "ignored",
+        "API keys"
+      ],
+      "required_signals": [
+        "mailto",
+        "ignored",
+        "API keys"
+      ],
+      "sha256": "b84f85b6e4eaeb92974b82d8c8251cc8f7bd952f85efb1bb4b61291f691f1efc",
+      "status": "MATCH",
+      "system": "OpenAlex",
+      "title": "Deprecations - OpenAlex Developers",
+      "url": "https://developers.openalex.org/guides/deprecations"
+    },
+    {
+      "id": "ror_rest_api",
+      "matched_signals": [
+        "2000 requests",
+        "5-minute period",
+        "client ID",
+        "Docker"
+      ],
+      "required_signals": [
+        "2000 requests",
+        "5-minute period",
+        "client ID",
+        "Docker"
+      ],
+      "sha256": "29427e23556569d4fecbcfe89e84eb86d4cc1aadff6eb3ec3df6e9eea61ff7ca",
+      "status": "MATCH",
+      "system": "ROR",
+      "title": "About the ROR REST API",
+      "url": "https://ror.readme.io/docs/rest-api"
+    },
+    {
+      "id": "oai_pmh_protocol",
+      "matched_signals": [
+        "resumptionToken",
+        "503",
+        "Retry-After",
+        "badResumptionToken"
+      ],
+      "required_signals": [
+        "resumptionToken",
+        "503",
+        "Retry-After",
+        "badResumptionToken"
+      ],
+      "sha256": "a058280d6cce579913f93e44226233a420b2e5fbb18dc84feefc3485f3fd5803",
+      "status": "MATCH",
+      "system": "OAI-PMH",
+      "title": "Open Archives Initiative - Protocol for Metadata Harvesting - v.2.0",
+      "url": "https://www.openarchives.org/OAI/openarchivesprotocol.html"
+    },
+    {
+      "id": "oai_harvester_guidelines",
+      "matched_signals": [
+        "503",
+        "Retry-After",
+        "resumptionToken",
+        "expired"
+      ],
+      "required_signals": [
+        "503",
+        "Retry-After",
+        "resumptionToken",
+        "expired"
+      ],
+      "sha256": "bbb920b172df2682f179a6c988815f6439eb27b3ba058b747c7381fc1e2d2d34",
+      "status": "MATCH",
+      "system": "OAI-PMH",
+      "title": "OAI-PMH Implementation Guidelines - Guidelines for Harvester Implementers",
+      "url": "https://www.openarchives.org/OAI/2.0/guidelines-harvester.htm"
+    },
+    {
+      "id": "rfc_6585_429",
+      "matched_signals": [
+        "429",
+        "Retry-After"
+      ],
+      "required_signals": [
+        "429",
+        "Retry-After"
+      ],
+      "sha256": "406650be078a3cf94dd101ff4242750d2b0a32232c8ffd31a92c8acdbad31978",
+      "status": "MATCH",
+      "system": "HTTP",
+      "title": "RFC 6585 - Additional HTTP Status Codes",
+      "url": "https://datatracker.ietf.org/doc/html/rfc6585"
+    },
+    {
+      "id": "rfc_9110_retry_after",
+      "matched_signals": [
+        "Retry-After",
+        "HTTP-date",
+        "delay-seconds",
+        "503"
+      ],
+      "required_signals": [
+        "Retry-After",
+        "HTTP-date",
+        "delay-seconds",
+        "503"
+      ],
+      "sha256": "28c31b9a5f26268b63a89c114e8a2afca8d9182e3f39d5eca3df1fcc605fb369",
+      "status": "MATCH",
+      "system": "HTTP",
+      "title": "RFC 9110 - HTTP Semantics",
+      "url": "https://datatracker.ietf.org/doc/html/rfc9110#name-retry-after"
+    }
+  ],
+  "source_store": "docs/research/dogfood/gather/pass-0146-adapter-retry-policy",
+  "source_systems": [
+    "Crossref",
+    "HTTP",
+    "Index",
+    "OAI-PMH",
+    "OpenAlex",
+    "ROR"
+  ],
+  "status": "ADAPTER_RETRY_POLICY_MATCH",
+  "summary": {
+    "negative_fixtures": 10,
+    "policy_rules": 12,
+    "policy_sources": 11,
+    "prior_warnings": 3,
+    "scenario_fixtures": 10,
+    "source_systems": 6
+  },
+  "tool_receipts": {
+    "crucible": {
+      "command": "crucible --version",
+      "exit_code": 0,
+      "first_line": "crucible 1.1.0",
+      "observed_version": "1.1.0",
+      "status": "MATCH",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "c9a3c2e0a32c682af3a84e8ee4bbf32231c964dfe7dd961b946d197a743bdb75"
+    },
+    "forum": {
+      "command": "forum --version",
+      "exit_code": 0,
+      "first_line": "forum 1.12.0",
+      "observed_version": "1.12.0",
+      "status": "MATCH",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "c08e4475db0dea46f86c0441af54c7d13387881ae2557dcddcaeb2fdf5e8d18c"
+    },
+    "gather": {
+      "command": "gather --version",
+      "exit_code": 0,
+      "first_line": "gather 1.5.0",
+      "observed_version": "1.5.0",
+      "status": "MATCH",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "4d6ad2661e845c0cc04012d80b3bc4b2f376508b7854f73a932470f9e33b860f"
+    },
+    "index": {
+      "command": "index --version",
+      "exit_code": 0,
+      "first_line": "index 2.8.0",
+      "observed_version": "2.8.0",
+      "status": "MATCH",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "9952767d2790c2471796bc4d1b7980f55428298965835d9edb070b240d8060d3"
+    },
+    "telos": {
+      "command": "node -p 'telos '+JSON.parse(require('fs').readFileSync('package.json','utf8')).version",
+      "exit_code": 0,
+      "first_line": "telos 0.1.0",
+      "observed_version": "0.1.0",
+      "status": "MATCH",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "0b8f3464457976df17a6545e76c55c1bb45d56376761c26195f999f3e5279e36"
+    }
+  },
+  "updated_tool_floor": {
+    "crucible": "1.1.0",
+    "forum": "1.12.0",
+    "gather": "1.5.0",
+    "index": "2.8.0",
+    "telos": "0.1.0"
+  }
+}

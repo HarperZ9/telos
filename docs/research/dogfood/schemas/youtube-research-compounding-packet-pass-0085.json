@@ -1,0 +1,947 @@
+{
+  "compounding_vectors": [
+    {
+      "cluster_id": "molecular_ai_drug_discovery",
+      "market_product": "AI4Science proof packets",
+      "next_experiment": "Bind model claims, wet-lab handoff, eval crisis, and drug-pipeline receipts before any discovery claim.",
+      "toolchain": [
+        "Gather",
+        "model foundry",
+        "Crucible",
+        "Telos"
+      ],
+      "verification_status": "HYPOTHESIS"
+    },
+    {
+      "cluster_id": "arc_agi_eval_and_generalization",
+      "market_product": "ARC/AGI eval receipt lab",
+      "next_experiment": "Turn task claims into contamination checks, replayable attempts, verifier verdicts, and benchmark-boundary receipts.",
+      "toolchain": [
+        "Gather",
+        "Crucible",
+        "model foundry",
+        "action receipts"
+      ],
+      "verification_status": "HYPOTHESIS"
+    },
+    {
+      "cluster_id": "quantitative_finance_laws",
+      "market_product": "BuildLang quant proof kernels",
+      "next_experiment": "Implement bounded finance identities, stress probes, and numerical receipts before strategy claims.",
+      "toolchain": [
+        "BuildLang/buildc",
+        "Index",
+        "Crucible",
+        "Telos"
+      ],
+      "verification_status": "HYPOTHESIS"
+    },
+    {
+      "cluster_id": "search_rl_alpha_zero",
+      "market_product": "search-verifier proof loops",
+      "next_experiment": "Use AlphaZero-style search as a pattern for prover/verifier loops with replay receipts.",
+      "toolchain": [
+        "model foundry",
+        "Crucible",
+        "loop ledger",
+        "BuildLang/buildc"
+      ],
+      "verification_status": "HYPOTHESIS"
+    },
+    {
+      "cluster_id": "enterprise_quantum_optimization",
+      "market_product": "quantum optimization workflow receipts",
+      "next_experiment": "Normalize solver, hardware/simulator branch, calibration, business objective, and result receipts.",
+      "toolchain": [
+        "Gather",
+        "Index",
+        "Crucible",
+        "Telos"
+      ],
+      "verification_status": "HYPOTHESIS"
+    },
+    {
+      "cluster_id": "agi_risk_scenarios",
+      "market_product": "risk scenario proof packets",
+      "next_experiment": "Map catastrophe claims to assumptions, mitigations, authority boundaries, and evidence status.",
+      "toolchain": [
+        "Forum",
+        "action receipts",
+        "Crucible",
+        "Telos"
+      ],
+      "verification_status": "HYPOTHESIS"
+    },
+    {
+      "cluster_id": "ai_society_governance",
+      "market_product": "societal proof-packet lane",
+      "next_experiment": "Bind social claims, policy decisions, model actions, and human-review receipts without overclaiming certainty.",
+      "toolchain": [
+        "Gather",
+        "Forum",
+        "loop ledger",
+        "Telos"
+      ],
+      "verification_status": "HYPOTHESIS"
+    }
+  ],
+  "current_promoted_natural_laws": [],
+  "flagship_receipts": {
+    "forum": {
+      "confidence": 0.0,
+      "decided": null,
+      "exit_code": 0,
+      "needs_escalation": true,
+      "status": "MATCH",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "432807ec1259885e6b8d38af4c413fe5216ea888436471ea8927f220c6250f05",
+      "top_candidates": [
+        {
+          "agent": "deep-research",
+          "score": 0.2
+        },
+        {
+          "agent": "synthesis",
+          "score": 0.2
+        },
+        {
+          "agent": "web-intel",
+          "score": 0.2
+        },
+        {
+          "agent": "project-telos",
+          "score": 0.13636363636363635
+        },
+        {
+          "agent": "backend",
+          "score": 0.0
+        }
+      ]
+    },
+    "index": {
+      "exit_code": 0,
+      "graph_pack_sha256": "8ee383e19ae9a6141bee70de733fb6aa09201ff9d284ce6778ce58b06e6b68b2",
+      "schema": "project-telos.context-envelope/v1",
+      "source_refs_only": true,
+      "status": "MATCH",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "db46c35a860e8d8539385f46e7803edf81b5ea1febc9e96d8f2f751625928c01",
+      "verification_verdict": "MATCH"
+    },
+    "telos": {
+      "exit_code": 0,
+      "status": "MATCH",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "be17cb15259234cb4e8e95c2b36e76c90d841431729beb140294e34c5f9ebfa7",
+      "tool": "telos",
+      "tool_version": "0.1.0"
+    }
+  },
+  "gather_match_count": 19,
+  "generated_on": "2026-07-01",
+  "input_url_count": 20,
+  "invalid_url_count": 1,
+  "metadata_match_count": 19,
+  "negative_fixtures": [
+    {
+      "expected_status": "REJECT",
+      "fixture_id": "raw_transcript_committed",
+      "reject_reason": "raw_transcript_included_false_required"
+    },
+    {
+      "expected_status": "REJECT",
+      "fixture_id": "video_claim_promoted",
+      "reject_reason": "source_leads_are_not_truth_claims"
+    },
+    {
+      "expected_status": "REJECT",
+      "fixture_id": "malformed_url_promoted",
+      "reject_reason": "invalid_url_missing_v_parameter"
+    },
+    {
+      "expected_status": "REJECT",
+      "fixture_id": "scientific_discovery_claim",
+      "reject_reason": "no_external_verification_or_reproduction"
+    },
+    {
+      "expected_status": "REJECT",
+      "fixture_id": "investment_recommendation_claim",
+      "reject_reason": "no_financial_advice_or_market_proof"
+    },
+    {
+      "expected_status": "REJECT",
+      "fixture_id": "policy_conclusion_claim",
+      "reject_reason": "governance_claims_need_review_packet"
+    }
+  ],
+  "non_promotion_statement": "Pass 0085 treats YouTube videos as source leads with metadata and transcript receipts. It does not promote video claims, scientific results, investment claims, policy conclusions, or natural laws.",
+  "pass": "0085",
+  "research_clusters": [
+    {
+      "channels": [
+        "Latent Space"
+      ],
+      "claim_status": "HYPOTHESIS_ONLY",
+      "cluster_id": "molecular_ai_drug_discovery",
+      "product_response": "AI4Science packets that bind source intake, model decisions, assay handoff, verifier verdicts, and reproduction status.",
+      "source_count": 1,
+      "strategic_signal": "Drug-discovery diffusion work is a forcing function for claim-to-experiment proof packets.",
+      "titles": [
+        "\ud83d\udd2c \"The Most Innovative Diffusion Research Is Happening in Drug Discovery, Not Image Generation\""
+      ],
+      "video_ids": [
+        "YQWXxnkK4dw"
+      ]
+    },
+    {
+      "channels": [
+        "Machine Learning Street Talk"
+      ],
+      "claim_status": "HYPOTHESIS_ONLY",
+      "cluster_id": "arc_agi_eval_and_generalization",
+      "product_response": "Eval receipt lab with replayable attempts, prompt/model boundaries, tool-use records, and benchmark authority receipts.",
+      "source_count": 1,
+      "strategic_signal": "ARC-style AGI evaluation work pressures benchmarks, contamination boundaries, and generalization claims.",
+      "titles": [
+        "ARC-AGI-3 Explained by the Team That's Winning It"
+      ],
+      "video_ids": [
+        "Vg6FBKTlfOw"
+      ]
+    },
+    {
+      "channels": [
+        "jetbundle"
+      ],
+      "claim_status": "HYPOTHESIS_ONLY",
+      "cluster_id": "quantitative_finance_laws",
+      "product_response": "BuildLang quant proof kernels with stress receipts, identity checks, and execution provenance.",
+      "source_count": 1,
+      "strategic_signal": "Quant-finance law explanations are a natural bridge from theory to auditable numerical kernels.",
+      "titles": [
+        "6 laws behind modern quantitative finance"
+      ],
+      "video_ids": [
+        "cvL_uWtMTAo"
+      ]
+    },
+    {
+      "channels": [
+        "Prof Mihai Nica"
+      ],
+      "claim_status": "HYPOTHESIS_ONLY",
+      "cluster_id": "search_rl_alpha_zero",
+      "product_response": "Search-verifier loop ledger that records proposals, rollouts, verifier gates, and accepted proof states.",
+      "source_count": 1,
+      "strategic_signal": "AlphaZero-style neural search is a usable architecture pattern for prover/verifier and planner/verifier loops.",
+      "titles": [
+        "How AlphaZero Uses Neural Networks"
+      ],
+      "video_ids": [
+        "pGENcaOBmXw"
+      ]
+    },
+    {
+      "channels": [
+        "D-Wave"
+      ],
+      "claim_status": "HYPOTHESIS_ONLY",
+      "cluster_id": "enterprise_quantum_optimization",
+      "product_response": "Quantum optimization workflow receipts spanning problem formulation, solver branch, hardware/simulator context, calibration reference, and measured objective.",
+      "source_count": 13,
+      "strategic_signal": "The D-Wave-heavy corpus points at optimization, infrastructure, investment, defense, warehouse, robotics, and quality workflows.",
+      "titles": [
+        "Panel: Quantum Optimization in the Enterprise | Qubits Europe 2026",
+        "Panel: On Premise Quantum Infrastructure and Advanced Computing | Qubits Europe 2026",
+        "Dr. Trevor Lanting | Qubits Europe 2026",
+        "Panel: Quantum Investment in Europe | Qubits Europe 2026",
+        "Dr. Andrei Petrenko | Qubits Europe 2026",
+        "Dr. Mayowa Ayodele | Qubit Europe 2026",
+        "D-Wave Investor Day 2026 - Full Event",
+        "Missile Defense Optimization with Quantum",
+        "Rethinking Warehouse Operations with Quantum",
+        "Quantum + Robotics For Optimized Quality Control",
+        "Insights from a Quantum Optimization Expert",
+        "Quantum Computing Meets Real-World Impact",
+        "Dr. Vladimir Gusev | Qubit Europe 2026"
+      ],
+      "video_ids": [
+        "yW_TAAl3H8w",
+        "iDILQL8US68",
+        "dBG9jGKaM_M",
+        "1jJ3zHfQGsU",
+        "kDAU5aD_a0I",
+        "x-yTG0oThr0",
+        "afAgs9LBnm0",
+        "RzmPzsgVDY4",
+        "7zjyj9ClmQw",
+        "QillFoj4OVY",
+        "jtBwnFqU3K4",
+        "GQlC3NYRjK8",
+        "8wWDeFuivdw"
+      ]
+    },
+    {
+      "channels": [
+        "Ben Goertzel"
+      ],
+      "claim_status": "HYPOTHESIS_ONLY",
+      "cluster_id": "agi_risk_scenarios",
+      "product_response": "Risk scenario proof packets with assumptions, mitigations, authority boundaries, likelihood evidence, and review status.",
+      "source_count": 1,
+      "strategic_signal": "AGI catastrophe taxonomies need assumption binding instead of rhetorical certainty.",
+      "titles": [
+        "Seven Flavors of AGI Catastrophe"
+      ],
+      "video_ids": [
+        "P3gsKJWGwwA"
+      ]
+    },
+    {
+      "channels": [
+        "Yuval Noah Harari "
+      ],
+      "claim_status": "HYPOTHESIS_ONLY",
+      "cluster_id": "ai_society_governance",
+      "product_response": "Societal proof-packet lane binding public claims, governance choices, model actions, and accountable review.",
+      "source_count": 1,
+      "strategic_signal": "AI and civilization-level governance claims need social evidence, policy provenance, and human-review receipts.",
+      "titles": [
+        "AI has hacked the code of human civilization | Yuval Noah Harari"
+      ],
+      "video_ids": [
+        "hBtVGwuJzpk"
+      ]
+    }
+  ],
+  "schema": "YouTubeResearchCompoundingPacket/v1",
+  "seal": "e49f658e5bbc711892cbed698cb9c110996c03ae80ea394bc2abc9cc11edd06b",
+  "source_cards": [
+    {
+      "claim_status": "SOURCE_LEAD",
+      "gather": {
+        "dropped": 0,
+        "exit_code": 0,
+        "metadata_sha256": "67a13eb6630a3e59e648f5a4d458579eded52dc1c73f89bf448a5c5854f7a47d",
+        "receipt_count": 2,
+        "seal": "f519879fca8a475e9761527b56e17f75f62d8734ccd9bf3bc989ea4da1c4fdce",
+        "status": "MATCH",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout_sha256": "b3b0b28e306a6c370123017d3d184220f2dd5098c6510d16ba8e8a086e3b06e0",
+        "transcript_sha256": "532256c391a4e824c7238a7fb6b89921cb248a4d42ae4d09b7864d7f8fedeaed",
+        "verified": true
+      },
+      "input_index": 1,
+      "metadata": {
+        "channel": "Latent Space",
+        "duration_string": "1:48:39",
+        "id": "YQWXxnkK4dw",
+        "status": "MATCH",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout_sha256": "a6c14dcf86196d07a3a0461881179ff835c829760bd201d4d9df9eccc02022c2",
+        "title": "\ud83d\udd2c \"The Most Innovative Diffusion Research Is Happening in Drug Discovery, Not Image Generation\"",
+        "upload_date": "20260630",
+        "webpage_url": "https://www.youtube.com/watch?v=YQWXxnkK4dw"
+      },
+      "raw_transcript_included": false,
+      "source_weight": "CRITICAL_DATA",
+      "status": "MATCH",
+      "url": "https://www.youtube.com/watch?v=YQWXxnkK4dw&t=978s",
+      "video_id": "YQWXxnkK4dw"
+    },
+    {
+      "claim_status": "SOURCE_LEAD",
+      "gather": {
+        "dropped": 0,
+        "exit_code": 0,
+        "metadata_sha256": "f5efec77e99ef718b6c3a3aa906ece67c0fecb07ba4832696ce4106efb5778aa",
+        "receipt_count": 2,
+        "seal": "00ebe3ea676151eec1d0d64d134d0ae6f0f4cb885090c84eee9ecddbd206299c",
+        "status": "MATCH",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout_sha256": "1bee07d1ccfe2a56a11c323e0f39adc4c908a5bbb9d147b9d8336a5470028113",
+        "transcript_sha256": "61cd850cec061a5dc659137affe74a1f81d05bbe8c98b1dd5ba102a2d3767f9e",
+        "verified": true
+      },
+      "input_index": 2,
+      "metadata": {
+        "channel": "Machine Learning Street Talk",
+        "duration_string": "1:24:34",
+        "id": "Vg6FBKTlfOw",
+        "status": "MATCH",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout_sha256": "8abe3e05d76c2c678a8c3ba65b7ca344bc93e041a3e5b29eb839d5676877c487",
+        "title": "ARC-AGI-3 Explained by the Team That's Winning It",
+        "upload_date": "20260701",
+        "webpage_url": "https://www.youtube.com/watch?v=Vg6FBKTlfOw"
+      },
+      "raw_transcript_included": false,
+      "source_weight": "CRITICAL_DATA",
+      "status": "MATCH",
+      "url": "https://www.youtube.com/watch?v=Vg6FBKTlfOw&t=26s",
+      "video_id": "Vg6FBKTlfOw"
+    },
+    {
+      "claim_status": "SOURCE_LEAD",
+      "gather": {
+        "dropped": 0,
+        "exit_code": 0,
+        "metadata_sha256": "15bd5c5e5cb956735c9f8fed01a405915d3b4f3ffeed53f8dc789ca258eba53e",
+        "receipt_count": 2,
+        "seal": "3f9d06809b0241429099c7b0afe54c01d5d032b3559e0cfee97cd3ff374f77d7",
+        "status": "MATCH",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout_sha256": "5beb5a3db847cc65f7ae8c7025495d5949234e549d9e9cba6807a1a5a122a6b2",
+        "transcript_sha256": "9bbdee0059e78114865ba67b1332f672dd8cfb858c6b76c38be8c4ff2a8a3e90",
+        "verified": true
+      },
+      "input_index": 3,
+      "metadata": {
+        "channel": "jetbundle",
+        "duration_string": "46:57",
+        "id": "cvL_uWtMTAo",
+        "status": "MATCH",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout_sha256": "98efb4802aa9dcf538c6730a19c0db9d9289397fb9ad4dbac3c25a6d1810a8a2",
+        "title": "6 laws behind modern quantitative finance",
+        "upload_date": "20260701",
+        "webpage_url": "https://www.youtube.com/watch?v=cvL_uWtMTAo"
+      },
+      "raw_transcript_included": false,
+      "source_weight": "CRITICAL_DATA",
+      "status": "MATCH",
+      "url": "https://www.youtube.com/watch?v=cvL_uWtMTAo",
+      "video_id": "cvL_uWtMTAo"
+    },
+    {
+      "claim_status": "SOURCE_LEAD",
+      "gather": {
+        "dropped": 0,
+        "exit_code": 0,
+        "metadata_sha256": "0a47c0f3ebad4eb76dcfb515bf72233e4c1f1dc85400656503cafb9006795101",
+        "receipt_count": 2,
+        "seal": "0a212ebaf39998235e034b3e660bbe7d78b8f26c3699e56c06d7aa404e77882b",
+        "status": "MATCH",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout_sha256": "aaa8e600c1ec2baec86ff230cfb5fd6bc679dbfd6e0c8be6225a1b76dc2ab96c",
+        "transcript_sha256": "d8011fb5f6fda84cb8a8d6b04014554158d2276a571c08be44028070004a4515",
+        "verified": true
+      },
+      "input_index": 4,
+      "metadata": {
+        "channel": "Prof Mihai Nica",
+        "duration_string": "31:53",
+        "id": "pGENcaOBmXw",
+        "status": "MATCH",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout_sha256": "0675bf7a1889caa76158f39e44719d7ecefe5d6cd9fde88757be69739ca11b5f",
+        "title": "How AlphaZero Uses Neural Networks",
+        "upload_date": "20260701",
+        "webpage_url": "https://www.youtube.com/watch?v=pGENcaOBmXw"
+      },
+      "raw_transcript_included": false,
+      "source_weight": "CRITICAL_DATA",
+      "status": "MATCH",
+      "url": "https://www.youtube.com/watch?v=pGENcaOBmXw",
+      "video_id": "pGENcaOBmXw"
+    },
+    {
+      "claim_status": "SOURCE_LEAD",
+      "gather": {
+        "dropped": 0,
+        "exit_code": 0,
+        "metadata_sha256": "64a274f98bab7a55c87c00360d823ccd9a163e1ccfba6858e1776bd0e75346da",
+        "receipt_count": 2,
+        "seal": "a7df91066f49e1fb4392a9751ed76417596e7d90627125ff35cd9b44e5813b7c",
+        "status": "MATCH",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout_sha256": "b567adc55901eea064504a78259faac5103c02814ddc7f6db5e18cbbc8b4d2ae",
+        "transcript_sha256": "75450492719b88bbf0909b4a93e672e952d1f29cff1aaed501d2ab35309f55b9",
+        "verified": true
+      },
+      "input_index": 5,
+      "metadata": {
+        "channel": "D-Wave",
+        "duration_string": "30:16",
+        "id": "yW_TAAl3H8w",
+        "status": "MATCH",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout_sha256": "41526463a76a7507a846a92f8bd55b4885372b45c70f2bf40a1c4d4c43122346",
+        "title": "Panel: Quantum Optimization in the Enterprise | Qubits Europe 2026",
+        "upload_date": "20260701",
+        "webpage_url": "https://www.youtube.com/watch?v=yW_TAAl3H8w"
+      },
+      "raw_transcript_included": false,
+      "source_weight": "CRITICAL_DATA",
+      "status": "MATCH",
+      "url": "https://www.youtube.com/watch?v=yW_TAAl3H8w",
+      "video_id": "yW_TAAl3H8w"
+    },
+    {
+      "claim_status": "SOURCE_LEAD",
+      "gather": {
+        "dropped": 0,
+        "exit_code": 0,
+        "metadata_sha256": "9303f8b87a7b32bdae4ebc65a8ee63dd996432472399f25b3dad2cf3a8f809e9",
+        "receipt_count": 2,
+        "seal": "c8df89d3c87abd014e5fd03580f1d34c9fca71ecb155333e63b0522468e971a6",
+        "status": "MATCH",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout_sha256": "b1396fa9e10fe0917cc6e0f3edbb45a9c61edbae4e7a34e97dacf84206e6ba26",
+        "transcript_sha256": "409df1b42b38c7a60d421426b01a7ecf51a7b0da01645b139570fab21f00acac",
+        "verified": true
+      },
+      "input_index": 6,
+      "metadata": {
+        "channel": "D-Wave",
+        "duration_string": "24:10",
+        "id": "iDILQL8US68",
+        "status": "MATCH",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout_sha256": "f68c0df65e734da0d43f3c427950ee8c85023cf53df4db565dc7b1fea2385f80",
+        "title": "Panel: On Premise Quantum Infrastructure and Advanced Computing | Qubits Europe 2026",
+        "upload_date": "20260701",
+        "webpage_url": "https://www.youtube.com/watch?v=iDILQL8US68"
+      },
+      "raw_transcript_included": false,
+      "source_weight": "CRITICAL_DATA",
+      "status": "MATCH",
+      "url": "https://www.youtube.com/watch?v=iDILQL8US68&t=14s",
+      "video_id": "iDILQL8US68"
+    },
+    {
+      "claim_status": "SOURCE_LEAD",
+      "gather": {
+        "dropped": 0,
+        "exit_code": 0,
+        "metadata_sha256": "ec87ff84d8e14de037f93ea5f6da197d0b4d4da1f9c8f308e769e9892669ccf4",
+        "receipt_count": 2,
+        "seal": "ef0f0582c6ba8af2b421d587431cb430b9d003549e480ed2a4d32e8316ed6e0f",
+        "status": "MATCH",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout_sha256": "2a38745f5f977a395a7ff47e304fe1831cb0bd0110f59991dd773281d3eb6c4c",
+        "transcript_sha256": "9e05042a40fb9fd45c4d81aab6b74513f163de253fd5d941e5f5605232f38cb8",
+        "verified": true
+      },
+      "input_index": 7,
+      "metadata": {
+        "channel": "D-Wave",
+        "duration_string": "34:12",
+        "id": "dBG9jGKaM_M",
+        "status": "MATCH",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout_sha256": "065550ab3b4119178b08ba1a2e1bf2dcfd9ffc9a88d6848bdd928610268c81ea",
+        "title": "Dr. Trevor Lanting | Qubits Europe 2026",
+        "upload_date": "20260701",
+        "webpage_url": "https://www.youtube.com/watch?v=dBG9jGKaM_M"
+      },
+      "raw_transcript_included": false,
+      "source_weight": "CRITICAL_DATA",
+      "status": "MATCH",
+      "url": "https://www.youtube.com/watch?v=dBG9jGKaM_M",
+      "video_id": "dBG9jGKaM_M"
+    },
+    {
+      "claim_status": "SOURCE_LEAD",
+      "gather": {
+        "dropped": 0,
+        "exit_code": 0,
+        "metadata_sha256": "439b4471386f27b0a3c7a8bdf4a53b92dbc6ed830c9e4b2e6e7e2198013eaa7e",
+        "receipt_count": 2,
+        "seal": "3c0870660ef782b10c8ac24d98bc6adb5ed467e4e8afeced41a016b7b644d902",
+        "status": "MATCH",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout_sha256": "2495b0c38240831b6968d665ee8a1afc41a865e81eb79543b00a62d3fed12aa4",
+        "transcript_sha256": "0a98ac20a44d48850594376b77de0d7c14c4c430082f6edd7d7a92d764cda446",
+        "verified": true
+      },
+      "input_index": 8,
+      "metadata": {
+        "channel": "D-Wave",
+        "duration_string": "23:11",
+        "id": "1jJ3zHfQGsU",
+        "status": "MATCH",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout_sha256": "b3c06085c20188924879f7cfdb933f883da9bdf68b9bc1a4fbc9c779cac9b9f3",
+        "title": "Panel: Quantum Investment in Europe | Qubits Europe 2026",
+        "upload_date": "20260701",
+        "webpage_url": "https://www.youtube.com/watch?v=1jJ3zHfQGsU"
+      },
+      "raw_transcript_included": false,
+      "source_weight": "CRITICAL_DATA",
+      "status": "MATCH",
+      "url": "https://www.youtube.com/watch?v=1jJ3zHfQGsU",
+      "video_id": "1jJ3zHfQGsU"
+    },
+    {
+      "claim_status": "SOURCE_LEAD",
+      "gather": {
+        "dropped": 0,
+        "exit_code": 0,
+        "metadata_sha256": "3a7cb4562e6f222bfad8c4fcafc9b6cc1e04f01305ecdfb1fa1277a20fefc1dd",
+        "receipt_count": 2,
+        "seal": "0be663163a1107f0e68b3cdc34a2f35b8c440d406cb9c84a3a2850e819657abc",
+        "status": "MATCH",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout_sha256": "cd6bb9d7f8241517a5c0818a04bb6b8126a2a66323589872c264f5c6a0aba835",
+        "transcript_sha256": "5c421c6d6b11c5195ad921324fb563f1372aa418a97cd2090f7dd5e83f3fb204",
+        "verified": true
+      },
+      "input_index": 9,
+      "metadata": {
+        "channel": "D-Wave",
+        "duration_string": "24:34",
+        "id": "kDAU5aD_a0I",
+        "status": "MATCH",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout_sha256": "5677f557fe5a719607e96f42ea6ef6695a0eef6b0982ace4aec05ba01ce46e52",
+        "title": "Dr. Andrei Petrenko | Qubits Europe 2026",
+        "upload_date": "20260701",
+        "webpage_url": "https://www.youtube.com/watch?v=kDAU5aD_a0I"
+      },
+      "raw_transcript_included": false,
+      "source_weight": "CRITICAL_DATA",
+      "status": "MATCH",
+      "url": "https://www.youtube.com/watch?v=kDAU5aD_a0I",
+      "video_id": "kDAU5aD_a0I"
+    },
+    {
+      "claim_status": "SOURCE_LEAD",
+      "gather": {
+        "dropped": 0,
+        "exit_code": 0,
+        "metadata_sha256": "c7a10abca525363863441203e0b8e7e502a1bb60c5d7aa3b0864f7f0be98cce0",
+        "receipt_count": 2,
+        "seal": "02224a8036936c1051446e3bdc19dc2bd91e90e430c2031e837027e578759956",
+        "status": "MATCH",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout_sha256": "7b80f017f2f5667ba5e5869e2d276de9e5eaf83704f6fe6e0b54c162a98eca40",
+        "transcript_sha256": "fb32a050377cb4e955744add80336ec965bfdc1af97445b8e24168aa8ed4c5bd",
+        "verified": true
+      },
+      "input_index": 10,
+      "metadata": {
+        "channel": "Ben Goertzel",
+        "duration_string": "42:44",
+        "id": "P3gsKJWGwwA",
+        "status": "MATCH",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout_sha256": "93a06c9b7661ae2d46bac674f2e2e7ec6d44490514a2e2ecf5c31ee55125a912",
+        "title": "Seven Flavors of AGI Catastrophe",
+        "upload_date": "20260701",
+        "webpage_url": "https://www.youtube.com/watch?v=P3gsKJWGwwA"
+      },
+      "raw_transcript_included": false,
+      "source_weight": "CRITICAL_DATA",
+      "status": "MATCH",
+      "url": "https://www.youtube.com/watch?v=P3gsKJWGwwA",
+      "video_id": "P3gsKJWGwwA"
+    },
+    {
+      "claim_status": "SOURCE_LEAD",
+      "gather": {
+        "dropped": 0,
+        "exit_code": 0,
+        "metadata_sha256": "b1f8868f11c9523f3e5bbc390eedb5ab84c70c94ac70c4e0ceb5bd31df98bd82",
+        "receipt_count": 2,
+        "seal": "836b107fc22fad2d32d67436e378c8debec1c4b4d75380a3ce2b67cef52efccf",
+        "status": "MATCH",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout_sha256": "97913234e65b393baeb964f13c0690085dfb56451a81e59ef212ed8866c77cd7",
+        "transcript_sha256": "bd81d10db624b3e3638abe4c66102cac9ba15eaac1d5452cbc6dfb4e7c69829c",
+        "verified": true
+      },
+      "input_index": 11,
+      "metadata": {
+        "channel": "D-Wave",
+        "duration_string": "16:26",
+        "id": "x-yTG0oThr0",
+        "status": "MATCH",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout_sha256": "fcea0c0ce9c759e7a90ca63cac106d52871f4a45cd4497ab158d6cbd8e1b45af",
+        "title": "Dr. Mayowa Ayodele | Qubit Europe 2026",
+        "upload_date": "20260701",
+        "webpage_url": "https://www.youtube.com/watch?v=x-yTG0oThr0"
+      },
+      "raw_transcript_included": false,
+      "source_weight": "CRITICAL_DATA",
+      "status": "MATCH",
+      "url": "https://www.youtube.com/watch?v=x-yTG0oThr0",
+      "video_id": "x-yTG0oThr0"
+    },
+    {
+      "claim_status": "SOURCE_LEAD",
+      "gather": {
+        "dropped": 0,
+        "exit_code": 0,
+        "metadata_sha256": "7687e8e9e192de192d42b196186e45e26b3c5dd8c2bb5bbbd2627fb3ee480a80",
+        "receipt_count": 2,
+        "seal": "da8a86296a12e08f6f4fd123109c1f37433ec66890450f6a72508ce6c327e577",
+        "status": "MATCH",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout_sha256": "5939b3b3fc1f38594711b4279c9e9dac566976a7bbe20609a7b8b2b852558ee4",
+        "transcript_sha256": "e65e6820e071d57d78b8190cd394e8ff5c565a791b667f0a29071c3d276a91cf",
+        "verified": true
+      },
+      "input_index": 12,
+      "metadata": {
+        "channel": "D-Wave",
+        "duration_string": "3:05:42",
+        "id": "afAgs9LBnm0",
+        "status": "MATCH",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout_sha256": "d35aea6a007db8abbbc6290f58ef66941b7cc69da68eaaa3462b857c25410a2d",
+        "title": "D-Wave Investor Day 2026 - Full Event",
+        "upload_date": "20260605",
+        "webpage_url": "https://www.youtube.com/watch?v=afAgs9LBnm0"
+      },
+      "raw_transcript_included": false,
+      "source_weight": "CRITICAL_DATA",
+      "status": "MATCH",
+      "url": "https://www.youtube.com/watch?v=afAgs9LBnm0",
+      "video_id": "afAgs9LBnm0"
+    },
+    {
+      "claim_status": "SOURCE_LEAD",
+      "gather": {
+        "dropped": 0,
+        "exit_code": 0,
+        "metadata_sha256": "2a16f61209593f726dad9be509bb51d1fbf18c45f612a7030b5913eec40835df",
+        "receipt_count": 2,
+        "seal": "23fde5ba6dbba9225475554622b5ade1934425e458f8f03f24ad5f23af67e685",
+        "status": "MATCH",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout_sha256": "a28be50fef71c835240aa23319b83693304f105925829b9e9c84f0f3ce027d37",
+        "transcript_sha256": "3f038bf0ee8919fc331f45573f7265f40ae726a6d1ad9d2ee1e3fb89c0aef14b",
+        "verified": true
+      },
+      "input_index": 13,
+      "metadata": {
+        "channel": "D-Wave",
+        "duration_string": "41:50",
+        "id": "RzmPzsgVDY4",
+        "status": "MATCH",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout_sha256": "4e9d52090215f3951d0e112551aa4670851c9b464fb2f5656e5ff08f329aee50",
+        "title": "Missile Defense Optimization with Quantum",
+        "upload_date": "20260602",
+        "webpage_url": "https://www.youtube.com/watch?v=RzmPzsgVDY4"
+      },
+      "raw_transcript_included": false,
+      "source_weight": "CRITICAL_DATA",
+      "status": "MATCH",
+      "url": "https://www.youtube.com/watch?v=RzmPzsgVDY4",
+      "video_id": "RzmPzsgVDY4"
+    },
+    {
+      "claim_status": "SOURCE_LEAD",
+      "gather": {
+        "dropped": 0,
+        "exit_code": 0,
+        "metadata_sha256": "eb3bcafe1c3c647b33e91375e2dd5878923cd45cf33a90c497435b46b58da414",
+        "receipt_count": 2,
+        "seal": "5c3b6b349d8e8c7679402c26dd3131676f3fa003774e4f4de953d2147a0dc281",
+        "status": "MATCH",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout_sha256": "f852eaa3766869e8b966808a5666d5d35633dcfb6465236c13136bbdec745a69",
+        "transcript_sha256": "b3e838d4a2131a2f8f28383c2a17fa1c1767554ffc70732eafd9885e0398f6f2",
+        "verified": true
+      },
+      "input_index": 14,
+      "metadata": {
+        "channel": "D-Wave",
+        "duration_string": "32:44",
+        "id": "7zjyj9ClmQw",
+        "status": "MATCH",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout_sha256": "b343ad5e4ced9ce23197de8af1471703efe5b15b8944281ffd872fbd920f5fd0",
+        "title": "Rethinking Warehouse Operations with Quantum",
+        "upload_date": "20260519",
+        "webpage_url": "https://www.youtube.com/watch?v=7zjyj9ClmQw"
+      },
+      "raw_transcript_included": false,
+      "source_weight": "CRITICAL_DATA",
+      "status": "MATCH",
+      "url": "https://www.youtube.com/watch?v=7zjyj9ClmQw",
+      "video_id": "7zjyj9ClmQw"
+    },
+    {
+      "claim_status": "SOURCE_LEAD",
+      "gather": {
+        "dropped": 0,
+        "exit_code": 0,
+        "metadata_sha256": "63bb38df680541b32b5b7a2891dcf28fea84bf532d579fec5c0ed3177deffae1",
+        "receipt_count": 2,
+        "seal": "7a45d3c9f37c3d15d59a653464c8b7714f40dba91a221ca685a43484c6b1d900",
+        "status": "MATCH",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout_sha256": "f77ae8a22de4f22942dc5c6ae95f415206b20a96dcdb070eb9ab9823bd3a0c13",
+        "transcript_sha256": "f4ed0e47e7b60b42ae149152355d28ab1638b7adb4001351398bd16fef30121c",
+        "verified": true
+      },
+      "input_index": 15,
+      "metadata": {
+        "channel": "D-Wave",
+        "duration_string": "25:24",
+        "id": "QillFoj4OVY",
+        "status": "MATCH",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout_sha256": "3cc12b8c314f900aabd378fc19d8fc628b39e3f646924637adbb41c9d2657656",
+        "title": "Quantum + Robotics For Optimized Quality Control",
+        "upload_date": "20260505",
+        "webpage_url": "https://www.youtube.com/watch?v=QillFoj4OVY"
+      },
+      "raw_transcript_included": false,
+      "source_weight": "CRITICAL_DATA",
+      "status": "MATCH",
+      "url": "https://www.youtube.com/watch?v=QillFoj4OVY",
+      "video_id": "QillFoj4OVY"
+    },
+    {
+      "claim_status": "SOURCE_LEAD",
+      "gather": {
+        "dropped": 0,
+        "exit_code": 0,
+        "metadata_sha256": "1ba242db785880904cc3658dc090f0ac0c5ee50202f8b7f14a47786424561db6",
+        "receipt_count": 2,
+        "seal": "309d7d8df0e642eedf80fa02da8389aeb853d0f6de07df07b3a1c7dd1fd84a91",
+        "status": "MATCH",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout_sha256": "16e302ebd568fceca4dd80f66f2bb239ecd1b3c5949c7557f763fdff51ced094",
+        "transcript_sha256": "a03d9f330dfcf37637031b7a8c597201cfbddfa098c888f4b4a15222171c2add",
+        "verified": true
+      },
+      "input_index": 16,
+      "metadata": {
+        "channel": "D-Wave",
+        "duration_string": "33:57",
+        "id": "jtBwnFqU3K4",
+        "status": "MATCH",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout_sha256": "c88e35f5190ba681dc6e50894e51a812bffa645341deea42c7b4ea1e5b639fe5",
+        "title": "Insights from a Quantum Optimization Expert",
+        "upload_date": "20260421",
+        "webpage_url": "https://www.youtube.com/watch?v=jtBwnFqU3K4"
+      },
+      "raw_transcript_included": false,
+      "source_weight": "CRITICAL_DATA",
+      "status": "MATCH",
+      "url": "https://www.youtube.com/watch?v=jtBwnFqU3K4",
+      "video_id": "jtBwnFqU3K4"
+    },
+    {
+      "claim_status": "SOURCE_LEAD",
+      "gather": {
+        "dropped": 0,
+        "exit_code": 0,
+        "metadata_sha256": "3d8a79a6fde3f002bdc0fd07e73ec8951027c422c7d639a530414ffd45d6b9c7",
+        "receipt_count": 2,
+        "seal": "d27ac6633c32307b6483357716cf78907a566a403c149ebd2b59413cfde2f519",
+        "status": "MATCH",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout_sha256": "37d0be22ce789f603edbf4757ec2d89d2295d90e0904b7847d62fa976c2ac78c",
+        "transcript_sha256": "0bc6db81be1c45ac8d36cc7f0543cf3d165a943842ba5b693241ad538f76f2ed",
+        "verified": true
+      },
+      "input_index": 17,
+      "metadata": {
+        "channel": "D-Wave",
+        "duration_string": "33:43",
+        "id": "GQlC3NYRjK8",
+        "status": "MATCH",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout_sha256": "003f1101b655878cb3988e45f06b7232af4f3c3c2737ced0ccea80ff0f79185c",
+        "title": "Quantum Computing Meets Real-World Impact",
+        "upload_date": "20260407",
+        "webpage_url": "https://www.youtube.com/watch?v=GQlC3NYRjK8"
+      },
+      "raw_transcript_included": false,
+      "source_weight": "CRITICAL_DATA",
+      "status": "MATCH",
+      "url": "https://www.youtube.com/watch?v=GQlC3NYRjK8",
+      "video_id": "GQlC3NYRjK8"
+    },
+    {
+      "input_index": 18,
+      "reason": "missing_v_parameter",
+      "status": "INVALID_URL",
+      "url": "https://www.youtube.com/watch?"
+    },
+    {
+      "claim_status": "SOURCE_LEAD",
+      "gather": {
+        "dropped": 0,
+        "exit_code": 0,
+        "metadata_sha256": "018fb7dec0960258439f709713ef7e0510f4eacbdbebe7d52c3830fabf284fe2",
+        "receipt_count": 2,
+        "seal": "24a179e6a4256c8250cc882688572228222096a8f0fe0f753567cb6ecf2dca88",
+        "status": "MATCH",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout_sha256": "4bf998be220421aed828a508dada41079bf533525b4abbce5a9fd66e83f16bca",
+        "transcript_sha256": "c19376348074b937471eb1bbce0fca3f30256fb9bd3500ea8f29ce7aeb8e6973",
+        "verified": true
+      },
+      "input_index": 19,
+      "metadata": {
+        "channel": "D-Wave",
+        "duration_string": "16:00",
+        "id": "8wWDeFuivdw",
+        "status": "MATCH",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout_sha256": "a181d010ff5aee758b22eb4648cec70e2b98df45fdb8666263e04cec2053ac1a",
+        "title": "Dr. Vladimir Gusev | Qubit Europe 2026",
+        "upload_date": "20260701",
+        "webpage_url": "https://www.youtube.com/watch?v=8wWDeFuivdw"
+      },
+      "raw_transcript_included": false,
+      "source_weight": "CRITICAL_DATA",
+      "status": "MATCH",
+      "url": "https://www.youtube.com/watch?v=8wWDeFuivdw",
+      "video_id": "8wWDeFuivdw"
+    },
+    {
+      "claim_status": "SOURCE_LEAD",
+      "gather": {
+        "dropped": 0,
+        "exit_code": 0,
+        "metadata_sha256": "7381b7c62cd18ffdb8c3cd0dae2876e9a37815fb899572e5a933a60828403043",
+        "receipt_count": 2,
+        "seal": "ec59c691cd0d07a5910a59bb3c3f8711a030836b789eb1e6936a1476b5e2bae7",
+        "status": "MATCH",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout_sha256": "075b2fffde755572342596b6c61f83a11346329379efc5ec3710d06cf28e164e",
+        "transcript_sha256": "887a3e6c33ba9f685592e01585d0ec34ba2b820918b7aacd40c843334ef9fc2e",
+        "verified": true
+      },
+      "input_index": 20,
+      "metadata": {
+        "channel": "Yuval Noah Harari ",
+        "duration_string": "46:52",
+        "id": "hBtVGwuJzpk",
+        "status": "MATCH",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout_sha256": "48548c42346784320e494fe298d4420013a9c16565824eb9630d1cfd2b403408",
+        "title": "AI has hacked the code of human civilization | Yuval Noah Harari",
+        "upload_date": "20260630",
+        "webpage_url": "https://www.youtube.com/watch?v=hBtVGwuJzpk"
+      },
+      "raw_transcript_included": false,
+      "source_weight": "CRITICAL_DATA",
+      "status": "MATCH",
+      "url": "https://www.youtube.com/watch?v=hBtVGwuJzpk&t=204s",
+      "video_id": "hBtVGwuJzpk"
+    }
+  ],
+  "status": "YOUTUBE_RESEARCH_COMPOUNDING_PACKET_MATCH",
+  "transcript_receipt_count": 19,
+  "unsupported_claim_count": 0,
+  "valid_url_count": 19,
+  "valid_video_count": 19,
+  "validation_errors": [],
+  "video_corpus_summary": {
+    "cluster_count": 7,
+    "dominant_cluster": "enterprise_quantum_optimization",
+    "dominant_cluster_video_count": 13,
+    "source_policy": "YouTube videos are treated as critical source leads. Metadata and Gather receipts are first-order evidence; synthesized product implications remain hypotheses."
+  }
+}

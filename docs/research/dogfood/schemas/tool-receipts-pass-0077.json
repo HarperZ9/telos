@@ -1,0 +1,141 @@
+{
+  "schema": "DogfoodToolReceipts/v1",
+  "pass": "0077",
+  "generated_on": "2026-07-01",
+  "status": "MATCH_PATH_SELECTOR_CONTRACT_SCORECARD",
+  "index": {
+    "status": "MATCH",
+    "tool_version": "2.8.0",
+    "current_status": "2.8.0 workspace atlas, certificates, freshness, benchmarking, selection-aware context envelopes, and MCP parity",
+    "contract_target": "IndexPathSelectorReceipt/v1",
+    "role": "structure-context"
+  },
+  "forum": {
+    "status": "MATCH",
+    "tool_version": "1.12.0",
+    "current_status": "1.12.0 per-task context with 28-lane Project Telos roster, model-foundry daemon routing, and MCP parity",
+    "role": "orchestration-routing"
+  },
+  "scorecard": {
+    "schema": "PathSelectorContractGrowthScorecard/v1",
+    "artifact": "docs/research/dogfood/schemas/path-selector-contract-scorecard-pass-0077.json",
+    "artifact_sha256": "fb0b9ee07112c5c7b0ae075db1b038a6c2b715ebef27478141248e83ca603339",
+    "seal": "8f99f16826f90353b3494e4e111a6e7140244c82735152a297ebed99197f001c",
+    "contract": "IndexPathSelectorReceipt/v1",
+    "evidence_count": 8,
+    "growth_vector_count": 5,
+    "product_motion_count": 3,
+    "ranked_product_motions": [
+      {
+        "id": "buildlang_proof_packets",
+        "weighted_score": 4.38
+      },
+      {
+        "id": "ai4science_research_packets",
+        "weighted_score": 3.96
+      },
+      {
+        "id": "visual_truth_packets",
+        "weighted_score": 3.88
+      }
+    ],
+    "primary_30_day_push": "buildlang_proof_packets",
+    "unsupported_claim_count": 0,
+    "current_promoted_natural_laws": 0
+  },
+  "gather": {
+    "status": "MATCH",
+    "docs_packet": {
+      "path": "docs/research/dogfood/packets/087-path-selector-contract-scorecard.md",
+      "sha256": "6045953f70190af604e29b84cebf0fb9b15a765ceff75853af756365ec1acd2d",
+      "seal": "48f1aac7794bde1aa4bfa2020cee6d84b2220c582f6a83d9d9a5f40363b69a00",
+      "verified": true,
+      "dropped": 0
+    }
+  },
+  "crucible": {
+    "run_status": "MATCH",
+    "thesis_id": "0f27f2c98b0530ce",
+    "thesis_seal": "0f27f2c98b0530ce39fc0c00efec9bb2363af5aa342cb8fc52ab3972b7e5dc83",
+    "assessment_seal": "361364ecc91a70d10f6483b5bd2f7bcf7733dc652424da055dbe65b3da9ef5af",
+    "assessment_record_seal": "7ad0ae6d6431fefa2bfa4662a22e333f28bc3d9b3b17f433802e197ac53bb500",
+    "measurement_seal": "1222fd0471060e7ccb8598983d573b527dd05e95b39c8c05b76e368cc0c07c9f",
+    "claims": 8,
+    "match": 8,
+    "drift": 0,
+    "unverifiable": 0,
+    "registry_stats": {
+      "theses": 65,
+      "claims": 537,
+      "unique_claims": 530,
+      "assessments": 66,
+      "latest_assessments": 65,
+      "invalid_latest_assessments": 0,
+      "match": 537,
+      "drift": 0,
+      "unverifiable": 0
+    }
+  },
+  "telos": {
+    "primary_30_day_push_hypothesis": "Ship the Index path-selector receipt and wrap the live buildc corpus receipt into a public BuildLang proof-packet demo first.",
+    "why_it_matters": "The same path-selector contract improves BuildLang, visual truth, and AI4Science packets by letting domain envelopes bind selected subsystem evidence instead of repo-root context only.",
+    "non_promotion_boundary": "Does not implement path selection, prove market uniqueness, validate AI4Science discoveries, calibrate hardware, prove Julia replacement, or promote a natural law."
+  },
+  "shell": {
+    "commands": [
+      {
+        "command": "python docs\\research\\dogfood\\tools\\test_path_selector_contract_scorecard.py",
+        "status": "MATCH"
+      },
+      {
+        "command": "python -m py_compile docs\\research\\dogfood\\tools\\compose_path_selector_contract_scorecard.py docs\\research\\dogfood\\tools\\probe_path_selector_contract_scorecard.py docs\\research\\dogfood\\tools\\test_path_selector_contract_scorecard.py docs\\research\\dogfood\\tools\\validate_pass_0077_path_selector_contract_scorecard.py",
+        "status": "MATCH"
+      },
+      {
+        "command": "python docs\\research\\dogfood\\tools\\probe_path_selector_contract_scorecard.py",
+        "status": "MATCH"
+      },
+      {
+        "command": "python docs\\research\\dogfood\\tools\\validate_pass_0077_path_selector_contract_scorecard.py",
+        "status": "MATCH"
+      },
+      {
+        "command": "crucible run docs\\research\\dogfood\\crucible\\pass-0077-thesis.json --measurements docs\\research\\dogfood\\crucible\\pass-0077-measurements.json --registry docs\\research\\dogfood\\crucible\\registry --report docs\\research\\dogfood\\crucible\\pass-0077-report.md --out docs\\research\\dogfood\\crucible\\pass-0077-run.json --json",
+        "status": "MATCH"
+      },
+      {
+        "command": "gather docs docs\\research\\dogfood\\packets\\087-path-selector-contract-scorecard.md --json",
+        "status": "MATCH"
+      },
+      {
+        "command": "crucible registry stats docs\\research\\dogfood\\crucible\\registry --json",
+        "status": "MATCH"
+      },
+      {
+        "command": "index status --json",
+        "status": "MATCH"
+      },
+      {
+        "command": "forum status --json",
+        "status": "MATCH"
+      }
+    ],
+    "line_counts": {
+      "compose_path_selector_contract_scorecard.py": 233,
+      "probe_path_selector_contract_scorecard.py": 109,
+      "test_path_selector_contract_scorecard.py": 30,
+      "validate_pass_0077_path_selector_contract_scorecard.py": 64
+    },
+    "sha256": {
+      "compose_path_selector_contract_scorecard.py": "3ef0f0432f74aca98a466c24e5473e8614c6ecc2fba31d83284d85e83a18b5e4",
+      "probe_path_selector_contract_scorecard.py": "bcb3ad463abd584aefdcdb277931db5c3683980505b6e04741fe7b97359c6379",
+      "test_path_selector_contract_scorecard.py": "6cd179978b82a7dd927f5ec632677028e633c9ef50e4c70080f7ba6a467321e0",
+      "validate_pass_0077_path_selector_contract_scorecard.py": "03e300d5a65287de6e5e30ac7678a36d0c2d30507cd92bd57f069a554a1acc5c",
+      "path-selector-contract-scorecard-pass-0077.json": "fb0b9ee07112c5c7b0ae075db1b038a6c2b715ebef27478141248e83ca603339",
+      "pass-0077-path-selector-contract-scorecard-validator-result.json": "f2cbb44ad68ee19b9301e2aaf742ae5ca78bbe08d35575df6a276ff8953d777a",
+      "087-path-selector-contract-scorecard.md": "6045953f70190af604e29b84cebf0fb9b15a765ceff75853af756365ec1acd2d",
+      "pass-0077-path-selector-contract-scorecard-steelman.md": "6b657f38bb48a4b35df10db7def8014800452d32e415d96b77dea55b461951b6",
+      "pass-0077-run.json": "a77d9b240cdce8b8d8f665a1a593d4b6f6efb7b1f715ec419f061f0154b7b595"
+    }
+  }
+}

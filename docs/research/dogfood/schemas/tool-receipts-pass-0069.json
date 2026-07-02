@@ -1,0 +1,95 @@
+{
+  "schema": "DogfoodToolReceipts/v1",
+  "pass": "0069",
+  "generated_on": "2026-07-01",
+  "status": "MATCH_TELOS_MULTIRECEIPT_JOINER",
+  "index": {
+    "tool_version": "2.8.0",
+    "status": "MATCH",
+    "role": "structure-context"
+  },
+  "gather": {
+    "status": "MATCH",
+    "tool_version": "1.5.0",
+    "docs_packet": {
+      "path": "docs/research/dogfood/packets/079-telos-multireceipt-joiner.md",
+      "sha256": "f574a654b9b032c2ef9f8332d6bd000d4eeb8ae7b2f81f6b5279b4ef22c1341d",
+      "seal": "7976091184d0a06bf156a98a13f7546c97ac627eb202d0e4ddd3bfc89ab024e5",
+      "verified": true,
+      "dropped": 0
+    }
+  },
+  "forum": {
+    "status": {
+      "entries": 17,
+      "checkpoint": "6c3f18bbb2062abc67161322883da81b5b3f16fa4108d57b5fd11950071d0f49"
+    },
+    "verify": {
+      "chain": true,
+      "deep": true
+    }
+  },
+  "crucible": {
+    "run_status": "MATCH",
+    "thesis_id": "659eee0820d8802c",
+    "thesis_seal": "659eee0820d8802c02957d10775b179549e79120a455e1c0d433a75dc089d793",
+    "assessment_seal": "38ee0b8887ddd0e002623ac7bd7b8b24b72c8d6ba1d77bab2743b110bbb118ef",
+    "claims": 8,
+    "match": 8,
+    "drift": 0,
+    "unverifiable": 0,
+    "registry_stats": {
+      "theses": 57,
+      "claims": 473,
+      "unique_claims": 466,
+      "assessments": 58,
+      "latest_assessments": 57,
+      "invalid_latest_assessments": 0,
+      "match": 473,
+      "drift": 0,
+      "unverifiable": 0
+    }
+  },
+  "telos": {
+    "compatibility_doctor": "MATCH",
+    "operator_doctor": "MATCH",
+    "mcp_freshness": "MATCH",
+    "tool_version": "0.1.0"
+  },
+  "shell": {
+    "commands": [
+      {
+        "command": "python docs\\research\\dogfood\\tools\\test_telos_multireceipt_joiner.py",
+        "status": "MATCH"
+      },
+      {
+        "command": "python docs\\research\\dogfood\\tools\\probe_telos_multireceipt_joiner.py",
+        "status": "MATCH"
+      },
+      {
+        "command": "python docs\\research\\dogfood\\tools\\validate_pass_0069_telos_multireceipt_joiner.py",
+        "status": "MATCH"
+      },
+      {
+        "command": "crucible run docs\\research\\dogfood\\crucible\\pass-0069-thesis.json --measurements docs\\research\\dogfood\\crucible\\pass-0069-measurements.json --registry docs\\research\\dogfood\\crucible\\registry --report docs\\research\\dogfood\\crucible\\pass-0069-report.md --out docs\\research\\dogfood\\crucible\\pass-0069-run.json --json",
+        "status": "MATCH"
+      }
+    ],
+    "line_counts": {
+      "compose_telos_multireceipt_joiner.py": 165,
+      "probe_telos_multireceipt_joiner.py": 122,
+      "test_telos_multireceipt_joiner.py": 39,
+      "validate_pass_0069_telos_multireceipt_joiner.py": 78
+    },
+    "sha256": {
+      "compose_telos_multireceipt_joiner.py": "acf5a294d2b3268fee47542740376b397d45a6ad839498090bad17a30a2c1abb",
+      "probe_telos_multireceipt_joiner.py": "d3653df5a4a0c300e80d1f8e75d120cd20f88a913bf2b2e7986d107e97d9a027",
+      "test_telos_multireceipt_joiner.py": "baac1d8c9f591fdb75cf1de1e04aa9c1726bc14a28c005bd71523f1df5d75e4a",
+      "validate_pass_0069_telos_multireceipt_joiner.py": "0fa2230241d3b2ef5e9fa6026f4dd146d03a1fbc8e29932944bbecee76ebf8e4",
+      "telos-multireceipt-joiner-pass-0069.json": "35212426f08143e020eca5146908458d870de862490ba2b3d1558e94068d08a6",
+      "079-telos-multireceipt-joiner.md": "f574a654b9b032c2ef9f8332d6bd000d4eeb8ae7b2f81f6b5279b4ef22c1341d",
+      "pass-0069-telos-multireceipt-joiner-steelman.md": "99efb5f1ef21658adb8be29e64f127bf29291130d0a6e6596edd5f3af791e72e",
+      "pass-0069-run.json": "1400a2110b03b5841450f54c5abc9cd683381959bcf30b8272075334d6d991b8"
+    }
+  }
+}

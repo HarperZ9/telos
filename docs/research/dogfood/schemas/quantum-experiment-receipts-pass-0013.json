@@ -1,0 +1,169 @@
+{
+  "branch_separation": {
+    "histogram_warning": "The noisy phase-flip branch has the same computational-basis histogram as the exact branch, so histogram equality alone is insufficient evidence.",
+    "rule": "Simulator evidence, noisy-simulator evidence, hardware-mock evidence, and cloud-hardware evidence must not be promoted across branch boundaries.",
+    "status": "BRANCH_SEPARATION_MATCH"
+  },
+  "experiment_id": "no-cloning-plus-state-cnot-fixture",
+  "generated_on": "2026-07-01",
+  "pass": "0013",
+  "receipts": [
+    {
+      "backend": {
+        "noise_model": "none",
+        "sdk": "local-python-fixture",
+        "seed": "deterministic-no-random-seed",
+        "shots": "analytic",
+        "simulator": "statevector"
+      },
+      "branch": "EXACT_SIMULATOR",
+      "circuit": {
+        "depth": 2,
+        "gate_count": 2,
+        "operations": [
+          "H(q0)",
+          "CNOT(q0,q1)"
+        ],
+        "qubits": 2,
+        "source_state": "|+>|0>",
+        "two_qubit_gate_count": 1
+      },
+      "hardware_claim_allowed": false,
+      "receipt_id": "quantum-exp-pass-0013-exact-simulator",
+      "resource_estimate": {
+        "depth": 2,
+        "gate_count": 2,
+        "logical_qubits": 2,
+        "physical_qubits": "not_applicable",
+        "qec_scheme": "none",
+        "runtime_estimate": "local analytic fixture"
+      },
+      "result": {
+        "fidelity_to_desired_clone": 0.5,
+        "measurement_histogram": {
+          "00": 0.5,
+          "01": 0.0,
+          "10": 0.0,
+          "11": 0.5
+        },
+        "statevector": [
+          [
+            0.707106781186547,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.707106781186547,
+            0.0
+          ]
+        ],
+        "status": "FAILS_CLONING_AS_EXPECTED"
+      },
+      "schema": "QuantumExperimentReceipt/v1",
+      "theorem_claim_ref": "claim-no-cloning-inner-product-identity",
+      "verdict": "MATCH"
+    },
+    {
+      "backend": {
+        "noise_model": "target_phase_flip_probability_0.1",
+        "sdk": "local-python-fixture",
+        "seed": "deterministic-no-random-seed",
+        "shots": "analytic",
+        "simulator": "density-mixture-analytic"
+      },
+      "branch": "NOISY_SIMULATOR",
+      "circuit": {
+        "depth": 2,
+        "gate_count": 2,
+        "operations": [
+          "H(q0)",
+          "CNOT(q0,q1)",
+          "phase_error_on_target_with_probability_0.1"
+        ],
+        "qubits": 2,
+        "source_state": "|+>|0>",
+        "two_qubit_gate_count": 1
+      },
+      "hardware_claim_allowed": false,
+      "receipt_id": "quantum-exp-pass-0013-noisy-simulator",
+      "resource_estimate": {
+        "depth": 2,
+        "gate_count": 2,
+        "logical_qubits": 2,
+        "physical_qubits": "not_applicable",
+        "qec_scheme": "none",
+        "runtime_estimate": "local analytic fixture"
+      },
+      "result": {
+        "fidelity_to_desired_clone": 0.45,
+        "histogram_l1_drift_from_exact": 0.0,
+        "measurement_histogram": {
+          "00": 0.5,
+          "01": 0.0,
+          "10": 0.0,
+          "11": 0.5
+        },
+        "mixture_components": [
+          {
+            "fidelity_to_desired_clone": 0.5,
+            "state": [
+              [
+                0.707106781186547,
+                0.0
+              ],
+              [
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0
+              ],
+              [
+                0.707106781186547,
+                0.0
+              ]
+            ],
+            "weight": 0.9
+          },
+          {
+            "fidelity_to_desired_clone": 0.0,
+            "state": [
+              [
+                0.707106781186547,
+                0.0
+              ],
+              [
+                -0.0,
+                -0.0
+              ],
+              [
+                0.0,
+                0.0
+              ],
+              [
+                -0.707106781186547,
+                -0.0
+              ]
+            ],
+            "weight": 0.1
+          }
+        ],
+        "status": "NOISY_BRANCH_NOT_THEOREM_PROOF"
+      },
+      "schema": "QuantumExperimentReceipt/v1",
+      "theorem_claim_ref": "claim-no-cloning-inner-product-identity",
+      "verdict": "MATCH_WITH_BRANCH_WARNING"
+    }
+  ],
+  "schema": "QuantumExperimentReceiptSet/v1",
+  "seal": "e5bcaf8a0cbe73fd51d6745539a8fca2ea1faff3ff9f375fe94a646761ce3ea9",
+  "status": "RECEIPT_SET_MATCH"
+}

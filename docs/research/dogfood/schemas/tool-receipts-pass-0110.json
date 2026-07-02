@@ -1,0 +1,182 @@
+{
+  "adapter_contract": {
+    "missing_fields": [],
+    "required_field_count": 12,
+    "required_fields": [
+      "target_log_prob_digest",
+      "transition_kernel_digest",
+      "kernel_family",
+      "calibration_layer",
+      "acceptance_correction",
+      "stationary_residual_check",
+      "detailed_balance_or_invariance_check",
+      "chain_seed_receipt",
+      "warmup_schedule_receipt",
+      "diagnostics_receipt",
+      "negative_fixture_receipt",
+      "source_provenance_receipt"
+    ],
+    "required_fields_satisfied": 12,
+    "source_adapter_spec": "StochasticKernelAdapterSpec/v1"
+  },
+  "compose": {
+    "command": "C:\\Users\\Zain\\AppData\\Local\\Programs\\Python\\Python312\\python.exe C:\\dev\\public\\telos\\docs\\research\\dogfood\\tools\\compose_stochastic_runtime_chain_receipt.py --out C:\\dev\\public\\telos\\docs\\research\\dogfood\\schemas\\stochastic-runtime-chain-receipt-pass-0110.json",
+    "exit_code": 0,
+    "status": "MATCH",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "e54b44f804eeb30bff4bbe07e1294b62f53576a45cdbd19cec585216c3676e1d"
+  },
+  "diagnostics": {
+    "detailed_balance_or_invariance_check": {
+      "max_residual": "0",
+      "status": "MATCH"
+    },
+    "empirical_counts": [
+      2612,
+      1606,
+      782
+    ],
+    "empirical_distribution": [
+      0.5224,
+      0.3212,
+      0.1564
+    ],
+    "empirical_l1_distance_to_pi": 0.04479999999999995,
+    "empirical_threshold_l1": 0.08,
+    "exact_distribution": [
+      0.4999999999999995,
+      0.33333333333333304,
+      0.16666666666666652
+    ],
+    "exact_distribution_l1_distance_to_pi": 9.159339953157541e-16,
+    "stationary_residual_check": {
+      "max_residual": "0",
+      "residual": [
+        "0",
+        "0",
+        "0"
+      ],
+      "status": "MATCH"
+    },
+    "target_distribution": [
+      0.5,
+      0.3333333333333333,
+      0.16666666666666666
+    ]
+  },
+  "forum": {
+    "confidence": 0.125,
+    "decided": null,
+    "exit_code": 0,
+    "needs_escalation": true,
+    "status": "MATCH",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "a70d5f95cb9dd305f9ec5dd544439bf31a9ebeb4813bfd5394a01fa229da18b8",
+    "top_candidates": [
+      {
+        "agent": "model-foundry",
+        "score": 0.125
+      },
+      {
+        "agent": "backend",
+        "score": 0.0
+      },
+      {
+        "agent": "ci-cd",
+        "score": 0.0
+      },
+      {
+        "agent": "cloud-infra",
+        "score": 0.0
+      },
+      {
+        "agent": "code-review",
+        "score": 0.0
+      }
+    ]
+  },
+  "index": {
+    "exit_code": 0,
+    "graph_pack_sha256": "8ee383e19ae9a6141bee70de733fb6aa09201ff9d284ce6778ce58b06e6b68b2",
+    "schema": "project-telos.context-envelope/v1",
+    "source_refs_only": true,
+    "status": "MATCH",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "2cf1fc87419b385e5200cbf5bd1ee28adc44aa00bf0539cf7de630cb5b915307",
+    "verification_verdict": "MATCH"
+  },
+  "pass": "0110",
+  "schema": "DogfoodToolReceipts/v1",
+  "seal": "18adce23738cca2a214c31891a392efcf8ddf0dc13495978d0f93ec4f7f464a4",
+  "telos": {
+    "exit_code": 0,
+    "status": "MATCH",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "be17cb15259234cb4e8e95c2b36e76c90d841431729beb140294e34c5f9ebfa7",
+    "tool": "telos",
+    "tool_version": "0.1.0"
+  },
+  "test": {
+    "command": "C:\\Users\\Zain\\AppData\\Local\\Programs\\Python\\Python312\\python.exe C:\\dev\\public\\telos\\docs\\research\\dogfood\\tools\\test_stochastic_runtime_chain_receipt.py",
+    "exit_code": 0,
+    "status": "MATCH",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "youtube_binding": {
+    "architecture_pull_count": 7,
+    "architecture_pulls": [
+      {
+        "architecture_pull": "AI4Science packets that bind source intake, model decisions, assay handoff, verifier verdicts, and reproduction status.",
+        "cluster_id": "molecular_ai_drug_discovery",
+        "evidence_status": "SOURCE_LEAD",
+        "video_count": 1
+      },
+      {
+        "architecture_pull": "Eval receipt lab with replayable attempts, prompt/model boundaries, tool-use records, and benchmark authority receipts.",
+        "cluster_id": "arc_agi_eval_and_generalization",
+        "evidence_status": "SOURCE_LEAD",
+        "video_count": 1
+      },
+      {
+        "architecture_pull": "BuildLang quant proof kernels with stress receipts, identity checks, and execution provenance.",
+        "cluster_id": "quantitative_finance_laws",
+        "evidence_status": "SOURCE_LEAD",
+        "video_count": 1
+      },
+      {
+        "architecture_pull": "Search-verifier loop ledger that records proposals, rollouts, verifier gates, and accepted proof states.",
+        "cluster_id": "search_rl_alpha_zero",
+        "evidence_status": "SOURCE_LEAD",
+        "video_count": 1
+      },
+      {
+        "architecture_pull": "Quantum optimization workflow receipts spanning problem formulation, solver branch, hardware/simulator context, calibration reference, and measured objective.",
+        "cluster_id": "enterprise_quantum_optimization",
+        "evidence_status": "SOURCE_LEAD",
+        "video_count": 13
+      },
+      {
+        "architecture_pull": "Risk scenario proof packets with assumptions, mitigations, authority boundaries, likelihood evidence, and review status.",
+        "cluster_id": "agi_risk_scenarios",
+        "evidence_status": "SOURCE_LEAD",
+        "video_count": 1
+      },
+      {
+        "architecture_pull": "Societal proof-packet lane binding public claims, governance choices, model actions, and accountable review.",
+        "cluster_id": "ai_society_governance",
+        "evidence_status": "SOURCE_LEAD",
+        "video_count": 1
+      }
+    ],
+    "dominant_cluster": "enterprise_quantum_optimization",
+    "dominant_cluster_video_count": 13,
+    "metadata_match_count": 19,
+    "raw_transcript_included": false,
+    "roadmap_pass": "0102",
+    "source_policy": "YouTube videos are treated as critical source leads. Metadata and Gather receipts are first-order evidence; synthesized product implications remain hypotheses.",
+    "top_priority": "optimization_proof_workbench",
+    "transcript_receipt_count": 19,
+    "valid_video_count": 19
+  }
+}

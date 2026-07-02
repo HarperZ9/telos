@@ -1,0 +1,182 @@
+{
+  "generated_on": "2026-07-01",
+  "non_promotion_statement": "Tool receipts prove local CRM-ready outreach packet generation, validator MATCH, Gather packet intake, Forum routing, CRM read-only state, and Crucible MATCH. They do not prove buyer demand, budget, sent outreach, CRM writes, customer adoption, scientific truth, uniqueness, or any natural law.",
+  "pass": "0060",
+  "receipts": [
+    {
+      "check_count": 14,
+      "command": "telos_operator_doctor",
+      "passed_count": 14,
+      "status": "MATCH",
+      "tool": "mcp__telos.telos_operator_doctor",
+      "tool_count": 65
+    },
+    {
+      "command": "telos_catalog",
+      "status": "MATCH",
+      "tool": "mcp__telos.telos_catalog",
+      "tool_count": 65,
+      "transport_count": 2
+    },
+    {
+      "command": "index_status",
+      "command_count": 6,
+      "mcp_tool_count": 10,
+      "role": "structure-context",
+      "status": "MATCH",
+      "tool": "mcp__index.index_status",
+      "tool_version": "2.8.0"
+    },
+    {
+      "check_count": 4,
+      "command": "index_doctor",
+      "match_count": 4,
+      "status": "MATCH",
+      "tool": "mcp__index.index_doctor",
+      "tool_version": "2.8.0"
+    },
+    {
+      "artifact": "packets/070-buyer-outreach-packets.md",
+      "chars": 776,
+      "command": "docs",
+      "seal": "2c14478fd1431deaabb733bf02545b152d7a3f522d645bbf7b009ec0a4c2bae7",
+      "sha256": "e189348b2df8092367a25c4ae2626948415602d06911d8a9351edbb4e5ac1fcb",
+      "status": "MATCH",
+      "tool": "mcp__gather.gather_docs",
+      "verified": true
+    },
+    {
+      "command": "gather_status",
+      "command_count": 6,
+      "mcp_tool_count": 5,
+      "role": "perception-intake",
+      "status": "MATCH",
+      "tool": "mcp__gather.gather_status",
+      "tool_version": "1.5.0"
+    },
+    {
+      "command": "test_buyer_outreach_packets.py",
+      "exit_code": 0,
+      "line_count": 56,
+      "sha256": "1d9c1a013939e82f79cc846763c1f4114d596c4d0dc4acc4768a7570b8c1e58c",
+      "status": "MATCH",
+      "tool": "python"
+    },
+    {
+      "command": "compose_buyer_outreach_packets.py",
+      "crm_write_status": "NOT_WRITTEN",
+      "line_count": 234,
+      "outreach_packet_count": 3,
+      "seal": "2bf5704d5e2065ee55732533a4f9bca3e5d892dc43e33fba676e5c56325c93ee",
+      "send_status": "NOT_SENT",
+      "sha256": "e7958f598dc31d2f3f59511f5c4f799963c147872e9d7c43277407f2bfaeb86f",
+      "status": "BUYER_OUTREACH_PACKETS_MATCH",
+      "tool": "python"
+    },
+    {
+      "command": "probe_buyer_outreach_packets.py",
+      "line_count": 149,
+      "seal": "2bf5704d5e2065ee55732533a4f9bca3e5d892dc43e33fba676e5c56325c93ee",
+      "sha256": "c140fd0ae75182c5c0d5551588aadfc97e7c2191d16dfb3ae0b27af82f0d0ae4",
+      "status": "MATCH",
+      "tool": "python"
+    },
+    {
+      "command": "validate_pass_0060_buyer_outreach_packets.py",
+      "drift": 0,
+      "field_count": 24,
+      "followup_count": 9,
+      "line_count": 88,
+      "match": 1,
+      "packet_count": 3,
+      "schema": "Pass0060BuyerOutreachPacketsValidatorRun/v1",
+      "sha256": "0fccb7f6f3528816013d2f74567b35cc0f0a5db6a5e813676f973aab61c368b0",
+      "status": "MATCH",
+      "tool": "python"
+    },
+    {
+      "command": "forum_doctor",
+      "match_count": 4,
+      "status": "MATCH",
+      "tool": "mcp__forum.forum_doctor",
+      "tool_version": "1.12.0"
+    },
+    {
+      "candidates": [
+        {
+          "agent": "project-telos",
+          "score": 0.3181818181818182
+        }
+      ],
+      "command": "route CRM-ready outreach packet prompt",
+      "confidence": 0.5,
+      "decided": "project-telos",
+      "needs_escalation": false,
+      "status": "MATCH",
+      "tool": "mcp__forum.route"
+    },
+    {
+      "command": "crm_stats",
+      "outreach_last_30_days": 0,
+      "outreach_last_7_days": 0,
+      "status": "MATCH_READ_ONLY_EMPTY_CRM",
+      "tool": "mcp__warden_crm.crm_stats",
+      "total_counterparties": 0
+    },
+    {
+      "command": "next_touch_due",
+      "count": 0,
+      "horizon": "2026-07-15T16:51:11.163789+00:00",
+      "status": "MATCH_READ_ONLY_EMPTY_TOUCH_QUEUE",
+      "tool": "mcp__warden_crm.next_touch_due"
+    },
+    {
+      "capability_count": 4,
+      "command": "crucible_status",
+      "mcp_tool_count": 13,
+      "role": "verification-pressure",
+      "status": "MATCH",
+      "tool": "mcp__crucible.crucible_status",
+      "tool_version": "1.1.0"
+    },
+    {
+      "assessments": 49,
+      "claims": 400,
+      "command": "crucible_registry stats",
+      "drift": 0,
+      "invalid_latest_assessments": 0,
+      "match": 400,
+      "status": "MATCH",
+      "theses": 48,
+      "tool": "mcp__crucible.crucible_registry",
+      "unverifiable": 0
+    },
+    {
+      "command": "crucible_registry verify",
+      "ok": true,
+      "status": "MATCH",
+      "tool": "mcp__crucible.crucible_registry",
+      "verified_thesis_id": "80b8e15e418606e1"
+    },
+    {
+      "assessment_seal": "a4521e6b3f51b89a5f12c0f55b1fadbf4345a5f4d2a04087077cfd28100a49b9",
+      "claims": 8,
+      "command": "crucible run --registry",
+      "drift": 0,
+      "match": 8,
+      "measurement_seal": "94143eb3f263b96240bf948f1257cbc58724565ff13b3ea3f4ab0a75be6f26a8",
+      "run_sha256": "ed42d813fee240c94ce634248be99eb86cebf5159466d5b6c101f2e3796d5fe0",
+      "seals_ok": true,
+      "status": "MATCH",
+      "thesis_id": "80b8e15e418606e1",
+      "thesis_ok": true,
+      "thesis_seal": "80b8e15e418606e1c91939ea44b4efead0ef128648439c5bd533642ded871644",
+      "tool": "crucible",
+      "unverifiable": 0,
+      "verdict_seal": "ac0679ff25d1118f17822f68ee1ee329a76662cc523850cd98f63624290507ae",
+      "verdicts_rederive": true
+    }
+  ],
+  "schema": "DogfoodToolReceiptSet/v1",
+  "status": "MATCH_CRM_READY_NOT_SENT_NOT_WRITTEN"
+}

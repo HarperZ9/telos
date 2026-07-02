@@ -1,0 +1,118 @@
+Langfuse @ AI Engineer · Booth LG-39 →Langfuse @ AI Engineer World Fair in San Francisco · Find us at booth LG-39 →
+Docs
+🐐Hiring in Europe and SFLooking for GOATS!
+Launch AppL
+Get DemoG
+DocsIntegrationsSelf HostingGuidesAcademyWorkshopAI Engineering Library
+DocsOverview
+OverviewExample ProjectAsk AI
+Get Started
+Start TracingUse Prompt ManagementSet up Evals
+Products
+Observability
+OverviewGet StartedConcepts
+Features
+SDKs
+Integrations ↗Troubleshooting & FAQ
+Prompt Management
+Evaluation
+Platform
+Metrics
+API & Data Platform
+Assistant
+Administration
+Security & Guardrails
+More
+GlossaryRoadmapLangfuse Fast Preview: Faster and Observations-FirstDocs MCP Server
+SDK & API References
+Security & Compliance ↗Support ↗
+Overview
+DocsObservabilityOverview
+Copy page
+Observability & Application Tracing
+Because AI is inherently non-deterministic, debugging your application without any observability tool is more like guesswork.
+Well-implemented observability gives you the tools to understand what's happening inside your application and why.
+The core of this is application tracing — structured logs of every request that capture the exact prompt sent, the model's response, token usage, latency, and any tools or retrieval steps in between.
+Langfuse captures all of this for you as you build. Here's an example of a trace in the Langfuse UI:
+🎥
+Watch this walkthrough of Langfuse Observability and how to integrate it with your application.
+Getting Started
+Start by setting up your first trace.
+Take a moment to understand the core concepts of tracing in Langfuse: traces, sessions, and observations.
+Once you're up and running, you can start adding on more functionality to your traces. We recommend starting with the following:
+Group traces into sessions for multi-turn applications
+Split traces into environments for different stages of your application
+Add attributes to your traces so you can filter them in the future
+Use custom trace IDs for distributed tracing
+Track costs and token usage
+Already know what you want? Take a look under Features for guides on specific topics.
+FAQ
+What is the difference between observability and tracing?
++
+Observability is the broader capability of understanding the internal state of your system from its outputs. It encompasses tracing, metrics, and logging. Tracing is a specific observability technique that records the flow of a request through your system, preserving causal relationships between operations. In the context of LLM applications, tracing is the most important observability tool because it captures the full context of each request — prompts, responses, tool calls, and their relationships.
+What is application tracing?
++
+Application tracing records the complete lifecycle of a request as it flows through your system. Each trace captures every operation — LLM calls, retrieval steps, tool executions, and custom logic — along with timing, inputs, outputs, and metadata. This gives you full visibility into what happened during each request, enabling debugging, performance optimization, and quality monitoring.
+How does Langfuse compare to other tracing solutions?
++
+Langfuse is purpose-built for LLM applications, which means it natively understands LLM-specific concepts like token usage, model parameters, prompt/completion pairs, and evaluation scores. Unlike general-purpose APM tools, Langfuse provides features specific to AI engineering: LLM-as-a-Judge evaluation, prompt management, experiments and datasets, and custom dashboards. It's also open source and can be self-hosted.
+Does Langfuse add latency to my application?
++
+No. Langfuse SDKs send tracing data asynchronously in the background. Trace events are queued locally and flushed in batches, so your application's response time is not affected. See queuing and batching for details.
+Was this page helpful?
+Good
+Bad
+Support
+Last edited
+PreviousAsk AI
+NextGet Started
+Product
+Observability
+Prompt Management
+Evaluations
+Metrics
+Langfuse for Agents
+Playground
+Pricing
+Enterprise
+Developers
+Documentation
+Self-Hosting
+SDKs
+Integrations
+API Reference
+Status
+Talk to Us
+Resources
+Blog
+Changelog
+Roadmap
+Interactive Demo
+Customers
+AI Engineering Library
+Workshop
+Guides & Cookbooks
+Company
+About Us
+Careers
+Handbook
+Press
+Security
+Support
+Open source
+Terms
+Privacy
+Imprint
+Cookie Policy
+© 2022–2026 Langfuse GmbH
+/ Finto Technologies Inc.
+Design by Altalogy
+On this page
+Observability & Application TracingGetting StartedFAQ
+Actions
+Give us feedbackEdit this page on GitHub
+Contributors
+Last edited
+Ben BachemJannik MaierhöferLotte Verheyden+2 more
+Ask AIA
+A

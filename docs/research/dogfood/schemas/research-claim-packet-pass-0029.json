@@ -1,0 +1,195 @@
+{
+  "action_receipt_proposal": {
+    "action_id": "act_dogfood_0029_research_claim_extract",
+    "authority_class": "read_only_research_packet",
+    "event_id": "evt_dogfood_0029_research_claim_packet",
+    "event_type": "research_claim_packet_created",
+    "input_digests": [
+      "sha256:fcc8d3d9dea488bfd4dee9bbc9898cde12472df26ecbcc3665aaaae9d045bf62",
+      "sha256:75aeda5b9afa02eb1da746aa319d2908a7895f26aefe5d1949d1d949ff3c0f32"
+    ],
+    "input_refs": [
+      "artifact:fixtures/pipeline-math-source-receipt-pass-0029.json",
+      "artifact:schemas/source-evidence-binding-pass-0028.json"
+    ],
+    "model_reasoning_required_for_replay": false,
+    "output_ref": "artifact:schemas/research-claim-packet-pass-0029.json",
+    "raw_browser_payload_required": false,
+    "raw_source_material_required": false,
+    "schema": "ActionReceiptResearchClaimProposal/v1",
+    "verification": {
+      "ref": "validator:pass-0029-research-claim-packet",
+      "verdict": "MATCH"
+    }
+  },
+  "claim_to_proof_steps": [
+    "source intake",
+    "claim extraction",
+    "source digest binding",
+    "action receipt proposal",
+    "verifier measurement",
+    "unsupported claim rejection",
+    "Crucible assessment"
+  ],
+  "claims": [
+    {
+      "claim": "The pipeline-math README positions the repository as collecting resolutions of open problems from the COLT open-problem track, commutative ring theory, an Erdos problem, and a FOCS 2023 open question.",
+      "confidence": "high",
+      "evidence_locator": "README line 0",
+      "evidence_receipt": "fixtures/pipeline-math-source-receipt-pass-0029.json",
+      "evidence_receipt_sha256": "fcc8d3d9dea488bfd4dee9bbc9898cde12472df26ecbcc3665aaaae9d045bf62",
+      "evidence_url": "https://raw.githubusercontent.com/Pengbinghui/pipeline-math/main/README.md",
+      "id": "rc_pipeline_math_scope",
+      "promotion_state": "SOURCE_VERIFIED",
+      "proof_gap": "This verifies source positioning only, not mathematical correctness.",
+      "verification_status": "verified"
+    },
+    {
+      "claim": "The pipeline-math README says proof discovery used a simple prover-verifier pipeline, with papers assembled in Claude Code and then polished and verified by the authors.",
+      "confidence": "high",
+      "evidence_locator": "README line 1",
+      "evidence_receipt": "fixtures/pipeline-math-source-receipt-pass-0029.json",
+      "evidence_receipt_sha256": "fcc8d3d9dea488bfd4dee9bbc9898cde12472df26ecbcc3665aaaae9d045bf62",
+      "evidence_url": "https://raw.githubusercontent.com/Pengbinghui/pipeline-math/main/README.md",
+      "id": "rc_pipeline_math_prover_verifier",
+      "promotion_state": "SOURCE_VERIFIED",
+      "proof_gap": "This verifies the README's process claim only, not independent proof validity.",
+      "verification_status": "verified"
+    },
+    {
+      "claim": "The pipeline-math README says its commutative-ring-theory solutions are formalized in Lean using an agentic Lean formalization pipeline, with open source release pending.",
+      "confidence": "high",
+      "evidence_locator": "README line 2",
+      "evidence_receipt": "fixtures/pipeline-math-source-receipt-pass-0029.json",
+      "evidence_receipt_sha256": "fcc8d3d9dea488bfd4dee9bbc9898cde12472df26ecbcc3665aaaae9d045bf62",
+      "evidence_url": "https://raw.githubusercontent.com/Pengbinghui/pipeline-math/main/README.md",
+      "id": "rc_pipeline_math_lean_formalization",
+      "promotion_state": "SOURCE_VERIFIED",
+      "proof_gap": "This verifies the README statement only; the formalization artifacts still need independent replay.",
+      "verification_status": "verified"
+    },
+    {
+      "claim": "The listed pipeline-math open-problem resolutions are mathematically correct.",
+      "confidence": "unknown",
+      "evidence_locator": "not established by this pass",
+      "evidence_receipt": "fixtures/pipeline-math-source-receipt-pass-0029.json",
+      "evidence_receipt_sha256": "fcc8d3d9dea488bfd4dee9bbc9898cde12472df26ecbcc3665aaaae9d045bf62",
+      "evidence_url": "https://raw.githubusercontent.com/Pengbinghui/pipeline-math/main/README.md",
+      "id": "rc_pipeline_math_proof_correctness",
+      "promotion_state": "BLOCKED",
+      "proof_gap": "Requires independent proof review, formal replay, or accepted external verification.",
+      "verification_status": "UNVERIFIABLE"
+    },
+    {
+      "claim": "The pipeline-math repository state will remain unchanged at future replay time.",
+      "confidence": "unknown",
+      "evidence_locator": "not established by this pass",
+      "evidence_receipt": "fixtures/pipeline-math-source-receipt-pass-0029.json",
+      "evidence_receipt_sha256": "fcc8d3d9dea488bfd4dee9bbc9898cde12472df26ecbcc3665aaaae9d045bf62",
+      "evidence_url": "https://raw.githubusercontent.com/Pengbinghui/pipeline-math/main/README.md",
+      "id": "rc_pipeline_math_future_currentness",
+      "promotion_state": "BLOCKED",
+      "proof_gap": "Requires a fresh fetch and digest comparison at replay time.",
+      "verification_status": "UNVERIFIABLE"
+    }
+  ],
+  "current_promoted_natural_laws": [],
+  "generated_on": "2026-07-01",
+  "market_implication": {
+    "buyer_relevance": [
+      "AI4Science labs need claim-to-source-to-verification chains for generated research.",
+      "Agent infrastructure teams need unsupported-claim promotion gates before model outputs enter durable records.",
+      "BuildLang/buildc can consume the same packet shape for compiler/runtime measurement receipts."
+    ],
+    "uniqueness_status": "hypothesis",
+    "wedge_hypothesis": "Research proof packets can package public source intake, claim extraction, action provenance, verifier measurements, and unsupported-promotion fences in one portable object."
+  },
+  "negative_fixture_count": 10,
+  "negative_fixtures": [
+    {
+      "expected_validator_status": "REJECT",
+      "failure_mode": "A source-positioning receipt is treated as proof that pipeline-math papers are mathematically correct.",
+      "fixture_id": "negative-proof-correctness-promoted"
+    },
+    {
+      "expected_validator_status": "REJECT",
+      "failure_mode": "A 2026-07-01 source observation is treated as proof of future repository state.",
+      "fixture_id": "negative-future-currentness-promoted"
+    },
+    {
+      "expected_validator_status": "REJECT",
+      "failure_mode": "A small source-backed packet is promoted into evidence that the approach works for all science.",
+      "fixture_id": "negative-broad-science-generalization"
+    },
+    {
+      "expected_validator_status": "REJECT",
+      "failure_mode": "A verified claim lacks an evidence URL.",
+      "fixture_id": "negative-source-url-missing"
+    },
+    {
+      "expected_validator_status": "REJECT",
+      "failure_mode": "The public source receipt SHA-256 differs from the claim packet binding.",
+      "fixture_id": "negative-source-receipt-sha-drift"
+    },
+    {
+      "expected_validator_status": "REJECT",
+      "failure_mode": "The pass 0028 source-evidence binding SHA-256 differs from the claim packet binding.",
+      "fixture_id": "negative-pass-0028-binding-drift"
+    },
+    {
+      "expected_validator_status": "REJECT",
+      "failure_mode": "Pass 0028 network capture UNVERIFIABLE is promoted to MATCH.",
+      "fixture_id": "negative-unverifiable-network-promoted"
+    },
+    {
+      "expected_validator_status": "REJECT",
+      "failure_mode": "Pass 0028 console capture UNVERIFIABLE is promoted to MATCH.",
+      "fixture_id": "negative-unverifiable-console-promoted"
+    },
+    {
+      "expected_validator_status": "REJECT",
+      "failure_mode": "The research packet lacks an action receipt proposal binding the source evidence to the claim extraction action.",
+      "fixture_id": "negative-action-receipt-proposal-missing"
+    },
+    {
+      "expected_validator_status": "REJECT",
+      "failure_mode": "The research packet lacks verifier measurements for supported, blocked, and rejected claims.",
+      "fixture_id": "negative-verifier-measurement-missing"
+    }
+  ],
+  "non_promotion_statement": "Pass 0029 verifies a small public-source claim packet and rejects unsupported promotion. It does not prove the mathematical correctness of pipeline-math papers, broad scientific generalization, buyer adoption, Telos uniqueness against all competitors, live browser capture, or any natural law.",
+  "packet_title": "Pipeline-math Source-Backed Research Claim Packet",
+  "pass": "0029",
+  "prior_source_evidence_binding": {
+    "console_summary_verdict": "UNVERIFIABLE",
+    "network_summary_verdict": "UNVERIFIABLE",
+    "path": "schemas/source-evidence-binding-pass-0028.json",
+    "schema": "SourceEvidenceBindingSet/v1",
+    "seal": "879c147a7c755ca357eaf07802a893cb6a3a92752af0664a3ea2e1ec9565337e",
+    "sha256": "75aeda5b9afa02eb1da746aa319d2908a7895f26aefe5d1949d1d949ff3c0f32"
+  },
+  "public_source_receipt": {
+    "confidence": "high",
+    "observed_on": "2026-07-01",
+    "path": "fixtures/pipeline-math-source-receipt-pass-0029.json",
+    "seal": "ca2eed3a5cc8327408c2e77b52ea84149161e8543106aa65fcd542637a4c40af",
+    "sha256": "fcc8d3d9dea488bfd4dee9bbc9898cde12472df26ecbcc3665aaaae9d045bf62",
+    "url": "https://raw.githubusercontent.com/Pengbinghui/pipeline-math/main/README.md",
+    "verification_status": "verified"
+  },
+  "schema": "ResearchClaimPacket/v1",
+  "seal": "272b3afd43cd60688f06fabd11d66934796f448ba1f07a02d62a3798443a62f4",
+  "status": "RESEARCH_CLAIM_PACKET_MATCH",
+  "verifier_measurements": {
+    "blocked_claim_count": 2,
+    "claim_count": 5,
+    "measurement_status": "MATCH",
+    "network_console_unverifiable_preserved": true,
+    "prior_source_binding_sha256": "75aeda5b9afa02eb1da746aa319d2908a7895f26aefe5d1949d1d949ff3c0f32",
+    "schema": "ResearchClaimVerifierMeasurements/v1",
+    "source_receipt_sha256": "fcc8d3d9dea488bfd4dee9bbc9898cde12472df26ecbcc3665aaaae9d045bf62",
+    "unsupported_claim_promotion_rejected": true,
+    "unverifiable_claim_count": 2,
+    "verified_claim_count": 3
+  }
+}

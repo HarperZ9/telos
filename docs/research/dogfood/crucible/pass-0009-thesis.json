@@ -1,0 +1,30 @@
+{
+  "title": "Dogfood Pass 0009 Heat Equation Energy Proof Kit",
+  "disposition": "fenced",
+  "claims": [
+    {
+      "text": "Pass 0009 created a ProofPacket/v1 heat-equation energy packet with three claims: continuous L2 energy identity, stable finite-difference witness, and unstable negative fixture.",
+      "falsification": "schemas/heat-equation-proof-packet-pass-0009.json is missing, is not ProofPacket/v1, or does not contain exactly the three named claim ids"
+    },
+    {
+      "text": "The heat-equation probe reports PROBE_MATCH, with cfl=0.45 recording zero stable energy increases over 400 steps and cfl=0.55 detecting unstable energy growth.",
+      "falsification": "schemas/heat-equation-energy-probe-pass-0009.json is missing, reports non-PROBE_MATCH status, records stable increase_count above zero, or fails to record ENERGY_INCREASE_DETECTED for the unstable probe"
+    },
+    {
+      "text": "The pass 0009 scientific-compute market map includes at least ten rows and covers language-ecosystem, pde-framework, hpc-solver, physics-ai, and commercial-simulation categories.",
+      "falsification": "schemas/scientific-compute-market-map-pass-0009.json has fewer than ten rows or omits any required category"
+    },
+    {
+      "text": "Every pass 0009 market-map row includes an HTTPS source URL and a BuildLang/buildc wedge hypothesis.",
+      "falsification": "any row in schemas/scientific-compute-market-map-pass-0009.json lacks source_url, uses a non-HTTPS URL, or lacks buildlang_wedge_hypothesis"
+    },
+    {
+      "text": "The pass 0009 validators report MATCH: the ProofPacket validator reports one match and zero drift; the scientific-compute validator reports two matches and zero drift.",
+      "falsification": "schemas/proof-packet-validator-pass-0009.json or schemas/pass-0009-scientific-compute-validator-result.json is missing, reports non-MATCH status, or reports drift above zero"
+    },
+    {
+      "text": "Pass 0009 promotes zero natural-law discoveries; the heat-equation energy identity is explicitly treated as a classical identity and proof-packet systems test.",
+      "falsification": "any pass 0009 artifact labels a new physical law, theorem breakthrough, biological result, material result, medical result, finance result, or safety result as promoted"
+    }
+  ]
+}

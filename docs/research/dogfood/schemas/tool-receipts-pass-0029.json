@@ -1,0 +1,177 @@
+{
+  "generated_on": "2026-07-01",
+  "non_promotion_statement": "Tool receipts prove tool-surface availability, source intake, packet readback, MCP Telos receipts, Forum ledger verification, and Crucible availability only. They do not prove mathematical correctness, broad scientific generalization, buyer adoption, Telos uniqueness against all competitors, live browser capture, or any natural law.",
+  "pass": "0029",
+  "receipts": [
+    {
+      "command": "status",
+      "role": "structure-context",
+      "status": "MATCH",
+      "tool": "index",
+      "tool_version": "2.8.0"
+    },
+    {
+      "checks": [
+        "workspace_map",
+        "context_pack",
+        "structural_verification",
+        "mcp_map_probe"
+      ],
+      "command": "index_doctor",
+      "mcp_map_probe_repo_count": 1,
+      "status": "MATCH",
+      "tool": "mcp__index.index_doctor"
+    },
+    {
+      "command": "status",
+      "role": "perception-intake",
+      "status": "MATCH",
+      "tool": "gather",
+      "tool_version": "1.5.0"
+    },
+    {
+      "artifact": "packets/039-research-claim-packet.md",
+      "chars": 5957,
+      "command": "docs",
+      "seal": "6fd9b99b4c07240278eabc45d4d4bc77fddadec5254743d7ef787226e3602a87",
+      "sha256": "c0236e7a5faf433774f5fc40b36ab04ef9e59c355e78d64779d9bb9519fc7a84",
+      "status": "MATCH",
+      "tool": "gather",
+      "verified": true
+    },
+    {
+      "command": "web.open",
+      "evidence_url": "https://raw.githubusercontent.com/Pengbinghui/pipeline-math/main/README.md",
+      "observed_ref": "turn1view0",
+      "status": "MATCH",
+      "tool": "web",
+      "verified_source_claims": 3
+    },
+    {
+      "command": "telos status",
+      "error": "The term 'telos' is not recognized as the name of a cmdlet, function, script file, or operable program.",
+      "status": "UNVERIFIABLE",
+      "tool": "shell"
+    },
+    {
+      "command": "telos_status",
+      "status": "MATCH",
+      "tool": "mcp__telos.telos_status",
+      "tool_version": "0.1.0"
+    },
+    {
+      "check_count": 14,
+      "command": "telos_operator_doctor",
+      "generated_at": "2026-07-01T12:38:44.091Z",
+      "passed_count": 14,
+      "status": "MATCH",
+      "telos_tool_count": 37,
+      "tool": "mcp__telos.telos_operator_doctor",
+      "tool_count": 65
+    },
+    {
+      "command": "telos_catalog",
+      "noted_tools": [
+        "telos.status",
+        "telos.catalog",
+        "telos.browser.evidence",
+        "telos.action.receipt",
+        "telos.loop.ledger",
+        "telos.native.control",
+        "gather.docs",
+        "index.context.envelope",
+        "forum.ledger.summary",
+        "crucible.assess"
+      ],
+      "schema": "project-telos.mcp-tool-catalog/v1",
+      "status": "MATCH",
+      "tool": "mcp__telos.telos_catalog"
+    },
+    {
+      "command": "telos_browser_evidence",
+      "console_summary_verdict": "UNVERIFIABLE",
+      "network_summary_verdict": "UNVERIFIABLE",
+      "redaction_status": "redacted",
+      "schema": "project-telos.browser-evidence/v1",
+      "status": "MATCH",
+      "target_ref": "url:sha256:100680ad546ce6a577f42f52df33b4cfdca756859e664b8d7de329b150d09ce9",
+      "tool": "mcp__telos.telos_browser_evidence",
+      "verification_verdict": "MATCH"
+    },
+    {
+      "append_only_compensation_required": true,
+      "command": "telos_action_receipt",
+      "digest_references_required": true,
+      "persistence_contract": "Receipts are append-only events. Corrections and compensation are new events joined by action_id or compensates, never destructive mutation of the original event.",
+      "raw_parameters_required": false,
+      "receipt_is_trace_span": false,
+      "schema": "project-telos.action-receipt/v1",
+      "status": "MATCH",
+      "tool": "mcp__telos.telos_action_receipt",
+      "verified_on": "2026-06-27"
+    },
+    {
+      "command": "telos_loop_ledger",
+      "fresh_context_reads_ledger_first": true,
+      "ledger_durable": true,
+      "schema": "project-telos.loop-ledger/v1",
+      "status": "MATCH",
+      "tool": "mcp__telos.telos_loop_ledger",
+      "verified_on": "2026-06-28"
+    },
+    {
+      "background": true,
+      "command": "telos_native_control",
+      "ok": true,
+      "schema": "project-telos.native-control/v1",
+      "status": "MATCH",
+      "tool": "mcp__telos.telos_native_control"
+    },
+    {
+      "command": "status",
+      "role": "orchestration-routing",
+      "status": "MATCH",
+      "tool": "forum",
+      "tool_version": "1.12.0"
+    },
+    {
+      "command": "forum_doctor",
+      "ledger_verification": "MATCH",
+      "model_agnostic_executor": "MATCH",
+      "status": "MATCH",
+      "tool": "mcp__forum.forum_doctor"
+    },
+    {
+      "checkpoint": "0000000000000000000000000000000000000000000000000000000000000000",
+      "command": "ledger summary",
+      "entries": 0,
+      "model_calls_total": 0,
+      "status": "MATCH",
+      "tool": "forum",
+      "verified": true
+    },
+    {
+      "chain": true,
+      "command": "ledger verify",
+      "deep": true,
+      "status": "MATCH",
+      "tool": "forum"
+    },
+    {
+      "command": "submit",
+      "error": "submit needs a model executor. Forum is model-agnostic: pass --cmd \"<model cli>\" (any command, local models need no account), --chat-url <openai-compatible url> (e.g. a local Ollama server), or --api (Anthropic).",
+      "request": "Dogfood pass 0029 adversarial review for executable research claim packet",
+      "status": "UNVERIFIABLE",
+      "tool": "forum"
+    },
+    {
+      "command": "status",
+      "role": "verification-pressure",
+      "status": "MATCH",
+      "tool": "crucible",
+      "tool_version": "1.1.0"
+    }
+  ],
+  "schema": "DogfoodToolReceiptSet/v1",
+  "status": "MATCH_WITH_FORUM_SUBMIT_GAP_AND_TELOS_SHELL_GAP"
+}

@@ -1,0 +1,38 @@
+{
+  "title": "Dogfood Pass 0012 Quantum No-Cloning Proof Packet",
+  "disposition": "fenced",
+  "claims": [
+    {
+      "text": "Pass 0012 created a NoCloningProbe/v1 artifact reporting PROBE_MATCH: CNOT clones |0> and |1> basis fixtures with fidelity 1.0 and fails the |+> superposition clone fixture with fidelity 0.5.",
+      "falsification": "schemas/no-cloning-probe-pass-0012.json is missing, reports non-PROBE_MATCH status, lacks two passing basis checks with fidelity 1.0, or does not report FAILS_SUPERPOSITION with fidelity 0.5"
+    },
+    {
+      "text": "Pass 0012 records the inner-product no-cloning impossibility for |0> and |+>, including overlap 0.707106781186547, overlap_squared 0.5, and positive defect 0.207106781186548.",
+      "falsification": "schemas/no-cloning-probe-pass-0012.json lacks the inner_product_impossibility fields or reports nonpositive defect"
+    },
+    {
+      "text": "Pass 0012 created a 13-row quantum market map covering quantum-sdk, cloud-platform, hardware-platform, quantum-ai, quantum-compiler, neutral-atom, and annealing categories.",
+      "falsification": "schemas/quantum-computing-market-map-pass-0012.json has fewer than 13 rows or omits any required category"
+    },
+    {
+      "text": "Every pass 0012 market-map row includes an HTTPS source URL, proof receipt gap, Telos wedge hypothesis, gap status, and confidence label.",
+      "falsification": "any row in schemas/quantum-computing-market-map-pass-0012.json lacks a required field, uses a non-HTTPS source URL, or has an invalid gap_status"
+    },
+    {
+      "text": "Pass 0012 created a ProofPacket/v1 no-cloning packet with at least four claims and no PROMOTED_LAW state.",
+      "falsification": "schemas/no-cloning-proof-packet-pass-0012.json is missing, is not ProofPacket/v1, has fewer than four claims, or contains PROMOTED_LAW"
+    },
+    {
+      "text": "The pass 0012 validators report MATCH: the quantum validator reports three matches and zero drift, and the proof-packet validator reports one match and zero drift.",
+      "falsification": "schemas/pass-0012-quantum-validator-result.json or schemas/proof-packet-validator-pass-0012.json is missing, reports non-MATCH status, or reports drift above zero"
+    },
+    {
+      "text": "Pass 0012 attempted Forum steelman twice but preserved the executor JSON error as UNVERIFIABLE rather than treating it as a successful Forum adversarial result.",
+      "falsification": "adversarial/pass-0012-forum-steelman.md is missing, does not record the Forum executor JSON error, or schemas/no-cloning-proof-packet-pass-0012.json does not mark ForumSteelman as UNVERIFIABLE"
+    },
+    {
+      "text": "Pass 0012 promotes zero new theorems, quantum hardware results, quantum advantage claims, cryptographic breaks, natural laws, or scientific discoveries.",
+      "falsification": "any pass 0012 artifact labels a new theorem, hardware result, quantum advantage claim, cryptographic break, natural law, biological result, material result, medical result, finance result, or safety result as promoted"
+    }
+  ]
+}

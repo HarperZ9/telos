@@ -1,0 +1,114 @@
+{
+  "kind": "proof-lesson",
+  "packet_id": "third-wave-buildlang-hello-ci-review",
+  "verdict": "MATCH",
+  "lesson": {
+    "kind": "proof-lesson",
+    "packet_id": "third-wave-buildlang-hello-ci-review",
+    "packet_version": "project-telos.proof-packet/v1",
+    "claim": "BuildLang hello.bld type-checks under the built-in ci-review policy profile, emits a passed check receipt, declares only the Console effect for main, and observes the Console println capability.",
+    "scope": "Local source-checkout demo only: C:\\dev\\public\\pubscan\\quantalang with buildc 1.0.6 from isolated Cargo target; this does not prove whole-language correctness, full compiler correctness, physical scientific validity, or Build Universe compilation.",
+    "verdict": "MATCH",
+    "sources": [
+      {
+        "ref": "C:\\dev\\public\\pubscan\\quantalang\\examples\\quickstart\\hello.bld",
+        "sha256": "0e542c60fbd874a38a2a3a87eaf61be04532a0df23e3ea25512d03301883dfae"
+      },
+      {
+        "ref": "C:\\dev\\public\\telos\\docs\\outreach\\receipts\\third-wave\\buildlang-hello-ci-review-receipt.json",
+        "sha256": "ca46b87feb969af1896bf8fd53281ec84143a43ca7ae558e206baf23fb34ca1d"
+      }
+    ],
+    "scaffold": [
+      {
+        "step": 1,
+        "prompt": "Restate, in your own words, exactly what this claim asserts and nothing more: \"BuildLang hello.bld type-checks under the built-in ci-review policy profile, emits a passed check receipt, declares only the Console effect for main, and observes the Console println capability.\" (scope: Local source-checkout demo only: C:\\dev\\public\\pubscan\\quantalang with buildc 1.0.6 from isolated Cargo target; this does not prove whole-language correctness, full compiler correctness, physical scientific validity, or Build Universe compilation.)."
+      },
+      {
+        "step": 2,
+        "prompt": "Judging by their refs alone (C:\\dev\\public\\pubscan\\quantalang\\examples\\quickstart\\hello.bld, C:\\dev\\public\\telos\\docs\\outreach\\receipts\\third-wave\\buildlang-hello-ci-review-receipt.json), predict what each recorded source could contribute as evidence for or against the claim."
+      },
+      {
+        "step": 3,
+        "prompt": "The packet's overall verdict is MATCH. Before reading anything else, derive what a MATCH verdict must mean about the relationship between the claim and the recorded checks."
+      },
+      {
+        "step": 4,
+        "prompt": "List the checks you would run to reach your own verdict on this claim, then compare your list against what the packet's verdict implies was actually checked."
+      }
+    ],
+    "retrievalQuestions": [
+      {
+        "question": "What evidence would falsify this claim: \"BuildLang hello.bld type-checks under the built-in ci-review policy profile, emits a passed check receipt, declares only the Console effect for main, and observes the Console println capability.\"?",
+        "derivedFrom": "claim"
+      },
+      {
+        "question": "Which recorded source would you re-check first, and what does its content hash let you prove about it?",
+        "derivedFrom": "sources"
+      },
+      {
+        "question": "What does an overall verdict of MATCH entitle you to claim, and what does it not?",
+        "derivedFrom": "verdicts.overall"
+      },
+      {
+        "question": "The packet's scope is \"Local source-checkout demo only: C:\\dev\\public\\pubscan\\quantalang with buildc 1.0.6 from isolated Cargo target; this does not prove whole-language correctness, full compiler correctness, physical scientific validity, or Build Universe compilation.\". Give one claim that would exceed that scope.",
+        "derivedFrom": "scope"
+      }
+    ],
+    "verifierBinding": {
+      "packet_id": "third-wave-buildlang-hello-ci-review",
+      "verdict": "MATCH",
+      "sourceHashes": [
+        "0e542c60fbd874a38a2a3a87eaf61be04532a0df23e3ea25512d03301883dfae",
+        "ca46b87feb969af1896bf8fd53281ec84143a43ca7ae558e206baf23fb34ca1d"
+      ]
+    },
+    "boundary": "Lesson scaffold only -- prompts for the operator to derive the reasoning; never an answer dump, never a graded-assessment answer."
+  },
+  "misconception": null,
+  "sourceCount": 2,
+  "entries": [
+    {
+      "seq": 0,
+      "prevHash": "0000000000000000000000000000000000000000000000000000000000000000",
+      "hash": "b69c6386871b3fef0a65c41ad4b71b6a989a123b5f2562e89c14df382a2a6f6c",
+      "entry": {
+        "kind": "packet-binding",
+        "packet_id": "third-wave-buildlang-hello-ci-review",
+        "verdict": "MATCH",
+        "claim": "BuildLang hello.bld type-checks under the built-in ci-review policy profile, emits a passed check receipt, declares only the Console effect for main, and observes the Console println capability."
+      }
+    },
+    {
+      "seq": 1,
+      "prevHash": "b69c6386871b3fef0a65c41ad4b71b6a989a123b5f2562e89c14df382a2a6f6c",
+      "hash": "b4f3c3a5abb4fcee3b41c8b7ac1787f6ad6da806f5bf6e85a3e6fcea30b55353",
+      "entry": {
+        "kind": "source",
+        "ref": "C:\\dev\\public\\pubscan\\quantalang\\examples\\quickstart\\hello.bld",
+        "sha256": "0e542c60fbd874a38a2a3a87eaf61be04532a0df23e3ea25512d03301883dfae"
+      }
+    },
+    {
+      "seq": 2,
+      "prevHash": "b4f3c3a5abb4fcee3b41c8b7ac1787f6ad6da806f5bf6e85a3e6fcea30b55353",
+      "hash": "56573aa9ff63ba1254bc0fe9b5d84ea4ac19fbbada6111c58966c9e79a3bd14a",
+      "entry": {
+        "kind": "source",
+        "ref": "C:\\dev\\public\\telos\\docs\\outreach\\receipts\\third-wave\\buildlang-hello-ci-review-receipt.json",
+        "sha256": "ca46b87feb969af1896bf8fd53281ec84143a43ca7ae558e206baf23fb34ca1d"
+      }
+    },
+    {
+      "seq": 3,
+      "prevHash": "56573aa9ff63ba1254bc0fe9b5d84ea4ac19fbbada6111c58966c9e79a3bd14a",
+      "hash": "a14f65c9c1e6c9ac814be329a0967596256df977c0169cd3619918dd020f80cf",
+      "entry": {
+        "kind": "lesson-digest",
+        "digest": "sha256:51c10e36397724a077f2a659a9e7c6f0e5e84a788a9e72a74ac947d8599e3c5d",
+        "misconception_class": null
+      }
+    }
+  ],
+  "boundary": "Lesson receipt only -- binds the lesson to its packet's verdict and source hashes; never a graded-assessment answer."
+}

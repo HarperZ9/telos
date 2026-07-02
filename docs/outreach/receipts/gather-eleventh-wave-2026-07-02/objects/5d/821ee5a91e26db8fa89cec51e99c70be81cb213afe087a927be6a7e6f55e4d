@@ -1,0 +1,100 @@
+# Official Paper Revision Queue
+
+Date: 2026-07-02
+
+Purpose: revise the current site-facing research papers into a stricter evidence-state format, and only incorporate new data when the new data is backed by a receipt, command, source capture, or verifier result.
+
+This queue is not a claim that any paper is archive-submitted, accepted, peer-reviewed, or final. It is the operating map for getting the official papers into a format that can support public release without overclaiming.
+
+## Required Evidence-State Terms
+
+Every revised paper should use these terms instead of loose "verified" language:
+
+| Term | Meaning |
+| --- | --- |
+| `SOURCE_LEAD` | Source worth examining; not a claim of truth. |
+| `HYPOTHESIS` | Plausible claim or research direction that still needs proof or measurement. |
+| `IDENTITY` | Symbolic or definitional result checked inside a named formal scope. |
+| `PROBE_MATCH` | Bounded experiment or reproduction matched a stated local criterion. |
+| `CRUCIBLE_MATCH` | A claim matched recorded measurements through Crucible. |
+| `UNVERIFIABLE` | Current evidence does not establish the claim as scoped. |
+| `LAW_CANDIDATE` | A candidate general law; requires stronger independent proof before promotion. |
+| `PROMOTED_LAW` | Reserved. Requires independent proof, reproduction, and review. None are promoted in this pass. |
+
+## Strict Official-Paper Format
+
+Each official-copy revision should include:
+
+- Title, author, date, version, and status.
+- Evidence-state glossary used by the paper.
+- Claims table: claim, scope, status, evidence ref, missing evidence, falsifier.
+- Methods: exact tools, commands, source stores, packet paths, and verifier commands.
+- Negative controls or blocked gates.
+- Revision log with superseded claims preserved.
+- Website-copy summary link.
+- Official-copy target only when ready: arXiv, Zenodo, OSF, SSRN, or discipline-specific archive.
+
+## Revision Queue
+
+| Paper or page | Current role | Required terminology update | New data to review | Revision action | Promotion limit |
+| --- | --- | --- | --- | --- | --- |
+| `research-proof-carrying-research-loops.html` and `docs/research/whitepapers/PROOF-CARRYING-RESEARCH-LOOPS-2026-07-02.md` | New working paper and website-copy page. | Already uses `SOURCE_LEAD`, `PROBE_MATCH`, `CRUCIBLE_MATCH`, `UNVERIFIABLE`, `LAW_CANDIDATE`, and reserved `PROMOTED_LAW`. | Eighth-wave local pandas failing reproduction receipt; blocked readiness packet; three arXiv source-lead stores; Crucible 5/5 matched tooling-boundary run; Learn prooflesson receipt reverified as `UNVERIFIABLE`. | Keep as the canonical strict-format draft. Next revision should add a claims table keyed to exact receipt paths and a Learn reading plan for each candidate paper lane. | Working paper only; not submitted or accepted. |
+| `research-witness-and-verification.html` | Synthesis thesis for witnessed verdicts and bounded rationality. | Replace generic `MATCH`/`UNVERIFIABLE` prose with `CRUCIBLE_MATCH`, `PROBE_MATCH`, and `UNVERIFIABLE` where the evidence source is known. | Eighth-wave Learn prooflesson is directly relevant: it preserves the packet verdict and re-verifies from its own chain. Local pandas reproduction is a concrete boundary case for "stronger evidence without readiness." | Add a 2026-07-02 revision note that cites the Learn prooflesson and local reproduction as examples of verdict-bound learning and blocked promotion. | Reviewable draft; does not become a theorem or law. |
+| `research-discovery-forge.html` | Discovery pipeline page. | Re-label source cards as `SOURCE_LEAD` or `HYPOTHESIS`; re-label C3 simulate leg as `PROBE_MATCH`/`CRUCIBLE_MATCH` only inside its stated criterion. | No new C3 measurement data in this pass. The new data is format-level: stricter promotion vocabulary and website/official split. | Revise language that says "verified MATCH" to say what matched, by which verifier, and inside which scope. Preserve existing `UNVERIFIABLE` boundaries. | Discovery scaffold plus bounded results only. |
+| `research-c3-thermodynamic.html` | Bounded simulation result page. | Replace broad "math leg returns MATCH" wording with `PROBE_MATCH` and `CRUCIBLE_MATCH` against the stated 5 percent tolerance. | No new simulation, hardware, or physical-chip data in this pass. | Add recheck command block and a claims table for mean error, covariance error, and physical-chip boundary. | Simulate leg only; physical-chip leg remains `UNVERIFIABLE`. |
+| `research-learning-forge.html` | Learning object / source-card framework page. | Map "evidence-backed" to `SOURCE_LEAD` or `PROBE_MATCH` depending on whether a source was merely captured or a check was run. Keep unjudged cards `UNVERIFIABLE`. | Learn 1.5.0 prooflesson and reverify output can be added as a concrete new Learn receipt example. | Add a Learn prooflesson section that makes the boundary explicit: scaffold and retrieval prompts are not graded answers, and the lesson verdict cannot exceed the packet verdict. | Learning-tooling paper, not autonomous credentialing or answer-generation claim. |
+| `research-conservation-of-faithfulness.html` | Conceptual thesis page. | Add an evidence-state preface that distinguishes philosophical argument, process report, source lead, and measured result. | No new source or measurement data identified in this pass. | Terminology-only revision unless a receipt-backed experiment is attached later. | Argument draft; no empirical or formal promotion. |
+| `research-conferred-existence.html` | Conceptual thesis page. | Keep process claims `UNVERIFIABLE` unless run records are linked; mark philosophical claims as argument-internal rather than measured. | No new philosophical source data identified in this pass. | Terminology-only cleanup; preserve the current caveats that process narration is not load-bearing evidence. | Argument draft; no archive or theorem claim from this pass. |
+
+## Candidate Official Papers From Dogfood Corpus
+
+These are not site-facing official papers yet, but they are strong candidates for the next official-copy cycle:
+
+| Candidate | Source packet family | First official-copy requirement |
+| --- | --- | --- |
+| Mixed-source protein proof packets | `docs/research/dogfood/packets/160-mixed-source-protein-proof-packet.md` | Convert source leads, model claims, and experiment gaps into a claims table. |
+| Stochastic kernel receipts | `docs/research/dogfood/packets/119-stochastic-kernel-corpus-harness-receipt.md` and related stochastic runtime packets | Re-run receipts and separate identities from bounded numeric probes. |
+| Theorem-prover adapter receipts | `docs/research/dogfood/packets/127-theorem-prover-adapter-receipt.md` and theorem packet family | Bind theorem statements to source refs, proof artifacts, and replay status. |
+| BuildLang scientific runtime receipts | `docs/research/dogfood/packets/020-buildlang-scientific-runtime-receipts.md` and BuildLang adapter packets | Convert compiler/runtime receipts into `PROBE_MATCH` and `CRUCIBLE_MATCH` claims. |
+| Color calibration proof kit | `docs/research/dogfood/packets/021-color-calibration-proof-kit.md` | Separate software-side color checks from hardware calibration claims. |
+| Bio/medicine/robotics source federation | `docs/outreach/NINTH-WAVE-BIO-MED-ROBOTICS-SOURCE-FEDERATION-2026-07-02.md` and `docs/research/FRONTIER-HARD-PROBLEM-REGISTRY-2026-07-02.md` | Convert the four ninth-wave Gather stores and source-lead demotion gate into a claims table. Keep arXiv rows `SOURCE_LEAD`; promote only the demotion-gate coverage check to `PROBE_MATCH`. |
+| Cross-domain experiment routers | `docs/outreach/TENTH-WAVE-CROSS-DOMAIN-EXPERIMENT-ROUTER-2026-07-02.md` and `docs/research/whitepapers/CROSS-DOMAIN-EXPERIMENT-ROUTERS-2026-07-02.md` | Convert one lane into a source-body proof packet: formal replay, climate uncertainty, quantum scheduling toy model, materials benchmark boundary, or brain/AI claim-type packet. |
+| Navier-Stokes proof-packet program | `docs/outreach/ELEVENTH-WAVE-GRAND-PROBLEM-ISOLATION-2026-07-02.md`, `docs/research/whitepapers/NAVIER-STOKES-PROOF-PACKET-PROGRAM-2026-07-02.md`, and `docs/research/proof-packets/navier-stokes-periodic-energy-identity-v0/` | Convert the bounded Taylor-Green energy-identity packet into the first focused official paper, then add theorem-prover replay or BuildLang/buildc parity receipts. Keep the Millennium problem `UNVERIFIABLE`. |
+
+## New Receipts Added For This Revision Pass
+
+| Receipt | Status |
+| --- | --- |
+| `docs/outreach/receipts/eighth-wave/proof-carrying-research-loops.learn-packet.json` | Proof-packet wrapper for Learn; overall verdict `UNVERIFIABLE`. |
+| `docs/outreach/receipts/eighth-wave/learn-prooflesson/tutor/proof-carrying-research-loops.prooflesson.json` | Learn prooflesson receipt; reverified `VERIFIED`, lesson verdict re-derived as `UNVERIFIABLE`, witness digest `sha256:cfd22a141d19c6ca3b6e408dd02ba558078fbf88cce0e602fdc0650b9336fd87`. |
+| `docs/outreach/receipts/ninth-wave/source-lead-demotion-gate.json` | Manual demotion-gate experiment over 30 retained arXiv rows; `PROBE_MATCH` for coverage and triage only, with 15 `domain_lead`, 9 `adjacent_lead`, and 6 `query_noise` rows. |
+| `docs/outreach/receipts/ninth-wave-tooling-run-v2-2026-07-02.json` | Ninth-wave Crucible receipt; 6 `MATCH`, 0 `DRIFT`, 0 `UNVERIFIABLE`, assessment seal `28f654ff9ab35789896f4f72de5b5e7cb1e48824772e74a66111db2e101cb5f2`. |
+| `docs/outreach/receipts/ninth-wave/ninth-wave-source-federation.learn-packet.json` | Ninth-wave Learn packet; overall `MATCH` for local package existence and boundary preservation only. |
+| `docs/outreach/receipts/ninth-wave/learn-prooflesson/tutor/ninth-wave-source-federation.prooflesson.json` | Ninth-wave Learn prooflesson receipt; reverified `VERIFIED`, lesson verdict re-derived as `MATCH`, witness digest `sha256:bc3b19ee5f996b7c483774b6c6f224bfa2f1b05adc95279ec8570e91204f12eb`. |
+| `docs/outreach/receipts/ninth-wave-forum-index-route-2026-07-02.json` | Ninth-wave routing receipt; Forum selects `project-telos`, Index broad-focus probe rejects as `unresolved-focus`, concrete `telos` context envelope verifies `MATCH`. |
+| `docs/outreach/receipts/ninth-wave-index-context-envelope-2026-07-02.json` | Ninth-wave persisted Index context envelope for concrete `telos` focus; UTF-8 JSON, verification verdict `MATCH`, graph pack `8ee383e19ae9a6141bee70de733fb6aa09201ff9d284ce6778ce58b06e6b68b2`. |
+| `docs/outreach/receipts/tenth-wave/source-router-demotion-gate.json` | Tenth-wave manual source-router experiment over 39 retained arXiv rows; `PROBE_MATCH` for coverage and triage only, with 24 `domain_lead`, 10 `adjacent_lead`, and 5 `query_noise` rows. |
+| `docs/outreach/receipts/tenth-wave-tooling-run-2026-07-02.json` | Tenth-wave Crucible receipt; 6 `MATCH`, 0 `DRIFT`, 0 `UNVERIFIABLE`, assessment seal `e89af4a5678b8cd3d8ab71d7f37b5e10cf6d756ab9ee56d3463c65921a7db2e3`. |
+| `docs/outreach/receipts/tenth-wave-forum-index-route-2026-07-02.json` | Tenth-wave routing receipt; Forum selects `project-telos`, concrete `telos` Index context envelope verifies `MATCH`. |
+| `docs/outreach/receipts/tenth-wave/tenth-wave-experiment-router.learn-packet.json` | Tenth-wave Learn packet; overall `MATCH` for local package existence and boundary preservation only. |
+| `docs/outreach/receipts/tenth-wave/learn-prooflesson/tutor/tenth-wave-experiment-router.prooflesson.json` | Tenth-wave Learn prooflesson receipt; reverified `VERIFIED`, lesson verdict re-derived as `MATCH`, witness digest `sha256:79408206970ea5b4ae1984ac2e735025759a7490ff16eca1e2c7070c71c058f2`. |
+| `docs/outreach/receipts/eleventh-wave/hard-problem-source-router-demotion-gate.json` | Eleventh-wave source-router demotion gate; 71 routed rows across 13 lanes, classified as 66 `domain_lead`, 3 `adjacent_lead`, 1 `query_noise`, and 1 `zero_retained_rows`. |
+| `docs/research/proof-packets/navier-stokes-periodic-energy-identity-v0/run.receipt.json` | First bounded Navier-Stokes proof-packet run receipt; `bounded_identity_probe` is `MATCH`, parent Millennium problem is `UNVERIFIABLE`, residual is about `7.46e-14`, and max divergence is `0`. |
+| `docs/research/proof-packets/navier-stokes-periodic-energy-identity-v0/crucible-run.json` | Bounded Navier-Stokes packet Crucible receipt; 3 `MATCH`, 0 `DRIFT`, 0 `UNVERIFIABLE`, assessment seal `c65b234f56f85720c1dc322c7c15f44bdc782f48ab0541f7e815d2e89e06ed06`. |
+| `docs/outreach/receipts/eleventh-wave-tooling-run-2026-07-02.json` | Eleventh-wave package-boundary Crucible receipt; 6 `MATCH`, 0 `DRIFT`, 0 `UNVERIFIABLE`, assessment seal `e532001c556fcaa7d7b009be82ff3661c492feefabf00618df4d96b6abb5a32c`. |
+| `docs/outreach/receipts/eleventh-wave/learn-prooflesson/tutor/eleventh-wave-grand-problem-isolation.prooflesson.json` | Eleventh-wave Learn prooflesson receipt for the grand-problem isolation package; `learn tutor reverify` returned `VERIFIED`, witness digest `sha256:d8c7094befcb6a5d8744398c43ce344e3c82587f040924e825ce528f368690c2`. |
+| `docs/research/proof-packets/navier-stokes-periodic-energy-identity-v0/learn-prooflesson/tutor/navier-stokes-periodic-energy-identity.prooflesson.json` | Eleventh-wave Learn prooflesson receipt for the bounded Taylor-Green identity packet; `learn tutor reverify` returned `VERIFIED`, witness digest `sha256:a5c2aa452645de360ce515b9444f886c9d117ea450358c6592c7c06f9f07158f`. |
+
+## Do Not Promote
+
+- Do not describe website-copy pages as official submissions.
+- Do not describe a `SOURCE_LEAD` as a proved claim.
+- Do not describe a local reproduction as a fix.
+- Do not describe a Learn lesson receipt as proof that the underlying paper claim is true.
+- Do not describe the ninth-wave source federation as clinical evidence, robotics validation, protein-design validation, or exhaustive literature coverage.
+- Do not describe the ninth-wave Learn `MATCH` as proof of any biomedical, clinical, wet-lab, physical-robot, protein-design, paper-truth, or grand-challenge result.
+- Do not describe the tenth-wave cross-domain source router as proof of quantum, climate, materials, neuroscience, formal-proof, theorem-replay, hardware, or wet-lab results.
+- Do not describe tenth-wave Crucible or Learn `MATCH` as proof of a scientific domain result; both are bounded to local package and boundary claims.
+- Do not describe the eleventh-wave Navier-Stokes packet as a solution to Navier-Stokes existence and smoothness, global regularity, turbulence, climate validity, or a new law of physics.
+- Do not describe the eleventh-wave Learn receipts as proof of the Navier-Stokes parent claim; they only reverify local prooflesson receipts and preserve the bounded verdicts.
+- Do not use `PROMOTED_LAW` until independent proof, reproduction, and review exist.

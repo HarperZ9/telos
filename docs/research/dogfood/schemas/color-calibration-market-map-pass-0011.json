@@ -1,0 +1,146 @@
+{
+  "schema": "ColorCalibrationMarketMap/v1",
+  "pass": "0011",
+  "generated_on": "2026-07-01",
+  "scope": "Color standards, color-management systems, display calibration tools, grading tools, open-source calibration, and profile standards",
+  "rows": [
+    {
+      "category": "color-standard",
+      "tool": "Academy Color Encoding System (ACES)",
+      "buyer": "motion picture, television, VFX, mastering, archiving, and remastering teams",
+      "source_url": "https://www.oscars.org/science-technology/sci-tech-projects/aces",
+      "official_positioning": "Industry standard for managing color throughout the life cycle of motion picture and television production, from capture through editing, VFX, mastering, public presentation, archiving, and remastering.",
+      "capabilities": [
+        "color encoding",
+        "production color workflow",
+        "mastering and archiving support",
+        "creative intent preservation"
+      ],
+      "proof_receipt_gap": "ACES standardizes color workflow assumptions, but it is not itself a proof packet binding source code, transform implementation, numerical error thresholds, display state, and verifier receipts.",
+      "build_color_wedge_hypothesis": "Build Color can emit receipt-backed transform probes for ACES-adjacent workflows while Telos records the source, action, and verifier chain around the result.",
+      "gap_status": "inferred",
+      "confidence": "high"
+    },
+    {
+      "category": "color-management",
+      "tool": "OpenColorIO",
+      "buyer": "VFX, animation, rendering, compositing, and production pipeline teams",
+      "source_url": "https://opencolorio.org/",
+      "official_positioning": "Complete color management solution geared toward motion picture production, with emphasis on visual effects and computer animation.",
+      "capabilities": [
+        "configurable color transforms",
+        "production application interoperability",
+        "ACES-compatible workflows",
+        "LUT-oriented pipeline integration"
+      ],
+      "proof_receipt_gap": "OpenColorIO carries color-management configuration and transforms; Build Color/Telos can add numerical receipt thresholds, action provenance, and expected-failure fixtures around those transforms.",
+      "build_color_wedge_hypothesis": "Treat OCIO configs as evidence inputs and generate proof kits that verify transform assumptions and output tolerances.",
+      "gap_status": "inferred",
+      "confidence": "high"
+    },
+    {
+      "category": "calibration-software",
+      "tool": "Calman",
+      "buyer": "professional calibrators, home theater calibrators, display manufacturers, broadcast and production display teams",
+      "source_url": "https://www.portrait.com/products/",
+      "official_positioning": "Calibration software for calibrating and validating displays, with hardware support, customized workflows, reports, and product tiers for professional and consumer calibration.",
+      "capabilities": [
+        "display calibration",
+        "display validation",
+        "hardware integration",
+        "custom workflows",
+        "reports"
+      ],
+      "proof_receipt_gap": "Calman can produce calibration workflows and reports; Telos can wrap those reports with source/workspace provenance, model/tool action receipts, non-mutation boundaries, and external verifier verdicts.",
+      "build_color_wedge_hypothesis": "Build Color should not claim to replace Calman hardware workflows; it should become a receipt layer around transforms, reports, and software-side validation.",
+      "gap_status": "inferred",
+      "confidence": "high"
+    },
+    {
+      "category": "calibration-software",
+      "tool": "ColourSpace",
+      "buyer": "film, broadcast, post-production, Pro AV, and home cinema calibration users",
+      "source_url": "https://lightillusion.com/colourspace.html",
+      "official_positioning": "Advanced 3D LUT calibration and color management software for film, broadcast, post-production, Pro AV, and home cinema users.",
+      "capabilities": [
+        "3D LUT calibration",
+        "display profiling",
+        "probe and pattern-generator integration",
+        "professional and home-cinema workflows"
+      ],
+      "proof_receipt_gap": "ColourSpace is strong at LUT and calibration workflows; Build Color/Telos can add portable proof packets that keep measurement assumptions, transform code, thresholds, and failure boundaries explicit.",
+      "build_color_wedge_hypothesis": "Use ColourSpace-style 3D LUT workflows as market proof that calibration buyers value evidence, then compete on portable proof receipts rather than hardware control.",
+      "gap_status": "inferred",
+      "confidence": "high"
+    },
+    {
+      "category": "grading-tool",
+      "tool": "DaVinci Resolve Color",
+      "buyer": "colorists, editors, filmmakers, broadcast teams, and post-production facilities",
+      "source_url": "https://www.blackmagicdesign.com/products/davinciresolve/color",
+      "official_positioning": "Color page for creative and technical color manipulation, grading, scopes, balancing, and advanced color correction in DaVinci Resolve.",
+      "capabilities": [
+        "color grading",
+        "scopes",
+        "primary and secondary correction",
+        "production finishing",
+        "panel workflow"
+      ],
+      "proof_receipt_gap": "Resolve is a production tool and grading environment; Telos can export review packets for declared color assumptions, image artifact hashes, transform receipts, and measurement verdicts outside the project UI.",
+      "build_color_wedge_hypothesis": "Build Color can supply deterministic transform and difference-metric receipts for reviewable Resolve-adjacent deliverables.",
+      "gap_status": "inferred",
+      "confidence": "high"
+    },
+    {
+      "category": "open-source-calibration",
+      "tool": "DisplayCAL",
+      "buyer": "photographers, designers, display calibration users, open-source color-management users",
+      "source_url": "https://displaycal.net/",
+      "official_positioning": "Display calibration and profiling solution focused on accuracy and versatility, powered by ArgyllCMS for measurements, calibrations, profiles, and advanced color tasks.",
+      "capabilities": [
+        "display calibration",
+        "display profiling",
+        "ArgyllCMS integration",
+        "ICC-compatible workflows"
+      ],
+      "proof_receipt_gap": "DisplayCAL records calibration/profiling work through ArgyllCMS; Telos can add source/action receipts, no-mutation proof modes, and machine-checkable proof-kit boundaries.",
+      "build_color_wedge_hypothesis": "Use DisplayCAL/Argyll-style flows as adapter targets for open calibration proof packets.",
+      "gap_status": "inferred",
+      "confidence": "moderate"
+    },
+    {
+      "category": "open-source-calibration",
+      "tool": "ArgyllCMS",
+      "buyer": "color-management engineers, open-source calibration users, profiling tool builders",
+      "source_url": "https://www.argyllcms.com/",
+      "official_positioning": "Open-source ICC-compatible color management system supporting ICC profile creation for scanners, cameras, film recorders, printers, and displays.",
+      "capabilities": [
+        "ICC profile creation",
+        "display calibration and profiling",
+        "printer/scanner/camera profiling",
+        "measurement utilities"
+      ],
+      "proof_receipt_gap": "ArgyllCMS provides low-level calibration and profiling capabilities; Telos can attach modern proof-packet receipts, market-facing validation summaries, and model/tool provenance around those commands.",
+      "build_color_wedge_hypothesis": "Build Color should interoperate with Argyll-style measurement records and preserve them as claim-level evidence.",
+      "gap_status": "inferred",
+      "confidence": "high"
+    },
+    {
+      "category": "profile-standard",
+      "tool": "International Color Consortium (ICC)",
+      "buyer": "vendors and workflow owners needing open, cross-platform color management",
+      "source_url": "https://www.color.org/",
+      "official_positioning": "Promotes open, vendor-neutral, cross-platform color management systems and encourages support for ICC profile format and workflows.",
+      "capabilities": [
+        "ICC profile format",
+        "vendor-neutral color management",
+        "cross-platform workflows",
+        "profile registry and specifications"
+      ],
+      "proof_receipt_gap": "ICC defines profile standards and workflows; Telos can bind specific profile use, transform implementation, measured numerical error, and review verdicts into portable proof packets.",
+      "build_color_wedge_hypothesis": "Build Color proof kits should explicitly name ICC/PCS/profile assumptions when verifying color transforms or calibration-adjacent claims.",
+      "gap_status": "inferred",
+      "confidence": "high"
+    }
+  ]
+}

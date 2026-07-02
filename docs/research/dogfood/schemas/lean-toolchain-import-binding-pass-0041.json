@@ -1,0 +1,685 @@
+{
+  "action_receipt_proposal": {
+    "action_id": "act_dogfood_0041_lean_toolchain_import_binding",
+    "authority_class": "read_only_lean_toolchain_import_discovery",
+    "event_id": "evt_dogfood_0041_lean_toolchain_import_binding",
+    "event_type": "lean_toolchain_import_binding_verified",
+    "external_call_performed": false,
+    "external_write_performed": false,
+    "normal_path_modified": false,
+    "result_state": "completed",
+    "side_effect_class": "local_git_object_read_and_repo_artifact_write",
+    "stop_reason": "completed",
+    "verification_verdict": "MATCH"
+  },
+  "archive_statement_replay_binding": {
+    "path": "schemas/theorem-archived-blob-statement-replay-pass-0040.json",
+    "seal": "c38574335633bb119b7c14b8f7a69db44751f04f44bb3fd74c71df4e2a74818d",
+    "sha256": "e45620662cc30976f8b1f814e5b0ceb3815c16f6e86e091364220fa286bfe654",
+    "source_status": "ARCHIVED_BLOB_STATEMENT_REPLAY_MATCH"
+  },
+  "build_files": [
+    {
+      "byte_count": 25,
+      "git_blob_id": "18640c8b066b182147f324d3aefd8ee48ee45238",
+      "git_path": "lean/problem-4b-formalization/lean-toolchain",
+      "line_count": 1,
+      "role": "build-metadata",
+      "sha256": "efac0b94923b2d8b6840cd35be9177ad0fc5ab2332f4f4311c98712cee92fdee"
+    },
+    {
+      "byte_count": 635,
+      "git_blob_id": "cea6a45444a194ddecca313ff959d50bb0eb332b",
+      "git_path": "lean/problem-4b-formalization/lakefile.toml",
+      "line_count": 22,
+      "role": "build-metadata",
+      "sha256": "868df160e999a009ec24bfdd612b080c531ad9b2f9c2438c113c0e53a6a04f8b"
+    },
+    {
+      "byte_count": 3141,
+      "git_blob_id": "c687ee8ee0cacf4df8dd6b8a838b60de78717a58",
+      "git_path": "lean/problem-4b-formalization/lake-manifest.json",
+      "line_count": 96,
+      "role": "build-metadata",
+      "sha256": "12b1640d5402d2c37ba053455dc89ffe83cf4b585b285ea8075e699c320a43d5"
+    },
+    {
+      "byte_count": 815,
+      "git_blob_id": "63e5f638b998dbf58acdf4de8836f118d47c0d47",
+      "git_path": "lean/problem-4b-formalization/Prob4b.lean",
+      "line_count": 19,
+      "role": "build-metadata",
+      "sha256": "83b1567bb69e6820585159568aed3bfca0a73697689affa0f08358f1266ac2f9"
+    },
+    {
+      "byte_count": 170,
+      "git_blob_id": "6496b25179a07c605d392d311115290d2862f432",
+      "git_path": "lean/problem-4b-formalization/scripts/frozen.sha256",
+      "line_count": 2,
+      "role": "build-metadata",
+      "sha256": "02c89be8686f15fec0c10ca489eefb18a757fd869a67dba8a5162d840c261e60"
+    },
+    {
+      "byte_count": 9050,
+      "git_blob_id": "7f6ef382a67240936156b33c481c8142e2310026",
+      "git_path": "lean/problem-4b-formalization/scripts/verify.sh",
+      "line_count": 240,
+      "role": "build-metadata",
+      "sha256": "a43ebcdcb2cd3564b7699acd602cf9183818291a94bd8444b00a96b7a0e67a49"
+    }
+  ],
+  "compiled_replay_status": "NOT_RUN",
+  "current_promoted_natural_laws": [],
+  "generated_on": "2026-07-01",
+  "import_edges": [
+    {
+      "from": "Prob4b",
+      "from_path": "lean/problem-4b-formalization/Prob4b.lean",
+      "kind": "local",
+      "to": "Prob4b.Defs",
+      "to_path": "lean/problem-4b-formalization/Prob4b/Defs.lean"
+    },
+    {
+      "from": "Prob4b",
+      "from_path": "lean/problem-4b-formalization/Prob4b.lean",
+      "kind": "local",
+      "to": "Prob4b.Theorems",
+      "to_path": "lean/problem-4b-formalization/Prob4b/Theorems.lean"
+    },
+    {
+      "from": "Prob4b",
+      "from_path": "lean/problem-4b-formalization/Prob4b.lean",
+      "kind": "local",
+      "to": "Prob4b.Proofs.RingModel.Basic",
+      "to_path": "lean/problem-4b-formalization/Prob4b/Proofs/RingModel/Basic.lean"
+    },
+    {
+      "from": "Prob4b",
+      "from_path": "lean/problem-4b-formalization/Prob4b.lean",
+      "kind": "local",
+      "to": "Prob4b.Proofs.RingModel.Normal",
+      "to_path": "lean/problem-4b-formalization/Prob4b/Proofs/RingModel/Normal.lean"
+    },
+    {
+      "from": "Prob4b",
+      "from_path": "lean/problem-4b-formalization/Prob4b.lean",
+      "kind": "local",
+      "to": "Prob4b.Proofs.EasyDirection.Basic",
+      "to_path": "lean/problem-4b-formalization/Prob4b/Proofs/EasyDirection/Basic.lean"
+    },
+    {
+      "from": "Prob4b",
+      "from_path": "lean/problem-4b-formalization/Prob4b.lean",
+      "kind": "local",
+      "to": "Prob4b.Proofs.Triple.Membership",
+      "to_path": "lean/problem-4b-formalization/Prob4b/Proofs/Triple/Membership.lean"
+    },
+    {
+      "from": "Prob4b",
+      "from_path": "lean/problem-4b-formalization/Prob4b.lean",
+      "kind": "local",
+      "to": "Prob4b.Proofs.Triple.Basic",
+      "to_path": "lean/problem-4b-formalization/Prob4b/Proofs/Triple/Basic.lean"
+    },
+    {
+      "from": "Prob4b",
+      "from_path": "lean/problem-4b-formalization/Prob4b.lean",
+      "kind": "local",
+      "to": "Prob4b.Proofs.Idealization.Basic",
+      "to_path": "lean/problem-4b-formalization/Prob4b/Proofs/Idealization/Basic.lean"
+    },
+    {
+      "from": "Prob4b",
+      "from_path": "lean/problem-4b-formalization/Prob4b.lean",
+      "kind": "local",
+      "to": "Prob4b.Proofs.Module.Basic",
+      "to_path": "lean/problem-4b-formalization/Prob4b/Proofs/Module/Basic.lean"
+    },
+    {
+      "from": "Prob4b",
+      "from_path": "lean/problem-4b-formalization/Prob4b.lean",
+      "kind": "local",
+      "to": "Prob4b.Proofs.Amplify.Carrier",
+      "to_path": "lean/problem-4b-formalization/Prob4b/Proofs/Amplify/Carrier.lean"
+    },
+    {
+      "from": "Prob4b",
+      "from_path": "lean/problem-4b-formalization/Prob4b.lean",
+      "kind": "local",
+      "to": "Prob4b.Proofs.Amplify.NotQuasiCoherent",
+      "to_path": "lean/problem-4b-formalization/Prob4b/Proofs/Amplify/NotQuasiCoherent.lean"
+    },
+    {
+      "from": "Prob4b",
+      "from_path": "lean/problem-4b-formalization/Prob4b.lean",
+      "kind": "local",
+      "to": "Prob4b.Proofs.Amplify.FiniteConductor",
+      "to_path": "lean/problem-4b-formalization/Prob4b/Proofs/Amplify/FiniteConductor.lean"
+    },
+    {
+      "from": "Prob4b",
+      "from_path": "lean/problem-4b-formalization/Prob4b.lean",
+      "kind": "local",
+      "to": "Prob4b.Proofs.Amplify.Basic",
+      "to_path": "lean/problem-4b-formalization/Prob4b/Proofs/Amplify/Basic.lean"
+    },
+    {
+      "from": "Prob4b",
+      "from_path": "lean/problem-4b-formalization/Prob4b.lean",
+      "kind": "local",
+      "to": "Prob4b.Discharge",
+      "to_path": "lean/problem-4b-formalization/Prob4b/Discharge.lean"
+    },
+    {
+      "from": "Prob4b",
+      "from_path": "lean/problem-4b-formalization/Prob4b.lean",
+      "kind": "local",
+      "to": "Prob4b.Solution",
+      "to_path": "lean/problem-4b-formalization/Prob4b/Solution.lean"
+    },
+    {
+      "from": "Prob4b.Defs",
+      "from_path": "lean/problem-4b-formalization/Prob4b/Defs.lean",
+      "kind": "external",
+      "to": "Mathlib",
+      "to_path": null
+    },
+    {
+      "from": "Prob4b.Discharge",
+      "from_path": "lean/problem-4b-formalization/Prob4b/Discharge.lean",
+      "kind": "local",
+      "to": "Prob4b.Theorems",
+      "to_path": "lean/problem-4b-formalization/Prob4b/Theorems.lean"
+    },
+    {
+      "from": "Prob4b.Discharge",
+      "from_path": "lean/problem-4b-formalization/Prob4b/Discharge.lean",
+      "kind": "local",
+      "to": "Prob4b.Proofs.EasyDirection.Basic",
+      "to_path": "lean/problem-4b-formalization/Prob4b/Proofs/EasyDirection/Basic.lean"
+    },
+    {
+      "from": "Prob4b.Discharge",
+      "from_path": "lean/problem-4b-formalization/Prob4b/Discharge.lean",
+      "kind": "local",
+      "to": "Prob4b.Proofs.Module.Basic",
+      "to_path": "lean/problem-4b-formalization/Prob4b/Proofs/Module/Basic.lean"
+    },
+    {
+      "from": "Prob4b.Discharge",
+      "from_path": "lean/problem-4b-formalization/Prob4b/Discharge.lean",
+      "kind": "local",
+      "to": "Prob4b.Proofs.Triple.Basic",
+      "to_path": "lean/problem-4b-formalization/Prob4b/Proofs/Triple/Basic.lean"
+    },
+    {
+      "from": "Prob4b.Discharge",
+      "from_path": "lean/problem-4b-formalization/Prob4b/Discharge.lean",
+      "kind": "local",
+      "to": "Prob4b.Proofs.Idealization.Basic",
+      "to_path": "lean/problem-4b-formalization/Prob4b/Proofs/Idealization/Basic.lean"
+    },
+    {
+      "from": "Prob4b.Discharge",
+      "from_path": "lean/problem-4b-formalization/Prob4b/Discharge.lean",
+      "kind": "local",
+      "to": "Prob4b.Proofs.Amplify.Basic",
+      "to_path": "lean/problem-4b-formalization/Prob4b/Proofs/Amplify/Basic.lean"
+    },
+    {
+      "from": "Prob4b.Proofs.Amplify.Basic",
+      "from_path": "lean/problem-4b-formalization/Prob4b/Proofs/Amplify/Basic.lean",
+      "kind": "local",
+      "to": "Prob4b.Proofs.Amplify.FiniteConductor",
+      "to_path": "lean/problem-4b-formalization/Prob4b/Proofs/Amplify/FiniteConductor.lean"
+    },
+    {
+      "from": "Prob4b.Proofs.Amplify.Basic",
+      "from_path": "lean/problem-4b-formalization/Prob4b/Proofs/Amplify/Basic.lean",
+      "kind": "local",
+      "to": "Prob4b.Proofs.Amplify.NotQuasiCoherent",
+      "to_path": "lean/problem-4b-formalization/Prob4b/Proofs/Amplify/NotQuasiCoherent.lean"
+    },
+    {
+      "from": "Prob4b.Proofs.Amplify.Carrier",
+      "from_path": "lean/problem-4b-formalization/Prob4b/Proofs/Amplify/Carrier.lean",
+      "kind": "local",
+      "to": "Prob4b.Proofs.Idealization.Basic",
+      "to_path": "lean/problem-4b-formalization/Prob4b/Proofs/Idealization/Basic.lean"
+    },
+    {
+      "from": "Prob4b.Proofs.Amplify.FiniteConductor",
+      "from_path": "lean/problem-4b-formalization/Prob4b/Proofs/Amplify/FiniteConductor.lean",
+      "kind": "local",
+      "to": "Prob4b.Proofs.Amplify.Carrier",
+      "to_path": "lean/problem-4b-formalization/Prob4b/Proofs/Amplify/Carrier.lean"
+    },
+    {
+      "from": "Prob4b.Proofs.Amplify.FiniteConductor",
+      "from_path": "lean/problem-4b-formalization/Prob4b/Proofs/Amplify/FiniteConductor.lean",
+      "kind": "local",
+      "to": "Prob4b.Proofs.Module.Basic",
+      "to_path": "lean/problem-4b-formalization/Prob4b/Proofs/Module/Basic.lean"
+    },
+    {
+      "from": "Prob4b.Proofs.Amplify.NotQuasiCoherent",
+      "from_path": "lean/problem-4b-formalization/Prob4b/Proofs/Amplify/NotQuasiCoherent.lean",
+      "kind": "local",
+      "to": "Prob4b.Proofs.Amplify.Carrier",
+      "to_path": "lean/problem-4b-formalization/Prob4b/Proofs/Amplify/Carrier.lean"
+    },
+    {
+      "from": "Prob4b.Proofs.EasyDirection.Basic",
+      "from_path": "lean/problem-4b-formalization/Prob4b/Proofs/EasyDirection/Basic.lean",
+      "kind": "local",
+      "to": "Prob4b.Defs",
+      "to_path": "lean/problem-4b-formalization/Prob4b/Defs.lean"
+    },
+    {
+      "from": "Prob4b.Proofs.Idealization.Basic",
+      "from_path": "lean/problem-4b-formalization/Prob4b/Proofs/Idealization/Basic.lean",
+      "kind": "local",
+      "to": "Prob4b.Proofs.Triple.Basic",
+      "to_path": "lean/problem-4b-formalization/Prob4b/Proofs/Triple/Basic.lean"
+    },
+    {
+      "from": "Prob4b.Proofs.Module.Basic",
+      "from_path": "lean/problem-4b-formalization/Prob4b/Proofs/Module/Basic.lean",
+      "kind": "local",
+      "to": "Prob4b.Proofs.RingModel.Normal",
+      "to_path": "lean/problem-4b-formalization/Prob4b/Proofs/RingModel/Normal.lean"
+    },
+    {
+      "from": "Prob4b.Proofs.RingModel.Basic",
+      "from_path": "lean/problem-4b-formalization/Prob4b/Proofs/RingModel/Basic.lean",
+      "kind": "local",
+      "to": "Prob4b.Defs",
+      "to_path": "lean/problem-4b-formalization/Prob4b/Defs.lean"
+    },
+    {
+      "from": "Prob4b.Proofs.RingModel.Normal",
+      "from_path": "lean/problem-4b-formalization/Prob4b/Proofs/RingModel/Normal.lean",
+      "kind": "local",
+      "to": "Prob4b.Proofs.RingModel.Basic",
+      "to_path": "lean/problem-4b-formalization/Prob4b/Proofs/RingModel/Basic.lean"
+    },
+    {
+      "from": "Prob4b.Proofs.Triple.Basic",
+      "from_path": "lean/problem-4b-formalization/Prob4b/Proofs/Triple/Basic.lean",
+      "kind": "local",
+      "to": "Prob4b.Proofs.RingModel.Normal",
+      "to_path": "lean/problem-4b-formalization/Prob4b/Proofs/RingModel/Normal.lean"
+    },
+    {
+      "from": "Prob4b.Proofs.Triple.Basic",
+      "from_path": "lean/problem-4b-formalization/Prob4b/Proofs/Triple/Basic.lean",
+      "kind": "local",
+      "to": "Prob4b.Proofs.Triple.Membership",
+      "to_path": "lean/problem-4b-formalization/Prob4b/Proofs/Triple/Membership.lean"
+    },
+    {
+      "from": "Prob4b.Proofs.Triple.Membership",
+      "from_path": "lean/problem-4b-formalization/Prob4b/Proofs/Triple/Membership.lean",
+      "kind": "local",
+      "to": "Prob4b.Proofs.RingModel.Basic",
+      "to_path": "lean/problem-4b-formalization/Prob4b/Proofs/RingModel/Basic.lean"
+    },
+    {
+      "from": "Prob4b.Solution",
+      "from_path": "lean/problem-4b-formalization/Prob4b/Solution.lean",
+      "kind": "local",
+      "to": "Prob4b.Proofs.EasyDirection.Basic",
+      "to_path": "lean/problem-4b-formalization/Prob4b/Proofs/EasyDirection/Basic.lean"
+    },
+    {
+      "from": "Prob4b.Solution",
+      "from_path": "lean/problem-4b-formalization/Prob4b/Solution.lean",
+      "kind": "local",
+      "to": "Prob4b.Proofs.Module.Basic",
+      "to_path": "lean/problem-4b-formalization/Prob4b/Proofs/Module/Basic.lean"
+    },
+    {
+      "from": "Prob4b.Solution",
+      "from_path": "lean/problem-4b-formalization/Prob4b/Solution.lean",
+      "kind": "local",
+      "to": "Prob4b.Proofs.Triple.Basic",
+      "to_path": "lean/problem-4b-formalization/Prob4b/Proofs/Triple/Basic.lean"
+    },
+    {
+      "from": "Prob4b.Solution",
+      "from_path": "lean/problem-4b-formalization/Prob4b/Solution.lean",
+      "kind": "local",
+      "to": "Prob4b.Proofs.Idealization.Basic",
+      "to_path": "lean/problem-4b-formalization/Prob4b/Proofs/Idealization/Basic.lean"
+    },
+    {
+      "from": "Prob4b.Solution",
+      "from_path": "lean/problem-4b-formalization/Prob4b/Solution.lean",
+      "kind": "local",
+      "to": "Prob4b.Proofs.Amplify.Basic",
+      "to_path": "lean/problem-4b-formalization/Prob4b/Proofs/Amplify/Basic.lean"
+    },
+    {
+      "from": "Prob4b.Theorems",
+      "from_path": "lean/problem-4b-formalization/Prob4b/Theorems.lean",
+      "kind": "local",
+      "to": "Prob4b.Defs",
+      "to_path": "lean/problem-4b-formalization/Prob4b/Defs.lean"
+    }
+  ],
+  "lean_modules": [
+    {
+      "archive_status": "NEEDED_FOR_COMPILED_REPLAY",
+      "byte_count": 815,
+      "git_blob_id": "63e5f638b998dbf58acdf4de8836f118d47c0d47",
+      "git_path": "lean/problem-4b-formalization/Prob4b.lean",
+      "import_count": 15,
+      "imports": [
+        "Prob4b.Defs",
+        "Prob4b.Theorems",
+        "Prob4b.Proofs.RingModel.Basic",
+        "Prob4b.Proofs.RingModel.Normal",
+        "Prob4b.Proofs.EasyDirection.Basic",
+        "Prob4b.Proofs.Triple.Membership",
+        "Prob4b.Proofs.Triple.Basic",
+        "Prob4b.Proofs.Idealization.Basic",
+        "Prob4b.Proofs.Module.Basic",
+        "Prob4b.Proofs.Amplify.Carrier",
+        "Prob4b.Proofs.Amplify.NotQuasiCoherent",
+        "Prob4b.Proofs.Amplify.FiniteConductor",
+        "Prob4b.Proofs.Amplify.Basic",
+        "Prob4b.Discharge",
+        "Prob4b.Solution"
+      ],
+      "line_count": 19,
+      "module": "Prob4b",
+      "sha256": "83b1567bb69e6820585159568aed3bfca0a73697689affa0f08358f1266ac2f9"
+    },
+    {
+      "archive_status": "NEEDED_FOR_COMPILED_REPLAY",
+      "byte_count": 5701,
+      "git_blob_id": "d5f6fe8ec3cfef69a769013f32d6c759a70f986c",
+      "git_path": "lean/problem-4b-formalization/Prob4b/Defs.lean",
+      "import_count": 1,
+      "imports": [
+        "Mathlib"
+      ],
+      "line_count": 137,
+      "module": "Prob4b.Defs",
+      "sha256": "f596023b79726b87da05ccaf825e512bd17237f29a43df3ce31dc01c7646868a"
+    },
+    {
+      "archive_status": "ARCHIVED",
+      "byte_count": 1853,
+      "git_blob_id": "7b9dae96fca47c83620d55824458d2c2095dac52",
+      "git_path": "lean/problem-4b-formalization/Prob4b/Discharge.lean",
+      "import_count": 6,
+      "imports": [
+        "Prob4b.Theorems",
+        "Prob4b.Proofs.EasyDirection.Basic",
+        "Prob4b.Proofs.Module.Basic",
+        "Prob4b.Proofs.Triple.Basic",
+        "Prob4b.Proofs.Idealization.Basic",
+        "Prob4b.Proofs.Amplify.Basic"
+      ],
+      "line_count": 48,
+      "module": "Prob4b.Discharge",
+      "sha256": "7b2342c3534965d7823134fab2f1000fe66f36e5752fcb9c42e165791b1e4499"
+    },
+    {
+      "archive_status": "ARCHIVED",
+      "byte_count": 1609,
+      "git_blob_id": "483f006783afc0c93fc88d161d2fc354dd495b05",
+      "git_path": "lean/problem-4b-formalization/Prob4b/Proofs/Amplify/Basic.lean",
+      "import_count": 2,
+      "imports": [
+        "Prob4b.Proofs.Amplify.FiniteConductor",
+        "Prob4b.Proofs.Amplify.NotQuasiCoherent"
+      ],
+      "line_count": 39,
+      "module": "Prob4b.Proofs.Amplify.Basic",
+      "sha256": "09d0cce199bbfe21f2ec17523672eab0d1fa51cd3df2927a1176a8d6cc2f9574"
+    },
+    {
+      "archive_status": "NEEDED_FOR_COMPILED_REPLAY",
+      "byte_count": 6307,
+      "git_blob_id": "dd6830b1ba73d289ef3842241734de258fc5e3bc",
+      "git_path": "lean/problem-4b-formalization/Prob4b/Proofs/Amplify/Carrier.lean",
+      "import_count": 1,
+      "imports": [
+        "Prob4b.Proofs.Idealization.Basic"
+      ],
+      "line_count": 149,
+      "module": "Prob4b.Proofs.Amplify.Carrier",
+      "sha256": "dffb690cfb1a995f713585defff2c3977e52c93f9b88fc486dc33b9368b74e9f"
+    },
+    {
+      "archive_status": "ARCHIVED",
+      "byte_count": 33996,
+      "git_blob_id": "2e620612f721d70cb36456fc199c309f42996d21",
+      "git_path": "lean/problem-4b-formalization/Prob4b/Proofs/Amplify/FiniteConductor.lean",
+      "import_count": 2,
+      "imports": [
+        "Prob4b.Proofs.Amplify.Carrier",
+        "Prob4b.Proofs.Module.Basic"
+      ],
+      "line_count": 678,
+      "module": "Prob4b.Proofs.Amplify.FiniteConductor",
+      "sha256": "da33d7d87e09ce628b755f120ec9927ced2e3dddda3c5698ffb1c2737fb1b07e"
+    },
+    {
+      "archive_status": "ARCHIVED",
+      "byte_count": 6532,
+      "git_blob_id": "f40db6b7ce353114c9179fcc03bff40ab5be7e9d",
+      "git_path": "lean/problem-4b-formalization/Prob4b/Proofs/Amplify/NotQuasiCoherent.lean",
+      "import_count": 1,
+      "imports": [
+        "Prob4b.Proofs.Amplify.Carrier"
+      ],
+      "line_count": 142,
+      "module": "Prob4b.Proofs.Amplify.NotQuasiCoherent",
+      "sha256": "341c5710c199c6345c9c7a0a5e296630b178effc764863ef173cb3b9d0d4267c"
+    },
+    {
+      "archive_status": "ARCHIVED",
+      "byte_count": 1767,
+      "git_blob_id": "1f9a70cae875d7d7e7871d389e559e2ec11a4e05",
+      "git_path": "lean/problem-4b-formalization/Prob4b/Proofs/EasyDirection/Basic.lean",
+      "import_count": 1,
+      "imports": [
+        "Prob4b.Defs"
+      ],
+      "line_count": 44,
+      "module": "Prob4b.Proofs.EasyDirection.Basic",
+      "sha256": "56c96c9a950bf89cc4327f01c9d75203f6e9ff42a09e9104e1bee009b3966c4a"
+    },
+    {
+      "archive_status": "ARCHIVED",
+      "byte_count": 4636,
+      "git_blob_id": "664c0b589b60e6abc90188defb13297c9fcaf19a",
+      "git_path": "lean/problem-4b-formalization/Prob4b/Proofs/Idealization/Basic.lean",
+      "import_count": 1,
+      "imports": [
+        "Prob4b.Proofs.Triple.Basic"
+      ],
+      "line_count": 106,
+      "module": "Prob4b.Proofs.Idealization.Basic",
+      "sha256": "a937f21bd0c8dfc670941e862c0d7a8a2d0d96fcf0818bfafc7a4a644f1eeb38"
+    },
+    {
+      "archive_status": "ARCHIVED",
+      "byte_count": 79429,
+      "git_blob_id": "6dc1ec194ba9d41ee28d3d93e07bf7d8fc343ffd",
+      "git_path": "lean/problem-4b-formalization/Prob4b/Proofs/Module/Basic.lean",
+      "import_count": 1,
+      "imports": [
+        "Prob4b.Proofs.RingModel.Normal"
+      ],
+      "line_count": 1580,
+      "module": "Prob4b.Proofs.Module.Basic",
+      "sha256": "2e59e148f4452a5084a4ceee7b34552307ce86c63b245b65a7f43e2ac7ca2072"
+    },
+    {
+      "archive_status": "NEEDED_FOR_COMPILED_REPLAY",
+      "byte_count": 12852,
+      "git_blob_id": "df4a7335a22143c9352e4955e47f8e3dafacfc87",
+      "git_path": "lean/problem-4b-formalization/Prob4b/Proofs/RingModel/Basic.lean",
+      "import_count": 1,
+      "imports": [
+        "Prob4b.Defs"
+      ],
+      "line_count": 303,
+      "module": "Prob4b.Proofs.RingModel.Basic",
+      "sha256": "224e0b912d0f64cfdfd0fca2d9e750a41ce333199a5547c6b2b124e3e542b27f"
+    },
+    {
+      "archive_status": "NEEDED_FOR_COMPILED_REPLAY",
+      "byte_count": 14027,
+      "git_blob_id": "b8f0e30abbd6b04ec4bfe35350cef1a9ec06c78e",
+      "git_path": "lean/problem-4b-formalization/Prob4b/Proofs/RingModel/Normal.lean",
+      "import_count": 1,
+      "imports": [
+        "Prob4b.Proofs.RingModel.Basic"
+      ],
+      "line_count": 311,
+      "module": "Prob4b.Proofs.RingModel.Normal",
+      "sha256": "a38f7e4f5aeedb771fc99359ae323c7e68cc7baf2728ebecbeabcea1c8cf1b1d"
+    },
+    {
+      "archive_status": "ARCHIVED",
+      "byte_count": 15969,
+      "git_blob_id": "4fda1d217a3165271ae7d4bfac68755d4ebcf97b",
+      "git_path": "lean/problem-4b-formalization/Prob4b/Proofs/Triple/Basic.lean",
+      "import_count": 2,
+      "imports": [
+        "Prob4b.Proofs.RingModel.Normal",
+        "Prob4b.Proofs.Triple.Membership"
+      ],
+      "line_count": 346,
+      "module": "Prob4b.Proofs.Triple.Basic",
+      "sha256": "bf59fb52a86ba6500553344c426fa2562b4ddaf8e0ec7b643725c745f78579f6"
+    },
+    {
+      "archive_status": "NEEDED_FOR_COMPILED_REPLAY",
+      "byte_count": 5009,
+      "git_blob_id": "8e6107b5a28e5deef65ffa284fc083921f4ebb12",
+      "git_path": "lean/problem-4b-formalization/Prob4b/Proofs/Triple/Membership.lean",
+      "import_count": 1,
+      "imports": [
+        "Prob4b.Proofs.RingModel.Basic"
+      ],
+      "line_count": 123,
+      "module": "Prob4b.Proofs.Triple.Membership",
+      "sha256": "45633f4ebe4902a9aff72031192c65f47b04bffc2b9b93532a43b80a84de9c7d"
+    },
+    {
+      "archive_status": "ARCHIVED",
+      "byte_count": 3244,
+      "git_blob_id": "e42636c4211007d5d2fd22d3211fa96904d42eec",
+      "git_path": "lean/problem-4b-formalization/Prob4b/Solution.lean",
+      "import_count": 5,
+      "imports": [
+        "Prob4b.Proofs.EasyDirection.Basic",
+        "Prob4b.Proofs.Module.Basic",
+        "Prob4b.Proofs.Triple.Basic",
+        "Prob4b.Proofs.Idealization.Basic",
+        "Prob4b.Proofs.Amplify.Basic"
+      ],
+      "line_count": 78,
+      "module": "Prob4b.Solution",
+      "sha256": "3a54396ea67ca38d62b57fa55bf546a3071d1d780809c523aff83691011ee821"
+    },
+    {
+      "archive_status": "ARCHIVED",
+      "byte_count": 4188,
+      "git_blob_id": "7d186b51d15df3a0415464d564a0d5c6b5fd5810",
+      "git_path": "lean/problem-4b-formalization/Prob4b/Theorems.lean",
+      "import_count": 1,
+      "imports": [
+        "Prob4b.Defs"
+      ],
+      "line_count": 87,
+      "module": "Prob4b.Theorems",
+      "sha256": "cb80242d1bfd9e9b142e442dac9d0784081dabefbf7bd400dd0a27cd0e8bd3ae"
+    }
+  ],
+  "needed_for_compiled_replay": [
+    "lean/problem-4b-formalization/Prob4b.lean",
+    "lean/problem-4b-formalization/Prob4b/Defs.lean",
+    "lean/problem-4b-formalization/Prob4b/Proofs/Amplify/Carrier.lean",
+    "lean/problem-4b-formalization/Prob4b/Proofs/RingModel/Basic.lean",
+    "lean/problem-4b-formalization/Prob4b/Proofs/RingModel/Normal.lean",
+    "lean/problem-4b-formalization/Prob4b/Proofs/Triple/Membership.lean"
+  ],
+  "negative_fixture_count": 8,
+  "negative_fixtures": [
+    {
+      "expected_validator_status": "REJECT",
+      "id": "negative-toolchain-missing"
+    },
+    {
+      "expected_validator_status": "REJECT",
+      "id": "negative-manifest-missing"
+    },
+    {
+      "expected_validator_status": "REJECT",
+      "id": "negative-commit-drift"
+    },
+    {
+      "expected_validator_status": "REJECT",
+      "id": "negative-import-edge-missing"
+    },
+    {
+      "expected_validator_status": "REJECT",
+      "id": "negative-archive-binding-missing"
+    },
+    {
+      "expected_validator_status": "REJECT",
+      "id": "negative-compiled-replay-overclaimed"
+    },
+    {
+      "expected_validator_status": "REJECT",
+      "id": "negative-public-claim-overpromoted"
+    },
+    {
+      "expected_validator_status": "REJECT",
+      "id": "negative-natural-law-promoted"
+    }
+  ],
+  "non_promotion_statement": "Pass 0041 discovers and binds Lean toolchain/import metadata. It does not run Lean, prove semantic equivalence by elaboration, prove an axiom-free result, validate every public pipeline-math claim, or promote any natural law.",
+  "pass": "0041",
+  "repo_receipt": {
+    "commit": "69d7df765a8f377a5e0628c6d36c088bce7642c9",
+    "commit_match_pass0036": true,
+    "project_subdir": "lean/problem-4b-formalization",
+    "url": "https://github.com/Pengbinghui/pipeline-math.git"
+  },
+  "schema": "LeanToolchainImportBindingSet/v1",
+  "seal": "e932959ff41df5260e5af88942184e45c2e9620b878db02b4ccbb609387c78b6",
+  "status": "LEAN_TOOLCHAIN_IMPORT_BINDING_MATCH",
+  "theorem_lean_toolchain_import_fixture": {
+    "path": "fixtures/lean-toolchain-import-binding-pass-0041.json",
+    "schema": "LeanToolchainImportBindingFixture/v1",
+    "seal": "98ed8df0f610d30b445ee365c4198b8b3e62fbd43d6514ad3920106ea10b8eb6",
+    "sha256": "5d4ff58b42595c47d1d8fccfec4fb6b913186cedc1e2894410a6784b584c5ea9"
+  },
+  "toolchain_summary": {
+    "lake_manifest_package_count": 9,
+    "mathlib_input_rev": "v4.31.0",
+    "mathlib_rev": "fabf563a7c95a166b8d7b6efca11c8b4dc9d911f",
+    "mathlib_url": "https://github.com/leanprover-community/mathlib4",
+    "toolchain": "leanprover/lean4:v4.31.0"
+  },
+  "verifier_measurements": {
+    "archived_source_file_count": 10,
+    "build_file_count": 6,
+    "commit_match_pass0036": true,
+    "compiled_replay_status": "NOT_RUN",
+    "external_import_edge_count": 1,
+    "lean_module_count": 16,
+    "local_import_edge_count": 41,
+    "needed_for_compiled_replay_count": 6,
+    "toolchain_bound": true,
+    "worktree_text_used_for_signatures": false
+  }
+}

@@ -1,0 +1,968 @@
+OpenTelemetry
+Docs
+Ecosystem
+Status
+Community
+Training
+Blog
+English
+EN
+বাংলা
+English
+Español
+Français
+日本語
+한국어
+Polski
+Português
+Română
+Українська
+中文
+Light
+Dark
+Auto
+Docs
+What is OpenTelemetry?
+Getting Started
+Dev
+Ops
+Concepts
+Observability primer
+Context propagation
+Signals
+Traces
+Metrics
+Logs
+Baggage
+Profiles
+Instrumentation
+Zero-code
+Code-based
+Libraries
+Components
+Semantic Conventions
+Resources
+Instrumentation scope
+Sampling
+Distributions
+Glossary
+Demo
+Architecture
+Collector Data Flow Dashboard
+Development
+Docker
+Feature Flags
+Diagnosing memory leaks
+Forking
+Kubernetes
+Requirements
+Application
+Architecture
+OTel Requirements
+System
+Sample Configurations
+Tail Sampling
+Screenshots
+Services
+Accounting
+Ad
+Cart
+Checkout
+Currency
+Email
+Flagd-UI
+Fraud Detection
+Frontend
+Frontend Proxy
+Image Provider
+Kafka
+Load Generator
+Payment
+Product Catalog
+Product Reviews
+Quote
+React Native App
+Recommendation
+Shipping
+Telemetry Features
+Log Coverage
+Manual Span Attributes
+Metric Coverage
+Trace Coverage
+Tests
+Language APIs & SDKs
+SDK Config
+General
+OTLP Exporter
+Declarative configuration
+C++
+Getting Started by Example
+Instrumentation
+Libraries
+Exporters
+API
+Examples
+Registry
+.NET
+Getting Started
+Traces
+Console
+ASP.NET Core
+Stratified sampling
+Tail-based sampling
+Export to Jaeger
+Exceptions
+Links
+Links-based sampling
+Best practices
+Metrics
+Console
+ASP.NET Core
+Export to Prometheus
+Exemplars
+Instruments
+Best practices
+Logs
+Console
+ASP.NET Core
+Complex objects
+Correlation
+Dedicated pipeline
+Routing
+Redaction
+Best practices
+Instrumentation
+Libraries
+Resources
+Exporters
+Sampling
+.NET Framework
+Troubleshooting
+Tracing Shim
+API - tracing
+API - metrics
+Examples
+Registry
+Erlang/Elixir
+Getting Started
+Instrumentation
+Libraries
+Exporters
+Propagation
+Resources
+Sampling
+Testing
+API
+Examples
+Registry
+Go
+Getting Started
+Instrumentation
+Libraries
+Exporters
+Resources
+Sampling
+API
+Examples
+Registry
+Java
+Intro to OpenTelemetry Java
+Getting Started by Example
+Instrumentation ecosystem
+Record Telemetry with API
+Manage Telemetry with SDK
+Configure the SDK
+JMX Metrics
+Examples
+Registry
+JavaScript
+Getting Started by Example
+Node.js
+Browser
+Instrumentation
+Libraries
+Exporters
+Context
+Propagation
+Resources
+Sampling
+Serverless
+Benchmarks
+API
+Examples
+Registry
+Kotlin
+Getting Started
+Examples
+Registry
+PHP
+Getting Started
+Instrumentation
+Libraries
+Exporters
+Context
+Propagation
+Resources
+SDK
+API
+Examples
+Registry
+Python
+Getting Started by Example
+Instrumentation
+Libraries
+Exporters
+Propagation
+Cookbook
+Distro
+Using mypy
+Benchmarks
+API
+Examples
+Registry
+Ruby
+Getting Started
+Instrumentation
+Libraries
+Exporters
+Sampling
+API
+Examples
+Registry
+Rust
+Getting Started
+Libraries
+Exporters
+API
+Examples
+Registry
+Swift
+Getting Started
+Instrumentation
+Libraries
+Examples
+Registry
+Other
+Platforms
+Client-side Apps
+Android
+iOS
+Web
+FaaS
+Lambda Auto-Instrumentation
+Lambda Collector Config
+Lambda Manual Instrumentation
+Kubernetes
+Getting Started
+Collector
+Components
+Helm Charts
+Collector Chart
+Demo Chart
+Operator Chart
+Kubernetes Operator
+Auto-instrumentation
+Horizontal Pod Autoscaling
+Target Allocator
+Troubleshooting
+Auto-instrumentation
+Prometheus Alerts Runbooks
+Target Allocator
+Zero-code Instrumentation
+OBI
+Configure
+Export modes
+Global properties
+Export data
+Service discovery
+Metrics attributes
+Filter data
+Routes decorator
+Metrics histograms
+Sample traces
+Collector receiver
+Internal metrics reporter
+Tune performance
+YAML example
+Network
+Measure traffic between Cloud availability zones
+Quickstart
+Configuration
+Setup
+Helm chart
+Docker
+Kubernetes
+Standalone
+Exported metrics
+Distributed traces
+Request times
+Security
+Troubleshooting
+Cilium compatibility
+Trace context association
+Metrics cardinality
+Trace-log correlation
+Go
+Auto SDK
+.NET
+Getting Started
+Instrumentations
+Configuration
+Custom instrumentation
+NuGet Packages
+Troubleshooting
+PHP
+Python
+Configuration
+Example
+Logs Example
+Operator
+Troubleshooting
+Java
+Agent
+Getting started
+Configuration
+Declarative configuration
+Supported Libraries
+Suppressing instrumentation
+Annotations
+Extend with the API
+Instrumentation config
+HTTP
+App server config
+Extensions
+Performance
+Quarkus
+Spring Boot starter
+Getting started
+Extend with the API
+Declarative configuration
+SDK configuration
+Programmatic configuration
+Out of the box instrumentation
+Annotations
+Additional instrumentation
+Other Spring autoconfiguration
+JavaScript
+Configuration
+Collector
+Quick start
+Install
+Docker
+Kubernetes
+Binary
+Linux
+macOS
+Windows
+Deploy
+Agent pattern
+Gateway pattern
+Other patterns
+Agent-to-gateway pattern
+No Collector
+Configuration
+Components
+Receivers
+Processors
+Exporters
+Connectors
+Extensions
+Management
+Distributions
+Internal telemetry
+Troubleshooting
+Scaling the Collector
+Transforming telemetry
+Architecture
+Extend
+Build from source
+Build a custom Collector
+Build custom components
+Receivers
+Connectors
+Extensions
+Authenticator
+Benchmarks
+Registry
+Resiliency
+Blueprints and reference implementations
+Blueprints
+Managed Telemetry Platforms for K8s Workloads
+Infrastructure and Processes in Non-K8s Environments
+Reference implementations
+Adobe
+Mastodon
+Skyscanner
+Compatibility
+Prometheus
+Client libraries
+OTLP metrics export
+Migration
+OpenCensus
+OpenTracing
+Specs
+Status
+Configuration Types
+OTel 1.58.0
+Overview
+Baggage
+API
+Client Design Principles
+Common concepts
+Attribute Naming
+Attribute Requirement Levels
+Instrumentation Scope
+Mapping to AnyValue
+Mapping to non-OTLP Formats
+Compatibility
+OpenCensus
+OpenTracing
+Prometheus and OpenMetrics
+Trace Context in non-OTLP Log Formats
+Configuration
+API
+Data Model
+SDK
+Configuration Types
+Common
+Env var
+Supplementary Guidelines
+Context
+Environment Variables as Context Propagation Carriers
+Propagators API
+Definitions of Document Statuses
+Entities
+Data Model
+Entity Events
+Entity Propagation
+Error handling in OpenTelemetry
+Glossary
+Logs
+API
+Data Model
+SDK
+Data Model Appendix
+Exporters
+Stdout
+No-Op
+Supplementary Guidelines
+Metrics
+API
+Data Model
+SDK
+Exporters
+In-memory
+OTLP
+Prometheus
+Stdout
+Metric Requirement Levels
+No-Op
+Supplementary Guidelines
+Performance and Blocking of OpenTelemetry API
+Performance Benchmark of OpenTelemetry API
+Profiles
+Mappings
+Pprof
+Profiles Data Format
+Project Package Layout
+Protocol
+Specification 1.10.0
+Design Goals
+Exporter
+File Exporter
+Requirements
+Resource
+Data Model
+SDK
+Schemas
+1.0.0
+1.1.0
+Self-Observability
+Self-Observability Supplementary Guidelines
+Semantic Conventions
+Specification Principles
+Telemetry Stability
+The OpenTelemetry approach to upgrading
+Trace
+API
+SDK
+Exceptions
+Exporters
+Stdout
+Zipkin
+Probability Sampling
+TraceState
+Vendors
+Versioning and stability for OpenTelemetry clients
+OTLP 1.10.0
+OpAMP
+Semantic conventions 1.42.0
+Registry
+Attributes
+Android
+App
+Artifact
+Aspnetcore
+AWS
+Azure
+Browser
+Cassandra
+CI/CD
+Client
+Cloud
+CloudEvents
+CloudFoundry
+Code
+Container
+CPU
+CPython
+DB
+Deployment
+Destination
+Device
+Disk
+DNS
+Dotnet
+Elasticsearch
+Enduser
+Error
+Event
+Exception
+Faas
+Feature flag
+File
+GCP
+Gen AI
+Geo
+Go
+GraphQL
+Hardware
+Heroku
+Host
+HTTP
+iOS
+JSONRPC
+JVM
+K8s
+Linux
+Log
+Mainframe
+MCP
+Messaging
+Network
+NFS
+NodeJS
+OCI
+ONC RPC
+OpenAI
+Openshift
+OpenTracing
+Oracle cloud
+OracleDB
+OS
+OTel
+Peer
+Pprof
+Process
+Profile
+RPC
+Security rule
+Server
+Service
+Session
+SignalR
+Source
+System
+Telemetry
+Test
+Thread
+TLS
+URL
+User
+User agent
+V8js
+VCS
+Webengine
+zOS
+Entities
+Android
+App
+AWS
+Browser
+CI/CD
+Cloud
+CloudFoundry
+Container
+Deployment
+Device
+Faas
+GCP
+Heroku
+Host
+K8s
+Openshift
+OS
+OTel
+Process
+Service
+Telemetry
+VCS
+Webengine
+zOS
+General
+Attribute requirement levels
+Attributes
+Events
+Logs
+Metric requirement levels
+Metrics
+Naming
+Profiles
+Recording errors
+Semantic convention groups
+Session
+Trace
+Tracing compatibility
+.NET
+ASP.NET Core
+DNS
+HTTP
+HTTP request and connection spans
+Kestrel
+SignalR
+App
+Events
+Azure
+Events
+Browser
+Events
+CI/CD
+Logs
+Metrics
+Spans
+CLI programs
+Spans
+Cloud providers
+AWS SDK
+CloudEvents
+Spans
+Configuration
+Version selection
+Database
+Cassandra
+Cosmos DB
+CouchDB
+DynamoDB
+Elasticsearch
+Exceptions
+HBase
+MariaDB
+Metrics
+MongoDB
+MySQL
+Oracle Database
+PostgreSQL
+Redis
+Spans
+SQL
+SQL Server
+DNS
+Metrics
+Exceptions
+Logs
+Spans
+FaaS
+AWS Lambda
+Exceptions
+Metrics
+Spans
+Feature flags
+Events
+Generative AI
+Agent spans
+Anthropic
+AWS Bedrock
+Azure AI Inference
+Events
+Exceptions
+Metrics
+Model Context Protocol
+Moved: Generative AI semantic conventions
+OpenAI
+Spans
+GraphQL
+GraphQL server
+Hardware
+Battery
+CPU
+Disk Controller
+Enclosure
+Fan
+GPU
+Logical Disk
+Memory
+Metrics
+Network
+Physical Disk
+Physical host
+Power Supply
+Tape Drive
+Temperature
+Voltage
+How to write conventions
+Resource and Entities
+Status Metrics
+T-shaped Signals
+HTTP
+Exceptions
+Metrics
+Spans
+Messaging
+AWS SNS
+AWS SQS
+Azure
+Exceptions
+Google Cloud Pub/Sub
+Kafka
+Metrics
+RabbitMQ
+RocketMQ
+Spans
+Mobile
+Events
+NFS
+NFS
+Non-normative
+Code attributes migration
+Compatibility
+AWS
+gRPC
+Database migration
+Generating semantic convention libraries
+HTTP migration
+K8s attributes
+K8s migration
+Naming known exceptions
+Recommended vs Opt-In CPU Metrics
+RPC migration
+System semantic conventions: instrumentation design philosophy
+System use cases
+Object stores
+S3
+OpenTelemetry SDK
+SDK Metrics
+Resource
+Android
+Browser
+CI/CD
+Cloud
+Cloud provider
+AWS
+ECS
+EKS
+Logs
+GCP
+Google Cloud AppHub
+Google Cloud Run
+Google Compute Engine
+Heroku
+CloudFoundry
+Container
+Deployment
+Device
+FaaS
+Host
+Kubernetes
+Openshift
+Operating system
+Process
+Service
+Webengine
+z/OS software
+RPC
+Connect
+Dubbo
+Exceptions
+gRPC
+JSON-RPC
+Metrics
+Spans
+Runtime environment
+.NET
+CPython
+Go
+JVM
+Node.js
+V8 JS engine
+System
+Container
+Kubernetes
+OpenShift
+OS process
+System
+URL
+Security
+Common Vulnerabilities and Exposures
+Handling sensitive data
+Community incident response guidelines
+Collector configuration
+Collector hosting
+Contributing
+Prerequisites
+Issues
+Submitting content
+Style guide
+Localization
+Blog
+PR checks & tests
+Announcements
+Dev setup and more
+SIG practices
+Acknowledgements
+View Markdown
+View page source
+Edit this page
+Create child page
+Create documentation issue
+On this page
+What is Observability?
+Reliability and metrics
+Understanding distributed tracing
+Logs
+Spans
+Span attributes
+Distributed traces
+Docs
+Concepts
+Observability primer
+Observability primer
+Core observability concepts.
+What is Observability?
+Observability lets you understand a system from the outside by letting you ask
+questions about that system without knowing its inner workings. Furthermore, it
+allows you to easily troubleshoot and handle novel problems, that is, “unknown
+unknowns”. It also helps you answer the question “Why is this happening?”
+To ask those questions about your system, your application must be properly
+instrumented. That is, the application code must emit
+signals such as
+traces,
+metrics, and
+logs. An application is properly instrumented
+when developers don’t need to add more instrumentation to troubleshoot an issue,
+because they have all of the information they need.
+OpenTelemetry is the mechanism by which
+application code is instrumented to help make a system observable.
+Reliability and metrics
+Telemetry refers to data emitted from a system and its behavior. The data
+can come in the form of traces,
+metrics, and
+logs.
+Reliability answers the question: “Is the service doing what users expect it
+to be doing?” A system could be up 100% of the time, but if, when a user clicks
+“Add to Cart” to add a black pair of shoes to their shopping cart, the system
+doesn’t always add black shoes, then the system could be unreliable.
+Metrics are aggregations over a period of time of numeric data about your
+infrastructure or application. Examples include: system error rate, CPU
+utilization, and request rate for a given service. For more on metrics and how
+they relate to OpenTelemetry, see Metrics.
+SLI, or Service Level Indicator, represents a measurement of a service’s
+behavior. A good SLI measures your service from the perspective of your users.
+An example SLI can be the speed at which a web page loads.
+SLO, or Service Level Objective, represents the means by which reliability
+is communicated to an organization/other teams. This is accomplished by
+attaching one or more SLIs to business value.
+Understanding distributed tracing
+Distributed tracing lets you observe requests as they propagate through complex,
+distributed systems. Distributed tracing improves the visibility of your
+application or system’s health and lets you debug behavior that is difficult to
+reproduce locally. It is essential for distributed systems, which commonly have
+nondeterministic problems or are too complicated to reproduce locally.
+To understand distributed tracing, you need to understand the role of each of
+its components: logs, spans, and traces.
+Logs
+A log is a timestamped message emitted by services or other components.
+Unlike traces, they aren’t necessarily associated with
+any particular user request or transaction. You can find logs almost everywhere
+in software. Logs have been heavily relied on in the past by both developers and
+operators to help them understand system behavior.
+Sample log:
+I, [2021-02-23T13:26:23.505892 #22473] INFO -- : [6459ffe1-ea53-4044-aaa3-bf902868f730] Started GET "/" for ::1 at 2021-02-23 13:26:23 -0800
+Logs aren’t enough for tracking code execution, as they usually lack contextual
+information, such as where they were called from.
+They become far more useful when they are included as part of a span,
+or when they are correlated with a trace and a span.
+For more on logs and how they pertain to OpenTelemetry, see
+Logs.
+Spans
+A span represents a single unit of work or operation. Spans track specific
+operations that a request makes, painting a picture of what happened during the
+time in which that operation was executed.
+A span contains name, time-related data,
+structured log messages, and
+other metadata (that is, Attributes)
+to provide information about the operation it tracks.
+Span attributes
+Span attributes are metadata attached to a span.
+The following table contains examples of span attributes:
+Key
+Value
+http.request.method
+"GET"
+network.protocol.version
+"1.1"
+url.path
+"/webshop/articles/4"
+url.query
+"?s=1"
+server.address
+"example.com"
+server.port
+8080
+url.scheme
+"https"
+http.route
+"/webshop/articles/:article_id"
+http.response.status_code
+200
+client.address
+"192.0.2.4"
+client.socket.address
+"192.0.2.5" (the client goes through a proxy)
+user_agent.original
+"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:72.0) Gecko/20100101 Firefox/72.0"
+For more on spans and how they relate to OpenTelemetry, see
+Spans.
+Distributed traces
+A distributed trace, more commonly known as a trace, records the path
+taken by a single request (made by an application or end user) as it propagates
+through multiple services in an architecture, such as microservice or serverless
+applications.
+A trace is made of one or more spans. The first span represents the root span.
+Each root span represents a request from start to finish. The spans underneath
+the parent provide a more in-depth context of what occurs during a request (or
+what steps make up a request).
+For example, when a user loads a web page, the initial HTTP request may pass
+through an API gateway, a backend service, and a database. Each of these steps
+is represented by a span, and together they form a single trace that shows the
+end-to-end journey of the request.
+Without tracing, finding the root cause of performance problems in a distributed
+system can be challenging. Tracing makes debugging and understanding distributed
+systems less daunting by breaking down what happens within a request as it flows
+through a distributed system.
+Many Observability backends visualize traces as waterfall diagrams that look
+like this:
+Waterfall diagrams show the parent-child relationship between a root span and
+its child spans. When a span encapsulates another span, this also represents a
+nested relationship.
+For more on traces and how they pertain to OpenTelemetry, see
+Traces.
+Feedback
+Was this page helpful?
+Yes
+No
+Thank you. Your feedback is appreciated!
+Please let us know how we can improve this page. Your feedback is appreciated!
+Last modified April 23, 2026: docs+config: add shared cSpell all-words list and update spelling guidance (#9736) (c4c8aa76)
+©
+2019–present
+OpenTelemetry Authors | Docs CC BY 4.0All Rights Reserved

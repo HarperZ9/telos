@@ -1,0 +1,27 @@
+{
+  "schema": "ProofPacketValidatorRun/v1",
+  "status": "MATCH",
+  "observed_exit_code": 0,
+  "check": {
+    "artifact": "ProofPacketMinimumValidator",
+    "path": "schemas\\formal-identity-proof-packet-pass-0007.json",
+    "required_fields": [
+      "packet_id",
+      "schema",
+      "domain",
+      "claim_set",
+      "source_receipts",
+      "action_receipts",
+      "authority_receipts",
+      "workspace_state",
+      "verification_verdicts",
+      "failure_labels",
+      "decision_summary"
+    ],
+    "claim_count": 2,
+    "errors": [],
+    "status": "MATCH"
+  },
+  "match": 1,
+  "drift": 0
+}

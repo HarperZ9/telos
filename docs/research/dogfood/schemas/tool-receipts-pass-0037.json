@@ -1,0 +1,137 @@
+{
+  "generated_on": "2026-07-01",
+  "non_promotion_statement": "Tool receipts prove packet readback, statement-equivalence validator MATCH, Telos/Index/Gather/Forum/Crucible availability, and no remaining temp replay processes. They do not prove Lean replay, semantic proof correctness by elaboration, axiom-free proof, every public pipeline-math claim, buyer adoption, or any natural law.",
+  "pass": "0037",
+  "receipts": [
+    {
+      "command": "map --root docs/research/dogfood --json",
+      "dirty_count": 0,
+      "repo_count": 0,
+      "role": "dogfood-substrate-map",
+      "root_sha256_prefix": "f2f0af39219698a9",
+      "schema_version": 1,
+      "status": "MATCH",
+      "tool": "index",
+      "tool_version": "2.8.0",
+      "top_level_count": 45
+    },
+    {
+      "artifact": "packets/047-theorem-statement-equivalence.md",
+      "chars": 1968,
+      "command": "docs",
+      "seal": "7c582af473f382af560e6d9699e8e2f0bfe6ab64daa8ccf7234c14b5138a2369",
+      "sha256": "0f1138781897eee84b486512c9399e9ba3d4ab34e3d079d99cd2a98a0fcebb7b",
+      "status": "MATCH",
+      "tool": "gather",
+      "verified": true
+    },
+    {
+      "command": "probe_theorem_statement_equivalence.py",
+      "schema": "TheoremStatementEquivalenceSet/v1",
+      "seal": "78ede605591460b7a2aa8fee7e2ebca0f56688575e5c9ce7ab919f2948a0934f",
+      "statement_check_count": 10,
+      "status": "STATEMENT_EQUIVALENCE_MATCH",
+      "theorem_count": 10,
+      "tool": "python"
+    },
+    {
+      "command": "validate_pass_0037_theorem_statement_equivalence.py",
+      "drift": 0,
+      "match": 1,
+      "schema": "Pass0037TheoremStatementEquivalenceValidatorRun/v1",
+      "statement_check_count": 10,
+      "status": "MATCH",
+      "theorem_count": 10,
+      "tool": "python"
+    },
+    {
+      "command": "process check",
+      "remaining_temp_processes": 0,
+      "status": "MATCH",
+      "tool": "shell"
+    },
+    {
+      "command": "telos_catalog",
+      "selected_tools_available": [
+        "gather.docs",
+        "index.map",
+        "forum.route",
+        "crucible.run",
+        "telos.action.receipt",
+        "telos.loop.ledger"
+      ],
+      "status": "MATCH",
+      "tool": "mcp__telos.telos_catalog"
+    },
+    {
+      "append_only_compensation_required": true,
+      "command": "telos_action_receipt",
+      "digest_references_required": true,
+      "raw_parameters_required": false,
+      "receipt_is_trace_span": false,
+      "schema": "project-telos.action-receipt/v1",
+      "status": "MATCH",
+      "tool": "mcp__telos.telos_action_receipt"
+    },
+    {
+      "command": "telos_loop_ledger",
+      "fresh_context_reads_ledger_first": true,
+      "one_action_per_iteration": true,
+      "schema": "project-telos.loop-ledger/v1",
+      "status": "MATCH",
+      "tool": "mcp__telos.telos_loop_ledger",
+      "unverifiable_required": true
+    },
+    {
+      "candidates": [
+        {
+          "agent": "model-foundry",
+          "score": 0.125
+        },
+        {
+          "agent": "project-telos",
+          "score": 0.045454545454545456
+        }
+      ],
+      "command": "route",
+      "confidence": 0.07954545454545454,
+      "decided": null,
+      "needs_escalation": true,
+      "status": "MATCH",
+      "tool": "forum"
+    },
+    {
+      "chain": true,
+      "command": "ledger verify",
+      "deep": true,
+      "status": "MATCH",
+      "tool": "forum"
+    },
+    {
+      "command": "submit",
+      "error": "submit needs a model executor. Forum is model-agnostic: pass --cmd \"<model cli>\" (any command, local models need no account), --chat-url <openai-compatible url> (e.g. a local Ollama server), or --api (Anthropic).",
+      "request": "Dogfood pass 0037 adversarial review for theorem statement equivalence",
+      "status": "UNVERIFIABLE",
+      "tool": "forum"
+    },
+    {
+      "assessment_seal": "ed6d3c352124d8fe00e2ea579655134dea5704b1a3e11f04445f2b77fe502861",
+      "claims": 8,
+      "command": "run",
+      "drift": 0,
+      "match": 8,
+      "measurement_seal": "0ad6f4d764f03354ef990a7a82cf87d7fb34f3725a74a84a6dca2b4fb7e3640b",
+      "seals_ok": true,
+      "status": "MATCH",
+      "thesis_id": "92958de6b132f310",
+      "thesis_ok": true,
+      "thesis_seal": "92958de6b132f310a64c960e61a1ef11f76c3a2df208eafad8c05d7393f77e44",
+      "tool": "crucible",
+      "unverifiable": 0,
+      "verdict_seal": "75c464d6fd99346e705592d5db39d55f0ef6ac76d568a06be73a39b5042318da",
+      "verdicts_rederive": true
+    }
+  ],
+  "schema": "DogfoodToolReceiptSet/v1",
+  "status": "MATCH_WITH_FORUM_SUBMIT_GAP_AND_NON_SEMANTIC_BOUNDARY"
+}

@@ -1,0 +1,95 @@
+{
+  "adapter": {
+    "drift": 0,
+    "match": 10,
+    "measurement_count": 10
+  },
+  "buildc_corpus": {
+    "command": "cargo run --quiet --bin buildc -- corpus verify",
+    "cwd": "C:\\dev\\public\\pubscan\\quantalang\\compiler",
+    "drift": 0,
+    "exit_code": 0,
+    "line_checks": {
+      "c_execution": true,
+      "c_receipt": true,
+      "lsp_dispatch_receipt": true,
+      "manifest_programs": true,
+      "memory_layout_receipt": true,
+      "mir_representation_receipt": true,
+      "module_graph_receipt": true,
+      "rust_receipt": true,
+      "substrate_receipt": true,
+      "symbol_graph_receipt": true
+    },
+    "match": 10,
+    "status": "MATCH",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "fbe2daff8da1804b00cafe9a9fff36fc649429071b25f6a2561003255f6310d3"
+  },
+  "compose": {
+    "command": "C:\\Users\\Zain\\AppData\\Local\\Programs\\Python\\Python312\\python.exe C:\\dev\\public\\telos\\docs\\research\\dogfood\\tools\\compose_buildlang_corpus_crucible_adapter.py --out C:\\dev\\public\\telos\\docs\\research\\dogfood\\schemas\\buildlang-corpus-crucible-adapter-pass-0091.json",
+    "exit_code": 0,
+    "status": "MATCH",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "cc8ddc47af92e483cf847a441096423b974be7643ab9517554938b03a8d8a184"
+  },
+  "forum": {
+    "confidence": 0.09090909090909091,
+    "decided": null,
+    "exit_code": 0,
+    "needs_escalation": true,
+    "status": "MATCH",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "a72455b90f29ed2ce0ba1cca16cddb1e0d9efffa176ad3c7f3092a91e1ab34c8",
+    "top_candidates": [
+      {
+        "agent": "project-telos",
+        "score": 0.09090909090909091
+      },
+      {
+        "agent": "backend",
+        "score": 0.0
+      },
+      {
+        "agent": "ci-cd",
+        "score": 0.0
+      },
+      {
+        "agent": "cloud-infra",
+        "score": 0.0
+      },
+      {
+        "agent": "code-review",
+        "score": 0.0
+      }
+    ]
+  },
+  "index": {
+    "exit_code": 0,
+    "graph_pack_sha256": "8ee383e19ae9a6141bee70de733fb6aa09201ff9d284ce6778ce58b06e6b68b2",
+    "schema": "project-telos.context-envelope/v1",
+    "source_refs_only": true,
+    "status": "MATCH",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "2c6edcbe595b6d6b097100b48d44b766fb6bef2e8bf5ebc14757ba396462999b",
+    "verification_verdict": "MATCH"
+  },
+  "pass": "0091",
+  "schema": "DogfoodToolReceipts/v1",
+  "seal": "1f6bed6fd51236bdc0999350d31f34d9a6009985752669a6e4ec288798b50a44",
+  "telos": {
+    "exit_code": 0,
+    "status": "MATCH",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "be17cb15259234cb4e8e95c2b36e76c90d841431729beb140294e34c5f9ebfa7",
+    "tool": "telos",
+    "tool_version": "0.1.0"
+  },
+  "test": {
+    "command": "C:\\Users\\Zain\\AppData\\Local\\Programs\\Python\\Python312\\python.exe C:\\dev\\public\\telos\\docs\\research\\dogfood\\tools\\test_buildlang_corpus_crucible_adapter.py",
+    "exit_code": 0,
+    "status": "MATCH",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

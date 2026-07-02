@@ -1,0 +1,149 @@
+{
+  "generated_on": "2026-07-01",
+  "non_promotion_statement": "Tool receipts prove local buyer-evidence intake ledger generation, validator MATCH, Gather packet intake, Forum routing, CRM read-only state, and Crucible MATCH. They do not prove buyer demand, budget, sent outreach, CRM writes, customer adoption, scientific truth, uniqueness, or any natural law.",
+  "pass": "0061",
+  "receipts": [
+    {
+      "check_count": 14,
+      "command": "telos_operator_doctor",
+      "passed_count": 14,
+      "status": "MATCH",
+      "tool": "mcp__telos.telos_operator_doctor",
+      "tool_count": 65
+    },
+    {
+      "command": "index_status",
+      "command_count": 6,
+      "mcp_tool_count": 10,
+      "role": "structure-context",
+      "status": "MATCH",
+      "tool": "mcp__index.index_status",
+      "tool_version": "2.8.0"
+    },
+    {
+      "artifact": "packets/071-buyer-evidence-intake-ledger.md",
+      "chars": 709,
+      "command": "docs",
+      "seal": "7c37d6db7b5e348abe1c6c86d9bc025b5817105a455a087d7bbe60b4fbfdc125",
+      "sha256": "020110248f5126a4f0e835deebb0d3804ba1d63c2ab18c95050ef95aea84330d",
+      "status": "MATCH",
+      "tool": "mcp__gather.gather_docs",
+      "verified": true
+    },
+    {
+      "command": "test_buyer_evidence_intake_ledger.py",
+      "exit_code": 0,
+      "line_count": 55,
+      "sha256": "266d184c91a1f5a7c1fb812993c52ee24158908c70773a9a5cf77dea1c5a05e1",
+      "status": "MATCH",
+      "tool": "python"
+    },
+    {
+      "command": "compose_buyer_evidence_intake_ledger.py",
+      "buyer_response_status": "AWAITING_REAL_RESPONSES",
+      "crm_write_status": "NOT_WRITTEN",
+      "intake_record_count": 3,
+      "line_count": 174,
+      "seal": "d074d80cd84659f735b81dc5161d58f5b4212142723f97463a35ba0965bb6220",
+      "send_status": "NOT_SENT",
+      "sha256": "56f3c46fe2c6f3c6ae0af7f9ff841b168f713f6ad1e669ad647c6be83d6c66f1",
+      "status": "BUYER_EVIDENCE_INTAKE_LEDGER_MATCH",
+      "tool": "python"
+    },
+    {
+      "command": "probe_buyer_evidence_intake_ledger.py",
+      "line_count": 118,
+      "seal": "d074d80cd84659f735b81dc5161d58f5b4212142723f97463a35ba0965bb6220",
+      "sha256": "11a15477f777618a163edf93b2b716ab8920d04be977ae542aa80c360661a276",
+      "status": "MATCH",
+      "tool": "python"
+    },
+    {
+      "command": "validate_pass_0061_buyer_evidence_intake_ledger.py",
+      "drift": 0,
+      "field_count": 24,
+      "line_count": 86,
+      "match": 1,
+      "private_field_count": 21,
+      "record_count": 3,
+      "schema": "Pass0061BuyerEvidenceIntakeLedgerValidatorRun/v1",
+      "sha256": "00f15dfff3df44ec156d79290701f1c4614dd70a833dcfc88046ef04a09b60b8",
+      "status": "MATCH",
+      "tool": "python"
+    },
+    {
+      "command": "forum_doctor",
+      "match_count": 4,
+      "status": "MATCH",
+      "tool": "mcp__forum.forum_doctor",
+      "tool_version": "1.12.0"
+    },
+    {
+      "candidates": [
+        {
+          "agent": "project-telos",
+          "score": 0.3181818181818182
+        },
+        {
+          "agent": "deep-research",
+          "score": 0.2
+        }
+      ],
+      "command": "route buyer-evidence intake prompt",
+      "confidence": 0.5,
+      "decided": "project-telos",
+      "needs_escalation": false,
+      "status": "MATCH",
+      "tool": "mcp__forum.route"
+    },
+    {
+      "command": "crm_stats",
+      "outreach_last_30_days": 0,
+      "outreach_last_7_days": 0,
+      "status": "MATCH_READ_ONLY_EMPTY_CRM",
+      "tool": "mcp__warden_crm.crm_stats",
+      "total_counterparties": 0
+    },
+    {
+      "capability_count": 4,
+      "command": "crucible_status",
+      "mcp_tool_count": 13,
+      "role": "verification-pressure",
+      "status": "MATCH",
+      "tool": "mcp__crucible.crucible_status",
+      "tool_version": "1.1.0"
+    },
+    {
+      "assessments": 50,
+      "claims": 408,
+      "command": "crucible_registry stats",
+      "drift": 0,
+      "invalid_latest_assessments": 0,
+      "match": 408,
+      "status": "MATCH",
+      "theses": 49,
+      "tool": "mcp__crucible.crucible_registry",
+      "unverifiable": 0
+    },
+    {
+      "assessment_seal": "cec8e2ca942fbf0dc212686d78f47a3c1a4c83d34aad79727aecf6877a063958",
+      "claims": 8,
+      "command": "crucible run --registry",
+      "drift": 0,
+      "match": 8,
+      "measurement_seal": "31fd78b00de178502db5cd8836dd5f33c0c01d74fdd33f1c2b5cb81ceb32b0a9",
+      "run_sha256": "d129234190687f415b5363c5cae277bca20b4d8913413c2f5a6acdd1bfb82dd7",
+      "seals_ok": true,
+      "status": "MATCH",
+      "thesis_id": "e1978070b31198fe",
+      "thesis_ok": true,
+      "thesis_seal": "e1978070b31198fea6b386535e0058a9ef4982b15089d4753149f2b41d804464",
+      "tool": "crucible",
+      "unverifiable": 0,
+      "verdict_seal": "feb37e77e5c2bb8fc7c1f7719effaaa0d84a2995959ef781b43458df2828d71b",
+      "verdicts_rederive": true
+    }
+  ],
+  "schema": "DogfoodToolReceiptSet/v1",
+  "status": "MATCH_BUYER_EVIDENCE_INTAKE_PRIVACY_BOUNDARY"
+}

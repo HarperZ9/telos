@@ -1,0 +1,45 @@
+{
+  "acquisition_source_binding": {
+    "path": "schemas/lean-toolchain-acquisition-sources-pass-0045.json",
+    "seal": "b31f2684d77de7f83ef71ec4b4ef1230d8b265c36758736d03cffade4149868e",
+    "sha256": "924ef19e25fbaf101001b0cc9caf25d929f13fcb034f2aa6bcc4720101c56117",
+    "source_status": "LEAN_TOOLCHAIN_ACQUISITION_SOURCES_MATCH"
+  },
+  "action_receipt_proposal": {
+    "action_id": "act_dogfood_0046_elan_controlled_install_plan",
+    "authority_class": "read_only_install_plan",
+    "event_id": "evt_dogfood_0046_elan_controlled_install_plan",
+    "event_type": "elan_controlled_install_plan_verified",
+    "external_call_performed": true,
+    "external_write_performed": false,
+    "installer_script_executed": false,
+    "normal_path_modified": false,
+    "verification_verdict": "MATCH"
+  },
+  "current_promoted_natural_laws": [],
+  "elan_controlled_install_fixture": {
+    "path": "fixtures/elan-controlled-install-plan-pass-0046.json",
+    "schema": "ElanControlledInstallPlanFixture/v1",
+    "seal": "77d7c4591915147a289b809d42525224d9d51bb26a94554e429445dc60b5c510",
+    "sha256": "2606465fe4f9a7db9d5357bea153d021ae9350e1a774dd2f9d10233119b9ca08"
+  },
+  "generated_on": "2026-07-01",
+  "non_promotion_statement": "Pass 0046 records an install plan only. It does not execute elan-init.ps1, install Elan, run Lean, run lake build, compile dependencies, validate every public pipeline-math claim, or promote any natural law.",
+  "pass": "0046",
+  "proposed_command_shape": "powershell -ExecutionPolicy Bypass -File elan-init.ps1 -NoPrompt 1 -NoModifyPath 1 -DefaultToolchain leanprover/lean4:v4.31.0",
+  "schema": "ElanControlledInstallPlanSet/v1",
+  "seal": "0e79d9f03e7029462e50fcd7785d4ff3406cdb8fcd125f9202c51f32ee1e5d57",
+  "status": "ELAN_CONTROLLED_INSTALL_PLAN_MATCH",
+  "verifier_measurements": {
+    "default_toolchain": "leanprover/lean4:v4.31.0",
+    "default_toolchain_supported": true,
+    "elan_root_supported": true,
+    "elan_version_supported": true,
+    "installer_script_executed": false,
+    "installer_script_sha256": "1d3c66430d0e7b719b104e1dea80e395a066e96c37b886f2de4b0e9025a037fb",
+    "invoke_web_request_present": true,
+    "no_modify_path_supported": true,
+    "no_prompt_supported": true,
+    "start_process_present": true
+  }
+}
