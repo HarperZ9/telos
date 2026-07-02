@@ -1,0 +1,74 @@
+{
+  "schema": "project-telos.gather-run-config/v1",
+  "purpose": "Fresh source intake for the mycology, plant bioelectricity, and substrate-coupled intelligence publication lane.",
+  "scope": [
+    "fungi",
+    "fungal",
+    "mycorrhizal",
+    "hyphae",
+    "plant",
+    "bioelectric",
+    "electrical",
+    "calcium",
+    "glutamate",
+    "network",
+    "signaling"
+  ],
+  "store": "docs/outreach/receipts/twenty-first-wave/biology-network-intelligence-corpus",
+  "lead_only_sources": [
+    {
+      "url": "https://www.science.org/doi/10.1126/science.adu4373",
+      "status": "HTTP_403_SOURCE_LEAD_ONLY",
+      "title": "Global density and biomass of arbuscular mycorrhizal fungal networks",
+      "reason": "Publisher DOI route returned HTTP 403 through Gather web; use SPUN and EurekAlert source pages as accessible coverage until an authorized copy is available."
+    },
+    {
+      "url": "https://besjournals.onlinelibrary.wiley.com/doi/10.1111/1365-2435.70125",
+      "status": "HTTP_403_SOURCE_LEAD_ONLY",
+      "title": "Meta-analysis of effects of common mycorrhizal networks formed by arbuscular mycorrhizal fungi on plant and fungal parameters",
+      "reason": "Publisher DOI route returned HTTP 403 through Gather web; keep as a lead-only boundary rather than claiming local full-text coverage."
+    }
+  ],
+  "jobs": [
+    {
+      "source": "web",
+      "target": "https://www.spun.earth/mapping/a-hidden-infrastructure"
+    },
+    {
+      "source": "web",
+      "target": "https://www.eurekalert.org/news-releases/1131131"
+    },
+    {
+      "source": "web",
+      "target": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12483595/"
+    },
+    {
+      "source": "web",
+      "target": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11995700/"
+    },
+    {
+      "source": "web",
+      "target": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11479355/"
+    },
+    {
+      "source": "web",
+      "target": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12229509/"
+    },
+    {
+      "source": "web",
+      "target": "https://pubmed.ncbi.nlm.nih.gov/40961934/"
+    },
+    {
+      "source": "web",
+      "target": "https://pubmed.ncbi.nlm.nih.gov/36782032/"
+    },
+    {
+      "source": "web",
+      "target": "https://www.frontiersin.org/journals/forests-and-global-change/articles/10.3389/ffgc.2024.1512518/full"
+    },
+    {
+      "source": "arxiv",
+      "target": "2601.08099"
+    }
+  ]
+}

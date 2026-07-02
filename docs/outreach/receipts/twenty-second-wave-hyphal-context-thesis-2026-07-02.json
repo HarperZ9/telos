@@ -1,0 +1,17 @@
+{
+  "title": "Twenty-second-wave hyphal context benchmark packet",
+  "claims": [
+    {
+      "text": "The hyphal context benchmark CLI emits HYPHAL_CONTEXT_FIXTURE_MATCH with equal required evidence-class recovery, equal guardrail recovery, and fewer estimated prompt tokens than the full-context route.",
+      "falsification": "The benchmark receipt reports a non-matching result, missing required evidence classes, weaker guardrail recovery, or no token reduction."
+    },
+    {
+      "text": "The publication copy states the benchmark as one deterministic fixture and does not claim universal route superiority or measured model answer quality.",
+      "falsification": "Publication copy presents the fixture as proof that hyphal routing wins generally or as a measured model answer-quality result."
+    },
+    {
+      "text": "The benchmark receipt carries refs, hashes, coverage, and retrieval reasons without embedding raw source bodies or raw context.",
+      "falsification": "The benchmark receipt includes raw source-body or raw-context payload fields."
+    }
+  ]
+}
