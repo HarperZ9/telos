@@ -147,6 +147,23 @@ The demo runs the **same true cube twice**.
 - `viable-viz/`, the reconcile loop, the regulator, the subject, and the Certificate.
 - `render-nd/`, `render-sound/`, `sense-core/`, the render-and-perceive organs the loop depends on. Vendored unchanged so this folder runs on its own.
 
+## Studio model-in-the-loop (offline stub)
+
+`model-adapter.js` is the shippable slice of Studio's model-in-the-loop live
+generation. You type a natural-language intent, a model edits the scene
+parameters, an Arena renders two proposals, and the WITNESS step certifies the
+kept one into the existing scene receipt. It rides on `effects-protocol.js` and
+needs no network and no live model: the shipped "model" is a deterministic
+offline stub, so the whole surface is re-derivable and testable.
+
+```
+node demo/model-adapter-cli.mjs "warmer palette, 7-fold, slower loop"
+node demo/model-adapter-cli.mjs --json "faster, cooler"
+```
+
+Full contract, the strand parameter surface, and the live-model / browser-UI
+spec are in [`docs/STUDIO-MODEL-IN-THE-LOOP.md`](../docs/STUDIO-MODEL-IN-THE-LOOP.md).
+
 ## Honest limits
 
 - "CERTIFIED" means **"tripped no named failure check,"** not "correct in every possible sense." The guarantee is only as wide as the checks. Every escaped error should become a new check.
