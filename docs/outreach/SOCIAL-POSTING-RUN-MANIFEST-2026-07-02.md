@@ -15,10 +15,10 @@ Current-state note:
 
 The following paths are referenced in the continuation receipt but were not present during the current inventory:
 
-- `C:\dev\public\telos\docs\outreach\TWENTIETH-WAVE-SOCIAL-BLOG-COMMENT-QUEUE-2026-07-02.md`
-- `C:\dev\public\telos\docs\outreach\TWENTY-FIRST-WAVE-SOCIAL-BLOG-COMMENT-EXPANSION-2026-07-02.md`
-- `C:\dev\public\telos\docs\outreach\TWENTY-SECOND-WAVE-SOCIAL-BLOG-COMMENT-EXPANSION-2026-07-02.md`
-- `C:\dev\public\telos\docs\outreach\TWENTY-THIRD-WAVE-QUANT-SECURITY-SOCIAL-BLOG-COMMENT-EXPANSION-2026-07-02.md`
+- `C:/dev/public/telos/docs/outreach/TWENTIETH-WAVE-SOCIAL-BLOG-COMMENT-QUEUE-2026-07-02.md`
+- `C:/dev/public/telos/docs/outreach/TWENTY-FIRST-WAVE-SOCIAL-BLOG-COMMENT-EXPANSION-2026-07-02.md`
+- `C:/dev/public/telos/docs/outreach/TWENTY-SECOND-WAVE-SOCIAL-BLOG-COMMENT-EXPANSION-2026-07-02.md`
+- `C:/dev/public/telos/docs/outreach/TWENTY-THIRD-WAVE-QUANT-SECURITY-SOCIAL-BLOG-COMMENT-EXPANSION-2026-07-02.md`
 
 ## Posting Boundary
 

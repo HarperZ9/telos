@@ -81,7 +81,7 @@ repo subregistry is
 
 | Candidate | Existing artifacts | Next edit |
 | --- | --- | --- |
-| BuildLang Scientific Runtime Receipts | BuildLang README and `docs/SCIENTIFIC-RECEIPT.md`; `buildc receipt export` bridge. | Draft methods paper: accountable scientific compute receipts and Crucible export. |
+| BuildLang Scientific Runtime Receipts | BuildLang README and `C:/dev/public/pubscan/quantalang/docs/SCIENTIFIC-RECEIPT.md`; `buildc receipt export` bridge. | Draft methods paper: accountable scientific compute receipts and Crucible export. |
 | Causal Research Workbench | Official/whitepaper, proof packet, Learn/Crucible receipts. | Add synthetic SCM and BuildLang typed DAG plan. |
 | QEC Proof Packets | Working-tree official/whitepaper/outreach docs and fixture. | Commit/publish after rebasing; then plan Clifford/surface-code follow-on. |
 | Embodied Sim-to-Real | Official/whitepaper/outreach docs and site page. | Add typed-unit BuildLang version and controller-stability packet. |
