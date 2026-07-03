@@ -1,0 +1,101 @@
+{
+  "measurements": [
+    {
+      "claim": "The executed outreach wave posted 8 public non-GitHub items from the twenty-seventh wave queue.",
+      "deviation": 0.0,
+      "tolerance": 0.1,
+      "method": "execution-receipt-count-scan",
+      "observed": {
+        "source_queue": "TWENTY-SEVENTH-WAVE-REDDIT-YOUTUBE-BLOG-COMMENT-QUEUE-2026-07-02.md",
+        "posted_total": 8,
+        "github_items": 0
+      },
+      "evidence": [
+        "docs/outreach/receipts/thirtieth-social-wave-execution-receipts-2026-07-03Z.md"
+      ]
+    },
+    {
+      "claim": "The dev.to execution posted B51, B53, and B57 as @harperz9 with no direct Project Telos links.",
+      "deviation": 0.0,
+      "tolerance": 0.1,
+      "method": "devto-receipt-scan",
+      "observed": {
+        "posted": [
+          "B51",
+          "B53",
+          "B57"
+        ],
+        "account": "@harperz9",
+        "link_included": false
+      },
+      "evidence": [
+        "dev.to article-page snippet verification",
+        "docs/outreach/receipts/thirtieth-social-wave-execution-receipts-2026-07-03Z.md"
+      ]
+    },
+    {
+      "claim": "The Reddit execution posted R77, R79, and R81 as MeAndClaudeMakeHeat with old Reddit permalinks.",
+      "deviation": 0.0,
+      "tolerance": 0.1,
+      "method": "reddit-receipt-scan",
+      "observed": {
+        "posted": [
+          "R77",
+          "R79",
+          "R81"
+        ],
+        "account": "MeAndClaudeMakeHeat",
+        "urls": {
+          "R77": "https://old.reddit.com/r/LocalLLaMA/comments/1uaebfe/best_local_agents_jun_2026/ov8p4ga/",
+          "R79": "https://old.reddit.com/r/quant/comments/1ssjzvo/why_im_skeptical_about_using_llms_directly_for/ov8p5sw/",
+          "R81": "https://old.reddit.com/r/Physics/comments/1tgo1xv/am_i_really_missing_out_by_not_using_ai_for_coding/ov8p6vp/"
+        }
+      },
+      "evidence": [
+        "old Reddit thread/user-page snippet verification",
+        "docs/outreach/receipts/thirtieth-social-wave-execution-receipts-2026-07-03Z.md"
+      ]
+    },
+    {
+      "claim": "The YouTube execution posted Y76 and Y78 as @Unorthodoxis with no direct Project Telos links.",
+      "deviation": 0.0,
+      "tolerance": 0.1,
+      "method": "youtube-receipt-scan",
+      "observed": {
+        "posted": [
+          "Y76",
+          "Y78"
+        ],
+        "account": "@Unorthodoxis",
+        "link_included": false
+      },
+      "evidence": [
+        "YouTube watch-page snippet verification",
+        "docs/outreach/receipts/thirtieth-social-wave-execution-receipts-2026-07-03Z.md"
+      ]
+    },
+    {
+      "claim": "All posted comments were verified by matching page-visible snippets after submission.",
+      "deviation": 0.0,
+      "tolerance": 0.1,
+      "method": "verification-note-scan",
+      "observed": {
+        "verified_snippet_items": [
+          "B51",
+          "B53",
+          "B57",
+          "R77",
+          "R79",
+          "R81",
+          "Y76",
+          "Y78"
+        ]
+      },
+      "evidence": [
+        "browser-side receipt snapshot",
+        "docs/outreach/receipts/thirtieth-social-wave-execution-receipts-2026-07-03Z.md"
+      ]
+    }
+  ]
+}
+

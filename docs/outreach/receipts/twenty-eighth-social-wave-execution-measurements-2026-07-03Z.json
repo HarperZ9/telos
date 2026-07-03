@@ -1,0 +1,103 @@
+{
+  "measurements": [
+    {
+      "claim": "The executed outreach wave posted 14 public items: 5 Reddit comments, 8 YouTube comments, and 1 LinkedIn owned-channel update.",
+      "deviation": 0.0,
+      "tolerance": 0.1,
+      "method": "execution-receipt-count-scan",
+      "observed": {
+        "posted_total": 14,
+        "reddit_posted": 5,
+        "youtube_posted": 8,
+        "linkedin_posted": 1
+      },
+      "evidence": [
+        "docs/outreach/receipts/twenty-eighth-social-wave-execution-receipts-2026-07-03Z.md"
+      ]
+    },
+    {
+      "claim": "The executed Reddit outreach posted R97, R93, R95, R101, and R103, and skipped R99 because the target appeared locked or not writable.",
+      "deviation": 0.0,
+      "tolerance": 0.1,
+      "method": "reddit-receipt-scan",
+      "observed": {
+        "posted": [
+          "R97",
+          "R93",
+          "R95",
+          "R101",
+          "R103"
+        ],
+        "skipped": [
+          "R99"
+        ]
+      },
+      "evidence": [
+        "old Reddit public permalinks in execution receipt",
+        "docs/outreach/receipts/twenty-eighth-social-wave-execution-receipts-2026-07-03Z.md"
+      ]
+    },
+    {
+      "claim": "The executed YouTube outreach posted all eight YouTube drafts as the authenticated @Unorthodoxis account and included no external links in those comments.",
+      "deviation": 0.0,
+      "tolerance": 0.1,
+      "method": "youtube-receipt-scan",
+      "observed": {
+        "posted": [
+          "Y92",
+          "Y94",
+          "Y96",
+          "Y98",
+          "Y100",
+          "Y102",
+          "Y104",
+          "Y106"
+        ],
+        "account": "@Unorthodoxis",
+        "link_included": false
+      },
+      "evidence": [
+        "YouTube page verification snippets from Chrome execution",
+        "docs/outreach/receipts/twenty-eighth-social-wave-execution-receipts-2026-07-03Z.md"
+      ]
+    },
+    {
+      "claim": "The executed owned-channel outreach posted LI01 on LinkedIn as Zain Harper with a public View post URL.",
+      "deviation": 0.0,
+      "tolerance": 0.1,
+      "method": "linkedin-receipt-scan",
+      "observed": {
+        "id": "LI01",
+        "account": "Zain Harper",
+        "url": "https://www.linkedin.com/feed/update/urn:li:share:7478624244944535552"
+      },
+      "evidence": [
+        "LinkedIn Post successful state and View post URL",
+        "docs/outreach/receipts/twenty-eighth-social-wave-execution-receipts-2026-07-03Z.md"
+      ]
+    },
+    {
+      "claim": "Unauthenticated or non-writable platforms were not forced; HN, dev.to, X, Medium, Bluesky, Mastodon, and Substack were recorded as handoff or skipped states.",
+      "deviation": 0.0,
+      "tolerance": 0.1,
+      "method": "auth-matrix-and-handoff-scan",
+      "observed": {
+        "handoff": [
+          "Hacker News",
+          "dev.to",
+          "X",
+          "Medium",
+          "Bluesky",
+          "Mastodon"
+        ],
+        "skipped_authenticated_not_writable": [
+          "Substack"
+        ]
+      },
+      "evidence": [
+        "Chrome auth matrix",
+        "docs/outreach/receipts/twenty-eighth-social-wave-execution-receipts-2026-07-03Z.md"
+      ]
+    }
+  ]
+}

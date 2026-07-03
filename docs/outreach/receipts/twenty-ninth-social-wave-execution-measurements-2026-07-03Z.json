@@ -1,0 +1,95 @@
+{
+  "measurements": [
+    {
+      "claim": "The executed outreach continuation attempted 9 non-GitHub public targets and posted 6 public items.",
+      "deviation": 0.0,
+      "tolerance": 0.1,
+      "method": "execution-receipt-count-scan",
+      "observed": {
+        "attempted_total": 9,
+        "posted_total": 6,
+        "skipped_total": 3,
+        "github_items": 0
+      },
+      "evidence": [
+        "docs/outreach/receipts/twenty-ninth-social-wave-execution-receipts-2026-07-03Z.md"
+      ]
+    },
+    {
+      "claim": "The executed dev.to outreach posted B63, B65, B67, and B69 as the authenticated @harperz9 account, with no external links included in those comments.",
+      "deviation": 0.0,
+      "tolerance": 0.1,
+      "method": "devto-receipt-scan",
+      "observed": {
+        "posted": [
+          "B63",
+          "B65",
+          "B67",
+          "B69"
+        ],
+        "account": "@harperz9",
+        "link_included": false
+      },
+      "evidence": [
+        "dev.to page verification snippets from Chrome execution",
+        "docs/outreach/receipts/twenty-ninth-social-wave-execution-receipts-2026-07-03Z.md"
+      ]
+    },
+    {
+      "claim": "The owned-channel outreach posted OWN01-X on X and OWN01-MASTODON on Mastodon, each with the Project Telos repository link included.",
+      "deviation": 0.0,
+      "tolerance": 0.1,
+      "method": "owned-channel-receipt-scan",
+      "observed": {
+        "posted": [
+          "OWN01-X",
+          "OWN01-MASTODON"
+        ],
+        "urls": {
+          "OWN01-X": "https://x.com/zaindanaharper/status/2072862135924019345",
+          "OWN01-MASTODON": "https://mastodon.social/@zaindanaharper/116853567877204389"
+        },
+        "link_included": true
+      },
+      "evidence": [
+        "X profile verification snippet from Chrome execution",
+        "Mastodon profile verification snippet from Chrome execution",
+        "docs/outreach/receipts/twenty-ninth-social-wave-execution-receipts-2026-07-03Z.md"
+      ]
+    },
+    {
+      "claim": "The execution recorded Hacker News B59 and B61 as authenticated but not writable, without forcing a comment onto closed item pages.",
+      "deviation": 0.0,
+      "tolerance": 0.1,
+      "method": "hn-auth-gate-receipt-scan",
+      "observed": {
+        "skipped": [
+          "B59",
+          "B61"
+        ],
+        "account": "zaindanaharper",
+        "reason": "authenticated, but no comment textarea/form exposed on item page"
+      },
+      "evidence": [
+        "Hacker News item-page form checks from Chrome execution",
+        "docs/outreach/receipts/twenty-ninth-social-wave-execution-receipts-2026-07-03Z.md"
+      ]
+    },
+    {
+      "claim": "The execution recorded Bluesky as authenticated but composer-gated, and did not claim a Bluesky post without a writable editor.",
+      "deviation": 0.0,
+      "tolerance": 0.1,
+      "method": "bluesky-gate-receipt-scan",
+      "observed": {
+        "item": "OWN01-BSKY",
+        "status": "skipped",
+        "reason": "authenticated UI visible, but compose trigger did not expose a writable editor after Playwright and coordinate clicks"
+      },
+      "evidence": [
+        "Bluesky composer checks from Chrome execution",
+        "docs/outreach/receipts/twenty-ninth-social-wave-execution-receipts-2026-07-03Z.md"
+      ]
+    }
+  ]
+}
+
