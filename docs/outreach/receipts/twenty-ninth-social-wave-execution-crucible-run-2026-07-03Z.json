@@ -1,0 +1,280 @@
+{
+  "ok": true,
+  "thesis": {
+    "id": "bd67c2812415d6d8",
+    "title": "Twenty-ninth social wave execution receipts",
+    "registered_at": 1783044074.0795834,
+    "disposition": "publishable",
+    "seal": "bd67c2812415d6d8db9e7dfa93290752ba7fbd74d9e76fe47813e2232eac0f82",
+    "claims": [
+      {
+        "id": "3ee622453023d679",
+        "sha256": "3ee622453023d679c6c155c4cf77c979b4b0dceed83752b9dec0d9926b48c611"
+      },
+      {
+        "id": "d827c2a0e05bd0cb",
+        "sha256": "d827c2a0e05bd0cbf2de1035785d22fd745dcf9d27af66892a1e4ca4e0e33e6b"
+      },
+      {
+        "id": "ab3682b5e2f33981",
+        "sha256": "ab3682b5e2f33981d6c6a082fac56d07271c24b586f8650d56797b04f07f469c"
+      },
+      {
+        "id": "76fc149853711ba7",
+        "sha256": "76fc149853711ba7eed77ccd79c4b9d7dc20de19280208b32ed4f66c6e6050de"
+      },
+      {
+        "id": "7e829fca06758167",
+        "sha256": "7e829fca06758167257f6e47826a2d33f2b9361ba171d7ba7fd8b3d045cc5cde"
+      }
+    ]
+  },
+  "refutations": [
+    {
+      "claim_id": "3ee622453023d679",
+      "claim_sha256": "3ee622453023d679c6c155c4cf77c979b4b0dceed83752b9dec0d9926b48c611",
+      "challenge": "test the stated falsification: The receipt file lists a different target count, a different posted count, or includes GitHub work as part of the execution count.",
+      "measurable": "The receipt file lists a different target count, a different posted count, or includes GitHub work as part of the execution count.",
+      "source": "null"
+    },
+    {
+      "claim_id": "d827c2a0e05bd0cb",
+      "claim_sha256": "d827c2a0e05bd0cbf2de1035785d22fd745dcf9d27af66892a1e4ca4e0e33e6b",
+      "challenge": "test the stated falsification: Any listed dev.to item is missing, not marked posted, lacks @harperz9 as the observed account, or is marked as including a link.",
+      "measurable": "Any listed dev.to item is missing, not marked posted, lacks @harperz9 as the observed account, or is marked as including a link.",
+      "source": "null"
+    },
+    {
+      "claim_id": "ab3682b5e2f33981",
+      "claim_sha256": "ab3682b5e2f33981d6c6a082fac56d07271c24b586f8650d56797b04f07f469c",
+      "challenge": "test the stated falsification: Either owned-channel item is missing, not marked posted, lacks a public URL, or is marked as not including the Project Telos repository link.",
+      "measurable": "Either owned-channel item is missing, not marked posted, lacks a public URL, or is marked as not including the Project Telos repository link.",
+      "source": "null"
+    },
+    {
+      "claim_id": "76fc149853711ba7",
+      "claim_sha256": "76fc149853711ba7eed77ccd79c4b9d7dc20de19280208b32ed4f66c6e6050de",
+      "challenge": "test the stated falsification: Either HN target is marked posted, lacks the authenticated-not-writable reason, or the receipt claims a successful comment without a writable form.",
+      "measurable": "Either HN target is marked posted, lacks the authenticated-not-writable reason, or the receipt claims a successful comment without a writable form.",
+      "source": "null"
+    },
+    {
+      "claim_id": "7e829fca06758167",
+      "claim_sha256": "7e829fca06758167257f6e47826a2d33f2b9361ba171d7ba7fd8b3d045cc5cde",
+      "challenge": "test the stated falsification: Bluesky is marked posted, lacks a gated reason, or the receipt omits the failed composer-write state.",
+      "measurable": "Bluesky is marked posted, lacks a gated reason, or the receipt omits the failed composer-write state.",
+      "source": "null"
+    }
+  ],
+  "assessment": {
+    "started_at": 1783044074.080321,
+    "thesis_id": "bd67c2812415d6d8",
+    "thesis_seal": "bd67c2812415d6d8db9e7dfa93290752ba7fbd74d9e76fe47813e2232eac0f82",
+    "claims": 5,
+    "match": 5,
+    "drift": 0,
+    "unverifiable": 0,
+    "verdict_seal": "a2642c9211879486326207924dc82862ab0bded83bad76c02fe05f2911c76b43",
+    "measurement_seal": "9bcb4517283a7c9982d56cfa2d5806e716b07c4ce1f8f0d72f98cc0331315c2d",
+    "disposition": "publishable",
+    "stored": null,
+    "verdicts": [
+      {
+        "claim_id": "3ee622453023d679",
+        "claim_sha256": "3ee622453023d679c6c155c4cf77c979b4b0dceed83752b9dec0d9926b48c611",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.1,
+        "margin": 1.0,
+        "method": "execution-receipt-count-scan",
+        "grounds": "deviation 0 within tolerance 0.1",
+        "disposition": "publishable"
+      },
+      {
+        "claim_id": "d827c2a0e05bd0cb",
+        "claim_sha256": "d827c2a0e05bd0cbf2de1035785d22fd745dcf9d27af66892a1e4ca4e0e33e6b",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.1,
+        "margin": 1.0,
+        "method": "devto-receipt-scan",
+        "grounds": "deviation 0 within tolerance 0.1",
+        "disposition": "publishable"
+      },
+      {
+        "claim_id": "ab3682b5e2f33981",
+        "claim_sha256": "ab3682b5e2f33981d6c6a082fac56d07271c24b586f8650d56797b04f07f469c",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.1,
+        "margin": 1.0,
+        "method": "owned-channel-receipt-scan",
+        "grounds": "deviation 0 within tolerance 0.1",
+        "disposition": "publishable"
+      },
+      {
+        "claim_id": "76fc149853711ba7",
+        "claim_sha256": "76fc149853711ba7eed77ccd79c4b9d7dc20de19280208b32ed4f66c6e6050de",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.1,
+        "margin": 1.0,
+        "method": "hn-auth-gate-receipt-scan",
+        "grounds": "deviation 0 within tolerance 0.1",
+        "disposition": "publishable"
+      },
+      {
+        "claim_id": "7e829fca06758167",
+        "claim_sha256": "7e829fca06758167257f6e47826a2d33f2b9361ba171d7ba7fd8b3d045cc5cde",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.1,
+        "margin": 1.0,
+        "method": "bluesky-gate-receipt-scan",
+        "grounds": "deviation 0 within tolerance 0.1",
+        "disposition": "publishable"
+      }
+    ],
+    "measurements": [
+      {
+        "claim_id": "3ee622453023d679",
+        "claim_sha256": "3ee622453023d679c6c155c4cf77c979b4b0dceed83752b9dec0d9926b48c611",
+        "deviation": 0.0,
+        "tolerance": 0.1,
+        "method": "execution-receipt-count-scan",
+        "measured_at": 1783044074.0800426,
+        "evidence": [
+          "docs/outreach/receipts/twenty-ninth-social-wave-execution-receipts-2026-07-03Z.md"
+        ]
+      },
+      {
+        "claim_id": "d827c2a0e05bd0cb",
+        "claim_sha256": "d827c2a0e05bd0cbf2de1035785d22fd745dcf9d27af66892a1e4ca4e0e33e6b",
+        "deviation": 0.0,
+        "tolerance": 0.1,
+        "method": "devto-receipt-scan",
+        "measured_at": 1783044074.0800505,
+        "evidence": [
+          "dev.to page verification snippets from Chrome execution",
+          "docs/outreach/receipts/twenty-ninth-social-wave-execution-receipts-2026-07-03Z.md"
+        ]
+      },
+      {
+        "claim_id": "ab3682b5e2f33981",
+        "claim_sha256": "ab3682b5e2f33981d6c6a082fac56d07271c24b586f8650d56797b04f07f469c",
+        "deviation": 0.0,
+        "tolerance": 0.1,
+        "method": "owned-channel-receipt-scan",
+        "measured_at": 1783044074.0800543,
+        "evidence": [
+          "X profile verification snippet from Chrome execution",
+          "Mastodon profile verification snippet from Chrome execution",
+          "docs/outreach/receipts/twenty-ninth-social-wave-execution-receipts-2026-07-03Z.md"
+        ]
+      },
+      {
+        "claim_id": "76fc149853711ba7",
+        "claim_sha256": "76fc149853711ba7eed77ccd79c4b9d7dc20de19280208b32ed4f66c6e6050de",
+        "deviation": 0.0,
+        "tolerance": 0.1,
+        "method": "hn-auth-gate-receipt-scan",
+        "measured_at": 1783044074.0800576,
+        "evidence": [
+          "Hacker News item-page form checks from Chrome execution",
+          "docs/outreach/receipts/twenty-ninth-social-wave-execution-receipts-2026-07-03Z.md"
+        ]
+      },
+      {
+        "claim_id": "7e829fca06758167",
+        "claim_sha256": "7e829fca06758167257f6e47826a2d33f2b9361ba171d7ba7fd8b3d045cc5cde",
+        "deviation": 0.0,
+        "tolerance": 0.1,
+        "method": "bluesky-gate-receipt-scan",
+        "measured_at": 1783044074.0800607,
+        "evidence": [
+          "Bluesky composer checks from Chrome execution",
+          "docs/outreach/receipts/twenty-ninth-social-wave-execution-receipts-2026-07-03Z.md"
+        ]
+      }
+    ],
+    "seal": "0d40bb8cc580cff544502f0b14b5fc8f30a6f5ad066258f5771618844f9007d2"
+  },
+  "verdicts": [
+    {
+      "claim_id": "3ee622453023d679",
+      "claim_sha256": "3ee622453023d679c6c155c4cf77c979b4b0dceed83752b9dec0d9926b48c611",
+      "status": "MATCH",
+      "disposition": "publishable",
+      "deviation": 0.0,
+      "tolerance": 0.1,
+      "margin": 1.0,
+      "method": "execution-receipt-count-scan",
+      "grounds": "deviation 0 within tolerance 0.1"
+    },
+    {
+      "claim_id": "d827c2a0e05bd0cb",
+      "claim_sha256": "d827c2a0e05bd0cbf2de1035785d22fd745dcf9d27af66892a1e4ca4e0e33e6b",
+      "status": "MATCH",
+      "disposition": "publishable",
+      "deviation": 0.0,
+      "tolerance": 0.1,
+      "margin": 1.0,
+      "method": "devto-receipt-scan",
+      "grounds": "deviation 0 within tolerance 0.1"
+    },
+    {
+      "claim_id": "ab3682b5e2f33981",
+      "claim_sha256": "ab3682b5e2f33981d6c6a082fac56d07271c24b586f8650d56797b04f07f469c",
+      "status": "MATCH",
+      "disposition": "publishable",
+      "deviation": 0.0,
+      "tolerance": 0.1,
+      "margin": 1.0,
+      "method": "owned-channel-receipt-scan",
+      "grounds": "deviation 0 within tolerance 0.1"
+    },
+    {
+      "claim_id": "76fc149853711ba7",
+      "claim_sha256": "76fc149853711ba7eed77ccd79c4b9d7dc20de19280208b32ed4f66c6e6050de",
+      "status": "MATCH",
+      "disposition": "publishable",
+      "deviation": 0.0,
+      "tolerance": 0.1,
+      "margin": 1.0,
+      "method": "hn-auth-gate-receipt-scan",
+      "grounds": "deviation 0 within tolerance 0.1"
+    },
+    {
+      "claim_id": "7e829fca06758167",
+      "claim_sha256": "7e829fca06758167257f6e47826a2d33f2b9361ba171d7ba7fd8b3d045cc5cde",
+      "status": "MATCH",
+      "disposition": "publishable",
+      "deviation": 0.0,
+      "tolerance": 0.1,
+      "margin": 1.0,
+      "method": "bluesky-gate-receipt-scan",
+      "grounds": "deviation 0 within tolerance 0.1"
+    }
+  ],
+  "measurement_warnings": [],
+  "checks": {
+    "seals_ok": true,
+    "thesis_ok": true,
+    "verdicts_rederive": true
+  },
+  "report": "C:\\dev\\public\\telos\\docs\\outreach\\receipts\\twenty-ninth-social-wave-execution-crucible-report-2026-07-03Z.md",
+  "record": "C:\\dev\\public\\telos\\docs\\outreach\\receipts\\twenty-ninth-social-wave-execution-crucible-run-2026-07-03Z.json",
+  "bundle": null,
+  "spec": null,
+  "review": null,
+  "verifier": {
+    "mode": "cleanroom",
+    "inputs": [],
+    "excluded": [
+      "worker context",
+      "reasoning trace",
+      "intermediate steps"
+    ],
+    "checkability": "If success cannot be evaluated from the original spec and the artifact, the spec is not checkable yet."
+  }
+}

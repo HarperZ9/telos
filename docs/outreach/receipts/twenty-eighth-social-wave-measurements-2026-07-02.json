@@ -1,0 +1,91 @@
+{
+  "measurements": [
+    {
+      "claim": "The social outreach packet is prepared-only and does not claim that any Reddit, YouTube, Hacker News, or dev.to comment was posted.",
+      "deviation": 0.0,
+      "tolerance": 0.1,
+      "method": "posting-boundary-scan",
+      "observed": {
+        "status_prepared_not_posted": true,
+        "confirmation_prompt_present": true,
+        "posted_receipts_present": false
+      },
+      "evidence": [
+        "docs/outreach/TWENTY-EIGHTH-SOCIAL-WAVE-REDDIT-YOUTUBE-MCP-PROOF-QUEUE-2026-07-02.md"
+      ]
+    },
+    {
+      "claim": "The packet contains 20 exact comment drafts split across 6 Reddit, 8 YouTube, and 6 blog/social targets, with no missing exact-text blocks.",
+      "deviation": 0.0,
+      "tolerance": 0.1,
+      "method": "draft-count-and-block-scan",
+      "observed": {
+        "total_drafts": 20,
+        "reddit": 6,
+        "youtube": 8,
+        "blog_social": 6,
+        "missing_exact_blocks": []
+      },
+      "evidence": [
+        "docs/outreach/TWENTY-EIGHTH-SOCIAL-WAVE-REDDIT-YOUTUBE-MCP-PROOF-QUEUE-2026-07-02.md",
+        "validation result sha256 47b769112b82327d2be162e2c20fefd73fc571d723027b4e363c8bb110c7ec25"
+      ]
+    },
+    {
+      "claim": "The packet limits direct links in exact comment text to R97, the r/MachineLearning self-promotion draft where a repository link is contextually allowed after rule confirmation.",
+      "deviation": 0.0,
+      "tolerance": 0.1,
+      "method": "exact-text-url-boundary-scan",
+      "observed": {
+        "direct_telos_urls_in_exact_text": 1,
+        "direct_telos_url_ids": [
+          "R97"
+        ],
+        "any_url_ids": [
+          "R97"
+        ]
+      },
+      "evidence": [
+        "docs/outreach/TWENTY-EIGHTH-SOCIAL-WAVE-REDDIT-YOUTUBE-MCP-PROOF-QUEUE-2026-07-02.md"
+      ]
+    },
+    {
+      "claim": "The packet includes live Reddit voice calibration from the public u/MeAndClaudeMakeHeat comments and leads with adoption, ambition, engine/OS, research, learning, and cross-domain capability rather than receipts alone.",
+      "deviation": 0.0,
+      "tolerance": 0.1,
+      "method": "voice-calibration-and-positioning-scan",
+      "observed": {
+        "live_reddit_voice_calibration_present": true,
+        "mobile_scratch_correction_reflected": true,
+        "voice_guidance_present": true,
+        "ambition_or_capability_framed_drafts": 20,
+        "receipts_not_headline_guidance_present": true
+      },
+      "evidence": [
+        "public Reddit profile u/MeAndClaudeMakeHeat read-only Chrome check on 2026-07-02",
+        "docs/outreach/TWENTY-EIGHTH-SOCIAL-WAVE-REDDIT-YOUTUBE-MCP-PROOF-QUEUE-2026-07-02.md"
+      ]
+    },
+    {
+      "claim": "The packet cites the current Project Telos outreach-relevant tool surface as Telos 0.2.0 with the 69-tool five-flagship manifest and current Index/Forum/Gather/Crucible versions.",
+      "deviation": 0.0,
+      "tolerance": 0.1,
+      "method": "tool-snapshot-currentness-scan",
+      "observed": {
+        "index": "2.8.0",
+        "forum": "1.12.0",
+        "gather": "1.5.0",
+        "crucible": "1.1.0",
+        "telos": "0.2.0",
+        "telos_manifest_tools": 69
+      },
+      "evidence": [
+        "index status MATCH 2.8.0",
+        "forum prose contract returned current route",
+        "telos server manifest 0.2.0",
+        "telos workflow MATCH 0.2.0",
+        "docs/outreach/TWENTY-EIGHTH-SOCIAL-WAVE-REDDIT-YOUTUBE-MCP-PROOF-QUEUE-2026-07-02.md"
+      ]
+    }
+  ]
+}

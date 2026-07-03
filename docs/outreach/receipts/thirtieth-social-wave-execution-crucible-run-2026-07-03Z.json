@@ -1,0 +1,279 @@
+{
+  "ok": true,
+  "thesis": {
+    "id": "4db6c04b7db49af3",
+    "title": "Thirtieth social wave execution receipts",
+    "registered_at": 1783045329.9157326,
+    "disposition": "publishable",
+    "seal": "4db6c04b7db49af3165e2173b9bc49b7ff0c4443d278290e919c3d2c3e8266a2",
+    "claims": [
+      {
+        "id": "a0817ad9782b0309",
+        "sha256": "a0817ad9782b0309558cf7266bf404c32ba0692d0f06b61001a821d0afa9f086"
+      },
+      {
+        "id": "35a416b1e43c9dbd",
+        "sha256": "35a416b1e43c9dbd8f3b1363c00f231df5b15e413b78ec8ee6ce181f67e2386b"
+      },
+      {
+        "id": "6b07580bb8c30c38",
+        "sha256": "6b07580bb8c30c38be6dc96e95c3e4e2f6c355975dd9d88a955a306cdcb43869"
+      },
+      {
+        "id": "78b2907cd173e7bd",
+        "sha256": "78b2907cd173e7bd70e998497d62446499e39521a0d814b66f5501b56b8cacb0"
+      },
+      {
+        "id": "d49e58926a6ee23a",
+        "sha256": "d49e58926a6ee23a0550701342ea4e7e391eb77d1b624fe6720d50aed558a096"
+      }
+    ]
+  },
+  "refutations": [
+    {
+      "claim_id": "a0817ad9782b0309",
+      "claim_sha256": "a0817ad9782b0309558cf7266bf404c32ba0692d0f06b61001a821d0afa9f086",
+      "challenge": "test the stated falsification: The receipt file lists a posted count other than 8, includes a GitHub item, or does not identify the twenty-seventh queue as the source.",
+      "measurable": "The receipt file lists a posted count other than 8, includes a GitHub item, or does not identify the twenty-seventh queue as the source.",
+      "source": "null"
+    },
+    {
+      "claim_id": "35a416b1e43c9dbd",
+      "claim_sha256": "35a416b1e43c9dbd8f3b1363c00f231df5b15e413b78ec8ee6ce181f67e2386b",
+      "challenge": "test the stated falsification: Any listed dev.to item is missing, not marked posted, posted from a different observed account, or marked as including a direct Project Telos link.",
+      "measurable": "Any listed dev.to item is missing, not marked posted, posted from a different observed account, or marked as including a direct Project Telos link.",
+      "source": "null"
+    },
+    {
+      "claim_id": "6b07580bb8c30c38",
+      "claim_sha256": "6b07580bb8c30c38be6dc96e95c3e4e2f6c355975dd9d88a955a306cdcb43869",
+      "challenge": "test the stated falsification: Any listed Reddit item is missing, not marked posted, posted from a different observed account, or lacks an old Reddit permalink.",
+      "measurable": "Any listed Reddit item is missing, not marked posted, posted from a different observed account, or lacks an old Reddit permalink.",
+      "source": "null"
+    },
+    {
+      "claim_id": "78b2907cd173e7bd",
+      "claim_sha256": "78b2907cd173e7bd70e998497d62446499e39521a0d814b66f5501b56b8cacb0",
+      "challenge": "test the stated falsification: Either YouTube item is missing, not marked posted, posted from a different observed account, or marked as including a direct Project Telos link.",
+      "measurable": "Either YouTube item is missing, not marked posted, posted from a different observed account, or marked as including a direct Project Telos link.",
+      "source": "null"
+    },
+    {
+      "claim_id": "d49e58926a6ee23a",
+      "claim_sha256": "d49e58926a6ee23a0550701342ea4e7e391eb77d1b624fe6720d50aed558a096",
+      "challenge": "test the stated falsification: Any posted item lacks a verification note stating that a matching snippet was visible after submission.",
+      "measurable": "Any posted item lacks a verification note stating that a matching snippet was visible after submission.",
+      "source": "null"
+    }
+  ],
+  "assessment": {
+    "started_at": 1783045329.9240382,
+    "thesis_id": "4db6c04b7db49af3",
+    "thesis_seal": "4db6c04b7db49af3165e2173b9bc49b7ff0c4443d278290e919c3d2c3e8266a2",
+    "claims": 5,
+    "match": 5,
+    "drift": 0,
+    "unverifiable": 0,
+    "verdict_seal": "262701b53325f627e40a3d16b52079b90d645be50130ad5b0f49be8cd523e4bc",
+    "measurement_seal": "45764d5f1a751240ea0b959703b2b8ce6fd0772ef25da0c4418032183f5b5609",
+    "disposition": "publishable",
+    "stored": null,
+    "verdicts": [
+      {
+        "claim_id": "a0817ad9782b0309",
+        "claim_sha256": "a0817ad9782b0309558cf7266bf404c32ba0692d0f06b61001a821d0afa9f086",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.1,
+        "margin": 1.0,
+        "method": "execution-receipt-count-scan",
+        "grounds": "deviation 0 within tolerance 0.1",
+        "disposition": "publishable"
+      },
+      {
+        "claim_id": "35a416b1e43c9dbd",
+        "claim_sha256": "35a416b1e43c9dbd8f3b1363c00f231df5b15e413b78ec8ee6ce181f67e2386b",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.1,
+        "margin": 1.0,
+        "method": "devto-receipt-scan",
+        "grounds": "deviation 0 within tolerance 0.1",
+        "disposition": "publishable"
+      },
+      {
+        "claim_id": "6b07580bb8c30c38",
+        "claim_sha256": "6b07580bb8c30c38be6dc96e95c3e4e2f6c355975dd9d88a955a306cdcb43869",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.1,
+        "margin": 1.0,
+        "method": "reddit-receipt-scan",
+        "grounds": "deviation 0 within tolerance 0.1",
+        "disposition": "publishable"
+      },
+      {
+        "claim_id": "78b2907cd173e7bd",
+        "claim_sha256": "78b2907cd173e7bd70e998497d62446499e39521a0d814b66f5501b56b8cacb0",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.1,
+        "margin": 1.0,
+        "method": "youtube-receipt-scan",
+        "grounds": "deviation 0 within tolerance 0.1",
+        "disposition": "publishable"
+      },
+      {
+        "claim_id": "d49e58926a6ee23a",
+        "claim_sha256": "d49e58926a6ee23a0550701342ea4e7e391eb77d1b624fe6720d50aed558a096",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.1,
+        "margin": 1.0,
+        "method": "verification-note-scan",
+        "grounds": "deviation 0 within tolerance 0.1",
+        "disposition": "publishable"
+      }
+    ],
+    "measurements": [
+      {
+        "claim_id": "a0817ad9782b0309",
+        "claim_sha256": "a0817ad9782b0309558cf7266bf404c32ba0692d0f06b61001a821d0afa9f086",
+        "deviation": 0.0,
+        "tolerance": 0.1,
+        "method": "execution-receipt-count-scan",
+        "measured_at": 1783045329.9237065,
+        "evidence": [
+          "docs/outreach/receipts/thirtieth-social-wave-execution-receipts-2026-07-03Z.md"
+        ]
+      },
+      {
+        "claim_id": "35a416b1e43c9dbd",
+        "claim_sha256": "35a416b1e43c9dbd8f3b1363c00f231df5b15e413b78ec8ee6ce181f67e2386b",
+        "deviation": 0.0,
+        "tolerance": 0.1,
+        "method": "devto-receipt-scan",
+        "measured_at": 1783045329.92372,
+        "evidence": [
+          "dev.to article-page snippet verification",
+          "docs/outreach/receipts/thirtieth-social-wave-execution-receipts-2026-07-03Z.md"
+        ]
+      },
+      {
+        "claim_id": "6b07580bb8c30c38",
+        "claim_sha256": "6b07580bb8c30c38be6dc96e95c3e4e2f6c355975dd9d88a955a306cdcb43869",
+        "deviation": 0.0,
+        "tolerance": 0.1,
+        "method": "reddit-receipt-scan",
+        "measured_at": 1783045329.9237258,
+        "evidence": [
+          "old Reddit thread/user-page snippet verification",
+          "docs/outreach/receipts/thirtieth-social-wave-execution-receipts-2026-07-03Z.md"
+        ]
+      },
+      {
+        "claim_id": "78b2907cd173e7bd",
+        "claim_sha256": "78b2907cd173e7bd70e998497d62446499e39521a0d814b66f5501b56b8cacb0",
+        "deviation": 0.0,
+        "tolerance": 0.1,
+        "method": "youtube-receipt-scan",
+        "measured_at": 1783045329.92373,
+        "evidence": [
+          "YouTube watch-page snippet verification",
+          "docs/outreach/receipts/thirtieth-social-wave-execution-receipts-2026-07-03Z.md"
+        ]
+      },
+      {
+        "claim_id": "d49e58926a6ee23a",
+        "claim_sha256": "d49e58926a6ee23a0550701342ea4e7e391eb77d1b624fe6720d50aed558a096",
+        "deviation": 0.0,
+        "tolerance": 0.1,
+        "method": "verification-note-scan",
+        "measured_at": 1783045329.9237332,
+        "evidence": [
+          "browser-side receipt snapshot",
+          "docs/outreach/receipts/thirtieth-social-wave-execution-receipts-2026-07-03Z.md"
+        ]
+      }
+    ],
+    "seal": "54654d065adffbb218f66cd2d1c767bf9a17570162cf6f3e01c855f8ba4e8970"
+  },
+  "verdicts": [
+    {
+      "claim_id": "a0817ad9782b0309",
+      "claim_sha256": "a0817ad9782b0309558cf7266bf404c32ba0692d0f06b61001a821d0afa9f086",
+      "status": "MATCH",
+      "disposition": "publishable",
+      "deviation": 0.0,
+      "tolerance": 0.1,
+      "margin": 1.0,
+      "method": "execution-receipt-count-scan",
+      "grounds": "deviation 0 within tolerance 0.1"
+    },
+    {
+      "claim_id": "35a416b1e43c9dbd",
+      "claim_sha256": "35a416b1e43c9dbd8f3b1363c00f231df5b15e413b78ec8ee6ce181f67e2386b",
+      "status": "MATCH",
+      "disposition": "publishable",
+      "deviation": 0.0,
+      "tolerance": 0.1,
+      "margin": 1.0,
+      "method": "devto-receipt-scan",
+      "grounds": "deviation 0 within tolerance 0.1"
+    },
+    {
+      "claim_id": "6b07580bb8c30c38",
+      "claim_sha256": "6b07580bb8c30c38be6dc96e95c3e4e2f6c355975dd9d88a955a306cdcb43869",
+      "status": "MATCH",
+      "disposition": "publishable",
+      "deviation": 0.0,
+      "tolerance": 0.1,
+      "margin": 1.0,
+      "method": "reddit-receipt-scan",
+      "grounds": "deviation 0 within tolerance 0.1"
+    },
+    {
+      "claim_id": "78b2907cd173e7bd",
+      "claim_sha256": "78b2907cd173e7bd70e998497d62446499e39521a0d814b66f5501b56b8cacb0",
+      "status": "MATCH",
+      "disposition": "publishable",
+      "deviation": 0.0,
+      "tolerance": 0.1,
+      "margin": 1.0,
+      "method": "youtube-receipt-scan",
+      "grounds": "deviation 0 within tolerance 0.1"
+    },
+    {
+      "claim_id": "d49e58926a6ee23a",
+      "claim_sha256": "d49e58926a6ee23a0550701342ea4e7e391eb77d1b624fe6720d50aed558a096",
+      "status": "MATCH",
+      "disposition": "publishable",
+      "deviation": 0.0,
+      "tolerance": 0.1,
+      "margin": 1.0,
+      "method": "verification-note-scan",
+      "grounds": "deviation 0 within tolerance 0.1"
+    }
+  ],
+  "measurement_warnings": [],
+  "checks": {
+    "seals_ok": true,
+    "thesis_ok": true,
+    "verdicts_rederive": true
+  },
+  "report": "C:\\dev\\public\\telos\\docs\\outreach\\receipts\\thirtieth-social-wave-execution-crucible-report-2026-07-03Z.md",
+  "record": "C:\\dev\\public\\telos\\docs\\outreach\\receipts\\thirtieth-social-wave-execution-crucible-run-2026-07-03Z.json",
+  "bundle": null,
+  "spec": null,
+  "review": null,
+  "verifier": {
+    "mode": "cleanroom",
+    "inputs": [],
+    "excluded": [
+      "worker context",
+      "reasoning trace",
+      "intermediate steps"
+    ],
+    "checkability": "If success cannot be evaluated from the original spec and the artifact, the spec is not checkable yet."
+  }
+}

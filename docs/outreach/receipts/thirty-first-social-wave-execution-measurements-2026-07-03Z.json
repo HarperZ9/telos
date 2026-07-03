@@ -1,0 +1,102 @@
+{
+  "measurements": [
+    {
+      "claim": "The executed outreach wave posted 6 public YouTube comments from the twenty-seventh wave queue.",
+      "deviation": 0.0,
+      "tolerance": 0.1,
+      "method": "execution-receipt-count-scan",
+      "observed": {
+        "source_queue": "TWENTY-SEVENTH-WAVE-REDDIT-YOUTUBE-BLOG-COMMENT-QUEUE-2026-07-02.md",
+        "posted_total": 6,
+        "posted_surfaces": [
+          "youtube"
+        ]
+      },
+      "evidence": [
+        "docs/outreach/receipts/thirty-first-social-wave-execution-receipts-2026-07-03Z.md"
+      ]
+    },
+    {
+      "claim": "The YouTube execution posted Y80, Y82, Y84, Y86, Y88, and Y90 as @Unorthodoxis with no direct Project Telos links.",
+      "deviation": 0.0,
+      "tolerance": 0.1,
+      "method": "youtube-receipt-scan",
+      "observed": {
+        "posted": [
+          "Y80",
+          "Y82",
+          "Y84",
+          "Y86",
+          "Y88",
+          "Y90"
+        ],
+        "account": "@Unorthodoxis",
+        "link_included": false
+      },
+      "evidence": [
+        "YouTube watch-page snippet verification",
+        "docs/outreach/receipts/thirty-first-social-wave-execution-receipts-2026-07-03Z.md"
+      ]
+    },
+    {
+      "claim": "All posted YouTube comments were verified by matching page-visible snippets after submission.",
+      "deviation": 0.0,
+      "tolerance": 0.1,
+      "method": "verification-note-scan",
+      "observed": {
+        "verified_snippet_items": [
+          "Y80",
+          "Y82",
+          "Y84",
+          "Y86",
+          "Y88",
+          "Y90"
+        ]
+      },
+      "evidence": [
+        "browser-side receipt snapshot",
+        "docs/outreach/receipts/thirty-first-social-wave-execution-receipts-2026-07-03Z.md"
+      ]
+    },
+    {
+      "claim": "Reddit, Hacker News, dev.to, X, Mastodon, and Bluesky were not writable in the available browser due to network block, logged-out state, or missing authenticated Chrome extension backend.",
+      "deviation": 0.0,
+      "tolerance": 0.1,
+      "method": "gate-inventory-scan",
+      "observed": {
+        "chrome_extension": "unavailable",
+        "reddit": "network_security_block",
+        "hacker_news": "logged_out",
+        "dev_to": "logged_out",
+        "x": "logged_out",
+        "mastodon": "logged_out",
+        "bluesky": "logged_out"
+      },
+      "evidence": [
+        "browser-side auth inventory",
+        "docs/outreach/receipts/thirty-first-social-wave-execution-receipts-2026-07-03Z.md"
+      ]
+    },
+    {
+      "claim": "All submitted comments were contextual and did not include promotional URLs.",
+      "deviation": 0.0,
+      "tolerance": 0.1,
+      "method": "submitted-text-scan",
+      "observed": {
+        "submitted_items": [
+          "Y80",
+          "Y82",
+          "Y84",
+          "Y86",
+          "Y88",
+          "Y90"
+        ],
+        "promotional_urls": 0,
+        "duplicated_boilerplate": false
+      },
+      "evidence": [
+        "docs/outreach/receipts/thirty-first-social-wave-execution-receipts-2026-07-03Z.md"
+      ]
+    }
+  ]
+}

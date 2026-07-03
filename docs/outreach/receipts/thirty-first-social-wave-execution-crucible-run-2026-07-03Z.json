@@ -1,0 +1,278 @@
+{
+  "ok": true,
+  "thesis": {
+    "id": "e7c1dc5defdf095f",
+    "title": "Thirty-first social wave execution receipts",
+    "registered_at": 1783046420.9847286,
+    "disposition": "publishable",
+    "seal": "e7c1dc5defdf095f93a2cd184bb27fd42ee633329ad1f157f39b89c48c492b2a",
+    "claims": [
+      {
+        "id": "0dfbb928b04abab6",
+        "sha256": "0dfbb928b04abab69adcda4ec86976012ce03fc2a3a9ed3b53c5bd0b4c9a68d2"
+      },
+      {
+        "id": "0df8ccb1b0d1f8be",
+        "sha256": "0df8ccb1b0d1f8be83b205535eae107014f796b35052ac8b70b6fc02a5c3569d"
+      },
+      {
+        "id": "824ce7cd6b69c244",
+        "sha256": "824ce7cd6b69c244803dea3a7bd9ecbb45297e259838037d283b0e63570ee071"
+      },
+      {
+        "id": "1b90fcd8375099f3",
+        "sha256": "1b90fcd8375099f3a67cdd31a798e8eead2db488dc85f4bcc55f26ebe1dad737"
+      },
+      {
+        "id": "7a9180cf9aa65c85",
+        "sha256": "7a9180cf9aa65c85e2f22461d89a8ad7b46c2a8d584409bfc549a46b2dcc7593"
+      }
+    ]
+  },
+  "refutations": [
+    {
+      "claim_id": "0dfbb928b04abab6",
+      "claim_sha256": "0dfbb928b04abab69adcda4ec86976012ce03fc2a3a9ed3b53c5bd0b4c9a68d2",
+      "challenge": "test the stated falsification: The receipt file lists a posted YouTube count other than 6, includes a non-YouTube posted item, or does not identify the twenty-seventh queue as the source.",
+      "measurable": "The receipt file lists a posted YouTube count other than 6, includes a non-YouTube posted item, or does not identify the twenty-seventh queue as the source.",
+      "source": "null"
+    },
+    {
+      "claim_id": "0df8ccb1b0d1f8be",
+      "claim_sha256": "0df8ccb1b0d1f8be83b205535eae107014f796b35052ac8b70b6fc02a5c3569d",
+      "challenge": "test the stated falsification: Any listed YouTube item is missing, not marked posted, posted from a different observed account, or marked as including a direct Project Telos link.",
+      "measurable": "Any listed YouTube item is missing, not marked posted, posted from a different observed account, or marked as including a direct Project Telos link.",
+      "source": "null"
+    },
+    {
+      "claim_id": "824ce7cd6b69c244",
+      "claim_sha256": "824ce7cd6b69c244803dea3a7bd9ecbb45297e259838037d283b0e63570ee071",
+      "challenge": "test the stated falsification: Any posted item lacks a verification note stating that a matching snippet was visible after submission.",
+      "measurable": "Any posted item lacks a verification note stating that a matching snippet was visible after submission.",
+      "source": "null"
+    },
+    {
+      "claim_id": "1b90fcd8375099f3",
+      "claim_sha256": "1b90fcd8375099f3a67cdd31a798e8eead2db488dc85f4bcc55f26ebe1dad737",
+      "challenge": "test the stated falsification: Any listed non-YouTube surface was actually writable and authenticated during this run, or the receipt omits the observed gate.",
+      "measurable": "Any listed non-YouTube surface was actually writable and authenticated during this run, or the receipt omits the observed gate.",
+      "source": "null"
+    },
+    {
+      "claim_id": "7a9180cf9aa65c85",
+      "claim_sha256": "7a9180cf9aa65c85e2f22461d89a8ad7b46c2a8d584409bfc549a46b2dcc7593",
+      "challenge": "test the stated falsification: Any submitted comment includes a promotional URL or uses duplicated boilerplate instead of context-specific text.",
+      "measurable": "Any submitted comment includes a promotional URL or uses duplicated boilerplate instead of context-specific text.",
+      "source": "null"
+    }
+  ],
+  "assessment": {
+    "started_at": 1783046420.992068,
+    "thesis_id": "e7c1dc5defdf095f",
+    "thesis_seal": "e7c1dc5defdf095f93a2cd184bb27fd42ee633329ad1f157f39b89c48c492b2a",
+    "claims": 5,
+    "match": 5,
+    "drift": 0,
+    "unverifiable": 0,
+    "verdict_seal": "b07c9aa9cb09c54a35843ed59d16df993ca0a9167f1400fe521987267b997012",
+    "measurement_seal": "0125dc4917603bf321b4315bb2746c2b4ba40b671494b670c50adc178709806a",
+    "disposition": "publishable",
+    "stored": null,
+    "verdicts": [
+      {
+        "claim_id": "0dfbb928b04abab6",
+        "claim_sha256": "0dfbb928b04abab69adcda4ec86976012ce03fc2a3a9ed3b53c5bd0b4c9a68d2",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.1,
+        "margin": 1.0,
+        "method": "execution-receipt-count-scan",
+        "grounds": "deviation 0 within tolerance 0.1",
+        "disposition": "publishable"
+      },
+      {
+        "claim_id": "0df8ccb1b0d1f8be",
+        "claim_sha256": "0df8ccb1b0d1f8be83b205535eae107014f796b35052ac8b70b6fc02a5c3569d",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.1,
+        "margin": 1.0,
+        "method": "youtube-receipt-scan",
+        "grounds": "deviation 0 within tolerance 0.1",
+        "disposition": "publishable"
+      },
+      {
+        "claim_id": "824ce7cd6b69c244",
+        "claim_sha256": "824ce7cd6b69c244803dea3a7bd9ecbb45297e259838037d283b0e63570ee071",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.1,
+        "margin": 1.0,
+        "method": "verification-note-scan",
+        "grounds": "deviation 0 within tolerance 0.1",
+        "disposition": "publishable"
+      },
+      {
+        "claim_id": "1b90fcd8375099f3",
+        "claim_sha256": "1b90fcd8375099f3a67cdd31a798e8eead2db488dc85f4bcc55f26ebe1dad737",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.1,
+        "margin": 1.0,
+        "method": "gate-inventory-scan",
+        "grounds": "deviation 0 within tolerance 0.1",
+        "disposition": "publishable"
+      },
+      {
+        "claim_id": "7a9180cf9aa65c85",
+        "claim_sha256": "7a9180cf9aa65c85e2f22461d89a8ad7b46c2a8d584409bfc549a46b2dcc7593",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.1,
+        "margin": 1.0,
+        "method": "submitted-text-scan",
+        "grounds": "deviation 0 within tolerance 0.1",
+        "disposition": "publishable"
+      }
+    ],
+    "measurements": [
+      {
+        "claim_id": "0dfbb928b04abab6",
+        "claim_sha256": "0dfbb928b04abab69adcda4ec86976012ce03fc2a3a9ed3b53c5bd0b4c9a68d2",
+        "deviation": 0.0,
+        "tolerance": 0.1,
+        "method": "execution-receipt-count-scan",
+        "measured_at": 1783046420.991775,
+        "evidence": [
+          "docs/outreach/receipts/thirty-first-social-wave-execution-receipts-2026-07-03Z.md"
+        ]
+      },
+      {
+        "claim_id": "0df8ccb1b0d1f8be",
+        "claim_sha256": "0df8ccb1b0d1f8be83b205535eae107014f796b35052ac8b70b6fc02a5c3569d",
+        "deviation": 0.0,
+        "tolerance": 0.1,
+        "method": "youtube-receipt-scan",
+        "measured_at": 1783046420.991784,
+        "evidence": [
+          "YouTube watch-page snippet verification",
+          "docs/outreach/receipts/thirty-first-social-wave-execution-receipts-2026-07-03Z.md"
+        ]
+      },
+      {
+        "claim_id": "824ce7cd6b69c244",
+        "claim_sha256": "824ce7cd6b69c244803dea3a7bd9ecbb45297e259838037d283b0e63570ee071",
+        "deviation": 0.0,
+        "tolerance": 0.1,
+        "method": "verification-note-scan",
+        "measured_at": 1783046420.9917884,
+        "evidence": [
+          "browser-side receipt snapshot",
+          "docs/outreach/receipts/thirty-first-social-wave-execution-receipts-2026-07-03Z.md"
+        ]
+      },
+      {
+        "claim_id": "1b90fcd8375099f3",
+        "claim_sha256": "1b90fcd8375099f3a67cdd31a798e8eead2db488dc85f4bcc55f26ebe1dad737",
+        "deviation": 0.0,
+        "tolerance": 0.1,
+        "method": "gate-inventory-scan",
+        "measured_at": 1783046420.9917917,
+        "evidence": [
+          "browser-side auth inventory",
+          "docs/outreach/receipts/thirty-first-social-wave-execution-receipts-2026-07-03Z.md"
+        ]
+      },
+      {
+        "claim_id": "7a9180cf9aa65c85",
+        "claim_sha256": "7a9180cf9aa65c85e2f22461d89a8ad7b46c2a8d584409bfc549a46b2dcc7593",
+        "deviation": 0.0,
+        "tolerance": 0.1,
+        "method": "submitted-text-scan",
+        "measured_at": 1783046420.9917943,
+        "evidence": [
+          "docs/outreach/receipts/thirty-first-social-wave-execution-receipts-2026-07-03Z.md"
+        ]
+      }
+    ],
+    "seal": "af887a02ecd15ab1faef397450b9de66b01009f1c75395770dc53f10fe98a7b0"
+  },
+  "verdicts": [
+    {
+      "claim_id": "0dfbb928b04abab6",
+      "claim_sha256": "0dfbb928b04abab69adcda4ec86976012ce03fc2a3a9ed3b53c5bd0b4c9a68d2",
+      "status": "MATCH",
+      "disposition": "publishable",
+      "deviation": 0.0,
+      "tolerance": 0.1,
+      "margin": 1.0,
+      "method": "execution-receipt-count-scan",
+      "grounds": "deviation 0 within tolerance 0.1"
+    },
+    {
+      "claim_id": "0df8ccb1b0d1f8be",
+      "claim_sha256": "0df8ccb1b0d1f8be83b205535eae107014f796b35052ac8b70b6fc02a5c3569d",
+      "status": "MATCH",
+      "disposition": "publishable",
+      "deviation": 0.0,
+      "tolerance": 0.1,
+      "margin": 1.0,
+      "method": "youtube-receipt-scan",
+      "grounds": "deviation 0 within tolerance 0.1"
+    },
+    {
+      "claim_id": "824ce7cd6b69c244",
+      "claim_sha256": "824ce7cd6b69c244803dea3a7bd9ecbb45297e259838037d283b0e63570ee071",
+      "status": "MATCH",
+      "disposition": "publishable",
+      "deviation": 0.0,
+      "tolerance": 0.1,
+      "margin": 1.0,
+      "method": "verification-note-scan",
+      "grounds": "deviation 0 within tolerance 0.1"
+    },
+    {
+      "claim_id": "1b90fcd8375099f3",
+      "claim_sha256": "1b90fcd8375099f3a67cdd31a798e8eead2db488dc85f4bcc55f26ebe1dad737",
+      "status": "MATCH",
+      "disposition": "publishable",
+      "deviation": 0.0,
+      "tolerance": 0.1,
+      "margin": 1.0,
+      "method": "gate-inventory-scan",
+      "grounds": "deviation 0 within tolerance 0.1"
+    },
+    {
+      "claim_id": "7a9180cf9aa65c85",
+      "claim_sha256": "7a9180cf9aa65c85e2f22461d89a8ad7b46c2a8d584409bfc549a46b2dcc7593",
+      "status": "MATCH",
+      "disposition": "publishable",
+      "deviation": 0.0,
+      "tolerance": 0.1,
+      "margin": 1.0,
+      "method": "submitted-text-scan",
+      "grounds": "deviation 0 within tolerance 0.1"
+    }
+  ],
+  "measurement_warnings": [],
+  "checks": {
+    "seals_ok": true,
+    "thesis_ok": true,
+    "verdicts_rederive": true
+  },
+  "report": "C:\\dev\\public\\telos\\docs\\outreach\\receipts\\thirty-first-social-wave-execution-crucible-report-2026-07-03Z.md",
+  "record": "C:\\dev\\public\\telos\\docs\\outreach\\receipts\\thirty-first-social-wave-execution-crucible-run-2026-07-03Z.json",
+  "bundle": null,
+  "spec": null,
+  "review": null,
+  "verifier": {
+    "mode": "cleanroom",
+    "inputs": [],
+    "excluded": [
+      "worker context",
+      "reasoning trace",
+      "intermediate steps"
+    ],
+    "checkability": "If success cannot be evaluated from the original spec and the artifact, the spec is not checkable yet."
+  }
+}
