@@ -1,15 +1,27 @@
 // Telos native background control: a single CLI/MCP surface over the browser
-// (CDP) and native-app (UIA) drivers. Every action is a synthetic event into
-// the target process, so the operator's physical cursor and keyboard stay free.
+// (CDP) and native-app (UIA) drivers, plus a full-device read/write/execute
+// surface. Every action is a synthetic event into the target process, so the
+// operator's physical cursor and keyboard stay free.
 //
 //   node demo/native-control.mjs browser <verb> [args] [--match=..] [--port=..]
 //   node demo/native-control.mjs app <verb> [args]
+//   node demo/native-control.mjs device <verb> [args]
+//
+// Three paths to a target, weakest coupling first:
+//   - app (UIA): drives controls inside any desktop process via UI Automation
+//     patterns (invoke/value) and, where a pattern cannot reach a control,
+//     foreground key synthesis (input/type). No debug port, no CDP -- this is
+//     the path that drives a normally-launched, authenticated browser.
+//   - browser (CDP): the higher-fidelity path, requires a debug-enabled browser.
+//   - device: OS-level execute/read/write/list -- the remote-desktop R/W/X
+//     surface, for anything that is not a UI control.
 
 import { writeFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { DEFAULT_PORT } from "./native-control/cdp.mjs";
 import * as browser from "./native-control/browser.mjs";
 import * as app from "./native-control/app.mjs";
+import * as device from "./native-control/device.mjs";
 
 export const SCHEMA = "project-telos.native-control/v1";
 
@@ -117,15 +129,37 @@ async function runApp(verb, params) {
       return app.setValue(params[0], params[1], params.slice(2).join(" "));
     case "focus":
       return app.focus(params[0]);
+    case "value":
+      return app.value(params[0], params[1]);
+    case "input":
+      return app.input(params.join(" "));
+    case "type":
+      return app.typeText(params.join(" "));
     default:
       throw new Error(`unknown app verb: ${verb}`);
+  }
+}
+
+async function runDevice(verb, params) {
+  switch (verb) {
+    case "exec":
+      return device.exec(params.join(" "));
+    case "read":
+      return device.read(params[0], params[1] ? Number(params[1]) : undefined);
+    case "write":
+      return device.write(params[0], params.slice(1).join(" "));
+    case "ls":
+      return device.ls(params[0]);
+    default:
+      throw new Error(`unknown device verb: ${verb}`);
   }
 }
 
 export async function run(domain, verb, params, flags = {}) {
   if (domain === "browser") return runBrowser(verb, params, flags);
   if (domain === "app") return runApp(verb, params);
-  throw new Error(`unknown domain: ${domain} (expected browser|app)`);
+  if (domain === "device") return runDevice(verb, params);
+  throw new Error(`unknown domain: ${domain} (expected browser|app|device)`);
 }
 
 async function main() {
@@ -134,7 +168,7 @@ async function main() {
     process.stdout.write(
           `${JSON.stringify(
         makeReceipt("help", null, {
-          usage: "node demo/native-control.mjs <browser|app> <verb> [args]",
+          usage: "node demo/native-control.mjs <browser|app|device> <verb> [args]",
           browser: [
             "tabs",
             "navigate",
@@ -151,7 +185,8 @@ async function main() {
             "snapshot-visual",
             "evidence",
           ],
-          app: ["windows", "tree", "invoke", "setvalue", "focus"],
+          app: ["windows", "tree", "invoke", "setvalue", "focus", "value", "input", "type"],
+          device: ["exec", "read", "write", "ls"],
         }),
         null,
         2,
