@@ -88,6 +88,11 @@ async function runBrowser(verb, params, flags) {
         const profile = params[0] ? JSON.parse(params.join(" ")) : await forms.defaultProfile();
         return await forms.fill(session, profile);
       }
+      case "spatialfill": {
+        // browser spatialfill: label-by-rect association for obfuscated React ATS.
+        const profile = params[0] ? JSON.parse(params.join(" ")) : await forms.defaultProfile();
+        return await forms.spatialFill(session, profile);
+      }
       case "waitfor":
         return await browser.waitFor(session, params[0], params[1] ? Number(params[1]) : undefined);
       case "screenshot": {
