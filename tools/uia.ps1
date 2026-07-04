@@ -113,7 +113,42 @@ switch ($verb) {
     $win.SetFocus()
     Out-Json @{ ok = $true; focused = $win.Current.Name }
   }
+  "value" {
+    $win = Find-Window $args[1]
+    if (-not $win) { Out-Json @{ ok = $false; error = "window not found: $($args[1])" }; break }
+    $el = Find-Element $win $args[2]
+    if (-not $el) { Out-Json @{ ok = $false; error = "element not found: $($args[2])" }; break }
+    $pattern = $null
+    $v = $null
+    if ($el.TryGetCurrentPattern([System.Windows.Automation.ValuePattern]::Pattern, [ref]$pattern)) {
+      $v = $pattern.Current.Value
+    }
+    Out-Json @{ ok = $true; name = $el.Current.Name; type = $el.Current.ControlType.ProgrammaticName; value = $v }
+  }
+  "input" {
+    # FOREGROUND key synthesis: sends SendKeys to the currently focused element.
+    # Caller is responsible for focusing the target window/element first (verb:
+    # 'focus') and for SendKeys escaping (+ ^ % ~ ( ) { } -> wrap each in {}).
+    # This is the no-CDP path that reaches controls UIA patterns cannot actuate.
+    Add-Type -AssemblyName System.Windows.Forms -ErrorAction SilentlyContinue
+    $keys = if ($args.Count -ge 2) { $args[1] } else { "" }
+    if (-not $keys) { Out-Json @{ ok = $false; error = "input: no keys" }; break }
+    [System.Windows.Forms.SendKeys]::SendWait($keys)
+    Out-Json @{ ok = $true; sent = $keys; foreground = $true }
+  }
+  "type" {
+    # FOREGROUND arbitrary-text input: auto-escapes SendKeys special chars so any
+    # literal text reaches the focused element. Focus the target first.
+    Add-Type -AssemblyName System.Windows.Forms -ErrorAction SilentlyContinue
+    $text = if ($args.Count -ge 2) { $args[1] } else { "" }
+    $esc = ""
+    foreach ($ch in $text.ToCharArray()) {
+      if ($ch -match '[+%^~(){}]') { $esc += "{$ch}" } else { $esc += $ch }
+    }
+    [System.Windows.Forms.SendKeys]::SendWait($esc)
+    Out-Json @{ ok = $true; chars = $text.Length; foreground = $true }
+  }
   default {
-    Out-Json @{ ok = $false; error = "unknown verb: $verb"; verbs = @("windows", "tree", "invoke", "setvalue", "focus") }
+    Out-Json @{ ok = $false; error = "unknown verb: $verb"; verbs = @("windows", "tree", "invoke", "setvalue", "focus", "value", "input", "type") }
   }
 }
