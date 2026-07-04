@@ -76,6 +76,8 @@ async function runBrowser(verb, params, flags) {
         return await browser.insertText(session, params.join(" "));
       case "gettext":
         return await browser.getText(session, params[0]);
+      case "upload":
+        return await browser.uploadFile(session, params[0], params[1]);
       case "waitfor":
         return await browser.waitFor(session, params[0], params[1] ? Number(params[1]) : undefined);
       case "screenshot": {

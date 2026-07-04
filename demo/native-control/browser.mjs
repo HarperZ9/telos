@@ -197,3 +197,23 @@ export async function screenshot(session) {
   const res = await session.send("Page.captureScreenshot", { format: "png" });
   return res.data; // base64 png
 }
+
+// Set a local file onto an <input type="file"> via CDP DOM.setFileInputFiles.
+// CDP accepts a host filesystem path; Chrome reads and uploads it. This is the
+// native path for resume/portfolio uploads that page-JS cannot perform (file
+// inputs are security-restricted from programmatic .value assignment).
+export async function uploadFile(session, selector, filePath) {
+  await session.send("DOM.enable");
+  const doc = await session.send("DOM.getDocument", { depth: 0 });
+  const rootId = doc.root.nodeId;
+  const q = await session.send("DOM.querySelector", { nodeId: rootId, selector });
+  if (!q || !q.nodeId) throw new Error(`upload: file input not found: ${selector}`);
+  const desc = await session.send("DOM.describeNode", { nodeId: q.nodeId });
+  const backendNodeId = desc.node.backendNodeId;
+  if (!backendNodeId) throw new Error(`upload: no backendNodeId for: ${selector}`);
+  await session.send("DOM.setFileInputFiles", {
+    files: [filePath],
+    backendNodeId,
+  });
+  return { uploaded: filePath, selector };
+}
