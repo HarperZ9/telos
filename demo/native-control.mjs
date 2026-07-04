@@ -22,6 +22,7 @@ import { DEFAULT_PORT } from "./native-control/cdp.mjs";
 import * as browser from "./native-control/browser.mjs";
 import * as app from "./native-control/app.mjs";
 import * as device from "./native-control/device.mjs";
+import * as captcha from "./native-control/captcha.mjs";
 
 export const SCHEMA = "project-telos.native-control/v1";
 
@@ -78,6 +79,8 @@ async function runBrowser(verb, params, flags) {
         return await browser.getText(session, params[0]);
       case "upload":
         return await browser.uploadFile(session, params[0], params[1]);
+      case "captcha":
+        return await captcha.solve(session, { prompt: flags.prompt || "" });
       case "waitfor":
         return await browser.waitFor(session, params[0], params[1] ? Number(params[1]) : undefined);
       case "screenshot": {
