@@ -23,6 +23,7 @@ import * as browser from "./native-control/browser.mjs";
 import * as app from "./native-control/app.mjs";
 import * as device from "./native-control/device.mjs";
 import * as captcha from "./native-control/captcha.mjs";
+import * as forms from "./native-control/forms.mjs";
 
 export const SCHEMA = "project-telos.native-control/v1";
 
@@ -81,6 +82,12 @@ async function runBrowser(verb, params, flags) {
         return await browser.uploadFile(session, params[0], params[1]);
       case "captcha":
         return await captcha.solve(session, { prompt: flags.prompt || "" });
+      case "autofill": {
+        // browser autofill: injects a profile JSON (arg) or the candidate-profile-
+        // derived shape, fills every field on the page (any site / auth flow).
+        const profile = params[0] ? JSON.parse(params.join(" ")) : await forms.defaultProfile();
+        return await forms.fill(session, profile);
+      }
       case "waitfor":
         return await browser.waitFor(session, params[0], params[1] ? Number(params[1]) : undefined);
       case "screenshot": {

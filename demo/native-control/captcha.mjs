@@ -65,16 +65,27 @@ export async function solve(session, { prompt = "" } = {}) {
   const log = [];
   const before = await pageText(session);
 
-  // Tier 0: reCAPTCHA v2 checkbox.
-  let recaptcha = (await rects(session, 'iframe[src*="recaptcha"]')).find((r) => r.w < 350 && r.w > 20);
-  if (recaptcha && recaptcha.src.includes("api2/anchor")) {
-    await mouseClick(session, recaptcha.x + recaptcha.w / 2, recaptcha.y + recaptcha.h / 2);
-    log.push("tier0:clicked-recaptcha-checkbox");
-    await new Promise((r) => setTimeout(r, 3500));
+  // Tier 0: any vendor's checkbox iframe (reCAPTCHA v2 anchor, hCaptcha anchor,
+  // Cloudflare Turnstile). All are small cross-origin iframes; a coordinate click
+  // at center is the only path page-JS can use.
+  const boxIframes = await rects(
+    session,
+    'iframe[src*="recaptcha"],iframe[src*="hcaptcha"],iframe[src*="challenges.cloudflare.com"],iframe[src*="turnstile"],iframe[title*="reCAPTCHA"],iframe[title*="hCaptcha"]'
+  );
+  const anchor = boxIframes.find(
+    (r) => r.w > 20 && r.w < 360 && r.h < 130 &&
+      (r.src.includes("api2/anchor") || r.src.includes("hcaptcha") || r.src.includes("cloudflare") || r.src.includes("turnstile"))
+  );
+  if (anchor) {
+    await mouseClick(session, anchor.x + anchor.w / 2, anchor.y + anchor.h / 2);
+    log.push("tier0:clicked-checkbox-iframe " + (anchor.src.includes("cloudflare") || anchor.src.includes("turnstile") ? "turnstile" : anchor.src.includes("hcaptcha") ? "hcaptcha" : "recaptcha"));
+    await new Promise((r) => setTimeout(r, 4000));
     const after = await pageText(session);
     if (after !== before) log.push("tier0:page-changed");
-    // Heuristic: if no challenge iframe appeared, the checkbox likely passed.
-    const challenge = (await rects(session, 'iframe[src*="recaptcha"][src*="bframe"]'))[0];
+    // If no large challenge iframe appeared, the checkbox likely passed.
+    const challenge = (
+      await rects(session, 'iframe[src*="recaptcha"][src*="bframe"],iframe[src*="hcaptcha"][src*="challenge"],iframe[src*="hcaptcha-challenge"]')
+    )[0];
     if (!challenge) return { solved: "tier0-checkbox", confidence: "heuristic", log };
     log.push("tier0:challenge-appeared-escalating");
   }
