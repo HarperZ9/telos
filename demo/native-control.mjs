@@ -25,6 +25,8 @@ import * as device from "./native-control/device.mjs";
 import * as captcha from "./native-control/captcha.mjs";
 import * as forms from "./native-control/forms.mjs";
 import * as behave from "./native-control/behave.mjs";
+import * as runner from "./native-control/runner.mjs";
+import { Ledger } from "./native-control/ledger.mjs";
 
 export const SCHEMA = "project-telos.native-control/v1";
 
@@ -118,6 +120,11 @@ async function runBrowser(verb, params, flags) {
         if (sub === "select") return await behave.selectpick(session, params[1], params.slice(2).join(" "));
         throw new Error(`unknown behave verb: ${sub} (stealth|warmup|click|type|select)`);
       }
+      case "run":
+        // browser run <workflow.json> [--out=ledger.json]: declarative witnessed run.
+        return await runner.runFromPath(params[0], { session, out: flags.out });
+      case "runverify":
+        return Ledger.verify(JSON.parse(readFileSync(params[0], "utf-8")));
       case "waitfor":
         return await browser.waitFor(session, params[0], params[1] ? Number(params[1]) : undefined);
       case "screenshot": {
