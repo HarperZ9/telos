@@ -30,6 +30,7 @@ import { Ledger } from "./native-control/ledger.mjs";
 import * as network from "./native-control/network.mjs";
 import * as learn from "./native-control/learn.mjs";
 import * as contact from "./native-control/contact.mjs";
+import * as scrape from "./native-control/scrape.mjs";
 
 export const SCHEMA = "project-telos.native-control/v1";
 
@@ -139,6 +140,9 @@ async function runBrowser(verb, params, flags) {
       case "send":
         // browser send --to=.. --subject=.. --body=.. : autonomous email via authed Gmail.
         return await contact.gmailSend(session, { to: flags.to, subject: flags.subject, body: params.join(" ") || flags.body });
+      case "targets":
+        // browser scrape --query=.. [limit]: discover public outreach targets.
+        return await scrape.targets(session, { query: flags.query, limit: params[0] ? Number(params[0]) : 12 });
       case "waitfor":
         return await browser.waitFor(session, params[0], params[1] ? Number(params[1]) : undefined);
       case "screenshot": {
