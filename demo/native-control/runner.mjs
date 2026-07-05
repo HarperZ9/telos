@@ -15,6 +15,7 @@ import * as forms from "./forms.mjs";
 import * as behave from "./behave.mjs";
 import * as captcha from "./captcha.mjs";
 import * as network from "./network.mjs";
+import * as learn from "./learn.mjs";
 import { Ledger } from "./ledger.mjs";
 
 // Registry: act-name -> async (ctx, step) => result. ctx = { session, profile, adapter }.
@@ -40,6 +41,8 @@ function defaultRegistry() {
   R.set("token", (c, s) => network.recaptchaToken(c.session, { action: s.action || "submit", siteKey: s.siteKey }));
   R.set("apifetch", (c, s) => network.apiFetch(c.session, { url: s.url, body: s.body, method: s.method || "POST", headers: s.headers, contentType: s.contentType }));
   R.set("netcap", (c, s) => network.capture(c.session, { durationMs: s.durationMs || 3000, urlFilter: s.urlFilter || "" }));
+  // learn (accountable learning engine) -- no browser session needed; shells to CLI.
+  for (const [name, fn] of Object.entries(learn.actions)) R.set(`learn.${name}`, (c, s) => fn(s));
   return R;
 }
 

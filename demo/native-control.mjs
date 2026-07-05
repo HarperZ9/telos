@@ -28,6 +28,7 @@ import * as behave from "./native-control/behave.mjs";
 import * as runner from "./native-control/runner.mjs";
 import { Ledger } from "./native-control/ledger.mjs";
 import * as network from "./native-control/network.mjs";
+import * as learn from "./native-control/learn.mjs";
 
 export const SCHEMA = "project-telos.native-control/v1";
 
@@ -217,7 +218,13 @@ export async function run(domain, verb, params, flags = {}) {
   if (domain === "browser") return runBrowser(verb, params, flags);
   if (domain === "app") return runApp(verb, params);
   if (domain === "device") return runDevice(verb, params);
-  throw new Error(`unknown domain: ${domain} (expected browser|app|device)`);
+  if (domain === "learn") {
+    // learn <action> --session=.. --topic=.. ... (no browser session; shells to CLI)
+    const fn = learn.actions[verb];
+    if (!fn) throw new Error(`unknown learn action: ${verb} (${Object.keys(learn.actions).join("|")})`);
+    return fn(flags);
+  }
+  throw new Error(`unknown domain: ${domain} (expected browser|app|device|learn)`);
 }
 
 async function main() {
