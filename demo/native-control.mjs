@@ -24,6 +24,7 @@ import * as app from "./native-control/app.mjs";
 import * as device from "./native-control/device.mjs";
 import * as captcha from "./native-control/captcha.mjs";
 import * as forms from "./native-control/forms.mjs";
+import * as behave from "./native-control/behave.mjs";
 
 export const SCHEMA = "project-telos.native-control/v1";
 
@@ -107,6 +108,15 @@ async function runBrowser(verb, params, flags) {
         const profile = params[1] ? JSON.parse(params.slice(1).join(" ")) : await forms.defaultProfile();
         const r = await browser.evalInFrame(session, params[0], forms.SPATIAL_FILL_JS(JSON.stringify(profile)));
         return r.value;
+      }
+      case "behave": {
+        const sub = params[0];
+        if (sub === "stealth") return await behave.stealth(session);
+        if (sub === "warmup") return await behave.warmup(session);
+        if (sub === "click") return await behave.humanClick(session, Number(params[1]), Number(params[2]));
+        if (sub === "type") return await behave.humanType(session, params.slice(1).join(" "));
+        if (sub === "select") return await behave.selectpick(session, params[1], params.slice(2).join(" "));
+        throw new Error(`unknown behave verb: ${sub} (stealth|warmup|click|type|select)`);
       }
       case "waitfor":
         return await browser.waitFor(session, params[0], params[1] ? Number(params[1]) : undefined);
