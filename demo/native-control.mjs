@@ -16,7 +16,7 @@
 //   - device: OS-level execute/read/write/list -- the remote-desktop R/W/X
 //     surface, for anything that is not a UI control.
 
-import { writeFileSync } from "node:fs";
+import { writeFileSync, readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { DEFAULT_PORT } from "./native-control/cdp.mjs";
 import * as browser from "./native-control/browser.mjs";
@@ -68,6 +68,8 @@ async function runBrowser(verb, params, flags) {
         return await browser.navigate(session, params[0]);
       case "eval":
         return await browser.evalJs(session, params[0]);
+      case "evalfile":
+        return await browser.evalJs(session, readFileSync(params[0], "utf-8"));
       case "click":
         return await browser.click(session, params[0]);
       case "fill":

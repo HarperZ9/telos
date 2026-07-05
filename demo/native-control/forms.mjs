@@ -218,21 +218,37 @@ export const SPATIAL_FILL_JS = (profileJson) => `
   // radios + checkboxes: associate by nearest label (question text), then click option matching profile.answers
   const groups = {};
   for (const el of document.querySelectorAll("input[type=radio]")) (groups[el.name] = groups[el.name] || []).push(el);
+  const optText = (el) => {
+    const lbl = el.closest("label"); if (lbl && lbl.innerText && lbl.innerText.trim()) return lbl.innerText.toLowerCase();
+    const r = el.getBoundingClientRect();
+    for (const l of labels) { if (l.r.left >= r.right - 6 && l.r.left < r.right + 320 && Math.abs(l.r.top - r.top) < 28) return l.t.toLowerCase(); }
+    return (el.value || "").toLowerCase();
+  };
+  const matchOpt = (o, want) => {
+    const w = want.toLowerCase(); o = o.toLowerCase();
+    if (o.includes(w) || w.includes(o)) return true;
+    const tok = (s) => s.split(/[\\s,(;(]+/)[0];
+    const wt = tok(w), ot0 = tok(o);
+    if (["yes","no","male","female","white","black","asian","hispanic"].includes(wt) && ot0 === wt) return true;
+    if (w.includes("not a protected") && o.includes("not a protected")) return true;
+    if (w.includes("do not want") && o.includes("do not want")) return true;
+    if (w.includes("decline") && o.includes("decline")) return true;
+    return false;
+  };
   for (const name in groups) {
     try {
+      // Prefer a semantic suffix in the name attr (Ashby: eeoc_gender,
+      // eeoc_disability_status, ...) over spatial-nearest for question identity.
+      const nameKey = (((name.match(/[_-](gender|race|veteran|disability|sponsor|authoriz|relocate|location|salary|start|san ?francisco)/i) || [])[1]) || "").toLowerCase();
       const ir = groups[name][0].getBoundingClientRect();
-      const q = nearest(ir).toLowerCase();
+      const q = (nameKey || nearest(ir)).toLowerCase();
       let want = null;
       if (P.answers) for (const k in P.answers) if (q.includes(k.toLowerCase())) { want = P.answers[k]; break; }
       let clicked = false;
       if (want) for (const el of groups[name]) {
-        const ol = el.getBoundingClientRect();
-        const otext = (nearest(ol) + " " + (el.value||"")).toLowerCase();
-        if (otext.includes(want.toLowerCase()) || want.toLowerCase().includes(otext.replace(/[^a-z ]/g,"").trim()) && otext.trim()) {
-          (el.closest("label")||el).click(); log.radio.push(q.slice(0,20)+"="+want); clicked = true; break;
-        }
+        if (matchOpt(optText(el), want)) { (el.closest("label") || el).click(); log.radio.push(q.slice(0, 20) + "=" + want); clicked = true; break; }
       }
-      if (!clicked) log.unresolved.push("radio:" + (q||name).slice(0,24) + (want ? " want:"+want : ""));
+      if (!clicked) log.unresolved.push("radio:" + (q || name).slice(0, 24) + (want ? " want:" + want : ""));
     } catch (e) {}
   }
   for (const el of document.querySelectorAll("input[type=checkbox]")) {
