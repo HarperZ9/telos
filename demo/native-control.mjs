@@ -27,6 +27,7 @@ import * as forms from "./native-control/forms.mjs";
 import * as behave from "./native-control/behave.mjs";
 import * as runner from "./native-control/runner.mjs";
 import { Ledger } from "./native-control/ledger.mjs";
+import * as network from "./native-control/network.mjs";
 
 export const SCHEMA = "project-telos.native-control/v1";
 
@@ -125,6 +126,14 @@ async function runBrowser(verb, params, flags) {
         return await runner.runFromPath(params[0], { session, out: flags.out });
       case "runverify":
         return Ledger.verify(JSON.parse(readFileSync(params[0], "utf-8")));
+      case "token":
+        return await network.recaptchaToken(session, { action: flags.action || "submit", siteKey: flags.sitekey || undefined });
+      case "apifetch": {
+        const body = params.slice(1).join(" ");
+        return await network.apiFetch(session, { url: params[0], body: body ? body : null, method: flags.method || "POST", contentType: flags.contenttype || "application/json" });
+      }
+      case "netcap":
+        return await network.capture(session, { durationMs: params[0] ? Number(params[0]) : 3000, urlFilter: params[1] || "" });
       case "waitfor":
         return await browser.waitFor(session, params[0], params[1] ? Number(params[1]) : undefined);
       case "screenshot": {
