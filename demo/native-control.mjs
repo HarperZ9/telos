@@ -29,6 +29,7 @@ import * as runner from "./native-control/runner.mjs";
 import { Ledger } from "./native-control/ledger.mjs";
 import * as network from "./native-control/network.mjs";
 import * as learn from "./native-control/learn.mjs";
+import * as contact from "./native-control/contact.mjs";
 
 export const SCHEMA = "project-telos.native-control/v1";
 
@@ -135,6 +136,9 @@ async function runBrowser(verb, params, flags) {
       }
       case "netcap":
         return await network.capture(session, { durationMs: params[0] ? Number(params[0]) : 3000, urlFilter: params[1] || "" });
+      case "send":
+        // browser send --to=.. --subject=.. --body=.. : autonomous email via authed Gmail.
+        return await contact.gmailSend(session, { to: flags.to, subject: flags.subject, body: params.join(" ") || flags.body });
       case "waitfor":
         return await browser.waitFor(session, params[0], params[1] ? Number(params[1]) : undefined);
       case "screenshot": {
