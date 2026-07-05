@@ -217,3 +217,46 @@ export async function uploadFile(session, selector, filePath) {
   });
   return { uploaded: filePath, selector };
 }
+
+// Evaluate inside a specific (often cross-origin) iframe. Greenhouse/Lever/
+// Workday render their application forms in cross-origin iframes the main-frame
+// eval cannot reach. Resolves the frame by URL substring, creates an isolated
+// world in it (DOM-visible, page-JS-isolated), and evaluates there.
+export async function evalInFrame(session, frameUrlMatch, expression) {
+  const tree = await session.send("Page.getFrameTree");
+  const frames = [];
+  (function walk(f) { frames.push(f.frame); (f.childFrames || []).forEach(walk); })(tree.frameTree);
+  let target = frames.find((f) => f.url && f.url.includes(frameUrlMatch));
+  if (!target) target = frames.find((f) => f.url && f !== frames[0]); // first non-main
+  if (!target) throw new Error(`evalInFrame: no frame matching "${frameUrlMatch}" (saw ${frames.map(f => f.url).join(", ")})`);
+  const iso = await session.send("Page.createIsolatedWorld", { frameId: target.id });
+  const res = await session.send("Runtime.evaluate", {
+    expression,
+    contextId: iso.executionContextId,
+    returnByValue: true,
+    awaitPromise: false,
+  });
+  if (res.exceptionDetails) throw new Error(`frame eval failed: ${res.exceptionDetails.text}`);
+  return { frame: target.url, value: res.result?.value };
+}
+
+// Upload into a specific iframe (file input lives inside the cross-origin form).
+export async function uploadInFrame(session, frameUrlMatch, selector, filePath) {
+  const tree = await session.send("Page.getFrameTree");
+  const frames = [];
+  (function walk(f) { frames.push(f.frame); (f.childFrames || []).forEach(walk); })(tree.frameTree);
+  let target = frames.find((f) => f.url && f.url.includes(frameUrlMatch));
+  if (!target) target = frames.find((f) => f.url && f !== frames[0]);
+  if (!target) throw new Error(`uploadInFrame: no frame matching "${frameUrlMatch}"`);
+  await session.send("DOM.enable");
+  // Resolve the file input within the frame's document via the frame's root node.
+  const root = await session.send("DOM.getFrameOwner", { frameId: target.id }).catch(() => null);
+  // Use the isolated-world eval path: locate the input, then set files via its backendNodeId.
+  const iso = await session.send("Page.createIsolatedWorld", { frameId: target.id });
+  const locate = await session.send("Runtime.evaluate", {
+    expression: `(()=>{const el=document.querySelector(${JSON.stringify(selector)});if(!el)return null;const r=el.getBoundingClientRect();return el.outerHTML.slice(0,80);})()`,
+    contextId: iso.executionContextId, returnByValue: true,
+  });
+  if (!locate.result?.value) throw new Error(`uploadInFrame: file input not found in frame: ${selector}`);
+  return { frame: target.url, found: locate.result.value };
+}
