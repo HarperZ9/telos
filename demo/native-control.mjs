@@ -95,6 +95,19 @@ async function runBrowser(verb, params, flags) {
         const profile = params[0] ? JSON.parse(params.join(" ")) : await forms.defaultProfile();
         return await forms.spatialFill(session, profile);
       }
+      case "evalframe":
+        // browser evalframe <frameUrlMatch> <jsfile>: eval inside a cross-origin iframe.
+        return await browser.evalInFrame(session, params[0], readFileSync(params[1], "utf-8"));
+      case "autofillframe": {
+        // browser autofillframe <frameUrlMatch>: generic autofill inside the iframe form.
+        const profile = params[1] ? JSON.parse(params.slice(1).join(" ")) : await forms.defaultProfile();
+        return await browser.evalInFrame(session, params[0], forms.fillExpression(profile));
+      }
+      case "spatialfillframe": {
+        const profile = params[1] ? JSON.parse(params.slice(1).join(" ")) : await forms.defaultProfile();
+        const r = await browser.evalInFrame(session, params[0], forms.SPATIAL_FILL_JS(JSON.stringify(profile)));
+        return r.value;
+      }
       case "waitfor":
         return await browser.waitFor(session, params[0], params[1] ? Number(params[1]) : undefined);
       case "screenshot": {
