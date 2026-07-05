@@ -16,6 +16,7 @@ import * as behave from "./behave.mjs";
 import * as captcha from "./captcha.mjs";
 import * as network from "./network.mjs";
 import * as learn from "./learn.mjs";
+import * as contact from "./contact.mjs";
 import { Ledger } from "./ledger.mjs";
 
 // Registry: act-name -> async (ctx, step) => result. ctx = { session, profile, adapter }.
@@ -43,6 +44,7 @@ function defaultRegistry() {
   R.set("netcap", (c, s) => network.capture(c.session, { durationMs: s.durationMs || 3000, urlFilter: s.urlFilter || "" }));
   // learn (accountable learning engine) -- no browser session needed; shells to CLI.
   for (const [name, fn] of Object.entries(learn.actions)) R.set(`learn.${name}`, (c, s) => fn(s));
+  R.set("contact.send", (c, s) => contact.gmailSend(c.session, { to: s.to, subject: s.subject, body: s.body }));
   return R;
 }
 
