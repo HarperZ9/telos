@@ -31,6 +31,7 @@ import * as network from "./native-control/network.mjs";
 import * as learn from "./native-control/learn.mjs";
 import * as contact from "./native-control/contact.mjs";
 import * as scrape from "./native-control/scrape.mjs";
+import * as share from "./native-control/share.mjs";
 
 export const SCHEMA = "project-telos.native-control/v1";
 
@@ -143,6 +144,13 @@ async function runBrowser(verb, params, flags) {
       case "targets":
         // browser scrape --query=.. [limit]: discover public outreach targets.
         return await scrape.targets(session, { query: flags.query, limit: params[0] ? Number(params[0]) : 12 });
+      case "linkedin":
+        // browser linkedin --text=.. : post to the authed LinkedIn feed.
+        return await share.linkedinPost(session, { text: params.join(" ") || flags.text });
+      case "gumroadlogin":
+        return await share.gumroadLoginGoogle(session);
+      case "gumroadlist":
+        return await share.gumroadList(session, { name: flags.name, description: flags.description, price: flags.price, file: flags.file });
       case "waitfor":
         return await browser.waitFor(session, params[0], params[1] ? Number(params[1]) : undefined);
       case "screenshot": {

@@ -57,6 +57,21 @@ export async function humanType(session, text) {
   return { typed: text.length };
 }
 
+// Type via key events (keyDown/char) for rich editors (LinkedIn DraftJS, Gmail
+// compose, Slack) that ignore Input.insertText and need real keystrokes to
+// update their React/editor state (and enable Submit/Post buttons).
+export async function humanTypeKeys(session, text) {
+  let n = 0;
+  for (const ch of String(text)) {
+    await session.send("Input.dispatchKeyEvent", { type: "rawKeyDown", text: ch, key: ch, unmodifiedText: ch });
+    await session.send("Input.dispatchKeyEvent", { type: "char", text: ch, key: ch, unmodifiedText: ch });
+    await session.send("Input.dispatchKeyEvent", { type: "keyUp", text: ch, key: ch, unmodifiedText: ch });
+    await sleep(rand(30, 95));
+    n++;
+  }
+  return { typed: n };
+}
+
 export async function scroll(session, dy) {
   await session.send("Input.dispatchMouseEvent", {
     type: "mouseWheel", x: last.x, y: last.y, deltaX: 0, deltaY: dy || rand(120, 400),
