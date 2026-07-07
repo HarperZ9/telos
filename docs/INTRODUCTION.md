@@ -2,7 +2,7 @@
 
 Telos is a zero-dependency local workbench for creating, simulating, and replaying AI work. It runs on Node 20 or newer, installs nothing, and gives you three things in one repo:
 
-1. **A five-server MCP surface.** One manifest launches gather, index, forum, crucible, and telos as stdio MCP servers, 69 tools total plus 21 declared auxiliary compatibility tools, with ready-to-paste host config for Codex, Claude, and OpenAI Agents. Every MCP tool has a CLI fallback under `demo/`, so nothing depends on a host being present.
+1. **A five-server MCP surface.** One manifest launches gather, index, forum, crucible, and telos as stdio MCP servers, 69 tools total plus 29 declared auxiliary compatibility tools, with ready-to-paste host config for Codex, Claude, and OpenAI Agents. Every MCP tool has a CLI fallback under `demo/`, so nothing depends on a host being present.
 2. **A doctor and proof toolkit.** Nine offline doctors audit CI state, README parity, static accessibility, byte budgets, protocol coverage, and operator discoverability. Four proof lanes (agent-action, research-claim, visual-truth, build) assemble packets whose verifiers recompute every load-bearing claim from embedded materials and can genuinely fail.
 3. **A creative and research engine.** Deterministic kernels, ten measurement meters, a renderer selection contract from WebGPU down to static artifacts, and deterministic research preflights for causal inference, embodied sim-to-real, and quantum error correction.
 
