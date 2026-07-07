@@ -1,19 +1,16 @@
-<p align="center">
-  <img src="docs/brand/telos-hero.png" alt="Project Telos, shared AI workspaces for creation, simulation, and verification">
-</p>
-<!-- Project mark: docs/brand/telos-mark.svg -->
+<p align="center"><img src=".github/assets/banner.svg" alt="telos: The shared workbench: durable state, native workstation control, sensory organs, a discovery forge." width="100%"></p>
 
-# Project Telos
+**The shared workbench: durable state, native workstation control, sensory organs, a discovery forge.**
 
-> Create, simulate, verify, and replay work with AI.
+![version](https://img.shields.io/badge/version-0.2.0-9683ff?style=flat-square&labelColor=14041b)
+![license](https://img.shields.io/badge/license-FSL--1.1--ALv2-8f8095?style=flat-square&labelColor=14041b)
+[![CI](https://github.com/HarperZ9/telos/actions/workflows/ci.yml/badge.svg)](https://github.com/HarperZ9/telos/actions/workflows/ci.yml)
+![node](https://img.shields.io/badge/node-24%20CI%2C%2020%2B%20registry-9683ff?style=flat-square&labelColor=14041b)
+![deps](https://img.shields.io/badge/deps-none-9683ff?style=flat-square&labelColor=14041b)
+
+Telos is a zero-dependency local workbench for creating, simulating, and replaying AI work. It ships a five-server MCP surface plus CLI fallbacks: doctors for CI, presentation, accessibility, performance, and compatibility, a creative engine with deterministic kernels and ten measurement meters, model-foundry and learning-forge lanes, and research proof packets spanning causal, embodied, and quantum demos. It ties gather, index, forum, and crucible into one operator map you can run with a single `node demo/run.mjs`. Every run writes a receipt you can re-check.
 
 [Project Telos](https://harperz9.github.io) | [gather](https://github.com/HarperZ9/gather) | [crucible](https://github.com/HarperZ9/crucible) | [index](https://github.com/HarperZ9/index) | [forum](https://github.com/HarperZ9/forum) | [telos](https://github.com/HarperZ9/telos) | [learn](https://github.com/HarperZ9/learn) | [emet](https://github.com/HarperZ9/emet) | [buildlang](https://github.com/HarperZ9/buildlang)
-
-![node: 24 CI, 20+ registry](https://img.shields.io/badge/node-24%20CI%2C%2020%2B%20registry-blue.svg)
-![CI](https://github.com/HarperZ9/telos/actions/workflows/ci.yml/badge.svg)
-![version: 0.2.0](https://img.shields.io/badge/version-0.2.0-informational.svg)
-![deps: none](https://img.shields.io/badge/deps-none-success.svg)
-![license: fair-source](https://img.shields.io/badge/license-fair--source-blue.svg)
 
 ## Try it
 
