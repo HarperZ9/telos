@@ -139,3 +139,11 @@ node demo/room.mjs --json
 ```
 
 CI (`.github/workflows/ci.yml`) runs each contract test file individually on Node 24; run any of them directly with `node demo/<name>.test.mjs`. Keep the README, package metadata, and examples aligned with current behavior; `node demo/operator-doctor.mjs --summary` checks that parity.
+
+## What this believes
+
+This tool is one lane of a family that holds a single belief steady across
+every surface: knowledge open to anyone who can attain the means; acceptance
+decided by external checks, never reputation; every result re-runnable;
+honest nulls first-class; ownership earned by comprehension; learning woven
+into the work. The full text lives in [CREDO.md](CREDO.md).
