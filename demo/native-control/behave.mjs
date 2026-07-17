@@ -1,19 +1,17 @@
-// No-dependency, cost-free answer to invisible / score-based challenges
-// (reCAPTCHA v3 / Enterprise, behavioral anti-bot). These do not present a
-// puzzle to solve -- they score the session from fingerprint + behavior +
-// reputation. The native solution is to make the session SCORE AS HUMAN:
+// Input-actuation primitives: move, click, type, scroll, and custom-dropdown
+// selection, driven as CDP synthetic events so the operator's physical cursor
+// stays free. The smooth motion and typing cadence here exist to reliably
+// actuate real controls (rich editors, custom select widgets, drag targets),
+// not to defeat a detector.
 //
-//   stealth(session)   -> Page.addScriptToEvaluateOnNewDocument patches the CDP /
-//                         automation fingerprint (navigator.webdriver, window.chrome,
-//                         Permissions, plugins, languages, WebGL) so the session
-//                         does not announce itself as automated.
-//   warmup(session)    -> bezier-curve mouse movement, scroll, and dwell that seed
-//                         realistic behavioral signals before a submit.
-//   humanClick / type  -> coordinate input with human jitter and cadence.
+//   humanMove / humanClick   -> move + click a viewport coordinate
+//   humanType / humanTypeKeys -> insert text / dispatch real keystrokes
+//   scroll                    -> wheel/scroll the page
+//   selectpick                -> open a custom dropdown and pick a matching option
 //
-// Combined with a real, high-reputation profile (the operator's carried
-// sessions) this is how a clean session passes a score-based gate. No external
-// service, no cost.
+// The personhood-forging layer that used to live here (stealth fingerprint
+// patching + pre-submit behavioral seeding) has moved to redteam/evade.mjs,
+// which is walled off the outreach path. See BOUNDARY.md.
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 const rand = (a, b) => a + Math.random() * (b - a);
@@ -21,7 +19,7 @@ const rand = (a, b) => a + Math.random() * (b - a);
 let last = { x: 400, y: 300 };
 
 // Quadratic-bezier path from last to target with perpendicular bow + jitter.
-async function humanMove(session, x, y, { steps = 14 } = {}) {
+export async function humanMove(session, x, y, { steps = 14 } = {}) {
   const x0 = last.x, y0 = last.y;
   const mx = (x0 + x) / 2, my = (y0 + y) / 2;
   const nx = -(y - y0), ny = x - x0;
@@ -77,36 +75,6 @@ export async function scroll(session, dy) {
     type: "mouseWheel", x: last.x, y: last.y, deltaX: 0, deltaY: dy || rand(120, 400),
     button: "none", buttons: 0, modifiers: 0,
   }).catch(async () => { await session.send("Runtime.evaluate", { expression: `window.scrollBy(0,${Math.round(dy || 200)})` }); });
-}
-
-// Seed human-like activity before a gated action (e.g. a submit).
-export async function warmup(session, { moves = 9, totalMs = 4200 } = {}) {
-  const vw = 1280, vh = 800;
-  try { const sz = await session.send("Runtime.evaluate", { expression: "[innerWidth,innerHeight]", returnByValue: true }); if (sz.result?.value) { vw.size && (vw = sz.result.value[0]); vh = sz.result.value[1]; } } catch {}
-  const per = totalMs / moves;
-  for (let i = 0; i < moves; i++) {
-    await humanMove(session, rand(80, vw - 80), rand(80, vh - 80), { steps: Math.round(rand(10, 22)) });
-    await scroll(session, rand(-120, 300));
-    await sleep(rand(per * 0.4, per));
-  }
-  await sleep(rand(300, 800));
-  return { warmed: moves };
-}
-
-// Patch the automation fingerprint on every new document so the session does
-// not self-identify as CDP-driven (navigator.webdriver is the loudest tell).
-export async function stealth(session) {
-  const patch = `
-    Object.defineProperty(navigator,'webdriver',{get:()=>undefined});
-    window.chrome = window.chrome || { runtime: {} };
-    Object.defineProperty(navigator,'languages',{get:()=>['en-US','en']});
-    Object.defineProperty(navigator,'plugins',{get:()=>[1,2,3,4,5]});
-    const origQuery = (window.navigator && navigator.permissions && navigator.permissions.query) ? navigator.permissions.query.bind(navigator.permissions) : null;
-    if (origQuery) navigator.permissions.query = (p) => p && p.name === 'notifications'
-      ? Promise.resolve({ state: Notification.permission }) : origQuery(p);
-  `;
-  await session.send("Page.addScriptToEvaluateOnNewDocument", { source: patch });
-  return { stealth: true };
 }
 
 // Generic custom-dropdown selector: click the field to open its popup, then click

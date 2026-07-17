@@ -22,16 +22,16 @@ import { DEFAULT_PORT } from "./native-control/cdp.mjs";
 import * as browser from "./native-control/browser.mjs";
 import * as app from "./native-control/app.mjs";
 import * as device from "./native-control/device.mjs";
-import * as captcha from "./native-control/captcha.mjs";
 import * as forms from "./native-control/forms.mjs";
 import * as behave from "./native-control/behave.mjs";
+import * as gate from "./native-control/gate.mjs";
+import * as prepare from "./native-control/prepare.mjs";
+import * as auth from "./native-control/auth.mjs";
 import * as runner from "./native-control/runner.mjs";
 import { Ledger } from "./native-control/ledger.mjs";
 import * as network from "./native-control/network.mjs";
 import * as learn from "./native-control/learn.mjs";
-import * as contact from "./native-control/contact.mjs";
-import * as scrape from "./native-control/scrape.mjs";
-import * as share from "./native-control/share.mjs";
+import * as outreach from "./native-control/outreach.mjs";
 
 export const SCHEMA = "project-telos.native-control/v1";
 
@@ -90,8 +90,22 @@ async function runBrowser(verb, params, flags) {
         return await browser.getText(session, params[0]);
       case "upload":
         return await browser.uploadFile(session, params[0], params[1]);
-      case "captcha":
-        return await captcha.solve(session, { prompt: flags.prompt || "" });
+      case "gate":
+        // Detect the terminal personhood gate on the current page (report only).
+        return await gate.detect(session);
+      case "auth": {
+        const sub = params[0]; // check | login -- observe sign-in, handoff to log in
+        if (sub === "check") return await auth.check(session);
+        if (sub === "login") return await auth.login(session, params[1]);
+        throw new Error(`unknown auth verb: ${sub} (check|login)`);
+      }
+      case "prepare":
+        // Fill from the profile, detect the gate + required fields, then STOP.
+        // Never submits, never crosses a personhood gate. See BOUNDARY.md.
+        return await prepare.prepare(session, {
+          profile: params[0] ? JSON.parse(params.join(" ")) : undefined,
+          spatial: flags.spatial != null,
+        });
       case "autofill": {
         // browser autofill: injects a profile JSON (arg) or the candidate-profile-
         // derived shape, fills every field on the page (any site / auth flow).
@@ -117,40 +131,25 @@ async function runBrowser(verb, params, flags) {
         return r.value;
       }
       case "behave": {
+        // Input actuation only. Personhood-forging (stealth/warmup) was removed
+        // from this surface; it lives behind redteam/ (owned hosts only).
         const sub = params[0];
-        if (sub === "stealth") return await behave.stealth(session);
-        if (sub === "warmup") return await behave.warmup(session);
         if (sub === "click") return await behave.humanClick(session, Number(params[1]), Number(params[2]));
         if (sub === "type") return await behave.humanType(session, params.slice(1).join(" "));
         if (sub === "select") return await behave.selectpick(session, params[1], params.slice(2).join(" "));
-        throw new Error(`unknown behave verb: ${sub} (stealth|warmup|click|type|select)`);
+        throw new Error(`unknown behave verb: ${sub} (click|type|select)`);
       }
       case "run":
         // browser run <workflow.json> [--out=ledger.json]: declarative witnessed run.
         return await runner.runFromPath(params[0], { session, out: flags.out });
       case "runverify":
         return Ledger.verify(JSON.parse(readFileSync(params[0], "utf-8")));
-      case "token":
-        return await network.recaptchaToken(session, { action: flags.action || "submit", siteKey: flags.sitekey || undefined });
       case "apifetch": {
         const body = params.slice(1).join(" ");
         return await network.apiFetch(session, { url: params[0], body: body ? body : null, method: flags.method || "POST", contentType: flags.contenttype || "application/json" });
       }
       case "netcap":
         return await network.capture(session, { durationMs: params[0] ? Number(params[0]) : 3000, urlFilter: params[1] || "" });
-      case "send":
-        // browser send --to=.. --subject=.. --body=.. : autonomous email via authed Gmail.
-        return await contact.gmailSend(session, { to: flags.to, subject: flags.subject, body: params.join(" ") || flags.body });
-      case "targets":
-        // browser scrape --query=.. [limit]: discover public outreach targets.
-        return await scrape.targets(session, { query: flags.query, limit: params[0] ? Number(params[0]) : 12 });
-      case "linkedin":
-        // browser linkedin --text=.. : post to the authed LinkedIn feed.
-        return await share.linkedinPost(session, { text: params.join(" ") || flags.text });
-      case "gumroadlogin":
-        return await share.gumroadLoginGoogle(session);
-      case "gumroadlist":
-        return await share.gumroadList(session, { name: flags.name, description: flags.description, price: flags.price, file: flags.file });
       case "waitfor":
         return await browser.waitFor(session, params[0], params[1] ? Number(params[1]) : undefined);
       case "screenshot": {
@@ -184,8 +183,13 @@ async function runBrowser(verb, params, flags) {
           verification: { verdict: "MATCH", ref: "telos:native-control-evidence" },
         });
       }
-      default:
+      default: {
+        // Outreach surface (scrape/enrich/vault/queue + outward publishes) lives
+        // in outreach.mjs; it applies the --authorize gate to outward verbs.
+        const ext = await outreach.handle(verb, { session, params, flags });
+        if (ext !== outreach.NOT_HANDLED) return ext;
         throw new Error(`unknown browser verb: ${verb}`);
+      }
     }
   } finally {
     session.close();
@@ -251,21 +255,12 @@ async function main() {
         makeReceipt("help", null, {
           usage: "node demo/native-control.mjs <browser|app|device> <verb> [args]",
           browser: [
-            "tabs",
-            "navigate",
-            "eval",
-            "click",
-            "fill",
-            "focus",
-            "type",
-            "gettext",
-            "waitfor",
-            "screenshot",
-            "snapshot-dom",
-            "snapshot-text",
-            "snapshot-visual",
-            "evidence",
+            "tabs", "navigate", "eval", "click", "fill", "focus", "type", "gettext", "waitfor",
+            "prepare", "gate", "auth", "autofill", "spatialfill", "run",
+            "scrape", "enrich", "compose", "status", "vault", "queue", "send", "linkedin",
+            "screenshot", "snapshot-dom", "snapshot-text", "snapshot-visual", "evidence",
           ],
+          boundary: "Automates up to a personhood gate (captcha/login/mfa/legal/esign/payment), then hands off to the operator. Outward publishes (send/linkedin/gumroadlist) need --authorize. See demo/native-control/BOUNDARY.md.",
           app: ["windows", "tree", "invoke", "setvalue", "focus", "value", "input", "type"],
           device: ["exec", "read", "write", "ls"],
         }),

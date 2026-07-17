@@ -1,52 +1,15 @@
-// Network-domain layer. The architectural unlock for score-based anti-bot:
-// harvest the page's OWN reCAPTCHA token via grecaptcha.execute (the page
-// generated it for this exact session + action) and submit the application at
-// the API layer with fetch() from the page context -- which carries the session
-// cookies, the correct Origin, and the page's legitimate token. This sidesteps
-// DOM widget filling entirely and reframes "invisible reCAPTCHA" from a wall
-// into a token the page hands you. Also exposes request capture for endpoint
-// discovery.
+// Network-domain layer: talk to an endpoint from the page's own context, and
+// observe requests. apiFetch runs fetch() inside the page so it carries the
+// session cookies + correct Origin + any CSRF the page holds -- the honest use
+// is calling an API you are authenticated to (your own dashboards, a documented
+// endpoint) without re-driving the DOM. capture observes requests for endpoint
+// discovery / debugging.
 //
-//   recaptchaToken(session, {action, siteKey}) -> page's own token
 //   apiFetch(session, {url, method, body, headers}) -> in-page fetch result
 //   capture(session, {durationMs, urlFilter}) -> observed requests in a window
-
-// Pull a fresh reCAPTCHA / Enterprise token the way the page itself does.
-// Site key auto-detected from the recaptcha iframe (k=) or [data-sitekey].
-export async function recaptchaToken(session, { action = "submit", siteKey } = {}) {
-  const detect = `(()=>{
-    if(!siteKey){
-      const f=document.querySelector('iframe[src*="recaptcha"]');
-      if(f){const m=/[?&]k=([^&]+)/.exec(f.src);if(m)siteKey=m[1];}
-    }
-    if(!siteKey){const d=document.querySelector('[data-sitekey]');if(d)siteKey=d.getAttribute('data-sitekey');}
-    return siteKey;
-  })()`;
-  const r = await session.send("Runtime.evaluate", { expression: detect, returnByValue: true });
-  const key = siteKey || r.result?.value;
-  if (!key) return { ok: false, note: "no site key detected (set siteKey explicitly)" };
-  // Prefer Enterprise (Greenhouse/Workday use recaptcha enterprise); fall back to v3.
-  const exec = `
-    (async()=>{
-      const g=window.grecaptcha;
-      if(!g)return {ok:false,note:'grecaptcha not loaded yet'};
-      const ready=()=>new Promise(r=>g.ready?g.ready(r):r());
-      await ready();
-      try{
-        if(g.enterprise&&g.enterprise.execute){
-          const t=await g.enterprise.execute(${JSON.stringify(key)},{action:${JSON.stringify(action)}});
-          return {ok:true,kind:'enterprise',token:t,action:${JSON.stringify(action)}};
-        }
-        if(g.execute){
-          const t=await g.execute(${JSON.stringify(key)},{action:${JSON.stringify(action)}});
-          return {ok:true,kind:'v3',token:t,action:${JSON.stringify(action)}};
-        }
-        return {ok:false,note:'no execute() on grecaptcha'};
-      }catch(e){return {ok:false,note:String(e&&e.message||e)};}
-    })()`;
-  const res = await session.send("Runtime.evaluate", { expression: exec, awaitPromise: true, returnByValue: true });
-  return res.result?.value;
-}
+//
+// The reCAPTCHA score-token harvest that used to live here (used to bypass a
+// bot-score gate) has moved to redteam/evade.mjs, off the outreach path.
 
 // POST/GET at the API layer from the page's own context: uses the page's session
 // cookies + Origin + any CSRF the page holds. Body is JSON-serializable or a

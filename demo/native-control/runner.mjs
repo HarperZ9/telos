@@ -13,19 +13,30 @@ import { readFileSync, writeFileSync } from "node:fs";
 import * as browser from "./browser.mjs";
 import * as forms from "./forms.mjs";
 import * as behave from "./behave.mjs";
-import * as captcha from "./captcha.mjs";
 import * as network from "./network.mjs";
 import * as learn from "./learn.mjs";
-import * as contact from "./contact.mjs";
+import * as gate from "./gate.mjs";
+import * as prepare from "./prepare.mjs";
+import { guardedSend } from "./guarded-send.mjs";
 import { Ledger } from "./ledger.mjs";
 
+// A step reaching a personhood gate raises this so the loop records it as a
+// designed handoff (paused_for_operator) rather than an error.
+export class HandoffSignal extends Error {
+  constructor(verdict) {
+    super(`HANDOFF: personhood gate '${verdict.gate}' -- ${verdict.action}`);
+    this.name = "HandoffSignal";
+    this.verdict = verdict;
+  }
+}
+
 // Registry: act-name -> async (ctx, step) => result. ctx = { session, profile, adapter }.
-function defaultRegistry() {
+// Note: no stealth / warmup / captcha / token actions exist here. Personhood-
+// forging is not reachable from a workflow; see gate.mjs + BOUNDARY.md.
+export function defaultRegistry() {
   const R = new Map();
   const num = (v, d) => (v == null ? d : Number(v));
   R.set("navigate", (c, s) => browser.navigate(c.session, s.url));
-  R.set("stealth", (c) => behave.stealth(c.session));
-  R.set("warmup", (c, s) => behave.warmup(c.session, { moves: num(s.moves, 9), totalMs: num(s.totalMs, 4200) }));
   R.set("upload", (c, s) => browser.uploadFile(c.session, s.selector || 'input[type=file]', s.file));
   R.set("click", (c, s) => browser.click(c.session, s.selector));
   R.set("fill", (c, s) => browser.setValue(c.session, s.selector, s.value));
@@ -35,24 +46,55 @@ function defaultRegistry() {
   R.set("snapshot", async (c) => ({ state: await browser.pageState(c.session) }));
   R.set("autofill", (c) => forms.fill(c.session, c.profile));
   R.set("spatialfill", (c) => forms.spatialFill(c.session, c.profile));
+  R.set("prepare", (c, s) => prepare.prepare(c.session, { profile: c.profile, adapter: c.adapter, spatial: !!s.spatial }));
+  // gate: detect the terminal personhood gate (report, do not act on it).
+  R.set("gate", (c) => gate.detect(c.session));
+  // handoff: stop the run for the operator when a personhood gate is present.
+  R.set("handoff", async (c) => {
+    const v = await gate.detect(c.session);
+    if (v.personhood) { await gate.banner(c.session, { gate: v.gate, action: v.action }); throw new HandoffSignal(v); }
+    return { gate: "none", personhood: false };
+  });
   R.set("behave.click", (c, s) => behave.humanClick(c.session, num(s.x), num(s.y)));
   R.set("behave.type", (c, s) => behave.humanType(c.session, s.text));
   R.set("behave.select", (c, s) => behave.selectpick(c.session, s.selector, s.option));
-  R.set("captcha", (c, s) => captcha.solve(c.session, { prompt: s.prompt || "" }));
-  R.set("token", (c, s) => network.recaptchaToken(c.session, { action: s.action || "submit", siteKey: s.siteKey }));
   R.set("apifetch", (c, s) => network.apiFetch(c.session, { url: s.url, body: s.body, method: s.method || "POST", headers: s.headers, contentType: s.contentType }));
   R.set("netcap", (c, s) => network.capture(c.session, { durationMs: s.durationMs || 3000, urlFilter: s.urlFilter || "" }));
   // learn (accountable learning engine) -- no browser session needed; shells to CLI.
   for (const [name, fn] of Object.entries(learn.actions)) R.set(`learn.${name}`, (c, s) => fn(s));
-  R.set("contact.send", (c, s) => contact.gmailSend(c.session, { to: s.to, subject: s.subject, body: s.body }));
+  // Routes through the guarded path: CAN-SPAM compliance + dedup + rate limit
+  // apply to workflow sends exactly as to the `send` verb (no bypass).
+  R.set("contact.send", (c, s) => guardedSend(c.session, { to: s.to, subject: s.subject, body: s.body, resend: s.resend === true }));
   return R;
 }
 
-async function loadAdapter(name) {
+// Static allowlist of adapters. A workflow's `adapter` field is DATA; resolving
+// it by string interpolation into import() let a workflow JSON path-traverse to
+// any module (e.g. "../redteam/evade"), which reached the walled-off forging
+// code. Only known adapters load now.
+const ADAPTERS = {
+  greenhouse: () => import("./adapters/greenhouse.mjs"),
+  base: () => import("./adapters/base.mjs"),
+};
+
+export async function loadAdapter(name) {
   if (!name) return null;
-  const mod = await import(`./adapters/${name}.mjs`);
+  const load = ADAPTERS[name];
+  if (!load) throw new Error(`unknown adapter: ${name} (allowed: ${Object.keys(ADAPTERS).join(", ")})`);
+  const mod = await load();
   return mod.default || mod;
 }
+
+// Pure: does this workflow act cross a submit gate? Used to force a personhood
+// check before any submit, so the invariant is enforced in code, not left to
+// each workflow author to remember a preceding `handoff` step.
+export function isSubmitAct(act) {
+  return act === "submit" || /\.submit$/.test(String(act || ""));
+}
+
+// Outward publishes that must not fire from a workflow without explicit
+// authorization (step.authorize or workflow.authorize).
+export const OUTWARD_ACTS = new Set(["contact.send"]);
 
 export async function runWorkflow(workflow, { session, registry = defaultRegistry() } = {}) {
   const ledger = new Ledger({ name: workflow.name || "native-control-run" });
@@ -62,12 +104,25 @@ export async function runWorkflow(workflow, { session, registry = defaultRegistr
   const adapter = await loadAdapter(workflow.adapter);
   const ctx = { session, profile, adapter };
   const onError = workflow.onError || "halt";
-  const summary = { ran: 0, ok: 0, failed: 0 };
+  const summary = { ran: 0, ok: 0, failed: 0, paused: 0 };
+  let handoff = null;
 
   for (const step of workflow.steps || []) {
     const id = step.id || `${step.act}#${summary.ran}`;
     summary.ran++;
     try {
+      // Outward publishes need explicit authorization even inside a workflow.
+      if (OUTWARD_ACTS.has(step.act) && step.authorize !== true && workflow.authorize !== true) {
+        ledger.append(id, { action: step.act, target: step.to || null, ok: true, result: { staged: true, next_action: "set step.authorize=true (or workflow.authorize) to publish" } });
+        summary.ok++;
+        continue;
+      }
+      // Never step through a personhood gate to submit. This is enforced here,
+      // not left to the workflow author to precede submit with a handoff step.
+      if (isSubmitAct(step.act)) {
+        const v = await gate.detect(ctx.session);
+        if (v.personhood) { await gate.banner(ctx.session, { gate: v.gate, action: v.action }); throw new HandoffSignal(v); }
+      }
       let handler = registry.get(step.act);
       // adapter actions: "adapter.foo" -> adapter.foo(ctx, step)
       if (!handler && step.act.startsWith("adapter.") && adapter && typeof adapter[step.act.slice(8)] === "function") {
@@ -82,13 +137,22 @@ export async function runWorkflow(workflow, { session, registry = defaultRegistr
         throw new Error(`expect failed: "${step.expect}" not in result`);
       }
     } catch (err) {
+      // A personhood gate is a designed handoff to the operator, not a failure.
+      // It always halts the run regardless of onError -- the tool does not step
+      // past the gate, ever.
+      if (err instanceof HandoffSignal) {
+        handoff = err.verdict;
+        ledger.append(id, { action: step.act, target: err.verdict.gate, ok: true, paused_for_operator: true, result: err.verdict });
+        summary.paused++;
+        break;
+      }
       const entry = { action: step.act, target: step.url || step.selector || step.file || null, ok: false, result: { error: err.message } };
       ledger.append(id, entry);
       summary.failed++;
       if (onError !== "record-continue") break;
     }
   }
-  return { summary, ledger: ledger.export() };
+  return { summary, handoff, ledger: ledger.export() };
 }
 
 // CLI entry shape: browser run <workflow.json> [--out=ledger.json]
