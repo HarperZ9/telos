@@ -59,3 +59,26 @@ export async function targets(session, { query, limit = 12 } = {}) {
   }
   return { query, count: list.length, results: list, via: "browser" };
 }
+
+// Enrich a target: from the CURRENT page (navigate to url first if given), find
+// the public ways to reach them -- mailto addresses and contact/careers/apply
+// links. Public web only; this reads what a visitor sees, it does not bypass any
+// gate. Feed results into the review queue, not a blast.
+export async function enrich(session, { url } = {}) {
+  if (url) { await browser.navigate(session, url); await new Promise((r) => setTimeout(r, 1500)); }
+  const r = await session.send("Runtime.evaluate", {
+    returnByValue: true,
+    expression: `(() => {
+      const abs = (h) => { try { return new URL(h, location.href).href; } catch { return null; } };
+      const emails = new Set(), links = new Set();
+      document.querySelectorAll('a[href]').forEach((a) => {
+        const h = a.getAttribute('href') || '';
+        if (/^mailto:/i.test(h)) emails.add(h.replace(/^mailto:/i, '').split('?')[0]);
+        else if (/contact|careers?|jobs?|apply|about/i.test(h + ' ' + (a.innerText || ''))) { const u = abs(h); if (u) links.add(u); }
+      });
+      (((document.body && document.body.innerText) || '').match(/[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,}/gi) || []).forEach((e) => emails.add(e));
+      return { host: location.host, emails: [...emails].slice(0, 10), links: [...links].slice(0, 15) };
+    })()`,
+  });
+  return r.result?.value || { emails: [], links: [] };
+}
