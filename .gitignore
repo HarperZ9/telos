@@ -19,3 +19,9 @@ npm-debug.log*
 .telos/
 .playwright-mcp/
 .warden-safe-cache/
+
+# native-control local state (never commit credentials or queues)
+vault.enc
+*.vault.enc
+queue.json
+outreach-log.json
