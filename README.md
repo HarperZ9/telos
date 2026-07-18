@@ -1,4 +1,4 @@
-<p align="center"><img src=".github/assets/banner.svg" alt="telos: The shared workbench: durable state, native workstation control, sensory organs, a discovery forge." width="100%"></p>
+<p align="center"><img src=".github/assets/zentropy-banner.png" alt="telos: The shared workbench: durable state, native workstation control, sensory organs, a discovery forge." width="100%"></p>
 
 **The shared workbench: durable state, native workstation control, sensory organs, a discovery forge.**
 
@@ -139,3 +139,7 @@ node demo/room.mjs --json
 ```
 
 CI (`.github/workflows/ci.yml`) runs each contract test file individually on Node 24; run any of them directly with `node demo/<name>.test.mjs`. Keep the README, package metadata, and examples aligned with current behavior; `node demo/operator-doctor.mjs --summary` checks that parity.
+
+---
+
+**[Zentropy Labs](https://github.com/ZentropyLabs-ai)** · order out of entropy. An independent lab building evidence-first tools that leave a re-checkable artifact behind. Built by Zain Dana Harper in Seattle. The full workbench is at [Project Telos](https://harperz9.github.io).
