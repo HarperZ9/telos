@@ -4,10 +4,49 @@ import { readFileSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
-import { buildHyphalBenchmark } from "./hyphal-context-benchmark.mjs";
+import { buildHyphalBenchmark, sha256 } from "./hyphal-context-benchmark.mjs";
+import * as hyphalBenchmark from "./hyphal-context-benchmark.mjs";
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const packet = buildHyphalBenchmark();
+
+assert.equal(
+  hyphalBenchmark.canonicalText?.("line one\r\nline two\rline three\n"),
+  "line one\nline two\nline three\n",
+  "canonical text must collapse CRLF and CR to LF"
+);
+const lfStats = hyphalBenchmark.canonicalSourceStats?.("alpha\nbeta\n");
+assert.equal(
+  typeof hyphalBenchmark.canonicalSourceStats,
+  "function",
+  "benchmark must expose the canonical source-stat contract"
+);
+assert.deepEqual(
+  hyphalBenchmark.canonicalSourceStats?.("alpha\r\nbeta\r\n"),
+  lfStats,
+  "CRLF corpus bodies must produce the same hash and token count as LF"
+);
+assert.deepEqual(
+  hyphalBenchmark.canonicalSourceStats?.("alpha\rbeta\r"),
+  lfStats,
+  "bare-CR corpus bodies must produce the same hash and token count as LF"
+);
+
+function canonicalTextHash(relativePath) {
+  const text = readFileSync(path.join(here, "..", relativePath), "utf8");
+  return sha256(text.replace(/\r\n?/g, "\n"));
+}
+
+assert.equal(
+  packet.input_sources.source_gate.sha256,
+  canonicalTextHash(packet.input_sources.source_gate.path),
+  "source-gate provenance must be stable across LF and CRLF checkouts"
+);
+assert.equal(
+  packet.input_sources.architecture_seed.sha256,
+  canonicalTextHash(packet.input_sources.architecture_seed.path),
+  "architecture-seed provenance must be stable across LF and CRLF checkouts"
+);
 
 assert.equal(packet.schema, "project-telos.hyphal-context-benchmark/v1");
 assert.equal(packet.benchmark_id, "twenty-second-wave-hyphal-context-benchmark");
