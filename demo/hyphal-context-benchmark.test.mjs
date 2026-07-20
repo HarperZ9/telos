@@ -8,6 +8,7 @@ import { buildHyphalBenchmark, sha256 } from "./hyphal-context-benchmark.mjs";
 import * as hyphalBenchmark from "./hyphal-context-benchmark.mjs";
 
 const here = path.dirname(fileURLToPath(import.meta.url));
+const repoRoot = path.resolve(here, "..");
 const packet = buildHyphalBenchmark();
 
 assert.equal(
@@ -92,7 +93,7 @@ function scanNoRawBodies(value, pathSoFar = "$") {
 scanNoRawBodies(packet);
 
 const run = spawnSync(process.execPath, [path.join(here, "hyphal-context-benchmark.mjs")], {
-  cwd: path.resolve(here, ".."),
+  cwd: repoRoot,
   encoding: "utf8"
 });
 assert.equal(run.status, 0, run.stderr || run.stdout);
@@ -105,3 +106,193 @@ const frozenReceipt = JSON.parse(
   )
 );
 assert.deepEqual(frozenReceipt, packet);
+
+const correctionRelativePath =
+  "docs/outreach/receipts/twenty-second-wave/hyphal-context-benchmark-correction-2026-07-18.json";
+
+function readRepoText(relativePath) {
+  return readFileSync(path.join(repoRoot, relativePath), "utf8");
+}
+
+function canonicalFileSha256(relativePath) {
+  return sha256(readRepoText(relativePath).replace(/\r\n?/g, "\n"));
+}
+
+function runGit(args, encoding = "utf8") {
+  const result = spawnSync("git", args, { cwd: repoRoot, encoding });
+  assert.equal(result.status, 0, result.stderr || result.stdout || `git ${args.join(" ")} failed`);
+  return result.stdout;
+}
+
+function gitTextAt(commit, relativePath) {
+  return runGit(["show", `${commit}:${relativePath}`], "utf8");
+}
+
+function gitBufferAt(commit, relativePath) {
+  return runGit(["show", `${commit}:${relativePath}`], null);
+}
+
+assert.match(
+  readRepoText(".github/workflows/ci.yml"),
+  /path:\s*telos[\s\S]*?fetch-depth:\s*0/,
+  "CI must fetch Telos history so provenance claims are reverified"
+);
+
+const correction = JSON.parse(readRepoText(correctionRelativePath));
+assert.equal(correction.schema, "project-telos.hyphal-context-benchmark-correction/v1");
+const history = correction.source_history;
+
+for (const commit of [
+  history.source_packet_commit,
+  history.benchmark_packet_commit,
+  history.evaluated_through_commit,
+  correction.canonical_receipt.merge_commit
+]) {
+  runGit(["cat-file", "-e", `${commit}^{commit}`]);
+}
+
+const sourceDiff = spawnSync(
+  "git",
+  [
+    "diff",
+    "--quiet",
+    history.benchmark_packet_commit,
+    history.evaluated_through_commit,
+    "--",
+    ...Object.values(history.source_paths)
+  ],
+  { cwd: repoRoot, encoding: "utf8" }
+);
+assert.equal(
+  sourceDiff.status,
+  0,
+  sourceDiff.stderr || "source content changed between the benchmark and evaluated correction commits"
+);
+assert.equal(correction.source_history.source_content_changed_after_benchmark, false);
+assert.equal(correction.historical_receipt.recoverable_at_commit, history.benchmark_packet_commit);
+assert.equal(correction.canonical_receipt.merge_commit, history.evaluated_through_commit);
+
+const historicalArtifactPaths = {
+  generator: "demo/hyphal-context-benchmark.mjs",
+  test: "demo/hyphal-context-benchmark.test.mjs",
+  receipt: "docs/outreach/receipts/twenty-second-wave/hyphal-context-benchmark-2026-07-02.json"
+};
+for (const [artifact, relativePath] of Object.entries(historicalArtifactPaths)) {
+  assert.equal(
+    correction.historical_receipt.artifact_canonical_text_sha256[artifact],
+    sha256(gitTextAt(history.benchmark_packet_commit, relativePath).replace(/\r\n?/g, "\n"))
+  );
+}
+
+const historicalPacket = JSON.parse(
+  gitTextAt(history.benchmark_packet_commit, historicalArtifactPaths.receipt)
+);
+assert.deepEqual(correction.historical_receipt.comparison, {
+  full_context_tokens: historicalPacket.comparison.full_context_tokens,
+  hyphal_context_tokens: historicalPacket.comparison.hyphal_context_tokens,
+  token_savings: historicalPacket.comparison.token_savings,
+  token_savings_ratio: historicalPacket.comparison.token_savings_ratio
+});
+assert.equal(correction.historical_receipt.receipt_hash, historicalPacket.receipt_hash);
+
+const lfReproduction = correction.reproduction.clean_lf_checkout;
+const lfSourceGate = gitBufferAt(lfReproduction.source_commit, history.source_paths.source_gate);
+const lfSourceGateJson = JSON.parse(lfSourceGate.toString("utf8"));
+const lfCorpusTokens = lfSourceGateJson.source_rows.reduce((total, row) => {
+  const relativePath = `${history.source_paths.corpus_objects}/${row.sha256.slice(0, 2)}/${row.sha256.slice(2)}`;
+  return total + Math.ceil(gitBufferAt(lfReproduction.source_commit, relativePath).length / 4);
+}, 0);
+const lfSeed = gitBufferAt(lfReproduction.source_commit, history.source_paths.architecture_seed);
+const lfFullContextTokens =
+  lfCorpusTokens + Math.ceil(lfSourceGate.length / 4) + Math.ceil(lfSeed.length / 4);
+assert.equal(lfReproduction.comparison.full_context_tokens, lfFullContextTokens);
+assert.equal(lfReproduction.architecture_seed_sha256, sha256(lfSeed));
+
+assert.deepEqual(correction.canonical_receipt.comparison, {
+  full_context_tokens: packet.comparison.full_context_tokens,
+  hyphal_context_tokens: packet.comparison.hyphal_context_tokens,
+  token_savings: packet.comparison.token_savings,
+  token_savings_ratio: packet.comparison.token_savings_ratio
+});
+assert.equal(correction.canonical_receipt.receipt_hash, packet.receipt_hash);
+assert.equal(
+  correction.canonical_receipt.artifact_canonical_text_sha256.generator,
+  canonicalFileSha256("demo/hyphal-context-benchmark.mjs")
+);
+assert.equal(
+  correction.canonical_receipt.artifact_canonical_text_sha256.receipt,
+  canonicalFileSha256(
+    "docs/outreach/receipts/twenty-second-wave/hyphal-context-benchmark-2026-07-02.json"
+  )
+);
+
+function formatInteger(value) {
+  return String(value).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
+function includesNumericValue(text, value) {
+  const escaped = value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  return new RegExp(`(^|[^\\d])${escaped}(?!\\d)`, "m").test(text);
+}
+
+assert.equal(includesNumericValue("historical ratio 0.9892", "0.989"), false);
+assert.equal(includesNumericValue("current ratio 0.989", "0.989"), true);
+
+const publicDocs = [
+  {
+    path: "docs/outreach/TWENTY-SECOND-WAVE-HYPHAL-CONTEXT-BENCHMARK-2026-07-02.md",
+    currentValues: [
+      formatInteger(packet.comparison.full_context_tokens),
+      formatInteger(packet.comparison.token_savings),
+      String(packet.comparison.token_savings_ratio)
+    ],
+    historicalValues: ["123,413", "122,075", "0.9892"]
+  },
+  {
+    path: "docs/research/official/HYPHAL-CONTEXT-BENCHMARK-FOR-RECEIPT-ROUTING-2026-07-02.md",
+    currentValues: [
+      String(packet.comparison.full_context_tokens),
+      String(packet.comparison.token_savings),
+      String(packet.comparison.token_savings_ratio)
+    ],
+    historicalValues: ["123413", "122075", "0.9892"],
+    requiresArtifactDigests: true
+  },
+  {
+    path: "docs/research/whitepapers/HYPHAL-CONTEXT-BENCHMARK-FOR-RECEIPT-ROUTING-2026-07-02.md",
+    currentValues: [
+      formatInteger(packet.comparison.full_context_tokens),
+      String(packet.comparison.token_savings),
+      String(packet.comparison.token_savings_ratio)
+    ],
+    historicalValues: ["123,413", "122075", "0.9892"],
+    requiresArtifactDigests: true
+  }
+];
+
+for (const document of publicDocs) {
+  const text = readRepoText(document.path);
+  assert.match(text, /Reproducibility correction \(2026-07-18\)/);
+  assert.ok(text.includes(correctionRelativePath), `${document.path} must link the correction receipt`);
+  for (const value of document.currentValues) {
+    assert.ok(includesNumericValue(text, value), `${document.path} must include current value ${value}`);
+  }
+  for (const value of document.historicalValues) {
+    assert.ok(
+      includesNumericValue(text, value),
+      `${document.path} must preserve historical value ${value}`
+    );
+  }
+  if (document.requiresArtifactDigests) {
+    for (const relativePath of [
+      "demo/hyphal-context-benchmark.mjs",
+      "demo/hyphal-context-benchmark.test.mjs",
+      "docs/outreach/receipts/twenty-second-wave/hyphal-context-benchmark-2026-07-02.json"
+    ]) {
+      assert.ok(
+        text.includes(canonicalFileSha256(relativePath)),
+        `${document.path} must include the current canonical digest for ${relativePath}`
+      );
+    }
+  }
+}
