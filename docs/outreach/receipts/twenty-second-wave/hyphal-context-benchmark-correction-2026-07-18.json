@@ -1,0 +1,118 @@
+{
+  "schema": "project-telos.hyphal-context-benchmark-correction/v1",
+  "correction_id": "twenty-second-wave-hyphal-context-reproducibility-correction",
+  "recorded_at": "2026-07-18",
+  "decision": "repair_and_preserve",
+  "source_history": {
+    "source_packet_commit": "7b2affc4574b01c1f589c3a4a6bf704b726d4531",
+    "benchmark_packet_commit": "949c49ea07dd9351528397e4ee76827cb50c1ff8",
+    "evaluated_through_commit": "7d8e7539e87d9a1a57bd693a5104c1d5b30acde5",
+    "source_paths": {
+      "source_gate": "docs/outreach/receipts/twenty-first-wave/biology-network-intelligence-source-gate-2026-07-02.json",
+      "corpus_objects": "docs/outreach/receipts/twenty-first-wave/biology-network-intelligence-corpus/objects",
+      "architecture_seed": "docs/research/mycology-network-intelligence.md"
+    },
+    "source_content_changed_after_benchmark": false,
+    "verification_command": "git diff --quiet 949c49ea07dd9351528397e4ee76827cb50c1ff8 7d8e7539e87d9a1a57bd693a5104c1d5b30acde5 -- <source_paths>",
+    "finding": "Git history contains no source-gate, corpus-object, or architecture-seed content change between the benchmark packet commit and the evaluated merge commit."
+  },
+  "cause": {
+    "category": "checkout_dependent_raw_byte_accounting",
+    "verified_facts": [
+      "The original generator hashed the architecture seed as raw working-tree bytes and estimated full-context tokens from working-tree byte sizes.",
+      "The repository had no .gitattributes text policy, and clean LF and clean core.autocrlf=true materializations produced different hashes and token totals from the same Git commit.",
+      "The source paths have no Git content diff between the benchmark packet and correction merge commits.",
+      "The canonical repair normalizes CRLF and bare CR to LF, verifies every corpus-object hash, and estimates tokens from canonical text rather than encoded working-tree byte size."
+    ],
+    "unknowns": [
+      "The exact working-tree EOL distribution used to create the frozen July 2 receipt is not reconstructible from the Git commit and core.autocrlf setting alone."
+    ]
+  },
+  "reproduction": {
+    "clean_lf_checkout": {
+      "source_commit": "fc1c18568ae97cccdd7b13d7dbe8c51750a88f6f",
+      "commands": [
+        "git worktree add --detach <path> fc1c18568ae97cccdd7b13d7dbe8c51750a88f6f",
+        "git -C <path> -c core.autocrlf=false checkout-index --all --force",
+        "node <path>/demo/hyphal-context-benchmark.test.mjs"
+      ],
+      "architecture_seed_sha256": "710b76b0ef414c990e776541d329b797709d0d07fe454cde9b8e936b1140bcf1",
+      "comparison": {
+        "full_context_tokens": 122270,
+        "hyphal_context_tokens": 1338,
+        "token_savings": 120932,
+        "token_savings_ratio": 0.9891
+      },
+      "receipt_hash": "sha256:ba343ee4f1ac47dd3d39cc156fb126bb2b5d0287199a3b8b2f93d7f2e4257aa5",
+      "test_result": "The generated packet differed from the frozen historical receipt."
+    },
+    "clean_core_autocrlf_true_archive": {
+      "source_commit": "fc1c18568ae97cccdd7b13d7dbe8c51750a88f6f",
+      "commands": [
+        "git -c core.autocrlf=true archive --format=tar -o <archive> fc1c18568ae97cccdd7b13d7dbe8c51750a88f6f demo/hyphal-context-benchmark.mjs docs/outreach/receipts/twenty-first-wave docs/research/mycology-network-intelligence.md",
+        "tar -xf <archive> -C <empty-directory>",
+        "node <empty-directory>/demo/hyphal-context-benchmark.mjs"
+      ],
+      "architecture_seed_sha256": "77b5c88f021798e078d723382820f9470d2c27e302a84dfc0576bc0cc131977a",
+      "comparison": {
+        "full_context_tokens": 123455,
+        "hyphal_context_tokens": 1338,
+        "token_savings": 122117,
+        "token_savings_ratio": 0.9892
+      },
+      "receipt_hash": "sha256:ed797ee0359db23a03c74a74dc0694fc8851686e6d772f0767e877df14b6c135",
+      "normalization_observation": "The source gate and nine corpus objects differed in raw EOL bytes but matched after LF normalization; the tenth corpus object was byte-identical."
+    }
+  },
+  "historical_receipt": {
+    "status": "superseded_platform_dependent_measurement",
+    "recoverable_at_commit": "949c49ea07dd9351528397e4ee76827cb50c1ff8",
+    "origin_environment": "unknown",
+    "provenance": "These values are read from the frozen Git artifact. Neither clean materialization above reproduces its exact mixed-EOL working-tree state.",
+    "architecture_seed_sha256": "631034e8faa744f12d5122336cb8027152f8517592c869a24093af5d44b2a520",
+    "comparison": {
+      "full_context_tokens": 123413,
+      "hyphal_context_tokens": 1338,
+      "token_savings": 122075,
+      "token_savings_ratio": 0.9892
+    },
+    "receipt_hash": "sha256:e385ab4c3023af2972dbcea6d46370a59442f459c290478367ccd83239bb087a",
+    "artifact_canonical_text_sha256": {
+      "generator": "11b5fcb0c79d5c3436bd7eba0474672a65f8c30f68f38906891203b35ce627a7",
+      "test": "000f774e85f9c5d1885e0f3e8607f91af8d11a35f5bdbbe67abb62c4571ef1d3",
+      "receipt": "7bf59b737ca49ea1230188f708b52e6d79b5730cec648b7949ba77ca48839e22"
+    },
+    "immutable_attestations": {
+      "learn_packet": "docs/outreach/receipts/twenty-second-wave/hyphal-context-benchmark.learn-packet.json",
+      "learn_prooflesson": "docs/outreach/receipts/twenty-second-wave/learn-hyphal-context/tutor/twenty-second-wave-hyphal-context-benchmark.prooflesson.json",
+      "crucible_run": "docs/outreach/receipts/twenty-second-wave-hyphal-context-run-2026-07-02.json",
+      "scope": "The July 2 attestations bind the historical artifact generation only and were not regenerated for the canonical correction."
+    }
+  },
+  "canonical_receipt": {
+    "status": "active_replayable_fixture",
+    "normalization": "CRLF and bare CR are normalized to LF; estimated tokens are ceil(canonical JavaScript string length / 4) per source artifact.",
+    "pull_request_head_commit": "4cffaf5145cf3c6ca524abade79803aa475d89d3",
+    "merge_commit": "7d8e7539e87d9a1a57bd693a5104c1d5b30acde5",
+    "pull_request": "https://github.com/HarperZ9/telos/pull/25",
+    "ci_run": "https://github.com/HarperZ9/telos/actions/runs/29669005343",
+    "ci_conclusion": "success",
+    "attestation_status": "CI-verified; no new Crucible or Learn attestation was issued for the canonical receipt.",
+    "architecture_seed_sha256": "710b76b0ef414c990e776541d329b797709d0d07fe454cde9b8e936b1140bcf1",
+    "comparison": {
+      "full_context_tokens": 121805,
+      "hyphal_context_tokens": 1338,
+      "token_savings": 120467,
+      "token_savings_ratio": 0.989
+    },
+    "receipt_hash": "sha256:75af3a947679e023451e5c00970cea80452bbf892a9dbe87f6983ccd923a9759",
+    "artifact_canonical_text_sha256": {
+      "generator": "e9204b4692fc658077ab7c5ff64251308476438c65c40ed16ddfc75ae797a049",
+      "receipt": "9df86246b406cd4c97b1d2952f9eeae6ff8cf7319bbea4514537ac7261953d03"
+    }
+  },
+  "history_preservation": {
+    "policy": "The July 2 receipt remains recoverable from Git history and its platform-dependent values remain recorded above; public current-value claims point to the canonical replay.",
+    "primary_receipt": "docs/outreach/receipts/twenty-second-wave/hyphal-context-benchmark-2026-07-02.json"
+  }
+}

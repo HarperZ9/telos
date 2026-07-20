@@ -3,7 +3,7 @@
 Author: Zain Dana Harper
 Status: working paper draft, not archive-submitted
 Current evidence label: `HYPHAL_CONTEXT_FIXTURE_MATCH` for one deterministic fixture only
-Updated: 2026-07-02
+Updated: 2026-07-18 (reproducibility correction; original measurement preserved)
 
 ## Abstract
 
@@ -29,12 +29,13 @@ a BuildLang/buildc runtime receipt.
 
 | Item | Verdict | Evidence |
 | --- | --- | --- |
-| Benchmark CLI | `MATCH` | `demo/hyphal-context-benchmark.mjs`, SHA-256 `11b5fcb0c79d5c3436bd7eba0474672a65f8c30f68f38906891203b35ce627a7` |
-| Benchmark test | `MATCH` | `demo/hyphal-context-benchmark.test.mjs`, SHA-256 `000f774e85f9c5d1885e0f3e8607f91af8d11a35f5bdbbe67abb62c4571ef1d3` |
-| Benchmark receipt | `HYPHAL_CONTEXT_FIXTURE_MATCH` | `hyphal-context-benchmark-2026-07-02.json`, SHA-256 `7bf59b737ca49ea1230188f708b52e6d79b5730cec648b7949ba77ca48839e22` |
+| Benchmark CLI | `MATCH` | `demo/hyphal-context-benchmark.mjs`, canonical-text SHA-256 `e9204b4692fc658077ab7c5ff64251308476438c65c40ed16ddfc75ae797a049` |
+| Benchmark test | `MATCH` | `demo/hyphal-context-benchmark.test.mjs`, canonical-text SHA-256 `bdbdad49a35435d9ae8941c5df9dfc9c5fd3871175de5d7cb7127f609650d31e` |
+| Benchmark receipt | `HYPHAL_CONTEXT_FIXTURE_MATCH` | `hyphal-context-benchmark-2026-07-02.json`, canonical-text SHA-256 `9df86246b406cd4c97b1d2952f9eeae6ff8cf7319bbea4514537ac7261953d03` |
+| Reproducibility correction | `MATCH` | `docs/outreach/receipts/twenty-second-wave/hyphal-context-benchmark-correction-2026-07-18.json` |
 | Source gate | `BIOLOGY_NETWORK_INTELLIGENCE_MATCH` | `biology-network-intelligence-source-gate-2026-07-02.json` |
-| Crucible bounded thesis | `MATCH` | `twenty-second-wave-hyphal-context-run-2026-07-02.json`, assessment seal `ccfb0ee4c6033b28d7d13fe4d9d73da41263606eead2c0fbb9ef6191a4ee282b` |
-| Learn prooflesson | `VERIFIED` | `twenty-second-wave-hyphal-context-benchmark.prooflesson.json`, witnessed hash `50d09a113d50471cc06b5a427fd9e32b632dc8509cee5dd07f1402a397368c90` |
+| Historical Crucible bounded thesis | `MATCH` | `twenty-second-wave-hyphal-context-run-2026-07-02.json`, assessment seal `ccfb0ee4c6033b28d7d13fe4d9d73da41263606eead2c0fbb9ef6191a4ee282b` |
+| Historical Learn prooflesson | `VERIFIED` | `twenty-second-wave-hyphal-context-benchmark.prooflesson.json`, witnessed hash `50d09a113d50471cc06b5a427fd9e32b632dc8509cee5dd07f1402a397368c90` |
 | Model answer quality | `NOT_MEASURED` | No model answer run is part of this fixture |
 | General route superiority | `UNVERIFIABLE` | One fixture cannot prove universal route superiority |
 | BuildLang/buildc receipt | `NOT_REPLAYED` | No native buildc benchmark relation receipt yet |
@@ -58,7 +59,7 @@ The guardrails are:
   fixture.
 
 The full-context route is intentionally expensive: it estimates prompt tokens
-from the stored source-body byte sizes, plus the source gate and seed note.
+from LF-normalized source text, plus the source gate and seed note.
 
 The hyphal route is intentionally receipt-first: it sends small gradient
 envelopes for all ten source rows, then rehydrates six evidence cards carrying
@@ -68,19 +69,39 @@ refs, hashes, coverage, and retrieval reasons.
 
 | Measurement | Full context | Hyphal context |
 | --- | ---: | ---: |
-| Estimated prompt tokens | 123,413 | 1,338 |
+| Estimated prompt tokens | 121,805 | 1,338 |
 | Required evidence classes recovered | 6 | 6 |
 | Guardrails blocked | 3 | 3 |
 
 The fixture reports:
 
 ```text
-token_savings = 122075
-token_savings_ratio = 0.9892
+token_savings = 120467
+token_savings_ratio = 0.989
 evidence_recall_delta = 0
 guardrail_delta = 0
 result = HYPHAL_CONTEXT_FIXTURE_MATCH
 ```
+
+## Reproducibility correction (2026-07-18)
+
+The original July 2 result was generated from raw working-tree byte sizes and a
+raw-byte architecture-seed hash. The frozen artifact records the historical
+123,413 full-context token estimate, 122075 saved-token estimate, and 0.9892
+savings ratio. Git shows no source-content change between the benchmark and
+correction commits. Clean LF and clean `core.autocrlf=true` materializations
+produce different results from each other and from the frozen receipt, so the
+exact original mixed-EOL working-tree state is unknown. The verified failure
+mechanism is checkout-dependent raw-byte accounting, not a later source edit.
+
+The active replay normalizes CRLF and bare CR to LF, verifies corpus-object
+hashes, and estimates tokens from canonical text. The original result and
+digests remain recoverable through Git and are recorded in
+`docs/outreach/receipts/twenty-second-wave/hyphal-context-benchmark-correction-2026-07-18.json`.
+The July 2 Crucible and Learn receipts were not rewritten or resealed. They
+remain historical evidence for the original bounded claim; the active replay
+is now enforced by the CI benchmark test rather than a new Crucible or Learn
+assessment.
 
 The important result is not the absolute token estimate. The important result is
 the measurement shape: evidence-class recovery, guardrail recovery, and route
@@ -101,11 +122,12 @@ This pass uses the Telos flagships as a research loop:
 The fixture intentionally does not embed raw source bodies. It measures body
 sizes and carries refs, hashes, coverage strings, and retrieval reasons.
 
-Crucible assessed three bounded claims as `MATCH`: the benchmark CLI emits the
-fixture result with equal required evidence-class and guardrail recovery, the
-publication copy keeps the deterministic-fixture boundary, and the benchmark
-receipt avoids raw source-body and raw-context payload fields. Learn reverified
-the prooflesson receipt from its recorded hash chain.
+The July 2 Crucible run assessed three bounded claims as `MATCH`: the benchmark
+CLI emitted the fixture result with equal required evidence-class and guardrail
+recovery, the publication copy kept the deterministic-fixture boundary, and
+the benchmark receipt avoided raw source-body and raw-context payload fields.
+Learn reverified the historical prooflesson receipt from its recorded hash
+chain. The reproducibility correction did not rerun either assessment.
 
 ## Publication Claim
 
