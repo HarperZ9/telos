@@ -1,0 +1,102 @@
+{
+  "measurements": [
+    {
+      "claim": "The thirty-seventh owned-social wave posted and visibly verified 3 public owned-channel items across X, Bluesky, and Mastodon.",
+      "deviation": 0.0,
+      "tolerance": 0.1,
+      "method": "execution-receipt-count-scan",
+      "observed": {
+        "posted_total": 3,
+        "platforms": ["X", "Bluesky", "Mastodon"],
+        "verified_visible": true,
+        "chrome_finalized": true
+      },
+      "evidence": [
+        "C:/dev/public/telos/docs/outreach/receipts/thirty-seventh-owned-social-wave-execution-2026-07-03Z.md"
+      ]
+    },
+    {
+      "claim": "The X post OWN37-X-S08 was posted as @zaindanaharper with the Project Telos repository link and public status URL 2072931238231584812.",
+      "deviation": 0.0,
+      "tolerance": 0.1,
+      "method": "x-owned-post-receipt-scan",
+      "observed": {
+        "id": "OWN37-X-S08",
+        "account": "@zaindanaharper",
+        "url": "https://x.com/zaindanaharper/status/2072931238231584812",
+        "link_included": true,
+        "visible_phrase": "Project Telos is looking for testers who care about verification"
+      },
+      "evidence": [
+        "C:/dev/public/telos/docs/outreach/receipts/thirty-seventh-owned-social-wave-execution-2026-07-03Z.md"
+      ]
+    },
+    {
+      "claim": "The Bluesky post OWN37-BSKY-S09 was posted as @zaindanaharper.bsky.social without a link and public post URL 3mppwg2clls23.",
+      "deviation": 0.0,
+      "tolerance": 0.1,
+      "method": "bluesky-owned-post-receipt-scan",
+      "observed": {
+        "id": "OWN37-BSKY-S09",
+        "account": "@zaindanaharper.bsky.social",
+        "url": "https://bsky.app/profile/zaindanaharper.bsky.social/post/3mppwg2clls23",
+        "link_included": false,
+        "visible_phrase": "AI agents will not become reliable by sounding more confident"
+      },
+      "evidence": [
+        "C:/dev/public/telos/docs/outreach/receipts/thirty-seventh-owned-social-wave-execution-2026-07-03Z.md"
+      ]
+    },
+    {
+      "claim": "The Mastodon post OWN37-MASTODON-M06 was posted as @zaindanaharper@mastodon.social with the Project Telos repository link and public status URL 116854646606848994.",
+      "deviation": 0.0,
+      "tolerance": 0.1,
+      "method": "mastodon-owned-post-receipt-scan",
+      "observed": {
+        "id": "OWN37-MASTODON-M06",
+        "account": "@zaindanaharper@mastodon.social",
+        "url": "https://mastodon.social/@zaindanaharper/116854646606848994",
+        "link_included": true,
+        "visible_phrase": "I am looking for people with real workflows that need verification"
+      },
+      "evidence": [
+        "C:/dev/public/telos/docs/outreach/receipts/thirty-seventh-owned-social-wave-execution-2026-07-03Z.md"
+      ]
+    },
+    {
+      "claim": "LinkedIn L05 was not posted because the authenticated sharebox did not expose a verified editable composer.",
+      "deviation": 0.0,
+      "tolerance": 0.1,
+      "method": "linkedin-gate-receipt-scan",
+      "observed": {
+        "id": "OWN37-LINKEDIN-L05",
+        "posted": false,
+        "reason": "modalCount=7 editorCount=0"
+      },
+      "evidence": [
+        "C:/dev/public/telos/docs/outreach/receipts/thirty-seventh-owned-social-wave-execution-2026-07-03Z.md"
+      ]
+    },
+    {
+      "claim": "The current updated tool assessment found Telos room, Telos workflow, Index, Forum, Gather, and Crucible status surfaces returning MATCH before posting.",
+      "deviation": 0.0,
+      "tolerance": 0.1,
+      "method": "tool-status-receipt-scan",
+      "observed": {
+        "telos_room": "MATCH",
+        "telos_workflow": "MATCH",
+        "index_status": "MATCH",
+        "index_doctor": "MATCH",
+        "forum_status": "MATCH",
+        "forum_runtime_ready": true,
+        "gather_status": "MATCH",
+        "gather_doctor": "MATCH",
+        "crucible_status": "MATCH",
+        "gather_version_caveat": "tool_version 1.6.0 with native current-status string still saying 1.5.0 completion floor"
+      },
+      "evidence": [
+        "C:/dev/public/telos/docs/outreach/receipts/thirty-seventh-owned-social-wave-execution-2026-07-03Z.md"
+      ]
+    }
+  ]
+}

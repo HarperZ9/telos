@@ -1,0 +1,87 @@
+{
+  "measurements": [
+    {
+      "claim": "The thirty-third outreach wave posted and visibly verified 13 public items from the twenty-fifth social queue.",
+      "deviation": 0.0,
+      "tolerance": 0.1,
+      "method": "execution-receipt-count-scan",
+      "observed": {
+        "total_posted": 13,
+        "youtube": 9,
+        "reddit": 4,
+        "source_queue": "TWENTY-FIFTH-WAVE-SOCIAL-COMMENT-EXPANSION-2026-07-02.md"
+      },
+      "evidence": [
+        "C:/dev/public/telos/docs/outreach/receipts/thirty-third-social-wave-execution-receipts-2026-07-03Z.md"
+      ]
+    },
+    {
+      "claim": "The YouTube portion posted Y58, Y60, Y62, Y64, Y66, Y68, Y70, Y72, and Y74 as @Unorthodoxis with no direct Project Telos links.",
+      "deviation": 0.0,
+      "tolerance": 0.1,
+      "method": "youtube-receipt-scan",
+      "observed": {
+        "ids": ["Y58", "Y60", "Y62", "Y64", "Y66", "Y68", "Y70", "Y72", "Y74"],
+        "account": "@Unorthodoxis",
+        "direct_project_links": 0,
+        "visible_phrases": [
+          "The production issue with tool management",
+          "network CLI agents",
+          "receipt before autonomy",
+          "My practical split: CLI",
+          "The useful comparison is not which interface is cooler",
+          "Agent evals need to test the loop",
+          "The \"vibes problem\" in agent evals",
+          "Gateways are becoming the right control point",
+          "The MCP roadmap I care about most"
+        ]
+      },
+      "evidence": [
+        "https://www.youtube.com/watch?v=NlrycOgWAk0",
+        "https://www.youtube.com/watch?v=shGjxZKKa6o",
+        "https://www.youtube.com/watch?v=1q4G2qphfXw",
+        "https://www.youtube.com/watch?v=TuIZoFyBKIM",
+        "https://www.youtube.com/watch?v=ZR6U4TN8-Cw",
+        "https://www.youtube.com/watch?v=oRgmAhgBIfE",
+        "https://www.youtube.com/watch?v=Xfl50508LZM",
+        "https://www.youtube.com/watch?v=U9XRcut6nUY",
+        "https://www.youtube.com/watch?v=kAVRFYgCPg0"
+      ]
+    },
+    {
+      "claim": "The Reddit portion posted R55, R59, R65, and R75 as MeAndClaudeMakeHeat with old Reddit permalinks.",
+      "deviation": 0.0,
+      "tolerance": 0.1,
+      "method": "reddit-receipt-scan",
+      "observed": {
+        "ids": ["R55", "R59", "R65", "R75"],
+        "account": "MeAndClaudeMakeHeat",
+        "comment_ids": ["t1_ov8wpeq", "t1_ov8wqsu", "t1_ov8wsd0", "t1_ov8wtna"],
+        "permalinks": [
+          "https://old.reddit.com/r/AI_Agents/comments/1qknd07/mcp_in_2026_its_complicated/ov8wpeq/",
+          "https://old.reddit.com/r/learnmachinelearning/comments/1t0ouwv/looking_for_a_good_agentic_ai_course_in_2026_any/ov8wqsu/",
+          "https://old.reddit.com/r/datascience/comments/1q85xuw/whats_your_2026_data_science_coding_stack_ai/ov8wsd0/",
+          "https://old.reddit.com/r/datascience/comments/1r6bhke/today_im_launching_daaf_the_data_analyst/ov8wtna/"
+        ]
+      },
+      "evidence": [
+        "C:/dev/public/telos/docs/outreach/receipts/thirty-third-social-wave-execution-receipts-2026-07-03Z.md"
+      ]
+    },
+    {
+      "claim": "The wave left already-covered or deliberately deferred targets unposted and recorded them as pending or skipped.",
+      "deviation": 0.0,
+      "tolerance": 0.1,
+      "method": "skip-and-pending-receipt-scan",
+      "observed": {
+        "deferred_reddit": ["R57", "R61", "R63", "R67", "R69", "R71", "R73"],
+        "deferred_hn": ["B37", "B39", "B41", "B43", "B45"],
+        "already_covered": ["B33", "B35"],
+        "unexpected_claimed_posts": 0
+      },
+      "evidence": [
+        "C:/dev/public/telos/docs/outreach/receipts/thirty-third-social-wave-execution-receipts-2026-07-03Z.md"
+      ]
+    }
+  ]
+}

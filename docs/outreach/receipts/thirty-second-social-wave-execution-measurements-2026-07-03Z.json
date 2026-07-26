@@ -1,0 +1,111 @@
+{
+  "measurements": [
+    {
+      "claim": "The thirty-second outreach wave posted and visibly verified 13 public items across YouTube, Reddit, Hacker News, Bluesky, and dev.to.",
+      "deviation": 0.0,
+      "tolerance": 0.1,
+      "method": "execution-receipt-count-scan",
+      "observed": {
+        "total_posted": 13,
+        "youtube": 5,
+        "reddit": 5,
+        "hacker_news": 1,
+        "bluesky": 1,
+        "devto": 1
+      },
+      "evidence": [
+        "C:/dev/public/telos/docs/outreach/receipts/thirty-second-social-wave-execution-receipts-2026-07-03Z.md"
+      ]
+    },
+    {
+      "claim": "The YouTube portion posted Y48, Y50, Y52, Y54, and Y56 as @Unorthodoxis with no direct Project Telos links.",
+      "deviation": 0.0,
+      "tolerance": 0.1,
+      "method": "youtube-receipt-scan",
+      "observed": {
+        "ids": ["Y48", "Y50", "Y52", "Y54", "Y56"],
+        "account": "@Unorthodoxis",
+        "direct_project_links": 0,
+        "visible_phrases": [
+          "AI backtesting is not \"AI writes bad code\"",
+          "Self-hosted quant systems are most interesting",
+          "FastMCP lowers the build friction",
+          "AI-assisted physics simulation",
+          "Most AI strategy demos would be stronger"
+        ]
+      },
+      "evidence": [
+        "https://www.youtube.com/watch?v=CP35z_99AmQ",
+        "https://www.youtube.com/watch?v=UwW-57hGhtI",
+        "https://www.youtube.com/watch?v=e6SPMINZfPk",
+        "https://www.youtube.com/watch?v=jhCg53M7gyY",
+        "https://www.youtube.com/watch?v=n1a_RPvDJ8Q"
+      ]
+    },
+    {
+      "claim": "The Reddit portion used Chrome-authenticated old Reddit to post R83, R85, R87, R89, and R91 as MeAndClaudeMakeHeat with permalinks.",
+      "deviation": 0.0,
+      "tolerance": 0.1,
+      "method": "reddit-receipt-scan",
+      "observed": {
+        "ids": ["R83", "R85", "R87", "R89", "R91"],
+        "account": "MeAndClaudeMakeHeat",
+        "comment_ids": ["t1_ov8urt2", "t1_ov8uswv", "t1_ov8utzv", "t1_ov8uv4a", "t1_ov8uw96"],
+        "permalinks": [
+          "https://old.reddit.com/r/MachineLearning/comments/1tfv0vh/slop_is_making_me_feel_disconnected_from_ai/ov8urt2/",
+          "https://old.reddit.com/r/MachineLearning/comments/1uio9rb/googles_agentic_peerreviewer_handled_10k_papers/ov8uswv/",
+          "https://old.reddit.com/r/MachineLearning/comments/1tvwctd/neurips_used_uncalibrated_ai_detector_for_desk/ov8utzv/",
+          "https://old.reddit.com/r/LocalLLaMA/comments/1ujcmvv/im_starting_a_free_100_days_of_genai_for_devops/ov8uv4a/",
+          "https://old.reddit.com/r/LocalLLaMA/comments/1sknx6n/best_local_llms_apr_2026/ov8uw96/"
+        ]
+      },
+      "evidence": [
+        "C:/dev/public/telos/docs/outreach/receipts/thirty-second-social-wave-execution-receipts-2026-07-03Z.md"
+      ]
+    },
+    {
+      "claim": "The browser authentication inventory unblocked additional non-GitHub outreach by posting one HN reply, one Bluesky owned-channel post, and one dev.to comment.",
+      "deviation": 0.0,
+      "tolerance": 0.1,
+      "method": "cross-platform-receipt-scan",
+      "observed": {
+        "hacker_news": {
+          "id": "HN-B55-RHIPITR-REPLY",
+          "account": "zaindanaharper",
+          "url": "https://news.ycombinator.com/item?id=48592163#48599930",
+          "visible_phrase": "tool drift/version is a benefit if the host records it as evidence"
+        },
+        "bluesky": {
+          "id": "OWN02-BSKY-S03",
+          "account": "@zaindanaharper.bsky.social",
+          "url": "https://bsky.app/profile/zaindanaharper.bsky.social/post/3mppkbvfb222v",
+          "visible_phrase": "A useful AI workflow should leave enough evidence for a reviewer tomorrow"
+        },
+        "devto": {
+          "id": "B35",
+          "account": "Zain Dana Harper",
+          "url": "https://dev.to/thedailyagent/building-production-grade-ai-agents-with-mcp-a-complete-guide-for-2026-3bo2#comments",
+          "visible_phrase": "The one production topic I would push even harder is tool-surface freshness"
+        }
+      },
+      "evidence": [
+        "C:/dev/public/telos/docs/outreach/receipts/thirty-second-social-wave-execution-receipts-2026-07-03Z.md"
+      ]
+    },
+    {
+      "claim": "The wave recorded non-writable or intentionally skipped surfaces without forcing posts onto unavailable composers.",
+      "deviation": 0.0,
+      "tolerance": 0.1,
+      "method": "gate-and-skip-receipt-scan",
+      "observed": {
+        "duplicates_skipped": ["Y44", "Y46"],
+        "hn_top_level_closed": ["B47", "B49", "B55"],
+        "x_status": "Chrome home did not expose a stable composer during inventory",
+        "mastodon_linkedin": "authenticated but not posted in this run because recent owned-channel posts already existed"
+      },
+      "evidence": [
+        "C:/dev/public/telos/docs/outreach/receipts/thirty-second-social-wave-execution-receipts-2026-07-03Z.md"
+      ]
+    }
+  ]
+}

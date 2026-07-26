@@ -1,0 +1,235 @@
+{
+  "ok": true,
+  "thesis": {
+    "id": "5080afadc4342f8b",
+    "title": "Thirty-sixth social auth surface inventory",
+    "registered_at": 1783060041.8513105,
+    "disposition": "publishable",
+    "seal": "5080afadc4342f8bf211b32afeb5edea3070a4dccd088c26c38e3042f6ced855",
+    "claims": [
+      {
+        "id": "33e933a491394d14",
+        "sha256": "33e933a491394d141256998f25be858cfdd6a14bb78e44ba5ae4659b34ac524d"
+      },
+      {
+        "id": "afc298c6d359630a",
+        "sha256": "afc298c6d359630ab14138a3be5450c42d3afb83341273f3820c474e43a861de"
+      },
+      {
+        "id": "10b7836f0b672d56",
+        "sha256": "10b7836f0b672d563075884d047a6a99a55ba0db9396ddaa315e57cc2c211b3e"
+      },
+      {
+        "id": "065386e4e26f00a9",
+        "sha256": "065386e4e26f00a91c89e64c368f243268ea492ee07a39173c6bf1403db5d416"
+      }
+    ]
+  },
+  "refutations": [
+    {
+      "claim_id": "33e933a491394d14",
+      "claim_sha256": "33e933a491394d141256998f25be858cfdd6a14bb78e44ba5ae4659b34ac524d",
+      "challenge": "test the stated falsification: The receipt claims any public side effect was submitted, or omits the read-only boundary.",
+      "measurable": "The receipt claims any public side effect was submitted, or omits the read-only boundary.",
+      "source": "null"
+    },
+    {
+      "claim_id": "afc298c6d359630a",
+      "claim_sha256": "afc298c6d359630ab14138a3be5450c42d3afb83341273f3820c474e43a861de",
+      "challenge": "test the stated falsification: The receipt lacks one of those surfaces, marks it unauthenticated, or omits the observed writable/authenticated control.",
+      "measurable": "The receipt lacks one of those surfaces, marks it unauthenticated, or omits the observed writable/authenticated control.",
+      "source": "null"
+    },
+    {
+      "claim_id": "10b7836f0b672d56",
+      "claim_sha256": "10b7836f0b672d563075884d047a6a99a55ba0db9396ddaa315e57cc2c211b3e",
+      "challenge": "test the stated falsification: The receipt treats YouTube or dev.to as cleanly unauthenticated, or ignores the earlier direct-target authenticated evidence.",
+      "measurable": "The receipt treats YouTube or dev.to as cleanly unauthenticated, or ignores the earlier direct-target authenticated evidence.",
+      "source": "null"
+    },
+    {
+      "claim_id": "065386e4e26f00a9",
+      "claim_sha256": "065386e4e26f00a91c89e64c368f243268ea492ee07a39173c6bf1403db5d416",
+      "challenge": "test the stated falsification: The receipt still treats B51, B53, or B57 as fresh candidates, or lacks evidence from the thirtieth-wave receipt.",
+      "measurable": "The receipt still treats B51, B53, or B57 as fresh candidates, or lacks evidence from the thirtieth-wave receipt.",
+      "source": "null"
+    }
+  ],
+  "assessment": {
+    "started_at": 1783060041.8569622,
+    "thesis_id": "5080afadc4342f8b",
+    "thesis_seal": "5080afadc4342f8bf211b32afeb5edea3070a4dccd088c26c38e3042f6ced855",
+    "claims": 4,
+    "match": 4,
+    "drift": 0,
+    "unverifiable": 0,
+    "verdict_seal": "9bb5017809c6430c31d54a046ccdefa942efbd5ee73727fb4dce37b975557bce",
+    "measurement_seal": "81dd6dbc96877c7d8cbea116c21e6535347633c5a9ddc6aebfa694c6a1da8227",
+    "disposition": "publishable",
+    "stored": null,
+    "verdicts": [
+      {
+        "claim_id": "33e933a491394d14",
+        "claim_sha256": "33e933a491394d141256998f25be858cfdd6a14bb78e44ba5ae4659b34ac524d",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.1,
+        "margin": 1.0,
+        "method": "read-only-boundary-receipt-scan",
+        "grounds": "deviation 0 within tolerance 0.1",
+        "disposition": "publishable"
+      },
+      {
+        "claim_id": "afc298c6d359630a",
+        "claim_sha256": "afc298c6d359630ab14138a3be5450c42d3afb83341273f3820c474e43a861de",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.1,
+        "margin": 1.0,
+        "method": "auth-matrix-scan",
+        "grounds": "deviation 0 within tolerance 0.1",
+        "disposition": "publishable"
+      },
+      {
+        "claim_id": "10b7836f0b672d56",
+        "claim_sha256": "10b7836f0b672d563075884d047a6a99a55ba0db9396ddaa315e57cc2c211b3e",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.1,
+        "margin": 1.0,
+        "method": "ambiguous-home-route-scan",
+        "grounds": "deviation 0 within tolerance 0.1",
+        "disposition": "publishable"
+      },
+      {
+        "claim_id": "065386e4e26f00a9",
+        "claim_sha256": "065386e4e26f00a91c89e64c368f243268ea492ee07a39173c6bf1403db5d416",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.1,
+        "margin": 1.0,
+        "method": "devto-correction-receipt-scan",
+        "grounds": "deviation 0 within tolerance 0.1",
+        "disposition": "publishable"
+      }
+    ],
+    "measurements": [
+      {
+        "claim_id": "33e933a491394d14",
+        "claim_sha256": "33e933a491394d141256998f25be858cfdd6a14bb78e44ba5ae4659b34ac524d",
+        "deviation": 0.0,
+        "tolerance": 0.1,
+        "method": "read-only-boundary-receipt-scan",
+        "measured_at": 1783060041.8568044,
+        "evidence": [
+          "C:/dev/public/telos/docs/outreach/receipts/thirty-sixth-social-auth-surface-inventory-2026-07-03Z.md"
+        ]
+      },
+      {
+        "claim_id": "afc298c6d359630a",
+        "claim_sha256": "afc298c6d359630ab14138a3be5450c42d3afb83341273f3820c474e43a861de",
+        "deviation": 0.0,
+        "tolerance": 0.1,
+        "method": "auth-matrix-scan",
+        "measured_at": 1783060041.85681,
+        "evidence": [
+          "C:/dev/public/telos/docs/outreach/receipts/thirty-sixth-social-auth-surface-inventory-2026-07-03Z.md"
+        ]
+      },
+      {
+        "claim_id": "10b7836f0b672d56",
+        "claim_sha256": "10b7836f0b672d563075884d047a6a99a55ba0db9396ddaa315e57cc2c211b3e",
+        "deviation": 0.0,
+        "tolerance": 0.1,
+        "method": "ambiguous-home-route-scan",
+        "measured_at": 1783060041.856812,
+        "evidence": [
+          "C:/dev/public/telos/docs/outreach/receipts/thirty-sixth-social-auth-surface-inventory-2026-07-03Z.md",
+          "C:/dev/public/telos/docs/outreach/receipts/thirtieth-social-wave-execution-receipts-2026-07-03Z.md",
+          "C:/dev/public/telos/docs/outreach/receipts/thirty-second-social-wave-execution-receipts-2026-07-03Z.md"
+        ]
+      },
+      {
+        "claim_id": "065386e4e26f00a9",
+        "claim_sha256": "065386e4e26f00a91c89e64c368f243268ea492ee07a39173c6bf1403db5d416",
+        "deviation": 0.0,
+        "tolerance": 0.1,
+        "method": "devto-correction-receipt-scan",
+        "measured_at": 1783060041.856814,
+        "evidence": [
+          "C:/dev/public/telos/docs/outreach/receipts/thirty-sixth-social-auth-surface-inventory-2026-07-03Z.md",
+          "C:/dev/public/telos/docs/outreach/receipts/thirtieth-social-wave-execution-receipts-2026-07-03Z.md",
+          "C:/dev/public/telos/docs/outreach/receipts/thirty-fifth-social-wave-execution-receipts-2026-07-03Z.md"
+        ]
+      }
+    ],
+    "seal": "4d76d5c9a55dde162022b2ee9aae4d36700d619d927ccf67b42319757d8df365"
+  },
+  "verdicts": [
+    {
+      "claim_id": "33e933a491394d14",
+      "claim_sha256": "33e933a491394d141256998f25be858cfdd6a14bb78e44ba5ae4659b34ac524d",
+      "status": "MATCH",
+      "disposition": "publishable",
+      "deviation": 0.0,
+      "tolerance": 0.1,
+      "margin": 1.0,
+      "method": "read-only-boundary-receipt-scan",
+      "grounds": "deviation 0 within tolerance 0.1"
+    },
+    {
+      "claim_id": "afc298c6d359630a",
+      "claim_sha256": "afc298c6d359630ab14138a3be5450c42d3afb83341273f3820c474e43a861de",
+      "status": "MATCH",
+      "disposition": "publishable",
+      "deviation": 0.0,
+      "tolerance": 0.1,
+      "margin": 1.0,
+      "method": "auth-matrix-scan",
+      "grounds": "deviation 0 within tolerance 0.1"
+    },
+    {
+      "claim_id": "10b7836f0b672d56",
+      "claim_sha256": "10b7836f0b672d563075884d047a6a99a55ba0db9396ddaa315e57cc2c211b3e",
+      "status": "MATCH",
+      "disposition": "publishable",
+      "deviation": 0.0,
+      "tolerance": 0.1,
+      "margin": 1.0,
+      "method": "ambiguous-home-route-scan",
+      "grounds": "deviation 0 within tolerance 0.1"
+    },
+    {
+      "claim_id": "065386e4e26f00a9",
+      "claim_sha256": "065386e4e26f00a91c89e64c368f243268ea492ee07a39173c6bf1403db5d416",
+      "status": "MATCH",
+      "disposition": "publishable",
+      "deviation": 0.0,
+      "tolerance": 0.1,
+      "margin": 1.0,
+      "method": "devto-correction-receipt-scan",
+      "grounds": "deviation 0 within tolerance 0.1"
+    }
+  ],
+  "measurement_warnings": [],
+  "checks": {
+    "seals_ok": true,
+    "thesis_ok": true,
+    "verdicts_rederive": true
+  },
+  "report": "C:/dev/public/telos/docs/outreach/receipts/thirty-sixth-social-auth-surface-inventory-crucible-report-2026-07-03Z.md",
+  "record": "C:/dev/public/telos/docs/outreach/receipts/thirty-sixth-social-auth-surface-inventory-crucible-run-2026-07-03Z.json",
+  "bundle": null,
+  "spec": null,
+  "review": null,
+  "verifier": {
+    "mode": "cleanroom",
+    "inputs": [],
+    "excluded": [
+      "worker context",
+      "reasoning trace",
+      "intermediate steps"
+    ],
+    "checkability": "If success cannot be evaluated from the original spec and the artifact, the spec is not checkable yet."
+  }
+}

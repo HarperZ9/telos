@@ -1,0 +1,91 @@
+{
+  "measurements": [
+    {
+      "claim": "The thirty-fourth outreach wave posted and visibly verified 7 Reddit comments from the remaining twenty-fifth social queue.",
+      "deviation": 0.0,
+      "tolerance": 0.1,
+      "method": "execution-receipt-count-scan",
+      "observed": {
+        "total_new_posts": 7,
+        "reddit_posts": 7,
+        "direct_project_links": 0,
+        "source_queue": "TWENTY-FIFTH-WAVE-SOCIAL-COMMENT-EXPANSION-2026-07-02.md"
+      },
+      "evidence": [
+        "C:/dev/public/telos/docs/outreach/receipts/thirty-fourth-social-wave-execution-receipts-2026-07-03Z.md"
+      ]
+    },
+    {
+      "claim": "The Reddit portion posted R57, R61, R63, R67, R69, R71, and R73 as MeAndClaudeMakeHeat.",
+      "deviation": 0.0,
+      "tolerance": 0.1,
+      "method": "reddit-permalink-receipt-scan",
+      "observed": {
+        "ids": ["R57", "R61", "R63", "R67", "R69", "R71", "R73"],
+        "account": "MeAndClaudeMakeHeat",
+        "comment_ids": ["t1_ov8xvaz", "t1_ov8y0ad", "t1_ov8y0wp", "t1_ov8y1km", "t1_ov8y29h", "t1_ov8y2xh", "t1_ov8y3lw"],
+        "permalinks": [
+          "https://old.reddit.com/r/AI_Agents/comments/1rjtp3q/the_truth_about_mcp_vs_cli/ov8xvaz/",
+          "https://old.reddit.com/r/AI_Agents/comments/1spy01t/30_cves_filed_against_mcp_servers_in_60_days_the/ov8y0ad/",
+          "https://old.reddit.com/r/AI_Agents/comments/1ree9eg/how_are_you_currently_addressing_governance_and/ov8y0wp/",
+          "https://old.reddit.com/r/learnmachinelearning/comments/1skaknd/how_to_become_ai_engineer_in_2026/ov8y1km/",
+          "https://old.reddit.com/r/AI_Agents/comments/1rdf5v7/my_guide_on_what_tools_to_use_to_build_ai_agents/ov8y29h/",
+          "https://old.reddit.com/r/AI_Agents/comments/1rqnv3a/what_is_your_full_ai_agent_stack_in_2026/ov8y2xh/",
+          "https://old.reddit.com/r/AI_Agents/comments/1sc06cw/your_mcp_tools_might_be_quietly_killing/ov8y3lw/"
+        ]
+      },
+      "evidence": [
+        "C:/dev/public/telos/docs/outreach/receipts/thirty-fourth-social-wave-execution-receipts-2026-07-03Z.md"
+      ]
+    },
+    {
+      "claim": "The Hacker News portion checked B37, B39, B41, B43, and B45 as authenticated under zaindanaharper but closed for commenting.",
+      "deviation": 0.0,
+      "tolerance": 0.1,
+      "method": "hn-closed-target-receipt-scan",
+      "observed": {
+        "ids": ["B37", "B39", "B41", "B43", "B45"],
+        "account": "zaindanaharper",
+        "posted": 0,
+        "state": "authenticated, no top-level forms, no submit inputs, no reply links exposed"
+      },
+      "evidence": [
+        "C:/dev/public/telos/docs/outreach/receipts/thirty-fourth-social-wave-execution-receipts-2026-07-03Z.md"
+      ]
+    },
+    {
+      "claim": "The YouTube scan found Y76, Y78, Y80, and Y82 already present as @Unorthodoxis and did not duplicate them.",
+      "deviation": 0.0,
+      "tolerance": 0.1,
+      "method": "youtube-existing-comment-receipt-scan",
+      "observed": {
+        "existing_ids": ["Y76", "Y78", "Y80", "Y82"],
+        "account": "@Unorthodoxis",
+        "new_posts_claimed": 0,
+        "phrases": [
+          "The continuous part is the key",
+          "For quant research, the most important agent feature",
+          "The \"agent is more than model plus tools\" point",
+          "For MCP agents, I think \"what tool surface was visible\""
+        ]
+      },
+      "evidence": [
+        "C:/dev/public/telos/docs/outreach/receipts/thirty-fourth-social-wave-execution-receipts-2026-07-03Z.md"
+      ]
+    },
+    {
+      "claim": "The wave stopped additional YouTube posting after Chrome tab control timed out, leaving Y84, Y86, Y88, and Y90 pending or unposted.",
+      "deviation": 0.0,
+      "tolerance": 0.1,
+      "method": "browser-interruption-and-pending-receipt-scan",
+      "observed": {
+        "pending_youtube": ["Y84", "Y86", "Y88", "Y90"],
+        "interruption": "Chrome tab control timed out during YouTube composer recovery and tab listing",
+        "new_youtube_posts_claimed": 0
+      },
+      "evidence": [
+        "C:/dev/public/telos/docs/outreach/receipts/thirty-fourth-social-wave-execution-receipts-2026-07-03Z.md"
+      ]
+    }
+  ]
+}

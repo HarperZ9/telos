@@ -1,0 +1,89 @@
+{
+  "measurements": [
+    {
+      "claim": "The thirty-sixth pass was a read-only Chrome authentication inventory and made no public posts, comments, profile edits, messages, or submissions.",
+      "deviation": 0.0,
+      "tolerance": 0.1,
+      "method": "read-only-boundary-receipt-scan",
+      "observed": {
+        "public_side_effects": 0,
+        "browser_session_finalized": true,
+        "receipt_boundary": "This was a read-only browser inventory. No public posts, comments, profile edits, messages, or submissions were made in this pass."
+      },
+      "evidence": [
+        "C:/dev/public/telos/docs/outreach/receipts/thirty-sixth-social-auth-surface-inventory-2026-07-03Z.md"
+      ]
+    },
+    {
+      "claim": "The inventory recorded authenticated or writable current states for Reddit, Hacker News, LinkedIn, X, Bluesky, Mastodon, and Medium.",
+      "deviation": 0.0,
+      "tolerance": 0.1,
+      "method": "auth-matrix-scan",
+      "observed": {
+        "authenticated_or_writable": [
+          "old Reddit",
+          "Reddit",
+          "Hacker News",
+          "LinkedIn",
+          "X",
+          "Bluesky",
+          "Mastodon",
+          "Medium"
+        ],
+        "controls": [
+          "old Reddit logout signal",
+          "Reddit Create post",
+          "Hacker News logout and submit",
+          "LinkedIn Start a post / Write article",
+          "X Post text / Post",
+          "Bluesky Compose new post",
+          "Mastodon textarea / Post",
+          "Medium Write / profile / stories"
+        ]
+      },
+      "evidence": [
+        "C:/dev/public/telos/docs/outreach/receipts/thirty-sixth-social-auth-surface-inventory-2026-07-03Z.md"
+      ]
+    },
+    {
+      "claim": "The inventory recorded YouTube and dev.to home-route ambiguity while preserving earlier target-page evidence that those surfaces had worked in prior waves.",
+      "deviation": 0.0,
+      "tolerance": 0.1,
+      "method": "ambiguous-home-route-scan",
+      "observed": {
+        "youtube_home_route": "accounts.youtube.com/RotateCookiesPage",
+        "devto_home_route": "dev.to/auth_pass/iframe",
+        "earlier_target_page_evidence": [
+          "YouTube target watch pages authenticated as @Unorthodoxis in prior waves",
+          "dev.to article pages exposed authenticated editors as @harperz9 / Zain Dana Harper in prior waves"
+        ]
+      },
+      "evidence": [
+        "C:/dev/public/telos/docs/outreach/receipts/thirty-sixth-social-auth-surface-inventory-2026-07-03Z.md",
+        "C:/dev/public/telos/docs/outreach/receipts/thirtieth-social-wave-execution-receipts-2026-07-03Z.md",
+        "C:/dev/public/telos/docs/outreach/receipts/thirty-second-social-wave-execution-receipts-2026-07-03Z.md"
+      ]
+    },
+    {
+      "claim": "The inventory corrected the thirty-fifth wave dev.to candidate note by recording that B51, B53, and B57 were already posted in the thirtieth wave.",
+      "deviation": 0.0,
+      "tolerance": 0.1,
+      "method": "devto-correction-receipt-scan",
+      "observed": {
+        "already_posted_ids": [
+          "B51",
+          "B53",
+          "B57"
+        ],
+        "posted_account": "@harperz9",
+        "prior_receipt": "thirtieth-social-wave-execution-receipts-2026-07-03Z.md",
+        "superseded_note": "thirty-fifth wave listed B51/B53/B57 as later candidates"
+      },
+      "evidence": [
+        "C:/dev/public/telos/docs/outreach/receipts/thirty-sixth-social-auth-surface-inventory-2026-07-03Z.md",
+        "C:/dev/public/telos/docs/outreach/receipts/thirtieth-social-wave-execution-receipts-2026-07-03Z.md",
+        "C:/dev/public/telos/docs/outreach/receipts/thirty-fifth-social-wave-execution-receipts-2026-07-03Z.md"
+      ]
+    }
+  ]
+}

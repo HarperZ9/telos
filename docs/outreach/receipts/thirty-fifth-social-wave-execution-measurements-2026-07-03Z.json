@@ -1,0 +1,89 @@
+{
+  "measurements": [
+    {
+      "claim": "The thirty-fifth outreach wave posted and visibly verified 5 public items from the twenty-seventh queue.",
+      "deviation": 0.0,
+      "tolerance": 0.1,
+      "method": "execution-receipt-count-scan",
+      "observed": {
+        "total_new_posts_claimed": 5,
+        "reddit_posts": 3,
+        "youtube_posts": 2,
+        "direct_project_links": 0,
+        "source_queue": "TWENTY-SEVENTH-WAVE-REDDIT-YOUTUBE-BLOG-COMMENT-QUEUE-2026-07-02.md"
+      },
+      "evidence": [
+        "C:/dev/public/telos/docs/outreach/receipts/thirty-fifth-social-wave-execution-receipts-2026-07-03Z.md"
+      ]
+    },
+    {
+      "claim": "The Reddit portion posted R77, R79, and R81 as MeAndClaudeMakeHeat with old Reddit permalinks.",
+      "deviation": 0.0,
+      "tolerance": 0.1,
+      "method": "reddit-permalink-receipt-scan",
+      "observed": {
+        "ids": ["R77", "R79", "R81"],
+        "account": "MeAndClaudeMakeHeat",
+        "comment_ids": ["t1_ov9oo09", "t1_ov9opwl", "t1_ov9oqkb"],
+        "permalinks": [
+          "https://old.reddit.com/r/LocalLLaMA/comments/1uaebfe/best_local_agents_jun_2026/ov9oo09/",
+          "https://old.reddit.com/r/quant/comments/1ssjzvo/why_im_skeptical_about_using_llms_directly_for/ov9opwl/",
+          "https://old.reddit.com/r/Physics/comments/1tgo1xv/am_i_really_missing_out_by_not_using_ai_for_coding/ov9oqkb/"
+        ]
+      },
+      "evidence": [
+        "C:/dev/public/telos/docs/outreach/receipts/thirty-fifth-social-wave-execution-receipts-2026-07-03Z.md"
+      ]
+    },
+    {
+      "claim": "The YouTube portion posted and visibly verified Y84 and Y86 as @Unorthodoxis with no direct Project Telos links.",
+      "deviation": 0.0,
+      "tolerance": 0.1,
+      "method": "youtube-visible-comment-receipt-scan",
+      "observed": {
+        "ids": ["Y84", "Y86"],
+        "account": "@Unorthodoxis",
+        "direct_project_links": 0,
+        "visible_phrases": [
+          "The biggest MCP scaling issue",
+          "Engineering simulation is a great place"
+        ]
+      },
+      "evidence": [
+        "https://www.youtube.com/watch?v=v3Fr2JR47KA",
+        "https://www.youtube.com/watch?v=WiDVCwQmhto",
+        "C:/dev/public/telos/docs/outreach/receipts/thirty-fifth-social-wave-execution-receipts-2026-07-03Z.md"
+      ]
+    },
+    {
+      "claim": "The wave recorded a duplicate-risk conflict for Y84 and Y86 because wave 31 already claimed those YouTube targets.",
+      "deviation": 0.0,
+      "tolerance": 0.1,
+      "method": "duplicate-risk-receipt-scan",
+      "observed": {
+        "duplicate_risk_ids": ["Y84", "Y86"],
+        "conflicting_prior_receipt": "thirty-first-social-wave-execution-receipts-2026-07-03Z.md",
+        "wave35_receipt_note_present": true
+      },
+      "evidence": [
+        "C:/dev/public/telos/docs/outreach/receipts/thirty-fifth-social-wave-execution-receipts-2026-07-03Z.md",
+        "C:/dev/public/telos/docs/outreach/receipts/thirty-first-social-wave-execution-receipts-2026-07-03Z.md"
+      ]
+    },
+    {
+      "claim": "The wave skipped Y88 and Y90 after receipt search found they were already claimed by wave 31.",
+      "deviation": 0.0,
+      "tolerance": 0.1,
+      "method": "skip-receipt-scan",
+      "observed": {
+        "skipped_ids": ["Y88", "Y90"],
+        "reason": "wave 31 receipt already claimed them",
+        "wave35_posts_claimed_for_y88_y90": 0
+      },
+      "evidence": [
+        "C:/dev/public/telos/docs/outreach/receipts/thirty-fifth-social-wave-execution-receipts-2026-07-03Z.md",
+        "C:/dev/public/telos/docs/outreach/receipts/thirty-first-social-wave-execution-receipts-2026-07-03Z.md"
+      ]
+    }
+  ]
+}

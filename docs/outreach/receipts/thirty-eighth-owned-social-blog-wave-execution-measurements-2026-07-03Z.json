@@ -1,0 +1,126 @@
+{
+  "measurements": [
+    {
+      "claim": "The thirty-eighth owned-social/blog wave posted and visibly verified 4 public owned-channel items across Medium, X, Bluesky, and Mastodon.",
+      "deviation": 0.0,
+      "tolerance": 0.1,
+      "method": "execution-receipt-count-scan",
+      "observed": {
+        "posted_total": 4,
+        "platforms": ["Medium", "X", "Bluesky", "Mastodon"],
+        "verified_visible": true,
+        "chrome_finalized": true
+      },
+      "evidence": [
+        "C:/dev/public/telos/docs/outreach/receipts/thirty-eighth-owned-social-blog-wave-execution-2026-07-03Z.md"
+      ]
+    },
+    {
+      "claim": "The Medium article OWN38-MEDIUM-A05 was published as Zaindharper with canonical URL a9426538c443 and includes the Project Telos repository link.",
+      "deviation": 0.0,
+      "tolerance": 0.1,
+      "method": "medium-owned-article-receipt-scan",
+      "observed": {
+        "id": "OWN38-MEDIUM-A05",
+        "account": "Zaindharper / @zaindharper",
+        "url": "https://medium.com/@zaindharper/the-next-agent-ux-primitive-show-me-the-receipt-a9426538c443",
+        "link_included": true,
+        "repo_link": "https://github.com/HarperZ9/telos",
+        "visible_phrase": "Your story has been published and sent!"
+      },
+      "evidence": [
+        "C:/dev/public/telos/docs/outreach/receipts/thirty-eighth-owned-social-blog-wave-execution-2026-07-03Z.md"
+      ]
+    },
+    {
+      "claim": "The X post OWN38-X-MEDIUM-SHARE was posted as @zaindanaharper with the Medium article link and public status URL 2072934385402458416.",
+      "deviation": 0.0,
+      "tolerance": 0.1,
+      "method": "x-medium-share-receipt-scan",
+      "observed": {
+        "id": "OWN38-X-MEDIUM-SHARE",
+        "account": "@zaindanaharper",
+        "url": "https://x.com/zaindanaharper/status/2072934385402458416",
+        "link_included": true,
+        "visible_phrase": "Published a short Project Telos note"
+      },
+      "evidence": [
+        "C:/dev/public/telos/docs/outreach/receipts/thirty-eighth-owned-social-blog-wave-execution-2026-07-03Z.md"
+      ]
+    },
+    {
+      "claim": "The Bluesky post OWN38-BSKY-MEDIUM-SHARE was posted as @zaindanaharper.bsky.social with the Medium article link and public post URL 3mppx4vtcp22g.",
+      "deviation": 0.0,
+      "tolerance": 0.1,
+      "method": "bluesky-medium-share-receipt-scan",
+      "observed": {
+        "id": "OWN38-BSKY-MEDIUM-SHARE",
+        "account": "@zaindanaharper.bsky.social",
+        "url": "https://bsky.app/profile/zaindanaharper.bsky.social/post/3mppx4vtcp22g",
+        "link_included": true,
+        "visible_phrase": "I wrote a short Project Telos note"
+      },
+      "evidence": [
+        "C:/dev/public/telos/docs/outreach/receipts/thirty-eighth-owned-social-blog-wave-execution-2026-07-03Z.md"
+      ]
+    },
+    {
+      "claim": "The Mastodon post OWN38-MASTODON-MEDIUM-SHARE was posted as @zaindanaharper@mastodon.social with the Medium article link and public status URL 116854699820692982.",
+      "deviation": 0.0,
+      "tolerance": 0.1,
+      "method": "mastodon-medium-share-receipt-scan",
+      "observed": {
+        "id": "OWN38-MASTODON-MEDIUM-SHARE",
+        "account": "@zaindanaharper@mastodon.social",
+        "url": "https://mastodon.social/@zaindanaharper/116854699820692982",
+        "link_included": true,
+        "visible_phrase": "I published a short Project Telos note"
+      },
+      "evidence": [
+        "C:/dev/public/telos/docs/outreach/receipts/thirty-eighth-owned-social-blog-wave-execution-2026-07-03Z.md"
+      ]
+    },
+    {
+      "claim": "LinkedIn medium-share outreach was not posted because the authenticated feed/share path did not expose a unique verified editable composer.",
+      "deviation": 0.0,
+      "tolerance": 0.1,
+      "method": "linkedin-medium-share-gate-receipt-scan",
+      "observed": {
+        "id": "OWN38-LINKEDIN-MEDIUM-SHARE",
+        "posted": false,
+        "reason": "authenticated as Zain Harper; share endpoint landed on feed; duplicated Start a post controls; no unique verified editable composer exposed"
+      },
+      "evidence": [
+        "C:/dev/public/telos/docs/outreach/receipts/thirty-eighth-owned-social-blog-wave-execution-2026-07-03Z.md"
+      ]
+    },
+    {
+      "claim": "The updated tool assessment for wave 38 found Telos room, Telos workflow, Index, Forum, Gather, and Crucible status surfaces returning MATCH before posting.",
+      "deviation": 0.0,
+      "tolerance": 0.1,
+      "method": "tool-status-receipt-scan",
+      "observed": {
+        "telos_room": "MATCH",
+        "telos_workflow": "MATCH",
+        "index_status": "MATCH",
+        "index_doctor": "MATCH",
+        "forum_status": "MATCH",
+        "forum_runtime_ready": true,
+        "gather_status": "MATCH",
+        "gather_doctor": "MATCH",
+        "crucible_status": "MATCH",
+        "social_registry_before_wave": {
+          "theses": 8,
+          "claims": 40,
+          "match": 40,
+          "drift": 0,
+          "unverifiable": 0
+        },
+        "gather_version_caveat": "tool_version 1.6.0 with native current-status string still saying 1.5.0 completion floor"
+      },
+      "evidence": [
+        "C:/dev/public/telos/docs/outreach/receipts/thirty-eighth-owned-social-blog-wave-execution-2026-07-03Z.md"
+      ]
+    }
+  ]
+}

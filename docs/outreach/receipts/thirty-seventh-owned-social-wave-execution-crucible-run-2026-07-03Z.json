@@ -1,0 +1,319 @@
+{
+  "ok": true,
+  "thesis": {
+    "id": "7385b4211f319da9",
+    "title": "Thirty-seventh owned social wave execution",
+    "registered_at": 1783060589.8269353,
+    "disposition": "publishable",
+    "seal": "7385b4211f319da9af7a6ca4c14888d97ad3468255983b824ac846c55a30bcdf",
+    "claims": [
+      {
+        "id": "3fdb8a37c800d708",
+        "sha256": "3fdb8a37c800d7083948655737769aa92e41a31520543fb65144f6022e0fa7cd"
+      },
+      {
+        "id": "66132d0fcf0ba92b",
+        "sha256": "66132d0fcf0ba92b7bf8c02ca6406ad87b4deda2341395c0348cff75ebb79f18"
+      },
+      {
+        "id": "36fadb5f1a21830c",
+        "sha256": "36fadb5f1a21830c07012fab0d7667a8b1e9368dfb38e16a7843cd230cbda16f"
+      },
+      {
+        "id": "f4d2b933ed94b023",
+        "sha256": "f4d2b933ed94b023f108e484f91d97f0a1147ca77e2960dfb36b1b5d55f2f018"
+      },
+      {
+        "id": "65b2f15567fb16b8",
+        "sha256": "65b2f15567fb16b87839f7db5c5b5525c0e800b83f35b3e642160e79d244017d"
+      },
+      {
+        "id": "e41ea77b4b77d148",
+        "sha256": "e41ea77b4b77d148e6631a2c0e4ff9a602e2964bc1235a75734ae51a8e63c503"
+      }
+    ]
+  },
+  "refutations": [
+    {
+      "claim_id": "3fdb8a37c800d708",
+      "claim_sha256": "3fdb8a37c800d7083948655737769aa92e41a31520543fb65144f6022e0fa7cd",
+      "challenge": "test the stated falsification: The execution receipt lacks 3 posted rows, includes an unverified row, or includes a platform outside X, Bluesky, and Mastodon.",
+      "measurable": "The execution receipt lacks 3 posted rows, includes an unverified row, or includes a platform outside X, Bluesky, and Mastodon.",
+      "source": "null"
+    },
+    {
+      "claim_id": "66132d0fcf0ba92b",
+      "claim_sha256": "66132d0fcf0ba92b7bf8c02ca6406ad87b4deda2341395c0348cff75ebb79f18",
+      "challenge": "test the stated falsification: The receipt lacks the X status URL, marks the wrong account, omits the repository link, or lacks a visible verification phrase.",
+      "measurable": "The receipt lacks the X status URL, marks the wrong account, omits the repository link, or lacks a visible verification phrase.",
+      "source": "null"
+    },
+    {
+      "claim_id": "36fadb5f1a21830c",
+      "claim_sha256": "36fadb5f1a21830c07012fab0d7667a8b1e9368dfb38e16a7843cd230cbda16f",
+      "challenge": "test the stated falsification: The receipt lacks the Bluesky post URL, marks the wrong account, marks a link included, or lacks a visible verification phrase.",
+      "measurable": "The receipt lacks the Bluesky post URL, marks the wrong account, marks a link included, or lacks a visible verification phrase.",
+      "source": "null"
+    },
+    {
+      "claim_id": "f4d2b933ed94b023",
+      "claim_sha256": "f4d2b933ed94b023f108e484f91d97f0a1147ca77e2960dfb36b1b5d55f2f018",
+      "challenge": "test the stated falsification: The receipt lacks the Mastodon status URL, marks the wrong account, omits the repository link, or lacks a visible verification phrase.",
+      "measurable": "The receipt lacks the Mastodon status URL, marks the wrong account, omits the repository link, or lacks a visible verification phrase.",
+      "source": "null"
+    },
+    {
+      "claim_id": "65b2f15567fb16b8",
+      "claim_sha256": "65b2f15567fb16b87839f7db5c5b5525c0e800b83f35b3e642160e79d244017d",
+      "challenge": "test the stated falsification: The receipt claims LinkedIn was posted, omits the skip reason, or treats the gated composer as a successful submission.",
+      "measurable": "The receipt claims LinkedIn was posted, omits the skip reason, or treats the gated composer as a successful submission.",
+      "source": "null"
+    },
+    {
+      "claim_id": "e41ea77b4b77d148",
+      "claim_sha256": "e41ea77b4b77d148e6631a2c0e4ff9a602e2964bc1235a75734ae51a8e63c503",
+      "challenge": "test the stated falsification: The receipt omits any named flagship tool status, marks a non-MATCH status as MATCH, or omits the Gather 1.6.0/current-status-string caveat.",
+      "measurable": "The receipt omits any named flagship tool status, marks a non-MATCH status as MATCH, or omits the Gather 1.6.0/current-status-string caveat.",
+      "source": "null"
+    }
+  ],
+  "assessment": {
+    "started_at": 1783060589.8276992,
+    "thesis_id": "7385b4211f319da9",
+    "thesis_seal": "7385b4211f319da9af7a6ca4c14888d97ad3468255983b824ac846c55a30bcdf",
+    "claims": 6,
+    "match": 6,
+    "drift": 0,
+    "unverifiable": 0,
+    "verdict_seal": "72b96e6d42df7caae5dac2062b76af8dff001c8637b84ca7a8569c5377e34dd6",
+    "measurement_seal": "b4649c44a172769e238d91683741da4b05cc7472a5101ea857ca7d145b3ff50a",
+    "disposition": "publishable",
+    "stored": null,
+    "verdicts": [
+      {
+        "claim_id": "3fdb8a37c800d708",
+        "claim_sha256": "3fdb8a37c800d7083948655737769aa92e41a31520543fb65144f6022e0fa7cd",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.1,
+        "margin": 1.0,
+        "method": "execution-receipt-count-scan",
+        "grounds": "deviation 0 within tolerance 0.1",
+        "disposition": "publishable"
+      },
+      {
+        "claim_id": "66132d0fcf0ba92b",
+        "claim_sha256": "66132d0fcf0ba92b7bf8c02ca6406ad87b4deda2341395c0348cff75ebb79f18",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.1,
+        "margin": 1.0,
+        "method": "x-owned-post-receipt-scan",
+        "grounds": "deviation 0 within tolerance 0.1",
+        "disposition": "publishable"
+      },
+      {
+        "claim_id": "36fadb5f1a21830c",
+        "claim_sha256": "36fadb5f1a21830c07012fab0d7667a8b1e9368dfb38e16a7843cd230cbda16f",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.1,
+        "margin": 1.0,
+        "method": "bluesky-owned-post-receipt-scan",
+        "grounds": "deviation 0 within tolerance 0.1",
+        "disposition": "publishable"
+      },
+      {
+        "claim_id": "f4d2b933ed94b023",
+        "claim_sha256": "f4d2b933ed94b023f108e484f91d97f0a1147ca77e2960dfb36b1b5d55f2f018",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.1,
+        "margin": 1.0,
+        "method": "mastodon-owned-post-receipt-scan",
+        "grounds": "deviation 0 within tolerance 0.1",
+        "disposition": "publishable"
+      },
+      {
+        "claim_id": "65b2f15567fb16b8",
+        "claim_sha256": "65b2f15567fb16b87839f7db5c5b5525c0e800b83f35b3e642160e79d244017d",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.1,
+        "margin": 1.0,
+        "method": "linkedin-gate-receipt-scan",
+        "grounds": "deviation 0 within tolerance 0.1",
+        "disposition": "publishable"
+      },
+      {
+        "claim_id": "e41ea77b4b77d148",
+        "claim_sha256": "e41ea77b4b77d148e6631a2c0e4ff9a602e2964bc1235a75734ae51a8e63c503",
+        "status": "MATCH",
+        "deviation": 0.0,
+        "tolerance": 0.1,
+        "margin": 1.0,
+        "method": "tool-status-receipt-scan",
+        "grounds": "deviation 0 within tolerance 0.1",
+        "disposition": "publishable"
+      }
+    ],
+    "measurements": [
+      {
+        "claim_id": "3fdb8a37c800d708",
+        "claim_sha256": "3fdb8a37c800d7083948655737769aa92e41a31520543fb65144f6022e0fa7cd",
+        "deviation": 0.0,
+        "tolerance": 0.1,
+        "method": "execution-receipt-count-scan",
+        "measured_at": 1783060589.827422,
+        "evidence": [
+          "C:/dev/public/telos/docs/outreach/receipts/thirty-seventh-owned-social-wave-execution-2026-07-03Z.md"
+        ]
+      },
+      {
+        "claim_id": "66132d0fcf0ba92b",
+        "claim_sha256": "66132d0fcf0ba92b7bf8c02ca6406ad87b4deda2341395c0348cff75ebb79f18",
+        "deviation": 0.0,
+        "tolerance": 0.1,
+        "method": "x-owned-post-receipt-scan",
+        "measured_at": 1783060589.8274302,
+        "evidence": [
+          "C:/dev/public/telos/docs/outreach/receipts/thirty-seventh-owned-social-wave-execution-2026-07-03Z.md"
+        ]
+      },
+      {
+        "claim_id": "36fadb5f1a21830c",
+        "claim_sha256": "36fadb5f1a21830c07012fab0d7667a8b1e9368dfb38e16a7843cd230cbda16f",
+        "deviation": 0.0,
+        "tolerance": 0.1,
+        "method": "bluesky-owned-post-receipt-scan",
+        "measured_at": 1783060589.827434,
+        "evidence": [
+          "C:/dev/public/telos/docs/outreach/receipts/thirty-seventh-owned-social-wave-execution-2026-07-03Z.md"
+        ]
+      },
+      {
+        "claim_id": "f4d2b933ed94b023",
+        "claim_sha256": "f4d2b933ed94b023f108e484f91d97f0a1147ca77e2960dfb36b1b5d55f2f018",
+        "deviation": 0.0,
+        "tolerance": 0.1,
+        "method": "mastodon-owned-post-receipt-scan",
+        "measured_at": 1783060589.8274367,
+        "evidence": [
+          "C:/dev/public/telos/docs/outreach/receipts/thirty-seventh-owned-social-wave-execution-2026-07-03Z.md"
+        ]
+      },
+      {
+        "claim_id": "65b2f15567fb16b8",
+        "claim_sha256": "65b2f15567fb16b87839f7db5c5b5525c0e800b83f35b3e642160e79d244017d",
+        "deviation": 0.0,
+        "tolerance": 0.1,
+        "method": "linkedin-gate-receipt-scan",
+        "measured_at": 1783060589.8274395,
+        "evidence": [
+          "C:/dev/public/telos/docs/outreach/receipts/thirty-seventh-owned-social-wave-execution-2026-07-03Z.md"
+        ]
+      },
+      {
+        "claim_id": "e41ea77b4b77d148",
+        "claim_sha256": "e41ea77b4b77d148e6631a2c0e4ff9a602e2964bc1235a75734ae51a8e63c503",
+        "deviation": 0.0,
+        "tolerance": 0.1,
+        "method": "tool-status-receipt-scan",
+        "measured_at": 1783060589.8274424,
+        "evidence": [
+          "C:/dev/public/telos/docs/outreach/receipts/thirty-seventh-owned-social-wave-execution-2026-07-03Z.md"
+        ]
+      }
+    ],
+    "seal": "c5f9ebdc1695994c508e5e6c535f0f3ff6f2f2bef6cf8e4fe53b77562fbddb68"
+  },
+  "verdicts": [
+    {
+      "claim_id": "3fdb8a37c800d708",
+      "claim_sha256": "3fdb8a37c800d7083948655737769aa92e41a31520543fb65144f6022e0fa7cd",
+      "status": "MATCH",
+      "disposition": "publishable",
+      "deviation": 0.0,
+      "tolerance": 0.1,
+      "margin": 1.0,
+      "method": "execution-receipt-count-scan",
+      "grounds": "deviation 0 within tolerance 0.1"
+    },
+    {
+      "claim_id": "66132d0fcf0ba92b",
+      "claim_sha256": "66132d0fcf0ba92b7bf8c02ca6406ad87b4deda2341395c0348cff75ebb79f18",
+      "status": "MATCH",
+      "disposition": "publishable",
+      "deviation": 0.0,
+      "tolerance": 0.1,
+      "margin": 1.0,
+      "method": "x-owned-post-receipt-scan",
+      "grounds": "deviation 0 within tolerance 0.1"
+    },
+    {
+      "claim_id": "36fadb5f1a21830c",
+      "claim_sha256": "36fadb5f1a21830c07012fab0d7667a8b1e9368dfb38e16a7843cd230cbda16f",
+      "status": "MATCH",
+      "disposition": "publishable",
+      "deviation": 0.0,
+      "tolerance": 0.1,
+      "margin": 1.0,
+      "method": "bluesky-owned-post-receipt-scan",
+      "grounds": "deviation 0 within tolerance 0.1"
+    },
+    {
+      "claim_id": "f4d2b933ed94b023",
+      "claim_sha256": "f4d2b933ed94b023f108e484f91d97f0a1147ca77e2960dfb36b1b5d55f2f018",
+      "status": "MATCH",
+      "disposition": "publishable",
+      "deviation": 0.0,
+      "tolerance": 0.1,
+      "margin": 1.0,
+      "method": "mastodon-owned-post-receipt-scan",
+      "grounds": "deviation 0 within tolerance 0.1"
+    },
+    {
+      "claim_id": "65b2f15567fb16b8",
+      "claim_sha256": "65b2f15567fb16b87839f7db5c5b5525c0e800b83f35b3e642160e79d244017d",
+      "status": "MATCH",
+      "disposition": "publishable",
+      "deviation": 0.0,
+      "tolerance": 0.1,
+      "margin": 1.0,
+      "method": "linkedin-gate-receipt-scan",
+      "grounds": "deviation 0 within tolerance 0.1"
+    },
+    {
+      "claim_id": "e41ea77b4b77d148",
+      "claim_sha256": "e41ea77b4b77d148e6631a2c0e4ff9a602e2964bc1235a75734ae51a8e63c503",
+      "status": "MATCH",
+      "disposition": "publishable",
+      "deviation": 0.0,
+      "tolerance": 0.1,
+      "margin": 1.0,
+      "method": "tool-status-receipt-scan",
+      "grounds": "deviation 0 within tolerance 0.1"
+    }
+  ],
+  "measurement_warnings": [],
+  "checks": {
+    "seals_ok": true,
+    "thesis_ok": true,
+    "verdicts_rederive": true
+  },
+  "report": "C:/dev/public/telos/docs/outreach/receipts/thirty-seventh-owned-social-wave-execution-crucible-report-2026-07-03Z.md",
+  "record": "C:/dev/public/telos/docs/outreach/receipts/thirty-seventh-owned-social-wave-execution-crucible-run-2026-07-03Z.json",
+  "bundle": null,
+  "spec": null,
+  "review": null,
+  "verifier": {
+    "mode": "cleanroom",
+    "inputs": [],
+    "excluded": [
+      "worker context",
+      "reasoning trace",
+      "intermediate steps"
+    ],
+    "checkability": "If success cannot be evaluated from the original spec and the artifact, the spec is not checkable yet."
+  }
+}
