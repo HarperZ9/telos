@@ -84,6 +84,15 @@ function subsetMismatches(expected, actual, prefix = "") {
 }
 
 function serverPacket(name, server) {
+  // A healthy server exposes its full declared surface: the core expected
+  // tools plus the auxiliary tools the manifest lists as optional-but-known.
+  // Comparing observed tools against expected_tools alone flags every
+  // legitimate auxiliary tool as drift, so the tool-surface hash uses the
+  // union. expected_tools is still reported for the subset contract.
+  const declaredTools = [...new Set([
+    ...(server.expected_tools ?? []),
+    ...(server.auxiliary_tools ?? [])
+  ])].sort();
   return {
     flagship: server.flagship,
     status_tool: server.freshness.status_tool,
@@ -91,6 +100,8 @@ function serverPacket(name, server) {
     expected_current_status: server.freshness.expected_current_status,
     expected_tools: server.expected_tools,
     expected_tool_hash: expectedToolHash(server.expected_tools),
+    auxiliary_tools: server.auxiliary_tools ?? [],
+    declared_tool_hash: expectedToolHash(declaredTools),
     behavior_probes: server.freshness.behavior_probes ?? [],
     probe_contract: {
       observed_server_info_required: true,
@@ -98,7 +109,7 @@ function serverPacket(name, server) {
       observed_status_payload_required: true,
       compare_server_info_version_to: "expected_version",
       compare_status_tool_version_to: "expected_version",
-      compare_tools_list_hash_to: "expected_tool_hash",
+      compare_tools_list_hash_to: "declared_tool_hash",
       observed_behavior_probes_required: (server.freshness.behavior_probes ?? []).length > 0,
       compare_behavior_probe_subset_to: "expected_subset"
     },
@@ -187,15 +198,18 @@ export function evaluateObservedServer(name, observed) {
     });
   }
 
-  if (toolHash && toolHash !== expected.expected_tool_hash) {
-    const expectedSet = new Set(expected.expected_tools);
+  if (toolHash && toolHash !== expected.declared_tool_hash) {
+    const declaredSet = new Set([
+      ...expected.expected_tools,
+      ...expected.auxiliary_tools
+    ]);
     const observedSet = new Set(toolNames);
     diagnostics.push({
       code: "tool_surface_drift",
-      expected: expected.expected_tool_hash,
+      expected: expected.declared_tool_hash,
       observed: toolHash,
       missing_tools: expected.expected_tools.filter((tool) => !observedSet.has(tool)),
-      unexpected_tools: toolNames.filter((tool) => !expectedSet.has(tool))
+      unexpected_tools: toolNames.filter((tool) => !declaredSet.has(tool))
     });
   }
 
@@ -251,7 +265,7 @@ export function evaluateObservedServer(name, observed) {
     expected: {
       version: expected.expected_version,
       current_status: expected.expected_current_status,
-      tool_hash: expected.expected_tool_hash,
+      tool_hash: expected.declared_tool_hash,
       behavior_probes: expected.behavior_probes
     },
     observed: {

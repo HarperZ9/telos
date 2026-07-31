@@ -90,7 +90,7 @@ const observedForumMatch = {
   initialize: { result: { serverInfo: { name: "forum", version: "1.13.0" } } },
   tools_list: {
     result: {
-      tools: packet.servers.forum.expected_tools.map((name) => ({ name }))
+      tools: [...packet.servers.forum.expected_tools, ...packet.servers.forum.auxiliary_tools].map((name) => ({ name }))
     }
   },
   status_payload: {
@@ -120,7 +120,7 @@ assert.equal(match.schema, "project-telos.mcp-freshness-observation/v1");
 assert.equal(match.server, "forum");
 assert.equal(match.verdict, "MATCH");
 assert.deepEqual(match.failure_codes, []);
-assert.equal(match.observed.tool_hash, packet.servers.forum.expected_tool_hash);
+assert.equal(match.observed.tool_hash, packet.servers.forum.declared_tool_hash);
 assert.equal(match.observed.behavior_probes["forum-broad-telos-route"].verdict, "MATCH");
 assert.equal(match.observed.behavior_probes["forum-private-line-telos-route"].verdict, "MATCH");
 
@@ -139,7 +139,7 @@ const observedIndexMatch = {
   initialize: { result: { serverInfo: { name: "index-graph", version: "2.9.0" } } },
   tools_list: {
     result: {
-      tools: packet.servers.index.expected_tools.map((name) => ({ name }))
+      tools: [...packet.servers.index.expected_tools, ...packet.servers.index.auxiliary_tools].map((name) => ({ name }))
     }
   },
   status_payload: {
