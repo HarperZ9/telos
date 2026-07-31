@@ -4,6 +4,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { actionEnvelope } from "./flagship-action.mjs";
 import { flagshipPreflight, describeMissing } from "./flagship-preflight.mjs";
+import { normalizeRoomStatus, roomCheckPasses } from "./room-status.mjs";
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const telosRoot = path.resolve(here, "..");
@@ -80,10 +81,12 @@ function collectRoom() {
   };
   const tools = Object.keys(status).map((name) => {
     const checks = doctor[name].native.checks ?? [];
-    const passed = checks.filter((check) => check.status === "MATCH").length;
+    const sourceStatus = status[name].status;
+    const passed = checks.filter((check) => roomCheckPasses(name, check.status)).length;
     return {
       tool: name,
-      status: status[name].status,
+      status: normalizeRoomStatus(name, sourceStatus),
+      source_status: sourceStatus,
       role: status[name].native.role,
       checks_passed: passed,
       checks_total: checks.length,

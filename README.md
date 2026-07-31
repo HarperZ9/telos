@@ -1,323 +1,145 @@
-<p align="center">
-  <img src="docs/brand/telos-hero.png" alt="Project Telos, shared AI workspaces for creation, simulation, and verification">
-</p>
-<!-- Project mark: docs/brand/telos-mark.svg -->
+<p align="center"><img src=".github/assets/zentropy-banner.png" alt="telos: The shared workbench: durable state, native workstation control, sensory organs, a discovery forge." width="100%"></p>
 
-# Project Telos
+**The shared workbench: durable state, native workstation control, sensory organs, a discovery forge.**
 
-> Create, simulate, verify, and replay work with AI.
+![version](https://img.shields.io/badge/version-0.2.0-9683ff?style=flat-square&labelColor=14041b)
+![license](https://img.shields.io/badge/license-FSL--1.1--ALv2-8f8095?style=flat-square&labelColor=14041b)
+[![CI](https://github.com/HarperZ9/telos/actions/workflows/ci.yml/badge.svg)](https://github.com/HarperZ9/telos/actions/workflows/ci.yml)
+![node](https://img.shields.io/badge/node-24%20CI%2C%2020%2B%20registry-9683ff?style=flat-square&labelColor=14041b)
+![deps](https://img.shields.io/badge/deps-none-9683ff?style=flat-square&labelColor=14041b)
+
+Telos is a zero-dependency local workbench for creating, simulating, and replaying AI work. It ships a five-server MCP surface plus CLI fallbacks: doctors for CI, presentation, accessibility, performance, and compatibility, a creative engine with deterministic kernels and ten measurement meters, model-foundry and learning-forge lanes, and research proof packets spanning causal, embodied, and quantum demos. It ties gather, index, forum, and crucible into one operator map you can run with a single `node demo/run.mjs`. Every run writes a receipt you can re-check.
 
 [Project Telos](https://harperz9.github.io) | [gather](https://github.com/HarperZ9/gather) | [crucible](https://github.com/HarperZ9/crucible) | [index](https://github.com/HarperZ9/index) | [forum](https://github.com/HarperZ9/forum) | [telos](https://github.com/HarperZ9/telos) | [learn](https://github.com/HarperZ9/learn) | [emet](https://github.com/HarperZ9/emet) | [buildlang](https://github.com/HarperZ9/buildlang)
 
-![node: 24 CI, 20+ registry](https://img.shields.io/badge/node-24%20CI%2C%2020%2B%20registry-blue.svg)
-![CI](https://github.com/HarperZ9/telos/actions/workflows/ci.yml/badge.svg)
-![version: 0.2.0](https://img.shields.io/badge/version-0.2.0-informational.svg)
-![deps: none](https://img.shields.io/badge/deps-none-success.svg)
-![license: fair-source](https://img.shields.io/badge/license-fair--source-blue.svg)
+## What it does
+
+- **One MCP surface over five flagships.** `node demo/telos-mcp.mjs` (or `npm start`) runs a stdio MCP server exposing 41 native `telos.*` tools, and the server manifest launches gather, index, forum, and crucible beside it: 69 tools total plus 29 declared auxiliary compatibility tools, with ready-to-paste host config for Codex (TOML), Claude (JSON), and OpenAI Agents.
+- **Four proof lanes through one CLI.** `node demo/proof.mjs` assembles agent-action, research-claim, visual-truth, and build proof packets. Each has a pure verifier that recomputes every load-bearing claim from materials embedded in the packet, so a canned pass is structurally impossible, and `node demo/proof.mjs verify <packet.json>` replays any of them by schema id.
+- **Nine doctors.** CI doctor and CI triage read GitHub Actions state and separate fatal failures from runtime migration warnings. Presentation, accessibility, performance, compatibility, and operator doctors audit README parity, static a11y, byte budgets, protocol coverage, and discoverability. All run offline against local checkouts.
+- **A creative engine you can measure.** Deterministic kernels (ordered dither, pixel sort, harmonograph, clustered light), a WebGPU/WebGL/canvas/static renderer selection contract, and ten runnable meters across histogram, dither, splat, cluster, audio, flicker, curvature, interaction, uncertainty, and frame-budget signals. The visual surface lives at [`demo/index.html`](demo/index.html).
+- **Research proof packets.** Deterministic preflights for causal inference (toy-DAG minimal adjustment set), embodied sim-to-real (differential drive with safety envelope and latency bound), and quantum error correction (3-qubit bit-flip stabilizer code), each with negative controls and explicit non-claims.
+- **Model foundry and learning forge.** A bounded contract for routing work across hosted frontier APIs and local open-weight models, seven executable lab contracts with failure cases and metrics, and a self-improving daemon loop that only promotes verified changes.
+- **Context tooling for large codebases.** Budgeted, validated context packs and envelopes for handing a big workspace to a model without losing provenance.
+- **Native workstation control.** `node demo/native-control.mjs` drives the browser via the Chrome DevTools Protocol and native apps via Windows UI Automation, delivering synthetic events so the operator's cursor and keyboard stay free; the MCP tool `telos.native.control` is the read-only capability catalog, and browser-evidence packets make automated browsing reviewable.
 
 ## Try it
 
-Zero dependencies. Use Node 20 or newer for registry and Docker parity; CI currently runs on Node 24.
+Zero runtime dependencies. Node 20 or newer; CI runs on Node 24.
 
 ```bash
-node demo/run.mjs
-node demo/catalog.mjs --summary
-node demo/server-manifest.mjs --summary
-node demo/ci-doctor.mjs --summary
-node demo/ci-triage.mjs --summary
-node demo/ci-triage.mjs --gh-run HarperZ9/seed#28353077838 --summary
-node demo/presentation-doctor.mjs --summary
-node demo/accessibility-doctor.mjs --summary
-node demo/performance-doctor.mjs --summary
-node demo/compatibility-doctor.mjs --summary
-node demo/operator-doctor.mjs --summary
-node demo/context-envelope.mjs
-node demo/context-pack.mjs
-node demo/action-receipt.mjs
-node demo/loop-ledger.mjs
-node demo/model-foundry.mjs --summary
-node demo/learning-forge.mjs
-node demo/learning-forge-labs.mjs --summary
-node demo/causal-workbench-proof-packet.mjs --summary
-node demo/embodied-sim2real-proof-packet.mjs --summary
-node demo/quantum-error-correction-proof-packet.mjs --summary
-node demo/showcase.mjs scout --fixture --json
-node demo/thermodynamic-ai-chip-receipt.mjs
-node demo/rendering-research.mjs
-node demo/rendering-capabilities.mjs --summary
-node demo/measurement-layers.mjs --summary
-node demo/creative-engine.mjs
-node demo/creative-kernels.mjs --summary
-node demo/revival-registry.mjs --summary
-node demo/second-level-flagship-queue.mjs --summary
-node demo/workstation-substrate.mjs --summary
-node demo/display-calibration.mjs --summary
-```
-
-Open the visual certificate-loop surface at [`demo/index.html`](demo/index.html).
-Use `node demo/catalog.mjs --summary` for a compact operator map of the CLI and MCP surface.
-Use `node demo/server-manifest.mjs --summary` for the five-server MCP launch map.
-Use `npm start` or `node demo/telos-mcp.mjs` to run the Telos stdio MCP server for registry and host introspection.
-Use `node demo/mcp-freshness.mjs --observed observed.json` to turn host-loaded MCP state, including declared behavior probes, into a `MATCH`, `DRIFT`, or `UNVERIFIABLE` freshness verdict.
-Use `node demo/ci-doctor.mjs --summary` for the five-flagship GitHub Actions compatibility receipt: latest CI state, Node 24 migration markers, action-major baselines, and failure routes. Use `node demo/ci-doctor.mjs --scan-root .. --summary` to rescan local flagship workflow files without raw logs, GitHub writes, or workflow mutation.
-Use `node demo/ci-triage.mjs --summary` for offline CI failure routing receipts, or `node demo/ci-triage.mjs --gh-run owner/repo#run_id --summary` for live read-only GitHub Actions intake. Fatal test/format/step failures are separated from Node runtime migration warnings before remediation is chosen.
-Use `node demo/presentation-doctor.mjs --summary` for the five-flagship README, changelog, and brand-asset parity receipt. It scans sibling checkouts and emits `MATCH`, `DRIFT`, or `UNVERIFIABLE` without raw document bodies or absolute paths.
-Use `python tools/audit_repo_presentation.py --root C:\dev\public` for the broader public/developer README presentation audit across local forward-facing repositories.
-Use `node demo/accessibility-doctor.mjs --summary` for static Studio accessibility receipts: language, viewport, skip link, focus-visible, reduced motion, labeled controls, live regions, and canvas fallbacks without raw HTML or browser automation.
-Use `node demo/performance-doctor.mjs --summary` for static Studio performance and efficiency receipts: byte budgets, script/style/font budgets, approved external hosts, media dimensions, motion/autoplay controls, and embedding-safe asset checks without raw HTML or browser automation.
-Use `node demo/compatibility-doctor.mjs --summary` for protocol-agnostic host receipts: catalog and manifest schemas, CLI fallback coverage, MCP availability, host exports, freshness probes, HTTPS source refs, and private-path hygiene.
-Use `node demo/operator-doctor.mjs --summary` for operator UX/discoverability receipts: README quick start, status command surface, catalog/MCP parity, CI coverage, current-state docs, host-language coverage, and next-action guidance.
-Use `node demo/context-pack.mjs` for a runnable, budgeted, receipt-backed context packet with validation for large-codebase handoffs.
-Use `node demo/action-receipt.mjs` for the durable external-write receipt contract: proposed intent, authority, execution, redacted evidence, review, compensation, trace joins, and typed failure codes without requiring raw private payloads.
-Use `node demo/model-foundry.mjs --summary` for the bounded model-foundry and self-improving daemon contract: frontier orchestration where appropriate, local/open-weight runtimes where useful, post-training labs where feasible, and crucible-gated promotion.
-Use `node demo/learning-forge.mjs` for the receipt-backed education and research-lab packet that turns video/channel/paper/benchmark leads into source refs, concept modules, failure cases, and Crucible gates while keeping YouTube claims `UNVERIFIABLE` until Gather captures metadata and transcripts.
-Use `node demo/learning-forge-labs.mjs --summary` for the executable Learning Forge lab contract: tiny autoregressive prediction, accuracy-per-token verification, MCP action receipts, coding-agent contamination checks, explanation faithfulness, spec representation, and stochastic-compute measurement.
-Use `node demo/causal-workbench-proof-packet.mjs --summary` for the causal research workbench preflight: a deterministic toy-DAG proof packet that verifies the exact minimal adjustment set `age + baseline_health`, rejects negative controls, and blocks causal-discovery, LLM causal-reasoning, biomedical, and BuildLang/buildc-native claims for this pass.
-Use `node demo/embodied-sim2real-proof-packet.mjs --summary` for the embodied robotics preflight: a deterministic differential-drive sim-to-real proof packet with units, command logs, predicted and observed traces, tolerances, safety envelope, latency bound, negative controls, and explicit non-claims.
-Use `node demo/quantum-error-correction-proof-packet.mjs --summary` for the quantum error-correction preflight: a deterministic 3-qubit bit-flip stabilizer proof packet with logical states, stabilizers, syndrome table, correction map, negative controls, and explicit non-claims.
-Use `node demo/showcase.mjs scout --fixture --json` for the OSS Proof Showcase lane: fixture-first public issue ranking, PR-readiness packet shape, and optional live GitHub scout smoke without making public changes.
-Use `node demo/rendering-capabilities.mjs --summary` for the WebGPU/WebGL/canvas/static renderer selection and fallback contract.
-Use `node demo/measurement-layers.mjs --summary` for ten runnable meters across histogram, dither, splat, cluster, audio, flicker, curvature, interaction, uncertainty, and frame budget signals.
-Use `node demo/creative-engine.mjs --summary` for the whole creation-engine contract: raster effects, sound, typography, math/physics, node graphs, revived organs, and receipts.
-Use `node demo/creative-kernels.mjs --summary` for deterministic ordered-dither, pixel-sort, harmonograph, and clustered-light kernels.
-Use `node demo/revival-registry.mjs --summary` for the first promotion registry of older, siloed, and frozen tools being pulled toward flagship status.
-Use `node demo/second-level-flagship-queue.mjs --summary` for the public-safe queue of second-level flagship candidates discovered during whole-workstation substrate assessment.
-Use `node demo/workstation-substrate.mjs --summary` for the public-safe aggregate intake map of the operator development and profile workspaces.
-Use `node demo/display-calibration.mjs --summary` for the read-only Calibrate Pro and Quanta Color display-calibration contract.
-Use `node demo/browser-evidence.mjs --summary` for the browser evidence kernel contract: automated browsing receipts with redacted page-state digests, side-effect classes, and `MATCH` / `DRIFT` / `UNVERIFIABLE` verification for Index/Forum-mediated council review.
-
-## Why it matters
-
-The hard part of AI work is not producing an answer. It is keeping sources, workspace state,
-agent routes, action boundaries, measurements, and creative artifacts close enough that a
-human or another system can re-check what happened. Telos is the workbench for that: a
-local MCP surface that ties gather, index, forum, crucible, and telos into receipts,
-manifests, ledgers, model-foundry lanes, creative engines, and public research packets.
-Browser evidence packets make automated browsing and work actuation reviewable by the same local pipeline: deterministic gates preserve refs and digests first, then Index and Forum route richer context into council/review paths when the work merits model overhead.
-
-## Work with it
-
-Bring a workflow where the record matters: research intake, editorial claims, agent
-routing, clinical-adjacent review, design pipelines, graphics/math/science demos,
-due diligence, or any loop where an honest UNVERIFIABLE is worth more than a polished
-guess. The useful next pressure is verification, testing against real workflows, early
-traction from people willing to inspect receipts, collaborator feedback, and modest
-grassroots research funding.
-
-## Roadmap and consolidation
-
-Project Telos is now tracked as a frontier R&D substrate, not only as an
-agent-accountability demo. The current consolidation plan is
-[`docs/PROJECT-TELOS-LARGE-SCALE-ROADMAP-2026-07-02.md`](docs/PROJECT-TELOS-LARGE-SCALE-ROADMAP-2026-07-02.md):
-it maps Telos, Gather, Index, Forum, Crucible, Learn, BuildLang/buildc,
-build-universe, Build Color, calibration, model foundry, browser evidence, and
-research packets into a family of proof-centered megatools.
-
-The documentation control plane is
-[`docs/DOCUMENTATION-CONSOLIDATION-REGISTRY-2026-07-02.md`](docs/DOCUMENTATION-CONSOLIDATION-REGISTRY-2026-07-02.md).
-It classifies docs as public index, official, whitepaper, proof demo,
-paper candidate, internal source, quarantine-and-adapt, or deprecated lineage.
-The machine-readable registry is
-[`docs/registry/documentation-registry.json`](docs/registry/documentation-registry.json),
-and the current publication queue is
-[`docs/research/PUBLICATION-QUEUE-2026-07-02.md`](docs/research/PUBLICATION-QUEUE-2026-07-02.md).
-The cross-repo documentation catalog is
-[`docs/registry/PUBLIC-WORKSPACE-DOC-CATALOG-2026-07-02.md`](docs/registry/PUBLIC-WORKSPACE-DOC-CATALOG-2026-07-02.md).
-The Senses and Sensibility subregistry is
-[`docs/registry/SENSES-AND-SENSIBILITY-SUBREGISTRY-2026-07-02.md`](docs/registry/SENSES-AND-SENSIBILITY-SUBREGISTRY-2026-07-02.md).
-The Build ecosystem subregistry is
-[`docs/registry/BUILD-ECOSYSTEM-SUBREGISTRY-2026-07-02.md`](docs/registry/BUILD-ECOSYSTEM-SUBREGISTRY-2026-07-02.md).
-The proof/witnessing subregistry is
-[`docs/registry/PROOF-WITNESSING-SUBREGISTRY-2026-07-02.md`](docs/registry/PROOF-WITNESSING-SUBREGISTRY-2026-07-02.md).
-The Telos repo subregistry is
-[`docs/registry/TELOS-REPO-SUBREGISTRY-2026-07-02.md`](docs/registry/TELOS-REPO-SUBREGISTRY-2026-07-02.md).
-The frontier R&D posture is
-[`docs/FRONTIER-RD-OPERATING-POSTURE-2026-07-02.md`](docs/FRONTIER-RD-OPERATING-POSTURE-2026-07-02.md):
-advanced computation, AI/ML, mathematics, physics, biology, medicine,
-robotics, cybernetics, quant, finance, color/rendering/scientific compute,
-nuclear and energy systems, and defense-adjacent technology are in scope when
-the work is routed through source evidence, bounded experiments, receipts,
-verification, and publication gates.
-
-## What to test first
-
-- Pick a workflow where a model answer is not enough: source intake, codebase handoff, agent action, creative export, or math/physics demo.
-- Run the closest demo or packet and ask whether the receipt preserves the state a reviewer would need tomorrow.
-- If the answer is no, the most useful feedback is the missing sensor, meter, receipt field, or replay handle. Telos should grow by making real workflows more inspectable, not by adding claims the record cannot support.
-
-## Telos Creative Engine
-
-The Studio is now presented as a whole creation engine, not only a visual demo. `node demo/creative-engine.mjs` returns the host-neutral manifest for generative art, retro CGI, raster effects, sound, film/media, typography, math/physics, node graphs, renderer capability probes, runnable sensor/measurement layers, deterministic creative kernels, and verification. It also records the old engine organs to revive next: `demo/render-nd`, `demo/render-sound`, `demo/sense-core`, `demo/viable-viz`, the sibling `studio-engine` raster/sonify/flowfield/harmonograph/WebAudio organs, and `studio-libs/render-sound`.
-
-Every creative action should remain receipt-backed: scene specs, hashes, replay handles, and one of `MATCH`, `DRIFT`, or `UNVERIFIABLE`. `node demo/rendering-capabilities.mjs` keeps WebGPU Gaussian-splat/clustered prototypes, WebGL2 previews, Canvas 2D receipts, and static artifact fallbacks in one selectable contract. `node demo/measurement-layers.mjs` turns pixels, dither patterns, splat fields, light clusters, and waveforms into measurable packets before crucible verdicts. `node demo/creative-kernels.mjs` gives hosts a shared deterministic core for ordered dithering, pixel sorting, plotter paths, and clustered-light bins. The public demo uses Kilon for display typography and Conso for utility text while keeping purchased font files out of the repository.
-
-The current research queue also includes receipt-only source leads from Inigo Quilez and adjacent math, physics, AI-progress, GPU-kernel, and educator videos under [`demo/research/youtube-math-educator-receipts.json`](demo/research/youtube-math-educator-receipts.json). Those leads shape the engine toward formula-visible, perturbable demos for mathematicians, physicists, shader artists, and teachers; video metadata is not promoted to scientific or benchmark evidence until stronger sources and crucible checks exist. The newer Learning Forge seed packet is gathered under [`demo/research/youtube-learning-forge-receipts.json`](demo/research/youtube-learning-forge-receipts.json), with eight video metadata/transcript receipts and two channel-list receipts kept separate from raw transcript bodies. The TI Morse / Relentless field pass under [`demo/research/youtube-ti-morse-field-receipts.json`](demo/research/youtube-ti-morse-field-receipts.json) adds five video metadata/transcript receipts and one bounded channel-list receipt for industrial science, causal inference, ARC-style benchmarks, microscopy/materials, and AI-scale infrastructure; all domain claims remain `UNVERIFIABLE_UNTIL_PRIMARY_SOURCE_OR_REPLAY`.
-
-The causal research workbench preflight under [`demo/research/causal-workbench-source-receipts.json`](demo/research/causal-workbench-source-receipts.json) and `node demo/causal-workbench-proof-packet.mjs --summary` promotes the causal lane into a replayable toy-DAG receipt. It returns `CAUSAL_DAG_FIXTURE_MATCH`, verifies `age + baseline_health` as the exact minimal adjustment set, rejects configured negative controls, and explicitly does not claim causal discovery, LLM causal reasoning, medical recommendation, or BuildLang/buildc-native execution yet.
-
-The embodied sim-to-real preflight under [`demo/research/embodied-sim2real-source-receipts.json`](demo/research/embodied-sim2real-source-receipts.json) and `node demo/embodied-sim2real-proof-packet.mjs --summary` promotes the robotics lane into a replayable differential-drive receipt. It returns `EMBODIED_SIM2REAL_FIXTURE_MATCH`, checks units, commands, traces, safety envelope, latency, and five negative controls, and explicitly does not claim real robot safety, surgical/medical validity, foundation-model validation, large-scale sim-to-real transfer, or BuildLang/buildc-native execution yet.
-
-The quantum error-correction preflight under [`demo/research/quantum-error-correction-source-receipts.json`](demo/research/quantum-error-correction-source-receipts.json) and `node demo/quantum-error-correction-proof-packet.mjs --summary` promotes the quantum-computing lane into a replayable 3-qubit stabilizer-code receipt. It returns `QEC_STABILIZER_FIXTURE_MATCH`, checks no-error and single Pauli-X recovery for both logical basis states, rejects or marks unverifiable five negative controls, and explicitly does not claim surface-code decoding, hardware QEC, fault-tolerant computation, quantum advantage, cryptographic security, or BuildLang/buildc-native execution yet.
-
-`node demo/thermodynamic-ai-chip-receipt.mjs` promotes the verified Machine Learning Street Talk interview with Thomas Ahle into a transcript-backed Telos research packet. The packet turns the discussion into a public-source integration lane for Normal Computing-adjacent work: spec representation, Verilog/formal receipts, stochastic simulation, uncertainty meters, and hybrid search/check loops. It records transcript themes as `MATCH`, treats Telos integration as `INFERRED`, and keeps Normal Computing, ProgramBench, and thermodynamic-chip technical correctness `UNVERIFIABLE_FROM_THIS_PACKET` until primary sources and independent checks promote them.
-
-## Telos Model Foundry
-
-The true model direction is not pretending this repo can reproduce frontier-lab pretraining on a workstation. `node demo/model-foundry.mjs` defines Telos as the foundry around models: hosted frontier APIs for hard tool-heavy work when policy and privacy allow, local/open-weight models for private or cheap work, feasible post-training experiments, typed MCP tools, lossless-by-reference workspace memory, and eval gates before any promotion.
-
-The post-training lane now has an RL scaling receipt-spine target in [`docs/research/rl-scaling-receipt-spine.md`](docs/research/rl-scaling-receipt-spine.md). It uses current THUDM/slime repository metadata as a benchmark signal while keeping Telos focused on durable rollout, verifier, reward, compute, checkpoint, and promotion receipts rather than unverified training claims.
-
-`node demo/learning-forge.mjs` is the research-to-teaching lane. It stores the supplied AI videos and channels as source leads, joins them to current lawful sources such as NeurIPS education/reproducibility/evaluation calls, planning-agent references, reasoning and software-agent benchmark papers, MCP, and observability specs, then defines labs with failure cases and Crucible gates. It does not promote video-specific claims until Gather has metadata and transcript receipts.
-
-`node demo/learning-forge-labs.mjs` turns that lane into seven executable lab contracts. Each lab has source refs, a runnable command, expected artifacts, failure cases, measurement metrics, and a five-flagship flow across Gather, Index, Forum, Crucible, and Telos. The attached operator research packet is represented by digest receipt only; raw video, raw transcripts, and raw attachment text stay out of the repository.
-
-The self-improving daemon lives here as a bounded loop. It gathers fresh evidence, indexes the workspace, routes one improvement, admits one action, executes one patch or experiment, runs crucible, checks objective drift, and promotes only `MATCH`. `DRIFT` blocks; `UNVERIFIABLE` asks for evidence instead of training itself on a guess.
-
-## Legacy Tool Revival
-
-`node demo/revival-registry.mjs` is the first promotion registry for the older and frozen tools that should stop living as isolated experiments. It currently pulls Calibrate Pro, Quanta Color, QuantaLang/quantac, WARDEN security lineage, Agent Audit, Context Curator Lite, Secret Redact IO, Repo Proof Index, Release Surface Scanner, GPU Trace Validator, raw-native, studio-libs, and the Forum archive into explicit Telos lanes with origin paths, Gather-backed README digests, risk boundaries, flagship hosts, and next actions. The local-only entries are sanitized lane records only; raw private viability notes stay outside the repository.
-
-`node demo/second-level-flagship-queue.mjs` is the next wave. It records 15 public-safe candidates: Reconcile, Studio Engine, Provenance Sensorium, Proof Surface, Model Provenance Validator, Public Surface Sweeper, Agent Routing Kit, Agent Hook Pack, Coherence Membrane, Workflow Harness Lite, Accountable Engine, Accountable Surface, Anomaly Kernels, Signal Kernels, and the Rewardspy concept lane. Private/local-only work is reduced to lane families. Those candidates move into the active registry only after an adapter, fixture, or crucible-verifiable claim exists.
-
-`node demo/workstation-substrate.mjs` is the broader workstation intake register. It records aggregate Index counts for the operator development and profile roots, then reduces sensitive local material into lane families such as local-only prototypes, agent/plugin caches, temp fixtures, release assurance, creative media, research attachments, and sensitive corpora. It intentionally excludes raw private paths, filenames, payloads, credential material, signing artifacts, and runbooks.
-
-The first rule is visibility before transplanting: a dormant tool gets a lane, a source receipt, a privacy boundary, CLI/MCP or adapter roadmap, tests, and a target host before shared code becomes a runtime dependency. Calibrate Pro and Quanta Color become the display-calibration and color-science lane for Telos measurement layers. Context Curator Lite becomes the context-envelope source for token-efficient large-workspace handoffs. QuantaLang becomes the effects-language candidate for creative kernels. WARDEN is carried forward only as defensive, authorized, good-faith find-and-fix lineage with synthetic labs and maintainer-friendly patch workflows.
-
-`node demo/display-calibration.mjs` is the first promoted Calibrate Pro lane. It defines a read-only `project-telos.display-calibration/v1` packet for display targets, color spaces, patch sets, ICC/LUT/report artifact refs, Quanta Color metrics, privacy boundaries, and crucible measurement gates. It does not call DDC/CI, mutate monitor settings, apply LUTs, write ICC files, or require raw private device telemetry.
-
-## Current status
-
-- **Release:** `0.2.0` source registry package; command surface is `node demo/run.mjs`, `node demo/room.mjs`, `node demo/status.mjs`, `node demo/doctor.mjs`, `node demo/catalog.mjs`, `node demo/server-manifest.mjs`, `node demo/mcp-freshness.mjs`, `node demo/ci-doctor.mjs`, `node demo/ci-triage.mjs`, `node demo/presentation-doctor.mjs`, `node demo/accessibility-doctor.mjs`, `node demo/performance-doctor.mjs`, `node demo/compatibility-doctor.mjs`, `node demo/operator-doctor.mjs`, `node demo/admission-telemetry.mjs`, `node demo/context-envelope.mjs`, `node demo/context-pack.mjs`, `node demo/action-receipt.mjs`, `node demo/loop-ledger.mjs`, `node demo/model-foundry.mjs`, `node demo/learning-forge.mjs`, `node demo/learning-forge-labs.mjs`, `node demo/showcase.mjs`, `node demo/research-seed.mjs`, `node demo/thermodynamic-ai-chip-receipt.mjs`, `node demo/rendering-research.mjs`, `node demo/rendering-capabilities.mjs`, `node demo/measurement-layers.mjs`, `node demo/creative-engine.mjs`, `node demo/creative-kernels.mjs`, `node demo/revival-registry.mjs`, `node demo/second-level-flagship-queue.mjs`, `node demo/workstation-substrate.mjs`, `node demo/display-calibration.mjs`, `node demo/browser-evidence.mjs`, `node demo/proof.mjs`, and `node demo/flagship-workflow.mjs`.
-- **Operator surface:** `node demo/telos-mcp.mjs` exposes native MCP tools: `telos.status`, `telos.doctor`, `telos.room`, `telos.catalog`, `telos.workflow`, `telos.server.manifest`, `telos.mcp.freshness`, `telos.ci.doctor`, `telos.ci.triage`, `telos.presentation.doctor`, `telos.accessibility.doctor`, `telos.performance.doctor`, `telos.compatibility.doctor`, `telos.operator.doctor`, `telos.admission.telemetry`, `telos.context.envelope`, `telos.context.pack`, `telos.action.receipt`, `telos.loop.ledger`, `telos.objective.monitor`, `telos.model.foundry`, `telos.learning.forge`, `telos.learning.labs`, `telos.research.seed`, `telos.research.thermodynamic`, `telos.rendering.research`, `telos.rendering.capabilities`, `telos.measurement.layers`, `telos.creative.engine`, `telos.creative.kernels`, `telos.revival.registry`, `telos.second_level.queue`, `telos.workstation.substrate`, `telos.display.calibration`, `telos.native.control`, `telos.browser.evidence`, `telos.showcase.scout`, `telos.proof`, `telos.proof.research`, `telos.proof.visual`, and `telos.proof.build`.
-- **Current floor:** the operator room reconciles 69 preferred tools plus 12 declared auxiliary compatibility tools across gather, crucible, index, forum, and telos, with a provider-neutral catalog, executable server manifest, MCP freshness verifier, CI doctor for GitHub Actions runtime/action drift, CI triage for separating fatal gates from runtime warnings, presentation doctor for README/changelog/brand parity, accessibility doctor for Studio host quality, performance doctor for static byte/asset/embed budgets, compatibility doctor for protocol and host parity, operator doctor for discoverability parity, browser evidence packets for automation review, causal, embodied, and quantum proof packets, and OSS Proof Showcase scout across CLI, MCP, plugin, IDE, TUI, and app hosts. See [CHANGELOG.md](CHANGELOG.md).
-- **Proof lane:** `node demo/showcase.mjs scout --fixture --json` starts the OSS Proof Showcase, a local-first path from public issue evidence to PR-readiness packets. `node demo/proof.mjs agent-action --demo` assembles the agent-action proof packet, which joins source refs, context, route, admission, side effects, and output digests through a verifier that can fail and an optional Emet witness. `node demo/proof.mjs research --demo`, `node demo/proof.mjs visual --demo`, and `node demo/proof.mjs build --demo` assemble the sibling research-claim, visual-truth, and build scientific-runtime proof packets: the research lane recomputes source and negative-control digests and refuses a reproduction-gated promotion in one packet, the visual lane recomputes each color and luminance measurement from the artifact's own embedded sRGB samples over a read-only boundary, and the build lane recomputes a conserved-quantity invariant and its conservation drift from the run's own embedded samples within tolerances bounded to each metric's physical range, controlled by a negative fixture that must break the invariant. Replay any packet with `node demo/proof.mjs verify`, which dispatches to the right lane by schema id. The full delivery-order proof-lane ledger is [docs/PROOF-LANES.md](docs/PROOF-LANES.md).
-- **Brand renderer:** `python tools/render_flagship_heroes.py --check-existing --public-root ..` verifies the five README hero PNGs and brand receipts without redistributing the operator-owned fonts.
-
-## What it is
-
-A language model is brilliant and forgetful in the same breath. It can reason its way through a hard problem inside one window of text, then lose the thread the moment the answer depends on something it cannot see. What changed. What is true right now. What it itself did a minute ago. It does not know, and worse, it does not know that it does not know. The confidence stays high while the accuracy quietly falls away.
-
-Project Telos is the work of giving a model the footing it is missing: a durable memory it can read instead of guess at, real senses pointed at the world, a way to act with the brakes wired in, and underneath all of it, a way to check its own work before you are asked to trust it.
-
-In practical terms, this is the Difference Engine / Analytical Engine idea pointed at agent work. The gears are not brass; they are ledger entries, context envelopes, admission decisions, action receipts, and replayable verification. A fresh context reads durable loop state, advances one action, writes evidence and a verdict, then stops or resumes from the ledger rather than from vibes.
-
-## What goes wrong without it
-
-A transformer is a function over a window of tokens. It has no live memory of state, no values it can look up, no record of the order things happened in. So it is steady on self-contained logic and blind on everything else: long-running state, and the quiet bounds that hold a system together. A depth that has to stay between zero and one. A count that cannot go negative. A buffer that did not overflow.
-
-The expensive failure is not that the model is sometimes wrong. Everything is sometimes wrong. The failure is that its confidence does not fall when its accuracy does. A confident mistake reads exactly like a confident truth, and you find out which was which downstream, if you ever find out at all.
-
-## The shape of the fix
-
-You cannot train the overconfidence out of a model, so Telos does not try. It builds the missing organs around the model instead.
-
-- A **memory** it reads from rather than recalls. An addressable store, not a fading impression.
-- **Perception** that turns ground truth into bytes and pins where those bytes came from.
-- **Action with impedance**, where an effect is checked against the rules before it is allowed to land.
-- **A clock**, so every fact carries the time it was true.
-
-Put together, these form a membrane between a stateless mind and a changing world. Nothing reaches the model as fact unless the store witnessed it. Nothing leaves the model as an effect unless the rules allow it. You do not verify the model, because you cannot. You verify the membrane.
-
-## The part you can run
-
-The trust in all of this rests on one small loop, and it is small on purpose.
-
-```
-perceive an artifact,
-then recover the invariant that has to hold,
-then check it against a criterion the model did not author,
-then return one of three answers: MATCH, DRIFT, or UNVERIFIABLE.
-```
-
-There is no fourth answer, and there is deliberately no TRUSTED. When the loop cannot verify something, it says UNVERIFIABLE and stops, rather than hand back a guess wearing the costume of an answer. The certificate it produces re-checks from its own evidence, so you believe it by re-running it, not because it told you to.
-
-## Run it
-
-Zero dependencies. Use Node 20 or newer for registry and Docker parity; CI currently runs on Node 24.
-
-```
+git clone https://github.com/HarperZ9/telos.git
+cd telos
 node demo/run.mjs
 ```
 
-It renders a four-dimensional cube, perceives it two independent ways, checks what it recovered against the true count of vertices and edges, and prints a certified result that re-checks. Then it does the more important thing. It feeds the loop a render too small and broken to read, and shows it returning UNVERIFIABLE instead of a confident pass. A verifier that cannot fail is not a verifier, and this one fails honestly.
+`demo/run.mjs` renders a 4-D cube, perceives it through independent channels, checks the recovered vertex and edge counts against the true criterion, and prints a certificate that re-checks from its own evidence. Then it feeds the loop a render too small to read and shows it returning UNVERIFIABLE instead of a confident pass. A verifier that cannot fail is not a verifier.
 
-```
-RUN A   an honest 4-D cube render        ->  CERTIFIED      recheck = true
-   criterion : 16 vertices, 32 edges         (the external truth the loop did not author)
-   recovered : 16 vertices, 32 edges         (exact match)
+From there, the two orientation commands:
 
-RUN B   a render too small to read (8x8) ->  UNVERIFIABLE   recheck = true
-   the two perceptions cannot agree, so the loop refuses to certify.
-   it reports UNVERIFIABLE rather than lean on the reading that happens to be right.
+```bash
+node demo/catalog.mjs --summary          # operator map: 69 tools across 5 flagships
+node demo/server-manifest.mjs --summary  # 5-server MCP launch map with host config
 ```
 
-## Try it in the field
+Expected catalog summary:
 
-The fastest test is to bring Telos a workflow where a model answer is not enough; a person needs to see what happened and re-check it later.
+```
+Project Telos MCP Catalog
+tools    69 total, 69 available
+transport stdio, streamable-http
+gather    5 tools ...
+index     5 tools ...
+forum     5 tools ...
+crucible  13 tools ...
+telos     41 tools ...
+```
 
-- **Doctor / clinical admin:** source fragments, routing decisions, and uncertainty stay visible before a summary or recommendation becomes action.
-- **Artist / studio:** prompts, source assets, transforms, chosen branches, and export gates stay attached to the finished artifact.
-- **Media / newsroom:** public claims map back to witnessed sources, conflict notes, and an editorial decision ledger.
-- **Token economy / routing:** model calls are spent where they buy evidence, coverage, or verification, not where they merely produce confident prose.
-- **Reasoning:** the model can perceive and propose; final authority belongs outside the model, in a checkable record a person can inspect.
+To run the MCP server for a host: `npm start` (stdio). Health and state:
 
-Main site: <https://harperz9.github.io>. GitHub: <https://github.com/HarperZ9>. Flagship repos: [gather](https://github.com/HarperZ9/gather), [crucible](https://github.com/HarperZ9/crucible), [index](https://github.com/HarperZ9/index), [forum](https://github.com/HarperZ9/forum), and [the Telos engine](https://github.com/HarperZ9/telos).
+```bash
+node demo/status.mjs --summary
+node demo/doctor.mjs --summary
+node demo/room.mjs --json
+```
 
-I am looking for verification, testing against real workflows, early traction from people willing to inspect receipts, and possibly modest grassroots research funding or pointers.
+Every command emits a `project-telos.flagship-action/v1` envelope with a MATCH, DRIFT, or UNVERIFIABLE status. The package also ships `telos` and `telos-mcp` bin entries that route to the same demo surface.
 
-## Why AlphaZero is the right comparison
+## Worked example: a proof packet that can fail
 
-This shape is not new, and the clearest proof of that is AlphaZero. A single neural network sits at its center, a stateless prior that guesses good moves and guesses who is winning. On its own it plays well and no better. What makes it superhuman is the search bolted on beside it, an outside process you can re-run that tests the network's guess against the actual rules of the game before it commits to a move. The network proposes. The search verifies.
+Assemble the demo agent-action proof packet, then replay its verification from the packet alone:
 
-Line the pieces up and Telos is the same machine, pointed at work that is not a game. The network's guess is the model's cheap output. The search is the reconcile loop. The rules of the game are the external criterion. And the way AlphaZero takes risk in proportion to what the search has actually checked is the way Telos extends trust in proportion to what re-derives.
+```bash
+node demo/proof.mjs agent-action --demo --json > packet.json
+node demo/proof.mjs verify packet.json
+```
 
-Prof. Mihai Nica walks through this plainly in his AlphaZero Explained series, where the search is shown as a kind of visible thinking budget you can look inside, and the whole method comes down to, in David Silver's words, "three steps and literally nothing else." The plainness is the point. It is a small, legible loop, not a mystery.
+Expected output:
 
-## Who it is for
+```
+verdict       MATCH
+witness       witnessed / MATCH
+```
 
-- People handing real work to AI agents who want a receipt for it. What changed, checked before and after, and re-checkable later, instead of trust by reputation.
-- People building agent loops who want the checking step grounded in something outside the model. Self-critique with no outside standard just agrees with itself.
-- Anyone who would rather hear an honest "I cannot verify this" than a confident answer that turns out to be invented.
+The packet joins source refs, context refs, route, admission decision, side effects, and output digests. The verifier recomputes digests from the embedded materials, so editing any load-bearing field flips the verdict to DRIFT, and a missing recomputable basis is reported as UNVERIFIABLE with the gap named by path. The sibling lanes work the same way: `research` recomputes source and negative-control digests and refuses reproduction-gated promotion in a single packet, `visual` recomputes color and luminance from embedded sRGB samples, and `build` recomputes a conserved-quantity invariant against a negative fixture that must break it. The delivery ledger is [docs/PROOF-LANES.md](docs/PROOF-LANES.md).
 
-## The bricks
+## Command surface
 
-The flagship is the mission. These open pieces are the bricks it is built from, and you can pick any of them up on its own. Treat the repo tests and receipts as the current evidence instead of relying on frozen maturity counts in prose.
+`node demo/catalog.mjs` is the authoritative map. Highlights by area:
 
-- **[coherence-membrane](https://github.com/HarperZ9/coherence-membrane)** turns a render or a frame into MATCH, DRIFT, or UNVERIFIABLE. It is dependency-light and test-backed.
-- **[accountable-surface](https://github.com/HarperZ9/accountable-surface)** is the full loop of perceive, gate, and act, with tests covering the loop behavior.
-- **[EMET](https://github.com/HarperZ9/emet)** is an outside witness built on a perceptual hash and a content hash, with the same answer reproduced in two independent languages.
-- **[reconcile](https://github.com/HarperZ9/reconcile)** is the bare primitive, with worked examples for novelty and structural fitness.
-- **[studio-engine](https://github.com/HarperZ9/studio-engine)** generates structures to perceive, behind a small REST API.
-- The **engine** the demo runs on renders, perceives, and reconciles. It is kept local for now while the five above are public.
+| Area | Commands |
+| --- | --- |
+| Orientation | `run.mjs`, `catalog.mjs`, `server-manifest.mjs`, `status.mjs`, `doctor.mjs`, `room.mjs` |
+| Doctors | `ci-doctor.mjs`, `ci-triage.mjs`, `presentation-doctor.mjs`, `accessibility-doctor.mjs`, `performance-doctor.mjs`, `compatibility-doctor.mjs`, `operator-doctor.mjs`, `mcp-freshness.mjs` |
+| Proof | `proof.mjs` (agent-action, research, visual, build, verify, export), `showcase.mjs` |
+| Context | `context-envelope.mjs`, `context-pack.mjs`, `action-receipt.mjs`, `loop-ledger.mjs` |
+| Creative | `creative-engine.mjs`, `creative-kernels.mjs`, `measurement-layers.mjs`, `rendering-capabilities.mjs`, `display-calibration.mjs` |
+| Research | `causal-workbench-proof-packet.mjs`, `embodied-sim2real-proof-packet.mjs`, `quantum-error-correction-proof-packet.mjs`, `thermodynamic-ai-chip-receipt.mjs` |
+| Foundry | `model-foundry.mjs`, `learning-forge.mjs`, `learning-forge-labs.mjs` |
+| Workstation | `native-control.mjs`, `browser-evidence.mjs`, `workstation-substrate.mjs`, `revival-registry.mjs`, `second-level-flagship-queue.mjs` |
 
-These are open and tested on GitHub. They are not yet packaged for pip or npm.
+Most accept `--summary` for a compact terminal (TUI) view and `--json` for IDE, app, and automation hosts.
 
-For the full picture, read [the connection map](docs/PROJECT-CONNECTION-MAP.md), [how it works](docs/HOW-IT-WORKS.md), [the architecture](docs/ARCHITECTURE.md), and [who uses it](docs/WHO-USES-IT.md).
+The doctor lanes in full: `node demo/ci-doctor.mjs`, `node demo/presentation-doctor.mjs`, `node demo/accessibility-doctor.mjs`, `node demo/performance-doctor.mjs`, `node demo/compatibility-doctor.mjs`, and `node demo/operator-doctor.mjs`, plus `node demo/ci-triage.mjs` and `node demo/mcp-freshness.mjs`. Live CI intake works read-only: `node demo/ci-triage.mjs --gh-run owner/repo#run_id --summary`.
 
-## What it does not claim
+## Documentation
 
-This is early, and it earns trust by being clear about where it stops.
+- [docs/INTRODUCTION.md](docs/INTRODUCTION.md): what Telos is and your first ten minutes.
+- [docs/HOW-IT-WORKS.md](docs/HOW-IT-WORKS.md): the verifier loop, step by step, including where it stops.
+- [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) and [docs/PROJECT-CONNECTION-MAP.md](docs/PROJECT-CONNECTION-MAP.md): system shape and how the five flagships connect.
+- [docs/PROOF-LANES.md](docs/PROOF-LANES.md): the proof-lane contracts and delivery ledger.
+- [docs/CURRENT-STATE.md](docs/CURRENT-STATE.md): the live evidence-first state packet.
+- [USAGE.md](USAGE.md): install, run, MCP, and verify commands.
 
-- The membrane decides what the model sees, not what it believes. A strong prior from training can still talk over a quietly staged fact, which is why the seal is placed on the way out, at the point of action, and not only on the way in.
-- Passing every check means tripping no named failure, which is not the same as being correct. Coverage grows one caught bug at a time. The overconfidence is reduced, never erased.
-- It works on a world you can pause and replay. It is a body for recorded, steppable state, not for real time control.
-- A verifier you have not verified is worse than none, because it lends a falsehood the authority of ground truth. The whole value sits in the word verified.
+Peer repos: [gather](https://github.com/HarperZ9/gather) (research intake), [index](https://github.com/HarperZ9/index) (workspace maps and context), [forum](https://github.com/HarperZ9/forum) (agent routing with a causal ledger), [crucible](https://github.com/HarperZ9/crucible) (claim verification), [emet](https://github.com/HarperZ9/emet) (independent coherence witness). Telos launches and reconciles all five from one manifest; each also stands alone.
 
-## Why it exists
+## Status and maturity
 
-In the author's own words, from a public comment.
+This is a 0.2.0 source-registry package. The command surface above is tested and CI-covered (the repo carries over 60 test files run individually in CI), but npm publishing is operator-gated and interfaces may still move between minor versions. Research packets are deterministic preflights with explicit non-claims: the causal packet does not claim causal discovery, the embodied packet does not claim real-robot safety, the quantum packet does not claim hardware QEC. Treat the receipts and tests in this repo as the evidence, not prose counts.
 
-> "building honest tools that keep my ADHD in check, an accountable research harness, an ecosystem of tools to help hold my work, and a model's work, to an accurate standard when my brain gets lost. The mission is to give a stateless LLM durable, verified contact with state and range."
+The active consolidation roadmap is [`docs/PROJECT-TELOS-LARGE-SCALE-ROADMAP-2026-07-02.md`](docs/PROJECT-TELOS-LARGE-SCALE-ROADMAP-2026-07-02.md), and the documentation control plane is [`docs/DOCUMENTATION-CONSOLIDATION-REGISTRY-2026-07-02.md`](docs/DOCUMENTATION-CONSOLIDATION-REGISTRY-2026-07-02.md) with the machine-readable registry under [`docs/registry/`](docs/registry/).
+
+## The receipt underneath
+
+One idea runs under everything here: an action or claim only counts when it carries evidence a person or another system can re-check later, and when the check cannot pass, the answer is an honest UNVERIFIABLE rather than a confident guess. That is why every command writes a receipt and every proof verifier is built to be able to fail.
 
 ## License
 
-Project Telos is fair-source. The code is open to read and to run, free for nearly any use except building a competing product, and it converts to a fully open license two years after each release. The smaller bricks above are permissively open already. The aim is plain: keep the work in the open and in the hands of the people using it, while keeping the flagship able to fund the research it came from. Copyright is held by the author.
+FSL-1.1-ALv2 (fair source). The code is open to read and run, free for nearly any use except building a competing product, and each release converts to Apache 2.0 after two years. Copyright is held by the author. See [LICENSE](LICENSE).
 
 ## For developers
 
-Keep the public README, package metadata, and examples aligned with current behavior. Before opening a PR or pushing a release, run the local Node verification path.
+Zero dependencies, so there is nothing to install. Run the MCP contract tests and smoke checks before opening a PR:
 
 ```bash
-npm install
-npm test
+npm run test:mcp
+node demo/catalog.mjs --summary
+node demo/server-manifest.mjs --summary
+node demo/room.mjs --json
 ```
+
+CI (`.github/workflows/ci.yml`) runs each contract test file individually on Node 24; run any of them directly with `node demo/<name>.test.mjs`. Keep the README, package metadata, and examples aligned with current behavior; `node demo/operator-doctor.mjs --summary` checks that parity.
+
+---
+
+**[Zentropy Labs](https://github.com/ZentropyLabs-ai)** · order out of entropy. An independent lab building evidence-first tools that leave a re-checkable artifact behind. Built by Zain Dana Harper in Seattle. The full workbench is at [Project Telos](https://harperz9.github.io).

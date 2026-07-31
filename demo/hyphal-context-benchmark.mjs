@@ -1,5 +1,5 @@
 import { createHash } from "node:crypto";
-import { readFileSync, statSync, writeFileSync } from "node:fs";
+import { readFileSync, writeFileSync } from "node:fs";
 
 const corpusRoot = new URL("../docs/outreach/receipts/twenty-first-wave/biology-network-intelligence-corpus/", import.meta.url);
 const sourceGateUrl = new URL(
@@ -51,8 +51,24 @@ function readJson(url) {
   return JSON.parse(readFileSync(url, "utf8"));
 }
 
-function hashFile(url) {
-  return sha256(readFileSync(url));
+export function canonicalText(text) {
+  return text.replace(/\r\n?/g, "\n");
+}
+
+export function canonicalSourceStats(text) {
+  const canonical = canonicalText(text);
+  return {
+    sha256: sha256(canonical),
+    estimated_tokens: estimateTokens(canonical)
+  };
+}
+
+function readCanonicalText(url) {
+  return canonicalText(readFileSync(url, "utf8"));
+}
+
+function hashTextFile(url) {
+  return sha256(readCanonicalText(url));
 }
 
 function objectUrlFor(sha) {
@@ -76,16 +92,20 @@ function classForRow(row) {
 function sourceRowsWithStats(sourceGate) {
   return sourceGate.source_rows.map((row, index) => {
     const objectUrl = objectUrlFor(row.sha256);
-    const bytes = statSync(objectUrl).size;
+    const stats = canonicalSourceStats(readFileSync(objectUrl, "utf8"));
+    if (stats.sha256 !== row.sha256) {
+      throw new Error(
+        `corpus object hash mismatch for ${row.title}: expected ${row.sha256}, measured ${stats.sha256}`
+      );
+    }
     return {
       id: `src_${String(index + 1).padStart(2, "0")}`,
       title: row.title,
       ref: row.ref,
-      sha256: row.sha256,
+      sha256: stats.sha256,
       coverage: row.coverage,
       evidence_class: classForRow(row),
-      object_bytes: bytes,
-      estimated_body_tokens: Math.ceil(bytes / 4)
+      estimated_body_tokens: stats.estimated_tokens
     };
   });
 }
@@ -140,10 +160,12 @@ function routeVerdict(route) {
 export function buildHyphalBenchmark() {
   const sourceGate = readJson(sourceGateUrl);
   const rows = sourceRowsWithStats(sourceGate);
-  const sourceGateHash = hashFile(sourceGateUrl);
-  const seedHash = hashFile(seedUrl);
-  const sourceGateTokens = Math.ceil(statSync(sourceGateUrl).size / 4);
-  const seedTokens = Math.ceil(statSync(seedUrl).size / 4);
+  const sourceGateText = readCanonicalText(sourceGateUrl);
+  const seedText = readCanonicalText(seedUrl);
+  const sourceGateHash = hashTextFile(sourceGateUrl);
+  const seedHash = hashTextFile(seedUrl);
+  const sourceGateTokens = estimateTokens(sourceGateText);
+  const seedTokens = estimateTokens(seedText);
 
   const fullContextCards = [
     ...rows.map((row) => evidenceCard(row, "full_context_delivers_every_source_body")),

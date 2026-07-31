@@ -25,7 +25,9 @@ and a smaller estimated prompt footprint for the hyphal route.
   `demo/hyphal-context-benchmark.test.mjs`
 - Benchmark receipt:
   `docs/outreach/receipts/twenty-second-wave/hyphal-context-benchmark-2026-07-02.json`
-- Learn packet:
+- Reproducibility correction:
+  `docs/outreach/receipts/twenty-second-wave/hyphal-context-benchmark-correction-2026-07-18.json`
+- Historical Learn packet:
   `docs/outreach/receipts/twenty-second-wave/hyphal-context-benchmark.learn-packet.json`
 - Crucible thesis:
   `docs/outreach/receipts/twenty-second-wave-hyphal-context-thesis-2026-07-02.json`
@@ -35,18 +37,38 @@ and a smaller estimated prompt footprint for the hyphal route.
   `docs/outreach/receipts/twenty-second-wave-hyphal-context-run-2026-07-02.json`
 - Crucible report:
   `docs/outreach/receipts/twenty-second-wave-hyphal-context-report-2026-07-02.md`
-- Learn prooflesson:
+- Historical Learn prooflesson:
   `docs/outreach/receipts/twenty-second-wave/learn-hyphal-context/tutor/twenty-second-wave-hyphal-context-benchmark.prooflesson.json`
 
 ## Measured Fixture Result
 
 | Route | Estimated prompt tokens | Required evidence classes | Guardrails |
 | --- | ---: | ---: | ---: |
-| Full context | 123,413 | 6 / 6 | 3 / 3 |
+| Full context | 121,805 | 6 / 6 | 3 / 3 |
 | Hyphal context | 1,338 | 6 / 6 | 3 / 3 |
 
-Token savings in this fixture: 122,075 estimated prompt tokens, or 0.9892 of
+Token savings in this fixture: 120,467 estimated prompt tokens, or 0.989 of
 the full-context estimate.
+
+## Reproducibility correction (2026-07-18)
+
+The original July 2 replay used working-tree byte sizes and hashed the
+architecture seed as raw working-tree bytes. That made its result depend on the
+checkout's exact EOL mixture even though Git shows no source-content change
+between the benchmark and correction commits. Its frozen historical values
+were 123,413 full-context tokens, 122,075 tokens saved, and a 0.9892 savings
+ratio. The original working-tree EOL distribution is unknown: neither a clean
+LF materialization nor a clean `core.autocrlf=true` materialization reproduces
+those exact values.
+
+The active replay normalizes CRLF and bare CR to LF, verifies each
+content-addressed corpus object, and estimates tokens from canonical text. The
+historical result remains recoverable in Git and is recorded alongside the
+canonical result in
+`docs/outreach/receipts/twenty-second-wave/hyphal-context-benchmark-correction-2026-07-18.json`.
+The July 2 Crucible and Learn receipts were not regenerated; they remain
+immutable evidence for the original bounded claim and retain their original
+artifact digests. Current replayability is enforced by the CI benchmark test.
 
 ## Public Copy Boundary
 
@@ -82,7 +104,9 @@ JavaScript fixture and publication packet.
 
 ## Tool Results
 
-Crucible returned `MATCH 3 / DRIFT 0 / UNVERIFIABLE 0` for the bounded thesis.
-Learn generated and reverified the prooflesson receipt as `VERIFIED`. These
-results verify the local fixture discipline only; they do not promote this
-fixture into a general route-selection law.
+The historical July 2 Crucible run returned
+`MATCH 3 / DRIFT 0 / UNVERIFIABLE 0` for the bounded thesis, and Learn generated
+and reverified its prooflesson receipt as `VERIFIED`. The reproducibility
+correction did not rerun either system. These results verify the original local
+fixture discipline only; they do not promote this fixture into a general
+route-selection law.
