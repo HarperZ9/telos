@@ -2,8 +2,16 @@ import assert from "node:assert/strict";
 import { spawnSync } from "node:child_process";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { normalizeRoomStatus, roomCheckPasses } from "./room-status.mjs";
 
 const here = path.dirname(fileURLToPath(import.meta.url));
+
+assert.equal(normalizeRoomStatus("crucible", "OK"), "MATCH");
+assert.equal(roomCheckPasses("crucible", "available"), true);
+assert.equal(normalizeRoomStatus("gather", "OK"), "OK");
+assert.equal(roomCheckPasses("gather", "available"), false);
+assert.equal(normalizeRoomStatus("gather", "MATCH"), "MATCH");
+assert.equal(roomCheckPasses("gather", "MATCH"), true);
 
 function runJson(script, ...args) {
   const result = spawnSync(process.execPath, [path.join(here, script), ...args], {
@@ -63,6 +71,11 @@ assert.equal(doctor.next_actions[0].action, "flagship-workflow");
 
 const room = runJson("room.mjs", "--json");
 assert.equal(room.command, "room");
+assert.equal(
+  room.native.tools.find((tool) => tool.tool === "crucible")?.status,
+  "MATCH",
+  "the room adapts Crucible's source-native healthy status to the canonical room verdict"
+);
 assert.equal(room.status, "MATCH");
 assert.equal(room.native.ready, 5);
 assert.equal(room.native.total, 5);
@@ -86,7 +99,14 @@ assert.equal(workflow.native.crucible_match, 1);
 assert.equal(workflow.native.crucible_unverifiable, 1);
 assert.equal(workflow.native.telos_demo_recheck, true);
 
-const showcaseScout = runJson("showcase.mjs", "scout", "--fixture", "--json");
+const showcaseScout = runJson(
+  "showcase.mjs",
+  "scout",
+  "--fixture",
+  "--now",
+  "2026-06-27T12:00:00Z",
+  "--json"
+);
 assert.equal(showcaseScout.schema, "project-telos.oss-scout/v1");
 assert.equal(showcaseScout.candidates[0].repository.full_name, "pandas-dev/pandas");
 assert.equal(showcaseScout.candidates[0].score.priority, 70);
