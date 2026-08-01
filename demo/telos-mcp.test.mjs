@@ -146,7 +146,7 @@ const mcpFreshness = handleRequest(request("tools/call", {
 assert.equal(mcpFreshness.result.structuredContent.schema, "project-telos.mcp-freshness/v1");
 assert.equal(mcpFreshness.result.structuredContent.tool, "telos.mcp.freshness");
 assert.equal(mcpFreshness.result.structuredContent.validation.verdict, "MATCH");
-assert.equal(mcpFreshness.result.structuredContent.servers.forum.expected_version, "1.12.0");
+assert.equal(mcpFreshness.result.structuredContent.servers.forum.expected_version, "1.13.0");
 assert.match(mcpFreshness.result.structuredContent.servers.forum.expected_tool_hash, /^sha256:[a-f0-9]{64}$/);
 
 const expectedCiDoctor = JSON.parse(
