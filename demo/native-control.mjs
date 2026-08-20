@@ -82,6 +82,8 @@ async function runBrowser(verb, params, flags) {
         return await browser.click(session, params[0]);
       case "fill":
         return await browser.setValue(session, params[0], params.slice(1).join(" "));
+      case "reactselect":
+        return await browser.reactSelect(session, params[0], params.slice(1).join(" "));
       case "focus":
         return await browser.evalJs(session, browser.focusExpression(params[0]));
       case "type":

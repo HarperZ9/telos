@@ -184,6 +184,47 @@ export async function insertText(session, text) {
   return { inserted: text.length };
 }
 
+// Fill a react-select / combobox: focus its text input, type the value as
+// TRUSTED input so the widget filters, then press Enter to take the highlighted
+// option -- all in one session. A synthetic el.click cannot do this because the
+// menu blurs shut between separate CDP attaches, and react-select ignores
+// untrusted events. `selector` is the control (or its input).
+export async function reactSelect(session, selector, value) {
+  const focusExpr = `(() => {
+    const ctrl = document.querySelector(${JSON.stringify(selector)});
+    if (!ctrl) return "no-control";
+    ctrl.scrollIntoView({ block: "center" });
+    const input = ctrl.matches("input") ? ctrl : ctrl.querySelector("input");
+    if (!input) return "no-input";
+    input.focus();
+    return document.activeElement === input ? "ok" : "not-focused";
+  })()`;
+  const focused = await evaluate(session, focusExpr);
+  if (focused !== "ok") throw new Error(`react-select ${selector}: ${focused}`);
+  // react-select v5 ignores programmatic value/input events; it only filters on
+  // real trusted key events. Type each character as a dispatched key so its menu
+  // opens and narrows to the match, then Enter takes the highlighted option.
+  for (const ch of value) {
+    await session.send("Input.dispatchKeyEvent", { type: "keyDown", text: ch, key: ch, unmodifiedText: ch });
+    await session.send("Input.dispatchKeyEvent", { type: "keyUp", key: ch });
+    await new Promise((r) => setTimeout(r, 45));
+  }
+  await new Promise((r) => setTimeout(r, 500));
+  for (const type of ["keyDown", "keyUp"]) {
+    await session.send("Input.dispatchKeyEvent", {
+      type, key: "Enter", code: "Enter",
+      windowsVirtualKeyCode: 13, nativeVirtualKeyCode: 13,
+    });
+  }
+  await new Promise((r) => setTimeout(r, 400));
+  const shown = await evaluate(session, `(() => {
+    const ctrl = document.querySelector(${JSON.stringify(selector)});
+    const v = ctrl && ctrl.querySelector(".select__single-value");
+    return v ? v.textContent : "";
+  })()`);
+  return { selector, value, shown };
+}
+
 export async function waitFor(session, selector, timeoutMs = 8000) {
   const deadline = Date.now() + timeoutMs;
   for (;;) {
