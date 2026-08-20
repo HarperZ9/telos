@@ -84,6 +84,12 @@ async function runBrowser(verb, params, flags) {
         return await browser.setValue(session, params[0], params.slice(1).join(" "));
       case "reactselect":
         return await browser.reactSelect(session, params[0], params.slice(1).join(" "));
+      case "reactoptions":
+        return await browser.reactOptions(session, params[0]);
+      case "insertinto":
+        return await browser.insertInto(session, params[0], params.slice(1).join(" "));
+      case "insertfile":
+        return await browser.insertInto(session, params[0], readFileSync(params[1], "utf-8"));
       case "focus":
         return await browser.evalJs(session, browser.focusExpression(params[0]));
       case "type":

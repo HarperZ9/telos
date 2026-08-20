@@ -225,6 +225,60 @@ export async function reactSelect(session, selector, value) {
   return { selector, value, shown };
 }
 
+// Put text into a React-controlled input/textarea: clear it, focus it, and use
+// CDP's TRUSTED Input.insertText so React registers the change and clears its
+// required-field validation. Setting .value directly (even via the native
+// setter) does not clear aria-invalid on Greenhouse's forms; insertText does.
+export async function insertInto(session, selector, text) {
+  const ready = await evaluate(session, `(() => {
+    const e = document.querySelector(${JSON.stringify(selector)});
+    if (!e) return "no-el";
+    const proto = e.tagName === "TEXTAREA" ? window.HTMLTextAreaElement.prototype : window.HTMLInputElement.prototype;
+    const setter = Object.getOwnPropertyDescriptor(proto, "value").set;
+    e.focus();
+    setter.call(e, "");
+    if (e._valueTracker) e._valueTracker.setValue("x");
+    e.dispatchEvent(new Event("input", { bubbles: true }));
+    e.focus();
+    return document.activeElement === e ? "ok" : "not-focused";
+  })()`);
+  if (ready !== "ok") throw new Error(`insertInto ${selector}: ${ready}`);
+  // Trusted per-character keystrokes: React's controlled inputs only clear their
+  // required-field validation on real key events, not on .value or insertText.
+  for (const ch of text.replace(/\r?\n/g, " ")) {
+    await session.send("Input.dispatchKeyEvent", { type: "keyDown", text: ch, key: ch, unmodifiedText: ch });
+    await session.send("Input.dispatchKeyEvent", { type: "keyUp", key: ch });
+    await new Promise((r) => setTimeout(r, 8));
+  }
+  await new Promise((r) => setTimeout(r, 200));
+  const invalid = await evaluate(session, `(() => {
+    const e = document.querySelector(${JSON.stringify(selector)});
+    return e ? { len: (e.value || "").length, invalid: e.getAttribute("aria-invalid") } : null;
+  })()`);
+  return { selector, ...invalid };
+}
+
+// Open a react-select menu (ArrowDown, trusted) and read its option texts, so a
+// caller can pick the exact label instead of guessing.
+export async function reactOptions(session, selector) {
+  const ok = await evaluate(session, `(() => {
+    const c = document.querySelector(${JSON.stringify(selector)});
+    if (!c) return false;
+    const i = c.matches("input") ? c : c.querySelector("input");
+    if (!i) return false;
+    c.scrollIntoView({ block: "center" });
+    i.focus();
+    return document.activeElement === i;
+  })()`);
+  if (!ok) throw new Error(`reactOptions: ${selector} not focusable`);
+  for (const type of ["keyDown", "keyUp"]) {
+    await session.send("Input.dispatchKeyEvent", { type, key: "ArrowDown", code: "ArrowDown", windowsVirtualKeyCode: 40, nativeVirtualKeyCode: 40 });
+  }
+  await new Promise((r) => setTimeout(r, 450));
+  const options = await evaluate(session, `JSON.stringify([...document.querySelectorAll(".select__option")].map((o) => o.textContent.trim()).slice(0, 40))`);
+  return { options: JSON.parse(options || "[]") };
+}
+
 export async function waitFor(session, selector, timeoutMs = 8000) {
   const deadline = Date.now() + timeoutMs;
   for (;;) {
