@@ -279,6 +279,22 @@ export async function reactOptions(session, selector) {
   return { options: JSON.parse(options || "[]") };
 }
 
+// Insert multi-line text into a focused rich editor (e.g. a Gmail compose
+// contenteditable) with TRUSTED Input.insertText, preserving newlines. Unlike
+// insertInto this does not clear or strip newlines, so it suits an email body.
+export async function insertRaw(session, selector, text) {
+  const ok = await evaluate(session, `(() => {
+    const e = document.querySelector(${JSON.stringify(selector)});
+    if (!e) return false;
+    e.focus();
+    return document.activeElement === e || e.contains(document.activeElement);
+  })()`);
+  if (!ok) throw new Error(`insertRaw: ${selector} not focusable`);
+  await session.send("Input.insertText", { text });
+  await new Promise((r) => setTimeout(r, 150));
+  return { selector, len: text.length };
+}
+
 export async function waitFor(session, selector, timeoutMs = 8000) {
   const deadline = Date.now() + timeoutMs;
   for (;;) {

@@ -90,6 +90,8 @@ async function runBrowser(verb, params, flags) {
         return await browser.insertInto(session, params[0], params.slice(1).join(" "));
       case "insertfile":
         return await browser.insertInto(session, params[0], readFileSync(params[1], "utf-8"));
+      case "insertrawfile":
+        return await browser.insertRaw(session, params[0], readFileSync(params[1], "utf-8"));
       case "focus":
         return await browser.evalJs(session, browser.focusExpression(params[0]));
       case "type":
