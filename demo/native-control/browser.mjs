@@ -171,6 +171,27 @@ export async function click(session, selector) {
   return { clicked: selector };
 }
 
+// Click a control with TRUSTED CDP mouse events at its center. A synthetic
+// el.click() carries no user gesture, so popup-based flows (Google SSO) are
+// blocked; a dispatched mousePressed/mouseReleased pair is a real gesture.
+export async function trustClick(session, selector) {
+  const rect = await evaluate(session, `(() => {
+    const e = document.querySelector(${JSON.stringify(selector)}) ||
+      [...document.querySelectorAll("button,a,[role=button]")]
+        .find((x) => x.textContent.trim().toLowerCase().includes(${JSON.stringify(selector)}.toLowerCase()));
+    if (!e) return null;
+    e.scrollIntoView({ block: "center" });
+    const r = e.getBoundingClientRect();
+    return JSON.stringify({ x: r.x + r.width / 2, y: r.y + r.height / 2 });
+  })()`);
+  if (!rect) throw new Error(`trustclick target not found: ${selector}`);
+  const { x, y } = JSON.parse(rect);
+  for (const type of ["mousePressed", "mouseReleased"]) {
+    await session.send("Input.dispatchMouseEvent", { type, x, y, button: "left", clickCount: 1 });
+  }
+  return { trustclicked: selector, x, y };
+}
+
 export async function setValue(session, selector, text) {
   const ok = await evaluate(session, setValueExpression(selector, text));
   if (!ok) throw new Error(`value target not found: ${selector}`);

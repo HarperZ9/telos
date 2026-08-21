@@ -80,6 +80,8 @@ async function runBrowser(verb, params, flags) {
         return await browser.evalJs(session, readFileSync(params[0], "utf-8"));
       case "click":
         return await browser.click(session, params[0]);
+      case "trustclick":
+        return await browser.trustClick(session, params.join(" "));
       case "fill":
         return await browser.setValue(session, params[0], params.slice(1).join(" "));
       case "reactselect":
