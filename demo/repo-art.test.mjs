@@ -36,6 +36,8 @@ const REQUIRED = [
   "art.outcome_fits_its_box",
   "art.card_matches_the_receipt",
   "art.card_text_fits_its_column",
+  "art.card_widths_bound_every_face",
+  "art.card_draws_measured_characters",
   "art.card_carries_one_mark",
   "art.card_alt_reaches_the_readme",
   "art.the_gate_can_fail"
