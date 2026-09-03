@@ -32,5 +32,29 @@
         {"label": "UNVERIFIABLE, EXIT 2", "note": "the evidence to check a claim is not there", "tone": "none"}
       ]
     }
+  ],
+  "cards": [
+    {
+      "file": "receipt-anatomy.svg",
+      "kicker": "what you get back",
+      "title": "One receipt, and how you would check each line of it",
+      "source": "python tools/check_repo_art.py --json",
+      "alt": "Six fields of a receipt the artwork checker emits, each with what comes back in it and how a reader would check that field for themselves. schema names the contract the record is written to. mode says whether the run rendered the files or only compared them. specs lists the diffable input the pictures are a function of. outputs carries one entry per drawing, each with a byte count and a SHA-256 read from the file on disk. checks carries one entry per gate, each naming itself and listing what it found. passed is the verdict, and it folds out of those checks rather than being written down, so a record cannot claim a pass its own checks do not support.",
+      "footnote": "Hashes and byte counts are not drawn, because they change with the commit and a picture that shows one is wrong by the next. The shape of each field is drawn instead, and a gate holds every line here against a receipt the tool actually emits.",
+      "fields": [
+        {"key": "schema", "value": "project-telos.repo-art/v1", "tone": "none",
+         "note": "The contract this record is written to. Pin it and a reader from a later version still knows what they are holding."},
+        {"key": "mode", "value": "check", "tone": "none",
+         "note": "check compares what is committed. render writes the files. The same code path, so the comparison cannot drift from the drawing."},
+        {"key": "specs", "value": "1 entry", "tone": "none",
+         "note": "The diffable input. Every picture is a pure function of this, so a review of the spec is a review of the artwork."},
+        {"key": "outputs", "value": "3 entries", "tone": "none",
+         "note": "One per drawing, each with the byte count and SHA-256 read off the file. Re-render and the two numbers have to come back equal."},
+        {"key": "checks", "value": "16 entries", "tone": "none",
+         "note": "One per gate, each naming itself and listing what it found. An empty list is a pass you can read rather than infer."},
+        {"key": "passed", "value": "true | false", "tone": "verified",
+         "note": "The verdict. It folds out of the checks rather than being written down, so a canned pass cannot enter the record."}
+      ]
+    }
   ]
 }
