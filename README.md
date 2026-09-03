@@ -1,4 +1,4 @@
-<p align="center"><img src=".github/assets/zentropy-banner.png" alt="telos: The shared workbench: durable state, native workstation control, sensory organs, a discovery forge." width="100%"></p>
+<p align="center"><img src="docs/art/telos-header.svg" alt="telos: one workbench, and packets that recompute their own claims." width="100%"></p>
 
 **The shared workbench: durable state, native workstation control, sensory organs, a discovery forge.**
 
@@ -67,6 +67,8 @@ Every command emits a `project-telos.flagship-action/v1` envelope with a MATCH, 
 
 ## Worked example: a proof packet that can fail
 
+<p align="center"><img src="docs/art/proof-lane.svg" alt="Eight stages from loose materials to a replayable packet: fixture, assemble, completeness, recompute, join, derive, witness, replay. The verdict folds out of the checks rather than being read off the packet, so a canned pass embedded in the materials can never win. A witness that reports drift lowers the derived verdict, and a witness that cannot be reached is recorded as coverage lost rather than counted as a pass. Three outcomes: match when every claim recomputed, drift when a recomputed value disagrees with its claim, and unverifiable when the evidence to check a claim is not there." width="100%"></p>
+
 Assemble the demo agent-action proof packet, then replay its verification from the packet alone:
 
 ```bash
@@ -82,6 +84,10 @@ witness       witnessed / MATCH
 ```
 
 The packet joins source refs, context refs, route, admission decision, side effects, and output digests. The verifier recomputes digests from the embedded materials, so editing any load-bearing field flips the verdict to DRIFT, and a missing recomputable basis is reported as UNVERIFIABLE with the gap named by path. The sibling lanes work the same way: `research` recomputes source and negative-control digests and refuses reproduction-gated promotion in a single packet, `visual` recomputes color and luminance from embedded sRGB samples, and `build` recomputes a conserved-quantity invariant against a negative fixture that must break it. The delivery ledger is [docs/PROOF-LANES.md](docs/PROOF-LANES.md).
+
+Two things in that diagram are worth reading twice. The verdict is folded out of the checks, so a packet that carries its own `MATCH` cannot win with it: when an embedded verdict disagrees with the derived one, the disagreement is itself recorded as a failure, and that failure inherits the derived severity. An embedded `MATCH` over tampered materials stays DRIFT. An embedded `MATCH` over an incomplete packet stays UNVERIFIABLE.
+
+The witness stage is the honest null. It is a second reader over the packet's own canonical bytes, and it can lower a verdict but never raise one. When it cannot be reached, the packet records `witness_coverage: not_witnessed` and the verdict stands on the verifier alone. That is disclosed coverage loss, not counterevidence, and it is the reason a MATCH is a claim about what was recomputed rather than a claim that everything was looked at.
 
 ## Command surface
 

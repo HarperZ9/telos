@@ -1,0 +1,36 @@
+{
+  "$comment": "Source of truth for the artwork on this repository's front page. Edit a sentence here and re-run tools/render_repo_art.py; tools/check_repo_art.py fails if the committed SVG stops matching.",
+  "header": {
+    "name": "telos",
+    "role": "shared workbench for AI work",
+    "tagline": "One workbench, and packets that recompute their own claims.",
+    "words": ["assemble", "recompute", "derive", "witness", "replay"]
+  },
+  "flows": [
+    {
+      "file": "proof-lane.svg",
+      "kicker": "one packet, end to end",
+      "title": "How a claim about work becomes something a stranger can re-check",
+      "alt": "Eight stages from loose materials to a replayable packet: fixture, assemble, completeness, recompute, join, derive, witness, replay. The verdict folds out of the checks rather than being read off the packet, so a canned pass embedded in the materials can never win. A witness that reports drift lowers the derived verdict, and a witness that cannot be reached is recorded as coverage lost rather than counted as a pass. Three outcomes: match when every claim recomputed, drift when a recomputed value disagrees with its claim, and unverifiable when the evidence to check a claim is not there.",
+      "footnote": "A replay reads the packet. It does not re-run the work that produced it.",
+      "stages": [
+        {"title": "Fixture", "note": "Materials go in whole: sources, context, outputs, bytes."},
+        {"title": "Assemble", "note": "One canonical packet, with no clock inside the hash."},
+        {"title": "Completeness", "note": "A missing required field is named by its own path."},
+        {"title": "Recompute", "note": "Each output digest is redone from the bytes it carries."},
+        {"title": "Join", "note": "Every action is matched to the record that allowed it."},
+        {"title": "Derive", "note": "The verdict folds out of the checks, and is never read."},
+        {"title": "Witness", "note": "A second reader, whose absence is disclosed as absence."},
+        {"title": "Replay", "note": "Verify dispatches on the schema the packet declares."}
+      ],
+      "returns": [
+        {"from": 6, "to": 5, "label": "A WITNESS THAT REPORTS DRIFT LOWERS THE DERIVED VERDICT"}
+      ],
+      "outcomes": [
+        {"label": "MATCH, EXIT 0", "note": "every claim recomputed from the packet", "tone": "verified"},
+        {"label": "DRIFT, EXIT 1", "note": "a recomputed value disagrees with its claim", "tone": "drift"},
+        {"label": "UNVERIFIABLE, EXIT 2", "note": "the evidence to check a claim is not there", "tone": "none"}
+      ]
+    }
+  ]
+}
