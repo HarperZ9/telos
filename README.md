@@ -129,6 +129,12 @@ The active consolidation roadmap is [`docs/PROJECT-TELOS-LARGE-SCALE-ROADMAP-202
 
 One idea runs under everything here: an action or claim only counts when it carries evidence a person or another system can re-check later, and when the check cannot pass, the answer is an honest UNVERIFIABLE rather than a confident guess. That is why every command writes a receipt and every proof verifier is built to be able to fail.
 
+Here is one of those receipts, drawn field by field. Run it yourself with `python tools/check_repo_art.py --json`:
+
+<p align="center"><img src="docs/art/receipt-anatomy.svg" alt="Six fields of a receipt the artwork checker emits, each with what comes back in it and how a reader would check that field for themselves. schema names the contract the record is written to. mode says whether the run rendered the files or only compared them. specs lists the diffable input the pictures are a function of. outputs carries one entry per drawing, each with a byte count and a SHA-256 read from the file on disk. checks carries one entry per gate, each naming itself and listing what it found. passed is the verdict, and it folds out of those checks rather than being written down, so a record cannot claim a pass its own checks do not support." width="100%"></p>
+
+The picture is generated from the same spec the checker reads, and a gate holds every value in it against a receipt the tool actually emits, so it cannot go quietly out of date.
+
 ## License
 
 FSL-1.1-ALv2 (fair source). The code is open to read and run, free for nearly any use except building a competing product, and each release converts to Apache 2.0 after two years. Copyright is held by the author. See [LICENSE](LICENSE).

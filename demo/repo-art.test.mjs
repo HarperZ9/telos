@@ -34,6 +34,9 @@ const REQUIRED = [
   "art.every_illustration_is_shown",
   "art.tagline_stays_inside_its_rule",
   "art.outcome_fits_its_box",
+  "art.card_matches_the_receipt",
+  "art.card_text_fits_its_column",
+  "art.card_carries_one_mark",
   "art.the_gate_can_fail"
 ];
 const byName = new Map(receipt.checks.map((check) => [check.name, check]));
@@ -47,15 +50,19 @@ for (const name of REQUIRED) {
 assert.deepEqual(receipt.specs, ["docs/art/telos.art.json"]);
 
 const files = receipt.outputs.map((output) => output.file);
-assert.deepEqual(files, ["docs/art/proof-lane.svg", "docs/art/telos-header.svg"]);
+assert.deepEqual(files, [
+  "docs/art/proof-lane.svg",
+  "docs/art/receipt-anatomy.svg",
+  "docs/art/telos-header.svg"
+]);
 for (const output of receipt.outputs) {
   assert.match(output.sha256, /^[a-f0-9]{64}$/, output.file);
   assert.ok(output.bytes > 0, `${output.file} is empty`);
   assert.equal(output.spec, "docs/art/telos.art.json");
 }
 
-// A gate that cannot fail is not a gate. art.the_gate_can_fail covers the three
-// geometry checks from inside the module; this covers the same ground from
+// A gate that cannot fail is not a gate. art.the_gate_can_fail covers the
+// budget checks from inside the module; this covers the same ground from
 // outside it, by pointing the outcome-box check at a throwaway spec on disk
 // whose note is far too wide for its box.
 const canFail = spawnSync(
@@ -80,5 +87,34 @@ const canFail = spawnSync(
 );
 assert.equal(canFail.status, 0, canFail.stderr || canFail.stdout);
 assert.equal(Number(canFail.stdout.trim()), 1, "the outcome-box gate cannot fail");
+
+// Same idea for the receipt card, end to end: build a drawing that agrees with
+// the receipt in every field, break one value, and the gate has to report that
+// one and nothing else.
+const cardCanFail = spawnSync(
+  "python",
+  [
+    "-c",
+    [
+      "import sys, json, tempfile, pathlib",
+      "sys.path.insert(0, 'tools')",
+      "import check_repo_art as gate, check_repo_card as card",
+      "d = pathlib.Path(tempfile.mkdtemp())",
+      "live = gate._receipt_fields([])",
+      "fields = [{'key': k, 'value': card.drawn_value(v), 'note': 'ok'}",
+      "          for k, v in live.items()]",
+      "fields[0]['value'] = 'a value no receipt carries'",
+      "fields[0]['tone'] = 'verified'",
+      "spec = {'cards': [{'file': 'bad.svg', 'footnote': 'ok',",
+      "                   'fields': fields}]}",
+      "(d / 'bad.art.json').write_text(json.dumps(spec), encoding='utf-8')",
+      "card.ART = d",
+      "print(len(dict(gate.CHECKS)['art.card_matches_the_receipt']([])))"
+    ].join("\n")
+  ],
+  { cwd: repo, encoding: "utf8" }
+);
+assert.equal(cardCanFail.status, 0, cardCanFail.stderr || cardCanFail.stdout);
+assert.equal(Number(cardCanFail.stdout.trim()), 1, "the card gate cannot fail");
 
 console.log(`repo-art: ${REQUIRED.length} gates, ${receipt.outputs.length} files`);
