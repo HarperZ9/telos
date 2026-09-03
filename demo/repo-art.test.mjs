@@ -33,7 +33,8 @@ const REQUIRED = [
   "art.return_edge_stays_on_its_row",
   "art.every_illustration_is_shown",
   "art.tagline_stays_inside_its_rule",
-  "art.outcome_fits_its_box"
+  "art.outcome_fits_its_box",
+  "art.the_gate_can_fail"
 ];
 const byName = new Map(receipt.checks.map((check) => [check.name, check]));
 for (const name of REQUIRED) {
@@ -53,8 +54,10 @@ for (const output of receipt.outputs) {
   assert.equal(output.spec, "docs/art/telos.art.json");
 }
 
-// A gate that cannot fail is not a gate. Point the outcome-box check at a
-// throwaway spec whose note is far too wide for its box, and it must say so.
+// A gate that cannot fail is not a gate. art.the_gate_can_fail covers the three
+// geometry checks from inside the module; this covers the same ground from
+// outside it, by pointing the outcome-box check at a throwaway spec on disk
+// whose note is far too wide for its box.
 const canFail = spawnSync(
   "python",
   [
