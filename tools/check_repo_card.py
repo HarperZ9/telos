@@ -104,6 +104,19 @@ def text_that_overflows(cards: list[dict]) -> list[str]:
     return bad
 
 
+def alt_text_that_drifted(cards: list[dict]) -> list[str]:
+    """The README alt attribute is the whole of what a reader who cannot see
+    the card gets. GitHub draws it as an <img>, and an <img> hides whatever
+    description the SVG carries inside it, so the long one in the spec has to
+    reach the README as it is written. Without this, a row can be re-worded
+    and the sentence describing it to a screen reader still says what the card
+    used to say."""
+    shown = (ROOT / "README.md").read_text(encoding="utf-8")
+    return [f'{card["file"]}: the README describes it as something it is no '
+            f"longer, because the spec alt is not the alt in the README"
+            for card in cards if card["alt"] not in shown]
+
+
 def wrong_number_of_marks(cards: list[dict]) -> list[str]:
     """Colour says one thing here. Two accents and it says nothing."""
     bad = []
@@ -125,6 +138,8 @@ def checks(receipt_fields) -> list[tuple]:
          lambda _unused: text_that_overflows(_cards())),
         ("art.card_carries_one_mark",
          lambda _unused: wrong_number_of_marks(_cards())),
+        ("art.card_alt_reaches_the_readme",
+         lambda _unused: alt_text_that_drifted(_cards())),
     ]
 
 
@@ -140,6 +155,7 @@ def checks(receipt_fields) -> list[tuple]:
 # stays here so a return to counting characters fails rather than ships.
 CONTROL = [{
     "file": "control.svg",
+    "alt": "a description of a drawing that is in no README anywhere",
     "footnote": "word " * 200,
     "heads": ["z" * (HEAD_BUDGETS[0] + 1), "ok", "ok", "one column too many"],
     "fields": [
@@ -172,4 +188,6 @@ def control_failures() -> list[str]:
          "column, an over-wide column head and a clipped footnote"),
         (len(wrong_number_of_marks(CONTROL)) == 1,
          "a card wearing two hot marks"),
+        (len(alt_text_that_drifted(CONTROL)) == 1,
+         "a description that reaches no README at all"),
     ) if not caught]
