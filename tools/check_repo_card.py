@@ -18,6 +18,18 @@ import repo_card as CARD
 ROOT = Path(__file__).resolve().parents[1]
 ART = ROOT / "docs" / "art"
 
+# The two mono columns, in characters. A monospace advance is about 0.6em, so
+# these count characters against the width each column actually has.
+KEY_BUDGET = int((CARD.KEY_W + CARD.GUTTER - 16) / 7.8)
+VAL_BUDGET = int(CARD.VAL_W / 7.2)
+
+# The three column heads, in characters. They are set at 11px with a sixth of
+# an em of tracking, so they run wider per character than the columns under
+# them and get their own count.
+HEAD_BUDGETS = (int((CARD.KEY_W + CARD.GUTTER - 16) / 8.4),
+                int((CARD.VAL_W + CARD.GUTTER) / 8.4),
+                int(CARD.NOTE_W / 8.4))
+
 
 def _cards() -> list[dict]:
     return [card for path in sorted(ART.glob("*.art.json"))
@@ -60,15 +72,31 @@ def misreported(cards: list[dict], live: dict) -> list[str]:
 
 
 def text_that_overflows(cards: list[dict]) -> list[str]:
-    """Notes wrap to the column beside the value and the footnote wraps to
-    the page. Both drop what will not fit instead of growing the drawing."""
+    """Nothing is drawn wider than the column it is drawn into. The key and
+    the value are single unwrapped lines, so they run into their neighbour
+    rather than being clipped; the note and the footnote wrap by measured
+    width and then drop what will not fit instead of growing the drawing."""
     bad = []
     for card in cards:
         for field in card["fields"]:
+            if len(field["key"]) > KEY_BUDGET:
+                bad.append(f'{card["file"]}: the {field["key"]} name runs '
+                           f"into the value column")
+            if len(field["value"]) > VAL_BUDGET:
+                bad.append(f'{card["file"]}: the value on {field["key"]} runs '
+                           f"into the note column")
             drawn = " ".join(CARD._wrap(field["note"]))
             if drawn != " ".join(field["note"].split()):
                 bad.append(f'{card["file"]}: the note on {field["key"]} cuts '
                            f'off at "{drawn}"')
+        heads = card.get("heads", CARD.HEADS)
+        if len(heads) != 3:
+            bad.append(f'{card["file"]} names {len(heads)} columns, and the '
+                       f"drawing has three")
+        for head, budget in zip(heads, HEAD_BUDGETS):
+            if len(head) > budget:
+                bad.append(f'{card["file"]}: the {head!r} column head runs '
+                           f"into the column beside it")
         foot = " ".join(CARD._wrap(card["footnote"], CARD.FOOT_BUDGET,
                                    CARD.FOOT_LINES))
         if foot != " ".join(card["footnote"].split()):
@@ -101,23 +129,36 @@ def checks(receipt_fields) -> list[tuple]:
 
 
 # A card built to break every one of those at once: a value that disagrees, a
-# field no receipt carries, two fields left out, a clipped note, a clipped
-# footnote, and two hot marks where the rule allows one.
+# field no receipt carries, two fields left out, a name and a value too wide
+# for their columns, a clipped note, a fourth column head, a head too wide for
+# its column, a clipped footnote, and two hot marks where the rule allows one.
+#
+# The last row is the shape that got past an earlier version of this file. A
+# budget counted in characters read that note as two comfortable lines and let
+# it through, and it drew forty pixels past the edge of the page, because
+# capitals are wider than the lowercase prose the count was calibrated on. It
+# stays here so a return to counting characters fails rather than ships.
 CONTROL = [{
     "file": "control.svg",
     "footnote": "word " * 200,
+    "heads": ["z" * (HEAD_BUDGETS[0] + 1), "ok", "ok", "one column too many"],
     "fields": [
         {"key": "schema", "value": "wrong", "note": "ok", "tone": "verified"},
         {"key": "invented", "value": "1 entry", "note": "ok", "tone": "drift"},
         {"key": "passed", "value": "true | false", "note": "word " * 40},
+        {"key": "z" * (KEY_BUDGET + 1), "value": "z" * (VAL_BUDGET + 1),
+         "note": "ok"},
+        {"key": "caps", "value": "ok", "note": " ".join(["UNVERIFIABLE"] * 10)},
     ],
 }]
 
 CONTROL_RECEIPT = {"schema": "project-telos.repo-art/v1", "mode": "check",
                    "specs": ["a", "b"], "passed": True}
 
-# Written down rather than counted, so the number cannot drift quietly.
-CONTROL_MISREPORTS = 4
+# Written down rather than counted, so the number cannot drift quietly. Two
+# fields left out, one value that disagrees, and three names no receipt
+# carries.
+CONTROL_MISREPORTS = 6
 
 
 def control_failures() -> list[str]:
@@ -125,8 +166,10 @@ def control_failures() -> list[str]:
     return [f"the gate missed {what}" for caught, what in (
         (len(misreported(CONTROL, CONTROL_RECEIPT)) == CONTROL_MISREPORTS,
          "a card that disagrees with the receipt it draws"),
-        (len(text_that_overflows(CONTROL)) == 2,
-         "a clipped card note and a clipped footnote"),
+        (len(text_that_overflows(CONTROL)) == 7,
+         "an over-wide name, an over-wide value, a clipped note, a row of "
+         "capitals that fits a character count and not the column, a fourth "
+         "column, an over-wide column head and a clipped footnote"),
         (len(wrong_number_of_marks(CONTROL)) == 1,
          "a card wearing two hot marks"),
     ) if not caught]

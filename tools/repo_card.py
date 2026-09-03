@@ -52,23 +52,58 @@ STYLE = """
 TONE = {"verified": "var(--verified)", "drift": "var(--drift)",
         "none": "var(--hairline)"}
 
-# One line of the note column, at 11.5px in the grotesk. Two lines fit the row.
-NOTE_BUDGET = int(NOTE_W / 5.4)
+# The column heads say what a row of this drawing is. A receipt reads as a
+# field and what comes back in it; something else in the repository reads as
+# something else, so a spec may name its own three and these are the default.
+HEADS = ("field", "what comes back", "how you check it")
+
+# What one character draws in the note and footnote columns, in pixels at
+# 11.5px. These are measured off a rendered probe rather than assumed, because
+# a budget counted in characters cannot tell an uppercase line from a
+# lowercase one: capitals run about a quarter wider, so a row of verdict
+# tokens fits a character count and still draws off the edge of the page.
+#
+# The weights round up. The drawing ships to readers whose machine resolves a
+# different face than the one measured, so a line that stops a little short is
+# a smaller defect than one that runs past the rule.
+UPPER, LOWER, DIGIT, SPACE, NARROW = 7.1, 5.75, 6.3, 3.2, 2.7
+_NARROW = frozenset(".,;:'!|")
+
+
+def _advance(char: str) -> float:
+    if char == " ":
+        return SPACE
+    if char.isupper():
+        return UPPER
+    if char.islower():
+        return LOWER
+    if char.isdigit():
+        return DIGIT
+    return NARROW if char in _NARROW else LOWER
+
+
+def text_width(text: str) -> float:
+    """What a line of note or footnote prose draws, in pixels."""
+    return sum(_advance(char) for char in text)
+
+
+# One line of the note column, in pixels. Two lines fit the row.
+NOTE_BUDGET = NOTE_W
 NOTE_LINES = 2
 
 # The footnote runs the width of the page at the same size, so it holds more.
-FOOT_BUDGET = int((W - PAD * 2) / 5.4)
+FOOT_BUDGET = W - PAD * 2
 FOOT_LINES = 3
 
 
-def _wrap(text: str, width: int = NOTE_BUDGET,
+def _wrap(text: str, width: float = NOTE_BUDGET,
           limit: int = NOTE_LINES) -> list[str]:
-    """Greedy wrap, cut to the lines the caller has room for."""
+    """Greedy wrap by drawn width, cut to the lines the caller has room for."""
     lines: list[str] = []
     line = ""
     for word in text.split():
         candidate = f"{line} {word}".strip()
-        if len(candidate) > width and line:
+        if text_width(candidate) > width and line:
             lines.append(line)
             line = word
         else:
@@ -103,12 +138,12 @@ def _row(index: int, field: dict) -> str:
             f'{_esc(field["value"])}</text>{notes}</g>')
 
 
-def _column_heads() -> str:
-    heads = (("field", PAD + 16), ("what comes back", PAD + KEY_W + GUTTER),
-             ("how you check it", NOTE_X))
+def _column_heads(labels: tuple[str, str, str] = HEADS) -> str:
+    columns = (PAD + 16, PAD + KEY_W + GUTTER, NOTE_X)
     return "".join(
         f'<text class="k" x="{_num(x)}" y="{_num(TOP - 14)}" '
-        f'font-family="{MONO}">{label.upper()}</text>' for label, x in heads)
+        f'font-family="{MONO}">{_esc(label.upper())}</text>'
+        for label, x in zip(labels, columns))
 
 
 def _footnote(text: str, top: float) -> str:
@@ -135,7 +170,7 @@ def card_svg(spec: dict) -> str:
         f'<text class="h" x="{PAD}" y="72">{_esc(spec["title"])}</text>'
         f'<text class="s" x="{PAD}" y="94" font-family="{MONO}" '
         f'font-size="11.5">$ {_esc(spec["source"])}</text>'
-        f'{_column_heads()}{rows}'
+        f'{_column_heads(tuple(spec.get("heads", HEADS)))}{rows}'
         f'<path class="thin" d="M{PAD} {_num(rule)}H{W - PAD}"/>'
         f'{_footnote(spec["footnote"], rule + 22)}'
         "</svg>")
