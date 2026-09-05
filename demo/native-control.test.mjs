@@ -25,7 +25,7 @@ import {
   getText,
   waitFor,
 } from "./native-control/browser.mjs";
-import { uiaArgs, parseUiaOutput, uiaScriptPath, windows } from "./native-control/app.mjs";
+import { uiaArgs, parseUiaOutput, uiaScriptPath, windows, focus } from "./native-control/app.mjs";
 import { parseArgs, makeReceipt, SCHEMA } from "./native-control.mjs";
 
 const here = path.dirname(fileURLToPath(import.meta.url));
@@ -171,6 +171,25 @@ test("parseUiaOutput returns the last JSON line and surfaces helper errors", () 
 test("uiaScriptPath points at tools/uia.ps1", () => {
   assert.match(uiaScriptPath().replaceAll("\\", "/"), /tools\/uia\.ps1$/);
 });
+
+// The helper writes JSON on stdout. If the host encodes that stream in the
+// console codepage instead of UTF-8, a control name outside the codepage is
+// replaced or dropped and the caller JSON.parse fails on the mangled bytes.
+// The error path echoes the argument back, so a non-ASCII window match that
+// cannot exist is a deterministic probe of the encoding and needs no
+// particular window open.
+test(
+  "app: UIA helper returns UTF-8 JSON for a non-ASCII argument",
+  { skip: process.platform === "win32" ? false : "windows-only" },
+  async () => {
+    const probe = "café-→-日本";
+    await assert.rejects(() => focus(probe, { timeoutMs: 25000 }), (err) => {
+      assert.match(err.message, /window not found/);
+      assert.ok(err.message.includes(probe), err.message);
+      return true;
+    });
+  },
+);
 
 // ---- CLI smoke: help receipt ----
 
