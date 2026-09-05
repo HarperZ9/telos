@@ -10,6 +10,18 @@
 #   focus <windowMatch>
 
 $ErrorActionPreference = "Stop"
+
+# stdout carries JSON, so the stream has to be UTF-8 whatever the console
+# codepage is. Without this the host writes control names in the codepage, a
+# name outside it is replaced or dropped, and the caller JSON.parse fails on
+# bytes that are no longer valid UTF-8. Guarded, because a redirected or
+# absent console can refuse the assignment and that must not take the helper
+# down: the worst case is the old behaviour, not a crash.
+try {
+  $utf8 = New-Object System.Text.UTF8Encoding $false
+  [Console]::OutputEncoding = $utf8
+  $OutputEncoding = $utf8
+} catch { }
 try {
   Add-Type -AssemblyName UIAutomationClient
   Add-Type -AssemblyName UIAutomationTypes
