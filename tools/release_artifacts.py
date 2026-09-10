@@ -9,12 +9,12 @@ from urllib.parse import urlparse
 import zipfile
 
 REQUIRED_FILES = {
-    'package.json', 'LICENSE', 'README.md', 'USAGE.md',
+    'package.json', 'LICENSE', 'README.md', 'USAGE.md', 'verify_packet.mjs',
     'demo/telos.mjs', 'demo/telos-mcp.mjs',
     'demo/native-control/app.mjs', 'demo/native-control/device.mjs',
     'tools/uia.ps1', 'tools/device.ps1', 'docs/native-control-contract.md',
 }
-ROOT_FILES = {'package.json', 'LICENSE', 'README.md', 'USAGE.md'}
+ROOT_FILES = {'package.json', 'LICENSE', 'README.md', 'USAGE.md', 'verify_packet.mjs'}
 EXCLUDED = {'node_modules', 'protected', 'secrets', 'private', 'credentials',
             'scankii-synthetic-corpus', 'smallharness-dogfood-pack'}
 LOCAL_HOME = re.compile(r'(?<![\w:/])(?:[A-Za-z]:/(?:Users|Documents and Settings)/|/(?:Users|home)/)', re.I)
@@ -64,6 +64,7 @@ def read_package(archive, tag):
                        or name.startswith('docs/brand/')
                        or name in {'docs/CURRENT-STATE.md',
                                    'docs/native-control-contract.md',
+                                   'docs/RELEASE-NOTES-0.3.0.md',
                                    'tools/uia.ps1', 'tools/device.ps1'})
             if (not allowed or name.endswith('.test.mjs')
                     or name.endswith('-render-receipt.json')

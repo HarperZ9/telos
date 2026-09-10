@@ -48,8 +48,8 @@ verifies they agree. When bumping, change all of them together:
 2. Update `CHANGELOG.md` and the release notes under `docs/`.
 3. Tag and push the tag:
    ```bash
-   git tag v0.2.0
-   git push origin v0.2.0
+   git tag v0.3.0
+   git push origin v0.3.0
    ```
 4. Create the GitHub release for the tag. Publishing the release triggers
    `release.yml`, which re-runs the test suite, builds the `npm pack` tarball
@@ -72,14 +72,15 @@ verifies they agree. When bumping, change all of them together:
 ```bash
 npm pack --dry-run          # inspect the shipped file list
 npm pack                    # build the tarball
-python tools/release_artifacts.py --tarball project-telos-mcp-0.2.0.tgz --tag v0.2.0 --output-dir release-check
-npm install -g ./project-telos-mcp-0.2.0.tgz
+python tools/release_artifacts.py --tarball project-telos-mcp-0.3.0.tgz --tag v0.3.0 --output-dir release-check
+npm install -g ./project-telos-mcp-0.3.0.tgz
 telos catalog --summary
 telos-mcp                   # stdio MCP server; send {"jsonrpc":"2.0","id":1,"method":"tools/list"}
 ```
 
-The archive validator rejects missing entrypoints or native helpers, version/tag
-mismatches, links, traversal paths, hidden files, and files outside the reviewed
+The archive validator rejects a missing standalone verifier, entrypoints or
+native helpers, version/tag mismatches, links, traversal paths, hidden files,
+and files outside the reviewed
 package layout. These package controls do not establish live device control or
 provider conformance. The five sibling source-launch gate remains a separate
 check; sibling servers are not bundled in the npm package or zip.

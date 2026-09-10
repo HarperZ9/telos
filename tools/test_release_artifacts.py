@@ -73,6 +73,7 @@ class ArchiveTests(unittest.TestCase):
         self.assertIn(output.name, checksums)
 
     def test_missing_helpers_and_entrypoints_are_rejected(self):
+        self.assertIn('verify_packet.mjs', self.module.REQUIRED_FILES)
         for name in self.module.REQUIRED_FILES:
             with self.subTest(name=name):
                 archive, _ = self.pack(omit=name)

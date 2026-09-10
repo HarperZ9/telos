@@ -102,7 +102,7 @@ function collectRoom() {
 function roomEnvelope(room) {
   return actionEnvelope({
     tool: "telos",
-    toolVersion: "0.2.0",
+    toolVersion: "0.3.0",
     command: "room",
     status: room.ready === room.total && room.checksPassed === room.checksTotal ? "MATCH" : "DRIFT",
     native: {
@@ -149,7 +149,7 @@ function printHuman(payload) {
 function unjoinableEnvelope(missing) {
   return actionEnvelope({
     tool: "telos",
-    toolVersion: "0.2.0",
+    toolVersion: "0.3.0",
     command: "room",
     status: "UNVERIFIABLE",
     native: {
