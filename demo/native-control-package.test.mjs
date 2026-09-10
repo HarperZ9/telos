@@ -17,4 +17,6 @@ test("package includes exact native helpers beside their existing drivers", () =
     ["tools/device.ps1", "tools/uia.ps1"]);
   for (const name of ["app", "device"]) assert.ok(files.includes(`demo/native-control/${name}.mjs`));
   assert.ok(files.includes("docs/native-control-contract.md"));
+  assert.ok(!files.some(name => name.endsWith("-render-receipt.json")),
+    "local font input receipts must not enter public release archives");
 });

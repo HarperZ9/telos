@@ -105,6 +105,14 @@ jobs:
           node demo/workstation-substrate.test.mjs
           node demo/youtube-research-receipts.test.mjs
 
+      - name: Release packaging controls
+        working-directory: telos
+        run: python tools/test_release_artifacts.py
+
+      - name: Run MCP launch gate
+        working-directory: telos
+        run: npm run test:mcp
+
       - name: Run Telos room and workflow smoke
         working-directory: telos
         run: |

@@ -1,8 +1,8 @@
-# Project Telos 0.2.0 (draft)
+# Project Telos 0.2.0
 
-Draft release notes. The tag and the GitHub release are cut by the operator;
-this file summarizes what actually landed on `main` between `v0.1.0`
-(2026-06-29) and this release candidate, derived from the git history.
+Release notes for the operator-authorized 0.2.0 release. This file summarizes
+the source changes since `v0.1.0` (2026-06-29); package availability and
+source-checkout verification are separate from live control measurements.
 
 ## Summary
 
@@ -63,22 +63,45 @@ The MCP surface grew from 64 to 69 tools (telos from 37 to 41).
   trampoline contract.
 - Manifest: `index.select` declared as Index auxiliary compatibility surface
   so the launch gate matches the current Index tool surface.
+- Release preflight also declares Gather context/pilot and five Index router-job
+  tools, bringing the auxiliary surface to 36 tools. These names were checked
+  with `tools/list`; that check does not establish each tool's live behavior.
 - Brand gate: hero dimension check matches the shipped flagship card canon
   (2400x1260).
+- Native-control packaging includes the Windows UIA and device helpers beside
+  their drivers. Explicit browser matches reject missing or ambiguous targets
+  before a CDP connection; focus receipts preserve unknown background behavior.
+  These are contract and packaging checks, not proof of live computer control
+  or background-only operation.
 
 ## Packaging (this release)
 
 - `bin` entries: `telos-mcp` (stdio MCP server) and `telos` (router over the
   demo command surface).
-- `files` allowlist so `npm pack` ships the runnable demo, the current-state
-  doc, and brand assets only.
-- Release workflow that builds the npm tarball and a runnable demo zip on
-  manual dispatch or a published release. No automated publishing.
+- An npm tarball and runnable zip share one reviewed file set, including the
+  native helper scripts and their contract documentation. The zip contains a
+  `telos/` directory. `SHA256SUMS.txt` records both archive digests.
+  Render receipts with local font-input metadata are excluded from the assets.
+- Release workflow checks out the requested tag, runs the CI and source-launch
+  gates, validates archive entries, and attaches new assets. Existing assets
+  are never overwritten. npm registry publication is a separate action and is
+  not part of this release.
 
 ## Install and run
 
 ```bash
-node demo/telos-mcp.mjs            # from a checkout
+node demo/telos-mcp.mjs            # from a checkout or the extracted telos/ zip
 node demo/telos.mjs catalog --summary
-# once published: npx --package project-telos-mcp telos-mcp
+npm install -g ./project-telos-mcp-0.2.0.tgz  # downloaded release asset
+telos catalog --summary
 ```
+
+Node 20 or newer is required; CI uses Node 24. The five-server source-checkout
+launch gate additionally requires sibling `gather`, `crucible`, `index`, and
+`forum` checkouts. The tarball does not bundle those servers. Research fixtures
+and proof receipts retain their stated scope; this release makes no MHS
+conformance, live actuation, model-quality, or comparative-superiority claim.
+
+Validation limit: the existing hyphal context benchmark remains advisory in CI
+because of its stale-commit dependency. Its failure is retained and is not
+counted as passing release evidence.

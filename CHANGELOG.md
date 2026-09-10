@@ -4,6 +4,19 @@ All notable changes to Project Telos. Telos is a zero-dependency source demo and
 
 ## Unreleased
 
+No changes queued.
+
+## 0.2.0 - 2026-09-10
+
+- Release assets share the reviewed npm package file set. The runnable zip
+  includes the package entrypoints and native helper scripts, with SHA-256
+  checksums for both archives. Release builds check out the requested tag,
+  retain current CI gates, and refuse existing asset-name overwrites.
+  Local font-input render receipts are excluded from both release archives.
+- Source-launch preflight declares the observed Gather context/pilot tools and
+  five Index router-job tools as auxiliary compatibility surfaces. Both CI and
+  release builds run the five-server source-checkout launch gate.
+
 - Native control repair: pack the two Windows helper scripts with their drivers;
   reject missing, ambiguous and invalid explicit browser matches before CDP
   connection; classify receipt focus behavior with nullable `background` and
