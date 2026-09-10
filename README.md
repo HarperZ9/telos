@@ -21,7 +21,7 @@ Telos is a zero-dependency local workbench for creating, simulating, and replayi
 - **Research proof packets.** Deterministic preflights for causal inference (toy-DAG minimal adjustment set), embodied sim-to-real (differential drive with safety envelope and latency bound), and quantum error correction (3-qubit bit-flip stabilizer code), each with negative controls and explicit non-claims.
 - **Model foundry and learning forge.** A bounded contract for routing work across hosted frontier APIs and local open-weight models, seven executable lab contracts with failure cases and metrics, and a self-improving daemon loop that only promotes verified changes.
 - **Context tooling for large codebases.** Budgeted, validated context packs and envelopes for handing a big workspace to a model without losing provenance.
-- **Native workstation control.** `node demo/native-control.mjs` drives the browser via the Chrome DevTools Protocol and native apps via Windows UI Automation, delivering synthetic events so the operator's cursor and keyboard stay free; the MCP tool `telos.native.control` is the read-only capability catalog, and browser-evidence packets make automated browsing reviewable.
+- **Native workstation control.** `node demo/native-control.mjs` drives the browser via the Chrome DevTools Protocol and native apps via Windows UI Automation. UIA focus and keyboard-input actions can affect the foreground window; receipts distinguish known focus behavior from unknown effects. An explicit browser match must select one target. The MCP tool `telos.native.control` remains a read-only capability catalog. See [the control contract](docs/native-control-contract.md) before actuation.
 
 ## Try it
 

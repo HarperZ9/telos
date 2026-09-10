@@ -1,7 +1,7 @@
 // Telos native background control: a single CLI/MCP surface over the browser
 // (CDP) and native-app (UIA) drivers, plus a full-device read/write/execute
-// surface. Every action is a synthetic event into the target process, so the
-// operator's physical cursor and keyboard stay free.
+// surface. UIA focus/input verbs can affect the operator's foreground window;
+// receipts classify known focus behavior and retain unknowns.
 //
 //   node demo/native-control.mjs browser <verb> [args] [--match=..] [--port=..]
 //   node demo/native-control.mjs app <verb> [args]
@@ -19,6 +19,7 @@
 import { writeFileSync, readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { DEFAULT_PORT } from "./native-control/cdp.mjs";
+import { focusSemantics } from "./native-control/focus.mjs";
 import * as browser from "./native-control/browser.mjs";
 import * as app from "./native-control/app.mjs";
 import * as device from "./native-control/device.mjs";
@@ -58,7 +59,7 @@ export function makeReceipt(action, target, result, { ok = true, clock } = {}) {
     target,
     ok,
     result,
-    background: true, // no OS cursor/keyboard used
+    ...focusSemantics(action, result),
     at,
   };
 }

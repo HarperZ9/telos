@@ -15,6 +15,12 @@ Telos currently targets Node 20 or newer.
 
 ## Run
 
+For native browser/app/device control, read the [target and focus contract](docs/native-control-contract.md).
+Explicit browser matches must select one page. Omitted matches retain raw CLI
+first-page selection, which is not authorization. Focus receipts can be unknown;
+UIA focus/input verbs can affect the foreground window. The MCP native-control
+tool returns a catalog only.
+
 ```bash
 npm start
 npm run catalog
