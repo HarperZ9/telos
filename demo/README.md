@@ -69,10 +69,13 @@ Analytical Engine layer for agent work: pack large workspaces into readable
 source references, record action receipts, and persist loop state so a fresh
 context can pick one next action with evidence instead of inheriting confidence.
 
-`browser-evidence.mjs --summary` returns the browser evidence kernel contract:
-automated browsing and work-actuation page state is reduced to redacted refs,
-digests, side-effect classes, and `MATCH` / `DRIFT` / `UNVERIFIABLE` verdicts
-so Index and Forum can feed council/review paths without raw browser payloads.
+`browser-evidence.mjs --summary` describes the synthetic browser evidence
+fixture. The packet builder hashes snapshot text and omits snapshot DOM/body,
+but retains URLs, titles, selectors, artifact refs and supplied summaries.
+Packets are labeled `unredacted` and belong in private storage unless a separate
+redaction/export transform has been verified. Hashes and verification verdicts
+do not establish safe publication or semantic truth; see the
+[evidence contract](../docs/native-control-contract.md).
 
 `flagship-workflow.mjs` dogfoods the five-tool chain by mapping Telos with
 Index, gathering the operator-spine spec with Gather, routing the work through

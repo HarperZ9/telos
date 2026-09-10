@@ -39,6 +39,11 @@ function snapshot(input) {
 }
 
 export function makeBrowserEvidencePacket(input) {
+  // This assembler hashes body text but retains URLs, titles, selectors, refs
+  // and supplied summaries. A caller assertion is not a redaction operation.
+  if (input.redactionStatus != null && input.redactionStatus !== "unredacted") {
+    throw new Error("redaction is not performed by this evidence builder; use unredacted and keep the packet private");
+  }
   const verification = input.verification ?? { verdict: "UNVERIFIABLE", ref: null };
   return {
     schema: BROWSER_EVIDENCE_SCHEMA,
@@ -57,7 +62,7 @@ export function makeBrowserEvidencePacket(input) {
     network_summary: input.networkSummary ?? makeUnavailableSummary("network", "collector-not-attached"),
     console_summary: input.consoleSummary ?? makeUnavailableSummary("console", "collector-not-attached"),
     artifact_hashes: input.artifactHashes ?? [],
-    redaction_status: input.redactionStatus ?? "redacted",
+    redaction_status: "unredacted",
     side_effect: input.sideEffect ?? { class: "read", external_write: false, reversible: true },
     verification,
     created_at: input.clock ? input.clock() : new Date().toISOString(),
@@ -74,5 +79,7 @@ export function validateBrowserEvidencePacket(packet) {
   if (!packet.after || typeof packet.after !== "object") failures.push("missing_after");
   if (!packet.verification || !VERDICTS.has(packet.verification.verdict)) failures.push("missing_verification");
   if (!Array.isArray(packet.artifact_hashes)) failures.push("artifact_hashes_not_array");
+  if (packet.redaction_status === "redacted") failures.push("redaction_unverified");
+  else if (packet.redaction_status !== "unredacted") failures.push("redaction_status_invalid");
   return { ok: failures.length === 0, failures };
 }

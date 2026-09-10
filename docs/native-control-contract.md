@@ -1,4 +1,4 @@
-# Native control: targets and focus
+# Native control: targets, focus and evidence
 
 The CLI contains real browser, Windows UI Automation and device drivers. The
 `telos.native.control` MCP tool returns their catalog only; it accepts no action
@@ -53,3 +53,57 @@ They use synthetic targets, a fake fetch/socket and npm pack dry-run with script
 disabled. They never inspect or drive host apps. The older native-control test
 module includes live debug-browser and Windows-window probes, so running that
 whole module is a separate runtime action, not an offline substitute.
+
+## Ledger integrity
+
+New `project-telos.native-control-ledger/v1` exports add `hash_version: 2`.
+The versioned hash binds `runId`, `name` and every entry field, including `step`,
+`action`, `target`, `ok` and `result`. Only the derived `chain` and `chain_ok`
+entry fields are excluded. Input values are snapshotted as JSON at append time.
+Version 2 uses SHA-256 over the previous chain value followed by the existing
+spaced, sorted-key canonical JSON of `{schema, hash_version, runId, name, entry}`.
+The schema remains v1; the hash version selects the calculation.
+
+The library and standalone `verify_packet.mjs` still read legacy exports with
+an absent or explicit `hash_version: 1`. Those verify only the ordered step IDs
+and results, and report `legacy-step-and-result-only`: action, target, outcome
+flags and session metadata are unbound. Older verifiers cannot verify new version
+2 chains and must be updated. Unknown hash versions fail verification.
+
+`INTACT`, `ok: true` and standalone `MATCH` describe hash consistency only.
+Export summaries (`count`, `integrity`, `integrity_scope`) and `chain_ok` are
+derived displays, not authenticated statements. These unsigned chains do not
+prove who produced the data, that it is true, that an action ran, or that the task
+succeeded. A trusted external checkpoint is needed to detect a rewritten chain
+or removed suffix. An empty ledger witnesses no actions.
+
+## Browser evidence privacy
+
+The existing v1 builder preserves source URLs, titles, selectors, artifact refs
+and supplied network/console summaries. It hashes snapshot text and omits the
+snapshot DOM/body, but it does not sanitize retained context or referenced
+artifacts. Digests are not encryption or an anonymity guarantee.
+
+Packets therefore default to `redaction_status: "unredacted"`. Explicit
+`redactionStatus: "redacted"` requests throw; the validator reports
+`redaction_unverified` for packets with that unsupported assertion. Legacy
+packets carrying that assertion must be reviewed and labeled for their actual
+retained data, not treated as certified redaction. The fixture CLI and MCP tool
+return a synthetic, unredacted example; the raw browser CLI captures real source
+context when the operator invokes it.
+
+Keep captures and ledger exports in private operator-controlled storage. No
+privacy transform or public-safe export is implemented by these helpers. The
+caller still controls any file destination and sharing decision; useful source
+context is retained. Shape validation does not establish semantic truth, safe
+publication or privacy of arbitrary summary fields and referenced artifacts.
+
+Run the synthetic integrity and privacy controls with:
+
+```sh
+node --test demo/native-control-ledger.test.mjs demo/browser-evidence.test.mjs
+node ledger.test.mjs
+node verify_packet.test.mjs
+```
+
+These controls never read a live browser, host window, profile or credential.

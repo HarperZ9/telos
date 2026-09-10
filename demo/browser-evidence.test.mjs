@@ -81,6 +81,41 @@ test("validateBrowserEvidencePacket reports typed failures", () => {
   assert.ok(result.failures.includes("missing_verification"));
 });
 
+test("default evidence keeps authorized source context and declares it unredacted", () => {
+  const input = {
+    mode: "research-capture",
+    before: {
+      url: "https://example.invalid/private?token=synthetic-token#private-fragment",
+      title: "Synthetic private document title",
+      text: "Synthetic private body omitted from packet",
+      html: "<p>Synthetic private DOM omitted from packet</p>",
+    },
+    action: { kind: "browser.read", selector: '[data-email="synthetic@example.invalid"]' },
+    networkSummary: { request: "Synthetic private request context" },
+    consoleSummary: { message: "Synthetic private console context" },
+  };
+  const packet = makeBrowserEvidencePacket(input);
+  assert.equal(packet.redaction_status, "unredacted");
+  assert.equal(packet.before.url, input.before.url);
+  assert.equal(packet.before.title, input.before.title);
+  assert.equal(packet.action.selector, input.action.selector);
+  assert.deepEqual(packet.network_summary, input.networkSummary);
+  assert.deepEqual(packet.console_summary, input.consoleSummary);
+  assert.equal(JSON.stringify(packet).includes(input.before.text), false);
+  assert.equal(JSON.stringify(packet).includes(input.before.html), false);
+  assert.equal(validateBrowserEvidencePacket(packet).ok, true);
+});
+
+test("caller labels cannot certify redaction that the builder does not perform", () => {
+  const input = { mode: "research-capture", after: { url: "https://example.invalid/private", title: "Synthetic private title" } };
+  assert.throws(() => makeBrowserEvidencePacket({ ...input, redactionStatus: "redacted" }), /redaction/i);
+  const forged = { ...makeBrowserEvidencePacket(input), redaction_status: "redacted" };
+  assert.ok(validateBrowserEvidencePacket(forged).failures.includes("redaction_unverified"));
+  const missing = { ...makeBrowserEvidencePacket(input) };
+  delete missing.redaction_status;
+  assert.ok(validateBrowserEvidencePacket(missing).failures.includes("redaction_status_invalid"));
+});
+
 test("browser-evidence CLI emits the fixture contract", () => {
   const cli = spawnSync(process.execPath, [path.join(here, "browser-evidence.mjs"), "--fixture"], {
     cwd: path.resolve(here, ".."),

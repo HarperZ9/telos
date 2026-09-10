@@ -193,7 +193,7 @@ export const tools = [
   },
   {
     name: "telos.browser.evidence",
-    description: "Use when a host needs a redacted browser evidence packet for automated browsing, research capture, work actuation, or council review. Read-only, zero-auth, no external side effects. Returns a JSON browser-evidence packet.",
+    description: "Use when a host needs the synthetic browser evidence fixture for contract inspection. Read-only, zero-auth, no external side effects. Returns a JSON browser-evidence packet marked unredacted; URL and title context is retained.",
     inputSchema: emptyInputSchema
   },
   {
