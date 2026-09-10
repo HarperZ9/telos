@@ -1,6 +1,6 @@
 {
   "schema": "project-telos.mcp-server-manifest/v1",
-  "verified_on": "2026-07-30",
+  "verified_on": "2026-09-10",
   "workspace_placeholder": "${PROJECT_TELOS_PUBLIC}",
   "transports": [
     "stdio"
@@ -59,7 +59,9 @@
         "gather.run"
       ],
       "auxiliary_tools": [
-        "gather.federation"
+        "gather.federation",
+        "gather.context",
+        "gather.pilot"
       ],
       "freshness": {
         "status_tool": "gather.status",
@@ -166,7 +168,12 @@
         "index.symbol-graph",
         "index.symbol-definition",
         "index.symbol-references",
-        "index.symbol-implementations"
+        "index.symbol-implementations",
+        "index.router.job.start",
+        "index.router.job.status",
+        "index.router.job.result",
+        "index.router.job.cancel",
+        "index.router.job.resume"
       ],
       "freshness": {
         "status_tool": "index.status",

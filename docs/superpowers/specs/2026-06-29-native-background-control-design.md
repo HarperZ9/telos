@@ -32,32 +32,32 @@ A new `demo/native-control/` module tree, a `demo/native-control.mjs` CLI, a
 `tools/uia.ps1` helper, and MCP/catalog/manifest/status/docs/CI wiring.
 
 ### Browser driver (CDP)
-- `demo/native-control/cdp.mjs` — discover tabs via `http://127.0.0.1:9222/json`,
+- `demo/native-control/cdp.mjs`: discover tabs via `http://127.0.0.1:9222/json`,
   attach to a tab's `webSocketDebuggerUrl` with the built-in `WebSocket`, send
   commands by incrementing id and await the matching response; surface events.
-- `demo/native-control/browser.mjs` — high-level verbs built on `Runtime.evaluate`
+- `demo/native-control/browser.mjs`: high-level verbs built on `Runtime.evaluate`
   (primary, robust), `Input.*` (synthetic), and `Page.*`:
   `tabs`, `navigate(url)`, `eval(js)`, `click(selector)`, `type(selector,text)`,
   `getText(selector)`, `waitFor(selector,timeoutMs)`, `screenshot(path)`.
-- `ensureChrome()` — probe `:9222/json/version`; if absent, relaunch Chrome with
+- `ensureChrome()`: probe `:9222/json/version`; if absent, relaunch Chrome with
   `--remote-debugging-port=9222 --restore-last-session` on the operator's
   existing `User Data` profile so logins persist and tabs restore. Chrome path
   and profile are resolved from the environment, never hardcoded as secrets.
 
 ### App driver (Win32 UI Automation)
-- `tools/uia.ps1` — a read/act PowerShell helper using `System.Windows.Automation`:
+- `tools/uia.ps1`: a read/act PowerShell helper using `System.Windows.Automation`:
   `windows` (top-level windows), `tree <window>` (element names/types/automationIds),
   `invoke <window> <name>` (InvokePattern), `setvalue <window> <name> <text>`
   (ValuePattern), `focus <window>`. JSON in, JSON out. UIA patterns act on the
   control directly, without moving the cursor.
-- `demo/native-control/app.mjs` — Node wrapper that shells to `uia.ps1`, parses
+- `demo/native-control/app.mjs`: Node wrapper that shells to `uia.ps1`, parses
   JSON, and returns structured results.
 
 ### Surface
-- `demo/native-control.mjs` — `node demo/native-control.mjs <browser|app> <verb> [args]`,
+- `demo/native-control.mjs`: `node demo/native-control.mjs <browser|app> <verb> [args]`,
   wraps each call in a receipt.
-- `telos-mcp.mjs` + `mcp-tool-catalog.json` + `mcp-server-manifest.json` — MCP
-  exposure; `status.mjs`, README, CURRENT-STATE — presentation; `ci.yml` — coverage.
+- `telos-mcp.mjs` + `mcp-tool-catalog.json` + `mcp-server-manifest.json`: MCP
+  exposure; `status.mjs`, README, CURRENT-STATE: presentation; `ci.yml`: coverage.
 
 ## Files to Modify / Create
 - `demo/native-control/cdp.mjs`, `browser.mjs`, `app.mjs` (new)

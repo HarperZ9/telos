@@ -16,6 +16,7 @@ node demo/action-receipt.test.mjs
 
 # MCP surface and source-checkout launch gate
 npm run test:mcp
+python tools/test_release_artifacts.py
 
 # Room and workflow smoke
 node demo/catalog.mjs --summary
@@ -52,8 +53,10 @@ verifies they agree. When bumping, change all of them together:
    ```
 4. Create the GitHub release for the tag. Publishing the release triggers
    `release.yml`, which re-runs the test suite, builds the `npm pack` tarball
-   and the runnable demo zip, and attaches both to the release. Alternatively,
-   dispatch the workflow manually with the tag as input.
+   and a zip with the exact same files under `telos/`, and attaches both plus
+   `SHA256SUMS.txt`. It checks out the requested tag for testing and packaging.
+   Alternatively, dispatch the workflow manually with the tag as input.
+   Existing output and release asset names are refused rather than overwritten.
 5. npm publish, if and when wanted, is a separate manual operator step. There
    is no automated npm publish anywhere in this repo.
 
@@ -69,7 +72,14 @@ verifies they agree. When bumping, change all of them together:
 ```bash
 npm pack --dry-run          # inspect the shipped file list
 npm pack                    # build the tarball
+python tools/release_artifacts.py --tarball project-telos-mcp-0.2.0.tgz --tag v0.2.0 --output-dir release-check
 npm install -g ./project-telos-mcp-0.2.0.tgz
 telos catalog --summary
 telos-mcp                   # stdio MCP server; send {"jsonrpc":"2.0","id":1,"method":"tools/list"}
 ```
+
+The archive validator rejects missing entrypoints or native helpers, version/tag
+mismatches, links, traversal paths, hidden files, and files outside the reviewed
+package layout. These package controls do not establish live device control or
+provider conformance. The five sibling source-launch gate remains a separate
+check; sibling servers are not bundled in the npm package or zip.
