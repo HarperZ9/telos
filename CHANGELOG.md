@@ -1,15 +1,25 @@
 # Changelog
 
-All notable changes to Project Telos. Telos is a zero-dependency source demo and shared operator room; 0.2.0 adds npm packaging prep (bin entries, files allowlist, release lane) while publishing stays operator-gated.
+All notable changes to Project Telos. Telos is a zero-dependency source demo and shared operator room. GitHub release assets are versioned; npm registry publication stays operator-gated.
 
 ## Unreleased
 
+No changes queued.
+
+## 0.3.0 - 2026-09-10
+
+- Both release archives now include the zero-dependency standalone receipt
+  verifier. Packaging gates reject an archive that omits it.
 - Native-control ledger hash version 2 binds action/target/outcome and session
   metadata. Both verifiers retain legacy result-chain support with an explicit
   limited scope. Hash consistency does not establish execution truth.
 - Browser evidence preserves source context and now reports `unredacted`;
   unsupported redaction assertions fail. Synthetic mutation and privacy
   controls run in CI and release gates. No public-safe export is claimed.
+- Compatibility: upgrade ledger readers before producing hash version 2.
+  Older readers reject the new format; version 1 receipts retain only their
+  original step/result integrity scope. Browser consumers must accept the
+  `unredacted` label and keep retained source context private.
 
 ## 0.2.0 - 2026-09-10
 

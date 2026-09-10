@@ -2,7 +2,7 @@
 
 **The shared workbench: durable state, native workstation control, sensory organs, a discovery forge.**
 
-![version](https://img.shields.io/badge/version-0.2.0-9683ff?style=flat-square&labelColor=14041b)
+![version](https://img.shields.io/badge/version-0.3.0-9683ff?style=flat-square&labelColor=14041b)
 ![license](https://img.shields.io/badge/license-FSL--1.1--ALv2-8f8095?style=flat-square&labelColor=14041b)
 [![CI](https://github.com/HarperZ9/telos/actions/workflows/ci.yml/badge.svg)](https://github.com/HarperZ9/telos/actions/workflows/ci.yml)
 ![node](https://img.shields.io/badge/node-24%20CI%2C%2020%2B%20registry-9683ff?style=flat-square&labelColor=14041b)
@@ -121,7 +121,18 @@ Peer repos: [gather](https://github.com/HarperZ9/gather) (research intake), [ind
 
 ## Status and maturity
 
-This is a 0.2.0 source-registry package. The command surface above is tested and CI-covered (the repo carries over 60 test files run individually in CI), but npm publishing is operator-gated and interfaces may still move between minor versions. Research packets are deterministic preflights with explicit non-claims: the causal packet does not claim causal discovery, the embodied packet does not claim real-robot safety, the quantum packet does not claim hardware QEC. Treat the receipts and tests in this repo as the evidence, not prose counts.
+This is a 0.3.0 source-registry package. The command surface above is tested and CI-covered (the repo carries over 60 test files run individually in CI), but npm publishing is operator-gated and interfaces may still move between minor versions. Research packets are deterministic preflights with explicit non-claims: the causal packet does not claim causal discovery, the embodied packet does not claim real-robot safety, the quantum packet does not claim hardware QEC. Treat the receipts and tests in this repo as the evidence, not prose counts.
+
+### Upgrading from 0.2.0
+
+0.3.0 writes native-control ledger hash version 2, binding session metadata and
+entry fields. Upgrade readers before writers: 0.2.0 readers reject the new
+format. New readers still accept legacy receipts with a limited step/result
+integrity scope. Browser evidence now reports `unredacted`; URLs, titles,
+selectors, artifact references, and supplied summaries can remain in packets.
+Keep these packets private. Hash consistency does not prove execution truth,
+authorship, completeness, or safety. See [release notes](docs/RELEASE-NOTES-0.3.0.md).
+
 
 The active consolidation roadmap is [`docs/PROJECT-TELOS-LARGE-SCALE-ROADMAP-2026-07-02.md`](docs/PROJECT-TELOS-LARGE-SCALE-ROADMAP-2026-07-02.md), and the documentation control plane is [`docs/DOCUMENTATION-CONSOLIDATION-REGISTRY-2026-07-02.md`](docs/DOCUMENTATION-CONSOLIDATION-REGISTRY-2026-07-02.md) with the machine-readable registry under [`docs/registry/`](docs/registry/).
 

@@ -305,7 +305,7 @@ export function handleRequest(request) {
       return result(id, {
         protocolVersion,
         capabilities: { tools: {} },
-        serverInfo: { name: "project-telos-telos", version: "0.2.0" }
+        serverInfo: { name: "project-telos-telos", version: "0.3.0" }
       });
     }
     if (request.method === "ping") {
