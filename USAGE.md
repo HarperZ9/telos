@@ -15,11 +15,16 @@ Telos currently targets Node 20 or newer.
 
 ## Run
 
-For native browser/app/device control, read the [target and focus contract](docs/native-control-contract.md).
+For native browser/app/device control, read the [target, focus and evidence contract](docs/native-control-contract.md).
 Explicit browser matches must select one page. Omitted matches retain raw CLI
 first-page selection, which is not authorization. Focus receipts can be unknown;
 UIA focus/input verbs can affect the foreground window. The MCP native-control
 tool returns a catalog only.
+
+Browser evidence retains source URLs, titles and supplied context, so packets
+are marked `unredacted` and should remain in private storage. Ledger verification
+checks unsigned hash consistency; legacy step/result-only chains are labeled
+with that limited scope. Neither check establishes task completion.
 
 ```bash
 npm start

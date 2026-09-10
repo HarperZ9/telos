@@ -70,10 +70,22 @@ function verifyLedger(ledger) {
   if (ledger.genesis !== GENESIS) {
     return ["UNVERIFIABLE", "ledger genesis is not the 64-zero anchor"];
   }
-  const entries = Array.isArray(ledger.entries) ? ledger.entries : [];
+  const version = ledger.hash_version ?? 1;
+  if (version !== 1 && version !== 2) {
+    return ["UNVERIFIABLE", "unsupported ledger hash_version"];
+  }
+  if (!Array.isArray(ledger.entries) || ledger.entries.some((e) => !e || typeof e !== "object" || Array.isArray(e))) {
+    return ["UNVERIFIABLE", "ledger entries must be an array of entry objects"];
+  }
+  const entries = ledger.entries;
   let prev = GENESIS;
   for (const entry of entries) {
-    if (chainValue(prev, entry.step, entry.result) !== entry.chain) {
+    const { chain, chain_ok, ...fields } = entry;
+    const payload = { schema: ledger.schema, hash_version: 2, runId: ledger.runId, name: ledger.name, entry: fields };
+    const derived = version === 1
+      ? chainValue(prev, entry.step, entry.result)
+      : createHash("sha256").update(prev + canonicalJson(payload), "utf8").digest("hex");
+    if (derived !== entry.chain) {
       return ["DRIFT", `chainValue does not re-derive at step ${entry.step}`];
     }
     if (entry.prev !== undefined && entry.prev !== prev) {
@@ -81,7 +93,10 @@ function verifyLedger(ledger) {
     }
     prev = entry.chain;
   }
-  return ["MATCH", `chainValue re-derives across ${entries.length} ledger entries`];
+  const scope = version === 1
+    ? "legacy step and result only; action, target, ok and session metadata are not bound"
+    : "entry and session metadata; derived chain_ok and export summaries are not bound";
+  return ["MATCH", `chainValue re-derives across ${entries.length} ledger entries (${scope}). Unsigned integrity only, not execution truth or completeness.`];
 }
 
 function verify(artifact) {

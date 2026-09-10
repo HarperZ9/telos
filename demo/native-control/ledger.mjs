@@ -1,16 +1,9 @@
-// Witnessed session ledger for native-control runs. Each step's result chains
-// into a tamper-evident log (emet/forum-style: chain = SHA-256(prev + stepId +
-// canonical_json(result))), so an entire automation session -- apply to N jobs,
-// a multi-step auth flow, a scrape -- is itself a witnessed, re-checkable
-// artifact. This is telos's accountability thesis applied to its own actuation.
-//
-//   canonicalJson : keys sorted, ", " / ": " separators, UTF-8 (emet-pinned form)
-//   chainValue    : sha256(prev + stepId + canonicalJson(result)), genesis = 64 zeros
-//
-// A ledger EXPORT is a list of {step, action, target, ok, result, chain}; verify
-// re-derives the chain and rejects any edited step or ordering. It is a FACT of
-// what ran, never authority -- and it never carries secrets (action results are
-// the engine's own receipts, which exclude credentials by construction).
+// Native-control ledger integrity, not execution truth or authorization.
+// hash_version 2 binds session identity and every entry field except the derived
+// chain/chain_ok fields. Missing hash_version denotes the legacy step/result
+// calculation. Retained targets and results can contain private data.
+// These are unsigned hashes: a trusted external checkpoint is needed to detect
+// a rewritten chain or a removed suffix. Verification cannot establish success.
 
 import { createHash } from "node:crypto";
 
@@ -38,49 +31,77 @@ export function chainValue(prev, stepId, result) {
   return createHash("sha256").update(prev + String(stepId) + canonicalJson(result), "utf8").digest("hex");
 }
 
+const SCHEMA = "project-telos.native-control-ledger/v1";
+const GENESIS = "0".repeat(64);
+
+function entryChain(prev, entry, ledger) {
+  if ((ledger.hash_version ?? 1) === 1) return chainValue(prev, entry.step, entry.result);
+  const { chain, chain_ok, ...fields } = entry;
+  const payload = {
+    schema: SCHEMA, hash_version: 2, runId: ledger.runId, name: ledger.name, entry: fields,
+  };
+  return createHash("sha256").update(prev + canonicalJson(payload), "utf8").digest("hex");
+}
+
 export class Ledger {
   constructor({ runId, name } = {}) {
     this.runId = runId || `run_${Date.now().toString(36)}_${Math.random().toString(36).slice(2, 8)}`;
     this.name = name || "native-control-session";
-    this.prev = "0".repeat(64);
+    this.hash_version = 2;
+    this.prev = GENESIS;
     this.entries = [];
   }
 
   append(stepId, entry) {
-    const chain = chainValue(this.prev, stepId, entry.result);
-    const rec = { step: stepId, ...entry, chain };
+    // Hash the JSON wire values and detach caller-owned objects before storing.
+    // This also avoids alias/cycle ambiguities in the legacy serializer.
+    const rec = JSON.parse(JSON.stringify({ ...entry, step: stepId }));
+    delete rec.chain;
+    delete rec.chain_ok;
+    const chain = entryChain(this.prev, rec, this);
+    rec.chain = chain;
     this.entries.push(rec);
     this.prev = chain;
     return rec;
   }
 
   export() {
-    // genesis prev + ordered entries; the chain itself is the integrity proof.
-    let p = "0".repeat(64);
+    let p = GENESIS;
     const entries = this.entries.map((e) => {
-      const check = chainValue(p, e.step, e.result);
+      const check = entryChain(p, e, this);
       p = e.chain;
       return { ...e, chain_ok: check === e.chain };
     });
     return {
-      schema: "project-telos.native-control-ledger/v1",
+      schema: SCHEMA,
+      hash_version: this.hash_version,
       runId: this.runId,
       name: this.name,
-      genesis: "0".repeat(64),
+      genesis: GENESIS,
       entries,
       integrity: entries.every((e) => e.chain_ok) ? "INTACT" : "BROKEN",
+      integrity_scope: "entry-and-session-metadata",
       count: entries.length,
     };
   }
 
   static verify(exported) {
-    if (!exported || exported.genesis !== "0".repeat(64)) return { ok: false, reason: "bad-genesis" };
+    if (!exported || exported.genesis !== GENESIS) return { ok: false, reason: "bad-genesis" };
+    if (exported.schema !== SCHEMA) return { ok: false, reason: "unknown-schema" };
+    const version = exported.hash_version ?? 1;
+    if (version !== 1 && version !== 2) return { ok: false, reason: "unknown-hash-version" };
+    if (!Array.isArray(exported.entries) || exported.entries.some((e) => !e || typeof e !== "object" || Array.isArray(e))) {
+      return { ok: false, reason: "bad-entries" };
+    }
     let p = exported.genesis;
     for (const e of exported.entries) {
-      if (chainValue(p, e.step, e.result) !== e.chain) return { ok: false, reason: "chain-broken", step: e.step };
+      if (entryChain(p, e, exported) !== e.chain) return { ok: false, reason: "chain-broken", step: e.step };
       if (e.prev !== undefined && e.prev !== p) return { ok: false, reason: "linkage", step: e.step };
       p = e.chain;
     }
-    return { ok: true, count: exported.entries.length };
+    return {
+      ok: true, count: exported.entries.length,
+      integrity_scope: version === 2 ? "entry-and-session-metadata" : "legacy-step-and-result-only",
+    };
   }
 }

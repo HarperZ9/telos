@@ -4,7 +4,12 @@ All notable changes to Project Telos. Telos is a zero-dependency source demo and
 
 ## Unreleased
 
-No changes queued.
+- Native-control ledger hash version 2 binds action/target/outcome and session
+  metadata. Both verifiers retain legacy result-chain support with an explicit
+  limited scope. Hash consistency does not establish execution truth.
+- Browser evidence preserves source context and now reports `unredacted`;
+  unsupported redaction assertions fail. Synthetic mutation and privacy
+  controls run in CI and release gates. No public-safe export is claimed.
 
 ## 0.2.0 - 2026-09-10
 

@@ -80,6 +80,8 @@ jobs:
           node demo/mcp-runtime-contract.test.mjs
           node demo/native-control.test.mjs
           node --test demo/native-control-contract.test.mjs demo/native-control-package.test.mjs
+          node --test demo/native-control-ledger.test.mjs demo/browser-evidence.test.mjs
+          node ledger.test.mjs
           node demo/uia-script.test.mjs
           node demo/operator-source-leads.test.mjs
           node demo/operator-scripts.test.mjs
