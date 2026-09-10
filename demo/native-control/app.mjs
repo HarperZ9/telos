@@ -1,8 +1,8 @@
-// Background native-app control via Windows UI Automation.
+// Native-app control via Windows UI Automation.
 //
 // Shells to tools/uia.ps1 (built-in PowerShell, no external dependency). UIA
-// patterns act on the control inside the target process, so the mouse and
-// keyboard are never moved.
+// patterns act on controls inside the target process. focus/setvalue request
+// focus; input/type synthesize foreground keystrokes and can affect the user.
 
 import { spawn } from "node:child_process";
 import { existsSync } from "node:fs";

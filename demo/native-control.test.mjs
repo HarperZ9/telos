@@ -73,7 +73,7 @@ test("CdpSession times out when no response arrives", async () => {
 
 // ---- target selection ----
 
-test("pickPageTarget prefers a url/title match, falls back to first page", () => {
+test("pickPageTarget selects a unique match or the omitted-match first page", () => {
   const targets = [
     { type: "page", url: "https://a.com", webSocketDebuggerUrl: "ws://1" },
     { type: "page", url: "https://reddit.com/r/x", webSocketDebuggerUrl: "ws://2" },
@@ -138,14 +138,15 @@ test("parseArgs splits domain/verb/params and --flags", () => {
   assert.deepEqual(a.flags, { match: "reddit", port: "9333" });
 });
 
-test("makeReceipt has the contract shape and marks background-true", () => {
+test("makeReceipt preserves unknown focus behavior for browser actuation", () => {
   const r = makeReceipt("browser.click", "#go", { clicked: "#go" }, { clock: () => "T0" });
   assert.equal(r.schema, SCHEMA);
   assert.equal(r.tool, "telos.native.control");
   assert.equal(r.action, "browser.click");
   assert.equal(r.target, "#go");
   assert.equal(r.ok, true);
-  assert.equal(r.background, true);
+  assert.equal(r.background, null);
+  assert.equal(r.focus_effect, "unknown");
   assert.equal(r.at, "T0");
   assert.deepEqual(r.result, { clicked: "#go" });
   assert.equal(makeReceipt("x", null, { error: "e" }, { ok: false, clock: () => "T" }).ok, false);

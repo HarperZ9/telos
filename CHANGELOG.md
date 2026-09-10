@@ -4,6 +4,12 @@ All notable changes to Project Telos. Telos is a zero-dependency source demo and
 
 ## Unreleased
 
+- Native control repair: pack the two Windows helper scripts with their drivers;
+  reject missing, ambiguous and invalid explicit browser matches before CDP
+  connection; classify receipt focus behavior with nullable `background` and
+  `focus_effect`. Omitted-match raw CLI behavior remains compatible. These are
+  source/package controls, not a live control or background-focus measurement.
+
 - Ship prep for 0.2.0: package version 0.2.0 across package.json, the MCP
   serverInfo, the telos.status envelope, and the server-manifest freshness
   expectations. Adds `bin` entries (`telos-mcp` for the stdio MCP server,

@@ -28,20 +28,27 @@ export async function listTargets(port = DEFAULT_PORT, fetchImpl = fetch) {
   return res.json();
 }
 
-// Choose a page target, optionally preferring one whose url/title contains
-// `match`. Returns null when no inspectable page exists.
+// An explicit URL/title substring must select one page. Without a match the
+// raw CLI retains first-page selection; that compatibility is not authorization.
 export function pickPageTarget(targets, { match } = {}) {
+  if (match !== undefined && (typeof match !== "string" || !match.trim())) {
+    throw Object.assign(new Error("Explicit browser target match is invalid"), { code: "TARGET_INVALID" });
+  }
   const pages = (targets || []).filter(
     (t) => t.type === "page" && t.webSocketDebuggerUrl,
   );
-  if (!pages.length) return null;
-  if (match) {
-    const hit = pages.find(
+  if (match !== undefined) {
+    const hits = pages.filter(
       (t) => (t.url || "").includes(match) || (t.title || "").includes(match),
     );
-    if (hit) return hit;
+    if (hits.length !== 1) {
+      const code = hits.length ? "TARGET_AMBIGUOUS" : "TARGET_NOT_FOUND";
+      throw Object.assign(new Error(hits.length
+        ? "Explicit browser target match is ambiguous" : "Explicit browser target match was not found"), { code });
+    }
+    return hits[0];
   }
-  return pages[0];
+  return pages[0] ?? null;
 }
 
 // A single CDP connection. Correlates outgoing command ids to their responses
