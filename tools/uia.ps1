@@ -14,6 +14,8 @@
 #   setvalue <windowMatch> <elementMatch> <text>
 #   focus <windowMatch>
 #   value <windowMatch> <elementMatch>
+#   select <windowMatch> <elementMatch>
+#   restore <windowMatch>
 #   input <keys>                        FOREGROUND key synthesis
 #   type <text>                         FOREGROUND key synthesis
 #   selftest
@@ -39,13 +41,13 @@ $ErrorActionPreference = "Stop"
 # One list, used by the unknown-verb answer and checked against the header
 # comment above by demo/uia-script.test.mjs. A second hand-typed copy is
 # how the header drifted to five verbs while the file implemented eight.
-$VERBS = @("windows", "tree", "invoke", "setvalue", "focus", "value", "input", "type", "selftest")
+$VERBS = @("windows", "tree", "invoke", "setvalue", "focus", "value", "select", "restore", "input", "type", "selftest")
 
 # Total argv length each verb needs, including the verb itself. Checked before
 # dispatch so a missing argument answers in JSON: without it $args[1] is $null,
 # .ToLower() on it throws, and the caller parsing stdout gets a PowerShell stack
 # trace where the contract promises an object.
-$ARITY = @{ windows = 1; tree = 2; invoke = 3; setvalue = 4; focus = 2; value = 3; input = 2; type = 2; selftest = 1 }
+$ARITY = @{ windows = 1; tree = 2; invoke = 3; setvalue = 4; focus = 2; value = 3; select = 3; restore = 2; input = 2; type = 2; selftest = 1 }
 
 # stdout carries JSON, so the stream has to be UTF-8 whatever the console
 # codepage is. Without this the host writes control names in the codepage, a
@@ -303,6 +305,41 @@ try {
       }
       Out-Json @{ ok = $true; name = $t.element.Current.Name; matched = $t.how
                   type = $t.element.Current.ControlType.ProgrammaticName; value = $v }
+    }
+    "select" {
+      # SelectionItemPattern: a browser tab, a list row, a radio item. Chrome's
+      # tab strip exposes tabs this way and not through InvokePattern, so
+      # 'invoke' cannot switch a tab. Selecting changes what the owning window
+      # shows; it does not synthesise input.
+      $t = Resolve-Target $args[1] $args[2]
+      if ($t.deny) { Out-Json (Deny-Body $t.deny $t.subject $t.match); break }
+      $pattern = $null
+      if ($t.element.TryGetCurrentPattern([System.Windows.Automation.SelectionItemPattern]::Pattern, [ref]$pattern)) {
+        $pattern.Select()
+        Out-Json @{ ok = $true; selected = $t.element.Current.Name; matched = $t.how
+                    isSelected = $pattern.Current.IsSelected }
+      } else {
+        Out-Json @{ ok = $false; error = "element has no SelectionItemPattern: $($args[2])" }
+      }
+    }
+    "restore" {
+      # WindowPattern: bring a minimized window back to its normal state. A
+      # window that is already normal or maximized is left as it is, and the
+      # answer says which state it found, so a caller can tell a restore from a
+      # no-op.
+      $w = Find-Window $args[1]
+      if ($w.deny) { Out-Json (Deny-Body $w.deny "window" $args[1]); break }
+      $pattern = $null
+      if ($w.element.TryGetCurrentPattern([System.Windows.Automation.WindowPattern]::Pattern, [ref]$pattern)) {
+        $before = [string]$pattern.Current.WindowVisualState
+        if ($before -eq "Minimized") {
+          $pattern.SetWindowVisualState([System.Windows.Automation.WindowVisualState]::Normal)
+        }
+        Out-Json @{ ok = $true; window = $w.element.Current.Name; matched = $w.how
+                    before = $before; after = [string]$pattern.Current.WindowVisualState }
+      } else {
+        Out-Json @{ ok = $false; error = "window has no WindowPattern: $($args[1])" }
+      }
     }
     "input" {
       # FOREGROUND key synthesis: SendKeys goes to whatever window holds focus

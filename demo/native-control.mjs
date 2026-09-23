@@ -207,6 +207,10 @@ async function runApp(verb, params) {
       return app.focus(params[0]);
     case "value":
       return app.value(params[0], params[1]);
+    case "select":
+      return app.select(params[0], params[1]);
+    case "restore":
+      return app.restore(params[0]);
     case "input":
       return app.input(params.join(" "));
     case "type":
@@ -267,7 +271,7 @@ async function main() {
             "snapshot-visual",
             "evidence",
           ],
-          app: ["windows", "tree", "invoke", "setvalue", "focus", "value", "input", "type"],
+          app: ["windows", "tree", "invoke", "setvalue", "focus", "value", "select", "restore", "input", "type"],
           device: ["exec", "read", "write", "ls"],
         }),
         null,
