@@ -251,12 +251,17 @@ jobs:
             echo "credentials: OIDC trusted publishing, npm $NPM_VERSION"
             exit 0
           fi
-          echo "credentials: token authenticates as $(npm whoami), npm $NPM_VERSION"
+          # An assignment, not a substitution inside echo: under `bash -e` the
+          # assignment fails with whoami, while echo would print an empty name
+          # and exit 0. The 0.4.1 run did exactly that on an E401 token and
+          # went on to sign provenance for an upload that could not succeed.
+          WHO="$(npm whoami)"
+          echo "credentials: token authenticates as $WHO, npm $NPM_VERSION"
 
       - name: Build the tarball and record its digest
         run: |
           npm pack --ignore-scripts
-          for f in ./*.tgz; do echo "sha256  $(sha256sum "$f")"; done
+          sha256sum ./*.tgz
 
       # Installs the packed tarball the way a user would and drives the real
       # stdio server through the bin a user runs. A package can pack cleanly,
