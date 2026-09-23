@@ -147,8 +147,31 @@ jobs:
           python tools/release_artifacts.py --tarball .release/project-telos-mcp-*.tgz --tag "$RELEASE_TAG" --output-dir .release
           (cd .release && sha256sum --check SHA256SUMS.txt)
 
+      # A re-run for a tag that already has its assets, for example after the
+      # publish credentials are fixed, rebuilds the same bytes: both 0.4.0
+      # builds matched digest for digest. So an attached set is accepted only
+      # when it holds exactly the files just built and every one of them
+      # verifies against the new SHA256SUMS.txt. Anything else is refused.
+      # Nothing attached is ever overwritten.
       - name: Attach new artifacts to the GitHub release
-        run: gh release upload "$RELEASE_TAG" .release/*.tgz .release/*.zip .release/SHA256SUMS.txt
+        run: |
+          ATTACHED="$(gh release view "$RELEASE_TAG" --json assets --jq '.assets[].name' | sort)"
+          BUILT="$(ls .release | sort)"
+          if [ -z "$ATTACHED" ]; then
+            gh release upload "$RELEASE_TAG" .release/*.tgz .release/*.zip .release/SHA256SUMS.txt
+            exit 0
+          fi
+          if [ "$ATTACHED" != "$BUILT" ]; then
+            echo "release $RELEASE_TAG carries a different asset set; refusing to add to it"
+            echo "attached: $ATTACHED"
+            echo "built: $BUILT"
+            exit 1
+          fi
+          mkdir .attached
+          gh release download "$RELEASE_TAG" --dir .attached
+          (cd .attached && sha256sum --check ../.release/SHA256SUMS.txt)
+          cmp .attached/SHA256SUMS.txt .release/SHA256SUMS.txt
+          echo "release $RELEASE_TAG already carries these exact bytes; nothing attached"
 
       - name: Upload workflow artifacts
         uses: actions/upload-artifact@v7
@@ -196,8 +219,39 @@ jobs:
           if [ "$TAG" != "$PKG" ]; then
             echo "tag $TAG does not match package.json $PKG"; exit 1
           fi
-          echo "version gate: tag $TAG == package.json $PKG" 
           echo "version gate: tag $TAG == package.json $PKG"
+
+      # --provenance signs a statement naming the repository this workflow ran
+      # in, and the registry refuses the upload with E422 unless package.json
+      # names the same one. 0.4.0 declared no repository at all. Checked here so
+      # the refusal arrives before anything is signed.
+      - name: The declared repository must be the one provenance names
+        run: |
+          DECLARED="$(node -p "String(require('./package.json').repository?.url ?? '')" | sed -e 's/^git+//' -e 's/\.git$//')"
+          EXPECTED="$GITHUB_SERVER_URL/$GITHUB_REPOSITORY"
+          if [ "$DECLARED" != "$EXPECTED" ]; then
+            echo "package.json repository.url is '$DECLARED'; provenance will name '$EXPECTED'"; exit 1
+          fi
+          echo "repository gate: $DECLARED"
+
+      # Two routes to the registry. With the NPM_TOKEN secret set, the token has
+      # to authenticate; `npm whoami` fails fast on a revoked or mistyped one.
+      # It cannot see whether the token may create a new package, which is a
+      # separate grant: a granular token limited to named packages authenticates
+      # here and still gets E404 on the upload of a first version. With no
+      # secret, npm uses OIDC trusted publishing, which needs npm 11.5.1 or newer.
+      - name: The publish credentials must be usable
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: |
+          NPM_VERSION="$(npm --version)"
+          if [ -z "$NODE_AUTH_TOKEN" ]; then
+            node -e 'const [a, b, c] = process.argv[1].split(".").map(Number); process.exit(a > 11 || (a === 11 && (b > 5 || (b === 5 && c >= 1))) ? 0 : 1)' "$NPM_VERSION" \
+              || { echo "no NPM_TOKEN, and npm $NPM_VERSION is older than 11.5.1, which trusted publishing needs"; exit 1; }
+            echo "credentials: OIDC trusted publishing, npm $NPM_VERSION"
+            exit 0
+          fi
+          echo "credentials: token authenticates as $(npm whoami), npm $NPM_VERSION"
 
       - name: Build the tarball and record its digest
         run: |
@@ -205,31 +259,28 @@ jobs:
           for f in ./*.tgz; do echo "sha256  $(sha256sum "$f")"; done
 
       # Installs the packed tarball the way a user would and drives the real
-      # stdio server. A package can pack cleanly, install cleanly, and still fail
-      # at launch because a file the server imports was left out of the `files`
-      # allowlist. That is the defect this gate exists to catch, and nothing
-      # earlier in this workflow would see it.
+      # stdio server through the bin a user runs. A package can pack cleanly,
+      # install cleanly, and still fail at launch because a file the server
+      # imports was left out of the `files` allowlist, or because npx has no bin
+      # it can select, which is how 0.4.0 shipped. The --npx pass runs the
+      # README's command through npm's own bin selection.
       - name: The published bytes must serve MCP from a clean install
-        # Installs the packed tarball the way a user would and drives the real
-        # stdio server out of that install. A package can pack cleanly, install
-        # cleanly, and still fail at launch because a file the server imports
-        # was left out of the `files` allowlist, and nothing earlier in this
-        # workflow would see it.
         run: |
-          TARBALL="$(ls ./*.tgz)"
+          TARBALL="$GITHUB_WORKSPACE/$(ls *.tgz)"
           WORK="$(mktemp -d)"
           cd "$WORK"
           npm init -y >/dev/null
-          npm install --no-audit --no-fund "$GITHUB_WORKSPACE/$TARBALL"
-          node "$GITHUB_WORKSPACE/tools/probe-installed-mcp.mjs" "$WORK"
+          npm install --no-audit --no-fund "$TARBALL"
+          node "$GITHUB_WORKSPACE/tools/probe-installed-mcp.mjs" "$WORK" --npx "$TARBALL"
 
       - name: Publish
-        # --provenance records which workflow built these bytes, verifiable from
-        # the registry. NODE_AUTH_TOKEN is only needed for a first publish: npm
-        # cannot configure trusted publishing for a name that does not exist yet,
-        # so OIDC alone returns E404 on version one. Once the package exists and a
-        # trusted publisher is configured on npmjs.com, the secret can be removed
-        # and this step keeps working on OIDC.
-        run: npm publish --provenance --access public
+        # Publishes the tarball the steps above digested and probed, not a
+        # fresh pack of the checkout, so the bytes on the registry are the
+        # bytes that passed. --provenance records which workflow built them.
+        # NODE_AUTH_TOKEN is only needed for a first publish: npm cannot
+        # configure trusted publishing for a name that does not exist yet. Once
+        # the package exists and a trusted publisher is configured on
+        # npmjs.com, the secret can be removed and this step runs on OIDC.
+        run: npm publish "$GITHUB_WORKSPACE/$(ls *.tgz)" --provenance --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

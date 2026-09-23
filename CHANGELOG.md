@@ -6,10 +6,30 @@ All notable changes to Project Telos. Telos is a zero-dependency source demo and
 
 No changes queued.
 
+## 0.4.1 - 2026-09-23
+
+First version on the npm registry. 0.4.0 was tagged and released on GitHub but
+never uploaded. See `docs/RELEASE-NOTES-0.4.1.md`.
+
+- `npx -y project-telos-mcp` starts the MCP server. 0.4.0 declared two bins
+  pointing at different files and none named after the package, so npx stopped
+  with "could not determine executable to run" and the documented command never
+  worked. A `project-telos-mcp` bin now points at the server.
+- `package.json` declares `repository`, `homepage`, `bugs` and `keywords`.
+  `--provenance` refuses an upload whose `repository.url` does not name the
+  repository the workflow ran in, and 0.4.0 declared none.
+- Bin paths use the form npm publishes (`demo/x.mjs`, not `./demo/x.mjs`), so the
+  registry manifest matches the tag.
+- The publish job uploads the tarball it probed instead of packing again, checks
+  the repository and the credentials before signing, and launches the server
+  through its bin shim and through `npx -y file:<tarball>`.
+- `demo/package-manifest.test.mjs` applies npm's bin selection rule to the
+  manifest and to every documented `npx` command.
+
 ## 0.4.0 - 2026-09-23
 
-First npm release. `npm install project-telos-mcp` then `telos-mcp` starts the
-stdio server; `telos` routes the demo command surface.
+Tagged and released on GitHub. It never reached npm, and its documented npx
+command could not have run; 0.4.1 is the first version on the registry.
 
 - The MCP server reports its name as `telos`. It answered `project-telos-telos`
   from June 2026 until this release, which reads as a concatenation slip rather

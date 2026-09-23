@@ -50,28 +50,48 @@ missed one fails rather than shipping. It was eight hand-maintained sites before
 
 1. Confirm the gates above are green on `main`.
 2. Update `CHANGELOG.md` and the release notes under `docs/`.
-3. Tag and push the tag:
+3. Tag and push the tag. The tag comes from `package.json`, so it cannot name a
+   different version:
    ```bash
-   git tag v0.4.0
-   git push origin v0.4.0
+   VERSION="v$(node -p "require('./package.json').version")"
+   git tag "$VERSION"
+   git push origin "$VERSION"
    ```
 4. Create the GitHub release for the tag. Publishing the release triggers
    `release.yml`, which re-runs the test suite, builds the `npm pack` tarball
    and a zip with the exact same files under `telos/`, and attaches both plus
    `SHA256SUMS.txt`. It checks out the requested tag for testing and packaging.
    Alternatively, dispatch the workflow manually with the tag as input.
-   Existing output and release asset names are refused rather than overwritten.
+   Nothing attached is overwritten. The builds are reproducible, so a re-run
+   after fixing credentials needs no cleanup. It passes when the attached files
+   are exactly the files it just built and each one verifies against the new
+   `SHA256SUMS.txt`. Any other attached set is refused.
 5. npm publish runs from `release.yml` and stays skipped unless the repository
-   variable `NPM_PUBLISH_ENABLED` is `true`. Before uploading it checks the tag
-   against the declared version, records the tarball digest, installs the packed
-   tarball into a clean project, and drives the real stdio server out of that
-   install. It publishes with `--provenance`.
+   variable `NPM_PUBLISH_ENABLED` is `true`. Before uploading it runs these
+   checks in order:
+   - The tag matches the declared version.
+   - `repository.url` names the repository the workflow runs in.
+     `--provenance` refuses a mismatch with E422.
+   - The credentials are usable.
+   - The packed tarball installs into a clean project and serves MCP through
+     its bin shim.
+   - `npx -y file:<tarball>` starts the server through npm's own bin selection.
+
+   It then publishes that same tarball with `--provenance`.
 
    npm cannot configure trusted publishing for a package name that does not
-   exist yet, so the first publish of a name needs `NODE_AUTH_TOKEN` from the
-   `NPM_TOKEN` secret. Once the package exists and a trusted publisher is
-   configured on npmjs.com, the secret can be removed and OIDC alone is
-   enough.
+   exist yet. So the first publish of a name needs `NODE_AUTH_TOKEN` from the
+   `NPM_TOKEN` secret, and that token must be allowed to create a package. On
+   npmjs.com that is a granular access token with read and write permission on
+   **all packages**, with two-factor bypass enabled for automation. A token
+   limited to named packages authenticates and lets provenance sign. Then the
+   upload fails with `E404 Not Found - PUT`. npm answers 404 here, not 403, so
+   the response does not reveal whether a name exists.
+
+   After the first version is on the registry, configure a trusted publisher
+   for the package on npmjs.com (repository `HarperZ9/telos`, workflow
+   `release.yml`, environment `npm`), delete the `NPM_TOKEN` secret, and revoke
+   the token. The same job then publishes over OIDC with no stored credential.
 
 ## What stays operator-only
 
@@ -85,10 +105,11 @@ missed one fails rather than shipping. It was eight hand-maintained sites before
 ## Verifying the package locally
 
 ```bash
+VERSION="$(node -p "require('./package.json').version")"
 npm pack --dry-run          # inspect the shipped file list
 npm pack                    # build the tarball
-python tools/release_artifacts.py --tarball project-telos-mcp-0.4.0.tgz --tag v0.4.0 --output-dir release-check
-npm install -g ./project-telos-mcp-0.4.0.tgz
+python tools/release_artifacts.py --tarball "project-telos-mcp-$VERSION.tgz" --tag "v$VERSION" --output-dir release-check
+npm install -g "./project-telos-mcp-$VERSION.tgz"
 telos catalog --summary
 telos-mcp                   # stdio MCP server; send {"jsonrpc":"2.0","id":1,"method":"tools/list"}
 ```

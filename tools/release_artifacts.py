@@ -15,6 +15,16 @@ REQUIRED_FILES = {
     'tools/uia.ps1', 'tools/device.ps1', 'docs/native-control-contract.md',
 }
 ROOT_FILES = {'package.json', 'LICENSE', 'README.md', 'USAGE.md', 'verify_packet.mjs'}
+# The reviewed entrypoints. `project-telos-mcp` is the bin `npx -y
+# project-telos-mcp` selects, because npx runs the bin named after the package
+# when the bins point at different files. Paths are in the form npm publishes,
+# so the registry manifest is the manifest the tag holds.
+EXPECTED_BIN = {
+    'project-telos-mcp': 'demo/telos-mcp.mjs',
+    'telos': 'demo/telos.mjs',
+    'telos-mcp': 'demo/telos-mcp.mjs',
+}
+RELEASE_NOTES = re.compile(r'docs/RELEASE-NOTES-\d+\.\d+\.\d+\.md')
 EXCLUDED = {'node_modules', 'protected', 'secrets', 'private', 'credentials',
             'scankii-synthetic-corpus', 'smallharness-dogfood-pack'}
 LOCAL_HOME = re.compile(r'(?<![\w:/])(?:[A-Za-z]:/(?:Users|Documents and Settings)/|/(?:Users|home)/)', re.I)
@@ -62,9 +72,9 @@ def read_package(archive, tag):
             name = member.name.removeprefix('package/')
             allowed = (name in ROOT_FILES or name.startswith('demo/')
                        or name.startswith('docs/brand/')
+                       or RELEASE_NOTES.fullmatch(name)
                        or name in {'docs/CURRENT-STATE.md',
                                    'docs/native-control-contract.md',
-                                   'docs/RELEASE-NOTES-0.3.0.md',
                                    'tools/uia.ps1', 'tools/device.ps1'})
             if (not allowed or name.endswith('.test.mjs')
                     or name.endswith('-render-receipt.json')
@@ -81,8 +91,7 @@ def read_package(archive, tag):
     package = json.loads(files['package.json'])
     if (package.get('name') != 'project-telos-mcp'
             or package.get('version') != tag[1:]
-            or package.get('bin') != {
-                'telos': './demo/telos.mjs', 'telos-mcp': './demo/telos-mcp.mjs'}):
+            or package.get('bin') != EXPECTED_BIN):
         raise ValueError('package identity, version or entrypoints do not match release')
     return files
 
