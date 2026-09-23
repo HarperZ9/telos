@@ -30,7 +30,7 @@ a BuildLang/buildc runtime receipt.
 | Item | Verdict | Evidence |
 | --- | --- | --- |
 | Benchmark CLI | `MATCH` | `demo/hyphal-context-benchmark.mjs`, canonical-text SHA-256 `e9204b4692fc658077ab7c5ff64251308476438c65c40ed16ddfc75ae797a049` |
-| Benchmark test | `MATCH` | `demo/hyphal-context-benchmark.test.mjs`, canonical-text SHA-256 `bdbdad49a35435d9ae8941c5df9dfc9c5fd3871175de5d7cb7127f609650d31e` |
+| Benchmark test | `MATCH` | `demo/hyphal-context-benchmark.test.mjs`, canonical-text SHA-256 `3e6d2cb8d8149fe63abb39fc17aa166b5cc375de5ee6b2b2a32d9fa32875546e` |
 | Benchmark receipt | `HYPHAL_CONTEXT_FIXTURE_MATCH` | `hyphal-context-benchmark-2026-07-02.json`, canonical-text SHA-256 `9df86246b406cd4c97b1d2952f9eeae6ff8cf7319bbea4514537ac7261953d03` |
 | Reproducibility correction | `MATCH` | `docs/outreach/receipts/twenty-second-wave/hyphal-context-benchmark-correction-2026-07-18.json` |
 | Source gate | `BIOLOGY_NETWORK_INTELLIGENCE_MATCH` | `biology-network-intelligence-source-gate-2026-07-02.json` |

@@ -3,3 +3,11 @@
 # SHA-256 stay the same whoever cloned the repository.
 docs/art/*.svg text eol=lf
 docs/art/*.json text eol=lf
+
+# The smallharness fixture pack carries receipts whose fixtureFileHash is a
+# SHA-256 over the fixture file's bytes. Without a pinned line ending those
+# bytes differ by platform, so a receipt generated on Windows fails to verify on
+# Linux and the reverse. That is not hypothetical: the committed hashes were
+# CRLF, the pack verified on Windows, and it failed the moment CI ran it. Same
+# reasoning as the generated art above.
+demo/integrations/smallharness-dogfood-pack/** text eol=lf
