@@ -169,8 +169,17 @@ jobs:
       id-token: write        # provenance, and OIDC trusted publishing once configured
     env:
       FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+      # The tag being released, resolved the same way the release job resolves
+      # it. GITHUB_REF_NAME is the tag only on a release event; on a manual
+      # dispatch it is the branch the workflow was dispatched from.
+      RELEASE_TAG: ${{ inputs.tag || github.event.release.tag_name }}
     steps:
+      # Check out the tag, not the dispatch ref. Without this the job packs and
+      # publishes whatever main happens to hold, which is not necessarily the
+      # bytes the tag names.
       - uses: actions/checkout@v7
+        with:
+          ref: ${{ inputs.tag || github.event.release.tag_name }}
 
       - uses: actions/setup-node@v6
         with:
@@ -179,11 +188,15 @@ jobs:
 
       - name: The tag must match the declared version
         run: |
-          TAG="${GITHUB_REF_NAME#v}"
+          if [ -z "$RELEASE_TAG" ]; then
+            echo "no release tag resolved; refusing to publish"; exit 1
+          fi
+          TAG="${RELEASE_TAG#v}"
           PKG="$(node -p "require('./package.json').version")"
-          if [ -n "$TAG" ] && [ "$TAG" != "$PKG" ]; then
+          if [ "$TAG" != "$PKG" ]; then
             echo "tag $TAG does not match package.json $PKG"; exit 1
           fi
+          echo "version gate: tag $TAG == package.json $PKG" 
           echo "version gate: tag $TAG == package.json $PKG"
 
       - name: Build the tarball and record its digest
