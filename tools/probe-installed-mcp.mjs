@@ -16,12 +16,21 @@
 //
 // Usage: node tools/probe-installed-mcp.mjs <install-dir>
 // Exits non-zero with the reason on any failure.
+//
+// It launches the server through the installed bin shim, the file `npx -y
+// project-telos-mcp` runs, rather than through `node demo/telos-mcp.mjs`. 0.4.0
+// passed a node-path launch with no bin npx could select, so a launch that
+// skips the bin proves nothing about the command users type.
 import { spawnSync } from "node:child_process";
+import { existsSync } from "node:fs";
 import { createRequire } from "node:module";
 import path from "node:path";
 import process from "node:process";
 
+import { npxBin } from "./npx-bin.mjs";
+
 const PACKAGE = "project-telos-mcp";
+const SERVER = "demo/telos-mcp.mjs";
 
 function fail(message) {
   console.error(`probe failed: ${message}`);
@@ -31,13 +40,23 @@ function fail(message) {
 const installDir = path.resolve(process.argv[2] ?? process.cwd());
 const require = createRequire(path.join(installDir, "noop.cjs"));
 
-let declared;
-let entry;
+let installed;
 try {
-  declared = require(`${PACKAGE}/package.json`).version;
-  entry = require.resolve(`${PACKAGE}/demo/telos-mcp.mjs`);
+  installed = require(`${PACKAGE}/package.json`);
 } catch (error) {
   fail(`${PACKAGE} is not installed under ${installDir}: ${error.message}`);
+}
+const declared = installed.version;
+
+const selected = npxBin(installed);
+if (!selected) fail("npx cannot determine which bin to run from the installed manifest");
+if (selected.target !== SERVER) fail(`npx would run ${selected.target}, not ${SERVER}`);
+
+// Every declared bin needs a shim, or the command on the user's PATH is missing.
+const binDir = path.join(installDir, "node_modules", ".bin");
+const shim = (name) => path.join(binDir, process.platform === "win32" ? `${name}.cmd` : name);
+for (const name of Object.keys(installed.bin ?? {})) {
+  if (!existsSync(shim(name))) fail(`bin ${name} has no shim in ${binDir}`);
 }
 
 const request = (id, method, params = {}) =>
@@ -53,11 +72,15 @@ const input = [
   request(3, "tools/call", { name: "telos.status", arguments: {} })
 ].join("\n") + "\n";
 
-const run = spawnSync(process.execPath, [entry], {
+// On POSIX the shim is a symlink that runs through the file's shebang and the
+// executable bit npm set at install; both have to hold for npx to work. On
+// Windows it is a .cmd wrapper, which needs a shell.
+const run = spawnSync(shim(selected.name), [], {
   input,
   encoding: "utf8",
   timeout: 240000,
-  cwd: installDir
+  cwd: installDir,
+  shell: process.platform === "win32"
 });
 
 const lines = (run.stdout ?? "")
@@ -91,6 +114,29 @@ if (status && status.tool_version !== declared) {
 }
 
 console.log(
-  `installed MCP ok: ${info.name} ${info.version}, ${tools.length} tools`
+  `installed MCP ok through bin ${selected.name}: ${info.name} ${info.version}, ${tools.length} tools`
   + (status ? `, telos.status ${status.status}` : "")
 );
+
+// With --npx <tarball>, also run the command the README gives, through npm's
+// own bin selection. A `file:` spec goes through the same manifest resolution
+// as a registry name; a bare path does not, and exits 0 having run nothing.
+const npxAt = process.argv.indexOf("--npx");
+if (npxAt !== -1) {
+  const tarball = path.resolve(process.argv[npxAt + 1] ?? "");
+  if (!existsSync(tarball)) fail(`--npx needs a tarball path; got ${tarball}`);
+  const hello = request(1, "initialize", {
+    protocolVersion: "2024-11-05",
+    capabilities: {},
+    clientInfo: { name: "release-gate", version: "1" }
+  }) + "\n";
+  const command = `npx -y "file:${tarball}"`;
+  const npx = spawnSync(command, { input: hello, encoding: "utf8", timeout: 240000, shell: true });
+  const reply = (npx.stdout ?? "").split("\n").find((line) => line.includes("serverInfo"));
+  const served = reply ? JSON.parse(reply).result.serverInfo : null;
+  if (!served || served.name !== info.name || served.version !== declared) {
+    fail(`${command} did not start the server. exit=${npx.status} `
+      + `stderr=${(npx.stderr ?? "").slice(0, 800)}`);
+  }
+  console.log(`npx ok: ${command} served ${served.name} ${served.version}`);
+}

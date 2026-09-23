@@ -4,8 +4,13 @@ The first npm release. `project-telos-mcp` is on the registry, so an MCP host
 can reach the stdio server without a source checkout:
 
 ```bash
-npx -y project-telos-mcp telos-mcp
+npx -y project-telos-mcp
 ```
+
+Corrected in 0.4.1. These notes first gave `npx -y project-telos-mcp telos-mcp`,
+which npx cannot run: 0.4.0 declares two bins pointing at different files and
+none named after the package, so npx has no bin to pick. 0.4.0 never reached the
+registry. 0.4.1 adds a `project-telos-mcp` bin for the server.
 
 or install both commands, `telos-mcp` for the MCP server and `telos` for the
 demo command surface:

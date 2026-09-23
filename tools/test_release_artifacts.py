@@ -61,12 +61,11 @@ class ArchiveTests(unittest.TestCase):
         self.addCleanup(self.temp.cleanup)
         self.root = Path(self.temp.name)
 
-    def pack(self, omit=None, extra=None, version='0.2.0'):
+    def pack(self, omit=None, extra=None, version='0.2.0', bin=None):
         files = {name: b'fixture' for name in self.module.REQUIRED_FILES}
         files['package.json'] = json.dumps({
             'name': 'project-telos-mcp', 'version': version,
-            'bin': {'telos': './demo/telos.mjs',
-                    'telos-mcp': './demo/telos-mcp.mjs'},
+            'bin': self.module.EXPECTED_BIN if bin is None else bin,
         }).encode()
         if omit:
             files.pop(omit)
@@ -133,6 +132,31 @@ class ArchiveTests(unittest.TestCase):
         self.module.build(archive, 'v0.2.0', self.root)
         with self.assertRaises(FileExistsError):
             self.module.build(archive, 'v0.2.0', self.root)
+
+    def test_the_0_4_0_bin_map_is_refused(self):
+        """Two bins on different files and none named after the package.
+
+        npx could not select a bin from it, so the README's command failed
+        before running anything. It must not pass as a reviewed entrypoint set.
+        """
+        archive, _ = self.pack(bin={'telos': './demo/telos.mjs',
+                                    'telos-mcp': './demo/telos-mcp.mjs'})
+        with self.assertRaisesRegex(ValueError, 'entrypoints'):
+            self.module.build(archive, 'v0.2.0', self.root)
+
+    def test_the_repository_manifest_declares_the_reviewed_bins(self):
+        """The pin above and package.json are two copies; this keeps them one."""
+        package = json.loads((ROOT / 'package.json').read_text(encoding='utf8'))
+        self.assertEqual(package['bin'], self.module.EXPECTED_BIN)
+
+    def test_release_notes_ship_by_shape_only(self):
+        archive, _ = self.pack(extra=('package/docs/RELEASE-NOTES-0.4.1.md', 'file'))
+        self.module.build(archive, 'v0.2.0', self.root)
+        for name in ('package/docs/RELEASE-NOTES-latest.md',
+                     'package/docs/RELEASE-NOTES-0.4.1.md.bak'):
+            archive, _ = self.pack(extra=(name, 'file'))
+            with self.assertRaisesRegex(ValueError, 'unreviewed'):
+                self.module.build(archive, 'v0.2.0', self.root / name.replace('/', '_'))
 
     def test_content_gate_distinguishes_private_inputs_from_public_fixtures(self):
         check = self.module.validate_content

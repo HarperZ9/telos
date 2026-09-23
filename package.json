@@ -1,15 +1,31 @@
 {
   "name": "project-telos-mcp",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "type": "module",
   "description": "Local-first MCP workbench for Project Telos receipts, manifests, routing ledgers, creative engines, model-foundry lanes, and verification packets.",
   "license": "FSL-1.1-ALv2",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HarperZ9/telos.git"
+  },
+  "homepage": "https://github.com/HarperZ9/telos#readme",
+  "bugs": {
+    "url": "https://github.com/HarperZ9/telos/issues"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "mcp-server",
+    "verification",
+    "receipts"
+  ],
   "engines": {
     "node": ">=20"
   },
   "bin": {
-    "telos": "./demo/telos.mjs",
-    "telos-mcp": "./demo/telos-mcp.mjs"
+    "project-telos-mcp": "demo/telos-mcp.mjs",
+    "telos": "demo/telos.mjs",
+    "telos-mcp": "demo/telos-mcp.mjs"
   },
   "files": [
     "demo",
@@ -23,6 +39,7 @@
     "docs/CURRENT-STATE.md",
     "docs/native-control-contract.md",
     "docs/RELEASE-NOTES-0.3.0.md",
+    "docs/RELEASE-NOTES-0.4.1.md",
     "docs/brand",
     "!docs/brand/*-render-receipt.json",
     "USAGE.md"
