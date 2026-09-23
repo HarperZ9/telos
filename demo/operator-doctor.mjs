@@ -116,7 +116,25 @@ function signalsFor({ readme, currentState, ci, catalog, manifest, status }) {
     status_taxonomy: ["MATCH", "DRIFT", "UNVERIFIABLE", "ERROR"]
       .every((state) => (statusNative.statuses ?? []).includes(state)),
     catalog_manifest_count: toolCount === expectedToolCount(manifest.value ?? {}),
-    ci_doctor_coverage: doctorCommands.every((command) => ciText.includes(`node demo/${command}.test.mjs`)),
+    // CI must actually run each doctor lane's test. It used to do that by
+    // naming every file, and this check read the workflow for those names. The
+    // hand list left 21 of 65 test files unnamed, so CI ran a third less than it
+    // appeared to and a new test file was invisible until someone added it.
+    //
+    // CI now runs `npm test`, which globs demo/**/*.test.mjs, and coverage is a
+    // property of the pattern rather than a list to keep in step. The check
+    // still has to fail when coverage really goes away, so it accepts the glob
+    // only for a test file that exists on disk: drop `npm test` from the
+    // workflow, or delete a doctor lane's test, and this goes back to DRIFT.
+    // The pattern anchors to a `run:` step rather than searching the file. A
+    // bare text search for "npm test" is satisfied by the comment above that
+    // step, which is how the first version of this check passed a workflow with
+    // the command removed.
+    ci_doctor_coverage: doctorCommands.every((command) => (
+      ciText.includes(`node demo/${command}.test.mjs`)
+      || (/^\s*run:\s*npm (?:run )?test\s*$/m.test(ciText)
+          && existsSync(path.join(here, `${command}.test.mjs`)))
+    )),
     current_state_tool_count: new RegExp(`${toolCount}\\s+available tools`, "i").test(currentText),
     current_state_doctor_lanes: doctorCommands.every((command) =>
       new RegExp(command.replace("-", " "), "i").test(currentText)

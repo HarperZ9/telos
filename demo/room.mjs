@@ -1,4 +1,5 @@
 import { spawnSync } from "node:child_process";
+import { TELOS_VERSION } from "./version.mjs";
 import { readFileSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -102,7 +103,7 @@ function collectRoom() {
 function roomEnvelope(room) {
   return actionEnvelope({
     tool: "telos",
-    toolVersion: "0.3.0",
+    toolVersion: TELOS_VERSION,
     command: "room",
     status: room.ready === room.total && room.checksPassed === room.checksTotal ? "MATCH" : "DRIFT",
     native: {
@@ -149,7 +150,7 @@ function printHuman(payload) {
 function unjoinableEnvelope(missing) {
   return actionEnvelope({
     tool: "telos",
-    toolVersion: "0.3.0",
+    toolVersion: TELOS_VERSION,
     command: "room",
     status: "UNVERIFIABLE",
     native: {

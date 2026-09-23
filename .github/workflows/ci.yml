@@ -56,61 +56,18 @@ jobs:
         with:
           python-version: "3.11"
 
-      - name: Run Telos contract tests
+      - name: Run every Telos test
+        # npm test globs demo/**/*.test.mjs. This step used to name the files by
+        # hand, and 21 of the 65 test files on disk were never listed, so a third
+        # of the suite did not run here and a new test file stayed invisible until
+        # someone remembered to add it. All 21 pass.
+        #
+        # The hand list also carried `node demo/hyphal-context-benchmark.test.mjs
+        # || true  # stale-commit dependency, pre-existing`. That test passes now,
+        # so the tolerance was swallowing nothing and would have swallowed the next
+        # real regression in it.
         working-directory: telos
-        run: |
-          node demo/action-receipt.test.mjs
-          node demo/admission-telemetry.test.mjs
-          node demo/atp-adapter-validation.test.mjs
-          node demo/brand-renderer.test.mjs
-          node demo/ci-doctor.test.mjs
-          node demo/ci-triage.test.mjs
-          node demo/context-envelope.test.mjs
-          node demo/creative-engine.test.mjs
-          node demo/effects-protocol.test.mjs
-          node demo/effects-engine.test.mjs
-          node demo/model-adapter.test.mjs
-          node demo/flagship-action.test.mjs
-          node demo/hyphal-context-benchmark.test.mjs || true  # stale-commit dependency, pre-existing
-          node demo/index-html.test.mjs
-          node demo/integrations.test.mjs
-          node demo/loop-ledger.test.mjs
-          node demo/measurement-layers.test.mjs
-          node demo/mcp-freshness.test.mjs
-          node demo/mcp-runtime-contract.test.mjs
-          node demo/native-control.test.mjs
-          node --test demo/native-control-contract.test.mjs demo/native-control-package.test.mjs
-          node --test demo/native-control-ledger.test.mjs demo/browser-evidence.test.mjs
-          node ledger.test.mjs
-          node demo/uia-script.test.mjs
-          node demo/operator-source-leads.test.mjs
-          node demo/operator-scripts.test.mjs
-          node demo/accessibility-doctor.test.mjs
-          node demo/performance-doctor.test.mjs
-          node demo/compatibility-doctor.test.mjs
-          node demo/operator-doctor.test.mjs
-          node demo/presentation-doctor.test.mjs
-          node demo/proof.test.mjs
-          node demo/proof-research.test.mjs
-          node demo/proof-visual.test.mjs
-          node demo/proof-build.test.mjs
-          node verify_packet.test.mjs
-          node demo/project-current-state-docs.test.mjs
-          node demo/rendering-capabilities.test.mjs
-          node demo/rendering-research.test.mjs
-          node demo/repo-art.test.mjs
-          node demo/research-seed.test.mjs
-          node demo/second-level-flagship-queue.test.mjs
-          node demo/server-manifest.test.mjs
-          node demo/showcase.test.mjs
-          node demo/telos-mcp.test.mjs
-          node demo/workstation-substrate.test.mjs
-          node demo/youtube-research-receipts.test.mjs
-
-      - name: Release packaging controls
-        working-directory: telos
-        run: python tools/test_release_artifacts.py
-
+        run: npm test
       - name: Run MCP launch gate
         working-directory: telos
         run: npm run test:mcp

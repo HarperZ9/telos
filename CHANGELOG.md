@@ -1,10 +1,52 @@
 # Changelog
 
-All notable changes to Project Telos. Telos is a zero-dependency source demo and shared operator room. GitHub release assets are versioned; npm registry publication stays operator-gated.
+All notable changes to Project Telos. Telos is a zero-dependency source demo and shared operator room, published on npm as `project-telos-mcp`. GitHub release assets carry the same version.
 
 ## Unreleased
 
 No changes queued.
+
+## 0.4.0 - 2026-09-23
+
+First npm release. `npm install project-telos-mcp` then `telos-mcp` starts the
+stdio server; `telos` routes the demo command surface.
+
+- The MCP server reports its name as `telos`. It answered `project-telos-telos`
+  from June 2026 until this release, which reads as a concatenation slip rather
+  than a choice: one assertion and the line it guarded were the only places that
+  string appeared, and every sibling lane reports its short name. Anything
+  matching on the old value needs updating.
+- The version is read from `package.json` in one place (`demo/version.mjs`)
+  instead of being written out in eight. One of those eight was guarded: a test
+  bound the MCP `serverInfo` version to the manifest. The four action-envelope
+  sites had no check, so a bump could leave every receipt reporting the previous
+  version with the suite still green. `demo/version-alignment.test.mjs` now binds
+  the manifest, the module constants, the value `initialize` returns, the status,
+  doctor and room envelopes, and the freshness expectation Telos holds for
+  itself.
+- CI runs `npm test`, which globs `demo/**/*.test.mjs`. The workflow used to name
+  each file, and 21 of the 65 test files on disk were never named, so roughly a
+  third of the suite did not run and a new test file stayed invisible until
+  someone remembered to add it. All 21 pass. The list also carried
+  `hyphal-context-benchmark` with `|| true` for a stale-commit dependency; that
+  test passes now, so the tolerance was swallowing nothing and would have
+  swallowed the next real regression.
+- `telos.operator.doctor` checks CI coverage by reading a `run:` step rather than
+  searching the workflow text. The first version of that rework passed a workflow
+  with the command removed, because the comment above the step still contained
+  the words it was searching for.
+- Freshness expectations refreshed against the live servers: gather 1.6.1 to
+  1.8.2, index 2.9.0 to 2.13.0, forum 1.14.0. crucible stays 1.2.0. Tool surfaces
+  were compared at the same time and every one matched, so only the versions and
+  status lines moved. A stale expectation makes `telos.mcp.freshness` report DRIFT
+  against a server that is current and tell the operator to restart it.
+- The release workflow gains an npm publish job, gated on the repository variable
+  `NPM_PUBLISH_ENABLED`. Before uploading it checks the tag against the declared
+  version, records the tarball digest, installs the packed tarball into a clean
+  project, and drives the real stdio server from it. A package can pack and
+  install cleanly and still fail at launch because a file the server imports was
+  left out of the `files` allowlist, and nothing else in the workflow would see
+  it.
 
 ## 0.3.0 - 2026-09-10
 

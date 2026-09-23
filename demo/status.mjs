@@ -1,8 +1,9 @@
 import { actionEnvelope } from "./flagship-action.mjs";
 
+import { TELOS_VERSION } from "./version.mjs";
 const payload = actionEnvelope({
   tool: "telos",
-  toolVersion: "0.3.0",
+  toolVersion: TELOS_VERSION,
   command: "status",
   native: {
     role: "shared-room-reconciliation",

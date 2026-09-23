@@ -15,7 +15,13 @@ assert.equal(
 
 const init = handleRequest(request("initialize"));
 assert.equal(init.result.protocolVersion, "2025-06-18");
-assert.equal(init.result.serverInfo.name, "project-telos-telos");
+// Every sibling lane reports its short name over MCP (plexus, canon, chorus,
+// mneme, articulate), and this one reported "project-telos-telos" from June
+// 2026 until the first npm publish. Nothing outside this assertion and the
+// line it guarded ever referred to that string, which is why it reads as a
+// concatenation slip rather than a choice, and why fixing it before the
+// package existed on a registry cost nothing.
+assert.equal(init.result.serverInfo.name, "telos");
 const packageJson = JSON.parse(readFileSync(new URL("../package.json", import.meta.url), "utf8"));
 assert.equal(init.result.serverInfo.version, packageJson.version);
 
@@ -146,7 +152,13 @@ const mcpFreshness = handleRequest(request("tools/call", {
 assert.equal(mcpFreshness.result.structuredContent.schema, "project-telos.mcp-freshness/v1");
 assert.equal(mcpFreshness.result.structuredContent.tool, "telos.mcp.freshness");
 assert.equal(mcpFreshness.result.structuredContent.validation.verdict, "MATCH");
-assert.equal(mcpFreshness.result.structuredContent.servers.forum.expected_version, "1.13.0");
+// Shape, not a literal. What this line is for is proving the MCP tool surfaces
+// the manifest's expectation at all; pinning the number here just copied it to a
+// third place that then went stale along with the other two.
+assert.match(
+  mcpFreshness.result.structuredContent.servers.forum.expected_version,
+  /^\d+\.\d+\.\d+$/
+);
 assert.match(mcpFreshness.result.structuredContent.servers.forum.expected_tool_hash, /^sha256:[a-f0-9]{64}$/);
 
 const expectedCiDoctor = JSON.parse(

@@ -65,61 +65,18 @@ jobs:
         with:
           python-version: "3.11"
 
-      - name: Run Telos contract tests
+      - name: Run every Telos test
+        # npm test globs demo/**/*.test.mjs. This step used to name the files by
+        # hand, and 21 of the 65 test files on disk were never listed, so a third
+        # of the suite did not run here and a new test file stayed invisible until
+        # someone remembered to add it. All 21 pass.
+        #
+        # The hand list also carried `node demo/hyphal-context-benchmark.test.mjs
+        # || true  # stale-commit dependency, pre-existing`. That test passes now,
+        # so the tolerance was swallowing nothing and would have swallowed the next
+        # real regression in it.
         working-directory: telos
-        run: |
-          node demo/action-receipt.test.mjs
-          node demo/admission-telemetry.test.mjs
-          node demo/atp-adapter-validation.test.mjs
-          node demo/brand-renderer.test.mjs
-          node demo/ci-doctor.test.mjs
-          node demo/ci-triage.test.mjs
-          node demo/context-envelope.test.mjs
-          node demo/creative-engine.test.mjs
-          node demo/effects-protocol.test.mjs
-          node demo/effects-engine.test.mjs
-          node demo/model-adapter.test.mjs
-          node demo/flagship-action.test.mjs
-          node demo/hyphal-context-benchmark.test.mjs || true  # stale-commit dependency, pre-existing
-          node demo/index-html.test.mjs
-          node demo/integrations.test.mjs
-          node demo/loop-ledger.test.mjs
-          node demo/measurement-layers.test.mjs
-          node demo/mcp-freshness.test.mjs
-          node demo/mcp-runtime-contract.test.mjs
-          node demo/native-control.test.mjs
-          node --test demo/native-control-contract.test.mjs demo/native-control-package.test.mjs
-          node --test demo/native-control-ledger.test.mjs demo/browser-evidence.test.mjs
-          node ledger.test.mjs
-          node demo/uia-script.test.mjs
-          node demo/operator-source-leads.test.mjs
-          node demo/operator-scripts.test.mjs
-          node demo/accessibility-doctor.test.mjs
-          node demo/performance-doctor.test.mjs
-          node demo/compatibility-doctor.test.mjs
-          node demo/operator-doctor.test.mjs
-          node demo/presentation-doctor.test.mjs
-          node demo/proof.test.mjs
-          node demo/proof-research.test.mjs
-          node demo/proof-visual.test.mjs
-          node demo/proof-build.test.mjs
-          node verify_packet.test.mjs
-          node demo/project-current-state-docs.test.mjs
-          node demo/rendering-capabilities.test.mjs
-          node demo/rendering-research.test.mjs
-          node demo/repo-art.test.mjs
-          node demo/research-seed.test.mjs
-          node demo/second-level-flagship-queue.test.mjs
-          node demo/server-manifest.test.mjs
-          node demo/showcase.test.mjs
-          node demo/telos-mcp.test.mjs
-          node demo/workstation-substrate.test.mjs
-          node demo/youtube-research-receipts.test.mjs
-
-      - name: Release packaging controls
-        working-directory: telos
-        run: python tools/test_release_artifacts.py
-
+        run: npm test
       - name: Run MCP launch gate
         working-directory: telos
         run: npm run test:mcp
@@ -172,3 +129,97 @@ jobs:
         with:
           name: release-artifacts
           path: .release/*
+
+  publish:
+    name: publish to npm
+    needs: release
+    # Stays skipped until the repository variable NPM_PUBLISH_ENABLED is 'true',
+    # so a tag can be cut and every gate below can run with no upload behind it.
+    if: ${{ vars.NPM_PUBLISH_ENABLED == 'true' }}
+    runs-on: ubuntu-latest
+    environment: npm
+    permissions:
+      contents: read
+      id-token: write        # provenance, and OIDC trusted publishing once configured
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version: "24"
+          registry-url: "https://registry.npmjs.org"
+
+      - name: The tag must match the declared version
+        run: |
+          TAG="${GITHUB_REF_NAME#v}"
+          PKG="$(node -p "require('./package.json').version")"
+          if [ -n "$TAG" ] && [ "$TAG" != "$PKG" ]; then
+            echo "tag $TAG does not match package.json $PKG"; exit 1
+          fi
+          echo "version gate: tag $TAG == package.json $PKG"
+
+      - name: Build the tarball and record its digest
+        run: |
+          npm pack --ignore-scripts
+          for f in ./*.tgz; do echo "sha256  $(sha256sum "$f")"; done
+
+      # Installs the packed tarball the way a user would and drives the real
+      # stdio server. A package can pack cleanly, install cleanly, and still fail
+      # at launch because a file the server imports was left out of the `files`
+      # allowlist. That is the defect this gate exists to catch, and nothing
+      # earlier in this workflow would see it.
+      - name: The published bytes must serve MCP from a clean install
+        run: |
+          TARBALL="$(ls ./*.tgz)"
+          WORK="$(mktemp -d)"
+          cd "$WORK"
+          npm init -y >/dev/null
+          npm install --no-audit --no-fund "$GITHUB_WORKSPACE/$TARBALL"
+          node - <<'PROBE'
+          const { spawnSync } = require("node:child_process");
+          const req = (id, method, params = {}) =>
+            JSON.stringify({ jsonrpc: "2.0", id, method, params });
+          const input = [
+            req(1, "initialize", {
+              protocolVersion: "2024-11-05",
+              capabilities: {},
+              clientInfo: { name: "release-gate", version: "1" }
+            }),
+            req(2, "tools/list")
+          ].join("\n") + "\n";
+          const run = spawnSync("npx", ["--no-install", "telos-mcp"], {
+            input, encoding: "utf8", timeout: 180000, shell: true
+          });
+          const lines = run.stdout.split("\n").filter((l) => l.trim().startsWith("{"));
+          if (!lines.length) {
+            console.error("no JSON on stdout. status=", run.status);
+            console.error(run.stderr.slice(0, 2000));
+            process.exit(1);
+          }
+          let info = null, tools = null;
+          for (const line of lines) {
+            const result = JSON.parse(line).result ?? {};
+            if (result.serverInfo) info = result.serverInfo;
+            if (result.tools) tools = result.tools;
+          }
+          if (!info) throw new Error("initialize returned no serverInfo");
+          if (!tools || !tools.length) throw new Error("tools/list returned nothing");
+          const declared = require("./node_modules/project-telos-mcp/package.json").version;
+          if (info.version !== declared) {
+            throw new Error(`serverInfo ${info.version} but package.json ${declared}`);
+          }
+          console.log(`installed MCP ok: ${info.name} ${info.version}, ${tools.length} tools`);
+          PROBE
+
+      - name: Publish
+        # --provenance records which workflow built these bytes, verifiable from
+        # the registry. NODE_AUTH_TOKEN is only needed for a first publish: npm
+        # cannot configure trusted publishing for a name that does not exist yet,
+        # so OIDC alone returns E404 on version one. Once the package exists and a
+        # trusted publisher is configured on npmjs.com, the secret can be removed
+        # and this step keeps working on OIDC.
+        run: npm publish --provenance --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
