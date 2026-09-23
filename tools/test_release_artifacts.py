@@ -19,6 +19,21 @@ class WorkflowTests(unittest.TestCase):
         self.assertNotIn('zip -r', workflow)
         self.assertNotIn('--clobber', workflow)
 
+    def test_no_check_hides_inside_an_echo(self):
+        """A failing $(...) inside echo leaves the step green.
+
+        Under `bash -e` an assignment fails with its command substitution, but
+        echo exits 0 whatever it printed. The 0.4.1 publish job ran
+        `echo "... $(npm whoami) ..."` on a token that got E401, printed an
+        empty name, and went on to sign provenance for an upload that could
+        not succeed.
+        """
+        for name in ('ci.yml', 'release.yml'):
+            text = (ROOT / '.github/workflows' / name).read_text()
+            code = [line for line in text.splitlines() if not line.lstrip().startswith('#')]
+            hidden = [line.strip() for line in code if re.search(r'\becho\b[^#]*\$\(', line)]
+            self.assertEqual(hidden, [], f'{name}: assign the substitution first')
+
     def test_release_preserves_ci_contract_commands(self):
         """release.yml must run the same contract commands as ci.yml.
 
