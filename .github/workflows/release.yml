@@ -251,11 +251,22 @@ jobs:
             echo "credentials: OIDC trusted publishing, npm $NPM_VERSION"
             exit 0
           fi
-          # An assignment, not a substitution inside echo: under `bash -e` the
-          # assignment fails with whoami, while echo would print an empty name
-          # and exit 0. The 0.4.1 run did exactly that on an E401 token and
-          # went on to sign provenance for an upload that could not succeed.
-          WHO="$(npm whoami)"
+          # The failure branch is explicit rather than left to `bash -e`, so an
+          # E401 can say what shape the stored value has without printing it.
+          # Three 0.4.1 attempts failed with E401 on values nobody could see;
+          # a pasted space, a surrounding quote or a token name saved instead of
+          # its value all look identical from the outside. GitHub masks the
+          # secret in logs either way; only its length and character classes
+          # are reported here.
+          if ! WHO="$(npm whoami 2>&1)"; then
+            echo "credentials: npm whoami failed, npm $NPM_VERSION"
+            echo "$WHO" | grep -E "^npm error (code|[0-9]{3})" || true
+            case "$NODE_AUTH_TOKEN" in npm_*) PREFIX=yes ;; *) PREFIX=no ;; esac
+            case "$NODE_AUTH_TOKEN" in *[[:space:]]*) SPACE=yes ;; *) SPACE=no ;; esac
+            case "$NODE_AUTH_TOKEN" in *\"*|*\'*) QUOTE=yes ;; *) QUOTE=no ;; esac
+            echo "stored value: ${#NODE_AUTH_TOKEN} characters, npm_ prefix: $PREFIX, whitespace: $SPACE, quote marks: $QUOTE"
+            exit 1
+          fi
           echo "credentials: token authenticates as $WHO, npm $NPM_VERSION"
 
       - name: Build the tarball and record its digest
