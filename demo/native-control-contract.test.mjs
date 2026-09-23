@@ -54,6 +54,12 @@ test("receipt distinguishes focus, foreground input and unknown side effects", (
     const r = makeReceipt(action, "fixture", {});
     assert.equal(r.background, false); assert.equal(r.focus_effect, "foreground_input");
   }
+  // Selecting a tab or restoring a window changes what the operator sees. It is
+  // neither background nor keyboard input, and the receipt says so.
+  for (const action of ["app.select", "app.restore"]) {
+    const r = makeReceipt(action, "fixture", { background: true });
+    assert.equal(r.background, false); assert.equal(r.focus_effect, "view_changed");
+  }
   for (const action of ["app.invoke", "browser.click", "browser.eval", "browser.run", "device.exec", "unknown"]) {
     const r = makeReceipt(action, "fixture", { background: true });
     assert.equal(r.background, null); assert.equal(r.focus_effect, "unknown");

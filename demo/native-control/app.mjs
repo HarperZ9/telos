@@ -78,6 +78,9 @@ export const invoke = (windowMatch, elementMatch, opts) =>
 export const setValue = (windowMatch, elementMatch, text, opts) =>
   run("setvalue", [windowMatch, elementMatch, text], opts);
 export const focus = (windowMatch, opts) => run("focus", [windowMatch], opts);
+export const select = (windowMatch, elementMatch, opts) =>
+  run("select", [windowMatch, elementMatch], opts);
+export const restore = (windowMatch, opts) => run("restore", [windowMatch], opts);
 export const value = (windowMatch, elementMatch, opts) =>
   run("value", [windowMatch, elementMatch], opts);
 export const input = (keys, opts) => run("input", [keys], opts);
