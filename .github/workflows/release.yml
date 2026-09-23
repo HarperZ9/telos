@@ -31,28 +31,45 @@ jobs:
           path: telos
           ref: ${{ inputs.tag || github.event.release.tag_name }}
 
+      - name: Resolve sibling refs from the Telos manifest
+        # CI used to check the sibling flagships out at main while the manifest
+        # declares their released surfaces, so it tested a combination Telos does
+        # not claim to support. That is what the `|| true` on
+        # hyphal-context-benchmark was absorbing: crucible main carries
+        # crucible.recheck_template, added after v1.2.0, and the manifest declares
+        # the v1.2.0 surface. Pinning each sibling to the version the manifest
+        # expects makes the check mean something instead of being tolerated.
+        id: siblings
+        working-directory: telos
+        run: |
+          jq -r '.servers | to_entries[] | select(.key != "telos") | "\(.key)=v\(.value.freshness.expected_version)"' demo/integrations/mcp-server-manifest.json | tee -a "$GITHUB_OUTPUT"
+
       - name: Check out Gather
         uses: actions/checkout@v7
         with:
           repository: HarperZ9/gather
+          ref: ${{ steps.siblings.outputs.gather }}
           path: gather
 
       - name: Check out Crucible
         uses: actions/checkout@v7
         with:
           repository: HarperZ9/crucible
+          ref: ${{ steps.siblings.outputs.crucible }}
           path: crucible
 
       - name: Check out Index
         uses: actions/checkout@v7
         with:
           repository: HarperZ9/index
+          ref: ${{ steps.siblings.outputs.index }}
           path: index
 
       - name: Check out Forum
         uses: actions/checkout@v7
         with:
           repository: HarperZ9/forum
+          ref: ${{ steps.siblings.outputs.forum }}
           path: forum
 
       - name: Set up Node
