@@ -98,6 +98,15 @@ jobs:
         working-directory: telos
         run: npm run test:mcp
 
+      - name: Release packaging controls
+        # RELEASING.md lists this as a required gate and neither workflow ran
+        # it. The gate's own pattern already names
+        # `python tools/test_release_artifacts.py` alongside the node contract
+        # commands, so it was written to run in both test jobs and be compared
+        # between them. It validates the archive layout and that release.yml
+        # runs the same contract commands as ci.yml.
+        working-directory: telos
+        run: python tools/test_release_artifacts.py
       - name: Run Telos room and workflow smoke
         working-directory: telos
         run: |
@@ -188,47 +197,18 @@ jobs:
       # allowlist. That is the defect this gate exists to catch, and nothing
       # earlier in this workflow would see it.
       - name: The published bytes must serve MCP from a clean install
+        # Installs the packed tarball the way a user would and drives the real
+        # stdio server out of that install. A package can pack cleanly, install
+        # cleanly, and still fail at launch because a file the server imports
+        # was left out of the `files` allowlist, and nothing earlier in this
+        # workflow would see it.
         run: |
           TARBALL="$(ls ./*.tgz)"
           WORK="$(mktemp -d)"
           cd "$WORK"
           npm init -y >/dev/null
           npm install --no-audit --no-fund "$GITHUB_WORKSPACE/$TARBALL"
-          node - <<'PROBE'
-          const { spawnSync } = require("node:child_process");
-          const req = (id, method, params = {}) =>
-            JSON.stringify({ jsonrpc: "2.0", id, method, params });
-          const input = [
-            req(1, "initialize", {
-              protocolVersion: "2024-11-05",
-              capabilities: {},
-              clientInfo: { name: "release-gate", version: "1" }
-            }),
-            req(2, "tools/list")
-          ].join("\n") + "\n";
-          const run = spawnSync("npx", ["--no-install", "telos-mcp"], {
-            input, encoding: "utf8", timeout: 180000, shell: true
-          });
-          const lines = run.stdout.split("\n").filter((l) => l.trim().startsWith("{"));
-          if (!lines.length) {
-            console.error("no JSON on stdout. status=", run.status);
-            console.error(run.stderr.slice(0, 2000));
-            process.exit(1);
-          }
-          let info = null, tools = null;
-          for (const line of lines) {
-            const result = JSON.parse(line).result ?? {};
-            if (result.serverInfo) info = result.serverInfo;
-            if (result.tools) tools = result.tools;
-          }
-          if (!info) throw new Error("initialize returned no serverInfo");
-          if (!tools || !tools.length) throw new Error("tools/list returned nothing");
-          const declared = require("./node_modules/project-telos-mcp/package.json").version;
-          if (info.version !== declared) {
-            throw new Error(`serverInfo ${info.version} but package.json ${declared}`);
-          }
-          console.log(`installed MCP ok: ${info.name} ${info.version}, ${tools.length} tools`);
-          PROBE
+          node "$GITHUB_WORKSPACE/tools/probe-installed-mcp.mjs" "$WORK"
 
       - name: Publish
         # --provenance records which workflow built these bytes, verifiable from

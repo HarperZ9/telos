@@ -89,6 +89,15 @@ jobs:
         working-directory: telos
         run: npm run test:mcp
 
+      - name: Release packaging controls
+        # RELEASING.md lists this as a required gate and neither workflow ran
+        # it. The gate's own pattern already names
+        # `python tools/test_release_artifacts.py` alongside the node contract
+        # commands, so it was written to run in both test jobs and be compared
+        # between them. It validates the archive layout and that release.yml
+        # runs the same contract commands as ci.yml.
+        working-directory: telos
+        run: python tools/test_release_artifacts.py
       - name: Run Telos room and workflow smoke
         working-directory: telos
         run: |

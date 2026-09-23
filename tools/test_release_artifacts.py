@@ -20,11 +20,35 @@ class WorkflowTests(unittest.TestCase):
         self.assertNotIn('--clobber', workflow)
 
     def test_release_preserves_ci_contract_commands(self):
-        def commands(name):
+        """release.yml must run the same contract commands as ci.yml.
+
+        Scoped to each file's `test:` job. The comparison used to read the whole
+        file, so any release-only command failed it, including the publish
+        job's step that installs the packed tarball and drives the server out of
+        the install. That check has no place in ci.yml, which never packs
+        anything. Reading the whole file also meant a command written in a
+        comment counted, which is the opposite of a contract.
+        """
+        def test_job(name):
             text = (ROOT / '.github/workflows' / name).read_text()
+            lines = text.splitlines()
+            start = next(i for i, line in enumerate(lines) if line.rstrip() == '  test:')
+            end = len(lines)
+            for i in range(start + 1, len(lines)):
+                line = lines[i]
+                if line.startswith('  ') and not line.startswith('   ') and line.rstrip().endswith(':'):
+                    end = i
+                    break
+            return chr(10).join(lines[start:end])
+
+        def commands(name):
+            body = test_job(name)
             return re.findall(r'^\s+(node .+|python tools/test_release_artifacts.py)$',
-                              text, re.MULTILINE)
-        self.assertEqual(commands('ci.yml'), commands('release.yml'))
+                              body, re.MULTILINE)
+
+        ci = commands('ci.yml')
+        self.assertTrue(ci, 'found no contract commands in the ci.yml test job')
+        self.assertEqual(ci, commands('release.yml'))
 
 
 class ArchiveTests(unittest.TestCase):
