@@ -10,9 +10,9 @@ dispatch or when the operator publishes a GitHub release.
 Every release candidate must pass the same gates CI runs:
 
 ```bash
-# Contract tests (the list in .github/workflows/ci.yml)
-node demo/action-receipt.test.mjs
-# ... every demo/*.test.mjs named in ci.yml ...
+# Every test. `npm test` globs demo/**/*.test.mjs, so a new test file runs
+# without being added to a list anywhere.
+npm test
 
 # MCP surface and source-checkout launch gate
 npm run test:mcp
@@ -31,16 +31,20 @@ directory, and the checkout directory must be named `telos`.
 
 ## Version pins
 
-The version is declared in more than one place and the freshness system
-verifies they agree. When bumping, change all of them together:
+Bump `package.json`. Everything that reads a version at runtime reads it from
+there through `demo/version.mjs`: the MCP `serverInfo`, and the `toolVersion` in
+the status, doctor, room and flagship-workflow envelopes.
 
-- `package.json` `version`
-- `demo/telos-mcp.mjs` `serverInfo.version` (test-enforced against package.json)
-- `demo/status.mjs` `toolVersion` and the leading version in `current_status`
-- `demo/integrations/mcp-server-manifest.json` telos `expected_version` and
-  `expected_current_status` (must equal the status.mjs string exactly)
-- `demo/doctor.mjs`, `demo/room.mjs`, `demo/flagship-workflow.mjs` `toolVersion`
-- README version badge and the Current status Release line
+Three places cannot be reached from a constant and still need a hand:
+
+- `demo/integrations/mcp-server-manifest.json`, the telos `expected_version` and
+  the leading version in `expected_current_status`
+- the README version badge
+- `CHANGELOG.md`
+
+`demo/version-alignment.test.mjs` asserts all three against `package.json`, so a
+missed one fails rather than shipping. It was eight hand-maintained sites before
+0.4.0, and only one of them was guarded.
 
 ## Cutting a release (operator-only)
 
@@ -48,8 +52,8 @@ verifies they agree. When bumping, change all of them together:
 2. Update `CHANGELOG.md` and the release notes under `docs/`.
 3. Tag and push the tag:
    ```bash
-   git tag v0.3.0
-   git push origin v0.3.0
+   git tag v0.4.0
+   git push origin v0.4.0
    ```
 4. Create the GitHub release for the tag. Publishing the release triggers
    `release.yml`, which re-runs the test suite, builds the `npm pack` tarball
@@ -57,23 +61,34 @@ verifies they agree. When bumping, change all of them together:
    `SHA256SUMS.txt`. It checks out the requested tag for testing and packaging.
    Alternatively, dispatch the workflow manually with the tag as input.
    Existing output and release asset names are refused rather than overwritten.
-5. npm publish, if and when wanted, is a separate manual operator step. There
-   is no automated npm publish anywhere in this repo.
+5. npm publish runs from `release.yml` and stays skipped unless the repository
+   variable `NPM_PUBLISH_ENABLED` is `true`. Before uploading it checks the tag
+   against the declared version, records the tarball digest, installs the packed
+   tarball into a clean project, and drives the real stdio server out of that
+   install. It publishes with `--provenance`.
+
+   npm cannot configure trusted publishing for a package name that does not
+   exist yet, so the first publish of a name needs `NODE_AUTH_TOKEN` from the
+   `NPM_TOKEN` secret. Once the package exists and a trusted publisher is
+   configured on npmjs.com, the secret can be removed and OIDC alone is
+   enough.
 
 ## What stays operator-only
 
 - Creating or pushing tags.
 - Creating or publishing GitHub releases.
-- Any `npm publish`.
-- Rotating or configuring tokens. No publish tokens are stored in this repo.
+- Any `npm publish`. The workflow can run one, and it stays skipped until the
+  operator sets `NPM_PUBLISH_ENABLED`.
+- Rotating or configuring tokens. No publish token is stored in this repo; the
+  workflow reads it from a repository secret the operator controls.
 
 ## Verifying the package locally
 
 ```bash
 npm pack --dry-run          # inspect the shipped file list
 npm pack                    # build the tarball
-python tools/release_artifacts.py --tarball project-telos-mcp-0.3.0.tgz --tag v0.3.0 --output-dir release-check
-npm install -g ./project-telos-mcp-0.3.0.tgz
+python tools/release_artifacts.py --tarball project-telos-mcp-0.4.0.tgz --tag v0.4.0 --output-dir release-check
+npm install -g ./project-telos-mcp-0.4.0.tgz
 telos catalog --summary
 telos-mcp                   # stdio MCP server; send {"jsonrpc":"2.0","id":1,"method":"tools/list"}
 ```
