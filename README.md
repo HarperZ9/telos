@@ -2,7 +2,7 @@
 
 **The shared workbench: durable state, native workstation control, sensory organs, a discovery forge.**
 
-![version](https://img.shields.io/badge/version-0.3.0-9683ff?style=flat-square&labelColor=14041b)
+![version](https://img.shields.io/badge/version-0.4.0-9683ff?style=flat-square&labelColor=14041b)
 ![license](https://img.shields.io/badge/license-FSL--1.1--ALv2-8f8095?style=flat-square&labelColor=14041b)
 [![CI](https://github.com/HarperZ9/telos/actions/workflows/ci.yml/badge.svg)](https://github.com/HarperZ9/telos/actions/workflows/ci.yml)
 ![node](https://img.shields.io/badge/node-24%20CI%2C%2020%2B%20registry-9683ff?style=flat-square&labelColor=14041b)
@@ -26,6 +26,22 @@ Telos is a zero-dependency local workbench for creating, simulating, and replayi
 ## Try it
 
 Zero runtime dependencies. Node 20 or newer; CI runs on Node 24.
+
+Point an MCP host at the stdio server without cloning anything:
+
+```bash
+npx -y project-telos-mcp telos-mcp
+```
+
+Or install it and get both commands on your PATH, `telos-mcp` for the MCP server
+and `telos` for the demo command surface:
+
+```bash
+npm install -g project-telos-mcp
+telos-mcp
+```
+
+To read the source and run the loop that explains the whole idea:
 
 ```bash
 git clone https://github.com/HarperZ9/telos.git
@@ -121,7 +137,7 @@ Peer repos: [gather](https://github.com/HarperZ9/gather) (research intake), [ind
 
 ## Status and maturity
 
-This is a 0.3.0 source-registry package. The command surface above is tested and CI-covered (the repo carries over 60 test files run individually in CI), but npm publishing is operator-gated and interfaces may still move between minor versions. Research packets are deterministic preflights with explicit non-claims: the causal packet does not claim causal discovery, the embodied packet does not claim real-robot safety, the quantum packet does not claim hardware QEC. Treat the receipts and tests in this repo as the evidence, not prose counts.
+This is a 0.4.0 package, published on npm as `project-telos-mcp`. The command surface above is tested and CI-covered: `npm test` globs every test file in `demo/`, so a new one runs without being added to a list. Interfaces may still move between minor versions. Research packets are deterministic preflights with explicit non-claims: the causal packet does not claim causal discovery, the embodied packet does not claim real-robot safety, the quantum packet does not claim hardware QEC. Treat the receipts and tests in this repo as the evidence, not prose counts.
 
 ### Upgrading from 0.2.0
 

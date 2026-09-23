@@ -4,6 +4,7 @@ import { realpathSync } from "node:fs";
 import readline from "node:readline";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { TELOS_SERVER_NAME, TELOS_VERSION } from "./version.mjs";
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const telosRoot = path.resolve(here, "..");
@@ -305,7 +306,7 @@ export function handleRequest(request) {
       return result(id, {
         protocolVersion,
         capabilities: { tools: {} },
-        serverInfo: { name: "project-telos-telos", version: "0.3.0" }
+        serverInfo: { name: TELOS_SERVER_NAME, version: TELOS_VERSION }
       });
     }
     if (request.method === "ping") {

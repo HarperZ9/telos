@@ -35,7 +35,7 @@ recovery with fewer estimated prompt tokens for the hyphal route.
 - Benchmark test:
   `demo/hyphal-context-benchmark.test.mjs`
 - Benchmark test canonical-text SHA-256:
-  `bdbdad49a35435d9ae8941c5df9dfc9c5fd3871175de5d7cb7127f609650d31e`
+  `3e6d2cb8d8149fe63abb39fc17aa166b5cc375de5ee6b2b2a32d9fa32875546e`
 - Benchmark receipt:
   `docs/outreach/receipts/twenty-second-wave/hyphal-context-benchmark-2026-07-02.json`
 - Benchmark receipt canonical-text SHA-256:

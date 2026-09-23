@@ -1,4 +1,5 @@
 import { spawnSync } from "node:child_process";
+import { TELOS_VERSION } from "./version.mjs";
 import { mkdtempSync, rmSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import path from "node:path";
@@ -52,7 +53,7 @@ const preflight = flagshipPreflight({ publicRoot });
 if (!preflight.ok) {
   const payload = actionEnvelope({
     tool: "telos",
-    toolVersion: "0.3.0",
+    toolVersion: TELOS_VERSION,
     command: "flagship-workflow",
     status: "UNVERIFIABLE",
     native: {
@@ -145,7 +146,7 @@ try {
 
   const payload = actionEnvelope({
     tool: "telos",
-    toolVersion: "0.3.0",
+    toolVersion: TELOS_VERSION,
     command: "flagship-workflow",
     native: {
       index_repo_count: indexMap.repo_count ?? indexMap.repositories?.length ?? 0,

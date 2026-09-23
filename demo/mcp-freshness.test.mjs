@@ -44,7 +44,14 @@ for (const [name, server] of Object.entries(packet.servers)) {
   assert.ok(server.restart_hint.includes("restart"));
 }
 
-assert.equal(packet.servers.forum.expected_version, "1.13.0");
+// Asserting a literal here only restates the manifest, and it went stale three
+// times over: gather, index and forum all shipped past their expectations
+// while this file stayed green. What is worth holding is the shape, and that
+// the status line names the version it claims to describe.
+assert.match(packet.servers.forum.expected_version, /^\d+\.\d+\.\d+$/);
+assert.ok(packet.servers.forum.expected_current_status.startsWith(
+  packet.servers.forum.expected_version
+));
 assert.equal(packet.servers.forum.behavior_probes.length, 2);
 const forumBroadProbe = packet.servers.forum.behavior_probes
   .find((probe) => probe.id === "forum-broad-telos-route");
@@ -59,10 +66,10 @@ assert.deepEqual(forumPrivateLineProbe.expected_subset, {
   needs_escalation: false
 });
 assert.equal(packet.servers.index.expected_tools.includes("index.context.envelope"), true);
-assert.equal(packet.servers.index.expected_current_status, (
-  "2.9.0 workspace atlas, certificates, freshness, benchmarking, "
-  + "selection-aware context envelopes, and MCP parity"
+assert.ok(packet.servers.index.expected_current_status.startsWith(
+  packet.servers.index.expected_version
 ));
+assert.match(packet.servers.index.expected_current_status, /workspace atlas/);
 assert.equal(packet.servers.index.behavior_probes.length, 2);
 const indexEnvelopeProbe = packet.servers.index.behavior_probes
   .find((probe) => probe.id === "index-context-envelope-selection-freshness");
@@ -87,14 +94,14 @@ assert.equal(packet.servers.telos.status_tool, "telos.status");
 
 const observedForumMatch = {
   server: "forum",
-  initialize: { result: { serverInfo: { name: "forum", version: "1.13.0" } } },
+  initialize: { result: { serverInfo: { name: "forum", version: packet.servers.forum.expected_version } } },
   tools_list: {
     result: {
       tools: [...packet.servers.forum.expected_tools, ...packet.servers.forum.auxiliary_tools].map((name) => ({ name }))
     }
   },
   status_payload: {
-    tool_version: "1.13.0",
+    tool_version: packet.servers.forum.expected_version,
     native: {
       current_status: packet.servers.forum.expected_current_status
     }
@@ -136,14 +143,14 @@ assert.ok(behaviorDrift.diagnostics.some((item) => item.code === "behavior_probe
 
 const observedIndexMatch = {
   server: "index",
-  initialize: { result: { serverInfo: { name: "index-graph", version: "2.9.0" } } },
+  initialize: { result: { serverInfo: { name: "index-graph", version: packet.servers.index.expected_version } } },
   tools_list: {
     result: {
       tools: [...packet.servers.index.expected_tools, ...packet.servers.index.auxiliary_tools].map((name) => ({ name }))
     }
   },
   status_payload: {
-    tool_version: "2.9.0",
+    tool_version: packet.servers.index.expected_version,
     native: {
       current_status: packet.servers.index.expected_current_status
     }

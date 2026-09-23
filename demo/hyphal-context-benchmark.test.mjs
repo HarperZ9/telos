@@ -142,71 +142,105 @@ const correction = JSON.parse(readRepoText(correctionRelativePath));
 assert.equal(correction.schema, "project-telos.hyphal-context-benchmark-correction/v1");
 const history = correction.source_history;
 
-for (const commit of [
+// The provenance assertions below replay commits recorded in the correction
+// packet. Those commits predate a history rewrite and survive only on local
+// preserve/prerewrite-* branches that were never pushed, so a fresh clone
+// cannot reach them and git answers 128.
+//
+// CI used to absorb that with `node demo/hyphal-context-benchmark.test.mjs
+// || true`, which suppressed this whole file: roughly thirty other assertions
+// stopped being checked to tolerate one unreachable input. An input that cannot
+// be fetched is unverifiable, not passing, and it is not a reason to stop
+// verifying everything else.
+//
+// So the history block runs when the commits are present and reports why it did
+// not when they are absent. Everything outside it runs either way.
+function commitPresent(commit) {
+  return spawnSync("git", ["cat-file", "-e", `${commit}^{commit}`], { cwd: repoRoot }).status === 0;
+}
+
+const historyCommits = [
   history.source_packet_commit,
   history.benchmark_packet_commit,
   history.evaluated_through_commit,
   correction.canonical_receipt.merge_commit
-]) {
-  runGit(["cat-file", "-e", `${commit}^{commit}`]);
-}
+];
+const unreachableCommits = historyCommits.filter((commit) => !commitPresent(commit));
 
-const sourceDiff = spawnSync(
-  "git",
-  [
-    "diff",
-    "--quiet",
+if (unreachableCommits.length > 0) {
+  console.error(
+    "[UNVERIFIABLE] hyphal provenance replay skipped: "
+    + `${unreachableCommits.length} of ${historyCommits.length} recorded commits are not in this clone `
+    + `(${unreachableCommits.join(", ")}). They predate a history rewrite and live only on unpushed `
+    + "preserve/prerewrite-* branches. Every other assertion in this file still ran."
+  );
+} else {
+  for (const commit of [
+    history.source_packet_commit,
     history.benchmark_packet_commit,
     history.evaluated_through_commit,
-    "--",
-    ...Object.values(history.source_paths)
-  ],
-  { cwd: repoRoot, encoding: "utf8" }
-);
-assert.equal(
-  sourceDiff.status,
-  0,
-  sourceDiff.stderr || "source content changed between the benchmark and evaluated correction commits"
-);
-assert.equal(correction.source_history.source_content_changed_after_benchmark, false);
-assert.equal(correction.historical_receipt.recoverable_at_commit, history.benchmark_packet_commit);
-assert.equal(correction.canonical_receipt.merge_commit, history.evaluated_through_commit);
+    correction.canonical_receipt.merge_commit
+  ]) {
+    runGit(["cat-file", "-e", `${commit}^{commit}`]);
+  }
 
-const historicalArtifactPaths = {
-  generator: "demo/hyphal-context-benchmark.mjs",
-  test: "demo/hyphal-context-benchmark.test.mjs",
-  receipt: "docs/outreach/receipts/twenty-second-wave/hyphal-context-benchmark-2026-07-02.json"
-};
-for (const [artifact, relativePath] of Object.entries(historicalArtifactPaths)) {
-  assert.equal(
-    correction.historical_receipt.artifact_canonical_text_sha256[artifact],
-    sha256(gitTextAt(history.benchmark_packet_commit, relativePath).replace(/\r\n?/g, "\n"))
+  const sourceDiff = spawnSync(
+    "git",
+    [
+      "diff",
+      "--quiet",
+      history.benchmark_packet_commit,
+      history.evaluated_through_commit,
+      "--",
+      ...Object.values(history.source_paths)
+    ],
+    { cwd: repoRoot, encoding: "utf8" }
   );
+  assert.equal(
+    sourceDiff.status,
+    0,
+    sourceDiff.stderr || "source content changed between the benchmark and evaluated correction commits"
+  );
+  assert.equal(correction.source_history.source_content_changed_after_benchmark, false);
+  assert.equal(correction.historical_receipt.recoverable_at_commit, history.benchmark_packet_commit);
+  assert.equal(correction.canonical_receipt.merge_commit, history.evaluated_through_commit);
+
+  const historicalArtifactPaths = {
+    generator: "demo/hyphal-context-benchmark.mjs",
+    test: "demo/hyphal-context-benchmark.test.mjs",
+    receipt: "docs/outreach/receipts/twenty-second-wave/hyphal-context-benchmark-2026-07-02.json"
+  };
+  for (const [artifact, relativePath] of Object.entries(historicalArtifactPaths)) {
+    assert.equal(
+      correction.historical_receipt.artifact_canonical_text_sha256[artifact],
+      sha256(gitTextAt(history.benchmark_packet_commit, relativePath).replace(/\r\n?/g, "\n"))
+    );
+  }
+
+  const historicalPacket = JSON.parse(
+    gitTextAt(history.benchmark_packet_commit, historicalArtifactPaths.receipt)
+  );
+  assert.deepEqual(correction.historical_receipt.comparison, {
+    full_context_tokens: historicalPacket.comparison.full_context_tokens,
+    hyphal_context_tokens: historicalPacket.comparison.hyphal_context_tokens,
+    token_savings: historicalPacket.comparison.token_savings,
+    token_savings_ratio: historicalPacket.comparison.token_savings_ratio
+  });
+  assert.equal(correction.historical_receipt.receipt_hash, historicalPacket.receipt_hash);
+
+  const lfReproduction = correction.reproduction.clean_lf_checkout;
+  const lfSourceGate = gitBufferAt(lfReproduction.source_commit, history.source_paths.source_gate);
+  const lfSourceGateJson = JSON.parse(lfSourceGate.toString("utf8"));
+  const lfCorpusTokens = lfSourceGateJson.source_rows.reduce((total, row) => {
+    const relativePath = `${history.source_paths.corpus_objects}/${row.sha256.slice(0, 2)}/${row.sha256.slice(2)}`;
+    return total + Math.ceil(gitBufferAt(lfReproduction.source_commit, relativePath).length / 4);
+  }, 0);
+  const lfSeed = gitBufferAt(lfReproduction.source_commit, history.source_paths.architecture_seed);
+  const lfFullContextTokens =
+    lfCorpusTokens + Math.ceil(lfSourceGate.length / 4) + Math.ceil(lfSeed.length / 4);
+  assert.equal(lfReproduction.comparison.full_context_tokens, lfFullContextTokens);
+  assert.equal(lfReproduction.architecture_seed_sha256, sha256(lfSeed));
 }
-
-const historicalPacket = JSON.parse(
-  gitTextAt(history.benchmark_packet_commit, historicalArtifactPaths.receipt)
-);
-assert.deepEqual(correction.historical_receipt.comparison, {
-  full_context_tokens: historicalPacket.comparison.full_context_tokens,
-  hyphal_context_tokens: historicalPacket.comparison.hyphal_context_tokens,
-  token_savings: historicalPacket.comparison.token_savings,
-  token_savings_ratio: historicalPacket.comparison.token_savings_ratio
-});
-assert.equal(correction.historical_receipt.receipt_hash, historicalPacket.receipt_hash);
-
-const lfReproduction = correction.reproduction.clean_lf_checkout;
-const lfSourceGate = gitBufferAt(lfReproduction.source_commit, history.source_paths.source_gate);
-const lfSourceGateJson = JSON.parse(lfSourceGate.toString("utf8"));
-const lfCorpusTokens = lfSourceGateJson.source_rows.reduce((total, row) => {
-  const relativePath = `${history.source_paths.corpus_objects}/${row.sha256.slice(0, 2)}/${row.sha256.slice(2)}`;
-  return total + Math.ceil(gitBufferAt(lfReproduction.source_commit, relativePath).length / 4);
-}, 0);
-const lfSeed = gitBufferAt(lfReproduction.source_commit, history.source_paths.architecture_seed);
-const lfFullContextTokens =
-  lfCorpusTokens + Math.ceil(lfSourceGate.length / 4) + Math.ceil(lfSeed.length / 4);
-assert.equal(lfReproduction.comparison.full_context_tokens, lfFullContextTokens);
-assert.equal(lfReproduction.architecture_seed_sha256, sha256(lfSeed));
 
 assert.deepEqual(correction.canonical_receipt.comparison, {
   full_context_tokens: packet.comparison.full_context_tokens,
