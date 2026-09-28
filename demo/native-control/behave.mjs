@@ -1,51 +1,19 @@
-// No-dependency, cost-free answer to invisible / score-based challenges
-// (reCAPTCHA v3 / Enterprise, behavioral anti-bot). These do not present a
-// puzzle to solve -- they score the session from fingerprint + behavior +
-// reputation. The native solution is to make the session SCORE AS HUMAN:
-//
-//   stealth(session)   -> Page.addScriptToEvaluateOnNewDocument patches the CDP /
-//                         automation fingerprint (navigator.webdriver, window.chrome,
-//                         Permissions, plugins, languages, WebGL) so the session
-//                         does not announce itself as automated.
-//   warmup(session)    -> bezier-curve mouse movement, scroll, and dwell that seed
-//                         realistic behavioral signals before a submit.
-//   humanClick / type  -> coordinate input with human jitter and cadence.
-//
-// Combined with a real, high-reputation profile (the operator's carried
-// sessions) this is how a clean session passes a score-based gate. No external
-// service, no cost.
+// CDP input primitives for coordinate-based click, type, scroll, and custom-
+// dropdown selection. These wrap Input.dispatch* and Runtime.evaluate for
+// form-filling workflows where CSS selectors cannot reach the target (cross-
+// origin iframes, obfuscated React widgets, rich editors).
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 const rand = (a, b) => a + Math.random() * (b - a);
 
-let last = { x: 400, y: 300 };
-
-// Quadratic-bezier path from last to target with perpendicular bow + jitter.
-async function humanMove(session, x, y, { steps = 14 } = {}) {
-  const x0 = last.x, y0 = last.y;
-  const mx = (x0 + x) / 2, my = (y0 + y) / 2;
-  const nx = -(y - y0), ny = x - x0;
-  const len = Math.hypot(nx, ny) || 1;
-  const bow = rand(-60, 60);
-  const cx = mx + (nx / len) * bow, cy = my + (ny / len) * bow;
-  for (let i = 1; i <= steps; i++) {
-    const t = i / steps;
-    const px = (1 - t) * (1 - t) * x0 + 2 * (1 - t) * t * cx + t * t * x;
-    const py = (1 - t) * (1 - t) * y0 + 2 * (1 - t) * t * cy + t * t * y;
-    const jx = px + rand(-1.5, 1.5), jy = py + rand(-1.5, 1.5);
-    await session.send("Input.dispatchMouseEvent", { type: "mouseMoved", x: jx, y: jy, button: "none", buttons: 0 });
-    await sleep(rand(6, 22));
+export async function humanClick(session, x, y) {
+  for (const type of ["mousePressed", "mouseReleased"]) {
+    await session.send("Input.dispatchMouseEvent", {
+      type, x: Number(x), y: Number(y),
+      button: "left", clickCount: 1,
+      buttons: type === "mouseReleased" ? 0 : 1,
+    });
   }
-  last = { x, y };
-}
-
-export async function humanClick(session, x, y, opts) {
-  await humanMove(session, x, y, opts);
-  await sleep(rand(40, 120));
-  await session.send("Input.dispatchMouseEvent", { type: "mousePressed", x, y, button: "left", clickCount: 1, buttons: 1 });
-  await sleep(rand(35, 95));
-  await session.send("Input.dispatchMouseEvent", { type: "mouseReleased", x, y, button: "left", clickCount: 1, buttons: 0 });
-  await sleep(rand(80, 220));
   return { clicked: [x, y] };
 }
 
@@ -73,40 +41,10 @@ export async function humanTypeKeys(session, text) {
 }
 
 export async function scroll(session, dy) {
-  await session.send("Input.dispatchMouseEvent", {
-    type: "mouseWheel", x: last.x, y: last.y, deltaX: 0, deltaY: dy || rand(120, 400),
-    button: "none", buttons: 0, modifiers: 0,
-  }).catch(async () => { await session.send("Runtime.evaluate", { expression: `window.scrollBy(0,${Math.round(dy || 200)})` }); });
-}
-
-// Seed human-like activity before a gated action (e.g. a submit).
-export async function warmup(session, { moves = 9, totalMs = 4200 } = {}) {
-  const vw = 1280, vh = 800;
-  try { const sz = await session.send("Runtime.evaluate", { expression: "[innerWidth,innerHeight]", returnByValue: true }); if (sz.result?.value) { vw.size && (vw = sz.result.value[0]); vh = sz.result.value[1]; } } catch {}
-  const per = totalMs / moves;
-  for (let i = 0; i < moves; i++) {
-    await humanMove(session, rand(80, vw - 80), rand(80, vh - 80), { steps: Math.round(rand(10, 22)) });
-    await scroll(session, rand(-120, 300));
-    await sleep(rand(per * 0.4, per));
-  }
-  await sleep(rand(300, 800));
-  return { warmed: moves };
-}
-
-// Patch the automation fingerprint on every new document so the session does
-// not self-identify as CDP-driven (navigator.webdriver is the loudest tell).
-export async function stealth(session) {
-  const patch = `
-    Object.defineProperty(navigator,'webdriver',{get:()=>undefined});
-    window.chrome = window.chrome || { runtime: {} };
-    Object.defineProperty(navigator,'languages',{get:()=>['en-US','en']});
-    Object.defineProperty(navigator,'plugins',{get:()=>[1,2,3,4,5]});
-    const origQuery = (window.navigator && navigator.permissions && navigator.permissions.query) ? navigator.permissions.query.bind(navigator.permissions) : null;
-    if (origQuery) navigator.permissions.query = (p) => p && p.name === 'notifications'
-      ? Promise.resolve({ state: Notification.permission }) : origQuery(p);
-  `;
-  await session.send("Page.addScriptToEvaluateOnNewDocument", { source: patch });
-  return { stealth: true };
+  const amount = dy || 200;
+  await session.send("Runtime.evaluate", {
+    expression: `window.scrollBy(0,${Math.round(amount)})`,
+  });
 }
 
 // Generic custom-dropdown selector: click the field to open its popup, then click

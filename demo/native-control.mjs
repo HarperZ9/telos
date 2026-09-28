@@ -23,7 +23,6 @@ import { focusSemantics } from "./native-control/focus.mjs";
 import * as browser from "./native-control/browser.mjs";
 import * as app from "./native-control/app.mjs";
 import * as device from "./native-control/device.mjs";
-import * as captcha from "./native-control/captcha.mjs";
 import * as forms from "./native-control/forms.mjs";
 import * as behave from "./native-control/behave.mjs";
 import * as runner from "./native-control/runner.mjs";
@@ -91,8 +90,6 @@ async function runBrowser(verb, params, flags) {
         return await browser.getText(session, params[0]);
       case "upload":
         return await browser.uploadFile(session, params[0], params[1]);
-      case "captcha":
-        return await captcha.solve(session, { prompt: flags.prompt || "" });
       case "autofill": {
         // browser autofill: injects a profile JSON (arg) or the candidate-profile-
         // derived shape, fills every field on the page (any site / auth flow).
@@ -119,20 +116,18 @@ async function runBrowser(verb, params, flags) {
       }
       case "behave": {
         const sub = params[0];
-        if (sub === "stealth") return await behave.stealth(session);
-        if (sub === "warmup") return await behave.warmup(session);
         if (sub === "click") return await behave.humanClick(session, Number(params[1]), Number(params[2]));
         if (sub === "type") return await behave.humanType(session, params.slice(1).join(" "));
         if (sub === "select") return await behave.selectpick(session, params[1], params.slice(2).join(" "));
-        throw new Error(`unknown behave verb: ${sub} (stealth|warmup|click|type|select)`);
+        throw new Error(`unknown behave verb: ${sub} (click|type|select)`);
       }
       case "run":
         // browser run <workflow.json> [--out=ledger.json]: declarative witnessed run.
         return await runner.runFromPath(params[0], { session, out: flags.out });
       case "runverify":
         return Ledger.verify(JSON.parse(readFileSync(params[0], "utf-8")));
-      case "token":
-        return await network.recaptchaToken(session, { action: flags.action || "submit", siteKey: flags.sitekey || undefined });
+      case "apifetch":
+        return await network.apiFetch(session, { url: params[0], method: flags.method || "POST", body: flags.body, headers: flags.headers ? JSON.parse(flags.headers) : {} });
       case "apifetch": {
         const body = params.slice(1).join(" ");
         return await network.apiFetch(session, { url: params[0], body: body ? body : null, method: flags.method || "POST", contentType: flags.contenttype || "application/json" });

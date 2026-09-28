@@ -13,7 +13,6 @@ import { readFileSync, writeFileSync } from "node:fs";
 import * as browser from "./browser.mjs";
 import * as forms from "./forms.mjs";
 import * as behave from "./behave.mjs";
-import * as captcha from "./captcha.mjs";
 import * as network from "./network.mjs";
 import * as learn from "./learn.mjs";
 import * as contact from "./contact.mjs";
@@ -24,8 +23,6 @@ function defaultRegistry() {
   const R = new Map();
   const num = (v, d) => (v == null ? d : Number(v));
   R.set("navigate", (c, s) => browser.navigate(c.session, s.url));
-  R.set("stealth", (c) => behave.stealth(c.session));
-  R.set("warmup", (c, s) => behave.warmup(c.session, { moves: num(s.moves, 9), totalMs: num(s.totalMs, 4200) }));
   R.set("upload", (c, s) => browser.uploadFile(c.session, s.selector || 'input[type=file]', s.file));
   R.set("click", (c, s) => browser.click(c.session, s.selector));
   R.set("fill", (c, s) => browser.setValue(c.session, s.selector, s.value));
@@ -38,8 +35,6 @@ function defaultRegistry() {
   R.set("behave.click", (c, s) => behave.humanClick(c.session, num(s.x), num(s.y)));
   R.set("behave.type", (c, s) => behave.humanType(c.session, s.text));
   R.set("behave.select", (c, s) => behave.selectpick(c.session, s.selector, s.option));
-  R.set("captcha", (c, s) => captcha.solve(c.session, { prompt: s.prompt || "" }));
-  R.set("token", (c, s) => network.recaptchaToken(c.session, { action: s.action || "submit", siteKey: s.siteKey }));
   R.set("apifetch", (c, s) => network.apiFetch(c.session, { url: s.url, body: s.body, method: s.method || "POST", headers: s.headers, contentType: s.contentType }));
   R.set("netcap", (c, s) => network.capture(c.session, { durationMs: s.durationMs || 3000, urlFilter: s.urlFilter || "" }));
   // learn (accountable learning engine) -- no browser session needed; shells to CLI.
