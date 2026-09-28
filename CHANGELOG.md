@@ -6,6 +6,20 @@ All notable changes to Project Telos. Telos is a zero-dependency source demo and
 
 No changes queued.
 
+## 0.4.2 - 2026-09-28
+
+Remove all CAPTCHA solving, bot-detection bypass, and fingerprint spoofing code
+from the shipped package.
+
+- Delete `demo/native-control/captcha.mjs` (CDP CAPTCHA pipeline) and
+  `tools/captcha-solve.py` (CLIP/Whisper solver). Neither capability ships in
+  0.4.2.
+- Strip `stealth()` fingerprint patching, `warmup()` behavioral simulation, and
+  `recaptchaToken()` harvesting from the native-control surface.
+- Simplify `humanClick()` to a direct CDP coordinate click (no bezier motion).
+- Keep legitimate form-filling primitives: `humanType`, `humanTypeKeys`,
+  `selectpick`, `scroll`, `apiFetch`, `capture`.
+
 ## 0.4.1 - 2026-09-23
 
 First version on the npm registry. 0.4.0 was tagged and released on GitHub but
