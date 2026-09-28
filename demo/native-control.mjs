@@ -63,13 +63,18 @@ export function makeReceipt(action, target, result, { ok = true, clock } = {}) {
   };
 }
 
-async function runBrowser(verb, params, flags) {
+// Default connection: start the dedicated debug browser if needed, then attach.
+async function connectBrowser({ port, match }) {
+  await browser.ensureChrome({ port });
+  return browser.attach({ port, match });
+}
+
+async function runBrowser(verb, params, flags, { connect = connectBrowser } = {}) {
   const port = flags.port ? Number(flags.port) : DEFAULT_PORT;
   if (verb === "tabs") {
     return browser.tabs(port);
   }
-  await browser.ensureChrome({ port });
-  const { session } = await browser.attach({ port, match: flags.match });
+  const { session } = await connect({ port, match: flags.match });
   try {
     switch (verb) {
       case "navigate":
@@ -126,8 +131,6 @@ async function runBrowser(verb, params, flags) {
         return await runner.runFromPath(params[0], { session, out: flags.out });
       case "runverify":
         return Ledger.verify(JSON.parse(readFileSync(params[0], "utf-8")));
-      case "apifetch":
-        return await network.apiFetch(session, { url: params[0], method: flags.method || "POST", body: flags.body, headers: flags.headers ? JSON.parse(flags.headers) : {} });
       case "apifetch": {
         const body = params.slice(1).join(" ");
         return await network.apiFetch(session, { url: params[0], body: body ? body : null, method: flags.method || "POST", contentType: flags.contenttype || "application/json" });
@@ -230,8 +233,9 @@ async function runDevice(verb, params) {
   }
 }
 
-export async function run(domain, verb, params, flags = {}) {
-  if (domain === "browser") return runBrowser(verb, params, flags);
+// `options.connect` replaces the browser connection (tests pass a fake session).
+export async function run(domain, verb, params, flags = {}, options = {}) {
+  if (domain === "browser") return runBrowser(verb, params, flags, options);
   if (domain === "app") return runApp(verb, params);
   if (domain === "device") return runDevice(verb, params);
   if (domain === "learn") {
