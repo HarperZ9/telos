@@ -6,6 +6,15 @@ All notable changes to Project Telos. Telos is a zero-dependency source demo and
 
 No changes queued.
 
+## 0.4.3 - 2026-09-29
+
+- Restore the browser `apifetch` positional request body and `--contenttype`
+  handling. Version 0.4.2 introduced a duplicate dispatch label that masked
+  the original implementation.
+- Add offline dispatch regression tests and static guards against the removed
+  capability names, imports, dependencies, commands, and environment variables
+  returning. Name-based guards do not replace behavior review.
+
 ## 0.4.2 - 2026-09-28
 
 Remove all CAPTCHA solving, bot-detection bypass, and fingerprint spoofing code
