@@ -101,30 +101,29 @@ test("the default form profile carries no personal data and no consent", async (
   const empty = defaultProfile(undefined, {});
   assert.deepEqual(empty, emptyProfile());
   assert.deepEqual(empty.answers, {});
-  assert.equal(empty.consent, false);
+  assert.equal("consent" in empty, false);
   for (const [key, value] of Object.entries(empty)) {
-    if (key === "answers" || key === "consent") continue;
+    if (key === "answers") continue;
     assert.equal(value, null, `${key} has a built-in default`);
   }
   const forms = read(path.join(root, "demo/native-control/forms.mjs"));
   assert.doesNotMatch(forms, /candidate-profile|career-campaign|harperz9|Seattle|have a disability|protected veteran|\b(gender|race|veteran|disability|sponsorship|authorized)\s*:\s*"/i);
-  const greenhouse = read(path.join(root, "demo/native-control/adapters/greenhouse.mjs"));
-  assert.doesNotMatch(greenhouse, /pickQuestion\([^)]*,\s*["'`](Yes|No|LinkedIn)["'`]\)/);
 });
 
-test("a named profile file is read, and consent needs an explicit true", async () => {
+test("a named profile file is read; consent and credentials in it are ignored", async () => {
   const { defaultProfile, profileFromRecord } = await load("forms");
   const dir = mkdtempSync(path.join(tmpdir(), "telos-profile-"));
   try {
     const file = path.join(dir, "profile.json");
-    writeFileSync(file, JSON.stringify({ name: "Ada B Lovelace", email: "ada@example.test", consent: "yes" }));
+    writeFileSync(file, JSON.stringify({ name: "Ada B Lovelace", email: "ada@example.test", consent: true, credentials: { password: "x" } }));
     const p = defaultProfile(undefined, { TELOS_FORM_PROFILE: file });
     assert.equal(p.firstName, "Ada");
     assert.equal(p.middleName, "B");
     assert.equal(p.lastName, "Lovelace");
     assert.equal(p.email, "ada@example.test");
-    assert.equal(p.consent, false);
-    assert.equal(profileFromRecord({ consent: true }).consent, true);
+    assert.equal("consent" in p, false);
+    assert.equal("credentials" in p, false);
+    assert.equal("consent" in profileFromRecord({ consent: true }), false);
     assert.throws(() => defaultProfile(path.join(dir, "missing.json"), {}), /ENOENT/);
   } finally {
     rmSync(dir, { recursive: true, force: true });
@@ -188,4 +187,46 @@ test("request capture redacts credentials carried in the URL", async () => {
   const out = await pending;
   assert.equal(out.requests[0].url, "https://example.test/api/me?access_token=[redacted]&fields=id");
   assert.equal(JSON.stringify(out).includes("secret123"), false);
+});
+
+// DESIGN 1.6 removals. Each test fails against 0.6.0, where the filler typed
+// profile.credentials.password, ticked consent boxes on profile.consent, the
+// Greenhouse adapter submitted applications, and tools/profile-mine.py read
+// Chrome's autofill store.
+test("the form filler never types a password and never ticks a consent box", async () => {
+  const forms = read(path.join(root, "demo/native-control/forms.mjs"));
+  assert.doesNotMatch(forms, /credentials\.password|P\.credentials/);
+  assert.doesNotMatch(forms, /P\.consent/);
+  const { fillExpression } = await load("forms");
+  const js = fillExpression({ consent: true });
+  assert.doesNotMatch(js, /\.click\(\); log\.checkbox\.push\("consent/);
+  assert.match(js, /log\.needs_human\.push\("password"\)/, "a login form is handed to the person");
+});
+
+test("adapters and adapter actions stay removed", async () => {
+  assert.equal(existsSync(path.join(root, "demo/native-control/adapters")), false);
+  const { runWorkflow } = await load("runner");
+  const ran = [];
+  const registry = new Map([["navigate", async () => ran.push("navigate")]]);
+  await assert.rejects(runWorkflow({ adapter: "greenhouse", steps: [{ act: "navigate" }] }, { registry }), /removed in 0.7.0/);
+  await assert.rejects(runWorkflow({ steps: [{ act: "navigate" }, { act: "adapter.submit" }] }, { registry }), /removed in 0.7.0/);
+  assert.deepEqual(ran, [], "no step ran before the refusal");
+});
+
+test("no tracked file reads the browser autofill store", () => {
+  assert.equal(existsSync(path.join(root, "tools/profile-mine.py")), false);
+  const hits = [];
+  const scan = (dir) => {
+    for (const e of readdirSync(dir, { withFileTypes: true })) {
+      if ([".git", "node_modules"].includes(e.name)) continue;
+      const full = path.join(dir, e.name);
+      if (e.isDirectory()) scan(full);
+      else if (/\.(mjs|js|py|ps1|json)$/.test(e.name) && !e.name.endsWith(".test.mjs")) {
+        if (/User Data[\\/]+Default[\\/]+Web Data/i.test(readFileSync(full, "utf8"))) hits.push(path.relative(root, full));
+      }
+    }
+  };
+  scan(path.join(root, "demo"));
+  scan(path.join(root, "tools"));
+  assert.deepEqual(hits, []);
 });

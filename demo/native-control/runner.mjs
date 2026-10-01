@@ -2,11 +2,12 @@
 // steps; each step's `act` resolves against a registry of action handlers that
 // wrap the engine verbs. Every step's result chains into a witnessed Ledger, so
 // a multi-step run (fill a form, check a result, verify the ledger) is one
-// re-checkable artifact. Per-site behavior lives in pluggable adapters under
-// adapters/ (e.g. greenhouse), reached via `act: "adapter.<name>"`.
+// re-checkable artifact. 0.7.0 removed per-site adapters (the Greenhouse
+// apply-and-submit adapter and the base submit): a workflow that names an
+// adapter or an `adapter.*` act is refused before any step runs.
 //
 //   browser run <workflow.json> [--out=ledger.json]
-//     workflow: { name?, adapter?, profile?, steps:[{id,act,...}], onError? }
+//     workflow: { name?, profile?, steps:[{id,act,...}], onError? }
 //     onError: "halt" (default) | "record-continue"
 
 import { readFileSync, writeFileSync } from "node:fs";
@@ -17,7 +18,7 @@ import * as network from "./network.mjs";
 import * as learn from "./learn.mjs";
 import { Ledger } from "./ledger.mjs";
 
-// Registry: act-name -> async (ctx, step) => result. ctx = { session, profile, adapter }.
+// Registry: act-name -> async (ctx, step) => result. ctx = { session, profile }.
 function defaultRegistry() {
   const R = new Map();
   const num = (v, d) => (v == null ? d : Number(v));
@@ -45,10 +46,12 @@ function defaultRegistry() {
   return R;
 }
 
-async function loadAdapter(name) {
-  if (!name) return null;
-  const mod = await import(`./adapters/${name}.mjs`);
-  return mod.default || mod;
+// Refuse removed features before the first step, so a workflow never runs half
+// of its steps and then stops at a submit adapter.
+function refuseRemoved(workflow) {
+  if (workflow.adapter) throw new Error("workflow adapters were removed in 0.7.0");
+  const step = (workflow.steps || []).find((s) => typeof s.act === "string" && s.act.startsWith("adapter."));
+  if (step) throw new Error(`adapter actions were removed in 0.7.0: ${step.act}`);
 }
 
 export async function runWorkflow(workflow, { session, registry = defaultRegistry() } = {}) {
@@ -56,8 +59,8 @@ export async function runWorkflow(workflow, { session, registry = defaultRegistr
   const profile = workflow.profile && workflow.profile !== "default"
     ? (typeof workflow.profile === "string" ? JSON.parse(workflow.profile) : workflow.profile)
     : forms.defaultProfile();
-  const adapter = await loadAdapter(workflow.adapter);
-  const ctx = { session, profile, adapter };
+  refuseRemoved(workflow);
+  const ctx = { session, profile };
   const onError = workflow.onError || "halt";
   const summary = { ran: 0, ok: 0, failed: 0 };
 
@@ -65,11 +68,7 @@ export async function runWorkflow(workflow, { session, registry = defaultRegistr
     const id = step.id || `${step.act}#${summary.ran}`;
     summary.ran++;
     try {
-      let handler = registry.get(step.act);
-      // adapter actions: "adapter.foo" -> adapter.foo(ctx, step)
-      if (!handler && step.act.startsWith("adapter.") && adapter && typeof adapter[step.act.slice(8)] === "function") {
-        handler = (c, st) => adapter[st.act.slice(8)](c, st);
-      }
+      const handler = registry.get(step.act);
       if (!handler) throw new Error(`unknown action: ${step.act}`);
       const result = await handler(ctx, step);
       const entry = { action: step.act, target: step.url || step.selector || step.file || step.option || null, ok: true, result };
