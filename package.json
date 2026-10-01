@@ -48,7 +48,7 @@
   "scripts": {
     "start": "node demo/telos-mcp.mjs",
     "mcp": "node demo/telos-mcp.mjs",
-    "test": "node --test \"demo/**/*.test.mjs\"",
+    "test": "node --test \"demo/**/*.test.mjs\" \"bench/**/*.test.mjs\"",
     "catalog": "node demo/catalog.mjs --summary",
     "manifest": "node demo/server-manifest.mjs --summary",
     "test:mcp": "node --test demo/telos-mcp.test.mjs demo/mcp-server-launch.test.mjs"
