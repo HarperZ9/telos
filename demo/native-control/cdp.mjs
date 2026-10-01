@@ -135,3 +135,70 @@ export class CdpSession {
     }
   }
 }
+
+// ---- Accessibility tree reads (DESIGN.md section 5) ----
+// Read-only CDP calls. The ref and fingerprint logic lives in demo/surface;
+// these return raw nodes plus the boxes and input attributes it needs.
+
+function boxOf(model) {
+  const q = model?.border;
+  if (!Array.isArray(q) || q.length < 8) return null;
+  const xs = [q[0], q[2], q[4], q[6]];
+  const ys = [q[1], q[3], q[5], q[7]];
+  const x = Math.min(...xs);
+  const y = Math.min(...ys);
+  return [x, y, Math.max(...xs) - x, Math.max(...ys) - y];
+}
+
+const ATTR_ROLES = new Set(["textbox", "searchbox", "combobox", "spinbutton"]);
+
+// Box (for actionable roles) and type/autocomplete/id (for text inputs) of one
+// backend node. A node with no layout box answers null, never a guess.
+export async function nodeExtras(session, backendNodeId, role, actionableRoles) {
+  const out = { box: null, attrs: null };
+  if (actionableRoles.has(role)) {
+    try {
+      out.box = boxOf((await session.send("DOM.getBoxModel", { backendNodeId })).model);
+    } catch {
+      out.box = null;
+    }
+  }
+  if (ATTR_ROLES.has(role)) {
+    try {
+      const a = (await session.send("DOM.describeNode", { backendNodeId })).node.attributes ?? [];
+      const map = {};
+      for (let i = 0; i + 1 < a.length; i += 2) map[a[i]] = a[i + 1];
+      out.attrs = { type: map.type ?? null, autocomplete: map.autocomplete ?? null, id: map.id ?? null };
+    } catch {
+      out.attrs = null;
+    }
+  }
+  return out;
+}
+
+export async function axSnapshot(session, { actionableRoles, maxNodes = 4000 } = {}) {
+  await session.send("Accessibility.enable");
+  await session.send("DOM.enable");
+  const { nodes } = await session.send("Accessibility.getFullAXTree");
+  const frameId = (await session.send("Page.getFrameTree")).frameTree.frame.id;
+  const boxes = new Map();
+  const attrs = new Map();
+  let seen = 0;
+  for (const n of nodes) {
+    if (n.ignored || !n.backendDOMNodeId) continue;
+    if (++seen > maxNodes) break;
+    const extra = await nodeExtras(session, n.backendDOMNodeId, n.role?.value, actionableRoles ?? new Set());
+    if (extra.box) boxes.set(n.backendDOMNodeId, extra.box);
+    if (extra.attrs) attrs.set(n.backendDOMNodeId, extra.attrs);
+  }
+  return { frameId, nodes, boxes, attrs };
+}
+
+// The node and its ancestors for act-time re-resolution.
+export async function axNode(session, backendNodeId) {
+  await session.send("Accessibility.enable");
+  const { nodes } = await session.send("Accessibility.getPartialAXTree", { backendNodeId, fetchRelatives: true });
+  const frameId = (await session.send("Page.getFrameTree")).frameTree.frame.id;
+  const node = nodes.find((n) => n.backendDOMNodeId === backendNodeId && !n.ignored) ?? null;
+  return { frameId, nodes, node };
+}

@@ -63,6 +63,26 @@ async function runBrowser(verb, params, flags, { connect = connectBrowser } = {}
     switch (verb) {
       case "navigate":
         return await browser.navigate(session, params[0]);
+      case "snapshot-ax": {
+        // Read-only accessibility outline with element refs (DESIGN.md 5.1).
+        const { newEpoch } = await import("./surface/refs.mjs");
+        const { ACTIONABLE_ROLES, buildBrowserSnapshot } = await import("./surface/snapshot.mjs");
+        const { saveEpoch } = await import("./surface/epochs.mjs");
+        const raw = await browser.axSnapshot(session, { actionableRoles: ACTIONABLE_ROLES, maxNodes: flags.max ? Number(flags.max) : undefined });
+        const target = await browser.pageState(session);
+        const snapshot = buildBrowserSnapshot({ epoch: newEpoch(), targetId: flags.match ?? "page", frameId: raw.frameId,
+          axNodes: raw.nodes, boxes: raw.boxes, attrs: raw.attrs });
+        saveEpoch(snapshot, { target: { origin: new URL(target.url || "about:blank").origin } });
+        return snapshot;
+      }
+      case "click-ref":
+        return await browser.clickRef(session, Number(params[0]));
+      case "fill-ref":
+        return await browser.fillRef(session, Number(params[0]), params.slice(1).join(" "), { secret: flags.secret === "1" });
+      case "select-ref":
+        return await browser.selectRef(session, Number(params[0]), params.slice(1).join(" "));
+      case "focus-ref":
+        return await browser.focusRef(session, Number(params[0]));
       case "eval":
         return await browser.evalJs(session, params[0]);
       case "evalfile":
@@ -174,6 +194,18 @@ async function runApp(verb, params) {
       return app.windows();
     case "tree":
       return app.tree(params[0], params[1]);
+    case "snapshot-ax": {
+      const { newEpoch } = await import("./surface/refs.mjs");
+      const { buildUiaSnapshot } = await import("./surface/snapshot.mjs");
+      const { saveEpoch } = await import("./surface/epochs.mjs");
+      const t = await app.tree(params[0], params[1]);
+      const snapshot = buildUiaSnapshot({ epoch: newEpoch(), hwnd: t.hwnd, processImage: t.process,
+        elements: t.elements ?? [], truncated: t.truncated, settlesAbsence: t.settlesAbsence });
+      saveEpoch(snapshot, { target: { hwnd: t.hwnd, window: t.window } });
+      return snapshot;
+    }
+    case "resolve":
+      return app.resolve(params[0], params[1]);
     case "invoke":
       return app.invoke(params[0], params[1]);
     case "setvalue":

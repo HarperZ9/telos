@@ -260,3 +260,4 @@ export async function uploadInFrame(session, frameUrlMatch, selector, filePath) 
   if (!locate.result?.value) throw new Error(`uploadInFrame: file input not found in frame: ${selector}`);
   return { frame: target.url, found: locate.result.value };
 }
+export * from "./browser-ref.mjs";
