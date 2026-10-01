@@ -1,7 +1,40 @@
 // Scope matching for grants, plus the targets no grant can reach. Every
 // function here is pure and fails closed: a malformed input never matches.
+import { lstatSync, realpathSync } from "node:fs";
 import path from "node:path";
 import { NAMED_ONLY_SENSES, SECRET_MARKS } from "./tiers.mjs";
+
+// realTarget - the path the operating system will act on: the deepest existing
+// ancestor through realpath (symlinks, junctions, 8.3 short names and legacy
+// profile junctions such as "Local Settings" all resolve), plus the segments
+// that do not exist yet. A link that exists but points nowhere returns null,
+// because a write through it would land wherever the link is later pointed.
+// Lexical paths alone let a link inside a granted folder reach the Telos key.
+export function realTarget(p) {
+  if (typeof p !== "string" || !p) return null;
+  const abs = path.resolve(p);
+  const rest = [];
+  let cur = abs;
+  for (;;) {
+    let st = null;
+    try { st = lstatSync(cur); } catch { st = null; }
+    if (st) {
+      let real;
+      try { real = realpathSync.native(cur); } catch { return null; }
+      return rest.length ? path.join(real, ...rest.reverse()) : real;
+    }
+    const parent = path.dirname(cur);
+    if (parent === cur) return abs;
+    rest.push(path.basename(cur));
+    cur = parent;
+  }
+}
+
+// realRoots - grant roots and the state root through the same resolution, so
+// a root that is itself a link (macOS /tmp, a junctioned drive) still matches.
+export function realRoots(roots = []) {
+  return roots.map((r) => (typeof r === "string" && r ? realTarget(r) ?? r : r));
+}
 
 export function originOf(url) {
   try {
@@ -110,5 +143,5 @@ export function protectedWindow(win, extraProcesses = []) {
 }
 
 export function protectedPath(target, stateRoot, platform = process.platform) {
-  return Boolean(stateRoot) && pathInside(target, [stateRoot], platform);
+  return Boolean(stateRoot) && pathInside(target, [stateRoot, ...realRoots([stateRoot])], platform);
 }

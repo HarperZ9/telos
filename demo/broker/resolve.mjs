@@ -4,7 +4,7 @@
 // with snapshot-epoch refs; the broker only reads the fields named here.
 import path from "node:path";
 import { digestOf } from "./canonical.mjs";
-import { namesSecretField, originOf, SHELL_METACHARS } from "./scope.mjs";
+import { namesSecretField, originOf, realTarget, SHELL_METACHARS } from "./scope.mjs";
 import { verbSpec } from "./tiers.mjs";
 
 function pickWindow(windows, match) {
@@ -35,8 +35,10 @@ async function resolveKind(spec, params, flags, { drivers, cwd }) {
     case "window":
       return pickWindow(await drivers.listWindows(), at(0));
     case "path-read":
-    case "path-write":
-      return { path: path.resolve(cwd, at(spec.pathArg) ?? ".") };
+    case "path-write": {
+      const real = realTarget(path.resolve(cwd, at(spec.pathArg) ?? "."));
+      return real ? { path: real } : { path: path.resolve(cwd, at(spec.pathArg) ?? "."), unresolvedPath: true };
+    }
     case "argv": {
       const command = params.join(" ").trim();
       return { command, argv: command ? command.split(/\s+/) : [], shellMeta: SHELL_METACHARS.test(command) };
@@ -73,6 +75,11 @@ async function resolveRefTarget(spec, params, flags, base, drivers) {
   return { ref: live.target_ref, fingerprint: live.target_fingerprint };
 }
 
+// A secondary path argument through realTarget; false marks a dangling link.
+function realPathOrFlag(cwd, p) {
+  return realTarget(path.resolve(cwd, p)) ?? false;
+}
+
 export async function resolveTarget(verb, params = [], flags = {}, { drivers, cwd = process.cwd() } = {}) {
   const spec = verbSpec(verb);
   const base = await resolveKind(spec, params, flags, { drivers, cwd });
@@ -84,9 +91,14 @@ export async function resolveTarget(verb, params = [], flags = {}, { drivers, cw
     selector,
     secret: namesSecretField(selector),
     resolution: resolutionOf(verb, params),
-    readPath: spec.readArg !== undefined && params[spec.readArg] ? path.resolve(cwd, params[spec.readArg]) : null,
-    writePath: spec.writeArg !== undefined && params[spec.writeArg] ? path.resolve(cwd, params[spec.writeArg]) : null,
+    readPath: spec.readArg !== undefined && params[spec.readArg] ? realPathOrFlag(cwd, params[spec.readArg]) : null,
+    writePath: spec.writeArg !== undefined && params[spec.writeArg] ? realPathOrFlag(cwd, params[spec.writeArg]) : null,
   };
+  if ([target.readPath, target.writePath].some((p) => p === false)) {
+    target.unresolvedPath = true;
+    target.readPath ||= null;
+    target.writePath ||= null;
+  }
   if (spec.refArg !== undefined) {
     const hit = await resolveRefTarget(spec, params, flags, base, drivers);
     if (hit.error) return hit;

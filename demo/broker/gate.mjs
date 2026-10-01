@@ -1,6 +1,10 @@
 // Tier gate policy: checks that refuse before any grant is consulted, then the
 // choice of a live grant whose tier and scope cover the resolved target.
-import { deviceAllowed, execAllowed, originAllowed, pathInside, protectedPath, protectedWindow, senseAllowed, windowAllowed } from "./scope.mjs";
+import { deviceAllowed, execAllowed, originAllowed, pathInside as lexicalInside, protectedPath, protectedWindow, realRoots, senseAllowed, windowAllowed } from "./scope.mjs";
+
+// Targets arrive already resolved through realTarget; roots are resolved the
+// same way here, so both sides of the comparison name the real location.
+const pathInside = (target, roots = [], platform) => lexicalInside(target, realRoots(roots), platform);
 import { effectiveTier, tierRank } from "./tiers.mjs";
 
 // Flags a caller might use to claim approval or irreversibility. Approval
@@ -18,6 +22,7 @@ export function precheck(spec, target, flags, { stateRoot, platform, protectedPr
   if (target.secret) return { reason: "SECRET_FIELD" };
   const why = protectedWindow(target.window, protectedProcesses);
   if (why) return { reason: "PROTECTED_TARGET", detail: why };
+  if (target.unresolvedPath) return { reason: "OUT_OF_SCOPE", detail: "a path through a link that points nowhere" };
   for (const p of [target.path, target.readPath, target.writePath]) {
     if (p && protectedPath(p, stateRoot, platform)) return { reason: "PROTECTED_TARGET", detail: "telos state directory" };
   }
