@@ -1,52 +1,6 @@
 {
-  "name": "project-telos-flagships",
-  "version": "0.1.0",
-  "description": "Project Telos flagship tools exposed through skills, CLI, and MCP.",
-  "skills": [
-    "flagship-operator-spine",
-    "gather-intake",
-    "crucible-verification",
-    "index-context",
-    "forum-orchestration",
-    "telos-reconcile"
-  ],
-  "mcpServers": {
-    "gather": {
-      "command": "gather",
-      "args": [
-        "mcp"
-      ]
-    },
-    "crucible": {
-      "command": "crucible",
-      "args": [
-        "mcp"
-      ]
-    },
-    "index": {
-      "command": "index",
-      "args": [
-        "mcp"
-      ]
-    },
-    "forum": {
-      "command": "forum",
-      "args": [
-        "mcp"
-      ]
-    },
-    "telos": {
-      "command": "node",
-      "args": [
-        "C:/dev/public/telos/demo/telos-mcp.mjs"
-      ]
-    }
-  },
-  "cliEntrypoints": [
-    "gather",
-    "crucible",
-    "index",
-    "forum",
-    "node C:/dev/public/telos/demo/run.mjs"
-  ]
+  "name": "telos-workbench",
+  "version": "0.5.0",
+  "description": "Use the generated client-plugin archive; it contains the telos-workbench skill and Telos MCP server.",
+  "packageGuide": "https://github.com/HarperZ9/telos/blob/main/client-plugin/README.md"
 }

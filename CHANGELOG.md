@@ -1,8 +1,15 @@
 # Changelog
 
-All notable changes to Project Telos. Telos is a zero-dependency source demo and shared operator room, published on npm as `project-telos-mcp`. GitHub release assets carry the same version.
+## 0.5.0
 
-## Unreleased
+- Add Windows x64 MCPB and ZIP packages with a bundled runtime, scoped skills and qualified local stdio workflows.
+- Require clean exact-tag source, versions ending in .0, payload hashes and matching same-release artifacts; refuse changed release reruns.
+- Replace local-machine MCP examples and nonexistent skill declarations with the packaged Telos skill and portable entrypoint.
+- Align the integration manifest with Gather 2.1.0, Crucible 1.4.0, Index 2.15.0 and Forum 1.16.0 candidate contracts. Source launch checks now verify version and status as well as tool names.
+- Read the Telos status version from package metadata. Freshness checks permit absent optional tools while still refusing missing required tools and undeclared tools.
+- Qualify Index selection and freshness with a bounded synthetic repository. Retain real-workspace budget overflow and stale-source checks as negative controls.
+
+All notable changes to Project Telos. Telos is a zero-dependency source demo and shared operator room, published on npm as `project-telos-mcp`. GitHub release assets carry the same version.
 
 No changes queued.
 
