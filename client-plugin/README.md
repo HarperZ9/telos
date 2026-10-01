@@ -1,5 +1,15 @@
 # Telos local client package
 
+Telos reports the readiness of your local tool workbench and builds proof packets that a verifier can recompute.
+
+## Try it
+
+- Check Telos readiness.
+- Show the Telos tool catalog.
+- Build the agent action proof packet and tell me its verdict.
+
+## Details
+
 The source ZIP includes the tool source and one scoped skill. It requires an
 installed Node.js 20+; this advanced source package is not self-contained.
 Extract it to a persistent folder. Claude Code can load that plugin folder;
