@@ -139,7 +139,7 @@ Peer repos: [gather](https://github.com/HarperZ9/gather) (research intake), [ind
 
 ## Status and maturity
 
-This source candidate targets 0.5.0. The published npm baseline remains `project-telos-mcp` 0.4.3 until release qualification finishes. The command surface above is tested and CI-covered: `npm test` globs every test file in `demo/`, so a new one runs without being added to a list. Interfaces may still move between minor versions. Research packets are deterministic preflights with explicit non-claims: the causal packet does not claim causal discovery, the embodied packet does not claim real-robot safety, the quantum packet does not claim hardware QEC. Treat the receipts and tests in this repo as the evidence, not prose counts.
+`project-telos-mcp` 0.5.0 is published on [npm](https://www.npmjs.com/package/project-telos-mcp/v/0.5.0), with matching [GitHub release artifacts](https://github.com/HarperZ9/telos/releases/tag/v0.5.0). The command surface above is tested and CI-covered: `npm test` globs every test file in `demo/`, so a new one runs without being added to a list. Interfaces may still move between minor versions. Research packets are deterministic preflights with explicit non-claims: the causal packet does not claim causal discovery, the embodied packet does not claim real-robot safety, the quantum packet does not claim hardware QEC. Treat the receipts and tests in this repo as the evidence, not prose counts.
 
 ### Upgrading from 0.2.0
 
@@ -204,8 +204,9 @@ into the work.
 
 ## Local client packages
 
-The 0.5.0 source candidate includes native Windows client packages. Publication
-and marketplace acceptance remain separate release gates.
+The [0.5.0 release](https://github.com/HarperZ9/telos/releases/tag/v0.5.0) includes
+native Windows ZIP and MCPB client packages. Marketplace acceptance is not
+established by publication of these archives.
 
 ### Installation
 

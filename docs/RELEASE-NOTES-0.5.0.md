@@ -1,4 +1,4 @@
-# Telos 0.5.0 candidate
+# Telos 0.5.0
 
 Telos now builds scoped client packages alongside the main distribution. Windows
 x64 ZIP and Claude Desktop MCPB artifacts include a pinned Node runtime and its
@@ -28,5 +28,9 @@ The real candidate workspace at 700 tokens still overflows and remains
 UNVERIFIABLE; the test rejects that response as positive acceptance. It does not
 show that a full repository fits the compatibility fixture's budget.
 
-Publication remains held until the sibling tags exist and the accepted source
-and rebuilt native packages pass the release workflow.
+The sibling tags and exact-source release workflow passed. GitHub and npm tarball
+bytes match. Published native archives passed isolated Claude Code connection,
+restart and removal; Claude Desktop installation, model-mediated workflows and
+marketplace approval remain unverified. See the
+[release workflow](https://github.com/HarperZ9/telos/actions/runs/36837574031) and
+[assets](https://github.com/HarperZ9/telos/releases/tag/v0.5.0).
