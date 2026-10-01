@@ -30,6 +30,9 @@ import { Ledger } from "./native-control/ledger.mjs";
 import * as network from "./native-control/network.mjs";
 import * as learn from "./native-control/learn.mjs";
 import { defaultBroker } from "./broker/index.mjs";
+import { actByRef } from "./native-control/act-ref.mjs";
+
+export { actByRef };
 
 // The catalog module owns the receipt shape so the MCP tool can return the
 // catalog without loading any driver.
@@ -52,23 +55,6 @@ export function parseArgs(argv) {
 async function connectBrowser({ port, match }) {
   await browser.ensureChrome({ port });
   return browser.attach({ port, match });
-}
-
-// Act-by-ref: params[0] is a snapshot ref (b:<epoch>:<target>:<node>), never
-// a raw node id. The element is re-resolved at act time against the
-// fingerprint the snapshot recorded; a changed, stale, unknown or secret
-// element refuses here even if a caller reached the driver without the broker.
-export async function actByRef(session, verb, params, { resolve } = {}) {
-  const resolveBrowserRef = resolve ?? (await import("./surface/resolve.mjs")).resolveBrowserRef;
-  const borrowed = { session: { send: (...a) => session.send(...a), close() {} } };
-  const live = await resolveBrowserRef(params[0], { attach: async () => borrowed });
-  if (!live.ok) throw Object.assign(new Error(`${live.code}: ${live.reason ?? live.code}`), { code: live.code });
-  const id = live.backendNodeId;
-  const text = params.slice(1).join(" ");
-  if (verb === "click-ref") return browser.clickRef(session, id);
-  if (verb === "fill-ref") return browser.fillRef(session, id, text, { secret: live.secret === true });
-  if (verb === "select-ref") return browser.selectRef(session, id, text);
-  return browser.focusRef(session, id);
 }
 
 async function runBrowser(verb, params, flags, { connect = connectBrowser } = {}) {
