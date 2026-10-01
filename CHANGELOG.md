@@ -26,6 +26,25 @@ including code the MCP server never calls.
   `scripts/build_client_plugin.py`. A package test fails if any excluded driver
   or any `.ps1` file returns to the plugin archive.
 
+Signed receipts, replay and dry run (0.7.0 receipt core, `docs/spec/telos.receipt-v1.md`).
+
+- New `demo/receipts/`: the `telos.receipt/v1` schema, a compact canonical form
+  that refuses floats, sha256 seals, a hash chain per session persisted to the
+  Telos home before each append returns, ed25519 head signatures through Node's
+  built-in crypto (no new dependencies), and signed checkpoints every 256
+  receipts and at close.
+- `demo/receipts/verify.mjs` verifies a session offline as one copied,
+  stdlib-only file. `verify_packet.mjs` routes `.jsonl` receipt chains to it.
+  Four negative controls ship in the suite: a suffix removed after a checkpoint,
+  an edited entry, a reordered entry and a wrong-key signature. Each fails.
+- `telos keys init|show` and `telos receipts verify|head|path`. The key is
+  created once and never overwritten; no command prints private key material.
+- Dry run writes `DRY_RUN` receipts and lists the holds a real run would raise.
+  Replay re-gates every step, raises a fresh hold for T3 and above, never passes
+  a recorded approval on, and stops at the first divergence with a field-level
+  diff.
+- Conformance vectors in `docs/spec/vectors/` for modules that pin the contract.
+
 ## 0.6.0
 
 Release-path audit of the native-control drivers. 0.5.0 still shipped code in

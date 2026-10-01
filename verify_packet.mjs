@@ -1,15 +1,20 @@
 #!/usr/bin/env node
 // verify_packet.mjs -- standalone integrity verifier for a Project Telos sealed
-// artifact. Imports only the Node standard library (node:crypto, node:fs) and
-// nothing from the telos package, so a stranger with one artifact re-derives its
+// artifact. Imports the Node standard library (node:crypto, node:fs) and one
+// stdlib-only Telos file (below), so a stranger with one artifact re-derives its
 // seal offline: `node verify_packet.mjs artifact.json`. A proof packet is sealed
 // by packetHash over its canonical bytes; a native-control ledger export by the
 // chainValue chain. This file re-reads the artifact, recomputes the seal from its
 // own bytes, and compares. Exit 0 MATCH, 1 DRIFT, 2 UNVERIFIABLE (missing,
 // unreadable, or a schema not re-derivable here). Honest null: a packet
 // ledger_ref anchors an external chain the packet does not embed, kept UNVERIFIABLE.
+// A telos.receipt/v1 session file (.jsonl, one receipt or signature per line) is
+// handed to demo/receipts/verify.mjs. That is the one Telos file this verifier
+// imports; it is itself stdlib-only and runs alone when copied:
+// `node verify_packet.mjs session.jsonl [--checkpoints f] [--pubkey f] [--json]`.
 import { createHash } from "node:crypto";
 import { readFileSync } from "node:fs";
+import { cliMain as verifyReceiptChain } from "./demo/receipts/verify.mjs";
 
 // packetHash lane: compact sorted-key serialization, mirroring proof-hash.mjs.
 function stableStringify(value) {
@@ -110,6 +115,16 @@ function verify(artifact) {
   return ["UNVERIFIABLE", `no standalone re-derivation for schema ${schema}`];
 }
 
+// isReceiptChain - the first non-empty line is a telos.receipt/v1 record.
+function isReceiptChain(text) {
+  const first = text.split(/\r?\n/).find((line) => line.trim());
+  try {
+    return JSON.parse(first ?? "null")?.schema === "telos.receipt/v1";
+  } catch {
+    return false;
+  }
+}
+
 function main(argv) {
   const target = argv[0];
   if (!target) {
@@ -118,7 +133,9 @@ function main(argv) {
   }
   let artifact;
   try {
-    artifact = JSON.parse(readFileSync(target, "utf8"));
+    const text = readFileSync(target, "utf8");
+    if (isReceiptChain(text)) return verifyReceiptChain(argv);
+    artifact = JSON.parse(text);
   } catch (err) {
     process.stdout.write(`UNVERIFIABLE  artifact unreadable: ${err.message}\n`);
     return 2;
