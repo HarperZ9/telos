@@ -103,5 +103,5 @@ payloads, raw evidence, or operator-owned licensed font files.
 
 See [the client package guide](client-plugin/README.md) for scoped skills, portable MCP configuration and same-release archives.
 
-The current published version is 0.6.0. Download native Windows ZIP and MCPB
-packages from [the release](https://github.com/HarperZ9/telos/releases/tag/v0.6.0).
+The current published version is 0.7.0. Download native Windows ZIP and MCPB
+packages from [the release](https://github.com/HarperZ9/telos/releases/tag/v0.7.0).

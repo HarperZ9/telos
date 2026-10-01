@@ -1,8 +1,21 @@
 # Project Telos Current State
 
+## 0.7.0 release, 2026-10-01
+
+0.7.0 is the current npm and GitHub release and replaces 0.6.0.
+Every native-control verb runs through a permission tier gate, every gated
+call writes a signed receipt that verifies offline, and the model acts on
+accessibility-tree refs. A fresh install refuses every verb above T0 until the
+operator runs `telos keys init` and `telos grant issue` at an interactive
+terminal. Release checksum files are now written with LF line endings on every
+OS, so `sha256sum -c` passes on older coreutils. No live browser, UI
+Automation or device action ran in the release tests. See
+[the 0.7.0 notes](RELEASE-NOTES-0.7.0.md) and
+[the tier spec](spec/telos-tiers.md).
+
 ## 0.6.0 release, 2026-10-01
 
-0.6.0 is the current npm and GitHub release and replaces 0.5.0.
+0.6.0 replaced 0.5.0.
 The release removes native-control code that an audit of the 0.5.0 package
 placed outside what Telos supports: a scraper with a browser-impersonating
 User-Agent, unattended email, social-post and consumer sign-in verbs,

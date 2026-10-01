@@ -65,6 +65,14 @@ Removed (hard exclusions still in tree after 0.6.0).
 - Evidence modes `credential-logistics` and `credential-assess` are renamed
   `account-logistics-evidence` and `account-review-evidence`.
 
+Release checksums.
+
+- `SHA256SUMS.txt` is written with LF line endings on every OS. Files written
+  on Windows had CRLF, which `sha256sum -c` from older coreutils and Perl
+  `shasum` refuse. `release.yml` now refuses a CR byte before each check, and a
+  new `checksums` workflow writes a sums file on Windows and Linux and checks
+  both on Linux. The v0.5.0 and v0.6.0 assets are unchanged.
+
 Benchmark.
 
 - `bench/waa`: a WindowsAgentArena harness skeleton with a dry run that plans
