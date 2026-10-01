@@ -1,5 +1,34 @@
 # Changelog
 
+## 0.6.0
+
+Release-path audit of the native-control drivers. 0.5.0 still shipped code in
+categories Telos does not support; 0.6.0 removes it and adds guards.
+
+- Remove `demo/native-control/scrape.mjs`. It sent a hard-coded browser
+  User-Agent and routed search requests through a signed-in browser session to
+  get past bot blocks.
+- Remove `demo/native-control/contact.mjs` and `demo/native-control/share.mjs`
+  with the undocumented `send`, `targets`, `linkedin`, `gumroadlogin` and
+  `gumroadlist` verbs and the `contact.send` workflow action. They sent email,
+  posted and signed in to consumer services through a carried session with no
+  confirmation step.
+- Replace `behave.mjs` (`humanClick`, `humanType`, `humanTypeKeys`,
+  `selectpick`) with `input.mjs` (`pointerClick`, `typeText`, `typeKeys`,
+  `selectOption`). Keystroke pacing is a fixed 20 ms default instead of a random
+  30 to 170 ms delay. The `behave` verb and `behave.*` workflow actions remain as
+  aliases; `browser input keys` and `input.keys` are new.
+- Remove the built-in form profile. It carried one person's name source,
+  location, demographic, disability, veteran and work-eligibility answers and
+  ticked consent and arbitration checkboxes by default. Profiles now come from
+  the caller or `TELOS_FORM_PROFILE`, and consent needs `"consent": true`. The
+  Greenhouse adapter answers custom questions only from the profile.
+- Redact credential, cookie, session, CSRF and key header values, URL userinfo,
+  credential query and fragment parameters, and request bodies in
+  `browser netcap` output.
+- Add `demo/native-control-boundary.test.mjs` and extend the bypass guard to
+  `human*` input names.
+
 ## 0.5.0
 
 - Add Windows x64 MCPB and ZIP packages with a bundled runtime, scoped skills and qualified local stdio workflows.

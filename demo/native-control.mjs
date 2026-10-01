@@ -24,14 +24,11 @@ import * as browser from "./native-control/browser.mjs";
 import * as app from "./native-control/app.mjs";
 import * as device from "./native-control/device.mjs";
 import * as forms from "./native-control/forms.mjs";
-import * as behave from "./native-control/behave.mjs";
+import * as input from "./native-control/input.mjs";
 import * as runner from "./native-control/runner.mjs";
 import { Ledger } from "./native-control/ledger.mjs";
 import * as network from "./native-control/network.mjs";
 import * as learn from "./native-control/learn.mjs";
-import * as contact from "./native-control/contact.mjs";
-import * as scrape from "./native-control/scrape.mjs";
-import * as share from "./native-control/share.mjs";
 
 export const SCHEMA = "project-telos.native-control/v1";
 
@@ -119,12 +116,15 @@ async function runBrowser(verb, params, flags, { connect = connectBrowser } = {}
         const r = await browser.evalInFrame(session, params[0], forms.SPATIAL_FILL_JS(JSON.stringify(profile)));
         return r.value;
       }
+      case "input":
       case "behave": {
+        // `behave` is the pre-0.6.0 name for the same fixed-pace input verbs.
         const sub = params[0];
-        if (sub === "click") return await behave.humanClick(session, Number(params[1]), Number(params[2]));
-        if (sub === "type") return await behave.humanType(session, params.slice(1).join(" "));
-        if (sub === "select") return await behave.selectpick(session, params[1], params.slice(2).join(" "));
-        throw new Error(`unknown behave verb: ${sub} (click|type|select)`);
+        if (sub === "click") return await input.pointerClick(session, Number(params[1]), Number(params[2]));
+        if (sub === "type") return await input.typeText(session, params.slice(1).join(" "), { pauseMs: flags.pause });
+        if (sub === "keys") return await input.typeKeys(session, params.slice(1).join(" "), { pauseMs: flags.pause });
+        if (sub === "select") return await input.selectOption(session, params[1], params.slice(2).join(" "), { pauseMs: flags.pause });
+        throw new Error(`unknown input verb: ${sub} (click|type|keys|select)`);
       }
       case "run":
         // browser run <workflow.json> [--out=ledger.json]: declarative witnessed run.
@@ -136,20 +136,10 @@ async function runBrowser(verb, params, flags, { connect = connectBrowser } = {}
         return await network.apiFetch(session, { url: params[0], body: body ? body : null, method: flags.method || "POST", contentType: flags.contenttype || "application/json" });
       }
       case "netcap":
-        return await network.capture(session, { durationMs: params[0] ? Number(params[0]) : 3000, urlFilter: params[1] || "" });
-      case "send":
-        // browser send --to=.. --subject=.. --body=.. : autonomous email via authed Gmail.
-        return await contact.gmailSend(session, { to: flags.to, subject: flags.subject, body: params.join(" ") || flags.body });
-      case "targets":
-        // browser scrape --query=.. [limit]: discover public outreach targets.
-        return await scrape.targets(session, { query: flags.query, limit: params[0] ? Number(params[0]) : 12 });
-      case "linkedin":
-        // browser linkedin --text=.. : post to the authed LinkedIn feed.
-        return await share.linkedinPost(session, { text: params.join(" ") || flags.text });
-      case "gumroadlogin":
-        return await share.gumroadLoginGoogle(session);
-      case "gumroadlist":
-        return await share.gumroadList(session, { name: flags.name, description: flags.description, price: flags.price, file: flags.file });
+        return await network.capture(session, {
+          durationMs: params[0] ? Number(params[0]) : 3000,
+          urlFilter: params[1] || "",
+        });
       case "waitfor":
         return await browser.waitFor(session, params[0], params[1] ? Number(params[1]) : undefined);
       case "screenshot": {

@@ -5,44 +5,57 @@
 // fallback. React/Vue-aware via the native value setter + input/change dispatch.
 //
 //   forms fill <profile-json>   -> detect + fill every field on the page from the
-//                                  profile; click radios/selects that match; check
-//                                  consent checkboxes; return a per-field report.
+//                                  profile; click radios/selects that match; tick
+//                                  consent checkboxes only when profile.consent is
+//                                  true; return a per-field report.
 //                                  Detects a LOGIN form (password field) and fills
 //                                  email+password from profile.credentials when
 //                                  present, else reports login-required honestly.
 
 import { readFileSync } from "node:fs";
-import { homedir } from "node:os";
 
-// Read the operator's candidate profile and map it to the generic form shape.
-// `answers` is keyed by substrings likely to appear in a question's text so the
-// generic radio matcher works across any ATS (Ashby, Greenhouse, Workday, ...).
-export function defaultProfile(profilePath) {
-  const path = profilePath || `${homedir()}/career-campaign/candidate-profile.json`;
-  let raw = {};
-  try { raw = JSON.parse(readFileSync(path, "utf-8")); } catch { /* caller passes a profile */ }
-  const [first, ...rest] = (raw.name || "").split(" ");
+// The profile the filler uses when a caller passes none. It comes only from a
+// file the person names, by argument or TELOS_FORM_PROFILE. Telos ships no
+// personal defaults: no name, location, demographic or eligibility answers, and
+// no consent. A field or question the profile does not answer stays unfilled and
+// is reported as skipped or unresolved, for the person to complete.
+//
+// Profile file shape (every key optional):
+//   { name, email, phone, location, city, region, country, countryCode, postal,
+//     address, company, url, links: { linkedin, github }, answers: { <question
+//     substring>: <option text> }, consent: true }
+// `consent: true` is required before the filler ticks any consent, terms or
+// acknowledgement checkbox.
+export function defaultProfile(profilePath, env = process.env) {
+  const path = profilePath || env.TELOS_FORM_PROFILE;
+  if (!path) return emptyProfile();
+  const raw = JSON.parse(readFileSync(path, "utf-8"));
+  return profileFromRecord(raw);
+}
+
+export function emptyProfile() {
+  return profileFromRecord({});
+}
+
+export function profileFromRecord(raw = {}) {
+  const [first = "", ...rest] = String(raw.name || "").split(" ").filter(Boolean);
   const last = rest.length ? rest[rest.length - 1] : "";
   const middle = rest.length > 1 ? rest.slice(0, -1).join(" ") : "";
+  const links = raw.links || {};
   return {
-    firstName: first, middleName: middle, lastName: last,
-    email: raw.email, phone: raw.phone,
-    location: raw.location, city: "Seattle", region: "WA",
-    country: "United States", countryCode: "US", postal: null,
-    linkedin: (raw.links && raw.links.linkedin) || null,
-    github: (raw.links && raw.links.github) || null,
-    url: "https://harperz9.github.io",
-    answers: {
-      authorized: "Yes",
-      sponsorship: "No",
-      gender: "Male",
-      race: "White",
-      veteran: "I am not a protected veteran",
-      disability: "Yes, I have a disability",
-      relocate: "No",
-      "san francisco": "No",
-    },
-    consent: true,
+    firstName: raw.firstName || first || null,
+    middleName: raw.middleName || middle || null,
+    lastName: raw.lastName || last || null,
+    email: raw.email || null, phone: raw.phone || null,
+    location: raw.location || null, city: raw.city || null, region: raw.region || null,
+    country: raw.country || null, countryCode: raw.countryCode || null, postal: raw.postal || null,
+    address: raw.address || null, company: raw.company || null,
+    linkedin: links.linkedin || raw.linkedin || null,
+    github: links.github || raw.github || null,
+    url: raw.url || null,
+    answers: { ...(raw.answers || {}) },
+    consent: raw.consent === true,
+    ...(raw.credentials ? { credentials: raw.credentials } : {}),
   };
 }
 
@@ -150,7 +163,7 @@ const FILL_JS = (profileJson) => `
   for (const el of document.querySelectorAll("input[type=checkbox]")) {
     try {
       const blob = lc([el.name, el.id, el.getAttribute("aria-label"), (el.closest("label")||{}).innerText].join(" "));
-      if (P.consent !== false && (blob.includes("consent") || blob.includes("acknowledge") || blob.includes("certify") || blob.includes("i confirm") || blob.includes("i agree") || blob.includes("arbitration") || blob.includes("terms"))) {
+      if (P.consent === true && (blob.includes("consent") || blob.includes("acknowledge") || blob.includes("certify") || blob.includes("i confirm") || blob.includes("i agree") || blob.includes("arbitration") || blob.includes("terms"))) {
         if (!el.checked) { (el.closest("label")||el).click(); log.checkbox.push("consent:" + (el.name||el.id||"?").slice(0,24)); }
       }
     } catch (e) {}
@@ -253,7 +266,7 @@ export const SPATIAL_FILL_JS = (profileJson) => `
   }
   for (const el of document.querySelectorAll("input[type=checkbox]")) {
     try { const t = nearest(el.getBoundingClientRect()).toLowerCase();
-      if (P.consent !== false && /consent|acknowledge|certify|confirm|agree|arbitration|terms/.test(t)) {
+      if (P.consent === true && /consent|acknowledge|certify|confirm|agree|arbitration|terms/.test(t)) {
         if (!el.checked) { (el.closest("label")||el).click(); log.checkbox.push("consent:"+t.slice(0,20)); } } } catch (e) {}
   }
   return log;

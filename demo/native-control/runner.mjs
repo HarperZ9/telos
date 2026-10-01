@@ -1,7 +1,7 @@
 // Declarative workflow runner for native-control. A workflow is a JSON list of
 // steps; each step's `act` resolves against a registry of action handlers that
 // wrap the engine verbs. Every step's result chains into a witnessed Ledger, so
-// a multi-step run (apply to a job, walk an auth flow, scrape + verify) is one
+// a multi-step run (fill a form, check a result, verify the ledger) is one
 // re-checkable artifact. Per-site behavior lives in pluggable adapters under
 // adapters/ (e.g. greenhouse), reached via `act: "adapter.<name>"`.
 //
@@ -12,10 +12,9 @@
 import { readFileSync, writeFileSync } from "node:fs";
 import * as browser from "./browser.mjs";
 import * as forms from "./forms.mjs";
-import * as behave from "./behave.mjs";
+import * as input from "./input.mjs";
 import * as network from "./network.mjs";
 import * as learn from "./learn.mjs";
-import * as contact from "./contact.mjs";
 import { Ledger } from "./ledger.mjs";
 
 // Registry: act-name -> async (ctx, step) => result. ctx = { session, profile, adapter }.
@@ -32,14 +31,17 @@ function defaultRegistry() {
   R.set("snapshot", async (c) => ({ state: await browser.pageState(c.session) }));
   R.set("autofill", (c) => forms.fill(c.session, c.profile));
   R.set("spatialfill", (c) => forms.spatialFill(c.session, c.profile));
-  R.set("behave.click", (c, s) => behave.humanClick(c.session, num(s.x), num(s.y)));
-  R.set("behave.type", (c, s) => behave.humanType(c.session, s.text));
-  R.set("behave.select", (c, s) => behave.selectpick(c.session, s.selector, s.option));
+  // `behave.*` are the pre-0.6.0 names for the same fixed-pace input actions.
+  for (const prefix of ["input", "behave"]) {
+    R.set(`${prefix}.click`, (c, s) => input.pointerClick(c.session, num(s.x), num(s.y)));
+    R.set(`${prefix}.type`, (c, s) => input.typeText(c.session, s.text, { pauseMs: s.pauseMs }));
+    R.set(`${prefix}.keys`, (c, s) => input.typeKeys(c.session, s.text, { pauseMs: s.pauseMs }));
+    R.set(`${prefix}.select`, (c, s) => input.selectOption(c.session, s.selector, s.option, { pauseMs: s.pauseMs }));
+  }
   R.set("apifetch", (c, s) => network.apiFetch(c.session, { url: s.url, body: s.body, method: s.method || "POST", headers: s.headers, contentType: s.contentType }));
   R.set("netcap", (c, s) => network.capture(c.session, { durationMs: s.durationMs || 3000, urlFilter: s.urlFilter || "" }));
   // learn (accountable learning engine) -- no browser session needed; shells to CLI.
   for (const [name, fn] of Object.entries(learn.actions)) R.set(`learn.${name}`, (c, s) => fn(s));
-  R.set("contact.send", (c, s) => contact.gmailSend(c.session, { to: s.to, subject: s.subject, body: s.body }));
   return R;
 }
 
