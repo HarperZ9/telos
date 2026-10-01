@@ -1,0 +1,176 @@
+{
+  "schema": "project-telos.research-intake/causal-workbench-source-receipts-v1",
+  "generated_at": "2026-07-02T00:00:00.000Z",
+  "tool": "gather.arxiv",
+  "purpose": "Current arXiv metadata source leads for a Causal Research Workbench publication pass. Receipts are metadata only; paper claims require paper-level review or replay before promotion.",
+  "query_receipts": [
+    {
+      "query": "causal inference large language models",
+      "digest_seal": "0a6583b9fae6235a65fa0e6e4ef3dce8e0dd39fd97e1c35ca6c211234e2ad0fe",
+      "kept": 5,
+      "dropped": 3
+    },
+    {
+      "query": "causal discovery foundation models",
+      "digest_seal": "d282579a4f9be258e292ee88bfeed619b2083122a4f35cdee3fe94a5454691dd",
+      "kept": 6,
+      "dropped": 2
+    },
+    {
+      "query": "large language models causal reasoning benchmark",
+      "digest_seal": "c08cedaf097263050f905b57c54d3e276925a57fe0a67aa1d25ac84823d56b30",
+      "kept": 4,
+      "dropped": 4
+    },
+    {
+      "query": "causal machine learning medicine",
+      "digest_seal": "997dc63e4f6a6a4f38c65e349eb000a8101e1a89332ad7aa0108638e56923096",
+      "kept": 1,
+      "dropped": 7
+    },
+    {
+      "query": "do-calculus causal graph machine learning",
+      "digest_seal": "8c18138062f1961b931053687170aef0ce70b706ebeaeff84fbf3bc5b3279faa",
+      "kept": 8,
+      "dropped": 0
+    }
+  ],
+  "source_boundary": {
+    "metadata_only": true,
+    "full_text_stored": false,
+    "domain_claims_promoted": false,
+    "fixture_claims_promoted": true,
+    "promotion_rule": "A source row can shape the workbench, but a source claim becomes MATCH only after primary-text review, dataset/code inspection, or a replayed local check."
+  },
+  "relevant_receipts": [
+    {
+      "id": "2407.08029v1",
+      "title": "A Critical Review of Causal Reasoning Benchmarks for Large Language Models",
+      "ref": "http://arxiv.org/abs/2407.08029v1",
+      "sha256": "c56a618cdadce7633be94ea896db930871b5448227733d44f028a846dd6499e0",
+      "source": "arxiv",
+      "method": "arxiv-api-search",
+      "chars": 742,
+      "relevance": "Benchmark boundary for LLM causal reasoning; supports the need to separate final answers from graph assumptions and task validity.",
+      "claim_state": "SOURCE_LEAD"
+    },
+    {
+      "id": "2309.13103v1",
+      "title": "OpportunityFinder: A Framework for Automated Causal Inference",
+      "ref": "http://arxiv.org/abs/2309.13103v1",
+      "sha256": "20baa1215dfed79d0495a11d60ffb80ae648add426b71d75337a0db9607ab84d",
+      "source": "arxiv",
+      "method": "arxiv-api-search",
+      "chars": 1224,
+      "relevance": "Automated causal-inference workflow lead; motivates a workbench that records intervention target, assumptions, and falsifiers.",
+      "claim_state": "SOURCE_LEAD"
+    },
+    {
+      "id": "2202.02891v1",
+      "title": "Causal Inference Using Tractable Circuits",
+      "ref": "http://arxiv.org/abs/2202.02891v1",
+      "sha256": "cad29a4d1482b530e0ac4fbb4aaf73d4a352bc3fe123b6542c5aa14fcd8012e4",
+      "source": "arxiv",
+      "method": "arxiv-api-search",
+      "chars": 1224,
+      "relevance": "Computational causal-inference lead; motivates deterministic graph and query receipts.",
+      "claim_state": "SOURCE_LEAD"
+    },
+    {
+      "id": "2001.04197v4",
+      "title": "Causal discovery of linear non-Gaussian acyclic models in the presence of latent confounders",
+      "ref": "http://arxiv.org/abs/2001.04197v4",
+      "sha256": "9021988e9b180a0293e9ce88cea7f2d2daf7874ea6f2f73178a755b92505e275",
+      "source": "arxiv",
+      "method": "arxiv-api-search",
+      "chars": 1099,
+      "relevance": "Latent-confounder boundary lead; motivates explicit unobserved-variable status in causal packets.",
+      "claim_state": "SOURCE_LEAD"
+    },
+    {
+      "id": "2209.03427v1",
+      "title": "Causal discovery for time series with latent confounders",
+      "ref": "http://arxiv.org/abs/2209.03427v1",
+      "sha256": "99992a677360685fa853716e07897f53f520d11fbfc5d20f2c9cb2c319c1d909",
+      "source": "arxiv",
+      "method": "arxiv-api-search",
+      "chars": 961,
+      "relevance": "Time-series causal-discovery lead; motivates temporal ordering and lag receipts.",
+      "claim_state": "SOURCE_LEAD"
+    },
+    {
+      "id": "2306.08946v2",
+      "title": "Bootstrap aggregation and confidence measures to improve time series causal discovery",
+      "ref": "http://arxiv.org/abs/2306.08946v2",
+      "sha256": "b8f671052d80eb6587eec2fe7862c435cb15154780f60de08ec7337b6a4f0f21",
+      "source": "arxiv",
+      "method": "arxiv-api-search",
+      "chars": 1681,
+      "relevance": "Uncertainty and confidence lead; motivates uncertainty fields and bootstrap receipts.",
+      "claim_state": "SOURCE_LEAD"
+    },
+    {
+      "id": "2410.19412v3",
+      "title": "Robust Time Series Causal Discovery for Agent-Based Model Validation",
+      "ref": "http://arxiv.org/abs/2410.19412v3",
+      "sha256": "ad71c7c0741e28f0b6a3bc49be37094fa9bbc89254ac339f19058b5be50932e3",
+      "source": "arxiv",
+      "method": "arxiv-api-search",
+      "chars": 1791,
+      "relevance": "Agent-based model validation lead; connects causal discovery to simulator validation.",
+      "claim_state": "SOURCE_LEAD"
+    },
+    {
+      "id": "1911.07420v1",
+      "title": "A Graph Autoencoder Approach to Causal Structure Learning",
+      "ref": "http://arxiv.org/abs/1911.07420v1",
+      "sha256": "4a0cbe192992321035f2099a7cf323f682bacb277709afd9ac6c6749fef5066c",
+      "source": "arxiv",
+      "method": "arxiv-api-search",
+      "chars": 995,
+      "relevance": "Graph-learning lead; motivates separating learned structure from assumed DAG receipts.",
+      "claim_state": "SOURCE_LEAD"
+    },
+    {
+      "id": "2006.16189v4",
+      "title": "DOME: Recommendations for supervised machine learning validation in biology",
+      "ref": "http://arxiv.org/abs/2006.16189v4",
+      "sha256": "ea719852889cbfc37eac4910634a89520aa2534abf059b8917d49cc2d87a6a7f",
+      "source": "arxiv",
+      "method": "arxiv-api-search",
+      "chars": 831,
+      "relevance": "Biology validation lead; supports reporting data, optimization, model, and evaluation boundaries in causal-biomedical use.",
+      "claim_state": "SOURCE_LEAD"
+    },
+    {
+      "id": "2303.15563v1",
+      "title": "Privacy-preserving machine learning for healthcare: open challenges and future perspectives",
+      "ref": "http://arxiv.org/abs/2303.15563v1",
+      "sha256": "402b0e3658eb188cd925b582eca6eea37adfaeacf8c80902c1c757cce3ea8fcd",
+      "source": "arxiv",
+      "method": "arxiv-api-search",
+      "chars": 827,
+      "relevance": "Healthcare privacy lead; motivates redacted refs and no raw patient payloads in high-stakes causal packets.",
+      "claim_state": "SOURCE_LEAD"
+    }
+  ],
+  "out_of_scope_examples": [
+    {
+      "id": "2501.05032v2",
+      "title": "Enhancing Human-Like Responses in Large Language Models",
+      "reason": "LLM response-style lead only; not used as causal-workbench evidence."
+    },
+    {
+      "id": "2512.03307v1",
+      "title": "Robust Tabular Foundation Models",
+      "reason": "Tabular-model lead only; not promoted as causal evidence without primary review."
+    }
+  ],
+  "workbench_requirements": [
+    "Every causal claim must declare treatment, outcome, variables, directed edges, observed/unobserved status, and excluded descendants.",
+    "Every adjustment claim must carry a replayable graph check and negative controls.",
+    "Every learned-structure claim must stay separate from assumed-graph claims.",
+    "Every LLM causal-reasoning claim must carry benchmark source, prompt/task boundary, hidden-test hygiene, graph assumptions, and verifier output.",
+    "Every biomedical causal claim must carry privacy and data-governance boundaries before publication."
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "generated_at": "2026-06-29T16:20:00Z",
+  "cases": [
+    {
+      "id": "seed-failed-test-gate",
+      "repo": "HarperZ9/seed",
+      "workflow": "WARDEN CI",
+      "run_id": 28346374847,
+      "run_url": "https://github.com/HarperZ9/seed/actions/runs/28346374847",
+      "log_text": "[doctest] test cases:   3699 |   3698 passed | 1 failed | 1 skipped\n[doctest] Status: FAILURE!\nWrite-Error: 1 test(s) failed\n##[error]Process completed with exit code 1.\nNode 20 is being deprecated. This workflow is running with Node 24 by default.\n##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/cache@v4, actions/checkout@v4, actions/upload-artifact@v4, ilammy/msvc-dev-cmd@v1."
+    },
+    {
+      "id": "quantalang-format-gate",
+      "repo": "HarperZ9/quantalang",
+      "workflow": "CI",
+      "run_id": 28342495903,
+      "run_url": "https://github.com/HarperZ9/quantalang/actions/runs/28342495903",
+      "log_text": "Run cargo fmt --check\nDiff in /home/runner/work/quantalang/quantalang/compiler/src/codegen/backend/c.rs:241:\n- kind: TypeDefKind::Struct { fields, packed: false },\n+ kind: TypeDefKind::Struct {\n##[error]Process completed with exit code 1."
+    },
+    {
+      "id": "node-runtime-warning-only",
+      "repo": "HarperZ9/seed",
+      "workflow": "WARDEN CI",
+      "run_id": 28353077838,
+      "run_url": "https://github.com/HarperZ9/seed/actions/runs/28353077838",
+      "log_text": "Node 20 is being deprecated. This workflow is running with Node 24 by default.\n##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/upload-artifact@v4."
+    }
+  ]
+}

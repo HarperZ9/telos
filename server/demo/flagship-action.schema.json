@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "project-telos.flagship-action/v1",
+  "type": "object",
+  "required": [
+    "schema",
+    "tool",
+    "tool_version",
+    "command",
+    "status",
+    "inputs",
+    "outputs",
+    "receipts",
+    "native",
+    "next_actions",
+    "diagnostics"
+  ],
+  "properties": {
+    "schema": {
+      "const": "project-telos.flagship-action/v1"
+    },
+    "tool": {
+      "type": "string",
+      "minLength": 1
+    },
+    "tool_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "command": {
+      "type": "string",
+      "minLength": 1
+    },
+    "status": {
+      "enum": ["MATCH", "DRIFT", "UNVERIFIABLE", "ERROR"]
+    },
+    "started_at": {
+      "type": "string"
+    },
+    "finished_at": {
+      "type": "string"
+    },
+    "inputs": {
+      "type": "array"
+    },
+    "outputs": {
+      "type": "array"
+    },
+    "receipts": {
+      "type": "array"
+    },
+    "native": {
+      "type": "object"
+    },
+    "next_actions": {
+      "type": "array"
+    },
+    "diagnostics": {
+      "type": "array"
+    }
+  }
+}

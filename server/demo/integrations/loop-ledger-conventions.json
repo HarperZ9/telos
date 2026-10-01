@@ -1,0 +1,216 @@
+{
+  "schema": "project-telos.loop-ledger/v1",
+  "verified_on": "2026-06-28",
+  "purpose": "Define the durable loop-state ledger and bounded headless scheduled-run contract for fresh-context agent iterations.",
+  "feedback_source": {
+    "kind": "operator-provided user comment",
+    "date": "2026-06-28",
+    "refs": [
+      "https://github.com/flowforge-lab/FlowForge/pull/1",
+      "https://github.com/flowforge-lab/FlowForge/pull/2",
+      "https://github.com/flowforge-lab/FlowForge/pull/3",
+      "https://github.com/flowforge-lab/FlowForge/issues/542"
+    ]
+  },
+  "contract": {
+    "ledger_first_class": true,
+    "ledger_durable": true,
+    "todo_is_current_turn_scratchpad": true,
+    "conversation_state_is_not_authority": true,
+    "fresh_context_reads_ledger_first": true,
+    "one_action_per_iteration": true,
+    "evidence_first_verify_gate": true,
+    "unverifiable_required": true,
+    "unverifiable_must_not_inherit_confidence": true
+  },
+  "ledger_entry": {
+    "shape": {
+      "id": "string",
+      "status": "pending|active|blocked|done",
+      "claim": "string",
+      "action": "string",
+      "evidence": [
+        "test path, diff, command output, URL, or artifact id"
+      ],
+      "verdict": "MATCH|DRIFT|UNVERIFIABLE",
+      "next": "resume|ask_user|retry|stop",
+      "updated_at": "RFC3339 timestamp"
+    },
+    "required_fields": [
+      "id",
+      "status",
+      "claim",
+      "action",
+      "evidence[]",
+      "verdict",
+      "next",
+      "updated_at"
+    ],
+    "status_values": [
+      "pending",
+      "active",
+      "blocked",
+      "done"
+    ],
+    "verdict_values": [
+      "MATCH",
+      "DRIFT",
+      "UNVERIFIABLE"
+    ],
+    "next_values": [
+      "resume",
+      "ask_user",
+      "retry",
+      "stop"
+    ],
+    "evidence_values": [
+      "test_path",
+      "diff_ref",
+      "command_output",
+      "url",
+      "artifact_id",
+      "receipt_hash"
+    ]
+  },
+  "fresh_context_iteration": {
+    "steps": [
+      "read_ledger",
+      "pick_one_action",
+      "execute_action",
+      "verify_with_evidence",
+      "write_result_evidence_verdict",
+      "persist_before_next_iteration"
+    ],
+    "selection_rule": "Pick one ledger action, execute only that action, then write back status, evidence, verdict, and next before another action is selected.",
+    "stop_conditions": [
+      "UNVERIFIABLE",
+      "ask_user",
+      "blocked",
+      "budget_exhausted",
+      "policy_denied",
+      "dangerous_action"
+    ]
+  },
+  "headless_scheduled_fire": {
+    "bounded_run_turn": true,
+    "open_ended_goal_loop_allowed": false,
+    "max_iterations_required": true,
+    "per_fire_timeout_required": true,
+    "cancellation_required": true,
+    "scheduled_approver_ceiling_required": true,
+    "dangerous_actions_always_denied": true,
+    "mechanical_terminal_status_required": true,
+    "terminal_status_values": [
+      "ok",
+      "error",
+      "cancelled",
+      "needs_attention"
+    ],
+    "ask_user_mid_fire_status": "needs_attention",
+    "halt_and_surface_escape": true,
+    "continued_with_dismissed_answer_allowed": false,
+    "goal_loop_deferred_until_ledger_load_bearing": true
+  },
+  "conformance_fixture": {
+    "happy_path": {
+      "entry": {
+        "id": "ledger_20260628_001",
+        "status": "done",
+        "claim": "The Index CI failure was caused by a stale README hero asset assertion.",
+        "action": "update_index_hero_asset_assertion",
+        "evidence": [
+          "tests/test_atlas_html.py::test_flagship_brand_assets_and_atlas_theme",
+          "https://github.com/HarperZ9/index/actions/runs/28308464117",
+          "commit:a0ae7f2"
+        ],
+        "verdict": "MATCH",
+        "next": "resume",
+        "updated_at": "2026-06-28T02:09:15Z"
+      },
+      "iteration": {
+        "read_ledger_first": true,
+        "selected_action": "update_index_hero_asset_assertion",
+        "actions_executed": 1,
+        "evidence_added": [
+          "pytest tests/test_atlas_html.py -q -> 11 passed",
+          "GitHub Actions CI -> success"
+        ],
+        "wrote_back_before_next_selection": true
+      }
+    },
+    "ask_user_escape": {
+      "entry": {
+        "id": "ledger_20260628_002",
+        "status": "blocked",
+        "claim": "Private credentials are required to continue.",
+        "action": "request_missing_private_credentials",
+        "evidence": [
+          "credential_probe:redacted",
+          "policy:private_preference_required"
+        ],
+        "verdict": "UNVERIFIABLE",
+        "next": "ask_user",
+        "updated_at": "2026-06-28T02:12:00Z"
+      },
+      "headless_result": {
+        "status": "needs_attention",
+        "continued_with_dismissed_answer": false,
+        "surface_reason": "ask_user"
+      }
+    }
+  },
+  "failure_codes": [
+    "ledger_missing",
+    "todo_used_as_durable_state",
+    "conversation_state_used_as_authority",
+    "unverifiable_inherited_confidence",
+    "multiple_actions_in_one_iteration",
+    "evidence_missing",
+    "headless_fire_unbounded",
+    "dangerous_action_allowed",
+    "ask_user_continued_headless",
+    "terminal_status_missing"
+  ],
+  "negative_test_cases": [
+    {
+      "name": "fresh_context_without_ledger_read",
+      "failure_code": "ledger_missing"
+    },
+    {
+      "name": "todo_promoted_to_persistent_loop_state",
+      "failure_code": "todo_used_as_durable_state"
+    },
+    {
+      "name": "conversation_summary_used_without_ledger_evidence",
+      "failure_code": "conversation_state_used_as_authority"
+    },
+    {
+      "name": "unverifiable_previous_verdict_treated_as_match",
+      "failure_code": "unverifiable_inherited_confidence"
+    },
+    {
+      "name": "fresh_context_executes_two_ledger_actions_before_writeback",
+      "failure_code": "multiple_actions_in_one_iteration"
+    },
+    {
+      "name": "done_entry_without_test_diff_command_url_or_artifact",
+      "failure_code": "evidence_missing"
+    },
+    {
+      "name": "scheduled_fire_without_iteration_or_timeout_bound",
+      "failure_code": "headless_fire_unbounded"
+    },
+    {
+      "name": "scheduled_approver_allows_dangerous_action",
+      "failure_code": "dangerous_action_allowed"
+    },
+    {
+      "name": "ask_user_mid_fire_continues_with_dismissed_answer",
+      "failure_code": "ask_user_continued_headless"
+    },
+    {
+      "name": "scheduled_run_without_ok_error_cancelled_or_needs_attention",
+      "failure_code": "terminal_status_missing"
+    }
+  ]
+}

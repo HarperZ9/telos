@@ -1,0 +1,509 @@
+{
+  "schema": "project-telos.action-receipt/v1",
+  "verified_on": "2026-06-27",
+  "purpose": "Define an enterprise action receipt interface and persistence contract for agent work that must remain independently auditable across Telos, Haystack-style pipelines, MCP hosts, CLIs, IDEs, TUIs, and applications.",
+  "sources_checked": [
+    {
+      "name": "Haystack ATP 1.2.0 feedback thread",
+      "url": "https://github.com/deepset-ai/haystack/issues/11266#issuecomment-4822228608"
+    },
+    {
+      "name": "OpenLLMetry semantic conventions issue",
+      "url": "https://github.com/traceloop/openllmetry/issues/3460"
+    },
+    {
+      "name": "MCP 2025-06-18 tools and structured content",
+      "url": "https://modelcontextprotocol.io/specification/2025-06-18/server/tools"
+    },
+    {
+      "name": "Agent Payments Protocol authorization framework",
+      "url": "https://google-agentic-commerce.github.io/AP2/"
+    },
+    {
+      "name": "SoK: Security and Privacy in Agentic Commerce",
+      "url": "https://arxiv.org/abs/2604.15367"
+    },
+    {
+      "name": "MCP tool-security analysis",
+      "url": "https://arxiv.org/abs/2506.02040"
+    },
+    {
+      "name": "Operator-supplied Beater action receipt issue #269/#470",
+      "provenance": "operator_supplied_attachment"
+    }
+  ],
+  "source_corrections": [
+    {
+      "submitted_ref": "https://arxiv.org/abs/2605.22967",
+      "observed_title": "RelayAttention: Efficient Large Language Model Serving with Diffusion-Based KV Cache Compression",
+      "verdict": "DRIFT",
+      "reason": "The submitted URL does not resolve to the agentic-commerce/security paper described in the issue packet.",
+      "replacement_ref": "https://arxiv.org/abs/2604.15367"
+    }
+  ],
+  "contract": {
+    "receipt_interface": "A stable event shape for proposed, admitted, executed, failed, and compensated actions.",
+    "persistence_contract": "Receipts are append-only events. Corrections and compensation are new events joined by action_id or compensates, never destructive mutation of the original event.",
+    "adapter_boundary": "Signing, anchoring, storage, and host rendering are adapters. The receipt interface and persistence contract remain portable.",
+    "raw_parameters_required": false,
+    "digest_references_required": true,
+    "append_only_compensation_required": true,
+    "failure_typed_persistence_required": true,
+    "receipt_is_trace_span": false,
+    "proposed_completed_action_separation_required": true,
+    "exportable_outside_trace_retention": true,
+    "verification_required": "Every completed, failed, denied, or compensated action carries MATCH, DRIFT, or UNVERIFIABLE."
+  },
+  "trace_relation": {
+    "receipt_is_trace_span": false,
+    "links_to_trace_span": true,
+    "survives_trace_retention": true,
+    "claim": "A trace span says the runtime observed something. An action receipt is the durable operational claim that survives trace retention, redaction, export, and compensation.",
+    "required_join_fields": [
+      "action_intent_id",
+      "trace.span_ref",
+      "execution.external_request_id",
+      "execution.idempotency_key"
+    ]
+  },
+  "state_model": {
+    "result_states": [
+      "proposed",
+      "admitted",
+      "running",
+      "completed",
+      "failed",
+      "cancelled",
+      "compensated"
+    ],
+    "verification_verdicts": [
+      "MATCH",
+      "DRIFT",
+      "UNVERIFIABLE"
+    ],
+    "policy_decisions": [
+      "allow",
+      "block",
+      "escalate",
+      "require_review"
+    ],
+    "side_effect_classes": [
+      "none",
+      "read",
+      "write",
+      "external_call",
+      "human_action",
+      "mixed"
+    ],
+    "typed_stop_reasons": [
+      "completed",
+      "policy_denied",
+      "verification_unverifiable",
+      "binding_failed",
+      "stale_context",
+      "budget_exhausted",
+      "tool_unavailable",
+      "tool_error",
+      "user_interrupted",
+      "error",
+      "compensation_required",
+      "compensated"
+    ]
+  },
+  "external_action_kinds": [
+    "payment",
+    "purchase",
+    "refund",
+    "booking",
+    "email",
+    "ticket",
+    "file_write",
+    "deployment",
+    "database_write",
+    "pull_request",
+    "account_setting",
+    "message"
+  ],
+  "required_fields": [
+    "action_id",
+    "action_intent_id",
+    "event_id",
+    "event_type",
+    "idempotency_key",
+    "action.kind",
+    "intent_ref",
+    "authority_ref",
+    "execution_ref",
+    "evidence_ref",
+    "review_ref",
+    "compensation_ref",
+    "trace.span_ref",
+    "execution.external_request_id",
+    "execution.idempotency_key",
+    "execution.terminal_status",
+    "execution.redacted_before_ref",
+    "execution.redacted_after_ref",
+    "agent.principal",
+    "component.name",
+    "component.version",
+    "component.config_hash",
+    "input_materials[].digest",
+    "input_materials[].ref",
+    "side_effect.class",
+    "policy.decision",
+    "policy.ref",
+    "verification.verdict",
+    "result.state",
+    "result.stop_reason",
+    "retry.attempt",
+    "retry.max_attempts",
+    "receipts[].hash",
+    "persistence.append_only",
+    "created_at"
+  ],
+  "adapter_interfaces": {
+    "receptor": {
+      "accepts": "project-telos.action-receipt/v1 event",
+      "returns": "persistence receipt with event_id, action_id, write_hash, and storage_ref"
+    },
+    "signing": {
+      "accepts": "canonical event bytes and key reference",
+      "returns": "signature_ref and signing_key_ref"
+    },
+    "anchor": {
+      "accepts": "receipt hash",
+      "returns": "anchor_ref and anchored_at"
+    },
+    "storage": {
+      "accepts": "append-only event",
+      "returns": "storage_ref and write_hash"
+    }
+  },
+  "conformance_fixture": {
+    "happy_path": {
+      "action_id": "act_20260627_001",
+      "action_intent_id": "intent_20260627_001",
+      "event_id": "evt_20260627_001",
+      "event_type": "execution_completed",
+      "idempotency_key": "idem_20260627_001",
+      "agent": {
+        "principal": "agent:forum.worker.context-envelope"
+      },
+      "component": {
+        "name": "telos.context.envelope",
+        "version": "demo",
+        "config_hash": "sha256:07d12cf406aaf820d2804512f4088b29617d7c13bca247f846c56895ce9fba5b"
+      },
+      "input_materials": [
+        {
+          "ref": "context-envelope:ctxenv_demo_001",
+          "digest": "sha256:5a99e725d260f9c50e8b6d4044972b6ecdd38f6bb512c8ec812bd8b733a47ce2"
+        }
+      ],
+      "side_effect": {
+        "class": "read",
+        "reversible": true
+      },
+      "policy": {
+        "decision": "allow",
+        "ref": "policy:context-envelope-read-v1"
+      },
+      "verification": {
+        "verdict": "MATCH",
+        "ref": "crucible:receipt-readability-001"
+      },
+      "result": {
+        "state": "completed",
+        "stop_reason": "completed",
+        "output_ref": "receipt:context-envelope-001"
+      },
+      "retry": {
+        "attempt": 1,
+        "max_attempts": 1
+      },
+      "receipts": [
+        {
+          "kind": "test",
+          "hash": "sha256:5727b5b9e72a48d782d360546d5e9272a2cf1fc563d97f36f2e52eb8106114cd"
+        }
+      ],
+      "persistence": {
+        "append_only": true,
+        "storage_ref": "ledger:telos/action-receipts/evt_20260627_001"
+      },
+      "created_at": "2026-06-27T22:01:27Z"
+    },
+    "failed_tool_call": {
+      "action_id": "act_20260628_001",
+      "action_intent_id": "intent_20260628_001",
+      "event_id": "evt_20260628_001",
+      "event_type": "execution_failed",
+      "idempotency_key": "idem_20260628_001",
+      "agent": {
+        "principal": "agent:telos.mcp.runtime"
+      },
+      "component": {
+        "name": "telos.action.receipt",
+        "version": "demo",
+        "config_hash": "sha256:1f0a0a4601f6205bfb770086e517c5df68dc0be4fdcfaa6880f3782c2c146067"
+      },
+      "input_materials": [
+        {
+          "ref": "mcp-call:calltoolresult-iserror-true",
+          "digest": "sha256:1eaf55f10f675ee585951f21ca956605b3f8a07dff7cb95f6dc7a03a5a301b87"
+        }
+      ],
+      "side_effect": {
+        "class": "external_call",
+        "reversible": false
+      },
+      "policy": {
+        "decision": "allow",
+        "ref": "policy:mcp-tool-call-observed-v1"
+      },
+      "verification": {
+        "verdict": "MATCH",
+        "ref": "crucible:failed-tool-call-persistence-001"
+      },
+      "result": {
+        "state": "failed",
+        "stop_reason": "tool_error",
+        "mcp_is_error": true,
+        "error_payload_ref": "artifact:failed-tool-call/error-text-redacted",
+        "error_payload_digest": "sha256:af1e2592e6f0f4b6c2fb028124e47e784a371a8c82f0047e768a76f2b18929af"
+      },
+      "failure_surfaces": {
+        "stream_chunk": {
+          "failure_typed": true,
+          "payload_preserved": true
+        },
+        "persisted_message_part": {
+          "failure_typed": true,
+          "payload_preserved": true
+        },
+        "trace_span": {
+          "failure_typed": true,
+          "payload_preserved": true
+        },
+        "scorer_eval_input": {
+          "failure_typed": true,
+          "payload_preserved": true
+        }
+      },
+      "retry": {
+        "attempt": 1,
+        "max_attempts": 1
+      },
+      "receipts": [
+        {
+          "kind": "test",
+          "hash": "sha256:22804725e6da72e8f3d8a0f47eca5c110a82d6cae9d6b80802ae41ef607dbf42"
+        }
+      ],
+      "persistence": {
+        "append_only": true,
+        "storage_ref": "ledger:telos/action-receipts/evt_20260628_001"
+      },
+      "created_at": "2026-06-28T12:14:01Z"
+    },
+    "external_write_completed": {
+      "action_id": "act_20260629_001",
+      "action_intent_id": "intent_20260629_001",
+      "event_id": "evt_20260629_001",
+      "event_type": "external_write_completed",
+      "idempotency_key": "idem_20260629_001",
+      "action": {
+        "kind": "message",
+        "destination_class": "user_visible_external_system",
+        "args_hash": "sha256:3a9a3f2c1c511f020d815ec9c8a65f1ac6ed2f858863fb5d066592a8a00614bd",
+        "risk_class": "external_write_user_visible"
+      },
+      "intent_ref": "intent:send-status-summary/redacted",
+      "authority_ref": "approval:operator-consent-20260629-001",
+      "execution_ref": "external:message/msg_20260629_001",
+      "evidence_ref": "artifact:external-write/message-before-after-redacted",
+      "review_ref": "review:crucible/external-write-20260629-001",
+      "compensation_ref": null,
+      "trace": {
+        "receipt_is_trace_span": false,
+        "span_ref": "trace:span/external-write-20260629-001",
+        "session_ref": "session:telos-action-receipt-demo"
+      },
+      "authority": {
+        "user_consent_ref": "approval:operator-consent-20260629-001",
+        "policy_ref": "policy:external-write-approval-v1",
+        "capability_lease_ref": "capability:message-write/redacted",
+        "ap2_mandate_ref": null,
+        "credential_ref": "credential-ref:redacted"
+      },
+      "actor": {
+        "agent_id": "agent:forum.writer",
+        "tool_id": "mcp:message.send",
+        "mcp_connector_snapshot": "sha256:ae3d7f7f2e5b3a7e9a6f58e903ab59be3bbf430a67323a6bcfbc96a5a2fd74e1",
+        "external_account_ref": "account:external/redacted",
+        "auth_scopes_ref": "scope-ref:message.write/redacted"
+      },
+      "execution": {
+        "external_request_id": "req_20260629_001",
+        "idempotency_key": "idem_20260629_001",
+        "terminal_status": "completed",
+        "redacted_before_ref": "artifact:external-write/before-redacted",
+        "redacted_after_ref": "artifact:external-write/after-redacted",
+        "result_hash": "sha256:58fef7dcb31b2d4ee6e3f8bd34e4f806f5ff0b2a97ea4f149efe22943b940214",
+        "result_ref": "artifact:external-write/result-redacted"
+      },
+      "risk_compliance": {
+        "reversible": true,
+        "reversal_action_kind": "message_delete_or_correction",
+        "human_visible": true,
+        "external_side_effect": true
+      },
+      "privacy": {
+        "raw_prompt_required": false,
+        "raw_tool_args_required": false,
+        "raw_external_payload_required": false,
+        "raw_private_evidence_required": false
+      },
+      "report_boundaries": {
+        "proposed_action_is_completed_action": false,
+        "completed_action_requires_external_request_id": true,
+        "rollback_must_be_append_only": true
+      },
+      "policy": {
+        "decision": "allow",
+        "ref": "policy:external-write-approval-v1"
+      },
+      "verification": {
+        "verdict": "MATCH",
+        "ref": "crucible:external-write-join-001"
+      },
+      "result": {
+        "state": "completed",
+        "stop_reason": "completed"
+      },
+      "persistence": {
+        "append_only": true,
+        "storage_ref": "ledger:telos/action-receipts/evt_20260629_001"
+      },
+      "created_at": "2026-06-29T03:20:00Z"
+    },
+    "append_only_compensation": {
+      "action_id": "act_20260627_002",
+      "action_intent_id": "intent_20260627_002",
+      "event_id": "evt_20260627_002",
+      "event_type": "compensation_completed",
+      "compensates": "act_20260627_001",
+      "result": {
+        "state": "compensated",
+        "stop_reason": "compensated"
+      },
+      "persistence": {
+        "append_only": true
+      }
+    }
+  },
+  "failure_codes": [
+    "missing_material_digest",
+    "component_identity_missing",
+    "config_hash_missing",
+    "side_effect_class_missing",
+    "stop_reason_untyped",
+    "verification_missing",
+    "policy_decision_unjoined",
+    "failure_typed_persistence_missing",
+    "failure_payload_evidence_missing",
+    "non_append_only_compensation",
+    "persistence_receipt_missing",
+    "authority_gap",
+    "evidence_gap",
+    "approval_ref_missing",
+    "unjoinable_execution_span",
+    "duplicate_idempotency_key",
+    "completed_action_collapsed_into_trace_span",
+    "proposed_completed_action_collapsed",
+    "external_request_id_missing",
+    "external_write_without_redacted_before_after"
+  ],
+  "negative_test_cases": [
+    {
+      "name": "raw_parameters_without_digest",
+      "failure_code": "missing_material_digest"
+    },
+    {
+      "name": "component_without_version",
+      "failure_code": "component_identity_missing"
+    },
+    {
+      "name": "component_without_config_hash",
+      "failure_code": "config_hash_missing"
+    },
+    {
+      "name": "reversible_boolean_without_taxonomy",
+      "failure_code": "side_effect_class_missing"
+    },
+    {
+      "name": "free_text_error_without_stop_reason",
+      "failure_code": "stop_reason_untyped"
+    },
+    {
+      "name": "missing_match_drift_unverifiable",
+      "failure_code": "verification_missing"
+    },
+    {
+      "name": "human_approver_without_policy_ref",
+      "failure_code": "policy_decision_unjoined"
+    },
+    {
+      "name": "mcp_is_error_persisted_as_success_shaped_result",
+      "failure_code": "failure_typed_persistence_missing"
+    },
+    {
+      "name": "failed_tool_call_without_error_payload_ref_or_digest",
+      "failure_code": "failure_payload_evidence_missing"
+    },
+    {
+      "name": "rollback_mutates_original_completed_event",
+      "failure_code": "non_append_only_compensation"
+    },
+    {
+      "name": "adapter_write_without_persistence_receipt",
+      "failure_code": "persistence_receipt_missing"
+    },
+    {
+      "name": "changed_args_hash_after_admission",
+      "failure_code": "authority_gap"
+    },
+    {
+      "name": "trace_span_without_durable_external_request_id",
+      "failure_code": "evidence_gap"
+    },
+    {
+      "name": "external_write_missing_approval_or_capability_ref",
+      "failure_code": "approval_ref_missing"
+    },
+    {
+      "name": "completed_execution_cannot_join_to_action_intent",
+      "failure_code": "unjoinable_execution_span"
+    },
+    {
+      "name": "same_idempotency_key_used_for_distinct_external_writes",
+      "failure_code": "duplicate_idempotency_key"
+    },
+    {
+      "name": "receipt_persisted_only_as_trace_span",
+      "failure_code": "completed_action_collapsed_into_trace_span"
+    },
+    {
+      "name": "report_collapses_proposed_action_into_completed_external_action",
+      "failure_code": "proposed_completed_action_collapsed"
+    },
+    {
+      "name": "completed_external_write_without_request_id",
+      "failure_code": "external_request_id_missing"
+    },
+    {
+      "name": "external_write_without_before_after_refs",
+      "failure_code": "external_write_without_redacted_before_after"
+    }
+  ]
+}

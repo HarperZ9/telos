@@ -1,0 +1,133 @@
+{
+    "schema":  "project-telos.scankii-dogfood-receipt/v1",
+    "generated_at_utc":  "2026-06-28T12:58:00Z",
+    "scanner":  {
+                    "name":  "scankii",
+                    "version":  "1.1.0",
+                    "source_branch":  "feature/replayable-receipt",
+                    "source_commit":  "8fe76c4cf81f5627b5e71b07ab4463f92cc58374",
+                    "source_url":  "https://github.com/ashp15205/scankii/tree/feature/replayable-receipt",
+                    "install_method":  "raw-file export of package subset after Windows checkout failure on trailing-space path"
+                },
+    "scanner_run":  {
+                        "command":  "scankii scan demo/integrations/scankii-synthetic-corpus --format json",
+                        "exit_code":  0,
+                        "corpus_path":  "demo/integrations/scankii-synthetic-corpus",
+                        "raw_summary":  {
+                                            "CRITICAL":  0,
+                                            "HIGH":  0,
+                                            "MEDIUM":  0,
+                                            "LOW":  3,
+                                            "total":  3
+                                        },
+                        "raw_output_committed":  false,
+                        "raw_output_not_committed_reason":  "Raw scankii output contains absolute local Windows paths; committed receipt normalizes paths and omits raw synthetic instruction windows."
+                    },
+    "shape_status":  "DRIFT",
+    "findings":  [
+                     {
+                         "source_case":  "network_sink",
+                         "scankii_version":  "1.1.0",
+                         "file_path":  "demo/integrations/scankii-synthetic-corpus/network-sink-skill/SKILL.md",
+                         "finding_type":  "NLFinding",
+                         "severity":  "LOW",
+                         "score":  1.4,
+                         "observed_static":  true,
+                         "requires_runtime_witness":  false,
+                         "unverifiable_static_boundary":  false,
+                         "unverifiable_reason":  null,
+                         "recommended_containment":  "UNVERIFIABLE",
+                         "file_hash":  "sha256:4310d074775ecb34476e9b57255d5df7592e073e2679fbf2b1dcb9584663b987",
+                         "fragment_hash":  "sha256:a341fb5fb0038e3c812c445c0e17e7f5189b9e30c0348b3713df38be780e78c5",
+                         "raw_window_text_committed":  false,
+                         "matched_terms":  [
+                                               "api_key",
+                                               "pass",
+                                               "use"
+                                           ],
+                         "expected_requires_runtime_witness":  true,
+                         "observed_requires_runtime_witness":  false
+                     },
+                     {
+                         "source_case":  "stdout_logging",
+                         "scankii_version":  "1.1.0",
+                         "file_path":  "demo/integrations/scankii-synthetic-corpus/stdout-logging-skill/SKILL.md",
+                         "finding_type":  "NLFinding",
+                         "severity":  "LOW",
+                         "score":  1.4,
+                         "observed_static":  true,
+                         "requires_runtime_witness":  false,
+                         "unverifiable_static_boundary":  false,
+                         "unverifiable_reason":  null,
+                         "recommended_containment":  "UNVERIFIABLE",
+                         "file_hash":  "sha256:e31bd669f7215ba2cbc66e339414eceb3d3a0c59190fe364573bde362b227c0d",
+                         "fragment_hash":  "sha256:52dc7e4f680bc3a787cddb21bad9cd6d95f4077312518fa0675ffcba408acc9d",
+                         "raw_window_text_committed":  false,
+                         "matched_terms":  [
+                                               "api_key",
+                                               "pass",
+                                               "use",
+                                               "leak"
+                                           ],
+                         "expected_containment":  "redact",
+                         "observed_containment":  "UNVERIFIABLE"
+                     },
+                     {
+                         "source_case":  "unresolved_cross_modal",
+                         "scankii_version":  "1.1.0",
+                         "file_path":  "demo/integrations/scankii-synthetic-corpus/unresolved-boundary-skill/SKILL.md",
+                         "finding_type":  "NLFinding",
+                         "severity":  "LOW",
+                         "score":  1.4,
+                         "observed_static":  true,
+                         "requires_runtime_witness":  false,
+                         "unverifiable_static_boundary":  false,
+                         "unverifiable_reason":  null,
+                         "recommended_containment":  "UNVERIFIABLE",
+                         "file_hash":  "sha256:f5fb5d7e7632862f9a12bef17ea5ee5ea572e48ee50702c51c02a2602a113045",
+                         "fragment_hash":  "sha256:4a09c410a68bf15b25ab79c2a9e4cee60657503cb20827189d71ff157fbbe207",
+                         "raw_window_text_committed":  false,
+                         "matched_terms":  [
+                                               "api_key",
+                                               "pass",
+                                               "use"
+                                           ],
+                         "expected_unverifiable_static_boundary":  true,
+                         "observed_unverifiable_static_boundary":  false
+                     }
+                 ],
+    "drift_cases":  [
+                        {
+                            "code":  "pip_git_checkout_failed_windows_trailing_space_path",
+                            "observed":  "pip install git+https://github.com/ashp15205/scankii.git@feature/replayable-receipt failed on Windows because branch contains .cursorrules with trailing space."
+                        },
+                        {
+                            "code":  "wheel_missing_rules_package_data",
+                            "observed":  "Local package install from exported files succeeded, but scanner could not run until rules/*.yaml were copied beside site-packages because the wheel excludes rules data."
+                        },
+                        {
+                            "code":  "ast_sink_correlation_missing",
+                            "observed":  "Synthetic Python snippets with print(demoValue), requests.get(... demoValue ...), and Path.write_text(demoValue) produced NL findings only; direct analyze_ast returned 0 for each run.py."
+                        },
+                        {
+                            "code":  "raw_output_absolute_paths",
+                            "observed":  "Raw JSON skill_path and details.file_path used C:\\\\dev absolute paths."
+                        },
+                        {
+                            "code":  "raw_hashes_lack_algorithm_prefix",
+                            "observed":  "Raw file_hash and fragment_hash values are bare hex strings rather than sha256:\u003chex\u003e."
+                        },
+                        {
+                            "code":  "network_runtime_witness_not_set",
+                            "observed":  "Network synthetic case emitted requires_runtime_witness=false because it remained an NLFinding rather than an AST/cross-modal finding."
+                        },
+                        {
+                            "code":  "containment_not_sink_specific",
+                            "observed":  "All three findings emitted recommended_containment=UNVERIFIABLE rather than redact/block/require approval because sink category was not joined."
+                        },
+                        {
+                            "code":  "unresolved_dependency_boundary_not_detected",
+                            "observed":  "A true unresolved dependency boundary is not surfaced by this branch in the synthetic corpus; the committed third case records cross-modal/file-boundary drift instead."
+                        }
+                    ]
+}

@@ -1,0 +1,160 @@
+{
+  "schema": "project-telos.research-intake/quantum-error-correction-source-receipts-v1",
+  "created_at": "2026-07-02T00:00:00.000Z",
+  "source_boundary": {
+    "metadata_only": true,
+    "full_text_stored": false,
+    "domain_claims_promoted": false,
+    "fixture_claims_promoted": true,
+    "notes": "Rows are arXiv metadata receipts and requirements pressure only. They are not treated as proof of external quantum hardware, surface-code, decoder, resource-estimation, cryptographic, or quantum-advantage claims."
+  },
+  "query_receipts": [
+    {
+      "query": "quantum error correction surface code logical qubits 2026",
+      "scope": ["quantum error correction", "surface code", "logical qubits", "fault tolerance"],
+      "kept": 7,
+      "dropped": 1,
+      "digest_seal": "04e73f1045a13fdafb7fcd0504c5f9bd60a916ffc8ceda2f94b79076be977748"
+    },
+    {
+      "query": "quantum error correction neutral atoms superconducting qubits 2026",
+      "scope": ["quantum error correction", "neutral atoms", "superconducting qubits", "logical qubits"],
+      "kept": 6,
+      "dropped": 2,
+      "digest_seal": "cc461b076c73b1992fb32f7f29a8ca7432e7c8c58d7294a4cd633e89d37fe82e"
+    },
+    {
+      "query": "fault tolerant quantum computing compiler verification formal methods",
+      "scope": ["fault tolerant quantum computing", "compiler verification", "formal methods", "quantum circuits"],
+      "kept": 1,
+      "dropped": 7,
+      "digest_seal": "167ada7c8a84a02211b458e8ad5932e7054dddd3376c0dbccec20d2eb8fa4e7b"
+    },
+    {
+      "query": "quantum circuit verification stabilizer code syndrome decoding",
+      "scope": ["stabilizer code", "syndrome decoding", "quantum circuit verification", "error correction"],
+      "kept": 5,
+      "dropped": 3,
+      "digest_seal": "05d887498b70516b19c2d2ad9ecdc3ac416435fede85ff2b791dfc6781e4915e"
+    },
+    {
+      "query": "quantum algorithms benchmark verification resource estimation 2026",
+      "scope": ["quantum algorithms", "benchmark", "verification", "resource estimation"],
+      "kept": 6,
+      "dropped": 2,
+      "digest_seal": "ad2b800f84d9ae72d927650d26a6efd0eda2a0b2918a0882e31d2cc1c360cbab"
+    }
+  ],
+  "relevant_receipts": [
+    {
+      "id": "2605.17156v2",
+      "title": "Sparse Mamba Decoder for Quantum Error Correction: Efficient Defect-Centric Processing of Surface Code Syndromes",
+      "ref": "http://arxiv.org/abs/2605.17156v2",
+      "sha256": "0347f7cea2ad3387ed8bf7acb1bb0da7f03e19c4370a6e47f19c7ebfd7e3beb4",
+      "role": "SOURCE_LEAD_surface_code_decoder"
+    },
+    {
+      "id": "2512.07737v2",
+      "title": "A scalable and real-time neural decoder for topological quantum codes",
+      "ref": "http://arxiv.org/abs/2512.07737v2",
+      "sha256": "40f3b7bbd4f4aa53f4452b6e2da565116d9655964ca2a8c65974bbae4c15920e",
+      "role": "SOURCE_LEAD_topological_code_decoder"
+    },
+    {
+      "id": "2207.05942v2",
+      "title": "Syndrome decoding by quantum approximate optimization",
+      "ref": "http://arxiv.org/abs/2207.05942v2",
+      "sha256": "fcbcece8feeb9c88907bae0755d8a8d67991b526c6af2603368614c982146473",
+      "role": "SOURCE_LEAD_syndrome_decoding"
+    },
+    {
+      "id": "2102.01984v1",
+      "title": "Decoding of Quantum Data-Syndrome Codes via Belief Propagation",
+      "ref": "http://arxiv.org/abs/2102.01984v1",
+      "sha256": "ebe3944235e3e82c3390f1d9b4810c057d4d2f80494b776c7cc2402e95acd6e7",
+      "role": "SOURCE_LEAD_data_syndrome_decoding"
+    },
+    {
+      "id": "2409.01440v3",
+      "title": "An almost-linear time decoding algorithm for quantum LDPC codes under circuit-level noise",
+      "ref": "http://arxiv.org/abs/2409.01440v3",
+      "sha256": "878de13d4814cc1260c2973808ef7bbeea0955002b208603a6a8727ad9c68f8b",
+      "role": "SOURCE_LEAD_quantum_ldpc_decoding"
+    },
+    {
+      "id": "quant-ph/0602157v1",
+      "title": "An Introduction to Error-Correcting Codes: From Classical to Quantum",
+      "ref": "http://arxiv.org/abs/quant-ph/0602157v1",
+      "sha256": "0eae61caaea428e2007eaa07c61b9ddd108affa2b8ad370ee17ba9dcb0476b21",
+      "role": "SOURCE_LEAD_error_correction_foundation"
+    },
+    {
+      "id": "1810.01029v1",
+      "title": "Density-Matrix Simulation of Logical Qubit using 3-qubit Quantum Error Correction Code",
+      "ref": "http://arxiv.org/abs/1810.01029v1",
+      "sha256": "03b8427a26faa6e31a92fc56e5773ba9a9045257e03c9ebde9c60b291c95bfc8",
+      "role": "SOURCE_LEAD_three_qubit_code"
+    },
+    {
+      "id": "1311.2485v2",
+      "title": "Continuous-time quantum error correction",
+      "ref": "http://arxiv.org/abs/1311.2485v2",
+      "sha256": "5ecb64970101865565efa5577198c0deb23a1d5f6c2855345ab7d5f307d86b67",
+      "role": "SOURCE_LEAD_continuous_time_qec"
+    },
+    {
+      "id": "2412.07841v3",
+      "title": "Quantum Error Correction resilient against Atom Loss",
+      "ref": "http://arxiv.org/abs/2412.07841v3",
+      "sha256": "29e8b2ae8f1a898376640bfd69cb0e3445d1cc44d2abcc6b84bf428dde670842",
+      "role": "SOURCE_LEAD_atom_loss_qec"
+    },
+    {
+      "id": "2605.19854v1",
+      "title": "Unveiling Energetic Advantage in Superconducting Cat-Qubits Quantum Computation",
+      "ref": "http://arxiv.org/abs/2605.19854v1",
+      "sha256": "4573329708dc69ad68d6122d508d5f3e19abb72c0b5ef1fb1603635bba1abbd5",
+      "role": "SOURCE_LEAD_superconducting_cat_qubits"
+    },
+    {
+      "id": "1509.02004v2",
+      "title": "Fault-Tolerant High Level Quantum Circuits: Form, Compilation and Description",
+      "ref": "http://arxiv.org/abs/1509.02004v2",
+      "sha256": "d01bbdb9cd8cba9046cb26d0e92f592052e8738b5a8a05e0e87b84be9866cba6",
+      "role": "SOURCE_LEAD_fault_tolerant_compilation"
+    },
+    {
+      "id": "1908.03903v3",
+      "title": "Quantum algorithm for estimating volumes of convex bodies",
+      "ref": "http://arxiv.org/abs/1908.03903v3",
+      "sha256": "235535aa4e737d1c3082ebb6e3d4727dea6916fa11cacd46aa07a910cbe4dac5",
+      "role": "SOURCE_LEAD_quantum_algorithm_verification"
+    },
+    {
+      "id": "2602.11092v2",
+      "title": "MerLin: A Discovery Engine for Photonic and Hybrid Quantum Machine Learning",
+      "ref": "http://arxiv.org/abs/2602.11092v2",
+      "sha256": "6b8888bac347c74ac1f3d9932bf693c37d71f9a6e12427adf2328a10498cacdf",
+      "role": "SOURCE_LEAD_photonic_hybrid_qml"
+    }
+  ],
+  "out_of_scope_examples": [
+    {
+      "id": "2603.08092v1",
+      "title": "Language-Invariant Multilingual Speaker Verification for the TidyVoice 2026 Challenge",
+      "reason": "Returned by broad benchmark search but unrelated to quantum verification."
+    },
+    {
+      "id": "2604.17070v2",
+      "title": "NTIRE 2026 Rip Current Detection and Segmentation (RipDetSeg) Challenge Report",
+      "reason": "Returned by broad benchmark search but unrelated to quantum verification."
+    }
+  ],
+  "workbench_requirements": [
+    "Every quantum error-correction claim declares code, supported error model, stabilizers, logical operators, syndrome bits, decoder table or model, correction action, and negative controls.",
+    "Surface-code, LDPC, neural-decoder, and hardware claims require primary code/benchmark cards, noise model, code distance, threshold or logical-error-rate evidence, and independent verifier receipts.",
+    "Fault-tolerant compiler claims require circuit IR, gate set, resource estimate, rewrite/proof log, and replayed equivalence or bounded simulation receipts.",
+    "Quantum advantage and resource-estimation claims remain blocked unless task definition, classical baseline, cost model, hardware assumptions, and reproducibility evidence are present.",
+    "BuildLang/buildc should carry typed Pauli operators, stabilizer groups, syndrome tables, circuit IR, decoder outputs, and resource-estimation receipts after the JavaScript fixture stabilizes."
+  ]
+}

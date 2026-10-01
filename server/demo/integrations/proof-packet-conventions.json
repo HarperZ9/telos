@@ -1,0 +1,438 @@
+{
+  "schema": "project-telos.proof-packet/v1",
+  "verified_on": "2026-07-02",
+  "purpose": "Define an agent-action proof packet: the durable, independently re-checkable justification for one admitted agent action, joining source, context, route, admission, execution, outputs, verification, and an optional witness by reference rather than by copied payload.",
+  "sources_checked": [
+    {
+      "name": "project-telos.action-receipt/v1",
+      "path": "demo/integrations/action-receipt-conventions.json",
+      "role": "supplies the admission and authority model, side-effect classes, typed stop reasons, and append-only compensation joined by action_id"
+    },
+    {
+      "name": "project-telos.context-envelope/v1",
+      "path": "demo/integrations/context-envelope-conventions.json",
+      "role": "supplies the source-ref and context-ref shapes joined by id and content hash"
+    },
+    {
+      "name": "project-telos.loop-ledger/v1",
+      "path": "demo/integrations/loop-ledger-conventions.json",
+      "role": "supplies the optional durable loop join"
+    },
+    {
+      "name": "agent-action-proof-packet/v0",
+      "path": "c:/dev/public/proof-surface/src/proof_surface/agent_action/packet.py",
+      "commit": "f8380da1c2e10a6719022417281b00704e8c6460",
+      "role": "the external export target the exporter conforms to; validated read-only, never imported or spawned at runtime"
+    },
+    {
+      "name": "EMET coherence witness",
+      "path": "c:/dev/public/pubscan/emet/impl/js/emet.js",
+      "role": "the optional byte-coherence witness stage; spawned when reachable, recorded as unavailable when not, never fabricated"
+    }
+  ],
+  "source_corrections": [
+    {
+      "target": "spec context mapping row",
+      "observed": "proof-surface context is a plain object summary (workspace and tool-authority), not context_refs[], with no envelope_hash field",
+      "verdict": "DRIFT",
+      "reason": "The working premise mapped context to context_refs[]; proof-surface agent_action/packet.py _validate_context requires a plain object.",
+      "resolution": "toProofSurfacePacket emits a plain context object; internal context_refs move to evidence_refs.trace_refs"
+    },
+    {
+      "target": "spec decision_summary mapping row",
+      "observed": "proof-surface decision_summary is null-or-derived from the overall MATCH/DRIFT/UNVERIFIABLE verdict, never from admission.decision",
+      "verdict": "DRIFT",
+      "reason": "The working premise derived decision_summary from admission.decision; proof-surface _decision.derive_decision_summary keys strictly off the overall verdict with DECISION_OUTCOMES {approve, block, rerun, escalate, publish, deploy, archive}.",
+      "resolution": "toProofSurfacePacket derives decision_summary from the packet overall verdict with MATCH->approve/high, DRIFT->block/high, UNVERIFIABLE->escalate/low"
+    }
+  ],
+  "contract": {
+    "joins_by_reference_only": true,
+    "raw_payloads_required": false,
+    "digest_references_required": true,
+    "admission_before_execution_required": true,
+    "compensation_path_required_for_external_writes": true,
+    "witness_never_fabricated": true,
+    "verdict_derived_not_asserted": true,
+    "canonical_hash_excludes_wall_clock": true,
+    "verification_required": "Every packet verdict is MATCH, DRIFT, or UNVERIFIABLE."
+  },
+  "trace_relation": {
+    "packet_is_trace_span": false,
+    "links_to_trace_span": true,
+    "claim": "A trace explains a run. A proof packet justifies one admitted action and survives trace retention, redaction, and export because it carries digests and refs, not raw payloads.",
+    "required_join_fields": [
+      "admission.action_id",
+      "action.action_id",
+      "action.event_id",
+      "outputs[].digest"
+    ]
+  },
+  "state_model": {
+    "verification_verdicts": [
+      "MATCH",
+      "DRIFT",
+      "UNVERIFIABLE"
+    ],
+    "witness_statuses": [
+      "witnessed",
+      "unavailable"
+    ],
+    "witness_verdicts": [
+      "MATCH",
+      "DRIFT",
+      "UNVERIFIABLE"
+    ],
+    "admission_decisions": {
+      "reference": "see project-telos.action-receipt/v1 state_model policy_decisions",
+      "copied_from": "project-telos.action-receipt/v1",
+      "values": [
+        "allow",
+        "block",
+        "escalate",
+        "require_review"
+      ]
+    },
+    "side_effect_classes": {
+      "reference": "see project-telos.action-receipt/v1 state_model side_effect_classes",
+      "copied_from": "project-telos.action-receipt/v1",
+      "values": [
+        "none",
+        "read",
+        "write",
+        "external_call",
+        "human_action",
+        "mixed"
+      ]
+    },
+    "result_states": {
+      "reference": "see project-telos.action-receipt/v1 state_model result_states",
+      "copied_from": "project-telos.action-receipt/v1",
+      "values": [
+        "proposed",
+        "admitted",
+        "running",
+        "completed",
+        "failed",
+        "cancelled",
+        "compensated"
+      ]
+    },
+    "typed_stop_reasons": {
+      "reference": "see project-telos.action-receipt/v1 state_model typed_stop_reasons",
+      "copied_from": "project-telos.action-receipt/v1",
+      "values": [
+        "completed",
+        "policy_denied",
+        "verification_unverifiable",
+        "binding_failed",
+        "stale_context",
+        "budget_exhausted",
+        "tool_unavailable",
+        "tool_error",
+        "user_interrupted",
+        "error",
+        "compensation_required",
+        "compensated"
+      ]
+    }
+  },
+  "external_action_kinds": {
+    "reference": "see project-telos.action-receipt/v1 external_action_kinds",
+    "copied_from": "project-telos.action-receipt/v1",
+    "values": [
+      "payment",
+      "purchase",
+      "refund",
+      "booking",
+      "email",
+      "ticket",
+      "file_write",
+      "deployment",
+      "database_write",
+      "pull_request",
+      "account_setting",
+      "message"
+    ]
+  },
+  "required_fields": [
+    "schema",
+    "packet_id",
+    "objective.claim",
+    "objective.scope",
+    "objective.success_criterion",
+    "source_refs[].id",
+    "source_refs[].ref",
+    "source_refs[].content_hash",
+    "context_refs[].envelope_id",
+    "context_refs[].envelope_hash",
+    "route.lane",
+    "route.decided_by",
+    "route.confidence",
+    "route.route_ref",
+    "admission.action_id",
+    "admission.decision",
+    "admission.policy_ref",
+    "admission.authority_ref",
+    "admission.admitted_ordinal",
+    "action.action_id",
+    "action.event_id",
+    "action.tool_id",
+    "action.action_kind",
+    "action.args_hash",
+    "action.executed_ordinal",
+    "action.idempotency_key",
+    "side_effect.class",
+    "side_effect.reversible",
+    "compensation.required",
+    "outputs[].name",
+    "outputs[].digest",
+    "outputs[].ref",
+    "artifacts",
+    "final_status.state",
+    "final_status.stop_reason",
+    "packet_hash"
+  ],
+  "adapter_interfaces": {
+    "assembler": {
+      "accepts": "a conformance fixture (happy_path or an operator-supplied fixture)",
+      "returns": "a canonical proof packet plus packet_hash over the hash scope"
+    },
+    "verifier": {
+      "accepts": "a proof packet",
+      "returns": "named check results, a typed failure list, and a derived verdict MATCH, DRIFT, or UNVERIFIABLE"
+    },
+    "witness": {
+      "accepts": "a source byte path and a view byte path",
+      "returns": "the EMET coherence envelope or an unavailability record; never a fabricated verdict"
+    },
+    "exporter": {
+      "accepts": "a proof packet",
+      "returns": "a proof-surface agent-action-proof-packet/v0 shaped object"
+    }
+  },
+  "export_contract": {
+    "target_schema": "agent-action-proof-packet/v0",
+    "proof_surface_root_fields": [
+      "version",
+      "packet_id",
+      "claim",
+      "scope",
+      "sources",
+      "context",
+      "actions",
+      "admission",
+      "side_effects",
+      "outputs",
+      "evidence_refs",
+      "failure_labels",
+      "verdicts",
+      "uncertainty",
+      "decision_summary"
+    ],
+    "digest_form": "bare-64-hex",
+    "context_shape": "plain object summary with workspace and tool_authority, not context_refs[] and no envelope_hash",
+    "decision_summary_source": "derived from the packet overall verdict, not from admission.decision",
+    "decision_map": {
+      "note": "action-receipt policy_decisions to proof-surface ADMISSION_DECISIONS, for the admission[].decision field only",
+      "allow": "allow",
+      "block": "deny",
+      "escalate": "needs-human",
+      "require_review": "needs-human"
+    },
+    "class_map": {
+      "note": "action-receipt side_effect_classes to proof-surface SIDE_EFFECT_CLASSES; lossy mappings are disclosed in uncertainty",
+      "read": "read",
+      "none": "read",
+      "write": "write",
+      "external_call": "external",
+      "human_action": "external",
+      "mixed": "external",
+      "irreversible_write_or_external": "irreversible"
+    },
+    "decision_summary_map": {
+      "note": "proof-surface overall verdict to decision_summary, from _decision.derive_decision_summary",
+      "MATCH": {
+        "decision": "approve",
+        "confidence": "high"
+      },
+      "DRIFT": {
+        "decision": "block",
+        "confidence": "high"
+      },
+      "UNVERIFIABLE": {
+        "decision": "escalate",
+        "confidence": "low"
+      }
+    }
+  },
+  "conformance_fixture": {
+    "happy_path": {
+      "packet_id": "prfpkt_20260702_001",
+      "objective": {
+        "claim": "The status summary artifact was assembled from the two joined source refs and written once under operator consent.",
+        "scope": "one admitted message-send action in the Telos proof-lane demo workspace",
+        "success_criterion": "outputs digests recompute from the embedded artifacts and the action was admitted before it executed"
+      },
+      "source_refs": [
+        {
+          "id": "src_router_context",
+          "ref": "gather:receipt/router-context-20260702",
+          "content_hash": "sha256:830671b42a75b2f6d8120df44b05f8f340fb522d3524a827cddf2ccf1d4a9201"
+        },
+        {
+          "id": "src_admission_policy",
+          "ref": "gather:receipt/admission-policy-20260702",
+          "content_hash": "sha256:5a99e725d260f9c50e8b6d4044972b6ecdd38f6bb512c8ec812bd8b733a47ce2"
+        }
+      ],
+      "context_refs": [
+        {
+          "envelope_id": "ctxenv_proof_demo_001",
+          "envelope_hash": "sha256:07d12cf406aaf820d2804512f4088b29617d7c13bca247f846c56895ce9fba5b"
+        }
+      ],
+      "route": {
+        "lane": "function-routing",
+        "decided_by": "forum.route",
+        "confidence": "high",
+        "route_ref": "forum:route/proof-demo-20260702"
+      },
+      "admission": {
+        "action_id": "act_proof_20260702_001",
+        "decision": "allow",
+        "policy_ref": "policy:external-write-approval-v1",
+        "authority_ref": "approval:operator-consent-20260702-001",
+        "admitted_ordinal": 1
+      },
+      "action": {
+        "action_id": "act_proof_20260702_001",
+        "event_id": "evt_proof_20260702_001",
+        "tool_id": "mcp:message.send",
+        "action_kind": "message",
+        "args_hash": "sha256:3a9a3f2c1c511f020d815ec9c8a65f1ac6ed2f858863fb5d066592a8a00614bd",
+        "executed_ordinal": 2,
+        "idempotency_key": "idem_proof_20260702_001"
+      },
+      "side_effect": {
+        "class": "external_call",
+        "reversible": true
+      },
+      "compensation": {
+        "required": true,
+        "ref": "compensation:message-delete/act_proof_20260702_001"
+      },
+      "outputs": [
+        {
+          "name": "status_summary",
+          "digest": "sha256:23d71288132b0f44bf469efa818ae8238db1b52042e7917481ce06a9f7b4669c",
+          "ref": "artifact:proof-demo/status-summary"
+        }
+      ],
+      "artifacts": {
+        "status_summary": "Telos proof-lane demo: two source refs joined, one action admitted, one message sent under operator consent."
+      },
+      "final_status": {
+        "state": "completed",
+        "stop_reason": "completed"
+      },
+      "ledger_ref": {
+        "entry_id": "loopledger:proof-demo/entry-001",
+        "ledger_hash": "sha256:58fef7dcb31b2d4ee6e3f8bd34e4f806f5ff0b2a97ea4f149efe22943b940214"
+      },
+      "wall_clock": {
+        "assembled_at": "2026-07-02T00:00:00.000Z"
+      }
+    },
+    "tampered_output_digest": {
+      "from": "happy_path",
+      "mutate": "replace outputs[0] embedded digest with a wrong 64-hex value",
+      "expected_verdict": "DRIFT",
+      "expected_failure_code": "artifact_digest_mismatch"
+    },
+    "missing_admission": {
+      "from": "happy_path",
+      "mutate": "delete the admission block",
+      "expected_verdict": "UNVERIFIABLE",
+      "expected_failure_code": "missing_required_field"
+    },
+    "missing_source_ref": {
+      "from": "happy_path",
+      "mutate": "delete source_refs[0] content_hash",
+      "expected_verdict": "UNVERIFIABLE",
+      "expected_failure_code": "missing_required_field"
+    },
+    "execution_before_admission": {
+      "from": "happy_path",
+      "mutate": "set action.executed_ordinal below admission.admitted_ordinal",
+      "expected_verdict": "DRIFT",
+      "expected_failure_code": "admission_order_violation"
+    },
+    "external_write_without_compensation": {
+      "from": "happy_path",
+      "mutate": "set compensation.required false and drop compensation.ref while side_effect.class stays external_call",
+      "expected_verdict": "DRIFT",
+      "expected_failure_code": "compensation_path_missing_for_external_write"
+    },
+    "embedded_canned_match": {
+      "from": "happy_path",
+      "mutate": "tamper one output artifact but embed verifier.verdict MATCH",
+      "expected_verdict": "DRIFT",
+      "expected_failure_code": "embedded_verdict_not_derived"
+    }
+  },
+  "failure_codes": [
+    "missing_required_field",
+    "state_model_violation",
+    "packet_hash_mismatch",
+    "artifact_digest_mismatch",
+    "admission_missing_for_action",
+    "admission_order_violation",
+    "compensation_path_missing_for_external_write",
+    "evidence_ref_unresolvable",
+    "embedded_verdict_not_derived",
+    "witness_unavailable"
+  ],
+  "negative_test_cases": [
+    {
+      "name": "packet_missing_admission_block",
+      "failure_code": "missing_required_field"
+    },
+    {
+      "name": "side_effect_class_outside_taxonomy",
+      "failure_code": "state_model_violation"
+    },
+    {
+      "name": "recorded_packet_hash_does_not_match_materials",
+      "failure_code": "packet_hash_mismatch"
+    },
+    {
+      "name": "output_digest_does_not_match_embedded_artifact",
+      "failure_code": "artifact_digest_mismatch"
+    },
+    {
+      "name": "action_without_matching_admission_record",
+      "failure_code": "admission_missing_for_action"
+    },
+    {
+      "name": "execution_ordinal_precedes_admission_ordinal",
+      "failure_code": "admission_order_violation"
+    },
+    {
+      "name": "external_write_without_compensation_ref",
+      "failure_code": "compensation_path_missing_for_external_write"
+    },
+    {
+      "name": "output_claims_source_ref_that_is_not_declared",
+      "failure_code": "evidence_ref_unresolvable"
+    },
+    {
+      "name": "embedded_match_over_tampered_materials",
+      "failure_code": "embedded_verdict_not_derived"
+    },
+    {
+      "name": "witness_stage_has_no_reachable_emet_implementation",
+      "failure_code": "witness_unavailable"
+    }
+  ]
+}

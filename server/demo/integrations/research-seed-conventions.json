@@ -1,0 +1,86 @@
+{
+  "schema": "project-telos.research-seed/v1",
+  "verified_on": "2026-06-28",
+  "purpose": "Turn terse operator research notes into lawful, source-backed seed packets that can feed Gather, Index, Forum, Crucible, and Telos without pretending the note itself is evidence.",
+  "contract": {
+    "operator_notes_are_source_leads": true,
+    "fresh_resolution_required": true,
+    "hidden_payloads_allowed": false,
+    "shadow_full_text_allowed_as_provenance": false,
+    "lawful_sources_required_for_match": true,
+    "claim_promotion_rule": "A seed may be marked MATCH only when each promoted claim is backed by current lawful source receipts. Otherwise use UNVERIFIABLE and route to Gather."
+  },
+  "required_fields": [
+    "seed_id",
+    "operator_note",
+    "normalized_concepts[]",
+    "source_receipts[]",
+    "evidence_status",
+    "claim_boundaries[]",
+    "next_actions[]"
+  ],
+  "evidence_statuses": [
+    "MATCH",
+    "DRIFT",
+    "UNVERIFIABLE"
+  ],
+  "source_receipt_fields": [
+    "title",
+    "url",
+    "source_kind",
+    "resolved_at",
+    "provenance_class",
+    "receipt_hash"
+  ],
+  "flagship_flow": {
+    "gather": [
+      "resolve the terse note into current lawful sources",
+      "record URLs, identifiers, snippets, and hashes without importing illicit full text"
+    ],
+    "index": [
+      "attach the seed to concepts, domains, source ids, and future context packs"
+    ],
+    "forum": [
+      "route the seed to a research, verification, science, or operator-decision lane"
+    ],
+    "crucible": [
+      "split claims from inspiration and assign MATCH, DRIFT, or UNVERIFIABLE"
+    ],
+    "telos": [
+      "join the seed packet to later action receipts, loop ledger entries, and operator-visible research state"
+    ]
+  },
+  "negative_test_cases": [
+    {
+      "name": "note_without_resolution",
+      "input": {
+        "operator_note": "named researcher",
+        "source_receipts": []
+      },
+      "expected_status": "UNVERIFIABLE",
+      "reason": "The operator note is a lead, not evidence."
+    },
+    {
+      "name": "shadow_only_full_text",
+      "input": {
+        "operator_note": "paper title",
+        "source_receipts": [
+          {
+            "provenance_class": "shadow_full_text"
+          }
+        ]
+      },
+      "expected_status": "UNVERIFIABLE",
+      "reason": "Shadow-library material may guide lawful lookup, but cannot promote a claim."
+    },
+    {
+      "name": "stale_current_claim",
+      "input": {
+        "operator_note": "current model, API, person, or scientific claim",
+        "resolved_at": "2024-01-01T00:00:00Z"
+      },
+      "expected_status": "UNVERIFIABLE",
+      "reason": "Living claims require current source resolution."
+    }
+  ]
+}

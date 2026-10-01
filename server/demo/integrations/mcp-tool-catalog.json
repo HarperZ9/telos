@@ -1,0 +1,1452 @@
+{
+  "schema": "project-telos.mcp-tool-catalog/v1",
+  "action_schema": "project-telos.flagship-action/v1",
+  "transports": [
+    "stdio",
+    "streamable-http"
+  ],
+  "tools": [
+    {
+      "name": "gather.status",
+      "flagship": "gather",
+      "description": "Emit Gather readiness and next actions as a Project Telos action envelope.",
+      "cli": [
+        "gather",
+        "status",
+        "--json"
+      ],
+      "mcp": {
+        "status": "available",
+        "server": "gather",
+        "method": "tools/call",
+        "tool": "gather.status"
+      },
+      "next_actions": [
+        "index.map",
+        "gather.docs"
+      ]
+    },
+    {
+      "name": "gather.doctor",
+      "flagship": "gather",
+      "description": "Check Gather operator-spine readiness.",
+      "cli": [
+        "gather",
+        "doctor",
+        "--json"
+      ],
+      "mcp": {
+        "status": "available",
+        "server": "gather",
+        "method": "tools/call",
+        "tool": "gather.doctor"
+      },
+      "next_actions": [
+        "crucible.assess"
+      ]
+    },
+    {
+      "name": "gather.docs",
+      "flagship": "gather",
+      "description": "Read local text files or directories and emit provenance receipts.",
+      "cli": [
+        "gather",
+        "docs",
+        "{path}",
+        "--json"
+      ],
+      "mcp": {
+        "status": "available",
+        "server": "gather",
+        "method": "tools/call",
+        "tool": "gather.docs"
+      },
+      "next_actions": [
+        "index.map",
+        "forum.route",
+        "crucible.assess"
+      ]
+    },
+    {
+      "name": "gather.arxiv",
+      "flagship": "gather",
+      "description": "Fetch current arXiv metadata by id or query and emit provenance receipts.",
+      "cli": [
+        "gather",
+        "arxiv",
+        "{query}",
+        "--json"
+      ],
+      "mcp": {
+        "status": "available",
+        "server": "gather",
+        "method": "tools/call",
+        "tool": "gather.arxiv"
+      },
+      "next_actions": [
+        "crucible.assess",
+        "index.context"
+      ]
+    },
+    {
+      "name": "gather.run",
+      "flagship": "gather",
+      "description": "Run a multi-source research intake config and emit a witnessed run record.",
+      "cli": [
+        "gather",
+        "run",
+        "{config}",
+        "--json"
+      ],
+      "mcp": {
+        "status": "available",
+        "server": "gather",
+        "method": "tools/call",
+        "tool": "gather.run"
+      },
+      "next_actions": [
+        "crucible.assess",
+        "forum.route"
+      ]
+    },
+    {
+      "name": "index.map",
+      "flagship": "index",
+      "description": "Map a workspace or repo and emit structural context.",
+      "cli": [
+        "index",
+        "map",
+        "--root",
+        "{root}",
+        "--json"
+      ],
+      "mcp": {
+        "status": "available",
+        "server": "index",
+        "method": "tools/call",
+        "tool": "index.map"
+      },
+      "next_actions": [
+        "gather.docs",
+        "forum.route"
+      ]
+    },
+    {
+      "name": "index.context",
+      "flagship": "index",
+      "description": "Render a compact context pack from a workspace graph.",
+      "cli": [
+        "index",
+        "context",
+        "--root",
+        "{root}",
+        "--json"
+      ],
+      "mcp": {
+        "status": "available",
+        "server": "index",
+        "method": "tools/call",
+        "tool": "index.context"
+      },
+      "next_actions": [
+        "forum.route",
+        "telos.workflow"
+      ]
+    },
+    {
+      "name": "index.context.envelope",
+      "flagship": "index",
+      "description": "Return a budgeted, receipt-backed context envelope for large-codebase agent workflows.",
+      "cli": [
+        "index",
+        "context-envelope",
+        "--root",
+        "{root}",
+        "--budget",
+        "{budget}",
+        "--json"
+      ],
+      "mcp": {
+        "status": "available",
+        "server": "index",
+        "method": "tools/call",
+        "tool": "index.context.envelope"
+      },
+      "next_actions": [
+        "forum.route",
+        "crucible.assess",
+        "telos.context.envelope"
+      ]
+    },
+    {
+      "name": "index.status",
+      "flagship": "index",
+      "description": "Emit Index readiness and next actions as a Project Telos action envelope.",
+      "cli": [
+        "index",
+        "status",
+        "--json"
+      ],
+      "mcp": {
+        "status": "available",
+        "server": "index",
+        "method": "tools/call",
+        "tool": "index.status"
+      },
+      "next_actions": [
+        "index.context",
+        "gather.docs"
+      ]
+    },
+    {
+      "name": "index.doctor",
+      "flagship": "index",
+      "description": "Check Index operator-spine readiness.",
+      "cli": [
+        "index",
+        "doctor",
+        "--json"
+      ],
+      "mcp": {
+        "status": "available",
+        "server": "index",
+        "method": "tools/call",
+        "tool": "index.doctor"
+      },
+      "next_actions": [
+        "forum.route"
+      ]
+    },
+    {
+      "name": "forum.route",
+      "flagship": "forum",
+      "description": "Route a request to a capability lane and expose low-confidence escalation.",
+      "cli": [
+        "forum",
+        "route",
+        "{text}"
+      ],
+      "mcp": {
+        "status": "available",
+        "server": "forum",
+        "method": "tools/call",
+        "tool": "forum.route"
+      },
+      "next_actions": [
+        "gather.docs",
+        "crucible.assess"
+      ]
+    },
+    {
+      "name": "forum.ledger.summary",
+      "flagship": "forum",
+      "description": "Summarize a witnessed causal ledger.",
+      "cli": [
+        "forum",
+        "ledger",
+        "summary",
+        "--ledger",
+        "{dir}",
+        "--json"
+      ],
+      "mcp": {
+        "status": "available",
+        "server": "forum",
+        "method": "tools/call",
+        "tool": "forum.ledger.summary"
+      },
+      "next_actions": [
+        "crucible.assess",
+        "telos.workflow"
+      ]
+    },
+    {
+      "name": "forum.prose.humanize",
+      "flagship": "forum",
+      "description": "Clarify model or agent prose for operators without adding facts.",
+      "cli": [
+        "forum",
+        "humanize",
+        "{text}"
+      ],
+      "mcp": {
+        "status": "available",
+        "server": "forum",
+        "method": "tools/call",
+        "tool": "forum.prose.humanize"
+      },
+      "next_actions": [
+        "crucible.assess",
+        "gather.docs",
+        "index.context"
+      ]
+    },
+    {
+      "name": "forum.status",
+      "flagship": "forum",
+      "description": "Emit Forum readiness and next actions as a Project Telos action envelope.",
+      "cli": [
+        "forum",
+        "status",
+        "--json"
+      ],
+      "mcp": {
+        "status": "available",
+        "server": "forum",
+        "method": "tools/call",
+        "tool": "forum.status"
+      },
+      "next_actions": [
+        "forum.route",
+        "crucible.assess"
+      ]
+    },
+    {
+      "name": "forum.doctor",
+      "flagship": "forum",
+      "description": "Check Forum operator-spine readiness.",
+      "cli": [
+        "forum",
+        "doctor",
+        "--json"
+      ],
+      "mcp": {
+        "status": "available",
+        "server": "forum",
+        "method": "tools/call",
+        "tool": "forum.doctor"
+      },
+      "next_actions": [
+        "index.map"
+      ]
+    },
+    {
+      "name": "crucible.status",
+      "flagship": "crucible",
+      "description": "Emit crucible readiness and next actions as a Project Telos action envelope.",
+      "cli": [
+        "crucible",
+        "status",
+        "--json"
+      ],
+      "mcp": {
+        "status": "available",
+        "server": "crucible",
+        "method": "tools/call",
+        "tool": "crucible.status"
+      },
+      "next_actions": [
+        "telos.workflow"
+      ]
+    },
+    {
+      "name": "crucible.doctor",
+      "flagship": "crucible",
+      "description": "Check crucible operator-spine readiness.",
+      "cli": [
+        "crucible",
+        "doctor",
+        "--json"
+      ],
+      "mcp": {
+        "status": "available",
+        "server": "crucible",
+        "method": "tools/call",
+        "tool": "crucible.doctor"
+      },
+      "next_actions": [
+        "gather.docs"
+      ]
+    },
+    {
+      "name": "crucible.assess",
+      "flagship": "crucible",
+      "description": "Assess falsifiable claims against measurements and emit MATCH/DRIFT/UNVERIFIABLE verdicts.",
+      "cli": [
+        "crucible",
+        "assess",
+        "{thesis}",
+        "--measurements",
+        "{measurements}",
+        "--json"
+      ],
+      "mcp": {
+        "status": "available",
+        "server": "crucible",
+        "method": "tools/call",
+        "tool": "crucible.assess"
+      },
+      "next_actions": [
+        "crucible.recheck",
+        "telos.workflow"
+      ]
+    },
+    {
+      "name": "crucible.recheck",
+      "flagship": "crucible",
+      "description": "Recheck a persisted assessment or replay descriptor-bearing measurements.",
+      "cli": [
+        "crucible",
+        "recheck",
+        "{dir}",
+        "--index",
+        "{index}",
+        "--pack",
+        "{pack}",
+        "--json"
+      ],
+      "mcp": {
+        "status": "available",
+        "server": "crucible",
+        "method": "tools/call",
+        "tool": "crucible.recheck"
+      },
+      "next_actions": [
+        "telos.workflow"
+      ]
+    },
+    {
+      "name": "crucible.run",
+      "flagship": "crucible",
+      "description": "Run steelman, measurement, assessment, disk recheck, and optional packet writes.",
+      "cli": [
+        "crucible",
+        "run",
+        "{thesis}",
+        "--registry",
+        "{registry}",
+        "--measurements",
+        "{measurements}",
+        "--json"
+      ],
+      "mcp": {
+        "status": "available",
+        "server": "crucible",
+        "method": "tools/call",
+        "tool": "crucible.run"
+      },
+      "next_actions": [
+        "crucible.review",
+        "crucible.recheck",
+        "telos.workflow"
+      ]
+    },
+    {
+      "name": "crucible.measurement_gate",
+      "flagship": "crucible",
+      "description": "Verify Telos creative/rendering measurement packets against explicit criteria.",
+      "cli": [
+        "crucible",
+        "measurement-gate",
+        "{packet}",
+        "--criteria",
+        "{criteria}",
+        "--json"
+      ],
+      "mcp": {
+        "status": "available",
+        "server": "crucible",
+        "method": "tools/call",
+        "tool": "crucible.measurement_gate"
+      },
+      "next_actions": [
+        "telos.measurement.layers",
+        "crucible.assess",
+        "telos.workflow"
+      ]
+    },
+    {
+      "name": "crucible.review",
+      "flagship": "crucible",
+      "description": "Validate a cleanroom review bundle before verifier handoff.",
+      "cli": [
+        "crucible",
+        "review",
+        "{bundle}",
+        "--json"
+      ],
+      "mcp": {
+        "status": "available",
+        "server": "crucible",
+        "method": "tools/call",
+        "tool": "crucible.review"
+      },
+      "next_actions": [
+        "crucible.recheck",
+        "forum.ledger.summary"
+      ]
+    },
+    {
+      "name": "crucible.report",
+      "flagship": "crucible",
+      "description": "Render a deterministic Markdown report for a witnessed assessment.",
+      "cli": [
+        "crucible",
+        "report",
+        "{dir}",
+        "--index",
+        "{index}"
+      ],
+      "mcp": {
+        "status": "available",
+        "server": "crucible",
+        "method": "tools/call",
+        "tool": "crucible.report"
+      },
+      "next_actions": [
+        "forum.ledger.summary"
+      ]
+    },
+    {
+      "name": "crucible.batch",
+      "flagship": "crucible",
+      "description": "Assess a manifest of thesis jobs into a registry.",
+      "cli": [
+        "crucible",
+        "batch",
+        "{manifest}",
+        "--registry",
+        "{registry}",
+        "--json"
+      ],
+      "mcp": {
+        "status": "available",
+        "server": "crucible",
+        "method": "tools/call",
+        "tool": "crucible.batch"
+      },
+      "next_actions": [
+        "crucible.report",
+        "telos.workflow"
+      ]
+    },
+    {
+      "name": "crucible.registry",
+      "flagship": "crucible",
+      "description": "List, verify, summarize, search, or prune a crucible registry.",
+      "cli": [
+        "crucible",
+        "registry",
+        "{action}",
+        "{dir}",
+        "--json"
+      ],
+      "mcp": {
+        "status": "available",
+        "server": "crucible",
+        "method": "tools/call",
+        "tool": "crucible.registry"
+      },
+      "next_actions": [
+        "index.context",
+        "forum.route"
+      ]
+    },
+    {
+      "name": "crucible.drift",
+      "flagship": "crucible",
+      "description": "Compare the latest two verified assessments in a registry.",
+      "cli": [
+        "crucible",
+        "drift",
+        "{dir}",
+        "--json"
+      ],
+      "mcp": {
+        "status": "available",
+        "server": "crucible",
+        "method": "tools/call",
+        "tool": "crucible.drift"
+      },
+      "next_actions": [
+        "crucible.refine",
+        "forum.ledger.summary"
+      ]
+    },
+    {
+      "name": "crucible.refine",
+      "flagship": "crucible",
+      "description": "Run the deterministic refine loop over a substrate-round config.",
+      "cli": [
+        "crucible",
+        "refine",
+        "{config}",
+        "--json"
+      ],
+      "mcp": {
+        "status": "available",
+        "server": "crucible",
+        "method": "tools/call",
+        "tool": "crucible.refine"
+      },
+      "next_actions": [
+        "crucible.assess",
+        "telos.workflow"
+      ]
+    },
+    {
+      "name": "crucible.verdicts",
+      "flagship": "crucible",
+      "description": "List or re-check witnessed assessments in a registry.",
+      "cli": [
+        "crucible",
+        "verdicts",
+        "{dir}",
+        "--verify",
+        "--json"
+      ],
+      "mcp": {
+        "status": "available",
+        "server": "crucible",
+        "method": "tools/call",
+        "tool": "crucible.verdicts"
+      },
+      "next_actions": [
+        "crucible.recheck"
+      ]
+    },
+    {
+      "name": "telos.status",
+      "flagship": "telos",
+      "description": "Use when a host needs current Telos workbench readiness and next actions. Read-only, zero-auth, no external side effects. Returns a JSON action envelope.",
+      "cli": [
+        "node",
+        "demo/status.mjs"
+      ],
+      "mcp": {
+        "status": "available",
+        "server": "telos",
+        "method": "tools/call",
+        "tool": "telos.status"
+      },
+      "next_actions": [
+        "index.map",
+        "gather.docs"
+      ]
+    },
+    {
+      "name": "telos.doctor",
+      "flagship": "telos",
+      "description": "Use before demos, listings, or agent runs to check local Telos operator-spine health. Read-only, zero-auth, no external side effects. Returns JSON check results.",
+      "cli": [
+        "node",
+        "demo/doctor.mjs"
+      ],
+      "mcp": {
+        "status": "available",
+        "server": "telos",
+        "method": "tools/call",
+        "tool": "telos.doctor"
+      },
+      "next_actions": [
+        "telos.workflow"
+      ]
+    },
+    {
+      "name": "telos.room",
+      "flagship": "telos",
+      "description": "Use when an agent needs the current five-flagship room summary before routing work. Read-only and zero-auth. Requires the sibling gather, crucible, index, and forum source checkouts next to this repo plus a local python interpreter; without them it returns an UNVERIFIABLE envelope naming the missing dependency rather than a live summary. Returns a JSON action envelope.",
+      "cli": [
+        "node",
+        "demo/room.mjs",
+        "--json"
+      ],
+      "mcp": {
+        "status": "available",
+        "server": "telos",
+        "method": "tools/call",
+        "tool": "telos.room"
+      },
+      "next_actions": [
+        "telos.workflow"
+      ]
+    },
+    {
+      "name": "telos.catalog",
+      "flagship": "telos",
+      "description": "Use when a host needs the provider-neutral catalog of Project Telos MCP tools and next actions. Read-only, zero-auth, no external side effects. Returns a JSON catalog.",
+      "cli": [
+        "node",
+        "demo/catalog.mjs"
+      ],
+      "mcp": {
+        "status": "available",
+        "server": "telos",
+        "method": "tools/call",
+        "tool": "telos.catalog"
+      },
+      "next_actions": [
+        "telos.workflow"
+      ]
+    },
+    {
+      "name": "telos.server.manifest",
+      "flagship": "telos",
+      "description": "Use when configuring MCP clients for gather, index, forum, crucible, and telos source checkouts. Read-only, zero-auth, no external side effects. Returns a JSON server manifest.",
+      "cli": [
+        "node",
+        "demo/server-manifest.mjs"
+      ],
+      "mcp": {
+        "status": "available",
+        "server": "telos",
+        "method": "tools/call",
+        "tool": "telos.server.manifest"
+      },
+      "next_actions": [
+        "telos.catalog"
+      ]
+    },
+    {
+      "name": "telos.mcp.freshness",
+      "flagship": "telos",
+      "description": "Use when a host must compare loaded MCP servers against expected versions, tools, and probes. Read-only, zero-auth, no external side effects. Returns JSON MATCH, DRIFT, or UNVERIFIABLE freshness receipts.",
+      "cli": [
+        "node",
+        "demo/mcp-freshness.mjs"
+      ],
+      "mcp": {
+        "status": "available",
+        "server": "telos",
+        "method": "tools/call",
+        "tool": "telos.mcp.freshness"
+      },
+      "next_actions": [
+        "telos.server.manifest",
+        "forum.ledger.summary",
+        "crucible.assess"
+      ]
+    },
+    {
+      "name": "telos.ci.doctor",
+      "flagship": "telos",
+      "description": "Use when a host needs GitHub Actions runtime, action-major, and latest five-flagship CI compatibility receipts. Read-only, zero-auth, no external side effects. Returns a JSON CI doctor register.",
+      "cli": [
+        "node",
+        "demo/ci-doctor.mjs"
+      ],
+      "mcp": {
+        "status": "available",
+        "server": "telos",
+        "method": "tools/call",
+        "tool": "telos.ci.doctor"
+      },
+      "next_actions": [
+        "index.map",
+        "forum.route",
+        "crucible.assess",
+        "telos.workflow"
+      ]
+    },
+    {
+      "name": "telos.ci.triage",
+      "flagship": "telos",
+      "description": "Use when a host needs to separate fatal GitHub Actions gate failures from Node runtime migration warnings before routing remediation. Read-only, no external side effects, and no external writes. Supports zero-auth offline fixture packets and live gh run intake through the CLI using local gh auth when required. Returns JSON MATCH, DRIFT, or UNVERIFIABLE CI triage receipts.",
+      "cli": [
+        "node",
+        "demo/ci-triage.mjs"
+      ],
+      "mcp": {
+        "status": "available",
+        "server": "telos",
+        "method": "tools/call",
+        "tool": "telos.ci.triage"
+      },
+      "next_actions": [
+        "telos.ci.doctor",
+        "telos.compatibility.doctor",
+        "crucible.assess",
+        "forum.route"
+      ]
+    },
+    {
+      "name": "telos.presentation.doctor",
+      "flagship": "telos",
+      "description": "Use when a host needs five-flagship README, changelog, and brand-asset presentation parity receipts. Read-only, zero-auth, no external side effects. Returns JSON MATCH, DRIFT, or UNVERIFIABLE presentation receipts.",
+      "cli": [
+        "node",
+        "demo/presentation-doctor.mjs"
+      ],
+      "mcp": {
+        "status": "available",
+        "server": "telos",
+        "method": "tools/call",
+        "tool": "telos.presentation.doctor"
+      },
+      "next_actions": [
+        "gather.docs",
+        "index.map",
+        "forum.route",
+        "crucible.assess"
+      ]
+    },
+    {
+      "name": "telos.accessibility.doctor",
+      "flagship": "telos",
+      "description": "Use when a host needs static HTML accessibility, reduced-motion, keyboard, and canvas-fallback receipts for Telos Studio surfaces. Read-only, zero-auth, no external side effects. Returns JSON MATCH, DRIFT, or UNVERIFIABLE accessibility receipts.",
+      "cli": [
+        "node",
+        "demo/accessibility-doctor.mjs"
+      ],
+      "mcp": {
+        "status": "available",
+        "server": "telos",
+        "method": "tools/call",
+        "tool": "telos.accessibility.doctor"
+      },
+      "next_actions": [
+        "telos.presentation.doctor",
+        "crucible.assess",
+        "telos.workflow"
+      ]
+    },
+    {
+      "name": "telos.performance.doctor",
+      "flagship": "telos",
+      "description": "Use when a host needs static Studio performance, efficiency, asset-budget, and embedding receipts. Read-only, zero-auth, no external side effects. Returns JSON MATCH, DRIFT, or UNVERIFIABLE performance receipts.",
+      "cli": [
+        "node",
+        "demo/performance-doctor.mjs"
+      ],
+      "mcp": {
+        "status": "available",
+        "server": "telos",
+        "method": "tools/call",
+        "tool": "telos.performance.doctor"
+      },
+      "next_actions": [
+        "telos.accessibility.doctor",
+        "telos.presentation.doctor",
+        "crucible.assess",
+        "telos.workflow"
+      ]
+    },
+    {
+      "name": "telos.compatibility.doctor",
+      "flagship": "telos",
+      "description": "Use when a host needs CLI, MCP, protocol, manifest, and integration compatibility receipts. Read-only, zero-auth, no external side effects. Returns JSON MATCH, DRIFT, or UNVERIFIABLE compatibility receipts.",
+      "cli": [
+        "node",
+        "demo/compatibility-doctor.mjs"
+      ],
+      "mcp": {
+        "status": "available",
+        "server": "telos",
+        "method": "tools/call",
+        "tool": "telos.compatibility.doctor"
+      },
+      "next_actions": [
+        "telos.mcp.freshness",
+        "telos.server.manifest",
+        "crucible.assess",
+        "telos.workflow"
+      ]
+    },
+    {
+      "name": "telos.operator.doctor",
+      "flagship": "telos",
+      "description": "Use when a host needs README, status, catalog, manifest, CI, and current-state discoverability receipts for the Telos operator surface. Read-only, zero-auth, no external side effects. Returns JSON MATCH, DRIFT, or UNVERIFIABLE operator receipts.",
+      "cli": [
+        "node",
+        "demo/operator-doctor.mjs"
+      ],
+      "mcp": {
+        "status": "available",
+        "server": "telos",
+        "method": "tools/call",
+        "tool": "telos.operator.doctor"
+      },
+      "next_actions": [
+        "telos.compatibility.doctor",
+        "telos.mcp.freshness",
+        "forum.route",
+        "crucible.assess"
+      ]
+    },
+    {
+      "name": "telos.admission.telemetry",
+      "flagship": "telos",
+      "description": "Use when designing trace fields that keep action admission separate from verification verdicts. Read-only, zero-auth, no external side effects. Returns a JSON telemetry convention.",
+      "cli": [
+        "node",
+        "demo/admission-telemetry.mjs"
+      ],
+      "mcp": {
+        "status": "available",
+        "server": "telos",
+        "method": "tools/call",
+        "tool": "telos.admission.telemetry"
+      },
+      "next_actions": [
+        "crucible.recheck",
+        "forum.route"
+      ]
+    },
+    {
+      "name": "telos.context.envelope",
+      "flagship": "telos",
+      "description": "Use when large-workspace context needs readable source refs, budgets, and receipt chains. Read-only, zero-auth, no external side effects. Returns a JSON context-envelope convention.",
+      "cli": [
+        "node",
+        "demo/context-envelope.mjs"
+      ],
+      "mcp": {
+        "status": "available",
+        "server": "telos",
+        "method": "tools/call",
+        "tool": "telos.context.envelope"
+      },
+      "next_actions": [
+        "index.context",
+        "forum.ledger.summary",
+        "crucible.assess"
+      ]
+    },
+    {
+      "name": "telos.context.pack",
+      "flagship": "telos",
+      "description": "Use when preparing a bounded handoff packet for large-codebase agent work. Read-only, zero-auth, no external side effects. Returns a validated JSON context pack with hashes and verdicts.",
+      "cli": [
+        "node",
+        "demo/context-pack.mjs"
+      ],
+      "mcp": {
+        "status": "available",
+        "server": "telos",
+        "method": "tools/call",
+        "tool": "telos.context.pack"
+      },
+      "next_actions": [
+        "index.context.envelope",
+        "forum.ledger.summary",
+        "crucible.assess",
+        "telos.loop.ledger"
+      ]
+    },
+    {
+      "name": "telos.action.receipt",
+      "flagship": "telos",
+      "description": "Use when modeling proposed action, admission, execution, review, and compensation records. Read-only, zero-auth, no external side effects. Returns a JSON action-receipt interface.",
+      "cli": [
+        "node",
+        "demo/action-receipt.mjs"
+      ],
+      "mcp": {
+        "status": "available",
+        "server": "telos",
+        "method": "tools/call",
+        "tool": "telos.action.receipt"
+      },
+      "next_actions": [
+        "telos.admission.telemetry",
+        "telos.context.envelope",
+        "crucible.assess"
+      ]
+    },
+    {
+      "name": "telos.loop.ledger",
+      "flagship": "telos",
+      "description": "Use when an agent loop needs durable state across fresh contexts and bounded scheduled runs. Read-only, zero-auth, no external side effects. Returns a JSON loop-ledger convention.",
+      "cli": [
+        "node",
+        "demo/loop-ledger.mjs"
+      ],
+      "mcp": {
+        "status": "available",
+        "server": "telos",
+        "method": "tools/call",
+        "tool": "telos.loop.ledger"
+      },
+      "next_actions": [
+        "telos.action.receipt",
+        "forum.ledger.summary",
+        "index.context"
+      ]
+    },
+    {
+      "name": "telos.objective.monitor",
+      "flagship": "telos",
+      "description": "Use when checking whether proxy metrics are drifting away from real agent or build objectives. Read-only, zero-auth, no external side effects. Returns JSON objective-monitor signals.",
+      "cli": [
+        "node",
+        "demo/objective-monitor.mjs"
+      ],
+      "mcp": {
+        "status": "available",
+        "server": "telos",
+        "method": "tools/call",
+        "tool": "telos.objective.monitor"
+      },
+      "next_actions": [
+        "forum.route",
+        "crucible.assess",
+        "telos.loop.ledger",
+        "index.context.envelope"
+      ]
+    },
+    {
+      "name": "telos.model.foundry",
+      "flagship": "telos",
+      "description": "Use when planning model-foundry work across hosted, local, open-weight, post-training, and verifier gates. Read-only, zero-auth, no external side effects. Returns a JSON model-foundry contract.",
+      "cli": [
+        "node",
+        "demo/model-foundry.mjs"
+      ],
+      "mcp": {
+        "status": "available",
+        "server": "telos",
+        "method": "tools/call",
+        "tool": "telos.model.foundry"
+      },
+      "next_actions": [
+        "gather.run",
+        "index.context.envelope",
+        "forum.route",
+        "crucible.assess",
+        "telos.loop.ledger",
+        "telos.objective.monitor"
+      ]
+    },
+    {
+      "name": "telos.learning.forge",
+      "flagship": "telos",
+      "description": "Use when video, channel, paper, and benchmark leads need to become receipt-backed learning labs before synthesis. Read-only, zero-auth, no external side effects. Returns a JSON Learning Forge packet.",
+      "cli": [
+        "node",
+        "demo/learning-forge.mjs"
+      ],
+      "mcp": {
+        "status": "available",
+        "server": "telos",
+        "method": "tools/call",
+        "tool": "telos.learning.forge"
+      },
+      "next_actions": [
+        "gather.run",
+        "index.context",
+        "forum.route",
+        "crucible.assess",
+        "telos.context.pack"
+      ]
+    },
+    {
+      "name": "telos.learning.labs",
+      "flagship": "telos",
+      "description": "Use when Learning Forge source leads need executable lab contracts with measurements, failure cases, and five-flagship ownership. Read-only, zero-auth, no external side effects. Returns a JSON Learning Forge labs packet.",
+      "cli": [
+        "node",
+        "demo/learning-forge-labs.mjs"
+      ],
+      "mcp": {
+        "status": "available",
+        "server": "telos",
+        "method": "tools/call",
+        "tool": "telos.learning.labs"
+      },
+      "next_actions": [
+        "gather.run",
+        "index.context",
+        "forum.route",
+        "crucible.assess",
+        "telos.learning.forge"
+      ]
+    },
+    {
+      "name": "telos.research.seed",
+      "flagship": "telos",
+      "description": "Use when terse research notes need source-backed seed packets before synthesis. Read-only, zero-auth, no external side effects. Returns JSON research seeds with provenance status.",
+      "cli": [
+        "node",
+        "demo/research-seed.mjs"
+      ],
+      "mcp": {
+        "status": "available",
+        "server": "telos",
+        "method": "tools/call",
+        "tool": "telos.research.seed"
+      },
+      "next_actions": [
+        "gather.run",
+        "index.context",
+        "crucible.assess"
+      ]
+    },
+    {
+      "name": "telos.research.thermodynamic",
+      "flagship": "telos",
+      "description": "Use when exploring thermodynamic or stochastic AI-chip research through public transcript evidence. Read-only, zero-auth, no external side effects. Returns a JSON research receipt with verification labels.",
+      "cli": [
+        "node",
+        "demo/thermodynamic-ai-chip-receipt.mjs"
+      ],
+      "mcp": {
+        "status": "available",
+        "server": "telos",
+        "method": "tools/call",
+        "tool": "telos.research.thermodynamic"
+      },
+      "next_actions": [
+        "gather.run",
+        "index.context.envelope",
+        "forum.route",
+        "crucible.assess",
+        "telos.context.pack"
+      ]
+    },
+    {
+      "name": "telos.rendering.research",
+      "flagship": "telos",
+      "description": "Use when collecting rendering leads for clustered-forward, Gaussian splatting, creative coding, and graphics demos. Read-only, zero-auth, no external side effects. Returns JSON research seeds.",
+      "cli": [
+        "node",
+        "demo/rendering-research.mjs"
+      ],
+      "mcp": {
+        "status": "available",
+        "server": "telos",
+        "method": "tools/call",
+        "tool": "telos.rendering.research"
+      },
+      "next_actions": [
+        "gather.arxiv",
+        "index.context",
+        "crucible.assess"
+      ]
+    },
+    {
+      "name": "telos.rendering.capabilities",
+      "flagship": "telos",
+      "description": "Use when a host must choose WebGPU, WebGL, canvas, or static rendering fallbacks for Studio surfaces. Read-only, zero-auth, no external side effects. Returns a JSON renderer capability contract.",
+      "cli": [
+        "node",
+        "demo/rendering-capabilities.mjs"
+      ],
+      "mcp": {
+        "status": "available",
+        "server": "telos",
+        "method": "tools/call",
+        "tool": "telos.rendering.capabilities"
+      },
+      "next_actions": [
+        "index.context",
+        "gather.docs",
+        "crucible.assess"
+      ]
+    },
+    {
+      "name": "telos.measurement.layers",
+      "flagship": "telos",
+      "description": "Use when visual, splat, lighting, dither, audio, uncertainty, or frame-budget evidence needs meters. Read-only, zero-auth, no external side effects. Returns JSON measurement layers.",
+      "cli": [
+        "node",
+        "demo/measurement-layers.mjs"
+      ],
+      "mcp": {
+        "status": "available",
+        "server": "telos",
+        "method": "tools/call",
+        "tool": "telos.measurement.layers"
+      },
+      "next_actions": [
+        "crucible.assess",
+        "index.context",
+        "telos.creative.engine"
+      ]
+    },
+    {
+      "name": "telos.workflow",
+      "flagship": "telos",
+      "description": "Use when validating the local five-flagship golden workflow from source checkouts. Read-only and zero-auth, no external side effects beyond local subprocess reads. Requires the sibling gather, crucible, index, and forum source checkouts next to this repo plus a local python interpreter; without them it returns an UNVERIFIABLE envelope naming the missing dependency rather than running the workflow. Returns JSON receipts and verdict counts.",
+      "cli": [
+        "node",
+        "demo/flagship-workflow.mjs"
+      ],
+      "mcp": {
+        "status": "available",
+        "server": "telos",
+        "method": "tools/call",
+        "tool": "telos.workflow"
+      },
+      "next_actions": [
+        "crucible.recheck"
+      ]
+    },
+    {
+      "name": "telos.creative.engine",
+      "flagship": "telos",
+      "description": "Use when presenting the Telos Creative Engine across generative art, sound, typography, media, CGI, math, and physics lanes. Read-only, zero-auth, no external side effects. Returns a JSON creative-engine manifest.",
+      "cli": [
+        "node",
+        "demo/creative-engine.mjs"
+      ],
+      "mcp": {
+        "status": "available",
+        "server": "telos",
+        "method": "tools/call",
+        "tool": "telos.creative.engine"
+      },
+      "next_actions": [
+        "index.context",
+        "gather.docs",
+        "crucible.assess"
+      ]
+    },
+    {
+      "name": "telos.creative.kernels",
+      "flagship": "telos",
+      "description": "Use when deterministic creative primitives are needed for dithering, pixel sorting, plotter paths, or clustered-light bins. Read-only, zero-auth, no external side effects. Returns JSON creative kernels.",
+      "cli": [
+        "node",
+        "demo/creative-kernels.mjs"
+      ],
+      "mcp": {
+        "status": "available",
+        "server": "telos",
+        "method": "tools/call",
+        "tool": "telos.creative.kernels"
+      },
+      "next_actions": [
+        "telos.measurement.layers",
+        "crucible.assess",
+        "index.context"
+      ]
+    },
+    {
+      "name": "telos.revival.registry",
+      "flagship": "telos",
+      "description": "Use when deciding which older, siloed, or frozen local tools should be promoted into flagship lanes. Read-only, zero-auth, no external side effects. Returns a JSON revival registry.",
+      "cli": [
+        "node",
+        "demo/revival-registry.mjs"
+      ],
+      "mcp": {
+        "status": "available",
+        "server": "telos",
+        "method": "tools/call",
+        "tool": "telos.revival.registry"
+      },
+      "next_actions": [
+        "gather.docs",
+        "index.context.envelope",
+        "crucible.review"
+      ]
+    },
+    {
+      "name": "telos.second_level.queue",
+      "flagship": "telos",
+      "description": "Use when assessing public-safe second-level flagship candidates before registry promotion. Read-only, zero-auth, no external side effects. Returns a JSON second-level flagship queue.",
+      "cli": [
+        "node",
+        "demo/second-level-flagship-queue.mjs"
+      ],
+      "mcp": {
+        "status": "available",
+        "server": "telos",
+        "method": "tools/call",
+        "tool": "telos.second_level.queue"
+      },
+      "next_actions": [
+        "telos.revival.registry",
+        "index.context.envelope",
+        "crucible.review"
+      ]
+    },
+    {
+      "name": "telos.workstation.substrate",
+      "flagship": "telos",
+      "description": "Use when a host needs public-safe aggregate intake for local workstation repositories and private/local lane families. Read-only, zero-auth, no external side effects. Returns a JSON workstation substrate register.",
+      "cli": [
+        "node",
+        "demo/workstation-substrate.mjs"
+      ],
+      "mcp": {
+        "status": "available",
+        "server": "telos",
+        "method": "tools/call",
+        "tool": "telos.workstation.substrate"
+      },
+      "next_actions": [
+        "telos.second_level.queue",
+        "telos.revival.registry",
+        "gather.docs",
+        "crucible.review"
+      ]
+    },
+    {
+      "name": "telos.display.calibration",
+      "flagship": "telos",
+      "description": "Use when display, color, ICC/LUT, artifact refs, or measurement gates need a non-mutating calibration contract. Read-only, zero-auth, no external side effects. Returns a JSON display-calibration contract.",
+      "cli": [
+        "node",
+        "demo/display-calibration.mjs"
+      ],
+      "mcp": {
+        "status": "available",
+        "server": "telos",
+        "method": "tools/call",
+        "tool": "telos.display.calibration"
+      },
+      "next_actions": [
+        "telos.measurement.layers",
+        "crucible.measurement_gate",
+        "telos.revival.registry"
+      ]
+    },
+    {
+      "name": "telos.native.control",
+      "flagship": "telos",
+      "description": "Use when a host needs the Telos native background-control capability catalog for browser (Chrome DevTools Protocol) and native-app (Windows UI Automation) actuation. Read-only, zero-auth, no external side effects. Returns a JSON capability and verb catalog.",
+      "cli": [
+        "node",
+        "demo/native-control.mjs"
+      ],
+      "mcp": {
+        "status": "available",
+        "server": "telos",
+        "method": "tools/call",
+        "tool": "telos.native.control"
+      },
+      "next_actions": [
+        "telos.action.receipt",
+        "telos.workstation.substrate"
+      ]
+    },
+    {
+      "name": "telos.browser.evidence",
+      "flagship": "telos",
+      "description": "Use when a host needs the synthetic browser evidence fixture for contract inspection. Read-only, zero-auth, no external side effects. Returns a JSON browser-evidence packet marked unredacted; URL and title context is retained.",
+      "cli": [
+        "node",
+        "demo/browser-evidence.mjs"
+      ],
+      "mcp": {
+        "status": "available",
+        "server": "telos",
+        "method": "tools/call",
+        "tool": "telos.browser.evidence"
+      },
+      "next_actions": [
+        "gather.run",
+        "index.context.envelope",
+        "forum.route",
+        "crucible.assess",
+        "telos.native.control"
+      ]
+    },
+    {
+      "name": "telos.showcase.scout",
+      "flagship": "telos",
+      "description": "Use when a host needs fixture-backed OSS Proof Showcase candidate rankings before public patch work. Read-only, zero-auth, no external side effects. Returns JSON scout results.",
+      "cli": [
+        "node",
+        "demo/showcase.mjs",
+        "scout",
+        "--fixture",
+        "--json"
+      ],
+      "mcp": {
+        "status": "available",
+        "server": "telos",
+        "method": "tools/call",
+        "tool": "telos.showcase.scout"
+      },
+      "next_actions": [
+        "gather.docs",
+        "index.map",
+        "crucible.assess"
+      ]
+    },
+    {
+      "name": "telos.proof",
+      "flagship": "telos",
+      "description": "Use when a host needs the fixture-backed agent-action proof packet joining source refs, context refs, route, admission, side effects, output digests, verifier checks, and the Emet witness stage. Read-only, zero-auth, no external side effects beyond local subprocess reads. Returns a JSON agent-action proof packet.",
+      "cli": [
+        "node",
+        "demo/proof.mjs",
+        "agent-action",
+        "--demo",
+        "--json"
+      ],
+      "mcp": {
+        "status": "available",
+        "server": "telos",
+        "method": "tools/call",
+        "tool": "telos.proof"
+      },
+      "next_actions": [
+        "gather.docs",
+        "index.map",
+        "crucible.assess"
+      ]
+    },
+    {
+      "name": "telos.proof.research",
+      "flagship": "telos",
+      "description": "Use when a host needs the fixture-backed research-claim proof packet joining source provenance, a bounded claim, a required negative control fixture, attempt records, recomputed source digests, and a promotion rung the verifier derives rather than trusts. Read-only, zero-auth, no external side effects beyond local subprocess reads. Returns a JSON research-claim proof packet.",
+      "cli": [
+        "node",
+        "demo/proof.mjs",
+        "research",
+        "--demo",
+        "--json"
+      ],
+      "mcp": {
+        "status": "available",
+        "server": "telos",
+        "method": "tools/call",
+        "tool": "telos.proof.research"
+      },
+      "next_actions": [
+        "gather.docs",
+        "index.map",
+        "crucible.assess"
+      ]
+    },
+    {
+      "name": "telos.proof.visual",
+      "flagship": "telos",
+      "description": "Use when a host needs the fixture-backed visual-truth proof packet whose color and luminance measurements are recomputed from the artifact's own embedded sRGB samples, with a read-only boundary and no physical-calibration overclaim. Read-only, zero-auth, no external side effects beyond local subprocess reads. Returns a JSON visual-truth proof packet.",
+      "cli": [
+        "node",
+        "demo/proof.mjs",
+        "visual",
+        "--demo",
+        "--json"
+      ],
+      "mcp": {
+        "status": "available",
+        "server": "telos",
+        "method": "tools/call",
+        "tool": "telos.proof.visual"
+      },
+      "next_actions": [
+        "gather.docs",
+        "index.map",
+        "crucible.assess"
+      ]
+    },
+    {
+      "name": "telos.proof.build",
+      "flagship": "telos",
+      "description": "Use when a host needs the fixture-backed build scientific-runtime proof packet whose conserved-quantity invariant and conservation drift are recomputed from the run's own embedded samples with stdlib math, checked within bounded tolerances, and controlled by a required negative fixture that must break the invariant. Read-only, zero-auth, no external side effects beyond local subprocess reads. Returns a JSON build proof packet.",
+      "cli": [
+        "node",
+        "demo/proof.mjs",
+        "build",
+        "--demo",
+        "--json"
+      ],
+      "mcp": {
+        "status": "available",
+        "server": "telos",
+        "method": "tools/call",
+        "tool": "telos.proof.build"
+      },
+      "next_actions": [
+        "gather.docs",
+        "index.map",
+        "crucible.assess"
+      ]
+    }
+  ]
+}

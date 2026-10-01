@@ -1,0 +1,317 @@
+{
+  "schema": "project-telos.atp-adapter-validation/v1",
+  "verified_on": "2026-06-28",
+  "protocol": {
+    "name": "Agent Transaction Protocol",
+    "version": "1.2.0",
+    "branch": "atp-v1.2.0",
+    "commit": "7c05f7da950d52a3ceea73d0cd20f66955358629"
+  },
+  "purpose": "Synthetic Telos validation profile for testing whether ATP v1.2.0-style transaction receipts preserve digest-bound inputs, component identity, side-effect taxonomy, policy decisions, verification verdicts, typed stop reasons, and append-only compensation.",
+  "validation_scope": {
+    "claims_production_readiness": false,
+    "requires_live_atp_server": false,
+    "signing_anchoring_storage_validated": false,
+    "scope_note": "This fixture validates adapter shape against public/synthetic Telos workflows only. It does not certify Haystack, ATP, signing, anchoring, storage, production readiness, or end-to-end interoperability."
+  },
+  "sources_checked": [
+    {
+      "name": "Haystack ATP feedback thread",
+      "url": "https://github.com/deepset-ai/haystack/issues/11266"
+    },
+    {
+      "name": "ATP v1.2.0 branch",
+      "url": "https://github.com/vystartasv/specs/tree/atp-v1.2.0",
+      "commit": "7c05f7da950d52a3ceea73d0cd20f66955358629"
+    },
+    {
+      "name": "ATP transaction spec",
+      "url": "https://github.com/vystartasv/specs/blob/atp-v1.2.0/transaction.md"
+    },
+    {
+      "name": "ATP TypeScript example",
+      "url": "https://github.com/vystartasv/specs/blob/atp-v1.2.0/transaction/v1.2.0/typescript.md"
+    },
+    {
+      "name": "ATP Python example",
+      "url": "https://github.com/vystartasv/specs/blob/atp-v1.2.0/transaction/v1.2.0/python.md"
+    },
+    {
+      "name": "ATP cURL example",
+      "url": "https://github.com/vystartasv/specs/blob/atp-v1.2.0/transaction/v1.2.0/curl.md"
+    }
+  ],
+  "adapter_operations": [
+    "/v1/transaction/create-transaction",
+    "/v1/transaction/commit",
+    "/v1/transaction/compensate",
+    "/v1/transaction/{action_id}/status",
+    "/v1/transaction/{action_id}/verify"
+  ],
+  "required_fields": [
+    "atp_version",
+    "action_id",
+    "pipeline_run_id",
+    "component_invocation_id",
+    "parent_receipt_id",
+    "idempotency_key",
+    "guarantee_level",
+    "agent_id",
+    "input_digest",
+    "material_digest",
+    "side_effect_class",
+    "component_version",
+    "config_hash",
+    "policy.decision",
+    "result.stop_reason",
+    "verification.verdict"
+  ],
+  "allowed_values": {
+    "verification_verdicts": [
+      "MATCH",
+      "DRIFT",
+      "UNVERIFIABLE"
+    ],
+    "side_effect_classes": [
+      "read",
+      "write",
+      "external",
+      "human"
+    ],
+    "policy_decisions": [
+      "APPROVED",
+      "DENIED",
+      "ESCALATED"
+    ],
+    "stop_reasons": [
+      "success",
+      "timeout",
+      "unauthorized",
+      "policy_denied",
+      "system_error",
+      "user_cancelled",
+      "verification_unverifiable",
+      "compensated"
+    ]
+  },
+  "canonicalization": {
+    "standard": "RFC 8785",
+    "digest_fields": [
+      "input_digest",
+      "material_digest",
+      "config_hash"
+    ],
+    "signature_payload_fields": [
+      "action_id",
+      "pipeline_run_id",
+      "component_invocation_id",
+      "input_digest",
+      "material_digest",
+      "policy.decision",
+      "verification.verdict"
+    ],
+    "metadata_interop_status": "expected_to_diverge"
+  },
+  "haystack_component_middleware": {
+    "hook": "component-level callback",
+    "receiver_owns_signing_or_storage_backend": false,
+    "component_invocation_emits_receipt": true,
+    "pipeline_run_root_links_component_receipts": true,
+    "verifier_walks_tree_without_calling_runtime": true,
+    "fixture_vectors": "Project Telos synthetic validation cases"
+  },
+  "validation_cases": [
+    {
+      "id": "gather.intake.digest_refs",
+      "atp_version": "1.2.0",
+      "action_id": "act_gather_intake_001",
+      "pipeline_run_id": "pipe_telos_fixture_001",
+      "component_invocation_id": "invoke_gather_intake_001",
+      "parent_receipt_id": "receipt:pipe/telos-fixture-001",
+      "idempotency_key": "gather-source-intake-demo-001",
+      "guarantee_level": "atp-1",
+      "agent_id": "agent:gather.intake",
+      "component_version": "gather-demo@2026.06.28",
+      "config_hash": "sha256:07138f6934bb9265dbcb7cd16f8772338592a2ce858e234083e7d2e1f5e0c6d4",
+      "input_digest": "sha256:5ec7311dbcf6f6a3c303cd434f965b23b2c4aaec5bca48ae7c2ef56af15d20ab",
+      "material_digest": "sha256:702b3f59d7f0fc266a5503f63a35c3ef55d172fc78367c7bf4f7af7a822e2ea3",
+      "raw_payload_required": false,
+      "side_effect_class": "read",
+      "policy": {
+        "policy_ref": "policy:gather-public-source-read-v1",
+        "decision": "APPROVED",
+        "applied_by": "telos.synthetic-policy"
+      },
+      "result": {
+        "state": "COMPLETED",
+        "stop_reason": "success"
+      },
+      "verification": {
+        "verdict": "MATCH",
+        "evidence_ref": "receipt:gather/intake/public-source-demo"
+      }
+    },
+    {
+      "id": "index.workspace_map.config_hash",
+      "atp_version": "1.2.0",
+      "action_id": "act_index_workspace_001",
+      "pipeline_run_id": "pipe_telos_fixture_001",
+      "component_invocation_id": "invoke_index_workspace_001",
+      "parent_receipt_id": "receipt:gather/intake/public-source-demo",
+      "idempotency_key": "index-workspace-map-demo-001",
+      "guarantee_level": "atp-1",
+      "agent_id": "agent:index.map",
+      "component_version": "index-demo@2026.06.28",
+      "config_hash": "sha256:adf9b0dd39ab23c83d5d8c8bb9b360968647c39962089f3e2d3f3c7aa43b95bb",
+      "input_digest": "sha256:c72d1c7bdb58c90d5afdd94a9ba54a5111e4a3b775be192e59e7f5c637fd947a",
+      "material_digest": "sha256:75c27d68122e0e5de67c48d03fbf397c5d70d7c705fb40252d33c62ae3ba6ee6",
+      "raw_payload_required": false,
+      "side_effect_class": "read",
+      "policy": {
+        "policy_ref": "policy:index-local-workspace-read-v1",
+        "decision": "APPROVED",
+        "applied_by": "telos.synthetic-policy"
+      },
+      "result": {
+        "state": "COMPLETED",
+        "stop_reason": "success"
+      },
+      "verification": {
+        "verdict": "MATCH",
+        "evidence_ref": "receipt:index/workspace-map-demo"
+      }
+    },
+    {
+      "id": "forum.route.policy_action",
+      "atp_version": "1.2.0",
+      "action_id": "act_forum_route_001",
+      "pipeline_run_id": "pipe_telos_fixture_001",
+      "component_invocation_id": "invoke_forum_route_001",
+      "parent_receipt_id": "receipt:index/workspace-map-demo",
+      "idempotency_key": "forum-route-action-demo-001",
+      "guarantee_level": "atp-2",
+      "agent_id": "agent:forum.route",
+      "component_version": "forum-demo@2026.06.28",
+      "config_hash": "sha256:85c1df9385ade6f68bb449b7e532caaae3e6b7b4afd5f8ab58d2163f020d7cc9",
+      "input_digest": "sha256:747dc13bafec0ac4bd41e164e46bfa0d16ab27030aa6762b7a255907c15c782c",
+      "material_digest": "sha256:e107b943e6b69b460fc29b717d47ffcf8144bd05d241a94939c749394742b9e8",
+      "raw_payload_required": false,
+      "side_effect_class": "external",
+      "policy": {
+        "policy_ref": "policy:forum-public-github-reply-v1",
+        "decision": "APPROVED",
+        "applied_by": "telos.synthetic-policy"
+      },
+      "result": {
+        "state": "COMPLETED",
+        "stop_reason": "success"
+      },
+      "verification": {
+        "verdict": "MATCH",
+        "evidence_ref": "receipt:forum/route-action-demo"
+      }
+    },
+    {
+      "id": "crucible.verdict.unverifiable",
+      "atp_version": "1.2.0",
+      "action_id": "act_crucible_unverifiable_001",
+      "pipeline_run_id": "pipe_telos_fixture_001",
+      "component_invocation_id": "invoke_crucible_unverifiable_001",
+      "parent_receipt_id": "receipt:forum/route-action-demo",
+      "idempotency_key": "crucible-unverifiable-demo-001",
+      "guarantee_level": "atp-1",
+      "agent_id": "agent:crucible.assess",
+      "component_version": "crucible-demo@2026.06.28",
+      "config_hash": "sha256:9e27083ab3c0132ee8f9fa1b37086d904c18e9d70a16c2a1f59bb089c02f01aa",
+      "input_digest": "sha256:34da9f6ca929c86ecfb432339e7a33cf9b7e927972e8735893e90fcf3ae94568",
+      "material_digest": "sha256:2a506289a6481b806c8d98b4a28038b986cde68c4ad15230ab5e94544f9337ba",
+      "raw_payload_required": false,
+      "side_effect_class": "read",
+      "policy": {
+        "policy_ref": "policy:crucible-local-assessment-v1",
+        "decision": "APPROVED",
+        "applied_by": "telos.synthetic-policy"
+      },
+      "result": {
+        "state": "FAILED",
+        "stop_reason": "verification_unverifiable"
+      },
+      "verification": {
+        "verdict": "UNVERIFIABLE",
+        "evidence_ref": "receipt:crucible/missing-verifier-result-demo"
+      }
+    },
+    {
+      "id": "telos.compensation.append_only",
+      "event_type": "compensation",
+      "atp_version": "1.2.0",
+      "action_id": "act_telos_compensation_001",
+      "compensates": "act_forum_route_001",
+      "pipeline_run_id": "pipe_telos_fixture_001",
+      "component_invocation_id": "invoke_telos_compensation_001",
+      "parent_receipt_id": "receipt:crucible/missing-verifier-result-demo",
+      "idempotency_key": "telos-compensation-demo-001",
+      "guarantee_level": "atp-3",
+      "agent_id": "agent:telos.room",
+      "component_version": "telos-demo@2026.06.28",
+      "config_hash": "sha256:efa684e74db1319247e7177401e379b3d182d7078cc727b83c728685ed0d1128",
+      "input_digest": "sha256:0ebdbd5949f60f5f00c986f1e1e9417f9c69a068f35a4a82ba4a2332781aa6fa",
+      "material_digest": "sha256:e3cae2874090b9dc1ce2b8bdd6f876e3151fd896a38b642976f7cc97e6e93f36",
+      "raw_payload_required": false,
+      "side_effect_class": "external",
+      "policy": {
+        "policy_ref": "policy:telos-compensation-human-approved-v1",
+        "decision": "APPROVED",
+        "applied_by": "telos.synthetic-policy"
+      },
+      "result": {
+        "state": "COMPLETED",
+        "stop_reason": "compensated"
+      },
+      "verification": {
+        "verdict": "MATCH",
+        "evidence_ref": "receipt:telos/append-only-compensation-demo"
+      },
+      "original_action_snapshot": {
+        "action_id": "act_forum_route_001",
+        "result": {
+          "state": "COMPLETED",
+          "stop_reason": "success"
+        },
+        "mutated_by_compensation": false
+      },
+      "derived_views": {
+        "compensated_by": "act_telos_compensation_001"
+      }
+    }
+  ],
+  "failure_codes": [
+    "rollback_mutated_original",
+    "material_digest_missing",
+    "verification_verdict_missing",
+    "policy_verdict_collapsed",
+    "stop_reason_untyped"
+  ],
+  "negative_cases": [
+    {
+      "name": "rollback_changes_original_completed_record",
+      "failure_code": "rollback_mutated_original"
+    },
+    {
+      "name": "receipt_contains_raw_parameters_without_material_digest",
+      "failure_code": "material_digest_missing"
+    },
+    {
+      "name": "result_state_without_match_drift_unverifiable",
+      "failure_code": "verification_verdict_missing"
+    },
+    {
+      "name": "policy_denied_used_as_verification_verdict",
+      "failure_code": "policy_verdict_collapsed"
+    },
+    {
+      "name": "free_text_error_without_typed_stop_reason",
+      "failure_code": "stop_reason_untyped"
+    }
+  ]
+}
