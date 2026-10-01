@@ -135,7 +135,7 @@ test("the key is created once, never overwritten, and never leaves the signer", 
   assert.equal(signer.key_id, pub.key_id);
   assert.deepEqual(Object.keys(signer).sort(), ["key_id", "public_key", "sign"]);
   if (process.platform !== "win32") {
-    assert.equal(statSync(path.join(home, "keys", "telos-ed25519.pem")).mode & 0o077, 0, "private key is owner-only");
+    assert.equal(statSync(path.join(home, "keys", "telos-ed25519.key")).mode & 0o077, 0, "private key is owner-only");
   }
   assert.ok(existsSync(publicKeyPath(home)));
   const chain = ReceiptChain.open({ home, session_id: "s_auto" });
