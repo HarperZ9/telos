@@ -4,12 +4,13 @@
 // dependencies. The receipts slice signs chain heads with the same key; the
 // file names below are the shared contract (DESIGN.md 4.2).
 import { createPrivateKey, createPublicKey, generateKeyPairSync, sign, verify } from "node:crypto";
-import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { existsSync, readFileSync } from "node:fs";
 import path from "node:path";
+import { initKey, PRIVATE_FILE, PUBLIC_PEM_FILE } from "../receipts/keys.mjs";
 import { sha256Hex } from "./canonical.mjs";
 
-export const PRIVATE_KEY_FILE = "telos-ed25519.key";
-export const PUBLIC_KEY_FILE = "telos-ed25519.pub";
+export const PRIVATE_KEY_FILE = PRIVATE_FILE;
+export const PUBLIC_KEY_FILE = PUBLIC_PEM_FILE;
 
 export function generateKeys() {
   return generateKeyPairSync("ed25519");
@@ -42,15 +43,13 @@ export function requireTty(isTTY, what) {
   }
 }
 
+// initKeys - `dir` is <state root>/keys. The receipt key module writes the
+// files, so the broker and the receipt chain share one key.
 export function initKeys(dir, { isTTY } = {}) {
   requireTty(isTTY, "telos keys init");
-  const priv = path.join(dir, PRIVATE_KEY_FILE);
-  if (existsSync(priv)) throw new Error(`a Telos key already exists in ${dir}`);
-  mkdirSync(dir, { recursive: true, mode: 0o700 });
-  const { privateKey, publicKey } = generateKeys();
-  writeFileSync(priv, privateKey.export({ type: "pkcs8", format: "pem" }), { mode: 0o600, flag: "wx" });
-  writeFileSync(path.join(dir, PUBLIC_KEY_FILE), publicKey.export({ type: "spki", format: "pem" }), { mode: 0o644, flag: "wx" });
-  return { key_id: keyId(publicKey) };
+  if (path.basename(dir) !== "keys") throw new Error("initKeys expects the <state root>/keys directory");
+  const { key_id } = initKey({ home: path.dirname(dir) });
+  return { key_id };
 }
 
 export function loadPublicKey(dir) {

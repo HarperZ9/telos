@@ -9,6 +9,8 @@ import path from "node:path";
 import os from "node:os";
 import { fileURLToPath } from "node:url";
 import { Ledger } from "./demo/native-control/ledger.mjs";
+import { ReceiptChain } from "./demo/receipts/chain.mjs";
+import { ephemeralSigner } from "./demo/receipts/keys.mjs";
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const verifier = path.join(here, "verify_packet.mjs");
@@ -70,6 +72,17 @@ const badLedgerPath = path.join(dir, "ledger.tampered.json");
 writeFileSync(badLedgerPath, `${JSON.stringify(badLedger, null, 2)}\n`, "utf8");
 const tamperedLedger = run(badLedgerPath);
 ok("tampered ledger exits 1 (DRIFT)", tamperedLedger.status === 1);
+
+// A telos.receipt/v1 session file: hash-chained, ed25519-signed heads.
+const chain = ReceiptChain.open({ home: dir, session_id: "s_verify_packet", signer: ephemeralSigner() });
+chain.append({ tier: "T1", verb: "observe.snapshot", status: "OK", executed: true });
+chain.append({ tier: "T3", verb: "browser.click", status: "HOLD", hold_id: "h_1" });
+chain.close();
+const cleanChain = spawnSync(process.execPath, [verifier, chain.file, "--checkpoints", chain.checkpointFile], { encoding: "utf8" });
+ok("clean receipt chain exits 0 (MATCH)", cleanChain.status === 0 && /^MATCH/.test(cleanChain.stdout));
+const badChainPath = path.join(dir, "chain.tampered.jsonl");
+writeFileSync(badChainPath, readFileSync(chain.file, "utf8").replace('"status":"HOLD"', '"status":"APPROVED"'), "utf8");
+ok("tampered receipt chain exits 1 (DRIFT)", run(badChainPath).status === 1);
 
 console.log(`\npass ${pass} / fail ${fail}`);
 process.exit(fail ? 1 : 0);
