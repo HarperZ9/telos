@@ -3,6 +3,7 @@ import { existsSync, mkdtempSync, writeFileSync, rmSync, statSync } from "node:f
 import path from "node:path";
 import os from "node:os";
 import { fileURLToPath } from "node:url";
+import { resolveSiblingsRoot } from "./siblings.mjs";
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const telosRoot = path.resolve(here, "..");
@@ -22,14 +23,15 @@ export const WITNESS_UNAVAILABLE = Object.freeze({
 // TELOS_EMET_DISABLE_FALLBACKS restricts resolution to TELOS_EMET_CLI only, so
 // a test can force the honest unavailable path deterministically even when a
 // sibling emet is present.
+// The sibling fallback uses the same root rule as the room and workflow tools:
+// TELOS_SIBLINGS_ROOT or the parent of a git checkout, never node_modules.
 export function resolveEmet() {
   const fallbacksDisabled = process.env.TELOS_EMET_DISABLE_FALLBACKS === "1";
-  const candidates = fallbacksDisabled
-    ? [process.env.TELOS_EMET_CLI]
-    : [
-        process.env.TELOS_EMET_CLI,
-        path.join(telosRoot, "..", "emet", "impl", "js", "emet.js")
-      ];
+  const siblings = fallbacksDisabled ? { root: null } : resolveSiblingsRoot({ telosRoot });
+  const candidates = [
+    process.env.TELOS_EMET_CLI,
+    siblings.root ? path.join(siblings.root, "emet", "impl", "js", "emet.js") : null
+  ];
   for (const candidate of candidates) {
     if (!candidate) continue;
     try {

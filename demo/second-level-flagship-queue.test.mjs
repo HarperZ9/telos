@@ -75,7 +75,8 @@ assert.ok(byId.get("rewardspy").host_flagships.includes("telos.objective.monitor
 assert.match(byId.get("rewardspy").risk_boundary, /upstream license/);
 
 for (const candidate of queue.public_candidates) {
-  assert.ok(candidate.origin.startsWith("C:/dev/public/"), `${candidate.id} stays in public source lane`);
+  assert.match(candidate.origin.repo, /^HarperZ9\/[A-Za-z0-9._-]+$/, `${candidate.id} stays in public source lane`);
+  assert.equal(candidate.receipts[0].ref, undefined, `${candidate.id} receipt carries no local ref`);
   assert.equal(candidate.visibility, "public-github-remote");
   assert.ok(candidate.host_flagships.length > 0, `${candidate.id} has hosts`);
   assert.ok(candidate.value.length > 0, `${candidate.id} has value`);

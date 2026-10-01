@@ -1,8 +1,21 @@
 # Project Telos Current State
 
+## 0.7.0 release, 2026-10-01
+
+0.7.0 is the current npm and GitHub release and replaces 0.6.0.
+Every native-control verb runs through a permission tier gate, every gated
+call writes a signed receipt that verifies offline, and the model acts on
+accessibility-tree refs. A fresh install refuses every verb above T0 until the
+operator runs `telos keys init` and `telos grant issue` at an interactive
+terminal. Release checksum files are now written with LF line endings on every
+OS, so `sha256sum -c` passes on older coreutils. No live browser, UI
+Automation or device action ran in the release tests. See
+[the 0.7.0 notes](RELEASE-NOTES-0.7.0.md) and
+[the tier spec](spec/telos-tiers.md).
+
 ## 0.6.0 release, 2026-10-01
 
-0.6.0 is the current npm and GitHub release and replaces 0.5.0.
+0.6.0 replaced 0.5.0.
 The release removes native-control code that an audit of the 0.5.0 package
 placed outside what Telos supports: a scraper with a browser-impersonating
 User-Agent, unattended email, social-post and consumer sign-in verbs,
@@ -53,7 +66,7 @@ This document is a live state packet for Project Telos. It is deliberately evide
 - Gather docs sealed the Telos docs surface on 2026-07-02 with seal `24b94d64f78e323245338463f79b6b87d97738bf1db489234826ff438a3d6270`; the model-facing catalog dropped 38 large payloads, so the Telos repo subregistry uses direct file reads plus Index, Forum, and Telos operator-doctor receipts.
 - Latest Telos repo Index map generated `2026-07-02T13:37:49-07:00`: one public repo on `main`, head `1e0e1a1`, dirty count 3, untracked count 35, root SHA256 prefix `45e8256faa8bdc98`.
 - Telos operator doctor generated `2026-07-02T20:37:50.274Z` returned `MATCH` with 14/14 checks passed across README, current state, CI, catalog, manifest, and status discoverability surfaces.
-- Index workspace map: `C:\dev\public`, generated `2026-06-28T17:29:42-07:00`.
+- Index workspace map: the workspace public root, generated `2026-06-28T17:29:42-07:00`.
 - Index public workspace `repo_count: 52`, public repos 48, local repos 4.
 - Index public workspace `root_sha256_prefix: 92ef331e0850ccf6`.
 - Index whole development workspace map generated `2026-06-29T00:49:59-07:00`: 124 repositories, 114 public-class, 10 local-class, 93 dirty repositories, root SHA256 prefix `99e773d965f606c9`.
@@ -67,7 +80,7 @@ This document is a live state packet for Project Telos. It is deliberately evide
 - Telos catalog now presents 69 available tools across the five flagships, including `telos.context.pack`, `telos.model.foundry`, `telos.learning.forge`, `telos.learning.labs`, `telos.mcp.freshness`, `telos.ci.doctor`, `telos.ci.triage`, `telos.presentation.doctor`, `telos.accessibility.doctor`, `telos.performance.doctor`, `telos.compatibility.doctor`, `telos.operator.doctor`, `telos.research.thermodynamic`, `telos.second_level.queue`, `telos.workstation.substrate`, `telos.native.control`, `telos.browser.evidence`, `telos.showcase.scout`, `telos.proof`, `telos.proof.research`, `telos.proof.visual`, and `telos.proof.build`.
 - Four proof lanes now ship in Telos through one CLI, `node demo/proof.mjs`: agent-action (`project-telos.proof-packet/v1`, `telos.proof`), research-claim (`project-telos.research-proof-packet/v1`, `telos.proof.research`), visual-truth (`project-telos.visual-proof-packet/v1`, `telos.proof.visual`), and build scientific-runtime (`project-telos.build-proof-packet/v1`, `telos.proof.build`). Each lane assembles a canonical packet, verifies it with a pure verifier that recomputes every load-bearing claim from embedded materials and can return `DRIFT` or `UNVERIFIABLE`, and exports a proof-surface shape whose `decision_summary` is derived from the overall verdict. A canned `MATCH` is structurally impossible in every lane. The full delivery-order progress ledger is `docs/PROOF-LANES.md`.
 - Browser Evidence Kernel now has a cross-repo smoke receipt at `demo/research/browser-evidence-smoke.json`: Telos owns `project-telos.browser-evidence/v1`; Gather, Index, Forum, Crucible, Learn, Emet, and BuildLang consume packet refs instead of duplicating browser stacks. The model-council path stays deliberate: deterministic local gates preserve refs and hashes first, then Index and Forum route richer browser context into council/review paths when uncertainty, complexity, or operator intent justifies the overhead. The smoke receipt tracks tokens spent, council calls, artifact dereferences, route confidence, and verdict rates as the local-vs-council efficiency baseline.
-- The active flagship-state goal ledger is `docs/FLAGSHIP-STATE-GOAL.md`. The latest dogfood pass records Telos compatibility `MATCH`, Gather status `MATCH`, Index maps for `C:\dev\public` (52 repos, 2 dirty), `C:\dev\opsec` (5 repos, 0 dirty), and `C:\dev\state` (4 repos, 0 dirty), Forum routing to `project-telos`, Aleph private-line MCP config `MATCH`, and Gather source launcher commit `ab959c7` with green CI run `28459724472`.
+- The active flagship-state goal ledger is `docs/FLAGSHIP-STATE-GOAL.md`. The latest dogfood pass records Telos compatibility `MATCH`, Gather status `MATCH`, Index maps for the workspace public root (52 repos, 2 dirty), the operator security root (5 repos, 0 dirty), and the workspace state root (4 repos, 0 dirty), Forum routing to `project-telos`, Aleph private-line MCP config `MATCH`, and Gather source launcher commit `ab959c7` with green CI run `28459724472`.
 - Native background control (`telos.native.control` / `node demo/native-control.mjs`) drives the browser via the Chrome DevTools Protocol and native apps via Windows UI Automation, delivering synthetic events into each target so the operator's physical cursor and keyboard stay free. The MCP tool is the read-only capability catalog; actuation runs locally through the CLI.
 - The canonical connection and distribution map now lives at `docs/PROJECT-CONNECTION-MAP.md`. It treats the five flagships as the current organs and the wider HarperZ9 public repo corpus as Telos growth tissue.
 - GitHub authenticated inventory checked 77 visible HarperZ9 repos: 47 public non-forks, 4 public forks, 25 private active repos, and 1 private archived repo. Private and local-only viability stays in ignored local packets until sanitized.
@@ -215,7 +228,7 @@ domain-expansion lanes until primary sources or replayed experiments promote
 one claim at a time.
 
 The first cross-repo public-doc catalog now scans 54 top-level Git repos under
-`C:\dev\public` and counts 909 Markdown/RST docs. It separates seven lanes:
+the workspace public root and counts 909 Markdown/RST docs. It separates seven lanes:
 research/philosophy corpus, five-flagship spine, supporting tooling,
 agent-accountability organs, Build ecosystem, proof/witnessing, and
 creative/rendering engine. The highest-priority subregistries are

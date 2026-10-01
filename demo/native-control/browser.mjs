@@ -218,8 +218,8 @@ export async function uploadFile(session, selector, filePath) {
   return { uploaded: filePath, selector };
 }
 
-// Evaluate inside a specific (often cross-origin) iframe. Greenhouse/Lever/
-// Workday render their application forms in cross-origin iframes the main-frame
+// Evaluate inside a specific (often cross-origin) iframe. Hosted forms such as
+// Workday render their forms in cross-origin iframes the main-frame
 // eval cannot reach. Resolves the frame by URL substring, creates an isolated
 // world in it (DOM-visible, page-JS-isolated), and evaluates there.
 export async function evalInFrame(session, frameUrlMatch, expression) {
@@ -260,3 +260,4 @@ export async function uploadInFrame(session, frameUrlMatch, selector, filePath) 
   if (!locate.result?.value) throw new Error(`uploadInFrame: file input not found in frame: ${selector}`);
   return { frame: target.url, found: locate.result.value };
 }
+export * from "./browser-ref.mjs";

@@ -29,6 +29,10 @@ import * as runner from "./native-control/runner.mjs";
 import { Ledger } from "./native-control/ledger.mjs";
 import * as network from "./native-control/network.mjs";
 import * as learn from "./native-control/learn.mjs";
+import { defaultBroker } from "./broker/index.mjs";
+import { actByRef } from "./native-control/act-ref.mjs";
+
+export { actByRef };
 
 // The catalog module owns the receipt shape so the MCP tool can return the
 // catalog without loading any driver.
@@ -63,6 +67,23 @@ async function runBrowser(verb, params, flags, { connect = connectBrowser } = {}
     switch (verb) {
       case "navigate":
         return await browser.navigate(session, params[0]);
+      case "snapshot-ax": {
+        // Read-only accessibility outline with element refs (DESIGN.md 5.1).
+        const { newEpoch } = await import("./surface/refs.mjs");
+        const { ACTIONABLE_ROLES, buildBrowserSnapshot } = await import("./surface/snapshot.mjs");
+        const { saveEpoch } = await import("./surface/epochs.mjs");
+        const raw = await browser.axSnapshot(session, { actionableRoles: ACTIONABLE_ROLES, maxNodes: flags.max ? Number(flags.max) : undefined });
+        const target = await browser.pageState(session);
+        const snapshot = buildBrowserSnapshot({ epoch: newEpoch(), targetId: flags.match ?? "page", frameId: raw.frameId,
+          axNodes: raw.nodes, boxes: raw.boxes, attrs: raw.attrs });
+        saveEpoch(snapshot, { target: { origin: new URL(target.url || "about:blank").origin } });
+        return snapshot;
+      }
+      case "click-ref":
+      case "fill-ref":
+      case "select-ref":
+      case "focus-ref":
+        return await actByRef(session, verb, params);
       case "eval":
         return await browser.evalJs(session, params[0]);
       case "evalfile":
@@ -174,6 +195,18 @@ async function runApp(verb, params) {
       return app.windows();
     case "tree":
       return app.tree(params[0], params[1]);
+    case "snapshot-ax": {
+      const { newEpoch } = await import("./surface/refs.mjs");
+      const { buildUiaSnapshot } = await import("./surface/snapshot.mjs");
+      const { saveEpoch } = await import("./surface/epochs.mjs");
+      const t = await app.tree(params[0], params[1]);
+      const snapshot = buildUiaSnapshot({ epoch: newEpoch(), hwnd: t.hwnd, processImage: t.process,
+        elements: t.elements ?? [], truncated: t.truncated, settlesAbsence: t.settlesAbsence });
+      saveEpoch(snapshot, { target: { hwnd: t.hwnd, window: t.window } });
+      return snapshot;
+    }
+    case "resolve":
+      return app.resolve(params[0], params[1]);
     case "invoke":
       return app.invoke(params[0], params[1]);
     case "setvalue":
@@ -198,7 +231,7 @@ async function runApp(verb, params) {
 async function runDevice(verb, params) {
   switch (verb) {
     case "exec":
-      return device.exec(params.join(" "));
+      return device.exec(params);
     case "read":
       return device.read(params[0], params[1] ? Number(params[1]) : undefined);
     case "write":
@@ -224,6 +257,21 @@ export async function run(domain, verb, params, flags = {}, options = {}) {
   throw new Error(`unknown domain: ${domain} (expected browser|app|device|learn)`);
 }
 
+// The CLI reaches the drivers only through the tier gate (DESIGN.md 1.1 to
+// 1.4). `--hold=<id>` re-issues a held call after a human approved it with
+// `telos confirm`; `--dry-run=1` resolves and receipts without acting.
+export async function gatedRun(domain, verb, params, flags = {}, { broker } = {}) {
+  const port = flags.port ? Number(flags.port) : DEFAULT_PORT;
+  const gate = broker ?? defaultBroker({
+    executor: (v, p, f) => run(domain, v.slice(domain.length + 1), p, f),
+    browser,
+    app,
+    port,
+    notify: (h) => process.stderr.write(`telos: ${h.verb} (${h.tier}) is held as ${h.hold_id}. Approve it at an interactive terminal with \`telos confirm approve ${h.hold_id}\`, then re-run with --hold=${h.hold_id}.\n`),
+  });
+  return gate.call({ verb: `${domain}.${verb}`, params, flags, hold_id: flags.hold, dry_run: flags["dry-run"] === "1" });
+}
+
 async function main() {
   const { domain, verb, params, flags } = parseArgs(process.argv.slice(2));
   if (!domain || !verb) {
@@ -231,8 +279,10 @@ async function main() {
     return;
   }
   try {
-    const result = await run(domain, verb, params, flags);
-    process.stdout.write(`${JSON.stringify(makeReceipt(`${domain}.${verb}`, params[0] ?? null, result), null, 2)}\n`);
+    const result = await gatedRun(domain, verb, params, flags);
+    const ok = result.status === "OK" || result.status === "DRY_RUN";
+    process.stdout.write(`${JSON.stringify(makeReceipt(`${domain}.${verb}`, params[0] ?? null, result, { ok }), null, 2)}\n`);
+    if (!ok) process.exitCode = result.status === "HOLD" || result.status === "EXPIRED" ? 2 : 1;
   } catch (err) {
     process.stdout.write(
       `${JSON.stringify(makeReceipt(`${domain}.${verb}`, params[0] ?? null, { error: err.message }, { ok: false }), null, 2)}\n`,

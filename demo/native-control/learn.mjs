@@ -4,16 +4,39 @@
 // step chained into the ledger, so a study + certification-prep run is itself a
 // witnessed artifact. learn stays its own public flagship; this is the bridge.
 //
-// Shells to the learn CLI (node src/cli.mjs). Override the path with LEARN_CLI.
-// learn uses exit code as a SIGNAL (e.g. mastery "not yet" exits non-zero), so
-// run() returns the verdict text on stdout regardless of exit code.
+// Shells to the learn CLI. Resolution order: LEARN_CLI (a path to learn's
+// src/cli.mjs), then the `learn` bin of an installed @harperz9/learn package
+// found through PATH. There is no default path: when neither resolves, every
+// action answers UNAVAILABLE with the install command. learn uses exit code as
+// a SIGNAL (e.g. mastery "not yet" exits non-zero), so run() returns the
+// verdict text on stdout regardless of exit code.
 
 import { spawnSync } from "node:child_process";
+import { existsSync } from "node:fs";
+import path from "node:path";
 
-export const LEARN_CLI = process.env.LEARN_CLI || "C:/dev/public/learn/src/cli.mjs";
+export const LEARN_INSTALL = "npm install -g @harperz9/learn";
 
-export function run(args, { timeoutMs = 45000 } = {}) {
-  const r = spawnSync("node", [LEARN_CLI, ...args.map(String)], {
+// Global npm installs put the package beside the PATH shim on Windows
+// (<prefix>/node_modules) and under <prefix>/lib/node_modules elsewhere.
+export function resolveLearnCli(env = process.env, exists = existsSync) {
+  if (env.LEARN_CLI && env.LEARN_CLI.trim()) return { cli: env.LEARN_CLI.trim(), source: "LEARN_CLI" };
+  const rel = path.join("node_modules", "@harperz9", "learn", "src", "cli.mjs");
+  const dirs = String(env.PATH || env.Path || "").split(path.delimiter).filter(Boolean);
+  for (const dir of dirs) {
+    for (const candidate of [path.join(dir, rel), path.join(dir, "..", "lib", rel)]) {
+      if (exists(candidate)) return { cli: candidate, source: "PATH" };
+    }
+  }
+  return { cli: null, source: null };
+}
+
+export function run(args, { timeoutMs = 45000, env = process.env } = {}) {
+  const { cli } = resolveLearnCli(env);
+  if (!cli) {
+    return { ok: false, status: "UNAVAILABLE", out: "", err: `learn is not installed; run: ${LEARN_INSTALL}`, exit: null };
+  }
+  const r = spawnSync(process.execPath, [cli, ...args.map(String)], {
     encoding: "utf-8", timeout: timeoutMs, windowsHide: true, maxBuffer: 1 << 20,
   });
   const out = String(r.stdout || "").trim();

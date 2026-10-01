@@ -37,9 +37,14 @@
       "id": "calibrate-pro",
       "name": "Calibrate Pro",
       "origin_paths": [
-        "C:/dev/public/calibrate-pro",
-        "C:/dev/protected/legacy-repos/APPS/calibrate-pro",
-        "C:/dev/protected/legacy-repos/APPS/quanta-color"
+        {
+          "repo": "HarperZ9/calibrate-pro",
+          "path": ""
+        },
+        {
+          "repo": "HarperZ9/build-color",
+          "path": ""
+        }
       ],
       "lineage": "Frozen display calibration application with color math, panel workflows, ICC/LUT output, and verification reports.",
       "promotion_lane": "display-calibration",
@@ -70,11 +75,15 @@
         ],
         "receipts": [
           {
-            "ref": "C:/dev/public/calibrate-pro/README.md",
+            "repo": "HarperZ9/calibrate-pro",
+            "commit": "ba415e6a75fe5145c27c634c658646120a274804",
+            "path": "README.md",
             "sha256": "04e294f1b6776cb28a89db036ab89fc0b70a69dcdc88f77e05af5c1ca56411f6"
           },
           {
-            "ref": "C:/dev/protected/legacy-repos/APPS/quanta-color/README.md",
+            "repo": "HarperZ9/build-color",
+            "commit": "a75d63c588b444b159cdb40274817c8096555773",
+            "path": "README.md",
             "sha256": "afeec67fdc9acc91afde7838666bf51bc4c576fa67ff66e43b7d633b050093a6"
           }
         ]
@@ -91,7 +100,10 @@
       "id": "quanta-color",
       "name": "Quanta Color",
       "origin_paths": [
-        "C:/dev/protected/legacy-repos/APPS/quanta-color"
+        {
+          "repo": "HarperZ9/build-color",
+          "path": ""
+        }
       ],
       "lineage": "Color-science workbench for color spaces, HDR transfer functions, perceptual differences, ICC profiles, and gamut workflows.",
       "promotion_lane": "color-science-library",
@@ -121,7 +133,9 @@
         ],
         "receipts": [
           {
-            "ref": "C:/dev/protected/legacy-repos/APPS/quanta-color/README.md",
+            "repo": "HarperZ9/build-color",
+            "commit": "a75d63c588b444b159cdb40274817c8096555773",
+            "path": "README.md",
             "sha256": "afeec67fdc9acc91afde7838666bf51bc4c576fa67ff66e43b7d633b050093a6"
           }
         ]
@@ -137,9 +151,14 @@
       "id": "quantalang",
       "name": "QuantaLang / quantac",
       "origin_paths": [
-        "C:/dev/protected/legacy-repos/QUANTA-UNIVERSE/quantalang",
-        "C:/dev/public/pubscan/quantalang",
-        "C:/dev/public/pubscan/quantalang-vscode"
+        {
+          "repo": "HarperZ9/buildlang",
+          "path": ""
+        },
+        {
+          "repo": "HarperZ9/buildlang-vscode",
+          "path": ""
+        }
       ],
       "lineage": "Compiled effects language and quantac compiler lineage for C, HLSL, GLSL, and future shader/runtime targets.",
       "promotion_lane": "effects-language",
@@ -167,7 +186,9 @@
         ],
         "receipts": [
           {
-            "ref": "C:/dev/protected/legacy-repos/QUANTA-UNIVERSE/quantalang/README.md",
+            "repo": "HarperZ9/buildlang",
+            "commit": "0a68da861e04bdacb4a751b77dbd49e3ea812518",
+            "path": "README.md",
             "sha256": "c69a4c5f1f62c786a2c0f3b423d63b5676a3687e1454b1063868777470499041"
           }
         ]
@@ -183,9 +204,8 @@
     {
       "id": "warden-security-lineage",
       "name": "WARDEN Security Lineage",
-      "origin_paths": [
-        "C:/dev/protected/reverse-engineering/SKSE/EDUCATION/WARDEN"
-      ],
+      "origin_paths": [],
+      "origin_visibility": "private",
       "lineage": "Older modular C++23 security assessment and training platform lineage for defensive analysis, synthetic labs, and good-faith fix workflows.",
       "promotion_lane": "defensive-find-and-fix",
       "status": "quarantine-and-adapt",
@@ -211,12 +231,7 @@
         "evidence": [
           "README describes a modular security assessment/training platform with tests and broad module coverage."
         ],
-        "receipts": [
-          {
-            "ref": "C:/dev/protected/reverse-engineering/SKSE/EDUCATION/WARDEN/README.md",
-            "sha256": "61ad730c8587d9a1401e7b6ed89bfebfa8799d57e8a33015cde780bc83e1d275"
-          }
-        ]
+        "receipts": []
       },
       "risk_boundary": "defensive, authorized, good-faith OSS patching and synthetic training only. No live offensive automation, credential collection, stealth behavior, or exploit publication is exposed by this registry.",
       "exposed_offensive_commands": false,
@@ -230,7 +245,10 @@
       "id": "agent-audit",
       "name": "Agent Audit",
       "origin_paths": [
-        "C:/dev/public/agent-audit"
+        {
+          "repo": "HarperZ9/agent-audit",
+          "path": ""
+        }
       ],
       "lineage": "Public AI-agent session audit utility for comparing declared intent, action ledgers, and scope policy.",
       "promotion_lane": "agent-quality-gate",
@@ -257,7 +275,9 @@
         ],
         "receipts": [
           {
-            "ref": "C:/dev/public/agent-audit/README.md",
+            "repo": "HarperZ9/agent-audit",
+            "commit": "e3417f6bf5876594a6c40c8e1c4927e77cc6ad72",
+            "path": "README.md",
             "sha256": "3655f94098c132f4fb77bc5b9464a3cc5dde76936cf0b58fc37fe3abdcec80b0"
           }
         ]
@@ -273,7 +293,10 @@
       "id": "context-curator-lite",
       "name": "Context Curator Lite",
       "origin_paths": [
-        "C:/dev/public/context-curator-lite"
+        {
+          "repo": "HarperZ9/context-curator-lite",
+          "path": ""
+        }
       ],
       "lineage": "Public context-curation utility for token-efficient planning fragments, heuristic redaction, and Telos context-envelope export.",
       "promotion_lane": "context-envelope-source",
@@ -305,7 +328,9 @@
         ],
         "receipts": [
           {
-            "ref": "C:/dev/public/context-curator-lite/README.md",
+            "repo": "HarperZ9/context-curator-lite",
+            "commit": "2621341e2dbf9fb48a2f7dbe0bd2c83f8dd48762",
+            "path": "README.md",
             "sha256": "134f4b95b1c84cc55064dd280239c9e284e0c942a1cedf2983e99e2710d2e68e"
           }
         ]
@@ -322,7 +347,10 @@
       "id": "secret-redact-io",
       "name": "Secret Redact IO",
       "origin_paths": [
-        "C:/dev/public/secret-redact-io"
+        {
+          "repo": "HarperZ9/secret-redact-io",
+          "path": ""
+        }
       ],
       "lineage": "Public guarded IO utility for redacted file, fetch, write, and subprocess channels with hash-only receipts.",
       "promotion_lane": "safe-io",
@@ -350,7 +378,9 @@
         ],
         "receipts": [
           {
-            "ref": "C:/dev/public/secret-redact-io/README.md",
+            "repo": "HarperZ9/secret-redact-io",
+            "commit": "798d1d528e461f10b3b72b98d054a52bd0b266ba",
+            "path": "README.md",
             "sha256": "694c092b71780a07d183192bac848db9a2970f9c74c0d0d4bc3c62775572a226"
           }
         ]
@@ -366,7 +396,10 @@
       "id": "repo-proof-index",
       "name": "Repo Proof Index",
       "origin_paths": [
-        "C:/dev/public/repo-proof-index"
+        {
+          "repo": "HarperZ9/repo-proof-index",
+          "path": ""
+        }
       ],
       "lineage": "Public proof-packet indexer for reviewer-ready visibility over contracts, receipts, backend descriptors, and evidence gaps.",
       "promotion_lane": "proof-indexing",
@@ -394,7 +427,9 @@
         ],
         "receipts": [
           {
-            "ref": "C:/dev/public/repo-proof-index/README.md",
+            "repo": "HarperZ9/repo-proof-index",
+            "commit": "c5c24a1380773572f6d0876fb73a629ca52ff5e6",
+            "path": "README.md",
             "sha256": "47df043bf5d1c956b7eeabcdb5859cf215eab71ebbc00200707ea8b3c8e48fb0"
           }
         ]
@@ -410,7 +445,10 @@
       "id": "release-surface-scanner",
       "name": "Release Surface Scanner",
       "origin_paths": [
-        "C:/dev/public/release-surface-scanner"
+        {
+          "repo": "HarperZ9/release-surface-scanner",
+          "path": ""
+        }
       ],
       "lineage": "Public release packet scanner for required files, env exclusion, secret-shape detection, hashes, and proof index output.",
       "promotion_lane": "release-assurance",
@@ -438,7 +476,9 @@
         ],
         "receipts": [
           {
-            "ref": "C:/dev/public/release-surface-scanner/README.md",
+            "repo": "HarperZ9/release-surface-scanner",
+            "commit": "446a5a4a6600de01f1924303a9c653704aed48eb",
+            "path": "README.md",
             "sha256": "6fc14e169588570e788ceb4c8b3205ba9114ae619bef347c8149730f4f3e015c"
           }
         ]
@@ -454,7 +494,10 @@
       "id": "gpu-trace-validator",
       "name": "GPU Trace Validator",
       "origin_paths": [
-        "C:/dev/public/gpu-trace-validator"
+        {
+          "repo": "HarperZ9/gpu-trace-validator",
+          "path": ""
+        }
       ],
       "lineage": "Public GPU trace JSON validator for bounded, redacted rendering and compute evidence receipts.",
       "promotion_lane": "rendering-verification",
@@ -482,7 +525,9 @@
         ],
         "receipts": [
           {
-            "ref": "C:/dev/public/gpu-trace-validator/README.md",
+            "repo": "HarperZ9/gpu-trace-validator",
+            "commit": "7a46f56c774ec17631f01c075e78743c91cd17a7",
+            "path": "README.md",
             "sha256": "ad8302895468f92c5a766b7fdb4a12adc47c76e4f4bdeadaa0de4dd77ea206fa"
           }
         ]
@@ -498,7 +543,10 @@
       "id": "raw-native",
       "name": "raw-native",
       "origin_paths": [
-        "C:/dev/public/raw-native"
+        {
+          "repo": "HarperZ9/raw-native",
+          "path": ""
+        }
       ],
       "lineage": "Local-only zero-dependency C++23 two-way rendering engine with G-buffer, ray-traced AO oracle, SSAO approximation, reconcile certificates, and bounded arena allocation.",
       "promotion_lane": "deterministic-renderer-verification",
@@ -528,7 +576,9 @@
         ],
         "receipts": [
           {
-            "ref": "C:/dev/public/raw-native/README.md",
+            "repo": "HarperZ9/raw-native",
+            "commit": "c4aa9c5ad61c5cd77a0c8a201fa26ce14542143f",
+            "path": "README.md",
             "sha256": "273019666c5c9d6f52efe6e6ea7b76a90aba46e0b87d7f056e2ecc8fde8997a0"
           }
         ]
@@ -544,9 +594,8 @@
     {
       "id": "studio-libs",
       "name": "studio-libs",
-      "origin_paths": [
-        "C:/dev/public/studio-libs"
-      ],
+      "origin_paths": [],
+      "origin_visibility": "local-only",
       "lineage": "Local-only zero-dependency nD rendering and perception libraries plus a native MCP organ for render, perceive, and measure operations.",
       "promotion_lane": "studio-perception-organ",
       "status": "promotion-ready",
@@ -574,7 +623,8 @@
         ],
         "receipts": [
           {
-            "ref": "C:/dev/public/studio-libs/README.md",
+            "repo": null,
+            "visibility": "local-only",
             "sha256": "5fece630e27b56fa6b7a53119d457d9c39e4d9b1baa97f01d9865d02b34680e9"
           }
         ]
@@ -590,9 +640,8 @@
     {
       "id": "forum-archive",
       "name": "Forum archive",
-      "origin_paths": [
-        "C:/dev/public/forum-archive"
-      ],
+      "origin_paths": [],
+      "origin_visibility": "local-only",
       "lineage": "Local-only older Forum stdlib core for supervision-tree multi-agent systems with hashing, events, tasks, agents, supervision, and scheduling.",
       "promotion_lane": "orchestration-archive",
       "status": "promotion-candidate",
@@ -620,7 +669,8 @@
         ],
         "receipts": [
           {
-            "ref": "C:/dev/public/forum-archive/README.md",
+            "repo": null,
+            "visibility": "local-only",
             "sha256": "51d46dd428518c9de669f747d57ea2709b8baf27249130b89e26c9d3798d320e"
           }
         ]

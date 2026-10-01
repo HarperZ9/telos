@@ -2,7 +2,7 @@
 
 **The shared workbench: durable state, native workstation control, sensory organs, a discovery forge.**
 
-![version](https://img.shields.io/badge/version-0.6.0-9683ff?style=flat-square&labelColor=14041b)
+![version](https://img.shields.io/badge/version-0.7.0-9683ff?style=flat-square&labelColor=14041b)
 ![license](https://img.shields.io/badge/license-FSL--1.1--ALv2-8f8095?style=flat-square&labelColor=14041b)
 [![CI](https://github.com/HarperZ9/telos/actions/workflows/ci.yml/badge.svg)](https://github.com/HarperZ9/telos/actions/workflows/ci.yml)
 ![node](https://img.shields.io/badge/node-24%20CI%2C%2020%2B%20registry-9683ff?style=flat-square&labelColor=14041b)
@@ -139,7 +139,7 @@ Peer repos: [gather](https://github.com/HarperZ9/gather) (research intake), [ind
 
 ## Status and maturity
 
-`project-telos-mcp` 0.6.0 is the current release, published on [npm](https://www.npmjs.com/package/project-telos-mcp/v/0.6.0) with matching [GitHub release artifacts](https://github.com/HarperZ9/telos/releases/tag/v0.6.0). The command surface above is tested and CI-covered: `npm test` globs every test file in `demo/`, so a new one runs without being added to a list. Interfaces may still move between minor versions. Research packets are deterministic preflights with explicit non-claims: the causal packet does not claim causal discovery, the embodied packet does not claim real-robot safety, the quantum packet does not claim hardware QEC. Treat the receipts and tests in this repo as the evidence, not prose counts.
+`project-telos-mcp` 0.7.0 is the current release, published on [npm](https://www.npmjs.com/package/project-telos-mcp/v/0.7.0) with matching [GitHub release artifacts](https://github.com/HarperZ9/telos/releases/tag/v0.7.0). The command surface above is tested and CI-covered: `npm test` globs every test file in `demo/`, so a new one runs without being added to a list. Interfaces may still move between minor versions. Research packets are deterministic preflights with explicit non-claims: the causal packet does not claim causal discovery, the embodied packet does not claim real-robot safety, the quantum packet does not claim hardware QEC. Treat the receipts and tests in this repo as the evidence, not prose counts.
 
 ### Upgrading from 0.2.0
 
@@ -204,7 +204,7 @@ into the work.
 
 ## Local client packages
 
-The [0.6.0 release](https://github.com/HarperZ9/telos/releases/tag/v0.6.0) includes
+The [0.7.0 release](https://github.com/HarperZ9/telos/releases/tag/v0.7.0) includes
 native Windows ZIP and MCPB client packages. Marketplace acceptance is not
 established by publication of these archives.
 

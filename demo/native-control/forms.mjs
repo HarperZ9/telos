@@ -5,12 +5,13 @@
 // fallback. React/Vue-aware via the native value setter + input/change dispatch.
 //
 //   forms fill <profile-json>   -> detect + fill every field on the page from the
-//                                  profile; click radios/selects that match; tick
-//                                  consent checkboxes only when profile.consent is
-//                                  true; return a per-field report.
-//                                  Detects a LOGIN form (password field) and fills
-//                                  email+password from profile.credentials when
-//                                  present, else reports login-required honestly.
+//                                  profile; click radios/selects that match; return
+//                                  a per-field report.
+//
+// Two things it never does (0.7.0, DESIGN 1.6). It never fills a password: a
+// login form is reported as `login: true` with "password" under `needs_human`.
+// It never ticks a consent, terms, certification or arbitration box: each is
+// listed under `needs_human` for the person to read and tick.
 
 import { readFileSync } from "node:fs";
 
@@ -23,9 +24,8 @@ import { readFileSync } from "node:fs";
 // Profile file shape (every key optional):
 //   { name, email, phone, location, city, region, country, countryCode, postal,
 //     address, company, url, links: { linkedin, github }, answers: { <question
-//     substring>: <option text> }, consent: true }
-// `consent: true` is required before the filler ticks any consent, terms or
-// acknowledgement checkbox.
+//     substring>: <option text> } }
+// A `consent` or `credentials` key in the file is ignored.
 export function defaultProfile(profilePath, env = process.env) {
   const path = profilePath || env.TELOS_FORM_PROFILE;
   if (!path) return emptyProfile();
@@ -54,15 +54,13 @@ export function profileFromRecord(raw = {}) {
     github: links.github || raw.github || null,
     url: raw.url || null,
     answers: { ...(raw.answers || {}) },
-    consent: raw.consent === true,
-    ...(raw.credentials ? { credentials: raw.credentials } : {}),
   };
 }
 
 const FILL_JS = (profileJson) => `
 (() => {
   const P = ${profileJson};
-  const log = { filled: [], skipped: [], radio: [], select: [], checkbox: [], login: false, unresolved: [] };
+  const log = { filled: [], skipped: [], radio: [], select: [], checkbox: [], login: false, unresolved: [], needs_human: [] };
   const lc = (s) => (s == null ? "" : String(s)).toLowerCase();
 
   // --- autocomplete-token -> profile value (the primary, standard signal) ---
@@ -121,7 +119,7 @@ const FILL_JS = (profileJson) => `
   for (const el of document.querySelectorAll("input:not([type=radio]):not([type=checkbox]):not([type=file]):not([type=hidden]):not([type=submit]):not([type=button]):not([type=image]), textarea")) {
     try {
       const t = lc(el.getAttribute("type"));
-      if (t === "password") { hasPassword = true; if (P.credentials && P.credentials.password) { setVal(el, P.credentials.password); log.filled.push("password"); } else log.unresolved.push("password"); continue; }
+      if (t === "password") { hasPassword = true; log.needs_human.push("password"); continue; }
       const r = resolve(el);
       if (r) { if (setVal(el, r.val)) log.filled.push(r.why + "=[" + el.name + "|" + el.id + "]"); }
       else log.skipped.push((el.name || el.id || el.placeholder || "?").slice(0, 40));
@@ -159,12 +157,12 @@ const FILL_JS = (profileJson) => `
     } catch (e) {}
   }
 
-  // --- consent / acknowledgement checkboxes (arbitration, terms, eeo consent) ---
+  // --- consent / acknowledgement checkboxes: listed for the person, never ticked ---
   for (const el of document.querySelectorAll("input[type=checkbox]")) {
     try {
       const blob = lc([el.name, el.id, el.getAttribute("aria-label"), (el.closest("label")||{}).innerText].join(" "));
-      if (P.consent === true && (blob.includes("consent") || blob.includes("acknowledge") || blob.includes("certify") || blob.includes("i confirm") || blob.includes("i agree") || blob.includes("arbitration") || blob.includes("terms"))) {
-        if (!el.checked) { (el.closest("label")||el).click(); log.checkbox.push("consent:" + (el.name||el.id||"?").slice(0,24)); }
+      if (/consent|acknowledge|certify|i confirm|i agree|arbitration|terms/.test(blob) && !el.checked) {
+        log.needs_human.push("consent:" + (el.name||el.id||"?").slice(0,24));
       }
     } catch (e) {}
   }
@@ -181,7 +179,7 @@ export function fillExpression(profile) {
 export const SPATIAL_FILL_JS = (profileJson) => `
 (() => {
   const P = ${profileJson};
-  const log = { filled: [], unresolved: [], radio: [], select: [], checkbox: [], spatial: true };
+  const log = { filled: [], unresolved: [], radio: [], select: [], checkbox: [], spatial: true, needs_human: [] };
   const kw = {
     "first": P.firstName, "given": P.firstName, "legal name": P.firstName, "first name": P.firstName,
     "last": P.lastName, "surname": P.lastName, "family": P.lastName, "last name": P.lastName,
@@ -266,8 +264,8 @@ export const SPATIAL_FILL_JS = (profileJson) => `
   }
   for (const el of document.querySelectorAll("input[type=checkbox]")) {
     try { const t = nearest(el.getBoundingClientRect()).toLowerCase();
-      if (P.consent === true && /consent|acknowledge|certify|confirm|agree|arbitration|terms/.test(t)) {
-        if (!el.checked) { (el.closest("label")||el).click(); log.checkbox.push("consent:"+t.slice(0,20)); } } } catch (e) {}
+      if (/consent|acknowledge|certify|confirm|agree|arbitration|terms/.test(t) && !el.checked) {
+        log.needs_human.push("consent:"+t.slice(0,20)); } } catch (e) {}
   }
   return log;
 })()`;

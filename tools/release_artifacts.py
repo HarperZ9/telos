@@ -12,7 +12,7 @@ REQUIRED_FILES = {
     'package.json', 'LICENSE', 'README.md', 'USAGE.md', 'verify_packet.mjs',
     'demo/telos.mjs', 'demo/telos-mcp.mjs',
     'demo/native-control/app.mjs', 'demo/native-control/device.mjs',
-    'tools/uia.ps1', 'tools/device.ps1', 'docs/native-control-contract.md',
+    'tools/uia.ps1', 'docs/native-control-contract.md',
 }
 ROOT_FILES = {'package.json', 'LICENSE', 'README.md', 'USAGE.md', 'verify_packet.mjs'}
 # The reviewed entrypoints. `project-telos-mcp` is the bin `npx -y
@@ -75,7 +75,7 @@ def read_package(archive, tag):
                        or RELEASE_NOTES.fullmatch(name)
                        or name in {'docs/CURRENT-STATE.md',
                                    'docs/native-control-contract.md',
-                                   'tools/uia.ps1', 'tools/device.ps1'})
+                                   'tools/uia.ps1'})
             if (not allowed or name.endswith('.test.mjs')
                     or name.endswith('-render-receipt.json')
                     or name == 'demo/README.md' or name in files):

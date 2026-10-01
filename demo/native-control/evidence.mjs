@@ -5,8 +5,8 @@ export const BROWSER_EVIDENCE_SCHEMA = "project-telos.browser-evidence/v1";
 export const MODES = new Set([
   "work-actuate",
   "research-capture",
-  "credential-logistics",
-  "credential-assess",
+  "account-logistics-evidence",
+  "account-review-evidence",
   "lab-assess",
   "creative-capture",
 ]);

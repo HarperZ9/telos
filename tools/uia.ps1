@@ -10,6 +10,7 @@
 # 'ok' field; a failure carries 'error'. Verbs:
 #   windows
 #   tree <windowMatch> [maxElements]
+#   resolve <windowMatch> <elementMatch>  read-only descriptor for ref checks
 #   invoke <windowMatch> <elementMatch>
 #   setvalue <windowMatch> <elementMatch> <text>
 #   focus <windowMatch>
@@ -28,6 +29,13 @@
 # hypothetical: two top-level windows on this machine share the name of the
 # executable that owns them.
 #
+# Element refs (DESIGN.md section 5): 'tree' and 'resolve' report each
+# element's RuntimeId, ClassName, bounding rectangle and ancestor control-type
+# path, and the window's handle and process image. An <elementMatch> of
+# 'rid:<n.n.n>' (or the flag pair '-RuntimeId <n.n.n>') selects by RuntimeId,
+# and a <windowMatch> of 'hwnd:<n>' selects a window by handle. Both are exact
+# and answer 'not found' rather than falling back to a name search.
+#
 # 'tree' says whether its listing settles a question of absence. A walk stopped
 # at maxElements is 'truncated'. A walk that completed and found no named
 # element at all is 'opaque', because a window whose content sits behind a
@@ -41,13 +49,13 @@ $ErrorActionPreference = "Stop"
 # One list, used by the unknown-verb answer and checked against the header
 # comment above by demo/uia-script.test.mjs. A second hand-typed copy is
 # how the header drifted to five verbs while the file implemented eight.
-$VERBS = @("windows", "tree", "invoke", "setvalue", "focus", "value", "select", "restore", "input", "type", "selftest")
+$VERBS = @("windows", "tree", "resolve", "invoke", "setvalue", "focus", "value", "select", "restore", "input", "type", "selftest")
 
 # Total argv length each verb needs, including the verb itself. Checked before
 # dispatch so a missing argument answers in JSON: without it $args[1] is $null,
 # .ToLower() on it throws, and the caller parsing stdout gets a PowerShell stack
 # trace where the contract promises an object.
-$ARITY = @{ windows = 1; tree = 2; invoke = 3; setvalue = 4; focus = 2; value = 3; select = 3; restore = 2; input = 2; type = 2; selftest = 1 }
+$ARITY = @{ windows = 1; tree = 2; resolve = 3; invoke = 3; setvalue = 4; focus = 2; value = 3; select = 3; restore = 2; input = 2; type = 2; selftest = 1 }
 
 # stdout carries JSON, so the stream has to be UTF-8 whatever the console
 # codepage is. Without this the host writes control names in the codepage, a
@@ -156,8 +164,50 @@ function Get-Records($collection) {
   return ,$out
 }
 
+function Get-RuntimeIdText($el) {
+  try { return (@($el.GetRuntimeId()) -join ".") } catch { return "" }
+}
+
+# Ancestor control types from the window down to the element's parent, read
+# with the raw-view walker so 'tree' and 'resolve' always agree.
+function Get-AncestorPath($el, $window) {
+  $walker = [System.Windows.Automation.TreeWalker]::RawViewWalker
+  $path = @(); $cur = $walker.GetParent($el); $guard = 0
+  while ($cur -and $guard -lt 64) {
+    $path = ,($cur.Current.ControlType.ProgrammaticName) + $path
+    if ([System.Windows.Automation.Automation]::Compare($cur, $window)) { break }
+    $cur = $walker.GetParent($cur); $guard++
+  }
+  return ,$path
+}
+
+function Get-Rect($el) {
+  $r = $el.Current.BoundingRectangle
+  if ($r.IsEmpty) { return $null }
+  return @([int]$r.X, [int]$r.Y, [int]$r.Width, [int]$r.Height)
+}
+
+function Get-ProcessImage($window) {
+  try { return (Get-Process -Id $window.Current.ProcessId -ErrorAction Stop).ProcessName } catch { return $null }
+}
+
+# The facts an element ref fingerprint is built from.
+function Get-Descriptor($el, $window) {
+  return @{ name = $el.Current.Name; type = $el.Current.ControlType.ProgrammaticName
+            automationId = $el.Current.AutomationId; className = $el.Current.ClassName
+            runtimeId = @($el.GetRuntimeId()); rect = (Get-Rect $el)
+            path = (Get-AncestorPath $el $window); isPassword = [bool]$el.Current.IsPassword }
+}
+
 # Resolve a top-level window. Returns @{ element = <el> } or a decision to deny.
 function Find-Window($match) {
+  if ("$match" -match '^hwnd:(\d+)$') {
+    $h = [int64]$Matches[1]
+    foreach ($w in Get-TopWindows) {
+      if ([int64]$w.Current.NativeWindowHandle -eq $h) { return @{ element = $w; how = "hwnd" } }
+    }
+    return @{ deny = @{ status = "none" } }
+  }
   $all = Get-TopWindows
   $d = Select-Candidate (Get-Records $all) $match
   if ($d.status -eq "ok") { return @{ element = $all[$d.index]; how = $d.how } }
@@ -171,6 +221,12 @@ function Find-Window($match) {
 # controls share returns one of them and reports nothing about the other.
 function Find-Element($window, $match) {
   if ($null -eq $match -or "$match" -eq "") { return @{ deny = @{ status = "invalid" } } }
+  if ("$match" -match '^rid:([0-9.-]+)$') {
+    $want = $Matches[1]
+    $hits = @($window.FindAll($Scope::Descendants, $TrueCond) | Where-Object { (Get-RuntimeIdText $_) -eq $want })
+    if ($hits.Count -eq 1) { return @{ element = $hits[0]; how = "runtimeid" } }
+    return @{ deny = @{ status = "none" } }
+  }
   foreach ($rung in @(@{ prop = $AE::NameProperty; how = "name-exact" },
                       @{ prop = $AE::AutomationIdProperty; how = "automationid-exact" })) {
     $hits = $window.FindAll($Scope::Descendants,
@@ -196,6 +252,13 @@ function Resolve-Target($windowMatch, $elementMatch) {
   return @{ window = $w.element; element = $e.element; how = $e.how }
 }
 
+# '-RuntimeId <id>' is the flag spelling of an 'rid:<id>' element match.
+$argv = @($args)
+$ridAt = [Array]::IndexOf($argv, "-RuntimeId")
+if ($ridAt -ge 1 -and $ridAt + 1 -lt $argv.Count) {
+  $argv = @($argv[0..($ridAt - 1)]) + @("rid:$($argv[$ridAt + 1])") + @($argv | Select-Object -Skip ($ridAt + 2))
+}
+$args = $argv
 $verb = if ($args.Count -ge 1) { $args[0] } else { "" }
 
 if ($ARITY.ContainsKey($verb) -and $args.Count -lt $ARITY[$verb]) {
@@ -246,7 +309,8 @@ try {
         if ($count -ge $max) { $truncated = $true; break }
         $n = $e.Current.Name; $a = $e.Current.AutomationId
         if ($n -or $a) {
-          $els += @{ name = $n; type = $e.Current.ControlType.ProgrammaticName; automationId = $a }
+          $d = Get-Descriptor $e $w.element
+          $els += $d
           $count++
         }
       }
@@ -262,9 +326,18 @@ try {
       # collapses both into the one bit a caller needs before treating a name it
       # cannot find as a control that is not there.
       Out-Json @{ ok = $true; window = $w.element.Current.Name; count = $count
+                  hwnd = [int64]$w.element.Current.NativeWindowHandle; process = (Get-ProcessImage $w.element)
                   descendants = $all.Count; truncated = $truncated; opaque = ($count -eq 0)
                   settlesAbsence = (Test-SettlesAbsence $count $truncated)
                   max = $max; elements = $els }
+    }
+    "resolve" {
+      # Read-only: the descriptor an act-time ref check compares against the
+      # snapshot fingerprint. It changes nothing in the target window.
+      $t = Resolve-Target $args[1] $args[2]
+      if ($t.deny) { Out-Json (Deny-Body $t.deny $t.subject $t.match); break }
+      Out-Json @{ ok = $true; matched = $t.how; hwnd = [int64]$t.window.Current.NativeWindowHandle
+                  process = (Get-ProcessImage $t.window); element = (Get-Descriptor $t.element $t.window) }
     }
     "invoke" {
       $t = Resolve-Target $args[1] $args[2]

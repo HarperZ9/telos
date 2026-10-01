@@ -14,7 +14,7 @@ test("package includes exact native helpers beside their existing drivers", () =
   assert.equal(out.status, 0, out.stderr);
   const files = JSON.parse(out.stdout)[0].files.map(x => x.path);
   assert.deepEqual(files.filter(x => x.startsWith("tools/")).sort(),
-    ["tools/device.ps1", "tools/uia.ps1"]);
+    ["tools/uia.ps1"]);
   for (const name of ["app", "device"]) assert.ok(files.includes(`demo/native-control/${name}.mjs`));
   assert.ok(files.includes("docs/native-control-contract.md"));
   assert.ok(files.includes("verify_packet.mjs"), "release users need the offline receipt verifier");
