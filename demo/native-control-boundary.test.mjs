@@ -15,9 +15,9 @@ import { readdirSync, readFileSync, existsSync, writeFileSync, mkdtempSync, rmSy
 import { tmpdir } from "node:os";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { defaultProfile, emptyProfile, profileFromRecord } from "./native-control/forms.mjs";
-import { redactHeaders, describeBody, capture } from "./native-control/network.mjs";
-import * as input from "./native-control/input.mjs";
+// Driver modules load inside each test, so a static check still runs and
+// reports on its own when a module is missing or changed shape.
+const load = (name) => import(`./native-control/${name}.mjs`);
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(here, "..");
@@ -86,6 +86,7 @@ test("driver pacing is fixed, never randomized", () => {
 });
 
 test("input helpers use the fixed default pause and reject invalid ones", async () => {
+  const input = await load("input");
   const sent = [];
   const session = { send: async (method, params) => { sent.push([method, params]); return {}; } };
   const r = await input.typeText(session, "ab", { pauseMs: 0 });
@@ -95,7 +96,8 @@ test("input helpers use the fixed default pause and reject invalid ones", async 
   await assert.rejects(input.typeKeys(session, "a", { pauseMs: -1 }), /invalid pause/);
 });
 
-test("the default form profile carries no personal data and no consent", () => {
+test("the default form profile carries no personal data and no consent", async () => {
+  const { defaultProfile, emptyProfile } = await load("forms");
   const empty = defaultProfile(undefined, {});
   assert.deepEqual(empty, emptyProfile());
   assert.deepEqual(empty.answers, {});
@@ -110,7 +112,8 @@ test("the default form profile carries no personal data and no consent", () => {
   assert.doesNotMatch(greenhouse, /pickQuestion\([^)]*,\s*["'`](Yes|No|LinkedIn)["'`]\)/);
 });
 
-test("a named profile file is read, and consent needs an explicit true", () => {
+test("a named profile file is read, and consent needs an explicit true", async () => {
+  const { defaultProfile, profileFromRecord } = await load("forms");
   const dir = mkdtempSync(path.join(tmpdir(), "telos-profile-"));
   try {
     const file = path.join(dir, "profile.json");
@@ -131,6 +134,7 @@ test("a named profile file is read, and consent needs an explicit true", () => {
 });
 
 test("request capture redacts credential headers and request bodies", async () => {
+  const { redactHeaders, describeBody, capture } = await load("network");
   assert.deepEqual(redactHeaders({
     Authorization: "Bearer abc", Cookie: "sid=1", "X-CSRF-Token": "t", "X-Api-Key": "k",
     ":authority": "example.test", Accept: "application/json",
