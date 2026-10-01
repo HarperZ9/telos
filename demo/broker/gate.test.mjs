@@ -173,3 +173,21 @@ test("dry run computes tier and digest, opens no hold and runs nothing", async (
   assert.equal(existsSync(env.dirs.holds) ? (await import("node:fs")).readdirSync(env.dirs.holds).filter((n) => n.endsWith(".json")).length : 0, 0);
   assert.equal(env.calls.length, 0);
 });
+
+test("exec runs the absolute program the gate approved, never one from a writable folder", async () => {
+  const env = makeEnv();
+  env.grant({ tier: "T4", verbs: ["device.exec"], scope: { exec_allow: [["git", "status"]], sandbox_roots: [path.join(env.root, "bin")] }, max_actions: 3 });
+  const planted = await env.broker().call({ verb: "device.exec", params: ["git", "status"] });
+  assert.equal(planted.status, "REFUSED", "git resolves inside a sandbox root the grant lets the model write");
+  assert.equal(planted.reason, "OUT_OF_SCOPE");
+  const env2 = makeEnv();
+  env2.grant({ tier: "T4", verbs: ["device.exec"], scope: { exec_allow: [["git", "status"]] }, max_actions: 3 });
+  const broker = env2.broker();
+  const held = await broker.call({ verb: "device.exec", params: ["git", "status"] });
+  env2.decide(held.hold_id);
+  const ok = await broker.call({ verb: "device.exec", params: ["git", "status"], hold_id: held.hold_id });
+  assert.equal(ok.status, "OK", JSON.stringify(ok));
+  assert.deepEqual(env2.calls[0].params, [path.join(env2.root, "bin", "git"), "status"]);
+  const missing = await broker.call({ verb: "device.exec", params: ["Git.exe", "status"] });
+  assert.equal(missing.reason, "TARGET_NOT_FOUND");
+});

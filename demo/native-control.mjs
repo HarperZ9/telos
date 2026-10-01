@@ -245,7 +245,7 @@ async function runApp(verb, params) {
 async function runDevice(verb, params) {
   switch (verb) {
     case "exec":
-      return device.exec(params.join(" "));
+      return device.exec(params);
     case "read":
       return device.read(params[0], params[1] ? Number(params[1]) : undefined);
     case "write":

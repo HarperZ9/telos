@@ -102,6 +102,9 @@ export class Broker {
   // Observe verbs that save a file write it to an owner-only side file unless
   // the caller named a path (which the gate has already scoped).
   runParams(c) {
+    // exec runs the absolute executable the gate approved, not a name the
+    // driver would look up again.
+    if (c.verb === "device.exec" && c.target.executable) return [c.target.executable, ...c.params.slice(1)];
     const i = c.spec.writeArg;
     if (i === undefined || c.params[i]) return c.params;
     const side = path.join(this.dirs.receipts, "side");

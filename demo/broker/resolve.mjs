@@ -6,6 +6,7 @@ import path from "node:path";
 import { digestOf } from "./canonical.mjs";
 import { namesSecretField, originOf, realTarget, SHELL_METACHARS } from "./scope.mjs";
 import { verbSpec } from "./tiers.mjs";
+import { whichExecutable } from "../native-control/device.mjs";
 
 function pickWindow(windows, match) {
   if (typeof match !== "string" || !match) return { error: "TARGET_NOT_FOUND" };
@@ -40,8 +41,14 @@ async function resolveKind(spec, params, flags, { drivers, cwd }) {
       return real ? { path: real } : { path: path.resolve(cwd, at(spec.pathArg) ?? "."), unresolvedPath: true };
     }
     case "argv": {
-      const command = params.join(" ").trim();
-      return { command, argv: command ? command.split(/\s+/) : [], shellMeta: SHELL_METACHARS.test(command) };
+      // The argv the driver will spawn (shell:false), and the absolute
+      // executable argv[0] resolves to through absolute PATH entries only.
+      const argv = params.map(String);
+      const command = argv.join(" ");
+      const which = drivers.which ?? whichExecutable;
+      const executable = argv.length ? which(argv[0]) : null;
+      if (!executable) return { error: "TARGET_NOT_FOUND" };
+      return { command, argv, executable, shellMeta: argv.some((a) => SHELL_METACHARS.test(a)) };
     }
     case "foreground":
     case "device":
@@ -106,7 +113,8 @@ export async function resolveTarget(verb, params = [], flags = {}, { drivers, cw
   }
   const where = target.origin ?? target.window?.title ?? target.path ?? target.argv?.[0] ?? target.device ?? "-";
   target.ref = `${spec.target}:${where}${selector ? `#${selector}` : ""}`;
-  target.fingerprint = digestOf({ kind: target.kind, origin: target.origin ?? null, window: target.window ?? null, path: target.path ?? null, selector, resolution: target.resolution ?? null });
+  target.fingerprint = digestOf({ kind: target.kind, origin: target.origin ?? null, window: target.window ?? null, path: target.path ?? null,
+    executable: target.executable ?? null, selector, resolution: target.resolution ?? null });
   return target;
 }
 

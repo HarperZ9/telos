@@ -114,9 +114,9 @@ export function namesSecretField(text) {
   return SECRET_MARKS.some((mark) => t.includes(mark));
 }
 
-// Characters that give a shell string a second command or a redirect. The 0.6.0
-// `device exec` runs `cmd /c <string>`, so any of these turns one allowlisted
-// argv into something else.
+// Characters that give a shell string a second command or a redirect. 0.7.0
+// spawns exec with shell:false, so none reaches a shell; the refusal stays as a
+// second wall in case a future driver reintroduces one.
 export const SHELL_METACHARS = /[&|;<>^%!`$(){}\[\]"'\r\n\*?~]/;
 
 // Terminal hosts: text sent into one is command execution, which is T4 `exec`

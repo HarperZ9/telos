@@ -23,7 +23,7 @@ export function precheck(spec, target, flags, { stateRoot, platform, protectedPr
   const why = protectedWindow(target.window, protectedProcesses);
   if (why) return { reason: "PROTECTED_TARGET", detail: why };
   if (target.unresolvedPath) return { reason: "OUT_OF_SCOPE", detail: "a path through a link that points nowhere" };
-  for (const p of [target.path, target.readPath, target.writePath]) {
+  for (const p of [target.path, target.readPath, target.writePath, target.executable]) {
     if (p && protectedPath(p, stateRoot, platform)) return { reason: "PROTECTED_TARGET", detail: "telos state directory" };
   }
   if (target.shellMeta) return { reason: "SHELL_METACHAR" };
@@ -43,7 +43,10 @@ function kindInScope(spec, target, scope, platform) {
     case "path-write":
       return pathInside(target.path, scope.sandbox_roots, platform) || pathInside(target.path, scope.paths, platform);
     case "argv":
-      return execAllowed(target.argv, scope.exec_allow);
+      // A program inside a folder the grant lets the model write is not the
+      // program the operator allowlisted.
+      return execAllowed(target.argv, scope.exec_allow) && Boolean(target.executable)
+        && !pathInside(target.executable, [...scope.sandbox_roots, ...scope.paths], platform);
     case "foreground":
     case "device":
       return deviceAllowed(target.device, scope.devices);

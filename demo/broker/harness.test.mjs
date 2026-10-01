@@ -26,6 +26,7 @@ export function makeEnv({ windows, pageUrl = "https://example.test/form" } = {})
   const drivers = {
     pageUrl: async () => pageUrl,
     listWindows: async () => windows ?? [{ title: "Untitled - Notepad", class: "Notepad", process: "notepad" }],
+    which: (name) => (/^[a-z]+$/.test(name) ? path.join(root, "bin", name) : null),
   };
   const env = {
     root, dirs, privateKey, publicKey, clock, now, calls, recorder, drivers,

@@ -36,7 +36,6 @@ const driverFiles = [
   path.join(root, "demo/native-control.mjs"),
   ...walk(path.join(root, "demo/native-control")),
   path.join(root, "tools/uia.ps1"),
-  path.join(root, "tools/device.ps1"),
 ];
 const rel = (file) => path.relative(root, file).replaceAll("\\", "/");
 const read = (file) => readFileSync(file, "utf8");

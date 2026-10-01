@@ -65,9 +65,12 @@ action. Foreground input is not tied atomically to a previously observed window.
 
 ## Package and validation boundary
 
-The npm package includes the existing `tools/uia.ps1` and `tools/device.ps1`
-helpers at the paths used by the app/device drivers. The client plugin built by
-`scripts/build_client_plugin.py` carries neither helper and none of the drivers:
+The npm package includes the `tools/uia.ps1` helper at the path the app driver
+uses. 0.7.0 deleted `tools/device.ps1`: device read, write and list use Node
+`fs`, and exec spawns an argv with `shell:false` after resolving argv[0]
+through absolute PATH entries only. Every native-control verb runs through the
+tier gate (`docs/spec/telos-tiers.md`). The client plugin built by
+`scripts/build_client_plugin.py` carries no helper and none of the drivers:
 it ships `demo/native-control-catalog.mjs`, which the `telos.native.control` MCP
 tool runs, plus the pure `focus.mjs` classifier and the `evidence.mjs` validator
 that `telos.browser.evidence` imports. `client-plugin/config.json` lists the
