@@ -85,3 +85,7 @@ export const value = (windowMatch, elementMatch, opts) =>
   run("value", [windowMatch, elementMatch], opts);
 export const input = (keys, opts) => run("input", [keys], opts);
 export const typeText = (text, opts) => run("type", [text], opts);
+
+// Read-only descriptor for an act-time ref check (DESIGN.md 5.1).
+export const resolve = (windowMatch, elementMatch, opts) =>
+  run("resolve", [windowMatch, elementMatch], opts);

@@ -103,7 +103,18 @@ assert.match(forumArchive.risk_boundary, /diff concepts against current Forum/);
 assert.ok(forumArchive.provenance.receipts.some((receipt) => receipt.sha256.startsWith("51d46dd4")));
 
 for (const tool of registry.tools) {
-  assert.ok(tool.origin_paths.length > 0, `${tool.id} has origin paths`);
+  // Origins are GitHub repos, never paths on a workstation. A lineage with no
+  // public source says so instead of naming a private path.
+  assert.ok(tool.origin_paths.length > 0 || ["private", "local-only"].includes(tool.origin_visibility),
+    `${tool.id} has public origins or declares why it has none`);
+  for (const origin of tool.origin_paths) {
+    assert.match(origin.repo, /^HarperZ9\/[A-Za-z0-9._-]+$/, `${tool.id} origin is a GitHub slug`);
+  }
+  for (const receipt of tool.provenance.receipts) {
+    assert.match(receipt.sha256, /^[a-f0-9]{64}$/, `${tool.id} receipt keeps its digest`);
+    assert.equal(receipt.ref, undefined, `${tool.id} receipt carries no local ref`);
+    if (receipt.repo) assert.match(String(receipt.commit), /^([a-f0-9]{40}|null)$/, `${tool.id} receipt commit`);
+  }
   assert.ok(tool.flagship_hosts.length > 0, `${tool.id} has flagship hosts`);
   assert.ok(tool.capabilities.length > 0, `${tool.id} has capabilities`);
   assert.ok(tool.integration_targets.length > 0, `${tool.id} has integration targets`);
