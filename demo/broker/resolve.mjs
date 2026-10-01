@@ -49,9 +49,28 @@ async function resolveKind(spec, params, flags, { drivers, cwd }) {
   }
 }
 
+// Receipt vocabulary (telos.receipt/v1): "ref" for a snapshot ref, "query" for
+// a selector or name the driver looks up, "coordinate" for a screen point.
+// A verb with no element target records no resolution.
 function resolutionOf(verb, params) {
+  const spec = verbSpec(verb);
   if ((verb === "browser.input" || verb === "browser.behave") && params[0] === "click") return "coordinate";
-  return verbSpec(verb).selectorArg !== undefined ? "selector" : "none";
+  if (spec.refArg !== undefined) return "ref";
+  return spec.selectorArg !== undefined ? "query" : undefined;
+}
+
+// Map a ref resolution failure to the broker's refusal reason.
+const REF_FAILURES = new Set(["BAD_REF", "STALE_REF", "UNKNOWN_REF", "FINGERPRINT_MISMATCH", "SECRET_FIELD", "TARGET_NOT_FOUND"]);
+
+async function resolveRefTarget(spec, params, flags, base, drivers) {
+  if (typeof drivers.resolveRef !== "function") return { error: "REF_RESOLVER_UNAVAILABLE" };
+  const ref = params[spec.refArg];
+  const live = await drivers.resolveRef(ref, flags);
+  if (!live?.ok) return { error: REF_FAILURES.has(live?.code) ? live.code : "TARGET_NOT_FOUND" };
+  if (live.surface !== "browser") return { error: "BAD_REF" };
+  // The page must still be on the origin the snapshot was taken on.
+  if (live.target?.origin && live.target.origin !== base.origin) return { error: "FINGERPRINT_MISMATCH" };
+  return { ref: live.target_ref, fingerprint: live.target_fingerprint };
 }
 
 export async function resolveTarget(verb, params = [], flags = {}, { drivers, cwd = process.cwd() } = {}) {
@@ -68,9 +87,14 @@ export async function resolveTarget(verb, params = [], flags = {}, { drivers, cw
     readPath: spec.readArg !== undefined && params[spec.readArg] ? path.resolve(cwd, params[spec.readArg]) : null,
     writePath: spec.writeArg !== undefined && params[spec.writeArg] ? path.resolve(cwd, params[spec.writeArg]) : null,
   };
+  if (spec.refArg !== undefined) {
+    const hit = await resolveRefTarget(spec, params, flags, base, drivers);
+    if (hit.error) return hit;
+    return { ...target, ...hit };
+  }
   const where = target.origin ?? target.window?.title ?? target.path ?? target.argv?.[0] ?? target.device ?? "-";
   target.ref = `${spec.target}:${where}${selector ? `#${selector}` : ""}`;
-  target.fingerprint = digestOf({ kind: target.kind, origin: target.origin ?? null, window: target.window ?? null, path: target.path ?? null, selector, resolution: target.resolution });
+  target.fingerprint = digestOf({ kind: target.kind, origin: target.origin ?? null, window: target.window ?? null, path: target.path ?? null, selector, resolution: target.resolution ?? null });
   return target;
 }
 
@@ -78,6 +102,11 @@ export async function resolveTarget(verb, params = [], flags = {}, { drivers, cw
 // browser (never launches one) or lists top-level windows.
 export function liveDrivers({ browser, app, port }) {
   return {
+    // Act-by-ref: re-read the element behind a snapshot ref (read-only CDP).
+    async resolveRef(ref, flags) {
+      const { resolveBrowserRef } = await import("../surface/resolve.mjs");
+      return resolveBrowserRef(ref, { attach: () => browser.attach({ port: flags.port ? Number(flags.port) : port, match: flags.match }) });
+    },
     async pageUrl(flags) {
       const { session, target } = await browser.attach({ port: flags.port ? Number(flags.port) : port, match: flags.match });
       session.close();

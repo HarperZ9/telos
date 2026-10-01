@@ -42,8 +42,12 @@ function kindInScope(spec, target, scope, platform) {
     case "foreground":
     case "device":
       return deviceAllowed(target.device, scope.devices);
-    default:
+    case "none":
       return true;
+    default:
+      // An unknown target kind is out of scope, so a verb added to the table
+      // with a typo in its kind fails closed instead of matching every grant.
+      return false;
   }
 }
 

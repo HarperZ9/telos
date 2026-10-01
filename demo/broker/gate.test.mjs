@@ -53,9 +53,9 @@ test("a T2 write records its pre-image and a rollback handle", async () => {
   env.grant({ tier: "T2", verbs: ["device.write"], scope: { sandbox_roots: [env.sandbox] } });
   const r = await env.broker().call({ verb: "device.write", params: [file, "after"] });
   assert.equal(r.status, "OK");
-  assert.match(r.pre_image_sha256, /^[0-9a-f]{64}$/);
+  assert.match(r.pre_image_digest, /^[0-9a-f]{64}$/);
   assert.equal(readFileSync(path.join(env.dirs.preimages, r.rollback), "utf8"), "before");
-  assert.equal(r.verify, "DRIFT", "the fake executor wrote nothing, so re-read disagrees");
+  assert.equal(r.verify_result, "DRIFT", "the fake executor wrote nothing, so re-read disagrees");
 });
 
 test("a pre-image that cannot be captured promotes the write to T3", async () => {

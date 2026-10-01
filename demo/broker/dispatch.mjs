@@ -5,7 +5,7 @@
 import { createHash } from "node:crypto";
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import path from "node:path";
-import { digestOf } from "./canonical.mjs";
+import { actionDigest as receiptActionDigest, argsSha256 } from "../receipts/digest.mjs";
 import { precheck, selectGrant } from "./gate.mjs";
 import { loadGrants } from "./grants.mjs";
 import { HoldStore } from "./holds.mjs";
@@ -15,10 +15,11 @@ import { CONTROL_FLAGS, Outcome } from "./outcome.mjs";
 
 const sha = (buf) => createHash("sha256").update(buf).digest("hex");
 
+// One action digest for the broker, dry run and replay (receipts/digest.mjs).
 export function actionDigest({ tier, verb, target, params, flags, grant }) {
-  return digestOf({
+  return receiptActionDigest({
     tier, verb, target_ref: target.ref ?? null, target_fingerprint: target.fingerprint ?? null,
-    args_sha256: digestOf({ params, flags }), scope_sha256: grant.scope_sha256, grant_id: grant.grant_id,
+    args_sha256: argsSha256({ params, flags }), scope_sha256: grant.scope_sha256, grant_id: grant.grant_id,
   });
 }
 
@@ -62,15 +63,16 @@ function bindSession(dir, grant, sessionId) {
   }
 }
 
+// T2 fields, named as telos.receipt/v1 names them (DESIGN.md 1.5).
 function verifyWrite(c) {
   if (c.verb !== "device.write" || !c.preimage) return {};
-  const pre = { pre_image_sha256: c.preimage.sha256 ?? null, rollback: c.preimage.rollback ?? null };
+  const pre = { pre_image_digest: c.preimage.sha256 ?? null, rollback: c.preimage.rollback ?? null };
   try {
     const post = sha(readFileSync(c.target.path));
     const want = sha(Buffer.from(c.params.slice(1).join(" "), "utf8"));
-    return { ...pre, post_image_sha256: post, verify: post === want ? "MATCH" : "DRIFT" };
+    return { ...pre, post_image_digest: post, verify_result: post === want ? "MATCH" : "DRIFT" };
   } catch {
-    return { ...pre, verify: "UNVERIFIABLE" };
+    return { ...pre, verify_result: "UNVERIFIABLE" };
   }
 }
 

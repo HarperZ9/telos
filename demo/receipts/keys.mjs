@@ -58,6 +58,7 @@ export function initKey({ home = telosHome(), now = () => new Date() } = {}) {
   const public_key = rawPublic(publicKey);
   const pub = { schema: KEY_SCHEMA, alg: "ed25519", key_id: keyIdOf(public_key), public_key, created_at: now().toISOString() };
   writeFileSync(privPath, privateKey.export({ format: "pem", type: "pkcs8" }), { mode: 0o600, flag: "wx" });
+  writeFileSync(path.join(dir, PUBLIC_PEM_FILE), publicKey.export({ format: "pem", type: "spki" }), { mode: 0o644, flag: "wx" });
   writeFileSync(path.join(dir, PUBLIC_FILE), `${JSON.stringify(pub, null, 2)}\n`, { mode: 0o644, flag: "wx" });
   return pub;
 }

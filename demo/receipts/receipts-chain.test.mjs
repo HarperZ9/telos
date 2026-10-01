@@ -21,7 +21,8 @@ test("canonical form: sorted keys, compact separators, floats refused", () => {
   assert.throws(() => canonical({ v: 1.5 }), /non-integer/);
   assert.throws(() => canonical({ v: Number.NaN }), /non-integer/);
   assert.throws(() => canonical({ v: 2 ** 60 }), /non-integer/);
-  assert.throws(() => canonical({ v: undefined }), /forbids undefined/);
+  assert.equal(canonical({ v: undefined, w: 1 }), '{"w":1}', "an undefined key is dropped, as a JSON round trip drops it");
+  assert.throws(() => canonical([undefined]), /forbids undefined/);
   assert.equal(canonical({ s: "é" }), '{"s":"é"}');
 });
 

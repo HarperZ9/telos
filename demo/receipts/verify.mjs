@@ -21,8 +21,10 @@ export const HASH_VERSION = 3;
 export const GENESIS = "0".repeat(64);
 export const MAX_SIGNATURE_BATCH = 32;
 export const TIERS = ["T0", "T1", "T2", "T3", "T4", "T5"];
+// ERROR: the driver was called and threw after dispatch (added at the 0.7.0
+// integration so a partial effect is recorded as executed, not as OK).
 export const STATUSES = ["OK", "REFUSED", "HOLD", "APPROVED", "REJECTED", "EXPIRED",
-  "DRIFT", "NEEDS_HUMAN", "DRY_RUN", "UNAVAILABLE"];
+  "DRIFT", "NEEDS_HUMAN", "DRY_RUN", "UNAVAILABLE", "ERROR"];
 // Statuses that never carry an executed effect.
 export const NON_EXECUTING = new Set(["REFUSED", "HOLD", "APPROVED", "REJECTED", "EXPIRED",
   "DRY_RUN", "UNAVAILABLE"]);

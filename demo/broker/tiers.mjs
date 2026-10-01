@@ -32,6 +32,7 @@ export const SECRET_MARKS = Object.freeze([
 
 // target kinds: none | origin | navigate | window | path-read | path-write |
 // argv | foreground | device. `arg` is the positional index the resolver reads.
+// A kind the gate does not know is out of scope (fail closed).
 const v = (tier, target, extra = {}) => Object.freeze({ tier, target, ...extra });
 
 export const VERBS = Object.freeze({
@@ -43,6 +44,13 @@ export const VERBS = Object.freeze({
   "browser.screenshot": v("T1", "origin", { sense: "page_screenshot", writeArg: 0 }),
   "browser.snapshot-visual": v("T1", "origin", { sense: "page_screenshot", writeArg: 0 }),
   "browser.evidence": v("T1", "origin", { sense: "page_state" }),
+  "browser.snapshot-ax": v("T1", "origin", { sense: "page_dom" }),
+  // Act-by-ref (DESIGN.md 5.3). params[refArg] is a snapshot ref; the resolver
+  // re-reads the element and binds its live fingerprint into the action digest.
+  "browser.click-ref": v("T3", "origin", { refArg: 0 }),
+  "browser.fill-ref": v("T3", "origin", { refArg: 0 }),
+  "browser.select-ref": v("T3", "origin", { refArg: 0 }),
+  "browser.focus-ref": v("T3", "origin", { refArg: 0 }),
   "browser.runverify": v("T0", "none"),
   "browser.navigate": v("T3", "navigate", { urlArg: 0 }),
   "browser.click": v("T3", "origin", { selectorArg: 0 }),
@@ -65,6 +73,8 @@ export const VERBS = Object.freeze({
   "app.windows": v("T1", "none", { sense: "windows" }),
   "app.tree": v("T1", "window", { sense: "accessibility_tree" }),
   "app.value": v("T1", "window", { sense: "accessibility_tree", selectorArg: 1 }),
+  "app.snapshot-ax": v("T1", "window", { sense: "accessibility_tree" }),
+  "app.resolve": v("T1", "window", { sense: "accessibility_tree", selectorArg: 1 }),
   "app.invoke": v("T3", "window", { selectorArg: 1 }),
   "app.setvalue": v("T3", "window", { selectorArg: 1 }),
   "app.select": v("T3", "window", { selectorArg: 1 }),

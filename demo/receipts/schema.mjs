@@ -17,7 +17,8 @@ export const DOES_NOT_PROVE = Object.freeze({
   DRIFT: "The recorded and observed state differ at the named fields. It does not show which side is correct or what caused the difference.",
   NEEDS_HUMAN: "The step needs a human action that Telos will not perform. It does not show the step is possible.",
   DRY_RUN: "The target was resolved and gated without acting. It does not show a real run would see the same state or succeed.",
-  UNAVAILABLE: "The module or driver was absent or unreachable. It does not show the action is impossible with the module present."
+  UNAVAILABLE: "The module or driver was absent or unreachable. It does not show the action is impossible with the module present.",
+  ERROR: "The driver was called and raised an error after dispatch. It does not show the target is unchanged; it may be partly changed."
 });
 
 const T3_FIELDS = ["hold_id", "decision_seal", "target_ref", "target_fingerprint", "resolution",

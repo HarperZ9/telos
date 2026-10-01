@@ -2,11 +2,10 @@
 // %LOCALAPPDATA%/Telos (or $XDG_STATE_HOME/telos), the local Telos key, an
 // append-only receipt file per session, and read-only live drivers for target
 // resolution. With no key or no grant, everything above T0 is refused.
-import path from "node:path";
 import { createBroker } from "./dispatch.mjs";
 import { loadPublicKey } from "./keys.mjs";
 import { stateDirs } from "./paths.mjs";
-import { JsonlRecorder } from "./recorder.mjs";
+import { ChainRecorder } from "./recorder.mjs";
 import { liveDrivers } from "./resolve.mjs";
 
 export { createBroker, actionDigest } from "./dispatch.mjs";
@@ -20,7 +19,8 @@ export function defaultBroker({ executor, browser, app, port, sessionId, dirs = 
     dirs,
     publicKey: loadPublicKey(dirs.keys),
     executor,
-    recorder: new JsonlRecorder(path.join(dirs.receipts, `broker-${session}.jsonl`)),
+    // Signed telos.receipt/v1 chain at <state root>/receipts/<session>.jsonl.
+    recorder: new ChainRecorder({ home: dirs.root, sessionId: session }),
     sessionId: session,
     drivers: liveDrivers({ browser, app, port }),
     notify,

@@ -64,9 +64,15 @@ test("telos keys init needs a terminal; the shared key shows no private part; re
   const lines = readFileSync(vec("receipt-v1-chain.jsonl"), "utf8").trim().split(/\r?\n/);
   const cut = lines.filter((l) => JSON.parse(l).seq <= 5);
   writeFileSync(path.join(dir, "receipt-v1-chain.jsonl"), `${cut.join("\n")}\n`);
-  const truncated = run("receipts", "verify", path.join(dir, "receipt-v1-chain.jsonl"));
+  const truncated = run("receipts", "verify", path.join(dir, "receipt-v1-chain.jsonl"), "--pubkey", path.join(dir, "receipt-v1-key.pub.json"));
   assert.equal(truncated.status, 1, truncated.stdout);
   assert.match(truncated.stdout, /suffix removed/);
+  // No --pubkey: the local key is pinned, and the vector chain was signed by a
+  // different key, so the default verdict is DRIFT, not a self-asserted MATCH.
+  writeFileSync(path.join(dir, "receipt-v1-chain.jsonl"), readFileSync(vec("receipt-v1-chain.jsonl")));
+  const foreign = run("receipts", "verify", path.join(dir, "receipt-v1-chain.jsonl"), "--json");
+  assert.equal(foreign.status, 1, foreign.stdout);
+  assert.equal(JSON.parse(foreign.stdout).verdict, "DRIFT");
   const head = run("receipts", "head", vec("receipt-v1-chain.jsonl"));
   assert.equal(JSON.parse(head.stdout).seq, 7);
 });
