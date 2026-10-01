@@ -4,6 +4,8 @@ import io
 import json
 from pathlib import Path
 import re
+import shutil
+import subprocess
 import tarfile
 import tempfile
 import unittest
@@ -172,6 +174,20 @@ class ArchiveTests(unittest.TestCase):
             archive, _ = self.pack(extra=(name, 'file'))
             with self.assertRaisesRegex(ValueError, 'unreviewed'):
                 self.module.build(archive, 'v0.2.0', self.root / name.replace('/', '_'))
+
+    @unittest.skipUnless(shutil.which('npm'), 'npm is not on PATH')
+    def test_the_real_npm_pack_passes_the_release_gate(self):
+        """The fixtures above pack a synthetic file set, so they never see what
+        `npm pack` really ships. The v0.7.0 release job failed on two spec docs
+        that package.json listed and this gate did not; this runs the real pack
+        through the same gate."""
+        package = json.loads((ROOT / 'package.json').read_text(encoding='utf8'))
+        subprocess.run([shutil.which('npm'), 'pack', '--silent',
+                        '--pack-destination', str(self.root)],
+                       cwd=ROOT, check=True, stdout=subprocess.DEVNULL)
+        archive = self.root / f"project-telos-mcp-{package['version']}.tgz"
+        files = self.module.read_package(archive, 'v' + package['version'])
+        self.assertTrue(self.module.REQUIRED_FILES.issubset(files))
 
     def test_content_gate_distinguishes_private_inputs_from_public_fixtures(self):
         check = self.module.validate_content

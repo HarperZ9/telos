@@ -24,6 +24,13 @@ EXPECTED_BIN = {
     'telos': 'demo/telos.mjs',
     'telos-mcp': 'demo/telos-mcp.mjs',
 }
+# Single files outside demo/ that package.json ships. A new entry in its
+# `files` list must be added here as well, after review.
+REVIEWED_DOCS = {
+    'docs/CURRENT-STATE.md', 'docs/native-control-contract.md',
+    'docs/spec/telos-tiers.md', 'docs/spec/telos.receipt-v1.md',
+    'tools/uia.ps1',
+}
 RELEASE_NOTES = re.compile(r'docs/RELEASE-NOTES-\d+\.\d+\.\d+\.md')
 EXCLUDED = {'node_modules', 'protected', 'secrets', 'private', 'credentials',
             'scankii-synthetic-corpus', 'smallharness-dogfood-pack'}
@@ -73,9 +80,7 @@ def read_package(archive, tag):
             allowed = (name in ROOT_FILES or name.startswith('demo/')
                        or name.startswith('docs/brand/')
                        or RELEASE_NOTES.fullmatch(name)
-                       or name in {'docs/CURRENT-STATE.md',
-                                   'docs/native-control-contract.md',
-                                   'tools/uia.ps1'})
+                       or name in REVIEWED_DOCS)
             if (not allowed or name.endswith('.test.mjs')
                     or name.endswith('-render-receipt.json')
                     or name == 'demo/README.md' or name in files):
