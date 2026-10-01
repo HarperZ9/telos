@@ -1,6 +1,77 @@
 # Changelog
 
-## Unreleased
+## 0.7.0
+
+Accountable actuation. Every native-control verb now runs through a permission
+tier gate, every gated call writes a signed receipt, and the model acts on
+accessibility-tree refs instead of selectors or coordinates. The remaining
+in-tree items outside what Telos supports are removed. A fresh install refuses
+every verb above T0 until the operator runs `telos keys init` and
+`telos grant issue` at an interactive terminal.
+
+Tier gate (`docs/spec/telos-tiers.md`).
+
+- Six tiers, T0 catalog to T5 hardware. Each verb has a floor; context can
+  raise it (coordinates, a write outside the sandbox) and nothing lowers it.
+- Grants (`telos.grant/v1`) are signed with the local ed25519 key, scoped by
+  origin, window, path, exec argv and device, and expire. Issuing one needs an
+  interactive terminal, so an agent's shell cannot.
+- T3 to T5 raise a hold on the exact action digest. A human approves or rejects
+  it with `telos confirm` at a terminal; an approval redeems once, for that
+  digest, in that session, inside its window.
+- Refused under every grant: password, one-time-code and card fields; the Telos
+  state directory; terminal windows and the approval window; caller flags that
+  claim approval; reserved hardware, power, camera and microphone verbs.
+
+Element refs (DESIGN section 5).
+
+- `browser snapshot-ax` and `app snapshot-ax` return a compact accessibility
+  outline with refs. `browser click-ref|fill-ref|select-ref|focus-ref` act on a
+  ref: the element is re-read at act time and must match the fingerprint the
+  snapshot recorded, and the broker binds that fingerprint into the action
+  digest, so an approval cannot be borrowed by a changed element.
+- Module discovery for Accountable Surface, provenance-sensorium and Calibrate
+  Pro (`demo/surface/modules.mjs`). Discovery only; no module verb is wired to
+  the gate in this release.
+- Listing blockers: shipped fixtures and code carry no local paths
+  (`demo/shipped-paths.test.mjs`); sibling checkouts resolve only from
+  `TELOS_SIBLINGS_ROOT` or a git checkout's parent, never `node_modules`; each
+  subprocess is recorded by name and digests.
+
+Integration fixes found in review.
+
+- Scope judges the real location of a path. A symlink or junction inside a
+  granted folder (every Windows profile has "Local Settings", a junction to
+  AppData\Local) could reach the Telos key under a grant on the profile.
+- `device exec` spawns an argv with `shell:false`, resolving argv[0] through
+  absolute PATH entries only. It used `cmd /c`, which runs a planted `git.bat`
+  from the working folder in place of an allowlisted `git`. `tools/device.ps1`
+  is deleted; read, write and list use Node `fs`.
+- A file a verb reads (eval script, workflow, upload) is hashed into the action
+  digest, so editing it after approval needs a new approval.
+- The broker and the receipt chain share one key and one canonical form. There
+  is no `TELOS_HOME` override. `telos receipts verify` pins the local key by
+  default. Receipts gain an `ERROR` status for a driver that threw after
+  dispatch.
+
+Removed (hard exclusions still in tree after 0.6.0).
+
+- Password filling from `profile.credentials.password`; a login form is handed
+  to the person. Consent, terms and arbitration auto-ticking; each box is listed
+  for the person.
+- The Greenhouse apply-and-submit adapter, the base submit adapter and the
+  runner's `adapter.*` actions.
+- `tools/profile-mine.py`, which copied Chrome's autofill store.
+- Evidence modes `credential-logistics` and `credential-assess` are renamed
+  `account-logistics-evidence` and `account-review-evidence`.
+
+Benchmark.
+
+- `bench/waa`: a WindowsAgentArena harness skeleton with a dry run that plans
+  the four-arm comparison and exercises the gate and receipt chain with fake
+  drivers. No live run; no success rate is claimed.
+
+Earlier work in this release:
 
 Client plugin packaging boundary, so a later release can go to the Claude plugin
 directory. The directory's security scan reads every file in the plugin folder,
