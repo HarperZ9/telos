@@ -6,11 +6,15 @@ import { fileURLToPath } from "node:url";
 import { actionEnvelope } from "./flagship-action.mjs";
 import { flagshipPreflight, describeMissing } from "./flagship-preflight.mjs";
 import { normalizeRoomStatus, roomCheckPasses } from "./room-status.mjs";
+import { SpawnLedger } from "./siblings.mjs";
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const telosRoot = path.resolve(here, "..");
-const publicRoot = path.resolve(telosRoot, "..");
 const asJson = process.argv.includes("--json");
+
+const preflight = flagshipPreflight();
+const ledger = new SpawnLedger({ spawnImpl: spawnSync });
+for (const record of preflight.spawned) ledger.records.push(record);
 
 const pythonTools = {
   gather: { repo: "gather", module: "gather" },
@@ -21,7 +25,7 @@ const pythonTools = {
 
 function py(tool, args) {
   const spec = pythonTools[tool];
-  const repoRoot = path.join(publicRoot, spec.repo);
+  const repoRoot = path.join(preflight.siblingsRoot, spec.repo);
   const sourcePath = path.join(repoRoot, "src");
   const code = [
     "import importlib, json, sys",
@@ -31,10 +35,10 @@ function py(tool, args) {
     "cli = importlib.import_module(module_name + '.cli')",
     "raise SystemExit(cli.main(cli_args))"
   ].join("; ");
-  const result = spawnSync(
-    "python",
+  const result = ledger.run(
+    preflight.python,
     ["-c", code, sourcePath, JSON.stringify(args), spec.module],
-    { cwd: repoRoot, encoding: "utf8" }
+    { cwd: repoRoot, encoding: "utf8", windowsHide: true }
   );
   if (result.status !== 0) {
     throw new Error(`${tool} ${args.join(" ")} failed: ${result.stderr || result.stdout}`);
@@ -43,7 +47,7 @@ function py(tool, args) {
 }
 
 function nodeJson(script) {
-  const result = spawnSync(process.execPath, [path.join(here, script)], {
+  const result = ledger.run(process.execPath, [path.join(here, script)], {
     cwd: telosRoot,
     encoding: "utf8"
   });
@@ -112,7 +116,8 @@ function roomEnvelope(room) {
       checks_passed: room.checksPassed,
       checks_total: room.checksTotal,
       protocol_surfaces: room.catalog,
-      tools: room.tools
+      tools: room.tools,
+      spawned: ledger.list()
     },
     nextActions: [
       {
@@ -158,7 +163,8 @@ function unjoinableEnvelope(missing) {
       total: 5,
       reason: "flagship_room_unjoinable",
       missing,
-      catalog: catalogSummary()
+      catalog: catalogSummary(),
+      spawned: ledger.list()
     },
     diagnostics: [
       {
@@ -189,7 +195,6 @@ function printUnjoinable(payload) {
   console.log("next      node demo/catalog.mjs --summary");
 }
 
-const preflight = flagshipPreflight({ publicRoot });
 const payload = preflight.ok
   ? roomEnvelope(collectRoom())
   : unjoinableEnvelope(preflight.missing);

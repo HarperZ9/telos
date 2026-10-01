@@ -6,13 +6,16 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { actionEnvelope } from "./flagship-action.mjs";
 import { flagshipPreflight, describeMissing } from "./flagship-preflight.mjs";
+import { SpawnLedger } from "./siblings.mjs";
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const telosRoot = path.resolve(here, "..");
-const publicRoot = path.resolve(telosRoot, "..");
+const preflight = flagshipPreflight();
+const ledger = new SpawnLedger({ spawnImpl: spawnSync });
+for (const record of preflight.spawned) ledger.records.push(record);
 
 function py(repo, moduleName, args) {
-  const repoRoot = path.join(publicRoot, repo);
+  const repoRoot = path.join(preflight.siblingsRoot, repo);
   const sourcePath = path.join(repoRoot, "src");
   const code = [
     "import importlib, json, sys",
@@ -22,10 +25,10 @@ function py(repo, moduleName, args) {
     "cli = importlib.import_module(module_name + '.cli')",
     "raise SystemExit(cli.main(cli_args))"
   ].join("; ");
-  const result = spawnSync(
-    "python",
+  const result = ledger.run(
+    preflight.python,
     ["-c", code, sourcePath, JSON.stringify(args), moduleName],
-    { cwd: repoRoot, encoding: "utf8" }
+    { cwd: repoRoot, encoding: "utf8", windowsHide: true }
   );
   if (result.status !== 0) {
     throw new Error(`${repo} ${args.join(" ")} failed: ${result.stderr || result.stdout}`);
@@ -49,7 +52,6 @@ const specPath = path.join(
   "2026-06-27-flagship-operator-spine-design.md"
 );
 
-const preflight = flagshipPreflight({ publicRoot });
 if (!preflight.ok) {
   const payload = actionEnvelope({
     tool: "telos",
@@ -58,7 +60,8 @@ if (!preflight.ok) {
     status: "UNVERIFIABLE",
     native: {
       reason: "flagship_workflow_unjoinable",
-      missing: preflight.missing
+      missing: preflight.missing,
+      spawned: ledger.list()
     },
     diagnostics: [
       {
@@ -139,7 +142,7 @@ try {
     py("crucible", "crucible", ["assess", thesis, "--measurements", measurements, "--json"])
   );
 
-  const demo = spawnSync("node", ["demo/run.mjs"], { cwd: telosRoot, encoding: "utf8" });
+  const demo = ledger.run(process.execPath, [path.join(here, "run.mjs")], { cwd: telosRoot, encoding: "utf8" });
   if (demo.status !== 0) {
     throw new Error(`telos demo failed: ${demo.stderr || demo.stdout}`);
   }
@@ -157,7 +160,8 @@ try {
       crucible_match: crucibleAssess.assessment?.match ?? 0,
       crucible_drift: crucibleAssess.assessment?.drift ?? 0,
       crucible_unverifiable: crucibleAssess.assessment?.unverifiable ?? 0,
-      telos_demo_recheck: demo.stdout.includes("recheck=true")
+      telos_demo_recheck: demo.stdout.includes("recheck=true"),
+      spawned: ledger.list()
     },
     receipts: gatherDocs.digest?.receipts ?? [],
     nextActions: [

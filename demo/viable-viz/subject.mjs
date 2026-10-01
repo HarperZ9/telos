@@ -262,7 +262,7 @@ function bfsInducedSubgraph(seedIdx, globalAdjList, maxNodes) {
  *   7. Falls back to SYNTHETIC_ECOSYSTEM on any error - never throws.
  */
 export async function ecosystemSubject(
-  path = "c:/dev/project-docs/maps/WORKSTATION-ECOSYSTEM.json"
+  path = process.env.TELOS_ECOSYSTEM_MAP || ""
 ) {
   // Right-sized for perceptual legibility: ≤18 nodes gives each node ≥21 pixels of
   // separation at 384px render width, which is enough for the pixel blob detector
