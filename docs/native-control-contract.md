@@ -4,6 +4,31 @@ The CLI contains real browser, Windows UI Automation and device drivers. The
 `telos.native.control` MCP tool returns their catalog only; it accepts no action
 arguments and does not perform an action.
 
+## What native control does not do
+
+Telos ships no CAPTCHA solving, bot-check bypass, browser fingerprint or
+User-Agent impersonation, automation hiding, randomized "human" input timing,
+or token harvesting. `demo/bypass-capability-guard.test.mjs` and
+`demo/native-control-boundary.test.mjs` fail if any of these return under a
+known name or pattern. Name and pattern checks do not replace code review.
+
+- Input verbs (`browser input click|type|keys|select`; `behave` is the
+  pre-0.6.0 alias) use a fixed pause between keystrokes, 20 ms by default and
+  set with `--pause=<ms>`. The pause lets rich editors settle. It is not
+  randomized.
+- Request capture (`browser netcap`) keeps header names and replaces the values
+  of credential, cookie, session, CSRF and key headers with `[redacted]`. It
+  records a request body's byte count, never its content.
+- Form filling (`autofill`, `spatialfill` and the Greenhouse adapter) uses only
+  the profile the caller passes, or the JSON file named by `TELOS_FORM_PROFILE`.
+  There are no built-in personal answers. A question the profile does not
+  answer is left for the person and reported. Consent, terms and
+  acknowledgement checkboxes are ticked only when the profile sets
+  `"consent": true`.
+- There are no verbs that send email, post to social accounts or sign in to
+  consumer services. 0.5.0 carried undocumented `send`, `targets`, `linkedin`,
+  `gumroadlogin` and `gumroadlist` verbs; 0.6.0 removed them.
+
 ## Target selection
 
 An explicit `--match=...` is a case-sensitive substring of a page URL or title.

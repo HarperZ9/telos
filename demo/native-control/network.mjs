@@ -2,7 +2,8 @@
 // Origin, plus request capture for endpoint discovery.
 //
 //   apiFetch(session, {url, method, body, headers}) -> in-page fetch result
-//   capture(session, {durationMs, urlFilter}) -> observed requests in a window
+//   capture(session, {durationMs, urlFilter}) -> observed requests in a window,
+//     with credential headers and request bodies redacted
 
 // POST/GET at the API layer from the page's own context: uses the page's session
 // cookies + Origin + any CSRF the page holds. Body is JSON-serializable or a
@@ -24,9 +25,29 @@ export async function apiFetch(session, { url, method = "POST", body, headers = 
   return res.result?.value;
 }
 
-// Observe requests in a window for endpoint discovery. Captures method/url/
-// postData/headers for requests matching urlFilter (substring). Requires a CDP
-// session that stays open for durationMs.
+// Header names whose values carry credentials or session state. Capture keeps
+// the name and replaces the value, so endpoint discovery never copies a token,
+// cookie or key into a receipt, ledger or model context.
+const SECRET_HEADER = /^(authorization|proxy-authorization|cookie|set-cookie)$|token|secret|session|api-?key|auth(?!ority)|csrf|xsrf|signature|credential|password/i;
+
+export function redactHeaders(headers = {}) {
+  const out = {};
+  for (const [name, value] of Object.entries(headers || {})) {
+    out[name] = SECRET_HEADER.test(name) ? "[redacted]" : value;
+  }
+  return out;
+}
+
+// Request bodies can hold passwords, tokens and personal data, so capture
+// records only their size, never their content.
+export function describeBody(postData) {
+  const text = postData == null ? "" : String(postData);
+  return { bytes: Buffer.byteLength(text, "utf8"), content: text ? "[redacted]" : null };
+}
+
+// Observe requests in a window for endpoint discovery. Captures method, URL,
+// status, redacted headers and body size for requests matching urlFilter
+// (substring). Requires a CDP session that stays open for durationMs.
 export async function capture(session, { durationMs = 3000, urlFilter = "" } = {}) {
   await session.send("Network.enable");
   const seen = [];
@@ -37,8 +58,8 @@ export async function capture(session, { durationMs = 3000, urlFilter = "" } = {
       requestId: p.requestId,
       method: p.request.method,
       url: u,
-      postData: (p.request.postData || "").slice(0, 600),
-      headers: p.request.headers,
+      body: describeBody(p.request.postData),
+      headers: redactHeaders(p.request.headers),
       type: p.type,
     });
   };
@@ -50,5 +71,5 @@ export async function capture(session, { durationMs = 3000, urlFilter = "" } = {
   session.on("Network.responseReceived", onResponse);
   await new Promise((r) => setTimeout(r, durationMs));
   await session.send("Network.disable").catch(() => {});
-  return { captured: seen.length, requests: seen };
+  return { captured: seen.length, redacted: true, requests: seen };
 }

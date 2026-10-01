@@ -1,5 +1,16 @@
 # Project Telos Current State
 
+## 0.6.0 release candidate, 2026-10-01
+
+Not tagged or published. 0.5.0 remains the current npm and GitHub release.
+The candidate removes native-control code that an audit of the 0.5.0 package
+placed outside what Telos supports: a scraper with a browser-impersonating
+User-Agent, unattended email, social-post and consumer sign-in verbs,
+randomized keystroke timing, a built-in personal form profile with default
+consent, and unredacted request capture. See
+[the 0.6.0 notes](RELEASE-NOTES-0.6.0.md) and
+[the native-control contract](native-control-contract.md).
+
 ## 0.5.0 published release, 2026-10-01
 
 The release includes native Windows client packages, a scoped Telos skill and

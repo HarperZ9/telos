@@ -25,6 +25,10 @@ const CODE = /\.(mjs|cjs|js|py|ps1)$/i;
 const FORBIDDEN_MODULE = /captcha|stealth|undetected|puppeteer-extra|playwright-extra|ghost-cursor|fingerprint-(injector|generator|suite)|capsolver|anticaptcha|nopecha|anti-?bot|bot-?bypass/i;
 const FORBIDDEN_NAME = /captcha|stealth|spoof|evasion|antibot|anti_bot|botbypass/i;
 const FORBIDDEN_EXACT_NAME = new Set(["warmup", "humanmove", "recaptchatoken"]);
+// Input helpers named for imitating a person (humanClick, humanType, ...). 0.5.0
+// shipped these with randomized keystroke timing; 0.6.0 replaced them with
+// fixed-pace pointerClick/typeText/typeKeys.
+const FORBIDDEN_HUMAN_INPUT = /^human_?(?:click|type|typekeys|keys|move|mouse|scroll|delay|pause|jitter|like)/i;
 // Bare verbs that were only CAPTCHA entry points on the native-control surface.
 const FORBIDDEN_NATIVE_VERB = new Set(["token", "solve"]);
 // Upper snake case containing an underscore, so prose "CAPTCHA" is not an env var.
@@ -88,7 +92,7 @@ function verbNames(source) {
 }
 
 const isForbiddenName = (name) =>
-  FORBIDDEN_NAME.test(name) || FORBIDDEN_EXACT_NAME.has(name.toLowerCase());
+  FORBIDDEN_NAME.test(name) || FORBIDDEN_EXACT_NAME.has(name.toLowerCase()) || FORBIDDEN_HUMAN_INPUT.test(name);
 
 function dependencyNames(pkg) {
   const fields = ["dependencies", "devDependencies", "optionalDependencies", "peerDependencies"];
@@ -115,6 +119,8 @@ test("detectors flag synthetic forbidden names", () => {
   assert.deepEqual(dependencyNames({ dependencies: { "example-stealth": "1" } }), ["example-stealth"]);
   assert.ok(verbNames('case "captcha":').some(isForbiddenName));
   assert.ok(definedNames("export async function warmup(s) {}", "x.mjs").some(isForbiddenName));
+  assert.ok(definedNames("export async function humanType(s, t) {}", "x.mjs").some(isForbiddenName));
+  assert.ok(!isForbiddenName("forum.prose.humanize"));
   assert.deepEqual("EXAMPLE_CAPTCHA_KEY and CAPTCHA prose".match(FORBIDDEN_ENV), ["EXAMPLE_CAPTCHA_KEY"]);
 });
 
