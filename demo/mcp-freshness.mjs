@@ -84,11 +84,8 @@ function subsetMismatches(expected, actual, prefix = "") {
 }
 
 function serverPacket(name, server) {
-  // A healthy server exposes its full declared surface: the core expected
-  // tools plus the auxiliary tools the manifest lists as optional-but-known.
-  // Comparing observed tools against expected_tools alone flags every
-  // legitimate auxiliary tool as drift, so the tool-surface hash uses the
-  // union. expected_tools is still reported for the subset contract.
+  // Hash the known surface for provenance. Acceptance requires the core tools
+  // and permits any subset of optional auxiliaries, subject to the host grants.
   const declaredTools = [...new Set([
     ...(server.expected_tools ?? []),
     ...(server.auxiliary_tools ?? [])
@@ -109,7 +106,7 @@ function serverPacket(name, server) {
       observed_status_payload_required: true,
       compare_server_info_version_to: "expected_version",
       compare_status_tool_version_to: "expected_version",
-      compare_tools_list_hash_to: "declared_tool_hash",
+      compare_tools_list_to: "required tools plus any subset of declared auxiliary tools",
       observed_behavior_probes_required: (server.freshness.behavior_probes ?? []).length > 0,
       compare_behavior_probe_subset_to: "expected_subset"
     },
@@ -198,18 +195,20 @@ export function evaluateObservedServer(name, observed) {
     });
   }
 
-  if (toolHash && toolHash !== expected.declared_tool_hash) {
+  if (toolHash) {
     const declaredSet = new Set([
       ...expected.expected_tools,
       ...expected.auxiliary_tools
     ]);
     const observedSet = new Set(toolNames);
-    diagnostics.push({
+    const missing = expected.expected_tools.filter((tool) => !observedSet.has(tool));
+    const unexpected = toolNames.filter((tool) => !declaredSet.has(tool));
+    if (missing.length || unexpected.length) diagnostics.push({
       code: "tool_surface_drift",
       expected: expected.declared_tool_hash,
       observed: toolHash,
-      missing_tools: expected.expected_tools.filter((tool) => !observedSet.has(tool)),
-      unexpected_tools: toolNames.filter((tool) => !declaredSet.has(tool))
+      missing_tools: missing,
+      unexpected_tools: unexpected
     });
   }
 

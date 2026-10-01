@@ -40,3 +40,11 @@ the same source and runtime bytes. No separate Node installation is needed for
 those Windows x64 artifacts. RUNTIME.json identifies the upstream archive and
 license hashes. Other platforms, installation in actual clients and marketplace
 approval need separate validation. The runtime is not a model.
+
+To prepare the synthetic Index freshness probe from the Windows package, run
+runtime/node.exe with server/demo/compat-fixture.mjs and an absolute new directory
+as its arguments. The parent directory must exist. The helper refuses an existing
+target and prints PROJECT_TELOS_COMPAT_FIXTURE; replace that placeholder in the
+probe arguments with the printed path. Source packages use the installed Node
+runtime for the same helper. This fixture checks bounded protocol compatibility;
+it does not establish that a full repository fits the fixture's budget.

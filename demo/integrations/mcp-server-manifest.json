@@ -1,6 +1,6 @@
 {
   "schema": "project-telos.mcp-server-manifest/v1",
-  "verified_on": "2026-09-23",
+  "verified_on": "2026-10-01",
   "workspace_placeholder": "${PROJECT_TELOS_PUBLIC}",
   "transports": [
     "stdio"
@@ -65,8 +65,8 @@
       ],
       "freshness": {
         "status_tool": "gather.status",
-        "expected_version": "1.8.2",
-        "expected_current_status": "1.8.2 MCP scope clarity, 1.8.1 descriptor handoff for Python context selection, 1.7.1 newline-integrity patch, readable context selection, scholarly-graph federation, scheduled monitor with change custody, accountable pilot evidence engine, and Project Telos operator-spine MCP parity",
+        "expected_version": "2.1.0",
+        "expected_current_status": "2.1.0 bounded local client profile and native package candidates; 2.0.0 video intake with one caption track per video, separate caption and metadata passes, bounded rate-limit backoff, a stop at any YouTube bot check, resumable channel runs, and the stealth backend removed, 1.9.1 network and device path refusal on file sources and MCP path arguments and child-program lookups that skip PATH entries reaching the working folder, 1.9.0 launch-only MCP grants and safe child spawning, 1.8.3 catalog line-break fix for readable context, 1.8.2 MCP scope clarity, 1.8.1 descriptor handoff for Python context selection, 1.7.1 newline-integrity patch, readable context selection, scholarly-graph federation, scheduled monitor with change custody, accountable pilot evidence engine, and Project Telos operator-spine MCP parity",
         "failure_codes": [
           "stale_mcp_server",
           "tool_surface_drift",
@@ -114,8 +114,8 @@
       ],
       "freshness": {
         "status_tool": "crucible.status",
-        "expected_version": "1.2.0",
-        "expected_current_status": "1.2.0 operator floor with run, review, recheck, CI gate, judge oracle, and MCP parity",
+        "expected_version": "1.4.0",
+        "expected_current_status": "1.4.0 operator floor with run, review, recheck, MCP replay-template parity, CI gate, judge oracle, and MCP parity",
         "failure_codes": [
           "stale_mcp_server",
           "tool_surface_drift",
@@ -144,7 +144,10 @@
             "mcp"
           ]
         }
-      }
+      },
+      "auxiliary_tools": [
+        "crucible.recheck_template"
+      ]
     },
     "index": {
       "flagship": "index",
@@ -173,12 +176,13 @@
         "index.router.job.status",
         "index.router.job.result",
         "index.router.job.cancel",
-        "index.router.job.resume"
+        "index.router.job.resume",
+        "index.route"
       ],
       "freshness": {
         "status_tool": "index.status",
-        "expected_version": "2.13.0",
-        "expected_current_status": "2.13.0 workspace atlas, certificates, freshness, benchmarking, selection-aware context envelopes, and MCP parity",
+        "expected_version": "2.15.0",
+        "expected_current_status": "2.15.0 workspace atlas, certificates, freshness, benchmarking, selection-aware context envelopes, and MCP parity",
         "failure_codes": [
           "stale_mcp_server",
           "tool_surface_drift",
@@ -192,8 +196,9 @@
             "id": "index-context-envelope-selection-freshness",
             "tool": "index.context.envelope",
             "arguments": {
-              "root": "${PROJECT_TELOS_PUBLIC}",
-              "budget": 700,
+              "root": "${PROJECT_TELOS_COMPAT_FIXTURE}",
+              "budget": 4000,
+              "bounded_output": true,
               "focus": "index",
               "hops": 0
             },
@@ -201,6 +206,8 @@
               "schema": "project-telos.context-envelope/v1",
               "tool": "index.context.envelope",
               "verification_verdict": "MATCH",
+              "failure_codes": [],
+              "omitted": [],
               "selection": {
                 "mode": "focused",
                 "retained_names": [
@@ -211,7 +218,7 @@
                 "schema": "index.context-envelope-freshness/v1"
               }
             },
-            "rationale": "Catch stale host-loaded Index servers that expose context envelopes without selection summaries and freshness roots."
+            "rationale": "Check bounded selection and freshness against a temporary synthetic workspace with one tiny repo named index. The sibling-behavior test provisions it. This is a protocol compatibility probe; it does not show that a full repository fits this budget."
           },
           {
             "id": "index-map-portable-private-line",
@@ -277,8 +284,8 @@
       ],
       "freshness": {
         "status_tool": "forum.status",
-        "expected_version": "1.14.0",
-        "expected_current_status": "1.14.0 observability, auth, route-preflight skill packaging, 1.13.0 campaign orchestration, approval gates with durable deadlines, proof and domain lanes, and run room operator surfaces",
+        "expected_version": "1.16.0",
+        "expected_current_status": "1.16.0 native client preflight packaging with no executor or gate grants; the 1.15.1 spawn helper closes a working-folder alias, a repointed PATH link and a quoted PATH entry, over 1.15.0 gate-integrity, executor isolation, daemon Origin/Host/content-type checks and a default auth token, and the 1.14 observability, auth, context budgets, capsules, delivery profiles, route frames, run rooms, runtime inspection, approval gates and campaign orchestration",
         "failure_codes": [
           "stale_mcp_server",
           "tool_surface_drift",

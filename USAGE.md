@@ -1,5 +1,30 @@
 # Telos Usage
 
+## Bounded Index compatibility probe
+
+From the extracted Telos package or source directory, create a new synthetic
+workspace in a directory whose parent already exists:
+
+```sh
+node demo/compat-fixture.mjs /absolute/path/to/new-compat-workspace
+```
+
+The helper refuses an existing target and prints PROJECT_TELOS_COMPAT_FIXTURE.
+Replace that placeholder in the Index freshness probe arguments with the printed
+path before calling the connected Index server. The fixture contains one tiny
+repository named index and a repository marker; it has no commit history or real
+user data. The probe requires bounded output, a 4,000-token budget, MATCH and no
+omissions or failure codes. It tests the selection/freshness protocol on this
+fixture. Full-repository budget fitness needs its own measurement. The source
+integration test also rejects a real-workspace 700-token overflow and stale-source
+freshness.
+
+With the declared sibling checkouts beside the telos directory, run:
+
+```sh
+node --test demo/sibling-behavior.test.mjs
+```
+
 Telos is the local-first Project Telos integration workbench. It exposes the
 five flagship tools, compatibility doctors, context receipts, creative-engine
 lanes, model-foundry lanes, and MCP host manifests through runnable demo

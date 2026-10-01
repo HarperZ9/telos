@@ -79,6 +79,8 @@ assert.deepEqual(indexEnvelopeProbe.expected_subset, {
   schema: "project-telos.context-envelope/v1",
   tool: "index.context.envelope",
   verification_verdict: "MATCH",
+  failure_codes: [],
+  omitted: [],
   selection: {
     mode: "focused",
     retained_names: ["index"]
@@ -131,6 +133,17 @@ assert.equal(match.observed.tool_hash, packet.servers.forum.declared_tool_hash);
 assert.equal(match.observed.behavior_probes["forum-broad-telos-route"].verdict, "MATCH");
 assert.equal(match.observed.behavior_probes["forum-private-line-telos-route"].verdict, "MATCH");
 
+const optionalAbsent = structuredClone(observedForumMatch);
+optionalAbsent.tools_list.result.tools = packet.servers.forum.expected_tools.map((name) => ({ name }));
+assert.equal(evaluateObservedServer("forum", optionalAbsent).verdict, "MATCH",
+  "ungranted optional tools must not force a freshness failure");
+const requiredAbsent = structuredClone(optionalAbsent);
+requiredAbsent.tools_list.result.tools.pop();
+assert.ok(evaluateObservedServer("forum", requiredAbsent).failure_codes.includes("tool_surface_drift"));
+const unknownTool = structuredClone(optionalAbsent);
+unknownTool.tools_list.result.tools.push({ name: "forum.undeclared" });
+assert.ok(evaluateObservedServer("forum", unknownTool).failure_codes.includes("tool_surface_drift"));
+
 const behaviorDriftForum = structuredClone(observedForumMatch);
 behaviorDriftForum.behavior_probes["forum-private-line-telos-route"].result = {
   decided: null,
@@ -161,6 +174,8 @@ const observedIndexMatch = {
         schema: "project-telos.context-envelope/v1",
         tool: "index.context.envelope",
         verification_verdict: "MATCH",
+        failure_codes: [],
+        omitted: [],
         selection: {
           mode: "focused",
           retained_names: ["index"]
