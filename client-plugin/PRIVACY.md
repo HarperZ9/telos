@@ -13,7 +13,9 @@ files in a temporary folder and removes them before it returns.
 **What it runs.** Each tool starts a local Node.js script from the package with fixed
 arguments. The room and workflow tools also start a local Python interpreter against
 sibling checkouts. No tool on the packaged server writes to your files, opens a
-network connection or drives a browser or application.
+network connection or drives a browser or application. The plugin does not
+contain the native-control drivers; the native-control tool returns a verb
+catalog.
 
 **Retention.** None.
 

@@ -66,7 +66,8 @@ def payload(root, config, value):
         selected = name in config['files'] or any(name.startswith(r + '/') for r in config['roots'])
         excluded = (name.endswith(('.test.mjs', '.pyc')) or
                     any(part in {'__pycache__', 'scankii-synthetic-corpus', 'smallharness-dogfood-pack'}
-                        for part in Path(name).parts) or name == 'demo/README.md')
+                        for part in Path(name).parts) or name == 'demo/README.md' or
+                    configured_exclusion(config, name))
         if selected and not excluded:
             data['server/' + name] = read(root, name)
     source = root / config.get('skill_source', 'client-plugin/skills/' + config['skill'])
@@ -91,6 +92,20 @@ def payload(root, config, value):
     data['README.md'] = read(root, 'client-plugin/README.md')
     data['PRIVACY.md'] = read(root, 'client-plugin/PRIVACY.md')
     return data
+
+
+def configured_exclusion(config, name):
+    """True when config 'exclude' drops a tracked path from the plugin payload.
+
+    An entry ending in '/' drops that whole subtree; any other entry drops one
+    exact path. 'exclude_keep' names exact paths that stay inside an excluded
+    subtree. Telos uses this to ship the native-control catalog without the
+    actuation drivers and helper scripts, which stay in the npm package.
+    """
+    if name in config.get('exclude_keep', []):
+        return False
+    return any(name.startswith(entry) if entry.endswith('/') else name == entry
+               for entry in config.get('exclude', []))
 
 
 def read_directory(path):

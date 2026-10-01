@@ -316,7 +316,7 @@ const toolScripts = new Map([
   ["telos.second_level.queue", ["second-level-flagship-queue.mjs"]],
   ["telos.workstation.substrate", ["workstation-substrate.mjs"]],
   ["telos.display.calibration", ["display-calibration.mjs"]],
-  ["telos.native.control", ["native-control.mjs"]],
+  ["telos.native.control", ["native-control-catalog.mjs"]],
   ["telos.browser.evidence", ["browser-evidence.mjs"]],
   ["telos.showcase.scout", ["showcase.mjs", "scout", "--fixture", "--json"]],
   ["telos.proof", ["proof.mjs", "agent-action", "--demo", "--json"]],
