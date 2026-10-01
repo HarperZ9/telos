@@ -2,7 +2,9 @@
 // Origin, plus request capture for endpoint discovery.
 //
 //   apiFetch(session, {url, method, body, headers}) -> in-page fetch result
-//   capture(session, {durationMs, urlFilter}) -> observed requests in a window
+//   capture(session, {durationMs, urlFilter}) -> observed requests in a window,
+//     with credential headers, URL credential parameters and request bodies
+//     redacted
 
 // POST/GET at the API layer from the page's own context: uses the page's session
 // cookies + Origin + any CSRF the page holds. Body is JSON-serializable or a
@@ -24,9 +26,58 @@ export async function apiFetch(session, { url, method = "POST", body, headers = 
   return res.result?.value;
 }
 
-// Observe requests in a window for endpoint discovery. Captures method/url/
-// postData/headers for requests matching urlFilter (substring). Requires a CDP
-// session that stays open for durationMs.
+// Header names whose values carry credentials or session state. Capture keeps
+// the name and replaces the value, so endpoint discovery never copies a token,
+// cookie or key into a receipt, ledger or model context.
+const SECRET_HEADER = /^(authorization|proxy-authorization|cookie|set-cookie)$|token|secret|session|api-?key|auth(?!ority)|csrf|xsrf|signature|credential|password/i;
+
+export function redactHeaders(headers = {}) {
+  const out = {};
+  for (const [name, value] of Object.entries(headers || {})) {
+    out[name] = SECRET_HEADER.test(name) ? "[redacted]" : value;
+  }
+  return out;
+}
+
+// Query and fragment parameter names whose values carry credentials: OAuth
+// codes and access tokens, signed-URL signatures, API keys, session ids.
+const SECRET_PARAM = /^(code|key|sig|sid|pwd|pass|otp)$|token|secret|session|api[-_]?key|access[-_]?key|auth(?!or)|csrf|xsrf|signature|credential|password|x-amz-/i;
+
+function redactParams(text) {
+  return text.split("&").map((pair) => {
+    const eq = pair.indexOf("=");
+    if (eq < 0) return pair;
+    const raw = pair.slice(0, eq);
+    let name = raw;
+    try { name = decodeURIComponent(raw.replace(/\+/g, " ")); } catch { /* keep the raw name */ }
+    return SECRET_PARAM.test(name) ? `${raw}=[redacted]` : pair;
+  }).join("&");
+}
+
+// A captured URL keeps its origin, path and parameter names. Userinfo and the
+// values of credential parameters in the query or fragment become [redacted],
+// so a token passed in a URL does not reach the capture output either.
+export function redactUrl(url) {
+  let out = String(url ?? "").replace(/^([a-z][a-z0-9+.-]*:\/\/)[^/?#@]*@/i, "$1[redacted]@");
+  const hash = out.indexOf("#");
+  let fragment = "";
+  if (hash >= 0) { fragment = out.slice(hash + 1); out = out.slice(0, hash); }
+  const q = out.indexOf("?");
+  if (q >= 0) out = out.slice(0, q + 1) + redactParams(out.slice(q + 1));
+  if (hash >= 0) out += "#" + (fragment.includes("=") ? redactParams(fragment) : fragment);
+  return out;
+}
+
+// Request bodies can hold passwords, tokens and personal data, so capture
+// records only their size, never their content.
+export function describeBody(postData) {
+  const text = postData == null ? "" : String(postData);
+  return { bytes: Buffer.byteLength(text, "utf8"), content: text ? "[redacted]" : null };
+}
+
+// Observe requests in a window for endpoint discovery. Captures method, redacted
+// URL, status, redacted headers and body size for requests matching urlFilter
+// (substring). Requires a CDP session that stays open for durationMs.
 export async function capture(session, { durationMs = 3000, urlFilter = "" } = {}) {
   await session.send("Network.enable");
   const seen = [];
@@ -36,9 +87,9 @@ export async function capture(session, { durationMs = 3000, urlFilter = "" } = {
     seen.push({
       requestId: p.requestId,
       method: p.request.method,
-      url: u,
-      postData: (p.request.postData || "").slice(0, 600),
-      headers: p.request.headers,
+      url: redactUrl(u),
+      body: describeBody(p.request.postData),
+      headers: redactHeaders(p.request.headers),
       type: p.type,
     });
   };
@@ -50,5 +101,5 @@ export async function capture(session, { durationMs = 3000, urlFilter = "" } = {
   session.on("Network.responseReceived", onResponse);
   await new Promise((r) => setTimeout(r, durationMs));
   await session.send("Network.disable").catch(() => {});
-  return { captured: seen.length, requests: seen };
+  return { captured: seen.length, redacted: true, requests: seen };
 }

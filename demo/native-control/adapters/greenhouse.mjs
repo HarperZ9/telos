@@ -10,7 +10,7 @@
 // Methods: fill(ctx, step), submit(ctx, step), check(ctx, step).
 
 import * as forms from "../forms.mjs";
-import * as behave from "../behave.mjs";
+import * as input from "../input.mjs";
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
@@ -61,12 +61,19 @@ export default {
     // 1. standard text fields via the generic engine filler (autocomplete-driven)
     await forms.fill(ctx.session, profile);
     // 2. phone into the iti widget with proper events
-    await setPhone(ctx.session, profile.phone);
-    // 3. Greenhouse custom Yes/No questions
-    await pickQuestion(ctx.session, "require sponsorship", "No");
-    await pickQuestion(ctx.session, "authorized to work", "Yes");
-    await pickQuestion(ctx.session, "how did you hear", "LinkedIn"); // common; harmless if absent
-    return { adapter: "greenhouse", filled: "standard+phone+custom-questions" };
+    if (profile.phone) await setPhone(ctx.session, profile.phone);
+    // 3. Greenhouse custom questions, answered only from the caller's profile.
+    // Telos never invents an answer: a question with no profile answer is left
+    // for the person to complete and reported as unanswered.
+    const answers = profile.answers || {};
+    const answered = [];
+    const unanswered = [];
+    for (const [key, question] of [["sponsorship", "require sponsorship"], ["authorized", "authorized to work"], ["how did you hear", "how did you hear"]]) {
+      if (answers[key] == null || answers[key] === "") { unanswered.push(question); continue; }
+      await pickQuestion(ctx.session, question, String(answers[key]));
+      answered.push(question);
+    }
+    return { adapter: "greenhouse", filled: "standard+phone+custom-questions", answered, unanswered };
   },
 
   async submit(ctx) {
@@ -75,7 +82,7 @@ export default {
       expression: `(()=>{const b=Array.from(document.querySelectorAll('button,input[type=submit]')).find(b=>/submit/i.test((b.innerText||b.value||'')));if(!b)return null;b.scrollIntoView({block:'center'});const r=b.getBoundingClientRect();return{x:Math.round(r.x+r.width/2),y:Math.round(r.y+r.height/2)};})()`,
     });
     const coords = r.result?.value;
-    if (coords) await behave.humanClick(ctx.session, coords.x, coords.y);
+    if (coords) await input.pointerClick(ctx.session, coords.x, coords.y);
     return { adapter: "greenhouse", clicked: coords };
   },
 
