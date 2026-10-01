@@ -26,18 +26,33 @@ export function makeReceipt(action, target, result, { ok = true, clock } = {}) {
   };
 }
 
+// Every verb the CLI dispatcher accepts, by domain. A test compares this list
+// with the dispatcher's `case` labels so the catalog cannot under-report what
+// the npm CLI can do.
 export const HELP = Object.freeze({
-  usage: "node demo/native-control.mjs <browser|app|device> <verb> [args]",
+  usage: "node demo/native-control.mjs <browser|app|device|learn> <verb> [args]",
   delivery:
     "The actuation CLI ships in the npm package and the source repository. The client plugin carries this catalog only and cannot drive a browser, an application or the device.",
   browser: [
     "tabs",
     "navigate",
     "eval",
+    "evalfile",
+    "evalframe",
     "click",
     "fill",
     "focus",
     "type",
+    "input",
+    "upload",
+    "autofill",
+    "spatialfill",
+    "autofillframe",
+    "spatialfillframe",
+    "apifetch",
+    "netcap",
+    "run",
+    "runverify",
     "gettext",
     "waitfor",
     "screenshot",
@@ -48,6 +63,8 @@ export const HELP = Object.freeze({
   ],
   app: ["windows", "tree", "invoke", "setvalue", "focus", "value", "select", "restore", "input", "type"],
   device: ["exec", "read", "write", "ls"],
+  learn: ["plan", "record", "study", "due", "mastery", "misconceptions", "status"],
+  aliases: { "browser behave": "browser input" },
 });
 
 export function helpReceipt(options = {}) {

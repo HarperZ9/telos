@@ -16,6 +16,12 @@ including code the MCP server never calls.
   from the plugin with no driver present. The CLI re-exports both names and
   prints the same help receipt.
 - The help receipt gains a `delivery` field that says where actuation lives.
+- The catalog now lists every verb the CLI accepts. It used to omit 12 browser
+  verbs (`evalfile`, `evalframe`, `input`, `upload`, the four form-fill verbs,
+  `apifetch`, `netcap`, `run`, `runverify`) and the `learn` domain, so it
+  under-reported what the CLI can do. A test compares the catalog with the
+  dispatcher's `case` labels and the `learn` actions; `behave` is listed as an
+  alias of `input`.
 - `client-plugin/config.json` gains `exclude` and `exclude_keep`, applied by
   `scripts/build_client_plugin.py`. A package test fails if any excluded driver
   or any `.ps1` file returns to the plugin archive.

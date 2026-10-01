@@ -8,6 +8,7 @@ import { spawnSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
 import { HELP, SCHEMA, helpReceipt, makeReceipt } from "./native-control-catalog.mjs";
 import * as cli from "./native-control.mjs";
+import { actions as learnActions } from "./native-control/learn.mjs";
 
 const here = (rel) => fileURLToPath(new URL(rel, import.meta.url));
 const fixedClock = () => "2026-10-01T00:00:00.000Z";
@@ -45,4 +46,25 @@ test("help receipt is background, read-only and says where actuation lives", () 
   assert.equal(r.result, HELP);
   assert.match(HELP.delivery, /npm package/);
   assert.match(HELP.delivery, /catalog only/);
+});
+
+test("catalog lists every verb the CLI dispatcher accepts, and no other", () => {
+  const source = readFileSync(here("./native-control.mjs"), "utf8");
+  const body = (name) => {
+    const start = source.indexOf(`async function ${name}(`);
+    assert.ok(start >= 0, `${name} not found`);
+    const end = source.indexOf("\nasync function ", start + 1);
+    return source.slice(start, end < 0 ? undefined : end);
+  };
+  const cases = (text) => [...text.matchAll(/\bcase\s+"([^"]+)"\s*:/g)].map((m) => m[1]);
+  const aliased = Object.keys(HELP.aliases).map((k) => k.split(" ")[1]);
+  const browserVerbs = ["tabs", ...cases(body("runBrowser"))].filter((v) => !aliased.includes(v));
+  assert.deepEqual([...HELP.browser].sort(), browserVerbs.sort());
+  assert.deepEqual([...HELP.app].sort(), cases(body("runApp")).sort());
+  assert.deepEqual([...HELP.device].sort(), cases(body("runDevice")).sort());
+  assert.deepEqual([...HELP.learn].sort(), Object.keys(learnActions).sort());
+  for (const [alias, target] of Object.entries(HELP.aliases)) {
+    const [domain, verb] = target.split(" ");
+    assert.ok(HELP[domain].includes(verb), `${alias} points at a listed verb`);
+  }
 });
