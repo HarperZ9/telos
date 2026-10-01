@@ -224,6 +224,63 @@ export const tools = [
   }
 ];
 
+// MCP tool annotations. Every tool runs a local script with fixed arguments and
+// returns JSON; none passes --out, writes a file, or opens a connection. Native
+// control returns its catalog only; actuation is not reachable from this server.
+export const toolTitles = {
+  "telos.status": "Telos status",
+  "telos.doctor": "Telos readiness check",
+  "telos.room": "Flagship room summary",
+  "telos.workflow": "Check the flagship workflow",
+  "telos.catalog": "Telos tool catalog",
+  "telos.server.manifest": "MCP server manifest",
+  "telos.mcp.freshness": "Compare loaded MCP servers",
+  "telos.ci.doctor": "CI compatibility check",
+  "telos.ci.triage": "CI failure triage",
+  "telos.presentation.doctor": "Presentation check",
+  "telos.accessibility.doctor": "Accessibility check",
+  "telos.performance.doctor": "Performance check",
+  "telos.compatibility.doctor": "Compatibility check",
+  "telos.operator.doctor": "Workbench health check",
+  "telos.admission.telemetry": "Admission records",
+  "telos.context.envelope": "Context envelope",
+  "telos.context.pack": "Context pack",
+  "telos.action.receipt": "Action receipt",
+  "telos.loop.ledger": "Loop ledger",
+  "telos.objective.monitor": "Objective monitor",
+  "telos.model.foundry": "Model foundry register",
+  "telos.learning.forge": "Learning forge register",
+  "telos.learning.labs": "Learning labs register",
+  "telos.research.seed": "Research seed register",
+  "telos.research.thermodynamic": "Thermodynamic research receipt",
+  "telos.rendering.research": "Rendering research register",
+  "telos.rendering.capabilities": "Rendering capabilities",
+  "telos.measurement.layers": "Measurement layers",
+  "telos.creative.engine": "Creative engine register",
+  "telos.creative.kernels": "Creative kernels",
+  "telos.revival.registry": "Revival registry",
+  "telos.second_level.queue": "Second-level tool queue",
+  "telos.workstation.substrate": "Workstation intake register",
+  "telos.display.calibration": "Display calibration contract",
+  "telos.native.control": "Native control catalog",
+  "telos.browser.evidence": "Browser evidence fixture",
+  "telos.showcase.scout": "Showcase candidate rankings",
+  "telos.proof": "Agent action proof packet",
+  "telos.proof.research": "Research claim proof packet",
+  "telos.proof.visual": "Visual proof packet",
+  "telos.proof.build": "Build proof packet"
+};
+for (const tool of tools) {
+  tool.title = toolTitles[tool.name];
+  tool.annotations = {
+    title: tool.title,
+    readOnlyHint: true,
+    destructiveHint: false,
+    idempotentHint: true,
+    openWorldHint: false
+  };
+}
+
 const toolScripts = new Map([
   ["telos.status", ["status.mjs"]],
   ["telos.doctor", ["doctor.mjs"]],
