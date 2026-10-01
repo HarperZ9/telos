@@ -152,6 +152,8 @@ jobs:
           python tools/release_artifacts.py --tarball .release/project-telos-mcp-*.tgz --tag "$RELEASE_TAG" --output-dir .release
           cp "$RUNNER_TEMP"/client-plugins/*.zip .release/
           cat "$RUNNER_TEMP"/client-plugins/*.sha256 >> .release/SHA256SUMS.txt
+          # A CR byte passes coreutils 9 but fails sha256sum 8.32 and shasum.
+          if grep -l $'\r' .release/SHA256SUMS.txt; then echo 'checksum file has CR bytes'; exit 1; fi
           (cd .release && sha256sum --check SHA256SUMS.txt)
 
       - uses: actions/download-artifact@v7
@@ -162,6 +164,8 @@ jobs:
         run: |
           cp native-client/*.zip native-client/*.mcpb .release/
           cat native-client/*.sha256 >> .release/SHA256SUMS.txt
+          # A CR byte passes coreutils 9 but fails sha256sum 8.32 and shasum.
+          if grep -l $'\r' .release/SHA256SUMS.txt; then echo 'checksum file has CR bytes'; exit 1; fi
           (cd .release && sha256sum --check SHA256SUMS.txt)
 
       # A re-run for a tag that already has its assets, for example after the
