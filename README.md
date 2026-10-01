@@ -2,7 +2,7 @@
 
 **The shared workbench: durable state, native workstation control, sensory organs, a discovery forge.**
 
-![version](https://img.shields.io/badge/version-0.4.3-9683ff?style=flat-square&labelColor=14041b)
+![version](https://img.shields.io/badge/version-0.5.0-9683ff?style=flat-square&labelColor=14041b)
 ![license](https://img.shields.io/badge/license-FSL--1.1--ALv2-8f8095?style=flat-square&labelColor=14041b)
 [![CI](https://github.com/HarperZ9/telos/actions/workflows/ci.yml/badge.svg)](https://github.com/HarperZ9/telos/actions/workflows/ci.yml)
 ![node](https://img.shields.io/badge/node-24%20CI%2C%2020%2B%20registry-9683ff?style=flat-square&labelColor=14041b)
@@ -139,7 +139,7 @@ Peer repos: [gather](https://github.com/HarperZ9/gather) (research intake), [ind
 
 ## Status and maturity
 
-This is a 0.4.3 package, published on npm as `project-telos-mcp`. The command surface above is tested and CI-covered: `npm test` globs every test file in `demo/`, so a new one runs without being added to a list. Interfaces may still move between minor versions. Research packets are deterministic preflights with explicit non-claims: the causal packet does not claim causal discovery, the embodied packet does not claim real-robot safety, the quantum packet does not claim hardware QEC. Treat the receipts and tests in this repo as the evidence, not prose counts.
+This source candidate targets 0.5.0. The published npm baseline remains `project-telos-mcp` 0.4.3 until release qualification finishes. The command surface above is tested and CI-covered: `npm test` globs every test file in `demo/`, so a new one runs without being added to a list. Interfaces may still move between minor versions. Research packets are deterministic preflights with explicit non-claims: the causal packet does not claim causal discovery, the embodied packet does not claim real-robot safety, the quantum packet does not claim hardware QEC. Treat the receipts and tests in this repo as the evidence, not prose counts.
 
 ### Upgrading from 0.2.0
 
@@ -183,7 +183,7 @@ CI (`.github/workflows/ci.yml`) runs each contract test file individually on Nod
 
 ---
 
-**[Zentropy Labs](https://github.com/ZentropyLabs-ai)** · order out of entropy. An independent lab building evidence-first tools that leave a re-checkable artifact behind. Built by Zain Dana Harper in Seattle. The full workbench is at [Project Telos](https://harperz9.github.io).
+**[Zentropy Labs](https://github.com/ZentropyLabs-ai)** Â· order out of entropy. An independent lab building evidence-first tools that leave a re-checkable artifact behind. Built by Zain Dana Harper in Seattle. The full workbench is at [Project Telos](https://harperz9.github.io).
 
 
 ---
@@ -201,3 +201,12 @@ into the work.
 - **[Getting Started](https://github.com/HarperZ9/flywheel/blob/main/GETTING-STARTED.md)**: your first thirty minutes
 
 **[Zentropy Labs](https://github.com/ZentropyLabs-ai)** - order out of entropy. Built by Zain Dana Harper in Seattle.
+
+## Local client packages
+
+The 0.5.0 source candidate includes native Windows client packages. Publication
+and marketplace acceptance remain separate release gates.
+
+### Installation
+
+See [the client package guide](client-plugin/README.md) for scoped skills, portable MCP configuration and same-release archives.

@@ -1,5 +1,11 @@
 # Project Telos Current State
 
+## 0.5.0 source candidate, 2026-09-30
+
+The current source adds native Windows client packages, a scoped Telos skill and
+portable MCP configuration. Publication and installed-client qualification are
+pending. The dated workspace receipts below remain historical evidence.
+
 Generated: 2026-07-02
 
 This document is a live state packet for Project Telos. It is deliberately evidence-first: current capability, repo shape, and ambition are separated so the project can grow without turning roadmap into a false capability claim.

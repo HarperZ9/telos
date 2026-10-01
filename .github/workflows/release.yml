@@ -117,7 +117,7 @@ jobs:
 
   release:
     name: build and attach artifacts
-    needs: test
+    needs: [test, native-client]
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -140,11 +140,28 @@ jobs:
         with:
           python-version: "3.11"
 
+      - name: Qualify the local client package
+        run: |
+          python scripts/test_client_plugin.py
+          python scripts/build_client_plugin.py --mode release --tag "$RELEASE_TAG" --out "$RUNNER_TEMP/client-plugins"
+
       - name: Build reviewed npm package and matching runnable zip
         run: |
           mkdir .release
           npm pack --ignore-scripts --pack-destination .release
           python tools/release_artifacts.py --tarball .release/project-telos-mcp-*.tgz --tag "$RELEASE_TAG" --output-dir .release
+          cp "$RUNNER_TEMP"/client-plugins/*.zip .release/
+          cat "$RUNNER_TEMP"/client-plugins/*.sha256 >> .release/SHA256SUMS.txt
+          (cd .release && sha256sum --check SHA256SUMS.txt)
+
+      - uses: actions/download-artifact@v7
+        with:
+          name: native-client
+          path: native-client/
+      - name: Merge checked native client artifacts
+        run: |
+          cp native-client/*.zip native-client/*.mcpb .release/
+          cat native-client/*.sha256 >> .release/SHA256SUMS.txt
           (cd .release && sha256sum --check SHA256SUMS.txt)
 
       # A re-run for a tag that already has its assets, for example after the
@@ -158,7 +175,7 @@ jobs:
           ATTACHED="$(gh release view "$RELEASE_TAG" --json assets --jq '.assets[].name' | sort)"
           BUILT="$(ls .release | sort)"
           if [ -z "$ATTACHED" ]; then
-            gh release upload "$RELEASE_TAG" .release/*.tgz .release/*.zip .release/SHA256SUMS.txt
+            gh release upload "$RELEASE_TAG" .release/*.tgz .release/*.zip .release/*.mcpb .release/SHA256SUMS.txt
             exit 0
           fi
           if [ "$ATTACHED" != "$BUILT" ]; then
@@ -300,3 +317,34 @@ jobs:
         run: npm publish "$GITHUB_WORKSPACE/$(ls *.tgz)" --provenance --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+  native-client:
+    runs-on: windows-latest
+    permissions:
+      contents: read
+    env:
+      RELEASE_TAG: ${{ inputs.tag || github.event.release.tag_name }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: ${{ inputs.tag || github.event.release.tag_name }}
+          persist-credentials: false
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Build and check the bundled Windows client
+        shell: pwsh
+        run: |
+          $mode = "release"
+          python scripts/stage_client_runtime.py "$env:RUNNER_TEMP/node-client-runtime"
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          python scripts/build_client_plugin.py --mode $mode --tag $env:RELEASE_TAG --node-runtime "$env:RUNNER_TEMP/node-client-runtime" --out "$env:RUNNER_TEMP/native-client"
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          $archive = Get-ChildItem "$env:RUNNER_TEMP/native-client/*.zip"
+          python scripts/check_client_archive.py $archive.FullName
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+      - uses: actions/upload-artifact@v7
+        with:
+          name: native-client
+          path: ${{ runner.temp }}/native-client/
+          if-no-files-found: error

@@ -73,3 +73,10 @@ python -m public_surface_sweeper . --workspace --json
 Telos should expose runnable receipts, tool manifests, compatibility verdicts,
 host references, and local artifact paths. Do not publish secrets, private
 payloads, raw evidence, or operator-owned licensed font files.
+
+## Local client packages
+
+See [the client package guide](client-plugin/README.md) for scoped skills, portable MCP configuration and same-release archives.
+
+The current source candidate targets 0.5.0. Registry install examples above
+continue to name the published baseline until release qualification finishes.

@@ -1,8 +1,12 @@
 # Changelog
 
-All notable changes to Project Telos. Telos is a zero-dependency source demo and shared operator room, published on npm as `project-telos-mcp`. GitHub release assets carry the same version.
+## 0.5.0
 
-## Unreleased
+- Add Windows x64 MCPB and ZIP packages with a bundled runtime, scoped skills and qualified local stdio workflows.
+- Require clean exact-tag source, versions ending in .0, payload hashes and matching same-release artifacts; refuse changed release reruns.
+- Replace local-machine MCP examples and nonexistent skill declarations with the packaged Telos skill and portable entrypoint.
+
+All notable changes to Project Telos. Telos is a zero-dependency source demo and shared operator room, published on npm as `project-telos-mcp`. GitHub release assets carry the same version.
 
 No changes queued.
 
