@@ -103,5 +103,5 @@ payloads, raw evidence, or operator-owned licensed font files.
 
 See [the client package guide](client-plugin/README.md) for scoped skills, portable MCP configuration and same-release archives.
 
-The current source candidate targets 0.5.0. Registry install examples above
-continue to name the published baseline until release qualification finishes.
+The current published version is 0.5.0. Download native Windows ZIP and MCPB
+packages from [the release](https://github.com/HarperZ9/telos/releases/tag/v0.5.0).

@@ -1,10 +1,13 @@
 # Project Telos Current State
 
-## 0.5.0 source candidate, 2026-09-30
+## 0.5.0 published release, 2026-10-01
 
-The current source adds native Windows client packages, a scoped Telos skill and
-portable MCP configuration. Publication and installed-client qualification are
-pending. The dated workspace receipts below remain historical evidence.
+The release includes native Windows client packages, a scoped Telos skill and
+portable MCP configuration. GitHub and npm tarball bytes match; native archive
+hashes and source provenance were checked. Published native bytes passed isolated
+Claude Code connection, restart and removal. Model-mediated workflows, Claude
+Desktop installation and marketplace approval remain unverified. The dated
+workspace receipts below remain historical evidence.
 
 The October 1 integration pass targets Gather 2.1.0, Crucible 1.4.0, Index 2.15.0
 and Forum 1.16.0 candidates. Launch, tool names, versions and status strings pass
@@ -12,7 +15,7 @@ against those source processes. A bounded synthetic Index compatibility fixture
 passes selection and freshness checks without omissions. An unchanged-source
 recheck passes and a source mutation causes DRIFT. The real candidate workspace
 at 700 tokens remains UNVERIFIABLE and is rejected as positive acceptance.
-Publication awaits the sibling tags and final release builds. These checks do
+The sibling tags and final release builds passed. These checks do
 not establish full-workspace budget fitness or installed-client compatibility.
 
 Generated: 2026-07-02
