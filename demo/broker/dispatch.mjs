@@ -166,7 +166,8 @@ export class Broker {
     if (!rec) return this.out.refuse(c, "RECORDER_FAILED");
     this.holds.open({
       hold_id: holdId, digests: [c.digest], tier: c.tier, verb: c.verb, grant_id: c.grant.grant_id,
-      session_id: this.sessionId, window_s: LADDER[c.tier].window_s, review: { target_ref: c.target.ref, params: c.params },
+      session_id: this.sessionId, window_s: LADDER[c.tier].window_s,
+      review: { target_ref: c.target.ref, params: c.params, ...(c.target.readSha256 ? { read_sha256: c.target.readSha256 } : {}) },
     });
     this.opts.notify?.({ hold_id: holdId, verb: c.verb, tier: c.tier, target_ref: c.target.ref });
     return this.out.result(c, status, { hold_id: holdId, reason, executed: false, receipt_seal: rec.seal });
@@ -203,6 +204,7 @@ export class Broker {
     const p = await this.prepare(req);
     if (!p.ready) return p;
     const { c } = p;
+    if (c.tier === "T0" && req.dry_run) return this.out.finish(c, "DRY_RUN", { executed: false, would_hold: false });
     if (c.tier === "T0") return this.execute(c);
     const blocked = this.gateSession(c, req.hold_id ?? null);
     if (blocked) return this.out.refuse(c, blocked);

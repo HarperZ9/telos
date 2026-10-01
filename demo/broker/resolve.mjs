@@ -2,8 +2,21 @@
 // 0.6.0 drivers take (page origin, window title, file path, command string).
 // The element-ref slice (DESIGN.md section 5) replaces `ref` and `fingerprint`
 // with snapshot-epoch refs; the broker only reads the fields named here.
+import { createHash } from "node:crypto";
+import { readFileSync } from "node:fs";
 import path from "node:path";
 import { digestOf } from "./canonical.mjs";
+
+// sha256 of a file the verb will read (a script for eval, a workflow for run,
+// an upload). Bound into the fingerprint, so editing the file after a human
+// approved it changes the action digest and the approval no longer redeems.
+function contentSha256(file) {
+  try {
+    return createHash("sha256").update(readFileSync(file)).digest("hex");
+  } catch {
+    return null;
+  }
+}
 import { namesSecretField, originOf, realTarget, SHELL_METACHARS } from "./scope.mjs";
 import { verbSpec } from "./tiers.mjs";
 import { whichExecutable } from "../native-control/device.mjs";
@@ -113,8 +126,9 @@ export async function resolveTarget(verb, params = [], flags = {}, { drivers, cw
   }
   const where = target.origin ?? target.window?.title ?? target.path ?? target.argv?.[0] ?? target.device ?? "-";
   target.ref = `${spec.target}:${where}${selector ? `#${selector}` : ""}`;
+  if (target.readPath) target.readSha256 = contentSha256(target.readPath);
   target.fingerprint = digestOf({ kind: target.kind, origin: target.origin ?? null, window: target.window ?? null, path: target.path ?? null,
-    executable: target.executable ?? null, selector, resolution: target.resolution ?? null });
+    executable: target.executable ?? null, read_sha256: target.readSha256 ?? null, selector, resolution: target.resolution ?? null });
   return target;
 }
 
