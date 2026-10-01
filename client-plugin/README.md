@@ -18,7 +18,7 @@ client, replace the plugin-root token with the absolute extraction path and
 select the absolute runtime executable in that client's settings. Keep arguments
 as a JSON array. This package never changes client settings automatically.
 
-This package provides Telos itself. Sibling tools are optional, separately installed capabilities; missing tools remain unavailable. Native control, writes and network tools retain their existing permission checks and require matching user intent.
+This package provides Telos itself. Sibling tools are optional, separately installed capabilities; missing tools remain unavailable. This plugin carries the native-control catalog only. The browser, application and device drivers ship in the npm package and the source repository, not in this plugin. Writes and network tools retain their existing permission checks and require matching user intent.
 
 The connected client supplies the model and pays any model-provider charges.
 There is no publisher-hosted inference, relay or account requirement. Installing

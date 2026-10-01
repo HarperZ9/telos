@@ -65,8 +65,13 @@ action. Foreground input is not tied atomically to a previously observed window.
 
 ## Package and validation boundary
 
-The package includes the existing `tools/uia.ps1` and `tools/device.ps1` helpers
-at the paths used by the app/device drivers. PowerShell and Windows UI Automation
+The npm package includes the existing `tools/uia.ps1` and `tools/device.ps1`
+helpers at the paths used by the app/device drivers. The client plugin built by
+`scripts/build_client_plugin.py` carries neither helper and none of the drivers:
+it ships `demo/native-control-catalog.mjs`, which the `telos.native.control` MCP
+tool runs, plus the pure `focus.mjs` classifier and the `evidence.mjs` validator
+that `telos.browser.evidence` imports. `client-plugin/config.json` lists the
+exclusions, and `scripts/test_client_plugin.py` fails if a driver returns. PowerShell and Windows UI Automation
 are still host prerequisites. Package-layout checks do not establish an installed
 runtime or universal control of native applications.
 

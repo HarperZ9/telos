@@ -19,7 +19,7 @@
 import { writeFileSync, readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { DEFAULT_PORT } from "./native-control/cdp.mjs";
-import { focusSemantics } from "./native-control/focus.mjs";
+import { SCHEMA, makeReceipt, helpReceipt } from "./native-control-catalog.mjs";
 import * as browser from "./native-control/browser.mjs";
 import * as app from "./native-control/app.mjs";
 import * as device from "./native-control/device.mjs";
@@ -30,7 +30,9 @@ import { Ledger } from "./native-control/ledger.mjs";
 import * as network from "./native-control/network.mjs";
 import * as learn from "./native-control/learn.mjs";
 
-export const SCHEMA = "project-telos.native-control/v1";
+// The catalog module owns the receipt shape so the MCP tool can return the
+// catalog without loading any driver.
+export { SCHEMA, makeReceipt };
 
 // Pure: split argv into domain/verb/params and flags.
 export function parseArgs(argv) {
@@ -43,21 +45,6 @@ export function parseArgs(argv) {
     else rest.push(a);
   }
   return { domain: rest[0], verb: rest[1], params: rest.slice(2), flags };
-}
-
-// Pure: build a receipt. Clock injected for testability.
-export function makeReceipt(action, target, result, { ok = true, clock } = {}) {
-  const at = clock ? clock() : new Date().toISOString();
-  return {
-    schema: SCHEMA,
-    tool: "telos.native.control",
-    action,
-    target,
-    ok,
-    result,
-    ...focusSemantics(action, result),
-    at,
-  };
 }
 
 // Default connection: start the dedicated debug browser if needed, then attach.
@@ -240,33 +227,7 @@ export async function run(domain, verb, params, flags = {}, options = {}) {
 async function main() {
   const { domain, verb, params, flags } = parseArgs(process.argv.slice(2));
   if (!domain || !verb) {
-    process.stdout.write(
-          `${JSON.stringify(
-        makeReceipt("help", null, {
-          usage: "node demo/native-control.mjs <browser|app|device> <verb> [args]",
-          browser: [
-            "tabs",
-            "navigate",
-            "eval",
-            "click",
-            "fill",
-            "focus",
-            "type",
-            "gettext",
-            "waitfor",
-            "screenshot",
-            "snapshot-dom",
-            "snapshot-text",
-            "snapshot-visual",
-            "evidence",
-          ],
-          app: ["windows", "tree", "invoke", "setvalue", "focus", "value", "select", "restore", "input", "type"],
-          device: ["exec", "read", "write", "ls"],
-        }),
-        null,
-        2,
-      )}\n`,
-    );
+    process.stdout.write(`${JSON.stringify(helpReceipt(), null, 2)}\n`);
     return;
   }
   try {

@@ -1,5 +1,31 @@
 # Changelog
 
+## Unreleased
+
+Client plugin packaging boundary, so a later release can go to the Claude plugin
+directory. The directory's security scan reads every file in the plugin folder,
+including code the MCP server never calls.
+
+- The client plugin no longer carries the native-control actuation code:
+  `demo/native-control.mjs`, the browser, UI Automation, device, form, input,
+  network, runner and learn drivers, the Greenhouse adapter, and
+  `tools/uia.ps1` and `tools/device.ps1`. The npm package and the source
+  repository still ship the CLI unchanged.
+- New `demo/native-control-catalog.mjs` holds the verb catalog, `SCHEMA` and
+  `makeReceipt`. The `telos.native.control` MCP tool runs it, so the tool works
+  from the plugin with no driver present. The CLI re-exports both names and
+  prints the same help receipt.
+- The help receipt gains a `delivery` field that says where actuation lives.
+- The catalog now lists every verb the CLI accepts. It used to omit 12 browser
+  verbs (`evalfile`, `evalframe`, `input`, `upload`, the four form-fill verbs,
+  `apifetch`, `netcap`, `run`, `runverify`) and the `learn` domain, so it
+  under-reported what the CLI can do. A test compares the catalog with the
+  dispatcher's `case` labels and the `learn` actions; `behave` is listed as an
+  alias of `input`.
+- `client-plugin/config.json` gains `exclude` and `exclude_keep`, applied by
+  `scripts/build_client_plugin.py`. A package test fails if any excluded driver
+  or any `.ps1` file returns to the plugin archive.
+
 ## 0.6.0
 
 Release-path audit of the native-control drivers. 0.5.0 still shipped code in

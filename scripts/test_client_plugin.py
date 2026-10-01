@@ -33,6 +33,38 @@ class ClientPackage(unittest.TestCase):
                 self.assertNotIn('C:/dev', z.read('mcp.json').decode())
                 self.assertNotIn('.env', z.namelist())
 
+    def test_actuation_code_stays_out_of_the_plugin(self):
+        # The directory scan reads every file in the plugin folder. Telos keeps
+        # the native-control drivers, the form filler, the Greenhouse adapter
+        # and the PowerShell helpers in the npm package, not in the plugin.
+        config = json.loads((ROOT / 'client-plugin/config.json').read_text())
+        if config['tool'] != 'telos':
+            self.skipTest('telos packaging boundary')
+        with tempfile.TemporaryDirectory() as tmp:
+            archive = builder.build(ROOT, Path(tmp) / 'a')[0]
+            with zipfile.ZipFile(archive) as z:
+                names = set(z.namelist())
+        for gone in ['server/demo/native-control.mjs',
+                     'server/demo/native-control/forms.mjs',
+                     'server/demo/native-control/adapters/greenhouse.mjs',
+                     'server/demo/native-control/device.mjs',
+                     'server/demo/native-control/input.mjs',
+                     'server/demo/native-control/network.mjs',
+                     'server/demo/native-control/learn.mjs']:
+            self.assertNotIn(gone, names)
+        self.assertFalse([n for n in names if n.startswith('server/tools/')])
+        self.assertFalse([n for n in names if n.endswith('.ps1')])
+        allowed = {'server/demo/native-control/evidence.mjs', 'server/demo/native-control/focus.mjs'}
+        self.assertEqual({n for n in names if n.startswith('server/demo/native-control/')}, allowed)
+        self.assertIn('server/demo/native-control-catalog.mjs', names)
+        # The exclusion rule itself: subtree, exact path, keep-list.
+        rule = {'exclude': ['a/b.mjs', 'a/c/'], 'exclude_keep': ['a/c/keep.mjs']}
+        self.assertTrue(builder.configured_exclusion(rule, 'a/b.mjs'))
+        self.assertFalse(builder.configured_exclusion(rule, 'a/b.mjsx'))
+        self.assertTrue(builder.configured_exclusion(rule, 'a/c/d/e.mjs'))
+        self.assertFalse(builder.configured_exclusion(rule, 'a/c/keep.mjs'))
+        self.assertFalse(builder.configured_exclusion({}, 'a/b.mjs'))
+
     def test_refuses_unqualified_release(self):
         config = json.loads((ROOT / 'client-plugin/config.json').read_text())
         with self.assertRaises(ValueError):
@@ -94,6 +126,8 @@ class ClientPackage(unittest.TestCase):
                     'telos': {'name':'telos.catalog','arguments':{}},
                     'learn': {'name':'learn_dry_run','arguments':{'workflow':{'steps':[{'kind':'assess'}]}}}}[config['tool']]
             requests.append({'jsonrpc':'2.0','id':3,'method':'tools/call','params':safe})
+            if config['tool']=='telos':
+                requests.append({'jsonrpc':'2.0','id':4,'method':'tools/call','params':{'name':'telos.native.control','arguments':{}}})
             result = subprocess.run(command, input=''.join(json.dumps(x)+'\n' for x in requests), text=True,capture_output=True,env=env,cwd=root,timeout=25)
             self.assertEqual(result.returncode,0,result.stderr)
             messages = {r['id']:r for r in map(json.loads,result.stdout.splitlines()) if 'id' in r}
@@ -102,6 +136,12 @@ class ClientPackage(unittest.TestCase):
             self.assertFalse(messages[3]['result'].get('isError'), messages[3])
             if config['tool']=='learn':
                 self.assertIn('halted', json.dumps(messages[3]).lower())
+            if config['tool']=='telos':
+                self.assertFalse(messages[4].get('error'), messages[4])
+                catalog = messages[4]['result']['structuredContent']
+                self.assertEqual(catalog['action'], 'help')
+                self.assertIn('exec', catalog['result']['device'])
+                self.assertIn('catalog only', catalog['result']['delivery'])
             names={x['name'] for x in messages[2]['result']['tools']}
             self.assertIn({'forum':'forum.route','learn':'learn_status','telos':'telos.status'}[config['tool']], names)
 

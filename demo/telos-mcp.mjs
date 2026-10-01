@@ -189,7 +189,7 @@ export const tools = [
   },
   {
     name: "telos.native.control",
-    description: "Use when a host needs the Telos native background-control capability catalog for browser (Chrome DevTools Protocol) and native-app (Windows UI Automation) actuation. Read-only, zero-auth, no external side effects. Returns a JSON capability and verb catalog.",
+    description: "Use when a host needs the Telos native background-control capability catalog for browser (Chrome DevTools Protocol) and native-app (Windows UI Automation) actuation, plus the device and learn verbs. Read-only, zero-auth, no external side effects. Returns a JSON capability and verb catalog.",
     inputSchema: emptyInputSchema
   },
   {
@@ -316,7 +316,7 @@ const toolScripts = new Map([
   ["telos.second_level.queue", ["second-level-flagship-queue.mjs"]],
   ["telos.workstation.substrate", ["workstation-substrate.mjs"]],
   ["telos.display.calibration", ["display-calibration.mjs"]],
-  ["telos.native.control", ["native-control.mjs"]],
+  ["telos.native.control", ["native-control-catalog.mjs"]],
   ["telos.browser.evidence", ["browser-evidence.mjs"]],
   ["telos.showcase.scout", ["showcase.mjs", "scout", "--fixture", "--json"]],
   ["telos.proof", ["proof.mjs", "agent-action", "--demo", "--json"]],

@@ -8,12 +8,18 @@
   "files": [
     "LICENSE",
     "package.json",
-    "verify_packet.mjs",
-    "tools/uia.ps1",
-    "tools/device.ps1"
+    "verify_packet.mjs"
   ],
   "entry": "server/demo/telos-mcp.mjs",
   "runtime": "node",
   "skill": "telos-workbench",
-  "tool": "telos"
+  "tool": "telos",
+  "exclude": [
+    "demo/native-control.mjs",
+    "demo/native-control/"
+  ],
+  "exclude_keep": [
+    "demo/native-control/evidence.mjs",
+    "demo/native-control/focus.mjs"
+  ]
 }
