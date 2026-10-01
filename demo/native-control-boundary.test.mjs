@@ -6,7 +6,8 @@
 //   - unattended Gmail send, LinkedIn post and Gumroad Google sign-in verbs,
 //   - a default form profile carrying one person's name source, location,
 //     demographic and eligibility answers, with consent ticked by default,
-//   - request capture that copied Authorization headers and request bodies.
+//   - request capture that copied Authorization headers, request bodies and
+//     URLs with tokens in their query or fragment.
 // Each test below fails if one of those returns. Static reads plus pure
 // functions only: nothing launches a browser or touches the network.
 import test from "node:test";
@@ -163,4 +164,29 @@ test("request capture redacts credential headers and request bodies", async () =
   assert.equal(JSON.stringify(out).includes("password=b"), false);
   assert.equal(out.requests[0].status, 200);
   assert.equal(out.requests[0].body.bytes, 17);
+});
+
+test("request capture redacts credentials carried in the URL", async () => {
+  const { redactUrl, capture } = await load("network");
+  assert.equal(
+    redactUrl("https://u:pw@example.test/cb?code=abc&state=s1&page=2#access_token=t0k&token_type=bearer"),
+    "https://[redacted]@example.test/cb?code=[redacted]&state=s1&page=2#access_token=[redacted]&token_type=[redacted]",
+  );
+  assert.equal(
+    redactUrl("https://bucket.example.test/o?X-Amz-Signature=f00&X-Amz-Credential=c&api_key=k&q=telos"),
+    "https://bucket.example.test/o?X-Amz-Signature=[redacted]&X-Amz-Credential=[redacted]&api_key=[redacted]&q=telos",
+  );
+  assert.equal(redactUrl("https://example.test/docs#section-2"), "https://example.test/docs#section-2");
+
+  const handlers = {};
+  const session = { send: async () => ({}), on: (method, fn) => { handlers[method] = fn; } };
+  const pending = capture(session, { durationMs: 20, urlFilter: "/api" });
+  await new Promise((r) => setTimeout(r, 0));
+  handlers["Network.requestWillBeSent"]({
+    requestId: "2", type: "XHR",
+    request: { method: "GET", url: "https://example.test/api/me?access_token=secret123&fields=id", headers: {} },
+  });
+  const out = await pending;
+  assert.equal(out.requests[0].url, "https://example.test/api/me?access_token=[redacted]&fields=id");
+  assert.equal(JSON.stringify(out).includes("secret123"), false);
 });

@@ -25,7 +25,8 @@ support. 0.6.0 removes that code, and new tests fail if it comes back.
 ## Changed
 
 - `browser netcap` replaces credential, cookie, session, CSRF and key header
-  values with `[redacted]` and reports request bodies by size only.
+  values with `[redacted]`, does the same for URL userinfo and credential
+  query or fragment parameters, and reports request bodies by size only.
 
 ## Unchanged
 

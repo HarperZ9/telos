@@ -23,8 +23,9 @@ categories Telos does not support; 0.6.0 removes it and adds guards.
   ticked consent and arbitration checkboxes by default. Profiles now come from
   the caller or `TELOS_FORM_PROFILE`, and consent needs `"consent": true`. The
   Greenhouse adapter answers custom questions only from the profile.
-- Redact credential, cookie, session, CSRF and key header values and request
-  bodies in `browser netcap` output.
+- Redact credential, cookie, session, CSRF and key header values, URL userinfo,
+  credential query and fragment parameters, and request bodies in
+  `browser netcap` output.
 - Add `demo/native-control-boundary.test.mjs` and extend the bypass guard to
   `human*` input names.
 

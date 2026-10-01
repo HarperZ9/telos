@@ -3,7 +3,8 @@
 //
 //   apiFetch(session, {url, method, body, headers}) -> in-page fetch result
 //   capture(session, {durationMs, urlFilter}) -> observed requests in a window,
-//     with credential headers and request bodies redacted
+//     with credential headers, URL credential parameters and request bodies
+//     redacted
 
 // POST/GET at the API layer from the page's own context: uses the page's session
 // cookies + Origin + any CSRF the page holds. Body is JSON-serializable or a
@@ -38,6 +39,35 @@ export function redactHeaders(headers = {}) {
   return out;
 }
 
+// Query and fragment parameter names whose values carry credentials: OAuth
+// codes and access tokens, signed-URL signatures, API keys, session ids.
+const SECRET_PARAM = /^(code|key|sig|sid|pwd|pass|otp)$|token|secret|session|api[-_]?key|access[-_]?key|auth(?!or)|csrf|xsrf|signature|credential|password|x-amz-/i;
+
+function redactParams(text) {
+  return text.split("&").map((pair) => {
+    const eq = pair.indexOf("=");
+    if (eq < 0) return pair;
+    const raw = pair.slice(0, eq);
+    let name = raw;
+    try { name = decodeURIComponent(raw.replace(/\+/g, " ")); } catch { /* keep the raw name */ }
+    return SECRET_PARAM.test(name) ? `${raw}=[redacted]` : pair;
+  }).join("&");
+}
+
+// A captured URL keeps its origin, path and parameter names. Userinfo and the
+// values of credential parameters in the query or fragment become [redacted],
+// so a token passed in a URL does not reach the capture output either.
+export function redactUrl(url) {
+  let out = String(url ?? "").replace(/^([a-z][a-z0-9+.-]*:\/\/)[^/?#@]*@/i, "$1[redacted]@");
+  const hash = out.indexOf("#");
+  let fragment = "";
+  if (hash >= 0) { fragment = out.slice(hash + 1); out = out.slice(0, hash); }
+  const q = out.indexOf("?");
+  if (q >= 0) out = out.slice(0, q + 1) + redactParams(out.slice(q + 1));
+  if (hash >= 0) out += "#" + (fragment.includes("=") ? redactParams(fragment) : fragment);
+  return out;
+}
+
 // Request bodies can hold passwords, tokens and personal data, so capture
 // records only their size, never their content.
 export function describeBody(postData) {
@@ -45,8 +75,8 @@ export function describeBody(postData) {
   return { bytes: Buffer.byteLength(text, "utf8"), content: text ? "[redacted]" : null };
 }
 
-// Observe requests in a window for endpoint discovery. Captures method, URL,
-// status, redacted headers and body size for requests matching urlFilter
+// Observe requests in a window for endpoint discovery. Captures method, redacted
+// URL, status, redacted headers and body size for requests matching urlFilter
 // (substring). Requires a CDP session that stays open for durationMs.
 export async function capture(session, { durationMs = 3000, urlFilter = "" } = {}) {
   await session.send("Network.enable");
@@ -57,7 +87,7 @@ export async function capture(session, { durationMs = 3000, urlFilter = "" } = {
     seen.push({
       requestId: p.requestId,
       method: p.request.method,
-      url: u,
+      url: redactUrl(u),
       body: describeBody(p.request.postData),
       headers: redactHeaders(p.request.headers),
       type: p.type,

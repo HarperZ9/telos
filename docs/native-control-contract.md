@@ -18,6 +18,8 @@ known name or pattern. Name and pattern checks do not replace code review.
   randomized.
 - Request capture (`browser netcap`) keeps header names and replaces the values
   of credential, cookie, session, CSRF and key headers with `[redacted]`. It
+  does the same for URL userinfo and for credential parameters in the query or
+  fragment (`code`, `access_token`, `api_key`, signed-URL signatures). It
   records a request body's byte count, never its content.
 - Form filling (`autofill`, `spatialfill` and the Greenhouse adapter) uses only
   the profile the caller passes, or the JSON file named by `TELOS_FORM_PROFILE`.
