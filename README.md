@@ -183,12 +183,12 @@ CI (`.github/workflows/ci.yml`) runs each contract test file individually on Nod
 
 ---
 
-**[Zentropy Labs](https://github.com/ZentropyLabs-ai)** Â· order out of entropy. An independent lab building evidence-first tools that leave a re-checkable artifact behind. Built by Zain Dana Harper in Seattle. The full workbench is at [Project Telos](https://harperz9.github.io).
+**[Zain Dana Harper](https://github.com/HarperZ9)** builds evidence-first tools that leave a re-checkable artifact behind, in Seattle. The full workbench is at [Project Telos](https://harperz9.github.io).
 
 
 ---
 
-## The Zentropy Labs ecosystem
+## The Zain Dana Harper ecosystem
 
 This tool is one part of a family that holds a single belief steady across
 every surface: knowledge open to anyone who can attain the means; acceptance
@@ -200,7 +200,7 @@ into the work.
 - **[Flywheel](https://github.com/HarperZ9/flywheel)**: the one platform (receipts, governance, infra controls, learning loop)
 - **[Getting Started](https://github.com/HarperZ9/flywheel/blob/main/GETTING-STARTED.md)**: your first thirty minutes
 
-**[Zentropy Labs](https://github.com/ZentropyLabs-ai)** - order out of entropy. Built by Zain Dana Harper in Seattle.
+Built by **[Zain Dana Harper](https://github.com/HarperZ9)** in Seattle.
 
 ## Local client packages
 
