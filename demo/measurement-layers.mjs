@@ -16,6 +16,7 @@ import {
   measureUncertaintyBudget
 } from "./measurement-engine-meters.mjs";
 import { hashStable } from "./measurement-utils.mjs";
+import { measureRequest } from "./measurement-image.mjs";
 
 export {
   measureAudioSpectrum,
@@ -182,7 +183,19 @@ export function summary(packet = demoMeasurements()) {
   return `${lines.join("\n")}\n`;
 }
 
+// With --request -, read a project-telos.measurement-request/v2 object from stdin and measure the
+// caller's image (measurement-image.mjs). Without it, print the v1 demo packet.
+function mainRequest() {
+  let args = null;
+  try { args = JSON.parse(readFileSync(0, "utf8")); } catch { args = null; }
+  const out = args === null
+    ? { schema: "project-telos.measurement-layers/v2", tool: "telos.measurement.layers", status: "REJECTED", failure_code: "request_invalid", detail: "stdin is not JSON" }
+    : measureRequest(args);
+  process.stdout.write(JSON.stringify(out, null, 2) + "\n");
+}
+
 function main() {
+  if (process.argv.includes("--request")) return mainRequest();
   const packet = demoMeasurements();
   process.stdout.write(process.argv.includes("--summary") ? summary(packet) : `${JSON.stringify(packet, null, 2)}\n`);
 }
