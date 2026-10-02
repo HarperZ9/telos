@@ -11,3 +11,7 @@ docs/art/*.json text eol=lf
 # CRLF, the pack verified on Windows, and it failed the moment CI ran it. Same
 # reasoning as the generated art above.
 demo/integrations/smallharness-dogfood-pack/** text eol=lf
+
+# Vendored sense-core and canonical-bytes sources are byte-identical copies of their origin;
+# pin LF so the copies hash the same on every platform.
+demo/vendor/** text eol=lf

@@ -1136,7 +1136,7 @@
     {
       "name": "telos.measurement.layers",
       "flagship": "telos",
-      "description": "Use when visual, splat, lighting, dither, audio, uncertainty, or frame-budget evidence needs meters. Read-only, zero-auth, no external side effects. Returns JSON measurement layers.",
+      "description": "Use when visual, splat, lighting, dither, audio, uncertainty, or frame-budget evidence needs meters, or when a caller's own image (raw 8-bit RGBA, inline base64 or a file under an allowed local root) needs Telos measurement layers L0 to L3 with SHA-256 receipts. Called with no arguments it returns the demo meters. Read-only, zero-auth, no external side effects. Returns a JSON measurement packet (v1 demo or v2 caller image).",
       "cli": [
         "node",
         "demo/measurement-layers.mjs"
