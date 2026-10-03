@@ -1,6 +1,6 @@
 """Python twin of shared-frame/canonical.js: project-telos.canonical-bytes/v1 and its SHA-256.
 
-Written from the rule text in tests/telos-track-a/PREREGISTRATION.md (section T2) with the standard
+Written from the canonical-bytes rule text in the site repository, with the standard
 library only, so a receipt made in the browser can be re-derived without any JavaScript.
 
 CLI: python canonical_receipt.py <in.json> <out.json>

@@ -47,7 +47,7 @@ export function layerCells(id, { n, achromatic, overlays = 0 }) {
 // 64 characters. Emitted layer texts are removed before the scan; their size is bounded by cells.
 const LONG_B64 = /[A-Za-z0-9+/=_-]{65,}/;
 const DEC_LIST = /-?\d+(?:\.\d+)?(?:[ ,;]+-?\d+(?:\.\d+)?)+/g;
-// The histogram's 16 bins are a bounded summary block (amendment 3) and are removed the same way.
+// The histogram's 16 bins are a bounded summary block and are removed the same way.
 export function payloadScan(response) {
   const texts = new Set((response.layers || []).map((l) => l.text));
   const strip = (v) => (typeof v === "string" ? (texts.has(v) ? "" : v)

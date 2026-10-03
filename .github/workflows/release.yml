@@ -82,6 +82,11 @@ jobs:
         with:
           python-version: "3.11"
 
+      - name: Install the measurement check dependency
+        # bench/measurement-v2/float_oklab.py is the float64 OKLab reference that
+        # demo/measurement-image.test.mjs compares the exact mean against.
+        run: python -m pip install numpy==2.2.6
+
       - name: Run every Telos test
         # npm test globs demo/**/*.test.mjs. This step used to name the files by
         # hand, and 21 of the 65 test files on disk were never listed, so a third

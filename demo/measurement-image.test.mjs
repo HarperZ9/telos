@@ -22,7 +22,7 @@ const results = {};
 const py = (args, input) => execFileSync("python", args, { cwd: BENCH, encoding: "utf8", maxBuffer: 1 << 28, input });
 const ok = (r) => { assert.notEqual(r.status, "REJECTED", JSON.stringify(r).slice(0, 300)); return r; };
 
-test("T4.a eq: a constant image fills one histogram bin and oklab_mean is within 1e-6 of float OKLab", () => {
+test("mv2.a eq: a constant image fills one histogram bin and oklab_mean is within 1e-6 of float OKLab", () => {
   const next = xorshift32(20261002);
   const colours = [[200, 120, 40]];
   for (let i = 0; i < 200; i++) colours.push([next() & 255, next() & 255, next() & 255]);
@@ -42,14 +42,14 @@ test("T4.a eq: a constant image fills one histogram bin and oklab_mean is within
   } finally { rmSync(dir, { recursive: true, force: true }); }
 });
 
-test("T4.b: an rgba length mismatch and a mask size mismatch return pixel_dimensions_mismatch", () => {
+test("mv2.b: an rgba length mismatch and a mask size mismatch return pixel_dimensions_mismatch", () => {
   const px = solid(8, 8, [1, 2, 3]);
   assert.equal(measureRequest({ image: { rgba: b64(px.subarray(4)), width: 8, height: 8 } }).failure_code, "pixel_dimensions_mismatch");
   assert.equal(measureRequest({ image: { rgba: b64(px), width: 8, height: 8 }, overlays: [{ id: "o", mask: b64(new Uint8Array(63)) }] }).failure_code, "pixel_dimensions_mismatch");
   assert.equal(measureRequest({ image: { rgba: b64(px), width: 4096, height: 4097 } }).failure_code, "image_too_large");
 });
 
-test("T4.c: outside, UNC, relative and junction-escape paths are refused; a file inside the root is read", () => {
+test("mv2.c: outside, UNC, relative and junction-escape paths are refused; a file inside the root is read", () => {
   const base = mkdtempSync(path.join(tmpdir(), "telos-v2-root-"));
   try {
     const root = path.join(base, "root"), outside = path.join(base, "outside");
@@ -73,7 +73,7 @@ test("T4.c: outside, UNC, relative and junction-escape paths are refused; a file
   } finally { rmSync(base, { recursive: true, force: true }); }
 });
 
-test("T4.d eq: two runs in one process and in two processes give one receipt_sha256", () => {
+test("mv2.d eq: two runs in one process and in two processes give one receipt_sha256", () => {
   const img = [...seededImages(1, 40, 60)][0];
   const a = ok(measureRequest(request(img))), b = ok(measureRequest(request(img)));
   const cli = () => JSON.parse(spawnSync(process.execPath, [path.join(here, "measurement-layers.mjs"), "--request", "-"],
@@ -86,7 +86,7 @@ test("T4.d eq: two runs in one process and in two processes give one receipt_sha
   assert.equal(a.receipt_sha256, c);
 });
 
-test("T4.d eq: Python re-derives input_receipt.sha256 and receipt_sha256 on 100 seeded responses", () => {
+test("mv2.d eq: Python re-derives input_receipt.sha256 and receipt_sha256 on 100 seeded responses", () => {
   const responses = [...seededImages(100, 4, 80, 777)].map((img) => ok(measureRequest(request(img, { declared: { colour_space: "srgb" } }))));
   const dir = mkdtempSync(path.join(tmpdir(), "telos-v2-py-"));
   try {
@@ -99,11 +99,11 @@ test("T4.d eq: Python re-derives input_receipt.sha256 and receipt_sha256 on 100 
   } finally { rmSync(dir, { recursive: true, force: true }); }
 });
 
-// Pre-registered clause: the same edit also changes "the changed layer's measurement_sha256". As written it
-// fails: a one-code change to one pixel moves no cell across a bin, so no layer text changes and no layer
-// hash may change. The count is recorded (results.onePixel.layerHashChanged) and the clause is reported as
-// failed; the post hoc check below tests the review's wording (a one-step change to a quantised value).
-test("T4.sens: one code value in one pixel changes the input receipt and the response receipt (20 of 20)", () => {
+// A clause fixed before the code also asked that the same edit change "the changed layer's
+// measurement_sha256". As written it fails: a one-code change to one pixel moves no cell across a bin, so no
+// layer text changes and no layer hash may change. The count is recorded (results.onePixel.layerHashChanged)
+// and the clause is reported as failed. The post hoc check below tests a one-step change to a quantised value.
+test("mv2.sens: one code value in one pixel changes the input receipt and the response receipt (20 of 20)", () => {
   let changed = 0, layerHashChanged = 0;
   for (const img of seededImages(20, 24, 64, 4242)) {
     const before = ok(measureRequest(request(img)));
@@ -116,7 +116,7 @@ test("T4.sens: one code value in one pixel changes the input receipt and the res
   assert.equal(changed, 20);
 });
 
-test("T4.sens (post hoc) eq: a layer hash changes exactly when its text changes, on 20 one-bin edits", () => {
+test("mv2.sens (post hoc) eq: a layer hash changes exactly when its text changes, on 20 one-bin edits", () => {
   let moved = 0, heldWhenSame = 0;
   for (const img of seededImages(20, 64, 96, 515)) {
     const before = ok(measureRequest(request(img)));
@@ -141,7 +141,7 @@ test("T4.sens (post hoc) eq: a layer hash changes exactly when its text changes,
   assert.ok(moved >= 20);
 });
 
-test("T4.sens: one declared field changes both receipt hashes; 20 single-field edits each fail verification", () => {
+test("mv2.sens: one declared field changes both receipt hashes; 20 single-field edits each fail verification", () => {
   const img = [...seededImages(1, 64, 64, 99)][0];
   const r = ok(measureRequest(request(img, { declared: { colour_space: "srgb" } })));
   const p3 = ok(measureRequest(request(img, { declared: { colour_space: "display-p3" } })));
@@ -162,14 +162,14 @@ test("T4.sens: one declared field changes both receipt hashes; 20 single-field e
   assert.equal(failed, 20);
 });
 
-test("T4.e eq: no encoded run outside permitted blocks on 100 seeded images and a 64 x 64 noise image", () => {
+test("mv2.e eq: no encoded run outside permitted blocks on 100 seeded images and a 64 x 64 noise image", () => {
   const imgs = [...seededImages(100, 1, 96, 31337), { w: 64, h: 64, px: noise(64, 64, xorshift32(5)) }];
   const bad = imgs.map((img) => measureRequest(request(img))).filter((r) => r.status === "REJECTED" || payloadScan(r) !== null);
   results.e = { images: imgs.length, flagged: bad.length };
   assert.equal(bad.length, 0);
 });
 
-test("T4.e: a 32 x 32 input at n = 32 emits at most 64 cells per layer (L1 dropped, L2 at N = 7)", () => {
+test("mv2.e: a 32 x 32 input at n = 32 emits at most 64 cells per layer (L1 dropped, L2 at N = 7)", () => {
   const r = ok(measureRequest(request({ w: 32, h: 32, px: noise(32, 32, xorshift32(11)) }, { n: 32 })));
   results.small = { layers: r.layers.map((l) => [l.id, l.cells]), dropped: r.dropped.map((d) => d.id) };
   assert.ok(r.layers.every((l) => l.cells <= 64));
@@ -178,14 +178,14 @@ test("T4.e: a 32 x 32 input at n = 32 emits at most 64 cells per layer (L1 dropp
   assert.ok(r.dropped.some((d) => d.id === "L1" && d.failure_code === "privacy_cell_bound"));
 });
 
-test("T4.e: an injected 65-character hex run is refused with raw_payload_leak", () => {
+test("mv2.e: an injected 65-character hex run is refused with raw_payload_leak", () => {
   const img = [...seededImages(1, 64, 64, 8)][0];
   assert.equal(measureRequest(request(img, { run_id: "a".repeat(65) })).failure_code, "raw_payload_leak");
   assert.equal(measureRequest(request(img, { run_id: Array.from({ length: 30 }, (_, i) => i).join(",") })).failure_code, "raw_payload_leak");
   assert.notEqual(measureRequest(request(img, { run_id: "a".repeat(64) })).status, "REJECTED");
 });
 
-test("T4.status eq: caller pixels carry computed with the input receipt, never witnessed; the verdict is UNVERIFIABLE", () => {
+test("mv2.status eq: caller pixels carry computed with the input receipt, never witnessed; the verdict is UNVERIFIABLE", () => {
   const img = [...seededImages(1, 50, 70, 3)][0];
   const r = ok(measureRequest(request(img)));
   assert.equal(r.status, "UNVERIFIABLE");
@@ -194,7 +194,7 @@ test("T4.status eq: caller pixels carry computed with the input receipt, never w
   assert.equal(JSON.stringify(r).includes("witnessed"), false);
 });
 
-test("T4.identity eq: v2 layer text equals sense-core layerPacket on 50 seeded images", () => {
+test("mv2.identity eq: v2 layer text equals sense-core layerPacket on 50 seeded images", () => {
   let same = 0;
   for (const img of seededImages(50, 144, 200, 2026)) {
     const r = ok(measureRequest(request(img)));
@@ -205,7 +205,7 @@ test("T4.identity eq: v2 layer text equals sense-core layerPacket on 50 seeded i
   assert.equal(same, 50);
 });
 
-test("T4.overlays: drawn overlays leave L0, an overlay is listed in L3, a full mask is refused", () => {
+test("mv2.overlays: drawn overlays leave L0, an overlay is listed in L3, a full mask is refused", () => {
   const w = 40, h = 30, px = solid(w, h, [90, 90, 90]), mask = new Uint8Array(w * h);
   for (let x = 5; x < 15; x++) { mask[5 * w + x] = 1; const i = (5 * w + x) * 4; px[i] = 255; px[i + 1] = 0; px[i + 2] = 0; }
   const r = ok(measureRequest({ image: { rgba: b64(px), width: w, height: h }, overlays: [{ id: "ring", mask: b64(mask) }], overlays_drawn: true }));
@@ -214,7 +214,7 @@ test("T4.overlays: drawn overlays leave L0, an overlay is listed in L3, a full m
   assert.equal(measureRequest({ image: { rgba: b64(px), width: w, height: h }, overlays: [{ id: "all", mask: b64(new Uint8Array(w * h).fill(1)) }], overlays_drawn: true }).failure_code, "overlay_covers_frame");
 });
 
-test("T4.mcp: tools/call with arguments returns v2; without arguments the v1 demo packet", () => {
+test("mv2.mcp: tools/call with arguments returns v2; without arguments the v1 demo packet", () => {
   const img = [...seededImages(1, 30, 30, 1)][0];
   const v2 = handleRequest({ jsonrpc: "2.0", id: 1, method: "tools/call", params: { name: "telos.measurement.layers", arguments: request(img) } });
   assert.equal(v2.result.structuredContent.schema, "project-telos.measurement-layers/v2");
@@ -222,11 +222,13 @@ test("T4.mcp: tools/call with arguments returns v2; without arguments the v1 dem
   assert.equal(v1.result.structuredContent.schema, "project-telos.measurement-layers/v1");
 });
 
-test("T4 results file", () => {
+test("mv2 results file", () => {
   if (process.env.TELOS_WRITE_RESULTS !== "1") return;
-  const out = { result: "t4-measurement-v2", prereg_sha256: "7c13f35793a05da63f4199edffa3fb08ce60b2ecf6135d4294a6146f81efde52",
-    prereg_t4t7_sha256: "75cbd7d12857b3d9143c4cd14169731388f33be5e495093943b6d29fdd2061eb",
-    amendment_2_sha256: "31831aaec61385d29f47180b52cd785eb8a107c001653f30e3ce3ca7690978be",
-    amendment_3_sha256: "a3db4b310e3a24ec0a3c40124b88dbef0dba713d334c4fe8303f02f6b350d121", node: process.version, ...results };
-  writeFileSync(path.join(BENCH, "results", "t4-measurement-v2.json"), JSON.stringify(out, null, 1) + "\n");
+  // SHA-256 of the rule texts fixed before this code was written (kept in the site repository's test tree).
+  const out = { result: "measurement-v2", rule_text_sha256: [
+    "7c13f35793a05da63f4199edffa3fb08ce60b2ecf6135d4294a6146f81efde52",
+    "75cbd7d12857b3d9143c4cd14169731388f33be5e495093943b6d29fdd2061eb",
+    "31831aaec61385d29f47180b52cd785eb8a107c001653f30e3ce3ca7690978be",
+    "a3db4b310e3a24ec0a3c40124b88dbef0dba713d334c4fe8303f02f6b350d121"], node: process.version, ...results };
+  writeFileSync(path.join(BENCH, "results", "measurement-v2.json"), JSON.stringify(out, null, 1) + "\n");
 });

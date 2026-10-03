@@ -10,7 +10,7 @@
    "id": "m.mean.channel",
    "fault": "the exact mean reads green as blue",
    "killed": [
-    "T4.a eq: a constant image fills one histogram bin and oklab_mean is within 1e-6 of float OKLab"
+    "mv2.a eq: a constant image fills one histogram bin and oklab_mean is within 1e-6 of float OKLab"
    ],
    "survived": [],
    "otherFailures": []
@@ -19,7 +19,7 @@
    "id": "m.hist.split",
    "fault": "odd pixels land in bin 0",
    "killed": [
-    "T4.a eq: a constant image fills one histogram bin and oklab_mean is within 1e-6 of float OKLab"
+    "mv2.a eq: a constant image fills one histogram bin and oklab_mean is within 1e-6 of float OKLab"
    ],
    "survived": [],
    "otherFailures": []
@@ -28,7 +28,7 @@
    "id": "m.receipt.nonce",
    "fault": "a clock reading enters the receipt",
    "killed": [
-    "T4.d eq: two runs in one process and in two processes give one receipt_sha256"
+    "mv2.d eq: two runs in one process and in two processes give one receipt_sha256"
    ],
    "survived": [],
    "otherFailures": []
@@ -37,7 +37,7 @@
    "id": "m.canon.sort",
    "fault": "keys sorted in reverse",
    "killed": [
-    "T4.d eq: Python re-derives input_receipt.sha256 and receipt_sha256 on 100 seeded responses"
+    "mv2.d eq: Python re-derives input_receipt.sha256 and receipt_sha256 on 100 seeded responses"
    ],
    "survived": [],
    "otherFailures": []
@@ -46,7 +46,7 @@
    "id": "m.layerhash.notext",
    "fault": "the layer hash leaves out the layer text",
    "killed": [
-    "T4.sens (post hoc) eq: a layer hash changes exactly when its text changes, on 20 one-bin edits"
+    "mv2.sens (post hoc) eq: a layer hash changes exactly when its text changes, on 20 one-bin edits"
    ],
    "survived": [],
    "otherFailures": []
@@ -55,51 +55,51 @@
    "id": "m.scan.debug",
    "fault": "a debug field carries raw pixel bytes as hex",
    "killed": [
-    "T4.e eq: no encoded run outside permitted blocks on 100 seeded images and a 64 x 64 noise image"
+    "mv2.e eq: no encoded run outside permitted blocks on 100 seeded images and a 64 x 64 noise image"
    ],
    "survived": [],
    "otherFailures": [
-    "T4.a eq: a constant image fills one histogram bin and oklab_mean is within 1e-6 of float OKLab",
-    "T4.c: outside, UNC, relative and junction-escape paths are refused; a file inside the root is read",
-    "T4.d eq: two runs in one process and in two processes give one receipt_sha256",
-    "T4.d eq: Python re-derives input_receipt.sha256 and receipt_sha256 on 100 seeded responses",
-    "T4.sens: one code value in one pixel changes the input receipt and the response receipt (20 of 20)",
-    "T4.sens (post hoc) eq: a layer hash changes exactly when its text changes, on 20 one-bin edits",
-    "T4.sens: one declared field changes both receipt hashes; 20 single-field edits each fail verification",
-    "T4.e: a 32 x 32 input at n = 32 emits at most 64 cells per layer (L1 dropped, L2 at N = 7)",
-    "T4.e: an injected 65-character hex run is refused with raw_payload_leak",
-    "T4.status eq: caller pixels carry computed with the input receipt, never witnessed; the verdict is UNVERIFIABLE",
-    "T4.identity eq: v2 layer text equals sense-core layerPacket on 50 seeded images",
-    "T4.overlays: drawn overlays leave L0, an overlay is listed in L3, a full mask is refused"
+    "mv2.a eq: a constant image fills one histogram bin and oklab_mean is within 1e-6 of float OKLab",
+    "mv2.c: outside, UNC, relative and junction-escape paths are refused; a file inside the root is read",
+    "mv2.d eq: two runs in one process and in two processes give one receipt_sha256",
+    "mv2.d eq: Python re-derives input_receipt.sha256 and receipt_sha256 on 100 seeded responses",
+    "mv2.sens: one code value in one pixel changes the input receipt and the response receipt (20 of 20)",
+    "mv2.sens (post hoc) eq: a layer hash changes exactly when its text changes, on 20 one-bin edits",
+    "mv2.sens: one declared field changes both receipt hashes; 20 single-field edits each fail verification",
+    "mv2.e: a 32 x 32 input at n = 32 emits at most 64 cells per layer (L1 dropped, L2 at N = 7)",
+    "mv2.e: an injected 65-character hex run is refused with raw_payload_leak",
+    "mv2.status eq: caller pixels carry computed with the input receipt, never witnessed; the verdict is UNVERIFIABLE",
+    "mv2.identity eq: v2 layer text equals sense-core layerPacket on 50 seeded images",
+    "mv2.overlays: drawn overlays leave L0, an overlay is listed in L3, a full mask is refused"
    ]
   },
   {
    "id": "m.status.witnessed",
    "fault": "caller pixels are labelled witnessed",
    "killed": [
-    "T4.status eq: caller pixels carry computed with the input receipt, never witnessed; the verdict is UNVERIFIABLE"
+    "mv2.status eq: caller pixels carry computed with the input receipt, never witnessed; the verdict is UNVERIFIABLE"
    ],
    "survived": [],
    "otherFailures": [
-    "T4.sens: one declared field changes both receipt hashes; 20 single-field edits each fail verification"
+    "mv2.sens: one declared field changes both receipt hashes; 20 single-field edits each fail verification"
    ]
   },
   {
    "id": "m.identity.stride",
    "fault": "pixels read with a 3-byte stride",
    "killed": [
-    "T4.identity eq: v2 layer text equals sense-core layerPacket on 50 seeded images"
+    "mv2.identity eq: v2 layer text equals sense-core layerPacket on 50 seeded images"
    ],
    "survived": [],
    "otherFailures": [
-    "T4.overlays: drawn overlays leave L0, an overlay is listed in L3, a full mask is refused"
+    "mv2.overlays: drawn overlays leave L0, an overlay is listed in L3, a full mask is refused"
    ]
   },
   {
    "id": "m.input.partial",
    "fault": "the input receipt hashes the first pixel only",
    "killed": [
-    "T4.sens: one code value in one pixel changes the input receipt and the response receipt (20 of 20)"
+    "mv2.sens: one code value in one pixel changes the input receipt and the response receipt (20 of 20)"
    ],
    "survived": [],
    "otherFailures": []
@@ -108,7 +108,7 @@
    "id": "m.path.norealcheck",
    "fault": "the real path is not re-checked after links",
    "killed": [
-    "T4.c: outside, UNC, relative and junction-escape paths are refused; a file inside the root is read"
+    "mv2.c: outside, UNC, relative and junction-escape paths are refused; a file inside the root is read"
    ],
    "survived": [],
    "otherFailures": []
@@ -117,7 +117,7 @@
    "id": "m.privacy.quarter",
    "fault": "the cell bound is w h / 4",
    "killed": [
-    "T4.e: a 32 x 32 input at n = 32 emits at most 64 cells per layer (L1 dropped, L2 at N = 7)"
+    "mv2.e: a 32 x 32 input at n = 32 emits at most 64 cells per layer (L1 dropped, L2 at N = 7)"
    ],
    "survived": [],
    "otherFailures": []
