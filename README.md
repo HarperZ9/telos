@@ -167,7 +167,13 @@ The picture is generated from the same spec the checker reads, and a gate holds 
 
 ## License
 
-FSL-1.1-ALv2 (fair source). The code is open to read and run, free for nearly any use except building a competing product, and each release converts to Apache 2.0 after two years. Copyright is held by the author. See [LICENSE](LICENSE).
+Text: CC BY 4.0. Code: FSL-1.1-ALv2.
+
+The whitepapers and research notes in [`docs/research/`](docs/research/) are
+licensed CC BY 4.0. Share and adapt them with credit to Zain Dana Harper; the
+terms are in [`LICENSE-TEXT`](LICENSE-TEXT).
+
+The code and the software documentation are FSL-1.1-ALv2 (fair source). The code is open to read and run, free for nearly any use except building a competing product, and each release converts to Apache 2.0 after two years. Copyright is held by the author. See [LICENSE](LICENSE).
 
 ## For developers
 
