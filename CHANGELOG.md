@@ -1,11 +1,12 @@
 # Changelog
 
-## Unreleased
+## 0.9.0
 
 Reach. An agent can now read public web pages, feeds, Reddit, single X posts
 and a set of official APIs through Telos, with a receipt for every request.
 All of it is our own code on Node built-ins: no dependency, no paid service,
-no scraping relay. Guide: `docs/REACH.md`.
+no scraping relay. Guide: `docs/REACH.md`. Release notes:
+`docs/RELEASE-NOTES-0.9.0.md`.
 
 - `telos reach doctor` and `telos.reach.doctor` report which channels work for
   you, what each costs and what it leaves out. The doctor reads environment

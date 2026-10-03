@@ -2,7 +2,7 @@
 
 **The shared workbench: durable state, native workstation control, sensory organs, a discovery forge.**
 
-![version](https://img.shields.io/badge/version-0.8.0-9683ff?style=flat-square&labelColor=14041b)
+![version](https://img.shields.io/badge/version-0.9.0-9683ff?style=flat-square&labelColor=14041b)
 ![license](https://img.shields.io/badge/license-FSL--1.1--ALv2-8f8095?style=flat-square&labelColor=14041b)
 [![CI](https://github.com/HarperZ9/telos/actions/workflows/ci.yml/badge.svg)](https://github.com/HarperZ9/telos/actions/workflows/ci.yml)
 ![node](https://img.shields.io/badge/node-24%20CI%2C%2020%2B%20registry-9683ff?style=flat-square&labelColor=14041b)
