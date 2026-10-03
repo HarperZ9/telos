@@ -1,5 +1,40 @@
 # Changelog
 
+## Unreleased
+
+Reach. An agent can now read public web pages, feeds, Reddit, single X posts
+and a set of official APIs through Telos, with a receipt for every request.
+All of it is our own code on Node built-ins: no dependency, no paid service,
+no scraping relay. Guide: `docs/REACH.md`.
+
+- `telos reach doctor` and `telos.reach.doctor` report which channels work for
+  you, what each costs and what it leaves out. The doctor reads environment
+  variable names only: no network, no file writes, no processes.
+- Web crawler (`telos.crawl.fetch`, `telos.crawl.site`): reads robots.txt per
+  RFC 9309 before every URL and every redirect hop, obeys Crawl-delay, sends
+  one honest User-Agent naming Telos, paces each host, backs off on 429 and 503,
+  caches with conditional requests, prefers sitemaps and feeds, honours
+  nofollow, and stops at a bot check. Depth and page budgets are hard caps.
+- Reddit (`telos.reddit.listing`, `telos.reddit.comments`): official Data API
+  over OAuth with your own app credentials from the environment, paced from
+  Reddit's rate-limit headers. Read-only.
+- X (`telos.x.oembed`, `telos.x.api`): one public post through X's oEmbed
+  endpoint for free, or the official X API v2 with your own token, with a cost
+  estimate in each receipt. Free bulk search and timelines have no permitted
+  route; the doctor and the guide say so.
+- Official APIs (`telos.reach.api`): Hacker News, GitHub, V2EX, Wikipedia and
+  arXiv with no key; YouTube Data API and Brave Search with your own key. Keys
+  travel in headers and never appear in a receipt.
+- `telos.reach.menu`: the reach verbs your grant tier allows, with credentials
+  checked and a memory of what was already read.
+- Every reach receipt names which model provider saw the session's trace, from
+  `TELOS_TRACE_PROVIDER` or the MCP client name, or says unknown.
+- Boundary tests fail if package.json gains a runtime dependency, if a reach
+  module imports anything outside Node built-ins, or if reach code reads
+  browser cookie stores, sends cookies, rotates identities, carries a browser
+  User-Agent or calls private X endpoints. `bench/reach/run-mutations.mjs`
+  shows that each behaviour test fails when the code it guards is broken.
+
 ## 0.8.0
 
 Measure your own image. `telos.measurement.layers` now accepts a caller's image

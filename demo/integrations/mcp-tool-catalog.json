@@ -1447,6 +1447,188 @@
         "index.map",
         "crucible.assess"
       ]
+    },
+    {
+      "name": "telos.reach.doctor",
+      "flagship": "telos",
+      "description": "Use before any reach call to see which channels (web crawler, Reddit, X, official APIs) work for this user and what each one costs and leaves out. Read-only, zero-auth, no external side effects: reads environment variable names only, with no network, file writes or processes. Returns a JSON doctor report.",
+      "cli": [
+        "node",
+        "demo/reach.mjs",
+        "doctor",
+        "--json"
+      ],
+      "mcp": {
+        "status": "available",
+        "server": "telos",
+        "method": "tools/call",
+        "tool": "telos.reach.doctor"
+      },
+      "next_actions": [
+        "gather.docs",
+        "crucible.assess"
+      ]
+    },
+    {
+      "name": "telos.reach.menu",
+      "flagship": "telos",
+      "description": "Use when an agent needs the reach verbs its grant tier allows, with credentials checked and a memory of what was already read. Read-only, zero-auth, no external side effects; reads the memory file named by `memory` or TELOS_REACH_MEMORY. Returns a JSON menu.",
+      "cli": [
+        "node",
+        "demo/reach.mjs",
+        "menu",
+        "--json"
+      ],
+      "mcp": {
+        "status": "available",
+        "server": "telos",
+        "method": "tools/call",
+        "tool": "telos.reach.menu"
+      },
+      "next_actions": [
+        "gather.docs",
+        "crucible.assess"
+      ]
+    },
+    {
+      "name": "telos.crawl.fetch",
+      "flagship": "telos",
+      "description": "Use when an agent needs the text, feed items, sitemap URLs or JSON of one public URL. Read-only and zero-auth; checks robots.txt first and stops at a bot check. Reaches the network: one honest Telos User-Agent, per-host pacing with backoff on 429 and 503, no login, no cookies. Returns JSON with the parsed page and a receipt of every fetch.",
+      "cli": [
+        "node",
+        "demo/reach.mjs",
+        "fetch"
+      ],
+      "mcp": {
+        "status": "available",
+        "server": "telos",
+        "method": "tools/call",
+        "tool": "telos.crawl.fetch"
+      },
+      "next_actions": [
+        "gather.docs",
+        "crucible.assess"
+      ]
+    },
+    {
+      "name": "telos.crawl.site",
+      "flagship": "telos",
+      "description": "Use when an agent needs several pages of one site; sitemaps and feeds are read before links, inside a depth (0 to 3) and page budget (1 to 50). Read-only and zero-auth; obeys robots.txt and Crawl-delay. Reaches the network: one honest Telos User-Agent, per-host pacing with backoff on 429 and 503, no login, no cookies. Returns JSON page summaries and a receipt.",
+      "cli": [
+        "node",
+        "demo/reach.mjs",
+        "site"
+      ],
+      "mcp": {
+        "status": "available",
+        "server": "telos",
+        "method": "tools/call",
+        "tool": "telos.crawl.site"
+      },
+      "next_actions": [
+        "gather.docs",
+        "crucible.assess"
+      ]
+    },
+    {
+      "name": "telos.reddit.listing",
+      "flagship": "telos",
+      "description": "Use when an agent needs posts from a subreddit through Reddit's official Data API. Read-only; auth is the user's own Reddit app credentials from environment variables named by telos.reach.doctor, paced from Reddit's rate-limit headers. Reaches the network: one honest Telos User-Agent, per-host pacing with backoff on 429 and 503, no login, no cookies. Returns JSON posts and a receipt.",
+      "cli": [
+        "node",
+        "demo/reach.mjs",
+        "reddit-listing"
+      ],
+      "mcp": {
+        "status": "available",
+        "server": "telos",
+        "method": "tools/call",
+        "tool": "telos.reddit.listing"
+      },
+      "next_actions": [
+        "gather.docs",
+        "crucible.assess"
+      ]
+    },
+    {
+      "name": "telos.reddit.comments",
+      "flagship": "telos",
+      "description": "Use when an agent needs one Reddit post and its comment tree through the official Data API. Read-only; auth is the user's own Reddit app credentials from environment variables named by telos.reach.doctor. Reaches the network: one honest Telos User-Agent, per-host pacing with backoff on 429 and 503, no login, no cookies. Returns JSON comments with depth and a receipt.",
+      "cli": [
+        "node",
+        "demo/reach.mjs",
+        "reddit-comments"
+      ],
+      "mcp": {
+        "status": "available",
+        "server": "telos",
+        "method": "tools/call",
+        "tool": "telos.reddit.comments"
+      },
+      "next_actions": [
+        "gather.docs",
+        "crucible.assess"
+      ]
+    },
+    {
+      "name": "telos.x.oembed",
+      "flagship": "telos",
+      "description": "Use when an agent needs the text, author and date of one public X post from its URL, through X's public oEmbed endpoint. Read-only and zero-auth; no search or timelines. Reaches the network: one honest Telos User-Agent, per-host pacing with backoff on 429 and 503, no login, no cookies. Returns JSON and a receipt.",
+      "cli": [
+        "node",
+        "demo/reach.mjs",
+        "x-oembed"
+      ],
+      "mcp": {
+        "status": "available",
+        "server": "telos",
+        "method": "tools/call",
+        "tool": "telos.x.oembed"
+      },
+      "next_actions": [
+        "gather.docs",
+        "crucible.assess"
+      ]
+    },
+    {
+      "name": "telos.x.api",
+      "flagship": "telos",
+      "description": "Use when the user has an X developer key and wants a post lookup, recent search or a user's recent posts through the official X API v2. Read-only; auth is X_BEARER_TOKEN, and X bills each read, so the receipt carries a cost estimate. Reaches the network: one honest Telos User-Agent, per-host pacing with backoff on 429 and 503, no login, no cookies. Returns JSON and a receipt.",
+      "cli": [
+        "node",
+        "demo/reach.mjs",
+        "x-api"
+      ],
+      "mcp": {
+        "status": "available",
+        "server": "telos",
+        "method": "tools/call",
+        "tool": "telos.x.api"
+      },
+      "next_actions": [
+        "gather.docs",
+        "crucible.assess"
+      ]
+    },
+    {
+      "name": "telos.reach.api",
+      "flagship": "telos",
+      "description": "Use when an agent needs one operation from an official API: hackernews, github, v2ex, wikipedia, arxiv (zero-auth), or youtube and brave (auth is the user's own key in YOUTUBE_API_KEY or BRAVE_SEARCH_API_KEY). Read-only; keys travel in headers and never in receipts. Reaches the network: one honest Telos User-Agent, per-host pacing with backoff on 429 and 503, no login, no cookies. Returns JSON and a receipt.",
+      "cli": [
+        "node",
+        "demo/reach.mjs",
+        "api"
+      ],
+      "mcp": {
+        "status": "available",
+        "server": "telos",
+        "method": "tools/call",
+        "tool": "telos.reach.api"
+      },
+      "next_actions": [
+        "gather.docs",
+        "crucible.assess"
+      ]
     }
   ]
 }

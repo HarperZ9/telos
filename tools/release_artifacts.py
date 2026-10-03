@@ -28,7 +28,7 @@ EXPECTED_BIN = {
 # `files` list must be added here as well, after review.
 REVIEWED_DOCS = {
     'docs/CURRENT-STATE.md', 'docs/native-control-contract.md',
-    'docs/spec/telos-tiers.md', 'docs/spec/telos.receipt-v1.md',
+    'docs/spec/telos-tiers.md', 'docs/spec/telos.receipt-v1.md', 'docs/REACH.md',
     'tools/uia.ps1',
 }
 RELEASE_NOTES = re.compile(r'docs/RELEASE-NOTES-\d+\.\d+\.\d+\.md')

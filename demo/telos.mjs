@@ -24,6 +24,7 @@ function usage() {
       "",
       "  telos mcp                    start the stdio MCP server (demo/telos-mcp.mjs)",
       "  telos render <specPath>      render a learn.telos.scene-request/v1 spec (demo/telos-cli.mjs)",
+      "  telos reach doctor           which web, Reddit, X and API channels work for you (demo/reach.mjs)",
       "  telos <command> [args]       run demo/<command>.mjs, e.g. status, doctor, room,",
       "                               catalog, server-manifest, run, mcp-freshness, ci-doctor",
       "",
