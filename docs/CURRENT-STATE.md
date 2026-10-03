@@ -1,8 +1,24 @@
 # Project Telos Current State
 
+## 0.9.0 release, 2026-10-03
+
+0.9.0 is the current npm and GitHub release and replaces 0.8.0. It adds the
+reach layer: a crawler that reads robots.txt before every URL and redirect hop,
+obeys Crawl-delay, paces each host and stops at bot checks; Reddit through the
+official Data API with the user's own app; single X posts through X's public
+oEmbed endpoint and the X API with the user's own key; and official API
+channels for Hacker News, GitHub, V2EX, Wikipedia, arXiv, YouTube and Brave
+Search. Nine MCP tools bring the catalog to 78 tools, 50 of them Telos. Every
+reach receipt names which model provider saw the session's trace. The code
+uses Node built-ins only, and boundary tests fail on a runtime dependency,
+cookie access, identity rotation or private X endpoints. Live smokes cover the
+seven keyless endpoints; Reddit, the X API, YouTube and Brave are tested on a
+fake network only. See [the 0.9.0 notes](RELEASE-NOTES-0.9.0.md) and
+[the reach guide](REACH.md).
+
 ## 0.8.0 release, 2026-10-03
 
-0.8.0 is the current npm and GitHub release and replaces 0.7.0.
+0.8.0 replaced 0.7.0.
 `telos.measurement.layers` now measures a caller's image: raw 8-bit RGBA,
 inline as base64 or as a file under a root listed in
 `TELOS_MEASUREMENT_ROOTS`. It returns layers L0 to L3 with SHA-256 receipts,

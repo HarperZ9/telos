@@ -76,6 +76,26 @@ node demo/compatibility-doctor.mjs --summary
 node demo/operator-doctor.mjs --summary
 ```
 
+## Reach
+
+Read public web pages, Reddit, X posts and official APIs. Start with the doctor;
+it reads environment variable names only and makes no network call.
+
+```bash
+telos reach doctor
+telos reach fetch https://example.com/
+telos reach site https://example.com/ --depth 1 --budget 5
+telos reach reddit listing rust --sort top --time week
+telos reach x oembed https://x.com/XDevelopers/status/1861111969639481848
+telos reach api arxiv search q=all:robots.txt limit=3
+```
+
+Reddit needs `REDDIT_CLIENT_ID` and `REDDIT_CLIENT_SECRET` from your own app.
+The X API needs `X_BEARER_TOKEN` and X bills each read. Add `--receipt FILE` to
+keep receipts and `--memory FILE` to feed `telos reach menu`. The crawler obeys
+robots.txt and stops at bot checks. The full guide, including what X coverage
+has no permitted route, is [docs/REACH.md](docs/REACH.md).
+
 ## Verify
 
 ```bash
@@ -103,5 +123,5 @@ payloads, raw evidence, or operator-owned licensed font files.
 
 See [the client package guide](client-plugin/README.md) for scoped skills, portable MCP configuration and same-release archives.
 
-The current published version is 0.8.0. Download native Windows ZIP and MCPB
-packages from [the release](https://github.com/HarperZ9/telos/releases/tag/v0.8.0).
+The current published version is 0.9.0. Download native Windows ZIP and MCPB
+packages from [the release](https://github.com/HarperZ9/telos/releases/tag/v0.9.0).
