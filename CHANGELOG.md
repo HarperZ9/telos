@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 0.8.0
 
 Measure your own image. `telos.measurement.layers` now accepts a caller's image
 and returns Telos measurement layers with SHA-256 receipts. Called with no
@@ -22,6 +22,8 @@ arguments it still returns the demo meters.
   scan refuses any response that carries a long run of encoded data.
 - `bench/measurement-v2/run-mutations.mjs` shows that each equality check in the
   new suite fails when the code it guards is broken.
+- The `telos.status` line and the server manifest name the new capability.
+  Release notes: `docs/RELEASE-NOTES-0.8.0.md`.
 
 ## 0.7.0
 
