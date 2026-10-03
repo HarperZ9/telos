@@ -14,7 +14,8 @@ Telos is a zero-dependency local workbench for creating, simulating, and replayi
 
 ## What it does
 
-- **One MCP surface over five flagships.** `node demo/telos-mcp.mjs` (or `npm start`) runs a stdio MCP server exposing 41 native `telos.*` tools, and the server manifest launches gather, index, forum, and crucible beside it: 69 tools total plus 36 declared auxiliary compatibility tools, with ready-to-paste host config for Codex (TOML), Claude (JSON), and OpenAI Agents.
+- **One MCP surface over five flagships.** `node demo/telos-mcp.mjs` (or `npm start`) runs a stdio MCP server exposing 50 native `telos.*` tools, and the server manifest launches gather, index, forum, and crucible beside it: 78 tools total plus 36 declared auxiliary compatibility tools, with ready-to-paste host config for Codex (TOML), Claude (JSON), and OpenAI Agents.
+- **Read the web, Reddit and X.** `telos reach` and nine MCP tools read public pages, feeds and sitemaps through a crawler that obeys robots.txt and Crawl-delay, Reddit through its official Data API with your own app, single X posts through X's public oEmbed endpoint, the X API with your own key, and official APIs such as Hacker News, GitHub, arXiv and Wikipedia. Every request lands in a receipt with its robots.txt decision and a SHA-256 of the bytes. `telos reach doctor` shows which channels work for you, with no side effects. See [the reach guide](docs/REACH.md).
 - **Four proof lanes through one CLI.** `node demo/proof.mjs` assembles agent-action, research-claim, visual-truth, and build proof packets. Each has a pure verifier that recomputes every load-bearing claim from materials embedded in the packet, so a canned pass is structurally impossible, and `node demo/proof.mjs verify <packet.json>` replays any of them by schema id.
 - **Nine doctors.** CI doctor and CI triage read GitHub Actions state and separate fatal failures from runtime migration warnings. Presentation, accessibility, performance, compatibility, and operator doctors audit README parity, static a11y, byte budgets, protocol coverage, and discoverability. All run offline against local checkouts.
 - **A creative engine you can measure.** Deterministic kernels (ordered dither, pixel sort, harmonograph, clustered light), a WebGPU/WebGL/canvas/static renderer selection contract, and ten runnable meters across histogram, dither, splat, cluster, audio, flicker, curvature, interaction, uncertainty, and frame-budget signals. The visual surface lives at [`demo/index.html`](demo/index.html).
@@ -56,7 +57,7 @@ node demo/run.mjs
 From there, the two orientation commands:
 
 ```bash
-node demo/catalog.mjs --summary          # operator map: 69 tools across 5 flagships
+node demo/catalog.mjs --summary          # operator map: 78 tools across 5 flagships
 node demo/server-manifest.mjs --summary  # 5-server MCP launch map with host config
 ```
 
@@ -64,13 +65,13 @@ Expected catalog summary:
 
 ```
 Project Telos MCP Catalog
-tools    69 total, 69 available
+tools    78 total, 78 available
 transport stdio, streamable-http
 gather    5 tools ...
 index     5 tools ...
 forum     5 tools ...
 crucible  13 tools ...
-telos     41 tools ...
+telos     50 tools ...
 ```
 
 To run the MCP server for a host: `npm start` (stdio). Health and state:
@@ -139,7 +140,7 @@ Peer repos: [gather](https://github.com/HarperZ9/gather) (research intake), [ind
 
 ## Status and maturity
 
-`project-telos-mcp` 0.8.0 is the current release, published on [npm](https://www.npmjs.com/package/project-telos-mcp/v/0.8.0) with matching [GitHub release artifacts](https://github.com/HarperZ9/telos/releases/tag/v0.8.0). The command surface above is tested and CI-covered: `npm test` globs every test file in `demo/`, so a new one runs without being added to a list. Interfaces may still move between minor versions. Research packets are deterministic preflights with explicit non-claims: the causal packet does not claim causal discovery, the embodied packet does not claim real-robot safety, the quantum packet does not claim hardware QEC. Treat the receipts and tests in this repo as the evidence, not prose counts.
+`project-telos-mcp` 0.9.0 is the current release, published on [npm](https://www.npmjs.com/package/project-telos-mcp/v/0.9.0) with matching [GitHub release artifacts](https://github.com/HarperZ9/telos/releases/tag/v0.9.0). The command surface above is tested and CI-covered: `npm test` globs every test file in `demo/`, so a new one runs without being added to a list. Interfaces may still move between minor versions. Research packets are deterministic preflights with explicit non-claims: the causal packet does not claim causal discovery, the embodied packet does not claim real-robot safety, the quantum packet does not claim hardware QEC. Treat the receipts and tests in this repo as the evidence, not prose counts.
 
 ### Upgrading from 0.2.0
 
@@ -204,7 +205,7 @@ Built by **[Zain Dana Harper](https://github.com/HarperZ9)** in Seattle.
 
 ## Local client packages
 
-The [0.8.0 release](https://github.com/HarperZ9/telos/releases/tag/v0.8.0) includes
+The [0.9.0 release](https://github.com/HarperZ9/telos/releases/tag/v0.9.0) includes
 native Windows ZIP and MCPB client packages. Marketplace acceptance is not
 established by publication of these archives.
 
