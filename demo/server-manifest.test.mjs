@@ -69,7 +69,7 @@ const auxiliaryTotal = Object.values(manifest.servers).reduce(
 assert.equal(summary.status, 0, summary.stderr || summary.stdout);
 assert.match(summary.stdout, /^Project Telos MCP Server Manifest/m);
 assert.match(summary.stdout, /servers\s+5/);
-assert.match(summary.stdout, /tools\s+69 expected/);
+assert.match(summary.stdout, /tools\s+78 expected/);
 assert.match(summary.stdout, new RegExp(`auxiliary\\s+${auxiliaryTotal} compatible`));
 assert.match(summary.stdout, /freshness\s+5 probes/);
 assert.match(summary.stdout, /gather\s+5 tools/);

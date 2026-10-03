@@ -1,0 +1,83 @@
+{
+  "note": "Each entry breaks one guarded behaviour. The named test file must fail with the mutation applied and pass without it.",
+  "mutations": [
+    {
+      "file": "demo/reach/crawler.mjs",
+      "find": "return { allowed: verdict.allowed, reason",
+      "replace": "return { allowed: true, reason",
+      "test": "demo/reach-crawler.test.mjs"
+    },
+    {
+      "file": "demo/reach/robots.mjs",
+      "find": "if (longer || tieAllow) best = rule;",
+      "replace": "if (longer) best = rule;",
+      "test": "demo/reach-robots.test.mjs"
+    },
+    {
+      "file": "demo/reach/limiter.mjs",
+      "find": "new Set([429, 503])",
+      "replace": "new Set([])",
+      "test": "demo/reach-http.test.mjs"
+    },
+    {
+      "file": "demo/reach/limiter.mjs",
+      "find": "return Math.max(this.intervalMs, this.delays.get(host) ?? 0);",
+      "replace": "return this.intervalMs;",
+      "test": "demo/reach-http.test.mjs"
+    },
+    {
+      "file": "demo/reach/identity.mjs",
+      "find": "return `Telos/${TELOS_VERSION}",
+      "replace": "return `Mozilla/5.0 Telos/${TELOS_VERSION}",
+      "test": "demo/reach-http.test.mjs"
+    },
+    {
+      "file": "demo/reach/reddit.mjs",
+      "find": "await this.http.limiter.backoff(\"oauth.reddit.com\", 0, reset * 1000);",
+      "replace": ";",
+      "test": "demo/reach-platforms.test.mjs"
+    },
+    {
+      "file": "demo/reach/cache.mjs",
+      "find": "if (status !== 200 || lifetime === 0) return null;",
+      "replace": "if (status !== 200) return null;",
+      "test": "demo/reach-http.test.mjs"
+    },
+    {
+      "file": "demo/reach/doctor.mjs",
+      "find": "else if (missing.length) status = \"needs credentials\";",
+      "replace": "",
+      "test": "demo/reach-doctor.test.mjs"
+    },
+    {
+      "file": "demo/reach/menu.mjs",
+      "find": ".filter((item) => tierRank(item.tier) <= rank);",
+      "replace": ";",
+      "test": "demo/reach-doctor.test.mjs"
+    },
+    {
+      "file": "demo/reach/apis.mjs",
+      "find": "return { channel, url: `${channel.base}${path}`",
+      "replace": "return { channel, url: `${channel.base}${path}&key=${env[channel.keyEnv] ?? ''}`",
+      "test": "demo/reach-platforms.test.mjs"
+    },
+    {
+      "file": "demo/reach/http.mjs",
+      "find": "if (!authed && !out.bot_check",
+      "replace": "if (!out.bot_check",
+      "test": "demo/reach-http.test.mjs"
+    },
+    {
+      "file": "demo/reach/crawler.mjs",
+      "find": "if (seen.has(key) || (sameHost && new URL(key).host !== host)) continue;",
+      "replace": "if (seen.has(key)) continue;",
+      "test": "demo/reach-crawler.test.mjs"
+    },
+    {
+      "file": "demo/reach/crawler.mjs",
+      "find": "if (result.bot_check) return",
+      "replace": "if (false) return",
+      "test": "demo/reach-crawler.test.mjs"
+    }
+  ]
+}

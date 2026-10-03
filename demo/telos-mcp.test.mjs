@@ -3,6 +3,7 @@ import { spawnSync } from "node:child_process";
 import { readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { handleRequest, tools } from "./telos-mcp.mjs";
+import { networkToolNames, reachToolNames } from "./reach/mcp-tools.mjs";
 
 function request(method, params = undefined) {
   return { jsonrpc: "2.0", id: 1, method, ...(params ? { params } : {}) };
@@ -68,7 +69,8 @@ for (const name of [
   "telos.proof",
   "telos.proof.research",
   "telos.proof.visual",
-  "telos.proof.build"
+  "telos.proof.build",
+  ...reachToolNames
 ]) {
   assert.ok(names.has(name), `missing ${name}`);
 }
@@ -85,6 +87,15 @@ for (const tool of tools) {
   assert.equal(tool.inputSchema.additionalProperties, false);
   assert.match(tool.description, /^Use /, `${tool.name} description must start with usage guidance`);
   assert.match(tool.description, /Read-only/, `${tool.name} description must disclose read-only behavior`);
+  if (networkToolNames.has(tool.name)) {
+    // Reach tools read the open web or an official API. They must say so and
+    // name their auth instead of claiming zero side effects.
+    assert.match(tool.description, /Reaches the network/, `${tool.name} must disclose network access`);
+    assert.match(tool.description, /zero-auth|auth is/, `${tool.name} must disclose auth requirements`);
+    assert.doesNotMatch(tool.description, /no external side effects/, `${tool.name} must not claim zero side effects`);
+    assert.match(tool.description, /Returns? /, `${tool.name} description must state return shape`);
+    continue;
+  }
   assert.match(tool.description, /zero-auth/, `${tool.name} description must disclose auth requirements`);
   if (dependencyBearingTools.has(tool.name)) {
     assert.match(

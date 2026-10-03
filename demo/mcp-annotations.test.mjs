@@ -4,6 +4,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import { handleRequest, toolTitles, tools } from "./telos-mcp.mjs";
+import { networkToolNames } from "./reach/mcp-tools.mjs";
 
 const HINTS = ["readOnlyHint", "destructiveHint", "idempotentHint", "openWorldHint"];
 
@@ -18,10 +19,15 @@ test("every listed tool carries a title and boolean hints", () => {
   }
 });
 
-test("no tool on this server claims to write or reach a network", () => {
+test("no tool on this server writes; only the reach readers touch the network", () => {
   for (const tool of tools) {
     assert.equal(tool.annotations.readOnlyHint, true, tool.name);
     assert.equal(tool.annotations.destructiveHint, false, tool.name);
-    assert.equal(tool.annotations.openWorldHint, false, tool.name);
+    assert.equal(tool.annotations.openWorldHint, networkToolNames.has(tool.name), tool.name);
   }
+});
+
+test("the network set is exactly the reach readers", () => {
+  const open = tools.filter((tool) => tool.annotations.openWorldHint).map((tool) => tool.name).sort();
+  assert.deepEqual(open, ["telos.crawl.fetch", "telos.crawl.site", "telos.reach.api", "telos.reddit.comments", "telos.reddit.listing", "telos.x.api", "telos.x.oembed"]);
 });

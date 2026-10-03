@@ -7,7 +7,7 @@ const payload = actionEnvelope({
   command: "status",
   native: {
     role: "shared-room-reconciliation",
-    commands: ["room", "status", "doctor", "catalog", "server-manifest", "run", "flagship-workflow", "model-foundry", "learning-forge", "learning-forge-labs", "showcase", "mcp-freshness", "ci-doctor", "ci-triage", "presentation-doctor", "accessibility-doctor", "performance-doctor", "compatibility-doctor", "operator-doctor", "revival-registry", "second-level-flagship-queue", "workstation-substrate", "display-calibration", "browser-evidence", "proof"],
+    commands: ["room", "status", "doctor", "catalog", "server-manifest", "run", "flagship-workflow", "model-foundry", "learning-forge", "learning-forge-labs", "showcase", "mcp-freshness", "ci-doctor", "ci-triage", "presentation-doctor", "accessibility-doctor", "performance-doctor", "compatibility-doctor", "operator-doctor", "revival-registry", "second-level-flagship-queue", "workstation-substrate", "display-calibration", "browser-evidence", "proof", "reach"],
     statuses: ["MATCH", "DRIFT", "UNVERIFIABLE", "ERROR"],
     mcp_tools: [
       "telos.status",
@@ -50,9 +50,18 @@ const payload = actionEnvelope({
       "telos.proof",
       "telos.proof.research",
       "telos.proof.visual",
-      "telos.proof.build"
+      "telos.proof.build",
+      "telos.reach.doctor",
+      "telos.reach.menu",
+      "telos.crawl.fetch",
+      "telos.crawl.site",
+      "telos.reddit.listing",
+      "telos.reddit.comments",
+      "telos.x.oembed",
+      "telos.x.api",
+      "telos.reach.api"
     ],
-    current_status: `${TELOS_VERSION} source registry package with 69-tool five-flagship catalog, CI doctor, CI triage, presentation doctor, accessibility doctor, performance doctor, compatibility doctor, operator doctor, context envelopes, context packs, action receipts, loop ledger, objective monitoring, model foundry, Learning Forge, executable Learning Forge labs, OSS Proof Showcase scout, agent-action proof packets, research-claim proof packets, visual-truth proof packets, build scientific-runtime proof packets, MCP freshness, research seeds, transcript-backed thermodynamic research, rendering research, rendering capabilities, measurement layers of a caller's image with SHA-256 receipts, creative engine, creative kernels, revival registry, second-level queue, workstation substrate, display calibration, native control of browser and apps, metadata-bound control receipts, unredacted browser evidence packets, and native Telos MCP surface`
+    current_status: `${TELOS_VERSION} source registry package with 78-tool five-flagship catalog, CI doctor, CI triage, presentation doctor, accessibility doctor, performance doctor, compatibility doctor, operator doctor, context envelopes, context packs, action receipts, loop ledger, objective monitoring, model foundry, Learning Forge, executable Learning Forge labs, OSS Proof Showcase scout, agent-action proof packets, research-claim proof packets, visual-truth proof packets, build scientific-runtime proof packets, MCP freshness, research seeds, transcript-backed thermodynamic research, rendering research, rendering capabilities, measurement layers of a caller's image with SHA-256 receipts, creative engine, creative kernels, revival registry, second-level queue, workstation substrate, display calibration, native control of browser and apps, an agent-native reach layer (robots-aware crawler, Reddit Data API, X oEmbed and X API, official API channels, reach doctor), metadata-bound control receipts, unredacted browser evidence packets, and native Telos MCP surface`
   },
   nextActions: [
     {

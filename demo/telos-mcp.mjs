@@ -6,6 +6,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { TELOS_SERVER_NAME, TELOS_VERSION } from "./version.mjs";
 import { measurementInputSchema } from "./measurement-schema.mjs";
+import { reachTools } from "./reach/mcp-tools.mjs";
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const telosRoot = path.resolve(here, "..");
@@ -282,6 +283,16 @@ for (const tool of tools) {
   };
 }
 
+// Reach tools: the doctor and menu stay local; the rest read the open web or
+// an official API, so they say openWorldHint true.
+for (const { script, network, ...tool } of reachTools) {
+  toolTitles[tool.name] = tool.title;
+  tools.push({
+    ...tool,
+    annotations: { title: tool.title, readOnlyHint: true, destructiveHint: false, idempotentHint: !network, openWorldHint: network }
+  });
+}
+
 const toolScripts = new Map([
   ["telos.status", ["status.mjs"]],
   ["telos.doctor", ["doctor.mjs"]],
@@ -323,10 +334,14 @@ const toolScripts = new Map([
   ["telos.proof", ["proof.mjs", "agent-action", "--demo", "--json"]],
   ["telos.proof.research", ["proof.mjs", "research", "--demo", "--json"]],
   ["telos.proof.visual", ["proof.mjs", "visual", "--demo", "--json"]],
-  ["telos.proof.build", ["proof.mjs", "build", "--demo", "--json"]]
+  ["telos.proof.build", ["proof.mjs", "build", "--demo", "--json"]],
+  ...reachTools.map((tool) => [tool.name, tool.script])
 ]);
 // Tools that read a request from stdin when the caller passes arguments.
-const requestTools = new Set(["telos.measurement.layers"]);
+const requestTools = new Set(["telos.measurement.layers", ...reachTools.map((tool) => tool.name)]);
+// The MCP client name from initialize, passed to reach receipts as the
+// provider that sees this session's trace.
+let clientName = "";
 
 function runTool(name, toolArgs = {}) {
   const args = toolScripts.get(name);
@@ -339,6 +354,7 @@ function runTool(name, toolArgs = {}) {
     cwd: telosRoot,
     encoding: "utf8",
     maxBuffer: 1 << 28,
+    env: clientName ? { ...process.env, TELOS_MCP_CLIENT: clientName } : process.env,
     ...(withRequest ? { input: JSON.stringify(toolArgs) } : {})
   });
   if (result.status !== 0) {
@@ -367,6 +383,7 @@ export function handleRequest(request) {
   }
   try {
     if (request.method === "initialize") {
+      clientName = String(request.params?.clientInfo?.name ?? "").slice(0, 80);
       return result(id, {
         protocolVersion,
         capabilities: { tools: {} },
