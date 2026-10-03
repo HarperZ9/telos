@@ -1,5 +1,30 @@
 # Changelog
 
+## 0.8.0
+
+Measure your own image. `telos.measurement.layers` now accepts a caller's image
+and returns Telos measurement layers with SHA-256 receipts. Called with no
+arguments it still returns the demo meters.
+
+- Input: raw 8-bit RGBA, inline as base64 or as a file under a root listed in
+  `TELOS_MEASUREMENT_ROOTS`. Paths are resolved through every symlink and
+  junction before the root check; UNC, device and relative paths are refused.
+- Layers: L0 global tone and colour statistics, L1 coarse colour layout, L2 the
+  perceptual field (OKLab cells, an 8-bit lightness branch for greyscale
+  frames), L3 caller overlays as pixel boxes. Optional region of interest and an
+  exact-area resampling filter in linear light.
+- Every number is integer arithmetic, so the same pixels give the same layer
+  text and the same receipt in any engine. An independent Python check
+  re-derives the receipts.
+- Values from your pixels are marked `computed` with the input receipt, and the
+  packet verdict stays UNVERIFIABLE until you name a criterion.
+- Privacy: no layer carries more than one cell per 16 input pixels, and a final
+  scan refuses any response that carries a long run of encoded data.
+- `bench/measurement-v2/run-mutations.mjs` shows that each equality check in the
+  new suite fails when the code it guards is broken.
+- The `telos.status` line and the server manifest name the new capability.
+  Release notes: `docs/RELEASE-NOTES-0.8.0.md`.
+
 ## 0.7.0
 
 Accountable actuation. Every native-control verb now runs through a permission

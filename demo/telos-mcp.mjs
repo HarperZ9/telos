@@ -5,6 +5,7 @@ import readline from "node:readline";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { TELOS_SERVER_NAME, TELOS_VERSION } from "./version.mjs";
+import { measurementInputSchema } from "./measurement-schema.mjs";
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const telosRoot = path.resolve(here, "..");
@@ -154,8 +155,8 @@ export const tools = [
   },
   {
     name: "telos.measurement.layers",
-    description: "Use when visual, splat, lighting, dither, audio, uncertainty, or frame-budget evidence needs meters. Read-only, zero-auth, no external side effects. Returns JSON measurement layers.",
-    inputSchema: emptyInputSchema
+    description: "Use when visual, splat, lighting, dither, audio, uncertainty, or frame-budget evidence needs meters, or when a caller's own image (raw 8-bit RGBA, inline base64 or a file under an allowed local root) needs Telos measurement layers L0 to L3 with SHA-256 receipts. Called with no arguments it returns the demo meters. Read-only, zero-auth, no external side effects. Returns a JSON measurement packet (v1 demo or v2 caller image).",
+    inputSchema: measurementInputSchema
   },
   {
     name: "telos.creative.engine",
@@ -324,15 +325,21 @@ const toolScripts = new Map([
   ["telos.proof.visual", ["proof.mjs", "visual", "--demo", "--json"]],
   ["telos.proof.build", ["proof.mjs", "build", "--demo", "--json"]]
 ]);
-function runTool(name) {
+// Tools that read a request from stdin when the caller passes arguments.
+const requestTools = new Set(["telos.measurement.layers"]);
+
+function runTool(name, toolArgs = {}) {
   const args = toolScripts.get(name);
   if (!args) {
     throw new Error(`unknown tool: ${name}`);
   }
   const [script, ...scriptArgs] = args;
-  const result = spawnSync(process.execPath, [path.join(here, script), ...scriptArgs], {
+  const withRequest = requestTools.has(name) && toolArgs && typeof toolArgs === "object" && Object.keys(toolArgs).length > 0;
+  const result = spawnSync(process.execPath, [path.join(here, script), ...scriptArgs, ...(withRequest ? ["--request", "-"] : [])], {
     cwd: telosRoot,
-    encoding: "utf8"
+    encoding: "utf8",
+    maxBuffer: 1 << 28,
+    ...(withRequest ? { input: JSON.stringify(toolArgs) } : {})
   });
   if (result.status !== 0) {
     throw new Error(result.stderr || result.stdout || `${name} failed`);
@@ -377,7 +384,7 @@ export function handleRequest(request) {
       if (typeof name !== "string") {
         return error(id, -32602, "tools/call requires params.name");
       }
-      return result(id, runTool(name));
+      return result(id, runTool(name, request.params?.arguments));
     }
     return error(id, -32601, `method not found: ${request.method}`);
   } catch (err) {
