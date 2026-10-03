@@ -1,8 +1,20 @@
 # Project Telos Current State
 
+## 0.8.0 release, 2026-10-03
+
+0.8.0 is the current npm and GitHub release and replaces 0.7.0.
+`telos.measurement.layers` now measures a caller's image: raw 8-bit RGBA,
+inline as base64 or as a file under a root listed in
+`TELOS_MEASUREMENT_ROOTS`. It returns layers L0 to L3 with SHA-256 receipts,
+computed in integer arithmetic so the same pixels give the same receipt on any
+engine. Called with no arguments, it still returns the demo meters. The packet
+verdict stays UNVERIFIABLE until the caller names a criterion. The release
+checks cover bytes, paths and receipts. They do not show that a model can read
+the layers. See [the 0.8.0 notes](RELEASE-NOTES-0.8.0.md).
+
 ## 0.7.0 release, 2026-10-01
 
-0.7.0 is the current npm and GitHub release and replaces 0.6.0.
+0.7.0 replaced 0.6.0.
 Every native-control verb runs through a permission tier gate, every gated
 call writes a signed receipt that verifies offline, and the model acts on
 accessibility-tree refs. A fresh install refuses every verb above T0 until the
