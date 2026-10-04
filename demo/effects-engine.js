@@ -199,7 +199,7 @@
   function drawPoster() {
     ctx.save();
     ctx.fillStyle = "rgba(248,249,246,.94)";
-    ctx.font = "900 90px Kilon, Arial Black, sans-serif";
+    ctx.font = "900 90px 'Hanken Grotesk', system-ui, sans-serif";
     ctx.fillText("TELOS", 54, 118);
     ctx.font = "700 25px Conso, ui-monospace, Consolas, monospace";
     ctx.fillStyle = "rgba(255,194,92,.92)";
