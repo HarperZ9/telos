@@ -56,7 +56,7 @@ OpenAI Apps, OpenAI Agents, Anthropic Claude, Claude Code, Codex plugins, skills
 
 `../research/operator-source-leads.json` records blocked, social, provider, and discovery links as quarantined leads. They can route future work, but they do not promote claims.
 
-`../../tools/render_flagship_heroes.py --check-existing --public-root <sibling-root>` verifies the five README hero PNGs and brand receipt READMEs without private fonts or Pillow. `--render` uses the operator-owned Kilon and Conso font ZIPs plus Pillow to regenerate the artwork locally.
+`../../tools/render_flagship_heroes.py --check-existing --public-root <sibling-root>` verifies the five README hero PNGs and brand receipt READMEs without private fonts or Pillow. `--render` uses a Hanken Grotesk font file (`--display-font`, by default the site's `hanken-grotesk.woff2`), the Conso font ZIP and Pillow to regenerate the artwork locally.
 
 `../mcp-runtime-contract.test.mjs` checks the catalog against the sibling MCP runtimes so `available` means the tool is actually present in `tools/list`. `../mcp-server-launch.test.mjs` starts each `source_checkout` profile from the manifest and verifies that expected tools are present and any extra tools are declared as auxiliary compatibility surface.
 

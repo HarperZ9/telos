@@ -93,7 +93,7 @@ def receipt(args: argparse.Namespace, mode: str, outputs: list[dict]) -> dict:
         "source_contract": "telos.rendering.research",
         "public_root": str(args.public_root),
         "dimensions": {"width": SIZE[0], "height": SIZE[1]},
-        "font_inputs": [font_receipt(args.kilon_zip, "display"), font_receipt(args.conso_zip, "body-and-mono")],
+        "font_inputs": [font_receipt(args.display_font, "display"), font_receipt(args.conso_zip, "body-and-mono")],
         "outputs": outputs,
         "design_gates": [
             "three-second headline and product-role read",
@@ -112,6 +112,16 @@ def font_from_zip(zip_path: Path, member_suffix: str, size: int, ImageFont):
         return ImageFont.truetype(io.BytesIO(zf.read(member)), size=size)
 
 
+def display_font(path: Path, size: int, ImageFont):
+    # Hanken Grotesk ships as one variable font (weights 100 to 900); select Bold.
+    font = ImageFont.truetype(str(path), size=size)
+    try:
+        font.set_variation_by_name("Bold")
+    except (OSError, ValueError) as exc:
+        raise SystemExit(f"display font {path} has no Bold instance: {exc}") from exc
+    return font
+
+
 def render_all(args: argparse.Namespace, config: dict) -> list[dict]:
     try:
         from PIL import Image, ImageDraw, ImageFilter, ImageFont
@@ -119,8 +129,8 @@ def render_all(args: argparse.Namespace, config: dict) -> list[dict]:
         raise SystemExit("render mode requires Pillow: python -m pip install Pillow") from exc
 
     fonts = {
-        "display": font_from_zip(args.kilon_zip, "Fonts/Kilon.ttf", 116 * SCALE, ImageFont),
-        "display_sm": font_from_zip(args.kilon_zip, "Fonts/Kilon.ttf", 44 * SCALE, ImageFont),
+        "display": display_font(args.display_font, 116 * SCALE, ImageFont),
+        "display_sm": display_font(args.display_font, 44 * SCALE, ImageFont),
         "mono": font_from_zip(args.conso_zip, "Fonts/Conso-Regular.ttf", 28 * SCALE, ImageFont),
         "bold": font_from_zip(args.conso_zip, "Fonts/Conso-Bold.ttf", 27 * SCALE, ImageFont),
         "small": font_from_zip(args.conso_zip, "Fonts/Conso-SemiBold.ttf", 18 * SCALE, ImageFont),
@@ -273,7 +283,9 @@ def main() -> int:
     parser = argparse.ArgumentParser(description="Render or verify Project Telos flagship README hero images.")
     parser.add_argument("--public-root", type=Path, default=Path("C:/dev/public"))
     parser.add_argument("--config", type=Path, default=DEFAULT_CONFIG)
-    parser.add_argument("--kilon-zip", type=Path, default=env_path("TELOS_KILON_FONT_ZIP", Path.home() / "Downloads" / "Kilon-Bold-Display-Font.zip"))
+    # Display type is Hanken Grotesk (Kilon retired 2026-10-04). The default is the
+    # site checkout's system/fonts/hanken-grotesk.woff2 under --public-root.
+    parser.add_argument("--display-font", type=Path, default=env_path("TELOS_DISPLAY_FONT", None))
     parser.add_argument("--conso-zip", type=Path, default=env_path("TELOS_CONSO_FONT_ZIP", Path.home() / "Downloads" / "Conso-Font-Family.zip"))
     parser.add_argument("--render", action="store_true", help="render PNGs using local font ZIPs and Pillow")
     parser.add_argument("--check-existing", action="store_true", help="verify existing PNGs and brand receipts without Pillow")
@@ -282,6 +294,8 @@ def main() -> int:
     args = parser.parse_args()
     if not args.render and not args.check_existing:
         args.check_existing = True
+    if args.display_font is None:
+        args.display_font = args.public_root / "portfolio-site" / "system" / "fonts" / "hanken-grotesk.woff2"
     config = load_config(args.config)
     outputs = render_all(args, config) if args.render else inspect_outputs(args.public_root, config)
     mode = "render" if args.render else "check-existing"
