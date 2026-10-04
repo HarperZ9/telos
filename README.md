@@ -1,12 +1,20 @@
-<p align="center"><img src="docs/art/telos-header.svg" alt="telos: one workbench, and packets that recompute their own claims." width="100%"></p>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/art/hero-dark.svg">
+  <img src="docs/art/hero-light.svg" alt="telos: One workbench, and packets that recompute their own claims. An eye drawn in nested fine contours, its iris a ring of short radial lines around a dark pupil with a glowing rim. Five small rings sit on the eye's edge; one is dashed and marked UNVERIFIABLE." width="100%">
+</picture>
 
-**The shared workbench: durable state, native workstation control, sensory organs, a discovery forge.**
+# telos
 
-![version](https://img.shields.io/badge/version-0.9.0-9683ff?style=flat-square&labelColor=14041b)
-![license](https://img.shields.io/badge/license-FSL--1.1--ALv2-8f8095?style=flat-square&labelColor=14041b)
+One workbench, and packets that recompute their own claims.
+
+```bash
+npx -y project-telos-mcp
+```
+
+[![version: 0.9.0](https://img.shields.io/badge/version-0.9.0-e6e1d6?style=flat-square&labelColor=1a1712)](https://www.npmjs.com/package/project-telos-mcp)
 [![CI](https://github.com/HarperZ9/telos/actions/workflows/ci.yml/badge.svg)](https://github.com/HarperZ9/telos/actions/workflows/ci.yml)
-![node](https://img.shields.io/badge/node-24%20CI%2C%2020%2B%20registry-9683ff?style=flat-square&labelColor=14041b)
-![deps](https://img.shields.io/badge/deps-none-9683ff?style=flat-square&labelColor=14041b)
+[![license](https://img.shields.io/badge/license-FSL--1.1--ALv2-e6e1d6?style=flat-square&labelColor=1a1712)](LICENSE)
+![node 20+](https://img.shields.io/badge/node-20%2B-e6e1d6?style=flat-square&labelColor=1a1712)
 
 Telos is a zero-dependency local workbench for creating, simulating, and replaying AI work. It ships a five-server MCP surface plus CLI fallbacks: doctors for CI, presentation, accessibility, performance, and compatibility, a creative engine with deterministic kernels and ten measurement meters, model-foundry and learning-forge lanes, and research proof packets spanning causal, embodied, and quantum demos. It ties gather, index, forum, and crucible into one operator map you can run with a single `node demo/run.mjs`. Every run writes a receipt you can re-check.
 
@@ -152,7 +160,6 @@ selectors, artifact references, and supplied summaries can remain in packets.
 Keep these packets private. Hash consistency does not prove execution truth,
 authorship, completeness, or safety. See [release notes](docs/RELEASE-NOTES-0.3.0.md).
 
-
 The active consolidation roadmap is [`docs/PROJECT-TELOS-LARGE-SCALE-ROADMAP-2026-07-02.md`](docs/PROJECT-TELOS-LARGE-SCALE-ROADMAP-2026-07-02.md), and the documentation control plane is [`docs/DOCUMENTATION-CONSOLIDATION-REGISTRY-2026-07-02.md`](docs/DOCUMENTATION-CONSOLIDATION-REGISTRY-2026-07-02.md) with the machine-readable registry under [`docs/registry/`](docs/registry/).
 
 ## The receipt underneath
@@ -191,7 +198,6 @@ CI (`.github/workflows/ci.yml`) runs each contract test file individually on Nod
 ---
 
 **[Zain Dana Harper](https://github.com/HarperZ9)** builds evidence-first tools that leave a re-checkable artifact behind, in Seattle. The full workbench is at [Project Telos](https://harperz9.github.io).
-
 
 ---
 
