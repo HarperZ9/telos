@@ -38,6 +38,51 @@ The [animated explainer](https://harperz9.github.io/repo-explainers/telos.html)
 walks through the tesseract loop certifying an honest render and returning UNVERIFIABLE for an 8 by 8 render, an agent-action proof packet verified from its own materials, and four edits that each come back DRIFT with the failing check named. Every value on it is output from this repository. Its
 source is [docs/explainer/index.html](docs/explainer/index.html).
 
+## Watch
+
+[![A passing check can still be wrong: a narrated film, 2 min 24 s](https://harperz9.github.io/media/explainers/passing-check/poster.jpg)](https://harperz9.github.io/explainers.html#passing-check-h)
+
+**[A passing check can still be wrong](https://harperz9.github.io/explainers.html#passing-check-h)** (2 min 24 s, narrated, captioned). Telos scores a render against a criterion the loop did not write, so a pass has to be earned. The film page carries the transcript, the sources and recall questions.
+
+Video walkthrough: coming with the next release.
+
+## Walkthrough
+
+Install it, run it once, then use the main feature. Each command below is real, and so is its output.
+
+1. **Install.** Run the MCP server without cloning, or clone to run the demos. Node 20 or newer, no dependencies.
+
+   ```text
+   $ npx -y project-telos-mcp
+   $ git clone https://github.com/HarperZ9/telos.git && cd telos
+   ```
+
+2. **First run: two renders.** The demo checks an honest render and a broken one against a criterion the loop did not write.
+
+   ```text
+   $ node demo/run.mjs
+     RUN A (honest render)  : CERTIFIED      recheck=true
+     RUN B (broken render)  : UNVERIFIABLE   recheck=true
+   ```
+
+3. **Make a proof packet and verify it.** Write a packet for an agent action, then verify it from the packet alone.
+
+   ```text
+   $ node demo/proof.mjs agent-action --demo --json > packet.json
+   $ node demo/proof.mjs verify packet.json
+   verdict       MATCH
+   witness       unavailable / UNVERIFIABLE
+   ```
+
+4. **An edited packet is named.** Change the packet and verify again.
+
+   ```text
+   $ node demo/proof.mjs verify edited.json
+   packet_hash_mismatch (DRIFT)
+   artifact_digest_mismatch (DRIFT) outputs[0].digest
+   embedded_verdict_not_derived (DRIFT)
+   ```
+
 ## Try it
 
 Zero runtime dependencies. Node 20 or newer; CI runs on Node 24.
