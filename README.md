@@ -32,6 +32,12 @@ Telos is a zero-dependency local workbench for creating, simulating, and replayi
 - **Context tooling for large codebases.** Budgeted, validated context packs and envelopes for handing a big workspace to a model without losing provenance.
 - **Native workstation control.** `node demo/native-control.mjs` drives the browser via the Chrome DevTools Protocol and native apps via Windows UI Automation. UIA focus and keyboard-input actions can affect the foreground window; receipts distinguish known focus behavior from unknown effects. An explicit browser match must select one target. The MCP tool `telos.native.control` remains a read-only capability catalog. See [the control contract](docs/native-control-contract.md) before actuation.
 
+## See it work, step by step
+
+The [animated explainer](https://harperz9.github.io/repo-explainers/telos.html)
+walks through the tesseract loop certifying an honest render and returning UNVERIFIABLE for an 8 by 8 render, an agent-action proof packet verified from its own materials, and four edits that each come back DRIFT with the failing check named. Every value on it is output from this repository. Its
+source is [docs/explainer/index.html](docs/explainer/index.html).
+
 ## Try it
 
 Zero runtime dependencies. Node 20 or newer; CI runs on Node 24.
