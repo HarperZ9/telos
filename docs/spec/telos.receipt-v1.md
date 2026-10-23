@@ -60,8 +60,8 @@ name), `module_version`, `grant_id`, `scope_sha256`, `action_digest`, `status`,
 `HOLD`, `APPROVED`, `REJECTED`, `EXPIRED`, `DRY_RUN` or `UNAVAILABLE` can never
 carry `executed: true`; the writer refuses it and the verifier reports it.
 
-`scope` is fixed per status by `demo/receipts/schema.mjs`. A caller cannot
-supply or change it.
+`demo/receipts/schema.mjs` fixes `scope` per status, and the writer sets it on
+every receipt.
 
 Tier fields (`TIER_FIELDS` in `schema.mjs`):
 
