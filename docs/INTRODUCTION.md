@@ -1,6 +1,6 @@
 # Introduction to Telos
 
-Telos is a zero-dependency local workbench for creating, simulating, and replaying AI work. It runs on Node 20 or newer, installs nothing, and gives you three things in one repo:
+Telos is a local workbench for creating, simulating, and replaying AI work. It runs on Node 20 or newer with Node's built-in modules, and gives you three things in one repo:
 
 1. **A five-server MCP surface.** One manifest launches gather, index, forum, crucible, and telos as stdio MCP servers, 78 tools total plus 29 declared auxiliary compatibility tools, with ready-to-paste host config for Codex, Claude, and OpenAI Agents. Every MCP tool has a CLI fallback under `demo/`, so nothing depends on a host being present.
 2. **A doctor and proof toolkit.** Nine offline doctors audit CI state, README parity, static accessibility, byte budgets, protocol coverage, and operator discoverability. Four proof lanes (agent-action, research-claim, visual-truth, build) assemble packets whose verifiers recompute every load-bearing claim from embedded materials and can genuinely fail.
@@ -8,12 +8,12 @@ Telos is a zero-dependency local workbench for creating, simulating, and replayi
 
 ## Why it exists
 
-A model's confidence does not fall when its accuracy does, so a confident mistake reads exactly like a confident truth. Telos exists to put the record outside the model: every command writes a receipt, every check ends in MATCH, DRIFT, or UNVERIFIABLE, and an honest UNVERIFIABLE always beats a polished guess. You do not have to care about that framing to use the tools; it is simply why they are shaped the way they are.
+A model sounds equally sure when it is right and when it is wrong. Telos keeps the record outside the model: every command writes a receipt, and every check ends in MATCH, DRIFT, or UNVERIFIABLE. UNVERIFIABLE marks a check whose input was missing.
 
 ## Core concepts
 
 - **Flagship action envelope.** Every CLI command returns a `project-telos.flagship-action/v1` JSON envelope: tool, version, command, status, inputs, outputs, receipts. Uniform shape means uniform automation.
-- **The three verdicts.** MATCH (the claim re-derives from the evidence), DRIFT (it no longer does), UNVERIFIABLE (there is not enough evidence to say). There is deliberately no TRUSTED.
+- **The three verdicts.** MATCH (the claim re-derives from the evidence), DRIFT (the evidence now says something else), UNVERIFIABLE (the evidence is too thin to decide). The set is closed at these three.
 - **Receipts.** A receipt pins what happened: source refs, digests, timestamps, decisions. Receipts are the replay handles that let a reviewer re-check work tomorrow.
 - **Proof packets.** A proof packet embeds its own verification materials. `node demo/proof.mjs verify <packet.json>` recomputes the claims from the packet body alone and dispatches to the right lane by schema id. Editing a load-bearing field flips the verdict.
 - **Doctors.** A doctor is a read-only auditor that scans local state (workflow files, READMEs, HTML, manifests) and emits a verdict plus routed next actions, without raw payloads or writes.
@@ -29,7 +29,12 @@ cd telos
 node demo/run.mjs
 ```
 
-You will see a 4-D cube rendered, perceived through independent channels, and certified against a criterion the loop did not author (16 vertices, 32 edges). Then the same loop receives an unreadably small render and returns UNVERIFIABLE instead of a pass. That failure is the point: a verifier that cannot fail is not a verifier.
+You will see a 4-D cube rendered, perceived through independent channels, and certified against an outside criterion (16 vertices, 32 edges). Then the same loop gets an 8 by 8 pixel render and returns UNVERIFIABLE. The run ends with:
+
+```
+  RUN A (honest render)  : CERTIFIED      recheck=true
+  RUN B (broken render)  : UNVERIFIABLE   recheck=true
+```
 
 Get oriented:
 
