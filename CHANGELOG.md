@@ -1,5 +1,20 @@
 # Changelog
 
+## Unreleased
+
+Licence, 2026-10-23. The code and the software documentation move from
+FSL-1.1-ALv2 to FSL-1.1-MIT, the variant Flywheel uses, on the author's
+decision of that date. The terms are the same Functional Source License 1.1;
+only the future license changes, from Apache 2.0 to MIT. Every commit in the
+history is the author's own.
+
+Version 0.9.0 and every earlier release, as GitHub tags and npm packages, keep
+FSL-1.1-ALv2 and still convert to Apache 2.0 two years after their release.
+FSL-1.1-MIT applies from the next release. `LICENSE`, `license` in
+`package.json` and the four `demo/*/package.json` files, the README badge and
+licence section, `LICENSE-TEXT` and the explainer page change with it. The
+written works in `LICENSE-TEXT` stay CC BY 4.0.
+
 ## 0.9.0
 
 Reach. An agent can now read public web pages, feeds, Reddit, single X posts
