@@ -7,7 +7,7 @@ const str = (description) => ({ type: "string", description });
 const num = (description, minimum, maximum) => ({ type: "integer", description, minimum, maximum });
 const schema = (properties, required = []) => ({ type: "object", properties, required, additionalProperties: false });
 
-const NET = "Reaches the network: one honest Telos User-Agent, per-host pacing with backoff on 429 and 503, no login, no cookies.";
+const NET = "Reaches the network: a User-Agent naming Telos, per-host pacing with backoff on 429 and 503, no login, no cookies.";
 
 export const reachTools = [
   {

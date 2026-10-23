@@ -1,4 +1,4 @@
-// chain.mjs - persistent, hash-chained, signed telos.receipt/v1 chains (DESIGN
+// chain.mjs - persistent, hash-chained, signed telos.receipt/v2 chains (DESIGN
 // 4.1, 4.2). Every append writes the sealed receipt to
 // <home>/receipts/<session>.jsonl before it returns, so a receipt exists even if
 // the caller crashes after the effect. Heads are signed with the local ed25519
@@ -12,9 +12,9 @@ import { randomBytes } from "node:crypto";
 import { appendFileSync, existsSync, readFileSync, writeFileSync } from "node:fs";
 import path from "node:path";
 import { ensureDir, hasKey, loadSigner, telosHome } from "./keys.mjs";
-import { DOES_NOT_PROVE, checkBody, orderedReceipt } from "./schema.mjs";
+import { SCOPE, checkBody, orderedReceipt } from "./schema.mjs";
 import {
-  CHECKPOINT_SCHEMA, GENESIS, HASH_VERSION, MAX_SIGNATURE_BATCH, RECEIPT_SCHEMA, SIGNATURE_SCHEMA,
+  CHECKPOINT_SCHEMA, GENESIS, HASH_VERSION, MAX_SIGNATURE_BATCH, RECEIPT_SCHEMA, SIGNATURE_SCHEMA, isReceiptSchema,
   checkpointPayload, sealOf, signaturePayload, verifyChain
 } from "./verify.mjs";
 
@@ -49,7 +49,7 @@ function resume(file, signer) {
 }
 
 function lastSeal(text) {
-  const lines = text.trim().split(/\r?\n/).map((l) => JSON.parse(l)).filter((r) => r.schema === RECEIPT_SCHEMA);
+  const lines = text.trim().split(/\r?\n/).map((l) => JSON.parse(l)).filter((r) => isReceiptSchema(r.schema));
   return lines.at(-1).seal;
 }
 
@@ -107,7 +107,7 @@ export class ReceiptChain {
       seq: this.seq + 1, prev_seal: this.head, ts: this.now().toISOString(),
       tool: null, module: "telos", module_version: null, grant_id: null, scope_sha256: null,
       action_digest: null, reason: "", executed: false, spawned: [], monitor: null,
-      ...clean, does_not_prove: DOES_NOT_PROVE[clean.status], seal: ""
+      ...clean, scope: SCOPE[clean.status], seal: ""
     };
   }
 

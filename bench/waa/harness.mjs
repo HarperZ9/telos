@@ -107,7 +107,7 @@ export async function dryRun({ tasksFile, seeds = 3 } = {}) {
   const windowsArms = ARMS.filter((a) => a.id !== "D").length;
   const browserTasks = (tasks.counts.chrome ?? 0) + (tasks.counts.msedge ?? 0);
   return {
-    schema: "telos.waa-dry-run/v1",
+    schema: "telos.waa-dry-run/v2",
     mode: "DRY_RUN",
     source: WAA_SOURCE,
     tasks: { file_synthetic: tasks.synthetic, counts: tasks.counts, total: tasks.total, unknown_domains: tasks.unknown, matches_upstream_counts: tasks.matches_upstream_counts },
@@ -117,7 +117,7 @@ export async function dryRun({ tasksFile, seeds = 3 } = {}) {
     domains,
     executed_actions: domains.reduce((a, d) => a + d.executed, 0),
     chains_verified: domains.every((d) => d.chain.verdict === "MATCH"),
-    does_not_prove: "A dry run shows the plan, the grant each domain needs and that the gate and receipt chain behave on probe calls. It does not show any task can be solved, that the window patterns match the WAA guest image, or any success rate.",
+    scope: "A dry run shows the plan, the grant each domain needs, and how the gate and receipt chain behave on probe calls. Task success and window-pattern fit need a real run on the WAA guest image.",
   };
 }
 

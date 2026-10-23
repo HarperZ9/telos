@@ -73,7 +73,7 @@ writeFileSync(badLedgerPath, `${JSON.stringify(badLedger, null, 2)}\n`, "utf8");
 const tamperedLedger = run(badLedgerPath);
 ok("tampered ledger exits 1 (DRIFT)", tamperedLedger.status === 1);
 
-// A telos.receipt/v1 session file: hash-chained, ed25519-signed heads.
+// A telos.receipt/v2 session file: hash-chained, ed25519-signed heads.
 const chain = ReceiptChain.open({ home: dir, session_id: "s_verify_packet", signer: ephemeralSigner() });
 chain.append({ tier: "T1", verb: "observe.snapshot", status: "OK", executed: true });
 chain.append({ tier: "T3", verb: "browser.click", status: "HOLD", hold_id: "h_1" });

@@ -1,4 +1,4 @@
-// The one HTTP path every reach reader uses. It adds the honest User-Agent,
+// The one HTTP path every reach reader uses. It adds the Telos User-Agent,
 // paces each host, backs off on 429 and 503, serves and revalidates the cache,
 // follows redirects only through a caller-supplied permission check, caps the
 // body size, and hashes the bytes for the receipt. A bot check ends the read.

@@ -9,7 +9,7 @@ const row = (id, fields) => Object.freeze({ id, env: [], optionalEnv: [], ...fie
 
 export const CHANNELS = Object.freeze([
   row("web", {
-    name: "Any public web page", route: "crawler: robots.txt, Crawl-delay, honest User-Agent", tool: "telos.crawl.fetch, telos.crawl.site", cost: "free",
+    name: "Any public web page", route: "crawler: robots.txt, Crawl-delay, a User-Agent naming Telos", tool: "telos.crawl.fetch, telos.crawl.site", cost: "free",
     covers: "public pages, RSS and Atom feeds, sitemaps, documented JSON endpoints",
     leaves_out: "pages robots.txt disallows, pages behind a login or a bot check",
   }),

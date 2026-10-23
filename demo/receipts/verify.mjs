@@ -1,20 +1,26 @@
 #!/usr/bin/env node
-// verify.mjs - offline verifier for telos.receipt/v1 chains. Stdlib only
+// verify.mjs - offline verifier for telos.receipt/v2 and v1 chains. Stdlib only
 // (node:crypto, node:fs): copy this one file next to a receipts .jsonl and run
 // `node verify.mjs session.jsonl [--checkpoints checkpoints.jsonl]
 // [--pubkey telos-ed25519.pub.json] [--json]`. Exit 0 MATCH, 1 DRIFT,
 // 2 UNVERIFIABLE. It re-derives every seal, checks each prev_seal link and seq,
 // checks every ed25519 head signature against one key, and checks checkpoints.
-// A MATCH shows the file is the chain a holder of that key signed. It does not
-// show the actions were wise, that the screen matched, or that the key was not
-// stolen: a key holder can re-sign a forged chain back to the last external
-// anchor. Without a checkpoint, a suffix cut at a signed head is not detectable.
+// A MATCH shows that the file is the chain that a holder of that key signed.
+// A key holder can re-sign a chain back to the last external anchor, so keep
+// checkpoints outside the machine. A checkpoint also detects a suffix cut at a
+// signed head.
 import { createHash, createPublicKey, verify as edVerify } from "node:crypto";
 import { readFileSync, realpathSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
-export const RECEIPT_SCHEMA = "telos.receipt/v1";
+export const RECEIPT_SCHEMA = "telos.receipt/v2";
+// Version 1 named the per-status text `does_not_prove`; version 2 names it
+// `scope`. The verifier accepts both, so a version 1 chain still verifies.
+export const RECEIPT_SCHEMA_V1 = "telos.receipt/v1";
+export const isReceiptSchema = (schema) => schema === RECEIPT_SCHEMA || schema === RECEIPT_SCHEMA_V1;
+// scopeField - the name of the per-status text field for a receipt's schema.
+export const scopeField = (schema) => (schema === RECEIPT_SCHEMA_V1 ? "does_not_prove" : "scope");
 export const SIGNATURE_SCHEMA = "telos.receipt-signature/v1";
 export const CHECKPOINT_SCHEMA = "telos.receipt-checkpoint/v1";
 export const HASH_VERSION = 3;
@@ -31,7 +37,10 @@ export const NON_EXECUTING = new Set(["REFUSED", "HOLD", "APPROVED", "REJECTED",
 export const REQUIRED_FIELDS = ["schema", "hash_version", "receipt_id", "session_id", "seq",
   "prev_seal", "ts", "tier", "verb", "tool", "module", "module_version", "grant_id",
   "scope_sha256", "action_digest", "status", "reason", "executed", "spawned", "monitor",
-  "does_not_prove", "seal"];
+  "scope", "seal"];
+// requiredFields - the required fields for a receipt of either version.
+export const requiredFields = (schema) =>
+  REQUIRED_FIELDS.map((f) => (f === "scope" ? scopeField(schema) : f));
 
 // canonical - sorted keys, compact separators, UTF-8, no floats. Integers must be
 // safe integers; anything else is a decimal string. Throws on floats, NaN,
@@ -91,15 +100,16 @@ export function verifySignature(payload, sigB64url, publicKeyB64url) {
 // validateReceipt - structural checks the seal cannot make: required fields,
 // enums, types, and the rule that a non-executing status never claims an effect.
 export function validateReceipt(r) {
-  for (const f of REQUIRED_FIELDS) if (!(f in r)) return `missing field ${f}`;
-  if (r.schema !== RECEIPT_SCHEMA) return `schema ${r.schema}`;
+  if (!isReceiptSchema(r.schema)) return `schema ${r.schema}`;
+  for (const f of requiredFields(r.schema)) if (!(f in r)) return `missing field ${f}`;
   if (r.hash_version !== HASH_VERSION) return `hash_version ${r.hash_version}`;
   if (!TIERS.includes(r.tier)) return `tier ${r.tier}`;
   if (!STATUSES.includes(r.status)) return `status ${r.status}`;
   if (typeof r.executed !== "boolean") return "executed is not a boolean";
   if (r.executed && NON_EXECUTING.has(r.status)) return `status ${r.status} cannot be executed`;
   if (!Array.isArray(r.spawned)) return "spawned is not an array";
-  if (typeof r.does_not_prove !== "string" || !r.does_not_prove) return "does_not_prove is empty";
+  const field = scopeField(r.schema);
+  if (typeof r[field] !== "string" || !r[field]) return `${field} is empty`;
   if (!Number.isSafeInteger(r.seq) || r.seq < 1) return `seq ${r.seq}`;
   return null;
 }
@@ -198,7 +208,7 @@ export function verifyChain(text, options = {}) {
   const state = { session_id: null, seals: [], signedThrough: 0, key: options.trustedKey ?? null };
   for (const { line, rec } of parsed.records) {
     let problem;
-    if (rec?.schema === RECEIPT_SCHEMA) problem = checkReceipt(rec, line, state);
+    if (isReceiptSchema(rec?.schema)) problem = checkReceipt(rec, line, state);
     else if (rec?.schema === SIGNATURE_SCHEMA) problem = checkSignature(rec, line, state);
     else problem = drift(`line ${line}: unknown record schema`, { break_at: line });
     if (problem) return { ...problem, count: state.seals.length };

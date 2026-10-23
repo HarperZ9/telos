@@ -96,7 +96,7 @@ function printCertificate(certificate) {
 // ── RUN A: a normal render -> expect CERTIFIED ────────────────────────────────
 
 async function runCertified() {
-  heading("RUN A  -  honest render of a 4-D cube  ->  expect CERTIFIED");
+  heading("RUN A  -  normal render of a 4-D cube  ->  expect CERTIFIED");
 
   // The subject carries the criterion. polytope('cube', 4) has 16 vertices, 32 edges;
   // those counts come straight from the geometry, not from the loop.
@@ -151,7 +151,7 @@ async function main() {
   console.log("    criterion    the external truth (here: a 4-D cube's true 16 vertices, 32 edges)");
   console.log("    recovered    what perception read back from the actual render (criterion-blind)");
   console.log("    CERTIFIED    every channel agreed AND matched the criterion (fail-closed)");
-  console.log("    UNVERIFIABLE could not verify -- reported honestly, NOT a fabricated pass");
+  console.log("    UNVERIFIABLE could not verify, so the run reports no pass");
   console.log("    recheck()    re-derives the verdict from stored evidence only; trust this, not the run");
 
   const certA = await runCertified();
@@ -159,7 +159,7 @@ async function main() {
 
   // ── summary + exit-code contract ───────────────────────────────────────────
   heading("SUMMARY");
-  console.log(`  RUN A (honest render)  : ${certA.verdict}      recheck=${certA.recheck()}`);
+  console.log(`  RUN A (normal render)  : ${certA.verdict}      recheck=${certA.recheck()}`);
   console.log(`  RUN B (broken render)  : ${certB.verdict}   recheck=${certB.recheck()}`);
   console.log("");
 

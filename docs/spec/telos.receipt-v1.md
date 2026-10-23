@@ -1,4 +1,4 @@
-# telos.receipt/v1
+# telos.receipt/v2
 
 Every action Telos takes, refuses, holds or dry-runs writes one receipt. Receipts
 form a hash chain per session, the chain head is signed with a local ed25519 key,
@@ -7,6 +7,12 @@ receipts in the same chain.
 
 Code: `demo/receipts/`. Verifier: `demo/receipts/verify.mjs` (copy it anywhere and
 run it with Node 20 or later). Conformance vectors: `docs/spec/vectors/`.
+
+Version 2 renames one field. The fixed per-status text is now `scope`, and it
+says what the receipt records. Version 1 named that field `does_not_prove`. The
+verifier reads both versions, so a version 1 chain still verifies, and a chain
+can hold version 1 receipts followed by version 2 receipts. The conformance
+vectors in `docs/spec/vectors/` are version 1 receipts.
 
 ## Run it
 
@@ -42,11 +48,11 @@ are mostly ignored and the files rely on the per-user ACL of `%LOCALAPPDATA%`.
 
 ## Receipt fields
 
-Common fields, written in this order: `schema` (`telos.receipt/v1`),
+Common fields, written in this order: `schema` (`telos.receipt/v2`),
 `hash_version` (3), `receipt_id`, `session_id`, `seq` (from 1), `prev_seal`,
 `ts`, `tier` (`T0` to `T5`), `verb`, `tool`, `module` (`telos` or the module
 name), `module_version`, `grant_id`, `scope_sha256`, `action_digest`, `status`,
-`reason`, `executed`, `spawned[]`, the tier fields, `monitor`, `does_not_prove`,
+`reason`, `executed`, `spawned[]`, the tier fields, `monitor`, `scope`,
 `seal`.
 
 `status` is one of `OK`, `REFUSED`, `HOLD`, `APPROVED`, `REJECTED`, `EXPIRED`,
@@ -54,8 +60,8 @@ name), `module_version`, `grant_id`, `scope_sha256`, `action_digest`, `status`,
 `HOLD`, `APPROVED`, `REJECTED`, `EXPIRED`, `DRY_RUN` or `UNAVAILABLE` can never
 carry `executed: true`; the writer refuses it and the verifier reports it.
 
-`does_not_prove` is fixed per status by `demo/receipts/schema.mjs`. A caller
-cannot supply or change it.
+`demo/receipts/schema.mjs` fixes `scope` per status, and the writer sets it on
+every receipt.
 
 Tier fields (`TIER_FIELDS` in `schema.mjs`):
 

@@ -80,7 +80,7 @@ function setup(opts) {
   return { rec, live, out, h, text: readFileSync(rec.file, "utf8"), trustedKey: { key_id: rec.signer.key_id, public_key: rec.signer.public_key } };
 }
 
-const chainRecords = (chain) => parseJsonl(readFileSync(chain.file, "utf8")).records.map((r) => r.rec).filter((r) => r.schema === "telos.receipt/v1");
+const chainRecords = (chain) => parseJsonl(readFileSync(chain.file, "utf8")).records.map((r) => r.rec).filter((r) => r.schema === "telos.receipt/v2");
 
 test("dry run resolves and gates every step, acts on nothing, and lists the holds", async () => {
   const w = world();

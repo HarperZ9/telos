@@ -21,13 +21,13 @@
 //   execute(step, args, resolved) -> { ok, reason, fields }   (fields: tier receipt fields)
 //   checkPost(original.post_condition, step, result) -> boolean
 import { actionDigest, argsSha256, fingerprintSha256, tierRank } from "./digest.mjs";
-import { RECEIPT_SCHEMA, parseJsonl, verifyChain } from "./verify.mjs";
+import { isReceiptSchema, parseJsonl, verifyChain } from "./verify.mjs";
 
 const REPLAY_TOOL = "telos.replay";
 
 function recordedSteps(text, startAt) {
   return parseJsonl(text).records.map((r) => r.rec)
-    .filter((r) => r.schema === RECEIPT_SCHEMA && r.executed === true && r.status === "OK" && r.seq >= startAt);
+    .filter((r) => isReceiptSchema(r.schema) && r.executed === true && r.status === "OK" && r.seq >= startAt);
 }
 
 function diffFields(original, observed) {

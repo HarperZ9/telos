@@ -1,24 +1,25 @@
-// schema.mjs - telos.receipt/v1 field contract: common field order, the tier
-// fields from DESIGN section 1.5, and the fixed does_not_prove text per status.
+// schema.mjs - telos.receipt/v2 field contract: common field order, the tier
+// fields from DESIGN section 1.5, and the fixed scope text per status.
 // The verifier (verify.mjs) owns the enums and structural checks so it can run
 // as one copied file; this module adds the writer-side vocabulary.
 import { NON_EXECUTING, REQUIRED_FIELDS, STATUSES, TIERS } from "./verify.mjs";
 
 export { REQUIRED_FIELDS, STATUSES, TIERS };
 
-// Fixed per status. The writer always sets this; a caller cannot override it.
-export const DOES_NOT_PROVE = Object.freeze({
-  OK: "The action was dispatched and the named post-condition was checked. It does not show the task succeeded or that the target system recorded the effect.",
-  REFUSED: "The action was refused before dispatch. It does not show the action would have caused harm, or that no other path reached the target.",
-  HOLD: "A human decision was requested for this exact action digest. It does not show that a human saw or understood the request.",
-  APPROVED: "A decision record approved this action digest for one redemption. It does not show the approver checked the target, or that the action ran.",
-  REJECTED: "A decision record rejected this action digest. It does not show the action would have caused harm.",
-  EXPIRED: "The grant or approval window closed before redemption. It does not show why no decision arrived.",
-  DRIFT: "The recorded and observed state differ at the named fields. It does not show which side is correct or what caused the difference.",
-  NEEDS_HUMAN: "The step needs a human action that Telos will not perform. It does not show the step is possible.",
-  DRY_RUN: "The target was resolved and gated without acting. It does not show a real run would see the same state or succeed.",
-  UNAVAILABLE: "The module or driver was absent or unreachable. It does not show the action is impossible with the module present.",
-  ERROR: "The driver was called and raised an error after dispatch. It does not show the target is unchanged; it may be partly changed."
+// What a receipt of each status records. Fixed per status: the writer always
+// sets it, and a caller cannot override it.
+export const SCOPE = Object.freeze({
+  OK: "Telos dispatched the action and checked the named post-condition.",
+  REFUSED: "Telos refused the action before dispatch.",
+  HOLD: "Telos asked a human to decide on this exact action digest.",
+  APPROVED: "A decision record approved this action digest for one redemption.",
+  REJECTED: "A decision record rejected this action digest.",
+  EXPIRED: "The grant or approval window closed before redemption.",
+  DRIFT: "The recorded state and the observed state differ at the named fields.",
+  NEEDS_HUMAN: "The step needs an action that a human performs.",
+  DRY_RUN: "Telos resolved and gated the target without acting.",
+  UNAVAILABLE: "The module or driver was absent or unreachable.",
+  ERROR: "Telos called the driver, and the driver raised an error after dispatch. The target can be partly changed."
 });
 
 const T3_FIELDS = ["hold_id", "decision_seal", "target_ref", "target_fingerprint", "resolution",
@@ -42,12 +43,12 @@ const RESOLUTIONS = ["ref", "query", "coordinate"];
 const VERIFY_RESULTS = ["MATCH", "DRIFT", "UNVERIFIABLE"];
 
 // Writer order: common fields first, tier fields, then shared, monitor and seal.
-const HEAD = REQUIRED_FIELDS.filter((f) => !["monitor", "does_not_prove", "seal"].includes(f));
+const HEAD = REQUIRED_FIELDS.filter((f) => !["monitor", "scope", "seal"].includes(f));
 
 export function orderedReceipt(receipt) {
   const out = {};
   const tierFields = TIER_FIELDS[receipt.tier] ?? [];
-  for (const f of [...HEAD, ...tierFields, ...SHARED_FIELDS, "monitor", "does_not_prove"]) {
+  for (const f of [...HEAD, ...tierFields, ...SHARED_FIELDS, "monitor", "scope"]) {
     if (f in receipt) out[f] = receipt[f];
   }
   for (const f of Object.keys(receipt)) if (!(f in out) && f !== "seal") out[f] = receipt[f];
@@ -55,9 +56,10 @@ export function orderedReceipt(receipt) {
   return out;
 }
 
-// knownFields - every field name the v1 vocabulary defines for a tier.
+// knownFields - every field name the vocabulary defines for a tier. A version 1
+// receipt names the scope field does_not_prove.
 export function knownFields(tier) {
-  return new Set([...REQUIRED_FIELDS, ...(TIER_FIELDS[tier] ?? []), ...SHARED_FIELDS]);
+  return new Set([...REQUIRED_FIELDS, "does_not_prove", ...(TIER_FIELDS[tier] ?? []), ...SHARED_FIELDS]);
 }
 
 // checkBody - writer-side checks on a caller body before sealing. Unknown fields
@@ -70,8 +72,11 @@ export function checkBody(body) {
   if (body.executed === true && NON_EXECUTING.has(body.status)) {
     throw new TypeError(`status ${body.status} cannot carry executed: true`);
   }
-  if (body.does_not_prove !== undefined && body.does_not_prove !== DOES_NOT_PROVE[body.status]) {
-    throw new TypeError("does_not_prove is fixed per status and cannot be supplied");
+  if (body.scope !== undefined && body.scope !== SCOPE[body.status]) {
+    throw new TypeError("scope is fixed per status and cannot be supplied");
+  }
+  if (body.does_not_prove !== undefined) {
+    throw new TypeError("does_not_prove is the version 1 name; the writer sets scope");
   }
   if (body.resolution !== undefined && !RESOLUTIONS.includes(body.resolution)) {
     throw new TypeError(`resolution must be one of ${RESOLUTIONS.join(", ")}`);

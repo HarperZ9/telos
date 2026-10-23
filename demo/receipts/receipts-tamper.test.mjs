@@ -31,7 +31,7 @@ function build({ n = 10, checkpointEvery = 5, signEvery = 1, signer = ephemeralS
 }
 
 const join = (recs) => `${recs.map((r) => JSON.stringify(r)).join("\n")}\n`;
-const receipts = (recs) => recs.filter((r) => r.schema === "telos.receipt/v1");
+const receipts = (recs) => recs.filter((r) => r.schema === "telos.receipt/v2");
 
 test("an intact chain verifies, pinned and self-asserted", () => {
   const b = build();
@@ -54,13 +54,13 @@ test("control 1: a suffix removed after a checkpoint fails", () => {
 
 test("control 2: an edited entry fails, and so does an edit with every seal recomputed", () => {
   const b = build();
-  const edited = b.lines.map((r) => (r.seq === 3 && r.schema === "telos.receipt/v1" ? { ...r, reason: "edited" } : r));
+  const edited = b.lines.map((r) => (r.seq === 3 && r.schema === "telos.receipt/v2" ? { ...r, reason: "edited" } : r));
   const v = verifyChain(join(edited), { trustedKey: b.trustedKey });
   assert.equal(v.verdict, "DRIFT");
   assert.match(v.reason, /seal does not re-derive at seq 3/);
   let prev = "0".repeat(64);
   const resealed = b.lines.map((r) => {
-    if (r.schema !== "telos.receipt/v1") return r;
+    if (r.schema !== "telos.receipt/v2") return r;
     const out = { ...r, prev_seal: prev, reason: r.seq === 3 ? "edited" : r.reason };
     out.seal = sealOf(out);
     prev = out.seal;
@@ -74,8 +74,8 @@ test("control 2: an edited entry fails, and so does an edit with every seal reco
 test("control 3: a reordered entry fails", () => {
   const b = build();
   const recs = [...b.lines];
-  const i = recs.findIndex((r) => r.seq === 4 && r.schema === "telos.receipt/v1");
-  const j = recs.findIndex((r) => r.seq === 5 && r.schema === "telos.receipt/v1");
+  const i = recs.findIndex((r) => r.seq === 4 && r.schema === "telos.receipt/v2");
+  const j = recs.findIndex((r) => r.seq === 5 && r.schema === "telos.receipt/v2");
   [recs[i], recs[j]] = [recs[j], recs[i]];
   const v = verifyChain(join(recs), { trustedKey: b.trustedKey });
   assert.equal(v.verdict, "DRIFT");
@@ -119,7 +119,7 @@ test("a chain re-signed end to end by another key passes only when the key is no
 test("inserted, deleted and duplicated entries fail", () => {
   const b = build();
   const recs = receipts(b.lines);
-  const deleted = b.lines.filter((r) => !(r.schema === "telos.receipt/v1" && r.seq === 4));
+  const deleted = b.lines.filter((r) => !(r.schema === "telos.receipt/v2" && r.seq === 4));
   assert.equal(verifyChain(join(deleted)).verdict, "DRIFT");
   const dup = [...b.lines];
   dup.splice(dup.indexOf(recs[2]) + 1, 0, recs[2]);

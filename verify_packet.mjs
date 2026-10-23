@@ -115,11 +115,12 @@ function verify(artifact) {
   return ["UNVERIFIABLE", `no standalone re-derivation for schema ${schema}`];
 }
 
-// isReceiptChain - the first non-empty line is a telos.receipt/v1 record.
+// isReceiptChain - the first non-empty line is a telos.receipt/v2 or v1 record.
 function isReceiptChain(text) {
   const first = text.split(/\r?\n/).find((line) => line.trim());
   try {
-    return JSON.parse(first ?? "null")?.schema === "telos.receipt/v1";
+    const schema = JSON.parse(first ?? "null")?.schema;
+    return schema === "telos.receipt/v2" || schema === "telos.receipt/v1";
   } catch {
     return false;
   }
