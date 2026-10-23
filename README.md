@@ -5,32 +5,122 @@
 
 # telos
 
-One workbench, and packets that recompute their own claims.
-
-```bash
-npx -y project-telos-mcp
-```
+Telos is a local MCP server and command line for AI agents. It gives an agent tools to read web pages and public APIs, triage a failed GitHub Actions run, check an HTML page for accessibility and size problems, and drive a browser or Windows app only after you grant permission from your own terminal. Each action leaves a record you can check again later.
 
 [![version: 0.9.0](https://img.shields.io/badge/version-0.9.0-e6e1d6?style=flat-square&labelColor=1a1712)](https://www.npmjs.com/package/project-telos-mcp)
 [![CI](https://github.com/HarperZ9/telos/actions/workflows/ci.yml/badge.svg)](https://github.com/HarperZ9/telos/actions/workflows/ci.yml)
 [![license](https://img.shields.io/badge/license-FSL--1.1--ALv2-e6e1d6?style=flat-square&labelColor=1a1712)](LICENSE)
 ![node 20+](https://img.shields.io/badge/node-20%2B-e6e1d6?style=flat-square&labelColor=1a1712)
 
-Telos is a zero-dependency local workbench for creating, simulating, and replaying AI work. It ships a five-server MCP surface plus CLI fallbacks: doctors for CI, presentation, accessibility, performance, and compatibility, a creative engine with deterministic kernels and ten measurement meters, model-foundry and learning-forge lanes, and research proof packets spanning causal, embodied, and quantum demos. It ties gather, index, forum, and crucible into one operator map you can run with a single `node demo/run.mjs`. Every run writes a receipt you can re-check.
-
 [Project Telos](https://harperz9.github.io) | [gather](https://github.com/HarperZ9/gather) | [crucible](https://github.com/HarperZ9/crucible) | [index](https://github.com/HarperZ9/index) | [forum](https://github.com/HarperZ9/forum) | [telos](https://github.com/HarperZ9/telos) | [learn](https://github.com/HarperZ9/learn) | [emet](https://github.com/HarperZ9/emet) | [buildlang](https://github.com/HarperZ9/buildlang)
 
-## What it does
+It is plain Node.js 20+ with no npm dependencies. The npm package is `project-telos-mcp`; it serves 50 tools over stdio to any MCP host, such as Claude Code, Codex or the OpenAI Agents SDK.
 
-- **One MCP surface over five flagships.** `node demo/telos-mcp.mjs` (or `npm start`) runs a stdio MCP server exposing 50 native `telos.*` tools, and the server manifest launches gather, index, forum, and crucible beside it: 78 tools total plus 36 declared auxiliary compatibility tools, with ready-to-paste host config for Codex (TOML), Claude (JSON), and OpenAI Agents.
-- **Read the web, Reddit and X.** `telos reach` and nine MCP tools read public pages, feeds and sitemaps through a crawler that obeys robots.txt and Crawl-delay, Reddit through its official Data API with your own app, single X posts through X's public oEmbed endpoint, the X API with your own key, and official APIs such as Hacker News, GitHub, arXiv and Wikipedia. Every request lands in a receipt with its robots.txt decision and a SHA-256 of the bytes. `telos reach doctor` shows which channels work for you, with no side effects. See [the reach guide](docs/REACH.md).
-- **Four proof lanes through one CLI.** `node demo/proof.mjs` assembles agent-action, research-claim, visual-truth, and build proof packets. Each has a pure verifier that recomputes every load-bearing claim from materials embedded in the packet, so a canned pass is structurally impossible, and `node demo/proof.mjs verify <packet.json>` replays any of them by schema id.
-- **Nine doctors.** CI doctor and CI triage read GitHub Actions state and separate fatal failures from runtime migration warnings. Presentation, accessibility, performance, compatibility, and operator doctors audit README parity, static a11y, byte budgets, protocol coverage, and discoverability. All run offline against local checkouts.
-- **A creative engine you can measure.** Deterministic kernels (ordered dither, pixel sort, harmonograph, clustered light), a WebGPU/WebGL/canvas/static renderer selection contract, and ten runnable meters across histogram, dither, splat, cluster, audio, flicker, curvature, interaction, uncertainty, and frame-budget signals. The visual surface lives at [`demo/index.html`](demo/index.html).
-- **Research proof packets.** Deterministic preflights for causal inference (toy-DAG minimal adjustment set), embodied sim-to-real (differential drive with safety envelope and latency bound), and quantum error correction (3-qubit bit-flip stabilizer code), each with negative controls and explicit non-claims.
-- **Model foundry and learning forge.** A bounded contract for routing work across hosted frontier APIs and local open-weight models, seven executable lab contracts with failure cases and metrics, and a self-improving daemon loop that only promotes verified changes.
-- **Context tooling for large codebases.** Budgeted, validated context packs and envelopes for handing a big workspace to a model without losing provenance.
-- **Native workstation control.** `node demo/native-control.mjs` drives the browser via the Chrome DevTools Protocol and native apps via Windows UI Automation. UIA focus and keyboard-input actions can affect the foreground window; receipts distinguish known focus behavior from unknown effects. An explicit browser match must select one target. The MCP tool `telos.native.control` remains a read-only capability catalog. See [the control contract](docs/native-control-contract.md) before actuation.
+## What you get
+
+- **Web and API reading.** `telos reach` and nine MCP tools read public pages, feeds and sitemaps through a crawler that obeys robots.txt and Crawl-delay. They also read Reddit through its official API with your own app, single X posts through X's oEmbed endpoint, and APIs such as Hacker News, GitHub, arXiv and Wikipedia. Every fetch records the URL, time, status, robots.txt decision and a SHA-256 of the bytes. The crawler reads HTML as served and does not run page JavaScript. Pages behind a login or a bot check are left out. See [the reach guide](docs/REACH.md).
+- **Browser and desktop control behind a permission gate.** The CLI drives Chrome through the DevTools Protocol and Windows apps through UI Automation. Every verb has a risk tier. Nothing runs until you issue a signed grant with `telos grant issue`, which needs an interactive terminal, so an agent's own shell cannot grant itself access. Consequential actions also wait for a per-action confirmation. Password, OTP and card fields are refused under any grant. App control is Windows only. The MCP tool for this returns the catalog of verbs and performs no action. See [the tier spec](docs/spec/telos-tiers.md) and [the control contract](docs/native-control-contract.md).
+- **An action log you can verify offline.** Gated actions, refusals included, append to a hash-chained log. After `telos keys init`, chain heads are signed with a local ed25519 key, and `telos receipts verify <session.jsonl>` detects edited, reordered, inserted or deleted entries, plus a cut-off tail once a checkpoint exists.
+- **CI triage.** `ci-triage --gh-run owner/repo#run_id` reads a GitHub Actions run through the `gh` CLI and marks whether it failed on a blocking step or only on warnings, such as a deprecated action runtime. It names the failing step type and does not diagnose the test.
+- **Static page checks.** `accessibility-doctor --html FILE` runs 14 static checks (language, viewport, skip link, landmarks, focus style, reduced motion, labels and more). `performance-doctor --html FILE` runs 14 byte-budget checks. Neither runs a browser.
+- **Packets you can re-check.** `proof.mjs` builds a JSON record of an agent action, a research claim, a colour measurement or a build invariant, with the materials embedded. `proof.mjs verify` recomputes the hashes and values from those materials and reports MATCH, DRIFT (something was changed) or UNVERIFIABLE (something needed is missing). Packets are hash-checked and unsigned.
+
+Telos also carries design work that is not a finished feature. The model foundry and learning forge are written contracts for routing and evaluating models: nothing in this repo calls a model or trains one. The causal, embodied and quantum packets are small fixed demonstrations, and the creative engine is a set of deterministic image kernels and meters behind [`demo/index.html`](demo/index.html). The presentation and operator doctors are tuned to the Project Telos repositories.
+
+## Try it
+
+Point an MCP host at the server without cloning anything:
+
+```bash
+npx -y project-telos-mcp
+```
+
+In a host config that is `"command": "npx"` with `"args": ["-y", "project-telos-mcp"]`. A `tools/list` call against 0.9.0 returns 50 tools.
+
+To use the command line, install the package globally. That puts `telos` and `telos-mcp` on your PATH. (Run `telos` from the install, not through npx: the npm name `telos` belongs to an unrelated package.)
+
+```bash
+npm install -g project-telos-mcp
+telos reach doctor
+# reach doctor  7/12 channels ready
+# web         ready               free
+# reddit      needs credentials   set REDDIT_CLIENT_ID, REDDIT_CLIENT_SECRET
+# ...
+
+telos reach fetch https://example.com
+# {"result": {"url": "https://example.com/", "status": 200, "page": {"title": "Example Domain", ...}},
+#  "receipt": {"fetches": [{"url": "https://example.com/robots.txt", "robots": "robots.txt 404: no restrictions", ...
+
+telos ci-triage --gh-run owner/repo#run_id --summary
+# blocking     1
+# verdict      DRIFT
+
+telos accessibility-doctor --html page.html --summary
+# checks       14
+# passed       10
+```
+
+Without a grant, a control verb is refused before it runs:
+
+```bash
+telos native-control browser navigate https://example.com
+# "status": "REFUSED", "tier": "T3", "executed": false, "reason": "NO_GRANT"
+```
+
+To run the demos from source:
+
+```bash
+git clone https://github.com/HarperZ9/telos.git
+cd telos
+node demo/run.mjs
+#   RUN A (honest render)  : CERTIFIED      recheck=true
+#   RUN B (broken render)  : UNVERIFIABLE   recheck=true
+```
+
+From a checkout, `npm start` (the same as `node demo/telos-mcp.mjs`) runs the stdio MCP server.
+
+`demo/run.mjs` renders a 4-D cube, recovers its vertex and edge counts through separate image channels, and checks them against the known shape. A second render that is too small to read comes back UNVERIFIABLE, which shows the check can fail.
+
+The outputs above come from `project-telos-mcp` 0.9.0 installed from npm (global install into a scratch prefix), run on Node 25 on Windows.
+
+## How it compares
+
+- **Browser automation servers such as Playwright MCP and Chrome DevTools MCP.** These offer far more browser coverage. Telos covers fewer verbs and adds Windows app control, a grant you sign from your own terminal, and a verifiable log of each action.
+- **Hosted crawlers such as Firecrawl and Jina Reader.** These render JavaScript and run as services. `telos reach` runs on your machine, reads HTML as served, and stops where robots.txt says to stop.
+- **Lighthouse and axe-core.** These load the page in a real browser and run far more rules. Telos's doctors are quick static checks on the HTML file.
+- **Signed provenance such as in-toto and Sigstore.** These sign supply-chain attestations with managed keys and public logs. Telos's action log uses one local key, and its proof packets are hash-checked without a signature.
+
+## Running all five Project Telos servers
+
+`node demo/server-manifest.mjs` prints host config (Codex TOML, Claude JSON, OpenAI Agents) that launches Telos beside [gather](https://github.com/HarperZ9/gather), [index](https://github.com/HarperZ9/index), [forum](https://github.com/HarperZ9/forum) and [crucible](https://github.com/HarperZ9/crucible), for 78 tools in all plus 38 auxiliary compatibility tools. That setup expects all five repositories checked out side by side, with `PROJECT_TELOS_PUBLIC` set to their parent folder. The orientation commands:
+
+```bash
+node demo/catalog.mjs --summary          # 78 tools across the five servers
+node demo/server-manifest.mjs --summary  # launch map with host config
+```
+
+Expected catalog summary:
+
+```
+Project Telos MCP Catalog
+tools    78 total, 78 available
+transport stdio, streamable-http
+gather    5 tools ...
+index     5 tools ...
+forum     5 tools ...
+crucible  13 tools ...
+telos     50 tools ...
+```
+
+Health and state:
+
+```bash
+node demo/status.mjs --summary
+node demo/doctor.mjs --summary
+node demo/room.mjs --json
+```
+
+Each of these commands prints a JSON envelope with a MATCH, DRIFT, or UNVERIFIABLE status. The package's `telos` and `telos-mcp` commands route to the same scripts.
 
 ## See it work, step by step
 
@@ -46,7 +136,7 @@ source is [docs/explainer/index.html](docs/explainer/index.html).
 
 ## Walkthrough
 
-Install it, run it once, then use the main feature. Each command below is real, and so is its output.
+The demo loop and a proof packet, step by step. The commands and outputs match a run of 0.9.0 from a fresh clone.
 
 1. **Install.** Run the MCP server without cloning, or clone to run the demos. Node 20 or newer, no dependencies.
 
@@ -55,7 +145,7 @@ Install it, run it once, then use the main feature. Each command below is real, 
    $ git clone https://github.com/HarperZ9/telos.git && cd telos
    ```
 
-2. **First run: two renders.** The demo checks an honest render and a broken one against a criterion the loop did not write.
+2. **First run: two renders.** The demo checks a readable render and a broken one against the known shape of the cube.
 
    ```text
    $ node demo/run.mjs
@@ -81,66 +171,6 @@ Install it, run it once, then use the main feature. Each command below is real, 
    embedded_verdict_not_derived (DRIFT)
    ```
 
-## Try it
-
-Zero runtime dependencies. Node 20 or newer; CI runs on Node 24.
-
-Point an MCP host at the stdio server without cloning anything:
-
-```bash
-npx -y project-telos-mcp
-```
-
-In a host config that is `"command": "npx"` with `"args": ["-y", "project-telos-mcp"]`.
-
-Or install it and get both commands on your PATH, `telos-mcp` for the MCP server
-and `telos` for the demo command surface:
-
-```bash
-npm install -g project-telos-mcp
-telos-mcp
-```
-
-To read the source and run the loop that explains the whole idea:
-
-```bash
-git clone https://github.com/HarperZ9/telos.git
-cd telos
-node demo/run.mjs
-```
-
-`demo/run.mjs` renders a 4-D cube, perceives it through independent channels, checks the recovered vertex and edge counts against the true criterion, and prints a certificate that re-checks from its own evidence. Then it feeds the loop a render too small to read and shows it returning UNVERIFIABLE instead of a confident pass. A verifier that cannot fail is not a verifier.
-
-From there, the two orientation commands:
-
-```bash
-node demo/catalog.mjs --summary          # operator map: 78 tools across 5 flagships
-node demo/server-manifest.mjs --summary  # 5-server MCP launch map with host config
-```
-
-Expected catalog summary:
-
-```
-Project Telos MCP Catalog
-tools    78 total, 78 available
-transport stdio, streamable-http
-gather    5 tools ...
-index     5 tools ...
-forum     5 tools ...
-crucible  13 tools ...
-telos     50 tools ...
-```
-
-To run the MCP server for a host: `npm start` (stdio). Health and state:
-
-```bash
-node demo/status.mjs --summary
-node demo/doctor.mjs --summary
-node demo/room.mjs --json
-```
-
-Every command emits a `project-telos.flagship-action/v1` envelope with a MATCH, DRIFT, or UNVERIFIABLE status. The package also ships `telos` and `telos-mcp` bin entries that route to the same demo surface.
-
 ## Worked example: a proof packet that can fail
 
 <p align="center"><img src="docs/art/proof-lane.svg" alt="Eight stages from loose materials to a replayable packet: fixture, assemble, completeness, recompute, join, derive, witness, replay. The verdict folds out of the checks rather than being read off the packet, so a canned pass embedded in the materials can never win. A witness that reports drift lowers the derived verdict, and a witness that cannot be reached is recorded as coverage lost rather than counted as a pass. Three outcomes: match when every claim recomputed, drift when a recomputed value disagrees with its claim, and unverifiable when the evidence to check a claim is not there." width="100%"></p>
@@ -152,18 +182,20 @@ node demo/proof.mjs agent-action --demo --json > packet.json
 node demo/proof.mjs verify packet.json
 ```
 
-Expected output:
+Expected output from a fresh clone:
 
 ```
 verdict       MATCH
-witness       witnessed / MATCH
+witness       unavailable / UNVERIFIABLE
 ```
 
-The packet joins source refs, context refs, route, admission decision, side effects, and output digests. The verifier recomputes digests from the embedded materials, so editing any load-bearing field flips the verdict to DRIFT, and a missing recomputable basis is reported as UNVERIFIABLE with the gap named by path. The sibling lanes work the same way: `research` recomputes source and negative-control digests and refuses reproduction-gated promotion in a single packet, `visual` recomputes color and luminance from embedded sRGB samples, and `build` recomputes a conserved-quantity invariant against a negative fixture that must break it. The delivery ledger is [docs/PROOF-LANES.md](docs/PROOF-LANES.md).
+The witness line reports a second, independent check by [emet](https://github.com/HarperZ9/emet). Telos looks for it in a sibling `../emet` checkout or at `TELOS_EMET_CLI`. When emet is present the line reads `witnessed / MATCH`; without it the packet records that no second check ran, and the verdict rests on the Telos verifier alone.
 
-Two things in that diagram are worth reading twice. The verdict is folded out of the checks, so a packet that carries its own `MATCH` cannot win with it: when an embedded verdict disagrees with the derived one, the disagreement is itself recorded as a failure, and that failure inherits the derived severity. An embedded `MATCH` over tampered materials stays DRIFT. An embedded `MATCH` over an incomplete packet stays UNVERIFIABLE.
+The packet joins source refs, context refs, route, admission decision, side effects, and output digests. The verifier recomputes digests from the embedded materials, so editing any load-bearing field flips the verdict to DRIFT, and a missing recomputable basis is reported as UNVERIFIABLE with the gap named by path. The other packet types work the same way: `research` recomputes source and negative-control digests and refuses reproduction-gated promotion in a single packet, `visual` recomputes color and luminance from embedded sRGB samples, and `build` recomputes a conserved-quantity invariant against a negative fixture that must break it. Details are in [docs/PROOF-LANES.md](docs/PROOF-LANES.md).
 
-The witness stage is the honest null. It is a second reader over the packet's own canonical bytes, and it can lower a verdict but never raise one. When it cannot be reached, the packet records `witness_coverage: not_witnessed` and the verdict stands on the verifier alone. That is disclosed coverage loss, not counterevidence, and it is the reason a MATCH is a claim about what was recomputed rather than a claim that everything was looked at.
+The verdict is computed from the checks, so a packet that carries its own `MATCH` cannot pass on that alone: when an embedded verdict disagrees with the derived one, the disagreement is itself recorded as a failure, and that failure inherits the derived severity. An embedded `MATCH` over tampered materials stays DRIFT. An embedded `MATCH` over an incomplete packet stays UNVERIFIABLE.
+
+The emet check reads the packet's canonical bytes a second time. It can lower a verdict and never raises one. When emet cannot be reached, the packet records `witness_coverage: not_witnessed`. A MATCH says what was recomputed. It does not say that everything was looked at.
 
 ## Command surface
 
@@ -171,6 +203,8 @@ The witness stage is the honest null. It is a second reader over the packet's ow
 
 | Area | Commands |
 | --- | --- |
+| Web and APIs | `reach.mjs` (doctor, menu, fetch, site, reddit, x, api) |
+| Permissions and log | `grant.mjs`, `confirm.mjs`, `keys.mjs`, `receipts.mjs` |
 | Orientation | `run.mjs`, `catalog.mjs`, `server-manifest.mjs`, `status.mjs`, `doctor.mjs`, `room.mjs` |
 | Doctors | `ci-doctor.mjs`, `ci-triage.mjs`, `presentation-doctor.mjs`, `accessibility-doctor.mjs`, `performance-doctor.mjs`, `compatibility-doctor.mjs`, `operator-doctor.mjs`, `mcp-freshness.mjs` |
 | Proof | `proof.mjs` (agent-action, research, visual, build, verify, export), `showcase.mjs` |
@@ -182,22 +216,22 @@ The witness stage is the honest null. It is a second reader over the packet's ow
 
 Most accept `--summary` for a compact terminal (TUI) view and `--json` for IDE, app, and automation hosts.
 
-The doctor lanes in full: `node demo/ci-doctor.mjs`, `node demo/presentation-doctor.mjs`, `node demo/accessibility-doctor.mjs`, `node demo/performance-doctor.mjs`, `node demo/compatibility-doctor.mjs`, and `node demo/operator-doctor.mjs`, plus `node demo/ci-triage.mjs` and `node demo/mcp-freshness.mjs`. Live CI intake works read-only: `node demo/ci-triage.mjs --gh-run owner/repo#run_id --summary`.
+The doctors in full: `node demo/ci-doctor.mjs`, `node demo/presentation-doctor.mjs`, `node demo/accessibility-doctor.mjs`, `node demo/performance-doctor.mjs`, `node demo/compatibility-doctor.mjs`, and `node demo/operator-doctor.mjs`, plus `node demo/ci-triage.mjs` and `node demo/mcp-freshness.mjs`. Live CI intake works read-only: `node demo/ci-triage.mjs --gh-run owner/repo#run_id --summary`.
 
 ## Documentation
 
 - [docs/INTRODUCTION.md](docs/INTRODUCTION.md): what Telos is and your first ten minutes.
 - [docs/HOW-IT-WORKS.md](docs/HOW-IT-WORKS.md): the verifier loop, step by step, including where it stops.
 - [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) and [docs/PROJECT-CONNECTION-MAP.md](docs/PROJECT-CONNECTION-MAP.md): system shape and how the five flagships connect.
-- [docs/PROOF-LANES.md](docs/PROOF-LANES.md): the proof-lane contracts and delivery ledger.
-- [docs/CURRENT-STATE.md](docs/CURRENT-STATE.md): the live evidence-first state packet.
+- [docs/PROOF-LANES.md](docs/PROOF-LANES.md): the proof packet types and what each one recomputes.
+- [docs/CURRENT-STATE.md](docs/CURRENT-STATE.md): current state of each surface.
 - [USAGE.md](USAGE.md): install, run, MCP, and verify commands.
 
-Peer repos: [gather](https://github.com/HarperZ9/gather) (research intake), [index](https://github.com/HarperZ9/index) (workspace maps and context), [forum](https://github.com/HarperZ9/forum) (agent routing with a causal ledger), [crucible](https://github.com/HarperZ9/crucible) (claim verification), [emet](https://github.com/HarperZ9/emet) (independent coherence witness). Telos launches and reconciles all five from one manifest; each also stands alone.
+Peer repos: [gather](https://github.com/HarperZ9/gather) (research intake), [index](https://github.com/HarperZ9/index) (workspace maps and context), [forum](https://github.com/HarperZ9/forum) (agent routing with a causal ledger), [crucible](https://github.com/HarperZ9/crucible) (claim verification), [emet](https://github.com/HarperZ9/emet) (independent second check). Telos can launch gather, index, forum and crucible beside itself from one manifest; each also stands alone.
 
 ## Status and maturity
 
-`project-telos-mcp` 0.9.0 is the current release, published on [npm](https://www.npmjs.com/package/project-telos-mcp/v/0.9.0) with matching [GitHub release artifacts](https://github.com/HarperZ9/telos/releases/tag/v0.9.0). The command surface above is tested and CI-covered: `npm test` globs every test file in `demo/`, so a new one runs without being added to a list. Interfaces may still move between minor versions. Research packets are deterministic preflights with explicit non-claims: the causal packet does not claim causal discovery, the embodied packet does not claim real-robot safety, the quantum packet does not claim hardware QEC. Treat the receipts and tests in this repo as the evidence, not prose counts.
+`project-telos-mcp` 0.9.0 is the current release, published on [npm](https://www.npmjs.com/package/project-telos-mcp/v/0.9.0) with matching [GitHub release artifacts](https://github.com/HarperZ9/telos/releases/tag/v0.9.0). The command surface above is tested and CI-covered: `npm test` globs every test file in `demo/`, so a new one runs without being added to a list. Interfaces may still move between minor versions. Research packets are deterministic preflights with explicit non-claims: the causal packet does not claim causal discovery, the embodied packet does not claim real-robot safety, the quantum packet does not claim hardware QEC. The tests in this repo are the evidence for each claim here.
 
 ### Upgrading from 0.2.0
 
@@ -209,17 +243,17 @@ selectors, artifact references, and supplied summaries can remain in packets.
 Keep these packets private. Hash consistency does not prove execution truth,
 authorship, completeness, or safety. See [release notes](docs/RELEASE-NOTES-0.3.0.md).
 
-The active consolidation roadmap is [`docs/PROJECT-TELOS-LARGE-SCALE-ROADMAP-2026-07-02.md`](docs/PROJECT-TELOS-LARGE-SCALE-ROADMAP-2026-07-02.md), and the documentation control plane is [`docs/DOCUMENTATION-CONSOLIDATION-REGISTRY-2026-07-02.md`](docs/DOCUMENTATION-CONSOLIDATION-REGISTRY-2026-07-02.md) with the machine-readable registry under [`docs/registry/`](docs/registry/).
+The roadmap is [`docs/PROJECT-TELOS-LARGE-SCALE-ROADMAP-2026-07-02.md`](docs/PROJECT-TELOS-LARGE-SCALE-ROADMAP-2026-07-02.md), and the documentation index is [`docs/DOCUMENTATION-CONSOLIDATION-REGISTRY-2026-07-02.md`](docs/DOCUMENTATION-CONSOLIDATION-REGISTRY-2026-07-02.md) with the machine-readable registry under [`docs/registry/`](docs/registry/).
 
-## The receipt underneath
+## What a record looks like
 
-One idea runs under everything here: an action or claim only counts when it carries evidence a person or another system can re-check later, and when the check cannot pass, the answer is an honest UNVERIFIABLE rather than a confident guess. That is why every command writes a receipt and every proof verifier is built to be able to fail.
+Most commands here print a JSON record that someone else can check later. When a check cannot be completed, the answer is UNVERIFIABLE, and each verifier has tests that make it fail on bad input.
 
-Here is one of those receipts, drawn field by field. Run it yourself with `python tools/check_repo_art.py --json`:
+Here is one record, from the artwork checker, drawn field by field. Run it yourself with `python tools/check_repo_art.py --json`:
 
 <p align="center"><img src="docs/art/receipt-anatomy.svg" alt="Six fields of a receipt the artwork checker emits, each with what comes back in it and how a reader would check that field for themselves. schema names the contract the record is written to. mode says whether the run rendered the files or only compared them. specs lists the diffable input the pictures are a function of. outputs carries one entry per drawing, each with a byte count and a SHA-256 read from the file on disk. checks carries one entry per gate, each naming itself and listing what it found. passed is the verdict, and it folds out of those checks rather than being written down, so a record cannot claim a pass its own checks do not support." width="100%"></p>
 
-The picture is generated from the same spec the checker reads, and a gate holds every value in it against a receipt the tool actually emits, so it cannot go quietly out of date.
+The picture is generated from the same spec the checker reads, and a CI check compares every value in it with a record the tool emits, so the picture fails CI if it goes out of date.
 
 ## License
 
