@@ -9,7 +9,7 @@ Telos is a local MCP server and command line for AI agents. It gives an agent to
 
 [![version: 0.9.0](https://img.shields.io/badge/version-0.9.0-e6e1d6?style=flat-square&labelColor=1a1712)](https://www.npmjs.com/package/project-telos-mcp)
 [![CI](https://github.com/HarperZ9/telos/actions/workflows/ci.yml/badge.svg)](https://github.com/HarperZ9/telos/actions/workflows/ci.yml)
-[![license](https://img.shields.io/badge/license-FSL--1.1--ALv2-e6e1d6?style=flat-square&labelColor=1a1712)](LICENSE)
+[![license](https://img.shields.io/badge/license-FSL--1.1--MIT-e6e1d6?style=flat-square&labelColor=1a1712)](LICENSE)
 ![node 20+](https://img.shields.io/badge/node-20%2B-e6e1d6?style=flat-square&labelColor=1a1712)
 
 [Project Telos](https://harperz9.github.io) | [gather](https://github.com/HarperZ9/gather) | [crucible](https://github.com/HarperZ9/crucible) | [index](https://github.com/HarperZ9/index) | [forum](https://github.com/HarperZ9/forum) | [telos](https://github.com/HarperZ9/telos) | [learn](https://github.com/HarperZ9/learn) | [emet](https://github.com/HarperZ9/emet) | [buildlang](https://github.com/HarperZ9/buildlang)
@@ -257,13 +257,15 @@ The picture is generated from the same spec the checker reads, and a CI check co
 
 ## License
 
-Text: CC BY 4.0. Code: FSL-1.1-ALv2.
+Text: CC BY 4.0. Code: FSL-1.1-MIT.
 
 The whitepapers and research notes in [`docs/research/`](docs/research/) are
 licensed CC BY 4.0. Share and adapt them with credit to Zain Dana Harper; the
 terms are in [`LICENSE-TEXT`](LICENSE-TEXT).
 
-The code and the software documentation are FSL-1.1-ALv2 (fair source). The code is open to read and run, free for nearly any use except building a competing product, and each release converts to Apache 2.0 after two years. Copyright is held by the author. See [LICENSE](LICENSE).
+The code and the software documentation are FSL-1.1-MIT (fair source). The code is open to read and run, free for nearly any use except building a competing product, and each release converts to the MIT license after two years. Copyright is held by the author. See [LICENSE](LICENSE).
+
+Version 0.9.0 and earlier releases were published under FSL-1.1-ALv2 and keep that license, so each of them still converts to Apache 2.0. FSL-1.1-MIT applies from the next release.
 
 ## For developers
 
