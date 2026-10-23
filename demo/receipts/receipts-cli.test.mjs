@@ -18,7 +18,7 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", ".
 const vec = (f) => path.join(root, "docs", "spec", "vectors", f);
 const telos = path.join(root, "demo", "telos.mjs");
 
-test("the committed conformance chain verifies against its pinned key", () => {
+test("the committed version 1 conformance chain still verifies against its pinned key", () => {
   const v = verifyChain(readFileSync(vec("receipt-v1-chain.jsonl"), "utf8"), {
     checkpoints: readFileSync(vec("receipt-v1-checkpoints.jsonl"), "utf8"),
     trustedKey: loadTrustedKey(vec("receipt-v1-key.pub.json"))

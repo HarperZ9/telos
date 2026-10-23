@@ -31,7 +31,7 @@ function chainEnv(opts = {}) {
     const signer = loadSigner({ home: env.dirs.root });
     const file = path.join(env.dirs.receipts, "s1.jsonl");
     const text = readFileSync(file, "utf8");
-    const records = text.trim().split("\n").map((l) => JSON.parse(l)).filter((r) => r.schema === "telos.receipt/v1");
+    const records = text.trim().split("\n").map((l) => JSON.parse(l)).filter((r) => r.schema === "telos.receipt/v2");
     return { v: verifyChain(text, { trustedKey: { key_id: signer.key_id, public_key: signer.public_key } }), records, signer };
   };
   env.refGrant = () => env.grant({ tier: "T3", verbs: ["browser.click-ref", "browser.fill-ref"], scope: { origins: ["https://example.test"] }, max_actions: 5 });

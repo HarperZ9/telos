@@ -2,6 +2,13 @@
 
 ## Unreleased
 
+Receipts, 2026-10-23. `telos.receipt/v2` names the fixed per-status text
+`scope`, and each value says what the receipt records. Version 1 named it
+`does_not_prove`. The verifier, replay and `verify_packet.mjs` read both
+versions, so existing chains still verify. The WAA dry-run report moves to
+`telos.waa-dry-run/v2` with a `scope` line. The demo, reach text and viable-viz
+scope line use plain words.
+
 Licence, 2026-10-23. The code and the software documentation move from
 FSL-1.1-ALv2 to FSL-1.1-MIT, the variant Flywheel uses, on the author's
 decision of that date. The terms are the same Functional Source License 1.1;

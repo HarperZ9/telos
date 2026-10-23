@@ -58,7 +58,7 @@ def check(archive):
         return {'status':'PASS','archive_sha256':hashlib.sha256(Path(archive).read_bytes()).hexdigest(),
                 'version':source['version'],'tools':len(messages[2]['result']['tools']),
                 'checks':['source hashes','pinned bundled runtime','stdio initialize/list','safe synthetic workflow'],
-                'does_not_prove':['installed client compatibility','marketplace approval','global network isolation']}
+                'scope':'Checks the source hashes, the pinned bundled runtime, the stdio initialize and tool list, and a safe synthetic workflow.'}
 
 
 if __name__=='__main__':

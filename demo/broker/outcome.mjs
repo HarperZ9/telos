@@ -1,8 +1,8 @@
 // Receipt bodies and tool results for the broker. Bodies are telos.receipt/v1
 // caller fields (DESIGN.md 4.1): the chain (demo/receipts/chain.mjs) adds
-// schema, session, seq, links, does_not_prove and the seal, and refuses a body
+// schema, session, seq, links, scope and the seal, and refuses a body
 // that breaks the contract, which stops the call (fail closed).
-import { DOES_NOT_PROVE } from "../receipts/schema.mjs";
+import { SCOPE } from "../receipts/schema.mjs";
 
 // Flags the broker consumes itself; they never reach a driver or the digest.
 export const CONTROL_FLAGS = Object.freeze(["hold", "dry-run"]);
@@ -57,7 +57,7 @@ export class Outcome {
       action_digest: c.digest ?? null,
       grant_id: c.grant?.grant_id ?? null,
       target_ref: c.target?.ref ?? null,
-      does_not_prove: DOES_NOT_PROVE[status] ?? null,
+      scope: SCOPE[status] ?? null,
       ...extra,
     };
   }

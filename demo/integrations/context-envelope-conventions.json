@@ -268,15 +268,10 @@
         "load_receipt": {
           "event_type": "context.load",
           "decisionClaim": "valid_load_receipt_not_usefulness_claim",
-          "proves": [
+          "scope": [
             "selected context crossed the session boundary",
             "privacy-safe context input identities",
             "delivered and suppressed counts"
-          ],
-          "does_not_prove": [
-            "usefulness",
-            "decisiveness",
-            "answer influence"
           ],
           "claims_usefulness": false,
           "raw_payload_required": false

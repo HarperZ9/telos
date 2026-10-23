@@ -8,7 +8,7 @@ import test from "node:test";
 import { ReceiptChain } from "./chain.mjs";
 import { actionDigest, argsSha256 } from "./digest.mjs";
 import { ephemeralSigner, initKey, loadSigner, publicKeyPath } from "./keys.mjs";
-import { DOES_NOT_PROVE, TIER_FIELDS, unknownFields } from "./schema.mjs";
+import { SCOPE, TIER_FIELDS, unknownFields } from "./schema.mjs";
 import { GENESIS, canonical, parseJsonl, sealOf, signaturePayload, verifyChain } from "./verify.mjs";
 
 const tmp = () => mkdtempSync(path.join(os.tmpdir(), "telos-receipts-"));
@@ -36,7 +36,9 @@ test("append persists a sealed, linked receipt before it returns", () => {
   assert.equal(r1.seq, 1);
   assert.equal(r1.seal, sealOf(r1));
   assert.equal(r1.hash_version, 3);
-  assert.equal(r1.does_not_prove, DOES_NOT_PROVE.OK);
+  assert.equal(r1.schema, "telos.receipt/v2");
+  assert.equal(r1.scope, SCOPE.OK);
+  assert.equal(r1.does_not_prove, undefined);
   const r2 = chain.append(observe());
   assert.equal(r2.prev_seal, r1.seal);
   assert.equal(r2.seq, 2);
@@ -79,11 +81,12 @@ test("a chain resumes after restart and refuses to extend a broken file", () => 
   assert.throws(() => ReceiptChain.open({ home, session_id: "s_resume", signer: other }), /refusing to extend/);
 });
 
-test("the writer fixes chain fields, does_not_prove and enums", () => {
+test("the writer fixes chain fields, scope and enums", () => {
   const chain = ReceiptChain.open({ home: tmp(), session_id: "s_rules", signer: null });
   assert.throws(() => chain.append(observe({ seq: 9 })), /set by the chain/);
   assert.throws(() => chain.append(observe({ seal: "x" })), /set by the chain/);
-  assert.throws(() => chain.append(observe({ does_not_prove: "anything" })), /fixed per status/);
+  assert.throws(() => chain.append(observe({ scope: "anything" })), /fixed per status/);
+  assert.throws(() => chain.append(observe({ does_not_prove: "anything" })), /version 1 name/);
   assert.throws(() => chain.append(observe({ status: "MAYBE" })), /status/);
   assert.throws(() => chain.append(observe({ tier: "T9" })), /tier/);
   assert.throws(() => chain.append(observe({ resolution: "guess" })), /resolution/);
