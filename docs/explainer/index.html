@@ -176,8 +176,8 @@ ol.walkthrough p{margin:0 0 .3rem;max-width:44rem}
   <ul class="uses">
     <li><b>One MCP surface</b>78 tools across five servers, with host config for Codex, Claude and OpenAI Agents.</li>
     <li><b>Packets that recompute</b><code>node demo/proof.mjs verify</code> replays a packet from its own embedded materials.</li>
-    <li><b>A verdict that cannot be canned</b>An embedded verdict that disagrees with the derived one is itself recorded as a failure.</li>
-    <li><b>Honest coverage</b>A witness that cannot be reached is recorded as coverage lost, never counted as a pass.</li>
+    <li><b>Verdicts derived from checks</b><code>verify</code> folds the verdict out of its checks and flags an embedded verdict that disagrees: <code>embedded_verdict_not_derived (DRIFT)</code>.</li>
+    <li><b>Witness coverage in the output</b>An offline witness is recorded as lost coverage: <code>witness unavailable / UNVERIFIABLE</code>.</li>
   </ul>
   <p class="src">Source: <a href="https://github.com/HarperZ9/telos/blob/5f59ff5ca7598ec8c94135d7f3725d5b9d669d75/README.md">README.md</a> at 5f59ff5 (version 0.9.0)</p>
 </section>
@@ -195,7 +195,7 @@ ol.walkthrough p{margin:0 0 .3rem;max-width:44rem}
 
 <section class="block wrap" aria-labelledby="how">
   <h2 id="how">How it works, one step at a time</h2>
-  <p class="measure">Scroll, or use the step buttons. The panel follows two of telos's own demos: <code>demo/run.mjs</code>, the loop that explains the idea, and <code>demo/proof.mjs</code>, an agent-action proof packet. Every line is output from telos at commit 5f59ff5, run with Node and no network.</p>
+  <p class="measure">Scroll, or use the step buttons. The panel follows two of telos's own demos: <code>demo/run.mjs</code>, the loop that explains the idea, and <code>demo/proof.mjs</code>, an agent-action proof packet. Every line is output from telos at commit 5f59ff5, run offline with Node.</p>
   <div class="walk">
     <div class="stage-wrap">
       <div class="stage" aria-label="Animated diagram for the current step">
@@ -222,32 +222,32 @@ ol.walkthrough p{margin:0 0 .3rem;max-width:44rem}
       </div></li>
       <li class="step" tabindex="-1" data-scene="k1" data-state="s"><div class="card">
         <span class="num">02</span><h3>Run A: perceive, check, amplify</h3>
-        <p>The first reading is not unanimous, so the loop amplifies: it tries more views and a sound channel, each step witnessed. At the fourth step every channel agrees with the criterion and the certificate reads CERTIFIED.</p>
+        <p>The first reading is split, so the loop amplifies: it tries more views and a sound channel, each step witnessed. At the fourth step every channel agrees with the criterion and the certificate reads CERTIFIED.</p>
         <p><code>recheck()</code> then re-derives the verdict from the stored evidence alone and returns true.</p>
         <p class="src">Source: <a href="https://github.com/HarperZ9/telos/blob/5f59ff5ca7598ec8c94135d7f3725d5b9d669d75/demo/run.mjs">demo/run.mjs</a>, run A</p>
       </div></li>
       <li class="step" tabindex="-1" data-scene="k2" data-state="s"><div class="card">
         <span class="num">03</span><h3>Run B: a render too small to read</h3>
-        <p>Run B renders the same cube at 8 by 8 pixels, far too coarse to resolve 16 vertices. The channels never agree, so after the same amplification steps the certificate reads UNVERIFIABLE.</p>
-        <p>The loop does not guess. A verifier that cannot fail is not a verifier, and this run is the proof that this one can.</p>
+        <p>Run B renders the same cube at 8 by 8 pixels, far too coarse to resolve 16 vertices. The pixel channel reads 49 vertices and 40 edges, the channels disagree through every amplification step, and the certificate reads UNVERIFIABLE.</p>
+        <p>This is the run that shows the loop can fail.</p>
         <p class="src">Source: <a href="https://github.com/HarperZ9/telos/blob/5f59ff5ca7598ec8c94135d7f3725d5b9d669d75/demo/run.mjs">demo/run.mjs</a>, run B</p>
       </div></li>
       <li class="step" tabindex="-1" data-scene="k3" data-state="s"><div class="card">
         <span class="num">04</span><h3>A proof packet carries its materials</h3>
         <p><code>node demo/proof.mjs agent-action --demo</code> assembles a packet for one admitted action: the objective, two source refs with content hashes, a context envelope, the route that decided it, the admission decision, the action's side effect, the output digests and the artifact text itself.</p>
-        <p>The packet embeds what is needed to recompute its claims, so a verifier never has to trust the run that made it.</p>
+        <p>The packet embeds what is needed to recompute its claims, so a verifier checks it from the packet file alone.</p>
         <p class="src">Source: <a href="https://github.com/HarperZ9/telos/blob/5f59ff5ca7598ec8c94135d7f3725d5b9d669d75/demo/proof.mjs">demo/proof.mjs</a>; <a href="https://github.com/HarperZ9/telos/blob/5f59ff5ca7598ec8c94135d7f3725d5b9d669d75/docs/PROOF-LANES.md">docs/PROOF-LANES.md</a></p>
       </div></li>
       <li class="step" tabindex="-1" data-scene="k4" data-state="s"><div class="card">
         <span class="num">05</span><h3>Verify it from the packet alone</h3>
         <p><code>proof.mjs verify</code> runs a fixed set of checks: required fields, source and context refs, the state model, the packet hash, artifact digests, the join between admission and action, and their order. The verdict is folded out of the checks: MATCH.</p>
-        <p>The witness here is a second reader, Emet, that is not installed on this machine. The packet records it as unavailable, so the MATCH stands on the verifier alone and says so.</p>
+        <p>The witness is a second reader, Emet. It was missing on this machine, so the packet records <code>witness unavailable / UNVERIFIABLE</code> and the MATCH rests on the verifier.</p>
         <p class="src">Source: <a href="https://github.com/HarperZ9/telos/blob/5f59ff5ca7598ec8c94135d7f3725d5b9d669d75/demo/proof.mjs">demo/proof.mjs</a>, <a href="https://github.com/HarperZ9/telos/blob/5f59ff5ca7598ec8c94135d7f3725d5b9d669d75/demo/proof-witness.mjs">demo/proof-witness.mjs</a></p>
       </div></li>
       <li class="step" tabindex="-1" data-scene="k5" data-state="s"><div class="card">
         <span class="num">06</span><h3>Every edit is named</h3>
         <p>Change the packet and verify again. Pick each edit in the panel. Every one comes back DRIFT, and each finding names the check that failed and where.</p>
-        <p>The last case edits the artifact and also writes MATCH into the packet's own verdict. It does not help: the embedded verdict disagrees with the derived one, and that disagreement is itself a finding.</p>
+        <p>The last case edits the artifact and also writes MATCH into the packet's own verdict. Verify derives DRIFT and reports the planted verdict as its own finding, <code>embedded_verdict_not_derived</code>.</p>
         <p class="src">Source: <a href="https://github.com/HarperZ9/telos/blob/5f59ff5ca7598ec8c94135d7f3725d5b9d669d75/demo/proof.mjs">demo/proof.mjs</a>; README.md, "Worked example: a proof packet that can fail"</p>
       </div></li>
     </ol>
@@ -258,10 +258,10 @@ ol.walkthrough p{margin:0 0 .3rem;max-width:44rem}
   <h2 id="walkthrough">Walkthrough</h2>
   <p class="measure">Install it, run it once, then use the main feature. Each command below is real, and so is its output.</p>
   <ol class="walkthrough">
-    <li><h3>Install</h3><p>Run the MCP server without cloning, or clone to run the demos. Node 20 or newer, no dependencies.</p>
+    <li><h3>Install</h3><p>Run the MCP server straight from npm, or clone to run the demos. It needs Node 20 or newer.</p>
 <pre class="cmd"><code>$ npx -y project-telos-mcp
 $ git clone https://github.com/HarperZ9/telos.git && cd telos</code></pre></li>
-    <li><h3>First run: two renders</h3><p>The demo checks an honest render and a broken one against a criterion the loop did not write.</p>
+    <li><h3>First run: two renders</h3><p>The demo checks an honest render and a broken one against an outside criterion: 16 vertices, 32 edges.</p>
 <pre class="cmd"><code>$ node demo/run.mjs
 <span class="out">  RUN A (honest render)  : CERTIFIED      recheck=true
   RUN B (broken render)  : UNVERIFIABLE   recheck=true</span></code></pre></li>
@@ -276,16 +276,16 @@ witness       unavailable / UNVERIFIABLE</span></code></pre></li>
 artifact_digest_mismatch (DRIFT) outputs[0].digest
 embedded_verdict_not_derived (DRIFT)</span></code></pre></li>
   </ol>
-  <p class="src">Output from telos at 5f59ff5 on Windows with Node 25. The README shows the witness line as witnessed / MATCH where Emet is installed; it was not installed here. project-telos-mcp 0.9.0 is the current npm release.</p>
+  <p class="src">Output from telos at 5f59ff5 on Windows with Node 25. The witness line reads witnessed / MATCH on a machine with Emet installed, as the README shows. project-telos-mcp 0.9.0 is the current npm release.</p>
 </section>
 
 <section class="block wrap" aria-labelledby="limits">
-  <h2 id="limits">What it does not do</h2>
+  <h2 id="limits">Scope</h2>
   <ul class="limits">
-    <li>A MATCH on a packet is a claim about what was recomputed. It is not a claim that everything was looked at, and the witness coverage says how much was.</li>
-    <li>The demo regulator adjudicates by unanimity and does not yet weight channels; the run prints this disclosure itself.</li>
+    <li>A MATCH on a packet covers what was recomputed. The witness coverage line says how much of the packet a second reader checked.</li>
+    <li>The demo regulator adjudicates by unanimity across channels, and the run prints that rule in its own output.</li>
     <li>Native workstation control can affect the foreground window. Read the control contract before actuation.</li>
-    <li>The research proof packets are deterministic preflights with stated non-claims, not experimental results.</li>
+    <li>The research proof packets are deterministic preflights. Each one lists the scope of its claims.</li>
   </ul>
   <p class="src">Source: README.md at 5f59ff5, "What it does" and "Worked example"; demo/run.mjs output</p>
 </section>
@@ -293,10 +293,10 @@ embedded_verdict_not_derived (DRIFT)</span></code></pre></li>
 <section class="block wrap recall" aria-labelledby="recall">
   <h2 id="recall">Check what stuck</h2>
   <p class="measure">Answer each one in your head before you open it.</p>
-  <details><summary>What does CERTIFIED require in the tesseract loop?</summary><p>Every channel must agree and match the criterion of 16 vertices and 32 edges, which the loop did not write.</p></details>
-  <details><summary>Why does run B end UNVERIFIABLE and not DRIFT?</summary><p>At 8 by 8 pixels the channels cannot resolve the shape, so the loop cannot verify either way. It reports that, and makes no guess.</p></details>
+  <details><summary>What does CERTIFIED require in the tesseract loop?</summary><p>Every channel must agree and match the outside criterion of 16 vertices and 32 edges.</p></details>
+  <details><summary>Why does run B end UNVERIFIABLE where DRIFT might be expected?</summary><p>The demo regulator returns CERTIFIED when every channel passes and UNVERIFIABLE otherwise. At 8 by 8 pixels the pixel channel reads 49 vertices and 40 edges, so the channels split.</p></details>
   <details><summary>A packet carries MATCH in its own verdict but its artifact was edited. What does verify say?</summary><p>DRIFT. The verdict is derived from the checks, and an embedded verdict that disagrees is itself a finding.</p></details>
-  <details><summary>What does witness unavailable mean for a MATCH?</summary><p>The verdict stands on the verifier alone, and the packet discloses that no second reader checked it.</p></details>
+  <details><summary>What does witness unavailable mean for a MATCH?</summary><p>The verdict rests on the verifier, and the packet records that the second reader was missing.</p></details>
 </section>
 </main>
 <footer class="foot wrap">
