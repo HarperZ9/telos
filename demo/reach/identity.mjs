@@ -9,7 +9,7 @@ export const PROJECT_URL = "https://github.com/HarperZ9/telos";
 export const ROBOTS_TOKEN = "telos";
 
 /**
- * The honest User-Agent. TELOS_REACH_CONTACT may add the user's own contact
+ * The User-Agent. TELOS_REACH_CONTACT may add the user's own contact
  * (an email or URL), which site operators prefer; it cannot replace the name.
  */
 export function userAgent(env = process.env) {
@@ -22,7 +22,7 @@ export function userAgent(env = process.env) {
 /** Methods the reach layer refuses to ship, stated once for receipts and docs. */
 export const BOUNDARY = Object.freeze([
   "reads robots.txt and obeys Disallow and Crawl-delay",
-  "one honest User-Agent naming Telos; no browser imitation",
+  "one User-Agent naming Telos; no browser imitation",
   "no identity, proxy or account rotation",
   "no cookie or credential extraction from browsers",
   "no CAPTCHA handling; a bot check stops the read",

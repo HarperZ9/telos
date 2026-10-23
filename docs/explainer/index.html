@@ -261,9 +261,9 @@ ol.walkthrough p{margin:0 0 .3rem;max-width:44rem}
     <li><h3>Install</h3><p>Run the MCP server without cloning, or clone to run the demos. Node 20 or newer, no dependencies.</p>
 <pre class="cmd"><code>$ npx -y project-telos-mcp
 $ git clone https://github.com/HarperZ9/telos.git && cd telos</code></pre></li>
-    <li><h3>First run: two renders</h3><p>The demo checks an honest render and a broken one against a criterion the loop did not write.</p>
+    <li><h3>First run: two renders</h3><p>The demo checks a normal render and a broken one against a criterion the loop did not write.</p>
 <pre class="cmd"><code>$ node demo/run.mjs
-<span class="out">  RUN A (honest render)  : CERTIFIED      recheck=true
+<span class="out">  RUN A (normal render)  : CERTIFIED      recheck=true
   RUN B (broken render)  : UNVERIFIABLE   recheck=true</span></code></pre></li>
     <li><h3>Make a proof packet and verify it</h3><p>Write a packet for an agent action, then verify it from the packet alone.</p>
 <pre class="cmd"><code>$ node demo/proof.mjs agent-action --demo --json &gt; packet.json

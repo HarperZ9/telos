@@ -71,7 +71,7 @@ To run the demos from source:
 git clone https://github.com/HarperZ9/telos.git
 cd telos
 node demo/run.mjs
-#   RUN A (honest render)  : CERTIFIED      recheck=true
+#   RUN A (normal render)  : CERTIFIED      recheck=true
 #   RUN B (broken render)  : UNVERIFIABLE   recheck=true
 ```
 

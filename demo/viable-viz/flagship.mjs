@@ -9,10 +9,10 @@
  *                                [--endpoint <url>] [--key <key>] [--model <name>]
  *                                [--width <px>] [--maxAmplify <n>]
  *
- * Honest disclosure (verbatim per Global Constraints):
- *   "Structural, bilateral, reconciled perception with honest UNVERIFIABLE on variety
- *    deficit. The live-model arm requires a connected model; this is the smallest
- *    viable instance, not the complete simulator."
+ * Scope line printed with every run:
+ *   "Structural, bilateral, reconciled perception. It reports UNVERIFIABLE when the
+ *    regulator lacks the variety to check. The live-model arm needs a connected
+ *    model. This is the smallest working instance of the simulator."
  *
  * Zero external dependencies. ESM .mjs.
  */
@@ -21,12 +21,12 @@ import { reconcile } from "./reconcile.mjs";
 import { groundedRegulator, modelRegulator } from "./regulator.mjs";
 import { polytopeSubject, ecosystemSubject } from "./subject.mjs";
 
-// ── Disclosure (verbatim) ─────────────────────────────────────────────────────
+// ── Scope line ──────────────────────────────────────────────────────────────
 
 export const DISCLOSURE =
-  "Structural, bilateral, reconciled perception with honest UNVERIFIABLE on variety " +
-  "deficit. The live-model arm requires a connected model; this is the smallest " +
-  "viable instance, not the complete simulator.";
+  "Structural, bilateral, reconciled perception. It reports UNVERIFIABLE when the " +
+  "regulator lacks the variety to check. The live-model arm needs a connected model. " +
+  "This is the smallest working instance of the simulator.";
 
 // ── runFlagship ───────────────────────────────────────────────────────────────
 
