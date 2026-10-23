@@ -1,12 +1,8 @@
 # Documentation Consolidation Registry
 
 Date: 2026-07-02
-Status: first control-plane registry
 
-This registry starts the maintenance pass for Project Telos documentation. It
-does not claim the whole corpus is clean. It establishes the labels and first
-routing decisions so follow-up passes can update, publish, quarantine, or
-internalize documents consistently.
+This is the index of Project Telos documentation. It lists each document, what it covers and whether it is public or internal.
 
 The machine-readable companion is
 `docs/registry/documentation-registry.json`. The publication-control companion
