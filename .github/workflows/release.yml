@@ -19,7 +19,20 @@ permissions:
   contents: read
 
 jobs:
+  discover:
+    # Blocks the release when the repository is missing what search and
+    # registries read. Report and fixes: the job log. Tool: HarperZ9/discover.
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v5
+      - uses: HarperZ9/discover@v0.1.1
+        with:
+          mode: repo
+
   test:
+    needs: discover
     name: test
     runs-on: ubuntu-latest
     env:
@@ -328,6 +341,7 @@ jobs:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
   native-client:
+    needs: discover
     runs-on: windows-latest
     permissions:
       contents: read
