@@ -8,6 +8,11 @@
 // to something innocuous passes this file, so code review still owns the rule.
 // Prose is not scanned, so a policy line or a detect-and-stop gate can still
 // say the word CAPTCHA.
+//
+// Release 0.5.0 added two more patterns, checked the same way: input pacing
+// named or configured to pass as a person (random waits, "human" function
+// names), and a request identity borrowed from a desktop browser (a browser
+// User-Agent string, or a helper that rotates identities).
 import test from "node:test";
 import assert from "node:assert/strict";
 import { readdirSync, readFileSync } from "node:fs";
@@ -29,6 +34,13 @@ const FORBIDDEN_EXACT_NAME = new Set(["warmup", "humanmove", "recaptchatoken"]);
 const FORBIDDEN_NATIVE_VERB = new Set(["token", "solve"]);
 // Upper snake case containing an underscore, so prose "CAPTCHA" is not an env var.
 const FORBIDDEN_ENV = /\b(?=[A-Z0-9_]*_)[A-Z0-9_]*(?:CAPTCHA|STEALTH|ANTIBOT)[A-Z0-9_]*\b/g;
+// Native-control input names that present automation as a person.
+const FORBIDDEN_INPUT_NAME = /^human|humanlike|jitter/i;
+// A string literal that starts with a desktop browser's User-Agent product token.
+const BROWSER_IDENTITY = /["'`]Mozilla\/\d/;
+// Helper or variable names for rotating or randomizing the request identity.
+const FORBIDDEN_IDENTITY_NAME = /(?:rotat|random)\w*?(?:user_?agent|identity|proxy|fingerprint)|user_?agent_?pool/i;
+const CONFIG = /\.(json|ya?ml|toml)$/i;
 
 function walk(dir, out = []) {
   for (const entry of readdirSync(dir, { withFileTypes: true })) {
@@ -100,7 +112,8 @@ function dependencyNames(pkg) {
 test("the scan reaches the tree it guards", () => {
   const names = files.map(rel);
   assert.ok(files.length > 200, `walked only ${files.length} files`);
-  for (const must of ["package.json", "demo/native-control.mjs", "demo/native-control/runner.mjs"]) {
+  for (const must of ["package.json", "demo/native-control.mjs", "demo/native-control/runner.mjs",
+    "demo/native-control/behave.mjs", "demo/native-control/scrape.mjs"]) {
     assert.ok(names.includes(must), `scan missed ${must}`);
   }
   assert.ok(verbNames(text(path.join(root, "demo/native-control.mjs"))).length > 20);
@@ -179,6 +192,66 @@ test("no environment variable configures a bypass helper", () => {
   const hits = [];
   for (const file of textFiles) {
     for (const name of new Set(text(file).match(FORBIDDEN_ENV) ?? [])) hits.push(`${rel(file)}: ${name}`);
+  }
+  assert.deepEqual(hits, []);
+});
+
+// Values of the frozen INPUT_DELAYS_MS table in behave.mjs, as source text.
+function delayValues(source) {
+  const block = /export\s+const\s+INPUT_DELAYS_MS\s*=\s*Object\.freeze\(\{([\s\S]*?)\}\)/.exec(source);
+  if (!block) return null;
+  return block[1]
+    .replace(/\/\/[^\n]*/g, "")
+    .split(/,(?![^(]*\))/)
+    .map((part) => part.split(":").slice(1).join(":").trim())
+    .filter(Boolean);
+}
+
+test("detectors flag synthetic input-pacing and identity names", () => {
+  assert.ok(FORBIDDEN_INPUT_NAME.test("humanType") && FORBIDDEN_INPUT_NAME.test("addJitter"));
+  assert.ok(!FORBIDDEN_INPUT_NAME.test("typeText") && !FORBIDDEN_INPUT_NAME.test("selectpick"));
+  assert.ok(BROWSER_IDENTITY.test('{ "User-Agent": "Mozilla/5.0 (X11)" }'));
+  assert.ok(!BROWSER_IDENTITY.test('"Telos/0.5.0 (+https://github.com/HarperZ9/telos)"'));
+  for (const name of ["rotateUserAgent", "randomUserAgent", "USER_AGENT_POOL", "rotating_proxy"]) {
+    assert.ok(FORBIDDEN_IDENTITY_NAME.test(name), name);
+  }
+  assert.ok(!FORBIDDEN_IDENTITY_NAME.test("USER_AGENT") && !FORBIDDEN_IDENTITY_NAME.test("identity"));
+  const sample = "export const INPUT_DELAYS_MS = Object.freeze({\n  a: 5, // note\n  b: rand(1, 2),\n});";
+  assert.deepEqual(delayValues(sample), ["5", "rand(1, 2)"]);
+});
+
+test("native-control input is named and configured as plain input", () => {
+  const hits = [];
+  for (const file of codeFiles.filter((f) => /native-control/.test(rel(f)))) {
+    const source = text(file);
+    for (const name of [...definedNames(source, file), ...verbNames(source)]) {
+      if (FORBIDDEN_INPUT_NAME.test(name)) hits.push(`${rel(file)} names ${name}`);
+    }
+  }
+  const values = delayValues(text(path.join(root, "demo/native-control/behave.mjs")));
+  if (!values?.length) hits.push("behave.mjs has no frozen INPUT_DELAYS_MS table");
+  for (const value of values ?? []) {
+    if (!/^\d+$/.test(value)) hits.push(`behave.mjs delay is not a fixed number: ${value}`);
+  }
+  assert.deepEqual(hits, []);
+});
+
+test("no request presents a desktop browser identity or rotates identities", () => {
+  const hits = [];
+  for (const file of files.filter((f) => CODE.test(f) || CONFIG.test(f))) {
+    const source = text(file);
+    source.split(/\r?\n/).forEach((line, i) => {
+      if (BROWSER_IDENTITY.test(line)) hits.push(`${rel(file)}:${i + 1} browser User-Agent literal`);
+    });
+    if (!CODE.test(file)) continue;
+    for (const name of definedNames(source, file)) {
+      if (FORBIDDEN_IDENTITY_NAME.test(name)) hits.push(`${rel(file)} defines ${name}`);
+    }
+  }
+  for (const file of textFiles) {
+    for (const name of new Set(text(file).match(/\b[A-Z][A-Z0-9]*_[A-Z0-9_]+\b/g) ?? [])) {
+      if (FORBIDDEN_IDENTITY_NAME.test(name)) hits.push(`${rel(file)}: ${name}`);
+    }
   }
   assert.deepEqual(hits, []);
 });
