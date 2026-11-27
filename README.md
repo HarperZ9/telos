@@ -209,15 +209,13 @@ Most commands print a JSON record. Here is one from the artwork checker, field b
 
 ## License
 
-Text: CC BY 4.0. Code: FSL-1.1-MIT.
+Text: CC BY 4.0. Code: MIT.
 
 The whitepapers and research notes in [`docs/research/`](docs/research/) are
 licensed CC BY 4.0. Share and adapt them with credit to Zain Dana Harper; the
 terms are in [`LICENSE-TEXT`](LICENSE-TEXT).
 
-The code and the software documentation are FSL-1.1-MIT (fair source). The code is open to read and run, free for nearly any use except building a competing product, and each release converts to the MIT license after two years. Copyright is held by the author. See [LICENSE](LICENSE).
-
-Version 0.9.0 and earlier releases were published under FSL-1.1-ALv2 and keep that license, so each of them still converts to Apache 2.0. FSL-1.1-MIT applies from the next release.
+The code and the software documentation are licensed under the MIT License. Copyright is held by the author. See [LICENSE](LICENSE).
 
 ## For developers
 
